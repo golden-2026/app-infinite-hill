@@ -1,0 +1,55 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+[[redirects]]
+  from = "/api/guide"
+  to = "/.netlify/functions/guide"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/state"
+  to = "/.netlify/functions/state"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/log"
+  to = "/.netlify/functions/log"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/commerce"
+  to = "/.netlify/functions/commerce"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/stripe-webhook"
+  to = "/.netlify/functions/stripe-webhook"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/table"
+  to = "/.netlify/functions/table"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/table/*"
+  to = "/.netlify/functions/table"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/gifts"
+  to = "/.netlify/functions/gifts"
+  status = 200
+  force = true

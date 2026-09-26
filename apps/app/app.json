@@ -1,0 +1,56 @@
+{
+  "expo": {
+    "name": "infinite hill",
+    "slug": "infinite-hill",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "infinitehill",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "app.infinitehill.ios",
+      "icon": "./assets/images/icon.png"
+    },
+    "android": {
+      "package": "app.infinitehill.android",
+      "adaptiveIcon": {
+        "backgroundColor": "#F7F7F5",
+        "foregroundImage": "./assets/images/icon.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "output": "single",
+      "favicon": "./assets/images/favicon.png",
+      "name": "infinite hill",
+      "shortName": "infinite hill",
+      "themeColor": "#F7F7F5",
+      "backgroundColor": "#F7F7F5"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#F7F7F5",
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 120
+        }
+      ],
+      "expo-audio",
+      "expo-sqlite",
+      [
+        "expo-notifications",
+        {
+          "color": "#0A0A0A"
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    },
+    "backgroundColor": "#F7F7F5"
+  }
+}

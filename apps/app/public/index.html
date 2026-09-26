@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, shrink-to-fit=no" />
+    <meta name="theme-color" content="#F7F7F5" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="infinite hill" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="preload" as="image" href="/launch-sun.png" />
+    <title>infinite hill</title>
+    <style id="expo-reset">
+      html, body { height: 100%; }
+      body { overflow: hidden; }
+      #root { display: flex; height: 100%; flex: 1; }
+    </style>
+    <style id="ih-app-feel">
+      /* feel like an app, not a web page (QA 2026-09-26: "doesn't look smooth") */
+      html, body { background: #F7F7F5; margin: 0; overscroll-behavior: none; }
+      @media (min-width: 520px) { html, body { background: #E6E3DA; } }
+      html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+      * { touch-action: manipulation; }
+      body { -webkit-tap-highlight-color: transparent; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; }
+      body, div, span { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+      input, textarea, [contenteditable] { -webkit-user-select: text; user-select: text; }
+      * { scrollbar-width: none; }
+      *::-webkit-scrollbar { display: none; }
+      :focus:not(:focus-visible) { outline: none; }
+      :focus-visible { outline: 2px solid #0A0A0A; outline-offset: 2px; }
+      img { -webkit-user-drag: none; }
+      /* launch screen: shown until the app's first frame replaces it */
+      #launch { position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; background: #F7F7F5; }
+      #launch img { width: 132px; height: 132px; animation: ih-breathe 2.4s ease-in-out infinite; }
+      #launch span { font: 800 30px/1 system-ui, -apple-system, sans-serif; letter-spacing: -0.02em; color: #0A0A0A; }
+      @keyframes ih-breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.06); } }
+      @media (prefers-reduced-motion: reduce) { #launch img { animation: none; } }
+    </style>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run infinite hill.</noscript>
+    <div id="root"><div id="launch" aria-label="infinite hill is loading"><img src="/launch-sun.png" alt="" /><span>infinite hill</span></div></div>
+  </body>
+</html>

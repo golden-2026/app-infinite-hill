@@ -1,0 +1,27 @@
+{
+  "name": "golden-app-shell",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "patch:app": "node scripts/apply-platform-patch.mjs",
+    "predev": "npm run patch:app",
+    "prebuild": "npm run patch:app",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "db:init": "node scripts/init-db.js",
+    "test:state": "node scripts/test-state-api.js",
+    "test:unit": "node --test packages/domain/test/*.test.js packages/content/test/*.test.js tests/backend/*.test.js tests/features/*.test.js tests/features/*.test.mjs tests/netlify-adapter.test.js tests/pwa/*.test.js src/content/*.test.js scripts/*.test.js",
+    "test:e2e": "node scripts/run-e2e.mjs",
+    "test": "npm run test:unit && npm run test:e2e"
+  },
+  "dependencies": {
+    "@libsql/client": "^0.18.0",
+    "@netlify/blobs": "^10.7.13",
+    "@vitejs/plugin-react": "6.1.1",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "vite": "8.3.0"
+  }
+}
