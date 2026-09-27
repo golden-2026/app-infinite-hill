@@ -44,7 +44,7 @@ export default function Account() {
   };
   const askDelete = async () => {
     const ok = await confirmSheet({
-      title: `sure? ${derived.showedUp === 1 ? "your 1 day goes" : `all ${derived.showedUp} days go`} with it.`,
+      title: derived.showedUp ? `sure? ${derived.showedUp === 1 ? "your 1 day goes" : `all ${derived.showedUp} days go`} with it.` : "sure? everything here goes with it.",
       body: email ? "your account and everything in it, on every device. it can't be undone." : "everything on this phone. it can't be undone.",
       confirm: "yes, delete it all", cancel: "keep everything", destructive: true,
     });
@@ -62,13 +62,13 @@ export default function Account() {
         <Card>
           <Eyebrow>where your days live</Eyebrow>
           <Text style={[type.serif(18), { marginTop: 4 }]}>on this phone · {derived.showedUp} {derived.showedUp === 1 ? "day" : "days"}</Text>
-          <Body size={13} style={{ color: color.mute, marginTop: 6 }}>there are no accounts in the pilot — nothing about you leaves this phone. new phone? export a file here, then open infinite hill on the new one and bring your days from that file.</Body>
+          <Body size={13} style={{ color: color.mute, marginTop: 6 }}>there are no accounts in the pilot — your days, answers and book stay on this phone. (if you turn on reminders, the reminder time and your time zone go to our server so it can ring.) new phone? export a file here, then open infinite hill on the new one and bring your days from that file.</Body>
           <View style={{ gap: 8, marginTop: 12 }}>
             <Btn testID="export" onPress={exportData}>export my days</Btn>
             <ImportButton onText={(t) => { const r = importData(t); if (r.ok) toast(r.message); else setDataMsg(r.message); }} />
           </View>
           <View style={{ marginTop: 14, marginHorizontal: -16 }}>
-            <Row first a="share anonymous usage" b={analyticsAvailable() ? "helps us see where the app is confusing. only which screens you reach — never your answers, your words or your door's name." : "not collecting anything in this build."} toggle={saved.settings.analytics === "yes"} right={saved.settings.analytics === "yes" ? "on" : "off"} onPress={() => update({ analytics: saved.settings.analytics === "yes" ? "no" : "yes" })} />
+            <Row first a="share anonymous usage" b={analyticsAvailable() ? "helps us see where the app is confusing. only which screens you reach — never your answers, your words or your door's name." : "not collecting anything in this build."} toggle={analyticsAvailable() && saved.settings.analytics === "yes"} right={analyticsAvailable() && saved.settings.analytics === "yes" ? "on" : "off"} onPress={() => update({ analytics: saved.settings.analytics === "yes" ? "no" : "yes" })} />
           </View>
           {dataMsg ? <Body size={13} style={{ marginTop: 8 }}>{dataMsg}</Body> : null}
         </Card>

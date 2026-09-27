@@ -1,37 +1,39 @@
-// v175 Voices (the founding class) and KeeperDesk. Copy ported as-is pending the voices decision
-// (queue: decision #1); portraits and quotes come from the design build.
-import { art } from "@ih/brand";
+// v175 Voices (the founding class) and KeeperDesk, made truthful (CLAUDE.md product truth): a voice appears here only
+// once its licence is signed (lib/voice LICENSED_VOICES), and Keepers are named only once they have signed on. Until
+// then each section says plainly what's true. Nothing proposed is presented as signed.
 import { data, iconsShared, label } from "@ih/content";
-import { Image } from "expo-image";
 import { Text, View } from "react-native";
+import { LICENSED_VOICES } from "@/lib/voice";
 import { Face, color, font, type } from "@/ui";
 
-function Ambassador({ ic }: { ic: any }) {
+function Voice({ ic }: { ic: any }) {
   const cred = (data.BIO[ic.wing] || "").split(" · ")[0];
-  const q = data.QUOTES[ic.wing];
   return (
     <View style={{ width: "48.5%", backgroundColor: color.ink, borderRadius: 22, overflow: "hidden" }}>
       <Face ic={ic} w={"100%" as any} h={190} r={0} caption={false} big />
       <View style={{ padding: 14 }}>
         <Text style={{ fontFamily: font.display[800], fontSize: 17, color: "#fff" }}>{ic.name}</Text>
-        <Text style={[type.body(11), { color: "#ffffffbb", marginTop: 4 }]}>{label(ic.wing)} · Global Ambassador & Shareholder</Text>
-        <View style={{ alignSelf: "flex-start", marginTop: 10, borderWidth: 1, borderColor: "#ffffff55", borderRadius: 999, paddingVertical: 5, paddingHorizontal: 9 }}><Text style={[type.eyebrow(7), { color: "#fff" }]}>{cred}</Text></View>
-        <Text style={[type.eyebrow(8), { color: color.gold, marginTop: 12 }]}>Voice of the {label(ic.wing)} path</Text>
-        {q ? <Text style={{ fontFamily: font.display[500], fontStyle: "italic", fontSize: 12, lineHeight: 17, color: "#fff", marginTop: 8 }}>“{q}”</Text> : <Text style={{ fontFamily: font.display[500], fontStyle: "italic", fontSize: 12, color: "#ffffffaa", marginTop: 8 }}>“Why this matters to me.” — in {ic.short}'s own words, once signed.</Text>}
+        {cred ? <Text style={[type.body(11), { color: "#ffffffbb", marginTop: 4 }]}>{cred}</Text> : null}
+        <Text style={[type.eyebrow(8), { color: color.gold, marginTop: 12 }]}>reads the {label(ic.wing)} path</Text>
       </View>
     </View>
   );
 }
 
 export function Voices() {
+  const signed = iconsShared().filter((ic: any) => LICENSED_VOICES[ic.wing]);
   return (
     <View style={{ gap: 12 }}>
       <View>
-        <Text style={type.eyebrow()}>The founding class</Text>
-        <Text style={[type.h1(28), { marginTop: 6 }]}>your door has a voice. <Text style={{ fontFamily: font.display[500], fontStyle: "italic" }}>you already know it.</Text></Text>
-        <Text style={[type.body(), { marginTop: 8 }]}>eight people with no time, taking the time. in your ear for every lesson, in the faith they grew up in. not a gig — it matters to them.</Text>
+        <Text style={type.eyebrow()}>the voices</Text>
+        <Text style={[type.h1(28), { marginTop: 6 }]}>every door will have a voice.</Text>
+        <Text style={[type.body(), { marginTop: 8 }]}>
+          {signed.length
+            ? "these voices have signed and recorded. every other door is read by the house voice until its voice has too."
+            : "for now, every lesson is read by the house voice. a named voice appears here only once they've signed and recorded — never before."}
+        </Text>
       </View>
-      <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 10, justifyContent: "space-between" }}>{iconsShared().map((ic: any) => <Ambassador key={ic.wing} ic={ic} />)}</View>
+      {signed.length ? <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 10, justifyContent: "space-between" }}>{signed.map((ic: any) => <Voice key={ic.wing} ic={ic} />)}</View> : null}
     </View>
   );
 }
@@ -41,15 +43,10 @@ export function KeeperDesk() {
     <View style={{ gap: 8 }}>
       <Text style={type.eyebrow()}>the keepers</Text>
       <Text style={type.h1(26)}>the people who make sure we get it right.</Text>
-      <Text style={type.body()}>a scholar or teacher from each tradition reads every lesson before it's recorded. they can veto us. they have.</Text>
-      <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 10, justifyContent: "space-between", marginTop: 6 }}>
-        {data.KEEPERS.map(([t, n, c, p]: string[]) => { const a = art(p); return (
-          <View key={t} style={{ width: "48.5%", backgroundColor: "#fff", borderWidth: 1, borderColor: color.line, borderRadius: 16, overflow: "hidden" }}>
-            <View style={{ aspectRatio: 1, backgroundColor: "#7a6a3a" }}>{a ? <Image source={a.src} style={{ width: "100%", height: "100%" }} contentFit="cover" accessibilityLabel={n} /> : null}</View>
-            <View style={{ padding: 12 }}><Text style={type.eyebrow(7)}>{t}</Text><Text style={[type.serif(16), { marginTop: 3 }]}>{n}</Text><Text style={[type.body(11), { color: color.mute, marginTop: 2 }]}>{c}</Text></View>
-          </View>
-        ); })}
-      </View>
+      <Text style={type.body()}>
+        each tradition will have a Keeper — a scholar or teacher from inside it — who reads every lesson before it's recorded and can stop it.
+        we're asking them now. names appear here only once they've signed on, and every lesson says whether a Keeper has reviewed it. none has yet: these are pilot drafts.
+      </Text>
     </View>
   );
 }

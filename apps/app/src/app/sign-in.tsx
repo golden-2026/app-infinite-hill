@@ -16,7 +16,7 @@ function BeenHere() {
   return (
     <Screen sheet close={() => (router.canGoBack() ? router.back() : router.replace("/welcome"))} footer={<>
         <ImportButton kind="ink" onText={(t) => { const r = importData(t); setMsg(r.message); if (r.ok) setTimeout(() => router.replace("/today"), 900); }} />
-        <Btn kind="ghost" onPress={() => router.replace(derived.showedUp ? "/today" : "/welcome/moment")}>{derived.showedUp ? "back to today" : "start fresh"}</Btn>
+        <Btn kind="ghost" onPress={() => router.replace(derived.showedUp ? "/today" : "/welcome/door")}>{derived.showedUp ? "back to today" : "start fresh"}</Btn>
       </>}>
       <View style={{ flex: 1, justifyContent: "center", gap: 14 }}>
         <Sun size={64} />

@@ -88,7 +88,7 @@ export default function You() {
               ); }); })()}
             </View>
             <Text style={{ fontFamily: font.display[500], fontSize: 16, color: "#6b6448", marginTop: 12 }}>“Not I, nor anyone else can travel that road for you. You must travel it for yourself.” <Text style={type.eyebrow(7)}>— Walt Whitman</Text></Text>
-            <Text style={[type.body(12), { color: color.mute, marginTop: 12 }]}>Year one is the first mountain: five camps, about 330 lessons, ending with a whole text read start to finish. After that, the ranges — the deep texts, the schools, the mystics — years of them. Days are earned one at a time, and a missed day never resets you.</Text>
+            <Text style={[type.body(12), { color: color.mute, marginTop: 12 }]}>Year one is the first mountain: five camps, 331 days, ending with a whole text read start to finish. Camp one is written; the later camps are being written now. After that, the ranges — the deep texts, the schools, the mystics — years of them. Days are earned one at a time, and a missed day never resets you.</Text>
             <View style={{ marginTop: 12 }}><Btn kind="ghost" onPress={share}>share my day</Btn>{shareMsg ? <Text accessibilityLiveRegion="polite" style={[type.body(12), { color: color.mute, marginTop: 6 }]}>{shareMsg}</Text> : null}</View>
           </Card>
 
@@ -101,6 +101,11 @@ export default function You() {
                 <DoorGrid exclude={wing} current={st.visitWing} onPick={(w) => { update({ visitWing: w }); setAdding(false); }} />
                 {st.visitWing ? <Pressable accessibilityRole="button" onPress={() => { update({ visitWing: null, active: "home" }); setAdding(false); }} style={{ paddingBottom: 12 }}><Text style={[type.eyebrow(8), { color: color.mute }]}>stop walking {label(st.visitWing)}</Text></Pressable> : null}
               </View>
+            ) : null}
+            {st.profile ? (
+              <Row a="other traditions" b={{ stay: `stay on my path — never bring them up`, sometimes: `now and then, a similar idea from another tradition`, love: `show me similar ideas from other traditions` }[st.profile.openness]}
+                right={{ stay: "off", sometimes: "sometimes", love: "often" }[st.profile.openness]}
+                onPress={() => { const o = ({ stay: "sometimes", sometimes: "love", love: "stay" } as const)[st.profile!.openness]; update({ profile: { ...st.profile!, openness: o } }); }} />
             ) : null}
           </Group>
           <Group title="every day">
@@ -124,7 +129,7 @@ export default function You() {
             <Eyebrow>how the sun talks to you</Eyebrow>
             <Text style={[type.body(12.5), { color: color.mute, marginTop: 6 }]}>one a day, at sunset. never a guilt trip. never red.</Text>
             <View style={{ gap: 8, marginTop: 12 }}>
-              {SUN_NOTES(wing, ic.short, (data.DAY1[wing] || data.DAY1.SPIRITUAL).word).map(([t, m]: [string, string]) => (
+              {SUN_NOTES(wing, voiceLabel(wing, ic.short).short, (data.DAY1[wing] || data.DAY1.SPIRITUAL).word).map(([t, m]: [string, string]) => (
                 <View key={t} style={{ backgroundColor: "#F2F2EC", borderRadius: 14, paddingVertical: 10, paddingHorizontal: 12, flexDirection: "row", gap: 10 }}>
                   <Sun size={26} />
                   <View style={{ flex: 1 }}><Text style={type.eyebrow(7)}>infinite hill · {t}</Text><Text style={[type.body(13), { marginTop: 3 }]}>{m}</Text></View>

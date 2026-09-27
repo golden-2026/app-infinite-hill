@@ -1,23 +1,32 @@
 // A slot: a child renders content into a place its parent owns, without the parent re-rendering.
 // Lessons use it so each step hands its main button to the pinned bottom bar (app review 2026-09-26:
 // "next" sat mid-screen on some steps and at the bottom on others).
-import { createContext, useContext, useId, useLayoutEffect, useReducer, useRef, type ReactNode } from "react";
+//
+// The host reads an immutable snapshot through useSyncExternalStore. It used to render from a Map mutated in
+// place, which React Compiler (app.json experiments.reactCompiler) memoized on that same Map, so the bar kept
+// showing the previous step's button: CHECK stayed disabled on tap-what-you-hear and every lesson from day 2 on
+// could not be finished (walk 2026-09-27). A new snapshot object per change makes every update visible.
+import { createContext, useCallback, useContext, useId, useLayoutEffect, useRef, useSyncExternalStore, type ReactNode } from "react";
 
-type Slot = { nodes: Map<string, ReactNode>; listeners: Set<() => void>; set: (id: string, node: ReactNode | null) => void };
+type Slot = { subscribe: (l: () => void) => () => void; get: () => ReactNode[]; set: (id: string, node: ReactNode | null) => void };
 
 function makeSlot(): Slot {
-  const slot: Slot = {
-    nodes: new Map(),
-    listeners: new Set(),
+  const nodes = new Map<string, ReactNode>();
+  const listeners = new Set<() => void>();
+  let snapshot: ReactNode[] = [];
+  return {
+    subscribe(l) { listeners.add(l); return () => { listeners.delete(l); }; },
+    get: () => snapshot,
     set(id, node) {
-      if (node == null) slot.nodes.delete(id);
-      else slot.nodes.set(id, node);
-      slot.listeners.forEach((l) => l());
+      if (node == null) { if (!nodes.delete(id)) return; } else nodes.set(id, node);
+      snapshot = [...nodes.values()];
+      listeners.forEach((l) => l());
     },
   };
-  return slot;
 }
 
+const EMPTY: ReactNode[] = [];
+const noopSubscribe = () => () => {};
 const SlotContext = createContext<Slot | null>(null);
 
 export function SlotProvider({ children }: { children: ReactNode }) {
@@ -29,16 +38,10 @@ export function SlotProvider({ children }: { children: ReactNode }) {
 /** Where the slot's content shows. `render` gets it only when something filled the slot. */
 export function SlotHost({ render }: { render: (content: ReactNode) => ReactNode }) {
   const slot = useContext(SlotContext);
-  const [, bump] = useReducer((n: number) => n + 1, 0);
-  useLayoutEffect(() => {
-    if (!slot) return;
-    slot.listeners.add(bump);
-    // A fill that mounted in the same commit ran its effect before this host subscribed: show it now.
-    if (slot.nodes.size) bump();
-    return () => { slot.listeners.delete(bump); };
-  }, [slot]);
-  if (!slot || slot.nodes.size === 0) return null;
-  return <>{render([...slot.nodes.values()])}</>;
+  const get = useCallback(() => (slot ? slot.get() : EMPTY), [slot]);
+  const nodes = useSyncExternalStore(slot ? slot.subscribe : noopSubscribe, get, get);
+  if (nodes.length === 0) return null;
+  return <>{render(nodes)}</>;
 }
 
 /** Sends its children to the nearest SlotHost. Without one (a step shown on its own), renders in place. */

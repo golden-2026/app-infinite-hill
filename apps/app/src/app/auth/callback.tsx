@@ -3,11 +3,14 @@ import { router } from "expo-router";
 import { useEffect } from "react";
 import { View } from "react-native";
 import { useAuth } from "@/lib/auth";
+import { accountsOn } from "@/lib/supabase";
 import { Body, Screen, Sun } from "@/ui";
 
 export default function AuthCallback() {
   const { session, ready } = useAuth();
   useEffect(() => {
+    // Accounts off in this build: there's no sign-in to finish, so don't pretend ("signing you in…" then bounce).
+    if (!accountsOn()) { router.replace("/"); return; }
     if (!ready) return;
     let next = "/today";
     try { next = sessionStorage.getItem("ih:after-auth") || next; sessionStorage.removeItem("ih:after-auth"); } catch {}

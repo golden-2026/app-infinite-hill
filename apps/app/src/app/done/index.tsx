@@ -5,6 +5,7 @@ import { Text, View } from "react-native";
 import { useDone } from "@/lib/done";
 import { speak } from "@/lib/sound";
 import { useStore } from "@/lib/store";
+import { LICENSED_VOICES } from "@/lib/voice";
 import { Btn, Face, Guy, Screen, color, font, type } from "@/ui";
 
 // v175 PostLesson step 0: proud of you.
@@ -21,7 +22,7 @@ export default function Proud() {
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: 14 }}>
         {day === 21 ? <Guy pose="jump" h={170} /> : day % 7 === 0 ? <Guy pose="joy" h={170} /> : <Face ic={ic} w={140} h={140} r={70} caption={false} big />}
         <Text accessibilityRole="header" style={[type.title(), { marginTop: 8, textAlign: "center" }]}>{day === 21 ? "camp one. done." : day % 7 === 0 ? `week ${day / 7}. yours.` : `you did day ${said}.`}</Text>
-        <Text style={[type.body(16), { textAlign: "center" }]}>proud of you. see you tomorrow.{"\n"}<Text style={{ color: color.mute }}>— {ic.short}</Text></Text>
+        <Text style={[type.body(16), { textAlign: "center" }]}>proud of you. see you tomorrow.{"\n"}<Text style={{ color: color.mute }}>— {LICENSED_VOICES[p.door] ? ic.short : "infinite hill"}</Text></Text>
         <View style={{ flexDirection: "row", gap: 8, width: "100%", marginTop: 18 }}>
           {tiles.map(([n, l]) => (
             <View key={l} style={{ flex: 1, backgroundColor: "#fff", borderWidth: 1.5, borderColor: color.ink, borderRadius: 16, paddingVertical: 12, paddingHorizontal: 8, alignItems: "center" }}>

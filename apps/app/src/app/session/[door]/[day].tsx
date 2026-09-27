@@ -10,7 +10,7 @@ import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { hush, bell, speak } from "@/lib/sound";
 import { useStore } from "@/lib/store";
-import { voiceLabel } from "@/lib/voice";
+import { LICENSED_VOICES, voiceLabel } from "@/lib/voice";
 import { BetStep, BreathStep, ForkStep, MatchStep, MythStep, OptionStep, OrderStep, OriginalStep, SitStep, SpeakStep, TapHear, TrapdoorStep } from "@/session/steps";
 import { BottomBar, Btn, Face, Guy, NavBar, Sun, color, confirmSheet, font, type } from "@/ui";
 import { successHaptic, tapHaptic } from "@/lib/haptics";
@@ -40,7 +40,7 @@ function Session({ door, day, kidId, mode, voiceOn, onFinish }: { door: string; 
   const ic = icon(door);
   useTitle(`${label(door).toLowerCase()} · day ${day}`);
   useChrome(true);
-  const plan = useMemo(() => planDay({ wing: door, day, mode }), [door, day, mode]);
+  const plan = useMemo(() => planDay({ wing: door, day, mode, named: !!LICENSED_VOICES[door] }), [door, day, mode]);
   const [queue, setQueue] = useState<number[]>(() => plan.steps.map((s) => s.id));
   const [qi, setQi] = useState(0);
   const [phase, setPhase] = useState<"play" | "fixintro" | "fix">("play");
@@ -147,7 +147,7 @@ function Session({ door, day, kidId, mode, voiceOn, onFinish }: { door: string; 
               </View>
             </View>
           }
-          right={<Text style={[type.eyebrow(), { color: "#ffffff99", paddingRight: 10, opacity: step.type === "tally" ? 0 : 1 }]}>{phase === "play" ? `${Math.min(qi + 1, queue.length)}/${queue.length}` : `again ${Math.min(qi + 1, Math.max(1, queue.length - 1))}/${Math.max(1, queue.length - 1)}`}</Text>}
+          right={<Text style={[type.eyebrow(), { color: "#ffffff99", paddingRight: 10, opacity: step.type === "tally" ? 0 : 1 }]}>{phase === "play" ? `${Math.min(qi + 1, queue.length)}/${queue.length}` : phase === "fix" ? `again ${Math.min(qi + 1, Math.max(1, queue.length - 1))}/${Math.max(1, queue.length - 1)}` : ""}</Text>}
         />
         <View style={st.who}>
           <Face ic={ic} w={36} h={36} r={18} caption={false} />
@@ -221,7 +221,7 @@ function Session({ door, day, kidId, mode, voiceOn, onFinish }: { door: string; 
               </View>
             ))}
           </View>
-          <Text style={{ fontFamily: font.display[500], fontSize: 17, color: "#ffffffcc", marginTop: 8, textAlign: "center" }}>your line: <Text style={{ fontStyle: "italic" }}>{plan.carry}.</Text></Text>
+          <Text style={{ fontFamily: font.display[500], fontSize: 17, color: "#ffffffcc", marginTop: 8, textAlign: "center" }}>your line: <Text style={{ fontStyle: "italic" }}>{/[.?!…]$/.test(plan.carry) ? plan.carry : `${plan.carry}.`}</Text></Text>
           {nat ? <View style={st.bead}><Text style={{ fontFamily: font.display[800], fontSize: 22, color: color.gold }}>{nat}</Text><Text style={[type.eyebrow(), { color: "#ffffffbb" }]}>bead {Math.min(day, 21)} of 21 · on your strand</Text></View> : null}
           {tomorrow ? <View style={st.tomorrow}><Text style={[type.eyebrow(), { color: color.gold }]}>tomorrow</Text><Text style={{ fontFamily: font.display[800], fontSize: 17, color: "#fff", marginTop: 4 }}>{tomorrow}</Text></View> : null}
         </View>,

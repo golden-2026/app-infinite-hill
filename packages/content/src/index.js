@@ -3,6 +3,17 @@
 import data from "../generated/data.js";
 import * as logic from "../generated/logic.js";
 
+// Camps 2–5 are outline titles lifted from the design doc; a few are editing notes, not titles ("as in the Catholic
+// lane above" ×38, "public-domain translation"). Shown to people as "tomorrow: as in the Catholic lane above", so
+// until those camps are written, a scrap falls back to the camp's own name (e.g. "the stories").
+const OUTLINE_SCRAP = /\blane above\b|^public-domain translation$|^one verse carried per day/i;
+for (const camps of Object.values(data.LATER || {})) {
+  for (const [camp, titles] of Object.entries(camps)) {
+    const name = (data.CAMPS.find(([c]) => c === camp) || [])[1];
+    if (name && Array.isArray(titles)) camps[camp] = titles.map((t) => (typeof t === "string" && OUTLINE_SCRAP.test(t.trim()) ? name.toLowerCase() : t));
+  }
+}
+
 export { data };
 export const { lessonInfo, buildDay, icon, label, pos, camp1, native, skyFor, faceFor, trailX, placeFromScore, guideFallback, iconsShared, splitBeats, screenLines, parseDur } = logic;
 export const KNOW = logic.KNOW;
@@ -10,12 +21,18 @@ export const SUN_NOTES = logic.SUN_NOTES;
 export const STRAND_WORDS = logic.STRAND_WORDS;
 export const DOORS = data.DOORS; // [label, key]; the design build's fake counts are removed at extraction
 
+// Day one's welcome in the house voice. v175's WELCOME is written in the first person as each proposed celebrity
+// voice; it's used only when that voice is licensed (`named`), never put in an unsigned person's mouth.
+const HOUSE_WELCOME = "Hey. Day one. Before anything else, three promises. It's a few minutes a day. A missed day never costs you anything. And nobody here will tell you what to believe. One word, one breath, one line to carry. Let's begin.";
+
 /** The day's segments, exactly as v175 Session assembled them (welcome inserted on day 1). */
-export function segmentsFor(wing, day, lesson = day) {
+export function segmentsFor(wing, day, lesson = day, { named = false } = {}) {
   const ic = icon(wing);
   const info = lessonInfo(wing, lesson);
   const d1 = data.DAY1[wing] || data.DAY1.SPIRITUAL;
-  const welcome = { type: "a welcome", duration: "30 sec", voice: data.WELCOME[wing] || data.WELCOME.SPIRITUAL, screen: [`A WELCOME FROM ${ic.name.toUpperCase()}`] };
+  const welcome = named
+    ? { type: "a welcome", duration: "30 sec", voice: data.WELCOME[wing] || data.WELCOME.SPIRITUAL, screen: [`A WELCOME FROM ${ic.name.toUpperCase()}`] }
+    : { type: "a welcome", duration: "30 sec", voice: HOUSE_WELCOME, screen: ["A WELCOME"] };
   const base = info ? info.segments : [
     { type: "the bell", duration: "2 sec", voice: "", screen: ["DAY ONE."] },
     { type: "the hook", duration: "20 sec", voice: d1.hook.join(" "), screen: d1.hook.map((t) => t.toUpperCase()) },
@@ -44,8 +61,8 @@ function pacedStep(wing, type) {
 }
 
 /** Everything a session screen needs: ordered steps, the word and the carry line. Real sit times. */
-export function planDay({ wing, day, lesson = day, mode = "adult" }) {
-  const { info, d1, segs } = segmentsFor(wing, day, lesson);
+export function planDay({ wing, day, lesson = day, mode = "adult", named = false }) {
+  const { info, d1, segs } = segmentsFor(wing, day, lesson, { named });
   const R = buildDay({ wing, day, lesson, data: info, d1, segs, demoFast: false, mode });
   let steps = R.steps;
   if (mode === "adult") {
@@ -57,6 +74,12 @@ export function planDay({ wing, day, lesson = day, mode = "adult" }) {
       const tally = steps.length - 1; // just before the tally
       steps = [...steps.slice(0, tally), { ...extra, id: nextId, newToday: true }, ...steps.slice(tally)];
     }
+  }
+  if (!named) {
+    // v175 prompts address the proposed voice by name ("say it back to Priyanka"); without a licence, address nobody.
+    const short = icon(wing).short;
+    const unname = (t) => (typeof t === "string" ? t.replace(`${short}'s ideas`, "the ideas").replace(` back to ${short}`, " back") : t);
+    steps = steps.map((s) => ({ ...s, prompt: unname(s.prompt), hint: unname(s.hint) }));
   }
   return { steps, word: R.word, carry: R.carry, title: info?.title || d1.title || "", info };
 }

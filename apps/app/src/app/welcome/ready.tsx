@@ -1,5 +1,5 @@
 import { track } from "@/lib/analytics";
-import { DOORS } from "@ih/content";
+import { doorParam } from "@/lib/door-param";
 import { router, useLocalSearchParams } from "expo-router";
 import { useEffect } from "react";
 import { Text, View } from "react-native";
@@ -11,7 +11,7 @@ import { WelcomeFrame } from "@/ui/welcome-frame";
 export default function Ready() {
   useEffect(() => { track("onboard_step", { step: "ready" }); }, []);
   const { door: raw } = useLocalSearchParams<{ door?: string }>();
-  const door = DOORS.some(([, w]) => w === raw) ? String(raw) : "SPIRITUAL"; // unknown doors in a URL never get saved
+  const door = doorParam(raw) || "SPIRITUAL"; // unknown doors in a URL never get saved
   const { update } = useStore();
   useEffect(() => {
     const t = setTimeout(() => {
@@ -22,7 +22,7 @@ export default function Ready() {
     return () => clearTimeout(t);
   }, [door, update]);
   return (
-    <WelcomeFrame step={4} door={door}>
+    <WelcomeFrame step={6} door={door}>
       <View style={{ alignItems: "center", gap: 18 }}>
         <Guy pose="path" h={180} />
         <Text style={[type.h1(24), { textAlign: "center", maxWidth: 280 }]}>

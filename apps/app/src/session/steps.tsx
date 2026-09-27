@@ -327,7 +327,7 @@ export function MythStep({ step, onDone }: { step: any; onDone: Done }) {
       })}
       {done ? (
         <View style={{ gap: 10, marginTop: 4 }}>
-          <Text style={[type.eyebrow(), { color: color.gold, textAlign: "center" }]}>{right} of {n}. {right === n ? "right on." : "not quite. that's day one."}</Text>
+          <Text style={[type.eyebrow(), { color: color.gold, textAlign: "center" }]}>{right} of {n}. {right === n ? "right on." : "not quite. that's what the week is for."}</Text>
           <SlotFill><Btn kind="gold" onPress={() => onDone(right === n)}>next</Btn></SlotFill>
         </View>
       ) : null}

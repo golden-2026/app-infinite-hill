@@ -1,5 +1,5 @@
 import { useTitle } from "@/lib/title";
-// v175 Review: three words from your strand come back. No hearts; misses come back sooner.
+// v175 Review: your three latest strand words come back. No hearts. (Misses aren't scheduled separately yet.)
 import { STRAND_WORDS, data } from "@ih/content";
 import { router } from "expo-router";
 import { useMemo, useState } from "react";
@@ -15,7 +15,9 @@ export default function Review() {
   const due = useMemo(() => { const w = strand.filter((s) => data.REVIEW_Q[s.word]); return (w.length ? w : strand).slice(-3).reverse(); }, [door, lesson]); // eslint-disable-line react-hooks/exhaustive-deps
   // v175 stored the right answer first; shuffle (stable per word) so it isn't always the top option
   const items = due.map((s) => {
-    const q = data.REVIEW_Q[s.word] || { q: `${s.word} — remember it?`, o: [s.title, "a prayer", "a festival"], a: 0 };
+    // Words without a written review question: pick its lesson's title among two other titles from your own strand.
+    const others = strand.filter((x) => x.word !== s.word && x.title && x.title !== s.title).map((x) => x.title).slice(-2);
+    const q = data.REVIEW_Q[s.word] || { q: `${s.word} — which lesson was it?`, o: [s.title, ...(others.length === 2 ? others : [...others, "not one I've had yet"].slice(0, 2))], a: 0 };
     const order = q.o.map((_: string, i: number) => i).sort((x: number, y: number) => ((x * 7 + s.word.length * 3) % 5) - ((y * 7 + s.word.length * 3) % 5));
     return { ...s, q: q.q, o: order.map((i: number) => q.o[i]), a: order.indexOf(q.a) };
   });
@@ -49,7 +51,8 @@ export default function Review() {
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: 12 }}>
         <Guy pose={right === items.length ? "jump" : "peace"} h={170} />
         <Text style={type.h1(30)}>{items.length === 1 ? (right ? "still yours." : "almost. it's still yours.") : `${right} of ${items.length}. still yours.`}</Text>
-        <Text style={[type.body(), { color: color.mute, textAlign: "center" }]}>{items.length === 1 ? (right ? "next time it'll wait longer before coming back." : "it'll come back sooner. no hearts.") : right === items.length ? "next time they'll wait longer before coming back." : "the ones you missed come back sooner. no hearts."}</Text>
+        <Text style={[type.body(), { color: color.mute, textAlign: "center" }]}>{/* Review picks your latest strand words; misses aren't scheduled yet, so don't promise spacing that doesn't exist. */}
+          {items.length === 1 ? (right ? "it's yours. review any day." : "look at it again tomorrow. no hearts.") : right === items.length ? "all yours. review any day." : "look at the ones you missed again tomorrow. no hearts."}</Text>
       </View>
     </Screen>
   );

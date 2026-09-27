@@ -80,17 +80,19 @@ export default function Today() {
 
         {(() => {
           const seen = st.unlocksSeen || [];
-          const card = derived.showedUp >= 7 && !seen.includes("together") ? { key: "together", title: "a week in. meet who's walking with you.", body: "the founding class and the keepers are in together.", to: "/together" }
-            : derived.showedUp >= 3 && !seen.includes("guide") ? { key: "guide", title: `${derived.showedUp} words in. the guide is worth asking now.`, body: "ask about any word you've learned — it answers from your lessons.", to: "/guide" } : null;
+          const card = derived.showedUp >= 7 && !seen.includes("together") ? { key: "together", title: "a week in. meet who's walking with you.", body: "the bell at sundown, and who reads your lessons.", to: "/together" }
+            : derived.showedUp >= 3 && !seen.includes("guide") ? { key: "guide", title: `${derived.showedUp} days in. the guide is worth asking now.`, body: "ask about any word you've learned — it answers from your lessons.", to: "/guide" } : null;
           if (!card) return null;
           const open = () => { track("unlock_seen", { unlock: card.key }); update({ unlocksSeen: [...seen, card.key] }); router.push(card.to as any); };
+          // The card and its ✕ are siblings: a pressable card containing the ✕ nested a <button> in a <button> on web
+          // (invalid HTML; in dev its error toast covered the done screen's continue button).
           return (
-            <Card style={{ marginHorizontal: 18, marginBottom: 12, flexDirection: "row", gap: 12, alignItems: "center" }} onPress={open} label={card.title}>
-              <View style={{ flex: 1 }}>
+            <Card style={{ marginHorizontal: 18, marginBottom: 12, flexDirection: "row", gap: 12, alignItems: "center" }}>
+              <Pressable accessibilityRole="button" accessibilityLabel={card.title} onPress={open} style={({ pressed }) => ({ flex: 1, opacity: pressed ? 0.8 : 1 })}>
                 <Text style={[type.eyebrow(9), { color: color.ink }]}>new for you</Text>
                 <Text style={{ fontFamily: font.display[800], fontSize: 16, color: color.ink, marginTop: 4 }}>{card.title}</Text>
                 <Text style={[type.body(12), { color: color.mute, marginTop: 2 }]}>{card.body}</Text>
-              </View>
+              </Pressable>
               <Pressable accessibilityRole="button" accessibilityLabel="Dismiss" onPress={() => update({ unlocksSeen: [...seen, card.key] })} hitSlop={10}><Text style={type.eyebrow(12)}>✕</Text></Pressable>
             </Card>
           );
@@ -147,11 +149,12 @@ export default function Today() {
           ) : null /* the floating "start day N" button above the tab bar is the one start action */}
 
           <Pressable accessibilityRole="link" onPress={() => router.push("/together")} style={s.pill}>
-            <Text style={type.eyebrow(8)}>sundown 7:00 · the bell</Text>
+            <Text style={type.eyebrow(8)}>sundown · the bell</Text>
             <Text style={[type.eyebrow(8), { color: color.mute }]}>together ›</Text>
           </Pressable>
 
-          {lastNext === "home" ? (
+          {/* Other doors are only put in front of people who said they're open to them (lib/profile openness). */}
+          {st.profile?.openness === "stay" && st.homeWing !== "SPIRITUAL" ? null : lastNext === "home" ? (
             <Pressable accessibilityRole="button" onPress={() => {
               const others = DOORS.map(([, x]) => x).filter((x) => x !== st.homeWing && x !== st.visitWing);
               update({ visitWing: others[derived.showedUp % others.length], active: "visit" });
@@ -166,7 +169,7 @@ export default function Today() {
                 {(() => {
                   const order: string[] = (data.MOMENTS.find(([id]: [string]) => id === st.reason) || [])[2] || [];
                   const rank = (w: string) => (order.indexOf(w) === -1 ? 99 : order.indexOf(w));
-                  return DOORS.filter(([, w]) => w !== st.homeWing).sort((a, b) => rank(a[1]) - rank(b[1]));
+                  return DOORS.filter(([, w]) => w !== st.homeWing && w !== (st.active === "visit" ? st.visitWing : null)).sort((a, b) => rank(a[1]) - rank(b[1]));
                 })().map(([l, w]) => {
                   const d1 = lessonInfo(w, lessonFor(w)) || data.DAY1[w] || {}; // the lesson it will actually open
                   return (

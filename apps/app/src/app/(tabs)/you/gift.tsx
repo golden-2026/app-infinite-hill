@@ -6,7 +6,7 @@ import { Body, Card, Eyebrow, Screen, color, font, type } from "@/ui";
 
 const COPY: Record<string, string> = {
   "my kid": "They check their phone 144 times a day. Give them a few minutes of it back.",
-  "my parent": "They gave you your first prayer. Give them a place to keep it, read slowly, by a voice they'd trust.",
+  "my parent": "They gave you your first prayer. Give them a place to keep it, read slowly, in their own tradition's words.",
   "a friend": "They said they've been 'kind of a mess lately.' You can't fix that. You can hand them a door.",
 };
 
@@ -27,10 +27,10 @@ export default function Gift() {
       {[["The first 100 days", "long enough to become a habit", "$19"], ["A year", "the first mountain, all five camps", "$39.99"], ["The table", "a year for six", "$99"]].map(([a, b, p]) => (
         <Card key={a} style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
           <View><Text style={type.serif(20)}>{a}</Text><Body size={12} style={{ color: color.mute }}>{b}</Body></View>
-          <Text style={type.serif(22)}>{p}</Text>
+          <View style={{ alignItems: "flex-end" }}><Text style={type.serif(22)}>{p}</Text><Text style={type.eyebrow(7)}>planned</Text></View>
         </Card>
       ))}
-      <Card dark><Text style={[type.eyebrow(), { color: color.gold }]}>during the pilot</Text><Body style={{ color: "#fff", marginTop: 6 }}>gifts open after the founding pilot. until then, the easiest gift is free: send them the link and sit the same night.</Body></Card>
+      <Card dark><Text style={[type.eyebrow(), { color: color.gold }]}>during the pilot</Text><Body style={{ color: "#fff", marginTop: 6 }}>gifts open after the founding pilot. until then, none of these can be bought yet. the easiest gift is free: tell them about infinite hill and sit the same night.</Body></Card>
     </Screen>
   );
 }

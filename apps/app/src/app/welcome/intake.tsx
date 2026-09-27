@@ -1,0 +1,74 @@
+import { track } from "@/lib/analytics";
+import { useTitle } from "@/lib/title";
+import { router } from "expo-router";
+import { useEffect, useState } from "react";
+import { Text, View } from "react-native";
+import { intakeReply, nextIntake } from "@/content/intake";
+import { emptyProfile } from "@/lib/profile";
+import { useStore } from "@/lib/store";
+import { Btn, Eyebrow, Link, Opt, type } from "@/ui";
+import { Host } from "@/ui/host";
+import { WelcomeFrame } from "@/ui/welcome-frame";
+
+// "my own path": no single religion. Get to know the person one question at a time — where they came from, what
+// turned them off or on, what they believe, how they are lately, what sounds good — then suggest a few things
+// from different traditions. Never asks them to choose a religion.
+type Answers = Record<string, string | string[]>;
+
+export default function Intake() {
+  useEffect(() => { track("onboard_step", { step: "intake" }); }, []);
+  useTitle("getting to know you");
+  const { update, saved, today } = useStore();
+  const [answers, setAnswers] = useState<Answers>({});
+  const [history, setHistory] = useState<string[]>([]);
+  const [multi, setMulti] = useState<string[]>([]);
+  const [reply, setReply] = useState<string | null>(null);
+  const q = nextIntake(answers);
+
+  useEffect(() => {
+    if (q) return;
+    const prev = saved.settings.profile?.door === "SPIRITUAL" ? saved.settings.profile : emptyProfile("SPIRITUAL", today);
+    update({ profile: { ...prev, answers: { ...prev.answers, ...answers } } });
+    router.replace("/welcome/suggest");
+  }, [q]); // eslint-disable-line react-hooks/exhaustive-deps
+  if (!q) return null;
+
+  const commit = (a: string | string[] | null) => {
+    const next = { ...answers, [q.id]: a ?? "skipped" };
+    setAnswers(next);
+    setHistory((h) => [...h, q.id]);
+    setMulti([]);
+    setReply(a ? intakeReply(q.id, a) : null);
+  };
+  const back = () => {
+    const last = history[history.length - 1];
+    if (!last) return router.back();
+    const next = { ...answers };
+    delete next[last];
+    setAnswers(next);
+    setHistory((h) => h.slice(0, -1));
+    setMulti([]);
+    setReply(null);
+  };
+  const asked = history.length + 1;
+  const footer = q.multi
+    ? <Btn disabled={!multi.length} onPress={() => commit(multi)}>{multi.length ? "that's me" : "pick any that fit"}</Btn>
+    : q.optional ? <Btn kind="ghost" onPress={() => commit(null)}>rather not say</Btn> : undefined;
+  return (
+    <WelcomeFrame step={2 + Math.min(1, history.length / 6)} door="SPIRITUAL" footer={footer}>
+      <Eyebrow style={{ textAlign: "center" }}>{`getting to know you · ${asked}`}</Eyebrow>
+      {reply ? <Text style={[type.body(14), { textAlign: "center", fontStyle: "italic" }]}>{reply}</Text> : null}
+      <Host>{q.ask}</Host>
+      <View style={{ gap: 8 }} accessibilityRole={q.multi ? undefined : "radiogroup"}>
+        {q.choices.map((c) => (
+          <Opt key={c.id} big testID={`${q.id}-${c.id}`} on={q.multi ? multi.includes(c.id) : answers[q.id] === c.id}
+            onPress={() => (q.multi ? setMulti((m) => (m.includes(c.id) ? m.filter((x) => x !== c.id) : [...m, c.id])) : commit(c.id))}>
+            {c.label}
+          </Opt>
+        ))}
+      </View>
+      {q.note ? <Text style={[type.caption(), { textAlign: "center" }]}>{q.note}</Text> : null}
+      {history.length ? <View style={{ alignItems: "center" }}><Link onPress={back}>‹ previous question</Link></View> : null}
+    </WelcomeFrame>
+  );
+}

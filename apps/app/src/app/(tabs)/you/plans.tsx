@@ -6,8 +6,8 @@ import { Body, Card, Eyebrow, Guy, Screen, color, font, type } from "@/ui";
 
 const P: [string, string, string, string, string[]][] = [
   ["The house", "$0", "", "every door, every lesson, every day.", ["Every door, every camp, every lesson", "Every tradition's texts, cover to cover", "Missed days are free — always"]],
-  ["infinite hill plus", "$39.99", "per year · or $4.99/mo", "no ads. offline. the deeper sessions. the guide.", ["No ads, anywhere", "The deeper sessions — the full readings, the long texts", "The Guide, unlimited", "Download and listen offline"]],
-  ["The table", "$99", "per year · up to 6", "plus, for six people. grandparents to grandkids.", ["Everything in plus, for six", "Each person on their own hill"]],
+  ["infinite hill plus", "$39.99", "planned · per year or $4.99/mo · not on sale in the pilot", "no ads. offline. the deeper sessions. the guide.", ["No ads, anywhere", "The deeper sessions — the full readings, the long texts", "The Guide, unlimited", "Download and listen offline"]],
+  ["The table", "$99", "planned · per year, up to 6 · not on sale in the pilot", "plus, for six people. grandparents to grandkids.", ["Everything in plus, for six", "Each person on their own hill"]],
 ];
 
 export default function Plans() {

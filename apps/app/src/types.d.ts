@@ -20,7 +20,7 @@ declare module "@ih/content" {
   export const data: any;
   export const DOORS: [string, string][];
   export const GRADED: readonly string[];
-  export function planDay(o: { wing: string; day: number; lesson?: number; mode?: string }): { steps: any[]; word: string; carry: string; title: string; info: any };
+  export function planDay(o: { wing: string; day: number; lesson?: number; mode?: string; named?: boolean }): { steps: any[]; word: string; carry: string; title: string; info: any };
   export function lessonInfo(wing: string, lesson: number): any;
   export function icon(wing: string): { wing: string; name: string; short: string; tint: string };
   export function label(wing: string): string;

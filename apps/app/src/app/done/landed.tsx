@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Pressable, Text, View } from "react-native";
 import { useDone } from "@/lib/done";
 import { ChevronRight } from "@/ui/tab-icons";
+import { bridgeFor } from "@/lib/profile";
 import { useStore } from "@/lib/store";
 import { Btn, Eyebrow, Guy, Screen, color, font, toast, type } from "@/ui";
 
@@ -22,10 +23,14 @@ export default function Landed() {
       const others = DOORS.map(([, w]) => w).filter((w) => w !== p.door && w !== saved.settings.homeWing);
       update({ visitWing: others[Math.floor(Math.random() * others.length)] }); // offered on Today; your door stays active
     }
-    go(p.newDay === "1" ? "/done/light" : "/done/lit");
+    // A "similar idea, next door" offer only for people who said they're open to it (see lib/profile bridgeFor).
+    if (next !== "nearby" && bridgeFor(saved.settings.profile ?? null, p.door, p.word, today)) go("/done/bridge");
+    else go(p.newDay === "1" ? "/done/light" : "/done/lit");
   };
+  const stayOnly = saved.settings.profile?.openness === "stay";
   const V: [string, string, string][] = [["keep", "keep it", color.gold], ["ok", "it was fine", "#fff"], ["no", "not for me", "#fff"]];
-  const N: [string, string][] = [["more", verdict === "no" ? "something different from this door" : "more like this"], ["home", visiting ? "back to my own door" : "keep walking my door"], ["nearby", "a door nearby · surprise me"]];
+  // "a door nearby" puts another religion in front of someone, so it's never offered to people who want to stay on their path.
+  const N: [string, string][] = [["more", verdict === "no" ? "something different from this door" : "more like this"], ["home", visiting ? "back to my own door" : "keep walking my door"], ...(stayOnly ? [] : [["nearby", "a door nearby · surprise me"] as [string, string]])];
   return (
     <Screen close={close} footer={verdict ? undefined : <Btn kind="ghost" onPress={() => signal(null)}>skip</Btn>}>
       <View style={{ flex: 1, justifyContent: "center", gap: 14 }}>

@@ -6,7 +6,8 @@ import { timeZone, today } from "./time";
 
 type StoreLike = { saved: { deviceId: string; settings: { reminder: { on: boolean; time: string } } }; derived: { doneToday: boolean }; update: (p: any) => void };
 
-const FN = `${process.env.EXPO_PUBLIC_SUPABASE_URL}/functions/v1/reminders`;
+// No server configured (local/static builds): no URL, so nothing is sent to "undefined/functions/v1/reminders".
+const FN = process.env.EXPO_PUBLIC_SUPABASE_URL ? `${process.env.EXPO_PUBLIC_SUPABASE_URL}/functions/v1/reminders` : null;
 const SECRET_KEY = "ih:device-secret";
 
 function deviceSecret(): string {
@@ -46,6 +47,7 @@ const b64ToBytes = (b64: string) => {
 };
 
 async function post(body: object) {
+  if (!FN) return false;
   const res = await fetch(FN, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(body) });
   return res.ok;
 }
@@ -54,7 +56,7 @@ async function subscription(create: boolean) {
   const reg = (await navigator.serviceWorker.getRegistration()) || (await registerWorker());
   if (!reg) return null;
   const existing = await reg.pushManager.getSubscription();
-  if (existing || !create) return existing;
+  if (existing || !create || !FN) return existing;
   const { publicKey } = await (await fetch(FN)).json();
   return reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: b64ToBytes(publicKey) });
 }

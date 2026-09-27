@@ -7,6 +7,7 @@ import { useRef, useState } from "react";
 import { KeyboardAvoidingView, Platform, Pressable, ScrollView, Text, TextInput, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { flag } from "@/lib/flags";
+import { guideProfile } from "@/lib/profile";
 import { useStore } from "@/lib/store";
 import { Eyebrow, Guy, Sun, color, font, type } from "@/ui";
 
@@ -20,10 +21,17 @@ function pilotAnswer(wing: string, q: string, words: string[]) {
   return `that's past what your lessons cover so far. in the pilot I answer from ${label(wing)}'s lessons only${ws ? ` — ask me about ${ws}` : ""}. the full guide opens after the pilot.`;
 }
 
-async function askLive(wing: string, words: string[], history: [string, string][], q: string): Promise<string | null> {
+// api/guide.js accepts exactly { system, messages, profile? }: the door is read from the system line, the history
+// must alternate user/assistant and end on the user's question (at most 9 messages).
+async function askLive(wing: string, words: string[], history: [string, string][], q: string, profile: ReturnType<typeof guideProfile>): Promise<string | null> {
   if (!flag("guide-live") || Platform.OS !== "web") return null;
   try {
-    const res = await fetch("/api/guide", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ door: wing, words, history, question: q }) });
+    const turns = history.map(([who, t]) => ({ role: who === "u" ? "user" : "assistant", content: t }));
+    while (turns.length && turns[0].role !== "user") turns.shift();
+    const messages = [...turns, { role: "user", content: q }].slice(-9);
+    if (messages[0].role !== "user") messages.shift();
+    const system = `The user is walking the ${label(wing)} door. Words they have so far: ${words.join(", ")}.`;
+    const res = await fetch("/api/guide", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ system, messages, ...(profile ? { profile } : {}) }) });
     if (!res.ok) return null;
     const { text } = await res.json();
     return typeof text === "string" && text.trim() ? text : null;
@@ -55,7 +63,7 @@ export default function Guide() {
     if (/my book|what i kept|from my (lines|beads)/i.test(question) || /^book$/i.test(question)) {
       a = book.length ? "from your book — your own lines, with where each came from:\n\n" + book.map((b) => `“${b.line}”  — ${label(b.door)}, ${b.date}`).join("\n") + "\n\nthat's everything you've kept." : "your book is empty so far. after a session, tap keep it, and I'll be able to answer from your own lines.";
     } else {
-      a = (await askLive(wing, words, hist.slice(1), question)) || pilotAnswer(wing, question, words);
+      a = (await askLive(wing, words, hist.slice(1), question, guideProfile(saved.settings.profile ?? null, wing))) || pilotAnswer(wing, question, words);
     }
     setLog((l) => [...l, ["g", a || pilotAnswer(wing, question, words)]]);
     setBusy(false);
@@ -81,7 +89,7 @@ export default function Guide() {
         </ScrollView>
         <Text style={[type.eyebrow(8), { paddingHorizontal: 18, paddingBottom: 6, color: color.mute }]}>{flag("guide-live") ? "from this door's texts · sources shown" : "answers from this door's lessons · live guide opens after the pilot"}</Text>
         <View style={{ paddingHorizontal: 18, paddingBottom: 12, paddingTop: 4, flexDirection: "row", gap: 8 }}>
-          <TextInput value={q} onChangeText={setQ} onSubmitEditing={() => send()} placeholder={`what does ${today.word} actually mean?`} accessibilityLabel="Ask the guide" returnKeyType="send"
+          <TextInput value={q} onChangeText={setQ} onSubmitEditing={() => send()} placeholder={`what does ${today.word} actually mean?`} placeholderTextColor={color.mute} accessibilityLabel="Ask the guide" returnKeyType="send"
             style={{ flex: 1, borderWidth: 1.5, borderColor: color.line, borderRadius: 999, paddingVertical: 12, paddingHorizontal: 16, fontFamily: font.text[400], fontSize: 16, backgroundColor: "#fff" }} />
           <Pressable accessibilityRole="button" accessibilityLabel="Send" onPress={() => send()} style={{ backgroundColor: busy ? color.line : color.ink, borderRadius: 999, width: 46, height: 46, alignItems: "center", justifyContent: "center" }}><Text style={{ color: color.gold, fontSize: 18 }}>↑</Text></Pressable>
         </View>

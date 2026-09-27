@@ -8,6 +8,7 @@ import { randomId } from "./ids";
 import { setChime } from "./sound";
 import { readJSON, remove, writeJSON } from "./storage";
 import { timeZone, today as todayNow } from "./time";
+import { cleanProfile, type Profile } from "./profile";
 
 export const STORE_KEY = "ih:app:v1";
 
@@ -30,6 +31,8 @@ export type Settings = {
   reviewedOn?: string | null;
   carried?: { date: string; lesson: number; did: boolean } | null;
   unlocksSeen?: string[];
+  /** What someone told us in onboarding, scored on the device. Private: owner-only when synced. */
+  profile?: Profile | null;
 };
 
 type Saved = { v: 1; deviceId: string; sits: Sit[]; outbox: string[]; settings: Settings; settingsVersion: number };
@@ -64,6 +67,7 @@ export function cleanSettings(raw: any): Settings {
     voiceOn: s.voiceOn !== false,
     chime: s.chime !== false,
     reminder: s.reminder && typeof s.reminder === "object" && typeof s.reminder.time === "string" ? { on: s.reminder.on === true, time: s.reminder.time } : d.reminder,
+    profile: cleanProfile(s.profile),
   };
 }
 

@@ -27,3 +27,7 @@ function flagSet(): Set<string> {
 
 export const flag = (name: string) => flagSet().has(name);
 export const isDemo = () => flag("demo");
+
+// Read the URL flags as soon as the app loads: a redirect (e.g. /welcome?demo=1 → /today) drops the query before
+// the first screen that asks, and the set is cached for the tab session after that.
+flagSet();
