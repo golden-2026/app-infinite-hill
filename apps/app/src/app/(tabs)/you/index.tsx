@@ -105,7 +105,7 @@ export default function You() {
             ) : null}
             {/* Always shown, so someone who skipped the questions can still keep other traditions away. */}
             {(() => {
-              const prof = st.profile?.door === wing ? st.profile : emptyProfile(wing, today);
+              const prof = st.profile ?? emptyProfile(wing, today); // same setting Today reads, whichever door
               return (
                 <Row a="other traditions" b={`${{ stay: "stay on my path — never bring them up", sometimes: "now and then, a similar idea from another tradition", love: "show me similar ideas from other traditions" }[prof.openness]} · tap to change`}
                   right={{ stay: "off", sometimes: "sometimes", love: "often" }[prof.openness]}
@@ -114,7 +114,7 @@ export default function You() {
             })()}
           </Group>
           <Group title="every day">
-            <Row testID="row-reminders" a="reminders" b="one a day, at sundown or your time" right={reminderStatus(st.reminder.on)} onPress={() => router.push("/you/reminders")} />
+            <Row testID="row-reminders" a="reminders" b="one a day, in the evening or at your time" right={reminderStatus(st.reminder.on)} onPress={() => router.push("/you/reminders")} />
             <Row a="read aloud" b="the house voice reads the lessons" toggle={st.voiceOn} onPress={() => update({ voiceOn: !st.voiceOn })} />
             <Row a="sunset chime" b="the bell at the start and end of each sit" toggle={st.chime} onPress={() => update({ chime: !st.chime })} />
           </Group>
@@ -132,7 +132,7 @@ export default function You() {
 
           <Card>
             <Eyebrow>how the sun talks to you</Eyebrow>
-            <Text style={[type.body(12.5), { color: color.mute, marginTop: 6 }]}>one a day, at sunset. never a guilt trip. never red.</Text>
+            <Text style={[type.body(12.5), { color: color.mute, marginTop: 6 }]}>one a day, in the evening. never a guilt trip. never red.</Text>
             <View style={{ gap: 8, marginTop: 12 }}>
               {SUN_NOTES(wing, ic.short, (data.DAY1[wing] || data.DAY1.SPIRITUAL).word).map(([t, m]: [string, string]) => (
                 <View key={t} style={{ backgroundColor: "#F2F2EC", borderRadius: 14, paddingVertical: 10, paddingHorizontal: 12, flexDirection: "row", gap: 10 }}>

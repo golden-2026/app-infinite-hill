@@ -99,7 +99,7 @@ export default function Today() {
         })()}
 
         <View style={s.campCard}>
-          <View style={{ flex: 1 }}>
+          <View style={{ flex: 1, paddingRight: 12 }}>
             <Text style={[type.eyebrow(8), { color: color.gold }]}>{p.camp} · {p.name}</Text>
             <Text style={{ fontFamily: font.display[800], fontSize: 18, marginTop: 4, color: "#fff" }}>{title}</Text>
             {derived.goal ? <Text style={[type.eyebrow(8), { color: "#ffffff99", marginTop: 6 }]}>your goal · {derived.goal.done} of {derived.goal.days} days shown up{derived.goal.reached ? " · reached" : ""}</Text> : null}

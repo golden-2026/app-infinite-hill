@@ -73,6 +73,7 @@ export async function syncReminders(store: StoreLike) {
 }
 
 export async function enableReminders(store: StoreLike) {
+  if (!FN) return { ok: false, message: "reminders aren't switched on in this version yet." };
   const s = reminderSupport();
   if (!s.can) return { ok: false, message: s.note! };
   const N = (window as any).Notification;

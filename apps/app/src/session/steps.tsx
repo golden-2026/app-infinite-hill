@@ -92,7 +92,7 @@ export function OrderStep({ step, onDone }: { step: any; onDone: Done }) {
       </View>
       {result !== null ? (
         <View style={{ gap: 10, marginBottom: 6 }}>
-          <Text accessibilityLiveRegion="polite" style={[s.feedback, { color: result ? color.gold : "#ffffffcc" }]}>
+          <Text accessibilityLiveRegion="polite" style={[s.feedback, { color: color.ink }]}>
             {result ? data.NICE[step.items.length % data.NICE.length] : `not quite. it goes: ${step.items.map((v: string, k: number) => `${k + 1}. ${v}`).join("  ")}`}
           </Text>
           <SlotFill><Btn kind="gold" onPress={() => onDone(result)}>next</Btn></SlotFill>
@@ -140,7 +140,7 @@ export function MatchStep({ step, onDone }: { step: any; onDone: Done }) {
         <View style={{ flex: 1, gap: 10 }}>{left.map((l) => chip(l, sel === l, !!got[l], () => { setNope(null); setSel(l); }))}</View>
         <View style={{ flex: 1, gap: 10 }}>{right.map((r) => chip(r, false, Object.values(got).includes(r), () => sel && tryPair(sel, r)))}</View>
       </View>
-      {nope ? <Text accessibilityLiveRegion="polite" style={[s.feedback, { color: "#ffffffcc", textAlign: "center" }]}>{nope}</Text> : null}
+      {nope ? <Text accessibilityLiveRegion="polite" style={[s.feedback, { color: color.ink, textAlign: "center" }]}>{nope}</Text> : null}
     </View>
   );
 }

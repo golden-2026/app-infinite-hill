@@ -167,7 +167,7 @@ export function HillScene({ hour, done, total, words, doneToday, onStart, onRepl
             {s === "now" ? (
               <Animated.View pointerEvents="box-none" style={[{ position: "absolute", bottom: size * 0.55 + 10, alignItems: "center" }, bobStyle]}>
                 <Pressable onPress={onStart} accessibilityElementsHidden importantForAccessibility="no-hide-descendants" style={{ backgroundColor: "#fff", borderRadius: 14, borderWidth: 2, borderColor: color.ink, paddingVertical: 7, paddingHorizontal: 12, alignItems: "center" }}>
-                  <Text style={{ fontFamily: font.text[700], fontSize: 11, letterSpacing: 1.2, color: color.ink }}>{done === 0 ? "START" : `START · DAY ${firstLesson + i}`}</Text>
+                  <Text numberOfLines={1} style={{ fontFamily: font.text[700], fontSize: 11, letterSpacing: 1.2, color: color.ink, minWidth: done === 0 ? undefined : 104, textAlign: "center" }}>{done === 0 ? "START" : `START · DAY ${firstLesson + i}`}</Text>
                 </Pressable>
                 <View style={{ width: 12, height: 12, backgroundColor: "#fff", borderRightWidth: 2, borderBottomWidth: 2, borderColor: color.ink, transform: [{ rotate: "45deg" }], marginTop: -7 }} />
               </Animated.View>

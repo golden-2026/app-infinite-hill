@@ -9,7 +9,7 @@ export const CONTENT_STATUS = "draft-unreviewed" as const;
 export const PERSON: Record<string, string> = { CHRISTIANITY: "Christian", CATHOLIC: "Catholic", HINDUISM: "Hindu", ISLAM: "Muslim", JUDAISM: "Jewish", BUDDHISM: "Buddhist", SIKHISM: "Sikh" };
 
 /** Answers that stand alone in a multi-choice question: picking one clears the rest. */
-export const EXCLUSIVE = new Set(["nothing"]);
+export const EXCLUSIVE = new Set(["nothing", "none"]);
 
 export type Choice = { id: string; label: string };
 export type Question = {
@@ -70,7 +70,7 @@ export const INTAKE: Record<string, Question> = {
   turnedOff: { id: "turnedOff", ask: "What turned you off, if anything?", multi: true, optional: true, choices: [
     { id: "rules", label: "the rules" }, { id: "judged", label: "feeling judged" }, { id: "hypocrisy", label: "the hypocrisy" },
     { id: "believe", label: "I didn't believe it" }, { id: "rote", label: "it felt rote" }, { id: "politics", label: "the politics" },
-    { id: "hurt", label: "something that happened" },
+    { id: "hurt", label: "something that happened" }, { id: "none", label: "nothing, really" },
   ] },
   loved: { id: "loved", ask: "Was there anything you loved about it?", multi: true, optional: true, choices: [
     { id: "music", label: "the music" }, { id: "ritual", label: "the rituals" }, { id: "community", label: "the people" },
