@@ -42,6 +42,7 @@ export default function SessionScreen() {
 
 function Session({ door, day, kidId, mode, voiceOn, onFinish }: { door: string; day: number; kidId: string | null; mode: string; voiceOn: boolean; onFinish: ReturnType<typeof useStore>["completeSit"] }) {
   const ic = icon(door);
+  const { earnLight } = useStore();
   useTitle(`${label(door).toLowerCase()} · day ${day}`);
   useChrome(true);
   const plan = useMemo(() => planDay({ wing: door, day, mode }), [door, day, mode]);
@@ -134,6 +135,7 @@ function Session({ door, day, kidId, mode, voiceOn, onFinish }: { door: string; 
     hush();
     remove(resumeKey);
     const outcome = onFinish({ door, day, kidId });
+    if (!kidId) earnLight(lessonLight(score.right, score.asked || graded, best), best, score.asked > 0 && score.right === score.asked);
     track("lesson_done", { door, day, right: score.right, asked: score.asked, newDay: outcome.isNewDay, kid: !!kidId });
     if (kidId) { router.canGoBack() ? router.back() : router.replace("/you/table"); return; } // a child's sit moves the child's hill, not yours
     const minutes = Math.max(1, Math.round((Date.now() - t0.current) / 60000));
@@ -166,7 +168,7 @@ function Session({ door, day, kidId, mode, voiceOn, onFinish }: { door: string; 
                 <ChevronLeft color="#fff" size={20} />
               </Pressable>
               <View style={{ flex: 1 }}>
-                {combo >= 2 ? <Text style={[type.eyebrow(), st.combo, combo >= 3 ? { color: "#FF9F1C" } : null]}>{combo >= 3 ? `🔥 combo ×${combo}` : `×${combo} in a row`}</Text> : pct >= 80 && pct < 100 && phase === "play" ? <Text style={[type.eyebrow(), st.combo]}>almost there!</Text> : null}
+                {combo >= 2 ? <Text style={[type.eyebrow(), st.combo, combo >= 3 ? { color: "#FFD23F" } : null]}>{combo >= 3 ? `☀ glowing ×${combo}` : `×${combo} in a row`}</Text> : pct >= 80 && pct < 100 && phase === "play" ? <Text style={[type.eyebrow(), st.combo]}>almost there!</Text> : null}
                 <Progress pct={pct} hot={combo >= 3} />
               </View>
             </View>
@@ -241,22 +243,24 @@ function Session({ door, day, kidId, mode, voiceOn, onFinish }: { door: string; 
         [String(ideas), "ideas", "you didn't have this morning", false],
         [`${score.right}/${score.asked || graded}`, "first try", best >= 3 ? `×${best} in a row` : score.asked && score.right === score.asked ? "perfect." : "all fixed.", false],
       ];
-      // The win screen: points, accuracy and time in bold tiles, a fanfare, and the mascot celebrating.
+      // The win screen, in our own look: the light you earned, how on-target you were and how long it took, on one
+      // gold-rimmed card; a fanfare; the mascot celebrating.
       const asked = score.asked || graded;
       const acc = asked ? Math.round((100 * score.right) / asked) : 100;
-      const xp = lessonXp(score.right, asked, best);
+      const light = lessonLight(score.right, asked, best);
       const secs = Math.max(30, Math.round((Date.now() - t0.current) / 1000));
-      const stats: [string, string, string][] = [["total xp", `⚡ ${xp}`, "#F5C400"], [acc === 100 ? "amazing" : acc >= 80 ? "great" : acc >= 50 ? "good" : "keep going", `🎯 ${acc}%`, "#58B947"], [secs < 180 ? "speedy" : "steady", `⏱ ${Math.floor(secs / 60)}:${String(secs % 60).padStart(2, "0")}`, "#3BA6F5"]];
+      const stats: [string, string, string][] = [["☀", `+${light}`, "light"], ["◎", `${acc}%`, acc === 100 ? "on target" : acc >= 50 ? "on target" : "learning"], ["◷", `${Math.floor(secs / 60)}:${String(secs % 60).padStart(2, "0")}`, "time"]];
       return frame(
         <View style={{ alignItems: "center", gap: 14, width: "100%" }}>
           <Celebrate />
           <Text accessibilityRole="header" style={{ fontFamily: font.mark[800], fontSize: 36, color: color.gold, textAlign: "center" }}>{day === 1 ? "you're on the hill!" : `day ${day}. done!`}</Text>
           <Text style={[type.body(15), { color: "#ffffffcc", marginTop: -8 }]}>{acc === 100 ? "not one miss. proud of you." : "proud of you. see you tomorrow."}</Text>
-          <View style={{ flexDirection: "row", gap: 8, width: "100%" }}>
-            {stats.map(([l, v, c]) => (
-              <View key={l} style={{ flex: 1, borderRadius: 16, borderWidth: 2.5, borderColor: c, overflow: "hidden" }}>
-                <Text style={[type.eyebrow(8), { backgroundColor: c, color: "#fff", textAlign: "center", paddingVertical: 4 }]}>{l}</Text>
-                <Text style={{ fontFamily: font.display[800], fontSize: 20, color: "#fff", textAlign: "center", paddingVertical: 10 }}>{v}</Text>
+          <View style={{ flexDirection: "row", width: "100%", borderRadius: 22, borderWidth: 2, borderColor: color.gold, backgroundColor: "#ffffff0d", paddingVertical: 14 }}>
+            {stats.map(([g, v, l], k) => (
+              <View key={l} style={{ flex: 1, alignItems: "center", borderLeftWidth: k ? 1 : 0, borderLeftColor: "#ffffff22" }}>
+                <Text style={{ fontSize: 18, color: color.gold }}>{g}</Text>
+                <Text style={{ fontFamily: font.display[800], fontSize: 24, color: "#fff", marginTop: 2 }}>{v}</Text>
+                <Text style={[type.eyebrow(8), { color: "#ffffffaa", marginTop: 2 }]}>{l}</Text>
               </View>
             ))}
           </View>
@@ -296,8 +300,8 @@ const st = StyleSheet.create({
   tomorrow: { marginTop: 10, borderTopWidth: 1, borderTopColor: "#ffffff22", paddingTop: 10, width: "100%" },
 });
 
-/** Points for a finished lesson: 10 for showing up, 1 per first-try right, a bonus for a clean run and for long combos. */
-export function lessonXp(right: number, asked: number, best: number) {
+/** Light for a finished lesson: 10 for showing up, 1 per first-try right, a bonus for a clean run and for a long glow. */
+export function lessonLight(right: number, asked: number, best: number) {
   return 10 + right + (asked && right === asked ? 5 : 0) + (best >= 5 ? 3 : 0);
 }
 
@@ -328,7 +332,7 @@ function Progress({ pct, hot }: { pct: number; hot?: boolean }) {
   return (
     <View style={[st.track, { height: 10, borderRadius: 5 }]} accessibilityRole="progressbar" accessibilityValue={{ min: 0, max: 100, now: pct }}>
       {/* the bar heats up on a combo */}
-      <Animated.View style={[st.bar, { height: 10, borderRadius: 5, backgroundColor: hot ? "#FF9F1C" : color.gold }, fill]} />
+      <Animated.View style={[st.bar, { height: 10, borderRadius: 5, backgroundColor: hot ? "#FFD23F" : color.gold, shadowColor: "#FFD23F", shadowOpacity: hot ? 0.9 : 0, shadowRadius: hot ? 8 : 0 }, fill]} />
     </View>
   );
 }

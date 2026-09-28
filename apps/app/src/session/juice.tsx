@@ -39,7 +39,7 @@ export function ReactingGuy({ h = 56 }: { h?: number }) {
   return <Animated.View style={anim}><Guy pose={pose} h={h} /></Animated.View>;
 }
 
-/** "COMBO ×5" bursting over the lesson at 3, 5, 10… in a row. */
+/** "glowing ×5": a sunburst over the lesson at 3, 5, 10… in a row. */
 export function ComboBurst() {
   const { combo } = useFx();
   const show = [3, 5, 10, 15, 20].includes(combo);
@@ -50,16 +50,17 @@ export function ComboBurst() {
     o.value = withSequence(withTiming(1, { duration: 120 }), withDelay(700, withTiming(0, { duration: 350 })));
     s.value = reduce ? 1 : withSequence(withTiming(1.35, { duration: 180, easing: Easing.out(Easing.back(3)) }), withSpring(1, { damping: 6 }));
   }, [combo, show, reduce, o, s]);
-  const anim = useAnimatedStyle(() => ({ opacity: o.value, transform: [{ scale: s.value }, { rotate: "-6deg" }] }));
+  const anim = useAnimatedStyle(() => ({ opacity: o.value, transform: [{ scale: s.value }] }));
   if (!show) return null;
   return (
-    <Animated.View pointerEvents="none" style={[{ position: "absolute", top: "38%", alignSelf: "center", zIndex: 20 }, anim]}>
-      <Text accessibilityLiveRegion="polite" style={{ fontFamily: font.mark[800], fontSize: 52, color: color.gold, textShadowColor: "#b37400", textShadowRadius: 0, textShadowOffset: { width: 3, height: 4 } }}>COMBO ×{combo}</Text>
+    <Animated.View pointerEvents="none" style={[{ position: "absolute", top: "34%", alignSelf: "center", zIndex: 20 }, anim]}>
+      <View style={{ alignItems: "center" }}><Text style={{ fontSize: 64 }}>☀</Text><Text accessibilityLiveRegion="polite" style={{ fontFamily: font.mark[800], fontSize: 40, color: color.gold, textShadowColor: "#00000088", textShadowRadius: 8, textShadowOffset: { width: 0, height: 2 } }}>glowing ×{combo}</Text></View>
     </Animated.View>
   );
 }
 
-const RIGHT_TITLES = ["Awesome!", "Nice!", "Excellent!", "Right on!", "Nailed it!", "Beautiful."];
+// our own voice, lowercase and warm (not a copy of any other app's cheers)
+const RIGHT_TITLES = ["yes — exactly.", "that's it.", "lit.", "beautiful.", "you've got it.", "right on."];
 const RED = "#E5484D";
 const RED_BG = "#FFE6E4";
 
@@ -69,18 +70,18 @@ export function Verdict({ ok, title, body, onNext, label, seed = 0 }: { ok: bool
   useEffect(() => { y.value = withSpring(0, { damping: 14 }); o.value = withTiming(1, { duration: 160 }); }, [y, o]);
   const anim = useAnimatedStyle(() => ({ opacity: o.value, transform: [{ translateY: y.value }] }));
   const bad = ok === false;
-  const head = title ?? (ok === true ? RIGHT_TITLES[seed % RIGHT_TITLES.length] : bad ? "Not quite" : "Good call");
+  const head = title ?? (ok === true ? RIGHT_TITLES[seed % RIGHT_TITLES.length] : bad ? "almost." : "good call.");
   return (
     <SlotFill>
       <Animated.View style={[{ backgroundColor: bad ? RED_BG : color.gold, borderRadius: 22, padding: 14, gap: 10, marginHorizontal: -4 }, anim]}>
         <View style={{ flexDirection: "row", alignItems: "center", gap: 10 }}>
           <View style={{ width: 30, height: 30, borderRadius: 15, backgroundColor: bad ? RED : color.ink, alignItems: "center", justifyContent: "center" }}>
-            <Text style={{ color: bad ? "#fff" : color.gold, fontFamily: font.text[700], fontSize: 16 }}>{bad ? "✕" : "✓"}</Text>
+            <Text style={{ color: bad ? "#fff" : color.gold, fontFamily: font.text[700], fontSize: 16 }}>{bad ? "↺" : "☀"}</Text>
           </View>
           <Text accessibilityLiveRegion="polite" style={{ fontFamily: font.display[800], fontSize: 20, color: bad ? RED : color.ink }}>{head}</Text>
         </View>
         {body ? <Text style={[type.body(14), { color: bad ? "#7a2320" : color.ink }]}>{body}</Text> : null}
-        <Btn kind={bad ? "miss" : "ink"} onPress={onNext}>{label ?? (bad ? "got it" : "continue")}</Btn>
+        <Btn kind={bad ? "miss" : "ink"} onPress={onNext}>{label ?? (bad ? "okay, next" : "next")}</Btn>
       </Animated.View>
     </SlotFill>
   );

@@ -4,6 +4,8 @@ import { useTitle } from "@/lib/title";
 import { daysBetween, MILESTONES } from "@ih/domain";
 import { Text, View } from "react-native";
 import { useDone } from "@/lib/done";
+import { todaysThree } from "@/lib/three";
+import { router } from "expo-router";
 import { useStore } from "@/lib/store";
 import { Btn, Guy, Screen, Sun, color, font, type } from "@/ui";
 
@@ -28,11 +30,13 @@ export default function Lit() {
   const line = p.newDay !== "1" ? "today was already lit. this one was just for you." : saved.settings.active === "visit" ? "your days come with you. any door, one count — nothing you've earned stays behind."
     : firstDay ? "day one counts. it always will." : gap ? "right where you left it. the path didn't move." : milestone ? `${milestone} days. you keep showing up.` : "another stone lit.";
   useEffect(() => { if (milestone) track("milestone", { n: milestone }); }, [milestone]);
-  const next = () => (firstDay && !saved.settings.goal ? go("/done/goal") : close());
+  // when today's three are done and the lantern hasn't been lit yet, the lantern comes next
+  const three = todaysThree({ doneToday: derived.doneToday, glow: saved.settings.glow, book: saved.settings.book, lanternOn: saved.settings.lanternOn, today });
+  const next = () => (firstDay && !saved.settings.goal ? go("/done/goal") : three.all && !three.opened ? router.replace("/lantern") : close());
   return (
     <Screen close={close} footer={<Btn testID="continue" onPress={next}>continue</Btn>}>
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        {milestone >= 7 ? <Guy pose={milestone >= 21 ? "jump" : "joy"} h={150} /> : <View style={{ marginBottom: 28 }}><Sun size={130} mood="happy" /></View>}
+        <Guy pose={milestone >= 21 ? "jump" : milestone >= 7 ? "joy" : "cheer"} h={150} />
         <View style={{ backgroundColor: color.gold, paddingHorizontal: 26, paddingTop: 6, borderRadius: 28, marginTop: 10, marginBottom: 14 }}>
           <Text accessibilityLabel={`${count} ${count === 1 ? "day" : "days"} lit`} style={{ fontFamily: font.display[800], fontSize: 120, lineHeight: 118, letterSpacing: -6, color: color.ink }}>{count}</Text>
         </View>
@@ -42,8 +46,9 @@ export default function Lit() {
           {week.map((w) => (
             <View key={w.iso} style={{ alignItems: "center" }}>
               <Text style={[type.eyebrow(8), { color: w.on ? color.ink : "#00000066" }]}>{w.dow}</Text>
-              <View style={{ width: 34, height: 34, borderRadius: 17, marginTop: 6, backgroundColor: w.on ? color.ink : "#00000022", alignItems: "center", justifyContent: "center" }}>
-                <Text style={{ color: color.gold, fontFamily: font.text[700] }}>{w.on ? "✓" : ""}</Text>
+              {/* the week as seven small suns: lit days shine, the rest wait as outlines (never red) */}
+              <View style={{ width: 36, height: 36, marginTop: 6, alignItems: "center", justifyContent: "center" }}>
+                {w.on ? <Sun size={34} mood="happy" /> : <View style={{ width: 22, height: 22, borderRadius: 11, borderWidth: 2, borderColor: "#00000033" }} />}
               </View>
             </View>
           ))}

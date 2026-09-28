@@ -34,6 +34,10 @@ export type Settings = {
   unlocksSeen?: string[];
   /** What someone told us in onboarding, scored on the device. Private: owner-only when synced. */
   profile?: Profile | null;
+  /** Light earned from lessons (the game's points), today's best glow, and the day the lantern was last opened. */
+  light?: number;
+  glow?: { date: string; best: number; clean?: boolean } | null;
+  lanternOn?: string | null;
 };
 
 type Saved = { v: 1; deviceId: string; sits: Sit[]; outbox: string[]; settings: Settings; settingsVersion: number };
@@ -102,6 +106,8 @@ type Store = {
   update: (patch: Partial<Settings>) => void;
   setGoal: (days: number | "not_yet") => void;
   keepLine: (line: string, door: string) => void;
+  earnLight: (n: number, best?: number, clean?: boolean) => void;
+  openLantern: (bonus: number) => void;
   addSignal: (sig: Settings["signals"][number]) => void;
   markWelcomedBack: () => void;
   replaceFromServer: (o: { sits: Sit[]; settings?: Partial<Settings>; settingsVersion?: number }) => void;
@@ -166,6 +172,12 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       const signals = [...s.settings.signals.filter((x) => !(x.door === sig.door && x.day === sig.day)), sig];
       return { ...s, settings: { ...s.settings, signals }, settingsVersion: s.settingsVersion + 1 };
     }),
+    earnLight: (n, best = 0, clean = false) => commit((s) => {
+      const date = todayNow();
+      const prev = s.settings.glow?.date === date ? s.settings.glow.best : 0;
+      return { ...s, settings: { ...s.settings, light: (s.settings.light || 0) + Math.max(0, n), glow: { date, best: Math.max(prev, best), clean: clean || (s.settings.glow?.date === date && !!s.settings.glow.clean) } }, settingsVersion: s.settingsVersion + 1 };
+    }),
+    openLantern: (bonus) => commit((s) => ({ ...s, settings: { ...s.settings, light: (s.settings.light || 0) + bonus, lanternOn: todayNow() }, settingsVersion: s.settingsVersion + 1 })),
     markWelcomedBack: () => commit((s) => ({ ...s, settings: { ...s.settings, welcomedBackOn: todayNow() }, settingsVersion: s.settingsVersion + 1 })),
     replaceFromServer: ({ sits, settings, settingsVersion }) =>
       commit((s) => {

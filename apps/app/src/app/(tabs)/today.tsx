@@ -11,6 +11,7 @@ import { useStore } from "@/lib/store";
 import { voiceLabel } from "@/lib/voice";
 import { Btn, Card, Face, Guy, Sun, color, font, type } from "@/ui";
 import { HillScene } from "@/ui/hill";
+import { TodaysThree } from "@/ui/todays-three";
 
 export default function Today() {
   useTitle("today");
@@ -107,6 +108,7 @@ export default function Today() {
           <Text style={[type.eyebrow(8), { color: "#ffffff99" }]}>lesson {p.lesson} of {p.of}</Text>
         </View>
 
+        <TodaysThree />
         {due > 0 ? (
           <Pressable accessibilityRole="button" accessibilityLabel={`Review ${due} ${due === 1 ? "word" : "words"}`} onPress={() => router.push("/review")} style={s.inkCard}>
             <Sun size={34} />
