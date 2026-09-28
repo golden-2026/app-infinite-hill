@@ -1,4 +1,5 @@
 # The front door is the website; every other path is the app (it routes itself).
+# "200!" forces the rule even though index.html (the app) exists at "/" — without it Netlify serves the app there.
 # "Start free" on the site opens /welcome/door; the installed app opens /today (manifest start_url).
-/     /site.html    200
+/     /site.html    200!
 /*    /index.html   200
