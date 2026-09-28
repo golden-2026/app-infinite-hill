@@ -20,8 +20,10 @@ export default function Plans() {
         <Card key={n} dark={k === 1}>
           <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "baseline" }}>
             <Text style={{ fontFamily: font.display[500], fontSize: 22, color: k === 1 ? "#fff" : color.ink }}>{n}</Text>
-            <View style={{ alignItems: "flex-end" }}><Text style={{ fontFamily: font.display[500], fontSize: 20, color: k === 1 ? "#fff" : color.ink }}>{p}</Text>{s ? <Text style={[type.eyebrow(8), { color: k === 1 ? color.gold : color.mute }]}>{s}</Text> : null}</View>
+            <Text style={{ fontFamily: font.display[500], fontSize: 20, color: k === 1 ? "#fff" : color.ink }}>{p}</Text>
           </View>
+          {/* the long "planned · not on sale" line gets its own full-width row (it pushed the price off a phone screen) */}
+          {s ? <Text style={[type.eyebrow(8), { color: k === 1 ? color.gold : color.mute, marginTop: 4 }]}>{s}</Text> : null}
           <Text style={[type.body(13), { marginTop: 8, color: k === 1 ? "#ffffffcc" : color.text }]}>{blurb}</Text>
           <View style={{ gap: 6, marginTop: 12 }}>{perks.map((x) => <Text key={x} style={[type.body(13), { color: k === 1 ? "#fff" : color.text }]}>· {x}</Text>)}</View>
         </Card>

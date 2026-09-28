@@ -3,7 +3,7 @@ import { useTitle } from "@/lib/title";
 import { router } from "expo-router";
 import { useEffect, useState } from "react";
 import { Text, View } from "react-native";
-import { intakeReply, nextIntake } from "@/content/intake";
+import { EXCLUSIVE, intakeReply, nextIntake } from "@/content/intake";
 import { emptyProfile } from "@/lib/profile";
 import { useStore } from "@/lib/store";
 import { Btn, Eyebrow, Link, Opt, type } from "@/ui";
@@ -62,7 +62,10 @@ export default function Intake() {
       <View style={{ gap: 8 }} accessibilityRole={q.multi ? undefined : "radiogroup"}>
         {q.choices.map((c) => (
           <Opt key={c.id} big testID={`${q.id}-${c.id}`} on={q.multi ? multi.includes(c.id) : answers[q.id] === c.id}
-            onPress={() => (q.multi ? setMulti((m) => (m.includes(c.id) ? m.filter((x) => x !== c.id) : [...m, c.id])) : commit(c.id))}>
+            onPress={() => (q.multi
+              // "not really" stands alone: picking it clears the rest, picking anything else clears it
+              ? setMulti((m) => (m.includes(c.id) ? m.filter((x) => x !== c.id) : EXCLUSIVE.has(c.id) ? [c.id] : [...m.filter((x) => !EXCLUSIVE.has(x)), c.id]))
+              : commit(c.id))}>
             {c.label}
           </Opt>
         ))}

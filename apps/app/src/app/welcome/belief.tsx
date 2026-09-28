@@ -4,7 +4,7 @@ import { router, useLocalSearchParams } from "expo-router";
 import { useEffect, useState } from "react";
 import { Text, View } from "react-native";
 import { DOORS, label } from "@ih/content";
-import { BELIEF_QUESTIONS } from "@/content/intake";
+import { BELIEF_QUESTIONS, PERSON } from "@/content/intake";
 import { commitmentScore, emptyProfile, type Openness } from "@/lib/profile";
 import { doorParam } from "@/lib/door-param";
 import { useStore } from "@/lib/store";
@@ -26,7 +26,7 @@ export default function Belief() {
   if (!door) return null;
   const name = label(door);
   const q = BELIEF_QUESTIONS[i];
-  const fill = (s: string) => s.replace(/\{door\}/g, name);
+  const fill = (s: string) => s.replace(/\{door\}/g, name).replace(/\{person\}/g, PERSON[door] || name);
 
   const save = (all: Record<string, string>) => {
     const prev = saved.settings.profile?.door === door ? saved.settings.profile : emptyProfile(door, today);

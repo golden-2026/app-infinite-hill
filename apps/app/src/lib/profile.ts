@@ -33,7 +33,7 @@ const OPENNESS: Openness[] = ["stay", "sometimes", "love"];
 /** Whatever was saved or synced, screens get a well-formed profile (or none). */
 export function cleanProfile(raw: any): Profile | null {
   if (!raw || typeof raw !== "object" || typeof raw.door !== "string") return null;
-  const pct = (x: unknown) => (typeof x === "number" && x >= 0 && x <= 100 ? Math.round(x) : null);
+  const pct = (x: unknown) => (typeof x === "number" && Number.isFinite(x) && x >= 0 ? Math.min(100, Math.round(x)) : null);
   return {
     v: 1,
     door: raw.door,
@@ -90,7 +90,13 @@ export function bridgeFor(p: Profile | null, door: string, word: string, today: 
   if (p.openness === "sometimes" && p.lastBridgeOn && daysBetween(p.lastBridgeOn, today) < 7) return null;
   const b = BRIDGES.find((x) => x.members.some((m) => m.door === door && m.word.toLowerCase() === word.toLowerCase()) && !p.bridges[x.id]);
   if (!b) return null;
-  const others = b.members.filter((m) => m.door !== door).slice(0, 3);
+  const raised = typeof p.answers.raised === "string" ? p.answers.raised : null;
+  const leftIt = p.answers.feelNow === "left" || p.answers.feelNow === "never";
+  const avoid = raised && leftIt ? (raised === "CATHOLIC" || raised === "CHRISTIANITY" ? ["CATHOLIC", "CHRISTIANITY"] : [raised]) : [];
+  const secularOnly = p.answers.believe === "meaning" || p.answers.organized === "away";
+  const others = b.members
+    .filter((m) => m.door !== door && !avoid.includes(m.door) && !(secularOnly && /\b(God|Lord|he|him|his|prayers?|the Name)\b/.test(m.gloss)))
+    .slice(0, 3);
   return others.length ? { bridge: b, from: door, others } : null;
 }
 
@@ -109,16 +115,20 @@ export function suggestFor(answers: Profile["answers"], limit = 4): Suggestion[]
   for (const a of list("believe")) for (const t of INTAKE_TAGS[a] || []) add(t, 1);
   if (!wants.size) ["stillness", "kindness", "gratitude"].forEach((t) => add(t, 1));
 
+  // Never offer back a tradition someone left or that never clicked (Catholic and Christian count as one family),
+  // and no God-language for people who said "no god" or want to keep away from organised religion.
   const raised = typeof answers.raised === "string" ? answers.raised : null;
   const leftIt = answers.feelNow === "left" || answers.feelNow === "never";
-  const lovedSomething = list("loved").some((x) => x !== "nothing");
-  const avoid = new Set<string>(raised && leftIt && !lovedSomething ? [raised] : []);
+  const family = (d: string) => (d === "CATHOLIC" || d === "CHRISTIANITY" ? ["CATHOLIC", "CHRISTIANITY"] : [d]);
+  const avoid = new Set<string>(raised && leftIt ? family(raised) : []);
+  const secularOnly = answers.believe === "meaning" || answers.organized === "away";
+  const theistic = (gloss: string) => /\b(God|Lord|he|him|his|prayers?|the Name)\b/.test(gloss);
 
   const scored = BRIDGES.map((b) => ({ b, s: b.tags.reduce((n, t) => n + (wants.get(t) || 0), 0) })).filter((x) => x.s > 0).sort((a, z) => z.s - a.s);
   const out: Suggestion[] = [];
   const usedDoors = new Set<string>();
   for (const { b } of scored) {
-    const m = b.members.find((x) => x.door !== "SPIRITUAL" && !avoid.has(x.door) && !usedDoors.has(x.door) && x.day);
+    const m = b.members.find((x) => x.door !== "SPIRITUAL" && !avoid.has(x.door) && !usedDoors.has(x.door) && x.day && !(secularOnly && theistic(x.gloss)));
     if (!m) continue;
     usedDoors.add(m.door);
     out.push({ door: m.door, word: m.word, day: m.day!, gloss: m.gloss, why: b.why, bridge: b.idea });

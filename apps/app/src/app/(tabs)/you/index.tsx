@@ -13,12 +13,13 @@ import { useStore } from "@/lib/store";
 import { useSync } from "@/lib/sync";
 import { accountsOn } from "@/lib/supabase";
 import { voiceLabel } from "@/lib/voice";
+import { emptyProfile } from "@/lib/profile";
 import { Btn, Card, Eyebrow, Guy, Sun, color, font, type, toast } from "@/ui";
 import { Group, Row } from "@/ui/row";
 
 export default function You() {
   useTitle("you");
-  const { saved, derived, lessonFor, update, demoShiftDays } = useStore();
+  const { saved, derived, lessonFor, update, demoShiftDays, today } = useStore();
   const { email } = useAuth();
   const sync = useSync();
   const st = saved.settings;
@@ -102,11 +103,15 @@ export default function You() {
                 {st.visitWing ? <Pressable accessibilityRole="button" onPress={() => { update({ visitWing: null, active: "home" }); setAdding(false); }} style={{ paddingBottom: 12 }}><Text style={[type.eyebrow(8), { color: color.mute }]}>stop walking {label(st.visitWing)}</Text></Pressable> : null}
               </View>
             ) : null}
-            {st.profile ? (
-              <Row a="other traditions" b={{ stay: `stay on my path — never bring them up`, sometimes: `now and then, a similar idea from another tradition`, love: `show me similar ideas from other traditions` }[st.profile.openness]}
-                right={{ stay: "off", sometimes: "sometimes", love: "often" }[st.profile.openness]}
-                onPress={() => { const o = ({ stay: "sometimes", sometimes: "love", love: "stay" } as const)[st.profile!.openness]; update({ profile: { ...st.profile!, openness: o } }); }} />
-            ) : null}
+            {/* Always shown, so someone who skipped the questions can still keep other traditions away. */}
+            {(() => {
+              const prof = st.profile?.door === wing ? st.profile : emptyProfile(wing, today);
+              return (
+                <Row a="other traditions" b={`${{ stay: "stay on my path — never bring them up", sometimes: "now and then, a similar idea from another tradition", love: "show me similar ideas from other traditions" }[prof.openness]} · tap to change`}
+                  right={{ stay: "off", sometimes: "sometimes", love: "often" }[prof.openness]}
+                  onPress={() => { const o = ({ stay: "sometimes", sometimes: "love", love: "stay" } as const)[prof.openness]; update({ profile: { ...prof, openness: o } }); }} />
+              );
+            })()}
           </Group>
           <Group title="every day">
             <Row testID="row-reminders" a="reminders" b="one a day, at sundown or your time" right={reminderStatus(st.reminder.on)} onPress={() => router.push("/you/reminders")} />

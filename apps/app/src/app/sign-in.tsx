@@ -21,7 +21,7 @@ function BeenHere() {
       <View style={{ flex: 1, justifyContent: "center", gap: 14 }}>
         <Sun size={64} />
         <Text accessibilityRole="header" style={type.title()}>welcome back.</Text>
-        <Body>in the pilot your days live on the phone you started on — no account, nothing about you on a server.</Body>
+        <Body>in the pilot your days live on the phone you started on — no account. (only if you turn on reminders do your reminder time and time zone go to our server.)</Body>
         <Body style={{ color: color.mute }}>same phone? just open infinite hill there. new phone? on the old one go to you › your data › export my days, then bring that file here.</Body>
         {msg ? <Text accessibilityLiveRegion="polite" style={[type.body(14), { color: color.ink }]}>{msg}</Text> : null}
       </View>

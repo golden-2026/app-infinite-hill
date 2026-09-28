@@ -17,14 +17,16 @@ export default function Landed() {
   const visiting = saved.settings.active === "visit";
   const signal = (next: string | null) => {
     addSignal({ door: p.door, day, verdict: verdict || "skip", next, date: today });
-    if (verdict === "keep" && p.carry) { keepLine(p.carry, p.door); toast("kept in your book"); }
+    const bridgeNext = next !== "nearby" && !!bridgeFor(saved.settings.profile ?? null, p.door, p.word, today);
+    // the toast would sit over the bridge screen's buttons, so it only shows when no bridge follows
+    if (verdict === "keep" && p.carry) { keepLine(p.carry, p.door); if (!bridgeNext) toast("kept in your book"); }
     if (next === "home") update({ active: "home" });
     if (next === "nearby") {
       const others = DOORS.map(([, w]) => w).filter((w) => w !== p.door && w !== saved.settings.homeWing);
       update({ visitWing: others[Math.floor(Math.random() * others.length)] }); // offered on Today; your door stays active
     }
     // A "similar idea, next door" offer only for people who said they're open to it (see lib/profile bridgeFor).
-    if (next !== "nearby" && bridgeFor(saved.settings.profile ?? null, p.door, p.word, today)) go("/done/bridge");
+    if (bridgeNext) go("/done/bridge");
     else go(p.newDay === "1" ? "/done/light" : "/done/lit");
   };
   const stayOnly = saved.settings.profile?.openness === "stay";

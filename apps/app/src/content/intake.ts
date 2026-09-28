@@ -5,6 +5,12 @@
 
 export const CONTENT_STATUS = "draft-unreviewed" as const;
 
+/** "Were you raised Jewish?" — the adjective for a person of each tradition ({person} in question text). */
+export const PERSON: Record<string, string> = { CHRISTIANITY: "Christian", CATHOLIC: "Catholic", HINDUISM: "Hindu", ISLAM: "Muslim", JUDAISM: "Jewish", BUDDHISM: "Buddhist", SIKHISM: "Sikh" };
+
+/** Answers that stand alone in a multi-choice question: picking one clears the rest. */
+export const EXCLUSIVE = new Set(["nothing"]);
+
 export type Choice = { id: string; label: string };
 export type Question = {
   id: string;
@@ -20,7 +26,7 @@ export type Question = {
 
 /** Asked after the knowledge check, to learn how much the tradition is part of their life. {door} is the tradition's name. */
 export const BELIEF_QUESTIONS: Question[] = [
-  { id: "raised", ask: "Were you raised {door}?", choices: [
+  { id: "raised", ask: "Were you raised {person}?", choices: [
     { id: "yes", label: "yes, since I was little" },
     { id: "later", label: "I came to it later" },
     { id: "exploring", label: "no — I'm exploring it" },
@@ -64,7 +70,7 @@ export const INTAKE: Record<string, Question> = {
   turnedOff: { id: "turnedOff", ask: "What turned you off, if anything?", multi: true, optional: true, choices: [
     { id: "rules", label: "the rules" }, { id: "judged", label: "feeling judged" }, { id: "hypocrisy", label: "the hypocrisy" },
     { id: "believe", label: "I didn't believe it" }, { id: "rote", label: "it felt rote" }, { id: "politics", label: "the politics" },
-    { id: "hurt", label: "something that happened" }, { id: "private", label: "rather not say" },
+    { id: "hurt", label: "something that happened" },
   ] },
   loved: { id: "loved", ask: "Was there anything you loved about it?", multi: true, optional: true, choices: [
     { id: "music", label: "the music" }, { id: "ritual", label: "the rituals" }, { id: "community", label: "the people" },
@@ -78,7 +84,6 @@ export const INTAKE: Record<string, Question> = {
   believe: { id: "believe", ask: "What do you believe right now?", optional: true, note: "private. it only changes what we show you.", choices: [
     { id: "bigger", label: "there's something bigger" }, { id: "unsure", label: "not sure" },
     { id: "meaning", label: "no god, but meaning matters" }, { id: "searching", label: "I'm searching" },
-    { id: "private", label: "rather not say" },
   ] },
   organized: { id: "organized", ask: "And organized religion?", choices: [
     { id: "like", label: "I like it" }, { id: "mixed", label: "mixed feelings" }, { id: "away", label: "I'd rather keep away" },

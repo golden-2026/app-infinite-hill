@@ -32,11 +32,15 @@ export default function Know() {
   const door = doorParam(raw) !== "SPIRITUAL" ? doorParam(raw) : null;
   const { update, saved, today } = useStore();
   const qs: { q: string; o: string[]; a: number }[] = (door && data.PLACEMENT[door]) || [];
-  const seed = useMemo(() => Math.floor(Math.random() * 10000) + 1, []);
+  // One seed per visit (state, not memo) so the options never reshuffle while the answer is revealed.
+  const [seed] = useState(() => Math.floor(Math.random() * 10000) + 1);
   const [started, setStarted] = useState(false);
   const [i, setI] = useState(0);
-  const [right, setRight] = useState(0);
+  // Right/wrong per question, so answering a question again (e.g. after "back") replaces it instead of adding up.
+  const [results, setResults] = useState<boolean[]>([]);
   const [picked, setPicked] = useState<string | null>(null);
+  const cur = qs[i];
+  const options = useMemo(() => (cur ? shuffled(cur.o.map((o, k) => ({ o, k })), seed + i * 7) : []), [cur, seed, i]);
 
   useEffect(() => { if (!door) router.replace("/welcome/door"); }, [door]);
   if (!door) return null;
@@ -60,18 +64,16 @@ export default function Know() {
     );
   }
 
-  const cur = qs[i];
-  const options = shuffled(cur.o.map((o, k) => ({ o, k })), seed + i * 7);
   const answer = (o: string | null, k: number | null) => {
     if (picked) return;
     setPicked(o ?? "unsure");
-    const hit = k === cur.a;
-    const r = right + (hit ? 1 : 0);
-    setRight(r);
+    const next = results.slice(0, qs.length);
+    next[i] = k === cur.a;
+    setResults(next);
     setTimeout(() => {
       setPicked(null);
       if (i + 1 < qs.length) setI(i + 1);
-      else finish(knowledgeScore(r, qs.length));
+      else finish(knowledgeScore(next.filter(Boolean).length, qs.length));
     }, 650);
   };
   return (

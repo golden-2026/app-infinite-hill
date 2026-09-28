@@ -37,7 +37,7 @@ export default function Review() {
   if (phase === "intro") return (
     <Screen close={close} footer={<Btn onPress={() => setPhase("play")}>{`review ${items.length}`}</Btn>}>
       <View style={{ flex: 1, justifyContent: "center", gap: 18 }}>
-        <View style={{ flexDirection: "row", gap: 14, alignItems: "flex-start" }}><Sun size={64} /><Bubble>{items.length === 1 ? "one of your words is due" : `${items.length} of your words are due`}. ninety seconds. they'll come back again later — that's how they stick.</Bubble></View>
+        <View style={{ flexDirection: "row", gap: 14, alignItems: "flex-start" }}><Sun size={64} /><Bubble>{items.length === 1 ? "one of your words is due" : `${items.length} of your words are due`}. ninety seconds. saying them again is how they stick.</Bubble></View>
         <Eyebrow>your strand · {strand.length} word{strand.length === 1 ? "" : "s"}</Eyebrow>
         <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
           {strand.map((s) => { const d = due.find((x) => x.word === s.word); return <View key={s.word} style={{ backgroundColor: d ? color.gold : color.ink, borderWidth: 1.5, borderColor: color.ink, borderRadius: 999, paddingVertical: 8, paddingHorizontal: 14 }}><Text style={{ fontFamily: font.display[800], fontSize: 14, color: d ? color.ink : color.gold }}>{s.word}</Text></View>; })}
@@ -68,7 +68,7 @@ export default function Review() {
             </Pressable>
           ))}
         </View>
-        {picked !== null ? <Text style={[type.body(), { marginTop: 16, fontFamily: font.text[700] }]}>{picked === it.a ? data.NICE[i % data.NICE.length] : `it's “${it.o[it.a]}”. it'll come back.`}</Text> : null}
+        {picked !== null ? <Text style={[type.body(), { marginTop: 16, fontFamily: font.text[700] }]}>{picked === it.a ? data.NICE[i % data.NICE.length] : `it's “${it.o[it.a]}”. look at it again tomorrow.`}</Text> : null}
       </View>
     </Screen>
   );

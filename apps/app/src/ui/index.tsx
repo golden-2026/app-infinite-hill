@@ -136,8 +136,8 @@ export function Face({ ic, w = 96, h = 120, r = 16, caption = true, big = false 
       )}
       {caption ? (
         <View style={styles.faceCaption}>
-          <Text style={{ fontFamily: font.display[800], fontSize: big ? 22 : 15, color: "#fff" }}>{ic.name}</Text>
-          <Text style={[type.eyebrow(8), { color: color.gold, marginTop: 4 }]}>{label(ic.wing)}</Text>
+          <Text style={{ fontFamily: font.display[800], fontSize: big ? 22 : 15, color: "#fff", textShadowColor: "rgba(0,0,0,.75)", textShadowRadius: 8, textShadowOffset: { width: 0, height: 1 } }}>{ic.name}</Text>
+          <Text style={[type.eyebrow(8), { color: color.gold, marginTop: 4, textShadowColor: "rgba(0,0,0,.75)", textShadowRadius: 6, textShadowOffset: { width: 0, height: 1 } }]}>{label(ic.wing)}</Text>
         </View>
       ) : null}
     </View>
