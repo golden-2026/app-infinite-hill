@@ -1126,5 +1126,6 @@ a.btn:active,.gbtn:active{transform:scale(.96)}
   new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting && !running) { running = true; loop(); } else if (!e.isIntersecting && running) { running = false; T.forEach(clearTimeout); T = []; } }); }, { threshold: .3 }).observe($('pdscreen'));
 })();
 </script>
+<style>/* desktop hero: photos and headline sit just under the header bar */@media(min-width:861px){html body section.hero{padding-top:108px!important;align-items:start!important}html body section.hero .heromosaic{align-self:start!important;margin-top:0!important}html body section.hero .copy{padding-top:24px!important;align-self:start!important}}</style>
 </body>
 </html>
