@@ -4,47 +4,55 @@
 // Used in onboarding (welcome/trail) and from Today (app/trail). Copy is DRAFT (content/journeys.ts).
 import { useState, type ReactElement } from "react";
 import { Text, View } from "react-native";
-import Svg, { Path, Polygon, Line as SvgLine } from "react-native-svg";
+import { Image } from "expo-image";
+import { LinearGradient } from "expo-linear-gradient";
+import Svg, { Path } from "react-native-svg";
+import { art } from "@ih/brand";
 import { icon, label } from "@ih/content";
-import { trailFor, type Stage, type Summit } from "@/content/journeys";
+import { lookoutArt, SUMMIT_ART, trailFor, type Stage, type Summit } from "@/content/journeys";
+import { FADE } from "@/ui/fade";
 import { Guy, color, font, type } from "@/ui";
 
 const NODE = 44;
 const EDGE = NODE / 2;
+const INK = "rgba(10,10,10,";
 
-function Peak({ tint }: { tint: string }) {
-  return (
-    <Svg width={150} height={84} viewBox="0 0 150 84">
-      <Polygon points="0,84 52,26 70,44 92,12 150,84" fill="#ffffff14" />
-      <Polygon points="84,22 92,12 101,25 95,22 90,27" fill="#ffffffcc" />
-      <SvgLine x1={92} y1={12} x2={92} y2={-2} stroke={color.gold} strokeWidth={2} />
-      <Polygon points="92,-2 108,3 92,8" fill={color.gold} />
-      <Path d="M8 84 C 40 70, 60 76, 70 60 S 88 40, 92 26" stroke={tint} strokeWidth={2} strokeDasharray="4 5" fill="none" />
-    </Svg>
-  );
+/** A painted lookout filling its box, with the view (peaks and water) kept in frame. */
+function Painting({ artKey, y = "25%" }: { artKey: string; y?: string }) {
+  const a = art(artKey);
+  if (!a) return null;
+  return <Image source={a.src} style={{ position: "absolute", left: 0, right: 0, top: 0, bottom: 0 }} contentFit="cover" contentPosition={{ top: y as `${number}%`, left: "50%" }} transition={FADE} cachePolicy="memory-disk" accessible={false} />;
 }
 
-function SummitCard({ s, name, tint, planned }: { s: Summit; name: string; tint: string; planned: boolean }) {
+function SummitCard({ s, name, planned }: { s: Summit; name: string; planned: boolean }) {
   const rows: [string, string][] = [["you'll know", s.know], ["you'll practise", s.practise], ["you'll be able to", s.able]];
   return (
-    <View style={{ backgroundColor: color.ink, borderRadius: 24, padding: 18, overflow: "hidden" }} accessibilityLabel={`The summit of ${name}`}>
-      <View style={{ position: "absolute", right: -6, top: 8 }}><Peak tint={tint} /></View>
-      <Guy pose="cheer" h={70} style={{ position: "absolute", right: 22, top: 2 }} />
-      <Text style={[type.eyebrow(11), { color: color.gold, maxWidth: 200 }]}>{s.eyebrow}</Text>
-      <Text style={{ fontFamily: font.display[800], fontSize: 30, letterSpacing: -0.9, color: "#fff", marginTop: 6, maxWidth: 200 }}>the summit</Text>
-      <Text style={[type.body(14), { color: "#ffffffb3", marginTop: 2, maxWidth: 210 }]}>{`walk all of ${name} and here's what's at the top:`}</Text>
-      <View style={{ gap: 12, marginTop: 16 }}>
-        {rows.map(([k, v]) => (
-          <View key={k} style={{ flexDirection: "row", gap: 10 }}>
-            <View style={{ width: 6, borderRadius: 3, backgroundColor: color.gold }} />
-            <View style={{ flex: 1 }}>
-              <Text style={[type.eyebrow(10), { color: "#ffffff99" }]}>{k}</Text>
-              <Text style={{ fontFamily: font.display[700], fontSize: 17, lineHeight: 22, color: "#fff", marginTop: 2 }}>{v}</Text>
-            </View>
-          </View>
-        ))}
+    <View style={{ backgroundColor: color.ink, borderRadius: 24, overflow: "hidden" }} accessibilityLabel={`The summit of ${name}`}>
+      {/* the top of the climb, painted: the view fades down into the card so the words stay easy to read */}
+      <View style={{ height: 210 }}>
+        <Painting artKey={`${SUMMIT_ART}-sm`} y="12%" />
+        <LinearGradient pointerEvents="none" colors={[`${INK}0.3)`, `${INK}0)`, `${INK}0.7)`, color.ink]} locations={[0, 0.25, 0.6, 1]} style={{ position: "absolute", left: 0, right: 0, top: 0, bottom: 0 }} />
+        <Guy pose="cheer" h={70} style={{ position: "absolute", right: 18, top: 12 }} />
+        <View style={{ position: "absolute", left: 18, right: 18, bottom: 4 }}>
+          <Text style={[type.eyebrow(11), { color: color.gold, maxWidth: 240 }]}>{s.eyebrow}</Text>
+          <Text style={{ fontFamily: font.display[800], fontSize: 30, letterSpacing: -0.9, color: "#fff", marginTop: 6 }}>the summit</Text>
+        </View>
       </View>
-      {planned ? <Text style={[type.body(12), { color: "#ffffff80", marginTop: 14 }]}>years two to five are still being planned, so this is where the climb is aiming — the lessons come first.</Text> : null}
+      <View style={{ paddingHorizontal: 18, paddingBottom: 18 }}>
+        <Text style={[type.body(14), { color: "#ffffffb3", marginTop: 2 }]}>{`walk all of ${name} and here's what's at the top:`}</Text>
+        <View style={{ gap: 12, marginTop: 16 }}>
+          {rows.map(([k, v]) => (
+            <View key={k} style={{ flexDirection: "row", gap: 10 }}>
+              <View style={{ width: 6, borderRadius: 3, backgroundColor: color.gold }} />
+              <View style={{ flex: 1 }}>
+                <Text style={[type.eyebrow(10), { color: "#ffffff99" }]}>{k}</Text>
+                <Text style={{ fontFamily: font.display[700], fontSize: 17, lineHeight: 22, color: "#fff", marginTop: 2 }}>{v}</Text>
+              </View>
+            </View>
+          ))}
+        </View>
+        {planned ? <Text style={[type.body(12), { color: "#ffffff80", marginTop: 14 }]}>years two to five are still being planned, so this is where the climb is aiming — the lessons come first.</Text> : null}
+      </View>
     </View>
   );
 }
@@ -60,33 +68,42 @@ function Node({ n, status, tint, outlined }: { n: string; status: Status; tint: 
   );
 }
 
-function Stop({ st, n, side, status, tint, day }: { st: Stage; n: string; side: "left" | "right"; status: Status; tint: string; day: number | null }) {
+function Stop({ st, n, side, status, tint, day, view }: { st: Stage; n: string; side: "left" | "right"; status: Status; tint: string; day: number | null; view: string }) {
   const here = status === "here";
   const card = (
-    <View style={{ flex: 1, backgroundColor: here ? "#FFFBE0" : color.white, borderRadius: 18, borderWidth: 1.5, borderColor: here ? color.ink : color.line, padding: 14, opacity: status === "walked" ? 0.8 : 1 }}>
-      {here ? (
-        <View style={{ flexDirection: "row", alignItems: "center", gap: 6, marginBottom: 8 }}>
-          <View style={{ backgroundColor: color.ink, borderRadius: 999, paddingHorizontal: 10, paddingVertical: 4 }}>
-            <Text style={[type.eyebrow(10), { color: color.gold }]}>{`you are here · day ${day}`}</Text>
-          </View>
-        </View>
-      ) : null}
-      <Text style={[type.eyebrow(10), { color: tint }]}>{`${st.eyebrow}${st.planned ? " · being planned" : st.outlined ? " · outline" : ""}`}</Text>
-      <Text style={{ fontFamily: font.display[800], fontSize: 22, letterSpacing: -0.5, color: color.ink, marginTop: 2 }}>{st.name}</Text>
-      {st.planned ? (
-        <Text style={[type.body(13), { color: color.mute, marginTop: 4 }]}>four more years of trail, being planned. they'll show up here once they're written.</Text>
-      ) : <>
-        <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6, marginTop: 8 }}>
-          {st.samples.map((x) => (
-            <View key={x} style={{ backgroundColor: color.sand, borderRadius: 999, paddingHorizontal: 9, paddingVertical: 4 }}>
-              <Text style={{ fontFamily: font.text[500], fontSize: 12, color: color.ink }}>{x}</Text>
+    <View style={{ flex: 1, backgroundColor: here ? "#FFFBE0" : color.white, borderRadius: 18, borderWidth: 1.5, borderColor: here ? color.ink : color.line, overflow: "hidden", opacity: status === "walked" ? 0.8 : 1 }}>
+      {/* the lookout at the end of this stretch, painted; its name sits on a dark fade so it stays readable */}
+      <View style={{ height: 132, backgroundColor: color.ink }}>
+        <Painting artKey={`${lookoutArt(st.key)}-sm`} y={view} />
+        <LinearGradient pointerEvents="none" colors={[`${INK}0)`, `${INK}0.3)`, `${INK}0.88)`]} locations={[0, 0.42, 1]} style={{ position: "absolute", left: 0, right: 0, top: 0, bottom: 0 }} />
+        {here ? (
+          <View style={{ position: "absolute", left: 10, top: 10, flexDirection: "row" }}>
+            <View style={{ backgroundColor: color.ink, borderRadius: 999, borderWidth: 1.5, borderColor: color.gold, paddingHorizontal: 10, paddingVertical: 4 }}>
+              <Text style={[type.eyebrow(10), { color: color.gold }]}>{`you are here · day ${day}`}</Text>
             </View>
-          ))}
+          </View>
+        ) : null}
+        <View style={{ position: "absolute", left: 14, right: 14, bottom: 10 }}>
+          <Text style={[type.eyebrow(10), { color: color.gold }]}>{`${st.eyebrow}${st.planned ? " · being planned" : st.outlined ? " · outline" : ""}`}</Text>
+          <Text style={{ fontFamily: font.display[800], fontSize: 22, letterSpacing: -0.5, color: "#fff", marginTop: 2 }}>{st.name}</Text>
         </View>
-        <Text style={[type.eyebrow(10), { marginTop: 10 }]}>by here you'll be able to</Text>
-        <Text style={[type.body(14), { color: color.ink, marginTop: 2 }]}>{st.promise}</Text>
-        {st.key.startsWith("Camp") ? <Text style={[type.body(12), { color: color.mute, marginTop: 8 }]}>{`⛰ ends at a lookout · day ${st.last}`}</Text> : null}
-      </>}
+      </View>
+      <View style={{ padding: 14, paddingTop: 6 }}>
+        {st.planned ? (
+          <Text style={[type.body(13), { color: color.mute, marginTop: 4 }]}>four more years of trail, being planned. they'll show up here once they're written.</Text>
+        ) : <>
+          <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6, marginTop: 8 }}>
+            {st.samples.map((x) => (
+              <View key={x} style={{ backgroundColor: color.sand, borderRadius: 999, paddingHorizontal: 9, paddingVertical: 4 }}>
+                <Text style={{ fontFamily: font.text[500], fontSize: 12, color: color.ink }}>{x}</Text>
+              </View>
+            ))}
+          </View>
+          <Text style={[type.eyebrow(10), { marginTop: 10 }]}>by here you'll be able to</Text>
+          <Text style={[type.body(14), { color: color.ink, marginTop: 2 }]}>{st.promise}</Text>
+          {st.key.startsWith("Camp") ? <Text style={[type.body(12), { color: color.mute, marginTop: 8 }]}>{`⛰ ends at a lookout · day ${st.last}`}</Text> : null}
+        </>}
+      </View>
     </View>
   );
   const node = (
@@ -141,7 +158,9 @@ export function TrailMap({ door, day, walked }: { door: string; day: number; wal
   for (let i = top; i >= 0; i--) {
     const st = stages[i];
     const n = st.planned ? "2–5" : st.key.startsWith("Year") ? `Y${st.key.slice(5)}` : st.key.replace(/\D/g, "");
-    rows.push(<Stop key={st.key} st={st} n={n} side={sideOf(i)} status={statusOf(st)} tint={tint} day={walked > 0 ? day : null} />);
+    // years two to five share the ranges painting: each year looks at a different stretch of it
+    const view = st.key.startsWith("Year ") ? `${[18, 44, 70, 96][Number(st.key.slice(5)) - 2] ?? 25}%` : "25%";
+    rows.push(<Stop key={st.key} st={st} n={n} side={sideOf(i)} status={statusOf(st)} tint={tint} day={walked > 0 ? day : null} view={view} />);
     if (i > 0) {
       const walkedUp = walked > 0 && day >= st.first;
       rows.push(<Switchback key={`${st.key}-sb`} w={w} from={sideOf(i - 1)} to={sideOf(i)} tint={tint} walked={walkedUp} />);
@@ -151,7 +170,7 @@ export function TrailMap({ door, day, walked }: { door: string; day: number; wal
   }
   return (
     <View style={{ gap: 0 }} onLayout={(e) => setW(e.nativeEvent.layout.width)}>
-      <SummitCard s={summit} name={name} tint={tint} planned={planned} />
+      <SummitCard s={summit} name={name} planned={planned} />
       <Switchback w={w} from={sideOf(top)} to={sideOf(top)} tint={tint} walked={false} />
       {rows}
       <Switchback w={w} from="left" to="left" tint={tint} walked={walked > 0} />

@@ -196,3 +196,11 @@ export function trailFor(door: string): { stages: Stage[]; lookout: number; summ
   });
   return { stages, lookout: YEAR_ONE, summit, planned: false };
 }
+
+/** The painted lookout for the end of a part of the climb ("Camp 1"…"Camp 5", "Year 2"…, "Years 2-5"): its art key
+ *  in @ih/brand. Camps each have their own; years two to five share "the ranges". The summit has its own too. */
+export function lookoutArt(part: string): string {
+  const camp = /^Camp ([1-5])$/.exec(part);
+  return camp ? `lookout-${camp[1]}` : "lookout-ranges";
+}
+export const SUMMIT_ART = "lookout-summit";

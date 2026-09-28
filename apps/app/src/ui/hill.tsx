@@ -12,6 +12,7 @@ import { Pressable, Text, View } from "react-native";
 import Animated, { Easing, useAnimatedStyle, useReducedMotion, useSharedValue, withRepeat, withSequence, withTiming } from "react-native-reanimated";
 import Svg, { Circle, Defs, Ellipse, G, Line, Path, RadialGradient, Rect, Stop, Text as SvgText } from "react-native-svg";
 import { art } from "@ih/brand";
+import { lookoutArt, SUMMIT_ART } from "@/content/journeys";
 import { FADE } from "@/ui/fade";
 import { color, font } from "@/ui";
 
@@ -79,6 +80,13 @@ export function HillScene({ hour, done, total, doneToday, onStart, onReplay, fir
   const weeks = Math.ceil(total / WEEK);
   const nextPart = pos(firstLesson + total);
   const ty = at(last)[1];
+  // the end of this camp (or year) is on the board: its painted lookout rises at the top of the hill, fading down
+  // into it (the fade is baked into the "-top" image). Year five's end looks out from the summit instead.
+  const atLookout = last === total - 1;
+  const toSummit = /^Year ([6-9]|\d\d)/.test(nextPart.camp);
+  const view = atLookout ? art(`${toSummit ? SUMMIT_ART : lookoutArt(here.camp)}-top`) : null;
+  const viewH = view ? (W * view.h) / view.w : 0;
+  const viewBottom = Math.min(viewH, ty + 40); // the painting's soft edge reaches just past the lookout stone
 
   const state = (i: number): NodeState => (i < done ? "done" : i === done && canStart ? "now" : i === done && doneToday ? "tomorrow" : "locked");
   const isLantern = (i: number) => (i + 1) % WEEK === 0;
@@ -140,6 +148,11 @@ export function HillScene({ hour, done, total, doneToday, onStart, onReplay, fir
   return (
     <View onLayout={(e) => setWidth(e.nativeEvent.layout.width)} style={{ width: "100%", aspectRatio: W / H }}>
       {bg ? <Image source={bg.src} style={{ position: "absolute", width: "100%", height: "100%" }} contentFit="cover" transition={FADE} cachePolicy="memory-disk" accessible={false} /> : null}
+      {view ? (
+        <View pointerEvents="none" style={{ position: "absolute", left: 0, right: 0, top: 0, height: py(viewBottom), overflow: "hidden" }}>
+          <Image source={view.src} style={{ position: "absolute", left: 0, right: 0, bottom: 0, width: "100%", aspectRatio: view.w / view.h }} contentFit="cover" transition={FADE} cachePolicy="memory-disk" accessible={false} />
+        </View>
+      ) : null}
       <LinearGradient pointerEvents="none" colors={["rgba(247,247,245,0)", "#F7F7F5"]} style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: 56 }} />
 
       {/* light, stars, footprints and the two trail-end notes */}
@@ -154,8 +167,8 @@ export function HillScene({ hour, done, total, doneToday, onStart, onReplay, fir
           </G>
         ); })}
         <Pill x={14} y={H - 58} txt={first === 0 ? "▲ THE TRAILHEAD · YOUR FOOTPRINTS STAY" : `▲ DAYS ${firstLesson}–${firstLesson + first - 1} WALKED · FOOTPRINTS STAY`} anchor="start" night={night} />
-        <Pill x={W / 2} y={ty - 46} night={night} anchor="middle"
-          txt={last === total - 1 ? (/^Year ([6-9]|\d\d)/.test(nextPart.camp) ? "THE SUMMIT · FIVE YEARS OF TRAIL" : `LOOKOUT · ${nextPart.camp} · ${nextPart.name} AHEAD · THE SUMMIT IS YEARS UP`.toUpperCase()) : `THE TRAIL GOES ON · WEEK ${Math.floor(last / WEEK) + 2} AHEAD`} />
+        <Pill x={W / 2} y={last === total - 1 ? ty - 120 : ty - 46} night={night} anchor="middle"
+          txt={last === total - 1 ? (/^Year ([6-9]|\d\d)/.test(nextPart.camp) ? "THE SUMMIT · FIVE YEARS OF TRAIL" : `LOOKOUT · ${nextPart.camp} · ${nextPart.name} AHEAD`.toUpperCase()) : `THE TRAIL GOES ON · WEEK ${Math.floor(last / WEEK) + 2} AHEAD`} />
       </Svg>
 
       {/* the wooden trail sign: where you are on the hill */}
