@@ -3,7 +3,6 @@ import { track } from "./analytics";
 import { SUN_NOTES, icon } from "@ih/content";
 import * as Notifications from "expo-notifications";
 import { reminderTimes } from "./reminder-plan";
-import { voiceLabel } from "./voice";
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({ shouldShowBanner: true, shouldShowList: true, shouldPlaySound: false, shouldSetBadge: false }),
@@ -18,7 +17,7 @@ export async function syncReminders(store: StoreLike) {
   const { reminder, homeWing } = store.saved.settings;
   if (!reminder.on) return;
   const ic = icon(homeWing);
-  const note = SUN_NOTES(homeWing, voiceLabel(homeWing, ic.short).short, "")?.[0];
+  const note = SUN_NOTES(homeWing, ic.short, "")?.[0];
   for (const date of reminderTimes({ time: reminder.time, now: new Date(), doneToday: store.derived.doneToday })) {
     await Notifications.scheduleNotificationAsync({
       content: { title: "infinite hill", body: note?.[1] || "it's golden hour. a few minutes for you." },

@@ -21,12 +21,12 @@ export const SUN_NOTES = logic.SUN_NOTES;
 export const STRAND_WORDS = logic.STRAND_WORDS;
 export const DOORS = data.DOORS; // [label, key]; the design build's fake counts are removed at extraction
 
-// Day one's welcome in the house voice. v175's WELCOME is written in the first person as each proposed celebrity
-// voice; it's used only when that voice is licensed (`named`), never put in an unsigned person's mouth.
+// Day one's welcome: v175's first-person WELCOME from each door's voice (the owner's design, restored 2026-09-28).
+// HOUSE_WELCOME is the unnamed alternative, used only when a caller passes named: false.
 const HOUSE_WELCOME = "Hey. Day one. Before anything else, three promises. It's a few minutes a day. A missed day never costs you anything. And nobody here will tell you what to believe. One word, one breath, one line to carry. Let's begin.";
 
 /** The day's segments, exactly as v175 Session assembled them (welcome inserted on day 1). */
-export function segmentsFor(wing, day, lesson = day, { named = false } = {}) {
+export function segmentsFor(wing, day, lesson = day, { named = true } = {}) {
   const ic = icon(wing);
   const info = lessonInfo(wing, lesson);
   const d1 = data.DAY1[wing] || data.DAY1.SPIRITUAL;
@@ -61,7 +61,7 @@ function pacedStep(wing, type) {
 }
 
 /** Everything a session screen needs: ordered steps, the word and the carry line. Real sit times. */
-export function planDay({ wing, day, lesson = day, mode = "adult", named = false }) {
+export function planDay({ wing, day, lesson = day, mode = "adult", named = true }) {
   const { info, d1, segs } = segmentsFor(wing, day, lesson, { named });
   const R = buildDay({ wing, day, lesson, data: info, d1, segs, demoFast: false, mode });
   let steps = R.steps;

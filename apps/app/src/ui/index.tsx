@@ -8,7 +8,6 @@ import Animated, { Easing, useAnimatedStyle, useReducedMotion, useSharedValue, w
 import { art, color, font, radius, type } from "@ih/brand";
 import { data, label } from "@ih/content";
 import { tapHaptic } from "@/lib/haptics";
-import { LICENSED_VOICES } from "@/lib/voice";
 
 export { color, font, type };
 
@@ -126,20 +125,18 @@ export function Sun({ size = 64, mood = "calm" }: { size?: number; mood?: "calm"
   );
 }
 
-/** A door's voice. A real person's portrait and name appear only once their voice is licensed (lib/voice); until
- *  then it's the door's tint and "the house voice" — a proposed voice is never shown as if signed. */
+/** A voice's portrait (or its initial on the door's tint when there is no photo). */
 export function Face({ ic, w = 96, h = 120, r = 16, caption = true, big = false }: { ic: any; w?: number; h?: number; r?: number; caption?: boolean; big?: boolean }) {
-  const named = !!LICENSED_VOICES[ic.wing];
-  const a = named ? art(data.PHOTOS[ic.wing]) : null;
-  const who = named ? ic.name : "the house voice";
+  const ref = data.PHOTOS[ic.wing];
+  const a = art(ref);
   return (
-    <View style={{ width: w, height: h, borderRadius: r, overflow: "hidden", backgroundColor: a ? "#000" : ic.tint }} accessibilityLabel={`${who}, ${label(ic.wing)}`}>
+    <View style={{ width: w, height: h, borderRadius: r, overflow: "hidden", backgroundColor: a ? "#000" : ic.tint }} accessibilityLabel={`${ic.name}, ${label(ic.wing)}`}>
       {a ? <Image source={a.src} style={StyleSheet.absoluteFill} contentFit="cover" contentPosition={big ? "center" : "top"} transition={FADE} cachePolicy="memory-disk" /> : (
-        <View style={[StyleSheet.absoluteFill, styles.center]}><Text style={{ fontFamily: font.display[800], fontSize: big ? 64 : Math.max(10, Math.min(36, Number(h) * 0.45 || 36)), color: "#ffffffaa" }}>{label(ic.wing)[0]}</Text></View>
+        <View style={[StyleSheet.absoluteFill, styles.center]}><Text style={{ fontFamily: font.display[800], fontSize: big ? 64 : 36, color: "#ffffff55" }}>{ic.short[0]}</Text></View>
       )}
       {caption ? (
         <View style={styles.faceCaption}>
-          <Text style={{ fontFamily: font.display[800], fontSize: big ? 22 : 15, color: "#fff" }}>{who}</Text>
+          <Text style={{ fontFamily: font.display[800], fontSize: big ? 22 : 15, color: "#fff" }}>{ic.name}</Text>
           <Text style={[type.eyebrow(8), { color: color.gold, marginTop: 4 }]}>{label(ic.wing)}</Text>
         </View>
       ) : null}

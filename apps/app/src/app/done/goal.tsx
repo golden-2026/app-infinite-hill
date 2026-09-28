@@ -16,8 +16,7 @@ export default function Goal() {
   const { setGoal } = useStore();
   const [goal, setG] = useState<number | null>(null);
   const ic = icon(p.door);
-  // No rewards promised that don't exist yet (a note from a voice, a Keeper's message): just what you'll have.
-  const opts: [number, string, string][] = [[7, "a week", "seven words you can use in a sentence."], [21, "camp one", "a whole camp: 21 words, and the oldest prayer by heart."], [100, "the beginning", "a hundred quiet minutes with your own mind."]];
+  const opts: [number, string, string][] = [[7, "a week", `seven words you can use in a sentence. ${ic.short} leaves you a note.`], [21, "camp one", "the oldest prayer by heart. a message from the Keeper."], [100, "the beginning", `a hundred quiet minutes with your own mind. ${ic.short} calls it.`]];
   return (
     <Screen close={close} footer={<>
         <Btn testID="goal-go" disabled={!goal} onPress={() => { track("goal_set", { days: goal! }); setGoal(goal!); go(accountsOn() ? "/done/save" : "/done/remind"); }}>{goal ? `${goal} days. bet.` : "pick one above"}</Btn>

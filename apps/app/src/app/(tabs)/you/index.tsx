@@ -129,7 +129,7 @@ export default function You() {
             <Eyebrow>how the sun talks to you</Eyebrow>
             <Text style={[type.body(12.5), { color: color.mute, marginTop: 6 }]}>one a day, at sunset. never a guilt trip. never red.</Text>
             <View style={{ gap: 8, marginTop: 12 }}>
-              {SUN_NOTES(wing, voiceLabel(wing, ic.short).short, (data.DAY1[wing] || data.DAY1.SPIRITUAL).word).map(([t, m]: [string, string]) => (
+              {SUN_NOTES(wing, ic.short, (data.DAY1[wing] || data.DAY1.SPIRITUAL).word).map(([t, m]: [string, string]) => (
                 <View key={t} style={{ backgroundColor: "#F2F2EC", borderRadius: 14, paddingVertical: 10, paddingHorizontal: 12, flexDirection: "row", gap: 10 }}>
                   <Sun size={26} />
                   <View style={{ flex: 1 }}><Text style={type.eyebrow(7)}>infinite hill · {t}</Text><Text style={[type.body(13), { marginTop: 3 }]}>{m}</Text></View>
