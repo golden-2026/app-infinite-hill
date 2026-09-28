@@ -6,7 +6,7 @@ import { useStore } from "@/lib/store";
 import { BottomBar, NavBar, color, font } from "@/ui";
 import { Enter } from "@/ui/enter";
 
-export const WELCOME_STEPS = 6; // door → check-in (or get to know you) → about you → your path → voice → ready
+export const WELCOME_STEPS = 8; // about you → door → the whole climb → check-in (or get to know you) → your tradition → your path → voice → ready
 
 /** Onboarding on the app shell: the same top bar (back · progress · skip) and pinned bottom bar as every screen. */
 export function WelcomeFrame({ step, children, footer, door }: { step: number; children: ReactNode; footer?: ReactNode; door?: string | null }) {

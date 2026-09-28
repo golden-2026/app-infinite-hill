@@ -4,7 +4,7 @@ import { router } from "expo-router";
 import { useEffect, useState } from "react";
 import { Text, View } from "react-native";
 import { EXCLUSIVE, intakeReply, nextIntake } from "@/content/intake";
-import { emptyProfile } from "@/lib/profile";
+import { profileFor } from "@/lib/onboard";
 import { useStore } from "@/lib/store";
 import { Btn, Eyebrow, Link, Opt, type } from "@/ui";
 import { Host } from "@/ui/host";
@@ -19,7 +19,13 @@ export default function Intake() {
   useEffect(() => { track("onboard_step", { step: "intake" }); }, []);
   useTitle("getting to know you");
   const { update, saved, today } = useStore();
-  const [answers, setAnswers] = useState<Answers>({});
+  // What the first step already told us (which tradition, how they feel about it) is not asked again.
+  const [answers, setAnswers] = useState<Answers>(() => {
+    const a = profileFor(saved.settings.profile, "SPIRITUAL", today).answers;
+    const seeded: Answers = {};
+    for (const k of ["raised", "feelNow"]) if (a[k] != null) seeded[k] = a[k];
+    return seeded;
+  });
   const [history, setHistory] = useState<string[]>([]);
   const [multi, setMulti] = useState<string[]>([]);
   const [reply, setReply] = useState<string | null>(null);
@@ -27,7 +33,7 @@ export default function Intake() {
 
   useEffect(() => {
     if (q) return;
-    const prev = saved.settings.profile?.door === "SPIRITUAL" ? saved.settings.profile : emptyProfile("SPIRITUAL", today);
+    const prev = profileFor(saved.settings.profile, "SPIRITUAL", today);
     update({ profile: { ...prev, answers: { ...prev.answers, ...answers } } });
     router.replace("/welcome/suggest");
   }, [q]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -55,7 +61,7 @@ export default function Intake() {
     ? <Btn disabled={!multi.length} onPress={() => commit(multi)}>{multi.length ? "that's me" : "pick any that fit"}</Btn>
     : q.optional ? <Btn kind="ghost" onPress={() => commit(null)}>rather not say</Btn> : undefined;
   return (
-    <WelcomeFrame step={2 + Math.min(1, history.length / 6)} door="SPIRITUAL" footer={footer}>
+    <WelcomeFrame step={4 + Math.min(1.5, history.length / 4)} door="SPIRITUAL" footer={footer}>
       <Eyebrow style={{ textAlign: "center" }}>{`getting to know you · ${asked}`}</Eyebrow>
       {reply ? <Text style={[type.body(14), { textAlign: "center", fontStyle: "italic" }]}>{reply}</Text> : null}
       <Host>{q.ask}</Host>

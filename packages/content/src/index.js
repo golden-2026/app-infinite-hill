@@ -118,7 +118,7 @@ function pacedStep(wing, type) {
 }
 
 /** Everything a session screen needs: ordered steps, the word and the carry line. Real sit times. */
-export function planDay({ wing, day, lesson = day, mode = "adult", named = true }) {
+export function planDay({ wing, day, lesson = day, mode = "adult", named = true, level = 0 }) {
   const { info, d1, segs } = segmentsFor(wing, day, lesson, { named });
   const R = buildDay({ wing, day, lesson, data: info, d1, segs, demoFast: false, mode });
   let steps = R.steps;
@@ -138,7 +138,12 @@ export function planDay({ wing, day, lesson = day, mode = "adult", named = true 
     const unname = (t) => (typeof t === "string" ? t.replace(`${short}'s ideas`, "the ideas").replace(` back to ${short}`, " back") : t);
     steps = steps.map((s) => ({ ...s, prompt: unname(s.prompt), hint: unname(s.hint) }));
   }
+  // Rising challenge (level 1–5; 0 = the plain lesson, as before). Children keep the plain lesson.
+  if (level && mode === "adult") steps = levelUp(steps, { wing, day, level });
   return { steps, word: R.word, carry: R.carry, title: info?.title || d1.title || "", info };
 }
 
-export const GRADED = Object.freeze(["order", "match", "listen", "taphear", "bet", "myth"]);
+export const GRADED = Object.freeze(["order", "match", "listen", "taphear", "bet", "myth", "scenes", "typeit", "rush", "rhythm"]);
+
+import { levelUp } from "./level.js";
+export { LEVELS, clampLevel, deeperRound, knownSoFar, levelUp, likeness, rushStep, syllables, wrongAnswers } from "./level.js";

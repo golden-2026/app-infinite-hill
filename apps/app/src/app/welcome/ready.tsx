@@ -22,7 +22,7 @@ export default function Ready() {
     return () => clearTimeout(t);
   }, [door, update]);
   return (
-    <WelcomeFrame step={6} door={door}>
+    <WelcomeFrame step={8} door={door}>
       <View style={{ alignItems: "center", gap: 18 }}>
         <Guy pose="path" h={180} />
         <Text style={[type.h1(24), { textAlign: "center", maxWidth: 280 }]}>

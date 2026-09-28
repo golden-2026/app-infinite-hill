@@ -50,6 +50,7 @@ function RoundBtn({ glyph, label, onPress, active, size = 84 }: { glyph: string;
 // ─── guess · listen ─────────────────────────────────────────────────────
 export function OptionStep({ step, voiceOn, onDone }: { step: any; voiceOn: boolean; onDone: Done }) {
   const [picked, setPicked] = useState<string | null>(null);
+  const [replays, setReplays] = useState<number>(step.replays ?? 99);
   useEffect(() => {
     if (!step.speak) return;
     const t = setTimeout(() => speak(step.speak, voiceOn), 300);
@@ -62,7 +63,7 @@ export function OptionStep({ step, voiceOn, onDone }: { step: any; voiceOn: bool
   return (
     <View style={{ gap: 10, width: "100%" }}>
       <Prompt>{step.prompt}</Prompt>
-      {step.speak ? <View style={{ marginVertical: 8 }}><RoundBtn glyph="🔊" label="Hear it again" onPress={() => speak(step.speak, true)} /></View> : null}
+      {step.speak ? <View style={{ marginVertical: 8, alignItems: "center", gap: 6 }}><RoundBtn glyph="🔊" label={replays > 0 ? "Hear it again" : "no more replays"} onPress={replays > 0 ? () => { speak(step.speak, true); setReplays((n) => n - 1); } : undefined} />{step.replays != null && step.replays < 9 ? <Text style={[type.eyebrow(8), { color: "#ffffff88" }]}>{replays > 0 ? `${replays} replay left` : "no more replays — trust your ear"}</Text> : null}</View> : null}
       {step.options.map((o: string) => <Choice key={o} text={o} on={picked === o} right={picked !== null && !guess && o === step.answer} disabled={picked !== null} onPress={() => pick(o)} />)}
       {picked !== null ? <Verdict ok={guess ? null : ok} seed={step.prompt.length} title={guess ? "good guess" : undefined} body={guess ? "the lesson's about to tell you." : ok ? undefined : `it's "${step.answer}."`} onNext={() => onDone(guess ? null : ok)} /> : null}
     </View>
@@ -159,6 +160,7 @@ export function SpeakStep({ step, onDone }: { step: any; onDone: () => void }) {
 export function TapHear({ step, voiceOn, onDone }: { step: any; voiceOn: boolean; onDone: Done }) {
   const [seq, setSeq] = useState<{ w: string; k: number }[]>([]);
   const [state, setState] = useState<boolean | null>(null);
+  const [left, setLeft] = useState<number>(step.replays ?? 99);
   useEffect(() => {
     const t = setTimeout(() => speak(step.speak, voiceOn), 300);
     return () => clearTimeout(t);
@@ -177,7 +179,7 @@ export function TapHear({ step, voiceOn, onDone }: { step: any; voiceOn: boolean
   return (
     <View style={{ width: "100%", gap: 14 }}>
       <View style={{ flexDirection: "row", gap: 12, alignItems: "flex-end" }}><View style={{ flex: 1 }}><Prompt>{step.prompt}</Prompt></View><Guy pose="music" h={84} /></View>
-      <Pressable accessibilityRole="button" accessibilityLabel="Hear it again" onPress={() => speak(step.speak, true)} style={s.pill}><Text style={s.pillText}>🔊 hear it again</Text></Pressable>
+      <Pressable accessibilityRole="button" accessibilityLabel={left > 0 ? "Hear it again" : "no more replays"} disabled={left <= 0} onPress={() => { speak(step.speak, true); setLeft((n) => n - 1); }} style={[s.pill, left <= 0 ? { opacity: 0.35 } : null]}><Text style={s.pillText}>🔊 {left <= 0 ? "no more replays" : left < 9 ? `hear it again · ${left} left` : "hear it again"}</Text></Pressable>
       <View style={s.answerRow}>{seq.length ? seq.map((x) => chip(x, true)) : <Text style={[type.body(), { color: "#ffffff66", fontStyle: "italic" }]}>tap the words in order…</Text>}</View>
       <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8, justifyContent: "center" }}>{bank.filter((x: any) => !used.has(x.k)).map((x: any) => chip(x, false))}</View>
       {state === null ? <SlotFill><Btn kind="gold" disabled={seq.length < step.words.length} onPress={check}>check</Btn></SlotFill> : (

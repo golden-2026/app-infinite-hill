@@ -4,10 +4,11 @@ import { FADE } from "@/ui/fade";
 import { useEffect, type ReactNode } from "react";
 import { Image } from "expo-image";
 import { Pressable, StyleSheet, Text, View, type StyleProp, type TextStyle, type ViewStyle } from "react-native";
-import Animated, { Easing, useAnimatedStyle, useReducedMotion, useSharedValue, withRepeat, withSequence, withTiming } from "react-native-reanimated";
+import Animated, { Easing, useAnimatedStyle, useReducedMotion, useSharedValue, withRepeat, withSequence, withSpring, withTiming } from "react-native-reanimated";
 import { art, color, font, radius, type } from "@ih/brand";
 import { data, label } from "@ih/content";
 import { tapHaptic } from "@/lib/haptics";
+import { play as playFx } from "@/lib/fx";
 
 export { color, font, type };
 
@@ -35,24 +36,34 @@ export function Btn({ children, onPress, kind = "ink", disabled, label: a11y, st
   children: ReactNode; onPress?: () => void; kind?: keyof typeof BTN; disabled?: boolean; label?: string; style?: StyleProp<ViewStyle>; testID?: string;
 }) {
   const k = BTN[kind];
+  // The press: dips to 0.96 the instant a finger lands, then springs back with a little overshoot on release.
+  const p = useSharedValue(0); // 0 = resting, 1 = held
+  const s = useSharedValue(1);
+  const reduce = useReducedMotion();
+  const live = !disabled && !!onPress;
+  const pressAnim = useAnimatedStyle(() => ({ opacity: 1 - p.value * 0.08, transform: [{ scale: s.value }] }));
   return (
-    <Pressable
+    <AnimatedPressable
       testID={testID}
       accessibilityRole="button"
       accessibilityLabel={a11y ?? (typeof children === "string" ? children : undefined)}
       accessibilityState={{ disabled: !!disabled }}
       disabled={disabled}
-      onPress={onPress ? () => { tapHaptic(); onPress(); } : undefined}
-      style={({ pressed }) => [
+      onPressIn={live ? () => { p.value = withTiming(1, { duration: 60 }); if (!reduce) s.value = withTiming(0.96, { duration: 70, easing: Easing.out(Easing.quad) }); } : undefined}
+      onPressOut={live ? () => { p.value = withTiming(0, { duration: 160 }); if (!reduce) s.value = withSpring(1, { damping: 9, stiffness: 340, mass: 0.7 }); } : undefined}
+      onPress={onPress ? () => { tapHaptic(); playFx("tap"); onPress(); } : undefined}
+      style={[
         styles.btn,
-        { backgroundColor: disabled ? color.line : k.bg, borderColor: disabled ? "transparent" : k.border, opacity: pressed ? 0.92 : 1, transform: [{ scale: pressed && !disabled ? 0.97 : 1 }] },
+        { backgroundColor: disabled ? color.line : k.bg, borderColor: disabled ? "transparent" : k.border },
         style,
+        pressAnim,
       ]}
     >
       <Text style={[styles.btnText, { color: disabled ? color.mute : k.fg }]}>{typeof children === "string" ? children.toUpperCase() : children}</Text>
-    </Pressable>
+    </AnimatedPressable>
   );
 }
+const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
 
 // A text link that is still a real button (e.g. "skip ›", "‹ back").
 export function Link({ children, onPress, style, label: a11y }: { children: string; onPress: () => void; style?: StyleProp<TextStyle>; label?: string }) {

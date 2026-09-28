@@ -91,6 +91,16 @@ const PROFILE_TEXT = Object.freeze({
     mid: "Their tradition matters to them, with questions: welcome the questions.",
     low: "They hold the tradition loosely (culture, family, curiosity): assume no belief.",
   },
+  reason: {
+    own: "They came to understand their own tradition better: connect ideas to what they may have grown up with.",
+    roots: "They want to reconnect with how they grew up: be warm about memory and family, never guilt.",
+    god: "They are wondering whether they believe in God: take the question seriously, don't push an answer either way.",
+    partner: "They came through a partner's or family's faith: explain what things mean to the people who practice them.",
+    kids: "They want to teach their children: give simple, tellable explanations.",
+    calm: "They want a calmer daily habit: keep answers practical and short.",
+    hard: "They are going through something hard: be gentle and brief; if they mention being in danger, point them to local emergency help.",
+    curious: "They are simply curious: be clear and interesting.",
+  },
 });
 
 function readProfile(value) {

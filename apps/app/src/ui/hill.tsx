@@ -155,7 +155,7 @@ export function HillScene({ hour, done, total, doneToday, onStart, onReplay, fir
         ); })}
         <Pill x={14} y={H - 58} txt={first === 0 ? "▲ THE TRAILHEAD · YOUR FOOTPRINTS STAY" : `▲ DAYS ${firstLesson}–${firstLesson + first - 1} WALKED · FOOTPRINTS STAY`} anchor="start" night={night} />
         <Pill x={W / 2} y={ty - 46} night={night} anchor="middle"
-          txt={last === total - 1 ? (/^Year ([6-9]|\d\d)/.test(nextPart.camp) ? "THE SUMMIT · FIVE YEARS OF TRAIL" : `SUMMIT · ${nextPart.camp} · ${nextPart.name} NEXT`.toUpperCase()) : `THE TRAIL GOES ON · WEEK ${Math.floor(last / WEEK) + 2} AHEAD`} />
+          txt={last === total - 1 ? (/^Year ([6-9]|\d\d)/.test(nextPart.camp) ? "THE SUMMIT · FIVE YEARS OF TRAIL" : `LOOKOUT · ${nextPart.camp} · ${nextPart.name} AHEAD · THE SUMMIT IS YEARS UP`.toUpperCase()) : `THE TRAIL GOES ON · WEEK ${Math.floor(last / WEEK) + 2} AHEAD`} />
       </Svg>
 
       {/* the wooden trail sign: where you are on the hill */}

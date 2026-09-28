@@ -19,7 +19,7 @@ export default function MeetVoice() {
   const ic = icon(door);
   const v = voiceLabel(door, ic.short);
   return (
-    <WelcomeFrame step={5} door={door} footer={<Btn testID="lets-go" onPress={() => router.push({ pathname: "/welcome/ready", params: { door } })}>Let's go</Btn>}>
+    <WelcomeFrame step={7} door={door} footer={<Btn testID="lets-go" onPress={() => router.push({ pathname: "/welcome/ready", params: { door } })}>Let's go</Btn>}>
       <Host door={door}>
         Meet your voice. <Text style={{ fontFamily: font.display[800] }}>{ic.name}</Text> — {data.BIO[ic.wing]}. {v.claim}
       </Host>

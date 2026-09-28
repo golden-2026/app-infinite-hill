@@ -38,6 +38,12 @@ export type Settings = {
   light?: number;
   glow?: { date: string; best: number; clean?: boolean } | null;
   lanternOn?: string | null;
+  /** How recent lessons went (share right, 0-1), newest last: the level reads it. Best timed-round times by door. */
+  runs?: { date: string; door: string; day: number; acc: number; level: number }[];
+  rushBest?: Record<string, number>;
+  deepOn?: string | null;
+  /** The one-tap "how did that feel?" after a lesson (kept on the phone; for playtests). */
+  feel?: { date: string; door: string; day: number; level: number; feel: "slow" | "right" | "hard" }[];
 };
 
 type Saved = { v: 1; deviceId: string; sits: Sit[]; outbox: string[]; settings: Settings; settingsVersion: number };
@@ -108,6 +114,8 @@ type Store = {
   keepLine: (line: string, door: string) => void;
   earnLight: (n: number, best?: number, clean?: boolean) => void;
   openLantern: (bonus: number) => void;
+  recordRun: (r: { door: string; day: number; acc: number; level: number; rushSecs?: number | null; deep?: boolean }) => void;
+  recordFeel: (f: { door: string; day: number; level: number; feel: "slow" | "right" | "hard" }) => void;
   addSignal: (sig: Settings["signals"][number]) => void;
   markWelcomedBack: () => void;
   replaceFromServer: (o: { sits: Sit[]; settings?: Partial<Settings>; settingsVersion?: number }) => void;
@@ -178,6 +186,14 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       return { ...s, settings: { ...s.settings, light: (s.settings.light || 0) + Math.max(0, n), glow: { date, best: Math.max(prev, best), clean: clean || (s.settings.glow?.date === date && !!s.settings.glow.clean) } }, settingsVersion: s.settingsVersion + 1 };
     }),
     openLantern: (bonus) => commit((s) => ({ ...s, settings: { ...s.settings, light: (s.settings.light || 0) + bonus, lanternOn: todayNow() }, settingsVersion: s.settingsVersion + 1 })),
+    recordRun: ({ door, day, acc, level, rushSecs, deep }) => commit((s) => {
+      const date = todayNow();
+      const runs = deep ? s.settings.runs || [] : [...(s.settings.runs || []), { date, door, day, acc: Math.max(0, Math.min(1, acc)), level }].slice(-12);
+      const prev = s.settings.rushBest?.[door];
+      const rushBest = rushSecs ? { ...(s.settings.rushBest || {}), [door]: prev ? Math.min(prev, rushSecs) : rushSecs } : s.settings.rushBest;
+      return { ...s, settings: { ...s.settings, runs, rushBest, deepOn: deep ? date : s.settings.deepOn }, settingsVersion: s.settingsVersion + 1 };
+    }),
+    recordFeel: (f) => commit((s) => ({ ...s, settings: { ...s.settings, feel: [...(s.settings.feel || []).filter((x) => !(x.date === todayNow() && x.door === f.door && x.day === f.day)), { ...f, date: todayNow() }].slice(-60) }, settingsVersion: s.settingsVersion + 1 })),
     markWelcomedBack: () => commit((s) => ({ ...s, settings: { ...s.settings, welcomedBackOn: todayNow() }, settingsVersion: s.settingsVersion + 1 })),
     replaceFromServer: ({ sits, settings, settingsVersion }) =>
       commit((s) => {

@@ -10,6 +10,7 @@ import { useStore } from "@/lib/store";
 import { LANTERN_LIGHT, lanternLine, todaysThree } from "@/lib/three";
 import { Btn, CloseButton, Guy, color, font, type } from "@/ui";
 import { Lantern } from "@/ui/lantern";
+import { ShareLantern } from "@/ui/share-lantern";
 
 // Today's lantern: lights when today's three are done and opens to a line from a lesson already walked.
 export default function LanternScreen() {
@@ -57,6 +58,7 @@ export default function LanternScreen() {
               </View>
             ) : null}
             <Guy pose="namaste" h={110} />
+            {gift ? <ShareLantern line={gift.line} door={door} day={today} n={derived.showedUp} /> : null}
           </View>
         ) : null}
       </View>

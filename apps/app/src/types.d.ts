@@ -20,7 +20,13 @@ declare module "@ih/content" {
   export const data: any;
   export const DOORS: [string, string][];
   export const GRADED: readonly string[];
-  export function planDay(o: { wing: string; day: number; lesson?: number; mode?: string; named?: boolean }): { steps: any[]; word: string; carry: string; title: string; info: any };
+  export function planDay(o: { wing: string; day: number; lesson?: number; mode?: string; named?: boolean; level?: number }): { steps: any[]; word: string; carry: string; title: string; info: any };
+  export const LEVELS: readonly string[];
+  export function clampLevel(n: number): number;
+  export function deeperRound(wing: string, day: number, level: number): any[];
+  export function knownSoFar(wing: string, day: number): { word: string; carry: string; day: number }[];
+  export function likeness(a: string, b: string): number;
+  export function syllables(word: string): string[];
   export function lessonInfo(wing: string, lesson: number): any;
   export function icon(wing: string): { wing: string; name: string; short: string; tint: string };
   export function label(wing: string): string;

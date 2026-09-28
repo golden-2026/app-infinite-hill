@@ -34,8 +34,10 @@ export default function Fit() {
   };
   const setOpen = (o: Openness) => update({ profile: { ...p, openness: o } });
   const rows: [string, string, string][] = [["how deep", ...depth] as [string, string, string], ["other traditions", ...open[p.openness]] as [string, string, string]];
+  // Grew up in it, not sure they believe (or left): the roots, walked with fresh eyes (welcome/you → door). DRAFT copy.
+  if (p.answers.lens === "fresh") rows.unshift(["how we'll hold it", "with fresh eyes", `${name} as history, stories and practice. nothing here asks you to believe — bring your questions.`]);
   return (
-    <WelcomeFrame step={4} door={door} footer={<Btn testID="fit-continue" onPress={() => router.push({ pathname: "/welcome/voice", params: { door } })}>Sounds right</Btn>}>
+    <WelcomeFrame step={6} door={door} footer={<Btn testID="fit-continue" onPress={() => router.push({ pathname: "/welcome/voice", params: { door } })}>Sounds right</Btn>}>
       <Host>{`Here's how we'll walk ${name} with you.`}</Host>
       <View style={{ gap: 10 }}>
         {rows.map(([k, h, b]) => (

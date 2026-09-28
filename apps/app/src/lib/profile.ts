@@ -25,7 +25,7 @@ export type Profile = {
 };
 
 export const emptyProfile = (door: string, today: string): Profile => ({
-  v: 1, door, knowledge: null, commitment: null, openness: door === "SPIRITUAL" ? "love" : "sometimes",
+  v: 1, door, knowledge: null, commitment: null, openness: door === "SPIRITUAL" ? "love" : "stay",
   answers: {}, bridges: {}, lastBridgeOn: null, setOn: today,
 });
 
@@ -39,7 +39,7 @@ export function cleanProfile(raw: any): Profile | null {
     door: raw.door,
     knowledge: pct(raw.knowledge),
     commitment: pct(raw.commitment),
-    openness: OPENNESS.includes(raw.openness) ? raw.openness : "sometimes",
+    openness: OPENNESS.includes(raw.openness) ? raw.openness : raw.door === "SPIRITUAL" ? "love" : "stay",
     answers: raw.answers && typeof raw.answers === "object" && !Array.isArray(raw.answers) ? raw.answers : {},
     bridges: raw.bridges && typeof raw.bridges === "object" && !Array.isArray(raw.bridges) ? raw.bridges : {},
     lastBridgeOn: typeof raw.lastBridgeOn === "string" ? raw.lastBridgeOn : null,
@@ -75,10 +75,12 @@ export function depthFor(p: Profile): "new" | "some" | "deep" {
 }
 
 /** What the Guide is told about the person: fixed values only (api/guide.js maps each to a fixed sentence). No raw answers. */
-export function guideProfile(p: Profile | null, door: string): { depth: string; openness: Openness; commitment?: "high" | "mid" | "low" } | undefined {
+export function guideProfile(p: Profile | null, door: string): { depth: string; openness: Openness; commitment?: "high" | "mid" | "low"; reason?: string } | undefined {
   if (!p || p.door !== door) return undefined;
-  const out: { depth: string; openness: Openness; commitment?: "high" | "mid" | "low" } = { depth: door === "SPIRITUAL" ? "some" : depthFor(p), openness: p.openness };
+  const out: { depth: string; openness: Openness; commitment?: "high" | "mid" | "low"; reason?: string } = { depth: door === "SPIRITUAL" ? "some" : depthFor(p), openness: p.openness };
   if (door !== "SPIRITUAL" && p.commitment != null) out.commitment = p.commitment >= 67 ? "high" : p.commitment >= 34 ? "mid" : "low";
+  const why = p.answers.why;
+  if (typeof why === "string" && ["own", "roots", "god", "partner", "kids", "calm", "hard", "curious"].includes(why)) out.reason = why;
   return out;
 }
 

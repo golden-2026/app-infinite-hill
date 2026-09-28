@@ -12,6 +12,7 @@ import { voiceLabel } from "@/lib/voice";
 import { Btn, Card, Face, Guy, Sun, color, font, type } from "@/ui";
 import { HillScene } from "@/ui/hill";
 import { TodaysThree } from "@/ui/todays-three";
+import { SongCard } from "@/ui/song";
 
 export default function Today() {
   useTitle("today");
@@ -81,7 +82,7 @@ export default function Today() {
 
         {(() => {
           const seen = st.unlocksSeen || [];
-          const card = derived.showedUp >= 7 && !seen.includes("together") ? { key: "together", title: "a week in. meet who's walking with you.", body: "the bell at sundown, and who reads your lessons.", to: "/together" }
+          const card = derived.showedUp >= 7 && !seen.includes("together") ? { key: "together", title: "a week in. walk with someone.", body: "light your lantern and send it to one friend.", to: "/together" }
             : derived.showedUp >= 3 && !seen.includes("guide") ? { key: "guide", title: `${derived.showedUp} days in. the guide is worth asking now.`, body: "ask about any word you've learned — it answers from your lessons.", to: "/guide" } : null;
           if (!card) return null;
           const open = () => { track("unlock_seen", { unlock: card.key }); update({ unlocksSeen: [...seen, card.key] }); router.push(card.to as any); };
@@ -148,43 +149,67 @@ export default function Today() {
               <View style={{ position: "absolute", right: 8, bottom: night ? 46 : -8 }}><Guy pose={night ? "sleep" : "thumbs"} h={night ? 78 : 112} /></View>
               {isDemo() ? <View style={{ marginTop: 12 }}><Btn kind="light" onPress={() => demoShiftDays(1)}>Demo: skip to tomorrow →</Btn></View> : null}
             </Card>
+          ) : derived.currentRun >= 2 ? (
+            // the one thing at stake: your run of days. said gently, and louder only as the day ends
+            <View style={[s.pill, { borderColor: hour >= 17 ? color.gold : color.line, backgroundColor: hour >= 17 ? color.ink : "transparent" }]} accessibilityRole="text">
+              <Text style={[type.eyebrow(8), { color: hour >= 17 ? color.gold : color.ink }]}>☀ {derived.currentRun}-day run</Text>
+              <Text style={[type.eyebrow(8), { color: hour >= 17 ? "#fff" : color.mute }]}>{hour >= 21 ? "the day's almost out — light it" : hour >= 17 ? "on the line tonight" : "light today to keep it"}</Text>
+            </View>
           ) : null /* the floating "start day N" button above the tab bar is the one start action */}
 
-          <Pressable accessibilityRole="link" onPress={() => router.push("/together")} style={s.pill}>
-            <Text style={type.eyebrow(8)}>sundown · the bell</Text>
-            <Text style={[type.eyebrow(8), { color: color.mute }]}>together ›</Text>
+          {doneHere && st.deepOn !== today && lesson > 1 ? (
+            <Pressable accessibilityRole="button" accessibilityLabel="go deeper: a harder extra round, two levels up" onPress={() => router.push({ pathname: "/session/[door]/[day]", params: { door: wing, day: String(lesson), deep: "1" } })}
+              style={[s.inkCard, { marginHorizontal: 0, marginTop: 0, backgroundColor: color.ink }]}>
+              <Guy pose="stride" h={64} />
+              <View style={{ flex: 1 }}>
+                <Text style={[type.eyebrow(8), { color: color.gold }]}>go deeper · optional</Text>
+                <Text style={{ fontFamily: font.display[800], fontSize: 16, marginTop: 3, color: "#fff" }}>two levels up. type it, beat the clock.</Text>
+                <Text style={[type.body(12), { color: "#ffffff99", marginTop: 2 }]}>about 3 minutes · extra light</Text>
+              </View>
+              <Text style={{ color: color.gold, fontSize: 20 }}>›</Text>
+            </Pressable>
+          ) : null}
+
+          <Pressable accessibilityRole="link" onPress={() => router.push({ pathname: "/trail", params: { door: wing } })} style={s.pill}>
+            <Text style={type.eyebrow(8)}>see the whole trail · what's at the top</Text>
+            <Text style={[type.eyebrow(8), { color: color.mute }]}>›</Text>
           </Pressable>
 
-          {/* Other doors are only put in front of people who said they're open to them (lib/profile openness). */}
-          {st.profile?.openness === "stay" && st.homeWing !== "SPIRITUAL" ? null : lastNext === "home" ? (
-            <Pressable accessibilityRole="button" onPress={() => {
-              const others = DOORS.map(([, x]) => x).filter((x) => x !== st.homeWing && x !== st.visitWing);
-              update({ visitWing: others[derived.showedUp % others.length], active: "visit" });
-            }}>
-              <Text style={[type.caption(), { paddingVertical: 12 }]}>walking your door. a door nearby whenever you want one ›</Text>
-            </Pressable>
-          ) : (
-            <View style={{ marginTop: 6 }}>
-              <Text style={type.eyebrow()}>{st.reason ? "this week's visits · for you" : "your path · visit a door"}{st.book.length ? ` · ${st.book.length} in your book` : ""}</Text>
-              <Text style={[type.body(13), { marginTop: 4, color: color.mute }]}>{st.homeWing === "SPIRITUAL" ? "build your own path through the house. one door at a time, each one taught properly." : "a friend's door, a partner's, your mother-in-law's. one session, taught properly. it counts."}</Text>
-              <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 8, paddingTop: 10, paddingBottom: 4 }}>
-                {(() => {
-                  const order: string[] = (data.MOMENTS.find(([id]: [string]) => id === st.reason) || [])[2] || [];
-                  const rank = (w: string) => (order.indexOf(w) === -1 ? 99 : order.indexOf(w));
-                  return DOORS.filter(([, w]) => w !== st.homeWing && w !== st.visitWing).sort((a, b) => rank(a[1]) - rank(b[1]));
-                })().map(([l, w]) => {
-                  const d1 = lessonInfo(w, lessonFor(w)) || data.DAY1[w] || {}; // the lesson it will actually open
-                  return (
-                    <Pressable key={w} accessibilityRole="button" accessibilityLabel={`Visit ${l}: ${d1.word}`} onPress={() => { update({ visitWing: w, active: "visit" }); router.push({ pathname: "/session/[door]/[day]", params: { door: w, day: String(lessonFor(w)) } }); }} style={s.visit}>
-                      <View style={{ flexDirection: "row", alignItems: "center", gap: 6 }}><Face ic={icon(w)} w={22} h={22} r={11} caption={false} /><Text style={type.eyebrow(7)}>{l}</Text></View>
-                      <Text style={{ fontFamily: font.display[800], fontSize: 16, marginTop: 8, color: color.ink }}>{d1.word || "a first word"}</Text>
-                      <Text style={[type.eyebrow(7), { marginTop: 4, color: color.mute }]}>one breath</Text>
-                    </Pressable>
-                  );
-                })}
-              </ScrollView>
-            </View>
-          )}
+          <SongCard />
+
+          {/* Other traditions, handled gently (owner, 2026-09-28): someone who chose their door and wants to stay there
+              sees nothing about other religions here. Only people who said they love those connections, or are
+              walking their own path, get ONE quiet card — and it opens a short taste, never a switch of course.
+              Someone unsure where they stand gets one soft line, never a push. */}
+          {(() => {
+            const pr = st.profile;
+            const ownPath = st.homeWing === "SPIRITUAL";
+            const unsure = !ownPath && !!pr && (pr.answers?.hold === "figuring" || pr.answers?.why === "god");
+            if (ownPath || pr?.openness === "love") {
+              const others = DOORS.map(([, x]) => x).filter((x) => x !== st.homeWing && x !== "SPIRITUAL");
+              const w = others[(derived.showedUp + new Date().getDate()) % others.length];
+              const d1 = data.DAY1[w] || {};
+              return (
+                <Pressable accessibilityRole="button" accessibilityLabel={`a taste from next door: ${label(w)}, ${d1.word}`} onPress={() => router.push({ pathname: "/taste", params: { door: w } })} style={[s.inkCard, { marginHorizontal: 0, marginTop: 0 }]}>
+                  <Guy pose="wonder" h={60} />
+                  <View style={{ flex: 1 }}>
+                    <Text style={type.eyebrow(8)}>{ownPath ? "picked for you · from around the house" : "a taste from next door"}</Text>
+                    <Text style={{ fontFamily: font.display[800], fontSize: 16, marginTop: 3, color: color.ink }}>{d1.word}: <Text style={{ fontFamily: font.display[500] }}>{String(d1.carry || "").replace(/[.!]$/, "")}</Text></Text>
+                    <Text style={[type.body(12), { color: color.mute, marginTop: 2 }]}>a one-minute look · your path stays yours</Text>
+                  </View>
+                  <Text style={{ fontFamily: font.display[800], fontSize: 20 }}>›</Text>
+                </Pressable>
+              );
+            }
+            if (unsure) {
+              return (
+                <Pressable accessibilityRole="link" onPress={() => router.push({ pathname: "/trail", params: { door: "SPIRITUAL" } })}>
+                  <Text style={[type.caption(), { paddingVertical: 12 }]}>still working out where you stand? that's allowed. there's also a path built around you ›</Text>
+                </Pressable>
+              );
+            }
+            return null;
+          })()}
         </View>
       </ScrollView>
 

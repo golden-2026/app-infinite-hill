@@ -4,7 +4,8 @@ import { router, useLocalSearchParams } from "expo-router";
 import { useEffect, useMemo, useState } from "react";
 import { Text, View } from "react-native";
 import { DOORS, data, label } from "@ih/content";
-import { emptyProfile, knowledgeScore } from "@/lib/profile";
+import { knowledgeScore } from "@/lib/profile";
+import { profileFor } from "@/lib/onboard";
 import { doorParam } from "@/lib/door-param";
 import { useStore } from "@/lib/store";
 import { Btn, Eyebrow, Link, Opt, color, type } from "@/ui";
@@ -47,14 +48,13 @@ export default function Know() {
   const name = label(door);
 
   const finish = (score: number | null) => {
-    const prev = saved.settings.profile?.door === door ? saved.settings.profile : null;
-    update({ profile: { ...(prev || emptyProfile(door, today)), knowledge: score } });
+    update({ profile: { ...profileFor(saved.settings.profile, door, today), knowledge: score } });
     router.push({ pathname: "/welcome/belief", params: { door } });
   };
 
   if (!started || !qs.length) {
     return (
-      <WelcomeFrame step={2} door={door} footer={<Btn testID="know-start" onPress={() => (qs.length ? setStarted(true) : finish(null))}>Let's see</Btn>}>
+      <WelcomeFrame step={4} door={door} footer={<Btn testID="know-start" onPress={() => (qs.length ? setStarted(true) : finish(null))}>Let's see</Btn>}>
         <Host>{`${name}. Good. Before day one, let's see where you are — eight quick ones about what's underneath a few words.`}</Host>
         <Text style={[type.caption(), { textAlign: "center" }]}>nobody sees this but you. it only sets how deep we start.</Text>
         <View style={{ alignItems: "center" }}>
@@ -77,7 +77,7 @@ export default function Know() {
     }, 650);
   };
   return (
-    <WelcomeFrame step={2} door={door}>
+    <WelcomeFrame step={4} door={door}>
       <Eyebrow style={{ textAlign: "center" }}>{`${i + 1} of ${qs.length}`}</Eyebrow>
       <Text accessibilityRole="header" style={[type.h1(24), { textAlign: "center" }]}>{cur.q}</Text>
       <View style={{ gap: 8 }} accessibilityRole="radiogroup">

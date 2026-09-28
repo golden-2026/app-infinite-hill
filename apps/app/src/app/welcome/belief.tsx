@@ -5,7 +5,8 @@ import { useEffect, useState } from "react";
 import { Text, View } from "react-native";
 import { DOORS, label } from "@ih/content";
 import { BELIEF_QUESTIONS, PERSON } from "@/content/intake";
-import { commitmentScore, emptyProfile, type Openness } from "@/lib/profile";
+import { commitmentScore, type Openness } from "@/lib/profile";
+import { profileFor, youAnswers } from "@/lib/onboard";
 import { doorParam } from "@/lib/door-param";
 import { useStore } from "@/lib/store";
 import { Btn, Eyebrow, Link, Opt, type } from "@/ui";
@@ -25,25 +26,29 @@ export default function Belief() {
   useEffect(() => { if (!door) router.replace("/welcome/door"); }, [door]);
   if (!door) return null;
   const name = label(door);
-  const q = BELIEF_QUESTIONS[i];
+  const base = profileFor(saved.settings.profile, door, today);
+  const you = youAnswers(base);
+  // Already told us they grew up in it (first step): don't ask "were you raised …?" again.
+  const qs = BELIEF_QUESTIONS.filter((x) => !(x.id === "raised" && you.raisedIn === door && you.stance !== "practice"));
+  const q = qs[i];
   const fill = (s: string) => s.replace(/\{door\}/g, name).replace(/\{person\}/g, PERSON[door] || name);
 
   const save = (all: Record<string, string>) => {
-    const prev = saved.settings.profile?.door === door ? saved.settings.profile : emptyProfile(door, today);
-    const openness = (["stay", "sometimes", "love"].includes(all.openness) ? all.openness : "sometimes") as Openness;
-    update({ profile: { ...prev, answers: { ...prev.answers, ...all }, commitment: commitmentScore(all), openness } });
+    const prev = base;
+    const openness = (["stay", "sometimes", "love"].includes(all.openness) ? all.openness : "stay") as Openness; // skipped: other traditions never come up
+    update({ profile: { ...prev, answers: { ...prev.answers, ...all }, commitment: commitmentScore({ ...prev.answers, ...all }), openness } });
     router.push({ pathname: "/welcome/fit", params: { door } });
   };
   const pick = (id: string | null) => {
     const all = id ? { ...answers, [q.id]: id } : answers;
     setAnswers(all);
-    if (i + 1 < BELIEF_QUESTIONS.length) setI(i + 1);
+    if (i + 1 < qs.length) setI(i + 1);
     else save(all);
   };
 
   return (
-    <WelcomeFrame step={3} door={door} footer={q.optional ? <Btn kind="ghost" onPress={() => pick(null)}>rather not say</Btn> : undefined}>
-      <Eyebrow style={{ textAlign: "center" }}>{`about you · ${i + 1} of ${BELIEF_QUESTIONS.length}`}</Eyebrow>
+    <WelcomeFrame step={5} door={door} footer={q.optional ? <Btn kind="ghost" onPress={() => pick(null)}>rather not say</Btn> : undefined}>
+      <Eyebrow style={{ textAlign: "center" }}>{`about you · ${i + 1} of ${qs.length}`}</Eyebrow>
       <Host>{fill(q.ask)}</Host>
       <View style={{ gap: 8 }} accessibilityRole="radiogroup">
         {q.choices.map((c) => <Opt key={c.id} big testID={`${q.id}-${c.id}`} on={answers[q.id] === c.id} onPress={() => pick(c.id)}>{fill(c.label)}</Opt>)}

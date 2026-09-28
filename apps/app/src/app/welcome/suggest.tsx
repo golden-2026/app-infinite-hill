@@ -22,7 +22,7 @@ export default function Suggest() {
   useEffect(() => { if (!p) router.replace("/welcome/intake"); }, [p]);
   if (!p) return null;
   return (
-    <WelcomeFrame step={4} door="SPIRITUAL" footer={<Btn testID="suggest-continue" onPress={() => router.push({ pathname: "/welcome/voice", params: { door: "SPIRITUAL" } })}>Start my path</Btn>}>
+    <WelcomeFrame step={6} door="SPIRITUAL" footer={<Btn testID="suggest-continue" onPress={() => router.push({ pathname: "/welcome/voice", params: { door: "SPIRITUAL" } })}>Start my path</Btn>}>
       <Host>{keepAway ? "Thanks. No religion required here. A few old ideas that might help, from people who worked on the same things:" : "Thanks. Here are a few things from different traditions that might speak to you:"}</Host>
       <View style={{ gap: 10 }}>
         {picks.map((s) => (

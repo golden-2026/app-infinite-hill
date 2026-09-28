@@ -15,7 +15,7 @@ export default function Splash() {
         <Body size={17} style={{ color: color.mute, marginTop: 12, textAlign: "center" }}>making religion cool again.</Body>
       </View>
       <View style={{ gap: 10 }}>
-        <Btn testID="start-free" onPress={() => router.push("/welcome/door")}>Start free</Btn>
+        <Btn testID="start-free" onPress={() => router.push("/welcome/you")}>Start free</Btn>
         <Btn kind="ghost" onPress={() => router.push("/sign-in")}>{accountsOn() ? "I already have an account" : "I've been here before"}</Btn>
       </View>
       <Eyebrow size={8} style={{ textAlign: "center", marginTop: 14 }}>free · no sign-up · eight doors</Eyebrow>

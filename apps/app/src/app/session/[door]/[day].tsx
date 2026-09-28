@@ -2,7 +2,9 @@ import { track } from "@/lib/analytics";
 import { useTitle } from "@/lib/title";
 // A day's lesson: v175 Session, as a real screen. Queue of steps, combo, "one more time" on the misses
 // (nothing counted twice), then the tally. Leaving asks first; finishing records the sit and opens /done.
-import { DOORS, GRADED, icon, label, lessonInfo, native, planDay, screenLines } from "@ih/content";
+import { DOORS, GRADED, LEVELS, deeperRound, icon, label, lessonInfo, native, planDay, screenLines } from "@ih/content";
+import { levelFor } from "@/lib/level";
+import { RhythmStep, RushStep, SayStep, ScenesStep, TypeItStep } from "@/session/games";
 import { LinearGradient } from "expo-linear-gradient";
 import { Redirect, router, useLocalSearchParams, useNavigation } from "expo-router";
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
@@ -24,10 +26,10 @@ import Animated, { Easing, useAnimatedStyle, useSharedValue, withTiming } from "
 import { Enter } from "@/ui/enter";
 import { useChrome } from "@/ui/chrome";
 
-const SEG_LABEL: Record<string, string> = { bet: "call it", myth: "true or myth", fork: "your move", original: "in the original", trapdoor: "the trapdoor", bell: "the bell", guess: "your guess", order: "the ideas", match: "the pairs", listen: "your ear", sit: "the sit", breath: "one breath", speak: "say it back", taphear: "your line", fixintro: "one more time", tally: "done" };
+const SEG_LABEL: Record<string, string> = { bet: "call it", myth: "true or myth", fork: "your move", original: "in the original", trapdoor: "the trapdoor", bell: "the bell", guess: "your guess", order: "the ideas", match: "the pairs", listen: "your ear", scenes: "the scenes", say: "say it", rhythm: "the rhythm", typeit: "your ear", rush: "quick round", sit: "the sit", breath: "one breath", speak: "say it back", taphear: "your line", fixintro: "one more time", tally: "done" };
 
 export default function SessionScreen() {
-  const params = useLocalSearchParams<{ door: string; day: string; kid?: string }>();
+  const params = useLocalSearchParams<{ door: string; day: string; kid?: string; deep?: string }>();
   const { lessonFor, saved, derived, completeSit } = useStore();
   const door = String(params.door || "").toUpperCase();
   const day = Number(params.day);
@@ -37,17 +39,28 @@ export default function SessionScreen() {
   // Deep links can't skip ahead: a lesson opens only up to where the door is.
   if (!DOORS.some(([, w]) => w === door)) return <Redirect href="/today" />;
   if (!Number.isInteger(day) || day < 1 || day > current) return <Redirect href={{ pathname: "/session/[door]/[day]", params: { door: door || saved.settings.homeWing, day: String(current) } }} />;
-  return <Session door={door} day={day} kidId={kid?.id ?? null} mode={mode} voiceOn={saved.settings.voiceOn} onFinish={completeSit} />;
+  // "go deeper" is an extra round on a lesson already walked today; children don't get it
+  const deep = params.deep === "1" && !kid;
+  return <Session door={door} day={day} kidId={kid?.id ?? null} mode={mode} deep={deep} voiceOn={saved.settings.voiceOn} onFinish={completeSit} />;
 }
 
-function Session({ door, day, kidId, mode, voiceOn, onFinish }: { door: string; day: number; kidId: string | null; mode: string; voiceOn: boolean; onFinish: ReturnType<typeof useStore>["completeSit"] }) {
+function Session({ door, day, kidId, mode, deep, voiceOn, onFinish }: { door: string; day: number; kidId: string | null; mode: string; deep: boolean; voiceOn: boolean; onFinish: ReturnType<typeof useStore>["completeSit"] }) {
   const ic = icon(door);
-  const { earnLight } = useStore();
-  useTitle(`${label(door).toLowerCase()} · day ${day}`);
+  const { earnLight, recordRun, recordFeel, update, saved: me } = useStore();
+  useTitle(`${label(door).toLowerCase()} · day ${day}${deep ? " · deeper" : ""}`);
   useChrome(true);
-  const plan = useMemo(() => planDay({ wing: door, day, mode }), [door, day, mode]);
+  // The level is fixed for the whole lesson (it moves between lessons, never in the middle of one).
+  const [level] = useState(() => (mode === "adult" ? levelFor({ door, day, profile: me.settings.profile, runs: me.settings.runs }) : 1));
+  const plan = useMemo(() => {
+    if (!deep) return planDay({ wing: door, day, mode, level: mode === "adult" ? level : 0 });
+    const base = planDay({ wing: door, day, mode });
+    return { ...base, steps: deeperRound(door, day, level) };
+  }, [door, day, mode, level, deep]);
+  const shownLevel = deep ? Math.min(5, level + 2) : level;
+  const [rushSecs, setRushSecs] = useState<number | null>(null);
+  const [feel, setFeel] = useState<string | null>(null);
   // A reload mid-lesson picks up where you were (same lesson, same day only); finishing or leaving clears it.
-  const resumeKey = `ih:lesson:${door}:${day}:${kidId || "me"}`;
+  const resumeKey = `ih:lesson:${door}:${day}:${kidId || "me"}${deep ? ":deep" : ""}:L${level}`;
   const [saved0] = useState(() => {
     const r = readJSON<any>(resumeKey, null);
     const ids = new Set(plan.steps.map((s) => s.id));
@@ -134,6 +147,17 @@ function Session({ door, day, kidId, mode, voiceOn, onFinish }: { door: string; 
     finished.current = true;
     hush();
     remove(resumeKey);
+    const asked = score.asked || graded;
+    if (deep) {
+      // the extra round: light and a best time, never a second sit
+      earnLight(deepLight(score.right, asked), best, false);
+      recordRun({ door, day, acc: asked ? score.right / asked : 1, level: shownLevel, rushSecs, deep: true });
+      router.replace("/today");
+      return;
+    }
+    if (!kidId) recordRun({ door, day, acc: asked ? score.right / asked : 1, level, rushSecs });
+    // a one-off visit to another door comes straight back to your own path
+    if (!kidId && door !== me.settings.homeWing && me.settings.active === "visit") update({ active: "home" });
     const outcome = onFinish({ door, day, kidId });
     if (!kidId) earnLight(lessonLight(score.right, score.asked || graded, best), best, score.asked > 0 && score.right === score.asked);
     track("lesson_done", { door, day, right: score.right, asked: score.asked, newDay: outcome.isNewDay, kid: !!kidId });
@@ -197,7 +221,7 @@ function Session({ door, day, kidId, mode, voiceOn, onFinish }: { door: string; 
 
   switch (step.type) {
     case "bell":
-      return frame(<View style={{ alignItems: "center", gap: 18 }}><Guy pose="wave" h={170} /><Text style={[type.h1(40), { color: "#fff" }]}>{step.text}</Text></View>);
+      return frame(<View style={{ alignItems: "center", gap: 18 }}><Guy pose="wave" h={170} /><Text style={[type.h1(40), { color: "#fff" }]}>{step.text}</Text>{mode === "adult" && day > 1 ? <LevelPill level={shownLevel} /> : null}</View>);
     case "fixintro":
       return frame(<View style={{ alignItems: "center", gap: 16 }}><Guy pose="think" h={160} /><Text style={[type.h1(30), { color: "#fff", textAlign: "center" }]}>one more time on the ones you missed.</Text><Text style={[type.body(), { color: "#ffffffaa" }]}>no rush. nothing's counted twice.</Text></View>, { foot: <Btn kind="gold" onPress={() => next()}>one more time</Btn> });
     case "beat": {
@@ -229,6 +253,12 @@ function Session({ door, day, kidId, mode, voiceOn, onFinish }: { door: string; 
     case "match":
       return frame(<View style={{ width: "100%" }}><Text style={[type.h1(24), { color: "#fff", marginBottom: 14 }]}>{step.prompt}</Text><View style={st.cream}><MatchStep step={step} onDone={(ok) => setTimeout(() => verdict(ok), 300)} /></View></View>, { top: true });
     case "taphear": return frame(<TapHear step={step} voiceOn={voiceOn} onDone={verdict} />);
+    case "scenes":
+      return frame(<View style={{ width: "100%" }}><Text style={[type.h1(24), { color: "#fff", marginBottom: 8 }]}>{step.prompt}</Text><ScenesStep step={step} onDone={verdict} /></View>, { top: true });
+    case "say": return frame(<SayStep step={step} voiceOn={voiceOn} onDone={() => next()} />);
+    case "rhythm": return frame(<RhythmStep step={step} voiceOn={voiceOn} onDone={verdict} />);
+    case "typeit": return frame(<TypeItStep step={step} voiceOn={voiceOn} onDone={verdict} />, { top: true });
+    case "rush": return frame(<RushStep step={step} best={me.settings.rushBest?.[door] ?? null} onDone={(ok, secs) => { if (secs) setRushSecs(secs); verdict(ok); }} />, { top: true });
     case "sit": return frame(<SitStep secs={step.secs} onDone={() => next()} />);
     case "breath": return frame(<BreathStep n={step.n} onDone={() => next()} />);
     case "speak":
@@ -250,10 +280,46 @@ function Session({ door, day, kidId, mode, voiceOn, onFinish }: { door: string; 
       const light = lessonLight(score.right, asked, best);
       const secs = Math.max(30, Math.round((Date.now() - t0.current) / 1000));
       const stats: [string, string, string][] = [["☀", `+${light}`, "light"], ["◎", `${acc}%`, acc === 100 ? "on target" : acc >= 50 ? "on target" : "learning"], ["◷", `${Math.floor(secs / 60)}:${String(secs % 60).padStart(2, "0")}`, "time"]];
+      const nextLevel = mode === "adult" && !deep ? levelFor({ door, day: day + 1, profile: me.settings.profile, runs: [...(me.settings.runs || []), { door, acc: asked ? score.right / asked : 1, level }] }) : level;
+      const feelRow = !kidId ? (
+        <View style={{ alignItems: "center", gap: 8, marginTop: 4 }}>
+          <Text style={[type.eyebrow(8), { color: "#ffffff99" }]}>{feel ? "thanks — we'll tune it." : "how did that feel?"}</Text>
+          <View style={{ flexDirection: "row", gap: 8 }}>
+            {([["slow", "too easy"], ["right", "just right"], ["hard", "too hard"]] as const).map(([id, l]) => (
+              <Pressable key={id} accessibilityRole="button" accessibilityState={{ selected: feel === id }} onPress={() => { setFeel(id); recordFeel({ door, day, level: shownLevel, feel: id }); }}
+                style={{ borderRadius: 999, borderWidth: 1.5, borderColor: feel === id ? color.gold : "#ffffff44", backgroundColor: feel === id ? color.gold : "transparent", paddingVertical: 8, paddingHorizontal: 12 }}>
+                <Text style={[type.eyebrow(8), { color: feel === id ? color.ink : "#fff" }]}>{l}</Text>
+              </Pressable>
+            ))}
+          </View>
+        </View>
+      ) : null;
+      if (deep) {
+        return frame(
+          <View style={{ alignItems: "center", gap: 14, width: "100%" }}>
+            <Celebrate />
+            <Text accessibilityRole="header" style={{ fontFamily: font.mark[800], fontSize: 34, color: color.gold, textAlign: "center" }}>you went deeper.</Text>
+            <LevelPill level={shownLevel} />
+            <View style={{ flexDirection: "row", width: "100%", borderRadius: 22, borderWidth: 2, borderColor: color.gold, backgroundColor: "#ffffff0d", paddingVertical: 14 }}>
+              {([["☀", `+${deepLight(score.right, asked)}`, "light"], ["◎", `${acc}%`, "on target"], ["⏱", rushSecs ? `${rushSecs}s` : "—", "quick round"]] as const).map(([g, v, l], k) => (
+                <View key={l} style={{ flex: 1, alignItems: "center", borderLeftWidth: k ? 1 : 0, borderLeftColor: "#ffffff22" }}>
+                  <Text style={{ fontSize: 18, color: color.gold }}>{g}</Text>
+                  <Text style={{ fontFamily: font.display[800], fontSize: 24, color: "#fff", marginTop: 2 }}>{v}</Text>
+                  <Text style={[type.eyebrow(8), { color: "#ffffffaa", marginTop: 2 }]}>{l}</Text>
+                </View>
+              ))}
+            </View>
+            <Text style={[type.body(14), { color: "#ffffffcc", textAlign: "center" }]}>{acc === 100 ? "two levels up and not one miss. that's real." : "two levels up is supposed to be hard. you did it anyway."}</Text>
+            {feelRow}
+          </View>,
+          { foot: <Btn testID="finish" kind="gold" onPress={finish}>back to today</Btn> },
+        );
+      }
       return frame(
         <View style={{ alignItems: "center", gap: 14, width: "100%" }}>
           <Celebrate />
           <Text accessibilityRole="header" style={{ fontFamily: font.mark[800], fontSize: 36, color: color.gold, textAlign: "center" }}>{day === 1 ? "you're on the hill!" : `day ${day}. done!`}</Text>
+          {mode === "adult" && day > 1 ? <LevelPill level={level} up={nextLevel > level} /> : null}
           <Text style={[type.body(15), { color: "#ffffffcc", marginTop: -8 }]}>{acc === 100 ? "not one miss. proud of you." : "proud of you. see you tomorrow."}</Text>
           <View style={{ flexDirection: "row", width: "100%", borderRadius: 22, borderWidth: 2, borderColor: color.gold, backgroundColor: "#ffffff0d", paddingVertical: 14 }}>
             {stats.map(([g, v, l], k) => (
@@ -277,6 +343,7 @@ function Session({ door, day, kidId, mode, voiceOn, onFinish }: { door: string; 
           {nat ? <View style={st.bead}><Text style={{ fontFamily: font.display[800], fontSize: 22, color: color.gold }}>{nat}</Text><Text style={[type.eyebrow(), { color: "#ffffffbb" }]}>bead {Math.min(day, 21)} of 21 · on your strand</Text></View> : null}
           {/* the label the Keeper & provenance page promises for unreviewed lessons */}
           <Text style={[type.eyebrow(8), { color: "#ffffff88", textAlign: "center" }]}>authored draft · Keeper review pending</Text>
+          {feelRow}
           {tomorrow ? <View style={st.tomorrow}><Text style={[type.eyebrow(), { color: color.gold }]}>tomorrow</Text><Text style={{ fontFamily: font.display[800], fontSize: 17, color: "#fff", marginTop: 4 }}>{tomorrow}</Text></View> : null}
         </View>,
         { foot: <Btn testID="finish" kind="gold" onPress={finish}>done — proud of you</Btn> },
@@ -300,9 +367,24 @@ const st = StyleSheet.create({
   tomorrow: { marginTop: 10, borderTopWidth: 1, borderTopColor: "#ffffff22", paddingTop: 10, width: "100%" },
 });
 
+/** Light for the "go deeper" round: 2 per first-try right, 5 more for a clean one. */
+export function deepLight(right: number, asked: number) {
+  return 2 * right + (asked && right === asked ? 5 : 0);
+}
+
 /** Light for a finished lesson: 10 for showing up, 1 per first-try right, a bonus for a clean run and for a long glow. */
 export function lessonLight(right: number, asked: number, best: number) {
   return 10 + right + (asked && right === asked ? 5 : 0) + (best >= 5 ? 3 : 0);
+}
+
+/** Where the lesson sits on the five levels: five small suns, the lit ones yours. */
+function LevelPill({ level, up }: { level: number; up?: boolean }) {
+  return (
+    <View accessibilityLabel={`level ${level} of 5: ${LEVELS[level]}${up ? ". next lesson goes up a level" : ""}`} style={{ flexDirection: "row", alignItems: "center", gap: 8, backgroundColor: "#ffffff14", borderRadius: 999, paddingVertical: 7, paddingHorizontal: 14 }}>
+      <Text style={{ letterSpacing: 2, fontSize: 12 }}>{[1, 2, 3, 4, 5].map((k) => (k <= level ? "☀" : "·")).join("")}</Text>
+      <Text style={[type.eyebrow(8), { color: color.gold }]}>level {level} · {LEVELS[level]}{up ? " · next: ↑" : ""}</Text>
+    </View>
+  );
 }
 
 /** The mascot's victory: a jump with a fanfare, then a cheer. */

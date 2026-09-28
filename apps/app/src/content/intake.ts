@@ -22,10 +22,46 @@ export type Question = {
   choices: Choice[];
 };
 
+// ---------- the first step, before any door (welcome/you) ----------
+
+/** Sorts people warmly before the door screen, so it can show them the right way in. Never assigns a door. */
+export const STANCE_Q: Question = {
+  id: "stance", ask: "First, a little about you. Where are you with religion right now?",
+  note: "private — it stays on your phone. it only changes what we show you first. every door stays open.",
+  choices: [
+    { id: "practice", label: "I practise a faith" },
+    { id: "unsure", label: "I grew up in one, but I'm not sure I believe anymore" },
+    { id: "left", label: "I grew up in one and left it" },
+    { id: "curious", label: "no religion — just curious" },
+    { id: "many", label: "exploring more than one" },
+    { id: "spiritual", label: "spiritual, not religious" },
+  ],
+};
+
+/** The follow-up: which tradition (same ids as the intake's `raised`, so "my own path" doesn't ask it again). */
+export function raisedInQ(stance: string | null): Question {
+  const grewUp = stance === "unsure" || stance === "left";
+  const ask = stance === "practice" ? "Lovely. Which one?" : grewUp ? "Which one did you grow up in?" : "Did you grow up in a religion?";
+  const choices = RAISED.filter((c) => (stance === "practice" || grewUp ? c.id !== "none" : true))
+    .map((c) => (c.id === "none" ? { ...c, label: "no, none" } : c))
+    .sort((a, z) => Number(z.id === "none") - Number(a.id === "none")); // "no, none" first when it's offered
+  return { id: "raisedIn", ask, optional: true, note: grewUp ? "no wrong answers. nothing here asks you to go back." : undefined, choices };
+}
+
 // ---------- someone who picked a tradition ----------
 
 /** Asked after the knowledge check, to learn how much the tradition is part of their life. {door} is the tradition's name. */
 export const BELIEF_QUESTIONS: Question[] = [
+  { id: "why", ask: "What brings you to {door}?", note: "pick the closest. it shapes what we lead with.", choices: [
+    { id: "own", label: "I want to know my own religion better" },
+    { id: "roots", label: "reconnect with how I grew up" },
+    { id: "god", label: "I'm wondering if I believe in God" },
+    { id: "partner", label: "my partner's or family's faith" },
+    { id: "kids", label: "to teach my kids" },
+    { id: "calm", label: "a calmer daily habit" },
+    { id: "hard", label: "going through something hard" },
+    { id: "curious", label: "just curious" },
+  ] },
   { id: "raised", ask: "Were you raised {person}?", choices: [
     { id: "yes", label: "yes, since I was little" },
     { id: "later", label: "I came to it later" },
