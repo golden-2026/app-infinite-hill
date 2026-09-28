@@ -29,6 +29,7 @@ const BTN = {
   ghost: { bg: "transparent", fg: color.ink, border: color.ink },
   light: { bg: color.white, fg: color.ink, border: "transparent" },
   danger: { bg: "transparent", fg: color.danger, border: color.danger },
+  miss: { bg: "#E5484D", fg: "#fff", border: "transparent" }, // the lesson's "not quite" banner
 } as const;
 export function Btn({ children, onPress, kind = "ink", disabled, label: a11y, style, testID }: {
   children: ReactNode; onPress?: () => void; kind?: keyof typeof BTN; disabled?: boolean; label?: string; style?: StyleProp<ViewStyle>; testID?: string;

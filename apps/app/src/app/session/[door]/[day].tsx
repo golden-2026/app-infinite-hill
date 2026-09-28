@@ -11,6 +11,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { hush, bell, speak } from "@/lib/sound";
 import { useStore } from "@/lib/store";
 import { readJSON, remove, writeJSON } from "@/lib/storage";
+import { play } from "@/lib/fx";
+import { ComboBurst, FxProvider, ReactingGuy, cue, poseFor, type Reaction } from "@/session/juice";
 import { today as todayNow } from "@/lib/time";
 import { voiceLabel } from "@/lib/voice";
 import { BetStep, BreathStep, ForkStep, MatchStep, MythStep, OptionStep, OrderStep, OriginalStep, SitStep, SpeakStep, TapHear, TrapdoorStep } from "@/session/steps";
@@ -61,7 +63,17 @@ function Session({ door, day, kidId, mode, voiceOn, onFinish }: { door: string; 
     if (qi === 0 && phase === "play") return; // nothing worth resuming yet
     writeJSON(resumeKey, { date: todayNow(), queue, qi, phase, missed, score, best });
   }, [queue, qi, phase, missed, score, best]); // eslint-disable-line react-hooks/exhaustive-deps
-  const [mood, setMood] = useState<"calm" | "glow" | "oops">("calm");
+  // Game feel: the mascot's pose, a beat that pops it, and the combo counted the moment an answer lands.
+  const [pose, setPose] = useState("wave");
+  const [beat, setBeat] = useState(0);
+  const react = useCallback((r: Reaction) => {
+    const c = r === "right" ? combo + 1 : r === "wrong" ? 0 : combo;
+    if (r !== "neutral") { setCombo(c); if (c > best) setBest(c); }
+    setPose(poseFor(r, beat));
+    setBeat((b) => b + 1);
+    cue(r, c);
+  }, [combo, best, beat]);
+  const fx = useMemo(() => ({ react, combo, pose, beat }), [react, combo, pose, beat]);
   const t0 = useRef(Date.now());
   const finished = useRef(false);
   const step = phase === "fixintro" ? { type: "fixintro", id: -1 } : plan.steps.find((s) => s.id === queue[qi]);
@@ -79,7 +91,7 @@ function Session({ door, day, kidId, mode, voiceOn, onFinish }: { door: string; 
   // Advance. Before the tally, a play-through with misses gets the "one more time" round (only the
   // missed steps, then the tally). v175 checked this only after the tally, so the round never ran.
   const next = useCallback((missedNow: number[] = missed) => {
-    setMood("calm");
+    setPose("wave");
     if (phase === "fixintro") { setPhase("fix"); setQi(0); return; }
     const tallyId = plan.steps[plan.steps.length - 1].id;
     const nextId = queue[qi + 1];
@@ -94,15 +106,12 @@ function Session({ door, day, kidId, mode, voiceOn, onFinish }: { door: string; 
   }, [phase, qi, queue, missed, plan]);
 
   const verdict = (ok: boolean | null) => {
+    // (the combo, sound and mascot already reacted when the answer landed — see `react`)
     if (ok === null || ok === undefined) return next();
     if (ok) {
-      successHaptic();
-      const c = combo + 1; setCombo(c); setBest((b) => Math.max(b, c)); setMood("glow");
       if (phase === "play") setScore((s) => ({ right: s.right + 1, asked: s.asked + 1 }));
       return next();
     }
-    tapHaptic();
-    setCombo(0); setMood("oops");
     if (phase !== "play") return next();
     const missedNow = missed.includes(step!.id) ? missed : [...missed, step!.id];
     setScore((s) => ({ ...s, asked: s.asked + 1 }));
@@ -148,6 +157,7 @@ function Session({ door, day, kidId, mode, voiceOn, onFinish }: { door: string; 
     <LinearGradient colors={color.dusk} locations={[0, 0.6, 1]} style={{ flex: 1 }}>
       <SafeAreaView style={{ flex: 1 }} edges={["top"]}>
         <SlotProvider>
+        <FxProvider value={fx}>
         <NavBar dark close={() => askLeave()} closeLeft
           middle={
             <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}>
@@ -156,8 +166,8 @@ function Session({ door, day, kidId, mode, voiceOn, onFinish }: { door: string; 
                 <ChevronLeft color="#fff" size={20} />
               </Pressable>
               <View style={{ flex: 1 }}>
-                {combo >= 2 ? <Text style={[type.eyebrow(), st.combo]}>×{combo} in a row</Text> : null}
-                <Progress pct={pct} />
+                {combo >= 2 ? <Text style={[type.eyebrow(), st.combo, combo >= 3 ? { color: "#FF9F1C" } : null]}>{combo >= 3 ? `🔥 combo ×${combo}` : `×${combo} in a row`}</Text> : pct >= 80 && pct < 100 && phase === "play" ? <Text style={[type.eyebrow(), st.combo]}>almost there!</Text> : null}
+                <Progress pct={pct} hot={combo >= 3} />
               </View>
             </View>
           }
@@ -166,7 +176,7 @@ function Session({ door, day, kidId, mode, voiceOn, onFinish }: { door: string; 
         <View style={st.who}>
           <Face ic={ic} w={36} h={36} r={18} caption={false} />
           <Text style={[type.eyebrow(), { color: "#ffffffbb", flex: 1 }]} numberOfLines={2}>{voiceLabel(door, ic.short).short} reads · {label(door)}{segLabel ? ` · ${segLabel}` : ""}</Text>
-          <Sun size={30} mood={mood} />
+          <ReactingGuy h={58} />
         </View>
         <ScrollView key={k} contentContainerStyle={[st.body, { justifyContent: top ? "flex-start" : "center" }]}>
           <Enter style={{ width: "100%", alignItems: "center" }}>
@@ -176,6 +186,8 @@ function Session({ door, day, kidId, mode, voiceOn, onFinish }: { door: string; 
         </ScrollView>
         {/* One bottom bar for every step: the frame's own button, or the one a step hands over. */}
         {foot ? <BottomBar dark>{foot}</BottomBar> : <SlotHost render={(c) => <BottomBar dark>{c}</BottomBar>} />}
+        <ComboBurst />
+        </FxProvider>
         </SlotProvider>
       </SafeAreaView>
     </LinearGradient>
@@ -187,11 +199,18 @@ function Session({ door, day, kidId, mode, voiceOn, onFinish }: { door: string; 
     case "fixintro":
       return frame(<View style={{ alignItems: "center", gap: 16 }}><Guy pose="think" h={160} /><Text style={[type.h1(30), { color: "#fff", textAlign: "center" }]}>one more time on the ones you missed.</Text><Text style={[type.body(), { color: "#ffffffaa" }]}>no rush. nothing's counted twice.</Text></View>, { foot: <Btn kind="gold" onPress={() => next()}>one more time</Btn> });
     case "beat": {
+      // The story is told by the mascot in a speech bubble (like a character in a story), not a wall of text.
       const n = step.text.length;
+      const fs = n > 220 ? 16 : n > 140 ? 18 : n > 80 ? 20 : 24;
+      const BEAT_POSES = ["point", "idea", "wonder", "aha", "namaste", "think", "peace", "readsit"];
       return frame(
-        <View style={{ maxWidth: 340, gap: 16, alignSelf: "center" }}>
+        <View style={{ width: "100%", maxWidth: 380, gap: 12, alignSelf: "center" }}>
           {step.head ? <Text style={[type.eyebrow(11), { color: color.gold, letterSpacing: 1.76, textAlign: "center" }]}>{step.head}</Text> : null}
-          <Text style={{ fontFamily: font.display[700], fontSize: n > 220 ? 17 : n > 140 ? 19 : n > 80 ? 22 : 27, lineHeight: (n > 220 ? 17 : n > 140 ? 19 : n > 80 ? 22 : 27) * 1.3, color: "#fff", textAlign: "center", letterSpacing: -0.2 }}>{step.text}</Text>
+          <View style={{ backgroundColor: "#fff", borderRadius: 22, paddingVertical: 16, paddingHorizontal: 18 }}>
+            <Text style={{ fontFamily: font.display[700], fontSize: fs, lineHeight: fs * 1.3, color: color.ink, letterSpacing: -0.2 }}>{step.text}</Text>
+          </View>
+          <View style={{ width: 0, height: 0, marginLeft: 38, marginTop: -12, borderLeftWidth: 12, borderRightWidth: 12, borderTopWidth: 14, borderLeftColor: "transparent", borderRightColor: "transparent", borderTopColor: "#fff" }} />
+          <Guy pose={BEAT_POSES[qi % BEAT_POSES.length]} h={150} style={{ alignSelf: "flex-start", marginLeft: 6 }} />
         </View>,
         { foot: <View style={{ gap: 4 }}><Pressable accessibilityRole="button" accessibilityLabel="Hear it again" onPress={() => speak(step.text, true)} style={({ pressed }) => ({ minHeight: 44, flexDirection: "row", gap: 8, alignItems: "center", justifyContent: "center", opacity: pressed ? 0.5 : 1 })}><SpeakerIcon color="#ffffff99" /><Text style={[type.eyebrow(), { color: "#ffffff99" }]}>hear it again</Text></Pressable><Btn testID="next" kind="gold" onPress={() => next()}>next</Btn></View> },
       );
@@ -222,14 +241,29 @@ function Session({ door, day, kidId, mode, voiceOn, onFinish }: { door: string; 
         [String(ideas), "ideas", "you didn't have this morning", false],
         [`${score.right}/${score.asked || graded}`, "first try", best >= 3 ? `×${best} in a row` : score.asked && score.right === score.asked ? "perfect." : "all fixed.", false],
       ];
+      // The win screen: points, accuracy and time in bold tiles, a fanfare, and the mascot celebrating.
+      const asked = score.asked || graded;
+      const acc = asked ? Math.round((100 * score.right) / asked) : 100;
+      const xp = lessonXp(score.right, asked, best);
+      const secs = Math.max(30, Math.round((Date.now() - t0.current) / 1000));
+      const stats: [string, string, string][] = [["total xp", `⚡ ${xp}`, "#F5C400"], [acc === 100 ? "amazing" : acc >= 80 ? "great" : acc >= 50 ? "good" : "keep going", `🎯 ${acc}%`, "#58B947"], [secs < 180 ? "speedy" : "steady", `⏱ ${Math.floor(secs / 60)}:${String(secs % 60).padStart(2, "0")}`, "#3BA6F5"]];
       return frame(
         <View style={{ alignItems: "center", gap: 14, width: "100%" }}>
-          <Guy pose="point" h={200} />
-          <Text accessibilityRole="header" style={[type.h1(34), { color: "#fff" }]}>day {day}. done.</Text>
+          <Celebrate />
+          <Text accessibilityRole="header" style={{ fontFamily: font.mark[800], fontSize: 36, color: color.gold, textAlign: "center" }}>{day === 1 ? "you're on the hill!" : `day ${day}. done!`}</Text>
+          <Text style={[type.body(15), { color: "#ffffffcc", marginTop: -8 }]}>{acc === 100 ? "not one miss. proud of you." : "proud of you. see you tomorrow."}</Text>
+          <View style={{ flexDirection: "row", gap: 8, width: "100%" }}>
+            {stats.map(([l, v, c]) => (
+              <View key={l} style={{ flex: 1, borderRadius: 16, borderWidth: 2.5, borderColor: c, overflow: "hidden" }}>
+                <Text style={[type.eyebrow(8), { backgroundColor: c, color: "#fff", textAlign: "center", paddingVertical: 4 }]}>{l}</Text>
+                <Text style={{ fontFamily: font.display[800], fontSize: 20, color: "#fff", textAlign: "center", paddingVertical: 10 }}>{v}</Text>
+              </View>
+            ))}
+          </View>
           <View style={{ flexDirection: "row", gap: 8, width: "100%" }}>
             {tiles.map(([n, l, sub, hot]) => (
               <View key={l} style={[st.tile, hot ? { backgroundColor: color.gold, borderWidth: 0 } : null]}>
-                <Text style={{ fontFamily: font.display[800], fontSize: 30, color: hot ? color.ink : color.gold }}>{n}</Text>
+                <Text style={{ fontFamily: font.display[800], fontSize: 22, color: hot ? color.ink : color.gold }} numberOfLines={1} adjustsFontSizeToFit>{n}</Text>
                 <Text style={[type.eyebrow(), { color: hot ? color.ink : "#ffffffaa" }]}>{l}</Text>
                 <Text style={[type.body(11), { color: hot ? color.ink : "#ffffffcc", marginTop: 2 }]} numberOfLines={2}>{sub}</Text>
               </View>
@@ -262,14 +296,39 @@ const st = StyleSheet.create({
   tomorrow: { marginTop: 10, borderTopWidth: 1, borderTopColor: "#ffffff22", paddingTop: 10, width: "100%" },
 });
 
+/** Points for a finished lesson: 10 for showing up, 1 per first-try right, a bonus for a clean run and for long combos. */
+export function lessonXp(right: number, asked: number, best: number) {
+  return 10 + right + (asked && right === asked ? 5 : 0) + (best >= 5 ? 3 : 0);
+}
+
+/** The mascot's victory: a jump with a fanfare, then a cheer. */
+function Celebrate() {
+  const [pose, setPose] = useState("jump");
+  const s = useSharedValue(0.6);
+  useEffect(() => {
+    play("complete");
+    s.value = withTiming(1, { duration: 420, easing: Easing.out(Easing.back(2.2)) });
+    const t = setTimeout(() => setPose("cheer"), 900);
+    return () => clearTimeout(t);
+  }, [s]);
+  const anim = useAnimatedStyle(() => ({ transform: [{ scale: s.value }] }));
+  return (
+    <View style={{ alignItems: "center" }}>
+      <Text style={{ position: "absolute", top: 6, fontSize: 26, letterSpacing: 18 }} accessibilityElementsHidden>✨🎉✨</Text>
+      <Animated.View style={anim}><Guy pose={pose} h={190} /></Animated.View>
+    </View>
+  );
+}
+
 /** The lesson's progress line fills instead of jumping. */
-function Progress({ pct }: { pct: number }) {
+function Progress({ pct, hot }: { pct: number; hot?: boolean }) {
   const w = useSharedValue(pct);
   useEffect(() => { w.value = withTiming(pct, { duration: 380, easing: Easing.out(Easing.cubic) }); }, [pct, w]);
   const fill = useAnimatedStyle(() => ({ width: `${w.value}%` }));
   return (
-    <View style={st.track} accessibilityRole="progressbar" accessibilityValue={{ min: 0, max: 100, now: pct }}>
-      <Animated.View style={[st.bar, fill]} />
+    <View style={[st.track, { height: 10, borderRadius: 5 }]} accessibilityRole="progressbar" accessibilityValue={{ min: 0, max: 100, now: pct }}>
+      {/* the bar heats up on a combo */}
+      <Animated.View style={[st.bar, { height: 10, borderRadius: 5, backgroundColor: hot ? "#FF9F1C" : color.gold }, fill]} />
     </View>
   );
 }

@@ -6,6 +6,7 @@ import { deriveState, fromP0, makeSit, mergeSits, readExport, sitOutcome, type D
 
 import { randomId } from "./ids";
 import { setChime } from "./sound";
+import { setFxOn } from "./fx";
 import { readJSON, remove, writeJSON } from "./storage";
 import { timeZone, today as todayNow } from "./time";
 import { cleanProfile, type Profile } from "./profile";
@@ -135,7 +136,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     });
   }, []);
 
-  useEffect(() => setChime(saved.settings.chime), [saved.settings.chime]);
+  useEffect(() => { setChime(saved.settings.chime); setFxOn(saved.settings.chime); }, [saved.settings.chime]);
   const derived = useMemo(() => deriveState(saved.sits, { today, settings: saved.settings }), [saved.sits, saved.settings, today]);
   const st = saved.settings;
   const door = st.active === "visit" && st.visitWing ? st.visitWing : st.homeWing;

@@ -8,6 +8,7 @@ import Animated, { Easing, useAnimatedStyle, useReducedMotion, useSharedValue, w
 import { bell, speak } from "@/lib/sound";
 import { Btn, Guy, Sun, color, font, type } from "@/ui";
 import { SlotFill } from "@/ui/slot";
+import { Verdict, useFx } from "@/session/juice";
 
 const strip = (s: string) => (s || "").replace(/[.!?,;:"“”'’]/g, "").toLowerCase().trim();
 const shuffle = <T,>(a: T[]) => [...a].sort(() => Math.random() - 0.5);
@@ -54,20 +55,16 @@ export function OptionStep({ step, voiceOn, onDone }: { step: any; voiceOn: bool
     const t = setTimeout(() => speak(step.speak, voiceOn), 300);
     return () => clearTimeout(t);
   }, [step.speak, voiceOn]);
+  const fx = useFx();
   const ok = picked !== null && picked === step.answer;
   const guess = step.graded === false;
-  const line = guess ? "good guess. the lesson's about to tell you." : ok ? data.NICE[step.prompt.length % data.NICE.length] : `${data.MISS[step.prompt.length % data.MISS.length]} it's "${step.answer}."`;
+  const pick = (o: string) => { setPicked(o); fx.react(guess ? "neutral" : o === step.answer ? "right" : "wrong"); };
   return (
     <View style={{ gap: 10, width: "100%" }}>
       <Prompt>{step.prompt}</Prompt>
       {step.speak ? <View style={{ marginVertical: 8 }}><RoundBtn glyph="🔊" label="Hear it again" onPress={() => speak(step.speak, true)} /></View> : null}
-      {step.options.map((o: string) => <Choice key={o} text={o} on={picked === o} right={picked !== null && !guess && o === step.answer} disabled={picked !== null} onPress={() => setPicked(o)} />)}
-      {picked !== null ? (
-        <View style={{ marginTop: 6, gap: 10 }}>
-          <Text accessibilityLiveRegion="polite" style={[s.feedback, { color: guess ? "#ffffffcc" : ok ? color.gold : "#ffffffcc" }]}>{line}</Text>
-          <SlotFill><Btn kind="gold" onPress={() => onDone(guess ? null : ok)}>next</Btn></SlotFill>
-        </View>
-      ) : null}
+      {step.options.map((o: string) => <Choice key={o} text={o} on={picked === o} right={picked !== null && !guess && o === step.answer} disabled={picked !== null} onPress={() => pick(o)} />)}
+      {picked !== null ? <Verdict ok={guess ? null : ok} seed={step.prompt.length} title={guess ? "good guess" : undefined} body={guess ? "the lesson's about to tell you." : ok ? undefined : `it's "${step.answer}."`} onNext={() => onDone(guess ? null : ok)} /> : null}
     </View>
   );
 }
@@ -77,13 +74,14 @@ export function OrderStep({ step, onDone }: { step: any; onDone: Done }) {
   const [pool, setPool] = useState<string[]>(() => shuffle(step.items));
   const [seq, setSeq] = useState<string[]>([]);
   const [result, setResult] = useState<boolean | null>(null);
+  const fx = useFx();
   const pick = (x: string) => {
     const s2 = [...seq, x];
     const p2 = pool.filter((y) => y !== x);
     setSeq(s2);
     setPool(p2);
     // Say whether the order was right (and show it when it wasn't) before moving on.
-    if (p2.length === 0) setResult(s2.every((v, k) => v === step.items[k]));
+    if (p2.length === 0) { const r = s2.every((v, k) => v === step.items[k]); setResult(r); fx.react(r ? "right" : "wrong"); }
   };
   return (
     <View>
@@ -91,12 +89,7 @@ export function OrderStep({ step, onDone }: { step: any; onDone: Done }) {
         {seq.map((x, k) => <View key={x} style={[s.tile, { backgroundColor: result === false && x !== step.items[k] ? "#fff" : color.gold, borderColor: color.gold }]}><Text style={s.tileText}>{k + 1}. {x}</Text></View>)}
       </View>
       {result !== null ? (
-        <View style={{ gap: 10, marginBottom: 6 }}>
-          <Text accessibilityLiveRegion="polite" style={[s.feedback, { color: color.ink }]}>
-            {result ? data.NICE[step.items.length % data.NICE.length] : `not quite. it goes: ${step.items.map((v: string, k: number) => `${k + 1}. ${v}`).join("  ")}`}
-          </Text>
-          <SlotFill><Btn kind="gold" onPress={() => onDone(result)}>next</Btn></SlotFill>
-        </View>
+        <Verdict ok={result} seed={step.items.length} body={result ? undefined : `it goes: ${step.items.map((v: string, k: number) => `${k + 1}. ${v}`).join("  ")}`} onNext={() => onDone(result)} />
       ) : null}
       <View style={{ gap: 8 }}>
         {pool.map((x) => (
@@ -114,13 +107,15 @@ export function MatchStep({ step, onDone }: { step: any; onDone: Done }) {
   const [sel, setSel] = useState<string | null>(null);
   const [got, setGot] = useState<Record<string, string>>({});
   const [miss, setMiss] = useState(0);
+  const [finished, setFinished] = useState(false);
+  const fx = useFx();
   const tryPair = (l: string, r: string) => {
     const ok = step.pairs.find((p: string[]) => p[0] === l)[1] === r;
     if (ok) {
       const g = { ...got, [l]: r };
       setGot(g);
       setSel(null);
-      if (Object.keys(g).length === step.pairs.length) setTimeout(() => onDone(miss === 0), 300);
+      if (Object.keys(g).length === step.pairs.length) { setFinished(true); fx.react(miss === 0 ? "right" : "wrong"); }
     } else {
       setMiss((m) => m + 1);
       setSel(null);
@@ -140,7 +135,8 @@ export function MatchStep({ step, onDone }: { step: any; onDone: Done }) {
         <View style={{ flex: 1, gap: 10 }}>{left.map((l) => chip(l, sel === l, !!got[l], () => { setNope(null); setSel(l); }))}</View>
         <View style={{ flex: 1, gap: 10 }}>{right.map((r) => chip(r, false, Object.values(got).includes(r), () => sel && tryPair(sel, r)))}</View>
       </View>
-      {nope ? <Text accessibilityLiveRegion="polite" style={[s.feedback, { color: color.ink, textAlign: "center" }]}>{nope}</Text> : null}
+      {nope && !finished ? <Text accessibilityLiveRegion="polite" style={[s.feedback, { color: color.ink, textAlign: "center" }]}>{nope}</Text> : null}
+      {finished ? <Verdict ok={miss === 0} seed={step.pairs.length} body={miss === 0 ? "every pair on the first try." : `all matched — ${miss} ${miss === 1 ? "slip" : "slips"} on the way.`} onNext={() => onDone(miss === 0)} /> : null}
     </View>
   );
 }
@@ -169,7 +165,8 @@ export function TapHear({ step, voiceOn, onDone }: { step: any; voiceOn: boolean
   }, [step.speak, voiceOn]);
   const bank = step.bank.map((w: string, k: number) => ({ w, k }));
   const used = new Set(seq.map((x) => x.k));
-  const check = () => setState(seq.map((x) => strip(x.w)).join(" ") === step.answer);
+  const fx = useFx();
+  const check = () => { const r = seq.map((x) => strip(x.w)).join(" ") === step.answer; setState(r); fx.react(r ? "right" : "wrong"); };
   const chip = (x: { w: string; k: number }, on: boolean) => (
     <Pressable key={x.k} accessibilityRole="button" accessibilityLabel={x.w} disabled={state !== null}
       onPress={() => (on ? setSeq(seq.filter((y) => y.k !== x.k)) : setSeq([...seq, x]))}
@@ -184,10 +181,7 @@ export function TapHear({ step, voiceOn, onDone }: { step: any; voiceOn: boolean
       <View style={s.answerRow}>{seq.length ? seq.map((x) => chip(x, true)) : <Text style={[type.body(), { color: "#ffffff66", fontStyle: "italic" }]}>tap the words in order…</Text>}</View>
       <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8, justifyContent: "center" }}>{bank.filter((x: any) => !used.has(x.k)).map((x: any) => chip(x, false))}</View>
       {state === null ? <SlotFill><Btn kind="gold" disabled={seq.length < step.words.length} onPress={check}>check</Btn></SlotFill> : (
-        <View style={{ gap: 10 }}>
-          <Text style={[s.feedback, { color: state ? color.gold : "#ffffffcc" }]}>{state ? "that's your line." : `close — it's "${step.speak}."`}</Text>
-          <SlotFill><Btn kind="gold" onPress={() => onDone(state)}>next</Btn></SlotFill>
-        </View>
+        <Verdict ok={state} seed={step.words.length} body={state ? "that's your line." : `it's "${step.speak}."`} onNext={() => onDone(state)} />
       )}
     </View>
   );
@@ -217,10 +211,10 @@ export function BreathStep({ n, onDone }: { n: number; onDone: () => void }) {
   const anim = useAnimatedStyle(() => ({ transform: [{ scale: scale.value }] }));
   return (
     <View style={{ alignItems: "center", gap: 18, width: "100%" }}>
-      <View style={{ width: 200, height: 200, alignItems: "center", justifyContent: "center" }}><Animated.View style={anim}><Sun size={100} mood="happy" /></Animated.View></View>
+      <View style={{ width: 200, height: 200, alignItems: "center", justifyContent: "center" }}><Animated.View style={anim}><Guy pose={phase === "done" ? "joy" : "meditate"} h={150} /></Animated.View></View>
       {phase === "ready" ? (
         <>
-          <Text style={[type.h1(26), { color: "#fff", textAlign: "center" }]}>{n === 1 ? "one breath. that's the practice." : `${n} breaths with the sun.`}</Text>
+          <Text style={[type.h1(26), { color: "#fff", textAlign: "center" }]}>{n === 1 ? "one breath. that's the practice." : `${n} breaths together.`}</Text>
           <Text style={[type.body(), { color: "#ffffffaa", textAlign: "center" }]}>in as it grows. out as it shrinks. eyes open is fine.</Text>
           <SlotFill><Btn kind="gold" onPress={() => { bell(); setPhase("in"); }}>{n === 1 ? "take it" : "start"}</Btn></SlotFill>
         </>
@@ -300,12 +294,13 @@ export function SitStep({ secs, onDone }: { secs: number; onDone: () => void }) 
 export function BetStep({ step, onDone }: { step: any; onDone: Done }) {
   const [picked, setPicked] = useState<string | null>(null);
   const ok = picked === step.answer;
+  const fx = useFx();
   return (
     <View style={{ gap: 10, width: "100%" }}>
       <Kicker>call it</Kicker>
       <Prompt size={26}>{`${step.word}. what does it actually mean?`}</Prompt>
-      {step.options.map((o: string) => <Choice key={o} text={o} on={picked === o} right={picked !== null && o === step.answer} disabled={picked !== null} onPress={() => setPicked(o)} />)}
-      {picked !== null ? <Reveal label={ok ? "right on." : "not quite."} text={step.reveal} onNext={() => onDone(ok)} /> : null}
+      {step.options.map((o: string) => <Choice key={o} text={o} on={picked === o} right={picked !== null && o === step.answer} disabled={picked !== null} onPress={() => { setPicked(o); fx.react(o === step.answer ? "right" : "wrong"); }} />)}
+      {picked !== null ? <Verdict ok={ok} seed={step.word.length} body={step.reveal} onNext={() => onDone(ok)} /> : null}
     </View>
   );
 }
@@ -315,6 +310,7 @@ export function MythStep({ step, onDone }: { step: any; onDone: Done }) {
   const n = step.items.length;
   const done = Object.keys(ans).length === n;
   const right = step.items.filter(([, v]: [string, boolean], i: number) => ans[i] === v).length;
+  const fx = useFx();
   return (
     <View style={{ gap: 12, width: "100%" }}>
       <Kicker>true or myth</Kicker>
@@ -328,7 +324,7 @@ export function MythStep({ step, onDone }: { step: any; onDone: Done }) {
             {!answered ? (
               <View style={{ flexDirection: "row", gap: 10, marginTop: 12 }}>
                 {([["true", true], ["myth", false]] as const).map(([l, val]) => (
-                  <Pressable key={l} accessibilityRole="button" accessibilityLabel={`${l}: ${t}`} onPress={() => setAns((x) => ({ ...x, [i]: val }))} style={s.tf}>
+                  <Pressable key={l} accessibilityRole="button" accessibilityLabel={`${l}: ${t}`} onPress={() => { setAns((x) => ({ ...x, [i]: val })); fx.react(val === v ? "right" : "wrong"); }} style={s.tf}>
                     <Text style={{ color: "#fff", fontFamily: font.text[700], fontSize: 14 }}>{l}</Text>
                   </Pressable>
                 ))}
@@ -342,10 +338,7 @@ export function MythStep({ step, onDone }: { step: any; onDone: Done }) {
         );
       })}
       {done ? (
-        <View style={{ gap: 10, marginTop: 4 }}>
-          <Text style={[type.eyebrow(), { color: color.gold, textAlign: "center" }]}>{right} of {n}. {right === n ? "right on." : "not quite. that's what the week is for."}</Text>
-          <SlotFill><Btn kind="gold" onPress={() => onDone(right === n)}>next</Btn></SlotFill>
-        </View>
+        <Verdict ok={right === n} seed={n} title={right === n ? `${right} of ${n}. right on!` : `${right} of ${n}`} body={right === n ? undefined : "not quite — that's what the week is for."} onNext={() => onDone(right === n)} />
       ) : null}
     </View>
   );
@@ -353,12 +346,14 @@ export function MythStep({ step, onDone }: { step: any; onDone: Done }) {
 
 export function ForkStep({ step, onDone }: { step: any; onDone: Done }) {
   const [picked, setPicked] = useState<number | null>(null);
+  const fx = useFx();
+  const i0 = step.options.length;
   return (
     <View style={{ gap: 10, width: "100%" }}>
       <Kicker>your move</Kicker>
       <Text style={[s.reveal, { fontSize: 19, marginBottom: 6 }]}>{step.setup}</Text>
-      {step.options.map((o: string, i: number) => <Choice key={i} text={o} on={picked === i} right={picked !== null && i === step.answer} disabled={picked !== null} onPress={() => setPicked(i)} />)}
-      {picked !== null ? <Reveal label={picked === step.answer ? "right on." : "not quite."} text={step.reveal} onNext={() => onDone(null)} /> : null}
+      {step.options.map((o: string, i: number) => <Choice key={i} text={o} on={picked === i} right={picked !== null && i === step.answer} disabled={picked !== null} onPress={() => { setPicked(i); fx.react("neutral"); }} />)}
+      {picked !== null ? <Verdict ok={picked === step.answer} seed={i0} title={picked === step.answer ? "right on." : "not quite."} body={step.reveal} onNext={() => onDone(null)} /> : null}
     </View>
   );
 }
