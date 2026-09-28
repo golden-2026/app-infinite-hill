@@ -381,7 +381,7 @@ export function lessonLight(right: number, asked: number, best: number) {
 function LevelPill({ level, up }: { level: number; up?: boolean }) {
   return (
     <View accessibilityLabel={`level ${level} of 5: ${LEVELS[level]}${up ? ". next lesson goes up a level" : ""}`} style={{ flexDirection: "row", alignItems: "center", gap: 8, backgroundColor: "#ffffff14", borderRadius: 999, paddingVertical: 7, paddingHorizontal: 14 }}>
-      <Text style={{ letterSpacing: 2, fontSize: 12 }}>{[1, 2, 3, 4, 5].map((k) => (k <= level ? "☀" : "·")).join("")}</Text>
+      <Text style={{ letterSpacing: 2, fontSize: 12, color: color.gold }}>{[1, 2, 3, 4, 5].map((k) => (k <= level ? "☀" : "·")).join("")}</Text>
       <Text style={[type.eyebrow(8), { color: color.gold }]}>level {level} · {LEVELS[level]}{up ? " · next: ↑" : ""}</Text>
     </View>
   );

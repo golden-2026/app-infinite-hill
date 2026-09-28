@@ -68,16 +68,15 @@ const dayNumber = (dateISO: string) => {
  * Today's song. Rotates by date. Every other day it reaches next door (a tradition that isn't yours),
  * because the point is the crossing. "stay" keeps you in your own tradition when there's a song for it.
  */
-export function songForToday(homeDoor: string | undefined, dateISO: string, openness?: "stay" | "sometimes" | "love"): Song {
+/** Today's song. Other traditions only for people who said they love those connections (or walk their own path);
+ *  everyone else hears their own tradition, or no song when we don't have one for it yet. */
+export function songForToday(homeDoor: string | undefined, dateISO: string, openness?: "stay" | "sometimes" | "love"): Song | null {
   const n = dayNumber(dateISO);
   const own = SONGS.filter((s) => s.tradition === homeDoor);
-  const others = SONGS.filter((s) => s.tradition !== homeDoor);
-  let pool: Song[];
-  if (openness === "stay") pool = own.length ? own : SONGS;
-  else if (openness === "love") pool = others.length ? others : SONGS;
-  else pool = n % 2 === 0 ? (others.length ? others : SONGS) : SONGS;
-  const pick = Math.floor(n / 2) + (n % 2); // move on each day without the two pools lining up
-  return pool[((pick % pool.length) + pool.length) % pool.length];
+  const open = openness === "love" || homeDoor === "SPIRITUAL";
+  const pool = open ? SONGS : own;
+  if (!pool.length) return null;
+  return pool[((n % pool.length) + pool.length) % pool.length];
 }
 
 /** For the listen screen: your door's songs first, then everyone else's. */

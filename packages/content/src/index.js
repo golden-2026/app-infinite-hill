@@ -19,6 +19,16 @@ if (Array.isArray(data.LEGAL) && data.LEGAL[1]?.[0] === "Privacy") {
   data.LEGAL[1] = ["Privacy", "we assume some of you are under eighteen. no ad identifiers, no third-party trackers, no selling data. in the pilot there are no accounts: your days, answers and book stay on your phone. if you turn on reminders, your reminder time and time zone go to our server so it can ring. anonymous usage (which screens you reach, never your answers, words or door) is collected only if you say yes."];
 }
 
+// The welcome promised "nobody here will ever ask what you believe" — but onboarding now asks, gently and
+// optionally, how someone holds their faith. The true promise is that nobody tells you what to believe.
+(function fixPromise(o) {
+  for (const k of Object.keys(o || {})) {
+    const v = o[k];
+    if (typeof v === "string" && v.includes("nobody here will ever ask what you believe")) o[k] = v.replace("nobody here will ever ask what you believe", "nobody here will ever tell you what to believe");
+    else if (v && typeof v === "object") fixPromise(v);
+  }
+})(data);
+
 export { data };
 export const { buildDay, icon, label, camp1, native, skyFor, faceFor, trailX, placeFromScore, guideFallback, iconsShared, splitBeats, screenLines, parseDur } = logic;
 

@@ -213,7 +213,7 @@ export function BreathStep({ n, onDone }: { n: number; onDone: () => void }) {
   const anim = useAnimatedStyle(() => ({ transform: [{ scale: scale.value }] }));
   return (
     <View style={{ alignItems: "center", gap: 18, width: "100%" }}>
-      <View style={{ width: 200, height: 200, alignItems: "center", justifyContent: "center" }}><Animated.View style={anim}><Guy pose={phase === "done" ? "joy" : "meditate"} h={150} /></Animated.View></View>
+      <View style={{ width: 200, height: 200, alignItems: "center", justifyContent: "center" }}><Animated.View style={anim}><Guy still pose={phase === "done" ? "joy" : "meditate"} h={150} /></Animated.View></View>
       {phase === "ready" ? (
         <>
           <Text style={[type.h1(26), { color: "#fff", textAlign: "center" }]}>{n === 1 ? "one breath. that's the practice." : `${n} breaths together.`}</Text>
@@ -267,7 +267,7 @@ export function SitStep({ secs, onDone }: { secs: number; onDone: () => void }) 
             <Circle cx={100} cy={100} r={R} stroke={color.gold} strokeWidth={4} fill="none" strokeDasharray={`${circ}`} strokeDashoffset={circ * (1 - pct)} strokeLinecap="round" />
           </G>
         </Svg>
-        <Animated.View style={anim}><Guy pose="meditate" h={phase === "sitting" ? 112 : 96} /></Animated.View>
+        <Animated.View style={anim}><Guy still pose="meditate" h={phase === "sitting" ? 112 : 96} /></Animated.View>
       </View>
       {phase === "ready" ? (
         <>

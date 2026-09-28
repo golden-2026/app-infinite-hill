@@ -84,7 +84,7 @@ export default function PickDoor() {
       {grid(null)}
     </>;
   } else {
-    host = mode === "closest" ? "We don't have every tradition yet. Pick the closest door, or make your own path." : "Which door is yours? You can change it any time — your days come with you.";
+    host = mode === "closest" ? "Pick the door that fits best, or make a path of your own. More traditions are on the way." : "Which door is yours? You can change it any time — your days come with you.";
     body = <>
       {grid(null)}
       {or("or")}
@@ -97,7 +97,7 @@ export default function PickDoor() {
       <Host pose={mode === "own" ? "globe" : "point"}>{host}</Host>
       {body}
       <Text style={[type.caption(), { textAlign: "center" }]}>more traditions on the way. change your door any time — your days come with you.</Text>
-      {mode === "open" ? <View style={{ alignItems: "center" }}><Link onPress={() => router.push("/welcome/you")}>not sure? tell us about you first ›</Link></View> : null}
+      {mode === "open" && !saved.settings.profile ? <View style={{ alignItems: "center" }}><Link onPress={() => router.push("/welcome/you")}>not sure? tell us about you first ›</Link></View> : null}
     </WelcomeFrame>
   );
 }

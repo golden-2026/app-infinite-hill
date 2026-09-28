@@ -55,12 +55,13 @@ export function SongBody({ song, showDoor, dark }: { song: Song; showDoor?: bool
   );
 }
 
-/** The Today card: "a song for today", rotating by date, reaching next door every other day. */
+/** The Today card: "a song for today", rotating by date; other traditions only for people who asked for them. */
 export function SongCard({ door }: { door?: string }) {
   const { saved, today } = useStore();
   const st = saved.settings;
   const home = door ?? st.homeWing;
   const song = songForToday(home, today, st.profile?.openness);
+  if (!song) return null;
   return (
     <View style={{ backgroundColor: "#fff", borderWidth: 1, borderColor: color.line, borderRadius: 20, padding: 16 }}>
       <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>

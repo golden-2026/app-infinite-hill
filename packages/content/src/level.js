@@ -85,7 +85,7 @@ export function syllables(word) {
   // sh, ch, th, ph and the aspirated bh/dh/gh/kh/jh count as one sound; a lone consonant between vowels starts
   // the next syllable (na·ma), a pair splits (bhak·ti)
   const DI = ["sh", "ch", "th", "ph", "bh", "dh", "gh", "kh", "jh"];
-  const w = DI.reduce((t, d, k) => t.split(d).join(String.fromCharCode(0xe000 + k)), strip(word).replace(/ /g, ""));
+  const w = DI.reduce((t, d, k) => t.split(d).join(String.fromCharCode(0xe000 + k)), strip(word).replace(/^(the|a|an) /, "").replace(/ /g, ""));
   const C = "[^aeiouy]";
   const parts = w.match(new RegExp(`${C}*[aeiouy]+(?:${C}(?=${C}[aeiouy]|${C}$))?`, "g")) || [w];
   const joined = parts.join("");
@@ -146,7 +146,7 @@ export function levelUp(steps, { wing, day, level = 1, seed = day * 7 + 3 }) {
       }
       case "order": {
         // tapping in order becomes dragging the story's scenes into place
-        out.push({ ...s, type: "scenes", prompt: s.prompt.replace(/^put /, "drag ").replace(/ back in order\.?$/, " into the order they came."), items: s.items.slice(0, L >= 3 ? 5 : 4), level: L });
+        out.push({ ...s, type: "scenes", prompt: s.prompt.replace(/^put /, "drag ").replace(/ back in order\.?$/, " into the order they came."), items: s.items.slice(0, L >= 3 ? 5 : 4).map((t) => t.replace(/^\s*\d+(\s*[–-]\s*\d+)?\s*[—–:.-]\s*/, "")), level: L });
         break;
       }
       case "taphear": {

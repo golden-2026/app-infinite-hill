@@ -11,7 +11,9 @@ export default function Listen() {
   useTitle("listen");
   const { saved } = useStore();
   const home = saved.settings.homeWing;
-  const { yours, nextDoor } = songsByDoor(home);
+  const { yours, nextDoor: all } = songsByDoor(home);
+  // other traditions only for people who said they love those connections, or walk their own path
+  const nextDoor = saved.settings.profile?.openness === "love" || home === "SPIRITUAL" ? all : [];
   const group = (title: string, note: string, songs: Song[]) => songs.length ? (
     <View style={{ gap: 10 }}>
       <View>

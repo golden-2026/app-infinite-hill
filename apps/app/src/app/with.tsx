@@ -21,7 +21,7 @@ export default function WithScreen() {
   useEffect(() => { if (gift) saveWalker(gift); }, [gift]);
 
   const later = () => router.replace(onboarded ? "/together" : "/");
-  const back = () => router.replace(onboarded ? "/today" : "/welcome/door");
+  const back = () => router.replace(onboarded ? "/today" : "/welcome/you");
 
   if (!gift) {
     return (

@@ -109,9 +109,32 @@ export function Logo({ h = 44 }: { h?: number }) {
   return <Art refKey={data.LOGO_MARK} h={h} />;
 }
 
-/** The infinite hill guy. Poses come from the design build (wave, joy, jump, meditate…). */
-export function Guy({ pose = "wave", h = 160, style }: { pose?: string; h?: number; style?: any }) {
-  return <Art refKey={data.GUY[pose] || data.GUY.wave} h={h} style={style} />;
+/** The infinite hill guy. Poses come from the design build (wave, joy, jump, meditate…). He's alive: a slow
+ *  breath while idle (slower when he's meditating or asleep) and a little pop each time he changes pose.
+ *  `still` for places that already move him (the breath and sit steps). Reduced motion → a plain image. */
+const CALM_POSES = new Set(["meditate", "sleep", "namaste", "readsit", "sitrock", "sitthink", "lieread"]);
+export function Guy({ pose = "wave", h = 160, style, still }: { pose?: string; h?: number; style?: any; still?: boolean }) {
+  const reduce = useReducedMotion();
+  const breath = useSharedValue(0);
+  const pop = useSharedValue(1);
+  const calm = CALM_POSES.has(pose);
+  useEffect(() => {
+    if (reduce || still) return;
+    const half = calm ? 2600 : 1500;
+    breath.value = withRepeat(withSequence(withTiming(1, { duration: half, easing: Easing.inOut(Easing.sin) }), withTiming(0, { duration: half, easing: Easing.inOut(Easing.sin) })), -1);
+  }, [reduce, still, calm, breath]);
+  useEffect(() => {
+    if (reduce || still) return;
+    pop.value = 0.86;
+    pop.value = withSpring(1, { damping: 7, stiffness: 180 });
+  }, [pose, reduce, still, pop]);
+  const lift = Math.max(1.5, h / 70);
+  const anim = useAnimatedStyle(() => ({
+    transform: [{ translateY: -breath.value * lift }, { scaleY: 1 + breath.value * (calm ? 0.015 : 0.025) }, { scale: pop.value }],
+  }));
+  const img = <Art refKey={data.GUY[pose] || data.GUY.wave} h={h} />;
+  if (reduce || still) return <View style={style}>{img}</View>;
+  return <Animated.View style={[style, { transformOrigin: "50% 100%" } as any, anim]}>{img}</Animated.View>;
 }
 
 /** The sun. Calm = slow breathe; happy/glow = a hop; oops = a small shrug. Never disappointed. */

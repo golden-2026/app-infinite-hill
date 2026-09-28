@@ -159,7 +159,7 @@ const PLANS: Record<string, Plan> = {
       [["breathe", "notice", "the golden rule", "gratitude"], "stop, breathe and notice — anywhere, in under a minute"],
       [["Marcus Aurelius, not wanting to get up", "zen stories", "Hasidic tales", "Nasruddin"], "carry stories from many traditions — each one told with its source"],
       [["the evening review", "walking", "the body scan", "a digital sabbath"], "keep a small daily practice that's yours: a sit, a walk, an evening review"],
-      [["Rumi", "Meditations, with Rumi"], "have read Rumi and Marcus Aurelius side by side, and carry a line from each"],
+      [["Rumi", "Marcus Aurelius' Meditations"], "have read Rumi and Marcus Aurelius side by side, and carry a line from each"],
       [["a week at each of the seven doors", "the Stoics", "the science"], "know what each of the seven doors holds, and what the science says about practice"],
     ],
     summit: {

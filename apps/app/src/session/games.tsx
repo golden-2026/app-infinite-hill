@@ -287,7 +287,8 @@ export function TypeItStep({ step, voiceOn, onDone }: { step: any; voiceOn: bool
     return () => clearTimeout(t);
   }, [step.speak, voiceOn]);
   const check = () => {
-    const a = norm(text), b = norm(step.answer);
+    const bare = (x: string) => norm(String(x).replace(/^\s*(the|a|an)\s+/i, ""));
+    const a = bare(text), b = bare(step.answer);
     const d = edits(a, b);
     const ok = d === 0 || d <= (b.length > 6 ? 2 : 1);
     setRes({ ok, close: ok && d > 0 });
