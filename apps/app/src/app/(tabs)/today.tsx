@@ -21,7 +21,7 @@ export default function Today() {
   const lesson = lessonFor(wing);
   const doneHere = derived.paths[wing]?.done === true;
   const p = pos(lesson);
-  const base0 = data.CAMPS.slice(0, data.CAMPS.findIndex((c: any[]) => c[0] === p.camp)).reduce((s: number, c: any[]) => s + c[2], 0);
+  const base0 = p.start - 1; // the day before this camp (or year) begins
   const titleFor = (n: number) => lessonInfo(wing, base0 + n) || {};
   const t = titleFor(p.lesson);
   const title = t.title || `${p.name.toLowerCase()} · lesson ${p.lesson}`;

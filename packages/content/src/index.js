@@ -20,7 +20,59 @@ if (Array.isArray(data.LEGAL) && data.LEGAL[1]?.[0] === "Privacy") {
 }
 
 export { data };
-export const { lessonInfo, buildDay, icon, label, pos, camp1, native, skyFor, faceFor, trailX, placeFromScore, guideFallback, iconsShared, splitBeats, screenLines, parseDur } = logic;
+export const { buildDay, icon, label, camp1, native, skyFor, faceFor, trailX, placeFromScore, guideFallback, iconsShared, splitBeats, screenLines, parseDur } = logic;
+
+// ─── the five-year path ─────────────────────────────────────────────────────
+// Year one is the five camps (331 days); years two to five follow, 365 days each. The owner's Hinduism plan
+// (docs/curriculum, imported to generated/outline-hinduism.js) outlines every session from day 22 on; those days
+// show the plan's own title, story, practice and carry, clearly marked as an outline until the full script exists.
+import OUTLINE_HINDUISM from "../generated/outline-hinduism.js";
+export const OUTLINES = Object.freeze({ HINDUISM: new Map(OUTLINE_HINDUISM.sessions.map((s) => [s.day, s])) });
+export const YEAR_ONE = data.CAMPS.reduce((n, c) => n + c[2], 0); // 331
+
+/** Where a day sits on the path: its camp (or year), that part's name, the lesson within it, and the day it starts. */
+export function pos(day) {
+  if (day <= YEAR_ONE) {
+    const p = logic.pos(day);
+    const start = data.CAMPS.slice(0, data.CAMPS.findIndex(([c]) => c === p.camp)).reduce((n, c) => n + c[2], 0) + 1;
+    return { ...p, start };
+  }
+  const year = 2 + Math.floor((day - YEAR_ONE - 1) / 365);
+  const start = YEAR_ONE + 1 + (year - 2) * 365;
+  return { camp: `Year ${year}`, name: "the ranges", lesson: day - start + 1, of: 365, start };
+}
+
+const NO_WORD = /^[\s—–-]*$/;
+function outlineLesson(wing, day, s) {
+  const p = pos(day);
+  const title = s.title.length > 90 ? `${s.title.slice(0, 88).replace(/\s\S*$/, "")}…` : s.title;
+  const word = s.word && !NO_WORD.test(s.word) ? s.word : title.split(/[;:(—–,·]/)[0].trim().slice(0, 32);
+  const carry = s.carry || title;
+  const part = (s.part || "").replace(/\s*\((?:Days )?\d+[–-]\d+[^)]*\)/g, "").replace(/\s+—\s+.*$/, "");
+  return {
+    day, title, word, carry, hook: s.hook || title, camp: p, later: true, outline: true, part,
+    segments: [
+      { type: "the bell", duration: null, voice: "", screen: [`DAY ${day}.`] },
+      { type: "the hook", duration: "30 sec", voice: `${part ? `${part}. ` : ""}${title}.${s.hook ? ` ${s.hook}.` : ""}`, screen: [part.toUpperCase() || p.name.toUpperCase(), title.toUpperCase()] },
+      { type: "the teach", duration: "1 min", voice: `This is today's outline — the full script is being written, and a Keeper will check it before it's recorded. Today: ${title}.${s.hook ? ` ${s.hook}.` : ""}`, screen: ["OUTLINE · FULL SCRIPT COMING"] },
+      { type: "the practice", duration: "1 min", voice: s.practice ? `Try this: ${s.practice}.` : "One minute. Breathe. Hold today's idea, and let the rest go.", screen: [] },
+      { type: "the carry", duration: "15 sec", voice: `Your line to carry: ${carry}. Day ${day}. You showed up.`, screen: [carry.toUpperCase()] },
+      { type: "the close", duration: null, voice: "", screen: [] },
+    ],
+  };
+}
+
+/** A day's lesson: the written script (camp one), the owner's outline where one exists, else the generated shell. */
+export function lessonInfo(wing, lesson) {
+  const s = OUTLINES[wing]?.get(lesson);
+  if (s && lesson > 21) return outlineLesson(wing, lesson, s);
+  if (lesson > YEAR_ONE) {
+    // No plan for this door past year one yet: an honest shell instead of "Lesson 101 of 100".
+    const p = pos(lesson);
+    return outlineLesson(wing, lesson, { title: `${p.camp.toLowerCase()} · the ranges`, hook: "this part of the path is still being planned", part: p.camp });
+  }
+  return logic.lessonInfo(wing, lesson);
+}
 export const KNOW = logic.KNOW;
 export const SUN_NOTES = logic.SUN_NOTES;
 export const STRAND_WORDS = logic.STRAND_WORDS;

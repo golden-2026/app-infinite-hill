@@ -24,7 +24,7 @@ declare module "@ih/content" {
   export function lessonInfo(wing: string, lesson: number): any;
   export function icon(wing: string): { wing: string; name: string; short: string; tint: string };
   export function label(wing: string): string;
-  export function pos(day: number): { camp: string; name: string; lesson: number; of: number };
+  export function pos(day: number): { camp: string; name: string; lesson: number; of: number; start: number };
   export function camp1(wing: string): any[];
   export function screenLines(a: string[] | undefined): string[];
   export function native(word: string, wing?: string): any;
