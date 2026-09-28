@@ -6,7 +6,7 @@
 import { router } from "expo-router";
 import { LinearGradient } from "expo-linear-gradient";
 import { useEffect, useState, type ReactNode } from "react";
-import { Pressable, ScrollView, StyleSheet, Text, View, type NativeScrollEvent, type NativeSyntheticEvent, type StyleProp, type ViewStyle } from "react-native";
+import { Platform, Pressable, ScrollView, StyleSheet, Text, View, type NativeScrollEvent, type NativeSyntheticEvent, type StyleProp, type ViewStyle } from "react-native";
 import Animated, { useAnimatedStyle, useSharedValue, withTiming } from "react-native-reanimated";
 import { SafeAreaView, useSafeAreaInsets, type Edge } from "react-native-safe-area-context";
 import { border, color, font, space, type } from "@ih/brand";
@@ -21,6 +21,8 @@ const PARENT: Record<string, string> = { you: "/you", today: "/today", together:
 
 function goBack(fallback: string) {
   if (router.canGoBack()) router.back();
+  // Arrived from the website (a full page load, so the app has no history of its own): go back to it.
+  else if (Platform.OS === "web" && typeof document !== "undefined" && document.referrer.startsWith(location.origin) && history.length > 1) history.back();
   else router.replace(fallback as any);
 }
 

@@ -169,7 +169,7 @@ export default function Today() {
                 {(() => {
                   const order: string[] = (data.MOMENTS.find(([id]: [string]) => id === st.reason) || [])[2] || [];
                   const rank = (w: string) => (order.indexOf(w) === -1 ? 99 : order.indexOf(w));
-                  return DOORS.filter(([, w]) => w !== st.homeWing && w !== (st.active === "visit" ? st.visitWing : null)).sort((a, b) => rank(a[1]) - rank(b[1]));
+                  return DOORS.filter(([, w]) => w !== st.homeWing && w !== st.visitWing).sort((a, b) => rank(a[1]) - rank(b[1]));
                 })().map(([l, w]) => {
                   const d1 = lessonInfo(w, lessonFor(w)) || data.DAY1[w] || {}; // the lesson it will actually open
                   return (
