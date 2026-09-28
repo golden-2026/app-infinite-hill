@@ -951,5 +951,5 @@ html body header.top.scrolled .wrap>div:last-child>div{display:none!important}
 html body header.top.scrolled .wrap .btn.dark{display:inline-flex!important;padding:12px 20px!important;font-size:14px!important}
 }
 </style>
-<script>(function(){var h=document.querySelector("header.top");if(!h)return;var on=false;function f(){var s=window.scrollY>90;if(s!==on){on=s;h.classList.toggle("scrolled",s)}}window.addEventListener("scroll",f,{passive:true});f()})();</script></body>
+<script>(function(){var h=document.querySelector("header.top");if(!h)return;var hero=document.querySelector("section.hero");var on=false;function f(){var s=hero?hero.getBoundingClientRect().bottom<=h.getBoundingClientRect().bottom:window.scrollY>600;if(s!==on){on=s;h.classList.toggle("scrolled",s)}}window.addEventListener("scroll",f,{passive:true});window.addEventListener("resize",f);f()})();</script></body>
 </html>
