@@ -13,8 +13,11 @@ import { Eyebrow, Guy, Sun, color, font, type } from "@/ui";
 
 // v175's fallback says "no signal" when it can't match a question. In the pilot the Guide is off by design,
 // not offline, so say what's true and point at the words the person actually has.
-function pilotAnswer(wing: string, q: string, words: string[]) {
+function pilotAnswer(wing: string, q: string, words: string[], day = 999) {
   const a = guideFallback(wing, q);
+  // A word from a lesson you haven't reached: don't answer from it while saying "from your lessons".
+  const from = Number((a.match(/that's from day (\d+)/) || [])[1]);
+  if (from > day) return `that one's day ${from} — you'll get there. for now I can answer from ${label(wing)}'s lessons up to day ${day}${words.length ? ` — ask me about ${words.slice(-4).join(", ")}` : ""}.`;
   // matched answers carry v175's "(… I'm offline right now, so that's the lesson talking, not me.)"
   if (!/no signal/i.test(a)) return a.replace(/I'?m offline right now, so that's the lesson talking, not me\./i, "in the pilot I answer from your lessons, so that's the lesson talking.");
   const ws = words.slice(-4).join(", ");
@@ -63,9 +66,9 @@ export default function Guide() {
     if (/my book|what i kept|from my (lines|beads)/i.test(question) || /^book$/i.test(question)) {
       a = book.length ? "from your book — your own lines, with where each came from:\n\n" + book.map((b) => `“${b.line}”  — ${label(b.door)}, ${b.date}`).join("\n") + "\n\nthat's everything you've kept." : "your book is empty so far. after a session, tap keep it, and I'll be able to answer from your own lines.";
     } else {
-      a = (await askLive(wing, words, hist.slice(1), question, guideProfile(saved.settings.profile ?? null, wing))) || pilotAnswer(wing, question, words);
+      a = (await askLive(wing, words, hist.slice(1), question, guideProfile(saved.settings.profile ?? null, wing))) || pilotAnswer(wing, question, words, day);
     }
-    setLog((l) => [...l, ["g", a || pilotAnswer(wing, question, words)]]);
+    setLog((l) => [...l, ["g", a || pilotAnswer(wing, question, words, day)]]);
     setBusy(false);
     setTimeout(() => scroller.current?.scrollToEnd({ animated: true }), 50);
   };

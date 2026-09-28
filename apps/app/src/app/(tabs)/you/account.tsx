@@ -65,7 +65,7 @@ export default function Account() {
           <Body size={13} style={{ color: color.mute, marginTop: 6 }}>there are no accounts in the pilot — your days, answers and book stay on this phone. (if you turn on reminders, the reminder time and your time zone go to our server so it can ring.) new phone? export a file here, then open infinite hill on the new one and bring your days from that file.</Body>
           <View style={{ gap: 8, marginTop: 12 }}>
             <Btn testID="export" onPress={exportData}>export my days</Btn>
-            <ImportButton onText={(t) => { const r = importData(t); if (r.ok) toast(r.message); else setDataMsg(r.message); }} />
+            <ImportButton onText={(t) => { const r = importData(t); if (r.ok) { setDataMsg(null); toast(r.message); } else setDataMsg(r.message); }} />
           </View>
           <View style={{ marginTop: 14, marginHorizontal: -16 }}>
             <Row first a="share anonymous usage" b={analyticsAvailable() ? "helps us see where the app is confusing. only which screens you reach — never your answers, your words or your door's name." : "not collecting anything in this build."} toggle={analyticsAvailable() && saved.settings.analytics === "yes"} right={analyticsAvailable() && saved.settings.analytics === "yes" ? "on" : "off"} onPress={() => update({ analytics: saved.settings.analytics === "yes" ? "no" : "yes" })} />

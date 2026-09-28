@@ -10,6 +10,8 @@ import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { hush, bell, speak } from "@/lib/sound";
 import { useStore } from "@/lib/store";
+import { readJSON, remove, writeJSON } from "@/lib/storage";
+import { today as todayNow } from "@/lib/time";
 import { voiceLabel } from "@/lib/voice";
 import { BetStep, BreathStep, ForkStep, MatchStep, MythStep, OptionStep, OrderStep, OriginalStep, SitStep, SpeakStep, TapHear, TrapdoorStep } from "@/session/steps";
 import { BottomBar, Btn, Face, Guy, NavBar, Sun, color, confirmSheet, font, type } from "@/ui";
@@ -41,13 +43,24 @@ function Session({ door, day, kidId, mode, voiceOn, onFinish }: { door: string; 
   useTitle(`${label(door).toLowerCase()} · day ${day}`);
   useChrome(true);
   const plan = useMemo(() => planDay({ wing: door, day, mode }), [door, day, mode]);
-  const [queue, setQueue] = useState<number[]>(() => plan.steps.map((s) => s.id));
-  const [qi, setQi] = useState(0);
-  const [phase, setPhase] = useState<"play" | "fixintro" | "fix">("play");
-  const [missed, setMissed] = useState<number[]>([]);
-  const [score, setScore] = useState({ right: 0, asked: 0 });
+  // A reload mid-lesson picks up where you were (same lesson, same day only); finishing or leaving clears it.
+  const resumeKey = `ih:lesson:${door}:${day}:${kidId || "me"}`;
+  const [saved0] = useState(() => {
+    const r = readJSON<any>(resumeKey, null);
+    const ids = new Set(plan.steps.map((s) => s.id));
+    return r && r.date === todayNow() && Array.isArray(r.queue) && r.queue.every((id: number) => ids.has(id)) && r.qi < r.queue.length ? r : null;
+  });
+  const [queue, setQueue] = useState<number[]>(() => saved0?.queue ?? plan.steps.map((s) => s.id));
+  const [qi, setQi] = useState<number>(saved0?.qi ?? 0);
+  const [phase, setPhase] = useState<"play" | "fixintro" | "fix">(saved0?.phase ?? "play");
+  const [missed, setMissed] = useState<number[]>(saved0?.missed ?? []);
+  const [score, setScore] = useState<{ right: number; asked: number }>(saved0?.score ?? { right: 0, asked: 0 });
   const [combo, setCombo] = useState(0);
-  const [best, setBest] = useState(0);
+  const [best, setBest] = useState<number>(saved0?.best ?? 0);
+  useEffect(() => {
+    if (qi === 0 && phase === "play") return; // nothing worth resuming yet
+    writeJSON(resumeKey, { date: todayNow(), queue, qi, phase, missed, score, best });
+  }, [queue, qi, phase, missed, score, best]); // eslint-disable-line react-hooks/exhaustive-deps
   const [mood, setMood] = useState<"calm" | "glow" | "oops">("calm");
   const t0 = useRef(Date.now());
   const finished = useRef(false);
@@ -110,17 +123,18 @@ function Session({ door, day, kidId, mode, voiceOn, onFinish }: { door: string; 
     if (finished.current) return; // a fast double-tap must not save two sits
     finished.current = true;
     hush();
+    remove(resumeKey);
     const outcome = onFinish({ door, day, kidId });
     track("lesson_done", { door, day, right: score.right, asked: score.asked, newDay: outcome.isNewDay, kid: !!kidId });
     if (kidId) { router.canGoBack() ? router.back() : router.replace("/you/table"); return; } // a child's sit moves the child's hill, not yours
     const minutes = Math.max(1, Math.round((Date.now() - t0.current) / 60000));
     router.replace({ pathname: "/done", params: { door, day: String(day), right: String(score.right), total: String(score.asked), word: plan.word, carry: plan.carry, minutes: String(minutes), newDay: outcome.isNewDay ? "1" : "0", count: String(outcome.showedUp), milestone: outcome.milestone ? String(outcome.milestone) : "" } });
   };
-  const leave = () => { finished.current = true; hush(); router.canGoBack() ? router.back() : router.replace("/today"); };
+  const leave = () => { finished.current = true; hush(); remove(resumeKey); router.canGoBack() ? router.back() : router.replace("/today"); };
   // The one confirm panel the whole app uses, not a lesson-only dialog.
   function askLeave(then: () => void = leave) {
     confirmSheet({ title: "leave this lesson?", body: "it won't count until you finish. your days so far stay right where they are.", confirm: "leave", cancel: "keep going" })
-      .then((ok) => { if (ok) { finished.current = true; hush(); then(); } });
+      .then((ok) => { if (ok) { finished.current = true; hush(); remove(resumeKey); then(); } });
   }
 
   const prevStep = qi > 0 ? plan.steps.find((x) => x.id === queue[qi - 1]) : null;
@@ -223,6 +237,8 @@ function Session({ door, day, kidId, mode, voiceOn, onFinish }: { door: string; 
           </View>
           <Text style={{ fontFamily: font.display[500], fontSize: 17, color: "#ffffffcc", marginTop: 8, textAlign: "center" }}>your line: <Text style={{ fontStyle: "italic" }}>{/[.?!…]$/.test(plan.carry) ? plan.carry : `${plan.carry}.`}</Text></Text>
           {nat ? <View style={st.bead}><Text style={{ fontFamily: font.display[800], fontSize: 22, color: color.gold }}>{nat}</Text><Text style={[type.eyebrow(), { color: "#ffffffbb" }]}>bead {Math.min(day, 21)} of 21 · on your strand</Text></View> : null}
+          {/* the label the Keeper & provenance page promises for unreviewed lessons */}
+          <Text style={[type.eyebrow(8), { color: "#ffffff88", textAlign: "center" }]}>authored draft · Keeper review pending</Text>
           {tomorrow ? <View style={st.tomorrow}><Text style={[type.eyebrow(), { color: color.gold }]}>tomorrow</Text><Text style={{ fontFamily: font.display[800], fontSize: 17, color: "#fff", marginTop: 4 }}>{tomorrow}</Text></View> : null}
         </View>,
         { foot: <Btn testID="finish" kind="gold" onPress={finish}>done — proud of you</Btn> },

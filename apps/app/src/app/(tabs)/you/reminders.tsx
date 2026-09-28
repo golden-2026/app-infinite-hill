@@ -6,7 +6,7 @@ import { disableReminders, enableReminders, reminderStatus, reminderSupport, syn
 import { useStore } from "@/lib/store";
 import { Body, Btn, Card, Eyebrow, Screen, color, font, type, toast } from "@/ui";
 
-const TIMES: [string, string][] = [["sundown", "sundown · 7:00 pm"], ["18:00", "6:00 pm"], ["20:00", "8:00 pm"], ["21:00", "9:00 pm"], ["07:00", "7:00 am"], ["12:00", "noon"]];
+const TIMES: [string, string][] = [["sundown", "evening · 7:00 pm"], ["18:00", "6:00 pm"], ["20:00", "8:00 pm"], ["21:00", "9:00 pm"], ["07:00", "7:00 am"], ["12:00", "noon"]];
 
 export default function Reminders() {
   useTitle("reminders");

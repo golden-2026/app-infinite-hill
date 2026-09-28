@@ -14,6 +14,11 @@ for (const camps of Object.values(data.LATER || {})) {
   }
 }
 
+// The pilot has no accounts and a different analytics list than the design build assumed; say what's true.
+if (Array.isArray(data.LEGAL) && data.LEGAL[1]?.[0] === "Privacy") {
+  data.LEGAL[1] = ["Privacy", "we assume some of you are under eighteen. no ad identifiers, no third-party trackers, no selling data. in the pilot there are no accounts: your days, answers and book stay on your phone. if you turn on reminders, your reminder time and time zone go to our server so it can ring. anonymous usage (which screens you reach, never your answers, words or door) is collected only if you say yes."];
+}
+
 export { data };
 export const { lessonInfo, buildDay, icon, label, pos, camp1, native, skyFor, faceFor, trailX, placeFromScore, guideFallback, iconsShared, splitBeats, screenLines, parseDur } = logic;
 export const KNOW = logic.KNOW;

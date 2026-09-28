@@ -39,7 +39,8 @@ function Reveal({ label, text, onNext }: { label: string; text?: string; onNext:
 function RoundBtn({ glyph, label, onPress, active, size = 84 }: { glyph: string; label: string; onPress?: () => void; active?: boolean; size?: number }) {
   return (
     <Pressable accessibilityRole="button" accessibilityLabel={label} onPress={onPress} disabled={!onPress}
-      style={{ width: size, height: size, borderRadius: size / 2, backgroundColor: active ? color.ink : color.gold, alignItems: "center", justifyContent: "center", alignSelf: "center" }}>
+      // active used to go black, which hid dark emoji glyphs (🗣); a white disc with a gold ring keeps them visible
+      style={{ width: size, height: size, borderRadius: size / 2, backgroundColor: active ? "#fff" : color.gold, borderWidth: active ? 3 : 0, borderColor: color.gold, alignItems: "center", justifyContent: "center", alignSelf: "center" }}>
       <Text style={{ fontSize: size * 0.36 }}>{glyph}</Text>
     </Pressable>
   );
@@ -75,18 +76,28 @@ export function OptionStep({ step, voiceOn, onDone }: { step: any; voiceOn: bool
 export function OrderStep({ step, onDone }: { step: any; onDone: Done }) {
   const [pool, setPool] = useState<string[]>(() => shuffle(step.items));
   const [seq, setSeq] = useState<string[]>([]);
+  const [result, setResult] = useState<boolean | null>(null);
   const pick = (x: string) => {
     const s2 = [...seq, x];
     const p2 = pool.filter((y) => y !== x);
     setSeq(s2);
     setPool(p2);
-    if (p2.length === 0) setTimeout(() => onDone(s2.every((v, k) => v === step.items[k])), 300);
+    // Say whether the order was right (and show it when it wasn't) before moving on.
+    if (p2.length === 0) setResult(s2.every((v, k) => v === step.items[k]));
   };
   return (
     <View>
       <View style={{ gap: 8, minHeight: 60, marginBottom: 14 }}>
-        {seq.map((x, k) => <View key={x} style={[s.tile, { backgroundColor: color.gold, borderColor: color.gold }]}><Text style={s.tileText}>{k + 1}. {x}</Text></View>)}
+        {seq.map((x, k) => <View key={x} style={[s.tile, { backgroundColor: result === false && x !== step.items[k] ? "#fff" : color.gold, borderColor: color.gold }]}><Text style={s.tileText}>{k + 1}. {x}</Text></View>)}
       </View>
+      {result !== null ? (
+        <View style={{ gap: 10, marginBottom: 6 }}>
+          <Text accessibilityLiveRegion="polite" style={[s.feedback, { color: result ? color.gold : "#ffffffcc" }]}>
+            {result ? data.NICE[step.items.length % data.NICE.length] : `not quite. it goes: ${step.items.map((v: string, k: number) => `${k + 1}. ${v}`).join("  ")}`}
+          </Text>
+          <SlotFill><Btn kind="gold" onPress={() => onDone(result)}>next</Btn></SlotFill>
+        </View>
+      ) : null}
       <View style={{ gap: 8 }}>
         {pool.map((x) => (
           <Pressable key={x} accessibilityRole="button" accessibilityLabel={x} onPress={() => pick(x)} style={s.tile}><Text style={s.tileText}>{x}</Text></Pressable>
@@ -113,8 +124,10 @@ export function MatchStep({ step, onDone }: { step: any; onDone: Done }) {
     } else {
       setMiss((m) => m + 1);
       setSel(null);
+      setNope(`not ${l} and ${r}. try another.`);
     }
   };
+  const [nope, setNope] = useState<string | null>(null);
   const chip = (txt: string, active: boolean, done: boolean, onPress: () => void) => (
     <Pressable key={txt} accessibilityRole="button" accessibilityLabel={txt} accessibilityState={{ selected: active, disabled: done }} aria-pressed={active} aria-disabled={done} disabled={done} onPress={onPress}
       style={[s.tile, { alignItems: "center", backgroundColor: done ? color.gold : active ? color.ink : "#fff", opacity: done ? 0.7 : 1 }]}>
@@ -122,9 +135,12 @@ export function MatchStep({ step, onDone }: { step: any; onDone: Done }) {
     </Pressable>
   );
   return (
-    <View style={{ flexDirection: "row", gap: 10 }}>
-      <View style={{ flex: 1, gap: 10 }}>{left.map((l) => chip(l, sel === l, !!got[l], () => setSel(l)))}</View>
-      <View style={{ flex: 1, gap: 10 }}>{right.map((r) => chip(r, false, Object.values(got).includes(r), () => sel && tryPair(sel, r)))}</View>
+    <View style={{ gap: 12 }}>
+      <View style={{ flexDirection: "row", gap: 10 }}>
+        <View style={{ flex: 1, gap: 10 }}>{left.map((l) => chip(l, sel === l, !!got[l], () => { setNope(null); setSel(l); }))}</View>
+        <View style={{ flex: 1, gap: 10 }}>{right.map((r) => chip(r, false, Object.values(got).includes(r), () => sel && tryPair(sel, r)))}</View>
+      </View>
+      {nope ? <Text accessibilityLiveRegion="polite" style={[s.feedback, { color: "#ffffffcc", textAlign: "center" }]}>{nope}</Text> : null}
     </View>
   );
 }

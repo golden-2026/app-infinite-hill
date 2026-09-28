@@ -186,7 +186,10 @@ export function StoreProvider({ children }: { children: ReactNode }) {
         const r = readExport(file);
         const tomorrow = new Date(Date.now() + 36 * 3600_000).toISOString().slice(0, 10); // allow time-zone slack only
         r.sits = r.sits.filter((x) => x.date <= tomorrow);
-        if (!r.sits.length) return { ok: false, message: "that file has no days in it." };
+        // A file with no days of your own can still carry children, kept lines or choices: bring those over too.
+        const rs: any = r.settings || {};
+        const hasSettings = !!(rs.kids?.length || rs.book?.length || rs.profile || rs.onboarded);
+        if (!r.sits.length && !hasSettings) return { ok: false, message: "that file has no days in it." };
         commit((s) => ({
           ...s,
           sits: mergeSits(s.sits, r.sits),
@@ -194,7 +197,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
           settingsVersion: Math.max(s.settingsVersion, r.settingsVersion) + 1,
         }));
         const n = new Set(r.sits.filter((x) => !x.kidId).map((x) => x.date)).size;
-        return { ok: true, message: `brought over. ${n} ${n === 1 ? "day" : "days"}, right where you left them.` };
+        return { ok: true, message: n ? `brought over. ${n} ${n === 1 ? "day" : "days"}, right where you left them.` : "brought over — your table, book and choices are here." };
       } catch (e) {
         return { ok: false, message: (e as Error).message };
       }

@@ -33,7 +33,7 @@ export default function Review() {
     if (k === it.a) setRight((r) => r + 1);
     setTimeout(() => { setPicked(null); if (i + 1 < items.length) setI(i + 1); else setPhase("done"); }, k === it.a ? 550 : 1200);
   };
-  if (!items.length) return <Screen close={close}><View style={{ flex: 1, justifyContent: "center", gap: 12 }}><Text style={type.h1(28)}>nothing due yet.</Text><Text style={type.body()}>your strand starts after day one.</Text></View><Btn onPress={close}>back to the path</Btn></Screen>;
+  if (!items.length) return <Screen close={close}><View style={{ flex: 1, justifyContent: "center", gap: 12 }}><Text style={type.h1(28)}>nothing to review yet.</Text><Text style={type.body()}>review starts once you've learned a word — finish tomorrow's lesson and your first word comes back here.</Text></View><Btn onPress={close}>back to the path</Btn></Screen>;
   if (phase === "intro") return (
     <Screen close={close} footer={<Btn onPress={() => setPhase("play")}>{`review ${items.length}`}</Btn>}>
       <View style={{ flex: 1, justifyContent: "center", gap: 18 }}>

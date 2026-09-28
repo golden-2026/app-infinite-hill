@@ -159,7 +159,7 @@ export default function Today() {
               const others = DOORS.map(([, x]) => x).filter((x) => x !== st.homeWing && x !== st.visitWing);
               update({ visitWing: others[derived.showedUp % others.length], active: "visit" });
             }}>
-              <Text style={[type.caption(), { paddingVertical: 12 }]}>walking your door. a door nearby whenever you want one ›</Text>
+              <Text style={[type.caption(), { paddingVertical: 12 }]}>walking your door. a door nearby whenever you want one ›</Text>
             </Pressable>
           ) : (
             <View style={{ marginTop: 6 }}>
