@@ -1,0 +1,10 @@
+# The Expo app on Netlify. Link the site to golden-2026/app-v1---kayan with base directory `apps/app`;
+# Netlify then builds this folder (the repo-root netlify.toml builds the older v175 web app instead).
+# Accounts, sync and reminders need EXPO_PUBLIC_SUPABASE_URL and EXPO_PUBLIC_SUPABASE_ANON_KEY set on the site;
+# without them the app runs as a guest-only pilot. SPA routing comes from public/_redirects.
+[build]
+  command = "npm ci && npx expo export --platform web"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
