@@ -25,6 +25,8 @@ export type Practice = {
   when?: "morning" | "night" | "friday";
   /** Names God or a holy name. Kept away from people who told us "no god" (every-door ones never do). */
   theistic?: boolean;
+  /** About a loss (says a name, remembers the dead). Only offered to someone who told us about a loss, or said today is heavy. */
+  loss?: boolean;
 };
 
 export const PRACTICES: Practice[] = [
@@ -62,7 +64,7 @@ export const PRACTICES: Practice[] = [
   { id: "body-scan", title: "a body scan", minutes: 6, kind: "rest", door: null, moods: ["tired", "anxious", "grief"], energy: "low",
     steps: ["lie down or sit back. close your eyes.", "start at your feet. notice them without moving them.", "move slowly up: legs, belly, chest, hands, shoulders, face.", "wherever it's tight, breathe out toward it.", "end with one breath for the whole body."],
     why: "your body keeps the day's stress. this is a way to set some of it down." },
-  { id: "letter", title: "a letter to someone you lost", minutes: 8, kind: "write", door: null, moods: ["grief"], energy: "low",
+  { id: "letter", title: "a letter to someone you lost", minutes: 8, kind: "write", door: null, moods: ["grief"], energy: "low", loss: true,
     steps: ["write their name at the top.", "tell them one thing that happened this week.", "tell them one thing you miss.", "say anything you didn't get to say. you never have to send it."],
     why: "grief often needs somewhere to go. a letter is a place." },
   { id: "used-to-think", title: "what I used to think", minutes: 5, kind: "write", door: null, moods: ["curious", "calm"], energy: "low",
@@ -74,7 +76,7 @@ export const PRACTICES: Practice[] = [
   { id: "meal-pause", title: "a pause before eating", minutes: 1, kind: "rest", door: null, moods: ["grateful", "calm", "joyful"], energy: "low",
     steps: ["before the first bite, stop.", "each person says one thing they're glad about today.", "eat the first bite slowly."],
     why: "a small pause at the table, easy to do with kids nearby." },
-  { id: "candle-night", title: "a light in the dark", minutes: 3, kind: "rest", door: null, moods: ["grief", "tired", "calm"], energy: "low", when: "night",
+  { id: "candle-night", title: "a light in the dark", minutes: 3, kind: "rest", door: null, moods: ["grief", "tired", "calm"], energy: "low", when: "night", loss: true,
     steps: ["turn the lights down. light a candle, or a small lamp.", "sit and watch it for a minute.", "if there's someone you're missing, say their name.", "blow it out, or turn it off, when you're ready."],
     why: "a small light at night, for when the day was heavy." },
 
@@ -88,7 +90,7 @@ export const PRACTICES: Practice[] = [
   { id: "examen", title: "the examen", minutes: 5, kind: "prayer", door: "CATHOLIC", moods: ["calm", "curious", "grateful"], energy: "low", when: "night", theistic: true,
     steps: ["ask for light to see the day honestly.", "look back over the day with gratitude.", "notice where you felt close to God, and where far.", "ask forgiveness for what went wrong.", "look toward tomorrow with hope."],
     why: "St. Ignatius asked his Jesuits to keep this even when they dropped everything else." },
-  { id: "eternal-rest", title: "a prayer for the dead", minutes: 1, kind: "prayer", door: "CATHOLIC", moods: ["grief"], energy: "low", theistic: true,
+  { id: "eternal-rest", title: "a prayer for the dead", minutes: 1, kind: "prayer", door: "CATHOLIC", moods: ["grief"], energy: "low", theistic: true, loss: true,
     steps: ["think of the person you've lost.", "pray: “eternal rest grant unto them, O Lord, and let perpetual light shine upon them.”", "“may they rest in peace. amen.”"],
     why: "a short prayer Catholics have said for the dead for centuries." },
 
@@ -110,7 +112,7 @@ export const PRACTICES: Practice[] = [
   { id: "dhikr-fingers", title: "dhikr on your fingers", minutes: 3, kind: "prayer", door: "ISLAM", moods: ["calm", "anxious", "grateful"], energy: "low", theistic: true,
     steps: ["count on the joints of your right hand.", "“subhanallah” (glory be to God), 33 times.", "“alhamdulillah” (all praise is God's), 33 times.", "“allahu akbar” (God is greatest), 34 times."],
     why: "remembrance, counted on the fingers, as the Prophet is reported to have done." },
-  { id: "inna-lillahi", title: "words for a loss", minutes: 1, kind: "prayer", door: "ISLAM", moods: ["grief"], energy: "low", theistic: true,
+  { id: "inna-lillahi", title: "words for a loss", minutes: 1, kind: "prayer", door: "ISLAM", moods: ["grief"], energy: "low", theistic: true, loss: true,
     steps: ["think of who or what you've lost.", "say: “inna lillahi wa inna ilayhi raji'un.”", "“we belong to God, and to Him we return.” (Qur'an 2:156)", "sit with it for one breath."],
     why: "what Muslims say at news of a death, or any loss." },
 
@@ -124,6 +126,13 @@ export const PRACTICES: Practice[] = [
   { id: "modeh-ani", title: "Modeh Ani on waking", minutes: 1, kind: "prayer", door: "JUDAISM", moods: ["grateful", "calm", "tired"], energy: "low", when: "morning", theistic: true,
     steps: ["before you get up, stay in bed a moment.", "say: “modeh ani l'fanecha, melech chai v'kayam…”", "“I thank You, living and lasting King, for returning my soul to me with compassion.”"],
     why: "the first words of the day: thanks, before anything else." },
+  // any time of day, so someone walking this door always has one of its own (sources: Mishnah Berakhot 6:1; Psalm 121, JPS 1917)
+  { id: "hamotzi", title: "the blessing over bread", minutes: 1, kind: "prayer", door: "JUDAISM", moods: ["grateful", "joyful", "calm"], energy: "low", theistic: true,
+    steps: ["before you eat, take the bread (or whatever's on the table) in your hands.", "say: “baruch atah Adonai, Eloheinu melech ha'olam, hamotzi lechem min ha'aretz.”", "“blessed are You, Lord our God, king of the universe, who brings forth bread from the earth.”", "take the first bite. if you're eating with someone, pass them a piece."],
+    why: "hamotzi, the blessing over bread (Mishnah Berakhot 6:1): a meal begins with thanks." },
+  { id: "tehillim-121", title: "a psalm of ascent", minutes: 3, kind: "prayer", door: "JUDAISM", moods: ["anxious", "calm", "tired", "grief"], energy: "low", theistic: true,
+    steps: ["open to Psalm 121, a song of ascents: “I will lift up mine eyes unto the mountains: from whence shall my help come?”", "read it once, straight through. it's eight verses.", "read it again, slower. stop at the line that catches you.", "if someone you know needs help, hold them in mind as you read."],
+    why: "saying tehillim (psalms) is a Jewish practice for any hour, often for someone who needs it." },
 
   // ─── Sikhism ──────────────────────────────────────────────────────────
   { id: "simran", title: "simran", minutes: 5, kind: "prayer", door: "SIKHISM", moods: ["calm", "anxious", "grief"], energy: "low", theistic: true,

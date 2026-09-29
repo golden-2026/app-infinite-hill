@@ -103,9 +103,14 @@ export function factsFromProfile(p: Profile | null | undefined, o: { kids?: numb
   };
   const why = one("why");
   if (why && WHY[why]) add(`why:${why}`, WHY[why]);
-  const PRACTICE: Record<string, string> = { daily: "your faith is part of most of your days.", weekly: "your faith is part of most of your weeks.", holidays: "your faith shows up at holidays and big moments.", rarely: "your faith isn't much part of your life right now." };
+  // "your faith" only for someone who told us they have one; otherwise name the door they're walking (or say nothing)
+  const ownFaith = stance === "practice" || (!stance && one("raised") === "yes");
+  const it = ownFaith ? "your faith" : door;
+  const PRACTICE: Record<string, string> = it ? { daily: `${it} is part of most of your days.`, weekly: `${it} is part of most of your weeks.`, holidays: `${it} shows up at holidays and big moments.`, rarely: `${it} isn't much part of your life right now.` } : {};
   const pr = one("practice");
-  if (pr && PRACTICE[pr] && p.door !== "SPIRITUAL") add(`practice:${pr}`, PRACTICE[pr]);
+  // someone with no religion who's just starting: "not much part of your life" tells them nothing, so leave it out
+  const obvious = pr === "rarely" && !ownFaith && (stance === "curious" || stance === "spiritual");
+  if (pr && PRACTICE[pr] && p.door !== "SPIRITUAL" && !obvious) add(`practice:${pr}`, PRACTICE[pr]);
   const HOLD: Record<string, string> = { fully: "you believe it, fully.", questions: "you believe, with questions.", culture: "for you it's more culture and family.", figuring: "you're still figuring out what you believe." };
   const hold = one("hold");
   if (hold && HOLD[hold]) add(`hold:${hold}`, HOLD[hold]);

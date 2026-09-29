@@ -57,8 +57,18 @@ export function weekOf(w: WeekInput): Week {
 
   const byId = new Map<string, number>();
   for (const d of done) byId.set(d.id, (byId.get(d.id) || 0) + 1);
-  const did = [...byId.entries()].sort((a, z) => z[1] - a[1]).slice(0, 3).map(([id, c]) => `${practiceById(id)?.title ?? "a practice"} ${times(c)}`);
-  if (did.length) text.push(`you did ${did.length > 1 ? `${did.slice(0, -1).join(", ")} and ${did.at(-1)}` : did[0]}.`);
+  // titles can hold commas ("one breath, all the way down"), so each is quoted and never run into a comma list
+  const did = [...byId.entries()].sort((a, z) => z[1] - a[1]).slice(0, 3).map(([id, c]) => ({ t: practiceById(id)?.title, c }));
+  const q = (t?: string) => (t ? `“${t}”` : "a practice");
+  const withTimes = (d: { t?: string; c: number }) => (d.c > 1 ? `${q(d.t)} ${times(d.c)}` : q(d.t));
+  const end = (s: string) => (s.endsWith("”") ? `${s.slice(0, -1)}.”` : `${s}.`); // American style: the period inside the quote
+  if (did.length === 1) text.push(end(`you made time for ${withTimes(did[0])}`));
+  else if (did.length > 1 && did.every((d) => d.c === 1)) {
+    // “a,” “b” and “c” (the comma inside the quote, American style)
+    const head = did.slice(0, -2).map((d) => (d.t ? `“${d.t},” ` : "a practice, ")).join("");
+    text.push(end(`you tried ${n2w(did.length)} practices: ${head}${q(did.at(-2)!.t)} and ${q(did.at(-1)!.t)}`));
+  }
+  else if (did.length > 1) text.push(`you came back to ${withTimes(did[0])}.`, end(`you also made time for ${did.slice(1).map(withTimes).join(" and ")}`));
 
   if (kept.length) text.push(`you kept ${kept.length === 1 ? "a line" : `${n2w(kept.length)} lines`}. the last one: “${kept.at(-1)}”`);
   const hardFeels = feels.filter((f) => f.feel === "hard").length;

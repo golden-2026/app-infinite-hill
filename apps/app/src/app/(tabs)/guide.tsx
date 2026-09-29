@@ -10,6 +10,8 @@ import { useEffect, useRef, useState } from "react";
 import { KeyboardAvoidingView, Platform, Pressable, ScrollView, Text, TextInput, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { addFact, getMemory, moodOn, MOODS, useMemory } from "@/lib/companion/memory";
+import { crisisWords } from "@/lib/companion/shape";
+import { HelpCard } from "@/ui/companion";
 import { companionAvailable, companionChat, type ChatMessage, type CompanionContext, type CompanionProfile } from "@/lib/companion-ai";
 import { flag } from "@/lib/flags";
 import { guideProfile } from "@/lib/profile";
@@ -17,10 +19,38 @@ import { useStore } from "@/lib/store";
 import { today as todayDate } from "@/lib/time";
 import { Eyebrow, Guy, Sun, color, font, type } from "@/ui";
 
+// Some lessons' "word" is a line of a prayer ("the Lord's Prayer, line 5"). Name the line itself ("deliver us"),
+// taken from the lesson's own hook, instead of treating the label as a word.
+const strip = (s: string) => (s || "").replace(/[.!?,;:"“”'’]/g, "").toLowerCase().trim();
+function lineOf(d: any): { prayer: string; n: string; quote: string | null } | null {
+  const m = typeof d?.word === "string" ? d.word.match(/^(.+), line (\d+)$/) : null;
+  if (!m) return null;
+  const quote = (String(d.hook || "").match(/^["“]([^"”]+)["”]/) || [])[1] || null;
+  return { prayer: m[1], n: m[2], quote };
+}
+/** What to call a lesson's word out loud: the word, or for a line of a prayer, the line. */
+function wordName(d: any): string {
+  const l = lineOf(d);
+  return l ? (l.quote ? `“${l.quote}”` : `line ${l.n} of ${l.prayer}`) : d?.word;
+}
+
 // v175's fallback says "no signal" when it can't match a question. In the pilot the Guide is off by design,
 // not offline, so say what's true and point at the words the person actually has.
 function pilotAnswer(wing: string, q: string, words: string[], day = 999) {
-  const a = guideFallback(wing, q);
+  const days = camp1(wing);
+  // asked about a line by its words ("what does “deliver us” mean?"): look it up by the lesson's label
+  const sq = strip(q);
+  const asked = days.find((d: any) => { const l = lineOf(d); return l && ((l.quote && sq.includes(strip(l.quote))) || (sq.includes(strip(l.prayer)) && sq.includes(`line ${l.n}`))); });
+  let a: string = guideFallback(wing, asked ? `${q} ${asked.word}` : q);
+  const hit = days.find((d: any) => d.word && a.startsWith(`${d.word} — `));
+  const l = hit && lineOf(hit);
+  if (hit && l) {
+    // "the Lord's Prayer, line 5 — you can ask. Here's the word: the Lord's Prayer, line 5. "deliver us" — …"
+    // → "“deliver us” (line 5 of the Lord's Prayer) — you can ask. Here's the line: "deliver us" — …"
+    const where = `line ${l.n} of ${l.prayer}`;
+    a = `${l.quote ? `“${l.quote}” (${where})` : where}${a.slice(hit.word.length)}`
+      .replace(`Here's the word: ${hit.word}. `, l.quote ? "Here's the line: " : `Here's ${where}. `);
+  }
   // A word from a lesson you haven't reached: don't answer from it while saying "from your lessons".
   const from = Number((a.match(/that's from day (\d+)/) || [])[1]);
   if (from > day) return `that one's day ${from} — you'll get there. for now I can answer from ${label(wing)}'s lessons up to day ${day}${words.length ? ` — ask me about ${words.slice(-4).join(", ")}` : ""}.`;
@@ -73,11 +103,13 @@ export default function Guide() {
   const memory = useMemory();
   const day = lessonFor(wing);
   const days = camp1(wing);
-  const words = days.filter((d: any) => d.day <= day).map((d: any) => d.word);
+  const words = days.filter((d: any) => d.day <= day).map(wordName);
   const today = days.find((d: any) => d.day === day) || days[0] || data.DAY1[wing] || data.DAY1.SPIRITUAL;
   const book = saved.settings.book;
   const [q, setQ] = useState("");
   const [busy, setBusy] = useState(false);
+  // words that mean someone may be in danger bring up real help (988), as in the journal. nothing is logged.
+  const [help, setHelp] = useState(false);
   // null while checking; the companion is only ever "on" after the server says so.
   const [live, setLive] = useState<boolean | null>(Platform.OS === "web" ? null : false);
   const pilotHello = `ask me anything about ${label(wing)} — a word, a story, why something's done the way it's done. in the pilot I answer from ${label(wing)}'s own lessons, and I'll tell you when they're quiet.`;
@@ -117,6 +149,7 @@ export default function Guide() {
     if (!question || busy) return;
     setQ("");
     setBusy(true);
+    if (crisisWords(question)) setHelp(true);
     const hist = log;
     setLog((l) => [...l, ["u", question]]);
     let line: Line;
@@ -137,7 +170,7 @@ export default function Guide() {
     setTimeout(() => scroller.current?.scrollToEnd({ animated: true }), 50);
   };
   const kept = new Set(memory.facts.map((f) => f.text.trim().toLowerCase()));
-  const chips = [...(book.length ? ["what's in my book?"] : []), `what does ${today.word} actually mean?`, `tell me the story behind ${today.word}`];
+  const chips = [...(book.length ? ["what's in my book?"] : []), `what does ${wordName(today)} actually mean?`, `tell me the story behind ${wordName(today)}`];
   return (
     <SafeAreaView edges={["top"]} style={{ flex: 1, backgroundColor: color.cream }}>
       <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : undefined} style={{ flex: 1 }}>
@@ -167,6 +200,7 @@ export default function Guide() {
               ) : null}
             </View>
           ))}
+          {help ? <View style={{ marginHorizontal: -18 }}><HelpCard onClose={() => setHelp(false)} /></View> : null}
           {busy ? <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}><Sun size={18} mood="spin" /><Text style={[type.body(12), { color: color.mute }]}>looking it up…</Text></View> : null}
           {log.length === 1 ? (
             <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8, marginTop: 6 }}>
@@ -176,7 +210,7 @@ export default function Guide() {
         </ScrollView>
         <Text style={[type.eyebrow(8), { paddingHorizontal: 18, paddingBottom: 6, color: color.mute }]}>{live ? "your companion · from this door's texts and your lessons" : flag("guide-live") ? "from this door's texts · sources shown" : "answers from this door's lessons · the live companion isn't switched on yet"}</Text>
         <View style={{ paddingHorizontal: 18, paddingBottom: 12, paddingTop: 4, flexDirection: "row", gap: 8 }}>
-          <TextInput value={q} onChangeText={setQ} onSubmitEditing={() => send()} placeholder={`what does ${today.word} actually mean?`} placeholderTextColor={color.mute} accessibilityLabel="Ask the guide" returnKeyType="send"
+          <TextInput value={q} onChangeText={setQ} onSubmitEditing={() => send()} placeholder={`what does ${wordName(today)} actually mean?`} placeholderTextColor={color.mute} accessibilityLabel="Ask the guide" returnKeyType="send"
             style={{ flex: 1, borderWidth: 1.5, borderColor: color.line, borderRadius: 999, paddingVertical: 12, paddingHorizontal: 16, fontFamily: font.text[400], fontSize: 16, backgroundColor: "#fff" }} />
           <Pressable accessibilityRole="button" accessibilityLabel="Send" onPress={() => send()} style={{ backgroundColor: busy ? color.line : color.ink, borderRadius: 999, width: 46, height: 46, alignItems: "center", justifyContent: "center" }}><Text style={{ color: color.gold, fontSize: 18 }}>↑</Text></Pressable>
         </View>

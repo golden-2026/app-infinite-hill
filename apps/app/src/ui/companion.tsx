@@ -8,10 +8,13 @@ import type { Shaped } from "@/lib/companion/shape";
 import { useStore } from "@/lib/store";
 import { Guy, color, font, type } from "@/ui";
 
-/** The mascot's pose for a practice: sits and breaths meditate, walks walk, prayers namaste, writing reads, rest and grief carry the lantern. */
+/** The mascot's pose for a practice: sits and breaths meditate, walks walk, writing reads, rest and loss carry the lantern.
+ *  Prayers: namaste only where it belongs (Hinduism); every other tradition's prayer gets him sitting still, never
+ *  another tradition's gesture. */
 export function poseFor(p: Practice): string {
-  if (p.kind === "rest" || (p.moods.length === 1 && p.moods[0] === "grief")) return "lantern";
-  return ({ breath: "meditate", sit: "meditate", walk: "walk", prayer: "namaste", write: "read", move: "stretch", serve: "thumbs", give: "thumbs" } as Record<string, string>)[p.kind] || "meditate";
+  if (p.kind === "rest" || p.loss) return "lantern";
+  if (p.kind === "prayer") return p.door === "HINDUISM" ? "namaste" : "sitrock";
+  return ({ breath: "meditate", sit: "meditate", walk: "walk", write: "read", move: "stretch", serve: "thumbs", give: "thumbs" } as Record<string, string>)[p.kind] || "meditate";
 }
 export const KIND_WORD: Record<string, string> = { breath: "breath", sit: "sit", walk: "walk", move: "move", write: "write", serve: "a kind act", give: "give", prayer: "prayer", rest: "rest" };
 
@@ -25,6 +28,14 @@ export function CompanionCard({ day }: { day: Shaped }) {
     <View style={s.card} testID="companion-card">
       <Text style={[type.eyebrow(8), { color: color.ink }]}>your companion{day.quiet ? " · a quiet day" : ""}</Text>
       <Text style={s.note} accessibilityLiveRegion="polite">{day.note}</Text>
+      {day.reachOut ? (
+        <View style={{ marginTop: 6, flexDirection: "row", alignItems: "center", gap: 8 }} testID="reach-out">
+          <Text style={[type.body(13), { flex: 1, color: color.ink }]}>a few hard days in a row. want to talk to someone? a friend, family, someone you trust.</Text>
+          <Pressable accessibilityRole="button" accessibilityLabel="close for today" onPress={() => closeHelp(today)} hitSlop={8} style={{ minHeight: 36, justifyContent: "center" }}>
+            <Text style={[type.eyebrow(8), { color: color.mute }]}>not now</Text>
+          </Pressable>
+        </View>
+      ) : null}
 
       {asked === null ? (
         <View style={{ marginTop: 10 }}>
@@ -64,7 +75,7 @@ export function CompanionCard({ day }: { day: Shaped }) {
   );
 }
 
-/** Real help, gently: after several heavy days, or words in the journal that mean someone may be in danger. No diagnosis. */
+/** Real help, gently: only for words (journal, Guide) that mean someone may be in danger. Never from mood taps alone. No diagnosis. */
 export function HelpCard({ onClose }: { onClose?: () => void }) {
   const { today } = useStore();
   return (

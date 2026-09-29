@@ -40,8 +40,10 @@ export type Shaped = {
   prompt: string;
   note: string;
   mood: MoodId | null;
-  /** Show the gentle "real help" card (repeated heavy days, or crisis words in the journal). */
+  /** Show the "real help" card (988): only for crisis words in the journal. Never from mood taps alone. */
   help: boolean;
+  /** A run of heavy or anxious days (no crisis words): a softer "want to talk to someone?" line, no crisis line. */
+  reachOut: boolean;
   /** Practices from another door are only ever offered to people who said they love that. */
   fromNextDoor: boolean;
   by: "phone" | "companion";
@@ -110,7 +112,11 @@ export function shapeToday(i: ShapeInput): Shaped {
 
   const quiet = persona === "hard" || mood === "heavy" || heavyDays >= 2 || late || lastFeel === "hard";
   const secular = has("believe:meaning") || has("organized:away");
-  const help = m.helpClosedOn !== i.today && (heavyDays >= 3 || m.journal.some((e) => daysBetween(e.date, i.today) <= 13 && crisisWords(e.text)));
+  // the 988 card only for words that mean danger; a run of heavy or anxious taps gets a softer word instead
+  const help = m.helpClosedOn !== i.today && m.journal.some((e) => daysBetween(e.date, i.today) <= 13 && crisisWords(e.text));
+  const reachOut = !help && m.helpClosedOn !== i.today && heavyDays >= 3;
+  const tired = mood === "tired";
+  const lossOk = has("feeling:grief") || has("why:hard") || mood === "heavy";
 
   const eligible = PRACTICES.filter((x) => {
     if (x.door && x.door !== i.door) {
@@ -124,15 +130,22 @@ export function shapeToday(i: ShapeInput): Shaped {
     if (x.when === "morning" && !morning) return false;
     if (x.when === "night" && !evening) return false;
     if (quiet && (x.minutes > 6 || x.energy === "high")) return false;
-    // practices for a loss (a letter, a prayer for the dead) only when they've told us about one, or said today is heavy
-    if (x.moods.length === 1 && x.moods[0] === "grief" && !(has("feeling:grief") || has("why:hard") || mood === "heavy")) return false;
+    // tired: short and restful only (no ten-minute walk)
+    if (tired && (x.minutes > 4 || x.energy !== "low")) return false;
+    // practices for a loss (a letter, saying a name, a prayer for the dead) only when they've told us about one, or said today is heavy
+    if (x.loss && !lossOk) return false;
     return true;
   });
+  const mealtime = (i.hour >= 11 && i.hour < 14) || (i.hour >= 17 && i.hour < 20);
+  // who this is, for the tie-breaks: the same person gets the same day, and different people get different days
+  const who = [i.door, persona, typeof p?.answers.why === "string" ? p.answers.why : "", mood ?? "", Math.floor(i.hour / 3)].join("|");
 
   const since = (id: string) => { const d = m.done.filter((x) => x.id === id).map((x) => daysBetween(x.date, i.today)); return d.length ? Math.min(...d) : 99; };
   const score = (x: Practice) => {
     let s = 0;
-    if (moodTag && x.moods.includes(moodTag)) s += 4;
+    // the mood nudges; it doesn't decide (the person should still show through)
+    if (moodTag && x.moods.includes(moodTag)) s += 2;
+    if (tired && x.minutes <= 2) s += 1;
     if (has("feeling:grief") && x.moods.includes("grief")) s += 2;
     if ((has("feeling:anxious") || has("feeling:focus")) && x.moods.includes("anxious")) s += 2;
     if (has("feeling:sleep") && evening && x.moods.includes("tired")) s += 1;
@@ -143,15 +156,18 @@ export function shapeToday(i: ShapeInput): Shaped {
     if (x.door && x.door !== i.door) s -= 2; // a taste from next door stays occasional
     switch (persona) {
       // unsure where they stand: the old prayers stay on offer, gently, but don't lead most days
-      case "returner": if (x.kind === "write") s += 1; if (x.theistic) s -= 1; if (x.door === i.door && x.minutes <= 2) s += 1; break;
+      case "returner": if (x.kind === "write") s += 2; if (x.theistic) s -= 1; if (x.door === i.door && x.minutes <= 2) s += 2; break;
       case "deepener": if (x.door === i.door) s += 3; break;
       case "seeker": if (["breath", "walk", "sit", "rest"].includes(x.kind)) s += 2; if (x.door === "SPIRITUAL") s += 1; break;
-      case "parent": if (x.minutes <= 2) s += 2; if (x.id === "meal-pause" || x.id === "grace") s += 2; break;
+      // something to do with the kids nearby: the table, a short one
+      case "parent": if (x.minutes <= 2) s += 1; if (x.id === "meal-pause" || x.id === "grace" || x.id === "hamotzi") s += 3; if (x.kind === "write") s -= 1; break;
       case "hard": if (x.moods.includes("grief")) s += 3; if (x.minutes <= 3) s += 2; if (x.id === "candle-night" && evening) s += 2; break;
-      case "fan": if (x.minutes <= 2) s += 3; if (x.kind === "breath") s += 2; break;
-      case "bridge": if (x.door === i.door) s += 1; if (x.kind === "serve") s += 1; break;
+      case "fan": if (x.minutes <= 2) s += 2; if (x.kind === "breath" || x.kind === "sit") s += 2; break;
+      // something from the door they're walking, or something to share with the people they love
+      case "bridge": if (x.door === i.door) s += 3; if (x.kind === "serve" || x.kind === "give" || x.id === "meal-pause") s += 2; break;
       default: break;
     }
+    if (mealtime && (x.id === "meal-pause" || x.id === "grace" || x.id === "hamotzi")) s += 1;
     if (night && x.minutes <= 4) s += 2;
     if (night && x.energy !== "low") s -= 3;
     if (quiet && x.minutes <= 3) s += 1;
@@ -160,7 +176,7 @@ export function shapeToday(i: ShapeInput): Shaped {
     if (i.missedDays >= 2 && x.minutes <= 2) s += 2;
     const d = since(x.id);
     if (d === 0) s -= 6; else if (d <= 2) s -= 3;
-    return s + hash(`${i.today}:${x.id}`) * 1.5;
+    return s + hash(`${i.today}:${who}:${x.id}`) * 2;
   };
   const ranked = eligible.map((x) => ({ x, s: score(x) })).sort((a, z) => z.s - a.s).map((r) => r.x);
   const practice = ranked[0] || practiceById("breath")!;
@@ -170,7 +186,7 @@ export function shapeToday(i: ShapeInput): Shaped {
   // a hard season: in the evening it's always the note to someone; by day it turns over like everyone's
   const prompt = persona === "hard" && evening ? list[0] : list[i.showedUp % list.length];
 
-  return { practice, candidates: ranked.slice(0, 6), quiet, persona, prompt, note: noteFor({ i, persona, mood, quiet, late, night, practice }), mood, help, fromNextDoor: !!practice.door && practice.door !== i.door, by: "phone" };
+  return { practice, candidates: ranked.slice(0, 6), quiet, persona, prompt, note: noteFor({ i, persona, mood, quiet, late, night, practice }), mood, help, reachOut, fromNextDoor: !!practice.door && practice.door !== i.door, by: "phone" };
 }
 
 function noteFor({ i, persona, mood, quiet, late, night, practice }: { i: ShapeInput; persona: Persona; mood: MoodId | null; quiet: boolean; late: boolean; night: boolean; practice: Practice }): string {
@@ -242,5 +258,5 @@ export function useShapedDay(i: ShapeInput): Shaped {
     return () => { live = false; };
   }, [key]); // eslint-disable-line react-hooks/exhaustive-deps
   // keep the phone's current safety answers (help card, quiet) even if a cached AI reply is older
-  return ai && ai.key === key ? { ...ai.v, help: local.help, prompt: local.prompt } : local;
+  return ai && ai.key === key ? { ...ai.v, help: local.help, reachOut: local.reachOut, prompt: local.prompt } : local;
 }
