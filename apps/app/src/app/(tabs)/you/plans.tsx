@@ -33,7 +33,7 @@ export default function Plans() {
         <View style={{ flex: 1 }}><Text style={type.serif(20)}>Give someone a door</Text><Body size={12} style={{ color: color.mute }}>gifts open after the pilot</Body></View>
         <Text style={{ fontSize: 22 }}>›</Text>
       </Card>
-      <Text style={[type.caption(), { textAlign: "center" }]}>No ads near practice · missed days never sold · 0% of giving touches us</Text>
+      <Text style={[type.caption(), { textAlign: "center" }]}>No ads near practice · missed days never sold · 0% of giving touches us · part of what we earn goes to the Infinite Hill Foundation</Text>
     </Screen>
   );
 }
