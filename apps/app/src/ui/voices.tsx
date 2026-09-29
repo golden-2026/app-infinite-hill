@@ -41,7 +41,7 @@ export function KeeperDesk() {
     <View style={{ gap: 8 }}>
       <Text style={type.eyebrow()}>the keepers</Text>
       <Text style={type.h1(26)}>the people who make sure we get it right.</Text>
-      <Text style={type.body()}>a scholar or teacher from each tradition reads every lesson before it's recorded. they can veto us. they have.</Text>
+      <Text style={type.body()}>a scholar of each tradition, respected inside it and out, reads every lesson before it's recorded. they can veto us.</Text>
       <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 10, justifyContent: "space-between", marginTop: 6 }}>
         {data.KEEPERS.map(([t, n, c, p]: string[]) => { const a = art(p); return (
           <View key={t} style={{ width: "48.5%", backgroundColor: "#fff", borderWidth: 1, borderColor: color.line, borderRadius: 16, overflow: "hidden" }}>
