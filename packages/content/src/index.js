@@ -37,7 +37,19 @@ export const { buildDay, icon, label, camp1, native, skyFor, faceFor, trailX, pl
 // (docs/curriculum, imported to generated/outline-hinduism.js) outlines every session from day 22 on; those days
 // show the plan's own title, story, practice and carry, clearly marked as an outline until the full script exists.
 import OUTLINE_HINDUISM from "../generated/outline-hinduism.js";
-export const OUTLINES = Object.freeze({ HINDUISM: new Map(OUTLINE_HINDUISM.sessions.map((s) => [s.day, s])) });
+// every other path's five-year plan (docs/curriculum/<door>/y1–y5.md → scripts/import-paths.mjs). DRAFT outlines.
+import OUTLINE_CHRISTIANITY from "../generated/outline-christianity.js";
+import OUTLINE_CATHOLIC from "../generated/outline-catholic.js";
+import OUTLINE_JUDAISM from "../generated/outline-judaism.js";
+import OUTLINE_ISLAM from "../generated/outline-islam.js";
+import OUTLINE_BUDDHISM from "../generated/outline-buddhism.js";
+import OUTLINE_SIKHISM from "../generated/outline-sikhism.js";
+import OUTLINE_SPIRITUAL from "../generated/outline-spiritual.js";
+const asMap = (o) => new Map(o.sessions.map((s) => [s.day, s]));
+export const OUTLINES = Object.freeze({
+  HINDUISM: asMap(OUTLINE_HINDUISM), CHRISTIANITY: asMap(OUTLINE_CHRISTIANITY), CATHOLIC: asMap(OUTLINE_CATHOLIC), JUDAISM: asMap(OUTLINE_JUDAISM),
+  ISLAM: asMap(OUTLINE_ISLAM), BUDDHISM: asMap(OUTLINE_BUDDHISM), SIKHISM: asMap(OUTLINE_SIKHISM), SPIRITUAL: asMap(OUTLINE_SPIRITUAL),
+});
 export const YEAR_ONE = data.CAMPS.reduce((n, c) => n + c[2], 0); // 331
 
 /** Where a day sits on the path: its camp (or year), that part's name, the lesson within it, and the day it starts. */

@@ -3,7 +3,7 @@
 // summit cards — must be checked by that tradition's Keeper before public release (docs/CONTENT_RELEASE.md).
 // Rules: accurate to the curriculum outline in @ih/content (data.CAMPS, data.LATER, OUTLINES), respectful, never
 // comparative ("better", "truer"), modest where a camp is only outlined, and never a claim that lessons are reviewed.
-import { data } from "@ih/content";
+import { data, OUTLINES } from "@ih/content";
 
 const YEAR_ONE: number = data.CAMPS.reduce((n: number, c: [string, string, number]) => n + c[2], 0); // 331, as @ih/content
 
@@ -187,8 +187,25 @@ export function trailFor(door: string): { stages: Stage[]; lookout: number; summ
   const end = YEAR_ONE + 4 * 365;
   const summit: Summit = { day: end, eyebrow: `day ${end.toLocaleString("en-US")} · the top of the five-year climb`, ...plan.summit };
   if (!plan.years) {
-    stages.push({ key: "Years 2-5", eyebrow: "years 2–5", name: "the ranges", first: YEAR_ONE + 1, last: end, samples: [], promise: "", outlined: true, planned: true });
-    return { stages, lookout: YEAR_ONE, summit, planned: true };
+    // no hand-written promise for years 2–5: read them from the path's own five-year plan (OUTLINES), if it has one
+    const out = OUTLINES[door] as Map<number, any> | undefined;
+    if (!out || !out.get(YEAR_ONE + 1)) {
+      stages.push({ key: "Years 2-5", eyebrow: "years 2–5", name: "the ranges", first: YEAR_ONE + 1, last: end, samples: [], promise: "", outlined: true, planned: true });
+      return { stages, lookout: YEAR_ONE, summit, planned: true };
+    }
+    for (let k = 0; k < 4; k++) {
+      const first = YEAR_ONE + 1 + k * 365;
+      const days = Array.from({ length: 365 }, (_, i) => out.get(first + i)).filter(Boolean);
+      const heading = String(days[0]?.camp || "");
+      const theme = (heading.match(/[“"]([^”"]+)[”"]/) || [])[1] || "the ranges";
+      // the year's blocks, by name ("Block A · Exodus finished (Days 332–378)" → "exodus finished"); a year without
+      // named blocks falls back to a spread of its session titles
+      const named = [...new Set(days.map((d) => String(d.part || "").replace(/^(Block|Weeks?|Part)\s+[\w–-]+\s*·\s*/i, "").split(" · ")[0].replace(/\s*\(.*$/, "").trim()).filter((p) => p && !/^(block|weeks?)\b/i.test(p)))];
+      const parts = named.length >= 2 ? named : [0, 0.25, 0.5, 0.75].map((f) => String(days[Math.floor(f * days.length)]?.title || "").replace(/\s*\(.*$/, "")).filter(Boolean);
+      const promise = `walk through ${parts.slice(0, 3).map(lower).join(", ")}${parts.length > 3 ? " and more" : ""}`;
+      stages.push({ key: `Year ${k + 2}`, eyebrow: `year ${k + 2} · 365 days`, name: lower(theme), first, last: first + 364, samples: parts.slice(0, 4).map(lower), promise, outlined: true });
+    }
+    return { stages, lookout: YEAR_ONE, summit, planned: false };
   }
   plan.years.forEach(([samples, promise], k) => {
     const first = YEAR_ONE + 1 + k * 365;

@@ -18,6 +18,7 @@ declare module "@ih/domain" {
 }
 declare module "@ih/content" {
   export const data: any;
+  export const OUTLINES: Readonly<Record<string, Map<number, any>>>;
   export const DOORS: [string, string][];
   export const GRADED: readonly string[];
   export function planDay(o: { wing: string; day: number; lesson?: number; mode?: string; named?: boolean; level?: number }): { steps: any[]; word: string; carry: string; title: string; info: any };
