@@ -2,7 +2,7 @@ import { useTitle } from "@/lib/title";
 import { icon, label } from "@ih/content";
 import { Text, View } from "react-native";
 import { useStore } from "@/lib/store";
-import { Body, Face, Screen, color, type } from "@/ui";
+import { Body, Face, Guy, Screen, color, type } from "@/ui";
 
 export default function Book() {
   useTitle("your book");
@@ -10,6 +10,7 @@ export default function Book() {
   const book = saved.settings.book;
   return (
     <Screen scroll back="you" title="your book." contentStyle={{ gap: 12 }}>
+      <View style={{ alignItems: "center" }}><Guy pose="read" h={130} /></View>
       {book.length === 0 ? (
         <View style={{ gap: 8 }}><Text style={type.h1(24)}>empty, for now.</Text><Body>after a session, tap <Text style={{ fontFamily: "Inter_700Bold" }}>keep it</Text> and the line goes here. one day this is the book you come back to — every line from a real door, in your order.</Body></View>
       ) : book.map((b, i) => (

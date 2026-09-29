@@ -21,7 +21,7 @@ const WEEK = 7;
 const SLOTS = 14; // stone places on the painted trail; a window never holds more than 15 stones
 const pillW = (txt: string) => txt.length * 6.4 + 22;
 const celebrated = new Set<string>(); // "door:lesson" popped once per app session
-const HILL_LOOP: Record<string, any> = { hike: require("../../assets/mascot/walk.webp") };
+const HILL_LOOP: Record<string, any> = { hike: require("../../assets/mascot/walk.webp"), jump: require("../../assets/mascot/celebrate.webp"), sitrock: require("../../assets/mascot/sit_on_rock.webp"), sleep: require("../../assets/mascot/sleep.webp") };
 
 function Pill({ x, y, txt, anchor, night }: { x: number; y: number; txt: string; anchor: "start" | "middle" | "end"; night: boolean }) {
   const w = pillW(txt);

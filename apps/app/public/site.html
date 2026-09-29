@@ -973,6 +973,7 @@ html body section.gift{padding-top:40px!important}</style>
 
 <style>@media(max-width:860px){html body .heromosaic{padding:0 12px!important}}</style>
 
+
 <!-- MOTION PASS — dignity for the faces and the faith, play inside the phone. Injected before </body> by mock/build.mjs
      ({{GUY_*}} placeholders become the mascot poses). -->
 <section class="playdemo" id="playdemo">
@@ -1186,27 +1187,27 @@ a.btn:active,.gbtn:active{transform:scale(.96)}
     drop: async function (el) { el.style.opacity = '1'; await anim(el, [{ transform: 'translateY(-160px) rotate(-8deg)' }, { transform: 'translateY(0) scale(1.12,.86)' }], 520, 'cubic-bezier(.6,0,.9,.6)'); await anim(el, [{ transform: 'none' }], 320, EASE); }
   };
   // the finished animated mascot (8 hand-made loops, green keyed out), matched to what each section is about
-  var LOOP = { wave: '/mascot/wave.webp', cheer: '/mascot/cheer.webp', walk: '/mascot/walk.webp', climb: '/mascot/climb.webp', meditate: '/mascot/meditate.webp', think: '/mascot/think.webp', celebrate: '/mascot/celebrate.webp', tap: '/mascot/tap_reaction.webp' };
+  var LOOP = { wave: '/mascot/wave.webp', cheer: '/mascot/cheer.webp', walk: '/mascot/walk.webp', climb: '/mascot/climb.webp', meditate: '/mascot/meditate.webp', think: '/mascot/think.webp', celebrate: '/mascot/celebrate.webp', tap: '/mascot/tap_reaction.webp', peek: '/mascot/peek.webp', thumbs: '/mascot/thumbs_up.webp', namaste: '/mascot/namaste.webp', read: '/mascot/read.webp', lantern: '/mascot/lantern.webp', sit: '/mascot/sit_on_rock.webp' };
   var PLAN = [
-    { sel: '#voices', enter: 'peek', loop: 'wave' },
+    { sel: '#voices', enter: 'peek', loop: 'peek' },
     { sel: '#mission', enter: 'drop', loop: 'think' },
     { sel: '#what', enter: 'walk', loop: 'walk' },
     { sel: '#timeline', enter: 'climb', loop: 'climb' },
-    { sel: '#plans', enter: 'climb', loop: 'climb' },
-    { sel: '#gift', enter: 'peek', loop: 'celebrate' },
+    { sel: '#plans', enter: 'drop', loop: 'thumbs' },
+    { sel: '#gift', enter: 'peek', loop: 'lantern' },
     { sel: '#faq', enter: 'drop', loop: 'think' },
-    { sel: '#goal', enter: 'walk', loop: 'cheer' },
-    { sel: '#science', enter: 'drop', loop: 'meditate' }
+    { sel: '#goal', enter: 'drop', loop: 'namaste' },
+    { sel: '#science', enter: 'drop', loop: 'meditate' },
+    { sel: '#cool', enter: 'walk', loop: 'cheer' }
   ];
   function planFor(el) { for (var i = 0; i < PLAN.length; i++) if (el.closest(PLAN[i].sel)) return PLAN[i]; return { enter: 'drop', loop: 'wave' }; }
   guys.forEach(function (el) {
     var plan = planFor(el), still = el.src, started = false, busy = false;
     if (reduce) return; // reduced motion: the original still pose stays
     // cheer/celebrate/meditate/think/tap are cropped at the top in the source videos: keep the still until re-rendered
-    var CLEAN = { wave: 1, walk: 1, climb: 1 };
-    var home = CLEAN[plan.loop] ? LOOP[plan.loop] : still;
+    var home = LOOP[plan.loop] || still;
     el.addEventListener('click', function () {
-      if (busy) return; busy = true; el.src = LOOP.wave;
+      if (busy) return; busy = true; el.src = LOOP.tap;
       setTimeout(function () { el.src = home; busy = false; }, 3000);
     });
     if (!('IntersectionObserver' in window)) { el.src = home; return; }
@@ -1307,7 +1308,7 @@ a.btn:active,.gbtn:active{transform:scale(.96)}
       return t0 + 4000;
     },
     breath: function (d, t0) {
-      fill(eb(d.eb) + pr(d.title) + '<div class="pd-breath"><img src="' + POSE.meditate + '" alt=""></div><div class="pd-bw">in…</div>');
+      fill(eb(d.eb) + pr(d.title) + '<div class="pd-breath"><img src="' + (reduce ? POSE.meditate : '/mascot/meditate.webp') + '" alt=""></div><div class="pd-bw">in…</div>');
       var br = stage.querySelector('.pd-breath'), bw = stage.querySelector('.pd-bw');
       for (var b = 0; b < 3; b++) { at(t0 + 300 + b * 1800, function () { br.classList.add('in'); bw.textContent = 'in…'; }); at(t0 + 1200 + b * 1800, function () { br.classList.remove('in'); bw.textContent = 'out…'; }); }
       return t0 + 300 + 3 * 1800;
@@ -1352,7 +1353,7 @@ a.btn:active,.gbtn:active{transform:scale(.96)}
     fin.className = 'pd-finger'; fin.style.left = '70%'; fin.style.top = '92%';
     $('pdcarry').textContent = d.carry; $('pdlook').src = LOOK[d.look]; $('pdlooklbl').textContent = d.lbl; $('pdwint').textContent = d.end;
     $('pdday').textContent = d.day; $('pdlvl').textContent = '☀☀☀☀☀'.slice(0, d.lvl);
-    $('pdguy').src = POSE.cheer;
+    $('pdguy').src = reduce ? POSE.cheer : (i % 2 ? '/mascot/celebrate.webp' : '/mascot/cheer.webp');
     var tile = grid.children[i];
     if (reduce) { tile.classList.add('picked'); return; }
     at(400, function () { fin.classList.add('on'); aim(tile); });

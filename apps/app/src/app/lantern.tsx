@@ -57,7 +57,7 @@ export default function LanternScreen() {
                 <Text style={{ fontFamily: font.display[800], fontSize: 22, color: color.ink, marginTop: 6 }}>“{gift.line}”</Text>
               </View>
             ) : null}
-            <Guy pose="namaste" h={110} />
+            <Guy pose={lit ? "lantern" : "namaste"} h={110} />
             {gift ? <ShareLantern line={gift.line} door={door} day={today} n={derived.showedUp} /> : null}
           </View>
         ) : null}

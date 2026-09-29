@@ -25,7 +25,8 @@ export default function Light() {
   const sky = useAnimatedStyle(() => ({ backgroundColor: interpolateColor(up.value, [0, 1], ["#0b0d12", "#2a1c05"]) }));
   const glow = useAnimatedStyle(() => ({ opacity: up.value }));
   const sun = useAnimatedStyle(() => ({ transform: [{ translateY: (1 - up.value) * 170 }, { scale: 0.85 + up.value * 0.35 }] }));
-  const cheer = useAnimatedStyle(() => ({ opacity: guy.value, transform: [{ translateY: (1 - guy.value) * 30 }] }));
+  // he stretches awake while you wait, then cheers once the sun is up
+  const cheer = useAnimatedStyle(() => ({ opacity: 1, transform: [{ translateY: -guy.value * 12 }] }));
   const rise = () => {
     if (risen) return;
     setRisen(true);
@@ -59,7 +60,7 @@ export default function Light() {
         <Svg width={width} height={height * 0.4} style={{ position: "absolute", bottom: 0 }} viewBox={`0 0 ${width} ${height * 0.4}`}>
           <Path d={ridge} fill="#111418" />
         </Svg>
-        <Animated.View pointerEvents="none" style={[{ position: "absolute", bottom: height * 0.12, right: 24 }, cheer]}><Guy pose="cheer" h={150} /></Animated.View>
+        <Animated.View pointerEvents="none" style={[{ position: "absolute", bottom: height * 0.12, right: 24 }, cheer]}><Guy pose={risen ? "cheer" : "stretch"} h={150} /></Animated.View>
         <View style={{ position: "absolute", bottom: insets.bottom + 40, left: 0, right: 0, alignItems: "center" }}>
           <Text style={[type.h1(24), { color: risen ? color.gold : "#fff" }]}>{risen ? `day ${count === 1 ? "one" : count}, lit.` : `tap to light day ${count === 1 ? "one" : count}.`}</Text>
         </View>

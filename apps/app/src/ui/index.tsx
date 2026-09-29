@@ -123,9 +123,23 @@ const ANIM: Record<string, any> = {
   think: require("../../assets/mascot/think.webp"),
   celebrate: require("../../assets/mascot/celebrate.webp"),
   tap: require("../../assets/mascot/tap_reaction.webp"),
+  sleep: require("../../assets/mascot/sleep.webp"),
+  sitrock: require("../../assets/mascot/sit_on_rock.webp"),
+  read: require("../../assets/mascot/read.webp"),
+  lantern: require("../../assets/mascot/lantern.webp"),
+  stretch: require("../../assets/mascot/sunrise_stretch.webp"),
+  peek: require("../../assets/mascot/peek.webp"),
+  thumbs: require("../../assets/mascot/thumbs_up.webp"),
+  namaste: require("../../assets/mascot/namaste.webp"),
 };
-// only the loops whose source keeps him fully in frame; cheer/celebrate/meditate/think/tap clip at the top (re-render pending)
-const POSE_ANIM: Record<string, string> = { wave: "wave", walk: "walk", stride: "walk", stroll: "walk", hike: "walk", stickwalk: "walk", climb: "climb" };
+// every pose that has a hand-made loop (all 16 checked: he stays fully inside the frame in every frame)
+const POSE_ANIM: Record<string, string> = {
+  wave: "wave", cheer: "cheer", jump: "cheer", joy: "celebrate", celebrate: "celebrate",
+  walk: "walk", stride: "walk", stroll: "walk", hike: "walk", stickwalk: "walk", climb: "climb",
+  meditate: "meditate", think: "think", idea: "think", sitthink: "think", aha: "think", tap: "tap",
+  sleep: "sleep", sitrock: "sitrock", read: "read", readsit: "read", lieread: "read", lantern: "lantern",
+  stretch: "stretch", peek: "peek", thumbs: "thumbs", namaste: "namaste",
+};
 export function Guy({ pose = "wave", h = 160, style, still }: { pose?: string; h?: number; style?: any; still?: boolean }) {
   const reduce = useReducedMotion();
   const breath = useSharedValue(0);
