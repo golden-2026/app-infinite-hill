@@ -24,7 +24,7 @@ if (Array.isArray(data.LEGAL) && data.LEGAL[1]?.[0] === "Privacy") {
 (function fixPromise(o) {
   for (const k of Object.keys(o || {})) {
     const v = o[k];
-    if (typeof v === "string" && v.includes("nobody here will ever ask what you believe")) o[k] = v.replace("nobody here will ever ask what you believe", "nobody here will ever tell you what to believe");
+    if (typeof v === "string" && /nobody here will ever ask what you believe|NOBODY ASKS WHAT YOU BELIEVE/.test(v)) o[k] = v.replace("nobody here will ever ask what you believe", "nobody here will ever tell you what to believe").replace("NOBODY ASKS WHAT YOU BELIEVE", "NOBODY TELLS YOU WHAT TO BELIEVE");
     else if (v && typeof v === "object") fixPromise(v);
   }
 })(data);
