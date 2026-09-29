@@ -82,7 +82,7 @@ export default function Today() {
 
         {(() => {
           const seen = st.unlocksSeen || [];
-          const card = derived.showedUp >= 7 && !seen.includes("together") ? { key: "together", title: "a week in. walk with someone.", body: "light your lantern and send it to one friend.", to: "/together" }
+          const card = derived.showedUp >= 7 && !seen.includes("together") ? { key: "together", title: `${derived.showedUp < 14 ? "a week in" : `${derived.showedUp} days in`}. walk with someone.`, body: "light your lantern and send it to one friend.", to: "/together" }
             : derived.showedUp >= 3 && !seen.includes("guide") ? { key: "guide", title: `${derived.showedUp} days in. the guide is worth asking now.`, body: "ask about any word you've learned — it answers from your lessons.", to: "/guide" } : null;
           if (!card) return null;
           const open = () => { track("unlock_seen", { unlock: card.key }); update({ unlocksSeen: [...seen, card.key] }); router.push(card.to as any); };
@@ -145,15 +145,15 @@ export default function Today() {
             <Card dark style={{ padding: 18, overflow: "hidden" }}>
               <Text style={[type.eyebrow(), { color: color.gold }]}>today · done</Text>
               <Text style={{ fontFamily: font.display[500], fontSize: 18, marginTop: 6, paddingRight: 96, color: "#fff" }}>carry: {t.carry || (data.DAY1[wing] || data.DAY1.SPIRITUAL).carry}</Text>
-              <Text style={[type.body(12), { color: "#ffffff99", marginTop: 6, paddingRight: 96 }]}>{night ? "sleep on it. see you at sundown." : "that's it for today. see you at sundown."}</Text>
+              <Text style={[type.body(12), { color: "#ffffff99", marginTop: 6, paddingRight: 96 }]}>{night ? "sleep on it. see you tomorrow." : hour >= 19 ? "that's it for today. see you tomorrow." : "that's it for today. see you at sundown."}</Text>
               <View style={{ position: "absolute", right: 8, bottom: night ? 46 : 4 }}><Guy pose={night ? "sleep" : "thumbs"} h={night ? 78 : 104} /></View>
               {isDemo() ? <View style={{ marginTop: 12 }}><Btn kind="light" onPress={() => demoShiftDays(1)}>Demo: skip to tomorrow →</Btn></View> : null}
             </Card>
           ) : derived.currentRun >= 2 ? (
             // the one thing at stake: your run of days. said gently, and louder only as the day ends
             <View style={[s.pill, { borderColor: hour >= 17 ? color.gold : color.line, backgroundColor: hour >= 17 ? color.ink : "transparent" }]} accessibilityRole="text">
-              <Text style={[type.eyebrow(8), { color: hour >= 17 ? color.gold : color.ink }]}>☀ {derived.currentRun}-day run</Text>
-              <Text style={[type.eyebrow(8), { color: hour >= 17 ? "#fff" : color.mute }]}>{hour >= 21 ? "the day's almost out — light it" : hour >= 17 ? "on the line tonight" : "light today to keep it"}</Text>
+              <Text numberOfLines={1} style={[type.eyebrow(8), { color: hour >= 17 ? color.gold : color.ink, flexShrink: 0 }]}>☀ {derived.currentRun}-day run</Text>
+              <Text numberOfLines={1} style={[type.eyebrow(8), { color: hour >= 17 ? "#fff" : color.mute, flexShrink: 1, textAlign: "right" }]}>{hour >= 21 ? "almost out — light it" : hour >= 17 ? "on the line tonight" : "light today to keep it"}</Text>
             </View>
           ) : null /* the floating "start day N" button above the tab bar is the one start action */}
 
@@ -233,7 +233,7 @@ const s = StyleSheet.create({
   inkCard: { marginHorizontal: 18, marginTop: 12, backgroundColor: "#fff", borderWidth: 2, borderColor: color.ink, borderRadius: 18, paddingVertical: 12, paddingHorizontal: 16, flexDirection: "row", alignItems: "center", gap: 12 },
   yn: { flex: 1, alignItems: "center", backgroundColor: "#fff", borderWidth: 2, borderColor: color.ink, borderRadius: 999, paddingVertical: 8 },
   ynText: { fontFamily: font.text[700], fontSize: 13, color: color.ink },
-  pill: { flexDirection: "row", justifyContent: "space-between", alignItems: "center", minHeight: 44, paddingVertical: 0, paddingHorizontal: 14, borderRadius: 999, backgroundColor: "#fff", borderWidth: 1.5, borderColor: color.ink },
+  pill: { flexDirection: "row", justifyContent: "space-between", alignItems: "center", gap: 10, minHeight: 44, paddingVertical: 0, paddingHorizontal: 14, borderRadius: 999, backgroundColor: "#fff", borderWidth: 1.5, borderColor: color.ink },
   dock: { position: "absolute", left: 16, right: 16, bottom: 12 },
   dockBtn: { borderWidth: 2, borderColor: color.ink, shadowColor: "#000", shadowOpacity: 0.18, shadowRadius: 14, shadowOffset: { width: 0, height: 6 } },
   dockDone: { flexDirection: "row", alignItems: "center", gap: 10, backgroundColor: color.ink, borderRadius: 999, paddingVertical: 10, paddingHorizontal: 16, shadowColor: "#000", shadowOpacity: 0.18, shadowRadius: 14, shadowOffset: { width: 0, height: 6 } },

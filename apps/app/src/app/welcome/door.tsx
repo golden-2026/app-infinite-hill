@@ -14,7 +14,7 @@ import { WelcomeFrame } from "@/ui/welcome-frame";
 
 // The door screen, curated by what they told us on the first step (welcome/you). It never chooses for anyone, and
 // every door is always one tap away:
-//   practises a tradition we have      → only their door ("your door"); other doors stay folded until they ask
+//   practices a tradition we have      → only their door ("your door"); other doors stay folded until they ask
 //   grew up in one, not sure           → their roots with fresh eyes, and "my own path" offered softly beside it
 //   grew up in one and left it         → "my own path" and their roots with fresh eyes, both offered softly
 //   no religion / exploring / spiritual → "my own path" as the hero, "or walk one door" below

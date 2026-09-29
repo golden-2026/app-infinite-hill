@@ -186,7 +186,7 @@ async function stripeCheckout(row, user, env, fetchImpl) {
   const params = new URLSearchParams({
     mode: "payment",
     success_url: `${base}/?gift=checkout-return`,
-    cancel_url: `${base}/?gift=checkout-cancelled`,
+    cancel_url: `${base}/?gift=checkout-canceled`,
     "line_items[0][price]": env[priceEnv],
     "line_items[0][quantity]": "1",
     client_reference_id: user.id,

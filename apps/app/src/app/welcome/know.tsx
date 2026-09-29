@@ -40,6 +40,7 @@ export default function Know() {
   // Right/wrong per question, so answering a question again (e.g. after "back") replaces it instead of adding up.
   const [results, setResults] = useState<boolean[]>([]);
   const [picked, setPicked] = useState<string | null>(null);
+  const [chosen, setChosen] = useState<string[]>([]); // what was picked per question, shown again after "back"
   const cur = qs[i];
   const options = useMemo(() => (cur ? shuffled(cur.o.map((o, k) => ({ o, k })), seed + i * 7) : []), [cur, seed, i]);
 
@@ -67,6 +68,7 @@ export default function Know() {
   const answer = (o: string | null, k: number | null) => {
     if (picked) return;
     setPicked(o ?? "unsure");
+    setChosen((c) => { const n = c.slice(); n[i] = o ?? "unsure"; return n; });
     const next = results.slice(0, qs.length);
     next[i] = k === cur.a;
     setResults(next);
@@ -76,15 +78,22 @@ export default function Know() {
       else finish(knowledgeScore(next.filter(Boolean).length, qs.length));
     }, 650);
   };
+  // The top "back" steps back one question (answers kept), then to the intro, before leaving the check.
+  const stepBack = () => {
+    if (picked) return true;
+    if (i > 0) setI(i - 1);
+    else setStarted(false);
+    return true;
+  };
   return (
-    <WelcomeFrame step={4} door={door}>
+    <WelcomeFrame step={4} door={door} onBack={stepBack}>
       <Eyebrow style={{ textAlign: "center" }}>{`${i + 1} of ${qs.length}`}</Eyebrow>
       <Text accessibilityRole="header" style={[type.h1(24), { textAlign: "center" }]}>{cur.q}</Text>
       <View style={{ gap: 8 }} accessibilityRole="radiogroup">
         {options.map(({ o, k }) => (
-          <Opt key={o} big on={picked === o} onPress={() => answer(o, k)} sub={picked === o ? (k === cur.a ? "yes — that's it" : `it's “${cur.o[cur.a]}”`) : undefined}>{o}</Opt>
+          <Opt key={o} big on={picked ? picked === o : chosen[i] === o} onPress={() => answer(o, k)} sub={picked === o ? (k === cur.a ? "yes — that's it" : `it's “${cur.o[cur.a]}”`) : undefined}>{o}</Opt>
         ))}
-        <Opt big on={picked === "unsure"} onPress={() => answer(null, null)} sub={picked === "unsure" ? `it's “${cur.o[cur.a]}”` : undefined}>not sure</Opt>
+        <Opt big on={picked ? picked === "unsure" : chosen[i] === "unsure"} onPress={() => answer(null, null)} sub={picked === "unsure" ? `it's “${cur.o[cur.a]}”` : undefined}>not sure</Opt>
       </View>
       <Text style={[type.caption(), { textAlign: "center", color: color.mute }]}>no score to anyone. just where to start.</Text>
     </WelcomeFrame>

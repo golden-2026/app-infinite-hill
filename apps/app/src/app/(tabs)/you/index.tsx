@@ -108,7 +108,7 @@ export default function You() {
               const prof = st.profile ?? emptyProfile(wing, today); // same setting Today reads, whichever door
               return (
                 <Row a="other traditions" b={`${{ stay: "stay on my path — never bring them up", sometimes: "now and then, a similar idea from another tradition", love: "show me similar ideas from other traditions" }[prof.openness]} · tap to change`}
-                  right={{ stay: "off", sometimes: "sometimes", love: "often" }[prof.openness]}
+                  right={{ stay: "off", sometimes: "sometimes", love: "often" }[prof.openness]} cycle
                   onPress={() => { const o = ({ stay: "sometimes", sometimes: "love", love: "stay" } as const)[prof.openness]; update({ profile: { ...prof, openness: o } }); }} />
               );
             })()}

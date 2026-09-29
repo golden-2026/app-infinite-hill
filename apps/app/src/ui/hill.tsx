@@ -61,7 +61,7 @@ export function HillScene({ hour, done, total, doneToday, onStart, onReplay, fir
   const yBot = H - 110;
   const yTop = face.top + 70;
   const step = (yBot - yTop) / SLOTS;
-  // the board centres on today: the stone to walk, or once walked, the stone just finished (its lantern may have just lit)
+  // the board centers on today: the stone to walk, or once walked, the stone just finished (its lantern may have just lit)
   const { first, last, cur } = trailWindow(doneToday && done > 0 ? done - 1 : done, total);
   const idx = Array.from({ length: last - first + 1 }, (_, j) => first + j);
   // stepping stones sit a little left and right of the trail's line, like stones you hop between
@@ -133,7 +133,7 @@ export function HillScene({ hour, done, total, doneToday, onStart, onReplay, fir
     // the hand-made loops: walking up to today's stone, celebrating at the summit (resting/sleeping stay still)
     const loop = reduce ? null : HILL_LOOP[pose];
     if (loop) {
-      const shift = (h * (1 - a.w / a.h)) / 2; // the loop is square; keep him centred where the still pose stood (hill units)
+      const shift = (h * (1 - a.w / a.h)) / 2; // the loop is square; keep him centered where the still pose stood (hill units)
       return (
         <View key={pose + x} pointerEvents="none" style={{ position: "absolute", left: px(x - shift), top: py(y), height: py(h), width: px(h), zIndex: 6 }}>
           <Image source={loop} style={{ width: "100%", height: "100%" }} contentFit="contain" autoplay accessible={false} />
@@ -152,7 +152,15 @@ export function HillScene({ hour, done, total, doneToday, onStart, onReplay, fir
   const walkerH = doneToday ? 62 : 76;
   const walkerX = walkerRight ? nx + (doneToday ? 46 : 40) : nx - (doneToday ? 46 : 40) - 58;
   const signRight = !walkerRight;
-  const signY = Math.max(ty - 28, ny - step * 2 - 20); // never up under the summit note
+  // the note at the top of the board: at a lookout it rides high, but never above the board's top edge
+  const noteY = atLookout ? Math.max(16, ty - 120) : ty - 46;
+  // never up under the summit note, and never over today's flag (near a camp's end both sat on the top stone)
+  const SIGN_H = 62;
+  const flagTop = ny - 26;
+  const flagBot = ny + 16;
+  const signMin = atLookout ? noteY + 10 : ty - 28;
+  let signY = Math.max(signMin, ny - step * 2 - 20);
+  if (signY < flagBot && signY + SIGN_H > flagTop) signY = flagTop - SIGN_H >= signMin ? flagTop - SIGN_H : flagBot + 6;
   const campName = here.name.toLowerCase();
   const campTag = `${here.camp} · week ${weekNo} of ${weeks}`.toUpperCase();
 
@@ -178,8 +186,9 @@ export function HillScene({ hour, done, total, doneToday, onStart, onReplay, fir
           </G>
         ); })}
         <Pill x={14} y={H - 58} txt={first === 0 ? "▲ THE TRAILHEAD · YOUR FOOTPRINTS STAY" : `▲ DAYS ${firstLesson}–${firstLesson + first - 1} WALKED · FOOTPRINTS STAY`} anchor="start" night={night} />
-        <Pill x={W / 2} y={last === total - 1 ? ty - 120 : ty - 46} night={night} anchor="middle"
-          txt={last === total - 1 ? (/^Year ([6-9]|\d\d)/.test(nextPart.camp) ? "THE SUMMIT · FIVE YEARS OF TRAIL" : `LOOKOUT · ${nextPart.camp} · ${nextPart.name} AHEAD`.toUpperCase()) : `THE TRAIL GOES ON · WEEK ${Math.floor(last / WEEK) + 2} AHEAD`} />
+        {/* the lookout is named for the camp it ends, the same as on the done screen ("the lookout · camp 1 · first steps") */}
+        <Pill x={W / 2} y={noteY} night={night} anchor="middle"
+          txt={atLookout ? (toSummit ? "THE SUMMIT · FIVE YEARS OF TRAIL" : `THE LOOKOUT · ${here.camp} · ${here.name}`.toUpperCase()) : `THE TRAIL GOES ON · WEEK ${Math.floor(last / WEEK) + 2} AHEAD`} />
       </Svg>
 
       {/* the wooden trail sign: where you are on the hill */}
@@ -225,7 +234,7 @@ export function HillScene({ hour, done, total, doneToday, onStart, onReplay, fir
         const onPress = () => {
           if (s === "now") onStart();
           else if (s === "done") onReplay(lesson);
-          else showTip(i, s === "tomorrow" ? "opens tomorrow · see you at sundown" : `unlocks after day ${lesson - 1}`);
+          else showTip(i, s === "tomorrow" ? (night || hour >= 19 ? "opens tomorrow · see you then" : "opens tomorrow · see you at sundown") : `unlocks after day ${lesson - 1}`);
         };
         const weekEnd = lantern ? `, the end of week ${Math.floor(i / WEEK) + 1}${s === "done" ? ", lantern lit" : ""}` : "";
         const a11y = (s === "now" ? `Start today: ${label}` : s === "done" ? `Day ${lesson}, done. Sit it again` : s === "tomorrow" ? `Day ${lesson} opens tomorrow` : `Day ${lesson}, locked`) + weekEnd;

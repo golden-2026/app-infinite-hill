@@ -28,3 +28,20 @@ export function lanternLine(door: string, upTo: number, today: string): { line: 
 }
 
 export const LANTERN_LIGHT = 10;
+
+// Every carry line a door's lessons hold (camp one plus the outlined years), to check a friend's lantern link against.
+const norm = (s: string) => s.toLowerCase().replace(/[“”"‘’'.!?,;:…\s]+/g, " ").trim();
+const LINES = new Map<string, Set<string>>();
+export function isLessonLine(door: string, line: string): boolean {
+  let set = LINES.get(door);
+  if (!set) {
+    set = new Set<string>();
+    for (const d of camp1(door) as any[]) if (d?.carry) set.add(norm(d.carry));
+    for (let day = 22; day <= 1826; day++) {
+      const d: any = lessonInfo(door, day);
+      if (d?.carry && !/being planned/.test(d.hook || "")) set.add(norm(d.carry));
+    }
+    LINES.set(door, set);
+  }
+  return set.has(norm(line));
+}

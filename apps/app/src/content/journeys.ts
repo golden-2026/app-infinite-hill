@@ -43,7 +43,7 @@ export type Stage = {
   /** Not planned yet at all: no samples or promise, and the stop says so. */
   planned?: boolean;
 };
-export type Summit = { day: number; eyebrow: string; know: string; practise: string; able: string };
+export type Summit = { day: number; eyebrow: string; know: string; practice: string; able: string };
 
 type Plan = { camps: [string[], string][]; years?: [string[], string][]; summit: Omit<Summit, "day" | "eyebrow"> };
 
@@ -66,7 +66,7 @@ const PLANS: Record<string, Plan> = {
     ],
     summit: {
       know: "the epics, the Gita, the principal Upanishads, the six schools",
-      practise: "breath, mantra, a daily sit, the festivals as they come round",
+      practice: "breath, mantra, a daily sit, the festivals as they come round",
       able: "read a verse and explain it to a friend — and sit with the questions the tradition still argues about",
     },
   },
@@ -80,7 +80,7 @@ const PLANS: Record<string, Plan> = {
     ],
     summit: {
       know: "the life of Jesus, the parables, a whole gospel, the church year",
-      practise: "a daily prayer, sabbath rest, scripture as a habit",
+      practice: "a daily prayer, sabbath rest, scripture as a habit",
       able: "read a passage and say what it meant then and what people take from it now",
     },
   },
@@ -94,7 +94,7 @@ const PLANS: Record<string, Plan> = {
     ],
     summit: {
       know: "the Mass, the sacraments, the saints, the Psalms",
-      practise: "the rosary, the church's year, a quiet prayer of your own",
+      practice: "the rosary, the church's year, a quiet prayer of your own",
       able: "walk into any Mass and know what's happening, and why",
     },
   },
@@ -108,7 +108,7 @@ const PLANS: Record<string, Plan> = {
     ],
     summit: {
       know: "Genesis and Exodus, the weekly portion, the holidays, the sages",
-      practise: "Shabbat, blessings through the day, study as prayer",
+      practice: "Shabbat, blessings through the day, study as prayer",
       able: "sit down with a text and argue with it, the way the sages did",
     },
   },
@@ -122,7 +122,7 @@ const PLANS: Record<string, Plan> = {
     ],
     summit: {
       know: "the prophets' stories, the seerah, the short surahs, the 99 names",
-      practise: "salat, dhikr, du'a in your own words, Ramadan as it arrives",
+      practice: "salat, dhikr, du'a in your own words, Ramadan as it arrives",
       able: "hear a surah recited and know what it's saying",
     },
   },
@@ -136,7 +136,7 @@ const PLANS: Record<string, Plan> = {
     ],
     summit: {
       know: "the Buddha's life, the four truths, the Dhammapada, the schools",
-      practise: "breath, metta, walking meditation, the precepts",
+      practice: "breath, metta, walking meditation, the precepts",
       able: "sit with a hard feeling and watch it change",
     },
   },
@@ -150,7 +150,7 @@ const PLANS: Record<string, Plan> = {
     ],
     summit: {
       know: "the ten Gurus, Japji Sahib, the Granth's big themes, Sikh history",
-      practise: "seva, simran, kirtan, a place at langar",
+      practice: "seva, simran, kirtan, a place at langar",
       able: "walk into a gurdwara anywhere and feel at home",
     },
   },
@@ -164,7 +164,7 @@ const PLANS: Record<string, Plan> = {
     ],
     summit: {
       know: "the best stories and ideas of every door, each with its source",
-      practise: "a daily sit, an evening review, kindness on purpose",
+      practice: "a daily sit, an evening review, kindness on purpose",
       able: "meet a hard day with something steady — borrowed from the wisest people who ever lived",
     },
   },
@@ -202,7 +202,9 @@ export function trailFor(door: string): { stages: Stage[]; lookout: number; summ
       // named blocks falls back to a spread of its session titles
       const named = [...new Set(days.map((d) => String(d.part || "").replace(/^(Block|Weeks?|Part)\s+[\w–-]+\s*·\s*/i, "").split(" · ")[0].replace(/\s*\(.*$/, "").trim()).filter((p) => p && !/^(block|weeks?)\b/i.test(p)))];
       const parts = named.length >= 2 ? named : [0, 0.25, 0.5, 0.75].map((f) => String(days[Math.floor(f * days.length)]?.title || "").replace(/\s*\(.*$/, "")).filter(Boolean);
-      const promise = `walk through ${parts.slice(0, 3).join(", ")}${parts.length > 3 ? " and more" : ""}`;
+      // part names can hold commas ("The Acts of the Apostles, read through"), so they're set apart with dots
+      const tidy = (p: string) => p.replace(/^(The|A|An) /, (m) => m.toLowerCase());
+      const promise = `walk through ${parts.slice(0, 3).map(tidy).join(" · ")}${parts.length > 3 ? " · and more" : ""}`;
       stages.push({ key: `Year ${k + 2}`, eyebrow: `year ${k + 2} · 365 days`, name: lower(theme), first, last: first + 364, samples: parts.slice(0, 4), promise, outlined: true });
     }
     return { stages, lookout: YEAR_ONE, summit, planned: false };

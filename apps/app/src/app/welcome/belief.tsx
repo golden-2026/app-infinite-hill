@@ -47,7 +47,7 @@ export default function Belief() {
   };
 
   return (
-    <WelcomeFrame step={5} door={door} footer={q.optional ? <Btn kind="ghost" onPress={() => pick(null)}>rather not say</Btn> : undefined}>
+    <WelcomeFrame step={5} door={door} onBack={() => (i > 0 ? (setI(i - 1), true) : false)} footer={q.optional ? <Btn kind="ghost" onPress={() => pick(null)}>rather not say</Btn> : undefined}>
       <Eyebrow style={{ textAlign: "center" }}>{`about you · ${i + 1} of ${qs.length}`}</Eyebrow>
       <Host>{fill(q.ask)}</Host>
       <View style={{ gap: 8 }} accessibilityRole="radiogroup">

@@ -42,7 +42,7 @@ export function OwnPathCard({ on, onPress, size = "hero", eyebrow = "my own path
   );
 }
 
-/** A tradition as a big card: "your door" for someone who practises, or "your roots, with fresh eyes". */
+/** A tradition as a big card: "your door" for someone who practices, or "your roots, with fresh eyes". */
 export function BigDoorCard({ door, on, onPress, eyebrow, line, a11y }: { door: string; on: boolean; onPress: () => void; eyebrow: string; line?: string; a11y?: string }) {
   const ic = icon(door);
   return (

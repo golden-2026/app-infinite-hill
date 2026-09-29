@@ -1,5 +1,5 @@
 // The whole climb for one door, drawn as a switchback trail: the summit at the top (what someone who walks it all
-// will know, practise and be able to do), each camp and year below it as a stop with a "by here you'll be able to…"
+// will know, practice and be able to do), each camp and year below it as a stop with a "by here you'll be able to…"
 // promise, and the trailhead at the bottom. A "you are here" marker shows once someone has walked days on this door.
 // Used in onboarding (welcome/trail) and from Today (app/trail). Copy is DRAFT (content/journeys.ts).
 import { useState, type ReactElement } from "react";
@@ -25,7 +25,7 @@ function Painting({ artKey, y = "25%" }: { artKey: string; y?: string }) {
 }
 
 function SummitCard({ s, name, planned }: { s: Summit; name: string; planned: boolean }) {
-  const rows: [string, string][] = [["you'll know", s.know], ["you'll practise", s.practise], ["you'll be able to", s.able]];
+  const rows: [string, string][] = [["you'll know", s.know], ["you'll practice", s.practice], ["you'll be able to", s.able]];
   return (
     <View style={{ backgroundColor: color.ink, borderRadius: 24, overflow: "hidden" }} accessibilityLabel={`The summit of ${name}`}>
       {/* the top of the climb, painted: the view fades down into the card so the words stay easy to read */}
@@ -94,8 +94,8 @@ function Stop({ st, n, side, status, tint, day, view }: { st: Stage; n: string; 
         ) : <>
           <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6, marginTop: 8 }}>
             {st.samples.map((x) => (
-              <View key={x} style={{ backgroundColor: color.sand, borderRadius: 999, paddingHorizontal: 9, paddingVertical: 4 }}>
-                <Text style={{ fontFamily: font.text[500], fontSize: 12, color: color.ink }}>{x}</Text>
+              <View key={x} style={{ backgroundColor: color.sand, borderRadius: 999, paddingHorizontal: 9, paddingVertical: 4, maxWidth: "100%", flexShrink: 1 }}>
+                <Text numberOfLines={1} style={{ fontFamily: font.text[500], fontSize: 12, color: color.ink, flexShrink: 1 }}>{x}</Text>
               </View>
             ))}
           </View>

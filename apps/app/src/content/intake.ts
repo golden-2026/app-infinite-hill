@@ -29,7 +29,7 @@ export const STANCE_Q: Question = {
   id: "stance", ask: "First, a little about you. Where are you with religion right now?",
   note: "private — it stays on your phone. it only changes what we show you first. every door stays open.",
   choices: [
-    { id: "practice", label: "I practise a faith" },
+    { id: "practice", label: "I practice a faith" },
     { id: "unsure", label: "I grew up in one, but I'm not sure I believe anymore" },
     { id: "left", label: "I grew up in one and left it" },
     { id: "curious", label: "no religion — just curious" },
@@ -247,7 +247,7 @@ export const BRIDGES: Bridge[] = [
     { door: "ISLAM", word: "alhamdulillah", day: 3, gloss: "all praise is God's — thanks, in good times and bad" },
     { door: "SPIRITUAL", word: "gratitude", day: 9, gloss: "thank you, anyway" },
   ] },
-  { id: "community", idea: "gathering to practise together", why: "company for the part that's hard to do alone", tags: ["community"], members: [
+  { id: "community", idea: "gathering to practice together", why: "company for the part that's hard to do alone", tags: ["community"], members: [
     { door: "SIKHISM", word: "sangat", day: 13, gloss: "the gathered community" },
     { door: "BUDDHISM", word: "the sangha", day: 17, gloss: "the community that walks together" },
     { door: "HINDUISM", word: "satsang", day: 20, gloss: "gathering in truth" },

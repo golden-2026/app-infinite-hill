@@ -15,7 +15,7 @@ import { useChrome } from "@/ui/chrome";
 import { Slide } from "@/ui/enter";
 import { ChevronLeft, CloseIcon } from "@/ui/tab-icons";
 
-export type BackTo = boolean | string | { label: string; to?: string };
+export type BackTo = boolean | string | { label: string; to?: string; /** step back inside the screen first (e.g. the previous question); return true if handled */ onPress?: () => boolean };
 
 const PARENT: Record<string, string> = { you: "/you", today: "/today", together: "/together", guide: "/guide", legal: "/you/legal" };
 
@@ -31,7 +31,7 @@ export function BackButton({ to, dark }: { to: BackTo; dark?: boolean }) {
   const href = (typeof to === "object" && to.to) || PARENT[label] || "/today";
   const ink = dark ? "#fff" : color.ink;
   return (
-    <Pressable accessibilityRole="button" accessibilityLabel={`Back to ${label}`} hitSlop={8} onPress={() => { tapHaptic(); goBack(href); }}
+    <Pressable accessibilityRole="button" accessibilityLabel={`Back to ${label}`} hitSlop={8} onPress={() => { tapHaptic(); if (typeof to === "object" && to.onPress?.()) return; goBack(href); }}
       style={({ pressed }) => [st.back, { opacity: pressed ? 0.45 : 1 }]}>
       <ChevronLeft color={ink} />
       <Text style={[st.backText, { color: ink }]} numberOfLines={1}>{label}</Text>
@@ -102,7 +102,7 @@ type ScreenProps = {
   sheet?: boolean;
   dark?: boolean;
   scroll?: boolean;
-  /** Short flows: centre the content in the space between the bars. */
+  /** Short flows: center the content in the space between the bars. */
   center?: boolean;
   edges?: Edge[];
   style?: StyleProp<ViewStyle>;

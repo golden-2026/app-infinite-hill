@@ -1,4 +1,4 @@
-// Truthful voice disclosure. A named voice is claimed only when its licence is signed (BUILD_BRIEF,
+// Truthful voice disclosure. A named voice is claimed only when its license is signed (BUILD_BRIEF,
 // "Voice, disclosure and legal"). Add a door here only with the signed paper on file.
 export const LICENSED_VOICES: Record<string, true> = {};
 

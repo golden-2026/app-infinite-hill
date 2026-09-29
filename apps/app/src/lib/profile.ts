@@ -14,7 +14,7 @@ export type Profile = {
   knowledge: number | null;
   /** 0–100: how much the tradition is part of their life (practice, belief, identity). Null on "my own path". */
   commitment: number | null;
-  /** Whether other traditions' takes ever come up. They can change it any time, and "stay" is always honoured. */
+  /** Whether other traditions' takes ever come up. They can change it any time, and "stay" is always honored. */
   openness: Openness;
   /** Raw answers by question id, so wording can improve without losing what someone told us. */
   answers: Record<string, string | string[]>;
@@ -118,7 +118,7 @@ export function suggestFor(answers: Profile["answers"], limit = 4): Suggestion[]
   if (!wants.size) ["stillness", "kindness", "gratitude"].forEach((t) => add(t, 1));
 
   // Never offer back a tradition someone left or that never clicked (Catholic and Christian count as one family),
-  // and no God-language for people who said "no god" or want to keep away from organised religion.
+  // and no God-language for people who said "no god" or want to keep away from organized religion.
   const raised = typeof answers.raised === "string" ? answers.raised : null;
   const leftIt = answers.feelNow === "left" || answers.feelNow === "never";
   const family = (d: string) => (d === "CATHOLIC" || d === "CHRISTIANITY" ? ["CATHOLIC", "CHRISTIANITY"] : [d]);

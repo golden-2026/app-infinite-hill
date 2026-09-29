@@ -32,7 +32,7 @@ function WalkingWith() {
             const both = !!mine && mine === w.lastLit;
             return (
               <View key={`${w.name}|${w.door}`} style={{ flexDirection: "row", alignItems: "flex-start", gap: 12, paddingVertical: 12, borderTopWidth: i ? 1 : 0, borderTopColor: color.line }} testID="walker">
-                {/* the friend's initial on their door's colour — never a voice's photo (voices aren't signed) */}
+                {/* the friend's initial on their door's color — never a voice's photo (voices aren't signed) */}
                 <View style={{ width: 40, height: 40, borderRadius: 20, backgroundColor: icon(w.door).tint, alignItems: "center", justifyContent: "center" }} accessible={false}>
                   <Text style={{ fontFamily: font.display[800], fontSize: 18, color: "#fff" }}>{walkerName(w)[0].toUpperCase()}</Text>
                 </View>
@@ -42,7 +42,7 @@ function WalkingWith() {
                   <Text style={[type.body(13), { color: color.ink }]}>lit a lantern for you · {whenLit(w.lastLit, today)}</Text>
                   {both ? <Text style={[type.body(13), { color: color.ink, fontFamily: font.text[600] }]}>{w.lastLit === today ? "you both walked today ☀☀" : "you both walked that day ☀☀"}</Text> : null}
                   <View style={{ alignItems: "flex-start", marginTop: 4 }}>
-                    <Link onPress={() => router.push("/lantern")} label={`send ${walkerName(w)} one back`} style={{ fontSize: 11 }}>send them one back ›</Link>
+                    <Link onPress={() => router.push({ pathname: "/lantern", params: { to: walkerName(w) } })} label={`send ${walkerName(w)} one back`} style={{ fontSize: 11 }}>send them one back ›</Link>
                   </View>
                 </View>
               </View>

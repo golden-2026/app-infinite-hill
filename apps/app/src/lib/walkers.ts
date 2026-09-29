@@ -94,6 +94,19 @@ export function saveWalker(g: LanternGift): Walker[] {
   return trimmed;
 }
 
+/** Brings "walking with" over from an export file (a new phone): merged with anyone already here. */
+export function importWalkers(raw: unknown): number {
+  if (!Array.isArray(raw)) return 0;
+  let n = 0;
+  for (const w of raw.slice(0, 50) as any[]) {
+    const door = doorParam(w?.door);
+    if (!door) continue;
+    saveWalker({ from: cleanText(w?.name, NAME_MAX), door, d: cleanDate(w?.lastLit, "9999-12-31"), n: cleanDays(w?.n), line: "" });
+    n++;
+  }
+  return n;
+}
+
 export function removeWalker(w: { name: string; door: string }): Walker[] {
   const list = readWalkers().filter((x) => !same(x, w));
   writeJSON(WALKERS_KEY, list);

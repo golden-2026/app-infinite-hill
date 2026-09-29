@@ -45,7 +45,7 @@ export function profileFor(p: Profile | null | undefined, door: string, today: s
     const feel = stance === "practice" ? "part" : stance === "unsure" ? "complicated" : stance === "left" ? "left" : null;
     if (feel && raisedIn && raisedIn !== "none" && raisedIn !== "other") seed.feelNow = feel;
   } else if (raisedIn === door) {
-    // "which one do you practise?" doesn't say whether they grew up in it, so only the "grew up in" answers count
+    // "which one do you practice?" doesn't say whether they grew up in it, so only the "grew up in" answers count
     if (stance !== "practice") seed.raised = "yes";
     if (freshEyes(stance, raisedIn, door)) seed.lens = "fresh";
   }

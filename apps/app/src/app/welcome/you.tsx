@@ -35,7 +35,7 @@ export default function You() {
   };
 
   return (
-    <WelcomeFrame step={1} footer={<Btn kind="ghost" onPress={() => pick(null)}>rather not say</Btn>}>
+    <WelcomeFrame step={1} onBack={() => (step > 0 ? (setStep(0), true) : false)} footer={<Btn kind="ghost" onPress={() => pick(null)}>rather not say</Btn>}>
       <Eyebrow style={{ textAlign: "center" }}>{`before the doors · ${step + 1} of 2`}</Eyebrow>
       <Host pose={step === 0 ? "wave" : "think"}>{q.ask}</Host>
       <View style={{ gap: 8 }} accessibilityRole="radiogroup">

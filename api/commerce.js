@@ -132,7 +132,7 @@ export function createCommerceHandler({ env = process.env, fetchImpl = globalThi
     const params = new URLSearchParams({
       mode: offer.mode,
       success_url: `${publicUrl}/?commerce=success&session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${publicUrl}/?commerce=cancelled`,
+      cancel_url: `${publicUrl}/?commerce=canceled`,
       "line_items[0][price]": offer.priceId,
       "line_items[0][quantity]": "1",
       client_reference_id: account.id,

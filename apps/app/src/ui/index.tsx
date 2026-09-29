@@ -3,6 +3,7 @@ import { FADE } from "@/ui/fade";
 // Every tappable thing has an accessibility role and label; motion respects reduced-motion.
 import { useEffect, type ReactNode } from "react";
 import { Image } from "expo-image";
+import { LinearGradient } from "expo-linear-gradient";
 import { Pressable, StyleSheet, Text, View, type StyleProp, type TextStyle, type ViewStyle } from "react-native";
 import Animated, { Easing, useAnimatedStyle, useReducedMotion, useSharedValue, withRepeat, withSequence, withSpring, withTiming } from "react-native-reanimated";
 import { art, color, font, radius, type } from "@ih/brand";
@@ -82,9 +83,9 @@ export function Card({ children, dark, onPress, style, label: a11y }: { children
 }
 
 /** `big`: v175's onboarding choice (Manrope 17), not the small settings option. */
-export function Opt({ on, onPress, children, sub, testID, big }: { on?: boolean; onPress: () => void; children: string; sub?: string; testID?: string; big?: boolean }) {
+export function Opt({ on, onPress, children, sub, testID, big, multi }: { on?: boolean; onPress: () => void; children: string; sub?: string; testID?: string; big?: boolean; /** pick-several: a checkbox, not a radio */ multi?: boolean }) {
   return (
-    <Pressable testID={testID} accessibilityRole="radio" accessibilityState={{ checked: !!on }} aria-checked={!!on} accessibilityLabel={sub ? `${children}. ${sub}` : children} onPress={() => { tapHaptic(); onPress(); }}
+    <Pressable testID={testID} accessibilityRole={multi ? "checkbox" : "radio"} accessibilityState={{ checked: !!on }} aria-checked={!!on} accessibilityLabel={sub ? `${children}. ${sub}` : children} onPress={() => { tapHaptic(); onPress(); }}
       style={({ pressed }) => [styles.opt, big && { paddingVertical: 14, paddingHorizontal: 14 }, { borderColor: on ? color.ink : color.line, backgroundColor: on ? "#FFFBE0" : color.white, transform: [{ scale: pressed ? 0.985 : 1 }] }]}>
       <Text style={big ? { fontFamily: font.display[500], fontSize: 17, color: color.ink } : { fontFamily: font.text[600], fontSize: 14, color: color.ink }}>{children}</Text>
       {sub ? <Text style={[type.body(12), { color: color.mute, marginTop: 3 }]}>{sub}</Text> : null}
@@ -206,6 +207,7 @@ export function Face({ ic, w = 96, h = 120, r = 16, caption = true, big = false 
       {a ? <Image source={a.src} style={StyleSheet.absoluteFill} contentFit="cover" contentPosition={big ? "center" : "top"} transition={FADE} cachePolicy="memory-disk" /> : (
         <View style={[StyleSheet.absoluteFill, styles.center]}><Text style={{ fontFamily: font.display[800], fontSize: big ? 64 : 36, color: "#ffffff55" }}>{ic.short[0]}</Text></View>
       )}
+      {caption && a ? <LinearGradient pointerEvents="none" colors={["rgba(0,0,0,0)", "rgba(0,0,0,.62)"]} style={[styles.faceScrim, { height: Math.min(h * 0.6, big ? 150 : 90) }]} /> : null}
       {caption ? (
         <View style={styles.faceCaption}>
           <Text style={{ fontFamily: font.display[800], fontSize: big ? 22 : 15, color: "#fff", textShadowColor: "rgba(0,0,0,.75)", textShadowRadius: 8, textShadowOffset: { width: 0, height: 1 } }}>{ic.name}</Text>
@@ -228,4 +230,5 @@ const styles = StyleSheet.create({
   opt: { borderWidth: 1.5, borderRadius: 16, paddingVertical: 13, paddingHorizontal: 16 },
   bubble: { flex: 1, backgroundColor: color.white, borderColor: color.line, borderWidth: 1, borderRadius: 18, paddingVertical: 14, paddingHorizontal: 16 },
   faceCaption: { position: "absolute", left: 12, right: 12, bottom: 12 },
+  faceScrim: { position: "absolute", left: 0, right: 0, bottom: 0 },
 });

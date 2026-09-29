@@ -162,7 +162,7 @@ export function SayStep({ step, voiceOn, onDone }: { step: any; voiceOn: boolean
     <View style={{ alignItems: "center", width: "100%", gap: 14 }}>
       <Text style={[type.eyebrow(), { color: color.gold }]}>{long ? "say your line" : "say it out loud"}</Text>
       <Text style={{ fontFamily: font.display[800], fontSize: long ? 28 : 44, lineHeight: long ? 34 : 50, letterSpacing: -0.6, color: "#fff", textAlign: "center" }}>{target}</Text>
-      <Pressable accessibilityRole="button" accessibilityLabel="Hear it" onPress={() => speak(target, true)} style={s.pill}><Text style={s.pillText}>🔊 hear it</Text></Pressable>
+      <Pressable accessibilityRole="button" accessibilityLabel="Hear it" onPress={() => speak(target, true)} style={[s.pill, { alignSelf: "center" }]}><Text style={s.pillText}>🔊 hear it</Text></Pressable>
       {mode === "manual" ? (
         <>
           <Pressable accessibilityRole="button" accessibilityLabel="I said it" onPress={() => { fx.react("neutral"); setTimeout(() => onDone(null), 700); }} style={[s.mic, { backgroundColor: color.gold }]}><Text style={{ fontSize: 36 }}>🗣</Text></Pressable>

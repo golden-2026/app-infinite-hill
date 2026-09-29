@@ -39,7 +39,18 @@ function spread(from, to, topics, base) {
   }
 }
 const topicsOf = (s) => s.split(/ · |; /).map(clean).filter(Boolean);
-const FESTIVALS = ["Janmashtami", "Ganesh Chaturthi", "Navaratri", "Diwali", "Holi", "Maha Shivaratri", "Raksha Bandhan"];
+// Festival sessions: each gets its own title, word, story line, practice and carry (DRAFT outline, Keeper review
+// pending), so a buffer day never reads as a placeholder like "festival session: Holi".
+const FESTIVALS = [
+  { title: "Janmashtami: the night Krishna was born", word: "Janmashtami", hook: "a prison at midnight, a river that parts, and a baby carried across it to safety", practice: "sit in the dark a moment and wait for something good", carry: "the good arrives at midnight" },
+  { title: "Ganesh Chaturthi: welcoming Ganesha home", word: "Ganesh Chaturthi", hook: "clay Ganeshas are carried home with drums, kept for days, then given back to the water", practice: "hold something you love, then set it down gently", carry: "welcome it, then let it go" },
+  { title: "Navaratri: nine nights of the Goddess", word: "Navaratri", hook: "Durga meets the buffalo demon; nine nights of dancing, and on the tenth day the good wins", practice: "name one small thing you won't let win tonight", carry: "nine nights, then the dawn" },
+  { title: "Diwali: the row of lamps", word: "Diwali", hook: "Rama comes home after fourteen years, and a whole city lights lamps to show him the way", practice: "light one light and think of who you'd guide home", carry: "light the way home" },
+  { title: "Holi: the festival of colours", word: "Holi", hook: "Prahlad walks out of the fire unharmed; the next morning everyone throws colour and nobody is a stranger", practice: "let go of one small grudge today", carry: "everyone's the same colour today" },
+  { title: "Maha Shivaratri: the great night of Shiva", word: "Shivaratri", hook: "a night kept awake, water poured over the lingam, Om Namah Shivaya until dawn", practice: "stay with your breath three breaths longer than you want to", carry: "stay awake for what matters" },
+  { title: "Raksha Bandhan: the thread of protection", word: "rakhi", hook: "a sister ties a thread on her brother's wrist, and he promises to look after her", practice: "name one person you'd protect, and tell them", carry: "a thread can hold a promise" },
+];
+const festival = (k) => ({ ...FESTIVALS[k % FESTIVALS.length], festival: true });
 
 function parseNumbered(md, year) {
   let camp = null, part = null, sub = null;
@@ -51,7 +62,7 @@ function parseNumbered(md, year) {
     const buf = line.match(/^\*Days (\d+)[–-](\d+): \*\*the festival buffer\*\*/i);
     if (buf) {
       const [from, to] = [Number(buf[1]), Number(buf[2])];
-      for (let d = from; d <= to; d++) add(d, { year, camp, part: "Festival buffer — fires when the festival's date arrives", title: `festival session: ${FESTIVALS[(d - from) % FESTIVALS.length]}`, word: null, hook: "its story, its practice, one word — on the day it falls", practice: null, carry: null, festival: true });
+      for (let d = from; d <= to; d++) add(d, { year, camp, part: "Festival buffer — fires when the festival's date arrives", ...festival(d - from) });
       continue;
     }
     // "*Calendar-fired when possible; otherwise taught in sequence:* Diwali (…) · Holi (…) · … · **Camp 3 close** (156): …"
@@ -69,7 +80,7 @@ function parseNumbered(md, year) {
     // "- Festival sessions fire on the calendar all year (~20); this block holds …" (year two, Block D)
     if (/^- Festival sessions fire on the calendar/i.test(line)) {
       const r = (part || "").match(/Days (\d+)[–-](\d+)/);
-      if (r) for (let d = Number(r[1]); d <= Number(r[1]) + 19; d++) add(d, { year, camp, part, title: `festival session: ${FESTIVALS[(d - Number(r[1])) % FESTIVALS.length]}`, word: null, hook: "fires on the calendar; held here if it didn't fall in sequence", practice: null, carry: null, festival: true });
+      if (r) for (let d = Number(r[1]); d <= Number(r[1]) + 19; d++) add(d, { year, camp, part, ...festival(d - Number(r[1])) });
       continue;
     }
     // "- **Bala Kanda** (490–513, 24 sessions): topic; topic; …"  (also "… (604–633, 30 sessions) — *read whole*: …")

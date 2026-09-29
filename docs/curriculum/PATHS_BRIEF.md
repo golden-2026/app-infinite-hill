@@ -6,7 +6,7 @@ You are writing one path's complete five-year daily curriculum outline for Infin
 - `docs/curriculum/golden_hinduism_year1_camps2-5.md` and `golden_hinduism_years2-5.md` — the owner's own Hinduism plan. **Match its voice, pacing, rigor and structure.** Note how it serializes stories, lets texts be read in order, spaces "words", keeps practices tiny and concrete, and writes carries as short lowercase lines.
 - Your path's Camp 1 (to continue from it): run from the repo root
   `node -e "import('./packages/content/src/index.js').then(m=>console.log(JSON.stringify(m.camp1('DOOR').map(d=>({day:d.day,title:d.title,word:d.word,carry:d.carry})),null,1)))"` (replace DOOR).
-- Your path's existing camp 2–5 topics (given in your task) — honour them as the spine of year one.
+- Your path's existing camp 2–5 topics (given in your task) — honor them as the spine of year one.
 
 ## The shape of five years (same for every path)
 - **Year one = five camps** (days 1–331): Camp 1 First steps 1–21 (done) · **Camp 2 The stories 22–96** · **Camp 3 The practices 97–156** · **Camp 4 The text 157–231** · **Camp 5 The depths 232–331**. Day 331 closes year one ("the big lookout").

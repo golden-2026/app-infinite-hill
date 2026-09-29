@@ -48,7 +48,7 @@ export default function Taste() {
         </Text>
         <Btn kind={kept ? "light" : "gold"} disabled={kept} onPress={() => { keepLine(carry, w); setKept(true); }}>{kept ? "in your book ✓" : "keep the line in my book"}</Btn>
         <Btn kind="ghost" onPress={close}>back to my path</Btn>
-        {/* a full visit is its own, clearly labelled choice: one lesson, then home */}
+        {/* a full visit is its own, clearly labeled choice: one lesson, then home */}
         <View style={{ alignItems: "center", marginTop: 6 }}>
           <Link onPress={() => { update({ visitWing: w, active: "visit" }); router.replace({ pathname: "/session/[door]/[day]", params: { door: w, day: "1" } }); }}>
             {`sit a full ${label(w)} lesson once — you come right back`}

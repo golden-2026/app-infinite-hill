@@ -9,7 +9,7 @@ import { Enter } from "@/ui/enter";
 export const WELCOME_STEPS = 8; // about you → door → the whole climb → check-in (or get to know you) → your tradition → your path → voice → ready
 
 /** Onboarding on the app shell: the same top bar (back · progress · skip) and pinned bottom bar as every screen. */
-export function WelcomeFrame({ step, children, footer, door }: { step: number; children: ReactNode; footer?: ReactNode; door?: string | null }) {
+export function WelcomeFrame({ step, children, footer, door, onBack }: { step: number; children: ReactNode; footer?: ReactNode; door?: string | null; /** the top back steps back one question first; returns false when there is nothing left to step back */ onBack?: () => boolean }) {
   const { update } = useStore();
   const skip = () => {
     update({ onboarded: true, homeWing: door || "SPIRITUAL" });
@@ -17,7 +17,7 @@ export function WelcomeFrame({ step, children, footer, door }: { step: number; c
   };
   return (
     <SafeAreaView style={styles.fill} edges={footer ? ["top"] : ["top", "bottom"]}>
-      <NavBar back={{ label: "back", to: "/welcome" }} progress={step / WELCOME_STEPS}
+      <NavBar back={{ label: "back", to: "/welcome", onPress: onBack }} progress={step / WELCOME_STEPS}
         right={<Pressable accessibilityRole="button" accessibilityLabel="Skip and start as a guest" onPress={skip} hitSlop={8} style={({ pressed }) => [styles.skip, { opacity: pressed ? 0.5 : 1 }]}><Text style={styles.skipText}>skip</Text></Pressable>} />
       <ScrollView contentContainerStyle={styles.body} keyboardShouldPersistTaps="handled" keyboardDismissMode="on-drag"><Enter style={{ gap: 16 }}>{children}</Enter></ScrollView>
       {footer ? <BottomBar>{footer}</BottomBar> : null}

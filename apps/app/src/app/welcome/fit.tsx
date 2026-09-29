@@ -30,7 +30,7 @@ export default function Fit() {
   const open: Record<Openness, [string, string]> = {
     stay: [`just ${name}`, `we won't bring up other traditions. ask the Guide any time if you're curious.`],
     sometimes: [`${name}, with the odd window`, `now and then, when another tradition has a similar word, we'll mention it and ask if you want more. say no once and we'll stop.`],
-    love: [`${name}, and its neighbours`, `when another tradition has a similar idea, we'll show you. your path stays ${name}.`],
+    love: [`${name}, and its neighbors`, `when another tradition has a similar idea, we'll show you. your path stays ${name}.`],
   };
   const setOpen = (o: Openness) => update({ profile: { ...p, openness: o } });
   const rows: [string, string, string][] = [["how deep", ...depth] as [string, string, string], ["other traditions", ...open[p.openness]] as [string, string, string]];
@@ -50,7 +50,7 @@ export default function Fit() {
       </View>
       <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8, justifyContent: "center" }}>
         {(["stay", "sometimes", "love"] as Openness[]).filter((o) => o !== p.openness).map((o) => (
-          <Btn key={o} kind="ghost" style={{ minHeight: 40, paddingHorizontal: 14 }} onPress={() => setOpen(o)}>{o === "stay" ? "keep it to my path" : o === "sometimes" ? "only now and then" : "show me neighbours"}</Btn>
+          <Btn key={o} kind="ghost" style={{ minHeight: 40, paddingHorizontal: 14 }} onPress={() => setOpen(o)}>{o === "stay" ? "keep it to my path" : o === "sometimes" ? "only now and then" : "show me neighbors"}</Btn>
         ))}
       </View>
       <Text style={[type.caption(), { textAlign: "center" }]}>change any of this in You, any time. private to you.</Text>

@@ -121,7 +121,20 @@ export function segmentsFor(wing, day, lesson = day, { named = true } = {}) {
     { type: "the carry", duration: "15 sec", voice: `Your line to carry: ${d1.carry.replace(/[.!]$/, "")}. That's day ${day}. You showed up.`, screen: [d1.carry.toUpperCase()] },
     { type: "the close", duration: "2 sec", voice: "", screen: [] },
   ];
-  return { info, d1, segs: day === 1 ? [base[0], welcome, ...base.slice(1)] : base };
+  const segs = day === 1 ? [base[0], welcome, ...base.slice(1)] : base;
+  return { info, d1, segs: segs.flatMap(splitPromises) };
+}
+
+// Day one's "three promises" welcome has three labels but only two pages of voice, so the third promise showed under
+// the second promise's label. Give each promise its own page, under its own label (the intro rides with promise one).
+function splitPromises(g) {
+  if (!/^(a )?welcome/.test(g.type || "")) return [g];
+  const heads = screenLines(g.screen);
+  if (heads.length < 2) return [g];
+  const parts = g.voice.split(/\s+(?=(?:One|Two|Three|Four|Five) — )/);
+  if (parts.length === heads.length + 1) parts.splice(0, 2, `${parts[0]} ${parts[1]}`);
+  if (parts.length !== heads.length) return [g];
+  return parts.map((voice, k) => ({ ...g, voice, screen: [`\`${heads[k]}.\``] }));
 }
 
 // Pacing (approved 2026-09-25): v175 put five exercise types into day one. Day one keeps "call it";
@@ -155,7 +168,7 @@ export function planDay({ wing, day, lesson = day, mode = "adult", named = true,
     }
   }
   if (!named) {
-    // v175 prompts address the proposed voice by name ("say it back to Priyanka"); without a licence, address nobody.
+    // v175 prompts address the proposed voice by name ("say it back to Priyanka"); without a license, address nobody.
     const short = icon(wing).short;
     const unname = (t) => (typeof t === "string" ? t.replace(`${short}'s ideas`, "the ideas").replace(` back to ${short}`, " back") : t);
     steps = steps.map((s) => ({ ...s, prompt: unname(s.prompt), hint: unname(s.hint) }));

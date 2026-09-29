@@ -14,9 +14,10 @@ function Switch({ on }: { on: boolean }) {
 }
 
 /** A settings row: a title, a line under it, and a chevron, a value, or a switch on the right.
- *  Pressed rows go grey, as on iOS; they don't shrink like buttons. */
-export function Row({ a, b, right, onPress, testID, toggle, first }: { a: string; b?: string; right?: string; onPress?: () => void; testID?: string; toggle?: boolean; first?: boolean }) {
+ *  Pressed rows go gray, as on iOS; they don't shrink like buttons. */
+export function Row({ a, b, right, onPress, testID, toggle, first, cycle }: { a: string; b?: string; right?: string; onPress?: () => void; testID?: string; toggle?: boolean; first?: boolean; /** changes in place (steps through values): a value chip, not a link arrow */ cycle?: boolean }) {
   const trailing = toggle !== undefined ? <Switch on={toggle} />
+    : cycle && right ? <View style={{ flexDirection: "row", alignItems: "center", gap: 5, borderRadius: 999, borderWidth: 1.5, borderColor: color.ink, backgroundColor: color.sand, paddingVertical: 5, paddingHorizontal: 10 }}><Text style={{ fontFamily: font.text[600], fontSize: 13, color: color.ink }}>{right}</Text><Text style={{ fontSize: 11, color: color.ink }}>⇄</Text></View>
     : right ? <View style={{ flexDirection: "row", alignItems: "center", gap: 6 }}><Text style={{ fontFamily: font.text[500], fontSize: 14, color: color.mute }}>{right}</Text>{onPress ? <ChevronRight color={color.mute} /> : null}</View>
     : onPress ? <ChevronRight color={color.mute} /> : null;
   const body = (pressed = false) => (

@@ -29,6 +29,7 @@ export default function Intake() {
   const [history, setHistory] = useState<string[]>([]);
   const [multi, setMulti] = useState<string[]>([]);
   const [reply, setReply] = useState<string | null>(null);
+  const [was, setWas] = useState<Answers>({}); // answers given before stepping back
   const q = nextIntake(answers);
 
   useEffect(() => {
@@ -50,10 +51,13 @@ export default function Intake() {
     const last = history[history.length - 1];
     if (!last) return router.back();
     const next = { ...answers };
+    const was = next[last];
     delete next[last];
     setAnswers(next);
     setHistory((h) => h.slice(0, -1));
-    setMulti([]);
+    // stepping back keeps what they picked: it shows as chosen, ready to keep or change
+    setWas((w) => ({ ...w, [last]: was }));
+    setMulti(Array.isArray(was) ? was : []);
     setReply(null);
   };
   const asked = history.length + 1;
@@ -61,13 +65,13 @@ export default function Intake() {
     ? <Btn disabled={!multi.length} onPress={() => commit(multi)}>{multi.length ? "that's me" : "pick any that fit"}</Btn>
     : q.optional ? <Btn kind="ghost" onPress={() => commit(null)}>rather not say</Btn> : undefined;
   return (
-    <WelcomeFrame step={4 + Math.min(1.5, history.length / 4)} door="SPIRITUAL" footer={footer}>
+    <WelcomeFrame step={4 + Math.min(1.5, history.length / 4)} door="SPIRITUAL" footer={footer} onBack={() => (history.length ? (back(), true) : false)}>
       <Eyebrow style={{ textAlign: "center" }}>{`getting to know you · ${asked}`}</Eyebrow>
       {reply ? <Text style={[type.body(14), { textAlign: "center", fontStyle: "italic" }]}>{reply}</Text> : null}
       <Host>{q.ask}</Host>
       <View style={{ gap: 8 }} accessibilityRole={q.multi ? undefined : "radiogroup"}>
         {q.choices.map((c) => (
-          <Opt key={c.id} big testID={`${q.id}-${c.id}`} on={q.multi ? multi.includes(c.id) : answers[q.id] === c.id}
+          <Opt key={c.id} big multi={!!q.multi} testID={`${q.id}-${c.id}`} on={q.multi ? multi.includes(c.id) : (answers[q.id] ?? was[q.id]) === c.id}
             onPress={() => (q.multi
               // "not really" stands alone: picking it clears the rest, picking anything else clears it
               ? setMulti((m) => (m.includes(c.id) ? m.filter((x) => x !== c.id) : EXCLUSIVE.has(c.id) ? [c.id] : [...m.filter((x) => !EXCLUSIVE.has(x)), c.id]))

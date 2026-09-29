@@ -7,6 +7,7 @@ import { useAuth } from "@/lib/auth";
 import { accountsConfigured, accountsOn } from "@/lib/supabase";
 import { useStore } from "@/lib/store";
 import { ImportButton } from "@/ui/import-button";
+import { importWalkers } from "@/lib/walkers";
 import { Body, Btn, Link, Screen, Sun, color, font, type } from "@/ui";
 
 // Pilot (no accounts): "I've been here before" explains where days live and brings them from a file.
@@ -15,7 +16,7 @@ function BeenHere() {
   const [msg, setMsg] = useState<string | null>(null);
   return (
     <Screen sheet close={() => (router.canGoBack() ? router.back() : router.replace("/welcome"))} footer={<>
-        <ImportButton kind="ink" onText={(t) => { const r = importData(t); setMsg(r.message); if (r.ok) setTimeout(() => router.replace("/today"), 900); }} />
+        <ImportButton kind="ink" onText={(t) => { const r = importData(t); setMsg(r.message); if (r.ok) { try { importWalkers(JSON.parse(t)?.walkers); } catch { /* none in this file */ } } if (r.ok) setTimeout(() => router.replace("/today"), 900); }} />
         <Btn kind="ghost" onPress={() => router.replace(derived.showedUp ? "/today" : "/welcome/door")}>{derived.showedUp ? "back to today" : "start fresh"}</Btn>
       </>}>
       <View style={{ flex: 1, justifyContent: "center", gap: 14 }}>

@@ -270,7 +270,7 @@ function Session({ door, day, kidId, mode, deep, voiceOn, onFinish }: { door: st
       const nat = native(plan.word, door);
       const tiles: [string, string, string, boolean][] = [
         ["1", "word", plan.word, true],
-        [String(ideas), "ideas", "you didn't have this morning", false],
+        [String(ideas), ideas === 1 ? "idea" : "ideas", "you didn't have this morning", false],
         [`${score.right}/${score.asked || graded}`, "first try", best >= 3 ? `×${best} in a row` : score.asked && score.right === score.asked ? "perfect." : "all fixed.", false],
       ];
       // The win screen, in our own look: the light you earned, how on-target you were and how long it took, on one
@@ -279,7 +279,10 @@ function Session({ door, day, kidId, mode, deep, voiceOn, onFinish }: { door: st
       const acc = asked ? Math.round((100 * score.right) / asked) : 100;
       const light = lessonLight(score.right, asked, best);
       const secs = Math.max(30, Math.round((Date.now() - t0.current) / 1000));
-      const stats: [string, string, string][] = [["☀", `+${light}`, "light"], ["◎", `${acc}%`, acc === 100 ? "on target" : acc >= 50 ? "on target" : "learning"], ["◷", `${Math.floor(secs / 60)}:${String(secs % 60).padStart(2, "0")}`, "time"]];
+      const accLabel = acc >= 50 ? "on target" : "learning";
+      // day one has a single graded question: one fixed miss is not "0%", it's a first try that got fixed
+      const accStat: [string, string, string] = day === 1 && acc < 100 ? ["◎", "✓", "all fixed"] : ["◎", `${acc}%`, accLabel];
+      const stats: [string, string, string][] = [["☀", `+${light}`, "light"], accStat, ["◷", `${Math.floor(secs / 60)}:${String(secs % 60).padStart(2, "0")}`, "time"]];
       const nextLevel = mode === "adult" && !deep ? levelFor({ door, day: day + 1, profile: me.settings.profile, runs: [...(me.settings.runs || []), { door, acc: asked ? score.right / asked : 1, level }] }) : level;
       const feelRow = !kidId ? (
         <View style={{ alignItems: "center", gap: 8, marginTop: 4 }}>
@@ -301,7 +304,7 @@ function Session({ door, day, kidId, mode, deep, voiceOn, onFinish }: { door: st
             <Text accessibilityRole="header" style={{ fontFamily: font.mark[800], fontSize: 34, color: color.gold, textAlign: "center" }}>you went deeper.</Text>
             <LevelPill level={shownLevel} />
             <View style={{ flexDirection: "row", width: "100%", borderRadius: 22, borderWidth: 2, borderColor: color.gold, backgroundColor: "#ffffff0d", paddingVertical: 14 }}>
-              {([["☀", `+${deepLight(score.right, asked)}`, "light"], ["◎", `${acc}%`, "on target"], ["⏱", rushSecs ? `${rushSecs}s` : "—", "quick round"]] as const).map(([g, v, l], k) => (
+              {([["☀", `+${deepLight(score.right, asked)}`, "light"], ["◎", `${acc}%`, accLabel], ["⏱", rushSecs ? `${rushSecs}s` : "—", "quick round"]] as const).map(([g, v, l], k) => (
                 <View key={l} style={{ flex: 1, alignItems: "center", borderLeftWidth: k ? 1 : 0, borderLeftColor: "#ffffff22" }}>
                   <Text style={{ fontSize: 18, color: color.gold }}>{g}</Text>
                   <Text style={{ fontFamily: font.display[800], fontSize: 24, color: "#fff", marginTop: 2 }}>{v}</Text>
