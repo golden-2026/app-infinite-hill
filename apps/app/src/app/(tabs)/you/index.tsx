@@ -14,6 +14,7 @@ import { useSync } from "@/lib/sync";
 import { accountsOn } from "@/lib/supabase";
 import { voiceLabel } from "@/lib/voice";
 import { emptyProfile } from "@/lib/profile";
+import { useMemory } from "@/lib/companion/memory";
 import { Btn, Card, Eyebrow, Guy, Sun, color, font, type, toast } from "@/ui";
 import { Group, Row } from "@/ui/row";
 
@@ -26,6 +27,7 @@ export default function You() {
   const wing = st.homeWing;
   const ic = icon(wing);
   const day = lessonFor(wing);
+  const memory = useMemory();
   const [changing, setChanging] = useState(false);
   const [adding, setAdding] = useState(false);
   const [shareMsg, setShareMsg] = useState<string | null>(null);
@@ -112,6 +114,11 @@ export default function You() {
                   onPress={() => { const o = ({ stay: "sometimes", sometimes: "love", love: "stay" } as const)[prof.openness]; update({ profile: { ...prof, openness: o } }); }} />
               );
             })()}
+          </Group>
+          <Group title="your companion">
+            <Row a="your journal" b={(() => { const n = memory.journal.length; return n ? `${n} private ${n === 1 ? "page" : "pages"} · today's prompt is waiting` : "a prompt a day, private, on this phone"; })()} onPress={() => router.push("/journal")} />
+            <Row a="what the companion knows" b={`${memory.facts.length} ${memory.facts.length === 1 ? "thing" : "things"} · see, change or forget any of it`} onPress={() => router.push("/you/companion")} />
+            {derived.showedUp >= 7 ? <Row a="your week" b="a look back, no scores" onPress={() => router.push("/reflect")} /> : null}
           </Group>
           <Group title="every day">
             <Row testID="row-reminders" a="reminders" b="one a day, in the evening or at your time" right={reminderStatus(st.reminder.on)} onPress={() => router.push("/you/reminders")} />

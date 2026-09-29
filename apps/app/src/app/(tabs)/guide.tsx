@@ -1,14 +1,20 @@
 import { TabHeader } from "@/ui/tab-header";
 import { useTitle } from "@/lib/title";
-// The Guide (v175). Pilot rule (BUILD_BRIEF): off until retrieval with sources exists, so by default it
-// answers from the lesson's own text (v175's fallback) and says so. ?flags=guide-live uses /api/guide.
+// The Guide (v175), which becomes the companion when the server's AI is on (/api/companion?kind=status says so).
+// Companion on: answers come from the companion, grounded in this door's lessons and the short facts the person
+// keeps under "what the companion knows"; facts it proposes are only kept if the person taps them.
+// Companion off (no AI key, offline, or the iPhone build): it answers from the lesson's own text (v175's fallback)
+// and says so plainly. ?flags=guide-live still uses the older /api/guide.
 import { camp1, data, guideFallback, label } from "@ih/content";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { KeyboardAvoidingView, Platform, Pressable, ScrollView, Text, TextInput, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { addFact, getMemory, moodOn, MOODS, useMemory } from "@/lib/companion/memory";
+import { companionAvailable, companionChat, type ChatMessage, type CompanionContext, type CompanionProfile } from "@/lib/companion-ai";
 import { flag } from "@/lib/flags";
 import { guideProfile } from "@/lib/profile";
 import { useStore } from "@/lib/store";
+import { today as todayDate } from "@/lib/time";
 import { Eyebrow, Guy, Sun, color, font, type } from "@/ui";
 
 // v175's fallback says "no signal" when it can't match a question. In the pilot the Guide is off by design,
@@ -26,7 +32,7 @@ function pilotAnswer(wing: string, q: string, words: string[], day = 999) {
 
 // api/guide.js accepts exactly { system, messages, profile? }: the door is read from the system line, the history
 // must alternate user/assistant and end on the user's question (at most 9 messages).
-async function askLive(wing: string, words: string[], history: [string, string][], q: string, profile: ReturnType<typeof guideProfile>): Promise<string | null> {
+async function askLive(wing: string, words: string[], history: Line[], q: string, profile: ReturnType<typeof guideProfile>): Promise<string | null> {
   if (!flag("guide-live") || Platform.OS !== "web") return null;
   try {
     const turns = history.map(([who, t]) => ({ role: who === "u" ? "user" : "assistant", content: t }));
@@ -43,9 +49,28 @@ async function askLive(wing: string, words: string[], history: [string, string][
   }
 }
 
+// api/companion.js limits (kept a little under): 13 alternating messages starting and ending with the person,
+// 2,000 characters each and 12,000 in all; 24 memory facts, 200 characters each and 3,000 in all.
+function chatMessages(history: Line[], q: string): ChatMessage[] {
+  const turns: ChatMessage[] = history.map(([who, t]) => ({ role: who === "u" ? "user" : "assistant", content: t.slice(0, 2_000) }));
+  let messages = [...turns, { role: "user" as const, content: q.slice(0, 2_000) }].slice(-13);
+  const size = () => messages.reduce((n, m) => n + m.content.length, 0);
+  while (messages.length > 1 && (messages[0].role !== "user" || size() > 11_500)) messages = messages.slice(1);
+  return messages;
+}
+function memoryFacts(): string[] {
+  const facts = getMemory().facts.map((f) => f.text.trim().slice(0, 200)).filter(Boolean).slice(-24);
+  while (facts.reduce((n, f) => n + f.length, 0) > 2_900) facts.shift();
+  return facts;
+}
+
+/** One line in the conversation: who ("g" guide/companion, "u" the person), what was said, and facts offered to keep. */
+type Line = [string, string, string[]?];
+
 export default function Guide() {
   useTitle("guide");
   const { door: wing, lessonFor, saved } = useStore();
+  const memory = useMemory();
   const day = lessonFor(wing);
   const days = camp1(wing);
   const words = days.filter((d: any) => d.day <= day).map((d: any) => d.word);
@@ -53,8 +78,40 @@ export default function Guide() {
   const book = saved.settings.book;
   const [q, setQ] = useState("");
   const [busy, setBusy] = useState(false);
-  const [log, setLog] = useState<[string, string][]>([["g", `ask me anything about ${label(wing)} — a word, a story, why something's done the way it's done. in the pilot I answer from ${label(wing)}'s own lessons, and I'll tell you when they're quiet.`]]);
+  // null while checking; the companion is only ever "on" after the server says so.
+  const [live, setLive] = useState<boolean | null>(Platform.OS === "web" ? null : false);
+  const pilotHello = `ask me anything about ${label(wing)} — a word, a story, why something's done the way it's done. in the pilot I answer from ${label(wing)}'s own lessons, and I'll tell you when they're quiet.`;
+  const liveHello = `hi. I'm your companion on the ${label(wing)} path. ask me about a word, a story, or how today's lesson fits your day. I answer from ${label(wing)}'s texts and your own lessons, and I'll say when I don't know.`;
+  const [log, setLog] = useState<Line[]>([["g", pilotHello]]);
+  useEffect(() => {
+    if (Platform.OS !== "web") return;
+    let gone = false;
+    companionAvailable().then((on) => {
+      if (gone) return;
+      setLive(on);
+      if (on) setLog((l) => (l.length === 1 ? [["g", liveHello]] : l));
+    });
+    return () => { gone = true; };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const scroller = useRef<ScrollView>(null);
+
+  const askCompanion = async (history: Line[], question: string) => {
+    const gp = guideProfile(saved.settings.profile ?? null, wing);
+    const lastRun = (saved.settings.runs || []).filter((r) => r.door === wing).at(-1);
+    const lastFeel = (saved.settings.feel || []).filter((f) => f.door === wing).at(-1)?.feel ?? null;
+    const mood = moodOn(memory, todayDate());
+    const profile: CompanionProfile = { door: wing, ...(gp || {}), ...(lastRun ? { level: lastRun.level } : {}) };
+    const context: CompanionContext = {
+      door: wing, day, hour: new Date().getHours(),
+      ...(today.title ? { lessonTitle: String(today.title).slice(0, 160) } : {}),
+      ...(today.carry ? { carry: String(today.carry).slice(0, 300) } : {}),
+      lastFeel,
+      mood: mood && mood !== "skip" ? MOODS.find((m) => m.id === mood)?.label ?? null : null,
+    };
+    return companionChat({ profile, memory: memoryFacts(), context, messages: chatMessages(history, question) });
+  };
+
   const send = async (text?: string) => {
     const question = (text ?? q).trim();
     if (!question || busy) return;
@@ -62,25 +119,50 @@ export default function Guide() {
     setBusy(true);
     const hist = log;
     setLog((l) => [...l, ["u", question]]);
-    let a: string | null = null;
+    let line: Line;
     if (/my book|what i kept|from my (lines|beads)/i.test(question) || /^book$/i.test(question)) {
-      a = book.length ? "from your book — your own lines, with where each came from:\n\n" + book.map((b) => `“${b.line}”  — ${label(b.door)}, ${b.date}`).join("\n") + "\n\nthat's everything you've kept." : "your book is empty so far. after a session, tap keep it, and I'll be able to answer from your own lines.";
+      line = ["g", book.length ? "from your book — your own lines, with where each came from:\n\n" + book.map((b) => `“${b.line}”  — ${label(b.door)}, ${b.date}`).join("\n") + "\n\nthat's everything you've kept." : "your book is empty so far. after a session, tap keep it, and I'll be able to answer from your own lines."];
+    } else if (live) {
+      const reply = await askCompanion(hist.slice(1), question);
+      line = reply?.text
+        ? ["g", reply.text, (reply.remember || []).filter((f) => typeof f === "string" && f.trim())]
+        : ["g", `${pilotAnswer(wing, question, words, day)}\n\n(the companion couldn't answer just now, so that's from your lessons.)`];
     } else {
-      a = (await askLive(wing, words, hist.slice(1), question, guideProfile(saved.settings.profile ?? null, wing))) || pilotAnswer(wing, question, words, day);
+      line = ["g", (await askLive(wing, words, hist.slice(1), question, guideProfile(saved.settings.profile ?? null, wing))) || pilotAnswer(wing, question, words, day)];
     }
-    setLog((l) => [...l, ["g", a || pilotAnswer(wing, question, words, day)]]);
+    setLog((l) => [...l, line]);
     setBusy(false);
     setTimeout(() => scroller.current?.scrollToEnd({ animated: true }), 50);
   };
+  const kept = new Set(memory.facts.map((f) => f.text.trim().toLowerCase()));
   const chips = [...(book.length ? ["what's in my book?"] : []), `what does ${today.word} actually mean?`, `tell me the story behind ${today.word}`];
   return (
     <SafeAreaView edges={["top"]} style={{ flex: 1, backgroundColor: color.cream }}>
       <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : undefined} style={{ flex: 1 }}>
         <View style={{ paddingHorizontal: 18, paddingBottom: 8 }}><TabHeader eyebrow={`the guide · ${label(wing)}`} title="ask the house." pose="think" /></View>
         <ScrollView ref={scroller} contentContainerStyle={{ paddingHorizontal: 18, paddingVertical: 8, gap: 10 }}>
-          {log.map(([who, t], i) => (
-            <View key={i} style={{ maxWidth: "88%", alignSelf: who === "u" ? "flex-end" : "flex-start", backgroundColor: who === "u" ? color.ink : "#fff", borderWidth: who === "u" ? 0 : 1, borderColor: color.line, borderRadius: 16, paddingVertical: 10, paddingHorizontal: 14 }}>
-              <Text style={[type.body(), { color: who === "u" ? color.cream : color.text }]}>{t}</Text>
+          {log.map(([who, t, offers], i) => (
+            <View key={i} style={{ gap: 6 }}>
+              <View style={{ maxWidth: "88%", alignSelf: who === "u" ? "flex-end" : "flex-start", backgroundColor: who === "u" ? color.ink : "#fff", borderWidth: who === "u" ? 0 : 1, borderColor: color.line, borderRadius: 16, paddingVertical: 10, paddingHorizontal: 14 }}>
+                <Text style={[type.body(), { color: who === "u" ? color.cream : color.text }]}>{t}</Text>
+              </View>
+              {offers?.length ? (
+                // Nothing is kept unless the person taps it; kept facts show under You → what the companion knows.
+                <View style={{ maxWidth: "88%", gap: 6 }}>
+                  <Text style={[type.body(12), { color: color.mute }]}>remember this? only if you tap it.</Text>
+                  <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
+                    {offers.map((f) => {
+                      const has = kept.has(f.trim().toLowerCase());
+                      return (
+                        <Pressable key={f} accessibilityRole="button" accessibilityState={{ disabled: has }} accessibilityLabel={has ? `kept: ${f}` : `remember this: ${f}`} disabled={has} onPress={() => addFact(f, todayDate())}
+                          style={{ backgroundColor: has ? color.ink : "#fff", borderWidth: 1.5, borderColor: color.ink, borderRadius: 999, minHeight: 44, justifyContent: "center", paddingHorizontal: 14 }}>
+                          <Text style={{ fontFamily: font.text[600], fontSize: 13, color: has ? color.cream : color.ink }}>{has ? `kept · ${f}` : `+ ${f}`}</Text>
+                        </Pressable>
+                      );
+                    })}
+                  </View>
+                </View>
+              ) : null}
             </View>
           ))}
           {busy ? <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}><Sun size={18} mood="spin" /><Text style={[type.body(12), { color: color.mute }]}>looking it up…</Text></View> : null}
@@ -90,7 +172,7 @@ export default function Guide() {
             </View>
           ) : null}
         </ScrollView>
-        <Text style={[type.eyebrow(8), { paddingHorizontal: 18, paddingBottom: 6, color: color.mute }]}>{flag("guide-live") ? "from this door's texts · sources shown" : "answers from this door's lessons · live guide opens after the pilot"}</Text>
+        <Text style={[type.eyebrow(8), { paddingHorizontal: 18, paddingBottom: 6, color: color.mute }]}>{live ? "your companion · from this door's texts and your lessons" : flag("guide-live") ? "from this door's texts · sources shown" : "answers from this door's lessons · the live companion isn't switched on yet"}</Text>
         <View style={{ paddingHorizontal: 18, paddingBottom: 12, paddingTop: 4, flexDirection: "row", gap: 8 }}>
           <TextInput value={q} onChangeText={setQ} onSubmitEditing={() => send()} placeholder={`what does ${today.word} actually mean?`} placeholderTextColor={color.mute} accessibilityLabel="Ask the guide" returnKeyType="send"
             style={{ flex: 1, borderWidth: 1.5, borderColor: color.line, borderRadius: 999, paddingVertical: 12, paddingHorizontal: 16, fontFamily: font.text[400], fontSize: 16, backgroundColor: "#fff" }} />

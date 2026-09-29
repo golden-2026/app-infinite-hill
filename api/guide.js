@@ -200,7 +200,7 @@ async function providerAnswer(apiKey, door, messages, profile) {
         "x-api-key": apiKey,
         "anthropic-version": "2023-06-01",
       },
-      body: JSON.stringify({ model: "claude-sonnet-4-6", max_tokens: 400, system: buildSystemPrompt(door, profile), messages }),
+      body: JSON.stringify({ model: "claude-sonnet-5", max_tokens: 400, system: buildSystemPrompt(door, profile), messages }),
       signal: controller.signal,
     });
     if (!upstream.ok) return null;
@@ -220,6 +220,9 @@ async function providerAnswer(apiKey, door, messages, profile) {
     clearTimeout(timer);
   }
 }
+
+// Shared with api/companion.js so both servers read bodies, profiles and provider replies the same careful way.
+export { DOORS, PROFILE_TEXT, inputError, parseJson, readLimitedText };
 
 export default async function guide(req, res) {
   res.setHeader("Cache-Control", "no-store");

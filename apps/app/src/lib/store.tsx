@@ -10,6 +10,7 @@ import { setFxOn } from "./fx";
 import { readJSON, remove, writeJSON } from "./storage";
 import { timeZone, today as todayNow } from "./time";
 import { cleanProfile, type Profile } from "./profile";
+import { eraseCompanion } from "./companion/memory";
 
 export const STORE_KEY = "ih:app:v1";
 
@@ -235,6 +236,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       remove(STORE_KEY);
       remove(P0_KEY); // otherwise the P0 copy would be carried over again on the next open
       remove("ih:device-secret");
+      eraseCompanion(); // the companion's memory (facts, moods, journal) goes with everything else
       setSaved(load());
     },
   }), [saved, today, derived, door, commit]);

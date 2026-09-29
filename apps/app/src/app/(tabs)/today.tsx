@@ -13,6 +13,8 @@ import { Btn, Card, Face, Guy, Sun, color, font, type } from "@/ui";
 import { HillScene } from "@/ui/hill";
 import { TodaysThree } from "@/ui/todays-three";
 import { SongCard } from "@/ui/song";
+import { useCompanionDay } from "@/lib/companion/use-companion";
+import { CompanionCard, HelpCard, ReflectCard } from "@/ui/companion";
 
 export default function Today() {
   useTitle("today");
@@ -40,12 +42,17 @@ export default function Today() {
   const scroller = useRef<ScrollView>(null);
   const [hillTop, setHillTop] = useState<number | null>(null);
   const [nowY, setNowY] = useState<number | null>(null);
+  // ...except when the companion comes first: a quiet day, or today's "how are you?" not yet answered
+  const { input: companionIn, day: companion } = useCompanionDay();
+  const quiet = companion.quiet;
+  const companionFirst = useRef(quiet || !companionIn.memory.moods.some((x) => x.date === today)).current;
   useEffect(() => {
-    if (hillTop !== null && nowY !== null) scroller.current?.scrollTo({ y: Math.max(0, hillTop + nowY - 320), animated: false });
+    if (hillTop !== null && nowY !== null && !companionFirst) scroller.current?.scrollTo({ y: Math.max(0, hillTop + nowY - 320), animated: false });
   }, [hillTop, nowY, wing]);
   const start = () => router.push({ pathname: "/session/[door]/[day]", params: { door: wing, day: String(lesson) } });
   const doors: [string, "home" | "visit"][] | null = st.visitWing ? [[st.homeWing, "home"], [st.visitWing, "visit"]] : null;
   const lastNext = st.signals.at(-1)?.next;
+  // the companion (above): today's practice, mood and note. On a quiet day the games step back and the practice comes first.
 
   return (
     <SafeAreaView edges={["top"]} style={{ flex: 1, backgroundColor: color.cream }}>
@@ -100,6 +107,10 @@ export default function Today() {
           );
         })()}
 
+        {companion.help ? <HelpCard /> : null}
+        {quiet ? <CompanionCard day={companion} /> : null}
+        {quiet ? <ReflectCard /> : null}
+
         <View style={s.campCard}>
           <View style={{ flex: 1, paddingRight: 12 }}>
             <Text style={[type.eyebrow(8), { color: color.gold }]}>{p.camp} · {p.name}</Text>
@@ -109,8 +120,10 @@ export default function Today() {
           <Text style={[type.eyebrow(8), { color: "#ffffff99" }]}>lesson {p.lesson} of {p.of}</Text>
         </View>
 
-        <TodaysThree />
-        {due > 0 ? (
+        {quiet ? null : <TodaysThree />}
+        {quiet ? null : <CompanionCard day={companion} />}
+        {quiet ? null : <ReflectCard />}
+        {due > 0 && !quiet ? (
           <Pressable accessibilityRole="button" accessibilityLabel={`Review ${due} ${due === 1 ? "word" : "words"}`} onPress={() => router.push("/review")} style={s.inkCard}>
             <Sun size={34} />
             <View style={{ flex: 1 }}>
@@ -149,7 +162,7 @@ export default function Today() {
               <View style={{ position: "absolute", right: 8, bottom: night ? 46 : 4 }}><Guy pose={night ? "sleep" : "thumbs"} h={night ? 78 : 104} /></View>
               {isDemo() ? <View style={{ marginTop: 12 }}><Btn kind="light" onPress={() => demoShiftDays(1)}>Demo: skip to tomorrow →</Btn></View> : null}
             </Card>
-          ) : derived.currentRun >= 2 ? (
+          ) : derived.currentRun >= 2 && !quiet ? (
             // the one thing at stake: your run of days. said gently, and louder only as the day ends
             <View style={[s.pill, { borderColor: hour >= 17 ? color.gold : color.line, backgroundColor: hour >= 17 ? color.ink : "transparent" }]} accessibilityRole="text">
               <Text numberOfLines={1} style={[type.eyebrow(8), { color: hour >= 17 ? color.gold : color.ink, flexShrink: 0 }]}>☀ {derived.currentRun}-day run</Text>
@@ -157,7 +170,7 @@ export default function Today() {
             </View>
           ) : null /* the floating "start day N" button above the tab bar is the one start action */}
 
-          {doneHere && st.deepOn !== today && lesson > 1 ? (
+          {doneHere && st.deepOn !== today && lesson > 1 && !quiet ? (
             <Pressable accessibilityRole="button" accessibilityLabel="go deeper: a harder extra round, two levels up" onPress={() => router.push({ pathname: "/session/[door]/[day]", params: { door: wing, day: String(lesson), deep: "1" } })}
               style={[s.inkCard, { marginHorizontal: 0, marginTop: 0, backgroundColor: color.ink }]}>
               <Guy pose="stride" h={64} />
@@ -217,7 +230,7 @@ export default function Today() {
       {/* when today is done, the "today · done" card below already says so */}
       <View pointerEvents="box-none" style={s.dock}>
         {doneHere ? null : (
-          <Btn testID="top-start" kind="gold" onPress={start} label={`Start day ${lesson}: ${title}`} style={s.dockBtn}>{`start day ${lesson} · about 3 min`}</Btn>
+          <Btn testID="top-start" kind={quiet ? "light" : "gold"} onPress={start} label={`Start day ${lesson}: ${title}`} style={s.dockBtn}>{quiet ? `day ${lesson}, whenever you're ready` : `start day ${lesson} · about 3 min`}</Btn>
         )}
       </View>
     </SafeAreaView>

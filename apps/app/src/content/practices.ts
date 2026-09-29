@@ -1,0 +1,167 @@
+// DRAFT — NOT KEEPER-REVIEWED. The companion's practices library, written 2026-09-29 as a first pass. Every
+// door-specific practice must be checked by that tradition's Keeper before public release (docs/CONTENT_RELEASE.md).
+// Wording rules: plain, lowercase like the app, American spelling; describe a practice as its own tradition keeps
+// it, never "the same as" another; nobody is told what to believe. Practices are never scored and never earn light.
+
+export const PRACTICES_STATUS = "draft-unreviewed" as const;
+
+export type PracticeKind = "breath" | "sit" | "walk" | "move" | "write" | "serve" | "give" | "prayer" | "rest";
+export type Mood = "calm" | "grief" | "anxious" | "tired" | "grateful" | "curious" | "joyful";
+export type Energy = "low" | "med" | "high";
+
+export type Practice = {
+  id: string;
+  title: string;
+  /** About how long it takes, 1–10. */
+  minutes: number;
+  kind: PracticeKind;
+  /** null: fits every door. Otherwise the door (tradition) it belongs to. */
+  door: string | null;
+  moods: Mood[];
+  energy: Energy;
+  steps: string[];
+  why: string;
+  /** When it belongs: morning, evening/bedtime, or Friday (before Shabbat). Unset: any time. */
+  when?: "morning" | "night" | "friday";
+  /** Names God or a holy name. Kept away from people who told us "no god" (every-door ones never do). */
+  theistic?: boolean;
+};
+
+export const PRACTICES: Practice[] = [
+  // ─── every door ───────────────────────────────────────────────────────
+  { id: "breath", title: "one breath, all the way down", minutes: 1, kind: "breath", door: null, moods: ["anxious", "tired", "calm", "grief"], energy: "low",
+    steps: ["sit or stand. let your shoulders drop.", "breathe in through your nose for four.", "breathe out slowly for six, like fogging a window.", "do it three times. that's it."],
+    why: "a longer breath out tells your body it can stand down." },
+  { id: "long-exhale", title: "the long breath out", minutes: 2, kind: "breath", door: null, moods: ["anxious", "tired"], energy: "low",
+    steps: ["breathe in for four.", "hold for a moment, gently.", "breathe out for eight.", "ten rounds. count them on your fingers."],
+    why: "when your mind is racing, the out-breath is the part you can steer." },
+  { id: "sit", title: "the sit", minutes: 3, kind: "sit", door: null, moods: ["calm", "anxious", "curious"], energy: "low",
+    steps: ["sit somewhere you won't be interrupted. phone face down.", "close your eyes or rest them on the floor.", "notice the breath without changing it.", "when your mind wanders — it will — come back. that coming back is the practice."],
+    why: "three quiet minutes that ask nothing of you." },
+  { id: "five-things", title: "five things you can see", minutes: 2, kind: "sit", door: null, moods: ["anxious", "grief"], energy: "low",
+    steps: ["name five things you can see.", "four you can hear.", "three you can touch.", "two you can smell, one you can taste. then one slow breath."],
+    why: "your senses only work in the present, so they bring you back to it." },
+  { id: "walk", title: "a slow walk, no phone", minutes: 10, kind: "walk", door: null, moods: ["calm", "tired", "curious", "grief"], energy: "med",
+    steps: ["leave your phone behind, or put it on do not disturb.", "walk a little slower than usual.", "notice five things you'd normally pass.", "on the way back, notice how you feel."],
+    why: "walking lets the mind settle without having to sit still." },
+  { id: "gratitude", title: "three good things", minutes: 2, kind: "write", door: null, moods: ["grateful", "joyful", "calm", "tired"], energy: "low",
+    steps: ["write down three things that went well today, however small.", "for one of them, write why it happened.", "read them back once."],
+    why: "noticing what's already good is a habit, and habits can be built." },
+  { id: "kind-act", title: "a quiet kind act", minutes: 5, kind: "serve", door: null, moods: ["joyful", "grateful", "curious", "calm"], energy: "med",
+    steps: ["pick one person: someone near you, or someone you haven't thought of in a while.", "do one small thing for them: a message, a coffee, a task off their list.", "don't mention it. let it be quiet."],
+    why: "doing good without being seen is a thread through almost every tradition on the hill." },
+  { id: "give", title: "give something away", minutes: 3, kind: "give", door: null, moods: ["grateful", "joyful"], energy: "low",
+    steps: ["find one thing you don't need, or set aside a small amount of money.", "decide who it's for: a person, a shelter, a cause.", "give it this week, without making a thing of it."],
+    why: "holding things loosely is easier to practice than to think about." },
+  { id: "evening-review", title: "the evening review", minutes: 4, kind: "write", door: null, moods: ["calm", "curious", "tired"], energy: "low", when: "night",
+    steps: ["what went well today?", "what would you do differently?", "what are you grateful for?", "close the notebook. the day is done."],
+    why: "a few honest lines at night, so tomorrow starts clean." },
+  { id: "digital-sabbath", title: "a phone-free hour", minutes: 3, kind: "rest", door: null, moods: ["anxious", "tired", "calm"], energy: "low",
+    steps: ["pick the hour: now, or after dinner.", "put your phone in another room, on silent.", "do one slow thing: cook, read, sit outside, talk.", "when the hour's up, notice whether you missed it."],
+    why: "an hour set apart, the way many traditions set a day apart." },
+  { id: "body-scan", title: "a body scan", minutes: 6, kind: "rest", door: null, moods: ["tired", "anxious", "grief"], energy: "low",
+    steps: ["lie down or sit back. close your eyes.", "start at your feet. notice them without moving them.", "move slowly up: legs, belly, chest, hands, shoulders, face.", "wherever it's tight, breathe out toward it.", "end with one breath for the whole body."],
+    why: "your body keeps the day's stress. this is a way to set some of it down." },
+  { id: "letter", title: "a letter to someone you lost", minutes: 8, kind: "write", door: null, moods: ["grief"], energy: "low",
+    steps: ["write their name at the top.", "tell them one thing that happened this week.", "tell them one thing you miss.", "say anything you didn't get to say. you never have to send it."],
+    why: "grief often needs somewhere to go. a letter is a place." },
+  { id: "used-to-think", title: "what I used to think", minutes: 5, kind: "write", door: null, moods: ["curious", "calm"], energy: "low",
+    steps: ["write one thing you used to believe, about faith, or anything.", "write what you think about it now.", "write what changed your mind, if you know.", "no need to settle it. just notice."],
+    why: "looking back honestly is how a returner finds their own footing." },
+  { id: "stretch", title: "a gentle stretch", minutes: 4, kind: "move", door: null, moods: ["tired", "calm", "joyful"], energy: "med", when: "morning",
+    steps: ["stand. reach both arms up and breathe in.", "fold forward slowly, knees soft, and breathe out.", "roll up one vertebra at a time.", "roll your shoulders back three times. then your neck, slowly."],
+    why: "a few slow movements wake the body without rushing it." },
+  { id: "meal-pause", title: "a pause before eating", minutes: 1, kind: "rest", door: null, moods: ["grateful", "calm", "joyful"], energy: "low",
+    steps: ["before the first bite, stop.", "each person says one thing they're glad about today.", "eat the first bite slowly."],
+    why: "a small pause at the table, easy to do with kids nearby." },
+  { id: "candle-night", title: "a light in the dark", minutes: 3, kind: "rest", door: null, moods: ["grief", "tired", "calm"], energy: "low", when: "night",
+    steps: ["turn the lights down. light a candle, or a small lamp.", "sit and watch it for a minute.", "if there's someone you're missing, say their name.", "blow it out, or turn it off, when you're ready."],
+    why: "a small light at night, for when the day was heavy." },
+
+  // ─── Catholic ─────────────────────────────────────────────────────────
+  { id: "sign-of-cross", title: "the sign of the cross", minutes: 1, kind: "prayer", door: "CATHOLIC", moods: ["calm", "anxious", "grateful"], energy: "low", theistic: true,
+    steps: ["with your right hand, touch your forehead: “in the name of the Father,”", "your chest: “and of the Son,”", "your left shoulder, then your right: “and of the Holy Spirit.”", "“amen.” then one quiet breath."],
+    why: "the oldest, shortest Catholic prayer: head, heart, shoulders — all of you." },
+  { id: "rosary-decade", title: "one decade of the rosary", minutes: 7, kind: "prayer", door: "CATHOLIC", moods: ["calm", "grief", "anxious"], energy: "low", theistic: true,
+    steps: ["hold the beads, or count on your fingers.", "pray one Our Father.", "pray ten Hail Marys, one for each bead, slowly.", "end with one Glory Be.", "if you like, hold one mystery in mind — the Annunciation is a good first."],
+    why: "a decade is one-fifth of the rosary: repetition that quiets the mind." },
+  { id: "examen", title: "the examen", minutes: 5, kind: "prayer", door: "CATHOLIC", moods: ["calm", "curious", "grateful"], energy: "low", when: "night", theistic: true,
+    steps: ["ask for light to see the day honestly.", "look back over the day with gratitude.", "notice where you felt close to God, and where far.", "ask forgiveness for what went wrong.", "look toward tomorrow with hope."],
+    why: "St. Ignatius asked his Jesuits to keep this even when they dropped everything else." },
+  { id: "eternal-rest", title: "a prayer for the dead", minutes: 1, kind: "prayer", door: "CATHOLIC", moods: ["grief"], energy: "low", theistic: true,
+    steps: ["think of the person you've lost.", "pray: “eternal rest grant unto them, O Lord, and let perpetual light shine upon them.”", "“may they rest in peace. amen.”"],
+    why: "a short prayer Catholics have said for the dead for centuries." },
+
+  // ─── Christianity ─────────────────────────────────────────────────────
+  { id: "psalm-slowly", title: "a psalm, read slowly", minutes: 5, kind: "prayer", door: "CHRISTIANITY", moods: ["grief", "anxious", "calm"], energy: "low", theistic: true,
+    steps: ["open to Psalm 23 (“the Lord is my shepherd”).", "read it once, straight through.", "read it again, slower. stop at the line that catches you.", "stay with that line for a minute."],
+    why: "the psalms have been read in hard nights for three thousand years." },
+  { id: "lords-prayer", title: "the Lord's Prayer", minutes: 2, kind: "prayer", door: "CHRISTIANITY", moods: ["calm", "anxious", "grateful"], energy: "low", theistic: true,
+    steps: ["find a quiet place.", "pray it slowly: “our Father, who art in heaven, hallowed be thy name…”", "pause after each line.", "end with one line of your own."],
+    why: "the prayer Jesus taught his disciples (Matthew 6)." },
+  { id: "grace", title: "grace before a meal", minutes: 1, kind: "prayer", door: "CHRISTIANITY", moods: ["grateful", "joyful"], energy: "low", theistic: true,
+    steps: ["before eating, bow your head.", "thank God for the food and the hands that made it.", "“amen.” then eat."],
+    why: "a short thanks at the table, easy to teach the kids." },
+
+  // ─── Islam ────────────────────────────────────────────────────────────
+  { id: "salat-steps", title: "salat, step by step", minutes: 7, kind: "prayer", door: "ISLAM", moods: ["calm", "anxious", "grateful"], energy: "med", theistic: true,
+    steps: ["make wudu: wash hands, mouth, nose, face, arms, wipe your head, wash your feet.", "face the qibla and set your intention in your heart.", "raise your hands, “allahu akbar”, and recite al-Fatiha.", "bow (ruku), stand, then prostrate (sujud) twice.", "at the end, sit, and turn your head right, then left: “as-salamu alaykum wa rahmatullah.”"],
+    why: "the shape of one unit (rak'ah) of the prayer Muslims keep five times a day." },
+  { id: "dhikr-fingers", title: "dhikr on your fingers", minutes: 3, kind: "prayer", door: "ISLAM", moods: ["calm", "anxious", "grateful"], energy: "low", theistic: true,
+    steps: ["count on the joints of your right hand.", "“subhanallah” (glory be to God), 33 times.", "“alhamdulillah” (all praise is God's), 33 times.", "“allahu akbar” (God is greatest), 34 times."],
+    why: "remembrance, counted on the fingers, as the Prophet is reported to have done." },
+  { id: "inna-lillahi", title: "words for a loss", minutes: 1, kind: "prayer", door: "ISLAM", moods: ["grief"], energy: "low", theistic: true,
+    steps: ["think of who or what you've lost.", "say: “inna lillahi wa inna ilayhi raji'un.”", "“we belong to God, and to Him we return.” (Qur'an 2:156)", "sit with it for one breath."],
+    why: "what Muslims say at news of a death, or any loss." },
+
+  // ─── Judaism ──────────────────────────────────────────────────────────
+  { id: "shabbat-candles", title: "Shabbat candles", minutes: 3, kind: "prayer", door: "JUDAISM", moods: ["calm", "grateful", "joyful", "tired"], energy: "low", when: "friday", theistic: true,
+    steps: ["before sundown on Friday, set out two candles.", "light them.", "draw your hands toward you three times, then cover your eyes.", "say: “baruch atah Adonai, Eloheinu melech ha'olam, asher kid'shanu b'mitzvotav v'tzivanu l'hadlik ner shel Shabbat.”", "uncover your eyes. the week has stopped."],
+    why: "lighting the candles is how Shabbat begins." },
+  { id: "shema-bedtime", title: "the Shema at bedtime", minutes: 2, kind: "prayer", door: "JUDAISM", moods: ["calm", "anxious", "grief", "tired"], energy: "low", when: "night", theistic: true,
+    steps: ["in bed, lights off.", "cover your eyes with your right hand.", "say: “Shema Yisrael, Adonai Eloheinu, Adonai echad.”", "then, quietly: “baruch shem k'vod malchuto l'olam va'ed.”"],
+    why: "hear, Israel: the words said at night, and the first words many Jewish children learn." },
+  { id: "modeh-ani", title: "Modeh Ani on waking", minutes: 1, kind: "prayer", door: "JUDAISM", moods: ["grateful", "calm", "tired"], energy: "low", when: "morning", theistic: true,
+    steps: ["before you get up, stay in bed a moment.", "say: “modeh ani l'fanecha, melech chai v'kayam…”", "“I thank You, living and lasting King, for returning my soul to me with compassion.”"],
+    why: "the first words of the day: thanks, before anything else." },
+
+  // ─── Sikhism ──────────────────────────────────────────────────────────
+  { id: "simran", title: "simran", minutes: 5, kind: "prayer", door: "SIKHISM", moods: ["calm", "anxious", "grief"], energy: "low", theistic: true,
+    steps: ["sit comfortably. cover your head if you like.", "breathe in, and silently say “wahe”.", "breathe out: “guru”.", "keep going, unhurried, for a few minutes."],
+    why: "remembering the Name, again and again, until it's remembering you." },
+  { id: "japji-line", title: "a line of Japji", minutes: 4, kind: "prayer", door: "SIKHISM", moods: ["calm", "curious"], energy: "low", when: "morning", theistic: true,
+    steps: ["open to the start of Japji Sahib: “Ik Onkar, Sat Naam…”", "read the Mool Mantar slowly, once aloud if you can.", "read one pauri (verse) and stop.", "carry one phrase with you through the day."],
+    why: "Guru Nanak's Japji is the Sikh morning prayer, one verse at a time." },
+  { id: "kirtan-sohila", title: "Kirtan Sohila at night", minutes: 5, kind: "prayer", door: "SIKHISM", moods: ["calm", "grief", "tired"], energy: "low", when: "night", theistic: true,
+    steps: ["lights low, ready for sleep.", "read or listen to Kirtan Sohila.", "let the last verse be the last thing you hear today."],
+    why: "the bedtime prayer, also sung at a Sikh funeral." },
+
+  // ─── Buddhism ─────────────────────────────────────────────────────────
+  { id: "metta", title: "metta, loving-kindness", minutes: 6, kind: "sit", door: "BUDDHISM", moods: ["grief", "anxious", "calm", "grateful"], energy: "low",
+    steps: ["sit and settle. start with yourself: “may I be safe. may I be happy. may I be healthy. may I live with ease.”", "now someone you love. say it for them.", "now someone you barely know.", "now someone difficult, if you can.", "last: all beings, everywhere."],
+    why: "kindness wished on purpose, taught by the Buddha in the Metta Sutta." },
+  { id: "walking-meditation", title: "walking meditation", minutes: 8, kind: "walk", door: "BUDDHISM", moods: ["calm", "anxious", "tired"], energy: "med",
+    steps: ["find ten or twenty steps of path, indoors or out.", "walk slowly: lifting, moving, placing each foot.", "at the end, pause, turn, and walk back.", "when the mind wanders, return to the feet."],
+    why: "the same attention as sitting, carried into movement." },
+
+  // ─── Hinduism ─────────────────────────────────────────────────────────
+  { id: "mantra", title: "a mantra", minutes: 5, kind: "prayer", door: "HINDUISM", moods: ["calm", "anxious", "grief"], energy: "low", theistic: true,
+    steps: ["sit comfortably. hold a mala, or count on your fingers.", "choose a mantra you know — “om”, or “om namah shivaya”.", "repeat it softly with each breath.", "108 times is a full mala. a few minutes is enough."],
+    why: "japa: a sacred sound repeated until the mind rests in it." },
+  { id: "gentle-yoga", title: "gentle yoga, with its roots", minutes: 8, kind: "move", door: "HINDUISM", moods: ["tired", "calm", "anxious"], energy: "med",
+    steps: ["yoga is one of the six classical schools of Hindu thought. postures (asana) are one of Patanjali's eight limbs.", "stand in tadasana (mountain pose). breathe.", "fold forward, then come down to balasana (child's pose) for five breaths.", "sit, and end with a few slow breaths (pranayama)."],
+    why: "the postures came from a whole path. this names where they came from." },
+  { id: "diya", title: "a lamp at dusk", minutes: 3, kind: "prayer", door: "HINDUISM", moods: ["grateful", "calm", "grief"], energy: "low", when: "night", theistic: true,
+    steps: ["at dusk, light a diya (a small oil lamp) or a candle.", "set it before an image of your deity, or simply by a window.", "fold your hands. a moment of thanks.", "let it burn while you go about your evening, safely."],
+    why: "lighting a lamp at evening is one of the simplest Hindu acts of devotion." },
+
+  // ─── my own path ──────────────────────────────────────────────────────
+  { id: "seneca-questions", title: "Seneca's three questions", minutes: 4, kind: "write", door: "SPIRITUAL", moods: ["calm", "curious"], energy: "low", when: "night",
+    steps: ["tonight, go back over the day.", "what bad habit did I cure today?", "what fault did I resist?", "in what way am I better? — then sleep."],
+    why: "the Stoic Seneca did this every night (On Anger, book 3)." },
+  { id: "view-from-above", title: "the view from above", minutes: 4, kind: "sit", door: "SPIRITUAL", moods: ["anxious", "curious", "calm"], energy: "low",
+    steps: ["close your eyes. picture yourself where you are right now.", "rise above: the building, the city, the country.", "keep rising until the earth is small and blue.", "notice how big today's worry looks from here. then come back down."],
+    why: "an old Stoic exercise Marcus Aurelius returned to in his Meditations." },
+];
+
+export const practiceById = (id: string | null | undefined) => PRACTICES.find((p) => p.id === id) || null;
