@@ -974,6 +974,7 @@ html body section.gift{padding-top:40px!important}</style>
 <style>@media(max-width:860px){html body .heromosaic{padding:0 12px!important}}</style>
 
 
+
 <!-- MOTION PASS — dignity for the faces and the faith, play inside the phone. Injected before </body> by mock/build.mjs
      ({{GUY_*}} placeholders become the mascot poses). -->
 <section class="playdemo" id="playdemo">
@@ -1152,7 +1153,7 @@ a.btn:active,.gbtn:active{transform:scale(.96)}
   // Each mascot on the page has an entrance (walks in, climbs up, peeks out, drops in) and a little routine
   // when idle (looks around, flips through a few poses like a flipbook, a hop with squash-and-stretch).
   // Tap him and he celebrates. Everything plays only while he's on screen, and never under reduced motion.
-  var guys = [].slice.call(document.querySelectorAll('section:not(.hero) img.gpose'));
+  var guys = [].slice.call(document.querySelectorAll('section:not(.hero) img.gpose, #timeline img.guy, #science img.evguy'));
   var sleep = function (ms) { return new Promise(function (r) { setTimeout(r, ms); }); };
   var EASE = 'cubic-bezier(.3,1.4,.5,1)';
   function anim(el, frames, ms, ease) { try { return el.animate(frames, { duration: ms, easing: ease || 'ease-in-out', fill: 'forwards' }).finished; } catch (e) { return sleep(ms); } }
@@ -1195,10 +1196,10 @@ a.btn:active,.gbtn:active{transform:scale(.96)}
     { sel: '#timeline', enter: 'climb', loop: 'climb' },
     { sel: '#plans', enter: 'drop', loop: 'thumbs' },
     { sel: '#gift', enter: 'peek', loop: 'lantern' },
-    { sel: '#faq', enter: 'drop', loop: 'think' },
-    { sel: '#goal', enter: 'drop', loop: 'namaste' },
+    { sel: '#faq', enter: 'drop', loop: 'namaste' },
+    
     { sel: '#science', enter: 'drop', loop: 'meditate' },
-    { sel: '#cool', enter: 'walk', loop: 'cheer' }
+    
   ];
   function planFor(el) { for (var i = 0; i < PLAN.length; i++) if (el.closest(PLAN[i].sel)) return PLAN[i]; return { enter: 'drop', loop: 'wave' }; }
   guys.forEach(function (el) {

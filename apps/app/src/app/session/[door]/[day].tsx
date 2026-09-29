@@ -202,7 +202,7 @@ function Session({ door, day, kidId, mode, deep, voiceOn, onFinish }: { door: st
         <View style={st.who}>
           <Face ic={ic} w={36} h={36} r={18} caption={false} />
           <Text style={[type.eyebrow(), { color: "#ffffffbb", flex: 1 }]} numberOfLines={2}>{voiceLabel(door, ic.short).short} reads · {label(door)}{segLabel ? ` · ${segLabel}` : ""}</Text>
-          <ReactingGuy h={58} />
+          <ReactingGuy h={58} rest={step.type === "breath" || step.type === "sit" ? "meditate" : step.type === "tally" ? "celebrate" : undefined} />
         </View>
         <ScrollView key={k} contentContainerStyle={[st.body, { justifyContent: top ? "flex-start" : "center" }]}>
           <Enter style={{ width: "100%", alignItems: "center" }}>

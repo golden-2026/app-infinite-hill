@@ -146,7 +146,7 @@ export default function Today() {
               <Text style={[type.eyebrow(), { color: color.gold }]}>today · done</Text>
               <Text style={{ fontFamily: font.display[500], fontSize: 18, marginTop: 6, paddingRight: 96, color: "#fff" }}>carry: {t.carry || (data.DAY1[wing] || data.DAY1.SPIRITUAL).carry}</Text>
               <Text style={[type.body(12), { color: "#ffffff99", marginTop: 6, paddingRight: 96 }]}>{night ? "sleep on it. see you at sundown." : "that's it for today. see you at sundown."}</Text>
-              <View style={{ position: "absolute", right: 8, bottom: night ? 46 : -8 }}><Guy pose={night ? "sleep" : "thumbs"} h={night ? 78 : 112} /></View>
+              <View style={{ position: "absolute", right: 8, bottom: night ? 46 : 4 }}><Guy pose={night ? "sleep" : "thumbs"} h={night ? 78 : 104} /></View>
               {isDemo() ? <View style={{ marginTop: 12 }}><Btn kind="light" onPress={() => demoShiftDays(1)}>Demo: skip to tomorrow →</Btn></View> : null}
             </Card>
           ) : derived.currentRun >= 2 ? (

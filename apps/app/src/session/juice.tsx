@@ -1,8 +1,8 @@
 // Game feel for the lesson: the mascot reacts to every answer, a colored verdict banner with a sound,
 // combos that burst, and a progress bar that heats up. Steps call `useFx().react(...)` the moment an answer
 // is known; the lesson frame shows the mascot and the combo burst; `Verdict` is the banner each step shows.
-import { createContext, useContext, useEffect, type ReactNode } from "react";
-import { Text, View } from "react-native";
+import { createContext, useContext, useEffect, type ReactNode , useState } from "react";
+import { Text, View , Pressable } from "react-native";
 import Animated, { Easing, useAnimatedStyle, useReducedMotion, useSharedValue, withDelay, withSequence, withSpring, withTiming } from "react-native-reanimated";
 import { Sparkle } from "@/fx/Sparkle";
 import { play } from "@/lib/fx";
@@ -31,8 +31,11 @@ export function cue(r: Reaction, combo: number) {
 }
 
 /** The mascot in the lesson header: changes pose with each answer and pops (with a little squash) when it does. */
-export function ReactingGuy({ h = 56 }: { h?: number }) {
-  const { pose, beat } = useFx();
+export function ReactingGuy({ h = 56, rest }: { h?: number; rest?: string }) {
+  const { pose: live, beat } = useFx();
+  const [tapped, setTapped] = useState(false);
+  // quiet moments set their own pose (meditate on the breath, celebrate on the win); tapping him plays his reaction
+  const pose = tapped ? "tap" : rest || live;
   const s = useSharedValue(1), r = useSharedValue(0);
   const reduce = useReducedMotion();
   useEffect(() => {
@@ -41,7 +44,11 @@ export function ReactingGuy({ h = 56 }: { h?: number }) {
     r.value = withSequence(withTiming(-6, { duration: 90 }), withTiming(5, { duration: 110 }), withSpring(0, { damping: 7 }));
   }, [beat, reduce, s, r]);
   const anim = useAnimatedStyle(() => ({ transform: [{ scale: s.value }, { rotate: `${r.value}deg` }] }));
-  return <Animated.View style={anim}><Guy pose={pose} h={h} /></Animated.View>;
+  return (
+    <Pressable accessibilityRole="button" accessibilityLabel="the guide" onPress={() => { if (tapped) return; setTapped(true); setTimeout(() => setTapped(false), 3000); }}>
+      <Animated.View style={anim}><Guy pose={pose} h={h} /></Animated.View>
+    </Pressable>
+  );
 }
 
 /** "glowing ×5": a sunburst over the lesson at 3, 5, 10… in a row — bigger, longer and sparklier as the streak grows. */
