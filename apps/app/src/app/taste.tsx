@@ -37,7 +37,7 @@ export default function Taste() {
           <Link onPress={() => speak([...(d.hook || []), ...(d.teach || []).slice(0, 2)].join(" "), true)}>🔊 read it to me</Link>
         </View>
         <View style={{ flexDirection: "row", alignItems: "center", gap: 12 }}>
-          <Guy pose="namaste" h={90} />
+          <Guy pose={w === "HINDUISM" ? "namaste" : "wonder"} h={90} />
           <View style={{ flex: 1 }}>
             <Text style={type.eyebrow(8)}>the line people carry</Text>
             <Text style={{ fontFamily: font.display[700], fontStyle: "italic", fontSize: 18, color: color.ink, marginTop: 4 }}>{carry}.</Text>

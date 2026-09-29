@@ -72,7 +72,7 @@ export default function LanternScreen() {
             })}
           </View>
         ) : null}
-        {!lit ? <Guy pose="namaste" h={110} /> : null}
+        {!lit ? <Guy pose={door === "HINDUISM" ? "namaste" : "heart"} h={110} /> : null}
         {lit ? (
           <View style={{ alignItems: "center", gap: 10, width: "100%" }}>
             <Text style={{ fontFamily: font.display[800], fontSize: 20, color: color.gold }}>+{LANTERN_LIGHT} light</Text>

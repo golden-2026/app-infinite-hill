@@ -228,7 +228,8 @@ function Session({ door, day, kidId, mode, deep, voiceOn, onFinish }: { door: st
       // The story is told by the mascot in a speech bubble (like a character in a story), not a wall of text.
       const n = step.text.length;
       const fs = n > 220 ? 16 : n > 140 ? 18 : n > 80 ? 20 : 24;
-      const BEAT_POSES = ["point", "idea", "wonder", "aha", "namaste", "think", "peace", "readsit"];
+      // namaste is a Hindu gesture: only on the Hindu door; other doors get a warm pose in its place.
+      const BEAT_POSES = ["point", "idea", "wonder", "aha", door === "HINDUISM" ? "namaste" : "heart", "think", "peace", "readsit"];
       return frame(
         <View style={{ width: "100%", maxWidth: 380, gap: 12, alignSelf: "center" }}>
           {step.head ? <Text style={[type.eyebrow(11), { color: color.gold, letterSpacing: 1.76, textAlign: "center" }]}>{step.head}</Text> : null}

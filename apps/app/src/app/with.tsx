@@ -57,7 +57,7 @@ export default function WithScreen() {
           <Text style={{ fontFamily: font.display[800], fontSize: 22, color: color.ink, marginTop: 6 }}>“{gift.line}”</Text>
         </View>
         <View style={{ flexDirection: "row", alignItems: "center", gap: 10, width: "100%" }}>
-          <Guy pose="namaste" h={72} />
+          <Guy pose={gift.door === "HINDUISM" ? "namaste" : "heart"} h={72} />
           <Text style={[type.body(15), { color: "#ffffffdd", flex: 1 }]}>
             {gift.from ? `${who} walked ${when === "today" ? "today" : when}.` : `someone walked ${when === "today" ? "today" : when} and thought of you.`} walk with them?
           </Text>
