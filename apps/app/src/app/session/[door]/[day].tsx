@@ -394,7 +394,7 @@ function Celebrate() {
   useEffect(() => {
     play("complete");
     s.value = withTiming(1, { duration: 420, easing: Easing.out(Easing.back(2.2)) });
-    const t = setTimeout(() => setPose("cheer"), 900);
+    const t = setTimeout(() => setPose("celebrate"), 900);
     return () => clearTimeout(t);
   }, [s]);
   const anim = useAnimatedStyle(() => ({ transform: [{ scale: s.value }] }));

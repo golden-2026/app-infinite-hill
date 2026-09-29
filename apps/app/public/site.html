@@ -968,6 +968,7 @@ html body section.gift{padding-top:40px!important}</style>
 /* the science seat: one wide card instead of a lone card and an empty row */
 @media(min-width:861px){html body .keepers .grid4 .kp:last-child{grid-column:1/-1;display:grid!important;grid-template-columns:283px 1fr;align-items:center}html body .keepers .grid4 .kp:last-child>*:first-child{aspect-ratio:auto!important;height:220px}html body .keepers .grid4 .kp:last-child img{height:100%!important;object-fit:cover}}</style>
 
+
 <!-- MOTION PASS — dignity for the faces and the faith, play inside the phone. Injected before </body> by mock/build.mjs
      ({{GUY_*}} placeholders become the mascot poses). -->
 <section class="playdemo" id="playdemo">
@@ -1099,7 +1100,7 @@ img.gpose,.pzpic{cursor:pointer}
 .heromosaic .m:nth-child(5) img{animation-delay:-16s;transform-origin:60% 40%}
 .heromosaic .m:nth-child(6) img{animation-delay:-20s;transform-origin:50% 50%}
 @keyframes kb{from{transform:scale(1)}to{transform:scale(1.09)}}
-/* the mascot's choreography is driven from script (walk-ins, peeks, climbs, flipbook pose changes) */
+/* the mascot: hand-made animated loops, with an entrance per section (walks in, climbs up, peeks, drops in) */
 section:not(.hero) img.gpose{transform-origin:50% 100%;will-change:transform}
 .gshadow{position:absolute;height:10px;border-radius:50%;background:radial-gradient(closest-side,rgba(0,0,0,.18),transparent);pointer-events:none;transition:transform .2s}
 .ih-rv{opacity:0;transform:translateY(18px);transition:opacity .9s ease,transform .9s ease}
@@ -1159,44 +1160,41 @@ a.btn:active,.gbtn:active{transform:scale(.96)}
     await anim(el, [{ transform: 'none' }], 300, EASE);
   }
   var ENTRANCES = {
-    walk: async function (el) { el.style.opacity = '0'; await walkTo(el, 220); },
-    climb: async function (el) { el.style.opacity = '1'; el.src = POSE.climb; await anim(el, [{ transform: 'translateY(90px)' }, { transform: 'translateY(-10px)' }], 900, 'cubic-bezier(.2,.8,.3,1)'); await anim(el, [{ transform: 'none' }], 200, EASE); },
+    walk: async function (el) { el.style.opacity = '1'; await anim(el, [{ transform: 'translateX(240px)' }, { transform: 'none' }], 1600, 'linear'); },
+    climb: async function (el) { el.style.opacity = '1'; await anim(el, [{ transform: 'translateY(90px)' }, { transform: 'translateY(-10px)' }], 900, 'cubic-bezier(.2,.8,.3,1)'); await anim(el, [{ transform: 'none' }], 200, EASE); },
     peek: async function (el) { el.style.opacity = '1'; await anim(el, [{ transform: 'translateX(70%) rotate(18deg)' }, { transform: 'translateX(35%) rotate(10deg)' }], 500); await sleep(500); await anim(el, [{ transform: 'translateX(70%) rotate(18deg)' }], 260); await sleep(350); await anim(el, [{ transform: 'none' }], 520, EASE); },
     drop: async function (el) { el.style.opacity = '1'; await anim(el, [{ transform: 'translateY(-160px) rotate(-8deg)' }, { transform: 'translateY(0) scale(1.12,.86)' }], 520, 'cubic-bezier(.6,0,.9,.6)'); await anim(el, [{ transform: 'none' }], 320, EASE); }
   };
-  // what each mascot does, by section (falls back to a hop-in and a look around)
+  // the finished animated mascot (8 hand-made loops, green keyed out), matched to what each section is about
+  var LOOP = { wave: '/mascot/wave.webp', cheer: '/mascot/cheer.webp', walk: '/mascot/walk.webp', climb: '/mascot/climb.webp', meditate: '/mascot/meditate.webp', think: '/mascot/think.webp', celebrate: '/mascot/celebrate.webp', tap: '/mascot/tap_reaction.webp' };
   var PLAN = [
-    { sel: '#cool', enter: 'walk', idle: [['wave', 'idea', 'thumbs'], 'look', ['meditate'], 'hop'] },
-    { sel: '#voices', enter: 'peek', idle: ['look', ['wave'], 'hop'] },
-    { sel: '#mission', enter: 'drop', idle: [['globe'], 'look', ['point', 'globe'], 'hop'] },
-    { sel: '#what', enter: 'walk', idle: [['idea', 'point'], 'hop', 'look'] },
-    { sel: '#plans', enter: 'climb', idle: ['hop', ['thumbs'], 'look'] },
-    { sel: '#gift', enter: 'peek', idle: [['namaste', 'heart'], 'hop'] },
-    { sel: '#faq', enter: 'drop', idle: [['think', 'idea'], 'look'] },
-    { sel: '#goal', enter: 'climb', idle: [['cheer'], 'hop', ['peace']] }
+    { sel: '#voices', enter: 'peek', loop: 'wave' },
+    { sel: '#mission', enter: 'drop', loop: 'think' },
+    { sel: '#what', enter: 'walk', loop: 'walk' },
+    { sel: '#timeline', enter: 'climb', loop: 'climb' },
+    { sel: '#plans', enter: 'climb', loop: 'climb' },
+    { sel: '#gift', enter: 'peek', loop: 'celebrate' },
+    { sel: '#faq', enter: 'drop', loop: 'think' },
+    { sel: '#goal', enter: 'walk', loop: 'cheer' },
+    { sel: '#science', enter: 'drop', loop: 'meditate' }
   ];
-  function planFor(el) { for (var i = 0; i < PLAN.length; i++) if (el.closest(PLAN[i].sel)) return PLAN[i]; return { enter: 'drop', idle: ['look', 'hop'] }; }
+  function planFor(el) { for (var i = 0; i < PLAN.length; i++) if (el.closest(PLAN[i].sel)) return PLAN[i]; return { enter: 'drop', loop: 'wave' }; }
   guys.forEach(function (el) {
-    var home = el.src, busy = false, started = false, plan = planFor(el), beat = 0;
-    async function run(fn) { if (busy || reduce) return; busy = true; try { await fn(); } finally { busy = false; } }
-    async function idle() {
-      var step = plan.idle[beat++ % plan.idle.length];
-      if (step === 'look') await lookAround(el);
-      else if (step === 'hop') await hop(el);
-      else { await flip(el, step, 260); await sleep(900); await flip(el, [home], 200); }
-    }
+    var plan = planFor(el), still = el.src, started = false, busy = false;
+    if (reduce) return; // reduced motion: the original still pose stays
+    var home = LOOP[plan.loop];
     el.addEventListener('click', function () {
-      run(async function () { await hop(el, 40); await flip(el, ['jump', 'cheer', 'joy'], 230); await anim(el, [{ transform: 'rotate(360deg)' }], 520, 'ease-out'); el.getAnimations && el.getAnimations().forEach(function (a) { a.cancel(); }); await flip(el, [home], 200); });
+      if (busy) return; busy = true; el.src = LOOP.tap;
+      setTimeout(function () { el.src = home; busy = false; }, 3000);
     });
-    el.addEventListener('mouseenter', function () { run(async function () { await flip(el, ['wave'], 200); await sleep(700); await flip(el, [home], 200); }); });
-    if (reduce || !('IntersectionObserver' in window)) return;
+    if (!('IntersectionObserver' in window)) { el.src = home; return; }
     el.style.opacity = '0';
     new IntersectionObserver(function (es, o) {
-      es.forEach(function (e) {
-        if (!e.isIntersecting || started) return;
+      es.forEach(function (x) {
+        if (!x.isIntersecting || started) return;
         started = true; o.disconnect();
-        run(async function () { await (ENTRANCES[plan.enter] || ENTRANCES.drop)(el); el.src = home; el.style.opacity = '1'; });
-        setInterval(function () { if (seen(el)) run(idle); }, 4200 + Math.random() * 1800);
+        el.src = plan.enter === 'walk' ? LOOP.walk : plan.enter === 'climb' ? LOOP.climb : home;
+        (async function () { await ENTRANCES[plan.enter](el); el.style.opacity = '1'; el.src = home; })();
       });
     }, { threshold: .35 }).observe(el);
   });
@@ -1238,7 +1236,7 @@ a.btn:active,.gbtn:active{transform:scale(.96)}
     $('pdprompt').textContent = d.word + '. what does it actually mean?';
     $('pdopts').innerHTML = d.opts.map(function (o) { return '<div class="pd-opt' + (o === d.ans ? ' pd-right' : '') + '">' + o + '</div>'; }).join('');
     $('pdcarry').textContent = d.carry;
-    $('pdguy').src = POSE[d.pose] || POSE.cheer;
+    $('pdguy').src = reduce ? (POSE[d.pose] || POSE.cheer) : (i % 2 ? '/mascot/celebrate.webp' : '/mascot/cheer.webp');
     bar.style.width = '30%'; bar.classList.remove('hot'); combo.classList.remove('on'); q.classList.remove('out'); ver.classList.remove('on'); win.classList.remove('on');
     doors.classList.remove('out'); lesson.classList.remove('on'); spark.classList.remove('go'); light.textContent = '+0';
     fin.className = 'pd-finger'; fin.style.left = '70%'; fin.style.top = '92%';

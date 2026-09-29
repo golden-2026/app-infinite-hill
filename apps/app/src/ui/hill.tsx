@@ -21,6 +21,7 @@ const WEEK = 7;
 const SLOTS = 14; // stone places on the painted trail; a window never holds more than 15 stones
 const pillW = (txt: string) => txt.length * 6.4 + 22;
 const celebrated = new Set<string>(); // "door:lesson" popped once per app session
+const HILL_LOOP: Record<string, any> = { hike: require("../../assets/mascot/walk.webp"), jump: require("../../assets/mascot/celebrate.webp") };
 
 function Pill({ x, y, txt, anchor, night }: { x: number; y: number; txt: string; anchor: "start" | "middle" | "end"; night: boolean }) {
   const w = pillW(txt);
@@ -129,6 +130,16 @@ export function HillScene({ hour, done, total, doneToday, onStart, onReplay, fir
   const guy = (pose: string, x: number, y: number, h: number, animated = false) => {
     const a = art(data.GUY[pose]);
     if (!a) return null;
+    // the hand-made loops: walking up to today's stone, celebrating at the summit (resting/sleeping stay still)
+    const loop = reduce ? null : HILL_LOOP[pose];
+    if (loop) {
+      const shift = (h * (1 - a.w / a.h)) / 2; // the loop is square; keep him centred where the still pose stood (hill units)
+      return (
+        <View key={pose + x} pointerEvents="none" style={{ position: "absolute", left: px(x - shift), top: py(y), height: py(h), width: px(h), zIndex: 6 }}>
+          <Image source={loop} style={{ width: "100%", height: "100%" }} contentFit="contain" autoplay accessible={false} />
+        </View>
+      );
+    }
     const img = <Image source={a.src} style={{ height: "100%", aspectRatio: a.w / a.h }} contentFit="contain" transition={FADE} accessible={false} />;
     return (
       <Animated.View key={pose + x} pointerEvents="none" style={[{ position: "absolute", left: px(x), top: py(y), height: py(h), zIndex: 6 }, animated ? bobStyle : null]}>{img}</Animated.View>

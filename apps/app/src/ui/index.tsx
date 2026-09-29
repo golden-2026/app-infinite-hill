@@ -113,6 +113,22 @@ export function Logo({ h = 44 }: { h?: number }) {
  *  breath while idle (slower when he's meditating or asleep) and a little pop each time he changes pose.
  *  `still` for places that already move him (the breath and sit steps). Reduced motion → a plain image. */
 const CALM_POSES = new Set(["meditate", "sleep", "namaste", "readsit", "sitrock", "sitthink", "lieread"]);
+// The finished animated mascot (8 hand-made loops, green keyed out): used wherever a pose has a matching loop.
+const ANIM: Record<string, any> = {
+  wave: require("../../assets/mascot/wave.webp"),
+  cheer: require("../../assets/mascot/cheer.webp"),
+  walk: require("../../assets/mascot/walk.webp"),
+  climb: require("../../assets/mascot/climb.webp"),
+  meditate: require("../../assets/mascot/meditate.webp"),
+  think: require("../../assets/mascot/think.webp"),
+  celebrate: require("../../assets/mascot/celebrate.webp"),
+  tap: require("../../assets/mascot/tap_reaction.webp"),
+};
+const POSE_ANIM: Record<string, string> = {
+  wave: "wave", cheer: "cheer", jump: "cheer", thumbs: "cheer", joy: "celebrate", celebrate: "celebrate",
+  walk: "walk", stride: "walk", stroll: "walk", hike: "walk", stickwalk: "walk", climb: "climb",
+  meditate: "meditate", think: "think", idea: "think", sitthink: "think", aha: "think", tap: "tap",
+};
 export function Guy({ pose = "wave", h = 160, style, still }: { pose?: string; h?: number; style?: any; still?: boolean }) {
   const reduce = useReducedMotion();
   const breath = useSharedValue(0);
@@ -132,6 +148,16 @@ export function Guy({ pose = "wave", h = 160, style, still }: { pose?: string; h
   const anim = useAnimatedStyle(() => ({
     transform: [{ translateY: -breath.value * lift }, { scaleY: 1 + breath.value * (calm ? 0.015 : 0.025) }, { scale: pop.value }],
   }));
+  const popOnly = useAnimatedStyle(() => ({ transform: [{ scale: pop.value }] }));
+  const loop = POSE_ANIM[pose] && !reduce ? ANIM[POSE_ANIM[pose]] : null;
+  if (loop) {
+    // the loop already moves: no extra breathing on top, just the pop when the pose changes
+    return (
+      <Animated.View style={[style, { transformOrigin: "50% 100%" } as any, still ? null : popOnly]}>
+        <Image source={loop} style={{ width: h, height: h }} contentFit="contain" autoplay accessibilityIgnoresInvertColors accessible={false} />
+      </Animated.View>
+    );
+  }
   const img = <Art refKey={data.GUY[pose] || data.GUY.wave} h={h} />;
   if (reduce || still) return <View style={style}>{img}</View>;
   return <Animated.View style={[style, { transformOrigin: "50% 100%" } as any, anim]}>{img}</Animated.View>;
