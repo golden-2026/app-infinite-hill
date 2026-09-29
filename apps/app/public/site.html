@@ -969,6 +969,7 @@ html body section.gift{padding-top:40px!important}</style>
 @media(min-width:861px){html body .keepers .grid4 .kp:last-child{grid-column:1/-1;display:grid!important;grid-template-columns:283px 1fr;align-items:center}html body .keepers .grid4 .kp:last-child>*:first-child{aspect-ratio:auto!important;height:220px}html body .keepers .grid4 .kp:last-child img{height:100%!important;object-fit:cover}}</style>
 
 
+
 <!-- MOTION PASS — dignity for the faces and the faith, play inside the phone. Injected before </body> by mock/build.mjs
      ({{GUY_*}} placeholders become the mascot poses). -->
 <section class="playdemo" id="playdemo">
@@ -1182,9 +1183,11 @@ a.btn:active,.gbtn:active{transform:scale(.96)}
   guys.forEach(function (el) {
     var plan = planFor(el), still = el.src, started = false, busy = false;
     if (reduce) return; // reduced motion: the original still pose stays
-    var home = LOOP[plan.loop];
+    // cheer/celebrate/meditate/think/tap are cropped at the top in the source videos: keep the still until re-rendered
+    var CLEAN = { wave: 1, walk: 1, climb: 1 };
+    var home = CLEAN[plan.loop] ? LOOP[plan.loop] : still;
     el.addEventListener('click', function () {
-      if (busy) return; busy = true; el.src = LOOP.tap;
+      if (busy) return; busy = true; el.src = LOOP.wave;
       setTimeout(function () { el.src = home; busy = false; }, 3000);
     });
     if (!('IntersectionObserver' in window)) { el.src = home; return; }
@@ -1236,7 +1239,7 @@ a.btn:active,.gbtn:active{transform:scale(.96)}
     $('pdprompt').textContent = d.word + '. what does it actually mean?';
     $('pdopts').innerHTML = d.opts.map(function (o) { return '<div class="pd-opt' + (o === d.ans ? ' pd-right' : '') + '">' + o + '</div>'; }).join('');
     $('pdcarry').textContent = d.carry;
-    $('pdguy').src = reduce ? (POSE[d.pose] || POSE.cheer) : (i % 2 ? '/mascot/celebrate.webp' : '/mascot/cheer.webp');
+    $('pdguy').src = POSE[d.pose] || POSE.cheer;
     bar.style.width = '30%'; bar.classList.remove('hot'); combo.classList.remove('on'); q.classList.remove('out'); ver.classList.remove('on'); win.classList.remove('on');
     doors.classList.remove('out'); lesson.classList.remove('on'); spark.classList.remove('go'); light.textContent = '+0';
     fin.className = 'pd-finger'; fin.style.left = '70%'; fin.style.top = '92%';

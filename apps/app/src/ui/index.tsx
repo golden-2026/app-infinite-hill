@@ -124,11 +124,8 @@ const ANIM: Record<string, any> = {
   celebrate: require("../../assets/mascot/celebrate.webp"),
   tap: require("../../assets/mascot/tap_reaction.webp"),
 };
-const POSE_ANIM: Record<string, string> = {
-  wave: "wave", cheer: "cheer", jump: "cheer", thumbs: "cheer", joy: "celebrate", celebrate: "celebrate",
-  walk: "walk", stride: "walk", stroll: "walk", hike: "walk", stickwalk: "walk", climb: "climb",
-  meditate: "meditate", think: "think", idea: "think", sitthink: "think", aha: "think", tap: "tap",
-};
+// only the loops whose source keeps him fully in frame; cheer/celebrate/meditate/think/tap clip at the top (re-render pending)
+const POSE_ANIM: Record<string, string> = { wave: "wave", walk: "walk", stride: "walk", stroll: "walk", hike: "walk", stickwalk: "walk", climb: "climb" };
 export function Guy({ pose = "wave", h = 160, style, still }: { pose?: string; h?: number; style?: any; still?: boolean }) {
   const reduce = useReducedMotion();
   const breath = useSharedValue(0);
