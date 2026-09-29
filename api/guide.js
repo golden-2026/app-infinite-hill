@@ -1,3 +1,5 @@
+import { recordOutcome, takeTurn } from "./_usage.js";
+
 const API_URL = "https://api.anthropic.com/v1/messages";
 const MAX_BODY_BYTES = 24 * 1024;
 const MAX_SYSTEM_CHARS = 12_000;
@@ -247,13 +249,17 @@ export default async function guide(req, res) {
 
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) return json(res, 503, { error: "Guide is not configured" });
+  const turn = await takeTurn(req, apiKey);
+  if (!turn.ok) return json(res, 429, { error: "Daily limit reached", limit: turn.who });
 
   try {
     const text = await providerAnswer(apiKey, request.door, request.messages, request.profile);
+    await recordOutcome(!!text);
     if (!text) return json(res, 502, { error: "Guide is temporarily unavailable" });
     return json(res, 200, { text });
   } catch {
     // Guide content and provider details are sensitive; never log request data, answers, or auth.
+    await recordOutcome(false);
     return json(res, 502, { error: "Guide is temporarily unavailable" });
   }
 }

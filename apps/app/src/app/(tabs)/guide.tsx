@@ -124,7 +124,9 @@ export default function Guide() {
       line = ["g", book.length ? "from your book — your own lines, with where each came from:\n\n" + book.map((b) => `“${b.line}”  — ${label(b.door)}, ${b.date}`).join("\n") + "\n\nthat's everything you've kept." : "your book is empty so far. after a session, tap keep it, and I'll be able to answer from your own lines."];
     } else if (live) {
       const reply = await askCompanion(hist.slice(1), question);
-      line = reply?.text
+      line = reply?.limited
+        ? ["g", `${pilotAnswer(wing, question, words, day)}\n\n(we've talked a lot today, so that's from your lessons. I'll be back tomorrow.)`]
+        : reply?.text
         ? ["g", reply.text, (reply.remember || []).filter((f) => typeof f === "string" && f.trim())]
         : ["g", `${pilotAnswer(wing, question, words, day)}\n\n(the companion couldn't answer just now, so that's from your lessons.)`];
     } else {

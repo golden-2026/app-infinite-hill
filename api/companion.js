@@ -5,6 +5,8 @@
 // said is ever logged; the provider key lives only in process.env.ANTHROPIC_API_KEY on the server.
 import data from "../packages/content/generated/data.js";
 import { DOORS, PROFILE_TEXT, inputError, parseJson, readLimitedText } from "./guide.js";
+import { recordOutcome, snapshot, takeTurn } from "./_usage.js";
+import { lastCheck } from "./ai-watch.js";
 
 const API_URL = "https://api.anthropic.com/v1/messages";
 // Sonnet 5: quick and warm enough for conversation, well inside Netlify's 10-second function limit when thinking is
@@ -144,6 +146,7 @@ function readMessages(v) {
 
 const SHAPES = {
   status: null,
+  health: null,
   shape: { keys: ["profile", "memory", "context", "candidates"], read: (v) => ({ profile: readProfile(v.profile), memory: readMemory(v.memory), context: readContext(v.context), candidates: readCandidates(v.candidates) }) },
   reflect: { keys: ["profile", "memory", "week"], read: (v) => ({ profile: readProfile(v.profile), memory: readMemory(v.memory), week: readWeek(v.week) }) },
   chat: { keys: ["profile", "memory", "context", "messages"], read: (v) => ({ profile: readProfile(v.profile), memory: readMemory(v.memory), context: readContext(v.context), messages: readMessages(v.messages) }) },
@@ -410,12 +413,15 @@ export default async function companion(req, res) {
   if (!kind) return json(res, 400, { error: "Unknown companion request" });
   const apiKey = process.env.ANTHROPIC_API_KEY;
 
-  if (kind === "status") {
+  if (kind === "status" || kind === "health") {
     if (req.method !== "GET") {
       res.setHeader("Allow", "GET");
       return json(res, 405, { error: "Method not allowed" });
     }
-    return json(res, 200, { on: !!apiKey });
+    if (kind === "status") return json(res, 200, { on: !!apiKey });
+    // For the owner: today's counts and the watcher's last check. Numbers and outage reasons only, nothing personal.
+    const [usage, watch] = await Promise.all([snapshot().catch(() => null), lastCheck()]);
+    return json(res, 200, { on: !!apiKey, usage, watch });
   }
 
   if (req.method !== "POST") {
@@ -433,14 +439,18 @@ export default async function companion(req, res) {
   }
   if (!request) return json(res, 400, { error: "Invalid companion request" });
   if (!apiKey) return json(res, 503, { error: "Companion is not configured" });
+  const turn = await takeTurn(req, apiKey);
+  if (!turn.ok) return json(res, 429, { error: "Daily limit reached", limit: turn.who });
 
   try {
     const job = JOBS[kind];
     const out = job.check(await providerJson(apiKey, job.prompt(request)), request);
+    await recordOutcome(!!out);
     if (!out) return json(res, 502, { error: "Companion is temporarily unavailable" });
     return json(res, 200, out);
   } catch {
     // Never log: requests carry a person's memory, questions and journal lines; errors may carry provider details.
+    await recordOutcome(false);
     return json(res, 502, { error: "Companion is temporarily unavailable" });
   }
 }
