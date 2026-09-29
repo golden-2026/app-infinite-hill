@@ -48,6 +48,7 @@ export default function LanternScreen() {
             ))}
           </View>
         ) : null}
+        {!lit ? <Guy pose="namaste" h={110} /> : null}
         {lit ? (
           <View style={{ alignItems: "center", gap: 10, width: "100%" }}>
             <Text style={{ fontFamily: font.display[800], fontSize: 20, color: color.gold }}>+{LANTERN_LIGHT} light</Text>
@@ -57,7 +58,7 @@ export default function LanternScreen() {
                 <Text style={{ fontFamily: font.display[800], fontSize: 22, color: color.ink, marginTop: 6 }}>“{gift.line}”</Text>
               </View>
             ) : null}
-            <Guy pose={lit ? "lantern" : "namaste"} h={110} />
+            <Guy pose="lantern" h={110} />
             {gift ? <ShareLantern line={gift.line} door={door} day={today} n={derived.showedUp} /> : null}
           </View>
         ) : null}

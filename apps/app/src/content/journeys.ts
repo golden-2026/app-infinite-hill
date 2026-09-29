@@ -202,8 +202,8 @@ export function trailFor(door: string): { stages: Stage[]; lookout: number; summ
       // named blocks falls back to a spread of its session titles
       const named = [...new Set(days.map((d) => String(d.part || "").replace(/^(Block|Weeks?|Part)\s+[\w–-]+\s*·\s*/i, "").split(" · ")[0].replace(/\s*\(.*$/, "").trim()).filter((p) => p && !/^(block|weeks?)\b/i.test(p)))];
       const parts = named.length >= 2 ? named : [0, 0.25, 0.5, 0.75].map((f) => String(days[Math.floor(f * days.length)]?.title || "").replace(/\s*\(.*$/, "")).filter(Boolean);
-      const promise = `walk through ${parts.slice(0, 3).map(lower).join(", ")}${parts.length > 3 ? " and more" : ""}`;
-      stages.push({ key: `Year ${k + 2}`, eyebrow: `year ${k + 2} · 365 days`, name: lower(theme), first, last: first + 364, samples: parts.slice(0, 4).map(lower), promise, outlined: true });
+      const promise = `walk through ${parts.slice(0, 3).join(", ")}${parts.length > 3 ? " and more" : ""}`;
+      stages.push({ key: `Year ${k + 2}`, eyebrow: `year ${k + 2} · 365 days`, name: lower(theme), first, last: first + 364, samples: parts.slice(0, 4), promise, outlined: true });
     }
     return { stages, lookout: YEAR_ONE, summit, planned: false };
   }

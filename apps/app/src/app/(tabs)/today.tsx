@@ -28,7 +28,7 @@ export default function Today() {
   const t = titleFor(p.lesson);
   const title = t.title || `${p.name.toLowerCase()} · lesson ${p.lesson}`;
   const hour = new Date().getHours();
-  const night = hour < 5 || hour >= 19;
+  const night = hour < 6 || hour >= 20; // same bedtime as the hill
   const strand = STRAND_WORDS(wing, lesson);
   const due = st.reviewedOn === today ? 0 : Math.min(3, strand.length); // reviewed today: rests till tomorrow
   const yest = lesson > 1 ? lessonInfo(wing, lesson - 1) || {} : null;
