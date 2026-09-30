@@ -63,12 +63,23 @@ const RUMI_PD = "Rumi's field beyond our ideas of right and wrong (a paraphrase;
       else if (v && typeof v === "object") lordsPrayer(v);
     }
   })(data);
-  // Outline wording fixes (owner, 2026-09-30): quote Pickthall's own words, and don't overclaim.
-  const fatiha = (data.CAMP1_ALL?.ISLAM || []).find((d) => d.day === 8);
-  if (fatiha && /guide us on the straight path/.test(fatiha.title)) {
-    fatiha.title = "\"show us the straight path\"";
-    fatiha.hook = "\"show us the straight path\" — the whole prayer is a request for directions";
-  }
+  // The Catholic Mass days (3–5) had "the Mass, scene N" as the day's word; each gets a real word. Day 6's title said
+  // "a teenage girl": Luke gives Mary no age (owner, 2026-09-30).
+  const MASS = { 1: "the Gospel", 2: "the sign of peace", 3: "the Eucharist" };
+  const cap = (s) => s[0].toUpperCase() + s.slice(1);
+  (function massWords(o) {
+    for (const k of Object.keys(o || {})) {
+      const v = o[k];
+      if (typeof v === "string") {
+        o[k] = v
+          .replace(/the Mass, scene (\d)/g, (m, n) => MASS[n] || m)
+          .replace(/The Mass, scene (\d)/g, (m, n) => (MASS[n] ? cap(MASS[n]) : m))
+          .replace(/THE MASS, SCENE (\d)/g, (m, n) => (MASS[n] ? MASS[n].toUpperCase() : m))
+          .replace(/teenage girl/g, "young woman").replace(/Teenage girl/g, "Young woman").replace(/TEENAGE GIRL/g, "YOUNG WOMAN");
+      } else if (v && typeof v === "object") massWords(v);
+    }
+  })(data);
+  rebuildIslamCamp1();
   const golden = (data.CAMP1_ALL?.SPIRITUAL || []).find((d) => d.day === 4);
   if (golden && /arrived at it on its own/.test(golden.title)) {
     golden.title = "the rule that keeps turning up";
@@ -76,8 +87,87 @@ const RUMI_PD = "Rumi's field beyond our ideas of right and wrong (a paraphrase;
   }
 }
 
+// Islam camp one, re-ordered (owner, 2026-09-30). The design build squeezed al-Fatiha into three "lines" (days 6–8),
+// so verse 5 had no day. Now each of its seven verses (Pickthall 1930 numbering, bismillah as verse 1) gets a day,
+// 6–12, titled in Pickthall's words; verse 5 is tawhid's day. Wudu → the Prophet ﷺ follow on 13–20 (dhikr absorbs
+// muraqaba); Yusuf and sabr leave camp one (they're taught on days 55–68 and 58). Day 21 stays. Moved topics keep
+// their entries (word, hook, carry); every day's shell segments are rebuilt so reviews and day numbers follow the
+// new order, and the placement quiz is re-drawn from it.
+function rebuildIslamCamp1() {
+  const old = data.CAMP1_ALL?.ISLAM;
+  if (!Array.isArray(old) || old.length !== 21 || old[5]?.word !== "al-Fatiha, line 1") return;
+  const byWord = (w) => old.find((d) => d.word === w);
+  const verse = (title, word, hook, carry) => ({ title: `"${title}"`, word, hook, length: "8:00", carry });
+  const tawhid = byWord("tawhid");
+  const dhikr = byWord("dhikr");
+  const order = [
+    ...old.slice(0, 5),
+    verse("In the name of Allah, the Beneficent, the Merciful", "al-Fatiha", "the opening — seven verses said seventeen times a day, and the first is a name", "in the name of the merciful"),
+    verse("Praise be to Allah, Lord of the Worlds", "Rabb", "the lord who raises and tends every world, not just yours", "every world is tended"),
+    verse("The Beneficent, the Merciful", "rahma", "mercy, named twice, before the word judgment ever appears", "mercy twice before anything else"),
+    verse("Owner of the Day of Judgment", "yawm ad-din", "a day when every account is settled, held by the one just named merciful", "the account is in kind hands"),
+    { ...tawhid, title: "\"Thee (alone) we worship; Thee (alone) we ask for help\"", hook: "the hinge of the prayer: it turns from talking about God to talking to God, and it says one" },
+    verse("Show us the straight path", "as-sirat al-mustaqim", "the whole prayer is a request for directions", "show us the way"),
+    verse("The path of those whom Thou hast favoured; Not (the path) of those who earn Thine anger nor of those who go astray", "amin", "the road described by the people on it, and the word said when the prayer ends", "walk with the ones who walked it well"),
+    byWord("wudu"), byWord("salat"), byWord("the adhan"), byWord("Jumu'ah"),
+    { ...dhikr, hook: "remembrance; a word repeated on the fingers, and the still watching (muraqaba) that sits beside it" },
+    byWord("Ramadan"), byWord("zakat"), byWord("the Prophet ﷺ"), byWord("juz' 'amma"),
+  ];
+  if (order.some((d) => !d)) return;
+  const N = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty", "twenty-one"];
+  const ord = (n) => `${n}${n % 10 === 1 && n !== 11 ? "st" : n % 10 === 2 && n !== 12 ? "nd" : n % 10 === 3 && n !== 13 ? "rd" : "th"}`;
+  const up = (s) => s.toUpperCase();
+  const capF = (s) => s[0].toUpperCase() + s.slice(1);
+  const plain = (s) => s.replace(/^"|"$/g, "");
+  const days = order.map((e, i) => {
+    const day = i + 1;
+    if (day <= 5) return e;
+    const prev = order[i - 1];
+    const hook = plain(e.hook);
+    return {
+      ...e, day,
+      segments: [
+        { type: "the bell", duration: null, voice: "", screen: [`\`DAY ${up(N[day])}.\``] },
+        { type: "review", duration: "15 sec", voice: `Yesterday: ${prev.word}. ${capF(prev.carry)}. Did it come up? Doesn't matter. Day ${N[day]}.`, screen: [`\`${up(prev.word)} ✓\` → \`DAY ${day}.\``] },
+        { type: "the hook", duration: "40 sec", voice: `${capF(hook)}. That's today.`, screen: [`\`${up(e.word)}.\``, `\`${up(hook)}\``] },
+        { type: "the teach", duration: "1 min 30", voice: `Here's the word: ${e.word}. ${capF(hook)}. Sit with that for a second — not the definition, the picture.`, screen: [`\`${up(e.word)}\``, `then, large: \`${up(e.carry)}\``] },
+        { type: "the practice", duration: "1 min 30", voice: `One minute. Eyes open or closed, your call. Breathe once. Now say the word to yourself — ${e.word} — and let the picture come back. When your mind wanders, and it will, come back to the word. That's the whole practice.`, screen: ["sky only, halo pulsing. Bell returns at 1:00."] },
+        { type: "the word", duration: "20 sec", voice: `${capF(e.word)}. Day ${N[day]}. It's yours now — it clicks onto the strand.`, screen: [`\`${up(e.word)} — your ${ord(day)} word\` → clicks onto the strand.`] },
+        { type: "the carry", duration: "15 sec", voice: `Your line to carry: ${e.carry}. That's day ${N[day]}. You showed up.`, screen: [up(e.carry)] },
+        { type: "the close", duration: null, voice: "", screen: [] },
+      ],
+    };
+  });
+  data.CAMP1_ALL.ISLAM = days;
+  // the "what do you already know?" quiz samples camp-one words; re-draw it from the new order (same days as before)
+  const pick = [1, 2, 3, 4, 6, 9, 13, 18].map((n) => days[n - 1]);
+  const quiz = pick.map((d) => ({
+    q: `${d.word} — what's underneath it?`,
+    o: [d.carry, days[(d.day + 6) % 21].carry, days[(d.day + 13) % 21].carry],
+    a: 0,
+  }));
+  if (data.PLACEMENT) data.PLACEMENT.ISLAM = quiz;
+  if (data.PLACE_ALL) data.PLACE_ALL.ISLAM = quiz.map((x) => ({ ...x, o: [...x.o] }));
+}
+
 export { data };
-export const { buildDay, icon, label, camp1, native, skyFor, faceFor, trailX, placeFromScore, guideFallback, iconsShared, splitBeats, screenLines, parseDur } = logic;
+export const { buildDay, icon, label, camp1, native, skyFor, faceFor, trailX, placeFromScore, iconsShared, splitBeats, screenLines, parseDur } = logic;
+// The design build's offline Guide matched a lesson's word anywhere inside the question ("amin" in "examine",
+// "al-Amin"). Match whole words only; everything else answers exactly as before.
+const escapeRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+export function guideFallback(wing, q) {
+  const ql = logic.strip(q);
+  const hit = logic.camp1(wing).find((d) => {
+    const w = d.word && logic.strip(d.word);
+    return w && new RegExp(`(^|[^\\p{L}\\p{N}'-])${escapeRe(w)}($|[^\\p{L}\\p{N}'-])`, "u").test(ql);
+  });
+  if (hit) {
+    const teach = (hit.segments || []).find((g) => /teach/.test(g.type));
+    const first = teach ? logic.splitBeats(teach.voice, 40, 99)[0] : null;
+    return `${hit.word} — ${hit.carry}. ${first || ""} (that's from day ${hit.day}. I'm offline right now, so that's the lesson talking, not me.)`;
+  }
+  return `I can't reach the texts right now — no signal. Ask me again in a minute, or ask about one of your words so far.`;
+}
 
 // ─── the five-year path ─────────────────────────────────────────────────────
 // Year one is the five camps (331 days); years two to five follow, 365 days each. The owner's Hinduism plan
