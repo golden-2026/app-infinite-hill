@@ -15,18 +15,21 @@ export function howItsDoneLine(practiceVoice: string): string {
   return "This is where the lesson usually pauses for a minute of practice. People who keep this path make small practices like this part of their day. You're here to learn, so there's nothing to do. Just know that's how it's done.";
 }
 
-/** The lesson's steps for someone who is here to learn: no breath, no sit, and the practice told, not asked. */
-export function learnSteps<T extends Step>(steps: T[]): T[] {
+/**
+ * The lesson's steps for someone who is here to learn: no breath, no sit, and the practice told, not asked.
+ * `told`: a full script's own "how it's done" line (script.howItsDone), used in place of the generic one when given.
+ */
+export function learnSteps<T extends Step>(steps: T[], told?: string | null): T[] {
   const practice = steps.filter((s) => s.type === "beat" && /^the practice/.test(String(s.seg || "")));
   const voice = practice.map((s) => String(s.text || "")).join(" ");
   const out: T[] = [];
-  let told = false;
+  let done = false;
   for (const s of steps) {
     if (s.type === "breath" || s.type === "sit") continue;
     if (practice.includes(s)) {
-      if (told) continue;
-      told = true;
-      out.push({ ...s, seg: HOW_ITS_DONE, head: null, text: howItsDoneLine(voice) });
+      if (done) continue;
+      done = true;
+      out.push({ ...s, seg: HOW_ITS_DONE, head: null, text: told && told.trim() ? told.trim() : howItsDoneLine(voice) });
       continue;
     }
     out.push(s);

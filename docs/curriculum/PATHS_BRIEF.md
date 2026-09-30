@@ -25,7 +25,7 @@ Write five files in `docs/curriculum/<door-lowercase>/`: `y1.md` (days 22–331)
 
 ## Rules
 - Accurate and respectful. Follow mainstream scholarship and the tradition's own self-understanding; where traditions within the path differ, say "Catholics say… Protestants say…" style, never rank. No invented quotations; paraphrase, and cite chapter/verse or section in the title or hook where you draw on a text (e.g. "(Mark 4:35–41)", "(Surah 12)", "(Dhammapada 1)").
-- Public-domain translations only for anything quoted (e.g. KJV/Douay-Rheims/JPS 1917/Yusuf Ali 1934 or Pickthall/Max Müller or Rhys Davids/Macauliffe for Sikh texts/Long for Marcus Aurelius…).
+- Public-domain translations only for anything quoted (e.g. KJV/Douay-Rheims/JPS 1917/Pickthall 1930 for the Qur'an (not Yusuf Ali 1934, which stays under US copyright until 2030)/Max Müller or Rhys Davids/Macauliffe 1909 only for Sikh scripture (Gopal Singh and Manmohan Singh are not public domain)/Long for Marcus Aurelius; never Coleman Barks for Rumi…).
 - Never pushy, never compares religions, never tells people what to believe; practices are invitations. Keep sensitive history (e.g. 1984 for Sikhs, the Holocaust, colonialism) honest and careful.
 - Simply Spiritual (SPIRITUAL) draws from every tradition and from Stoics/science, always tagged with its source, never blended into one teaching; its year five should include the "summit" framing of living it.
 

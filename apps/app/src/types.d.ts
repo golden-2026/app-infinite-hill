@@ -41,7 +41,7 @@ declare module "@ih/content" {
   export const OUTLINES: Readonly<Record<string, Map<number, any>>>;
   export const DOORS: [string, string][];
   export const GRADED: readonly string[];
-  export function planDay(o: { wing: string; day: number; lesson?: number; mode?: string; named?: boolean; level?: number }): { steps: any[]; word: string; carry: string; title: string; info: any };
+  export function planDay(o: { wing: string; day: number; lesson?: number; mode?: string; named?: boolean; level?: number; script?: any | null }): { steps: any[]; word: string; carry: string; title: string; info: any };
   export const LEVELS: readonly string[];
   export function clampLevel(n: number): number;
   export function deeperRound(wing: string, day: number, level: number): any[];
@@ -63,6 +63,13 @@ declare module "@ih/content" {
   export function KNOW(w: string): string[];
   export function SUN_NOTES(wing: string, short: string, word: string): any[];
   export function STRAND_WORDS(wing: string, lesson: number): { word: string; day: number; title: string }[];
+}
+declare module "@ih/content/lesson-script" {
+  export type LessonStore = { get(key: string): any; set(key: string, value: unknown): unknown };
+  /** The full script for a door's day, or null (no script yet, or offline with nothing kept). Never throws. */
+  export function lessonScript(door: string, day: number, o?: { base?: string; fetch?: typeof fetch; store?: LessonStore | null }): Promise<any | null>;
+  export function resetLessonCache(): void;
+  export function chunkOf(day: number): string;
 }
 declare module "@ih/brand" {
   export const color: Record<string, any>;

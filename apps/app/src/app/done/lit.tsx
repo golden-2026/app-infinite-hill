@@ -15,6 +15,11 @@ import { useCompanionDay } from "@/lib/companion/use-companion";
 import { FRIEND_MILESTONES, useFriends } from "@/lib/friends";
 import { Btn, Card, Guy, Screen, Sun, color, font, type } from "@/ui";
 import { GOLDEN, Odometer, RestBank, WeekRow } from "@/ui/streak";
+import { ShareCardButton } from "@/ui/share-card";
+
+/** The milestones that offer a card to share (streak), and the days-together ones (friend streak). */
+const SHARE_MILESTONES = [30, 100, 365];
+const SHARE_TOGETHER = [30, 100];
 
 // The streak screen, after every lesson that grows it (and after an earn-back). The number ticks up like an
 // odometer, the mascot celebrates, and the week reads Monday to Sunday: checks for lesson days, moons for rest days.
@@ -97,11 +102,20 @@ export default function Lit() {
         <View style={{ marginTop: 20 }}><WeekRow s={s} today={today} /></View>
         <View style={{ marginTop: 14 }}><RestBank n={s.rest} /></View>
 
+        {/* the big milestones get a card to share: the number, the sun, the mascot, the path's name, a link. Nothing private. */}
+        {milestone && SHARE_MILESTONES.includes(milestone) && newDay ? (
+          <View style={{ marginTop: 16, width: "100%" }}><ShareCardButton testID="share-milestone" kind="gold" spec={{ kind: "streak", n: milestone, door: p.door || st.homeWing }} /></View>
+        ) : null}
+
         {together.length > 0 && !quiet ? (
           // a friend streak milestone (7, 30, 100 days together), counted by the friends server after today's check-in
-          <Card testID="friend-milestone" style={{ marginTop: 16, width: "100%", flexDirection: "row", alignItems: "center", gap: 10 }}>
-            <Sun size={30} mood="happy" />
-            <Text style={[type.body(14), { flex: 1 }]}>{`${together[0].together} days together with ${together[0].nick}.`}</Text>
+          <Card testID="friend-milestone" style={{ marginTop: 16, width: "100%", gap: 10 }}>
+            <View style={{ flexDirection: "row", alignItems: "center", gap: 10 }}>
+              <Sun size={30} mood="happy" />
+              <Text style={[type.body(14), { flex: 1 }]}>{`${together[0].together} days together with ${together[0].nick}.`}</Text>
+            </View>
+            {/* the card itself never names the friend */}
+            {SHARE_TOGETHER.includes(together[0].together) ? <ShareCardButton testID="share-together" spec={{ kind: "together", n: together[0].together, door: st.homeWing }} /> : null}
           </Card>
         ) : null}
         {earnBack && !quiet ? (

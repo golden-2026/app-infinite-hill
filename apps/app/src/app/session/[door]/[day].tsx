@@ -6,6 +6,9 @@ import { DOORS, GRADED, LEVELS, deeperRound, icon, label, lessonInfo, native, pl
 import { levelFor } from "@/lib/level";
 import { practiceModeOf } from "@/lib/onboard";
 import { learnSteps } from "@/session/learn";
+import { lessonScript } from "@ih/content/lesson-script";
+import { LESSONS_BASE, lessonStore } from "@/lib/lessons";
+import { scriptWithin } from "@/session/script-load";
 import { RhythmStep, RushStep, SayStep, ScenesStep, TypeItStep } from "@/session/games";
 import { LinearGradient } from "expo-linear-gradient";
 import { Redirect, router, useLocalSearchParams, useNavigation } from "expo-router";
@@ -43,10 +46,35 @@ export default function SessionScreen() {
   if (!Number.isInteger(day) || day < 1 || day > current) return <Redirect href={{ pathname: "/session/[door]/[day]", params: { door: door || saved.settings.homeWing, day: String(current) } }} />;
   // "go deeper" is an extra round on a lesson already walked today; children don't get it
   const deep = params.deep === "1" && !kid;
-  return <Session door={door} day={day} kidId={kid?.id ?? null} mode={mode} deep={deep} voiceOn={saved.settings.voiceOn} onFinish={completeSit} />;
+  return <ScriptedSession key={`${door}:${day}`} door={door} day={day} kidId={kid?.id ?? null} mode={mode} deep={deep} voiceOn={saved.settings.voiceOn} onFinish={completeSit} />;
 }
 
-function Session({ door, day, kidId, mode, deep, voiceOn, onFinish }: { door: string; day: number; kidId: string | null; mode: string; deep: boolean; voiceOn: boolean; onFinish: ReturnType<typeof useStore>["completeSit"] }) {
+// The day's full script (docs/curriculum/LESSON_LOADER.md) is resolved before the lesson starts, so the steps never
+// change under the resume logic. A door or day with no script, no network with nothing kept, or a slow answer (over
+// 2.5 s) gets null, and the lesson is built from the outline exactly as before.
+function ScriptedSession(props: Parameters<typeof Session>[0]) {
+  const { door, day } = props;
+  const [script, setScript] = useState<any | null | undefined>(undefined); // undefined = still looking
+  useEffect(() => {
+    let live = true;
+    scriptWithin(() => lessonScript(door, day, { base: LESSONS_BASE, store: lessonStore })).then((s) => { if (live) setScript(s); });
+    return () => { live = false; };
+  }, [door, day]);
+  if (script === undefined) return <LessonLoading />;
+  return <Session {...props} script={script} />;
+}
+
+/** A moment while the day's script arrives: the lesson's own gradient and the mascot, no text. */
+function LessonLoading() {
+  useChrome(true);
+  return (
+    <LinearGradient colors={color.dusk} locations={[0, 0.6, 1]} style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <View accessibilityRole="progressbar" accessibilityLabel="opening today's lesson" testID="lesson-loading"><Guy pose="wave" h={170} /></View>
+    </LinearGradient>
+  );
+}
+
+function Session({ door, day, kidId, mode, deep, voiceOn, onFinish, script = null }: { door: string; day: number; kidId: string | null; mode: string; deep: boolean; voiceOn: boolean; onFinish: ReturnType<typeof useStore>["completeSit"]; script?: any | null }) {
   const ic = icon(door);
   const { earnLight, recordRun, recordFeel, update, saved: me } = useStore();
   useTitle(`${label(door).toLowerCase()} · day ${day}${deep ? " · deeper" : ""}`);
@@ -56,14 +84,14 @@ function Session({ door, day, kidId, mode, deep, voiceOn, onFinish }: { door: st
   // "just learn": no breath or sit, and the practice is told as how it's done (fixed for the whole lesson)
   const [learn] = useState(() => practiceModeOf(me.settings.profile) === "learn");
   const plan = useMemo(() => {
-    const p = !deep ? planDay({ wing: door, day, mode, level: mode === "adult" ? level : 0 }) : { ...planDay({ wing: door, day, mode }), steps: deeperRound(door, day, level) };
-    return learn ? { ...p, steps: learnSteps(p.steps) } : p;
-  }, [door, day, mode, level, deep, learn]);
+    const p = !deep ? planDay({ wing: door, day, mode, level: mode === "adult" ? level : 0, script }) : { ...planDay({ wing: door, day, mode, script }), steps: deeperRound(door, day, level) };
+    return learn ? { ...p, steps: learnSteps(p.steps, p.info?.script ? p.info.howItsDone : null) } : p;
+  }, [door, day, mode, level, deep, learn, script]);
   const shownLevel = deep ? Math.min(5, level + 2) : level;
   const [rushSecs, setRushSecs] = useState<number | null>(null);
   const [feel, setFeel] = useState<string | null>(null);
   // A reload mid-lesson picks up where you were (same lesson, same day only); finishing or leaving clears it.
-  const resumeKey = `ih:lesson:${door}:${day}:${kidId || "me"}${deep ? ":deep" : ""}:L${level}`;
+  const resumeKey = `ih:lesson:${door}:${day}:${kidId || "me"}${deep ? ":deep" : ""}:L${level}${script ? ":S" : ""}`;
   const [saved0] = useState(() => {
     const r = readJSON<any>(resumeKey, null);
     const ids = new Set(plan.steps.map((s) => s.id));
@@ -158,7 +186,8 @@ function Session({ door, day, kidId, mode, deep, voiceOn, onFinish }: { door: st
       router.replace("/today");
       return;
     }
-    if (!kidId) recordRun({ door, day, acc: asked ? score.right / asked : 1, level, rushSecs });
+    const minutes = Math.max(1, Math.round((Date.now() - t0.current) / 60000));
+    if (!kidId) recordRun({ door, day, acc: asked ? score.right / asked : 1, level, rushSecs, minutes });
     // a one-off visit to another door comes straight back to your own path
     if (!kidId && door !== me.settings.homeWing && me.settings.active === "visit") update({ active: "home" });
     const outcome = onFinish({ door, day, kidId });
@@ -170,7 +199,6 @@ function Session({ door, day, kidId, mode, deep, voiceOn, onFinish }: { door: st
       else router.canGoBack() ? router.back() : router.replace("/you/table");
       return;
     }
-    const minutes = Math.max(1, Math.round((Date.now() - t0.current) / 60000));
     const st = outcome.streak;
     // the streak's facts ride along to the after-lesson screens (the streak screen is /done/lit); nothing shows in the lesson itself
     router.replace({ pathname: "/done", params: { door, day: String(day), right: String(score.right), total: String(score.asked), word: plan.word, carry: plan.carry, minutes: String(minutes), newDay: outcome.isNewDay ? "1" : "0", count: String(outcome.showedUp), milestone: st.milestone ? String(st.milestone) : "", streak: String(st.after), prev: String(st.before), restored: st.restored ? "1" : "" } });

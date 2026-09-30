@@ -29,6 +29,44 @@ if (Array.isArray(data.LEGAL) && data.LEGAL[1]?.[0] === "Privacy") {
   }
 })(data);
 
+// Sources that aren't what they claim (script pilot, 2026-09-30). The design build quoted Pascal's popular modern
+// paraphrase as his words, quoted Coleman Barks's copyrighted Rumi (not public domain), and told a story about the
+// Prophet ﷺ (a neighbor's rubbish at his door) that has no source in the major hadith collections.
+const PASCAL_POP = /all of humanity['’]s problems stem from man['’]s inability to sit quietly in a room alone/g;
+const PASCAL_PD = "all the unhappiness of men arises from one single fact, that they cannot stay quietly in their own chamber (Pensées 139, Trotter's 1910 translation)";
+const BARKS = /["“]out beyond ideas of wrongdoing and rightdoing there is a field["”]/g;
+const RUMI_PD = "Rumi's field beyond our ideas of right and wrong (a paraphrase; the well-known wording is a modern, copyrighted version)";
+(function fixSources(o) {
+  for (const k of Object.keys(o || {})) {
+    const v = o[k];
+    if (typeof v === "string") o[k] = v.replace(PASCAL_POP, PASCAL_PD).replace(BARKS, RUMI_PD);
+    else if (v && typeof v === "object") fixSources(v);
+  }
+})(data);
+{
+  const pascal = (data.CAMP1_ALL?.SPIRITUAL || []).find((d) => d.day === 2);
+  if (pascal && /humanity/.test(pascal.title)) pascal.title = "pascal: the quiet room";
+  if (data.ADULT?.ISLAM?.fork && /rubbish/.test(data.ADULT.ISLAM.fork.setup)) {
+    data.ADULT.ISLAM.fork = {
+      setup: "a funeral procession passes the Prophet ﷺ and his companions, and he stands. someone tells him it's a Jewish man's funeral. what does he do?",
+      options: ["sits back down.", "says it's not their concern.", "stays standing: was it not a soul?"],
+      answer: 2,
+      reveal: "he stayed standing, and said, in effect: was it not a soul? (Sahih al-Bukhari 1312; Sahih Muslim 961). the peace of salaam is owed to every person.",
+    };
+  }
+  // Outline wording fixes (owner, 2026-09-30): quote Pickthall's own words, and don't overclaim.
+  const fatiha = (data.CAMP1_ALL?.ISLAM || []).find((d) => d.day === 8);
+  if (fatiha && /guide us on the straight path/.test(fatiha.title)) {
+    fatiha.title = "\"show us the straight path\"";
+    fatiha.hook = "\"show us the straight path\" — the whole prayer is a request for directions";
+  }
+  const golden = (data.CAMP1_ALL?.SPIRITUAL || []).find((d) => d.day === 4);
+  if (golden && /arrived at it on its own/.test(golden.title)) {
+    golden.title = "the rule that keeps turning up";
+    golden.hook = "traditions far apart, over thousands of years, taught some version of it";
+  }
+}
+
 export { data };
 export const { buildDay, icon, label, camp1, native, skyFor, faceFor, trailX, placeFromScore, guideFallback, iconsShared, splitBeats, screenLines, parseDur } = logic;
 

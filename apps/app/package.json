@@ -53,7 +53,8 @@
     "web": "expo start --web",
     "lint": "expo lint",
     "typecheck": "tsc --noEmit",
-    "export:web": "expo export --platform web"
+    "lessons": "node ../../packages/content/scripts/build-lessons.mjs",
+    "export:web": "npm run lessons && expo export --platform web"
   },
   "private": true
 }

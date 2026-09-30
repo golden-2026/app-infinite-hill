@@ -11,6 +11,8 @@ import { readJSON, remove, writeJSON } from "./storage";
 import { timeZone, today as todayNow } from "./time";
 import { cleanProfile, type Profile } from "./profile";
 import { eraseCompanion } from "./companion/memory";
+import { addMinutes, type Timed } from "./year";
+import type { QuestState } from "@/content/seasons";
 import { leaveFriends } from "./friends";
 
 export const STORE_KEY = "ih:app:v1";
@@ -50,6 +52,12 @@ export type Settings = {
   deepOn?: string | null;
   /** The one-tap "how did that feel?" after a lesson (kept on the phone; for playtests). */
   feel?: { date: string; door: string; day: number; level: number; feel: "slow" | "right" | "hard" }[];
+  /** Seasonal quests by season id ("lent-2027"): when they joined, or said "not this time". Progress is derived. */
+  quests?: Record<string, QuestState>;
+  /** Minutes each date's lessons took (timed start to finish, capped): "hours learned" reads it. */
+  timed?: Timed;
+  /** The new-year recap offer they've opened or closed (e.g. "HINDUISM:2026-11-08"). */
+  yearSeen?: string | null;
 };
 
 type Saved = { v: 1; deviceId: string; sits: Sit[]; outbox: string[]; settings: Settings; settingsVersion: number };
@@ -121,7 +129,8 @@ type Store = {
   keepLine: (line: string, door: string) => void;
   earnLight: (n: number, best?: number, clean?: boolean) => void;
   openLantern: (bonus: number) => void;
-  recordRun: (r: { door: string; day: number; acc: number; level: number; rushSecs?: number | null; deep?: boolean }) => void;
+  recordRun: (r: { door: string; day: number; acc: number; level: number; rushSecs?: number | null; deep?: boolean; minutes?: number }) => void;
+  setQuest: (id: string, q: QuestState | null) => void;
   recordFeel: (f: { door: string; day: number; level: number; feel: "slow" | "right" | "hard" }) => void;
   addSignal: (sig: Settings["signals"][number]) => void;
   markWelcomedBack: () => void;
@@ -194,12 +203,18 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       return { ...s, settings: { ...s.settings, light: (s.settings.light || 0) + Math.max(0, n), glow: { date, best: Math.max(prev, best), clean: clean || (s.settings.glow?.date === date && !!s.settings.glow.clean) } }, settingsVersion: s.settingsVersion + 1 };
     }),
     openLantern: (bonus) => commit((s) => ({ ...s, settings: { ...s.settings, light: (s.settings.light || 0) + bonus, lanternOn: todayNow() }, settingsVersion: s.settingsVersion + 1 })),
-    recordRun: ({ door, day, acc, level, rushSecs, deep }) => commit((s) => {
+    setQuest: (id, q) => commit((s) => {
+      const quests = { ...(s.settings.quests || {}) };
+      if (q) quests[id] = q; else delete quests[id];
+      return { ...s, settings: { ...s.settings, quests }, settingsVersion: s.settingsVersion + 1 };
+    }),
+    recordRun: ({ door, day, acc, level, rushSecs, deep, minutes }) => commit((s) => {
       const date = todayNow();
       const runs = deep ? s.settings.runs || [] : [...(s.settings.runs || []), { date, door, day, acc: Math.max(0, Math.min(1, acc)), level }].slice(-12);
       const prev = s.settings.rushBest?.[door];
       const rushBest = rushSecs ? { ...(s.settings.rushBest || {}), [door]: prev ? Math.min(prev, rushSecs) : rushSecs } : s.settings.rushBest;
-      return { ...s, settings: { ...s.settings, runs, rushBest, deepOn: deep ? date : s.settings.deepOn }, settingsVersion: s.settingsVersion + 1 };
+      const timed = !deep && minutes ? addMinutes(s.settings.timed, date, minutes) : s.settings.timed;
+      return { ...s, settings: { ...s.settings, runs, rushBest, timed, deepOn: deep ? date : s.settings.deepOn }, settingsVersion: s.settingsVersion + 1 };
     }),
     recordFeel: (f) => commit((s) => ({ ...s, settings: { ...s.settings, feel: [...(s.settings.feel || []).filter((x) => !(x.date === todayNow() && x.door === f.door && x.day === f.day)), { ...f, date: todayNow() }].slice(-60) }, settingsVersion: s.settingsVersion + 1 })),
     markWelcomedBack: () => commit((s) => ({ ...s, settings: { ...s.settings, welcomedBackOn: todayNow() }, settingsVersion: s.settingsVersion + 1 })),

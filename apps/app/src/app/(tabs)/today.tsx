@@ -17,10 +17,16 @@ import { useCompanionDay } from "@/lib/companion/use-companion";
 import { CompanionCard, HelpCard, ReflectCard } from "@/ui/companion";
 import { StreakChip } from "@/ui/streak";
 import { goalView, weekdayOf } from "@/lib/streak";
+import { useSeasons } from "@/lib/quests";
+import { newYearNow } from "@/content/seasons";
+import { QuestTodayCard } from "@/ui/quest";
 
 export default function Today() {
   useTitle("today");
-  const { saved, derived, door, lessonFor, update, markWelcomedBack, demoShiftDays, today } = useStore();
+  const { saved, derived, door, lessonFor, update, markWelcomedBack, demoShiftDays, today, setQuest } = useStore();
+  const seasons = useSeasons();
+  const newYear = newYearNow(saved.settings.homeWing, today);
+  const newYearKey = newYear ? `${newYear.door}:${newYear.date}` : null;
   const st = saved.settings;
   const wing = door;
   const ic = icon(wing);
@@ -115,6 +121,28 @@ export default function Today() {
               <Btn testID="earn-back-go" kind="gold" style={{ marginTop: 6, alignSelf: "flex-start", paddingHorizontal: 16 }}
                 onPress={doneHere ? () => router.push({ pathname: "/session/[door]/[day]", params: { door: wing, day: String(lesson) } }) : start}>{doneHere ? "one more lesson" : `start day ${lesson}`}</Btn>
             </View>
+          </Card>
+        ) : null}
+
+        {/* a season quest for their own door (or a visit or a taste they chose): an offer from 7 days out, then the path */}
+        {seasons.card && (seasons.card.kind === "progress" || !quiet) ? (
+          <QuestTodayCard card={seasons.card} mode={seasons.mode}
+            onJoin={() => { setQuest(seasons.card!.season.id, { joined: today }); track("quest_joined", { days: seasons.card!.season.length }); }}
+            onDecline={() => setQuest(seasons.card!.season.id, { declined: today })} />
+        ) : null}
+
+        {/* the tradition's new year: "your year on the hill", for a week */}
+        {newYear && derived.showedUp >= 3 && st.yearSeen !== newYearKey && !quiet ? (
+          <Card testID="year-offer" style={{ marginHorizontal: 18, marginBottom: 12, flexDirection: "row", gap: 12, alignItems: "center" }}>
+            <Pressable accessibilityRole="button" accessibilityLabel="see your year on the hill" onPress={() => { update({ yearSeen: newYearKey }); router.push("/year"); }} style={({ pressed }) => ({ flex: 1, flexDirection: "row", gap: 12, alignItems: "center", opacity: pressed ? 0.8 : 1 })}>
+              <Sun size={40} mood="happy" />
+              <View style={{ flex: 1 }}>
+                <Text style={[type.eyebrow(8), { color: color.ink }]}>{newYear.name} · a new year</Text>
+                <Text style={{ fontFamily: font.display[800], fontSize: 16, color: color.ink, marginTop: 3 }}>your year on the hill is ready.</Text>
+                <Text style={[type.body(12), { color: color.mute, marginTop: 2 }]}>days, words, hours learned. a minute to look back.</Text>
+              </View>
+            </Pressable>
+            <Pressable accessibilityRole="button" accessibilityLabel="Dismiss" onPress={() => update({ yearSeen: newYearKey })} hitSlop={10}><Text style={type.eyebrow(12)}>✕</Text></Pressable>
           </Card>
         ) : null}
 

@@ -18,6 +18,8 @@ import { setLearnFact, useMemory } from "@/lib/companion/memory";
 import { practiceModeOf } from "@/lib/onboard";
 import { Btn, Card, Eyebrow, Guy, Sun, color, font, type, toast } from "@/ui";
 import { Group, Row } from "@/ui/row";
+import { hoursWords, minutesLearned } from "@/lib/year";
+import { useSeasons } from "@/lib/quests";
 
 export default function You() {
   useTitle("you");
@@ -29,6 +31,9 @@ export default function You() {
   const ic = icon(wing);
   const day = lessonFor(wing);
   const memory = useMemory();
+  const own = saved.sits.filter((x) => !x.kidId);
+  const learned = { ...minutesLearned(own, st.timed), lessons: own.length };
+  const { finished: badges } = useSeasons();
   const [changing, setChanging] = useState(false);
   const [adding, setAdding] = useState(false);
   const [shareMsg, setShareMsg] = useState<string | null>(null);
@@ -66,6 +71,11 @@ export default function You() {
           <Text style={type.body()}>
             {label(wing)} · day {day} · read by {voiceLabel(wing, ic.short).short}{st.visitWing ? ` · also walking ${label(st.visitWing)} · day ${lessonFor(st.visitWing)}` : ""} · {derived.showedUp} {derived.showedUp === 1 ? "day" : "days"} on the hill{st.streakOn !== false ? ` · ${derived.streak.streak}-day streak${derived.streak.longest > derived.streak.streak ? ` (longest ${derived.streak.longest})` : ""}` : ""}
           </Text>
+          {learned.lessons > 0 ? (
+            <Text testID="hours-learned" style={[type.body(13), { color: color.ink }]}>
+              {`${hoursWords(learned.minutes)} learned`}<Text style={{ color: color.mute }}>{learned.estimatedLessons ? ` · ${learned.timedLessons ? "partly " : ""}estimated at about 5 min a lesson` : " · timed from your lessons"}</Text>
+            </Text>
+          ) : null}
           <Text style={[type.caption(), email ? { color: color.ink } : null]}>
             {email ? `saved to ${email}${sync.state === "offline" ? " · offline, will sync" : sync.state === "syncing" ? " · syncing" : ""}` : "your days live on this phone."}
           </Text>
@@ -138,7 +148,8 @@ export default function You() {
           </Group>
           <Group title="yours">
             <Row a="your table" b={st.kids.length ? `${st.kids.map((k) => k.name).join(", ")} · each with their own hill` : "add a child · they sit in kid mode, you see their strand"} onPress={() => router.push("/you/table")} />
-            <Row a="your book" b={st.book.length ? `${st.book.length} line${st.book.length === 1 ? "" : "s"} you kept` : "the lines you keep, in your order"} onPress={() => router.push("/you/book")} />
+            <Row testID="row-year" a="your year so far" b={`${derived.showedUp} ${derived.showedUp === 1 ? "day" : "days"} · ${hoursWords(learned.minutes)} learned${badges.length ? ` · ${badges.length} season ${badges.length === 1 ? "badge" : "badges"}` : ""} · a look back, card by card`} onPress={() => router.push({ pathname: "/year", params: { so: "1" } })} />
+            <Row a="your book"b={st.book.length ? `${st.book.length} line${st.book.length === 1 ? "" : "s"} you kept` : "the lines you keep, in your order"} onPress={() => router.push("/you/book")} />
             <Row testID="row-account" a={accountsOn() ? "account" : "your data"} b={email ? `${email} · sign out · export · delete` : accountsOn() ? "save with email · export · delete" : "export · move to a new phone · erase"} onPress={() => router.push("/you/account")} />
           </Group>
           <Group title="about">
