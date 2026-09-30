@@ -22,8 +22,8 @@ export default function You() {
   const [step, setStep] = useState(0);
   const q = step === 0 ? STANCE_Q : raisedInQ(stance);
 
-  const done = (s: Stance | null, raisedIn: string | null) => {
-    update({ profile: pendingProfile(today, s, raisedIn) });
+  const done = (s: Stance | null, raisedIn: string | null, learning: string | null = null) => {
+    update({ profile: pendingProfile(today, s, raisedIn, learning) });
     router.push("/welcome/door");
   };
   const pick = (id: string | null) => {
@@ -31,7 +31,8 @@ export default function You() {
       setStance(id as Stance | null);
       if (id) setStep(1);
       else done(null, null);
-    } else done(stance, id);
+    } else if (stance === "partner") done(stance, null, id);
+    else done(stance, id);
   };
 
   return (

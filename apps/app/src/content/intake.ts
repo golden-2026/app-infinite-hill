@@ -32,6 +32,7 @@ export const STANCE_Q: Question = {
     { id: "practice", label: "I practice a faith" },
     { id: "unsure", label: "I grew up in one, but I'm not sure I believe anymore" },
     { id: "left", label: "I grew up in one and left it" },
+    { id: "partner", label: "learning my partner's or family's faith" },
     { id: "curious", label: "no religion — just curious" },
     { id: "many", label: "exploring more than one" },
     { id: "spiritual", label: "spiritual, not religious" },
@@ -40,6 +41,12 @@ export const STANCE_Q: Question = {
 
 /** The follow-up: which tradition (same ids as the intake's `raised`, so "my own path" doesn't ask it again). */
 export function raisedInQ(stance: string | null): Question {
+  // Learning a partner's or family's faith: ask which one they're learning, never where they grew up.
+  if (stance === "partner") return {
+    id: "learning", ask: "Lovely. Which faith are you learning?",
+    note: "we'll teach it the way the people who practice it understand it. your own background stays yours.",
+    choices: RAISED.filter((c) => c.id !== "none" && c.id !== "mixed"),
+  };
   const grewUp = stance === "unsure" || stance === "left";
   const ask = stance === "practice" ? "Lovely. Which one?" : grewUp ? "Which one did you grow up in?" : "Did you grow up in a religion?";
   const choices = RAISED.filter((c) => (stance === "practice" || grewUp ? c.id !== "none" : true))

@@ -15,6 +15,7 @@ import { WelcomeFrame } from "@/ui/welcome-frame";
 // The door screen, curated by what they told us on the first step (welcome/you). It never chooses for anyone, and
 // every door is always one tap away:
 //   practices a tradition we have      → only their door ("your door"); other doors stay folded until they ask
+//   learning a partner's/family's faith → that faith ("the faith you're learning"); other doors folded
 //   grew up in one, not sure           → their roots with fresh eyes, and "my own path" offered softly beside it
 //   grew up in one and left it         → "my own path" and their roots with fresh eyes, both offered softly
 //   no religion / exploring / spiritual → "my own path" as the hero, "or walk one door" below
@@ -25,9 +26,10 @@ export default function PickDoor() {
   useEffect(() => { track("onboard_step", { step: "door" }); }, []);
   useTitle("pick a door");
   const { saved } = useStore();
-  const { stance, raisedIn } = youAnswers(saved.settings.profile);
-  const home = isDoor(raisedIn) ? raisedIn : null;
-  const mode = stance === "practice" ? (home ? "yours" : "closest")
+  const { stance, raisedIn, learning } = youAnswers(saved.settings.profile);
+  const home = stance === "partner" ? (isDoor(learning) ? learning : null) : isDoor(raisedIn) ? raisedIn : null;
+  const mode = stance === "partner" ? (home ? "partner" : "closest")
+    : stance === "practice" ? (home ? "yours" : "closest")
     : stance === "unsure" ? (home ? "roots" : "own")
     : stance === "left" ? (home ? "left" : "own")
     : stance ? "own" : "open";
@@ -51,7 +53,14 @@ export default function PickDoor() {
 
   let host: string;
   let body: ReactNode;
-  if (mode === "yours") {
+  if (mode === "partner") {
+    host = `Here's ${label(home!)}, taught the way the people who practice it understand it. No belief asked of you.`;
+    body = <>
+      <BigDoorCard door={home!} eyebrow="the faith you're learning" a11y={`${label(home!)}, the faith you're learning`} on={door === home} onPress={() => setDoor(home!)}
+        line="what things mean to the people who practice them — the words, the holidays, the table." />
+      {folded(<>{or("every door")}{grid(home)}{own("soft")}</>)}
+    </>;
+  } else if (mode === "yours") {
     host = `Welcome in. Here's your door.`;
     body = <>
       <BigDoorCard door={home!} eyebrow="your door" on={door === home} onPress={() => setDoor(home!)} />

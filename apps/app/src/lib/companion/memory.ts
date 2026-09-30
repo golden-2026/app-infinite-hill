@@ -102,7 +102,9 @@ export function factsFromProfile(p: Profile | null | undefined, o: { kids?: numb
     hard: "you're going through something hard.", curious: "you came here out of curiosity.",
   };
   const why = one("why");
-  if (why && WHY[why]) add(`why:${why}`, WHY[why]);
+  // Picked "learning my partner's or family's faith" on the first step: one line naming the faith they're learning.
+  if (why === "partner" && stance === "partner" && door) add("why:partner", `you're learning ${door}, your partner's or family's faith.`);
+  else if (why && WHY[why]) add(`why:${why}`, WHY[why]);
   // "your faith" only for someone who told us they have one; otherwise name the door they're walking (or say nothing)
   const ownFaith = stance === "practice" || (!stance && one("raised") === "yes");
   const it = ownFaith ? "your faith" : door;
