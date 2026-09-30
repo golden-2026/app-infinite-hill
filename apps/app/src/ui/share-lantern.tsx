@@ -1,10 +1,11 @@
 // "Send it to someone": turns today's lit lantern into a link a friend can open. No server and no account:
 // the share sheet (or the clipboard) carries the link; the name is only what the sender types, never filled in.
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { KeyboardAvoidingView, Modal, Platform, Pressable, Share, StyleSheet, Text, TextInput, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { color, radius } from "@ih/brand";
 import { giftLink } from "@/lib/walkers";
+import { friendsState, makeInvite, setNick } from "@/lib/friends";
 import { Btn, Link, font, toast, type } from "@/ui";
 
 async function copy(text: string): Promise<boolean> {
@@ -32,9 +33,14 @@ export function ShareLantern({ line, door, day, n }: { line: string; door: strin
   const [open, setOpen] = useState(false);
   const [name, setName] = useState("");
   const insets = useSafeAreaInsets();
+  // a friend invite rides along when the friends server answers (fetched as the sheet opens, so the share still counts
+  // as the tap's own action); offline, the lantern goes without one
+  const [i, setI] = useState<string | null>(null);
+  useEffect(() => { if (open && !i) makeInvite().then(setI).catch(() => {}); }, [open]); // eslint-disable-line react-hooks/exhaustive-deps
   const go = async () => {
-    const ok = await send(giftLink({ from: name, line, door, d: day, n }), "i lit my lantern today. here's the line inside.");
-    if (ok) setOpen(false);
+    if (name.trim() && !friendsState().nick) setNick(name);
+    const ok = await send(giftLink({ from: name, line, door, d: day, n, i }), "i lit my lantern today. here's the line inside.");
+    if (ok) { setOpen(false); setI(null); } // single use: the next lantern gets a new invite
   };
   return (
     <>
@@ -54,7 +60,7 @@ export function ShareLantern({ line, door, day, n }: { line: string; door: strin
             />
             <Btn kind="ink" onPress={go} testID="send-link">send the link</Btn>
             <View style={{ alignItems: "center" }}><Link onPress={() => setOpen(false)} style={{ color: color.mute }}>not now</Link></View>
-            <Text style={[type.body(11), { color: color.mute, textAlign: "center" }]}>no account needed. only what's on this card goes in the link.</Text>
+            <Text style={[type.body(11), { color: color.mute, textAlign: "center" }]}>no account needed. only what's on this card goes in the link, plus an invite: if they walk with you, you'll each see the other's nickname, streak and whether today's done.</Text>
           </View>
         </KeyboardAvoidingView>
       </Modal>

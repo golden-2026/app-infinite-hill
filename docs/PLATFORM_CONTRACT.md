@@ -50,10 +50,11 @@ Until the builder adopts the contract, `scripts/apply-platform-patch.mjs` adds t
 
 ## 4. Day laws (enforced in the engine, not the UI)
 
-- Missed days never reset the count. "Missed days are free."
+- Missed days never reset the day count (days on the hill). The streak is separate: it grows one lesson a day, and rest days protect it (packages/domain/src/streak.js).
+- Rest days: a new streak starts with 2, holds at most 2, earns one back every 7 days; a missed day spends one automatically. With none left, a missed day breaks the streak; 2 lessons in one day within 3 days earns it back.
 - One day per local date, from the first finished sit.
 - Travel across time zones never counts a date twice.
-- Grace is free forever. Nothing breaks, so nothing is repaired or sold.
+- Grace is free forever. Rest days and the earn-back are never sold.
 
 ## 5. Flags in use
 

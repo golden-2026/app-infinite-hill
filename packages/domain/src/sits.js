@@ -2,6 +2,7 @@
 // One record per finished sit. Devices sync by set union (by id), so the same sits in any order, from any
 // number of devices, always derive the same state. Nothing is ever overwritten, so nothing conflicts.
 import { currentRun, daysBetween, goldenWeeks, missedDays, MILESTONES, WELCOME_BACK_AFTER } from "./day-engine.js";
+import { lessonCounts, streakFrom, streakOutcome } from "./streak.js";
 
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 const ID_RE = /^[A-Za-z0-9_-]{8,64}$/;
@@ -55,7 +56,8 @@ export function deriveState(sitLog, { today, settings = {} } = {}) {
 
   const kids = (settings.kids || []).map((k) => {
     const p = pathFrom(sits.filter((s) => s.kidId === k.id), today);
-    return { ...k, day: p.day, done: p.done, lastDate: p.lastDate };
+    // a child's streak is their own: their sits never extend or break the parent's, and the parent's never touch theirs
+    return { ...k, day: p.day, done: p.done, lastDate: p.lastDate, streak: streakFrom(lessonCounts(sits, k.id), today) };
   });
 
   const view = { dates, showedUp: dates.length, welcomedBackOn: settings.welcomedBackOn || null };
@@ -72,17 +74,19 @@ export function deriveState(sitLog, { today, settings = {} } = {}) {
     goal: goal ? { days: goal.days, done: Math.min(goalDone, goal.days), reached: goalDone >= goal.days } : null,
     goldenWeeks: goldenWeeks(view),
     currentRun: currentRun(view),
+    streak: streakFrom(lessonCounts(own), today),
     missedDays: missedDays(view, today),
     welcomeBack: missedDays(view, today) >= WELCOME_BACK_AFTER && view.welcomedBackOn !== today,
   };
 }
 
 /** What finishing one more sit on `date` would mean: a new day? a milestone? */
-export function sitOutcome(sitLog, date) {
-  const dates = new Set(mergeSits(sitLog).filter((s) => !s.kidId).map((s) => s.date));
+export function sitOutcome(sitLog, date, kidId = null) {
+  const sits = mergeSits(sitLog);
+  const dates = new Set(sits.filter((s) => !s.kidId).map((s) => s.date));
   const isNewDay = !dates.has(date);
   const showedUp = dates.size + (isNewDay ? 1 : 0);
-  return { isNewDay, showedUp, milestone: isNewDay && MILESTONES.includes(showedUp) ? showedUp : null };
+  return { isNewDay, showedUp, milestone: isNewDay && MILESTONES.includes(showedUp) ? showedUp : null, streak: streakOutcome(lessonCounts(sits, kidId), date) };
 }
 
 export { daysBetween };

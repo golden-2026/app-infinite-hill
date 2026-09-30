@@ -37,7 +37,7 @@ export default function Table() {
           <View key={k.id} style={{ flexDirection: "row", flexWrap: "wrap", alignItems: "center", columnGap: 10, rowGap: 8, paddingVertical: 12, borderTopWidth: 1, borderTopColor: color.line }}>
             <Face ic={icon(k.door)} w={36} h={36} r={18} caption={false} />
             <View style={{ flex: 1, minWidth: 180 }}>
-              <Text style={type.serif(17)}>{k.name} <Text style={type.eyebrow(7)}>· {kidAge} · {label(k.door)} · day {k.day}{k.done ? " ✓" : ""}</Text></Text>
+              <Text style={type.serif(17)}>{k.name} <Text style={type.eyebrow(7)}>· {kidAge} · {label(k.door)} · day {k.day}{k.done ? " ✓" : ""}{saved.settings.streakOn !== false && k.streak?.streak ? ` · ${k.streak.streak}-day streak` : ""}</Text></Text>
               <Text style={[type.body(12), { color: color.mute }]}>{kidAge < 13 ? "kid mode: matching, ordering, the stories · no Guide" : "the full game"}</Text>
             </View>
             <Pressable accessibilityRole="button" accessibilityLabel={`Remove ${k.name}`} onPress={async () => { if (await confirmSheet({ title: `remove ${k.name}?`, body: "their hill leaves this phone. you can add them again, but their days start over.", confirm: "remove", cancel: "keep", destructive: true })) { update({ kids: kids.filter((x) => x.id !== k.id) }); toast(`${k.name} removed`); } }} style={{ minHeight: 44, minWidth: 44, paddingHorizontal: 10, justifyContent: "center" }}><Text style={[type.eyebrow(), { color: color.danger }]}>remove</Text></Pressable>

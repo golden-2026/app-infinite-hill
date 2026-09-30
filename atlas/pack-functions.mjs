@@ -26,7 +26,7 @@ if (!existsSync(join(out, "index.html"))) {
 // Each function is bundled into one self-contained file (its imports, the lesson data and @netlify/blobs included),
 // because the export folder has no node_modules for Netlify to resolve packages from.
 const { rolldown } = await import(pathToFileURL(join(repo, "node_modules/rolldown/dist/index.mjs")).href);
-const FUNCTIONS = ["guide", "companion", "ai-watch"];
+const FUNCTIONS = ["guide", "companion", "ai-watch", "friends"];
 for (const name of FUNCTIONS) {
   const bundle = await rolldown({ input: join(repo, "netlify/functions", `${name}.js`), platform: "node", logLevel: "silent" });
   await bundle.write({ file: join(out, "netlify/functions", `${name}.js`), format: "esm", codeSplitting: false });
@@ -50,6 +50,7 @@ const block = [
   BEGIN,
   "/api/guide        /.netlify/functions/guide      200!",
   "/api/companion    /.netlify/functions/companion  200!",
+  "/api/friends      /.netlify/functions/friends    200!",
   "# the servers' source files are uploaded with the site; don't serve them as pages",
   "/api/*            /index.html                    404!",
   "/netlify/*        /index.html                    404!",
@@ -69,9 +70,12 @@ const { handler: companion } = await import(pathToFileURL(join(out, "netlify/fun
 const status = await companion({ httpMethod: "GET", rawUrl: "https://example.test/api/companion?kind=status", headers: {} });
 const { handler: guide } = await import(pathToFileURL(join(out, "netlify/functions/guide.js")).href);
 const guideGet = await guide({ httpMethod: "GET", rawUrl: "https://example.test/api/guide", headers: {} });
+const { handler: friendsFn } = await import(pathToFileURL(join(out, "netlify/functions/friends.js")).href);
+const friendsBad = await friendsFn({ httpMethod: "GET", rawUrl: "https://example.test/api/friends?kind=friends", headers: {} });
+console.log(`friends GET without a token: ${friendsBad.statusCode} (401 = loaded and refusing, as it should)`);
 const watcher = await import(pathToFileURL(join(out, "netlify/functions/ai-watch.js")).href);
 console.log(`ai-watch: runs on "${watcher.config?.schedule}"`);
-const ok = status.statusCode === 200 && decode(status).on === false && guideGet.statusCode === 405 && typeof watcher.default === "function" && !!watcher.config?.schedule;
+const ok = friendsBad.statusCode === 401 && status.statusCode === 200 && decode(status).on === false && guideGet.statusCode === 405 && typeof watcher.default === "function" && !!watcher.config?.schedule;
 console.log(`companion status: ${status.statusCode} ${JSON.stringify(decode(status))}`);
 console.log(`guide GET: ${guideGet.statusCode} (405 = loaded and refusing non-POST, as it should)`);
 if (!ok) {

@@ -54,8 +54,12 @@ test("kids move their own hill and never the parent's count", () => {
 
 test("sitOutcome: new day, milestone at 3, second sit same date adds nothing", () => {
   const log = [sit("2026-10-18"), sit("2026-10-19", "HINDUISM", 2)];
-  assert.deepEqual(sitOutcome(log, "2026-10-20"), { isNewDay: true, showedUp: 3, milestone: 3 });
-  assert.deepEqual(sitOutcome(log, "2026-10-19"), { isNewDay: false, showedUp: 2, milestone: null });
+  const a = sitOutcome(log, "2026-10-20");
+  assert.deepEqual({ ...a, streak: undefined }, { isNewDay: true, showedUp: 3, milestone: 3, streak: undefined });
+  assert.deepEqual([a.streak.before, a.streak.after, a.streak.milestone], [2, 3, 3]);
+  const b = sitOutcome(log, "2026-10-19");
+  assert.deepEqual({ ...b, streak: undefined }, { isNewDay: false, showedUp: 2, milestone: null, streak: undefined });
+  assert.equal(b.streak.grew, false);
 });
 
 test("junk records are dropped, not trusted", () => {

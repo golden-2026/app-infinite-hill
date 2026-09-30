@@ -76,10 +76,10 @@ export function Link({ children, onPress, style, label: a11y }: { children: stri
 }
 
 // ─── Card · Opt · Bubble ────────────────────────────────────────────────
-export function Card({ children, dark, onPress, style, label: a11y }: { children: ReactNode; dark?: boolean; onPress?: () => void; style?: StyleProp<ViewStyle>; label?: string }) {
+export function Card({ children, dark, onPress, style, label: a11y, testID }: { children: ReactNode; dark?: boolean; onPress?: () => void; style?: StyleProp<ViewStyle>; label?: string; testID?: string }) {
   const s = [styles.card, dark ? styles.cardDark : null, style];
-  if (!onPress) return <View style={s}>{children}</View>;
-  return <Pressable accessibilityRole="button" accessibilityLabel={a11y} onPress={() => { tapHaptic(); onPress(); }} style={({ pressed }) => [...s, pressed && { opacity: 0.94, transform: [{ scale: 0.985 }] }]}>{children}</Pressable>;
+  if (!onPress) return <View testID={testID} style={s}>{children}</View>;
+  return <Pressable testID={testID} accessibilityRole="button" accessibilityLabel={a11y} onPress={() => { tapHaptic(); onPress(); }} style={({ pressed }) => [...s, pressed && { opacity: 0.94, transform: [{ scale: 0.985 }] }]}>{children}</Pressable>;
 }
 
 /** `big`: v175's onboarding choice (Manrope 17), not the small settings option. */

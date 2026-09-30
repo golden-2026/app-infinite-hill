@@ -17,6 +17,9 @@ import { StoreProvider, useStore } from "@/lib/store";
 import { SyncProvider } from "@/lib/sync";
 import { color } from "@/ui";
 import { OverlayHost } from "@/ui/overlay";
+import { useCompanionInput } from "@/lib/companion/use-companion";
+import { shapeToday } from "@/lib/companion/shape";
+import { checkin, refreshFriends, useFriends, weekLight } from "@/lib/friends";
 
 SplashScreen.preventAutoHideAsync().catch(() => {});
 
@@ -24,8 +27,27 @@ SplashScreen.preventAutoHideAsync().catch(() => {});
 function ReminderSync() {
   const store = useStore();
   const { reminder } = store.saved.settings;
+  // quiet mode as it would stand at the 8 pm saver (so bedtime alone doesn't decide): the hard persona or heavy days
+  const input = useCompanionInput();
+  const quiet = shapeToday({ ...input, hour: 20 }).quiet;
   useEffect(() => { registerWorker(); }, []);
-  useEffect(() => { syncReminders(store); }, [reminder.on, reminder.time, store.derived.doneToday, store.today]); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => { syncReminders({ ...store, quiet } as any); }, [reminder.on, reminder.time, reminder.set, store.derived.doneToday, store.today, quiet, store.saved.settings.streakOn]); // eslint-disable-line react-hooks/exhaustive-deps
+  return null;
+}
+
+// Friends: after a lesson (or a new day), tell friends how today stands and refresh theirs. Nothing happens until this
+// phone has paired a friend; offline it quietly waits (lib/friends).
+function FriendsSync() {
+  const { saved, derived, today } = useStore();
+  const f = useFriends();
+  const s = derived.streak;
+  const light = weekLight(saved.sits, saved.settings.runs, today);
+  useEffect(() => {
+    if (!f.friendId) return;
+    let live = true;
+    (async () => { await checkin({ date: today, doneToday: s.doneToday, streak: s.streak, golden: s.golden, weekLight: light }); if (live) await refreshFriends(today); })();
+    return () => { live = false; };
+  }, [f.friendId, today, s.doneToday, s.streak, s.golden, light, f.nick, f.board]); // eslint-disable-line react-hooks/exhaustive-deps
   return null;
 }
 
@@ -55,6 +77,7 @@ export default function RootLayout() {
         <SyncProvider>
           <StatusBar style="dark" />
           <ReminderSync />
+          <FriendsSync />
           <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: color.cream } }}>
             <Stack.Screen name="(tabs)" />
             <Stack.Screen name="welcome" options={{ gestureEnabled: false }} />

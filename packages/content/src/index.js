@@ -96,18 +96,19 @@ export function lessonInfo(wing, lesson) {
   return logic.lessonInfo(wing, lesson);
 }
 export const KNOW = logic.KNOW;
-export const SUN_NOTES = logic.SUN_NOTES;
+// the design build's "missed yesterday" note predates rest days; the rest stay verbatim
+export const SUN_NOTES = (wing, short, word) => logic.SUN_NOTES(wing, short, word).map(([t, m]) => (t === "missed yesterday" ? ["missed yesterday", "a rest day covered yesterday. your streak's safe, and today's right where you left it."] : [t, m]));
 export const STRAND_WORDS = logic.STRAND_WORDS;
 export const DOORS = data.DOORS; // [label, key]; the design build's fake counts are removed at extraction
 
 // Day one's welcome: v175's first-person WELCOME from each door's voice (the owner's design, restored 2026-09-28).
 // HOUSE_WELCOME is the unnamed alternative, used only when a caller passes named: false.
-const HOUSE_WELCOME = "Hey. Day one. Before anything else, three promises. It's a few minutes a day. A missed day never costs you anything. And nobody here will tell you what to believe. One word, one breath, one line to carry. Let's begin.";
+const HOUSE_WELCOME = "Hey. Day one. Before anything else, three promises. It's a few minutes a day. Rest days are built in, so a missed day never costs you your place. And nobody here will tell you what to believe. One word, one breath, one line to carry. Let's begin.";
 
 /** The day's segments, exactly as v175 Session assembled them (welcome inserted on day 1). */
-export function segmentsFor(wing, day, lesson = day, { named = true } = {}) {
+export function segmentsFor(wing, day, lesson = day, { named = true, info: given = null } = {}) {
   const ic = icon(wing);
-  const info = lessonInfo(wing, lesson);
+  const info = given || lessonInfo(wing, lesson);
   const d1 = data.DAY1[wing] || data.DAY1.SPIRITUAL;
   const welcome = named
     ? { type: "a welcome", duration: "30 sec", voice: data.WELCOME[wing] || data.WELCOME.SPIRITUAL, screen: [`A WELCOME FROM ${ic.name.toUpperCase()}`] }
@@ -152,19 +153,52 @@ function pacedStep(wing, type) {
   return null;
 }
 
-/** Everything a session screen needs: ordered steps, the word and the carry line. Real sit times. */
-export function planDay({ wing, day, lesson = day, mode = "adult", named = true, level = 0 }) {
-  const { info, d1, segs } = segmentsFor(wing, day, lesson, { named });
+// A full script's own games, as steps (see lesson-script.js and docs/curriculum/SCRIPT_GUIDE.md).
+function scriptStep(info, type) {
+  const G = info?.games || {};
+  if (type === "myth" && G.myth) return { type: "myth", items: G.myth };
+  if (type === "fork" && G.fork) return { type: "fork", ...G.fork };
+  if (type === "original" && G.original) return { type: "original", ...G.original };
+  if (type === "trapdoor" && G.trapdoor) return { type: "trapdoor", word: info.word, floors: G.trapdoor };
+  return null;
+}
+
+// With a script, the day's pairs come from today's teaching, and the practice is the script's own words from day one
+// (the design build replaced days 1–7 with one fixed line because the thin templates had nothing to say there).
+function withScript(steps, info, day) {
+  const match = info.games?.match;
+  let out = steps.map((s) => (s.type === "match" && match ? { ...s, prompt: match.prompt, pairs: match.pairs } : s));
+  if (day <= 7) {
+    const practice = info.segments.find((g) => /^the practice/.test(g.type));
+    const at = out.findIndex((s) => s.type === "beat" && /^the practice/.test(String(s.seg || "")));
+    if (practice && at >= 0) {
+      let id = Math.max(...out.map((s) => s.id)) + 1;
+      const beats = splitBeats(practice.voice, 45, 2).map((text) => ({ type: "beat", seg: practice.type, text, head: null, id: id++ }));
+      out = [...out.slice(0, at), ...beats, ...out.slice(at).filter((s) => !(s.type === "beat" && /^the practice/.test(String(s.seg || ""))))];
+    }
+  }
+  return out;
+}
+
+/**
+ * Everything a session screen needs: ordered steps, the word and the carry line. Real sit times.
+ * `script` (optional): the day's full script from lessonScript(); without one, the lesson is built exactly as before.
+ */
+export function planDay({ wing, day, lesson = day, mode = "adult", named = true, level = 0, script = null }) {
+  const given = script && script.day === lesson ? lessonFromScript(script, pos(lesson)) : null;
+  const { info, d1, segs } = segmentsFor(wing, day, lesson, { named, info: given });
   const R = buildDay({ wing, day, lesson, data: info, d1, segs, demoFast: false, mode });
-  let steps = R.steps;
+  let steps = given ? withScript(R.steps, given, day) : R.steps;
   if (mode === "adult") {
     if (day === 1) steps = steps.filter((s) => !PACED[s.type]);
-    const type = Object.keys(PACED).find((k) => PACED[k] === day);
-    const extra = type ? pacedStep(wing, type) : null;
+    const paced = Object.keys(PACED).find((k) => PACED[k] === day);
+    // days 2–5 introduce one game each (about today's word when there's a script); from day 6 a script plays one more
+    const type = paced || (given && day > 5 ? featureFor(day, given.games) : null);
+    const extra = type ? (given && scriptStep(given, type)) || (paced ? pacedStep(wing, type) : null) : null;
     if (extra) {
       const nextId = Math.max(...steps.map((s) => s.id)) + 1;
       const tally = steps.length - 1; // just before the tally
-      steps = [...steps.slice(0, tally), { ...extra, id: nextId, newToday: true }, ...steps.slice(tally)];
+      steps = [...steps.slice(0, tally), { ...extra, id: nextId, newToday: !!paced }, ...steps.slice(tally)];
     }
   }
   if (!named) {
@@ -181,4 +215,6 @@ export function planDay({ wing, day, lesson = day, mode = "adult", named = true,
 export const GRADED = Object.freeze(["order", "match", "listen", "taphear", "bet", "myth", "scenes", "typeit", "rush", "rhythm"]);
 
 import { levelUp } from "./level.js";
+import { featureFor, lessonFromScript } from "./lesson-script.js";
+export { FORMAT as SCRIPT_FORMAT, checkScript, chunkOf, chunkPath, compileScript, featureFor, lessonFromScript, lessonScript, orderIdeas, resetLessonCache, spoken } from "./lesson-script.js";
 export { LEVELS, clampLevel, deeperRound, knownSoFar, levelUp, likeness, rushStep, syllables, wrongAnswers } from "./level.js";

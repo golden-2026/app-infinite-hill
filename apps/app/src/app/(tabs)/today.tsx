@@ -15,6 +15,8 @@ import { TodaysThree } from "@/ui/todays-three";
 import { SongCard } from "@/ui/song";
 import { useCompanionDay } from "@/lib/companion/use-companion";
 import { CompanionCard, HelpCard, ReflectCard } from "@/ui/companion";
+import { StreakChip } from "@/ui/streak";
+import { goalView, weekdayOf } from "@/lib/streak";
 
 export default function Today() {
   useTitle("today");
@@ -45,13 +47,19 @@ export default function Today() {
   // ...except when the companion comes first: a quiet day, or today's "how are you?" not yet answered
   const { input: companionIn, day: companion } = useCompanionDay();
   const quiet = companion.quiet;
-  const companionFirst = useRef(quiet || !companionIn.memory.moods.some((x) => x.date === today)).current;
+  // ...or when the streak can be earned back today: that offer sits at the top and must not scroll away
+  const companionFirst = useRef(quiet || !companionIn.memory.moods.some((x) => x.date === today) || (st.streakOn !== false && !!derived.streak.earnBack)).current;
   useEffect(() => {
     if (hillTop !== null && nowY !== null && !companionFirst) scroller.current?.scrollTo({ y: Math.max(0, hillTop + nowY - 320), animated: false });
   }, [hillTop, nowY, wing]);
   const start = () => router.push({ pathname: "/session/[door]/[day]", params: { door: wing, day: String(lesson) } });
   const doors: [string, "home" | "visit"][] | null = st.visitWing ? [[st.homeWing, "home"], [st.visitWing, "visit"]] : null;
   const lastNext = st.signals.at(-1)?.next;
+  // the streak (the adult's own; a child's days never count here). "show my streak" off hides all of it.
+  const streakOn = st.streakOn !== false;
+  const sk = derived.streak;
+  const golden = sk.golden && sk.streak >= 7;
+  const goal = goalView(st.goal, sk);
   // the companion (above): today's practice, mood and note. On a quiet day the games step back and the practice comes first.
 
   return (
@@ -70,9 +78,16 @@ export default function Today() {
         ) : (
           <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}><Face ic={ic} w={30} h={30} r={15} caption={false} /><Text style={type.eyebrow(8)}>{label(wing)}</Text></View>
         )}
-        <Pressable testID="day-count" accessibilityRole="button" accessibilityLabel={`${derived.showedUp} ${derived.showedUp === 1 ? "day" : "days"} shown up. Open you.`} onPress={() => router.push("/you")} style={({ pressed }) => ({ paddingVertical: 7, marginVertical: -7, opacity: pressed ? 0.6 : 1 })}>
-          <View style={s.count}><Sun size={16} /><Text style={{ fontFamily: font.display[800], fontSize: 14, color: color.ink }}>{derived.showedUp}</Text></View>
-        </Pressable>
+        {streakOn ? (
+          // the streak leads: the number, then the sun (our flame). Gold once it's a golden streak (7+ days, no rest day).
+          <Pressable testID="day-count" accessibilityRole="button" accessibilityLabel={`${sk.streak}-day streak${golden ? ", golden" : ""}. Open you.`} onPress={() => router.push("/you")} style={({ pressed }) => ({ paddingVertical: 7, marginVertical: -7, opacity: pressed ? 0.6 : 1 })}>
+            <StreakChip n={sk.streak} golden={golden} />
+          </Pressable>
+        ) : (
+          <Pressable testID="day-count" accessibilityRole="button" accessibilityLabel={`${derived.showedUp} ${derived.showedUp === 1 ? "day" : "days"} on the hill. Open you.`} onPress={() => router.push("/you")} style={({ pressed }) => ({ paddingVertical: 7, marginVertical: -7, opacity: pressed ? 0.6 : 1 })}>
+            <View style={s.count}><Sun size={16} /><Text style={{ fontFamily: font.display[800], fontSize: 14, color: color.ink }}>{derived.showedUp}</Text></View>
+          </Pressable>
+        )}
       </View>
 
       <ScrollView ref={scroller} contentContainerStyle={{ paddingBottom: 110 }}>
@@ -80,10 +95,26 @@ export default function Today() {
           <Card style={{ marginHorizontal: 18, marginTop: 4, flexDirection: "row", gap: 12, alignItems: "center" }}>
             <Guy pose="wave" h={70} />
             <View style={{ flex: 1 }}>
-              <Text style={type.h1(20)}>your days came with you.</Text>
-              <Text style={[type.body(13), { color: color.mute, marginTop: 4 }]}>{derived.showedUp} {derived.showedUp === 1 ? "day" : "days"}, right where you left them. nothing moved. one breath tonight?</Text>
+              <Text style={type.h1(20)}>{streakOn && sk.streak > 0 ? "rest days had your back." : "your days came with you."}</Text>
+              <Text style={[type.body(13), { color: color.mute, marginTop: 4 }]}>{streakOn && sk.streak > 0
+                ? `your ${sk.streak}-day streak is still here. one lesson today grows it.`
+                : `${derived.showedUp} ${derived.showedUp === 1 ? "day" : "days"} on the hill, right where you left them. one breath tonight?`}</Text>
             </View>
             <Pressable accessibilityRole="button" accessibilityLabel="Dismiss" onPress={markWelcomedBack} hitSlop={10}><Text style={type.eyebrow()}>✕</Text></Pressable>
+          </Card>
+        ) : null}
+
+        {streakOn && sk.earnBack && !quiet ? (
+          // the streak broke: for 3 days, two lessons in one day bring it back. An offer, never a bill.
+          <Card testID="earn-back" style={{ marginHorizontal: 18, marginTop: 4, marginBottom: 12, flexDirection: "row", gap: 12, alignItems: "center" }}>
+            <Guy pose="climb" h={74} />
+            <View style={{ flex: 1, gap: 4 }}>
+              <Text style={[type.eyebrow(8), { color: color.ink }]}>earn your streak back · {sk.earnBack.lessonsToday} of {sk.earnBack.need} today</Text>
+              <Text style={{ fontFamily: font.display[800], fontSize: 16, color: color.ink }}>finish 2 lessons today and your {sk.earnBack.lost}-day streak comes back.</Text>
+              <Text style={[type.body(12), { color: color.mute }]}>{sk.earnBack.lastDay === today ? "open till tonight." : `open till ${weekdayOf(sk.earnBack.lastDay)}.`} no catch.</Text>
+              <Btn testID="earn-back-go" kind="gold" style={{ marginTop: 6, alignSelf: "flex-start", paddingHorizontal: 16 }}
+                onPress={doneHere ? () => router.push({ pathname: "/session/[door]/[day]", params: { door: wing, day: String(lesson) } }) : start}>{doneHere ? "one more lesson" : `start day ${lesson}`}</Btn>
+            </View>
           </Card>
         ) : null}
 
@@ -115,7 +146,7 @@ export default function Today() {
           <View style={{ flex: 1, paddingRight: 12 }}>
             <Text style={[type.eyebrow(8), { color: color.gold }]}>{p.camp} · {p.name}</Text>
             <Text style={{ fontFamily: font.display[800], fontSize: 18, marginTop: 4, color: "#fff" }}>{title}</Text>
-            {derived.goal ? <Text style={[type.eyebrow(8), { color: "#ffffff99", marginTop: 6 }]}>your goal · {derived.goal.done} of {derived.goal.days} days shown up{derived.goal.reached ? " · reached" : ""}</Text> : null}
+            {goal && streakOn ? <Text style={[type.eyebrow(8), { color: "#ffffff99", marginTop: 6 }]}>your goal · {goal.done} of {goal.days} days in a row{goal.reached ? " · reached" : ""}</Text> : null}
           </View>
           <Text style={[type.eyebrow(8), { color: "#ffffff99" }]}>lesson {p.lesson} of {p.of}</Text>
         </View>
@@ -162,12 +193,20 @@ export default function Today() {
               <View style={{ position: "absolute", right: 8, bottom: night ? 46 : 4 }}><Guy pose={night ? "sleep" : "thumbs"} h={night ? 78 : 104} /></View>
               {isDemo() ? <View style={{ marginTop: 12 }}><Btn kind="light" onPress={() => demoShiftDays(1)}>Demo: skip to tomorrow →</Btn></View> : null}
             </Card>
-          ) : derived.currentRun >= 2 && !quiet ? (
-            // the one thing at stake: your run of days. said gently, and louder only as the day ends
-            <View style={[s.pill, { borderColor: hour >= 17 ? color.gold : color.line, backgroundColor: hour >= 17 ? color.ink : "transparent" }]} accessibilityRole="text">
-              <Text numberOfLines={1} style={[type.eyebrow(8), { color: hour >= 17 ? color.gold : color.ink, flexShrink: 0 }]}>☀ {derived.currentRun}-day run</Text>
-              <Text numberOfLines={1} style={[type.eyebrow(8), { color: hour >= 17 ? "#fff" : color.mute, flexShrink: 1, textAlign: "right" }]}>{hour >= 17 ? "light today's when you're ready" : "missed days are free"}</Text>
-            </View>
+          ) : streakOn && sk.streak >= 2 && !quiet ? (
+            // the streak, said gently. It's only "at stake" when no rest day is left, and louder only as the day ends.
+            (() => {
+              const loud = sk.atRisk && hour >= 17;
+              const right = sk.atRisk ? (hour >= 17 ? "one lesson keeps it going" : "no rest days left · one lesson keeps it")
+                : sk.restedYesterday ? "a rest day held it yesterday"
+                : `rest days protect your streak · ${sk.rest} banked`;
+              return (
+                <View testID="streak-pill" style={[s.pill, { borderColor: loud ? color.gold : color.line, backgroundColor: loud ? color.ink : "transparent" }]} accessibilityRole="text">
+                  <Text numberOfLines={1} style={[type.eyebrow(8), { color: loud ? color.gold : color.ink, flexShrink: 0 }]}>{sk.streak}-day streak</Text>
+                  <Text numberOfLines={1} style={[type.eyebrow(8), { color: loud ? "#fff" : color.mute, flexShrink: 1, textAlign: "right" }]}>{right}</Text>
+                </View>
+              );
+            })()
           ) : null /* the floating "start day N" button above the tab bar is the one start action */}
 
           {doneHere && st.deepOn !== today && lesson > 1 && !quiet ? (

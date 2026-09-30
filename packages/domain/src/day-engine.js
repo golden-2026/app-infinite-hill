@@ -2,7 +2,7 @@
 // Pure functions over a plain state object: no React, no browser, no storage. Shared later with the
 // Expo app as packages/domain. Rules (BUILD_BRIEF "Position, streak, and the map" + the laws):
 //   - A day is earned once per local calendar date, by finishing a sit. More sits that date add nothing.
-//   - Missed days never reset anything ("missed days are free"). There is no freeze and no repair.
+//   - The day count (showedUp) never resets. The streak, with its rest days and earn-back, lives in streak.js.
 //   - A door that was finished on an earlier date moves to its next lesson when the app next opens.
 //   - The day count starts at 0; the first finished sit makes it 1.
 

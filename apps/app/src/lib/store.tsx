@@ -11,17 +11,22 @@ import { readJSON, remove, writeJSON } from "./storage";
 import { timeZone, today as todayNow } from "./time";
 import { cleanProfile, type Profile } from "./profile";
 import { eraseCompanion } from "./companion/memory";
+import { leaveFriends } from "./friends";
 
 export const STORE_KEY = "ih:app:v1";
 
-export type Reminder = { on: boolean; time: "sundown" | string };
+/** `set`: they picked a time. Until then the daily note follows their own rhythm (about a day after the last lesson). */
+export type Reminder = { on: boolean; time: "sundown" | string; set?: boolean };
 export type Settings = {
   onboarded: boolean;
   reason: string | null;
   homeWing: string;
   visitWing: string | null;
   active: "home" | "visit";
-  goal: { days: number | null; setOn: string } | null;
+  /** The streak goal (7 / 14 / 30 …, a streak length). days null = "not now". offered3: the one-time 3-day offer was made. */
+  goal: { days: number | null; setOn: string; offered3?: boolean } | null;
+  /** "show my streak" under You (default on). Off: no streak number, no streak screen, no saver. Days on the hill stay. */
+  streakOn?: boolean;
   welcomedBackOn: string | null;
   kids: { id: string; name: string; door: string; birthYear?: number }[];
   voiceOn: boolean;
@@ -72,13 +77,14 @@ export function cleanSettings(raw: any): Settings {
     homeWing: home,
     visitWing: visit,
     active: s.active === "visit" && visit ? "visit" : "home",
-    goal: s.goal && typeof s.goal === "object" && typeof s.goal.setOn === "string" ? { days: typeof s.goal.days === "number" ? s.goal.days : null, setOn: s.goal.setOn } : null,
+    goal: s.goal && typeof s.goal === "object" && typeof s.goal.setOn === "string" ? { days: typeof s.goal.days === "number" ? s.goal.days : null, setOn: s.goal.setOn, ...(s.goal.offered3 === true ? { offered3: true } : {}) } : null,
+    streakOn: s.streakOn !== false,
     kids: arr(s.kids).filter((k: any) => k && typeof k.id === "string" && typeof k.name === "string" && door(k.door)),
     book: arr(s.book).filter((b: any) => b && typeof b.line === "string"),
     signals: arr(s.signals).filter((x: any) => x && typeof x.door === "string"),
     voiceOn: s.voiceOn !== false,
     chime: s.chime !== false,
-    reminder: s.reminder && typeof s.reminder === "object" && typeof s.reminder.time === "string" ? { on: s.reminder.on === true, time: s.reminder.time } : d.reminder,
+    reminder: s.reminder && typeof s.reminder === "object" && typeof s.reminder.time === "string" ? { on: s.reminder.on === true, time: s.reminder.time, ...(s.reminder.set === true ? { set: true } : {}) } : d.reminder,
     profile: cleanProfile(s.profile),
   };
 }
@@ -164,13 +170,14 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     lessonFor: (d) => derived.paths[d]?.day ?? 1,
     completeSit: ({ door: d, day, kidId = null }) => {
       const date = todayNow();
-      const outcome = sitOutcome(saved.sits, date);
+      // the streak outcome is the kid's own for a kid's sit, the parent's own otherwise (never mixed)
+      const outcome = sitOutcome(saved.sits, date, kidId);
       const sit = makeSit({ id: randomId("sit_"), door: d, day, date, tz: timeZone(), kidId, deviceId: saved.deviceId, at: new Date().toISOString() });
       commit((s) => ({ ...s, sits: mergeSits(s.sits, [sit]), outbox: [...s.outbox, sit.id] }));
-      return kidId ? { isNewDay: false, showedUp: outcome.showedUp - (outcome.isNewDay ? 1 : 0), milestone: null } : outcome;
+      return kidId ? { isNewDay: false, showedUp: outcome.showedUp - (outcome.isNewDay ? 1 : 0), milestone: null, streak: outcome.streak } : outcome;
     },
     update: (patch) => commit((s) => ({ ...s, settings: { ...s.settings, ...patch }, settingsVersion: s.settingsVersion + 1 })),
-    setGoal: (days) => commit((s) => ({ ...s, settings: { ...s.settings, goal: { days: days === "not_yet" ? null : days, setOn: todayNow() } }, settingsVersion: s.settingsVersion + 1 })),
+    setGoal: (days) => commit((s) => ({ ...s, settings: { ...s.settings, goal: { days: days === "not_yet" ? null : days, setOn: todayNow(), ...(s.settings.goal?.offered3 || days === 3 || days === "not_yet" ? { offered3: true } : {}) } }, settingsVersion: s.settingsVersion + 1 })),
     keepLine: (line, d) => commit((s) => {
       const date = todayNow();
       if (s.settings.book.some((b) => b.line === line && b.door === d)) return s; // kept once
@@ -237,6 +244,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       remove(P0_KEY); // otherwise the P0 copy would be carried over again on the next open
       remove("ih:device-secret");
       eraseCompanion(); // the companion's memory (facts, moods, journal) goes with everything else
+      leaveFriends(); // friends too: the server copy (nickname, numbers, friend list) and this phone's
       setSaved(load());
     },
   }), [saved, today, derived, door, commit]);

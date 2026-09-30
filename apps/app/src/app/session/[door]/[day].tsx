@@ -164,9 +164,16 @@ function Session({ door, day, kidId, mode, deep, voiceOn, onFinish }: { door: st
     const outcome = onFinish({ door, day, kidId });
     if (!kidId) earnLight(lessonLight(score.right, score.asked || graded, best), best, score.asked > 0 && score.right === score.asked);
     track("lesson_done", { door, day, right: score.right, asked: score.asked, newDay: outcome.isNewDay, kid: !!kidId });
-    if (kidId) { router.canGoBack() ? router.back() : router.replace("/you/table"); return; } // a child's sit moves the child's hill, not yours
+    // a child's sit moves the child's hill and the child's streak, not yours: a kid-sized cheer, then back to the table
+    if (kidId) {
+      if (me.settings.streakOn !== false && outcome.streak.grew) router.replace({ pathname: "/done/kid", params: { door, day: String(day), kid: kidId, streak: String(outcome.streak.after), prev: String(outcome.streak.before) } });
+      else router.canGoBack() ? router.back() : router.replace("/you/table");
+      return;
+    }
     const minutes = Math.max(1, Math.round((Date.now() - t0.current) / 60000));
-    router.replace({ pathname: "/done", params: { door, day: String(day), right: String(score.right), total: String(score.asked), word: plan.word, carry: plan.carry, minutes: String(minutes), newDay: outcome.isNewDay ? "1" : "0", count: String(outcome.showedUp), milestone: outcome.milestone ? String(outcome.milestone) : "" } });
+    const st = outcome.streak;
+    // the streak's facts ride along to the after-lesson screens (the streak screen is /done/lit); nothing shows in the lesson itself
+    router.replace({ pathname: "/done", params: { door, day: String(day), right: String(score.right), total: String(score.asked), word: plan.word, carry: plan.carry, minutes: String(minutes), newDay: outcome.isNewDay ? "1" : "0", count: String(outcome.showedUp), milestone: st.milestone ? String(st.milestone) : "", streak: String(st.after), prev: String(st.before), restored: st.restored ? "1" : "" } });
   };
   const leave = () => { finished.current = true; hush(); remove(resumeKey); router.canGoBack() ? router.back() : router.replace("/today"); };
   // The one confirm panel the whole app uses, not a lesson-only dialog.

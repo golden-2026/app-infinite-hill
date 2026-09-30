@@ -6,7 +6,7 @@ import { readJSON } from "./storage";
 const KEY = process.env.EXPO_PUBLIC_POSTHOG_KEY;
 const HOST = process.env.EXPO_PUBLIC_POSTHOG_HOST || "https://us.i.posthog.com";
 const DOOR_CODE: Record<string, string> = { CHRISTIANITY: "d1", CATHOLIC: "d2", HINDUISM: "d3", ISLAM: "d4", JUDAISM: "d5", BUDDHISM: "d6", SIKHISM: "d7", SPIRITUAL: "d8" };
-export type EventName = "onboard_step" | "lesson_step" | "lesson_done" | "reminder_on" | "day_returned" | "milestone" | "goal_set" | "unlock_seen";
+export type EventName = "onboard_step" | "lesson_step" | "lesson_done" | "reminder_on" | "day_returned" | "milestone" | "goal_set" | "unlock_seen" | "streak_earned_back";
 
 type Props = Record<string, string | number | boolean | null | undefined> & { door?: string };
 

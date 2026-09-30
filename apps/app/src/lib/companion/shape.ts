@@ -206,7 +206,7 @@ const LEARN_NOTE = "nothing to do today. here's how people keep one practice, if
 
 function noteFor({ i, persona, mood, quiet, late, night, practice, howItsDone, learn }: { i: ShapeInput; persona: Persona; mood: MoodId | null; quiet: boolean; late: boolean; night: boolean; practice: Practice; howItsDone: boolean; learn: boolean }): string {
   const mins = `${practice.minutes} ${practice.minutes === 1 ? "minute" : "minutes"}`;
-  if (i.missedDays >= 2 && !i.doneToday) return "you're back. nothing was lost. start small.";
+  if (i.missedDays >= 2 && !i.doneToday) return "you're back. your place on the path is right where you left it. start small.";
   if (mood === "heavy") return howItsDone ? "heavy days are allowed. no lesson needed today." : "heavy days are allowed. no lesson needed today — just this, if you want it.";
   if (persona === "hard" && night) return "it's late. go gently. the games can wait.";
   if (persona === "hard") return howItsDone ? "go gently today. the games can wait." : "go gently today. the games can wait. this is enough.";

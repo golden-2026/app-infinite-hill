@@ -64,7 +64,7 @@ export default function You() {
         <View style={{ paddingHorizontal: 18, paddingBottom: 8 }}>
           <TabHeader eyebrow="profile · settings" title="you." pose="shades">
           <Text style={type.body()}>
-            {label(wing)} · day {day} · read by {voiceLabel(wing, ic.short).short}{st.visitWing ? ` · also walking ${label(st.visitWing)} · day ${lessonFor(st.visitWing)}` : ""} · {derived.showedUp} {derived.showedUp === 1 ? "day" : "days"} showed up
+            {label(wing)} · day {day} · read by {voiceLabel(wing, ic.short).short}{st.visitWing ? ` · also walking ${label(st.visitWing)} · day ${lessonFor(st.visitWing)}` : ""} · {derived.showedUp} {derived.showedUp === 1 ? "day" : "days"} on the hill{st.streakOn !== false ? ` · ${derived.streak.streak}-day streak${derived.streak.longest > derived.streak.streak ? ` (longest ${derived.streak.longest})` : ""}` : ""}
           </Text>
           <Text style={[type.caption(), email ? { color: color.ink } : null]}>
             {email ? `saved to ${email}${sync.state === "offline" ? " · offline, will sync" : sync.state === "syncing" ? " · syncing" : ""}` : "your days live on this phone."}
@@ -92,7 +92,7 @@ export default function You() {
               ); }); })()}
             </View>
             <Text style={{ fontFamily: font.display[500], fontSize: 16, color: "#6b6448", marginTop: 12 }}>“Not I, nor anyone else can travel that road for you. You must travel it for yourself.” <Text style={type.eyebrow(7)}>— Walt Whitman</Text></Text>
-            <Text style={[type.body(12), { color: color.mute, marginTop: 12 }]}>Year one is the first mountain: five camps, 331 days, ending with a whole text read start to finish. Camp one is written; the later camps are being written now. After that, the ranges — the deep texts, the schools, the mystics — years of them. Days are earned one at a time, and a missed day never resets you.</Text>
+            <Text style={[type.body(12), { color: color.mute, marginTop: 12 }]}>Year one is the first mountain: five camps, 331 days, ending with a whole text read start to finish. Camp one is written; the later camps are being written now. After that, the ranges — the deep texts, the schools, the mystics — years of them. Your days on the hill are earned one at a time and never reset. Your streak grows one lesson a day, with rest days built in, because every tradition knows rest.</Text>
             <View style={{ marginTop: 12 }}><Btn kind="ghost" onPress={share}>share my day</Btn>{shareMsg ? <Text accessibilityLiveRegion="polite" style={[type.body(12), { color: color.mute, marginTop: 6 }]}>{shareMsg}</Text> : null}</View>
           </Card>
 
@@ -131,7 +131,8 @@ export default function You() {
             {derived.showedUp >= 7 ? <Row a="your week" b="a look back, no scores" onPress={() => router.push("/reflect")} /> : null}
           </Group>
           <Group title="every day">
-            <Row testID="row-reminders" a="reminders" b="one a day, in the evening or at your time" right={reminderStatus(st.reminder.on)} onPress={() => router.push("/you/reminders")} />
+            <Row testID="row-reminders" a="reminders" b="one a day, about when you last did a lesson, or at your time" right={reminderStatus(st.reminder.on)} onPress={() => router.push("/you/reminders")} />
+            <Row testID="row-streak" a="show my streak" b={st.streakOn !== false ? "the number on Today and the streak screen after a lesson · rest days protect it" : "hidden · your days on the hill still count"} right={st.streakOn !== false ? "on" : "off"} cycle onPress={() => update({ streakOn: st.streakOn === false })} />
             <Row a="read aloud" b="the house voice reads the lessons" toggle={st.voiceOn} onPress={() => update({ voiceOn: !st.voiceOn })} />
             <Row a="sunset chime" b="the bell at the start and end of each sit" toggle={st.chime} onPress={() => update({ chime: !st.chime })} />
           </Group>
@@ -149,7 +150,7 @@ export default function You() {
 
           <Card>
             <Eyebrow>how the sun talks to you</Eyebrow>
-            <Text style={[type.body(12.5), { color: color.mute, marginTop: 6 }]}>one a day, in the evening. never a guilt trip. never red.</Text>
+            <Text style={[type.body(12.5), { color: color.mute, marginTop: 6 }]}>one a day, about when you did yesterday's lesson. never a guilt trip. never red.</Text>
             <View style={{ gap: 8, marginTop: 12 }}>
               {SUN_NOTES(wing, ic.short, (data.DAY1[wing] || data.DAY1.SPIRITUAL).word).map(([t, m]: [string, string]) => (
                 <View key={t} style={{ backgroundColor: "#F2F2EC", borderRadius: 14, paddingVertical: 10, paddingHorizontal: 12, flexDirection: "row", gap: 10 }}>

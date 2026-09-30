@@ -1,15 +1,16 @@
 // A friend's lantern, opened from a link. Everything shown comes from the link itself (checked and trimmed);
 // the sender is remembered on this device only ("walking with" on Together). No server, no account.
 import { router, useLocalSearchParams } from "expo-router";
-import { useEffect, useMemo } from "react";
-import { ScrollView, Text, View } from "react-native";
+import { useEffect, useMemo, useState } from "react";
+import { ScrollView, Text, TextInput, View } from "react-native";
+import { acceptInvite, cleanNick, setNick, useFriends } from "@/lib/friends";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { label } from "@ih/content";
 import { useTitle } from "@/lib/title";
 import { useStore } from "@/lib/store";
 import { pathWords, readGift, saveWalker, whenLit } from "@/lib/walkers";
 import { isLessonLine } from "@/lib/three";
-import { Btn, CloseButton, Guy, Link, color, font, type } from "@/ui";
+import { Btn, CloseButton, Guy, Link, color, font, toast, type } from "@/ui";
 import { Lantern } from "@/ui/lantern";
 
 export default function WithScreen() {
@@ -26,6 +27,20 @@ export default function WithScreen() {
   const back = () => router.replace(onboarded ? "/today" : "/welcome/you");
   // "light one back" opens today's lantern (it says what's left if today's three aren't done yet)
   const lightBack = () => (onboarded && gift ? router.replace({ pathname: "/lantern", params: { to: gift.from || "" } }) : back());
+  // "walk with them": the lantern carried a friend invite. First time pairing, ask what friends should call you.
+  const friends = useFriends();
+  const [step, setStep] = useState<"idle" | "nick" | "busy">("idle");
+  const [nick, setNickText] = useState("");
+  const [msg, setMsg] = useState<string | null>(null);
+  const pairNow = async () => {
+    if (!gift?.i) return;
+    setStep("busy");
+    const r = await acceptInvite(gift.i);
+    if (r.ok) { toast(`walking with ${r.nick || gift.from || "a friend"}`); router.replace("/together"); return; }
+    setMsg(r.message || null);
+    setStep("idle");
+  };
+  const walk = () => (friends.nick ? pairNow() : setStep("nick"));
 
   if (!gift) {
     return (
@@ -64,7 +79,24 @@ export default function WithScreen() {
         </View>
       </ScrollView>
       <View style={{ padding: 18, gap: 14, alignItems: "center" }}>
-        <Btn kind="gold" onPress={lightBack} style={{ alignSelf: "stretch" }} testID="light-back">light one back</Btn>
+        {onboarded && gift.i && step === "nick" ? (
+          <View style={{ alignSelf: "stretch", gap: 10 }}>
+            <Text style={[type.h1(20), { color: "#fff", textAlign: "center" }]}>what should friends call you?</Text>
+            <TextInput testID="nick-input" value={nick} onChangeText={(t) => setNickText(t.slice(0, 24))} placeholder="a first name or a nickname" placeholderTextColor="#ffffff77" maxLength={24}
+              autoComplete="off" autoCorrect={false} accessibilityLabel="What should friends call you?" returnKeyType="done"
+              style={{ borderWidth: 1.5, borderColor: "#ffffff55", borderRadius: 999, paddingVertical: 13, paddingHorizontal: 16, fontFamily: font.text[400], fontSize: 16, color: "#fff" }} />
+            <Btn kind="gold" testID="nick-save" disabled={!cleanNick(nick)} onPress={() => { setNick(nick); pairNow(); }}>walk with them</Btn>
+            <Text style={[type.body(11), { color: "#ffffff77", textAlign: "center" }]}>only friends you walk with see it, with your streak, whether today's done and your weekly light. never your door or anything you wrote.</Text>
+          </View>
+        ) : onboarded && gift.i ? (
+          <>
+            <Btn kind="gold" onPress={walk} disabled={step === "busy"} style={{ alignSelf: "stretch" }} testID="walk-with">{step === "busy" ? "one moment…" : `walk with ${gift.from || "them"}`}</Btn>
+            {msg ? <Text accessibilityLiveRegion="polite" style={[type.body(13), { color: "#fff", textAlign: "center" }]}>{msg}</Text> : null}
+            <Btn kind="light" onPress={lightBack} style={{ alignSelf: "stretch" }} testID="light-back">light one back</Btn>
+          </>
+        ) : (
+          <Btn kind="gold" onPress={lightBack} style={{ alignSelf: "stretch" }} testID="light-back">light one back</Btn>
+        )}
         <Link onPress={later} style={{ color: "#ffffffaa" }}>not now</Link>
         <Text style={[type.body(11), { color: "#ffffff77", textAlign: "center" }]}>
           {onboarded ? "saved to “walking with” on this phone. no accounts, no feeds." : "you'll start on your own path. they'll be in “walking with” once you're in."}
