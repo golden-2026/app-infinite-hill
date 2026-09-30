@@ -2,7 +2,9 @@ import { track } from "@/lib/analytics";
 import { useTitle } from "@/lib/title";
 // A day's lesson: v175 Session, as a real screen. Queue of steps, combo, "one more time" on the misses
 // (nothing counted twice), then the tally. Leaving asks first; finishing records the sit and opens /done.
-import { DOORS, GRADED, deeperRound, icon, lessonInfo, native, planDay, screenLines } from "@ih/content";
+import { DOORS, GRADED, deeperRound, icon, knownSoFar, lessonInfo, native, planDay, screenLines } from "@ih/content";
+import { dueCards, slipsFor } from "@/lib/missed";
+import { recallQuestion } from "@/session/recall";
 import { doorLabel, isEs, t, type Key } from "@/i18n";
 import { levelFor } from "@/lib/level";
 import { practiceModeOf } from "@/lib/onboard";
@@ -33,7 +35,7 @@ import { Enter } from "@/ui/enter";
 import { useChrome } from "@/ui/chrome";
 
 // The eyebrow over each step: the lesson part's name (planDay's segment type), or else the app's own name for the step.
-const SEG_TYPES = ["bet", "myth", "fork", "original", "trapdoor", "bell", "guess", "order", "match", "listen", "scenes", "say", "rhythm", "typeit", "rush", "sit", "breath", "speak", "taphear", "fixintro", "tally"];
+const SEG_TYPES = ["recall", "bet", "myth", "fork", "original", "trapdoor", "bell", "guess", "order", "match", "listen", "scenes", "say", "rhythm", "typeit", "rush", "sit", "breath", "speak", "taphear", "fixintro", "tally"];
 function segName(seg: string | undefined, type: string): string {
   if (seg) {
     const k = `session.part.${seg}` as Key;
@@ -109,17 +111,32 @@ function LessonLoading() {
 
 function Session({ door, day, kidId, mode, deep, voiceOn, onFinish, script = null }: { door: string; day: number; kidId: string | null; mode: string; deep: boolean; voiceOn: boolean; onFinish: ReturnType<typeof useStore>["completeSit"]; script?: any | null }) {
   const ic = icon(door);
-  const { earnLight, recordRun, recordFeel, update, saved: me } = useStore();
+  const { earnLight, recordRun, recordFeel, update, noteLearning, saved: me } = useStore();
   useTitle(`${t("session.title", { door: doorLabel(door).toLowerCase(), day })}${deep ? t("session.title.deeper") : ""}`);
   useChrome(true);
   // The level is fixed for the whole lesson (it moves between lessons, never in the middle of one).
   const [level] = useState(() => (mode === "adult" ? levelFor({ door, day, profile: me.settings.profile, runs: me.settings.runs }) : 1));
   // "just learn": no breath or sit, and the practice is told as how it's done (fixed for the whole lesson)
   const [learn] = useState(() => practiceModeOf(me.settings.profile) === "learn");
+  // Words that slipped before and are due today come back as "one from before" (two at most, fixed for the lesson;
+  // grown-ups' own lessons only). The door's words so far are what a slip can be about.
+  const own = mode === "adult" && !kidId && !deep;
+  const [recallCards] = useState(() => (own ? dueCards(me.missed || [], door, todayNow(), { n: 2 }) : []));
+  const vocab = useMemo(() => new Map(knownSoFar(door, day).map((k) => [k.word.toLowerCase(), k])), [door, day]);
   const plan = useMemo(() => {
     const p = !deep ? planDay({ wing: door, day, mode, level: mode === "adult" ? level : 0, script }) : { ...planDay({ wing: door, day, mode, script }), steps: deeperRound(door, day, level) };
-    return learn ? { ...p, steps: learnSteps(p.steps, p.info?.script ? p.info.howItsDone : null) } : p;
-  }, [door, day, mode, level, deep, learn, script]);
+    let steps = learn ? learnSteps(p.steps, p.info?.script ? p.info.howItsDone : null) : p.steps;
+    const cards = recallCards.filter((c) => c.word.toLowerCase() !== String(p.word).toLowerCase());
+    if (cards.length) {
+      let id = Math.max(...steps.map((x: any) => x.id)) + 1;
+      const recall = cards.map((c, k) => recallQuestion(c, day, day * 17 + k)).filter(Boolean).map((q) => ({ type: "recall", graded: true, ...q!, id: id++ }));
+      // the weekly quick round leans on them too
+      const words = new Set(cards.map((c) => c.word.toLowerCase()));
+      steps = steps.map((x: any) => (x.type === "rush" ? { ...x, pairs: [...cards.map((c) => [c.word, c.carry.replace(/[.!]$/, "")]), ...x.pairs.filter((pr: string[]) => !words.has(pr[0].toLowerCase()))].slice(0, x.pairs.length) } : x));
+      steps = [...steps.slice(0, -1), ...recall, steps[steps.length - 1]]; // just before the tally
+    }
+    return { ...p, steps };
+  }, [door, day, mode, level, deep, learn, script, recallCards]);
   const shownLevel = deep ? Math.min(5, level + 2) : level;
   const [rushSecs, setRushSecs] = useState<number | null>(null);
   const [feel, setFeel] = useState<string | null>(null);
@@ -137,10 +154,14 @@ function Session({ door, day, kidId, mode, deep, voiceOn, onFinish, script = nul
   const [score, setScore] = useState<{ right: number; asked: number }>(saved0?.score ?? { right: 0, asked: 0 });
   const [combo, setCombo] = useState(0);
   const [best, setBest] = useState<number>(saved0?.best ?? 0);
+  // first tries that slipped (words) and the "one from before" answers, kept for the missed-words schedule at the end
+  const [slips, setSlips] = useState<string[]>(saved0?.slips ?? []);
+  const [recalled, setRecalled] = useState<{ word: string; ok: boolean }[]>(saved0?.recalled ?? []);
+  const pairSlips = useRef<string[]>([]); // the pairs tried wrong in the step on screen
   useEffect(() => {
     if (qi === 0 && phase === "play") return; // nothing worth resuming yet
-    writeJSON(resumeKey, { date: todayNow(), queue, qi, phase, missed, score, best });
-  }, [queue, qi, phase, missed, score, best]); // eslint-disable-line react-hooks/exhaustive-deps
+    writeJSON(resumeKey, { date: todayNow(), queue, qi, phase, missed, score, best, slips, recalled });
+  }, [queue, qi, phase, missed, score, best, slips, recalled]); // eslint-disable-line react-hooks/exhaustive-deps
   // Game feel: the mascot's pose, a beat that pops it, and the combo counted the moment an answer lands.
   const [pose, setPose] = useState("wave");
   const [beat, setBeat] = useState(0);
@@ -186,6 +207,13 @@ function Session({ door, day, kidId, mode, deep, voiceOn, onFinish, script = nul
   const verdict = (ok: boolean | null) => {
     // (the combo, sound and mascot already reacted when the answer landed — see `react`)
     if (ok === null || ok === undefined) return next();
+    const tried = pairSlips.current;
+    pairSlips.current = [];
+    if (phase === "play" && step?.type === "recall") setRecalled((r) => [...r.filter((x) => x.word !== step.word), { word: step.word, ok: !!ok }]);
+    else if (phase === "play" && !ok && own) {
+      const words = slipsFor(step as any, plan.word, tried).filter((w) => vocab.has(w.toLowerCase()));
+      if (words.length) setSlips((x) => [...new Set([...x, ...words])]);
+    }
     if (ok) {
       if (phase === "play") setScore((s) => ({ right: s.right + 1, asked: s.asked + 1 }));
       return next();
@@ -221,6 +249,7 @@ function Session({ door, day, kidId, mode, deep, voiceOn, onFinish, script = nul
     }
     const minutes = Math.max(1, Math.round((Date.now() - t0.current) / 60000));
     if (!kidId) recordRun({ door, day, acc: asked ? score.right / asked : 1, level, rushSecs, minutes });
+    if (own) noteLearning({ door, slips: slips.map((w) => vocab.get(w.toLowerCase())!).filter(Boolean), recalled });
     // a one-off visit to another door comes straight back to your own path
     if (!kidId && door !== me.settings.homeWing && me.settings.active === "visit") update({ active: "home" });
     const outcome = onFinish({ door, day, kidId });
@@ -320,18 +349,19 @@ function Session({ door, day, kidId, mode, deep, voiceOn, onFinish, script = nul
     case "original": return frame(<OriginalStep step={step} voiceOn={voiceOn} onDone={() => next()} />, { top: true });
     case "trapdoor": return frame(<TrapdoorStep step={step} onDone={() => next()} />, { top: true });
     case "guess":
+    case "recall":
     case "listen": return frame(<OptionStep step={step} voiceOn={voiceOn} onDone={verdict} />);
     case "order":
       return frame(<View style={{ width: "100%" }}><Text style={[type.h1(24), { color: "#fff", marginBottom: 14 }]}>{step.prompt}</Text><View style={st.cream}><OrderStep step={step} onDone={(ok) => setTimeout(() => verdict(ok), 500)} /></View></View>, { top: true });
     case "match":
-      return frame(<View style={{ width: "100%" }}><Text style={[type.h1(24), { color: "#fff", marginBottom: 14 }]}>{step.prompt}</Text><View style={st.cream}><MatchStep step={step} onDone={(ok) => setTimeout(() => verdict(ok), 300)} /></View></View>, { top: true });
+      return frame(<View style={{ width: "100%" }}><Text style={[type.h1(24), { color: "#fff", marginBottom: 14 }]}>{step.prompt}</Text><View style={st.cream}><MatchStep step={step} onMiss={(l) => { pairSlips.current.push(l); }} onDone={(ok) => setTimeout(() => verdict(ok), 300)} /></View></View>, { top: true });
     case "taphear": return frame(<TapHear step={step} voiceOn={voiceOn} onDone={verdict} />);
     case "scenes":
       return frame(<View style={{ width: "100%" }}><Text style={[type.h1(24), { color: "#fff", marginBottom: 8 }]}>{step.prompt}</Text><ScenesStep step={step} onDone={verdict} /></View>, { top: true });
     case "say": return frame(<SayStep step={step} voiceOn={voiceOn} onDone={() => next()} />);
     case "rhythm": return frame(<RhythmStep step={step} voiceOn={voiceOn} onDone={verdict} />);
     case "typeit": return frame(<TypeItStep step={step} voiceOn={voiceOn} onDone={verdict} />, { top: true });
-    case "rush": return frame(<RushStep step={step} best={me.settings.rushBest?.[door] ?? null} onDone={(ok, secs) => { if (secs) setRushSecs(secs); verdict(ok); }} />, { top: true });
+    case "rush": return frame(<RushStep step={step} best={me.settings.rushBest?.[door] ?? null} onMiss={(l) => { pairSlips.current.push(l); }} onDone={(ok, secs) => { if (secs) setRushSecs(secs); verdict(ok); }} />, { top: true });
     case "sit": return frame(<SitStep secs={step.secs} onDone={() => next()} />);
     case "breath": return frame(<BreathStep n={step.n} onDone={() => next()} />);
     case "speak":

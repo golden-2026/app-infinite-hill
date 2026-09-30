@@ -1,15 +1,22 @@
 // Friends: the small shared piece behind friend streaks and the friends-only weekly board.
-// GET/POST /api/friends?kind=join|invite|accept|checkin|friends|board|leave|remove
+// GET/POST /api/friends?kind=join|invite|accept|checkin|friends|cheer|leave|remove
 //   join     POST            → { friendId, token }: an anonymous friend identity. No email, no account. Only a hash
 //                              of the token is stored; the phone keeps the token.
 //   invite   POST (auth)     → { code, expires }: a random single-use code (about 7 days) that rides on a lantern link.
 //   accept   POST (auth)     { code } → both people become friends (a mutual edge).
-//   checkin  POST (auth)     { date, doneToday, streak, golden, weekLight, nick, board } → today's status.
+//   checkin  POST (auth)     { date, doneToday, streak, golden, weekLight, nick, board, quests } → today's status.
+//                              quests is only a count of season quests finished (never which one: a quest names a
+//                              tradition's season).
 //   friends  GET  (auth)     ?date=YYYY-MM-DD → each friend's nickname, streak, today, golden, weekly light (board
-//                              members only), last seen, and the shared friend streak.
+//                              members only), last seen, the shared friend streak, and the milestone you can cheer;
+//                              plus the cheers your friends sent you in the last two weeks.
+//   cheer    POST (auth)     { friendId, kind: "streak"|"quest", n, date } → one fixed cheer for a friend's milestone
+//                              they reached in the last few days. No text at all (nothing to moderate). Once per
+//                              friend per milestone.
 //   remove   POST (auth)     { friendId } → un-friend, both sides.   leave POST (auth) → delete me everywhere.
 // What is stored per person: a nickname they chose, the numbers above, which dates had a lesson (or a rest day, as
-// inferred from their own streak surviving a gap), and their friend list. Never a door, an answer, a journal line, a
+// inferred from their own streak surviving a gap), their friend list, how many season quests they finished (a count),
+// and cheers: which friend cheered which milestone and when, and which ones they cheered. Never a door, an answer, a journal line, a
 // mood or anything about belief — the request is refused if it carries anything else. Nothing is ever logged.
 // Storage: Netlify Blobs in production (netlify/_shared/friends-store.js); a Map in tests and local development.
 import { createHash, randomBytes, timingSafeEqual } from "node:crypto";
@@ -22,7 +29,12 @@ const NICK_MAX = 24;
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 const ID_RE = /^f_[a-f0-9]{24}$/;
 const CODE_RE = /^[a-z2-9]{10}$/;
-const LIMIT = { perMinute: 60, joinsPerHour: 10, invitesPerDay: 40 };
+const LIMIT = { perMinute: 60, joinsPerHour: 10, invitesPerDay: 40, cheersPerHour: 60 };
+/** The streak lengths worth a cheer (the app's own streak milestones, @ih/domain STREAK_MILESTONES). */
+export const CHEER_STREAKS = Object.freeze([3, 7, 14, 30, 50, 100, 365]);
+/** A milestone can be cheered on the day it's reached and the day after; cheers show for two weeks. */
+export const CHEER_DAYS = 2;
+const CHEERS_SHOWN_DAYS = 14;
 
 // ---------- storage ----------
 function memoryStore() {
@@ -164,15 +176,33 @@ function remember(me, c) {
 
 // ---------- the requests ----------
 function readCheckin(v, now) {
-  if (!isObject(v) || !onlyKeys(v, ["date", "doneToday", "streak", "golden", "weekLight", "nick", "board"])) return null;
+  if (!isObject(v) || !onlyKeys(v, ["date", "doneToday", "streak", "golden", "weekLight", "nick", "board", "quests"])) return null;
+  if (v.quests !== undefined && (!Number.isInteger(v.quests) || v.quests < 0 || v.quests > 1000)) return null;
   if (!plausible(v.date, now) || typeof v.doneToday !== "boolean" || typeof v.golden !== "boolean") return null;
   if (!Number.isInteger(v.streak) || v.streak < 0 || v.streak > 20_000) return null;
   if (!Number.isInteger(v.weekLight) || v.weekLight < 0 || v.weekLight > 10_000) return null;
   if (v.board !== undefined && typeof v.board !== "boolean") return null;
   const nick = v.nick === undefined || v.nick === null ? null : cleanNick(v.nick);
   if (v.nick !== undefined && v.nick !== null && !nick) return null;
-  return { date: v.date, doneToday: v.doneToday, streak: v.streak, golden: v.golden, weekLight: v.weekLight, nick, board: v.board };
+  return { date: v.date, doneToday: v.doneToday, streak: v.streak, golden: v.golden, weekLight: v.weekLight, nick, board: v.board, quests: v.quests };
 }
+
+/**
+ * What a friend has reached lately that can be cheered: a streak milestone (reached in the last CHEER_DAYS days, and
+ * still going) and a season quest they finished in that time. Only their own numbers decide it.
+ */
+export function cheerable(f, today) {
+  const out = [];
+  const st = f.status || null;
+  if (st?.date && daysBetween(st.date, today) <= 1) {
+    // the streak on the day they last checked in; the milestone is the largest one it passed at most CHEER_DAYS ago
+    const m = [...CHEER_STREAKS].reverse().find((x) => st.streak >= x);
+    if (m && st.streak - m < CHEER_DAYS) out.push({ kind: "streak", n: m });
+  }
+  if (f.quests > 0 && f.questAt && daysBetween(f.questAt, today) < CHEER_DAYS && daysBetween(f.questAt, today) >= -1) out.push({ kind: "quest", n: f.quests });
+  return out;
+}
+const cheerKey = (friendId, c) => `${friendId}|${c.kind}:${c.n}`;
 
 function view(me, f, today) {
   const st = f.status || null;
@@ -191,6 +221,7 @@ function view(me, f, today) {
     weekLight: me.board && f.board && thisWeek ? st.weekLight : null,
     lastSeen: f.seen ? f.seen.slice(0, 10) : null,
     faded: stale,
+    cheer: stale ? [] : cheerable(f, today).map((c) => ({ ...c, cheered: (me.cheered || []).includes(cheerKey(f.id, c)) })),
   };
 }
 
@@ -199,7 +230,7 @@ export default async function friends(req, res, { now = new Date() } = {}) {
   res.setHeader("X-Content-Type-Options", "nosniff");
   const q = query(req);
   const kind = q.get("kind");
-  const KINDS = { join: "POST", invite: "POST", accept: "POST", checkin: "POST", friends: "GET", leave: "POST", remove: "POST" };
+  const KINDS = { join: "POST", invite: "POST", accept: "POST", checkin: "POST", friends: "GET", cheer: "POST", leave: "POST", remove: "POST" };
   if (!kind || !Object.hasOwn(KINDS, kind)) return json(res, 400, { error: "Unknown friends request" });
   if (req.method !== KINDS[kind]) {
     res.setHeader("Allow", KINDS[kind]);
@@ -266,6 +297,10 @@ export default async function friends(req, res, { now = new Date() } = {}) {
       const next = { ...me, status: { date: c.date, doneToday: c.doneToday, streak: c.streak, golden: c.golden, weekLight: c.weekLight }, days: remember(me, c), seen: now.toISOString() };
       if (c.nick) next.nick = c.nick;
       if (c.board !== undefined) next.board = c.board;
+      if (c.quests !== undefined) {
+        if (c.quests > (me.quests || 0)) next.questAt = c.date; // a quest finished since the last check-in
+        next.quests = c.quests;
+      }
       await save(me.id, next);
       return json(res, 200, { ok: true });
     }
@@ -278,14 +313,38 @@ export default async function friends(req, res, { now = new Date() } = {}) {
         const f = await store.get(`me/${id}`);
         if (f) list.push(view(me, { id, ...f }, today));
       }
-      return json(res, 200, { me: { nick: me.nick || null, board: !!me.board }, friends: list });
+      // cheers sent to me lately, from people who are still my friends (their nickname as it is now)
+      const since = addDays(today, -CHEERS_SHOWN_DAYS);
+      const nicks = new Map(list.map((f) => [f.id, f.nick]));
+      const cheers = (me.cheers || []).filter((c) => nicks.has(c.from) && c.at.slice(0, 10) >= since).reverse().slice(0, 5)
+        .map((c) => ({ nick: nicks.get(c.from), kind: c.kind, n: c.n, on: c.at.slice(0, 10) }));
+      return json(res, 200, { me: { nick: me.nick || null, board: !!me.board }, friends: list, cheers });
+    }
+
+    if (kind === "cheer") {
+      const b = body;
+      if (!onlyKeys(b, ["friendId", "kind", "n", "date"]) || typeof b.friendId !== "string" || !ID_RE.test(b.friendId) || !["streak", "quest"].includes(b.kind) || !Number.isInteger(b.n) || b.n < 1 || b.n > 20_000) return json(res, 400, { error: "Invalid friends request" });
+      if (b.date !== undefined && !plausible(b.date, now)) return json(res, 400, { error: "Invalid friends request" });
+      if (!(me.friends || []).includes(b.friendId)) return json(res, 404, { error: "Not a friend" });
+      const them = await store.get(`me/${b.friendId}`);
+      if (!them) return json(res, 404, { error: "Not a friend" });
+      const today = b.date || me.status?.date || now.toISOString().slice(0, 10);
+      const c = { kind: b.kind, n: b.n };
+      // only what they've actually reached lately; anything else is refused
+      if (!cheerable(them, today).some((x) => x.kind === c.kind && x.n === c.n)) return json(res, 409, { error: "Nothing to cheer" });
+      const key = cheerKey(b.friendId, c);
+      if ((me.cheered || []).includes(key)) return json(res, 200, { ok: true, already: true }); // once per friend per milestone
+      if (!(await allowed(req, "cheer", LIMIT.cheersPerHour, now))) return json(res, 429, { error: "Slow down" });
+      await store.set(`me/${b.friendId}`, { ...them, cheers: [...(them.cheers || []), { from: me.id, kind: c.kind, n: c.n, at: now.toISOString() }].slice(-30) });
+      await save(me.id, { ...me, cheered: [...(me.cheered || []), key].slice(-300) });
+      return json(res, 200, { ok: true });
     }
 
     if (kind === "remove") {
       if (!onlyKeys(body, ["friendId"]) || typeof body.friendId !== "string" || !ID_RE.test(body.friendId)) return json(res, 400, { error: "Invalid friends request" });
       await save(me.id, { ...me, friends: (me.friends || []).filter((x) => x !== body.friendId) });
       const them = await store.get(`me/${body.friendId}`);
-      if (them) await store.set(`me/${body.friendId}`, { ...them, friends: (them.friends || []).filter((x) => x !== me.id) });
+      if (them) await store.set(`me/${body.friendId}`, { ...them, friends: (them.friends || []).filter((x) => x !== me.id), cheers: (them.cheers || []).filter((c) => c.from !== me.id) });
       return json(res, 200, { ok: true });
     }
 
@@ -293,7 +352,7 @@ export default async function friends(req, res, { now = new Date() } = {}) {
       if (Object.keys(body).length) return json(res, 400, { error: "Invalid friends request" });
       for (const id of me.friends || []) {
         const them = await store.get(`me/${id}`);
-        if (them) await store.set(`me/${id}`, { ...them, friends: (them.friends || []).filter((x) => x !== me.id) });
+        if (them) await store.set(`me/${id}`, { ...them, friends: (them.friends || []).filter((x) => x !== me.id), cheers: (them.cheers || []).filter((c) => c.from !== me.id) });
       }
       for (const code of me.invites || []) await store.delete(`invite/${code}`);
       await store.delete(`me/${me.id}`);

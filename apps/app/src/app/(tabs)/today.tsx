@@ -8,6 +8,7 @@ import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { isDemo } from "@/lib/flags";
 import { useStore } from "@/lib/store";
+import { dueCards } from "@/lib/missed";
 import { voiceLabel } from "@/lib/voice";
 import { Btn, Card, Face, Guy, Sun, color, font, type } from "@/ui";
 import { HillScene } from "@/ui/hill";
@@ -41,7 +42,9 @@ export default function Today() {
   const hour = new Date().getHours();
   const night = hour < 6 || hour >= 20; // same bedtime as the hill
   const strand = STRAND_WORDS(wing, lesson);
-  const due = st.reviewedOn === today ? 0 : Math.min(3, strand.length); // reviewed today: rests till tomorrow
+  // words that slipped and are due again come first; otherwise the latest strand words (reviewed today: rests till tomorrow)
+  const dueAgain = dueCards(saved.missed || [], wing, today, { n: 5 }).length;
+  const due = dueAgain || (st.reviewedOn === today ? 0 : Math.min(3, strand.length));
   const yest = lesson > 1 ? lessonInfo(wing, lesson - 1) || {} : null;
   const carried = st.carried && st.carried.lesson === lesson - 1 ? st.carried.did : null; // saved, so reload keeps it
   const setCarried = (did: boolean) => update({ carried: { date: today, lesson: lesson - 1, did } });

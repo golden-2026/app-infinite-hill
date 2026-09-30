@@ -334,19 +334,49 @@ function scriptMeaning(info) {
   if (bare(m).split(" ").length < 3 && third) m = `${m}: ${asOption(third)}`;
   return m.length >= 6 && m.length <= 90 ? m : null;
 }
-function scriptGuess(steps, info, n = 2) {
-  const meaning = scriptMeaning(info);
-  if (!meaning) return steps;
+// When "the word" segment doesn't open with a gloss (the Lord's Prayer days: "Line one of the Lord's Prayer. Our
+// Father…"), the script's trapdoor still says it plainly: "what it means: …". Its first sentence is the answer.
+const MEANS = /^what it means:\s*/i;
+function trapdoorMeaning(info) {
+  const floor = (info.games?.trapdoor || [])[1];
+  if (typeof floor !== "string" || !MEANS.test(floor)) return null;
+  const m = asOption(floor.replace(MEANS, "").split(SENTENCES)[0]);
+  return m.length >= 6 && m.length <= 90 ? m : null;
+}
+// A match pair's right side is often another true gloss of the word ("grace" → "a gift, a favor, freely given"),
+// which made two answers right. A wrong answer may not share a content word with the right one.
+const STOP = new Set(["the", "and", "that", "this", "with", "from", "for", "not", "but", "its", "it's", "you", "your", "are", "was", "who", "one", "all", "every", "into", "than", "what", "when", "they", "them", "said", "says"]);
+const content = (s, skip) => new Set(bare(s).split(" ").filter((w) => w.length >= 3 && !STOP.has(w) && !skip.has(w)));
+function overlaps(a, b, word) {
+  const skip = new Set(bare(word).split(" "));
+  const A = content(a, skip);
+  for (const w of content(b, skip)) if (A.has(w) || [...A].some((x) => x.length >= 5 && w.length >= 5 && (x.startsWith(w) || w.startsWith(x)))) return true;
+  return false;
+}
+/** The guess for a day: { answer, wrong: [..] } from the camp-one quiz table, else the script, else null. */
+export function guessFor(wing, lesson, info) {
+  const fixed = lesson <= 21 ? QUIZ[wing]?.[lesson] : null;
+  if (fixed) return { answer: fixed[0], wrong: fixed.slice(1) };
+  if (!info?.script) return null;
+  const meaning = scriptMeaning(info) || trapdoorMeaning(info);
+  if (!meaning) return null;
   const seen = new Set([bare(meaning), bare(info.word)]);
   const wrong = [];
-  const add = (t) => { const o = asOption(t); if (o && o.length <= 90 && !seen.has(bare(o)) && !/^(why|how|who|what|when|where)\b/i.test(o)) { seen.add(bare(o)); wrong.push(o); } };
+  const add = (t) => {
+    const o = asOption(t);
+    if (o && o.length <= 90 && !seen.has(bare(o)) && !/^(why|how|who|what|when|where)\b/i.test(o) && !overlaps(meaning, o, info.word)) { seen.add(bare(o)); wrong.push(o); }
+  };
   const thought = (info.games?.trapdoor || [])[0];
   if (typeof thought === "string" && /^what you thought:/i.test(thought)) add(thought.replace(/^what you thought:\s*/i, ""));
   for (const [left, right] of info.games?.match?.pairs || []) if (bare(left) !== bare(info.word) && !bare(left).endsWith(` ${bare(info.word)}`)) add(right);
-  if (wrong.length < 2) return steps;
-  const options = [meaning, ...wrong.slice(0, n)];
-  const turn = (info.day || 0) % options.length; // same order every time for a day, answer not always first
-  return steps.map((s) => (s.type === "guess" ? { ...s, options: [...options.slice(turn), ...options.slice(0, turn)], answer: meaning } : s));
+  return wrong.length >= 2 ? { answer: meaning, wrong } : null;
+}
+function applyGuess(steps, wing, lesson, info, n = 2) {
+  const g = guessFor(wing, lesson, info);
+  if (!g) return steps;
+  const options = [g.answer, ...g.wrong.slice(0, n)];
+  const turn = (lesson || 0) % options.length; // same order every time for a day, answer not always first
+  return steps.map((s) => (s.type === "guess" ? { ...s, options: [...options.slice(turn), ...options.slice(0, turn)], answer: g.answer } : s));
 }
 
 /**
@@ -378,14 +408,18 @@ export function planDay({ wing, day, lesson = day, mode = "adult", named = true,
   }
   // Rising challenge (level 1–5; 0 = the plain lesson, as before). Children keep the plain lesson.
   if (level && mode === "adult") steps = levelUp(steps, { wing, day, level });
-  // a script day's guess answers with what the word means (after the level's own guess, which reaches for carry lines)
-  if (given) steps = scriptGuess(steps, given, level >= 3 && mode === "adult" ? 3 : 2);
+  // tap what you hear: a one- or two-word line gets the day's word in front, and tiles keep their apostrophes
+  steps = steps.map((s) => (s.type === "taphear" ? { ...s, ...tapRound({ word: R.word, carry: R.carry, hook: info?.hook, wing, level: mode === "adult" ? level : 0, seed: lesson * 11 + 9 }) } : s));
+  // the guess answers with what the word means, not the day's carry line (after the level's own guess, which reaches
+  // for carry lines): camp one's quiz table first, then the script's own gloss
+  steps = applyGuess(steps, wing, lesson, given || info, level >= 3 && mode === "adult" ? 3 : 2);
   return { steps, word: R.word, carry: R.carry, title: info?.title || d1.title || "", info };
 }
 
 export const GRADED = Object.freeze(["order", "match", "listen", "taphear", "bet", "myth", "scenes", "typeit", "rush", "rhythm"]);
 
-import { levelUp } from "./level.js";
+import { levelUp, tapRound } from "./level.js";
+import { QUIZ } from "./quiz.js";
 import { featureFor, lessonFromScript } from "./lesson-script.js";
 export { FORMAT as SCRIPT_FORMAT, checkScript, chunkOf, chunkPath, compileScript, featureFor, lessonFromScript, lessonScript, orderIdeas, resetLessonCache, spoken } from "./lesson-script.js";
-export { LEVELS, clampLevel, deeperRound, knownSoFar, levelUp, likeness, rushStep, syllables, wrongAnswers } from "./level.js";
+export { LEVELS, clampLevel, deeperRound, knownSoFar, levelUp, likeness, rushStep, syllables, tapRound, tile, tileKey, wrongAnswers } from "./level.js";

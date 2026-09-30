@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test, beforeEach } from "node:test";
-import friends, { MAX_FRIENDS, friendStreak, mondayOf, useFriendsStore } from "../../api/friends.js";
+import friends, { CHEER_STREAKS, MAX_FRIENDS, cheerable, friendStreak, mondayOf, useFriendsStore } from "../../api/friends.js";
 import { handler } from "../../netlify/functions/friends.js";
 
 const NOW = new Date("2026-10-07T16:00:00Z"); // a Wednesday
@@ -183,4 +183,80 @@ test("the Netlify function answers through the adapter", async () => {
   assert.equal(r.statusCode, 200);
   const body = JSON.parse(r.isBase64Encoded ? Buffer.from(r.body, "base64").toString("utf8") : r.body);
   assert.match(body.friendId, /^f_/);
+});
+
+// ---------- cheers ----------
+const friendsOf = async (who, date = "2026-10-07") => (await call("friends", { method: "GET", auth: who, query: `&date=${date}`, now: new Date(`${date}T16:00:00Z`) })).body;
+
+test("a friend's 30-day streak can be cheered once; they see who cheered it next time they look", async () => {
+  const a = await join(), b = await join();
+  await pair(a, b);
+  await call("checkin", { auth: a, body: status({ nick: "maya" }) });
+  await call("checkin", { auth: b, body: status({ nick: "sam", streak: 30 }) });
+  const seen = (await friendsOf(a)).friends[0];
+  assert.deepEqual(seen.cheer, [{ kind: "streak", n: 30, cheered: false }]);
+  const r = await call("cheer", { auth: a, body: { friendId: b.friendId, kind: "streak", n: 30, date: "2026-10-07" } });
+  assert.equal(r.status, 200);
+  assert.deepEqual((await friendsOf(a)).friends[0].cheer, [{ kind: "streak", n: 30, cheered: true }]);
+  // once per friend per milestone: a second tap changes nothing
+  const again = await call("cheer", { auth: a, body: { friendId: b.friendId, kind: "streak", n: 30, date: "2026-10-07" } });
+  assert.equal(again.status, 200);
+  assert.equal(again.body.already, true);
+  const mine = await friendsOf(b);
+  assert.deepEqual(mine.cheers, [{ nick: "maya", kind: "streak", n: 30, on: "2026-10-07" }]);
+});
+
+test("only a milestone reached in the last few days, and only a friend's, can be cheered", async () => {
+  const a = await join(), b = await join(), stranger = await join();
+  await pair(a, b);
+  await call("checkin", { auth: b, body: status({ streak: 12 }) }); // 12: past 7 by five days, not yet 14
+  assert.deepEqual((await friendsOf(a)).friends[0].cheer, []);
+  assert.equal((await call("cheer", { auth: a, body: { friendId: b.friendId, kind: "streak", n: 7 } })).status, 409);
+  assert.equal((await call("cheer", { auth: a, body: { friendId: b.friendId, kind: "streak", n: 12 } })).status, 409);
+  await call("checkin", { auth: stranger, body: status({ streak: 30 }) });
+  assert.equal((await call("cheer", { auth: a, body: { friendId: stranger.friendId, kind: "streak", n: 30 } })).status, 404);
+  assert.equal((await call("cheer", { body: { friendId: b.friendId, kind: "streak", n: 7 } })).status, 401);
+  // milestones: the app's own streak milestones; the day after still counts, two days after doesn't
+  assert.deepEqual([...CHEER_STREAKS], [3, 7, 14, 30, 50, 100, 365]);
+  const st = (streak, date = "2026-10-07") => ({ status: { date, streak } });
+  assert.deepEqual(cheerable(st(15), "2026-10-07"), [{ kind: "streak", n: 14 }]);
+  assert.deepEqual(cheerable(st(16), "2026-10-07"), []);
+  assert.deepEqual(cheerable(st(30, "2026-10-01"), "2026-10-07"), [], "an old check-in isn't a streak now");
+});
+
+test("a cheer has no text: anything but the fixed fields is refused", async () => {
+  const a = await join(), b = await join();
+  await pair(a, b);
+  await call("checkin", { auth: b, body: status({ streak: 7 }) });
+  const base = { friendId: b.friendId, kind: "streak", n: 7 };
+  assert.equal((await call("cheer", { auth: a, body: { ...base, message: "go you!" } })).status, 400);
+  assert.equal((await call("cheer", { auth: a, body: { ...base, kind: "hug" } })).status, 400);
+  assert.equal((await call("cheer", { auth: a, body: { ...base, n: "7" } })).status, 400);
+  assert.equal((await call("cheer", { auth: a, body: { ...base, friendId: "../me" } })).status, 400);
+  assert.equal((await call("cheer", { auth: a, body: base })).status, 200);
+});
+
+test("a finished season quest is cheered by count only, never by name", async () => {
+  const a = await join(), b = await join();
+  await pair(a, b);
+  await call("checkin", { auth: b, body: status({ quests: 0, date: "2026-10-06" }), now: new Date("2026-10-06T16:00:00Z") });
+  await call("checkin", { auth: b, body: status({ quests: 1 }) });
+  assert.equal((await call("checkin", { auth: b, body: status({ quests: "lent-2027" }) })).status, 400);
+  const seen = (await friendsOf(a)).friends[0];
+  assert.deepEqual(seen.cheer.filter((c) => c.kind === "quest"), [{ kind: "quest", n: 1, cheered: false }]);
+  assert.equal((await call("cheer", { auth: a, body: { friendId: b.friendId, kind: "quest", n: 1 } })).status, 200);
+  assert.deepEqual((await friendsOf(b)).cheers.map((c) => c.kind), ["quest"]);
+  // a week later the quest is old news: nothing to cheer
+  const later = (await friendsOf(a, "2026-10-14")).friends[0];
+  assert.deepEqual(later.cheer.filter((c) => c.kind === "quest"), []);
+});
+
+test("cheers go when the friendship does", async () => {
+  const a = await join(), b = await join();
+  await pair(a, b);
+  await call("checkin", { auth: b, body: status({ streak: 7 }) });
+  await call("cheer", { auth: a, body: { friendId: b.friendId, kind: "streak", n: 7 } });
+  assert.equal((await friendsOf(b)).cheers.length, 1);
+  await call("remove", { auth: a, body: { friendId: b.friendId } });
+  assert.deepEqual((await friendsOf(b)).cheers, []);
 });

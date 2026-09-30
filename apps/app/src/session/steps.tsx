@@ -103,7 +103,8 @@ export function OrderStep({ step, onDone }: { step: any; onDone: Done }) {
 }
 
 // ─── match ──────────────────────────────────────────────────────────────
-export function MatchStep({ step, onDone }: { step: any; onDone: Done }) {
+/** `onMiss`: a pair tried wrong (its left side), for the missed-words review. */
+export function MatchStep({ step, onDone, onMiss }: { step: any; onDone: Done; onMiss?: (left: string) => void }) {
   const left: string[] = step.pairs.map((p: string[]) => p[0]);
   const right = useMemo<string[]>(() => shuffle(step.pairs.map((p: string[]) => p[1])), [step]);
   const [sel, setSel] = useState<string | null>(null);
@@ -120,6 +121,7 @@ export function MatchStep({ step, onDone }: { step: any; onDone: Done }) {
       if (Object.keys(g).length === step.pairs.length) { setFinished(true); fx.react(miss === 0 ? "right" : "wrong"); }
     } else {
       setMiss((m) => m + 1);
+      onMiss?.(l);
       setSel(null);
       setNope(t("session.match.nope", { l, r }));
     }

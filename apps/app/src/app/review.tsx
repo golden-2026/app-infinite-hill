@@ -1,8 +1,12 @@
 import { useTitle } from "@/lib/title";
-// v175 Review: your three latest strand words come back. No hearts. (Misses aren't scheduled separately yet.)
+// v175 Review: your three latest strand words come back. No hearts. Words that slipped in a lesson and are due today
+// (lib/missed.ts: 1, 3, 7, 14 days apart) come first: when any are due, the round is those (up to five), and each answer
+// moves its word on (right: further out; wrong: tomorrow). Otherwise it's the latest strand words, as before.
 import { STRAND_WORDS, data } from "@ih/content";
 import { router } from "expo-router";
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
+import { dueCards } from "@/lib/missed";
+import { recallQuestion } from "@/session/recall";
 import { Pressable, Text, View } from "react-native";
 import { useStore } from "@/lib/store";
 import { Bubble, Btn, Eyebrow, Guy, Screen, Sun, color, font, type } from "@/ui";
@@ -13,18 +17,23 @@ const NICE_N = 6;
 
 export default function Review() {
   useTitle(t("session.review.title"));
-  const { door, lessonFor, update, today } = useStore();
+  const { door, lessonFor, update, today, saved, noteLearning } = useStore();
   const lesson = lessonFor(door);
   const strand = STRAND_WORDS(door, lesson);
   const due = useMemo(() => { const w = strand.filter((s) => data.REVIEW_Q[s.word]); return (w.length ? w : strand).slice(-3).reverse(); }, [door, lesson]); // eslint-disable-line react-hooks/exhaustive-deps
   // v175 stored the right answer first; shuffle (stable per word) so it isn't always the top option
-  const items = due.map((s) => {
+  // the words due again, fixed when the round opens (answers move them on as the round goes)
+  const [spaced] = useState(() => dueCards(saved.missed || [], door, today, { n: 5 }).map((c, k) => recallQuestion(c, lesson, lesson * 13 + k)).filter((q) => !!q).map((q) => ({ word: q!.word, day: q!.day, title: "", q: q!.prompt, o: q!.options, a: q!.options.indexOf(q!.answer) })));
+  const results = useRef<{ word: string; ok: boolean }[]>([]);
+  const strandItems = due.map((s) => {
     // Words without a written review question: pick its lesson's title among two other titles from your own strand.
     const others = strand.filter((x) => x.word !== s.word && x.title && x.title !== s.title).map((x) => x.title).slice(-2);
     const q = data.REVIEW_Q[s.word] || { q: t("session.review.which", { word: s.word }), o: [s.title, ...(others.length === 2 ? others : [...others, t("session.review.notYet")].slice(0, 2))], a: 0 };
     const order = q.o.map((_: string, i: number) => i).sort((x: number, y: number) => ((x * 7 + s.word.length * 3) % 5) - ((y * 7 + s.word.length * 3) % 5));
     return { ...s, q: q.q, o: order.map((i: number) => q.o[i]), a: order.indexOf(q.a) };
   });
+  const items = spaced.length ? spaced : strandItems;
+  const dueWords = new Set(items.map((x) => x.word));
   const [i, setI] = useState(0);
   const [picked, setPicked] = useState<number | null>(null);
   const [right, setRight] = useState(0);
@@ -35,6 +44,7 @@ export default function Review() {
     if (picked !== null) return;
     setPicked(k);
     if (k === it.a) setRight((r) => r + 1);
+    if (spaced.length) results.current = [...results.current.filter((x) => x.word !== it.word), { word: it.word, ok: k === it.a }];
     setTimeout(() => { setPicked(null); if (i + 1 < items.length) setI(i + 1); else setPhase("done"); }, k === it.a ? 550 : 1200);
   };
   if (!items.length) return <Screen close={close}><View style={{ flex: 1, justifyContent: "center", gap: 12 }}><Text style={type.h1(28)}>{t("session.review.empty")}</Text><Text style={type.body()}>{t("session.review.emptyBody")}</Text></View><Btn onPress={close}>{t("session.review.backPath")}</Btn></Screen>;
@@ -44,19 +54,19 @@ export default function Review() {
         <View style={{ flexDirection: "row", gap: 14, alignItems: "flex-start" }}><Sun size={64} /><Bubble>{t("session.review.due", { count: items.length })}</Bubble></View>
         <Eyebrow>{t("session.review.strand", { count: strand.length })}</Eyebrow>
         <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
-          {strand.map((s) => { const d = due.find((x) => x.word === s.word); return <View key={s.word} style={{ backgroundColor: d ? color.gold : color.ink, borderWidth: 1.5, borderColor: color.ink, borderRadius: 999, paddingVertical: 8, paddingHorizontal: 14 }}><Text style={{ fontFamily: font.display[800], fontSize: 14, color: d ? color.ink : color.gold }}>{s.word}</Text></View>; })}
+          {strand.map((s) => { const d = dueWords.has(s.word); return <View key={s.word} style={{ backgroundColor: d ? color.gold : color.ink, borderWidth: 1.5, borderColor: color.ink, borderRadius: 999, paddingVertical: 8, paddingHorizontal: 14 }}><Text style={{ fontFamily: font.display[800], fontSize: 14, color: d ? color.ink : color.gold }}>{s.word}</Text></View>; })}
         </View>
         <Text style={type.h1(30)}>{items.length === 1 ? t("session.review.keepIt") : t("session.review.keepThem")}</Text>
       </View>
     </Screen>
   );
   if (phase === "done") return (
-    <Screen close={close} footer={<Btn onPress={() => { update({ reviewedOn: today }); close(); }}>{t("session.review.backPath")}</Btn>}>
+    <Screen close={close} footer={<Btn onPress={() => { if (spaced.length) noteLearning({ door, recalled: results.current }); update({ reviewedOn: today }); close(); }}>{t("session.review.backPath")}</Btn>}>
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: 12 }}>
         <Guy pose={right === items.length ? "jump" : "peace"} h={170} />
         <Text style={type.h1(30)}>{items.length === 1 ? (right ? t("session.review.still") : t("session.review.almost")) : t("session.review.someOf", { a: right, b: items.length })}</Text>
-        <Text style={[type.body(), { color: color.mute, textAlign: "center" }]}>{/* Review picks your latest strand words; misses aren't scheduled yet, so don't promise spacing that doesn't exist. */}
-          {items.length === 1 ? (right ? t("session.review.yours") : t("session.review.again")) : right === items.length ? t("session.review.allYours") : t("session.review.missed")}</Text>
+        <Text style={[type.body(), { color: color.mute, textAlign: "center" }]}>
+          {items.length === 1 ? (right ? t("session.review.yours") : t("session.review.again")) : right === items.length ? (spaced.length ? t("session.recall.spaced") : t("session.review.allYours")) : t("session.review.missed")}</Text>
       </View>
     </Screen>
   );

@@ -14,6 +14,7 @@ import { eraseCompanion } from "./companion/memory";
 import { addMinutes, type Timed } from "./year";
 import type { QuestState } from "@/content/seasons";
 import { leaveFriends } from "./friends";
+import { addDays as addDaysTo, cleanCards, noteRecall, noteSlips, type Card, type Slip } from "./missed";
 import { t } from "@/i18n";
 
 export const STORE_KEY = "ih:app:v1";
@@ -61,7 +62,8 @@ export type Settings = {
   yearSeen?: string | null;
 };
 
-type Saved = { v: 1; deviceId: string; sits: Sit[]; outbox: string[]; settings: Settings; settingsVersion: number };
+/** `missed`: words that slipped, and when each comes back (lib/missed.ts). On this phone only: not in settings, so never synced. */
+type Saved = { v: 1; deviceId: string; sits: Sit[]; outbox: string[]; settings: Settings; settingsVersion: number; missed?: Card[] };
 
 export const defaultSettings = (): Settings => ({
   onboarded: false, reason: null, homeWing: "HINDUISM", visitWing: null, active: "home", goal: null, welcomedBackOn: null,
@@ -115,6 +117,7 @@ function load(): Saved {
     outbox: Array.isArray(s?.outbox) ? s!.outbox : [],
     settings: cleanSettings(s?.settings),
     settingsVersion: s?.settingsVersion || 0,
+    missed: cleanCards(s?.missed),
   };
 }
 
@@ -133,6 +136,8 @@ type Store = {
   recordRun: (r: { door: string; day: number; acc: number; level: number; rushSecs?: number | null; deep?: boolean; minutes?: number }) => void;
   setQuest: (id: string, q: QuestState | null) => void;
   recordFeel: (f: { door: string; day: number; level: number; feel: "slow" | "right" | "hard" }) => void;
+  /** After a lesson or a review: the words that slipped start again tomorrow; the ones that came back move on. */
+  noteLearning: (o: { door: string; slips?: Slip[]; recalled?: { word: string; ok: boolean }[] }) => void;
   addSignal: (sig: Settings["signals"][number]) => void;
   markWelcomedBack: () => void;
   replaceFromServer: (o: { sits: Sit[]; settings?: Partial<Settings>; settingsVersion?: number }) => void;
@@ -218,6 +223,11 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       return { ...s, settings: { ...s.settings, runs, rushBest, timed, deepOn: deep ? date : s.settings.deepOn }, settingsVersion: s.settingsVersion + 1 };
     }),
     recordFeel: (f) => commit((s) => ({ ...s, settings: { ...s.settings, feel: [...(s.settings.feel || []).filter((x) => !(x.date === todayNow() && x.door === f.door && x.day === f.day)), { ...f, date: todayNow() }].slice(-60) }, settingsVersion: s.settingsVersion + 1 })),
+    noteLearning: ({ door: d, slips = [], recalled = [] }) => {
+      if (!slips.length && !recalled.length) return;
+      const date = todayNow();
+      commit((s) => ({ ...s, missed: noteSlips(noteRecall(s.missed || [], d, recalled, date), d, slips, date) }));
+    },
     markWelcomedBack: () => commit((s) => ({ ...s, settings: { ...s.settings, welcomedBackOn: todayNow() }, settingsVersion: s.settingsVersion + 1 })),
     replaceFromServer: ({ sits, settings, settingsVersion }) =>
       commit((s) => {
@@ -232,6 +242,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
         d.setUTCDate(d.getUTCDate() - n);
         return { ...x, date: d.toISOString().slice(0, 10), at: new Date(Date.parse(x.at) - n * 86_400_000).toISOString() };
       }),
+      missed: (s.missed || []).map((c) => ({ ...c, due: addDaysTo(c.due, -n) })),
       settings: s.settings.goal ? { ...s.settings, goal: { ...s.settings.goal, setOn: (() => { const d = new Date(`${s.settings.goal!.setOn}T12:00:00Z`); d.setUTCDate(d.getUTCDate() - n); return d.toISOString().slice(0, 10); })() } } : s.settings,
     })),
     importData: (file) => {

@@ -51,3 +51,41 @@ test("original-script detectors survive extraction (native words show on the str
   assert.ok(data.SCRIPT_OF.HINDUISM instanceof RegExp);
   assert.doesNotThrow(() => planDay({ wing: "HINDUISM", day: 3 }));
 });
+
+// Camp one's guess answers with what the word means, never the day's carry line, and exactly one choice is right
+// (owner, 2026-09-30: "Father → you're not addressing a stranger", al-Fatiha with no right choice at all).
+import { readFileSync, existsSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+const LESSONS = fileURLToPath(new URL("../../../apps/app/public/lessons/", import.meta.url));
+function scriptFor(wing, day) {
+  const f = `${LESSONS}${wing.toLowerCase()}/${String(Math.floor((day - 1) / 7) + 1).padStart(3, "0")}.json`;
+  return existsSync(f) ? JSON.parse(readFileSync(f, "utf8")).days?.[String(day)] || null : null;
+}
+const bareText = (s) => String(s || "").toLowerCase().replace(/[^\p{L}\p{N}]+/gu, " ").trim();
+
+test("camp one's guess: one right, specific answer (not the carry line) and distinct wrong ones, script or not", () => {
+  for (const wing of WINGS) {
+    for (let day = 2; day <= 21; day++) {
+      for (const script of [null, scriptFor(wing, day)]) {
+        for (const level of [0, 1, 3, 5]) {
+          const p = planDay({ wing, day, script, level });
+          const g = p.steps.find((s) => s.type === "guess");
+          if (!g) continue;
+          const where = `${wing} day ${day} level ${level}${script ? " (script)" : ""}`;
+          assert.notEqual(bareText(g.answer), bareText(p.carry), `${where}: the answer is the carry line`);
+          assert.equal(g.options.filter((o) => o === g.answer).length, 1, `${where}: exactly one right answer`);
+          assert.ok(g.options.length >= 3, `${where}: at least three choices`);
+          assert.equal(new Set(g.options.map(bareText)).size, g.options.length, `${where}: choices are distinct`);
+        }
+      }
+    }
+  }
+});
+
+test("the named quizzes: Father, kingdom and al-Fatiha answer with their meaning", () => {
+  const guess = (wing, day) => planDay({ wing, day, script: scriptFor(wing, day) }).steps.find((s) => s.type === "guess");
+  assert.match(guess("CHRISTIANITY", 4).answer, /family word/);
+  assert.match(guess("CHRISTIANITY", 5).answer, /reign/);
+  assert.match(guess("ISLAM", 6).answer, /^the opening/);
+  assert.ok(!guess("ISLAM", 6).options.includes("in the name of the merciful"));
+});

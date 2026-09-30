@@ -5,7 +5,7 @@ import { useCallback, useState } from "react";
 import { Pressable, Text, TextInput, View } from "react-native";
 import { lessonCounts, streakFrom } from "@ih/domain";
 import { useStore } from "@/lib/store";
-import { cleanNick, lastSeenWords, refreshFriends, setBoard, setNick, togetherWords, unfriend, useFriends, weekLight, type Friend } from "@/lib/friends";
+import { cheerFriend, cheerGot, cheerLabel, cleanNick, lastSeenWords, refreshFriends, setBoard, setNick, togetherWords, unfriend, useFriends, weekLight, type Friend } from "@/lib/friends";
 import { Btn, Card, Eyebrow, Sun, color, confirmSheet, font, toast, type } from "@/ui";
 import { GOLDEN } from "@/ui/streak";
 import { t } from "@/i18n";
@@ -40,6 +40,45 @@ export function NickPrompt() {
   );
 }
 
+/** Cheers friends sent you lately: "maya cheered your 30-day streak". */
+function CheersForMe() {
+  const f = useFriends();
+  const got = f.cheers || [];
+  if (!got.length) return null;
+  return (
+    <View testID="cheers" style={{ gap: 8, marginTop: 8, marginBottom: 4 }}>
+      {got.map((c, i) => (
+        <View key={`${c.nick}|${c.kind}|${c.n}|${i}`} testID="cheer-got" style={{ flexDirection: "row", alignItems: "center", gap: 10, backgroundColor: "#FFFBE0", borderRadius: 14, paddingVertical: 10, paddingHorizontal: 12 }}>
+          <Sun size={24} mood="happy" />
+          <Text style={{ flex: 1, fontFamily: font.display[800], fontSize: 14, color: color.ink }}>{cheerGot(c)}</Text>
+        </View>
+      ))}
+    </View>
+  );
+}
+
+/** One tap to cheer what a friend reached lately (a fixed cheer, no words), then "you cheered this". */
+function CheerButtons({ x }: { x: Friend }) {
+  const { today } = useStore();
+  const [busy, setBusy] = useState(false);
+  const list = x.cheer || [];
+  if (!list.length || x.faded) return null;
+  return (
+    <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6, marginTop: 8, marginLeft: 52 }}>
+      {list.map((c) => c.cheered ? (
+        <Text key={`${c.kind}${c.n}`} testID="cheered" style={[type.eyebrow(8), { color: color.mute, paddingVertical: 6 }]}>☀ {t("home.friends.cheered")}</Text>
+      ) : (
+        <Pressable key={`${c.kind}${c.n}`} testID="cheer" accessibilityRole="button" accessibilityLabel={t("home.friends.cheerA11y", { what: cheerLabel(c), nick: x.nick })} disabled={busy}
+          onPress={async () => { setBusy(true); const ok = await cheerFriend(x.id, c.kind, c.n, today); setBusy(false); toast(ok ? t("home.friends.cheerSent", { nick: x.nick }) : t("home.friends.unreachable")); }}
+          style={({ pressed }) => ({ maxWidth: "100%", flexDirection: "row", alignItems: "center", gap: 6, minHeight: 44, paddingHorizontal: 12, borderRadius: 999, backgroundColor: GOLDEN, borderWidth: 1.5, borderColor: color.ink, opacity: busy ? 0.6 : pressed ? 0.8 : 1 })}>
+          <Text style={{ fontSize: 13 }}>☀</Text>
+          <Text style={{ flexShrink: 1, fontFamily: font.display[800], fontSize: 13, color: color.ink }}>{cheerLabel(c)}</Text>
+        </Pressable>
+      ))}
+    </View>
+  );
+}
+
 /** Friends you walk with: their streak, whether they're done today, and your days together. */
 export function FriendRows() {
   const { today } = useStore();
@@ -54,8 +93,10 @@ export function FriendRows() {
   };
   return (
     <View style={{ marginTop: 6 }}>
+      <CheersForMe />
       {f.friends.map((x, i) => (
-        <View key={x.id} testID="friend" style={{ flexDirection: "row", alignItems: "center", gap: 12, paddingVertical: 12, borderTopWidth: i ? 1 : 0, borderTopColor: color.line, opacity: x.faded ? 0.55 : 1 }}>
+        <View key={x.id} style={{ paddingVertical: 12, borderTopWidth: i ? 1 : 0, borderTopColor: color.line }}>
+        <View testID="friend" style={{ flexDirection: "row", alignItems: "center", gap: 12, opacity: x.faded ? 0.55 : 1 }}>
           <Avatar name={x.nick} faded={x.faded} />
           <View style={{ flex: 1, gap: 2 }}>
             <Text style={{ fontFamily: font.display[800], fontSize: 16, color: color.ink }}>{x.nick}</Text>
@@ -76,6 +117,9 @@ export function FriendRows() {
             </View>
             <Text style={[type.eyebrow(7), { marginTop: 2 }]}>{t("home.friends.daysTogether", { count: x.together })}</Text>
           </View>
+        </View>
+        {/* under the row, lined up with the name: the whole card width, so a long cheer never runs into the numbers */}
+        {offline ? null : <CheerButtons x={x} />}
         </View>
       ))}
       {offline ? <Text style={[type.body(11), { color: color.mute, marginTop: 4 }]}>{t("home.friends.offline")}</Text> : null}

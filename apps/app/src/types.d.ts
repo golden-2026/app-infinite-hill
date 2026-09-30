@@ -47,6 +47,8 @@ declare module "@ih/content" {
   export function deeperRound(wing: string, day: number, level: number): any[];
   export function knownSoFar(wing: string, day: number): { word: string; carry: string; day: number }[];
   export function likeness(a: string, b: string): number;
+  export function wrongAnswers(answer: string, candidates: string[], o: { n: number; level: number; seed: number; meaning?: boolean }): string[];
+  export function guessFor(wing: string, lesson: number, info: any): { answer: string; wrong: string[] } | null;
   export function syllables(word: string): string[];
   export function lessonInfo(wing: string, lesson: number): any;
   export function icon(wing: string): { wing: string; name: string; short: string; tint: string };

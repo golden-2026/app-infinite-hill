@@ -21,6 +21,7 @@ import { OverlayHost } from "@/ui/overlay";
 import { useCompanionInput } from "@/lib/companion/use-companion";
 import { shapeToday } from "@/lib/companion/shape";
 import { checkin, refreshFriends, useFriends, weekLight } from "@/lib/friends";
+import { useSeasons } from "@/lib/quests";
 
 SplashScreen.preventAutoHideAsync().catch(() => {});
 
@@ -43,12 +44,13 @@ function FriendsSync() {
   const f = useFriends();
   const s = derived.streak;
   const light = weekLight(saved.sits, saved.settings.runs, today);
+  const quests = useSeasons().finished.length; // a count only: never which quest (a quest names a tradition's season)
   useEffect(() => {
     if (!f.friendId) return;
     let live = true;
-    (async () => { await checkin({ date: today, doneToday: s.doneToday, streak: s.streak, golden: s.golden, weekLight: light }); if (live) await refreshFriends(today); })();
+    (async () => { await checkin({ date: today, doneToday: s.doneToday, streak: s.streak, golden: s.golden, weekLight: light, quests }); if (live) await refreshFriends(today); })();
     return () => { live = false; };
-  }, [f.friendId, today, s.doneToday, s.streak, s.golden, light, f.nick, f.board]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [f.friendId, today, s.doneToday, s.streak, s.golden, light, quests, f.nick, f.board]); // eslint-disable-line react-hooks/exhaustive-deps
   return null;
 }
 

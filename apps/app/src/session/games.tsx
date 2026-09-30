@@ -309,7 +309,7 @@ export function TypeItStep({ step, voiceOn, onDone }: { step: any; voiceOn: bool
 }
 
 // ─── the quick round (against the clock) ────────────────────────────────
-export function RushStep({ step, best, onDone }: { step: any; best?: number | null; onDone: (ok: boolean, secs: number | null) => void }) {
+export function RushStep({ step, best, onDone, onMiss }: { step: any; best?: number | null; onDone: (ok: boolean, secs: number | null) => void; onMiss?: (left: string) => void }) {
   const pairs: [string, string][] = step.pairs;
   const right = useMemo(() => [...pairs.map((p) => p[1])].sort(() => Math.random() - 0.5), [pairs]);
   const [started, setStarted] = useState(false);
@@ -336,7 +336,7 @@ export function RushStep({ step, best, onDone }: { step: any; best?: number | nu
   const tryPair = (l: string, r: string) => {
     const ok = pairs.find((p) => p[0] === l)![1] === r;
     setSel(null);
-    if (!ok) { setShake(r); fx.react("wrong"); setTimeout(() => setShake(null), 350); return; }
+    if (!ok) { onMiss?.(l); setShake(r); fx.react("wrong"); setTimeout(() => setShake(null), 350); return; }
     const g = { ...got, [l]: r };
     setGot(g);
     play("right");

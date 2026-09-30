@@ -80,17 +80,91 @@ export function wrongAnswers(answer, candidates, { n, level, seed, meaning = fal
   return ranked.slice(0, n);
 }
 
-/** Split a word into rough syllables for the rhythm game ("namaste" → na·ma·ste). */
-export function syllables(word) {
-  // sh, ch, th, ph and the aspirated bh/dh/gh/kh/jh count as one sound; a lone consonant between vowels starts
-  // the next syllable (na·ma), a pair splits (bhak·ti)
-  const DI = ["sh", "ch", "th", "ph", "bh", "dh", "gh", "kh", "jh"];
-  const w = DI.reduce((t, d, k) => t.split(d).join(String.fromCharCode(0xe000 + k)), strip(word).replace(/^(the|a|an) /, "").replace(/ /g, ""));
-  const C = "[^aeiouy]";
-  const parts = w.match(new RegExp(`${C}*[aeiouy]+(?:${C}(?=${C}[aeiouy]|${C}$))?`, "g")) || [w];
-  const joined = parts.join("");
-  if (joined.length < w.length) parts[parts.length - 1] += w.slice(joined.length);
-  return parts.filter(Boolean).map((p) => p.replace(/[-]/g, (c) => DI[c.charCodeAt(0) - 0xe000]));
+// ─── syllables, for the rhythm game ─────────────────────────────────────
+// Each word is split on its own: syllables never run across a space or a hyphen ("sign of peace" → sign·of·peace,
+// not sig·nof·pea·ce). sh, ch, th, ph and the aspirated bh/dh/gh/kh/jh count as one sound. One consonant between
+// vowels starts the next syllable (na·ma); in a cluster the last consonant does (king·dom, bhak·ti), or the last two
+// when they can start an English syllable (man·tra, a·bra·ham). A final e after one consonant is silent (peace,
+// grace, forgive). Apostrophes stay inside a word (isn't).
+const DIGRAPHS = ["sh", "ch", "th", "ph", "bh", "dh", "gh", "kh", "jh"];
+const ONSETS = new Set(["bl", "br", "cl", "cr", "dr", "fl", "fr", "gl", "gr", "dw", "kr", "pl", "pr", "tr", "tw", "thr", "shr"]);
+// endings said as their own syllable, split off first so the stem keeps its silent e (aware·ness, walk·ing)
+const SUFFIX = /^(.*[aeiouy].*?)(ness|ment|ful|less|ing)$/;
+function wordSyllables(w) {
+  const sfx = SUFFIX.exec(w);
+  if (sfx && sfx[1].length >= 2 && /[aeiouy]/.test(sfx[1].slice(1))) return [...wordSyllables(sfx[1]), sfx[2]];
+  // units: a digraph or one letter; "wh" only at the start of a word (what; taw·hid is not ta·whid)
+  const units = [];
+  for (let i = 0; i < w.length;) {
+    const two = w.slice(i, i + 2);
+    if (DIGRAPHS.includes(two) || (i === 0 && two === "wh")) { units.push(two); i += 2; } else { units.push(w[i]); i += 1; }
+  }
+  // y is a vowel after a consonant (Mary), a consonant at the start or after a vowel (yawm, day)
+  const isV = (k) => "aeiou".includes(units[k]) || (units[k] === "y" && k > 0 && !"aeiou".includes(units[k - 1]));
+  const nuclei = []; // runs of vowels: [first unit, last unit]
+  for (let k = 0; k < units.length; k++) {
+    if (!isV(k)) continue;
+    const prev = nuclei[nuclei.length - 1];
+    if (prev && prev[1] === k - 1) prev[1] = k; else nuclei.push([k, k]);
+  }
+  if (nuclei.length > 1) {
+    // a final e after one consonant (or n/r/l and one more) is silent: peace, grace, forgive, silence
+    const last = nuclei[nuclei.length - 1];
+    if (last[0] === last[1] && last[1] === units.length - 1 && units[last[0]] === "e") {
+      const gap = last[0] - nuclei[nuclei.length - 2][1] - 1;
+      if (gap === 1 || (gap === 2 && "nrl".includes(units[last[0] - 2]))) nuclei.pop();
+    }
+  }
+  if (nuclei.length <= 1) return [w];
+  const starts = [0];
+  for (let n = 1; n < nuclei.length; n++) {
+    const from = nuclei[n - 1][1] + 1, to = nuclei[n][0]; // the consonants between two vowels: units[from..to-1]
+    const len = to - from;
+    // a closing -le/-les takes the consonant before it (can·dles, mid·dle)
+    const le = n === nuclei.length - 1 && units[to - 1] === "l" && units[to] === "e" && units.slice(to + 1).join("").replace(/^s$/, "") === "";
+    starts.push(len === 0 ? to : len === 1 ? from : le || ONSETS.has(units.slice(to - 2, to).join("")) ? to - 2 : to - 1);
+  }
+  return starts.map((s, k) => units.slice(s, starts[k + 1] ?? units.length).join("")).filter(Boolean);
+}
+/** Split a word or a short line into rough syllables for the rhythm game ("kingdom" → king·dom). */
+export function syllables(text) {
+  const words = String(text || "").normalize("NFD").replace(/\p{M}/gu, "").toLowerCase().replace(/[‘’`]/g, "'")
+    .replace(/^\s*(the|a|an)\s+/, "")
+    .split(/[\s\-–—/]+/)
+    .map((w) => w.replace(/[^a-z']/g, "").replace(/^'+|'+$/g, ""))
+    .filter((w) => /[a-z]/.test(w));
+  return words.flatMap(wordSyllables);
+}
+
+// ─── tap what you hear ──────────────────────────────────────────────────
+/** A tile is a word as it's written, minus the punctuation around it; an apostrophe inside stays (isn't, not "isn t"). */
+export const tile = (w) => String(w || "").replace(/[‘’`]/g, "'").replace(/^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$/gu, "");
+/** How a tile is compared: lowercase, no apostrophes (the app's check strips them from the tapped words too). */
+export const tileKey = (w) => tile(w).toLowerCase().replace(/'/g, "");
+/**
+ * The line to tap, its tiles and the answer. A line of one or two words ("one", "this too") made a round of one or two
+ * taps, so a short line is heard with the day's word in front of it ("tawhid, one"). Wrong tiles come from the door's
+ * other lines.
+ */
+export function tapRound({ word, carry, wing, level = 0, seed = 1, hook = "" }) {
+  const line = String(carry || "").trim().replace(/[.!]$/, "");
+  const short = line.split(/\s+/).filter(Boolean).length < 3;
+  // when the word is the line ("enough"), the hook's last clause is the line to tap, if it's short enough
+  const tail = String(hook || "").split(/[:;]\s*/).pop().trim().replace(/[.!]$/, "");
+  const n0 = tail.split(/\s+/).length;
+  const speak = !short ? line : word && tileKey(word) !== tileKey(line) ? `${word}, ${line}` : n0 >= 3 && n0 <= 10 ? tail : line;
+  const words = speak.split(/\s+/).map(tile).filter(Boolean);
+  const have = new Set(words.map(tileKey));
+  const spare = [];
+  for (const v of pool(wing)) {
+    for (const w of v.carry.split(/\s+/).map(tile)) {
+      const k = tileKey(w);
+      if (k.length > 1 && !have.has(k)) { have.add(k); spare.push(w); }
+    }
+  }
+  const n = level >= 3 ? 5 : level === 2 ? 4 : 3;
+  const decoys = shuffle(spare, seed).slice(0, n);
+  return { speak, words, bank: shuffle([...words, ...decoys], seed + 1), answer: words.map(tileKey).join(" ") };
 }
 
 const RUSH_SECS = [0, 45, 40, 35, 30, 25];
@@ -150,11 +224,8 @@ export function levelUp(steps, { wing, day, level = 1, seed = day * 7 + 3 }) {
         break;
       }
       case "taphear": {
-        const extraN = L >= 3 ? 5 : L === 2 ? 4 : 3;
-        const have = new Set(s.words.map(strip));
-        const spare = [...new Set(lines.join(" ").split(/\s+/).map(strip).filter((w) => w && !have.has(w)))];
-        const decoys = wrongAnswers(s.words.join(" "), spare, { n: extraN, level: L >= 3 ? 1 : 1, seed: seed + 5 });
-        out.push({ ...s, bank: shuffle([...s.words, ...decoys], seed + 6), replays: L >= 4 ? 1 : 99, level: L });
+        // more wrong tiles as the level rises (the line and its tiles: tapRound, applied in planDay)
+        out.push({ ...s, replays: L >= 4 ? 1 : 99, level: L });
         break;
       }
       case "speak": {
@@ -163,8 +234,13 @@ export function levelUp(steps, { wing, day, level = 1, seed = day * 7 + 3 }) {
         out.push({ ...s, type: "say", say: L >= 3 && carry ? carry : s.say, word: s.say, level: L });
         // then the word's rhythm, from the first week on
         if (day >= 3) {
-          const syl = syllables(s.say);
-          if (syl.length >= 2 && syl.length <= 6) out.push({ type: "rhythm", id: id++, word: s.say, syllables: syl, rounds: L >= 3 ? 3 : 2, bpm: [0, 76, 84, 92, 100, 108][L], level: L, newToday: day === 3 });
+          // a one-syllable word (om, dhikr) is one tap a round: tap the word with its line instead, if that fits
+          const line = steps.find((x) => x.type === "taphear")?.speak;
+          const both = line ? `${s.say}, ${String(line).replace(/[.!]$/, "")}` : null;
+          let say = s.say;
+          let syl = syllables(say);
+          if (syl.length < 2 && both && syllables(both).length <= 6) { say = both; syl = syllables(both); }
+          if (syl.length >= 2 && syl.length <= 6) out.push({ type: "rhythm", id: id++, word: say, syllables: syl, rounds: L >= 3 ? 3 : 2, bpm: [0, 76, 84, 92, 100, 108][L], level: L, newToday: day === 3 });
         }
         break;
       }
