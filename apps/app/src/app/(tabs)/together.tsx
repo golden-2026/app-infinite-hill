@@ -1,7 +1,7 @@
 import { TabHeader } from "@/ui/tab-header";
 import { useTitle } from "@/lib/title";
 // Together: honest in the pilot. No invented counts, members, live reads or events (audit 9/25).
-// What's real: your door and the bell at sundown. Voices and Keepers appear only once signed (ui/voices).
+// What's real: friends walking with you, lanterns, and your door. Voices and Keepers appear only once signed (ui/voices).
 // "Walking with" is real and local: friends who sent you a lantern link (lib/walkers). No live reads.
 import { icon, label } from "@ih/content";
 import { router, useFocusEffect } from "expo-router";
@@ -65,11 +65,6 @@ export default function Together() {
       <ScrollView contentContainerStyle={{ paddingHorizontal: 18, gap: 16, paddingBottom: 32 }}>
         <TabHeader eyebrow="together" title="you're not doing this alone." pose="dog" />
         <WalkingWith />
-        <Card dark>
-          <Text style={[type.eyebrow(), { color: color.gold }]}>the bell</Text>
-          <Text style={{ fontFamily: font.display[800], fontSize: 24, color: "#fff", marginTop: 6 }}>sundown, every day.</Text>
-          <Text style={[type.body(), { color: "#ffffffcc", marginTop: 6 }]}>one bell at sundown, wherever you are. live counts start when the pilot does — real numbers only.</Text>
-        </Card>
         <Card>
           <Eyebrow>your door · {label(door)}</Eyebrow>
           <View style={{ flexDirection: "row", alignItems: "center", gap: 12, marginTop: 10 }}>

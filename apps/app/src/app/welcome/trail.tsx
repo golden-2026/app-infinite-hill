@@ -27,7 +27,7 @@ export default function WelcomeTrail() {
       <TrailMap door={door} day={1} walked={0} />
       <TrailDay />
       <Text style={[type.caption(), { textAlign: "center" }]}>
-        a draft plan. the lessons are still being written, and each tradition's Keeper checks them before they're final.
+        the whole climb, a few minutes a day. new lessons open as you walk.
       </Text>
     </WelcomeFrame>
   );

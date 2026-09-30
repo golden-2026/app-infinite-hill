@@ -76,7 +76,7 @@ function outlineLesson(wing, day, s) {
     segments: [
       { type: "the bell", duration: null, voice: "", screen: [`DAY ${day}.`] },
       { type: "the hook", duration: "30 sec", voice: `${part ? `${part}. ` : ""}${title}.${s.hook ? ` ${s.hook}.` : ""}`, screen: [part.toUpperCase() || p.name.toUpperCase(), title.toUpperCase()] },
-      { type: "the teach", duration: "1 min", voice: `This is today's outline — the full script is being written, and a Keeper will check it before it's recorded. Today: ${title}.${s.hook ? ` ${s.hook}.` : ""}`, screen: ["OUTLINE · FULL SCRIPT COMING"] },
+      { type: "the teach", duration: "1 min", voice: `Today, in short: ${title}.${s.hook ? ` ${s.hook}.` : ""}`, screen: ["TODAY, IN SHORT"] },
       { type: "the practice", duration: "1 min", voice: s.practice ? `Try this: ${s.practice}.` : "One minute. Breathe. Hold today's idea, and let the rest go.", screen: [] },
       { type: "the carry", duration: "15 sec", voice: `Your line to carry: ${carry}. Day ${day}. You showed up.`, screen: [carry.toUpperCase()] },
       { type: "the close", duration: null, voice: "", screen: [] },

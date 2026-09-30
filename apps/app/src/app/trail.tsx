@@ -30,7 +30,7 @@ export default function Trail() {
       <View style={{ gap: 16 }}>
         <TrailMap door={door} day={day} walked={walked} />
         <TrailDay />
-        <Text style={[type.caption(), { textAlign: "center" }]}>a draft plan. the lessons are still being written, and each tradition's Keeper checks them before they're final.</Text>
+        <Text style={[type.caption(), { textAlign: "center" }]}>the whole climb, a few minutes a day. new lessons open as you walk.</Text>
       </View>
     </Screen>
   );

@@ -9,7 +9,7 @@ export default function Legal() {
   useTitle("legal");
   return (
     <Screen scroll back="you" title="legal." contentStyle={{ gap: 12 }}>
-      <Group footer="drafts · counsel review pending">
+      <Group footer="the plain-English versions · the lawyer's versions come before launch">
         {data.LEGAL.map(([t]: [string], i: number) => <Row key={t} a={t} onPress={() => router.push({ pathname: "/you/legal/[page]", params: { page: String(i) } })} />)}
       </Group>
     </Screen>

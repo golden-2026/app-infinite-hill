@@ -76,7 +76,7 @@ export default function PracticeScreen() {
         ))}
       </View>
       <Text style={[type.body(13), { color: color.mute }]}>why: {p.why}</Text>
-      <Text style={[type.caption(11)]}>draft · not yet checked by a keeper. nothing here is scored.</Text>
+      <Text style={[type.caption(11)]}>nothing here is scored.</Text>
     </Screen>
   );
 }

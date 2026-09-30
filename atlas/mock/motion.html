@@ -1,0 +1,408 @@
+<!-- MOTION PASS — dignity for the faces and the faith, play inside the phone. Injected before </body> by mock/build.mjs
+     ({{GUY_*}} placeholders become the mascot poses). -->
+<section class="playdemo" id="playdemo">
+  <div class="pd-wrap">
+    <div class="pd-copy ih-rv">
+      <div class="eyebrow" style="color:#F5C400">what it feels like</div>
+      <h2>it plays like a game.<br><em>it's taught like a faith.</em></h2>
+      <p class="pd-lede">pick your door. you guess, you tap, you say it back, and the lesson lights up when you get it. then the quiet part: a breath, and one line to carry.</p>
+      <ul class="pd-list">
+        <li><b>we score learning, never faith.</b> points for knowing a word. never for praying, never for believing.</li>
+        <li><b>the quiet moments stay quiet.</b> the breath, the sit and your line to carry have no clock to beat and no score.</li>
+        <li><b>every lesson is read by a scholar from that tradition</b> before it's final.</li>
+      </ul>
+      <a class="btn gold big" href="/welcome/you">Start free</a>
+    </div>
+    <div class="pd-phone ih-rv" aria-label="a lesson, playing on its own, in a different tradition each time">
+      <div class="pd-frame"><div class="pd-screen" id="pdscreen">
+        <div class="pd-doors" id="pddoors">
+          <div class="pd-eb" style="margin-top:34px">your door</div>
+          <div class="pd-prompt" style="margin-bottom:12px">which door is yours?</div>
+          <div class="pd-grid" id="pdgrid"></div>
+        </div>
+        <div class="pd-lesson" id="pdlesson">
+          <div class="pd-top"><div class="pd-bar"><i id="pdbar"></i></div><span class="pd-combo" id="pdcombo">☀ glowing ×3</span></div>
+          <div class="pd-q" id="pdq">
+            <div class="pd-eb" id="pdeb"></div>
+            <div class="pd-prompt" id="pdprompt"></div>
+            <div id="pdopts"></div>
+            <div class="pd-verdict" id="pdverdict"><span class="pd-sun">☀</span><b>that's it.</b><small>next</small></div>
+            <div class="pd-spark" id="pdspark"></div>
+          </div>
+          <div class="pd-stage" id="pdstage"></div>
+          <div class="pd-win" id="pdwin">
+            <div class="pd-look"><img id="pdlook" alt=""><img id="pdguy" class="pd-lguy" alt=""><span id="pdlooklbl"></span></div>
+            <div class="pd-wint" id="pdwint">you've reached a lookout.</div>
+            <div class="pd-stats"><div><b id="pdlight">+0</b><small>light</small></div><div><b id="pdday">96</b><small>days walked</small></div><div><b id="pdlvl">☀☀☀</b><small>level</small></div></div>
+            <div class="pd-carry"><small>your line to carry</small><span id="pdcarry"></span></div>
+          </div>
+        </div>
+        <div class="pd-finger" id="pdfinger"></div>
+      </div></div>
+      <div class="pd-now" id="pdnow" aria-live="off"></div>
+      <div class="pd-note">a different game from each path, playing on its own</div>
+    </div>
+  </div>
+</section>
+
+<style>
+.playdemo{background:#0A0A0A;color:#FFF8E1;padding:clamp(56px,8vw,110px) 20px}
+.pd-wrap{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,70px);align-items:center}
+.playdemo h2{font:800 clamp(34px,4.6vw,58px)/1.02 var(--serif);letter-spacing:-.02em;margin:14px 0 0;color:#fff}
+.playdemo h2 em{color:#F5C400}
+.pd-lede{font:400 clamp(16px,1.4vw,19px)/1.5 var(--sans);color:#ffffffcc;margin:18px 0 0;max-width:46ch}
+.pd-list{list-style:none;padding:0;margin:22px 0 28px;display:grid;gap:12px;max-width:50ch}
+.pd-list li{font:400 15px/1.45 var(--sans);color:#ffffffbb;padding-left:26px;position:relative}
+.pd-list li:before{content:"☀";position:absolute;left:0;top:0;color:#F5C400}
+.pd-list b{color:#fff;font-weight:700}
+.pd-phone{justify-self:center;text-align:center;display:flex;flex-direction:column;align-items:center;width:100%}
+.pd-frame{width:290px;height:590px;border-radius:44px;background:#1a1a1a;padding:10px;box-shadow:0 40px 90px rgba(245,196,0,.14),0 20px 50px rgba(0,0,0,.6);border:1px solid #ffffff18}
+.pd-screen{position:relative;width:100%;height:100%;border-radius:36px;overflow:hidden;background:linear-gradient(180deg,#111 0%,#1c1606 100%);text-align:left}
+.pd-doors,.pd-lesson{position:absolute;inset:0;transition:opacity .4s,transform .45s}
+.pd-doors{padding:0 16px;background:#F7F7F5;color:#111}
+.pd-doors .pd-eb{color:#8a8579}.pd-doors .pd-prompt{color:#111}
+.pd-doors.out{opacity:0;transform:translateX(-30px);pointer-events:none}
+.pd-lesson{opacity:0;transform:translateX(30px)}.pd-lesson.on{opacity:1;transform:none}
+.pd-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.pd-tile{border:1.5px solid #e2ddd0;background:#fff;border-radius:14px;padding:10px 10px 9px;font:700 12px/1.15 var(--sans);color:#111;transition:background .25s,border-color .25s,transform .25s}
+.pd-tile small{display:block;font:600 7.5px/1.25 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:#8a8579;margin-top:4px}
+.pd-tile.wide{grid-column:span 2;background:#111;color:#fff;border-color:#111}.pd-tile.wide small{color:#F5C400}
+.pd-tile.picked{background:#EFFF6B;border-color:#111;transform:scale(1.04);color:#111}.pd-tile.picked small{color:#111}
+.pd-top{padding:26px 18px 0;position:relative}
+.pd-bar{height:9px;border-radius:5px;background:#ffffff22;overflow:hidden}
+.pd-bar i{display:block;height:100%;width:30%;border-radius:5px;background:#EFFF6B;transition:width .7s cubic-bezier(.2,.8,.2,1),box-shadow .4s}
+.pd-bar i.hot{background:#FFD23F;box-shadow:0 0 12px #FFD23F}
+.pd-combo{position:absolute;left:0;right:0;top:8px;text-align:center;font:800 9px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:#FFD23F;opacity:0;transform:scale(.6);transition:opacity .3s,transform .4s cubic-bezier(.3,1.6,.5,1)}
+.pd-combo.on{opacity:1;transform:scale(1)}
+.pd-q{position:absolute;inset:48px 16px 0;transition:opacity .35s,transform .35s}
+.pd-q.out{opacity:0;transform:translateX(-24px)}
+.pd-eb{font:700 9px/1.3 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:#F5C400;margin-top:16px}
+.pd-prompt{font:800 22px/1.15 var(--serif);color:#fff;margin:10px 0 16px;letter-spacing:-.01em}
+.pd-opt{border:1.5px solid #ffffff44;background:#ffffff10;border-radius:14px;padding:13px 14px;margin-bottom:9px;font:600 13px/1.25 var(--sans);color:#fff;transition:background .25s,border-color .25s,color .25s,transform .25s}
+.pd-opt.picked{background:#EFFF6B;border-color:#EFFF6B;color:#111;transform:scale(1.03)}
+.pd-verdict{position:absolute;left:-16px;right:-16px;bottom:-4px;height:118px;border-radius:24px 24px 0 0;background:#EFFF6B;color:#111;display:flex;align-items:center;gap:10px;padding:0 20px 20px;transform:translateY(120%);transition:transform .45s cubic-bezier(.3,1.4,.5,1)}
+.pd-verdict.on{transform:translateY(0)}
+.pd-verdict .pd-sun{width:34px;height:34px;border-radius:50%;background:#111;color:#EFFF6B;display:grid;place-items:center;font-size:18px}
+.pd-verdict b{font:800 20px/1 var(--serif);flex:1}
+.pd-verdict small{background:#111;color:#EFFF6B;border-radius:999px;padding:9px 14px;font:800 10px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase}
+.pd-spark{position:absolute;left:50%;top:210px;width:0;height:0;pointer-events:none}
+.pd-spark i{position:absolute;left:0;top:0;width:7px;height:7px;border-radius:50%;background:#FFD23F;opacity:0}
+.pd-spark.go i{animation:pdspark .7s ease-out forwards}
+@keyframes pdspark{0%{opacity:1;transform:translate(0,0) scale(1)}100%{opacity:0;transform:translate(var(--x),var(--y)) scale(.3)}}
+.pd-win{position:absolute;inset:40px 16px 0;display:flex;flex-direction:column;align-items:center;text-align:center;opacity:0;transform:scale(.92);transition:opacity .4s,transform .5s cubic-bezier(.3,1.5,.5,1);pointer-events:none}
+.pd-win.on{opacity:1;transform:scale(1)}
+
+.pd-win.on .pd-lguy{animation:pdhop .7s cubic-bezier(.3,1.6,.5,1)}
+@keyframes pdhop{0%{transform:translateY(30px) scale(.7)}60%{transform:translateY(-12px) scale(1.05)}100%{transform:none}}
+.pd-wint{font:800 21px/1.1 var(--serif);color:#EFFF6B;margin-top:12px}
+.pd-stats{display:flex;width:100%;margin-top:16px;border:2px solid #EFFF6B;border-radius:18px;padding:12px 0}
+.pd-stats div{flex:1;display:flex;flex-direction:column;gap:4px}
+.pd-stats div+div{border-left:1px solid #ffffff22}
+.pd-stats b{font:800 19px/1 var(--serif);color:#fff;white-space:nowrap}#pdlvl{font-size:13px;letter-spacing:-1px}
+.pd-stats small{font:700 8px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:#ffffffaa}
+.pd-carry{margin-top:20px;font:italic 500 17px/1.3 var(--serif);color:#FFF8E1}
+.pd-carry small{display:block;font:700 8px/1 var(--sans);font-style:normal;letter-spacing:.16em;text-transform:uppercase;color:#F5C400;margin-bottom:6px}
+.pd-finger{position:absolute;width:30px;height:30px;border-radius:50%;background:#ffffffcc;box-shadow:0 0 0 6px #ffffff33,0 4px 12px rgba(0,0,0,.35);left:70%;top:92%;opacity:0;transition:left .8s cubic-bezier(.4,0,.2,1),top .8s cubic-bezier(.4,0,.2,1),opacity .3s,transform .15s;z-index:5}
+.pd-finger.on{opacity:1}.pd-finger.tap{transform:scale(.7)}
+.pd-stage{position:absolute;inset:48px 16px 0;opacity:0;transition:opacity .35s}.pd-stage.on{opacity:1}
+.pd-scene{position:relative;height:240px}
+.pd-card{position:absolute;left:0;right:0;height:50px;border-radius:14px;background:#fff;color:#111;font:700 12.5px/1.2 var(--sans);display:flex;align-items:center;gap:8px;padding:0 12px;box-shadow:0 4px 12px rgba(0,0,0,.3);transition:top .6s cubic-bezier(.3,1.3,.5,1),transform .25s,background .3s}
+.pd-card i{font-style:normal;color:#00000044;font-weight:900}.pd-card.lift{transform:scale(1.06) rotate(-2deg);z-index:3;box-shadow:0 14px 26px rgba(0,0,0,.45)}.pd-card.good{background:#EFFF6B}
+.pd-syls{display:flex;gap:6px;justify-content:center;margin-top:18px}.pd-syl{padding:10px 9px;border-radius:13px;border:2px solid #ffffff44;font:800 17px/1 var(--serif);color:#fff;transition:all .15s}.pd-syl.hit{background:#EFFF6B;border-color:#EFFF6B;color:#111;transform:scale(1.14)}
+.pd-drum{width:110px;height:110px;border-radius:50%;background:#EFFF6B;margin:26px auto 0;display:grid;place-items:center;font-size:30px;border:6px solid #ffffff33;transition:transform .1s}.pd-drum.hit{transform:scale(.88)}
+.pd-clock{height:10px;border-radius:5px;background:#ffffff22;overflow:hidden;margin:12px 0}.pd-clock i{display:block;height:100%;width:100%;background:#EFFF6B;transition:width 5s linear}.pd-clock.go i{width:18%}
+.pd-pairs{display:grid;grid-template-columns:1fr 1.3fr;gap:7px}.pd-pc{border-radius:12px;background:#fff;color:#111;font:700 11px/1.2 var(--sans);padding:10px 8px;min-height:40px;display:flex;align-items:center;justify-content:center;text-align:center;transition:all .25s}.pd-pc.sel{background:#111;color:#fff;outline:2px solid #EFFF6B}.pd-pc.done{background:#EFFF6B;opacity:.55}
+.pd-breath{width:150px;height:150px;border-radius:50%;margin:20px auto 0;display:grid;place-items:center;background:radial-gradient(circle,#EFFF6B55,transparent 70%);transition:transform 2.2s ease-in-out}.pd-breath.in{transform:scale(1.25)}.pd-breath img{width:120px}
+.pd-bw{font:800 26px/1 var(--serif);color:#EFFF6B;text-align:center;margin-top:10px}
+.pd-type{margin-top:18px;border:2px solid #EFFF6B;border-radius:14px;padding:13px 14px;font:700 22px/1 var(--serif);color:#fff;min-height:52px}.pd-type b{display:inline-block;width:2px;height:22px;background:#EFFF6B;vertical-align:middle;animation:pdblink 1s steps(2) infinite}@keyframes pdblink{50%{opacity:0}}
+.pd-mic{width:100px;height:100px;border-radius:50%;background:#EFFF6B;margin:28px auto 0;display:grid;place-items:center;font-size:34px;position:relative}.pd-mic.live:after{content:"";position:absolute;inset:-10px;border-radius:50%;border:3px solid #EFFF6B;animation:pdring 1s ease-out infinite}@keyframes pdring{from{opacity:1;transform:scale(.9)}to{opacity:0;transform:scale(1.35)}}
+.pd-heard{text-align:center;color:#fff;font:600 13px/1.3 var(--sans);margin-top:14px;opacity:0;transition:opacity .3s}.pd-heard.on{opacity:1}
+.pd-look{position:relative;width:100%;height:200px;border-radius:18px;overflow:hidden;margin-top:8px}.pd-look #pdlook{width:100%;height:100%;object-fit:cover;display:block}.pd-lguy{position:absolute;right:8px;bottom:8px;height:110px;margin:0}
+.pd-look span{position:absolute;left:10px;bottom:9px;right:90px;font:800 8.5px/1.3 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:#EFFF6B;text-shadow:0 1px 6px #000}
+.pd-now{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;max-width:300px;margin-top:16px}
+.pd-now span{font:700 9px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:#ffffff55;padding:5px 8px;border-radius:999px;border:1px solid #ffffff22;transition:all .3s}
+.pd-now span.on{color:#111;background:#EFFF6B;border-color:#EFFF6B}
+.pd-note{font:600 10px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:#ffffff66;margin-top:12px}
+@media(max-width:860px){.pd-frame{width:270px;height:550px}.pd-wrap{grid-template-columns:1fr}.pd-copy{text-align:center}.pd-list{text-align:left;margin-left:auto;margin-right:auto}.pd-phone{order:-1}}
+
+/* the sunrise band in "what a day looks like" */
+.sunband{position:relative;height:190px;border-radius:26px;overflow:hidden;margin:26px 0 8px;background:linear-gradient(180deg,#141a33 0%,#3b2a4a 60%,#6b3c3a 100%)}
+.sunband .sky{position:absolute;inset:0;background:linear-gradient(180deg,#f7c6a3 0%,#fde68a 70%,#fff3c4 100%);opacity:0;transition:opacity 2.4s ease}
+.sunband .sun{position:absolute;left:50%;bottom:-70px;width:120px;height:120px;margin-left:-60px;border-radius:50%;background:radial-gradient(circle,#fff6b0 0%,#FFD23F 55%,#F5A300 100%);box-shadow:0 0 60px 20px #FFD23F88;transition:bottom 2.4s cubic-bezier(.2,.7,.2,1)}
+.sunband svg{position:absolute;left:0;right:0;bottom:0;width:100%;height:120px}
+.sunband .stone{fill:#ffffff33;transition:fill .5s}
+.sunband .stone.lit{fill:#EFFF6B}
+.sunband .lbl{position:absolute;left:18px;top:14px;font:700 10px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:#ffffffcc;transition:color 2s}
+.sunband.go .sky{opacity:1}.sunband.go .sun{bottom:52px}.sunband.go .lbl{color:#3a2a10}
+
+img.gpose,.pzpic{cursor:pointer}
+/* one mascot at a time: a mascot that gets an animated loop stays hidden (it keeps its space) until the loop has
+   loaded, so the designed still never shows under or before it. reduced motion: the still, and only the still. */
+@media (prefers-reduced-motion: no-preference){
+section:not(.hero) img.gpose,#timeline img.guy,#science img.evguy{visibility:hidden}
+section:not(.hero) img.gpose.mready,#timeline img.guy.mready,#science img.evguy.mready{visibility:visible}
+}
+
+@media (prefers-reduced-motion: no-preference){
+.heromosaic .m img{animation:kb 22s ease-in-out infinite alternate;transform-origin:50% 30%}
+.heromosaic .m:nth-child(2) img{animation-delay:-4s;transform-origin:30% 40%}
+.heromosaic .m:nth-child(3) img{animation-delay:-8s;transform-origin:70% 30%}
+.heromosaic .m:nth-child(4) img{animation-delay:-12s;transform-origin:40% 60%}
+.heromosaic .m:nth-child(5) img{animation-delay:-16s;transform-origin:60% 40%}
+.heromosaic .m:nth-child(6) img{animation-delay:-20s;transform-origin:50% 50%}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.09)}}
+/* the mascot: hand-made animated loops, with an entrance per section (walks in, climbs up, peeks, drops in) */
+section:not(.hero) img.gpose{transform-origin:50% 100%;will-change:transform}
+.gshadow{position:absolute;height:10px;border-radius:50%;background:radial-gradient(closest-side,rgba(0,0,0,.18),transparent);pointer-events:none;transition:transform .2s}
+.ih-rv{opacity:0;transform:translateY(18px);transition:opacity .9s ease,transform .9s ease}
+.ih-rv.in{opacity:1;transform:none}
+a.btn,.gbtn{transition:transform .15s ease}
+a.btn:active,.gbtn:active{transform:scale(.96)}
+}
+</style>
+
+<script>
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var POSE = { wave: '{{GUY_WAVE}}', cheer: '{{GUY_CHEER}}', jump: '{{GUY_JUMP}}', joy: '{{GUY_JOY}}', meditate: '{{GUY_MEDITATE}}', namaste: '{{GUY_NAMASTE}}', thumbs: '{{GUY_THUMBS}}', walk: '{{GUY_WALK}}', stride: '{{GUY_STRIDE}}', climb: '{{GUY_CLIMB}}', globe: '{{GUY_GLOBE}}', point: '{{GUY_POINT}}', idea: '{{GUY_IDEA}}', think: '{{GUY_THINK}}', heart: '{{GUY_HEART}}', peace: '{{GUY_PEACE}}' };
+  var hero = document.querySelector('section.hero'), demo = document.getElementById('playdemo');
+  if (hero && demo) hero.parentNode.insertBefore(demo, hero.nextSibling);
+
+  var what = document.querySelector('#what .wrap .ghead'), band = null;
+  if (what) {
+    band = document.createElement('div');
+    band.className = 'sunband';
+    var stones = '';
+    for (var i = 0; i < 7; i++) stones += '<ellipse class="stone" cx="' + (70 + i * 130) + '" cy="' + (96 - Math.sin(i / 6 * Math.PI) * 22) + '" rx="26" ry="9"/>';
+    band.innerHTML = '<div class="sky"></div><div class="sun"></div><div class="lbl">a week on the hill</div><svg viewBox="0 0 1000 120" preserveAspectRatio="none"><path d="M0 70 C 200 20, 350 30, 500 55 S 820 25, 1000 60 L1000 120 L0 120Z" fill="#111418"/>' + stones + '</svg>';
+    what.parentNode.insertBefore(band, what.nextSibling);
+  }
+
+  // ── the mascot's choreography ─────────────────────────────────────────
+  // Each mascot on the page has an entrance (walks in, climbs up, peeks out, drops in) and a little routine
+  // when idle (looks around, flips through a few poses like a flipbook, a hop with squash-and-stretch).
+  // Tap him and he celebrates. Everything plays only while he's on screen, and never under reduced motion.
+  var guys = [].slice.call(document.querySelectorAll('section:not(.hero) img.gpose, #timeline img.guy, #science img.evguy'));
+  var sleep = function (ms) { return new Promise(function (r) { setTimeout(r, ms); }); };
+  var EASE = 'cubic-bezier(.3,1.4,.5,1)';
+  function anim(el, frames, ms, ease) { try { return el.animate(frames, { duration: ms, easing: ease || 'ease-in-out', fill: 'forwards' }).finished; } catch (e) { return sleep(ms); } }
+  function seen(el) { var r = el.getBoundingClientRect(); return r.bottom > 0 && r.top < innerHeight; }
+  async function flip(el, poses, each) { for (var i = 0; i < poses.length; i++) { el.src = POSE[poses[i]] || poses[i]; await anim(el, [{ transform: 'scale(.94,1.06)' }, { transform: 'scale(1)' }], each || 220, EASE); } }
+  async function walkTo(el, fromX) {
+    var steps = 8, i;
+    el.style.opacity = '1';
+    for (i = 0; i <= steps; i++) {
+      el.src = i % 2 ? POSE.walk : POSE.stride;
+      var x = fromX * (1 - i / steps), y = i % 2 ? -6 : 0;
+      await anim(el, [{ transform: 'translate(' + x + 'px,' + y + 'px)' }], 150, 'linear');
+    }
+  }
+  async function hop(el, h) {
+    await anim(el, [{ transform: 'scale(1.08,.9)' }], 120);
+    await anim(el, [{ transform: 'translateY(-' + (h || 28) + 'px) scale(.94,1.08) rotate(-3deg)' }], 220, 'cubic-bezier(.2,.8,.3,1)');
+    await anim(el, [{ transform: 'translateY(0) scale(1.1,.88)' }], 180, 'cubic-bezier(.6,0,.9,.5)');
+    await anim(el, [{ transform: 'none' }], 260, EASE);
+  }
+  async function lookAround(el) {
+    await anim(el, [{ transform: 'rotate(-5deg)' }], 350);
+    await sleep(300);
+    await anim(el, [{ transform: 'scaleX(-1) rotate(5deg)' }], 250);
+    await sleep(500);
+    await anim(el, [{ transform: 'none' }], 300, EASE);
+  }
+  var ENTRANCES = {
+    walk: async function (el) { el.style.opacity = '1'; await anim(el, [{ transform: 'translateX(240px)' }, { transform: 'none' }], 1600, 'linear'); },
+    climb: async function (el) { el.style.opacity = '1'; await anim(el, [{ transform: 'translateY(90px)' }, { transform: 'translateY(-10px)' }], 900, 'cubic-bezier(.2,.8,.3,1)'); await anim(el, [{ transform: 'none' }], 200, EASE); },
+    peek: async function (el) { el.style.opacity = '1'; await anim(el, [{ transform: 'translateX(70%) rotate(18deg)' }, { transform: 'translateX(35%) rotate(10deg)' }], 500); await sleep(500); await anim(el, [{ transform: 'translateX(70%) rotate(18deg)' }], 260); await sleep(350); await anim(el, [{ transform: 'none' }], 520, EASE); },
+    drop: async function (el) { el.style.opacity = '1'; await anim(el, [{ transform: 'translateY(-160px) rotate(-8deg)' }, { transform: 'translateY(0) scale(1.12,.86)' }], 520, 'cubic-bezier(.6,0,.9,.6)'); await anim(el, [{ transform: 'none' }], 320, EASE); }
+  };
+  // the finished animated mascot (8 hand-made loops, green keyed out), matched to what each section is about
+  var LOOP = { wave: '/mascot/wave.webp', cheer: '/mascot/cheer.webp', walk: '/mascot/walk.webp', climb: '/mascot/climb.webp', meditate: '/mascot/meditate.webp', think: '/mascot/think.webp', celebrate: '/mascot/celebrate.webp', tap: '/mascot/tap_reaction.webp', peek: '/mascot/peek.webp', thumbs: '/mascot/thumbs_up.webp', namaste: '/mascot/namaste.webp', read: '/mascot/read.webp', lantern: '/mascot/lantern.webp', sit: '/mascot/sit_on_rock.webp' };
+  var PLAN = [
+    { sel: '#voices', enter: 'peek', loop: 'peek' },
+    { sel: '#mission', enter: 'drop', loop: 'think' },
+    { sel: '#what', enter: 'walk', loop: 'walk' },
+    { sel: '#timeline', enter: 'climb', loop: 'climb' },
+    { sel: '#plans', enter: 'drop', loop: 'thumbs' },
+    { sel: '#gift', enter: 'peek', loop: 'lantern' },
+    { sel: '#faq', enter: 'drop', loop: 'namaste' },
+    { sel: '#science', enter: 'drop', loop: 'meditate' },
+  ];
+  function planFor(el) { for (var i = 0; i < PLAN.length; i++) if (el.closest(PLAN[i].sel)) return PLAN[i]; return { enter: 'drop', loop: 'wave' }; }
+  guys.forEach(function (el) {
+    var plan = planFor(el), still = el.src, started = false, busy = false;
+    if (reduce) return; // reduced motion: the original still pose stays
+    var home = LOOP[plan.loop] || still;
+    // swap to an animated loop only once it has loaded, then reveal (CSS keeps him hidden until .mready).
+    // if a loop can't load, the still shows instead: never two mascots, never an empty box.
+    function show(src, then) {
+      var im = new Image();
+      im.onload = function () { el.src = src; el.classList.add('mready'); if (then) then(); };
+      im.onerror = function () { el.classList.add('mready'); if (then) then(); };
+      im.src = src;
+    }
+    el.addEventListener('click', function () {
+      if (busy) return; busy = true; el.src = LOOP.tap;
+      setTimeout(function () { el.src = home; busy = false; }, 3000);
+    });
+    if (!('IntersectionObserver' in window)) { show(home); return; }
+    el.style.opacity = '0';
+    new IntersectionObserver(function (es, o) {
+      es.forEach(function (x) {
+        if (!x.isIntersecting || started) return;
+        started = true; o.disconnect();
+        new Image().src = home; // warm the idle loop while the entrance plays
+        show(plan.enter === 'walk' ? LOOP.walk : plan.enter === 'climb' ? LOOP.climb : home, function () {
+          (async function () { await ENTRANCES[plan.enter](el); el.style.opacity = '1'; el.src = home; })();
+        });
+      });
+    }, { threshold: .35 }).observe(el);
+  });
+
+  var targets = document.querySelectorAll('section:not(.hero) h2, section:not(.hero) .lede, section:not(.hero) .tile, section:not(.hero) .stanza, section:not(.hero) .pic, .keepers .wrap > *, .faq details, .pricing .plan');
+  targets.forEach(function (el) { if (!el.closest('.playdemo')) el.classList.add('ih-rv'); });
+  if (!('IntersectionObserver' in window) || reduce) { document.querySelectorAll('.ih-rv').forEach(function (e) { e.classList.add('in'); }); if (band) { band.classList.add('go'); band.querySelectorAll('.stone').forEach(function (x) { x.classList.add('lit'); }); } }
+  else {
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { threshold: .15 });
+    document.querySelectorAll('.ih-rv').forEach(function (e) { io.observe(e); });
+    if (band) new IntersectionObserver(function (es, o) { es.forEach(function (e) { if (e.isIntersecting) { band.classList.add('go'); var st = band.querySelectorAll('.stone'); st.forEach(function (s, k) { setTimeout(function () { s.classList.add('lit'); }, 900 + k * 260); }); o.disconnect(); } }); }, { threshold: .5 }).observe(band);
+  }
+
+  // the phone: pick a door, then a different game from further along that path (the drag, the rhythm, the clock,
+  // a Gita question, the breath, a combo streak, typing, saying it), ending at a lookout painting. DRAFT content.
+  var LOOK = ['/demo/lookout-1.webp', '/demo/lookout-2.webp', '/demo/lookout-3.webp', '/demo/lookout-4.webp', '/demo/lookout-5.webp', '/demo/lookout-summit.webp'];
+  var DOORS = [
+    { k: 'CHRISTIANITY', label: 'Christianity', hook: 'grace, the stories, the psalms', game: 'scenes', eb: 'the stories · day 34', title: 'drag the prodigal son into order.', items: ['he asks for his share', 'he spends it all', 'he comes to his senses', 'his father runs to meet him'], start: [2, 0, 3, 1], carry: 'you can always come home.', look: 1, lbl: 'camp 2 · the stories · lookout', end: "you've reached a lookout.", day: 96, lvl: 3 },
+    { k: 'JUDAISM', label: 'Judaism', hook: 'shabbat, the stories, the letters', game: 'rhythm', eb: 'the rhythm · day 12', title: 'tap the rhythm of the Shema.', syl: ['she', 'ma', 'yis', 'ra', 'el'], carry: 'hear.', look: 0, lbl: 'camp 1 · first steps · lookout', end: 'first camp, done.', day: 21, lvl: 2 },
+    { k: 'ISLAM', label: 'Islam', hook: 'the names, the prayer, the stories', game: 'rush', eb: 'quick round · day 50', title: 'match them before the sun sets.', pairs: [['salaam', 'peace'], ['bismillah', 'in the name of God'], ['inshallah', 'if God wills']], carry: 'start in the name of.', look: 2, lbl: 'camp 3 · the practices · lookout', end: 'all three, with time to spare.', day: 156, lvl: 3 },
+    { k: 'HINDUISM', label: 'Hinduism', hook: 'gods, epics, the Gita', game: 'ask', eb: 'the Gita · day 214', title: 'Arjuna drops his bow. what is he refusing to do?', opts: ['leave the kingdom', 'fight his own family', 'pray before battle'], ans: 'fight his own family', carry: 'you have the right to act — not to the fruit.', look: 3, lbl: 'camp 4 · the text · lookout', end: "you've reached a lookout.", day: 231, lvl: 4 },
+    { k: 'BUDDHISM', label: 'Buddhism', hook: 'the sit, the teachings, the stories', game: 'breath', eb: 'the practice · day 7', title: 'three breaths, together.', carry: 'may you be at ease.', look: 0, lbl: 'week one · the trailhead', end: 'that was a practice.', day: 7, lvl: 1 },
+    { k: 'CATHOLIC', label: 'Catholicism', hook: 'the saints, the Mass, the year', game: 'combo', eb: 'review · day 60', qs: [['grace', 'a gift you didn’t earn'], ['Advent', 'waiting, on purpose'], ['Eucharist', 'thanksgiving']], carry: 'you are already held.', look: 2, lbl: 'camp 3 · the practices · lookout', end: 'glowing ×3.', day: 156, lvl: 3 },
+    { k: 'SIKHISM', label: 'Sikhism', hook: 'the Gurus, seva, the langar', game: 'type', eb: 'your ear · day 40', title: 'type the word you hear.', word: 'seva', carry: 'one quiet thing for someone.', look: 1, lbl: 'camp 2 · the stories · lookout', end: 'spelled right, too.', day: 96, lvl: 4 },
+    { k: 'SPIRITUAL', label: 'my own path', hook: 'the best of every door, built around you', game: 'say', eb: 'say it · year 5', title: 'say your line.', line: 'be here now.', carry: 'someone is in there.', look: 5, lbl: 'the summit · five years up', end: 'the summit.', day: 1791, lvl: 5 }
+  ];
+  var $ = function (id) { return document.getElementById(id); };
+  var screen = $('pdscreen'); if (!screen) return;
+  var grid = $('pdgrid'), doors = $('pddoors'), lesson = $('pdlesson'), bar = $('pdbar'), q = $('pdq'), ver = $('pdverdict'), win = $('pdwin'), fin = $('pdfinger'), combo = $('pdcombo'), spark = $('pdspark'), light = $('pdlight'), now = $('pdnow'), stage = $('pdstage');
+  grid.innerHTML = DOORS.map(function (d) { return '<div class="pd-tile' + (d.k === 'SPIRITUAL' ? ' wide' : '') + '">' + d.label + '<small>' + d.hook + '</small></div>'; }).join('');
+  now.innerHTML = DOORS.map(function (d) { return '<span>' + (d.k === 'SPIRITUAL' ? 'own path' : d.label) + '</span>'; }).join('');
+  spark.innerHTML = Array.apply(null, Array(12)).map(function (_, k) { var a = k / 12 * Math.PI * 2; return '<i style="--x:' + Math.round(Math.cos(a) * 70) + 'px;--y:' + Math.round(Math.sin(a) * 50) + 'px"></i>'; }).join('');
+  stage.appendChild(spark);
+  var n = 0, T = [];
+  function at(ms, f) { T.push(setTimeout(f, ms)); }
+  function aim(el, fx, fy) { var s = screen.getBoundingClientRect(), r = el.getBoundingClientRect(), k = s.width / screen.offsetWidth || 1; fin.style.left = ((r.left - s.left) / k + r.width / k * (fx || 0.62)) + 'px'; fin.style.top = ((r.top - s.top) / k + r.height / k * (fy || 0.45)) + 'px'; }
+  function tap(el, t) { at(t, function () { fin.classList.add('on'); aim(el); }); at(t + 700, function () { fin.classList.add('tap'); }); at(t + 880, function () { fin.classList.remove('tap'); }); }
+  function count(to) { var i = 0; var iv = setInterval(function () { i++; light.textContent = '+' + i; if (i >= to) clearInterval(iv); }, 40); }
+  function eb(t) { return '<div class="pd-eb">' + t + '</div>'; }
+  function pr(t) { return '<div class="pd-prompt" style="font-size:19px">' + t + '</div>'; }
+  function fill(html) { stage.innerHTML = html; stage.appendChild(spark); stage.appendChild(ver); }
+  // each game builds its screen and schedules its moves from t0, and returns when it's finished
+  var GAMES = {
+    scenes: function (d, t0) {
+      var H = 58, pos = d.start.slice();
+      fill(eb(d.eb) + pr(d.title) + '<div class="pd-scene">' + d.items.map(function (x, k) { return '<div class="pd-card" style="top:' + pos[k] * H + 'px"><i>⋮⋮</i>' + x + '</div>'; }).join('') + '</div>');
+      var cards = stage.querySelectorAll('.pd-card');
+      function place() { cards.forEach(function (c, k) { c.style.top = pos[k] * H + 'px'; }); }
+      function drag(k, to, t) {
+        at(t, function () { fin.classList.add('on'); aim(cards[k], .12); });
+        at(t + 600, function () { fin.classList.add('tap'); cards[k].classList.add('lift'); });
+        at(t + 750, function () { var from = pos[k]; for (var j = 0; j < pos.length; j++) if (pos[j] === to) pos[j] = from; pos[k] = to; place(); setTimeout(function () { aim(cards[k], .12); }, 350); });
+        at(t + 1350, function () { fin.classList.remove('tap'); cards[k].classList.remove('lift'); });
+      }
+      drag(0, 0, t0 + 300); drag(1, 1, t0 + 1800); drag(2, 2, t0 + 3300);
+      at(t0 + 4800, function () { fin.classList.remove('on'); cards.forEach(function (c) { c.classList.add('good'); }); });
+      return t0 + 5600;
+    },
+    rhythm: function (d, t0) {
+      fill(eb(d.eb) + pr(d.title) + '<div class="pd-syls">' + d.syl.map(function (x) { return '<span class="pd-syl">' + x + '</span>'; }).join('') + '</div><div class="pd-drum">☀</div>');
+      var sy = stage.querySelectorAll('.pd-syl'), drum = stage.querySelector('.pd-drum');
+      at(t0 + 200, function () { fin.classList.add('on'); aim(drum, .5, .5); });
+      for (var r = 0; r < 2; r++) sy.forEach(function (x, k) {
+        var t = t0 + 700 + (r * sy.length + k) * 430;
+        at(t, function () { x.classList.add('hit'); drum.classList.add('hit'); fin.classList.add('tap'); });
+        at(t + 200, function () { x.classList.remove('hit'); drum.classList.remove('hit'); fin.classList.remove('tap'); });
+      });
+      return t0 + 700 + 10 * 430 + 300;
+    },
+    rush: function (d, t0) {
+      var right = [d.pairs[2][1], d.pairs[0][1], d.pairs[1][1]];
+      fill(eb(d.eb) + pr(d.title) + '<div class="pd-clock"><i></i></div><div class="pd-pairs">' + d.pairs.map(function (p, k) { return '<div class="pd-pc" data-l="' + k + '">' + p[0] + '</div><div class="pd-pc" data-r="' + k + '">' + right[k] + '</div>'; }).join('') + '</div>');
+      at(t0 + 100, function () { stage.querySelector('.pd-clock').classList.add('go'); });
+      d.pairs.forEach(function (p, k) {
+        var L = stage.querySelector('[data-l="' + k + '"]'), R = [].filter.call(stage.querySelectorAll('[data-r]'), function (x) { return x.textContent === p[1]; })[0], t = t0 + 300 + k * 1500;
+        tap(L, t); at(t + 700, function () { L.classList.add('sel'); });
+        tap(R, t + 800); at(t + 1500, function () { L.classList.remove('sel'); L.classList.add('done'); R.classList.add('done'); });
+      });
+      return t0 + 300 + 3 * 1500 + 300;
+    },
+    ask: function (d, t0) {
+      fill(eb(d.eb) + pr(d.title) + d.opts.map(function (o) { return '<div class="pd-opt' + (o === d.ans ? ' pd-right' : '') + '">' + o + '</div>'; }).join(''));
+      var r = stage.querySelector('.pd-right');
+      tap(r, t0 + 500);
+      at(t0 + 1200, function () { r.classList.add('picked'); spark.style.top = (r.offsetTop + 20) + 'px'; spark.classList.remove('go'); void spark.offsetWidth; spark.classList.add('go'); });
+      at(t0 + 1500, function () { fin.classList.remove('on'); ver.classList.add('on'); combo.classList.add('on'); });
+      at(t0 + 3600, function () { ver.classList.remove('on'); });
+      return t0 + 4000;
+    },
+    breath: function (d, t0) {
+      fill(eb(d.eb) + pr(d.title) + '<div class="pd-breath"><img src="' + (reduce ? POSE.meditate : '/mascot/meditate.webp') + '" alt=""></div><div class="pd-bw">in…</div>');
+      var br = stage.querySelector('.pd-breath'), bw = stage.querySelector('.pd-bw');
+      for (var b = 0; b < 3; b++) { at(t0 + 300 + b * 1800, function () { br.classList.add('in'); bw.textContent = 'in…'; }); at(t0 + 1200 + b * 1800, function () { br.classList.remove('in'); bw.textContent = 'out…'; }); }
+      return t0 + 300 + 3 * 1800;
+    },
+    combo: function (d, t0) {
+      function show(i, t) {
+        at(t, function () {
+          var opts = [d.qs[i][1], d.qs[(i + 1) % 3][1]].sort();
+          fill(eb(d.eb) + pr(d.qs[i][0] + '. which is it?') + opts.map(function (o) { return '<div class="pd-opt' + (o === d.qs[i][1] ? ' pd-right' : '') + '">' + o + '</div>'; }).join(''));
+          fin.classList.add('on'); aim(stage.querySelector('.pd-right'));
+        });
+        at(t + 650, function () { fin.classList.add('tap'); stage.querySelector('.pd-right').classList.add('picked'); combo.textContent = i ? '☀ glowing ×' + (i + 1) : '☀ right'; combo.classList.add('on'); bar.style.width = (45 + i * 18) + '%'; if (i === 2) bar.classList.add('hot'); });
+        at(t + 850, function () { fin.classList.remove('tap'); });
+      }
+      for (var k = 0; k < 3; k++) show(k, t0 + 200 + k * 1500);
+      return t0 + 200 + 3 * 1500;
+    },
+    type: function (d, t0) {
+      fill(eb(d.eb) + pr(d.title) + '<div class="pd-opt" style="display:inline-block;margin-top:6px">🔊 hear it again</div><div class="pd-type"><b></b></div>');
+      var box = stage.querySelector('.pd-type'), done = t0 + 700 + d.word.length * 380;
+      d.word.split('').forEach(function (c, i) { at(t0 + 700 + i * 380, function () { box.innerHTML = d.word.slice(0, i + 1) + '<b></b>'; }); });
+      at(done + 300, function () { ver.classList.add('on'); });
+      at(done + 2200, function () { ver.classList.remove('on'); });
+      return done + 2500;
+    },
+    say: function (d, t0) {
+      fill(eb(d.eb) + pr(d.title) + '<div class="pd-prompt" style="text-align:center;font-size:30px;margin-top:22px">' + d.line + '</div><div class="pd-mic">🎙</div><div class="pd-heard">heard it. that’s the sound.</div>');
+      var mic = stage.querySelector('.pd-mic');
+      tap(mic, t0 + 300);
+      at(t0 + 1100, function () { mic.classList.add('live'); fin.classList.remove('on'); });
+      at(t0 + 3200, function () { mic.classList.remove('live'); stage.querySelector('.pd-heard').classList.add('on'); });
+      return t0 + 4400;
+    }
+  };
+  q.style.display = 'none';
+  function loop() {
+    var i = n++ % DOORS.length, d = DOORS[i];
+    [].forEach.call(now.children, function (s, k) { s.classList.toggle('on', k === i); });
+    [].forEach.call(grid.children, function (t) { t.classList.remove('picked'); });
+    bar.style.width = '30%'; bar.classList.remove('hot'); combo.classList.remove('on'); combo.textContent = '☀ glowing ×3'; win.classList.remove('on'); ver.classList.remove('on');
+    doors.classList.remove('out'); lesson.classList.remove('on'); stage.classList.remove('on'); spark.classList.remove('go'); light.textContent = '+0';
+    fin.className = 'pd-finger'; fin.style.left = '70%'; fin.style.top = '92%';
+    $('pdcarry').textContent = d.carry; $('pdlook').src = LOOK[d.look]; $('pdlooklbl').textContent = d.lbl; $('pdwint').textContent = d.end;
+    $('pdday').textContent = d.day; $('pdlvl').textContent = '☀☀☀☀☀'.slice(0, d.lvl);
+    $('pdguy').src = reduce ? POSE.cheer : (i % 2 ? '/mascot/celebrate.webp' : '/mascot/cheer.webp');
+    var tile = grid.children[i];
+    if (reduce) { tile.classList.add('picked'); return; }
+    at(400, function () { fin.classList.add('on'); aim(tile); });
+    at(1300, function () { fin.classList.add('tap'); tile.classList.add('picked'); });
+    at(1500, function () { fin.classList.remove('tap'); });
+    at(2100, function () { doors.classList.add('out'); lesson.classList.add('on'); fin.classList.remove('on'); stage.classList.add('on'); bar.style.width = '45%'; });
+    var end = GAMES[d.game](d, 2300);
+    at(end, function () { fin.classList.remove('on'); stage.classList.remove('on'); bar.style.width = '100%'; bar.classList.add('hot'); });
+    at(end + 400, function () { win.classList.add('on'); count(18 + d.lvl * 3); });
+    at(end + 5200, loop);
+  }
+  var running = false;
+  new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting && !running) { running = true; loop(); } else if (!e.isIntersecting && running) { running = false; T.forEach(clearTimeout); T = []; } }); }, { threshold: .3 }).observe(screen);
+})();
+</script>

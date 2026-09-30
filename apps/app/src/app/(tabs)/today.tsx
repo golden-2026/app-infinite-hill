@@ -166,7 +166,7 @@ export default function Today() {
             // the one thing at stake: your run of days. said gently, and louder only as the day ends
             <View style={[s.pill, { borderColor: hour >= 17 ? color.gold : color.line, backgroundColor: hour >= 17 ? color.ink : "transparent" }]} accessibilityRole="text">
               <Text numberOfLines={1} style={[type.eyebrow(8), { color: hour >= 17 ? color.gold : color.ink, flexShrink: 0 }]}>☀ {derived.currentRun}-day run</Text>
-              <Text numberOfLines={1} style={[type.eyebrow(8), { color: hour >= 17 ? "#fff" : color.mute, flexShrink: 1, textAlign: "right" }]}>{hour >= 21 ? "almost out — light it" : hour >= 17 ? "on the line tonight" : "light today to keep it"}</Text>
+              <Text numberOfLines={1} style={[type.eyebrow(8), { color: hour >= 17 ? "#fff" : color.mute, flexShrink: 1, textAlign: "right" }]}>{hour >= 17 ? "light today's when you're ready" : "missed days are free"}</Text>
             </View>
           ) : null /* the floating "start day N" button above the tab bar is the one start action */}
 

@@ -12,7 +12,7 @@ export default function LegalPage() {
   return (
     <Screen scroll back="legal" title={item[0]} contentStyle={{ gap: 12 }}>
       <Body size={15}>{item[1]}</Body>
-      <Eyebrow size={8}>draft · counsel review pending</Eyebrow>
+      <Eyebrow size={8}>the plain-English version</Eyebrow>
     </Screen>
   );
 }

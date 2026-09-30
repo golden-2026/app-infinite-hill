@@ -7,6 +7,6 @@ export function voiceLabel(door: string, name: string) {
   return {
     licensed: false,
     short: "the house voice",
-    claim: `${name} will read these lessons once they record. For now it's the house voice, reading lines that are still drafts, waiting on a Keeper's review.`,
+    claim: `${name} will read these lessons once they record. For now it's the house voice.`,
   };
 }

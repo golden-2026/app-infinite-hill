@@ -84,7 +84,7 @@ function Stop({ st, n, side, status, tint, day, view }: { st: Stage; n: string; 
           </View>
         ) : null}
         <View style={{ position: "absolute", left: 14, right: 14, bottom: 10 }}>
-          <Text style={[type.eyebrow(10), { color: color.gold }]}>{`${st.eyebrow}${st.planned ? " · being planned" : st.outlined ? " · outline" : ""}`}</Text>
+          <Text style={[type.eyebrow(10), { color: color.gold }]}>{`${st.eyebrow}${st.planned ? " · being planned" : ""}`}</Text>
           <Text style={{ fontFamily: font.display[800], fontSize: 22, letterSpacing: -0.5, color: "#fff", marginTop: 2 }}>{st.name}</Text>
         </View>
       </View>

@@ -54,7 +54,6 @@ export default function Taste() {
             {`sit a full ${label(w)} lesson once — you come right back`}
           </Link>
         </View>
-        <Text style={[type.caption(), { textAlign: "center", fontSize: 11 }]}>draft · waiting on a Keeper's review</Text>
       </ScrollView>
     </SafeAreaView>
   );

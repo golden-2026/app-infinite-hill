@@ -345,8 +345,6 @@ function Session({ door, day, kidId, mode, deep, voiceOn, onFinish }: { door: st
           </View>
           <Text style={{ fontFamily: font.display[500], fontSize: 17, color: "#ffffffcc", marginTop: 8, textAlign: "center" }}>your line: <Text style={{ fontStyle: "italic" }}>{/[.?!…]$/.test(plan.carry) ? plan.carry : `${plan.carry}.`}</Text></Text>
           {nat ? <View style={st.bead}><Text style={{ fontFamily: font.display[800], fontSize: 22, color: color.gold }}>{nat}</Text><Text style={[type.eyebrow(), { color: "#ffffffbb" }]}>bead {Math.min(day, 21)} of 21 · on your strand</Text></View> : null}
-          {/* the label the Keeper & provenance page promises for unreviewed lessons */}
-          <Text style={[type.eyebrow(8), { color: "#ffffff88", textAlign: "center" }]}>authored draft · Keeper review pending</Text>
           {feelRow}
           {tomorrow ? <View style={st.tomorrow}><Text style={[type.eyebrow(), { color: color.gold }]}>tomorrow</Text><Text style={{ fontFamily: font.display[800], fontSize: 17, color: "#fff", marginTop: 4 }}>{tomorrow}</Text></View> : null}
         </View>,
