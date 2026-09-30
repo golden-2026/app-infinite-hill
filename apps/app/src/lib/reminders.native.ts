@@ -4,6 +4,7 @@ import { track } from "./analytics";
 import { lessonCounts, streakFrom } from "@ih/domain";
 import * as Notifications from "expo-notifications";
 import { planReminders } from "./reminder-plan";
+import { t } from "@/i18n";
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({ shouldShowBanner: true, shouldShowList: true, shouldPlaySound: false, shouldSetBadge: false }),
@@ -40,11 +41,11 @@ export async function syncReminders(store: StoreLike) {
 }
 export async function enableReminders(store: StoreLike) {
   const { status } = await Notifications.requestPermissionsAsync();
-  if (status !== "granted") return { ok: false, message: "no problem. you can turn this on any time in you › reminders." };
+  if (status !== "granted") return { ok: false, message: t("companion.rem.noProblemPhone") };
   store.update({ reminder: { ...store.saved.settings.reminder, on: true } });
   await syncReminders({ ...store, saved: { ...store.saved, settings: { ...store.saved.settings, reminder: { ...store.saved.settings.reminder, on: true } } } });
   track("reminder_on", {});
-  return { ok: true, message: "on. i'll find you about a day after your lesson." };
+  return { ok: true, message: t("companion.rem.onPhone") };
 }
 
 export async function disableReminders(store: StoreLike) {
@@ -52,6 +53,6 @@ export async function disableReminders(store: StoreLike) {
   await Notifications.cancelAllScheduledNotificationsAsync().catch(() => {});
 }
 
-export const reminderStatus = (on: boolean) => (on ? "on · this phone" : "off");
+export const reminderStatus = (on: boolean) => (on ? t("companion.rem.statusPhone") : t("companion.rem.statusOff"));
 
 export async function registerWorker() { return null; }

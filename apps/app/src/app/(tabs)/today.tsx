@@ -1,7 +1,7 @@
 import { track } from "@/lib/analytics";
 import { useTitle } from "@/lib/title";
 // Today: v175 PathHome as a real screen. The hill, today's lesson, review, yesterday's carry, visits.
-import { DOORS, STRAND_WORDS, data, icon, label, lessonInfo, native, pos } from "@ih/content";
+import { DOORS, STRAND_WORDS, data, icon, lessonInfo, native, pos } from "@ih/content";
 import { router } from "expo-router";
 import { useEffect, useRef, useState } from "react";
 import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
@@ -20,9 +20,10 @@ import { goalView, weekdayOf } from "@/lib/streak";
 import { useSeasons } from "@/lib/quests";
 import { newYearNow } from "@/content/seasons";
 import { QuestTodayCard } from "@/ui/quest";
+import { campLabel, campName, doorLabel, isEs, t } from "@/i18n";
 
 export default function Today() {
-  useTitle("today");
+  useTitle(t("home.tab.today"));
   const { saved, derived, door, lessonFor, update, markWelcomedBack, demoShiftDays, today, setQuest } = useStore();
   const seasons = useSeasons();
   const newYear = newYearNow(saved.settings.homeWing, today);
@@ -35,8 +36,8 @@ export default function Today() {
   const p = pos(lesson);
   const base0 = p.start - 1; // the day before this camp (or year) begins
   const titleFor = (n: number) => lessonInfo(wing, base0 + n) || {};
-  const t = titleFor(p.lesson);
-  const title = t.title || `${p.name.toLowerCase()} · lesson ${p.lesson}`;
+  const info = titleFor(p.lesson);
+  const title = info.title || `${(isEs() ? campName(p.camp, p.name) : p.name).toLowerCase()} · ${t("home.today.lessonN", { n: p.lesson })}`;
   const hour = new Date().getHours();
   const night = hour < 6 || hour >= 20; // same bedtime as the hill
   const strand = STRAND_WORDS(wing, lesson);
@@ -74,23 +75,23 @@ export default function Today() {
         {doors ? (
           <View style={s.switch} accessibilityRole="tablist">
             {doors.map(([w, kind]) => (
-              <Pressable key={kind} accessibilityRole="tab" accessibilityState={{ selected: st.active === kind }} aria-selected={st.active === kind} accessibilityLabel={`${kind === "home" ? "your door" : "visiting"}: ${label(w)}`} onPress={() => update({ active: kind })}
+              <Pressable key={kind} accessibilityRole="tab" accessibilityState={{ selected: st.active === kind }} aria-selected={st.active === kind} accessibilityLabel={t(kind === "home" ? "home.today.yourDoor" : "home.today.visiting", { door: doorLabel(w) })} onPress={() => update({ active: kind })}
                 style={[s.switchItem, st.active === kind && { backgroundColor: color.ink }]}>
                 <Face ic={icon(w)} w={22} h={22} r={11} caption={false} />
-                <Text style={[type.eyebrow(7), { color: st.active === kind ? color.gold : color.ink }]}>{label(w)}</Text>
+                <Text style={[type.eyebrow(7), { color: st.active === kind ? color.gold : color.ink }]}>{doorLabel(w)}</Text>
               </Pressable>
             ))}
           </View>
         ) : (
-          <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}><Face ic={ic} w={30} h={30} r={15} caption={false} /><Text style={type.eyebrow(8)}>{label(wing)}</Text></View>
+          <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}><Face ic={ic} w={30} h={30} r={15} caption={false} /><Text style={type.eyebrow(8)}>{doorLabel(wing)}</Text></View>
         )}
         {streakOn ? (
           // the streak leads: the number, then the sun (our flame). Gold once it's a golden streak (7+ days, no rest day).
-          <Pressable testID="day-count" accessibilityRole="button" accessibilityLabel={`${sk.streak}-day streak${golden ? ", golden" : ""}. Open you.`} onPress={() => router.push("/you")} style={({ pressed }) => ({ paddingVertical: 7, marginVertical: -7, opacity: pressed ? 0.6 : 1 })}>
+          <Pressable testID="day-count" accessibilityRole="button" accessibilityLabel={`${t("home.streakN", { count: sk.streak })}${golden ? t("home.today.golden") : ""}. ${t("home.today.openYou")}`} onPress={() => router.push("/you")} style={({ pressed }) => ({ paddingVertical: 7, marginVertical: -7, opacity: pressed ? 0.6 : 1 })}>
             <StreakChip n={sk.streak} golden={golden} />
           </Pressable>
         ) : (
-          <Pressable testID="day-count" accessibilityRole="button" accessibilityLabel={`${derived.showedUp} ${derived.showedUp === 1 ? "day" : "days"} on the hill. Open you.`} onPress={() => router.push("/you")} style={({ pressed }) => ({ paddingVertical: 7, marginVertical: -7, opacity: pressed ? 0.6 : 1 })}>
+          <Pressable testID="day-count" accessibilityRole="button" accessibilityLabel={`${t("common.daysOnHill", { count: derived.showedUp })}. ${t("home.today.openYou")}`} onPress={() => router.push("/you")} style={({ pressed }) => ({ paddingVertical: 7, marginVertical: -7, opacity: pressed ? 0.6 : 1 })}>
             <View style={s.count}><Sun size={16} /><Text style={{ fontFamily: font.display[800], fontSize: 14, color: color.ink }}>{derived.showedUp}</Text></View>
           </Pressable>
         )}
@@ -101,12 +102,12 @@ export default function Today() {
           <Card style={{ marginHorizontal: 18, marginTop: 4, flexDirection: "row", gap: 12, alignItems: "center" }}>
             <Guy pose="wave" h={70} />
             <View style={{ flex: 1 }}>
-              <Text style={type.h1(20)}>{streakOn && sk.streak > 0 ? "rest days had your back." : "your days came with you."}</Text>
+              <Text style={type.h1(20)}>{streakOn && sk.streak > 0 ? t("home.today.wbStreakTitle") : t("home.today.wbDaysTitle")}</Text>
               <Text style={[type.body(13), { color: color.mute, marginTop: 4 }]}>{streakOn && sk.streak > 0
-                ? `your ${sk.streak}-day streak is still here. one lesson today grows it.`
-                : `${derived.showedUp} ${derived.showedUp === 1 ? "day" : "days"} on the hill, right where you left them. one breath tonight?`}</Text>
+                ? t("home.today.wbStreak", { count: sk.streak })
+                : t("home.today.wbDays", { count: derived.showedUp })}</Text>
             </View>
-            <Pressable accessibilityRole="button" accessibilityLabel="Dismiss" onPress={markWelcomedBack} hitSlop={10}><Text style={type.eyebrow()}>✕</Text></Pressable>
+            <Pressable accessibilityRole="button" accessibilityLabel={t("home.dismiss")} onPress={markWelcomedBack} hitSlop={10}><Text style={type.eyebrow()}>✕</Text></Pressable>
           </Card>
         ) : null}
 
@@ -115,11 +116,11 @@ export default function Today() {
           <Card testID="earn-back" style={{ marginHorizontal: 18, marginTop: 4, marginBottom: 12, flexDirection: "row", gap: 12, alignItems: "center" }}>
             <Guy pose="climb" h={74} />
             <View style={{ flex: 1, gap: 4 }}>
-              <Text style={[type.eyebrow(8), { color: color.ink }]}>earn your streak back · {sk.earnBack.lessonsToday} of {sk.earnBack.need} today</Text>
-              <Text style={{ fontFamily: font.display[800], fontSize: 16, color: color.ink }}>finish 2 lessons today and your {sk.earnBack.lost}-day streak comes back.</Text>
-              <Text style={[type.body(12), { color: color.mute }]}>{sk.earnBack.lastDay === today ? "open till tonight." : `open till ${weekdayOf(sk.earnBack.lastDay)}.`} no catch.</Text>
+              <Text style={[type.eyebrow(8), { color: color.ink }]}>{t("home.today.earnBack", { done: sk.earnBack.lessonsToday, need: sk.earnBack.need })}</Text>
+              <Text style={{ fontFamily: font.display[800], fontSize: 16, color: color.ink }}>{t("home.today.earnBackBody", { count: sk.earnBack.lost })}</Text>
+              <Text style={[type.body(12), { color: color.mute }]}>{sk.earnBack.lastDay === today ? t("home.today.openTonight") : t("home.today.openTill", { day: weekdayOf(sk.earnBack.lastDay) })}</Text>
               <Btn testID="earn-back-go" kind="gold" style={{ marginTop: 6, alignSelf: "flex-start", paddingHorizontal: 16 }}
-                onPress={doneHere ? () => router.push({ pathname: "/session/[door]/[day]", params: { door: wing, day: String(lesson) } }) : start}>{doneHere ? "one more lesson" : `start day ${lesson}`}</Btn>
+                onPress={doneHere ? () => router.push({ pathname: "/session/[door]/[day]", params: { door: wing, day: String(lesson) } }) : start}>{doneHere ? t("home.today.oneMore") : t("home.today.startDay", { n: lesson })}</Btn>
             </View>
           </Card>
         ) : null}
@@ -134,22 +135,22 @@ export default function Today() {
         {/* the tradition's new year: "your year on the hill", for a week */}
         {newYear && derived.showedUp >= 3 && st.yearSeen !== newYearKey && !quiet ? (
           <Card testID="year-offer" style={{ marginHorizontal: 18, marginBottom: 12, flexDirection: "row", gap: 12, alignItems: "center" }}>
-            <Pressable accessibilityRole="button" accessibilityLabel="see your year on the hill" onPress={() => { update({ yearSeen: newYearKey }); router.push("/year"); }} style={({ pressed }) => ({ flex: 1, flexDirection: "row", gap: 12, alignItems: "center", opacity: pressed ? 0.8 : 1 })}>
+            <Pressable accessibilityRole="button" accessibilityLabel={t("home.today.yearA11y")} onPress={() => { update({ yearSeen: newYearKey }); router.push("/year"); }} style={({ pressed }) => ({ flex: 1, flexDirection: "row", gap: 12, alignItems: "center", opacity: pressed ? 0.8 : 1 })}>
               <Sun size={40} mood="happy" />
               <View style={{ flex: 1 }}>
-                <Text style={[type.eyebrow(8), { color: color.ink }]}>{newYear.name} · a new year</Text>
-                <Text style={{ fontFamily: font.display[800], fontSize: 16, color: color.ink, marginTop: 3 }}>your year on the hill is ready.</Text>
-                <Text style={[type.body(12), { color: color.mute, marginTop: 2 }]}>days, words, hours learned. a minute to look back.</Text>
+                <Text style={[type.eyebrow(8), { color: color.ink }]}>{t("home.today.yearEyebrow", { name: newYear.name })}</Text>
+                <Text style={{ fontFamily: font.display[800], fontSize: 16, color: color.ink, marginTop: 3 }}>{t("home.today.yearTitle")}</Text>
+                <Text style={[type.body(12), { color: color.mute, marginTop: 2 }]}>{t("home.today.yearBody")}</Text>
               </View>
             </Pressable>
-            <Pressable accessibilityRole="button" accessibilityLabel="Dismiss" onPress={() => update({ yearSeen: newYearKey })} hitSlop={10}><Text style={type.eyebrow(12)}>✕</Text></Pressable>
+            <Pressable accessibilityRole="button" accessibilityLabel={t("home.dismiss")} onPress={() => update({ yearSeen: newYearKey })} hitSlop={10}><Text style={type.eyebrow(12)}>✕</Text></Pressable>
           </Card>
         ) : null}
 
         {(() => {
           const seen = st.unlocksSeen || [];
-          const card = derived.showedUp >= 7 && !seen.includes("together") ? { key: "together", title: `${derived.showedUp < 14 ? "a week in" : `${derived.showedUp} days in`}. walk with someone.`, body: "light your lantern and send it to one friend.", to: "/together" }
-            : derived.showedUp >= 3 && !seen.includes("guide") ? { key: "guide", title: `${derived.showedUp} days in. the guide is worth asking now.`, body: "ask about any word you've learned — it answers from your lessons.", to: "/guide" } : null;
+          const card = derived.showedUp >= 7 && !seen.includes("together") ? { key: "together", title: derived.showedUp < 14 ? t("home.today.unlockWeek") : t("home.today.unlockDays", { n: derived.showedUp }), body: t("home.today.unlockTogetherBody"), to: "/together" }
+            : derived.showedUp >= 3 && !seen.includes("guide") ? { key: "guide", title: t("home.today.unlockGuide", { n: derived.showedUp }), body: t("home.today.unlockGuideBody"), to: "/guide" } : null;
           if (!card) return null;
           const open = () => { track("unlock_seen", { unlock: card.key }); update({ unlocksSeen: [...seen, card.key] }); router.push(card.to as any); };
           // The card and its ✕ are siblings: a pressable card containing the ✕ nested a <button> in a <button> on web
@@ -157,11 +158,11 @@ export default function Today() {
           return (
             <Card style={{ marginHorizontal: 18, marginBottom: 12, flexDirection: "row", gap: 12, alignItems: "center" }}>
               <Pressable accessibilityRole="button" accessibilityLabel={card.title} onPress={open} style={({ pressed }) => ({ flex: 1, opacity: pressed ? 0.8 : 1 })}>
-                <Text style={[type.eyebrow(9), { color: color.ink }]}>new for you</Text>
+                <Text style={[type.eyebrow(9), { color: color.ink }]}>{t("home.today.newForYou")}</Text>
                 <Text style={{ fontFamily: font.display[800], fontSize: 16, color: color.ink, marginTop: 4 }}>{card.title}</Text>
                 <Text style={[type.body(12), { color: color.mute, marginTop: 2 }]}>{card.body}</Text>
               </Pressable>
-              <Pressable accessibilityRole="button" accessibilityLabel="Dismiss" onPress={() => update({ unlocksSeen: [...seen, card.key] })} hitSlop={10}><Text style={type.eyebrow(12)}>✕</Text></Pressable>
+              <Pressable accessibilityRole="button" accessibilityLabel={t("home.dismiss")} onPress={() => update({ unlocksSeen: [...seen, card.key] })} hitSlop={10}><Text style={type.eyebrow(12)}>✕</Text></Pressable>
             </Card>
           );
         })()}
@@ -172,22 +173,22 @@ export default function Today() {
 
         <View style={s.campCard}>
           <View style={{ flex: 1, paddingRight: 12 }}>
-            <Text style={[type.eyebrow(8), { color: color.gold }]}>{p.camp} · {p.name}</Text>
+            <Text style={[type.eyebrow(8), { color: color.gold }]}>{campLabel(p.camp)} · {isEs() ? campName(p.camp, p.name) : p.name}</Text>
             <Text style={{ fontFamily: font.display[800], fontSize: 18, marginTop: 4, color: "#fff" }}>{title}</Text>
-            {goal && streakOn ? <Text style={[type.eyebrow(8), { color: "#ffffff99", marginTop: 6 }]}>your goal · {goal.done} of {goal.days} days in a row{goal.reached ? " · reached" : ""}</Text> : null}
+            {goal && streakOn ? <Text style={[type.eyebrow(8), { color: "#ffffff99", marginTop: 6 }]}>{t("home.today.goal", { done: goal.done, days: goal.days })}{goal.reached ? t("home.today.goalReached") : ""}</Text> : null}
           </View>
-          <Text style={[type.eyebrow(8), { color: "#ffffff99" }]}>lesson {p.lesson} of {p.of}</Text>
+          <Text style={[type.eyebrow(8), { color: "#ffffff99" }]}>{t("home.today.lessonOf", { n: p.lesson, of: p.of })}</Text>
         </View>
 
         {quiet ? null : <TodaysThree />}
         {quiet ? null : <CompanionCard day={companion} />}
         {quiet ? null : <ReflectCard />}
         {due > 0 && !quiet ? (
-          <Pressable accessibilityRole="button" accessibilityLabel={`Review ${due} ${due === 1 ? "word" : "words"}`} onPress={() => router.push("/review")} style={s.inkCard}>
+          <Pressable accessibilityRole="button" accessibilityLabel={t("home.today.reviewA11y", { count: due })} onPress={() => router.push("/review")} style={s.inkCard}>
             <Sun size={34} />
             <View style={{ flex: 1 }}>
-              <Text style={type.eyebrow(8)}>review · {due} {due === 1 ? "word" : "words"} due</Text>
-              <Text style={{ fontFamily: font.display[800], fontSize: 16, marginTop: 2, color: color.ink }}>keep your strand. ninety seconds.</Text>
+              <Text style={type.eyebrow(8)}>{t("home.today.reviewDue", { count: due })}</Text>
+              <Text style={{ fontFamily: font.display[800], fontSize: 16, marginTop: 2, color: color.ink }}>{t("home.today.reviewTitle")}</Text>
             </View>
             <Text style={{ fontFamily: font.display[800], fontSize: 22 }}>›</Text>
           </Pressable>
@@ -195,42 +196,42 @@ export default function Today() {
 
         {yest && !doneHere ? (
           <View style={[s.inkCard, { flexDirection: "column", alignItems: "stretch" }]}>
-            <Text style={type.eyebrow(8)}>{derived.missedDays > 0 ? "last time’s carry" : "yesterday’s carry"}</Text>
-            <Text style={{ fontFamily: font.display[800], fontSize: 16, marginTop: 4, color: color.ink }}>{yest.carry || "the line you took with you"}</Text>
+            <Text style={type.eyebrow(8)}>{derived.missedDays > 0 ? t("home.today.carryLast") : t("home.today.carryYesterday")}</Text>
+            <Text style={{ fontFamily: font.display[800], fontSize: 16, marginTop: 4, color: color.ink }}>{yest.carry || t("home.today.carryFallback")}</Text>
             {carried === null ? (
               <View style={{ flexDirection: "row", gap: 8, marginTop: 10 }}>
-                <Pressable accessibilityRole="button" onPress={() => setCarried(true)} style={[s.yn, { backgroundColor: color.gold }]}><Text style={s.ynText}>did it</Text></Pressable>
-                <Pressable accessibilityRole="button" onPress={() => setCarried(false)} style={s.yn}><Text style={s.ynText}>not yet</Text></Pressable>
+                <Pressable accessibilityRole="button" onPress={() => setCarried(true)} style={[s.yn, { backgroundColor: color.gold }]}><Text style={s.ynText}>{t("home.today.didIt")}</Text></Pressable>
+                <Pressable accessibilityRole="button" onPress={() => setCarried(false)} style={s.yn}><Text style={s.ynText}>{t("home.today.notYet")}</Text></Pressable>
               </View>
-            ) : <Text style={[type.body(13), { marginTop: 8, color: color.mute }]}>{carried ? "that's the whole point. it's in you now." : "no rush. it keeps."}</Text>}
+            ) : <Text style={[type.body(13), { marginTop: 8, color: color.mute }]}>{carried ? t("home.today.didItReply") : t("home.today.notYetReply")}</Text>}
           </View>
         ) : null}
 
         <View style={{ marginTop: 12 }} onLayout={(e) => setHillTop(e.nativeEvent.layout.y)}>
           <HillScene onNow={setNowY} hour={hour} done={doneHere ? p.lesson : p.lesson - 1} total={p.of} doneToday={doneHere} firstLesson={base0 + 1}
             onReplay={(n) => router.push({ pathname: "/session/[door]/[day]", params: { door: wing, day: String(n) } })}
-            words={Array.from({ length: p.of }, (_, i) => native(titleFor(i + 1).word, wing) || "")} onStart={start} wing={wing} label={`${label(wing)}, day ${lesson}: ${title}`} />
+            words={Array.from({ length: p.of }, (_, i) => native(titleFor(i + 1).word, wing) || "")} onStart={start} wing={wing} label={t("home.today.hillLabel", { door: doorLabel(wing), n: lesson, title })} />
         </View>
 
         <View style={{ paddingHorizontal: 18, gap: 12 }}>
           {doneHere ? (
             <Card dark style={{ padding: 18, overflow: "hidden" }}>
-              <Text style={[type.eyebrow(), { color: color.gold }]}>today · done</Text>
-              <Text style={{ fontFamily: font.display[500], fontSize: 18, marginTop: 6, paddingRight: 96, color: "#fff" }}>carry: {t.carry || (data.DAY1[wing] || data.DAY1.SPIRITUAL).carry}</Text>
-              <Text style={[type.body(12), { color: "#ffffff99", marginTop: 6, paddingRight: 96 }]}>{night ? "sleep on it. see you tomorrow." : hour >= 19 ? "that's it for today. see you tomorrow." : "that's it for today. see you at sundown."}</Text>
+              <Text style={[type.eyebrow(), { color: color.gold }]}>{t("home.today.done")}</Text>
+              <Text style={{ fontFamily: font.display[500], fontSize: 18, marginTop: 6, paddingRight: 96, color: "#fff" }}>{t("home.today.carry", { line: info.carry || (data.DAY1[wing] || data.DAY1.SPIRITUAL).carry })}</Text>
+              <Text style={[type.body(12), { color: "#ffffff99", marginTop: 6, paddingRight: 96 }]}>{night ? t("home.today.sleepOnIt") : hour >= 19 ? t("home.today.seeTomorrow") : t("home.today.seeSundown")}</Text>
               <View style={{ position: "absolute", right: 8, bottom: night ? 46 : 4 }}><Guy pose={night ? "sleep" : "thumbs"} h={night ? 78 : 104} /></View>
-              {isDemo() ? <View style={{ marginTop: 12 }}><Btn kind="light" onPress={() => demoShiftDays(1)}>Demo: skip to tomorrow →</Btn></View> : null}
+              {isDemo() ? <View style={{ marginTop: 12 }}><Btn kind="light" onPress={() => demoShiftDays(1)}>{t("home.today.demoSkip")}</Btn></View> : null}
             </Card>
           ) : streakOn && sk.streak >= 2 && !quiet ? (
             // the streak, said gently. It's only "at stake" when no rest day is left, and louder only as the day ends.
             (() => {
               const loud = sk.atRisk && hour >= 17;
-              const right = sk.atRisk ? (hour >= 17 ? "one lesson keeps it going" : "no rest days left · a lesson keeps it")
-                : sk.restedYesterday ? "rest day used yesterday"
-                : `${sk.rest} rest ${sk.rest === 1 ? "day" : "days"} banked`;
+              const right = sk.atRisk ? (hour >= 17 ? t("home.today.keepsGoing") : t("home.today.noRestLeft"))
+                : sk.restedYesterday ? t("home.today.restUsed")
+                : t("home.restBanked", { count: sk.rest });
               return (
                 <View testID="streak-pill" style={[s.pill, { borderColor: loud ? color.gold : color.line, backgroundColor: loud ? color.ink : "transparent" }]} accessibilityRole="text">
-                  <Text numberOfLines={1} style={[type.eyebrow(8), { color: loud ? color.gold : color.ink, flexShrink: 0 }]}>{sk.streak}-day streak</Text>
+                  <Text numberOfLines={1} style={[type.eyebrow(8), { color: loud ? color.gold : color.ink, flexShrink: 0 }]}>{t("home.streakN", { count: sk.streak })}</Text>
                   <Text numberOfLines={2} style={[type.eyebrow(8), { color: loud ? "#fff" : color.mute, flexShrink: 1, textAlign: "right" }]}>{right}</Text>
                 </View>
               );
@@ -238,20 +239,20 @@ export default function Today() {
           ) : null /* the floating "start day N" button above the tab bar is the one start action */}
 
           {doneHere && st.deepOn !== today && lesson > 1 && !quiet ? (
-            <Pressable accessibilityRole="button" accessibilityLabel="go deeper: a harder extra round, two levels up" onPress={() => router.push({ pathname: "/session/[door]/[day]", params: { door: wing, day: String(lesson), deep: "1" } })}
+            <Pressable accessibilityRole="button" accessibilityLabel={t("home.today.deeperA11y")} onPress={() => router.push({ pathname: "/session/[door]/[day]", params: { door: wing, day: String(lesson), deep: "1" } })}
               style={[s.inkCard, { marginHorizontal: 0, marginTop: 0, backgroundColor: color.ink }]}>
               <Guy pose="stride" h={64} />
               <View style={{ flex: 1 }}>
-                <Text style={[type.eyebrow(8), { color: color.gold }]}>go deeper · optional</Text>
-                <Text style={{ fontFamily: font.display[800], fontSize: 16, marginTop: 3, color: "#fff" }}>two levels up. type it, beat the clock.</Text>
-                <Text style={[type.body(12), { color: "#ffffff99", marginTop: 2 }]}>about 3 minutes · extra light</Text>
+                <Text style={[type.eyebrow(8), { color: color.gold }]}>{t("home.today.deeperEyebrow")}</Text>
+                <Text style={{ fontFamily: font.display[800], fontSize: 16, marginTop: 3, color: "#fff" }}>{t("home.today.deeperTitle")}</Text>
+                <Text style={[type.body(12), { color: "#ffffff99", marginTop: 2 }]}>{t("home.today.deeperBody")}</Text>
               </View>
               <Text style={{ color: color.gold, fontSize: 20 }}>›</Text>
             </Pressable>
           ) : null}
 
           <Pressable accessibilityRole="link" onPress={() => router.push({ pathname: "/trail", params: { door: wing } })} style={s.pill}>
-            <Text style={type.eyebrow(8)}>see the whole trail · what's at the top</Text>
+            <Text style={type.eyebrow(8)}>{t("home.today.wholeTrail")}</Text>
             <Text style={[type.eyebrow(8), { color: color.mute }]}>›</Text>
           </Pressable>
 
@@ -270,12 +271,12 @@ export default function Today() {
               const w = others[(derived.showedUp + new Date().getDate()) % others.length];
               const d1 = data.DAY1[w] || {};
               return (
-                <Pressable accessibilityRole="button" accessibilityLabel={`a taste from next door: ${label(w)}, ${d1.word}`} onPress={() => router.push({ pathname: "/taste", params: { door: w } })} style={[s.inkCard, { marginHorizontal: 0, marginTop: 0 }]}>
+                <Pressable accessibilityRole="button" accessibilityLabel={t("home.today.tasteA11y", { door: doorLabel(w), word: d1.word })} onPress={() => router.push({ pathname: "/taste", params: { door: w } })} style={[s.inkCard, { marginHorizontal: 0, marginTop: 0 }]}>
                   <Guy pose="wonder" h={60} />
                   <View style={{ flex: 1 }}>
-                    <Text style={type.eyebrow(8)}>{ownPath ? "picked for you · from around the house" : "a taste from next door"}</Text>
+                    <Text style={type.eyebrow(8)}>{ownPath ? t("home.today.tastePicked") : t("home.today.tasteNextDoor")}</Text>
                     <Text style={{ fontFamily: font.display[800], fontSize: 16, marginTop: 3, color: color.ink }}>{d1.word}: <Text style={{ fontFamily: font.display[500] }}>{String(d1.carry || "").replace(/[.!]$/, "")}</Text></Text>
-                    <Text style={[type.body(12), { color: color.mute, marginTop: 2 }]}>a one-minute look · your path stays yours</Text>
+                    <Text style={[type.body(12), { color: color.mute, marginTop: 2 }]}>{t("home.today.tasteBody")}</Text>
                   </View>
                   <Text style={{ fontFamily: font.display[800], fontSize: 20 }}>›</Text>
                 </Pressable>
@@ -284,7 +285,7 @@ export default function Today() {
             if (unsure) {
               return (
                 <Pressable accessibilityRole="link" onPress={() => router.push({ pathname: "/trail", params: { door: "SPIRITUAL" } })}>
-                  <Text style={[type.caption(), { paddingVertical: 12 }]}>still working out where you stand? that's allowed. there's also a path built around you ›</Text>
+                  <Text style={[type.caption(), { paddingVertical: 12 }]}>{t("home.today.unsure")}</Text>
                 </Pressable>
               );
             }
@@ -297,7 +298,7 @@ export default function Today() {
       {/* when today is done, the "today · done" card below already says so */}
       <View pointerEvents="box-none" style={s.dock}>
         {doneHere ? null : (
-          <Btn testID="top-start" kind={quiet ? "light" : "gold"} onPress={start} label={`Start day ${lesson}: ${title}`} style={s.dockBtn}>{quiet ? `day ${lesson}, whenever you're ready` : `start day ${lesson} · about 5 min`}</Btn>
+          <Btn testID="top-start" kind={quiet ? "light" : "gold"} onPress={start} label={t("home.today.startA11y", { n: lesson, title })} style={s.dockBtn}>{quiet ? t("home.today.whenReady", { n: lesson }) : t("home.today.startDock", { n: lesson })}</Btn>
         )}
       </View>
     </SafeAreaView>

@@ -1,20 +1,21 @@
 // The streak, as the screens say it. The math lives in @ih/domain (streak.js); this is the voice and the settings.
 // We score learning, never faith: the streak counts finished lessons, nothing else. Never guilt, never red.
 import type { Streak } from "@ih/domain";
+import { date, getLang, t, type Key } from "@/i18n";
 
-/** The eight-ish words that explain it, everywhere it's explained. */
-export const STREAK_RULE = "one lesson a day grows it. rest days protect it.";
-export const STREAK_WHY = "a streak that grows one lesson a day, with rest days built in, because every tradition knows rest.";
+/** The eight-ish words that explain it, everywhere it's explained (in the current language, read at render). */
+export const streakRule = () => t("home.streak.rule");
+export const streakWhy = () => t("home.streak.why");
+/** Kept for older callers: fixed at load, in the language the app opened in. Prefer streakRule() / streakWhy(). */
+export const STREAK_RULE = streakRule();
+export const STREAK_WHY = streakWhy();
 
-export const MILESTONE_WORDS: Record<number, string> = {
-  3: "three days in a row. it's turning into a rhythm.",
-  7: "a whole week. that's a practice now.",
-  14: "two weeks straight. the hill knows your footsteps.",
-  30: "a month of days. look at that trail behind you.",
-  50: "fifty days. i made you a tiny banner.",
-  100: "a hundred days. we're throwing you a small parade.",
-  365: "a whole year of days. thank you for walking it.",
-};
+const MILESTONES = [3, 7, 14, 30, 50, 100, 365] as const;
+/** Milestone lines by streak length; each read at the moment it is shown, so a language switch shows at once. */
+export const MILESTONE_WORDS: Record<number, string> = Object.defineProperties(
+  {},
+  Object.fromEntries(MILESTONES.map((n) => [n, { enumerable: true, get: () => t(`home.streak.m${n}` as Key) }])),
+);
 
 /** The streak goal as a streak length: progress is the current streak, capped at the goal. */
 export function goalView(goal: { days: number | null } | null | undefined, s: Pick<Streak, "streak">) {
@@ -23,4 +24,6 @@ export function goalView(goal: { days: number | null } | null | undefined, s: Pi
 }
 
 const WEEKDAY = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
-export const weekdayOf = (date: string) => WEEKDAY[new Date(`${date}T12:00:00Z`).getUTCDay()];
+/** "wednesday" / "miércoles". */
+export const weekdayOf = (d: string) =>
+  getLang() === "es" ? date(new Date(`${d}T12:00:00Z`), { weekday: "long", timeZone: "UTC" }).toLowerCase() : WEEKDAY[new Date(`${d}T12:00:00Z`).getUTCDay()];

@@ -2,6 +2,12 @@
 // pass for the door-first onboarding. Every gloss below must be reviewed by that tradition's Keeper before
 // release (docs/CONTENT_RELEASE.md). Wording rules: plain, warm, never pushy; a bridge says "a similar idea",
 // never "the same thing"; nobody is ever told they should choose, switch, or become religious.
+// The Spanish (i18n/strings/onboarding-intake.ts) is also a DRAFT: same Keeper review, plus a native speaker's. It
+// overlays the English below at render time (getters, at the bottom of this file); ids and stored values never change.
+import { getLang } from "@/i18n/core";
+import { BRIDGES_ES, QUESTIONS_ES, RAISED_IN_ES, REPLIES_ES } from "@/i18n/strings/onboarding-intake";
+
+const es = () => getLang() === "es";
 
 export const CONTENT_STATUS = "draft-unreviewed" as const;
 
@@ -63,16 +69,18 @@ export const HEARD_Q: Question = {
 export function raisedInQ(stance: string | null): Question {
   // Learning a partner's or family's faith: ask which one they're learning, never where they grew up.
   if (stance === "partner") return {
-    id: "learning", ask: "Lovely. Which faith are you learning?",
-    note: "we'll teach it the way the people who practice it understand it. your own background stays yours.",
+    id: "learning", ask: es() ? RAISED_IN_ES.learningAsk : "Lovely. Which faith are you learning?",
+    note: es() ? RAISED_IN_ES.learningNote : "we'll teach it the way the people who practice it understand it. your own background stays yours.",
     choices: RAISED.filter((c) => c.id !== "none" && c.id !== "mixed"),
   };
   const grewUp = stance === "unsure" || stance === "left";
-  const ask = stance === "practice" ? "Lovely. Which one?" : grewUp ? "Which one did you grow up in?" : "Did you grow up in a religion?";
+  const ask = es()
+    ? (stance === "practice" ? RAISED_IN_ES.practiceAsk : grewUp ? RAISED_IN_ES.grewUpAsk : RAISED_IN_ES.otherAsk)
+    : stance === "practice" ? "Lovely. Which one?" : grewUp ? "Which one did you grow up in?" : "Did you grow up in a religion?";
   const choices = RAISED.filter((c) => (stance === "practice" || grewUp ? c.id !== "none" : true))
-    .map((c) => (c.id === "none" ? { ...c, label: "no, none" } : c))
+    .map((c) => (c.id === "none" ? { ...c, label: es() ? RAISED_IN_ES.noneLabel : "no, none" } : c))
     .sort((a, z) => Number(z.id === "none") - Number(a.id === "none")); // "no, none" first when it's offered
-  return { id: "raisedIn", ask, optional: true, note: grewUp ? "no wrong answers. nothing here asks you to go back." : undefined, choices };
+  return { id: "raisedIn", ask, optional: true, note: grewUp ? (es() ? RAISED_IN_ES.grewUpNote : "no wrong answers. nothing here asks you to go back.") : undefined, choices };
 }
 
 // ---------- someone who picked a tradition ----------
@@ -199,13 +207,14 @@ export function nextIntake(answers: Record<string, string | string[]>, o: { askM
 /** A short reply after an answer, so it feels like a conversation, not a form. */
 export function intakeReply(qid: string, a: string | string[]): string | null {
   const v = Array.isArray(a) ? a : [a];
-  if (qid === "feelNow" && v[0] === "left") return "that's allowed. nothing here asks you to go back.";
-  if (qid === "feelNow" && v[0] === "complicated") return "most people's is.";
-  if (qid === "organized" && v[0] === "away") return "fair. no one here will sign you up for anything.";
-  if (qid === "believe" && v[0] === "meaning") return "good. there's a lot here that doesn't need a god to work.";
-  if (qid === "raised" && v[0] === "none") return "then you get to walk in with fresh eyes.";
-  if (qid === "turnedOff" && v.includes("hurt")) return "I'm sorry. we'll go gently.";
-  if (qid === "feeling" && v.includes("grief")) return "I'm sorry. we'll start with something steady.";  return null;
+  const r = es() ? REPLIES_ES : null;
+  if (qid === "feelNow" && v[0] === "left") return r ? r.left : "that's allowed. nothing here asks you to go back.";
+  if (qid === "feelNow" && v[0] === "complicated") return r ? r.complicated : "most people's is.";
+  if (qid === "organized" && v[0] === "away") return r ? r.away : "fair. no one here will sign you up for anything.";
+  if (qid === "believe" && v[0] === "meaning") return r ? r.meaning : "good. there's a lot here that doesn't need a god to work.";
+  if (qid === "raised" && v[0] === "none") return r ? r.none : "then you get to walk in with fresh eyes.";
+  if (qid === "turnedOff" && v.includes("hurt")) return r ? r.hurt : "I'm sorry. we'll go gently.";
+  if (qid === "feeling" && v.includes("grief")) return r ? r.grief : "I'm sorry. we'll start with something steady.";  return null;
 }
 
 /** Which bridge themes an answer points at (see BRIDGES[].tags). */
@@ -229,7 +238,8 @@ export type Bridge = {
   why: string;
   tags: string[];
   /** day = the Camp 1 lesson where this word is taught on that door, when there is one. */
-  members: { door: string; word: string; day?: number; gloss: string }[];
+  /** gloss is shown in the person's language; glossEn is always the English (lib/profile's God-language check reads it). */
+  members: { door: string; word: string; day?: number; gloss: string; glossEn?: string }[];
 };
 
 export const BRIDGES: Bridge[] = [
@@ -319,3 +329,36 @@ export const BRIDGES: Bridge[] = [
     { door: "HINDUISM", word: "ahimsa", day: 17, gloss: "do no harm" },
   ] },
 ];
+
+// ---------- Spanish, at render time ----------
+// The English above stays as written. In Spanish, ask / note / label / idea / why / gloss read the Spanish instead:
+// getters, so a screen gets the current language when it renders (the root layout re-mounts on a language switch).
+
+function overlay(o: object, key: string, read: () => string | undefined) {
+  const en = (o as Record<string, unknown>)[key];
+  if (typeof en !== "string") return;
+  Object.defineProperty(o, key, { get: () => (es() ? read() || en : en), enumerable: true, configurable: true });
+}
+function localize(q: Question, key: string) {
+  const e = () => QUESTIONS_ES[key];
+  overlay(q, "ask", () => e()?.ask);
+  overlay(q, "note", () => e()?.note);
+  for (const c of q.choices) overlay(c, "label", () => e()?.c[c.id]);
+}
+for (const c of RAISED) overlay(c, "label", () => QUESTIONS_ES.raised.c[c.id]); // shared by the first step and the intake
+localize(STANCE_Q, "you.stance");
+localize(HEARD_Q, "you.heardFrom");
+for (const q of BELIEF_QUESTIONS) localize(q, `belief.${q.id}`);
+localize(PRACTICE_MODE_Q, "belief.practiceMode");
+for (const q of Object.values(INTAKE)) {
+  if (q.id === "raised") { overlay(q, "ask", () => QUESTIONS_ES["intake.raised"].ask); overlay(q, "note", () => QUESTIONS_ES["intake.raised"].note); }
+  else localize(q, `intake.${q.id}`);
+}
+for (const b of BRIDGES) {
+  overlay(b, "idea", () => BRIDGES_ES[b.id]?.idea);
+  overlay(b, "why", () => BRIDGES_ES[b.id]?.why);
+  b.members.forEach((m, i) => {
+    m.glossEn = m.gloss;
+    overlay(m, "gloss", () => BRIDGES_ES[b.id]?.glosses[i]);
+  });
+}

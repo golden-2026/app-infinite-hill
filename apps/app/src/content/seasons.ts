@@ -10,6 +10,11 @@
 // people who chose "just learn", a line about how people keep the season.
 
 export const DATES_MAY_VARY = "dates may vary by community";
+// Spanish lives inline (this file stays import-free) and is picked at call time from globalThis.__ihLang, so the
+// tests (no language set) always see the English.
+const es = () => (globalThis as { __ihLang?: string }).__ihLang === "es";
+/** "dates may vary by community", in the current language. */
+export const datesMayVary = () => (es() ? "las fechas pueden variar según la comunidad" : DATES_MAY_VARY);
 /** After a season ends, its quest stays open this many days, so missed days can still be walked. */
 export const GRACE_DAYS = 7;
 /** A season's quest is offered from this many days before it starts. */
@@ -32,7 +37,7 @@ export type SeasonDef = {
   badge: string;
 };
 
-export const SEASON_DEFS: Record<SeasonKey, SeasonDef> = {
+const EN_DEFS: Record<SeasonKey, SeasonDef> = {
   lent: {
     key: "lent", name: "lent", doors: ["CHRISTIANITY", "CATHOLIC"], badge: "forty days",
     about: "the forty days from ash wednesday toward easter, remembering jesus's forty days in the wilderness.",
@@ -339,6 +344,333 @@ export const SEASON_DEFS: Record<SeasonKey, SeasonDef> = {
   },
 };
 
+type SeasonText = Pick<SeasonDef, "name" | "about" | "ask" | "learn" | "badge">;
+/** Spanish. Names carry their article ("el Adviento") and holiday capitals, as Spanish writes them. */
+const ES_DEFS: Record<SeasonKey, SeasonText> = {
+  lent: {
+    name: "la Cuaresma", badge: "cuarenta días",
+    about: "los cuarenta días desde el miércoles de ceniza hasta la Pascua, en memoria de los cuarenta días de Jesús en el desierto.",
+    ask: [
+      "¿qué podrías dejar a un lado durante estos cuarenta días?",
+      "¿dónde sentiste hoy hambre de algo más?",
+      "¿a quién le vendría bien un pequeño gesto de misericordia de tu parte esta semana?",
+      "¿qué le está quitando espacio al silencio en tu día?",
+      "¿cómo sería viajar un poco más ligero?",
+      "¿qué regalaste hoy, aunque fuera algo pequeño?",
+      "¿para qué estás haciendo espacio?",
+    ],
+    learn: [
+      "muchos cristianos renuncian a algo en Cuaresma, una comida, un hábito, una pantalla, para hacer espacio.",
+      "empieza el miércoles de ceniza: una cruz de ceniza en la frente y las palabras \"recuerda que eres polvo\".",
+      "la oración, el ayuno y la limosna son los tres pilares antiguos de la Cuaresma.",
+      "muchos católicos no comen carne los viernes de Cuaresma. de ahí viene el pescado de los viernes.",
+      "los cuarenta días evocan los cuarenta días de Jesús en el desierto antes de comenzar su vida pública.",
+      "otros, en vez de quitar, suman algo: una lectura diaria, una visita, un gesto amable.",
+      "la Cuaresma termina en la Semana Santa: el Domingo de Ramos, el Viernes Santo y luego la Pascua.",
+    ],
+  },
+  advent: {
+    name: "el Adviento", badge: "la espera",
+    about: "los cuatro domingos de espera y preparación antes de la Navidad.",
+    ask: [
+      "¿qué estás esperando este año?",
+      "¿dónde te vendría bien un poco más de esperanza ahora mismo?",
+      "¿qué haría espacio para la paz en tu casa esta semana?",
+      "¿quién te trae alegría? ¿lo sabe?",
+      "¿qué pequeña luz podrías llevarle a alguien esta noche?",
+      "¿qué vale la pena hacer con calma antes de las prisas?",
+      "¿para qué te estás preparando por dentro?",
+    ],
+    learn: [
+      "adviento significa \"venida\". es un tiempo para esperar y prepararse para la Navidad.",
+      "en muchas casas se enciende una corona de Adviento: una vela más cada domingo.",
+      "las cuatro velas suelen representar la esperanza, la paz, la alegría y el amor, aunque cambia según la iglesia.",
+      "en muchas iglesias, el morado o el azul marcan el Adviento: un color para la espera.",
+      "los calendarios de Adviento cuentan los días, una puertita por día, hasta la Navidad.",
+      "las lecturas miran hacia dos lados: atrás, al nacimiento en Belén, y hacia adelante.",
+      "algunas familias ponen el nacimiento y van agregando las figuras una por una.",
+    ],
+  },
+  ramadan: {
+    name: "el Ramadán", badge: "el mes",
+    about: "el mes de ayuno desde el alba hasta la puesta del sol, cuando se reveló por primera vez el Corán.",
+    ask: [
+      "¿para qué estás haciendo espacio este mes?",
+      "¿con quién podrías compartir un iftar, o a quién podrías enviarle uno?",
+      "¿de qué palabra o hábito podrías ayunar también?",
+      "¿qué agradeces hoy al atardecer?",
+      "¿qué te está enseñando el ayuno sobre lo que de verdad necesitas?",
+      "¿quién tiene hambre cerca de ti, en cualquier sentido?",
+      "¿qué versículo o idea se quedó contigo hoy?",
+      "¿qué esperas que perdure después de este mes?",
+    ],
+    learn: [
+      "durante el Ramadán, los musulmanes ayunan desde el alba hasta la puesta del sol: ni comida ni agua mientras hay luz.",
+      "el suhur es la comida antes del alba. el iftar rompe el ayuno al atardecer, muchas veces con dátiles y agua.",
+      "muchos intentan leer el Corán completo durante el mes, una parte cada noche.",
+      "las taraweeh son las oraciones nocturnas extra que muchos hacen en la mezquita durante el Ramadán.",
+      "dar también es parte: el zakat al-fitr se entrega antes de la oración del Eid para que todos puedan celebrar.",
+      "laylat al-qadr, la noche del poder, se busca en las últimas diez noches.",
+      "quedan exentos del ayuno los niños, los enfermos, los viajeros y cualquiera a quien le haría daño.",
+    ],
+  },
+  awe: {
+    name: "los Días Terribles", badge: "una página nueva",
+    about: "de Rosh Hashaná a Yom Kipur: diez días (los Yamim Noraim) para mirar atrás, reparar y dar la vuelta.",
+    ask: [
+      "¿qué de este último año quieres dejar atrás?",
+      "¿a quién le debes una disculpa, o un gracias?",
+      "¿cómo se ve \"regresar\" para ti este año?",
+      "¿qué harías distinto, empezando ahora?",
+      "¿a quién podrías perdonar, aunque sea un poco?",
+      "¿en qué clase de año quieres quedar inscrito?",
+      "¿qué haría que este año fuera dulce?",
+    ],
+    learn: [
+      "Rosh Hashaná es el año nuevo judío. se toca el shofar, un cuerno de carnero, como un llamado a despertar.",
+      "se comen manzanas mojadas en miel para tener un año nuevo dulce.",
+      "teshuvá significa \"regreso\": el trabajo de estos días es volver al buen camino.",
+      "muchos piden perdón directamente a las personas antes de Yom Kipur. el día en sí cubre las faltas contra Dios.",
+      "tashlij: algunos lanzan migas a un agua que corre, como imagen de soltar sus faltas.",
+      "Yom Kipur es un ayuno de 25 horas y el día más sagrado del año.",
+      "el saludo es \"que seas inscrito para un buen año\".",
+    ],
+  },
+  omer: {
+    name: "la cuenta del Omer", badge: "cuarenta y nueve días",
+    about: "los 49 días que se cuentan uno a uno de Pésaj a Shavuot, de la libertad a recibir la Torá.",
+    ask: [
+      "¿hacia qué estás contando?",
+      "¿en qué pequeña cosa creciste hoy?",
+      "¿dónde apareció la libertad en tu día?",
+      "¿qué notaste hoy que normalmente se te pasaría?",
+      "¿qué cualidad te gustaría trabajar esta semana?",
+      "¿cuál es un paso entre quien eres y quien quieres ser?",
+      "¿qué estás listo para recibir?",
+    ],
+    learn: [
+      "cada noche, desde la segunda noche de Pésaj, se cuenta: \"hoy es un día del Omer\".",
+      "un omer era una medida de cebada que se llevaba al Templo; de ahí viene el nombre.",
+      "la cuenta une la salida de Egipto con la entrega de la Torá en el Sinaí, 49 días después.",
+      "los cabalistas le dieron a cada semana una cualidad para trabajar, como la bondad o la fortaleza.",
+      "muchos estudian el Pirkei Avot, los \"dichos de los padres\", en los sábados de esta temporada.",
+      "Lag BaOmer, el día 33, es un día de fogatas y fiesta.",
+      "la cuenta termina en Shavuot, cuando se leen los diez mandamientos.",
+    ],
+  },
+  navratri: {
+    name: "Navaratri", badge: "nueve noches",
+    about: "nueve noches para honrar a la diosa en sus formas, que terminan en Vijayadashami, la victoria del bien.",
+    ask: [
+      "¿qué fuerza necesitas despertar en esta temporada?",
+      "¿qué hay en ti sobre lo que la luz debería ganar?",
+      "¿quién es una fuente callada de fuerza en tu vida?",
+      "¿qué te gustaría empezar de nuevo después de estas nueve noches?",
+      "¿dónde viste valentía hoy?",
+      "¿qué quieres dejar atrás con la novena noche?",
+      "¿cómo se vería vencer un pequeño mal hábito?",
+    ],
+    learn: [
+      "Navaratri significa \"nueve noches\". cada noche honra una forma de la diosa Durga.",
+      "en Guyarat y mucho más allá, la gente baila garba y dandiya hasta muy tarde.",
+      "muchos ayunan o comen de forma sencilla durante los nueve días.",
+      "en el sur de la India, las familias arman un golu: escalones con muñecas y figuras, y se visitan unas a otras.",
+      "en Bengala es la Durga Puja: enormes imágenes de la diosa que luego se sumergen en el río.",
+      "el octavo o noveno día, algunos honran a niñas pequeñas como la diosa y les dan de comer.",
+      "el décimo día, Vijayadashami, celebra la victoria de Rama sobre Ravana y la de Durga sobre Mahishasura.",
+    ],
+  },
+  diwali: {
+    name: "Diwali", badge: "la fiesta de las luces",
+    about: "cinco días de lámparas, de Dhanteras a Bhai Dooj: la luz sobre la oscuridad.",
+    ask: [
+      "¿qué rincón de tu vida necesita una buena limpieza?",
+      "¿en qué oscuridad te gustaría un poco de luz este año?",
+      "¿a quién podrías llevarle algo dulce?",
+      "¿qué agradeces tener este año?",
+      "¿qué te gustaría recibir en tu casa?",
+    ],
+    learn: [
+      "Dhanteras, el primer día: se limpian las casas y muchos compran algo nuevo, a menudo de metal u oro.",
+      "el segundo día, Choti Diwali: la historia de Krishna venciendo al demonio Narakasura.",
+      "el tercer día, Diwali en sí: diyas y luces por todas partes, y la Lakshmi Puja a la diosa de la buena fortuna.",
+      "el cuarto día, en muchos lugares, es la Govardhan Puja: Krishna levantando una montaña para proteger a la gente.",
+      "el quinto día, Bhai Dooj: hermanos y hermanas se honran mutuamente.",
+    ],
+  },
+  vaisakhi: {
+    name: "Vaisakhi", badge: "el Khalsa",
+    about: "el día en que Guru Gobind Singh fundó el Khalsa en 1699, y la fiesta de la cosecha del Punyab.",
+    ask: [
+      "¿por qué darías la cara, aunque te costara?",
+      "¿a quién podrías servir esta semana sin que te lo pidan?",
+      "¿qué cosecha agradeces este año?",
+      "¿qué significa para ti ser parte de una misma familia?",
+      "¿qué podrías compartir de tu propia mesa?",
+      "¿dónde mostraste valentía últimamente?",
+      "¿qué compromiso estás listo para renovar?",
+    ],
+    learn: [
+      "en 1699, en Anandpur Sahib, Guru Gobind Singh preguntó quién daría la cabeza por la fe. cinco dieron un paso al frente.",
+      "esos cinco fueron los Panj Pyare, los cinco amados, los primeros del Khalsa.",
+      "en Vaisakhi, muchos sijs reciben el amrit, la iniciación en el Khalsa.",
+      "las procesiones de nagar kirtan llevan el Guru Granth Sahib por las calles, entre cantos.",
+      "los gurdwaras sirven langar, una comida gratis para todos, sean quienes sean.",
+      "el Nishan Sahib, la bandera afuera del gurdwara, suele renovarse en Vaisakhi.",
+      "en el Punyab también es tiempo de cosecha, con bhangra y ferias.",
+    ],
+  },
+  gurpurab: {
+    name: "el Gurpurab de Guru Nanak", badge: "prakash purab",
+    about: "el nacimiento de Guru Nanak, el primer gurú, en la luna llena de Kartik.",
+    ask: [
+      "¿dónde viste la única luz en alguien distinto a ti?",
+      "¿de qué trabajo honesto te sientes orgulloso esta semana?",
+      "¿qué podrías compartir hoy: tiempo, comida o atención?",
+      "¿qué significaría recordar el Nombre durante un día cualquiera?",
+      "¿quién trata a todos como iguales, y qué puedes aprender de esa persona?",
+      "¿qué viaje has estado posponiendo?",
+      "¿qué canto o frase se quedó contigo esta semana?",
+    ],
+    learn: [
+      "Guru Nanak nació en 1469 en lo que hoy es Pakistán. los sijs lo celebran en la luna llena de Kartik.",
+      "en las semanas previas, las prabhat pheris, procesiones de madrugada, recorren el barrio cantando.",
+      "un akhand path, una lectura de 48 horas de todo el Guru Granth Sahib, termina ese día.",
+      "sus tres enseñanzas suelen resumirse así: recordar a Dios, ganarse la vida con honestidad y compartir con los demás.",
+      "Ik Onkar, \"un solo creador\", abre el Guru Granth Sahib y fue su primera enseñanza.",
+      "viajó durante años en largos recorridos llamados udasis, conversando con gente de todas las fes.",
+      "los gurdwaras se iluminan y se sirve langar a todos los que llegan.",
+    ],
+  },
+  vesak: {
+    name: "Vesak", badge: "la luna llena",
+    about: "la luna llena que recuerda el nacimiento, el despertar y la partida del Buda.",
+    ask: [
+      "¿cómo sería un día de bondad hacia todo ser vivo?",
+      "¿qué notaste hoy cuando bajaste el ritmo?",
+      "¿qué podrías dar hoy sin esperar nada a cambio?",
+      "¿qué estás listo para soltar?",
+      "¿dónde viste sufrimiento hoy, y qué lo alivió?",
+      "¿qué te despertó un poco esta semana?",
+      "¿qué te gustaría empezar en la luna llena?",
+    ],
+    learn: [
+      "Vesak recuerda tres momentos de la vida del Buda: su nacimiento, su despertar y su partida.",
+      "muchos visitan templos, llevan flores, velas e incienso, y escuchan enseñanzas.",
+      "algunos budistas laicos guardan los ocho preceptos ese día y viven con más sencillez.",
+      "dana, la generosidad, es una gran parte: puestos de comida gratis y ofrendas a monjes y monjas.",
+      "los faroles llenan las calles en Sri Lanka y en muchos otros países.",
+      "en algunas tradiciones, se vierte agua sobre una pequeña estatua del Buda niño.",
+      "la fecha sigue la luna llena, así que cambia de un país a otro.",
+    ],
+  },
+  vassa: {
+    name: "una probada del retiro de las lluvias", badge: "retiro de las lluvias",
+    about: "vassa, el retiro de las lluvias de tres meses. esta es una probada de 21 días.",
+    ask: [
+      "¿con qué podrías quedarte tres semanas, en lugar de empezar algo nuevo?",
+      "¿de qué hábito podrías descansar?",
+      "¿dónde encontraste quietud hoy?",
+      "¿qué notaste hoy de tu mente?",
+      "¿quién te sostiene, como los laicos sostienen a los monjes?",
+      "¿cómo sería un día más sencillo?",
+      "¿qué te ha enseñado quedarte en un solo lugar?",
+    ],
+    learn: [
+      "vassa es el retiro de las lluvias: monjes y monjas se quedan en un solo lugar durante unos tres meses.",
+      "empezó en tiempos del Buda, para que los monjes no viajaran y pisotearan los cultivos en la temporada de lluvias.",
+      "muchos laicos asumen algo en vassa: dejar un hábito, meditar más, guardar preceptos.",
+      "en Tailandia se ofrecen velas a los templos al comenzar vassa.",
+      "algunos jóvenes se ordenan como monjes solo durante el retiro.",
+      "termina con pavarana, y luego kathina, cuando se ofrecen túnicas a los monjes.",
+    ],
+  },
+  newyear: {
+    name: "el año nuevo", badge: "nuevo comienzo",
+    about: "los primeros 21 días del año: un nuevo comienzo, un pequeño día a la vez.",
+    ask: [
+      "¿de qué quieres más este año?",
+      "¿qué te alegra dejar atrás del año pasado?",
+      "¿cómo sería un buen día común y corriente este año?",
+      "¿con quién quieres pasar más tiempo?",
+      "¿qué pequeña promesa podrías cumplir de verdad?",
+      "¿qué aprendiste de ti el año pasado?",
+      "¿qué te da curiosidad ahora mismo?",
+    ],
+    learn: [
+      "la gente celebra el año nuevo desde hace miles de años, muchas veces con una limpieza y una promesa.",
+      "los babilonios hacían promesas a sus dioses en el año nuevo, una primera versión de los propósitos.",
+      "Jano, el dios romano que le dio nombre a enero, tenía dos caras: una mirando atrás y otra hacia adelante.",
+      "en Japón, las campanas de los templos suenan 108 veces a medianoche en la víspera de año nuevo.",
+      "muchas culturas comen algo redondo o dulce para tener un buen año.",
+      "la investigación sobre hábitos sugiere que los comienzos pequeños y concretos duran más que los grandes propósitos.",
+      "21 días no forman un hábito por sí solos, pero son un comienzo real.",
+    ],
+  },
+  "solstice-june": {
+    name: "el solsticio de junio", badge: "la luz larga",
+    about: "el día más largo en el norte (el más corto en el sur): el punto de giro del sol.",
+    ask: [
+      "¿qué está creciendo en tu vida ahora mismo?",
+      "¿dónde podrías pasar más tiempo al aire libre esta semana?",
+      "¿qué está en su plenitud para ti ahora mismo?",
+      "¿qué te gustaría cosechar antes del invierno?",
+      "¿qué se te hace más fácil con la luz?",
+      "¿con quién quieres compartir una tarde larga?",
+      "¿qué está cambiando en ti mientras gira el año?",
+    ],
+    learn: [
+      "el solsticio es cuando el sol llega a su punto más al norte: el día más largo en la mitad norte del mundo.",
+      "desde hace muchísimo tiempo, la gente se reúne en Stonehenge para ver el amanecer de verano.",
+      "en Escandinavia, pleno verano significa flores, baile y quedarse despierto en la noche clara.",
+      "muchas culturas encendían fogatas alrededor del solsticio de verano.",
+      "la palabra significa \"sol quieto\": durante unos días parece salir por el mismo punto.",
+      "desde aquí los días empiezan a acortarse, poco a poco, hacia el invierno.",
+      "en la mitad sur del mundo, en cambio, es el día más corto.",
+    ],
+  },
+  "solstice-dec": {
+    name: "el solsticio de diciembre", badge: "el regreso de la luz",
+    about: "la noche más larga en el norte (el día más largo en el sur): después, la luz regresa.",
+    ask: [
+      "¿qué está descansando en ti esta temporada?",
+      "¿qué pequeña luz te sostiene en los meses oscuros?",
+      "¿qué te gustaría soltar antes de que cambie el año?",
+      "¿a quién le vendría bien un poco de tu calidez esta semana?",
+      "¿qué vale la pena esperar?",
+      "¿cómo podrías hacer tus noches un poco más suaves?",
+      "¿qué esperas que regrese con la luz?",
+    ],
+    learn: [
+      "el solsticio de diciembre es la noche más larga del año en la mitad norte del mundo.",
+      "Newgrange, en Irlanda, más antiguo que las pirámides, está alineado con el amanecer de pleno invierno.",
+      "en muchas culturas, las fiestas de invierno celebran el regreso de la luz: velas, fuegos, lámparas.",
+      "Yule era una fiesta de pleno invierno en el norte de Europa. de ahí viene el tronco de Yule.",
+      "en Irán, la gente se desvela en la noche de Yalda con granadas y poesía.",
+      "desde aquí, los días empiezan a alargarse otra vez.",
+      "en la mitad sur del mundo, en cambio, es el día más largo.",
+    ],
+  },
+};
+
+/** The season's words in the current language (read at call time: a language switch shows at once). */
+function localized(d: SeasonDef): SeasonDef {
+  const x = ES_DEFS[d.key];
+  return {
+    key: d.key,
+    doors: d.doors,
+    get name() { return es() ? x.name : d.name; },
+    get about() { return es() ? x.about : d.about; },
+    get ask() { return es() ? x.ask : d.ask; },
+    get learn() { return es() ? x.learn : d.learn; },
+    get badge() { return es() ? x.badge : d.badge; },
+  };
+}
+export const SEASON_DEFS = Object.fromEntries(Object.entries(EN_DEFS).map(([k, d]) => [k, localized(d)])) as Record<SeasonKey, SeasonDef>;
+
+/** Spanish "of": "del Adviento", "de la Cuaresma", "de Diwali". */
+export const deName = (name: string) => (/^el /.test(name) ? `del ${name.slice(3)}` : `de ${name}`);
+
 export type SeasonRow = { key: SeasonKey; year: number; start: string; end: string; source: string; note?: string };
 
 /** The date n days after `date`. Calendar math, independent of any time zone. */
@@ -411,7 +743,12 @@ export const SEASONS: SeasonRow[] = [
 
 /** Each tradition's new year: when "your year on the hill" is offered on Today (for a week). */
 export type NewYear = { door: string; date: string; name: string; source: string };
-const ny = (doors: string[], name: string, source: string, dates: string[]): NewYear[] => doors.flatMap((door) => dates.map((date) => ({ door, date, name, source })));
+const NEW_YEAR_ES: Record<string, string> = {
+  "the new year": "el año nuevo", "the islamic new year": "el año nuevo islámico", "rosh hashanah": "Rosh Hashaná",
+  diwali: "Diwali", vaisakhi: "Vaisakhi", vesak: "Vesak",
+};
+const ny = (doors: string[], name: string, source: string, dates: string[]): NewYear[] =>
+  doors.flatMap((door) => dates.map((date) => ({ door, date, source, get name() { return es() ? NEW_YEAR_ES[name] ?? name : name; } })));
 export const NEW_YEARS: NewYear[] = [
   ...ny(["CHRISTIANITY", "CATHOLIC", "SPIRITUAL"], "the new year", "gregorian calendar", ["2026-01-01", "2027-01-01", "2028-01-01"]),
   ...ny(["ISLAM"], "the islamic new year", `${W}Islamic_New_Year`, ["2026-06-16", "2027-06-06", "2028-05-25"]),
@@ -461,8 +798,16 @@ export function seasonsNear(doors: string[], today: string): (Season & { phase: 
 
 const WEEKDAY = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
 /** "today", "tomorrow", "wednesday" (2–6 days), "a week from today". */
+const WEEKDAY_ES = ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"];
 export function whenWords(today: string, date: string): string {
   const n = daysBetween(today, date);
+  if (es()) {
+    if (n <= 0) return "hoy";
+    if (n === 1) return "mañana";
+    if (n < 7) return `el ${WEEKDAY_ES[new Date(`${date}T12:00:00Z`).getUTCDay()]}`;
+    if (n === 7) return "en una semana";
+    return `en ${n} días`;
+  }
   if (n <= 0) return "today";
   if (n === 1) return "tomorrow";
   if (n < 7) return WEEKDAY[new Date(`${date}T12:00:00Z`).getUTCDay()];
@@ -543,7 +888,7 @@ export function questCard(o: { doors: string[]; today: string; quests: Record<st
   for (const s of near) {
     const q = o.quests[s.id];
     if (q?.declined || s.phase === "grace") continue;
-    if (q?.joined) return { kind: "offer", season: s, joined: true, line: `${s.def.name} begins ${whenWords(o.today, s.start)} · ${s.length} days · you're in` };
+    if (q?.joined) return { kind: "offer", season: s, joined: true, line: es() ? `${s.def.name} empieza ${whenWords(o.today, s.start)} · ${s.length} días · ya estás dentro` : `${s.def.name} begins ${whenWords(o.today, s.start)} · ${s.length} days · you're in` };
     if (s.phase === "active" && o.today === s.end) continue; // too late to begin on the last day
     return { kind: "offer", season: s, joined: false, line: offerLine(s, o.today) };
   }
@@ -551,12 +896,23 @@ export function questCard(o: { doors: string[]; today: string; quests: Record<st
 }
 
 export function offerLine(s: Season, today: string): string {
+  if (es()) return today < s.start
+    ? `${s.def.name} empieza ${whenWords(today, s.start)} · ${s.length} días · únete a la misión`
+    : `${s.def.name} · día ${seasonDay(s, today)} de ${s.length} · únete a la misión`;
   return today < s.start
     ? `${s.def.name} begins ${whenWords(today, s.start)} · ${s.length} days · join the quest`
     : `${s.def.name} · day ${seasonDay(s, today)} of ${s.length} · join the quest`;
 }
 
+/** "3 stones to go" / "faltan 3 piedras". */
+const toGoWords = (n: number) => (es() ? (n === 1 ? "falta 1 piedra" : `faltan ${n} piedras`) : `${n} ${n === 1 ? "stone" : "stones"} to go`);
+
 export function progressLine(s: Season, p: Progress): string {
+  if (es()) {
+    if (p.finished) return `${s.def.name} · las ${p.length} piedras encendidas`;
+    if (p.phase === "grace") return `${s.def.name} terminó · ${toGoWords(p.toGo)}, abierta hasta el ${monthDay(p.openUntil)}`;
+    return `${s.def.name} · día ${p.day} de ${p.length}`;
+  }
   if (p.finished) return `${s.def.name} · all ${p.length} stones lit`;
   if (p.phase === "grace") return `${s.def.name} is over · ${p.toGo} ${p.toGo === 1 ? "stone" : "stones"} to go, open till ${monthDay(p.openUntil)}`;
   return `${s.def.name} · day ${p.day} of ${p.length}`;
@@ -565,6 +921,10 @@ export function progressLine(s: Season, p: Progress): string {
 /** The gentle word when days were missed. Never a scold; rest days already count. */
 export function stillFinishLine(s: Season, p: Progress): string | null {
   if (p.finished || p.missed === 0) return null;
+  if (es()) {
+    if (!p.canStillFinish) return `esta se nos escapó. cada piedra que encendiste sigue contando, y ${s.def.name} volverá.`;
+    return `todavía puedes terminar. ${toGoWords(p.toGo)}, y la misión sigue abierta una semana después de que termine ${s.def.name}. los días de descanso también cuentan.`;
+  }
   if (!p.canStillFinish) return `this one got away. every stone you lit still counts, and ${s.def.name} comes around again.`;
   return `you can still finish. ${p.toGo} ${p.toGo === 1 ? "stone" : "stones"} to go, and the quest stays open a week after ${s.def.name} ends. rest days count too.`;
 }
@@ -577,7 +937,42 @@ export function seasonLine(s: Season, today: string, mode: "practice" | "learn")
 }
 
 const MONTHS = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"];
-export const monthDay = (d: string) => `${MONTHS[+d.slice(5, 7) - 1]} ${+d.slice(8, 10)}`;
+const MONTHS_ES = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"];
+/** "nov 29" / "29 nov". */
+export const monthDay = (d: string) => (es() ? `${+d.slice(8, 10)} ${MONTHS_ES[+d.slice(5, 7) - 1]}` : `${MONTHS[+d.slice(5, 7) - 1]} ${+d.slice(8, 10)}`);
+
+const NOTES_ES: Record<string, string> = {
+  "ash wednesday; easter 2026-04-05": "miércoles de ceniza; Pascua: 2026-04-05",
+  "ash wednesday; easter 2027-03-28": "miércoles de ceniza; Pascua: 2027-03-28",
+  "ash wednesday; easter 2028-04-16": "miércoles de ceniza; Pascua: 2028-04-16",
+  "eid al-fitr 2026-03-20": "Eid al-Fitr: 2026-03-20",
+  "eid al-fitr 2027-03-09": "Eid al-Fitr: 2027-03-09",
+  "eid al-fitr 2028-02-26 (some calendars 2028-02-27)": "Eid al-Fitr: 2028-02-26 (en algunos calendarios, 2028-02-27)",
+  "rosh hashanah 1 tishrei to yom kippur 10 tishrei": "de Rosh Hashaná, el 1 de tishrei, a Yom Kipur, el 10 de tishrei",
+  "counting begins the night before; shavuot 2026-05-22": "la cuenta empieza la noche anterior; Shavuot: 2026-05-22",
+  "shavuot 2027-06-11": "Shavuot: 2027-06-11",
+  "shavuot 2028-05-31": "Shavuot: 2028-05-31",
+  "vijayadashami 2026-10-20 (bengal 2026-10-21)": "Vijayadashami: 2026-10-20 (en Bengala, 2026-10-21)",
+  "vijayadashami 2027-10-09": "Vijayadashami: 2027-10-09",
+  "a lunar day drops out in 2028: eight days; vijayadashami 2028-09-27": "en 2028 se omite un día lunar: ocho días; Vijayadashami: 2028-09-27",
+  "lakshmi puja 2026-11-08": "Lakshmi Puja: 2026-11-08",
+  "lakshmi puja 2027-10-29": "Lakshmi Puja: 2027-10-29",
+  "lakshmi puja 2028-10-17": "Lakshmi Puja: 2028-10-17",
+  "the nanakshahi calendar keeps 2028-04-14": "el calendario nanakshahi lo mantiene el 2028-04-14",
+  "kartik purnima; sgpc may announce a day either side": "Kartik Purnima; el SGPC puede anunciarlo un día antes o después",
+  "singapore, malaysia, thailand; myanmar 2026-04-30, sri lanka 2026-05-30": "Singapur, Malasia, Tailandia; Myanmar: 2026-04-30, Sri Lanka: 2026-05-30",
+  "sri lanka 2028-05-23": "Sri Lanka: 2028-05-23",
+  "thai calendar; asalha puja 2026-07-29": "calendario tailandés; Asalha Puja: 2026-07-29",
+  "asalha puja 2027-07-18; varies by country": "Asalha Puja: 2027-07-18; varía según el país",
+  "asalha puja 2028-07-07; varies by country": "Asalha Puja: 2028-07-07; varía según el país",
+  "2027-12-22 in utc, 2027-12-21 in the americas": "2027-12-22 en UTC, 2027-12-21 en las Américas",
+};
+/** The row's note for the screen, in the current language, with its dates written short ("apr 5" / "5 abr"). */
+export function seasonNote(s: Pick<SeasonRow, "note">): string | null {
+  if (!s.note) return null;
+  const n = es() ? NOTES_ES[s.note] ?? s.note : s.note;
+  return n.replace(/\d{4}-\d{2}-\d{2}/g, (d) => monthDay(d));
+}
 
 /** Quests finished (all stones lit) with the badge date, for the recap and the You tab. */
 export function finishedQuests(o: { quests: Record<string, QuestState | undefined>; lessonDates: Iterable<string>; restDates?: Iterable<string>; today: string }): { season: Season; on: string }[] {

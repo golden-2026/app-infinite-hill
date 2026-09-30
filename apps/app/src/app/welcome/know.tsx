@@ -3,7 +3,11 @@ import { useTitle } from "@/lib/title";
 import { router, useLocalSearchParams } from "expo-router";
 import { useEffect, useMemo, useState } from "react";
 import { Text, View } from "react-native";
-import { DOORS, data, label } from "@ih/content";
+import { data } from "@ih/content";
+import { doorLabel, t } from "@/i18n";
+
+/** The quiz's own frame around a lesson word ("amen — what's underneath it?"); the word itself stays as the lesson has it. */
+const UNDERNEATH = / — what's underneath it\?$/;
 import { knowledgeScore } from "@/lib/profile";
 import { profileFor } from "@/lib/onboard";
 import { doorParam } from "@/lib/door-param";
@@ -28,7 +32,7 @@ function shuffled<T>(xs: T[], seed: number): T[] {
 
 export default function Know() {
   useEffect(() => { track("onboard_step", { step: "know" }); }, []);
-  useTitle("where you are");
+  useTitle(t("onboarding.know.title"));
   const { door: raw } = useLocalSearchParams<{ door?: string }>();
   const door = doorParam(raw) !== "SPIRITUAL" ? doorParam(raw) : null;
   const { update, saved, today } = useStore();
@@ -46,7 +50,7 @@ export default function Know() {
 
   useEffect(() => { if (!door) router.replace("/welcome/door"); }, [door]);
   if (!door) return null;
-  const name = label(door);
+  const name = doorLabel(door);
 
   const finish = (score: number | null) => {
     update({ profile: { ...profileFor(saved.settings.profile, door, today), knowledge: score } });
@@ -55,11 +59,11 @@ export default function Know() {
 
   if (!started || !qs.length) {
     return (
-      <WelcomeFrame step={4} door={door} footer={<Btn testID="know-start" onPress={() => (qs.length ? setStarted(true) : finish(null))}>Let's see</Btn>}>
-        <Host>{`${name}. Good. Before day one, let's see where you are — eight quick ones about what's underneath a few words.`}</Host>
-        <Text style={[type.caption(), { textAlign: "center" }]}>nobody sees this but you. it only sets how deep we start.</Text>
+      <WelcomeFrame step={4} door={door} footer={<Btn testID="know-start" onPress={() => (qs.length ? setStarted(true) : finish(null))}>{t("onboarding.know.start")}</Btn>}>
+        <Host>{t("onboarding.know.host", { door: name.charAt(0).toUpperCase() + name.slice(1) })}</Host>
+        <Text style={[type.caption(), { textAlign: "center" }]}>{t("onboarding.know.private")}</Text>
         <View style={{ alignItems: "center" }}>
-          <Link onPress={() => finish(null)} label={`I'm new to ${name}, skip the check`}>{`I'm new to ${name} · skip this ›`}</Link>
+          <Link onPress={() => finish(null)} label={t("onboarding.know.skipA11y", { door: name })}>{t("onboarding.know.skip", { door: name })}</Link>
         </View>
       </WelcomeFrame>
     );
@@ -87,15 +91,16 @@ export default function Know() {
   };
   return (
     <WelcomeFrame step={4} door={door} onBack={stepBack}>
-      <Eyebrow style={{ textAlign: "center" }}>{`${i + 1} of ${qs.length}`}</Eyebrow>
-      <Text accessibilityRole="header" style={[type.h1(24), { textAlign: "center" }]}>{cur.q}</Text>
+      <Eyebrow style={{ textAlign: "center" }}>{t("onboarding.know.count", { n: i + 1, total: qs.length })}</Eyebrow>
+      {/* the word and the options come from the lessons (English until lessons are translated); only the frame is */}
+      <Text accessibilityRole="header" style={[type.h1(24), { textAlign: "center" }]}>{cur.q.replace(UNDERNEATH, t("onboarding.know.underneath"))}</Text>
       <View style={{ gap: 8 }} accessibilityRole="radiogroup">
         {options.map(({ o, k }) => (
-          <Opt key={o} big on={picked ? picked === o : chosen[i] === o} onPress={() => answer(o, k)} sub={picked === o ? (k === cur.a ? "yes — that's it" : `it's “${cur.o[cur.a]}”`) : undefined}>{o}</Opt>
+          <Opt key={o} big on={picked ? picked === o : chosen[i] === o} onPress={() => answer(o, k)} sub={picked === o ? (k === cur.a ? t("onboarding.know.right") : t("onboarding.know.itWas", { answer: cur.o[cur.a] })) : undefined}>{o}</Opt>
         ))}
-        <Opt big on={picked ? picked === "unsure" : chosen[i] === "unsure"} onPress={() => answer(null, null)} sub={picked === "unsure" ? `it's “${cur.o[cur.a]}”` : undefined}>not sure</Opt>
+        <Opt big on={picked ? picked === "unsure" : chosen[i] === "unsure"} onPress={() => answer(null, null)} sub={picked === "unsure" ? t("onboarding.know.itWas", { answer: cur.o[cur.a] }) : undefined}>{t("onboarding.know.unsure")}</Opt>
       </View>
-      <Text style={[type.caption(), { textAlign: "center", color: color.mute }]}>no score to anyone. just where to start.</Text>
+      <Text style={[type.caption(), { textAlign: "center", color: color.mute }]}>{t("onboarding.know.noScore")}</Text>
     </WelcomeFrame>
   );
 }

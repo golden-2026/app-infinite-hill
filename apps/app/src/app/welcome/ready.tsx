@@ -4,6 +4,7 @@ import { router, useLocalSearchParams } from "expo-router";
 import { useEffect } from "react";
 import { Text, View } from "react-native";
 import { useStore } from "@/lib/store";
+import { t } from "@/i18n";
 import { Eyebrow, Guy, type } from "@/ui";
 import { WelcomeFrame } from "@/ui/welcome-frame";
 
@@ -26,10 +27,10 @@ export default function Ready() {
       <View style={{ alignItems: "center", gap: 18 }}>
         <Guy pose="path" h={180} />
         <Text style={[type.h1(24), { textAlign: "center", maxWidth: 280 }]}>
-          It's hard to stay with anything.{"\n"}
-          <Text style={{ fontFamily: "Manrope_500Medium", fontStyle: "italic" }}>So infinite hill gives you one moment a day, and a lot of company.</Text>
+          {t("onboarding.ready.hard")}{"\n"}
+          <Text style={{ fontFamily: "Manrope_500Medium", fontStyle: "italic" }}>{t("onboarding.ready.so")}</Text>
         </Text>
-        <Text style={[type.caption(), { textAlign: "center" }]}>did you know · every tradition on earth arrived at the golden rule on its own</Text>
+        <Text style={[type.caption(), { textAlign: "center" }]}>{t("onboarding.ready.fact")}</Text>
       </View>
     </WelcomeFrame>
   );

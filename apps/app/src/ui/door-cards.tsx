@@ -2,7 +2,8 @@
 // big card (your door / your roots with fresh eyes), and the smaller tradition tiles. All are radios.
 import { type ReactNode } from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
-import { icon, label } from "@ih/content";
+import { icon } from "@ih/content";
+import { doorLabel } from "@/i18n";
 import { DOOR_HOOK, OWN_PATH } from "@/content/journeys";
 import { tapHaptic } from "@/lib/haptics";
 import { Face, Guy, color, font, type } from "@/ui";
@@ -17,6 +18,9 @@ function Radio({ on, onPress, a11y, style, children }: { on: boolean; onPress: (
   );
 }
 
+/** A door's name as a card title: Spanish writes religions in lowercase ("hinduismo"), but a title starts with a capital. */
+const title = (door: string) => { const n = doorLabel(door); return n.charAt(0).toUpperCase() + n.slice(1); };
+
 const Check = ({ on, dark }: { on: boolean; dark?: boolean }) => (
   <View style={[s.check, on ? { backgroundColor: color.gold, borderColor: color.gold } : { borderColor: dark ? "#ffffff55" : color.line }]}>
     {on ? <Text style={{ fontFamily: font.text[700], fontSize: 13, color: color.ink }}>✓</Text> : null}
@@ -25,10 +29,10 @@ const Check = ({ on, dark }: { on: boolean; dark?: boolean }) => (
 
 /** "my own path", wherever it's offered. "hero": the big dark card with the mascot (no religion, exploring,
  *  spiritual, or nothing told). "soft": a lighter card offered beside someone's roots — an option, never a redirect. */
-export function OwnPathCard({ on, onPress, size = "hero", eyebrow = "my own path" }: { on: boolean; onPress: () => void; size?: "hero" | "soft"; eyebrow?: string }) {
+export function OwnPathCard({ on, onPress, size = "hero", eyebrow = OWN_PATH.title }: { on: boolean; onPress: () => void; size?: "hero" | "soft"; eyebrow?: string }) {
   const hero = size === "hero";
   return (
-    <Radio on={on} onPress={onPress} a11y="my own path" style={[hero ? s.own : s.ownSoft, on && (hero ? s.ownOn : s.bigOn)]}>
+    <Radio on={on} onPress={onPress} a11y={OWN_PATH.title} style={[hero ? s.own : s.ownSoft, on && (hero ? s.ownOn : s.bigOn)]}>
       <View style={{ flexDirection: "row", alignItems: "flex-end", gap: 6 }}>
         <View style={{ flex: 1, gap: 6 }}>
           <Text style={[type.eyebrow(11), { color: hero ? color.gold : color.mute, paddingRight: 30 }]}>{eyebrow}</Text>
@@ -46,7 +50,7 @@ export function OwnPathCard({ on, onPress, size = "hero", eyebrow = "my own path
 export function BigDoorCard({ door, on, onPress, eyebrow, line, a11y }: { door: string; on: boolean; onPress: () => void; eyebrow: string; line?: string; a11y?: string }) {
   const ic = icon(door);
   return (
-    <Radio on={on} onPress={onPress} a11y={a11y ?? label(door)} style={[s.big, on && s.bigOn, { borderLeftColor: ic.tint }]}>
+    <Radio on={on} onPress={onPress} a11y={a11y ?? doorLabel(door)} style={[s.big, on && s.bigOn, { borderLeftColor: ic.tint }]}>
       <View style={{ flexDirection: "row", gap: 14, alignItems: "center" }}>
         <Face ic={ic} w={76} h={76} r={38} caption={false} />
         <View style={{ flex: 1, gap: 4 }}>
@@ -54,7 +58,7 @@ export function BigDoorCard({ door, on, onPress, eyebrow, line, a11y }: { door: 
             <Text style={[type.eyebrow(11), { color: ic.tint, flexShrink: 1 }]}>{eyebrow}</Text>
             <Check on={on} />
           </View>
-          <Text style={{ fontFamily: font.display[800], fontSize: 26, lineHeight: 28, letterSpacing: -0.6, color: color.ink }}>{label(door)}</Text>
+          <Text style={{ fontFamily: font.display[800], fontSize: 26, lineHeight: 28, letterSpacing: -0.6, color: color.ink }}>{title(door)}</Text>
           <Text style={[type.body(13), { color: color.mute }]}>{line ?? DOOR_HOOK[door]}</Text>
         </View>
       </View>
@@ -66,9 +70,9 @@ export function BigDoorCard({ door, on, onPress, eyebrow, line, a11y }: { door: 
 export function DoorTile({ door, on, onPress }: { door: string; on: boolean; onPress: () => void }) {
   const ic = icon(door);
   return (
-    <Radio on={on} onPress={onPress} a11y={label(door)} style={[s.tile, on && s.tileOn]}>
+    <Radio on={on} onPress={onPress} a11y={doorLabel(door)} style={[s.tile, on && s.tileOn]}>
       <View style={[s.dot, { backgroundColor: ic.tint }]} />
-      <Text style={{ fontFamily: font.display[500], fontSize: 17, color: color.ink }}>{label(door)}</Text>
+      <Text style={{ fontFamily: font.display[500], fontSize: 17, color: color.ink }}>{title(door)}</Text>
       <Text style={[type.body(12), { color: color.mute, marginTop: 3, lineHeight: 16 }]}>{DOOR_HOOK[door]}</Text>
     </Radio>
   );

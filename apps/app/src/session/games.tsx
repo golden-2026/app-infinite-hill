@@ -11,6 +11,7 @@ import { speak } from "@/lib/sound";
 import { Btn, Guy, color, font, type } from "@/ui";
 import { SlotFill } from "@/ui/slot";
 import { Verdict, useFx } from "@/session/juice";
+import { t } from "@/i18n";
 
 type Done = (ok: boolean | null) => void;
 const norm = (s: string) => (s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]/gi, "").toLowerCase();
@@ -25,8 +26,8 @@ function edits(a: string, b: string) {
 function Replay({ text, left, onUse }: { text: string; left: number; onUse: () => void }) {
   const out = left <= 0;
   return (
-    <Pressable accessibilityRole="button" accessibilityLabel={out ? "no more replays" : "Hear it again"} disabled={out} onPress={() => { speak(text, true); onUse(); }} style={[s.pill, out ? { opacity: 0.35 } : null]}>
-      <Text style={s.pillText}>🔊 {out ? "no more replays" : left < 9 ? `hear it again · ${left} left` : "hear it again"}</Text>
+    <Pressable accessibilityRole="button" accessibilityLabel={out ? t("session.noReplays") : t("session.hearAgainA11y")} disabled={out} onPress={() => { speak(text, true); onUse(); }} style={[s.pill, out ? { opacity: 0.35 } : null]}>
+      <Text style={s.pillText}>🔊 {out ? t("session.noReplays") : left < 9 ? t("session.hearAgainLeft", { n: left }) : t("session.hearAgain")}</Text>
     </Pressable>
   );
 }
@@ -63,8 +64,8 @@ function SceneRow({ id, text, n, positions, locked, right, onDrop, onMove }: { i
         <Text style={s.sceneText} numberOfLines={2}>{text}</Text>
         {!locked ? (
           <View style={{ flexDirection: "row" }}>
-            <Pressable accessibilityRole="button" accessibilityLabel={`move up: ${text}`} hitSlop={6} onPress={() => onMove(-1)} style={s.arrow}><Text style={s.arrowText}>▲</Text></Pressable>
-            <Pressable accessibilityRole="button" accessibilityLabel={`move down: ${text}`} hitSlop={6} onPress={() => onMove(1)} style={s.arrow}><Text style={s.arrowText}>▼</Text></Pressable>
+            <Pressable accessibilityRole="button" accessibilityLabel={t("session.scene.up", { t: text })} hitSlop={6} onPress={() => onMove(-1)} style={s.arrow}><Text style={s.arrowText}>▲</Text></Pressable>
+            <Pressable accessibilityRole="button" accessibilityLabel={t("session.scene.down", { t: text })} hitSlop={6} onPress={() => onMove(1)} style={s.arrow}><Text style={s.arrowText}>▼</Text></Pressable>
           </View>
         ) : null}
       </Animated.View>
@@ -103,12 +104,12 @@ export function ScenesStep({ step, onDone }: { step: any; onDone: Done }) {
   };
   return (
     <View style={{ width: "100%", gap: 12 }}>
-      <Text style={[type.body(13), { color: "#ffffffaa" }]}>hold a card and drag it. first scene at the top.</Text>
+      <Text style={[type.body(13), { color: "#ffffffaa" }]}>{t("session.scene.hint")}</Text>
       <View style={{ height: items.length * SLOT }}>
-        {items.map((t, i) => <SceneRow key={i} id={i} text={t} n={items.length} positions={positions} locked={result !== null} right={result === null ? null : positions.value[i] === i} onDrop={onDrop} onMove={(d) => move(i, d)} />)}
+        {items.map((scene, i) => <SceneRow key={i} id={i} text={scene} n={items.length} positions={positions} locked={result !== null} right={result === null ? null : positions.value[i] === i} onDrop={onDrop} onMove={(d) => move(i, d)} />)}
       </View>
-      {result === null ? <SlotFill><Btn kind="gold" onPress={check}>check</Btn></SlotFill> : (
-        <Verdict ok={result} seed={items.length} body={result ? "that's how the story goes." : `it goes: ${items.map((v, k) => `${k + 1}. ${v}`).join("  ")}`} onNext={() => onDone(result)} />
+      {result === null ? <SlotFill><Btn kind="gold" onPress={check}>{t("session.check")}</Btn></SlotFill> : (
+        <Verdict ok={result} seed={items.length} body={result ? t("session.scene.right") : t("session.itGoes", { list: items.map((v, k) => `${k + 1}. ${v}`).join("  ") })} onNext={() => onDone(result)} />
       )}
     </View>
   );
@@ -160,34 +161,34 @@ export function SayStep({ step, voiceOn, onDone }: { step: any; voiceOn: boolean
   const long = target.length > 14;
   return (
     <View style={{ alignItems: "center", width: "100%", gap: 14 }}>
-      <Text style={[type.eyebrow(), { color: color.gold }]}>{long ? "say your line" : "say it out loud"}</Text>
+      <Text style={[type.eyebrow(), { color: color.gold }]}>{long ? t("session.say.line") : t("session.say.loud")}</Text>
       <Text style={{ fontFamily: font.display[800], fontSize: long ? 28 : 44, lineHeight: long ? 34 : 50, letterSpacing: -0.6, color: "#fff", textAlign: "center" }}>{target}</Text>
-      <Pressable accessibilityRole="button" accessibilityLabel="Hear it" onPress={() => speak(target, true)} style={[s.pill, { alignSelf: "center" }]}><Text style={s.pillText}>🔊 hear it</Text></Pressable>
+      <Pressable accessibilityRole="button" accessibilityLabel={t("session.hearIt")} onPress={() => speak(target, true)} style={[s.pill, { alignSelf: "center" }]}><Text style={s.pillText}>{t("session.hearItBtn")}</Text></Pressable>
       {mode === "manual" ? (
         <>
-          <Pressable accessibilityRole="button" accessibilityLabel="I said it" onPress={() => { fx.react("neutral"); setTimeout(() => onDone(null), 700); }} style={[s.mic, { backgroundColor: color.gold }]}><Text style={{ fontSize: 36 }}>🗣</Text></Pressable>
-          <Text style={[type.body(13), { color: "#ffffffaa", textAlign: "center" }]}>no microphone here — say it out loud, then tap.</Text>
+          <Pressable accessibilityRole="button" accessibilityLabel={t("session.saidIt")} onPress={() => { fx.react("neutral"); setTimeout(() => onDone(null), 700); }} style={[s.mic, { backgroundColor: color.gold }]}><Text style={{ fontSize: 36 }}>🗣</Text></Pressable>
+          <Text style={[type.body(13), { color: "#ffffffaa", textAlign: "center" }]}>{t("session.say.noMic")}</Text>
         </>
       ) : mode === "heard" && heard ? (
         <>
           <Guy pose={heard.ok ? "cheer" : "think"} h={96} />
-          <Text style={[type.body(15), { color: "#fff", textAlign: "center" }]}>{heard.ok ? "heard it. that's the sound." : `I heard "${heard.text}". close — once more?`}</Text>
+          <Text style={[type.body(15), { color: "#fff", textAlign: "center" }]}>{heard.ok ? t("session.say.heard") : t("session.say.close", { x: heard.text })}</Text>
           <SlotFill>
             <View style={{ gap: 6 }}>
-              {!heard.ok && tries < 3 ? <Btn kind="light" onPress={() => { setHeard(null); setMode("ready"); }}>try again</Btn> : null}
-              <Btn kind="gold" onPress={() => onDone(null)}>next</Btn>
+              {!heard.ok && tries < 3 ? <Btn kind="light" onPress={() => { setHeard(null); setMode("ready"); }}>{t("session.say.again")}</Btn> : null}
+              <Btn kind="gold" onPress={() => onDone(null)}>{t("session.next")}</Btn>
             </View>
           </SlotFill>
         </>
       ) : (
         <>
-          <Pressable accessibilityRole="button" accessibilityLabel={mode === "listening" ? "listening" : "Tap and say it"} disabled={mode === "listening"} onPress={listen}
+          <Pressable accessibilityRole="button" accessibilityLabel={mode === "listening" ? t("session.say.listening") : t("session.say.tapA11y")} disabled={mode === "listening"} onPress={listen}
             style={[s.mic, { backgroundColor: mode === "listening" ? "#fff" : color.gold, borderWidth: mode === "listening" ? 4 : 0, borderColor: color.gold }]}>
             <Text style={{ fontSize: 36 }}>🎙</Text>
           </Pressable>
-          <Text style={[type.body(13), { color: "#ffffffaa", textAlign: "center" }]}>{mode === "listening" ? "listening…" : "tap, then say it."}</Text>
-          <Pressable accessibilityRole="button" onPress={() => setMode("manual")}><Text style={[type.eyebrow(), { color: "#ffffff66" }]}>can't talk right now ›</Text></Pressable>
-          <Text style={[type.caption(), { color: "#ffffff55", textAlign: "center", fontSize: 11 }]}>your browser's speech service listens to check it. we don't keep your voice.</Text>
+          <Text style={[type.body(13), { color: "#ffffffaa", textAlign: "center" }]}>{mode === "listening" ? t("session.say.listeningDots") : t("session.say.tapHint")}</Text>
+          <Pressable accessibilityRole="button" onPress={() => setMode("manual")}><Text style={[type.eyebrow(), { color: "#ffffff66" }]}>{t("session.say.cantTalk")}</Text></Pressable>
+          <Text style={[type.caption(), { color: "#ffffff55", textAlign: "center", fontSize: 11 }]}>{t("session.say.privacy")}</Text>
         </>
       )}
     </View>
@@ -253,8 +254,8 @@ export function RhythmStep({ step, voiceOn, onDone }: { step: any; voiceOn: bool
   const ok = hits / total >= 0.6;
   return (
     <View style={{ alignItems: "center", width: "100%", gap: 18 }}>
-      <Text style={[type.eyebrow(), { color: color.gold }]}>tap the rhythm</Text>
-      <Text style={[type.h1(24), { color: "#fff", textAlign: "center" }]}>{phase === "ready" ? `${step.word} has a beat. listen once, then tap along.` : phase === "demo" ? "listen…" : phase === "count" ? (beat === -10 ? "ready…" : "go!") : phase === "play" ? `round ${Math.min(step.rounds, Math.floor(Math.max(0, beat) / syl.length) + 1)} of ${step.rounds}` : ""}</Text>
+      <Text style={[type.eyebrow(), { color: color.gold }]}>{t("session.rhythm.kicker")}</Text>
+      <Text style={[type.h1(24), { color: "#fff", textAlign: "center" }]}>{phase === "ready" ? t("session.rhythm.ready", { word: step.word }) : phase === "demo" ? t("session.rhythm.listen") : phase === "count" ? (beat === -10 ? t("session.rhythm.readyDots") : t("session.rhythm.go")) : phase === "play" ? t("session.rhythm.round", { a: Math.min(step.rounds, Math.floor(Math.max(0, beat) / syl.length) + 1), b: step.rounds }) : ""}</Text>
       <View style={{ flexDirection: "row", gap: 8, flexWrap: "wrap", justifyContent: "center" }} accessibilityLabel={syl.join(" · ")}>
         {syl.map((x, k) => (
           <View key={k} style={[s.syl, k === current ? { backgroundColor: color.gold, borderColor: color.gold, transform: [{ scale: 1.12 }] } : null]}>
@@ -262,16 +263,16 @@ export function RhythmStep({ step, voiceOn, onDone }: { step: any; voiceOn: bool
           </View>
         ))}
       </View>
-      {phase === "ready" ? <SlotFill><Btn kind="gold" onPress={demo}>listen</Btn></SlotFill> : null}
+      {phase === "ready" ? <SlotFill><Btn kind="gold" onPress={demo}>{t("session.rhythm.listenBtn")}</Btn></SlotFill> : null}
       {phase === "demo" || phase === "count" || phase === "play" ? (
         <Animated.View style={drumStyle}>
-          <Pressable accessibilityRole="button" accessibilityLabel="tap on the beat" onPressIn={tap} onPress={() => {}} style={[s.drum, phase === "play" ? null : { opacity: 0.5 }]}>
+          <Pressable accessibilityRole="button" accessibilityLabel={t("session.rhythm.tapA11y")} onPressIn={tap} onPress={() => {}} style={[s.drum, phase === "play" ? null : { opacity: 0.5 }]}>
             <Text style={{ fontSize: 30 }}>☀</Text>
-            <Text style={[type.eyebrow(8), { color: color.ink, marginTop: 4 }]}>tap</Text>
+            <Text style={[type.eyebrow(8), { color: color.ink, marginTop: 4 }]}>{t("session.rhythm.tap")}</Text>
           </Pressable>
         </Animated.View>
       ) : null}
-      {phase === "done" ? <Verdict ok={ok} seed={total} title={ok ? `${hits} of ${total} on the beat.` : `${hits} of ${total}.`} body={ok ? "you've got its rhythm now." : "rhythm comes with saying it. it'll come back."} onNext={() => onDone(ok)} /> : null}
+      {phase === "done" ? <Verdict ok={ok} seed={total} title={ok ? t("session.rhythm.good", { a: hits, b: total }) : t("session.rhythm.some", { a: hits, b: total })} body={ok ? t("session.rhythm.goodBody") : t("session.rhythm.body")} onNext={() => onDone(ok)} /> : null}
     </View>
   );
 }
@@ -298,10 +299,10 @@ export function TypeItStep({ step, voiceOn, onDone }: { step: any; voiceOn: bool
     <View style={{ width: "100%", gap: 14 }}>
       <Text accessibilityRole="header" style={[type.h1(24), { color: "#fff" }]}>{step.prompt}</Text>
       <Replay text={step.speak} left={left} onUse={() => setLeft((n) => n - 1)} />
-      <TextInput value={text} onChangeText={setText} editable={!res} autoCapitalize="none" autoCorrect={false} spellCheck={false} placeholder="type it…" placeholderTextColor="#ffffff55" onSubmitEditing={() => text.trim() && !res && check()}
-        accessibilityLabel="your answer" style={s.input} />
-      {res === null ? <SlotFill><Btn kind="gold" disabled={!text.trim()} onPress={check}>check</Btn></SlotFill> : (
-        <Verdict ok={res.ok} seed={step.answer.length} body={res.ok ? (res.close ? `close enough — it's spelled "${step.answer}."` : "spelled right, too.") : `it's "${step.answer}."`} onNext={() => onDone(res.ok)} />
+      <TextInput value={text} onChangeText={setText} editable={!res} autoCapitalize="none" autoCorrect={false} spellCheck={false} placeholder={t("session.type.placeholder")} placeholderTextColor="#ffffff55" onSubmitEditing={() => text.trim() && !res && check()}
+        accessibilityLabel={t("session.type.a11y")} style={s.input} />
+      {res === null ? <SlotFill><Btn kind="gold" disabled={!text.trim()} onPress={check}>{t("session.check")}</Btn></SlotFill> : (
+        <Verdict ok={res.ok} seed={step.answer.length} body={res.ok ? (res.close ? t("session.type.close", { a: step.answer }) : t("session.type.right")) : t("session.itsAnswer", { a: step.answer })} onNext={() => onDone(res.ok)} />
       )}
     </View>
   );
@@ -354,11 +355,11 @@ export function RushStep({ step, best, onDone }: { step: any; best?: number | nu
   if (!started) {
     return (
       <View style={{ alignItems: "center", gap: 14, width: "100%" }}>
-        <Text style={[type.eyebrow(), { color: color.gold }]}>quick round · {step.secs} seconds</Text>
+        <Text style={[type.eyebrow(), { color: color.gold }]}>{t("session.rush.kicker", { n: step.secs })}</Text>
         <Guy pose="stride" h={140} />
-        <Text style={[type.h1(26), { color: "#fff", textAlign: "center" }]}>{pairs.length} words from your path. match each to its line before the sun sets.</Text>
-        {best ? <Text style={[type.body(14), { color: color.gold }]}>your best: {best} seconds</Text> : null}
-        <SlotFill><Btn kind="gold" onPress={() => { t0.current = Date.now(); setStarted(true); play("tap"); }}>go</Btn></SlotFill>
+        <Text style={[type.h1(26), { color: "#fff", textAlign: "center" }]}>{t("session.rush.intro", { n: pairs.length })}</Text>
+        {best ? <Text style={[type.body(14), { color: color.gold }]}>{t("session.rush.best", { n: best })}</Text> : null}
+        <SlotFill><Btn kind="gold" onPress={() => { t0.current = Date.now(); setStarted(true); play("tap"); }}>{t("session.rush.go")}</Btn></SlotFill>
       </View>
     );
   }
@@ -368,7 +369,7 @@ export function RushStep({ step, best, onDone }: { step: any; best?: number | nu
       <View style={{ flexDirection: "row", alignItems: "center", gap: 10 }}>
         <Text style={{ fontSize: 18 }}>☀</Text>
         <View style={s.clock}><Animated.View style={[s.clockFill, { backgroundColor: left <= 5 ? "#FFB84D" : color.gold }, barStyle]} /></View>
-        <Text accessibilityLabel={`${left} seconds left`} style={{ fontFamily: font.display[800], fontSize: 20, color: left <= 5 ? "#FFB84D" : "#fff", minWidth: 30, textAlign: "right" }}>{left}</Text>
+        <Text accessibilityLabel={t("session.secsLeft", { n: left })} style={{ fontFamily: font.display[800], fontSize: 20, color: left <= 5 ? "#FFB84D" : "#fff", minWidth: 30, textAlign: "right" }}>{left}</Text>
       </View>
       <View style={{ flexDirection: "row", gap: 8 }}>
         <View style={{ flex: 2, gap: 8 }}>{pairs.map(([l]) => chip(l, sel === l, !!got[l], () => setSel(l)))}</View>
@@ -376,10 +377,10 @@ export function RushStep({ step, best, onDone }: { step: any; best?: number | nu
       </View>
       {end ? (
         <Verdict ok={end.ok} seed={pairs.length}
-          title={end.ok ? (best && end.secs < best ? `new best — ${end.secs} seconds!` : `all ${pairs.length} in ${end.secs} seconds.`) : `time. ${n} of ${pairs.length}.`}
-          body={end.ok ? (best && end.secs >= best ? `your best is ${best}. there's always tomorrow.` : undefined) : "the sun set first this time. the words are still yours."}
+          title={end.ok ? (best && end.secs < best ? t("session.rush.newBest", { n: end.secs }) : t("session.rush.all", { a: pairs.length, b: end.secs })) : t("session.rush.time", { a: n, b: pairs.length })}
+          body={end.ok ? (best && end.secs >= best ? t("session.rush.bestIs", { n: best }) : undefined) : t("session.rush.sunset")}
           onNext={() => onDone(end.ok, end.ok ? end.secs : null)} />
-      ) : <Text style={[type.body(12), { color: "#ffffff88", textAlign: "center" }]}>tap a word, then its line.</Text>}
+      ) : <Text style={[type.body(12), { color: "#ffffff88", textAlign: "center" }]}>{t("session.rush.hint")}</Text>}
     </View>
   );
 }

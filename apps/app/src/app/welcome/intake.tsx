@@ -6,6 +6,7 @@ import { Text, View } from "react-native";
 import { EXCLUSIVE, intakeReply, nextIntake } from "@/content/intake";
 import { asksPracticeMode, profileFor, youAnswers } from "@/lib/onboard";
 import { useStore } from "@/lib/store";
+import { t } from "@/i18n";
 import { Btn, Eyebrow, Link, Opt, type } from "@/ui";
 import { Host } from "@/ui/host";
 import { WelcomeFrame } from "@/ui/welcome-frame";
@@ -17,7 +18,7 @@ type Answers = Record<string, string | string[]>;
 
 export default function Intake() {
   useEffect(() => { track("onboard_step", { step: "intake" }); }, []);
-  useTitle("getting to know you");
+  useTitle(t("onboarding.intake.title"));
   const { update, saved, today } = useStore();
   // What the first step already told us (which tradition, how they feel about it) is not asked again.
   const [answers, setAnswers] = useState<Answers>(() => {
@@ -64,11 +65,11 @@ export default function Intake() {
   };
   const asked = history.length + 1;
   const footer = q.multi
-    ? <Btn disabled={!multi.length} onPress={() => commit(multi)}>{multi.length ? "that's me" : "pick any that fit"}</Btn>
-    : q.optional ? <Btn kind="ghost" onPress={() => commit(null)}>rather not say</Btn> : undefined;
+    ? <Btn disabled={!multi.length} onPress={() => commit(multi)}>{multi.length ? t("onboarding.intake.thatsMe") : t("onboarding.intake.pickAny")}</Btn>
+    : q.optional ? <Btn kind="ghost" onPress={() => commit(null)}>{t("onboarding.ratherNot")}</Btn> : undefined;
   return (
     <WelcomeFrame step={4 + Math.min(1.5, history.length / 4)} door="SPIRITUAL" footer={footer} onBack={() => (history.length ? (back(), true) : false)}>
-      <Eyebrow style={{ textAlign: "center" }}>{`getting to know you · ${asked}`}</Eyebrow>
+      <Eyebrow style={{ textAlign: "center" }}>{t("onboarding.intake.eyebrow", { n: asked })}</Eyebrow>
       {reply ? <Text style={[type.body(14), { textAlign: "center", fontStyle: "italic" }]}>{reply}</Text> : null}
       <Host>{q.ask}</Host>
       <View style={{ gap: 8 }} accessibilityRole={q.multi ? undefined : "radiogroup"}>
@@ -83,7 +84,7 @@ export default function Intake() {
         ))}
       </View>
       {q.note ? <Text style={[type.caption(), { textAlign: "center" }]}>{q.note}</Text> : null}
-      {history.length ? <View style={{ alignItems: "center" }}><Link onPress={back}>‹ previous question</Link></View> : null}
+      {history.length ? <View style={{ alignItems: "center" }}><Link onPress={back}>{t("onboarding.prevQuestion")}</Link></View> : null}
     </WelcomeFrame>
   );
 }

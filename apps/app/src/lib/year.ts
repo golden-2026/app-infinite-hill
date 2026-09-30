@@ -41,10 +41,18 @@ export function minutesLearned(sits: SitLike[], timed: Timed | undefined): { min
   return { minutes, timedLessons, estimatedLessons };
 }
 
-/** "about 3.5 hours", "40 minutes". */
+// Spanish without imports (the tests load this file straight from Node): the language is on globalThis.__ihLang.
+const es = () => (globalThis as { __ihLang?: string }).__ihLang === "es";
+
+/** "about 3.5 hours", "40 minutes" (Spanish: "3.5 horas", "40 minutos", numbers as the app writes them, es-419). */
 export function hoursWords(minutes: number): string {
-  if (minutes < 60) return `${minutes} ${minutes === 1 ? "minute" : "minutes"}`;
+  if (minutes < 60) return es() ? `${minutes} ${minutes === 1 ? "minuto" : "minutos"}` : `${minutes} ${minutes === 1 ? "minute" : "minutes"}`;
   const h = Math.round((minutes / 60) * 10) / 10;
+  if (es()) {
+    let n = h % 1 === 0 ? h.toFixed(0) : h.toFixed(1);
+    try { n = new Intl.NumberFormat("es-419", { minimumFractionDigits: h % 1 === 0 ? 0 : 1, maximumFractionDigits: 1, useGrouping: h >= 10000 }).format(h); } catch {}
+    return `${n} ${h === 1 ? "hora" : "horas"}`;
+  }
   return `${h % 1 === 0 ? h.toFixed(0) : h.toFixed(1)} ${h === 1 ? "hour" : "hours"}`;
 }
 

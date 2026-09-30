@@ -9,6 +9,7 @@ import { bell, speak } from "@/lib/sound";
 import { Btn, Guy, Sun, color, font, type } from "@/ui";
 import { SlotFill } from "@/ui/slot";
 import { Verdict, useFx } from "@/session/juice";
+import { t } from "@/i18n";
 
 const strip = (s: string) => (s || "").replace(/[.!?,;:"“”'’]/g, "").toLowerCase().trim();
 const shuffle = <T,>(a: T[]) => [...a].sort(() => Math.random() - 0.5);
@@ -32,7 +33,7 @@ function Reveal({ label, text, onNext }: { label: string; text?: string; onNext:
     <View style={{ marginTop: 6, gap: 12 }}>
       <Text style={[type.eyebrow(), { color: color.gold }]}>{label}</Text>
       {text ? <Text style={s.reveal}>{text}</Text> : null}
-      <SlotFill><Btn kind="gold" onPress={onNext}>next</Btn></SlotFill>
+      <SlotFill><Btn kind="gold" onPress={onNext}>{t("session.next")}</Btn></SlotFill>
     </View>
   );
 }
@@ -63,9 +64,9 @@ export function OptionStep({ step, voiceOn, onDone }: { step: any; voiceOn: bool
   return (
     <View style={{ gap: 10, width: "100%" }}>
       <Prompt>{step.prompt}</Prompt>
-      {step.speak ? <View style={{ marginVertical: 8, alignItems: "center", gap: 6 }}><RoundBtn glyph="🔊" label={replays > 0 ? "Hear it again" : "no more replays"} onPress={replays > 0 ? () => { speak(step.speak, true); setReplays((n) => n - 1); } : undefined} />{step.replays != null && step.replays < 9 ? <Text style={[type.eyebrow(8), { color: "#ffffff88" }]}>{replays > 0 ? `${replays} replay left` : "no more replays — trust your ear"}</Text> : null}</View> : null}
+      {step.speak ? <View style={{ marginVertical: 8, alignItems: "center", gap: 6 }}><RoundBtn glyph="🔊" label={replays > 0 ? t("session.hearAgainA11y") : t("session.noReplays")} onPress={replays > 0 ? () => { speak(step.speak, true); setReplays((n) => n - 1); } : undefined} />{step.replays != null && step.replays < 9 ? <Text style={[type.eyebrow(8), { color: "#ffffff88" }]}>{replays > 0 ? t("session.replaysLeft", { count: replays }) : t("session.noReplaysTrust")}</Text> : null}</View> : null}
       {step.options.map((o: string) => <Choice key={o} text={o} on={picked === o} right={picked !== null && !guess && o === step.answer} disabled={picked !== null} onPress={() => pick(o)} />)}
-      {picked !== null ? <Verdict ok={guess ? null : ok} seed={step.prompt.length} title={guess ? "good guess" : undefined} body={guess ? "the lesson's about to tell you." : ok ? undefined : `it's "${step.answer}."`} onNext={() => onDone(guess ? null : ok)} /> : null}
+      {picked !== null ? <Verdict ok={guess ? null : ok} seed={step.prompt.length} title={guess ? t("session.guess.title") : undefined} body={guess ? t("session.guess.body") : ok ? undefined : t("session.itsAnswer", { a: step.answer })} onNext={() => onDone(guess ? null : ok)} /> : null}
     </View>
   );
 }
@@ -90,7 +91,7 @@ export function OrderStep({ step, onDone }: { step: any; onDone: Done }) {
         {seq.map((x, k) => <View key={x} style={[s.tile, { backgroundColor: result === false && x !== step.items[k] ? "#fff" : color.gold, borderColor: color.gold }]}><Text style={s.tileText}>{k + 1}. {x}</Text></View>)}
       </View>
       {result !== null ? (
-        <Verdict ok={result} seed={step.items.length} body={result ? undefined : `it goes: ${step.items.map((v: string, k: number) => `${k + 1}. ${v}`).join("  ")}`} onNext={() => onDone(result)} />
+        <Verdict ok={result} seed={step.items.length} body={result ? undefined : t("session.itGoes", { list: step.items.map((v: string, k: number) => `${k + 1}. ${v}`).join("  ") })} onNext={() => onDone(result)} />
       ) : null}
       <View style={{ gap: 8 }}>
         {pool.map((x) => (
@@ -120,7 +121,7 @@ export function MatchStep({ step, onDone }: { step: any; onDone: Done }) {
     } else {
       setMiss((m) => m + 1);
       setSel(null);
-      setNope(`not ${l} and ${r}. try another.`);
+      setNope(t("session.match.nope", { l, r }));
     }
   };
   const [nope, setNope] = useState<string | null>(null);
@@ -137,7 +138,7 @@ export function MatchStep({ step, onDone }: { step: any; onDone: Done }) {
         <View style={{ flex: 1, gap: 10 }}>{right.map((r) => chip(r, false, Object.values(got).includes(r), () => sel && tryPair(sel, r)))}</View>
       </View>
       {nope && !finished ? <Text accessibilityLiveRegion="polite" style={[s.feedback, { color: color.ink, textAlign: "center" }]}>{nope}</Text> : null}
-      {finished ? <Verdict ok={miss === 0} seed={step.pairs.length} body={miss === 0 ? "every pair on the first try." : `all matched — ${miss} ${miss === 1 ? "slip" : "slips"} on the way.`} onNext={() => onDone(miss === 0)} /> : null}
+      {finished ? <Verdict ok={miss === 0} seed={step.pairs.length} body={miss === 0 ? t("session.match.clean") : t("session.match.slips", { count: miss })} onNext={() => onDone(miss === 0)} /> : null}
     </View>
   );
 }
@@ -149,9 +150,9 @@ export function SpeakStep({ step, onDone }: { step: any; onDone: () => void }) {
     <View style={{ alignItems: "center" }}>
       <Text style={{ fontFamily: font.display[800], fontSize: 44, letterSpacing: -0.9, color: color.ink }}>{step.say}</Text>
       <View style={{ marginTop: 26 }}>
-        <RoundBtn glyph="🗣" label="I said it" active={said} size={96} onPress={said ? undefined : () => { speak(step.say, true); setSaid(true); setTimeout(onDone, 1400); }} />
+        <RoundBtn glyph="🗣" label={t("session.saidIt")} active={said} size={96} onPress={said ? undefined : () => { speak(step.say, true); setSaid(true); setTimeout(onDone, 1400); }} />
       </View>
-      <Text style={[type.body(), { marginTop: 14, color: color.mute }]}>{said ? "that's it." : "say it out loud, then tap"}</Text>
+      <Text style={[type.body(), { marginTop: 14, color: color.mute }]}>{said ? t("session.speak.done") : t("session.speak.hint")}</Text>
     </View>
   );
 }
@@ -179,11 +180,11 @@ export function TapHear({ step, voiceOn, onDone }: { step: any; voiceOn: boolean
   return (
     <View style={{ width: "100%", gap: 14 }}>
       <View style={{ flexDirection: "row", gap: 12, alignItems: "flex-end" }}><View style={{ flex: 1 }}><Prompt>{step.prompt}</Prompt></View><Guy pose="music" h={84} /></View>
-      <Pressable accessibilityRole="button" accessibilityLabel={left > 0 ? "Hear it again" : "no more replays"} disabled={left <= 0} onPress={() => { speak(step.speak, true); setLeft((n) => n - 1); }} style={[s.pill, left <= 0 ? { opacity: 0.35 } : null]}><Text style={s.pillText}>🔊 {left <= 0 ? "no more replays" : left < 9 ? `hear it again · ${left} left` : "hear it again"}</Text></Pressable>
-      <View style={s.answerRow}>{seq.length ? seq.map((x) => chip(x, true)) : <Text style={[type.body(), { color: "#ffffff66", fontStyle: "italic" }]}>tap the words in order…</Text>}</View>
+      <Pressable accessibilityRole="button" accessibilityLabel={left > 0 ? t("session.hearAgainA11y") : t("session.noReplays")} disabled={left <= 0} onPress={() => { speak(step.speak, true); setLeft((n) => n - 1); }} style={[s.pill, left <= 0 ? { opacity: 0.35 } : null]}><Text style={s.pillText}>🔊 {left <= 0 ? t("session.noReplays") : left < 9 ? t("session.hearAgainLeft", { n: left }) : t("session.hearAgain")}</Text></Pressable>
+      <View style={s.answerRow}>{seq.length ? seq.map((x) => chip(x, true)) : <Text style={[type.body(), { color: "#ffffff66", fontStyle: "italic" }]}>{t("session.tap.hint")}</Text>}</View>
       <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8, justifyContent: "center" }}>{bank.filter((x: any) => !used.has(x.k)).map((x: any) => chip(x, false))}</View>
-      {state === null ? <SlotFill><Btn kind="gold" disabled={seq.length < step.words.length} onPress={check}>check</Btn></SlotFill> : (
-        <Verdict ok={state} seed={step.words.length} body={state ? "that's your line." : `it's "${step.speak}."`} onNext={() => onDone(state)} />
+      {state === null ? <SlotFill><Btn kind="gold" disabled={seq.length < step.words.length} onPress={check}>{t("session.check")}</Btn></SlotFill> : (
+        <Verdict ok={state} seed={step.words.length} body={state ? t("session.tap.right") : t("session.itsAnswer", { a: step.speak })} onNext={() => onDone(state)} />
       )}
     </View>
   );
@@ -198,8 +199,8 @@ function useSkip(onDone: () => void) {
 }
 function NotToday({ onPress }: { onPress: () => void }) {
   return (
-    <Pressable testID="not-today" accessibilityRole="button" accessibilityLabel="not today, skip this" onPress={onPress} style={{ marginTop: 16, minHeight: 44, justifyContent: "center" }}>
-      <Text style={[type.eyebrow(), { color: "#ffffff66" }]}>not today ›</Text>
+    <Pressable testID="not-today" accessibilityRole="button" accessibilityLabel={t("session.notToday.a11y")} onPress={onPress} style={{ marginTop: 16, minHeight: 44, justifyContent: "center" }}>
+      <Text style={[type.eyebrow(), { color: "#ffffff66" }]}>{t("session.notToday")}</Text>
     </Pressable>
   );
 }
@@ -232,20 +233,20 @@ export function BreathStep({ n, onDone }: { n: number; onDone: () => void }) {
       <View style={{ width: 200, height: 200, alignItems: "center", justifyContent: "center" }}><Animated.View style={anim}><Guy still pose={phase === "done" ? "joy" : "meditate"} h={150} /></Animated.View></View>
       {phase === "ready" ? (
         <>
-          <Text style={[type.h1(26), { color: "#fff", textAlign: "center" }]}>{n === 1 ? "one breath. that's the practice." : `${n} breaths together.`}</Text>
-          <Text style={[type.body(), { color: "#ffffffaa", textAlign: "center" }]}>in as it grows. out as it shrinks. eyes open is fine.</Text>
-          <SlotFill><Btn kind="gold" onPress={() => { bell(); setPhase("in"); }}>{n === 1 ? "take it" : "start"}</Btn></SlotFill>
+          <Text style={[type.h1(26), { color: "#fff", textAlign: "center" }]}>{n === 1 ? t("session.breath.one") : t("session.breath.n", { n })}</Text>
+          <Text style={[type.body(), { color: "#ffffffaa", textAlign: "center" }]}>{t("session.breath.how")}</Text>
+          <SlotFill><Btn kind="gold" onPress={() => { bell(); setPhase("in"); }}>{n === 1 ? t("session.breath.take") : t("session.breath.start")}</Btn></SlotFill>
           <NotToday onPress={skip} />
         </>
       ) : null}
       {phase === "in" || phase === "out" ? (
         <>
-          <Text accessibilityLiveRegion="polite" style={[type.h1(30), { color: color.gold }]}>{phase === "in" ? "in…" : "out…"}</Text>
-          {n > 1 ? <Text style={[type.eyebrow(9), { color: "#ffffff99" }]}>{k + 1} of {n}</Text> : null}
+          <Text accessibilityLiveRegion="polite" style={[type.h1(30), { color: color.gold }]}>{phase === "in" ? t("session.breath.in") : t("session.breath.out")}</Text>
+          {n > 1 ? <Text style={[type.eyebrow(9), { color: "#ffffff99" }]}>{t("session.xOfY", { a: k + 1, b: n })}</Text> : null}
           <NotToday onPress={skip} />
         </>
       ) : null}
-      {phase === "done" ? <Text style={[type.h1(26), { color: color.gold, textAlign: "center" }]}>{n === 1 ? "that counts. that was the whole thing." : "that was a practice. you just did one."}</Text> : null}
+      {phase === "done" ? <Text style={[type.h1(26), { color: color.gold, textAlign: "center" }]}>{n === 1 ? t("session.breath.doneOne") : t("session.breath.doneN")}</Text> : null}
     </View>
   );
 }
@@ -290,24 +291,24 @@ export function SitStep({ secs, onDone }: { secs: number; onDone: () => void }) 
       </View>
       {phase === "ready" ? (
         <>
-          <Text style={[type.h1(26), { color: "#fff", textAlign: "center" }]}>{secs} seconds. the sun breathes with you.</Text>
-          <Text style={[type.body(), { color: "#ffffffaa", textAlign: "center" }]}>in as it grows. out as it shrinks. that's the whole job.</Text>
-          <SlotFill><Btn kind="gold" onPress={() => setPhase("sitting")}>start the sit</Btn></SlotFill>
+          <Text style={[type.h1(26), { color: "#fff", textAlign: "center" }]}>{t("session.sit.title", { n: secs })}</Text>
+          <Text style={[type.body(), { color: "#ffffffaa", textAlign: "center" }]}>{t("session.sit.how")}</Text>
+          <SlotFill><Btn kind="gold" onPress={() => setPhase("sitting")}>{t("session.sit.start")}</Btn></SlotFill>
           <NotToday onPress={skip} />
         </>
       ) : null}
       {phase === "sitting" ? (
         <>
-          <Text accessibilityLabel={`${left} seconds left`} style={{ fontFamily: font.display[800], fontSize: 40, color: color.gold }}>{left}</Text>
-          <Text style={{ fontFamily: font.display[500], fontSize: 16, color: "#ffffffaa" }}>the sun holds the time.</Text>
+          <Text accessibilityLabel={t("session.secsLeft", { n: left })} style={{ fontFamily: font.display[800], fontSize: 40, color: color.gold }}>{left}</Text>
+          <Text style={{ fontFamily: font.display[500], fontSize: 16, color: "#ffffffaa" }}>{t("session.sit.holds")}</Text>
           {secs - left >= 30 ? (
             <Pressable accessibilityRole="button" onPress={() => { clearInterval(iv.current!); bell(); setPhase("done"); }} style={{ padding: 8 }}>
-              <Text style={[type.eyebrow(10), { color: "#ffffff99" }]}>I'm done ›</Text>
+              <Text style={[type.eyebrow(10), { color: "#ffffff99" }]}>{t("session.sit.imDone")}</Text>
             </Pressable>
           ) : <NotToday onPress={skip} />}
         </>
       ) : null}
-      {phase === "done" ? <Text style={[type.h1(28), { color: color.gold }]}>that was a sit. you just did one.</Text> : null}
+      {phase === "done" ? <Text style={[type.h1(28), { color: color.gold }]}>{t("session.sit.done")}</Text> : null}
     </View>
   );
 }
@@ -319,8 +320,8 @@ export function BetStep({ step, onDone }: { step: any; onDone: Done }) {
   const fx = useFx();
   return (
     <View style={{ gap: 10, width: "100%" }}>
-      <Kicker>call it</Kicker>
-      <Prompt size={26}>{`${step.word}. what does it actually mean?`}</Prompt>
+      <Kicker>{t("session.seg.bet")}</Kicker>
+      <Prompt size={26}>{t("session.bet.q", { word: step.word })}</Prompt>
       {step.options.map((o: string) => <Choice key={o} text={o} on={picked === o} right={picked !== null && o === step.answer} disabled={picked !== null} onPress={() => { setPicked(o); fx.react(o === step.answer ? "right" : "wrong"); }} />)}
       {picked !== null ? <Verdict ok={ok} seed={step.word.length} body={step.reveal} onNext={() => onDone(ok)} /> : null}
     </View>
@@ -335,32 +336,32 @@ export function MythStep({ step, onDone }: { step: any; onDone: Done }) {
   const fx = useFx();
   return (
     <View style={{ gap: 12, width: "100%" }}>
-      <Kicker>true or myth</Kicker>
-      <Prompt>three things people say. which are true?</Prompt>
-      {step.items.map(([t, v, why]: [string, boolean, string], i: number) => {
+      <Kicker>{t("session.seg.myth")}</Kicker>
+      <Prompt>{t("session.myth.q")}</Prompt>
+      {step.items.map(([claim, v, why]: [string, boolean, string], i: number) => {
         const a = ans[i];
         const answered = a !== undefined;
         return (
           <View key={i} style={[s.myth, { borderColor: answered ? (a === v ? color.gold : "#ffffff44") : "#ffffff30" }]}>
-            <Text style={s.reveal}>{t}</Text>
+            <Text style={s.reveal}>{claim}</Text>
             {!answered ? (
               <View style={{ flexDirection: "row", gap: 10, marginTop: 12 }}>
-                {([["true", true], ["myth", false]] as const).map(([l, val]) => (
-                  <Pressable key={l} accessibilityRole="button" accessibilityLabel={`${l}: ${t}`} onPress={() => { setAns((x) => ({ ...x, [i]: val })); fx.react(val === v ? "right" : "wrong"); }} style={s.tf}>
+                {([[t("session.myth.true"), true], [t("session.myth.myth"), false]] as const).map(([l, val]) => (
+                  <Pressable key={l} accessibilityRole="button" accessibilityLabel={`${l}: ${claim}`} onPress={() => { setAns((x) => ({ ...x, [i]: val })); fx.react(val === v ? "right" : "wrong"); }} style={s.tf}>
                     <Text style={{ color: "#fff", fontFamily: font.text[700], fontSize: 14 }}>{l}</Text>
                   </Pressable>
                 ))}
               </View>
             ) : (
               <Text style={{ marginTop: 8, fontSize: 13, lineHeight: 18, color: a === v ? color.gold : "#ffffffcc", fontFamily: font.text[400] }}>
-                <Text style={{ fontFamily: font.text[700] }}>{v ? "true." : "myth."}</Text> {why}
+                <Text style={{ fontFamily: font.text[700] }}>{v ? t("session.myth.trueDot") : t("session.myth.mythDot")}</Text> {why}
               </Text>
             )}
           </View>
         );
       })}
       {done ? (
-        <Verdict ok={right === n} seed={n} title={right === n ? `${right} of ${n}. right on!` : `${right} of ${n}`} body={right === n ? undefined : "not quite — that's what the week is for."} onNext={() => onDone(right === n)} />
+        <Verdict ok={right === n} seed={n} title={right === n ? t("session.myth.all", { a: right, b: n }) : t("session.myth.some", { a: right, b: n })} body={right === n ? undefined : t("session.myth.body")} onNext={() => onDone(right === n)} />
       ) : null}
     </View>
   );
@@ -372,10 +373,10 @@ export function ForkStep({ step, onDone }: { step: any; onDone: Done }) {
   const i0 = step.options.length;
   return (
     <View style={{ gap: 10, width: "100%" }}>
-      <Kicker>your move</Kicker>
+      <Kicker>{t("session.seg.fork")}</Kicker>
       <Text style={[s.reveal, { fontSize: 19, marginBottom: 6 }]}>{step.setup}</Text>
       {step.options.map((o: string, i: number) => <Choice key={i} text={o} on={picked === i} right={picked !== null && i === step.answer} disabled={picked !== null} onPress={() => { setPicked(i); fx.react("neutral"); }} />)}
-      {picked !== null ? <Verdict ok={picked === step.answer} seed={i0} title={picked === step.answer ? "right on." : "not quite."} body={step.reveal} onNext={() => onDone(null)} /> : null}
+      {picked !== null ? <Verdict ok={picked === step.answer} seed={i0} title={picked === step.answer ? t("session.fork.right") : t("session.fork.wrong")} body={step.reveal} onNext={() => onDone(null)} /> : null}
     </View>
   );
 }
@@ -389,36 +390,36 @@ export function OriginalStep({ step, voiceOn, onDone }: { step: any; voiceOn: bo
   }, [say, voiceOn]);
   return (
     <View style={{ width: "100%", alignItems: "center" }}>
-      <Kicker>in the original</Kicker>
+      <Kicker>{t("session.seg.original")}</Kicker>
       <Text style={{ fontFamily: font.display[800], fontSize: 52, color: "#fff", marginTop: 14, marginBottom: 6, lineHeight: 58, textAlign: "center" }}>{step.script}</Text>
       <Text style={{ fontFamily: font.display[500], fontSize: 22, color: color.gold }}>{step.say}</Text>
       <Text style={[type.body(14), { color: "#ffffffbb", marginTop: 8, textAlign: "center" }]}>{step.note}</Text>
       <View style={{ flexDirection: "row", gap: 10, marginTop: 20 }}>
-        <RoundBtn glyph="🔊" label="Hear it" size={72} onPress={() => speak(say, true)} />
-        <RoundBtn glyph="🗣" label="I said it" size={72} active={said} onPress={said ? undefined : () => { setSaid(true); setTimeout(() => onDone(null), 900); }} />
+        <RoundBtn glyph="🔊" label={t("session.hearIt")} size={72} onPress={() => speak(say, true)} />
+        <RoundBtn glyph="🗣" label={t("session.saidIt")} size={72} active={said} onPress={said ? undefined : () => { setSaid(true); setTimeout(() => onDone(null), 900); }} />
       </View>
-      <Text style={[type.body(), { marginTop: 14, color: "#ffffff99" }]}>{said ? "that's the sound." : "hear it. say it once."}</Text>
-      {!said ? <Pressable accessibilityRole="button" onPress={() => onDone(null)} style={{ marginTop: 16 }}><Text style={[type.eyebrow(), { color: "#ffffff66" }]}>skip ›</Text></Pressable> : null}
+      <Text style={[type.body(), { marginTop: 14, color: "#ffffff99" }]}>{said ? t("session.orig.done") : t("session.orig.hint")}</Text>
+      {!said ? <Pressable accessibilityRole="button" onPress={() => onDone(null)} style={{ marginTop: 16 }}><Text style={[type.eyebrow(), { color: "#ffffff66" }]}>{t("session.skip")}</Text></Pressable> : null}
     </View>
   );
 }
 
 export function TrapdoorStep({ step, onDone }: { step: any; onDone: Done }) {
   const [floor, setFloor] = useState(0);
-  const labels = ["what you thought", "what it means", "what a scholar hears"];
+  const labels = [t("session.trap.thought"), t("session.trap.means"), t("session.trap.scholar")];
   return (
     <View style={{ gap: 10, width: "100%" }}>
-      <Kicker>the trapdoor</Kicker>
+      <Kicker>{t("session.seg.trapdoor")}</Kicker>
       {step.floors.slice(0, floor + 1).map((f: string, i: number) => (
         <View key={i} style={[s.myth, { backgroundColor: i === 2 ? color.gold : "#ffffff10", borderColor: i === 2 ? color.gold : "#ffffff30" }]}>
-          <Text style={[type.eyebrow(8), { color: i === 2 ? color.ink : color.gold }]}>floor {i + 1} · {labels[i]}</Text>
+          <Text style={[type.eyebrow(8), { color: i === 2 ? color.ink : color.gold }]}>{t("session.trap.floor", { n: i + 1, label: labels[i] })}</Text>
           <Text style={[s.reveal, { color: i === 2 ? color.ink : "#fff", marginTop: 6 }]}>{f.replace(/^what (you thought|it means|a scholar hears): /, "")}</Text>
         </View>
       ))}
-      {floor < 2 ? <SlotFill><Btn kind="gold" onPress={() => setFloor(floor + 1)}>{floor === 0 ? "go down" : "one more"}</Btn></SlotFill> : (
+      {floor < 2 ? <SlotFill><Btn kind="gold" onPress={() => setFloor(floor + 1)}>{floor === 0 ? t("session.trap.down") : t("session.trap.more")}</Btn></SlotFill> : (
         <View style={{ gap: 8 }}>
-          <Text style={[type.eyebrow(), { color: "#ffffff99", textAlign: "center" }]}>there are more floors. later.</Text>
-          <SlotFill><Btn kind="gold" onPress={() => onDone(null)}>next</Btn></SlotFill>
+          <Text style={[type.eyebrow(), { color: "#ffffff99", textAlign: "center" }]}>{t("session.trap.later")}</Text>
+          <SlotFill><Btn kind="gold" onPress={() => onDone(null)}>{t("session.next")}</Btn></SlotFill>
         </View>
       )}
     </View>

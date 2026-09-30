@@ -46,6 +46,18 @@ export const NOTE = {
   saver: (n: number) => `your ${n}-day streak would love one lesson tonight. i'll keep the lantern on.`,
   last: "we'll stop reminding you for now. your hill will be right here.",
 };
+/** The same words in Spanish (picked from globalThis.__ihLang: this file stays import-free for the tests). */
+export const NOTE_ES: typeof NOTE = {
+  daily: [
+    "tu colina está lista cuando tú lo estés. una lección, unos cinco minutos.",
+    "hola, soy yo. la lección de hoy te espera. sin prisa.",
+    "¿unos minutos de calma? te guardé un lugar en la colina.",
+    "ya puse el agua para el té. una lección, cuando quieras.",
+  ],
+  saver: (n: number) => `tu racha de ${n} días agradecería una lección esta noche. yo dejo el farol encendido.`,
+  last: "por ahora dejamos de recordarte. tu colina va a estar aquí mismo.",
+};
+const note = () => ((globalThis as { __ihLang?: string }).__ihLang === "es" ? NOTE_ES : NOTE);
 
 const sameDay = (a: Date, b: Date) => a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
 const dayAt = (base: Date, k: number, h: number, m = 0) => { const d = new Date(base); d.setDate(d.getDate() + k); d.setHours(h, m, 0, 0); return d; };
@@ -67,23 +79,23 @@ export function planReminders(o: {
   streak: number; rest: number; quiet: boolean; streakOn?: boolean;
 }): Planned[] {
   const { now, lastLessonAt: last } = o;
-  if (!last) return reminderTimes({ time: o.time, now, doneToday: o.doneToday, days: GO_QUIET_AFTER }).map((at, i) => ({ at, kind: "daily" as const, body: NOTE.daily[i % NOTE.daily.length] }));
+  if (!last) return reminderTimes({ time: o.time, now, doneToday: o.doneToday, days: GO_QUIET_AFTER }).map((at, i) => ({ at, kind: "daily" as const, body: note().daily[i % NOTE.daily.length] }));
   const hhmm = /^(\d{1,2}):(\d{2})$/.exec(o.time === "sundown" ? SUNDOWN : o.time);
   const out: Planned[] = [];
   for (let k = 1; k <= GO_QUIET_AFTER; k++) {
     let at: Date;
     if (o.set && hhmm) at = outOfQuiet(dayAt(last, k, Number(hhmm[1]), Number(hhmm[2])));
     else at = outOfQuiet(new Date(last.getTime() + (DAILY_AFTER_MIN + (k - 1) * 24 * 60) * 60_000));
-    if (k === GO_QUIET_AFTER) { out.push({ at, kind: "last", body: NOTE.last }); break; }
+    if (k === GO_QUIET_AFTER) { out.push({ at, kind: "last", body: note().last }); break; }
     // the saver: the one evening when missing would break the streak (every rest day already spent)
     const saverDay = dayAt(last, k, SAVER_AT);
     const atRisk = o.streakOn !== false && !o.quiet && o.streak >= 2 && k - 1 === o.rest;
     if (atRisk) {
-      out.push({ at: saverDay, kind: "saver", body: NOTE.saver(o.streak) });
+      out.push({ at: saverDay, kind: "saver", body: note().saver(o.streak) });
       // one note that evening, not two: a daily that lands within 90 minutes of the saver steps aside
       if (sameDay(at, saverDay) && Math.abs(at.getTime() - saverDay.getTime()) < 90 * 60_000) continue;
     }
-    out.push({ at, kind: "daily", body: NOTE.daily[(k - 1) % NOTE.daily.length] });
+    out.push({ at, kind: "daily", body: note().daily[(k - 1) % NOTE.daily.length] });
   }
   return out
     .filter((p) => p.at > now && !(o.doneToday && sameDay(p.at, now)))

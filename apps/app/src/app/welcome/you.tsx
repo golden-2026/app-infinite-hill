@@ -6,6 +6,7 @@ import { Text, View } from "react-native";
 import { STANCE_Q, raisedInQ } from "@/content/intake";
 import { pendingProfile, youAnswers, type Stance } from "@/lib/onboard";
 import { useStore } from "@/lib/store";
+import { t } from "@/i18n";
 import { Btn, Eyebrow, Link, Opt, type } from "@/ui";
 import { Host } from "@/ui/host";
 import { WelcomeFrame } from "@/ui/welcome-frame";
@@ -15,7 +16,7 @@ import { WelcomeFrame } from "@/ui/welcome-frame";
 // a door for anyone; every door stays open. Answers stay on the device (belief data: never sent to analytics).
 export default function You() {
   useEffect(() => { track("onboard_step", { step: "you" }); }, []);
-  useTitle("about you");
+  useTitle(t("onboarding.you.title"));
   const { update, saved, today } = useStore();
   const before = youAnswers(saved.settings.profile);
   const [stance, setStance] = useState<Stance | null>(before.stance);
@@ -39,8 +40,8 @@ export default function You() {
   };
 
   return (
-    <WelcomeFrame step={1} onBack={() => (step > 0 ? (setStep(0), true) : false)} footer={<Btn kind="ghost" onPress={() => pick(null)}>rather not say</Btn>}>
-      <Eyebrow style={{ textAlign: "center" }}>{`before the doors · ${step + 1} of 2`}</Eyebrow>
+    <WelcomeFrame step={1} onBack={() => (step > 0 ? (setStep(0), true) : false)} footer={<Btn kind="ghost" onPress={() => pick(null)}>{t("onboarding.ratherNot")}</Btn>}>
+      <Eyebrow style={{ textAlign: "center" }}>{t("onboarding.you.eyebrow", { n: step + 1 })}</Eyebrow>
       <Host pose={step === 0 ? "wave" : "think"}>{q.ask}</Host>
       <View style={{ gap: 8 }} accessibilityRole="radiogroup">
         {q.choices.map((c) => (
@@ -48,7 +49,7 @@ export default function You() {
         ))}
       </View>
       {q.note ? <Text style={[type.caption(), { textAlign: "center" }]}>{q.note}</Text> : null}
-      {step > 0 ? <View style={{ alignItems: "center" }}><Link onPress={() => setStep(0)}>‹ previous question</Link></View> : null}
+      {step > 0 ? <View style={{ alignItems: "center" }}><Link onPress={() => setStep(0)}>{t("onboarding.prevQuestion")}</Link></View> : null}
     </WelcomeFrame>
   );
 }

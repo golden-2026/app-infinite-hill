@@ -7,6 +7,7 @@ import { DOORS, label } from "@ih/content";
 import { PERSON } from "@/content/intake";
 import { isDoor, youAnswers } from "@/lib/onboard";
 import { useStore } from "@/lib/store";
+import { doorLabel, isEs, t } from "@/i18n";
 import { Btn, Eyebrow, Link, type } from "@/ui";
 import { BigDoorCard, DoorTile, OwnPathCard } from "@/ui/door-cards";
 import { Host } from "@/ui/host";
@@ -24,7 +25,7 @@ const TRADITIONS: string[] = DOORS.map(([, w]: [string, string]) => w).filter((w
 
 export default function PickDoor() {
   useEffect(() => { track("onboard_step", { step: "door" }); }, []);
-  useTitle("pick a door");
+  useTitle(t("onboarding.door.title"));
   const { saved } = useStore();
   const { stance, raisedIn, learning } = youAnswers(saved.settings.profile);
   const home = stance === "partner" ? (isDoor(learning) ? learning : null) : isDoor(raisedIn) ? raisedIn : null;
@@ -44,72 +45,74 @@ export default function PickDoor() {
     </View>
   );
   const own = (size: "hero" | "soft", eyebrow?: string) => <OwnPathCard size={size} eyebrow={eyebrow} on={door === "SPIRITUAL"} onPress={() => setDoor("SPIRITUAL")} />;
-  const or = (t: string) => <Eyebrow style={{ textAlign: "center", marginTop: 4 }}>{t}</Eyebrow>;
+  const or = (s: string) => <Eyebrow style={{ textAlign: "center", marginTop: 4 }}>{s}</Eyebrow>;
   const roots = (eyebrow: string) => (
-    <BigDoorCard door={home!} eyebrow={eyebrow} a11y={`${label(home!)}, with fresh eyes`} on={door === home} onPress={() => setDoor(home!)}
-      line={`taught as history, stories and practice. no belief required — bring your questions.`} />
+    <BigDoorCard door={home!} eyebrow={eyebrow} a11y={t("onboarding.door.freshA11y", { door: doorLabel(home!) })} on={door === home} onPress={() => setDoor(home!)}
+      line={t("onboarding.door.freshLine")} />
   );
   // Folded until asked for: the rest of the doors, for people whose screen leads with their own tradition.
-  const folded = (children: ReactNode, text = "a different door ›") => (more ? <>{children}</> : (
+  const folded = (children: ReactNode, text = t("onboarding.door.differentDoor")) => (more ? <>{children}</> : (
     <View style={{ alignItems: "center" }}><Link onPress={() => setMore(true)}>{text}</Link></View>
   ));
+  // "You grew up Jewish" in English; Spanish says "creciste en el judaísmo" (the door's name, no gendered adjective).
+  const grewUp = { faith: home ? (isEs() ? doorLabel(home) : PERSON[home] || label(home)) : "" };
 
   let host: string;
   let body: ReactNode;
   if (mode === "partner") {
-    host = `Here's ${label(home!)}, taught the way the people who practice it understand it. No belief asked of you.`;
+    host = t("onboarding.door.partnerHost", { door: doorLabel(home!) });
     body = <>
-      <BigDoorCard door={home!} eyebrow="the faith you're learning" a11y={`${label(home!)}, the faith you're learning`} on={door === home} onPress={() => setDoor(home!)}
-        line="what things mean to the people who practice them — the words, the holidays, the table." />
-      {folded(<>{or("every door")}{grid(home)}{own("soft")}</>)}
+      <BigDoorCard door={home!} eyebrow={t("onboarding.door.partnerEyebrow")} a11y={t("onboarding.door.partnerA11y", { door: doorLabel(home!) })} on={door === home} onPress={() => setDoor(home!)}
+        line={t("onboarding.door.partnerLine")} />
+      {folded(<>{or(t("onboarding.door.every"))}{grid(home)}{own("soft")}</>)}
     </>;
   } else if (mode === "yours") {
-    host = `Welcome in. Here's your door.`;
+    host = t("onboarding.door.yoursHost");
     body = <>
-      <BigDoorCard door={home!} eyebrow="your door" on={door === home} onPress={() => setDoor(home!)} />
-      {folded(<>{or("every door")}{grid(home)}{own("soft")}</>)}
+      <BigDoorCard door={home!} eyebrow={t("onboarding.door.yoursEyebrow")} on={door === home} onPress={() => setDoor(home!)} />
+      {folded(<>{or(t("onboarding.door.every"))}{grid(home)}{own("soft")}</>)}
     </>;
   } else if (mode === "roots") {
-    host = `You grew up ${PERSON[home!] || label(home!)}. We can walk it with fresh eyes — no belief required. Or there's a path built just around you.`;
+    host = t("onboarding.door.rootsHost", grewUp);
     body = <>
-      {roots("your roots, with fresh eyes")}
-      {or("or, if you'd rather")}
+      {roots(t("onboarding.door.rootsEyebrow"))}
+      {or(t("onboarding.door.orRather"))}
       {own("soft")}
-      {folded(<>{or("every door")}{grid(home)}</>, "see every door ›")}
+      {folded(<>{or(t("onboarding.door.every"))}{grid(home)}</>, t("onboarding.door.seeEvery"))}
     </>;
   } else if (mode === "left") {
-    host = `You grew up ${PERSON[home!] || label(home!)} and stepped away — that's allowed. Nothing here asks you to go back. Two ways in, both yours to pick:`;
+    host = t("onboarding.door.leftHost", grewUp);
     body = <>
       {own("soft")}
-      {or("or")}
-      {roots("your roots, with fresh eyes")}
-      {folded(<>{or("every door")}{grid(home)}</>, "see every door ›")}
+      {or(t("onboarding.door.or"))}
+      {roots(t("onboarding.door.rootsEyebrow"))}
+      {folded(<>{or(t("onboarding.door.every"))}{grid(home)}</>, t("onboarding.door.seeEvery"))}
     </>;
   } else if (mode === "own") {
-    host = stance === "many" ? "Exploring more than one? Then this was made for you. Every door is open too."
-      : stance === "spiritual" ? "Spiritual, not religious? Then start here. Every door is open too."
-      : stance === "curious" ? "Curious is a great place to start. Here's where we'd begin — and every door is open too."
-      : "Here's where we'd begin — and every door is open too.";
+    host = stance === "many" ? t("onboarding.door.ownMany")
+      : stance === "spiritual" ? t("onboarding.door.ownSpiritual")
+      : stance === "curious" ? t("onboarding.door.ownCurious")
+      : t("onboarding.door.ownDefault");
     body = <>
       {own("hero")}
-      {or("or walk one door")}
+      {or(t("onboarding.door.orWalkOne"))}
       {grid(null)}
     </>;
   } else {
-    host = mode === "closest" ? "Pick the door that fits best, or make a path of your own. More traditions are on the way." : "Which door is yours? You can change it any time — your days come with you.";
+    host = mode === "closest" ? t("onboarding.door.closestHost") : t("onboarding.door.openHost");
     body = <>
       {grid(null)}
-      {or("or")}
+      {or(t("onboarding.door.or"))}
       {own(mode === "closest" ? "soft" : "hero")}
     </>;
   }
 
   return (
-    <WelcomeFrame step={2} door={door} footer={<Btn testID="door-continue" disabled={!door} onPress={() => router.push({ pathname: "/welcome/trail", params: { door: door! } })}>{door ? (door === "SPIRITUAL" ? "Start my path" : `Open ${label(door)}`) : "Pick a door"}</Btn>}>
+    <WelcomeFrame step={2} door={door} footer={<Btn testID="door-continue" disabled={!door} onPress={() => router.push({ pathname: "/welcome/trail", params: { door: door! } })}>{door ? (door === "SPIRITUAL" ? t("onboarding.startMyPath") : t("onboarding.door.open", { door: doorLabel(door) })) : t("onboarding.door.pick")}</Btn>}>
       <Host pose={mode === "own" ? "globe" : "point"}>{host}</Host>
       {body}
-      <Text style={[type.caption(), { textAlign: "center" }]}>more traditions on the way. change your door any time — your days come with you.</Text>
-      {mode === "open" && !saved.settings.profile ? <View style={{ alignItems: "center" }}><Link onPress={() => router.push("/welcome/you")}>not sure? tell us about you first ›</Link></View> : null}
+      <Text style={[type.caption(), { textAlign: "center" }]}>{t("onboarding.door.caption")}</Text>
+      {mode === "open" && !saved.settings.profile ? <View style={{ alignItems: "center" }}><Link onPress={() => router.push("/welcome/you")}>{t("onboarding.door.tellFirst")}</Link></View> : null}
     </WelcomeFrame>
   );
 }

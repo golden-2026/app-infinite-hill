@@ -14,6 +14,7 @@ import { eraseCompanion } from "./companion/memory";
 import { addMinutes, type Timed } from "./year";
 import type { QuestState } from "@/content/seasons";
 import { leaveFriends } from "./friends";
+import { t } from "@/i18n";
 
 export const STORE_KEY = "ih:app:v1";
 
@@ -241,7 +242,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
         // A file with no days of your own can still carry children, kept lines or choices: bring those over too.
         const rs: any = r.settings || {};
         const hasSettings = !!(rs.kids?.length || rs.book?.length || rs.profile || rs.onboarded);
-        if (!r.sits.length && !hasSettings) return { ok: false, message: "that file has no days in it." };
+        if (!r.sits.length && !hasSettings) return { ok: false, message: t("home.import.empty") };
         commit((s) => ({
           ...s,
           sits: mergeSits(s.sits, r.sits),
@@ -249,9 +250,10 @@ export function StoreProvider({ children }: { children: ReactNode }) {
           settingsVersion: Math.max(s.settingsVersion, r.settingsVersion) + 1,
         }));
         const n = new Set(r.sits.filter((x) => !x.kidId).map((x) => x.date)).size;
-        return { ok: true, message: n ? `brought over. ${n} ${n === 1 ? "day" : "days"}, right where you left them.` : "brought over — your table, book and choices are here." };
+        return { ok: true, message: n ? t("home.import.days", { count: n }) : t("home.import.settings") };
       } catch (e) {
-        return { ok: false, message: (e as Error).message };
+        const m = (e as Error).message;
+        return { ok: false, message: m === "that file isn't an infinite hill export." ? t("home.import.notExport") : m };
       }
     },
     resetAll: () => {

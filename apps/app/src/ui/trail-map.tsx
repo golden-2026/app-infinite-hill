@@ -8,7 +8,8 @@ import { Image } from "expo-image";
 import { LinearGradient } from "expo-linear-gradient";
 import Svg, { Path } from "react-native-svg";
 import { art } from "@ih/brand";
-import { icon, label } from "@ih/content";
+import { icon } from "@ih/content";
+import { doorLabel, t } from "@/i18n";
 import { lookoutArt, SUMMIT_ART, trailFor, type Stage, type Summit } from "@/content/journeys";
 import { FADE } from "@/ui/fade";
 import { Guy, color, font, type } from "@/ui";
@@ -25,9 +26,9 @@ function Painting({ artKey, y = "25%" }: { artKey: string; y?: string }) {
 }
 
 function SummitCard({ s, name, planned }: { s: Summit; name: string; planned: boolean }) {
-  const rows: [string, string][] = [["you'll know", s.know], ["you'll practice", s.practice], ["you'll be able to", s.able]];
+  const rows: [string, string][] = [[t("home.trail.know"), s.know], [t("home.trail.practice"), s.practice], [t("home.trail.able"), s.able]];
   return (
-    <View style={{ backgroundColor: color.ink, borderRadius: 24, overflow: "hidden" }} accessibilityLabel={`The summit of ${name}`}>
+    <View style={{ backgroundColor: color.ink, borderRadius: 24, overflow: "hidden" }} accessibilityLabel={t("home.trail.summitA11y", { name })}>
       {/* the top of the climb, painted: the view fades down into the card so the words stay easy to read */}
       <View style={{ height: 210 }}>
         <Painting artKey={`${SUMMIT_ART}-sm`} y="12%" />
@@ -35,11 +36,11 @@ function SummitCard({ s, name, planned }: { s: Summit; name: string; planned: bo
         <Guy pose="cheer" h={70} style={{ position: "absolute", right: 18, top: 12 }} />
         <View style={{ position: "absolute", left: 18, right: 18, bottom: 4 }}>
           <Text style={[type.eyebrow(11), { color: color.gold, maxWidth: 240 }]}>{s.eyebrow}</Text>
-          <Text style={{ fontFamily: font.display[800], fontSize: 30, letterSpacing: -0.9, color: "#fff", marginTop: 6 }}>the summit</Text>
+          <Text style={{ fontFamily: font.display[800], fontSize: 30, letterSpacing: -0.9, color: "#fff", marginTop: 6 }}>{t("home.trail.summit")}</Text>
         </View>
       </View>
       <View style={{ paddingHorizontal: 18, paddingBottom: 18 }}>
-        <Text style={[type.body(14), { color: "#ffffffb3", marginTop: 2 }]}>{`walk all of ${name} and here's what's at the top:`}</Text>
+        <Text style={[type.body(14), { color: "#ffffffb3", marginTop: 2 }]}>{t("home.trail.walkAll", { name })}</Text>
         <View style={{ gap: 12, marginTop: 16 }}>
           {rows.map(([k, v]) => (
             <View key={k} style={{ flexDirection: "row", gap: 10 }}>
@@ -51,7 +52,7 @@ function SummitCard({ s, name, planned }: { s: Summit; name: string; planned: bo
             </View>
           ))}
         </View>
-        {planned ? <Text style={[type.body(12), { color: "#ffffff80", marginTop: 14 }]}>years two to five are still being planned, so this is where the climb is aiming — the lessons come first.</Text> : null}
+        {planned ? <Text style={[type.body(12), { color: "#ffffff80", marginTop: 14 }]}>{t("home.trail.plannedNote")}</Text> : null}
       </View>
     </View>
   );
@@ -79,18 +80,18 @@ function Stop({ st, n, side, status, tint, day, view }: { st: Stage; n: string; 
         {here ? (
           <View style={{ position: "absolute", left: 10, top: 10, flexDirection: "row" }}>
             <View style={{ backgroundColor: color.ink, borderRadius: 999, borderWidth: 1.5, borderColor: color.gold, paddingHorizontal: 10, paddingVertical: 4 }}>
-              <Text style={[type.eyebrow(10), { color: color.gold }]}>{`you are here · day ${day}`}</Text>
+              <Text style={[type.eyebrow(10), { color: color.gold }]}>{t("home.trail.here", { day })}</Text>
             </View>
           </View>
         ) : null}
         <View style={{ position: "absolute", left: 14, right: 14, bottom: 10 }}>
-          <Text style={[type.eyebrow(10), { color: color.gold }]}>{`${st.eyebrow}${st.planned ? " · being planned" : ""}`}</Text>
+          <Text style={[type.eyebrow(10), { color: color.gold }]}>{`${st.eyebrow}${st.planned ? t("home.trail.beingPlanned") : ""}`}</Text>
           <Text style={{ fontFamily: font.display[800], fontSize: 22, letterSpacing: -0.5, color: "#fff", marginTop: 2 }}>{st.name}</Text>
         </View>
       </View>
       <View style={{ padding: 14, paddingTop: 6 }}>
         {st.planned ? (
-          <Text style={[type.body(13), { color: color.mute, marginTop: 4 }]}>four more years of trail, being planned. they'll show up here once they're written.</Text>
+          <Text style={[type.body(13), { color: color.mute, marginTop: 4 }]}>{t("home.trail.fourMore")}</Text>
         ) : <>
           <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6, marginTop: 8 }}>
             {st.samples.map((x) => (
@@ -99,9 +100,9 @@ function Stop({ st, n, side, status, tint, day, view }: { st: Stage; n: string; 
               </View>
             ))}
           </View>
-          <Text style={[type.eyebrow(10), { marginTop: 10 }]}>by here you'll be able to</Text>
+          <Text style={[type.eyebrow(10), { marginTop: 10 }]}>{t("home.trail.byHere")}</Text>
           <Text style={[type.body(14), { color: color.ink, marginTop: 2 }]}>{st.promise}</Text>
-          {st.key.startsWith("Camp") ? <Text style={[type.body(12), { color: color.mute, marginTop: 8 }]}>{`⛰ ends at a lookout · day ${st.last}`}</Text> : null}
+          {st.key.startsWith("Camp") ? <Text style={[type.body(12), { color: color.mute, marginTop: 8 }]}>{t("home.trail.endsAt", { n: st.last })}</Text> : null}
         </>}
       </View>
     </View>
@@ -113,7 +114,7 @@ function Stop({ st, n, side, status, tint, day, view }: { st: Stage; n: string; 
     </View>
   );
   return (
-    <View style={{ flexDirection: "row", gap: 10 }} accessibilityLabel={`${st.name}, ${st.eyebrow}. ${st.planned ? "Being planned." : `By here you'll be able to ${st.promise}.`}${here ? ` You are here, day ${day}.` : status === "walked" ? " Walked." : ""}`}>
+    <View style={{ flexDirection: "row", gap: 10 }} accessibilityLabel={`${st.name}, ${st.eyebrow}. ${st.planned ? t("home.trail.a11yPlanned") : t("home.trail.a11yPromise", { promise: st.promise })}${here ? t("home.trail.a11yHere", { day }) : status === "walked" ? t("home.trail.a11yWalked") : ""}`}>
       {side === "left" ? <>{node}{card}</> : <>{card}{node}</>}
     </View>
   );
@@ -148,7 +149,7 @@ export function TrailMap({ door, day, walked }: { door: string; day: number; wal
   const [w, setW] = useState(0);
   const ic = icon(door);
   const tint: string = ic.tint || color.ink;
-  const name = door === "SPIRITUAL" ? "your own path" : label(door);
+  const name = door === "SPIRITUAL" ? t("home.trail.ownPath") : doorLabel(door);
   const { stages, lookout, summit, planned } = trailFor(door);
   const statusOf = (s: Stage): Status => (walked <= 0 ? "ahead" : day > s.last ? "walked" : day >= s.first ? "here" : "ahead");
   // bottom (trailhead) is index 0; sides alternate so the trail zig-zags up the page
@@ -165,7 +166,7 @@ export function TrailMap({ door, day, walked }: { door: string; day: number; wal
       const walkedUp = walked > 0 && day >= st.first;
       rows.push(<Switchback key={`${st.key}-sb`} w={w} from={sideOf(i - 1)} to={sideOf(i)} tint={tint} walked={walkedUp} />);
       // the end of year one: a lookout (the summit is only the top of the five-year climb)
-      if (st.first === lookout + 1) rows.push(<Milestone key="lookout" text="the big lookout" sub={`day ${lookout} · year one`} />, <Switchback key="fs-sb" w={w} from={sideOf(i - 1)} to={sideOf(i - 1)} tint={tint} walked={walkedUp} />);
+      if (st.first === lookout + 1) rows.push(<Milestone key="lookout" text={t("home.trail.bigLookout")} sub={t("home.trail.lookoutSub", { n: lookout })} />, <Switchback key="fs-sb" w={w} from={sideOf(i - 1)} to={sideOf(i - 1)} tint={tint} walked={walkedUp} />);
     }
   }
   return (
@@ -179,8 +180,8 @@ export function TrailMap({ door, day, walked }: { door: string; day: number; wal
           <View style={{ width: 18, height: 18, borderRadius: 9, backgroundColor: walked > 0 ? color.ink : color.gold, borderWidth: 2, borderColor: color.ink }} />
         </View>
         <View style={{ flex: 1 }}>
-          <Text style={[type.eyebrow(10)]}>{walked > 0 ? "where you started" : "day one · you start here"}</Text>
-          <Text style={{ fontFamily: font.display[800], fontSize: 20, color: color.ink }}>the trailhead</Text>
+          <Text style={[type.eyebrow(10)]}>{walked > 0 ? t("home.trail.started") : t("home.trail.startHere")}</Text>
+          <Text style={{ fontFamily: font.display[800], fontSize: 20, color: color.ink }}>{t("home.trail.trailhead")}</Text>
         </View>
         {walked > 0 ? null : <Guy pose="hike" h={86} />}
       </View>
@@ -190,10 +191,10 @@ export function TrailMap({ door, day, walked }: { door: string; day: number; wal
 
 /** What every day on the trail holds (true of the lessons in the app today). */
 export function TrailDay() {
-  const parts: [string, string][] = [["a story", "or a teaching"], ["a practice", "a minute or two"], ["a game", "to make it stick"], ["a line", "to carry all day"]];
+  const parts: [string, string][] = [[t("home.trail.story"), t("home.trail.storySub")], [t("home.trail.practiceA"), t("home.trail.practiceSub")], [t("home.trail.game"), t("home.trail.gameSub")], [t("home.trail.line"), t("home.trail.lineSub")]];
   return (
     <View style={{ backgroundColor: color.white, borderRadius: 18, borderWidth: 1.5, borderColor: color.line, padding: 14 }}>
-      <Text style={[type.eyebrow(10)]}>every day on the trail · a few minutes</Text>
+      <Text style={[type.eyebrow(10)]}>{t("home.trail.everyDay")}</Text>
       <View style={{ flexDirection: "row", flexWrap: "wrap", marginTop: 8, rowGap: 10 }}>
         {parts.map(([a, b]) => (
           <View key={a} style={{ width: "50%" }}>
@@ -202,7 +203,7 @@ export function TrailDay() {
           </View>
         ))}
       </View>
-      <Text style={[type.body(12), { color: color.mute, marginTop: 10 }]}>a lantern lights at the end of every week you walk.</Text>
+      <Text style={[type.body(12), { color: color.mute, marginTop: 10 }]}>{t("home.trail.weekLantern")}</Text>
     </View>
   );
 }

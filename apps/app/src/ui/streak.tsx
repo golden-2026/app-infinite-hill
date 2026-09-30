@@ -6,6 +6,7 @@ import { Text, View } from "react-native";
 import Animated, { Easing, useAnimatedStyle, useReducedMotion, useSharedValue, withDelay, withTiming } from "react-native-reanimated";
 import Svg, { Circle, Defs, Mask, Path, Rect } from "react-native-svg";
 import { Sun, color, font, type } from "@/ui";
+import { getLang, t } from "@/i18n";
 
 export const GOLDEN = "#EEFF6A";
 export const MOON = "#8C93B8"; // a soft dusk blue: rest, not loss
@@ -80,11 +81,13 @@ export function WeekRow({ s, today, dark = false, size = 34 }: { s: Streak; toda
   const done = week.filter((w) => w.kind === "lesson").length;
   const rested = week.filter((w) => w.kind === "rest").length;
   const line = dark ? "#ffffff44" : "#00000026";
+  // the day letters: the domain gives English ("Mo" … "Su", Monday first); Spanish uses its own
+  const names = getLang() === "es" ? t("home.week.days").split(" ") : null;
   return (
-    <View accessibilityRole="text" accessibilityLabel={`this week: ${done} ${done === 1 ? "lesson day" : "lesson days"}${rested ? `, ${rested} ${rested === 1 ? "rest day" : "rest days"}` : ""}`} style={{ flexDirection: "row", gap: 6, justifyContent: "center" }}>
-      {week.map((w) => (
+    <View accessibilityRole="text" accessibilityLabel={`${t("home.week.lessons", { count: done })}${rested ? t("home.week.rests", { count: rested }) : ""}`} style={{ flexDirection: "row", gap: 6, justifyContent: "center" }}>
+      {week.map((w, i) => (
         <View key={w.date} testID={`week-${w.kind}`} style={{ alignItems: "center", width: size + 4 }}>
-          <Text style={[type.eyebrow(8), { color: w.date === today ? (dark ? GOLDEN : color.ink) : dark ? "#ffffff88" : color.mute, letterSpacing: 0.6 }]}>{w.label}</Text>
+          <Text style={[type.eyebrow(8), { color: w.date === today ? (dark ? GOLDEN : color.ink) : dark ? "#ffffff88" : color.mute, letterSpacing: 0.6 }]}>{names?.[i] ?? w.label}</Text>
           <View style={{ width: size, height: size, marginTop: 6, alignItems: "center", justifyContent: "center" }}>
             {w.kind === "lesson" ? <Check size={size - 4} />
               : w.kind === "rest" ? <View style={{ width: size - 4, height: size - 4, borderRadius: size, backgroundColor: dark ? "#ffffff14" : "#EEF0F8", alignItems: "center", justifyContent: "center" }}><Moon size={size - 14} /></View>
@@ -101,9 +104,9 @@ export function WeekRow({ s, today, dark = false, size = 34 }: { s: Streak; toda
 /** Banked rest days as moons (at most 2). */
 export function RestBank({ n, max = 2, dark = false }: { n: number; max?: number; dark?: boolean }) {
   return (
-    <View accessibilityRole="text" accessibilityLabel={`${n} of ${max} rest days banked`} style={{ flexDirection: "row", alignItems: "center", gap: 8 }}>
+    <View accessibilityRole="text" accessibilityLabel={t("home.restOf", { n, max })} style={{ flexDirection: "row", alignItems: "center", gap: 8 }}>
       <View style={{ flexDirection: "row", gap: 4 }}>{Array.from({ length: max }, (_, i) => <Moon key={i} size={20} faint={i >= n} />)}</View>
-      <Text style={[type.body(13), { color: dark ? "#ffffffcc" : color.ink }]}>{n === 0 ? "no rest days banked" : `${n} rest ${n === 1 ? "day" : "days"} banked`}</Text>
+      <Text style={[type.body(13), { color: dark ? "#ffffffcc" : color.ink }]}>{n === 0 ? t("home.restNone") : t("home.restBanked", { count: n })}</Text>
     </View>
   );
 }

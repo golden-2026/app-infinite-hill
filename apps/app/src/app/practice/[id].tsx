@@ -1,7 +1,6 @@
 import { useTitle } from "@/lib/title";
 // A practice from the companion: the steps, a gentle timer for the timed ones, the mascot, then "done".
 // Never scored and never earns light (the brand book: prayer, the breath and the sit never count).
-import { label } from "@ih/content";
 import { router, useLocalSearchParams } from "expo-router";
 import { useEffect, useRef, useState } from "react";
 import { Text, View } from "react-native";
@@ -12,7 +11,8 @@ import { bell } from "@/lib/sound";
 import { useStore } from "@/lib/store";
 import { successHaptic } from "@/lib/haptics";
 import { Btn, Guy, Screen, color, font, toast, type } from "@/ui";
-import { KIND_WORD, poseFor } from "@/ui/companion";
+import { kindWord, poseFor } from "@/ui/companion";
+import { doorLabel, t } from "@/i18n";
 
 const TIMED = new Set(["breath", "sit", "rest", "walk", "move"]);
 const mmss = (s: number) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
@@ -20,15 +20,15 @@ const mmss = (s: number) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, 
 export default function PracticeScreen() {
   const { id, view } = useLocalSearchParams<{ id: string; view?: string }>();
   const p = practiceById(typeof id === "string" ? id : null);
-  useTitle(p ? p.title : "practice");
+  useTitle(p ? p.title : t("companion.practice.title"));
   const { today, door, saved } = useStore();
   const [left, setLeft] = useState<number | null>(null); // seconds left while the timer runs
   const timer = useRef<ReturnType<typeof setInterval> | null>(null);
   useEffect(() => () => { if (timer.current) clearInterval(timer.current); }, []);
   if (!p) {
     return (
-      <Screen back="today" title="not found." contentStyle={{ gap: 12 }}>
-        <Text style={type.body()}>that practice isn't here anymore.</Text>
+      <Screen back="today" title={t("companion.practice.notFound")} contentStyle={{ gap: 12 }}>
+        <Text style={type.body()}>{t("companion.practice.gone")}</Text>
       </Screen>
     );
   }
@@ -48,7 +48,7 @@ export default function PracticeScreen() {
     if (timer.current) clearInterval(timer.current);
     markDone(p.id, today);
     successHaptic();
-    toast("done. kept on your phone.");
+    toast(t("companion.practice.doneToast"));
     if (router.canGoBack()) router.back(); else router.replace("/today");
   };
   const running = left !== null && left > 0;
@@ -56,16 +56,16 @@ export default function PracticeScreen() {
     <Screen scroll back="today" title={`${p.title}.`} contentStyle={{ gap: 14 }}
       footer={
         <View style={{ gap: 8 }}>
-          {timed && left === null ? <Btn kind="gold" onPress={start} label={`start a ${p.minutes} minute timer`}>{`start · ${p.minutes} min`}</Btn> : null}
-          <Btn kind={timed && left === null ? "ghost" : "ink"} onPress={finish}>{running ? "done early" : "done"}</Btn>
+          {timed && left === null ? <Btn kind="gold" onPress={start} label={t("companion.practice.timerA11y", { n: p.minutes })}>{t("companion.practice.start", { n: p.minutes })}</Btn> : null}
+          <Btn kind={timed && left === null ? "ghost" : "ink"} onPress={finish}>{running ? t("companion.practice.doneEarly") : t("common.done")}</Btn>
         </View>
       }>
-      <Text style={[type.eyebrow(8)]}>{p.minutes} min · {KIND_WORD[p.kind]}{p.door ? ` · ${label(p.door)}` : " · every door"}</Text>
+      <Text style={[type.eyebrow(8)]}>{t("companion.practice.eyebrow", { n: p.minutes, kind: kindWord(p.kind) })}{p.door ? ` · ${doorLabel(p.door)}` : t("companion.practice.everyDoor")}</Text>
       <View style={{ alignItems: "center", paddingVertical: 4 }}>
         <Guy pose={poseFor(p)} h={140} />
         {left !== null ? (
-          <Text accessibilityLiveRegion="polite" accessibilityLabel={left > 0 ? `${Math.ceil(left / 60)} minutes left` : "time's up"} style={{ fontFamily: font.display[800], fontSize: 34, color: color.ink, marginTop: 6 }}>
-            {left > 0 ? mmss(left) : "that's it."}
+          <Text accessibilityLiveRegion="polite" accessibilityLabel={left > 0 ? t("companion.practice.leftA11y", { n: Math.ceil(left / 60) }) : t("companion.practice.timesUp")} style={{ fontFamily: font.display[800], fontSize: 34, color: color.ink, marginTop: 6 }}>
+            {left > 0 ? mmss(left) : t("companion.practice.thatsIt")}
           </Text>
         ) : null}
       </View>
@@ -79,8 +79,8 @@ export default function PracticeScreen() {
           </View>
         ))}
       </View>
-      <Text style={[type.body(13), { color: color.mute }]}>why: {p.why}</Text>
-      <Text style={[type.caption(11)]}>nothing here is scored.</Text>
+      <Text style={[type.body(13), { color: color.mute }]}>{t("companion.practice.why", { why: p.why })}</Text>
+      <Text style={[type.caption(11)]}>{t("companion.practice.notScored")}</Text>
     </Screen>
   );
 }
@@ -95,13 +95,13 @@ function HowItsDone({ p }: { p: Practice }) {
     </View>
   );
   return (
-    <Screen scroll back="today" title={`${p.title}.`} contentStyle={{ gap: 16 }} footer={<Btn kind="ghost" onPress={leave}>back</Btn>}>
-      <Text testID="how-its-done" style={[type.eyebrow(8)]}>how it's done{p.door ? ` · ${label(p.door)}` : ""}</Text>
+    <Screen scroll back="today" title={`${p.title}.`} contentStyle={{ gap: 16 }} footer={<Btn kind="ghost" onPress={leave}>{t("common.back")}</Btn>}>
+      <Text testID="how-its-done" style={[type.eyebrow(8)]}>{t("companion.practice.howItsDone")}{p.door ? ` · ${doorLabel(p.door)}` : ""}</Text>
       <View style={{ alignItems: "center", paddingVertical: 4 }}><Guy pose="read" h={120} /></View>
-      <Part k="what it is">{p.about || p.why}</Part>
-      <Part k="when people do it">{whenWords(p)}</Part>
-      {p.about ? <Part k="what it means to them">{p.why}</Part> : null}
-      <Text style={[type.caption(12)]}>nothing to do here. it's here so you know how it's done.</Text>
+      <Part k={t("companion.practice.whatItIs")}>{p.about || p.why}</Part>
+      <Part k={t("companion.practice.whenPeople")}>{whenWords(p)}</Part>
+      {p.about ? <Part k={t("companion.practice.whatItMeans")}>{p.why}</Part> : null}
+      <Text style={[type.caption(12)]}>{t("companion.practice.nothingToDo")}</Text>
     </Screen>
   );
 }

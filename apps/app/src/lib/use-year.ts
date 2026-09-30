@@ -7,6 +7,7 @@ import { useSeasons } from "./quests";
 import { useStore } from "./store";
 import { readWalkers } from "./walkers";
 import { YEAR_DAYS, yearRecap } from "./year";
+import { getLang } from "@/i18n/core";
 
 const addDays = (date: string, n: number) => { const d = new Date(`${date}T12:00:00Z`); d.setUTCDate(d.getUTCDate() + n); return d.toISOString().slice(0, 10); };
 // A lesson's real word, for "words learned": camp one's words (the strand words), and after that a word only where
@@ -19,7 +20,8 @@ export function realWord(door: string, day: number): string | null {
 }
 
 const MONTHS = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"];
-export const monthYear = (d: string) => `${MONTHS[+d.slice(5, 7) - 1]} ${d.slice(0, 4)}`;
+const MESES = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic"];
+export const monthYear = (d: string) => `${(getLang() === "es" ? MESES : MONTHS)[+d.slice(5, 7) - 1]} ${d.slice(0, 4)}`;
 
 export function useYear() {
   const { saved, today } = useStore();

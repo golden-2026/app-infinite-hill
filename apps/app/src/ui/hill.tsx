@@ -15,6 +15,7 @@ import { art } from "@ih/brand";
 import { lookoutArt, SUMMIT_ART } from "@/content/journeys";
 import { FADE } from "@/ui/fade";
 import { color, font } from "@/ui";
+import { campLabel, campName as campNameOf, isEs, t } from "@/i18n";
 
 const W = 390;
 const WEEK = 7;
@@ -161,8 +162,10 @@ export function HillScene({ hour, done, total, doneToday, onStart, onReplay, fir
   const signMin = atLookout ? noteY + 10 : ty - 28;
   let signY = Math.max(signMin, ny - step * 2 - 20);
   if (signY < flagBot && signY + SIGN_H > flagTop) signY = flagTop - SIGN_H >= signMin ? flagTop - SIGN_H : flagBot + 6;
-  const campName = here.name.toLowerCase();
-  const campTag = `${here.camp} · week ${weekNo} of ${weeks}`.toUpperCase();
+  const campName = (isEs() ? campNameOf(here.camp, here.name) : here.name).toLowerCase();
+  const campNo = campLabel(here.camp);
+  // the sign is narrow: Spanish shortens "campamento" to "camp." here only
+  const campTag = t("home.hill.campTag", { camp: isEs() ? campNo.replace(/^campamento/i, "camp.") : campNo, w: weekNo, of: weeks }).toUpperCase();
 
   return (
     <View onLayout={(e) => setWidth(e.nativeEvent.layout.width)} style={{ width: "100%", aspectRatio: W / H }}>
@@ -185,14 +188,14 @@ export function HillScene({ hour, done, total, doneToday, onStart, onReplay, fir
             <Ellipse cx={x + 5} cy={y - 5} rx={2.6} ry={4.4} fill="#EEFF6A" opacity={0.9} transform={`rotate(-18 ${x + 5} ${y - 5})`} />
           </G>
         ); })}
-        <Pill x={14} y={H - 58} txt={first === 0 ? "▲ THE TRAILHEAD · YOUR FOOTPRINTS STAY" : `▲ DAYS ${firstLesson}–${firstLesson + first - 1} WALKED · FOOTPRINTS STAY`} anchor="start" night={night} />
+        <Pill x={14} y={H - 58} txt={first === 0 ? t("home.hill.trailhead") : t("home.hill.walkedDays", { a: String(firstLesson), b: String(firstLesson + first - 1) })} anchor="start" night={night} />
         {/* the lookout is named for the camp it ends, the same as on the done screen ("the lookout · camp 1 · first steps") */}
         <Pill x={W / 2} y={noteY} night={night} anchor="middle"
-          txt={atLookout ? (toSummit ? "THE SUMMIT · FIVE YEARS OF TRAIL" : `THE LOOKOUT · ${here.camp} · ${here.name}`.toUpperCase()) : `THE TRAIL GOES ON · WEEK ${Math.floor(last / WEEK) + 2} AHEAD`} />
+          txt={atLookout ? (toSummit ? t("home.hill.summit") : t("home.hill.lookout", { camp: campNo, name: isEs() ? campNameOf(here.camp, here.name) : here.name }).toUpperCase()) : t("home.hill.goesOn", { n: Math.floor(last / WEEK) + 2 })} />
       </Svg>
 
       {/* the wooden trail sign: where you are on the hill */}
-      <View pointerEvents="none" accessible accessibilityLabel={`${here.camp}, ${campName}, week ${weekNo} of ${weeks}`}
+      <View pointerEvents="none" accessible accessibilityLabel={t("home.hill.signA11y", { camp: campNo, name: campName, w: weekNo, of: weeks })}
         style={{ position: "absolute", top: py(signY), ...(signRight ? { right: px(10) } : { left: px(10) }), alignItems: "center", zIndex: 4 }}>
         <View style={{ backgroundColor: "#A86F3A", borderWidth: 2, borderColor: color.ink, borderRadius: 6, paddingVertical: 5, paddingHorizontal: 9, maxWidth: 138, alignItems: "center", shadowColor: "#000", shadowOpacity: 0.3, shadowRadius: 0, shadowOffset: { width: 0, height: 3 } }}>
           <View style={{ position: "absolute", left: 3, right: 3, top: 3, height: 1.5, backgroundColor: "#C98F55", borderRadius: 1 }} />
@@ -234,10 +237,10 @@ export function HillScene({ hour, done, total, doneToday, onStart, onReplay, fir
         const onPress = () => {
           if (s === "now") onStart();
           else if (s === "done") onReplay(lesson);
-          else showTip(i, s === "tomorrow" ? (night || hour >= 19 ? "opens tomorrow · see you then" : "opens tomorrow · see you at sundown") : `unlocks after day ${lesson - 1}`);
+          else showTip(i, s === "tomorrow" ? (night || hour >= 19 ? t("home.hill.tomorrowNight") : t("home.hill.tomorrowDay")) : t("home.hill.unlocksAfter", { n: String(lesson - 1) }));
         };
-        const weekEnd = lantern ? `, the end of week ${Math.floor(i / WEEK) + 1}${s === "done" ? ", lantern lit" : ""}` : "";
-        const a11y = (s === "now" ? `Start today: ${label}` : s === "done" ? `Day ${lesson}, done. Sit it again` : s === "tomorrow" ? `Day ${lesson} opens tomorrow` : `Day ${lesson}, locked`) + weekEnd;
+        const weekEnd = lantern ? `${t("home.hill.weekEnd", { n: Math.floor(i / WEEK) + 1 })}${s === "done" ? t("home.hill.lanternLit") : ""}` : "";
+        const a11y = (s === "now" ? t("home.hill.startA11y", { label }) : s === "done" ? t("home.hill.doneA11y", { n: String(lesson) }) : s === "tomorrow" ? t("home.hill.tomorrowA11y", { n: String(lesson) }) : t("home.hill.lockedA11y", { n: String(lesson) })) + weekEnd;
         const isPop = s === "done" && i === done - 1;
         return (
           <View key={`n${i}`} style={{ position: "absolute", left: px(x), top: py(y), width: 0, height: 0, alignItems: "center", justifyContent: "center", zIndex: s === "now" ? 5 : 3 }}>
@@ -273,8 +276,8 @@ export function HillScene({ hour, done, total, doneToday, onStart, onReplay, fir
               <Animated.View pointerEvents="box-none" style={[{ position: "absolute", top: -21, flexDirection: walkerRight ? "row" : "row-reverse", alignItems: "center", ...(walkerRight ? { right: s === "now" ? 38 : 32 } : { left: s === "now" ? 38 : 32 }) }, s === "now" ? bobStyle : null]}>
                 <Pressable onPress={s === "now" ? onStart : () => onReplay(lesson)} accessibilityElementsHidden importantForAccessibility="no-hide-descendants"
                   style={{ backgroundColor: color.ink, borderRadius: 8, borderWidth: 2, borderColor: color.gold, paddingVertical: 5, paddingHorizontal: 10, alignItems: "center" }}>
-                  <Text numberOfLines={1} style={{ fontFamily: font.text[700], fontSize: 8, letterSpacing: 1.2, color: "#ffffffb3" }}>{s === "now" ? `DAY ${lesson}` : "TODAY"}</Text>
-                  <Text numberOfLines={1} style={{ fontFamily: font.display[800], fontSize: 13, color: color.gold }}>{s === "now" ? "start" : "walked"}</Text>
+                  <Text numberOfLines={1} style={{ fontFamily: font.text[700], fontSize: 8, letterSpacing: 1.2, color: "#ffffffb3" }}>{s === "now" ? t("home.hill.flagDay", { n: String(lesson) }) : t("home.hill.flagToday")}</Text>
+                  <Text numberOfLines={1} style={{ fontFamily: font.display[800], fontSize: 13, color: color.gold }}>{s === "now" ? t("home.hill.flagStart") : t("home.hill.flagWalked")}</Text>
                 </Pressable>
                 <Svg width={10} height={16} viewBox="0 0 10 16" style={{ marginLeft: walkerRight ? -1 : 0, marginRight: walkerRight ? 0 : -1 }}><Path d={walkerRight ? "M0 1 L9 8 L0 15 Z" : "M10 1 L1 8 L10 15 Z"} fill={color.gold} stroke={color.ink} strokeWidth={1.5} strokeLinejoin="round" /></Svg>
               </Animated.View>

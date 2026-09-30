@@ -7,6 +7,7 @@ import { color, radius } from "@ih/brand";
 import { giftLink } from "@/lib/walkers";
 import { friendsState, makeInvite, setNick } from "@/lib/friends";
 import { Btn, Link, font, toast, type } from "@/ui";
+import { t } from "@/i18n";
 
 async function copy(text: string): Promise<boolean> {
   const clip = (globalThis as any).navigator?.clipboard;
@@ -21,11 +22,11 @@ async function send(url: string, text: string): Promise<boolean> {
   }
   const nav = (globalThis as any).navigator;
   if (nav?.share) {
-    try { await nav.share({ title: "a lantern for you", text, url }); return true; }
+    try { await nav.share({ title: t("session.send.shareTitle"), text, url }); return true; }
     catch (e: any) { if (e?.name === "AbortError") return false; } // they closed the sheet: nothing to do
   }
-  if (await copy(url)) { toast("link copied"); return true; }
-  toast("couldn't copy the link — try again");
+  if (await copy(url)) { toast(t("session.linkCopied")); return true; }
+  toast(t("session.send.copyFail"));
   return false;
 }
 
@@ -40,28 +41,28 @@ export function ShareLantern({ line, door, day, n, to }: { line: string; door: s
   useEffect(() => { if (open && !i) makeInvite().then(setI).catch(() => {}); }, [open]); // eslint-disable-line react-hooks/exhaustive-deps
   const go = async () => {
     if (name.trim() && !friendsState().nick) setNick(name);
-    const ok = await send(giftLink({ from: name, line, door, d: day, n, i }), "i lit my lantern today. here's the line inside.");
+    const ok = await send(giftLink({ from: name, line, door, d: day, n, i }), t("session.send.text"));
     if (ok) { setOpen(false); setI(null); } // single use: the next lantern gets a new invite
   };
   return (
     <>
-      <Btn kind="light" onPress={() => setOpen(true)} testID="send-lantern">{to ? `send it to ${to}` : "send it to someone"}</Btn>
+      <Btn kind="light" onPress={() => setOpen(true)} testID="send-lantern">{to ? t("session.send.to", { to }) : t("session.send.someone")}</Btn>
       <Modal visible={open} transparent animationType="fade" onRequestClose={() => setOpen(false)}>
         <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : undefined} style={{ flex: 1, justifyContent: "flex-end", alignItems: "center" }}>
-          <Pressable style={[StyleSheet.absoluteFill, { backgroundColor: color.scrim }]} accessibilityLabel="close" onPress={() => setOpen(false)} />
+          <Pressable style={[StyleSheet.absoluteFill, { backgroundColor: color.scrim }]} accessibilityLabel={t("session.close")} onPress={() => setOpen(false)} />
           <View style={[s.sheet, { paddingBottom: Math.max(insets.bottom, 16) + 8 }]} accessibilityViewIsModal aria-modal>
             <View style={s.grab} />
-            <Text style={[type.eyebrow(), { textAlign: "center" }]}>{to ? `light one for ${to}` : "light one for someone"}</Text>
-            <Text accessibilityRole="header" style={[type.h1(24), { textAlign: "center" }]}>{to ? `send your lantern to ${to}.` : "send your lantern."}</Text>
-            <Text style={[type.body(14), { color: color.mute, textAlign: "center" }]}>they'll see the line inside and your day count. add your first name if you'd like them to know it's you.</Text>
+            <Text style={[type.eyebrow(), { textAlign: "center" }]}>{to ? t("session.send.eyebrowTo", { to }) : t("session.send.eyebrow")}</Text>
+            <Text accessibilityRole="header" style={[type.h1(24), { textAlign: "center" }]}>{to ? t("session.send.headTo", { to }) : t("session.send.head")}</Text>
+            <Text style={[type.body(14), { color: color.mute, textAlign: "center" }]}>{t("session.send.body")}</Text>
             <TextInput
-              testID="send-name" value={name} onChangeText={(t) => setName(t.slice(0, 24))} placeholder="your first name (optional)" placeholderTextColor={color.mute}
-              autoComplete="off" autoCorrect={false} autoCapitalize="words" maxLength={24} accessibilityLabel="Your first name, optional" returnKeyType="send" onSubmitEditing={go}
+              testID="send-name" value={name} onChangeText={(v) => setName(v.slice(0, 24))} placeholder={t("session.send.placeholder")} placeholderTextColor={color.mute}
+              autoComplete="off" autoCorrect={false} autoCapitalize="words" maxLength={24} accessibilityLabel={t("session.send.nameA11y")} returnKeyType="send" onSubmitEditing={go}
               style={{ borderWidth: 1.5, borderColor: color.line, borderRadius: 999, paddingVertical: 13, paddingHorizontal: 16, fontFamily: font.text[400], fontSize: 16, backgroundColor: "#fff", color: color.ink }}
             />
-            <Btn kind="ink" onPress={go} testID="send-link">send the link</Btn>
-            <View style={{ alignItems: "center" }}><Link onPress={() => setOpen(false)} style={{ color: color.mute }}>not now</Link></View>
-            <Text style={[type.body(11), { color: color.mute, textAlign: "center" }]}>no account needed. only what's on this card goes in the link, plus an invite: if they walk with you, you'll each see the other's nickname, streak and whether today's done.</Text>
+            <Btn kind="ink" onPress={go} testID="send-link">{t("session.send.go")}</Btn>
+            <View style={{ alignItems: "center" }}><Link onPress={() => setOpen(false)} style={{ color: color.mute }}>{t("session.notNow")}</Link></View>
+            <Text style={[type.body(11), { color: color.mute, textAlign: "center" }]}>{t("session.send.foot")}</Text>
           </View>
         </KeyboardAvoidingView>
       </Modal>

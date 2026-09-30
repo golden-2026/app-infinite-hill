@@ -1,10 +1,10 @@
 // The companion on Today: one short note, a one-tap "how are you, today?", today's practice, and today's page.
 // Plus the gentle "real help" card and the weekly reflection card. Everything here is kept on the phone.
-import { label } from "@ih/content";
 import { router } from "expo-router";
-import { Linking, Pressable, StyleSheet, Text, View } from "react-native";
+import { Linking, Platform, Pressable, StyleSheet, Text, View } from "react-native";
+import { doorLabel, isEs, t, type Key } from "@/i18n";
 import type { Practice } from "@/content/practices";
-import { checkIn, clearCheckIn, closeHelp, markReflected, MOODS, useMemory } from "@/lib/companion/memory";
+import { checkIn, clearCheckIn, closeHelp, markReflected, moodLabel, MOODS, useMemory } from "@/lib/companion/memory";
 import type { Shaped } from "@/lib/companion/shape";
 import { useStore } from "@/lib/store";
 import { Guy, color, font, type } from "@/ui";
@@ -17,7 +17,15 @@ export function poseFor(p: Practice): string {
   if (p.kind === "prayer") return p.door === "HINDUISM" ? "namaste" : "sitrock";
   return ({ breath: "meditate", sit: "meditate", walk: "walk", write: "read", move: "stretch", serve: "thumbs", give: "thumbs" } as Record<string, string>)[p.kind] || "meditate";
 }
-export const KIND_WORD: Record<string, string> = { breath: "breath", sit: "sit", walk: "walk", move: "move", write: "write", serve: "a kind act", give: "give", prayer: "prayer", rest: "rest" };
+/** A practice's kind in a word ("breath" / "respiración"). */
+export const kindWord = (kind: string) => t(`companion.kind.${kind}` as Key);
+
+/** 988 by text. In Spanish the message starts with AYUDA, the word that reaches the Lifeline's Spanish-speaking counselors. */
+function textHelp() {
+  if (!isEs()) return "sms:988";
+  const ios = Platform.OS === "ios" || (Platform.OS === "web" && typeof navigator !== "undefined" && /iPhone|iPad|iPod/.test(navigator.userAgent || ""));
+  return `sms:988${ios ? "&" : "?"}body=AYUDA`;
+}
 
 export function CompanionCard({ day }: { day: Shaped }) {
   const { today } = useStore();
@@ -27,43 +35,43 @@ export function CompanionCard({ day }: { day: Shaped }) {
   // "how it's done": the practice screen opens read-only (no timer, no start, no "done")
   const open = () => router.push({ pathname: "/practice/[id]", params: day.howItsDone ? { id: p.id, view: "learn" } : { id: p.id } });
   const eyebrow = day.howItsDone
-    ? `how it's done · ${p.door ? label(p.door) : KIND_WORD[p.kind]}${day.fromNextDoor ? " · from next door" : ""}`
-    : `${day.fromNextDoor ? "a taste from next door" : m.done.some((d) => d.date === today) ? "done one today · another?" : day.learn ? "if you'd like" : "today's practice"} · ${p.minutes} min · ${KIND_WORD[p.kind]}`;
+    ? `${t("companion.card.howItsDone", { what: p.door ? doorLabel(p.door) : kindWord(p.kind) })}${day.fromNextDoor ? t("companion.card.fromNextDoor") : ""}`
+    : t("companion.card.minKind", { lead: day.fromNextDoor ? t("companion.card.tasteNextDoor") : m.done.some((d) => d.date === today) ? t("companion.card.doneAnother") : day.learn ? t("companion.card.ifYoudLike") : t("companion.card.todaysPractice"), n: p.minutes, kind: kindWord(p.kind) });
   return (
     <View style={s.card} testID="companion-card">
-      <Text style={[type.eyebrow(8), { color: color.ink }]}>your companion{day.quiet ? " · a quiet day" : ""}</Text>
+      <Text style={[type.eyebrow(8), { color: color.ink }]}>{t("companion.card.eyebrow")}{day.quiet ? t("companion.card.quietDay") : ""}</Text>
       <Text style={s.note} accessibilityLiveRegion="polite">{day.note}</Text>
       {day.reachOut ? (
         <View style={{ marginTop: 6, flexDirection: "row", alignItems: "center", gap: 8 }} testID="reach-out">
-          <Text style={[type.body(13), { flex: 1, color: color.ink }]}>a few hard days in a row. want to talk to someone? a friend, family, someone you trust.</Text>
-          <Pressable accessibilityRole="button" accessibilityLabel="close for today" onPress={() => closeHelp(today)} hitSlop={8} style={{ minHeight: 36, justifyContent: "center" }}>
-            <Text style={[type.eyebrow(8), { color: color.mute }]}>not now</Text>
+          <Text style={[type.body(13), { flex: 1, color: color.ink }]}>{t("companion.card.reachOut")}</Text>
+          <Pressable accessibilityRole="button" accessibilityLabel={t("companion.card.closeToday")} onPress={() => closeHelp(today)} hitSlop={8} style={{ minHeight: 36, justifyContent: "center" }}>
+            <Text style={[type.eyebrow(8), { color: color.mute }]}>{t("common.notNow")}</Text>
           </Pressable>
         </View>
       ) : null}
 
       {asked === null ? (
         <View style={{ marginTop: 10 }}>
-          <Text style={[type.body(13), { color: color.mute }]}>how are you, today?</Text>
-          <View style={s.moods} accessibilityRole="radiogroup" accessibilityLabel="how are you, today?">
+          <Text style={[type.body(13), { color: color.mute }]}>{t("companion.card.howAreYou")}</Text>
+          <View style={s.moods} accessibilityRole="radiogroup" accessibilityLabel={t("companion.card.howAreYou")}>
             {MOODS.map((x) => (
-              <Pressable key={x.id} accessibilityRole="radio" accessibilityState={{ checked: false }} accessibilityLabel={x.label} onPress={() => checkIn(today, x.id)}
+              <Pressable key={x.id} accessibilityRole="radio" accessibilityState={{ checked: false }} accessibilityLabel={moodLabel(x.id)} onPress={() => checkIn(today, x.id)}
                 style={({ pressed }) => [s.mood, pressed && { backgroundColor: "#FFFBE0" }]}>
-                <Text style={s.moodText}>{x.label}</Text>
+                <Text style={s.moodText}>{moodLabel(x.id)}</Text>
               </Pressable>
             ))}
-            <Pressable accessibilityRole="button" accessibilityLabel="skip" onPress={() => checkIn(today, "skip")} hitSlop={6} style={{ justifyContent: "center", paddingHorizontal: 6, minHeight: 36 }}>
-              <Text style={[type.eyebrow(8), { color: color.mute }]}>skip</Text>
+            <Pressable accessibilityRole="button" accessibilityLabel={t("companion.card.skip")} onPress={() => checkIn(today, "skip")} hitSlop={6} style={{ justifyContent: "center", paddingHorizontal: 6, minHeight: 36 }}>
+              <Text style={[type.eyebrow(8), { color: color.mute }]}>{t("companion.card.skip")}</Text>
             </Pressable>
           </View>
         </View>
       ) : asked !== "skip" ? (
-        <Pressable accessibilityRole="button" accessibilityLabel={`you said ${asked}. change`} onPress={() => clearCheckIn(today)} hitSlop={6} style={{ marginTop: 6, alignSelf: "flex-start" }}>
-          <Text style={[type.caption(12)]}>you said: {asked} · <Text style={{ textDecorationLine: "underline" }}>change</Text></Text>
+        <Pressable accessibilityRole="button" accessibilityLabel={t("companion.card.youSaidA11y", { mood: moodLabel(asked) })} onPress={() => clearCheckIn(today)} hitSlop={6} style={{ marginTop: 6, alignSelf: "flex-start" }}>
+          <Text style={[type.caption(12)]}>{t("companion.card.youSaid", { mood: moodLabel(asked) })}<Text style={{ textDecorationLine: "underline" }}>{t("common.change")}</Text></Text>
         </Pressable>
       ) : null}
 
-      <Pressable testID="companion-practice" accessibilityRole="button" accessibilityLabel={day.howItsDone ? `how it's done: ${p.title}` : `${day.learn ? "something to try, if you'd like" : "today's practice"}: ${p.title}, about ${p.minutes} ${p.minutes === 1 ? "minute" : "minutes"}`} onPress={open}
+      <Pressable testID="companion-practice" accessibilityRole="button" accessibilityLabel={day.howItsDone ? t("companion.card.practiceHowA11y", { title: p.title }) : t("companion.card.practiceA11y", { lead: day.learn ? t("companion.card.somethingToTry") : t("companion.card.todaysPractice"), title: p.title, about: t("companion.card.aboutMinutes", { count: p.minutes }) })} onPress={open}
         style={({ pressed }) => [s.practice, pressed && { opacity: 0.85 }]}>
         <Guy pose={day.howItsDone ? "read" : poseFor(p)} h={58} />
         <View style={{ flex: 1 }}>
@@ -73,8 +81,8 @@ export function CompanionCard({ day }: { day: Shaped }) {
         <Text style={{ color: color.gold, fontSize: 20 }}>›</Text>
       </Pressable>
 
-      <Pressable accessibilityRole="link" accessibilityLabel={`today's page: ${day.prompt}`} onPress={() => router.push("/journal")} style={{ marginTop: 10, minHeight: 36, justifyContent: "center" }}>
-        <Text style={[type.caption(12)]}>today's page · <Text style={{ color: color.ink }}>{day.prompt}</Text> ›</Text>
+      <Pressable accessibilityRole="link" accessibilityLabel={t("companion.card.pageA11y", { prompt: day.prompt })} onPress={() => router.push("/journal")} style={{ marginTop: 10, minHeight: 36, justifyContent: "center" }}>
+        <Text style={[type.caption(12)]}>{t("companion.card.page")}<Text style={{ color: color.ink }}>{day.prompt}</Text> ›</Text>
       </Pressable>
     </View>
   );
@@ -88,19 +96,19 @@ export function HelpCard({ onClose }: { onClose?: () => void }) {
       <View style={{ flexDirection: "row", gap: 12, alignItems: "center" }}>
         <Guy pose="lantern" h={64} />
         <View style={{ flex: 1 }}>
-          <Text style={{ fontFamily: font.display[800], fontSize: 17, color: color.ink }}>you don't have to carry this alone.</Text>
-          <Text style={[type.body(13), { marginTop: 4 }]}>if you're in the US, you can call or text 988, the Suicide & Crisis Lifeline, any hour. anywhere else, call your local emergency number. or tell someone you trust, tonight.</Text>
+          <Text style={{ fontFamily: font.display[800], fontSize: 17, color: color.ink }}>{t("companion.help.title")}</Text>
+          <Text style={[type.body(13), { marginTop: 4 }]}>{t("companion.help.body")}</Text>
         </View>
       </View>
       <View style={{ flexDirection: "row", gap: 8, marginTop: 12 }}>
-        <Pressable accessibilityRole="button" accessibilityLabel="call 988" onPress={() => Linking.openURL("tel:988").catch(() => {})} style={[s.yn, { backgroundColor: color.ink }]}>
-          <Text style={[s.ynText, { color: color.gold }]}>call 988</Text>
+        <Pressable accessibilityRole="button" accessibilityLabel={t("companion.help.call")} onPress={() => Linking.openURL("tel:988").catch(() => {})} style={[s.yn, { backgroundColor: color.ink }]}>
+          <Text style={[s.ynText, { color: color.gold }]}>{t("companion.help.call")}</Text>
         </Pressable>
-        <Pressable accessibilityRole="button" accessibilityLabel="text 988" onPress={() => Linking.openURL("sms:988").catch(() => {})} style={s.yn}>
-          <Text style={s.ynText}>text 988</Text>
+        <Pressable accessibilityRole="button" accessibilityLabel={t("companion.help.text")} onPress={() => Linking.openURL(textHelp()).catch(() => {})} style={s.yn}>
+          <Text style={s.ynText}>{t("companion.help.text")}</Text>
         </Pressable>
-        <Pressable accessibilityRole="button" accessibilityLabel="close for today" onPress={() => { closeHelp(today); onClose?.(); }} style={s.yn}>
-          <Text style={s.ynText}>not now</Text>
+        <Pressable accessibilityRole="button" accessibilityLabel={t("companion.card.closeToday")} onPress={() => { closeHelp(today); onClose?.(); }} style={s.yn}>
+          <Text style={s.ynText}>{t("common.notNow")}</Text>
         </Pressable>
       </View>
     </View>
@@ -116,15 +124,15 @@ export function ReflectCard() {
   const open = () => { markReflected(week); router.push("/reflect"); };
   return (
     <View style={[s.card, { flexDirection: "row", alignItems: "center", gap: 12 }]}>
-      <Pressable accessibilityRole="button" accessibilityLabel="your week, looked back on" onPress={open} style={({ pressed }) => ({ flex: 1, flexDirection: "row", alignItems: "center", gap: 12, opacity: pressed ? 0.8 : 1 })}>
+      <Pressable accessibilityRole="button" accessibilityLabel={t("companion.week.a11y")} onPress={open} style={({ pressed }) => ({ flex: 1, flexDirection: "row", alignItems: "center", gap: 12, opacity: pressed ? 0.8 : 1 })}>
         <Guy pose="sitrock" h={60} />
         <View style={{ flex: 1 }}>
-          <Text style={[type.eyebrow(8), { color: color.ink }]}>{week === 1 ? "your first week" : `week ${week}`}</Text>
-          <Text style={{ fontFamily: font.display[800], fontSize: 16, color: color.ink, marginTop: 3 }}>a look back at your week.</Text>
-          <Text style={[type.body(12), { color: color.mute, marginTop: 2 }]}>no scores. just what happened.</Text>
+          <Text style={[type.eyebrow(8), { color: color.ink }]}>{week === 1 ? t("companion.week.first") : t("companion.week.n", { n: week })}</Text>
+          <Text style={{ fontFamily: font.display[800], fontSize: 16, color: color.ink, marginTop: 3 }}>{t("companion.week.title")}</Text>
+          <Text style={[type.body(12), { color: color.mute, marginTop: 2 }]}>{t("companion.week.sub")}</Text>
         </View>
       </Pressable>
-      <Pressable accessibilityRole="button" accessibilityLabel="Dismiss" onPress={() => markReflected(week)} hitSlop={10}><Text style={type.eyebrow(12)}>✕</Text></Pressable>
+      <Pressable accessibilityRole="button" accessibilityLabel={t("companion.week.dismiss")} onPress={() => markReflected(week)} hitSlop={10}><Text style={type.eyebrow(12)}>✕</Text></Pressable>
     </View>
   );
 }

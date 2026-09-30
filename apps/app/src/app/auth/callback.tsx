@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { View } from "react-native";
 import { useAuth } from "@/lib/auth";
 import { accountsOn } from "@/lib/supabase";
+import { t } from "@/i18n";
 import { Body, Screen, Sun } from "@/ui";
 
 export default function AuthCallback() {
@@ -14,8 +15,8 @@ export default function AuthCallback() {
     if (!ready) return;
     let next = "/today";
     try { next = sessionStorage.getItem("ih:after-auth") || next; sessionStorage.removeItem("ih:after-auth"); } catch {}
-    const t = setTimeout(() => router.replace((session ? next : "/sign-in") as any), session ? 300 : 4000);
-    return () => clearTimeout(t);
+    const timer = setTimeout(() => router.replace((session ? next : "/sign-in") as any), session ? 300 : 4000);
+    return () => clearTimeout(timer);
   }, [ready, session]);
-  return <Screen><View style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: 14 }}><Sun size={80} mood="spin" /><Body>{session ? "you're in." : "signing you in…"}</Body></View></Screen>;
+  return <Screen><View style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: 14 }}><Sun size={80} mood="spin" /><Body>{session ? t("onboarding.signIn.youreIn") : t("onboarding.callback.signingIn")}</Body></View></Screen>;
 }

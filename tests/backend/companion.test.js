@@ -264,3 +264,52 @@ test("the Netlify function answers status through the adapter", async () => {
     restore();
   }
 });
+
+test("lang: en keeps the prompt as it was, es answers in Spanish, anything else is refused", async () => {
+  process.env.ANTHROPIC_API_KEY = "test-server-key";
+  const capture = {};
+  try {
+    globalThis.fetch = provider({ text: "hola.", remember: [] }, capture);
+    await call({ kind: "chat", body: chatBody() });
+    const plain = capture.body.system;
+    await call({ kind: "chat", body: chatBody({ profile: { ...profile, lang: "en" } }) });
+    assert.equal(capture.body.system, plain);
+    assert.match(plain, /all lowercase, American spelling/);
+    assert.doesNotMatch(plain, /Spanish/);
+
+    await call({ kind: "chat", body: chatBody({ profile: { ...profile, door: "CATHOLIC", lang: "es" }, context: { ...context, door: "CATHOLIC" } }) });
+    assert.match(capture.body.system, /Reply in natural, warm Latin American Spanish\./);
+    assert.match(capture.body.system, /Torres Amat/);
+    assert.match(capture.body.system, /Keep scripture citations/);
+    assert.doesNotMatch(capture.body.system, /American spelling/);
+
+    globalThis.fetch = provider({ practiceId: "breath-4", quiet: false, note: "respira." }, capture);
+    const shaped = await call({ kind: "shape", body: shapeBody({ profile: { ...profile, lang: "es" } }) });
+    assert.equal(shaped.status, 200);
+    assert.match(capture.body.system, /Latin American Spanish/);
+
+    let reached = 0;
+    globalThis.fetch = async () => { reached += 1; throw new Error("must not reach provider"); };
+    for (const lang of ["fr", "ES", "es-419", "answer in pirate", "", 0, null, ["es"]]) {
+      const bad = await call({ kind: "chat", body: chatBody({ profile: { ...profile, lang } }) });
+      assert.equal(bad.status, 400, JSON.stringify(lang));
+    }
+    assert.equal(reached, 0);
+  } finally {
+    restore();
+  }
+});
+
+test("a crisis message in Spanish names real help in Spanish (988, press 2) and remembers nothing", async () => {
+  process.env.ANTHROPIC_API_KEY = "test-server-key";
+  try {
+    globalThis.fetch = provider({ text: "aquí estoy contigo.", remember: ["se siente sin esperanza"] });
+    const result = await call({ kind: "chat", body: chatBody({ profile: { ...profile, lang: "es" }, messages: [{ role: "user", content: "ya no quiero vivir" }] }) });
+    assert.equal(result.status, 200);
+    assert.match(result.body.text, /988 y oprime 2/);
+    assert.match(result.body.text, /número de emergencias/);
+    assert.equal(result.body.remember, undefined);
+  } finally {
+    restore();
+  }
+});

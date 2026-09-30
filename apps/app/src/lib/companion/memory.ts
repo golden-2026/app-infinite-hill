@@ -4,7 +4,9 @@
 // Kept lines stay where they already live (settings.book). Kids' profiles are never part of it.
 import { useSyncExternalStore } from "react";
 import { label } from "@ih/content";
-import { PERSON } from "@/content/intake";
+import { getLang, render, type Lang, type Vars } from "@/i18n/core";
+import * as commonStrings from "@/i18n/strings/common";
+import * as companionStrings from "@/i18n/strings/companion";
 import type { Profile } from "@/lib/profile";
 import { randomId } from "@/lib/ids";
 import { readJSON, remove, writeJSON } from "@/lib/storage";
@@ -38,6 +40,14 @@ export const MOODS: { id: MoodId; label: string; tag: string }[] = [
   { id: "anxious", label: "anxious", tag: "anxious" },
   { id: "heavy", label: "heavy", tag: "grief" },
 ];
+
+// The companion's words for modules the unit tests load from Node: only the import-free language core and the two
+// string tables (never "@/i18n", which pulls in React Native). ct("companion.…") is t() for these files.
+const DICTS = { en: { ...commonStrings.en, ...companionStrings.en }, es: { ...commonStrings.es, ...companionStrings.es } } as { en: Record<string, any>; es: Record<string, any> };
+export type CKey = keyof typeof companionStrings.en | keyof typeof commonStrings.en;
+export const ct = (key: CKey, vars?: Vars, lang: Lang = getLang()) => render(DICTS, key, vars, lang);
+/** A mood's word on screen ("tired" / "sin energía"). MOODS[].label stays English: it's what the server is sent. */
+export const moodLabel = (id: MoodId) => ct(`companion.mood.${id}` as CKey);
 
 const empty = (): Memory => ({ v: 1, facts: [], seeded: false, moods: [], journal: [], done: [], reflected: [], helpClosedOn: null });
 
@@ -76,63 +86,78 @@ export const useMemory = () => useSyncExternalStore(subscribe, getMemory, getMem
 
 // ─── facts ───
 /** What someone told us in onboarding, said back in plain words. Only answers they gave; nothing guessed. */
-export function factsFromProfile(p: Profile | null | undefined, o: { kids?: number } = {}): { key: string; text: string }[] {
+export function factsFromProfile(p: Profile | null | undefined, o: { kids?: number } = {}, lang: Lang = getLang()): { key: string; text: string }[] {
   if (!p) return [];
+  const T = (key: CKey, vars?: Vars) => ct(key, vars, lang);
   const a = p.answers || {};
   const out: { key: string; text: string }[] = [];
   const add = (key: string, text: string) => out.push({ key, text });
   const one = (id: string) => (typeof a[id] === "string" ? (a[id] as string) : null);
   const many = (id: string) => (Array.isArray(a[id]) ? (a[id] as string[]) : one(id) ? [one(id)!] : []);
   const raisedIn = one("raisedIn");
-  const faith = raisedIn && PERSON[raisedIn] ? PERSON[raisedIn] : null;
-  const door = p.door && p.door !== "SPIRITUAL" ? label(p.door) : null;
+  // "Catholic" in English, "el catolicismo" in Spanish ("you grew up Catholic" / "creciste en el catolicismo")
+  const faithKey = `companion.raised.${raisedIn}`;
+  const faith = raisedIn && faithKey in companionStrings.en ? T(faithKey as CKey) : null;
+  const doorName = (w: string) => (lang === "es" && `door.${w}` in commonStrings.es ? T(`door.${w}` as CKey) : label(w));
+  const door = p.door && p.door !== "SPIRITUAL" ? doorName(p.door) : null;
+  // Spanish names a religion with its article mid-sentence ("el hinduismo")
+  const theDoor = door ? T("companion.fact.theDoor", { door }) : null;
 
   const stance = one("stance");
-  if (stance === "practice") add("stance:practice", door ? `you practice your faith: ${door}.` : "you practice a faith.");
-  else if (stance === "unsure") add("stance:unsure", faith ? `you grew up ${faith} and aren't sure what you believe anymore.` : "you grew up in a faith and aren't sure what you believe anymore.");
-  else if (stance === "left") add("stance:left", faith ? `you grew up ${faith} and stepped away from it.` : "you grew up in a faith and stepped away from it.");
-  else if (stance === "curious") add("stance:curious", "you don't have a religion. you're curious.");
-  else if (stance === "many") add("stance:many", "you're exploring more than one tradition.");
-  else if (stance === "spiritual") add("stance:spiritual", "you'd call yourself spiritual, not religious.");
+  if (stance === "practice") add("stance:practice", door ? T("companion.fact.stance.practiceDoor", { door }) : T("companion.fact.stance.practice"));
+  else if (stance === "unsure") add("stance:unsure", faith ? T("companion.fact.stance.unsureFaith", { faith }) : T("companion.fact.stance.unsure"));
+  else if (stance === "left") add("stance:left", faith ? T("companion.fact.stance.leftFaith", { faith }) : T("companion.fact.stance.left"));
+  else if (stance === "curious") add("stance:curious", T("companion.fact.stance.curious"));
+  else if (stance === "many") add("stance:many", T("companion.fact.stance.many"));
+  else if (stance === "spiritual") add("stance:spiritual", T("companion.fact.stance.spiritual"));
 
-  const WHY: Record<string, string> = {
-    own: "you want to know your own tradition better.", roots: "you want to reconnect with how you grew up.",
-    god: "you're wondering whether you believe in God.", partner: "you came for your partner's or family's faith.",
-    kids: "you want to teach your kids where they come from.", calm: "you want a calmer daily habit.",
-    hard: "you're going through something hard.", curious: "you came here out of curiosity.",
-  };
+  const WHY = new Set(["own", "roots", "god", "partner", "kids", "calm", "hard", "curious"]);
   const why = one("why");
   // Picked "learning my partner's or family's faith" on the first step: one line naming the faith they're learning.
-  if (why === "partner" && stance === "partner" && door) add("why:partner", `you're learning ${door}, your partner's or family's faith.`);
-  else if (why && WHY[why]) add(`why:${why}`, WHY[why]);
+  if (why === "partner" && stance === "partner" && door) add("why:partner", T("companion.fact.why.partnerDoor", { door, theDoor }));
+  else if (why && WHY.has(why)) add(`why:${why}`, T(`companion.fact.why.${why}` as CKey));
   // "your faith" only for someone who told us they have one; otherwise name the door they're walking (or say nothing)
   const ownFaith = stance === "practice" || (!stance && one("raised") === "yes");
-  const it = ownFaith ? "your faith" : door;
-  const PRACTICE: Record<string, string> = it ? { daily: `${it} is part of most of your days.`, weekly: `${it} is part of most of your weeks.`, holidays: `${it} shows up at holidays and big moments.`, rarely: `${it} isn't much part of your life right now.` } : {};
+  const it = ownFaith ? T("companion.fact.yourFaith") : lang === "es" ? theDoor : door;
+  const PRACTICE = new Set(["daily", "weekly", "holidays", "rarely"]);
   const pr = one("practice");
   // someone with no religion who's just starting: "not much part of your life" tells them nothing, so leave it out
   const obvious = pr === "rarely" && !ownFaith && (stance === "curious" || stance === "spiritual");
-  if (pr && PRACTICE[pr] && p.door !== "SPIRITUAL" && !obvious) add(`practice:${pr}`, PRACTICE[pr]);
-  const HOLD: Record<string, string> = { fully: "you believe it, fully.", questions: "you believe, with questions.", culture: "for you it's more culture and family.", figuring: "you're still figuring out what you believe." };
+  if (it && pr && PRACTICE.has(pr) && p.door !== "SPIRITUAL" && !obvious) add(`practice:${pr}`, T(`companion.fact.practice.${pr}` as CKey, { it }));
+  const HOLD = new Set(["fully", "questions", "culture", "figuring"]);
   const hold = one("hold");
-  if (hold && HOLD[hold]) add(`hold:${hold}`, HOLD[hold]);
+  if (hold && HOLD.has(hold)) add(`hold:${hold}`, T(`companion.fact.hold.${hold}` as CKey));
 
-  const FEEL: Record<string, string> = { sleep: "sleep has been hard lately.", anxious: "you've been anxious lately.", grief: "you're grieving someone.", sick: "someone you love is sick.", lonely: "you've been lonely lately.", focus: "it's been hard to focus.", grateful: "you've been feeling grateful." };
-  for (const f of many("feeling")) if (FEEL[f]) add(`feeling:${f}`, FEEL[f]);
-  const LIKES: Record<string, string> = { still: "breathing and stillness appeal to you.", stories: "you like old stories.", words: "you like wise words to carry.", kindness: "you want kindness to be something you practice." };
-  for (const f of many("interests")) if (LIKES[f]) add(`likes:${f}`, LIKES[f]);
+  const FEEL = new Set(["sleep", "anxious", "grief", "sick", "lonely", "focus", "grateful"]);
+  for (const f of many("feeling")) if (FEEL.has(f)) add(`feeling:${f}`, T(`companion.fact.feeling.${f}` as CKey));
+  const LIKES = new Set(["still", "stories", "words", "kindness"]);
+  for (const f of many("interests")) if (LIKES.has(f)) add(`likes:${f}`, T(`companion.fact.likes.${f}` as CKey));
   const believe = one("believe");
-  if (believe === "meaning") add("believe:meaning", "you don't believe in a god, but meaning matters to you.");
-  if (one("organized") === "away") add("organized:away", "you'd rather keep away from organized religion.");
+  if (believe === "meaning") add("believe:meaning", T("companion.fact.believe.meaning"));
+  if (one("organized") === "away") add("organized:away", T("companion.fact.organized.away"));
 
-  if (one("practiceMode") === "learn") add(LEARN_FACT.key, LEARN_FACT.text);
-  if (p.openness === "stay" && p.door && p.door !== "SPIRITUAL") add("openness:stay", `you'd like to stay on your own path${door ? `, ${door}` : ""}.`);
-  if (p.openness === "love") add("openness:love", "you enjoy hearing how other traditions see things.");
-  if ((o.kids || 0) > 0) add("family:kids", "you walk with your family at the table.");
+  if (one("practiceMode") === "learn") add(LEARN_KEY, T("companion.fact.learn"));
+  if (p.openness === "stay" && p.door && p.door !== "SPIRITUAL") add("openness:stay", T("companion.fact.stay", { door: door ? `, ${lang === "es" ? theDoor : door}` : "" }));
+  if (p.openness === "love") add("openness:love", T("companion.fact.love"));
+  if ((o.kids || 0) > 0) add("family:kids", T("companion.fact.kids"));
   return out;
 }
 
-const LEARN_FACT = { key: "mode:learn", text: "you're here to learn, not to practice." };
+/**
+ * A fact as it reads in the current language. Facts drawn from the answers are stored in the language they were
+ * drawn in; until the person edits one, it's shown in today's language. Edited and added facts show as written.
+ */
+export function factText(f: Fact, p: Profile | null | undefined, o: { kids?: number } = {}): string {
+  if (f.from !== "answers" || !f.key) return f.text;
+  if (f.key === LEARN_KEY) return f.text === ct("companion.fact.learn", undefined, "en") || f.text === ct("companion.fact.learn", undefined, "es") ? ct("companion.fact.learn") : f.text;
+  const lang = getLang();
+  const mine = factsFromProfile(p, o, lang).find((x) => x.key === f.key)?.text;
+  const other = factsFromProfile(p, o, lang === "es" ? "en" : "es").find((x) => x.key === f.key)?.text;
+  return mine && (f.text === mine || f.text === other) ? mine : f.text;
+}
+
+const LEARN_KEY = "mode:learn";
+const LEARN_FACT = { key: LEARN_KEY, get text() { return ct("companion.fact.learn"); } };
 /** "practices: try them / just learn" changed under You: the line in "what the companion knows" follows it. */
 export function setLearnFact(learn: boolean, today: string) {
   const m = getMemory();

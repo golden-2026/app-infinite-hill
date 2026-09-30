@@ -3,6 +3,7 @@ import { useEffect, useId } from "react";
 import Svg, { Defs, Ellipse, Path, RadialGradient, Rect, Stop } from "react-native-svg";
 import Animated, { Easing, useAnimatedStyle, useReducedMotion, useSharedValue, withRepeat, withSequence, withTiming } from "react-native-reanimated";
 import { View } from "react-native";
+import { t } from "@/i18n";
 
 export function Lantern({ size = 120, lit = false }: { size?: number; lit?: boolean }) {
   // each lantern needs its own gradient name: two on one page (Today + the lantern screen) shared "flame" and the second stayed dark
@@ -16,7 +17,7 @@ export function Lantern({ size = 120, lit = false }: { size?: number; lit?: bool
   const halo = useAnimatedStyle(() => ({ opacity: glow.value, transform: [{ scale: 0.9 + glow.value * 0.2 }] }));
   const w = size, h = size * 1.25;
   return (
-    <View style={{ width: w * 1.6, height: h * 1.3, alignItems: "center", justifyContent: "center" }} accessibilityLabel={lit ? "a lit lantern" : "an unlit lantern"}>
+    <View style={{ width: w * 1.6, height: h * 1.3, alignItems: "center", justifyContent: "center" }} accessibilityLabel={lit ? t("session.lantern.litA11y") : t("session.lantern.unlitA11y")}>
       <Animated.View pointerEvents="none" style={[{ position: "absolute", width: w * 1.6, height: w * 1.6, borderRadius: w * 0.8, backgroundColor: "#FFD23F55" }, halo]} />
       <Svg width={w} height={h} viewBox="0 0 100 125">
         <Defs>

@@ -10,7 +10,8 @@ import { play } from "@/lib/fx";
 import { successHaptic, tapHaptic } from "@/lib/haptics";
 import { todaysThree } from "@/lib/three";
 import { useStore } from "@/lib/store";
-import { MILESTONE_WORDS, STREAK_RULE, goalView } from "@/lib/streak";
+import { MILESTONE_WORDS, goalView, streakRule } from "@/lib/streak";
+import { t } from "@/i18n";
 import { useCompanionDay } from "@/lib/companion/use-companion";
 import { FRIEND_MILESTONES, useFriends } from "@/lib/friends";
 import { Btn, Card, Guy, Screen, Sun, color, font, type } from "@/ui";
@@ -26,7 +27,7 @@ const SHARE_TOGETHER = [30, 100];
 // Milestones (3, 7, 14, 30, 50, 100, 365) get the bigger party. Quiet mode keeps it calm: no sound, a softer pose.
 // With "show my streak" off, this is the plain "days on the hill" screen.
 export default function Lit() {
-  useTitle("your streak");
+  useTitle(t("session.lit.title"));
   const { p, count, go, close } = useDone();
   const { derived, saved, today, setGoal } = useStore();
   const { day: companion } = useCompanionDay();
@@ -74,30 +75,30 @@ export default function Lit() {
   if (!on) return <PlainLit count={count} newDay={newDay} onNext={next} close={close} visiting={st.active === "visit"} />;
 
   const golden = s.golden && after >= 7;
-  const line = restored ? `earned back. your ${after} days are yours again.`
-    : !newDay ? "today was already lit. this one was just for you."
+  const line = restored ? t("session.lit.earnedBack", { n: after })
+    : !newDay ? t("session.lit.already")
     : milestone ? MILESTONE_WORDS[milestone]
-    : firstDay ? "day one. every streak starts right here."
-    : s.earnBack ? "a fresh start today. and your old streak isn't gone yet."
-    : s.restedYesterday ? "a rest day held it for you. and now it grew."
-    : golden && s.clean === 7 ? "seven straight days, no rest day needed. it's golden now."
-    : "one more stone lit.";
+    : firstDay ? t("session.lit.dayOne")
+    : s.earnBack ? t("session.lit.fresh")
+    : s.restedYesterday ? t("session.lit.rested")
+    : golden && s.clean === 7 ? t("session.lit.golden7")
+    : t("session.lit.stone");
   const earnBack = s.earnBack; // the first of today's two lessons: one more brings the old streak back
   const nextG = goal?.reached ? nextGoal(goal.days) : null;
   const together = friends.filter((f) => f.doneToday && newDay && FRIEND_MILESTONES.includes(f.together));
 
   return (
-    <Screen close={close} footer={<Btn testID="continue" onPress={next}>continue</Btn>}>
+    <Screen close={close} footer={<Btn testID="continue" onPress={next}>{t("session.continue")}</Btn>}>
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
         <Guy pose={quiet ? "thumbs" : milestone >= 7 || restored || goalJustHit ? "joy" : "celebrate"} h={milestone && !quiet ? 176 : 140} />
-        {golden ? <View testID="golden-label" style={{ backgroundColor: GOLDEN, borderWidth: 1.5, borderColor: color.ink, borderRadius: 999, paddingHorizontal: 12, paddingVertical: 4, marginTop: 10, zIndex: 2 }}><Text style={[type.eyebrow(9), { color: color.ink }]}>golden streak</Text></View> : null}
+        {golden ? <View testID="golden-label" style={{ backgroundColor: GOLDEN, borderWidth: 1.5, borderColor: color.ink, borderRadius: 999, paddingHorizontal: 12, paddingVertical: 4, marginTop: 10, zIndex: 2 }}><Text style={[type.eyebrow(9), { color: color.ink }]}>{t("session.lit.golden")}</Text></View> : null}
         <Animated.View style={[{ flexDirection: "row", alignItems: "center", gap: 8, backgroundColor: golden ? GOLDEN : "#fff", borderWidth: 2, borderColor: color.ink, paddingLeft: 24, paddingRight: 16, paddingVertical: 4, borderRadius: 28, marginTop: 10 }, popStyle]}>
           <Odometer from={before} to={after} size={milestone ? 104 : 92} />
           <Sun size={48} mood={grew ? "happy" : "calm"} />
         </Animated.View>
-        <Text accessibilityRole="header" style={[type.h1(26), { marginTop: 10 }]}>{after === 1 ? "day streak" : "day streak!"}</Text>
+        <Text accessibilityRole="header" style={[type.h1(26), { marginTop: 10 }]}>{t("session.lit.dayStreak", { count: after })}</Text>
         <Text testID="streak-line" style={[type.body(15), { marginTop: 6, textAlign: "center" }]}>{line}</Text>
-        <Text style={[type.caption(12), { marginTop: 4, textAlign: "center" }]}>{STREAK_RULE}</Text>
+        <Text style={[type.caption(12), { marginTop: 4, textAlign: "center" }]}>{streakRule()}</Text>
 
         <View style={{ marginTop: 20 }}><WeekRow s={s} today={today} /></View>
         <View style={{ marginTop: 14 }}><RestBank n={s.rest} /></View>
@@ -112,7 +113,7 @@ export default function Lit() {
           <Card testID="friend-milestone" style={{ marginTop: 16, width: "100%", gap: 10 }}>
             <View style={{ flexDirection: "row", alignItems: "center", gap: 10 }}>
               <Sun size={30} mood="happy" />
-              <Text style={[type.body(14), { flex: 1 }]}>{`${together[0].together} days together with ${together[0].nick}.`}</Text>
+              <Text style={[type.body(14), { flex: 1 }]}>{t("session.lit.together", { n: together[0].together, nick: together[0].nick })}</Text>
             </View>
             {/* the card itself never names the friend */}
             {SHARE_TOGETHER.includes(together[0].together) ? <ShareCardButton testID="share-together" spec={{ kind: "together", n: together[0].together, door: st.homeWing }} /> : null}
@@ -120,25 +121,25 @@ export default function Lit() {
         ) : null}
         {earnBack && !quiet ? (
           <Card style={{ marginTop: 16, width: "100%", gap: 8 }}>
-            <Text style={[type.eyebrow(8), { color: color.ink }]}>earn your streak back · {earnBack.lessonsToday} of {earnBack.need} today</Text>
-            <Text style={type.body(14)}>one more lesson today and your {earnBack.lost}-day streak comes back.</Text>
-            <Btn testID="earn-back-more" kind="gold" onPress={() => router.replace({ pathname: "/session/[door]/[day]", params: { door: p.door, day: p.day } })}>one more lesson</Btn>
+            <Text style={[type.eyebrow(8), { color: color.ink }]}>{t("session.lit.earnKicker", { a: earnBack.lessonsToday, b: earnBack.need })}</Text>
+            <Text style={type.body(14)}>{t("session.lit.earnBody", { n: earnBack.lost })}</Text>
+            <Btn testID="earn-back-more" kind="gold" onPress={() => router.replace({ pathname: "/session/[door]/[day]", params: { door: p.door, day: p.day } })}>{t("session.lit.oneMore")}</Btn>
           </Card>
         ) : goal && goalJustHit ? (
           <Card testID="goal-hit" style={{ marginTop: 16, width: "100%", gap: 8, backgroundColor: GOLDEN }}>
-            <Text style={[type.eyebrow(8), { color: color.ink }]}>goal reached</Text>
-            <Text style={{ fontFamily: font.display[800], fontSize: 18, color: color.ink }}>you hit your {goal.days}-day goal.</Text>
+            <Text style={[type.eyebrow(8), { color: color.ink }]}>{t("session.lit.goalReached")}</Text>
+            <Text style={{ fontFamily: font.display[800], fontSize: 18, color: color.ink }}>{t("session.lit.goalHit", { n: goal.days })}</Text>
             {nextG && !nextSet ? (
               <View style={{ flexDirection: "row", gap: 8, flexWrap: "wrap" }}>
-                <Btn testID="goal-next" onPress={() => { setGoal(nextG); setNextSet(nextG); track("goal_set", { days: nextG, next: true }); }}>{`next: ${nextG} days`}</Btn>
+                <Btn testID="goal-next" onPress={() => { setGoal(nextG); setNextSet(nextG); track("goal_set", { days: nextG, next: true }); }}>{t("session.lit.nextGoal", { n: nextG })}</Btn>
               </View>
-            ) : nextSet ? <Text style={type.body(14)}>{`${nextSet} days it is. see you tomorrow.`}</Text> : null}
+            ) : nextSet ? <Text style={type.body(14)}>{t("session.lit.itIs", { n: nextSet })}</Text> : null}
           </Card>
         ) : goal && !goal.reached ? (
-          <View testID="goal-progress" style={{ marginTop: 16, width: "100%" }} accessibilityLabel={`your goal: ${goal.done} of ${goal.days} days`}>
+          <View testID="goal-progress" style={{ marginTop: 16, width: "100%" }} accessibilityLabel={t("session.lit.goalA11y", { a: goal.done, b: goal.days })}>
             <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-              <Text style={[type.eyebrow(8), { color: color.ink }]}>your goal</Text>
-              <Text style={type.eyebrow(8)}>{goal.done} of {goal.days} days</Text>
+              <Text style={[type.eyebrow(8), { color: color.ink }]}>{t("session.lit.goal")}</Text>
+              <Text style={type.eyebrow(8)}>{t("session.lit.goalOf", { a: goal.done, b: goal.days })}</Text>
             </View>
             <View style={{ height: 10, borderRadius: 5, backgroundColor: color.line, marginTop: 6, overflow: "hidden" }}>
               <View style={{ width: `${(goal.done / goal.days) * 100}%`, height: 10, borderRadius: 5, backgroundColor: color.ink }} />
@@ -150,17 +151,18 @@ export default function Lit() {
   );
 }
 
+
 /** "show my streak" off: the lifetime count only, the way the app used to say it. */
 function PlainLit({ count, newDay, onNext, close, visiting }: { count: number; newDay: boolean; onNext: () => void; close: () => void; visiting: boolean }) {
   return (
-    <Screen close={close} footer={<Btn testID="continue" onPress={onNext}>continue</Btn>}>
+    <Screen close={close} footer={<Btn testID="continue" onPress={onNext}>{t("session.continue")}</Btn>}>
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
         <Guy pose="cheer" h={150} />
         <View style={{ backgroundColor: "#fff", borderWidth: 2, borderColor: color.ink, paddingHorizontal: 26, paddingTop: 6, borderRadius: 28, marginTop: 10, marginBottom: 14 }}>
-          <Text accessibilityLabel={`${count} ${count === 1 ? "day" : "days"} on the hill`} style={{ fontFamily: font.display[800], fontSize: 110, lineHeight: 112, letterSpacing: -5, color: color.ink }}>{count}</Text>
+          <Text accessibilityLabel={t("session.lit.plainA11y", { count })} style={{ fontFamily: font.display[800], fontSize: 110, lineHeight: 112, letterSpacing: -5, color: color.ink }}>{count}</Text>
         </View>
-        <Text style={type.h1(26)}>{count === 1 ? "day" : "days"} on the hill.</Text>
-        <Text style={[type.body(), { marginTop: 8, textAlign: "center" }]}>{!newDay ? "today was already lit. this one was just for you." : visiting ? "your days come with you. any door, one count." : "another stone lit."}</Text>
+        <Text style={type.h1(26)}>{t("session.lit.plainTitle", { count })}</Text>
+        <Text style={[type.body(), { marginTop: 8, textAlign: "center" }]}>{!newDay ? t("session.lit.already") : visiting ? t("session.lit.visiting") : t("session.lit.another")}</Text>
       </View>
     </Screen>
   );

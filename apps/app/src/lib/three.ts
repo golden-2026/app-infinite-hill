@@ -1,15 +1,16 @@
 // "Today's three": three small goals a day that light a lantern. Derived from what actually happened today
 // (a finished lesson, the day's best glow, a line kept in the book), so nothing can be claimed that wasn't done.
 import { camp1, lessonInfo } from "@ih/content";
+import { t } from "@/i18n";
 
 export type Three = { items: { id: string; label: string; done: boolean }[]; count: number; all: boolean; opened: boolean };
 
 export function todaysThree(o: { doneToday: boolean; glow?: { date: string; best: number; clean?: boolean } | null; book: { date: string }[]; lanternOn?: string | null; today: string }): Three {
   const best = o.glow?.date === o.today ? o.glow.best : 0;
   const items = [
-    { id: "lesson", label: "finish today's lesson", done: o.doneToday },
-    { id: "glow", label: "a clean run — or glow ×3 in a row", done: best >= 3 || (o.glow?.date === o.today && !!o.glow.clean) },
-    { id: "keep", label: "keep a line in your book", done: o.book.some((b) => b.date === o.today) },
+    { id: "lesson", label: t("home.three.lesson"), done: o.doneToday },
+    { id: "glow", label: t("home.three.glow"), done: best >= 3 || (o.glow?.date === o.today && !!o.glow.clean) },
+    { id: "keep", label: t("home.three.keep"), done: o.book.some((b) => b.date === o.today) },
   ];
   const count = items.filter((i) => i.done).length;
   return { items, count, all: count === 3, opened: o.lanternOn === o.today };

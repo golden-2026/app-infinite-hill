@@ -1,5 +1,7 @@
 # The front door is the website; every other path is the app (it routes itself).
 # "200!" forces the rule even though index.html (the app) exists at "/" — without it Netlify serves the app there.
 # "Start free" on the site opens /welcome/door; the installed app opens /today (manifest start_url).
+# /es is the Spanish website (site-es.html, built by atlas/mock/build.mjs --lang es); it must sit above the catch-all.
 /     /site.html    200!
+/es   /site-es.html 200
 /*    /index.html   200

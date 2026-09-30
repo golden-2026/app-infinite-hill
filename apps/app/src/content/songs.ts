@@ -13,6 +13,9 @@ export type Song = {
   tradition: Tradition;
   form: string;
   why: string;
+  /** the form and the why line in Spanish (ours too, and draft like the English) */
+  formEs?: string;
+  whyEs?: string;
   draft: true;
 };
 
@@ -24,6 +27,7 @@ export const SONGS: Song[] = [
     tradition: "ISLAM",
     form: "qawwali",
     why: "a sufi song of longing for god, carried by a scottish orchestra. devotion doesn't check your passport.",
+    whyEs: "una canción sufí de anhelo por Dios, en manos de una orquesta escocesa. la devoción no te pide pasaporte.",
     draft: true,
   },
   {
@@ -33,6 +37,7 @@ export const SONGS: Song[] = [
     tradition: "HINDUISM",
     form: "kirtan",
     why: "call and response with the names of god. anyone can sing back, and here's someone who found it from far away.",
+    whyEs: "llamada y respuesta con los nombres de Dios. cualquiera puede responder cantando, y aquí está alguien que lo encontró desde muy lejos.",
     draft: true,
   },
   {
@@ -42,6 +47,8 @@ export const SONGS: Song[] = [
     tradition: "CHRISTIANITY",
     form: "worship",
     why: "christian hope, sung like a summer drive with the windows down. joy is a kind of prayer too.",
+    formEs: "alabanza",
+    whyEs: "la esperanza cristiana, cantada como un paseo en auto en verano con las ventanas abajo. la alegría también es una forma de oración.",
     draft: true,
   },
   {
@@ -51,9 +58,16 @@ export const SONGS: Song[] = [
     tradition: "JUDAISM",
     form: "Jewish hip-hop",
     why: "a black rapper from seattle who became an orthodox jew and moved to jerusalem. the torah, on a beat.",
+    formEs: "hip-hop judío",
+    whyEs: "un rapero negro de Seattle que se hizo judío ortodoxo y se mudó a Jerusalén. la Torá, sobre un beat.",
     draft: true,
   },
 ];
+
+const isEsLang = () => (globalThis as { __ihLang?: string }).__ihLang === "es";
+/** The song's form and why line in the current language (English when there's no Spanish). */
+export const songForm = (s: Song) => (isEsLang() && s.formEs ? s.formEs : s.form);
+export const songWhy = (s: Song) => (isEsLang() && s.whyEs ? s.whyEs : s.why);
 
 export const youtubeUrl = (id: string) => `https://www.youtube.com/watch?v=${id}`;
 /** Privacy-enhanced embed: no YouTube cookies until the person presses play inside the player. */

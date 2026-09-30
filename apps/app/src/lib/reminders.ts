@@ -1,4 +1,5 @@
 import { track } from "./analytics";
+import { t } from "@/i18n";
 // Web reminders: web push through the reminders Edge Function, keyed by this browser's device id and a
 // device secret only this browser holds (pilot has no accounts). iPhone Safari needs "Add to Home Screen".
 import { readJSON, writeJSON } from "./storage";
@@ -30,8 +31,8 @@ function env() {
 
 export function reminderSupport() {
   const e = env();
-  if (e.ios && !e.standalone) return { can: false, note: "on iPhone, add infinite hill to your Home Screen first (share › add to home screen), then turn reminders on there." };
-  if (!e.hasNotification || !e.hasPush) return { can: false, note: "this browser can't send reminders. today will still be waiting in the app." };
+  if (e.ios && !e.standalone) return { can: false, note: t("companion.rem.iphone") };
+  if (!e.hasNotification || !e.hasPush) return { can: false, note: t("companion.rem.noBrowser") };
   return { can: true, note: null as string | null };
 }
 
@@ -73,24 +74,24 @@ export async function syncReminders(store: StoreLike) {
 }
 
 export async function enableReminders(store: StoreLike) {
-  if (!FN) return { ok: false, message: "reminders aren't switched on in this version yet." };
+  if (!FN) return { ok: false, message: t("companion.rem.notInBuild") };
   const s = reminderSupport();
   if (!s.can) return { ok: false, message: s.note! };
   const N = (window as any).Notification;
-  if (N.permission === "denied") return { ok: false, message: "notifications are blocked for this site. allow them in your browser's site settings, then turn this on again." };
+  if (N.permission === "denied") return { ok: false, message: t("companion.rem.blocked") };
   const perm = await N.requestPermission();
-  if (perm !== "granted") return { ok: false, message: perm === "denied" ? "notifications are blocked for this site. allow them in your browser's site settings, then turn this on again." : "no problem. turn it on whenever you like." };
+  if (perm !== "granted") return { ok: false, message: perm === "denied" ? t("companion.rem.blocked") : t("companion.rem.noProblem") };
   try {
     const sub = await subscription(true);
     if (!sub) throw new Error("no subscription");
     const ok = await post({ op: "subscribe", device_id: store.saved.deviceId, device_secret: deviceSecret(), subscription: sub.toJSON(), tz: timeZone(), reminder_time: store.saved.settings.reminder.time, ...(store.derived.doneToday ? { last_sat_date: today() } : {}) });
     if (!ok) throw new Error("server");
   } catch {
-    return { ok: false, message: "couldn't set that up right now. try again in a minute." };
+    return { ok: false, message: t("companion.rem.failed") };
   }
   store.update({ reminder: { ...store.saved.settings.reminder, on: true } });
   track("reminder_on", {});
-  return { ok: true, message: "on. the sun will find you at sunset." };
+  return { ok: true, message: t("companion.rem.onWeb") };
 }
 
 export async function disableReminders(store: StoreLike) {
@@ -103,7 +104,7 @@ export async function disableReminders(store: StoreLike) {
 }
 
 export function reminderStatus(on: boolean) {
-  if (!on) return "off";
+  if (!on) return t("companion.rem.statusOff");
   const perm = typeof window !== "undefined" && "Notification" in window ? (window as any).Notification.permission : "default";
-  return perm === "granted" ? "on · this browser" : "on, but this browser blocked notifications";
+  return perm === "granted" ? t("companion.rem.statusWeb") : t("companion.rem.statusBlocked");
 }

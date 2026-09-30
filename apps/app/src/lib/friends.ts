@@ -8,6 +8,7 @@ import { useSyncExternalStore } from "react";
 import { addDays, type Sit } from "@ih/domain";
 import { readJSON, writeJSON, remove } from "./storage";
 import { forgetFriendWalkers } from "./walkers";
+import { t } from "@/i18n";
 
 export const FRIENDS_KEY = "ih:friends";
 const TIMEOUT_MS = 8_000;
@@ -74,11 +75,11 @@ export async function makeInvite(): Promise<string | null> {
 }
 
 export async function acceptInvite(code: string): Promise<{ ok: boolean; nick?: string; message?: string }> {
-  if (!/^[a-z2-9]{10}$/.test(code)) return { ok: false, message: "that invite link looks incomplete." };
-  if (!(await ensureJoined())) return { ok: false, message: "couldn't reach friends right now. try again in a bit." };
+  if (!/^[a-z2-9]{10}$/.test(code)) return { ok: false, message: t("home.friends.inviteIncomplete") };
+  if (!(await ensureJoined())) return { ok: false, message: t("home.friends.unreachable") };
   const r = await api("accept", { body: { code } });
   if (r?.ok) return { ok: true, nick: r.friend?.nick };
-  return { ok: false, message: r?.status === 404 ? "that invite has expired. ask them for a new lantern." : r?.status === 409 ? "a friend list is full (30 friends)." : r?.status === 400 ? "that's your own lantern." : "couldn't reach friends right now. try again in a bit." };
+  return { ok: false, message: r?.status === 404 ? t("home.friends.inviteExpired") : r?.status === 409 ? t("home.friends.listFull") : r?.status === 400 ? t("home.friends.ownLantern") : t("home.friends.unreachable") };
 }
 
 export function setNick(nick: string) { const n = cleanNick(nick); if (n) set({ nick: n }); }
@@ -124,9 +125,9 @@ export async function leaveFriends() {
 }
 
 /** "12 days together", "last seen 3 days ago". */
-export const togetherWords = (n: number) => `${n} ${n === 1 ? "day" : "days"} together`;
+export const togetherWords = (n: number) => t("home.friends.together", { count: n });
 export function lastSeenWords(date: string | null, today: string) {
-  if (!date) return "not seen yet";
+  if (!date) return t("home.friends.notSeen");
   const d = Math.round((Date.parse(`${today}T12:00:00Z`) - Date.parse(`${date}T12:00:00Z`)) / 86_400_000);
-  return d <= 0 ? "here today" : d === 1 ? "last seen yesterday" : `last seen ${d} days ago`;
+  return d <= 0 ? t("home.friends.hereToday") : d === 1 ? t("home.friends.seenYesterday") : t("home.friends.seenAgo", { count: d });
 }

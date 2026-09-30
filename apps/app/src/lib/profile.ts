@@ -99,7 +99,7 @@ export function bridgeFor(p: Profile | null, door: string, word: string, today: 
   const avoid = raised && leftIt ? (raised === "CATHOLIC" || raised === "CHRISTIANITY" ? ["CATHOLIC", "CHRISTIANITY"] : [raised]) : [];
   const secularOnly = p.answers.believe === "meaning" || p.answers.organized === "away";
   const others = b.members
-    .filter((m) => m.door !== door && !avoid.includes(m.door) && !(secularOnly && /\b(God|Lord|he|him|his|prayers?|the Name)\b/.test(m.gloss)))
+    .filter((m) => m.door !== door && !avoid.includes(m.door) && !(secularOnly && /\b(God|Lord|he|him|his|prayers?|the Name)\b/.test(m.glossEn ?? m.gloss)))
     .slice(0, 3);
   return others.length ? { bridge: b, from: door, others } : null;
 }
@@ -132,7 +132,7 @@ export function suggestFor(answers: Profile["answers"], limit = 4): Suggestion[]
   const out: Suggestion[] = [];
   const usedDoors = new Set<string>();
   for (const { b } of scored) {
-    const m = b.members.find((x) => x.door !== "SPIRITUAL" && !avoid.has(x.door) && !usedDoors.has(x.door) && x.day && !(secularOnly && theistic(x.gloss)));
+    const m = b.members.find((x) => x.door !== "SPIRITUAL" && !avoid.has(x.door) && !usedDoors.has(x.door) && x.day && !(secularOnly && theistic(x.glossEn ?? x.gloss)));
     if (!m) continue;
     usedDoors.add(m.door);
     out.push({ door: m.door, word: m.word, day: m.day!, gloss: m.gloss, why: b.why, bridge: b.idea });

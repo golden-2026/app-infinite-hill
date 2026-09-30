@@ -3,14 +3,28 @@
 // summit cards — must be checked by that tradition's Keeper before public release (docs/CONTENT_RELEASE.md).
 // Rules: accurate to the curriculum outline in @ih/content (data.CAMPS, data.LATER, OUTLINES), respectful, never
 // comparative ("better", "truer"), modest where a camp is only outlined, and never a claim that lessons are reviewed.
+// The Spanish (i18n/strings/onboarding-journeys.ts) is also a DRAFT, not Keeper-reviewed: same review, plus a native
+// speaker's. Exports keep their names and shapes; each read picks the current language (DOOR_HOOK and OWN_PATH are
+// getters, trailFor picks inside). Words drawn from the lesson outlines themselves (OUTLINES) stay in English.
 import { data, OUTLINES } from "@ih/content";
+import { fill, formatNumber, getLang } from "@/i18n/core";
+import { es as COMMON_ES } from "@/i18n/strings/common";
+import { DOOR_HOOK_ES, OWN_PATH_ES, PLANS_ES, TRAIL_ES, YEAR_NAMES_ES, YEAR_PROMISES_ES } from "@/i18n/strings/onboarding-journeys";
+
+const isEs = () => getLang() === "es";
+/** Getters over a plain English object: the Spanish when the app is in Spanish (and the Spanish has it). */
+function bilingual<T extends Record<string, string>>(en: T, es: Record<string, string>): T {
+  const o = {} as T;
+  for (const k of Object.keys(en)) Object.defineProperty(o, k, { get: () => (isEs() && es[k] ? es[k] : en[k]), enumerable: true });
+  return o;
+}
 
 const YEAR_ONE: number = data.CAMPS.reduce((n: number, c: [string, string, number]) => n + c[2], 0); // 331, as @ih/content
 
 export const JOURNEY_STATUS = "draft-unreviewed" as const;
 
 /** One line per door: what the trek holds (replaces the old, repetitive "one word a day"). DRAFT, Keeper review. */
-export const DOOR_HOOK: Record<string, string> = {
+export const DOOR_HOOK: Record<string, string> = bilingual({
   HINDUISM: "gods, epics, the Gita — a five-year trek",
   CHRISTIANITY: "parables, the life of Jesus, a whole gospel",
   CATHOLIC: "the Mass, the saints, the rosary, the Psalms",
@@ -19,14 +33,14 @@ export const DOOR_HOOK: Record<string, string> = {
   BUDDHISM: "the Buddha's life, the breath, the Dhammapada",
   SIKHISM: "the ten Gurus, seva and kirtan, Japji Sahib",
   SPIRITUAL: "Stoics, Rumi, zen stories — the best of every door",
-};
+}, DOOR_HOOK_ES);
 
 /** What "my own path" promises, everywhere it's offered. DRAFT. */
-export const OWN_PATH = {
+export const OWN_PATH = bilingual({
   title: "my own path",
   line: "a path built around you",
   promise: "the house's best ideas, picked for you — stillness from one tradition, a story from another, a line to carry from a third. nothing to sign up to.",
-};
+}, OWN_PATH_ES);
 
 export type Stage = {
   key: string;
@@ -224,42 +238,55 @@ const YEAR_PROMISES: Record<string, string[]> = {
  *  then years two to five — outlined where a plan exists (Hinduism), otherwise one "being planned" stage — and the
  *  summit at the top of the five years. */
 export function trailFor(door: string): { stages: Stage[]; lookout: number; summit: Summit; planned: boolean } {
+  const es = isEs();
   const plan = PLANS[door] || PLANS.SPIRITUAL;
+  // the Spanish plan, in the same shape and order (falls back to the English, piece by piece, if a line is missing)
+  const planEs = es ? PLANS_ES[PLANS[door] ? door : "SPIRITUAL"] : undefined;
   let day = 1;
   const stages: Stage[] = data.CAMPS.map(([camp, name, len]: [string, string, number], i: number) => {
-    const [samples, promise] = plan.camps[i] || [[], ""];
-    const s: Stage = { key: camp, eyebrow: `${camp.toLowerCase()} · ${len} days`, name: lower(name), first: day, last: day + len - 1, samples, promise };
+    const [samples, promise] = planEs?.camps[i] || plan.camps[i] || [[], ""];
+    const s: Stage = es
+      ? { key: camp, eyebrow: fill(TRAIL_ES.campEyebrow, { n: camp.replace(/\D/g, ""), len }, "es"), name: (COMMON_ES as Record<string, unknown>)[`camp.${camp}`] as string || lower(name), first: day, last: day + len - 1, samples, promise }
+      : { key: camp, eyebrow: `${camp.toLowerCase()} · ${len} days`, name: lower(name), first: day, last: day + len - 1, samples, promise };
     day += len;
     return s;
   });
   const end = YEAR_ONE + 4 * 365;
-  const summit: Summit = { day: end, eyebrow: `day ${end.toLocaleString("en-US")} · the top of the five-year climb`, ...plan.summit };
+  const summit: Summit = es
+    ? { day: end, eyebrow: fill(TRAIL_ES.summitEyebrow, { day: formatNumber(end, "es") }, "es"), ...plan.summit, ...planEs?.summit }
+    : { day: end, eyebrow: `day ${end.toLocaleString("en-US")} · the top of the five-year climb`, ...plan.summit };
   if (!plan.years) {
     // no hand-written promise for years 2–5: read them from the path's own five-year plan (OUTLINES), if it has one
     const out = OUTLINES[door] as Map<number, any> | undefined;
     if (!out || !out.get(YEAR_ONE + 1)) {
-      stages.push({ key: "Years 2-5", eyebrow: "years 2–5", name: "the ranges", first: YEAR_ONE + 1, last: end, samples: [], promise: "", outlined: true, planned: true });
+      stages.push({ key: "Years 2-5", eyebrow: es ? TRAIL_ES.yearsPlanned : "years 2–5", name: es ? TRAIL_ES.ranges : "the ranges", first: YEAR_ONE + 1, last: end, samples: [], promise: "", outlined: true, planned: true });
       return { stages, lookout: YEAR_ONE, summit, planned: true };
     }
     for (let k = 0; k < 4; k++) {
       const first = YEAR_ONE + 1 + k * 365;
       const days = Array.from({ length: 365 }, (_, i) => out.get(first + i)).filter(Boolean);
       const heading = String(days[0]?.camp || "");
-      const theme = (heading.match(/[“"]([^”"]+)[”"]/) || [])[1] || "the ranges";
+      const theme = (heading.match(/[“"]([^”"]+)[”"]/) || [])[1] || (es ? TRAIL_ES.ranges : "the ranges");
       // the year's blocks, by name ("Block A · Exodus finished (Days 332–378)" → "exodus finished"); a year without
       // named blocks falls back to a spread of its session titles
       const named = [...new Set(days.map((d) => String(d.part || "").replace(/^(Block|Weeks?|Part)\s+[\w–-]+\s*·\s*/i, "").split(" · ")[0].replace(/\s*\(.*$/, "").trim()).filter((p) => p && !/^(block|weeks?|opening)\b/i.test(p)))];
       const parts = named.length >= 2 ? named : [0, 0.25, 0.5, 0.75].map((f) => String(days[Math.floor(f * days.length)]?.title || "").replace(/\s*\(.*$/, "")).filter(Boolean);
       // part names can hold commas ("The Acts of the Apostles, read through"), so they're set apart with dots
       const tidy = (p: string) => p.replace(/^(The|A|An) /, (m) => m.toLowerCase());
-      const promise = YEAR_PROMISES[door]?.[k] || `walk through ${parts.slice(0, 3).map(tidy).join(" · ")}${parts.length > 3 ? " · and more" : ""}`;
-      stages.push({ key: `Year ${k + 2}`, eyebrow: `year ${k + 2} · 365 days`, name: lower(theme), first, last: first + 364, samples: parts.slice(0, 4), promise, outlined: true });
+      const promise = es
+        ? YEAR_PROMISES_ES[door]?.[k] || YEAR_PROMISES[door]?.[k] || fill(TRAIL_ES.walkThrough, { parts: `${parts.slice(0, 3).map(tidy).join(" · ")}${parts.length > 3 ? TRAIL_ES.andMore : ""}` }, "es")
+        : YEAR_PROMISES[door]?.[k] || `walk through ${parts.slice(0, 3).map(tidy).join(" · ")}${parts.length > 3 ? " · and more" : ""}`;
+      const eyebrow = es ? fill(TRAIL_ES.yearEyebrow, { n: String(k + 2) }, "es") : `year ${k + 2} · 365 days`;
+      stages.push({ key: `Year ${k + 2}`, eyebrow, name: lower(theme), first, last: first + 364, samples: parts.slice(0, 4), promise, outlined: true });
     }
     return { stages, lookout: YEAR_ONE, summit, planned: false };
   }
-  plan.years.forEach(([samples, promise], k) => {
+  plan.years.forEach(([samplesEn, promiseEn], k) => {
     const first = YEAR_ONE + 1 + k * 365;
-    stages.push({ key: `Year ${k + 2}`, eyebrow: `year ${k + 2} · 365 days`, name: ["the ranges", "the great epics", "gods and schools", "the language and the world"][k], first, last: first + 364, samples, promise, outlined: true });
+    const [samples, promise] = planEs?.years?.[k] || [samplesEn, promiseEn];
+    const eyebrow = es ? fill(TRAIL_ES.yearEyebrow, { n: String(k + 2) }, "es") : `year ${k + 2} · 365 days`;
+    const name = (es ? YEAR_NAMES_ES : ["the ranges", "the great epics", "gods and schools", "the language and the world"])[k];
+    stages.push({ key: `Year ${k + 2}`, eyebrow, name, first, last: first + 364, samples, promise, outlined: true });
   });
   return { stages, lookout: YEAR_ONE, summit, planned: false };
 }

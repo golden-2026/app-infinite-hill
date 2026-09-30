@@ -10,11 +10,12 @@ import { play } from "@/lib/fx";
 import { successHaptic } from "@/lib/haptics";
 import { CloseButton, Guy, Sun, color, type } from "@/ui";
 import { useChrome } from "@/ui/chrome";
+import { t } from "@/i18n";
 
 // Lighting the day: a sunrise over your hill. Tap (anywhere) and the sun climbs over the ridge, the sky warms
 // from night to gold, and the mascot cheers. Our own streak moment (the sun and the hill), not a flame.
 export default function Light() {
-  useTitle("light your day");
+  useTitle(t("session.light.title"));
   const { go, close } = useDone();
   useChrome(true);
   const insets = useSafeAreaInsets();
@@ -53,7 +54,7 @@ export default function Light() {
         </Svg>
       </Animated.View>
       <View style={{ position: "absolute", top: 0, right: 0, zIndex: 3, paddingTop: insets.top + 4, paddingRight: 6 }}><CloseButton dark onPress={close} /></View>
-      <Pressable testID="light-day" accessibilityRole="button" accessibilityLabel="Light today" onPress={rise} style={{ flex: 1 }}>
+      <Pressable testID="light-day" accessibilityRole="button" accessibilityLabel={t("session.light.a11y")} onPress={rise} style={{ flex: 1 }}>
         <View style={{ flex: 1, alignItems: "center", justifyContent: "flex-end", paddingBottom: height * 0.32 }}>
           <Animated.View style={sun}><Sun size={150} mood={risen ? "happy" : "calm"} /></Animated.View>
         </View>
@@ -62,7 +63,7 @@ export default function Light() {
         </Svg>
         <Animated.View pointerEvents="none" style={[{ position: "absolute", bottom: height * 0.12, right: 24 }, cheer]}><Guy pose={risen ? "cheer" : "stretch"} h={150} /></Animated.View>
         <View style={{ position: "absolute", bottom: insets.bottom + 40, left: 0, right: 0, alignItems: "center" }}>
-          <Text style={[type.h1(24), { color: risen ? color.gold : "#fff" }]}>{risen ? "today, lit." : "tap to light today."}</Text>
+          <Text style={[type.h1(24), { color: risen ? color.gold : "#fff" }]}>{risen ? t("session.light.lit") : t("session.light.tap")}</Text>
         </View>
       </Pressable>
     </Animated.View>

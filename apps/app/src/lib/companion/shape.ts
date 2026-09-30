@@ -6,7 +6,8 @@
 import { useEffect, useState } from "react";
 import { PRACTICES, practiceById, type Mood, type Practice } from "@/content/practices";
 import { companionAvailable, companionShape, type CompanionContext, type CompanionProfile } from "@/lib/companion-ai";
-import { factKeys, MOODS, type Memory, type MoodId } from "@/lib/companion/memory";
+import { ct, factKeys, MOODS, type Memory, type MoodId } from "@/lib/companion/memory";
+import { getLang } from "@/i18n/core";
 import { doable, practiceModeOf } from "@/lib/onboard";
 import { depthFor, guideProfile, type Profile } from "@/lib/profile";
 
@@ -61,7 +62,11 @@ const hash = (s: string) => { let h = 2166136261; for (let i = 0; i < s.length; 
 
 /** Words that mean someone may be in danger. Not a diagnosis: it only brings up the card with real help. */
 const CRISIS = /\b(suicid\w*|kill(ing)? my ?self|end(ing)? (it all|my life)|take my (own )?life|self[- ]?harm\w*|hurt(ing)? my ?self|cut(ting)? my ?self|want(ed)? to die|wish i (was|were) dead|don'?t want to (be here|live|wake up)|no reason to live|better off without me|overdose)\b/i;
-export const crisisWords = (text: string) => CRISIS.test(text);
+/** The same, in Spanish, matched without accents ("daño" → "dano") so a missing tilde never hides it. */
+const CRISIS_ES = /(^|[^a-z])(suicid[a-z]*|matarme|me (voy a|quiero) matar|quitarme la vida|me quiero quitar la vida|acabar con (todo|mi vida)|terminar con (todo|mi vida)|quiero morir(me)?|me quiero morir|quisiera morir(me)?|ganas de morir(me)?|deseo morir(me)?|ojala (estuviera muert[oa]|me muriera|no despertara)|quiero estar muert[oa]|no quiero (vivir|seguir viviendo|estar aqui|despertar(me)?)|no tengo (razon|razones|motivos?|ganas) (para|de) vivir|sin (razon|razones|motivos?) para vivir|estarian mejor sin mi|hacerme dano|me hago dano|lastimarme|me lastimo|autolesi[a-z]*|cortarme (las venas|los brazos|las munecas)|me corto (las venas|los brazos|las munecas)|sobredosis)(?![a-z])/;
+const fold = (s: string) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+/** English or Spanish, whatever language the app is in: people write in the language they feel in. */
+export const crisisWords = (text: string) => CRISIS.test(text) || CRISIS_ES.test(fold(text));
 
 /** Which of the seven people (brand book personas) this looks most like, from the facts they've kept. */
 export function personaFor(i: Pick<ShapeInput, "door" | "profile" | "kids" | "memory">): Persona {
@@ -97,6 +102,17 @@ const PROMPTS: Record<Persona, string[]> = {
   hard: ["a note to someone: someone you miss, or someone who'd understand. you don't have to send it.", "what's been heavy today? just name it.", "one small thing that helped, even a little.", "something you remember that made you smile.", "what would you say to them, if you could?", "who could you let in, this week?", "what do you need tonight?"],
   fan: ["one word from today. what does it mean to you?", "what made you try this?", "one line you'd keep, in your own words.", "what surprised you today?", "who would you share today's word with?", "what I used to think — and what I think now.", "one thing you'd like to try tomorrow."],
   steady: ["one line from today you'd like to keep, and why.", "three good things from today.", "what steadied you today?", "what I used to think — and what I think now.", "where did today's lesson meet your day?", "what are you grateful for right now?", "one small thing to carry into tomorrow."],
+};
+/** The same prompts in Spanish, in the same order (a prompt's place in the list is what picks it). */
+const PROMPTS_ES: Record<Persona, string[]> = {
+  returner: ["lo que antes pensaba, y lo que pienso ahora.", "una historia de tu infancia que recuerdas a medias.", "una frase de hoy que te gustaría guardar, y por qué.", "¿qué extrañas, si es que extrañas algo?", "¿qué dijo la lección de hoy distinto de como lo recordabas?", "¿quién te enseñó esto primero?", "¿qué le dirías sobre esto a tu yo más joven?"],
+  deepener: ["una frase de hoy que sigue contigo. ¿qué te pide?", "una pregunta para llevarle a la Guía, o a alguien que sepa.", "¿dónde se encontró la práctica de hoy con tu día de verdad?", "¿qué notaste esta vez que antes se te había pasado?", "un versículo que te gustaría aprenderte de memoria.", "¿qué cosa pequeña harás distinto mañana?", "¿por qué oraste hoy, si oraste?"],
+  seeker: ["el repaso de la noche: ¿qué salió bien? ¿qué harías distinto? ¿qué agradeces?", "¿qué te sostuvo hoy?", "una frase sabia, de donde sea, que te ha estado dando vueltas.", "¿dónde te sentiste más tú hoy?", "¿qué te sigue dando curiosidad?", "lo que antes pensaba, y lo que pienso ahora.", "algo que te gustaría que trajera el día de mañana."],
+  bridge: ["algo de la tradición de tu pareja o de tu familia que te gustaría entender mejor.", "una pregunta que te gustaría hacerles, con cariño.", "algo que comparten sus dos familias.", "una palabra que aprendiste hoy y podrías usar en la próxima cena familiar.", "¿qué te sorprendió de su tradición?", "¿qué te gustaría que entendieran de la tuya?", "algo pequeño para hacer juntos esta semana."],
+  parent: ["la frase de la semana en familia: una frase que quieres que los niños recuerden.", "una pregunta de los niños que no supiste responder.", "una historia de hoy que podrías contar antes de dormir.", "¿qué quieres que sepan de dónde vienes?", "algo que aprendiste hoy junto a ellos.", "un pequeño ritual que tu familia podría mantener.", "¿qué notaron los niños que a ti se te pasó?"],
+  hard: ["una nota para alguien: alguien que extrañas, o alguien que entendería. no tienes que enviarla.", "¿qué te ha pesado hoy? solo ponle nombre.", "algo pequeño que ayudó, aunque fuera un poco.", "algo que recuerdas y que te hizo sonreír.", "¿qué le dirías, si pudieras?", "¿a quién podrías dejar entrar esta semana?", "¿qué necesitas esta noche?"],
+  fan: ["una palabra de hoy. ¿qué significa para ti?", "¿qué te hizo probar esto?", "una frase que guardarías, con tus propias palabras.", "¿qué te sorprendió hoy?", "¿con quién compartirías la palabra de hoy?", "lo que antes pensaba, y lo que pienso ahora.", "algo que te gustaría probar mañana."],
+  steady: ["una frase de hoy que te gustaría guardar, y por qué.", "tres cosas buenas de hoy.", "¿qué te sostuvo hoy?", "lo que antes pensaba, y lo que pienso ahora.", "¿dónde se encontró la lección de hoy con tu día?", "¿qué agradeces ahora mismo?", "algo pequeño para llevar a mañana."],
 };
 
 /** The on-device shaped day. */
@@ -194,7 +210,7 @@ export function shapeToday(i: ShapeInput): Shaped {
   const howItsDone = !doable(practice, i.door, i.profile);
 
   // the returner's "what I used to think" comes up about once a week; everyone's prompt turns over with their days
-  const list = PROMPTS[persona];
+  const list = (getLang() === "es" ? PROMPTS_ES : PROMPTS)[persona];
   // a hard season: in the evening it's always the note to someone; by day it turns over like everyone's
   const prompt = persona === "hard" && evening ? list[0] : list[i.showedUp % list.length];
 
@@ -202,30 +218,30 @@ export function shapeToday(i: ShapeInput): Shaped {
 }
 
 /** The note when today's card is "how it's done": nothing to do, and never an invitation to pray. */
-const LEARN_NOTE = "nothing to do today. here's how people keep one practice, if you're curious.";
+const learnNote = () => ct("companion.note.learn");
 
 function noteFor({ i, persona, mood, quiet, late, night, practice, howItsDone, learn }: { i: ShapeInput; persona: Persona; mood: MoodId | null; quiet: boolean; late: boolean; night: boolean; practice: Practice; howItsDone: boolean; learn: boolean }): string {
-  const mins = `${practice.minutes} ${practice.minutes === 1 ? "minute" : "minutes"}`;
-  if (i.missedDays >= 2 && !i.doneToday) return "you're back. your place on the path is right where you left it. start small.";
-  if (mood === "heavy") return howItsDone ? "heavy days are allowed. no lesson needed today." : "heavy days are allowed. no lesson needed today — just this, if you want it.";
-  if (persona === "hard" && night) return "it's late. go gently. the games can wait.";
-  if (persona === "hard") return howItsDone ? "go gently today. the games can wait." : "go gently today. the games can wait. this is enough.";
-  if (howItsDone) return LEARN_NOTE;
-  if (learn) return late ? "it's late. something short, if you like, then sleep." : "something small to try, if you like. no need to.";
-  if (late) return "it's late. something short, then sleep.";
-  if (quiet) return "a quieter day. the practice first, the lesson whenever you're ready.";
-  if (mood === "tired") return `tired is allowed. ${mins}, then rest.`;
-  if (mood === "anxious") return "a long breath out first. the rest can wait.";
-  if (mood === "good") return "a good day. let's keep a little of it.";
-  if (i.doneToday) return "lesson's done. one more small thing, if you'd like.";
+  const mins = ct("companion.note.minutes", { count: practice.minutes });
+  if (i.missedDays >= 2 && !i.doneToday) return ct("companion.note.back");
+  if (mood === "heavy") return howItsDone ? ct("companion.note.heavyHow") : ct("companion.note.heavy");
+  if (persona === "hard" && night) return ct("companion.note.hardNight");
+  if (persona === "hard") return howItsDone ? ct("companion.note.hardHow") : ct("companion.note.hard");
+  if (howItsDone) return learnNote();
+  if (learn) return late ? ct("companion.note.learnLate") : ct("companion.note.learnDay");
+  if (late) return ct("companion.note.late");
+  if (quiet) return ct("companion.note.quiet");
+  if (mood === "tired") return ct("companion.note.tired", { mins });
+  if (mood === "anxious") return ct("companion.note.anxious");
+  if (mood === "good") return ct("companion.note.good");
+  if (i.doneToday) return ct("companion.note.doneToday");
   switch (persona) {
-    case "returner": return practice.theistic ? "one you might remember from growing up. take it or leave it." : "no need to believe anything to do this. try it with fresh eyes.";
-    case "deepener": return "you know this one. do it slowly today.";
-    case "seeker": return "no beliefs required. just a few steady minutes.";
-    case "parent": return "short enough to do with the kids nearby.";
-    case "fan": return `${mins}. that's it. you've got this.`;
-    case "bridge": return "something small you could share with the people you love.";
-    default: return `${mins}, if you have them.`;
+    case "returner": return practice.theistic ? ct("companion.note.returnerGod") : ct("companion.note.returner");
+    case "deepener": return ct("companion.note.deepener");
+    case "seeker": return ct("companion.note.seeker");
+    case "parent": return ct("companion.note.parent");
+    case "fan": return ct("companion.note.fan", { mins });
+    case "bridge": return ct("companion.note.bridge");
+    default: return ct("companion.note.steady", { mins });
   }
 }
 
@@ -263,14 +279,14 @@ async function withCompanion(i: ShapeInput, local: Shaped): Promise<Shaped> {
   const pick = local.candidates.find((x) => x.id === reply.practiceId) || local.practice; // only ever one the phone offered
   const howItsDone = !doable(pick, i.door, i.profile);
   // a "how it's done" card keeps the phone's own note, so nothing ever invites them to do it
-  const note = !howItsDone && typeof reply.note === "string" && reply.note.trim() ? reply.note.trim().slice(0, 220) : howItsDone ? LEARN_NOTE : local.note;
+  const note = !howItsDone && typeof reply.note === "string" && reply.note.trim() ? reply.note.trim().slice(0, 220) : howItsDone ? learnNote() : local.note;
   return { ...local, practice: pick, note, quiet: local.quiet || reply.quiet === true, fromNextDoor: !!pick.door && pick.door !== i.door, howItsDone, by: "companion" };
 }
 
 /** Today's shape, on the phone at once; replaced by the companion's if its AI is on and answers. */
 export function useShapedDay(i: ShapeInput): Shaped {
   const local = shapeToday(i); // cheap and deterministic: recomputed each render so a mood tap shows at once
-  const key = `${i.today}|${i.door}|${local.mood}|${local.quiet}|${Math.floor(i.hour / 4)}|${local.learn ? "learn" : i.profile?.answers.practiceMode ?? ""}|${local.candidates.map((x) => x.id).join(",")}`;
+  const key = `${getLang()}|${i.today}|${i.door}|${local.mood}|${local.quiet}|${Math.floor(i.hour / 4)}|${local.learn ? "learn" : i.profile?.answers.practiceMode ?? ""}|${local.candidates.map((x) => x.id).join(",")}`;
   const [ai, setAi] = useState<{ key: string; v: Shaped } | null>(null);
   useEffect(() => {
     let live = true;

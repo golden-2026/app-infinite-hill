@@ -3,7 +3,8 @@
 // otherwise the image downloads and the link is copied. Only public facts go on a card: a number, the path's name,
 // the sun, the mascot, "infinite hill" and a link. Never the journal, moods, answers, kept lines or a friend's name.
 import { art } from "@ih/brand";
-import { data, label } from "@ih/content";
+import { data } from "@ih/content";
+import { doorLabel, isEs, t } from "@/i18n";
 import { Asset } from "expo-asset";
 import { Platform, Share } from "react-native";
 
@@ -14,7 +15,16 @@ const DISPLAY = "Manrope_800ExtraBold, Manrope, system-ui, sans-serif";
 const TEXT = "Inter_600SemiBold, Inter, system-ui, sans-serif";
 const MARK = "Baloo2_800ExtraBold, 'Baloo 2', system-ui, sans-serif";
 
-export const pathName = (door: string) => (door === "SPIRITUAL" ? "my own path" : `the ${label(door).toLowerCase()} path`);
+export const pathName = (door: string) => (door === "SPIRITUAL" ? t("session.card.ownPath") : t("session.card.path", { door: doorLabel(door).toLowerCase() }));
+
+/** A door named inside a sentence: "Hinduism" in English; "el hinduismo" in Spanish, which wants the article. */
+export const theDoor = (door: string) => (!isEs() ? doorLabel(door) : door === "SPIRITUAL" ? "el camino espiritual" : `el ${doorLabel(door)}`);
+
+/** Doors in a sentence: "Buddhism and Sikhism", "A, B and C" / "el budismo y el sijismo". */
+export function doorList(doors: string[]): string {
+  const names = doors.map(theDoor);
+  return names.length < 2 ? names.join("") : `${names.slice(0, -1).join(", ")}${t("session.and")}${names[names.length - 1]}`;
+}
 
 /** The link on the card and in the share: the app's own address (no personal data in it). */
 export function siteLink(): string {
@@ -27,9 +37,13 @@ export type YearCard = { kind: "year"; door: string; days: number; hours: string
 export type CardSpec = MilestoneCard | YearCard;
 
 export const cardText = (c: CardSpec) =>
-  c.kind === "year" ? `my year on infinite hill: ${c.days} days, ${c.lessons} lessons, ${c.words} words, ${c.hours} learned.`
-  : c.kind === "together" ? `${c.n} days walking together on infinite hill.`
-  : `${c.n}-day streak on infinite hill, on ${pathName(c.door)}.`;
+  c.kind === "year" ? t("session.card.yearText", {
+    days: String(c.days), lessons: String(c.lessons), words: String(c.words), hours: c.hours,
+    // Spanish counts each one properly ("1 día", "12 lecciones")
+    daysN: t("common.days", { count: c.days }), lessonsN: t("common.lessons", { count: c.lessons }), wordsN: `${c.words} ${t("session.card.words", { count: c.words })}`,
+  })
+  : c.kind === "together" ? t("session.card.togetherText", { n: String(c.n) })
+  : t("session.card.streakText", { n: String(c.n), path: pathName(c.door) });
 
 const load = (src: string) => new Promise<HTMLImageElement | null>((resolve) => {
   const img = new (globalThis as any).Image() as HTMLImageElement;
@@ -96,11 +110,11 @@ export async function paintCard(c: CardSpec): Promise<HTMLCanvasElement | null> 
     ctx.fillStyle = INK;
     ctx.font = `800 84px ${DISPLAY}`;
     ctx.textAlign = "center";
-    ctx.fillText("my year on the hill", CARD_W / 2, 520);
+    ctx.fillText(t("session.card.yearHead"), CARD_W / 2, 520);
     ctx.fillStyle = MUTE;
     ctx.font = `600 34px ${TEXT}`;
     spaced(ctx, `${pathName(c.door)} · ${c.range}`.toUpperCase(), CARD_W / 2, 578, 4, "center");
-    const stats: [string, string][] = [[String(c.days), c.days === 1 ? "day" : "days"], [String(c.lessons), c.lessons === 1 ? "lesson" : "lessons"], [String(c.words), c.words === 1 ? "word" : "words"], [c.hours.split(" ")[0], c.hours.split(" ").slice(1).join(" ")], [String(c.longest), "longest streak"]];
+    const stats: [string, string][] = [[String(c.days), t("session.card.days", { count: c.days })], [String(c.lessons), t("session.card.lessons", { count: c.lessons })], [String(c.words), t("session.card.words", { count: c.words })], [c.hours.split(" ")[0], c.hours.split(" ").slice(1).join(" ")], [String(c.longest), t("session.card.longest")]];
     const x0 = 110, y0 = 636, bw = 400, bh = 140, gap = 40;
     stats.forEach(([big, small], i) => {
       const col = i % 2, row = Math.floor(i / 2);
@@ -128,10 +142,10 @@ export async function paintCard(c: CardSpec): Promise<HTMLCanvasElement | null> 
     ctx.textAlign = "center";
     ctx.fillText(num, CARD_W / 2, 770);
     ctx.font = `800 80px ${DISPLAY}`;
-    ctx.fillText(c.kind === "together" ? "days together" : "day streak", CARD_W / 2, 866);
+    ctx.fillText(c.kind === "together" ? t("session.card.together") : t("session.card.dayStreak"), CARD_W / 2, 866);
     ctx.fillStyle = MUTE;
     ctx.font = `600 36px ${TEXT}`;
-    spaced(ctx, (c.kind === "together" ? "walking with a friend" : `on ${pathName(c.door)}`).toUpperCase(), CARD_W / 2, 930, 5, "center");
+    spaced(ctx, (c.kind === "together" ? t("session.card.withFriend") : t("session.card.on", { path: pathName(c.door) })).toUpperCase(), CARD_W / 2, 930, 5, "center");
     if (guy) { const h = 290, w = (guy.width / guy.height) * h; ctx.drawImage(guy, CARD_W - 100 - w, CARD_H - 76 - h, w, h); }
   }
 
@@ -148,7 +162,7 @@ export async function paintCard(c: CardSpec): Promise<HTMLCanvasElement | null> 
   ctx.fillText(link, 128, CARD_H - 160, lw - 64);
   ctx.fillStyle = MUTE;
   ctx.font = `600 24px ${TEXT}`;
-  spaced(ctx, "WE SCORE LEARNING, NEVER FAITH.", 98, CARD_H - 96, 3);
+  spaced(ctx, t("session.card.tagline"), 98, CARD_H - 96, 3);
   return canvas;
 }
 

@@ -34,10 +34,16 @@ export type Practice = {
   about?: string;
 };
 
+// Spanish (the app's second language) is picked from globalThis.__ihLang, so this file stays import-free for the tests.
+const es = () => (globalThis as { __ihLang?: string }).__ihLang === "es";
+
 /** When people keep it, in words, for the "how it's done" explainer. */
 const WHEN_WORDS: Record<string, string> = { hamotzi: "before a meal", grace: "before a meal", "salat-steps": "five times a day, at set times", "inna-lillahi": "at news of a death, or any loss", "eternal-rest": "when someone has died, and on the days they're remembered" };
+const WHEN_WORDS_ES: Record<string, string> = { hamotzi: "antes de una comida", grace: "antes de una comida", "salat-steps": "cinco veces al día, a horas fijas", "inna-lillahi": "al saber de una muerte, o de cualquier pérdida", "eternal-rest": "cuando alguien muere, y en los días en que se le recuerda" };
 export const whenWords = (p: Practice) =>
-  WHEN_WORDS[p.id] ? WHEN_WORDS[p.id] : p.when === "morning" ? "in the morning, on waking" : p.when === "night" ? "in the evening, or at bedtime" : p.when === "friday" ? "on Friday, before sundown" : "any time of day";
+  es()
+    ? WHEN_WORDS_ES[p.id] ? WHEN_WORDS_ES[p.id] : p.when === "morning" ? "por la mañana, al despertar" : p.when === "night" ? "al anochecer, o antes de dormir" : p.when === "friday" ? "el viernes, antes de la puesta del sol" : "a cualquier hora del día"
+    : WHEN_WORDS[p.id] ? WHEN_WORDS[p.id] : p.when === "morning" ? "in the morning, on waking" : p.when === "night" ? "in the evening, or at bedtime" : p.when === "friday" ? "on Friday, before sundown" : "any time of day";
 
 export const PRACTICES: Practice[] = [
   // ─── every door ───────────────────────────────────────────────────────
@@ -207,5 +213,181 @@ export const PRACTICES: Practice[] = [
     why: "an old Stoic exercise Marcus Aurelius returned to in his Meditations.",
     about: "Stoics like Marcus Aurelius pictured themselves rising above their city and the whole earth until their worries looked small, then came back down." },
 ];
+
+// ─── en español ───────────────────────────────────────────────────────────
+// DRAFT — NOT KEEPER-REVIEWED, like the English above. Transliterations stay as they are; prayer glosses use the
+// standard Spanish forms (the Padre Nuestro, the Reina-Valera 1909 psalms, the usual Catholic Spanish). The title,
+// steps, why and about of each practice read in Spanish when the app is in Spanish; ids, kinds and timing never change.
+type EsText = { title: string; steps: string[]; why: string; about?: string };
+const PRACTICES_ES: Record<string, EsText> = {
+  breath: { title: "una respiración, hasta el fondo",
+    steps: ["siéntate o quédate de pie. deja caer los hombros.", "inhala por la nariz contando hasta cuatro.", "exhala despacio contando hasta seis, como si empañaras una ventana.", "hazlo tres veces. eso es todo."],
+    why: "una exhalación más larga le dice a tu cuerpo que puede bajar la guardia." },
+  "long-exhale": { title: "la exhalación larga",
+    steps: ["inhala contando hasta cuatro.", "sostén un momento, con suavidad.", "exhala contando hasta ocho.", "diez rondas. cuéntalas con los dedos."],
+    why: "cuando tu mente va a mil, la exhalación es la parte que puedes guiar." },
+  sit: { title: "sentarte en quietud",
+    steps: ["siéntate donde nadie te interrumpa. el teléfono boca abajo.", "cierra los ojos o déjalos descansar en el piso.", "nota la respiración sin cambiarla.", "cuando tu mente se distraiga (y lo hará), regresa. ese regresar es la práctica."],
+    why: "tres minutos de quietud que no te piden nada." },
+  "five-things": { title: "cinco cosas que puedes ver",
+    steps: ["nombra cinco cosas que puedes ver.", "cuatro que puedes oír.", "tres que puedes tocar.", "dos que puedes oler, una que puedes saborear. luego, una respiración lenta."],
+    why: "tus sentidos solo funcionan en el presente, así que te traen de vuelta a él." },
+  walk: { title: "una caminata lenta, sin teléfono",
+    steps: ["deja el teléfono, o ponlo en no molestar.", "camina un poco más despacio de lo normal.", "nota cinco cosas junto a las que normalmente pasarías de largo.", "de regreso, nota cómo te sientes."],
+    why: "caminar deja que la mente se asiente sin que tengas que estar inmóvil." },
+  gratitude: { title: "tres cosas buenas",
+    steps: ["escribe tres cosas que salieron bien hoy, por pequeñas que sean.", "de una de ellas, escribe por qué pasó.", "léelas una vez."],
+    why: "notar lo que ya está bien es un hábito, y los hábitos se construyen." },
+  "kind-act": { title: "un gesto amable, en silencio",
+    steps: ["elige a una persona: alguien cerca de ti, o alguien en quien no has pensado en un tiempo.", "haz algo pequeño por ella: un mensaje, un café, una tarea menos en su lista.", "no lo menciones. que quede en silencio."],
+    why: "hacer el bien sin que te vean es un hilo que atraviesa casi todas las tradiciones de la colina." },
+  give: { title: "regala algo",
+    steps: ["busca algo que no necesites, o aparta una pequeña cantidad de dinero.", "decide para quién es: una persona, un albergue, una causa.", "dalo esta semana, sin hacer mucho alboroto."],
+    why: "soltar las cosas es más fácil de practicar que de pensar." },
+  "evening-review": { title: "el repaso de la noche",
+    steps: ["¿qué salió bien hoy?", "¿qué harías distinto?", "¿qué agradeces?", "cierra el cuaderno. el día terminó."],
+    why: "unas líneas honestas en la noche, para que mañana empiece limpio." },
+  "digital-sabbath": { title: "una hora sin teléfono",
+    steps: ["elige la hora: ahora, o después de cenar.", "deja el teléfono en otro cuarto, en silencio.", "haz una cosa lenta: cocinar, leer, sentarte afuera, platicar.", "cuando pase la hora, nota si lo extrañaste."],
+    why: "una hora apartada, como muchas tradiciones apartan un día." },
+  "body-scan": { title: "un recorrido por el cuerpo",
+    steps: ["acuéstate o recárgate. cierra los ojos.", "empieza por los pies. nótalos sin moverlos.", "sube despacio: piernas, vientre, pecho, manos, hombros, cara.", "donde sientas tensión, exhala hacia ahí.", "termina con una respiración para todo el cuerpo."],
+    why: "tu cuerpo guarda el estrés del día. esta es una forma de soltar un poco." },
+  letter: { title: "una carta a alguien que perdiste",
+    steps: ["escribe su nombre arriba.", "cuéntale algo que pasó esta semana.", "cuéntale algo que extrañas.", "di lo que no alcanzaste a decir. nunca tienes que enviarla."],
+    why: "el duelo muchas veces necesita un lugar adonde ir. una carta es un lugar." },
+  "used-to-think": { title: "lo que antes pensaba",
+    steps: ["escribe algo que antes creías, sobre la fe o sobre cualquier cosa.", "escribe lo que piensas de eso ahora.", "escribe qué te hizo cambiar de opinión, si lo sabes.", "no hace falta resolverlo. solo nótalo."],
+    why: "mirar atrás con honestidad es la manera en que quien regresa encuentra dónde pararse." },
+  stretch: { title: "un estiramiento suave",
+    steps: ["ponte de pie. sube los dos brazos e inhala.", "dóblate hacia adelante despacio, con las rodillas sueltas, y exhala.", "sube vértebra por vértebra.", "gira los hombros hacia atrás tres veces. luego el cuello, despacio."],
+    why: "unos movimientos lentos despiertan el cuerpo sin apurarlo." },
+  "meal-pause": { title: "una pausa antes de comer",
+    steps: ["antes del primer bocado, detente.", "cada quien dice algo que le alegra de hoy.", "come el primer bocado despacio."],
+    why: "una pequeña pausa en la mesa, fácil de hacer con los niños cerca." },
+  "candle-night": { title: "una luz en la oscuridad",
+    steps: ["baja las luces. prende una vela, o una lámpara pequeña.", "siéntate y mírala un minuto.", "si extrañas a alguien, di su nombre.", "apágala cuando quieras."],
+    why: "una pequeña luz en la noche, para cuando el día pesó." },
+
+  "sign-of-cross": { title: "la señal de la cruz",
+    steps: ["con la mano derecha, toca tu frente: «en el nombre del Padre,»", "tu pecho: «y del Hijo,»", "tu hombro izquierdo, luego el derecho: «y del Espíritu Santo.»", "«amén». luego, una respiración tranquila."],
+    why: "la oración católica más antigua y más corta: cabeza, corazón, hombros; todo tu ser.",
+    about: "los católicos se tocan la frente, el pecho y luego cada hombro con la mano derecha, nombrando al Padre, al Hijo y al Espíritu Santo. con ella abren y cierran casi todas sus oraciones, y muchos la hacen al entrar a una iglesia o antes de comer." },
+  "rosary-decade": { title: "una decena del rosario",
+    steps: ["toma las cuentas, o cuenta con los dedos.", "reza un Padre Nuestro.", "reza diez Avemarías, una por cada cuenta, despacio.", "termina con un Gloria.", "si quieres, ten presente un misterio; la Anunciación es un buen primero."],
+    why: "una decena es la quinta parte del rosario: una repetición que aquieta la mente.",
+    about: "una decena es un Padre Nuestro, diez Avemarías contadas en las cuentas y un Gloria, muchas veces con una escena de la vida de Jesús o de María (un misterio) en mente. cinco decenas forman un rosario completo." },
+  examen: { title: "el examen ignaciano",
+    steps: ["pide luz para ver el día con honestidad.", "repasa el día con gratitud.", "nota dónde te sentiste cerca de Dios, y dónde lejos.", "pide perdón por lo que salió mal.", "mira hacia mañana con esperanza."],
+    why: "san Ignacio pidió a sus jesuitas que lo mantuvieran aun cuando dejaran todo lo demás.",
+    about: "al final del día, se repasa despacio: se da gracias, se nota dónde uno se sintió cerca de Dios y dónde lejos, se pide perdón por lo que salió mal y se mira hacia mañana." },
+  "eternal-rest": { title: "una oración por los difuntos",
+    steps: ["piensa en la persona que perdiste.", "reza: «dale, Señor, el descanso eterno, y brille para él la luz perpetua.»", "«descanse en paz. amén.»"],
+    why: "una oración corta que los católicos rezan por los difuntos desde hace siglos.",
+    about: "los católicos rezan una oración corta por alguien que murió, pidiendo descanso y luz para esa persona, muchas veces ante una tumba, en un aniversario o cuando la persona viene a la mente." },
+
+  "psalm-slowly": { title: "un salmo, leído despacio",
+    steps: ["abre en el Salmo 23 («el Señor es mi pastor»).", "léelo una vez, de corrido.", "léelo otra vez, más despacio. detente en la línea que te llame.", "quédate con esa línea un minuto."],
+    why: "los salmos se han leído en noches difíciles durante tres mil años.",
+    about: "se lee un salmo, muchas veces el Salmo 23, una vez de corrido y luego otra más despacio, deteniéndose en la línea que llama y quedándose con ella." },
+  "lords-prayer": { title: "el Padre Nuestro",
+    steps: ["busca un lugar tranquilo.", "rézalo despacio: «Padre nuestro, que estás en el cielo, santificado sea tu nombre…»", "haz una pausa después de cada línea.", "termina con una línea tuya."],
+    why: "la oración que Jesús enseñó a sus discípulos (Mateo 6).",
+    about: "los cristianos rezan las palabras que Jesús enseñó a sus discípulos, juntos en la iglesia o a solas, muchas veces despacio, a veces con una pausa después de cada línea." },
+  grace: { title: "bendecir la mesa",
+    steps: ["antes de comer, inclina la cabeza.", "dale gracias a Dios por la comida y por las manos que la prepararon.", "«amén». luego, a comer."],
+    why: "un gracias breve en la mesa, fácil de enseñar a los niños.",
+    about: "antes de comer, se inclina la cabeza y se le da gracias a Dios por la comida y por las manos que la prepararon, terminando con «amén»." },
+
+  "salat-steps": { title: "salat, paso a paso",
+    steps: ["haz el wudu: lava las manos, la boca, la nariz, la cara, los brazos, pasa las manos por la cabeza, lava los pies.", "mira hacia la qibla y pon tu intención en el corazón.", "levanta las manos, «allahu akbar», y recita al-Fatiha.", "inclínate (ruku), ponte de pie y luego prostérnate (sujud) dos veces.", "al final, siéntate y gira la cabeza a la derecha y luego a la izquierda: «as-salamu alaykum wa rahmatullah.»"],
+    why: "la forma de una unidad (rak'ah) de la oración que los musulmanes cumplen cinco veces al día.",
+    about: "los musulmanes primero se lavan (wudu), miran hacia La Meca (la qibla) y pasan por estar de pie, inclinarse y prosternarse mientras recitan del Corán, y terminan con un saludo de paz a la derecha y a la izquierda. se cumple cinco veces al día, a horas fijas." },
+  "dhikr-fingers": { title: "dhikr con los dedos",
+    steps: ["cuenta en las falanges de la mano derecha.", "«subhanallah» (gloria a Dios), 33 veces.", "«alhamdulillah» (toda alabanza es de Dios), 33 veces.", "«allahu akbar» (Dios es el más grande), 34 veces."],
+    why: "el recuerdo de Dios, contado con los dedos, como se cuenta que lo hacía el Profeta.",
+    about: "se cuentan frases cortas de alabanza en las falanges de los dedos o en un rosario de cuentas, muchas veces 33 de cada una, casi siempre justo después de la oración diaria." },
+  "inna-lillahi": { title: "palabras ante una pérdida",
+    steps: ["piensa en quién o qué perdiste.", "di: «inna lillahi wa inna ilayhi raji'un.»", "«de Dios somos, y a Él volvemos.» (Corán 2:156)", "quédate con eso durante una respiración."],
+    why: "lo que dicen los musulmanes al saber de una muerte, o de cualquier pérdida.",
+    about: "al saber de una muerte, o de cualquier pérdida, los musulmanes dicen un versículo del Corán (2:156): «de Dios somos, y a Él volvemos.»" },
+
+  "shabbat-candles": { title: "las velas de Shabbat",
+    steps: ["antes de la puesta del sol del viernes, pon dos velas.", "enciéndelas.", "atrae las manos hacia ti tres veces y luego cúbrete los ojos.", "di: «baruch atah Adonai, Eloheinu melech ha'olam, asher kid'shanu b'mitzvotav v'tzivanu l'hadlik ner shel Shabbat.»", "descubre tus ojos. la semana se detuvo."],
+    why: "encender las velas es como empieza el Shabbat.",
+    about: "antes de la puesta del sol del viernes, se encienden dos velas. quien las enciende atrae las manos hacia sí tres veces, se cubre los ojos y dice una bendición. en muchas casas, así empieza el Shabbat." },
+  "shema-bedtime": { title: "el Shemá antes de dormir",
+    steps: ["en la cama, con la luz apagada.", "cúbrete los ojos con la mano derecha.", "di: «Shema Yisrael, Adonai Eloheinu, Adonai echad.»", "luego, en voz baja: «baruch shem k'vod malchuto l'olam va'ed.»"],
+    why: "escucha, Israel: las palabras que se dicen en la noche, y de las primeras que aprenden muchos niños judíos.",
+    about: "antes de dormir, muchos judíos dicen el Shemá, a menudo cubriéndose los ojos con la mano derecha. es de lo primero que aprenden muchos niños judíos." },
+  "modeh-ani": { title: "Modeh Ani al despertar",
+    steps: ["antes de levantarte, quédate un momento en la cama.", "di: «modeh ani l'fanecha, melech chai v'kayam…»", "«te agradezco, Rey vivo y eterno, porque me devolviste el alma con compasión.»"],
+    why: "las primeras palabras del día: gracias, antes que nada.",
+    about: "al despertar, antes de salir de la cama, muchos judíos dicen una línea corta de gratitud por recibir un día más." },
+  hamotzi: { title: "la bendición del pan",
+    steps: ["antes de comer, toma el pan (o lo que haya en la mesa) en tus manos.", "di: «baruch atah Adonai, Eloheinu melech ha'olam, hamotzi lechem min ha'aretz.»", "«bendito eres Tú, Señor nuestro Dios, Rey del universo, que sacas el pan de la tierra.»", "da el primer bocado. si comes con alguien, pásale un pedazo."],
+    why: "hamotzi, la bendición del pan (Mishná, Berajot 6:1): una comida empieza dando gracias.",
+    about: "antes de una comida con pan, alguien toma el pan y dice la bendición, hamotzi. luego el pan pasa de mano en mano y cada quien toma un pedazo." },
+  "tehillim-121": { title: "un salmo de subida",
+    steps: ["abre en el Salmo 121, un cántico gradual: «alzaré mis ojos a los montes, de donde vendrá mi socorro.»", "léelo una vez, de corrido. son ocho versículos.", "léelo otra vez, más despacio. detente en la línea que te llame.", "si alguien que conoces necesita ayuda, tenlo presente mientras lees."],
+    why: "decir tehillim (salmos) es una práctica judía para cualquier hora, muchas veces por alguien que lo necesita.",
+    about: "se lee un salmo despacio, y el Salmo 121 es de los favoritos, muchas veces teniendo presente a alguien que necesita ayuda. decir tehillim (salmos) se puede a cualquier hora." },
+
+  simran: { title: "simran",
+    steps: ["siéntate cómodamente. cúbrete la cabeza si quieres.", "inhala y di en silencio «wahe».", "exhala: «guru».", "sigue, sin prisa, unos minutos."],
+    why: "recordar el Nombre, una y otra vez, hasta que el Nombre te recuerda a ti.",
+    about: "los sijs se sientan en silencio y repiten el Nombre, muchas veces «waheguru», al ritmo de la respiración, unos minutos o mucho más." },
+  "japji-line": { title: "una línea del Japji",
+    steps: ["abre al principio del Japji Sahib: «Ik Onkar, Sat Naam…»", "lee el Mool Mantar despacio, una vez en voz alta si puedes.", "lee un pauri (verso) y detente.", "lleva contigo una frase durante el día."],
+    why: "el Japji de Gurú Nanak es la oración sij de la mañana, un verso a la vez.",
+    about: "el Japji Sahib, el himno de Gurú Nanak, es la oración sij de la mañana. muchos lo leen cada mañana, empezando por el Mool Mantar." },
+  "kirtan-sohila": { title: "Kirtan Sohila en la noche",
+    steps: ["luces bajas, ya para dormir.", "lee o escucha el Kirtan Sohila.", "deja que el último verso sea lo último que oigas hoy."],
+    why: "la oración de antes de dormir, que también se canta en un funeral sij.",
+    about: "el Kirtan Sohila se lee o se canta antes de dormir, como la última oración del día. también se canta en un funeral sij." },
+
+  metta: { title: "metta, bondad amorosa",
+    steps: ["siéntate y acomódate. empieza por ti: «que yo esté a salvo. que sea feliz. que tenga salud. que viva con tranquilidad.»", "ahora alguien a quien quieres. dilo por esa persona.", "ahora alguien a quien apenas conoces.", "ahora alguien difícil, si puedes.", "al final: todos los seres, en todas partes."],
+    why: "bondad deseada a propósito, como la enseñó el Buda en el Metta Sutta.",
+    about: "se sientan y desean el bien a propósito, por pasos: a sí mismos, a alguien que quieren, a alguien que apenas conocen, a alguien difícil y luego a todos los seres. los deseos son sencillos: estar a salvo, ser feliz, vivir con tranquilidad." },
+  "walking-meditation": { title: "meditación caminando",
+    steps: ["busca un trayecto de diez o veinte pasos, adentro o afuera.", "camina despacio: levantando, moviendo y apoyando cada pie.", "al final, haz una pausa, da la vuelta y regresa.", "cuando la mente se distraiga, regresa a los pies."],
+    why: "la misma atención que al sentarse, llevada al movimiento.",
+    about: "se camina un trayecto corto muy despacio, notando cómo cada pie se levanta, se mueve y se apoya; luego una pausa, la vuelta y el regreso." },
+
+  mantra: { title: "un mantra",
+    steps: ["siéntate cómodamente. toma un mala, o cuenta con los dedos.", "elige un mantra que conozcas: «om», u «om namah shivaya».", "repítelo en voz baja con cada respiración.", "108 veces es un mala completo. unos minutos bastan."],
+    why: "japa: un sonido sagrado repetido hasta que la mente descansa en él.",
+    about: "se repite un sonido o nombre sagrado, como «om» u «om namah shivaya», en voz baja, muchas veces contado en un mala de 108 cuentas. se llama japa." },
+  "gentle-yoga": { title: "yoga suave, con sus raíces",
+    steps: ["el yoga es una de las seis escuelas clásicas del pensamiento hindú. las posturas (asana) son una de las ocho ramas de Patanjali.", "ponte de pie en tadasana (postura de la montaña). respira.", "dóblate hacia adelante y baja a balasana (postura del niño) durante cinco respiraciones.", "siéntate y termina con unas respiraciones lentas (pranayama)."],
+    why: "las posturas vienen de un camino completo. esto nombra de dónde vienen.",
+    about: "el yoga es una de las seis escuelas clásicas del pensamiento hindú. las posturas (asana) son una de las ocho ramas de Patanjali; el camino también incluye la ética, la respiración y la meditación." },
+  diya: { title: "una lámpara al anochecer",
+    steps: ["al anochecer, enciende un diya (una pequeña lámpara de aceite) o una vela.", "ponlo frente a la imagen de tu deidad, o simplemente junto a una ventana.", "junta las manos. un momento de gratitud.", "déjalo encendido mientras sigues con tu noche, con cuidado."],
+    why: "encender una lámpara al anochecer es uno de los actos de devoción hindú más sencillos.",
+    about: "al anochecer, muchos hindúes encienden una pequeña lámpara de aceite (un diya) frente a la imagen de una deidad, juntan las manos y dan gracias." },
+
+  "seneca-questions": { title: "las tres preguntas de Séneca",
+    steps: ["esta noche, repasa el día.", "¿qué mal hábito curé hoy?", "¿qué defecto resistí?", "¿en qué soy mejor? y luego, a dormir."],
+    why: "el estoico Séneca lo hacía cada noche (Sobre la ira, libro 3).",
+    about: "cada noche, el estoico Séneca repasaba su día con tres preguntas: ¿qué mal hábito curé?, ¿qué defecto resistí?, ¿en qué soy mejor?" },
+  "view-from-above": { title: "la vista desde arriba",
+    steps: ["cierra los ojos. imagínate donde estás ahora mismo.", "elévate: el edificio, la ciudad, el país.", "sigue subiendo hasta que la Tierra se vea pequeña y azul.", "nota qué tan grande se ve desde aquí la preocupación de hoy. luego baja otra vez."],
+    why: "un antiguo ejercicio estoico al que Marco Aurelio volvía en sus Meditaciones.",
+    about: "estoicos como Marco Aurelio se imaginaban elevándose sobre su ciudad y toda la Tierra hasta que sus preocupaciones se veían pequeñas, y luego volvían a bajar." },
+};
+
+// Each practice's words follow the language: read at render time, so a switch shows at once. The English above is
+// what the tests (and every other language) see.
+for (const p of PRACTICES) {
+  const x = PRACTICES_ES[p.id];
+  if (!x) continue;
+  const en = { title: p.title, steps: p.steps, why: p.why, about: p.about };
+  for (const k of ["title", "steps", "why", "about"] as const) {
+    if (en[k] === undefined) continue;
+    Object.defineProperty(p, k, { get: () => (es() && x[k] !== undefined ? x[k] : en[k]), enumerable: true, configurable: true });
+  }
+}
 
 export const practiceById = (id: string | null | undefined) => PRACTICES.find((p) => p.id === id) || null;

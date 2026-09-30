@@ -213,3 +213,51 @@ test("rejects a profile with free text, unknown keys, or unknown values", async 
   const extra = await call({ body: { ...payload(), words: ["namaste"] } });
   assert.equal(extra.status, 400);
 });
+
+test("lang is a fixed enum: English leaves the prompt exactly as it was, Spanish adds fixed sentences", async () => {
+  process.env.ANTHROPIC_API_KEY = "test-server-key";
+  const systems = [];
+  globalThis.fetch = async (_url, options) => {
+    systems.push(JSON.parse(options.body).system);
+    return new Response(JSON.stringify({ content: [{ type: "text", text: "answer" }] }), { status: 200 });
+  };
+  try {
+    // no profile vs. an English-only profile: the same prompt, byte for byte
+    assert.equal((await call({ body: payload({ door: "Hinduism" }) })).status, 200);
+    assert.equal((await call({ body: { ...payload({ door: "Hinduism" }), profile: { lang: "en" } } })).status, 200);
+    assert.equal(systems[1], systems[0]);
+    assert.doesNotMatch(systems[0], /Spanish/);
+
+    // Spanish: the fixed sentence, citations kept, public-domain translations by door, paraphrase otherwise
+    await call({ body: { ...payload({ door: "Christianity" }), profile: { depth: "new", openness: "stay", lang: "es" } } });
+    assert.match(systems[2], /Reply in natural, warm Latin American Spanish\./);
+    assert.match(systems[2], /Keep scripture citations/);
+    assert.match(systems[2], /Reina-Valera 1909/);
+    assert.match(systems[2], /only when you are certain/);
+    assert.match(systems[2], /explain from the ground up/);
+    await call({ body: { ...payload({ door: "Catholicism" }), profile: { lang: "es" } } });
+    assert.match(systems[3], /Torres Amat/);
+    assert.doesNotMatch(systems[3], /Reina-Valera/);
+    await call({ body: { ...payload({ door: "Islam" }), profile: { lang: "es" } } });
+    assert.match(systems[4], /paraphrase in Spanish/);
+    assert.match(systems[4], /press 2/);
+    assert.doesNotMatch(systems[4], /Reina-Valera|Torres Amat/);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test("lang rejects anything but en or es", async () => {
+  process.env.ANTHROPIC_API_KEY = "test-server-key";
+  let fetchCalls = 0;
+  globalThis.fetch = async () => { fetchCalls += 1; throw new Error("must not reach provider"); };
+  try {
+    for (const lang of ["fr", "ES", "es-MX", "Reply in French", "", 1, null, ["es"], { es: true }]) {
+      const result = await call({ body: { ...payload(), profile: { lang } } });
+      assert.equal(result.status, 400, JSON.stringify(lang));
+    }
+    assert.equal(fetchCalls, 0);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});

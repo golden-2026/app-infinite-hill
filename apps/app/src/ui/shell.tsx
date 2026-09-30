@@ -14,10 +14,14 @@ import { tapHaptic } from "@/lib/haptics";
 import { useChrome } from "@/ui/chrome";
 import { Slide } from "@/ui/enter";
 import { ChevronLeft, CloseIcon } from "@/ui/tab-icons";
+import { t, type Key } from "@/i18n";
 
 export type BackTo = boolean | string | { label: string; to?: string; /** step back inside the screen first (e.g. the previous question); return true if handled */ onPress?: () => boolean };
 
 const PARENT: Record<string, string> = { you: "/you", today: "/today", together: "/together", guide: "/guide", legal: "/you/legal" };
+const NAV: Record<string, Key> = { you: "home.tab.you", today: "home.tab.today", together: "home.tab.together", guide: "home.tab.guide", back: "home.back" };
+/** A back label in the current language: the tabs' names and "back" are translated here; other labels come in translated. */
+export const navName = (label: string) => (NAV[label] ? t(NAV[label]) : label);
 
 function goBack(fallback: string) {
   if (router.canGoBack()) router.back();
@@ -31,15 +35,15 @@ export function BackButton({ to, dark }: { to: BackTo; dark?: boolean }) {
   const href = (typeof to === "object" && to.to) || PARENT[label] || "/today";
   const ink = dark ? "#fff" : color.ink;
   return (
-    <Pressable accessibilityRole="button" accessibilityLabel={`Back to ${label}`} hitSlop={8} onPress={() => { tapHaptic(); if (typeof to === "object" && to.onPress?.()) return; goBack(href); }}
+    <Pressable accessibilityRole="button" accessibilityLabel={t("home.backTo", { name: navName(label) })} hitSlop={8} onPress={() => { tapHaptic(); if (typeof to === "object" && to.onPress?.()) return; goBack(href); }}
       style={({ pressed }) => [st.back, { opacity: pressed ? 0.45 : 1 }]}>
       <ChevronLeft color={ink} />
-      <Text style={[st.backText, { color: ink }]} numberOfLines={1}>{label}</Text>
+      <Text style={[st.backText, { color: ink }]} numberOfLines={1}>{navName(label)}</Text>
     </Pressable>
   );
 }
 
-export function CloseButton({ onPress, dark, label = "Close" }: { onPress?: () => void; dark?: boolean; label?: string }) {
+export function CloseButton({ onPress, dark, label = t("home.close") }: { onPress?: () => void; dark?: boolean; label?: string }) {
   return (
     <Pressable accessibilityRole="button" accessibilityLabel={label} hitSlop={8} onPress={() => { tapHaptic(); (onPress ?? (() => goBack("/today")))(); }}
       style={({ pressed }) => [st.closeHit, { opacity: pressed ? 0.5 : 1 }]}>
@@ -52,13 +56,13 @@ export function CloseButton({ onPress, dark, label = "Close" }: { onPress?: () =
 export function NavBar({ back, close, closeLeft, right, title, showTitle = true, progress, dark, hairline, middle }: {
   back?: BackTo; close?: boolean | (() => void); /** a task in progress (lesson, review): × sits left of its progress line */ closeLeft?: boolean; right?: ReactNode; title?: string; showTitle?: boolean; progress?: number; dark?: boolean; hairline?: boolean; middle?: ReactNode;
 }) {
-  const t = useSharedValue(showTitle ? 1 : 0);
-  useEffect(() => { t.value = withTiming(showTitle ? 1 : 0, { duration: 180 }); }, [showTitle, t]);
-  const titleAnim = useAnimatedStyle(() => ({ opacity: t.value }));
+  const tv = useSharedValue(showTitle ? 1 : 0);
+  useEffect(() => { tv.value = withTiming(showTitle ? 1 : 0, { duration: 180 }); }, [showTitle, tv]);
+  const titleAnim = useAnimatedStyle(() => ({ opacity: tv.value }));
   const onClose = typeof close === "function" ? close : undefined;
   return (
     <View style={[st.bar, hairline && { borderBottomColor: dark ? "#ffffff1a" : color.line }]}>
-      <View style={[st.side, closeLeft && st.sideSmall]}>{back ? <BackButton to={back} dark={dark} /> : close && closeLeft ? <CloseButton dark={dark} onPress={onClose} label="Leave" /> : null}</View>
+      <View style={[st.side, closeLeft && st.sideSmall]}>{back ? <BackButton to={back} dark={dark} /> : close && closeLeft ? <CloseButton dark={dark} onPress={onClose} label={t("home.leave")} /> : null}</View>
       <View style={st.middle} pointerEvents="box-none">
         {middle ?? (progress != null ? (
           <View style={[st.track, dark && { backgroundColor: "#ffffff22" }]} accessibilityRole="progressbar" accessibilityValue={{ min: 0, max: 100, now: Math.round(progress * 100) }}>

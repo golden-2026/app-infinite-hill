@@ -5,8 +5,18 @@
 // applies once the parser reaches it, and phones briefly paint the old design first. So every body <style> block
 // (in document order) and the motion layer's own CSS (<style id="motion-css">) go at the end of <head>. The
 // motion layer's markup and script stay at the end of the body. Running it again gives the same file.
+//
+// Spanish: `node mock/build.mjs --lang es [--apply]` runs this same build, then translates the result with the text in
+// mock/es.mjs (exact English -> Spanish pairs, motion layer included) and mock/es-pages.mjs (the pop-up pages), points
+// every way into the app at ?lang=es, and writes mock/out/site-es.html (with --apply, apps/app/public/site-es.html,
+// served at /es by public/_redirects). It never writes site.html, so the English output is unchanged. After editing
+// the English copy or motion.html, rebuild both: `--apply`, then `--lang es --apply`; a stale pair stops the build.
 import fs from 'node:fs';
 const SITE = '../apps/app/public/site.html';
+const SITE_ES = '../apps/app/public/site-es.html';
+const li = process.argv.indexOf('--lang');
+const LANG = li > 0 ? process.argv[li + 1] : 'en';
+if (!['en', 'es'].includes(LANG)) throw new Error('--lang must be en or es');
 let src = fs.readFileSync(SITE, 'utf8');
 // strip an earlier motion pass (everything from its marker to the script that closes it)
 const mark = src.indexOf('<!-- MOTION PASS');
@@ -42,7 +52,40 @@ src = src.replace(/\s*<\/body>(?![\s\S]*<\/body>)/, '\n</body>'); // no blank li
 const i = src.lastIndexOf('</body>');
 const out = src.slice(0, i) + add + src.slice(i);
 fs.mkdirSync('mock/out', { recursive: true });
-fs.writeFileSync('mock/out/site.html', out);
-fs.writeFileSync('mock/out/index.html', '<meta http-equiv="refresh" content="0;url=site.html">');
-if (process.argv.includes('--apply')) fs.writeFileSync(SITE, out);
-console.log('built', (out.length / 1e6).toFixed(1) + 'MB', mark >= 0 ? '(replaced the earlier motion pass)' : '', hoisted.length ? `(hoisted ${hoisted.length} body styles)` : '(no body styles left to hoist)');
+if (LANG === 'es') {
+  // Spanish: the same build, translated. Never touches site.html; writes site-es.html next to it (served at /es).
+  const es = await translate(out, await import('./es.mjs'));
+  fs.writeFileSync('mock/out/site-es.html', es);
+  if (process.argv.includes('--apply')) fs.writeFileSync(SITE_ES, es);
+  console.log('built es', (es.length / 1e6).toFixed(1) + 'MB', process.argv.includes('--apply') ? '-> ' + SITE_ES : '-> mock/out/site-es.html');
+} else {
+  fs.writeFileSync('mock/out/site.html', out);
+  fs.writeFileSync('mock/out/index.html', '<meta http-equiv="refresh" content="0;url=site.html">');
+  if (process.argv.includes('--apply')) fs.writeFileSync(SITE, out);
+  console.log('built', (out.length / 1e6).toFixed(1) + 'MB', mark >= 0 ? '(replaced the earlier motion pass)' : '', hoisted.length ? `(hoisted ${hoisted.length} body styles)` : '(no body styles left to hoist)');
+}
+
+// English page -> Spanish page: inline base64 is set aside, the pop-up PAGES object is swapped whole, <title> becomes the
+// Spanish head (title, description, og:*), then every [english, spanish] pair in es.mjs runs. Any pair or page that no
+// longer matches stops the build, and so does any way into the app that doesn't carry lang=es.
+async function translate(html, { PAIRS, PAGES, HEAD }) {
+  const kept = [];
+  html = html.replace(/data:[a-z]+\/[a-z0-9.+-]+;base64,[A-Za-z0-9+/=]+/g, (m) => `\u0000${kept.push(m) - 1}\u0000`);
+  const a = html.indexOf('const PAGES='), b = html.indexOf('};\n', a);
+  if (a < 0 || b < 0) throw new Error('no PAGES object');
+  const en = Function('return ' + html.slice(a + 'const PAGES='.length, b + 1))();
+  const gone = Object.keys(en).filter((k) => !PAGES[k]), extra = Object.keys(PAGES).filter((k) => !en[k]);
+  if (gone.length || extra.length) throw new Error(`Spanish PAGES out of step: missing ${gone.join(', ') || '-'}; extra ${extra.join(', ') || '-'}`);
+  html = html.slice(0, a) + 'const PAGES=' + JSON.stringify(PAGES).replace(/<\/script/gi, '<\\/script') + ';' + html.slice(b + 2);
+  if (!/<title>[^<]*<\/title>/.test(html)) throw new Error('no <title>');
+  html = html.replace(/<title>[^<]*<\/title>/, () => HEAD);
+  const missing = [];
+  for (const [from, to] of PAIRS) {
+    if (!html.includes(from)) { missing.push(from.slice(0, 90)); continue; }
+    html = html.split(from).join(to);
+  }
+  if (missing.length) throw new Error(`${missing.length} Spanish pair(s) no longer match the English page:\n  ` + missing.join('\n  '));
+  const bare = [...html.matchAll(/['"(]\/welcome\/[^'"\s)]*/g)].filter((m) => !html.slice(m.index, m.index + 70).includes('lang=es'));
+  if (bare.length) throw new Error('app links without lang=es: ' + bare.map((m) => m[0]).join(' '));
+  return html.replace(/\u0000(\d+)\u0000/g, (_, n) => kept[Number(n)]);
+}

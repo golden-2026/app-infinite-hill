@@ -7,8 +7,9 @@ import { color, radius } from "@ih/brand";
 import { track } from "@/lib/analytics";
 import { CARD_H, CARD_W, cardText, paintCard, shareCard, type CardSpec } from "@/lib/share-card";
 import { Btn, Link, toast, type } from "@/ui";
+import { t } from "@/i18n";
 
-export function ShareCardButton({ spec, kind = "light", testID = "share-card", children = "share this" }: { spec: CardSpec; kind?: "light" | "gold" | "ink" | "ghost"; testID?: string; children?: string }) {
+export function ShareCardButton({ spec, kind = "light", testID = "share-card", children = t("session.share.this") }: { spec: CardSpec; kind?: "light" | "gold" | "ink" | "ghost"; testID?: string; children?: string }) {
   const [open, setOpen] = useState(false);
   const [canvas, setCanvas] = useState<HTMLCanvasElement | null>(null);
   const [preview, setPreview] = useState<string | null>(null);
@@ -25,9 +26,9 @@ export function ShareCardButton({ spec, kind = "light", testID = "share-card", c
     const r = await shareCard(spec, canvas);
     setBusy(false);
     track("card_shared", { kind: spec.kind, result: r });
-    if (r === "saved") toast("image saved · link copied");
-    else if (r === "copied") toast("link copied");
-    else if (r === "failed") toast("couldn't share it — try again");
+    if (r === "saved") toast(t("session.share.saved"));
+    else if (r === "copied") toast(t("session.linkCopied"));
+    else if (r === "failed") toast(t("session.share.fail"));
     if (r === "shared" || r === "saved" || r === "copied") setOpen(false);
   };
   const w = 260;
@@ -36,10 +37,10 @@ export function ShareCardButton({ spec, kind = "light", testID = "share-card", c
       <Btn kind={kind} onPress={() => setOpen(true)} testID={testID}>{children}</Btn>
       <Modal visible={open} transparent animationType="fade" onRequestClose={() => setOpen(false)}>
         <View style={{ flex: 1, justifyContent: "flex-end", alignItems: "center" }}>
-          <Pressable style={[StyleSheet.absoluteFill, { backgroundColor: color.scrim }]} accessibilityLabel="close" onPress={() => setOpen(false)} />
+          <Pressable style={[StyleSheet.absoluteFill, { backgroundColor: color.scrim }]} accessibilityLabel={t("session.close")} onPress={() => setOpen(false)} />
           <View testID="share-sheet" style={[s.sheet, { paddingBottom: Math.max(insets.bottom, 16) + 8 }]} accessibilityViewIsModal aria-modal>
             <View style={s.grab} />
-            <Text style={[type.eyebrow(), { textAlign: "center" }]}>share this</Text>
+            <Text style={[type.eyebrow(), { textAlign: "center" }]}>{t("session.share.this")}</Text>
             <View style={{ alignItems: "center" }}>
               {preview ? (
                 <Image testID="share-preview" source={{ uri: preview }} accessibilityLabel={cardText(spec)} style={{ width: w, height: (w * CARD_H) / CARD_W, borderRadius: 18 }} />
@@ -49,9 +50,9 @@ export function ShareCardButton({ spec, kind = "light", testID = "share-card", c
                 <Text style={[type.body(15), { textAlign: "center" }]}>{cardText(spec)}</Text>
               )}
             </View>
-            <Btn kind="ink" onPress={go} disabled={busy} testID="share-card-go">{busy ? "one moment…" : "share"}</Btn>
-            <View style={{ alignItems: "center" }}><Link onPress={() => setOpen(false)} style={{ color: color.mute }}>not now</Link></View>
-            <Text style={[type.body(11), { color: color.mute, textAlign: "center" }]}>only what's on the card: the number, your path's name and a link. never your journal, moods or answers.</Text>
+            <Btn kind="ink" onPress={go} disabled={busy} testID="share-card-go">{busy ? t("session.share.busy") : t("session.share.go")}</Btn>
+            <View style={{ alignItems: "center" }}><Link onPress={() => setOpen(false)} style={{ color: color.mute }}>{t("session.notNow")}</Link></View>
+            <Text style={[type.body(11), { color: color.mute, textAlign: "center" }]}>{t("session.share.foot")}</Text>
           </View>
         </View>
       </Modal>

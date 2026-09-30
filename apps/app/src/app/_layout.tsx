@@ -5,12 +5,13 @@ import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";
-import { useEffect } from "react";
+import { Fragment, useEffect } from "react";
 import { Platform, View, useWindowDimensions } from "react-native";
 import { preloadArt } from "@/lib/preload";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
+import { useLang } from "@/i18n";
 import { AuthProvider } from "@/lib/auth";
 import { registerWorker, syncReminders } from "@/lib/reminders";
 import { StoreProvider, useStore } from "@/lib/store";
@@ -61,6 +62,8 @@ export default function RootLayout() {
     if (loaded || error) { SplashScreen.hideAsync().catch(() => {}); preloadArt(); }
   }, [loaded, error]);
   const { width, height } = useWindowDimensions();
+  // a language switch (under You) re-mounts the screens, so every string is read again in the new language
+  const lang = useLang();
   // Web on a wide screen: show the app in a phone frame (as v175 did) instead of stretching it.
   const framed = Platform.OS === "web" && width >= 520;
   const frame = framed
@@ -78,6 +81,7 @@ export default function RootLayout() {
           <StatusBar style="dark" />
           <ReminderSync />
           <FriendsSync />
+          <Fragment key={lang}>
           <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: color.cream } }}>
             <Stack.Screen name="(tabs)" />
             <Stack.Screen name="welcome" options={{ gestureEnabled: false }} />
@@ -87,6 +91,7 @@ export default function RootLayout() {
             <Stack.Screen name="sign-in" options={{ presentation: "modal" }} />
           </Stack>
           <OverlayHost />
+          </Fragment>
         </SyncProvider>
         </StoreProvider>
         </AuthProvider>

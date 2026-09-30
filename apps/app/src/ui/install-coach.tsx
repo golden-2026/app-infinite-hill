@@ -1,12 +1,13 @@
 import { Text, View } from "react-native";
+import { t } from "@/i18n";
 import { color, font, type } from "@/ui";
 
 /** iPhone Safari only allows web reminders from the Home Screen app. Three steps, plainly. */
 export function InstallCoach() {
-  const steps = ["tap the share button (the square with the arrow) at the bottom of Safari", "choose “Add to Home Screen”, then Add", "open infinite hill from your home screen and turn reminders on there"];
+  const steps = [t("onboarding.install.step1"), t("onboarding.install.step2"), t("onboarding.install.step3")];
   return (
-    <View style={{ backgroundColor: "#fff", borderWidth: 1, borderColor: color.line, borderRadius: 16, padding: 14, gap: 8 }} accessibilityLabel="How to add infinite hill to your home screen">
-      <Text style={type.caption()}>on iPhone: add it to your home screen first</Text>
+    <View style={{ backgroundColor: "#fff", borderWidth: 1, borderColor: color.line, borderRadius: 16, padding: 14, gap: 8 }} accessibilityLabel={t("onboarding.install.a11y")}>
+      <Text style={type.caption()}>{t("onboarding.install.title")}</Text>
       {steps.map((s, i) => (
         <View key={i} style={{ flexDirection: "row", gap: 10 }}>
           <Text style={{ fontFamily: font.display[800], fontSize: 15, color: color.ink, width: 16 }}>{i + 1}</Text>

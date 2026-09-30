@@ -7,7 +7,8 @@ import { LinearGradient } from "expo-linear-gradient";
 import { Pressable, StyleSheet, Text, View, type StyleProp, type TextStyle, type ViewStyle } from "react-native";
 import Animated, { Easing, useAnimatedStyle, useReducedMotion, useSharedValue, withRepeat, withSequence, withSpring, withTiming } from "react-native-reanimated";
 import { art, color, font, radius, type } from "@ih/brand";
-import { data, label } from "@ih/content";
+import { data } from "@ih/content";
+import { doorLabel } from "@/i18n";
 import { tapHaptic } from "@/lib/haptics";
 import { play as playFx } from "@/lib/fx";
 
@@ -203,7 +204,7 @@ export function Face({ ic, w = 96, h = 120, r = 16, caption = true, big = false 
   const ref = data.PHOTOS[ic.wing];
   const a = art(ref);
   return (
-    <View style={{ width: w, height: h, borderRadius: r, overflow: "hidden", backgroundColor: a ? "#000" : ic.tint }} accessibilityLabel={`${ic.name}, ${label(ic.wing)}`}>
+    <View style={{ width: w, height: h, borderRadius: r, overflow: "hidden", backgroundColor: a ? "#000" : ic.tint }} accessibilityLabel={`${ic.name}, ${doorLabel(ic.wing)}`}>
       {a ? <Image source={a.src} style={StyleSheet.absoluteFill} contentFit="cover" contentPosition={big ? "center" : "top"} transition={FADE} cachePolicy="memory-disk" /> : (
         <View style={[StyleSheet.absoluteFill, styles.center]}><Text style={{ fontFamily: font.display[800], fontSize: big ? 64 : 36, color: "#ffffff55" }}>{ic.short[0]}</Text></View>
       )}
@@ -211,7 +212,7 @@ export function Face({ ic, w = 96, h = 120, r = 16, caption = true, big = false 
       {caption ? (
         <View style={styles.faceCaption}>
           <Text style={{ fontFamily: font.display[800], fontSize: big ? 22 : 15, color: "#fff", textShadowColor: "rgba(0,0,0,.75)", textShadowRadius: 8, textShadowOffset: { width: 0, height: 1 } }}>{ic.name}</Text>
-          <Text style={[type.eyebrow(8), { color: color.gold, marginTop: 4, textShadowColor: "rgba(0,0,0,.75)", textShadowRadius: 6, textShadowOffset: { width: 0, height: 1 } }]}>{label(ic.wing)}</Text>
+          <Text style={[type.eyebrow(8), { color: color.gold, marginTop: 4, textShadowColor: "rgba(0,0,0,.75)", textShadowRadius: 6, textShadowOffset: { width: 0, height: 1 } }]}>{doorLabel(ic.wing)}</Text>
         </View>
       ) : null}
     </View>

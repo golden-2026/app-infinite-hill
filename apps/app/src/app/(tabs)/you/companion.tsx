@@ -4,12 +4,13 @@ import { useTitle } from "@/lib/title";
 import { router } from "expo-router";
 import { useEffect, useState } from "react";
 import { Pressable, Text, TextInput, View } from "react-native";
-import { addFact, deleteFact, editFact, forgetEverything, seedFacts, useMemory } from "@/lib/companion/memory";
+import { addFact, deleteFact, editFact, factText, forgetEverything, seedFacts, useMemory } from "@/lib/companion/memory";
+import { t } from "@/i18n";
 import { useStore } from "@/lib/store";
 import { Body, Btn, Guy, Screen, color, confirmSheet, font, toast, type } from "@/ui";
 
 export default function CompanionKnows() {
-  useTitle("what the companion knows");
+  useTitle(t("companion.you.knows"));
   const { today, saved } = useStore();
   const m = useMemory();
   const profile = saved.settings.profile;
@@ -20,63 +21,63 @@ export default function CompanionKnows() {
   const input = { padding: 12, borderRadius: 12, borderWidth: 1.5, borderColor: color.line, backgroundColor: "#fff", fontFamily: font.text[400], fontSize: 16, color: color.ink } as const;
   const shared = m.journal.filter((e) => e.shared).length;
   return (
-    <Screen scroll back="you" title="what the companion knows." contentStyle={{ gap: 14 }}>
+    <Screen scroll back="you" title={t("companion.knows.header")} contentStyle={{ gap: 14 }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: 12 }}>
         <Guy pose="think" h={90} />
-        <Body style={{ flex: 1 }}>this lives on your phone. it's what shapes your practice and your note each day. change anything, or delete it, and the companion stops using it.</Body>
+        <Body style={{ flex: 1 }}>{t("companion.knows.intro")}</Body>
       </View>
 
       {m.facts.length === 0 ? (
-        <Text style={[type.body(14), { color: color.mute }]}>nothing yet. it only knows what you tell it.</Text>
+        <Text style={[type.body(14), { color: color.mute }]}>{t("companion.knows.empty")}</Text>
       ) : (
         <View>
-          {m.facts.map((f) => (
+          {m.facts.map((f) => { const text = factText(f, profile, { kids: saved.settings.kids.length }); return (
             <View key={f.id} style={{ paddingVertical: 12, borderTopWidth: 1, borderTopColor: color.line, gap: 8 }}>
               {editing === f.id ? (
                 <>
-                  <TextInput value={draft} onChangeText={setDraft} autoFocus accessibilityLabel="edit this" style={input} onSubmitEditing={() => { editFact(f.id, draft); setEditing(null); }} />
+                  <TextInput value={draft} onChangeText={setDraft} autoFocus accessibilityLabel={t("companion.knows.editA11y")} style={input} onSubmitEditing={() => { editFact(f.id, draft); setEditing(null); }} />
                   <View style={{ flexDirection: "row", gap: 16 }}>
-                    <Pressable accessibilityRole="button" onPress={() => { editFact(f.id, draft); setEditing(null); }} hitSlop={8}><Text style={[type.eyebrow(9), { color: color.ink }]}>save</Text></Pressable>
-                    <Pressable accessibilityRole="button" onPress={() => setEditing(null)} hitSlop={8}><Text style={type.eyebrow(9)}>cancel</Text></Pressable>
+                    <Pressable accessibilityRole="button" onPress={() => { editFact(f.id, draft); setEditing(null); }} hitSlop={8}><Text style={[type.eyebrow(9), { color: color.ink }]}>{t("companion.journal.save")}</Text></Pressable>
+                    <Pressable accessibilityRole="button" onPress={() => setEditing(null)} hitSlop={8}><Text style={type.eyebrow(9)}>{t("common.cancel")}</Text></Pressable>
                   </View>
                 </>
               ) : (
                 <>
-                  <Text style={type.serif(17)}>{f.text}</Text>
+                  <Text style={type.serif(17)}>{text}</Text>
                   <View style={{ flexDirection: "row", gap: 16, alignItems: "center" }}>
-                    <Text style={type.caption(11)}>{f.from === "you" ? "you added this" : "from your answers"}</Text>
-                    <Pressable accessibilityRole="button" accessibilityLabel={`edit: ${f.text}`} onPress={() => { setEditing(f.id); setDraft(f.text); }} hitSlop={8} style={{ minHeight: 32, justifyContent: "center" }}><Text style={[type.eyebrow(8), { color: color.ink }]}>edit</Text></Pressable>
-                    <Pressable accessibilityRole="button" accessibilityLabel={`delete: ${f.text}`} onPress={() => deleteFact(f.id)} hitSlop={8} style={{ minHeight: 32, justifyContent: "center" }}><Text style={[type.eyebrow(8), { color: color.danger }]}>delete</Text></Pressable>
+                    <Text style={type.caption(11)}>{f.from === "you" ? t("companion.knows.youAdded") : t("companion.knows.fromAnswers")}</Text>
+                    <Pressable accessibilityRole="button" accessibilityLabel={t("companion.knows.editLabel", { fact: text })} onPress={() => { setEditing(f.id); setDraft(text); }} hitSlop={8} style={{ minHeight: 32, justifyContent: "center" }}><Text style={[type.eyebrow(8), { color: color.ink }]}>{t("companion.knows.edit")}</Text></Pressable>
+                    <Pressable accessibilityRole="button" accessibilityLabel={t("companion.knows.deleteLabel", { fact: text })} onPress={() => deleteFact(f.id)} hitSlop={8} style={{ minHeight: 32, justifyContent: "center" }}><Text style={[type.eyebrow(8), { color: color.danger }]}>{t("companion.journal.delete")}</Text></Pressable>
                   </View>
                 </>
               )}
             </View>
-          ))}
+          ); })}
         </View>
       )}
 
       <View style={{ gap: 8 }}>
-        <Text style={type.eyebrow(8)}>tell it something</Text>
-        <TextInput value={adding} onChangeText={setAdding} placeholder="e.g. mornings are easier for me than nights." placeholderTextColor={color.mute} accessibilityLabel="add something the companion should know" style={input}
+        <Text style={type.eyebrow(8)}>{t("companion.knows.tell")}</Text>
+        <TextInput value={adding} onChangeText={setAdding} placeholder={t("companion.knows.placeholder")} placeholderTextColor={color.mute} accessibilityLabel={t("companion.knows.addA11y")} style={input}
           onSubmitEditing={() => { addFact(adding, today); setAdding(""); }} />
-        <Btn kind="ghost" disabled={!adding.trim()} onPress={() => { addFact(adding, today); setAdding(""); toast("kept."); }}>add</Btn>
+        <Btn kind="ghost" disabled={!adding.trim()} onPress={() => { addFact(adding, today); setAdding(""); toast(t("companion.knows.kept")); }}>{t("common.add")}</Btn>
       </View>
 
       <View style={{ gap: 6 }}>
-        <Text style={type.eyebrow(8)}>also on this phone</Text>
+        <Text style={type.eyebrow(8)}>{t("companion.knows.also")}</Text>
         <Text style={[type.body(13), { color: color.mute }]}>
-          {m.moods.filter((x) => x.mood !== "skip").length} mood check-ins · {m.done.length} practices done · {m.journal.length} journal {m.journal.length === 1 ? "page" : "pages"} ({shared} shared with the companion). your kept lines stay in your book.
+          {t("companion.knows.stats", { moods: m.moods.filter((x) => x.mood !== "skip").length, done: m.done.length, pages: t("companion.knows.pages", { count: m.journal.length }), shared })}
         </Text>
-        <Pressable accessibilityRole="link" onPress={() => router.push("/journal")} hitSlop={8}><Text style={[type.caption(12), { color: color.ink }]}>open your journal ›</Text></Pressable>
+        <Pressable accessibilityRole="link" onPress={() => router.push("/journal")} hitSlop={8}><Text style={[type.caption(12), { color: color.ink }]}>{t("companion.knows.openJournal")}</Text></Pressable>
       </View>
-      <Text style={[type.caption(12)]}>when the companion's AI is on, it only ever sees the lines above and the journal pages you chose to share. never the rest.</Text>
+      <Text style={[type.caption(12)]}>{t("companion.knows.aiNote")}</Text>
 
       <Btn kind="danger" onPress={async () => {
-        if (await confirmSheet({ title: "forget everything?", body: "every fact, mood, practice and journal page the companion kept on this phone. your days and your book stay.", confirm: "forget everything", destructive: true })) {
+        if (await confirmSheet({ title: t("companion.knows.forgetTitle"), body: t("companion.knows.forgetBody"), confirm: t("companion.knows.forget"), destructive: true })) {
           forgetEverything();
-          toast("forgotten.");
+          toast(t("companion.knows.forgotten"));
         }
-      }}>forget everything</Btn>
+      }}>{t("companion.knows.forget")}</Btn>
     </Screen>
   );
 }

@@ -1,5 +1,6 @@
 import { useTitle } from "@/lib/title";
-import { label } from "@ih/content";
+import { doorLabel, t } from "@/i18n";
+import { doorList, theDoor } from "@/lib/share-card";
 import { useEffect, useState } from "react";
 import { Text, View } from "react-native";
 import { useDone } from "@/lib/done";
@@ -10,7 +11,7 @@ import { Btn, Card, Eyebrow, Screen, color, font, toast, type } from "@/ui";
 // After a lesson, for people who said they're open to it: "another tradition has a similar idea — want more, or
 // stay on your path?" Only ever an offer. "stay on my path" turns these off for good (changeable in You).
 export default function Bridge() {
-  useTitle("a similar idea");
+  useTitle(t("session.bridge.title"));
   const { p, go, close } = useDone();
   const { saved, update, today } = useStore();
   const prof = saved.settings.profile ?? null;
@@ -22,34 +23,34 @@ export default function Bridge() {
 
   const answer = (a: "more" | "later" | "stay") => {
     update({ profile: { ...prof, bridges: { ...prof.bridges, [b.bridge.id]: a }, lastBridgeOn: today, openness: a === "stay" ? "stay" : prof.openness } });
-    if (a === "stay") toast(`got it — just ${label(p.door)}`);
+    if (a === "stay") toast(t("session.bridge.stayToast", { door: doorLabel(p.door) }));
   };
   return (
     <Screen close={close} footer={open
-      ? <Btn onPress={next}>continue</Btn>
+      ? <Btn onPress={next}>{t("session.continue")}</Btn>
       : (
         <View style={{ gap: 8 }}>
-          <Btn onPress={() => { answer("more"); setOpen(true); }}>tell me more</Btn>
-          <Btn kind="ghost" onPress={() => { answer("stay"); next(); }}>{`stay on my path`}</Btn>
+          <Btn onPress={() => { answer("more"); setOpen(true); }}>{t("session.bridge.more")}</Btn>
+          <Btn kind="ghost" onPress={() => { answer("stay"); next(); }}>{t("session.bridge.stay")}</Btn>
         </View>
       )}>
       <View style={{ flex: 1, justifyContent: "center", gap: 14 }}>
-        <Eyebrow>a similar idea, next door</Eyebrow>
-        <Text style={type.h1(26)}>{`${p.word} has cousins.`}</Text>
-        <Text style={[type.body(15), { color: color.mute }]}>{`${b.bridge.idea} — ${label(p.door)} isn't the only tradition that found it.`}</Text>
+        <Eyebrow>{t("session.bridge.eyebrow")}</Eyebrow>
+        <Text style={type.h1(26)}>{t("session.bridge.cousins", { word: p.word })}</Text>
+        <Text style={[type.body(15), { color: color.mute }]}>{t("session.bridge.idea", { idea: b.bridge.idea, door: theDoor(p.door) })}</Text>
         {open ? (
           <View style={{ gap: 10 }}>
             {b.others.map((o) => (
               <Card key={`${o.door}-${o.word}`}>
-                <Eyebrow size={8}>{label(o.door)}</Eyebrow>
+                <Eyebrow size={8}>{doorLabel(o.door)}</Eyebrow>
                 <Text style={{ fontFamily: font.display[800], fontSize: 20, color: color.ink, marginTop: 4 }}>{o.word}</Text>
                 <Text style={[type.body(14), { marginTop: 2 }]}>{o.gloss}</Text>
               </Card>
             ))}
-            <Text style={[type.caption(), { textAlign: "center" }]}>{`similar, not the same. your path stays ${label(p.door)}.`}</Text>
+            <Text style={[type.caption(), { textAlign: "center" }]}>{t("session.bridge.similar", { door: theDoor(p.door) })}</Text>
           </View>
         ) : (
-          <Text style={[type.body(15)]}>{`want to hear how ${b.others.map((o) => label(o.door)).join(", ").replace(/, ([^,]*)$/, " and $1")} put it — or stay on your path?`}</Text>
+          <Text style={[type.body(15)]}>{t("session.bridge.ask", { list: doorList(b.others.map((o) => o.door)) })}</Text>
         )}
       </View>
     </Screen>

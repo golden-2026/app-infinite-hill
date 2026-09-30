@@ -6,6 +6,7 @@ import * as Linking from "expo-linking";
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 import { Platform } from "react-native";
 import { supabase } from "./supabase";
+import { t, type Key } from "@/i18n";
 
 type Auth = {
   ready: boolean;
@@ -24,21 +25,21 @@ export function redirectUrl() {
   return Linking.createURL("/auth/callback");
 }
 
-// Supabase error codes → plain words. Unknown errors never blame the person.
-const CODES: Record<string, string> = {
-  email_address_invalid: "that email doesn't look right.",
-  email_address_not_authorized: "email sign-in isn't open yet. your days are safe on this device.",
-  over_email_send_rate_limit: "that's a lot of codes. wait a minute, then try again.",
-  over_request_rate_limit: "that's a lot of tries. wait a minute, then try again.",
-  otp_expired: "that code expired. send a new one.",
-  otp_disabled: "email sign-in isn't open yet. your days are safe on this device.",
-  signup_disabled: "new accounts aren't open yet. your days are safe on this device.",
+// Supabase error codes → plain words. Unknown errors never blame the person. Keys, read at the moment they're shown.
+const CODES: Record<string, Key> = {
+  email_address_invalid: "home.auth.emailInvalid",
+  email_address_not_authorized: "home.auth.notOpen",
+  over_email_send_rate_limit: "home.auth.tooManyCodes",
+  over_request_rate_limit: "home.auth.tooManyTries",
+  otp_expired: "home.auth.expired",
+  otp_disabled: "home.auth.notOpen",
+  signup_disabled: "home.auth.signupClosed",
 };
 const friendly = (e?: { code?: string; message?: string } | null) =>
-  (e?.code && CODES[e.code]) ||
+  t((e?.code && CODES[e.code]) ||
   (/rate|too many/i.test(e?.message || "") ? CODES.over_request_rate_limit :
-   /token|otp|code/i.test(e?.message || "") ? "that code didn't work. check it, or send a new one." :
-   "couldn't reach the server. try again in a minute.");
+   /token|otp|code/i.test(e?.message || "") ? "home.auth.badCode" :
+   "home.auth.unreachable"));
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [session, setSession] = useState<Session | null>(null);
@@ -61,22 +62,22 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     session,
     email: session?.user.email ?? null,
     sendCode: async (email) => {
-      if (!supabase) return { ok: false, message: "accounts aren't switched on yet. your days are saved on this device." };
+      if (!supabase) return { ok: false, message: t("home.auth.off") };
       const { error } = await supabase.auth.signInWithOtp({ email: email.trim().toLowerCase(), options: { emailRedirectTo: redirectUrl(), shouldCreateUser: true } });
-      return error ? { ok: false, message: friendly(error) } : { ok: true, message: "sent. check your email." };
+      return error ? { ok: false, message: friendly(error) } : { ok: true, message: t("home.auth.sent") };
     },
     verifyCode: async (email, code) => {
-      if (!supabase) return { ok: false, message: "accounts aren't switched on yet." };
+      if (!supabase) return { ok: false, message: t("home.auth.offShort") };
       const { error } = await supabase.auth.verifyOtp({ email: email.trim().toLowerCase(), token: code.trim(), type: "email" });
-      return error ? { ok: false, message: friendly(error) } : { ok: true, message: "you're in." };
+      return error ? { ok: false, message: friendly(error) } : { ok: true, message: t("home.auth.in") };
     },
     signOut: async () => { await supabase?.auth.signOut().catch(() => {}); },
     deleteAccount: async () => {
-      if (!supabase || !session) return { ok: true, message: "deleted from this device." };
+      if (!supabase || !session) return { ok: true, message: t("home.auth.deletedDevice") };
       const { error } = await supabase.rpc("delete_my_account");
-      if (error) return { ok: false, message: "couldn't reach the server. nothing was deleted. try again." };
+      if (error) return { ok: false, message: t("home.auth.deleteFailed") };
       await supabase.auth.signOut().catch(() => {});
-      return { ok: true, message: "deleted. everything." };
+      return { ok: true, message: t("home.auth.deletedAll") };
     },
   }), [ready, session]);
 

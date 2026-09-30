@@ -9,6 +9,7 @@ import { play } from "@/lib/fx";
 import { successHaptic, tapHaptic } from "@/lib/haptics";
 import { Btn, Guy, color, font, type } from "@/ui";
 import { SlotFill } from "@/ui/slot";
+import { t, type Key } from "@/i18n";
 
 export type Reaction = "right" | "wrong" | "neutral";
 type Fx = { react: (r: Reaction) => void; combo: number; pose: string; beat: number };
@@ -45,7 +46,7 @@ export function ReactingGuy({ h = 56, rest }: { h?: number; rest?: string }) {
   }, [beat, reduce, s, r]);
   const anim = useAnimatedStyle(() => ({ transform: [{ scale: s.value }, { rotate: `${r.value}deg` }] }));
   return (
-    <Pressable accessibilityRole="button" accessibilityLabel="the guide" onPress={() => { if (tapped) return; setTapped(true); setTimeout(() => setTapped(false), 3000); }}>
+    <Pressable accessibilityRole="button" accessibilityLabel={t("session.guide.a11y")} onPress={() => { if (tapped) return; setTapped(true); setTimeout(() => setTapped(false), 3000); }}>
       <Animated.View style={anim}><Guy pose={pose} h={h} /></Animated.View>
     </Pressable>
   );
@@ -75,14 +76,14 @@ export function ComboBurst() {
           <Animated.Text style={[{ fontSize: 64 + lv * 28, color: color.gold, textAlign: "center" }, sun]}>☀</Animated.Text>
           <Sparkle key={combo} count={10 + Math.round(lv * 8)} radius={70 + lv * 50} size={8 + lv * 4} duration={700} />
         </View>
-        <Text accessibilityLiveRegion="polite" style={{ fontFamily: font.mark[800], fontSize: 40 + lv * 16, color: color.gold, textShadowColor: "#00000088", textShadowRadius: 8, textShadowOffset: { width: 0, height: 2 } }}>glowing ×{combo}</Text>
+        <Text accessibilityLiveRegion="polite" style={{ fontFamily: font.mark[800], fontSize: 40 + lv * 16, color: color.gold, textShadowColor: "#00000088", textShadowRadius: 8, textShadowOffset: { width: 0, height: 2 } }}>{t("session.combo", { n: combo })}</Text>
       </View>
     </Animated.View>
   );
 }
 
 // our own voice, lowercase and warm (not a copy of any other app's cheers)
-const RIGHT_TITLES = ["yes — exactly.", "that's it.", "lit.", "beautiful.", "you've got it.", "right on."];
+const RIGHT_TITLES = 6; // session.right.0 … 5: "yes — exactly.", "that's it.", "lit.", "beautiful.", "you've got it.", "right on."
 const RED = "#E5484D";
 const RED_BG = "#FFE6E4";
 // specks that read on the gold banner and on the dark bar around it
@@ -106,7 +107,7 @@ export function Verdict({ ok, title, body, onNext, label, seed = 0 }: { ok: bool
   }, [reduce, bad, y, o, x, badge]);
   const anim = useAnimatedStyle(() => ({ opacity: o.value, transform: [{ translateY: y.value }, { translateX: x.value }] }));
   const badgeAnim = useAnimatedStyle(() => ({ transform: [{ scale: badge.value }] }));
-  const head = title ?? (ok === true ? RIGHT_TITLES[seed % RIGHT_TITLES.length] : bad ? "almost." : "good call.");
+  const head = title ?? (ok === true ? t(`session.right.${seed % RIGHT_TITLES}` as Key) : bad ? t("session.almostDot") : t("session.goodCall"));
   return (
     <SlotFill>
       <Animated.View style={[{ backgroundColor: bad ? RED_BG : color.gold, borderRadius: 22, padding: 14, gap: 10, marginHorizontal: -4 }, anim]}>
@@ -120,7 +121,7 @@ export function Verdict({ ok, title, body, onNext, label, seed = 0 }: { ok: bool
           <Text accessibilityLiveRegion="polite" style={{ fontFamily: font.display[800], fontSize: 20, color: bad ? RED : color.ink }}>{head}</Text>
         </View>
         {body ? <Text style={[type.body(14), { color: bad ? "#7a2320" : color.ink }]}>{body}</Text> : null}
-        <Btn kind={bad ? "miss" : "ink"} onPress={onNext}>{label ?? (bad ? "okay, next" : "next")}</Btn>
+        <Btn kind={bad ? "miss" : "ink"} onPress={onNext}>{label ?? (bad ? t("session.okayNext") : t("session.next"))}</Btn>
       </Animated.View>
     </SlotFill>
   );

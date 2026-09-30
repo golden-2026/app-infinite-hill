@@ -3,7 +3,7 @@ import { useTitle } from "@/lib/title";
 import { router, useLocalSearchParams } from "expo-router";
 import { useEffect, useState } from "react";
 import { Text, View } from "react-native";
-import { DOORS, label } from "@ih/content";
+import { doorLabel, t } from "@/i18n";
 import { BELIEF_QUESTIONS, PARTNER_SKIPS, PERSON, PRACTICE_MODE_Q } from "@/content/intake";
 import { commitmentScore, type Openness } from "@/lib/profile";
 import { asksPracticeMode, profileFor, youAnswers } from "@/lib/onboard";
@@ -17,7 +17,7 @@ import { WelcomeFrame } from "@/ui/welcome-frame";
 // One question at a time. Answers stay on the device (and in your own synced settings when signed in).
 export default function Belief() {
   useEffect(() => { track("onboard_step", { step: "belief" }); }, []);
-  useTitle("about you");
+  useTitle(t("onboarding.you.title"));
   const { door: raw } = useLocalSearchParams<{ door?: string }>();
   const door = doorParam(raw) !== "SPIRITUAL" ? doorParam(raw) : null;
   const { update, saved, today } = useStore();
@@ -31,7 +31,7 @@ export default function Belief() {
     return !!p0 && asksPracticeMode(youAnswers(p0).stance) && p0.answers.practiceMode == null;
   });
   if (!door) return null;
-  const name = label(door);
+  const name = doorLabel(door);
   const base = profileFor(saved.settings.profile, door, today);
   const you = youAnswers(base);
   // Already told us they grew up in it (first step): don't ask "were you raised …?" again.
@@ -57,14 +57,14 @@ export default function Belief() {
   };
 
   return (
-    <WelcomeFrame step={5} door={door} onBack={() => (i > 0 ? (setI(i - 1), true) : false)} footer={q.optional ? <Btn kind="ghost" onPress={() => pick(null)}>rather not say</Btn> : undefined}>
-      <Eyebrow style={{ textAlign: "center" }}>{`about you · ${i + 1} of ${qs.length}`}</Eyebrow>
+    <WelcomeFrame step={5} door={door} onBack={() => (i > 0 ? (setI(i - 1), true) : false)} footer={q.optional ? <Btn kind="ghost" onPress={() => pick(null)}>{t("onboarding.ratherNot")}</Btn> : undefined}>
+      <Eyebrow style={{ textAlign: "center" }}>{t("onboarding.belief.eyebrow", { n: i + 1, total: qs.length })}</Eyebrow>
       <Host>{fill(q.ask)}</Host>
       <View style={{ gap: 8 }} accessibilityRole="radiogroup">
         {q.choices.map((c) => <Opt key={c.id} big testID={`${q.id}-${c.id}`} on={answers[q.id] === c.id} onPress={() => pick(c.id)}>{fill(c.label)}</Opt>)}
       </View>
       {q.note ? <Text style={[type.caption(), { textAlign: "center" }]}>{q.note}</Text> : null}
-      {i > 0 ? <View style={{ alignItems: "center" }}><Link onPress={() => setI(i - 1)}>‹ previous question</Link></View> : null}
+      {i > 0 ? <View style={{ alignItems: "center" }}><Link onPress={() => setI(i - 1)}>{t("onboarding.prevQuestion")}</Link></View> : null}
     </WelcomeFrame>
   );
 }

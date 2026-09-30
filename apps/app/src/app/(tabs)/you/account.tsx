@@ -14,9 +14,10 @@ import { Row } from "@/ui/row";
 import { analyticsAvailable } from "@/lib/analytics";
 import { importWalkers, readWalkers } from "@/lib/walkers";
 import { Body, Btn, Card, Eyebrow, Screen, color, confirmSheet, toast, type } from "@/ui";
+import { t } from "@/i18n";
 
 export default function Account() {
-  useTitle("your data");
+  useTitle(t("companion.acct.title"));
   const { email, signOut, deleteAccount } = useAuth();
   const { saved, derived, resetAll, importData, update } = useStore();
   const sync = useSync();
@@ -30,7 +31,7 @@ export default function Account() {
       a.href = URL.createObjectURL(new Blob([json], { type: "application/json" }));
       a.download = `infinite-hill-${today()}.json`;
       a.click();
-      toast("saved to your downloads");
+      toast(t("companion.acct.downloads"));
     } else {
       await Share.share({ message: json }).catch(() => {});
     }
@@ -45,9 +46,9 @@ export default function Account() {
   };
   const askDelete = async () => {
     const ok = await confirmSheet({
-      title: derived.showedUp ? `sure? ${derived.showedUp === 1 ? "your 1 day goes" : `all ${derived.showedUp} days go`} with it.` : "sure? everything here goes with it.",
-      body: email ? "your account and everything in it, on every device. it can't be undone." : "everything on this phone. it can't be undone.",
-      confirm: "yes, delete it all", cancel: "keep everything", destructive: true,
+      title: derived.showedUp ? t("companion.acct.sureDays", { count: derived.showedUp }) : t("companion.acct.sureAll"),
+      body: email ? t("companion.acct.delBodyAcct") : t("companion.acct.delBodyLocal"),
+      confirm: t("companion.acct.confirm"), cancel: t("companion.acct.keep"), destructive: true,
     });
     if (ok) doDelete();
   };
@@ -58,14 +59,14 @@ export default function Account() {
   };
 
   return (
-    <Screen scroll back="you" title={accountsOn() ? "account." : "your data."} contentStyle={{ gap: 12 }}>
+    <Screen scroll back="you" title={accountsOn() ? t("companion.acct.hAccount") : t("companion.acct.hData")} contentStyle={{ gap: 12 }}>
       {!accountsOn() ? (
         <Card>
-          <Eyebrow>where your days live</Eyebrow>
-          <Text style={[type.serif(18), { marginTop: 4 }]}>on this phone · {derived.showedUp} {derived.showedUp === 1 ? "day" : "days"}</Text>
-          <Body size={13} style={{ color: color.mute, marginTop: 6 }}>there are no accounts in the pilot — your days, answers and book stay on this phone. (if you turn on reminders, the reminder time and your time zone go to our server so it can ring.) new phone? export a file here, then open infinite hill on the new one and bring your days from that file.</Body>
+          <Eyebrow>{t("companion.acct.whereEyebrow")}</Eyebrow>
+          <Text style={[type.serif(18), { marginTop: 4 }]}>{t("companion.acct.onPhone", { count: derived.showedUp })}</Text>
+          <Body size={13} style={{ color: color.mute, marginTop: 6 }}>{t("companion.acct.pilotBody")}</Body>
           <View style={{ gap: 8, marginTop: 12 }}>
-            <Btn testID="export" onPress={exportData}>export my days</Btn>
+            <Btn testID="export" onPress={exportData}>{t("companion.acct.export")}</Btn>
             <ImportButton onText={(t) => {
               const r = importData(t);
               if (r.ok) {
@@ -76,31 +77,31 @@ export default function Account() {
             }} />
           </View>
           <View style={{ marginTop: 14, marginHorizontal: -16 }}>
-            <Row first a="share anonymous usage" b={analyticsAvailable() ? "helps us see where the app is confusing. only which screens you reach — never your answers, your words or your door's name." : "not collecting anything in this build."} toggle={analyticsAvailable() && saved.settings.analytics === "yes"} right={analyticsAvailable() && saved.settings.analytics === "yes" ? "on" : "off"} onPress={() => update({ analytics: saved.settings.analytics === "yes" ? "no" : "yes" })} />
+            <Row first a={t("companion.acct.analytics")} b={analyticsAvailable() ? t("companion.acct.analyticsOn") : t("companion.acct.analyticsOff")} toggle={analyticsAvailable() && saved.settings.analytics === "yes"} right={analyticsAvailable() && saved.settings.analytics === "yes" ? t("common.on") : t("common.off")} onPress={() => update({ analytics: saved.settings.analytics === "yes" ? "no" : "yes" })} />
           </View>
           {dataMsg ? <Body size={13} style={{ marginTop: 8 }}>{dataMsg}</Body> : null}
         </Card>
       ) : null}
       {accountsOn() ? <Card>
-        <Eyebrow>{email ? "signed in" : "not signed in"}</Eyebrow>
-        <Text style={[type.serif(18), { marginTop: 4 }]}>{email || "saved on this device only"}</Text>
+        <Eyebrow>{email ? t("companion.acct.signedIn") : t("companion.acct.notSignedIn")}</Eyebrow>
+        <Text style={[type.serif(18), { marginTop: 4 }]}>{email || t("companion.acct.deviceOnly")}</Text>
         <Body size={13} style={{ color: color.mute, marginTop: 6 }}>
-          {email ? (sync.state === "synced" ? `synced${sync.lastSynced ? " just now" : ""}. ${derived.showedUp} days in your account.` : sync.state === "offline" ? "offline right now. everything is kept here and syncs when you're back." : "syncing…")
-            : "if this phone is lost or the browser is cleared, the days go with it. saving takes one email."}
+          {email ? (sync.state === "synced" ? t("companion.acct.synced", { now: sync.lastSynced ? t("companion.acct.justNow") : "", n: derived.showedUp }) : sync.state === "offline" ? t("companion.acct.offline") : t("companion.acct.syncing"))
+            : t("companion.acct.noSave")}
         </Body>
         <View style={{ marginTop: 12 }}>
-          {email ? <Btn kind="ghost" onPress={doSignOut}>sign out</Btn> : <Btn testID="save-days" onPress={() => router.push({ pathname: "/sign-in", params: { mode: "save", then: "/you/account" } })}>save with email</Btn>}
+          {email ? <Btn kind="ghost" onPress={doSignOut}>{t("companion.acct.signOut")}</Btn> : <Btn testID="save-days" onPress={() => router.push({ pathname: "/sign-in", params: { mode: "save", then: "/you/account" } })}>{t("companion.acct.saveEmail")}</Btn>}
         </View>
       </Card> : null}
       {accountsOn() ? <Card>
-        <Eyebrow>your data</Eyebrow>
-        <Body size={13} style={{ marginTop: 6 }}>what you've done here is yours: every sit, your goal, your book. no ad identifiers, no third-party trackers, nothing sold.</Body>
-        <View style={{ marginTop: 12 }}><Btn kind="ghost" onPress={exportData}>export my data</Btn></View>
+        <Eyebrow>{t("companion.acct.dataEyebrow")}</Eyebrow>
+        <Body size={13} style={{ marginTop: 6 }}>{t("companion.acct.dataBody")}</Body>
+        <View style={{ marginTop: 12 }}><Btn kind="ghost" onPress={exportData}>{t("companion.acct.exportData")}</Btn></View>
       </Card> : null}
       <Card>
-        <Eyebrow>delete</Eyebrow>
-        <Body size={13} style={{ marginTop: 6 }}>{email ? "deletes your account and every day, line and setting in it, on every device. it can't be undone." : "erases everything on this device. it can't be undone."}</Body>
-        <View style={{ marginTop: 12 }}><Btn testID="delete" kind="danger" onPress={askDelete}>{email ? "delete my account" : "erase this device"}</Btn></View>
+        <Eyebrow>{t("companion.acct.delete")}</Eyebrow>
+        <Body size={13} style={{ marginTop: 6 }}>{email ? t("companion.acct.delAcct") : t("companion.acct.delLocal")}</Body>
+        <View style={{ marginTop: 12 }}><Btn testID="delete" kind="danger" onPress={askDelete}>{email ? t("companion.acct.delAcctBtn") : t("companion.acct.delLocalBtn")}</Btn></View>
         {msg ? <Body size={13} style={{ marginTop: 8 }}>{msg}</Body> : null}
       </Card>
     </Screen>

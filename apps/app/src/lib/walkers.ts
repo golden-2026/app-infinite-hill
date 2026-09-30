@@ -3,7 +3,7 @@
 // days walked), and the list lives in this browser/phone under "ih:walkers". Nothing here is live.
 import { Platform } from "react-native";
 import * as Linking from "expo-linking";
-import { label } from "@ih/content";
+import { doorLabel, t } from "@/i18n";
 import { doorParam } from "@/lib/door-param";
 import { readJSON, writeJSON } from "@/lib/storage";
 
@@ -127,14 +127,14 @@ export function removeWalker(w: { name: string; door: string }): Walker[] {
 }
 
 // ─── words ───────────────────────────────────────────────────────────────
-export const walkerName = (w: { name: string }) => w.name || "someone";
+export const walkerName = (w: { name: string }) => w.name || t("home.walkers.someone");
 
 /** "today", "yesterday", "3 days ago" (both dates are local YYYY-MM-DD). */
 export function whenLit(date: string, today: string): string {
   const days = Math.round((Date.parse(today) - Date.parse(date)) / 86400000);
-  if (!Number.isFinite(days) || days <= 0) return "today";
-  if (days === 1) return "yesterday";
-  return `${days} days ago`;
+  if (!Number.isFinite(days) || days <= 0) return t("home.walkers.today");
+  if (days === 1) return t("home.walkers.yesterday");
+  return t("home.walkers.daysAgo", { count: days });
 }
 
-export const pathWords = (door: string, n: number) => `day ${n} on the ${label(door)} path`;
+export const pathWords = (door: string, n: number) => t("home.walkers.path", { n, door: doorLabel(door) });

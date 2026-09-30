@@ -8,14 +8,15 @@ import { useStore } from "@/lib/store";
 import { tapHaptic } from "@/lib/haptics";
 import { GuideIcon, TodayIcon, TogetherIcon, YouIcon } from "@/ui/tab-icons";
 import { color, font } from "@/ui";
+import { t } from "@/i18n";
 
 // v175's black tab bar (together · today · guide), plus "you": profile and settings are a real tab now,
 // not a hidden ☰ (flow audit 9/25).
 const TABS = [
-  { name: "together", href: "/together", label: "together", Icon: TogetherIcon },
-  { name: "today", href: "/today", label: "today", Icon: TodayIcon },
-  { name: "guide", href: "/guide", label: "guide", Icon: GuideIcon },
-  { name: "you", href: "/you", label: "you", Icon: YouIcon },
+  { name: "together", href: "/together", label: "home.tab.together", Icon: TogetherIcon },
+  { name: "today", href: "/today", label: "home.tab.today", Icon: TodayIcon },
+  { name: "guide", href: "/guide", label: "home.tab.guide", Icon: GuideIcon },
+  { name: "you", href: "/you", label: "home.tab.you", Icon: YouIcon },
 ] as const;
 
 const TabButton = forwardRef<View, TabTriggerSlotProps & { label: string; root: string; Icon: (p: { color: string; filled?: boolean }) => React.JSX.Element }>(function TabButton({ isFocused, label, root, Icon, onPress, ...props }, ref) {
@@ -44,9 +45,9 @@ export default function TabsLayout() {
     <Tabs>
       <TabSlot style={{ flex: 1 }} />
       <TabList style={[styles.bar, { paddingBottom: Math.max(insets.bottom, 8) }]} accessibilityRole="tablist">
-        {TABS.map((t) => (
-          <TabTrigger key={t.name} name={t.name} href={t.href} asChild>
-            <TabButton label={t.label} root={t.href} Icon={t.Icon} />
+        {TABS.map((tab) => (
+          <TabTrigger key={tab.name} name={tab.name} href={tab.href} asChild>
+            <TabButton label={t(tab.label)} root={tab.href} Icon={tab.Icon} />
           </TabTrigger>
         ))}
       </TabList>

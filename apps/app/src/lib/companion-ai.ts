@@ -4,7 +4,7 @@
 // delete), fixed-value profile fields, and today's context. Never raw journal text unless they tap "share this entry".
 // Every function returns null when the server or its AI key isn't available; callers then use the on-device version.
 
-export type CompanionProfile = { door: string; depth?: string; openness?: string; commitment?: string; reason?: string; level?: number; practice?: "learn" };
+export type CompanionProfile = { door: string; /** the language to answer in (fixed values; the server maps it to one prompt sentence) */ lang?: "en" | "es"; depth?: string; openness?: string; commitment?: string; reason?: string; level?: number; practice?: "learn" };
 export type CompanionContext = {
   door: string; day: number; hour: number;
   lessonTitle?: string; carry?: string;
@@ -42,9 +42,16 @@ async function fetchJson(url: string, init?: RequestInit): Promise<any> {
   }
 }
 
+// The language the person reads the app in (set by src/i18n; read off globalThis so this file stays import-free for the tests).
+export const answerLang = (): "en" | "es" => ((globalThis as { __ihLang?: string }).__ihLang === "es" ? "es" : "en");
+const withLang = (body: unknown) => {
+  const b = body as { profile?: CompanionProfile } | null;
+  return b && typeof b === "object" && b.profile && typeof b.profile === "object" ? { ...b, profile: { ...b.profile, lang: answerLang() } } : body;
+};
+
 async function call<T>(kind: "shape" | "reflect" | "chat", body: unknown): Promise<T | null> {
   try {
-    const json = await fetchJson(`/api/companion?kind=${kind}`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+    const json = await fetchJson(`/api/companion?kind=${kind}`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(withLang(body)) });
     // Over the daily limit: a chat says so; shaping and reflecting quietly use the on-device version.
     if (json?.limited) return kind === "chat" ? ({ text: "", limited: true } as T) : null;
     return json && typeof json === "object" && !Array.isArray(json) && !json.error ? (json as T) : null;

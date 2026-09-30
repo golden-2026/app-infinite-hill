@@ -6,6 +6,7 @@ import Animated, { Easing, useAnimatedStyle, useReducedMotion, useSharedValue, w
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { border, color, font, radius, space, type } from "@ih/brand";
 import { successHaptic, tapHaptic } from "@/lib/haptics";
+import { t } from "@/i18n";
 
 type Toast = { id: number; text: string };
 type Confirm = { title: string; body?: string; confirm: string; cancel?: string; destructive?: boolean; resolve: (ok: boolean) => void };
@@ -60,7 +61,7 @@ function ConfirmView({ c, close }: { c: Confirm; close: (ok: boolean) => void })
   return (
     <View style={StyleSheet.absoluteFill} accessibilityViewIsModal aria-modal>
       <Animated.View style={[StyleSheet.absoluteFill, { backgroundColor: color.scrim }, scrim]}>
-        <Pressable style={StyleSheet.absoluteFill} accessibilityLabel={c.cancel ?? "cancel"} onPress={() => close(false)} />
+        <Pressable style={StyleSheet.absoluteFill} accessibilityLabel={c.cancel ?? t("home.cancel")} onPress={() => close(false)} />
       </Animated.View>
       <Animated.View style={[st.sheet, { paddingBottom: Math.max(insets.bottom, 16) + 8 }, sheet]}>
         <View style={st.grab} />
@@ -71,7 +72,7 @@ function ConfirmView({ c, close }: { c: Confirm; close: (ok: boolean) => void })
             <Text style={[st.actionText, { color: c.destructive ? "#fff" : color.gold }]}>{c.confirm.toUpperCase()}</Text>
           </Pressable>
           <Pressable accessibilityRole="button" onPress={() => close(false)} style={({ pressed }) => [st.action, { borderWidth: border.control, borderColor: color.ink, transform: [{ scale: pressed ? 0.97 : 1 }] }]}>
-            <Text style={[st.actionText, { color: color.ink }]}>{(c.cancel ?? "cancel").toUpperCase()}</Text>
+            <Text style={[st.actionText, { color: color.ink }]}>{(c.cancel ?? t("home.cancel")).toUpperCase()}</Text>
           </Pressable>
         </View>
       </Animated.View>

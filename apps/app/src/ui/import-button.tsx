@@ -2,9 +2,10 @@
 // build ships later and starts fresh), so the button only renders on web.
 import { useRef } from "react";
 import { Platform } from "react-native";
+import { t } from "@/i18n";
 import { Btn } from "@/ui";
 
-export function ImportButton({ onText, kind = "ghost", label = "bring my days from a file" }: { onText: (text: string) => void; kind?: "ink" | "ghost"; label?: string }) {
+export function ImportButton({ onText, kind = "ghost", label = t("onboarding.import.label") }: { onText: (text: string) => void; kind?: "ink" | "ghost"; label?: string }) {
   const input = useRef<HTMLInputElement | null>(null);
   if (Platform.OS !== "web") return null;
   return (

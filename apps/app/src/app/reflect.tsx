@@ -10,9 +10,10 @@ import { companionProfile, memoryLines } from "@/lib/companion/shape";
 import { useCompanionDay } from "@/lib/companion/use-companion";
 import { useStore } from "@/lib/store";
 import { Btn, Guy, Screen, color, font, type } from "@/ui";
+import { t } from "@/i18n";
 
 export default function Reflect() {
-  useTitle("your week");
+  useTitle(t("companion.weekPage.title"));
   const { saved, derived, today } = useStore();
   const m = useMemory();
   const { input, day } = useCompanionDay();
@@ -24,10 +25,10 @@ export default function Reflect() {
     return () => { live = false; };
   }, [today]); // eslint-disable-line react-hooks/exhaustive-deps
   const lines = ai ? ai.text.split(/\n+/).filter(Boolean) : week.text;
-  const next = ai?.suggestion || (day.howItsDone ? `next week, maybe: how ${day.practice.title} is done.` : `next week, maybe: ${day.practice.title}.`);
+  const next = ai?.suggestion || (day.howItsDone ? t("companion.weekPage.nextHow", { title: day.practice.title }) : t("companion.weekPage.next", { title: day.practice.title }));
   return (
-    <Screen scroll back={true} title="your week." contentStyle={{ gap: 14 }}
-      footer={<Btn onPress={() => router.push({ pathname: "/practice/[id]", params: day.howItsDone ? { id: day.practice.id, view: "learn" } : { id: day.practice.id } })}>{day.howItsDone ? `how it's done: ${day.practice.title}` : `try ${day.practice.title}`}</Btn>}>
+    <Screen scroll back={true} title={`${t("companion.weekPage.title")}.`} contentStyle={{ gap: 14 }}
+      footer={<Btn onPress={() => router.push({ pathname: "/practice/[id]", params: day.howItsDone ? { id: day.practice.id, view: "learn" } : { id: day.practice.id } })}>{day.howItsDone ? t("companion.weekPage.howBtn", { title: day.practice.title }) : t("companion.weekPage.tryBtn", { title: day.practice.title })}</Btn>}>
       <View style={{ alignItems: "center" }}><Guy pose="sitrock" h={130} /></View>
       <View style={{ gap: 12 }}>
         {lines.map((l, n) => (
@@ -35,7 +36,7 @@ export default function Reflect() {
         ))}
       </View>
       <Text style={[type.body(14), { color: color.mute }]}>{next}</Text>
-      <Text style={type.caption(11)}>{ai ? "written by the companion from what you let it see." : "written on your phone from your week. nothing left it."}</Text>
+      <Text style={type.caption(11)}>{ai ? t("companion.weekPage.byCompanion") : t("companion.weekPage.byPhone")}</Text>
     </Screen>
   );
 }

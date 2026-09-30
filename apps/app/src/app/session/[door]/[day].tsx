@@ -2,7 +2,8 @@ import { track } from "@/lib/analytics";
 import { useTitle } from "@/lib/title";
 // A day's lesson: v175 Session, as a real screen. Queue of steps, combo, "one more time" on the misses
 // (nothing counted twice), then the tally. Leaving asks first; finishing records the sit and opens /done.
-import { DOORS, GRADED, LEVELS, deeperRound, icon, label, lessonInfo, native, planDay, screenLines } from "@ih/content";
+import { DOORS, GRADED, deeperRound, icon, lessonInfo, native, planDay, screenLines } from "@ih/content";
+import { doorLabel, isEs, t, type Key } from "@/i18n";
 import { levelFor } from "@/lib/level";
 import { practiceModeOf } from "@/lib/onboard";
 import { learnSteps } from "@/session/learn";
@@ -15,7 +16,7 @@ import { Redirect, router, useLocalSearchParams, useNavigation } from "expo-rout
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { hush, bell, speak } from "@/lib/sound";
+import { hush, bell, speak, speakChrome } from "@/lib/sound";
 import { useStore } from "@/lib/store";
 import { readJSON, remove, writeJSON } from "@/lib/storage";
 import { play } from "@/lib/fx";
@@ -31,7 +32,39 @@ import Animated, { Easing, useAnimatedStyle, useSharedValue, withTiming } from "
 import { Enter } from "@/ui/enter";
 import { useChrome } from "@/ui/chrome";
 
-const SEG_LABEL: Record<string, string> = { bet: "call it", myth: "true or myth", fork: "your move", original: "in the original", trapdoor: "the trapdoor", bell: "the bell", guess: "your guess", order: "the ideas", match: "the pairs", listen: "your ear", scenes: "the scenes", say: "say it", rhythm: "the rhythm", typeit: "your ear", rush: "quick round", sit: "the sit", breath: "one breath", speak: "say it back", taphear: "your line", fixintro: "one more time", tally: "done" };
+// The eyebrow over each step: the lesson part's name (planDay's segment type), or else the app's own name for the step.
+const SEG_TYPES = ["bet", "myth", "fork", "original", "trapdoor", "bell", "guess", "order", "match", "listen", "scenes", "say", "rhythm", "typeit", "rush", "sit", "breath", "speak", "taphear", "fixintro", "tally"];
+function segName(seg: string | undefined, type: string): string {
+  if (seg) {
+    const k = `session.part.${seg}` as Key;
+    const v = t(k);
+    return isEs() && v !== k ? v : seg;
+  }
+  return SEG_TYPES.includes(type) ? t(`session.seg.${type}` as Key) : "";
+}
+/** The level's name (first steps … keeper-level) in the current language. */
+const levelName = (n: number) => (n >= 1 && n <= 5 ? t(`session.level.${n}` as Key) : "");
+
+/** Spanish only: the first lesson on this phone says, once and honestly, that lessons are still in English. */
+const ES_NOTE_KEY = "ih:es-lesson-note";
+function EsLessonNote() {
+  const [show, setShow] = useState(() => isEs() && !readJSON<boolean>(ES_NOTE_KEY, false));
+  // once per phone: remembered as soon as it's shown, so it never comes back, even if this lesson is left early
+  useEffect(() => { if (show) writeJSON(ES_NOTE_KEY, true); }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  if (!show) return null;
+  return (
+    <View testID="es-lesson-note" accessibilityLiveRegion="polite" style={st.esNote}>
+      <View style={{ flex: 1 }}>
+        <Text style={[type.eyebrow(8), { color: color.gold }]}>{t("lesson.enNote.title")}</Text>
+        <Text style={[type.body(13), { color: "#ffffffcc", marginTop: 3 }]}>{t("lesson.enNote.body")}</Text>
+      </View>
+      <Pressable testID="es-lesson-note-ok" accessibilityRole="button" accessibilityLabel={t("session.enNote.a11y")} onPress={() => { tapHaptic(); setShow(false); }} hitSlop={6}
+        style={({ pressed }) => [st.esNoteBtn, { opacity: pressed ? 0.7 : 1 }]}>
+        <Text style={[type.eyebrow(8), { color: color.ink }]}>{t("lesson.enNote.ok")}</Text>
+      </Pressable>
+    </View>
+  );
+}
 
 export default function SessionScreen() {
   const params = useLocalSearchParams<{ door: string; day: string; kid?: string; deep?: string }>();
@@ -69,7 +102,7 @@ function LessonLoading() {
   useChrome(true);
   return (
     <LinearGradient colors={color.dusk} locations={[0, 0.6, 1]} style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <View accessibilityRole="progressbar" accessibilityLabel="opening today's lesson" testID="lesson-loading"><Guy pose="wave" h={170} /></View>
+      <View accessibilityRole="progressbar" accessibilityLabel={t("session.loading")} testID="lesson-loading"><Guy pose="wave" h={170} /></View>
     </LinearGradient>
   );
 }
@@ -77,7 +110,7 @@ function LessonLoading() {
 function Session({ door, day, kidId, mode, deep, voiceOn, onFinish, script = null }: { door: string; day: number; kidId: string | null; mode: string; deep: boolean; voiceOn: boolean; onFinish: ReturnType<typeof useStore>["completeSit"]; script?: any | null }) {
   const ic = icon(door);
   const { earnLight, recordRun, recordFeel, update, saved: me } = useStore();
-  useTitle(`${label(door).toLowerCase()} · day ${day}${deep ? " · deeper" : ""}`);
+  useTitle(`${t("session.title", { door: doorLabel(door).toLowerCase(), day })}${deep ? t("session.title.deeper") : ""}`);
   useChrome(true);
   // The level is fixed for the whole lesson (it moves between lessons, never in the middle of one).
   const [level] = useState(() => (mode === "adult" ? levelFor({ door, day, profile: me.settings.profile, runs: me.settings.runs }) : 1));
@@ -169,8 +202,8 @@ function Session({ door, day, kidId, mode, deep, voiceOn, onFinish, script = nul
     track("lesson_step", { door, day, i: qi, of: queue.length, type: step.type, phase });
     if (step.type === "bell") { bell(); const t = setTimeout(next, 1800); return () => clearTimeout(t); }
     if (step.type === "beat") { const t = setTimeout(() => speak(step.text, voiceOn), 250); return () => { clearTimeout(t); hush(); }; }
-    if (step.type === "fixintro") speak("one more time on the ones you missed. no rush.", voiceOn);
-    if (step.type === "tally") { speak(`That's day ${day}. You showed up. Proud of you.`, voiceOn); bell(); }
+    if (step.type === "fixintro") speakChrome(t("session.fix.say"), voiceOn);
+    if (step.type === "tally") { speakChrome(t("session.tally.say", { day }), voiceOn); bell(); }
   }, [qi, phase]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const finish = () => {
@@ -206,14 +239,14 @@ function Session({ door, day, kidId, mode, deep, voiceOn, onFinish, script = nul
   const leave = () => { finished.current = true; hush(); remove(resumeKey); router.canGoBack() ? router.back() : router.replace("/today"); };
   // The one confirm panel the whole app uses, not a lesson-only dialog.
   function askLeave(then: () => void = leave) {
-    confirmSheet({ title: "leave this lesson?", body: "it won't count until you finish. your days so far stay right where they are.", confirm: "leave", cancel: "keep going" })
+    confirmSheet({ title: t("session.leave.title"), body: t("session.leave.body"), confirm: t("session.leave.confirm"), cancel: t("session.leave.cancel") })
       .then((ok) => { if (ok) { finished.current = true; hush(); remove(resumeKey); then(); } });
   }
 
   const prevStep = qi > 0 ? plan.steps.find((x) => x.id === queue[qi - 1]) : null;
   const canBack = !!prevStep && ["beat", "bell"].includes(prevStep.type) && step?.type !== "tally";
   const pct = phase === "play" ? Math.round((qi / Math.max(1, total - 1)) * 100) : 100;
-  const segLabel = step ? (step.type === "breath" && step.n > 1 ? `${step.n} breaths` : step.seg || SEG_LABEL[step.type] || "") : "";
+  const segLabel = step ? (step.type === "breath" && step.n > 1 ? t("session.seg.breaths", { count: step.n }) : segName(step.seg, step.type)) : "";
   if (!step) return null;
   const k = `${phase}-${qi}-${step.id}`;
 
@@ -225,26 +258,27 @@ function Session({ door, day, kidId, mode, deep, voiceOn, onFinish, script = nul
         <NavBar dark close={() => askLeave()} closeLeft
           middle={
             <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}>
-              <Pressable accessibilityRole="button" accessibilityLabel="Previous screen" accessibilityState={{ disabled: !canBack }} aria-disabled={!canBack} disabled={!canBack} onPress={() => { tapHaptic(); setQi(qi - 1); }} hitSlop={4}
+              <Pressable accessibilityRole="button" accessibilityLabel={t("session.prevScreen")} accessibilityState={{ disabled: !canBack }} aria-disabled={!canBack} disabled={!canBack} onPress={() => { tapHaptic(); setQi(qi - 1); }} hitSlop={4}
                 style={({ pressed }) => ({ minWidth: 36, minHeight: 44, alignItems: "center", justifyContent: "center", opacity: !canBack ? 0.25 : pressed ? 0.5 : 0.8 })}>
                 <ChevronLeft color="#fff" size={20} />
               </Pressable>
               <View style={{ flex: 1 }}>
-                {combo >= 2 ? <Text style={[type.eyebrow(), st.combo, combo >= 3 ? { color: "#FFD23F" } : null]}>{combo >= 3 ? `☀ glowing ×${combo}` : `×${combo} in a row`}</Text> : pct >= 80 && pct < 100 && phase === "play" ? <Text style={[type.eyebrow(), st.combo]}>almost there!</Text> : null}
+                {combo >= 2 ? <Text style={[type.eyebrow(), st.combo, combo >= 3 ? { color: "#FFD23F" } : null]}>{combo >= 3 ? t("session.glowing", { n: combo }) : t("session.inARow", { n: combo })}</Text> : pct >= 80 && pct < 100 && phase === "play" ? <Text style={[type.eyebrow(), st.combo]}>{t("session.almost")}</Text> : null}
                 <Progress pct={pct} hot={combo >= 3} />
               </View>
             </View>
           }
-          right={<Text style={[type.eyebrow(), { color: "#ffffff99", paddingRight: 10, opacity: step.type === "tally" ? 0 : 1 }]}>{phase === "play" ? `${Math.min(qi + 1, queue.length)}/${queue.length}` : phase === "fix" ? `again ${Math.min(qi + 1, Math.max(1, queue.length - 1))}/${Math.max(1, queue.length - 1)}` : ""}</Text>}
+          right={<Text style={[type.eyebrow(), { color: "#ffffff99", paddingRight: 10, opacity: step.type === "tally" ? 0 : 1 }]}>{phase === "play" ? `${Math.min(qi + 1, queue.length)}/${queue.length}` : phase === "fix" ? t("session.again", { a: Math.min(qi + 1, Math.max(1, queue.length - 1)), b: Math.max(1, queue.length - 1) }) : ""}</Text>}
         />
         <View style={st.who}>
           <Face ic={ic} w={36} h={36} r={18} caption={false} />
-          <Text style={[type.eyebrow(), { color: "#ffffffbb", flex: 1 }]} numberOfLines={2}>{voiceLabel(door, ic.short).short} reads · {label(door)}{segLabel ? ` · ${segLabel}` : ""}</Text>
+          <Text style={[type.eyebrow(), { color: "#ffffffbb", flex: 1 }]} numberOfLines={2}>{t("session.reads", { voice: voiceLabel(door, ic.short).short, door: doorLabel(door) })}{segLabel ? ` · ${segLabel}` : ""}</Text>
           <ReactingGuy h={58} rest={step.type === "breath" || step.type === "sit" ? "meditate" : step.type === "tally" ? "celebrate" : undefined} />
         </View>
+        <EsLessonNote />
         <ScrollView key={k} contentContainerStyle={[st.body, { justifyContent: top ? "flex-start" : "center" }]}>
           <Enter style={{ width: "100%", alignItems: "center" }}>
-            {step.newToday ? <View style={[st.newPill, { alignSelf: "flex-start" }]} accessibilityLabel="new today"><Text style={[type.eyebrow(), { color: color.ink }]}>new today</Text></View> : null}
+            {step.newToday ? <View style={[st.newPill, { alignSelf: "flex-start" }]} accessibilityLabel={t("session.newToday")}><Text style={[type.eyebrow(), { color: color.ink }]}>{t("session.newToday")}</Text></View> : null}
             {children}
           </Enter>
         </ScrollView>
@@ -261,7 +295,7 @@ function Session({ door, day, kidId, mode, deep, voiceOn, onFinish, script = nul
     case "bell":
       return frame(<View style={{ alignItems: "center", gap: 18 }}><Guy pose="wave" h={170} /><Text style={[type.h1(40), { color: "#fff" }]}>{step.text}</Text>{mode === "adult" && day > 1 ? <LevelPill level={shownLevel} /> : null}</View>);
     case "fixintro":
-      return frame(<View style={{ alignItems: "center", gap: 16 }}><Guy pose="think" h={160} /><Text style={[type.h1(30), { color: "#fff", textAlign: "center" }]}>one more time on the ones you missed.</Text><Text style={[type.body(), { color: "#ffffffaa" }]}>no rush. nothing's counted twice.</Text></View>, { foot: <Btn kind="gold" onPress={() => next()}>one more time</Btn> });
+      return frame(<View style={{ alignItems: "center", gap: 16 }}><Guy pose="think" h={160} /><Text style={[type.h1(30), { color: "#fff", textAlign: "center" }]}>{t("session.fix.title")}</Text><Text style={[type.body(), { color: "#ffffffaa" }]}>{t("session.fix.body")}</Text></View>, { foot: <Btn kind="gold" onPress={() => next()}>{t("session.fix.go")}</Btn> });
     case "beat": {
       // The story is told by the mascot in a speech bubble (like a character in a story), not a wall of text.
       const n = step.text.length;
@@ -277,7 +311,7 @@ function Session({ door, day, kidId, mode, deep, voiceOn, onFinish, script = nul
           <View style={{ width: 0, height: 0, marginLeft: 38, marginTop: -12, borderLeftWidth: 12, borderRightWidth: 12, borderTopWidth: 14, borderLeftColor: "transparent", borderRightColor: "transparent", borderTopColor: "#fff" }} />
           <Guy pose={BEAT_POSES[qi % BEAT_POSES.length]} h={150} style={{ alignSelf: "flex-start", marginLeft: 6 }} />
         </View>,
-        { foot: <View style={{ gap: 4 }}><Pressable accessibilityRole="button" accessibilityLabel="Hear it again" onPress={() => speak(step.text, true)} style={({ pressed }) => ({ minHeight: 44, flexDirection: "row", gap: 8, alignItems: "center", justifyContent: "center", opacity: pressed ? 0.5 : 1 })}><SpeakerIcon color="#ffffff99" /><Text style={[type.eyebrow(), { color: "#ffffff99" }]}>hear it again</Text></Pressable><Btn testID="next" kind="gold" onPress={() => next()}>next</Btn></View> },
+        { foot: <View style={{ gap: 4 }}><Pressable accessibilityRole="button" accessibilityLabel={t("session.hearAgainA11y")} onPress={() => speak(step.text, true)} style={({ pressed }) => ({ minHeight: 44, flexDirection: "row", gap: 8, alignItems: "center", justifyContent: "center", opacity: pressed ? 0.5 : 1 })}><SpeakerIcon color="#ffffff99" /><Text style={[type.eyebrow(), { color: "#ffffff99" }]}>{t("session.hearAgain")}</Text></Pressable><Btn testID="next" kind="gold" onPress={() => next()}>{t("session.next")}</Btn></View> },
       );
     }
     case "bet": return frame(<BetStep step={step} onDone={verdict} />, { top: true });
@@ -308,9 +342,9 @@ function Session({ door, day, kidId, mode, deep, voiceOn, onFinish, script = nul
       const tomorrow = lessonInfo(door, day + 1)?.title;
       const nat = native(plan.word, door);
       const tiles: [string, string, string, boolean][] = [
-        ["1", "word", plan.word, true],
-        [String(ideas), ideas === 1 ? "idea" : "ideas", "you didn't have this morning", false],
-        [`${score.right}/${score.asked || graded}`, "first try", best >= 3 ? `×${best} in a row` : score.asked && score.right === score.asked ? "perfect." : "all fixed.", false],
+        ["1", t("session.tile.word"), plan.word, true],
+        [String(ideas), t("session.tile.ideas", { count: ideas }), t("session.tile.ideasSub"), false],
+        [`${score.right}/${score.asked || graded}`, t("session.tile.firstTry"), best >= 3 ? t("session.inARow", { n: best }) : score.asked && score.right === score.asked ? t("session.tile.perfect") : t("session.tile.allFixed"), false],
       ];
       // The win screen, in our own look: the light you earned, how on-target you were and how long it took, on one
       // gold-rimmed card; a fanfare; the mascot celebrating.
@@ -318,16 +352,16 @@ function Session({ door, day, kidId, mode, deep, voiceOn, onFinish, script = nul
       const acc = asked ? Math.round((100 * score.right) / asked) : 100;
       const light = lessonLight(score.right, asked, best);
       const secs = Math.max(30, Math.round((Date.now() - t0.current) / 1000));
-      const accLabel = acc >= 50 ? "on target" : "learning";
+      const accLabel = acc >= 50 ? t("session.stat.onTarget") : t("session.stat.learning");
       // day one has a single graded question: one fixed miss is not "0%", it's a first try that got fixed
-      const accStat: [string, string, string] = day === 1 && acc < 100 ? ["◎", "✓", "all fixed"] : ["◎", `${acc}%`, accLabel];
-      const stats: [string, string, string][] = [["☀", `+${light}`, "light"], accStat, ["◷", `${Math.floor(secs / 60)}:${String(secs % 60).padStart(2, "0")}`, "time"]];
+      const accStat: [string, string, string] = day === 1 && acc < 100 ? ["◎", "✓", t("session.stat.allFixed")] : ["◎", `${acc}%`, accLabel];
+      const stats: [string, string, string][] = [["☀", `+${light}`, t("session.stat.light")], accStat, ["◷", `${Math.floor(secs / 60)}:${String(secs % 60).padStart(2, "0")}`, t("session.stat.time")]];
       const nextLevel = mode === "adult" && !deep ? levelFor({ door, day: day + 1, profile: me.settings.profile, runs: [...(me.settings.runs || []), { door, acc: asked ? score.right / asked : 1, level }] }) : level;
       const feelRow = !kidId ? (
         <View style={{ alignItems: "center", gap: 8, marginTop: 4 }}>
-          <Text style={[type.eyebrow(8), { color: "#ffffff99" }]}>{feel ? "thanks — we'll tune it." : "how did that feel?"}</Text>
+          <Text style={[type.eyebrow(8), { color: "#ffffff99" }]}>{feel ? t("session.feel.thanks") : t("session.feel.ask")}</Text>
           <View style={{ flexDirection: "row", gap: 8 }}>
-            {([["slow", "too easy"], ["right", "just right"], ["hard", "too hard"]] as const).map(([id, l]) => (
+            {([["slow", t("session.feel.slow")], ["right", t("session.feel.right")], ["hard", t("session.feel.hard")]] as const).map(([id, l]) => (
               <Pressable key={id} accessibilityRole="button" accessibilityState={{ selected: feel === id }} onPress={() => { setFeel(id); recordFeel({ door, day, level: shownLevel, feel: id }); }}
                 style={{ borderRadius: 999, borderWidth: 1.5, borderColor: feel === id ? color.gold : "#ffffff44", backgroundColor: feel === id ? color.gold : "transparent", paddingVertical: 8, paddingHorizontal: 12 }}>
                 <Text style={[type.eyebrow(8), { color: feel === id ? color.ink : "#fff" }]}>{l}</Text>
@@ -340,10 +374,10 @@ function Session({ door, day, kidId, mode, deep, voiceOn, onFinish, script = nul
         return frame(
           <View style={{ alignItems: "center", gap: 14, width: "100%" }}>
             <Celebrate />
-            <Text accessibilityRole="header" style={{ fontFamily: font.mark[800], fontSize: 34, color: color.gold, textAlign: "center" }}>you went deeper.</Text>
+            <Text accessibilityRole="header" style={{ fontFamily: font.mark[800], fontSize: 34, color: color.gold, textAlign: "center" }}>{t("session.deep.title")}</Text>
             <LevelPill level={shownLevel} />
             <View style={{ flexDirection: "row", width: "100%", borderRadius: 22, borderWidth: 2, borderColor: color.gold, backgroundColor: "#ffffff0d", paddingVertical: 14 }}>
-              {([["☀", `+${deepLight(score.right, asked)}`, "light"], ["◎", `${acc}%`, accLabel], ["⏱", rushSecs ? `${rushSecs}s` : "—", "quick round"]] as const).map(([g, v, l], k) => (
+              {([["☀", `+${deepLight(score.right, asked)}`, t("session.stat.light")], ["◎", `${acc}%`, accLabel], ["⏱", rushSecs ? `${rushSecs}s` : "—", t("session.stat.quick")]] as const).map(([g, v, l], k) => (
                 <View key={l} style={{ flex: 1, alignItems: "center", borderLeftWidth: k ? 1 : 0, borderLeftColor: "#ffffff22" }}>
                   <Text style={{ fontSize: 18, color: color.gold }}>{g}</Text>
                   <Text style={{ fontFamily: font.display[800], fontSize: 24, color: "#fff", marginTop: 2 }}>{v}</Text>
@@ -351,18 +385,18 @@ function Session({ door, day, kidId, mode, deep, voiceOn, onFinish, script = nul
                 </View>
               ))}
             </View>
-            <Text style={[type.body(14), { color: "#ffffffcc", textAlign: "center" }]}>{acc === 100 ? "two levels up and not one miss. that's real." : "two levels up is supposed to be hard. you did it anyway."}</Text>
+            <Text style={[type.body(14), { color: "#ffffffcc", textAlign: "center" }]}>{acc === 100 ? t("session.deep.clean") : t("session.deep.body")}</Text>
             {feelRow}
           </View>,
-          { foot: <Btn testID="finish" kind="gold" onPress={finish}>back to today</Btn> },
+          { foot: <Btn testID="finish" kind="gold" onPress={finish}>{t("session.deep.back")}</Btn> },
         );
       }
       return frame(
         <View style={{ alignItems: "center", gap: 14, width: "100%" }}>
           <Celebrate />
-          <Text accessibilityRole="header" style={{ fontFamily: font.mark[800], fontSize: 36, color: color.gold, textAlign: "center" }}>{day === 1 ? "you're on the hill!" : `day ${day}. done!`}</Text>
+          <Text accessibilityRole="header" style={{ fontFamily: font.mark[800], fontSize: 36, color: color.gold, textAlign: "center" }}>{day === 1 ? t("session.tally.first") : t("session.tally.day", { day })}</Text>
           {mode === "adult" && day > 1 ? <LevelPill level={level} up={nextLevel > level} /> : null}
-          <Text style={[type.body(15), { color: "#ffffffcc", marginTop: -8 }]}>{acc === 100 ? "not one miss. proud of you." : "proud of you. see you tomorrow."}</Text>
+          <Text style={[type.body(15), { color: "#ffffffcc", marginTop: -8 }]}>{acc === 100 ? t("session.tally.clean") : t("session.tally.body")}</Text>
           <View style={{ flexDirection: "row", width: "100%", borderRadius: 22, borderWidth: 2, borderColor: color.gold, backgroundColor: "#ffffff0d", paddingVertical: 14 }}>
             {stats.map(([g, v, l], k) => (
               <View key={l} style={{ flex: 1, alignItems: "center", borderLeftWidth: k ? 1 : 0, borderLeftColor: "#ffffff22" }}>
@@ -381,16 +415,16 @@ function Session({ door, day, kidId, mode, deep, voiceOn, onFinish, script = nul
               </View>
             ))}
           </View>
-          <Text style={{ fontFamily: font.display[500], fontSize: 17, color: "#ffffffcc", marginTop: 8, textAlign: "center" }}>your line: <Text style={{ fontStyle: "italic" }}>{/[.?!…]$/.test(plan.carry) ? plan.carry : `${plan.carry}.`}</Text></Text>
-          {nat ? <View style={st.bead}><Text style={{ fontFamily: font.display[800], fontSize: 22, color: color.gold }}>{nat}</Text><Text style={[type.eyebrow(), { color: "#ffffffbb" }]}>bead {Math.min(day, 21)} of 21 · on your strand</Text></View> : null}
+          <Text style={{ fontFamily: font.display[500], fontSize: 17, color: "#ffffffcc", marginTop: 8, textAlign: "center" }}>{t("session.tally.line")}<Text style={{ fontStyle: "italic" }}>{/[.?!…]$/.test(plan.carry) ? plan.carry : `${plan.carry}.`}</Text></Text>
+          {nat ? <View style={st.bead}><Text style={{ fontFamily: font.display[800], fontSize: 22, color: color.gold }}>{nat}</Text><Text style={[type.eyebrow(), { color: "#ffffffbb" }]}>{t("session.tally.bead", { n: Math.min(day, 21) })}</Text></View> : null}
           {feelRow}
-          {tomorrow ? <View style={st.tomorrow}><Text style={[type.eyebrow(), { color: color.gold }]}>tomorrow</Text><Text style={{ fontFamily: font.display[800], fontSize: 17, color: "#fff", marginTop: 4 }}>{tomorrow}</Text></View> : null}
+          {tomorrow ? <View style={st.tomorrow}><Text style={[type.eyebrow(), { color: color.gold }]}>{t("session.tally.tomorrow")}</Text><Text style={{ fontFamily: font.display[800], fontSize: 17, color: "#fff", marginTop: 4 }}>{tomorrow}</Text></View> : null}
         </View>,
-        { foot: <Btn testID="finish" kind="gold" onPress={finish}>done — proud of you</Btn> },
+        { foot: <Btn testID="finish" kind="gold" onPress={finish}>{t("session.tally.finish")}</Btn> },
       );
     }
     default:
-      return frame(<Text style={[type.body(), { color: "#fff" }]}>…</Text>, { foot: <Btn kind="gold" onPress={() => next()}>next</Btn> });
+      return frame(<Text style={[type.body(), { color: "#fff" }]}>…</Text>, { foot: <Btn kind="gold" onPress={() => next()}>{t("session.next")}</Btn> });
   }
 }
 
@@ -405,6 +439,8 @@ const st = StyleSheet.create({
   tile: { flex: 1, backgroundColor: "#ffffff14", borderColor: "#ffffff33", borderWidth: 1, borderRadius: 16, paddingVertical: 12, paddingHorizontal: 10 },
   bead: { flexDirection: "row", alignItems: "center", gap: 10, marginTop: 6, backgroundColor: "#ffffff14", borderRadius: 999, paddingVertical: 8, paddingHorizontal: 14 },
   tomorrow: { marginTop: 10, borderTopWidth: 1, borderTopColor: "#ffffff22", paddingTop: 10, width: "100%" },
+  esNote: { flexDirection: "row", alignItems: "center", gap: 10, marginTop: 10, marginHorizontal: 20, backgroundColor: "#ffffff14", borderColor: "#ffffff33", borderWidth: 1, borderRadius: 16, paddingVertical: 10, paddingHorizontal: 14 },
+  esNoteBtn: { backgroundColor: color.gold, borderRadius: 999, minHeight: 36, paddingVertical: 8, paddingHorizontal: 12, justifyContent: "center" },
 });
 
 /** Light for the "go deeper" round: 2 per first-try right, 5 more for a clean one. */
@@ -420,9 +456,9 @@ export function lessonLight(right: number, asked: number, best: number) {
 /** Where the lesson sits on the five levels: five small suns, the lit ones yours. */
 function LevelPill({ level, up }: { level: number; up?: boolean }) {
   return (
-    <View accessibilityLabel={`level ${level} of 5: ${LEVELS[level]}${up ? ". next lesson goes up a level" : ""}`} style={{ flexDirection: "row", alignItems: "center", gap: 8, backgroundColor: "#ffffff14", borderRadius: 999, paddingVertical: 7, paddingHorizontal: 14 }}>
+    <View accessibilityLabel={`${t("session.level.a11y", { n: level, name: levelName(level) })}${up ? t("session.level.a11yUp") : ""}`} style={{ flexDirection: "row", alignItems: "center", gap: 8, backgroundColor: "#ffffff14", borderRadius: 999, paddingVertical: 7, paddingHorizontal: 14 }}>
       <Text style={{ letterSpacing: 2, fontSize: 12, color: color.gold }}>{[1, 2, 3, 4, 5].map((k) => (k <= level ? "☀" : "·")).join("")}</Text>
-      <Text style={[type.eyebrow(8), { color: color.gold }]}>level {level} · {LEVELS[level]}{up ? " · next: ↑" : ""}</Text>
+      <Text style={[type.eyebrow(8), { color: color.gold }]}>{t("session.level.pill", { n: level, name: levelName(level) })}{up ? t("session.level.up") : ""}</Text>
     </View>
   );
 }
