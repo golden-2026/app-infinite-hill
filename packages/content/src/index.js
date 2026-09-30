@@ -227,6 +227,38 @@ function withScript(steps, info, day) {
   return out;
 }
 
+// On a script day the guess ("talent — what do you think it means?") took the carry line ("fear buries things") as the
+// meaning (QA atlas v9). The script says what the word means in its "the word" segment ("Talent. A large weight of
+// silver, entrusted to a servant."): that's the answer; the wrong guesses are the script's own "what you thought"
+// (trapdoor) and things from inside the story (its match pairs). Without a clear meaning the guess stays as it was.
+const SENTENCES = /(?<=[.!?])\s+/;
+const bare = (s) => String(s || "").toLowerCase().replace(/[^\p{L}\p{N}]+/gu, " ").trim();
+const asOption = (s) => { const t = String(s || "").trim().replace(/[.!]+$/, ""); return t ? t[0].toLowerCase() + t.slice(1) : ""; };
+function scriptMeaning(info) {
+  const seg = (info.segments || []).find((g) => /^the word/.test(g.type || ""));
+  const [first, second, third] = String(seg?.voice || "").split(SENTENCES);
+  const w = bare(info.word);
+  if (!w || !second || !bare(first).endsWith(w)) return null;
+  let m = asOption(second);
+  // "Yisrael. Israel. One who strives with God…": a one- or two-word gloss carries on into the next sentence
+  if (bare(m).split(" ").length < 3 && third) m = `${m}: ${asOption(third)}`;
+  return m.length >= 6 && m.length <= 90 ? m : null;
+}
+function scriptGuess(steps, info, n = 2) {
+  const meaning = scriptMeaning(info);
+  if (!meaning) return steps;
+  const seen = new Set([bare(meaning), bare(info.word)]);
+  const wrong = [];
+  const add = (t) => { const o = asOption(t); if (o && o.length <= 90 && !seen.has(bare(o)) && !/^(why|how|who|what|when|where)\b/i.test(o)) { seen.add(bare(o)); wrong.push(o); } };
+  const thought = (info.games?.trapdoor || [])[0];
+  if (typeof thought === "string" && /^what you thought:/i.test(thought)) add(thought.replace(/^what you thought:\s*/i, ""));
+  for (const [left, right] of info.games?.match?.pairs || []) if (bare(left) !== bare(info.word) && !bare(left).endsWith(` ${bare(info.word)}`)) add(right);
+  if (wrong.length < 2) return steps;
+  const options = [meaning, ...wrong.slice(0, n)];
+  const turn = (info.day || 0) % options.length; // same order every time for a day, answer not always first
+  return steps.map((s) => (s.type === "guess" ? { ...s, options: [...options.slice(turn), ...options.slice(0, turn)], answer: meaning } : s));
+}
+
 /**
  * Everything a session screen needs: ordered steps, the word and the carry line. Real sit times.
  * `script` (optional): the day's full script from lessonScript(); without one, the lesson is built exactly as before.
@@ -256,6 +288,8 @@ export function planDay({ wing, day, lesson = day, mode = "adult", named = true,
   }
   // Rising challenge (level 1–5; 0 = the plain lesson, as before). Children keep the plain lesson.
   if (level && mode === "adult") steps = levelUp(steps, { wing, day, level });
+  // a script day's guess answers with what the word means (after the level's own guess, which reaches for carry lines)
+  if (given) steps = scriptGuess(steps, given, level >= 3 && mode === "adult" ? 3 : 2);
   return { steps, word: R.word, carry: R.carry, title: info?.title || d1.title || "", info };
 }
 

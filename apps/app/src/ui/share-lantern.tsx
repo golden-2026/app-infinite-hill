@@ -29,7 +29,8 @@ async function send(url: string, text: string): Promise<boolean> {
   return false;
 }
 
-export function ShareLantern({ line, door, day, n }: { line: string; door: string; day: string; n: number }) {
+/** `to`: the friend this lantern answers ("send them one back"), named on the button and the sheet. */
+export function ShareLantern({ line, door, day, n, to }: { line: string; door: string; day: string; n: number; to?: string }) {
   const [open, setOpen] = useState(false);
   const [name, setName] = useState("");
   const insets = useSafeAreaInsets();
@@ -44,14 +45,14 @@ export function ShareLantern({ line, door, day, n }: { line: string; door: strin
   };
   return (
     <>
-      <Btn kind="light" onPress={() => setOpen(true)} testID="send-lantern">send it to someone</Btn>
+      <Btn kind="light" onPress={() => setOpen(true)} testID="send-lantern">{to ? `send it to ${to}` : "send it to someone"}</Btn>
       <Modal visible={open} transparent animationType="fade" onRequestClose={() => setOpen(false)}>
         <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : undefined} style={{ flex: 1, justifyContent: "flex-end", alignItems: "center" }}>
           <Pressable style={[StyleSheet.absoluteFill, { backgroundColor: color.scrim }]} accessibilityLabel="close" onPress={() => setOpen(false)} />
           <View style={[s.sheet, { paddingBottom: Math.max(insets.bottom, 16) + 8 }]} accessibilityViewIsModal aria-modal>
             <View style={s.grab} />
-            <Text style={[type.eyebrow(), { textAlign: "center" }]}>light one for someone</Text>
-            <Text accessibilityRole="header" style={[type.h1(24), { textAlign: "center" }]}>send your lantern.</Text>
+            <Text style={[type.eyebrow(), { textAlign: "center" }]}>{to ? `light one for ${to}` : "light one for someone"}</Text>
+            <Text accessibilityRole="header" style={[type.h1(24), { textAlign: "center" }]}>{to ? `send your lantern to ${to}.` : "send your lantern."}</Text>
             <Text style={[type.body(14), { color: color.mute, textAlign: "center" }]}>they'll see the line inside and your day count. add your first name if you'd like them to know it's you.</Text>
             <TextInput
               testID="send-name" value={name} onChangeText={(t) => setName(t.slice(0, 24))} placeholder="your first name (optional)" placeholderTextColor={color.mute}

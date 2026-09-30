@@ -49,7 +49,7 @@ export default function LanternScreen() {
         <Pressable accessibilityRole="button" accessibilityLabel={lit ? "your lantern is lit" : three.all ? "light your lantern" : "your lantern lights when today's three are done"} onPress={light} disabled={lit || !three.all}>
           <Lantern size={130} lit={lit} />
         </Pressable>
-        {!lit && three.all ? <Text style={[type.h1(24), { color: "#fff", textAlign: "center" }]}>tap to light your lantern.</Text> : null}
+        {!lit && three.all ? <Text style={[type.h1(24), { color: "#fff", textAlign: "center" }]}>{to ? `tap to light it for ${to}.` : "tap to light your lantern."}</Text> : null}
         {!three.all ? (
           <View style={{ gap: 8, width: "100%" }}>
             <Text style={[type.h1(22), { color: "#fff", textAlign: "center" }]}>{three.count} of 3. it lights when all three are done.</Text>
@@ -83,7 +83,7 @@ export default function LanternScreen() {
               </View>
             ) : null}
             <Guy pose="lantern" h={110} />
-            {gift ? <ShareLantern line={gift.line} door={door} day={today} n={derived.showedUp} /> : null}
+            {gift ? <ShareLantern line={gift.line} door={door} day={today} n={derived.showedUp} to={to || undefined} /> : null}
           </View>
         ) : null}
       </ScrollView>

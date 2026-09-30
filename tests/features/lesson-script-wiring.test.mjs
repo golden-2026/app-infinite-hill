@@ -67,7 +67,8 @@ test("a script day plays the script: its spoken text and its games", { skip: !bu
 
 test("no script, no network, or a door with none: the lesson is exactly the one built before", { skip: !built && "run build-lessons first" }, async () => {
   resetLessonCache();
-  for (const [door, day] of [["HINDUISM", 3], ["CATHOLIC", 1], ["CHRISTIANITY", 400]]) {
+  // doors and days that never get a written script: the Hindu path's first 21 days are the manuscript
+  for (const [door, day] of [["HINDUISM", 3], ["HINDUISM", 12]]) {
     const s = await load(door, day, served());
     assert.equal(s, null, `${door} ${day}`);
     assert.deepEqual(planDay({ wing: door, day, mode: "adult", level: 1, script: s }), planDay({ wing: door, day, mode: "adult", level: 1 }));

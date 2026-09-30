@@ -23,8 +23,11 @@ export default function You() {
   const q = step === 0 ? STANCE_Q : raisedInQ(stance);
 
   const done = (s: Stance | null, raisedIn: string | null, learning: string | null = null) => {
-    update({ profile: pendingProfile(today, s, raisedIn, learning) });
-    router.push("/welcome/door");
+    const heard = saved.settings.profile?.answers.heardFrom;
+    const heardFrom = typeof heard === "string" ? heard : null;
+    update({ profile: pendingProfile(today, s, raisedIn, learning, heardFrom) });
+    // "how did you hear about us?": once, right after this step; never again once answered or skipped
+    router.push(heardFrom ? "/welcome/door" : "/welcome/heard");
   };
   const pick = (id: string | null) => {
     if (step === 0) {

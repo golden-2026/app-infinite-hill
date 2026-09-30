@@ -1,0 +1,95 @@
+{
+  "format": "ih-lesson/1",
+  "door": "CATHOLIC",
+  "day": 152,
+  "title": "Good Friday",
+  "word": "Good Friday",
+  "hook": "no Mass anywhere; people come forward to venerate the cross",
+  "carry": "the one day with no mass",
+  "length": "6:45",
+  "tomorrow": "The Easter Vigil",
+  "segments": [
+    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-HUNDRED-FIFTY-TWO.`"] },
+    {
+      "type": "review",
+      "duration": "20 sec",
+      "voice": "Yesterday, the Triduum: three days kept as one feast, beginning with a towel and a basin. Your line was the three holiest days begin. Did you wash something that wasn't yours? Day one hundred fifty-two.",
+      "screen": ["`THE THREE HOLIEST DAYS BEGIN.`"]
+    },
+    {
+      "type": "the hook",
+      "duration": "50 sec",
+      "voice": "Three o'clock on a Friday afternoon. The church is bare. The altar has no cloth, no candles, no flowers. The tabernacle is empty and its door hangs open. There's no opening hymn. The priest and the deacon walk in without a word, and then, in front of everyone, they lie face down on the floor, or kneel, and stay there. The whole church is silent with them. It's the strangest entrance of the year, and it happens on the one afternoon when no Mass is said anywhere in the Catholic world. Today: Good Friday.",
+      "screen": ["`THREE O'CLOCK.` → `A BARE CHURCH.` → `FACE DOWN ON THE FLOOR.`"]
+    },
+    {
+      "type": "the teach",
+      "duration": "2 min 15",
+      "voice": "Three o'clock because the Gospels say Jesus died at about the ninth hour, mid-afternoon. And no Mass because, by a very old tradition, the Church doesn't celebrate it on this day at all. Holy Saturday stays quiet too, until the vigil after dark. What happens instead is called the Celebration of the Lord's Passion, and it has three parts. First, the word. The whole Passion is read from John's Gospel, often with the congregation speaking the crowd's lines, so everyone has to say crucify him out loud. In John, Jesus's last words are, \"It is consummated.\" Finished, completed, brought to its end. Second, the prayers. The Church prays ten long intercessions, for the Church, for the Pope and the clergy, for the Jewish people, for those who don't believe in God, for leaders, for the suffering. On the day it remembers his death, it prays for the whole world by name. Third, the cross. A wooden cross is carried in or unveiled, and the priest sings three times, in Latin or in the local language, behold the wood of the cross. Then people come forward one by one to venerate it: a bow, a genuflection, a hand on the wood, a kiss. After that, Communion is given from hosts consecrated the night before, and everyone leaves in silence. Catholics also fast today. And the name? Nobody is completely sure why English says good. Most likely it meant holy, an older sense of the word. In German it's the Friday of mourning.",
+      "screen": ["`NO MASS, BY ANCIENT TRADITION.` · `THE PASSION: IT IS CONSUMMATED.` · `PRAYERS FOR THE WHOLE WORLD.` · `BEHOLD THE WOOD OF THE CROSS.`"]
+    },
+    {
+      "type": "the practice",
+      "duration": "2 min 30",
+      "voice": "Here's the practice: a quiet hour at three o'clock. You can't give it an hour right now, so give it these two minutes, and plan the rest. Settle, and breathe. Turn off whatever is making noise. Picture a plain wooden cross, and the long line of people walking up to it, one at a time. If you pray, you can bring someone who is suffering with you to the cross in your mind. If you don't, simply keep the silence, as the whole church does today. Then, at three this afternoon, stop again for a few minutes. The bell holds the time.",
+      "screen": []
+    },
+    {
+      "type": "the word",
+      "duration": "25 sec",
+      "voice": "Good Friday. The day Christians remember the death of Jesus, with no Mass, a long silence, and a line of people at the cross. Today's word.",
+      "screen": ["`GOOD FRIDAY — today's word`."]
+    },
+    {
+      "type": "the carry",
+      "duration": "15 sec",
+      "voice": "Your line: the one day with no mass. Today, at three o'clock, or whenever you can, stop for a real stretch of quiet, with no screen. Day one hundred fifty-two.",
+      "screen": []
+    },
+    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 152 COUNTS.` → `TOMORROW: THE EASTER VIGIL.`"] }
+  ],
+  "howItsDone": "On Good Friday Catholics attend the Celebration of the Lord's Passion, usually in the afternoon: the Passion from John is read, the Church prays the solemn intercessions, and people come forward to venerate the cross; adults also fast and abstain from meat.",
+  "games": {
+    "match": {
+      "prompt": "what's inside the day — tap the pairs.",
+      "pairs": [["the ninth hour", "about three in the afternoon"], ["the Passion", "read from John's Gospel"], ["the intercessions", "long prayers for the whole world"], ["the cross", "venerated with a bow or a kiss"]]
+    },
+    "myth": [
+      ["Catholics celebrate a short Mass on Good Friday", false, "no Mass is said anywhere today. Communion is given from hosts consecrated the night before."],
+      ["on Good Friday the Church prays for people who don't believe in God", true, "the ten intercessions pray for the whole world by name, including those who don't believe."],
+      ["everyone agrees good in the name means God's", false, "nobody is completely sure. most likely it meant holy, an older sense of the word."]
+    ],
+    "fork": {
+      "setup": "it's the Good Friday liturgy and the cross has just been shown. the line starts moving forward. what do you do?",
+      "options": ["wait for the Mass to start.", "walk up and venerate the cross: a bow, a touch or a kiss.", "leave, since there's no Communion today."],
+      "answer": 1,
+      "reveal": "there is no Mass today. people come forward one by one to venerate the cross, and afterward Communion is given from the hosts consecrated on Holy Thursday."
+    },
+    "original": { "script": "Ecce lignum Crucis", "say": "ET-cheh LEEN-yoom KROO-chees", "note": "Latin: behold the wood of the cross, sung three times as the cross is shown on Good Friday." },
+    "trapdoor": [
+      "what you thought: good is a strange word for the day of a death.",
+      "what it means: the day Christians remember the crucifixion, kept with no Mass, the Passion, prayers for the world and the cross.",
+      "what a scholar hears: English is almost alone in calling it good, most likely meaning holy; German calls it Karfreitag, from an old word for lament."
+    ]
+  },
+  "sources": [
+    { "ref": "John 19:30", "work": "The Bible", "translation": "Douay-Rheims (Challoner, 1752)", "quoted": "It is consummated." },
+    { "ref": "Mark 15:34–37; Luke 23:44–46", "work": "The Bible", "translation": null, "quoted": null },
+    { "ref": "John 18:1–19:42", "work": "The Bible", "translation": null, "quoted": null },
+    { "ref": "Roman Missal, Friday of the Passion of the Lord (rubrics, solemn intercessions, showing of the cross)", "work": "The Roman Missal", "translation": null, "quoted": null },
+    { "ref": "Code of Canon Law 1251", "work": "Code of Canon Law", "translation": null, "quoted": null }
+  ],
+  "review": {
+    "status": "pending",
+    "keeper": null,
+    "notes": [
+      "Carry says 'the one day with no mass'. Strictly, no Mass is celebrated on Good Friday or during Holy Saturday until the Easter Vigil after nightfall; the script says so plainly. A Keeper may want to adjust the index carry.",
+      "Rubrics: priest and deacon prostrate or kneel in silence at the start; the celebration takes place about three in the afternoon unless pastoral reasons suggest later. Confirm.",
+      "Ten solemn intercessions in the current Missal (Church, Pope, clergy and faithful, catechumens, unity of Christians, Jewish people, those who do not believe in Christ, those who do not believe in God, those in public office, those in tribulation). The script names a selection. Confirm.",
+      "Ecce lignum Crucis, in quo salus mundi pependit. Venite, adoremus: sung three times. Ecclesiastical pronunciation given approximately.",
+      "Origin of 'Good' uncertain; 'God's Friday' theory is widely doubted. German Karfreitag from Old High German kara (lament). Check.",
+      "Fasting and abstinence on Good Friday: canon 1251. Paraphrased."
+    ]
+  },
+  "meta": { "index": "152. Good Friday · — · no Mass anywhere; people come forward to venerate the cross · keep a quiet hour at three o'clock · the one day with no mass", "writer": "writer agent (catholic 151–180)", "written": "2026-09-30" }
+}

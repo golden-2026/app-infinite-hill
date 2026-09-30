@@ -1,0 +1,93 @@
+{
+  "format": "ih-lesson/1",
+  "door": "CATHOLIC",
+  "day": 110,
+  "title": "The homily",
+  "word": "homily",
+  "hook": "the priest or deacon opens the readings for this crowd on this day",
+  "carry": "the word, for today",
+  "length": "6:45",
+  "tomorrow": "The Creed and the prayers of the faithful",
+  "segments": [
+    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-HUNDRED-TEN.`"] },
+    {
+      "type": "review",
+      "duration": "20 sec",
+      "voice": "Yesterday, the Gospel, good news, greeted with three small crosses. Your line was mind, lips, heart. Did you pause at all three before reading? Day one hundred and ten.",
+      "screen": ["`MIND, LIPS, HEART.`"]
+    },
+    {
+      "type": "the hook",
+      "duration": "50 sec",
+      "voice": "The Gospel ends. The book is kissed. Everyone sits down, and there's a small rustle as a few hundred people get comfortable, because they know what's next. The priest or deacon is going to talk. Everyone has a story about this part. The one who went on for forty minutes. The one who told the same joke every Easter. And the one, maybe once, who said something that landed so exactly on your week that you wondered if somebody had told him. Today's word is the name for what happens after the Gospel, and it's older and more interesting than a speech.",
+      "screen": ["`THE BOOK IS KISSED.` → `EVERYONE SITS.` → `THE ONE THAT LANDED.`"]
+    },
+    {
+      "type": "the teach",
+      "duration": "2 min 15",
+      "voice": "Homily comes from the Greek homilia, which means a conversation, a talk among people gathered together. Not a lecture from above. A conversation. The verb shows up in one of the stories you heard earlier on this path. On the road to Emmaus, two disciples are walking home, talking together about everything that has happened, and in Luke's Greek, the word for their talking is the same root. Then a stranger joins them and opens the scriptures to them. Later they say, in the Douay-Rheims: \"Was not our heart burning within us, whilst he spoke in the way, and opened to us the scriptures?\" That's what a homily is meant to do. Take the readings everyone just heard and open them, for these people, on this day. Jesus did something like it in his hometown synagogue in Nazareth. He stood, read a passage from Isaiah, sat down, and with every eye on him said: \"This day is fulfilled this scripture in your ears.\" Not a history lesson. Today. So a homily isn't the same as a sermon on any topic. The Church asks that it grow out of the readings and the Mass itself. It's given by a priest or deacon, and it's required on Sundays and holy days. Pope Francis wrote pages on homilies, and asked that they be short, warm, and more like a mother talking to her children than a lecture. Afterward, the Church suggests a short silence, so what was said can settle. The word has been read. Now it's handed to you, for this week.",
+      "screen": ["`HOMILIA: A CONVERSATION.` · `THE ROAD TO EMMAUS.` · `THIS DAY IS FULFILLED.` · `THE READINGS, FOR THESE PEOPLE.` · then, large: `WAS NOT OUR HEART BURNING WITHIN US?`"]
+    },
+    {
+      "type": "the practice",
+      "duration": "2 min 30",
+      "voice": "Here's the practice: one sentence to keep. Settle, and breathe. Think of the best thing anyone ever said to you about life, from a pulpit, a classroom, a kitchen table, a friend at 2am. Just one sentence. If nothing comes, take the one from Nazareth: this day is fulfilled. Say it in your head. Then ask: what would it mean for today, this ordinary Tuesday or whatever day it is? If you pray, you can ask for ears to hear. The bell holds the time.",
+      "screen": []
+    },
+    {
+      "type": "the word",
+      "duration": "25 sec",
+      "voice": "Homily. From the Greek for conversation: the priest or deacon opening the day's readings for the people in front of him. Today's word.",
+      "screen": ["`HOMILY — today's word`."]
+    },
+    {
+      "type": "the carry",
+      "duration": "15 sec",
+      "voice": "Your line: the word, for today. Today, write down one sentence you'd keep, from a sermon, a book, or a friend, somewhere you'll see it tonight. Day one hundred and ten.",
+      "screen": []
+    },
+    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 110 COUNTS.` → `TOMORROW: THE CREED AND THE PRAYERS OF THE FAITHFUL.`"] }
+  ],
+  "howItsDone": "After the Gospel, the congregation sits and the priest or deacon preaches the homily, drawn from the day's readings; it is required at Sunday and holy day Masses, and a short silence often follows.",
+  "games": {
+    "match": {
+      "prompt": "what's inside the word — tap the pairs.",
+      "pairs": [["homilia", "Greek: a conversation"], ["Emmaus", "a stranger opens the scriptures"], ["Nazareth", "this day is fulfilled"], ["the silence after", "so what was said can settle"]]
+    },
+    "myth": [
+      ["a homily can be about any topic the preacher likes", false, "the Church asks that it grow out of the day's readings and the Mass itself."],
+      ["homily comes from a Greek word for conversation", true, "homilia: a talk among people gathered together, not a lecture from above."],
+      ["any member of the parish can give the homily", false, "it's given by a priest or a deacon."]
+    ],
+    "fork": {
+      "setup": "you're Jesus in the synagogue at Nazareth. you've just read a passage from Isaiah and sat down. every eye is on you. what do you say?",
+      "options": ["explain what Isaiah meant in his own time.", "say that this scripture is fulfilled today, in their hearing.", "ask someone else to explain it."],
+      "answer": 1,
+      "reveal": "\"This day is fulfilled this scripture in your ears.\" not a history lesson: today. that's what a homily aims for."
+    },
+    "original": { "script": "ὁμιλία", "say": "ho-mee-LEE-ah", "note": "Greek: a conversation, a talk among a gathered group, the root of homily." },
+    "trapdoor": [
+      "what you thought: the priest's speech.",
+      "what it means: a conversation that opens the day's readings for these people, on this day.",
+      "what a scholar hears: homilia, from homilos, a gathered crowd; Luke uses the verb for the Emmaus disciples talking on the road. canon law reserves the homily to priests and deacons."
+    ]
+  },
+  "sources": [
+    { "ref": "Luke 24:32", "work": "The Bible", "translation": "Douay-Rheims (Challoner)", "quoted": "Was not our heart burning within us, whilst he spoke in the way, and opened to us the scriptures?" },
+    { "ref": "Luke 4:21", "work": "The Bible", "translation": "Douay-Rheims (Challoner)", "quoted": "This day is fulfilled this scripture in your ears." },
+    { "ref": "General Instruction of the Roman Missal 65–66; Code of Canon Law 767", "work": "Liturgical and canon law", "translation": null, "quoted": null },
+    { "ref": "Francis, Evangelii Gaudium 135–144 (2013)", "work": "Apostolic exhortation", "translation": null, "quoted": null }
+  ],
+  "review": {
+    "status": "pending",
+    "keeper": null,
+    "notes": [
+      "Douay-Rheims Luke 24:32 and Luke 4:21 given from memory; confirm.",
+      "Luke 24:14–15 uses homileō for the disciples' talking; confirm.",
+      "Evangelii Gaudium 139–140 compares the homily to a mother speaking to her child; paraphrased. Confirm.",
+      "GIRM 66: homily by priest or deacon, required on Sundays and holy days of obligation; silence after (GIRM 66). Canon 767 §1 reserves it to priests and deacons. Confirm.",
+      "Emmaus was day 69 on this path."
+    ]
+  },
+  "meta": { "index": "110. The homily · homily · the priest or deacon opens the readings for this crowd on this day · write one sentence you'd keep from a sermon · the word, for today", "writer": "writer agent (catholic 91–120)", "written": "2026-09-30" }
+}

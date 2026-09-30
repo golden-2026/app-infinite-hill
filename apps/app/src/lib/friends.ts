@@ -7,6 +7,7 @@
 import { useSyncExternalStore } from "react";
 import { addDays, type Sit } from "@ih/domain";
 import { readJSON, writeJSON, remove } from "./storage";
+import { forgetFriendWalkers } from "./walkers";
 
 export const FRIENDS_KEY = "ih:friends";
 const TIMEOUT_MS = 8_000;
@@ -114,7 +115,11 @@ export async function unfriend(id: string) {
 /** Delete me from friends everywhere (the server copy and this phone's). */
 export async function leaveFriends() {
   const r = state.token ? await api("leave", { body: {} }) : { ok: true };
-  if (r?.ok) { remove(FRIENDS_KEY); state = empty(); listeners.forEach((l) => l()); }
+  if (r?.ok) {
+    // friends who reached "walking with" through a lantern invite go with them (other lanterns stay)
+    forgetFriendWalkers(state.friends.map((f) => f.nick));
+    remove(FRIENDS_KEY); state = empty(); listeners.forEach((l) => l());
+  }
   return !!r?.ok;
 }
 

@@ -33,7 +33,10 @@ export default function PickDoor() {
     : stance === "unsure" ? (home ? "roots" : "own")
     : stance === "left" ? (home ? "left" : "own")
     : stance ? "own" : "open";
-  const [door, setDoor] = useState<string | null>(null);
+  // one door shown (the faith you're learning, or your own): it's already chosen, so "continue" works straight away
+  const single = (mode === "partner" || mode === "yours") && home ? home : null;
+  const [door, setDoor] = useState<string | null>(single);
+  useEffect(() => { if (single) setDoor((d) => d ?? single); }, [single]);
   const [more, setMore] = useState(false);
   const grid = (skip: string | null) => (
     <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8, justifyContent: "space-between" }} accessibilityRole="radiogroup">

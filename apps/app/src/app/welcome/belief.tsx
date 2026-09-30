@@ -4,7 +4,7 @@ import { router, useLocalSearchParams } from "expo-router";
 import { useEffect, useState } from "react";
 import { Text, View } from "react-native";
 import { DOORS, label } from "@ih/content";
-import { BELIEF_QUESTIONS, PERSON, PRACTICE_MODE_Q } from "@/content/intake";
+import { BELIEF_QUESTIONS, PARTNER_SKIPS, PERSON, PRACTICE_MODE_Q } from "@/content/intake";
 import { commitmentScore, type Openness } from "@/lib/profile";
 import { asksPracticeMode, profileFor, youAnswers } from "@/lib/onboard";
 import { doorParam } from "@/lib/door-param";
@@ -39,7 +39,7 @@ export default function Belief() {
   const learningThis = you.stance === "partner" && you.learning === door;
   const qs = [...BELIEF_QUESTIONS, ...(askMode ? [PRACTICE_MODE_Q] : [])]
     .filter((x) => !(x.id === "raised" && you.raisedIn === door && you.stance !== "practice"))
-    .filter((x) => !(learningThis && (x.id === "why" || x.id === "raised")));
+    .filter((x) => !(learningThis && PARTNER_SKIPS.includes(x.id)));
   const q = qs[i];
   const fill = (s: string) => s.replace(/\{door\}/g, name).replace(/\{person\}/g, PERSON[door] || name);
 

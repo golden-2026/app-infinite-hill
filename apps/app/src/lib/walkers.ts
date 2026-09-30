@@ -8,7 +8,8 @@ import { doorParam } from "@/lib/door-param";
 import { readJSON, writeJSON } from "@/lib/storage";
 
 export const WALKERS_KEY = "ih:walkers";
-export type Walker = { name: string; door: string; lastLit: string; n: number };
+/** `friend`: the lantern came with a friend invite, so this person is (or was) also a friend on the friends server. */
+export type Walker = { name: string; door: string; lastLit: string; n: number; friend?: boolean };
 /** `i`: a single-use friend invite code (lib/friends), when the sender's phone could reach the friends server. */
 export type LanternGift = { from: string; line: string; door: string; d: string; n: number; i?: string };
 
@@ -78,7 +79,7 @@ export function readWalkers(): Walker[] {
   if (!Array.isArray(raw)) return [];
   const today = "9999-12-31";
   return raw
-    .map((w: any) => ({ name: cleanText(w?.name, NAME_MAX), door: doorParam(w?.door) ?? "", lastLit: cleanDate(w?.lastLit, today), n: cleanDays(w?.n) }))
+    .map((w: any) => ({ name: cleanText(w?.name, NAME_MAX), door: doorParam(w?.door) ?? "", lastLit: cleanDate(w?.lastLit, today), n: cleanDays(w?.n), ...(w?.friend === true ? { friend: true } : {}) }))
     .filter((w) => w.door)
     .sort((a, b) => (a.lastLit < b.lastLit ? 1 : a.lastLit > b.lastLit ? -1 : 0));
 }
@@ -86,11 +87,12 @@ export function readWalkers(): Walker[] {
 /** Adds (or refreshes) the sender. One entry per name + door; keeps the latest date and day count. */
 export function saveWalker(g: LanternGift): Walker[] {
   const list = readWalkers();
-  const next: Walker = { name: g.from, door: g.door, lastLit: g.d, n: g.n };
+  const next: Walker = { name: g.from, door: g.door, lastLit: g.d, n: g.n, ...(g.i ? { friend: true } : {}) };
   const i = list.findIndex((w) => same(w, next));
   if (i >= 0) {
     const old = list[i];
-    list[i] = next.lastLit >= old.lastLit ? { ...old, lastLit: next.lastLit, n: Math.max(old.n, next.n) } : old;
+    const kept = next.lastLit >= old.lastLit ? { ...old, lastLit: next.lastLit, n: Math.max(old.n, next.n) } : old;
+    list[i] = next.friend ? { ...kept, friend: true } : kept;
   } else list.unshift(next);
   const trimmed = list.slice(0, 50);
   writeJSON(WALKERS_KEY, trimmed);
@@ -108,6 +110,14 @@ export function importWalkers(raw: unknown): number {
     n++;
   }
   return n;
+}
+
+/** Leaving friends: people who came through a friend invite (or share a friend's nickname) leave "walking with" too. */
+export function forgetFriendWalkers(nicks: string[]): Walker[] {
+  const names = new Set(nicks.map((n) => cleanText(n, NAME_MAX).toLowerCase()).filter(Boolean));
+  const list = readWalkers().filter((w) => !w.friend && !names.has(w.name.toLowerCase()));
+  writeJSON(WALKERS_KEY, list);
+  return list;
 }
 
 export function removeWalker(w: { name: string; door: string }): Walker[] {

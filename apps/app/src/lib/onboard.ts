@@ -12,7 +12,8 @@ import { emptyProfile, type Profile } from "@/lib/profile";
 export type Stance = "practice" | "unsure" | "left" | "partner" | "curious" | "many" | "spiritual";
 export const STANCES: Stance[] = ["practice", "unsure", "left", "partner", "curious", "many", "spiritual"];
 // practiceMode is about the person, not the door, so it follows them to any door they walk
-const YOU_KEYS = ["stance", "raisedIn", "learning", "practiceMode"] as const;
+// (heardFrom, "how did you hear about us?", is about the person too: it follows them so it's never asked again)
+const YOU_KEYS = ["stance", "raisedIn", "learning", "practiceMode", "heardFrom"] as const;
 
 // ---------- "try the practices, or just learn?" ----------
 //   practiceMode  "practice" | "learn". Asked once in onboarding, only to people who didn't say they practice a
@@ -63,8 +64,9 @@ export function youAnswers(p: Profile | null | undefined): { stance: Stance | nu
 export const freshEyes = (stance: Stance | null, raisedIn: string | null, door: string) => (stance === "unsure" || stance === "left") && raisedIn === door;
 
 /** A pending profile holding only the first step's answers (no door yet; other traditions never come up from it). */
-export function pendingProfile(today: string, stance: Stance | null, raisedIn: string | null, learning: string | null = null): Profile {
+export function pendingProfile(today: string, stance: Stance | null, raisedIn: string | null, learning: string | null = null, heardFrom: string | null = null): Profile {
   const answers: Profile["answers"] = {};
+  if (heardFrom) answers.heardFrom = heardFrom;
   if (stance) answers.stance = stance;
   if (raisedIn) answers.raisedIn = raisedIn;
   if (learning) answers.learning = learning;

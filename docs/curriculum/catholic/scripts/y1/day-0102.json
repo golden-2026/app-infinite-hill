@@ -1,0 +1,91 @@
+{
+  "format": "ih-lesson/1",
+  "door": "CATHOLIC",
+  "day": 102,
+  "title": "The morning offering",
+  "word": "The morning offering",
+  "hook": "offering the whole day, work and joys and trouble, before it starts",
+  "carry": "today is already given",
+  "length": "6:45",
+  "tomorrow": "The Angelus",
+  "segments": [
+    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-HUNDRED-TWO.`"] },
+    {
+      "type": "review",
+      "duration": "20 sec",
+      "voice": "Yesterday, the Apostles' Creed, and the word creed: I believe. Your line was I believe is a verb. Where did you lean your weight? Day one hundred and two.",
+      "screen": ["`I BELIEVE IS A VERB.`"]
+    },
+    {
+      "type": "the hook",
+      "duration": "50 sec",
+      "voice": "Your alarm goes off. Before your eyes are fully open, your hand is already reaching for the phone. And in the next ninety seconds, the day gets handed out. To the news. To the group chat. To a work email that makes your stomach drop. To somebody's vacation photos. By the time your feet touch the floor, your day already belongs to a dozen people, and you never decided to give it to any of them. There's an old Catholic habit that gets there first. Before anything else claims the day, you give the whole thing away, on purpose, to God. Today: the morning offering.",
+      "screen": ["`THE ALARM, THE PHONE.` → `THE DAY GETS HANDED OUT.` → `GIVE IT AWAY FIRST.`"]
+    },
+    {
+      "type": "the teach",
+      "duration": "2 min 15",
+      "voice": "In 1844, in a Jesuit house in the south of France, a group of young men training to be priests were restless. They wanted to be missionaries, off in distant countries, doing something that mattered. Instead they were stuck with books and chores. Their spiritual director, a priest named François-Xavier Gautrelet, told them something that changed their mood. You can be missionaries right now, he said, here. Offer everything you do today, the study, the dishes, the boredom, for the work of the Church around the world. That became a movement called the Apostleship of Prayer, and it spread to millions. It lives on today as the Pope's Worldwide Prayer Network. Its heart is a short prayer said on waking. The words vary, but it offers to God, through the heart of Jesus, all the prayers, works, joys and sufferings of the day ahead, often joined to a particular intention the Pope asks people to pray for that month. Notice what's in that list. Not just the good parts. The joys, and the sufferings. The meeting you dread. The kid who won't get dressed. The pain in your back. All of it, handed over before it happens. The idea goes back to Paul. In the Douay-Rheims he asks Christians to \"present your bodies a living sacrifice, holy, pleasing unto God.\" Not a sacrifice on an altar. A whole ordinary life, offered. So nothing in the day is wasted, even the parts that feel like a waste. Catholics would say the day is already given, so it already counts.",
+      "screen": ["`1844: YOUNG MEN, RESTLESS.` · `BE MISSIONARIES RIGHT HERE.` · `PRAYERS, WORKS, JOYS, SUFFERINGS.` · `NOTHING IN THE DAY IS WASTED.` · then, large: `PRESENT YOUR BODIES A LIVING SACRIFICE.`"]
+    },
+    {
+      "type": "the practice",
+      "duration": "2 min 30",
+      "voice": "Here's the practice: rehearse tomorrow morning. Settle, and breathe. Picture waking up tomorrow. The alarm. Your hand moving toward the phone. Now picture stopping it. Hand still. And before anything else gets the day, you give it away first. If you pray, you can offer the whole day to God, work, joys and trouble, in a few words of your own, or with a morning offering from a prayer book. If you don't, simply decide what the day is for. The bell holds the time.",
+      "screen": []
+    },
+    {
+      "type": "the word",
+      "duration": "25 sec",
+      "voice": "The morning offering. A short prayer on waking that gives the whole day to God before it starts, joys and sufferings too. Today's word.",
+      "screen": ["`THE MORNING OFFERING — today's word`."]
+    },
+    {
+      "type": "the carry",
+      "duration": "15 sec",
+      "voice": "Your line: today is already given. Tomorrow morning, before you check your phone, give the day away first. Even ten seconds counts. Day one hundred and two.",
+      "screen": []
+    },
+    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 102 COUNTS.` → `TOMORROW: THE ANGELUS.`"] }
+  ],
+  "howItsDone": "Many Catholics say a morning offering on waking, often a prayer from the Apostleship of Prayer (now the Pope's Worldwide Prayer Network) that offers the day's prayers, works, joys and sufferings, joined to the Pope's intention for the month.",
+  "games": {
+    "match": {
+      "prompt": "what's inside the offering — tap the pairs.",
+      "pairs": [["1844", "the Apostleship of Prayer begins"], ["François-Xavier Gautrelet", "told restless students to offer their day"], ["the Pope's intention", "a monthly need to pray for"], ["a living sacrifice", "Paul's name for an offered life"]]
+    },
+    "myth": [
+      ["the morning offering gives God only the good parts of the day", false, "it offers prayers, works, joys and sufferings: all of it, before it happens."],
+      ["it began with young men who wanted to be missionaries", true, "their director told them they could be missionaries right there, by offering their ordinary day."],
+      ["the movement still exists today", true, "the Apostleship of Prayer lives on as the Pope's Worldwide Prayer Network."]
+    ],
+    "fork": {
+      "setup": "you're a young man in 1844, training to be a priest, restless to go abroad and do something that matters. what does your director tell you?",
+      "options": ["leave your studies and go now.", "wait patiently; your time will come.", "be a missionary right here, by offering your ordinary day."],
+      "answer": 2,
+      "reveal": "Gautrelet told them to offer their study, chores and boredom for the Church's work. that became the Apostleship of Prayer."
+    },
+    "original": { "script": "oblatio", "say": "oh-BLAH-tee-oh", "note": "Latin: an offering, from offerre, to carry toward. English oblation comes from it." },
+    "trapdoor": [
+      "what you thought: a nice prayer to start the day.",
+      "what it means: handing the whole day to God before anything else claims it, so nothing in it is wasted.",
+      "what a scholar hears: the Apostleship of Prayer, founded in 1844 among Jesuit students at Vals in France, grown from Paul's living sacrifice in Romans 12."
+    ]
+  },
+  "sources": [
+    { "ref": "Romans 12:1", "work": "The Bible", "translation": "Douay-Rheims (Challoner)", "quoted": "present your bodies a living sacrifice, holy, pleasing unto God" },
+    { "ref": "Apostleship of Prayer, founded by François-Xavier Gautrelet SJ (1844)", "work": "History", "translation": null, "quoted": null },
+    { "ref": "Catechism of the Catholic Church 901", "work": "Catechism", "translation": null, "quoted": null }
+  ],
+  "review": {
+    "status": "pending",
+    "keeper": null,
+    "notes": [
+      "Douay-Rheims Romans 12:1 fragment given from memory; confirm.",
+      "Apostleship of Prayer: founded December 3, 1844, at the Jesuit scholasticate of Vals (near Le Puy), France, by François-Xavier Gautrelet; reorganized as the Pope's Worldwide Prayer Network. Confirm.",
+      "The morning offering prayer is described, not quoted (many versions; the common one is later than 1844). No new prayer is written; the practice invites 'a few words of your own' or a prayer book. Confirm that inviting one's own words is acceptable.",
+      "CCC 901 on lay people offering their work, prayers and daily labor as spiritual sacrifices: confirm the citation."
+    ]
+  },
+  "meta": { "index": "102. The morning offering · — · offering the whole day, work and joys and trouble, before it starts · offer today before you check your phone · today is already given", "writer": "writer agent (catholic 91–120)", "written": "2026-09-30" }
+}

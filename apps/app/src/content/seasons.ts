@@ -81,10 +81,11 @@ export const SEASON_DEFS: Record<SeasonKey, SeasonDef> = {
     key: "ramadan", name: "ramadan", doors: ["ISLAM"], badge: "the month",
     about: "the month of fasting from dawn to sunset, when the qur'an was first revealed.",
     ask: [
-      "what did the fast teach you about what you actually need?",
+      "what are you making room for this month?",
       "who could you share an iftar with, or send one to?",
       "what word or habit could you fast from too?",
       "what are you grateful for at sunset today?",
+      "what is the fast teaching you about what you actually need?",
       "who is hungry near you, in any sense?",
       "what verse or idea stayed with you today?",
       "what do you hope carries past the month?",
@@ -144,7 +145,7 @@ export const SEASON_DEFS: Record<SeasonKey, SeasonDef> = {
     ],
   },
   navratri: {
-    key: "navratri", name: "navratri", doors: ["HINDUISM"], badge: "nine nights",
+    key: "navratri", name: "navaratri", doors: ["HINDUISM"], badge: "nine nights",
     about: "nine nights honoring the goddess in her forms, ending in vijayadashami, the victory of good.",
     ask: [
       "what strength do you need to call up this season?",
@@ -156,7 +157,7 @@ export const SEASON_DEFS: Record<SeasonKey, SeasonDef> = {
       "what would victory over one small bad habit look like?",
     ],
     learn: [
-      "navratri means \"nine nights.\" each night honors a form of the goddess durga.",
+      "navaratri means \"nine nights.\" each night honors a form of the goddess durga.",
       "in gujarat and far beyond, people dance garba and dandiya late into the night.",
       "many fast or eat simply for the nine days.",
       "in south india, families set up a golu: steps of dolls and figures, and visit each other's homes.",

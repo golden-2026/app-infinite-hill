@@ -172,6 +172,54 @@ const PLANS: Record<string, Plan> = {
 
 const lower = (s: string) => s.charAt(0).toLowerCase() + s.slice(1);
 
+// "By here you'll be able to…" for years two to five on the doors whose later years come from their five-year plans
+// (docs/curriculum/<door>/y2–y5.md). Written from each year's blocks as an outcome, not a list of chapter names.
+// DRAFT, like the plans themselves.
+const YEAR_PROMISES: Record<string, string[]> = {
+  CHRISTIANITY: [
+    "read the Bible's big books in order, from Genesis to the Gospels, and know where any story sits",
+    "tell the church's long story, from Israel and the first believers to Christians across the world today",
+    "understand how different Christians pray, decide what's right, and face the hardest questions",
+    "read a Gospel, Acts and the letters in their own words, and live what you've found",
+  ],
+  CATHOLIC: [
+    "follow the Bible from Genesis to the Apocalypse, and hear the readings of the Church's year",
+    "tell the Church's story, from the Fathers and the councils to the saints of every century",
+    "find your way around the Catechism, Aquinas, the great orders and the Church's social teaching",
+    "read the spiritual classics yourself, and practice the works of mercy in an ordinary life",
+  ],
+  JUDAISM: [
+    "know the whole Torah and walk the prayer book, service by service, through the Jewish year",
+    "tell the story of a people, from the prophets and the writings to the story after the Bible",
+    "understand how Judaism thinks and lives: the Talmud, Maimonides, Hasidic thought, the movements and the life cycle",
+    "read the sources yourself, a tractate, Pirkei Avot, midrash, and live a Jewish week with meaning",
+  ],
+  ISLAM: [
+    "walk the Qur'an surah by surah, and know what each part is about",
+    "tell the life of the Prophet ﷺ, his family and his companions, from Mecca to Medina",
+    "understand the five pillars in depth, how hadith are weighed, and the schools of law, side by side",
+    "carry the forty hadith and the ninety-nine names, and read whole passages of the Qur'an",
+  ],
+  BUDDHISM: [
+    "know the four noble truths and the eightfold path in the Buddha's own words, discourse by discourse",
+    "tell the Buddha's life, his disciples, and how the teaching travelled across Asia and the world",
+    "understand the schools, from Abhidhamma to Zen, Pure Land and Tibet, side by side and never ranked",
+    "read the sources yourself, a little Pali and Shantideva, and keep a practice as a householder",
+  ],
+  SIKHISM: [
+    "know the daily banis, from Jaap Sahib to Kirtan Sohila, and the Ardas line by line",
+    "tell the Panth's long story, from the first tellers and the Bhagats to Sikhs today",
+    "understand the ragas, the Gurus' teachings, the Khalsa and the Rehat Maryada",
+    "read the Guru Granth Sahib yourself, in order, and live it day to day",
+  ],
+  SPIRITUAL: [
+    "read the Stoics in full, Epictetus, Seneca and Marcus Aurelius, and use them on a hard day",
+    "bring wisdom from every tradition to the big questions: suffering, death, love, work, forgiveness and awe",
+    "know the thinkers and the schools, from the Tao Te Ching and Montaigne to Thoreau and the science of practice",
+    "read the sources yourself, walk with the poets, and build a practice of your own",
+  ],
+};
+
 /** The whole climb for a door, from the trailhead up: the five camps (year one ends at a lookout, not the summit),
  *  then years two to five — outlined where a plan exists (Hinduism), otherwise one "being planned" stage — and the
  *  summit at the top of the five years. */
@@ -200,11 +248,11 @@ export function trailFor(door: string): { stages: Stage[]; lookout: number; summ
       const theme = (heading.match(/[“"]([^”"]+)[”"]/) || [])[1] || "the ranges";
       // the year's blocks, by name ("Block A · Exodus finished (Days 332–378)" → "exodus finished"); a year without
       // named blocks falls back to a spread of its session titles
-      const named = [...new Set(days.map((d) => String(d.part || "").replace(/^(Block|Weeks?|Part)\s+[\w–-]+\s*·\s*/i, "").split(" · ")[0].replace(/\s*\(.*$/, "").trim()).filter((p) => p && !/^(block|weeks?)\b/i.test(p)))];
+      const named = [...new Set(days.map((d) => String(d.part || "").replace(/^(Block|Weeks?|Part)\s+[\w–-]+\s*·\s*/i, "").split(" · ")[0].replace(/\s*\(.*$/, "").trim()).filter((p) => p && !/^(block|weeks?|opening)\b/i.test(p)))];
       const parts = named.length >= 2 ? named : [0, 0.25, 0.5, 0.75].map((f) => String(days[Math.floor(f * days.length)]?.title || "").replace(/\s*\(.*$/, "")).filter(Boolean);
       // part names can hold commas ("The Acts of the Apostles, read through"), so they're set apart with dots
       const tidy = (p: string) => p.replace(/^(The|A|An) /, (m) => m.toLowerCase());
-      const promise = `walk through ${parts.slice(0, 3).map(tidy).join(" · ")}${parts.length > 3 ? " · and more" : ""}`;
+      const promise = YEAR_PROMISES[door]?.[k] || `walk through ${parts.slice(0, 3).map(tidy).join(" · ")}${parts.length > 3 ? " · and more" : ""}`;
       stages.push({ key: `Year ${k + 2}`, eyebrow: `year ${k + 2} · 365 days`, name: lower(theme), first, last: first + 364, samples: parts.slice(0, 4), promise, outlined: true });
     }
     return { stages, lookout: YEAR_ONE, summit, planned: false };

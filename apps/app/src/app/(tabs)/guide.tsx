@@ -5,7 +5,7 @@ import { useTitle } from "@/lib/title";
 // keeps under "what the companion knows"; facts it proposes are only kept if the person taps them.
 // Companion off (no AI key, offline, or the iPhone build): it answers from the lesson's own text (v175's fallback)
 // and says so plainly. ?flags=guide-live still uses the older /api/guide.
-import { camp1, data, guideFallback, label } from "@ih/content";
+import { camp1, data, guideFallback, label, lessonInfo } from "@ih/content";
 import { useEffect, useRef, useState } from "react";
 import { KeyboardAvoidingView, Platform, Pressable, ScrollView, Text, TextInput, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -36,8 +36,25 @@ function wordName(d: any): string {
 
 // v175's fallback says "no signal" when it can't match a question. In the pilot the Guide is off by design,
 // not offline, so say what's true and point at the words the person actually has.
-function pilotAnswer(wing: string, q: string, words: string[], day = 999) {
+// "what does today's word mean?", "today's line", "the word of the day": today's lesson, whatever it's called.
+const TODAY_ASK = /\b(today'?s|todays|this (?:morning|evening)'?s)\s+(word|line|lesson|idea)\b|\b(word|line) (of|for) (the day|today)\b/i;
+function pilotAnswer(wing: string, q: string, words: string[], day = 999): string {
   const days = camp1(wing);
+  if (TODAY_ASK.test(q.replace(/[’‘]/g, "'"))) {
+    const d = days.find((x: any) => x.day === day);
+    if (d?.word) {
+      // answered from the lesson's own text, like any word; if another word happens to match first, say today's directly
+      const a = pilotAnswer(wing, d.word, words, day);
+      const name = wordName(d);
+      if (a.toLowerCase().startsWith(`${d.word} — `.toLowerCase()) || a.startsWith(name)) return a;
+      const teach = (d.segments || []).find((g: any) => /teach/.test(g.type));
+      return `${name} — ${d.carry}.${teach ? ` ${teach.voice.split(/(?<=[.!?])\s+/)[0]}` : ""} (that's today's lesson, day ${day}. in the pilot I answer from your lessons, so that's the lesson talking.)`;
+    } else {
+      // past camp one: today's lesson (a draft outline) says what it's about
+      const info: any = lessonInfo(wing, day);
+      if (info) return `today, day ${day}: ${info.title}. ${info.hook && info.hook !== info.title ? `${info.hook}. ` : ""}your line to carry: ${info.carry}. (in the pilot I answer from your lessons, so that's the lesson talking.)`;
+    }
+  }
   // asked about a line by its words ("what does “deliver us” mean?"): look it up by the lesson's label
   const sq = strip(q);
   const asked = days.find((d: any) => { const l = lineOf(d); return l && ((l.quote && sq.includes(strip(l.quote))) || (sq.includes(strip(l.prayer)) && sq.includes(`line ${l.n}`))); });

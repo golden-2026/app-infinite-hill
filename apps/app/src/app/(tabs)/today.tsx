@@ -225,13 +225,13 @@ export default function Today() {
             // the streak, said gently. It's only "at stake" when no rest day is left, and louder only as the day ends.
             (() => {
               const loud = sk.atRisk && hour >= 17;
-              const right = sk.atRisk ? (hour >= 17 ? "one lesson keeps it going" : "no rest days left · one lesson keeps it")
-                : sk.restedYesterday ? "a rest day held it yesterday"
-                : `rest days protect your streak · ${sk.rest} banked`;
+              const right = sk.atRisk ? (hour >= 17 ? "one lesson keeps it going" : "no rest days left · a lesson keeps it")
+                : sk.restedYesterday ? "rest day used yesterday"
+                : `${sk.rest} rest ${sk.rest === 1 ? "day" : "days"} banked`;
               return (
                 <View testID="streak-pill" style={[s.pill, { borderColor: loud ? color.gold : color.line, backgroundColor: loud ? color.ink : "transparent" }]} accessibilityRole="text">
                   <Text numberOfLines={1} style={[type.eyebrow(8), { color: loud ? color.gold : color.ink, flexShrink: 0 }]}>{sk.streak}-day streak</Text>
-                  <Text numberOfLines={1} style={[type.eyebrow(8), { color: loud ? "#fff" : color.mute, flexShrink: 1, textAlign: "right" }]}>{right}</Text>
+                  <Text numberOfLines={2} style={[type.eyebrow(8), { color: loud ? "#fff" : color.mute, flexShrink: 1, textAlign: "right" }]}>{right}</Text>
                 </View>
               );
             })()
@@ -313,7 +313,7 @@ const s = StyleSheet.create({
   inkCard: { marginHorizontal: 18, marginTop: 12, backgroundColor: "#fff", borderWidth: 2, borderColor: color.ink, borderRadius: 18, paddingVertical: 12, paddingHorizontal: 16, flexDirection: "row", alignItems: "center", gap: 12 },
   yn: { flex: 1, alignItems: "center", backgroundColor: "#fff", borderWidth: 2, borderColor: color.ink, borderRadius: 999, paddingVertical: 8 },
   ynText: { fontFamily: font.text[700], fontSize: 13, color: color.ink },
-  pill: { flexDirection: "row", justifyContent: "space-between", alignItems: "center", gap: 10, minHeight: 44, paddingVertical: 0, paddingHorizontal: 14, borderRadius: 999, backgroundColor: "#fff", borderWidth: 1.5, borderColor: color.ink },
+  pill: { flexDirection: "row", justifyContent: "space-between", alignItems: "center", gap: 10, minHeight: 44, paddingVertical: 6, paddingHorizontal: 14, borderRadius: 999, backgroundColor: "#fff", borderWidth: 1.5, borderColor: color.ink },
   dock: { position: "absolute", left: 16, right: 16, bottom: 12 },
   dockBtn: { borderWidth: 2, borderColor: color.ink, shadowColor: "#000", shadowOpacity: 0.18, shadowRadius: 14, shadowOffset: { width: 0, height: 6 } },
   dockDone: { flexDirection: "row", alignItems: "center", gap: 10, backgroundColor: color.ink, borderRadius: 999, paddingVertical: 10, paddingHorizontal: 16, shadowColor: "#000", shadowOpacity: 0.18, shadowRadius: 14, shadowOffset: { width: 0, height: 6 } },

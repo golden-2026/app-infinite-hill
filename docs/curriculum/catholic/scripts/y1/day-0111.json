@@ -1,0 +1,94 @@
+{
+  "format": "ih-lesson/1",
+  "door": "CATHOLIC",
+  "day": 111,
+  "title": "The Creed and the prayers of the faithful",
+  "word": "Nicene Creed",
+  "hook": "the whole church says what it believes, then prays for the world",
+  "carry": "we believe, then we ask",
+  "length": "6:45",
+  "tomorrow": "The gifts come up",
+  "segments": [
+    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-HUNDRED-ELEVEN.`"] },
+    {
+      "type": "review",
+      "duration": "20 sec",
+      "voice": "Yesterday, the homily, a conversation that opens the readings. Your line was the word, for today. Which sentence did you keep? Day one hundred and eleven.",
+      "screen": ["`THE WORD, FOR TODAY.`"]
+    },
+    {
+      "type": "the hook",
+      "duration": "50 sec",
+      "voice": "The year is 325, in a lakeside town called Nicaea, in what is now Turkey. About three hundred bishops have traveled there, some of them with scars from the persecutions only a few years before. One bishop is missing an eye. Another has crippled hands. The emperor himself has called the meeting, because the Church is tearing itself apart over one question: is Jesus fully God, or is he the first and greatest thing God made? What they decided that summer is still said out loud, every Sunday, by a billion Catholics and many other Christians too. Today: the Nicene Creed.",
+      "screen": ["`NICAEA, 325.` → `BISHOPS WITH SCARS.` → `ONE QUESTION ABOUT JESUS.`"]
+    },
+    {
+      "type": "the teach",
+      "duration": "2 min 15",
+      "voice": "A priest in Alexandria named Arius had been teaching that the Son was created by the Father, glorious, but made. His followers even sang it: there was a time when he was not. The council said no. To pin it down, they reached for a Greek word: homoousios, of the same substance, the same being as the Father. In today's English Mass the word is consubstantial. Not a lesser god. Not a creature. God from God, light from light. A second council, at Constantinople in 381, added more about the Holy Spirit, and that longer creed is the one said at Mass today, right after the homily. You learned the shorter Apostles' Creed ten days ago. This one is its bigger sibling, built for an argument. One honest detail. Centuries later, churches in the West added a phrase saying the Spirit comes from the Father and the Son. In Latin, filioque. Orthodox Christians never accepted that addition, and it remains one of the questions between the churches. Many Eastern Catholics say the creed without it. Then, straight after the creed, the Mass turns outward. The prayers of the faithful. Someone reads short intentions: for the Church, for leaders of nations, for people who are suffering, for the sick and the dead of this parish. After each, everyone answers together, asking God to hear. Paul asked for this, in the Douay-Rheims: \"that supplications, prayers, intercessions, and thanksgivings be made for all men.\" First the church says what it believes. Then, believing it, the church asks.",
+      "screen": ["`THERE WAS A TIME WHEN HE WAS NOT?` · `HOMOOUSIOS: THE SAME BEING.` · `THE FILIOQUE, EAST AND WEST.` · `THEN PRAYERS FOR THE WORLD.` · then, large: `SUPPLICATIONS, PRAYERS, INTERCESSIONS, AND THANKSGIVINGS.`"]
+    },
+    {
+      "type": "the practice",
+      "duration": "2 min 30",
+      "voice": "Here's the practice: one need in the news. Settle, and breathe. Think of one headline from this week. A flood, a war, a sick child in your town, a family who lost their home. Don't scroll for it. Pick the first one that comes. Picture the people inside it, not the numbers. If you pray, you can hold them up now, the way a parish does after the creed. If you don't, hold them in your attention, and wish them well. The bell holds the time.",
+      "screen": []
+    },
+    {
+      "type": "the word",
+      "duration": "25 sec",
+      "voice": "Nicene Creed. The statement of faith from the councils of Nicaea and Constantinople, said at Sunday Mass: God from God, light from light. Today's word.",
+      "screen": ["`NICENE CREED — today's word`."]
+    },
+    {
+      "type": "the carry",
+      "duration": "15 sec",
+      "voice": "Your line: we believe, then we ask. Today, when you hear about someone in trouble, don't just scroll past. Stop, and ask on their behalf, in whatever way is yours. Day one hundred and eleven.",
+      "screen": []
+    },
+    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 111 COUNTS.` → `TOMORROW: THE GIFTS COME UP.`"] }
+  ],
+  "howItsDone": "At Sunday Mass the congregation stands after the homily to profess the Nicene Creed, bowing at the words about the incarnation; then a deacon or reader announces the universal prayer, or prayers of the faithful, and the people respond to each intention.",
+  "games": {
+    "match": {
+      "prompt": "what's inside the creed — tap the pairs.",
+      "pairs": [["Nicaea, 325", "the first council"], ["Arius", "taught the Son was created"], ["homoousios", "of the same being as the Father"], ["filioque", "and the Son: added in the West"]]
+    },
+    "myth": [
+      ["the Nicene Creed was written in one sitting in 325", false, "Nicaea wrote the core in 325; Constantinople added more about the Holy Spirit in 381."],
+      ["all Christians who say the creed say the filioque", false, "Orthodox Christians never accepted it, and many Eastern Catholics say the creed without it."],
+      ["after the creed, the church prays for the whole world", true, "the prayers of the faithful: for the Church, leaders, the suffering, the sick and the dead."]
+    ],
+    "fork": {
+      "setup": "you're a bishop at Nicaea in 325. Arius says the Son was created, the greatest of God's works. what does the council say?",
+      "options": ["the Son is created, but greater than angels.", "the Son is of the same being as the Father.", "the question can't be answered, so leave it."],
+      "answer": 1,
+      "reveal": "they chose homoousios: of the same being as the Father. in today's English Mass, consubstantial. God from God, light from light."
+    },
+    "original": { "script": "ὁμοούσιος", "say": "ho-mo-OO-see-os", "note": "Greek: of the same being, the council of Nicaea's word for the Son's relation to the Father." },
+    "trapdoor": [
+      "what you thought: a long list said standing up.",
+      "what it means: a statement hammered out in a crisis over who Jesus is, followed at once by prayers for the world.",
+      "what a scholar hears: the Niceno-Constantinopolitan creed of 381, homoousios, and the filioque, added in the West and still unresolved with the Orthodox."
+    ]
+  },
+  "sources": [
+    { "ref": "1 Timothy 2:1", "work": "The Bible", "translation": "Douay-Rheims (Challoner)", "quoted": "that supplications, prayers, intercessions, and thanksgivings be made for all men" },
+    { "ref": "Creed of Nicaea (325) and Niceno-Constantinopolitan Creed (381)", "work": "Creed", "translation": null, "quoted": null },
+    { "ref": "General Instruction of the Roman Missal 67–71", "work": "Liturgical law", "translation": null, "quoted": null },
+    { "ref": "Catechism of the Catholic Church 242–248, 465", "work": "Catechism", "translation": null, "quoted": null }
+  ],
+  "review": {
+    "status": "pending",
+    "keeper": null,
+    "notes": [
+      "Douay-Rheims 1 Timothy 2:1 fragment given from memory; confirm.",
+      "Nicaea: traditionally 318 bishops; 'about three hundred' used. Scarred confessors (e.g. Paphnutius, one eye; Paul of Neocaesarea, crippled hands) are reported by early historians (Theodoret, Socrates); confirm.",
+      "Arian slogan 'there was a time when he was not' (ēn pote hote ouk ēn): given as their teaching; confirm.",
+      "'God from God, light from light' is traditional creed wording, also in ICEL; short and traditional, spoken without quotation marks. Confirm acceptable.",
+      "Filioque described without ranking (CCC 246–248 discusses it). Many Eastern Catholic churches omit it; confirm phrasing 'many'.",
+      "'A billion Catholics': the Catholic Church reports about 1.4 billion members; not all attend weekly. The hook's phrasing may be softened."
+    ]
+  },
+  "meta": { "index": "111. The Creed and the prayers of the faithful · Nicene Creed · the whole church says what it believes, then prays for the world · pray for one need in the news · we believe, then we ask", "writer": "writer agent (catholic 91–120)", "written": "2026-09-30" }
+}

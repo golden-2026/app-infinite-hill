@@ -60,7 +60,7 @@ function WalkingWith() {
         </View>
       )}
       <Text testID="friends-privacy" style={[type.body(11), { color: color.mute, marginTop: 10 }]}>{friends.friendId ? FRIENDS_PRIVACY : "this lives on your phone. no accounts, no feeds. send a lantern to walk with someone."}</Text>
-      {friends.friendId ? <Link onPress={async () => { if (await confirmSheet({ title: "leave friends?", body: "your nickname, numbers and friend list are deleted from the friends server, and you drop off everyone's list. lanterns stay.", confirm: "leave and delete", cancel: "keep", destructive: true })) { if (await leaveFriends()) toast("left friends. your friend data is deleted."); else toast("couldn't reach friends right now. try again in a bit."); } }} style={{ color: color.mute, fontSize: 10, marginTop: 6 }}>leave friends · delete my friend data</Link> : null}
+      {friends.friendId ? <Link onPress={async () => { if (await confirmSheet({ title: "leave friends?", body: "your nickname, numbers and friend list are deleted from the friends server, and you drop off everyone's list. friends leave \"walking with\" here too; other lanterns stay.", confirm: "leave and delete", cancel: "keep", destructive: true })) { if (await leaveFriends()) { setList(readWalkers()); toast("left friends. your friend data is deleted."); } else toast("couldn't reach friends right now. try again in a bit."); } }} style={{ color: color.mute, fontSize: 10, marginTop: 6 }}>leave friends · delete my friend data</Link> : null}
     </Card>
   );
 }

@@ -39,6 +39,26 @@ export const STANCE_Q: Question = {
   ],
 };
 
+/** "How did you hear about us?": asked once, right after the first step, one tap or skip. Stored as answers.heardFrom
+ *  ("skip" when skipped, so it's never asked again). Not belief data, but it is sent to analytics on its own, never
+ *  alongside the door or any belief answer. */
+export const HEARD_Q: Question = {
+  id: "heardFrom", ask: "One quick thing: how did you hear about us?", optional: true,
+  note: "one tap, or skip. it only helps us know how people find the hill.",
+  choices: [
+    { id: "tiktok", label: "TikTok" },
+    { id: "instagram", label: "Instagram" },
+    { id: "youtube", label: "YouTube" },
+    { id: "friend", label: "a friend or family member" },
+    { id: "community", label: "a church, temple, mosque or community group" },
+    { id: "school", label: "a school or youth group" },
+    { id: "celebrity", label: "a celebrity or public figure" },
+    { id: "search", label: "a search or app store" },
+    { id: "podcast", label: "a podcast or article" },
+    { id: "other", label: "something else" },
+  ],
+};
+
 /** The follow-up: which tradition (same ids as the intake's `raised`, so "my own path" doesn't ask it again). */
 export function raisedInQ(stance: string | null): Question {
   // Learning a partner's or family's faith: ask which one they're learning, never where they grew up.
@@ -93,6 +113,11 @@ export const BELIEF_QUESTIONS: Question[] = [
     { id: "love", label: "I love that stuff" },
   ] },
 ];
+
+/** Someone learning a partner's or family's faith, on that faith's door: "why" and "raised" were answered on the first
+ *  step, and "how much is it part of your life" / "how do you hold it" ask about a belief that isn't theirs. Skipped;
+ *  openness (and the practice question) are still asked. */
+export const PARTNER_SKIPS: string[] = ["why", "raised", "practice", "hold"];
 
 /** Asked once, only to people who didn't say they practice a faith: the last belief question on a tradition door,
  *  or the last question of the "my own path" intake. Stored as answers.practiceMode. */

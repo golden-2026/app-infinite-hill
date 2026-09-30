@@ -1,0 +1,92 @@
+{
+  "format": "ih-lesson/1",
+  "door": "CATHOLIC",
+  "day": 104,
+  "title": "The entrance",
+  "word": "The entrance",
+  "hook": "the procession, the sign of the cross, and the priest kissing the altar",
+  "carry": "we gather first",
+  "length": "6:45",
+  "tomorrow": "Through my fault",
+  "segments": [
+    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-HUNDRED-FOUR.`"] },
+    {
+      "type": "review",
+      "duration": "20 sec",
+      "voice": "Yesterday, the Angelus, a bell at noon. Your line was the word was made flesh. Did you stop when the alarm rang? Now a new part: the Mass, scene by scene. Day one hundred and four.",
+      "screen": ["`THE WORD WAS MADE FLESH.`"]
+    },
+    {
+      "type": "the hook",
+      "duration": "50 sec",
+      "voice": "Sunday morning. People drift in: families wrestling toddlers, an old man with a cane, teenagers who clearly got dragged. Some kneel and pray. Some chat in whispers. Some scroll their phones until the last second. Then a bell rings, or the organ starts, and everyone stands. For the next two weeks, we're going to walk through the Catholic Mass one scene at a time, the way you'd walk someone through a play they've never seen. Because if you've ever been to one as a guest, you know the feeling. Everyone else seems to know when to stand, what to say, where to look. Let's start where the Mass starts. Today: the entrance.",
+      "screen": ["`SUNDAY: PEOPLE DRIFT IN.` → `A BELL, AND EVERYONE STANDS.` → `THE MASS, SCENE BY SCENE.`"]
+    },
+    {
+      "type": "the teach",
+      "duration": "2 min 15",
+      "voice": "First, a procession comes up the aisle while everyone sings. At the front, someone carries a cross on a tall pole. Candles on either side. Sometimes incense, swinging in a metal holder and filling the air with smoke. Then the servers, a reader, and a deacon holding up a large book of the Gospels. The priest walks last. Everyone is walking toward the same thing: the altar. When the priest reaches it, he bows, and then he does something that surprises first-time visitors. He leans down and kisses it. Why kiss a table? Catholics see the altar as a sign of Christ himself, and it's where the sacrifice of the Mass will be offered. And there's a very old reason too. Early Christians often celebrated Mass over the tombs of martyrs, and to this day many altars hold a small relic of a saint. That cloud of witnesses from last week is literally in the furniture. Then the priest turns to the people, and the whole church makes the sign of the cross together. You learned it a week ago. This is where the Mass begins with it. Then he greets them. In Latin, Dominus vobiscum: the Lord be with you. It's an old greeting. In the book of Ruth, a farmer named Boaz walks into his field and says to the workers, in the Douay-Rheims: \"The Lord be with you.\" They answer back. And that's the point of the entrance. Before anyone prays, before anyone reads, before the bread, the people come together. The Mass isn't something you watch. It's something a gathered crowd does.",
+      "screen": ["`A PROCESSION TO THE ALTAR.` · `THE PRIEST KISSES THE ALTAR.` · `THE SIGN OF THE CROSS, TOGETHER.` · `THE LORD BE WITH YOU.` · then: `A GATHERED CROWD.`"]
+    },
+    {
+      "type": "the practice",
+      "duration": "2 min 30",
+      "voice": "Here's the practice: arrive early and still. Settle, and breathe. Think of the next place you're going today: work, a class, a dinner, a meeting. Picture getting there five minutes early. Not to answer emails in the parking lot. Just to arrive. To notice the room, the people coming in, the light. If you pray, you can ask God to be with the people you'll meet there. If you don't, just be the one who got there first, and let it settle. The bell holds the time.",
+      "screen": []
+    },
+    {
+      "type": "the word",
+      "duration": "25 sec",
+      "voice": "The entrance. The Mass begins with a procession, a kissed altar, the sign of the cross and a greeting. The crowd gathers first. Today's word.",
+      "screen": ["`THE ENTRANCE — today's word`."]
+    },
+    {
+      "type": "the carry",
+      "duration": "15 sec",
+      "voice": "Your line: we gather first. Today, arrive somewhere five minutes early, and spend them being there, not getting ready to leave. Day one hundred and four.",
+      "screen": []
+    },
+    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 104 COUNTS.` → `TOMORROW: THROUGH MY FAULT.`"] }
+  ],
+  "howItsDone": "At the start of Mass the congregation stands and sings as the priest and ministers process to the altar; the priest kisses the altar, everyone makes the sign of the cross together, and the priest greets the people, who answer him.",
+  "games": {
+    "match": {
+      "prompt": "who does what at the entrance — tap the pairs.",
+      "pairs": [["the cross on a pole", "leads the procession"], ["the deacon", "carries the book of the Gospels"], ["the priest", "walks last, then kisses the altar"], ["Boaz", "greeted his workers: the Lord be with you"]]
+    },
+    "myth": [
+      ["the priest kisses the altar because it's a sign of Christ", true, "Catholics see the altar as a sign of Christ, where the sacrifice of the Mass is offered."],
+      ["altars never have anything inside them", false, "many hold a small relic of a saint, a custom from Masses said over martyrs' tombs."],
+      ["the greeting the Lord be with you was invented for the Mass", false, "it's old. in the book of Ruth, Boaz says it to the workers in his field."]
+    ],
+    "fork": {
+      "setup": "you're the priest. the procession has reached the front, and you're standing at the altar. what do you do first?",
+      "options": ["turn and greet the people.", "bow, and kiss the altar.", "open the book and start reading."],
+      "answer": 1,
+      "reveal": "he bows and kisses the altar. only then does he turn, make the sign of the cross with everyone, and greet them."
+    },
+    "original": { "script": "Dominus vobiscum", "say": "DOH-mee-noos voh-BEES-koom", "note": "Latin: the Lord be with you, the priest's greeting. the people answer, et cum spiritu tuo: and with your spirit." },
+    "trapdoor": [
+      "what you thought: the priest walks in and the show starts.",
+      "what it means: a gathering. the people come together, the altar is greeted with a kiss, and the Mass begins with the sign of the cross.",
+      "what a scholar hears: altars over martyrs' tombs in the early Church, still echoed by relics in many altars, and a greeting borrowed from Ruth 2:4."
+    ]
+  },
+  "sources": [
+    { "ref": "Ruth 2:4", "work": "The Bible", "translation": "Douay-Rheims (Challoner)", "quoted": "The Lord be with you." },
+    { "ref": "Order of Mass, the greeting", "work": "Roman Missal (Latin)", "translation": "public domain (original)", "quoted": "Dominus vobiscum" },
+    { "ref": "General Instruction of the Roman Missal 46–50, 120–124, 298, 302", "work": "Liturgical law", "translation": null, "quoted": null }
+  ],
+  "review": {
+    "status": "pending",
+    "keeper": null,
+    "notes": [
+      "Douay-Rheims Ruth 2:4 ('The Lord be with you') given from memory; confirm.",
+      "The procession order (thurible, cross with candles, servers, lector, deacon with Book of the Gospels, priest) follows GIRM 120; simplified. Confirm.",
+      "Altar as a sign of Christ (GIRM 298) and relics under the altar (GIRM 302) as a custom from martyrs' tombs: confirm.",
+      "English response 'And with your spirit' is the 2011 ICEL wording; given here as a translation of the Latin, not quoted from ICEL.",
+      "Opens Part 2 of Camp 3, 'The Mass, scene by scene' (days 104–117)."
+    ]
+  },
+  "meta": { "index": "104. The entrance · — · the procession, the sign of the cross, and the priest kissing the altar · arrive somewhere early and still · we gather first", "writer": "writer agent (catholic 91–120)", "written": "2026-09-30" }
+}
