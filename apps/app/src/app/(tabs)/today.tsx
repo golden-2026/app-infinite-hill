@@ -230,7 +230,7 @@ export default function Today() {
       {/* when today is done, the "today · done" card below already says so */}
       <View pointerEvents="box-none" style={s.dock}>
         {doneHere ? null : (
-          <Btn testID="top-start" kind={quiet ? "light" : "gold"} onPress={start} label={`Start day ${lesson}: ${title}`} style={s.dockBtn}>{quiet ? `day ${lesson}, whenever you're ready` : `start day ${lesson} · about 3 min`}</Btn>
+          <Btn testID="top-start" kind={quiet ? "light" : "gold"} onPress={start} label={`Start day ${lesson}: ${title}`} style={s.dockBtn}>{quiet ? `day ${lesson}, whenever you're ready` : `start day ${lesson} · about 5 min`}</Btn>
         )}
       </View>
     </SafeAreaView>
