@@ -1,0 +1,91 @@
+{
+  "format": "ih-lesson/1",
+  "door": "CHRISTIANITY",
+  "day": 101,
+  "title": "Lectio divina",
+  "word": "lectio divina",
+  "hook": "an old monastic way: read a short passage, notice a word, ponder it, rest",
+  "carry": "one word is enough",
+  "length": "6:45",
+  "tomorrow": "the examen",
+  "segments": [
+    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-HUNDRED-ONE.`"] },
+    {
+      "type": "review",
+      "duration": "20 sec",
+      "voice": "Yesterday, the psalter, the prayer book inside the Bible. Your line was the lord is my shepherd. When did you borrow those words? Day one hundred and one.",
+      "screen": ["`THE LORD IS MY SHEPHERD.`"]
+    },
+    {
+      "type": "the hook",
+      "duration": "50 sec",
+      "voice": "How do you read now? Probably fast. Scrolling, skimming, headlines, the first two lines of a message and then the next one. Most of us read like we're looking for something and we're late. Now picture a monastery in the Middle Ages. A monk sits with a book, and he reads a single sentence aloud, quietly, to himself. Then he reads it again. And again. He isn't trying to finish. He isn't trying to learn a fact for a test. He's trying to taste it. The monks had a word for this, taken from the way a cow chews the same mouthful over and over, slowly, all afternoon. They called it rumination. And they had a name for the whole practice. It means sacred reading.",
+      "screen": ["`SCROLLING, SKIMMING, LATE.` → `ONE SENTENCE, AGAIN AND AGAIN.` → `CHEWING IT SLOWLY.`"]
+    },
+    {
+      "type": "the teach",
+      "duration": "2 min 15",
+      "voice": "Lectio divina is Latin: divine reading, sacred reading. Saint Benedict, who wrote a rule for monks in the sixth century, set aside hours every day for it. And in the twelfth century a monk named Guigo, the head of a Carthusian monastery in the French Alps, described it as a ladder with four rungs. The first is lectio, reading. You read a short passage slowly, often aloud, and notice which word or phrase catches you. The second is meditatio, pondering. You turn that word over, chew it, ask what it's saying to you today. The third is oratio, prayer: you answer God, in your own words, about what you've noticed. And the fourth is contemplatio, contemplation, which is the hardest to explain because it isn't really doing anything. You rest. You stop talking and simply stay, the way you'd sit with someone you love without needing to speak. Guigo put it in a picture: reading puts the food in your mouth, pondering chews it, prayer tastes it, and contemplation is the sweetness itself. The point isn't to cover much. A whole morning might be spent on one line. That's hard for us. We want to get through it. But lectio divina says the opposite: go slowly enough and one word is enough. For centuries it lived mostly in monasteries. Today Catholics, Anglicans, Orthodox and many Protestants use it, alone or in small groups, where people read a passage aloud three or four times and each shares the one word that stayed with them. It works best with a short passage. A single verse from the Psalms is plenty. Try this one: \"Be still, and know that I am God.\"",
+      "screen": ["`DIVINE READING.` · `A LADDER WITH FOUR RUNGS.` · `READ, PONDER, PRAY, REST.` · `FOOD, CHEWING, TASTE, SWEETNESS.` · then, large: `ONE WORD IS ENOUGH.`"]
+    },
+    {
+      "type": "the practice",
+      "duration": "2 min 30",
+      "voice": "Here's the practice: read one verse four times. Use the one you just heard: be still, and know that I am God. First, just say it slowly, and notice which word catches you. Maybe still. Maybe know. Second, say it again, and turn that one word over. Third, if you pray, say it once more and answer God about it; if you don't, answer yourself. Fourth, say it one last time, and then rest in the quiet without doing anything at all. The bell holds the time.",
+      "screen": []
+    },
+    {
+      "type": "the word",
+      "duration": "25 sec",
+      "voice": "Lectio divina. Latin for sacred reading: read, ponder, pray, rest, with a very few words.",
+      "screen": ["`LECTIO DIVINA — today's word`."]
+    },
+    {
+      "type": "the carry",
+      "duration": "15 sec",
+      "voice": "Your line: one word is enough. Today, carry the word that caught you, and come back to it three times before bed. Tomorrow, a nightly look back at the day. Day one hundred and one.",
+      "screen": []
+    },
+    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 101 COUNTS.` → `TOMORROW: THE EXAMEN.`"] }
+  ],
+  "howItsDone": "Monks and nuns practice lectio divina daily, and many Catholic, Anglican, Orthodox and Protestant Christians use it alone or in small groups, reading a short passage slowly several times, sharing a word that stood out, praying, and resting in silence.",
+  "games": {
+    "match": {
+      "prompt": "the four rungs — tap the pairs.",
+      "pairs": [["lectio", "reading, slowly"], ["meditatio", "pondering, chewing it over"], ["oratio", "answering God in prayer"], ["contemplatio", "resting, without words"]]
+    },
+    "myth": [
+      ["lectio divina means reading as much scripture as you can", false, "the point is to go slowly. a whole morning might be spent on one line."],
+      ["the monks compared it to a cow chewing its cud", true, "they called it rumination: chewing the same words over and over."],
+      ["only monks can practice lectio divina", false, "Catholics, Anglicans, Orthodox and many Protestants use it today, alone or in groups."]
+    ],
+    "fork": {
+      "setup": "you're reading a psalm the old monastic way. one word has caught you. what do you do next?",
+      "options": ["move on to the next verse.", "stay with that word and turn it over.", "look it up in a dictionary."],
+      "answer": 1,
+      "reveal": "you stay: meditatio, pondering, chewing it over. then you pray about it, and then you rest."
+    },
+    "original": { "script": "lectio divina", "say": "LEK-tsee-oh dee-VEE-nah", "note": "Latin: divine or sacred reading. Benedict's Rule already uses the phrase." },
+    "trapdoor": [
+      "what you thought: a fancy name for Bible study.",
+      "what it means: reading a few words so slowly that you notice one, turn it over, answer God, and rest.",
+      "what a scholar hears: Guigo II the Carthusian named the four rungs in his Ladder of Monks (12th century); the practice itself is much older, in Benedict's Rule, chapter 48."
+    ]
+  },
+  "sources": [
+    { "ref": "Psalm 46:10", "work": "The Bible", "translation": "KJV (1769)", "quoted": "Be still, and know that I am God" },
+    { "ref": "Guigo II, The Ladder of Monks (Scala Claustralium)", "work": "The Ladder of Monks", "translation": null, "quoted": null },
+    { "ref": "Rule of Saint Benedict, ch. 48", "work": "The Rule of Saint Benedict", "translation": null, "quoted": null }
+  ],
+  "review": {
+    "status": "pending",
+    "keeper": null,
+    "notes": [
+      "Guigo II (d. c. 1188), ninth prior of the Grande Chartreuse; The Ladder of Monks usually dated c. 1150–1180. Stated as 'twelfth century'.",
+      "Guigo's food image (reading brings food to the mouth, meditation chews it, prayer tastes it, contemplation is the sweetness) is paraphrased; confirm.",
+      "Ruminatio as a monastic image is widely attested; confirm the cow/cud framing is fine.",
+      "Group lectio (read aloud several times, each shares a word) is a modern form; described as such."
+    ]
+  },
+  "meta": { "index": "101. Lectio divina · lectio divina · an old monastic way: read a short passage, notice a word, ponder it, rest · read one verse four times · one word is enough", "writer": "writer agent (christianity 73–102)", "written": "2026-09-30" }
+}

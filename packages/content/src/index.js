@@ -54,6 +54,15 @@ const RUMI_PD = "Rumi's field beyond our ideas of right and wrong (a paraphrase;
       reveal: "he stayed standing, and said, in effect: was it not a soul? (Sahih al-Bukhari 1312; Sahih Muslim 961). the peace of salaam is owed to every person.",
     };
   }
+  // The Lord's Prayer days (Christianity 4–8) had "the Lord's Prayer, line N" as the day's word; each gets a real word.
+  const LP = { 1: "Father", 2: "kingdom", 3: "daily bread", 4: "forgive", 5: "deliver" };
+  (function lordsPrayer(o) {
+    for (const k of Object.keys(o || {})) {
+      const v = o[k];
+      if (typeof v === "string") o[k] = v.replace(/the Lord's Prayer, line (\d)/g, (m, n) => LP[n] || m).replace(/THE LORD'S PRAYER, LINE (\d)/g, (m, n) => (LP[n] ? LP[n].toUpperCase() : m));
+      else if (v && typeof v === "object") lordsPrayer(v);
+    }
+  })(data);
   // Outline wording fixes (owner, 2026-09-30): quote Pickthall's own words, and don't overclaim.
   const fatiha = (data.CAMP1_ALL?.ISLAM || []).find((d) => d.day === 8);
   if (fatiha && /guide us on the straight path/.test(fatiha.title)) {
