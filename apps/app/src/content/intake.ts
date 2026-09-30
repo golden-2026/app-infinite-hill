@@ -94,6 +94,15 @@ export const BELIEF_QUESTIONS: Question[] = [
   ] },
 ];
 
+/** Asked once, only to people who didn't say they practice a faith: the last belief question on a tradition door,
+ *  or the last question of the "my own path" intake. Stored as answers.practiceMode. */
+export const PRACTICE_MODE_Q: Question = {
+  id: "practiceMode", ask: "Do you want to try the practices, or just learn?", note: "change it any time under You.", choices: [
+    { id: "practice", label: "try them — a breath, a prayer, a small thing to do" },
+    { id: "learn", label: "just learn — show me how it's done, no practice" },
+  ],
+};
+
 // ---------- "my own path": get to know them, one question at a time ----------
 
 const RAISED: Choice[] = [
@@ -144,7 +153,7 @@ export const INTAKE: Record<string, Question> = {
 };
 
 /** The next question for "my own path", given what they've said so far. Null when we know enough to suggest. */
-export function nextIntake(answers: Record<string, string | string[]>): Question | null {
+export function nextIntake(answers: Record<string, string | string[]>, o: { askMode?: boolean } = {}): Question | null {
   const has = (id: string) => id in answers;
   if (!has("raised")) return INTAKE.raised;
   const raisedIn = answers.raised as string;
@@ -158,6 +167,7 @@ export function nextIntake(answers: Record<string, string | string[]>): Question
   if (!has("organized")) return INTAKE.organized;
   if (!has("feeling")) return INTAKE.feeling;
   if (!has("interests")) return INTAKE.interests;
+  if (o.askMode && !has("practiceMode")) return PRACTICE_MODE_Q;
   return null;
 }
 
@@ -170,8 +180,7 @@ export function intakeReply(qid: string, a: string | string[]): string | null {
   if (qid === "believe" && v[0] === "meaning") return "good. there's a lot here that doesn't need a god to work.";
   if (qid === "raised" && v[0] === "none") return "then you get to walk in with fresh eyes.";
   if (qid === "turnedOff" && v.includes("hurt")) return "I'm sorry. we'll go gently.";
-  if (qid === "feeling" && v.includes("grief")) return "I'm sorry. we'll start with something steady.";
-  return null;
+  if (qid === "feeling" && v.includes("grief")) return "I'm sorry. we'll start with something steady.";  return null;
 }
 
 /** Which bridge themes an answer points at (see BRIDGES[].tags). */

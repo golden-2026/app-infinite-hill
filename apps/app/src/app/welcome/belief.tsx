@@ -4,9 +4,9 @@ import { router, useLocalSearchParams } from "expo-router";
 import { useEffect, useState } from "react";
 import { Text, View } from "react-native";
 import { DOORS, label } from "@ih/content";
-import { BELIEF_QUESTIONS, PERSON } from "@/content/intake";
+import { BELIEF_QUESTIONS, PERSON, PRACTICE_MODE_Q } from "@/content/intake";
 import { commitmentScore, type Openness } from "@/lib/profile";
-import { profileFor, youAnswers } from "@/lib/onboard";
+import { asksPracticeMode, profileFor, youAnswers } from "@/lib/onboard";
 import { doorParam } from "@/lib/door-param";
 import { useStore } from "@/lib/store";
 import { Btn, Eyebrow, Link, Opt, type } from "@/ui";
@@ -24,6 +24,12 @@ export default function Belief() {
   const [i, setI] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   useEffect(() => { if (!door) router.replace("/welcome/door"); }, [door]);
+  // "try the practices, or just learn?": last, once, and never for someone who told us they practice a faith.
+  // Fixed when the screen opens, so saving the answer doesn't shorten the list under the last question.
+  const [askMode] = useState(() => {
+    const p0 = door ? profileFor(saved.settings.profile, door, today) : null;
+    return !!p0 && asksPracticeMode(youAnswers(p0).stance) && p0.answers.practiceMode == null;
+  });
   if (!door) return null;
   const name = label(door);
   const base = profileFor(saved.settings.profile, door, today);
@@ -31,7 +37,8 @@ export default function Belief() {
   // Already told us they grew up in it (first step): don't ask "were you raised …?" again.
   // Learning a partner's or family's faith: "what brings you" and "were you raised" were answered on the first step.
   const learningThis = you.stance === "partner" && you.learning === door;
-  const qs = BELIEF_QUESTIONS.filter((x) => !(x.id === "raised" && you.raisedIn === door && you.stance !== "practice"))
+  const qs = [...BELIEF_QUESTIONS, ...(askMode ? [PRACTICE_MODE_Q] : [])]
+    .filter((x) => !(x.id === "raised" && you.raisedIn === door && you.stance !== "practice"))
     .filter((x) => !(learningThis && (x.id === "why" || x.id === "raised")));
   const q = qs[i];
   const fill = (s: string) => s.replace(/\{door\}/g, name).replace(/\{person\}/g, PERSON[door] || name);

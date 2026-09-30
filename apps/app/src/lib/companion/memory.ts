@@ -125,10 +125,20 @@ export function factsFromProfile(p: Profile | null | undefined, o: { kids?: numb
   if (believe === "meaning") add("believe:meaning", "you don't believe in a god, but meaning matters to you.");
   if (one("organized") === "away") add("organized:away", "you'd rather keep away from organized religion.");
 
+  if (one("practiceMode") === "learn") add(LEARN_FACT.key, LEARN_FACT.text);
   if (p.openness === "stay" && p.door && p.door !== "SPIRITUAL") add("openness:stay", `you'd like to stay on your own path${door ? `, ${door}` : ""}.`);
   if (p.openness === "love") add("openness:love", "you enjoy hearing how other traditions see things.");
   if ((o.kids || 0) > 0) add("family:kids", "you walk with your family at the table.");
   return out;
+}
+
+const LEARN_FACT = { key: "mode:learn", text: "you're here to learn, not to practice." };
+/** "practices: try them / just learn" changed under You: the line in "what the companion knows" follows it. */
+export function setLearnFact(learn: boolean, today: string) {
+  const m = getMemory();
+  const has = m.facts.some((f) => f.key === LEARN_FACT.key);
+  if (!m.seeded || learn === has) return; // not drawn yet: seedFacts will read it from the profile
+  set({ ...m, facts: learn ? [...m.facts, { id: randomId("fact_"), key: LEARN_FACT.key, text: LEARN_FACT.text, from: "answers", on: today }] : m.facts.filter((f) => f.key !== LEARN_FACT.key) });
 }
 
 /** Draw the first facts from what they told us, once. After "forget everything" it doesn't come back on its own. */

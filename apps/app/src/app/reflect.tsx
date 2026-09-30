@@ -24,10 +24,10 @@ export default function Reflect() {
     return () => { live = false; };
   }, [today]); // eslint-disable-line react-hooks/exhaustive-deps
   const lines = ai ? ai.text.split(/\n+/).filter(Boolean) : week.text;
-  const next = ai?.suggestion || `next week, maybe: ${day.practice.title}.`;
+  const next = ai?.suggestion || (day.howItsDone ? `next week, maybe: how ${day.practice.title} is done.` : `next week, maybe: ${day.practice.title}.`);
   return (
     <Screen scroll back={true} title="your week." contentStyle={{ gap: 14 }}
-      footer={<Btn onPress={() => router.push({ pathname: "/practice/[id]", params: { id: day.practice.id } })}>{`try ${day.practice.title}`}</Btn>}>
+      footer={<Btn onPress={() => router.push({ pathname: "/practice/[id]", params: day.howItsDone ? { id: day.practice.id, view: "learn" } : { id: day.practice.id } })}>{day.howItsDone ? `how it's done: ${day.practice.title}` : `try ${day.practice.title}`}</Btn>}>
       <View style={{ alignItems: "center" }}><Guy pose="sitrock" h={130} /></View>
       <View style={{ gap: 12 }}>
         {lines.map((l, n) => (

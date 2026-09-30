@@ -14,7 +14,8 @@ import { useSync } from "@/lib/sync";
 import { accountsOn } from "@/lib/supabase";
 import { voiceLabel } from "@/lib/voice";
 import { emptyProfile } from "@/lib/profile";
-import { useMemory } from "@/lib/companion/memory";
+import { setLearnFact, useMemory } from "@/lib/companion/memory";
+import { practiceModeOf } from "@/lib/onboard";
 import { Btn, Card, Eyebrow, Guy, Sun, color, font, type, toast } from "@/ui";
 import { Group, Row } from "@/ui/row";
 
@@ -112,6 +113,15 @@ export default function You() {
                 <Row a="other traditions" b={`${{ stay: "stay on my path — never bring them up", sometimes: "now and then, a similar idea from another tradition", love: "show me similar ideas from other traditions" }[prof.openness]} · tap to change`}
                   right={{ stay: "off", sometimes: "sometimes", love: "often" }[prof.openness]} cycle
                   onPress={() => { const o = ({ stay: "sometimes", sometimes: "love", love: "stay" } as const)[prof.openness]; update({ profile: { ...prof, openness: o } }); }} />
+              );
+            })()}
+            {(() => {
+              const prof = st.profile ?? emptyProfile(wing, today);
+              const learn = practiceModeOf(prof) === "learn";
+              return (
+                <Row testID="row-practices" a="practices" b={learn ? "just learn — how it's done, no practice · tap to change" : "try them — a breath, a prayer, a small thing to do · tap to change"}
+                  right={learn ? "just learn" : "try them"} cycle
+                  onPress={() => { update({ profile: { ...prof, answers: { ...prof.answers, practiceMode: learn ? "practice" : "learn" } } }); setLearnFact(!learn, today); }} />
               );
             })()}
           </Group>

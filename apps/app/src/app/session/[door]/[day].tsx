@@ -4,6 +4,8 @@ import { useTitle } from "@/lib/title";
 // (nothing counted twice), then the tally. Leaving asks first; finishing records the sit and opens /done.
 import { DOORS, GRADED, LEVELS, deeperRound, icon, label, lessonInfo, native, planDay, screenLines } from "@ih/content";
 import { levelFor } from "@/lib/level";
+import { practiceModeOf } from "@/lib/onboard";
+import { learnSteps } from "@/session/learn";
 import { RhythmStep, RushStep, SayStep, ScenesStep, TypeItStep } from "@/session/games";
 import { LinearGradient } from "expo-linear-gradient";
 import { Redirect, router, useLocalSearchParams, useNavigation } from "expo-router";
@@ -51,11 +53,12 @@ function Session({ door, day, kidId, mode, deep, voiceOn, onFinish }: { door: st
   useChrome(true);
   // The level is fixed for the whole lesson (it moves between lessons, never in the middle of one).
   const [level] = useState(() => (mode === "adult" ? levelFor({ door, day, profile: me.settings.profile, runs: me.settings.runs }) : 1));
+  // "just learn": no breath or sit, and the practice is told as how it's done (fixed for the whole lesson)
+  const [learn] = useState(() => practiceModeOf(me.settings.profile) === "learn");
   const plan = useMemo(() => {
-    if (!deep) return planDay({ wing: door, day, mode, level: mode === "adult" ? level : 0 });
-    const base = planDay({ wing: door, day, mode });
-    return { ...base, steps: deeperRound(door, day, level) };
-  }, [door, day, mode, level, deep]);
+    const p = !deep ? planDay({ wing: door, day, mode, level: mode === "adult" ? level : 0 }) : { ...planDay({ wing: door, day, mode }), steps: deeperRound(door, day, level) };
+    return learn ? { ...p, steps: learnSteps(p.steps) } : p;
+  }, [door, day, mode, level, deep, learn]);
   const shownLevel = deep ? Math.min(5, level + 2) : level;
   const [rushSecs, setRushSecs] = useState<number | null>(null);
   const [feel, setFeel] = useState<string | null>(null);

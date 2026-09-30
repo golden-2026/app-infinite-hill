@@ -75,9 +75,11 @@ export function depthFor(p: Profile): "new" | "some" | "deep" {
 }
 
 /** What the Guide is told about the person: fixed values only (api/guide.js maps each to a fixed sentence). No raw answers. */
-export function guideProfile(p: Profile | null, door: string): { depth: string; openness: Openness; commitment?: "high" | "mid" | "low"; reason?: string } | undefined {
+export function guideProfile(p: Profile | null, door: string): { depth: string; openness: Openness; commitment?: "high" | "mid" | "low"; reason?: string; practice?: "learn" } | undefined {
   if (!p || p.door !== door) return undefined;
-  const out: { depth: string; openness: Openness; commitment?: "high" | "mid" | "low"; reason?: string } = { depth: door === "SPIRITUAL" ? "some" : depthFor(p), openness: p.openness };
+  const out: { depth: string; openness: Openness; commitment?: "high" | "mid" | "low"; reason?: string; practice?: "learn" } = { depth: door === "SPIRITUAL" ? "some" : depthFor(p), openness: p.openness };
+  // "just learn": the Guide describes how practices are done and never invites them to pray or practice
+  if (p.answers.practiceMode === "learn") out.practice = "learn";
   if (door !== "SPIRITUAL" && p.commitment != null) out.commitment = p.commitment >= 67 ? "high" : p.commitment >= 34 ? "mid" : "low";
   const why = p.answers.why;
   if (typeof why === "string" && ["own", "roots", "god", "partner", "kids", "calm", "hard", "curious"].includes(why)) out.reason = why;

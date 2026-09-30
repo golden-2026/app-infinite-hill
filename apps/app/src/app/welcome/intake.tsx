@@ -4,7 +4,7 @@ import { router } from "expo-router";
 import { useEffect, useState } from "react";
 import { Text, View } from "react-native";
 import { EXCLUSIVE, intakeReply, nextIntake } from "@/content/intake";
-import { profileFor } from "@/lib/onboard";
+import { asksPracticeMode, profileFor, youAnswers } from "@/lib/onboard";
 import { useStore } from "@/lib/store";
 import { Btn, Eyebrow, Link, Opt, type } from "@/ui";
 import { Host } from "@/ui/host";
@@ -30,7 +30,9 @@ export default function Intake() {
   const [multi, setMulti] = useState<string[]>([]);
   const [reply, setReply] = useState<string | null>(null);
   const [was, setWas] = useState<Answers>({}); // answers given before stepping back
-  const q = nextIntake(answers);
+  // "try the practices, or just learn?" ends the intake, once, for anyone who didn't say they practice a faith
+  const [askMode] = useState(() => { const p = saved.settings.profile; return asksPracticeMode(youAnswers(p).stance) && p?.answers.practiceMode == null; });
+  const q = nextIntake(answers, { askMode });
 
   useEffect(() => {
     if (q) return;

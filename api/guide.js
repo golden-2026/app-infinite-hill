@@ -103,6 +103,9 @@ const PROFILE_TEXT = Object.freeze({
     hard: "They are going through something hard: be gentle and brief; if they mention being in danger, point them to local emergency help.",
     curious: "They are simply curious: be clear and interesting.",
   },
+  practice: {
+    learn: "They are here to learn, not to practice: describe how practices and prayers are done by the people who keep them, and never ask or invite them to pray, meditate, or practice.",
+  },
 });
 
 function readProfile(value) {

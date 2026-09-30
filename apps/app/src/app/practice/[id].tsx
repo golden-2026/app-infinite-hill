@@ -5,7 +5,8 @@ import { label } from "@ih/content";
 import { router, useLocalSearchParams } from "expo-router";
 import { useEffect, useRef, useState } from "react";
 import { Text, View } from "react-native";
-import { practiceById } from "@/content/practices";
+import { practiceById, whenWords, type Practice } from "@/content/practices";
+import { doable } from "@/lib/onboard";
 import { markDone } from "@/lib/companion/memory";
 import { bell } from "@/lib/sound";
 import { useStore } from "@/lib/store";
@@ -17,10 +18,10 @@ const TIMED = new Set(["breath", "sit", "rest", "walk", "move"]);
 const mmss = (s: number) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
 
 export default function PracticeScreen() {
-  const { id } = useLocalSearchParams<{ id: string }>();
+  const { id, view } = useLocalSearchParams<{ id: string; view?: string }>();
   const p = practiceById(typeof id === "string" ? id : null);
   useTitle(p ? p.title : "practice");
-  const { today } = useStore();
+  const { today, door, saved } = useStore();
   const [left, setLeft] = useState<number | null>(null); // seconds left while the timer runs
   const timer = useRef<ReturnType<typeof setInterval> | null>(null);
   useEffect(() => () => { if (timer.current) clearInterval(timer.current); }, []);
@@ -31,6 +32,9 @@ export default function PracticeScreen() {
       </Screen>
     );
   }
+  // "how it's done": asked for by the card, or anything this person isn't offered as something to do (a prayer they
+  // haven't opted into, "just learn", a taste from next door), however they got here. Read-only: no timer, no start, no "done".
+  if (view === "learn" || !doable(p, door, saved.settings.profile ?? null)) return <HowItsDone p={p} />;
   const timed = TIMED.has(p.kind);
   const start = () => {
     bell();
@@ -77,6 +81,27 @@ export default function PracticeScreen() {
       </View>
       <Text style={[type.body(13), { color: color.mute }]}>why: {p.why}</Text>
       <Text style={[type.caption(11)]}>nothing here is scored.</Text>
+    </Screen>
+  );
+}
+
+/** The read-only explainer: what it is, when people do it, what it means to them. Nothing to do, nothing to tap but back. */
+function HowItsDone({ p }: { p: Practice }) {
+  const leave = () => (router.canGoBack() ? router.back() : router.replace("/today"));
+  const Part = ({ k, children }: { k: string; children: string }) => (
+    <View style={{ gap: 4 }}>
+      <Text style={type.eyebrow(8)}>{k}</Text>
+      <Text style={[type.serif(17)]}>{children}</Text>
+    </View>
+  );
+  return (
+    <Screen scroll back="today" title={`${p.title}.`} contentStyle={{ gap: 16 }} footer={<Btn kind="ghost" onPress={leave}>back</Btn>}>
+      <Text testID="how-its-done" style={[type.eyebrow(8)]}>how it's done{p.door ? ` · ${label(p.door)}` : ""}</Text>
+      <View style={{ alignItems: "center", paddingVertical: 4 }}><Guy pose="read" h={120} /></View>
+      <Part k="what it is">{p.about || p.why}</Part>
+      <Part k="when people do it">{whenWords(p)}</Part>
+      {p.about ? <Part k="what it means to them">{p.why}</Part> : null}
+      <Text style={[type.caption(12)]}>nothing to do here. it's here so you know how it's done.</Text>
     </Screen>
   );
 }

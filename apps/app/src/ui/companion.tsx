@@ -1,5 +1,6 @@
 // The companion on Today: one short note, a one-tap "how are you, today?", today's practice, and today's page.
 // Plus the gentle "real help" card and the weekly reflection card. Everything here is kept on the phone.
+import { label } from "@ih/content";
 import { router } from "expo-router";
 import { Linking, Pressable, StyleSheet, Text, View } from "react-native";
 import type { Practice } from "@/content/practices";
@@ -23,7 +24,11 @@ export function CompanionCard({ day }: { day: Shaped }) {
   const m = useMemory();
   const asked = m.moods.find((x) => x.date === today)?.mood ?? null;
   const p = day.practice;
-  const open = () => router.push({ pathname: "/practice/[id]", params: { id: p.id } });
+  // "how it's done": the practice screen opens read-only (no timer, no start, no "done")
+  const open = () => router.push({ pathname: "/practice/[id]", params: day.howItsDone ? { id: p.id, view: "learn" } : { id: p.id } });
+  const eyebrow = day.howItsDone
+    ? `how it's done · ${p.door ? label(p.door) : KIND_WORD[p.kind]}${day.fromNextDoor ? " · from next door" : ""}`
+    : `${day.fromNextDoor ? "a taste from next door" : m.done.some((d) => d.date === today) ? "done one today · another?" : day.learn ? "if you'd like" : "today's practice"} · ${p.minutes} min · ${KIND_WORD[p.kind]}`;
   return (
     <View style={s.card} testID="companion-card">
       <Text style={[type.eyebrow(8), { color: color.ink }]}>your companion{day.quiet ? " · a quiet day" : ""}</Text>
@@ -58,11 +63,11 @@ export function CompanionCard({ day }: { day: Shaped }) {
         </Pressable>
       ) : null}
 
-      <Pressable accessibilityRole="button" accessibilityLabel={`today's practice: ${p.title}, about ${p.minutes} ${p.minutes === 1 ? "minute" : "minutes"}`} onPress={open}
+      <Pressable testID="companion-practice" accessibilityRole="button" accessibilityLabel={day.howItsDone ? `how it's done: ${p.title}` : `${day.learn ? "something to try, if you'd like" : "today's practice"}: ${p.title}, about ${p.minutes} ${p.minutes === 1 ? "minute" : "minutes"}`} onPress={open}
         style={({ pressed }) => [s.practice, pressed && { opacity: 0.85 }]}>
-        <Guy pose={poseFor(p)} h={58} />
+        <Guy pose={day.howItsDone ? "read" : poseFor(p)} h={58} />
         <View style={{ flex: 1 }}>
-          <Text style={[type.eyebrow(8), { color: color.gold }]}>{day.fromNextDoor ? "a taste from next door" : m.done.some((d) => d.date === today) ? "done one today · another?" : "today's practice"} · {p.minutes} min · {KIND_WORD[p.kind]}</Text>
+          <Text style={[type.eyebrow(8), { color: color.gold }]}>{eyebrow}</Text>
           <Text style={{ fontFamily: font.display[800], fontSize: 16, marginTop: 3, color: "#fff" }}>{p.title}</Text>
         </View>
         <Text style={{ color: color.gold, fontSize: 20 }}>›</Text>

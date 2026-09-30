@@ -67,11 +67,11 @@ function list(v, maxItems, maxChars, maxTotal = Infinity) {
 }
 
 function readProfile(v) {
-  if (!isObject(v) || !onlyKeys(v, ["door", "depth", "openness", "commitment", "reason", "level"])) return null;
+  if (!isObject(v) || !onlyKeys(v, ["door", "depth", "openness", "commitment", "reason", "practice", "level"])) return null;
   const door = readDoor(v.door);
   if (!door) return null;
   const out = { door };
-  for (const k of ["depth", "openness", "commitment", "reason"]) {
+  for (const k of ["depth", "openness", "commitment", "reason", "practice"]) {
     if (v[k] === undefined) continue;
     if (typeof v[k] !== "string" || !Object.hasOwn(PROFILE_TEXT[k], v[k])) return null;
     out[k] = v[k];
@@ -190,7 +190,7 @@ function opennessRule(profile) {
 }
 
 function aboutThem(profile) {
-  const lines = ["depth", "commitment", "reason"].filter((k) => profile[k]).map((k) => PROFILE_TEXT[k][profile[k]]);
+  const lines = ["depth", "commitment", "reason", "practice"].filter((k) => profile[k]).map((k) => PROFILE_TEXT[k][profile[k]]);
   if (profile.door === "Simply Spiritual") lines.push("They are on their own path with no single religion: never suggest they need to pick a religion or become religious.");
   if (profile.level !== undefined) lines.push(`Their lesson level is ${profile.level} (higher means further along).`);
   return lines.join(" ");

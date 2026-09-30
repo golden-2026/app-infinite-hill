@@ -11,7 +11,39 @@ import { emptyProfile, type Profile } from "@/lib/profile";
 
 export type Stance = "practice" | "unsure" | "left" | "partner" | "curious" | "many" | "spiritual";
 export const STANCES: Stance[] = ["practice", "unsure", "left", "partner", "curious", "many", "spiritual"];
-const YOU_KEYS = ["stance", "raisedIn", "learning"] as const;
+// practiceMode is about the person, not the door, so it follows them to any door they walk
+const YOU_KEYS = ["stance", "raisedIn", "learning", "practiceMode"] as const;
+
+// ---------- "try the practices, or just learn?" ----------
+//   practiceMode  "practice" | "learn". Asked once in onboarding, only to people who didn't say they practice a
+//   faith; changeable under You. Unanswered means "practice" (what everyone had before the question existed).
+export type PracticeMode = "practice" | "learn";
+/** Whether onboarding asks the question: everyone except people who said they practice a faith. */
+export const asksPracticeMode = (stance: Stance | null) => stance !== "practice";
+/** The mode someone is in. "learn": no breath or sit in lessons, practices shown as "how it's done", never to do. */
+export function practiceModeOf(p: Profile | null | undefined): PracticeMode {
+  return p?.answers.practiceMode === "learn" ? "learn" : "practice";
+}
+/** Catholic and Christian count as one family (as in bridges and suggestions). */
+const family = (d: string) => (d === "CATHOLIC" || d === "CHRISTIANITY" ? ["CATHOLIC", "CHRISTIANITY"] : [d]);
+/** A tradition's prayer is offered as something to DO only to someone who practices that faith, walks their own
+ *  or childhood tradition ("own"/"roots" on that door), or chose "try them". Never in "just learn". */
+export function prayerToDo(p: Profile | null | undefined, door: string): boolean {
+  if (!p || practiceModeOf(p) === "learn") return false;
+  const a = p.answers;
+  if (a.practiceMode === "practice") return true; // they chose "try them"
+  if (a.stance === "practice") return typeof a.raisedIn !== "string" || family(a.raisedIn).includes(door); // the faith they practice
+  return p.door === door && (a.why === "own" || a.why === "roots");
+}
+/** Whether a practice is offered as something to do, or only as "how it's done". Another tradition's practice (a
+ *  taste from next door) is always learning only; in "just learn", every tradition's practice and every breath or
+ *  sit is. General practices (a walk, three good things, a kind act) stay doable, as something optional. */
+export function doable(x: { door: string | null; kind: string }, door: string, p: Profile | null | undefined): boolean {
+  if (x.door && x.door !== door) return false;
+  if (practiceModeOf(p) === "learn") return !x.door && !["prayer", "sit", "breath"].includes(x.kind);
+  if (x.door && x.kind === "prayer") return prayerToDo(p, door);
+  return true;
+}
 
 export const isDoor = (d: unknown): d is string => typeof d === "string" && d !== "SPIRITUAL" && DOORS.some(([, w]: [string, string]) => w === d);
 

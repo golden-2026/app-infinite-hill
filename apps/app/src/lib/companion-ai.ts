@@ -4,7 +4,7 @@
 // delete), fixed-value profile fields, and today's context. Never raw journal text unless they tap "share this entry".
 // Every function returns null when the server or its AI key isn't available; callers then use the on-device version.
 
-export type CompanionProfile = { door: string; depth?: string; openness?: string; commitment?: string; reason?: string; level?: number };
+export type CompanionProfile = { door: string; depth?: string; openness?: string; commitment?: string; reason?: string; level?: number; practice?: "learn" };
 export type CompanionContext = {
   door: string; day: number; hour: number;
   lessonTitle?: string; carry?: string;

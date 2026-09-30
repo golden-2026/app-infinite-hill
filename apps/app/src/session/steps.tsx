@@ -189,9 +189,25 @@ export function TapHear({ step, voiceOn, onDone }: { step: any; voiceOn: boolean
   );
 }
 
+// ─── not today: the breath and the sit can always be passed ────────────
+// Skipping costs nothing: the step just moves on (these steps are never graded, so no miss, and the day, glow,
+// streak and lantern are the same as if it had been done). Once only, even on a fast double tap.
+function useSkip(onDone: () => void) {
+  const gone = useRef(false);
+  return () => { if (gone.current) return; gone.current = true; onDone(); };
+}
+function NotToday({ onPress }: { onPress: () => void }) {
+  return (
+    <Pressable testID="not-today" accessibilityRole="button" accessibilityLabel="not today, skip this" onPress={onPress} style={{ marginTop: 16, minHeight: 44, justifyContent: "center" }}>
+      <Text style={[type.eyebrow(), { color: "#ffffff66" }]}>not today ›</Text>
+    </Pressable>
+  );
+}
+
 // ─── one breath · three breaths ─────────────────────────────────────────
 export function BreathStep({ n, onDone }: { n: number; onDone: () => void }) {
   const [k, setK] = useState(0);
+  const skip = useSkip(onDone);
   const [phase, setPhase] = useState<"ready" | "in" | "out" | "done">("ready");
   const reduce = useReducedMotion();
   const scale = useSharedValue(0.9);
@@ -219,12 +235,14 @@ export function BreathStep({ n, onDone }: { n: number; onDone: () => void }) {
           <Text style={[type.h1(26), { color: "#fff", textAlign: "center" }]}>{n === 1 ? "one breath. that's the practice." : `${n} breaths together.`}</Text>
           <Text style={[type.body(), { color: "#ffffffaa", textAlign: "center" }]}>in as it grows. out as it shrinks. eyes open is fine.</Text>
           <SlotFill><Btn kind="gold" onPress={() => { bell(); setPhase("in"); }}>{n === 1 ? "take it" : "start"}</Btn></SlotFill>
+          <NotToday onPress={skip} />
         </>
       ) : null}
       {phase === "in" || phase === "out" ? (
         <>
           <Text accessibilityLiveRegion="polite" style={[type.h1(30), { color: color.gold }]}>{phase === "in" ? "in…" : "out…"}</Text>
           {n > 1 ? <Text style={[type.eyebrow(9), { color: "#ffffff99" }]}>{k + 1} of {n}</Text> : null}
+          <NotToday onPress={skip} />
         </>
       ) : null}
       {phase === "done" ? <Text style={[type.h1(26), { color: color.gold, textAlign: "center" }]}>{n === 1 ? "that counts. that was the whole thing." : "that was a practice. you just did one."}</Text> : null}
@@ -235,6 +253,7 @@ export function BreathStep({ n, onDone }: { n: number; onDone: () => void }) {
 // ─── the sit (real seconds; "I'm done" after 30 s, as v175 without demo speed) ─
 export function SitStep({ secs, onDone }: { secs: number; onDone: () => void }) {
   const [phase, setPhase] = useState<"ready" | "sitting" | "done">("ready");
+  const skip = useSkip(() => { clearInterval(iv.current!); onDone(); });
   const [left, setLeft] = useState(secs);
   const iv = useRef<ReturnType<typeof setInterval> | null>(null);
   const reduce = useReducedMotion();
@@ -274,6 +293,7 @@ export function SitStep({ secs, onDone }: { secs: number; onDone: () => void }) 
           <Text style={[type.h1(26), { color: "#fff", textAlign: "center" }]}>{secs} seconds. the sun breathes with you.</Text>
           <Text style={[type.body(), { color: "#ffffffaa", textAlign: "center" }]}>in as it grows. out as it shrinks. that's the whole job.</Text>
           <SlotFill><Btn kind="gold" onPress={() => setPhase("sitting")}>start the sit</Btn></SlotFill>
+          <NotToday onPress={skip} />
         </>
       ) : null}
       {phase === "sitting" ? (
@@ -284,7 +304,7 @@ export function SitStep({ secs, onDone }: { secs: number; onDone: () => void }) 
             <Pressable accessibilityRole="button" onPress={() => { clearInterval(iv.current!); bell(); setPhase("done"); }} style={{ padding: 8 }}>
               <Text style={[type.eyebrow(10), { color: "#ffffff99" }]}>I'm done ›</Text>
             </Pressable>
-          ) : null}
+          ) : <NotToday onPress={skip} />}
         </>
       ) : null}
       {phase === "done" ? <Text style={[type.h1(28), { color: color.gold }]}>that was a sit. you just did one.</Text> : null}

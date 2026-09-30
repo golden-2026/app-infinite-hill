@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { PRACTICES, practiceById, type Mood, type Practice } from "@/content/practices";
 import { companionAvailable, companionShape, type CompanionContext, type CompanionProfile } from "@/lib/companion-ai";
 import { factKeys, MOODS, type Memory, type MoodId } from "@/lib/companion/memory";
+import { doable, practiceModeOf } from "@/lib/onboard";
 import { depthFor, guideProfile, type Profile } from "@/lib/profile";
 
 export type Persona = "returner" | "deepener" | "seeker" | "bridge" | "parent" | "hard" | "fan" | "steady";
@@ -46,6 +47,12 @@ export type Shaped = {
   reachOut: boolean;
   /** Practices from another door are only ever offered to people who said they love that. */
   fromNextDoor: boolean;
+  /** Shown as "how it's done" (read-only: what it is, when, what it means), never as something to do. Always true for a
+   *  taste from next door; in "just learn", for every tradition's practice; otherwise for a prayer the person hasn't
+   *  opted into (lib/onboard prayerToDo). */
+  howItsDone: boolean;
+  /** They're here to learn, not to practice: anything still doable (a walk, three good things) is optional. */
+  learn: boolean;
   by: "phone" | "companion";
 };
 
@@ -117,8 +124,11 @@ export function shapeToday(i: ShapeInput): Shaped {
   const reachOut = !help && m.helpClosedOn !== i.today && heavyDays >= 3;
   const tired = mood === "tired";
   const lossOk = has("feeling:grief") || has("why:hard") || mood === "heavy";
+  // "just learn": no breath, sit or prayer to do; a tradition's practice comes as "how it's done"
+  const learn = practiceModeOf(i.profile) === "learn";
 
   const eligible = PRACTICES.filter((x) => {
+    if (learn && !x.door && ["prayer", "sit", "breath"].includes(x.kind)) return false;
     if (x.door && x.door !== i.door) {
       // another tradition's practice: never for "stay" or "sometimes", never one that names God, never the one they left
       if (openness !== "love" || x.theistic) return false;
@@ -154,6 +164,7 @@ export function shapeToday(i: ShapeInput): Shaped {
     if (x.when) s += 2; // it's the right hour (or Friday) for it
     if (x.door === i.door) s += 1;
     if (x.door && x.door !== i.door) s -= 2; // a taste from next door stays occasional
+    if (learn && x.door === i.door) s += 2; // here to learn: how their door's people keep it leads
     switch (persona) {
       // unsure where they stand: the old prayers stay on offer, gently, but don't lead most days
       case "returner": if (x.kind === "write") s += 2; if (x.theistic) s -= 1; if (x.door === i.door && x.minutes <= 2) s += 2; break;
@@ -179,22 +190,28 @@ export function shapeToday(i: ShapeInput): Shaped {
     return s + hash(`${i.today}:${who}:${x.id}`) * 2;
   };
   const ranked = eligible.map((x) => ({ x, s: score(x) })).sort((a, z) => z.s - a.s).map((r) => r.x);
-  const practice = ranked[0] || practiceById("breath")!;
+  const practice = ranked[0] || practiceById(learn ? "gratitude" : "breath")!;
+  const howItsDone = !doable(practice, i.door, i.profile);
 
   // the returner's "what I used to think" comes up about once a week; everyone's prompt turns over with their days
   const list = PROMPTS[persona];
   // a hard season: in the evening it's always the note to someone; by day it turns over like everyone's
   const prompt = persona === "hard" && evening ? list[0] : list[i.showedUp % list.length];
 
-  return { practice, candidates: ranked.slice(0, 6), quiet, persona, prompt, note: noteFor({ i, persona, mood, quiet, late, night, practice }), mood, help, reachOut, fromNextDoor: !!practice.door && practice.door !== i.door, by: "phone" };
+  return { practice, candidates: ranked.slice(0, 6), quiet, persona, prompt, note: noteFor({ i, persona, mood, quiet, late, night, practice, howItsDone, learn }), mood, help, reachOut, fromNextDoor: !!practice.door && practice.door !== i.door, howItsDone, learn, by: "phone" };
 }
 
-function noteFor({ i, persona, mood, quiet, late, night, practice }: { i: ShapeInput; persona: Persona; mood: MoodId | null; quiet: boolean; late: boolean; night: boolean; practice: Practice }): string {
+/** The note when today's card is "how it's done": nothing to do, and never an invitation to pray. */
+const LEARN_NOTE = "nothing to do today. here's how people keep one practice, if you're curious.";
+
+function noteFor({ i, persona, mood, quiet, late, night, practice, howItsDone, learn }: { i: ShapeInput; persona: Persona; mood: MoodId | null; quiet: boolean; late: boolean; night: boolean; practice: Practice; howItsDone: boolean; learn: boolean }): string {
   const mins = `${practice.minutes} ${practice.minutes === 1 ? "minute" : "minutes"}`;
   if (i.missedDays >= 2 && !i.doneToday) return "you're back. nothing was lost. start small.";
-  if (mood === "heavy") return "heavy days are allowed. no lesson needed today — just this, if you want it.";
+  if (mood === "heavy") return howItsDone ? "heavy days are allowed. no lesson needed today." : "heavy days are allowed. no lesson needed today — just this, if you want it.";
   if (persona === "hard" && night) return "it's late. go gently. the games can wait.";
-  if (persona === "hard") return "go gently today. the games can wait. this is enough.";
+  if (persona === "hard") return howItsDone ? "go gently today. the games can wait." : "go gently today. the games can wait. this is enough.";
+  if (howItsDone) return LEARN_NOTE;
+  if (learn) return late ? "it's late. something short, if you like, then sleep." : "something small to try, if you like. no need to.";
   if (late) return "it's late. something short, then sleep.";
   if (quiet) return "a quieter day. the practice first, the lesson whenever you're ready.";
   if (mood === "tired") return `tired is allowed. ${mins}, then rest.`;
@@ -225,6 +242,8 @@ export function companionProfile(i: Pick<ShapeInput, "door" | "profile" | "memor
     if (g.commitment) out.commitment = g.commitment;
     if (g.reason && has(`why:${g.reason}`)) out.reason = g.reason;
   }
+  // here to learn, not to practice: a fixed value the server maps to a fixed sentence (never invite them to pray)
+  if (practiceModeOf(i.profile) === "learn") out.practice = "learn";
   return out;
 }
 export const memoryLines = (m: Memory) => m.facts.map((f) => f.text).slice(0, 30);
@@ -242,14 +261,16 @@ async function withCompanion(i: ShapeInput, local: Shaped): Promise<Shaped> {
   });
   if (!reply) return local;
   const pick = local.candidates.find((x) => x.id === reply.practiceId) || local.practice; // only ever one the phone offered
-  const note = typeof reply.note === "string" && reply.note.trim() ? reply.note.trim().slice(0, 220) : local.note;
-  return { ...local, practice: pick, note, quiet: local.quiet || reply.quiet === true, fromNextDoor: !!pick.door && pick.door !== i.door, by: "companion" };
+  const howItsDone = !doable(pick, i.door, i.profile);
+  // a "how it's done" card keeps the phone's own note, so nothing ever invites them to do it
+  const note = !howItsDone && typeof reply.note === "string" && reply.note.trim() ? reply.note.trim().slice(0, 220) : howItsDone ? LEARN_NOTE : local.note;
+  return { ...local, practice: pick, note, quiet: local.quiet || reply.quiet === true, fromNextDoor: !!pick.door && pick.door !== i.door, howItsDone, by: "companion" };
 }
 
 /** Today's shape, on the phone at once; replaced by the companion's if its AI is on and answers. */
 export function useShapedDay(i: ShapeInput): Shaped {
   const local = shapeToday(i); // cheap and deterministic: recomputed each render so a mood tap shows at once
-  const key = `${i.today}|${i.door}|${local.mood}|${local.quiet}|${Math.floor(i.hour / 4)}|${local.candidates.map((x) => x.id).join(",")}`;
+  const key = `${i.today}|${i.door}|${local.mood}|${local.quiet}|${Math.floor(i.hour / 4)}|${local.learn ? "learn" : i.profile?.answers.practiceMode ?? ""}|${local.candidates.map((x) => x.id).join(",")}`;
   const [ai, setAi] = useState<{ key: string; v: Shaped } | null>(null);
   useEffect(() => {
     let live = true;
