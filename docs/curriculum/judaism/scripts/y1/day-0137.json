@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "It's one in the morning, and the synagogue lights are still on. The room is full, and nobody's praying yet. They're studying. Pairs of people bent over books, arguing gently. A teacher at the front with a room of teenagers. Someone's brought a thermos of coffee and a plate of cheesecake. A few people are dozing on the benches. They'll stay like this until the sky starts to lighten, and then pray the morning service at dawn. It's the one night of the year when staying up all night is the whole point.",
+      "voice": "It's one in the morning, and the synagogue lights are still on. The room is full, and nobody's praying yet. They're studying. Pairs of people bent over books, arguing gently. A teacher at the front with a room of teenagers. Someone's brought a thermos of coffee and a plate of cheesecake. A few people are dozing on the benches. They'll stay like this until the sky starts to lighten, and then pray the morning service at dawn. On this night, staying awake is the whole point.",
       "screen": ["`ONE IN THE MORNING.` → `A ROOM FULL OF STUDY.` → `AWAKE UNTIL DAWN.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "The holiday is Shavuot, which means weeks: the seven weeks just counted. In the Torah itself, Shavuot is a harvest festival, the day the first wheat was offered and the first fruits were brought to the Temple. The Torah never says that anything else happened on this day. But the rabbis did the math. The Torah says the Israelites reached Mount Sinai in the third month after leaving Egypt, and by their reckoning, the Ten Commandments were given right around the sixth of that month, which is Shavuot. So in Jewish tradition, Shavuot became the time of the giving of the Torah. The gift at the mountain. That's where the all-night study comes from. There's a midrash that on the morning the Torah was given, the Israelites overslept, and Moses had to wake them. So, centuries later, the mystics began staying up all night on Shavuot, to be awake this time, and the custom spread. It's called a tikkun, a repair. Then there's Ruth. On Shavuot, the book of Ruth is read. It's a harvest story, set during the barley and wheat harvests. And Ruth, a woman from Moab, chooses to stay with her mother-in-law Naomi and join her people, with some of the most famous words in the Bible: \"whither thou goest, I will go; and where thou lodgest, I will lodge; thy people shall be my people, and thy God my God.\" Jews read it as the story of someone freely accepting the Torah, just as Israel did at Sinai. And Ruth becomes the great-grandmother of King David. Many people eat dairy foods too; the reasons given vary, and no one reason is certain.",
+      "voice": "The holiday is Shavuot, which means weeks: the seven weeks just counted. In the Torah itself, Shavuot is a harvest festival, the day an offering from the new wheat was brought, the day of first fruits. The Torah never says that anything else happened on this day. But the rabbis did the math. The Torah says the Israelites reached Mount Sinai in the third month after leaving Egypt, and in the Talmud the sages reckon that the Ten Commandments were given on the sixth of that month, which is Shavuot; one rabbi says the seventh. So in Jewish tradition, Shavuot became the time of the giving of the Torah. The gift at the mountain. One reason given for the all-night study is a midrash: on the morning the Torah was given, the Israelites overslept, and Moses had to wake them. Later, Jewish mystics made a practice of staying up all night on Shavuot, to be awake this time, and the custom spread. It's called a tikkun, a repair. Then there's Ruth. On Shavuot, the book of Ruth is read. It's a harvest story, set during the barley and wheat harvests. And Ruth, a woman from Moab, chooses to stay with her mother-in-law Naomi and join her people, with these words: \"whither thou goest, I will go; and where thou lodgest, I will lodge; thy people shall be my people, and thy God my God.\" One reason given for reading it today: it's the story of someone freely accepting the Torah, just as Israel did at Sinai. And Ruth becomes the great-grandmother of King David. There's also a custom of eating dairy foods; the reasons given vary, and no one reason is certain.",
       "screen": ["`SHAVUOT: WEEKS.` · `A HARVEST, AND THE GIFT AT SINAI.` · `AWAKE ALL NIGHT THIS TIME.` · `RUTH: WHITHER THOU GOEST.` · then, large: `THY PEOPLE SHALL BE MY PEOPLE.`"]
     },
     {
@@ -56,20 +56,20 @@
     },
     "myth": [
       ["the Torah says Shavuot is the day the Torah was given", false, "the Torah calls it a harvest festival; the rabbis linked it to Sinai by their reckoning."],
-      ["a midrash says the Israelites overslept on the morning of Sinai", true, "so many stay up all night on Shavuot, to be awake this time."],
+      ["a midrash says the Israelites overslept on the morning of Sinai", true, "one reason given for staying up all night: to be awake this time."],
       ["Ruth becomes the great-grandmother of King David", true, "the book of Ruth ends with the family line."]
     ],
     "fork": {
       "setup": "you're Ruth. your husband has died, and your mother-in-law Naomi tells you to go back to your own people. what do you do?",
       "options": ["go home to Moab, as she says.", "stay with Naomi and go with her.", "stay in Moab but promise to visit."],
       "answer": 1,
-      "reveal": "Ruth refuses to leave: whither thou goest, I will go. Jews read her choice as freely accepting the Torah, as Israel did at Sinai."
+      "reveal": "Ruth refuses to leave: whither thou goest, I will go. tradition reads her choice as freely accepting the Torah, as Israel did at Sinai."
     },
     "original": { "script": "שָׁבוּעוֹת", "say": "shah-voo-OHT", "note": "Hebrew: weeks; the festival seven weeks after Passover." },
     "trapdoor": [
       "what you thought: a spring holiday with cheesecake.",
       "what it means: the fiftieth day of the count, a harvest festival and the time Jews remember receiving the Torah.",
-      "what a scholar hears: the Torah's chag ha-shavuot is agricultural (Exodus 34:22); the Sinai link is rabbinic (Shabbat 86b); the all-night tikkun spread from sixteenth-century Safed."
+      "what a scholar hears: the Torah's chag ha-shavuot is agricultural (Exodus 34:22); the Sinai link is rabbinic (Shabbat 86b); the Zohar praises staying awake on Shavuot night, and later kabbalists spread the tikkun."
     ]
   },
   "sources": [
@@ -87,7 +87,8 @@
       "Date of Sinai: Shabbat 86b discusses whether the Torah was given on the 6th or 7th of Sivan; phrased 'right around the sixth'. Confirm.",
       "Oversleeping midrash: Song of Songs Rabbah 1:12 (commonly cited by the Magen Avraham, OC 494). Confirm.",
       "Tikkun Leil Shavuot: associated with R. Shlomo Alkabetz and R. Joseph Karo (1533) and spread from Safed. Voice says 'the mystics'; confirm.",
-      "Dairy foods: several reasons given in tradition; stated as uncertain."
+      "Dairy foods: several reasons given in tradition; stated as uncertain.",
+      "Editor review (Oct 2026): cut 'the one night of the year' and 'some of the most famous words in the Bible' (unsourced superlatives); Temple wording removed from the Torah's harvest description; the Sinai date now says the sages reckon the sixth and one rabbi the seventh (Shabbat 86b); the oversleeping midrash is 'one reason given', not the origin; 'centuries later' cut; Ruth's link to Sinai and the dairy custom softened; trapdoor no longer says the tikkun 'spread from sixteenth-century Safed' (the famous 1533 night was before Alkabetz and Karo reached Safed)."
     ]
   },
   "meta": { "index": "137. Shavuot · Shavuot · the day the Torah was given, kept with all-night study and the book of Ruth · read one page late tonight · stay up for the gift", "writer": "writer agent (judaism 121–150)", "written": "2026-09-30" }

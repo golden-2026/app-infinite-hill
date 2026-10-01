@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "For forty days a single word has been missing from every Catholic Mass. Not dropped by accident: put away. In some places, children even wrote it on a banner before Lent and buried it in the churchyard. All through Lent the Gospel was greeted with other words. Then last night, after the readings, the priest turned toward the people and sang it, three times, each time a little higher, and the people sang it back. This morning it's everywhere: on the doors, in the hymns, at the end of Mass, doubled. Easter Sunday, and the word that came back.",
-      "screen": ["`FORTY DAYS WITHOUT IT.` → `SUNG THREE TIMES, RISING.` → `EASTER MORNING.`"]
+      "voice": "Since Ash Wednesday, a single word has been missing from the Mass. Not dropped by accident: put away. In some places, children even wrote it on a banner before Lent and buried it in the churchyard. All through Lent the Gospel was greeted with other words. Then last night, after the readings, the priest sang it, three times, each time a little higher, and the people sang it back. This morning it's everywhere: on the doors, in the hymns, at the end of Mass, doubled. Easter Sunday, and the word that came back.",
+      "screen": ["`ALL LENT WITHOUT IT.` → `SUNG THREE TIMES, RISING.` → `EASTER MORNING.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Start with the morning Gospel. On Easter Sunday the Church reads John. Mary Magdalene comes to the tomb while it's still dark and finds the stone rolled away. She runs to Peter and the beloved disciple, and the two of them race back. The younger one gets there first, looks in, and waits. Peter goes straight in and sees the linen cloths lying there, and the face cloth rolled up by itself. Then the other disciple goes in, and John says he saw and believed. No angel's speech, no appearance yet. Just two out-of-breath men and an empty room. Matthew puts it in an angel's mouth, in the Douay-Rheims: \"He is not here, for he is risen, as he said.\" Now the word. Alleluia is Hebrew: hallelu, praise, plural, all of you, and Yah, the short form of God's name. Praise the Lord, everybody. It runs all through the Psalms, and the Book of Revelation has heaven singing it. The Church buried it for Lent so that it could come back like this. Today the dismissal at the end of Mass gets a double alleluia, and it will keep it through the eight days of the octave and again at Pentecost. In many Catholic homes, Easter is also the morning of a greeting borrowed from the Christian East: one person says Christ is risen, and the other answers, he is risen indeed. The whole Christian claim sits inside that empty room. Christians say the tomb was empty because he was raised, and everything else they believe grows from that morning.",
+      "voice": "Start with the morning Gospel. On Easter Sunday the Church reads John. Mary Magdalene comes to the tomb while it's still dark and finds the stone rolled away. She runs to Peter and the other disciple, the one Jesus loved, and the two of them race back. The other disciple outruns Peter, gets there first, looks in, and waits. Peter goes straight in and sees the linen cloths lying there, and the face cloth rolled up by itself. Then the other disciple goes in, and John says he saw and believed. No angel's speech, no appearance yet. Just two out-of-breath men and an empty room. Matthew puts it in an angel's mouth, in the Douay-Rheims: \"He is not here, for he is risen, as he said.\" Now the word. Alleluia is Hebrew: hallelu, praise, plural, all of you, and Yah, the short form of God's name. Praise the Lord, everybody. It opens and closes a run of Psalms, and the Book of Revelation has heaven singing it. The Church buried it for Lent so that it could come back like this. Today the dismissal at the end of Mass gets a double alleluia, and it will keep it through the eight days of the octave and again at Pentecost. Some Catholics also use a greeting from the Christian East this morning: one person says Christ is risen, and the other answers, he is risen indeed. Christians say the tomb was empty because he was raised, and Paul writes that if Christ is not risen, their preaching is in vain. A great deal rests on that empty room.",
       "screen": ["`TWO DISCIPLES RACE TO THE TOMB.` · `HE SAW AND BELIEVED.` · `HALLELU-YAH: PRAISE THE LORD.` · `BURIED FOR LENT, BACK TODAY.` · then, large: `HE IS NOT HERE, FOR HE IS RISEN.`"]
     },
     {
@@ -37,13 +37,13 @@
     {
       "type": "the word",
       "duration": "25 sec",
-      "voice": "Easter Sunday. The morning of the empty tomb, the greatest feast of the Catholic year, when the alleluia comes back after Lent. Today's word.",
+      "voice": "Easter Sunday. The morning of the empty tomb, when the alleluia comes back after Lent. Today's word.",
       "screen": ["`EASTER SUNDAY — today's word`."]
     },
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: alleluia. Praise the Lord, everybody. Today, say it out loud at least once, even quietly, even to the kitchen, for the first time in forty days. Day six hundred sixty-four.",
+      "voice": "Your line: alleluia. Praise the Lord, everybody. Today, say it out loud at least once, even quietly, even to the kitchen, for the first time since Lent began. Day six hundred sixty-four.",
       "screen": []
     },
     { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 664 COUNTS.` → `TOMORROW: THE EASTER OCTAVE.`"] }
@@ -55,12 +55,12 @@
       "pairs": [["hallelu", "praise, all of you"], ["Yah", "short form of God's name"], ["Peter", "went straight into the tomb"], ["the other disciple", "saw and believed"]]
     },
     "myth": [
-      ["alleluia is sung at Mass all through Lent", false, "it's put away for Lent and comes back at the Easter Vigil."],
+      ["in John's Easter Gospel, an angel greets Peter at the tomb", false, "no angel speaks there: Peter finds the linen cloths, and the face cloth rolled up apart."],
       ["alleluia comes from Hebrew", true, "hallelu, praise, and Yah, God's name: praise the Lord."],
       ["in John's Easter Gospel, Peter reaches the tomb first", false, "the other disciple outruns him and waits; Peter goes in first."]
     ],
     "fork": {
-      "setup": "you're the younger disciple. you've outrun Peter to the tomb, and the stone is rolled away. what do you do?",
+      "setup": "you're the other disciple, the one Jesus loved. you've outrun Peter to the tomb, and the stone is rolled away. what do you do?",
       "options": ["go straight in.", "look in, and wait outside.", "run back to tell the others."],
       "answer": 1,
       "reveal": "he looks in and waits. Peter arrives and goes straight in; then the other disciple goes in, and saw, and believed."
@@ -75,6 +75,7 @@
   "sources": [
     { "ref": "Matthew 28:6", "work": "The Bible", "translation": "Douay-Rheims (Challoner)", "quoted": "He is not here, for he is risen, as he said." },
     { "ref": "John 20:1–9", "work": "The Bible", "translation": null, "quoted": null },
+    { "ref": "1 Corinthians 15:14", "work": "The Bible", "translation": null, "quoted": null },
     { "ref": "Psalms 104–106, 146–150; Revelation 19:1–6", "work": "The Bible", "translation": null, "quoted": null },
     { "ref": "Roman Missal, Easter Vigil and Easter Sunday rubrics (solemn alleluia, double alleluia at dismissal)", "work": "Roman Missal", "translation": null, "quoted": null }
   ],
@@ -86,7 +87,8 @@
       "Double alleluia at the dismissal: through the Easter octave and on Pentecost (Missal); confirm.",
       "Solemn alleluia at the Vigil intoned by the priest three times, raising the pitch; confirm.",
       "The paschal greeting 'Christ is risen / he is risen indeed' attributed to Eastern Christian usage; confirm phrasing.",
-      "Psalm references for alleluia given in Hebrew numbering; Douay numbering differs."
+      "Psalm references for alleluia given in Hebrew numbering; Douay numbering differs.",
+      "Editor review (2026-10-01): the alleluia is omitted from Ash Wednesday to the Vigil, about forty-six days, so 'for forty days' (hook, screen, carry) is corrected to 'since Ash Wednesday' / 'since Lent began'; 'every Catholic Mass' trimmed; 'the younger one' (not in John 20) now 'the other disciple, the one Jesus loved', also in the fork; cut 'the greatest feast of the Catholic year', 'all through the Psalms', 'in many Catholic homes' and 'everything else they believe grows from that morning' (now Paul's line, 1 Corinthians 15:14, paraphrased and cited); the myth on the alleluia in Lent repeated day 663's, replaced with one on John 20."
     ]
   },
   "meta": { "index": "664. Easter Sunday · — · the tomb is empty and the alleluia returns · say he is risen to someone · alleluia", "writer": "writer agent (catholic 662–691)", "written": "2026-09-30" }

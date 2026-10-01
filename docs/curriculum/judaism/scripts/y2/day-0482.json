@@ -25,8 +25,8 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "The book begins: \"These are the words which Moses spoke unto all Israel.\" In Hebrew, eleh ha-devarim. Devarim means words, and the book takes its Hebrew name from that opening, the way every book of the Torah does. The rabbis heard the irony right away. A midrash, in Deuteronomy Rabbah, sets the two verses side by side: the man who said I am not a man of words, and these are the words. Before, he couldn't speak. Now he speaks a whole book. What changed? The midrash's answer is that living with the Torah healed his tongue. Another way to hear it: forty years happened. He led a people who complained, he lost his sister and his brother, he broke tablets and carved new ones. When you've carried that much, you have something to say, and you stop worrying whether you say it beautifully. Look at what the speeches actually are, too. Moses isn't reading out new laws in a vacuum. He's retelling the journey to a generation that mostly wasn't there for the start of it, their parents having died in the wilderness. The book's Greek name, Deuteronomy, means second law, and the rabbis also called it Mishneh Torah, the repetition of the Torah. A retelling. Old stories told again, by someone who's earned the right to tell them. So the book of words belongs to the man who once had none. They didn't come from talent. They came from time.",
-      "screen": ["`ELEH HA-DEVARIM: THESE ARE THE WORDS.` · `THE MAN WHO SAID HE HAD NONE.` · `FORTY YEARS TO CARRY.` · `A SECOND TELLING, NOT A NEW ONE.` · then, large: `WORDS COME WITH TIME.`"]
+      "voice": "The book begins: \"These are the words which Moses spoke unto all Israel.\" In Hebrew, eleh ha-devarim. Devarim means words. The rabbis heard the irony right away. A midrash, in Deuteronomy Rabbah, sets the two verses side by side. At the bush, the Hebrew is lo ish devarim anochi, not a man of devarim. Here, eleh ha-devarim. The same word, forty years apart. Before, he couldn't speak. Now he speaks a whole book. What changed? The midrash's answer is that living with the Torah healed his tongue. Another way to hear it: forty years happened. He led a people who complained, he lost his sister and his brother, he broke tablets and carved new ones. Someone who has carried that much has something to say, and maybe stops worrying whether it comes out beautifully. And look at who he's speaking to: a generation that mostly wasn't there for the start of it, their parents having died in the wilderness. The man who once asked for someone else to do the talking is now the one who remembers out loud for everyone. He doesn't need to be polished. He needs to have been there. So the book of words belongs to the man who once had none. They didn't come from talent. They came from time.",
+      "screen": ["`THE MAN WHO SAID HE HAD NONE.` · `THE SAME WORD, FORTY YEARS APART.` · `TABLETS BROKEN, A SISTER AND BROTHER LOST.` · `THE ONE WHO REMEMBERS OUT LOUD.` · then, large: `WORDS COME WITH TIME.`"]
     },
     {
       "type": "the practice",
@@ -52,12 +52,12 @@
   "games": {
     "match": {
       "prompt": "inside the book of words — tap the pairs.",
-      "pairs": [["devarim", "words, things spoken"], ["I am not a man of words", "Moses at the burning bush"], ["Deuteronomy", "Greek: second law"], ["Mishneh Torah", "the rabbis' name: the repetition"]]
+      "pairs": [["devarim", "words, things spoken"], ["a hundred and twenty", "Moses' age at the Jordan"], ["lo ish devarim", "not a man of words, at the bush"], ["Deuteronomy Rabbah", "the Torah healed his tongue"]]
     },
     "myth": [
       ["Moses once told God he wasn't good with words", true, "at the burning bush: \"I am not a man of words.\""],
-      ["Deuteronomy is mostly new stories no one heard before", false, "it's mostly Moses retelling the journey, a second telling for a new generation."],
-      ["the book's Hebrew name comes from its first line", true, "eleh ha-devarim, these are the words."]
+      ["the bush and Deuteronomy's opening use different words for words", false, "both use devarim: not a man of devarim, and these are the devarim."],
+      ["a midrash says living with the Torah healed Moses' speech", true, "Deuteronomy Rabbah reads the two verses together and says his tongue was healed."]
     ],
     "fork": {
       "setup": "you're Moses at the burning bush, told to go speak to Pharaoh. what do you say?",
@@ -65,14 +65,15 @@
       "answer": 1,
       "reveal": "he argues that he's slow of speech. forty years later he speaks a whole book: these are the words."
     },
-    "original": { "script": "דְּבָרִים", "say": "d'vah-REEM", "note": "Hebrew: words, things spoken. the name of Deuteronomy, from its opening, eleh ha-devarim." },
+    "original": { "script": "דְּבָרִים", "say": "d'vah-REEM", "note": "Hebrew: words. what Moses said he lacked at the bush (Exodus 4:10), and the first key word of Deuteronomy." },
     "trapdoor": [
       "what you thought: Deuteronomy is a book of extra laws.",
       "what it means: devarim, words: Moses' farewell speeches, the journey retold by the man who once said he had no words.",
-      "what a scholar hears: Deuteronomy Rabbah sets Exodus 4:10 beside Deuteronomy 1:1, and the rabbis' name Mishneh Torah echoes Deuteronomy 17:18."
+      "what a scholar hears: Exodus 4:10 has lo ish devarim anochi, not a man of words; Deuteronomy 1:1 opens eleh ha-devarim; Deuteronomy Rabbah 1:1 reads them together."
     ]
   },
   "sources": [
+    { "ref": "Deuteronomy 31:2", "work": "The Holy Scriptures", "translation": null, "quoted": null },
     { "ref": "Deuteronomy 1:1", "work": "The Holy Scriptures", "translation": "JPS 1917", "quoted": "These are the words which Moses spoke unto all Israel" },
     { "ref": "Exodus 4:10", "work": "The Holy Scriptures", "translation": "JPS 1917", "quoted": "I am not a man of words" },
     { "ref": "Deuteronomy Rabbah 1:1", "work": "Midrash Rabbah", "translation": null, "quoted": null }
@@ -81,6 +82,7 @@
     "status": "pending",
     "keeper": null,
     "notes": [
+      "Editor review (2026-10-01): cut the Greek name, Mishneh Torah and 'second telling' material that repeated day 481 (teach, match, myth, trapdoor) and replaced it with the same-word link between Exodus 4:10 and Deuteronomy 1:1; dropped the unsourced 'the way every book of the Torah does'; added Deuteronomy 31:2 as the source for Moses' age.",
       "Deuteronomy 1:1 and Exodus 4:10 quoted from JPS 1917 from memory; verify exact wording ('spoke unto all Israel'; 'I am not a man of words').",
       "Deuteronomy Rabbah 1:1 contrasts Exodus 4:10 with Deuteronomy 1:1 and says the Torah healed Moses' speech; paraphrased, confirm the wording of the midrash's answer.",
       "Moses' age 120 is from Deuteronomy 31:2 / 34:7.",

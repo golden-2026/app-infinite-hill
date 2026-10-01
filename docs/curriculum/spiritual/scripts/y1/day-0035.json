@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Think about your junk drawer. Everyone has one. Old chargers for phones you don't own anymore. Keys to nothing. A takeout menu from a place that closed. Now picture a man whose whole junk drawer, whose whole house, whose everything, fits in a small bag over his shoulder. A cloak, a stick, a bag, and a wooden cup for drinking. That was Diogenes, the Cynic who told Alexander to move out of his sunlight. And one day, by a fountain, he watched a child get a drink of water, and lost one more thing.",
-      "screen": ["`EVERYONE HAS A JUNK DRAWER.` → `A CLOAK, A STICK, A BAG, A CUP.` → `A CHILD AT A FOUNTAIN.`"]
+      "voice": "Somewhere in a kitchen near you there's a junk drawer. Old chargers for phones nobody owns anymore. Keys to nothing. A takeout menu from a place that closed. Now a man whose whole junk drawer, whose whole house, whose everything, fits in a small bag over his shoulder. A cloak, a stick, a bag, and a cup for drinking. That was Diogenes, the Cynic who told Alexander to move out of his sunlight. And one day he watched a child get a drink of water, and lost one more thing.",
+      "screen": ["`A DRAWER FULL OF KEYS TO NOTHING.` → `A CLOAK, A STICK, A BAG, A CUP.` → `A CHILD, DRINKING.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Here's the story as Diogenes Laërtius tells it. Diogenes sees a child drinking water from his hands, just cupping them under the stream. And Diogenes pulls the cup out of his bag and throws it away, saying something like: a child has beaten me at living simply. The same source tells a twin story: seeing a boy who'd broken his bowl eating lentils out of a hollowed piece of bread, Diogenes threw away his bowl too. Notice who the teacher is. Not a philosopher. A child. Someone who didn't know that you're supposed to need a cup. Diogenes, the man who owned almost nothing, still found something to put down. Now, careful. This is a story about choosing to carry less. It's not a story that makes poverty romantic. Diogenes chose his life, and plenty of people in his world, and ours, don't get to choose. What the Cynics were after wasn't hardship for its own sake. It was freedom. Every thing you own, they said, also owns a little of you. It needs storing, protecting, repairing, worrying about. Put it down and your hands are free. That's week five. Rome's hard nights. Cato's last night. Seneca, and life long enough. The ledger of hours. Seneca in exile, comforting his mother. Seneca's last hours, and the image of a life. Diogenes and the king. And a cup, thrown away because a child knew better. Hard stories, most of them. And each one asking the same quiet question. When everything else is taken, or given away, what's left? Tomorrow, a new week, and a very different kind of teacher: a wise fool.",
+      "voice": "Here's the story as Diogenes Laërtius tells it. Diogenes sees a child drinking water from his cupped hands. And Diogenes pulls the cup out of his bag and throws it away, saying something like: a child has beaten me at living simply. The same source tells a twin story: seeing a boy who'd broken his bowl eating lentils out of a hollowed piece of bread, Diogenes threw away his bowl too. Notice who the teacher is. Not a philosopher. A child. Someone who didn't know that you're supposed to need a cup. Diogenes, the man who owned almost nothing, still found something to put down. Now, careful. This is a story about choosing to carry less. It's not a story that makes poverty romantic. Diogenes chose his life, and plenty of people in his world, and ours, don't get to choose. What the Cynics were after wasn't hardship for its own sake. It was freedom. One way to put their point: every thing you own also owns a little of you. It needs storing, protecting, repairing, worrying about. Put it down and your hands are free. That's week five. Rome's hard nights. Cato's last night. Seneca, and life long enough. The ledger of hours. Seneca in exile, comforting his mother. Seneca's last hours, and the image of a life. Diogenes and the king. And a cup, thrown away because a child knew better. Hard stories, most of them. And each one asking the same quiet question. When everything else is taken, or given away, what's left? Tomorrow, a new week, and a very different kind of teacher: a wise fool.",
       "screen": ["`A CHILD DRINKS FROM HIS HANDS.` · `THE TEACHER IS A CHILD.` · `CHOSEN, NOT ROMANTIC.` · `WEEK FIVE: WHAT'S LEFT?` · then, large: `LESS TO CARRY.`"]
     },
     {
@@ -52,7 +52,7 @@
   "games": {
     "match": {
       "prompt": "the cup and the bowl — tap the pairs.",
-      "pairs": [["a child at the fountain", "drinks from cupped hands"], ["Diogenes's cup", "thrown away"], ["a boy with a broken bowl", "eats lentils from bread"], ["the Cynics", "every thing owns a little of you"]]
+      "pairs": [["a thirsty child", "drinks from cupped hands"], ["Diogenes's cup", "thrown away"], ["a boy with a broken bowl", "eats lentils from bread"], ["the Cynics", "after freedom, not hardship"]]
     },
     "myth": [
       ["the Cynics wanted hardship for its own sake", false, "they were after freedom. every thing you own also owns a little of you."],
@@ -60,7 +60,7 @@
       ["the story makes poverty romantic", false, "it's about choosing to carry less. many people don't get to choose."]
     ],
     "fork": {
-      "setup": "you're Diogenes. you own a cloak, a stick, a bag and a cup. you watch a child drink from cupped hands at a fountain. what do you do?",
+      "setup": "you're Diogenes. you own a cloak, a stick, a bag and a cup. you watch a child drink water from cupped hands. what do you do?",
       "options": ["give the child your cup.", "throw your cup away.", "keep the cup. you need something."],
       "answer": 1,
       "reveal": "he throws it away, saying a child has beaten him at living simply. later, seeing a boy eat lentils from bread, he throws away his bowl too."
@@ -82,7 +82,8 @@
       "DL 6.37: cup thrown from his wallet on seeing a child drink from his hands ('A child has beaten me in plainness of living', paraphrased); bowl thrown away on seeing a boy who had broken his dish eat lentils from a hollow loaf. Confirm.",
       "Diogenes's possessions (cloak, staff, wallet/bag, cup) are the traditional Cynic kit (DL 6.22–23); confirm.",
       "Autarkeia (self-sufficiency) as the Cynic ideal; confirm the trapdoor note.",
-      "Week-five look-back in the teach and carry; the teach ends by pointing to week six (Nasruddin)."
+      "Week-five look-back in the teach and carry; the teach ends by pointing to week six (Nasruddin).",
+      "Review 2026-10-01: hook no longer opens 'Think about...Everyone has one' or 'Now picture'; removed the fountain and the wooden cup (Diogenes Laërtius 6.37 mentions neither) from voice, screen, match and fork; 'every thing you own owns a little of you' is now framed as a way to put the Cynics' point, not as their saying."
     ]
   },
   "meta": { "index": "35. Diogenes throws away his cup · — · seeing a child drink from cupped hands, he tosses away his last possession (Diogenes Laërtius 6.37) · give away one thing you don't use · less to carry", "writer": "spiritual writer agent (days 8–37)", "written": "2026-09-30" }

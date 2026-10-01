@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Ever lost your keys, turned the whole house upside down, and then your grandmother, without getting up, says: did you check your coat? The rains end. And Sugriva, now king, comfortable, has half forgotten his promise. Lakshmana storms into the monkey city so angry the walls seem to shake, and it takes Tara, the wise queen, to calm him down. Then Sugriva moves fast. He sends out his whole army, in four great search parties: north, east, west and south. One month, he says. Search every mountain, every forest, every cave. And he gives Hanuman, heading south, Rama's ring. Today: the search, and the answer that comes from the last place anyone looked.",
+      "voice": "A lost set of keys. The whole house turned upside down. And then a grandmother, without getting up from her chair, asks: did you check your coat? Hold on to that. The rains end. And Sugriva, now king, comfortable, has half forgotten his promise. Lakshmana storms into the monkey city so angry the walls seem to shake, and it takes Tara, the wise queen, to calm him down. Then Sugriva moves fast. He sends out his whole army, in four great search parties: north, east, west and south. One month, he says. Search every mountain, every forest, every cave. And he gives Hanuman, heading south, Rama's ring. Today: the search, and the answer that comes from the last place anyone looked.",
       "screen": ["`THE RAINS END.` → `LAKSHMANA STORMS IN.` → `FOUR ARMIES, FOUR DIRECTIONS.` → `HANUMAN GETS THE RING.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "The northern, eastern and western parties come home with nothing. The southern party, with Hanuman and young Angada, Vali's son, searches and searches and finds nothing either. They get lost in an enchanted cave. The month runs out. And they sit down on the shore of the ocean, at the very tip of the land, and give up. Going home empty-handed to Sugriva feels impossible. So, in Valmiki's telling, they decide to fast there until they die. As they sit talking about their failure, Angada mentions Jatayu, the old bird who died fighting Ravana. And a voice answers from the cliffs. An enormous, ancient vulture, with no wings, has heard the name. It's Sampati, Jatayu's older brother. Long ago, he says, the two brothers raced toward the sun, and when Jatayu flew too close, Sampati spread his wings over him to shield him, and his own wings burned away. He's been stuck on this cliff ever since. He hadn't heard his brother was dead until now. And then Sampati gives them what a whole army couldn't find. A vulture's eyes see very far, he says. I can see her. Across the ocean, a hundred yojanas away, in the city of Lanka, sits Sita. And as he speaks, in the story, new wings begin to grow. The thing the story knows: the answer didn't come from running harder. It came from the oldest, most broken creature on the cliff, the one nobody thought to ask. And it came because someone spoke with love about his brother. That's how you get to the ocean's edge, and to Hanuman's great leap you already know.",
+      "voice": "The northern, eastern and western parties come home with nothing. The southern party, with Hanuman and young Angada, Vali's son, searches and searches and finds nothing either. They get lost in an enchanted cave. The month runs out. And they sit down on the shore of the ocean, at the very tip of the land, and give up. Going home empty-handed to Sugriva feels impossible. So, in Valmiki's telling, they decide to fast there until they die. As they sit talking about their failure, Angada mentions Jatayu, the old bird who died fighting Ravana. And a voice answers from the cliffs. An enormous, ancient vulture, with no wings, has heard the name. It's Sampati, Jatayu's older brother. Long ago, he says, the two brothers raced toward the sun, and when Jatayu flew too close, Sampati spread his wings over him to shield him, and his own wings burned away. He's been stuck on this cliff ever since. He hadn't heard his brother was dead until now. And then Sampati gives them what a whole army couldn't find. A vulture's eyes see very far, he says. I can see her. Across the ocean, a hundred yojanas away, in the city of Lanka, sits Sita. And as he speaks, in the story, new wings begin to grow. Notice where the answer came from. Not from running harder. It came from an old, broken bird on a cliff, the one nobody thought to ask. And it came because someone spoke with love about his brother. And his news is what sends Hanuman to the ocean's edge, and to the great leap you already know.",
       "screen": ["`THE MONTH RUNS OUT.` · `A VOICE FROM THE CLIFF: SAMPATI.` · `HE BURNED HIS WINGS FOR HIS BROTHER.` · `I CAN SEE HER: LANKA.`"]
     },
     {
@@ -48,7 +48,7 @@
     },
     { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 57 COUNTS.` → `TOMORROW: THE BRIDGE.`"] }
   ],
-  "howItsDone": "The search for Sita and Sampati's news are told in Ramayana readings and in the Kishkindha Kanda recitations many families hold; the scene leads straight into the Sundara Kanda, Hanuman's leap to Lanka, which many Hindus recite on its own.",
+  "howItsDone": "The search for Sita and Sampati's news are told in Ramayana readings and recitations; the scene leads straight into the Sundara Kanda, Hanuman's leap to Lanka, which is often recited on its own.",
   "games": {
     "match": {
       "prompt": "who did what — tap the pairs.",
@@ -57,7 +57,7 @@
     "myth": [
       ["the northern army found Sita", false, "north, east and west came back with nothing. the southern party got the news."],
       ["Sampati was Jatayu's older brother", true, "he burned his own wings shielding Jatayu from the sun."],
-      ["the southern party nearly gave up", true, "the month ran out, and they sat on the shore, ready to fast until they died."]
+      ["the southern party gave up before the news came", true, "the month ran out, and they sat on the shore, ready to fast until they died."]
     ],
     "fork": {
       "setup": "you're the southern search party. the month is over, you've found nothing, and going home feels impossible. what do you do?",
@@ -82,7 +82,8 @@
       "Sampati's account of shielding Jatayu from the sun, the distance of a hundred yojanas, and his wings regrowing follow Valmiki as remembered; please confirm.",
       "The enchanted cave (Svayamprabha's cave) is mentioned without its name; confirm.",
       "The southern party's decision to fast to death (prayopavesha) is described plainly; confirm the framing is appropriate.",
-      "Callbacks: the ring (day 33), the leap (day 32), and Hanuman's forgotten strength (day 30) are from the Hanuman week."
+      "Callbacks: the ring (day 33), the leap (day 32), and Hanuman's forgotten strength (day 30) are from the Hanuman week.",
+      "Editor review (days 57–75): hook no longer opens with 'Ever…'; replaced the stock turn 'The thing the story knows' and the superlative 'oldest, most broken creature'; fixed the garbled closing line about the leap; softened 'many families/many Hindus' in howItsDone; myth now says the party gave up (they did)."
     ]
   },
   "meta": { "index": "57. The search · — · monkeys sent in four directions; Sampati the vulture's news · looking in the wrong direction · ask the old bird", "writer": "writer agent (hinduism 52–81)", "written": "2026-09-30" }

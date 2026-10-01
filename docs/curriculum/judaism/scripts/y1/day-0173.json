@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Someone offers you something you didn't quite earn. A gift from a person who'll want a favor later. Credit for a project someone else mostly did. A discount you know is a mistake. It's right there, and taking it would be easy, and nobody would really blame you. Most of us take it. Maybe we tell ourselves we deserve it anyway. In the middle of the portion of Lech Lecha, Abram is offered a whole city's wealth. He's earned it, by the rules of war. Everyone would expect him to take it. Today, what he says instead.",
+      "voice": "Someone offers you something you didn't quite earn. A gift from a person who'll want a favor later. Credit for a project someone else mostly did. A discount you know is a mistake. It's right there, and taking it would be easy, and nobody would really blame anyone for it. In the middle of the portion of Lech Lecha, Abram is offered a whole city's wealth. He did win it, in battle. The king himself tells him to keep it. Today, what he says instead.",
       "screen": ["`SOMETHING YOU DIDN'T QUITE EARN.` → `A WHOLE CITY'S WEALTH.` → `WHAT ABRAM SAYS INSTEAD.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Here's the story. Four kings make war on five kings, including the king of Sodom. Sodom loses. The victors carry off its people and its goods, and among the captives is Abram's nephew Lot. Abram hears, gathers three hundred eighteen men from his household, chases the kings north through the night, and rescues everyone: Lot, the people, the goods. Now Abram is the hero, holding all of Sodom's wealth. The king of Sodom comes out to meet him and makes an offer that sounds generous: give me the people, and keep the goods for yourself. It's the custom; to the victor go the spoils. And Abram answers that he has lifted up his hand to God, Maker of heaven and earth, \"that I will not take a thread nor a shoe-latchet nor aught that is thine, lest thou shouldest say: I have made Abram rich.\" Not even a thread. Not even a sandal strap. Why so absolute? He says it himself: so no one can say Sodom made him rich. Sodom, a city the Torah has already called wicked. Abram doesn't want his fortune tied to that name. His blessing comes from God, or not at all. And notice he isn't stingy with others. He insists that the young men who fought with him get their share. His own principle doesn't cost anyone else. The Talmud adds a lovely twist. Because Abram refused a thread and a strap, it says, his descendants were given a thread and a strap: the blue thread of the tzitzit, the fringes, and the strap of the tefillin you met a few weeks ago. What you refuse to take, you're sometimes given back as something holy.",
+      "voice": "Here's the story. Four kings make war on five kings, including the king of Sodom. Sodom loses. The victors carry off its people and its goods, and among the captives is Abram's nephew Lot. Abram hears, gathers three hundred eighteen men from his household, chases the kings as far as Dan, attacks by night, and brings everything back: Lot, the people, the goods. Now Abram is the hero, holding all of Sodom's wealth. The king of Sodom comes out to meet him and makes an offer that sounds generous: give me the people, and keep the goods for yourself. And Abram answers that he has lifted up his hand to God, Maker of heaven and earth, \"that I will not take a thread nor a shoe-latchet nor aught that is thine, lest thou shouldest say: I have made Abram rich.\" Not even a thread. Not even a sandal strap. Why so absolute? He says it himself: so no one can say Sodom made him rich. Sodom, a city the Torah has already called wicked. Abram doesn't want his fortune tied to that name. His blessing comes from God, or not at all. And notice he isn't stingy with others. He sets aside what his young men have eaten, and says his allies, Aner, Eshcol and Mamre, should take their portion. His own principle doesn't cost anyone else. The Talmud adds a lovely twist. Because Abram refused a thread and a strap, it says, his descendants were given a thread and a strap: the blue thread of the tzitzit, the fringes, and the strap of the tefillin, from earlier on this path. The thread he wouldn't take from Sodom comes back to his children as a mitzvah.",
       "screen": ["`ABRAM RESCUES LOT AND THE GOODS.` · `KEEP THE GOODS FOR YOURSELF.` · `NOT A THREAD NOR A SHOE-LATCHET.` · `A THREAD AND A STRAP, GIVEN BACK.` · then, large: `NOT EVEN A THREAD.`"]
     },
     {
@@ -52,23 +52,23 @@
   "games": {
     "match": {
       "prompt": "who did what — tap the pairs.",
-      "pairs": [["Lot", "captured, then rescued"], ["318 men", "Abram's household, into battle"], ["the king of Sodom", "keep the goods for yourself"], ["the young men", "Abram insists they get their share"]]
+      "pairs": [["Lot", "captured, then rescued"], ["318 men", "Abram's household, into battle"], ["the king of Sodom", "keep the goods for yourself"], ["Aner, Eshcol and Mamre", "Abram's allies, who take their portion"]]
     },
     "myth": [
       ["Abram kept the spoils, as the custom was", false, "he refused even a thread or a shoe-latchet."],
-      ["Abram's refusal cost his fighting men their share", false, "he insisted the young men who fought with him be paid."],
+      ["Abram's refusal cost his fighting men their share", false, "he set aside what his young men had eaten, and his allies took their portion."],
       ["the Talmud links the thread and strap to tzitzit and tefillin", true, "because he refused them, it says, his descendants received them."]
     ],
     "fork": {
       "setup": "you're Abram. you've rescued Sodom's people and goods. the king says: give me the people, keep the goods. what do you say?",
       "options": ["thank you, I'll keep them.", "not a thread nor a shoe-latchet.", "give me the people too."],
       "answer": 1,
-      "reveal": "Abram refuses everything, so no one can say Sodom made him rich. but he makes sure his men get their share."
+      "reveal": "Abram refuses everything, so no one can say Sodom made him rich. but his allies still take their portion."
     },
     "original": { "script": "חוּט", "say": "KHOOT", "note": "Hebrew: a thread." },
     "trapdoor": [
       "what you thought: Abram was just being modest.",
-      "what it means: he refused to let his wealth come from Sodom, even a thread, while making sure others were paid.",
+      "what it means: he refused to let his wealth come from Sodom, even a thread, while making sure his allies took their portion.",
       "what a scholar hears: Genesis 14:23 'mi-chut ve'ad serokh na'al'; Sotah 17a and Chullin 88b link it to the tekhelet thread of tzitzit and the tefillin strap."
     ]
   },
@@ -85,7 +85,8 @@
       "Confirm JPS 1917 wording and punctuation of Genesis 14:23.",
       "Sotah 17a / Chullin 88b (Rava): as reward for 'from a thread to a shoe-strap', Israel merited the thread of tekhelet and the strap of tefillin. Confirm.",
       "The war of the four and five kings compressed; the chase to Dan and Hobah, Melchizedek and the tithe (14:18–20) are omitted for length. Confirm.",
-      "'Chases the kings north through the night' (14:14–15): confirm."
+      "'Chases the kings north through the night' (14:14–15): confirm.",
+      "Editor review (days 170–187): fixed Genesis 14:24 (the young men keep only what they ate; the share goes to the allies Aner, Eshcol and Mamre), in voice, match, myth, fork and trapdoor; 'north through the night' made 'as far as Dan, attacks by night' (14:14–15); cut 'most of us take it' and the unsourced 'to the victor go the spoils' custom."
     ]
   },
   "meta": { "index": "173. Lech Lecha: not a thread (Genesis 14:22–23) · — · Abram refuses the spoils of Sodom, not even a thread or a shoe-latchet · turn down something you didn't earn · not even a thread", "writer": "writer agent (judaism 151–180)", "written": "2026-09-30" }

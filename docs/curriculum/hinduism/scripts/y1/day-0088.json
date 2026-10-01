@@ -13,7 +13,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Navaratri: the Goddess, the buffalo demon, and nine long nights. Your line was nine nights, then the dawn. What did you say no to? Today, the darkest night of the year, and a row of little lamps. Day eighty-eight.",
+      "voice": "Yesterday, Navaratri: the Goddess, the buffalo demon, and nine long nights. Your line was nine nights, then the dawn. What did you say no to? Today, the darkest night of the month, and a row of little lamps. Day eighty-eight.",
       "screen": ["`NINE NIGHTS, THEN THE DAWN.`"]
     },
     {
@@ -25,13 +25,13 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "The word first. Diwali is the everyday form of the Sanskrit Deepavali. Deepa is a lamp. Avali is a row. A row of lamps. That's the whole festival in two words. Not one big light, a row of small ones, each one ordinary, each one a clay dish you could hold in your palm. And the lamps come on the darkest night on purpose. The new moon of Kartika. If you wanted to show light winning, you'd pick exactly this night. Now, who is expected? Rama, in the Ramayana's story. And in many homes, on the main night, Lakshmi too, the Goddess of wealth and good fortune, of plenty in every sense. Families clean the house from top to bottom in the days before, because the tradition says she comes to homes that are clean, bright and open. They draw rangoli, those patterns of colored powder, at the threshold. Some paint small footprints walking in, as if she's already on her way. They leave doors and windows open and lamps burning so she can find the house. Shopkeepers close their old account books and open new ones with a prayer. So the whole night is an act of welcome. A clean house. A lit path. An open door. Here's what's quietly remarkable. Nobody lights the lamps for themselves. You can see your own house. The lamps are for someone coming from outside, in the dark, looking for the way. Light the way home.",
+      "voice": "The word first. Diwali is the everyday form of the Sanskrit Deepavali. Deepa is a lamp. Avali is a row. A row of lamps. That's the whole festival in two words. Not one big light, a row of small ones, each one ordinary, each one a clay dish you could hold in your palm. And the lamps come on the darkest night on purpose. The new moon of Kartika. If you wanted to show light winning, you'd pick exactly this night. Now, who is expected? Rama, in the Ramayana's story. And in many homes, on the main night, Lakshmi too, the Goddess of wealth and good fortune, of plenty in every sense. Families clean the house from top to bottom in the days before, because the tradition says she comes to homes that are clean, bright and open. They draw rangoli, those patterns of colored powder, at the threshold. Some paint small footprints walking in, as if she's already on her way. They leave doors and windows open and lamps burning so she can find the house. Shopkeepers close their old account books and open new ones with a prayer. So the whole night is an act of welcome. A clean house. A lit path. An open door. Look at who the lamps are for. You can see your own house without them. The lamps are for someone coming from outside, in the dark, looking for the way. Light the way home.",
       "screen": ["`DEEPA, A LAMP. AVALI, A ROW.` · `THE DARKEST NIGHT, ON PURPOSE.` · `A CLEAN HOUSE, AN OPEN DOOR.` · `THE LAMPS ARE FOR SOMEONE ELSE.` · then, large: `LIGHT THE WAY HOME.`"]
     },
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: light one light, and think of who you'd guide home. If you can, light a candle, or switch on one small lamp and turn the others off. If you can't, picture a clay lamp on your windowsill. Watch the flame. Breathe. Now think of someone who's a long way from home right now. Far away, or lost in a hard season, or just distant from you lately. Picture your light reaching them, showing them the way back. The bell holds the time.",
+      "voice": "Here's the practice: light one light, and think of who you'd guide home. If you can, light a candle, or switch on one small lamp and turn the others off. If you can't, picture a clay lamp on your windowsill. Watch the flame. Breathe. Now think of the people who come home to you, or the ones you come home to. A partner on a late shift. A kid walking back from school. A parent you visit on Sundays. Picture your small light at the door, already lit, when they arrive. The bell holds the time.",
       "screen": []
     },
     {
@@ -43,7 +43,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: light the way home. Today, be one small lamp for someone: a message to the person you pictured, saying the door is open. Day eighty-eight.",
+      "voice": "Your line: light the way home. Today, leave one light on for someone who'll come in after you, or be at the door when they do. Day eighty-eight.",
       "screen": []
     },
     { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 88 COUNTS.` → `TOMORROW: HOLI.`"] }
@@ -57,19 +57,19 @@
     "myth": [
       ["Diwali falls on a full-moon night", false, "it's the new-moon night of Kartika, the darkest night, chosen on purpose."],
       ["Diwali comes from Deepavali, a row of lamps", true, "deepa, a lamp; avali, a row."],
-      ["families keep their doors shut on Diwali night", false, "many leave doors and windows open and lamps burning so Lakshmi can find the house."]
+      ["the lamps are mainly for the people inside the house", false, "they're set out for someone coming from outside in the dark: Rama in the story, Lakshmi in many homes."]
     ],
     "fork": {
-      "setup": "it's Diwali night. your house is clean, the lamps are lit, the rangoli is drawn. what do you do with the front door?",
-      "options": ["lock it, it's late.", "leave it open, with lamps burning.", "cover it with a curtain."],
+      "setup": "it's the new-moon night. you have oil, wicks and a pile of small clay dishes. how do you light the house?",
+      "options": ["one big lamp in the middle of the room.", "a row of small lamps along every sill and step.", "no lamps until the moon comes up."],
       "answer": 1,
-      "reveal": "many families leave it open, so Lakshmi, and anyone coming home in the dark, can find the way in."
+      "reveal": "the festival's name is the answer: deepa, a lamp; avali, a row. many small lights, set out for someone coming home in the dark."
     },
     "original": { "script": "दीपावली", "say": "dee-PAA-vuh-lee", "note": "Sanskrit: deepa, a lamp, and avali, a row. Diwali is its everyday form." },
     "trapdoor": [
       "what you thought: fireworks, sweets and new clothes.",
       "what it means: a row of small lamps on the darkest night, lit for someone coming home: Rama, and in many homes Lakshmi.",
-      "what a scholar hears: deepa plus avali, a row of lamps, on the amavasya of Kartika; the Lakshmi puja and the new account books show how the festival joined the household year to the market year."
+      "what a scholar hears: deepa plus avali, a row of lamps, on the amavasya of Kartika; the Lakshmi puja and the new account books tie the festival to the merchant's new year."
     ]
   },
   "sources": [
@@ -82,7 +82,8 @@
     "notes": [
       "The Ramayana describes Ayodhya's celebration at Rama's return; the lamps specifically are festival tradition rather than Valmiki's text. The hook says 'you've heard Diwali's great story' (day 81, another writer). Confirm consistency.",
       "Lakshmi puja on the Kartika amavasya; the footprints and open doors are widespread customs. Confirm.",
-      "Chopda puja / new account books (especially among Gujarati and Marwari merchants). Confirm 'shopkeepers' generalization."
+      "Chopda puja / new account books (especially among Gujarati and Marwari merchants). Confirm 'shopkeepers' generalization.",
+      "Review (2026-10-01): the review called it 'the darkest night of the year' (it is the new moon, the darkest night of the month); fixed. Cut 'quietly remarkable' and the absolute 'nobody lights the lamps for themselves'. The fork, a myth item, the practice and the carry repeated day 81 (open door for Lakshmi, someone far from home, a message); they now turn on the row of small lamps and the people who come home to you."
     ]
   },
   "meta": { "index": "88. Diwali: the row of lamps · Diwali · Rama comes home after fourteen years, and a whole city lights lamps to show him the way · light one light and think of who you'd guide home · light the way home", "writer": "writer agent (hinduism 82–111)", "written": "2026-09-30" }

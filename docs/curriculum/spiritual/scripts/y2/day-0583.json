@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Walk through an old cemetery and read the stones. A doctor. A schoolteacher who taught for forty years. A child. A soldier. Somebody's beloved grandmother. Each one was the center of a whole world, and now the names are fading in the rain. It can feel crushing. Or it can feel like company. Marcus Aurelius took that walk in his head, in book six. And the stones he read had some very famous names on them.",
+      "voice": "The stones in an old cemetery read like a town meeting. A doctor. A schoolteacher. A child. A soldier. Somebody's beloved grandmother. Each one was the center of a whole world, and now the names are fading in the rain. It can feel crushing. Or it can feel like company. Marcus Aurelius took that walk in his head, in book six. And the stones he read had some very famous names on them.",
       "screen": ["`READING THE STONES.` → `CRUSHING, OR COMPANY.` → `FAMOUS NAMES.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the roll call. In Meditations six, forty-seven, Marcus tells himself to keep in mind that people of every kind, every trade and every nation have died. Then he starts naming. Great speakers. Noble philosophers: Heraclitus, Pythagoras, Socrates. Heroes of old days, generals and tyrants. Then the sharp minds: Eudoxus, Hipparchus, Archimedes, the astronomers and the mathematician. All gone where we're all going. Second, why he names them. Marcus loved these people. Heraclitus gave the Stoics their fire and river. Socrates was the model of a philosopher who lived what he taught. Remembering that even they died is not a way of shrinking them. It's a way of putting himself in their line. If Socrates had to die, Marcus can stop acting as if he won't. Third, the turn. After the list, he asks what's left that's worth a great deal. His answer: to live through life in truth and justice, and to be kindly even toward liars and the unjust. The dead philosophers didn't escape death. What they did was their work. That's the part that lasts in the only way that matters to Marcus: it was done. Fourth, honoring them. Every one of us is downstream of someone who taught us and is gone. A grandparent who explained how to be honest. A teacher who saw something in you. A writer you read once at nineteen. Remembering them on purpose is a Stoic practice, and an old human one. Book one of the Meditations is exactly that: Marcus thanking, one by one, the people who formed him.",
+      "voice": "First, the roll call. In Meditations six, forty-seven, Marcus tells himself to keep in mind that people of every kind, every trade and every nation have died. Then he starts naming. Great speakers. Noble philosophers: Heraclitus, Pythagoras, Socrates. Heroes of old days, generals and tyrants. Then the sharp minds: Eudoxus, Hipparchus, Archimedes, men of keen natural talent, as he puts it. All in the dust, he says, where we're all going. Second, why he names them. These aren't strangers to him. He names Heraclitus and Socrates elsewhere in the Meditations too, and here he calls them noble philosophers. Remembering that even they died is not a way of shrinking them. It's a way of putting himself in their line. If Socrates had to die, Marcus can stop acting as if he won't. Third, the turn. After the list, he asks what's left that's worth a great deal. His answer: to live through life in truth and justice, and to be kindly even toward liars and the unjust. The dead philosophers didn't escape death. What they did was their work. That's the part that lasts, in Marcus's sense: it was done. Fourth, honoring them. Every one of us is downstream of someone who taught us and is gone. A grandparent who explained how to be honest. A teacher who saw something in you. A writer you read once at nineteen. Remembering them on purpose is a practice Marcus kept. Book one of the Meditations is exactly that: Marcus thanking, one by one, the people who formed him.",
       "screen": ["`EVERY KIND OF PERSON HAS DIED.` · `HERACLITUS, PYTHAGORAS, SOCRATES.` · `WHAT'S WORTH MUCH: TRUTH, JUSTICE.` · `REMEMBER YOUR OWN DEAD TEACHERS.` · then, large: `THEY DID THEIR WORK.`"]
     },
     {
@@ -48,11 +48,11 @@
     },
     { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 583 COUNTS.` → `TOMORROW: PRINCIPLES LIVE.`"] }
   ],
-  "howItsDone": "Many readers of Marcus keep a habit like his book one: naming and thanking the teachers, living and dead, who formed them, and remembering that the great ones also died after doing their work.",
+  "howItsDone": "Some readers of Marcus keep a habit like his book one: naming and thanking the teachers, living and dead, who formed them, and remembering that the great ones also died after doing their work.",
   "games": {
     "match": {
       "prompt": "the dead philosophers — tap the pairs.",
-      "pairs": [["Heraclitus", "gave the Stoics fire and river"], ["Socrates", "lived what he taught"], ["Archimedes", "named among the sharp minds"], ["book one", "Marcus thanks those who formed him"]]
+      "pairs": [["Heraclitus, Pythagoras, Socrates", "named as noble philosophers"], ["what's worth much", "living in truth and justice"], ["Eudoxus, Hipparchus, Archimedes", "men of keen natural talent"], ["book one", "Marcus thanks those who formed him"]]
     },
     "myth": [
       ["Marcus lists Heraclitus, Pythagoras and Socrates among the dead", true, "6.47 names them among the noble philosophers who have gone."],
@@ -64,11 +64,11 @@
       "answer": 1,
       "reveal": "Meditations 6.47 ends: one thing here is worth much, to live in truth and justice, with kindness even toward liars and the unjust."
     },
-    "original": { "script": "φιλόσοφος", "say": "fee-LOH-so-fos", "note": "Greek: a lover of wisdom, from philos (loving) and sophia (wisdom)." },
+    "original": { "script": "φιλόσοφος", "say": "fee-LOH-so-fos", "note": "Greek: philosopher; 6.47 names Heraclitus, Pythagoras and Socrates among the philosophers." },
     "trapdoor": [
       "what you thought: everyone dies, so nothing matters.",
       "what it means: even the greatest died, and what counted was the work they did; remembering them puts you in their line.",
-      "what a scholar hears: 6.47 mixes philosophers with scientists like Eudoxus and Hipparchus, and with lesser-known names whom scholars can't now identify, so even the list shows how memory fades."
+      "what a scholar hears: 6.47 moves from famous names to ordinary ones and asks what harm death does even to those whose names are wholly unknown, so the roll call shades from the remembered to the forgotten."
     ]
   },
   "sources": [
@@ -79,6 +79,7 @@
     "status": "pending",
     "keeper": null,
     "notes": [
+      "Editor review (y2 pass): hook no longer opens 'Walk through' and drops the 'forty years' number; cut unsourced 'Marcus loved these people', 'Heraclitus gave the Stoics fire and river', the 'astronomers and mathematician' labels, the philos/sophia etymology, the scholarly claim about unidentifiable names, and an 'only' superlative; match pairs now come from 6.47's own wording.",
       "Meditations 6.47 paraphrased: all kinds of men dead; names including Philistion, Phoebus, Origanion; orators, philosophers Heraclitus, Pythagoras, Socrates; heroes, generals, tyrants; Eudoxus, Hipparchus, Archimedes; Menippus; what's worth much is to live in truth and justice, benevolent even to liars and the unjust. Confirm list and closing line.",
       "Trapdoor claim that some names in 6.47 (e.g. Philistion, Phoebus, Origanion) are obscure to modern scholars: confirm.",
       "Heraclitus as source of Stoic fire and flux imagery: standard, but confirm the phrasing."

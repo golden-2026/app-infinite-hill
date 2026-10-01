@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Walk through a big European art museum and you'll keep meeting the same scene, in room after room. A man with his hands bound, a crown of thorns, a red or purple cloak hanging off his shoulders, sometimes a reed in his hand like a fake scepter. Next to him, a man in fine clothes, pointing. Below, faces in a crowd. Painters from Titian to Caravaggio returned to it. The paintings usually carry a two-word Latin label. Those two words come from today's few verses.",
-      "screen": ["`ROOM AFTER ROOM, ONE SCENE.` → `THORNS, A CLOAK, A POINTING HAND.` → `TWO LATIN WORDS.`"]
+      "voice": "Two Latin words label a scene that painters kept coming back to. A man with his hands bound, a crown of thorns, a red or purple cloak hanging off his shoulders, sometimes a reed in his hand like a fake scepter. Next to him, a man in fine clothes, pointing. Below, faces in a crowd. Titian painted it. So did Caravaggio. It hangs in churches and galleries, one version after another. Those two words come from today's few verses.",
+      "screen": ["`ONE SCENE, PAINTED AGAIN AND AGAIN.` → `THORNS, A CLOAK, A POINTING HAND.` → `TWO LATIN WORDS.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Pilate has found no case against Jesus. He offers to release him, and the crowd outside calls for Barabbas instead. So Pilate has him scourged, whipped, a Roman punishment so brutal that people sometimes died of it. Then the soldiers turn it into a game. They plait a crown out of thorns and press it on his head. They throw a purple garment over him, the color of emperors. And they come up to him again and again saying, hail, king of the Jews, and strike him. Then Pilate walks him out in front of the crowd. In the Douay-Rheims: \"Jesus therefore came forth, bearing the crown of thorns and the purple garment. And he saith to them: Behold the Man.\" In Latin, Ecce homo. What did Pilate mean? Maybe, look at him, he's harmless, he's had enough. Maybe contempt. John doesn't say. But Christians have heard more in it than Pilate meant. Behold the man: not just this man, but what a human being looks like when he has been mocked and stripped of everything, and still is who he is. The Church sees there, too, the servant Isaiah described, despised and the most abject of men. This is why the scene sits in so many museums and in the Stations of the Cross. It asks the viewer to do what Pilate asked the crowd: look. Not look away. Look at the man in the purple rag and see a person, a king even, in the one everyone is laughing at.",
+      "voice": "Pilate has found no case against Jesus. He offers to release him, and the crowd outside calls for Barabbas instead. So Pilate has him scourged. Then the soldiers turn it into a game. They plait a crown out of thorns and press it on his head. They throw a purple garment over him, a mock king's robe. And they come up to him again and again saying, hail, king of the Jews, and strike him. Then Pilate walks him out in front of the crowd. In the Douay-Rheims: \"Jesus therefore came forth, bearing the crown of thorns and the purple garment. And he saith to them: Behold the Man.\" In Latin, Ecce homo. What did Pilate mean? Maybe, look at him, he's harmless, he's had enough. Maybe contempt. John doesn't say. But Christians have heard more in it than Pilate meant. Behold the man: not just this man, but what a human being looks like when he has been mocked and stripped of everything, and still is who he is. The Church sees there, too, the servant Isaiah described, in the Douay: \"Despised, and the most abject of men.\" That's part of why painters kept coming back to it. It asks the viewer to do what Pilate asked the crowd: look. Not look away. Look at the man in the purple rag and see a person, a king even, in the one everyone is laughing at.",
       "screen": ["`SCOURGED, THEN MOCKED.` · `A CROWN OF THORNS, A PURPLE CLOAK.` · `ECCE HOMO: BEHOLD THE MAN.` · `LOOK, AND DON'T LOOK AWAY.` · then, large: `ECCE HOMO.`"]
     },
     {
@@ -52,11 +52,11 @@
   "games": {
     "match": {
       "prompt": "behold the man — tap the pairs.",
-      "pairs": [["the crowd", "asks for Barabbas"], ["the soldiers", "plait a crown of thorns"], ["the purple garment", "the color of emperors"], ["Ecce homo", "behold the man"]]
+      "pairs": [["the crowd", "asks for Barabbas"], ["the soldiers", "plait a crown of thorns"], ["the purple garment", "a mock king's robe"], ["Ecce homo", "behold the man"]]
     },
     "myth": [
       ["John tells us exactly what Pilate meant by behold the man", false, "John doesn't say; it may have been pity, contempt or both."],
-      ["Ecce homo is the Latin Vulgate's wording of John 19:5", true, "the two words that label countless paintings of the scene."],
+      ["Ecce homo is the Latin Vulgate's wording of John 19:5", true, "the two words that label many paintings of the scene."],
       ["the crowning with thorns is one of the rosary's mysteries", true, "the third of the Sorrowful Mysteries."]
     ],
     "fork": {
@@ -69,18 +69,18 @@
     "trapdoor": [
       "what you thought: Pilate introducing his prisoner.",
       "what it means: a mocked, beaten man shown to the crowd, and an invitation to look, not look away.",
-      "what a scholar hears: anthrōpos means human being, not only male; the church reads the scene with Isaiah 53's suffering servant; the 'Ecce Homo arch' in Jerusalem is a later Roman arch."
+      "what a scholar hears: anthrōpos means human being, not only male; the church reads the scene with Isaiah 53's suffering servant; the Vulgate's ecce homo gave the scene its name."
     ]
   },
   "sources": [
     { "ref": "John 19:5", "work": "The Bible", "translation": "Douay-Rheims (Challoner)", "quoted": "Jesus therefore came forth, bearing the crown of thorns and the purple garment. And he saith to them: Behold the Man." },
     { "ref": "John 18:38–19:5; John 19:14", "work": "The Bible", "translation": null, "quoted": null },
-    { "ref": "Isaiah 53:3", "work": "The Bible", "translation": null, "quoted": null }
+    { "ref": "Isaiah 53:3", "work": "The Bible", "translation": "Douay-Rheims (Challoner)", "quoted": "Despised, and the most abject of men" }
   ],
   "review": {
     "status": "pending",
     "keeper": null,
-    "notes": [
+    "notes": ["Editor review (2026-10-01): new hook (old one opened 'Walk through a big European art museum'); cut the uncited claim that scourging sometimes killed and 'the color of emperors' (teach, match); Isaiah 53:3 now quoted exactly from the Douay and cited; 'countless paintings' to 'many'; trapdoor's uncited Ecce Homo arch claim replaced.", 
       "Douay John 19:5 has the first clause in parentheses in some printings; quoted without them. Verify.",
       "Isaiah 53:3 Douay 'despised, and the most abject of men' is woven in without quotation marks. Verify or keep as paraphrase.",
       "Titian and Caravaggio both painted Ecce Homo. Confirm.",

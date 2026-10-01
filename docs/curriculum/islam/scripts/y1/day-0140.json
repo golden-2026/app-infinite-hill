@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "You've washed. Shoes are off. You step into the prayer hall, and the first surprise is how empty it is. No pews. No altar. No statues. Mostly carpet, often with lines woven into it. But look at the far wall. There's a curved niche set into it, sometimes plain, sometimes covered in tiles and calligraphy. And just to its right, a small staircase that leads nowhere, with a little platform at the top. Two pieces of furniture in a nearly empty room. Each has a job. Today: mihrab and minbar.",
+      "voice": "You've washed. Shoes are off. You step into the prayer hall, and the first surprise is how empty it is. No pews. No altar. No statues. Mostly carpet, often with lines woven into it. But look at the far wall. There's a curved niche set into it, sometimes plain, sometimes covered in tiles and calligraphy. And beside it, a small staircase that leads nowhere, with a little platform at the top. Two pieces of furniture in a nearly empty room. Each has a job. Today: mihrab and minbar.",
       "screen": ["`NO PEWS, NO ALTAR, NO STATUES.` → `A CURVED NICHE IN THE WALL.` → `STAIRS THAT LEAD NOWHERE.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "The niche is the mihrab. Its job is simple: it marks the qiblah, the direction of the Kaaba in Mecca, which you met on day ninety-nine. Walk into any mosque in the world, look for the mihrab, and you know which way everyone will face. The imam who leads the prayer stands in front of it, and in many mosques its curve helps carry his voice back into the room. The word itself is old. The Qur'an uses it in the story of Maryam, the mother of Isa: whenever Zakariyya came to her in the mihrab, her place of prayer, he found food with her, and asked where it came from. In the Prophet's own mosque there was no niche at all; historians say the curved mihrab came a few generations later, when that mosque was rebuilt. The staircase is the minbar, the pulpit, where the imam gives the sermon at the Friday prayer. And its story is one of the most tender in Bukhari. At first, the Prophet ﷺ gave his sermons leaning against the trunk of a palm tree. Then a minbar of three wooden steps was made for him. The first Friday he climbed it, the companions heard the old palm trunk cry out, like a child, or like a camel longing for its young. The Prophet came down, and put his hand on it, and held it until it went quiet. The mihrab says where to face. The minbar says who will speak. But neither is holy in itself. What they do together is point a whole room one way, so that the rich man and the cleaner, the old and the new, face the same way.",
+      "voice": "The niche is the mihrab. Its job is simple: it marks the qiblah, the direction of the Kaaba in Mecca, which you met on day ninety-nine. Find the mihrab in a mosque, and you know which way everyone will face. The imam who leads the prayer stands in front of it. The word itself is in the Qur'an. The Qur'an uses it in the story of Maryam, the mother of Isa: whenever Zakariyya came to her in the mihrab, her place of prayer, he found food with her, and asked where it came from. There it means a place of prayer, a sanctuary, not a niche in a wall. The staircase is the minbar, the pulpit, where the imam gives the sermon at the Friday prayer. Bukhari tells a tender story about it. At first, the Prophet ﷺ gave his sermons standing by the trunk of a palm tree. Then a wooden minbar was made for him. One Friday, when he climbed it, the companions heard the old palm trunk cry out like a child; another report says like a she-camel. The Prophet came down, and put his hand on it, and held it until it went quiet. The mihrab says where to face. The minbar says who will speak. Neither is an altar. What they do together is point a whole room one way, so that the rich man and the cleaner, the old and the new, face the same way.",
       "screen": ["`MIHRAB — THE NICHE THAT SHOWS THE QIBLAH.` · `MARYAM IN THE MIHRAB.` · `MINBAR — THE STEPS FOR THE SERMON.` · `THE PALM TRUNK THAT CRIED.` · then, large: `EVERYONE FACES THE SAME WAY.`"]
     },
     {
@@ -55,32 +55,34 @@
       "pairs": [["mihrab", "the niche that shows the qiblah"], ["minbar", "the steps for the Friday sermon"], ["the palm trunk", "cried when the Prophet ﷺ moved"], ["Zakariyya", "found food with Maryam in the mihrab"]]
     },
     "myth": [
-      ["the Prophet's mosque had a decorated mihrab from the start", false, "historians say the curved niche came a few generations later, when the mosque was rebuilt."],
-      ["the first minbar had three wooden steps", true, "it replaced the palm trunk he used to lean on (Bukhari)."],
+      ["the word mihrab appears in the Qur'an", true, "Zakariyya found food with Maryam in the mihrab, her place of prayer (3:37)."],
+      ["the minbar is where the Friday sermon is given", true, "before it was made, the Prophet ﷺ stood by a palm trunk to speak (Bukhari)."],
       ["the mihrab is an altar where offerings are placed", false, "it only marks the direction of prayer; the imam stands in front of it."]
     ],
     "fork": {
       "setup": "it's the first Friday on the new minbar. as the Prophet ﷺ begins, the old palm trunk he used to lean on cries out like a child. what does he do?",
       "options": ["carry on with the sermon", "come down, put his hand on it, and hold it until it's quiet", "have the trunk taken away"],
       "answer": 1,
-      "reveal": "Bukhari reports he came down and held the trunk until it went quiet. one of the most tender stories in the collection."
+      "reveal": "Bukhari reports he came down and held the trunk until it went quiet. in one report he said it wept for the remembrance it used to hear (Bukhari 2095)."
     },
     "original": { "script": "مِحْرَاب", "say": "mih-RAAB", "note": "Arabic: the niche that marks the qiblah; the Qur'an uses the word for Maryam's place of prayer." },
     "trapdoor": [
       "what you thought: the fancy arch is the mosque's altar.",
       "what it means: the mihrab only marks which way to face, and the minbar beside it is where the sermon is given.",
-      "what a scholar hears: mihrab in 3:37; the concave mihrab dated to the Umayyad rebuilding of Medina; the weeping trunk (Bukhari 3583)."
+      "what a scholar hears: mihrab in 3:37; the minbar of tamarisk wood (Bukhari 917); the weeping trunk (Bukhari 3583)."
     ]
   },
   "sources": [
     { "ref": "Qur'an 3:37 (Zakariyya finds food with Maryam in the mihrab)", "work": "The Qur'an", "translation": null, "quoted": null },
     { "ref": "Sahih al-Bukhari 3583, 3584 (the palm trunk that cried)", "work": "Sahih al-Bukhari", "translation": null, "quoted": null },
-    { "ref": "Sahih al-Bukhari 917 (the minbar of tamarisk wood)", "work": "Sahih al-Bukhari", "translation": null, "quoted": null }
+    { "ref": "Sahih al-Bukhari 917 (the minbar of tamarisk wood)", "work": "Sahih al-Bukhari", "translation": null, "quoted": null },
+    { "ref": "Sahih al-Bukhari 2095 (the trunk wept for the remembrance it used to hear)", "work": "Sahih al-Bukhari", "translation": null, "quoted": null }
   ],
   "review": {
     "status": "pending",
     "keeper": null,
     "notes": [
+      "Editor review 2026-10-01: uncited history (the mihrab added at a later rebuilding), the acoustics claim, the 'three steps' count and 'one of the most tender' superlative cut; the trunk's cry now matches Bukhari's wording; 'neither is holy in itself' (a narrator verdict) changed to 'neither is an altar'; a myth replaced.",
       "Hadith numbers cited from memory; please confirm.",
       "Dating of the concave mihrab to the Umayyad-era rebuilding of the Prophet's mosque (c. 707–709, under Umar ibn Abd al-Aziz as governor) is the common historical account; confirm.",
       "'Its curve helps carry his voice' is commonly said; soften if not wanted.",

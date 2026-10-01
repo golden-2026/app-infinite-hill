@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Imagine the final exam of your life. What's on it? Most of us, if we're honest, picture something like a report card. How much did you get done. How much did you earn. Did you keep the rules. How many people know your name. Maybe a section on religion: did you pray enough, go to church enough, believe the right things. John of the Cross wrote down what he thought would be on that exam. It's one line, from a small collection of his sayings, and it's short enough to fit on your palm. Today's word is how it begins.",
+      "voice": "A final exam with a whole life on it. What would the questions be? A report card is the easy guess. How much got done. How much got earned. Were the rules kept. How many people know the name. Maybe a section on religion: enough prayers, enough Sundays, the right beliefs. John of the Cross wrote down what he thought would be on that exam. It's one line, from a small collection of his sayings, and it's short enough to fit on your palm. Today's word is how it begins.",
       "screen": ["`THE FINAL EXAM OF YOUR LIFE.` → `A REPORT CARD?` → `ONE LINE ON A PALM.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the sayings. John wrote short, sharp sayings on slips of paper for the friars and nuns he guided. They were gathered later and are known as the Sayings of Light and Love. Some are a single sentence. Second, the line. In John's Spanish: \"A la tarde te examinarán en el amor.\" In the evening, you will be examined in love. The evening is the end of life. The exam has one subject. Not how much you knew about prayer. Not how many dark nights you understood. Love. The Catechism of the Catholic Church quotes this line when it teaches about judgment. Third, where he got it. It's not John's invention. It comes straight from Jesus's picture of the last judgment in Matthew's Gospel, where the nations are sorted by whether they fed the hungry, welcomed the stranger, visited the sick and the prisoner. And the king says, in the Douay-Rheims: \"as long as you did it to one of these my least brethren, you did it to me.\" Think back to John's own life: the boy washing the sick in the hospital, the prisoner in the dark room. He knew this passage from both sides. Fourth, what to do about it. Near the end of his life, John wrote a letter to a nun who was upset about how someone had treated her. His advice has been repeated ever since. Where there is no love, put love, and you will draw out love. Not wait for it. Put it there. Everything we've learned about nights and fire and nada comes back to this. The whole point was love.",
+      "voice": "First, the sayings. Tradition says John wrote short, sharp sayings on slips of paper for the friars and nuns he guided. They were gathered later and are known as the Sayings of Light and Love. Some are a single sentence. Second, the line. In John's Spanish: \"A la tarde te examinarán en el amor.\" In the evening, you will be examined in love. The evening is the end of life. The exam has one subject. Not how much you knew about prayer. Not how many dark nights you understood. Love. The Catechism of the Catholic Church quotes this line when it teaches about judgment. Third, where he got it. It's not John's invention. It comes straight from Jesus's picture of the last judgment in Matthew's Gospel, where the nations are sorted by whether they fed the hungry, welcomed the stranger, visited the sick and the prisoner. And the king says, in the Douay-Rheims: \"as long as you did it to one of these my least brethren, you did it to me.\" Think back to John's own life: the boy washing the sick in the hospital, the prisoner in the dark room. He knew this passage from both sides. Fourth, what to do about it. Near the end of his life, John wrote to a Carmelite nun who was upset at how he himself was being treated by his superiors. He told her not to grieve over it, and added: where there is no love, put love, and you will draw out love. Not wait for it. Put it there. Everything we've learned about nights and fire and nada comes back to this. The whole point was love.",
       "screen": ["`SAYINGS ON SLIPS OF PAPER.` · `EXAMINED IN LOVE.` · `THE LEAST OF THESE.` · `WHERE THERE IS NO LOVE, PUT LOVE.` · then, large: `A LA TARDE TE EXAMINARÁN EN EL AMOR.`"]
     },
     {
@@ -60,10 +60,10 @@
       ["John's saying comes from nowhere in scripture", false, "it echoes Jesus's picture of the last judgment in Matthew 25."]
     ],
     "fork": {
-      "setup": "a nun writes to John, hurt by how someone in her community has treated her. what does he advise?",
+      "setup": "a nun writes to John, upset at how his own superiors are treating him. what does he tell her?",
       "options": ["report them to the superior.", "where there is no love, put love, and you will draw out love.", "avoid them until they apologize."],
       "answer": 1,
-      "reveal": "that's his advice in a letter near the end of his life, and it's been repeated ever since."
+      "reveal": "that's his line in a letter from the last year of his life: don't grieve over it, put love there."
     },
     "original": { "script": "A la tarde te examinarán en el amor", "say": "ah lah TAR-deh teh ek-sah-mee-nah-RAHN en el ah-MOHR", "note": "Spanish: in the evening, you will be examined in love. from John's Sayings of Light and Love." },
     "trapdoor": [
@@ -82,6 +82,7 @@
     "status": "pending",
     "keeper": null,
     "notes": [
+      "Editor review 2026-10-01: rewrote the hook ('Imagine the final exam', 'most of us, if we're honest') so it no longer tells the listener what they picture; corrected the letter's context (the nun was upset at how John himself was being treated, not how someone had treated her) in the teach and the fork; cut 'repeated ever since'; marked the slips-of-paper detail as tradition. Confirm: letter of 6 July 1591 to M. Maria de la Encarnacion (Segovia), context of his own treatment.",
       "Spanish saying quoted from the original; numbering differs between editions (59 or 64). Confirm number and wording.",
       "CCC 1022 quotes this saying; confirm.",
       "'Where there is no love, put love, and you will draw out love' (donde no hay amor, ponga amor, y sacará amor): letter to María de la Encarnación, Segovia, July 6, 1591. Paraphrased in English without quotation marks; confirm.",

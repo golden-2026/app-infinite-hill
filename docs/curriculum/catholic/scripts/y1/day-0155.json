@@ -19,14 +19,14 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Open a Catholic calendar, the kind that hangs in a parish hall, and look at any square. There's a name in it. March 19, Joseph. August 15, Mary taken up into heaven. November 1, all the saints at once. Then a random Tuesday in July, and there's still a name: some bishop, some farmer's daughter, some martyr from a city you've never heard of. Almost no day is empty. And a few of the squares are printed in red, because on those days Catholics are asked to go to Mass, even on a Wednesday.",
-      "screen": ["`A NAME IN EVERY SQUARE.` → `A FEW PRINTED IN RED.`"]
+      "voice": "Open a Catholic calendar, the kind that hangs in a parish hall, and look at any square. There's a name in it. March 19, Joseph. August 15, Mary taken up into heaven. November 1, all the saints at once. Then a random Tuesday in July, and there's still a name: some bishop, some farmer's daughter, some martyr from a city you've never heard of. Almost no day is empty. And a few of the squares carry a special mark, because on those days Catholics are asked to go to Mass, even on a Wednesday.",
+      "screen": ["`A NAME IN EVERY SQUARE.` → `A FEW SPECIALLY MARKED.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Those red days are holy days of obligation. Catholics are asked to go to Mass every Sunday, and on a handful of great feasts they're asked to do the same, whatever day of the week it falls on, and to rest from unnecessary work where they can. The Church's general law lists ten of these feasts, among them Christmas, the Epiphany, the Ascension, Mary the Mother of God, the Assumption, Saint Joseph, Peter and Paul, and All Saints. But it lets each country's bishops trim the list or move a feast to the nearest Sunday. So the list really does vary. In the United States there are six, and some of them are lifted when they fall right next to a weekend. Ask a Catholic in Ireland or Italy and you'll get a different answer. Then there's everyone else on the calendar. The saints' days. The Church keeps a general calendar of saints for the whole world, and a much longer book, the Roman Martyrology, which lists saints and martyrs for every single day of the year, often a dozen or more. Here's the surprising part: a saint's feast is usually kept on the day they died, not the day they were born. The old Latin name for that day is dies natalis, birthday, because the Church thinks of it as their birthday into heaven. So every morning, somewhere, somebody is keeping a birthday for someone who died a long time ago. Parishes are named for them. Children are named for them. And for many Catholics, a name day matters as much as a birthday.",
-      "screen": ["`RED DAYS: KEPT LIKE A SUNDAY.` · `THE LIST VARIES BY COUNTRY.` · `A SAINT FOR EVERY DAY.` · `THE DAY THEY DIED: A BIRTHDAY.`"]
+      "voice": "Those marked days are holy days of obligation. Catholics are asked to go to Mass every Sunday, and on a handful of great feasts they're asked to do the same, whatever day of the week it falls on, and to rest from unnecessary work where they can. The Church's general law lists ten of these feasts, among them Christmas, the Epiphany, the Ascension, Mary the Mother of God, the Assumption, Saint Joseph, Peter and Paul, and All Saints. But it lets each country's bishops trim the list or move a feast to the nearest Sunday. So the list really does vary. In the United States the list is shorter, and some are lifted when they fall right next to a weekend. Ask a Catholic in Ireland or Italy and you'll get a different answer. Then there's everyone else on the calendar. The saints' days. The Church keeps a general calendar of saints for the whole world, and a much longer book, the Roman Martyrology, which lists saints and martyrs for every day of the year, often several on a single day. Here's the surprising part: a saint's feast is usually kept on the day they died, not the day they were born. The old Latin name for that day is dies natalis, birthday, because the Church thinks of it as their birthday into heaven. So every morning, somewhere, somebody is keeping a birthday for someone who died a long time ago. Parishes are named for them. Children are named for them. And in some Catholic families, a name day is kept like a second birthday.",
+      "screen": ["`MARKED DAYS: KEPT LIKE A SUNDAY.` · `THE LIST VARIES BY COUNTRY.` · `A SAINT FOR EVERY DAY.` · `THE DAY THEY DIED: A BIRTHDAY.`"]
     },
     {
       "type": "the practice",
@@ -57,13 +57,13 @@
     "myth": [
       ["every country keeps the same holy days of obligation", false, "the Church's law lists ten, but each country's bishops may trim the list or move feasts to Sunday."],
       ["a saint's feast is usually the day they were born", false, "it's usually the day they died, called their birthday into heaven."],
-      ["the Roman Martyrology names saints for every day of the year", true, "often a dozen or more on a single day."]
+      ["the Roman Martyrology names saints for every day of the year", true, "often several on a single day."]
     ],
     "fork": {
-      "setup": "it's a Wednesday, and your parish calendar has the day printed in red. what are Catholics asked to do?",
+      "setup": "it's a Wednesday, and your parish calendar marks today with a special symbol. what are Catholics asked to do?",
       "options": ["go to Mass, as on a Sunday.", "fast until evening.", "nothing: red just marks a saint's day."],
       "answer": 0,
-      "reveal": "a red day marks a holy day of obligation. Catholics are asked to go to Mass and rest where they can, whatever day of the week it falls on."
+      "reveal": "that mark means a holy day of obligation. Catholics are asked to go to Mass and rest where they can, whatever day of the week it falls on."
     },
     "original": { "script": "dies natalis", "say": "DEE-es nah-TAH-lees", "note": "Latin: birthday. the Church's name for the day a saint died, their birthday into heaven." },
     "trapdoor": [
@@ -86,7 +86,8 @@
       "United States: six holy days (Mary Mother of God, Ascension in some provinces, Assumption, All Saints, Immaculate Conception, Christmas); obligation abrogated for some when they fall on a Saturday or Monday. The script says 'some of them are lifted'. Confirm.",
       "Canon 1247: obligation to participate in Mass and abstain from work that hinders worship and rest. Paraphrased.",
       "Feast on the day of death (dies natalis) is the usual rule, with exceptions (e.g. Nativity of John the Baptist, of Mary). Hedged with 'usually'.",
-      "Roman Martyrology count per day ('often a dozen or more'): confirm."
+      "Roman Martyrology count per day ('often a dozen or more'): confirm.",
+      "Editor review (2026-10-01): calendars do not reliably print holy days of obligation in red (red often marks martyrs or feasts), so hook, teach, screens and fork now say 'specially marked'; cut the uncited US count (six) and Martyrology count (a dozen or more); softened the 'for many Catholics' name-day claim."
     ]
   },
   "meta": { "index": "155. Holy days and the saints' calendar · holy day of obligation · a few great feasts are kept like Sundays (the list varies by country) · find today's saint · every day belongs to someone", "writer": "writer agent (catholic 151–180)", "written": "2026-09-30" }

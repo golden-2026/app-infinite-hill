@@ -19,14 +19,14 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Count back nine months from the eighth of September, and you land on the eighth of December. That's the Immaculate Conception, the feast of Mary's conception in her mother's womb. The Church's calendar does the arithmetic on purpose. So today is a birthday. In Malta it's a public holiday; in Italian towns and in parts of India there are processions and sweets. And the Gospel the Church reads for it is one most people skip: the long list of names at the start of Matthew.",
+      "voice": "Count back nine months from the eighth of September, and you land on the eighth of December. That's the Immaculate Conception, the feast of Mary's conception in her mother's womb. The Church's calendar does the arithmetic on purpose. So today is a birthday. In Malta it's a public holiday; in Italian towns and in parts of India there are processions and sweets. And the Gospel the Church reads for it is one that's easy to skip: the long list of names at the start of Matthew.",
       "screen": ["`DECEMBER TO SEPTEMBER: NINE MONTHS.` → `A BIRTHDAY.` → `A LIST OF NAMES.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Like her parents' names, Mary's birth isn't told in the Bible. The details again come from the Protoevangelium of James, and an old tradition places her birth in Jerusalem, near the pool of Bethesda, where a church of Saint Anne stands today. The feast began in the East, in the five hundreds or so, and Rome took it up a century or two later. So why read a genealogy on her birthday? Matthew's list runs forty-two generations, from Abraham through David and the exile, and it's not all heroes. It includes a man who sold his brother, a king who arranged a soldier's death, and women with complicated stories, Tamar, Rahab, Ruth, and the wife of Urias. Generation after generation of ordinary, mixed-up people. And then the list breaks its own pattern. For forty lines it's been so-and-so begot so-and-so. At the end, in the Douay-Rheims: \"And Jacob begot Joseph the husband of Mary, of whom was born Jesus, who is called Christ.\" The rhythm stops at her. Mary's birthday is the Church saying: here is the place where the long, crooked family line was heading. One ordinary-looking girl, born to an older couple, in a city full of pilgrims. Catholics greet her today, often with the angel's own words from Luke: \"Hail, full of grace, the Lord is with thee: blessed art thou among women.\" There's no cake in the liturgy. But in some towns, there is cake.",
-      "screen": ["`NOT IN THE BIBLE; A TRADITION.` · `FORTY-TWO GENERATIONS.` · `NOT ALL HEROES.` · `THE RHYTHM STOPS AT HER.` · then, large: `OF WHOM WAS BORN JESUS, WHO IS CALLED CHRIST.`"]
+      "voice": "Like her parents' names, Mary's birth isn't told in the Bible. The details again come from the Protoevangelium of James, and an old tradition places her birth in Jerusalem, near the pool of Bethesda, where a church of Saint Anne stands today. The feast began in the East, and Rome took it up later. So why read a genealogy on her birthday? Matthew counts it out as three sets of fourteen generations, from Abraham through David and the exile, and it's not all heroes. It includes a man who helped sell his brother, a king who arranged a soldier's death, and women with complicated stories, Tamar, Rahab, Ruth, and the wife of Urias. Generation after generation of ordinary, mixed-up people. And then the list breaks its own pattern. Line after line, it's been so-and-so begot so-and-so. At the end, in the Douay-Rheims: \"And Jacob begot Joseph the husband of Mary, of whom was born Jesus, who is called Christ.\" The rhythm stops at her. Mary's birthday is the Church saying: here is the place where the long, crooked family line was heading. One ordinary-looking girl, born, tradition says, to an older couple, in a city full of pilgrims. Catholics greet her today, often with the angel's own words from Luke: \"Hail, full of grace, the Lord is with thee: blessed art thou among women.\" There's no cake in the liturgy. But in some towns, there is cake.",
+      "screen": ["`NOT IN THE BIBLE; A TRADITION.` · `THREE SETS OF FOURTEEN.` · `NOT ALL HEROES.` · `THE RHYTHM STOPS AT HER.` · then, large: `OF WHOM WAS BORN JESUS, WHO IS CALLED CHRIST.`"]
     },
     {
       "type": "the practice",
@@ -37,7 +37,7 @@
     {
       "type": "the word",
       "duration": "25 sec",
-      "voice": "The Nativity of Mary. Mary's birthday, the eighth of September, nine months after the Immaculate Conception. One of only three births in the calendar. Today's word.",
+      "voice": "The Nativity of Mary. Mary's birthday, the eighth of September, nine months after the Immaculate Conception. Today's word.",
       "screen": ["`THE NATIVITY OF MARY — today's word`."]
     },
     {
@@ -52,31 +52,32 @@
   "games": {
     "match": {
       "prompt": "Mary's birthday — tap the pairs.",
-      "pairs": [["8 December", "the Immaculate Conception"], ["8 September", "the Nativity of Mary"], ["Matthew 1", "forty-two generations"], ["Bethesda", "where tradition places her birth"]]
+      "pairs": [["8 December", "the Immaculate Conception"], ["8 September", "the Nativity of Mary"], ["Matthew 1", "three sets of fourteen generations"], ["Bethesda", "where tradition places her birth"]]
     },
     "myth": [
       ["the Gospels tell the story of Mary's birth", false, "they don't. the details come from the Protoevangelium of James and later tradition."],
       ["Matthew's genealogy names only heroes", false, "it includes Tamar, Rahab, Ruth and the wife of Urias, and some very flawed men."],
-      ["the feast began in the East", true, "around the sixth century, and Rome took it up later."]
+      ["the feast began in the East", true, "and Rome took it up later."]
     ],
     "fork": {
       "setup": "you're choosing the Gospel for Mary's birthday Mass. the Bible has no story of her birth. what does the Church choose?",
       "options": ["the angel's visit to Mary.", "Matthew's long list of ancestors.", "the wedding at Cana."],
       "answer": 1,
-      "reveal": "the genealogy: forty-two generations of mixed-up people, and the rhythm stops at Mary, of whom was born Jesus."
+      "reveal": "the genealogy: generation after generation of mixed-up people, and the rhythm stops at Mary, of whom was born Jesus."
     },
     "original": { "script": "Nativitas Mariae", "say": "nah-TEE-vee-tahs mah-REE-eh", "note": "Latin: the birth of Mary, the feast's name." },
     "trapdoor": [
       "what you thought: Mary's birthday is in the Bible.",
       "what it means: a feast dated by tradition, nine months after 8 December, with a Gospel of her ancestors.",
-      "what a scholar hears: the feast began in the East around the sixth century; Matthew's genealogy breaks its begot pattern at Mary."
+      "what a scholar hears: the feast began in the East; Matthew's genealogy breaks its begot pattern at Mary."
     ]
   },
   "sources": [
     { "ref": "Matthew 1:16", "work": "The Bible", "translation": "Douay-Rheims (Challoner)", "quoted": "And Jacob begot Joseph the husband of Mary, of whom was born Jesus, who is called Christ." },
     { "ref": "Luke 1:28", "work": "The Bible", "translation": "Douay-Rheims (Challoner)", "quoted": "Hail, full of grace, the Lord is with thee: blessed art thou among women." },
     { "ref": "Matthew 1:1–17", "work": "The Bible", "translation": null, "quoted": null },
-    { "ref": "Protoevangelium of James 5", "work": "Apocrypha", "translation": null, "quoted": null }
+    { "ref": "Protoevangelium of James 5", "work": "Apocrypha", "translation": null, "quoted": null },
+    { "ref": "Matthew 1:17", "work": "The Bible", "translation": null, "quoted": null }
   ],
   "review": {
     "status": "pending",
@@ -87,7 +88,8 @@
       "Genealogy: Matthew counts three sets of fourteen (forty-two generations); the actual names listed differ slightly. 'Forty lines' is approximate.",
       "Douay-Rheims spells 'Urias' for Uriah; script uses that.",
       "'A man who sold his brother' refers to Judah (Genesis 37:26–27), who is in the line; confirm. 'A king who arranged a soldier's death' is David.",
-      "Festivities in Malta (Victory Day) and Goa/India (Monti Fest); confirm."
+      "Festivities in Malta (Victory Day) and Goa/India (Monti Fest); confirm.",
+      "Editor review (2026-10-01): 'forty-two generations' and 'forty lines' replaced with Matthew's own count (1:17, three sets of fourteen); feast-origin centuries cut; Judah 'helped sell' his brother; 'one of only three births' cut from the word (day 674 already teaches it); 'most people skip' softened."
     ]
   },
   "meta": { "index": "680. The Nativity of Mary (8 September) · — · nine months after the Immaculate Conception, a birthday for Mary · wish Mary a happy birthday · her birthday", "writer": "writer agent (catholic 662–691)", "written": "2026-09-30" }

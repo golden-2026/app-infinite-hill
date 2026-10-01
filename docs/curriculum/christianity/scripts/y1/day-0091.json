@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "If you've ever loved someone who kept making the choice you were afraid of, you know this feeling. You lie awake. You rehearse the conversation. You try again, and it goes badly again. North Africa, about sixteen hundred years ago. A woman named Monica has a son who is brilliant, charming, ambitious, and restless. His name is Augustine. He drifts from the faith she raised him in, throws himself into success, and into a way of life that breaks her heart. She weeps for him, prays for him, and follows him around. Years go by. We know all this because, decades later, Augustine told the story himself, in a book addressed to God, called the Confessions. And he doesn't spare himself.",
+      "voice": "Some love keeps people up at night: loving someone who keeps making the choice you were afraid of. Lying awake. Rehearsing the conversation. Trying again, and watching it go badly again. Roman North Africa. A woman named Monica has a son who is brilliant, charming, ambitious, and restless. His name is Augustine. He drifts from the faith she raised him in, throws himself into success, and into a way of life that breaks her heart. She weeps for him, prays for him, and follows him around. Years go by. We know all this because, years later, Augustine told the story himself, in a book addressed to God, called the Confessions. And he doesn't spare himself.",
       "screen": ["`AWAKE AT NIGHT.` → `A BRILLIANT, RESTLESS SON.` → `HE TOLD IT HIMSELF.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "At one point, Monica goes to a bishop and begs him to talk sense into her son. The bishop says no. He's not ready, the bishop says; leave him alone and keep praying; he'll find his own way. She won't take no. She keeps pleading, in floods of tears. And finally the bishop, a bit worn out, says to her, go your way, it cannot be that the son of these tears should perish. Augustine says his mother took that as if it had sounded from heaven. It didn't fix anything quickly. When Augustine decided to sail for Rome, he lied to her to slip away, and left her weeping on the shore. So she followed him, across the sea, all the way to Milan. And there, finally, the road turned. Augustine was baptized by the bishop of Milan, Ambrose, at Easter, in the year 387. Not long after, mother and son stood at a window in the port town of Ostia, near Rome, talking quietly about God, and Augustine describes it as the two of them touching something eternal for a moment. A few days later she fell ill and died, far from home, content. The son of those tears became one of the most influential Christian thinkers who ever lived. Catholic, Orthodox, Anglican and many Protestant Christians read him still. Churches honor Monica as a saint, and in the Catholic calendar her feast is August twenty-seventh, the day before his. Christians have held on to her story for the plainest reason: it says that years of tears, poured out for someone who seems not to be listening, are not wasted.",
+      "voice": "At one point, Monica goes to a bishop and begs him to talk sense into her son. The bishop says no. He's not ready, the bishop says; leave him alone and keep praying; he'll find his own way. She won't take no. She keeps pleading, in floods of tears. And finally the bishop, a bit worn out, says to her, go your way, it cannot be that the son of these tears should perish. Augustine says his mother took that as if it had sounded from heaven. It didn't fix anything quickly. When Augustine decided to sail for Rome, he lied to her to slip away, and left her weeping on the shore. So she followed him, across the sea, all the way to Milan. And there, finally, the road turned. Augustine was baptized at Easter by the bishop of Milan, Ambrose. Not long after, mother and son stood at a window in the port town of Ostia, near Rome, talking quietly about God, and Augustine describes it as the two of them touching something eternal for a moment. A few days later she fell ill and died, far from home, content. The son of those tears became a writer whom Christians in many churches still read. Churches honor Monica as a saint. Christians have held on to her story for the plainest reason: it says that years of tears, poured out for someone who seems not to be listening, are not wasted.",
       "screen": ["`THE BISHOP SAYS NO.` · `THE SON OF THESE TEARS.` · `SHE FOLLOWS HIM TO MILAN.` · `A WINDOW AT OSTIA.` · then, large: `TEARS ARE NOT WASTED.`"]
     },
     {
@@ -57,7 +57,7 @@
     "myth": [
       ["the bishop agreed at once to talk to Augustine", false, "he refused, and told her to keep praying. only her tears got the famous promise out of him."],
       ["Augustine slipped away to Rome by lying to his mother", true, "he tells it himself in the Confessions, and she followed him anyway."],
-      ["Monica died before Augustine was baptized", false, "he was baptized at Easter in 387; she died soon after, at Ostia."]
+      ["Monica died before Augustine was baptized", false, "he was baptized at Easter; she died soon after, at Ostia."]
     ],
     "fork": {
       "setup": "you're Monica. a bishop has just told you to leave your son alone and keep praying. what do you do?",
@@ -69,12 +69,12 @@
     "trapdoor": [
       "what you thought: a pious mother in a painting.",
       "what it means: a real woman who wept, pleaded, got lied to, crossed a sea, and would not stop loving her son.",
-      "what a scholar hears: we know her almost entirely through her son's Confessions (books 3, 5 and 9), one of the first great autobiographies, written in Latin to God."
+      "what a scholar hears: we know her almost entirely through her son's Confessions (books 3, 5 and 9), a life story written in Latin as a prayer to God."
     ]
   },
   "sources": [
     { "ref": "Augustine, Confessions 3.11–12", "work": "Confessions", "translation": null, "quoted": null },
-    { "ref": "Augustine, Confessions 5.8", "work": "Confessions", "translation": null, "quoted": null },
+    { "ref": "Augustine, Confessions 5.8; 6.1", "work": "Confessions", "translation": null, "quoted": null },
     { "ref": "Augustine, Confessions 9.6, 9.10–11", "work": "Confessions", "translation": null, "quoted": null }
   ],
   "review": {
@@ -85,7 +85,7 @@
       "The bishop's words are paraphrased, not quoted, although Pusey's 1838 translation is public domain; a Keeper may wish to substitute Pusey's exact wording after checking it.",
       "Latin original: 'fieri non potest, ut filius istarum lacrimarum pereat' (Confessions 3.12.21); confirm the phrase used in the game.",
       "Augustine's drift is described neutrally; the script does not name the Manichaeans. Confirm.",
-      "Baptism at the Easter Vigil 387 by Ambrose; Ostia vision (9.10); Monica's death aged 56 (9.11). Feast days in the current Catholic calendar: Monica August 27, Augustine August 28."
+      "Baptism at the Easter Vigil 387 by Ambrose; Ostia vision (9.10); Monica's death aged 56 (9.11). Feast days in the current Catholic calendar: Monica August 27, Augustine August 28.", "Review (days 76–93 editor pass, 2026-10-01): hook no longer opens 'you know this feeling' or tells the listener what they feel; cut dates and superlatives the Confessions do not give ('sixteen hundred years ago', 'the year 387', 'one of the most influential Christian thinkers who ever lived', 'one of the first great autobiographies'); 'decades later' was too long (the Confessions came about a decade after 387), now 'years later'; the feast date stays in howItsDone only; added Confessions 6.1 for her journey to Milan."
     ]
   },
   "meta": { "index": "91. Monica's tears · — · a mother prays for years for her wayward son, Augustine, and a bishop tells her such tears won't be lost · pray for someone you've nearly given up on · tears are not wasted", "writer": "writer agent (christianity 73–102)", "written": "2026-09-30" }

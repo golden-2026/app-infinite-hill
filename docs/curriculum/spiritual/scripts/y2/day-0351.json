@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Late at night, thumb on the screen. An old classmate just bought a house. Someone's kid got into the program. A coworker is posting from a beach that looks fake it's so blue. Nobody announced a race. Nobody handed out numbers. And yet somehow you're running, and losing, at eleven forty on a Tuesday. Epictetus never saw a phone, but he lived in a city full of competitions: athletes, orators, men chasing office. Section nineteen of the handbook makes a claim that sounds like a boast. He says you can be unbeatable. Today: not my contest.",
+      "voice": "Late at night, thumb on the screen. An old classmate just bought a house. Someone's kid got into the program. A coworker is posting from a beach that looks fake it's so blue. Nobody announced a race. Nobody handed out numbers. And yet somehow you're running, and losing, at eleven forty on a Tuesday. Epictetus never saw a phone. But section nineteen of his handbook speaks straight to that race, and it opens with a claim that sounds like a boast. He says you can be unbeatable. Today: not my contest.",
       "screen": ["`ELEVEN FORTY ON A TUESDAY.` → `A RACE NOBODY ANNOUNCED.` → `YOU CAN BE UNBEATABLE.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the claim. You can be invincible, Epictetus says, if you never enter a contest where winning isn't up to you. The Greek for contest is agon, the word behind the games, the law courts, and in the end our word agony. Second, the trap. When you see someone honored above you, or powerful, or admired, he says, watch out that the impression doesn't carry you off into thinking they must be happy. That's the moment we sign up for a contest without noticing: their house, their title, their beach, and suddenly we're competitors. Third, the reasoning. If what's truly good lies in what's up to us, he says, then there's no room for envy or jealousy. You can't envy someone for something that was never the prize. And then the line: you yourself don't want to be a general or a senator or a consul. You want to be free. And there's only one road to that: to care little for things not in our power. Fourth, what's left. This isn't a refusal to try at anything. Train for the race, apply for the job, write the book. What Epictetus refuses is to stake your peace on the result, which depends on judges, timing and other people. The contest where winning is up to you is a different one: patience against your own temper, honesty against your own excuses. You can win that one every day. Nobody else even has to be in it. So the next time the scrolling starts a race, you can stand at the line, watch the runners go, and say: not my contest.",
+      "voice": "First, the claim. You can be invincible, Epictetus says, if you never enter a contest where winning isn't up to you. The Greek for contest is agon: a match, a bout, a trial of strength. Second, the trap. When you see someone honored above you, or powerful, or admired, he says, watch out that the impression doesn't carry you off into thinking they must be happy. That's the moment we sign up for a contest without noticing: their house, their title, their beach, and suddenly we're competitors. Third, the reasoning. If what's truly good lies in what's up to us, he says, then there's no room for envy or jealousy. You can't envy someone for something that was never the prize. And then the line: you yourself don't really want to be a general or a magistrate or a consul. You want to be free. And there's only one road to that: to care little for things not in our power. Fourth, what's left. This isn't a refusal to try at anything. Train for the race, apply for the job, write the book. What Epictetus refuses is to stake your peace on the result, which depends on judges, timing and other people. The contest where winning is up to you is a different one: patience against your own temper, honesty against your own excuses. You can win that one every day. Nobody else even has to be in it. So the next time the scrolling starts a race, you can stand at the line, watch the runners go, and say: not my contest.",
       "screen": ["`AGON: THE CONTEST.` · `DON'T THINK THE HONORED ARE HAPPY.` · `NOT A GENERAL. FREE.` · `THE CONTEST YOU CAN WIN.` · then, large: `NOT MY CONTEST.`"]
     },
     {
@@ -52,11 +52,11 @@
   "games": {
     "match": {
       "prompt": "not my contest — tap the pairs.",
-      "pairs": [["agon", "contest, the root of agony"], ["the honored and admired", "don't assume they're happy"], ["what you really want", "not consul, but free"], ["the contest you can win", "the one inside your power"]]
+      "pairs": [["agon", "a contest, a match"], ["the honored and admired", "don't assume they're happy"], ["what you really want", "not consul, but free"], ["the contest you can win", "the one inside your power"]]
     },
     "myth": [
       ["Epictetus says never try at anything", false, "he says don't stake your peace on a contest where winning isn't up to you."],
-      ["the English word agony comes from the Greek word for a contest", true, "agon: the games, the courts, the struggle."],
+      ["Epictetus says what you really want is not to be consul, but to be free", true, "and the one road there is caring little for what isn't up to you."],
       ["section nineteen says there is no room for envy if the good is in our power", true, "you can't envy someone for what was never the prize."]
     ],
     "fork": {
@@ -65,11 +65,11 @@
       "answer": 1,
       "reveal": "don't let the impression carry you into thinking them happy; if the good lies in what's up to us, there's nothing to envy."
     },
-    "original": { "script": "ἀγών", "say": "ah-GOHN", "note": "Greek, Enchiridion 19: a contest, a struggle; the root of agony." },
+    "original": { "script": "ἀγών", "say": "ah-GOHN", "note": "Greek, Enchiridion 19: a contest, a match, a struggle." },
     "trapdoor": [
       "what you thought: don't be competitive.",
       "what it means: enter no contest where winning depends on others, and you can't be beaten.",
-      "what a scholar hears: aniketos, invincible, from agon; Epictetus often borrows the athlete's language, turning the games inward."
+      "what a scholar hears: aniketos, unconquerable, sits beside agon in the opening line; Epictetus borrows the athlete's language and turns the games inward."
     ]
   },
   "sources": [
@@ -79,6 +79,7 @@
     "status": "pending",
     "keeper": null,
     "notes": [
+      "Review (2026-10-01): fixed the trapdoor, which wrongly derived aniketos ('invincible') from agon; cut the agon-to-agony etymology from the teach, match, myth and original note (claims rule); cut the uncited claim about Epictetus' city; 'senator' became 'magistrate' for the Greek prytanis.",
       "Enchiridion 19 paraphrased (invincible; not carried away by those honored or powerful; no room for envy or jealousy; not general, senator or consul, but free; despise things not in our power). Confirm.",
       "Greek ἀγών and ἀνίκητος in Enchiridion 19: confirm. Agon → agony: standard etymology via Greek agonia.",
       "Social-media scene is a modern illustration."

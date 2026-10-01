@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A coworker turns down the office pizza on a Monday. Not a diet, she says, it's my Monday fast. Another friend eats only fruit for nine days every autumn. Someone's aunt goes all day without even water, and at moonrise, the whole family gathers on the roof to watch her break it. From the outside it can look strange, or even a little extreme. From the inside, the people doing it usually look calm, even happy. So what's going on? First, a promise: nobody here is going to tell you to fast. Today is about what a fast is for. Today: fasting explained, never assigned.",
+      "voice": "A coworker turns down the office pizza on a Monday. Not a diet, she says, it's my Monday fast. Another friend eats only fruit for nine days every autumn. Someone's aunt goes all day without even water, and at moonrise, the whole family gathers on the roof to watch her break it. From the outside it can look strange, or even a little extreme. The people keeping these fasts often describe them very differently. So what's going on? First, a promise: nobody here is going to tell you to fast. Today is about what a fast is for. Today: fasting explained, never assigned.",
       "screen": ["`A MONDAY FAST, NINE DAYS OF FRUIT.` → `WHY DO PEOPLE CHOOSE THIS?` → `EXPLAINED, NEVER ASSIGNED.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "The Sanskrit word is vrata, a vow. That's the first surprise: in Hindu practice, a fast is usually one kind of vow, not the other way round. A vrata is a promise made for a purpose, for a set time, often to a particular form of the divine. Mondays, for many, are for Shiva. Some fasts come with festivals, like the nine nights of Navaratri. On Karva Chauth, many married women in North India fast from sunrise until the moon comes up. And there are many ways to keep one. The strictest is without even water. Much more common is eating only fruit and milk, or one simple meal, or giving up grains, or a single food for the day. Another word for fasting is upavasa, which people explain as staying near: near the divine, near the intention. That's the point. So what does the vow-fast actually do? It turns hunger into a reminder. Every time your stomach speaks, you remember why you chose this. The hunger isn't punishment; it's a bell that keeps ringing all day. It trains the will: you find out you can say no to yourself, gently, and survive. And it almost always ends in sharing: many fasts are broken with prasad, with family, around a table. The tradition itself is careful here. Children, elders, the sick and pregnant women are commonly excused, and many people keep a light version. A fast that harms the body breaks yesterday's line about the temple. The key word is the one in your carry: chosen.",
+      "voice": "The Sanskrit word is vrata, a vow. That's the first surprise: in Hindu practice, a fast is often one way of keeping a vow, not the other way round. A vrata is a promise made for a purpose, for a set time, often to a particular form of the divine. Mondays, for some, are for Shiva. Some fasts come with festivals, like the nine nights of Navaratri. On Karva Chauth, married women in parts of North India traditionally fast from sunrise until the moon comes up. And there are many ways to keep one. The strictest is without even water. Gentler forms mean eating only fruit and milk, or one simple meal, or giving up grains, or a single food for the day. Another word for fasting is upavasa, which people explain as staying near: near the divine, near the intention. That's the point. So what does the vow-fast actually do? It turns hunger into a reminder. Every time your stomach speaks, you remember why you chose this. The hunger isn't punishment; it's a bell that keeps ringing all day. It trains the will: you find out you can say no to yourself, gently, and survive. And it often ends in sharing: a fast may be broken with prasad, with family, around a table. The tradition itself is careful here. Children, elders, the sick and pregnant women are commonly excused, and others keep a light version. A fast that harms the body breaks the line from two days ago: this is where you live. The key word is the one in your carry: chosen.",
       "screen": ["`VRATA — A VOW, NOT JUST A FAST.` · `FRUIT, ONE MEAL, OR NO WATER.` · `UPAVASA: STAYING NEAR.` · `HUNGER BECOMES A BELL.`"]
     },
     {
@@ -52,11 +52,11 @@
   "games": {
     "match": {
       "prompt": "kinds of vow — tap the pairs.",
-      "pairs": [["vrata", "a vow, kept for a purpose"], ["upavasa", "fasting; explained as staying near"], ["Monday", "for many, a fast for Shiva"], ["Karva Chauth", "a fast from sunrise to moonrise"]]
+      "pairs": [["vrata", "a vow, kept for a purpose"], ["upavasa", "fasting; explained as staying near"], ["Monday", "for some, a fast for Shiva"], ["Karva Chauth", "a fast from sunrise to moonrise"]]
     },
     "myth": [
-      ["a Hindu fast always means no food and no water", false, "most fasts mean fruit and milk, one meal, or giving up grains; going without water is the strictest kind."],
-      ["a fast is usually one kind of vow", true, "vrata means a vow, made for a purpose and a set time."],
+      ["a Hindu fast always means no food and no water", false, "a fast can mean fruit and milk, one meal, or giving up grains; going without water is the strictest kind."],
+      ["a fast is often one way of keeping a vow", true, "vrata means a vow, made for a purpose and a set time."],
       ["the sick and pregnant are expected to fast like everyone else", false, "children, elders, the sick and pregnant women are commonly excused."]
     ],
     "fork": {
@@ -69,7 +69,7 @@
     "trapdoor": [
       "what you thought: going hungry for religious reasons.",
       "what it means: a vow kept for a purpose and a set time, where the hunger becomes a reminder and the fast ends in sharing.",
-      "what a scholar hears: vrata already means a vow or observance in the Rig Veda; upavāsa is from upa-vas, to abide near, and medieval digests on vratas catalog hundreds of observances by day, deity and purpose."
+      "what a scholar hears: in the Rig Veda vrata has a sense close to ordinance or commitment, and it later came to mean a vowed observance; upavāsa is from upa-vas, to abide near, and medieval digests on vratas catalog observances by day, deity and purpose."
     ]
   },
   "sources": [
@@ -82,7 +82,8 @@
       "Examples (Monday fasts for Shiva, Navaratri fasts, Karva Chauth from sunrise to moonrise) are common but regional; confirm.",
       "Exemptions (children, elders, the sick, pregnant women) are stated as 'commonly excused'; confirm and consider whether a health line should also appear in the app outside the script.",
       "Upavasa glossed as 'staying near' is a common traditional explanation; confirm the etymology (upa + vas).",
-      "The practice invites skipping something small, and explicitly lets people with a complicated relationship to food leave food out."
+      "The practice invites skipping something small, and explicitly lets people with a complicated relationship to food leave food out.",
+      "Editor review (2026-10-01): fixed a wrong callback ('yesterday's line about the temple' was two days ago, day 125); softened 'usually/many/most/almost always' claims about fasts; trapdoor no longer says vrata 'already means a vow' in the Rig Veda (its early sense is closer to ordinance or commitment) or counts 'hundreds' of observances."
     ]
   },
   "meta": { "index": "127. Fasting explained, never assigned · vrata · what a vow-fast does · skip one thing · chosen hunger", "writer": "writer agent (hinduism 112–141)", "written": "2026-09-30" }

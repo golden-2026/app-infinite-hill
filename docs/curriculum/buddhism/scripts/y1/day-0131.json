@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "If you were going to explain Buddhism to someone who had never heard of it, where would you start? Most people would say the four noble truths. Or meditation. Or suffering, or emptiness, or the lotus position. The early texts describe how the Buddha himself often started, with people who came to him fresh, and it wasn't any of those. He started with something a child can do. Something you could do before you finish this sentence. Today: the first step on the path, in the order the Buddha taught it.",
+      "voice": "If you were going to explain Buddhism to someone who had never heard of it, where would you start? The usual guesses: the four noble truths. Meditation. Suffering, emptiness, the lotus position. The early texts describe how the Buddha himself often started, with people who came to him fresh, and it wasn't any of those. He started with something a child can do. Something you could do before you finish this sentence. Today: the first step on the path, in the order the Buddha taught it.",
       "screen": ["`WHERE WOULD YOU START?` → `NOT THE FOUR TRUTHS.` → `SOMETHING A CHILD CAN DO.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "It's called the gradual talk, anupubbikatha, a talk in steps. The texts describe it again and again when the Buddha meets a newcomer, like Yasa, a rich young man who ran out of his house one night unable to stand his own life. The Buddha begins with dana, giving. Then sila, virtue, which you've just spent a week on. Then the happiness that good actions bring, then the drawbacks of chasing pleasure, then the relief of letting go. Only when the listener's mind is ready, soft, open, and glad, does he teach the four noble truths. The texts compare it to a clean cloth taking dye evenly. So giving comes first. Why? Because giving is the easiest place to feel what the whole path is about. When you give, you open your hand. For a moment, the grip of mine loosens. You feel lighter, not poorer. That lightness is a small taste of the freedom the rest of the teaching points to. The word dana is related, far back, to our word donation: both come from an ancient root meaning to give. Buddhists often list giving first among the perfections, the qualities a bodhisattva, a Buddha-to-be, develops over many lives. You met Vessantara, the prince who gave everything, back in the stories camp. But the gradual talk doesn't start with a prince giving away a kingdom. It starts with food, a coin, a cup of water. Giving opens the door; everything else walks through it.",
+      "voice": "It's called the gradual talk, anupubbikatha, a talk in steps. The texts describe it again and again when the Buddha meets a newcomer, like Yasa, a rich young man who ran out of his house one night unable to stand his own life. The Buddha begins with dana, giving. Then sila, virtue, which you've just spent a week on. Then the heavens, the happy results of good actions, then the drawbacks of chasing pleasure, then the relief of letting go. Only when the listener's mind is ready, soft, open, and glad, does he teach the four noble truths. The texts compare it to a clean cloth taking dye evenly. So giving comes first. Why? Because giving is the easiest place to feel what the whole path is about. When you give, you open your hand, and for a moment the grip of mine loosens. That loosening is a small taste of the freedom the rest of the teaching points to. Giving is also one of the perfections, the qualities a bodhisattva, a Buddha-to-be, develops over many lives. You met Vessantara, the prince who gave everything, back in the stories camp. But the gradual talk doesn't start with a prince giving away a kingdom. It starts with food, a coin, a cup of water. Giving opens the door; everything else walks through it.",
       "screen": ["`THE GRADUAL TALK: A TALK IN STEPS.` · `GIVING, VIRTUE, THEN THE TRUTHS.` · `A CLEAN CLOTH TAKES THE DYE.` · `AN OPEN HAND LOOSENS MINE.` · then, large: `GIVING OPENS THE DOOR.`"]
     },
     {
@@ -55,9 +55,9 @@
       "pairs": [["dana", "giving, the first step"], ["sila", "virtue, the second step"], ["the four noble truths", "taught when the mind is ready"], ["the clean cloth", "takes the dye evenly"]]
     },
     "myth": [
-      ["the Buddha usually opened with the four noble truths for newcomers", false, "in the gradual talk he began with giving, then virtue, and taught the truths last."],
-      ["dana is related, far back, to the word donation", true, "both come from an ancient root meaning to give."],
-      ["giving is listed among the perfections a bodhisattva develops", true, "it is often named first among them."]
+      ["with a lay newcomer like Yasa, the Buddha opened with the four noble truths", false, "in the gradual talk he began with giving, then virtue, and taught the truths last."],
+      ["in the gradual talk, virtue comes before giving", false, "giving comes first, then virtue, then the rest."],
+      ["giving is listed among the perfections a bodhisattva develops", true, "Vessantara's story, from the stories camp, is about that perfection."]
     ],
     "fork": {
       "setup": "you're the Buddha. Yasa, a rich young man sick of his own life, sits down in front of you, knowing nothing of your teaching. what do you talk about first?",
@@ -65,7 +65,7 @@
       "answer": 1,
       "reveal": "the texts say he began the gradual talk with giving, then virtue, and taught the four truths only when Yasa's mind was ready."
     },
-    "original": { "script": "दान", "say": "DAA-na", "note": "Pali and Sanskrit: giving, generosity; from an ancient root meaning 'to give'." },
+    "original": { "script": "दान", "say": "DAA-na", "note": "Pali and Sanskrit: giving, generosity; the first step of the gradual talk." },
     "trapdoor": [
       "what you thought: giving is a nice extra, after the real practice.",
       "what it means: giving is the first step, the easiest place to feel the open hand the whole path is about.",
@@ -82,9 +82,10 @@
     "keeper": null,
     "notes": [
       "The order of the gradual talk (giving, virtue, heavens, danger of sense pleasures, renunciation, then the four truths) and the clean-cloth simile are paraphrased from Vinaya Mahavagga I.7 and MN 56; confirm.",
-      "The etymological link between dana and 'donation' (shared Indo-European root *deh3-, 'to give') should be confirmed.",
+      "The dana/donation etymology was cut from voice, myth and original note: no cited text gives it.",
       "The text says the listener's mind becomes 'ready, soft, open, glad'; this is a loose paraphrase of the canonical list of qualities.",
-      "The myth item marks 'the Buddha usually opened with the four noble truths for newcomers' as false; the gradual talk is used with lay newcomers, but the first sermon to the five ascetics opened with the truths. Confirm the framing is fair."
+      "The myth item marks 'the Buddha usually opened with the four noble truths for newcomers' as false; the gradual talk is used with lay newcomers, but the first sermon to the five ascetics opened with the truths. Confirm the framing is fair.",
+      "Editor review 2026-10-01: cut the dana/donation etymology and the unsourced 'listed first among the perfections'; stopped telling the listener 'you feel lighter, not poorer'; named the gradual talk's third step accurately (sagga, the heavens); rewrote 'most people would say' and the myths that relied on cut claims."
     ]
   },
   "meta": { "index": "131. Giving first · — · in the gradual talk the Buddha taught giving before anything else · give something small, first thing · giving opens the door", "writer": "writer agent (buddhism 121–150)", "written": "2026-09-30" }

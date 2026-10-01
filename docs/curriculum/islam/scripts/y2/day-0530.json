@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "In the early six hundreds, the two great empires of the world were at war: the Romans of Constantinople, whom we now call the Byzantines, and the Persians. And the Romans were losing badly. The Persians took Syria, then, in 614, Jerusalem, then Egypt. In Mecca, far from all of it, people followed the news. The Muslims, a small persecuted group, felt a sympathy with the Romans, who were Christians, people of a scripture. Many of the Quraysh sided with the Persians. And then a surah began with a headline.",
-      "screen": ["`TWO EMPIRES AT WAR.`", "`JERUSALEM FALLS, 614.`", "`A SURAH OPENS WITH A HEADLINE.`"]
+      "voice": "News of a far-off war reaches Mecca. Two empires are fighting: the Romans of Constantinople, whom historians now call the Byzantines, and the Persians. And the Romans are losing. In Mecca, far from the fighting, people take sides. A report in Tirmidhi says the Muslims wanted the Romans to win, since they were people of a scripture, and the Quraysh wanted the Persians to win, since the Persians, like them, had no scripture. And then a surah opens with a headline.",
+      "screen": ["`TWO EMPIRES AT WAR.`", "`MECCA TAKES SIDES.`", "`A SURAH OPENS WITH A HEADLINE.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Surah Ar-Rum, the Romans, the thirtieth. Pickthall: \"The Romans have been defeated\". In the nearer land, the verses go on, and after their defeat they will be victorious, within a few years. The phrase is bid' sinin. Bid' in Arabic means a handful, a small number, usually understood as between three and nine. And then: on that day the believers will rejoice in God's help. At the time it sounded impossible. The Roman empire looked finished. A report in Tirmidhi says Abu Bakr was so sure of it that he made a wager with some of the Quraysh, before wagers like that were forbidden, and when the time came, he won it. History did turn. In the 620s the emperor Heraclius campaigned deep into Persian territory, and by the end of the decade the Persians had sued for peace. Many commentators note that the Muslim victory at Badr, which the believers did rejoice over, fell in those same years, so the verse's rejoicing has been read both ways. Scholars have discussed exactly which events fit the dates. But the verses aren't really about empires. The very next lines say: God's is the command, before and after. And then the surah widens out into a long meditation on signs: night and day, rain on dead earth, the cycle of life. A defeat, the verses say, isn't the end of a story. It's a chapter. The defeated can win, within a handful of years, and the One who turns it is the same One who brings green out of dead ground every spring.",
+      "voice": "Surah Ar-Rum, the Romans, the thirtieth. Pickthall: \"The Romans have been defeated\". In the nearer land, the verses go on, and after their defeat they will be victorious, within a few years. The phrase is bid' sinin. Bid' in Arabic means a handful, a small number; the same report in Tirmidhi gives it as between three and nine. And then: on that day the believers will rejoice in God's help. The Quraysh laughed at it. The report says Abu Bakr was so sure that he made a wager with some of them, before wagers like that were forbidden, and when the Romans won, he won it. Tradition says the emperor Heraclius turned the war. Some commentators link the believers' rejoicing to the same season as their own victory at Badr; others read it differently, and scholars have discussed exactly which events fit. But the verses don't stay with empires. The very next lines say: God's is the command, before and after. And then the surah widens out into a long meditation on signs: night and day, rain on dead earth, the cycle of life. In the surah's picture, a defeat isn't the end of a story. It's a chapter. The defeated can win, within a handful of years, and the One who turns it is the One who brings green out of dead ground.",
       "screen": ["`THE ROMANS HAVE BEEN DEFEATED.` · `BID' SININ: A HANDFUL OF YEARS.` · `ABU BAKR'S WAGER.` · `GOD'S IS THE COMMAND, BEFORE AND AFTER.`"]
     },
     {
@@ -52,15 +52,15 @@
   "games": {
     "match": {
       "prompt": "defeated, then victorious — tap the pairs.",
-      "pairs": [["Ar-Rum", "the Romans, surah thirty"], ["bid' sinin", "a handful of years, three to nine"], ["Abu Bakr", "made a wager on the verse"], ["Heraclius", "turned the war in the 620s"]]
+      "pairs": [["Ar-Rum", "the Romans, surah thirty"], ["bid' sinin", "a handful of years, three to nine"], ["Abu Bakr", "made a wager on the verse"], ["the Quraysh", "laughed, and backed the Persians"]]
     },
     "myth": [
-      ["when the verse came, the Romans were winning", false, "they had lost Syria, Jerusalem and Egypt to the Persians."],
-      ["bid' means a small number, usually three to nine", true, "the verse says within a handful of years."],
+      ["when the verse came, the Romans were winning", false, "it opens: the Romans have been defeated."],
+      ["the report in Tirmidhi gives bid' as three to nine", true, "the verse says within a handful of years."],
       ["the surah stays focused on the war to its end", false, "it widens straight into signs: night and day, rain, life from dead earth."]
     ],
     "fork": {
-      "setup": "you're in Mecca. the Romans have lost Jerusalem. the verse says they'll win within a few years. the Quraysh laugh. what does Abu Bakr do?",
+      "setup": "you're in Mecca. the Romans have been defeated. the verse says they'll win within a few years. the Quraysh laugh. what does Abu Bakr do?",
       "options": ["keep quiet and wait.", "make a wager that it will come true.", "agree it's unlikely."],
       "answer": 1,
       "reveal": "a report in Tirmidhi says he wagered with some of the Quraysh, before such wagers were forbidden, and won."
@@ -69,7 +69,7 @@
     "trapdoor": [
       "what you thought: an old news story about an empire.",
       "what it means: a defeat named plainly, a reversal promised within a handful of years, and God's command over both.",
-      "what a scholar hears: bid' sinin, three to nine years; the Persian conquest of Jerusalem in 614 and Heraclius's victories in 622–628; Abu Bakr's wager in Tirmidhi 3193."
+      "what a scholar hears: ghulibat ar-rum; bid' sinin, three to nine years in the report; Abu Bakr's wager in Tirmidhi 3193, made before such wagers were forbidden."
     ]
   },
   "sources": [
@@ -82,10 +82,10 @@
     "keeper": null,
     "notes": [
       "Pickthall 30:2 quoted from memory; confirm. Pickthall renders bid' sinin in 30:4 as 'within ten years', I believe; the script paraphrases with 'within a few years', matching the outline. Confirm.",
-      "Dates: Persian capture of Jerusalem 614; Heraclius's campaigns 622–628 and the peace c. 628–630. Confirm.",
       "Abu Bakr's wager: Tirmidhi 3193 cited from memory; confirm. The note 'before wagers like that were forbidden' follows the commentaries.",
       "Some commentators tie the believers' rejoicing to Badr (624), others to Hudaybiyyah or to the Roman victory itself; script says 'read both ways'. Confirm.",
-      "Opens Surah 30 (days 530–532)."
+      "Opens Surah 30 (days 530–532).",
+      "Editor review (2026-10-01): unsourced dates and history cut under the claims rule ('early six hundreds', Jerusalem 614, Syria and Egypt, the 620s campaign and peace terms, 'the two great empires of the world'); the hook now rests on the Tirmidhi report of who wanted which side to win; 'three to nine' now credited to that report; Heraclius kept only as 'tradition says'; 'many commentators' on Badr softened to 'some'; the narrator's 'the verses say a defeat is a chapter' reframed as the surah's picture. Keeper: the 'three to nine' wording may sit in Tirmidhi 3191 rather than 3193; confirm."
     ]
   },
   "meta": { "index": "530. Defeated, then victorious · — · the Romans have been defeated, and within a few years will win (30:2–4) · hope in a reversal · within a few years", "writer": "writer agent (islam 512–541)", "written": "2026-09-30" }

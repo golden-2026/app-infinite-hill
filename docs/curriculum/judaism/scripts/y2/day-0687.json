@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "At ten in the morning on one spring day each year, a siren sounds across Israel. It lasts two minutes. On highways, cars stop in the middle of the lanes. Drivers open their doors and step out, and stand beside them, still. In offices, people rise from their desks. In shops, the cashier stops mid-sale. Children in schoolyards stand in rows. For two minutes, a whole country is silent, except for the siren. Then it fades, and people get back in their cars. Elsewhere in the world, in synagogues, schools and community halls, the day is kept differently, but often with the same two things: candles, and names.",
+      "voice": "On one spring morning each year, a siren sounds across Israel, and it holds for two minutes. On highways, cars stop in the middle of the lanes. Drivers open their doors and step out, and stand beside them, still. In offices, people rise from their desks. In shops, the cashier stops mid-sale. Children in schoolyards stand in rows. For those two minutes, much of the country stands still, and the only sound is the siren. Then it fades, and people get back in their cars. Elsewhere in the world, in synagogues, schools and community halls, the day is kept differently, but often with the same two things: candles, and names.",
       "screen": ["`TEN IN THE MORNING.` → `CARS STOP ON THE HIGHWAY.` → `CANDLES, AND NAMES.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Yom HaShoah is Holocaust Remembrance Day. Its full name in Israel is the Day of Remembrance of the Holocaust and the Heroism. Shoah is a biblical word for devastation, a storm that destroys, and it's become the Hebrew name for the murder of six million Jews by Nazi Germany and its collaborators. Israel's parliament set the day in 1951, and wrote it into law later in that decade. It falls on the twenty-seventh of Nisan, about a week and a half after Passover. The date is tied to the Warsaw Ghetto Uprising, which began on the eve of Passover in 1943, when Jews in the ghetto took up the few weapons they had against the German army. That's why the name includes heroism: remembering not only how people died, but how many resisted, in arms and in ordinary acts of keeping faith, keeping children alive, keeping names. The evening before, at Yad Vashem, Israel's Holocaust memorial in Jerusalem, survivors light six torches, for the six million. In many places, there's a ceremony of reading names, one after another, for hours: called, in Hebrew, every person has a name. Not every community marks this date. Some Haredi communities remember the Holocaust on traditional fast days instead, such as Tisha B'Av or the Tenth of Tevet, partly because Nisan is a month the tradition keeps for joy. The ways differ. What they share is a refusal to let the numbers erase the people. Six million is a figure no one can picture. A name, read aloud, is a person.",
+      "voice": "Yom HaShoah is Holocaust Remembrance Day. Its full name in Israel is the Day of Remembrance of the Holocaust and the Heroism. Shoah is a biblical word for devastation, a storm that destroys, and it's become the Hebrew name for the murder of six million Jews by Nazi Germany and its collaborators. Israel's parliament set the day in 1951, and wrote it into law later in that decade. It falls on the twenty-seventh of Nisan, less than a week after Passover ends. The date is tied to the Warsaw Ghetto Uprising, which began on the eve of Passover, when Jews in the ghetto took up the few weapons they had against the German army. That's why the name includes heroism: remembering not only how people died, but how people resisted, in arms and in ordinary acts of keeping faith, keeping children alive, keeping names. The evening before, at Yad Vashem, Israel's Holocaust memorial in Jerusalem, survivors light six torches, for the six million. In many places, there's a ceremony of reading names, one after another, for hours. Its Hebrew name means: every person has a name. Not every community marks this date. Some Haredi communities remember the Holocaust on traditional fast days instead, such as Tisha B'Av or the Tenth of Tevet, partly because Nisan is a month the tradition keeps for joy. The ways differ. What they share is a refusal to let the numbers erase the people. Six million is a figure no one can picture. A name, read aloud, is a person.",
       "screen": ["`SHOAH: DEVASTATION.` · `THE TWENTY-SEVENTH OF NISAN.` · `THE HOLOCAUST AND THE HEROISM.` · `EVERY PERSON HAS A NAME.` · then, large: `REMEMBER IN SILENCE.`"]
     },
     {
@@ -52,18 +52,18 @@
   "games": {
     "match": {
       "prompt": "inside Yom HaShoah — tap the pairs.",
-      "pairs": [["shoah", "a biblical word for devastation"], ["the twenty-seventh of Nisan", "the date of Yom HaShoah"], ["Warsaw Ghetto Uprising", "began on the eve of Passover, 1943"], ["six torches", "lit at Yad Vashem"]]
+      "pairs": [["shoah", "a biblical word for devastation"], ["the twenty-seventh of Nisan", "the date of Yom HaShoah"], ["Warsaw Ghetto Uprising", "began on the eve of Passover"], ["six torches", "lit at Yad Vashem"]]
     },
     "myth": [
       ["Yom HaShoah's full name in Israel includes heroism", true, "the Day of Remembrance of the Holocaust and the Heroism."],
       ["every Jewish community marks the Holocaust on the same day", false, "some Haredi communities remember on traditional fast days instead."],
-      ["the Israeli siren on Yom HaShoah lasts ten minutes", false, "it lasts two minutes, at ten in the morning."]
+      ["the date of Yom HaShoah is tied to the Warsaw Ghetto Uprising", true, "the uprising began on the eve of Passover; the day falls on the twenty-seventh of Nisan."]
     ],
     "fork": {
-      "setup": "you're driving on a highway in Israel at ten in the morning on Yom HaShoah. the siren begins. what do most drivers do?",
+      "setup": "you're driving on a highway in Israel on the morning of Yom HaShoah. the siren begins. what do drivers do?",
       "options": ["keep driving, slowly.", "stop, step out of the car, and stand.", "pull off and turn on the radio."],
       "answer": 1,
-      "reveal": "cars stop in the lanes, and drivers step out and stand still for the two minutes of the siren."
+      "reveal": "cars stop in the lanes, and drivers step out and stand still until the siren ends."
     },
     "original": { "script": "יוֹם הַשּׁוֹאָה", "say": "YOHM hah-shoh-AH", "note": "Hebrew: the day of the Shoah. shoah is a biblical word for devastation." },
     "trapdoor": [
@@ -80,6 +80,7 @@
     "status": "pending",
     "keeper": null,
     "notes": [
+      "Editor review (2026-10-01): cut \"ten in the morning\" and \"1943\" (claims rule) from voice and games, replaced the siren-length myth, fixed the date arithmetic (27 Nisan is less than a week after Passover ends, not \"a week and a half after Passover\"), fixed \"how many resisted\" and the garbled ceremony-name sentence, and changed \"most drivers\" in the fork.",
       "Dates: Knesset resolution April 1951; law 1959; date 27 Nisan (moved when adjacent to Shabbat). Verify.",
       "Warsaw Ghetto Uprising began 19 April 1943, the eve of Passover (14 Nisan). Verify.",
       "'Every person has a name' (Lekhol ish yesh shem) ceremony named; Zelda's poem is not quoted.",

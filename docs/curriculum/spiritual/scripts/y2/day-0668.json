@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "In the early fall, in many cities, there's an evening when the synagogues fill past capacity. People who rarely come are there. Some wear white. Many will eat nothing and drink nothing for about twenty-five hours, until the stars come out the next night and a long blast of the ram's horn ends the day. This is Yom Kippur, the Day of Atonement, the most solemn day of the Jewish year. It isn't ours to borrow. But a good neighbor can learn what it is, and let it ask a question of their own life.",
-      "screen": ["`AN EVENING, SYNAGOGUES OVERFLOWING.` → `TWENTY-FIVE HOURS, NO FOOD OR WATER.` → `A NEIGHBOR'S HOLY DAY.`"]
+      "voice": "One autumn evening, synagogues fill for a day the Torah sets apart. Some people wear white. Those who keep the fast eat nothing and drink nothing from that evening until the stars come out the next night, when a long blast of the ram's horn ends the day. This is Yom Kippur, the Day of Atonement. Leviticus calls it a sabbath of solemn rest. It isn't ours to borrow. But a good neighbor can learn what it is, and let it ask a question of their own life.",
+      "screen": ["`AN AUTUMN EVENING, SYNAGOGUES FILL.` → `EVENING TO NIGHTFALL, NO FOOD OR WATER.` → `A NEIGHBOR'S HOLY DAY.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the source. In the book of Leviticus, the tenth day of the seventh month is set apart. In the 1917 Jewish Publication Society translation, the people are told: \"ye shall afflict your souls.\" Jewish tradition has long understood that as fasting and holding back from certain comforts, and the day is spent largely in prayer, from the evening service called Kol Nidre to the closing service, Neilah. Second, the inner work. The Hebrew word at its center is teshuvah, often translated repentance, though it comes from the root for returning. Turning back. Jews speak of recognizing a wrong, regretting it, setting it right where possible, and resolving to do differently. Third, a teaching many find striking. The Mishnah, an early collection of Jewish law, says Yom Kippur brings atonement for wrongs between a person and God, but for wrongs between one person and another, not until you've made peace with the person you wronged. So in the days before it, many Jews call, write and apologize. The day doesn't skip the phone call. Fourth, what a neighbor can take, carefully. Not the fast, not the prayers, not the meaning, which belong to the people who keep it. Only the question it leaves in the air for anyone watching with respect: have I looked honestly at my year? Is there someone I owe a word to? The Stoics had their own version, Seneca's nightly review, which we'll meet again soon. Their honest look is a different thing, from a different place. Many paths, each in its own way, ask for an honest look.",
+      "voice": "First, the source. In the book of Leviticus, the tenth day of the seventh month is set apart. In the 1917 Jewish Publication Society translation, the people are told: \"ye shall afflict your souls.\" Jewish tradition has long understood that as fasting and holding back from certain comforts, and the day is spent largely in prayer, from the evening service called Kol Nidre to the closing service, Neilah. Second, the inner work. The Hebrew word at its center is teshuvah, often translated repentance, though it comes from the root for returning. Turning back. Jewish teachers, Maimonides among them, describe recognizing a wrong, regretting it, setting it right where possible, and resolving to do differently. Third, a teaching about other people. The Mishnah, an early collection of Jewish law, says Yom Kippur brings atonement for wrongs between a person and God, but for wrongs between one person and another, not until you've made peace with the person you wronged. So it's a custom, in the days before it, to call, write and apologize. The day doesn't skip the phone call. Fourth, what a neighbor can take, carefully. Not the fast, not the prayers, not the meaning, which belong to the people who keep it. Only the question it leaves in the air for anyone watching with respect: have I looked honestly at my year? Is there someone I owe a word to? The Stoics had their own version, Seneca's nightly review, which we'll meet again soon. That nightly look is a different thing, from a different place, and it doesn't stand in for this one.",
       "screen": ["`LEVITICUS: YE SHALL AFFLICT YOUR SOULS.` · `TESHUVAH: TURNING BACK.` · `WRONGED A PERSON? MAKE PEACE FIRST.` · `A NEIGHBOR'S QUESTION, NOT A BORROWING.` · then, large: `HONEST REVIEW.`"]
     },
     {
@@ -48,7 +48,7 @@
     },
     { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 668 COUNTS.` → `TOMORROW: THE SUMMER SOLSTICE.`"] }
   ],
-  "howItsDone": "On Yom Kippur many Jews fast for about twenty-five hours and spend much of the day in synagogue prayer; in the days before it, many seek out people they have wronged to apologize.",
+  "howItsDone": "On Yom Kippur many Jews fast from one evening until nightfall the next and spend much of the day in synagogue prayer; in the days before it, many seek out people they have wronged to apologize.",
   "games": {
     "match": {
       "prompt": "a neighbor's day of atonement — tap the pairs.",
@@ -56,7 +56,7 @@
     },
     "myth": [
       ["according to the Mishnah, Yom Kippur alone atones for wrongs against another person", false, "you must first make peace with the person you wronged."],
-      ["the Yom Kippur fast lasts about twenty-five hours", true, "from before sunset until the stars come out the next night."],
+      ["Leviticus sets the day from evening to evening", true, "the fast runs from one evening until the stars come out the next night."],
       ["teshuvah comes from a root meaning to return", true, "repentance as turning back."]
     ],
     "fork": {
@@ -74,6 +74,7 @@
   },
   "sources": [
     { "ref": "Leviticus 16:29", "work": "The Holy Scriptures (Tanakh)", "translation": "JPS 1917", "quoted": "ye shall afflict your souls" },
+    { "ref": "Leviticus 16:31; 23:32", "work": "The Holy Scriptures (Tanakh)", "translation": null, "quoted": null },
     { "ref": "Mishnah Yoma 8:9", "work": "Mishnah", "translation": null, "quoted": null },
     { "ref": "Letters to Lucilius; On Anger 3.36 (Seneca's nightly review)", "work": "Seneca", "translation": null, "quoted": null }
   ],
@@ -81,6 +82,7 @@
     "status": "pending",
     "keeper": null,
     "notes": [
+      "Editor review 2026-10-01: cut the unsourced superlative 'the most solemn day of the Jewish year' (now Leviticus 16:31's own 'a sabbath of solemn rest'), the 'twenty-five hours' count (now Leviticus 23:32's evening to evening), 'synagogues fill past capacity / people who rarely come', and 'many Jews call, write and apologize' (now described as a custom); the four steps attributed to Jewish teachers such as Maimonides; cut the empty closing line 'many paths ... ask for an honest look'. Replaced the 25-hour myth item.",
       "Leviticus 16:29 JPS 1917 phrase 'ye shall afflict your souls': confirm exact wording.",
       "Mishnah Yoma 8:9 paraphrased. Confirm.",
       "Teshuvah from the root shuv, to return; the four steps (recognition, regret, repair, resolve) are a common summary drawing on Maimonides, Laws of Repentance 2. Confirm framing.",

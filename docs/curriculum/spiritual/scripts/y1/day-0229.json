@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Everyone has a book on the nightstand they meant to finish. A big old one, usually. Bought in a burst of good intention, read for three nights, then used as a coaster. The problem isn't the book, and it usually isn't you. It's the method. We read old books the way we read the news: fast, for information, all at once. They were never written for that. For seventy-odd days you've been reading two old books a few lines at a time, and it worked. Today, how to keep reading.",
+      "voice": "There's a kind of book that ends up on a nightstand. A big old one, bought in a burst of good intention, read for three nights, then used as a coaster. Maybe the problem isn't the book, or the reader. Maybe it's the method. Old books get read the way the news gets read: fast, for information, all at once. They were never written for that. For seventy-odd days this camp has read two old books a few lines at a time. Today, how to keep reading.",
       "screen": ["`THE BOOK ON THE NIGHTSTAND.` → `READ LIKE THE NEWS.` → `HOW TO KEEP READING.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "The Roman writer Seneca, a Stoic a century before Marcus, gives this advice in his second letter to his friend Lucilius. Don't wander through piles of authors, he says. Stay with a few great ones and digest them. Food that comes straight back up doesn't nourish anyone. In Richard Gummere's 1917 translation, he puts it in three words: \"Everywhere means nowhere.\" Then Seneca describes his own habit. Each day, out of everything he reads, he picks one thought to chew on for the rest of the day. And in that very letter he does it, picking a line from another philosopher, Epicurus, about poverty that's content being an honorable thing. One thought, carried. Christian monks worked out something similar. In the twelfth century a Carthusian monk named Guigo described a ladder of four steps for reading scripture slowly: reading, then turning the words over, then prayer, then resting in silence. It's called lectio divina, holy reading, and many Christians still practice it. Different aims, different sources, the same rhythm: slow, little, and kept. So here's the method for any old book, sacred or not. Three lines a day. Read them slowly, twice. Pick one phrase. Carry it until evening. That's all. Three lines a day is more than a thousand lines a year. The Meditations, the Masnavi, the Psalms, the Gita, the Dhammapada: all of them were read this way for centuries, long before anyone tried to finish them on a weekend.",
+      "voice": "The Roman writer Seneca, a Stoic who wrote long before Marcus, gives this advice in his second letter to his friend Lucilius. Don't wander through piles of authors, he says. Stay with a few great ones and digest them. Food that comes straight back up doesn't nourish anyone. In Richard Gummere's 1917 translation, he puts it in three words: \"Everywhere means nowhere.\" Then Seneca describes his own habit. Each day, out of everything he reads, he picks one thought to chew on for the rest of the day. And in that very letter he does it, picking a line from another philosopher, Epicurus, about poverty that's content being an honorable thing. One thought, carried. Christian monks worked out something similar. A medieval Carthusian monk named Guigo described a ladder of four steps for reading scripture slowly: reading, then turning the words over, then prayer, then resting in silence. It's called lectio divina, holy reading, and it is still practiced today. Different aims, different sources, the same rhythm: slow, little, and kept. So here's the method for any old book, sacred or not. Three lines a day. Read them slowly, twice. Pick one phrase. Carry it until evening. That's all. Three lines a day is more than a thousand lines a year. The Meditations, the Masnavi, the Psalms, the Gita, the Dhammapada: none of them has to be finished on a weekend.",
       "screen": ["`EVERYWHERE MEANS NOWHERE.` · `ONE THOUGHT, CHEWED ALL DAY.` · `LECTIO DIVINA: FOUR SLOW STEPS.` · `READ SLOWLY, PICK ONE, CARRY IT.` · then, large: `THREE LINES A DAY.`"]
     },
     {
@@ -48,7 +48,7 @@
     },
     { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 229 COUNTS.` → `TOMORROW: HUNDREDS MORE.`"] }
   ],
-  "howItsDone": "Many readers of old texts read a few lines a day and carry one phrase, as Seneca describes in his second letter; many Christians practice the same slow reading of scripture as lectio divina.",
+  "howItsDone": "Some readers of old texts read a few lines a day and carry one phrase, as Seneca describes in his second letter; Christians who keep lectio divina read scripture in the same slow way.",
   "games": {
     "match": {
       "prompt": "slow reading — tap the pairs.",
@@ -57,19 +57,19 @@
     "myth": [
       ["Seneca advises reading as many authors as you can", false, "he says stay with a few great ones and digest them: everywhere means nowhere."],
       ["lectio divina is a slow way of reading scripture", true, "reading, turning the words over, prayer, then resting in silence."],
-      ["old books were mostly read cover to cover in one go", false, "for centuries they were read a little at a time, and carried."]
+      ["Seneca picked one thought a day to carry", true, "out of everything he read, he chose one thought to chew on for the rest of the day."]
     ],
     "fork": {
       "setup": "you want to read the Meditations properly. what do you do?",
       "options": ["finish it this weekend.", "three lines a day, one phrase carried.", "read a summary instead."],
       "answer": 1,
-      "reveal": "Seneca picked one thought a day and chewed on it; the monks read slowly in four steps. little, slow and kept is how old books were meant to be read."
+      "reveal": "Seneca picked one thought a day and chewed on it; the monks read slowly in four steps. little, slow and kept is the habit both describe."
     },
     "original": { "script": "lectio divina", "say": "LEK-tee-oh dee-VEE-nah", "note": "Latin: holy reading, the monks' slow way of reading scripture." },
     "trapdoor": [
       "what you thought: read more, faster.",
       "what it means: read less, slower, and carry one phrase.",
-      "what a scholar hears: Seneca, Letter 2, where he quotes Epicurus; Guigo II's Ladder of Monks, from the twelfth century, names the four steps."
+      "what a scholar hears: Seneca, Letter 2, where he quotes Epicurus; Guigo II's Ladder of Monks names the four steps: lectio, meditatio, oratio, contemplatio."
     ]
   },
   "sources": [
@@ -81,6 +81,7 @@
     "status": "pending",
     "keeper": null,
     "notes": [
+      "Review 2026-10-01: hook no longer tells the listener about their nightstand or says 'it worked'; cut 'a century before', 'twelfth century', 'many Christians' and the unsourced 'read this way for centuries' claim; replaced the unsourced myth item with Seneca's own habit.",
       "Gummere 1917, Letter 2.2: confirm 'Everywhere means nowhere.'",
       "Letter 2 paraphrases (digest a few master-thinkers; food that is not assimilated; one thought a day; Epicurus 'contented poverty is an honorable estate') should be checked.",
       "Guigo II's Scala Claustralium: date often given c. 1150–1190; four steps lectio, meditatio, oratio, contemplatio. Confirm.",

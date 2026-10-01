@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "It's bedtime, and a small person in pajamas says: tell me a story. Not read one. Tell one. And your mind goes blank. You know hundreds of stories, from movies and shows and your own life, and suddenly you can't think of a single one with a beginning, a middle and an end. Here's some good news. For seventy days you've been collecting exactly the kind of stories that have been told at bedsides and firesides for thousands of years. You already have them. Today is about giving one away. Today's story is the story you'd tell a child.",
+      "voice": "It's bedtime, and a small person in pajamas says: tell me a story. Not read one. Tell one. And the mind goes blank. Hundreds of stories from movies and shows and a whole life, and suddenly not a single one with a beginning, a middle and an end. Here's some good news. For seventy days this path has been handing over exactly the kind of stories people tell at bedsides and firesides. You already have them. Today is about giving one away. Today's story is the story you'd tell a child.",
       "screen": ["`TELL ME A STORY.` → `YOUR MIND GOES BLANK.` → `YOU ALREADY HAVE SEVENTY.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Almost every story on this path lived in people's mouths long before it lived on a page. Aesop's fables were told aloud for generations before anyone collected them. The desert fathers' sayings were spoken to young monks, who remembered them and wrote them down later. The stories of Guru Nanak were told by his followers. The Hasidic tales were told at tables, by people who'd heard them from people who'd heard them. Jesus taught in parables, told to crowds on hillsides. The Buddha used pictures a farmer could follow: a raft, an arrow, a mustard seed. None of these were written for experts first. They were made to be told. So here's how to tell one well. First, pick one you actually liked. The tortoise who arrived. Nasruddin looking for his key under the lamp. Honi planting a tree for his grandchildren. The father who ran. Second, tell it plainly. Who was there, what they wanted, what happened, and the one surprising thing. Five or six sentences is enough. Third, and this is the hard one: stop. Don't explain the moral. Many of Aesop's tidy lessons at the end were added by later collectors anyway. A child who hears the father ran will ask why. That question is the lesson. Fourth, keep it true to where it came from. Don't turn the Samaritan into a superhero, or Kisa Gotami into a trick. Tell it the way the people who kept it would recognize. That's all. You don't have to be a great storyteller. The stories are already good. You're just the next pair of hands.",
+      "voice": "Many of the stories on this path were spoken before they were written. Aesop's fables reached us through collectors who gathered tales people told. The desert fathers' sayings were spoken to young monks, who remembered them and wrote them down later. The stories of Guru Nanak were told by his followers. The Hasidic tales were told at tables, by people who'd heard them from people who'd heard them. Jesus taught in parables, told to crowds on hillsides. The Buddha used pictures a farmer could follow: a raft, an arrow, a mustard seed. None of these were written for experts first. They were made to be told. So here's how to tell one well. First, pick one you actually liked. The tortoise who arrived. Nasruddin looking for his key under the lamp. The old man Honi met, planting a carob tree for those who come after. The father who ran. Second, tell it plainly. Who was there, what they wanted, what happened, and the one surprising thing. Five or six sentences is enough. Third, and this is the hard one: stop. Don't explain the moral. A child who hears the father ran will ask why. That question is the lesson. Fourth, keep it true to where it came from. Don't turn the Samaritan into a superhero, or Kisa Gotami into a trick. Tell it the way the people who kept it would recognize. That's all. You don't have to be a great storyteller. The stories are already good. You're just the next pair of hands.",
       "screen": ["`TOLD ALOUD BEFORE WRITTEN DOWN.` · `PICK ONE YOU LIKED.` · `TELL IT PLAINLY, THEN STOP.` · `KEEP IT TRUE TO ITS PEOPLE.` · then, large: `PASS IT ON.`"]
     },
     {
@@ -52,11 +52,11 @@
   "games": {
     "match": {
       "prompt": "stories from the path — tap the pairs.",
-      "pairs": [["the tortoise", "arrived while the hare napped"], ["Nasruddin", "searched under the lamp"], ["Kisa Gotami", "looked for a mustard seed"], ["Honi", "planted a tree for his grandchildren"]]
+      "pairs": [["the tortoise", "arrived while the hare napped"], ["Nasruddin", "searched under the lamp"], ["Kisa Gotami", "looked for a mustard seed"], ["Honi", "met an old man planting a carob tree"]]
     },
     "myth": [
-      ["most of these stories were written before they were told", false, "almost all lived in speech for generations before they were written down."],
-      ["many of Aesop's closing morals were added by later collectors", true, "the stories came first; the tidy lessons often came later."],
+      ["most of these stories were written before they were told", false, "they were told aloud first: parables to crowds, sayings to young monks, tales at tables."],
+      ["Jesus taught in parables told to crowds", true, "stories made to be told, not written for experts first."],
       ["the Buddha taught only in abstract ideas", false, "he used pictures anyone could follow: a raft, an arrow, a mustard seed."]
     ],
     "fork": {
@@ -68,14 +68,15 @@
     "original": null,
     "trapdoor": [
       "what you thought: stories for children are the simple version of wisdom.",
-      "what it means: telling a story plainly is how every one of these traditions kept its wisdom alive.",
-      "what a scholar hears: most were oral for generations; in Aesop, the closing morals (epimythia) are often later additions."
+      "what it means: telling a story plainly is how these traditions passed their wisdom on.",
+      "what a scholar hears: parable, saying, janamsakhi, Hasidic tale: forms made to be spoken before they were read."
     ]
   },
   "sources": [
     { "ref": "Aesop's Fables (Greek collections)", "work": "Aesop's Fables", "translation": null, "quoted": null },
     { "ref": "Sayings of the Desert Fathers (Apophthegmata Patrum)", "work": "Sayings of the Desert Fathers", "translation": null, "quoted": null },
-    { "ref": "Luke 15:11–32", "work": "The Bible", "translation": null, "quoted": null }
+    { "ref": "Luke 15:11–32", "work": "The Bible", "translation": null, "quoted": null },
+    { "ref": "Taanit 23a (Honi and the carob tree)", "work": "Babylonian Talmud", "translation": null, "quoted": null }
   ],
   "review": {
     "status": "pending",
@@ -83,7 +84,8 @@
     "notes": [
       "The claim that Aesop's closing morals (epimythia) were often added by later collectors is a common scholarly view; confirm wording.",
       "The claim that almost every story on the path lived orally before being written is general; true of the fables, sayings, janamsakhis, Hasidic tales and the Gospel parables, but a reviewer may want to soften 'almost every'.",
-      "The practice asks for a silent rehearsal during the sit and the telling later in the day."
+      "The practice asks for a silent rehearsal during the sit and the telling later in the day.",
+      "Editor review (days 76-94 pass): SERIOUS fix: in Taanit 23a (and day 58) Honi does not plant the tree; he meets an old man planting a carob. Teach and match corrected; Taanit 23a added to sources. Cut 'thousands of years', 'almost every story... for generations' and the Aesop epimythia claim (teach, myth, trapdoor), none stated by a cited text; hook no longer tells the listener their mind goes blank."
     ]
   },
   "meta": { "index": "93. The story you'd tell a child · — · pick one of these seventy stories and tell it plainly · tell a story to someone · pass it on", "writer": "spiritual writer agent (days 68–97)", "written": "2026-09-30" }

@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A group of people walk up to Moses with a complaint that sounds almost like a lawsuit. Everyone else is getting ready for the first Passover since leaving Egypt. The lambs are chosen. The fires are being built. And these people can't take part. It's not their fault. They're ritually impure, because they've been near a dead body. Somebody had to handle the dead. And they want to know: why should we be left out? What happens next is unusual in the Torah. Moses doesn't know the answer.",
-      "screen": ["`EVERYONE IS READY FOR PASSOVER.` → `A GROUP LEFT OUT.` → `MOSES DOESN'T KNOW.`"]
+      "voice": "A group of people walk up to Moses with a complaint that sounds almost like a lawsuit. Everyone else is getting ready to keep Passover in the wilderness, a year after leaving Egypt. The lambs are chosen. The fires are being built. And these people can't take part. It's not their fault. They're ritually impure, because they've been near a dead body. Somebody had to handle the dead. And they want to know: why should we be left out? What happens next is striking. Moses doesn't give them an answer. He says: wait, and I'll ask.",
+      "screen": ["`EVERYONE IS READY FOR PASSOVER.` → `A GROUP LEFT OUT.` → `MOSES SAYS: WAIT.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Numbers nine. The men say: we're impure from a dead body, \"wherefore are we to be kept back,\" from bringing the LORD's offering at its time with everyone else? Moses tells them to wait while he asks. Most of the Torah's laws come down from above. This one comes up from below: it starts with people who refuse to accept being shut out, and say so. God's answer creates a new date. Anyone impure from the dead, or far away on a journey, can keep Passover one month later, on the fourteenth of the second month, with matzah and bitter herbs. In Hebrew, Pesach Sheni: the second Passover. Who were they? The Talmud records a few opinions. One says they were the people carrying Joseph's coffin, the bones Moses brought out of Egypt. Another suggests they had buried someone who died with no one else to bury them. Either way, they were impure because they'd done something good. The Torah is honest about the edge of this, too. Someone who was able to keep Passover and simply didn't bother isn't given the same chance. The second date is for people life got in the way of. Today, there's no Passover offering, but the date is still marked. Some Jews eat a piece of matzah on that day, a month after Passover. And in Chabad teaching it's often summed up with a simple line: it's never too late. The door you missed can open again.",
+      "voice": "Numbers nine. The men say: we're impure from a dead body, \"wherefore are we to be kept back,\" from bringing the LORD's offering at its time with everyone else? Moses tells them to wait while he asks. This law doesn't start as a command from above. It starts from below: it starts with people who refuse to accept being shut out, and say so. God's answer creates a new date. Anyone impure from the dead, or far away on a journey, can keep Passover one month later, on the fourteenth of the second month, with matzah and bitter herbs. In Hebrew, Pesach Sheni: the second Passover. Who were they? The Talmud records a few opinions. One says they were the people carrying Joseph's coffin, the bones Moses brought out of Egypt. Another suggests they had buried someone who died with no one else to bury them. Either way, they were impure because they'd done something good. The Torah is honest about the edge of this, too. For someone who was clean, not on a journey, and simply didn't keep Passover, the verse has hard words: he shall bear his sin. The second date is written for people life got in the way of. Today, there's no Passover offering, but the date is still marked. Some Jews eat a piece of matzah on that day, a month after Passover. And in Chabad teaching it's often summed up with a simple line: it's never too late. The door you missed can open again.",
       "screen": ["`WHEREFORE ARE WE KEPT BACK?` · `A LAW THAT STARTS FROM BELOW.` · `ONE MONTH LATER: PESACH SHENI.` · `FOR THOSE LIFE GOT IN THE WAY OF.` · then, large: `SECOND CHANCES EXIST.`"]
     },
     {
@@ -57,13 +57,13 @@
     "myth": [
       ["the second Passover was God's idea before anyone asked", false, "it began with people who asked not to be left out."],
       ["it was open to those impure from the dead or far away on a journey", true, "Numbers 9:10 names both."],
-      ["someone who simply chose to skip Passover got the same second chance", false, "the Torah says the second date is for those who couldn't, not those who wouldn't."]
+      ["the Torah treats skipping Passover by choice the same as being kept away", false, "for someone who could have come and didn't, the verse has hard words: he shall bear his sin."]
     ],
     "fork": {
       "setup": "you're Moses. men who couldn't keep Passover ask why they should be left out. what do you do?",
       "options": ["tell them the rules are the rules.", "tell them to wait while you ask God.", "let them join anyway, impure."],
       "answer": 1,
-      "reveal": "Moses doesn't know the answer, and says so. God answers with a whole new date: Pesach Sheni, a month later."
+      "reveal": "Moses doesn't answer on the spot; he tells them to wait. God answers with a whole new date: Pesach Sheni, a month later."
     },
     "original": { "script": "פֶּסַח שֵׁנִי", "say": "PEH-sakh shay-NEE", "note": "Hebrew: the second Passover. sheni means second." },
     "trapdoor": [
@@ -74,7 +74,7 @@
   },
   "sources": [
     { "ref": "Numbers 9:7", "work": "The Holy Scriptures", "translation": "JPS 1917", "quoted": "wherefore are we to be kept back" },
-    { "ref": "Numbers 9:6–14", "work": "The Holy Scriptures", "translation": null, "quoted": null },
+    { "ref": "Numbers 9:1–14", "work": "The Holy Scriptures", "translation": null, "quoted": null },
     { "ref": "Talmud Bavli, Sukkah 25a–b", "work": "Babylonian Talmud", "translation": null, "quoted": null }
   ],
   "review": {
@@ -84,7 +84,8 @@
       "'wherefore are we to be kept back' from JPS 1917 Numbers 9:7, from memory; confirm.",
       "Sukkah 25a–b: views that the men carried Joseph's coffin (Rabbi Yose HaGelili), were Mishael and Elzaphan (Rabbi Akiva), or had buried a met mitzvah (Rabbi Yitzchak). The script names two; confirm.",
       "Review pass: 'it's never too late' was attributed to 'the last Lubavitcher Rebbe'. The line appears in Hayom Yom (14 Iyar) in the name of the sixth Rebbe, Rabbi Yosef Yitzchak Schneersohn, and was later taught widely by Rabbi Menachem Mendel Schneerson; 'last' is also a sensitive word for some Chabad followers. Now phrased as 'in Chabad teaching'. Confirm.",
-      "Customs (eating matzah, omitting Tachanun) vary and are most common in Hasidic and some Sephardi communities; review pass softened 'many' to 'some'."
+      "Customs (eating matzah, omitting Tachanun) vary and are most common in Hasidic and some Sephardi communities; review pass softened 'many' to 'some'.",
+      "Editor review (2026-10-01): 'the first Passover since leaving Egypt' replaced with what Numbers 9:1 says (the second year); cut 'unusual in the Torah' and 'most of the Torah's laws come down from above'; 'Moses doesn't know' now matches 9:8 (he tells them to wait); the claim that someone who skipped by choice 'isn't given the same chance' was stronger than the text and contested in the Talmud (Pesachim 93a), so the teach and myth now say only what 9:13 says."
     ]
   },
   "meta": { "index": "442. Beha'alotcha: a second Passover (Numbers 9:6–14) · Pesach Sheni · people who missed Passover ask for a chance, and one is given · give someone a second chance · second chances exist", "writer": "writer agent (judaism y2 422–451)", "written": "2026-09-30" }

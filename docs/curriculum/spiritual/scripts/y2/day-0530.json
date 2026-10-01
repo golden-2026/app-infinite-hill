@@ -25,7 +25,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the note. Between books one and two, the manuscripts carry a few words: among the Quadi, at the Granua. The Quadi were a Germanic people living north of the Danube. The Granua is a river there, usually identified with the Hron, which flows through what's now Slovakia. Second, the war. For much of the 170s, Marcus was not in Rome. He was on the Danube frontier, leading campaigns against the Marcomanni, the Quadi and other peoples who had crossed into the empire. These wars dragged on for years. Over the same years a deadly plague was moving through the empire. The emperor spent long seasons in army camps, in the cold, far from home, and in poor health. Third, where the note belongs. Scholars aren't fully agreed. It could be a closing note for book one, or a heading for book two. Many read it as a heading for book two, because a similar note, at Carnuntum, a legionary fortress on the Danube, stands before book three. Either way, at least some of this notebook was written in a camp, at war. Fourth, what that changes. Read book one again with a tent around it. A tired man at the frontier, far from his family, sat down and listed, one by one, the people who had made him who he was. A great-grandfather. A tutor. Rusticus. Apollonius. Sextus. Alexander. Severus. Maximus. Not a victory list. A gratitude list. And tomorrow, when book two begins, the camp is still there.",
+      "voice": "First, the note. Between books one and two, the manuscripts carry a few words: among the Quadi, at the Granua. The Quadi were a Germanic people living north of the Danube. The Granua is a river there, usually identified with the Hron, which flows through what's now Slovakia. Second, the war. The historian Cassius Dio tells of Marcus on the Danube frontier, leading campaigns against the Marcomanni, the Quadi and other peoples, year after year. The emperor spent long seasons in army camps, in the cold, far from Rome. Third, where the note belongs. Scholars aren't agreed. It could be a closing note for book one, or a heading for book two. Some editors read it as a heading for book two, because a similar note, at Carnuntum, a legionary fortress on the Danube, stands before book three. Either way, at least some of this notebook was written in a camp, at war. Fourth, what that changes. Read book one again with a tent around it. A tired man at the frontier, far from his family, sat down and listed, one by one, the people who had made him who he was. A great-grandfather. A tutor. Rusticus. Apollonius. Sextus. Alexander. Severus. Maximus. Not a victory list. A gratitude list. And tomorrow, when book two begins, the camp is still there.",
       "screen": ["`AMONG THE QUADI, AT THE GRANUA.` · `YEARS ON THE DANUBE FRONTIER.` · `END OF BOOK ONE, OR START OF TWO?` · `A GRATITUDE LIST, IN A TENT.` · then, large: `WRITTEN IN CAMP.`"]
     },
     {
@@ -48,7 +48,7 @@
     },
     { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 530 COUNTS.` → `TOMORROW: FLESH, BREATH, RULING PART.`"] }
   ],
-  "howItsDone": "Many people who keep a journal in Marcus's spirit write wherever they happen to be, on commutes, breaks or travels, rather than waiting for a quiet desk.",
+  "howItsDone": "Some people who keep a journal in Marcus's spirit write wherever they happen to be, on commutes, breaks or travels, rather than waiting for a quiet desk.",
   "games": {
     "match": {
       "prompt": "among the Quadi — tap the pairs.",
@@ -57,19 +57,19 @@
     "myth": [
       ["the Meditations was written in a quiet palace library in Rome", false, "notes in the manuscripts place at least some of it in army camps on the Danube."],
       ["the note between books one and two names a people and a river", true, "among the Quadi, at the Granua."],
-      ["scholars all agree the note belongs to book one", false, "many read it as a heading for book two; it isn't settled."]
+      ["scholars all agree the note belongs to book one", false, "some editors read it as a heading for book two; it isn't settled."]
     ],
     "fork": {
       "setup": "you're the emperor at a frontier camp, after a long day of war business. it's cold, and you're tired. what do you do?",
       "options": ["sleep; there's nothing left to give.", "write notes to yourself in Greek, about how to live.", "dictate a triumphant report for Rome."],
       "answer": 1,
-      "reveal": "the notes in the manuscripts suggest that's exactly where much of the Meditations was written."
+      "reveal": "the notes in the manuscripts suggest at least some of the Meditations was written in camps like this."
     },
     "original": null,
     "trapdoor": [
       "what you thought: a calm emperor writing in a calm palace.",
-      "what it means: much of the notebook was written at war, in camp, by a tired man far from home.",
-      "what a scholar hears: the Granua and Carnuntum notes are the only place markers in the text, and editors still debate which books they belong to."
+      "what it means: at least some of the notebook was written at war, in camp, by a tired man far from home.",
+      "what a scholar hears: the Granua and Carnuntum notes are the two place markers in the text, and editors still debate which books they belong to."
     ]
   },
   "sources": [
@@ -81,6 +81,7 @@
     "status": "pending",
     "keeper": null,
     "notes": [
+      "Editor review (2026-10-01): cut \"the 170s\", the plague and the health claims from the war section (now attributed to Cassius Dio in general terms); \"many read it\" to \"some editors read it\"; \"much of the Meditations was written in camp\" softened to \"at least some\" in fork and trapdoor; \"Many\" to \"Some\" in howItsDone.",
       "Note 'among the Quadi at the Granua' (τὰ ἐν Κουάδοις πρὸς τῷ Γρανούᾳ) and its placement: confirm the manuscript position and the debate over whether it closes book one or heads book two.",
       "Granua identified with the Hron (Garam) in Slovakia: confirm.",
       "Marcomannic Wars c. 166/167–180; Marcus on the Danube for much of the 170s; Antonine plague: confirm.",

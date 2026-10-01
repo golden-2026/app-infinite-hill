@@ -19,14 +19,14 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Some prayers are long. They have openings and closings and lists. The one in today's verse has two parts, and it doesn't ask for anything. A man has lost his health and his family, and commentators add his wealth too. They say the trial went on for years, and nobody can tell you exactly how many. And when he finally speaks to God about it, he doesn't argue. He doesn't bargain. He says what happened, and he says who God is. That's all. Al-Anbiya keeps it to two verses. Today, the call of Ayyub, the man the Bible calls Job.",
-      "screen": ["`A PRAYER THAT ASKS NOTHING.`", "`TWO PARTS: WHAT HAPPENED, WHO GOD IS.`", "`AYYUB, CALLED JOB IN THE BIBLE.`"]
+      "voice": "Some prayers are long. They have openings and closings and lists. The one in today's verse has two parts, and neither part is a request in so many words. A man has lost his health and his family, and commentators add his wealth too. They say the trial went on for years, and nobody can tell you exactly how many. And when he finally speaks to God about it, he doesn't argue. He doesn't bargain. He says what happened, and he says who God is. That's all. Al-Anbiya keeps it to two verses. Today, the call of Ayyub, the man the Bible calls Job.",
+      "screen": ["`A PRAYER WITHOUT A PLEA.`", "`TWO PARTS: WHAT HAPPENED, WHO GOD IS.`", "`AYYUB, CALLED JOB IN THE BIBLE.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Pickthall gives his words this way: \"Lo! adversity afflicteth me, and Thou art Most Merciful of all who show mercy.\" In Arabic it is short enough to hold in one breath. Massaniya ad-durr: harm has touched me. The verb massa means to touch, the lightest contact. He doesn't say harm crushed me. He says it touched me, which some commentators read as courtesy, a man choosing his words carefully even in pain. Then the second half: wa anta arhamu r-rahimin, and You are the most merciful of the merciful. Notice what's missing. There is no heal me. He lays the wound next to the mercy and leaves the rest to God. And the next verse says God answered. The harm was removed, and his family was given back to him, with the like of them besides, as a mercy and a reminder. Surah Sad tells a little more: he is told to strike the ground with his foot, and there is cool water to wash in and drink. And then God calls him patient, and an excellent servant. That's the surprise. The Qur'an praises Ayyub's patience in the same story where he tells God plainly that he's hurting. So in this picture patience isn't silence. Ya'qub says something close in Surah Yusuf: he takes his grief to God and to no one else. Complaining to people can wear a person down; telling God is part of the prayer. You may have heard longer tales about Ayyub, with details of his illness and his wife. Those are stories people tell, from later collections. The Qur'an itself stays brief.",
-      "screen": ["`HARM HAS TOUCHED ME.` · `YOU ARE THE MOST MERCIFUL.` · `NO ASKING, JUST NAMING.` · `PATIENT, AND HONEST ABOUT THE PAIN.`"]
+      "voice": "Pickthall gives his words this way: \"Lo! adversity afflicteth me, and Thou art Most Merciful of all who show mercy.\" In Arabic it is short enough to hold in one breath. Massaniya ad-durr: harm has touched me. The verb massa means to touch. He doesn't say harm crushed me. He says it touched me, which some commentators read as courtesy, a man choosing his words carefully even in pain. Then the second half: wa anta arhamu r-rahimin, and You are the most merciful of the merciful. Notice what's missing. There is no heal me. He lays the wound next to the mercy and leaves the rest to God. And the next verse says God answered. The harm was removed, and his family was given back to him, with the like of them besides, as a mercy and a reminder. Surah Sad tells a little more: he is told to strike the ground with his foot, and there is cool water to wash in and drink. And then God calls him patient, and an excellent servant. That's the surprise. The Qur'an praises Ayyub's patience in the same story where he tells God plainly that he's hurting. So in this picture patience isn't silence. Ya'qub says something close in Surah Yusuf: he takes his grief to God and to no one else. Some scholars draw a line here: complaining about God to people is one thing; telling God is part of the prayer. You may have heard longer tales about Ayyub, with details of his illness and his wife. Those are stories people tell, from later collections. The Qur'an itself stays brief.",
+      "screen": ["`HARM HAS TOUCHED ME.` · `YOU ARE THE MOST MERCIFUL.` · `NAMING, NOT PLEADING.` · `PATIENT, AND HONEST ABOUT THE PAIN.`"]
     },
     {
       "type": "the practice",
@@ -52,10 +52,10 @@
   "games": {
     "match": {
       "prompt": "inside Ayyub's call — tap the pairs.",
-      "pairs": [["massa", "to touch, the lightest contact"], ["ad-durr", "harm, hardship"], ["arhamu r-rahimin", "most merciful of the merciful"], ["Surah Sad", "strike the ground: cool water"]]
+      "pairs": [["massa", "to touch"], ["ad-durr", "harm, hardship"], ["arhamu r-rahimin", "most merciful of the merciful"], ["Surah Sad", "strike the ground: cool water"]]
     },
     "myth": [
-      ["Ayyub's prayer in 21:83 asks God to heal him", false, "it only names the harm and names God's mercy. the healing comes in the next verse, as the answer."],
+      ["Ayyub's words in 21:83 say 'heal me' outright", false, "they name the harm and name God's mercy. the healing comes in the next verse, as the answer."],
       ["the Qur'an calls Ayyub patient", true, "Surah Sad calls him patient and an excellent servant, in the same story where he tells God he's hurting."],
       ["the long tales of Ayyub's illness come from the Qur'an", false, "the Qur'an keeps his story brief. the longer details are stories people tell, from later collections."]
     ],
@@ -63,7 +63,7 @@
       "setup": "you've lost your health, your wealth and your family. you finally speak to God about it. what do you say?",
       "options": ["list everything that went wrong, and ask why.", "say harm has touched me, and You are the most merciful.", "say nothing at all, to prove you're patient."],
       "answer": 1,
-      "reveal": "two short parts, and no request. God answers anyway, and still calls him patient."
+      "reveal": "two short parts, and no direct request. God answers anyway, and still calls him patient."
     },
     "original": { "script": "مَسَّنِيَ الضُّرُّ", "say": "MAS-sa-ni-yad-DURR", "note": "Arabic: harm has touched me. Ayyub's words in 21:83." },
     "trapdoor": [
@@ -87,7 +87,8 @@
       "'The trial went on for years' and the longer tales of his illness and wife are framed as commentators' reports and stories people tell; confirm framing.",
       "The line about complaining to God being part of prayer (with Ya'qub, 12:86) is a common scholarly point; confirm wording.",
       "The Qur'an mentions his family restored (21:84, 38:43); the loss of wealth comes from tafsir, so the hook now attributes it to commentators. Confirm.",
-      "'It doesn't ask for anything' / 'no heal me': many commentators read the call as an implicit request (21:84 says 'We answered him'); the script frames it as asking by naming rather than by a direct plea. A Keeper may want to soften further."
+      "'It doesn't ask for anything' / 'no heal me': many commentators read the call as an implicit request (21:84 says 'We answered him'); the script frames it as asking by naming rather than by a direct plea. A Keeper may want to soften further.",
+      "Editor review 2026-10-01: softened 'it doesn't ask for anything' to 'no request in so many words' (21:84 says God answered, and commentators read an implied request); cut the unsourced 'lightest contact' gloss of massa; attributed the complaining-to-God point to some scholars; reworded the matching myth item."
     ]
   },
   "meta": { "index": "482. Ayyub's call · — · Ayyub calls, harm has touched me and You are the most merciful, and is healed (21:83–84) · name your pain to Allah, simply · harm touched me; you are merciful", "writer": "writer agent (islam 482–511)", "written": "2026-09-30" }

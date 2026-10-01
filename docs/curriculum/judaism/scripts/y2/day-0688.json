@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Imagine a country where the saddest day of the year and the happiest day of the year are separated by a single sunset. In the morning, families stand at military cemeteries, by the graves of sons and daughters, brothers, parents. A siren stops traffic. The radio plays only quiet songs. And then, as evening comes, in one ceremony, the flag is raised from half-mast, torches are lit, and fireworks go up. Many of the same people who stood at the graves that morning are at a barbecue the next afternoon. The calendar puts them back to back on purpose.",
-      "screen": ["`THE SADDEST DAY, THEN THE HAPPIEST.` → `ONE SUNSET BETWEEN THEM.` → `BACK TO BACK, ON PURPOSE.`"]
+      "voice": "A flag hangs at half-mast on a hill in Jerusalem. All day, families have stood at military cemeteries across Israel, by the graves of sons and daughters, brothers, parents. The radio has played only quiet songs. Then the sun goes down, and in a single ceremony the flag is raised to the top of the pole, torches are lit, and fireworks go up. Some of the same people who stood at the graves that morning will be at a barbecue the next afternoon. A day of grief, a day of joy, and one sunset between them. The calendar puts them back to back on purpose.",
+      "screen": ["`A FLAG AT HALF-MAST.` → `ONE SUNSET, THEN FIREWORKS.` → `BACK TO BACK, ON PURPOSE.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "The first day is Yom HaZikaron, the day of remembrance, on the fourth of the Hebrew month of Iyar. It honors Israel's fallen soldiers, and in more recent decades, civilians killed in attacks. A siren sounds in the evening, and again the next morning. Almost every family in the country knows someone on the list. The second day is Yom HaAtzmaut, Independence Day, on the fifth of Iyar. It marks the declaration of the State of Israel in May 1948. When either day would touch Shabbat, the dates are moved. The move from one to the other is the point: the state's founders tied them together, so that celebration never forgets its cost. Memory first, then celebration. Outside Israel, and within it, Jews mark these days very differently. Many communities hold memorial services and festive gatherings; some add prayers, and many religious Zionists recite the psalms of praise called Hallel on Independence Day. Many Reform and Conservative congregations have added readings for it. Many Haredi communities don't mark the days as religious occasions, and a few Haredi groups oppose the state on religious grounds. Many secular Israelis celebrate with no prayers at all, just flags and picnics. And for Palestinians, the same events of 1948 are remembered as the Nakba, the catastrophe, marked in mid-May. Today we're not asking which view is right. We're learning what's there: a pair of days, one of grief and one of joy, and a world of Jews who hold them in many different ways, and some who hold them not at all.",
+      "voice": "The first day is Yom HaZikaron, the day of remembrance, on the fourth of the Hebrew month of Iyar. It honors Israel's fallen soldiers, and, in later years, civilians killed in attacks too. A siren sounds in the evening, and again the next morning. The second day is Yom HaAtzmaut, Independence Day, on the fifth of Iyar. It marks the declaration of the State of Israel in May 1948. When either day would touch Shabbat, the dates are moved. The move from one to the other is the point: the calendar ties them together, and the ceremony that closes the first day opens the second. Memory first, then celebration. Outside Israel, and within it, Jews mark these days very differently. Some communities hold memorial services and festive gatherings. Some add prayers; in religious Zionist synagogues, the psalms of praise called Hallel are often said on Independence Day. Some Reform and Conservative congregations have added readings for it. Haredi communities generally don't mark the days as religious occasions, and a few Haredi groups oppose the state on religious grounds. Some secular Israelis celebrate with no prayers at all, just flags and picnics. And for Palestinians, the same events of 1948 are remembered as the Nakba, the catastrophe. Today we're not asking which view is right. We're learning what's there: a pair of days, one of grief and one of joy, and a world of Jews who hold them in many different ways, and some who hold them not at all.",
       "screen": ["`YOM HAZIKARON: THE FALLEN.` · `YOM HAATZMAUT: MAY 1948.` · `ONE SUNSET BETWEEN THEM.` · `MANY WAYS, AND SOME NOT AT ALL.` · then, large: `MEMORY BEFORE CELEBRATION.`"]
     },
     {
@@ -56,14 +56,14 @@
     },
     "myth": [
       ["Israel's memorial day and independence day fall weeks apart", false, "they're back to back, a single sunset between them."],
-      ["every Jewish community marks the two days the same way", false, "ways differ widely, and some communities don't mark them as religious days at all."],
+      ["the two dates never move", false, "when either day would touch Shabbat, the dates are shifted."],
       ["Yom HaZikaron today also remembers civilians killed in attacks", true, "in more recent decades, victims of attacks were added."]
     ],
     "fork": {
       "setup": "you're planning the calendar of a new state. you want a day for the fallen and a day for independence. where do you put them?",
       "options": ["months apart, so each has its own season.", "back to back: the fallen first, then independence.", "on the same day."],
       "answer": 1,
-      "reveal": "they were placed back to back, remembrance first, so the celebration would never forget its cost."
+      "reveal": "they sit back to back, remembrance first, and one ceremony at sunset turns the first day into the second."
     },
     "original": { "script": "יוֹם הַזִּכָּרוֹן", "say": "YOHM hah-zee-kah-ROHN", "note": "Hebrew: the day of remembrance, Israel's memorial day, the day before Yom HaAtzmaut." },
     "trapdoor": [
@@ -84,7 +84,8 @@
       "Sirens: one minute in the evening, two minutes in the morning; victims of terror added to Yom HaZikaron (late 1990s). Not given in detail; verify.",
       "Practice of Hallel on Yom HaAtzmaut (Chief Rabbinate; religious Zionist communities), Reform and Conservative liturgies, Haredi non-observance, and anti-Zionist Haredi groups described briefly. Check fairness and accuracy.",
       "The Nakba sentence is included for honesty and fairness; a Keeper should decide on the wording.",
-      "Politically sensitive day: no ranking of views. A Keeper should review the whole script."
+      "Politically sensitive day: no ranking of views. A Keeper should review the whole script.",
+      "Editor review (2026-10-01): hook no longer opens with \"Imagine\" or uses saddest/happiest superlatives, and no longer leads with the siren (day 687's hook image); cut \"almost every family knows someone\"; replaced \"the state's founders tied them together\" (unsourced attribution) with the calendar and the shared ceremony; \"many\" claims softened to \"some\"; dropped the uncited \"mid-May\" Nakba date; replaced a myth item that repeated days 687 and 689 (\"every community marks it the same way\") with the Shabbat date shift."
     ]
   },
   "meta": { "index": "688. Israel's memorial and independence days · — · Yom HaZikaron honors the fallen, then Yom HaAtzmaut follows; communities worldwide mark them very differently, and some not at all · learn how one community marks them · memory before celebration", "writer": "writer agent (judaism y2 662–691)", "written": "2026-09-30" }

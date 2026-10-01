@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "When Epictetus wrote the word exile, he wasn't being abstract. His own teacher, Musonius Rufus, had been banished by Nero to a bare little island in the Aegean. Epictetus himself had to leave Rome when Domitian expelled the philosophers, and he rebuilt his life on another coast. Death wasn't abstract either: he had seen emperors kill senators for a sentence in a speech. So when section twenty-one tells us to keep death and exile before our eyes every day, it comes from someone who had lived beside both. And the payoff he promises is an odd one. Today: nothing to envy.",
-      "screen": ["`MUSONIUS, BANISHED TO AN ISLAND.` → `EPICTETUS, EXPELLED FROM ROME.` → `DEATH AND EXILE, DAILY.`"]
+      "voice": "Two words sit at the start of section twenty-one, and neither one is cheerful: death and exile. It's a strange place to look for a cure for envy. Envy looks sideways, at a neighbor's new kitchen, a friend's easy promotion, the couple whose photos never seem to have a bad day. Epictetus points somewhere else entirely, and he asks for it every day, not once in a while. The note in the handbook is short and blunt. And the payoff he promises is an odd one. Today: nothing to envy.",
+      "screen": ["`DEATH AND EXILE.` → `ENVY LOOKS SIDEWAYS.` → `EVERY DAY, NOT ONCE IN A WHILE.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the instruction. Let death and exile, and everything that seems terrible, be before your eyes every day, Epictetus says, and death most of all. Second, the promise. Then, he says, you'll never think anything low or petty, and you'll never want anything too much. Notice what he doesn't promise. Not that you'll be afraid less, at first, or cheerful. He promises a change in what you want. Third, how it works. Envy depends on a sense that the thing you envy is huge. Their promotion, their renovation, their perfect vacation. Set it in the light of death and it shrinks to its real size, not worthless, just the size of something that will be left behind. The Stoics weren't alone here. Many traditions keep a remembrance of death close: monks, mystics, poets. The Latin phrase memento mori, remember you'll die, came later, but the practice is old. Fourth, the gentle part. This isn't meant to darken the day. People who try it often report the opposite. The coffee tastes like coffee. The annoying coworker becomes a person who will also die, which is strangely tender. And envy, that tight, sour feeling, loosens, because in this light there's nothing to win. Everyone at the table, the one with the new car and the one with the old bike, is on the same short visit. Epictetus says it plainly: keep it before your eyes, and you won't grasp. If death feels too heavy today, start with exile: picture leaving behind everything you own. It does the same quiet work.",
+      "voice": "First, the instruction. Let death and exile, and everything that seems terrible, be before your eyes every day, Epictetus says, and death most of all. Second, the promise. Then, he says, you'll never think anything low or petty, and you'll never want anything too much. Notice what he doesn't promise. Not that you'll be less afraid, or more cheerful. He promises a change in what you want. Third, how it works. Envy depends on a sense that the thing you envy is huge. Their promotion, their renovation, their perfect vacation. Set it in the light of death and it shrinks to its real size, not worthless, just the size of something that will be left behind. The Stoics weren't alone here. In Plato's Phaedo, Socrates calls philosophy a kind of practice for dying. The Latin phrase memento mori, remember you'll die, names the same habit. Fourth, the gentle part. This isn't meant to darken the day. Done gently, it can work the other way. The coffee tastes like coffee. The annoying coworker becomes a person who will also die, which is strangely tender. And envy, that tight, sour feeling, loosens, because in this light there's nothing to win. Everyone at the table, the one with the new car and the one with the old bike, is on the same short visit. Epictetus says it plainly: keep it before your eyes, and you won't grasp. If death feels too heavy today, start with exile: picture leaving behind everything you own. It does the same quiet work.",
       "screen": ["`DEATH AND EXILE, BEFORE YOUR EYES.` · `NOTHING PETTY, NOTHING TOO MUCH.` · `ENVY SHRINKS TO ITS REAL SIZE.` · `THE SAME SHORT VISIT.` · then, large: `NOTHING TO ENVY.`"]
     },
     {
@@ -52,12 +52,12 @@
   "games": {
     "match": {
       "prompt": "nothing to envy — tap the pairs.",
-      "pairs": [["Musonius Rufus", "banished to an island by Nero"], ["Epictetus", "expelled from Rome"], ["death before your eyes", "you won't want anything too much"], ["memento mori", "remember you'll die"]]
+      "pairs": [["death and exile", "before your eyes, every day"], ["envy", "shrinks to its real size"], ["death before your eyes", "you won't want anything too much"], ["memento mori", "remember you'll die"]]
     },
     "myth": [
       ["Epictetus promises the practice will make you cheerful at once", false, "he promises you'll think nothing petty and want nothing too much."],
       ["he says to keep death before your eyes most of all", true, "death, exile and everything that seems terrible, but death most."],
-      ["Epictetus knew exile firsthand", true, "he left Rome when Domitian expelled the philosophers."]
+      ["in Plato's Phaedo, Socrates calls philosophy a practice for dying", true, "Epictetus turns that thought into a daily habit."]
     ],
     "fork": {
       "setup": "you're deeply envious of a friend's new life. what would section twenty-one have you do?",
@@ -80,6 +80,7 @@
     "status": "pending",
     "keeper": null,
     "notes": [
+      "Review (2026-10-01): rewrote the hook, which rested on uncited history (Musonius' exile, Domitian's expulsion, emperors killing senators) and said Epictetus 'wrote' the handbook (Arrian recorded it); cut the 'many traditions' and 'people who try it often report' claims; fixed a garbled line; replaced the Musonius/expulsion match pairs and myth with items from the teach.",
       "Enchiridion 21 paraphrased (death, exile and all terrible things daily before your eyes, death most; you will never think anything abject nor desire anything extravagantly). Confirm.",
       "Musonius Rufus exiled by Nero to Gyaros (c. 65 CE): confirm.",
       "Epictetus' departure from Rome under Domitian's expulsion: date uncertain (89 or c. 93–95).",

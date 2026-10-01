@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A courtroom, nearly two thousand years ago. A life is at stake: the charge carries the death penalty. Before the witnesses speak, the judges take them aside. They don't just say, tell the truth. They give them a short lesson from the book of Genesis. Think about that. Before you speak words that could end a life, a court makes you sit through a Torah lesson. And the lesson is about why God began the human race with just one person. Today's lesson is the one those witnesses heard.",
+      "voice": "A courtroom, as the Mishnah describes it. A life is at stake: the charge carries the death penalty. Before the witnesses speak, the judges take them aside. They don't just say, tell the truth. They give them a short lesson from the book of Genesis. So before a witness speaks words that could end a life, the court makes them sit through a Torah lesson. And the lesson is about why God began the human race with just one person. Today's lesson is the one those witnesses heard.",
       "screen": ["`A COURTROOM, A LIFE AT STAKE.` → `THE JUDGES TAKE THE WITNESSES ASIDE.` → `A LESSON FROM GENESIS FIRST.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "It's in the Mishnah, tractate Sanhedrin. Why was the first human created alone? The Mishnah gives several answers. The first: to teach that whoever destroys a single life, scripture counts it as if they destroyed a whole world. And whoever sustains a single life, as if they sustained a whole world. Adam was one person, and from him came everyone. So every single person carries a whole world inside. Some printed editions add the words, a life of Israel, and many older manuscripts don't have them. Scholars still discuss which reading is earlier, and most people quote the version about any life. Second answer: for the sake of peace. Since everyone comes from one ancestor, no one can say, my father is greater than yours. Third: to show God's greatness. When a person stamps coins from one mold, the Mishnah says, they all come out alike. But God stamped every human from the mold of the first, and not one is like another. And then the Mishnah draws the conclusion, and it's startling. Therefore, each person is obligated to say: for my sake the world was created. Not as arrogance. As responsibility. If the world was made for you, you're answerable for it. And if the world was made for them too, every person you meet is a whole world. That's what the witnesses were meant to feel: you're not testifying about a case. You're holding a world in your hands.",
+      "voice": "It's in the Mishnah, tractate Sanhedrin. Why was the first human created alone? The Mishnah gives several answers. The first: to teach that whoever destroys a single life, scripture counts it as if they destroyed a whole world. And whoever sustains a single life, as if they sustained a whole world. Adam was one person, and from him came everyone. So every single person carries a whole world inside. Second answer: for the sake of peace. Since everyone comes from one ancestor, no one can say, my father is greater than yours. Third: to show God's greatness. When a person stamps coins from one mold, the Mishnah says, they all come out alike. But God stamped every human from the mold of the first, and not one is like another. And then the Mishnah draws the conclusion, and it's startling. Therefore, each person is obligated to say: for my sake the world was created. Later teachers read that not as arrogance but as responsibility: if the world was made for you, you're answerable for it. And if the world was made for them too, every person you meet is a whole world. That's what the witnesses were meant to feel: you're not testifying about a case. You're holding a world in your hands.",
       "screen": ["`ONE LIFE IS A WHOLE WORLD.` · `NO ONE CAN SAY MY FATHER IS GREATER.` · `ONE MOLD, AND NO TWO ALIKE.` · `FOR MY SAKE THE WORLD WAS CREATED.` · then, large: `EACH LIFE A WORLD.`"]
     },
     {
@@ -43,7 +43,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: each life a world. Today, treat one person as if their whole world stood in front of you, because it does. Day one hundred sixty-three.",
+      "voice": "Your line: each life a world. Today, treat one person as if their whole world stood in front of you. Day one hundred sixty-three.",
       "screen": []
     },
     { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 163 COUNTS.` → `TOMORROW: BERESHIT: YOU CAN RULE OVER IT.`"] }
@@ -55,9 +55,9 @@
       "pairs": [["one life", "a whole world"], ["for the sake of peace", "no one says my father is greater"], ["one mold", "and no two alike"], ["each person should say", "for my sake the world was created"]]
     },
     "myth": [
-      ["the lesson was first given to witnesses in a capital case", true, "the judges warned them with it before they testified."],
+      ["the Mishnah sets this lesson in a warning to witnesses in a capital case", true, "the judges warned them with it before they testified."],
       ["the Mishnah says only kings may say the world was created for them", false, "it says each person is obligated to say it."],
-      ["every manuscript reads 'a life of Israel'", false, "some printed editions add it; many older manuscripts don't."]
+      ["the Mishnah gives only one reason for creating one person first", false, "it gives several: a whole world, peace between people, and God's greatness."]
     ],
     "fork": {
       "setup": "you're a judge in the ancient court. witnesses are about to testify in a case where a life is at stake. what do you do first?",
@@ -69,7 +69,7 @@
     "trapdoor": [
       "what you thought: a nice saying about how everyone matters.",
       "what it means: a warning to witnesses in a capital case: one life is a whole world, and each person must say the world was made for them.",
-      "what a scholar hears: Mishnah Sanhedrin 4:5; the words 'from Israel' are absent in many early manuscripts (e.g. the Kaufmann codex) and present in some printed editions."
+      "what a scholar hears: Mishnah Sanhedrin 4:5: 'olam malei', a full world; the parable of coins from one seal; 'bishvili nivra ha'olam', for my sake the world was created."
     ]
   },
   "sources": [
@@ -82,7 +82,8 @@
     "notes": [
       "Mishnah Sanhedrin 4:5 paraphrased in full: the warning to witnesses, the three reasons given (whole world; peace; God's greatness via the coin mold), and 'bishvili nivra ha'olam'. The Mishnah also gives a reason about heretics ('so they should not say there are many powers in heaven'); omitted for length. Confirm.",
       "Textual variant 'mi-Yisrael' (of Israel): the script says 'some printed editions add' it and 'many older manuscripts don't'; confirm the Kaufmann manuscript reference and whether a Keeper prefers to mention the variant at all.",
-      "'Not as arrogance. As responsibility.': an interpretive gloss; confirm it matches common teaching (cf. Rabbi Simcha Bunim's two pockets)."
+      "'Not as arrogance. As responsibility.': an interpretive gloss; confirm it matches common teaching (cf. Rabbi Simcha Bunim's two pockets).",
+      "Editor pass (claims rule): cut 'nearly two thousand years ago' and the manuscript-variant passage with its 'most people quote' claim (voice, myth, trapdoor); 'not arrogance, responsibility' now attributed to later teachers; cut 'Think about that' and the carry's 'because it does'."
     ]
   },
   "meta": { "index": "163. Bereshit: one person, a whole world · — · one human was created first, the Mishnah says, to teach that one life is a whole world (Sanhedrin 4:5) · treat one person as a whole world · each life a world", "writer": "writer agent (judaism 151–180)", "written": "2026-09-30" }

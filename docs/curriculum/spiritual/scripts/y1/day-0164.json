@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Imagine someone found your notes app. Not your posts, your notes. The reminders to yourself. Be patient with Dad. Stop checking your phone. You're not as tired as you think. It would be a little embarrassing, and also the truest picture of you anyone could get. Now picture a tent on a cold riverbank in central Europe, around the year 170. Outside, the Roman army. Inside, by lamplight, the most powerful man in the world, writing notes to himself about how to be a decent person. He never meant anyone to read them. Today, the emperor's notebook.",
+      "voice": "Somebody opens your notes app. Not your posts, your notes. The reminders to yourself. Be patient with Dad. Stop checking your phone. You're not as tired as you think. A little embarrassing, and also a truer picture of you than any post. The emperor of Rome kept notes like that. Reminders to himself, in Greek, some of them, it seems, written far from Rome on the Danube frontier, around the year 170. As far as anyone can tell, they were meant for no one else. Today, the emperor's notebook.",
       "screen": ["`YOUR NOTES APP, NOT YOUR POSTS.` → `A TENT ON THE DANUBE, AROUND 170.` → `THE EMPEROR'S NOTEBOOK.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Marcus Aurelius ruled Rome from 161 to 180. He spent much of his last decade at war along the Danube frontier, and it's likely that much of his notebook was written there, in camp. A few section headings survive in the manuscripts that seem to place him: one book ends with a note that it was written among the Quadi, a people on the far side of the river, and another begins, this at Carnuntum, a Roman fort. Three things are worth knowing. First, he wrote in Greek, not Latin. Greek was the language of philosophy, and Marcus had studied the Stoics, especially the teachings of the former slave Epictetus, since his youth. Second, he wrote to himself. The notes scold, remind, encourage, and repeat. He tells himself the same things again and again, the way you do when you haven't learned them yet. That's part of why they feel so alive: this isn't a man who has arrived, it's a man practicing. Third, the famous title isn't his. The old manuscripts carry a Greek heading usually translated to himself, and it may have been added by whoever copied the notes after his death. Meditations is what English readers later called the book. It survived by a thin thread of copies and was first printed in the 1550s. So when we read Marcus beside Rumi this camp, remember the difference. Rumi spoke his book aloud to a friend who wrote it down. Marcus wrote his alone, for no one. Both, somehow, reached us.",
+      "voice": "Marcus Aurelius ruled Rome from 161 to 180. He spent much of his last decade at war along the Danube frontier, and it's likely that much of his notebook was written there, in camp. A few section headings survive in the manuscripts that seem to place him: one book ends with a note that it was written among the Quadi, a people on the far side of the river, and another note reads: at Carnuntum, a Roman fort. Three things are worth knowing. First, he wrote in Greek, not Latin. Greek was the language of philosophy, and Marcus had studied the Stoics, among them the former slave Epictetus. Second, he wrote to himself. The notes scold, remind, encourage, and repeat. He tells himself the same things again and again, the way you do when you haven't learned them yet. That's part of why they feel so alive: this isn't a man who has arrived, it's a man practicing. Third, the famous title isn't his. The old manuscripts carry a Greek heading usually translated to himself, and it may have been added by whoever copied the notes after his death. Meditations is what English readers later called the book. It survived by a thin thread of copies and was first printed in the 1550s. So when we read Marcus beside Rumi this camp, remember the difference. Rumi spoke his book aloud to a friend who wrote it down. Marcus wrote his alone, for no one. Both, somehow, reached us.",
       "screen": ["`WRITTEN ON CAMPAIGN, BY THE DANUBE.` · `IN GREEK, THE LANGUAGE OF PHILOSOPHY.` · `NOTES THAT SCOLD AND REPEAT.` · `THE TITLE CAME LATER.` · then, large: `TO HIMSELF.`"]
     },
     {
@@ -57,13 +57,13 @@
     "myth": [
       ["Marcus wrote the Meditations in Latin", false, "he wrote in Greek, the language of philosophy."],
       ["he wrote them for publication", false, "they were notes to himself; the old heading is usually translated to himself."],
-      ["some headings seem to place him on campaign", true, "one book ends among the Quadi; another begins at Carnuntum, a Roman fort."]
+      ["some headings seem to place him on campaign", true, "one book ends among the Quadi; another note names Carnuntum, a Roman fort."]
     ],
     "fork": {
       "setup": "you're emperor, at war on a cold frontier, and at night you have an hour alone. what do you do with it?",
       "options": ["write orders for tomorrow.", "write notes to yourself about how to live.", "write a history of the war."],
       "answer": 1,
-      "reveal": "Marcus wrote notes to himself, reminders that scold, encourage and repeat. he never meant anyone to read them."
+      "reveal": "Marcus wrote notes to himself, reminders that scold, encourage and repeat. as far as we can tell, they were meant for no one else."
     },
     "original": { "script": "Τὰ εἰς ἑαυτόν", "say": "ta eis heh-ow-TON", "note": "Greek: the things to himself, the heading the old manuscripts carry." },
     "trapdoor": [
@@ -79,7 +79,7 @@
   "review": {
     "status": "pending",
     "keeper": null,
-    "notes": [
+    "notes": ["Review 2026-10-01: hook no longer opens 'Imagine ... Now picture' and no longer repeats day 157's lamplit-tent scene; cut 'the most powerful man in the world'; 'never meant anyone to read them' hedged (as day 157 was); the Carnuntum note no longer asserts it begins a book (placement varies by edition); 'especially Epictetus since his youth' overstated Meditations 1.7, now 'among them Epictetus'.", 
       "Headings: book 1 ends 'among the Quadi at the Granua'; book 2 begins 'at Carnuntum'. Whether these are Marcus's own is debated. Confirm.",
       "First printed edition: Xylander, Zurich, 1558/1559; script says 'the 1550s'. Confirm.",
       "The Greek title ta eis heauton may be a later addition; stated with 'may'. Confirm.",

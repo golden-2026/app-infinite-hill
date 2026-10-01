@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "There's a particular kind of quiet at five in the morning. The streetlights are still on. The birds start before the traffic does. If you've ever had a newborn, or an early shift, or a flight to catch, you've met it. Most people only know that hour by accident. But in a Muslim household, it's the start of the day on purpose: the first of the five prayers is called by the name of that hour, before the sun comes up. And the surah just before Al-Balad in the Qur'an opens by swearing by it. Today: Al-Fajr, the dawn.",
+      "voice": "Five in the morning has its own kind of quiet. The streetlights are still on. The birds start before the traffic does. New parents know that hour, and early-shift workers, and anyone with a flight to catch, usually by accident. For Muslims who pray, it's the start of the day on purpose: the first of the five daily prayers is named for that hour, and comes before the sun is up. And the surah just before Al-Balad in the Qur'an opens by swearing by it. Today: Al-Fajr, the dawn.",
       "screen": ["`FIVE IN THE MORNING.` → `THE BIRDS BEFORE THE TRAFFIC.` → `AL-FAJR, THE DAWN.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Surah eighty-nine opens, in Pickthall's words: By the Dawn And ten nights. Fajr comes from a root that means to break open, to burst through, the way water bursts out of the ground as a spring. Dawn is the moment light breaks through the dark. It's also the name of the first daily prayer, prayed in the gray light before sunrise, when many people are still asleep. And ten nights. Which ten? The surah doesn't say. Most commentators say they are the first ten nights of Dhul Hijjah, the month of the Hajj, the days leading up to the pilgrimage's high point and the feast of Eid al-Adha. Others say the last ten nights of Ramadan, and some say the first ten of Muharram. The text leaves the question open, and scholars have held it open respectfully for centuries. For the Dhul Hijjah reading, many point to a hadith in Bukhari: there are no days in which good deeds are dearer to God than these ten days. So in those days, many Muslims fast, give more, and repeat Allahu akbar often, even if they're nowhere near Mecca. Then the surah keeps swearing: by the even and the odd, by the night as it moves on. And it asks, is there not in this an oath for someone with sense? The word for sense, hijr, means something that holds you back, a check, like a wall. The oaths are for the person whose mind can stop and notice. So: a dawn, some nights, a question. The first stop in a surah we'll walk through for four days.",
+      "voice": "Surah eighty-nine opens, in Pickthall's words: By the Dawn And ten nights. Fajr comes from a root for breaking open, bursting through; the Qur'an uses the same root in Surah seventeen for a spring gushing out of the ground. Dawn is the moment light breaks through the dark. It's also the name of the first daily prayer, prayed in the gray light before sunrise, when many people are still asleep. And ten nights. Which ten? The surah doesn't say. The reading Ibn Kathir prefers, which he traces to Ibn Abbas, is the first ten nights of Dhul Hijjah, the month of the Hajj, the days leading up to the pilgrimage's high point and the feast of Eid al-Adha. Others said the last ten nights of Ramadan, and some the first ten of Muharram. The text itself leaves it open. Those who take the Dhul Hijjah reading point to a hadith in Bukhari: no good deeds done on other days are better than those done in these ten. So those days are kept with extra fasting, giving, and saying Allahu akbar, even far from Mecca. Then the surah keeps swearing: by the even and the odd, by the night as it moves on. And it asks, is there not in this an oath for someone with sense? The word for sense, hijr, means something that holds you back, a check, like a wall. The oaths are for the person whose mind can stop and notice. So: a dawn, some nights, a question. The first stop in a surah we'll walk through for four days.",
       "screen": ["`FAJR — LIGHT BREAKING THROUGH.` · `THE FIRST PRAYER OF THE DAY.` · `TEN NIGHTS: WHICH TEN?` · `AN OATH FOR SOMEONE WITH SENSE.` · then, large: `BY THE DAWN.`"]
     },
     {
@@ -52,18 +52,18 @@
   "games": {
     "match": {
       "prompt": "what's inside the opening — tap the pairs.",
-      "pairs": [["fajr", "dawn: light breaking through"], ["ten nights", "most say: early Dhul Hijjah"], ["the even and the odd", "sworn by in verse three"], ["hijr", "sense, what holds you back"]]
+      "pairs": [["fajr", "dawn: light breaking through"], ["ten nights", "Ibn Kathir: early Dhul Hijjah"], ["the even and the odd", "sworn by in verse three"], ["hijr", "sense, what holds you back"]]
     },
     "myth": [
-      ["the Qur'an names which ten nights it means", false, "it doesn't. most say early Dhul Hijjah; others, the last ten of Ramadan or early Muharram."],
+      ["the Qur'an names which ten nights it means", false, "it doesn't. Ibn Kathir favors early Dhul Hijjah; others said the last ten of Ramadan or early Muharram."],
       ["fajr is also the name of the first daily prayer", true, "prayed in the gray light before sunrise."],
-      ["a hadith calls the first ten days of Dhul Hijjah especially dear to God for good deeds", true, "reported in Bukhari; many Muslims fast and give more in them."]
+      ["a hadith calls the first ten days of Dhul Hijjah especially dear to God for good deeds", true, "reported in Bukhari; those days are kept with extra fasting and giving."]
     ],
     "fork": {
-      "setup": "Al-Fajr swears by ten nights. which ten do most commentators say they are?",
+      "setup": "Al-Fajr swears by ten nights. which ten does Ibn Kathir take them to be?",
       "options": ["the first ten nights of Dhul Hijjah", "the ten nights after a birth", "any ten nights you choose"],
       "answer": 0,
-      "reveal": "most say the nights leading up to the Hajj and Eid al-Adha. others say the last ten of Ramadan or the first ten of Muharram."
+      "reveal": "he takes them as the nights leading up to the Hajj and Eid al-Adha, a reading traced to Ibn Abbas. others said the last ten of Ramadan or the first ten of Muharram."
     },
     "original": { "script": "الْفَجْر", "say": "al-FAJR", "note": "Arabic: the dawn, from f-j-r, to burst open, as a spring bursts from the ground." },
     "trapdoor": [
@@ -75,6 +75,7 @@
   "sources": [
     { "ref": "Qur'an 89:1–2", "work": "The Qur'an", "translation": "Pickthall 1930", "quoted": "By the Dawn And ten nights" },
     { "ref": "Qur'an 89:3–5 (the even and the odd, the passing night, an oath for one with sense)", "work": "The Qur'an", "translation": null, "quoted": null },
+    { "ref": "Qur'an 17:90 (a spring made to gush from the earth, the root f-j-r)", "work": "The Qur'an", "translation": null, "quoted": null },
     { "ref": "Sahih al-Bukhari 969 (no days in which good deeds are dearer)", "work": "Sahih al-Bukhari", "translation": null, "quoted": null },
     { "ref": "classical tafsir on 89:2 (Dhul Hijjah, Ramadan, Muharram)", "work": "tafsir (e.g. al-Tabari, Ibn Kathir)", "translation": null, "quoted": null }
   ],
@@ -85,7 +86,8 @@
       "Please confirm the exact Pickthall wording of 89:1–2.",
       "Bukhari 969 cited from memory; confirm number and wording.",
       "The three readings of the ten nights: confirm the attribution of each to classical commentators.",
-      "17:90–91 as another use of the root f-j-r (making a spring gush): confirm the verse."
+      "17:90–91 as another use of the root f-j-r (making a spring gush): confirm the verse.",
+      "Editor review (2026-10-01): hook no longer tells the listener what they've met or claims every 'Muslim household' rises at dawn; 'most commentators' replaced with Ibn Kathir's stated preference (traced to Ibn Abbas) in voice, match, myth and fork; root of fajr now tied to 17:90 rather than asserted; Bukhari 969 paraphrase brought closer to its wording ('better than', not 'dearer to God'); 'many Muslims fast' and 'held open respectfully for centuries' cut."
     ]
   },
   "meta": { "index": "195. Al-Fajr: the dawn and ten nights · by the dawn and ten nights, taken as the first ten of Dhul Hijjah (89:1–2) · wake for one dawn · by the dawn", "writer": "writer agent (islam 188–217)", "written": "2026-09-30" }

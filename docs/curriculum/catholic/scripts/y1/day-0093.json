@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A girl of fourteen is in Rome with her father and a group of pilgrims, waiting in line to meet the Pope. They've all been told firmly: do not speak to the Holy Father. When her turn comes, she kneels, grabs his knees, and asks him anyway. She wants to enter a convent now, at fifteen, not years later. He tells her, gently, that she will enter if God wills it. She has to be carried away by the guards. A year later she's inside the Carmelite convent in the small French town of Lisieux. She'll never leave it. She'll die there at twenty-four, and almost nobody outside will have heard of her. Today, Thérèse.",
+      "voice": "A girl of fourteen is in Rome with her father and a group of pilgrims, waiting in line to meet the Pope. They've all been told firmly: do not speak to the Holy Father. When her turn comes, she kneels, puts her hands on his knees, and asks him anyway. She wants to enter a convent now, at fifteen, not years later. He tells her, gently, that she will enter if God wills it. She has to be carried away by the guards. A few months later she's inside the Carmelite convent in the small French town of Lisieux. She'll never leave it. She'll die there at twenty-four, and almost nobody outside will have heard of her. Today, Thérèse.",
       "screen": ["`A GIRL KNEELS BEFORE THE POPE.` → `A CONVENT AT FIFTEEN.` → `DEAD AT TWENTY-FOUR.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Thérèse Martin grew up the youngest of five sisters in a devout family. Her mother died when she was four, and she was a sensitive, tearful child. In the convent she read about the great saints, the martyrs and mystics, and felt tiny beside them. They were mountains. She was a grain of sand. So she went looking for a shortcut. She wrote that in her time, the rich had lifts to save them climbing stairs, and she wanted a lift to God, because she was too small to climb the rough stairway of perfection. She found it in a line of scripture. In the Douay-Rheims: \"Whosoever is a little one, let him come to me.\" The lift, she decided, was the arms of Jesus. She didn't have to become big. She had to stay little and let herself be carried. That's the little way. In practice it looked ordinary. She smiled at a sister who grated on her nerves, so sweetly that the sister thought she was her favorite. When another nun splashed her with dirty water in the laundry, she took it without complaint. Small things, done with great love. In her last eighteen months, dying of tuberculosis, she also went through a deep darkness, when heaven felt closed to her, and she kept going anyway. Her notebooks became a book, Story of a Soul, published a year after she died. It spread around the world. She was canonized in 1925, and in 1997 she was named a Doctor of the Church, one of only a handful of women.",
+      "voice": "Thérèse Martin grew up the youngest of five sisters in a devout family. Her mother died when she was four, and she was a sensitive, tearful child. In the convent she read about the great saints, the martyrs and mystics, and felt tiny beside them. They were mountains. She was a grain of sand. So she went looking for a shortcut. She wrote that in her time, the rich had lifts to save them climbing stairs, and she wanted a lift to God, because she was too small to climb the rough stairway of perfection. She found it in a line of scripture. In the Douay-Rheims: \"Whosoever is a little one, let him come to me.\" The lift, she decided, was the arms of Jesus. She didn't have to become big. She had to stay little and let herself be carried. That's the little way. In practice it looked ordinary. She smiled at a sister who grated on her nerves, so sweetly that the sister thought she was her favorite. When another nun splashed her with dirty water in the laundry, she took it without complaint. Small things, done with great love. In her last illness, dying of tuberculosis, she also went through a deep darkness, when heaven felt closed to her, and she kept going anyway. Her notebooks became a book, Story of a Soul, published a year after she died. It spread around the world. She was canonized in 1925, and in 1997 she was named a Doctor of the Church, one of only a handful of women.",
       "screen": ["`TOO SMALL FOR THE GREAT SAINTS.` · `A LIFT INSTEAD OF STAIRS.` · `SMALL THINGS, GREAT LOVE.` · `DARKNESS, AND SHE KEPT GOING.` · then, large: `WHOSOEVER IS A LITTLE ONE, LET HIM COME TO ME.`"]
     },
     {
@@ -57,13 +57,13 @@
     "myth": [
       ["Thérèse traveled the world as a missionary", false, "she entered the convent at fifteen and never left it. she died there at twenty-four."],
       ["she felt too small to climb to holiness like the great saints", true, "so she looked for a lift instead of stairs, and found it in the arms of Jesus."],
-      ["her faith was untroubled right to the end", false, "in her last eighteen months she went through a deep darkness, and kept going anyway."]
+      ["her faith was untroubled right to the end", false, "in her last illness she went through a deep darkness, and kept going anyway."]
     ],
     "fork": {
       "setup": "you're Thérèse, fourteen, in line to meet the Pope. you've been told not to speak to him. what do you do?",
       "options": ["kneel quietly and say nothing.", "ask him to let you enter the convent at fifteen.", "give your request to a priest to pass on later."],
       "answer": 1,
-      "reveal": "she asked him anyway. he said she would enter if God willed it, and the guards carried her off. a year later she was in the Carmel."
+      "reveal": "she asked him anyway. he said she would enter if God willed it, and the guards carried her off. a few months later she was in the Carmel."
     },
     "original": null,
     "trapdoor": [
@@ -75,6 +75,7 @@
   "sources": [
     { "ref": "Proverbs 9:4", "work": "The Bible", "translation": "Douay-Rheims (Challoner)", "quoted": "Whosoever is a little one, let him come to me." },
     { "ref": "Thérèse of Lisieux, Story of a Soul (1898), manuscript C", "work": "Autobiography", "translation": null, "quoted": null },
+    { "ref": "Pius XI, canonization of Thérèse of Lisieux (17 May 1925)", "work": "Papal document", "translation": null, "quoted": null },
     { "ref": "John Paul II, Divini Amoris Scientia (1997)", "work": "Apostolic letter", "translation": null, "quoted": null }
   ],
   "review": {
@@ -86,7 +87,8 @@
       "The lift/elevator image, the smile at the difficult sister, and the laundry splash are from Story of a Soul; paraphrased.",
       "Trial of faith from Easter 1896 to her death (September 30, 1897): 'last eighteen months'. Confirm.",
       "Canonized 1925; Doctor of the Church 1997 (then the third woman); feast October 1. Confirm.",
-      "Original-language game left null (French 'la petite voie' is plain ASCII); it appears in the trapdoor instead."
+      "Original-language game left null (French 'la petite voie' is plain ASCII); it appears in the trapdoor instead.",
+      "Editor review (2026-10-01): SERIOUS date fix: the audience with Leo XIII was November 1887 and she entered the Lisieux Carmel in April 1888, so 'a year later' (hook and fork reveal) is now 'a few months later'; 'grabs his knees' softened to what Story of a Soul describes; cut the uncited 'last eighteen months' (voice and myth); added the 1925 canonization source."
     ]
   },
   "meta": { "index": "93. Thérèse of Lisieux (1873–1897) · — · she died at 24 in an obscure convent and became one of the most loved saints · do one small thing with great love · the little way", "writer": "writer agent (catholic 91–120)", "written": "2026-09-30" }

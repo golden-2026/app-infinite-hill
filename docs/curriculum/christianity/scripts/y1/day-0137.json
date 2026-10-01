@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A field in the American South, before the Civil War. The sun is brutal and the work doesn't stop. Enslaved men and women are forbidden to read, often forbidden to gather, and sold away from their own children. And out in that field, someone starts a song. When Israel was in Egypt's land. Others answer: let my people go. To the overseer on his horse, it might sound like an old Bible story. To the people singing, it was about them. About Pharaoh, and chains, and a God who hears slaves and takes their side. Some of these songs carried hope. Some, people say, carried plans. Today's word is the name for these songs, which may be the most important music America ever made.",
+      "voice": "A field in the American South, before the Civil War. The sun is brutal and the work doesn't stop. Enslaved men and women are often forbidden to read or to gather, and can be sold away from their own children. And out in that field, someone starts a song. When Israel was in Egypt's land. Others answer: let my people go. To the overseer on his horse, it might sound like an old Bible story. To the people singing, it was about them. About Pharaoh, and chains, and a God who hears slaves and takes their side. Some of these songs carried hope. Some, people say, carried plans. Today's word is the name for these songs.",
       "screen": ["`A FIELD BEFORE THE CIVIL WAR.` → `WHEN ISRAEL WAS IN EGYPT'S LAND.` → `A BIBLE STORY, OR THEIR STORY?`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Spiritual. A religious folk song made by enslaved Africans in America, mostly in the eighteenth and nineteenth centuries. Nobody knows who wrote most of them. They grew the way folk songs grow: sung, changed, passed on. Listen to what they chose to sing about. Moses and Pharaoh. The river Jordan. Daniel in the lions' den. The chariot coming for me. They took the Exodus and put themselves inside it. In the book of Exodus, in the King James Bible, Moses walks into Pharaoh's court and says: \"Thus saith the LORD God of Israel, Let my people go.\" The spiritual made that line a refrain: \"When Israel was in Egypt's land, Let my people go.\" You didn't need to spell out who Pharaoh was. Now the question of plans. Frederick Douglass, who escaped slavery, wrote that when they sang about reaching Canaan, some of them meant the North. So yes, some songs held double meanings. Harriet Tubman, who led people out of slavery, was called the Moses of her people, and an early biography says she used songs as signals. But historians are careful here. Some famous claims, like songs that were secret maps, are hard to prove, and a few were written down only much later. What's certain is this: these songs were faith and resistance at the same time, and nobody had to choose between them. After the war, in 1871, a small group of students from Fisk University, a new school for freed people, went on tour to save it from debt. They sang spirituals, for audiences who had never heard them sung like that, even for Queen Victoria. The Fisk Jubilee Singers carried these songs to the world.",
+      "voice": "Spiritual. A religious folk song made by enslaved Africans and their descendants in America. The names of the people who made them are mostly lost. They grew the way folk songs grow: sung, changed, passed on. Listen to what they chose to sing about. Moses and Pharaoh. The river Jordan. Daniel in the lions' den. The chariot coming for me. They took the Exodus and put themselves inside it. In the book of Exodus, in the King James Bible, Moses and Aaron go in to Pharaoh and say: \"Thus saith the LORD God of Israel, Let my people go.\" The spiritual made that line a refrain: \"When Israel was in Egypt's land, Let my people go.\" You didn't need to spell out who Pharaoh was. Now the question of plans. Frederick Douglass, who escaped slavery, wrote that when they sang about reaching Canaan, some of them meant the North. So yes, some songs held double meanings. Harriet Tubman, who led people out of slavery, was called the Moses of her people, and an early biography says she used songs as signals. But historians are careful here. Some famous claims, like songs that were secret maps, are hard to prove, and a few were written down only much later. What the songs themselves show is faith and resistance at the same time, with no need to choose between them. After the war, in 1871, a small group of students from Fisk University, a new school for freed people, went on tour to save it from debt. They sang spirituals, for audiences who had never heard them sung like that, even for Queen Victoria. The Fisk Jubilee Singers carried these songs to the world.",
       "screen": ["`SONGS WITH NO KNOWN AUTHOR.` · `THEY PUT THEMSELVES IN EXODUS.` · `HOPE, AND SOMETIMES PLANS.` · `FISK, 1871: SONGS TO THE WORLD.` · then, large: `LET MY PEOPLE GO.`"]
     },
     {
@@ -57,13 +57,13 @@
     "myth": [
       ["we know who wrote most spirituals", false, "most have no known author. they grew like folk songs, sung and passed on."],
       ["some spirituals carried double meanings", true, "Frederick Douglass wrote that singing of Canaan could mean reaching the North."],
-      ["historians agree every spiritual was a secret map", false, "some famous claims are hard to prove. what's certain is that the songs held faith and resistance together."]
+      ["historians agree every spiritual was a secret map", false, "some famous claims are hard to prove. what the songs show is faith and resistance held together."]
     ],
     "fork": {
       "setup": "it's 1871. your new university for freed people is deep in debt. you're one of a handful of students sent on tour to raise money. what do you sing?",
       "options": ["the popular songs of the day.", "the spirituals your parents sang in slavery.", "nothing: you give speeches instead."],
       "answer": 1,
-      "reveal": "the Fisk Jubilee Singers sang spirituals, and audiences across America and Europe had never heard anything like it. the tour saved the school."
+      "reveal": "the Fisk Jubilee Singers sang spirituals, and they sang for audiences across America and Europe, and the money they raised helped keep the school alive."
     },
     "original": null,
     "trapdoor": [
@@ -73,6 +73,7 @@
     ]
   },
   "sources": [
+    {"ref":"The Story of the Jubilee Singers (1875)","work":"J. B. T. Marsh","translation":null,"quoted":null},
     { "ref": "Exodus 5:1", "work": "The Bible", "translation": "KJV (1769)", "quoted": "Thus saith the LORD God of Israel, Let my people go" },
     { "ref": "Go Down, Moses (traditional spiritual)", "work": "African American spiritual", "translation": "public domain (original)", "quoted": "When Israel was in Egypt's land, Let my people go." },
     { "ref": "My Bondage and My Freedom (1855), chapter 20", "work": "Frederick Douglass", "translation": null, "quoted": null },
@@ -87,7 +88,8 @@
       "'Songs as secret maps' (e.g. Follow the Drinking Gourd, first published in the 20th century) presented as hard to prove. Confirm the framing is fair to both sides of the historical debate.",
       "Fisk Jubilee Singers: began touring October 1871 to raise funds for Fisk University; sang for Queen Victoria in 1873. Confirm.",
       "Go Down, Moses: first published 1861/1862 as 'The Song of the Contrabands'. Lyric quoted as traditional; confirm wording.",
-      "Topic touches slavery: please check tone is honest and careful, and that the practice ('anyone who is not free today') is appropriate."
+      "Topic touches slavery: please check tone is honest and careful, and that the practice ('anyone who is not free today') is appropriate.",
+      "Editor review (2026-10-01): Exodus 5:1 has Moses and Aaron going in to Pharaoh, not Moses alone: fixed. Cut the superlative 'the most important music America ever made', the century range, and 'what's certain'. Slavery details softened from absolutes ('forbidden to read... sold away') to 'often... can be'. The fork reveal no longer says the tour 'saved the school'. Marsh (1875) added as the source for the Fisk tour and Queen Victoria; confirm."
     ]
   },
   "meta": { "index": "137. The spirituals · spiritual · enslaved Africans in America made songs of Moses, Jordan and freedom that carried hope and plans · listen to one spiritual · let my people go", "writer": "writer agent (christianity 133–162)", "written": "2026-09-30" }

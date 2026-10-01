@@ -19,14 +19,14 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "The battle is over. And now the Muslims of Medina have something they've never had before: about seventy prisoners. These are men from Mecca, some of whom had mocked them, boycotted them, driven them from their homes. Some are relatives: cousins, brothers, an uncle. In that world, what happened to captives was often brutal. So picture the scene: the prisoners are marched back to Medina, tied up, and divided among Muslim households to be held until their families can pay a ransom. What would you expect? What happened next is one of the stories Muslims tell most proudly about their early history. Today: mercy to captives.",
+      "voice": "The battle is over. And now the Muslims of Medina have something they've never had before: about seventy prisoners. These are men from Mecca, some of whom had mocked them, boycotted them, driven them from their homes. Some are relatives: cousins, brothers, an uncle. In that world, a captive's life was in his captor's hands. The prisoners are marched back to Medina, tied up, and divided among Muslim households to be held until their families can pay a ransom. What would you expect? What happened next surprised even the prisoners. Today: mercy to captives.",
       "screen": ["`SEVENTY PRISONERS.` → `THE MEN WHO DROVE THEM OUT.` → `WHAT WOULD YOU EXPECT?`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "The Prophet Muhammad ﷺ told his companions to treat the captives well. And the early biographer Ibn Ishaq keeps the memory of one prisoner, Abu 'Aziz, who described it afterward. He said the family of Ansar holding him would give him the bread, which was the better food, and eat only dates themselves, because of what the Prophet had told them. He said he'd hand the bread back, embarrassed, and they'd give it right back to him. Food was not plentiful in Medina. They gave the enemy the good part. The Qur'an praises this kind of thing in a later surah: the righteous feed the needy, the orphan and the prisoner, for the love of God, wanting no reward and no thanks. Then there was the ransom. Families in Mecca paid to free their men. But some prisoners were poor, and had no one to pay. And a report from Ibn 'Abbas, in the Musnad of Ahmad, says the Prophet set a different price for some of them: teach ten children of the Ansar to read and write, and you're free. Think about what that says. A young community, fighting for its life, and what it asks of its enemies is literacy for its kids. Tradition says one of the children who learned to write this way was Zayd ibn Thabit, who would later become one of the main scribes of the Qur'an. And one more detail: the Prophet's own uncle, al-'Abbas, was among the captives. The sources say the Prophet couldn't sleep that night, hearing him groan in his ropes, until they were loosened.",
-      "screen": ["`THEY GAVE THE ENEMY THE BREAD.` · `FOR THE LOVE OF GOD, NO THANKS.` · `TEACH TEN CHILDREN TO WRITE.` · `ZAYD, THE FUTURE SCRIBE.` · then, large: `FREEDOM FOR TEACHING.`"]
+      "voice": "The Prophet Muhammad ﷺ told his companions to treat the captives well. And the early biographer Ibn Ishaq keeps the memory of one prisoner, Abu 'Aziz, who described it afterward. He said the family of Ansar holding him would give him the bread, which was the better food, and eat only dates themselves, because of what the Prophet had told them. He said he'd hand the bread back, embarrassed, and they'd give it right back to him. Food was not plentiful in Medina. They gave the enemy the good part. The Qur'an praises this kind of thing elsewhere: the righteous feed the needy, the orphan and the prisoner, for the love of God, wanting no reward and no thanks. Then there was the ransom. Families in Mecca paid to free their men. But some prisoners were poor, and had no one to pay. And a report from Ibn 'Abbas, in the Musnad of Ahmad, says the Prophet set a different price for some of them: teach the children of the Ansar to write, and you're free. Later tellings say ten children each. A young community, fighting for its life, and what it asks of its enemies is literacy for its kids. Tradition says one of the children who learned to write this way was Zayd ibn Thabit, who would later become one of the main scribes of the Qur'an. And one more detail: the Prophet's own uncle, al-'Abbas, was among the captives. Ibn Sa'd says the Prophet couldn't sleep that night, hearing him groan in his ropes, until they were loosened.",
+      "screen": ["`THEY GAVE THE ENEMY THE BREAD.` · `FOR THE LOVE OF GOD, NO THANKS.` · `TEACH THE CHILDREN TO WRITE.` · `ZAYD, THE FUTURE SCRIBE.` · then, large: `FREEDOM FOR TEACHING.`"]
     },
     {
       "type": "the practice",
@@ -52,18 +52,18 @@
   "games": {
     "match": {
       "prompt": "what's inside the story — tap the pairs.",
-      "pairs": [["Abu 'Aziz", "given bread while his captors ate dates"], ["the ransom for some", "teach ten children to write"], ["Zayd ibn Thabit", "learned to write, later a scribe"], ["al-'Abbas", "the Prophet's uncle, in ropes"]]
+      "pairs": [["Abu 'Aziz", "given bread while his captors ate dates"], ["the ransom for some", "teach the Ansar's children to write"], ["Zayd ibn Thabit", "learned to write, later a scribe"], ["al-'Abbas", "the Prophet's uncle, in ropes"]]
     },
     "myth": [
       ["the prisoners of Badr were given the worse food", false, "Abu 'Aziz said his captors gave him bread and ate only dates themselves."],
-      ["some prisoners were freed for teaching children to write", true, "ten children of the Ansar each, says a report from Ibn 'Abbas."],
+      ["some prisoners were freed for teaching children to write", true, "the children of the Ansar, says a report from Ibn 'Abbas; later tellings say ten each."],
       ["the Prophet's own uncle was among the captives", true, "al-'Abbas. the sources say the Prophet couldn't sleep until his ropes were loosened."]
     ],
     "fork": {
       "setup": "a prisoner from Mecca can't pay a ransom. no one at home will pay for him. what does the Prophet ask of him?",
-      "options": ["work in the date groves for a year.", "teach ten children of the Ansar to read and write.", "stay a prisoner until someone pays."],
+      "options": ["work in the date groves for a year.", "teach children of the Ansar to write.", "stay a prisoner until someone pays."],
       "answer": 1,
-      "reveal": "teach ten children to read and write, and go free. a community fighting to survive asked its enemies for literacy."
+      "reveal": "teach the children to write, and go free. a community fighting to survive asked its enemies for literacy."
     },
     "original": { "script": "أَسِير", "say": "a-SEER", "note": "Arabic: a captive, a prisoner. the word used in 76:8." },
     "trapdoor": [
@@ -82,6 +82,7 @@
     "status": "pending",
     "keeper": null,
     "notes": [
+      "Editor review 2026-10-01: Musnad Ahmad's report gives the literacy ransom without the number ten, so 'ten children' is now 'later tellings'; cut the superlative 'stories Muslims tell most proudly' and the 'picture the scene' line; 76:8 no longer called 'a later surah'; al-'Abbas's ropes attributed to Ibn Sa'd.",
       "Musnad Ahmad number and the Zayd ibn Thabit link cited from memory; the Zayd detail is 'tradition says'. Confirm.",
       "76:8 is often dated to Medina and linked by some commentators to other occasions; the script says 'a later surah' only. Confirm.",
       "Left out: the debate over ransom versus execution and 8:67–69, and the two captives reported executed on the way back. A Keeper may want that told honestly somewhere; flagged.",

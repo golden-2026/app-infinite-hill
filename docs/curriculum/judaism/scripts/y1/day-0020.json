@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Imagine a book that nobody is allowed to print. Every copy has to be written by hand, letter by letter, with a feather, on animal skin, by someone trained for years. One copy takes about a year. If a single letter is missing, or two letters touch, the whole thing can't be used until it's fixed. Nobody touches the writing with their fingers; they follow it with a silver pointer. When it's carried through a room, people stand, and some reach out to kiss it. When one is too old to use, it's buried like a person. Today: the scroll at the center of Jewish life.",
-      "screen": ["`A BOOK NOBODY CAN PRINT.` → `A YEAR TO WRITE ONE COPY.` → `CARRIED, KISSED, BURIED.`"]
+      "voice": "Here is a book nobody is allowed to print. Every copy is written by hand, letter by letter, with a quill, on parchment, by a scribe trained for the work. One copy can take many months. If a single letter is missing, or two letters touch, the whole thing can't be used until it's fixed. Readers don't run a finger along the writing; they follow it with a pointer, often silver. When it's carried through a room, people stand, and some reach out to kiss it. When one is too worn to use, it isn't thrown away. It's buried. Today: the scroll at the center of Jewish life.",
+      "screen": ["`A BOOK NOBODY CAN PRINT.` → `MONTHS TO WRITE ONE COPY.` → `CARRIED, KISSED, BURIED.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Torah comes from a Hebrew root that means to aim, to point, to teach. Torah is teaching, instruction, the way pointed out. In its narrowest sense, it's the five books of Moses, Genesis to Deuteronomy, written in a scroll by a scribe called a sofer. Something over three hundred thousand letters, every one counted. Wider, Torah means the whole of the Hebrew Bible. Wider still, all of Jewish teaching, down to a good answer given at a kitchen table last night. The Psalms describe it, in the Jewish Publication Society's 1917 translation, like this: \"Thy word is a lamp unto my feet, and a light unto my path.\" Not a floodlight. A lamp, enough for the next step. Here's the part that makes it different from a book on a shelf. The scroll is read, in public, from beginning to end, one section each week, over a year. And on the autumn festival called Simchat Torah, the joy of the Torah, the reader finishes the last lines of Deuteronomy, and immediately, without a pause, rolls the whole scroll back and starts again with Genesis. People dance with the scrolls in their arms. The story is never finished. There's a well-known teaching about the letters, too. The Torah ends with the letter lamed and begins with the letter bet. Put the end next to the beginning, and they spell lev, heart. The scroll runs in a circle, and the circle is a heart. So the Torah isn't a book you finish. It's a book a whole people reads together, at the same pace, year after year, for more than two thousand years.",
+      "voice": "Torah comes from a Hebrew root that means to aim, to point, to teach. Torah is teaching, instruction, the way pointed out. In its narrowest sense, it's the five books of Moses, Genesis to Deuteronomy, written in a scroll by a scribe called a sofer. Tradition says the scribes of old counted every letter. Wider, Torah means the whole of the Hebrew Bible. Wider still, all of Jewish teaching, down to a good answer given at a kitchen table last night. The Psalms describe it, in the Jewish Publication Society's 1917 translation, like this: \"Thy word is a lamp unto my feet, and a light unto my path.\" Not a floodlight. A lamp, enough for the next step. Here's the part that makes it different from a book on a shelf. The scroll is read aloud, in public, a section at a time, from beginning to end. And on the autumn festival called Simchat Torah, the joy of the Torah, the reader finishes the last lines of Deuteronomy, and right away, without a pause, the reading begins again at Genesis, often from a second scroll already open to the first word. People dance with the scrolls in their arms. The story is never finished. There's a teaching about the letters, too. The Torah ends with the letter lamed and begins with the letter bet. Put the end next to the beginning, and they spell lev, heart. The scroll runs in a circle, and the circle is a heart. So the Torah isn't a book you finish. It's a book a whole people reads together, at the same pace, year after year, generation after generation.",
       "screen": ["`TORAH — TEACHING, THE WAY POINTED OUT.` · `A LAMP, ENOUGH FOR THE NEXT STEP.` · `FINISHED, ROLLED BACK, BEGUN AGAIN.` · `LAMED AND BET SPELL HEART.` · then, large: `A LAMP UNTO MY FEET.`"]
     },
     {
@@ -52,7 +52,7 @@
   "games": {
     "match": {
       "prompt": "what's inside the scroll — tap the pairs.",
-      "pairs": [["sofer", "the scribe who writes it by hand"], ["yad", "the pointer, instead of fingers"], ["Simchat Torah", "finish, roll back, begin again"], ["lamed and bet", "lev, heart"]]
+      "pairs": [["sofer", "the scribe who writes it by hand"], ["yad", "the pointer, instead of fingers"], ["Simchat Torah", "finish, then begin again at once"], ["lamed and bet", "lev, heart"]]
     },
     "myth": [
       ["a Torah scroll can be printed", false, "every scroll is handwritten by a trained scribe, letter by letter."],
@@ -61,9 +61,9 @@
     ],
     "fork": {
       "setup": "it's Simchat Torah. the reader has just finished the last words of Deuteronomy. what happens next?",
-      "options": ["the scroll is closed until next week.", "the scroll is rolled back and Genesis begins at once.", "a new scroll is opened."],
+      "options": ["the reading stops until next year.", "Genesis is read at once, and the cycle starts again.", "the congregation goes home in silence."],
       "answer": 1,
-      "reveal": "rolled back and begun again at once. the story is never finished, and people dance with the scrolls."
+      "reveal": "Genesis begins at once, often from a second scroll. the story is never finished, and people dance with the scrolls."
     },
     "original": { "script": "תּוֹרָה", "say": "to-RAH", "note": "Hebrew: teaching, instruction, from a root meaning to aim or point the way." },
     "trapdoor": [
@@ -81,11 +81,12 @@
     "status": "pending",
     "keeper": null,
     "notes": [
-      "Letter count given loosely as 'over three hundred thousand' (commonly 304,805); confirm.",
-      "'About a year' for a scribe to write a scroll is typical but varies; confirm.",
+      "Editor review 2026-10-01: hook no longer opens \"Imagine\"; cut the unsourced counts (about a year per scroll, 300,000+ letters, 2,000 years); Simchat Torah now says Genesis begins again often from a second scroll (most synagogues use two), with the fork rebuilt to match; worn scrolls \"buried\", not \"buried like a person\"; weekly-cycle detail trimmed to leave it to day 21.",
+      "Letter count removed from the script (commonly given as 304,805); 'tradition says the scribes counted every letter' rests on Kiddushin 30a. Confirm.",
+      "'Can take many months' for a scribe to write a scroll; confirm.",
       "The lamed–bet 'lev' teaching is a popular homily; stated as 'a well-known teaching'. Confirm.",
       "Burial of worn scrolls (geniza/burial) stated simply; confirm.",
-      "'More than two thousand years' of public reading is hedged; confirm."
+      "Simchat Torah: most congregations read Genesis 1 from a second scroll; the script says 'often'. Confirm."
     ]
   },
   "meta": { "index": "not a book · Torah · not a book — a scroll, hand-written, read to the end and rolled back · the world's oldest book club", "writer": "writer agent (judaism 1–30)", "written": "2026-09-30" }

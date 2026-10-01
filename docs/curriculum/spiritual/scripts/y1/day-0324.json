@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "In his twenties, Benjamin Franklin decided to make himself a better person, systematically. He picked thirteen virtues, temperance, silence, order, and the rest. He ruled a little book into columns, one for each day of the week, and every night he put a small black mark next to any virtue he'd slipped on. He was, he admitted later, surprised to find himself so much fuller of faults than he had imagined. But he could watch the marks thin out. Franklin was running an experiment with a sample of one: himself. Today, as we step out of the lab: your own evidence.",
+      "voice": "Benjamin Franklin once set out to make himself a better person, systematically. He picked thirteen virtues, temperance, silence, order, and the rest. He ruled a little book into columns, one for each day of the week, and each day he put a small black mark next to any virtue he'd slipped on. He was, he admitted later, surprised to find himself so much fuller of faults than he had imagined. But he could watch the marks thin out. Franklin was running an experiment with a sample of one: himself. Today, as we step out of the lab: your own evidence.",
       "screen": ["`THIRTEEN VIRTUES, A LITTLE BOOK.` → `A BLACK MARK FOR EVERY SLIP.` → `A SAMPLE OF ONE.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, why your own evidence matters. All month we've looked at averages: the median of sixty-six days, a small gratitude effect, a modest boost from compassion training. But you are not an average. The habit study's range ran from eighteen days to hundreds. Some people love slow breathing; some find it makes them anxious. The only way to know what helps you is to watch. Second, keep it simple. A log that's too clever dies by Thursday. Easy beats heroic. One line a day is enough: which practice, how long, and how you felt, maybe on a scale of one to five. After a week or two, look back. Do the days with a walk look different? The days after a late night? Third, be honest about the limits, the way we learned to read a study. Your log isn't a trial. You know what you did, so expectation shapes what you feel. Bad days tend to be followed by better ones no matter what you do, so a practice started on a terrible day will look like a miracle. Look for patterns over weeks, not single days, and hold them loosely. Fourth, the old version. The Stoics did this at night. Seneca describes the philosopher Sextius, whom he admired, who before sleep asked himself: what bad habit have I cured today? What fault have I resisted? In what way am I better? We practiced that evening review in camp three. Franklin's little book was the same thing with columns. Science gave us averages. Your log gives you you. And that closes our two days beyond the lab: the questions only you can answer, and the evidence only you can collect.",
+      "voice": "First, why your own evidence matters. All month we've looked at averages: the median of sixty-six days, a small gratitude effect, a modest boost from compassion training. But you are not an average. The habit study's range ran from eighteen days to hundreds. Some people love slow breathing; some find it makes them anxious. The only way to know what helps you is to watch. Second, keep it simple. A log that's too clever dies by Thursday. Easy beats heroic. One line a day is enough: which practice, how long, and how you felt, maybe on a scale of one to five. After a week or two, look back. Do the days with a walk look different? The days after a late night? Third, be honest about the limits, the way we learned to read a study. Your log isn't a trial. You know what you did, so expectation shapes what you feel. And an unusually bad day is often followed by a more ordinary one whatever you do, so a practice started on a terrible day can look like a miracle. Look for patterns over weeks, not single days, and hold them loosely. Fourth, the old version. The Stoics did this at night. Seneca describes the philosopher Sextius, whom he admired, who before sleep asked himself: what bad habit have I cured today? What fault have I resisted? In what way am I better? We practiced that evening review in camp three. Franklin's little book was the same thing with columns. Science gave us averages. Your log gives you you. And that closes our two days beyond the lab: the questions only you can answer, and the evidence only you can collect.",
       "screen": ["`YOU ARE NOT AN AVERAGE.` · `ONE LINE: WHAT, HOW LONG, HOW I FELT.` · `A LOG ISN'T A TRIAL.` · `SENECA'S NIGHT QUESTIONS.` · then, large: `MY OWN DATA.`"]
     },
     {
@@ -55,7 +55,7 @@
       "pairs": [["Benjamin Franklin", "thirteen virtues, a black mark per slip"], ["Sextius, in Seneca", "what fault have I resisted today?"], ["one line a day", "what, how long, how I felt"], ["a bad day", "often followed by a better one anyway"]]
     },
     "myth": [
-      ["your own log is as reliable as a clinical trial", false, "you know what you did, and bad days tend to bounce back anyway; look for patterns over weeks."],
+      ["your own log is as reliable as a clinical trial", false, "you know what you did, and unusually bad days often bounce back anyway; look for patterns over weeks."],
       ["Franklin found himself fuller of faults than he'd imagined", true, "he said so in his Autobiography, and watched the marks thin out."],
       ["a good log needs lots of detail", false, "one simple line a day beats a clever system that dies by Thursday."]
     ],
@@ -63,7 +63,7 @@
       "setup": "you start a new practice on your worst day of the month. the next day you feel much better. what do you conclude?",
       "options": ["the practice works like a miracle.", "maybe; bad days often bounce back. keep logging.", "the practice is useless."],
       "answer": 1,
-      "reveal": "bad days tend to be followed by better ones anyway. hold single days loosely and look for patterns over weeks."
+      "reveal": "an unusually bad day is often followed by a more ordinary one anyway. hold single days loosely and look for patterns over weeks."
     },
     "original": { "script": "experiri", "say": "ex-peh-REE-ree", "note": "Latin: to try, to test; the root of both experience and experiment." },
     "trapdoor": [
@@ -74,6 +74,7 @@
   },
   "sources": [
     { "ref": "The Autobiography of Benjamin Franklin, part two", "work": "Benjamin Franklin, Autobiography", "translation": null, "quoted": null },
+    { "ref": "Lally et al., European Journal of Social Psychology 2010;40(6):998–1009", "work": "How are habits formed: modelling habit formation in the real world", "translation": null, "quoted": null },
     { "ref": "On Anger 3.36", "work": "Seneca, On Anger", "translation": null, "quoted": null }
   ],
   "review": {
@@ -82,7 +83,8 @@
     "notes": [
       "Franklin's thirteen virtues and the ruled book with a black mark for each fault: Autobiography, part two (written 1784; plan begun around 1728, when Franklin was about 22). His line 'I was surpris'd to find myself so much fuller of Faults than I had imagined' is paraphrased. Confirm age wording 'in his twenties'.",
       "Seneca, On Anger 3.36: Sextius's nightly questions (what bad habit have you cured today, what fault resisted, in what respect are you better). Review fix: script now says 'the philosopher Sextius, whom he admired' rather than 'a teacher of his', since Seneca studied with Sextius's school, not clearly with Sextius himself. Confirm.",
-      "Callback to the Camp 3 week 'Morning preview, evening review' (days 104–110) and day 303 'How to read a study'."
+      "Callback to the Camp 3 week 'Morning preview, evening review' (days 104–110) and day 303 'How to read a study'.",
+      "Editor review 2026-10-01: cut the unsourced age 'in his twenties' and 'every night' (Franklin describes a daily examination); softened 'bad days tend to be followed by better ones no matter what you do' to an accurate regression-to-the-mean line; added Lally et al. 2010 as the source for the sixty-six-day median and the eighteen-to-hundreds range (study range 18–254 days)."
     ]
   },
   "meta": { "index": "324. Your own evidence · — · keep a simple log: which practice, how you felt · log one week · my own data", "writer": "spiritual writer agent (days 308–331)", "written": "2026-09-30" }

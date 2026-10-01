@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "December 1925. Europe is seven years out of a world war that toppled emperors and kings. New movements are promising that the nation, or the party, or the leader, deserves everything. In Rome, Pope Pius XI publishes a letter announcing a brand-new feast, one of the youngest on the calendar. Its name sounds old-fashioned, even then: Christ the King. Today it's the last Sunday of the Church's year, the week before Advent starts again.",
+      "voice": "Crowns had fallen all over Europe in the First World War, and new movements were promising that the nation, or the party, or the leader, deserved everything. Into that, in December 1925, Pope Pius XI published a letter announcing a brand-new feast. Its name sounded old-fashioned even then: Christ the King. Real kings were losing their thrones, and the Church named a king who never sat on one. Today it's the last Sunday of the Church's year, the week before Advent starts again.",
       "screen": ["`1925: KINGS FALLEN, NEW POWERS RISING.` → `A NEW FEAST.` → `THE YEAR'S LAST SUNDAY.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Pius XI's letter, Quas Primas, argued that many of the world's troubles came from pushing Christ out of public life, and that people needed reminding whose kingdom outlasts all the others. At first the feast fell on the last Sunday of October. After the Second Vatican Council it moved to the last Sunday of the liturgical year, so the year now ends looking toward the end of all things. But here's the twist the feast is built on. Which king? The Gospels give Jesus the title king almost only during his passion. Before Pilate, Jesus says, in the Douay-Rheims: \"My kingdom is not of this world.\" The soldiers dress him in purple and crown him with thorns as a joke. And the sign nailed above his head, in three languages, says: \"THIS IS THE KING OF THE JEWS.\" Rome meant it as mockery, a warning to anyone who claimed a crown. Christians took it as the truest thing anyone said that day. In one year of the cycle, the Gospel for this feast is that exact scene: Jesus on the cross, the sign above him, and a criminal beside him asking, Jesus, remember me when you come into your kingdom. In another, it's the sheep and the goats: the king who says, whatever you did for the least of these, you did for me. So the crown is thorns, the throne is a cross, and the king is found in the hungry and the prisoner. Catholics call him king, and then look at how he reigns.",
+      "voice": "Pius XI's letter, Quas Primas, argued that many of the world's troubles came from pushing Christ out of public life, and that people needed reminding whose kingdom outlasts all the others. At first the feast fell on the last Sunday of October. After the Second Vatican Council it moved to the last Sunday of the liturgical year, so the year now ends looking toward the end of all things. But here's the twist the feast is built on. Which king? Watch where the title lands in the passion. Before Pilate, Jesus says, in the Douay-Rheims: \"My kingdom is not of this world.\" The soldiers dress him in purple and crown him with thorns as a joke. And the sign nailed above his head, in three languages, says: \"THIS IS THE KING OF THE JEWS.\" Rome meant it as mockery, a warning to anyone who claimed a crown. Christians came to read it as the plain truth. In one year of the cycle, the Gospel for this feast is that exact scene: Jesus on the cross, the sign above him, and a criminal beside him asking, Lord, remember me when you come into your kingdom. In another, it's the sheep and the goats: the king who says, whatever you did for the least of these, you did for me. So the crown is thorns, the throne is a cross, and the king is found in the hungry and the prisoner. Catholics call him king, and then look at how he reigns.",
       "screen": ["`QUAS PRIMAS, 1925.` · `MOVED TO THE YEAR'S LAST SUNDAY.` · `MY KINGDOM IS NOT OF THIS WORLD.` · `A CROWN OF THORNS, A CROSS.` · then, large: `THIS IS THE KING OF THE JEWS.`"]
     },
     {
@@ -55,28 +55,29 @@
       "pairs": [["Quas Primas", "Pius XI's letter, 1925"], ["last Sunday of October", "the feast's first date"], ["the sign", "this is the king of the Jews"], ["the crown", "thorns"]]
     },
     "myth": [
-      ["Christ the King is one of the Church's oldest feasts", false, "it was created in 1925, one of the youngest on the calendar."],
+      ["Christ the King is one of the Church's oldest feasts", false, "Pius XI created it in 1925."],
       ["the feast was always on the last Sunday of the year", false, "it began on the last Sunday of October and moved after Vatican II."],
-      ["the Gospels call Jesus king mostly during his passion", true, "before Pilate, in the soldiers' mockery, and on the sign over the cross."]
+      ["Luke says the sign over the cross was written in three languages", true, "Greek, Latin and Hebrew: this is the king of the Jews."]
     ],
     "fork": {
       "setup": "you're choosing a Gospel to show Christ as king. which scene does the Church read in one year of the cycle?",
       "options": ["Jesus entering Jerusalem on a war horse.", "Jesus on the cross under the sign, with a criminal asking to be remembered.", "Jesus seated on a golden throne."],
       "answer": 1,
-      "reveal": "the cross: the sign above him, and a criminal saying, Jesus, remember me when you come into your kingdom."
+      "reveal": "the cross: the sign above him, and a criminal saying, Lord, remember me when you come into your kingdom."
     },
     "original": { "script": "Christus Rex", "say": "KREES-toos REX", "note": "Latin: Christ the King." },
     "trapdoor": [
       "what you thought: a triumphant feast about Jesus in a crown and robes.",
       "what it means: a king whose crown was thorns and whose throne was a cross, found in the least of these.",
-      "what a scholar hears: Quas Primas (1925) answering the rise of nationalism and secularism; moved in 1969 to close the liturgical year."
+      "what a scholar hears: Quas Primas (1925) answering the rise of nationalism and secularism; moved after Vatican II to close the liturgical year."
     ]
   },
   "sources": [
     { "ref": "John 18:36", "work": "The Bible", "translation": "Douay-Rheims (Challoner)", "quoted": "My kingdom is not of this world." },
     { "ref": "Luke 23:38", "work": "The Bible", "translation": "Douay-Rheims (Challoner)", "quoted": "THIS IS THE KING OF THE JEWS." },
     { "ref": "Luke 23:35–43; Matthew 25:31–46", "work": "The Bible", "translation": null, "quoted": null },
-    { "ref": "Pius XI, Quas Primas (11 December 1925)", "work": "Encyclical", "translation": null, "quoted": null }
+    { "ref": "Pius XI, Quas Primas (11 December 1925)", "work": "Encyclical", "translation": null, "quoted": null },
+    { "ref": "Luke 23:38, 42", "work": "The Bible", "translation": null, "quoted": null }
   ],
   "review": {
     "status": "pending",
@@ -86,7 +87,8 @@
       "Lectionary: Year A Matthew 25:31–46; Year B John 18:33–37; Year C Luke 23:35–43. Confirm.",
       "Luke 23:38 Douay-Rheims: the inscription text; confirm exact capitalization/wording.",
       "'The Gospels give Jesus the title king almost only during his passion' is a generalization (cf. the Magi, Nathanael, Palm Sunday); Keeper may soften.",
-      "Rome's crucifixion of Jesus framed explicitly; the sign as Roman mockery."
+      "Rome's crucifixion of Jesus framed explicitly; the sign as Roman mockery.",
+      "Editor review (2026-10-01): hook no longer opens with a date-plus-European-war scene (day 668 opens 'May 1917. Europe is three years into a war'); 'one of the youngest' and 'seven years' cut; the overstated claim that the Gospels call Jesus king 'almost only during his passion' removed from the teach and from the myth game (the Magi, Nathanael and Palm Sunday use it too); the criminal's words follow the Douay ('Lord, remember me'); 1969 replaced with 'after Vatican II'."
     ]
   },
   "meta": { "index": "688. Christ the King · — · the year's last Sunday, instituted in 1925 · ask who rules your time · king on a cross", "writer": "writer agent (catholic 662–691)", "written": "2026-09-30" }

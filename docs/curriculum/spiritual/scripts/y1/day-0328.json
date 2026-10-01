@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Nearly two thousand years ago, the most powerful man in the world sat down to write in his private notebook. He was the emperor of Rome, and the first thing he wrote wasn't a plan or a law. It was a list of thank-yous. From my grandfather, good manners and an even temper. From my mother, generosity, and a simple way of living. From one teacher, not to take sides at the chariot races. From another, to put up with hard work and want little. Page after page. Before Marcus Aurelius wrote a single thought of his own, he named where each one came from. Today, we do the same: the teachers you met.",
-      "screen": ["`THE EMPEROR'S PRIVATE NOTEBOOK.` → `PAGE ONE: THANK-YOUS.` → `WHERE EACH ONE CAME FROM.`"]
+      "voice": "A Roman emperor's private notebook doesn't open with a plan or a law. Its first book is a list of debts. From my grandfather, good morals and an even temper. From my mother, generosity, and a simple way of living. From my tutor, not to take sides at the chariot races, and to put up with hard work and want little. Name after name. Before the book turns to his own thoughts, Marcus Aurelius sets down where each good thing came from. Today, we do the same: the teachers you met.",
+      "screen": ["`THE EMPEROR'S PRIVATE NOTEBOOK.` → `BOOK ONE: A LIST OF DEBTS.` → `WHERE EACH GOOD THING CAME FROM.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Let's walk the line of them, one at a time, each in their own house. First, the Stoics. Marcus, arguing with himself under the blankets, then writing the Meditations, whose Greek title means simply to himself. Epictetus, enslaved as a young man, who warned his master he'd break his leg and, when it broke, said only: didn't I tell you? He taught that some things are in our power and some aren't. Second, the mystics of the heart. Rumi, the Persian poet whose Masnavi opens with a reed flute crying for the reed bed it was cut from, the song of every soul that misses home. And Julian of Norwich, an English anchoress who lived in a single room attached to a church, saw all that is made as small as a hazelnut in her palm, and wrote down what she heard in her visions. In Grace Warrack's translation: \"all shall be well, and all shall be well, and all manner of thing shall be well.\" Third, the tricksters of the way. Zhuangzi, the Chinese sage who dreamed he was a butterfly and woke unsure which one was dreaming, and who argued on a bridge about whether anyone can know the joy of fish. Fourth, the fierce ones. The Kotzker Rebbe, a Hasidic master in nineteenth-century Poland, famous for his impatience with anything fake. Asked where God lives, the story goes, he answered: wherever people let God in. None of them agreed on everything. Some would have argued fiercely with each other. That's why we left each in their own house. But every one of them handed you something, the way Marcus's teachers handed him an even temper. Naming it is the thank-you.",
+      "voice": "Let's walk the line of them, one at a time, each in their own house. First, the Stoics. Marcus, arguing with himself under the blankets, in the notebook known by its Greek title, to himself. Epictetus, who was enslaved, and who, the story goes, warned his master he'd break his leg and, when it broke, said only: didn't I tell you? He taught that some things are in our power and some aren't. Second, the mystics of the heart. Rumi, the Persian poet whose Masnavi opens with a reed flute crying for the reed bed it was cut from, a song some readers hear as the soul missing home. And Julian of Norwich, an English anchoress, who in a vision saw all that is made as small as a hazelnut in her palm, and wrote down what she was shown. In Grace Warrack's translation: \"all shall be well, and all shall be well, and all manner of thing shall be well.\" Third, the tricksters of the way. Zhuangzi, the Chinese sage who dreamed he was a butterfly and woke unsure which one was dreaming. Fourth, the fierce ones. The Kotzker Rebbe, a Hasidic master in nineteenth-century Poland, remembered for his impatience with anything fake. Asked where God lives, the story goes, he answered: wherever people let God in. They never met, and they wouldn't have agreed on everything. That's why we left each in their own house. But every one of them handed you something, the way Marcus's teachers handed him an even temper. Naming it is the thank-you.",
       "screen": ["`MARCUS AND EPICTETUS.` · `RUMI AND JULIAN.` · `ZHUANGZI AND THE BUTTERFLY.` · `THE KOTZKER: LET IT IN.` · then, large: `THANK THE TEACHERS.`"]
     },
     {
@@ -55,12 +55,12 @@
       "pairs": [["Marcus Aurelius", "opened with a list of thank-yous"], ["Julian of Norwich", "all shall be well"], ["Zhuangzi", "the butterfly dream"], ["the Kotzker Rebbe", "wherever people let God in"]]
     },
     "myth": [
-      ["the first book of the Meditations is a list of what Marcus learned from others", true, "family and teachers, one by one, before a thought of his own."],
+      ["Julian of Norwich saw all that is made as small as a hazelnut", true, "in her palm, in one of her visions."],
       ["all these teachers agreed with each other", false, "they didn't, and some would have argued; each stays in their own house."],
-      ["Julian of Norwich lived in a single room attached to a church", true, "she was an anchoress, and wrote down her visions there."]
+      ["Zhuangzi woke from his butterfly dream sure he was a man", false, "he woke unsure which one was dreaming."]
     ],
     "fork": {
-      "setup": "you're the emperor of Rome, opening your private notebook. what do you write first?",
+      "setup": "you're the emperor of Rome, and this notebook is for you alone. what goes in its first book?",
       "options": ["your plans for the empire.", "what you learned from each person who shaped you.", "a list of your enemies."],
       "answer": 1,
       "reveal": "book one of the Meditations is thanks: from my grandfather, from my mother, from my teachers."
@@ -74,7 +74,8 @@
   },
   "sources": [
     { "ref": "Meditations, Book I", "work": "Marcus Aurelius, Meditations", "translation": null, "quoted": null },
-    { "ref": "Revelations of Divine Love, ch. 27", "work": "Julian of Norwich, Revelations of Divine Love", "translation": "Warrack 1901", "quoted": "all shall be well, and all shall be well, and all manner of thing shall be well." },
+    { "ref": "Enchiridion 1", "work": "Epictetus, Enchiridion", "translation": null, "quoted": null },
+    { "ref": "Revelations of Divine Love, ch. 5 and 27", "work": "Julian of Norwich, Revelations of Divine Love", "translation": "Warrack 1901", "quoted": "all shall be well, and all shall be well, and all manner of thing shall be well." },
     { "ref": "Zhuangzi 2 and 17", "work": "Zhuangzi", "translation": null, "quoted": null },
     { "ref": "Masnavi 1.1", "work": "Rumi, Masnavi", "translation": null, "quoted": null },
     { "ref": "Against Celsus 7.53", "work": "Origen, Against Celsus", "translation": null, "quoted": null }
@@ -87,7 +88,8 @@
       "Julian, Warrack 1901, ch. 27 (Thirteenth Revelation): confirm exact wording.",
       "Kotzker 'wherever people let God in' is an oral Hasidic tradition (told on day 63); 'the story goes' used.",
       "Pronunciation of τὰ εἰς ἑαυτόν given in a simplified Erasmian style; a classicist may adjust.",
-      "Epictetus's leg story (day 23) comes from Celsus via Origen."
+      "Epictetus's leg story (day 23) comes from Celsus via Origen; script now says 'the story goes'.",
+      "Editor review 2026-10-01: rewrote the hook to drop 'nearly two thousand years ago', 'the most powerful man in the world' and 'the first thing he wrote' (the order of composition is unknown; only the book order is certain), and fixed the attribution: in Meditations I.5 the races and 'endure labour, want little' both come from the same tutor (governor), not two teachers. Softened 'the song of every soul' to 'some readers hear', dropped the unsourced 'single room attached to a church' detail and 'famous', cut the joy-of-fish clause (day 329 uses it) and replaced the myth item that repeated day 319's Marcus Book I item."
     ]
   },
   "meta": { "index": "328. The teachers you met · — · Marcus, Rumi, Epictetus, Zhuangzi, Julian, the Kotzker Rebbe · write a thank-you to one · thank the teachers", "writer": "spiritual writer agent (days 308–331)", "written": "2026-09-30" }

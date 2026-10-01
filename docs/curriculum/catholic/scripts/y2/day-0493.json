@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Picture a small stone church a hundred years ago. The Mass is over, or nearly. The priest has given the blessing, and now he walks to the left side of the altar and begins reading in Latin from the first chapter of John. The people are standing. Most of them don't follow every word, but they know where this is going. They are waiting for one line. When it comes, the whole room drops to one knee at once: farmers, children, old women, the priest himself. Then they stand again. Today, the line that made a church kneel.",
-      "screen": ["`A STONE CHURCH, A CENTURY AGO.` → `THE PRIEST READS JOHN IN LATIN.` → `EVERYONE KNEELS AT ONE LINE.`"]
+      "voice": "Et Verbum caro factum est. In the old Latin Mass, the Mass is over, or nearly. The priest has given the blessing, and now he walks to the left side of the altar and reads in Latin from the first chapter of John, a reading called the Last Gospel. The people are standing. They know where this is going. They are waiting for one line. When it comes, priest and people go down on one knee together. Then they stand again. Today, the line that made a church kneel.",
+      "screen": ["`THE OLD LATIN MASS.` → `THE PRIEST READS JOHN IN LATIN.` → `EVERYONE KNEELS AT ONE LINE.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Before the line, John tells a hard truth. The true light came into the world, and the world, made by him, didn't know him. \"He came unto his own, and his own received him not.\" But some did, and to them he gave power to become children of God. And then the line: \"And the Word was made flesh, and dwelt among us.\" In Latin, Et Verbum caro factum est. That's where they knelt. Yesterday the Word was with God before creation. Today the same Word has skin, and hunger, and a mother. Flesh is a blunt word on purpose. John could have said a body, or a human nature. He chose the word for the soft, mortal, breakable stuff we're made of. Then dwelt. The Greek verb literally means pitched his tent. It's the word for living in a tent, and Jewish readers would think of the tabernacle in the desert, the tent where God's glory came to dwell among Israel. John goes on: \"and we saw his glory, the glory as it were of the only begotten of the Father, full of grace and truth.\" This is what the Church calls the Incarnation, from the Latin for in the flesh. The genuflection at the Last Gospel is mostly gone now, since that reading left the ordinary Mass in the 1960s. But the gesture lives on. In the Creed, at the words about the Son becoming man, Catholics bow. And on Christmas and on the feast of the Annunciation, they kneel at those words instead. Many still pray the Angelus three times a day, and kneel at this very line. The body bends at the moment God is said to take a body.",
+      "voice": "Before the line, John tells a hard truth. The true light came into the world, and the world, made by him, didn't know him. \"He came unto his own, and his own received him not.\" But some did, and to them he gave power to become children of God. And then the line: \"And the Word was made flesh, and dwelt among us.\" In Latin, Et Verbum caro factum est. That's where they knelt. Yesterday the Word was with God before creation. Today the same Word has skin, and hunger, and a mother. Flesh is a blunt word. John doesn't say a body, or a human nature. He uses the word for the soft, mortal, breakable stuff we're made of. Then dwelt. The Greek verb literally means pitched his tent. It's the word for living in a tent, and readers hear in it the tabernacle in the desert, the tent where God's glory came to dwell among Israel. John goes on: \"and we saw his glory, the glory as it were of the only begotten of the Father, full of grace and truth.\" This is what the Church calls the Incarnation, from the Latin for in the flesh. The genuflection at the Last Gospel is mostly gone now, since that reading left the ordinary form of the Mass after the Second Vatican Council. But the gesture lives on. In the Creed, at the words about the Son becoming man, Catholics bow. And on Christmas and on the feast of the Annunciation, they kneel at those words instead. And those who pray the Angelus traditionally kneel at this very line. The body bends at the moment God is said to take a body.",
       "screen": ["`HIS OWN RECEIVED HIM NOT.` · `THE WORD WAS MADE FLESH.` · `DWELT: HE PITCHED HIS TENT.` · `STILL WE BOW AT THESE WORDS.`"]
     },
     {
@@ -48,19 +48,19 @@
     },
     { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 493 COUNTS.` → `TOMORROW: COME AND SEE.`"] }
   ],
-  "howItsDone": "Catholics bow at the words of the Incarnation in the Creed and genuflect there on Christmas and the Annunciation; many kneel at \"and the Word was made flesh\" when praying the Angelus.",
+  "howItsDone": "Catholics bow at the words of the Incarnation in the Creed and genuflect there on Christmas and the Annunciation; those who pray the Angelus traditionally kneel at \"and the Word was made flesh\".",
   "games": {
     "match": {
       "prompt": "made flesh — tap the pairs.",
       "pairs": [["Et Verbum caro factum est", "where the church once knelt"], ["dwelt", "literally: pitched his tent"], ["his own", "received him not"], ["Incarnation", "Latin: in the flesh"]]
     },
     "myth": [
-      ["the Last Gospel is still read at every Mass", false, "it left the ordinary Mass in the 1960s. it remains in the traditional Latin Mass."],
+      ["the Last Gospel is still read at every Mass", false, "it left the ordinary form after the Second Vatican Council. it remains in the traditional Latin Mass."],
       ["Catholics bow at the Incarnation in the Creed", true, "and on Christmas and the Annunciation, they kneel instead."],
       ["dwelt translates a word meaning pitched a tent", true, "the Greek recalls the desert tabernacle, where God's glory dwelt."]
     ],
     "fork": {
-      "setup": "you're John, writing the most important line of your opening. you want to say God's Word became human. which word do you choose?",
+      "setup": "you're John, writing the line at the heart of your opening. you want to say God's Word became human. which word do you choose?",
       "options": ["he took on a human nature.", "he appeared in a body.", "the Word was made flesh."],
       "answer": 2,
       "reveal": "John chose flesh, the blunt word for soft, mortal stuff, and dwelt, literally pitched his tent among us."
@@ -88,7 +88,8 @@
       "GIRM 137: bow at the Incarnation in the Creed, genuflect on Christmas and the Annunciation. Confirm.",
       "Last Gospel dropped from the ordinary Mass in 1964 (Inter Oecumenici). Stated as 'in the 1960s'. Confirm.",
       "Angelus custom of kneeling at 'And the Word was made flesh': confirm phrasing ('many kneel').",
-      "'A hundred years ago' and the whole congregation genuflecting: described as the general custom; confirm."
+      "'A hundred years ago' and the whole congregation genuflecting: described as the general custom; confirm.",
+      "Editor review (483-500 pass): hook no longer opens 'Picture' or claims 'a hundred years ago' and 'most of them'; 'in the 1960s' and 'many still pray the Angelus three times a day' cut; 'Jewish readers would think' and 'the most important line' softened."
     ]
   },
   "meta": { "index": "493. The Word was made flesh (John 1:9–14) · — · and dwelt among us; Catholics once genuflected at this line in nearly every Mass · bow at the words · and dwelt among us", "writer": "writer agent (catholic 482–511)", "written": "2026-09-30" }

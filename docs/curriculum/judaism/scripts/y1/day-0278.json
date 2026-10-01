@@ -19,14 +19,14 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Somebody planted the big tree on your street. Somebody laid the stones of the oldest building in your town, dug the well, started the library, wrote down the recipe your family still makes. Most of them never saw you. They never knew your name. They just did the work and left it for whoever came next. The Talmud tells a story about Honi, the circle-drawer, walking down a road and meeting one of those people. An old man, on his knees, planting a tree.",
-      "screen": ["`WHO PLANTED YOUR STREET'S TREE?` → `THEY NEVER KNEW YOUR NAME.` → `AN OLD MAN, PLANTING.`"]
+      "voice": "Somebody planted the big tree on your street. Somebody laid the stones of the oldest building in your town, dug the well, started the library, wrote down the recipe your family still makes. Most of them never saw you. They never knew your name. They just did the work and left it for whoever came next. The Talmud tells a story about Honi, the circle-drawer, walking down a road and meeting one of those people. A man, planting a tree.",
+      "screen": ["`WHO PLANTED YOUR STREET'S TREE?` → `THEY NEVER KNEW YOUR NAME.` → `A MAN, PLANTING.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "It's the same page of tractate Taanit as yesterday's circle. Honi sees a man planting a carob tree. Carob is slow; it takes years before it bears fruit. Honi asks him: how long until this tree gives fruit? The man says: seventy years. Honi presses him. Are you so sure you'll live another seventy years? And the man gives an answer people have been repeating ever since. I found this world full of carob trees. Just as my ancestors planted for me, I'm planting for my children. That's it. No speech about legacy. Just a debt noticed and paid forward. Everything he eats, he says, somebody planted before him. So he plants too, knowing someone else will eat. Seventy years matters in this story. In the Bible, seventy years is a whole human life. The man is planting past the edge of his own life, on purpose. The story keeps going from here, and Honi's next seventy years will surprise him. We'll come back to that. For today, stay with the old man in the dirt. It's a small picture of how a tradition works at all. Every teaching you've heard on this path, somebody planted. They memorized it, copied it, argued over it, carried it through exile, and passed it down to people they'd never meet. Including you.",
-      "screen": ["`HOW LONG UNTIL IT BEARS FRUIT?` · `SEVENTY YEARS.` · `MY ANCESTORS PLANTED FOR ME.` · `A TRADITION IS PLANTED TOO.` · then, large: `PLANT FOR OTHERS.`"]
+      "voice": "It's the same page of tractate Taanit as yesterday's circle, and you met this scene once before, back with Rabbi Tarfon, as a picture of work you won't finish. Today, look closer. Honi is on a road and sees a man planting a carob tree. Retellings usually make him old; the Talmud just says a certain man. Honi asks: how long until this tree gives fruit? Seventy years, the man says. Honi presses him: are you sure you'll live another seventy years? Now listen to the order of the answer. He doesn't start with the future. He starts with what he found. I found the world with carob trees in it. Just as my ancestors planted for me, I'm planting for my children. First he looks back and notices a gift. Then he looks forward and passes it on. The planting grows out of the noticing. In the Psalms, seventy years is a full life, so the man is planting past the edge of his own, on purpose. The story keeps going from here, and Honi's next seventy years will surprise him. We'll come back to that. For today, stay with the word found. It's a small picture of how a tradition works at all. Every teaching you've heard on this path, somebody planted. They memorized it, copied it, argued over it, carried it through exile, and passed it down to people they'd never meet. Including you.",
+      "screen": ["`HOW LONG UNTIL IT BEARS FRUIT?` · `FIRST, WHAT HE FOUND.` · `THEN, WHAT HE PASSES ON.` · `A TRADITION IS PLANTED TOO.` · then, large: `PLANT FOR OTHERS.`"]
     },
     {
       "type": "the practice",
@@ -37,7 +37,7 @@
     {
       "type": "the word",
       "duration": "25 sec",
-      "voice": "The carob tree. An old man plants one that won't bear fruit for seventy years, because his ancestors planted for him.",
+      "voice": "The carob tree. A man plants one that won't bear fruit for seventy years, because his ancestors planted for him.",
       "screen": ["`THE CAROB TREE — today's word`."]
     },
     {
@@ -48,22 +48,22 @@
     },
     { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 278 COUNTS.` → `TOMORROW: THIS TOO IS FOR GOOD.`"] }
   ],
-  "howItsDone": "The carob story is often told on Tu BiShvat, the new year of trees, when many Jews plant trees or eat fruit such as carob, and it is a favorite teaching about caring for future generations.",
+  "howItsDone": "The carob story is often told on Tu BiShvat, the new year of trees, when some Jews plant trees or eat fruits such as carob.",
   "games": {
     "match": {
       "prompt": "what's inside the story — tap the pairs.",
-      "pairs": [["the planter", "an old man on the road"], ["the question", "how long until it bears fruit?"], ["the answer", "seventy years"], ["why he plants", "his ancestors planted for him"]]
+      "pairs": [["the planter", "a man by the road"], ["the question", "how long until it bears fruit?"], ["the answer", "seventy years"], ["why he plants", "his ancestors planted for him"]]
     },
     "myth": [
-      ["the old man expected to eat from the tree", false, "he planted for his children, as his ancestors had planted for him."],
+      ["the Talmud says the planter was an old man", false, "it says only a certain man; retellings made him old."],
       ["this story is on the same Talmud page as Honi's circle", true, "both are on Taanit 23a."],
-      ["the man said it would take seventy years to bear fruit", true, "that's a whole human life in biblical terms."]
+      ["the man said it would take seventy years to bear fruit", true, "in the Psalms, seventy years is a full life."]
     ],
     "fork": {
-      "setup": "you're old. you're planting a tree that won't fruit for seventy years. a stranger asks: will you live to eat from it? what do you say?",
+      "setup": "you're planting a tree that won't fruit for seventy years. a stranger asks: will you live to eat from it? what do you say first?",
       "options": ["probably not. I should stop.", "I found carob trees here, so I plant for my children.", "it's none of your business."],
       "answer": 1,
-      "reveal": "the old man said: just as my ancestors planted for me, I'm planting for my children."
+      "reveal": "he started with what he'd found: I found the world with carob trees. as my ancestors planted for me, I plant for my children."
     },
     "original": { "script": "חָרוּב", "say": "cha-ROOV", "note": "Hebrew: carob, the slow tree in the story." },
     "trapdoor": [
@@ -80,6 +80,7 @@
     "status": "pending",
     "keeper": null,
     "notes": [
+      "Editor review (2026-10-01): day 264 already told this exact story (Honi, the carob, 'my ancestors planted for me'); the teach now names that and takes a new angle (the answer starts with what he found, gratitude before planting); the Talmud says 'a certain man', not an old man, so voice, games and fork no longer call him old (the index hook still says 'old man' and 'grandchildren'; suggest the outline say 'a man' and 'children'); new myth item replaces one that repeated day 264; stock line 'an answer people have been repeating ever since' cut; howItsDone 'favorite' and 'many Jews' softened.",
       "Taanit 23a paraphrased. Honi's seventy-year sleep follows in the same passage and is taught on day 286; the script only hints at it.",
       "Seventy years for a carob to fruit is the story's number; real carob trees bear within several years to about a decade. The script says carob is 'slow' and 'takes years' and avoids claiming seventy is literal.",
       "Psalm 90:10 (the days of our years are threescore years and ten) is paraphrased as 'seventy years is a whole human life'.",

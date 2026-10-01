@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Every family has two people who don't speak. Two brothers after an inheritance. Two sisters after a wedding. Two old friends after one sentence nobody can take back. And around them, everyone else learns the choreography: separate invitations, careful seating, nobody mentioning the other's name. Years can go by like that. Most people decide it isn't their business. Surah Al-Hujurat says otherwise. It makes the people standing around the quarrel responsible for ending it.",
+      "voice": "Some families have two people who don't speak. Two brothers after an inheritance. Two sisters after a wedding. Two old friends after one sentence nobody can take back. And around them, everyone else learns the choreography: separate invitations, careful seating, nobody mentioning the other's name. Years can go by like that. It's easy to decide it isn't your business. Surah Al-Hujurat says otherwise. It makes the people standing around the quarrel responsible for ending it.",
       "screen": ["`TWO PEOPLE WHO DON'T SPEAK.`", "`EVERYONE LEARNS THE CHOREOGRAPHY.`", "`NOT YOUR BUSINESS?`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Verse nine begins with the hardest case: two groups of believers actually fighting. Make peace between them, it says, and if one keeps transgressing, stand against that one until it returns, and then make peace with justice, and be fair. Then verse ten, in Pickthall's translation: \"The believers are naught else than brothers. Therefor make peace between your brethren and observe your duty to Allah that haply ye may obtain mercy.\" Brothers here is ikhwah, a word for siblings by birth. The verse chooses the family word on purpose. And the command, aslihu, comes from the root s-l-h, to set right, to repair. Islah is mending, the way you'd mend a torn thing so it can be used again. Notice that peace here isn't passive. It's not staying out of it. It's work, and it's assigned to bystanders. A hadith in the collections of Abu Dawud and Tirmidhi makes the point sharply. The Prophet ﷺ asked his Companions: shall I tell you of something better in rank than voluntary fasting, prayer and charity? They said yes. He said: setting things right between people. Because, he went on, ruining relations between people is the shaver, the thing that shaves away faith. Another hadith, in Bukhari, says that the one who carries good words between two people to reconcile them is not a liar, even if he softens what each one said. The tradition gives the peacemaker room. Verse nine also insists on justice: making peace isn't pretending nobody was wronged. It's repair with fairness, so the thing can hold.",
+      "voice": "Verse nine begins with the hardest case: two groups of believers actually fighting. Make peace between them, it says, and if one keeps transgressing, stand against that one until it returns, and then make peace with justice, and be fair. Then verse ten, in Pickthall's translation: \"The believers are naught else than brothers. Therefor make peace between your brethren and observe your duty to Allah that haply ye may obtain mercy.\" Brothers here is ikhwah, and some commentators note that this is the plural used for brothers by birth: the family word. And the command, aslihu, comes from the root s-l-h, to set right, to repair. Islah is mending, the way you'd mend a torn thing so it can be used again. Notice that peace here isn't passive. It's not staying out of it. It's work, and it's assigned to bystanders. A hadith in the collections of Abu Dawud and Tirmidhi makes the point sharply. The Prophet ﷺ asked his Companions: shall I tell you of something better in rank than voluntary fasting, prayer and charity? They said yes. He said: setting things right between people. Because, he went on, ruining relations between people is the shaver, the thing that shaves away faith. Another hadith, in Bukhari, says that the one who makes peace between people, passing on good or saying good, is not a liar. The tradition gives the peacemaker room. Verse nine also insists on justice: making peace isn't pretending nobody was wronged. It's repair with fairness, so the thing can hold.",
       "screen": ["`MAKE PEACE, WITH JUSTICE.` · `IKHWAH: THE FAMILY WORD.` · `ISLAH: MENDING A TORN THING.` · `BETTER THAN EXTRA FASTING AND PRAYER.`"]
     },
     {
@@ -48,7 +48,7 @@
     },
     { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 585 COUNTS.` → `TOMORROW: NO MOCKING, NO NICKNAMES.`"] }
   ],
-  "howItsDone": "In many Muslim communities, elders, imams and family members act as go-betweens to reconcile quarrels, often citing 49:10 and the hadith that setting things right between people outranks voluntary worship.",
+  "howItsDone": "In Muslim communities, elders, imams and family members act as go-betweens to reconcile quarrels, often citing 49:10 and the hadith that setting things right between people outranks voluntary worship.",
   "games": {
     "match": {
       "prompt": "make peace — tap the pairs.",
@@ -60,10 +60,10 @@
       ["making peace in 49:9 means ignoring who was wronged", false, "the verse says to make peace with justice and be fair."]
     ],
     "fork": {
-      "setup": "two friends aren't speaking. you could carry a kind word from one to the other, softening it a little. what does a hadith in Bukhari say?",
+      "setup": "two friends aren't speaking. you could pass on only the good each has said about the other. what does a hadith in Bukhari say?",
       "options": ["that's lying; don't.", "the one who reconciles this way is not a liar.", "only an imam may do it."],
       "answer": 1,
-      "reveal": "Bukhari records that the one who carries good words to reconcile people is not a liar."
+      "reveal": "Bukhari records that the one who makes peace between people, passing on good, is not a liar."
     },
     "original": { "script": "فَأَصْلِحُوا بَيْنَ أَخَوَيْكُمْ", "say": "fa-AS-li-hoo BAY-na a-kha-WAY-kum", "note": "Arabic: so make peace between your brothers (49:10)." },
     "trapdoor": [
@@ -82,6 +82,7 @@
     "status": "pending",
     "keeper": null,
     "notes": [
+      "Editor review (2026-10-01): cut sweeping hook lines ('every family', 'most people'); the ikhwah point is now attributed to commentators; the Bukhari 2692 paraphrase no longer adds 'even if he softens what each said' (the hadith says passing on good or saying good); fork matched.",
       "Pickthall wording of 49:10 quoted from memory, including his spelling 'Therefor'; please confirm.",
       "Hadith numbers cited from memory; confirm. The 'shaver' wording follows Tirmidhi's version.",
       "Original-script line uses the Hafs reading 'akhawaykum' (dual); confirm vocalization."

@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Late in Ramadan, in mosques around the world, something changes. The last ten nights, the crowds grow. People who work all day come back at midnight and stay until the pre-dawn meal. Some sleep in the mosque. Children are woken up to join. Everyone is looking for one night, and nobody knows for certain which one it is. Today's surah is five lines about that night: what it is, why it matters, and how it ends. Today: Al-Qadr, the Night of Power.",
+      "voice": "Late in Ramadan, a mosque changes shape. In the last ten nights, the crowds grow. People who work all day come back at midnight and stay until the pre-dawn meal. Some sleep in the mosque. Children are woken up to join. They're looking for one night, and nobody knows for certain which one it is. Today's surah is five lines about that night: what it is, why it matters, and how it ends. Today: Al-Qadr, the Night of Power.",
       "screen": ["`THE LAST TEN NIGHTS OF RAMADAN.` → `LOOKING FOR ONE NIGHT.` → `NOBODY KNOWS WHICH.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Surah ninety-seven, in Pickthall's translation: Lo! We revealed it on the Night of Power. Ah, what will convey unto thee what the Night of Power is! The Night of Power is better than a thousand months. The angels and the Spirit descend therein, by the permission of their Lord, with all decrees. The night is Peace until the rising of the dawn. It is the night the Qur'an was first revealed. Qadr has two meanings, and scholars keep both: power, or honor, greatness; and measure, decree, the night on which matters for the year are measured out. A thousand months is about eighty-three years, longer than most lifetimes. One night, better than a whole life of ordinary nights. The Spirit, ar-ruh, is understood by most commentators to be the angel Jibril, who brought the revelation. So picture the sky that night: full, busy, angels descending. And yet the surah's last word on it isn't noise or power. It's salam. Peace, until the dawn. When is it? The Prophet Muhammad ﷺ said, in Bukhari: seek it in the odd nights of the last ten of Ramadan. Many Muslims especially look to the twenty-seventh, though scholars say it isn't certain, and some say it moves year to year. The uncertainty is part of the gift: it keeps people awake for ten nights instead of one. Aisha asked the Prophet what she should say if she found it, and he taught her a short prayer asking Allah, who loves to pardon, to pardon her. Peace until dawn.",
+      "voice": "Surah ninety-seven, in Pickthall's translation: Lo! We revealed it on the Night of Power. Ah, what will convey unto thee what the Night of Power is! The Night of Power is better than a thousand months. The angels and the Spirit descend therein, by the permission of their Lord, with all decrees. The night is Peace until the rising of the dawn. Tradition holds that it's the night the Qur'an was first revealed. Qadr has two meanings, and scholars keep both: power, or honor, greatness; and measure, decree, the night on which matters for the year are measured out. A thousand months is about eighty-three years. One night, better than a whole life of ordinary nights. The Spirit, ar-ruh, is identified by commentators as the angel Jibril, who brought the revelation. So picture the sky that night: full, busy, angels descending. And yet the surah's last word on it isn't noise or power. It's salam. Peace, until the dawn. When is it? The Prophet Muhammad ﷺ said, in Bukhari: seek it in the odd nights of the last ten of Ramadan. The twenty-seventh is a night people watch especially closely, though scholars say it isn't certain, and some say it moves year to year. Some see the uncertainty as part of the gift: it keeps people awake for ten nights instead of one. Aisha asked the Prophet what she should say if she found it, and he taught her a short prayer asking Allah, who loves to pardon, to pardon her. Peace until dawn.",
       "screen": ["`WE REVEALED IT ON THE NIGHT OF POWER.` · `BETTER THAN A THOUSAND MONTHS.` · `THE ANGELS AND THE SPIRIT DESCEND.` · `THE ODD NIGHTS OF THE LAST TEN.` · then, large: `PEACE UNTIL DAWN.`"]
     },
     {
@@ -37,7 +37,7 @@
     {
       "type": "the word",
       "duration": "25 sec",
-      "voice": "Al-Qadr. Power and decree: the night the Qur'an was first revealed, better than a thousand months, peace until dawn. Today's word.",
+      "voice": "Al-Qadr. Power and decree: the night the surah says the Qur'an was revealed, better than a thousand months, peace until dawn. Today's word.",
       "screen": ["`AL-QADR — today's word`."]
     },
     {
@@ -52,18 +52,18 @@
   "games": {
     "match": {
       "prompt": "what's inside the surah — tap the pairs.",
-      "pairs": [["qadr", "power, and decree"], ["a thousand months", "about eighty-three years"], ["ar-ruh", "the Spirit, Jibril for most commentators"], ["salam", "peace until the dawn"]]
+      "pairs": [["qadr", "power, and decree"], ["a thousand months", "about eighty-three years"], ["ar-ruh", "the Spirit, Jibril say commentators"], ["salam", "peace until the dawn"]]
     },
     "myth": [
       ["everyone knows the Night of Power falls on the 27th", false, "the Prophet said seek it in the odd nights of the last ten; the date isn't certain."],
-      ["the Night of Power is better than a thousand months", true, "97:3: longer than most lifetimes."],
-      ["the Qur'an was first revealed on this night", true, "We revealed it on the Night of Power (97:1)."]
+      ["the Night of Power is better than a thousand months", true, "97:3: a thousand months is about eighty-three years."],
+      ["the surah says the Qur'an was revealed on this night", true, "We revealed it on the Night of Power (97:1)."]
     ],
     "fork": {
       "setup": "Aisha asks the Prophet: if I find the Night of Power, what should I say?",
       "options": ["ask for wealth for the year", "ask Allah, who loves to pardon, to pardon her", "say nothing, and listen"],
       "answer": 1,
-      "reveal": "he taught her a short prayer asking for pardon (Tirmidhi). on the greatest night, the request is forgiveness."
+      "reveal": "he taught her a short prayer asking for pardon (Tirmidhi). on this night, the request is forgiveness."
     },
     "original": { "script": "سَلَامٌ هِيَ", "say": "sa-LAA-mun HI-ya", "note": "Arabic: peace it is, the opening of 97:5: peace until the rising of the dawn." },
     "trapdoor": [
@@ -85,7 +85,8 @@
       "Bukhari 2017 and Tirmidhi 3513 cited from memory; confirm.",
       "The prayer taught to Aisha is described, not quoted or translated, to avoid writing a prayer.",
       "'Most commentators' identify ar-ruh as Jibril; confirm.",
-      "The practice asks listeners to wake before dawn on a coming morning and offers a shorter now-version."
+      "The practice asks listeners to wake before dawn on a coming morning and offers a shorter now-version.",
+      "Editor review (2026-10-01): cut 'longer than most lifetimes' (uncited statistic) from teach and myth; 'most commentators' and 'many Muslims especially look to the 27th' rephrased without uncited majority claims; 'the night the Qur'an was first revealed' now 'tradition holds' (97:1 says only 'We revealed it'; some commentators read it as the descent to the lowest heaven); the uncertainty-as-gift reading attributed to 'some'; 'the greatest night' superlative cut from the fork reveal; hook no longer says 'everyone'."
     ]
   },
   "meta": { "index": "180. Al-Qadr: the Night of Power · angels and the Spirit descend, peace until dawn (Surah 97) · sit in the dark before dawn · peace until dawn", "writer": "writer agent (islam 158–187)", "written": "2026-09-30" }

@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Strangers arrive in a small town. They've come a long way, from somewhere east. They don't speak the local language well, and they don't share the local religion. They're students of the sky, and they say a star has led them here. In the King James words: \"for we have seen his star in the east, and are come to worship him.\" They find a house in Bethlehem, a young mother and a child. And these foreigners kneel on the floor and open their treasures: gold, frankincense and myrrh. In Matthew's Gospel, the first people to worship Jesus are outsiders from far away. The story is so loved that people have added to it for centuries: three of them, kings, with names. Matthew never says how many there were, and never calls them kings. Today's word is the feast that tells their story.",
-      "screen": ["`STRANGERS FROM THE EAST.` → `WE HAVE SEEN HIS STAR.` → `OUTSIDERS KNEEL FIRST.`"]
+      "voice": "Strangers arrive in a small town. They've come a long way, from somewhere east. Matthew calls them wise men; they read the sky, and they say a star has led them here. In the King James words: \"for we have seen his star in the east, and are come to worship him.\" They find a house in Bethlehem, a young mother and a child. And these foreigners kneel on the floor and open their treasures: gold, frankincense and myrrh. In Matthew's Gospel, the ones who come to worship the child are outsiders from far away. Today's word is the feast that tells their story, and then keeps going.",
+      "screen": ["`STRANGERS FROM THE EAST.` → `WE HAVE SEEN HIS STAR.` → `OUTSIDERS KNEEL.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Epiphany. From the Greek epiphaneia: an appearing, a showing. It falls on the sixth of January, the day after the twelve days end. And it's really about one idea, told in three stories. God shown to the world. First, the magi: the light reaching people from outside, from far away. Western churches put the wise men at the center of the day. Second, the baptism of Jesus in the Jordan, when a voice from heaven calls him beloved. Orthodox churches call the feast Theophany, God shown, and center it there. Priests bless the waters, and in some places they throw a cross into a cold river or the sea, and swimmers dive in after it. Third, a wedding at Cana, where Jesus turns water into wine. John writes: \"This beginning of miracles did Jesus in Cana of Galilee, and manifested forth his glory.\" Three stories. One showing. And the thread through all of it is who gets to see. The prophet Isaiah had said, \"And the Gentiles shall come to thy light, and kings to the brightness of thy rising.\" Gentiles means the nations, everyone who wasn't Jewish. So Epiphany is the season when Christians say the light spreads outward, to everybody. People keep it in their own ways. In Spain and much of Latin America, Three Kings Day is when children get their presents. Some families write the year and the letters C, M and B above their front door in chalk, a blessing for the house. And in everyday English, an epiphany is a sudden moment when something becomes clear. That meaning grew out of this feast.",
+      "voice": "Epiphany. From the Greek epiphaneia: an appearing, a showing. It falls on the sixth of January, the day after the twelve days end. And it's really about one idea, told in three stories. God shown to the world. First, the magi: the light reaching people from outside, from far away. Western churches put the wise men at the center of the day. Second, the baptism of Jesus in the Jordan, when a voice from heaven calls him beloved. Orthodox churches call the feast Theophany, God shown, and center it there. Priests bless the waters, and in some places they throw a cross into a cold river or the sea, and swimmers dive in after it. Third, a wedding at Cana, where Jesus turns water into wine. John writes: \"This beginning of miracles did Jesus in Cana of Galilee, and manifested forth his glory.\" Three stories. One showing. And the thread through all of it is who gets to see. The prophet Isaiah had said, \"And the Gentiles shall come to thy light, and kings to the brightness of thy rising.\" Gentiles means the nations, everyone who wasn't Jewish. So Epiphany is the season when Christians say the light spreads outward, to everybody. People keep it in their own ways. In Spain and parts of Latin America, Three Kings Day is when children get their presents. Some families write the year and the letters C, M and B above their front door in chalk, a blessing for the house. And in everyday English, an epiphany is a sudden moment when something becomes clear. That everyday sense borrows its name from this feast.",
       "screen": ["`EPIPHANEIA: A SHOWING.` · `THE MAGI, THE RIVER, THE WEDDING.` · `THE GENTILES SHALL COME TO THY LIGHT.` · `A SUDDEN MOMENT OF CLARITY.`"]
     },
     {
@@ -55,15 +55,15 @@
       "pairs": [["the magi", "strangers following a star"], ["the Jordan", "the baptism, a voice from heaven"], ["Cana", "water into wine"], ["Theophany", "the Orthodox name: God shown"]]
     },
     "myth": [
-      ["Matthew says there were three kings", false, "he gives three gifts, but never says how many came or calls them kings. the names came later."],
-      ["in Matthew, the first to worship Jesus are foreigners", true, "the magi, from the east, following a star."],
-      ["the everyday word epiphany has nothing to do with the feast", false, "a sudden moment of clarity: the meaning grew out of the feast of God shown."]
+      ["Orthodox churches center the feast on the wise men", false, "they call it Theophany and center it on the baptism in the Jordan, with the blessing of the waters."],
+      ["in Matthew, the ones who come to worship the child are foreigners", true, "the magi, from the east, following a star."],
+      ["the everyday word epiphany has nothing to do with the feast", false, "a sudden moment of clarity: the everyday sense borrows the name of the feast of God shown."]
     ],
     "fork": {
-      "setup": "you're one of the magi. you've followed a star for months, and it leads not to a palace but to an ordinary house and a small child. what do you do?",
+      "setup": "you're one of the magi. you've followed a star a long way, and it leads not to a palace but to an ordinary house and a small child. what do you do?",
       "options": ["decide you've got the wrong place and leave.", "kneel and open your treasures.", "ask to see the king in charge."],
       "answer": 1,
-      "reveal": "they fall down and worship him, and give gold, frankincense and myrrh. the outsiders see first."
+      "reveal": "they fall down and worship him, and give gold, frankincense and myrrh. the outsiders see it."
     },
     "original": { "script": "ἐπιφάνεια", "say": "eh-pee-FAH-nee-ah", "note": "Greek: an appearing, a showing forth. used of a god's appearance or a ruler's arrival." },
     "trapdoor": [
@@ -87,7 +87,8 @@
       "Theophany customs (blessing of waters, throwing a cross into water) vary by place. Confirm.",
       "Chalking the door: '20 + C + M + B + year', read as the magi's traditional initials and as Christus mansionem benedicat. Script says only 'the letters C, M and B'. Confirm.",
       "The secular sense of 'epiphany' (sudden insight) derives from the religious term; stated as growing out of the feast. Confirm.",
-      "Week-end look-back in the review covers days 106–111."
+      "Week-end look-back in the review covers days 106–111.",
+      "Editor review (days 94-112): invented details cut (Matthew never says the magi spoke the language poorly or had another religion); 'the first people to worship Jesus' and the fork's 'for months' were not in the text; the 'not three, not kings' point and myth repeated day 44 and are replaced (new myth on Theophany); 'much of Latin America' softened; the claim that the everyday sense 'grew out of' the feast softened."
     ]
   },
   "meta": { "index": "112. Epiphany: the light spreads · Epiphany · the magi, the baptism, the wedding at Cana: God shown to the world · notice one thing revealed today · the light is for everyone", "writer": "writer agent (christianity 103–132)", "written": "2026-09-30" }

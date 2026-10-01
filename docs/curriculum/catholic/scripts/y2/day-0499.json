@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "You started something. A band, a small business, a ministry at church, a club at school. It grew because of you. And then someone new shows up, and they're better at it, and people start following them instead. Your friends come to you, upset on your behalf: did you see? Everyone's going over there now. Most of us know the little sting in that moment. Today John the Baptist's disciples bring him exactly that news, about the man he baptized in the Jordan, and his answer is one of the most surprising things anyone says in this Gospel.",
-      "screen": ["`YOU STARTED SOMETHING.` → `SOMEONE NEW DOES IT BETTER.` → `EVERYONE IS GOING OVER THERE.`"]
+      "voice": "Someone starts something. A band, a small business, a ministry at church, a club at school. It grows because of them. Then someone new shows up, and people start following the newcomer instead. Friends come by, upset on the founder's behalf: did you see? Everyone's going over there now. Today John the Baptist's disciples bring him exactly that news, about the man he pointed out at the Jordan, and his answer turns their worry inside out.",
+      "screen": ["`SOMEONE STARTS SOMETHING.` → `A NEWCOMER DRAWS THE CROWD.` → `EVERYONE IS GOING OVER THERE.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Jesus and his disciples are baptizing in Judea, and John is still baptizing nearby. John's disciples come to him: Rabbi, the one who was with you across the Jordan, the one you pointed out, he's baptizing, and all men come to him. You can hear the worry in it. John answers first with a principle, in the Douay-Rheims: \"A man cannot receive any thing, unless it be given him from heaven.\" Whatever we have is given. Then a picture from a wedding. The bride belongs to the bridegroom. The bridegroom's friend, the best man, doesn't sulk because the bride isn't his. He stands near, he hears the bridegroom's voice, and he's glad. This, John says, is my joy, and it is full. And then the line: \"He must increase, but I must decrease.\" Must. It isn't a resigned sigh. In John's mouth it sounds like a plan, even a delight. Saint Augustine noticed something about the calendar. The Church celebrates John's birth on June twenty-fourth, just after the longest day of the year, when the daylight starts to shrink. It celebrates Jesus's birth in late December, just after the shortest day, when the light begins to grow. Augustine said the calendar itself preaches this verse: John's days decrease, Christ's increase. The Church doesn't claim the dates were chosen for that reason alone, but Augustine wasn't the last to love the fit. For an ordinary week, the line is a gift. Not every good thing has to have your name on it. Sometimes the best thing you can do for something you love is to step aside and be glad.",
+      "voice": "Jesus and his disciples are baptizing in Judea, and John is still baptizing nearby. John's disciples come to him: Rabbi, the one who was with you across the Jordan, the one you pointed out, he's baptizing, and all men come to him. There's worry in it. John answers first with a principle, in the Douay-Rheims: \"A man cannot receive any thing, unless it be given him from heaven.\" Whatever we have is given. Then a picture from a wedding. The bride belongs to the bridegroom. The bridegroom's friend, the best man, doesn't sulk because the bride isn't his. He stands near, he hears the bridegroom's voice, and he's glad. This, John says, is my joy, and it is full. And then the line: \"He must increase, but I must decrease.\" Must. It isn't a resigned sigh. In John's mouth it sounds like a plan, even a delight. Saint Augustine noticed something about the calendar. The Church celebrates John's birth on June twenty-fourth, just after the longest day of the year, when the daylight starts to shrink. It celebrates Jesus's birth in late December, just after the shortest day, when the light begins to grow. Augustine said the calendar itself preaches this verse: John's days decrease, Christ's increase. Where the dates came from is debated; Augustine simply read the fit as a sermon. On an ordinary day, the line has a use. Not every good thing has to have your name on it. Sometimes the right thing to do for something you love is to step aside and be glad.",
       "screen": ["`ALL MEN COME TO HIM.` · `NOTHING UNLESS GIVEN FROM HEAVEN.` · `THE BRIDEGROOM'S FRIEND REJOICES.` · `JUNE AND DECEMBER.` · then, large: `HE MUST INCREASE, BUT I MUST DECREASE.`"]
     },
     {
@@ -48,7 +48,7 @@
     },
     { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 499 COUNTS.` → `TOMORROW: LIVING WATER.`"] }
   ],
-  "howItsDone": "Catholics celebrate the Nativity of Saint John the Baptist on June 24 and Christmas on December 25, and preachers have long linked the two dates to John's words, he must increase, but I must decrease.",
+  "howItsDone": "Catholics celebrate the Nativity of Saint John the Baptist on June 24 and Christmas on December 25, and preachers since Augustine have linked the two dates to John's words, he must increase, but I must decrease.",
   "games": {
     "match": {
       "prompt": "the bridegroom's friend — tap the pairs.",
@@ -60,8 +60,8 @@
       ["Augustine linked the feast days to this verse", true, "John's birth as days shorten, Christ's as days lengthen."]
     ],
     "fork": {
-      "setup": "you're John the Baptist. your disciples tell you the crowds are leaving you for the one you baptized. what do you say?",
-      "options": ["we need to win them back.", "he must increase, but I must decrease.", "I baptized him first; remember that."],
+      "setup": "you're John the Baptist. your disciples tell you the crowds are leaving you for the one you pointed out. what do you say?",
+      "options": ["we need to win them back.", "he must increase, but I must decrease.", "I was here first; remember that."],
       "answer": 1,
       "reveal": "John compares himself to the bridegroom's friend, glad to hear his voice: \"He must increase, but I must decrease.\""
     },
@@ -86,7 +86,8 @@
       "The origins of the December 25 and June 24 dates are debated; the voice says the Church doesn't claim they were chosen for that reason alone. Confirm.",
       "June 24 falls a few days after the solstice; 'just after the longest day' is approximate. Confirm.",
       "Original: Vulgate 'Illum oportet crescere, me autem minui'. Ecclesiastical pronunciation of 'crescere' is approximately KRESH-eh-reh. Confirm.",
-      "Confirm Douay wording of John 3:27."
+      "Confirm Douay wording of John 3:27.",
+      "Editor review (483-500 pass): John's Gospel never narrates John baptizing Jesus (3:26 says 'to whom thou gavest testimony'), so 'the man he baptized' and the fork's 'I baptized him first' are fixed; hook no longer tells the listener what they feel ('most of us know the sting') or calls the answer 'one of the most surprising'; stock lines trimmed."
     ]
   },
   "meta": { "index": "499. He must increase (John 3:22–30) · — · John the Baptist rejoices to become less · give someone else the credit · he must increase", "writer": "writer agent (catholic 482–511)", "written": "2026-09-30" }

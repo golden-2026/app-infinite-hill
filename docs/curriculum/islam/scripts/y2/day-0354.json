@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Picture the most crowded place you've ever been: a stadium letting out, a train station at rush hour, an airport on the day before a holiday. Now picture it with around two million people, from almost every country on earth, in the heat, many of them elderly, all trying to reach the same few places on the same days. Tempers would fray anywhere. In the middle of its laws for this journey, al-Baqarah sets a rule about tempers. Today: the Hajj verses.",
-      "screen": ["`THE MOST CROWDED PLACE YOU'VE BEEN.` → `AROUND TWO MILLION PEOPLE, IN THE HEAT.` → `A RULE ABOUT TEMPERS.`"]
+      "voice": "A stadium letting out. A train station at rush hour. An airport the day before a holiday. Crowds like that test anyone's patience, and the Hajj is a crowd on another scale: pilgrims from far-off countries, in the heat, old and young, all trying to reach the same few places on the same days. Tempers can fray anywhere. In the middle of its laws for this journey, al-Baqarah sets a rule about tempers. Today: the Hajj verses.",
+      "screen": ["`A STADIUM LETTING OUT.` → `A CROWD ON ANOTHER SCALE, IN THE HEAT.` → `A RULE ABOUT TEMPERS.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Verses one hundred ninety-six to two hundred three are a short handbook for the pilgrimage. Complete the Hajj and the 'umrah for God. The pilgrimage is in the well-known months. And then verse one hundred ninety-seven: whoever takes on the Hajj in them, let there be no indecent talk, no wrongdoing, and no quarreling on the Hajj. The word for quarreling is jidal: arguing, disputing, wrestling with words. It's named on purpose, in a place where arguments are almost guaranteed: over a spot in the tent, a push in the crowd, who was first in line. A hadith in Bukhari says that whoever performs the Hajj without indecency or wrongdoing returns as on the day their mother bore them. Then the verse turns practical. Take provisions for the journey. And then: the best provision is taqwa, the mindfulness you met on the first page of al-Baqarah. The next verse adds a detail that surprises people: there is no sin in seeking the bounty of your Lord, which the commentators say means trading during the pilgrimage season. Ordinary life isn't banned. Quarreling is. Then the verses move to the heart of it: when you press on from Arafat, remember God at the sacred landmark. Arafat is a plain outside Mecca where pilgrims stand from noon to sunset on one day, praying, many in tears. A hadith in at-Tirmidhi says simply: the Hajj is Arafah. The day at the center of the journey is spent remembering, not winning arguments. No quarrel on the journey.",
+      "voice": "Verses one hundred ninety-six to two hundred three are a short handbook for the pilgrimage. Complete the Hajj and the 'umrah for God. The pilgrimage is in the well-known months. And then verse one hundred ninety-seven: whoever takes on the Hajj in them, let there be no indecent talk, no wrongdoing, and no quarreling on the Hajj. The word for quarreling is jidal: arguing, disputing, wrestling with words. It's named in a place where arguments come easily: over a spot in the tent, a push in the crowd, who was first in line. A hadith in Bukhari says that whoever performs the Hajj without indecency or wrongdoing returns as on the day their mother bore them. Then the verse turns practical. Take provisions for the journey. And then: the best provision is taqwa, the mindfulness you met on the first page of al-Baqarah. The next verse adds a practical detail: there is no sin in seeking the bounty of your Lord, which the commentators say means trading during the pilgrimage season. Ordinary life isn't banned. Quarreling is. Then the verses move to the heart of it: when you press on from Arafat, remember God at the sacred landmark. Arafat is a plain outside Mecca where pilgrims spend one day standing in prayer. A hadith in at-Tirmidhi says simply: the Hajj is Arafah. The day at the center of the journey is spent remembering, not winning arguments. No quarrel on the journey.",
       "screen": ["`A SHORT HANDBOOK FOR THE PILGRIMAGE` · `NO INDECENCY, NO WRONG, NO QUARREL` · `THE BEST PROVISION IS TAQWA` · `THE HAJJ IS ARAFAH`"]
     },
     {
@@ -52,7 +52,7 @@
   "games": {
     "match": {
       "prompt": "the pilgrim's handbook — tap the pairs.",
-      "pairs": [["jidal", "quarreling, disputing"], ["the best provision", "taqwa, mindfulness"], ["seeking your Lord's bounty", "trading in the pilgrimage season"], ["Arafat", "standing from noon to sunset, remembering"]]
+      "pairs": [["jidal", "quarreling, disputing"], ["the best provision", "taqwa, mindfulness"], ["seeking your Lord's bounty", "trading in the pilgrimage season"], ["Arafat", "a day of standing, remembering"]]
     },
     "myth": [
       ["al-Baqarah forbids all trade during the Hajj season", false, "2:198: no sin in seeking your Lord's bounty, which commentators read as trade."],
@@ -63,7 +63,7 @@
       "setup": "you're on the Hajj, exhausted, and someone pushes ahead of you in the crowd. what does verse 197 say?",
       "options": ["push back; you were first.", "no quarreling on the Hajj.", "report them to the authorities."],
       "answer": 1,
-      "reveal": "no quarreling: the rule is set exactly where arguments are most likely, and the best provision for the road is taqwa."
+      "reveal": "no quarreling: the rule is set right where arguments come easily, and the best provision for the road is taqwa."
     },
     "original": { "script": "جِدَال", "say": "ji-DAAL", "note": "Arabic: quarreling, disputing; in 2:197, no jidal on the Hajj." },
     "trapdoor": [
@@ -85,7 +85,8 @@
       "Hadith numbers (Bukhari 1521; Tirmidhi 889) cited from memory; please confirm.",
       "'Around two million people' reflects recent Hajj seasons (numbers vary by year, with restrictions in some years); confirm or soften.",
       "Arafat 'from noon to sunset' describes the usual standing (wuquf); the legal minimum and timing differ by school.",
-      "Index hook says 'quarrelling'; the script uses American 'quarreling'."
+      "Index hook says 'quarrelling'; the script uses American 'quarreling'.",
+      "Editor review (2026-10-01): rewrote the hook, which opened 'Picture...' and gave an uncited 'around two million people'; cut 'noon to sunset' and 'many in tears' from the Arafat line (not in the cited texts); 'named on purpose' and 'surprises people' softened; fork reveal no longer says 'most likely'."
     ]
   },
   "meta": { "index": "354. The Hajj verses · the pilgrimage, the months, no quarrelling, remember Allah at Arafat (2:196–203) · go a day without arguing · no quarrel on the journey", "writer": "writer agent (islam y2 332–361)", "written": "2026-09-30" }

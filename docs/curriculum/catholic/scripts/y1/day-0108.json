@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "The Gloria ends, and everyone sits down. That's the signal. The first part of the Mass, the gathering and the mercy and the praise, is over. Now comes the second: listening. A person walks up to a stand called the ambo. Very often it isn't the priest. It's a parishioner, a teacher or a retired mailman or a nervous sixteen-year-old, reading from a big book to a room full of people. And the passage they read wasn't chosen by the priest that week, or by them. It was chosen decades ago, for this exact Sunday, by a plan that runs across three years. Today's word is the name of that book.",
+      "voice": "The Gloria ends, the priest says a short opening prayer, and everyone sits down. That's the signal. The first part of the Mass, the gathering and the mercy and the praise, is over. Now comes the second: listening. A person walks up to a stand called the ambo. Very often it isn't the priest. It's a parishioner, a teacher or a retired mailman or a nervous sixteen-year-old, reading from a big book to a room full of people. And the passage they read wasn't chosen by the priest that week, or by them. It was chosen decades ago, for this exact Sunday, by a plan that runs across three years. Today's word is the name of that book.",
       "screen": ["`EVERYONE SITS.` → `A PARISHIONER AT THE AMBO.` → `CHOSEN DECADES AGO.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Lectionary comes from the Latin lectio, a reading. It's the book of readings for Mass, laid out day by day. After the Second Vatican Council in the 1960s, the bishops asked for the treasures of the Bible to be opened up much more richly to the people. So a new lectionary was built, and it came into use in 1970. Here's how it works on a Sunday. There are four readings. First, usually from the Old Testament, chosen to echo the Gospel of the day. Then a psalm, sung or said: a cantor sings the verses, and everyone answers with a short refrain. Then a reading from one of the letters of the apostles, often Paul. Then the Gospel. And the Sundays run in a three-year cycle. Year A reads mostly from Matthew. Year B, Mark. Year C, Luke. John comes in around the great seasons, Lent and Easter, and fills out the short year of Mark. So over three years of Sundays, a Catholic who comes every week hears a large share of the Bible read aloud. Not every word, but far more than before the reform, when one year of readings repeated over and over. Weekdays have their own two-year cycle. And here's the lovely part: on any given Sunday, Catholic churches around the world, in hundreds of languages, are reading the same passages. At the end of each reading, the reader says, in the old Latin, Verbum Domini, the word of the Lord. And the people answer, Deo gratias, thanks be to God.",
+      "voice": "Lectionary comes from the Latin lectio, a reading. It's the book of readings for Mass, laid out day by day. At the Second Vatican Council in the 1960s, the bishops asked for the treasures of the Bible to be opened up much more richly to the people. So a new lectionary was built, and it came into use in 1970. Here's how it works on a Sunday. There are four readings, counting the psalm. First, usually from the Old Testament, chosen to echo the Gospel of the day. Then a psalm, sung or said: a cantor sings the verses, and everyone answers with a short refrain. Then a reading from one of the letters of the apostles, often Paul. Then the Gospel. And the Sundays run in a three-year cycle. Year A reads mostly from Matthew. Year B, Mark. Year C, Luke. John comes in around the great seasons, Lent and Easter, and fills out the short year of Mark. So over three years of Sundays, a Catholic who comes every week hears the Gospels in turn and a wide sweep of the rest of the Bible. Not every word, but far more than before the reform, when one year of readings repeated over and over. Weekdays have their own cycle. And on any given Sunday, Roman Rite parishes around the world, in many languages, are reading the same passages. At the end of each reading, the reader says, in the old Latin, Verbum Domini, the word of the Lord. And the people answer, Deo gratias, thanks be to God.",
       "screen": ["`LECTIO: A READING.` · `FOUR READINGS ON A SUNDAY.` · `YEAR A, B, C.` · `THE SAME PASSAGES, WORLDWIDE.` · then, large: `THANKS BE TO GOD.`"]
     },
     {
@@ -37,7 +37,7 @@
     {
       "type": "the word",
       "duration": "25 sec",
-      "voice": "Lectionary. The book of readings for Mass, laid out so that over three years of Sundays, much of the Bible is read aloud. Today's word.",
+      "voice": "Lectionary. The book of readings for Mass, laid out so that over three years of Sundays, a wide sweep of the Bible is read aloud. Today's word.",
       "screen": ["`LECTIONARY — today's word`."]
     },
     {
@@ -48,19 +48,19 @@
     },
     { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 108 COUNTS.` → `TOMORROW: THE GOSPEL.`"] }
   ],
-  "howItsDone": "At Sunday Mass, lay readers usually proclaim the first and second readings from the ambo, a cantor leads the responsorial psalm, and the readings follow a three-year cycle (Years A, B and C) shared by Catholic parishes worldwide.",
+  "howItsDone": "At Sunday Mass, lay readers usually proclaim the first and second readings from the ambo, a cantor leads the responsorial psalm, and the readings follow a three-year cycle (Years A, B and C) shared by Roman Rite parishes worldwide.",
   "games": {
     "match": {
       "prompt": "what's inside the readings — tap the pairs.",
       "pairs": [["Year A", "mostly Matthew"], ["Year B", "mostly Mark"], ["Year C", "mostly Luke"], ["the psalm", "a refrain the people answer"]]
     },
     "myth": [
-      ["the priest picks the readings he likes each week", false, "they're set in the lectionary for each Sunday, and shared by Catholic churches worldwide."],
+      ["the priest picks the readings he likes each week", false, "they're set in the lectionary for each Sunday, and shared by Roman Rite parishes worldwide."],
       ["the first reading is often chosen to echo the Gospel", true, "usually from the Old Testament, picked to sound alongside the day's Gospel."],
       ["every word of the Bible is read on Sundays over three years", false, "not every word, but far more than before the 1970 reform."]
     ],
     "fork": {
-      "setup": "it's a Sunday in Year B, the year of Mark. but Mark is the shortest Gospel. what fills the gap?",
+      "setup": "it's a Sunday in Year B, the year of Mark. but Mark's Gospel is short. what fills the gap?",
       "options": ["Mark is read twice.", "John fills out the year.", "the letters of Paul are read instead."],
       "answer": 1,
       "reveal": "John fills out the short year of Mark, and comes in around Lent and Easter every year."
@@ -68,7 +68,7 @@
     "original": { "script": "lectio", "say": "LEK-tsee-oh", "note": "Latin: a reading, the root of lectionary and of lecture." },
     "trapdoor": [
       "what you thought: someone reads a bit of the Bible at church.",
-      "what it means: a planned book of readings, four on a Sunday, running on a three-year cycle so much of the Bible is heard aloud.",
+      "what it means: a planned book of readings, four on a Sunday, running on a three-year cycle so a wide sweep of the Bible is heard aloud.",
       "what a scholar hears: the Ordo Lectionum Missae of 1969, answering the Council's call in Sacrosanctum Concilium 51 to open the Bible's treasures more lavishly."
     ]
   },
@@ -81,6 +81,7 @@
     "status": "pending",
     "keeper": null,
     "notes": [
+      "Editor review (2026-10-01): hook fixed (the collect comes between the Gloria and sitting down); 'after the Council' corrected to 'at the Council' (Sacrosanctum Concilium 51 is the Council's own text); four readings now 'counting the psalm'; 'a large share of the Bible', 'hundreds of languages' and 'two-year' weekday cycle (true only of first readings) softened; 'Catholic churches worldwide' narrowed to Roman Rite parishes; 'the shortest Gospel' superlative cut; stock 'here's the lovely part' cut.",
       "Douay-Rheims Psalm 118:105 given from memory; confirm.",
       "The index hook says 'most of the Bible is read aloud' and the carry says 'the whole book'. Studies suggest the Sunday cycle covers a minority of the Old Testament and a large share of the Gospels; the script says 'a large share' and 'not every word'. A Keeper may want the index hook softened.",
       "New lectionary promulgated 1969, in use from Advent 1969/1970; weekday first readings on a two-year cycle. Confirm.",

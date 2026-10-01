@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Drive through almost any town and count the churches. Catholic on one corner. Baptist across the street. Methodist, Lutheran, Pentecostal, a Greek Orthodox church with a dome, a storefront with a hand-painted sign. If you didn't grow up inside one, it can be confusing. Aren't they all Christian? Why so many? It's a fair question, and Christians ask it too, sometimes with real sadness. Over the next couple of weeks we'll meet this family of churches one by one, each described the way it describes itself. Today we start at the beginning, with the family tree. Today's word: one church.",
+      "voice": "Count the churches on one ordinary main street. Catholic on one corner. Baptist across the street. Methodist, Lutheran, Pentecostal, a Greek Orthodox church with a dome, a storefront with a hand-painted sign. If you didn't grow up inside one, it can be confusing. Aren't they all Christian? Why so many? It's a fair question, and Christians ask it too, sometimes with real sadness. Over the next couple of weeks we'll meet this family of churches one by one, each described the way it describes itself. Today we start at the beginning, with the family tree. Today's word: one church.",
       "screen": ["`COUNT THE CHURCHES.` → `WHY SO MANY?` → `THE FAMILY TREE.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "For roughly the first thousand years, Christians broadly thought of themselves as one church. Not one building or one boss, but one family, spread across the Roman world, with great centers at Rome, Constantinople, Alexandria, Antioch and Jerusalem. It was never a quiet family. There were fierce arguments, and some real early separations: after a council in 451, several ancient churches, including the Coptic, Ethiopian, Armenian and Syriac churches, did not accept its wording and parted from those who did, and they're still here today. But the big split most people mean came later. Over centuries, the Greek-speaking East and the Latin-speaking West grew apart: different languages, different customs, arguments over the pope's authority and over a phrase in the creed. In 1054, envoys from Rome and the patriarch of Constantinople excommunicated each other. The break hardened over the centuries after, and became what we now call the Catholic Church and the Orthodox Church. Then, in 1517, a German monk named Martin Luther posted his objections to practices in the Western church, and the Protestant Reformation began. Out of it came Lutherans, Reformed and Presbyterian churches, Anglicans, Anabaptists, and later Baptists, Methodists, Pentecostals and many more. Paul, writing long before any of this, used a picture Christians keep coming back to. In the King James Bible: \"For as the body is one, and hath many members, and all the members of that one body, being many, are one body: so also is Christ.\" And: \"the eye cannot say unto the hand, I have no need of thee.\" In 1965, the pope and the patriarch of Constantinople lifted the excommunications of 1054. The divisions remain. So does the longing.",
+      "voice": "For roughly the first thousand years, Christians broadly thought of themselves as one church. Not one building or one boss, but one family, spread across the Roman world, with great centers at Rome, Constantinople, Alexandria, Antioch and Jerusalem. It was never a quiet family. There were fierce arguments, and some real early separations: after a council in 451, several ancient churches, including the Coptic, Ethiopian, Armenian and Syriac churches, did not accept its wording and parted from those who did, and they're still here today. But the split this part of the path turns to next came later. Over centuries, the Greek-speaking East and the Latin-speaking West grew apart: different languages, different customs, arguments over the pope's authority and over a phrase in the creed. In 1054, envoys from Rome and the patriarch of Constantinople excommunicated each other. The break hardened over the centuries after, and became what we now call the Catholic Church and the Orthodox Church. Then, in 1517, a German monk named Martin Luther posted his objections to practices in the Western church, and the Protestant Reformation began. Out of it came Lutherans, Reformed and Presbyterian churches, Anglicans, Anabaptists, and later Baptists, Methodists, Pentecostals and many more. Paul, writing long before any of this, used a picture Christians keep coming back to. In the King James Bible: \"For as the body is one, and hath many members, and all the members of that one body, being many, are one body: so also is Christ.\" And: \"the eye cannot say unto the hand, I have no need of thee.\" In 1965, the pope and the patriarch of Constantinople lifted the excommunications of 1054. The divisions remain. So does the longing.",
       "screen": ["`A THOUSAND YEARS, BROADLY ONE.` · `451: THE ANCIENT EASTERN CHURCHES.` · `1054: EAST AND WEST.` · `1517: THE REFORMATION.`"]
     },
     {
@@ -52,18 +52,18 @@
   "games": {
     "match": {
       "prompt": "the family tree — tap the pairs.",
-      "pairs": [["451", "the ancient Eastern churches part"], ["1054", "East and West excommunicate"], ["1517", "the Reformation begins"], ["1965", "the 1054 excommunications lifted"]]
+      "pairs": [["451", "the ancient Eastern churches part"], ["1054", "East and West excommunicate"], ["1517", "the Reformation begins"], ["one body", "many members, 1 Corinthians 12"]]
     },
     "myth": [
       ["the church had no arguments for its first thousand years", false, "there were fierce arguments, and early separations after 451."],
       ["in 1965 the pope and the patriarch lifted the excommunications of 1054", true, "the divisions remain, but the old sentences were lifted."],
-      ["the East–West split happened all at once in 1054", false, "the break grew over centuries before and hardened over centuries after."]
+      ["the Coptic, Armenian and Syriac churches began at the Reformation", false, "they parted after a council in 451, and they're still here today."]
     ],
     "fork": {
-      "setup": "it's 1054. envoys from Rome and the patriarch of Constantinople are furious with each other. what happens?",
-      "options": ["they excommunicate each other.", "they sign a peace treaty.", "they merge the two churches."],
+      "setup": "you're Paul, writing to a church that's pulling apart. what picture do you reach for?",
+      "options": ["a body with many members.", "an army in ranks.", "a ship with one captain."],
       "answer": 0,
-      "reveal": "mutual excommunications, and a break that hardened into the Catholic and Orthodox churches. in 1965 their successors lifted them."
+      "reveal": "a body: \"the eye cannot say unto the hand, I have no need of thee.\" many members, one body, none of them spare."
     },
     "original": { "script": "ἐκκλησία", "say": "ek-klay-SEE-ah", "note": "Greek: church; literally the assembly, those called out." },
     "trapdoor": [
@@ -81,6 +81,7 @@
     "status": "pending",
     "keeper": null,
     "notes": [
+      "Editor review (282-299 pass): new hook opener (was 'Drive through almost any town'); cut 'the big split most people mean'; replaced the 1054 myth, fork and 1965 match pair, which repeated day 286, with items on Paul's body picture and the 451 churches.",
       "'Broadly one church' for a thousand years follows the index; the script names the early separations after Ephesus/Chalcedon (Oriental Orthodox) and could also mention the Church of the East. Keepers from those churches should check the wording.",
       "1054 and 1517 are simplified; each church may want to describe these events in its own words in the coming days.",
       "Practice invites prayer for another church 'if you pray'; confirm tone.",

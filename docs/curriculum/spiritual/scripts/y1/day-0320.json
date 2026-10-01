@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "It's 11:40 at night. You're tired, properly tired. And you're watching one more episode. Or answering one more message. Or lying in bed scrolling past things you won't remember tomorrow. Some people call it revenge bedtime procrastination: the day belonged to everyone else, so you steal the night back for yourself, and pay for it in the morning. Here's an uncomfortable truth for anyone on a path like this one. Every practice we've learned this year, the breathing, the noticing, the kindness, the patience, gets harder when you're short on sleep. Before meditation, before gratitude, before any of it: sleep first.",
+      "voice": "It's 11:40 at night. You're tired, properly tired. And you're watching one more episode. Or answering one more message. Or lying in bed scrolling past things you won't remember tomorrow. Some people call it revenge bedtime procrastination: the day belonged to everyone else, so you steal the night back for yourself, and pay for it in the morning. Here's the awkward part for a path like this one. The practices we've learned this year, the breathing, the noticing, the kindness, the patience, all lean on a rested mind. Before meditation, before gratitude, before any of it: sleep first.",
       "screen": ["`11:40, ONE MORE EPISODE.` → `STEALING THE NIGHT BACK.` → `BEFORE ANY OF IT: SLEEP.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, mood. Researchers have kept volunteers awake, or cut their sleep short for a few nights, and measured what happens. One review of many such studies found that mood took an even bigger hit than thinking or physical skills. After short sleep, people tend to feel more irritable, more anxious, and quicker to see things as threats. The patience you practiced all year is running on a low battery. Second, attention. Sleep-deprived people miss more on simple attention tasks, and they're often poor judges of how impaired they are. They feel almost fine. Third, timing, which may be the most overlooked part. Your body keeps a daily clock. Studies of students and adults have linked irregular sleep, going to bed at very different times from night to night, to worse mood and poorer grades, even when total hours were similar. Many sleep experts suggest adults aim for seven hours or more, at a roughly steady time. A caution: the field has had overblown claims too, and not everyone needs exactly the same amount. The solid part is plain: short and scattered sleep makes most things harder. Fourth, the old wisdom. Monasteries and religious communities have long closed the day with night prayers and a time of quiet. A Psalm in the King James words says \"It is vain for you to rise up early, to sit up late, to eat the bread of sorrows: for so he giveth his beloved sleep.\" Whatever you believe about the giver, the psalmist saw sleep as a gift, not as a weakness to push through. Sleep isn't the opposite of practice. It's the ground practice stands on.",
+      "voice": "First, mood. Researchers have kept volunteers awake, or cut their sleep short for a few nights, and measured what happens. One review of many such studies found that mood took an even bigger hit than thinking or physical skills. After short sleep, people tend to feel more irritable, more anxious, and quicker to see things as threats. The patience you practiced all year is running on a low battery. Second, attention. Sleep-deprived people miss more on simple attention tasks, and they're often poor judges of how impaired they are. They feel almost fine. Third, timing. Your body keeps a daily clock. One study of college students linked irregular sleep, going to bed at very different times from night to night, to poorer grades and a later body clock, even when total hours were similar. Two sleep research societies, in a joint statement, recommend that adults get seven hours or more. A caution: the field has had overblown claims too, and not everyone needs exactly the same amount. The solid part is plain: short and scattered sleep makes most things harder. Fourth, the old wisdom. The Rule of Saint Benedict closes the monastery's day with night prayer, and after it, silence until morning. A Psalm in the King James words says \"It is vain for you to rise up early, to sit up late, to eat the bread of sorrows: for so he giveth his beloved sleep.\" For the psalmist, sleep is a gift from God, not a weakness to push through. Sleep isn't the opposite of practice. It's the ground practice stands on.",
       "screen": ["`SHORT SLEEP HITS MOOD HARDEST.` · `ATTENTION SLIPS, AND WE DON'T NOTICE.` · `A STEADY TIME HELPS.` · `HE GIVETH HIS BELOVED SLEEP.` · then, large: `SLEEP FIRST.`"]
     },
     {
@@ -48,22 +48,22 @@
     },
     { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 320 COUNTS.` → `TOMORROW: MOVE YOUR BODY.`"] }
   ],
-  "howItsDone": "Many people protect a regular bedtime with a short wind-down, lights low and screens away; many religious communities close the day with night prayers and quiet.",
+  "howItsDone": "Many people protect a regular bedtime with a short wind-down, lights low and screens away; monastic communities following the Rule of Saint Benedict close the day with night prayer and silence.",
   "games": {
     "match": {
       "prompt": "sleep first — tap the pairs.",
-      "pairs": [["short sleep", "mood takes the biggest hit"], ["sleep-deprived attention", "slips, and we don't notice"], ["irregular bedtimes", "linked to worse mood"], ["the psalmist", "he giveth his beloved sleep"]]
+      "pairs": [["short sleep", "mood takes the biggest hit"], ["sleep-deprived attention", "slips, and we don't notice"], ["irregular bedtimes", "linked to poorer grades"], ["the psalmist", "he giveth his beloved sleep"]]
     },
     "myth": [
       ["people who are short on sleep can tell how impaired they are", false, "they're often poor judges and feel almost fine."],
-      ["regular sleep timing matters, not only total hours", true, "irregular schedules were linked to worse mood even with similar hours."],
-      ["everyone needs exactly eight hours", false, "needs vary; many experts suggest adults aim for seven or more."]
+      ["regular sleep timing matters, not only total hours", true, "in one student study, irregular schedules were linked to poorer grades even with similar hours."],
+      ["everyone needs exactly eight hours", false, "needs vary; two sleep societies recommend seven hours or more for adults."]
     ],
     "fork": {
       "setup": "it's late, you're tired, and you want to stay up for time to yourself. what does today's research suggest?",
       "options": ["stay up: sleep is for the weak.", "keep your bedtime; find your own time earlier.", "sleep in tomorrow to make up for it."],
       "answer": 1,
-      "reveal": "short and irregular sleep both make mood and attention worse. a steady bedtime is the quiet foundation."
+      "reveal": "short sleep hits mood and attention, and irregular timing has costs too. a steady bedtime is the quiet foundation."
     },
     "original": { "script": "somnus", "say": "SOM-noos", "note": "Latin: sleep; the root of insomnia and somnolent." },
     "trapdoor": [
@@ -76,6 +76,7 @@
     { "ref": "Pilcher and Huffcutt, Sleep 1996;19(4):318–26", "work": "Effects of sleep deprivation on performance: a meta-analysis", "translation": null, "quoted": null },
     { "ref": "Phillips et al., Scientific Reports 2017;7:3216", "work": "Irregular sleep/wake patterns are associated with poorer academic performance and delayed circadian and sleep/wake timing", "translation": null, "quoted": null },
     { "ref": "Watson et al., Sleep 2015;38(6):843–4", "work": "Recommended amount of sleep for a healthy adult (AASM and SRS consensus)", "translation": null, "quoted": null },
+    { "ref": "Rule of Saint Benedict, ch. 42", "work": "The Rule of Saint Benedict", "translation": null, "quoted": null },
     { "ref": "Psalm 127:2", "work": "The Bible", "translation": "KJV (1769)", "quoted": "It is vain for you to rise up early, to sit up late, to eat the bread of sorrows: for so he giveth his beloved sleep." }
   ],
   "review": {
@@ -86,6 +87,7 @@
       "Van Dongen et al. 2003 (not cited) is the usual source for poor self-assessment of impairment; add if desired.",
       "Irregular sleep and mood/grades: Phillips et al. 2017 (Harvard students) found irregularity linked to poorer grades; mood links from other studies. The script's 'worse mood and poorer grades' should be checked against specific sources.",
       "Psalm 127:2 KJV: confirm exact wording.",
+      "Editor review 2026-10-01: cut the unsourced 'worse mood' claim for irregular sleep (Phillips 2017 measured grades and circadian timing), the superlative 'most overlooked part', 'many sleep experts' (now the AASM/SRS joint statement), the sweeping 'have long' monastic claim (now Rule of Benedict ch. 42: silence after Compline), and 'whatever you believe about the giver'; softened the hook's claim that every practice gets harder.",
       "'Revenge bedtime procrastination' is a popular term (from Chinese internet usage), not a clinical one; the script says 'some people call it'."
     ]
   },

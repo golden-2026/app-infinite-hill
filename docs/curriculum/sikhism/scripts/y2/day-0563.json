@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "When the dawn singing ends, the sangat doesn't scatter right away. People stand for Ardas. Karah prashad, the warm sweet offering, is passed hand to hand. Someone folds the white sheets. Outside, the sun is fully up now, and the streets are filling with buses and school uniforms. Most people walk out carrying almost nothing: no notes, no book. Maybe one line, still humming in the back of the head. That's how the var has traveled for five centuries. Not mostly as a text people study, but as lines people carry out the door.",
+      "voice": "When the dawn singing ends, the sangat doesn't scatter right away. People stand for Ardas. Karah prashad, the warm sweet offering, is passed hand to hand. Someone folds the white sheets. Outside, the sun is fully up now, and the streets are filling with buses and school uniforms. People walk out carrying almost nothing: no notes, no book. Maybe one line, still humming in the back of the head. That's one way the var travels: not only as a text people study, but as lines people carry out the door.",
       "screen": ["`ARDAS, AND KARAH PRASHAD.` → `THE SUN FULLY UP.` → `ONE LINE CARRIED OUT THE DOOR.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Let's walk the staircase once, from the top. The var: an old ballad of heroes, given new words and sung to a king's tune. The Guru who made angels out of men, a hundred times a day. A hundred moons, and still dark without the Guru. The One who made Himself and watches with delight. Then four steps of seeing: vismaad, wonder at every sound and color. Kudrat, power in seeing, eating, loving. Bhau, the wind and rivers moving in awe. And nirbhau, nirankar: only the Formless without fear. Then the people. The contented ones who served. Haumai, ego as a chronic illness, with its medicine inside it. Cartloads of books, and only one thing counted. Koorh, the false king and everything that passes. And sach: truth known only when the heart is true. Then the turnings. Pain the medicine, pleasure the disease. Mitthat neevee, sweetness and humility, the heavy side of the scale. The silk-cotton tree, tall and useless. And the sacrifice to the Guru, who put wisdom on the eyes. Then the thread. Compassion the cotton, contentment the thread, restraint the knot, truth the twist; a thread that won't break, burn, stain or be lost. Sootak moved inside: greed, lies, coveting, gossip. Fikka words that make a fikka life. The servant who argues. And finally the shape itself: pauris as steps, Guru Angad's second voice, and the whole thing sung as the sky turns gold. If there's one thread through all of it, it might be the one in the carry. The var keeps starting with wonder. Before it corrects anyone, it makes them look. Wonder first, then the work.",
+      "voice": "Let's walk the staircase once, from the top. The var: an old ballad of heroes, given new words and sung to a king's tune. A sacrifice to the Guru a hundred times a day, the Guru who made angels out of men. A hundred moons, and still dark without the Guru. The One who made Himself and watches with delight. Then four steps of seeing: vismaad, wonder at every sound and color. Kudrat, power in seeing, eating, loving. Bhau, the wind and rivers moving in awe. And nirbhau, nirankar: only the Formless without fear. Then the people. The contented ones who served. Haumai, ego as a chronic illness, with its medicine inside it. Cartloads of books, and only one thing counted. Koorh, the false king and everything that passes. And sach: truth known only when the heart is true. Then the turnings. Pain the medicine, pleasure the disease. Mitthat neevee, sweetness and humility, the heavy side of the scale. The silk-cotton tree, tall and useless. And the sacrifice to the Guru, who put wisdom on the eyes. Then the thread. Compassion the cotton, contentment the thread, restraint the knot, truth the twist; a thread that won't break, burn, stain or be lost. Sootak moved inside: greed, lies, coveting, gossip. Fikka words that make a fikka life. The servant who argues. And finally the shape itself: pauris as steps, Guru Angad's second voice, and the whole thing sung as the sky turns gold. If there's one thread through all of it, it might be the one in the carry. The var keeps starting with wonder. Before it corrects anyone, it makes them look. Wonder first, then the work.",
       "screen": ["`THE BALLAD, THE GURU, THE MOONS.` · `WONDER, POWER, AWE, THE FEARLESS.` · `EGO, KOORH, TRUTH, SWEETNESS.` · `THE THREAD, THE SERVANT, THE DAWN.` · then, large: `WONDER AT DAWN.`"]
     },
     {
@@ -43,7 +43,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: wonder at dawn. Tomorrow morning, before anything else, look out a window for one full breath and let the first thing you feel be wonder. Day five hundred sixty-three.",
+      "voice": "Your line: wonder at dawn. Tomorrow morning, before anything else, look out a window for one full breath and see whether wonder can come first. Day five hundred sixty-three.",
       "screen": []
     },
     { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 563 COUNTS.` → `TOMORROW: A YEAR OF LONGING.`"] }
@@ -57,13 +57,13 @@
     "myth": [
       ["the Asa di Var begins by correcting people", false, "it keeps starting with wonder: before it corrects anyone, it makes them look."],
       ["the pauris are Guru Nanak's and some saloks are Guru Angad's", true, "mahala one and mahala two."],
-      ["the var has traveled mostly as lines people carry, not only as a text to study", true, "sung at dawn, carried out the door."]
+      ["the Asa di Var is sung aloud at dawn, not only read", true, "sung at dawn, carried out the door."]
     ],
     "fork": {
       "setup": "the dawn singing has ended and you're walking out into the morning. what do you carry?",
       "options": ["the whole var, memorized.", "one line that keeps coming back.", "nothing; it stays in the gurdwara."],
       "answer": 1,
-      "reveal": "that's how the var has traveled for centuries: one line, still humming in the back of the head, carried out the door."
+      "reveal": "that's how the var travels: one line, still humming in the back of the head, carried out the door."
     },
     "original": { "script": "ਆਸਾ ਦੀ ਵਾਰ", "say": "AA-saa dee VAAR", "note": "Gurmukhi: the ballad in Rag Asa, Guru Nanak's var of twenty-four pauris." },
     "trapdoor": [
@@ -79,6 +79,7 @@
     "status": "pending",
     "keeper": null,
     "notes": [
+      "Editor review (2026-10-01): fixed a garbled recap of the opening salok (the Guru is honored a hundred times a day; he did not make angels a hundred times a day); cut 'five centuries' and 'most people'; replaced an unprovable 'true' myth item; the carry no longer tells the listener what to feel.",
       "Block close summarizes days 536–562; days 536–541 were written by another writer and are summarized from their index lines (var, king's tune, a hundred times a day, a hundred moons, He made Himself, vismaad). Confirm against those scripts.",
       "'Traveled for five centuries' as sung tradition: hedged as 'not mostly as a text people study'; confirm framing.",
       "Ardas and karah prashad following the morning program: general practice; confirm."

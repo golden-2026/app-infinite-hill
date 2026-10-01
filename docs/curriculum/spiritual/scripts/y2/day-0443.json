@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A city has just fallen. The conqueror, a king called Demetrius, nicknamed the Besieger of Cities, rides through the smoke of Megara. His soldiers have taken what they wanted. Somewhere in the ruins stands an old philosopher named Stilpo, whose home is gone and whose wife and children are lost to him. The king, curious, asks him: have you lost anything? What Stilpo answered has been repeated for over two thousand years, and Seneca tells the story in his ninth letter. Today: all mine is with me.",
+      "voice": "A city has just fallen. The conqueror, a king called Demetrius, nicknamed the Besieger of Cities, has taken Megara. Houses are wrecked, goods carried off, families scattered. Somewhere in the ruins stands a philosopher named Stilpo, whose home is gone and whose wife and children are lost to him. The king asks him: have you lost anything? Seneca tells the story, and Stilpo's answer, in his ninth letter. Today: all mine is with me.",
       "screen": ["`MEGARA HAS FALLEN.` → `HAVE YOU LOST ANYTHING?` → `ALL MINE IS WITH ME.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the answer. Stilpo told the king: I have all my goods with me. Seneca explains what he meant. Stilpo counted as truly his own only the things no one could carry off: his justice, his courage, his good sense, his character. The city, the house, even the people he loved most were real goods in the ordinary sense, but they had never been his to keep. Second, the hard part. It's fair to flinch at this story. Losing a family is not a small thing, and Seneca doesn't say it is. In the same letter he says the wise person feels their troubles, and then overcomes them. Not numb. Not untouched. Still standing. Third, the friendship twist. The surprising thing is where Seneca puts this story: in a letter about friendship. Lucilius has asked whether a person who is complete in themselves needs friends at all. Seneca says the wise person is content with themselves, and can live without friends if they must, but still wants them, very much. Not to have someone who'll sit at their bedside, but to have someone at whose bedside they can sit. Fourth, the balance. So Stilpo's line isn't a reason to love less. It's a reason to love without fear. If what's most yours can't be taken, you can give your heart to people and things freely, knowing that even if you lose them, you won't lose yourself. The Latin has stuck for centuries as a proverb: omnia mea mecum sunt. All mine is with me.",
+      "voice": "First, the answer. Stilpo told the king: I have all my goods with me. Seneca explains what he meant. Stilpo had his true goods with him, the kind no hand can seize. What was scattered, wrecked and carried off, he did not count as his own, only as things that had come to him from outside. Second, the hard part. It's fair to flinch at this story. Losing a family is not a small thing, and Seneca doesn't say it is. In the same letter he says the wise person feels their troubles, and then overcomes them. Not numb. Not untouched. Still standing. Third, the friendship twist. The surprising thing is where Seneca puts this story: in a letter about friendship. Lucilius has asked whether a person who is complete in themselves needs friends at all. Seneca says the wise person is content with themselves, and can live without friends if they must, but still wants them, very much. Not to have someone who'll sit at their bedside, but to have someone at whose bedside they can sit. Fourth, the balance. So Stilpo's line isn't a reason to love less. Read this way, it's a reason to love without fear. If what's most yours can't be taken, you can give your heart to people and things freely, knowing that even if you lose them, you won't lose yourself. In Seneca's Latin: omnia mea mecum sunt. All mine is with me.",
       "screen": ["`I HAVE ALL MY GOODS WITH ME.` · `FEELING IT, AND STILL STANDING.` · `WANTING FRIENDS ANYWAY.` · `LOVE WITHOUT FEAR.` · then, large: `ALL MINE IS WITH ME.`"]
     },
     {
@@ -37,7 +37,7 @@
     {
       "type": "the word",
       "duration": "25 sec",
-      "voice": "All mine is with me. Stilpo's answer after losing his city: what is truly his, his character and good sense, could not be taken. Seneca's ninth letter. Today's word.",
+      "voice": "All mine is with me. Stilpo's answer after losing his city: his true goods, the kind no hand can seize, were still with him. Seneca's ninth letter. Today's word.",
       "screen": ["`ALL MINE IS WITH ME — today's word`."]
     },
     {
@@ -52,24 +52,24 @@
   "games": {
     "match": {
       "prompt": "all mine is with me — tap the pairs.",
-      "pairs": [["Stilpo", "the philosopher in fallen Megara"], ["Demetrius", "the Besieger of Cities"], ["what Stilpo kept", "his justice, courage, good sense"], ["the wise person", "wants friends to sit beside"]]
+      "pairs": [["Stilpo", "the philosopher in fallen Megara"], ["Demetrius", "the Besieger of Cities"], ["what Stilpo kept", "true goods no hand can seize"], ["the wise person", "wants friends to sit beside"]]
     },
     "myth": [
       ["Seneca says the wise person feels nothing when they lose someone", false, "he says they feel their troubles, and then overcome them."],
       ["Seneca tells the Stilpo story in a letter about friendship", true, "it's part of an answer about whether a complete person needs friends."],
-      ["omnia mea mecum sunt became a proverb", true, "the Latin for all mine is with me has been repeated for centuries."]
+      ["Seneca says a wise person wants friends so someone will nurse them", false, "the reverse: he wants someone at whose sickbed he can sit."]
     ],
     "fork": {
       "setup": "you're Stilpo, standing in your ruined city. the conquering king asks: have you lost anything? what do you say?",
       "options": ["everything: my home, my family.", "I have all my goods with me.", "nothing worth mentioning."],
       "answer": 1,
-      "reveal": "he said everything that was truly his was still with him: not the city, but his justice, courage and good sense."
+      "reveal": "he said his goods were all with him: not the city or the house, but the true goods no hand can seize."
     },
     "original": { "script": "omnia mea mecum sunt", "say": "OM-nee-a MEH-a MAY-kum sunt", "note": "Latin: all mine is with me, Stilpo's answer as Seneca tells it." },
     "trapdoor": [
       "what you thought: travel light.",
-      "what it means: Stilpo counted only his character as truly his, so losing his city could not take what was most his own.",
-      "what a scholar hears: Stilpo was a Megarian, not a Stoic, yet Zeno studied with him; Cicero tells a similar saying of Bias of Priene."
+      "what it means: Stilpo counted only the goods no one could seize as truly his, so losing his city could not take what was most his own.",
+      "what a scholar hears: Seneca says Stilpo counted what was plundered not as his own but as things that had come from outside; Cicero tells a similar saying of Bias of Priene."
     ]
   },
   "sources": [
@@ -80,6 +80,7 @@
     "status": "pending",
     "keeper": null,
     "notes": [
+      "Review (2026-10-01): SERIOUS fix: the list 'justice, courage, good sense' comes from De Constantia 5.6, not Letter 9; teach, word, match, fork and trapdoor now follow Letter 9.18–19 (true goods no hand can seize; what was plundered counted as from outside). Cut 'two thousand years', 'stuck for centuries as a proverb', 'old', 'smoke' and the proverb myth.",
       "Letter 9.18–19: Demetrius Poliorcetes takes Megara; Stilpo, having lost his children and wife, answers 'omnia mea mecum sunt'; Seneca glosses his goods as justice, virtue, temperance, prudence. Paraphrased; confirm the list of virtues.",
       "Letter 9.3: the wise man 'feels' his troubles but overcomes them; 9.8: the wise man wants a friend in order to have someone by whose sickbed he can sit. Paraphrased; confirm.",
       "Whether Stilpo's family were killed or captured is not specified by Seneca ('lost'); the script keeps 'lost to him'.",

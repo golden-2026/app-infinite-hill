@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Around the year 155, a Christian teacher in Rome named Justin wrote a letter to the emperor. People were spreading rumors about what Christians did at their secret gatherings, and he wanted to set the record straight. So he described a Sunday. They meet, he wrote. They read from the apostles and the prophets. Someone preaches. They pray. Bread and wine and water are brought. The one presiding gives thanks at length. And then, Justin says, all the people present answer with one word. He even explains the word for the emperor, because it wasn't Greek or Latin. It was Hebrew, and it meant: so be it. Today, that word, and the prayer that follows.",
-      "screen": ["`ROME, AROUND 155.` → `A LETTER TO THE EMPEROR.` → `ALL THE PEOPLE, ONE WORD.`"]
+      "voice": "In the generations after the apostles, a Christian teacher in Rome named Justin wrote a defense of the faith addressed to the emperor. People were spreading rumors about what Christians did at their secret gatherings, and he wanted to set the record straight. So he described a Sunday. They meet, he wrote. They read from the apostles and the prophets. Someone preaches. They pray. Bread and wine and water are brought. The one presiding gives thanks at length. And then, Justin says, all the people present answer with one word. He even explains the word for the emperor, because it wasn't Greek or Latin. It was Hebrew, and it meant: so be it. Today, that word, and the prayer that follows.",
+      "screen": ["`JUSTIN, IN ROME.` → `A LETTER TO THE EMPEROR.` → `ALL THE PEOPLE, ONE WORD.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "The word is Amen. It comes from a Hebrew root meaning firm, solid, reliable. At Mass, the long prayer over the bread and wine ends with the priest lifting both high, the bread and the cup together, and singing that through Christ, with him and in him, all glory and honor belong to the Father, in the unity of the Holy Spirit. In Latin, Per ipsum, et cum ipso, et in ipso. And the whole church answers: Amen. It's called the Great Amen, and it's often sung, sometimes three or more times. It's the people's signature on everything the priest has just prayed. Saint Jerome, around the year 400, wrote that in the churches of Rome the Amen rang out like thunder from heaven. Then, straight after, everyone stands and prays the Our Father together. In the Douay-Rheims it opens: \"Our Father who art in heaven, hallowed be thy name.\" It's the one prayer Jesus taught his friends in his own words, and it's here for a reason. It asks for daily bread, just before the bread is shared. It asks to forgive, just before the sign of peace. At Mass, one thing is different. After deliver us from evil, the priest keeps going with a short prayer for peace and freedom from anxiety. Then everyone ends together: the kingdom, the power and the glory are yours, now and forever. Christians in many churches say that line straight after the prayer. Catholics say it here. First a whole church signs its name. Then it prays like a family.",
+      "voice": "The word is Amen. It comes from a Hebrew root meaning firm, solid, reliable. At Mass, the long prayer over the bread and wine ends with the priest lifting both high, the bread and the cup together, and singing that through Christ, with him and in him, all glory and honor belong to the Father, in the unity of the Holy Spirit. In Latin, Per ipsum, et cum ipso, et in ipso. And the whole church answers: Amen. It's called the Great Amen, and it's often sung, sometimes repeated. It's the people's signature on everything the priest has just prayed. Saint Jerome wrote that in Rome the Amen boomed out like thunder from heaven. Then, straight after, everyone stands and prays the Our Father together. In the Douay-Rheims it opens: \"Our Father who art in heaven, hallowed be thy name.\" It's the prayer Jesus taught his friends, and it's here for a reason. It asks for daily bread, just before the bread is shared. It asks to forgive, just before the sign of peace. At Mass, one thing is different. After deliver us from evil, the priest keeps going with a short prayer for peace and freedom from anxiety. Then everyone ends together, giving God the kingdom, the power and the glory, now and forever. Some churches say that line straight after the prayer. At Mass, it comes here. First a whole church signs its name. Then it prays like a family.",
       "screen": ["`AMEN: FIRM, SO BE IT.` · `THROUGH HIM, WITH HIM, IN HIM.` · `AN AMEN LIKE THUNDER.` · `THEN THE PRAYER HE TAUGHT.` · then, large: `OUR FATHER WHO ART IN HEAVEN, HALLOWED BE THY NAME.`"]
     },
     {
@@ -56,20 +56,20 @@
     },
     "myth": [
       ["the Great Amen is said only by the priest", false, "it's the whole people's answer: their signature on the prayer."],
-      ["Christians were already saying Amen at the Eucharist around 155", true, "Justin described it to the emperor, and explained the Hebrew word."],
+      ["Christians were already saying Amen at the Eucharist in Justin's day", true, "Justin described it to the emperor, and explained the Hebrew word."],
       ["at Mass the kingdom, the power and the glory comes right after deliver us from evil", false, "the priest first prays for peace, and then everyone ends with it together."]
     ],
     "fork": {
       "setup": "you're at Mass. the Our Father reaches deliver us from evil. what comes next?",
       "options": ["everyone immediately says the kingdom, the power and the glory.", "the priest prays for peace, then everyone says the kingdom, the power and the glory.", "everyone sits down in silence."],
       "answer": 1,
-      "reveal": "the priest keeps going with a short prayer for peace and freedom from anxiety, and then all end together: the kingdom, the power and the glory are yours."
+      "reveal": "the priest keeps going with a short prayer for peace and freedom from anxiety, and then all end together with the kingdom, the power and the glory."
     },
-    "original": { "script": "אָמֵן", "say": "ah-MEN", "note": "Hebrew: firm, reliable, so be it. Justin explained it to the emperor around 155." },
+    "original": { "script": "אָמֵן", "say": "ah-MEN", "note": "Hebrew: firm, reliable, so be it. Justin explained it to the emperor." },
     "trapdoor": [
       "what you thought: amen means the prayer is over.",
       "what it means: the whole church's signature, so be it, on the great prayer, then the family prayer Jesus taught.",
-      "what a scholar hears: Justin's First Apology 65 records the people's Amen around 155; the doxology after the Our Father is absent from the oldest manuscripts of Matthew, and the Mass places it after the embolism."
+      "what a scholar hears: Justin's First Apology 65 records the people's Amen and glosses the Hebrew word for the emperor; the Mass places the closing doxology after the embolism, the priest's prayer for peace."
     ]
   },
   "sources": [
@@ -88,7 +88,8 @@
       "Jerome's image of the Amen resounding like heavenly thunder (Commentary on Galatians, book 2, preface): widely cited; confirm the source.",
       "The final doxology, the embolism ('deliver us, Lord…'), and the people's acclamation are paraphrased, not quoted from ICEL.",
 
-      "The doxology 'for thine is the kingdom…' is absent from the earliest manuscripts of Matthew and appears in the Didache; confirm the trapdoor wording."
+      "The doxology 'for thine is the kingdom…' is absent from the earliest manuscripts of Matthew and appears in the Didache; confirm the trapdoor wording.",
+      "Editor review (2026-10-01): removed dates the cited texts don't state (Justin 'around 155', Jerome 'around 400'; the Commentary on Galatians is usually dated c. 386), the 'three or more times' count, the superlative 'the one prayer Jesus taught', the 'many churches' claim and the trapdoor's manuscript claim; the closing doxology is now described rather than echoing the ICEL wording."
     ]
   },
   "meta": { "index": "115. The Great Amen and the Our Father · — · the whole church says one loud Amen, then his own prayer · say amen like you mean it · so be it, all of us", "writer": "writer agent (catholic 91–120)", "written": "2026-09-30" }

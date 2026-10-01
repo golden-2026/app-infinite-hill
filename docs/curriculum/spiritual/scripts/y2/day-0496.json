@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Three in the morning, and you can't sleep. You lie on your left side. Too warm. You flip the pillow. Now the right side. Now your back. Each new position feels like the answer for about ninety seconds. Seneca uses exactly this picture. In the second chapter of On Tranquility, he stops listening to Serenus' symptoms and starts naming the illness. People who are restless, he says, behave like the sleepless: they keep turning over, trying one position after another, until they finally give up from exhaustion rather than rest. Today: fleeing yourself.",
-      "screen": ["`THREE A.M., TURNING OVER.` → `EACH POSITION, NINETY SECONDS.` → `SENECA NAMES THE ILLNESS.`"]
+      "voice": "Seneca's picture comes from a bad night. Left side, too warm. Flip the pillow. Right side. Then the back. Each new position seems like the answer, briefly. In the second chapter of On Tranquility, he stops listening to Serenus' symptoms and starts naming the illness. People who are restless, he says, behave like the sleepless: they keep turning over, trying one position after another, until they finally settle from exhaustion rather than rest. Today: fleeing yourself.",
+      "screen": ["`A BAD NIGHT, TURNING OVER.` → `EACH POSITION SEEMS LIKE THE ANSWER.` → `SENECA NAMES THE ILLNESS.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the root. Seneca says the trouble is a quiet dislike of yourself. Not hatred. More like boredom with your own company. A mind that can't settle with itself goes looking for somewhere else to be. Second, the trips. Seneca sketches the restless Roman: let's go to the seaside. No, too much luxury there, let's see the wild hills. No, too rough, back to the city, I've missed the noise. Every move is a new position in bed. Third, the poet's line. Seneca quotes the Roman poet Lucretius, in six words of Latin: hoc se quisque modo fugit. Thus each person flees himself. And then Seneca adds his own sharp question: but what good does it do, if you can't escape? You go along as your own companion, the very one you're running from. Back on day four hundred fifty-seven, a letter said you take yourself along. The essay goes one step further: the running is itself the symptom. Fourth, the cure begins with stopping. Seneca will offer remedies in the coming chapters: work, friends, simplicity, rest. But none of them work while you're still fleeing. The first move is the unglamorous one: stay put, and get to know the person you keep trying to leave behind. Many traditions keep a version of this. Desert monks were told to sit in their cell, and the cell would teach them everything. Seneca's version is a Roman one, but the bed and the 3 a.m. are the same everywhere.",
+      "voice": "First, the root. Seneca says the trouble is a quiet dislike of yourself. Not hatred. More like boredom with your own company. A mind that can't settle with itself goes looking for somewhere else to be. Second, the trips. Seneca sketches the restless Roman: let's go to the seaside. No, too much luxury there, let's see the wild hills. No, too rough, back to the city, I've missed the noise. Every move is a new position in bed. Third, the poet's line. Seneca quotes the Roman poet Lucretius, in a line of Latin: hoc se quisque modo fugit. Thus each person flees himself. And then Seneca adds his own sharp question: but what good does it do, if you can't escape? You go along as your own companion, the very one you're running from. Back on day four hundred fifty-seven, a letter said you take yourself along. The essay goes one step further: the running is itself the symptom. Fourth, the cure begins with stopping. Seneca will offer remedies in the coming chapters: work, friends, simplicity, rest. But none of them work while you're still fleeing. The first move is the unglamorous one: stay put, and get to know the person you keep trying to leave behind. Other paths keep their own version. Among the early Christian desert monks, a saying credited to Abba Moses told a restless brother to sit in his cell, and the cell would teach him everything.",
       "screen": ["`A QUIET DISLIKE OF YOURSELF.` · `SEASIDE, HILLS, CITY, AGAIN.` · `HOC SE QUISQUE MODO FUGIT.` · `THE CURE BEGINS WITH STOPPING.` · then, large: `STAY PUT.`"]
     },
     {
@@ -60,10 +60,10 @@
       ["Seneca roots restlessness in hating other people", false, "he roots it in a quiet dislike of, or boredom with, yourself."]
     ],
     "fork": {
-      "setup": "you're a restless Roman. the seaside bored you, the hills were too rough, the city's too loud. what does Seneca say next?",
-      "options": ["try somewhere new.", "stop running; you take yourself along.", "find better company."],
+      "setup": "you're awake at night, turning from side to side. in Seneca's picture, how does the sleepless person finally settle?",
+      "options": ["by finding the perfect position.", "from exhaustion, not rest.", "by getting up and leaving town."],
       "answer": 1,
-      "reveal": "he quotes Lucretius and asks what good it does to flee, if you go along as your own companion."
+      "reveal": "Seneca says they settle at last from weariness: that's where endless changing leads, and he says the restless do the same with places."
     },
     "original": { "script": "hoc se quisque modo fugit", "say": "hok seh KWIS-kweh MO-do FOO-git", "note": "Latin, Lucretius quoted by Seneca: 'thus each person flees himself'." },
     "trapdoor": [
@@ -83,7 +83,8 @@
     "notes": [
       "On Tranquility 2.10–15 paraphrased: dissatisfaction with oneself; restless people like the sleepless turning over; the travel sketch (Campania, then wild country such as Bruttium and Lucania, then back to the city); Lucretius 3.1068 quoted; 'what good does it do if he does not escape himself?' Confirm sections.",
       "Desert Fathers saying 'sit in your cell and your cell will teach you everything' is attributed to Abba Moses; paraphrased and presented briefly as a neighbor, not a comparison. Confirm attribution.",
-      "Back-reference to day 457 (Letters 28, 'you take yourself along') matches the outline."
+      "Back-reference to day 457 (Letters 28, 'you take yourself along') matches the outline.",
+      "Editor review (2026-10-01): fixed the count of the Lucretius line (five words, not six); hook no longer puts the listener at 3 a.m. (day 488 just used a 1:40 a.m. scene) and drops the 'ninety seconds'; 'many traditions' softened and Abba Moses named; fork changed from the new-place question, which repeated day 482's fork, to Seneca's sleepless image."
     ]
   },
   "meta": { "index": "496. Fleeing yourself · — · restless people keep changing places, fleeing themselves (On Tranquillity 2) · stay put for one hour · stay put", "writer": "spiritual writer agent (days 482–511)", "written": "2026-09-30" }

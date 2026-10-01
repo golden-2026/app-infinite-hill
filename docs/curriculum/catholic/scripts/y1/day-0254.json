@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Spain, 1568. Teresa of Ávila has spent years reforming convents of Carmelite nuns. Now she wants to do the same for the men, and start a house of friars living the old, strict, prayerful way. She has found exactly two volunteers. One is an older priest, a solid, respectable man. The other is a young priest in his twenties, thin, quiet, and so short that people noticed it the moment he walked in. She's delighted with both. And, the story goes, she joked to her friends that she now had a friar and a half to begin with. Today's word is the half.",
+      "voice": "Teresa of Ávila has spent years founding reformed convents of Carmelite nuns. Now she wants to do the same for the men, and start a house of friars living the old, strict, prayerful way. She has found exactly two volunteers. One is an older priest, a solid, respectable man. The other is a young priest in his twenties, thin, quiet, and very short. She's delighted with both. And, the story goes, she joked that she now had a friar and a half to begin with. Today's word is the half.",
       "screen": ["`TERESA WANTS FRIARS TOO.` → `TWO VOLUNTEERS.` → `A FRIAR AND A HALF.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "The half was John of the Cross. For the next eighteen days, this part of our path follows him. First, the size. Accounts put him at a little under five feet tall. Small, thin, often ill. He'd go on to be one of the greatest poets in the Spanish language and one of the Church's great teachers of prayer. But on the day Teresa met him, what people saw first was how little he was. Second, the joke. Teresa teased the people she loved. The friar-and-a-half line has been retold for four hundred years, and it's affectionate, not cruel. She also nicknamed him her little Seneca, after the Roman philosopher, because he was so serious and so wise for his age. Third, what she really thought. In a letter, Teresa wrote that though he was small, she understood him to be great in the eyes of God. It's an old pattern in the Bible. When the prophet Samuel goes looking for Israel's next king, he's impressed by the tall, handsome brothers. And God tells him not to look at height or appearance, because people look at the outside and God looks at the heart. The king turns out to be the youngest son, out in the field with the sheep. Fourth, what comes. This small man would be kidnapped by his own order, locked in a closet-sized cell, escape through a window, and write poems about a dark night that people still read in every language. He was named a saint and a Doctor of the Church. And it all began with a joke about his height.",
+      "voice": "The half was John of the Cross. For the next eighteen days, this part of our path follows him. First, the size. Accounts put him at a little under five feet tall. Small, thin, often ill. He'd go on to write poems and books on prayer that are still read. But on the day Teresa met him, what people saw first was how little he was. Second, the joke. Teresa teased the people she loved. The friar-and-a-half line is affectionate, not cruel. She also nicknamed him her little Seneca, after the Roman philosopher, a fond joke about how serious and wise he was. Third, what she really thought. In a letter, Teresa wrote that though he was small, she understood him to be great in the eyes of God. It's an old pattern in the Bible. When the prophet Samuel goes looking for Israel's next king, he's impressed by the eldest brother's looks and height. And God tells him not to look at height or appearance, because people look at the outside and God looks at the heart. The king turns out to be the youngest son, out in the field with the sheep. Fourth, what comes. This small man would be kidnapped by his own order, locked in a closet-sized cell, escape through a window, and write a poem about a dark night that people still read. He was named a saint and a Doctor of the Church. And it all began with a joke about his height.",
       "screen": ["`JUST UNDER FIVE FEET TALL.` · `A FRIAR AND A HALF.` · `GREAT IN THE EYES OF GOD.` · `A SAINT, A POET, A TEACHER.` · then, large: `GOD LOOKS AT THE HEART.`"]
     },
     {
@@ -56,20 +56,20 @@
     },
     "myth": [
       ["Teresa's friar-and-a-half joke was meant to mock him", false, "she teased the people she loved, and wrote that he was great in the eyes of God."],
-      ["John of the Cross was one of the great poets of the Spanish language", true, "and one of the Church's great teachers of prayer."],
+      ["in the Bible, Samuel first expects the eldest brother to be king", true, "God tells him people look at the outside, but God looks at the heart."],
       ["John was the older of Teresa's two first volunteers", false, "he was the young one, in his twenties; the other was an older priest."]
     ],
     "fork": {
       "setup": "you're Teresa. you need men to begin a strict new house of friars, and one of your two volunteers is tiny, thin and often ill. what do you do?",
       "options": ["thank him and wait for someone stronger.", "take him, joke about it, and trust him completely.", "send him to the nuns' convent as a chaplain instead."],
       "answer": 1,
-      "reveal": "she took him, called it a friar and a half, and wrote that he was great in the eyes of God. he became her closest partner in the reform."
+      "reveal": "she took him, called it a friar and a half, and wrote that he was great in the eyes of God. he became one of her partners in the reform."
     },
     "original": null,
     "trapdoor": [
       "what you thought: a nickname for a short monk.",
       "what it means: a small, sickly young priest whom Teresa teased, trusted and saw as great in God's eyes.",
-      "what a scholar hears: Juan de Yepes, born 1542 in Fontiveros near Ávila; died 1591; canonized 1726, Doctor of the Church 1926."
+      "what a scholar hears: Teresa's letter calls him Senequita, little Seneca, after the Roman Stoic; the joke is about a very serious young man."
     ]
   },
   "sources": [
@@ -85,7 +85,8 @@
       "'Senequita' (little Seneca) nickname: in a letter of Teresa (c. 1568); confirm.",
       "Teresa's remark that though he is small he is great in the eyes of God: letter to Francisco de Salcedo, September 1568; paraphrased. Confirm.",
       "Height: commonly given as about 4'11\" (under five feet); stated as 'accounts put him'.",
-      "Opens Part 3 (John of the Cross, days 254–271, eighteen days)."
+      "Opens Part 3 (John of the Cross, days 254–271, eighteen days).",
+      "Editor review (2026-10-01): cut 'Spain, 1568' from the hook (Teresa met John in 1567, the year day 256 uses, and the friar-and-a-half remark is usually placed then); cut the superlatives 'one of the greatest poets in the Spanish language', 'closest partner' and 'read in every language', and the 'retold for four hundred years' claim; fixed the Samuel story (the text has Samuel impressed by the eldest, Eliab, not by 'tall, handsome brothers'); replaced the superlative myth item with a Samuel item; replaced the trapdoor dates (canonized 1726, Doctor 1926, not in the cited texts) with the Senequita detail. Keeper: confirm whether 'fraile y medio' is in Foundations ch. 3 itself; if so the script can say Teresa wrote it."
     ]
   },
   "meta": { "index": "254. The small friar (1542–1591) · — · barely five feet tall; Teresa joked he was half a friar · notice greatness in someone small · half a friar", "writer": "writer agent (catholic 241–270)", "written": "2026-09-30" }

@@ -19,14 +19,14 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Ask people who grew up Catholic what Sunday felt like, and you'll hear a lot of the same things. Being woken up too early. Scratchy church clothes. A parent saying, we're going, it's an obligation. The Sunday obligation: Catholics are asked to go to Mass every Sunday, and for a lot of kids it felt like homework for the soul. Now think about your own week. The phone that never stops. The laundry. The emails you answer on Saturday night. The feeling that every hour should be doing something. What if the obligation was never meant as homework? Today, Sunday, explained as a gift.",
+      "voice": "Being woken up too early. Scratchy church clothes. A parent at the bottom of the stairs saying, we're going, it's an obligation. That's how some people who grew up Catholic remember Sunday. The Sunday obligation: Catholics are asked to go to Mass every Sunday, and to a kid it can sound like homework for the soul. Meanwhile the rest of the week is full. The phone that never stops. The laundry. The emails that arrive on Saturday night. What if the obligation was never meant as homework? Today, Sunday, explained as a gift.",
       "screen": ["`SCRATCHY CHURCH CLOTHES.` → `HOMEWORK FOR THE SOUL?` → `SUNDAY, EXPLAINED AS A GIFT.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Start at the very beginning of the Bible. In Genesis, God makes the world in six days, and then, in the Douay-Rheims Bible, \"he rested on the seventh day from all his work which he had done.\" God rests. Not because he's tired. The day of rest is built into the world like a beam into a house. For the Jewish people it became the Sabbath, the seventh day, kept from sunset Friday to sunset Saturday, and Jews still keep it. Then something happened on a different day. All four Gospels say the women found the tomb empty on the first day of the week, the day after the Sabbath. Christians began gathering on that day, the day of the resurrection. The last book of the Bible calls it by a new name: \"I was in the spirit on the Lord's day.\" In Latin, dies Domini, the Lord's day. In Spanish it's still domingo, in Italian domenica. Around the year 150, a Christian named Justin Martyr described it for outsiders: on the day called Sunday, everyone gathers, the writings of the apostles are read, bread and wine are brought and blessed, and there's a collection for widows and orphans. That's recognizably the Mass from days three to five, nearly nineteen centuries ago. So why call it an obligation? Catholics say it's the way the Church makes sure the gift actually gets opened. Left to ourselves, most of us would fill every hour. The obligation holds one day open: for worship, for family, for rest, for a long meal. Sunday Mass can also be kept on Saturday evening, at what's called the vigil. The idea underneath is simple. One day a week isn't yours to fill.",
-      "screen": ["`HE RESTED ON THE SEVENTH DAY.` · `THE FIRST DAY: THE EMPTY TOMB.` · `DIES DOMINI — THE LORD'S DAY.` · `JUSTIN, AROUND 150: SUNDAY.` · then, large: `THE GIFT GETS OPENED.`"]
+      "voice": "Start at the very beginning of the Bible. In Genesis, God makes the world in six days, and then, in the Douay-Rheims Bible, \"he rested on the seventh day from all his work which he had done.\" God rests. Not, the tradition says, because he's tired. In the story, the day of rest is built into the world like a beam into a house. For the Jewish people it became the Sabbath, the seventh day, kept from sunset Friday to sunset Saturday, and Jewish families keep it still. Then something happened on a different day. All four Gospels put the empty tomb on the first day of the week, the day after the Sabbath. In the Acts of the Apostles, Christians gather on that first day to break bread. And the last book of the Bible uses a new name, which Christians came to give that day: \"I was in the spirit on the Lord's day.\" In Latin, dies Domini, the Lord's day. In Spanish it's still domingo, in Italian domenica. An early Christian named Justin Martyr described it for outsiders: on the day called Sunday, everyone gathers, the memoirs of the apostles or the writings of the prophets are read, bread and wine are brought and blessed, and there's a collection for widows and orphans. That's recognizably the Mass from days three to five. So why call it an obligation? Catholics say it's the way the Church makes sure the gift actually gets opened. Left alone, a week fills every hour. The obligation holds one day open: for worship, for family, for rest, for a long meal. Sunday Mass can also be kept on Saturday evening, at what's called the vigil. The idea underneath is simple. One day a week isn't yours to fill.",
+      "screen": ["`HE RESTED ON THE SEVENTH DAY.` · `THE FIRST DAY: THE EMPTY TOMB.` · `DIES DOMINI — THE LORD'S DAY.` · `JUSTIN: ON THE DAY CALLED SUNDAY.` · then, large: `THE GIFT GETS OPENED.`"]
     },
     {
       "type": "the practice",
@@ -52,7 +52,7 @@
   "games": {
     "match": {
       "prompt": "what's inside the day — tap the pairs.",
-      "pairs": [["the seventh day", "God rested"], ["the first day", "the tomb found empty"], ["dies Domini", "Latin: the Lord's day"], ["Justin Martyr", "described Sunday worship, around 150"]]
+      "pairs": [["the seventh day", "God rested"], ["the first day", "the tomb found empty"], ["dies Domini", "Latin: the Lord's day"], ["Justin Martyr", "described Sunday worship for outsiders"]]
     },
     "myth": [
       ["Christians gathered on Sunday because it was the Sabbath", false, "the Sabbath is the seventh day. Christians gathered on the first day, the day of the resurrection."],
@@ -60,22 +60,23 @@
       ["Catholics can keep Sunday Mass on Saturday evening", true, "the vigil Mass counts for Sunday."]
     ],
     "fork": {
-      "setup": "you're a Christian around the year 150, and outsiders want to know what you do on the day called Sunday. what does Justin Martyr tell them?",
+      "setup": "you're an early Christian, and outsiders want to know what you do on the day called Sunday. what does Justin Martyr tell them?",
       "options": ["we rest and never gather.", "we gather, read the apostles, bless bread and wine, and collect for the poor.", "we hold a market."],
       "answer": 1,
-      "reveal": "Justin's description is recognizably the Mass, nearly nineteen centuries ago, down to the collection."
+      "reveal": "Justin's description is recognizably the Mass, down to the collection."
     },
     "original": { "script": "κυριακὴ ἡμέρα", "say": "kee-ree-ah-KAY hay-MEH-rah", "note": "Greek: the Lord's day, from Revelation 1:10. Latin made it dies Domini." },
     "trapdoor": [
       "what you thought: an obligation to sit through church.",
       "what it means: one day held open, so the gift of rest and worship actually gets opened.",
-      "what a scholar hears: kyriake hemera in Revelation 1:10; Justin Martyr's First Apology 67 describing Sunday worship around 150."
+      "what a scholar hears: kyriake hemera in Revelation 1:10; Justin Martyr's First Apology 67 describing Sunday worship."
     ]
   },
   "sources": [
     { "ref": "Genesis 2:2", "work": "The Bible", "translation": "Douay-Rheims (Challoner, 1752)", "quoted": "he rested on the seventh day from all his work which he had done." },
     { "ref": "Revelation 1:10 (Apocalypse 1:10 in the Douay-Rheims)", "work": "The Bible", "translation": "Douay-Rheims (Challoner, 1752)", "quoted": "I was in the spirit on the Lord's day" },
-    { "ref": "Luke 24:1; Mark 16:2", "work": "The Bible", "translation": null, "quoted": null },
+    { "ref": "Matthew 28:1; Mark 16:2; Luke 24:1; John 20:1", "work": "The Bible", "translation": null, "quoted": null },
+    { "ref": "Acts 20:7", "work": "The Bible", "translation": null, "quoted": null },
     { "ref": "Justin Martyr, First Apology 67", "work": "First Apology", "translation": null, "quoted": null },
     { "ref": "Catechism of the Catholic Church 2174–2188", "work": "Catechism of the Catholic Church", "translation": null, "quoted": null }
   ],
@@ -83,6 +84,7 @@
     "status": "pending",
     "keeper": null,
     "notes": [
+      "Editor review 2026-10-01: hook rewritten (no 'think about your own week', no 'a lot of kids' or telling the listener what they feel); 'all four Gospels say the women found the tomb' corrected (John has Mary Magdalene alone, and day 16 tells the women's story) to 'all four put the empty tomb on the first day'; early Sunday gathering now rests on Acts 20:7; Justin's 'around 150' and 'nineteen centuries' cut, and his wording corrected to 'memoirs of the apostles or writings of the prophets'; 'most of us' cut.",
       "Genesis 2:2 and Apocalypse 1:10 quoted from Douay-Rheims; confirm exact wording.",
       "Justin Martyr, First Apology 67 (c. 155) paraphrased; confirm the items listed.",
       "The Jewish Sabbath is described briefly and neutrally as still kept; confirm framing.",

@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "What time is it when you're most alone? For a lot of people, it's the wrong side of midnight. The phone lights up the ceiling, the house creaks, and the mind won't stop. Now picture that same hour in a Kentucky monastery. A bell rings in the dark. Dozens of men get up, pull on their robes, and walk quietly into a cold church. Nobody's anxious. Nobody's scrolling. They open their books and begin to sing psalms to God, while the whole county sleeps. Today: the monastic day, and the prayer before dawn.",
-      "screen": ["`THE WRONG SIDE OF MIDNIGHT.` → `A BELL IN THE DARK.` → `PSALMS WHILE THE COUNTY SLEEPS.`"]
+      "voice": "Somewhere past midnight, a house goes very still. The fridge hums, the floor creaks, and a mind left alone can circle for hours. At that same hour in a Kentucky monastery, a bell rings in the dark. The monks get up, pull on their robes, and walk quietly into a cold church. Nobody's scrolling. They open their books and begin to sing psalms to God, while the whole county sleeps. Today: the monastic day, and the prayer before dawn.",
+      "screen": ["`SOMEWHERE PAST MIDNIGHT.` → `A BELL IN THE DARK.` → `PSALMS WHILE THE COUNTY SLEEPS.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the night. The first prayer of a Trappist day is called Vigils, from the Latin for keeping watch. In Merton's time the monks rose around two in the morning. Today at Gethsemani the bell rings a little after three. They sing psalms and listen to long readings from scripture and the saints, in the dark, before a single email exists. Second, the rhythm. The Rule of Saint Benedict builds the day around set hours of prayer, taking its cue from two lines in the Psalms. In the Douay-Rheims: \"Seven times a day I have given praise to thee.\" And: \"I rose at midnight to give praise to thee.\" So the day goes Vigils, then Lauds at dawn, short hours through the morning and afternoon, Vespers at evening, and Compline before bed. Over a week, the monks sing all one hundred fifty psalms. Third, everything in between. Work: in Merton's day, fields, barns, and later the cheese and fruitcake Gethsemani still sells. Study: slow, prayerful reading of scripture, called lectio divina. And silence, most of all the great silence after Compline, until morning. Fourth, why the dark. Monks say the night office is like a watchman on the city wall, awake for everyone who's asleep. Merton loved it. He wrote about the quiet before dawn as the hour when the world is still innocent, before it gets busy and loud. That's the gift here. The first word of the day doesn't have to be a notification. It can be a prayer.",
+      "voice": "First, the night. The first prayer of a Trappist day is called Vigils, from the Latin for keeping watch. The bell rings in the small hours, long before dawn. They sing psalms and listen to long readings from scripture and the saints, in the dark, before a single email exists. Second, the rhythm. The Rule of Saint Benedict builds the day around set hours of prayer, taking its cue from two lines in the Psalms. In the Douay-Rheims: \"Seven times a day I have given praise to thee.\" And: \"I rose at midnight to give praise to thee.\" So the day goes Vigils, then Lauds at dawn, short hours through the morning and afternoon, Vespers at evening, and Compline before bed. Benedict's Rule asks that all one hundred fifty psalms be sung over each week. Third, everything in between. Work: in Merton's day, fields, barns, and later the cheese and fruitcake Gethsemani still sells. Study: slow, prayerful reading of scripture, called lectio divina. And silence, most of all the great silence after Compline, until morning. Fourth, why the dark. Some monks compare the night office to a watchman on the city wall, awake for everyone who's asleep. Merton wrote about those dark hours in his journals. For the monks, the first word of the day isn't a notification. It's a psalm.",
       "screen": ["`VIGILS — KEEPING WATCH.` · `SEVEN TIMES A DAY.` · `WORK, STUDY, SILENCE.` · `AWAKE FOR THOSE WHO SLEEP.` · then, large: `I ROSE AT MIDNIGHT TO GIVE PRAISE.`"]
     },
     {
@@ -55,15 +55,15 @@
       "pairs": [["Vigils", "the night office, before dawn"], ["Lauds", "praise at daybreak"], ["Compline", "the last prayer before bed"], ["lectio divina", "slow, prayerful reading"]]
     },
     "myth": [
-      ["Trappists sing all one hundred fifty psalms over a week", true, "Benedict's Rule spreads the whole psalter across the week."],
+      ["Benedict's Rule asks for all one hundred fifty psalms each week", true, "the Rule spreads the whole psalter across the week."],
       ["the monastic day begins at sunrise", false, "it begins with Vigils, in the dark, hours before dawn."],
       ["Benedict's hours take their cue from lines in the Psalms", true, "\"seven times a day I have given praise to thee\" and \"I rose at midnight to give praise to thee.\""]
     ],
     "fork": {
-      "setup": "it's 3 a.m. at Gethsemani and the bell rings. you're a monk, and you're tired. what happens next?",
+      "setup": "it's the middle of the night at Gethsemani and the bell rings. you're a monk, and you're tired. what happens next?",
       "options": ["sleep in; God understands", "get up and go sing psalms in the dark church", "pray quietly in your bed"],
       "answer": 1,
-      "reveal": "the whole community rises for Vigils. monks describe it as keeping watch for the world while it sleeps."
+      "reveal": "the whole community rises for Vigils. some monks describe it as keeping watch for the world while it sleeps."
     },
     "original": { "script": "vigiliae", "say": "vee-JEE-lee-eh", "note": "Latin: the watches of the night, the name of the monks' night prayer." },
     "trapdoor": [
@@ -82,6 +82,7 @@
     "status": "pending",
     "keeper": null,
     "notes": [
+      "Editor review 2026-10-01: rewrote the hook (it told the listener when they feel most alone and claimed 'dozens of men'; 'Now picture'); cut the unsourced rising times; the 150 psalms a week is now attributed to Benedict's Rule (many Trappist houses today spread the psalter over two weeks), in the teach and the myth; 'monks say' softened; the closing line no longer nudges the listener toward prayer.",
       "Douay-Rheims Psalm 118:164 and 118:62 given from memory; confirm.",
       "Rising times: about 2 a.m. in Merton's early years (earlier on feasts); Vigils at Gethsemani now at 3:15 a.m. Confirm current horarium.",
       "Whole psalter each week per Rule ch. 18; confirm current Trappist practice (some communities use a two-week cycle).",

@@ -25,7 +25,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "The blessing begins the way nearly every Jewish blessing does: Baruch atah Adonai, Eloheinu melech ha'olam. Blessed are you, Lord our God, king of the universe. Then: asher kid'shanu b'mitzvotav, who made us holy with his commandments, v'tzivanu la'asok b'divrei Torah, and commanded us to be busy with the words of Torah. That verb is the surprise. La'asok. Not to read. Not to know. To be busy with, engaged in, occupied by. In modern Hebrew the same root gives you esek, a business. The blessing doesn't ask you to finish Torah, or master it. It asks you to be in the middle of it, working on it, the way someone runs a shop. Many prayer books follow it with a line asking that the words be sweet in our mouths, and in the mouths of our children. Many Jews say these blessings once each morning, and let them cover the whole day's learning. Now the startling story. The Talmud asks why the land was lost in ancient times. It quotes the prophet Jeremiah asking the same thing, and gives an answer in the name of the teacher Rav: because they did not bless the Torah first. They studied. They knew it. But they didn't stop first and treat it as a gift. The later commentators say the words had become just information. The blessing is a doorway. It turns reading into meeting. And it reminds you, before the argument starts, why you're at the table at all.",
+      "voice": "The blessing begins with the same opening as the blessings over bread and fruit: Baruch atah Adonai, Eloheinu melech ha'olam. Blessed are you, Lord our God, king of the universe. Then: asher kid'shanu b'mitzvotav, who made us holy with his commandments, v'tzivanu la'asok b'divrei Torah, and commanded us to be busy with the words of Torah. That verb is the surprise. La'asok. Not to read. Not to know. To be busy with, engaged in, occupied by. The blessing doesn't ask you to finish Torah, or master it. It asks you to be in the middle of it, working on it, the way someone runs a shop. Many prayer books follow it with a line asking that the words be sweet in our mouths, and in the mouths of our children. In traditional practice, these blessings are said once in the morning, and they cover the whole day's learning. Now the startling story. The Talmud asks why the land was lost in ancient times. It quotes the prophet Jeremiah asking the same thing, and gives an answer in the name of the teacher Rav: because they did not bless the Torah first. They studied. They knew it. But they didn't stop first and treat it as a gift. One medieval commentator, the Ran, reads it this way: they studied, but didn't hold the Torah dear enough to bless it first. In that reading, the blessing is a doorway. It marks the words as a gift before the study, and the argument, begins.",
       "screen": ["`BLESSED ARE YOU, LORD OUR GOD.` · `LA'ASOK: TO BE BUSY WITH.` · `SWEET IN OUR MOUTHS.` · `THEY DID NOT BLESS THE TORAH FIRST.` · then, large: `BLESS THE WORDS FIRST.`"]
     },
     {
@@ -52,20 +52,20 @@
   "games": {
     "match": {
       "prompt": "inside the blessing — tap the pairs.",
-      "pairs": [["baruch atah", "blessed are you"], ["la'asok", "to be busy with"], ["esek", "a business"], ["sweet in our mouths", "a line many prayer books add"]]
+      "pairs": [["baruch atah", "blessed are you"], ["la'asok", "to be busy with"], ["v'tzivanu", "and commanded us"], ["sweet in our mouths", "a line many prayer books add"]]
     },
     "myth": [
       ["the blessing asks you to master the Torah", false, "it says to be busy with the words of Torah: engaged, not finished."],
       ["the Talmud links the land's loss to skipping this blessing", true, "in the name of Rav: they did not bless the Torah first."],
-      ["many Jews say it once in the morning to cover the day's study", true, "the morning blessings cover learning for the whole day."]
+      ["in traditional practice, it's said once in the morning to cover the day's study", true, "the morning blessings cover learning for the whole day."]
     ],
     "fork": {
       "setup": "the people in Jeremiah's day studied Torah and knew it well. according to the Talmud, what went wrong?",
       "options": ["they studied too little.", "they did not bless the Torah first.", "they argued too much."],
       "answer": 1,
-      "reveal": "they learned it, but didn't stop to treat it as a gift. the blessing turns reading into meeting."
+      "reveal": "they learned it, but didn't stop to treat it as a gift. the blessing marks the words as a gift."
     },
-    "original": { "script": "לַעֲסֹק", "say": "la-ah-SOK", "note": "Hebrew: to be busy with, engaged in. The same root gives esek, a business." },
+    "original": { "script": "לַעֲסֹק", "say": "la-ah-SOK", "note": "Hebrew: to be busy with, engaged in, occupied by." },
     "trapdoor": [
       "what you thought: a quick formula before class.",
       "what it means: a blessing that treats study as a gift and asks you to be busy with Torah, not to finish it.",
@@ -85,7 +85,8 @@
       "The Hebrew of the blessing is given in transliteration with a plain English rendering; wording follows the Ashkenazi/Sephardi common text. Confirm transliteration style.",
       "'V'ha'arev na' (make the words sweet) follows in many rites; Berakhot 11b records several formulas. Confirm phrasing 'many prayer books follow it'.",
       "Nedarim 81a (and Bava Metzia 85b): Rav Yehudah in the name of Rav, on Jeremiah 9:11–12. Confirm; the gloss that the words had become 'just information' is a paraphrase of later commentators (e.g. Ran / later Hasidic readings) and should be checked or softened.",
-      "Esek as 'business' is primarily modern/rabbinic usage; confirm."
+      "Esek as 'business' is primarily modern/rabbinic usage; confirm.",
+      "Editor pass: cut the esek/business etymology (voice, match, original); 'nearly every Jewish blessing' and 'many Jews' claims softened; the 'later commentators say the words had become just information' gloss now attributed to the Ran in his own terms (did not hold it dear enough to bless). Keeper: confirm the Ran on Nedarim 81a."
     ]
   },
   "meta": { "index": "155. The blessing before study · — · before learning, a blessing to be busy with words of Torah · say a short blessing before reading · bless the words first", "writer": "writer agent (judaism 151–180)", "written": "2026-09-30" }

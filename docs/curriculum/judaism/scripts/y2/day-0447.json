@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Walk into a job interview already sure you're the least qualified person in the building, and something happens. Your shoulders drop. You talk faster. You apologize before answering. And the person across the desk, who had no opinion of you a minute ago, starts to form one, based on the one you walked in with. It isn't magic. People read how we hold ourselves. Twelve scouts come back from forty days in the land, carrying grapes, and ten of them deliver a report with a line in it that has outlived almost everything else they said.",
-      "screen": ["`SURE YOU'RE THE LEAST.` → `THEY READ HOW YOU HOLD YOURSELF.` → `TEN SCOUTS, ONE LINE.`"]
+      "voice": "A candidate sits in the hallway before a job interview, already sure he's the least qualified person in the building. When he's called in, his shoulders drop. He talks too fast. He apologizes before answering. And the person across the desk, who had no opinion of him a minute ago, starts to form one, based on the one he walked in with. It isn't magic. People read how we hold ourselves. Twelve scouts come back from forty days in the land, carrying grapes, and ten of them deliver a report with a line in it that people still quote.",
+      "screen": ["`SURE HE'S THE LEAST.` → `PEOPLE READ HOW WE HOLD OURSELVES.` → `TEN SCOUTS, ONE LINE.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "The report starts out true. The land does flow with milk and honey, they say, and here's its fruit. Then comes the word but. The people there are strong. The cities are walled and very large. And as the crowd grows uneasy, the report darkens. Ten of the scouts now say the land devours its inhabitants, and everyone there is huge. Then the line: there we saw giants, \"and we were in our own sight as grasshoppers, and so we were in their sight.\" Two halves. The first is honest: we felt tiny. The second is a guess dressed up as a fact: so they saw us that way too. How could the scouts possibly know what the people of the land thought of them? A midrash imagines God catching exactly this. I don't mind that you felt like grasshoppers, God says. But who told you how I made you look in their eyes? The Talmud gives the scouts a little evidence: they overheard the locals say there are ants in the vineyards that look like people. But the book of Joshua, forty years later, tells a different story. A woman in Jericho named Rahab tells two new spies that her whole city has been terrified of Israel for years, ever since they heard about the sea. Their hearts melted. The giants were afraid too. The scouts saw a fact, big people in walled cities, and then let a feeling write the rest of the report. Their picture of themselves became the picture they gave everyone else.",
+      "voice": "The report starts out true. The land does flow with milk and honey, they say, and here's its fruit. Then comes the word but. The people there are strong. The cities are walled and very large. And as the crowd grows uneasy, the report darkens. Ten of the scouts now say the land devours its inhabitants, and everyone there is huge. Then the line: there we saw the Nephilim, the giants, \"and we were in our own sight as grasshoppers, and so we were in their sight.\" Two halves. The first is honest: we felt tiny. The second is a guess dressed up as a fact: so they saw us that way too. How could the scouts possibly know what the people of the land thought of them? A midrash imagines God catching exactly this. I don't mind that you felt like grasshoppers, God says. But who told you how I made you look in their eyes? The Talmud gives the scouts a little evidence: they overheard the locals say there are ants in the vineyards that look like people. But the book of Joshua, later on, tells a different story. A woman in Jericho named Rahab tells two new spies that terror of Israel has fallen on her land, ever since they heard how the sea dried up before them. Their hearts melted. The people the scouts feared were afraid too. The scouts saw a fact, big people in walled cities, and then let a feeling write the rest of the report. Their picture of themselves became the picture they gave everyone else.",
       "screen": ["`MILK AND HONEY, BUT.` · `GRASSHOPPERS IN OUR OWN SIGHT.` · `WHO TOLD YOU HOW THEY SAW YOU?` · `JERICHO WAS AFRAID TOO.` · then, large: `HOW YOU SEE YOURSELF SHOWS.`"]
     },
     {
@@ -48,7 +48,7 @@
     },
     { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 447 COUNTS.` → `TOMORROW: SHELACH: ANOTHER SPIRIT (NUMBERS 14:24).`"] }
   ],
-  "howItsDone": "The scouts' line about grasshoppers is one of the most often taught verses in Shelach; teachers use it, and the midrash on it, to talk about self-image, and about the difference between what we see and what we assume.",
+  "howItsDone": "Teachers often take up the scouts' line about grasshoppers when Shelach is read; they use it, and the midrash on it, to talk about self-image, and about the difference between what we see and what we assume.",
   "games": {
     "match": {
       "prompt": "the scouts' report — tap the pairs.",
@@ -60,7 +60,7 @@
       ["the book of Joshua says Jericho had no fear of Israel", false, "Rahab says the city's hearts melted when they heard of Israel."]
     ],
     "fork": {
-      "setup": "forty years later, two new spies hide in Jericho. a woman named Rahab tells them how her city has felt about Israel. what does she say?",
+      "setup": "later, in the book of Joshua, two new spies hide in Jericho. a woman named Rahab tells them how her city has felt about Israel. what does she say?",
       "options": ["they laugh at Israel; they're like grasshoppers.", "they've been terrified; their hearts melted.", "they'd never heard of Israel."],
       "answer": 1,
       "reveal": "Joshua 2: the people of the land were afraid of Israel. the scouts' guess about how others saw them was wrong."
@@ -74,7 +74,7 @@
   },
   "sources": [
     { "ref": "Numbers 13:33", "work": "The Holy Scriptures", "translation": "JPS 1917", "quoted": "and we were in our own sight as grasshoppers, and so we were in their sight." },
-    { "ref": "Numbers 13:27–32", "work": "The Holy Scriptures", "translation": null, "quoted": null },
+    { "ref": "Numbers 13:25–32", "work": "The Holy Scriptures", "translation": null, "quoted": null },
     { "ref": "Talmud Bavli, Sotah 35a; Rashi on Numbers 13:33", "work": "Babylonian Talmud; Rashi", "translation": null, "quoted": null },
     { "ref": "Joshua 2:9–11", "work": "The Holy Scriptures", "translation": null, "quoted": null }
   ],
@@ -86,7 +86,8 @@
       "The midrash in which God objects ('who told you how I made you look in their eyes?') is widely cited (attributed to Midrash Tanchuma / Numbers Rabbah 16:11 and popular in later commentary); please confirm the exact source.",
       "Sotah 35a / Rashi: the scouts overheard 'there are ants in the vineyards like men'; confirm.",
       "The script avoids Caleb, who is tomorrow's lesson.",
-      "'twelve scouts... ten of them deliver a report': the full report in 13:27–29 is given by the scouts generally; the 'evil report' in 13:32 is the ten (Joshua and Caleb excepted). Confirm framing."
+      "'twelve scouts... ten of them deliver a report': the full report in 13:27–29 is given by the scouts generally; the 'evil report' in 13:32 is the ten (Joshua and Caleb excepted). Confirm framing.",
+      "Editor review 2026-10-01: hook rewritten in the third person (no longer tells the listener what they feel; avoids the 'Walk into' opener); 'giants' now 'the Nephilim, the giants' to match JPS 1917; Rahab paraphrase brought back to Joshua 2:9–11 (cut 'for years', 'forty years later', and 'the giants were afraid', since Rahab speaks of her land, not the Anakim); howItsDone drops the superlative; paraphrase range widened to 13:25 for the forty days."
     ]
   },
   "meta": { "index": "447. Shelach: as grasshoppers (Numbers 13:33) · — · \"we were in our own sight as grasshoppers, and so we were in their sight\" · notice how you see yourself · how you see yourself shows", "writer": "writer agent (judaism y2 422–451)", "written": "2026-09-30" }

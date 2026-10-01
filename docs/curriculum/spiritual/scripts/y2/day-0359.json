@@ -19,14 +19,14 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Walk into an archery range and look at the targets. Straw bales, painted rings, a gold circle in the middle. Some arrows land in the gold. Many land in the outer rings, or the grass, or the fence behind. But nobody hangs a target hoping it will be missed. The whole thing exists to be hit. The misses are real, sometimes there are lots of them, but they aren't what the target is for. Section twenty-seven of the handbook is a single sentence built on that picture, and it may be the most puzzling sentence in the book. Today: a target isn't set up to be missed.",
+      "voice": "At an archery range, the targets stand in a row. Straw bales, painted rings, a gold circle in the middle. Some arrows land in the gold. Many land in the outer rings, or the grass, or the fence behind. But nobody hangs a target hoping it will be missed. The whole thing exists to be hit. The misses are real, sometimes there are lots of them, but they aren't what the target is for. Section twenty-seven of the handbook is a single sentence built on that picture, and a puzzling one. Today: a target isn't set up to be missed.",
       "screen": ["`AN ARCHERY RANGE.` → `ARROWS IN THE GRASS.` → `NOBODY HANGS A TARGET TO BE MISSED.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the sentence. Just as a target isn't set up in order to be missed, Epictetus says, so the nature of evil doesn't arise in the world. That's all he says. No example, no explanation. Second, the honest part. Readers have argued about this line for centuries, and nobody can be sure exactly what he meant. Here are two readings that have lasted. One, from the ancient commentator Simplicius and others: the world is ordered toward the good, the way a target is set up to be hit. Evil isn't one of its built-in parts. It's a missing, a falling short, real but not the point. Two, a more practical reading: in the world outside us, nothing is truly evil, because the only real evil, for a Stoic, is a bad choice in our own will. Either way, the picture says that the mark is there to be aimed at. Third, the word. The Greek for target is skopos, the thing you look toward, related to our word scope. A neighbor from another tradition uses the same picture. The usual New Testament word for sin, hamartia, comes from a Greek verb that in Homer can mean to miss the mark with a spear. Different homes, different teachings about wrongdoing, a shared image of aiming. Fourth, what to do with it. Whatever the metaphysics, the practice is simple. A miss doesn't mean the target was a lie. Yesterday's sharp word, last week's broken promise: those are arrows in the grass. The gold is still there. Pick up another arrow. Aim at the good.",
-      "screen": ["`NOT SET UP TO BE MISSED.` · `TWO READINGS, NO CERTAINTY.` · `SKOPOS: THE THING YOU LOOK TOWARD.` · `PICK UP ANOTHER ARROW.` · then, large: `AIM AT THE GOOD.`"]
+      "voice": "First, the sentence. Just as a target isn't set up in order to be missed, Epictetus says, so the nature of evil doesn't arise in the world. That's all he says. No example, no explanation. Second, the honest part. Readers still argue about this line, and nobody can be sure exactly what he meant. Here are two readings that have lasted. One, from the ancient commentator Simplicius and others: the world is ordered toward the good, the way a target is set up to be hit. Evil isn't one of its built-in parts. It's a missing, a falling short, real but not the point. Two, a more practical reading: in the world outside us, nothing is truly evil, because the only real evil, for a Stoic, is a bad choice in our own will. Either way, the picture says that the mark is there to be aimed at. Third, the word. The Greek for target is skopos, the mark an archer fixes the eye on. Notice what the picture does. It doesn't deny the misses; the grass behind a range is full of arrows. It says the misses aren't the reason the target is there. A miss only counts as a miss because there's a mark to measure it by. Fourth, what to do with it. Whatever the metaphysics, the practice is simple. A miss doesn't mean the target was a lie. Yesterday's sharp word, last week's broken promise: those are arrows in the grass. The gold is still there. Pick up another arrow. Aim at the good.",
+      "screen": ["`NOT SET UP TO BE MISSED.` · `TWO READINGS, NO CERTAINTY.` · `SKOPOS: THE MARK.` · `PICK UP ANOTHER ARROW.` · then, large: `AIM AT THE GOOD.`"]
     },
     {
       "type": "the practice",
@@ -52,12 +52,12 @@
   "games": {
     "match": {
       "prompt": "a target isn't set up to be missed — tap the pairs.",
-      "pairs": [["skopos", "the target, the thing you look toward"], ["Simplicius", "evil as a missing, not a built-in part"], ["hamartia", "from a verb for missing the mark"], ["a miss", "an arrow in the grass"]]
+      "pairs": [["skopos", "the target, the mark"], ["Simplicius", "evil as a missing, not a built-in part"], ["the misses", "real, but not the point"], ["a miss", "an arrow in the grass"]]
     },
     "myth": [
       ["Epictetus explains this sentence at length", false, "it's a single sentence with no example; readers still argue about it."],
       ["one reading says evil is a falling short, not a built-in part of the world", true, "the ancient commentator Simplicius read it this way."],
-      ["the Greek word for target is related to English scope", true, "skopos, the thing you look toward."]
+      ["the target picture admits that misses are real", true, "they just aren't what the target is for."]
     ],
     "fork": {
       "setup": "you've missed the mark badly this week. on the target picture, what follows?",
@@ -65,22 +65,22 @@
       "answer": 1,
       "reveal": "a target isn't set up to be missed. the misses are real, but the gold is still there to aim at."
     },
-    "original": { "script": "σκοπός", "say": "sko-POS", "note": "Greek, Enchiridion 27: a target, the mark you look toward." },
+    "original": { "script": "σκοπός", "say": "sko-POS", "note": "Greek, Enchiridion 27: a target, a mark." },
     "trapdoor": [
       "what you thought: there's no such thing as evil.",
       "what it means: evil isn't what the world is set up for; it's a missing of the mark, and the mark is there to aim at.",
-      "what a scholar hears: one of the handbook's most compressed lines; Simplicius' long commentary on it argues that evil has no nature of its own."
+      "what a scholar hears: a single compressed sentence; Simplicius' commentary on it argues at length that evil has no nature of its own."
     ]
   },
   "sources": [
     { "ref": "Enchiridion 27", "work": "Epictetus (Arrian), Enchiridion", "translation": null, "quoted": null },
-    { "ref": "Commentary on the Enchiridion, ch. 27 (35 in some numberings)", "work": "Simplicius, Commentary on Epictetus' Handbook", "translation": null, "quoted": null },
-    { "ref": "hamartano in Homer (e.g. Iliad 5.287); hamartia in the New Testament", "work": "Homer, Iliad; the New Testament", "translation": null, "quoted": null }
+    { "ref": "Commentary on the Enchiridion, ch. 27 (35 in some numberings)", "work": "Simplicius, Commentary on Epictetus' Handbook", "translation": null, "quoted": null }
   ],
   "review": {
     "status": "pending",
     "keeper": null,
     "notes": [
+      "Review (2026-10-01): changed the 'Walk into...' hook opener; cut the 'most puzzling sentence' superlative and 'for centuries'; cut the hamartia 'miss the mark' etymology and skopos/scope etymology (claims rule; also avoids a second biblical neighbor right after day 358), with the Homer/NT source, match pair and myth replaced by items from the target picture.",
       "INDEX: the outline's word is truncated to 'A target isn't set up to be miss' (the title head cut at 32 characters). The script keeps it exactly as the validator requires; suggest the owner fix the index word to the full title.",
       "Enchiridion 27 paraphrased (as a mark is not set up for missing, so neither does the nature of evil exist in the world). Confirm.",
       "Two readings: Simplicius' (evil has no substance of its own, a falling short of the good) and the 'only evil is in the will' reading. Confirm attributions and Simplicius chapter numbering.",

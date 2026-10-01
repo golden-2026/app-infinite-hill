@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Picture someone who has just finished reading the whole Guru Granth Sahib aloud. That's an akhand paath: about forty-eight hours of continuous reading, the readers taking turns through the night, more than fourteen hundred pages. At the end, the family stands for the Ardas. And somewhere in it comes a request that sounds almost like a proofreader's note. Forgive any letter added. Forgive any letter missed. Forgive every slip. After two days of care, the first thing asked is pardon for the mistakes.",
-      "screen": ["`FORTY-EIGHT HOURS OF READING.` → `MORE THAN 1,400 PAGES.` → `FORGIVE ANY LETTER MISSED.`"]
+      "voice": "A family has just heard the whole Guru Granth Sahib read aloud. That's an akhand paath: one unbroken reading, day and night, the readers taking turns while the house sleeps. At the end, the family stands for the Ardas. And somewhere in it comes a request that sounds almost like a proofreader's note. Forgive any letter added. Forgive any letter missed. Forgive every slip. After all that care, the readers still ask pardon for the mistakes.",
+      "screen": ["`ONE UNBROKEN READING.` → `READERS TAKING TURNS.` → `FORGIVE ANY LETTER MISSED.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "The Punjabi phrase is akhar vaadha ghaata bhul chuk maaf karni. Akhar is a letter, a syllable. Vaadha is something added, ghaata something left out. Bhul is a mistake that comes from forgetting or not knowing. Chuk is a slip, a miss, like a hand that loses its grip. Maaf karni: please forgive. It's said after a reading, a recitation, a kirtan, any time the words of the Guru have passed through human mouths. Why would a letter matter so much? Because for Sikhs the Guru Granth Sahib is not a book about the Guru. It is the Guru, the living teacher in words. Reading it is something like speaking in the Guru's own voice, and care with every syllable is a form of respect. But the line is not anxious. It doesn't promise that the reading was perfect. It assumes it wasn't. Guru Nanak said as much in Sri Rag, on ang 61: everyone makes mistakes; only the Guru and the Creator never do. That's not an insult to the readers. It's just the truth about people, said without drama. So the Ardas builds an apology into its own structure. Do your very best, then admit you probably fell short, then let it go and move on. There's freedom in that. A person who expects to be perfect freezes before starting. A person who knows forgiveness is part of the ritual can stand up, open the book, and begin. And notice the word is our. The readers ask together, for one another's slips as well as their own.",
+      "voice": "The Punjabi phrase is akhar vaadha ghaata bhul chuk maaf karni. Akhar is a letter, a syllable. Vaadha is something added, ghaata something left out. Bhul is a mistake that comes from forgetting or not knowing. Chuk is a slip, a miss. Maaf karni: please forgive. It's said after a reading, a recitation, a kirtan, any time the words of the Guru have passed through human mouths. Why would a letter matter so much? Because for Sikhs the Guru Granth Sahib is not a book about the Guru. It is the Guru, the living teacher in words. Reading it is something like speaking in the Guru's own voice, and care with every syllable is a form of respect. But the line is not anxious. It doesn't promise that the reading was perfect. It assumes it wasn't. Guru Nanak said as much in Sri Rag, on ang 61: everyone makes mistakes; only the Guru and the Creator never do. That's not an insult to the readers. It's just the truth about people, said without drama. So the Ardas builds an apology into its own structure. The pattern is plain: the best care a reader can give, an admission that it probably fell short, then letting it go. A reader who had to be perfect might never open the book. A reader who knows the pardon is already part of the prayer can stand up, open it, and begin. And the request is made for everyone who read, so it covers every reader's slips, not one person's.",
       "screen": ["`AKHAR: A LETTER, A SYLLABLE.` · `BHUL CHUK: FORGETTING, SLIPPING.` · `EVERYONE ERRS BUT THE GURU.` · `DO YOUR BEST, THEN ASK PARDON.` · then, large: `FORGIVE THE ERRORS.`"]
     },
     {
@@ -57,13 +57,13 @@
     "myth": [
       ["the Ardas claims the reading was perfect", false, "it assumes mistakes happened and asks pardon for them."],
       ["Guru Nanak says everyone makes mistakes except the Guru and the Creator", true, "Sri Rag, ang 61."],
-      ["an akhand paath reads the Guru Granth Sahib straight through", true, "about forty-eight hours, readers taking turns through the night."]
+      ["an akhand paath reads the Guru Granth Sahib straight through", true, "one unbroken reading, readers taking turns through the night."]
     ],
     "fork": {
-      "setup": "you've just finished two days of careful reading aloud. the Ardas begins. what's asked?",
+      "setup": "you've just finished an unbroken reading of the whole Guru Granth Sahib. the Ardas begins. what's asked?",
       "options": ["praise for the readers.", "forgiveness for any letter added or missed.", "nothing about the reading at all."],
       "answer": 1,
-      "reveal": "akhar vaadha ghaata bhul chuk maaf karni: after all that care, the first thing asked is pardon for the slips."
+      "reveal": "akhar vaadha ghaata bhul chuk maaf karni: after all that care, the Ardas still asks pardon for the slips."
     },
     "original": { "script": "ਭੁੱਲ ਚੁੱਕ", "say": "BHULL CHUKK", "note": "Gurmukhi: a mistake from forgetting, and a slip; said together, any error at all." },
     "trapdoor": [
@@ -83,7 +83,8 @@
       "Confirm the Ardas formula 'akhar vaadha ghaata bhul chuk maaf karni' and that it is used after readings, recitations and kirtan.",
       "Confirm the paraphrase and Ang of 'bhulan andar sabh ko abhul guru kartaar' (Sri Rag M1, ang 61).",
       "Akhand paath described as about 48 hours, continuous, readers in turns; the Guru Granth Sahib has 1,430 angs ('more than fourteen hundred pages').",
-      "The glosses of bhul (forgetting/not knowing) and chuk (a slip) are general; confirm."
+      "The glosses of bhul (forgetting/not knowing) and chuk (a slip) are general; confirm.",
+      "Reviewer (2026-10-01): hook no longer opens with 'Picture'; removed the 48-hour and 1,400-page figures (not in the cited texts); fixed 'the first thing asked is pardon' (the Ardas asks much before this line); removed 'notice the word is our' (the Punjabi formula has no 'our'); dropped a simile that read like an etymology for chuk."
     ]
   },
   "meta": { "index": "634. Forgive our mistakes · — · forgive any word added or missed, any error · apologize once · forgive the errors", "writer": "writer agent (sikhism 632–661)", "written": "2026-09-30" }

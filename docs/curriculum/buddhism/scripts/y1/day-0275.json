@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Walk into a Zen temple in Kyoto, a monastery in Seoul, a Vietnamese temple in a strip mall in Texas, near the end of the morning service. The chanting speeds up, and everyone lands on the same few syllables. In Japan it sounds like gyatei, gyatei. In Korea, a little different again. The words are the last line of the Heart Sutra, and in most of Asia they've never been translated. People chant the sound. After all the no's and all the emptiness, the sutra ends not with an argument but with something to say out loud. Today: the mantra.",
-      "screen": ["`KYOTO. SEOUL. A STRIP MALL IN TEXAS.` → `THE SAME FEW SYLLABLES.` → `NEVER TRANSLATED.`"]
+      "voice": "Gyatei, gyatei. Near the end of a Japanese morning service, the chanting speeds up and lands on these syllables. They aren't Japanese, and they aren't Chinese either. They're the last line of the Heart Sutra, and in the Chinese version East Asian temples chant, they were never translated. People chant the sound. After all the no's and all the emptiness, the sutra ends not with an argument but with something to say out loud. Today: the mantra.",
+      "screen": ["`GYATEI, GYATEI.` → `THE CHANTING SPEEDS UP.` → `NEVER TRANSLATED.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Right after the line about no walls and no fear, the sutra says: so know that the perfection of wisdom is the great mantra, the unsurpassed mantra, the mantra that calms all suffering. Then it gives it, in Sanskrit: \"gate gate pāragate pārasaṃgate bodhi svāhā.\" Gate means gone. Pāragate, gone to the far shore, gone beyond. Pārasaṃgate, gone completely beyond, all the way over. Bodhi is awakening, the word behind Buddha. And svāhā is an old exclamation that Indian priests called out when making offerings into the fire, something like, so be it, or hail. Gone, gone, gone beyond, gone altogether beyond, awakening, so be it. Scholars still argue about the grammar: gate might mean gone, or it might be calling out to someone, O you who have gone. The picture is clear either way: a crossing, the same far shore as the raft three days ago. Mantra itself is usually explained as man, the mind, and tra, a tool. A tool for the mind. It works less like a sentence you think about and more like a handrail you hold. Here's the surprising part. When the great pilgrim and translator Xuanzang rendered the Heart Sutra into Chinese in the seventh century, he translated every line except this one. For mantras he kept the sound, and wrote it in Chinese characters for their sound alone. That's why a monk in Seoul and a grandmother in Hanoi, reading Chinese-based texts, still say something close to gate gate.",
+      "voice": "Right after the line about no walls and no fear, the sutra says: so know that the perfection of wisdom is the great mantra, the unsurpassed mantra, the mantra that calms all suffering. Then it gives it, in Sanskrit: \"gate gate pāragate pārasaṃgate bodhi svāhā.\" Gate means gone. Pāragate, gone to the far shore, gone beyond. Pārasaṃgate, gone completely beyond, all the way over. Bodhi is awakening. And svāhā is an old ritual cry from Indian fire offerings, something like, so be it, or hail. Gone, gone, gone beyond, gone altogether beyond, awakening, so be it. Scholars still argue about the grammar: gate might mean gone, or it might be calling out to someone, O you who have gone. The picture is clear either way: a crossing, the same far shore as the raft three days ago. Tradition explains the word mantra as man, the mind, and tra, a tool. A tool for the mind. It works less like a sentence you think about and more like a handrail you hold. Here's the surprising part. In the Chinese version tradition credits to the pilgrim and translator Xuanzang, every line is translated except this one. The mantra keeps its sound, written in Chinese characters used for their sound alone. That's why temples in Japan, Korea and Vietnam still chant a form of the old sounds, each in its own accent.",
       "screen": ["`THE GREAT MANTRA.` · `GONE, GONE, GONE BEYOND.` · `A TOOL FOR THE MIND.` · `XUANZANG KEPT THE SOUND.` · then, large: `GONE BEYOND.`"]
     },
     {
@@ -60,16 +60,16 @@
       ["scholars fully agree on the mantra's grammar", false, "'gate' may mean 'gone' or may call out 'O you who have gone'."]
     ],
     "fork": {
-      "setup": "you're Xuanzang in seventh-century China, translating the Heart Sutra. you reach the mantra. what do you do?",
+      "setup": "you're Xuanzang, translating the Heart Sutra into Chinese. you reach the mantra. what do you do?",
       "options": ["translate it into plain Chinese, like every other line.", "keep its sound, written in characters used only for sound.", "leave it out; it isn't an argument."],
       "answer": 1,
-      "reveal": "Xuanzang kept mantras untranslated, so East Asian Buddhists still chant something close to the Sanskrit sound."
+      "reveal": "the mantra kept its sound in the Chinese, so East Asian Buddhists still chant a form of the Sanskrit sounds."
     },
     "original": { "script": "मन्त्र", "say": "MAN-tra", "note": "Sanskrit mantra: often explained as man (mind) + tra (tool), a tool for the mind." },
     "trapdoor": [
       "what you thought: a mantra is a magic phrase that works if you say it right.",
       "what it means: a tool for the mind; the Heart Sutra ends by giving wisdom a sound to hold.",
-      "what a scholar hears: Xuanzang listed mantras among the 'five kinds of words not to translate', and 'gate' may be a feminine vocative addressed to wisdom herself."
+      "what a scholar hears: later sources credit Xuanzang with listing mantras among the 'five kinds of words not to translate', and 'gate' may be a feminine vocative addressed to wisdom herself."
     ]
   },
   "sources": [
@@ -81,6 +81,7 @@
     "status": "pending",
     "keeper": null,
     "notes": [
+      "Editor review 2026-10-01: new hook (it opened 'Walk into a Zen temple in Kyoto', repeating day 267's opener, and claimed the mantra is untranslated 'in most of Asia'); removed the claim that Seoul and Hanoi say 'something close to gate gate' (Korean ajé ajé is not close); cut 'the word behind Buddha' etymology and the 'seventh century' date; Xuanzang's authorship and his five-untranslatables rule framed as tradition/later sources.",
       "Sanskrit mantra quoted in the original; confirm diacritics.",
       "Etymology of mantra as man + tra is the traditional explanation; confirm framing.",
       "'Five kinds of untranslated words' (wu zhong bu fan) is usually attributed to Xuanzang via later sources (e.g., Zhou Dunyi's preface to the Fanyi mingyi ji): confirm.",

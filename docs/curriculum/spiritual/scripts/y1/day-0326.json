@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Here's a test nobody warned you about. Without scrolling back, which stories from this year can you still tell? Not the facts. The stories. Some of them are gone, and that's fine; memory is a sieve. But a few have stuck. Maybe you told one at dinner. Maybe one surfaced out of nowhere on a bad day, and it helped. That's how stories have always worked. Long before anyone wrote them down, people kept the ones that were useful, and told them to their children. The ones that survive aren't random. They're the ones that stayed. Today: the stories you kept.",
-      "screen": ["`WHICH CAN YOU STILL TELL?` → `MEMORY IS A SIEVE.` → `THE ONES THAT STAYED.`"]
+      "voice": "Here's a test nobody warned you about. Without scrolling back, which stories from this year can you still tell? Not the facts. The stories. Some of them are gone, and that's fine; memory is a sieve. But a few have stuck. Maybe you told one at dinner. Maybe one surfaced out of nowhere on a bad day, and it helped. Every story we told this year reached us the same way: somebody kept it, and passed it on. Today: the stories you kept.",
+      "screen": ["`WHICH CAN YOU STILL TELL?` → `MEMORY IS A SIEVE.` → `SOMEBODY KEPT IT.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Let's walk through three that many people keep, and say where each came from, because each belongs to the people who kept it. First, the shipwreck. A merchant named Zeno, carrying a cargo of purple dye, loses everything in a wreck off Athens. He wanders into a bookshop, hears someone reading about Socrates, and asks where men like that can be found. The bookseller points at a passing philosopher: follow that man. Zeno went on to found the Stoic school, named for the painted porch where he taught. Source: Diogenes Laertius, Lives of the Philosophers, book seven. It stays because almost everyone has a wreck that turned out to be a door. Second, the carob tree. In the Talmud, an old man named Honi sees someone planting a carob tree and asks how long until it bears fruit. Seventy years, the man says. Will you live to eat it? I found carob trees in the world, the man answers; my ancestors planted them for me, and I plant for my children. Source: Babylonian Talmud, Taanit 23a. It stays because it's the best answer to why bother. Third, the mustard seed. Kisa Gotami, mad with grief, carries her dead child to the Buddha and begs for medicine. He asks her for a mustard seed from a house where no one has died. She goes door to door. Every house has lost someone. She returns with no seed, and with her grief shared. Source: the commentary on the Therigatha, verses of the early Buddhist nuns. It stays because it doesn't fix grief. It keeps it company. Three traditions, three houses. Each story is still theirs. You were a guest who got to listen.",
+      "voice": "Let's walk through three from this year, and say where each came from, because each belongs to the people who kept it. First, the shipwreck. A merchant named Zeno, carrying a cargo of purple dye, loses everything in a wreck near Athens. He sits down in a bookshop, reads about Socrates, and asks where men like that can be found. Just then Crates the Cynic walks past, and the bookseller points: follow that man. Zeno went on to found the Stoic school. Source: Diogenes Laertius, Lives of the Philosophers, book seven. It's the story for a loss that might turn out to be a door. Second, the carob tree. In the Talmud, Honi sees a man planting a carob tree and asks how long until it bears fruit. Seventy years, the man says. Will you live to eat it? I found carob trees in the world, the man answers; my ancestors planted them for me, and I plant for my children. Source: Babylonian Talmud, Taanit 23a. It's an answer to why bother. Third, the mustard seed. Kisa Gotami, mad with grief, carries her dead child to the Buddha and begs for medicine. He asks her for a mustard seed from a house where no one has died. She goes door to door. Every house has lost someone. She comes back with no seed, knowing that death has come to every house, not only hers. Source: the commentary on the Therigatha, verses of the early Buddhist nuns. The story doesn't fix grief. It keeps it company. Three traditions, three houses. Each story is still theirs. You were a guest who got to listen.",
       "screen": ["`ZENO'S WRECK BECOMES A DOOR.` · `HONI AND THE CAROB TREE.` · `KISA GOTAMI'S MUSTARD SEED.` · `SAY WHERE IT CAME FROM.` · then, large: `THESE STAYED.`"]
     },
     {
@@ -37,7 +37,7 @@
     {
       "type": "the word",
       "duration": "25 sec",
-      "voice": "The stories you kept. The few that stuck, each still belonging to the tradition that kept it for centuries. Today's word.",
+      "voice": "The stories you kept. The few that stuck, each still belonging to the tradition that kept it. Today's word.",
       "screen": ["`THE STORIES YOU KEPT — today's word`."]
     },
     {
@@ -52,18 +52,18 @@
   "games": {
     "match": {
       "prompt": "three stories and their sources — tap the pairs.",
-      "pairs": [["Zeno's shipwreck", "Diogenes Laertius, book seven"], ["Honi and the carob tree", "Talmud, Taanit 23a"], ["Kisa Gotami", "commentary on the Therigatha"], ["the painted porch", "where the Stoics got their name"]]
+      "pairs": [["Zeno's shipwreck", "Diogenes Laertius, book seven"], ["Honi and the carob tree", "Talmud, Taanit 23a"], ["Kisa Gotami", "commentary on the Therigatha"], ["Crates the Cynic", "the man the bookseller pointed to"]]
     },
     "myth": [
       ["Zeno came to philosophy after losing his cargo in a shipwreck", true, "Diogenes Laertius tells it: a wreck, a bookshop, follow that man."],
-      ["Kisa Gotami found the mustard seed and her child was healed", false, "every house had lost someone; she came back with no seed and her grief shared."],
+      ["Kisa Gotami found the mustard seed and her child was healed", false, "every house had lost someone; she came back with no seed, knowing death had come to every house."],
       ["the carob-tree planter expected to eat its fruit himself", false, "he planted for his children, as his ancestors planted for him."]
     ],
     "fork": {
       "setup": "you're Kisa Gotami, going door to door for a mustard seed from a house where no one has died. what do you find?",
       "options": ["one house, and the seed.", "every house has lost someone.", "the Buddha gives you the seed himself."],
       "answer": 1,
-      "reveal": "no such house exists. she returns with no seed, but knowing grief is shared by everyone."
+      "reveal": "no such house exists. she returns with no seed, knowing death has come to every house, not only hers."
     },
     "original": null,
     "trapdoor": [
@@ -81,10 +81,11 @@
     "status": "pending",
     "keeper": null,
     "notes": [
-      "Zeno: Diogenes Laertius 7.2–3 (shipwreck near Piraeus with purple dye, bookshop, Xenophon's Memorabilia being read, Crates passing). Script says 'hears someone reading about Socrates'. Confirm.",
+      "Zeno: Diogenes Laertius 7.2–3 (shipwreck near Piraeus with purple dye, bookshop, Xenophon's Memorabilia being read, Crates passing). Script now says Zeno 'reads about Socrates' and names Crates (Hicks: 'as he went on reading the second book of Xenophon's Memorabilia'). Confirm.",
       "Taanit 23a: Honi sees a man planting a carob tree; seventy years; 'I found carobs in the world; as my fathers planted for me, so I plant for my children.' Paraphrased; Jewish reviewer to confirm.",
       "Kisa Gotami: Therigatha commentary (Dhammapala) and Dhammapada commentary; paraphrased. Buddhist reviewer to confirm.",
-      "These three stories were told on days 25–26, 58 and 75; 'say where it came from' echoes day 95."
+      "These three stories were told on days 25–26, 58 and 75; 'say where it came from' echoes day 95.",
+      "Editor review 2026-10-01: Zeno now reads the book himself (Diogenes Laertius 7.2–3) rather than hearing it read, and Crates is named; cut the painted-porch etymology here because day 330 teaches it; cut unsourced claims ('that's how stories have always worked', 'long before anyone wrote them down', 'three that many people keep', 'almost everyone has a wreck', 'kept it for centuries'), the superlative 'the best answer to why bother', 'an old man named Honi' (Taanit 23a does not give his age there), and the interpretive 'grief shared' for Kisa Gotami (the commentary's point is that death comes to every house)."
     ]
   },
   "meta": { "index": "326. The stories you kept · — · three stories that stuck, each with its source · tell one to someone · these stayed", "writer": "spiritual writer agent (days 308–331)", "written": "2026-09-30" }

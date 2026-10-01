@@ -19,14 +19,14 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Think about who packs a drum when they're fleeing slavery in the middle of the night. You've got unrisen dough, your kids, whatever you can carry, a few minutes' notice. And somebody, more than one somebody, brings a hand drum. Then they cross the sea. They stand on the far shore, soaked and shaking, and look back at the water. And before anyone has worked out what to say, a woman picks up her drum, and the other women follow her out with their drums, dancing. Someone had planned for a celebration before there was anything to celebrate.",
+      "voice": "Who packs a drum when they're fleeing slavery in the middle of the night? Unrisen dough, children, whatever can be carried, a few minutes' notice. And somebody, more than one somebody, brings a hand drum. Then they cross the sea on dry ground. They stand on the far shore, shaking, and look back at the water. And before anyone has worked out what to say, a woman picks up her drum, and the other women follow her out with their drums, dancing. Someone had planned for a celebration before there was anything to celebrate.",
       "screen": ["`WHO PACKS A DRUM TO FLEE?` → `THE FAR SHORE.` → `A WOMAN PICKS UP HER DRUM.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, her name and her title. In the Douay-Rheims, following the Latin, the verse reads: \"So Mary the prophetess, the sister of Aaron, took a timbrel in her hand.\" Mary. That's the same name. Miriam in Hebrew, Mariam in Greek, Maria in Latin. The mother of Jesus was named after this woman. And she's called a prophetess, the first woman in the Bible to get that title. Second, the timbrel. In Hebrew it's a tof, a hand drum, a round frame with skin stretched over it, held in one hand and struck with the other. Not a harp in a temple. A traveling instrument, made for dancing in the open. Third, the song. The chapter opens with a long song of Moses, eighteen verses of it. Then Miriam's is short, two lines, and she sings it back to the women: sing to the Lord, for he has triumphed gloriously; the horse and its rider he has thrown into the sea. Some scholars think her short refrain may be one of the oldest pieces of poetry in the whole Bible, and that the longer song grew around it. Nobody can be sure. Fourth, where Catholics still sing it. At the Easter Vigil, right after the crossing of the sea is read, the people answer with this song: let us sing to the Lord, for he has covered himself in glory. And the Church prays it in the Liturgy of the Hours as a morning canticle. Miriam led the first song of freedom with a drum. Her namesake, Mary, would sing her own song of praise centuries later, about a God who lifts up the lowly.",
-      "screen": ["`MARY THE PROPHETESS, SISTER OF AARON.` · `A TOF: A HAND DRUM FOR DANCING.` · `TWO LINES, MAYBE THE OLDEST.` · `STILL SUNG AT THE EASTER VIGIL.`"]
+      "voice": "First, her name and her title. In the Douay-Rheims, following the Latin, the verse reads: \"So Mary the prophetess, the sister of Aaron, took a timbrel in her hand.\" Mary. That's the same name. Miriam in Hebrew, Mariam in Greek, Maria in Latin. The mother of Jesus carries this woman's name. And the text calls her a prophetess. Second, the timbrel. In Hebrew it's a tof, a hand drum, a round frame with skin stretched over it, held in one hand and struck with the other. Not a harp in a temple. A traveling instrument, made for dancing in the open. Third, the song. The chapter opens with a long song of Moses. Then Miriam's is short, two lines, and she sings it back to the women: sing to the Lord, for he is gloriously magnified; horse and rider he has thrown into the sea. Listen closely and it's the opening of Moses's song, almost word for word. What one voice began, she hands to everyone, with a drum to keep the beat. Fourth, where Catholics still sing it. At the Easter Vigil, right after the crossing of the sea is read, the people answer with this song: let us sing to the Lord, for he has covered himself in glory. And the Church prays it in the Liturgy of the Hours as a morning canticle. Miriam led the song on the far shore with a drum. Her namesake, Mary, would sing her own song of praise centuries later, about a God who lifts up the lowly.",
+      "screen": ["`MARY THE PROPHETESS, SISTER OF AARON.` · `A TOF: A HAND DRUM FOR DANCING.` · `TWO LINES THAT ECHO MOSES'S SONG.` · `STILL SUNG AT THE EASTER VIGIL.`"]
     },
     {
       "type": "the practice",
@@ -52,15 +52,15 @@
   "games": {
     "match": {
       "prompt": "what's inside the song — tap the pairs.",
-      "pairs": [["Miriam", "the first woman called a prophetess"], ["Maria", "her name in the Latin Bible"], ["tof", "a hand drum for dancing"], ["the horse and its rider", "thrown into the sea"]]
+      "pairs": [["Miriam", "the prophetess, sister of Aaron"], ["Maria", "her name in the Latin Bible"], ["tof", "a hand drum for dancing"], ["the horse and its rider", "thrown into the sea"]]
     },
     "myth": [
       ["the mother of Jesus shares Miriam's name", true, "Miriam, Mariam, Maria, Mary: the same name across Hebrew, Greek and Latin."],
       ["Miriam's song is the long eighteen-verse poem", false, "that's the song of Moses. Miriam's is two lines, sung back to the women."],
-      ["it's certain Miriam's refrain is the oldest poem in the Bible", false, "some scholars think it may be among the oldest. nobody can be sure."]
+      ["Miriam's two lines have nothing to do with Moses's song", false, "they echo the opening of his song almost word for word."]
     ],
     "fork": {
-      "setup": "you're Miriam on the far shore of the sea. the people are soaked, stunned and silent. Moses has just finished his song. what do you do?",
+      "setup": "you're Miriam on the far shore of the sea. the people are stunned and silent. Moses has just finished his song. what do you do?",
       "options": ["wait for the men to finish celebrating.", "take your drum and lead the women out in song and dance.", "start packing for the journey ahead."],
       "answer": 1,
       "reveal": "she takes the timbrel and all the women follow her with drums and dances, and she sings the refrain back to them."
@@ -69,7 +69,7 @@
     "trapdoor": [
       "what you thought: a little dance after the big miracle.",
       "what it means: a prophetess leads the people's first song of freedom, and her name is the one Mary would carry.",
-      "what a scholar hears: the Vulgate calls her Maria prophetissa, and some scholars hold her two-line refrain is among the oldest poetry in the Bible."
+      "what a scholar hears: the Vulgate calls her Maria prophetissa, and her two-line refrain repeats the opening of the song of Moses."
     ]
   },
   "sources": [
@@ -87,7 +87,8 @@
       "Miriam's refrain (15:21) paraphrased; Easter Vigil response paraphrased ('let us sing to the Lord; he has covered himself in glory').",
       "Song of Moses as an Old Testament canticle in the Liturgy of the Hours (Morning Prayer, Saturday Week I): confirm.",
       "Scholarly view that the Song of Miriam is among the oldest Hebrew poetry: presented as 'some scholars think', 'nobody can be sure'. Confirm.",
-      "The hook infers the women brought drums out of Egypt (15:20 implies it); stated as an observation."
+      "The hook infers the women brought drums out of Egypt (15:20 implies it); stated as an observation.",
+      "Editor review (2026-10-01): hook no longer opens 'Think about'; 'soaked' removed (the text says they crossed on dry ground); cut 'the first woman in the Bible' called a prophetess, 'named after this woman', 'eighteen verses' and the 'oldest poetry' scholarly claim (myth, match and trapdoor updated); Miriam's refrain paraphrased away from KJV wording ('triumphed gloriously') toward the DR; 'first song of freedom' superlative cut."
     ]
   },
   "meta": { "index": "374. Miriam's timbrel (Exodus 15:20–21) · — · the prophetess leads the women in song and dance · sing a line of praise · she led the song", "writer": "writer agent (catholic 362–391)", "written": "2026-09-30" }

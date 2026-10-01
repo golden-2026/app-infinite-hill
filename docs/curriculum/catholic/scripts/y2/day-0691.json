@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "In English villages, for centuries, there was a spring day when the whole parish went for a walk. The priest led the way with a cross, the choir sang, and the people followed the edge of the parish, field by field, stopping at boundary stones and old trees to pray for the crops. Children were sometimes bumped against the markers so they'd remember where the line was. It was called beating the bounds. Most Catholics today have never heard of it, or of the old fasting days it belonged with. Today, two forgotten pieces of the calendar.",
-      "screen": ["`A WHOLE PARISH ON A WALK.` → `PRAYING FIELD BY FIELD.` → `TWO FORGOTTEN PIECES.`"]
+      "voice": "In English villages, there was once a spring day when the whole parish went for a walk. The priest led the way with a cross, the choir sang, and the people followed the edge of the parish, field by field, stopping at boundary stones and old trees to pray for the crops. Children were sometimes bumped against the markers so they'd remember where the line was. It was called beating the bounds, and it belonged with a set of old fasting and praying days that are easy to miss on today's calendar. Today, two of those older pieces.",
+      "screen": ["`A WHOLE PARISH ON A WALK.` → `PRAYING FIELD BY FIELD.` → `TWO OLDER PIECES.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the Ember days. Four times a year, near the turn of each season, the Church kept three days of fasting and prayer: a Wednesday, a Friday and a Saturday. Their Latin name was quattuor tempora, the four times: in Advent, in Lent, after Pentecost, and in September after the feast of the Holy Cross. They were very old, and many historians think they grew from Rome's own seasons of harvest, vintage and sowing. They gave thanks for each season and asked a blessing on the next. Ember Saturdays became the traditional days for ordinations. The English word ember probably doesn't come from fire at all; scholars usually trace it to an Old English word about a circuit, a turning of the year. Then the Rogation days, from the Latin rogare, to ask. Tradition says that around 470, in Vienne in Gaul, after fires, earthquakes and wild animals had terrified the town, Bishop Mamertus called three days of fasting and processions before Ascension Thursday. The custom spread, and Rogation processions through the fields, asking God to bless the planting, became part of rural life across Europe. Since the calendar reform of 1969, both are left to each country's bishops, and in most places they've faded. But the instinct behind them is as old as the Psalms. As one psalm puts it, in the Douay-Rheims: \"The earth hath yielded her fruit.\" Food doesn't start in the store. It starts in soil, weather, and somebody's work, and these days were the Church remembering that out loud.",
+      "voice": "First, the Ember days. Four times a year, near the turn of each season, the Church kept three days of fasting and prayer: a Wednesday, a Friday and a Saturday. Their Latin name was quattuor tempora, the four times: in Advent, in Lent, after Pentecost, and in September after the feast of the Holy Cross. They were very old, and some historians think they grew from Rome's own seasons of harvest, vintage and sowing. They gave thanks for each season and asked a blessing on the next. Ember Saturdays became the traditional days for ordinations. Then the Rogation days, from the Latin rogare, to ask. Tradition says that around 470, in Vienne in Gaul, after fires, earthquakes and wild animals had terrified the town, Bishop Mamertus called three days of fasting and processions before Ascension Thursday. The custom spread, and Rogation processions through the fields, asking God to bless the planting, became part of village life in many lands. Since the calendar reform of 1969, both are left to each country's bishops, and where they aren't kept, they've faded. But the instinct behind them is as old as the Psalms. As one psalm puts it, in the Douay-Rheims: \"The earth hath yielded her fruit.\" Food doesn't start in the store. It starts in soil, weather, and somebody's work, and these days were the Church remembering that out loud.",
       "screen": ["`EMBER DAYS: THE FOUR TIMES.` · `ORDINATIONS ON EMBER SATURDAYS.` · `ROGARE: TO ASK.` · `PROCESSIONS THROUGH THE FIELDS.` · then, large: `THE EARTH HATH YIELDED HER FRUIT.`"]
     },
     {
@@ -52,12 +52,12 @@
   "games": {
     "match": {
       "prompt": "the old seasonal days — tap the pairs.",
-      "pairs": [["quattuor tempora", "the four times: Ember days"], ["rogare", "to ask"], ["Mamertus of Vienne", "began Rogation processions"], ["Ember Saturdays", "traditional days for ordinations"]]
+      "pairs": [["quattuor tempora", "the four times: Ember days"], ["rogare", "to ask"], ["Mamertus of Vienne", "credited with the first Rogation days"], ["Ember Saturdays", "traditional days for ordinations"]]
     },
     "myth": [
-      ["Ember days are named for the embers of a fire", false, "scholars usually trace the word to Old English for a circuit, a turning of the year."],
+      ["Ember days came once a year", false, "four times a year, near the turn of each season: a Wednesday, a Friday and a Saturday."],
       ["Rogation comes from the Latin for asking", true, "rogare: the days asked God to bless the planting."],
-      ["every Catholic must still keep the Ember days", false, "since 1969 they're left to each country's bishops, and in many places they've faded."]
+      ["every Catholic must still keep the Ember days", false, "since 1969 they're left to each country's bishops."]
     ],
     "fork": {
       "setup": "it's around 470 in Vienne. fires and earthquakes have terrified the town. you're Bishop Mamertus. what do you do?",
@@ -67,7 +67,7 @@
     },
     "original": { "script": "quattuor tempora", "say": "KWAHT-too-or TEM-poh-rah", "note": "Latin: the four times — the old name for the Ember days." },
     "trapdoor": [
-      "what you thought: something about fire, or a word from an old novel.",
+      "what you thought: something about fire, or an old word nobody uses.",
       "what it means: seasonal days of fasting and asking God to bless the harvest and the fields.",
       "what a scholar hears: the Roman quattuor tempora tied to harvest, vintage and sowing; Mamertus's Rogation days c. 470; both left to bishops since 1969."
     ]
@@ -87,7 +87,8 @@
       "'Beating the bounds' is an English parish custom, often Anglican after the Reformation; framed as 'in English villages, for centuries'; confirm.",
       "General Norms 45–47 leave Rogation and Ember days to conferences of bishops; confirm.",
       "Psalm 66:7 Douay-Rheims wording: confirm.",
-      "Origin of the Ember days in Roman agricultural festivals is a common scholarly view but not settled; softened to 'many historians think'."
+      "Origin of the Ember days in Roman agricultural festivals is a common scholarly view but not settled; softened to 'some historians think'.",
+      "Editor review (2026-10-01): cut the uncited 'ember' etymology (Old English ymbren) from the teach and replaced its myth item with the four-times-a-year fact; removed 'most Catholics today have never heard of it', 'for centuries', 'many historians', 'across Europe' and 'in most places' generalizations; match now says Mamertus is 'credited with' the Rogation days."
     ]
   },
   "meta": { "index": "691. Ember and Rogation days · — · old seasonal fasting days to bless the harvest and the fields · bless your food's source · bless the fields", "writer": "writer agent (catholic 662–691)", "written": "2026-09-30" }

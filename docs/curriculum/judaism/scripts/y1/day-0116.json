@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "The first strawberries of the summer. The first snow. The first time you hold a baby niece. The first night in a new apartment, eating takeout on the floor because the table hasn't arrived. Firsts have their own feeling: a little shock of joy, and underneath it, a quiet thought. I made it to this. Plenty of people didn't. Plenty of years I wasn't sure I would. Jewish tradition has a blessing for exactly that feeling, and it's one of the most loved in the whole tradition. Today: Shehecheyanu.",
+      "voice": "The first strawberries of the summer. The first snow. The first time you hold a baby niece. The first night in a new apartment, eating takeout on the floor because the table hasn't arrived. A first can carry a quiet thought under the joy: I made it to this. Not everyone did. Some years it wasn't certain. Jewish tradition has a blessing for exactly that thought, and it's short enough to say in a doorway. Today: Shehecheyanu.",
       "screen": ["`THE FIRST STRAWBERRIES.` → `THE FIRST NIGHT IN A NEW PLACE.` → `I MADE IT TO THIS.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "After the six opening words, the blessing says: shehecheyanu, v'kiyemanu, v'higianu lazman hazeh. Who has kept us alive, and sustained us, and brought us to this time. Three verbs. Kept us alive: you're still here. Sustained us, or held us up: through everything in between. Brought us to this season: to this exact moment. When is it said? The Talmud and later law list many moments. On the first night of each festival, over the candles or the wine. At the first lighting of the Hanukkah candles. When you eat a fruit for the first time in its season, the first cherries, the first pomegranate of the year. When you put on important new clothes, or buy a new home, or major new things you're glad of. When you see a close friend you haven't seen in a month. And people say it at life's firsts, when a baby is born, at a graduation, a wedding, or the first time they do something they never thought they'd get to. Notice what the blessing is not about. It isn't about the strawberry being good, or the dress being nice. It's about time. It says: there was a season when this was out of reach, and I've been carried here. The Talmud even says a person can say it over a new fruit the moment they see it in the market, before buying it, because the joy is in the arrival. Some people keep a fruit they haven't tasted all year for the second night of Rosh Hashanah, just so they have a reason to say it. A blessing so good that people go looking for excuses.",
+      "voice": "After the six opening words, the blessing says: shehecheyanu, v'kiyemanu, v'higianu lazman hazeh. Who has kept us alive, and sustained us, and brought us to this time. Three verbs. Kept us alive: you're still here. Sustained us, or held us up: through everything in between. Brought us to this season: to this exact moment. When is it said? The Talmud and later law list many moments. On the first night of each festival, over the candles or the wine. At the first lighting of the Hanukkah candles. When you eat a fruit for the first time in its season, the first cherries, the first pomegranate of the year. When you put on important new clothes, or buy a new home, or major new things you're glad of. When you see a close friend you haven't seen in thirty days. And people say it at life's firsts, when a baby is born, at a graduation, a wedding, or the first time they do something they never thought they'd get to. Notice what the blessing is not about. It isn't about the strawberry being good, or the dress being nice. It's about time. It says: there was a season when this was out of reach, and I've been carried here. Jewish law even allows saying it on just seeing a new fruit, before it's eaten, because the joy is in the arrival, though the usual custom is to wait for the first bite. And on the second night of Rosh Hashanah, there's a custom of setting out a fruit not yet tasted that year, so the blessing has a clear reason to be said.",
       "screen": ["`KEPT ALIVE, SUSTAINED, BROUGHT HERE.` · `FESTIVALS, FRUIT, NEW CLOTHES.` · `LIFE'S FIRSTS.` · `A BLESSING ABOUT TIME.` · then, large: `BROUGHT US TO THIS SEASON.`"]
     },
     {
@@ -52,7 +52,7 @@
   "games": {
     "match": {
       "prompt": "what's inside the blessing — tap the pairs.",
-      "pairs": [["shehecheyanu", "who has kept us alive"], ["v'kiyemanu", "and sustained us"], ["v'higianu lazman hazeh", "and brought us to this time"], ["a friend after a month", "one moment to say it"]]
+      "pairs": [["shehecheyanu", "who has kept us alive"], ["v'kiyemanu", "and sustained us"], ["v'higianu lazman hazeh", "and brought us to this time"], ["a festival's first night", "said over the candles or wine"]]
     },
     "myth": [
       ["Shehecheyanu is about how good the new thing is", false, "it's about time: being kept alive and brought to this season."],
@@ -60,10 +60,10 @@
       ["it's only said by rabbis in synagogue", false, "anyone says it: at home, at a table, in a store, at a birth or graduation."]
     ],
     "fork": {
-      "setup": "it's the second night of Rosh Hashanah. some say the festival's Shehecheyanu is doubtful tonight. what do many people do?",
+      "setup": "it's the second night of Rosh Hashanah. some say the festival's Shehecheyanu is doubtful tonight. what's the custom?",
       "options": ["skip the blessing.", "put a fruit they haven't tasted all year on the table.", "say it twice to be safe."],
       "answer": 1,
-      "reveal": "many set out a new fruit, so the blessing has a clear reason to be said: a blessing people go looking for excuses to say."
+      "reveal": "the custom is to set out a fruit not yet tasted that year, so the blessing has a clear reason to be said."
     },
     "original": { "script": "שֶׁהֶחֱיָנוּ", "say": "sheh-heh-kheh-YA-noo", "note": "Hebrew: who has kept us alive. from chai, life." },
     "trapdoor": [
@@ -85,7 +85,8 @@
       "Blessing text translated plainly (who has kept us alive, sustained us, and brought us to this time). Confirm.",
       "Occasions summarized from Mishnah Berakhot 9:3, Eruvin 40b, Berakhot 58b and OC 225; customs at births, graduations and weddings vary. Confirm.",
       "Saying it on seeing a new fruit before eating (Eruvin 40b; practice is generally to say it when eating). Confirm the framing 'the Talmud even says'.",
-      "Second-night Rosh Hashanah new fruit (OC 600:2). Confirm."
+      "Second-night Rosh Hashanah new fruit (OC 600:2). Confirm.",
+      "Editor review (days 113–131): cut the unsourced superlative 'one of the most loved in the whole tradition' and the hook lines telling the listener what firsts feel like; 'a month' corrected to the Talmud's 'thirty days'; the line saying the Talmud allows the blessing 'in the market, before buying it' conflated Eruvin 40b's festival question with new fruit, so it now says Jewish law allows it on seeing a new fruit though the custom is to say it when eating (Shulchan Aruch OC 225:3; confirm); 'many people' / 'excuses' framing in the teach and fork changed to 'the custom'; the match pair 'a friend after a month' replaced (day 118 teaches the friend blessings) with 'a festival's first night'."
     ]
   },
   "meta": { "index": "116. For firsts · Shehecheyanu · a blessing for new things, new seasons and first times each year · say it for one first today · you kept me alive for this", "writer": "writer agent (judaism 91–120)", "written": "2026-09-30" }

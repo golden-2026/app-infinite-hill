@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Picture finding someone's private journal. Not a memoir written for readers. The real thing: notes to self, repeated reminders, the same struggle written down again three months later because it hadn't gone away. Now picture that the writer was the most powerful man in the world, and that he wrote much of it in an army camp, at war. We've met Marcus Aurelius many times on this path, a line here, a passage there. Starting today, for about four months, we stop dipping in. Reading the notebook through.",
+      "voice": "Someone's private journal, found in a drawer. Not a memoir written for readers. The real thing: notes to self, repeated reminders, the same struggle written down again three months later because it hadn't gone away. And the writer was the emperor of Rome, and notes in the text place parts of it in army camps, at war. We've met Marcus Aurelius many times on this path, a line here, a passage there. Starting today, for about four months, we stop dipping in. Reading the notebook through.",
       "screen": ["`SOMEONE'S PRIVATE JOURNAL.` → `THE EMPEROR, IN CAMP.` → `READING THE NOTEBOOK THROUGH.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the writer. Marcus Aurelius was emperor of Rome from 161 to 180. He was trained in Stoic philosophy from his youth, and for years he jotted down notes to himself. He wrote them in Greek, the language of philosophy for educated Romans, not his native Latin. Second, the title. We call the book the Meditations, but that's not what he called it, as far as we know. The Greek manuscripts carry a heading that means something like to himself. Scholars think a later copyist may have added it. Either way, it's honest. These are things a man said to himself. Third, the shape. Twelve books, of uneven length. Inside them, short entries: some a single line, some a page. The section numbers we use are later editors' work, and editions sometimes divide them differently. It doesn't read like an argument. It reads like someone coming back, again and again, to the same few things he needs to remember. Fourth, it nearly vanished. For centuries the book is barely mentioned. The first printed edition, in 1559, was made from a manuscript that's since been lost. One more house fire, one more careless librarian, and we wouldn't have it. So here's the plan. Twelve books, in order, about ten days each, with a few days at the end to close the notebook. Book one is different from all the rest. It's a list of debts: what Marcus learned from each person in his life, one by one, starting with his grandfather. In order now.",
+      "voice": "First, the writer. Marcus Aurelius was emperor of Rome. As book one shows, he was taught by Stoic philosophers from his youth, and for years he jotted down notes to himself. He wrote them in Greek, the language of philosophy for educated Romans, not his native Latin. Second, the title. We call the book the Meditations, but that's not what he called it, as far as we know. The Greek manuscripts carry a heading that means something like to himself. Scholars think a later copyist may have added it. Either way, it's honest. These are things a man said to himself. Third, the shape. Twelve books, of uneven length. Inside them, short entries: some a single line, some a page. The section numbers we use are later editors' work, and editions sometimes divide them differently. It doesn't read like an argument. It reads like someone coming back, again and again, to the same few things he needs to remember. Fourth, it nearly vanished. Historians of the text say that for centuries it is barely mentioned, and that the first printed edition was made from a manuscript that's since been lost. One more house fire, one more careless librarian, and we might not have it. So here's the plan. Twelve books, in order, about ten days each, with a few days at the end to close the notebook. Book one is different from all the rest. It's a list of debts: what Marcus learned from each person in his life, one by one, starting with his grandfather. In order now.",
       "screen": ["`AN EMPEROR'S NOTES, IN GREEK.` · `TITLED, PERHAPS LATER: TO HIMSELF.` · `TWELVE BOOKS OF SHORT ENTRIES.` · `IT NEARLY VANISHED.` · then, large: `IN ORDER NOW.`"]
     },
     {
@@ -48,16 +48,16 @@
     },
     { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 521 COUNTS.` → `TOMORROW: GREAT-GRANDFATHER'S ADVICE.`"] }
   ],
-  "howItsDone": "Many readers of the Meditations read it slowly, an entry or two a day, and some keep their own notebook of reminders alongside it.",
+  "howItsDone": "Some readers of the Meditations read it slowly, an entry or two a day, and some keep their own notebook of reminders alongside it.",
   "games": {
     "match": {
       "prompt": "reading the notebook through — tap the pairs.",
-      "pairs": [["Marcus Aurelius", "emperor from 161 to 180"], ["Greek", "the language he wrote in"], ["to himself", "the heading in the manuscripts"], ["1559", "first printed edition"]]
+      "pairs": [["Marcus Aurelius", "an emperor writing to himself"], ["Greek", "the language he wrote in"], ["to himself", "the heading in the manuscripts"], ["the section numbers", "added by later editors"]]
     },
     "myth": [
       ["Marcus wrote the Meditations in Latin", false, "he wrote in Greek, the language of philosophy for educated Romans."],
       ["Marcus himself named the book 'Meditations'", false, "the manuscripts carry a heading like 'to himself', possibly added later."],
-      ["the first printed edition was made from a manuscript now lost", true, "it appeared in 1559."]
+      ["the first printed edition was made from a manuscript now lost", true, "one more loss, and we might not have the book at all."]
     ],
     "fork": {
       "setup": "you're a reader with four months and Marcus's twelve books. how does this path read them?",
@@ -69,7 +69,7 @@
     "trapdoor": [
       "what you thought: a philosophy book by a famous emperor.",
       "what it means: a private notebook of reminders, twelve books, never meant for anyone else.",
-      "what a scholar hears: the title may be a copyist's, the section numbers are editors', and the 1559 first edition came from a manuscript since lost."
+      "what a scholar hears: the title may be a copyist's, the section numbers are editors', and the first printed edition came from a manuscript since lost."
     ]
   },
   "sources": [
@@ -79,6 +79,7 @@
     "status": "pending",
     "keeper": null,
     "notes": [
+      "Editor review (2026-10-01): replaced the banned \"Picture\" hook opener and the \"most powerful man in the world\" superlative; the camp claim now rests on the notes in the text (\"parts of it\"); cut reign dates and the 1559 date from voice and games (claims rule), keeping the lost-manuscript point as what historians of the text report; \"Many\" to \"Some\" in howItsDone.",
       "Reign 161–180 (sole emperor from 169, with Lucius Verus 161–169); confirm the wording.",
       "Title τὰ εἰς ἑαυτόν in the manuscripts, possibly not Marcus's own: confirm.",
       "Editio princeps by Xylander (Zurich, 1559), from a now-lost Palatine manuscript; the other main witness is Vaticanus Graecus 1950. Confirm.",
