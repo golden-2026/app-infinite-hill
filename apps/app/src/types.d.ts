@@ -32,6 +32,8 @@ declare module "@ih/domain" {
   export function mergeSits(...logs: Sit[][]): Sit[];
   export function deriveState(log: Sit[], opts: { today: string; settings?: any }): Derived;
   export function sitOutcome(log: Sit[], date: string, kidId?: string | null): { isNewDay: boolean; showedUp: number; milestone: number | null; streak: StreakOutcome };
+  /** Where placement started someone on each door ({ HINDUISM: 22 }); junk and day 1 dropped. */
+  export function placedStarts(raw: unknown): Record<string, number>;
   export const MILESTONES: readonly number[];
   export function readExport(input: unknown): { sits: Sit[]; settings: any; settingsVersion: number };
   export function fromP0(p0: unknown, o: { newId: () => string }): { sits: Sit[]; settings: any; settingsVersion: number } | null;
@@ -56,11 +58,14 @@ declare module "@ih/content" {
   export function pos(day: number): { camp: string; name: string; lesson: number; of: number; start: number };
   export function camp1(wing: string): any[];
   export function screenLines(a: string[] | undefined): string[];
+  export function splitBeats(text: string, max?: number, cap?: number): string[];
   export function native(word: string, wing?: string): any;
   export function skyFor(...a: any[]): any;
   export function faceFor(...a: any[]): any;
   export function trailX(...a: any[]): any;
   export function guideFallback(...a: any[]): any;
+  export const GUIDE_NO_MATCH: string;
+  export function lessonCovers(d: any, q: string): boolean;
   export function iconsShared(): any[];
   export function KNOW(w: string): string[];
   export function SUN_NOTES(wing: string, short: string, word: string): any[];

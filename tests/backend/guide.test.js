@@ -261,3 +261,46 @@ test("lang rejects anything but en or es", async () => {
     globalThis.fetch = originalFetch;
   }
 });
+
+test("knowledge rules: full answers beyond the lessons, depth by profile, public-domain quotes, schools, and no rulings", async () => {
+  const { buildSystemPrompt, knowledgeRules } = await import("../../api/guide.js");
+  const expert = buildSystemPrompt("Hinduism", { depth: "deep", openness: "stay", commitment: "high", reason: "own" });
+  assert.match(expert, /not only on the lessons they have reached so far/);
+  assert.match(expert, /never tell them a topic is past their lessons/);
+  assert.match(expert, /scholar's depth/);
+  assert.match(expert, /Sanskrit/);
+  assert.match(expert, /public-domain translation whose exact wording you are sure of/);
+  assert.match(expert, /otherwise paraphrase and say it is a paraphrase/);
+  assert.match(expert, /Never invent a verse, prayer/);
+  assert.match(expert, /Vaishnava, Shaiva, Shakta, Smarta/);
+  assert.match(expert, /muhurat/);
+  assert.match(expert, /ask their own family pandit or purohit; never issue a ruling/);
+  assert.match(expert, /up to about 200 words/);
+  // rules that already worked stay
+  assert.match(expert, /Never compare or rank religions/);
+  assert.match(expert, /Never write, compose, or improve a prayer/);
+  assert.match(expert, /talk to a real person today/);
+
+  const beginner = buildSystemPrompt("Judaism", { depth: "new" });
+  assert.match(beginner, /Keep it simple, but still accurate/);
+  assert.match(beginner, /Hebrew/);
+  assert.match(beginner, /ask their own rabbi/);
+  assert.match(beginner, /under 90 words unless asked for more/);
+  assert.doesNotMatch(beginner, /200 words|muhurat/);
+
+  // each door names its own languages and the person to ask; no profile gets the middle depth
+  const asks = { Christianity: "pastor or priest", Catholicism: "parish priest", Islam: "imam", Buddhism: "monastic", Sikhism: "granthi", "Simply Spiritual": "a teacher they trust" };
+  for (const [door, who] of Object.entries(asks)) assert.ok(knowledgeRules(door, null).includes(who), door);
+  assert.match(knowledgeRules("Islam", null), /Arabic.*Pickthall/s);
+  assert.match(knowledgeRules("Sikhism", null), /Gurmukhi/);
+  assert.match(knowledgeRules("Catholicism", null), /Catechism is copyrighted, so paraphrase it/);
+  assert.match(knowledgeRules("Buddhism", null), /Give a full answer/);
+  assert.equal(knowledgeRules("Unknown", null), "");
+
+  // Spanish keeps its rules and its crisis line
+  const es = buildSystemPrompt("Islam", { depth: "deep", lang: "es" });
+  assert.match(es, /Latin American Spanish/);
+  assert.match(es, /paraphrase in Spanish/);
+  assert.match(es, /press 2/);
+  assert.match(es, /scholar's depth/);
+});

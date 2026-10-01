@@ -153,20 +153,48 @@ function rebuildIslamCamp1() {
 export { data };
 export const { buildDay, icon, label, camp1, native, skyFor, faceFor, trailX, placeFromScore, iconsShared, splitBeats, screenLines, parseDur } = logic;
 // The design build's offline Guide matched a lesson's word anywhere inside the question ("amin" in "examine",
-// "al-Amin"). Match whole words only; everything else answers exactly as before.
+// "al-Amin"). Match whole words only. And a word alone isn't enough (2026-10-01): "what is the Gayatri mantra?" hit
+// day 7 ("mantra") though day 7 never mentions the Gayatri. A lesson answers only when its own text covers every
+// other real term in the question; otherwise the Guide says plainly that the lessons don't cover it.
 const escapeRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+/** What the offline Guide says when no lesson covers the question (the app swaps in its own, translated wording). */
+export const GUIDE_NO_MATCH = "None of the lessons covers that, and the live Guide isn't answering right now, so I won't guess. Ask me about one of your words, or ask someone who teaches in your tradition.";
+// Question framing that says nothing about the topic (English and Spanish), so it needn't appear in the lesson.
+const FRAME = new Set(`a about actually all also am an and any are as at be been behind but by can could did do does doing done each else
+explain explained for from get give go had has have he her him his how i if in into is it its just know learn like me mean meaning
+meanings means more most much my no not of on one or our out please really say says said she should so some story stories tell than
+that the their them then there these they thing things this those to today todays up us was we were what whats when where which who
+whom whose why will with word words would you your yours lesson lessons line idea ideas significance purpose origin role
+al como cómo cual cuál cuales cuáles cuéntame cuentame de del detras detrás dia día el en es esa ese eso esta este esto historia hoy
+la las lo los me mi mis para pero por porque que qué quien quién realidad realmente se significa significado sobre su sus te tu tus un una
+uno unos y`.split(/\s+/));
+const TOKEN = /[\p{L}\p{N}]+/gu;
+const stem = (w) => (w.length > 4 ? w.replace(/(ing|ed|es|s)$/u, "") : w);
+/** Every word of a lesson a person hears or reads: title, word, hook, carry, and each segment's voice and screen. */
+function lessonText(d) {
+  const parts = [d.title, d.word, d.hook, d.carry];
+  for (const g of d.segments || []) parts.push(g?.voice, ...(Array.isArray(g?.screen) ? g.screen : []));
+  return parts.filter((x) => typeof x === "string").join(" ").toLowerCase().normalize("NFC");
+}
+/** True when lesson d's own text covers the question: every real term in it, not just the lesson's word. */
+export function lessonCovers(d, q) {
+  const text = lessonText(d);
+  const own = new Set(logic.strip(d?.word).normalize("NFC").match(TOKEN) || []);
+  const terms = (logic.strip(q).normalize("NFC").match(TOKEN) || []).filter((w) => w.length > 2 && !FRAME.has(w) && !own.has(w));
+  return terms.every((w) => new RegExp(`(^|[^\\p{L}\\p{N}])${escapeRe(stem(w))}`, "u").test(text));
+}
 export function guideFallback(wing, q) {
   const ql = logic.strip(q);
   const hit = logic.camp1(wing).find((d) => {
     const w = d.word && logic.strip(d.word);
-    return w && new RegExp(`(^|[^\\p{L}\\p{N}'-])${escapeRe(w)}($|[^\\p{L}\\p{N}'-])`, "u").test(ql);
+    return w && new RegExp(`(^|[^\\p{L}\\p{N}'-])${escapeRe(w)}($|[^\\p{L}\\p{N}'-])`, "u").test(ql) && lessonCovers(d, q);
   });
   if (hit) {
     const teach = (hit.segments || []).find((g) => /teach/.test(g.type));
     const first = teach ? logic.splitBeats(teach.voice, 40, 99)[0] : null;
     return `${hit.word} — ${hit.carry}. ${first || ""} (that's from day ${hit.day}. I'm offline right now, so that's the lesson talking, not me.)`;
   }
-  return `I can't reach the texts right now — no signal. Ask me again in a minute, or ask about one of your words so far.`;
+  return GUIDE_NO_MATCH;
 }
 
 // ─── the five-year path ─────────────────────────────────────────────────────

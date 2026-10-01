@@ -5,7 +5,7 @@ import { useTitle } from "@/lib/title";
 // keeps under "what the companion knows"; facts it proposes are only kept if the person taps them.
 // Companion off (no AI key, offline, or the iPhone build): it answers from the lesson's own text (v175's fallback)
 // and says so plainly. ?flags=guide-live still uses the older /api/guide.
-import { camp1, data, guideFallback, label, lessonInfo } from "@ih/content";
+import { camp1, data, GUIDE_NO_MATCH, guideFallback, label, lessonInfo } from "@ih/content";
 import { useEffect, useRef, useState } from "react";
 import { KeyboardAvoidingView, Platform, Pressable, ScrollView, Text, TextInput, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -35,8 +35,8 @@ function wordName(d: any): string {
   return l ? (l.quote ? `“${l.quote}”` : t("companion.guide.lineOf", { n: l.n, prayer: l.prayer })) : d?.word;
 }
 
-// v175's fallback says "no signal" when it can't match a question. In the pilot the Guide is off by design,
-// not offline, so say what's true and point at the words the person actually has.
+// When no lesson covers a question (guideFallback checks the lesson's own text, not just its word), say what's true:
+// the lessons don't cover it and the live Guide isn't answering, so nothing is guessed; point at the words they have.
 // "what does today's word mean?", "today's line", "the word of the day": today's lesson, whatever it's called.
 const TODAY_ASK = /\b(today'?s|todays|this (?:morning|evening)'?s)\s+(word|line|lesson|idea)\b|\b(word|line) (of|for) (the day|today)\b/i;
 // the same in Spanish: "¿qué significa la palabra de hoy?", "la lección de hoy", "la frase del día"
@@ -79,7 +79,7 @@ function pilotAnswer(wing: string, q: string, words: string[], day = 999): strin
   // matched answers carry v175's "(… I'm offline right now, so that's the lesson talking, not me.)"
   // The lesson's own words stay as written (English until the lessons are translated); the frame around them follows
   // the app's language.
-  if (!/no signal/i.test(a)) {
+  if (a !== GUIDE_NO_MATCH) {
     if (isEs()) return a.replace(/\(that's from day (\d+)\. I'?m offline right now, so that's the lesson talking, not me\.\)/i, (_m, n) => t("companion.guide.fromDay", { day: n }));
     return a.replace(/I'?m offline right now, so that's the lesson talking, not me\./i, t("companion.guide.pilotLesson"));
   }

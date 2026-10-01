@@ -4,7 +4,7 @@
 // its on-device companion. Privacy: nothing the person sent (memory, questions, journal lines) and nothing the model
 // said is ever logged; the provider key lives only in process.env.ANTHROPIC_API_KEY on the server.
 import data from "../packages/content/generated/data.js";
-import { DOORS, LANG_TEXT, PROFILE_TEXT, inputError, langRule, parseJson, readLimitedText } from "./guide.js";
+import { DOORS, LANG_TEXT, PROFILE_TEXT, inputError, knowledgeRules, langRule, parseJson, readLimitedText } from "./guide.js";
 import { recordOutcome, snapshot, takeTurn } from "./_usage.js";
 import { lastCheck } from "./ai-watch.js";
 
@@ -22,7 +22,7 @@ const LIMITS = Object.freeze({
   candidates: 12, candidateTitle: 120, candidateKind: 40, candidateId: 64,
   weekItems: 14, weekLine: 300, practiceItems: 30, practiceChars: 120, feelChars: 20, sharedItems: 3, sharedChars: 1_500,
   messages: 13, messageChars: 2_000, messagesTotal: 12_000,
-  noteWords: 25, reflectWords: 90, suggestionWords: 30, answerChars: 1_500, rememberItems: 3, rememberChars: 120,
+  noteWords: 25, reflectWords: 90, suggestionWords: 30, answerChars: 2_000, rememberItems: 3, rememberChars: 120,
 });
 
 // Door keys (what the app stores) and labels (what people see) both name a door; the server always speaks in labels.
@@ -203,8 +203,8 @@ function aboutThem(profile) {
 
 // Spanish replaces only the voice line (lowercase and American spelling are English rules) and adds the language rule.
 function voiceRule(profile) {
-  if (profile.lang !== "es") return "- Voice: plain, short, warm, all lowercase, American spelling. No emoji, no hype, no guilt, no jargon.";
-  return `- Voice: plain, short, warm, lowercase like the app. No emoji, no hype, no guilt, no jargon.
+  if (profile.lang !== "es") return "- Voice: plain, short, warm, all lowercase, American spelling. No emoji, no hype, no guilt, no jargon (the tradition's own terms are fine, with their meaning).";
+  return `- Voice: plain, short, warm, lowercase like the app. No emoji, no hype, no guilt, no jargon (the tradition's own terms are fine, with their meaning).
 - ${langRule("es", profile.door)} Any "note", "text", "suggestion" and "remember" you write is in Spanish.`;
 }
 
@@ -218,7 +218,8 @@ Rules you always keep:
 - Never tell anyone what to believe, and never push belief or unbelief.
 - Never compare, rank, or judge faiths, and never suggest anyone switch, convert, or choose a religion.
 - ${opennessRule(profile)}
-- Ground what you say in their own door's texts and their own lessons. When you draw on a lesson, name it ("day 3, the lesson on ..."); when you draw on a text, name it. Never invent a quote, verse, story, or citation. If the lessons and texts are quiet on something, or you don't know, say so plainly.
+- Ground what you say in their own door's texts and tradition, and in their own lessons when those touch the question. When you draw on a lesson, name it ("day 3, the lesson on ..."); when you draw on a text, name it. Never invent a quote, verse, story, or citation. If the texts are quiet on something, or you don't know, say so plainly.
+- ${knowledgeRules(door, profile)}
 - Never write, compose, or improve a prayer; you may quote the tradition's own words.
 - If anything touches self-harm, suicide, abuse, or someone being in danger: slow down, be kind, don't lecture, and point them to real help now: in the US, call or text 988 (the Suicide & Crisis Lifeline); anywhere else, their local emergency number; and a trusted person nearby. You are not a substitute for that help.
 - No medical, legal, or financial advice; point to a real professional instead.
@@ -279,12 +280,19 @@ Reply only with the JSON object.`,
   };
 }
 
+// The old "under 90 words" for most people; someone who knows the tradition well gets room for a scholarly answer.
+function chatLength(profile) {
+  return profile.depth === "deep"
+    ? "under 90 words for small talk; for a real question about the tradition, up to about 200 words."
+    : "usually under 90 words unless they ask for more.";
+}
+
 function chatPrompt(r) {
   return {
     system: `${principles(r.profile)}\n\n${memoryBlock(r.memory)}\n\n${todayBlock(r.context)}\n\n${lessonsBlock(r.context, { withToday: true })}
 
 Your job now: talk with them.
-- "text": your reply, usually under 90 words unless they ask for more. Answer from their door and their lessons, cite the lesson or text, and say plainly when you don't know. Use what's in <memory> naturally when it helps; never recite it back.
+- "text": your reply, ${chatLength(r.profile)} Answer from their door's texts and tradition (and their lessons where they touch it), cite the text or lesson, and say plainly when you don't know. Use what's in <memory> naturally when it helps; never recite it back.
 - "remember": up to ${LIMITS.rememberItems} short facts (each under 15 words, third person, e.g. "has a daughter, maya, who is six") that the person clearly said about themselves in their latest message and that would help you walk with them later: their routines, goals, the people they practice for, what helps them. The app asks them before keeping any. Never propose anything about health, diagnoses, sexuality, money, crises, or other people's private details, nothing already in <memory>, and nothing you guessed. Usually this is an empty list.
 Reply only with the JSON object.`,
     messages: r.messages,

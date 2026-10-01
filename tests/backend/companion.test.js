@@ -313,3 +313,27 @@ test("a crisis message in Spanish names real help in Spanish (988, press 2) and 
     restore();
   }
 });
+
+test("chat answers the tradition's real questions, at the person's depth, without ruling", async () => {
+  process.env.ANTHROPIC_API_KEY = "test-server-key";
+  const capture = {};
+  try {
+    globalThis.fetch = provider({ text: "the gayatri is rig veda 3.62.10.", remember: [] }, capture);
+    const deep = await call({ kind: "chat", body: chatBody({ profile: { ...profile, depth: "deep", commitment: "high" }, messages: [{ role: "user", content: "what is the meaning of the gayatri mantra?" }] }) });
+    assert.equal(deep.status, 200);
+    assert.match(capture.body.system, /not only on the lessons they have reached so far/);
+    assert.match(capture.body.system, /never tell them a topic is past their lessons/);
+    assert.match(capture.body.system, /scholar's depth/);
+    assert.match(capture.body.system, /Sanskrit/);
+    assert.match(capture.body.system, /family pandit or purohit; never issue a ruling/);
+    assert.match(capture.body.system, /up to about 200 words/);
+    assert.match(capture.body.system, /Never compare, rank, or judge faiths/);
+    assert.match(capture.body.system, /988/);
+
+    await call({ kind: "chat", body: chatBody() });
+    assert.match(capture.body.system, /usually under 90 words unless they ask for more/);
+    assert.match(capture.body.system, /Keep it simple, but still accurate/);
+  } finally {
+    restore();
+  }
+});
