@@ -12,6 +12,7 @@ import { learnSteps } from "@/session/learn";
 import { lessonScript } from "@ih/content/lesson-script";
 import { LESSONS_BASE, lessonStore } from "@/lib/lessons";
 import { scriptWithin } from "@/session/script-load";
+import { LessonSources } from "@/session/sources-sheet";
 import { RhythmStep, RushStep, SayStep, ScenesStep, TypeItStep } from "@/session/games";
 import { LinearGradient } from "expo-linear-gradient";
 import { Redirect, router, useLocalSearchParams, useNavigation } from "expo-router";
@@ -449,6 +450,7 @@ function Session({ door, day, kidId, mode, deep, voiceOn, onFinish, script = nul
           {nat ? <View style={st.bead}><Text style={{ fontFamily: font.display[800], fontSize: 22, color: color.gold }}>{nat}</Text><Text style={[type.eyebrow(), { color: "#ffffffbb" }]}>{t("session.tally.bead", { n: Math.min(day, 21) })}</Text></View> : null}
           {feelRow}
           {tomorrow ? <View style={st.tomorrow}><Text style={[type.eyebrow(), { color: color.gold }]}>{t("session.tally.tomorrow")}</Text><Text style={{ fontFamily: font.display[800], fontSize: 17, color: "#fff", marginTop: 4 }}>{tomorrow}</Text></View> : null}
+          <LessonSources sources={script?.sources} />
         </View>,
         { foot: <Btn testID="finish" kind="gold" onPress={finish}>{t("session.tally.finish")}</Btn> },
       );

@@ -4,4 +4,7 @@
 # /es is the Spanish website (site-es.html, built by atlas/mock/build.mjs --lang es); it must sit above the catch-all.
 /     /site.html    200!
 /es   /site-es.html 200
+# "Sources and how we write" (sources.html, sources-es.html): reachable by URL only, not linked anywhere yet (noindex).
+/sources     /sources.html    200
+/es/sources  /sources-es.html 200
 /*    /index.html   200
