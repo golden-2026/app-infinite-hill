@@ -43,6 +43,12 @@ const RUMI_PD = "Rumi's field beyond our ideas of right and wrong (a paraphrase;
     else if (v && typeof v === "object") fixSources(v);
   }
 })(data);
+// the voices' own words for the two paths that had none yet (owner-supplied, 2026-10-01)
+data.QUOTES = {
+  ...data.QUOTES,
+  SIKHISM: "Maharaj made us Sikh, and I will continue following Sikhi all my life.",
+  SPIRITUAL: "God meets me every morning with forgiveness and love that I truly don’t deserve.",
+};
 {
   const pascal = (data.CAMP1_ALL?.SPIRITUAL || []).find((d) => d.day === 2);
   if (pascal && /humanity/.test(pascal.title)) pascal.title = "pascal: the quiet room";
