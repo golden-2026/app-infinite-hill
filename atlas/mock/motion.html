@@ -159,14 +159,188 @@ section:not(.hero) img.gpose{transform-origin:50% 100%;will-change:transform}
 a.btn,.gbtn{transition:transform .15s ease}
 a.btn:active,.gbtn:active{transform:scale(.96)}
 }
+
+/* invite-only launch: the waitlist form (shown only while the server's launch switch is on; see the script below) */
+.wl-back{position:fixed;inset:0;z-index:9999;background:rgba(10,10,10,.62);display:none;align-items:flex-end;justify-content:center;padding:0}
+.wl-back.on{display:flex}
+.wl-box{position:relative;width:100%;max-width:440px;max-height:92vh;overflow:auto;background:#fff;color:#111;border-radius:24px 24px 0 0;padding:26px 20px 24px;box-shadow:0 -10px 40px rgba(0,0,0,.3);font:400 15px/1.45 var(--sans)}
+@media(min-width:640px){.wl-back{align-items:center;padding:16px}.wl-box{border-radius:24px}}
+.wl-x{position:absolute;right:12px;top:10px;width:40px;height:40px;border:0;background:none;font:400 26px/1 var(--sans);color:#111;cursor:pointer;border-radius:50%}
+.wl-eb{font:700 10px/1.3 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:#8a7400}
+.wl-h{font:800 26px/1.1 var(--serif);margin:6px 0 8px;letter-spacing:-.01em}
+.wl-p{margin:0 0 14px;color:#444}
+.wl-f label{display:block;font:700 11px/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:#555;margin:12px 0 6px}
+.wl-f input,.wl-f select{width:100%;box-sizing:border-box;border:1.5px solid #d9d4c5;border-radius:12px;padding:13px 14px;font:400 16px/1.2 var(--sans);color:#111;background:#fff}
+.wl-f input:focus,.wl-f select:focus{outline:3px solid #EFFF6B;border-color:#111}
+.wl-hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
+.wl-go{display:block;width:100%;margin-top:18px;border:0;border-radius:999px;background:#111;color:#EFFF6B;padding:16px;font:800 14px/1 var(--sans);letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
+.wl-go[disabled]{opacity:.5;cursor:default}
+.wl-go.light{background:#EFFF6B;color:#111}
+.wl-err{color:#a12a00;font-weight:600;margin-top:10px;min-height:1px}
+.wl-scar{margin-top:14px;font:600 12.5px/1.45 var(--sans);color:#6b6448}
+.wl-fine{margin-top:8px;font:400 12px/1.45 var(--sans);color:#777}
+.wl-pos{font:800 34px/1.05 var(--serif);margin:6px 0 4px}
+.wl-link{display:flex;gap:8px;margin:14px 0 6px}
+.wl-link input{flex:1;min-width:0;border:1.5px solid #d9d4c5;border-radius:12px;padding:12px;font:400 14px/1.2 var(--sans);background:#F7F7F5}
+.wl-link button{border:0;border-radius:12px;background:#EFFF6B;color:#111;font:800 12px/1 var(--sans);letter-spacing:.06em;text-transform:uppercase;padding:0 14px;cursor:pointer}
+.wl-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:12px}
+.wl-a{background:none;border:0;padding:0;font:600 13px/1.4 var(--sans);color:#111;text-decoration:underline;cursor:pointer}
+.wl-a.mute{color:#777}
 </style>
 
+<div class="wl-back" id="wlback" hidden><div class="wl-box" id="wlbox" role="dialog" aria-modal="true" aria-labelledby="wlh"></div></div>
+<script>
+// Invite-only launch (api/waitlist.js). The page asks the server once: only while its launch switch (INVITE_ONLY) is on
+// does every way into the app become "request an invite", opening this small waitlist form. Off, unreachable, or on a
+// host without the function: nothing here runs and the page works exactly as before. Every number shown comes from
+// the server (your real place in your door's line, how many are waiting for that door); nothing is made up here.
+// The person's private key is kept in this browser (localStorage "ih:waitlist") so they can come back to their place.
+(function () {
+  var WL_LANG = 'en';
+  var WL_T = {"cta":"request an invite","eyebrow":"infinite hill is invite-only","title":"request an invite","lede":"we're letting people in door by door. get in line for yours.","refNote":"a friend sent you their link. when you join, they move up the line.","email":"your email","door":"your door","pick":"pick a door","name":"first name (optional)","go":"get in line","going":"one moment…","scarcity":"we open each door as its scholars finish reviewing it. the founding class is capped at {cap}.","full":"the founding class is full for now. you can still get in line for what opens next.","privacy":"we keep your email and door only to invite you. nothing is sent to anyone else, and you can take yourself off the list here anytime.","badEmail":"that email doesn't look right.","badDoor":"pick a door first.","already":"that email is already on the list. open this page on the device you joined from to see your place.","slow":"too many tries from here. please wait a bit and try again.","offline":"we couldn't reach the list right now. please try again in a moment.","inLine":"you're in line","pos":"you're #{n} in line for the {door} door.","waiting1":"you're the only one waiting for this door so far.","waitingN":"{n} people are waiting for this door.","yourLink":"your link","copy":"copy","copied":"copied","share":"share","moveUp":"move up by inviting friends: each friend who joins with your link moves you up to {places} places (up to {cap} friends count).","refs0":"no friends have joined with your link yet.","refs1":"1 friend has joined with your link.","refsN":"{n} friends have joined with your link.","shareText":"i'm in line for infinite hill. join with my link and i move up:","haveCode":"have an invite code?","codeLabel":"invite code","enter":"come in","badCode":"that code doesn't look right.","leave":"take me off the list","leaveSure":"take you off the list? your place and your link go away.","left":"you're off the list. everything we kept about you is deleted.","invited":"your door is open","invitedBody":"you're in. your invite is ready, and it works once.","close":"close"};
+  var WL_DOORS = [["CHRISTIANITY","Christianity"],["CATHOLIC","Catholicism"],["HINDUISM","Hinduism"],["ISLAM","Islam"],["JUDAISM","Judaism"],["BUDDHISM","Buddhism"],["SIKHISM","Sikhism"],["SPIRITUAL","Simply Spiritual"]];
+  var KEY = 'ih:waitlist', API = '/api/waitlist?kind=';
+  var back = document.getElementById('wlback'), box = document.getElementById('wlbox');
+  if (!back || !box || !window.fetch) return;
+  var status = null, ref = null, preDoor = null, lastFocus = null;
+  try { var q = new URLSearchParams(location.search); var r = (q.get('ref') || '').toLowerCase(); if (/^[a-z2-9]{8}$/.test(r)) ref = r; } catch (e) {}
+  function fill(s, v) { return String(s).replace(/\{(\w+)\}/g, function (m, k) { return v && v[k] !== undefined ? v[k] : m; }); }
+  function num(n) { try { return Number(n).toLocaleString(WL_LANG === 'es' ? 'es' : 'en'); } catch (e) { return String(n); } }
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  function doorName(code) { for (var i = 0; i < WL_DOORS.length; i++) if (WL_DOORS[i][0] === code) return WL_DOORS[i][1]; return code; }
+  function saved() { try { return JSON.parse(localStorage.getItem(KEY) || 'null'); } catch (e) { return null; } }
+  function save(v) { try { if (v) localStorage.setItem(KEY, JSON.stringify(v)); else localStorage.removeItem(KEY); } catch (e) {} }
+  function call(kind, opt) {
+    opt = opt || {};
+    var ctl = window.AbortController ? new AbortController() : null, t = ctl ? setTimeout(function () { ctl.abort(); }, 8000) : null;
+    var h = {}; if (opt.body) h['Content-Type'] = 'application/json'; if (opt.key) h.Authorization = 'Waitlist ' + opt.key;
+    return fetch(API + kind, { method: opt.body ? 'POST' : 'GET', headers: h, body: opt.body ? JSON.stringify(opt.body) : undefined, credentials: 'omit', referrerPolicy: 'no-referrer', signal: ctl ? ctl.signal : undefined })
+      .then(function (res) { return res.json().then(function (j) { return { status: res.status, body: j }; }, function () { return { status: res.status, body: null }; }); })
+      .catch(function () { return { status: 0, body: null }; })
+      .then(function (x) { if (t) clearTimeout(t); return x; });
+  }
+  function scarcity() { return '<p class="wl-scar">' + esc(status && status.full ? WL_T.full : fill(WL_T.scarcity, { cap: num(status && status.foundingCap || 10000) })) + '</p>'; }
+  function codeBlock() {
+    return '<details style="margin-top:14px"><summary class="wl-a" style="display:inline">' + esc(WL_T.haveCode) + '</summary><form class="wl-f" id="wlcode"><label for="wlc">' + esc(WL_T.codeLabel) + '</label><input id="wlc" autocomplete="off" autocapitalize="none" spellcheck="false" maxlength="12"><p class="wl-err" id="wlcerr" role="alert"></p><button class="wl-go light" type="submit">' + esc(WL_T.enter) + '</button></form></details>';
+  }
+  function wireCode() {
+    var f = document.getElementById('wlcode'); if (!f) return;
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var c = (document.getElementById('wlc').value || '').trim().toLowerCase().replace(/[\s-]/g, '');
+      if (!/^[a-z2-9]{8}$/.test(c)) { document.getElementById('wlcerr').textContent = WL_T.badCode; return; }
+      location.href = '/invite?code=' + c + (WL_LANG === 'es' ? '&lang=es' : '');
+    });
+  }
+  function formView(msg) {
+    var opts = '<option value="">' + esc(WL_T.pick) + '</option>' + WL_DOORS.map(function (d) { return '<option value="' + d[0] + '"' + (preDoor === d[0] ? ' selected' : '') + '>' + esc(d[1]) + '</option>'; }).join('');
+    box.innerHTML = '<button class="wl-x" type="button" aria-label="' + esc(WL_T.close) + '">×</button>' +
+      '<div class="wl-eb">' + esc(WL_T.eyebrow) + '</div><h2 class="wl-h" id="wlh">' + esc(WL_T.title) + '</h2>' +
+      '<p class="wl-p">' + esc(ref ? WL_T.refNote : WL_T.lede) + '</p>' +
+      '<form class="wl-f" id="wlform" novalidate>' +
+      '<label for="wle">' + esc(WL_T.email) + '</label><input id="wle" type="email" inputmode="email" autocomplete="email" autocapitalize="none" spellcheck="false" maxlength="254" required>' +
+      '<label for="wld">' + esc(WL_T.door) + '</label><select id="wld" required>' + opts + '</select>' +
+      '<label for="wln">' + esc(WL_T.name) + '</label><input id="wln" autocomplete="given-name" maxlength="40">' +
+      '<div class="wl-hp" aria-hidden="true"><label for="wlw">website</label><input id="wlw" name="website" tabindex="-1" autocomplete="off"></div>' +
+      '<p class="wl-err" id="wlerr" role="alert">' + esc(msg || '') + '</p>' +
+      '<button class="wl-go" type="submit" id="wlgo">' + esc(WL_T.go) + '</button></form>' +
+      scarcity() + '<p class="wl-fine">' + esc(WL_T.privacy) + '</p>' + codeBlock();
+    wireCode();
+    document.getElementById('wlform').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var email = document.getElementById('wle').value.trim(), door = document.getElementById('wld').value, err = document.getElementById('wlerr'), go = document.getElementById('wlgo');
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { err.textContent = WL_T.badEmail; document.getElementById('wle').focus(); return; }
+      if (!door) { err.textContent = WL_T.badDoor; document.getElementById('wld').focus(); return; }
+      go.disabled = true; go.textContent = WL_T.going; err.textContent = '';
+      var body = { email: email, door: door, lang: WL_LANG }, nm = document.getElementById('wln').value.trim(), hp = document.getElementById('wlw').value;
+      if (nm) body.name = nm; if (ref) body.ref = ref; if (hp) body.website = hp;
+      call('join', { body: body }).then(function (r) {
+        go.disabled = false; go.textContent = WL_T.go;
+        if (r.status === 200 && r.body && r.body.key) { save({ key: r.body.key }); lineView(r.body); return; }
+        if (r.status === 200) { lineView(null); return; } // a bot's answer: nothing kept, nothing to show
+        err.textContent = r.status === 409 ? WL_T.already : r.status === 429 ? WL_T.slow : r.status === 400 && r.body && r.body.field === 'door' ? WL_T.badDoor : r.status === 400 ? WL_T.badEmail : WL_T.offline;
+      });
+    });
+  }
+  function lineView(d) {
+    if (!d) { box.innerHTML = '<button class="wl-x" type="button" aria-label="' + esc(WL_T.close) + '">×</button><h2 class="wl-h" id="wlh">' + esc(WL_T.inLine) + '</h2>'; return; }
+    if (d.state === 'invited') {
+      box.innerHTML = '<button class="wl-x" type="button" aria-label="' + esc(WL_T.close) + '">×</button><div class="wl-eb">' + esc(doorName(d.door)) + '</div><h2 class="wl-h" id="wlh">' + esc(WL_T.invited) + '</h2><p class="wl-p" aria-live="polite">' + esc(WL_T.invitedBody) + '</p><a class="wl-go light" style="text-align:center;text-decoration:none" id="wlin" href="' + esc(d.inviteLink.replace(/^https?:\/\/[^/]+/, '')) + '">' + esc(WL_T.enter) + '</a>';
+      return;
+    }
+    var refs = d.refs || 0;
+    box.innerHTML = '<button class="wl-x" type="button" aria-label="' + esc(WL_T.close) + '">×</button>' +
+      '<div class="wl-eb">' + esc(WL_T.inLine) + '</div>' +
+      '<h2 class="wl-h" id="wlh" aria-live="polite">' + esc(fill(WL_T.pos, { n: num(d.position), door: doorName(d.door) })) + '</h2>' +
+      '<p class="wl-p">' + esc(d.waiting <= 1 ? WL_T.waiting1 : fill(WL_T.waitingN, { n: num(d.waiting) })) + '</p>' +
+      '<p class="wl-p"><b>' + esc(fill(WL_T.moveUp, { places: (d.rule && d.rule.places) || 100, cap: (d.rule && d.rule.cap) || 10 })) + '</b></p>' +
+      '<div class="wl-eb" style="color:#555">' + esc(WL_T.yourLink) + '</div>' +
+      '<div class="wl-link"><input id="wllink" readonly value="' + esc(d.link) + '" aria-label="' + esc(WL_T.yourLink) + '"><button type="button" id="wlcopy">' + esc(WL_T.copy) + '</button>' + (navigator.share ? '<button type="button" id="wlshare">' + esc(WL_T.share) + '</button>' : '') + '</div>' +
+      '<p class="wl-fine" id="wlrefs">' + esc(refs === 0 ? WL_T.refs0 : refs === 1 ? WL_T.refs1 : fill(WL_T.refsN, { n: num(refs) })) + '</p>' +
+      scarcity() + codeBlock() +
+      '<div class="wl-row"><button type="button" class="wl-a mute" id="wlleave">' + esc(WL_T.leave) + '</button></div>';
+    wireCode();
+    document.getElementById('wlcopy').addEventListener('click', function () {
+      var i = document.getElementById('wllink'), b = this;
+      var ok = function () { b.textContent = WL_T.copied; setTimeout(function () { b.textContent = WL_T.copy; }, 1800); };
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(i.value).then(ok, function () { i.select(); try { document.execCommand('copy'); ok(); } catch (e) {} });
+      else { i.select(); try { document.execCommand('copy'); ok(); } catch (e) {} }
+    });
+    var sh = document.getElementById('wlshare');
+    if (sh) sh.addEventListener('click', function () { navigator.share({ text: WL_T.shareText, url: d.link }).catch(function () {}); });
+    document.getElementById('wlleave').addEventListener('click', function () {
+      if (!window.confirm(WL_T.leaveSure)) return;
+      var s = saved();
+      call('leave', { body: {}, key: s && s.key }).then(function (r) {
+        if (r.status === 200 || r.status === 401) { save(null); box.innerHTML = '<button class="wl-x" type="button" aria-label="' + esc(WL_T.close) + '">×</button><h2 class="wl-h" id="wlh">' + esc(WL_T.left) + '</h2>'; }
+        else window.alert(WL_T.offline);
+      });
+    });
+  }
+  function open(door) {
+    preDoor = door || null;
+    lastFocus = document.activeElement;
+    back.hidden = false; back.classList.add('on'); document.body.style.overflow = 'hidden';
+    var s = saved();
+    if (s && s.key) {
+      box.innerHTML = '<h2 class="wl-h" id="wlh">' + esc(WL_T.going) + '</h2>';
+      call('me', { key: s.key }).then(function (r) {
+        if (r.status === 200 && r.body) lineView(r.body);
+        else { if (r.status === 401) save(null); formView(r.status === 401 ? '' : WL_T.offline); }
+        focusFirst();
+      });
+    } else { formView(); focusFirst(); }
+  }
+  function focusFirst() { var f = box.querySelector('input:not([tabindex="-1"]),select,button:not(.wl-x),a'); if (f) f.focus(); }
+  function close() { back.classList.remove('on'); back.hidden = true; document.body.style.overflow = ''; if (lastFocus && lastFocus.focus) lastFocus.focus(); }
+  back.addEventListener('click', function (e) { if (e.target === back || (e.target.classList && e.target.classList.contains('wl-x'))) close(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && back.classList.contains('on')) close(); });
+  function intoApp(a) { var h = a.getAttribute('href') || ''; return h.indexOf('/welcome') === 0; }
+  function turnOn() {
+    // every "Start free" / "join the movement" button becomes "request an invite"; every way into the app opens the form
+    [].forEach.call(document.querySelectorAll('a[href]'), function (a) {
+      if (!intoApp(a)) return;
+      if (/\bbtn\b/.test(a.className)) a.textContent = WL_T.cta;
+    });
+    document.addEventListener('click', function (e) {
+      var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+      if (!a || !intoApp(a)) return;
+      e.preventDefault(); e.stopPropagation();
+      var m = /[?&]door=([A-Z]+)/.exec(a.getAttribute('href')); open(m ? m[1] : null);
+    }, true);
+    window.goldenOpen = function (door) { open(door || null); };
+    if (ref) open(null);
+  }
+  call('status').then(function (r) { if (r.status === 200 && r.body && r.body.inviteOnly === true) { status = r.body; turnOn(); } });
+})();
+</script>
 <script>
 (function () {
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var POSE = { wave: '{{GUY_WAVE}}', cheer: '{{GUY_CHEER}}', jump: '{{GUY_JUMP}}', joy: '{{GUY_JOY}}', meditate: '{{GUY_MEDITATE}}', namaste: '{{GUY_NAMASTE}}', thumbs: '{{GUY_THUMBS}}', walk: '{{GUY_WALK}}', stride: '{{GUY_STRIDE}}', climb: '{{GUY_CLIMB}}', globe: '{{GUY_GLOBE}}', point: '{{GUY_POINT}}', idea: '{{GUY_IDEA}}', think: '{{GUY_THINK}}', heart: '{{GUY_HEART}}', peace: '{{GUY_PEACE}}' };
-  var hero = document.querySelector('section.hero'), demo = document.getElementById('playdemo');
-  if (hero && demo) hero.parentNode.insertBefore(demo, hero.nextSibling);
+  // how it plays: the game demo takes the place of "what a day looks like" (#what), which moves inside it — one section
+  var what = document.getElementById('what'), demo = document.getElementById('playdemo');
+  if (what && demo) { what.parentNode.insertBefore(demo, what); demo.appendChild(what); }
 
   var what = document.querySelector('#what .wrap .ghead'), band = null;
   if (what) {
@@ -219,6 +393,7 @@ a.btn:active,.gbtn:active{transform:scale(.96)}
   // the finished animated mascot (8 hand-made loops, green keyed out), matched to what each section is about
   var LOOP = { wave: '/mascot/wave.webp', cheer: '/mascot/cheer.webp', walk: '/mascot/walk.webp', climb: '/mascot/climb.webp', meditate: '/mascot/meditate.webp', think: '/mascot/think.webp', celebrate: '/mascot/celebrate.webp', tap: '/mascot/tap_reaction.webp', peek: '/mascot/peek.webp', thumbs: '/mascot/thumbs_up.webp', namaste: '/mascot/namaste.webp', read: '/mascot/read.webp', lantern: '/mascot/lantern.webp', sit: '/mascot/sit_on_rock.webp' };
   var PLAN = [
+    { sel: '#goal', enter: 'drop', loop: 'still' }, // no animated globe loop: he keeps the globe pose
     { sel: '#voices', enter: 'peek', loop: 'peek' },
     { sel: '#mission', enter: 'drop', loop: 'think' },
     { sel: '#what', enter: 'walk', loop: 'walk' },
