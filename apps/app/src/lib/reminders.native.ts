@@ -11,6 +11,8 @@ Notifications.setNotificationHandler({
 });
 
 export const reminderSupport = () => ({ can: true, note: null as string | null });
+export const remindersReady = () => true;
+export const remindersServer = () => true;
 
 type StoreLike = {
   saved: { sits?: { date: string; at: string; kidId: string | null }[]; settings: { reminder: { on: boolean; time: string; set?: boolean }; homeWing: string; streakOn?: boolean } };

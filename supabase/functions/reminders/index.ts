@@ -4,11 +4,13 @@
 //   POST {op:"sat", …}          → "sat today" (so today's reminder is skipped)
 //   POST {op:"unsubscribe", …}  → removes the device
 //   POST (x-cron-secret)        → send due reminders (pg_cron every 15 min)
-// Rules: one a day at the person's local time, never after they sat that day, dead endpoints removed.
+// Rules: one a day at the person's local time, never after they sat that day, dead endpoints removed. On the 5th day
+// without a lesson, one last gentle note; then nothing until they practice again (quiet.ts).
 // Pilot has no accounts (2026-09-25): devices are anonymous; nothing about the person is stored.
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
 import { createClient } from "npm:@supabase/supabase-js@2";
 import webpush from "npm:web-push@3.6.7";
+import { LAST_NOTE, dailyLine, webNote } from "./quiet.ts";
 
 const db = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!, { auth: { persistSession: false } });
 const SUBJECT = "https://infinite-hill-app.netlify.app";
@@ -54,11 +56,6 @@ function localParts(tz: string, now: Date) {
   return { date: `${p.year}-${p.month}-${p.day}`, minutes: Number(p.hour) * 60 + Number(p.minute) };
 }
 const target = (t: string) => { const [h, m] = (t === "sundown" ? "19:00" : t).split(":").map(Number); return h * 60 + m; };
-const NOTES = [
-  "it's golden hour. a few minutes for you.",
-  "the sun went down. your stone's still lit till midnight.",
-  "one breath, whenever you're ready. the hill's right where you left it.",
-];
 
 async function deviceOp(body: any) {
   const { op, device_id, device_secret } = body ?? {};
@@ -98,7 +95,9 @@ async function sendDue() {
     const { date, minutes } = localParts(d.tz, now);
     const t = target(d.reminder_time);
     if (d.last_sent_date === date || d.last_sat_date === date || minutes < t || minutes >= t + WINDOW_MIN) { skipped++; continue; }
-    const body = NOTES[new Date(date).getUTCDate() % NOTES.length];
+    const kind = webNote(date, d.last_sat_date);
+    if (kind === "quiet") { skipped++; continue; }
+    const body = kind === "last" ? LAST_NOTE : dailyLine(date);
     try {
       await webpush.sendNotification({ endpoint: d.endpoint, keys: { p256dh: d.p256dh, auth: d.auth_key } }, JSON.stringify({ title: "infinite hill", body, url: "/today" }), { TTL: 3600, urgency: "normal" });
       await db.from("push_devices").update({ last_sent_date: date }).eq("device_id", d.device_id);

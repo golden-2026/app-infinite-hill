@@ -14,6 +14,7 @@ import { eraseCompanion } from "./companion/memory";
 import { addMinutes, type Timed } from "./year";
 import type { QuestState } from "@/content/seasons";
 import { leaveFriends } from "./friends";
+import { forgetPulse } from "./pulse";
 import { addDays as addDaysTo, cleanCards, noteRecall, noteSlips, type Card, type Slip } from "./missed";
 import { t } from "@/i18n";
 
@@ -39,6 +40,10 @@ export type Settings = {
   book: { line: string; door: string; date: string }[];
   signals: { door: string; day: number; verdict: string; next: string | null; date: string }[];
   analytics: "unasked" | "yes" | "no";
+  /** Anonymous return counts (lib/pulse): on unless they switch it off under You › Your data. */
+  pulse?: boolean;
+  /** The last day they walked past the "want a nudge?" offer at the end of a lesson (asked again a week later). */
+  remindOffer?: string | null;
   reviewedOn?: string | null;
   carried?: { date: string; lesson: number; did: boolean } | null;
   unlocksSeen?: string[];
@@ -273,6 +278,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       remove("ih:device-secret");
       eraseCompanion(); // the companion's memory (facts, moods, journal) goes with everything else
       leaveFriends(); // friends too: the server copy (nickname, numbers, friend list) and this phone's
+      forgetPulse(); // the two dates the anonymous return counts work from
       setSaved(load());
     },
   }), [saved, today, derived, door, commit]);

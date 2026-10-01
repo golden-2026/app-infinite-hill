@@ -1,4 +1,5 @@
 import { track } from "@/lib/analytics";
+import { pulseLesson } from "@/lib/pulse";
 import { useTitle } from "@/lib/title";
 // A day's lesson: v175 Session, as a real screen. Queue of steps, combo, "one more time" on the misses
 // (nothing counted twice), then the tally. Leaving asks first; finishing records the sit and opens /done.
@@ -256,6 +257,7 @@ function Session({ door, day, kidId, mode, deep, voiceOn, onFinish, script = nul
     const outcome = onFinish({ door, day, kidId });
     if (!kidId) earnLight(lessonLight(score.right, score.asked || graded, best), best, score.asked > 0 && score.right === score.asked);
     track("lesson_done", { door, day, right: score.right, asked: score.asked, newDay: outcome.isNewDay, kid: !!kidId });
+    if (!kidId) pulseLesson(todayNow()); // anonymous: only "a lesson was finished today" (lib/pulse)
     // a child's sit moves the child's hill and the child's streak, not yours: a kid-sized cheer, then back to the table
     if (kidId) {
       if (me.settings.streakOn !== false && outcome.streak.grew) router.replace({ pathname: "/done/kid", params: { door, day: String(day), kid: kidId, streak: String(outcome.streak.after), prev: String(outcome.streak.before) } });
@@ -263,8 +265,9 @@ function Session({ door, day, kidId, mode, deep, voiceOn, onFinish, script = nul
       return;
     }
     const st = outcome.streak;
-    // the streak's facts ride along to the after-lesson screens (the streak screen is /done/lit); nothing shows in the lesson itself
-    router.replace({ pathname: "/done", params: { door, day: String(day), right: String(score.right), total: String(score.asked), word: plan.word, carry: plan.carry, minutes: String(minutes), newDay: outcome.isNewDay ? "1" : "0", count: String(outcome.showedUp), milestone: st.milestone ? String(st.milestone) : "", streak: String(st.after), prev: String(st.before), restored: st.restored ? "1" : "" } });
+    // the streak's facts ride along to the after-lesson screens (the streak screen is /done/lit), and tomorrow's title
+    // for the last one (/done/tomorrow); nothing shows in the lesson itself
+    router.replace({ pathname: "/done", params: { door, day: String(day), right: String(score.right), total: String(score.asked), word: plan.word, carry: plan.carry, minutes: String(minutes), newDay: outcome.isNewDay ? "1" : "0", count: String(outcome.showedUp), milestone: st.milestone ? String(st.milestone) : "", streak: String(st.after), prev: String(st.before), restored: st.restored ? "1" : "", tomorrow: (script?.tomorrow || lessonInfo(door, day + 1)?.title || "").slice(0, 120) } });
   };
   const leave = () => { finished.current = true; hush(); remove(resumeKey); router.canGoBack() ? router.back() : router.replace("/today"); };
   // The one confirm panel the whole app uses, not a lesson-only dialog.
@@ -370,7 +373,6 @@ function Session({ door, day, kidId, mode, deep, voiceOn, onFinish, script = nul
     case "tally": {
       const info = plan.info;
       const ideas = Math.min(4, (info?.segments ? screenLines(info.segments.find((g: any) => /teach/.test(g.type))?.screen).length : 2) || 2);
-      const tomorrow = lessonInfo(door, day + 1)?.title;
       const nat = native(plan.word, door);
       const tiles: [string, string, string, boolean][] = [
         ["1", t("session.tile.word"), plan.word, true],
@@ -449,7 +451,6 @@ function Session({ door, day, kidId, mode, deep, voiceOn, onFinish, script = nul
           <Text style={{ fontFamily: font.display[500], fontSize: 17, color: "#ffffffcc", marginTop: 8, textAlign: "center" }}>{t("session.tally.line")}<Text style={{ fontStyle: "italic" }}>{/[.?!…]$/.test(plan.carry) ? plan.carry : `${plan.carry}.`}</Text></Text>
           {nat ? <View style={st.bead}><Text style={{ fontFamily: font.display[800], fontSize: 22, color: color.gold }}>{nat}</Text><Text style={[type.eyebrow(), { color: "#ffffffbb" }]}>{t("session.tally.bead", { n: Math.min(day, 21) })}</Text></View> : null}
           {feelRow}
-          {tomorrow ? <View style={st.tomorrow}><Text style={[type.eyebrow(), { color: color.gold }]}>{t("session.tally.tomorrow")}</Text><Text style={{ fontFamily: font.display[800], fontSize: 17, color: "#fff", marginTop: 4 }}>{tomorrow}</Text></View> : null}
           <LessonSources sources={script?.sources} />
         </View>,
         { foot: <Btn testID="finish" kind="gold" onPress={finish}>{t("session.tally.finish")}</Btn> },
@@ -470,7 +471,6 @@ const st = StyleSheet.create({
   newPill: { alignSelf: "flex-start", backgroundColor: color.gold, borderRadius: 999, paddingVertical: 4, paddingHorizontal: 10, marginBottom: 12 },
   tile: { flex: 1, backgroundColor: "#ffffff14", borderColor: "#ffffff33", borderWidth: 1, borderRadius: 16, paddingVertical: 12, paddingHorizontal: 10 },
   bead: { flexDirection: "row", alignItems: "center", gap: 10, marginTop: 6, backgroundColor: "#ffffff14", borderRadius: 999, paddingVertical: 8, paddingHorizontal: 14 },
-  tomorrow: { marginTop: 10, borderTopWidth: 1, borderTopColor: "#ffffff22", paddingTop: 10, width: "100%" },
   esNote: { flexDirection: "row", alignItems: "center", gap: 10, marginTop: 10, marginHorizontal: 20, backgroundColor: "#ffffff14", borderColor: "#ffffff33", borderWidth: 1, borderRadius: 16, paddingVertical: 10, paddingHorizontal: 14 },
   esNoteBtn: { backgroundColor: color.gold, borderRadius: 999, minHeight: 36, paddingVertical: 8, paddingHorizontal: 12, justifyContent: "center" },
 });

@@ -11,8 +11,8 @@ export default function Save() {
   const { go, close } = useDone();
   return (
     <Screen close={close} footer={<>
-        <Btn testID="save-email" onPress={() => router.push({ pathname: "/sign-in", params: { then: "/done/remind", mode: "save" } })}>{t("session.save.email")}</Btn>
-        <Btn kind="ghost" onPress={() => go("/done/remind")}>{t("session.save.later")}</Btn>
+        <Btn testID="save-email" onPress={() => router.push({ pathname: "/sign-in", params: { then: "/done/tomorrow", mode: "save" } })}>{t("session.save.email")}</Btn>
+        <Btn kind="ghost" onPress={() => go("/done/tomorrow")}>{t("session.save.later")}</Btn>
       </>}>
       <View style={{ flex: 1, justifyContent: "center", gap: 16 }}>
         <View style={{ flexDirection: "row", gap: 14, alignItems: "flex-start" }}><Sun size={56} mood="happy" /><Bubble>{t("session.save.bubble")}</Bubble></View>

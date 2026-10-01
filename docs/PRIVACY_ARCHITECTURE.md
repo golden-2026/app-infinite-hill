@@ -78,6 +78,53 @@ Keep `ANTHROPIC_API_KEY` and any Turso credentials in server-only deployment sec
 
 Before live use, confirm the deployed route paths are actually mapped by Netlify and that methods, headers, body-size limits, HTTPS, no-store response headers, logs, and environment variables match the source. Confirm whether the serverless runtime and Turso deployment tolerate the client's request patterns and share one durable database; local SQLite is only a development default and should not be treated as durable serverless production storage.
 
+## Anonymous return counts ("pulse", added 2026-10-01)
+
+The app (apps/app) counts, without any identifier, whether people come back. It exists to measure day-1, day-7 and
+day-30 return and lessons finished per day, and to compare two versions of a screen later. Code: `apps/app/src/lib/pulse.ts`
+and `pulse-plan.ts` (phone), `api/pulse.js` (server), `netlify/functions/pulse.js` + `netlify/_shared/pulse-store.js`
+(Netlify Blobs store `pulse`), `atlas/pulse-report.mjs` (the owner's table).
+
+**What the phone sends.** A `POST /api/pulse` with a JSON body of exactly these fields and nothing else:
+
+| Field | Example | Meaning |
+|---|---|---|
+| `cohortDate` | `"2026-10-07"` | The phone's own local date of its first open (for a phone that already had lessons before this existed: the date of its first lesson). |
+| `daysSince` | `7` | Whole days from `cohortDate` to today on that phone. |
+| `event` | `"open"` | `"first"` (the very first open, day 0), `"open"` (the first open on a later day), or `"lesson"` (a lesson was finished; not a child's lesson, not the extra round). |
+| `variant` | `"finish-b"` | Optional. Only sent if the build sets `EXPO_PUBLIC_PULSE_VARIANT`; the live build sets none. |
+
+When it is sent: at most one `first`/`open` per local day (the phone remembers "already said today" under the
+`ih:pulse` key, with the first-open date; both stay on the phone), plus one `lesson` per finished lesson. No install
+id, device id, account, friend id, door or religion, lesson number, word, answer, mood, Guide or companion text, time
+zone, language or time of day is sent. The request is sent with `credentials: "omit"` and `referrerPolicy: "no-referrer"`
+(the page address can name a door, e.g. `/session/ISLAM/3`, so it must not ride along as a Referer).
+
+**What the server does.** It refuses any body with another field, an unknown event, a `first` that isn't day 0, an
+`open` on day 0, a non-integer or out-of-range `daysSince`, or a date (`cohortDate + daysSince`) that isn't "today"
+somewhere on Earth (within about 50 hours of the server's clock). It never reads the IP address, the user agent or any
+other header besides `content-type` (and `authorization` on reads), stores no per-request record and logs nothing. It
+only increments counters: `cohort/<variant>/<cohortDate>` = `{ installs, back: { "1": n, …, "30": n } }` and
+`day/<variant>/<date>` = `{ first, opens, lessons }` (variant `-` when none). Two pings landing at once are both counted
+(conditional writes on the Blobs ETag, retried). The flood brake is a per-instance count of requests per minute, not
+per person. As with any request, Netlify's own edge sees the connection's IP address in transit; this function does
+not receive it into storage and the counts cannot be joined back to a phone.
+
+**Reading.** `GET /api/pulse?from=YYYY-MM-DD&to=YYYY-MM-DD` with `Authorization: Bearer <PULSE_READ_KEY>`. The key is a
+server environment variable set by the owner in Netlify (at least 16 characters, "contains secret values", scope
+Functions); it is never in the app or any `EXPO_PUBLIC_*`/`VITE_*` setting. Without it, reading answers 404.
+`node atlas/pulse-report.mjs <siteUrl>` prints the table (the key is read from the terminal's environment, never
+printed).
+
+**The person's choice.** On by default; a switch under You › Your data ("count my return, anonymously") turns it off,
+and the privacy text in You › Legal says so. "Delete everything" also removes `ih:pulse`. Note for counsel: the app
+assumes some users are under 18; the counts carry no identifier, but whether a default-on aggregate count is acceptable
+for the audience and jurisdictions is a policy decision, not an engineering one.
+
+**Limits.** A phone that clears its storage counts as a new first open. Small cohorts (a handful of installs on a day)
+make percentages noisy; read them in aggregate. Anyone can post a well-formed ping, so the counts can be inflated by a
+determined person; they are for direction, not accounting.
+
 ## Release blockers and ordered changes
 
 ### P0 — required before public launch or sensitive real-user collection

@@ -78,7 +78,9 @@ export function ScenesStep({ step, onDone }: { step: any; onDone: Done }) {
   const start = useMemo(() => {
     // a real shuffle that never starts already solved
     let o = items.map((_, i) => i);
-    for (let t = 0; t < 8 && o.every((v, i) => v === i); t++) o = [...o].sort(() => Math.random() - 0.5);
+    // the counter must not be called `t`: React Compiler lifts this loop out of useMemo and loses the local, so `t++`
+    // landed on the imported i18n t (it became NaN and the session screen's next t() threw "(0, c.t) is not a function")
+    for (let tries = 0; tries < 8 && o.every((v, i) => v === i); tries++) o = [...o].sort(() => Math.random() - 0.5);
     if (o.every((v, i) => v === i)) o = [...o.slice(1), o[0]];
     return Object.fromEntries(o.map((itemIdx, pos) => [itemIdx, pos])) as Record<number, number>;
   }, [items]);

@@ -78,6 +78,7 @@ export default function Account() {
           </View>
           <View style={{ marginTop: 14, marginHorizontal: -16 }}>
             <Row first a={t("companion.acct.analytics")} b={analyticsAvailable() ? t("companion.acct.analyticsOn") : t("companion.acct.analyticsOff")} toggle={analyticsAvailable() && saved.settings.analytics === "yes"} right={analyticsAvailable() && saved.settings.analytics === "yes" ? t("common.on") : t("common.off")} onPress={() => update({ analytics: saved.settings.analytics === "yes" ? "no" : "yes" })} />
+            <Row testID="pulse-switch" a={t("companion.acct.pulse")} b={t("companion.acct.pulseBody")} toggle={saved.settings.pulse !== false} right={saved.settings.pulse !== false ? t("common.on") : t("common.off")} onPress={() => update({ pulse: saved.settings.pulse === false })} />
           </View>
           {dataMsg ? <Body size={13} style={{ marginTop: 8 }}>{dataMsg}</Body> : null}
         </Card>
@@ -96,6 +97,9 @@ export default function Account() {
       {accountsOn() ? <Card>
         <Eyebrow>{t("companion.acct.dataEyebrow")}</Eyebrow>
         <Body size={13} style={{ marginTop: 6 }}>{t("companion.acct.dataBody")}</Body>
+        <View style={{ marginTop: 10, marginHorizontal: -16 }}>
+          <Row first testID="pulse-switch" a={t("companion.acct.pulse")} b={t("companion.acct.pulseBody")} toggle={saved.settings.pulse !== false} right={saved.settings.pulse !== false ? t("common.on") : t("common.off")} onPress={() => update({ pulse: saved.settings.pulse === false })} />
+        </View>
         <View style={{ marginTop: 12 }}><Btn kind="ghost" onPress={exportData}>{t("companion.acct.exportData")}</Btn></View>
       </Card> : null}
       <Card>

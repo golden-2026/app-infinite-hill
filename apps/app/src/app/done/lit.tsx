@@ -8,7 +8,6 @@ import Animated, { Easing, useAnimatedStyle, useReducedMotion, useSharedValue, w
 import { useDone } from "@/lib/done";
 import { play } from "@/lib/fx";
 import { successHaptic, tapHaptic } from "@/lib/haptics";
-import { todaysThree } from "@/lib/three";
 import { useStore } from "@/lib/store";
 import { MILESTONE_WORDS, goalView, streakRule } from "@/lib/streak";
 import { t } from "@/i18n";
@@ -68,9 +67,8 @@ export default function Lit() {
   }, [grew, reduce, milestone, pop]);
   const popStyle = useAnimatedStyle(() => ({ transform: [{ scale: pop.value }] }));
 
-  // when today's three are done and the lantern hasn't been lit yet, the lantern comes next
-  const three = todaysThree({ doneToday: derived.doneToday, glow: st.glow, book: st.book, lanternOn: st.lanternOn, today });
-  const next = () => (firstDay && !st.goal ? go("/done/goal") : three.all && !three.opened ? router.replace("/lantern") : close());
+  // first lesson ever: pick a streak goal; otherwise straight on to tomorrow (the last step, /done/tomorrow)
+  const next = () => go(firstDay && !st.goal ? "/done/goal" : "/done/tomorrow");
 
   if (!on) return <PlainLit count={count} newDay={newDay} onNext={next} close={close} visiting={st.active === "visit"} />;
 
@@ -86,10 +84,12 @@ export default function Lit() {
   const earnBack = s.earnBack; // the first of today's two lessons: one more brings the old streak back
   const nextG = goal?.reached ? nextGoal(goal.days) : null;
   const together = friends.filter((f) => f.doneToday && newDay && FRIEND_MILESTONES.includes(f.together));
+  // the friend streaks still going (a milestone one gets its own card below): up to two, the longest first
+  const walking = friends.filter((f) => f.together >= 1 && !together.includes(f)).sort((a, b) => b.together - a.together).slice(0, 2);
 
   return (
-    <Screen close={close} footer={<Btn testID="continue" onPress={next}>{t("session.continue")}</Btn>}>
-      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+    <Screen close={close} scroll contentStyle={{ flexGrow: 1 }} footer={<Btn testID="continue" onPress={next}>{t("session.continue")}</Btn>}>
+      <View style={{ flexGrow: 1, alignItems: "center", justifyContent: "center" }}>
         <Guy pose={quiet ? "thumbs" : milestone >= 7 || restored || goalJustHit ? "joy" : "celebrate"} h={milestone && !quiet ? 176 : 140} />
         {golden ? <View testID="golden-label" style={{ backgroundColor: GOLDEN, borderWidth: 1.5, borderColor: color.ink, borderRadius: 999, paddingHorizontal: 12, paddingVertical: 4, marginTop: 10, zIndex: 2 }}><Text style={[type.eyebrow(9), { color: color.ink }]}>{t("session.lit.golden")}</Text></View> : null}
         <Animated.View style={[{ flexDirection: "row", alignItems: "center", gap: 8, backgroundColor: golden ? GOLDEN : "#fff", borderWidth: 2, borderColor: color.ink, paddingLeft: 24, paddingRight: 16, paddingVertical: 4, borderRadius: 28, marginTop: 10 }, popStyle]}>
@@ -102,6 +102,17 @@ export default function Lit() {
 
         <View style={{ marginTop: 20 }}><WeekRow s={s} today={today} /></View>
         <View style={{ marginTop: 14 }}><RestBank n={s.rest} /></View>
+
+        {walking.length > 0 && !quiet ? (
+          <View testID="friend-streaks" style={{ marginTop: 14, width: "100%", gap: 6, backgroundColor: "#fff", borderWidth: 1.5, borderColor: color.line, borderRadius: 16, paddingVertical: 10, paddingHorizontal: 14 }}>
+            {walking.map((f) => (
+              <View key={f.id} style={{ flexDirection: "row", alignItems: "center", gap: 10 }}>
+                <Sun size={22} mood={f.doneToday ? "happy" : "calm"} />
+                <Text style={[type.body(14), { flex: 1 }]} numberOfLines={1}>{t("session.lit.withFriend", { count: f.together, nick: f.nick })}</Text>
+              </View>
+            ))}
+          </View>
+        ) : null}
 
         {/* the big milestones get a card to share: the number, the sun, the mascot, the path's name, a link. Nothing private. */}
         {milestone && SHARE_MILESTONES.includes(milestone) && newDay ? (

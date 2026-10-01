@@ -17,7 +17,7 @@ export default function Goal() {
   const { setGoal, saved } = useStore();
   const [goal, setG] = useState<number | null>(null);
   const [small, setSmall] = useState(false); // the one-time "how about 3 days?"
-  const then = () => go(accountsOn() ? "/done/save" : "/done/remind");
+  const then = () => go(accountsOn() ? "/done/save" : "/done/tomorrow");
   const commit = (n: number) => { track("goal_set", { days: n }); setGoal(n); then(); };
   const notNow = () => {
     if (!small && !saved.settings.goal?.offered3) { setSmall(true); return; }

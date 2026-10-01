@@ -22,6 +22,7 @@ import { useCompanionInput } from "@/lib/companion/use-companion";
 import { shapeToday } from "@/lib/companion/shape";
 import { checkin, refreshFriends, useFriends, weekLight } from "@/lib/friends";
 import { useSeasons } from "@/lib/quests";
+import { pulseOpen } from "@/lib/pulse";
 
 SplashScreen.preventAutoHideAsync().catch(() => {});
 
@@ -54,6 +55,17 @@ function FriendsSync() {
   return null;
 }
 
+// Anonymous return counts: once a day on open, the phone says "opened today" with only the day it started and how many
+// days since (lib/pulse). Nothing while the person has switched it off under You › Your data.
+function PulseSync() {
+  const { saved, today } = useStore();
+  const on = saved.settings.pulse !== false;
+  const own = saved.sits.filter((s) => !s.kidId);
+  const earliest = own.length ? own.reduce((a, s) => (s.date < a ? s.date : a), own[0].date) : null;
+  useEffect(() => { if (on) pulseOpen(today, earliest); }, [today, on]); // eslint-disable-line react-hooks/exhaustive-deps
+  return null;
+}
+
 export default function RootLayout() {
   const [loaded, error] = useFonts({
     Manrope_500Medium, Manrope_700Bold, Manrope_800ExtraBold,
@@ -83,6 +95,7 @@ export default function RootLayout() {
           <StatusBar style="dark" />
           <ReminderSync />
           <FriendsSync />
+          <PulseSync />
           <Fragment key={lang}>
           <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: color.cream } }}>
             <Stack.Screen name="(tabs)" />

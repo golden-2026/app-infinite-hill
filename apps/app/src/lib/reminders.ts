@@ -36,6 +36,11 @@ export function reminderSupport() {
   return { can: true, note: null as string | null };
 }
 
+/** Can this build turn reminders on here? (Web needs the reminders server configured, and a browser that can push.) */
+export const remindersReady = () => !!FN && reminderSupport().can;
+/** Is a reminders server configured in this build at all? */
+export const remindersServer = () => !!FN;
+
 export async function registerWorker() {
   if (!env().hasPush) return null;
   try { return await navigator.serviceWorker.register("/sw.js"); } catch { return null; }
