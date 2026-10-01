@@ -19,14 +19,14 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "It's Friday, a few minutes before sunset. The table is set. The food is ready, or almost. Somebody's still hunting for a lighter. Two candles stand on the table, often in candlesticks handed down from a grandmother. A match is struck, the wicks catch, and then the person lighting does something that surprises people who see it for the first time. They circle their hands around the flames, drawing the air toward themselves, three times. Then they cover their eyes with their hands, and stand there in the dark of their own palms. Today: covering the eyes.",
-      "screen": ["`A FEW MINUTES BEFORE SUNSET.` → `TWO CANDLES, A STRUCK MATCH.` → `HANDS OVER THE EYES.`"]
+      "voice": "Most people have a place where they get ten seconds alone. The car in the driveway, engine off, before you go inside. The stairwell at work. A locked bathroom door at a loud party. You put your face in your hands, and for a moment nobody needs anything from you. In many Jewish homes, those ten seconds come at the same time every week. Friday, just before sunset, the candles are lit. The hands circle the flames, then come up over the eyes, and the person lighting stands in the dark of their own palms while the blessing is said. And often they stay there a little longer than the blessing takes. Today: what happens behind the hands.",
+      "screen": ["`TEN SECONDS ALONE.` → `HANDS CIRCLE THE FLAMES.` → `A LITTLE LONGER THAN THE BLESSING.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Start with the two candles. Many families light two, and a common explanation points to the two versions of the Sabbath commandment. In Exodus it says remember the Sabbath day. In Deuteronomy it says observe it. Remember and observe: two words, two flames. Some families add a candle for each child. Traditionally the woman of the house lights, but anyone can, and in many homes whoever is there does. Now the hands. There's a puzzle inside this ritual. Normally in Jewish practice you say a blessing first and then do the thing it's for. But for many Jews, once you say the candle blessing, Shabbat has begun, and lighting a fire is one of the kinds of work set aside on Shabbat. So you can't bless first and light second. The solution is lovely. Light the candles first. Cover your eyes. Say the blessing, which thanks God for the commandment to light the Sabbath lamp. Then uncover your eyes and see the flames, as if for the first time, and it's as though the blessing came before the seeing. The circling of the hands has many explanations: welcoming Shabbat in, gathering the light toward you, or simply a gesture passed down from mother to daughter for generations. Many people use those few seconds behind their hands for their own quiet words: for their children, for someone sick, for someone missing from the table. Then the hands come down, and the week is over.",
-      "screen": ["`TWO CANDLES: REMEMBER AND OBSERVE.` · `LIGHT FIRST, THEN BLESS.` · `COVER THE EYES, THEN SEE.` · `A FEW SECONDS OF QUIET WORDS.` · then, large: `THE HANDS COME DOWN. THE WEEK IS OVER.`"]
+      "voice": "On day four you met the two flames, and the reason for the hands: once the blessing is said, Shabbat has begun, so people light first, cover their eyes, bless, and then look. Today, stay behind the hands a little longer. The blessing itself is short. It thanks God, who commanded the lighting of the Sabbath lamp. But in many homes the hands don't come down right away. People speak quietly, in their own words. For centuries this was one of the few moments in the week that belonged to the woman of the house, and people wrote prayers for it. From the sixteen hundreds on, Jewish women in central and eastern Europe used small books of personal prayers in Yiddish, called tkhines, and many include one for the candles: for a husband's livelihood, for a sick parent, for children who would grow up to love learning. They weren't in the official prayer book. They were in the language of the kitchen. And the rabbis took their model of personal prayer from a woman. In the first book of Samuel, Hannah, longing for a child, prays at the sanctuary in Shiloh. In the Jewish Publication Society's 1917 translation: \"Now Hannah, she spoke in her heart; only her lips moved, but her voice could not be heard.\" The priest Eli watches her and decides she's drunk. The Talmud reads the scene the other way: this is how to pray. The heart turned toward the words, the lips moving, the voice kept low. Watch someone at the candles and you'll often see exactly that. Lips moving. No sound. Then the hands come down, and the week is over.",
+      "screen": ["`ON DAY FOUR: LIGHT, COVER, BLESS.` · `THE HANDS STAY UP A LITTLE LONGER.` · `TKHINES: PRAYERS IN THE KITCHEN'S LANGUAGE.` · `HANNAH: LIPS MOVING, NO SOUND.` · then, large: `ONLY HER LIPS MOVED.`"]
     },
     {
       "type": "the practice",
@@ -48,34 +48,36 @@
     },
     { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 99 COUNTS.` → `TOMORROW: SHALOM ALEICHEM.`"] }
   ],
-  "howItsDone": "Shabbat candles are lit shortly before sunset on Friday; the person lighting often circles their hands over the flames, covers their eyes, says the blessing, and then uncovers their eyes to look at the light.",
+  "howItsDone": "Shabbat candles are lit shortly before sunset on Friday; the person lighting often circles their hands over the flames, covers their eyes, says the blessing, and many add quiet words of their own before uncovering their eyes to look at the light.",
   "games": {
     "match": {
-      "prompt": "what's inside the candles — tap the pairs.",
-      "pairs": [["two candles", "remember and observe"], ["circling the hands", "welcoming the light in"], ["covering the eyes", "bless before you see"], ["uncovering the eyes", "the week is over"]]
+      "prompt": "who's behind the hands — tap the pairs.",
+      "pairs": [["tkhines", "personal prayers in Yiddish"], ["Hannah", "prayed with only her lips moving"], ["Eli", "thought she was drunk"], ["the blessing", "for lighting the Sabbath lamp"]]
     },
     "myth": [
-      ["the blessing is said before the candles are lit", false, "for many, the blessing begins Shabbat, so the candles are lit first and the eyes covered."],
-      ["two candles are often linked to remember and observe", true, "Exodus says remember the Sabbath; Deuteronomy says observe it."],
-      ["only a rabbi may light Shabbat candles", false, "traditionally the woman of the house lights, and in many homes anyone does."]
+      ["the only words said at the candles are the blessing", false, "many people stay behind their hands and speak quietly, in their own words."],
+      ["the Talmud takes Hannah's silent prayer as a model", true, "the heart turned to the words, the lips moving, the voice kept low."],
+      ["tkhines were Hebrew prayers written for rabbis", false, "they were personal prayers in Yiddish, used mostly by women, for moments like the candles."]
     ],
     "fork": {
-      "setup": "you're about to light Shabbat candles. you want to say the blessing first, but saying it starts Shabbat, and then you can't light a fire. what do you do?",
-      "options": ["say the blessing after dinner instead.", "light, cover your eyes, bless, then look.", "skip the blessing this week."],
+      "setup": "you're Eli, the priest at Shiloh. a woman is praying, her lips moving, but no sound comes out. what do you decide?",
+      "options": ["she's praying in her heart.", "she's drunk.", "she's lost her voice."],
       "answer": 1,
-      "reveal": "light first, cover the eyes, bless, then uncover and see the light: it's as though the blessing came before the seeing."
+      "reveal": "Eli decides she's drunk. she's Hannah, pouring out her heart, and the Talmud later makes her quiet prayer the model for everyone's."
     },
     "original": { "script": "הַדְלָקַת נֵרוֹת", "say": "had-la-KAHT nay-ROT", "note": "Hebrew: the lighting of candles. ner shel Shabbat is the Sabbath lamp named in the blessing." },
     "trapdoor": [
       "what you thought: someone shielding their eyes from the flame.",
-      "what it means: light, cover, bless, look: a way to say the blessing before enjoying the light, once Shabbat has begun.",
-      "what a scholar hears: the custom is recorded by the Rema (Shulchan Aruch, Orach Chayim 263:5); the pair of candles is often tied to zachor and shamor."
+      "what it means: a few private seconds behind the hands, for the blessing and often for words of one's own.",
+      "what a scholar hears: the Rema (OC 263:5) on lighting before blessing; Yiddish tkhines written for candle lighting; Berakhot 31a learns the laws of quiet prayer from Hannah (1 Samuel 1:13)."
     ]
   },
   "sources": [
-    { "ref": "Exodus 20:8; Deuteronomy 5:12 (remember and observe)", "work": "Tanakh", "translation": null, "quoted": null },
+    { "ref": "1 Samuel 1:13", "work": "Tanakh", "translation": "JPS 1917", "quoted": "Now Hannah, she spoke in her heart; only her lips moved, but her voice could not be heard." },
     { "ref": "Shulchan Aruch, Orach Chayim 263:5, with the Rema's gloss (light, then bless)", "work": "Jewish law", "translation": null, "quoted": null },
-    { "ref": "Mishnah Shabbat 2:6 (women and the Sabbath lamp)", "work": "Mishnah", "translation": null, "quoted": null }
+    { "ref": "Mishnah Shabbat 2:6 (women and the Sabbath lamp)", "work": "Mishnah", "translation": null, "quoted": null },
+    { "ref": "Babylonian Talmud, Berakhot 31a (laws of prayer learned from Hannah)", "work": "Talmud", "translation": null, "quoted": null },
+    { "ref": "Tkhines (Yiddish women's prayers, 17th–19th centuries), prayers for candle lighting", "work": "Tkhines", "translation": null, "quoted": null }
   ],
   "review": {
     "status": "pending",
@@ -84,7 +86,9 @@
       "Rema on OC 263:5 records lighting first and covering the eyes; Sephardi practice varies (some bless first). Consider adding that nuance.",
       "Circling the hands three times is a widespread custom with various explanations; described as such. Confirm.",
       "Two candles for zachor/shamor is a common explanation; one candle per child is a family custom. Confirm.",
-      "Blessing summarized (thanks for the commandment to light the Sabbath lamp), not translated in full."
+      "Blessing summarized (thanks for the commandment to light the Sabbath lamp), not translated in full.",
+      "Audit (second sample): the hook and teach had retold day 4 almost point for point (two flames for remember and observe, light-then-bless, uncovering the eyes as if seeing the light for the first time) as if new. Rewritten to pick that up from day 4 in one line and add what happens behind the hands: Yiddish tkhines for candle lighting and Hannah's silent prayer (1 Samuel 1:13, quoted from JPS 1917) as the Talmud's model (Berakhot 31a). Games, howItsDone and sources updated to match; the remember-and-observe source removed.",
+      "Confirm: tkhines dated 'from the sixteen hundreds on' and the examples of candle-lighting tkhine requests (livelihood, a sick parent, children who love learning); confirm JPS 1917 wording of 1 Samuel 1:13."
     ]
   },
   "meta": { "index": "99. Covering the eyes · — · hands circle the candle flames, then cover the eyes while the blessing is said · cover your eyes and breathe three times · eyes closed, the week ends", "writer": "writer agent (judaism 91–120)", "written": "2026-09-30" }

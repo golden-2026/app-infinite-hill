@@ -19,19 +19,19 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Everyone knows a day in between. The day after the phone call and before the funeral. The day you're waiting for a test result. Nothing happens, and it's the heaviest day of the week. The Gospels give the Saturday after the cross exactly one line. Luke says the women rested on the Sabbath, according to the commandment. That's it. No words from Jesus. No miracles. A sealed tomb, and people sitting at home with spices they can't use yet. The Church keeps that day on purpose. On Holy Saturday there's no Mass during the day. The tabernacle is still empty. Catholics wait. Today is the silent day.",
-      "screen": ["`THE DAY IN BETWEEN.` → `ONE LINE IN THE GOSPELS.` → `THE CHURCH WAITS.`"]
+      "voice": "Everyone knows a day in between. The day after the phone call and before the funeral. The day you're waiting for a test result. Nothing happens, and it's the heaviest day of the week. The Gospels say almost nothing about the Saturday after the cross. Matthew mentions guards posted at the tomb. Luke gives it one line: the women rested on the Sabbath, according to the commandment. No words from Jesus. No miracles. A sealed tomb, and people sitting at home with spices they can't use yet. The Church keeps that day on purpose. On Holy Saturday there's no Mass during the day. The tabernacle is still empty. Catholics wait. Today is the silent day.",
+      "screen": ["`THE DAY IN BETWEEN.` → `ALMOST NOTHING IN THE GOSPELS.` → `THE CHURCH WAITS.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "But the Church doesn't say nothing happened. It says something happened where no one could see. In the old Apostles' Creed, Catholics say: \"He descended into hell.\" That word trips people up. Here it doesn't mean the place of the damned. The Catechism explains it means the realm of all the dead, what the Hebrew Bible calls Sheol. Jesus really died, the Church says, so he went where the dead go. And he didn't go to be stuck there. He went to open it, to bring out the just who had died before him, all the way back to Adam and Eve. The First Letter of Peter says he went and preached to the spirits in prison. Eastern Christians paint it. Their Easter icon doesn't show an empty tomb. It shows Christ standing on broken doors, the locks scattered, pulling Adam and Eve up out of their graves by the wrists. And an ancient sermon for this day, read by Catholics in the Church's morning prayers on Holy Saturday, begins by saying there is a great silence on the earth, because the King is asleep. Then it follows him down, to go looking for Adam. So on the quietest day of the year, the Church says God was at work in the deepest place. Nobody saw it. It didn't make a sound. That's the point: silence isn't the same as absence.",
+      "voice": "But the Church doesn't say nothing happened. It says something happened where no one could see. In the old Apostles' Creed, Catholics say: \"He descended into hell.\" That word trips people up. Here it doesn't mean the place of the damned. The Catechism explains it means the realm of all the dead, what the Hebrew Bible calls Sheol. Jesus really died, the Church says, so he went where the dead go. And he didn't go to be stuck there. He went to open it, to bring out the just who had died before him, all the way back to Adam and Eve. The First Letter of Peter says he went and preached to the spirits in prison. Eastern Christians paint it. Their Easter icon doesn't show an empty tomb. It shows Christ standing on broken doors, the locks scattered, pulling Adam and Eve up out of their graves by the wrists. And an ancient sermon for this day, read by Catholics in the Church's daily prayer, the Office of Readings, on Holy Saturday, begins by saying there is a great silence on the earth, because the King is asleep. Then it follows him down, to go looking for Adam. So on the quietest day of the year, the Church says God was at work in the deepest place. Nobody saw it. It didn't make a sound. That's the point: silence isn't the same as absence.",
       "screen": ["`HE DESCENDED INTO HELL.` · `NOT THE DAMNED: THE REALM OF THE DEAD.` · `BROKEN DOORS, ADAM BY THE WRIST.` · `A GREAT SILENCE ON THE EARTH.` · then, large: `SILENCE ISN'T ABSENCE.`"]
     },
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: keep quiet, and don't fill it. Settle and breathe. Put the phone face down, out of reach. Let whatever is unfinished in your life stay unfinished for two minutes. You don't have to understand it or fix it. Just wait, the way the women waited with their spices. If you pray, you can simply stay in God's presence without words. If you don't, you can notice what silence actually sounds like. The bell holds the time.",
+      "voice": "Here's the practice: wait with one unfinished thing. Settle and breathe. Put the phone face down, out of reach. Pick one thing in your life that's still in between: a result, a reply, a healing, a decision someone else has to make. Hold it the way the women held their spices, ready and not yet used. You don't have to understand it or fix it. Just wait with it, in the quiet. If you pray, you can simply stay in God's presence without words. If you don't, you can notice what silence actually sounds like. The bell holds the time.",
       "screen": []
     },
     {
@@ -56,14 +56,14 @@
     },
     "myth": [
       ["'he descended into hell' means he went to the place of the damned", false, "the Catechism says it means the realm of all the dead, to free the just who died before him."],
-      ["the Gospels describe Holy Saturday in detail", false, "they give it one line: the women rested on the Sabbath."],
+      ["the Gospels describe Holy Saturday in detail", false, "they say almost nothing: Matthew mentions a guard at the tomb, and Luke says the women rested on the Sabbath."],
       ["there is no Mass during the day on Holy Saturday", true, "the Church waits until the Easter Vigil after dark."]
     ],
     "fork": {
       "setup": "you're one of the women from Galilee. the spices are ready, and the Sabbath has begun. what do you do?",
       "options": ["go to the tomb anyway.", "rest, according to the commandment.", "leave Jerusalem for home."],
       "answer": 1,
-      "reveal": "Luke says they rested on the Sabbath, according to the commandment. the one line the Gospels give the day is a line about waiting."
+      "reveal": "Luke says they rested on the Sabbath, according to the commandment. his one line about the day is a line about waiting."
     },
     "original": { "script": "שְׁאוֹל", "say": "sheh-OLE", "note": "Hebrew: Sheol, the realm of the dead in the Hebrew Bible. what the Creed's hell means here." },
     "trapdoor": [
@@ -75,6 +75,7 @@
   "sources": [
     { "ref": "The Apostles' Creed", "work": "The Book of Common Prayer", "translation": "Book of Common Prayer 1662", "quoted": "He descended into hell" },
     { "ref": "Luke 23:56", "work": "The Bible", "translation": null, "quoted": null },
+    { "ref": "Matthew 27:62–66", "work": "The Bible", "translation": null, "quoted": null },
     { "ref": "1 Peter 3:18–19; 4:6", "work": "The Bible", "translation": null, "quoted": null },
     { "ref": "Catechism of the Catholic Church 632–635", "work": "Catechism of the Catholic Church", "translation": null, "quoted": null },
     { "ref": "Ancient homily for Holy Saturday (Office of Readings)", "work": "Liturgy of the Hours", "translation": null, "quoted": null }
@@ -87,7 +88,8 @@
       "CCC 633: 'hell' (Sheol/Hades) as the abode of the dead, and Christ freeing the just who preceded him. Confirm the summary.",
       "The ancient homily ('there is a great silence on earth today...') is read in the Office of Readings on Holy Saturday; its author is unknown. It is paraphrased because the English translation in use is under copyright. 'Morning prayers' is a loose description of the Office of Readings; Keeper may prefer 'the Church's prayer book for the day'.",
       "Eastern icon of the Anastasis (the Harrowing of Hell) described in general terms; confirm.",
-      "Holy Saturday: no Mass before the Easter Vigil; communion only as viaticum. Confirm."
+      "Holy Saturday: no Mass before the Easter Vigil; communion only as viaticum. Confirm.",
+      "Audit (2026-09-30): the hook said the Gospels give the Saturday 'exactly one line', but Matthew 27:62–66 (the guard at the tomb) also falls on that day; hook, screen head, myth and fork reveal corrected. 'Morning prayers' changed to 'the Office of Readings'. Practice reframed as waiting with one unfinished thing so it no longer repeats day 66's plain-silence practice."
     ]
   },
   "meta": { "index": "67. Holy Saturday · — · the day of silence; the Church says he went down to free the dead (CCC 632–635) · keep one hour of quiet today · god is in the silence too", "writer": "writer agent (catholic 61–90)", "written": "2026-09-30" }

@@ -25,13 +25,13 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the word. Contemplation comes from the Latin templum, an open space the old Roman priests marked out to watch the sky. To contemplate is to stand in a cleared space and look, long and carefully. Second, Merton's definition. In New Seeds of Contemplation, from 1961, he says contemplation is the highest expression of our spiritual life, and then he describes it as life itself, fully awake, fully alive, aware that it is alive. He calls it a kind of spiritual wonder, a deep gratitude for being. Not a trance. Not a special feeling. Not an escape from the world. Awake. Third, it's not only for monks. Merton came to believe that ordinary people, parents, workers, students, are invited to this too. The Catechism tells a story about the priest John Vianney, who asked an old farmer what he did, sitting for hours in the church. The farmer said, more or less: I look at him, and he looks at me. That's contemplation. No technique. Just attention and love, both ways. Fourth, the old wake-up call. Saint Paul quotes what may be an early Christian hymn, in the Douay-Rheims: \"Rise thou that sleepest, and arise from the dead: and Christ shall enlighten thee.\" For Merton, the sleep isn't at night. It's the half-attention we live in all day. Waking up is the prayer. And it can start with the next thing you do, done with your whole self.",
-      "screen": ["`TEMPLUM — A SPACE TO LOOK.` · `LIFE ITSELF, FULLY AWAKE.` · `I LOOK AT HIM, HE LOOKS AT ME.` · `RISE THOU THAT SLEEPEST.` · then, large: `WAKING UP IS THE PRAYER.`"]
+      "voice": "First, Merton's definition. In New Seeds of Contemplation, from 1961, he calls contemplation the highest expression of our spiritual life, and then he says what it is: that same life, wide awake and aware that it's alive. A kind of spiritual wonder, he says, a deep gratitude for being. Not a trance. Not a special feeling. Not an escape from the world. Awake. Second, you can't force a waking. Merton describes it as an awakening to the real in everything that is real, and he's clear that no method switches it on. Think of how mornings work. You can't wake yourself up by trying harder. But you can open the curtains, put the phone in another room, stop hitting snooze. Silence, prayer and attention are the curtains. The waking comes when it comes. Third, not only for monks. Merton's first version of this book, Seeds of Contemplation, came out in 1949, written very much from inside the cloister. When he reworked it twelve years later, he widened the door. A parent at the stove can be awake. So can a student on a bus. So could the old farmer at Ars you met a few weeks ago, looking and being looked at. Fourth, the old wake-up call. Saint Paul quotes what may be an early Christian hymn, in the Douay-Rheims: \"Rise thou that sleepest, and arise from the dead: and Christ shall enlighten thee.\" The Greek verb for rise there is the same one used for raising the dead. For Merton, the sleep isn't at night. It's the half-attention we live in all day. Waking up is the prayer, and it can start with the next thing you do, done with your whole self.",
+      "screen": ["`LIFE ITSELF, WIDE AWAKE.` · `YOU CAN'T FORCE A WAKING.` · `NOT ONLY FOR MONKS.` · `RISE THOU THAT SLEEPEST.` · then, large: `WAKING UP IS THE PRAYER.`"]
     },
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: wake up to one thing. Pick something right in front of you: your hands, a cup, the window. Look at it as if you'd never seen it. Its color. Its weight. The light on it. When your mind drifts off to plans, notice, and come back. Then feel your own breathing, and let yourself know: I'm alive, right now. That's it. If you pray, you can simply stay there, like the farmer: looking, and being looked at. The bell holds the time.",
+      "voice": "Here's the practice: wake up to one thing. Pick something right in front of you: your hands, a cup, the window. Look at it as if you'd never seen it. Its color. Its weight. The light on it. When your mind drifts off to plans, notice, and come back. Then feel your own breathing, and let yourself know: I'm alive, right now. That's it. If you pray, you can simply stay there, awake, in God's presence. The bell holds the time.",
       "screen": []
     },
     {
@@ -52,29 +52,30 @@
   "games": {
     "match": {
       "prompt": "waking up — tap the pairs.",
-      "pairs": [["templum", "a space marked out to watch"], ["New Seeds of Contemplation", "Merton's 1961 book"], ["the farmer at Ars", "I look at him, he looks at me"], ["rise thou that sleepest", "Paul, in Ephesians"]]
+      "pairs": [["Seeds of Contemplation", "Merton's first version, 1949"], ["New Seeds of Contemplation", "the reworked book, 1961"], ["the curtains", "silence, prayer and attention"], ["rise thou that sleepest", "Paul, in Ephesians"]]
     },
     "myth": [
-      ["for Merton, contemplation is a special trance", false, "he says it's not a trance or an escape, but life itself, fully awake."],
-      ["Merton came to think ordinary people are invited to contemplation too", true, "not only monks: parents, workers, students."],
-      ["the Catechism's example of contemplation is a farmer looking at God", true, "the farmer told John Vianney he looks at him, and he looks at me."]
+      ["for Merton, contemplation is a special trance", false, "he says it's not a trance or an escape, but life itself, wide awake."],
+      ["Merton says the right technique will switch contemplation on", false, "you can't force a waking. you can only open the curtains."],
+      ["when he reworked the book, Merton widened it beyond monks", true, "a parent at the stove, a student on a bus: anyone can be awake."]
     ],
     "fork": {
-      "setup": "John Vianney asks an old farmer what he does, sitting for hours in the church. what does the farmer say?",
-      "options": ["I say every prayer I know", "I look at him, and he looks at me", "I wait for a vision"],
+      "setup": "you're Merton, twelve years after your first book on contemplation, written inside the cloister. reworking it, who do you say it's for?",
+      "options": ["monks and nuns only", "anyone, inside the cloister or out", "only people who have visions"],
       "answer": 1,
-      "reveal": "no technique at all: attention and love, both ways. the Catechism uses it to explain contemplation."
+      "reveal": "New Seeds widens the door: waking up to your own life isn't reserved for the monastery."
     },
-    "original": { "script": "contemplatio", "say": "kon-tem-PLAH-tsee-oh", "note": "Latin: contemplation, from templum, a space marked out for watching the sky." },
+    "original": { "script": "ἔγειρε, ὁ καθεύδων", "say": "EH-gay-reh, ho kah-THEW-dohn", "note": "Greek: wake up, sleeper (Ephesians 5:14). egeire is also the verb for raising the dead." },
     "trapdoor": [
       "what you thought: contemplation is thinking hard about something.",
       "what it means: for Merton, being fully awake to the life you've been given, with wonder and gratitude.",
-      "what a scholar hears: con-templum, the augur's cleared space; the Greek theoria behind it; and CCC 2715's gaze of faith, told through the peasant of Ars."
+      "what a scholar hears: Seeds (1949) reworked as New Seeds (1961); 'an awakening to the Real'; and egeire in Ephesians 5:14, the verb of resurrection."
     ]
   },
   "sources": [
     { "ref": "Ephesians 5:14", "work": "The Bible", "translation": "Douay-Rheims (Challoner)", "quoted": "Rise thou that sleepest, and arise from the dead: and Christ shall enlighten thee." },
-    { "ref": "Thomas Merton, New Seeds of Contemplation (1961), chapter 1", "work": "New Seeds of Contemplation", "translation": null, "quoted": null },
+    { "ref": "Thomas Merton, New Seeds of Contemplation (1961), author's note and chapter 1", "work": "New Seeds of Contemplation", "translation": null, "quoted": null },
+    { "ref": "Thomas Merton, Seeds of Contemplation (1949)", "work": "Seeds of Contemplation", "translation": null, "quoted": null },
     { "ref": "Catechism of the Catholic Church 2715", "work": "Catechism of the Catholic Church", "translation": null, "quoted": null }
   ],
   "review": {
@@ -85,7 +86,8 @@
       "Merton's definition in New Seeds ch. 1 is paraphrased only (copyrighted). Confirm the paraphrase is faithful.",
       "CCC 2715: the peasant of Ars and the Curé; paraphrased ('more or less'). Confirm.",
       "Etymology of contemplation from templum (augural space) is standard; confirm.",
-      "'What may be an early Christian hymn' for Ephesians 5:14 reflects common scholarship; confirm wording."
+      "'What may be an early Christian hymn' for Ephesians 5:14 reflects common scholarship; confirm wording.",
+      "Audit (10% sample): the teach retold day 232's templum etymology and farmer-at-Ars story as if new, and the original repeated day 236's contemplatio. Replaced with Merton's 'awakening to the Real' (can't be forced), the 1949 Seeds / 1961 New Seeds widening beyond monks, and the Greek egeire of Ephesians 5:14; the farmer is now a one-line callback. Games and trapdoor rewritten to match; near-verbatim Merton wording loosened. Keeper to confirm that New Seeds' author's note describes widening the book beyond a monastic readership, and the Greek of Ephesians 5:14."
     ]
   },
   "meta": { "index": "277. Contemplation is waking up · — · for Merton, contemplation is being fully awake to the life you've been given · do one thing fully awake · wake up", "writer": "writer agent (catholic 271–300)", "written": "2026-09-30" }

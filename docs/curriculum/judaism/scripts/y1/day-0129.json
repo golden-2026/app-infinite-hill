@@ -25,8 +25,8 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "The day is called Simchat Torah, the joy of the Torah. It comes right after Sukkot. In Israel it's the same day as the festival called Shemini Atzeret; outside Israel it's the day after. Here's why everyone's dancing. All year long, week by week, synagogues read the Five Books of Moses in order, one portion each Shabbat. On Simchat Torah, that yearly reading ends. Someone is called up to read the very last lines of Deuteronomy, where Moses dies and the Torah closes with the words \"in the sight of all Israel.\" And then, right away, with no break, a second scroll is opened and someone else reads the first lines of Genesis: \"In the beginning God created the heaven and the earth.\" The two people called up are given honorary titles, the bridegroom of the Torah and the bridegroom of Genesis, and in many communities today, brides too. Why start again immediately? So that no one could say the Jews finished the Torah and were done with it. The circle never closes; it just turns. There's a lovely detail rabbis like to point out. The last letter of the Torah is lamed, from the word Israel. The first letter is bet, from the word bereshit, in the beginning. Put the end and the beginning together, lamed and bet, and you get lev: heart. And one more: on this day, in many synagogues, all the children are called up together under one big prayer shawl, spread over them like a canopy. Nobody is too young. The joy is in holding the book, not in having mastered it.",
-      "screen": ["`SIMCHAT TORAH: THE JOY OF THE TORAH.` · `THE LAST LINES OF DEUTERONOMY.` · `THEN, AT ONCE, GENESIS.` · `END AND BEGINNING SPELL HEART.` · then, large: `IN THE BEGINNING.`"]
+      "voice": "The day is called Simchat Torah, the joy of the Torah. It comes right after Sukkot. In Israel it's the same day as the festival called Shemini Atzeret; outside Israel it's the day after. Back on day twenty you met the scroll that never stays finished: the last lines of Deuteronomy, ending \"in the sight of all Israel,\" and then at once, from a second scroll, \"In the beginning God created the heaven and the earth.\" Today is the day that actually happens, and the people who make it happen. The two readers get honorary titles, the bridegroom of the Torah and the bridegroom of Genesis, and in many communities today, brides too. Then the dancing, the hakafot: seven circles around the reading table, every scroll out of the ark, every scroll in somebody's arms. Notice what nobody is doing. The scrolls stay closed, wrapped in their covers. No one is reading, or explaining, or being tested. People often point out that on this one day, the great scholar and the child who can't read a word are equal: all anyone is doing is holding the Torah and dancing. In many synagogues all the children are called up together under one big prayer shawl, spread over them like a canopy. And the dancing turned up where you might not expect it. In the Soviet Union in the 1960s, when religious life was pressed down hard, thousands of young Jews gathered in the street outside the Moscow synagogue on Simchat Torah night, singing and dancing. Many of them knew no Hebrew and none of the prayers. They knew the date. The writer Elie Wiesel went to see it and wrote about it in a book called The Jews of Silence. The joy is in holding the book, not in having mastered it.",
+      "screen": ["`THE BRIDEGROOMS OF TORAH AND GENESIS.` · `SEVEN CIRCLES, THE SCROLLS CLOSED.` · `THE CHILDREN UNDER ONE PRAYER SHAWL.` · `MOSCOW, THE 1960S: DANCING IN THE STREET.` · then, large: `HOLDING IT, NOT MASTERING IT.`"]
     },
     {
       "type": "the practice",
@@ -52,11 +52,11 @@
   "games": {
     "match": {
       "prompt": "what's inside the day — tap the pairs.",
-      "pairs": [["simchat", "joy"], ["the last lines", "in the sight of all Israel"], ["the first lines", "in the beginning"], ["lamed and bet", "spell lev, heart"]]
+      "pairs": [["simchat", "joy"], ["the last lines", "in the sight of all Israel"], ["the first lines", "in the beginning"], ["hakafot", "seven circles with the scrolls"]]
     },
     "myth": [
       ["the Torah reading pauses for a few weeks after it ends", false, "it begins again with Genesis right away, on the same day."],
-      ["the last letter of the Torah and the first spell 'heart'", true, "lamed from Israel, bet from bereshit: lev."],
+      ["on Simchat Torah, the scrolls are opened and read while people dance", false, "they stay closed and wrapped. people dance holding them; nobody is reading."],
       ["in many synagogues, children are called up together", true, "all of them at once, under one big prayer shawl."]
     ],
     "fork": {
@@ -69,13 +69,14 @@
     "trapdoor": [
       "what you thought: a party for a holy book.",
       "what it means: the day the year's reading ends and begins again at once, so the Torah is never finished and put away.",
-      "what a scholar hears: a festival that grew up in the Middle Ages on Shemini Atzeret, with the hakafot added later; chatan Torah and chatan Bereshit; the lamed-bet 'lev' is a later homiletic teaching."
+      "what a scholar hears: a festival that grew up in the Middle Ages on Shemini Atzeret, with the hakafot added later; chatan Torah and chatan Bereshit; the Simchat Torah crowds outside the Moscow Choral Synagogue, described by Elie Wiesel in The Jews of Silence (1966)."
     ]
   },
   "sources": [
     { "ref": "Deuteronomy 34:12", "work": "Tanakh", "translation": "JPS 1917", "quoted": "in the sight of all Israel" },
     { "ref": "Genesis 1:1", "work": "Tanakh", "translation": "JPS 1917", "quoted": "In the beginning God created the heaven and the earth." },
-    { "ref": "Megillah 31a (reading for the last day of the festival)", "work": "Babylonian Talmud", "translation": null, "quoted": null }
+    { "ref": "Megillah 31a (reading for the last day of the festival)", "work": "Babylonian Talmud", "translation": null, "quoted": null },
+    { "ref": "Elie Wiesel, The Jews of Silence (1966): Simchat Torah in Moscow", "work": "The Jews of Silence", "translation": null, "quoted": null }
   ],
   "review": {
     "status": "pending",
@@ -85,7 +86,9 @@
       "Simchat Torah as a named festival developed in the geonic/medieval period; hakafot with all scrolls are later (16th century onward). Confirm the trapdoor wording.",
       "'Brides of the Torah' in many non-Orthodox and some Orthodox women's settings; phrased 'in many communities today'.",
       "Lamed-bet = lev: a popular homiletic teaching, not a classical source. Confirm it's acceptable to present as 'rabbis like to point out'.",
-      "Kol ha-ne'arim (children under one tallit): widespread custom; confirm."
+      "Kol ha-ne'arim (children under one tallit): widespread custom; confirm.",
+      "Audit (second sample): the teach repeated day 20 as if new (ending Deuteronomy and starting Genesis at once, and the lamed-bet 'lev, heart' teaching almost word for word). Rewritten to pick up day 20 in one line and add new material: the hakafot with closed scrolls (no one reading, scholar and child equal), and Soviet Jews dancing outside the Moscow synagogue on Simchat Torah in the 1960s. Teach heads, match, myth and trapdoor updated; the 'lev' item removed (the note above about it no longer applies).",
+      "Confirm: Moscow Simchat Torah street gatherings in the 1960s ('thousands of young Jews', many without Hebrew) and Elie Wiesel's account in The Jews of Silence (1966); confirm the 'scholar and child are equal because the scrolls stay closed' line is fair to present as a common teaching."
     ]
   },
   "meta": { "index": "129. Simchat Torah · — · the reading finishes Deuteronomy and begins Genesis on the same day, with dancing · reread the first line of something you love · finish and begin the same day", "writer": "writer agent (judaism 121–150)", "written": "2026-09-30" }

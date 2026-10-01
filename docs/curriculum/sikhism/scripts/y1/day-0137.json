@@ -1,0 +1,88 @@
+{
+  "format": "ih-lesson/1",
+  "door": "SIKHISM",
+  "day": 137,
+  "title": "Your Nitnem, for now",
+  "word": "Your Nitnem",
+  "hook": "a starter Nitnem is an invitation, not a test",
+  "carry": "one bani, daily",
+  "length": "7:00",
+  "tomorrow": "Before you go",
+  "segments": [
+    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-HUNDRED-THIRTY-SEVEN.`"] },
+    {
+      "type": "review",
+      "duration": "20 sec",
+      "voice": "Yesterday, how long it takes: an hour or more, and small differences between traditions. Your line was start with one. Did you save the bani you picked? Day one hundred thirty-seven.",
+      "screen": ["`HOW LONG IT TAKES — START WITH ONE.`"]
+    },
+    {
+      "type": "the hook",
+      "duration": "50 sec",
+      "voice": "Remember being handed a test at school? The paper lands on the desk, face down, and your stomach drops. Pass or fail. A lot of people carry that feeling into religion. They think a daily prayer is a test they'll be graded on, and since they know they'd fail the full version, they never start. Today we finish our ten days on Nitnem, and the most important thing to say is this: a starter Nitnem isn't a test paper. It's more like an invitation card, with your name written on it.",
+      "screen": ["`THE PAPER, FACE DOWN.` → `PASS OR FAIL?` → `AN INVITATION, NOT A TEST.`"]
+    },
+    {
+      "type": "the teach",
+      "duration": "2 min 15",
+      "voice": "Look at where we've been. Nitnem: the daily discipline, morning, evening, night. Japji at dawn, where Guru Nanak says clever thinking won't get you there. Jaap Sahib, galloping praise of the Timeless. The savaiyas: without love, nothing. Chaupai: keep me. Anand: joy, found. Rehras at dusk: put the day down. Sohila at night: the song for sleep. And yesterday, the honest math. So what's a Nitnem for now? For Sikhs who have taken amrit, the full Nitnem is part of their vows, and they keep it. For everyone else walking this path, whether you're a Sikh coming back to practice, someone learning alongside a Sikh partner, or simply curious, the Gurus' own words point to a gentler start. The Guru Granth Sahib keeps describing the Guru as a giver, not an examiner. Again and again the hymns say the Guru's word is like amrit, nectar, something you're offered to drink, not an exam you sit. Japji itself begins by saying the whole thing comes by the Guru's grace, gur prasad, the last words of the Mul Mantar. You didn't earn the invitation. It was sent. So a starter Nitnem might be Japji's first pauri each morning. Or Sohila at night. Or Anand's first stanza with your coffee. Whatever it is, it's said daily, at a time that already exists in your day. And when a day slips, you do what we learned on the breath. You come back.",
+      "screen": ["`TEN DAYS OF THE DAILY BANIS.` · `A VOW FOR SOME, A START FOR ALL.` · `GUR PRASAD — BY THE GURU'S GRACE.` · `SAID DAILY, AT A REAL TIME.` · then, large: `ONE BANI, DAILY.`"]
+    },
+    {
+      "type": "the practice",
+      "duration": "2 min 30",
+      "voice": "Choose one morning bani. Not forever, just for now. Japji's Mul Mantar and first pauri, Jaap's opening, one savaiya, Chaupai's first lines, or Anand's first stanza. Pick it, and picture tomorrow morning: where you'll be, how long it'll take, what you'll read or play. If you're here to learn rather than to pray, choose one to listen to. Then sit with the choice. It's made. The bell holds the time.",
+      "screen": []
+    },
+    {
+      "type": "the word",
+      "duration": "25 sec",
+      "voice": "Your Nitnem. The daily banis, begun where you are: one bani, said every day, as an invitation, not a test.",
+      "screen": ["`YOUR NITNEM — today's word`."]
+    },
+    {
+      "type": "the carry",
+      "duration": "15 sec",
+      "voice": "Your line: one bani, daily. Tomorrow morning, say or play the one you chose. Just that. Tomorrow we leave the house and go somewhere new. Day one hundred thirty-seven.",
+      "screen": []
+    },
+    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 137 COUNTS.` → `TOMORROW: BEFORE YOU GO.`"] }
+  ],
+  "howItsDone": "Amritdhari Sikhs keep the full Nitnem as part of their vows; many other Sikhs and newcomers begin with one bani said daily, such as Japji in the morning or Sohila at night, and add more over time.",
+  "games": {
+    "match": {
+      "prompt": "ten days of Nitnem — tap the pairs.",
+      "pairs": [["Chaupai", "keep me"], ["Anand", "joy, found"], ["Rehras", "put the day down"], ["gur prasad", "by the Guru's grace"]]
+    },
+    "myth": [
+      ["the Mul Mantar ends with gur prasad, by the Guru's grace", true, "the last words of the root verse."],
+      ["the hymns picture the Guru mainly as an examiner", false, "again and again the Guru is a giver, and the word is nectar offered to drink."],
+      ["a starter Nitnem has to include every bani", false, "one bani, said daily, is a real beginning."]
+    ],
+    "fork": {
+      "setup": "you've chosen one bani, and on day three you miss it. what now?",
+      "options": ["you've failed: stop.", "come back tomorrow and say it again.", "say it three times tomorrow to make up."],
+      "answer": 1,
+      "reveal": "the same answer as simran on the breath: come back. steadiness, not a perfect score."
+    },
+    "original": { "script": "ਗੁਰ ਪ੍ਰਸਾਦਿ", "say": "gur pur-SAAD", "note": "Gurmukhi: by the Guru's grace, the last words of the Mul Mantar." },
+    "trapdoor": [
+      "what you thought: a daily test of devotion.",
+      "what it means: a daily invitation: for Amritdhari Sikhs a vow, for others a place to begin, one bani at a time.",
+      "what a scholar hears: gur prasad closes the Mul Mantar; grace, not effort, is named first at the Granth's opening."
+    ]
+  },
+  "sources": [
+    { "ref": "Guru Granth Sahib, Ang 1 (Mul Mantar: gur prasad)", "work": "Guru Granth Sahib", "translation": null, "quoted": null },
+    { "ref": "Sikh Rehat Maryada, Akal Takht, section on Nitnem", "work": "Sikh Rehat Maryada", "translation": null, "quoted": null }
+  ],
+  "review": {
+    "status": "pending",
+    "keeper": null,
+    "notes": [
+      "The Guru's word as amrit/nectar is a recurring Gurbani image (e.g., amrit bani); no single Ang cited.",
+      "Closes the part 'Nitnem, plainly' (days 128–137); tomorrow opens the gurdwara visit."
+    ]
+  },
+  "meta": { "index": "137. Your Nitnem, for now · — · a starter Nitnem is an invitation, not a test · choose one morning bani · one bani, daily", "writer": "writer agent (sikhism 121–150)", "written": "2026-09-30" }
+}

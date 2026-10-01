@@ -43,7 +43,7 @@ export const FORBIDDEN = Object.freeze([
   [/\b(i'm|i am) (a )?(christian|muslim|hindu|jew|jewish|buddhist|sikh|catholic)\b/i, "a voice claiming a faith (voices are not signed; scripts are voice-neutral)"],
   [/\b(denzel|washington|mahershala|bieber|priyanka|wahlberg|portman|orlando bloom|dosanjh)\b/i, "names a proposed voice"],
   [/\bscience (proves|has proven)\b/i, "claims science proves faith"],
-  [/\b(sahih international|niv|esv|nrsv|nasb|new king james|nkjv|the message|coleman barks|muhsin khan|gopal singh|manmohan singh|yusuf ali)\b/i, "names a translation that is not public domain (Yusuf Ali 1934 stays protected in the US until 2030)"],
+  [/\b(sahih international|niv|esv|nrsv|nasb|new king james|nkjv|the message (?:bible|translation|paraphrase|version)|eugene peterson|coleman barks|muhsin khan|gopal singh|manmohan singh|yusuf ali)\b/i, "names a translation that is not public domain (Yusuf Ali 1934 stays protected in the US until 2030)"],
   [/\b(keeper[- ]approved|approved by (a|our) keeper|reviewed by (a|our) keeper)\b/i, "claims a review that has not happened"],
   [/\b(amazing!!|you failed|you missed a day)\b/i, "guilt or hype"],
 ]);

@@ -19,8 +19,8 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Athens, the first century. Paul walks through the city and sees altars everywhere, and one with an inscription: to the unknown god. He's invited to speak on the Areopagus, a hill where the city's thinkers gathered. He doesn't start by mocking their altars. He starts by quoting their own poets. \"For in him we live, and move, and are,\" he says, and adds that some of their poets had said we are God's offspring. Nineteen centuries later, the Catholic Church wrote a short document about people of other religions, and its tone sounds a lot like Paul on that hill.",
-      "screen": ["`ATHENS: TO THE UNKNOWN GOD.` → `PAUL QUOTES THEIR POETS.` → `NINETEEN CENTURIES LATER.`"]
+      "voice": "Athens, the first century. Paul walks through the city and sees altars everywhere, and one with an inscription: to the unknown god. He's invited to speak on the Areopagus, a hill where the city's thinkers gathered. He doesn't start by mocking their altars. He starts from one of them, the altar to the unknown god, and then reaches for words they already know. \"For in him we live, and move, and are,\" he says, and adds that some of their poets had said we are God's offspring. Nineteen centuries later, the Catholic Church wrote a short document about people of other religions, and its tone sounds a lot like Paul on that hill.",
+      "screen": ["`ATHENS: TO THE UNKNOWN GOD.` → `PAUL STARTS FROM THEIR ALTAR.` → `NINETEEN CENTURIES LATER.`"]
     },
     {
       "type": "the teach",
@@ -57,13 +57,13 @@
     "myth": [
       ["Nostra Aetate says the Church rejects nothing true and holy in other religions", true, "and it speaks with sincere respect of their ways of life and teaching."],
       ["Nostra Aetate blames all Jews for the death of Christ", false, "it says the passion can't be charged against all Jews then or today, and deplores antisemitism."],
-      ["Paul began his speech in Athens by mocking the altars", false, "he quoted their own poets: for in him we live, and move, and are."]
+      ["Paul began his speech in Athens by mocking the altars", false, "he began from their altar to the unknown god, and went on to quote their own poets."]
     ],
     "fork": {
       "setup": "you're Paul in Athens, surrounded by altars to many gods, one marked to the unknown god. how do you begin?",
-      "options": ["by smashing the altar.", "by quoting their own poets.", "by refusing to speak."],
+      "options": ["by smashing the altar.", "by starting from their own altar, and their own poets.", "by refusing to speak."],
       "answer": 1,
-      "reveal": "Paul starts from what they already know and love: for in him we live, and move, and are."
+      "reveal": "Paul starts from what they already know: the unknown god, and their poets' line that we are God's offspring."
     },
     "original": { "script": "Nostra aetate", "say": "NOS-trah ay-TAH-teh", "note": "Latin: in our age, the first words and name of the 1965 declaration." },
     "trapdoor": [
@@ -87,6 +87,8 @@
       "Nostra Aetate paraphrased throughout (its English translation is under copyright); confirm faithfulness, especially section 4 on the Jewish people.",
       "The practice invites listeners to hear the Shema 'as a guest', not to pray it as their own. A Jewish reviewer may wish to check this is respectful.",
       "Assisi World Day of Prayer for Peace: 27 October 1986.",
+      "Review fix: Acts 17:22–23 shows Paul opening from the altar to the unknown god, not with the poets; hook, myth and fork adjusted. That 'in him we live, and move, and are' itself echoes a Greek poet (often credited to Epimenides) is a scholarly view, so the script only credits the poets with 'we are God's offspring' (Aratus), as Acts does.",
+      "'One of the shortest documents of the council' and 'many historians count it among the council's most important paragraphs' are softened historical judgments; confirm.",
       "The line 'the Church also keeps proclaiming Christ' reflects Nostra Aetate 2 and is stated as the Church's own position without comparing traditions; Keeper should check tone."
     ]
   },
