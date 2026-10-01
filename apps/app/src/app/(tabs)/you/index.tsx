@@ -43,7 +43,7 @@ function sunNotes(notes: [string, string][], name: string, word: string): [strin
 
 export default function You() {
   useTitle(t("companion.you.title"));
-  const { saved, derived, lessonFor, update, demoShiftDays, today } = useStore();
+  const { saved, derived, lessonFor, startFor, update, demoShiftDays, today } = useStore();
   const { email } = useAuth();
   const sync = useSync();
   const st = saved.settings;
@@ -115,7 +115,7 @@ export default function You() {
             <Eyebrow>{t("companion.you.pathEyebrow", { door: doorLabel(wing) })}</Eyebrow>
             <Text style={[type.serif(20), { marginTop: 4 }]}>{t("companion.you.dayCamp", { day, camp: campLabel(pos(day).camp), name: campName(pos(day).camp, pos(day).name).toLowerCase() })}</Text>
             <View style={{ gap: 8, marginTop: 12 }}>
-              {(() => { let acc = 0; return data.CAMPS.map(([c, n, len]: [string, string, number]) => { const start = acc; acc += len; const done = Math.max(0, Math.min(len, day - 1 - start + (derived.paths[wing]?.done ? 1 : 0))); return (
+              {(() => { let acc = 0; return data.CAMPS.map(([c, n, len]: [string, string, number]) => { const start = acc; acc += len; const done = start + len < startFor(wing) ? new Set(own.filter((x) => x.door === wing && x.day > start && x.day <= start + len).map((x) => x.day)).size /* a camp placement skipped: only the days caught up on */ : Math.max(0, Math.min(len, day - 1 - start + (derived.paths[wing]?.done ? 1 : 0))); return (
                 <View key={c} accessibilityLabel={t("companion.you.campA11y", { camp: campLabel(c), name: campName(c, n), done, len })}>
                   <View style={{ flexDirection: "row", justifyContent: "space-between" }}><Text style={{ fontFamily: font.text[600], fontSize: 12 }}>{campLabel(c)} · {campName(c, n)}</Text><Text style={[type.body(12), { color: color.mute }]}>{done}/{len}</Text></View>
                   <View style={{ height: 6, backgroundColor: color.line, borderRadius: 3, marginTop: 4, overflow: "hidden" }}><View style={{ width: `${(done / len) * 100}%`, height: 6, backgroundColor: done === len ? color.green : color.gold }} /></View>

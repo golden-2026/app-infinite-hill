@@ -34,11 +34,12 @@ export default function Belief() {
   const name = doorLabel(door);
   const base = profileFor(saved.settings.profile, door, today);
   const you = youAnswers(base);
-  // Already told us they grew up in it (first step): don't ask "were you raised …?" again.
+  // Already told us they grew up in it, or that they practise it (first step): don't ask "were you raised …?" right
+  // after. For someone who practises it the answer is only "since I was little" or "later", and both count the same.
   // Learning a partner's or family's faith: "what brings you" and "were you raised" were answered on the first step.
   const learningThis = you.stance === "partner" && you.learning === door;
   const qs = [...BELIEF_QUESTIONS, ...(askMode ? [PRACTICE_MODE_Q] : [])]
-    .filter((x) => !(x.id === "raised" && you.raisedIn === door && you.stance !== "practice"))
+    .filter((x) => !(x.id === "raised" && you.raisedIn === door))
     .filter((x) => !(learningThis && PARTNER_SKIPS.includes(x.id)));
   const q = qs[i];
   const fill = (s: string) => s.replace(/\{door\}/g, name).replace(/\{person\}/g, PERSON[door] || name);

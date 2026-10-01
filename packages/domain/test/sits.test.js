@@ -66,3 +66,25 @@ test("junk records are dropped, not trusted", () => {
   const s = deriveState([{ id: "x", door: "", day: 0 }, sit("2026-10-18")], { today: "2026-10-18" });
   assert.equal(s.showedUp, 1);
 });
+
+test("placement: a door placed at 22 stands there before anything is walked; catch-up lessons never move it back", () => {
+  const settings = { placed: { HINDUISM: 22 } };
+  const empty = deriveState([], { today: "2026-10-18", settings });
+  assert.deepEqual(empty.paths.HINDUISM, { day: 22, done: false, lastDate: null });
+  assert.equal(empty.showedUp, 0);
+  // day 22 today: done there; tomorrow: 23
+  const log = [sit("2026-10-18", "HINDUISM", 22)];
+  assert.deepEqual(deriveState(log, { today: "2026-10-18", settings }).paths.HINDUISM, { day: 22, done: true, lastDate: "2026-10-18" });
+  assert.equal(deriveState(log, { today: "2026-10-19", settings }).paths.HINDUISM.day, 23);
+  // catching up day 3 first: the door stays at 22 (not done), and the day still counts for the streak
+  const catchUp = deriveState([sit("2026-10-18", "HINDUISM", 3)], { today: "2026-10-18", settings });
+  assert.deepEqual(catchUp.paths.HINDUISM, { day: 22, done: false, lastDate: "2026-10-18" });
+  assert.equal(catchUp.streak.streak, 1);
+  assert.equal(catchUp.showedUp, 1);
+  // walked 22 and 23, then caught up day 5: still on 24 tomorrow
+  const later = [sit("2026-10-18", "HINDUISM", 22), sit("2026-10-19", "HINDUISM", 23), sit("2026-10-20", "HINDUISM", 5)];
+  assert.equal(deriveState(later, { today: "2026-10-21", settings }).paths.HINDUISM.day, 24);
+  // other doors are untouched; junk placements are ignored
+  assert.equal(deriveState([], { today: "2026-10-18", settings: { placed: { ISLAM: "22", JUDAISM: 1, X: -4 } } }).paths.ISLAM, undefined);
+  assert.deepEqual(deriveState([], { today: "2026-10-18", settings: { placed: null } }).paths, {});
+});

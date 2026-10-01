@@ -3,10 +3,10 @@ import { pulseLesson } from "@/lib/pulse";
 import { useTitle } from "@/lib/title";
 // A day's lesson: v175 Session, as a real screen. Queue of steps, combo, "one more time" on the misses
 // (nothing counted twice), then the tally. Leaving asks first; finishing records the sit and opens /done.
-import { DOORS, GRADED, deeperRound, icon, knownSoFar, lessonInfo, native, planDay, screenLines } from "@ih/content";
+import { DOORS, GRADED, data, deeperRound, icon, knownSoFar, lessonInfo, native, planDay, pos, screenLines, splitBeats } from "@ih/content";
 import { dueCards, slipsFor } from "@/lib/missed";
 import { recallQuestion } from "@/session/recall";
-import { doorLabel, isEs, t, type Key } from "@/i18n";
+import { campName, doorLabel, isEs, t, type Key } from "@/i18n";
 import { levelFor } from "@/lib/level";
 import { practiceModeOf } from "@/lib/onboard";
 import { learnSteps } from "@/session/learn";
@@ -125,9 +125,24 @@ function Session({ door, day, kidId, mode, deep, voiceOn, onFinish, script = nul
   const own = mode === "adult" && !kidId && !deep;
   const [recallCards] = useState(() => (own ? dueCards(me.missed || [], door, todayNow(), { n: 2 }) : []));
   const vocab = useMemo(() => new Map(knownSoFar(door, day).map((k) => [k.word.toLowerCase(), k])), [door, day]);
+  // The first lesson after placement (day 22 for someone who skipped camp one): there was no "yesterday" on this path,
+  // so the script's look back at day 21 gives way to the welcome day one would have had, and a line on where they are.
+  const [placedFirst] = useState(() => own && day > 1 && day === (me.settings.placed?.[door] ?? 1) && !me.sits.some((x) => !x.kidId && x.door === door && x.day === day - 1));
   const plan = useMemo(() => {
     const p = !deep ? planDay({ wing: door, day, mode, level: mode === "adult" ? level : 0, script }) : { ...planDay({ wing: door, day, mode, script }), steps: deeperRound(door, day, level) };
     let steps = learn ? learnSteps(p.steps, p.info?.script ? p.info.howItsDone : null) : p.steps;
+    if (placedFirst) {
+      let id = Math.max(...steps.map((x: any) => x.id)) + 1;
+      const p0 = pos(day);
+      const welcome = [
+        ...splitBeats(String(data.WELCOME[door] || data.WELCOME.SPIRITUAL || ""), 45, 2).map((text: string) => ({ type: "beat", seg: "a welcome", text, head: null, id: id++ })),
+        { type: "beat", seg: "a welcome", text: t("session.placed.beat", { day, camp: campName(p0.camp, p0.name).toLowerCase(), end: day - 1 }), head: null, id: id++ },
+      ];
+      const at = steps.findIndex((x: any) => x.type === "beat" && /^review/.test(String(x.seg || "")));
+      steps = steps.filter((x: any) => !(x.type === "beat" && /^review/.test(String(x.seg || ""))));
+      const where = at >= 0 ? at : Math.max(0, steps.findIndex((x: any) => x.type !== "bell"));
+      steps = [...steps.slice(0, where), ...welcome, ...steps.slice(where)];
+    }
     const cards = recallCards.filter((c) => c.word.toLowerCase() !== String(p.word).toLowerCase());
     if (cards.length) {
       let id = Math.max(...steps.map((x: any) => x.id)) + 1;
@@ -138,7 +153,7 @@ function Session({ door, day, kidId, mode, deep, voiceOn, onFinish, script = nul
       steps = [...steps.slice(0, -1), ...recall, steps[steps.length - 1]]; // just before the tally
     }
     return { ...p, steps };
-  }, [door, day, mode, level, deep, learn, script, recallCards]);
+  }, [door, day, mode, level, deep, learn, script, recallCards, placedFirst]);
   const shownLevel = deep ? Math.min(5, level + 2) : level;
   const [rushSecs, setRushSecs] = useState<number | null>(null);
   const [feel, setFeel] = useState<string | null>(null);

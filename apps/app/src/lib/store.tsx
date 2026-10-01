@@ -2,7 +2,7 @@
 // is derived from the sit log by @ih/domain, so a reload, a second device or a sync can never drift.
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 import { AppState } from "react-native";
-import { deriveState, fromP0, makeSit, mergeSits, readExport, sitOutcome, type Derived, type Sit } from "@ih/domain";
+import { deriveState, fromP0, makeSit, mergeSits, placedStarts, readExport, sitOutcome, type Derived, type Sit } from "@ih/domain";
 
 import { randomId } from "./ids";
 import { setChime } from "./sound";
@@ -65,6 +65,9 @@ export type Settings = {
   timed?: Timed;
   /** The new-year recap offer they've opened or closed (e.g. "HINDUISM:2026-11-08"). */
   yearSeen?: string | null;
+  /** Where the onboarding check started them, by door ({ HINDUISM: 22 }): they showed they know camp one, and chose
+   *  to skip it. The door never sits behind this day; the days before it stay open on the trail to catch up. */
+  placed?: Record<string, number>;
 };
 
 /** `missed`: words that slipped, and when each comes back (lib/missed.ts). On this phone only: not in settings, so never synced. */
@@ -102,6 +105,7 @@ export function cleanSettings(raw: any): Settings {
     chime: s.chime !== false,
     reminder: s.reminder && typeof s.reminder === "object" && typeof s.reminder.time === "string" ? { on: s.reminder.on === true, time: s.reminder.time, ...(s.reminder.set === true ? { set: true } : {}) } : d.reminder,
     profile: cleanProfile(s.profile),
+    placed: placedStarts(s.placed),
   };
 }
 
@@ -132,6 +136,8 @@ type Store = {
   derived: Derived;
   door: string; // the door on screen now (visit or home)
   lessonFor: (door: string) => number;
+  /** The day placement started them on this door (1 unless they chose to skip camp one). */
+  startFor: (door: string) => number;
   completeSit: (o: { door: string; day: number; kidId?: string | null }) => ReturnType<typeof sitOutcome>;
   update: (patch: Partial<Settings>) => void;
   setGoal: (days: number | "not_yet") => void;
@@ -188,6 +194,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     derived,
     door,
     lessonFor: (d) => derived.paths[d]?.day ?? 1,
+    startFor: (d) => saved.settings.placed?.[d] ?? 1,
     completeSit: ({ door: d, day, kidId = null }) => {
       const date = todayNow();
       // the streak outcome is the kid's own for a kid's sit, the parent's own otherwise (never mixed)

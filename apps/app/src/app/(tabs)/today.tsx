@@ -25,7 +25,7 @@ import { campLabel, campName, doorLabel, isEs, t } from "@/i18n";
 
 export default function Today() {
   useTitle(t("home.tab.today"));
-  const { saved, derived, door, lessonFor, update, markWelcomedBack, demoShiftDays, today, setQuest } = useStore();
+  const { saved, derived, door, lessonFor, startFor, update, markWelcomedBack, demoShiftDays, today, setQuest } = useStore();
   const seasons = useSeasons();
   const newYear = newYearNow(saved.settings.homeWing, today);
   const newYearKey = newYear ? `${newYear.door}:${newYear.date}` : null;
@@ -45,7 +45,8 @@ export default function Today() {
   // words that slipped and are due again come first; otherwise the latest strand words (reviewed today: rests till tomorrow)
   const dueAgain = dueCards(saved.missed || [], wing, today, { n: 5 }).length;
   const due = dueAgain || (st.reviewedOn === today ? 0 : Math.min(3, strand.length));
-  const yest = lesson > 1 ? lessonInfo(wing, lesson - 1) || {} : null;
+  // yesterday's line to carry: only once there was a yesterday on this path (not on the day placement started them)
+  const yest = lesson > startFor(wing) ? lessonInfo(wing, lesson - 1) || {} : null;
   const carried = st.carried && st.carried.lesson === lesson - 1 ? st.carried.did : null; // saved, so reload keeps it
   const setCarried = (did: boolean) => update({ carried: { date: today, lesson: lesson - 1, did } });
   // v175 scrolled the hill so your stone sits mid-screen; same here once the hill has laid out.

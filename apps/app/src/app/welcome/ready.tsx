@@ -8,20 +8,22 @@ import { t } from "@/i18n";
 import { Eyebrow, Guy, type } from "@/ui";
 import { WelcomeFrame } from "@/ui/welcome-frame";
 
-// v175 step 8: one breath of framing, then day one opens on its own.
+// v175 step 8: one breath of framing, then the first lesson opens on its own: day one, or where the check placed them
+// (day 22, when they chose to skip camp one).
 export default function Ready() {
   useEffect(() => { track("onboard_step", { step: "ready" }); }, []);
   const { door: raw } = useLocalSearchParams<{ door?: string }>();
   const door = doorParam(raw) || "SPIRITUAL"; // unknown doors in a URL never get saved
-  const { update } = useStore();
+  const { update, saved } = useStore();
+  const start = saved.settings.placed?.[door] ?? 1;
   useEffect(() => {
     const t = setTimeout(() => {
-      // straight into day one; finishing or leaving the lesson lands on Today
-      router.replace({ pathname: "/session/[door]/[day]", params: { door, day: "1" } });
+      // straight into the first lesson; finishing or leaving it lands on Today
+      router.replace({ pathname: "/session/[door]/[day]", params: { door, day: String(start) } });
       update({ onboarded: true, homeWing: door, active: "home" });
     }, 2400);
     return () => clearTimeout(t);
-  }, [door, update]);
+  }, [door, update, start]);
   return (
     <WelcomeFrame step={8} door={door}>
       <View style={{ alignItems: "center", gap: 18 }}>

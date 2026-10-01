@@ -3,7 +3,8 @@ import { useTitle } from "@/lib/title";
 import { router, useLocalSearchParams } from "expo-router";
 import { useEffect } from "react";
 import { Text, View } from "react-native";
-import { doorLabel, t } from "@/i18n";
+import { pos } from "@ih/content";
+import { campName, doorLabel, t } from "@/i18n";
 import { depthFor, type Openness } from "@/lib/profile";
 import { doorParam } from "@/lib/door-param";
 import { useStore } from "@/lib/store";
@@ -35,6 +36,9 @@ export default function Fit() {
   const setOpen = (o: Openness) => update({ profile: { ...p, openness: o } });
   const rows: [string, string, string][] = [[t("onboarding.fit.howDeep"), ...depth] as [string, string, string], [t("onboarding.fit.others"), ...open[p.openness]] as [string, string, string]];
   // Grew up in it, not sure they believe (or left): the roots, walked with fresh eyes (welcome/you → door). DRAFT copy.
+  // placed past camp one (welcome/know): say where, and that camp one stays open
+  const start = saved.settings.placed?.[door] ?? 1;
+  if (start > 1) rows.splice(1, 0, [t("onboarding.fit.start"), t("onboarding.fit.startH", { day: start, camp: campName(pos(start).camp, pos(start).name).toLowerCase() }), t("onboarding.fit.startB", { end: start - 1 })]);
   if (p.answers.lens === "fresh") rows.unshift([t("onboarding.fit.hold"), t("onboarding.fit.freshH"), t("onboarding.fit.freshB", name)]);
   return (
     <WelcomeFrame step={6} door={door} footer={<Btn testID="fit-continue" onPress={() => router.push({ pathname: "/welcome/voice", params: { door } })}>{t("onboarding.fit.continue")}</Btn>}>

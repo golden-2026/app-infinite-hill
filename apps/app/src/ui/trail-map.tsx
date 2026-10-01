@@ -58,12 +58,13 @@ function SummitCard({ s, name, planned }: { s: Summit; name: string; planned: bo
   );
 }
 
-type Status = "walked" | "here" | "ahead";
+/** skipped: a camp before where placement started them, not yet caught up (its days are open on the trail screen). */
+type Status = "walked" | "here" | "ahead" | "skipped";
 
 function Node({ n, status, tint, outlined }: { n: string; status: Status; tint: string; outlined?: boolean }) {
-  const bg = status === "walked" ? color.ink : status === "here" ? color.gold : color.white;
+  const bg = status === "walked" ? color.ink : status === "here" ? color.gold : status === "skipped" ? color.sand : color.white;
   return (
-    <View style={{ width: NODE, height: NODE, borderRadius: EDGE, backgroundColor: bg, borderWidth: 2.5, borderStyle: outlined && status === "ahead" ? "dashed" : "solid", borderColor: status === "ahead" ? tint : color.ink, alignItems: "center", justifyContent: "center" }}>
+    <View style={{ width: NODE, height: NODE, borderRadius: EDGE, backgroundColor: bg, borderWidth: 2.5, borderStyle: (outlined && status === "ahead") || status === "skipped" ? "dashed" : "solid", borderColor: status === "ahead" ? tint : color.ink, alignItems: "center", justifyContent: "center" }}>
       <Text style={{ fontFamily: font.display[800], fontSize: n.length > 1 ? 14 : 18, color: status === "walked" ? color.gold : color.ink }}>{status === "walked" ? "✓" : n}</Text>
     </View>
   );
@@ -103,6 +104,7 @@ function Stop({ st, n, side, status, tint, day, view }: { st: Stage; n: string; 
           <Text style={[type.eyebrow(10), { marginTop: 10 }]}>{t("home.trail.byHere")}</Text>
           <Text style={[type.body(14), { color: color.ink, marginTop: 2 }]}>{st.promise}</Text>
           {st.key.startsWith("Camp") ? <Text style={[type.body(12), { color: color.mute, marginTop: 8 }]}>{t("home.trail.endsAt", { n: st.last })}</Text> : null}
+          {status === "skipped" ? <Text style={[type.body(12), { color: color.ink, marginTop: 6 }]}>{t("home.trail.skippedNote")}</Text> : null}
         </>}
       </View>
     </View>
@@ -114,7 +116,7 @@ function Stop({ st, n, side, status, tint, day, view }: { st: Stage; n: string; 
     </View>
   );
   return (
-    <View style={{ flexDirection: "row", gap: 10 }} accessibilityLabel={`${st.name}, ${st.eyebrow}. ${st.planned ? t("home.trail.a11yPlanned") : t("home.trail.a11yPromise", { promise: st.promise })}${here ? t("home.trail.a11yHere", { day }) : status === "walked" ? t("home.trail.a11yWalked") : ""}`}>
+    <View style={{ flexDirection: "row", gap: 10 }} accessibilityLabel={`${st.name}, ${st.eyebrow}. ${st.planned ? t("home.trail.a11yPlanned") : t("home.trail.a11yPromise", { promise: st.promise })}${here ? t("home.trail.a11yHere", { day }) : status === "walked" ? t("home.trail.a11yWalked") : status === "skipped" ? ` ${t("home.trail.skippedNote")}` : ""}`}>
       {side === "left" ? <>{node}{card}</> : <>{card}{node}</>}
     </View>
   );
@@ -144,14 +146,16 @@ function Milestone({ text, sub }: { text: string; sub: string }) {
   );
 }
 
-/** `day`: the day they're on for this door; `walked`: days walked. The marker shows only once walked > 0. */
-export function TrailMap({ door, day, walked }: { door: string; day: number; walked: number }) {
+/** `day`: the day they're on for this door; `walked`: days walked. The marker shows once walked > 0, or straight away
+ *  for someone placed further up (`placed`: the day the check started them; the camps below it show as skipped). */
+export function TrailMap({ door, day, walked, placed, caughtUp }: { door: string; day: number; walked: number; placed?: number; /** walked days before `placed` */ caughtUp?: Set<number> }) {
   const [w, setW] = useState(0);
   const ic = icon(door);
   const tint: string = ic.tint || color.ink;
   const name = door === "SPIRITUAL" ? t("home.trail.ownPath") : doorLabel(door);
   const { stages, lookout, summit, planned } = trailFor(door);
-  const statusOf = (s: Stage): Status => (walked <= 0 ? "ahead" : day > s.last ? "walked" : day >= s.first ? "here" : "ahead");
+  const on = walked > 0 || !!placed;
+  const statusOf = (s: Stage): Status => (!on ? "ahead" : placed && s.last < placed && Array.from({ length: s.last - s.first + 1 }, (_, k) => s.first + k).some((d) => !caughtUp?.has(d)) ? "skipped" : day > s.last ? "walked" : day >= s.first ? "here" : "ahead");
   // bottom (trailhead) is index 0; sides alternate so the trail zig-zags up the page
   const sideOf = (i: number): "left" | "right" => (i % 2 === 0 ? "left" : "right");
   const top = stages.length - 1;
@@ -161,9 +165,9 @@ export function TrailMap({ door, day, walked }: { door: string; day: number; wal
     const n = st.planned ? "2–5" : st.key.startsWith("Year") ? `Y${st.key.slice(5)}` : st.key.replace(/\D/g, "");
     // years two to five share the ranges painting: each year looks at a different stretch of it
     const view = st.key.startsWith("Year ") ? `${[18, 44, 70, 96][Number(st.key.slice(5)) - 2] ?? 25}%` : "25%";
-    rows.push(<Stop key={st.key} st={st} n={n} side={sideOf(i)} status={statusOf(st)} tint={tint} day={walked > 0 ? day : null} view={view} />);
+    rows.push(<Stop key={st.key} st={st} n={n} side={sideOf(i)} status={statusOf(st)} tint={tint} day={on ? day : null} view={view} />);
     if (i > 0) {
-      const walkedUp = walked > 0 && day >= st.first;
+      const walkedUp = on && day >= st.first;
       rows.push(<Switchback key={`${st.key}-sb`} w={w} from={sideOf(i - 1)} to={sideOf(i)} tint={tint} walked={walkedUp} />);
       // the end of year one: a lookout (the summit is only the top of the five-year climb)
       if (st.first === lookout + 1) rows.push(<Milestone key="lookout" text={t("home.trail.bigLookout")} sub={t("home.trail.lookoutSub", { n: lookout })} />, <Switchback key="fs-sb" w={w} from={sideOf(i - 1)} to={sideOf(i - 1)} tint={tint} walked={walkedUp} />);
@@ -174,16 +178,16 @@ export function TrailMap({ door, day, walked }: { door: string; day: number; wal
       <SummitCard s={summit} name={name} planned={planned} />
       <Switchback w={w} from={sideOf(top)} to={sideOf(top)} tint={tint} walked={false} />
       {rows}
-      <Switchback w={w} from="left" to="left" tint={tint} walked={walked > 0} />
+      <Switchback w={w} from="left" to="left" tint={tint} walked={on} />
       <View style={{ flexDirection: "row", alignItems: "flex-end", gap: 10 }}>
         <View style={{ width: NODE, alignItems: "center" }}>
-          <View style={{ width: 18, height: 18, borderRadius: 9, backgroundColor: walked > 0 ? color.ink : color.gold, borderWidth: 2, borderColor: color.ink }} />
+          <View style={{ width: 18, height: 18, borderRadius: 9, backgroundColor: on ? color.ink : color.gold, borderWidth: 2, borderColor: color.ink }} />
         </View>
         <View style={{ flex: 1 }}>
-          <Text style={[type.eyebrow(10)]}>{walked > 0 ? t("home.trail.started") : t("home.trail.startHere")}</Text>
+          <Text style={[type.eyebrow(10)]}>{walked > 0 ? t("home.trail.started") : placed ? t("home.trail.trailheadOpen") : t("home.trail.startHere")}</Text>
           <Text style={{ fontFamily: font.display[800], fontSize: 20, color: color.ink }}>{t("home.trail.trailhead")}</Text>
         </View>
-        {walked > 0 ? null : <Guy pose="hike" h={86} />}
+        {on ? null : <Guy pose="hike" h={86} />}
       </View>
     </View>
   );

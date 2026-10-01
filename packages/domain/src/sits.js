@@ -32,17 +32,28 @@ export function mergeSits(...logs) {
   return [...byId.values()].sort((a, b) => (a.at === b.at ? (a.id < b.id ? -1 : 1) : a.at < b.at ? -1 : 1));
 }
 
-function pathFrom(sits, today) {
-  // The furthest lesson finished on this door decides where the door is now.
+function pathFrom(sits, today, start = 1) {
+  // The furthest lesson finished on this door decides where the door is now. `start`: where placement started them
+  // (the first day after camp one, for someone who showed they know the basics); the door is never behind it, and a
+  // lesson caught up from before it (day 3 after starting at 22) doesn't move the door back.
   let top = null;
   for (const s of sits) if (!top || s.day > top.day || (s.day === top.day && s.date > top.date)) top = s;
-  if (!top) return { day: 1, done: false, lastDate: null };
+  if (!top) return { day: start, done: false, lastDate: null };
+  if (top.day < start) return { day: start, done: false, lastDate: top.date };
   return top.date >= today ? { day: top.day, done: true, lastDate: top.date } : { day: top.day + 1, done: false, lastDate: top.date };
+}
+
+/** Where placement started someone on each door: { HINDUISM: 22 }. Junk and day 1 are dropped. */
+export function placedStarts(raw) {
+  const out = {};
+  if (!raw || typeof raw !== "object" || Array.isArray(raw)) return out;
+  for (const [door, day] of Object.entries(raw)) if (typeof door === "string" && door && Number.isInteger(day) && day > 1 && day <= 2000) out[door] = day;
+  return out;
 }
 
 /**
  * Everything the screens show, from the sit log plus a few settings.
- * settings: { goal: { days, setOn } | null, welcomedBackOn, kids: [{ id, name, door, birthYear? }] }
+ * settings: { goal: { days, setOn } | null, welcomedBackOn, kids: [{ id, name, door, birthYear? }], placed: { door: startDay } }
  */
 export function deriveState(sitLog, { today, settings = {} } = {}) {
   if (!DATE_RE.test(today)) throw new Error("deriveState needs today as YYYY-MM-DD");
@@ -52,7 +63,10 @@ export function deriveState(sitLog, { today, settings = {} } = {}) {
 
   const doors = {};
   for (const s of own) (doors[s.door] ||= []).push(s);
-  const paths = Object.fromEntries(Object.entries(doors).map(([door, list]) => [door, pathFrom(list, today)]));
+  const placed = placedStarts(settings.placed);
+  const paths = Object.fromEntries(Object.entries(doors).map(([door, list]) => [door, pathFrom(list, today, placed[door])]));
+  // a door someone was placed on, with nothing walked yet, already stands at its start
+  for (const [door, start] of Object.entries(placed)) if (!paths[door]) paths[door] = pathFrom([], today, start);
 
   const kids = (settings.kids || []).map((k) => {
     const p = pathFrom(sits.filter((s) => s.kidId === k.id), today);
