@@ -7,7 +7,7 @@ import { HEARD_Q } from "@/content/intake";
 import { pendingProfile, youAnswers } from "@/lib/onboard";
 import { useStore } from "@/lib/store";
 import { t } from "@/i18n";
-import { Btn, Eyebrow, Opt, type } from "@/ui";
+import { Btn, ChoiceRow, Eyebrow, type } from "@/ui";
 import { Host } from "@/ui/host";
 import { WelcomeFrame } from "@/ui/welcome-frame";
 
@@ -33,7 +33,7 @@ export default function Heard() {
       <Eyebrow style={{ textAlign: "center" }}>{t("onboarding.heard.eyebrow")}</Eyebrow>
       <Host pose="wave">{HEARD_Q.ask}</Host>
       <View style={{ gap: 8 }} accessibilityRole="radiogroup">
-        {HEARD_Q.choices.map((c) => <Opt key={c.id} testID={`heardFrom-${c.id}`} on={false} onPress={() => pick(c.id)}>{c.label}</Opt>)}
+        {HEARD_Q.choices.map((c) => <ChoiceRow key={c.id} testID={`heardFrom-${c.id}`} on={false} onPress={() => pick(c.id)}>{c.label}</ChoiceRow>)}
       </View>
       {HEARD_Q.note ? <Text style={[type.caption(), { textAlign: "center" }]}>{HEARD_Q.note}</Text> : null}
     </WelcomeFrame>

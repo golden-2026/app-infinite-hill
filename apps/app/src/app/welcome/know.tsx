@@ -9,11 +9,11 @@ import { campLabel, campName, doorLabel, t } from "@/i18n";
 /** The quiz's own frame around a lesson word ("amen — what's underneath it?"); the word itself stays as the lesson has it. */
 const UNDERNEATH = / — what's underneath it\?$/;
 import { advancedFor } from "@/content/placement";
-import { BASICS_STOP_AFTER, atHome, campOneEnd, nextPhase, placementResult, skipDay, withStart, type Check } from "@/lib/placement";
+import { BASICS_STOP_AFTER, STRONG, atHome, campOneEnd, nextPhase, placementResult, skipAnyway, skipDay, withStart, type Check } from "@/lib/placement";
 import { profileFor, youAnswers } from "@/lib/onboard";
 import { doorParam } from "@/lib/door-param";
 import { useStore } from "@/lib/store";
-import { Btn, Eyebrow, Link, Opt, color, type } from "@/ui";
+import { Btn, ChoiceRow, Eyebrow, Link, color, type } from "@/ui";
 import { Host } from "@/ui/host";
 import { WelcomeFrame } from "@/ui/welcome-frame";
 
@@ -75,7 +75,7 @@ export default function Know() {
   if (!started || !basicsQs.length) {
     return (
       <WelcomeFrame step={4} door={door} footer={<Btn testID="know-start" onPress={() => (basicsQs.length ? setStarted(true) : finish(null))}>{t("onboarding.know.start")}</Btn>}>
-        <Host>{t("onboarding.know.host", { door: name.charAt(0).toUpperCase() + name.slice(1) })}</Host>
+        <Host>{t("onboarding.know.host", { door: name })}</Host>
         <Text style={[type.caption(), { textAlign: "center" }]}>{t("onboarding.know.private")}</Text>
         <View style={{ alignItems: "center" }}>
           <Link onPress={() => finish(null)} label={t("onboarding.know.skipA11y", { door: name })}>{t("onboarding.know.skip", { door: name })}</Link>
@@ -98,17 +98,25 @@ export default function Know() {
     const r = placementResult(check);
     const end = campOneEnd();
     const p = pos(r.start);
-    const camp = campName(p.camp, p.name).toLowerCase();
     const stoppedEarly = basics.length < basicsQs.length && basics.filter((x) => !x).length >= BASICS_STOP_AFTER;
-    const host = r.outcome === "skip" ? t("onboarding.know.skipHost", { camp, day: r.start })
+    // took the harder ones: say plainly how many they got and what the skip needed, pass or not
+    const sk = skipDay();
+    const tally = r.asked ? `${t("onboarding.know.score", { got: r.got, total: advancedQs.length })} ${t("onboarding.know.rule", { need: Math.min(STRONG, advancedQs.length), camp: campName(pos(sk).camp, pos(sk).name).toLowerCase(), day: sk })} ` : "";
+    const host = tally + (r.outcome === "skip" ? t("onboarding.know.passHost")
+      : r.skipAnyway && r.outcome === "deep" ? t("onboarding.know.failHost")
       : r.outcome === "deep" ? t("onboarding.know.deepHost")
       : r.outcome === "some" ? t("onboarding.know.someHost")
-      : t("onboarding.know.newHost");
+      : t("onboarding.know.newHost"));
     return (
       <WelcomeFrame step={4} door={door} onBack={stepBack} footer={r.outcome === "skip" ? (
         <View style={{ gap: 10 }}>
           <Btn testID="place-skip" onPress={() => finish(r.knowledge, r.start)}>{t("onboarding.know.skipGo", { day: r.start })}</Btn>
           <Btn testID="place-start" kind="ghost" onPress={() => finish(r.knowledge, 1)}>{t("onboarding.know.fromStart")}</Btn>
+        </View>
+      ) : r.skipAnyway ? (
+        <View style={{ gap: 10 }}>
+          <Btn testID="place-continue" onPress={() => finish(r.knowledge, 1)}>{t("onboarding.know.continue")}</Btn>
+          <Btn testID="place-skip-anyway" kind="ghost" onPress={() => { const a = skipAnyway(check); finish(a.knowledge, a.start); }}>{t("onboarding.know.skipAnyway", { day: sk })}</Btn>
         </View>
       ) : <Btn testID="place-continue" onPress={() => finish(r.knowledge, 1)}>{t("onboarding.know.continue")}</Btn>}>
         <Eyebrow style={{ textAlign: "center" }}>{t("onboarding.know.resultEyebrow")}</Eyebrow>
@@ -132,7 +140,7 @@ export default function Know() {
           <Btn testID="know-no-harder" kind="ghost" onPress={() => setOffer("declined")}>{t("onboarding.know.offerNo")}</Btn>
         </View>
       }>
-        <Host pose="point">{t("onboarding.know.offerHost", { n: advancedQs.length, day: skipDay() })}</Host>
+        <Host pose="point">{t("onboarding.know.offerHost", { n: advancedQs.length, need: Math.min(STRONG, advancedQs.length), day: skipDay() })}</Host>
         <Text style={[type.caption(), { textAlign: "center" }]}>{t("onboarding.know.offerNote")}</Text>
       </WelcomeFrame>
     );
@@ -159,11 +167,11 @@ export default function Know() {
       <Text accessibilityRole="header" style={[type.h1(tier === "advanced" ? 22 : 24), { textAlign: "center" }]}>{tier === "advanced" ? q.q : q.q.replace(UNDERNEATH, t("onboarding.know.underneath"))}</Text>
       <View style={{ gap: 8 }} accessibilityRole="radiogroup">
         {options.map(({ o, k }) => (
-          <Opt key={o} big on={picked?.o === o} onPress={() => answer(o, k)} sub={picked?.o === o ? (picked.ok ? t("onboarding.know.right") : itWas) : undefined}>{o}</Opt>
+          <ChoiceRow key={o} on={picked?.o === o} onPress={() => answer(o, k)} sub={picked?.o === o ? (picked.ok ? t("onboarding.know.right") : itWas) : undefined}>{o}</ChoiceRow>
         ))}
-        <Opt big on={picked?.o === "unsure"} onPress={() => answer(null, null)} sub={picked?.o === "unsure" ? itWas : undefined}>{t("onboarding.know.unsure")}</Opt>
+        <ChoiceRow on={picked?.o === "unsure"} onPress={() => answer(null, null)} sub={picked?.o === "unsure" ? itWas : undefined}>{t("onboarding.know.unsure")}</ChoiceRow>
       </View>
-      <Text style={[type.caption(), { textAlign: "center", color: color.mute }]}>{t("onboarding.know.noScore")}</Text>
+      <Text style={[type.caption(), { textAlign: "center" }]}>{t("onboarding.know.noScore")}</Text>
     </WelcomeFrame>
   );
 }

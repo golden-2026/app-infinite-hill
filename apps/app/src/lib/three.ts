@@ -8,9 +8,9 @@ export type Three = { items: { id: string; label: string; done: boolean }[]; cou
 export function todaysThree(o: { doneToday: boolean; glow?: { date: string; best: number; clean?: boolean } | null; book: { date: string }[]; lanternOn?: string | null; today: string }): Three {
   const best = o.glow?.date === o.today ? o.glow.best : 0;
   const items = [
-    { id: "lesson", label: t("home.three.lesson"), done: o.doneToday },
-    { id: "glow", label: t("home.three.glow"), done: best >= 3 || (o.glow?.date === o.today && !!o.glow.clean) },
-    { id: "keep", label: t("home.three.keep"), done: o.book.some((b) => b.date === o.today) },
+    { id: "lesson", label: t("home.extras.lesson"), done: o.doneToday },
+    { id: "glow", label: t("home.extras.glow"), done: best >= 3 || (o.glow?.date === o.today && !!o.glow.clean) },
+    { id: "keep", label: t("home.extras.keep"), done: o.book.some((b) => b.date === o.today) },
   ];
   const count = items.filter((i) => i.done).length;
   return { items, count, all: count === 3, opened: o.lanternOn === o.today };

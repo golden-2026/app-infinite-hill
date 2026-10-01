@@ -8,7 +8,7 @@ import { pendingProfile, youAnswers, type Stance } from "@/lib/onboard";
 import { useStore } from "@/lib/store";
 import { whyParam } from "@/lib/why-param";
 import { t } from "@/i18n";
-import { Btn, Eyebrow, Link, Opt, type } from "@/ui";
+import { Btn, ChoiceRow, Eyebrow, Link, type } from "@/ui";
 import { Host } from "@/ui/host";
 import { WelcomeFrame } from "@/ui/welcome-frame";
 
@@ -49,7 +49,7 @@ export default function You() {
       <Host pose={step === 0 ? "wave" : "think"}>{q.ask}</Host>
       <View style={{ gap: 8 }} accessibilityRole="radiogroup">
         {q.choices.map((c) => (
-          <Opt key={c.id} big testID={`${q.id}-${c.id}`} on={step === 0 ? stance === c.id : false} onPress={() => pick(c.id)}>{c.label}</Opt>
+          <ChoiceRow key={c.id} testID={`${q.id}-${c.id}`} on={step === 0 ? stance === c.id : false} onPress={() => pick(c.id)}>{c.label}</ChoiceRow>
         ))}
       </View>
       {q.note ? <Text style={[type.caption(), { textAlign: "center" }]}>{q.note}</Text> : null}

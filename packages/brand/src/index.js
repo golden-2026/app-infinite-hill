@@ -28,6 +28,10 @@ export const type = Object.freeze({
   h1: (size = 32) => ({ fontFamily: font.display[800], fontSize: size, letterSpacing: -0.03 * size, lineHeight: Math.round(1.02 * size * 1.05), color: color.ink }),
   body: (size = 14) => ({ fontFamily: font.text[400], fontSize: size, lineHeight: Math.round(1.5 * size), color: color.text }),
   serif: (size = 18, weight = 800) => ({ fontFamily: font.display[weight], fontSize: size, color: color.ink }),
+  /** What the mascot (or a voice) says, in its bubble. One size everywhere. */
+  bubble: () => ({ fontFamily: font.display[500], fontSize: 18, lineHeight: 22, color: color.ink }),
+  /** An answer row in a question (ui ChoiceRow): onboarding's choices, single or multi. */
+  choice: () => ({ fontFamily: font.display[500], fontSize: 17, lineHeight: 22, color: color.ink }),
 });
 
 export const space = Object.freeze({ xs: 4, sm: 8, md: 12, lg: 16, xl: 24, xxl: 32, gutter: 18 });

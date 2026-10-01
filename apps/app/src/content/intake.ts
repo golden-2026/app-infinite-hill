@@ -32,7 +32,7 @@ export type Question = {
 
 /** Sorts people warmly before the door screen, so it can show them the right way in. Never assigns a door. */
 export const STANCE_Q: Question = {
-  id: "stance", ask: "First, a little about you. Where are you with religion right now?",
+  id: "stance", ask: "first, a little about you. where are you with religion right now?",
   note: "private — it stays on your phone. it only changes what we show you first. every door stays open.",
   choices: [
     { id: "practice", label: "I practice a faith" },
@@ -49,7 +49,7 @@ export const STANCE_Q: Question = {
  *  ("skip" when skipped, so it's never asked again). Not belief data, but it is sent to analytics on its own, never
  *  alongside the door or any belief answer. */
 export const HEARD_Q: Question = {
-  id: "heardFrom", ask: "One quick thing: how did you hear about us?", optional: true,
+  id: "heardFrom", ask: "one quick thing: how did you hear about us?", optional: true,
   note: "one tap, or skip. it only helps us know how people find the hill.",
   choices: [
     { id: "tiktok", label: "TikTok" },
@@ -69,14 +69,14 @@ export const HEARD_Q: Question = {
 export function raisedInQ(stance: string | null): Question {
   // Learning a partner's or family's faith: ask which one they're learning, never where they grew up.
   if (stance === "partner") return {
-    id: "learning", ask: es() ? RAISED_IN_ES.learningAsk : "Lovely. Which faith are you learning?",
+    id: "learning", ask: es() ? RAISED_IN_ES.learningAsk : "lovely. which faith are you learning?",
     note: es() ? RAISED_IN_ES.learningNote : "we'll teach it the way the people who practice it understand it. your own background stays yours.",
     choices: RAISED.filter((c) => c.id !== "none" && c.id !== "mixed"),
   };
   const grewUp = stance === "unsure" || stance === "left";
   const ask = es()
     ? (stance === "practice" ? RAISED_IN_ES.practiceAsk : grewUp ? RAISED_IN_ES.grewUpAsk : RAISED_IN_ES.otherAsk)
-    : stance === "practice" ? "Lovely. Which one?" : grewUp ? "Which one did you grow up in?" : "Did you grow up in a religion?";
+    : stance === "practice" ? "lovely. which one?" : grewUp ? "which one did you grow up in?" : "did you grow up in a religion?";
   const choices = RAISED.filter((c) => (stance === "practice" || grewUp ? c.id !== "none" : true))
     .map((c) => (c.id === "none" ? { ...c, label: es() ? RAISED_IN_ES.noneLabel : "no, none" } : c))
     .sort((a, z) => Number(z.id === "none") - Number(a.id === "none")); // "no, none" first when it's offered
@@ -87,7 +87,7 @@ export function raisedInQ(stance: string | null): Question {
 
 /** Asked after the knowledge check, to learn how much the tradition is part of their life. {door} is the tradition's name. */
 export const BELIEF_QUESTIONS: Question[] = [
-  { id: "why", ask: "What brings you to {door}?", note: "pick the closest. it shapes what we lead with.", choices: [
+  { id: "why", ask: "what brings you to {door}?", note: "pick the closest. it shapes what we lead with.", choices: [
     { id: "own", label: "I want to know my own religion better" },
     { id: "roots", label: "reconnect with how I grew up" },
     { id: "god", label: "I'm wondering if I believe in God" },
@@ -97,25 +97,25 @@ export const BELIEF_QUESTIONS: Question[] = [
     { id: "hard", label: "going through something hard" },
     { id: "curious", label: "just curious" },
   ] },
-  { id: "raised", ask: "Were you raised {person}?", choices: [
+  { id: "raised", ask: "were you raised {person}?", choices: [
     { id: "yes", label: "yes, since I was little" },
     { id: "later", label: "I came to it later" },
     { id: "exploring", label: "no — I'm exploring it" },
     { id: "family", label: "no — it's my partner's or family's" },
   ] },
-  { id: "practice", ask: "How much is it part of your life right now?", choices: [
+  { id: "practice", ask: "how much is it part of your life right now?", choices: [
     { id: "daily", label: "most days" },
     { id: "weekly", label: "most weeks" },
     { id: "holidays", label: "holidays and big moments" },
     { id: "rarely", label: "not much right now" },
   ] },
-  { id: "hold", ask: "How do you hold it?", optional: true, note: "there's no right answer. this only changes how we talk to you.", choices: [
+  { id: "hold", ask: "how do you hold it?", optional: true, note: "there's no right answer. this only changes how we talk to you.", choices: [
     { id: "fully", label: "I believe it, fully" },
     { id: "questions", label: "I believe, with questions" },
     { id: "culture", label: "it's more culture and family" },
     { id: "figuring", label: "I'm figuring it out" },
   ] },
-  { id: "openness", ask: "Sometimes another tradition has a word for something similar. When that comes up, you'd like to…", note: "you can change this any time in You.", choices: [
+  { id: "openness", ask: "sometimes another tradition has a word for something similar. when that comes up, you'd like to…", note: "you can change this any time in You.", choices: [
     { id: "stay", label: "stay on my path — keep it to {door}" },
     { id: "sometimes", label: "hear about it now and then" },
     { id: "love", label: "I love that stuff" },
@@ -130,7 +130,7 @@ export const PARTNER_SKIPS: string[] = ["why", "raised", "practice", "hold"];
 /** Asked once, only to people who didn't say they practice a faith: the last belief question on a tradition door,
  *  or the last question of the "my own path" intake. Stored as answers.practiceMode. */
 export const PRACTICE_MODE_Q: Question = {
-  id: "practiceMode", ask: "Do you want to try the practices, or just learn?", note: "change it any time under You.", choices: [
+  id: "practiceMode", ask: "do you want to try the practices, or just learn?", note: "change it any time under You.", choices: [
     { id: "practice", label: "try them — a breath, a prayer, a small thing to do" },
     { id: "learn", label: "just learn — show me how it's done, no practice" },
   ],
@@ -145,40 +145,40 @@ const RAISED: Choice[] = [
 ];
 
 export const INTAKE: Record<string, Question> = {
-  raised: { id: "raised", ask: "Were you raised in a religion?", note: "no wrong answers. you don't have to pick one here, now or ever.", choices: RAISED },
-  feelNow: { id: "feelNow", ask: "How do you feel about it now?", choices: [
+  raised: { id: "raised", ask: "were you raised in a religion?", note: "no wrong answers. you don't have to pick one here, now or ever.", choices: RAISED },
+  feelNow: { id: "feelNow", ask: "how do you feel about it now?", choices: [
     { id: "part", label: "it's still part of me" },
     { id: "complicated", label: "it's complicated" },
     { id: "left", label: "I left it" },
     { id: "never", label: "it never really clicked" },
   ] },
-  turnedOff: { id: "turnedOff", ask: "What turned you off, if anything?", multi: true, optional: true, choices: [
+  turnedOff: { id: "turnedOff", ask: "what turned you off, if anything?", multi: true, optional: true, choices: [
     { id: "rules", label: "the rules" }, { id: "judged", label: "feeling judged" }, { id: "hypocrisy", label: "the hypocrisy" },
     { id: "believe", label: "I didn't believe it" }, { id: "rote", label: "it felt rote" }, { id: "politics", label: "the politics" },
     { id: "hurt", label: "something that happened" }, { id: "none", label: "nothing, really" },
   ] },
-  loved: { id: "loved", ask: "Was there anything you loved about it?", multi: true, optional: true, choices: [
+  loved: { id: "loved", ask: "was there anything you loved about it?", multi: true, optional: true, choices: [
     { id: "music", label: "the music" }, { id: "ritual", label: "the rituals" }, { id: "community", label: "the people" },
     { id: "stories", label: "the stories" }, { id: "quiet", label: "the quiet, prayer" }, { id: "holidays", label: "holidays and food" },
     { id: "nothing", label: "not really" },
   ] },
-  grewUp: { id: "grewUp", ask: "Growing up, religion was…", choices: [
+  grewUp: { id: "grewUp", ask: "growing up, religion was…", choices: [
     { id: "absent", label: "just not around" }, { id: "others", label: "other people's thing" },
     { id: "curious", label: "something I was curious about" }, { id: "avoided", label: "something to stay away from" },
   ] },
-  believe: { id: "believe", ask: "What do you believe right now?", optional: true, note: "private. it only changes what we show you.", choices: [
+  believe: { id: "believe", ask: "what do you believe right now?", optional: true, note: "private. it only changes what we show you.", choices: [
     { id: "bigger", label: "there's something bigger" }, { id: "unsure", label: "not sure" },
     { id: "meaning", label: "no god, but meaning matters" }, { id: "searching", label: "I'm searching" },
   ] },
-  organized: { id: "organized", ask: "And organized religion?", choices: [
+  organized: { id: "organized", ask: "and organized religion?", choices: [
     { id: "like", label: "I like it" }, { id: "mixed", label: "mixed feelings" }, { id: "away", label: "I'd rather keep away" },
   ] },
-  feeling: { id: "feeling", ask: "What's going on for you lately?", multi: true, choices: [
+  feeling: { id: "feeling", ask: "what's going on for you lately?", multi: true, choices: [
     { id: "sleep", label: "can't sleep" }, { id: "anxious", label: "anxious" }, { id: "grief", label: "grieving someone" },
     { id: "sick", label: "someone I love is sick" }, { id: "lonely", label: "lonely" }, { id: "focus", label: "can't focus" },
     { id: "grateful", label: "grateful, actually" }, { id: "curious", label: "just curious" },
   ] },
-  interests: { id: "interests", ask: "What sounds good to you?", multi: true, choices: [
+  interests: { id: "interests", ask: "what sounds good to you?", multi: true, choices: [
     { id: "still", label: "breathing and stillness" }, { id: "stories", label: "old stories" }, { id: "words", label: "wise words to carry" },
     { id: "kindness", label: "kindness, in practice" }, { id: "others", label: "how other people believe" },
     { id: "common", label: "what all religions share" },
@@ -213,8 +213,8 @@ export function intakeReply(qid: string, a: string | string[]): string | null {
   if (qid === "organized" && v[0] === "away") return r ? r.away : "fair. no one here will sign you up for anything.";
   if (qid === "believe" && v[0] === "meaning") return r ? r.meaning : "good. there's a lot here that doesn't need a god to work.";
   if (qid === "raised" && v[0] === "none") return r ? r.none : "then you get to walk in with fresh eyes.";
-  if (qid === "turnedOff" && v.includes("hurt")) return r ? r.hurt : "I'm sorry. we'll go gently.";
-  if (qid === "feeling" && v.includes("grief")) return r ? r.grief : "I'm sorry. we'll start with something steady.";  return null;
+  if (qid === "turnedOff" && v.includes("hurt")) return r ? r.hurt : "i'm sorry. we'll go gently.";
+  if (qid === "feeling" && v.includes("grief")) return r ? r.grief : "i'm sorry. we'll start with something steady.";  return null;
 }
 
 /** Which bridge themes an answer points at (see BRIDGES[].tags). */

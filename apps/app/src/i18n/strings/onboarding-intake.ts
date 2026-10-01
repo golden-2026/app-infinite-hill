@@ -16,7 +16,7 @@ const RAISED_ES: Record<string, string> = {
 /** Keyed "<area>.<question id>": you.* (first step), belief.* (a tradition door), intake.* ("my own path"). */
 export const QUESTIONS_ES: Record<string, QuestionEs> = {
   "you.stance": {
-    ask: "Primero, un poco sobre ti. ¿Cómo estás con la religión ahora mismo?",
+    ask: "primero, un poco sobre ti. ¿cómo estás con la religión ahora mismo?",
     note: "es privado: se queda en tu teléfono. solo cambia lo que te mostramos primero. todas las puertas siguen abiertas.",
     c: {
       practice: "practico una fe",
@@ -29,7 +29,7 @@ export const QUESTIONS_ES: Record<string, QuestionEs> = {
     },
   },
   "you.heardFrom": {
-    ask: "Una cosa rápida: ¿cómo supiste de nosotros?",
+    ask: "una cosa rápida: ¿cómo supiste de nosotros?",
     note: "un toque, o sáltala. solo nos ayuda a saber cómo llega la gente a la colina.",
     c: {
       tiktok: "TikTok",
@@ -46,7 +46,7 @@ export const QUESTIONS_ES: Record<string, QuestionEs> = {
   },
   raised: { ask: "", c: RAISED_ES },
   "belief.why": {
-    ask: "¿Qué te trae al {door}?",
+    ask: "¿qué te trae al {door}?",
     note: "elige lo más cercano. define con qué empezamos.",
     c: {
       own: "quiero conocer mejor mi propia religión",
@@ -60,7 +60,7 @@ export const QUESTIONS_ES: Record<string, QuestionEs> = {
     },
   },
   "belief.raised": {
-    ask: "¿Creciste en el {door}?",
+    ask: "¿creciste en el {door}?",
     c: {
       yes: "sí, desde la infancia",
       later: "llegué a él más tarde",
@@ -69,7 +69,7 @@ export const QUESTIONS_ES: Record<string, QuestionEs> = {
     },
   },
   "belief.practice": {
-    ask: "¿Qué tanto forma parte de tu vida ahora?",
+    ask: "¿qué tanto forma parte de tu vida ahora?",
     c: {
       daily: "casi todos los días",
       weekly: "casi todas las semanas",
@@ -78,7 +78,7 @@ export const QUESTIONS_ES: Record<string, QuestionEs> = {
     },
   },
   "belief.hold": {
-    ask: "¿Cómo lo vives?",
+    ask: "¿cómo lo vives?",
     note: "no hay una respuesta correcta. esto solo cambia cómo te hablamos.",
     c: {
       fully: "lo creo, del todo",
@@ -88,7 +88,7 @@ export const QUESTIONS_ES: Record<string, QuestionEs> = {
     },
   },
   "belief.openness": {
-    ask: "A veces otra tradición tiene una palabra para algo parecido. Cuando eso pase, te gustaría…",
+    ask: "a veces otra tradición tiene una palabra para algo parecido. cuando eso pase, te gustaría…",
     note: "puedes cambiarlo cuando quieras en Tú.",
     c: {
       stay: "seguir en mi camino: solo el {door}",
@@ -97,7 +97,7 @@ export const QUESTIONS_ES: Record<string, QuestionEs> = {
     },
   },
   "belief.practiceMode": {
-    ask: "¿Quieres probar las prácticas, o solo aprender?",
+    ask: "¿quieres probar las prácticas, o solo aprender?",
     note: "cámbialo cuando quieras en Tú.",
     c: {
       practice: "probarlas: una respiración, una oración, algo pequeño que hacer",
@@ -105,16 +105,16 @@ export const QUESTIONS_ES: Record<string, QuestionEs> = {
     },
   },
   "intake.raised": {
-    ask: "¿Creciste en una religión?",
+    ask: "¿creciste en una religión?",
     note: "no hay respuestas incorrectas. no tienes que elegir una aquí, ni ahora ni nunca.",
     c: RAISED_ES,
   },
   "intake.feelNow": {
-    ask: "¿Y cómo te sientes con ella ahora?",
+    ask: "¿y cómo te sientes con ella ahora?",
     c: { part: "sigue siendo parte de mí", complicated: "es complicado", left: "la dejé", never: "nunca me terminó de convencer" },
   },
   "intake.turnedOff": {
-    ask: "¿Qué te alejó, si es que algo lo hizo?",
+    ask: "¿qué te alejó, si es que algo lo hizo?",
     c: {
       rules: "las reglas", judged: "sentir que me juzgaban", hypocrisy: "la hipocresía",
       believe: "no me lo creía", rote: "se sentía mecánico", politics: "la política",
@@ -122,7 +122,7 @@ export const QUESTIONS_ES: Record<string, QuestionEs> = {
     },
   },
   "intake.loved": {
-    ask: "¿Hubo algo que te encantara?",
+    ask: "¿hubo algo que te encantara?",
     c: {
       music: "la música", ritual: "los rituales", community: "la gente",
       stories: "las historias", quiet: "el silencio, la oración", holidays: "las fiestas y la comida",
@@ -130,23 +130,23 @@ export const QUESTIONS_ES: Record<string, QuestionEs> = {
     },
   },
   "intake.grewUp": {
-    ask: "En tu infancia, la religión era…",
+    ask: "en tu infancia, la religión era…",
     c: {
       absent: "algo que no estaba", others: "cosa de otras personas",
       curious: "algo que me daba curiosidad", avoided: "algo de lo que había que alejarse",
     },
   },
   "intake.believe": {
-    ask: "¿En qué crees ahora mismo?",
+    ask: "¿en qué crees ahora mismo?",
     note: "es privado. solo cambia lo que te mostramos.",
     c: { bigger: "hay algo más grande", unsure: "no lo sé", meaning: "no hay dios, pero el sentido importa", searching: "estoy buscando" },
   },
   "intake.organized": {
-    ask: "¿Y la religión organizada?",
+    ask: "¿y la religión organizada?",
     c: { like: "me gusta", mixed: "tengo sentimientos encontrados", away: "prefiero mantenerme lejos" },
   },
   "intake.feeling": {
-    ask: "¿Qué te está pasando últimamente?",
+    ask: "¿qué te está pasando últimamente?",
     c: {
       sleep: "no puedo dormir", anxious: "ansiedad", grief: "estoy de duelo por alguien",
       sick: "alguien que quiero está enfermo", lonely: "soledad", focus: "no me puedo concentrar",
@@ -154,7 +154,7 @@ export const QUESTIONS_ES: Record<string, QuestionEs> = {
     },
   },
   "intake.interests": {
-    ask: "¿Qué te suena bien?",
+    ask: "¿qué te suena bien?",
     c: {
       still: "respirar y la quietud", stories: "historias antiguas", words: "palabras sabias para llevar contigo",
       kindness: "la bondad, en la práctica", others: "cómo creen otras personas",
@@ -165,11 +165,11 @@ export const QUESTIONS_ES: Record<string, QuestionEs> = {
 
 /** raisedInQ(): the follow-up question's wording (its choices are RAISED_ES). */
 export const RAISED_IN_ES = {
-  learningAsk: "Qué bien. ¿Qué fe estás aprendiendo?",
+  learningAsk: "qué bien. ¿qué fe estás aprendiendo?",
   learningNote: "la enseñaremos como la entienden quienes la practican. tu propia historia sigue siendo tuya.",
-  practiceAsk: "Qué bien. ¿Cuál?",
-  grewUpAsk: "¿En cuál creciste?",
-  otherAsk: "¿Creciste en una religión?",
+  practiceAsk: "qué bien. ¿cuál?",
+  grewUpAsk: "¿en cuál creciste?",
+  otherAsk: "¿creciste en una religión?",
   grewUpNote: "no hay respuestas incorrectas. nada aquí te pide volver.",
   noneLabel: "no, ninguna",
 };

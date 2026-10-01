@@ -88,6 +88,62 @@ export function CompanionCard({ day }: { day: Shaped }) {
   );
 }
 
+/** The companion on an ordinary day (Today redesign, 2026-10-01): one short note, a "talk" link, today's practice as
+ *  one line. "how are you today?" waits until the lesson is done (`afterLesson`), and then it's one row of chips.
+ *  The reach-out line (a few hard days in a row) shows exactly as in the full card. Quiet days use CompanionCard. */
+export function CompanionNote({ day, afterLesson }: { day: Shaped; afterLesson: boolean }) {
+  const { today } = useStore();
+  const m = useMemory();
+  const asked = m.moods.find((x) => x.date === today)?.mood ?? null;
+  const p = day.practice;
+  const open = () => router.push({ pathname: "/practice/[id]", params: day.howItsDone ? { id: p.id, view: "learn" } : { id: p.id } });
+  return (
+    <View style={[s.card, { borderWidth: 1.5, borderColor: color.line }]} testID="companion-card">
+      <View style={{ flexDirection: "row", alignItems: "center", gap: 10 }}>
+        <Guy pose="wave" h={40} />
+        <Text style={[s.note, { flex: 1, marginTop: 0, fontSize: 15, lineHeight: 20 }]} numberOfLines={3} accessibilityLiveRegion="polite">{day.note}</Text>
+        <Pressable testID="companion-talk" accessibilityRole="link" accessibilityLabel={t("home.companion.talkA11y")} onPress={() => router.push("/guide")} hitSlop={8} style={{ minHeight: 40, justifyContent: "center", paddingLeft: 4 }}>
+          <Text style={[type.eyebrow(8), { color: color.ink }]}>{t("home.companion.talk")}</Text>
+        </Pressable>
+      </View>
+      {day.reachOut ? (
+        <View style={{ marginTop: 6, flexDirection: "row", alignItems: "center", gap: 8 }} testID="reach-out">
+          <Text style={[type.body(13), { flex: 1, color: color.ink }]}>{t("companion.card.reachOut")}</Text>
+          <Pressable accessibilityRole="button" accessibilityLabel={t("companion.card.closeToday")} onPress={() => closeHelp(today)} hitSlop={8} style={{ minHeight: 36, justifyContent: "center" }}>
+            <Text style={[type.eyebrow(8), { color: color.mute }]}>{t("common.notNow")}</Text>
+          </Pressable>
+        </View>
+      ) : null}
+      <Pressable testID="companion-practice" accessibilityRole="button" accessibilityLabel={day.howItsDone ? t("companion.card.practiceHowA11y", { title: p.title }) : t("companion.card.practiceA11y", { lead: day.learn ? t("companion.card.somethingToTry") : t("companion.card.todaysPractice"), title: p.title, about: t("companion.card.aboutMinutes", { count: p.minutes }) })} onPress={open}
+        style={({ pressed }) => ({ marginTop: 8, minHeight: 40, flexDirection: "row", alignItems: "center", gap: 8, borderTopWidth: 1, borderTopColor: color.line, paddingTop: 8, opacity: pressed ? 0.7 : 1 })}>
+        <Text style={[type.caption(12), { flexShrink: 0 }]}>{day.howItsDone ? t("companion.card.howItsDone", { what: p.door ? doorLabel(p.door) : kindWord(p.kind) }) : `${t("companion.card.todaysPractice")} · ${p.minutes} min`}</Text>
+        <Text numberOfLines={1} style={{ flex: 1, fontFamily: font.display[800], fontSize: 14, color: color.ink }}>{p.title}</Text>
+        <Text style={{ fontFamily: font.display[800], fontSize: 16, color: color.ink }}>›</Text>
+      </Pressable>
+      {afterLesson && asked === null ? (
+        <View style={{ marginTop: 6 }} testID="mood-after">
+          <Text style={[type.caption(12)]}>{t("home.companion.after")}</Text>
+          <View style={[s.moods, { marginTop: 4 }]} accessibilityRole="radiogroup" accessibilityLabel={t("home.companion.after")}>
+            {MOODS.map((x) => (
+              <Pressable key={x.id} accessibilityRole="radio" accessibilityState={{ checked: false }} accessibilityLabel={moodLabel(x.id)} onPress={() => checkIn(today, x.id)}
+                style={({ pressed }) => [s.mood, { minHeight: 32, paddingHorizontal: 10, borderWidth: 1 }, pressed && { backgroundColor: "#FFFBE0" }]}>
+                <Text style={[s.moodText, { fontSize: 12 }]}>{moodLabel(x.id)}</Text>
+              </Pressable>
+            ))}
+            <Pressable accessibilityRole="button" accessibilityLabel={t("companion.card.skip")} onPress={() => checkIn(today, "skip")} hitSlop={6} style={{ justifyContent: "center", paddingHorizontal: 6, minHeight: 32 }}>
+              <Text style={[type.eyebrow(8), { color: color.mute }]}>{t("companion.card.skip")}</Text>
+            </Pressable>
+          </View>
+        </View>
+      ) : asked && asked !== "skip" ? (
+        <Pressable accessibilityRole="button" accessibilityLabel={t("companion.card.youSaidA11y", { mood: moodLabel(asked) })} onPress={() => clearCheckIn(today)} hitSlop={6} style={{ marginTop: 6, alignSelf: "flex-start" }}>
+          <Text style={[type.caption(12)]}>{t("companion.card.youSaid", { mood: moodLabel(asked) })}<Text style={{ textDecorationLine: "underline" }}>{t("common.change")}</Text></Text>
+        </Pressable>
+      ) : null}
+    </View>
+  );
+}
+
 /** Real help, gently: only for words (journal, Guide) that mean someone may be in danger. Never from mood taps alone. No diagnosis. */
 export function HelpCard({ onClose }: { onClose?: () => void }) {
   const { today } = useStore();

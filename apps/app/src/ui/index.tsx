@@ -83,19 +83,41 @@ export function Card({ children, dark, onPress, style, label: a11y, testID }: { 
   return <Pressable testID={testID} accessibilityRole="button" accessibilityLabel={a11y} onPress={() => { tapHaptic(); onPress(); }} style={({ pressed }) => [...s, pressed && { opacity: 0.94, transform: [{ scale: 0.985 }] }]}>{children}</Pressable>;
 }
 
-/** `big`: v175's onboarding choice (Manrope 17), not the small settings option. */
-export function Opt({ on, onPress, children, sub, testID, big, multi }: { on?: boolean; onPress: () => void; children: string; sub?: string; testID?: string; big?: boolean; /** pick-several: a checkbox, not a radio */ multi?: boolean }) {
+/** The one answer row for onboarding questions (welcome/*: about you, how you heard, the check, your tradition,
+ *  getting to know you). Manrope medium 17/22, one padding and row height, one selected state (ink edge on pale
+ *  lemon). Pick-several rows carry a checkbox on the right so they read differently from pick-one. */
+export function ChoiceRow({ on, onPress, children, sub, testID, multi }: { on?: boolean; onPress: () => void; children: string; sub?: string; testID?: string; /** pick-several: a checkbox, not a radio */ multi?: boolean }) {
   return (
     <Pressable testID={testID} accessibilityRole={multi ? "checkbox" : "radio"} accessibilityState={{ checked: !!on }} aria-checked={!!on} accessibilityLabel={sub ? `${children}. ${sub}` : children} onPress={() => { tapHaptic(); onPress(); }}
-      style={({ pressed }) => [styles.opt, big && { paddingVertical: 14, paddingHorizontal: 14 }, { borderColor: on ? color.ink : color.line, backgroundColor: on ? "#FFFBE0" : color.white, transform: [{ scale: pressed ? 0.985 : 1 }] }]}>
-      <Text style={big ? { fontFamily: font.display[500], fontSize: 17, color: color.ink } : { fontFamily: font.text[600], fontSize: 14, color: color.ink }}>{children}</Text>
+      style={({ pressed }) => [styles.choice, { borderColor: on ? color.ink : color.line, backgroundColor: on ? CHOSEN : color.white, transform: [{ scale: pressed ? 0.985 : 1 }] }]}>
+      <View style={{ flex: 1 }}>
+        <Text style={type.choice()}>{children}</Text>
+        {sub ? <Text style={[type.caption(), { marginTop: 3 }]}>{sub}</Text> : null}
+      </View>
+      {multi ? (
+        <View style={[styles.check, on ? { backgroundColor: color.ink, borderColor: color.ink } : null]}>
+          {on ? <Text style={{ fontFamily: font.text[700], fontSize: 13, lineHeight: 15, color: color.gold }}>✓</Text> : null}
+        </View>
+      ) : null}
+    </Pressable>
+  );
+}
+const CHOSEN = "#FFFBE0";
+
+/** A small option (Inter 14), for compact pickers outside onboarding. `big` is the onboarding row: use ChoiceRow. */
+export function Opt({ on, onPress, children, sub, testID, big, multi }: { on?: boolean; onPress: () => void; children: string; sub?: string; testID?: string; big?: boolean; /** pick-several: a checkbox, not a radio */ multi?: boolean }) {
+  if (big) return <ChoiceRow on={on} onPress={onPress} sub={sub} testID={testID} multi={multi}>{children}</ChoiceRow>;
+  return (
+    <Pressable testID={testID} accessibilityRole={multi ? "checkbox" : "radio"} accessibilityState={{ checked: !!on }} aria-checked={!!on} accessibilityLabel={sub ? `${children}. ${sub}` : children} onPress={() => { tapHaptic(); onPress(); }}
+      style={({ pressed }) => [styles.opt, { borderColor: on ? color.ink : color.line, backgroundColor: on ? CHOSEN : color.white, transform: [{ scale: pressed ? 0.985 : 1 }] }]}>
+      <Text style={{ fontFamily: font.text[600], fontSize: 14, color: color.ink }}>{children}</Text>
       {sub ? <Text style={[type.body(12), { color: color.mute, marginTop: 3 }]}>{sub}</Text> : null}
     </Pressable>
   );
 }
 
 export const Bubble = ({ children }: { children: ReactNode }) => (
-  <View style={styles.bubble}><Text style={{ fontFamily: font.display[500], fontSize: 18, lineHeight: 22, color: color.ink }}>{children}</Text></View>
+  <View style={styles.bubble}><Text style={type.bubble()}>{children}</Text></View>
 );
 
 // ─── art ────────────────────────────────────────────────────────────────
@@ -233,6 +255,8 @@ const styles = StyleSheet.create({
   card: { backgroundColor: color.white, borderColor: color.line, borderWidth: 1, borderRadius: 20, padding: 16, shadowColor: "#161310", shadowOpacity: 0.05, shadowRadius: 15, shadowOffset: { width: 0, height: 8 } },
   cardDark: { backgroundColor: color.ink, borderWidth: 0 },
   opt: { borderWidth: 1.5, borderRadius: 16, paddingVertical: 13, paddingHorizontal: 16 },
+  choice: { flexDirection: "row", alignItems: "center", gap: 12, minHeight: 56, borderWidth: 1.5, borderRadius: 16, paddingVertical: 14, paddingHorizontal: 16 },
+  check: { width: 22, height: 22, borderRadius: 6, borderWidth: 1.5, borderColor: color.line, backgroundColor: color.white, alignItems: "center", justifyContent: "center" },
   bubble: { flex: 1, backgroundColor: color.white, borderColor: color.line, borderWidth: 1, borderRadius: 18, paddingVertical: 14, paddingHorizontal: 16 },
   faceCaption: { position: "absolute", left: 12, right: 12, bottom: 12 },
   faceScrim: { position: "absolute", left: 0, right: 0, bottom: 0 },

@@ -7,6 +7,7 @@
 //   skip   basics + 4 of 6 harder: they may start at the first day after camp one (day 22), or from the beginning
 //   deep   75%+ overall: day 1, at the deeper level        some   38%+: day 1, past the basics
 //   new    day 1, from the very beginning
+// Took the harder ones and fell short: day 1 (deep), with "skip to day 22 anyway" offered (skipAnyway).
 // It only ever tests knowledge, never belief, and "start from the beginning anyway" is always offered.
 import { data } from "@ih/content";
 
@@ -58,7 +59,8 @@ export function nextPhase(c: Check): Phase {
 }
 
 /** The result: a 0–100 knowledge score (it sets how deep lessons and the Guide go) and where they may start. */
-export function placementResult(c: Check, skip = skipDay()): { knowledge: number; outcome: Outcome; start: number } {
+export type Result = { knowledge: number; outcome: Outcome; start: number; /** harder questions asked, and how many were right (0 and 0 when they never took them) */ asked: number; got: number; /** took the harder ones but fell short of the skip: "skip to day 22 anyway" is offered */ skipAnyway: boolean };
+export function placementResult(c: Check, skip = skipDay()): Result {
   // basics not asked because they were fast-tracked count as known; basics cut short by misses count as missed
   const basicsRight = right(c.basics) + (fastTracked(c) ? c.basicsTotal - c.basics.length : 0);
   const advRight = right(c.advanced);
@@ -66,8 +68,15 @@ export function placementResult(c: Check, skip = skipDay()): { knowledge: number
   const pct = (got: number, of: number) => (of > 0 ? Math.round((100 * got) / of) : 0);
   // trying the harder ones never costs anything: the score is the better of the basics alone and both together
   const knowledge = Math.max(pct(basicsRight, c.basicsTotal), tookAdvanced ? pct(basicsRight + advRight, c.basicsTotal + c.advancedTotal) : 0);
-  if (tookAdvanced && advRight >= Math.min(STRONG, c.advancedTotal)) return { knowledge: Math.max(knowledge, 75), outcome: "skip", start: skip };
-  return { knowledge, outcome: knowledge >= 75 ? "deep" : knowledge >= 38 ? "some" : "new", start: 1 };
+  const tally = { asked: c.advanced.length, got: advRight };
+  if (tookAdvanced && advRight >= Math.min(STRONG, c.advancedTotal)) return { knowledge: Math.max(knowledge, 75), outcome: "skip", start: skip, ...tally, skipAnyway: false };
+  return { knowledge, outcome: knowledge >= 75 ? "deep" : knowledge >= 38 ? "some" : "new", start: 1, ...tally, skipAnyway: tookAdvanced };
+}
+
+/** "skip to day 22 anyway", after falling short on the harder ones: the same start as a pass (camp one stays open to
+ *  catch up), with the knowledge score they actually earned (it is never raised for choosing to skip). */
+export function skipAnyway(c: Check, skip = skipDay()): { knowledge: number; start: number } {
+  return { knowledge: placementResult(c, skip).knowledge, start: skip };
 }
 
 /** The placement map with this door's start set (a skip) or cleared (from the beginning). */

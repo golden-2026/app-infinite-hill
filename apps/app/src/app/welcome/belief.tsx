@@ -9,7 +9,7 @@ import { commitmentScore, type Openness } from "@/lib/profile";
 import { asksPracticeMode, profileFor, youAnswers } from "@/lib/onboard";
 import { doorParam } from "@/lib/door-param";
 import { useStore } from "@/lib/store";
-import { Btn, Eyebrow, Link, Opt, type } from "@/ui";
+import { Btn, ChoiceRow, Eyebrow, Link, type } from "@/ui";
 import { Host } from "@/ui/host";
 import { WelcomeFrame } from "@/ui/welcome-frame";
 
@@ -66,7 +66,7 @@ export default function Belief() {
       <Eyebrow style={{ textAlign: "center" }}>{t("onboarding.belief.eyebrow", { n: i + 1, total: qs.length })}</Eyebrow>
       <Host>{fill(q.ask)}</Host>
       <View style={{ gap: 8 }} accessibilityRole="radiogroup">
-        {q.choices.map((c) => <Opt key={c.id} big testID={`${q.id}-${c.id}`} on={answers[q.id] === c.id} onPress={() => pick(c.id)}>{fill(c.label)}</Opt>)}
+        {q.choices.map((c) => <ChoiceRow key={c.id} testID={`${q.id}-${c.id}`} on={answers[q.id] === c.id} onPress={() => pick(c.id)}>{fill(c.label)}</ChoiceRow>)}
       </View>
       {q.note ? <Text style={[type.caption(), { textAlign: "center" }]}>{q.note}</Text> : null}
       {i > 0 ? <View style={{ alignItems: "center" }}><Link onPress={() => setI(i - 1)}>{t("onboarding.prevQuestion")}</Link></View> : null}

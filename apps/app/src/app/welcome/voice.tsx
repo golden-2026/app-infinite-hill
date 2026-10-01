@@ -7,7 +7,7 @@ import { icon } from "@ih/content";
 import { t } from "@/i18n";
 import { doorParam } from "@/lib/door-param";
 import { voiceBio, voiceLabel } from "@/lib/voice";
-import { Body, Btn, Face, color, font } from "@/ui";
+import { Btn, Face, color, font, type } from "@/ui";
 import { Host } from "@/ui/host";
 import { WelcomeFrame } from "@/ui/welcome-frame";
 
@@ -24,10 +24,10 @@ export default function MeetVoice() {
         {t("onboarding.voice.meet")}{" "}<Text style={{ fontFamily: font.display[800] }}>{ic.name}</Text>{" — "}{voiceBio(ic.wing)}{". "}{v.claim}
       </Host>
       <Face ic={ic} w={"100%" as any} h={260} r={22} big />
-      <Body size={13} style={{ color: color.mute }}>
+      <Text style={type.caption()}>
         {t("onboarding.voice.long")}<Text style={{ color: color.ink, fontFamily: font.text[600] }}>{t("onboarding.voice.camps")}</Text>{t("onboarding.voice.campList")}{" "}
         {v.licensed ? t("onboarding.voice.licensed", { name: ic.short }) : t("onboarding.voice.unlicensed", { name: ic.short })}{t("onboarding.voice.grewUp")}
-      </Body>
+      </Text>
     </WelcomeFrame>
   );
 }

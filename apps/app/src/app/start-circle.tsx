@@ -25,7 +25,8 @@ export default function NewCircle() {
   const [msg, setMsg] = useState<string | null>(null);
   const [made, setMade] = useState<Circle | null>(null);
   const ok = !!cleanLine(name, NAME_MAX) && !!cleanLine(leader, LEADER_MAX);
-  const close = () => (router.canGoBack() ? router.back() : router.replace("/together"));
+  // always land on Together: on the web, canGoBack() can be true with nothing in the app to go back to, so back() did nothing
+  const close = () => router.replace("/together");
 
   const go = async () => {
     setBusy(true);

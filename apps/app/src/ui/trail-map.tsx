@@ -19,13 +19,13 @@ const EDGE = NODE / 2;
 const INK = "rgba(10,10,10,";
 
 /** A painted lookout filling its box, with the view (peaks and water) kept in frame. */
-function Painting({ artKey, y = "25%" }: { artKey: string; y?: string }) {
+export function Painting({ artKey, y = "25%" }: { artKey: string; y?: string }) {
   const a = art(artKey);
   if (!a) return null;
   return <Image source={a.src} style={{ position: "absolute", left: 0, right: 0, top: 0, bottom: 0 }} contentFit="cover" contentPosition={{ top: y as `${number}%`, left: "50%" }} transition={FADE} cachePolicy="memory-disk" accessible={false} />;
 }
 
-function SummitCard({ s, name, planned }: { s: Summit; name: string; planned: boolean }) {
+export function SummitCard({ s, name, planned }: { s: Summit; name: string; planned: boolean }) {
   const rows: [string, string][] = [[t("home.trail.know"), s.know], [t("home.trail.practice"), s.practice], [t("home.trail.able"), s.able]];
   return (
     <View style={{ backgroundColor: color.ink, borderRadius: 24, overflow: "hidden" }} accessibilityLabel={t("home.trail.summitA11y", { name })}>

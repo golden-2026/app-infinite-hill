@@ -7,7 +7,7 @@ import { EXCLUSIVE, intakeReply, nextIntake } from "@/content/intake";
 import { asksPracticeMode, profileFor, youAnswers } from "@/lib/onboard";
 import { useStore } from "@/lib/store";
 import { t } from "@/i18n";
-import { Btn, Eyebrow, Link, Opt, type } from "@/ui";
+import { Btn, ChoiceRow, Eyebrow, Link, type } from "@/ui";
 import { Host } from "@/ui/host";
 import { WelcomeFrame } from "@/ui/welcome-frame";
 
@@ -74,13 +74,13 @@ export default function Intake() {
       <Host>{q.ask}</Host>
       <View style={{ gap: 8 }} accessibilityRole={q.multi ? undefined : "radiogroup"}>
         {q.choices.map((c) => (
-          <Opt key={c.id} big multi={!!q.multi} testID={`${q.id}-${c.id}`} on={q.multi ? multi.includes(c.id) : (answers[q.id] ?? was[q.id]) === c.id}
+          <ChoiceRow key={c.id} multi={!!q.multi} testID={`${q.id}-${c.id}`} on={q.multi ? multi.includes(c.id) : (answers[q.id] ?? was[q.id]) === c.id}
             onPress={() => (q.multi
               // "not really" stands alone: picking it clears the rest, picking anything else clears it
               ? setMulti((m) => (m.includes(c.id) ? m.filter((x) => x !== c.id) : EXCLUSIVE.has(c.id) ? [c.id] : [...m.filter((x) => !EXCLUSIVE.has(x)), c.id]))
               : commit(c.id))}>
             {c.label}
-          </Opt>
+          </ChoiceRow>
         ))}
       </View>
       {q.note ? <Text style={[type.caption(), { textAlign: "center" }]}>{q.note}</Text> : null}

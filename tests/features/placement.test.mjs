@@ -106,6 +106,20 @@ test("the harder questions stop after three misses; under four right is no skip"
   assert.ok(four.r.knowledge >= 75);
 });
 
+test("falling short on the harder ones: the tally is shown and 'skip to day 22 anyway' is offered, at the score they earned", () => {
+  const short = play({ connected: true }, all(8, true), [true, false, true, false, true, false]);
+  assert.deepEqual([short.r.outcome, short.r.start, short.r.asked, short.r.got, short.r.skipAnyway], ["deep", 1, 6, 3, true]);
+  const anyway = P.skipAnyway(short.c);
+  assert.deepEqual(anyway, { knowledge: short.r.knowledge, start: 22 }, "same start as a pass, knowledge not raised");
+  assert.deepEqual(P.withStart(undefined, "ISLAM", anyway.start), { ISLAM: 22 }, "saved like a pass, so camp one is catch-up");
+  // a pass doesn't offer it (it's already the primary choice), and nobody who never took the harder ones sees it
+  const pass = play({ connected: true }, all(8, true), [true, true, true, true, false, false]);
+  assert.deepEqual([pass.r.outcome, pass.r.got, pass.r.skipAnyway], ["skip", 4, false]);
+  const declined = play({}, [true, true, true, true, true, true, false, true], [], { decline: true });
+  assert.deepEqual([declined.r.asked, declined.r.skipAnyway], [0, false]);
+  assert.equal(play({}, all(8, false), []).r.skipAnyway, false);
+});
+
 test("a connected person who misses early gets the full basics, not the fast track", () => {
   const { c } = play({ connected: true }, [true, false, true, true, true, true, true, true], all(6, true));
   assert.equal(c.basics.length, 8);

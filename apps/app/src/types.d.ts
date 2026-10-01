@@ -90,7 +90,7 @@ declare module "@ih/content/lesson-script" {
 declare module "@ih/brand" {
   export const color: Record<string, any>;
   export const font: { display: Record<number, string>; text: Record<number, string>; mark: Record<number, string> };
-  export const type: { eyebrow(s?: number): any; caption(s?: number): any; title(): any; nav(): any; h1(s?: number): any; body(s?: number): any; serif(s?: number, w?: number): any };
+  export const type: { eyebrow(s?: number): any; caption(s?: number): any; title(): any; nav(): any; h1(s?: number): any; body(s?: number): any; serif(s?: number, w?: number): any; bubble(): any; choice(): any };
   export const space: Record<string, number>;
   export const radius: Record<string, number>;
   export const border: { hair: number; control: number; strong: number };
