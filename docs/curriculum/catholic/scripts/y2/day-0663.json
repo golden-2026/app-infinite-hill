@@ -1,0 +1,92 @@
+{
+  "format": "ih-lesson/1",
+  "door": "CATHOLIC",
+  "day": 663,
+  "title": "The Easter Vigil readings",
+  "word": "The Easter Vigil readings",
+  "hook": "up to seven readings, from creation to Ezekiel, before the alleluia",
+  "carry": "the whole story in one night",
+  "length": "6:45",
+  "tomorrow": "Easter Sunday",
+  "segments": [
+    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY SIX-HUNDRED-SIXTY-THREE.`"] },
+    {
+      "type": "review",
+      "duration": "20 sec",
+      "voice": "Yesterday, Holy Saturday: the bare altar, the open tabernacle. Your line was the day of waiting. What were you waiting on when the bell rang? Day six hundred sixty-three.",
+      "screen": ["`THE DAY OF WAITING.`"]
+    },
+    {
+      "type": "the hook",
+      "duration": "50 sec",
+      "voice": "It's dark outside, and the church is dark inside. A fire is lit at the door. A single tall candle is carried in, and the flame passes hand to hand down the pews until hundreds of small candles are glowing. A deacon or cantor sings the Exsultet, the great Easter proclamation. Then everyone sits down, because this is going to take a while. Before anyone says alleluia, the Church does something it does on no other night. It opens the Bible at page one and reads its way forward. Today, the readings of that long night.",
+      "screen": ["`A FIRE AT THE DOOR.` → `ONE CANDLE, THEN HUNDREDS.` → `BACK TO PAGE ONE.`"]
+    },
+    {
+      "type": "the teach",
+      "duration": "2 min 15",
+      "voice": "The Missal gives seven readings from the Old Testament, each followed by a psalm and a prayer. It starts with creation, in the Douay-Rheims: \"In the beginning God created heaven, and earth.\" And soon: \"Be light made. And light was made.\" The candle that just came in the door is meant to echo that first light. Then Abraham on the mountain with Isaac. Then the sea parting at the Exodus, the one reading the Missal says may never be left out, because that crossing from slavery to freedom is the pattern for Easter. Then the prophets: Isaiah promising a love that won't leave, and water and bread for anyone who's thirsty; Baruch praising wisdom; and last, Ezekiel, where God promises to take away the heart of stone and give a heart of flesh. Parishes may shorten the list, but the Missal asks for at least three, and the Red Sea always stays. Then the candles on the altar are lit, the bells ring out for the Gloria, and the reading from Romans says that in baptism we are buried with Christ and rise with him. Only then does the alleluia return, sung for the first time since Lent began. Why read the whole story? Because the Church's claim is that Easter isn't a lucky ending tacked on. It's what the whole story was heading toward, from the first light. Many adults are baptized at this Mass, right after the readings. They hear the entire family history on the night they join the family.",
+      "screen": ["`IT BEGINS WITH CREATION.` · `THE RED SEA NEVER SKIPPED.` · `A HEART OF STONE, A HEART OF FLESH.` · `THEN THE BELLS, THEN THE ALLELUIA.` · then, large: `BE LIGHT MADE. AND LIGHT WAS MADE.`"]
+    },
+    {
+      "type": "the practice",
+      "duration": "2 min 30",
+      "voice": "Here's the practice: read Genesis 1 again. Open a Bible or an app to the first page, and read slowly, as if you were in that dark church with a candle in your hand. You don't have to finish. Notice the rhythm: God said, and it was made, and it was good. Then close it and sit. Think about the first light you saw this morning. If you pray, you can thank God for one thing that was made. The bell holds the time.",
+      "screen": []
+    },
+    {
+      "type": "the word",
+      "duration": "25 sec",
+      "voice": "The Easter Vigil readings. Up to seven readings from the Old Testament, creation to Ezekiel, then Paul on baptism, then the alleluia. Today's word.",
+      "screen": ["`THE EASTER VIGIL READINGS — today's word`."]
+    },
+    {
+      "type": "the carry",
+      "duration": "15 sec",
+      "voice": "Your line: the whole story in one night. Today, tell someone the shortest version of your own story you can, beginning to now, and see what it was heading toward. Day six hundred sixty-three.",
+      "screen": []
+    },
+    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 663 COUNTS.` → `TOMORROW: EASTER SUNDAY.`"] }
+  ],
+  "howItsDone": "At the Easter Vigil, Catholics gather after dark, light the Easter candle from a new fire, hear up to seven Old Testament readings with psalms, then sing the Gloria and the first alleluia since Lent; adults are often baptized and confirmed at this Mass.",
+  "games": {
+    "match": {
+      "prompt": "the readings of the night — tap the pairs.",
+      "pairs": [["Genesis", "the first light"], ["Exodus", "the sea parts; never left out"], ["Ezekiel", "a heart of flesh"], ["Romans", "buried and risen in baptism"]]
+    },
+    "myth": [
+      ["every parish must read all seven Old Testament readings", false, "the Missal allows fewer, at least three, but the Exodus reading always stays."],
+      ["the alleluia is first sung again at the Vigil", true, "it returns after the Gloria and the reading from Romans, for the first time since Lent began."],
+      ["the Vigil readings begin with the Gospel", false, "they begin with creation, Genesis 1, and work forward through the story."]
+    ],
+    "fork": {
+      "setup": "you're the pastor, and the Vigil is running long. you can cut readings. which one does the Missal say you must keep?",
+      "options": ["the creation story from Genesis.", "the crossing of the Red Sea from Exodus.", "Ezekiel's heart of flesh."],
+      "answer": 1,
+      "reveal": "the Exodus reading is never omitted. the crossing from slavery to freedom is the pattern the Church reads Easter through."
+    },
+    "original": { "script": "Exsultet", "say": "ex-SOOL-tet", "note": "Latin: let it rejoice, the first word of the Easter proclamation sung before the readings." },
+    "trapdoor": [
+      "what you thought: a very long Mass the night before Easter.",
+      "what it means: the Church reads its whole story, from the first light to a heart of flesh, before it says alleluia.",
+      "what a scholar hears: the Exodus reading can never be dropped; the Vigil reads Easter as the new Passover."
+    ]
+  },
+  "sources": [
+    { "ref": "Genesis 1:1", "work": "The Bible", "translation": "Douay-Rheims (Challoner)", "quoted": "In the beginning God created heaven, and earth." },
+    { "ref": "Genesis 1:3", "work": "The Bible", "translation": "Douay-Rheims (Challoner)", "quoted": "Be light made. And light was made." },
+    { "ref": "Genesis 22; Exodus 14; Isaiah 54–55; Baruch 3; Ezekiel 36:26; Romans 6:3–11", "work": "The Bible", "translation": null, "quoted": null },
+    { "ref": "Roman Missal, Easter Vigil, Liturgy of the Word, rubrics", "work": "Roman Missal", "translation": null, "quoted": null }
+  ],
+  "review": {
+    "status": "pending",
+    "keeper": null,
+    "notes": [
+      "Missal: seven Old Testament readings; for pastoral reasons at least three (in urgent cases two), and Exodus 14 is never omitted. Stated as 'at least three'; confirm.",
+      "The altar candles lit before the Gloria and bells rung: standard rubric; confirm.",
+      "Adult baptism at the Vigil (RCIA/OCIA) occurs after the homily, in the Baptismal Liturgy; 'right after the readings' is simplified; confirm.",
+      "The Exsultet may be sung by a deacon, priest or cantor."
+    ]
+  },
+  "meta": { "index": "663. The Easter Vigil readings · — · up to seven readings, from creation to Ezekiel, before the alleluia · read Genesis 1 again · the whole story in one night", "writer": "writer agent (catholic 662–691)", "written": "2026-09-30" }
+}

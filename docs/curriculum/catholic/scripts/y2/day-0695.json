@@ -1,0 +1,95 @@
+{
+  "format": "ih-lesson/1",
+  "door": "CATHOLIC",
+  "day": 695,
+  "title": "The three-year cycle",
+  "word": "The three-year cycle",
+  "hook": "Sundays read Matthew, then Mark, then Luke, with John in Lent and Easter",
+  "carry": "a, b, c",
+  "length": "6:45",
+  "tomorrow": "Year two close: the book is a person",
+  "segments": [
+    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY SIX-HUNDRED-NINETY-FIVE.`"] },
+    {
+      "type": "review",
+      "duration": "20 sec",
+      "voice": "Yesterday, the name day, the feast of the saint whose name you carry. Your line was your own feast. Did you find your saint, or your baptism date? Day six hundred ninety-five.",
+      "screen": ["`YOUR OWN FEAST.`"]
+    },
+    {
+      "type": "the hook",
+      "duration": "50 sec",
+      "voice": "Go to Mass in Chicago this Sunday, then fly to Manila and go again next week, and you'll notice something. The same Gospel passages, in the same order, in a different language. A Catholic who goes every Sunday for three years will hear a large share of all four Gospels read aloud, without ever choosing a passage. And many Sunday missals print a single capital letter that tells you where you are. Today, the letter.",
+      "screen": ["`CHICAGO, THEN MANILA.` → `THE SAME GOSPEL, ANOTHER LANGUAGE.` → `ONE CAPITAL LETTER.`"]
+    },
+    {
+      "type": "the teach",
+      "duration": "2 min 15",
+      "voice": "The Second Vatican Council asked for the treasures of the Bible to be opened up more lavishly, so that people would hear a fuller share of scripture over a set number of years. The answer was a new lectionary, the book of readings, issued in 1969. Before it, most Sundays repeated the same readings every year. The new one spread the Sunday Gospels over three years. Year A reads Matthew. Year B reads Mark. Year C reads Luke. John has no year of his own, because he gets the great seasons: much of Lent and Easter in every year, and in Year B, which is short because Mark is short, five Sundays of summer go to John chapter six, the bread of life. Each Sunday also has an Old Testament reading chosen to echo the Gospel, a Psalm, and a reading from the letters. The weekdays run on a separate two-year cycle for the first reading. The cycle turns over on the First Sunday of Advent, not on New Year's Day. Here's the trick for finding the letter: take the calendar year in which the Church's year ends and divide it by three. No remainder means Year C. A remainder of one means A. A remainder of two means B. So the year that ends in November 2026 is Year A, Matthew, and Advent 2026 begins Year B. It reached beyond Catholic churches too: many Protestant churches use the Revised Common Lectionary, which grew out of it, so on a given Sunday neighbors down the street may hear the same Gospel. And this is the last day of the year of feasts. Tomorrow, the close of year two.",
+      "screen": ["`A NEW LECTIONARY, 1969.` · `A IS MATTHEW, B IS MARK, C IS LUKE.` · `JOHN IN LENT, EASTER AND YEAR B'S SUMMER.` · `DIVIDE THE YEAR BY THREE.` · then, large: `A, B, C.`"]
+    },
+    {
+      "type": "the practice",
+      "duration": "2 min 30",
+      "voice": "Here's the practice: find this year's letter. Settle, and breathe. Think of the year the Church's current year ends in, and divide it by three in your head. Take your time. When you've got the letter, think of the Gospel that goes with it, and one story from that Gospel you remember from these two years: a parable, a healing, a meal. Hold that one scene for the rest of the sit, as if you were hearing it read aloud on Sunday. The bell holds the time.",
+      "screen": []
+    },
+    {
+      "type": "the word",
+      "duration": "25 sec",
+      "voice": "The three-year cycle. The Sunday readings at Mass, Matthew in Year A, Mark in Year B, Luke in Year C, with John woven through the great seasons. Today's word.",
+      "screen": ["`THE THREE-YEAR CYCLE — today's word`."]
+    },
+    {
+      "type": "the carry",
+      "duration": "15 sec",
+      "voice": "Your line: a, b, c. Today, look up this Sunday's Gospel, find its letter, and read it before Sunday comes. Day six hundred ninety-five.",
+      "screen": []
+    },
+    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 695 COUNTS.` → `TOMORROW: YEAR TWO CLOSE: THE BOOK IS A PERSON.`"] }
+  ],
+  "howItsDone": "At Sunday Mass Catholics hear an Old Testament reading, a Psalm, a reading from the letters and a Gospel set by the lectionary's three-year cycle; many missals and apps show the year's letter and the readings for each day.",
+  "games": {
+    "match": {
+      "prompt": "the three-year cycle — tap the pairs.",
+      "pairs": [["Year A", "Matthew"], ["Year B", "Mark"], ["Year C", "Luke"], ["John", "Lent, Easter and Year B's summer"]]
+    },
+    "myth": [
+      ["the new letter starts on the first of January", false, "it turns over on the First Sunday of Advent."],
+      ["John has a year of his own in the cycle", false, "John is read in Lent and Easter every year, and fills out Year B."],
+      ["the weekday readings follow a separate two-year cycle", true, "the weekday first reading runs on Year I and Year II."]
+    ],
+    "fork": {
+      "setup": "you want to know this year's letter. the Church's year ends in 2026. 2026 divided by three leaves a remainder of one. which letter is it?",
+      "options": ["A, Matthew.", "B, Mark.", "C, Luke."],
+      "answer": 0,
+      "reveal": "a remainder of one means Year A. no remainder means C, and two means B. Advent 2026 begins Year B."
+    },
+    "original": { "script": "lectio", "say": "LEK-tsee-oh", "note": "Latin: a reading — the root of lectionary, the book of the readings." },
+    "trapdoor": [
+      "what you thought: the priest picks the readings.",
+      "what it means: the lectionary sets them, Matthew, Mark and Luke in turn, so the whole Church reads together.",
+      "what a scholar hears: the Ordo Lectionum Missae of 1969, answering Sacrosanctum Concilium 51; the Revised Common Lectionary of 1992 grew from it."
+    ]
+  },
+  "sources": [
+    { "ref": "Sacrosanctum Concilium 51", "work": "Second Vatican Council", "translation": null, "quoted": null },
+    { "ref": "Ordo Lectionum Missae (1969; second edition 1981), Introduction", "work": "Lectionary for Mass", "translation": null, "quoted": null },
+    { "ref": "John 6", "work": "The Bible", "translation": null, "quoted": null },
+    { "ref": "Revised Common Lectionary (1992)", "work": "Consultation on Common Texts", "translation": null, "quoted": null }
+  ],
+  "review": {
+    "status": "pending",
+    "keeper": null,
+    "notes": [
+      "Sacrosanctum Concilium 51 paraphrased ('treasures of the Bible opened up more lavishly'); not quoted because the Vatican English is not public domain. Confirm.",
+      "Lectionary promulgated 1969, in use from Advent 1969 / 1970 depending on region: confirm date wording.",
+      "Year B: John 6 read on five Sundays (17th–21st in Ordinary Time): confirm count.",
+      "Divide-by-three rule (remainder 0 = C, 1 = A, 2 = B, using the year the liturgical year ends): confirm; Advent 2025–Nov 2026 is Year A, Advent 2026 begins Year B.",
+      "Old Testament reading chosen to echo the Gospel in Ordinary Time; in seasons the pattern differs. Confirm generalization.",
+      "Revised Common Lectionary (1992) derived from the Roman lectionary via the Common Lectionary (1983): confirm.",
+      "Review edit: hook softened from 'most of all four Gospels' to 'a large share', and from 'every Sunday missal' to 'many Sunday missals'; the share of each Gospel read on Sundays varies (John and Mark especially) and missal layouts differ."
+    ]
+  },
+  "meta": { "index": "695. The three-year cycle · — · Sundays read Matthew, then Mark, then Luke, with John in Lent and Easter · find this year's letter · a, b, c", "writer": "writer agent (catholic 692–696)", "written": "2026-09-30" }
+}

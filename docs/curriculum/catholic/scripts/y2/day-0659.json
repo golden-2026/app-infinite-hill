@@ -1,0 +1,92 @@
+{
+  "format": "ih-lesson/1",
+  "door": "CATHOLIC",
+  "day": 659,
+  "title": "The Chrism Mass",
+  "word": "holy oils",
+  "hook": "the bishop blesses the oils for the whole year's sacraments",
+  "carry": "oil for the whole year",
+  "length": "6:45",
+  "tomorrow": "Holy Thursday",
+  "segments": [
+    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY SIX-HUNDRED-FIFTY-NINE.`"] },
+    {
+      "type": "review",
+      "duration": "20 sec",
+      "voice": "Yesterday, Palm Sunday: hosanna at the door, crucify in the Passion, from the same mouths. Where did you put your palm? Day six hundred fifty-nine.",
+      "screen": ["`HOSANNA, THEN CRUCIFY.`"]
+    },
+    {
+      "type": "the hook",
+      "duration": "50 sec",
+      "voice": "Somewhere in your parish church, usually near the font or in a small cabinet in the wall, there are three little vessels of oil. Most people never notice them. Every baby baptized there this year, every teenager confirmed, every elderly person anointed in a hospital bed, will be touched with oil from those vessels. And all of it came from one Mass, in one cathedral, during Holy Week, when the bishop and nearly every priest of the diocese gathered in the same place. Today, where the oil comes from.",
+      "screen": ["`THREE SMALL VESSELS.` → `EVERY BAPTISM, EVERY ANOINTING.` → `ONE MASS, ONE CATHEDRAL.`"]
+    },
+    {
+      "type": "the teach",
+      "duration": "2 min 15",
+      "voice": "It's called the Chrism Mass. It's traditionally celebrated on the morning of Holy Thursday, though many dioceses hold it earlier in Holy Week so priests from far-off parishes can come. Large jars of olive oil are carried up the aisle, and the bishop blesses three oils. The oil of catechumens, for people preparing for baptism: a sign of strength for the struggle ahead. The oil of the sick, for the anointing of the sick. The letter of James describes it: \"Is any man sick among you? Let him bring in the priests of the church, and let them pray over him, anointing him with oil in the name of the Lord.\" And the third, the sacred chrism. It's olive oil mixed with balsam, a fragrant resin, so it smells sweet. The bishop consecrates it, and by an old custom he breathes over it, a sign of the Spirit. Chrism is used at baptism, at confirmation, at the ordination of priests and bishops, and to consecrate altars and churches. Christ is a Greek title meaning anointed one, the same as Messiah in Hebrew. So chrism and Christ share a root. To be anointed with it is to be marked as belonging to the anointed one. The gospel at this Mass is Jesus in the synagogue at Nazareth, reading from Isaiah: \"The Spirit of the Lord is upon me. Wherefore he hath anointed me to preach the gospel to the poor.\" Then the priests stand and renew the promises they made at ordination. The oils go home to every parish, oil for the whole year.",
+      "screen": ["`CHRISM MASS IN HOLY WEEK.` · `CATECHUMENS AND THE SICK.` · `CHRISM: OIL AND BALSAM.` · `CHRIST MEANS ANOINTED.` · then, large: `THE SPIRIT OF THE LORD IS UPON ME.`"]
+    },
+    {
+      "type": "the practice",
+      "duration": "2 min 30",
+      "voice": "Here's the practice: hold your local priests in mind. Catholics are asked to pray for their priests at this Mass, and if you pray, you can do that: your pastor, the priest who baptized you, one who buried someone you loved. If you're not Catholic, think of anyone who has cared for you in a hard moment: a chaplain, a nurse, a counselor, a friend. Picture their hands, the ones that anointed, held, served. Wish them strength for their own hard days. The bell holds the time.",
+      "screen": []
+    },
+    {
+      "type": "the word",
+      "duration": "25 sec",
+      "voice": "Holy oils. The oil of catechumens, the oil of the sick and sacred chrism, blessed by the bishop at the Chrism Mass for the whole year. Today's word.",
+      "screen": ["`HOLY OILS — today's word`."]
+    },
+    {
+      "type": "the carry",
+      "duration": "15 sec",
+      "voice": "Your line: oil for the whole year. Today, thank one person whose care you've been living on, quietly, for a long time. Day six hundred fifty-nine.",
+      "screen": []
+    },
+    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 659 COUNTS.` → `TOMORROW: HOLY THURSDAY.`"] }
+  ],
+  "howItsDone": "At the Chrism Mass in Holy Week, the bishop blesses the oil of catechumens and the oil of the sick and consecrates the sacred chrism, and the priests of the diocese renew their ordination promises; each parish then receives the oils for the year.",
+  "games": {
+    "match": {
+      "prompt": "the holy oils — tap the pairs.",
+      "pairs": [["oil of catechumens", "strength before baptism"], ["oil of the sick", "for the anointing of the sick"], ["sacred chrism", "olive oil and fragrant balsam"], ["Christ", "Greek: the anointed one"]]
+    },
+    "myth": [
+      ["each parish blesses its own oils", false, "the bishop blesses them at the Chrism Mass and sends them to every parish."],
+      ["chrism is used at baptism, confirmation and ordination", true, "and to consecrate altars and churches."],
+      ["the Chrism Mass always happens on Holy Thursday evening", false, "it's traditionally Holy Thursday morning, and often earlier in Holy Week."]
+    ],
+    "fork": {
+      "setup": "you're a bishop. the great jar of olive oil mixed with balsam is before you, to be consecrated as chrism. by old custom, what do you do?",
+      "options": ["pour it over the altar.", "breathe over it.", "light it."],
+      "answer": 1,
+      "reveal": "by an old custom the bishop breathes over the chrism, a sign of the Holy Spirit."
+    },
+    "original": { "script": "χρῖσμα", "say": "KREES-mah", "note": "Greek: an anointing, ointment; from the same root as Christos, the anointed one." },
+    "trapdoor": [
+      "what you thought: the oils are just olive oil from a store.",
+      "what it means: three oils blessed by the bishop each Holy Week for every baptism, confirmation, ordination and anointing in the diocese.",
+      "what a scholar hears: chrism and Christ share the Greek root chriō, to anoint; the breathing over the chrism is an optional traditional rite."
+    ]
+  },
+  "sources": [
+    { "ref": "James 5:14", "work": "The Bible", "translation": "Douay-Rheims (Challoner)", "quoted": "Is any man sick among you? Let him bring in the priests of the church, and let them pray over him, anointing him with oil in the name of the Lord." },
+    { "ref": "Luke 4:18", "work": "The Bible", "translation": "Douay-Rheims (Challoner)", "quoted": "The Spirit of the Lord is upon me. Wherefore he hath anointed me to preach the gospel to the poor" },
+    { "ref": "Luke 4:16–21; Isaiah 61:1", "work": "The Bible", "translation": null, "quoted": null },
+    { "ref": "Roman Pontifical, Rite of the Blessing of Oils and Consecrating the Chrism; Roman Missal, Chrism Mass", "work": "Roman Pontifical", "translation": null, "quoted": null }
+  ],
+  "review": {
+    "status": "pending",
+    "keeper": null,
+    "notes": [
+      "Practice is phrased as holding priests in mind; the index practice is 'pray for your diocese's priests'. Prayer offered as an invitation.",
+      "Bishop breathing over the chrism is an optional element of the rite. Confirm.",
+      "Chrism of olive oil and balsam; other plant oils permitted in some places. Confirm.",
+      "Confirm Douay-Rheims wording of James 5:14 and Luke 4:18."
+    ]
+  },
+  "meta": { "index": "659. The Chrism Mass · holy oils · the bishop blesses the oils for the whole year's sacraments · pray for your diocese's priests · oil for the whole year", "writer": "writer agent (catholic 632–661)", "written": "2026-09-30" }
+}
