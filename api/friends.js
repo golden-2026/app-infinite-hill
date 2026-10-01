@@ -29,7 +29,8 @@ const NICK_MAX = 24;
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 const ID_RE = /^f_[a-f0-9]{24}$/;
 const CODE_RE = /^[a-z2-9]{10}$/;
-const LIMIT = { perMinute: 60, joinsPerHour: 10, invitesPerDay: 40, cheersPerHour: 60 };
+// a whole congregation can join from one wifi network (shared address), so new identities allow 100 an hour
+const LIMIT = { perMinute: 120, joinsPerHour: 100, invitesPerDay: 40, cheersPerHour: 60 };
 /** The streak lengths worth a cheer (the app's own streak milestones, @ih/domain STREAK_MILESTONES). */
 export const CHEER_STREAKS = Object.freeze([3, 7, 14, 30, 50, 100, 365]);
 /** A milestone can be cheered on the day it's reached and the day after; cheers show for two weeks. */

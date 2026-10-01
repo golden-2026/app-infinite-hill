@@ -159,11 +159,11 @@ test("validation and rate limits", async () => {
   assert.equal((await call("checkin", { auth: a, body: "{nope" })).status, 400);
   assert.equal((await call("accept", { auth: a, body: { code: "../../me" } })).status, 400);
   let refused = 0;
-  for (let i = 0; i < 70; i++) if ((await call("friends", { method: "GET", auth: a, addr: "10.9.9.9" })).status === 429) refused++;
+  for (let i = 0; i < 130; i++) if ((await call("friends", { method: "GET", auth: a, addr: "10.9.9.9" })).status === 429) refused++;
   assert.ok(refused >= 10);
   let joins = 0;
-  for (let i = 0; i < 12; i++) if ((await call("join", { body: {}, addr: "10.8.8.8" })).status === 200) joins++;
-  assert.equal(joins, 10);
+  for (let i = 0; i < 102; i++) if ((await call("join", { body: {}, addr: "10.8.8.8" })).status === 200) joins++;
+  assert.equal(joins, 100);
 });
 
 test("nothing is logged", async () => {
