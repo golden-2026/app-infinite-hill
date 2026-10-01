@@ -30,6 +30,9 @@ export default function Belief() {
     const p0 = door ? profileFor(saved.settings.profile, door, today) : null;
     return !!p0 && asksPracticeMode(youAnswers(p0).stance) && p0.answers.practiceMode == null;
   });
+  // "what brings you" already answered (on the website's picker, carried by profileFor): not asked again.
+  // Fixed when the screen opens, like askMode.
+  const [whyKnown] = useState(() => !!door && typeof profileFor(saved.settings.profile, door, today).answers.why === "string");
   if (!door) return null;
   const name = doorLabel(door);
   const base = profileFor(saved.settings.profile, door, today);
@@ -40,6 +43,7 @@ export default function Belief() {
   const learningThis = you.stance === "partner" && you.learning === door;
   const qs = [...BELIEF_QUESTIONS, ...(askMode ? [PRACTICE_MODE_Q] : [])]
     .filter((x) => !(x.id === "raised" && you.raisedIn === door))
+    .filter((x) => !(x.id === "why" && whyKnown))
     .filter((x) => !(learningThis && PARTNER_SKIPS.includes(x.id)));
   const q = qs[i];
   const fill = (s: string) => s.replace(/\{door\}/g, name).replace(/\{person\}/g, PERSON[door] || name);

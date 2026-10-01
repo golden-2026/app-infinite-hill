@@ -1,11 +1,12 @@
 import { track } from "@/lib/analytics";
 import { useTitle } from "@/lib/title";
-import { router } from "expo-router";
+import { router, useLocalSearchParams } from "expo-router";
 import { useEffect, useState } from "react";
 import { Text, View } from "react-native";
 import { STANCE_Q, raisedInQ } from "@/content/intake";
 import { pendingProfile, youAnswers, type Stance } from "@/lib/onboard";
 import { useStore } from "@/lib/store";
+import { whyParam } from "@/lib/why-param";
 import { t } from "@/i18n";
 import { Btn, Eyebrow, Link, Opt, type } from "@/ui";
 import { Host } from "@/ui/host";
@@ -19,14 +20,17 @@ export default function You() {
   useTitle(t("onboarding.you.title"));
   const { update, saved, today } = useStore();
   const before = youAnswers(saved.settings.profile);
-  const [stance, setStance] = useState<Stance | null>(before.stance);
-  const [step, setStep] = useState(0);
+  // ?why= from the website's "which one sounds like you?": a "what brings you" answer is kept for the door,
+  // "spiritual" answers this first question (so it's skipped)
+  const fromSite = whyParam(useLocalSearchParams<{ why?: string }>().why);
+  const [stance, setStance] = useState<Stance | null>(fromSite.stance ?? before.stance);
+  const [step, setStep] = useState(fromSite.stance ? 1 : 0);
   const q = step === 0 ? STANCE_Q : raisedInQ(stance);
 
   const done = (s: Stance | null, raisedIn: string | null, learning: string | null = null) => {
     const heard = saved.settings.profile?.answers.heardFrom;
     const heardFrom = typeof heard === "string" ? heard : null;
-    update({ profile: pendingProfile(today, s, raisedIn, learning, heardFrom) });
+    update({ profile: pendingProfile(today, s, raisedIn, learning, heardFrom, fromSite.why) });
     // "how did you hear about us?": once, right after this step; never again once answered or skipped
     router.push(heardFrom ? "/welcome/door" : "/welcome/heard");
   };

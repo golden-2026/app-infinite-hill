@@ -24,7 +24,7 @@ export default function Heard() {
   const pick = (id: string | null) => {
     const heardFrom = id || "skip";
     if (p && p.door) update({ profile: { ...p, answers: { ...p.answers, heardFrom } } });
-    else { const y = youAnswers(p); update({ profile: pendingProfile(today, y.stance, y.raisedIn, y.learning, heardFrom) }); }
+    else { const y = youAnswers(p); update({ profile: pendingProfile(today, y.stance, y.raisedIn, y.learning, heardFrom, typeof p?.answers.why === "string" ? p.answers.why : null) }); }
     if (id) track("heard_from", { choice: id });
     router.push("/welcome/door");
   };

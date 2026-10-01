@@ -64,9 +64,10 @@ export function youAnswers(p: Profile | null | undefined): { stance: Stance | nu
 export const freshEyes = (stance: Stance | null, raisedIn: string | null, door: string) => (stance === "unsure" || stance === "left") && raisedIn === door;
 
 /** A pending profile holding only the first step's answers (no door yet; other traditions never come up from it). */
-export function pendingProfile(today: string, stance: Stance | null, raisedIn: string | null, learning: string | null = null, heardFrom: string | null = null): Profile {
+export function pendingProfile(today: string, stance: Stance | null, raisedIn: string | null, learning: string | null = null, heardFrom: string | null = null, why: string | null = null): Profile {
   const answers: Profile["answers"] = {};
   if (heardFrom) answers.heardFrom = heardFrom;
+  if (why) answers.why = why; // "what brings you", already told us on the website (?why=, lib/why-param.ts)
   if (stance) answers.stance = stance;
   if (raisedIn) answers.raisedIn = raisedIn;
   if (learning) answers.learning = learning;
@@ -94,5 +95,7 @@ export function profileFor(p: Profile | null | undefined, door: string, today: s
     if (stance !== "practice") seed.raised = "yes";
     if (freshEyes(stance, raisedIn, door)) seed.lens = "fresh";
   }
+  // "what brings you" told on the website before any door: it carries to the first tradition door they walk
+  if (p && !p.door && door !== "SPIRITUAL" && seed.why == null && typeof p.answers.why === "string") seed.why = p.answers.why;
   return { ...emptyProfile(door, today), answers: { ...carried, ...seed } };
 }
