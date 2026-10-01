@@ -188,7 +188,7 @@ test("accepts an enum-only onboarding profile and maps it to fixed prompt senten
   try {
     const stay = await call({ body: { ...payload({ door: "Judaism" }), profile: { depth: "new", openness: "stay", commitment: "high" } } });
     assert.equal(stay.status, 200);
-    assert.match(systems[0], /Answer only from Judaism's own tradition/);
+    assert.match(systems[0], /Answer from Judaism's own tradition and texts .* by default\. Their door is a default lens, never a wall/);
     assert.match(systems[0], /Never compare or rank religions/);
     assert.match(systems[0], /explain from the ground up/);
     assert.match(systems[0], /never bring up other traditions/);
