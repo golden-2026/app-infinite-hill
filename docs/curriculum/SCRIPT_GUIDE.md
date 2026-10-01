@@ -1,4 +1,4 @@
-﻿# Writing a full lesson script
+# Writing a full lesson script
 
 *For writer agents and human writers. Every script is a DRAFT until that tradition's Keeper signs it off. Nothing here is approved for public release.*
 
@@ -202,6 +202,10 @@ Fresh reviewers read 525 year-1 lessons (20%) and had to rewrite 222 of them (42
 - **Unfair framing of another tradition.** Jewish law, Pharisees and other paths must never be the foil. Name differences between churches or schools fairly, without ranking them.
 - **Overstated text claims.** When manuscripts differ, say "the King James text says", not "nobody mentioned".
 - **Garbled sentences.** Read every spoken line aloud in your head once.
+## 9b. The claims rule (from the year-3 process)
+
+State no date, age, year, count, number, statistic, etymology, manuscript claim, or "most / many / every / always / all [people of a tradition]" claim unless the text you cite for that day says it directly. If a lesson seems to need one, cut it or say "tradition says" or "some readers". No superlatives ("the most loved", "the first", "the only") unless the cited text says so. Prefer the text itself over facts about the text. Never tell the listener what they feel or believe. Every lesson now gets an editor pass and an audit after writing.
+
 ## 10. Commands
 
 ```sh
