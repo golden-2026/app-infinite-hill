@@ -133,6 +133,9 @@ const ANIM: Record<string, any> = {
   peek: require("../../assets/mascot/peek.webp"),
   thumbs: require("../../assets/mascot/thumbs_up.webp"),
   namaste: require("../../assets/mascot/namaste.webp"),
+  rest: require("../../assets/mascot/rest.webp"),
+  heart: require("../../assets/mascot/heart.webp"),
+  phone: require("../../assets/mascot/phone.webp"),
 };
 // every pose that has a hand-made loop (all 16 checked: he stays fully inside the frame in every frame)
 const POSE_ANIM: Record<string, string> = {
@@ -141,6 +144,7 @@ const POSE_ANIM: Record<string, string> = {
   meditate: "meditate", think: "think", idea: "think", sitthink: "think", aha: "think", tap: "tap",
   sleep: "sleep", sitrock: "sitrock", read: "read", readsit: "read", lieread: "read", lantern: "lantern",
   stretch: "stretch", peek: "peek", thumbs: "thumbs", namaste: "namaste",
+  rest: "rest", heart: "heart", thanks: "heart", phone: "phone", share: "phone",
 };
 export function Guy({ pose = "wave", h = 160, style, still }: { pose?: string; h?: number; style?: any; still?: boolean }) {
   const reduce = useReducedMotion();
