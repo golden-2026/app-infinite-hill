@@ -1,7 +1,8 @@
 ﻿// Put the Guide and companion servers (Netlify Functions) into a static export folder, so they deploy with it.
 // Usage: node atlas/pack-functions.mjs atlas/expo-liveN
 // What it does (safe to run more than once):
-//   1. bundles the Guide, companion and outage-watcher functions into self-contained files;
+//   1. bundles the Guide, companion, outage-watcher, friends, pulse (anonymous return counts), circles and waitlist (the invite-only launch switch) functions into
+//      self-contained files;
 //   2. adds a [functions] section to the folder's netlify.toml;
 //   3. puts /api/guide and /api/companion at the top of _redirects (before the app's catch-all), and hides the copied
 //      source folders from the public site;
@@ -26,7 +27,7 @@ if (!existsSync(join(out, "index.html"))) {
 // Each function is bundled into one self-contained file (its imports, the lesson data and @netlify/blobs included),
 // because the export folder has no node_modules for Netlify to resolve packages from.
 const { rolldown } = await import(pathToFileURL(join(repo, "node_modules/rolldown/dist/index.mjs")).href);
-const FUNCTIONS = ["guide", "companion", "ai-watch", "friends"];
+const FUNCTIONS = ["guide", "companion", "ai-watch", "friends", "pulse", "circles", "waitlist"];
 for (const name of FUNCTIONS) {
   const bundle = await rolldown({ input: join(repo, "netlify/functions", `${name}.js`), platform: "node", logLevel: "silent" });
   await bundle.write({ file: join(out, "netlify/functions", `${name}.js`), format: "esm", codeSplitting: false });
@@ -51,6 +52,9 @@ const block = [
   "/api/guide        /.netlify/functions/guide      200!",
   "/api/companion    /.netlify/functions/companion  200!",
   "/api/friends      /.netlify/functions/friends    200!",
+  "/api/pulse        /.netlify/functions/pulse      200!",
+  "/api/circles      /.netlify/functions/circles    200!",
+  "/api/waitlist     /.netlify/functions/waitlist   200!",
   "# the servers' source files are uploaded with the site; don't serve them as pages",
   "/api/*            /index.html                    404!",
   "/netlify/*        /index.html                    404!",
@@ -73,9 +77,27 @@ const guideGet = await guide({ httpMethod: "GET", rawUrl: "https://example.test/
 const { handler: friendsFn } = await import(pathToFileURL(join(out, "netlify/functions/friends.js")).href);
 const friendsBad = await friendsFn({ httpMethod: "GET", rawUrl: "https://example.test/api/friends?kind=friends", headers: {} });
 console.log(`friends GET without a token: ${friendsBad.statusCode} (401 = loaded and refusing, as it should)`);
+const { handler: circlesFn } = await import(pathToFileURL(join(out, "netlify/functions/circles.js")).href);
+const circlesBad = await circlesFn({ httpMethod: "GET", rawUrl: "https://example.test/api/circles?kind=mine", headers: {} });
+console.log(`circles GET without a token: ${circlesBad.statusCode} (401 = loaded and refusing, as it should)`);
+// waitlist: the launch switch is checked here as OFF (INVITE_ONLY unset in this process), so status says so
+const inviteOnly = process.env.INVITE_ONLY; // only in this process, never printed
+delete process.env.INVITE_ONLY;
+const { handler: waitlistFn } = await import(pathToFileURL(join(out, "netlify/functions/waitlist.js")).href);
+const waitlistStatus = await waitlistFn({ httpMethod: "GET", rawUrl: "https://example.test/api/waitlist?kind=status", headers: {} });
+const waitlistAdmin = await waitlistFn({ httpMethod: "GET", rawUrl: "https://example.test/api/waitlist?kind=admin-stats", headers: {} });
+if (inviteOnly !== undefined) process.env.INVITE_ONLY = inviteOnly;
+console.log(`waitlist status: ${waitlistStatus.statusCode} ${JSON.stringify(decode(waitlistStatus))}, admin without the key: ${waitlistAdmin.statusCode} (404 = loaded and refusing)`);
+const readKey = process.env.PULSE_READ_KEY; // only in this process, never printed
+delete process.env.PULSE_READ_KEY;
+const { handler: pulseFn } = await import(pathToFileURL(join(out, "netlify/functions/pulse.js")).href);
+const pulseRead = await pulseFn({ httpMethod: "GET", rawUrl: "https://example.test/api/pulse", headers: {} });
+const pulseBad = await pulseFn({ httpMethod: "POST", rawUrl: "https://example.test/api/pulse", headers: { "content-type": "application/json" }, body: JSON.stringify({ door: "ISLAM" }) });
+if (readKey !== undefined) process.env.PULSE_READ_KEY = readKey;
+console.log(`pulse GET without a read key: ${pulseRead.statusCode} (404 = loaded, reading off here), POST with a door: ${pulseBad.statusCode} (400 = refused, as it should)`);
 const watcher = await import(pathToFileURL(join(out, "netlify/functions/ai-watch.js")).href);
 console.log(`ai-watch: runs on "${watcher.config?.schedule}"`);
-const ok = friendsBad.statusCode === 401 && status.statusCode === 200 && decode(status).on === false && guideGet.statusCode === 405 && typeof watcher.default === "function" && !!watcher.config?.schedule;
+const ok = friendsBad.statusCode === 401 && circlesBad.statusCode === 401 && waitlistStatus.statusCode === 200 && decode(waitlistStatus).inviteOnly === false && waitlistAdmin.statusCode === 404 && pulseRead.statusCode === 404 && pulseBad.statusCode === 400 && status.statusCode === 200 && decode(status).on === false && guideGet.statusCode === 405 && typeof watcher.default === "function" && !!watcher.config?.schedule;
 console.log(`companion status: ${status.statusCode} ${JSON.stringify(decode(status))}`);
 console.log(`guide GET: ${guideGet.statusCode} (405 = loaded and refusing non-POST, as it should)`);
 if (!ok) {

@@ -338,8 +338,8 @@ export function MythStep({ step, onDone }: { step: any; onDone: Done }) {
   const fx = useFx();
   return (
     <View style={{ gap: 12, width: "100%" }}>
-      <Kicker>{t("session.seg.myth")}</Kicker>
-      <Prompt>{t("session.myth.q")}</Prompt>
+      <Kicker>{step.kicker ?? t("session.seg.myth")}</Kicker>
+      <Prompt>{step.q ?? t("session.myth.q")}</Prompt>
       {step.items.map(([claim, v, why]: [string, boolean, string], i: number) => {
         const a = ans[i];
         const answered = a !== undefined;
@@ -348,7 +348,7 @@ export function MythStep({ step, onDone }: { step: any; onDone: Done }) {
             <Text style={s.reveal}>{claim}</Text>
             {!answered ? (
               <View style={{ flexDirection: "row", gap: 10, marginTop: 12 }}>
-                {([[t("session.myth.true"), true], [t("session.myth.myth"), false]] as const).map(([l, val]) => (
+                {([[step.yes ?? t("session.myth.true"), true], [step.no ?? t("session.myth.myth"), false]] as const).map(([l, val]) => (
                   <Pressable key={l} accessibilityRole="button" accessibilityLabel={`${l}: ${claim}`} onPress={() => { setAns((x) => ({ ...x, [i]: val })); fx.react(val === v ? "right" : "wrong"); }} style={s.tf}>
                     <Text style={{ color: "#fff", fontFamily: font.text[700], fontSize: 14 }}>{l}</Text>
                   </Pressable>
@@ -356,7 +356,7 @@ export function MythStep({ step, onDone }: { step: any; onDone: Done }) {
               </View>
             ) : (
               <Text style={{ marginTop: 8, fontSize: 13, lineHeight: 18, color: a === v ? color.gold : "#ffffffcc", fontFamily: font.text[400] }}>
-                <Text style={{ fontFamily: font.text[700] }}>{v ? t("session.myth.trueDot") : t("session.myth.mythDot")}</Text> {why}
+                <Text style={{ fontFamily: font.text[700] }}>{v ? step.yesDot ?? t("session.myth.trueDot") : step.noDot ?? t("session.myth.mythDot")}</Text> {why}
               </Text>
             )}
           </View>

@@ -1,7 +1,7 @@
 import { useTitle } from "@/lib/title";
 // Your table: children on their own hills (v175 TableSheet). Kid mode under 13; the parent consents.
-import { DOORS, icon } from "@ih/content";
-import { doorLabel, t } from "@/i18n";
+import { DOORS, icon, kidLesson } from "@ih/content";
+import { doorLabel, isEs, t } from "@/i18n";
 import { router } from "expo-router";
 import { useState } from "react";
 import { Pressable, Text, TextInput, View } from "react-native";
@@ -15,7 +15,7 @@ export default function Table() {
   const kids = saved.settings.kids;
   const [name, setName] = useState("");
   const [age, setAge] = useState(9);
-  const [door, setDoor] = useState(saved.settings.homeWing === "SPIRITUAL" ? "HINDUISM" : saved.settings.homeWing);
+  const [door, setDoor] = useState(saved.settings.homeWing);
   const [adding, setAdding] = useState(kids.length === 0);
   const add = () => {
     if (!name.trim()) return;
@@ -39,7 +39,8 @@ export default function Table() {
             <Face ic={icon(k.door)} w={36} h={36} r={18} caption={false} />
             <View style={{ flex: 1, minWidth: 180 }}>
               <Text style={type.serif(17)}>{k.name} <Text style={type.eyebrow(7)}>· {kidAge} · {doorLabel(k.door)} · {t("common.day", { n: k.day })}{k.done ? " ✓" : ""}{saved.settings.streakOn !== false && k.streak?.streak ? ` · ${t("common.streakDays", { n: k.streak.streak })}` : ""}</Text></Text>
-              <Text style={[type.body(12), { color: color.mute }]}>{kidAge < 13 ? t("companion.table.kidMode") : t("companion.table.full")}</Text>
+              <Text style={[type.body(12), { color: color.mute }]}>{kidAge < 13 ? t("kids.table.note") : t("companion.table.full")}</Text>
+              {kidAge < 13 && kidLesson(k.door, k.day) ? <Text testID="kid-today" style={[type.body(12), { color: color.ink }]}>{t("kids.table.today", { title: kidLesson(k.door, k.day)![isEs() ? "es" : "en"].title })}</Text> : null}
             </View>
             <Pressable accessibilityRole="button" accessibilityLabel={t("companion.table.removeA11y", { name: k.name })} onPress={async () => { if (await confirmSheet({ title: t("companion.table.removeTitle", { name: k.name }), body: t("companion.table.removeBody"), confirm: t("companion.table.remove"), cancel: t("companion.table.keep"), destructive: true })) { update({ kids: kids.filter((x) => x.id !== k.id) }); toast(t("companion.table.removed", { name: k.name })); } }} style={{ minHeight: 44, minWidth: 44, paddingHorizontal: 10, justifyContent: "center" }}><Text style={[type.eyebrow(), { color: color.danger }]}>{t("companion.table.remove")}</Text></Pressable>
             {!k.done ? <Btn style={{ paddingHorizontal: 12, paddingVertical: 10 }} onPress={() => router.push({ pathname: "/session/[door]/[day]", params: { door: k.door, day: String(k.day), kid: k.id } })}>{t("companion.table.sitAs", { name: k.name })}</Btn> : <Text style={type.eyebrow(8)}>{t("companion.table.doneToday")}</Text>}
@@ -51,7 +52,7 @@ export default function Table() {
           <Eyebrow>{t("companion.table.addChild")}</Eyebrow>
           <TextInput value={name} onChangeText={setName} placeholder={t("companion.table.name")} accessibilityLabel={t("companion.table.nameA11y")} style={{ padding: 12, borderRadius: 12, borderWidth: 1.5, borderColor: color.line, fontFamily: font.text[400], fontSize: 16 }} />
           <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6 }} accessibilityRole="radiogroup" accessibilityLabel={t("companion.table.age")}>{[6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17].map((a) => chip(age === a, String(a), () => setAge(a), `a${a}`))}</View>
-          <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6 }} accessibilityRole="radiogroup" accessibilityLabel={t("companion.table.door")}>{DOORS.filter(([, w]) => w !== "SPIRITUAL").map(([, w]) => chip(door === w, doorLabel(w), () => setDoor(w), w))}</View>
+          <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6 }} accessibilityRole="radiogroup" accessibilityLabel={t("companion.table.door")}>{DOORS.map(([, w]) => chip(door === w, doorLabel(w), () => setDoor(w), w))}</View>
           <Body size={11} style={{ color: color.mute }}>{t("companion.table.consent")}</Body>
           <Btn onPress={add} disabled={!name.trim()}>{name.trim() ? t("companion.table.add", { name: name.trim() }) : t("companion.table.addEmpty")}</Btn>
           {kids.length ? <Btn kind="ghost" onPress={() => { setName(""); setAdding(false); }}>{t("common.cancel")}</Btn> : null}

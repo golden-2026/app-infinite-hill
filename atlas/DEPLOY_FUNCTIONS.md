@@ -69,3 +69,38 @@ Both only work once the AI key is set in Netlify (step 4). Until then they answe
 - api/ai-watch.js + netlify/functions/ai-watch.js: scheduled every 10 minutes (production only). Checks the site, the AI key (free models call) and the last two hours of failures; alerts on change to ALERT_URL (ntfy.sh topic, Slack or Discord webhook).
 - GET /api/companion?kind=health: today's counts and the watcher's last check (numbers only).
 - pack-functions.mjs now bundles each function with rolldown (includes @netlify/blobs).
+
+## Anonymous return counts, /api/pulse (added 1 Oct 2026)
+
+- api/pulse.js + netlify/functions/pulse.js: the app's once-a-day "opened today" and "a lesson done" ticks, with no id
+  at all (only the first-open date, days since, and the event). Counters only, in private Netlify Blobs store `pulse`.
+  pack-functions.mjs bundles it and adds `/api/pulse` to `_redirects`; its check prints
+  `pulse GET without a read key: 404 …, POST with a door: 400 …`.
+- To read the counts, the owner sets `PULSE_READ_KEY` in Netlify (Site configuration → Environment variables; a long
+  random value, at least 16 characters; scope Functions; "Contains secret values") and redeploys. Then, from a
+  terminal with the same value in `PULSE_READ_KEY`: `node atlas/pulse-report.mjs https://<site>`. Without the variable,
+  reading is off (404) and counting still works.
+- What is sent and stored, exactly: docs/PRIVACY_ARCHITECTURE.md, "Anonymous return counts".
+
+## Invite-only launch: waitlist and invites, /api/waitlist (added 1 Oct 2026, OFF by default)
+
+- api/waitlist.js + netlify/functions/waitlist.js, private Netlify Blobs store `waitlist`. pack-functions.mjs bundles it
+  and adds `/api/waitlist` to `_redirects`; its check prints `waitlist status: 200 {"inviteOnly":false}, admin without
+  the key: 404`.
+- **Nothing changes until the owner turns it on.** The app and the website ask `/api/waitlist?kind=status` and only
+  switch to "request an invite" when it says `{"inviteOnly":true}`.
+- **Turning it on** (Netlify → the site → Site configuration → Environment variables; scope Functions; then redeploy):
+  - `WAITLIST_ADMIN_KEY`: a long random value (at least 16 characters), "Contains secret values". Set this first, any
+    time: the admin desk works with the switch off, so codes for Keepers and voices can be made before launch.
+  - `INVITE_ONLY` = `on`. This is the launch switch. Delete it (or set `off`) and redeploy to go back.
+  - Optional: `WAITLIST_FOUNDING_CAP` (default 10000), `WAITLIST_BETA_CLAIMS` (how many people already in the private
+    beta can claim their own 3 invites; default 500), `WAITLIST_SITE_URL` (the address used in share and invite
+    links, e.g. `https://infinitehill.com`; default: the address the request came to), `WAITLIST_SALT` (secret).
+- **The owner's desk** (the key is read from the terminal, never printed):
+  `$env:WAITLIST_ADMIN_KEY = "<the key>"; node atlas/waitlist-admin.mjs https://<site> stats`, then
+  `release 50 ISLAM --csv invites.csv` (the next 50 in the Islam line; omit the door for every door),
+  `codes 5 20 keeper-name` (5 codes, 20 uses each), `grant m_<id> 10`, `remove someone@example.com`.
+  **No email is sent**: there is no email provider; `release` prints the list for you to send. A person released can
+  also see their code by reopening the waitlist on the device they joined from.
+- Local: `$env:INVITE_ONLY = "on"; $env:WAITLIST_ADMIN_KEY = "<16+ chars>"; node atlas/friends-server.mjs <exportDir>`.
+- What is stored, exactly: docs/PRIVACY_ARCHITECTURE.md, "Waitlist and invite-only launch".

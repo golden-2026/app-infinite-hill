@@ -23,6 +23,7 @@ import { shapeToday } from "@/lib/companion/shape";
 import { checkin, refreshFriends, useFriends, weekLight } from "@/lib/friends";
 import { useSeasons } from "@/lib/quests";
 import { pulseOpen } from "@/lib/pulse";
+import { CirclesSync } from "@/ui/circles";
 
 SplashScreen.preventAutoHideAsync().catch(() => {});
 
@@ -96,6 +97,7 @@ export default function RootLayout() {
           <ReminderSync />
           <FriendsSync />
           <PulseSync />
+          <CirclesSync />
           <Fragment key={lang}>
           <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: color.cream } }}>
             <Stack.Screen name="(tabs)" />

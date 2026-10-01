@@ -136,6 +136,10 @@ async function authed(req) {
   const b = Buffer.from(sha(m[2]), "hex");
   return a.length === b.length && timingSafeEqual(a, b) ? { id: m[1], ...me } : null;
 }
+/** Circles (api/circles.js) sign people in with the same anonymous friend identity: { id, nick } or null. */
+export async function friendFromRequest(req) {
+  try { const me = await authed(req); return me ? { id: me.id, nick: me.nick || null } : null; } catch { return null; }
+}
 const save = (id, me) => { const { id: _drop, ...rest } = me; return store.set(`me/${id}`, rest); };
 
 // ---------- the shared friend streak ----------

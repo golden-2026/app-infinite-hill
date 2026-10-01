@@ -14,7 +14,9 @@ import { eraseCompanion } from "./companion/memory";
 import { addMinutes, type Timed } from "./year";
 import type { QuestState } from "@/content/seasons";
 import { leaveFriends } from "./friends";
+import { leaveAllCircles } from "./circles";
 import { forgetPulse } from "./pulse";
+import { forgetInvites } from "./waitlist";
 import { addDays as addDaysTo, cleanCards, noteRecall, noteSlips, type Card, type Slip } from "./missed";
 import { t } from "@/i18n";
 
@@ -284,8 +286,9 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       remove(P0_KEY); // otherwise the P0 copy would be carried over again on the next open
       remove("ih:device-secret");
       eraseCompanion(); // the companion's memory (facts, moods, journal) goes with everything else
-      leaveFriends(); // friends too: the server copy (nickname, numbers, friend list) and this phone's
+      leaveAllCircles().finally(leaveFriends); // circles first (they sign in with the friend identity), then friends: the server copy (nickname, numbers, friend list) and this phone's
       forgetPulse(); // the two dates the anonymous return counts work from
+      forgetInvites(); // invite-only launch: a member identity, its unused invites and any waitlist place (server and phone)
       setSaved(load());
     },
   }), [saved, today, derived, door, commit]);

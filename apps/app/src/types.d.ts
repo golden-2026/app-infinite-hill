@@ -70,6 +70,15 @@ declare module "@ih/content" {
   export function KNOW(w: string): string[];
   export function SUN_NOTES(wing: string, short: string, word: string): any[];
   export function STRAND_WORDS(wing: string, lesson: number): { word: string; day: number; title: string }[];
+  // the kids' track (packages/content/src/kids.js)
+  export type KidText = { title: string; word: string; means: string; story: { head: string; text: string }[]; carry: string; breath: string; game: any; grownups: { source: string; ask: string } };
+  export type KidLesson = { day: number; key: string; game: "match" | "truth"; en: KidText; es: KidText; sources: any[] };
+  export const KIDS_PER_DOOR: number;
+  export const KID_BREATHS: number;
+  export const KID_DOORS: readonly string[];
+  export function kidLessonIndex(day: number): number;
+  export function kidLesson(door: string, day: number): KidLesson | null;
+  export function kidPlan(o: { door: string; day: number; lang?: string; labels?: Record<string, string> }): { steps: any[]; word: string; carry: string; title: string; info: null; kid: { grownups: { source: string; ask: string }; sources: any[]; heads: string[]; key: string; day: number } } | null;
 }
 declare module "@ih/content/lesson-script" {
   export type LessonStore = { get(key: string): any; set(key: string, value: unknown): unknown };

@@ -125,6 +125,84 @@ for the audience and jurisdictions is a policy decision, not an engineering one.
 make percentages noisy; read them in aggregate. Anyone can post a well-formed ping, so the counts can be inflated by a
 determined person; they are for direction, not accounting.
 
+## Circles (added 2026-10-01, not deployed)
+
+A teacher or a house of worship brings their people in as a group ("circles" in the app). Code: `apps/app/src/lib/circles.ts`,
+`ui/circles.tsx`, `app/circle.tsx` (join), `app/start-circle.tsx` (create) on the phone; `api/circles.js`,
+`netlify/functions/circles.js` + `netlify/_shared/circles-store.js` (Netlify Blobs store `circles`) on the server.
+People sign in with the same anonymous friend identity as friends (`Authorization: Friend f_…:token`); no email, no account.
+
+**Stored.** Per circle: a random id, a 6-character code, its name, its door, the leader's display name, an optional
+welcome note and one pinned note (text only, at most 280 characters, leader only), and per member: their pseudonymous
+friend id, a nickname only if they chose to show one, whether it is a family membership, and the date they last walked.
+Per person: which circles they are in (at most 5). Never a lesson, word, answer, journal line, mood or Guide question.
+There is no chat, so nothing to moderate besides the leader's own note.
+
+**Who sees what.** Every member, the leader included, sees the same thing: the circle's name, door, leader name and
+notes, how many people are in it (under 3: "just getting started"), how many walked today, and the nicknames of members
+who opted in. Member ids are never returned. The join preview behind a link or code (`peek`, no sign-in) shows the
+name, door, leader name, welcome note and member count.
+
+**Note.** Unlike friends, a circle carries a door, so membership tells the server which tradition someone walks with
+that group. That is inherent to the feature and is stated on the join screen ("a Hinduism circle").
+
+**Children.** Children never join or create circles. A parent can join "for our family" (one membership); a child's
+lesson at the family table then counts as the family having walked that day. Nothing about the child is sent.
+
+**Leaving.** Leave any circle anytime; when the leader leaves, the circle closes for everyone and its code stops working.
+Leaving friends and "delete everything" first leave every circle (`forget`), then delete the friend identity.
+
+**Limits.** Rate limits per connection (an hourly one-way code of the address, as friends): 120 requests a minute, 5 new
+circles a day, 300 joins and 600 previews an hour (generous because a congregation on one wifi shares an address), 20
+notes an hour. Nothing is logged.
+
+## Waitlist and invite-only launch (added 2026-10-01, OFF by default)
+
+Built for an invite-only launch, entirely behind a server switch: `INVITE_ONLY=on` in the Netlify environment
+(scope Functions). Unset or anything else means off: the public parts of the API answer 404, the website and the
+app ask `GET /api/waitlist?kind=status`, get `{ inviteOnly: false }`, and behave exactly as before. Code:
+`api/waitlist.js`, `netlify/functions/waitlist.js` + `netlify/_shared/waitlist-store.js` (private Netlify Blobs store
+`waitlist`), `apps/app/src/lib/waitlist.ts` and `invite-gate.ts`, `app/waitlist.tsx`, `app/invite.tsx`,
+`ui/invites.tsx`, the form in `atlas/mock/motion.html`, and `atlas/waitlist-admin.mjs` (the owner's desk).
+
+**This is the first place the product stores an email address, and it is stored next to a door (a religion or
+belief choice).** That pairing is sensitive data in most jurisdictions. Counsel should review the notice wording, the
+lawful basis and the retention before the switch is turned on for the public.
+
+| Who | What is stored | When it goes |
+|---|---|---|
+| Someone on the waitlist | email (lower-cased), chosen door, first name if given, join time, place-number, their own referral code, the code that referred them (if any), the language of the form, a SHA-256 hash of their private key. Once released: their invite code and when. | "take me off the list" (website or app, with the private key kept on that device), or the owner's `remove <email>` for a request by mail. When they come in with their invite, the email, name, door and codes are deleted; only an anonymous count remains. |
+| A member (someone let in) | a SHA-256 hash of a random token, their invite codes, how they came in (waitlist, member, admin, beta), and the member id that invited them. No email, no door, no name. | "Delete everything" in the app (also removes their unused invites). |
+| An invite code | who it belongs to (a waitlist entry, a member id, or an admin label), uses allowed and used, and for each use the time and a nickname **only if** the newcomer ticked "let the person who invited me see this nickname". | With its owner, when unused. |
+| The line | one record: for each person waiting or invited, a random entry id, door, place-number, number of friends who joined with their link, and waiting/invited. Counters for members and beta claims. | Rows go when people leave or come in. |
+| Rate limits | per hour (per day for beta claims), a one-way hash of the connection's IP address with the hour, and a count. The address itself is never stored. | Not cleaned up automatically yet (small, anonymous). |
+
+**What the phone or browser keeps.** App: `ih:invite` (the last answer about the switch; the waitlist private key and
+door; the member id and token; "admitted"). Website: `ih:waitlist` (the private key) in that browser's local
+storage. Requests are sent with `credentials: "omit"` and `referrerPolicy: "no-referrer"`.
+
+**Never logged.** The handler writes no console output; bodies carry emails and headers carry keys and tokens. The
+admin key (`WAITLIST_ADMIN_KEY`, at least 16 characters, "contains secret values") lives only in the server
+environment and the owner's terminal; without it the admin routes answer 404. `WAITLIST_SALT` (optional, server
+only) salts the email lookup key.
+
+**No email is sent.** There is no email provider. `admin-release` returns the released people's emails, codes and
+links for the owner to send by hand, and a person who joined can also see their own code by reopening the waitlist on
+the device they joined from. `deliverInvites()` in `api/waitlist.js` is the marked place a provider would plug in
+(server-only key; never log addresses).
+
+**Honesty rules built in.** The position is computed from the real line on every request (per door); the "people
+waiting" count is the real count; the referral rule is stated as implemented (each friend who joins with your link
+moves you up to 100 places, up to 10 friends count); the founding-class cap (`WAITLIST_FOUNDING_CAP`, default 10,000)
+is enforced on release and on every code. No number on these screens is invented.
+
+**Known limits.** Joining reveals whether an email is already on the list (a 409), which can disclose that a person
+signed up; rate limits slow but don't stop that. Referral credit is given on join without email confirmation (there
+is no email provider), so throwaway addresses can inflate it, slowed by the per-connection join limit. The gate is
+in the app, not a server login: someone who edits their own browser storage can skip it, as with any client-side
+gate. The line is one Blobs record changed with conditional writes; a very large launch spike may see some joins
+answer "try again in a moment" (503) when retries run out.
+
 ## Release blockers and ordered changes
 
 ### P0 — required before public launch or sensitive real-user collection

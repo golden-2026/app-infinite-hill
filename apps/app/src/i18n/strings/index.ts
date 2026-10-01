@@ -5,7 +5,10 @@ import * as onboarding from "./onboarding";
 import * as home from "./home";
 import * as session from "./session";
 import * as companion from "./companion";
+import * as groups from "./groups";
+import * as kids from "./kids";
+import * as waitlist from "./waitlist";
 
-export const EN = { ...common.en, ...onboarding.en, ...home.en, ...session.en, ...companion.en };
-export const ES: Dict<typeof EN> = { ...common.es, ...onboarding.es, ...home.es, ...session.es, ...companion.es };
-export const AREAS = { common, onboarding, home, session, companion };
+export const EN = { ...common.en, ...onboarding.en, ...home.en, ...session.en, ...companion.en, ...kids.en, ...groups.en, ...waitlist.en };
+export const ES: Dict<typeof EN> = { ...common.es, ...onboarding.es, ...home.es, ...session.es, ...companion.es, ...kids.es, ...groups.es, ...waitlist.es };
+export const AREAS = { common, onboarding, home, session, companion, kids, groups, waitlist };

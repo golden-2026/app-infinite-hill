@@ -451,3 +451,4 @@ import { QUIZ } from "./quiz.js";
 import { featureFor, lessonFromScript } from "./lesson-script.js";
 export { FORMAT as SCRIPT_FORMAT, checkScript, chunkOf, chunkPath, compileScript, featureFor, lessonFromScript, lessonScript, orderIdeas, resetLessonCache, spoken } from "./lesson-script.js";
 export { LEVELS, clampLevel, deeperRound, knownSoFar, levelUp, likeness, rushStep, syllables, tapRound, tile, tileKey, wrongAnswers } from "./level.js";
+export { KIDS_PER_DOOR, KID_BREATHS, KID_DOORS, kidLesson, kidLessonIndex, kidPlan } from "./kids.js";

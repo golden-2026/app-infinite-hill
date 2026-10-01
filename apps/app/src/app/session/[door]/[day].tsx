@@ -3,7 +3,8 @@ import { pulseLesson } from "@/lib/pulse";
 import { useTitle } from "@/lib/title";
 // A day's lesson: v175 Session, as a real screen. Queue of steps, combo, "one more time" on the misses
 // (nothing counted twice), then the tally. Leaving asks first; finishing records the sit and opens /done.
-import { DOORS, GRADED, data, deeperRound, icon, knownSoFar, lessonInfo, native, planDay, pos, screenLines, splitBeats } from "@ih/content";
+import { DOORS, GRADED, data, deeperRound, icon, kidLesson, knownSoFar, lessonInfo, native, planDay, pos, screenLines, splitBeats } from "@ih/content";
+import { KidTally, kidPlanFor } from "@/session/kids";
 import { dueCards, slipsFor } from "@/lib/missed";
 import { recallQuestion } from "@/session/recall";
 import { campName, doorLabel, isEs, t, type Key } from "@/i18n";
@@ -83,6 +84,11 @@ export default function SessionScreen() {
   if (!Number.isInteger(day) || day < 1 || day > current) return <Redirect href={{ pathname: "/session/[door]/[day]", params: { door: door || saved.settings.homeWing, day: String(current) } }} />;
   // "go deeper" is an extra round on a lesson already walked today; children don't get it
   const deep = params.deep === "1" && !kid;
+  // a child under 13 sits the door's kids' track, never the grown-up lesson (no script is fetched for it)
+  if (mode === "kid") {
+    if (!kidLesson(door, day)) return <Redirect href="/you/table" />;
+    return <Session key={`${door}:${day}:kid`} door={door} day={day} kidId={kid?.id ?? null} mode="kid" deep={false} voiceOn={saved.settings.voiceOn} onFinish={completeSit} script={null} />;
+  }
   return <ScriptedSession key={`${door}:${day}`} door={door} day={day} kidId={kid?.id ?? null} mode={mode} deep={deep} voiceOn={saved.settings.voiceOn} onFinish={completeSit} />;
 }
 
@@ -128,7 +134,10 @@ function Session({ door, day, kidId, mode, deep, voiceOn, onFinish, script = nul
   // The first lesson after placement (day 22 for someone who skipped camp one): there was no "yesterday" on this path,
   // so the script's look back at day 21 gives way to the welcome day one would have had, and a line on where they are.
   const [placedFirst] = useState(() => own && day > 1 && day === (me.settings.placed?.[door] ?? 1) && !me.sits.some((x) => !x.kidId && x.door === door && x.day === day - 1));
-  const plan = useMemo(() => {
+  const kidMode = mode === "kid";
+  const plan = useMemo<{ steps: any[]; word: string; carry: string; title: string; info: any; kid?: any }>(() => {
+    // kid mode never falls back to the grown-up lesson (SessionScreen only opens it when the door has a kids' set)
+    if (kidMode) return kidPlanFor(door, day) ?? { steps: [{ type: "tally", id: 0 }], word: "", carry: "", title: "", info: null, kid: null };
     const p = !deep ? planDay({ wing: door, day, mode, level: mode === "adult" ? level : 0, script }) : { ...planDay({ wing: door, day, mode, script }), steps: deeperRound(door, day, level) };
     let steps = learn ? learnSteps(p.steps, p.info?.script ? p.info.howItsDone : null) : p.steps;
     if (placedFirst) {
@@ -158,7 +167,7 @@ function Session({ door, day, kidId, mode, deep, voiceOn, onFinish, script = nul
   const [rushSecs, setRushSecs] = useState<number | null>(null);
   const [feel, setFeel] = useState<string | null>(null);
   // A reload mid-lesson picks up where you were (same lesson, same day only); finishing or leaving clears it.
-  const resumeKey = `ih:lesson:${door}:${day}:${kidId || "me"}${deep ? ":deep" : ""}:L${level}${script ? ":S" : ""}`;
+  const resumeKey = `ih:lesson:${door}:${day}:${kidId || "me"}${deep ? ":deep" : ""}:L${level}${script ? ":S" : ""}${kidMode ? ":K1" : ""}`;
   const [saved0] = useState(() => {
     const r = readJSON<any>(resumeKey, null);
     const ids = new Set(plan.steps.map((s) => s.id));
@@ -246,7 +255,7 @@ function Session({ door, day, kidId, mode, deep, voiceOn, onFinish, script = nul
     if (!step) return;
     track("lesson_step", { door, day, i: qi, of: queue.length, type: step.type, phase });
     if (step.type === "bell") { bell(); const t = setTimeout(next, 1800); return () => clearTimeout(t); }
-    if (step.type === "beat") { const t = setTimeout(() => speak(step.text, voiceOn), 250); return () => { clearTimeout(t); hush(); }; }
+    if (step.type === "beat") { const t = setTimeout(() => (kidMode ? speakChrome : speak)(step.text, voiceOn), 250); return () => { clearTimeout(t); hush(); }; }
     if (step.type === "fixintro") speakChrome(t("session.fix.say"), voiceOn);
     if (step.type === "tally") { speakChrome(t("session.tally.say", { day }), voiceOn); bell(); }
   }, [qi, phase]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -294,7 +303,7 @@ function Session({ door, day, kidId, mode, deep, voiceOn, onFinish, script = nul
   const prevStep = qi > 0 ? plan.steps.find((x) => x.id === queue[qi - 1]) : null;
   const canBack = !!prevStep && ["beat", "bell"].includes(prevStep.type) && step?.type !== "tally";
   const pct = phase === "play" ? Math.round((qi / Math.max(1, total - 1)) * 100) : 100;
-  const segLabel = step ? (step.type === "breath" && step.n > 1 ? t("session.seg.breaths", { count: step.n }) : segName(step.seg, step.type)) : "";
+  const segLabel = step ? (step.label ? String(step.label) : step.type === "breath" && step.n > 1 ? t("session.seg.breaths", { count: step.n }) : segName(step.seg, step.type)) : "";
   if (!step) return null;
   const k = `${phase}-${qi}-${step.id}`;
 
@@ -319,11 +328,12 @@ function Session({ door, day, kidId, mode, deep, voiceOn, onFinish, script = nul
           right={<Text style={[type.eyebrow(), { color: "#ffffff99", paddingRight: 10, opacity: step.type === "tally" ? 0 : 1 }]}>{phase === "play" ? `${Math.min(qi + 1, queue.length)}/${queue.length}` : phase === "fix" ? t("session.again", { a: Math.min(qi + 1, Math.max(1, queue.length - 1)), b: Math.max(1, queue.length - 1) }) : ""}</Text>}
         />
         <View style={st.who}>
-          <Face ic={ic} w={36} h={36} r={18} caption={false} />
-          <Text style={[type.eyebrow(), { color: "#ffffffbb", flex: 1 }]} numberOfLines={2}>{t("session.reads", { voice: voiceLabel(door, ic.short).short, door: doorLabel(door) })}{segLabel ? ` · ${segLabel}` : ""}</Text>
+          {/* a child's lesson shows no proposed voice's face */}
+          {kidMode ? null : <Face ic={ic} w={36} h={36} r={18} caption={false} />}
+          <Text style={[type.eyebrow(), { color: "#ffffffbb", flex: 1 }]} numberOfLines={2}>{kidMode ? t("kids.reads", { door: doorLabel(door) }) : t("session.reads", { voice: voiceLabel(door, ic.short).short, door: doorLabel(door) })}{segLabel ? ` · ${segLabel}` : ""}</Text>
           <ReactingGuy h={58} rest={step.type === "breath" || step.type === "sit" ? "meditate" : step.type === "tally" ? "celebrate" : undefined} />
         </View>
-        <EsLessonNote />
+        {kidMode ? null : <EsLessonNote />}
         <ScrollView key={k} contentContainerStyle={[st.body, { justifyContent: top ? "flex-start" : "center" }]}>
           <Enter style={{ width: "100%", alignItems: "center" }}>
             {step.newToday ? <View style={[st.newPill, { alignSelf: "flex-start" }]} accessibilityLabel={t("session.newToday")}><Text style={[type.eyebrow(), { color: color.ink }]}>{t("session.newToday")}</Text></View> : null}
@@ -359,7 +369,7 @@ function Session({ door, day, kidId, mode, deep, voiceOn, onFinish, script = nul
           <View style={{ width: 0, height: 0, marginLeft: 38, marginTop: -12, borderLeftWidth: 12, borderRightWidth: 12, borderTopWidth: 14, borderLeftColor: "transparent", borderRightColor: "transparent", borderTopColor: "#fff" }} />
           <Guy pose={BEAT_POSES[qi % BEAT_POSES.length]} h={150} style={{ alignSelf: "flex-start", marginLeft: 6 }} />
         </View>,
-        { foot: <View style={{ gap: 4 }}><Pressable accessibilityRole="button" accessibilityLabel={t("session.hearAgainA11y")} onPress={() => speak(step.text, true)} style={({ pressed }) => ({ minHeight: 44, flexDirection: "row", gap: 8, alignItems: "center", justifyContent: "center", opacity: pressed ? 0.5 : 1 })}><SpeakerIcon color="#ffffff99" /><Text style={[type.eyebrow(), { color: "#ffffff99" }]}>{t("session.hearAgain")}</Text></Pressable><Btn testID="next" kind="gold" onPress={() => next()}>{t("session.next")}</Btn></View> },
+        { foot: <View style={{ gap: 4 }}><Pressable accessibilityRole="button" accessibilityLabel={t("session.hearAgainA11y")} onPress={() => (kidMode ? speakChrome : speak)(step.text, true)} style={({ pressed }) => ({ minHeight: 44, flexDirection: "row", gap: 8, alignItems: "center", justifyContent: "center", opacity: pressed ? 0.5 : 1 })}><SpeakerIcon color="#ffffff99" /><Text style={[type.eyebrow(), { color: "#ffffff99" }]}>{t("session.hearAgain")}</Text></Pressable><Btn testID="next" kind="gold" onPress={() => next()}>{t("session.next")}</Btn></View> },
       );
     }
     case "bet": return frame(<BetStep step={step} onDone={verdict} />, { top: true });
@@ -386,6 +396,8 @@ function Session({ door, day, kidId, mode, deep, voiceOn, onFinish, script = nul
     case "speak":
       return frame(<View style={[st.cream, { paddingVertical: 22, width: "100%" }]}><SpeakStep step={step} onDone={() => next()} /><Text style={[type.body(12), { color: color.mute, textAlign: "center", marginTop: 10 }]}>{step.hint}</Text></View>);
     case "tally": {
+      // a child's tally: the word, the games, the line, and the "for grown-ups" note for whoever holds the phone
+      if (kidMode) return frame(<KidTally plan={plan} day={day} right={score.right} asked={score.asked || graded} best={best} celebrate={<Celebrate />} />, { foot: <Btn testID="finish" kind="gold" onPress={finish}>{t("kids.finish")}</Btn> });
       const info = plan.info;
       const ideas = Math.min(4, (info?.segments ? screenLines(info.segments.find((g: any) => /teach/.test(g.type))?.screen).length : 2) || 2);
       const nat = native(plan.word, door);

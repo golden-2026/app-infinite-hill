@@ -5,6 +5,8 @@ import { useTitle } from "@/lib/title";
 // "Walking with": friends who sent you a lantern link (lib/walkers, local), and friends you paired with through a
 // lantern invite (lib/friends, the small server in api/friends.js): their streak, your days together, and the opt-in
 // friends-only weekly board. Offline, it shows when you last saw them.
+// Circles (ui/circles, api/circles.js): groups a teacher or a house of worship brings in. Their counts are real (from the
+// server), and members appear by nickname only if they choose to.
 import { icon } from "@ih/content";
 import { router, useFocusEffect } from "expo-router";
 import { useCallback, useState } from "react";
@@ -16,6 +18,8 @@ import { Btn, Card, Eyebrow, Face, Guy, Link, color, confirmSheet, font, toast, 
 import { KeeperDesk, Voices } from "@/ui/voices";
 import { friendsPrivacy, FamilyBoard, FriendRows, NickPrompt, WeeklyBoard } from "@/ui/friends";
 import { leaveFriends, useFriends } from "@/lib/friends";
+import { leaveAllCircles } from "@/lib/circles";
+import { CirclesCard } from "@/ui/circles";
 import { useCompanionDay } from "@/lib/companion/use-companion";
 import { doorLabel, t } from "@/i18n";
 
@@ -61,7 +65,7 @@ function WalkingWith() {
         </View>
       )}
       <Text testID="friends-privacy" style={[type.body(11), { color: color.mute, marginTop: 10 }]}>{friends.friendId ? friendsPrivacy() : t("home.together.localNote")}</Text>
-      {friends.friendId ? <Link onPress={async () => { if (await confirmSheet({ title: t("home.together.leaveTitle"), body: t("home.together.leaveBody"), confirm: t("home.together.leaveConfirm"), cancel: t("home.together.keep"), destructive: true })) { if (await leaveFriends()) { setList(readWalkers()); toast(t("home.together.left")); } else toast(t("home.friends.unreachable")); } }} style={{ color: color.mute, fontSize: 10, marginTop: 6 }}>{t("home.together.leaveLink")}</Link> : null}
+      {friends.friendId ? <Link onPress={async () => { if (await confirmSheet({ title: t("home.together.leaveTitle"), body: t("home.together.leaveBody"), confirm: t("home.together.leaveConfirm"), cancel: t("home.together.keep"), destructive: true })) { if ((await leaveAllCircles()) && (await leaveFriends())) { setList(readWalkers()); toast(t("home.together.left")); } else toast(t("home.friends.unreachable")); } }} style={{ color: color.mute, fontSize: 10, marginTop: 6 }}>{t("home.together.leaveLink")}</Link> : null}
     </Card>
   );
 }
@@ -77,6 +81,7 @@ export default function Together() {
       <ScrollView contentContainerStyle={{ paddingHorizontal: 18, gap: 16, paddingBottom: 32 }}>
         <TabHeader eyebrow={t("home.tab.together")} title={t("home.together.title")} pose="dog" />
         <WalkingWith />
+        <CirclesCard />
         <WeeklyBoard quiet={quiet} />
         <FamilyBoard quiet={quiet} />
         <Card>
