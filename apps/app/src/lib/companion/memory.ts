@@ -9,6 +9,7 @@ import * as commonStrings from "@/i18n/strings/common";
 import * as companionStrings from "@/i18n/strings/companion";
 import type { Profile } from "@/lib/profile";
 import { randomId } from "@/lib/ids";
+import { WHY_KEYS } from "@/lib/why-param";
 import { readJSON, remove, writeJSON } from "@/lib/storage";
 
 export const COMPANION_KEY = "ih:companion";
@@ -111,7 +112,7 @@ export function factsFromProfile(p: Profile | null | undefined, o: { kids?: numb
   else if (stance === "many") add("stance:many", T("companion.fact.stance.many"));
   else if (stance === "spiritual") add("stance:spiritual", T("companion.fact.stance.spiritual"));
 
-  const WHY = new Set(["own", "roots", "god", "partner", "kids", "calm", "hard", "curious"]);
+  const WHY = new Set<string>(WHY_KEYS);
   const why = one("why");
   // Picked "learning my partner's or family's faith" on the first step: one line naming the faith they're learning.
   if (why === "partner" && stance === "partner" && door) add("why:partner", T("companion.fact.why.partnerDoor", { door, theDoor }));

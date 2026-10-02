@@ -27,6 +27,7 @@ import { newYearNow } from "@/content/seasons";
 import { QuestTodayCard } from "@/ui/quest";
 import { SettleCard } from "@/ui/settle";
 import { campLabel, campName, doorLabel, isEs, t } from "@/i18n";
+import { firstWeekFor, gentleStart } from "@/content/life-moments";
 
 export default function Today() {
   useTitle(t("home.tab.today"));
@@ -67,6 +68,8 @@ export default function Today() {
   const sk = derived.streak;
   const golden = sk.golden && sk.streak >= 7;
   const goal = goalView(st.goal, sk);
+  // no streak yet: say what starts one. Grief or scary health news: no streak framing, just an open door.
+  const startLabel = gentleStart(st.profile?.answers?.why) ? t("home.today.startGentle") : derived.showedUp === 0 ? t("home.today.streakDay1") : t("home.today.streakNew");
   // the streak under the start button, said gently. It's only "at stake" when no rest day is left, and louder only as the day ends.
   const streakLine = streakOn && sk.streak >= 1 && !quiet ? (() => {
     if (sk.streak === 1) return { text: t("home.hero.streakBefore", { count: 1 }), loud: false };
@@ -97,9 +100,9 @@ export default function Today() {
         {streakOn ? (
           // the streak leads: the number, then the sun (our flame). Gold once it's a golden streak (7+ days, no rest day).
           // No streak yet: say what starts one, never a bare "0".
-          <Pressable testID="day-count" accessibilityRole="button" accessibilityLabel={`${sk.streak > 0 ? t("home.streakN", { count: sk.streak }) : derived.showedUp === 0 ? t("home.today.streakDay1") : t("home.today.streakNew")}${golden ? t("home.today.golden") : ""}. ${t("home.today.openYou")}`} onPress={() => router.push("/you")} style={({ pressed }) => ({ paddingVertical: 7, marginVertical: -7, opacity: pressed ? 0.6 : 1, flexShrink: 0 })}>
+          <Pressable testID="day-count" accessibilityRole="button" accessibilityLabel={`${sk.streak > 0 ? t("home.streakN", { count: sk.streak }) : startLabel}${golden ? t("home.today.golden") : ""}. ${t("home.today.openYou")}`} onPress={() => router.push("/you")} style={({ pressed }) => ({ paddingVertical: 7, marginVertical: -7, opacity: pressed ? 0.6 : 1, flexShrink: 0 })}>
             {sk.streak > 0 ? <StreakChip n={sk.streak} golden={golden} /> : (
-              <View testID="streak-start" style={s.startPill}><Sun size={16} /><Text style={{ fontFamily: font.text[600], fontSize: 12, color: color.ink }}>{derived.showedUp === 0 ? t("home.today.streakDay1") : t("home.today.streakNew")}</Text></View>
+              <View testID="streak-start" style={s.startPill}><Sun size={16} /><Text style={{ fontFamily: font.text[600], fontSize: 12, color: color.ink }}>{startLabel}</Text></View>
             )}
           </Pressable>
         ) : (
@@ -141,6 +144,43 @@ export default function Today() {
             goal={goal && streakOn ? `${t("home.today.goal", { done: goal.done, days: goal.days })}${goal.reached ? t("home.today.goalReached") : ""}` : null}
             streak={streakLine} onStart={start} startLabel={t("home.today.startA11y", { n: lesson, title })} />
         )}
+
+        {/* a life moment (grief, a new baby, scary health news): a few already-written lessons that fit, from their own
+            door, openable ahead of the path as extras (content/life-moments.ts). Shown on quiet days too. */}
+        {(() => {
+          const why = st.profile?.door === wing ? st.profile.answers?.why : null;
+          const days = firstWeekFor(why, wing);
+          if (!days || st.forYouClosed) return null;
+          const read = new Set(st.forYouDone || []);
+          const walked = (n: number) => read.has(`${wing}:${n}`) || saved.sits.some((x) => !x.kidId && x.door === wing && x.day === n);
+          if (days.every(walked)) return null;
+          const open = (n: number) => { router.push({ pathname: "/session/[door]/[day]", params: { door: wing, day: String(n) } }); };
+          return (
+            <View testID="for-you" style={[s.lite, { marginTop: 0, flexDirection: "column", alignItems: "stretch", gap: 6 }]}>
+              <View style={{ flexDirection: "row", alignItems: "center", gap: 10 }}>
+                <Guy pose={why === "baby" ? "heart" : "namaste"} h={52} />
+                <View style={{ flex: 1 }}>
+                  <Text style={[type.eyebrow(8), { color: color.ink }]}>{t("home.forYou.eyebrow")}</Text>
+                  <Text style={{ fontFamily: font.display[800], fontSize: 15, marginTop: 3, color: color.ink }}>{t(`home.forYou.${why}` as "home.forYou.grief")}</Text>
+                </View>
+                <Pressable accessibilityRole="button" accessibilityLabel={t("home.dismiss")} onPress={() => update({ forYouClosed: true })} hitSlop={10}><Text style={type.eyebrow(12)}>✕</Text></Pressable>
+              </View>
+              {days.map((n) => {
+                const name = lessonInfo(wing, n)?.title || t("common.day", { n });
+                const done = walked(n);
+                return (
+                  <Pressable key={n} testID={`for-you-${n}`} accessibilityRole="link" accessibilityLabel={t("home.forYou.a11y", { n, title: name })} onPress={() => open(n)}
+                    style={({ pressed }) => [{ flexDirection: "row", alignItems: "center", gap: 10, minHeight: 40, opacity: pressed ? 0.8 : 1 }]}>
+                    <Text style={[type.eyebrow(8), { width: 64, color: color.mute }]}>{t("common.day", { n })}</Text>
+                    <Text numberOfLines={1} style={[type.body(14), { flex: 1, color: color.ink }]}>{name}{done ? " ✓" : ""}</Text>
+                    <Text style={s.chev}>›</Text>
+                  </Pressable>
+                );
+              })}
+              <Text style={[type.body(12), { color: color.mute }]}>{t("home.forYou.body")}</Text>
+            </View>
+          );
+        })()}
 
         {streakOn && sk.earnBack && !quiet ? (
           // the streak broke: for 3 days, two lessons in one day bring it back. An offer, never a bill.

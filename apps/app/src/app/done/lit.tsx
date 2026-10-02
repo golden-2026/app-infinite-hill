@@ -16,6 +16,7 @@ import { FRIEND_MILESTONES, useFriends } from "@/lib/friends";
 import { Btn, Card, Guy, Screen, Sun, color, font, type } from "@/ui";
 import { GOLDEN, Odometer, RestBank, WeekRow } from "@/ui/streak";
 import { ShareCardButton } from "@/ui/share-card";
+import { gentleStart } from "@/content/life-moments";
 
 /** The milestones that offer a card to share (streak), and the days-together ones (friend streak). */
 const SHARE_MILESTONES = [30, 100, 365];
@@ -68,7 +69,8 @@ export default function Lit() {
   const popStyle = useAnimatedStyle(() => ({ transform: [{ scale: pop.value }] }));
 
   // first lesson ever: pick a streak goal; otherwise straight on to tomorrow (the last step, /done/tomorrow)
-  const next = () => go(firstDay && !st.goal ? "/done/goal" : "/done/tomorrow");
+  // grief or scary health news: no streak goal asked after the first lesson (it stays under You)
+  const next = () => go(firstDay && !st.goal && !gentleStart(st.profile?.answers?.why) ? "/done/goal" : "/done/tomorrow");
 
   if (!on) return <PlainLit count={count} newDay={newDay} onNext={next} close={close} visiting={st.active === "visit"} />;
 
@@ -76,7 +78,7 @@ export default function Lit() {
   const line = restored ? t("session.lit.earnedBack", { n: after })
     : !newDay ? t("session.lit.already")
     : milestone ? MILESTONE_WORDS[milestone]
-    : firstDay ? t("session.lit.dayOne")
+    : firstDay ? (gentleStart(st.profile?.answers?.why) ? t("session.lit.dayOneGentle") : t("session.lit.dayOne"))
     : s.earnBack ? t("session.lit.fresh")
     : s.restedYesterday ? t("session.lit.rested")
     : golden && s.clean === 7 ? t("session.lit.golden7")

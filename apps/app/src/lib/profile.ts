@@ -4,6 +4,7 @@
 // to pace lessons, decide whether other traditions ever come up, and set the Guide's depth and tone.
 // Belief data is sensitive: it is never logged or sent to analytics.
 import { BRIDGES, INTAKE_TAGS, type Bridge } from "@/content/intake";
+import { WHY_KEYS } from "@/lib/why-param";
 
 export type Openness = "stay" | "sometimes" | "love";
 
@@ -82,7 +83,7 @@ export function guideProfile(p: Profile | null, door: string): { depth: string; 
   if (p.answers.practiceMode === "learn") out.practice = "learn";
   if (door !== "SPIRITUAL" && p.commitment != null) out.commitment = p.commitment >= 67 ? "high" : p.commitment >= 34 ? "mid" : "low";
   const why = p.answers.why;
-  if (typeof why === "string" && ["own", "roots", "god", "partner", "kids", "calm", "hard", "curious"].includes(why)) out.reason = why;
+  if (typeof why === "string" && (WHY_KEYS as readonly string[]).includes(why)) out.reason = why;
   return out;
 }
 

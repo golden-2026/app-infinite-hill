@@ -72,8 +72,8 @@ export const crisisWords = (text: string) => CRISIS.test(text) || CRISIS_ES.test
 export function personaFor(i: Pick<ShapeInput, "door" | "profile" | "kids" | "memory">): Persona {
   const has = keysFor(i);
   const p = i.profile && i.profile.door === i.door ? i.profile : null;
-  if (has("why:hard") || has("feeling:grief") || has("feeling:sick")) return "hard";
-  if (has("why:kids") || has("family:kids")) return "parent";
+  if (has("why:hard") || has("why:grief") || has("why:diagnosis") || has("feeling:grief") || has("feeling:sick")) return "hard";
+  if (has("why:kids") || has("why:baby") || has("family:kids")) return "parent";
   if (has("stance:unsure") || has("stance:left") || has("why:roots")) return "returner";
   if (p && (has("stance:practice") || has("why:own")) && ((p.commitment ?? 0) >= 67 || depthFor(p) === "deep" || has("practice:daily"))) return "deepener";
   if (has("why:partner")) return "bridge";
@@ -139,7 +139,7 @@ export function shapeToday(i: ShapeInput): Shaped {
   const help = m.helpClosedOn !== i.today && m.journal.some((e) => daysBetween(e.date, i.today) <= 13 && crisisWords(e.text));
   const reachOut = !help && m.helpClosedOn !== i.today && heavyDays >= 3;
   const tired = mood === "tired";
-  const lossOk = has("feeling:grief") || has("why:hard") || mood === "heavy";
+  const lossOk = has("feeling:grief") || has("why:grief") || has("why:hard") || mood === "heavy";
   // "just learn": no breath, sit or prayer to do; a tradition's practice comes as "how it's done"
   const learn = practiceModeOf(i.profile) === "learn";
 

@@ -152,6 +152,8 @@ export const en = {
   // welcome/ready
   "onboarding.ready.hard": "It's hard to stay with anything.",
   "onboarding.ready.so": "So infinite hill gives you one moment a day, and a lot of company.",
+  "onboarding.ready.gentle": "Go gently.",
+  "onboarding.ready.gentleSo": "There's nothing to keep up with. One quiet moment when you want it, and a lot of company.",
   "onboarding.ready.fact": "did you know · every tradition on earth arrived at the golden rule on its own",
   // lib/voice
   "onboarding.voiceLabel.claim": "{name} reads every lesson. it's a licensed voice, used with their permission.",
@@ -374,6 +376,8 @@ export const es: Dict<typeof en> = {
   "onboarding.voice.grewUp": "; es la fe en la que de verdad creció.",
   "onboarding.ready.hard": "Cuesta ser constante en cualquier cosa.",
   "onboarding.ready.so": "Por eso infinite hill te da un momento al día, y mucha compañía.",
+  "onboarding.ready.gentle": "Ve con calma.",
+  "onboarding.ready.gentleSo": "Aquí no hay nada que mantener. Un momento de calma cuando lo quieras, y mucha compañía.",
   "onboarding.ready.fact": "¿sabías que…? · cada tradición del mundo llegó por su cuenta a la regla de oro",
   "onboarding.voiceLabel.claim": "{name} lee cada lección. es una voz con licencia, usada con su permiso.",
   "onboarding.voiceLabel.house": "la voz de la casa",

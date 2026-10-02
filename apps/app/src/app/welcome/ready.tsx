@@ -8,6 +8,7 @@ import { dueAtStart, emptyWellbeing } from "@/lib/wellbeing";
 import { t } from "@/i18n";
 import { Eyebrow, Guy, type } from "@/ui";
 import { WelcomeFrame } from "@/ui/welcome-frame";
+import { gentleStart } from "@/content/life-moments";
 
 // v175 step 8: one breath of framing, then the first lesson opens on its own: day one, or where the check placed them
 // (day 22, when they chose to skip camp one).
@@ -17,6 +18,8 @@ export default function Ready() {
   const door = doorParam(raw) || "SPIRITUAL"; // unknown doors in a URL never get saved
   const { update, saved } = useStore();
   const start = saved.settings.placed?.[door] ?? 1;
+  // grief or scary health news: no "stay with it" framing at sign-up
+  const gentle = gentleStart(saved.settings.profile?.answers?.why);
   const baseline = dueAtStart(saved.settings.wellbeing || emptyWellbeing()); // the 30-second check-in, once, before day one
   useEffect(() => {
     const t = setTimeout(() => {
@@ -32,8 +35,8 @@ export default function Ready() {
       <View style={{ alignItems: "center", gap: 18 }}>
         <Guy pose="path" h={180} />
         <Text style={[type.h1(24), { textAlign: "center", maxWidth: 280 }]}>
-          {t("onboarding.ready.hard")}{"\n"}
-          <Text style={{ fontFamily: "Manrope_500Medium", fontStyle: "italic" }}>{t("onboarding.ready.so")}</Text>
+          {gentle ? t("onboarding.ready.gentle") : t("onboarding.ready.hard")}{"\n"}
+          <Text style={{ fontFamily: "Manrope_500Medium", fontStyle: "italic" }}>{gentle ? t("onboarding.ready.gentleSo") : t("onboarding.ready.so")}</Text>
         </Text>
         <Text style={[type.caption(), { textAlign: "center" }]}>{t("onboarding.ready.fact")}</Text>
       </View>

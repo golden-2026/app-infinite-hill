@@ -8,6 +8,7 @@
 // it keeps the intake meaning (which tradition). Belief data is sensitive: never logged or sent to analytics.
 import { DOORS } from "@ih/content";
 import { emptyProfile, type Profile } from "@/lib/profile";
+import { isLifeMoment } from "@/content/life-moments";
 
 export type Stance = "practice" | "unsure" | "left" | "partner" | "curious" | "many" | "spiritual";
 export const STANCES: Stance[] = ["practice", "unsure", "left", "partner", "curious", "many", "spiritual"];
@@ -96,6 +97,7 @@ export function profileFor(p: Profile | null | undefined, door: string, today: s
     if (freshEyes(stance, raisedIn, door)) seed.lens = "fresh";
   }
   // "what brings you" told on the website before any door: it carries to the first tradition door they walk
-  if (p && !p.door && door !== "SPIRITUAL" && seed.why == null && typeof p.answers.why === "string") seed.why = p.answers.why;
+  // (my own path doesn't ask "what brings you", but a life moment, like grief, still carries there for its first-week list)
+  if (p && !p.door && seed.why == null && typeof p.answers.why === "string" && (door !== "SPIRITUAL" || isLifeMoment(p.answers.why))) seed.why = p.answers.why;
   return { ...emptyProfile(door, today), answers: { ...carried, ...seed } };
 }

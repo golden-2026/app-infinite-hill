@@ -36,6 +36,11 @@ register(stub(hooks), import.meta.url);
 const { pendingProfile, profileFor } = await import(pathToFileURL(`${src}lib/onboard.ts`).href);
 const { whyParam, WHY_KEYS } = await import(pathToFileURL(`${src}lib/why-param.ts`).href);
 const { BELIEF_QUESTIONS, STANCE_Q } = await import(pathToFileURL(`${src}content/intake.ts`).href);
+const { FIRST_WEEK, LIFE_MOMENTS, firstWeekFor, opensAhead, gentleStart } = await import(pathToFileURL(`${src}content/life-moments.ts`).href);
+const { guideProfile } = await import(pathToFileURL(`${src}lib/profile.ts`).href);
+const { personaFor } = await import(pathToFileURL(`${src}lib/companion/shape.ts`).href);
+const { buildSystemPrompt } = await import(pathToFileURL(`${root}api/guide.js`).href);
+const { existsSync } = await import("node:fs");
 
 test("the website's keys are exactly the onboarding's 'what brings you' answers, plus the first step's 'spiritual'", () => {
   const why = BELIEF_QUESTIONS.find((q) => q.id === "why");
@@ -60,4 +65,66 @@ test("a why from the website rides the pending profile to the first tradition do
   assert.equal(profileFor(partner, "ISLAM", "2026-10-01").answers.why, "partner");
   // no website answer: nothing changes
   assert.equal(profileFor(pendingProfile("2026-10-01", "curious", null), "ISLAM", "2026-10-01").answers.why, undefined);
+});
+
+// ---------- life moments: grief, a new baby, scary health news ----------
+
+test("the three life moments are website keys and onboarding answers", () => {
+  for (const k of ["grief", "baby", "diagnosis"]) {
+    assert.ok(WHY_KEYS.includes(k));
+    assert.deepEqual(whyParam(k), { why: k, stance: null });
+  }
+  assert.deepEqual(whyParam(" Grief "), { why: "grief", stance: null });
+  assert.deepEqual([...LIFE_MOMENTS].sort(), ["baby", "diagnosis", "grief"]);
+});
+
+test("a life moment from the website carries to my own path too; other whys still don't", () => {
+  const p = pendingProfile("2026-10-01", "curious", "none", null, null, "grief");
+  assert.equal(profileFor(p, "SPIRITUAL", "2026-10-01").answers.why, "grief");
+  assert.equal(profileFor(p, "ISLAM", "2026-10-01").answers.why, "grief");
+  assert.equal(profileFor(pendingProfile("2026-10-01", "curious", "none", null, null, "calm"), "SPIRITUAL", "2026-10-01").answers.why, undefined);
+});
+
+test("every door has a first-week list for every life moment, made only of written year 1-3 lessons", () => {
+  const doors = ["HINDUISM", "BUDDHISM", "CHRISTIANITY", "CATHOLIC", "JUDAISM", "ISLAM", "SIKHISM", "SPIRITUAL"];
+  for (const m of LIFE_MOMENTS) for (const door of doors) {
+    const days = firstWeekFor(m, door);
+    assert.ok(days.length >= 1 && days.length <= 5, `${m} ${door}`);
+    assert.equal(new Set(days).size, days.length, `${m} ${door} repeats a day`);
+    for (const d of days) {
+      const file = (y) => `${root}docs/curriculum/${door.toLowerCase()}/scripts/${y}/day-${String(d).padStart(4, "0")}.json`;
+      assert.ok(["y1", "y2", "y3"].some((y) => existsSync(file(y))), `${m} ${door} day ${d} has no written script in years 1-3`);
+    }
+  }
+  assert.deepEqual(firstWeekFor("grief", "NOWHERE"), [1]); // a door with nothing fitting starts at its day 1
+  assert.equal(firstWeekFor("calm", "HINDUISM"), null);
+  assert.equal(firstWeekFor(undefined, "HINDUISM"), null);
+  assert.ok(FIRST_WEEK.grief.JUDAISM.some(([d]) => d === 317)); // Psalm 23
+});
+
+test("a first-week day opens ahead of the path only on the person's own door and list", () => {
+  const p = { door: "JUDAISM", answers: { why: "grief" } };
+  assert.equal(opensAhead(p, "JUDAISM", 317), true);
+  assert.equal(opensAhead(p, "JUDAISM", 318), false);
+  assert.equal(opensAhead(p, "ISLAM", 348), false);
+  assert.equal(opensAhead({ door: "JUDAISM", answers: { why: "calm" } }, "JUDAISM", 317), false);
+  assert.equal(opensAhead(null, "JUDAISM", 317), false);
+});
+
+test("grief and scary health news start gently, are the companion's hard persona, and reach the Guide", () => {
+  assert.equal(gentleStart("grief"), true);
+  assert.equal(gentleStart("diagnosis"), true);
+  assert.equal(gentleStart("baby"), false);
+  const prof = (why) => ({ v: 1, door: "CATHOLIC", knowledge: 10, commitment: 50, openness: "stay", answers: { why }, bridges: {}, lastBridgeOn: null, setOn: "2026-10-01" });
+  const mem = { v: 1, facts: [], seeded: false, moods: [], journal: [], done: [], reflected: [], helpClosedOn: null };
+  assert.equal(personaFor({ door: "CATHOLIC", profile: prof("grief"), kids: 0, memory: mem }), "hard");
+  assert.equal(personaFor({ door: "CATHOLIC", profile: prof("diagnosis"), kids: 0, memory: mem }), "hard");
+  assert.equal(personaFor({ door: "CATHOLIC", profile: prof("baby"), kids: 0, memory: mem }), "parent");
+  for (const why of WHY_KEYS) {
+    const g = guideProfile(prof(why), "CATHOLIC");
+    assert.equal(g.reason, why);
+    assert.ok(buildSystemPrompt("Catholicism", { depth: g.depth, openness: g.openness, reason: why }).length > 0);
+  }
+  assert.match(buildSystemPrompt("Catholicism", { depth: "new", openness: "stay", reason: "diagnosis" }), /never diagnose/);
+  assert.match(buildSystemPrompt("Catholicism", { depth: "new", openness: "stay", reason: "grief" }), /never as a promise/);
 });

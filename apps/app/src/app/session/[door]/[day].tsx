@@ -28,6 +28,7 @@ import { play } from "@/lib/fx";
 import { ComboBurst, FxProvider, ReactingGuy, cue, poseFor, type Reaction } from "@/session/juice";
 import { today as todayNow } from "@/lib/time";
 import { voiceLabel } from "@/lib/voice";
+import { opensAhead } from "@/content/life-moments";
 import { BetStep, BreathStep, ForkStep, MatchStep, MythStep, OptionStep, OrderStep, OriginalStep, SitStep, SpeakStep, TapHear, TrapdoorStep } from "@/session/steps";
 import { BottomBar, Btn, Face, Guy, NavBar, Sun, color, confirmSheet, font, type } from "@/ui";
 import { successHaptic, tapHaptic } from "@/lib/haptics";
@@ -83,7 +84,9 @@ export default function SessionScreen() {
   // walked back to an earlier stretch keeps the days they'd finished further up open).
   const walkedBefore = !kid && saved.sits.some((x) => !x.kidId && x.door === door && x.day === day);
   if (!DOORS.some(([, w]) => w === door)) return <Redirect href="/today" />;
-  if (!Number.isInteger(day) || day < 1 || (day > current && !walkedBefore)) return <Redirect href={{ pathname: "/session/[door]/[day]", params: { door: door || saved.settings.homeWing, day: String(current) } }} />;
+  // ...except a day on their own first-week list (content/life-moments.ts): it opens as an extra, never moving the path
+  const extra = !kid && Number.isInteger(day) && day > current && !walkedBefore && opensAhead(saved.settings.profile, door, day);
+  if (!Number.isInteger(day) || day < 1 || (day > current && !walkedBefore && !extra)) return <Redirect href={{ pathname: "/session/[door]/[day]", params: { door: door || saved.settings.homeWing, day: String(current) } }} />;
   // "go deeper" is an extra round on a lesson already walked today; children don't get it
   const deep = params.deep === "1" && !kid;
   // a child under 13 sits the door's kids' track, never the grown-up lesson (no script is fetched for it)
@@ -91,7 +94,7 @@ export default function SessionScreen() {
     if (!kidLesson(door, day)) return <Redirect href="/you/table" />;
     return <Session key={`${door}:${day}:kid`} door={door} day={day} kidId={kid?.id ?? null} mode="kid" deep={false} voiceOn={saved.settings.voiceOn} onFinish={completeSit} script={null} />;
   }
-  return <ScriptedSession key={`${door}:${day}`} door={door} day={day} kidId={kid?.id ?? null} mode={mode} deep={deep} voiceOn={saved.settings.voiceOn} onFinish={completeSit} />;
+  return <ScriptedSession key={`${door}:${day}`} door={door} day={day} kidId={kid?.id ?? null} mode={mode} deep={deep} extra={extra} voiceOn={saved.settings.voiceOn} onFinish={completeSit} />;
 }
 
 // The day's full script (docs/curriculum/LESSON_LOADER.md) is resolved before the lesson starts, so the steps never
@@ -119,7 +122,7 @@ function LessonLoading() {
   );
 }
 
-function Session({ door, day, kidId, mode, deep, voiceOn, onFinish, script = null }: { door: string; day: number; kidId: string | null; mode: string; deep: boolean; voiceOn: boolean; onFinish: ReturnType<typeof useStore>["completeSit"]; script?: any | null }) {
+function Session({ door, day, kidId, mode, deep, extra = false, voiceOn, onFinish, script = null }: { door: string; day: number; kidId: string | null; mode: string; deep: boolean; extra?: boolean; voiceOn: boolean; onFinish: ReturnType<typeof useStore>["completeSit"]; script?: any | null }) {
   const ic = icon(door);
   const { earnLight, recordRun, recordFeel, update, noteLearning, saved: me } = useStore();
   useTitle(`${t("session.title", { door: doorLabel(door).toLowerCase(), day })}${deep ? t("session.title.deeper") : ""}`);
@@ -130,7 +133,7 @@ function Session({ door, day, kidId, mode, deep, voiceOn, onFinish, script = nul
   const [learn] = useState(() => practiceModeOf(me.settings.profile) === "learn");
   // Words that slipped before and are due today come back as "one from before" (two at most, fixed for the lesson;
   // grown-ups' own lessons only). The door's words so far are what a slip can be about.
-  const own = mode === "adult" && !kidId && !deep;
+  const own = mode === "adult" && !kidId && !deep && !extra;
   const [recallCards] = useState(() => (own ? dueCards(me.missed || [], door, todayNow(), { n: 2 }) : []));
   const vocab = useMemo(() => new Map(knownSoFar(door, day).map((k) => [k.word.toLowerCase(), k])), [door, day]);
   // The first lesson after placement (day 22 for someone who skipped camp one): there was no "yesterday" on this path,
@@ -268,6 +271,13 @@ function Session({ door, day, kidId, mode, deep, voiceOn, onFinish, script = nul
     hush();
     remove(resumeKey);
     const asked = score.asked || graded;
+    if (extra) {
+      // a first-week lesson opened ahead of the path: remembered as read, never a sit (the path and streak stay put)
+      const key = `${door}:${day}`;
+      update({ forYouDone: [...(me.settings.forYouDone || []).filter((k) => k !== key), key] });
+      router.replace("/today");
+      return;
+    }
     if (deep) {
       // the extra round: light and a best time, never a second sit
       earnLight(deepLight(score.right, asked), best, false);

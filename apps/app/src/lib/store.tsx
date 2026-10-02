@@ -68,6 +68,10 @@ export type Settings = {
   timed?: Timed;
   /** The new-year recap offer they've opened or closed (e.g. "HINDUISM:2026-11-08"). */
   yearSeen?: string | null;
+  /** First-week lessons (content/life-moments.ts) read ahead of the path, as "DOOR:day"; never sits. */
+  forYouDone?: string[];
+  /** The first-week card on Today, closed. */
+  forYouClosed?: boolean;
   /** Where the onboarding check started them, by door ({ HINDUISM: 22 }): they showed they know camp one, and chose
    *  to skip it. The door never sits behind this day; the days before it stay open on the trail to catch up. */
   placed?: Record<string, number>;

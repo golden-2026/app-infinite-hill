@@ -4,7 +4,8 @@ import type { Stance } from "@/lib/onboard";
 // A "what brings you" key (BELIEF_QUESTIONS "why" in content/intake.ts) is kept on the pending profile and that
 // question is then skipped on the door. "spiritual" is a first-step answer instead (STANCE_Q): it preselects the
 // stance and skips that question. Anything else is ignored.
-export const WHY_KEYS = ["own", "roots", "god", "partner", "kids", "calm", "hard", "curious"] as const;
+// grief, baby and diagnosis are life moments: they also get a short first-week list on Today (content/life-moments.ts).
+export const WHY_KEYS = ["own", "roots", "god", "partner", "kids", "baby", "calm", "grief", "diagnosis", "hard", "curious"] as const;
 export type WhyKey = (typeof WHY_KEYS)[number];
 
 export function whyParam(raw: unknown): { why: WhyKey | null; stance: Stance | null } {
