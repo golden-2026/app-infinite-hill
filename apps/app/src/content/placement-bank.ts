@@ -14,19 +14,19 @@ export type BankStop = { first: number; last: number; camp: string; name: string
 export const PLACEMENT_BANK: Record<string, { lastWritten: number; stops: BankStop[] }> = {
   HINDUISM: { lastWritten: 1061, stops: [
     { first: 1, last: 21, camp: "Camp 1", name: "First steps", qs: [
-      {"day":3,"kind":"fork","q":"you're Arjuna. your family is across the field, your bow is on the floor of the chariot, and you don't know what's right. what do you do?","o":["order the chariot off the field.","tell your charioteer you're his student, and ask him to teach you.","pick up the bow without a word."],"a":1},
+      {"day":2,"kind":"fork","q":"the Mandukya Upanishad gives a to waking, u to dreaming and m to deep sleep. what does it give the fourth part?","o":["a fourth, louder sound.","the silence after the sound.","a second om."],"a":1},
       {"day":11,"kind":"word","term":"tat tvam asi","o":["that's what you are","the whole, under everything","a creator god in the stories"],"a":0},
       {"day":16,"kind":"fork","q":"you're Mirabai. you've married into a royal family that wants you to stop singing to Krishna in public. what do you do?","o":["stop singing and keep the peace.","sing only in private, where no one hears.","keep singing, with ordinary devotees."],"a":2},
     ] },
     { first: 22, last: 96, camp: "Camp 2", name: "The stories", qs: [
-      {"day":37,"kind":"fork","q":"you're Dasharatha. a sage asks for your teenage son to fight demons in the forest. what do you do?","o":["refuse outright.","offer your army and yourself instead.","send Bharata instead."],"a":1},
+      {"day":36,"kind":"fork","q":"you're Dasharatha. a shining figure hands you a golden bowl of sweet rice for your queens. what do you do with it?","o":["give it all to your first queen.","divide it among all three queens.","eat it yourself for strength."],"a":1},
       {"day":59,"kind":"word","term":"Valmiki's Angada","o":["breaks through the roof and flies back","Vali's son, sent as the last messenger","couldn't lift the foot"],"a":0},
       {"day":81,"kind":"fork","q":"it's the new-moon night, the darkest of the month, and Lakshmi is said to visit homes. what do many families do?","o":["shut every door and window.","light the lamps and leave the way open.","wait until morning to celebrate."],"a":1},
     ] },
     { first: 97, last: 156, camp: "Camp 3", name: "The practices", qs: [
       {"day":106,"kind":"fork","q":"you're about to open a new shop. the first customer is at the door. what do many Hindu shopkeepers do first?","o":["open the door right away.","honor Ganesha by the till, with a garland.","wait until the end of the first day."],"a":1},
       {"day":127,"kind":"word","term":"Karva Chauth","o":["a fast from sunrise to moonrise","a vow, kept for a purpose","fasting; explained as staying near"],"a":0},
-      {"day":143,"kind":"fork","q":"you're Brahma. the world is all ocean, Vishnu is deep in his cosmic sleep, and two demons are coming for you. what do you do?","o":["fight them alone.","praise the Goddess as Vishnu's sleep, so she lets him wake.","hide until they leave."],"a":1},
+      {"day":145,"kind":"fork","q":"it's eleven forty-five on Janmashtami. you've fasted all day and you're starving. what do people do?","o":["eat now, since it's close enough.","wait, sing, and break the fast after midnight.","go to bed and eat in the morning."],"a":1},
     ] },
     { first: 157, last: 231, camp: "Camp 4", name: "The text", qs: [
       {"day":172,"kind":"fork","q":"you're Arjuna. you've heard that action binds. what does Krishna say the wise person does?","o":["stops acting completely.","acts fully, without clinging to the fruit.","acts only when the outcome is certain."],"a":1},
@@ -44,24 +44,24 @@ export const PLACEMENT_BANK: Record<string, { lastWritten: number; stops: BankSt
       {"day":403,"kind":"fork","q":"the Aitareya counts three births. the first is in the father, the second from the mother. what is the third?","o":["the day you become a parent.","the day you depart this life and are born again.","the day of initiation into study."],"a":1},
     ] },
     { first: 421, last: 513, camp: "Year 2", name: "The Yoga Sutras of Patanjali", qs: [
-      {"day":435,"kind":"fork","q":"you weren't born a natural meditator. according to Patanjali, what decides how near the goal is?","o":["your natural talent.","the intensity of your wanting and effort.","your luck."],"a":1},
+      {"day":434,"kind":"fork","q":"you're absorbed so deeply in the breath that nothing else exists. which samadhi is this, in Patanjali's terms?","o":["samadhi with seed: the breath is still a support.","samadhi without seed: nothing is held.","not samadhi at all."],"a":0},
       {"day":467,"kind":"word","term":"parinama","o":["transformation, change of form","one, ten or a hundred by place","stays through lump, pot and shards"],"a":0},
-      {"day":495,"kind":"fork","q":"you're Dasharatha. you have everything a king could want, except a son. what do you do?","o":["accept it and say nothing.","decide on a great sacrifice, with your counselors' blessing.","go to war to win glory instead."],"a":1},
+      {"day":496,"kind":"fork","q":"you're the king of Anga. a holy boy in the forest can end your drought, but his father would never let him go. what do you do?","o":["send soldiers to take him.","send people to befriend him and invite him.","wait for the rain on your own."],"a":1},
     ] },
     { first: 514, last: 603, camp: "Year 2", name: "The Ramayana as a serial", qs: [
-      {"day":532,"kind":"fork","q":"you're Sumitra. your son is leaving for fourteen years in the forest with his brother. what do you tell him?","o":["come back as soon as you can.","think of Rama as your father, Sita as me, the forest as Ayodhya.","watch out for Kaikeyi's people."],"a":1},
+      {"day":533,"kind":"fork","q":"you're Rama, by the Tamasa at night. the whole city has followed you and will lose their homes if they keep going. what do you do?","o":["wake them and order them home.","let them come into the forest.","leave quietly before dawn and hide the tracks."],"a":2},
       {"day":559,"kind":"word","term":"Panchavati","o":["the place of five banyans","the vulture king, Dasharatha's friend","the river beside the hut"],"a":0},
       {"day":584,"kind":"fork","q":"you're Lakshmana. Rama holds out Sita's jewelry and asks if you know it. what do you say?","o":["yes, every piece.","only the anklets: I bowed at her feet each day.","I never looked at her jewelry at all."],"a":1},
     ] },
     { first: 604, last: 696, camp: "Year 2", name: "The Ramayana as a serial", qs: [
-      {"day":622,"kind":"fork","q":"you're Sita. a stranger says he's Rama's messenger, and you were tricked by a disguise before. what do you do?","o":["trust him at once.","name your fear, check your heart, then ask about Rama.","call the guards."],"a":1},
+      {"day":623,"kind":"fork","q":"you're Sita. a mountain-sized Hanuman offers to fly you home tonight. what do you say?","o":["yes, at once.","no: Rama must come and win me back himself.","only if Lakshmana comes too."],"a":1},
       {"day":649,"kind":"word","term":"Kailasa","o":["the home of Shiva","made themselves invisible","torn loose and lifted"],"a":0},
       {"day":678,"kind":"fork","q":"you're Ganesha. the moon laughed at your fall and you cursed it. now the gods are pleading for the moon. what do you do?","o":["keep the curse as it is.","take it back completely.","soften it to one night a year."],"a":2},
     ] },
     { first: 697, last: 787, camp: "Year 3", name: "The Mahabharata as a serial", qs: [
       {"day":715,"kind":"fork","q":"you're Shantanu. your son gave up the throne and any children of his own so you could marry. what do you do?","o":["call off the marriage.","accept, and give him a boon.","accept, and say nothing."],"a":1},
       {"day":742,"kind":"word","term":"Draupadi","o":["speaks before he shoots","strings the bow","Karna's father, unknown to the arena"],"a":0},
-      {"day":769,"kind":"fork","q":"you're Yudhishthira. Shakuni says you'll never stake Kunti's sons, since they must be dearer to you than the twins. what do you do?","o":["agree, and stop the game.","call it an attempt to divide you, and stake Arjuna.","stake yourself instead."],"a":1},
+      {"day":768,"kind":"fork","q":"you're Vidura. the game is going badly, and the blind king is listening. what do you do?","o":["keep quiet; it isn't your game.","speak to the king and beg him to stop it.","walk out of the hall."],"a":1},
     ] },
     { first: 788, last: 878, camp: "Year 3", name: "The Mahabharata as a serial", qs: [
       {"day":806,"kind":"fork","q":"you're Yudhishthira. one brother may live. a war may be coming. who do you choose?","o":["Arjuna, the archer you'll need.","Bhima, whose strength protects you all.","Nakula, Madri's son."],"a":2},
@@ -74,9 +74,9 @@ export const PLACEMENT_BANK: Record<string, { lastWritten: number; stops: BankSt
       {"day":945,"kind":"fork","q":"your day is loud and full. Vivekananda's ideal person has the same day. what do they do?","o":["leave and find a quiet place.","find the silence of the desert inside the activity.","work faster to finish the noise sooner."],"a":1},
     ] },
     { first: 963, last: 1061, camp: "Year 3", name: "Lineage track, year three", qs: [
-      {"day":983,"kind":"fork","q":"you're Krishna. one enemy keeps coming back, and a second army is at the gate. what do you do?","o":["fight both armies at once.","move your people to safety, walk out unarmed, and run.","surrender the city."],"a":1},
+      {"day":979,"kind":"fork","q":"you're Radha. you waited all night. at dawn he turns up, red-eyed, with marks of somewhere else. what do you do?","o":["let him in and say nothing.","tell him to go, and say exactly why.","leave the forest before he sees you."],"a":1},
       {"day":1012,"kind":"word","term":"abhyasa","o":["steady, repeated practice","letting go, loosening the grip","a practice kept as a discipline"],"a":0},
-      {"day":1039,"kind":"fork","q":"you're watching a potter's hands shape a bowl. the Gita says what is to be known has hands everywhere. how do readers take it?","o":["only the hands on temple images count.","it works through every pair of hands, and yet is never bound to any.","hands don't matter to the Gita."],"a":1},
+      {"day":1047,"kind":"fork","q":"you are Yudhishthira. Indra's chariot is waiting to take you to heaven, but he says the dog cannot come. what do you do?","o":["leave the dog and climb into the chariot.","refuse heaven rather than abandon the dog.","ask Indra for a day to think it over."],"a":1},
     ] },
   ] },
   ISLAM: { lastWritten: 1061, stops: [
@@ -91,7 +91,7 @@ export const PLACEMENT_BANK: Record<string, { lastWritten: number; stops: BankSt
       {"day":81,"kind":"fork","q":"you're 'Abd al-Muttalib. your little orphaned grandson has climbed onto the rug by the Ka'ba that none of your grown sons dare to sit on. his uncles move to pull him off. what do you say?","o":["leave him be.","teach him some respect.","find him his own rug."],"a":0},
     ] },
     { first: 97, last: 156, camp: "Camp 3", name: "The practices", qs: [
-      {"day":108,"kind":"fork","q":"you're praying with the companions, and at the salam everyone waves their hands to each side. the Prophet ﷺ notices. what does he say?","o":["wave higher, so everyone sees","rest your hand on your thigh and greet the person beside you","skip the greeting altogether"],"a":1},
+      {"day":107,"kind":"fork","q":"you're sitting in prayer with the companions, saying: peace be on Allah, peace on Jibril, peace on Mika'il. the Prophet ﷺ turns to you. what does he say?","o":["keep going, and add more names","don't say peace on Allah, for Allah is the Peace","stay silent in the sitting"],"a":1},
       {"day":127,"kind":"word","term":"eid mubarak","o":["a blessed Eid","from a root for returning","an odd number of dates"],"a":0},
       {"day":144,"kind":"fork","q":"a traveler, dusty and disheveled, raises his hands and cries 'O Lord, O Lord'. but everything he eats, drinks and wears is unlawful. what does the Prophet ﷺ ask?","o":["how could he not be answered?","how could he be answered?","why doesn't he pray in Arabic?"],"a":1},
     ] },
@@ -108,7 +108,7 @@ export const PLACEMENT_BANK: Record<string, { lastWritten: number; stops: BankSt
     { first: 332, last: 420, camp: "Year 2", name: "Al-Baqarah, the Cow", qs: [
       {"day":351,"kind":"fork","q":"you're traveling with the Prophet in Ramadan. some companions are fasting, some aren't. what happens between the two groups?","o":["the fasting ones scold the others.","they argue until the Prophet decides.","neither group finds fault with the other."],"a":2},
       {"day":376,"kind":"word","term":"arham","o":["wombs, and ties of kinship","a single soul","mercy, from the same root as womb"],"a":0},
-      {"day":402,"kind":"fork","q":"you're asked what ihsan means. what did the Prophet answer Jibril?","o":["to know every ruling of the law.","to worship Allah as though you see Him, and if not, He sees you.","to never make a mistake."],"a":1},
+      {"day":401,"kind":"fork","q":"the Hour is arriving, and you're holding a palm shoot. what does the report in Ahmad's Musnad say to do?","o":["drop it and pray.","plant it.","give it away."],"a":1},
     ] },
     { first: 421, last: 515, camp: "Year 2", name: "The Hijri year", qs: [
       {"day":440,"kind":"fork","q":"your sons come home with a bloody shirt and a story about a wolf. you suspect it isn't true. what does Ya'qub say?","o":["beautiful patience.","go back and find him.","I'll never speak to you again."],"a":0},
@@ -116,9 +116,9 @@ export const PLACEMENT_BANK: Record<string, { lastWritten: number; stops: BankSt
       {"day":496,"kind":"fork","q":"you're Abu Bakr. you've sworn never to support Mistah again. then you hear: don't you want God to forgive you? what do you do?","o":["keep the oath; it was sworn before God.","say yes, by God, and go back to supporting him.","support him, but quietly tell people what he did."],"a":1},
     ] },
     { first: 516, last: 607, camp: "Year 2", name: "Al-Hujurat, the Private Rooms", qs: [
-      {"day":534,"kind":"fork","q":"your parents are pushing you to put something in God's place. you won't. what do the verses say about how you treat them?","o":["cut them off.","don't obey in that, but keep company with them kindly.","obey; they're your parents."],"a":1},
+      {"day":533,"kind":"fork","q":"the companions hear that safety is for those who don't mix faith with wrong. they panic: who hasn't wronged himself? what does the Prophet say?","o":["nobody is safe, then.","it means shirk, as Luqman told his son.","only prophets are without wrong."],"a":1},
       {"day":562,"kind":"word","term":"Pharaoh","o":["let me kill Musa","would you kill a man for this?","I entrust my affair to Allah"],"a":0},
-      {"day":589,"kind":"fork","q":"you ask a classical commentator how Allah is nearer than the jugular. what might Ibn Kathir answer?","o":["through the angels who record, so close they miss nothing.","Allah lives in the vein.","it's only poetry, meaning nothing."],"a":0},
+      {"day":588,"kind":"fork","q":"you ask why Allah made humanity in nations and tribes. what reason does 49:13 give?","o":["so each could rule over others.","so that you may know one another.","so that you stay apart."],"a":1},
     ] },
     { first: 608, last: 696, camp: "Year 2", name: "The book's great themes", qs: [
       {"day":626,"kind":"fork","q":"the call for the Friday prayer is heard. you're a little late. what does the hadith say to do?","o":["run as fast as you can.","walk with calm and dignity.","skip it and pray at home."],"a":1},
@@ -178,17 +178,17 @@ export const PLACEMENT_BANK: Record<string, { lastWritten: number; stops: BankSt
       {"day":405,"kind":"fork","q":"you're writing the instructions for the Day of Atonement. where do you begin?","o":["with the date on the calendar.","with the death of Aaron's sons.","with the high priest's clothes."],"a":1},
     ] },
     { first: 425, last: 516, camp: "Year 2", name: "Numbers, the wilderness", qs: [
-      {"day":444,"kind":"fork","q":"you're Moses. Joshua runs up: two men are prophesying in the camp, outside the official circle. stop them! what do you say?","o":["bring them to me at once.","are you jealous for my sake? would that all were prophets.","only the seventy may speak."],"a":1},
+      {"day":445,"kind":"fork","q":"your sister has just spoken against you, and now she's stricken. your brother begs you to pray. what does Moses do?","o":["remind God that she spoke against him first.","cry out five words: heal her now, O God, I beseech Thee.","wait seven days, then pray."],"a":1},
       {"day":471,"kind":"word","term":"neder","o":["a vow, a binding promise","he shall not break his word","without a vow"],"a":0},
       {"day":498,"kind":"fork","q":"you want to give at the highest of Maimonides' eight levels. what do you do?","o":["give a large gift with your name on it.","help someone with a loan, a partnership or a job.","give whenever you feel moved."],"a":1},
     ] },
     { first: 517, last: 607, camp: "Year 2", name: "The siddur, walked in order", qs: [
       {"day":535,"kind":"fork","q":"Moses has died, and a grave could easily become a shrine. what does the Torah's account do?","o":["describe the grave so it can be marked.","say no one knows where he lies.","carry his body into the land."],"a":1},
-      {"day":562,"kind":"word","term":"Isaiah 45:7","o":["I form the light, and create darkness","who forms light","changed to all things"],"a":0},
-      {"day":588,"kind":"fork","q":"you're Moses. people line up from morning to evening for you to judge every case. what does Jethro tell you to do?","o":["keep going; only you can do it.","find capable, honest people who hate unjust gain to judge with you.","stop judging altogether."],"a":1},
+      {"day":562,"kind":"word","term":"hamechadesh","o":["who renews","who forms light","I form the light, and create darkness"],"a":0},
+      {"day":590,"kind":"fork","q":"you're Obadiah, a convert. the Amidah says God of our fathers, God of Abraham. what does Maimonides tell you?","o":["change it to God of your fathers.","say it as written: Abraham is your father too.","skip that line."],"a":1},
     ] },
     { first: 608, last: 696, camp: "Year 2", name: "The Jewish year in depth", qs: [
-      {"day":627,"kind":"fork","q":"both your parents are alive. the rabbi announces Yizkor. what do many people in your place do?","o":["leave the room for a few minutes.","lead the prayer.","start the next song."],"a":0},
+      {"day":623,"kind":"fork","q":"Ben Zoma asks: who is rich? which answer does he give?","o":["the one with the most land.","the one who is happy with their portion.","the one who gives the most away."],"a":1},
       {"day":652,"kind":"word","term":"Maimonides","o":["don't be cruel; forgive","Yom Kippur can't fix it alone","how often to try before the burden lifts"],"a":0},
       {"day":679,"kind":"fork","q":"a child at the seder sits silent. they haven't asked anything all night. what does the Haggadah say to do?","o":["wait until they ask.","open the conversation for them.","give them the laws in full."],"a":1},
     ] },
@@ -198,7 +198,7 @@ export const PLACEMENT_BANK: Record<string, { lastWritten: number; stops: BankSt
       {"day":763,"kind":"fork","q":"you're a king known for wisdom. the Torah warns kings against many wives, lest the heart turn. what do you tell yourself?","o":["the warning is for kings less wise than me.","keep the limit, because even wisdom can drift.","ask a prophet to decide for you."],"a":0},
     ] },
     { first: 782, last: 886, camp: "Year 3", name: "The Writings", qs: [
-      {"day":803,"kind":"fork","q":"you're Jeremiah, mocked every day for what you say. you decide: I won't speak in his name anymore. what happens?","o":["the silence brings relief.","the word burns like fire shut up in your bones.","people start listening."],"a":1},
+      {"day":804,"kind":"fork","q":"you've been carried off to the city that conquered your home. a letter arrives from Jeremiah. what does it say?","o":["resist the city at every turn.","build, plant, and seek the city's peace.","wait at the gate; you'll be home soon."],"a":1},
       {"day":834,"kind":"word","term":"Elimelech","o":["dies in Moab","weeps and goes back","bitter"],"a":0},
       {"day":865,"kind":"fork","q":"you're Esther, newly taken to the palace. Mordecai has told you not to say who your people are. what do you do?","o":["tell everyone. you have nothing to hide.","run away from the palace.","keep it to yourself, as Mordecai asked."],"a":2},
     ] },
@@ -210,7 +210,7 @@ export const PLACEMENT_BANK: Record<string, { lastWritten: number; stops: BankSt
     { first: 971, last: 1061, camp: "Year 3", name: "The story after the Bible", qs: [
       {"day":989,"kind":"fork","q":"you are the company's directors in Amsterdam. your governor wants the Jewish refugees sent away. Jewish merchants ask you to let them stay. what do you decide?","o":["send them away.","let them stay, if their community cares for its own poor.","let them stay, with no conditions at all."],"a":1},
       {"day":1016,"kind":"word","term":"Mordecai Anielewicz","o":["a young commander of the fighters","dug under the ghetto's buildings","blown up to mark the end"],"a":0},
-      {"day":1043,"kind":"fork","q":"you're Grace Aguilar. some of the English books on the Bible your Jewish neighbors read were written to persuade them to leave Judaism. what do you do?","o":["tell them to stop reading.","write your own books, in English, from inside the tradition.","only write in Hebrew."],"a":1},
+      {"day":1044,"kind":"fork","q":"you're Rebecca Gratz. Jewish children in your city have no Jewish school, and their Christian friends go to Sunday school. what do you do?","o":["send them to the church schools.","start a Jewish school on the day they're free.","wait for the synagogue to do it."],"a":1},
     ] },
   ] },
   BUDDHISM: { lastWritten: 1061, stops: [
@@ -222,26 +222,26 @@ export const PLACEMENT_BANK: Record<string, { lastWritten: number; stops: BankSt
     { first: 22, last: 96, camp: "Camp 2", name: "The stories", qs: [
       {"day":40,"kind":"fork","q":"you're the prince, now robed. Channa begs to stay with you. what do you do?","o":["let Channa and Kanthaka come along.","send them both home with your jewels.","keep the horse, send Channa home."],"a":1},
       {"day":59,"kind":"word","term":"Brahma Sahampati","o":["knelt and asked him to teach","people who could understand","people at every depth"],"a":0},
-      {"day":79,"kind":"fork","q":"you're the Buddha. Ananda is frightened and hopes you'll leave instructions and someone in charge. what do you tell him?","o":["name your most trusted disciple as leader.","tell him to be an island to himself, with the dhamma as refuge.","promise to stay until he's ready."],"a":1},
+      {"day":73,"kind":"fork","q":"you're Angulimala. you've been told to say, 'since I was born, I have never intended to take a life.' what do you do?","o":["say it anyway, to help her.","tell the Buddha it would be a lie.","refuse and walk away."],"a":1},
     ] },
     { first: 97, last: 156, camp: "Camp 3", name: "The practices", qs: [
-      {"day":107,"kind":"fork","q":"you're a monk, and the Buddha is about to teach mindfulness of breathing. where does the discourse say to begin?","o":["on a mountaintop, breath held.","in a forest, at a tree or an empty room, sitting upright.","anywhere, lying down."],"a":1},
+      {"day":105,"kind":"fork","q":"you're a monk meditating in a forest, and the spirits there frighten you. what does the commentary say the Buddha gave you?","o":["a charm to drive them away.","the Metta Sutta, to recite with kindness.","permission to leave the forest."],"a":1},
       {"day":127,"kind":"word","term":"Rahula","o":["set out water for his father's feet","left a little water in the dipper","look before you speak or act"],"a":0},
-      {"day":145,"kind":"fork","q":"the Buddha is dying at Kusinara, and the monks are gathered. what are his last words, in the tradition's telling?","o":["a new rule for the monks.","all things decay; keep going with diligence.","choose a new leader."],"a":1},
+      {"day":142,"kind":"fork","q":"you're Ananda. you've noticed every scent follows the wind. what do you ask the Buddha?","o":["how to make incense stronger.","whether any scent travels against the wind.","why temples use so much incense."],"a":1},
     ] },
     { first: 157, last: 231, camp: "Camp 4", name: "The text", qs: [
-      {"day":172,"kind":"fork","q":"you and your friends are chasing someone who ran off with your things. you meet the Buddha under a tree and ask if he's seen her. he answers with a question. what is it?","o":["which way did she go?","which is better: to look for a woman, or to look for yourselves?","what did she take?"],"a":1},
+      {"day":171,"kind":"fork","q":"you're a pickpocket in a crowd listening to the Buddha. the teaching starts to reach you. what does the story say happened?","o":["you steal anyway; that's what you came for.","you listen, forget to steal, and see the truth.","you leave before it gets to you."],"a":1},
       {"day":193,"kind":"word","term":"kiccha","o":["hard, difficult, rare","how rare human birth is","the Buddha, led by no desire"],"a":0},
       {"day":220,"kind":"fork","q":"you're Uggasena, balanced at the top of a bamboo pole in front of a crowd. the Buddha speaks to you. what does he say?","o":["climb down carefully and come to the monastery.","let go of before, behind and between, and cross over.","hold on tight; don't fall."],"a":1},
     ] },
     { first: 232, last: 331, camp: "Camp 5", name: "The depths", qs: [
-      {"day":247,"kind":"fork","q":"you're the monk Sona. you've practiced so hard your feet are bleeding, and you're thinking of quitting. the Buddha asks about your lute. what does he say?","o":["practice even harder.","go home; it's not for you.","strings too tight or too loose won't play; tune them just right."],"a":2},
+      {"day":246,"kind":"fork","q":"you're lost in a long text with many sections. what does the opening of the Satipatthana Sutta give you?","o":["a list of rules.","a map: four foundations every section fits into.","a story about the Buddha's childhood."],"a":1},
       {"day":282,"kind":"word","term":"Huineng","o":["your minds are moving","the flag is moving","the wind is moving"],"a":0},
-      {"day":313,"kind":"fork","q":"you're the princess Wisdom Moon. the monks advise you to pray for rebirth as a man so you can reach awakening. what do you answer?","o":["agree, and pray for it.","say there's no man or woman to cling to, and vow to work in a woman's form.","leave the practice."],"a":1},
+      {"day":308,"kind":"fork","q":"you've just heard that human life is precious and death's timing unknown. a Tibetan teacher asks what you'll do with that. which answer fits the four thoughts?","o":["panic and try to do everything at once.","let it turn the mind toward what matters, steadily.","forget it; it's too gloomy."],"a":1},
     ] },
     { first: 332, last: 400, camp: "Year 2", name: "The eightfold path, factor by factor", qs: [
-      {"day":347,"kind":"fork","q":"the Buddha asks: a blind turtle surfaces once a century. what are the odds it puts its neck through a single drifting yoke? what do you say?","o":["very likely.","very slim; only after a very long time.","impossible."],"a":1},
-      {"day":366,"kind":"word","term":"MN 21","o":["the same five, from the other side","the right time","smooth, soft, gentle"],"a":0},
+      {"day":341,"kind":"fork","q":"you're Paharada, lord of the titans, telling the Buddha about the ocean's wonders. he replies about his teaching. what does he say its one taste is?","o":["the taste of salt.","the taste of freedom.","the taste of sweetness."],"a":1},
+      {"day":365,"kind":"word","term":"samphappalāpa","o":["idle chatter","right, whole, complete","speech, the voice"],"a":0},
       {"day":388,"kind":"fork","q":"you're the Buddha. Sona, his feet bleeding from too much walking practice, is thinking of quitting. what do you do?","o":["tell him to push through the pain.","ask him about tuning a lute.","send him home to his family."],"a":1},
     ] },
     { first: 401, last: 521, camp: "Year 2", name: "The Middle-Length Sayings, in order", qs: [
@@ -250,7 +250,7 @@ export const PLACEMENT_BANK: Record<string, { lastWritten: number; stops: BankSt
       {"day":498,"kind":"fork","q":"you're Yama, the judge of the dead. at the end of the discourse, what do you wish for?","o":["more power over the dead.","to be born human, hear a Buddha and understand.","to never meet another wrongdoer."],"a":1},
     ] },
     { first: 522, last: 610, camp: "Year 2", name: "The Long Discourses", qs: [
-      {"day":539,"kind":"fork","q":"a monk who searched every heaven asks you: where do earth, water, fire and air cease without remainder? you're the Buddha. what do you do first?","o":["say the question should be asked another way.","name the farthest heaven.","say there's no answer."],"a":0},
+      {"day":541,"kind":"fork","q":"you're the Buddha. two students ask which path leads to union with Brahma. what do you ask first?","o":["has anyone in your teachers' line seen Brahma?","which teacher has more students?","which path is older?"],"a":0},
       {"day":565,"kind":"word","term":"Atanatiya","o":["verses named for the city of Atanata","guardian king of the north","first of the seven Buddhas honored"],"a":0},
       {"day":591,"kind":"fork","q":"you're Tissa. you've asked Kassapa what he means by the rotten smell. what's his answer?","o":["eating any meat at all.","cruel, dishonest and proud deeds.","skipping a fast day."],"a":1},
     ] },
@@ -270,7 +270,7 @@ export const PLACEMENT_BANK: Record<string, { lastWritten: number; stops: BankSt
       {"day":876,"kind":"fork","q":"you've traveled a long way to Nalanda. at the gate a monk asks you a hard question about the teaching. what happens next?","o":["you show a letter from a king and walk in.","you answer, and only if you answer well do you get in.","you pay a fee to the gatekeeper."],"a":1},
     ] },
     { first: 900, last: 955, camp: "Year 3", name: "The northern roads: China, Korea, Japan, Tibet and the wider world", qs: [
-      {"day":910,"kind":"fork","q":"you're a Chinese teacher with shelves of sutras that don't all say the same thing. what do you do?","o":["pick one sutra and throw the rest away.","look for a way to hold them together, or a practice at their heart.","stop reading sutras altogether."],"a":1},
+      {"day":912,"kind":"fork","q":"you're Bodhidharma. an emperor who has built temples and fed monks asks how much merit he's made. what do you say?","o":["a great deal, more than anyone.","no merit.","enough for a good rebirth."],"a":1},
       {"day":928,"kind":"word","term":"Honen","o":["call Amida's name with trust","just sitting","chant the Lotus Sutra's title"],"a":0},
       {"day":943,"kind":"fork","q":"you're Wang Jie. you want to honor your two parents. what do you do?","o":["build them a large house.","have the Diamond Sutra printed, to be given away freely.","keep a sutra locked away for your family alone."],"a":1},
     ] },
@@ -289,7 +289,7 @@ export const PLACEMENT_BANK: Record<string, { lastWritten: number; stops: BankSt
     { first: 22, last: 96, camp: "Camp 2", name: "The stories", qs: [
       {"day":37,"kind":"fork","q":"you're a tired traveler in Mecca. a judge wakes you, angry that your feet point at the house of God. what do you say?","o":["apologize and move away.","ask him to turn your feet where God is not.","argue that the building is only stone."],"a":1},
       {"day":59,"kind":"word","term":"Hargobind","o":["the child the stories say was spared","the eldest brother, a rival","Bhai Gurdas's name for his followers"],"a":0},
-      {"day":80,"kind":"fork","q":"you're Lakhi Shah. you have the Guru's body hidden in your cart, and a public cremation would bring soldiers. what do you do?","o":["leave it at the city gate.","build a pyre in your own house and burn it down.","bury it secretly in a field."],"a":1},
+      {"day":79,"kind":"fork","q":"you're the Guru. you're told: convert, or show a miracle, or die. what do you do?","o":["show a miracle and go free.","refuse all three.","convert in name and keep your faith in secret."],"a":1},
     ] },
     { first: 97, last: 156, camp: "Camp 3", name: "The practices", qs: [
       {"day":110,"kind":"fork","q":"you're at the end of an evening program. the harmonium starts a slow tune and the room begins to sing. you don't read Gurmukhi. what can you do?","o":["stay silent; it's for people who know the words.","join in: there's only one word, Waheguru.","look for a translation on your phone."],"a":1},
@@ -297,12 +297,12 @@ export const PLACEMENT_BANK: Record<string, { lastWritten: number; stops: BankSt
       {"day":145,"kind":"fork","q":"Guru Nanak pictures a life as a farm: the mind is the plowman, the body is the field. what does he make the seed?","o":["hard work.","the Name.","money saved for next year."],"a":1},
     ] },
     { first: 157, last: 231, camp: "Camp 4", name: "The text", qs: [
-      {"day":172,"kind":"fork","q":"Nanak could ask the Guru for anything. what's the one understanding he asks for?","o":["how the world was made.","that there's one Giver of all, and may he not forget Him.","the right words to describe God."],"a":1},
+      {"day":171,"kind":"fork","q":"pauri five opens with two things the One cannot be. which pair?","o":["seen and heard.","installed and made.","praised and thanked."],"a":1},
       {"day":194,"kind":"word","term":"aape beej","o":["you yourself sow","washed by water","washed with soap"],"a":0},
       {"day":216,"kind":"fork","q":"you've been given one tongue. in the opening of Pauri 32, what does Nanak wish for?","o":["a quieter tongue.","a hundred thousand tongues, then two million.","a tongue that speaks every language."],"a":1},
     ] },
     { first: 232, last: 331, camp: "Camp 5", name: "The depths", qs: [
-      {"day":253,"kind":"fork","q":"a proud Brahmin tells Kabir that birth makes him holier. what does Kabir's hymn answer?","o":["he agrees and bows.","he jokes: if you're so different, why didn't you come into the world some other way?","he says nothing."],"a":1},
+      {"day":249,"kind":"fork","q":"one person can explain truth perfectly but cheats at work. another never talks about it and deals straight. what does Guru Nanak's line put highest?","o":["the one who explains truth best.","truthful living, the straight dealing.","neither: truth can't be reached."],"a":1},
       {"day":282,"kind":"word","term":"banda","o":["servant, one bound to another","his birth name","his name as a hermit"],"a":0},
       {"day":311,"kind":"fork","q":"you're Jaswant Singh Khalra in Amritsar in the 1990s. cremation records show thousands of bodies burned as unidentified. what do you do?","o":["keep quiet; it's too dangerous.","make the records public and ask for justice.","leave Punjab for good."],"a":1},
     ] },
@@ -317,14 +317,14 @@ export const PLACEMENT_BANK: Record<string, { lastWritten: number; stops: BankSt
       {"day":493,"kind":"fork","q":"you're Guru Nanak. a rich official invites you to a feast; a poor carpenter offers plain bread. where do you go?","o":["the official's feast.","the carpenter's house.","neither; you fast."],"a":1},
     ] },
     { first: 510, last: 610, camp: "Year 2", name: "Guru Tegh Bahadur's bani", qs: [
-      {"day":528,"kind":"fork","q":"you're looking at a tree. by the twenty-third ashtpadi, where is God in this moment?","o":["only in the tree.","only in you.","at both ends: the seeing and the seen."],"a":2},
+      {"day":532,"kind":"fork","q":"you've read all twenty-four ashtpadis. according to the rahao line, what is Sukhmani's jewel of peace?","o":["God's ambrosial Name.","a calm mood.","finishing the reading."],"a":0},
       {"day":560,"kind":"word","term":"pauri","o":["a step, a rung, a stanza","an old Punjabi ballad of heroes","wander and make you see"],"a":0},
       {"day":589,"kind":"fork","q":"the first salok wants the mind to love the Lord. what picture does it give?","o":["a guest who visits on holidays.","a fish in water.","a bird that flies far away."],"a":1},
     ] },
     { first: 611, last: 696, camp: "Year 2", name: "The Ardas, line by line", qs: [
-      {"day":627,"kind":"fork","q":"the Ardas has finished remembering and turns to ask. you're asking for the whole community. what comes first?","o":["health and long life.","that Waheguru come to mind, and through it every joy.","victory over enemies."],"a":1},
+      {"day":626,"kind":"fork","q":"a question comes up that affects Sikhs everywhere. where does tradition look for a hukamnama binding on the whole community?","o":["the nearest gurdwara.","the Akal Takht in Amritsar.","any large gathering."],"a":1},
       {"day":653,"kind":"word","term":"maataa","o":["mother","father","brother"],"a":0},
-      {"day":680,"kind":"fork","q":"a big moment arrives in a Sikh family: a birth, a wedding, a death. what do they need to write?","o":["a new prayer for the occasion.","nothing: the words are already in the Granth, and already sung.","a speech for each guest."],"a":1},
+      {"day":682,"kind":"fork","q":"it's the Katak full moon. what are Sikhs celebrating?","o":["the founding of the Khalsa.","Guru Nanak's gurpurab, his birth.","the start of the solar year."],"a":1},
     ] },
     { first: 697, last: 779, camp: "Year 3", name: "The Bhagats of the Granth", qs: [
       {"day":713,"kind":"fork","q":"you're a scholar and a Persian poet, and you've come to the Guru. what do you do with your poetry?","o":["give it up: devotion has no room for art.","turn it toward the Guru and the One.","keep it for the royal courts only."],"a":1},
@@ -337,20 +337,20 @@ export const PLACEMENT_BANK: Record<string, { lastWritten: number; stops: BankSt
       {"day":865,"kind":"fork","q":"you're a Sikh horseman. an army has caught your people's slow column of families in the open. your horse is fast. what do you do?","o":["scatter and ride hard, as you've always done.","form a ring around the families and keep them moving.","ride ahead to find help."],"a":1},
     ] },
     { first: 887, last: 956, camp: "Year 3", name: "Maharaja Ranjit Singh", qs: [
-      {"day":901,"kind":"fork","q":"you're a misl chief. your riders come to Amritsar for the gathering and have nowhere to stay near the pool. what do you do?","o":["camp out in the fields beyond the city.","build a house by the sacred pool for pilgrims and defenders.","stay away from Amritsar altogether."],"a":1},
+      {"day":902,"kind":"fork","q":"you're a builder's son leading a misl. the Harmandir needs protecting. what do you give?","o":["a chest of gold for the shrine.","towers to watch the roads from.","a new wall around the whole city."],"a":1},
       {"day":922,"kind":"word","term":"Hazur Sahib","o":["the gurdwara at Nanded","where the Tenth Guru was born","where his earthly life ended"],"a":0},
       {"day":942,"kind":"fork","q":"you're Duleep Singh. you've bought an English country estate and are rebuilding the hall. what do you do with the rooms inside?","o":["make them plain English rooms.","make some of them look like an Indian palace.","leave them as they were."],"a":1},
     ] },
     { first: 957, last: 1061, camp: "Year 3", name: "The twentieth century and today", qs: [
       {"day":978,"kind":"fork","q":"you're a young man in court in Lahore. the charge is serious. what does Kartar Singh do?","o":["deny everything to save his life.","speak openly about what he had done.","blame the older leaders."],"a":1},
       {"day":1009,"kind":"word","term":"Ang 8","o":["water the father, earth the mother","bigger harvests of wheat and rice","pulled water from deep underground"],"a":0},
-      {"day":1043,"kind":"fork","q":"you walk into the kitchen at Amritsar, a stranger from far away, unsure if you're allowed to eat. what happens?","o":["you're asked your faith at the door.","you sit in the row on the floor and get the same plate as everyone.","you're sent to a separate table for visitors."],"a":1},
+      {"day":1035,"kind":"fork","q":"someone in the langar hall says women's voices count for less in the Guru's house. which answer comes from the Guru Granth Sahib?","o":["why call her lesser, from whom kings are born?","women may sing, but only at home.","it depends on the village."],"a":0},
     ] },
   ] },
   CATHOLIC: { lastWritten: 1061, stops: [
     { first: 1, last: 21, camp: "Camp 1", name: "First steps", qs: [
       {"day":5,"kind":"fork","q":"you're at the table the night before Jesus dies. he breaks the bread and hands it around. what does he ask you to do?","o":["keep it as a relic.","do this in memory of him.","never speak of it again."],"a":1},
-      {"day":11,"kind":"word","term":"Elizabeth","o":["blessed is the fruit of thy womb","hail, full of grace","pray for us sinners"],"a":0},
+      {"day":11,"kind":"word","term":"Gabriel","o":["hail, full of grace","blessed is the fruit of thy womb","pray for us sinners"],"a":0},
       {"day":17,"kind":"fork","q":"Jesus says his flesh is real food, and many followers find it too hard and start leaving. what does he do?","o":["calls them back and explains it's only a metaphor.","lets them go.","changes the subject."],"a":1},
     ] },
     { first: 22, last: 96, camp: "Camp 2", name: "The stories", qs: [
@@ -359,7 +359,7 @@ export const PLACEMENT_BANK: Record<string, { lastWritten: number; stops: BankSt
       {"day":81,"kind":"fork","q":"you're Mary. after three days of searching, you find your twelve-year-old son in the temple, calmly talking with the teachers. what do you say?","o":["nothing. you just take him home.","son, why hast thou done so to us?","scold him in front of everyone."],"a":1},
     ] },
     { first: 97, last: 156, camp: "Camp 3", name: "The practices", qs: [
-      {"day":109,"kind":"fork","q":"the deacon announces: a reading from the holy Gospel according to Luke. you're in the pew. what do the people around you do?","o":["sit down and open a missal.","trace small crosses on forehead, lips and heart.","bow deeply toward the altar."],"a":1},
+      {"day":108,"kind":"fork","q":"it's a Sunday in Year B, the year of Mark. but Mark's Gospel is short. what fills the gap?","o":["Mark is read twice.","John fills out the year.","the letters of Paul are read instead."],"a":1},
       {"day":127,"kind":"word","term":"chrismation","o":["the Eastern churches' name","olive oil and balsam","the anointed one"],"a":0},
       {"day":144,"kind":"fork","q":"it's early December. the stores are all Christmas. your parish is violet and quiet. what is Advent asking of you?","o":["start celebrating Christmas now.","wait, and prepare, before the feast.","skip December entirely."],"a":1},
     ] },
@@ -386,7 +386,7 @@ export const PLACEMENT_BANK: Record<string, { lastWritten: number; stops: BankSt
     { first: 534, last: 607, camp: "Year 2", name: "The letters", qs: [
       {"day":549,"kind":"fork","q":"you're Lydia. you and your household have just been baptized by the river. what do you do?","o":["thank them and go home.","insist they come and stay at your house.","give them money for the journey."],"a":1},
       {"day":571,"kind":"word","term":"naos","o":["the inner sanctuary","a slave set free by payment","a Corinthian slogan"],"a":0},
-      {"day":592,"kind":"fork","q":"someone in your church has a real complaint against you. what does Paul tell the Colossians to wear for it?","o":["a thick skin.","mercy, patience, and forgiveness, as the Lord forgave you.","the right to be proven right."],"a":1},
+      {"day":593,"kind":"fork","q":"you've just heard 'pray without ceasing' read aloud. what does the pilgrim in the old Russian story do?","o":["decide it's impossible and forget it.","set out walking to learn how.","pray only on Sundays to make up for it."],"a":1},
     ] },
     { first: 608, last: 696, camp: "Year 2", name: "The year of feasts and their readings", qs: [
       {"day":626,"kind":"fork","q":"you're John. an elder points at the crowd in white and asks you: who are these, and where did they come from? what do you say?","o":["these are the ones who never suffered.","my lord, thou knowest.","these are the twelve tribes."],"a":1},
@@ -396,7 +396,7 @@ export const PLACEMENT_BANK: Record<string, { lastWritten: number; stops: BankSt
     { first: 697, last: 796, camp: "Year 3", name: "The first Christians and the Fathers", qs: [
       {"day":717,"kind":"fork","q":"you're the emperor's mother, and you want to honor the places where Jesus lived. what do you do?","o":["send gold and a letter.","go yourself, pray there, and build churches.","build a church at home in Rome."],"a":1},
       {"day":747,"kind":"word","term":"Cogitosus","o":["wrote her life from what he heard","hung on a sunbeam","leads a community of nuns"],"a":0},
-      {"day":775,"kind":"fork","q":"you're at Nicaea. some say any image of Christ is idolatry; others want images back. what line do you draw?","o":["ban all images, to be safe.","venerate images, worship God alone; the honor passes to the one shown.","worship the images too; they're holy."],"a":1},
+      {"day":779,"kind":"fork","q":"you're Gregory XII, the claimant in Rome. a council is gathering to end the split. what do you do?","o":["refuse to recognize the council at all.","let the council be called in your name, then resign.","flee the city before it can act."],"a":1},
     ] },
     { first: 797, last: 886, camp: "Year 3", name: "The middle ages", qs: [
       {"day":814,"kind":"fork","q":"you're Bonaventure, at the top of your map. a student asks what to study next to reach God. what do you tell him?","o":["read more books, harder ones.","ask for grace, not learning; desire, not understanding.","go back and look at creatures again."],"a":1},
@@ -411,14 +411,14 @@ export const PLACEMENT_BANK: Record<string, { lastWritten: number; stops: BankSt
     { first: 972, last: 1061, camp: "Year 3", name: "Saints across the calendar", qs: [
       {"day":991,"kind":"fork","q":"you live in Geel. strangers troubled in mind keep arriving to pray at the shrine, with nowhere to stay. what do you do?","o":["ask the town to turn them away.","take one of them into your home.","leave it to the shrine's keepers."],"a":1},
       {"day":1017,"kind":"word","term":"Bathsheba","o":["sat at the king's right hand","of his kingdom there shall be no end","the mother of my Lord"],"a":0},
-      {"day":1043,"kind":"fork","q":"you're Gertrude, resting near the beloved disciple in a vision. you know he leaned on Jesus's chest. what do you ask him?","o":["what Jesus looked like.","why he wrote nothing about the heartbeats he heard.","where the other disciples were."],"a":1},
+      {"day":1045,"kind":"fork","q":"you're Anne. after a long wait you have a daughter, and you promised to give her back to God. what do you do?","o":["keep her home and forget the promise.","bring her to the Temple, as you promised.","promise again when she's grown."],"a":1},
     ] },
   ] },
   CHRISTIANITY: { lastWritten: 1061, stops: [
     { first: 1, last: 21, camp: "Camp 1", name: "First steps", qs: [
       {"day":4,"kind":"fork","q":"you're teaching people to pray, and you choose the first word they'll say to God. which does Jesus choose?","o":["king.","father.","judge."],"a":1},
       {"day":11,"kind":"word","term":"prodigal","o":["an old word for wasteful","asked for his share, and spent it","ran, and fell on his neck"],"a":0},
-      {"day":17,"kind":"fork","q":"your son has suffered since he was a child. Jesus says all things are possible to the one who believes. you're not sure you do. what do you say?","o":["\"I believe completely.\"","\"Lord, I believe; help thou mine unbelief.\"","nothing. you walk away."],"a":1},
+      {"day":19,"kind":"fork","q":"it's the night you know you'll be betrayed. twelve friends around one table at Passover. what do you do?","o":["give a long farewell speech about what to believe.","take bread, give thanks, break it, and say: remember me.","leave the city before anyone comes."],"a":1},
     ] },
     { first: 22, last: 96, camp: "Camp 2", name: "The stories", qs: [
       {"day":37,"kind":"fork","q":"you're Mary. an angel has just told you you'll have a son. what do you say first?","o":["nothing. you just say yes.","you ask how this can be.","you ask for a sign."],"a":1},
@@ -426,7 +426,7 @@ export const PLACEMENT_BANK: Record<string, { lastWritten: number; stops: BankSt
       {"day":81,"kind":"fork","q":"you're Ananias. you've just laid your hands on the man who came to arrest you. what is your first word to him?","o":["Saul of Tarsus.","brother.","persecutor."],"a":1},
     ] },
     { first: 97, last: 156, camp: "Camp 3", name: "The practices", qs: [
-      {"day":108,"kind":"fork","q":"you're Hannah in the temple, desperate for a child. the priest sees your lips moving and thinks you're drunk. what do you say?","o":["leave, embarrassed.","tell him you've been pouring out your soul to God.","start again, using set words."],"a":1},
+      {"day":111,"kind":"fork","q":"it's December 27. the neighbors' tree is already on the curb. what does the church calendar say to do?","o":["pack it all away. Christmas is over.","keep celebrating, all the way to January 6.","start fasting for Lent."],"a":1},
       {"day":127,"kind":"word","term":"Mark","o":["sixteen chapters, a good start","searched the scriptures daily","a plan for the Bible in a year"],"a":0},
       {"day":145,"kind":"fork","q":"the earth shakes, the nations rage, the kingdoms totter. then God speaks. what does he say?","o":["fight harder.","be still, and know that I am God.","run for the mountains."],"a":1},
     ] },
@@ -438,15 +438,15 @@ export const PLACEMENT_BANK: Record<string, { lastWritten: number; stops: BankSt
     { first: 232, last: 331, camp: "Camp 5", name: "The depths", qs: [
       {"day":253,"kind":"fork","q":"you're on the hillside. Jesus has just said you can't serve God and money. your stomach says: then who pays for dinner? what does he point at?","o":["the birds overhead.","the disciples' purse.","the fields of wheat."],"a":0},
       {"day":281,"kind":"word","term":"Brother Lawrence","o":["God among the pots","all shall be well","a room further in"],"a":0},
-      {"day":311,"kind":"fork","q":"you're Julian, recovering from your visions. you ask God your hardest question: why is there sin and so much pain? what answer does she write down?","o":["you'll understand when you're older.","all shall be well, and all manner of thing shall be well.","some questions have no answer."],"a":1},
+      {"day":309,"kind":"fork","q":"Augsburg, 1999. after centuries of mutual condemnation, Catholics and Lutherans sit down at one table. what do they sign?","o":["a full merger of the two churches.","a declaration that on the heart of justification they agree.","a statement that the argument never mattered."],"a":1},
     ] },
     { first: 332, last: 411, camp: "Year 2", name: "Genesis", qs: [
       {"day":348,"kind":"fork","q":"you're seventy-five and settled. God says: leave your country, your kin, your father's house, for a land I'll show you. what do you do?","o":["ask for the name of the land first.","go.","send your nephew to check it out."],"a":1},
       {"day":372,"kind":"word","term":"Judah","o":["offered himself in Benjamin's place","the cup was found in his sack","searched oldest to youngest"],"a":0},
-      {"day":394,"kind":"fork","q":"you're at the foot of Sinai, waiting for the first command. what does the voice say first?","o":["thou shalt have no other gods.","I am the LORD thy God, which brought thee out of Egypt.","remember the sabbath day."],"a":1},
+      {"day":397,"kind":"fork","q":"you're Aaron. Moses has been gone forty days, and a crowd says, make us gods. what do you do?","o":["tell them to wait for Moses.","ask for their gold earrings.","climb the mountain to find him."],"a":1},
     ] },
     { first: 412, last: 501, camp: "Year 2", name: "The Psalms and the wisdom books", qs: [
-      {"day":429,"kind":"fork","q":"you're Jesus on the pinnacle of the temple. the devil quotes Psalm 91: the angels will catch you. go on, jump. what do you say?","o":["jump, to prove the psalm true.","it is written again, thou shalt not tempt the Lord thy God.","say nothing and walk away."],"a":1},
+      {"day":431,"kind":"fork","q":"you've just told your soul to bless the Lord. what does the psalm do next?","o":["ask for a long list of things.","count, one by one, what has already been given.","apologize for not praying more."],"a":1},
       {"day":459,"kind":"word","term":"Tisha B'Av","o":["when Jews read Lamentations","five poems over a fallen city","fail not"],"a":0},
       {"day":483,"kind":"fork","q":"you're Peter. a crowd hears your friends speaking in other languages, and some laugh that you're all drunk. what do you do?","o":["slip away before it gets worse.","stand up and quote an old prophet.","argue about how much wine is too much."],"a":1},
     ] },
@@ -458,10 +458,10 @@ export const PLACEMENT_BANK: Record<string, { lastWritten: number; stops: BankSt
     { first: 592, last: 696, camp: "Year 2", name: "The Gospel of John, read through", qs: [
       {"day":613,"kind":"fork","q":"you're an officer sent to arrest Jesus at the feast. you hear him teaching. what do you do?","o":["arrest him as ordered.","go back empty-handed.","join the crowd that wants to stone him."],"a":1},
       {"day":644,"kind":"word","term":"Francis Bacon","o":["jesting Pilate, who would not stay","goes out, in, and out again","is not of this world"],"a":0},
-      {"day":674,"kind":"fork","q":"James asks: can a spring pour out fresh and bitter water from the same opening? what's his point?","o":["springs are unpredictable.","blessing God and cursing people from one mouth ought not to be.","only speak when spoken to."],"a":1},
+      {"day":673,"kind":"fork","q":"a neighbor with no coat and no food knocks on your door. you say, stay warm, eat something, and close the door. what does James ask?","o":["\"what doth it profit?\"","\"did you pray for them?\"","\"were they really in need?\""],"a":0},
     ] },
     { first: 697, last: 806, camp: "Year 3", name: "The early church", qs: [
-      {"day":719,"kind":"fork","q":"you're Abigail. your husband has insulted David, and about four hundred armed men are on their way. what do you do?","o":["load bread, wine and figs, and ride out to meet him.","tell your husband to apologize.","take the servants and run."],"a":0},
+      {"day":718,"kind":"fork","q":"you're David. the king who keeps trying to kill you is alone in the cave, his back to you. your men say: now. what do you do?","o":["kill him. it's self-defense.","cut a corner from his robe and let him go.","stay hidden and do nothing at all."],"a":1},
       {"day":752,"kind":"word","term":"Luke","o":["many have taken in hand","the beginning of the gospel","the world could not contain the books"],"a":0},
       {"day":783,"kind":"fork","q":"you lead a church that treasures the words one nature of God the Word made flesh. the council says two natures. what do you do?","o":["sign the wording anyway, to keep the peace.","keep your own wording: one united nature, from two.","stop saying anything about who Christ is."],"a":1},
     ] },
@@ -472,7 +472,7 @@ export const PLACEMENT_BANK: Record<string, { lastWritten: number; stops: BankSt
     ] },
     { first: 880, last: 970, camp: "Year 3", name: "The modern church across the world", qs: [
       {"day":898,"kind":"fork","q":"you're a pastor and your town is swept by weeping, late-night prayer and fierce argument. some say it's God, some say it's hysteria. what do you do?","o":["shut it down to keep the peace.","think it through and test it by what it changes.","celebrate every strong feeling as proof."],"a":1},
-      {"day":925,"kind":"word","term":"Abraham","o":["went out, not knowing whither","backward","forward"],"a":0},
+      {"day":926,"kind":"word","term":"Afanasy","o":["the servant he struck, then bowed to","an elder in Dostoevsky's novel","his dying older brother"],"a":0},
       {"day":953,"kind":"fork","q":"you're Corrie, after a talk on forgiveness. a former guard from your camp walks up with his hand out. what happens?","o":["she walks away without a word.","she feels nothing, prays for help, and takes his hand.","she shakes it at once and feels only warmth."],"a":1},
     ] },
     { first: 971, last: 1061, camp: "Year 3", name: "A year of feasts and saints' days", qs: [

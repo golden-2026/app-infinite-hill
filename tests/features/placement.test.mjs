@@ -213,7 +213,7 @@ test("the trail's catch-up list: one stretch for day 22, every stretch below for
 });
 
 test("every new placement and settling-in string has Spanish", () => {
-  for (const k of ["onboarding.know.fits", "onboarding.know.step", "onboarding.know.placedHost", "onboarding.know.mixedHost", "onboarding.know.mixedNext", "onboarding.know.tally", "home.settle.back", "home.settle.backGo", "home.settle.stay", "home.settle.ahead", "home.settle.aheadGo", "home.trail.catchUpAll", "home.trail.groupWalked"]) {
+  for (const k of ["onboarding.know.fits", "onboarding.know.step", "onboarding.know.placedHost", "onboarding.know.mixedHost", "onboarding.know.mixedNext", "home.settle.back", "home.settle.backGo", "home.settle.stay", "home.settle.ahead", "home.settle.aheadGo", "home.trail.catchUpAll", "home.trail.groupWalked"]) {
     assert.ok(EN[k] && ES[k] && EN[k] !== ES[k], k);
   }
   assert.match(EN["home.settle.back"], /leans on a few stories from \{camp\}/);
@@ -232,4 +232,27 @@ test("starting in year two works end to end: today's lesson, streak, catch-up da
   log.push(sit("2026-10-02", 40)); // a catch-up day from camp two: counts for the streak, doesn't move the door
   const s2 = deriveState(log, { today: "2026-10-02", settings });
   assert.deepEqual([s2.paths.ISLAM.day, s2.streak.streak], [start + 1, 2]);
+});
+
+test("no giveaway by length: no right answer is more than 1.6x (or 20 characters) longer than the longest wrong one", () => {
+  for (const d of TRADITIONS) {
+    for (const st of PLACEMENT_BANK[d].stops) {
+      for (const q of st.qs) {
+        const right = q.o[q.a].length;
+        const longestWrong = Math.max(...q.o.filter((_, i) => i !== q.a).map((x) => x.length));
+        assert.ok(right <= 1.6 * longestWrong && right - longestWrong <= 20, `${d} day ${q.day}: "${q.o[q.a]}" vs ${longestWrong} chars`);
+      }
+    }
+  }
+});
+
+test("the result is said warmly: no score, no counts, no failure words, in either language", () => {
+  assert.equal(EN["onboarding.know.tally"], undefined);
+  for (const k of ["onboarding.know.placedHost", "onboarding.know.mixedNext", "onboarding.know.mixedHost", "onboarding.know.deepHost", "onboarding.know.someHost", "onboarding.know.newHost"]) {
+    for (const s of [EN[k], ES[k]]) {
+      assert.doesNotMatch(s, /\{got\}|\{asked\}|\bof \d|\bde \d|\byou got\b|acertaste/i, k);
+      assert.doesNotMatch(s, /\b(fail|failed|wrong|mixed|demot\w*|too hard|behind|a medias|fallaste)\b/i, k);
+    }
+  }
+  assert.equal(EN["onboarding.know.mixedNext"], "{camp} is next.");
 });

@@ -98,8 +98,7 @@ export default function Know() {
     const at = r.stop >= 1 ? stops[r.stop] : stops[0];
     const next = r.anyway ? stops[r.stop + 1] : null;
     const missedBasics = r.stop < 0;
-    const tally = answers.length > 3 ? `${t("onboarding.know.tally", { got: r.got, asked: r.asked })} ` : "";
-    const host = tally + (r.outcome === "skip" ? `${t("onboarding.know.placedHost", { camp: where(at) })}${next ? ` ${t("onboarding.know.mixedNext", { camp: where(next) })}` : ""}`
+    const host = (r.outcome === "skip" ? `${t("onboarding.know.placedHost", { camp: where(at) })}${next ? ` ${t("onboarding.know.mixedNext", { camp: where(next) })}` : ""}`
       : next ? t("onboarding.know.mixedHost", { camp: where(next) })
       : r.outcome === "deep" ? t("onboarding.know.deepHost")
       : r.outcome === "some" ? t("onboarding.know.someHost")

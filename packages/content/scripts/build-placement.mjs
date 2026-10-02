@@ -39,6 +39,17 @@ const ASKS = /\b(what|which|who|where|when|how many|how long)\b/i;
 const NAMED = /\s[A-Z][a-zA-Z'’-]{2,}/;
 const clean = (s) => String(s || "").replace(/\s+/g, " ").trim();
 
+// No giveaway by length: the right answer may not stand out as the long, careful one ("name your fear, check your
+// heart, then ask about Rama." against "trust him at once."). Too long next to the longest wrong option, and the
+// question is skipped for the next one in that stretch. The lesson text itself is never changed.
+export const LONGER_BY = 1.6; // right answer at most 1.6x the longest wrong one…
+export const LONGER_CHARS = 20; // …and at most 20 characters longer
+export function evenLengths(o, a) {
+  const right = o[a].length;
+  const longestWrong = Math.max(...o.filter((_, i) => i !== a).map((x) => x.length));
+  return right <= LONGER_BY * longestWrong && right - longestWrong <= LONGER_CHARS;
+}
+
 function forkQ(s) {
   const f = s.games?.fork;
   if (!f || !Array.isArray(f.options) || f.options.length !== 3 || !Number.isInteger(f.answer) || f.answer < 0 || f.answer > 2) return null;
@@ -46,6 +57,7 @@ function forkQ(s) {
   const o = f.options.map(clean);
   if (!q || q.length > 230 || !ASKS.test(q) || !NAMED.test(` ${q}`) || NOT_KNOWLEDGE.test(q)) return null;
   if (new Set(o.map((x) => x.toLowerCase())).size !== 3 || o.some((x) => !x || x.length > 110)) return null;
+  if (!evenLengths(o, f.answer)) return null;
   return { kind: "fork", q, o, a: f.answer };
 }
 
@@ -73,12 +85,16 @@ function wordQ(s, salt) {
   const pairs = (s.games?.match?.pairs || []).filter((p) => Array.isArray(p) && p.length === 2).map(([l, r]) => [clean(l), clean(r)]);
   const ok = pairs.filter(([l, r]) => l && r && l.length <= 40 && r.length <= 80 && standsAlone(l) && !r.toLowerCase().includes(l.toLowerCase()));
   if (ok.length < 1 || pairs.length < 3) return null;
-  const [term, answer] = ok[salt % ok.length];
-  // the other meanings are the wrong options; one that names the term itself would make two answers look right
-  const others = pairs.map(([, r]) => r).filter((r) => r && r !== answer && r.length <= 80 && !r.toLowerCase().includes(term.toLowerCase()));
-  const o = [answer, ...[...new Set(others)].slice(0, 2)];
-  if (o.length !== 3 || new Set(o.map((x) => x.toLowerCase())).size !== 3 || NOT_KNOWLEDGE.test(term)) return null;
-  return { kind: "word", term, o, a: 0 };
+  // each usable pair in turn (starting from a different one per day), the first whose options are fair
+  for (let k = 0; k < ok.length; k++) {
+    const [term, answer] = ok[(salt + k) % ok.length];
+    // the other meanings are the wrong options; one that names the term itself would make two answers look right
+    const others = pairs.map(([, r]) => r).filter((r) => r && r !== answer && r.length <= 80 && !r.toLowerCase().includes(term.toLowerCase()));
+    const o = [answer, ...[...new Set(others)].slice(0, 2)];
+    if (o.length !== 3 || new Set(o.map((x) => x.toLowerCase())).size !== 3 || NOT_KNOWLEDGE.test(term) || !evenLengths(o, 0)) continue;
+    return { kind: "word", term, o, a: 0 };
+  }
+  return null;
 }
 
 // ── where the check can place someone ───────────────────────────────────────────────────────────────────────────
