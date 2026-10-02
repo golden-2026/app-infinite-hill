@@ -100,5 +100,12 @@ export function campName(camp: string, name: string): string {
   return name;
 }
 
+/** A placement stretch inside a sentence: "camp 3, the practices" / "year 2, The Yoga Sutras of Patanjali". The camps'
+ *  own names go lowercase (the brand voice); names from the lessons keep their capitals (they're mostly proper names). */
+export function stretchLabel(camp: string, name: string, sep = ", "): string {
+  const n = campName(camp, name);
+  return `${campLabel(camp).toLowerCase()}${sep}${/^Camp \d+$/.test(camp) ? n.toLowerCase() : n}`;
+}
+
 /** Weekday / month names etc. in the current language. */
 export const date = (d: Date | string, opts: Intl.DateTimeFormatOptions) => formatDate(d, opts, getLang());

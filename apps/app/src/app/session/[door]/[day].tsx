@@ -79,9 +79,11 @@ export default function SessionScreen() {
   const kid = params.kid ? derived.kids.find((k: any) => k.id === params.kid) : null;
   const current = kid ? kid.day : lessonFor(door);
   const mode = kid && new Date().getFullYear() - (kid.birthYear || 2016) < 13 ? "kid" : "adult";
-  // Deep links can't skip ahead: a lesson opens only up to where the door is.
+  // Deep links can't skip ahead: a lesson opens only up to where the door is, or a day already walked (someone who
+  // walked back to an earlier stretch keeps the days they'd finished further up open).
+  const walkedBefore = !kid && saved.sits.some((x) => !x.kidId && x.door === door && x.day === day);
   if (!DOORS.some(([, w]) => w === door)) return <Redirect href="/today" />;
-  if (!Number.isInteger(day) || day < 1 || day > current) return <Redirect href={{ pathname: "/session/[door]/[day]", params: { door: door || saved.settings.homeWing, day: String(current) } }} />;
+  if (!Number.isInteger(day) || day < 1 || (day > current && !walkedBefore)) return <Redirect href={{ pathname: "/session/[door]/[day]", params: { door: door || saved.settings.homeWing, day: String(current) } }} />;
   // "go deeper" is an extra round on a lesson already walked today; children don't get it
   const deep = params.deep === "1" && !kid;
   // a child under 13 sits the door's kids' track, never the grown-up lesson (no script is fetched for it)
@@ -133,7 +135,7 @@ function Session({ door, day, kidId, mode, deep, voiceOn, onFinish, script = nul
   const vocab = useMemo(() => new Map(knownSoFar(door, day).map((k) => [k.word.toLowerCase(), k])), [door, day]);
   // The first lesson after placement (day 22 for someone who skipped camp one): there was no "yesterday" on this path,
   // so the script's look back at day 21 gives way to the welcome day one would have had, and a line on where they are.
-  const [placedFirst] = useState(() => own && day > 1 && day === (me.settings.placed?.[door] ?? 1) && !me.sits.some((x) => !x.kidId && x.door === door && x.day === day - 1));
+  const [placedFirst] = useState(() => own && day > 1 && day === (me.settings.placed?.[door] ?? 1) && !me.settings.moved?.[door] && !me.sits.some((x) => !x.kidId && x.door === door && x.day === day - 1));
   const kidMode = mode === "kid";
   const plan = useMemo<{ steps: any[]; word: string; carry: string; title: string; info: any; kid?: any }>(() => {
     // kid mode never falls back to the grown-up lesson (SessionScreen only opens it when the door has a kids' set)

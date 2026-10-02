@@ -2,7 +2,7 @@
 // is derived from the sit log by @ih/domain, so a reload, a second device or a sync can never drift.
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 import { AppState } from "react-native";
-import { deriveState, fromP0, makeSit, mergeSits, placedStarts, readExport, sitOutcome, type Derived, type Sit } from "@ih/domain";
+import { deriveState, fromP0, makeSit, mergeSits, movedTo, placedStarts, readExport, sitOutcome, type Derived, type Sit } from "@ih/domain";
 
 import { randomId } from "./ids";
 import { setChime } from "./sound";
@@ -56,7 +56,7 @@ export type Settings = {
   glow?: { date: string; best: number; clean?: boolean } | null;
   lanternOn?: string | null;
   /** How recent lessons went (share right, 0-1), newest last: the level reads it. Best timed-round times by door. */
-  runs?: { date: string; door: string; day: number; acc: number; level: number }[];
+  runs?: { date: string; door: string; day: number; acc: number; level: number; at?: string }[];
   rushBest?: Record<string, number>;
   deepOn?: string | null;
   /** The one-tap "how did that feel?" after a lesson (kept on the phone; for playtests). */
@@ -70,6 +70,11 @@ export type Settings = {
   /** Where the onboarding check started them, by door ({ HINDUISM: 22 }): they showed they know camp one, and chose
    *  to skip it. The door never sits behind this day; the days before it stay open on the trail to catch up. */
   placed?: Record<string, number>;
+  /** A door moved after placement (lib/settle: walked back to an earlier stretch, or on to the next): where it stands
+   *  and when. Every sit and day stays; only lessons after `at` move the door on (@ih/domain). */
+  moved?: Record<string, { day: number; at: string }>;
+  /** What they said to the walk-back / jump-ahead offers, by door (lib/settle), so a "no" isn't asked again soon. */
+  settle?: Record<string, { back?: { on: string; mean: number }; ahead?: string }>;
 };
 
 /** `missed`: words that slipped, and when each comes back (lib/missed.ts). On this phone only: not in settings, so never synced. */
@@ -108,6 +113,7 @@ export function cleanSettings(raw: any): Settings {
     reminder: s.reminder && typeof s.reminder === "object" && typeof s.reminder.time === "string" ? { on: s.reminder.on === true, time: s.reminder.time, ...(s.reminder.set === true ? { set: true } : {}) } : d.reminder,
     profile: cleanProfile(s.profile),
     placed: placedStarts(s.placed),
+    moved: movedTo(s.moved),
   };
 }
 
@@ -230,7 +236,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     }),
     recordRun: ({ door, day, acc, level, rushSecs, deep, minutes }) => commit((s) => {
       const date = todayNow();
-      const runs = deep ? s.settings.runs || [] : [...(s.settings.runs || []), { date, door, day, acc: Math.max(0, Math.min(1, acc)), level }].slice(-12);
+      const runs = deep ? s.settings.runs || [] : [...(s.settings.runs || []), { date, door, day, acc: Math.max(0, Math.min(1, acc)), level, at: new Date().toISOString() }].slice(-12);
       const prev = s.settings.rushBest?.[door];
       const rushBest = rushSecs ? { ...(s.settings.rushBest || {}), [door]: prev ? Math.min(prev, rushSecs) : rushSecs } : s.settings.rushBest;
       const timed = !deep && minutes ? addMinutes(s.settings.timed, date, minutes) : s.settings.timed;

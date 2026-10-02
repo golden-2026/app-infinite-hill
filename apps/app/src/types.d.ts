@@ -34,6 +34,8 @@ declare module "@ih/domain" {
   export function sitOutcome(log: Sit[], date: string, kidId?: string | null): { isNewDay: boolean; showedUp: number; milestone: number | null; streak: StreakOutcome };
   /** Where placement started someone on each door ({ HINDUISM: 22 }); junk and day 1 dropped. */
   export function placedStarts(raw: unknown): Record<string, number>;
+  /** Doors moved after placement ({ HINDUISM: { day: 157, at } }); junk dropped. */
+  export function movedTo(raw: unknown): Record<string, { day: number; at: string }>;
   export const MILESTONES: readonly number[];
   export function readExport(input: unknown): { sits: Sit[]; settings: any; settingsVersion: number };
   export function fromP0(p0: unknown, o: { newId: () => string }): { sits: Sit[]; settings: any; settingsVersion: number } | null;

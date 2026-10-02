@@ -32,15 +32,43 @@ export function mergeSits(...logs) {
   return [...byId.values()].sort((a, b) => (a.at === b.at ? (a.id < b.id ? -1 : 1) : a.at < b.at ? -1 : 1));
 }
 
-function pathFrom(sits, today, start = 1) {
+function pathFrom(sits, today, start = 1, moved = null) {
   // The furthest lesson finished on this door decides where the door is now. `start`: where placement started them
-  // (the first day after camp one, for someone who showed they know the basics); the door is never behind it, and a
-  // lesson caught up from before it (day 3 after starting at 22) doesn't move the door back.
+  // (the start of the highest stretch they showed they know); the door is never behind it, and a lesson caught up
+  // from before it (day 3 after starting at 22) doesn't move the door back.
+  if (moved) return movedPath(sits, today, moved);
   let top = null;
   for (const s of sits) if (!top || s.day > top.day || (s.day === top.day && s.date > top.date)) top = s;
   if (!top) return { day: start, done: false, lastDate: null };
   if (top.day < start) return { day: start, done: false, lastDate: top.date };
   return top.date >= today ? { day: top.day, done: true, lastDate: top.date } : { day: top.day + 1, done: false, lastDate: top.date };
+}
+
+// A door someone chose to move (walked back to the start of an earlier stretch, or jumped to the next one, after
+// placement): it stands at `moved.day` from `moved.at` on. Nothing is removed: every sit still counts for the streak
+// and the days walked, and only the lessons finished after the move decide where the door goes next. Days already
+// finished ahead are stepped over when the walk reaches them again (finished stays finished).
+function movedPath(sits, today, moved) {
+  let lastDate = null;
+  for (const s of sits) if (!lastDate || s.date > lastDate) lastDate = s.date;
+  let top = null;
+  for (const s of sits) if (s.at > moved.at && s.day >= moved.day && (!top || s.day > top.day || (s.day === top.day && s.date > top.date))) top = s;
+  if (!top) return { day: moved.day, done: false, lastDate };
+  if (top.date >= today) return { day: top.day, done: true, lastDate };
+  const walked = new Set(sits.map((s) => s.day));
+  let next = top.day + 1;
+  while (walked.has(next)) next++;
+  return { day: next, done: false, lastDate };
+}
+
+/** Doors moved after placement: { HINDUISM: { day: 157, at: "2026-10-09T08:00:00.000Z" } }. Junk is dropped. */
+export function movedTo(raw) {
+  const out = {};
+  if (!raw || typeof raw !== "object" || Array.isArray(raw)) return out;
+  for (const [door, m] of Object.entries(raw)) {
+    if (door && m && typeof m === "object" && Number.isInteger(m.day) && m.day >= 1 && m.day <= 2000 && typeof m.at === "string" && !Number.isNaN(Date.parse(m.at))) out[door] = { day: m.day, at: m.at };
+  }
+  return out;
 }
 
 /** Where placement started someone on each door: { HINDUISM: 22 }. Junk and day 1 are dropped. */
@@ -64,9 +92,11 @@ export function deriveState(sitLog, { today, settings = {} } = {}) {
   const doors = {};
   for (const s of own) (doors[s.door] ||= []).push(s);
   const placed = placedStarts(settings.placed);
-  const paths = Object.fromEntries(Object.entries(doors).map(([door, list]) => [door, pathFrom(list, today, placed[door])]));
-  // a door someone was placed on, with nothing walked yet, already stands at its start
-  for (const [door, start] of Object.entries(placed)) if (!paths[door]) paths[door] = pathFrom([], today, start);
+  const moved = movedTo(settings.moved);
+  const paths = Object.fromEntries(Object.entries(doors).map(([door, list]) => [door, pathFrom(list, today, placed[door], moved[door])]));
+  // a door someone was placed on (or moved), with nothing walked yet, already stands at its start
+  for (const [door, start] of Object.entries(placed)) if (!paths[door]) paths[door] = pathFrom([], today, start, moved[door]);
+  for (const [door, m] of Object.entries(moved)) if (!paths[door] && m.day > 1) paths[door] = pathFrom([], today, 1, m);
 
   const kids = (settings.kids || []).map((k) => {
     const p = pathFrom(sits.filter((s) => s.kidId === k.id), today);

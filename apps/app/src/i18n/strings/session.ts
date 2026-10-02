@@ -69,7 +69,7 @@ export const en = {
   "session.part.review": "review",
   "session.part.the week, quick": "the week, quick",
   "session.part.a welcome": "a welcome",
-  "session.placed.beat": "You start at day {day}, {camp}, because you already know camp one. Days 1 to {end} stay open on your trail, whenever you want them.",
+  "session.placed.beat": "You start at day {day}, {camp}, because you already know what comes before it. Days 1 to {end} stay open on your trail, whenever you want them.",
   "session.part.welcome": "welcome",
   "session.part.how it's done": "how it's done",
   // the tally
@@ -564,7 +564,7 @@ export const es: Dict<typeof en> = {
   "session.part.review": "repaso",
   "session.part.the week, quick": "la semana, rápido",
   "session.part.a welcome": "una bienvenida",
-  "session.placed.beat": "Empiezas en el día {day}, {camp}, porque ya conoces el campamento uno. Los días 1 a {end} siguen abiertos en tu sendero, cuando quieras.",
+  "session.placed.beat": "Empiezas en el día {day}, {camp}, porque ya conoces lo que viene antes. Los días 1 a {end} siguen abiertos en tu sendero, cuando quieras.",
   "session.part.welcome": "bienvenida",
   "session.part.how it's done": "cómo se hace",
   "session.tile.word": "palabra",

@@ -87,13 +87,19 @@ export default function You() {
   const doneToday = derived.paths[wing]?.done === true;
 
   // the path: how many days of a camp are walked. A camp a placement skipped counts only the days caught up on.
-  const campDone = (start: number, len: number) => start + len < startFor(wing)
-    ? new Set(own.filter((x) => x.door === wing && x.day > start && x.day <= start + len).map((x) => x.day)).size
-    : Math.max(0, Math.min(len, day - 1 - start + (doneToday ? 1 : 0)));
+  // A camp (or year) the start falls inside counts its days before the start only when caught up, and the rest as usual.
+  const caught = (from: number, to: number) => new Set(own.filter((x) => x.door === wing && x.day > from && x.day <= to).map((x) => x.day)).size;
+  const campDone = (start: number, len: number) => {
+    const s = startFor(wing);
+    if (start + len < s) return caught(start, start + len);
+    const upTo = day - 1 + (doneToday ? 1 : 0); // the last day walked in order
+    if (s - 1 <= start) return Math.max(0, Math.min(len, upTo - start));
+    return Math.min(len, caught(start, s - 1) + Math.max(0, Math.min(start + len, upTo) - (s - 1)));
+  };
   const here = pos(day);
   const hereDone = campDone(here.start - 1, here.of);
   let acc = 0;
-  const camps = data.CAMPS.map(([c, n, len]: [string, string, number]) => { const start = acc; acc += len; return { c, n, len, done: day > YEAR_ONE ? len : campDone(start, len) }; });
+  const camps = data.CAMPS.map(([c, n, len]: [string, string, number]) => { const start = acc; acc += len; return { c, n, len, done: day > YEAR_ONE && start + len >= startFor(wing) ? len : campDone(start, len) }; }); // a camp the check skipped counts only its caught-up days, even from year two on
   const yearDone = camps.reduce((s: number, x: { done: number }) => s + x.done, 0);
   const nextDay = doneToday ? day + 1 : day;
   const nextTitle = String(lessonInfo(wing, nextDay)?.title || "");

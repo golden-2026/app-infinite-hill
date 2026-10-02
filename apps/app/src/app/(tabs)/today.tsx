@@ -25,6 +25,7 @@ import { goalView, weekdayOf } from "@/lib/streak";
 import { useSeasons } from "@/lib/quests";
 import { newYearNow } from "@/content/seasons";
 import { QuestTodayCard } from "@/ui/quest";
+import { SettleCard } from "@/ui/settle";
 import { campLabel, campName, doorLabel, isEs, t } from "@/i18n";
 
 export default function Today() {
@@ -126,6 +127,9 @@ export default function Today() {
         {companion.help ? <HelpCard /> : null}
         {quiet ? <CompanionCard day={companion} /> : null}
         {quiet ? <ReflectCard /> : null}
+
+        {/* settling in after placement: a gentle offer to walk back (or go on ahead), from lib/settle */}
+        {quiet ? null : <SettleCard door={wing} />}
 
         {/* the one thing to do today */}
         {doneHere ? (
