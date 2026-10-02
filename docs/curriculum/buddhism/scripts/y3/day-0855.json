@@ -1,0 +1,118 @@
+{
+  "format": "ih-lesson/1",
+  "door": "BUDDHISM",
+  "day": 855,
+  "title": "The first split",
+  "word": "The first split",
+  "hook": "the Sthaviras and the Mahasanghikas part ways; accounts differ on why",
+  "carry": "accounts differ",
+  "length": "7:00",
+  "tomorrow": "Eighteen schools",
+  "segments": [
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": ["`DAY EIGHT-HUNDRED-FIFTY-FIVE.`"]
+    },
+    {
+      "type": "review",
+      "duration": "20 sec",
+      "voice": "Yesterday, the second council at Vesali: coins in a bowl, salt in a horn. Your line was the ten points. Did you catch yourself explaining away a small rule? Today, the community divides. Day eight hundred fifty-five.",
+      "screen": ["`THE TEN POINTS.`"]
+    },
+    {
+      "type": "the hook",
+      "duration": "50 sec",
+      "voice": "Two communities of monks. Both shave their heads, both wear the robe, both recite the Buddha's words and keep a code of discipline. At some point in the generations after the Buddha, they stop meeting together for the observance day. One side becomes known as the Sthaviras, the elders. The other as the Mahasanghikas, the great community. Ask why, and you get more than one answer, depending on whose books you open. Today, the first split.",
+      "screen": ["`TWO COMMUNITIES OF MONKS.` → `THE ELDERS, THE GREAT COMMUNITY.` → `MORE THAN ONE ANSWER.`"]
+    },
+    {
+      "type": "the teach",
+      "duration": "2 min 15",
+      "voice": "First, the account from Sri Lanka. The Dipavamsa, a chronicle kept in the Theravada tradition, ties the split to Vesali. The monks who lost over the ten points, it says, didn't accept the verdict. They held a great council of their own and arranged the texts their own way, and from that great assembly came the name Mahasanghika. Second, an account from other schools. Texts preserved in northern traditions, such as a treatise on the schools attributed to Vasumitra, tell it differently. There the quarrel is over points about the arahant, the fully awakened one: could such a person still have doubts, or not know some things, or need others to tell him he was awakened? On this telling the split was over what awakening is, not over salt and coins. Third, a reading from modern scholars. Some scholars point to yet another text that suggests the elders wanted to add rules to the discipline, and the larger group refused. If that's right, the side called the great community was the one keeping the old rules unchanged. Fourth, what to do with three stories. None of the three can be checked from outside; the old texts each come from a school with its own memory, and the modern reading rests on one more such text. The Dipavamsa, from the Sthavira line, remembers its side as keeping faith with Vesali. The northern treatises remember a quarrel about awakening. You don't have to choose a side to learn from this. The first split teaches a habit: when a story about a division is told, ask who is telling it.",
+      "screen": ["`A VERDICT NOT ACCEPTED.` · `A QUARREL ABOUT THE ARAHANT.` · `WHO WANTED NEW RULES?` · `ASK WHO IS TELLING IT.` · then, large: `ACCOUNTS DIFFER.`"]
+    },
+    {
+      "type": "the practice",
+      "duration": "2 min 30",
+      "voice": "Here's the practice: hear both sides of one story. Bring to mind a disagreement you know only from one side: a family rift, a falling-out between friends, a split at work. Tell it to yourself, briefly, the way you usually hear it. Now try telling it the way the other side might, in their best words, not their worst. You don't need to agree. Just let both versions stand side by side for a moment. Then rest with the breath. The bell holds the time.",
+      "screen": []
+    },
+    {
+      "type": "the word",
+      "duration": "25 sec",
+      "voice": "The first split. The elders and the great community part ways, and their accounts of why do not agree. Today's word.",
+      "screen": ["`THE FIRST SPLIT — today's word`."]
+    },
+    {
+      "type": "the carry",
+      "duration": "15 sec",
+      "voice": "Your line: accounts differ. Today, the next time you hear about a quarrel, ask once: and how would the other side tell it? Day eight hundred fifty-five.",
+      "screen": []
+    },
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": ["`DAY 855 COUNTS.` → `TOMORROW: EIGHTEEN SCHOOLS.`"]
+    }
+  ],
+  "howItsDone": "Theravada Buddhists trace their lineage through the Sthavira side; East Asian and Tibetan monastic lineages keep Vinaya codes that come from other early schools.",
+  "games": {
+    "match": {
+      "prompt": "the first split: tap the pairs.",
+      "pairs": [
+        ["Sthaviras", "the elders"],
+        ["Mahasanghikas", "the great community"],
+        ["the Dipavamsa", "ties the split to Vesali"],
+        ["Vasumitra's treatise", "points about the arahant"]
+      ]
+    },
+    "myth": [
+      ["every early source agrees on why the split happened", false, "the Sri Lankan chronicle and northern treatises give different reasons, and modern scholars read yet another text."],
+      ["one account says the split was over what an arahant can lack", true, "texts kept in northern schools describe a quarrel over whether an awakened one could still have doubts or not know some things."],
+      ["Mahasanghika means the small breakaway group", false, "the name means the great community."]
+    ],
+    "fork": {
+      "setup": "in the Sri Lankan chronicle's telling, you're one of the monks whose ten points were rejected at Vesali. what do you do?",
+      "options": [
+        "accept the verdict and give up the ten points.",
+        "hold a great council of your own.",
+        "leave the order altogether."
+      ],
+      "answer": 1,
+      "reveal": "the Dipavamsa says they held their own great council, and the name Mahasanghika comes from it. other accounts give a different cause entirely."
+    },
+    "original": { "script": "स्थविर", "say": "STHUH-vi-ruh", "note": "Sanskrit: an elder. in Pali, thera, the root of the name Theravada." },
+    "trapdoor": [
+      "what you thought: one group broke away from the real one.",
+      "what it means: the community divided into the elders and the great community, and each remembers the reason differently.",
+      "what a scholar hears: the Dipavamsa ties it to Vesali, northern treatises to points about the arahant, and some modern scholars to a dispute over adding Vinaya rules; no account settles it."
+    ]
+  },
+  "sources": [
+    { "ref": "Dipavamsa 5 (the Vajjiputtakas' great council)", "work": "Dipavamsa", "translation": null, "quoted": null },
+    { "ref": "Vasumitra, treatise on the doctrines of the schools (Samayabhedoparacanacakra)", "work": "Vasumitra", "translation": null, "quoted": null },
+    { "ref": "Sariputrapariprccha (as read by some modern scholars)", "work": "Sariputrapariprccha", "translation": null, "quoted": null }
+  ],
+  "review": {
+    "status": "pending",
+    "keeper": null,
+    "notes": [
+      "All texts paraphrased; nothing quoted. No dates given on purpose (claims rule).",
+      "Three accounts presented without ranking: Dipavamsa (split follows Vesali; the Vajjiputtakas' Mahasangiti); Vasumitra / Mahavibhasa (Mahadeva's five points on the arahant; number and Mahadeva's name omitted); the Sariputrapariprccha reading (Sthaviras expanding the Vinaya), associated with some modern scholars. Confirm each is fairly described.",
+      "'Mahasanghika line, by its own name, remembers being the larger body': interpretive; confirm or cut.",
+      "howItsDone: Theravada lineage via the Sthaviras; East Asian (Dharmaguptaka) and Tibetan (Mulasarvastivada) Vinayas from other schools. Confirm.",
+      "Practice is about seeing the other side, never about choosing between Buddhist schools; confirm tone.",
+      "Original: स्थविर (sthavira); Pali thera. Confirm pronunciation.",
+      "Editor pass: screen head 'the losers at Vesali' replaced (unfair framing); 'early' dropped for the Sariputrapariprccha (unsourced dating); the interpretive line about the Mahasanghika name cut and the garbled 'checked against the others from outside' sentence rewritten.",
+      "Audit: the 'three stories' paragraph and the first myth reveal no longer call a modern scholarly reading an early source or a school's memory."
+    ]
+  },
+  "meta": {
+    "index": "855. The first split · — · the Sthaviras and the Mahasanghikas part ways; accounts differ on why · hear both sides of one story · accounts differ",
+    "writer": "writer agent (buddhism 847–856)",
+    "written": "2026-10-01"
+  }
+}

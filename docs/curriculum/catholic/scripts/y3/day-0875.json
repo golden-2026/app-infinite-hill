@@ -1,0 +1,97 @@
+{
+  "format": "ih-lesson/1",
+  "door": "CATHOLIC",
+  "day": 875,
+  "title": "The Korean church (1784)",
+  "word": "The Korean church",
+  "hook": "founded by laypeople who read Catholic books before any priest arrived",
+  "carry": "laypeople first",
+  "length": "7:00",
+  "tomorrow": "The Vietnamese martyrs",
+  "segments": [
+    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY EIGHT-HUNDRED-SEVENTY-FIVE.`"] },
+    {
+      "type": "review",
+      "duration": "20 sec",
+      "voice": "Yesterday, Benedict Joseph Labre, who slept in the Colosseum and prayed in Rome's churches. Your line was the holy beggar. Did you slow down long enough to see a face? Today, a church that began with a stack of books. Day eight hundred seventy-five.",
+      "screen": ["`THE HOLY BEGGAR.`"]
+    },
+    {
+      "type": "the hook",
+      "duration": "50 sec",
+      "voice": "Korean envoys come home from Beijing with books in their baggage. They're written in Chinese, the language of learning in Korea. Some are about the stars, some about mathematics. And some are about a faith that calls God the Lord of Heaven, written by missionaries in China, among them Matteo Ricci, the Jesuit in a scholar's robe from earlier on this path. In Korea, a circle of scholars starts reading them, arguing about them, and slowly, praying with them. There isn't a single priest in the country. Nobody has come to preach. They have only the books.",
+      "screen": ["`BOOKS FROM BEIJING.` → `THE LORD OF HEAVEN.` → `NO PRIEST IN THE COUNTRY.`"]
+    },
+    {
+      "type": "the teach",
+      "duration": "2 min 15",
+      "voice": "First, faith by reading. These Korean scholars weren't converted by a missionary. They studied their way in, meeting to read, question and discuss. Saint Paul wrote, in the Douay-Rheims: \"Faith then cometh by hearing; and hearing by the word of Christ.\" Here, the hearing came through pages. Second, a baptism in Beijing. They knew a Christian needs baptism, and they had no one to give it. So one of them, Yi Seung-hun, traveled with a diplomatic mission to Beijing, asked for baptism there, and received the name Peter. He came home and baptized his friends. Third, a church with no clergy. Laypeople taught, gathered, and led. Tradition says they even began appointing priests among themselves and celebrating sacraments, until they learned that only an ordained priest could. They stopped, wrote to the bishop of Beijing, and asked him to send one. When a priest finally came in secret, he found a church already waiting. Fourth, a church of martyrs. The Korean government saw the new faith as a threat to the social order and to honoring ancestors, and waves of persecution followed. Laypeople and priests died for it, among them Andrew Kim Taegon, a Korean priest, and Paul Chong Hasang, a layman who worked to bring priests into the country. The Church later declared them saints together. In Korea, the faith wasn't carried in by clergy and handed down. Ordinary readers went looking for it, and then sent for a priest.",
+      "screen": ["`FAITH BY READING.` · `A BAPTISM IN BEIJING.` · `A CHURCH RUN BY LAYPEOPLE.` · `A CHURCH OF MARTYRS.` · then, large: `FAITH THEN COMETH BY HEARING.`"]
+    },
+    {
+      "type": "the practice",
+      "duration": "2 min 30",
+      "voice": "Here's the practice: read a spiritual book, slowly. Settle, and breathe. Pick up whatever is close: a Gospel, a book of a saint's life, a book of prayers, a page saved on your phone. If you have nothing nearby, open the Gospel of Mark to its first page. Read a few lines, then stop. Read them again. Let one sentence stand out, the way a line caught those scholars. Don't try to finish anything. If you pray, you can turn that sentence into a quiet conversation with God. The bell holds the time.",
+      "screen": []
+    },
+    {
+      "type": "the word",
+      "duration": "25 sec",
+      "voice": "The Korean church. A church begun by lay readers of Catholic books, before any priest arrived, and later tested by martyrdom.",
+      "screen": ["`THE KOREAN CHURCH — today's word`."]
+    },
+    {
+      "type": "the carry",
+      "duration": "15 sec",
+      "voice": "Your line: laypeople first. This week went from Alphonsus's mercy and Montfort's road, through Serra told honestly, the Jesuits restored, the Carmelites singing and a holy beggar, to readers in Korea. Today, read one more page of your book, on your own. Day eight hundred seventy-five.",
+      "screen": []
+    },
+    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 875 COUNTS.` → `TOMORROW: THE VIETNAMESE MARTYRS.`"] }
+  ],
+  "howItsDone": "Korean Catholics honor their martyrs, lay and ordained, with shrines and pilgrimages, and the Church keeps a feast of Saints Andrew Kim Taegon, Paul Chong Hasang and companions.",
+  "games": {
+    "match": {
+      "prompt": "the Korean church — tap the pairs.",
+      "pairs": [["Yi Seung-hun", "baptized in Beijing as Peter"], ["the Lord of Heaven", "the name for God in the books"], ["the bishop of Beijing", "asked to send a priest"], ["Andrew Kim Taegon", "a Korean priest and martyr"]]
+    },
+    "myth": [
+      ["the Korean church began when missionaries arrived to preach", false, "it began with Korean scholars reading Catholic books, before any priest came."],
+      ["laypeople led the church before a priest arrived", true, "they taught, gathered and baptized, and then sent for a priest."],
+      ["in Korea, only clergy died for the faith", false, "laypeople and priests died for the faith, among them Paul Chong Hasang, a layman."]
+    ],
+    "fork": {
+      "setup": "you're one of the Korean scholars. you've read the books and want baptism, and there's no priest anywhere in the country. what do you do?",
+      "options": ["wait, and hope a priest comes someday.", "send one of you to Beijing to be baptized, and bring it home.", "give up, since there's no one to baptize you."],
+      "answer": 1,
+      "reveal": "Yi Seung-hun went with a diplomatic mission to Beijing, was baptized there as Peter, and came home to baptize his friends."
+    },
+    "original": { "script": "천주교", "say": "chun-joo-GYO", "note": "Korean: the teaching of the Lord of Heaven, the Korean name for the Catholic faith." },
+    "trapdoor": [
+      "what you thought: missionaries brought the faith to Korea.",
+      "what it means: Korean laypeople found it in books, baptized one another, and then sent for a priest.",
+      "what a scholar hears: Chinese Catholic books, a baptism in Beijing, a lay-led church that asked Beijing for clergy, and a long season of martyrdom."
+    ]
+  },
+  "sources": [
+    { "ref": "Romans 10:17", "work": "The Bible", "translation": "Douay-Rheims (Challoner)", "quoted": "Faith then cometh by hearing; and hearing by the word of Christ." },
+    { "ref": "Accounts of the founding of the Korean Catholic community (Yi Byeok, Yi Seung-hun) and the lay 'pseudo-hierarchy'", "work": "History of the Catholic Church in Korea", "translation": null, "quoted": null },
+    { "ref": "The True Meaning of the Lord of Heaven (Tianzhu shiyi)", "work": "Matteo Ricci", "translation": null, "quoted": null }
+  ],
+  "review": {
+    "status": "pending",
+    "keeper": null,
+    "notes": [
+      "Week-end day (875 = 7 × 125): the carry looks back over days 869–874 by theme; adjust if those days changed.",
+      "Claims rule: the date and any counts of martyrs are not spoken; 'first' claims (first Korean baptized, first Korean priest) are avoided. Confirm.",
+      "'A few weeks back on this path' refers to Matteo Ricci (day 857); confirm.",
+      "The lay-appointed clergy episode and the letter to Bishop Gouvea of Beijing are given as tradition; confirm.",
+      "Fr. James Zhou Wenmo (the Chinese priest who entered secretly) is described without his name; add if desired.",
+      "Persecution motives simplified as threat to social order and ancestor rites; confirm fairness.",
+      "Romans 10:17 Douay-Rheims wording: confirm 'Faith then cometh by hearing; and hearing by the word of Christ.'",
+      "천주교 (Cheonjugyo) romanization in the say field is approximate; confirm.",
+      "Editor: hook reopened as a plain sentence (not another 'A [noun]...' fragment) and the unsourced 'over the mountains' cut; fixed the garbled order in 'wrote to the bishop, stopped, and asked' so they stop first, then write.",
+      "Editor 2: varied the 'a few weeks back on this path' phrase, already used in 872's hook."
+    ]
+  },
+  "meta": { "index": "875. The Korean church (1784) · — · founded by laypeople who read Catholic books before any priest arrived · read a spiritual book · laypeople first", "writer": "writer agent (catholic 867–876)", "written": "2026-10-01" }
+}

@@ -1,0 +1,94 @@
+{
+  "format": "ih-lesson/1",
+  "door": "CATHOLIC",
+  "day": 813,
+  "title": "The dumb ox",
+  "word": "The dumb ox",
+  "hook": "Thomas Aquinas is so quiet classmates mock him; his teacher says this ox's bellow will fill the world",
+  "carry": "the ox will bellow",
+  "length": "7:00",
+  "tomorrow": "Bonaventure's journey",
+  "segments": [
+    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY EIGHT-HUNDRED-THIRTEEN.`"] },
+    {
+      "type": "review",
+      "duration": "20 sec",
+      "voice": "Yesterday, a psalm on Oxford's coat of arms, and schools that grew beside cathedrals. Your line was faith builds schools. What hard thing did you learn? Day eight hundred thirteen.",
+      "screen": ["`FAITH BUILDS SCHOOLS.`"]
+    },
+    {
+      "type": "the hook",
+      "duration": "50 sec",
+      "voice": "In the classroom there's a young friar who hardly ever speaks. He's big, slow-moving, from a noble Italian family, and he sits through every lecture and every argument in silence, taking it in. His classmates have a name for him. They call him the dumb ox. In their Latin, dumb meant mute, not stupid, but the joke cut both ways: a large animal that doesn't make a sound. One of them, feeling sorry for him, offers to help him with his lessons. The quiet friar says thank you, and lets him. His name is Thomas Aquinas. Today's word is his nickname: the dumb ox.",
+      "screen": ["`A FRIAR WHO HARDLY SPEAKS.` → `THEY CALL HIM THE DUMB OX.` → `A CLASSMATE OFFERS TO HELP.`"]
+    },
+    {
+      "type": "the teach",
+      "duration": "2 min 15",
+      "voice": "First, the tutor. William of Tocco, who wrote an early life of Thomas, tells what happened next. The kind classmate began explaining a lesson, got lost halfway, and couldn't find his way out. Thomas, gently, picked up the thread and explained it clearly. The classmate asked him, from then on, to be the tutor. Then, the teacher. The master of that school was Albert, a Dominican scholar later called Albert the Great. Albert noticed the quiet one, and set him a hard question to argue in front of everyone. Thomas answered it so well that Albert turned to the room. The account gives his words like this: you call him the dumb ox, but one day his bellowing will be heard throughout the world. Next, the bellow. Thomas went on to teach at Paris and wrote the Summa Theologiae, laying out questions about God and the world in the disputation pattern from yesterday: question, objections, answer, reply. Catholics count him a Doctor of the Church, and his writing is still read in seminaries and universities. The ox did bellow. Last, the silence. It came first. Tradition remembers Thomas, even after he was known, as gentle in argument, slow to speak and careful with other people's views. The Douay-Rheims Ecclesiastes says there is \"A time to keep silence, and a time to speak.\" For Thomas, the first time made the second one possible. The room underrated him because he wasn't loud. His teacher heard what the room missed: the ox will bellow.",
+      "screen": ["`THE TUTOR GETS LOST.` · `ALBERT SETS A HARD QUESTION.` · `THE SUMMA, AND A DOCTOR OF THE CHURCH.` · `THE SILENCE CAME FIRST.` · then, large: `A TIME TO KEEP SILENCE, AND A TIME TO SPEAK.`"]
+    },
+    {
+      "type": "the practice",
+      "duration": "2 min 30",
+      "voice": "Here's the practice: respect a quiet person. Choose one: a colleague who rarely speaks up, a relative at the end of the table, a child who watches more than talks. Think of what you actually know about what goes on in them. Maybe less than it seems. Hold them in mind kindly for the sit, and wonder what they've noticed that the loud people missed. If you pray, you can pray for them by name. If not, simply resolve to ask them a real question soon, and wait for the answer. The bell holds the time.",
+      "screen": []
+    },
+    {
+      "type": "the word",
+      "duration": "25 sec",
+      "voice": "The dumb ox. The nickname classmates gave the silent young Thomas Aquinas, until his teacher Albert said his bellowing would be heard throughout the world. Today's word.",
+      "screen": ["`THE DUMB OX — today's word`."]
+    },
+    {
+      "type": "the carry",
+      "duration": "15 sec",
+      "voice": "Your line: the ox will bellow. Today, in one meeting or meal, turn to the quietest person there and ask what they think. Then really listen. Day eight hundred thirteen.",
+      "screen": []
+    },
+    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 813 COUNTS.` → `TOMORROW: BONAVENTURE'S JOURNEY.`"] }
+  ],
+  "howItsDone": "Catholics honor Thomas Aquinas as a saint and Doctor of the Church; his feast is kept in the Church's calendar, and his Summa Theologiae is studied in seminaries and Catholic universities.",
+  "games": {
+    "match": {
+      "prompt": "the dumb ox — tap the pairs.",
+      "pairs": [["Albert", "Thomas's teacher, who set the hard question"], ["the classmate", "offered to tutor Thomas, then got lost"], ["William of Tocco", "wrote an early life of Thomas"], ["the Summa Theologiae", "the questions Thomas wrote"]]
+    },
+    "myth": [
+      ["the nickname meant his classmates thought he couldn't think", false, "dumb meant mute: they mocked his silence, and some took it for slowness. his teacher saw otherwise."],
+      ["Thomas turned down the classmate's offer of help", false, "he accepted it gratefully, and ended up explaining the lesson himself."],
+      ["Albert said the ox's bellowing would be heard throughout the world", true, "so the account in William of Tocco tells it."]
+    ],
+    "fork": {
+      "setup": "you're Thomas. a well-meaning classmate offers to tutor you in something you already understand. what do you do?",
+      "options": ["tell him politely that you already know it.", "thank him and let him teach you.", "show him up in front of the class."],
+      "answer": 1,
+      "reveal": "Thomas accepted. when the classmate got lost, Thomas quietly helped him through, and the classmate asked him to be the tutor."
+    },
+    "original": { "script": "bos mutus", "say": "BOHS MOO-toos", "note": "Latin: a mute ox, the classmates' joke about the silent Thomas." },
+    "trapdoor": [
+      "what you thought: the dumb ox means someone stupid.",
+      "what it means: the classmates' nickname for the silent Thomas Aquinas, which his teacher Albert turned around.",
+      "what a scholar hears: William of Tocco's life gives Albert's line about the ox whose bellowing will sound through the world; dumb here means mute, silent."
+    ]
+  },
+  "sources": [
+    { "ref": "Ecclesiastes 3:7", "work": "The Bible", "translation": "Douay-Rheims (Challoner)", "quoted": "A time to keep silence, and a time to speak." },
+    { "ref": "William of Tocco, Life of St. Thomas Aquinas, ch. 12–13", "work": "Ystoria sancti Thome de Aquino", "translation": null, "quoted": null }
+  ],
+  "review": {
+    "status": "pending",
+    "keeper": null,
+    "notes": [
+      "Nickname, the tutoring classmate and Albert's saying paraphrased from William of Tocco; confirm chapter numbers and that Tocco's Latin is 'bos mutus' / 'bovem mutum'. The setting (Cologne vs. Paris under Albert) is left unnamed; confirm.",
+      "'In their Latin, dumb meant mute, not stupid': a word-meaning claim; it rests on mutus = mute. Confirm or cut.",
+      "'From a noble Italian family' and 'big, slow-moving': traditional descriptions; confirm.",
+      "'Albert, later called Albert the Great'; 'Thomas went on to teach at Paris'; 'Doctor of the Church'; Summa in disputation form: confirm.",
+      "'Tradition says he was gentle in argument': attributed; confirm.",
+      "Ecclesiastes 3:7 Douay-Rheims second half quoted; confirm wording.",
+      "Editor: 'never speaks' softened to 'hardly ever speaks'; cut the unsourced 'didn't stop being quiet when he became famous' and the stock 'what's striking', folding it into the tradition line; varied the practice opener, which repeated 'bring to mind' from nearby days.",
+      "Second editor pass: cut the unsourced comparison 'better than the teacher had' from the tutoring story."
+    ]
+  },
+  "meta": { "index": "813. The dumb ox · — · Thomas Aquinas is so quiet classmates mock him; his teacher says this ox's bellow will fill the world · respect a quiet person · the ox will bellow", "writer": "writer agent (catholic 807–816)", "written": "2026-10-01" }
+}
