@@ -12,6 +12,7 @@
 // served at /es by public/_redirects). It never writes site.html, so the English output is unchanged. After editing
 // the English copy or motion.html, rebuild both: `--apply`, then `--lang es --apply`; a stale pair stops the build.
 import fs from 'node:fs';
+import { buildPages, pagesFrom, REAL } from './pages.mjs';
 const SITE = '../apps/app/public/site.html';
 const SITE_ES = '../apps/app/public/site-es.html';
 const li = process.argv.indexOf('--lang');
@@ -57,11 +58,14 @@ if (LANG === 'es') {
   const es = await translate(out, await import('./es.mjs'));
   fs.writeFileSync('mock/out/site-es.html', es);
   if (process.argv.includes('--apply')) fs.writeFileSync(SITE_ES, es);
+  if (process.argv.includes('--apply')) console.log('pages es', buildPages('es', (await import('./es-pages.mjs')).PAGES).length);
   console.log('built es', (es.length / 1e6).toFixed(1) + 'MB', process.argv.includes('--apply') ? '-> ' + SITE_ES : '-> mock/out/site-es.html');
 } else {
   fs.writeFileSync('mock/out/site.html', out);
   fs.writeFileSync('mock/out/index.html', '<meta http-equiv="refresh" content="0;url=site.html">');
   if (process.argv.includes('--apply')) fs.writeFileSync(SITE, out);
+  // the footer pages (/about, /privacy …) are built from the same PAGES text: see mock/pages.mjs
+  if (process.argv.includes('--apply')) console.log('pages en', buildPages('en', pagesFrom(out)).length);
   console.log('built', (out.length / 1e6).toFixed(1) + 'MB', mark >= 0 ? '(replaced the earlier motion pass)' : '', hoisted.length ? `(hoisted ${hoisted.length} body styles)` : '(no body styles left to hoist)');
 }
 
@@ -85,6 +89,8 @@ async function translate(html, { PAIRS, PAGES, HEAD }) {
     html = html.split(from).join(to);
   }
   if (missing.length) throw new Error(`${missing.length} Spanish pair(s) no longer match the English page:\n  ` + missing.join('\n  '));
+  // links to the footer pages (/about …) go to their Spanish twins (/es/about …)
+  html = html.replace(new RegExp('href="/(' + REAL.join('|') + ')"', 'g'), 'href="/es/$1"');
   const bare = [...html.matchAll(/['"(]\/welcome\/[^'"\s)]*/g)].filter((m) => !html.slice(m.index, m.index + 70).includes('lang=es'));
   if (bare.length) throw new Error('app links without lang=es: ' + bare.map((m) => m[0]).join(' '));
   return html.replace(/\u0000(\d+)\u0000/g, (_, n) => kept[Number(n)]);
