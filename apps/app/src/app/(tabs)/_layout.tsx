@@ -10,12 +10,12 @@ import { GuideIcon, TodayIcon, TogetherIcon, YouIcon } from "@/ui/tab-icons";
 import { color, font } from "@/ui";
 import { t } from "@/i18n";
 
-// v175's black tab bar (together · today · guide), plus "you": profile and settings are a real tab now,
+// the black tab bar: today · guide · together · you (owner's order, 10/1): profile and settings are a real tab now,
 // not a hidden ☰ (flow audit 9/25).
 const TABS = [
-  { name: "together", href: "/together", label: "home.tab.together", Icon: TogetherIcon },
   { name: "today", href: "/today", label: "home.tab.today", Icon: TodayIcon },
   { name: "guide", href: "/guide", label: "home.tab.guide", Icon: GuideIcon },
+  { name: "together", href: "/together", label: "home.tab.together", Icon: TogetherIcon },
   { name: "you", href: "/you", label: "home.tab.you", Icon: YouIcon },
 ] as const;
 

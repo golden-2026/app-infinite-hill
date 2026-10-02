@@ -15,7 +15,6 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { useStore } from "@/lib/store";
 import { pathWords, readWalkers, walkerName, whenLit, type Walker } from "@/lib/walkers";
 import { Btn, Card, Eyebrow, Face, Guy, Link, color, confirmSheet, font, toast, type } from "@/ui";
-import { KeeperDesk, Voices } from "@/ui/voices";
 import { friendsPrivacy, FamilyBoard, FriendRows, NickPrompt, WeeklyBoard } from "@/ui/friends";
 import { leaveFriends, useFriends } from "@/lib/friends";
 import { leaveAllCircles } from "@/lib/circles";
@@ -94,8 +93,6 @@ export default function Together() {
             </View>
           </View>
         </Card>
-        <Voices />
-        <KeeperDesk />
       </ScrollView>
     </SafeAreaView>
   );
