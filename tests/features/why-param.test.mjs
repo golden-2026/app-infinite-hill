@@ -41,6 +41,7 @@ const { guideProfile } = await import(pathToFileURL(`${src}lib/profile.ts`).href
 const { personaFor } = await import(pathToFileURL(`${src}lib/companion/shape.ts`).href);
 const { buildSystemPrompt } = await import(pathToFileURL(`${root}api/guide.js`).href);
 const { existsSync } = await import("node:fs");
+const { readFileSync } = await import("node:fs");
 
 test("the website's keys are exactly the onboarding's 'what brings you' answers, plus the first step's 'spiritual'", () => {
   const why = BELIEF_QUESTIONS.find((q) => q.id === "why");
@@ -75,7 +76,7 @@ test("the three life moments are website keys and onboarding answers", () => {
     assert.deepEqual(whyParam(k), { why: k, stance: null });
   }
   assert.deepEqual(whyParam(" Grief "), { why: "grief", stance: null });
-  assert.deepEqual([...LIFE_MOMENTS].sort(), ["baby", "diagnosis", "grief"]);
+  assert.deepEqual([...LIFE_MOMENTS].sort(), ["baby", "belonging", "diagnosis", "forgiveness", "gratitude", "grief", "wedding"]);
 });
 
 test("a life moment from the website carries to my own path too; other whys still don't", () => {
@@ -127,4 +128,47 @@ test("grief and scary health news start gently, are the companion's hard persona
   }
   assert.match(buildSystemPrompt("Catholicism", { depth: "new", openness: "stay", reason: "diagnosis" }), /never diagnose/);
   assert.match(buildSystemPrompt("Catholicism", { depth: "new", openness: "stay", reason: "grief" }), /never as a promise/);
+});
+
+// ---------- four more: belonging, forgiveness, a wedding, gratitude (15 picker cards in all) ----------
+
+test("all fifteen website keys: one per picker card, and each one an onboarding answer", () => {
+  assert.equal(WHY_KEYS.length, 15);
+  assert.equal(new Set(WHY_KEYS).size, 15);
+  for (const k of ["belonging", "forgiveness", "wedding", "gratitude"]) {
+    assert.ok(LIFE_MOMENTS.includes(k), k);
+    assert.deepEqual(whyParam(k), { why: k, stance: null });
+  }
+  // the website picker: 14 "what brings you" cards plus "spiritual" (my own path), each "start here" carrying its key
+  for (const file of ["site.html", "site-es.html"]) {
+    const html = readFileSync(`${root}apps/app/public/${file}`, "utf8");
+    const keys = [...html.matchAll(/id="pkt-([a-z]+)"/g)].map((m) => m[1]);
+    assert.deepEqual([...keys].sort(), [...WHY_KEYS.filter((k) => k !== "calm"), "spiritual"].sort(), file);
+    for (const k of keys) assert.match(html, new RegExp(`welcome/you\\?(lang=es&)?why=${k}"`), `${file}: ${k} start here`);
+  }
+});
+
+test("every life-moment list names only days that exist as written year 1-3 scripts", () => {
+  const doors = ["HINDUISM", "BUDDHISM", "CHRISTIANITY", "CATHOLIC", "JUDAISM", "ISLAM", "SIKHISM", "SPIRITUAL"];
+  for (const m of LIFE_MOMENTS) {
+    assert.deepEqual(Object.keys(FIRST_WEEK[m]).sort(), [...doors].sort(), `${m} covers every door`);
+    for (const door of doors) for (const [d, title] of FIRST_WEEK[m][door]) {
+      assert.ok(Number.isInteger(d) && d >= 1 && title, `${m} ${door} ${d}`);
+      const file = (y) => `${root}docs/curriculum/${door.toLowerCase()}/scripts/${y}/day-${String(d).padStart(4, "0")}.json`;
+      assert.ok(["y1", "y2", "y3"].some((y) => existsSync(file(y))), `${m} ${door} day ${d} has no written script in years 1-3`);
+    }
+  }
+});
+
+test("forgiveness starts gently; belonging, a wedding and gratitude keep the normal streak words; the Guide hears each", () => {
+  assert.equal(gentleStart("forgiveness"), true);
+  for (const k of ["belonging", "wedding", "gratitude"]) assert.equal(gentleStart(k), false, k);
+  const prof = (why) => ({ v: 1, door: "SIKHISM", knowledge: 10, commitment: 50, openness: "stay", answers: { why }, bridges: {}, lastBridgeOn: null, setOn: "2026-10-01" });
+  const mem = { v: 1, facts: [], seeded: false, moods: [], journal: [], done: [], reflected: [], helpClosedOn: null };
+  assert.equal(personaFor({ door: "SIKHISM", profile: prof("wedding"), kids: 0, memory: mem }), "bridge");
+  assert.match(buildSystemPrompt("Sikhism", { depth: "new", openness: "stay", reason: "forgiveness" }), /never tell them they must reconcile/);
+  assert.match(buildSystemPrompt("Sikhism", { depth: "new", openness: "stay", reason: "belonging" }), /does not/);
+  assert.match(buildSystemPrompt("Sikhism", { depth: "new", openness: "stay", reason: "wedding" }), /convert/);
+  assert.match(buildSystemPrompt("Sikhism", { depth: "new", openness: "stay", reason: "gratitude" }), /thanksgiving/);
+  assert.ok(opensAhead({ door: "SIKHISM", answers: { why: "wedding" } }, "SIKHISM", 56));
 });

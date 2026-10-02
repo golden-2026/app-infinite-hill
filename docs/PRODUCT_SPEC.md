@@ -25,7 +25,10 @@
 4. Together, Today, Guide, profile/settings, plans, gift, review, and Why open
    without a runtime crash. The Guide falls back honestly when its server model
    is not configured.
-5. The app works at phone width and in a desktop phone frame; the marketing
+5. A person who arrives from one of the fifteen homepage personas ([PERSONAS.md](PERSONAS.md)) skips the "what
+   brings you" question; a life moment (grief, a new baby, scary health news, belonging, forgiveness, a wedding,
+   gratitude) sees a first-week card of already-written lessons on Today, pending Keeper review.
+6. The app works at phone width and in a desktop phone frame; the marketing
    site remains available as its own supplied visual surface.
 
 ## Release truth

@@ -76,7 +76,7 @@ export function personaFor(i: Pick<ShapeInput, "door" | "profile" | "kids" | "me
   if (has("why:kids") || has("why:baby") || has("family:kids")) return "parent";
   if (has("stance:unsure") || has("stance:left") || has("why:roots")) return "returner";
   if (p && (has("stance:practice") || has("why:own")) && ((p.commitment ?? 0) >= 67 || depthFor(p) === "deep" || has("practice:daily"))) return "deepener";
-  if (has("why:partner")) return "bridge";
+  if (has("why:partner") || has("why:wedding")) return "bridge";
   if (i.door === "SPIRITUAL") return "seeker";
   if (has("why:curious") || has("stance:curious")) return "fan";
   return "steady";

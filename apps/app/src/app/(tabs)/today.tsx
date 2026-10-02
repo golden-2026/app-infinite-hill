@@ -145,7 +145,7 @@ export default function Today() {
             streak={streakLine} onStart={start} startLabel={t("home.today.startA11y", { n: lesson, title })} />
         )}
 
-        {/* a life moment (grief, a new baby, scary health news): a few already-written lessons that fit, from their own
+        {/* a life moment (grief, a new baby, scary health news, belonging, forgiveness, a wedding, gratitude): a few already-written lessons that fit, from their own
             door, openable ahead of the path as extras (content/life-moments.ts). Shown on quiet days too. */}
         {(() => {
           const why = st.profile?.door === wing ? st.profile.answers?.why : null;
@@ -158,7 +158,7 @@ export default function Today() {
           return (
             <View testID="for-you" style={[s.lite, { marginTop: 0, flexDirection: "column", alignItems: "stretch", gap: 6 }]}>
               <View style={{ flexDirection: "row", alignItems: "center", gap: 10 }}>
-                <Guy pose={why === "baby" ? "heart" : "namaste"} h={52} />
+                <Guy pose={({ baby: "heart", belonging: "wave", forgiveness: "sitrock", wedding: "joy", gratitude: "cheer" } as Record<string, string>)[why as string] || "namaste"} h={52} />
                 <View style={{ flex: 1 }}>
                   <Text style={[type.eyebrow(8), { color: color.ink }]}>{t("home.forYou.eyebrow")}</Text>
                   <Text style={{ fontFamily: font.display[800], fontSize: 15, marginTop: 3, color: color.ink }}>{t(`home.forYou.${why}` as "home.forYou.grief")}</Text>
@@ -171,13 +171,20 @@ export default function Today() {
                 return (
                   <Pressable key={n} testID={`for-you-${n}`} accessibilityRole="link" accessibilityLabel={t("home.forYou.a11y", { n, title: name })} onPress={() => open(n)}
                     style={({ pressed }) => [{ flexDirection: "row", alignItems: "center", gap: 10, minHeight: 40, opacity: pressed ? 0.8 : 1 }]}>
-                    <Text style={[type.eyebrow(8), { width: 64, color: color.mute }]}>{t("common.day", { n })}</Text>
+                    <Text style={[type.eyebrow(8), { width: 76, color: color.mute }]}>{t("common.day", { n })}</Text>
                     <Text numberOfLines={1} style={[type.body(14), { flex: 1, color: color.ink }]}>{name}{done ? " ✓" : ""}</Text>
                     <Text style={s.chev}>›</Text>
                   </Pressable>
                 );
               })}
-              <Text style={[type.body(12), { color: color.mute }]}>{t("home.forYou.body")}</Text>
+              {why === "belonging" ? (
+                // belonging: the way to real people here is a circle (start one, or join with a code) on Together
+                <Pressable testID="for-you-circle" accessibilityRole="link" accessibilityLabel={t("home.forYou.circleA11y")} onPress={() => router.push("/together")}
+                  style={({ pressed }) => [{ minHeight: 40, justifyContent: "center", opacity: pressed ? 0.8 : 1 }]}>
+                  <Text style={{ fontFamily: font.text[600], fontSize: 14, color: color.ink, textDecorationLine: "underline" }}>{t("home.forYou.circle")}</Text>
+                </Pressable>
+              ) : null}
+              <Text style={[type.body(12), { color: color.mute }]}>{t(why === "wedding" ? "home.forYou.weddingBody" : "home.forYou.body")}</Text>
             </View>
           );
         })()}
