@@ -59,7 +59,7 @@ export const QUESTIONS_ES: Record<string, QuestionEs> = {
       calm: "un hábito diario más tranquilo",
       belonging: "quiero gente cerca que me entienda",
       forgiveness: "necesito perdonar a alguien, o que me perdonen",
-      gratitude: "pasó algo bueno y quiero dar las gracias",
+      gratitude: "estoy agradecido y no sé a quién darle las gracias",
       grief: "murió alguien a quien quiero",
       diagnosis: "una noticia de salud que da miedo, mía o de alguien cercano",
       hard: "estoy pasando por algo difícil",

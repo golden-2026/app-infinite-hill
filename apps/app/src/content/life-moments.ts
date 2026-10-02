@@ -90,7 +90,7 @@ export const FIRST_WEEK: Record<LifeMoment, Record<string, Pick[]>> = {
     // thin: two lessons
     SPIRITUAL: [[648, "Musonius on marriage"], [258, "Christianity: love is patient"]],
   },
-  // something good happened and i want to say thank you
+  // i'm grateful, and i don't know who to thank
   gratitude: {
     // thin: no year 1–3 lesson on thanks as such; these are harvest thanks, prasad, grace before food and Govardhan
     HINDUISM: [[153, "Pongal / Onam (harvest)"], [116, "The sweet (food offered, then shared)"], [173, "Sacrifice as knowledge (the verse said before dinner, 4.24)"], [895, "Govardhan lifted"]],

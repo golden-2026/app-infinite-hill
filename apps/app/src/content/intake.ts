@@ -98,7 +98,7 @@ export const BELIEF_QUESTIONS: Question[] = [
     { id: "calm", label: "a calmer daily habit" },
     { id: "belonging", label: "I want people around me who get it" },
     { id: "forgiveness", label: "I need to forgive someone, or be forgiven" },
-    { id: "gratitude", label: "something good happened and I want to say thank you" },
+    { id: "gratitude", label: "I'm grateful, and I don't know who to thank" },
     { id: "grief", label: "someone I love died" },
     { id: "diagnosis", label: "scary news about health, mine or someone close" },
     { id: "hard", label: "going through something hard" },
