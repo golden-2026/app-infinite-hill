@@ -27,6 +27,7 @@ import { useSeasons } from "@/lib/quests";
 import { campLabel, campName, doorLabel, isEs, setLang, t, useLang, type Key } from "@/i18n";
 import { en as companionEn } from "@/i18n/strings/companion";
 import { InvitesCard } from "@/ui/invites";
+import { WellbeingCard } from "@/ui/wellbeing-card";
 
 /**
  * "How the sun talks to you" in the app's language. The English comes from @ih/content (SUN_NOTES); each example is
@@ -193,6 +194,9 @@ export default function You() {
             </View>
             {shareMsg ? <Text accessibilityLiveRegion="polite" style={[type.body(12), { color: color.mute, marginTop: 6 }]}>{shareMsg}</Text> : null}
           </Card>
+
+          {/* how you've been: the check-in's first score against the latest, once there are two (lib/wellbeing) */}
+          <WellbeingCard wb={st.wellbeing} />
 
           <Group title={t("companion.you.gPractice")}>
             <Row a={t("companion.you.gPath")} b={t("companion.you.pathB", { door: doorLabel(wing), voice: voiceLabel(wing, ic.short).short })} onPress={() => setChanging(!changing)} right={changing ? t("common.close") : t("common.change")} />

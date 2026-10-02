@@ -18,6 +18,7 @@ import { leaveAllCircles } from "./circles";
 import { forgetPulse } from "./pulse";
 import { forgetInvites } from "./waitlist";
 import { addDays as addDaysTo, cleanCards, noteRecall, noteSlips, type Card, type Slip } from "./missed";
+import { cleanWellbeing, emptyWellbeing, noteCheck, type Wellbeing } from "./wellbeing";
 import { t } from "@/i18n";
 
 export const STORE_KEY = "ih:app:v1";
@@ -75,6 +76,9 @@ export type Settings = {
   moved?: Record<string, { day: number; at: string }>;
   /** What they said to the walk-back / jump-ahead offers, by door (lib/settle), so a "no" isn't asked again soon. */
   settle?: Record<string, { back?: { on: string; mean: number }; ahead?: string }>;
+  /** The 30-second check-in (lib/wellbeing): each WHO-5 score with its milestone and date, and the milestones offered.
+   *  Personal: stays with the settings (export, synced snapshot); only an anonymous { door, bucket, score } ever leaves. */
+  wellbeing?: Wellbeing;
 };
 
 /** `missed`: words that slipped, and when each comes back (lib/missed.ts). On this phone only: not in settings, so never synced. */
@@ -114,6 +118,7 @@ export function cleanSettings(raw: any): Settings {
     profile: cleanProfile(s.profile),
     placed: placedStarts(s.placed),
     moved: movedTo(s.moved),
+    wellbeing: s.wellbeing ? cleanWellbeing(s.wellbeing) : undefined,
   };
 }
 
@@ -155,6 +160,8 @@ type Store = {
   recordRun: (r: { door: string; day: number; acc: number; level: number; rushSecs?: number | null; deep?: boolean; minutes?: number }) => void;
   setQuest: (id: string, q: QuestState | null) => void;
   recordFeel: (f: { door: string; day: number; level: number; feel: "slow" | "right" | "hard" }) => void;
+  /** The check-in at a milestone: answered (a 0–100 score) or skipped (null). Either way it isn't asked again. */
+  recordWellbeing: (m: number, score: number | null) => void;
   /** After a lesson or a review: the words that slipped start again tomorrow; the ones that came back move on. */
   noteLearning: (o: { door: string; slips?: Slip[]; recalled?: { word: string; ok: boolean }[] }) => void;
   addSignal: (sig: Settings["signals"][number]) => void;
@@ -243,6 +250,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       return { ...s, settings: { ...s.settings, runs, rushBest, timed, deepOn: deep ? date : s.settings.deepOn }, settingsVersion: s.settingsVersion + 1 };
     }),
     recordFeel: (f) => commit((s) => ({ ...s, settings: { ...s.settings, feel: [...(s.settings.feel || []).filter((x) => !(x.date === todayNow() && x.door === f.door && x.day === f.day)), { ...f, date: todayNow() }].slice(-60) }, settingsVersion: s.settingsVersion + 1 })),
+    recordWellbeing: (m, score) => commit((s) => ({ ...s, settings: { ...s.settings, wellbeing: noteCheck(s.settings.wellbeing || emptyWellbeing(), m, score, todayNow()) }, settingsVersion: s.settingsVersion + 1 })),
     noteLearning: ({ door: d, slips = [], recalled = [] }) => {
       if (!slips.length && !recalled.length) return;
       const date = todayNow();

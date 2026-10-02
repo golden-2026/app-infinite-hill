@@ -7,6 +7,7 @@ import { useDone } from "@/lib/done";
 import { enableReminders, reminderSupport, remindersReady, remindersServer } from "@/lib/reminders";
 import { useStore } from "@/lib/store";
 import { todaysThree } from "@/lib/three";
+import { dueAfterLesson, emptyWellbeing } from "@/lib/wellbeing";
 import { Bubble, Btn, Guy, Link, Screen, Sun, color, font, type } from "@/ui";
 import { t, type Key } from "@/i18n";
 
@@ -42,11 +43,15 @@ export default function Tomorrow() {
     setBusy(false);
     if (!res.ok) setMsg(res.message);
   };
-  // when today's three are done and the lantern hasn't been lit yet, the lantern comes next
+  // when today's three are done and the lantern hasn't been lit yet, the lantern comes next; a milestone's check-in
+  // (day 21, 50, 100 …; lib/wellbeing) comes first, once, and then goes on to the same place
   const finish = () => {
     if (offer && !saved.settings.reminder.on) update({ remindOffer: today });
     const three = todaysThree({ doneToday: derived.doneToday, glow: st.glow, book: st.book, lanternOn: st.lanternOn, today });
-    if (three.all && !three.opened) router.replace("/lantern");
+    const then = three.all && !three.opened ? "/lantern" : "/today";
+    const m = dueAfterLesson(derived.showedUp, st.wellbeing || emptyWellbeing()); // (a child's lesson ends at /done/kid, never here)
+    if (m) router.replace({ pathname: "/wellbeing", params: { m: String(m), then } });
+    else if (then === "/lantern") router.replace("/lantern");
     else close();
   };
 

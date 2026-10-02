@@ -125,6 +125,38 @@ for the audience and jurisdictions is a policy decision, not an engineering one.
 make percentages noisy; read them in aggregate. Anyone can post a well-formed ping, so the counts can be inflated by a
 determined person; they are for direction, not accounting.
 
+## Wellbeing check-in (added 2026-10-02, not deployed)
+
+The 30-second check-in is the WHO-5 Well-Being Index: five statements about the last two weeks, each answered 0–5,
+scored ×4 to 0–100 on the phone. It exists so the website's 100-day promises can be measured, each person against
+themselves, and published as anonymous aggregates. Code: `apps/app/src/lib/wellbeing.ts` (when to ask, scoring; pure),
+`lib/wellbeing-send.ts` (the one request), `app/wellbeing.tsx` (the screen), `ui/wellbeing-card.tsx` (You tab),
+`api/wellbeing.js`, `netlify/functions/wellbeing.js` + `netlify/_shared/wellbeing-store.js` (the same private Blobs
+store as pulse, keys `wellbeing/<door>/<bucket>`).
+
+**When it asks.** Once right after onboarding (before the first lesson), then when a lesson brings the days walked to
+21, 50 and 100, and every 30 days after that. Each milestone is offered once (answered or skipped) and never again. It
+is always skippable (× and "skip for now"); nothing changes for someone who skips.
+
+**On the phone.** `settings.wellbeing = { checks: [{ m, date, score }], offered: [m…] }`: each score with its milestone
+and date, nothing of the five individual answers. It lives with the other settings, so it is in the export file and in
+a synced snapshot (owner-only, as every setting), and goes with "delete everything". After the second check-in the You
+tab shows the first score against the latest with one kind line; never a label or a diagnosis. Under 28 (WHO-5's own
+line) one gentle sentence points to a doctor or someone local; nothing more.
+
+**What leaves the phone.** Only if the anonymous counts are on (the same switch as the return counts, You › Your data,
+and said in its text): one `POST /api/wellbeing` with exactly `{ door, bucket, score }`, where bucket is `"1"`, `"21"`,
+`"50"`, `"100"` or `"100+"`. No id, no date (not even the day), no lesson, no answers. Sent with `credentials: "omit"`
+and `referrerPolicy: "no-referrer"`. Note for counsel: unlike pulse, this request carries the door (a religion or
+belief choice) next to a wellbeing score; it is unlinkable to a person but it is a sensitive pairing.
+
+**The server.** Refuses any body with another field or value (door not one of the eight, bucket not one of the five,
+score not a multiple of 4 in 0–100), never reads the IP address or user agent, keeps no row per answer and logs
+nothing: per door×bucket it keeps only `{ n, sum }`. The flood brake is per-instance requests per minute, as pulse.
+`GET /api/wellbeing` is public and returns a door×bucket (and a bucket across doors) only once it has at least 25
+answers (`THRESHOLD` in `api/wellbeing.js`): count and mean, nothing else. As with pulse, anyone can post a
+well-formed score, so the numbers are for direction, not accounting.
+
 ## Circles (added 2026-10-01, not deployed)
 
 A teacher or a house of worship brings their people in as a group ("circles" in the app). Code: `apps/app/src/lib/circles.ts`,

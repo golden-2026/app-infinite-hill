@@ -4,6 +4,7 @@ import { router, useLocalSearchParams } from "expo-router";
 import { useEffect } from "react";
 import { Text, View } from "react-native";
 import { useStore } from "@/lib/store";
+import { dueAtStart, emptyWellbeing } from "@/lib/wellbeing";
 import { t } from "@/i18n";
 import { Eyebrow, Guy, type } from "@/ui";
 import { WelcomeFrame } from "@/ui/welcome-frame";
@@ -16,14 +17,16 @@ export default function Ready() {
   const door = doorParam(raw) || "SPIRITUAL"; // unknown doors in a URL never get saved
   const { update, saved } = useStore();
   const start = saved.settings.placed?.[door] ?? 1;
+  const baseline = dueAtStart(saved.settings.wellbeing || emptyWellbeing()); // the 30-second check-in, once, before day one
   useEffect(() => {
     const t = setTimeout(() => {
-      // straight into the first lesson; finishing or leaving it lands on Today
-      router.replace({ pathname: "/session/[door]/[day]", params: { door, day: String(start) } });
+      // straight into the first lesson (after the optional baseline check-in); finishing or leaving it lands on Today
+      if (baseline) router.replace({ pathname: "/wellbeing", params: { m: String(baseline), door, day: String(start) } });
+      else router.replace({ pathname: "/session/[door]/[day]", params: { door, day: String(start) } });
       update({ onboarded: true, homeWing: door, active: "home" });
     }, 2400);
     return () => clearTimeout(t);
-  }, [door, update, start]);
+  }, [door, update, start, baseline]);
   return (
     <WelcomeFrame step={8} door={door}>
       <View style={{ alignItems: "center", gap: 18 }}>

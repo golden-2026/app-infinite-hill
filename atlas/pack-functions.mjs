@@ -1,7 +1,7 @@
 ﻿// Put the Guide and companion servers (Netlify Functions) into a static export folder, so they deploy with it.
 // Usage: node atlas/pack-functions.mjs atlas/expo-liveN
 // What it does (safe to run more than once):
-//   1. bundles the Guide, companion, outage-watcher, friends, pulse (anonymous return counts), circles and waitlist (the invite-only launch switch) functions into
+//   1. bundles the Guide, companion, outage-watcher, friends, pulse (anonymous return counts), wellbeing (the check-in aggregate), circles and waitlist (the invite-only launch switch) functions into
 //      self-contained files;
 //   2. adds a [functions] section to the folder's netlify.toml;
 //   3. puts /api/guide and /api/companion at the top of _redirects (before the app's catch-all), and hides the copied
@@ -27,7 +27,7 @@ if (!existsSync(join(out, "index.html"))) {
 // Each function is bundled into one self-contained file (its imports, the lesson data and @netlify/blobs included),
 // because the export folder has no node_modules for Netlify to resolve packages from.
 const { rolldown } = await import(pathToFileURL(join(repo, "node_modules/rolldown/dist/index.mjs")).href);
-const FUNCTIONS = ["guide", "companion", "ai-watch", "friends", "pulse", "circles", "waitlist"];
+const FUNCTIONS = ["guide", "companion", "ai-watch", "friends", "pulse", "wellbeing", "circles", "waitlist"];
 for (const name of FUNCTIONS) {
   const bundle = await rolldown({ input: join(repo, "netlify/functions", `${name}.js`), platform: "node", logLevel: "silent" });
   await bundle.write({ file: join(out, "netlify/functions", `${name}.js`), format: "esm", codeSplitting: false });
@@ -53,6 +53,7 @@ const block = [
   "/api/companion    /.netlify/functions/companion  200!",
   "/api/friends      /.netlify/functions/friends    200!",
   "/api/pulse        /.netlify/functions/pulse      200!",
+  "/api/wellbeing    /.netlify/functions/wellbeing  200!",
   "/api/circles      /.netlify/functions/circles    200!",
   "/api/waitlist     /.netlify/functions/waitlist   200!",
   "# the servers' source files are uploaded with the site; don't serve them as pages",
