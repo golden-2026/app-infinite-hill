@@ -653,8 +653,16 @@ html body section.promise h2{font-size:clamp(36px,4.6vw,64px)}
 /* two separate ideas: the problem (#goal) stands alone and ends on its question; one human race (#race) is its own section */
 html body section#goal{border-bottom:0}
 #goal .gmain{grid-template-columns:1fr!important}
+/* the problem stands alone: one centred column, no empty right half; its own tight padding */
+html body section#goal{padding:clamp(56px,7vw,104px) 0!important}
+#goal .gtext,#goal .gopen{max-width:820px;margin:0 auto;text-align:center}
+#goal .gproblem{max-width:none;font-size:clamp(24px,2.6vw,38px)}
+#goal .gopen .stanza{max-width:60ch;margin:16px auto 0}
+#goal .gq{font-size:clamp(34px,4.4vw,64px)!important;margin-top:26px!important}
+/* one human race: a different ground (true black) so it reads as a new section, not more of the same */
+html body section#race{background:#0A0A0A!important;padding:clamp(56px,7vw,104px) 0!important}
 #goal .gq{margin:18px 0 0!important;font:800 clamp(28px,3.2vw,46px)/1.1 var(--serif)!important;letter-spacing:-.02em;color:var(--gold)!important}
-html body section#race{background:#1C1A15!important;border-top:1px solid rgba(245,196,0,.32);border-bottom:1px solid rgba(245,196,0,.32)}
+html body section#race{background:#0A0A0A!important;border-top:1px solid rgba(245,196,0,.32);border-bottom:1px solid rgba(245,196,0,.32)}
 #race .gmain{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:center}
 #race .gmain #goalpic .gpose{width:min(100%,400px);max-height:460px!important}
 #race .bighook{font-size:clamp(32px,4.4vw,64px)}
