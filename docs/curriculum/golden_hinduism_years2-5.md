@@ -234,7 +234,7 @@
 | 27–32 | **The Vedas themselves** (42) | what the Rig Veda is; the Nasadiya Sukta (the hymn of creation — "who really knows?"); the Purusha Sukta; the Gayatri in context; hymns to Agni, Indra, Ushas, Varuna; the Sama Veda as song; the Atharva Veda's healing hymns |
 | 33–38 | **Ayurveda as a lens** (42, science seat veto) | the three doshas as a way of noticing, not a diagnosis; the daily routine (dinacharya); the seasons; food as practice; sleep; the breath again — every claim checked |
 | 39–44 | **The epics revisited — the women** (42) | Sita, Draupadi, Kunti, Gandhari, Savitri, Damayanti, Shakuntala, Andal, Mirabai, Akka Mahadevi, Lal Ded — a season of the tradition's women, in their own words where they exist |
-| 45–50 | **Regional traditions** (42) | Tamil Shaivism and the Tevaram · Bengal's Shakta and Vaishnava streams · Maharashtra's Varkari · Kashmir · Kerala's Onam and Ayyappa · Gujarat's Swaminarayan · Punjab's shared devotional ground — each with its Keeper-approved framing |
+| 45–50 | **Regional traditions** (42) | Tamil Shaivism and the Tevaram · Bengal's Shakta and Vaishnava streams · Maharashtra's Varkari · Kashmir · Kerala's Onam and Ayyappa · Gujarat's Swaminarayan · Punjab's shared devotional ground |
 | 51–52 | **Festivals held; year close** (14) | the summit sit |
 
 ---

@@ -236,10 +236,19 @@ export function pos(day) {
 }
 
 const NO_WORD = /^[\s—–-]*$/;
+/** A day with no outline word takes the head of its title: whole up to 40 characters, otherwise cut at a word
+ *  boundary (never mid-word) and never left hanging on a small joining word. */
+export function titleHead(title) {
+  const head = title.split(/[;:(—–,·]/)[0].trim();
+  if (head.length <= 40) return head;
+  let cut = head.slice(0, 41).replace(/\s\S*$/, "").trim();
+  while (/\s(of|the|a|an|and|in|to|is|was|are|who|as|for|on|at|by|with|from)$/i.test(cut)) cut = cut.replace(/\s\S+$/, "");
+  return cut;
+}
 function outlineLesson(wing, day, s) {
   const p = pos(day);
   const title = s.title.length > 90 ? `${s.title.slice(0, 88).replace(/\s\S*$/, "")}…` : s.title;
-  const word = s.word && !NO_WORD.test(s.word) ? s.word : title.split(/[;:(—–,·]/)[0].trim().slice(0, 32);
+  const word = s.word && !NO_WORD.test(s.word) ? s.word : titleHead(title);
   const carry = s.carry || title;
   const part = (s.part || "").replace(/\s*\((?:Days )?\d+[–-]\d+[^)]*\)/g, "").replace(/\s+—\s+.*$/, "");
   return {
