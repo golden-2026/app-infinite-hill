@@ -28,9 +28,9 @@ export const en = {
   "kids.grownups.title": "for grown-ups",
   "kids.grownups.source": "where it comes from",
   "kids.grownups.ask": "ask together",
-  "kids.grownups.draft": "a draft story set, still waiting for review by someone who teaches this tradition.",
+  "kids.grownups.draft": "these stories are still waiting for review by someone who teaches this tradition.",
   "kids.finish": "back to the table",
-  "kids.none": "there's no kids' story set for this path yet.",
+  "kids.none": "i don't have kids' stories for this path yet.",
   "kids.table.note": "kid mode: the kids' stories, matching, ordering · no Guide",
   "kids.table.today": "today: {title}",
 };
@@ -60,9 +60,9 @@ export const es: Dict<typeof en> = {
   "kids.grownups.title": "para los adultos",
   "kids.grownups.source": "de dónde viene",
   "kids.grownups.ask": "pregunten juntos",
-  "kids.grownups.draft": "una serie de historias en borrador, aún sin revisar por alguien que enseña esta tradición.",
+  "kids.grownups.draft": "estas historias todavía esperan la revisión de alguien que enseña esta tradición.",
   "kids.finish": "volver a la mesa",
-  "kids.none": "todavía no hay historias para niños en este camino.",
+  "kids.none": "todavía no tengo historias para niños en este camino.",
   "kids.table.note": "modo niños: las historias para niños, emparejar, ordenar · sin Guía",
   "kids.table.today": "hoy: {title}",
 };

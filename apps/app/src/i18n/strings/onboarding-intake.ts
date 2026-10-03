@@ -17,7 +17,7 @@ const RAISED_ES: Record<string, string> = {
 export const QUESTIONS_ES: Record<string, QuestionEs> = {
   "you.stance": {
     ask: "primero, un poco sobre ti. ¿cómo estás con la religión ahora mismo?",
-    note: "es privado: se queda en tu teléfono. solo cambia lo que te mostramos primero. todas las puertas siguen abiertas.",
+    note: "es privado: se queda en tu teléfono. solo cambia lo que te muestro primero. todas las puertas siguen abiertas.",
     c: {
       practice: "practico una fe",
       unsure: "crecí en una, pero ya no sé si creo",
@@ -47,7 +47,7 @@ export const QUESTIONS_ES: Record<string, QuestionEs> = {
   raised: { ask: "", c: RAISED_ES },
   "belief.why": {
     ask: "¿qué te trae al {door}?",
-    note: "elige lo más cercano. define con qué empezamos.",
+    note: "elige lo más cercano. así sé con qué empezar.",
     c: {
       own: "quiero conocer mejor mi propia religión",
       roots: "reconectar con la forma en que crecí",
@@ -87,7 +87,7 @@ export const QUESTIONS_ES: Record<string, QuestionEs> = {
   },
   "belief.hold": {
     ask: "¿cómo lo vives?",
-    note: "no hay una respuesta correcta. esto solo cambia cómo te hablamos.",
+    note: "no hay una respuesta correcta. esto solo cambia cómo te hablo.",
     c: {
       fully: "lo creo, del todo",
       questions: "creo, con preguntas",
@@ -146,7 +146,7 @@ export const QUESTIONS_ES: Record<string, QuestionEs> = {
   },
   "intake.believe": {
     ask: "¿en qué crees ahora mismo?",
-    note: "es privado. solo cambia lo que te mostramos.",
+    note: "es privado. solo cambia lo que te muestro.",
     c: { bigger: "hay algo más grande", unsure: "no lo sé", meaning: "no hay dios, pero el sentido importa", searching: "estoy buscando" },
   },
   "intake.organized": {
@@ -174,7 +174,7 @@ export const QUESTIONS_ES: Record<string, QuestionEs> = {
 /** raisedInQ(): the follow-up question's wording (its choices are RAISED_ES). */
 export const RAISED_IN_ES = {
   learningAsk: "qué bien. ¿qué fe estás aprendiendo?",
-  learningNote: "la enseñaremos como la entienden quienes la practican. tu propia historia sigue siendo tuya.",
+  learningNote: "te la enseño como la entienden quienes la practican. tu propia historia sigue siendo tuya.",
   practiceAsk: "qué bien. ¿cuál?",
   grewUpAsk: "¿en cuál creciste?",
   otherAsk: "¿creciste en una religión?",
@@ -189,8 +189,8 @@ export const REPLIES_ES = {
   away: "entendible. aquí nadie te va a inscribir en nada.",
   meaning: "bien. aquí hay mucho que funciona sin necesidad de un dios.",
   none: "entonces llegas con ojos nuevos.",
-  hurt: "lo siento. iremos con calma.",
-  grief: "lo siento. empezaremos con algo que te sostenga.",
+  hurt: "lo siento mucho. vamos con calma.",
+  grief: "lo siento mucho. empecemos con algo que te sostenga.",
 };
 
 /** Bridges by id: the idea, why it might speak to someone, and each member's gloss in the same order as BRIDGES. */
