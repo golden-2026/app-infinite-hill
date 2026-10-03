@@ -54,7 +54,7 @@ Content is mostly accurate (4.0); the learning design is the weak part (2.9). Fi
 2. Placement: the longest answer is right in 68% of story questions; some word questions have two true options;
    Simply Spiritual has no placement questions. (Folds into the learning engine.)
 3. Guide prompt (api/guide.js): English has no 988 crisis line (Spanish and companion do); it tells users scholars
-   review the lessons and that there are "voices they know" (both pending: untrue today); the 90-word limit is too
+   review the lessons and that there are "voices they know" (owner, 2026-10-03: KEEP these claims for the demo; do not remove); the 90-word limit is too
    short for build-a-week / hard-text answers.
 4. Lessons: every practice ends "the bell holds the time"; 3,229 imagined practices; review only looks back one day;
    life-tip endings trivialize serious material; 1,435 carry lines just repeat the title (process leftovers).
