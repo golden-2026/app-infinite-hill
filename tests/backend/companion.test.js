@@ -327,7 +327,7 @@ test("chat answers the tradition's real questions, at the person's depth, withou
     assert.match(capture.body.system, /Sanskrit/);
     assert.match(capture.body.system, /family pandit or purohit; never issue a ruling/);
     assert.match(capture.body.system, /up to about 200 words/);
-    assert.match(capture.body.system, /Never compare, rank, or judge faiths/);
+    assert.match(capture.body.system, /Never rank or judge faiths or say which is true/);
     assert.match(capture.body.system, /988/);
 
     await call({ kind: "chat", body: chatBody() });

@@ -217,8 +217,8 @@ export default function Guide() {
                       const has = kept.has(f.trim().toLowerCase());
                       return (
                         <Pressable key={f} accessibilityRole="button" accessibilityState={{ disabled: has }} accessibilityLabel={has ? t("companion.guide.keptA11y", { fact: f }) : t("companion.guide.rememberA11y", { fact: f })} disabled={has} onPress={() => addFact(f, todayDate())}
-                          style={{ backgroundColor: has ? color.ink : "#fff", borderWidth: 1.5, borderColor: color.ink, borderRadius: 999, minHeight: 44, justifyContent: "center", paddingHorizontal: 14 }}>
-                          <Text style={{ fontFamily: font.text[600], fontSize: 13, color: has ? color.cream : color.ink }}>{has ? t("companion.guide.kept", { fact: f }) : `+ ${f}`}</Text>
+                          style={{ backgroundColor: has ? color.ink : "#fff", borderWidth: 1.5, borderColor: color.ink, borderRadius: 22, minHeight: 44, justifyContent: "center", paddingHorizontal: 14, paddingVertical: 8, maxWidth: "100%" }}>
+                          <Text style={{ fontFamily: font.text[600], fontSize: 13, lineHeight: 18, flexShrink: 1, color: has ? color.cream : color.ink }}>{has ? t("companion.guide.kept", { fact: f }) : `+ ${f}`}</Text>
                         </Pressable>
                       );
                     })}
@@ -231,7 +231,7 @@ export default function Guide() {
           {busy ? <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}><Sun size={18} mood="spin" /><Text style={[type.body(12), { color: color.mute }]}>{t("companion.guide.looking")}</Text></View> : null}
           {log.length === 1 ? (
             <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8, marginTop: 6 }}>
-              {chips.map((c) => <Pressable key={c} accessibilityRole="button" onPress={() => send(c)} style={{ backgroundColor: "#fff", borderWidth: 1.5, borderColor: color.ink, borderRadius: 999, minHeight: 44, justifyContent: "center", paddingHorizontal: 14 }}><Text style={{ fontFamily: font.text[600], fontSize: 13, color: color.ink }}>{c}</Text></Pressable>)}
+              {chips.map((c) => <Pressable key={c} accessibilityRole="button" onPress={() => send(c)} style={{ backgroundColor: "#fff", borderWidth: 1.5, borderColor: color.ink, borderRadius: 22, minHeight: 44, justifyContent: "center", paddingHorizontal: 14, paddingVertical: 8, maxWidth: "100%" }}><Text style={{ fontFamily: font.text[600], fontSize: 13, color: color.ink }}>{c}</Text></Pressable>)}
             </View>
           ) : null}
         </ScrollView>
