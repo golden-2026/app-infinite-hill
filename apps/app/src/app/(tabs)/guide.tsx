@@ -202,7 +202,8 @@ export default function Guide() {
     <SafeAreaView edges={["top"]} style={{ flex: 1, backgroundColor: color.cream }}>
       <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : undefined} style={{ flex: 1 }}>
         <View style={{ paddingHorizontal: 18, paddingBottom: 8 }}><TabHeader eyebrow={t("companion.guide.eyebrow", { door: doorLabel(wing) })} title={t("companion.guide.header")} pose="think" /></View>
-        <ScrollView ref={scroller} contentContainerStyle={{ paddingHorizontal: 18, paddingVertical: 8, gap: 10 }}>
+        {/* every new line (their question, the "thinking" dots, the answer, the remember chips) brings the bottom into view */}
+        <ScrollView ref={scroller} onContentSizeChange={() => scroller.current?.scrollToEnd({ animated: true })} contentContainerStyle={{ paddingHorizontal: 18, paddingVertical: 8, gap: 10 }}>
           {log.map(([who, said, offers], i) => (
             <View key={i} style={{ gap: 6 }}>
               <View style={{ maxWidth: "88%", alignSelf: who === "u" ? "flex-end" : "flex-start", backgroundColor: who === "u" ? color.ink : "#fff", borderWidth: who === "u" ? 0 : 1, borderColor: color.line, borderRadius: 16, paddingVertical: 10, paddingHorizontal: 14 }}>
