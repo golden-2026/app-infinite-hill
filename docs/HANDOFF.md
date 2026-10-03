@@ -54,8 +54,7 @@ Content is mostly accurate (4.0); the learning design is the weak part (2.9). Fi
 2. Placement: the longest answer is right in 68% of story questions; some word questions have two true options;
    Simply Spiritual has no placement questions. (Folds into the learning engine.)
 3. Guide prompt (api/guide.js): DONE (expo-live69) the English 988 line and longer build-a-week / hard-text answers; it tells users scholars
-   review the lessons and that there are "voices they know" (owner, 2026-10-03: KEEP these claims for the demo; do not remove); the 90-word limit is too
-   short for build-a-week / hard-text answers.
+   review the lessons and that there are "voices they know" (owner, 2026-10-03: KEEP these claims for the demo; do not remove).
 4. Lessons: every practice ends "the bell holds the time"; 3,229 imagined practices; review only looks back one day;
    life-tip endings trivialize serious material; 1,435 carry lines just repeat the title (process leftovers).
 Send the kit to Panditji, paid reviewers and an instructional designer before writing year 5.
