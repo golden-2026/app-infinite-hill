@@ -35,7 +35,7 @@ const T = {
     legal: [['Privacy', 'privacy'], ['Terms', 'terms'], ['Biometric consent', 'biometric'], ['Legal', 'legal']],
     notAff: 'Not affiliated with any religious institution',
     comp: 'Design comp · Ambassadors and Keepers shown are targets, not signed',
-    disc: 'infinite hill teaches from public-domain scripture, checked by Keepers of each tradition. It is not a substitute for a congregation, a clergy member, or medical or mental-health care. Off-app gatherings are hosted only by verified institutions and organizers; all off-app events are 18+.',
+    disc: 'infinite hill teaches from public-domain scripture, to be checked by Keepers of each tradition. It is not a substitute for a congregation, a clergy member, or medical or mental-health care. Off-app gatherings, once they start, will be hosted only by verified institutions and organizers; all off-app events will be 18+.',
     back: '← home',
   },
   es: {
@@ -51,7 +51,7 @@ const T = {
     legal: [['Privacidad', 'privacy'], ['Términos', 'terms'], ['Consentimiento biométrico', 'biometric'], ['Legal', 'legal']],
     notAff: 'Sin afiliación con ninguna institución religiosa',
     comp: 'Boceto de diseño · Los embajadores y guardianes que se muestran son personas que buscamos, no han firmado',
-    disc: 'infinite hill enseña a partir de escrituras de dominio público, revisadas por guardianes de cada tradición. No sustituye a una congregación, a un ministro religioso ni a la atención médica o de salud mental. Los encuentros fuera de la app los organizan solo instituciones y organizadores verificados; todos los eventos fuera de la app son para mayores de 18 años.',
+    disc: 'infinite hill enseña a partir de escrituras de dominio público, que revisarán guardianes de cada tradición. No sustituye a una congregación, a un ministro religioso ni a la atención médica o de salud mental. Los encuentros fuera de la app, cuando empiecen, los organizarán solo instituciones y organizadores verificados; todos los eventos fuera de la app serán para mayores de 18 años.',
     back: '← inicio',
   },
 };
@@ -124,7 +124,7 @@ function page(lang, k, [title, body]) {
       ${cols}
     </nav>
     <div class="big mark"><img src="/site-art/logo-mark.webp" alt="" width="311" height="320">infinite hill</div>
-    <div class="legal"><span>© 2026 infinite hill</span>${legal}<span>${t.notAff}</span><span class="comp">${t.comp}</span></div>
+    <div class="legal"><span>© 2026 Infinite Hill Ventures, Inc.</span>${legal}<span>${t.notAff}</span><span class="comp">${t.comp}</span></div>
     <div class="disc">${t.disc}</div>
   </div>
 </footer>

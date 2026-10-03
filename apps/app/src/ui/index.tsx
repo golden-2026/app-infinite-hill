@@ -225,13 +225,40 @@ export function Sun({ size = 64, mood = "calm" }: { size?: number; mood?: "calm"
   );
 }
 
+/** Where each voice's head and shoulders sit in its photo (packages/brand/art/photos-*.jpg), so small and round
+ *  faces frame the person, not the whole scene: a = photo width/height, cx/cy = the point to center (fractions of
+ *  the photo), vh = how much of the photo's height the frame shows (top of the head to a little shoulder). */
+const FACE_FOCUS: Record<string, { a: number; cx: number; cy: number; vh: number }> = {
+  CHRISTIANITY: { a: 560 / 700, cx: 0.5, cy: 0.42, vh: 0.86 },
+  CATHOLIC: { a: 382 / 523, cx: 0.55, cy: 0.3, vh: 0.48 },
+  HINDUISM: { a: 700 / 467, cx: 0.48, cy: 0.27, vh: 0.46 },
+  ISLAM: { a: 560 / 700, cx: 0.5, cy: 0.45, vh: 0.92 },
+  JUDAISM: { a: 560 / 700, cx: 0.5, cy: 0.38, vh: 0.6 },
+  BUDDHISM: { a: 560 / 700, cx: 0.5, cy: 0.4, vh: 0.62 },
+  SIKHISM: { a: 420 / 651, cx: 0.45, cy: 0.22, vh: 0.42 },
+  SPIRITUAL: { a: 560 / 700, cx: 0.47, cy: 0.33, vh: 0.6 },
+};
+
+/** The photo sized and offset so FACE_FOCUS's point sits in the middle of a w×h frame (never leaving a gap). */
+function faceFrame(wing: string, w: number, h: number) {
+  const f = FACE_FOCUS[wing];
+  if (!f) return null;
+  let H = h / f.vh, W = H * f.a;
+  if (W < w) { W = w; H = W / f.a; }
+  const left = Math.min(0, Math.max(w - W, w / 2 - f.cx * W));
+  const top = Math.min(0, Math.max(h - H, h / 2 - f.cy * H));
+  return { position: "absolute" as const, width: W, height: H, left, top };
+}
+
 /** A voice's portrait (or its initial on the door's tint when there is no photo). */
 export function Face({ ic, w = 96, h = 120, r = 16, caption = true, big = false }: { ic: any; w?: number; h?: number; r?: number; caption?: boolean; big?: boolean }) {
   const ref = data.PHOTOS[ic.wing];
   const a = art(ref);
+  // small numeric frames (the round faces) are framed on the head; the big welcome portrait keeps the whole photo
+  const framed = !big && typeof w === "number" && typeof h === "number" ? faceFrame(ic.wing, w, h) : null;
   return (
     <View style={{ width: w, height: h, borderRadius: r, overflow: "hidden", backgroundColor: a ? "#000" : ic.tint }} accessibilityLabel={`${ic.name}, ${doorLabel(ic.wing)}`}>
-      {a ? <Image source={a.src} style={StyleSheet.absoluteFill} contentFit="cover" contentPosition={big ? "center" : "top"} transition={FADE} cachePolicy="memory-disk" /> : (
+      {a ? <Image source={a.src} style={framed ?? StyleSheet.absoluteFill} contentFit="cover" contentPosition={big ? "center" : "top"} transition={FADE} cachePolicy="memory-disk" /> : (
         <View style={[StyleSheet.absoluteFill, styles.center]}><Text style={{ fontFamily: font.display[800], fontSize: big ? 64 : 36, color: "#ffffff55" }}>{ic.short[0]}</Text></View>
       )}
       {caption && a ? <LinearGradient pointerEvents="none" colors={["rgba(0,0,0,0)", "rgba(0,0,0,.62)"]} style={[styles.faceScrim, { height: Math.min(h * 0.6, big ? 150 : 90) }]} /> : null}
