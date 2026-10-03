@@ -32,13 +32,14 @@ design changes go live, ask before deploying, real testimonials only, check usag
 3. Guide, sprint 2: one-tap "switch to my own path" in chat, the sampler week, tidier "remember this" chips, an
    automatic grader for the 30 cases.
 4. Cost per active user; alpha invites (owner picks 10–20 people); 5 interviews; Panditji sign-off; one voice LOI.
-5. Owner decisions open: mascot name; founder's note "we don't care which door" (keep or match); research-page
+5. The learning engine (owner priority, "as sophisticated as Harvard"): rebuild placement as a real adaptive test (item difficulty, understanding not word-matching, plausible distractors, stop when confident, a short open-answer check before big jumps), then mastery tracking and spaced review.
+6. Owner decisions open: mascot name; founder's note "we don't care which door" (keep or match); research-page
    videos "in production" vs "planned"; privacy page naming the AI provider.
 
 ## How to ship
 - App: `cd apps/app; $env:CI='1'; npx expo export --platform web --output-dir ../../atlas/expo-liveN`, then
   `node atlas/pack-functions.mjs atlas/expo-liveN`, then the Netlify MCP deploy-site (site a55f267b-…), running
-  its npx command inside the export folder (delete .netlify first). Last deploy: expo-live66.
+  its npx command inside the export folder (delete .netlify first). Last deploy: expo-live68 (2026-10-03: research story cards, pages match the app, legal name Infinite Hill Ventures, Inc., photos reframed, "your voice on this journey", placement back = start over).
 - Website: edit apps/app/public/site.html with small node scripts; Spanish pairs in atlas/mock/es.mjs (build throws
   on mismatch); rebuild with `node mock/build.mjs --apply` and `--lang es --apply` from atlas/.
 - Lessons: never `npm run lessons` (wipes live lessons); build with `--out` to a scratch folder and merge weeks.
