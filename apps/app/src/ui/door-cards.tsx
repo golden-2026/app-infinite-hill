@@ -2,8 +2,9 @@
 // big card (your door / your roots with fresh eyes), and the smaller tradition tiles. All are radios.
 import { type ReactNode } from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
-import { icon } from "@ih/content";
-import { doorLabel } from "@/i18n";
+import { data, icon } from "@ih/content";
+import { doorLabel, isEs, t } from "@/i18n";
+import { QUOTES_ES } from "@/content/voice-quotes";
 import { DOOR_HOOK, OWN_PATH } from "@/content/journeys";
 import { tapHaptic } from "@/lib/haptics";
 import { Face, Guy, color, font, type } from "@/ui";
@@ -49,6 +50,8 @@ export function OwnPathCard({ on, onPress, size = "hero", eyebrow = OWN_PATH.tit
 /** A tradition as a big card: "your door" for someone who practices, or "your roots, with fresh eyes". */
 export function BigDoorCard({ door, on, onPress, eyebrow, line, a11y }: { door: string; on: boolean; onPress: () => void; eyebrow: string; line?: string; a11y?: string }) {
   const ic = icon(door);
+  // the voice's own words about why this faith matters to them, and their name (the homepage shows the same)
+  const quote: string | undefined = isEs() ? QUOTES_ES[door] : (data.QUOTES as Record<string, string> | undefined)?.[door];
   return (
     <Radio on={on} onPress={onPress} a11y={a11y ?? doorLabel(door)} style={[s.big, on && s.bigOn, { borderLeftColor: ic.tint }]}>
       <View style={{ flexDirection: "row", gap: 14, alignItems: "center" }}>
@@ -62,6 +65,12 @@ export function BigDoorCard({ door, on, onPress, eyebrow, line, a11y }: { door: 
           <Text style={[type.body(13), { color: color.mute }]}>{line ?? DOOR_HOOK[door]}</Text>
         </View>
       </View>
+      {quote && ic.name ? (
+        <View style={{ marginTop: 14, paddingTop: 12, borderTopWidth: 1, borderTopColor: color.line, gap: 6 }}>
+          <Text style={{ fontFamily: font.display[500], fontStyle: "italic", fontSize: 15, lineHeight: 21, color: color.ink }}>“{quote}”</Text>
+          <Text style={[type.eyebrow(9), { color: ic.tint }]}>— {t("onboarding.door.quoteBy", { name: ic.name })}</Text>
+        </View>
+      ) : null}
     </Radio>
   );
 }
