@@ -1163,6 +1163,17 @@ a.btn:active,.gbtn:active{transform:scale(.96)}
 <script>(function () {
   // the picker: one selected at a time; arrows, Home and End move between them (WAI-ARIA tabs, automatic activation)
   var pk = document.querySelector('[data-picker]'); if (!pk) return;
+  // the seven up front come in a fresh random order on every visit (each tab moves with its panel); the rest stay put
+  (function () {
+    var row0 = pk.querySelector('.pk-tabs'), box = pk.querySelector('.pk-panels');
+    var first = [].slice.call(row0.querySelectorAll('[role=tab][data-g=first]'));
+    var pairs = first.map(function (b) { return [b, document.getElementById(b.getAttribute('aria-controls'))]; });
+    for (var i = pairs.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)), x = pairs[i]; pairs[i] = pairs[j]; pairs[j] = x; }
+    var tabAfter = first.length ? first[first.length - 1].nextSibling : null;
+    var rest = [].slice.call(box.children).filter(function (p) { return pairs.every(function (q) { return q[1] !== p; }); });
+    pairs.forEach(function (q) { row0.insertBefore(q[0], tabAfter); });
+    pairs.forEach(function (q) { box.insertBefore(q[1], rest[0] || null); });
+  })();
   var tabs = [].slice.call(pk.querySelectorAll('[role=tab]')), panels = [].slice.call(pk.querySelectorAll('[role=tabpanel]')), row = pk.querySelector('.pk-tabs');
   var more = pk.querySelector('.pk-more');
   pk.classList.add('js');
