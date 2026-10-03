@@ -67,6 +67,7 @@ export function BigDoorCard({ door, on, onPress, eyebrow, line, a11y }: { door: 
       </View>
       {quote && ic.name ? (
         <View style={{ marginTop: 14, paddingTop: 12, borderTopWidth: 1, borderTopColor: color.line, gap: 6 }}>
+          <Text style={[type.eyebrow(9), { color: ic.tint }]}>{t("onboarding.door.voiceIs", { name: ic.name })}</Text>
           <Text style={{ fontFamily: font.display[500], fontStyle: "italic", fontSize: 15, lineHeight: 21, color: color.ink }}>“{quote}”</Text>
           <Text style={[type.eyebrow(9), { color: ic.tint }]}>— {t("onboarding.door.quoteBy", { name: ic.name })}</Text>
         </View>
