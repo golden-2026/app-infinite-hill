@@ -86,12 +86,13 @@ export default function Know() {
     );
   }
 
-  // The top "back" takes back the last answer (or the offer), then goes to the intro, before leaving the check.
+  // The top "back" never takes back one answer (a check you can redo question by question isn't a check): it starts
+  // the whole check over from its intro, and from the intro it leaves.
   const stepBack = () => {
     if (picked) return true;
-    if (offer !== "open" && atOffer({ ...climb, declined: false })) setOffer("open");
-    else if (answers.length) setAnswers(answers.slice(0, -1));
-    else setStarted(false);
+    setAnswers([]);
+    setOffer("open");
+    setStarted(false);
     return true;
   };
 
