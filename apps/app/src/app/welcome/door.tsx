@@ -5,7 +5,8 @@ import { useState, useEffect, type ReactNode } from "react";
 import { Text, View } from "react-native";
 import { DOORS, label } from "@ih/content";
 import { PERSON } from "@/content/intake";
-import { isDoor, youAnswers } from "@/lib/onboard";
+import { isDoor, profileFor, youAnswers } from "@/lib/onboard";
+import { afterDoor } from "@/lib/lane";
 import { useStore } from "@/lib/store";
 import { doorLabel, isEs, t } from "@/i18n";
 import { Btn, Eyebrow, Link, type } from "@/ui";
@@ -26,7 +27,8 @@ const TRADITIONS: string[] = DOORS.map(([, w]: [string, string]) => w).filter((w
 export default function PickDoor() {
   useEffect(() => { track("onboard_step", { step: "door" }); }, []);
   useTitle(t("onboarding.door.title"));
-  const { saved } = useStore();
+  const { saved, update, today } = useStore();
+  const why = saved.settings.profile?.answers.why;
   const { stance, raisedIn, learning } = youAnswers(saved.settings.profile);
   const home = stance === "partner" ? (isDoor(learning) ? learning : null) : isDoor(raisedIn) ? raisedIn : null;
   const mode = stance === "partner" ? (home ? "partner" : "closest")
@@ -35,7 +37,9 @@ export default function PickDoor() {
     : stance === "left" ? (home ? "left" : "own")
     : stance ? "own" : "open";
   // one door shown (the faith you're learning, or your own): it's already chosen, so "continue" works straight away
-  const single = (mode === "partner" || mode === "yours") && home ? home : null;
+  // ...and someone who said "spiritual, not religious" or "just curious" finds "my own path" already chosen (every door
+  // stays one tap away)
+  const single = (mode === "partner" || mode === "yours") && home ? home : stance === "spiritual" || (why === "curious" && mode === "own") ? "SPIRITUAL" : null;
   const [door, setDoor] = useState<string | null>(single);
   useEffect(() => { if (single) setDoor((d) => d ?? single); }, [single]);
   const [more, setMore] = useState(false);
@@ -107,8 +111,17 @@ export default function PickDoor() {
     </>;
   }
 
+  // The full welcome walks the map next. The gentle, light and quick ways in (lib/lane.ts) skip the map, the check and
+  // the summary, so the door's profile is made here, carrying what the first step told us.
+  const go = (d: string) => {
+    const next = afterDoor(why);
+    if (next === "trail") return router.push({ pathname: "/welcome/trail", params: { door: d } });
+    update({ profile: profileFor(saved.settings.profile, d, today) });
+    router.push({ pathname: next === "ready" ? "/welcome/ready" : "/welcome/voice", params: { door: d } });
+  };
+
   return (
-    <WelcomeFrame step={2} door={door} footer={<Btn testID="door-continue" disabled={!door} onPress={() => router.push({ pathname: "/welcome/trail", params: { door: door! } })}>{door ? (door === "SPIRITUAL" ? t("onboarding.startMyPath") : t("onboarding.door.open", { door: doorLabel(door) })) : t("onboarding.door.pick")}</Btn>}>
+    <WelcomeFrame step={2} door={door} footer={<Btn testID="door-continue" disabled={!door} onPress={() => go(door!)}>{door ? (door === "SPIRITUAL" ? t("onboarding.startMyPath") : t("onboarding.door.open", { door: doorLabel(door) })) : t("onboarding.door.pick")}</Btn>}>
       <Host pose={mode === "own" ? "globe" : "point"}>{host}</Host>
       {body}
       <Text style={[type.caption(), { textAlign: "center" }]}>{t("onboarding.door.caption")}</Text>

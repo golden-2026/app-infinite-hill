@@ -11,7 +11,10 @@ import { label as contentLabel } from "@ih/content";
 
 import { readJSON, writeJSON } from "@/lib/storage";
 import { chooseLang, fill, formatDate, formatNumber, getLang, isLang, render, setLangState, subscribeLang, type Lang, type Vars } from "./core";
-import { EN, ES } from "./strings";
+import { EN as AREA_EN, ES as AREA_ES } from "./strings";
+import * as gentle from "./strings/gentle"; // the ways in (lib/lane.ts); registered here, beside the merged areas
+const EN = { ...AREA_EN, ...gentle.en } as typeof AREA_EN; // typed keys for these: tg() in lib/gentle-t.ts
+const ES = { ...AREA_ES, ...gentle.es } as typeof AREA_ES;
 
 export type { Lang } from "./core";
 export { formatDate, formatNumber, getLang, fill } from "./core";

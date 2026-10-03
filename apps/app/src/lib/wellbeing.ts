@@ -71,6 +71,13 @@ export function dueAtStart(wb: Wellbeing): number | null {
   return wb.offered.includes(1) || wb.checks.length ? null : 1;
 }
 
+/** The baseline deferred to the third day (lib/lane.ts baselineAtStart false: someone who came grieving, frightened,
+ *  low, carrying a hurt, or sent by their parents): due once they've come on two earlier days (a first-week lesson
+ *  counts as a day) and are starting a lesson on a third. Same once-only rule as dueAtStart. */
+export function dueOnThirdDay(daysBefore: number, wb: Wellbeing): number | null {
+  return daysBefore >= 2 ? dueAtStart(wb) : null;
+}
+
 /**
  * After a lesson: the milestone the days walked just reached, if it is 21 or later, hasn't been offered, and was
  * reached within the last week (so a 60-day phone isn't asked the "day 50" question).

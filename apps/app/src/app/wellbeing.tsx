@@ -8,13 +8,15 @@ import { sendWellbeing } from "@/lib/wellbeing-send";
 import { Btn, Eyebrow, Link, Screen, color, font, toast, type } from "@/ui";
 import { Host } from "@/ui/host";
 import { t, type Key } from "@/i18n";
+import { tg } from "@/lib/gentle-t";
 
 // The 30-second check-in (the WHO-5 Well-Being Index): one screen, five statements, each answered 0–5. It opens once
 // right after onboarding (m=1, before the first lesson) and when a lesson reaches day 21, 50, 100 and every 30 days
 // after (lib/wellbeing decides; this screen only asks). Always skippable: the × and "skip for now" both mark the
 // milestone as offered, so it is never asked twice. Then it goes on to wherever it was going (`then`), or to the
 // first lesson (`door` + `day`).
-type Params = { m?: string; then?: string; door?: string; day?: string };
+// `gentle`: the baseline deferred to the third day (lib/lane.ts), introduced more softly.
+type Params = { m?: string; then?: string; door?: string; day?: string; gentle?: string };
 
 export default function WellbeingCheckIn() {
   useTitle(t("wellbeing.title"));
@@ -41,7 +43,7 @@ export default function WellbeingCheckIn() {
   return (
     <Screen close={skip} scroll title={t("wellbeing.title")} footer={<Btn testID="wellbeing-done" disabled={score === null} onPress={done}>{t("wellbeing.done")}</Btn>} contentStyle={{ gap: 16 }}>
       <Eyebrow>{t("wellbeing.eyebrow")}</Eyebrow>
-      <Host pose={m === 1 ? "wave" : "think"}>{t(intro)}</Host>
+      <Host pose={p.gentle === "1" ? "heart" : m === 1 ? "wave" : "think"}>{p.gentle === "1" && m === 1 ? tg("gentle.wellbeing.intro") : t(intro)}</Host>
       <Text style={type.body(14)}>{t("wellbeing.ask")}</Text>
       <Text style={type.caption(12)}>{t("wellbeing.legend")}</Text>
       <View style={{ gap: 10 }}>

@@ -70,6 +70,11 @@ export type Settings = {
   yearSeen?: string | null;
   /** First-week lessons (content/life-moments.ts) read ahead of the path, as "DOOR:day"; never sits. */
   forYouDone?: string[];
+  /** The dates a first-week lesson was finished: not sits (the path and streak stay put), but days someone came
+   *  (lib/lane.ts daysCome), so a gentle lane's deferred check-in can find their third day. */
+  forYouOn?: string[];
+  /** Signed up on a gentle or light way in (lib/lane.ts): Today leads with the first-week list until it's walked. */
+  weekFirst?: boolean;
   /** The first-week card on Today, closed. */
   forYouClosed?: boolean;
   /** Where the onboarding check started them, by door ({ HINDUISM: 22 }): they showed they know camp one, and chose

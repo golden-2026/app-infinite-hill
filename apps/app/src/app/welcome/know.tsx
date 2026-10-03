@@ -38,7 +38,7 @@ const where = (s: { camp: string; name: string }) => stretchLabel(s.camp, s.name
 export default function Know() {
   useEffect(() => { track("onboard_step", { step: "know" }); }, []);
   useTitle(t("onboarding.know.title"));
-  const { door: raw } = useLocalSearchParams<{ door?: string }>();
+  const { door: raw, later } = useLocalSearchParams<{ door?: string; later?: string }>();
   const door = doorParam(raw) !== "SPIRITUAL" ? doorParam(raw) : null;
   const { update, saved, today } = useStore();
   // One seed per visit (state, not memo) so the options never reshuffle while the answer is revealed.
@@ -69,7 +69,9 @@ export default function Know() {
     const settle = { ...(saved.settings.settle || {}) };
     delete settle[door];
     update({ profile: { ...profileFor(saved.settings.profile, door, today), knowledge }, placed: withStart(saved.settings.placed, door, start), moved, settle });
-    router.push({ pathname: "/welcome/belief", params: { door } });
+    // offered later from Today (a light way in, lib/lane.ts): back to Today, where the door now stands
+    if (later === "1") router.replace("/today");
+    else router.push({ pathname: "/welcome/belief", params: { door } });
   };
 
   if (!started || !stops.length) {

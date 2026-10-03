@@ -98,7 +98,8 @@ test("the Spanish dictionaries are complete, with the same slots as the English"
     }
     // every area file is merged into the app (directly, or through another area file)
     const name = f.replace(/\.ts$/, "");
-    const merged = index.includes(`"./${name}"`) || files.some((g) => g !== f && readFileSync(new URL(g, dir), "utf8").includes(`"./${name}"`));
+    // (or registered beside the areas in i18n/index.ts, like gentle.ts)
+    const merged = index.includes(`"./${name}"`) || readFileSync(new URL("../index.ts", dir), "utf8").includes(`"./strings/${name}"`) || files.some((g) => g !== f && readFileSync(new URL(g, dir), "utf8").includes(`"./${name}"`));
     assert.ok(merged, `${f} is merged into strings/index.ts`);
   }
   assert.ok(keys > 50, `${keys} keys`);

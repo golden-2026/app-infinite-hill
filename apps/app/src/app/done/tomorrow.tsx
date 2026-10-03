@@ -1,3 +1,4 @@
+import { tg } from "@/lib/gentle-t";
 import { useTitle } from "@/lib/title";
 import { router } from "expo-router";
 import { useState } from "react";
@@ -8,6 +9,7 @@ import { enableReminders, reminderSupport, remindersReady, remindersServer } fro
 import { useStore } from "@/lib/store";
 import { todaysThree } from "@/lib/three";
 import { dueAfterLesson, emptyWellbeing } from "@/lib/wellbeing";
+import { gentleStart } from "@/content/life-moments";
 import { Bubble, Btn, Guy, Link, Screen, Sun, color, font, type } from "@/ui";
 import { t, type Key } from "@/i18n";
 
@@ -58,6 +60,14 @@ export default function Tomorrow() {
   return (
     <Screen close={finish} scroll footer={<Btn testID="see-you" onPress={finish}>{t("session.tomorrow.done")}</Btn>} contentStyle={{ flexGrow: 1, justifyContent: "center", gap: 16 }}>
       <View style={{ flexDirection: "row", gap: 14, alignItems: "flex-start" }}><Guy pose="wave" h={96} /><Bubble>{t("session.tomorrow.bubble")}</Bubble></View>
+
+      {/* after a gentle lesson (grief, scary health news, something hard, forgiveness): the Guide, offered softly */}
+      {gentleStart(st.profile?.answers?.why) ? (
+        <View testID="gentle-guide" style={{ flexDirection: "row", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
+          <Text style={[type.body(14), { flex: 1, minWidth: 180 }]}>{tg("gentle.after.guide")}</Text>
+          <Link onPress={() => router.push("/guide")}>{tg("gentle.after.talk")}</Link>
+        </View>
+      ) : null}
 
       {/* the reason to come back: tomorrow's lesson, by name */}
       <View testID="tomorrow-card" style={{ backgroundColor: color.ink, borderRadius: 22, paddingVertical: 18, paddingHorizontal: 18, gap: 6 }}>

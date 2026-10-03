@@ -115,6 +115,7 @@ test("a first-week day opens ahead of the path only on the person's own door and
 test("grief and scary health news start gently, are the companion's hard persona, and reach the Guide", () => {
   assert.equal(gentleStart("grief"), true);
   assert.equal(gentleStart("diagnosis"), true);
+  assert.equal(gentleStart("hard"), true); // something hard walks the gentle lane too (lib/lane.ts)
   assert.equal(gentleStart("baby"), false);
   const prof = (why) => ({ v: 1, door: "CATHOLIC", knowledge: 10, commitment: 50, openness: "stay", answers: { why }, bridges: {}, lastBridgeOn: null, setOn: "2026-10-01" });
   const mem = { v: 1, facts: [], seeded: false, moods: [], journal: [], done: [], reflected: [], helpClosedOn: null };

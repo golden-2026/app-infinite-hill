@@ -33,7 +33,7 @@ export type Question = {
 /** Sorts people warmly before the door screen, so it can show them the right way in. Never assigns a door. */
 export const STANCE_Q: Question = {
   id: "stance", ask: "first, a little about you. where are you with religion right now?",
-  note: "private — it stays on your phone. it only changes what we show you first. every door stays open.",
+  note: "private — it stays on your phone. it only changes what i show you first. every door stays open.",
   choices: [
     { id: "practice", label: "I practice a faith" },
     { id: "unsure", label: "I grew up in one, but I'm not sure I believe anymore" },
@@ -70,7 +70,7 @@ export function raisedInQ(stance: string | null): Question {
   // Learning a partner's or family's faith: ask which one they're learning, never where they grew up.
   if (stance === "partner") return {
     id: "learning", ask: es() ? RAISED_IN_ES.learningAsk : "lovely. which faith are you learning?",
-    note: es() ? RAISED_IN_ES.learningNote : "we'll teach it the way the people who practice it understand it. your own background stays yours.",
+    note: es() ? RAISED_IN_ES.learningNote : "i'll teach it the way the people who practice it understand it. your own background stays yours.",
     choices: RAISED.filter((c) => c.id !== "none" && c.id !== "mixed"),
   };
   const grewUp = stance === "unsure" || stance === "left";
@@ -87,7 +87,7 @@ export function raisedInQ(stance: string | null): Question {
 
 /** Asked after the knowledge check, to learn how much the tradition is part of their life. {door} is the tradition's name. */
 export const BELIEF_QUESTIONS: Question[] = [
-  { id: "why", ask: "what brings you to {door}?", note: "pick the closest. it shapes what we lead with.", choices: [
+  { id: "why", ask: "what brings you to {door}?", note: "pick the closest. it shapes what i lead with.", choices: [
     { id: "own", label: "I want to know my own religion better" },
     { id: "roots", label: "reconnect with how I grew up" },
     { id: "god", label: "I'm wondering if I believe in God" },
@@ -117,7 +117,7 @@ export const BELIEF_QUESTIONS: Question[] = [
     { id: "holidays", label: "holidays and big moments" },
     { id: "rarely", label: "not much right now" },
   ] },
-  { id: "hold", ask: "how do you hold it?", optional: true, note: "there's no right answer. this only changes how we talk to you.", choices: [
+  { id: "hold", ask: "how do you hold it?", optional: true, note: "there's no right answer. this only changes how i talk to you.", choices: [
     { id: "fully", label: "I believe it, fully" },
     { id: "questions", label: "I believe, with questions" },
     { id: "culture", label: "it's more culture and family" },
@@ -174,7 +174,7 @@ export const INTAKE: Record<string, Question> = {
     { id: "absent", label: "just not around" }, { id: "others", label: "other people's thing" },
     { id: "curious", label: "something I was curious about" }, { id: "avoided", label: "something to stay away from" },
   ] },
-  believe: { id: "believe", ask: "what do you believe right now?", optional: true, note: "private. it only changes what we show you.", choices: [
+  believe: { id: "believe", ask: "what do you believe right now?", optional: true, note: "private. it only changes what i show you.", choices: [
     { id: "bigger", label: "there's something bigger" }, { id: "unsure", label: "not sure" },
     { id: "meaning", label: "no god, but meaning matters" }, { id: "searching", label: "I'm searching" },
   ] },
@@ -221,8 +221,8 @@ export function intakeReply(qid: string, a: string | string[]): string | null {
   if (qid === "organized" && v[0] === "away") return r ? r.away : "fair. no one here will sign you up for anything.";
   if (qid === "believe" && v[0] === "meaning") return r ? r.meaning : "good. there's a lot here that doesn't need a god to work.";
   if (qid === "raised" && v[0] === "none") return r ? r.none : "then you get to walk in with fresh eyes.";
-  if (qid === "turnedOff" && v.includes("hurt")) return r ? r.hurt : "i'm sorry. we'll go gently.";
-  if (qid === "feeling" && v.includes("grief")) return r ? r.grief : "i'm sorry. we'll start with something steady.";  return null;
+  if (qid === "turnedOff" && v.includes("hurt")) return r ? r.hurt : "i'm so sorry. let's go gently.";
+  if (qid === "feeling" && v.includes("grief")) return r ? r.grief : "i'm so sorry. i'll start you with something steady.";  return null;
 }
 
 /** Which bridge themes an answer points at (see BRIDGES[].tags). */

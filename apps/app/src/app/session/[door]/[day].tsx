@@ -157,6 +157,19 @@ function Session({ door, day, kidId, mode, deep, extra = false, voiceOn, onFinis
       const where = at >= 0 ? at : Math.max(0, steps.findIndex((x: any) => x.type !== "bell"));
       steps = [...steps.slice(0, where), ...welcome, ...steps.slice(where)];
     }
+    if (extra && !placedFirst) {
+      // A first-week lesson read ahead (content/life-moments.ts) had no "yesterday" either: its look back at the day
+      // before goes. For someone's very first lesson (the gentle and light ways in, lib/lane.ts), the door's welcome
+      // takes its place, as day one would have had it.
+      const at = steps.findIndex((x: any) => x.type === "beat" && /^review/.test(String(x.seg || "")));
+      steps = steps.filter((x: any) => !(x.type === "beat" && /^review/.test(String(x.seg || ""))));
+      if (!me.sits.some((x) => !x.kidId) && !(me.settings.forYouDone || []).length) {
+        let id = Math.max(...steps.map((x: any) => x.id)) + 1;
+        const welcome = splitBeats(String(data.WELCOME[door] || data.WELCOME.SPIRITUAL || ""), 45, 2).map((text: string) => ({ type: "beat", seg: "a welcome", text, head: null, id: id++ }));
+        const where = at >= 0 ? at : Math.max(0, steps.findIndex((x: any) => x.type !== "bell"));
+        steps = [...steps.slice(0, where), ...welcome, ...steps.slice(where)];
+      }
+    }
     const cards = recallCards.filter((c) => c.word.toLowerCase() !== String(p.word).toLowerCase());
     if (cards.length) {
       let id = Math.max(...steps.map((x: any) => x.id)) + 1;
@@ -167,7 +180,7 @@ function Session({ door, day, kidId, mode, deep, extra = false, voiceOn, onFinis
       steps = [...steps.slice(0, -1), ...recall, steps[steps.length - 1]]; // just before the tally
     }
     return { ...p, steps };
-  }, [door, day, mode, level, deep, learn, script, recallCards, placedFirst]);
+  }, [door, day, mode, level, deep, learn, script, recallCards, placedFirst, extra]); // eslint-disable-line react-hooks/exhaustive-deps
   const shownLevel = deep ? Math.min(5, level + 2) : level;
   const [rushSecs, setRushSecs] = useState<number | null>(null);
   const [feel, setFeel] = useState<string | null>(null);
@@ -274,8 +287,11 @@ function Session({ door, day, kidId, mode, deep, extra = false, voiceOn, onFinis
     if (extra) {
       // a first-week lesson opened ahead of the path: remembered as read, never a sit (the path and streak stay put)
       const key = `${door}:${day}`;
-      update({ forYouDone: [...(me.settings.forYouDone || []).filter((k) => k !== key), key] });
-      router.replace("/today");
+      // its date is kept too: not a sit, but a day they came (lib/lane.ts daysCome, for the deferred check-in)
+      const on = todayNow();
+      update({ forYouDone: [...(me.settings.forYouDone || []).filter((k) => k !== key), key], forYouOn: [...(me.settings.forYouOn || []).filter((d) => d !== on), on].slice(-30) });
+      // a short, warm close: after a gentle lesson the Guide is offered softly (/done/week), then Today
+      router.replace({ pathname: "/done/week", params: { door, day: String(day) } });
       return;
     }
     if (deep) {

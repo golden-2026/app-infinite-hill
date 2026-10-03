@@ -1,3 +1,4 @@
+import { tg } from "@/lib/gentle-t";
 import { track } from "@/lib/analytics";
 import { useTitle } from "@/lib/title";
 // Today, redesigned (owner brief 2026-10-01): one obvious next step. The hero holds today's lesson and its start
@@ -28,6 +29,8 @@ import { QuestTodayCard } from "@/ui/quest";
 import { SettleCard } from "@/ui/settle";
 import { campLabel, campName, doorLabel, isEs, t } from "@/i18n";
 import { firstWeekFor, gentleStart } from "@/content/life-moments";
+import { baselineAtStart, daysCome, laneFor, nextWeekDay } from "@/lib/lane";
+import { dueOnThirdDay, emptyWellbeing } from "@/lib/wellbeing";
 
 export default function Today() {
   useTitle(t("home.tab.today"));
@@ -61,7 +64,23 @@ export default function Today() {
   // the companion: today's practice, mood and note. On a quiet day it comes first and the games step back.
   const { day: companion } = useCompanionDay();
   const quiet = companion.quiet;
-  const start = () => router.push({ pathname: "/session/[door]/[day]", params: { door: wing, day: String(lesson) } });
+  // what brought them (lib/lane.ts), on their own door only
+  const why = st.profile?.door === wing ? st.profile.answers?.why : null;
+  // Every lesson opens through here. Someone who came grieving, frightened, low, carrying a hurt, or sent by their
+  // parents gets the wellbeing baseline on their third day instead of at sign-up (a first-week lesson counts as a day).
+  const openLesson = (n: number) => {
+    const before = daysCome(derived.dates, st.forYouOn).filter((d) => d < today).length;
+    const m = baselineAtStart(why) ? null : dueOnThirdDay(before, st.wellbeing || emptyWellbeing());
+    if (m) router.push({ pathname: "/wellbeing", params: { m: String(m), door: wing, day: String(n), gentle: "1" } });
+    else router.push({ pathname: "/session/[door]/[day]", params: { door: wing, day: String(n) } });
+  };
+  const start = () => openLesson(lesson);
+  // The gentle and light ways in (lib/lane.ts) lead with the first week: its next lesson is the hero until the week is
+  // walked (or its card closed); then the path's own day one. Those lessons are extras, never sits.
+  const readAhead = new Set(st.forYouDone || []);
+  const walkedHere = (n: number) => readAhead.has(`${wing}:${n}`) || saved.sits.some((x) => !x.kidId && x.door === wing && x.day === n);
+  const weekList = st.weekFirst && !st.forYouClosed ? firstWeekFor(why, wing) || [] : [];
+  const weekNext = weekList.length ? nextWeekDay(why, wing, walkedHere) : null;
   const doors: [string, "home" | "visit"][] | null = st.visitWing ? [[st.homeWing, "home"], [st.visitWing, "visit"]] : null;
   // the streak (the adult's own; a child's days never count here). "show my streak" off hides all of it.
   const streakOn = st.streakOn !== false;
@@ -69,7 +88,7 @@ export default function Today() {
   const golden = sk.golden && sk.streak >= 7;
   const goal = goalView(st.goal, sk);
   // no streak yet: say what starts one. Grief or scary health news: no streak framing, just an open door.
-  const startLabel = gentleStart(st.profile?.answers?.why) ? t("home.today.startGentle") : derived.showedUp === 0 ? t("home.today.streakDay1") : t("home.today.streakNew");
+  const startLabel = gentleStart(st.profile?.answers?.why) || weekNext !== null ? t("home.today.startGentle") : derived.showedUp === 0 ? t("home.today.streakDay1") : t("home.today.streakNew");
   // the streak under the start button, said gently. It's only "at stake" when no rest day is left, and louder only as the day ends.
   const streakLine = streakOn && sk.streak >= 1 && !quiet ? (() => {
     if (sk.streak === 1) return { text: t("home.hero.streakBefore", { count: 1 }), loud: false };
@@ -135,7 +154,12 @@ export default function Today() {
         {quiet ? null : <SettleCard door={wing} />}
 
         {/* the one thing to do today */}
-        {doneHere ? (
+        {!doneHere && weekNext !== null ? (
+          // the first week leads (lib/lane.ts): its next lesson, whenever they're ready (no "done for today": these are
+          // extras, so there's no day to close; the path's own hero comes back once the week is walked)
+          <TodayHero done={false} n={weekNext} title={lessonInfo(wing, weekNext)?.title || t("common.day", { n: weekNext })} camp={tg("gentle.today.week", { n: weekList.indexOf(weekNext) + 1, of: weekList.length })} first={derived.showedUp === 0 && !readAhead.size} quiet={quiet}
+            goal={null} streak={null} onStart={() => openLesson(weekNext)} startLabel={t("home.today.startA11y", { n: weekNext, title: lessonInfo(wing, weekNext)?.title || "" })} />
+        ) : doneHere ? (
           <TodayHero done n={lesson} title={title} carry={info.carry || (data.DAY1[wing] || data.DAY1.SPIRITUAL).carry} streak={streakOn ? sk.streak : null}
             tomorrow={tomorrow} night={night} when={night ? t("home.today.sleepOnIt") : hour >= 19 ? t("home.today.seeTomorrow") : t("home.today.seeSundown")}
             extra={isDemo() ? <View style={{ marginTop: 12 }}><Btn kind="ghost" onPress={() => demoShiftDays(1)}>{t("home.today.demoSkip")}</Btn></View> : null} />
@@ -148,13 +172,14 @@ export default function Today() {
         {/* a life moment (grief, a new baby, scary health news, belonging, forgiveness, a wedding, gratitude): a few already-written lessons that fit, from their own
             door, openable ahead of the path as extras (content/life-moments.ts). Shown on quiet days too. */}
         {(() => {
-          const why = st.profile?.door === wing ? st.profile.answers?.why : null;
           const days = firstWeekFor(why, wing);
           if (!days || st.forYouClosed) return null;
-          const read = new Set(st.forYouDone || []);
-          const walked = (n: number) => read.has(`${wing}:${n}`) || saved.sits.some((x) => !x.kidId && x.door === wing && x.day === n);
+          const walked = walkedHere;
           if (days.every(walked)) return null;
-          const open = (n: number) => { router.push({ pathname: "/session/[door]/[day]", params: { door: wing, day: String(n) } }); };
+          const open = openLesson;
+          // the light ways in (a baby, a wedding, belonging, gratitude) skipped the placement check at sign-up: offered
+          // here instead, until they've walked a day of the path or been placed
+          const offerPlace = laneFor(why) === "light" && wing !== "SPIRITUAL" && !st.placed?.[wing] && !saved.sits.some((x) => !x.kidId && x.door === wing);
           return (
             <View testID="for-you" style={[s.lite, { marginTop: 0, flexDirection: "column", alignItems: "stretch", gap: 6 }]}>
               <View style={{ flexDirection: "row", alignItems: "center", gap: 10 }}>
@@ -182,6 +207,12 @@ export default function Today() {
                 <Pressable testID="for-you-circle" accessibilityRole="link" accessibilityLabel={t("home.forYou.circleA11y")} onPress={() => router.push("/together")}
                   style={({ pressed }) => [{ minHeight: 40, justifyContent: "center", opacity: pressed ? 0.8 : 1 }]}>
                   <Text style={{ fontFamily: font.text[600], fontSize: 14, color: color.ink, textDecorationLine: "underline" }}>{t("home.forYou.circle")}</Text>
+                </Pressable>
+              ) : null}
+              {offerPlace ? (
+                <Pressable testID="for-you-place" accessibilityRole="link" accessibilityLabel={tg("gentle.today.placeA11y")} onPress={() => router.push({ pathname: "/welcome/know", params: { door: wing, later: "1" } })}
+                  style={({ pressed }) => [{ minHeight: 40, justifyContent: "center", opacity: pressed ? 0.8 : 1 }]}>
+                  <Text style={{ fontFamily: font.text[600], fontSize: 14, color: color.ink, textDecorationLine: "underline" }}>{tg("gentle.today.place")} ›</Text>
                 </Pressable>
               ) : null}
               <Text style={[type.body(12), { color: color.mute }]}>{t(why === "wedding" ? "home.forYou.weddingBody" : "home.forYou.body")}</Text>

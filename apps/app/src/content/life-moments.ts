@@ -104,9 +104,11 @@ export const FIRST_WEEK: Record<LifeMoment, Record<string, Pick[]>> = {
   },
 };
 
-/** Grief, scary health news and forgiveness (someone may be carrying a hurt): sign-up never talks about keeping it
- *  up (no streak framing). Belonging, a wedding and gratitude get the normal streak words. */
-export const gentleStart = (why: unknown) => why === "grief" || why === "diagnosis" || why === "forgiveness";
+/** Grief, scary health news, something hard, and forgiveness (someone may be carrying a hurt): sign-up never talks
+ *  about keeping it up (no streak framing), and they walk the gentle lane in (lib/lane.ts). "hard" has no list of its
+ *  own: the homepage promises it the door's day one ("a breath, a story, one line to carry").
+ *  Belonging, a wedding and gratitude get the normal streak words. */
+export const gentleStart = (why: unknown) => why === "grief" || why === "diagnosis" || why === "hard" || why === "forgiveness";
 
 export const isLifeMoment =(why: unknown): why is LifeMoment => typeof why === "string" && (LIFE_MOMENTS as readonly string[]).includes(why);
 
