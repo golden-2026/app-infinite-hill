@@ -26,7 +26,7 @@ design changes go live, ask before deploying, real testimonials only, check usag
 
 ## In progress / next (sprint 1 starts Tue Oct 6, when the weekly allowance resets)
 1. Year 4 lessons (days 1062–1426): written and edited; ~430 checked; ~2,500 checks left. Resume the workflow
-   `write-lessons-new-process` (script path in the previous session; args {year:4, batch:10, ranges per door
+   `write-lessons-new-process` (script: scripts/workflows/write-lessons-new-process.js, run with the Workflow tool, scriptPath; args {year:4, batch:10, ranges per door
    1062–1426}). Then an Opus second pass on years 1–4. Push each year live only with the owner's okay.
 2. Couple features: "walk it together", "before the holiday", couple Guide questions.
 3. Guide, sprint 2: one-tap "switch to my own path" in chat, the sampler week, tidier "remember this" chips, an
