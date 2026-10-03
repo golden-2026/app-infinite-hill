@@ -6,7 +6,7 @@ import type { Stance } from "@/lib/onboard";
 // stance and skips that question. Anything else is ignored.
 // grief, baby, diagnosis, belonging, forgiveness, wedding and gratitude are life moments: they also get a short
 // first-week list on Today (content/life-moments.ts). Who all fifteen are: docs/PERSONAS.md.
-export const WHY_KEYS = ["own", "roots", "god", "partner", "wedding", "kids", "baby", "calm", "belonging", "forgiveness", "gratitude", "grief", "diagnosis", "hard", "curious"] as const;
+export const WHY_KEYS = ["own", "roots", "god", "partner", "wedding", "kids", "baby", "calm", "belonging", "forgiveness", "gratitude", "grief", "diagnosis", "hard", "curious", "sent"] as const;
 export type WhyKey = (typeof WHY_KEYS)[number];
 
 export function whyParam(raw: unknown): { why: WhyKey | null; stance: Stance | null } {

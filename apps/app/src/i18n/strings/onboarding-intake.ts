@@ -64,6 +64,7 @@ export const QUESTIONS_ES: Record<string, QuestionEs> = {
       diagnosis: "una noticia de salud que da miedo, mía o de alguien cercano",
       hard: "estoy pasando por algo difícil",
       curious: "solo curiosidad",
+      sent: "mis papás me dijeron que viniera",
     },
   },
   "belief.raised": {

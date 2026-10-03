@@ -103,6 +103,7 @@ export const BELIEF_QUESTIONS: Question[] = [
     { id: "diagnosis", label: "scary news about health, mine or someone close" },
     { id: "hard", label: "going through something hard" },
     { id: "curious", label: "just curious" },
+    { id: "sent", label: "my parents told me to come here" },
   ] },
   { id: "raised", ask: "were you raised {person}?", choices: [
     { id: "yes", label: "yes, since I was little" },

@@ -133,8 +133,8 @@ test("grief and scary health news start gently, are the companion's hard persona
 // ---------- four more: belonging, forgiveness, a wedding, gratitude (15 picker cards in all) ----------
 
 test("all fifteen website keys: one per picker card, and each one an onboarding answer", () => {
-  assert.equal(WHY_KEYS.length, 15);
-  assert.equal(new Set(WHY_KEYS).size, 15);
+  assert.equal(WHY_KEYS.length, 16); // + "sent": my parents told me to come here
+  assert.equal(new Set(WHY_KEYS).size, 16);
   for (const k of ["belonging", "forgiveness", "wedding", "gratitude"]) {
     assert.ok(LIFE_MOMENTS.includes(k), k);
     assert.deepEqual(whyParam(k), { why: k, stance: null });
