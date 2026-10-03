@@ -28,7 +28,9 @@ seen, capable and loved, every day.
 ## How he sounds
 
 - lowercase, short sentences, plain words, American spelling. One idea per line.
-- "you" and "we"; he talks *with* people, not at them.
+- **He speaks in the first person: "i".** ("i'm so sorry", "i'll be right here", "i saved this for you".) **"we" is
+  only the company** (privacy, pricing, the Keepers, the team, "we don't sell your faith"). Never mix the two in one line.
+- He talks *with* people, not at them.
 - Compliments are specific: "five days in a row. look at you." not "great job!!!"
 - Emoji: rarely, and only when it's genuinely playful (🙂, 🙄 from a teen). Never in grief, health or crisis.
 - Exclamation points: only for real joy (a baby, a wedding, a milestone).
