@@ -320,11 +320,17 @@ export function BetStep({ step, onDone }: { step: any; onDone: Done }) {
   const [picked, setPicked] = useState<string | null>(null);
   const ok = picked === step.answer;
   const fx = useFx();
+  // the builder's order is fixed per lesson; a fresh order each visit, so a replay can't be answered by position
+  const [options] = useState<string[]>(() => {
+    const o = [...step.options];
+    for (let i = o.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [o[i], o[j]] = [o[j], o[i]]; }
+    return o;
+  });
   return (
     <View style={{ gap: 10, width: "100%" }}>
       <Kicker>{t("session.seg.bet")}</Kicker>
       <Prompt size={26}>{t("session.bet.q", { word: step.word })}</Prompt>
-      {step.options.map((o: string) => <Choice key={o} text={o} on={picked === o} right={picked !== null && o === step.answer} disabled={picked !== null} onPress={() => { setPicked(o); fx.react(o === step.answer ? "right" : "wrong"); }} />)}
+      {options.map((o: string) => <Choice key={o} text={o} on={picked === o} right={picked !== null && o === step.answer} disabled={picked !== null} onPress={() => { setPicked(o); fx.react(o === step.answer ? "right" : "wrong"); }} />)}
       {picked !== null ? <Verdict ok={ok} seed={step.word.length} body={step.reveal} onNext={() => onDone(ok)} /> : null}
     </View>
   );
@@ -373,11 +379,17 @@ export function ForkStep({ step, onDone }: { step: any; onDone: Done }) {
   const [picked, setPicked] = useState<number | null>(null);
   const fx = useFx();
   const i0 = step.options.length;
+  // scripts mostly put the right answer second; show the options in a fresh order (fixed for this visit), keeping each option's own index
+  const [order] = useState<number[]>(() => {
+    const o = step.options.map((_: string, i: number) => i);
+    for (let i = o.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [o[i], o[j]] = [o[j], o[i]]; }
+    return o;
+  });
   return (
     <View style={{ gap: 10, width: "100%" }}>
       <Kicker>{t("session.seg.fork")}</Kicker>
       <Text style={[s.reveal, { fontSize: 19, marginBottom: 6 }]}>{step.setup}</Text>
-      {step.options.map((o: string, i: number) => <Choice key={i} text={o} on={picked === i} right={picked !== null && i === step.answer} disabled={picked !== null} onPress={() => { setPicked(i); fx.react("neutral"); }} />)}
+      {order.map((i: number) => <Choice key={i} text={step.options[i]} on={picked === i} right={picked !== null && i === step.answer} disabled={picked !== null} onPress={() => { setPicked(i); fx.react("neutral"); }} />)}
       {picked !== null ? <Verdict ok={picked === step.answer} seed={i0} title={picked === step.answer ? t("session.fork.right") : t("session.fork.wrong")} body={step.reveal} onNext={() => onDone(null)} /> : null}
     </View>
   );

@@ -42,8 +42,10 @@ export default function Know() {
   const door = doorParam(raw) !== "SPIRITUAL" ? doorParam(raw) : null;
   const { update, saved, today } = useStore();
   // One seed per visit (state, not memo) so the options never reshuffle while the answer is revealed.
-  const [seed] = useState(() => Math.floor(Math.random() * 10000) + 1);
-  const stops = useMemo(() => (door ? placeStops(door, seed) : []), [door, seed]);
+  // A restart (top "back") draws a new seed and puts the basics already shown at the back, so a second try sees other questions.
+  const [seed, setSeed] = useState(() => Math.floor(Math.random() * 10000) + 1);
+  const [seen, setSeen] = useState<string[]>([]);
+  const stops = useMemo(() => (door ? placeStops(door, seed, seen) : []), [door, seed]); // eslint-disable-line react-hooks/exhaustive-deps
   const firsts = useMemo(() => stops.map((s) => s.first), [stops]);
   const [started, setStarted] = useState(false);
   // every answer, in order, with the stop it came from; "back" takes the last one off
@@ -90,6 +92,8 @@ export default function Know() {
   // the whole check over from its intro, and from the intro it leaves.
   const stepBack = () => {
     if (picked) return true;
+    setSeen((xs) => [...new Set([...xs, ...(stops[0]?.qs || []).map((q) => q.q)])]);
+    setSeed(Math.floor(Math.random() * 10000) + 1);
     setAnswers([]);
     setOffer("open");
     setStarted(false);

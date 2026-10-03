@@ -25,14 +25,14 @@ function pick<T>(xs: T[], n: number, seed: number): T[] {
   return a.slice(0, n);
 }
 
-/** The check's stops for a door (none for "my own path" or a door with no bank). */
-export function placeStops(door: string, seed = 1): PlaceStop[] {
+/** The check's stops for a door (none for "my own path" or a door with no bank). Basics already seen (a restart) go to the back of the pick. */
+export function placeStops(door: string, seed = 1, seen: string[] = []): PlaceStop[] {
   const bank = PLACEMENT_BANK[door];
   if (!bank) return [];
   const basics: PlaceQ[] = ((data?.PLACEMENT?.[door] || []) as { q: string; o: string[]; a: number }[]).map((x) => ({ kind: "basic" as const, ...x }));
   return bank.stops.map((st, i) => ({
     first: st.first, last: st.last, camp: st.camp, name: st.name,
-    qs: i === 0 && basics.length >= 3 ? pick(basics, 3, seed) : st.qs.map((q) => (q.kind === "word" ? { kind: "word" as const, q: q.term, term: q.term, o: q.o, a: q.a, day: q.day } : { kind: "fork" as const, q: q.q, o: q.o, a: q.a, day: q.day })),
+    qs: i === 0 && basics.length >= 3 ? [...pick(basics.filter((q) => !seen.includes(q.q)), 3, seed), ...pick(basics.filter((q) => seen.includes(q.q)), 3, seed)].slice(0, 3) : st.qs.map((q) => (q.kind === "word" ? { kind: "word" as const, q: q.term, term: q.term, o: q.o, a: q.a, day: q.day } : { kind: "fork" as const, q: q.q, o: q.o, a: q.a, day: q.day })),
   }));
 }
 
