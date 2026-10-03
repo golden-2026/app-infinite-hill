@@ -49,6 +49,7 @@ the repository-local context summary.
 - **Personas:** fifteen people arrive through the homepage picker (two groups: "where i'm at" and "a life
   moment"), each carrying a "what brings you" answer into sign-up; seven life moments also get a Keeper-review
   first-week card on Today. The list, care rules and lesson gaps: [PERSONAS.md](PERSONAS.md).
+- **The Guide playbook**: how the Guide and companion handle seekers, people who moved on, anger at hard texts, hostility, venting and crisis, with 30 test cases: [GUIDE_PLAYBOOK.md](GUIDE_PLAYBOOK.md), cases in `tests/guide-cases/cases.json`.
 - **Daily rollover:** a Door completed on an earlier local date advances to its
   next lesson when the app opens; progression no longer depends on a visible
   demo control.
