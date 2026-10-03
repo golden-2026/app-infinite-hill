@@ -43,10 +43,10 @@ export default function Ready() {
   return (
     <WelcomeFrame step={8} door={door}>
       <View style={{ alignItems: "center", gap: 18 }}>
-        <Guy pose={gentle ? "sitrock" : "path"} h={180} />
+        <Guy pose={gentle ? "heart" : "path"} h={180} />
         <Text style={[type.h1(24), { textAlign: "center", maxWidth: 280 }]}>
           {head}{"\n"}
-          <Text style={{ fontFamily: "Manrope_500Medium", fontStyle: "italic" }}>{sub}</Text>
+          <Text style={gentle ? { fontFamily: "Manrope_500Medium", fontSize: 18, lineHeight: 25 } : { fontFamily: "Manrope_500Medium", fontStyle: "italic" }}>{sub}</Text>
         </Text>
         {title ? <Eyebrow style={{ textAlign: "center" }}>{tg("gentle.ready.first", { title })}</Eyebrow> : null}
         {gentle ? null : <Text style={[type.caption(), { textAlign: "center" }]}>{t("onboarding.ready.fact")}</Text>}

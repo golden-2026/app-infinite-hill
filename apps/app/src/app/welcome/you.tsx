@@ -35,7 +35,7 @@ export default function You() {
   const helloKey = fromSite.stance === "spiritual" ? "spiritual" : fromSite.why;
   const hello = helloKey && step === first ? tg(`gentle.hello.${helloKey}` as GentleKey) : null;
   const lane = laneFor(fromSite.why);
-  const pose = lane === "gentle" ? "sitrock" : fromSite.why === "baby" || fromSite.why === "wedding" ? "joy" : step === 0 ? "wave" : "think";
+  const pose = lane === "gentle" ? "heart" : fromSite.why === "baby" || fromSite.why === "wedding" ? "joy" : step === 0 ? "wave" : "think";
 
   const done = (s: Stance | null, raisedIn: string | null, learning: string | null = null) => {
     const heard = saved.settings.profile?.answers.heardFrom;
