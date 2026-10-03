@@ -47,3 +47,15 @@ design changes go live, ask before deploying, real testimonials only, check usag
   `& "C:\Program Files\Git\cmd\git.exe" -C C:\Users\shset\code\golden-app push origin main`.
 - Usage: weekly allowance resets Tuesday 2 AM Pacific; extra credits this week $312. Fable does NOT avoid credits
   once the weekly limit is hit.
+
+## Review kit findings (2026-10-03, docs/review-kit/, Claude's own baseline: overall 3.6/5)
+Content is mostly accurate (4.0); the learning design is the weak part (2.9). Fix first:
+1. "what would you do?" games: the right answer is option 2 in 88% of lessons; check the app shuffles options.
+2. Placement: the longest answer is right in 68% of story questions; some word questions have two true options;
+   Simply Spiritual has no placement questions. (Folds into the learning engine.)
+3. Guide prompt (api/guide.js): English has no 988 crisis line (Spanish and companion do); it tells users scholars
+   review the lessons and that there are "voices they know" (both pending: untrue today); the 90-word limit is too
+   short for build-a-week / hard-text answers.
+4. Lessons: every practice ends "the bell holds the time"; 3,229 imagined practices; review only looks back one day;
+   life-tip endings trivialize serious material; 1,435 carry lines just repeat the title (process leftovers).
+Send the kit to Panditji, paid reviewers and an instructional designer before writing year 5.
