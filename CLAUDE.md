@@ -1,59 +1,67 @@
-# Golden: Claude Code project context
+# Infinite Hill: Claude Code project context
 
-Golden is a mobile-first progressive web app for short daily religious and spiritual practice. The supplied look, feel, navigation, and information architecture are product constraints. Preserve them unless the owner explicitly requests a redesign.
+Infinite Hill (legal name Infinite Hill Ventures, Inc.; older files still say "Golden") is a mobile-first app for short
+daily religious and spiritual practice across eight doors: Hinduism, Buddhism, Christianity, Catholicism, Judaism,
+Islam, Sikhism and my own path (Simply Spiritual). The owner, Shaan Sethi, is a non-technical founder.
 
 ## Start here
 
-Read these files before changing the product:
+1. `docs/HANDOFF.md`: where things stand, what's next, how to ship. It is the newest source of truth.
+2. `docs/brand/MASCOT_VOICE.md`: every user-facing line is the mascot's voice.
+3. `docs/PERSONAS.md`: the five personas and sixteen reasons.
+4. `docs/GUIDE_PLAYBOOK.md` and `tests/guide-cases/cases.json` before changing `api/guide.js` or `api/companion.js`.
+5. `docs/review-kit/`: the outside review kit and its findings.
 
-1. `README.md` for setup and architecture.
-2. `docs/PRODUCT_SPEC.md` for intended product behavior and release gates.
-3. `docs/WAYFINDER.md` for the current system map and implementation decisions.
-4. `docs/CONTENT_RELEASE.md` for content status and approval requirements.
-5. `docs/PRIVACY_ARCHITECTURE.md` and `docs/ACCESSIBILITY_REVIEW.md` before changing accounts, Guide, storage, children/family features, or interaction patterns.
+Older docs (`README.md`, `CONTEXT.md`, `docs/PRODUCT_SPEC.md`, `docs/WAYFINDER.md`) describe the earlier "Golden"
+Vite prototype. Use them for background only; where they disagree with the handoff, the handoff wins.
+
+## Where things live
+
+- The real app is the Expo (React Native, web export) app in `apps/app` (`apps/app/src/app` holds the screens:
+  tabs Today, Guide, Together, You). The repo root's Vite build (`src/`, `index.html`) is the older prototype.
+- Website: `apps/app/public/site.html` plus the footer pages; Spanish pairs in `atlas/mock/es.mjs`.
+- Server functions: `api/*.js` (Guide, companion, state, wellbeing, circles, waitlist…), adapted by `netlify/functions/`.
+- Lesson scripts: `docs/curriculum/<door>/scripts/y<N>/day-NNNN.json`; tools in `packages/content/scripts/`.
+- Lesson workflows: `scripts/workflows/`.
+- Code: GitHub `golden-2026/app-infinite-hill`. The QA atlas is git-ignored in `atlas/`.
 
 ## Commands
 
 ```sh
 npm install
-npm run dev
-npm run build
-npm test
+npm run test:unit        # repo root: feature, backend and content tests
+cd apps/app; npx expo start --web
 ```
 
-The app runs at `http://localhost:5173/`; the public website is `http://localhost:5173/site.html`.
+Never run `npm run lessons` or `npm run export:web` in `apps/app`: they rebuild and wipe the live lessons. Build
+lessons with `--out` to a scratch folder and merge. Full shipping steps are in `docs/HANDOFF.md` ("How to ship").
 
-## Architecture
+## Owner rules
 
-- React 19 and Vite power the mobile app in `src/Golden.jsx`.
-- `public/site.html` is the supplied public website and opens the current app in an iframe.
-- `src/content/catalog.js` is the normalized content catalog.
-- `src/platform/` owns anonymous accounts, snapshots, recovery files, encryption, and API calls.
-- `api/state.js` and `api/_db.js` implement encrypted account-state persistence.
-- Netlify Functions adapt the Guide and state APIs in `netlify/functions/`.
-- Production uses private Netlify Blobs. Local development uses SQLite/libSQL.
-- `public/sw.js` and `public/manifest.webmanifest` provide installable PWA and offline-shell behavior.
-
-## Product truth
-
-The deployed build is a private beta. It currently has 2,648 mapped curriculum slots and 29 manuscript-authored preview lessons. None are approved for public release. Keeper review, voice participation, and recording rights remain pending. Do not turn prototype copy, proposed celebrities, planned Keepers, sample community numbers, prices, gifts, events, family accounts, payments, or email-list behavior into claims that those services are connected.
-
-The Guide must clearly fall back to supplied lesson text when no AI provider key is configured. Never put server credentials in `VITE_*` variables or browser code.
-
-The anonymous recovery credential is both a bearer secret and the basis of snapshot encryption. Treat exported recovery files like passwords. Do not log credentials, authorization headers, decrypted snapshots, selected doors, practice history, or Guide questions.
-
-## Change rules
-
-- Keep the supplied visual language and mobile dimensions.
-- Keep manuscript text separate from generated placeholder content.
-- Run the relevant tests and inspect the rendered mobile app and website.
-- Do not claim a feature is connected until a live request proves it.
+- Plain, brief language with the owner; no jargon.
+- Send phone-size screenshots before any design or copy change goes live. Ask before every deploy.
+- Check usage and tell the owner the cost before any big job (workflows, lesson checks).
+- The mascot's voice is warm first; the mascot says "i", "we" is only the company. Only the approved mascot art
+  (backwards cap) anywhere.
 - Do not publish unreviewed religious content or imply that proposed voices and Keepers are signed.
-- Do not deploy, change production secrets, or make the repository public without the owner's approval.
+- No "draft" or "review pending" labels in user-facing copy; don't mention daily AI limits.
+- Never invent testimonials or community numbers; show real counts only above a threshold.
+- Lessons get repeated review passes; a year goes live only with the owner's okay.
+- Keep the Foundation "in formation"; never state a share of proceeds the owner hasn't chosen.
 
-## Live surfaces
+## Safety and privacy
 
-- App: https://golden-house-beta.netlify.app/
-- Website: https://golden-house-beta.netlify.app/site.html
-- Account: https://golden-house-beta.netlify.app/?view=account
+- The Guide and companion must fall back gracefully when no AI key is configured. Never put server credentials in
+  `EXPO_PUBLIC_*`, `VITE_*` or any browser code.
+- Crisis care: danger or self-harm points to 988 (US) or local emergency help, in every language.
+- Don't log credentials, auth headers, decrypted snapshots, chosen doors, practice history, journal text or Guide
+  questions. Treat recovery files like passwords.
+- Don't claim a feature is connected until a live request proves it.
+- Don't deploy, change production secrets, push to GitHub or make anything public without the owner's approval.
+  (Pushing is blocked for Claude; the owner runs the push command in `docs/HANDOFF.md`.)
 
+## Live surfaces (behind a Netlify login)
+
+- App: https://infinite-hill.netlify.app/
+- Website: https://infinite-hill.netlify.app/site.html
+- QA atlas: https://infinite-hill-app-atlas.netlify.app (refresh only at milestones)
