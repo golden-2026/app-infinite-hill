@@ -39,7 +39,7 @@ design changes go live, ask before deploying, real testimonials only, check usag
 ## How to ship
 - App: `cd apps/app; $env:CI='1'; npx expo export --platform web --output-dir ../../atlas/expo-liveN`, then
   `node atlas/pack-functions.mjs atlas/expo-liveN`, then the Netlify MCP deploy-site (site a55f267b-…), running
-  its npx command inside the export folder (delete .netlify first). Last deploy: expo-live68 (2026-10-03: research story cards, pages match the app, legal name Infinite Hill Ventures, Inc., photos reframed, "your voice on this journey", placement back = start over).
+  its npx command inside the export folder (delete .netlify first). Last deploy: expo-live69 (2026-10-03 evening: English Guide gets 988 and room for ~250 words on built paths and hard texts; "your move" and "call it" shuffle answers each visit; placement restart draws new starter questions; homepage evidence moves up after "was that the plan?" with 47% / 1 in 2 lonely / 33% less drug use; research page drops the cigarette line and says "women" for the 16-year study).
 - Website: edit apps/app/public/site.html with small node scripts; Spanish pairs in atlas/mock/es.mjs (build throws
   on mismatch); rebuild with `node mock/build.mjs --apply` and `--lang es --apply` from atlas/.
 - Lessons: never `npm run lessons` (wipes live lessons); build with `--out` to a scratch folder and merge weeks.
@@ -50,10 +50,10 @@ design changes go live, ask before deploying, real testimonials only, check usag
 
 ## Review kit findings (2026-10-03, docs/review-kit/, Claude's own baseline: overall 3.6/5)
 Content is mostly accurate (4.0); the learning design is the weak part (2.9). Fix first:
-1. "what would you do?" games: the right answer is option 2 in 88% of lessons; check the app shuffles options.
+1. DONE (expo-live69): "what would you do?" games now shuffle (the right answer was option 2 in 88% of lessons).
 2. Placement: the longest answer is right in 68% of story questions; some word questions have two true options;
    Simply Spiritual has no placement questions. (Folds into the learning engine.)
-3. Guide prompt (api/guide.js): English has no 988 crisis line (Spanish and companion do); it tells users scholars
+3. Guide prompt (api/guide.js): DONE (expo-live69) the English 988 line and longer build-a-week / hard-text answers; it tells users scholars
    review the lessons and that there are "voices they know" (owner, 2026-10-03: KEEP these claims for the demo; do not remove); the 90-word limit is too
    short for build-a-week / hard-text answers.
 4. Lessons: every practice ends "the bell holds the time"; 3,229 imagined practices; review only looks back one day;
