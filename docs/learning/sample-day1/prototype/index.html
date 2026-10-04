@@ -1,0 +1,249 @@
+<title>Namaste, Day One</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Manrope:wght@600;800&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* the app's own lesson look: a dusk ground, one gold accent, cream cards. Single dark look by design (lessons are always dusk). */
+:root{
+  color-scheme:dark;
+  --ink:#0A0A0A; --dusk2:#161616; --dusk3:#222222;
+  --gold:#EEFF6A; --cream:#F7F7F5; --line:#ffffff22; --mute:#ffffffaa; --soft:#ffffffcc;
+  --right:#8DE24A; --wrong:#FF6B6B; --cardInk:#0A0A0A; --cardMute:#55554f;
+  --mark:'Baloo 2',system-ui,sans-serif; --display:'Manrope','Inter',system-ui,sans-serif; --body:'Inter',system-ui,sans-serif;
+}
+html,body{height:100%}
+body{background:linear-gradient(180deg,var(--ink) 0%,var(--dusk2) 60%,var(--dusk3) 100%);background-color:var(--ink);color:#fff;font-family:var(--body);}
+.app{max-width:480px;margin:0 auto;min-height:100%;display:flex;flex-direction:column;padding-inline:16px;}
+.top{display:flex;align-items:center;gap:10px;padding-block:12px 6px;position:sticky;top:env(safe-area-inset-top,0px);background:var(--ink);z-index:2}
+.icon{width:40px;height:40px;border-radius:999px;border:0;background:#ffffff14;color:#fff;font-size:18px;display:grid;place-items:center;cursor:pointer}
+.icon:disabled{opacity:.25;cursor:default}
+.icon:focus-visible,.btn:focus-visible,.opt:focus-visible,.tile:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.track{flex:1;height:8px;background:#ffffff22;border-radius:6px;overflow:hidden}
+.bar{height:100%;background:var(--gold);border-radius:6px;transition:width .35s ease}
+.count{font:600 12px/1 var(--display);letter-spacing:.12em;color:var(--mute);font-variant-numeric:tabular-nums;min-width:40px;text-align:right}
+.eyebrow{font:600 11px/1.3 var(--display);letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+.eyebrow b{color:var(--gold);font-weight:800}
+main{flex:1;display:flex;flex-direction:column;gap:14px;padding-block:10px 18px}
+.panel{width:100%;border-radius:20px;display:block;aspect-ratio:4/5;object-fit:cover;background:#ffffff10}
+.panel.wide{aspect-ratio:1122/690}
+.say{background:var(--cream);color:var(--cardInk);border-radius:18px;padding:14px 16px;font:500 17px/1.45 var(--body);position:relative}
+.say .who{font:800 12px/1 var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--cardMute);margin-bottom:6px;display:block}
+.say.narr{background:transparent;color:var(--soft);padding:2px 2px;font-style:italic}
+h1{font:800 34px/1.05 var(--mark);color:var(--gold);text-wrap:balance;margin:0}
+h2{font:800 26px/1.15 var(--display);text-wrap:balance;margin:0;letter-spacing:-.01em}
+.card{background:var(--cream);color:var(--cardInk);border-radius:22px;padding:26px 22px;display:flex;flex-direction:column;gap:12px}
+.card .big{font:800 44px/1 var(--mark);color:var(--cardInk)}
+.card .eq{font:800 26px/1.2 var(--display)}
+.card p{margin:0;font:500 17px/1.5 var(--body);color:#2a2a26}
+.card .src{font:600 11px/1.3 var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--cardMute)}
+.card.gold{background:var(--gold)}
+.dev{font:500 15px/1.4 var(--body);color:#2a2a26}
+.opts{display:flex;flex-direction:column;gap:10px}
+.opt{border:2px solid #ffffff33;background:#ffffff0d;color:#fff;border-radius:16px;padding:14px 16px;text-align:left;font:600 16px/1.35 var(--body);cursor:pointer}
+.opt.right{border-color:var(--right);background:#8DE24A22}
+.opt.wrong{border-color:var(--wrong);background:#FF6B6B1f}
+.opt:disabled{cursor:default}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tile{border:2px solid var(--cardInk);background:var(--cream);color:var(--cardInk);border-radius:14px;padding:12px 10px;font:600 15px/1.25 var(--body);cursor:pointer;min-height:64px}
+.tile.sel{background:#fffbd0;border-color:#b8a800}
+.tile.done{background:var(--gold);border-color:var(--gold);opacity:.55;cursor:default}
+.tile.miss{animation:shake .3s}
+@keyframes shake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.myth{background:#ffffff0d;border:1px solid var(--line);border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:10px}
+.myth p{margin:0;font:600 16px/1.4 var(--body)}
+.pair{display:flex;gap:8px}
+.pair .opt{flex:1;text-align:center;padding:10px}
+.reveal{font:500 14px/1.45 var(--body);color:var(--soft)}
+.reveal b{color:var(--gold)}
+.verdict{border-radius:18px;padding:14px 16px;font:500 15px/1.45 var(--body)}
+.verdict.ok{background:#8DE24A1f;border:1px solid var(--right)}
+.verdict.no{background:#FF6B6B14;border:1px solid var(--wrong)}
+.verdict strong{display:block;font:800 18px/1.2 var(--display);margin-bottom:4px}
+textarea{width:100%;min-height:110px;border-radius:16px;border:2px solid #ffffff33;background:#ffffff0d;color:#fff;padding:12px;font:500 16px/1.45 var(--body);resize:vertical;box-sizing:border-box}
+.checks{display:flex;flex-direction:column;gap:8px;margin:0;padding:0;list-style:none}
+.checks li{display:flex;gap:10px;align-items:flex-start;font:500 15px/1.4 var(--body);color:var(--soft)}
+.checks li span{flex:0 0 22px;height:22px;border-radius:999px;border:2px solid #ffffff55;display:grid;place-items:center;font-size:13px}
+.checks li.hit span{background:var(--right);border-color:var(--right);color:var(--ink)}
+.host{display:flex;gap:12px;align-items:flex-end}
+.host img{width:84px;height:auto;flex:0 0 auto}
+.host .bubble{background:var(--cream);color:var(--cardInk);border-radius:18px 18px 18px 4px;padding:12px 14px;font:500 16px/1.4 var(--body)}
+.stats{display:flex;border:2px solid var(--gold);border-radius:20px;padding-block:12px}
+.stats div{flex:1;text-align:center;border-left:1px solid #ffffff22}
+.stats div:first-child{border-left:0}
+.stats b{display:block;font:800 24px/1.1 var(--display);font-variant-numeric:tabular-nums}
+.stats span{font:600 10px/1 var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.center{text-align:center;align-items:center}
+.foot{position:sticky;bottom:0;padding-block:10px calc(14px + env(safe-area-inset-bottom,0px));background:linear-gradient(180deg,transparent,var(--dusk3) 35%)}
+.btn{width:100%;border:0;border-radius:999px;padding:16px;font:800 15px/1 var(--display);letter-spacing:.1em;text-transform:uppercase;background:var(--gold);color:var(--ink);cursor:pointer}
+.btn:disabled{opacity:.35;cursor:default}
+.note{font:500 12px/1.4 var(--body);color:#ffffff77;text-align:center;margin:0}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="app">
+  <div class="top">
+    <button class="icon" id="back" aria-label="previous screen">‹</button>
+    <div class="track" aria-hidden="true"><div class="bar" id="bar"></div></div>
+    <div class="count" id="count"></div>
+  </div>
+  <main id="screen" aria-live="polite"></main>
+  <div class="foot"><button class="btn" id="next">next</button>
+    <p class="note" id="footnote">sample lesson · not reviewed by Panditji yet · in the app, every screen is read aloud</p></div>
+</div>
+
+<script>
+// One lesson, Hinduism day 1, in the new shape: hook, story, teach, play, do, look back.
+// Every fact comes from the existing day-1 script (Chandogya Upanishad 3.13.7; Monier-Williams).
+const S = [
+  {seg:"the hook", kind:"hook"},
+  {seg:"the story", kind:"panel", img:"img/p1.webp", lines:[["Nani","Namaste!"]], narr:"The doorbell. A parcel."},
+  {seg:"the story", kind:"panel", img:"img/p2.webp", wide:true, lines:[["Anika","Nani, why do you say namaste to everyone? Even the delivery guy?"]]},
+  {seg:"the story", kind:"panel", img:"img/p3.webp", wide:true, lines:[["Nani","It's two old Sanskrit words. Namas: a bow. Te: to you."]]},
+  {seg:"the story", kind:"panel", img:"img/p4.webp", lines:[["Anika","So it just means “I bow to you”?"],["Nani","That's the dictionary. But bow to what?"]]},
+  {seg:"the story", kind:"panel", img:"img/p5.webp", lines:[["Nani","An old text, the Chandogya Upanishad, says the light beyond the sky is the same light inside a person."]]},
+  {seg:"the story", kind:"panel", img:"img/p6.webp", lines:[["Nani","So namaste means: the light in me sees the light in you."]]},
+  {seg:"the teach", kind:"card", big:"namas", eq:"= a bow", src:"Sanskrit"},
+  {seg:"the teach", kind:"card", big:"te", eq:"= to you", src:"Sanskrit"},
+  {seg:"the teach", kind:"card", big:"namaste", eq:"= I bow to you", p:"That's the whole literal meaning.", src:"Monier-Williams, Sanskrit-English Dictionary (1899)"},
+  {seg:"the teach", kind:"card", eq:"Bow to what?", p:"Not your clothes, your job title, or your mood. The old texts keep pointing inward."},
+  {seg:"the teach", kind:"card", eq:"Out there and in here: one light.", p:"The Chandogya Upanishad says the light that shines above the heavens is the very same light inside a person.", src:"Chandogya Upanishad 3.13.7"},
+  {seg:"the teach", kind:"card", eq:"Already in there.", p:"You don't earn it first. On a bad day, on no sleep, it's there. The work is learning to notice it, in you and in whoever is across from you."},
+  {seg:"the teach", kind:"card", gold:true, eq:"The light in me sees the light in you.", p:"A reading of namaste, not its dictionary meaning. Texts like the Upanishads are why the reading makes sense."},
+  {seg:"play · myth or fact", kind:"myth", gate:true},
+  {seg:"play · the pairs", kind:"pairs", gate:true},
+  {seg:"play · apply it", kind:"apply", gate:true},
+  {seg:"play · explain it", kind:"explain"},
+  {seg:"do", kind:"do"},
+  {seg:"done", kind:"done"},
+];
+let i = 0, furthest = 0;
+const answered = {};
+const el = (h) => { const t = document.createElement("template"); t.innerHTML = h.trim(); return t.content; };
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function render() {
+  const s = S[i], m = $("screen");
+  m.innerHTML = "";
+  $("bar").style.width = Math.round((i / (S.length - 1)) * 100) + "%";
+  $("count").textContent = `${i + 1}/${S.length}`;
+  m.append(el(`<div class="eyebrow">the house voice reads · hinduism · <b>${esc(s.seg)}</b></div>`));
+  const views = { hook, panel, card, myth, pairs, apply, explain, doIt, done };
+  (views[s.kind === "do" ? "doIt" : s.kind])(s, m);
+  // reading screens can always be revisited; answered games stay answered
+  let b = -1; for (let j = i - 1; j >= 0; j--) if (!S[j].gate && S[j].kind !== "explain") { b = j; break; }
+  $("back").disabled = b < 0; $("back").dataset.to = b;
+  $("next").textContent = s.kind === "done" ? "start again" : "next";
+  $("next").disabled = !!(s.gate && !answered[i] && i >= furthest);
+  window.scrollTo(0, 0);
+}
+function go(n) { i = n; furthest = Math.max(furthest, i); render(); }
+$("next").onclick = () => {
+  if (S[i].kind === "done") { for (const k in answered) delete answered[k]; furthest = 0; return go(0); }
+  let k = i + 1;
+  if (i < furthest) while (k < furthest && S[k].gate && answered[k]) k++; // reviewing: skip games already answered
+  go(k);
+};
+$("back").onclick = () => { const to = +$("back").dataset.to; if (to >= 0) { i = to; render(); } };
+const unlock = () => { answered[i] = true; $("next").disabled = false; };
+
+function hook(s, m) {
+  m.append(el(`<img class="panel" src="img/hook.webp" alt="Three people greeting with palms pressed together: a yoga class, a shop in Chennai, a doorway in New Jersey">
+  <h1>You've said it a hundred times. Do you know what it means?</h1>
+  <p class="reveal">Two palms pressed together. A yoga class ending. A shopkeeper in Chennai. A host in New Jersey. And one word that goes with it.</p>`));
+}
+function panel(s, m) {
+  m.append(el(`<img class="panel${s.wide ? " wide" : ""}" src="${s.img}" alt="Story panel">`));
+  if (s.narr) m.append(el(`<div class="say narr">${esc(s.narr)}</div>`));
+  for (const [who, line] of s.lines) m.append(el(`<div class="say"><span class="who">${esc(who)}</span>${esc(line)}</div>`));
+}
+function card(s, m) {
+  m.append(el(`<div class="card${s.gold ? " gold" : ""}">${s.big ? `<div class="big">${esc(s.big)}</div>` : ""}<div class="eq">${esc(s.eq)}</div>${s.p ? `<p>${esc(s.p)}</p>` : ""}${s.src ? `<div class="src">${esc(s.src)}</div>` : ""}</div>`));
+}
+function myth(s, m) {
+  const items = [
+    ["Namaste literally means “the light in me sees the light in you.”", false, "Literally it's <b>namas, a bow, + te, to you</b>: I bow to you. The light is a reading of it."],
+    ["Namaste is made of two Sanskrit words.", true, "<b>namas</b>, a bow, and <b>te</b>, to you."],
+    ["An Upanishad says the light above the heavens is the light inside a person.", true, "The <b>Chandogya Upanishad</b> says it in the same breath: out there and in here, one light."],
+  ];
+  m.append(el(`<h2>Myth or fact?</h2>`));
+  let left = items.length;
+  items.forEach(([text, truth, why]) => {
+    const box = el(`<div class="myth"><p>${esc(text)}</p><div class="pair"><button class="opt" data-v="1">fact</button><button class="opt" data-v="0">myth</button></div><div class="reveal" hidden>${why}</div></div>`).firstElementChild;
+    box.querySelectorAll("button").forEach((b) => b.onclick = () => {
+      const ok = (b.dataset.v === "1") === truth;
+      box.querySelectorAll("button").forEach((x) => { x.disabled = true; if ((x.dataset.v === "1") === truth) x.classList.add("right"); });
+      if (!ok) b.classList.add("wrong");
+      box.querySelector(".reveal").hidden = false;
+      if (--left === 0) unlock();
+    });
+    m.append(box);
+  });
+}
+function pairs(s, m) {
+  const P = [["namas", "a bow"], ["te", "to you"], ["palms together, head tipped", "the gesture that goes with it"], ["the Chandogya Upanishad", "the same light, inside a person"]];
+  const right = [1, 3, 0, 2].map((k) => P[k][1]);
+  m.append(el(`<h2>What's inside the word? Tap the pairs.</h2>`));
+  const grid = el(`<div class="row2"></div>`).firstElementChild;
+  let pick = null, done = 0;
+  P.forEach(([l], k) => {
+    const L = el(`<button class="tile" data-k="${k}">${esc(l)}</button>`).firstElementChild;
+    const R = el(`<button class="tile" data-r="${esc(right[k])}">${esc(right[k])}</button>`).firstElementChild;
+    grid.append(L, R);
+  });
+  grid.querySelectorAll(".tile").forEach((t) => t.onclick = () => {
+    if (t.classList.contains("done")) return;
+    if (t.dataset.k !== undefined) { grid.querySelectorAll("[data-k]").forEach((x) => x.classList.remove("sel")); t.classList.add("sel"); pick = t; return; }
+    if (!pick) return;
+    if (P[+pick.dataset.k][1] === t.dataset.r) {
+      for (const x of [pick, t]) { x.classList.remove("sel"); x.classList.add("done"); x.disabled = true; }
+      pick = null; if (++done === P.length) { m.append(el(`<div class="verdict ok"><strong>all four. nice.</strong>namas + te: a bow, to you. That's the word, opened up.</div>`)); unlock(); }
+    } else { t.classList.add("miss"); setTimeout(() => t.classList.remove("miss"), 350); }
+  });
+  m.append(grid);
+}
+function apply(s, m) {
+  const o = [["their bad mood", 0], ["the same light that's in you", 1], ["that you're better than them", 0], ["nothing, it's just hello", 0]];
+  m.append(el(`<h2>A classmate is rude to you at lunch. If you greeted them with namaste the way Nani means it, what would you be noticing?</h2>`));
+  const box = el(`<div class="opts"></div>`).firstElementChild;
+  o.forEach(([t, ok]) => {
+    const b = el(`<button class="opt">${esc(t)}</button>`).firstElementChild;
+    b.onclick = () => {
+      box.querySelectorAll("button").forEach((x, k) => { x.disabled = true; if (o[k][1]) x.classList.add("right"); });
+      if (!ok) b.classList.add("wrong");
+      m.append(el(ok ? `<div class="verdict ok"><strong>right on.</strong>Namaste, read this way, looks past the moment to the light in the person. Even a rude one.</div>`
+                     : `<div class="verdict no"><strong>close, but not quite.</strong>The reading of namaste is about the light in them: the same light that's in you.</div>`));
+      unlock();
+    };
+    box.append(b);
+  });
+  m.append(box);
+}
+function explain(s, m) {
+  m.append(el(`<h2>In your own words: what does namaste literally mean, and what's the deeper reading?</h2>
+  <label class="eyebrow" for="ans">your answer</label>
+  <textarea id="ans" placeholder="type a sentence or two…"></textarea>
+  <ul class="checks" id="checks">
+    <li data-re="bow"><span>✓</span>says it literally means “I bow to you” (a bow, to you)</li>
+    <li data-re="light"><span>✓</span>names the deeper reading: the light in me sees the light in you</li>
+    <li data-re="upanishad|text|scripture"><span>✓</span><em>bonus:</em> says the reading comes from texts like the Upanishads</li>
+  </ul>
+  <p class="note" style="text-align:left">In the app, the AI checks this kindly and never grades spelling. Here, the boxes light up as you type.</p>`));
+  const ta = m.querySelector("#ans");
+  ta.oninput = () => m.querySelectorAll("#checks li").forEach((li) => li.classList.toggle("hit", new RegExp(li.dataset.re, "i").test(ta.value)));
+}
+function doIt(s, m) {
+  m.append(el(`<div class="host"><img src="img/namaste.webp" alt="the infinite hill mascot, palms together"><div class="bubble">one small thing, and it's yours.</div></div>
+  <div class="card"><div class="eq">Try it now</div><p>Press your palms together. Breathe in. As you breathe out, tip your head a little: one small bow.</p></div>
+  <div class="card"><div class="eq">Today</div><p>Greet one person with namaste, out loud or inside, and see them that way for a second.</p></div>
+  <div class="card gold"><div class="eq">With your kids tonight</div><p>Greet each other with namaste at dinner, and each say one thing you see in the other.</p></div>`));
+}
+function done(s, m) {
+  m.append(el(`<img src="img/celebrate.webp" alt="the mascot celebrating" style="width:150px;margin:0 auto">
+  <h1 style="text-align:center">You're on the hill!</h1>
+  <p class="reveal" style="text-align:center">day one. you came. that's everything.</p>
+  <div class="stats" style="width:100%"><div><b>+10</b><span>light</span></div><div><b>1</b><span>word</span></div><div><b>5:00</b><span>about</span></div></div>
+  <div class="card" style="width:100%;text-align:left"><div class="src">tomorrow opens with</div><div class="eq">What does “te” mean?</div><p>Then: <b>om</b>, the sound the universe hums.</p></div>`));
+}
+render();
+</script>
