@@ -16,7 +16,7 @@ import { Lantern } from "@/ui/lantern";
 export default function WithScreen() {
   useTitle(t("home.with.title"));
   const params = useLocalSearchParams();
-  const { saved, today } = useStore();
+  const { saved, today, update } = useStore();
   const onboarded = saved.settings.onboarded;
   const key = JSON.stringify(params);
   const gift = useMemo(() => readGift(JSON.parse(key), today), [key, today]);
@@ -35,8 +35,14 @@ export default function WithScreen() {
   const pairNow = async () => {
     if (!gift?.i) return;
     setStep("busy");
+    const known = friends.friends.map((f) => f.id);
     const r = await acceptInvite(gift.i);
-    if (r.ok) { toast(t("home.with.walkingWith", { name: r.nick || gift.from || t("home.with.aFriend") })); router.replace("/together"); return; }
+    if (r.ok) {
+      toast(t("home.with.walkingWith", { name: r.nick || gift.from || t("home.with.aFriend") }));
+      // sent from "walk it together": their seven days side by side start today (the new friend is the partner)
+      if (gift.w && onboarded) { update({ walk: { on: today, known } }); router.replace("/walk-together"); return; }
+      router.replace("/together"); return;
+    }
     setMsg(r.message || null);
     setStep("idle");
   };
@@ -74,7 +80,7 @@ export default function WithScreen() {
         <View style={{ flexDirection: "row", alignItems: "center", gap: 10, width: "100%" }}>
           <Guy pose={gift.door === "HINDUISM" ? "namaste" : "heart"} h={72} />
           <Text style={[type.body(15), { color: "#ffffffdd", flex: 1 }]}>
-            {gift.from ? t("home.with.walked", { who, when }) : t("home.with.someoneWalked", { when })} {t("home.with.walkQ")}
+            {gift.from ? t("home.with.walked", { who, when }) : t("home.with.someoneWalked", { when })} {gift.w ? t("couple.with.ask") : t("home.with.walkQ")}
           </Text>
         </View>
       </ScrollView>

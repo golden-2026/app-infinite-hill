@@ -27,6 +27,7 @@ import { useSeasons } from "@/lib/quests";
 import { newYearNow } from "@/content/seasons";
 import { QuestTodayCard } from "@/ui/quest";
 import { SettleCard } from "@/ui/settle";
+import { HolidayCard, WalkTogetherCard } from "@/ui/couple";
 import { campLabel, campName, doorLabel, isEs, t } from "@/i18n";
 import { firstWeekFor, gentleStart } from "@/content/life-moments";
 import { baselineAtStart, daysCome, laneFor, nextWeekDay } from "@/lib/lane";
@@ -219,6 +220,11 @@ export default function Today() {
             </View>
           );
         })()}
+
+        {/* the two-faith couple (content/couple.ts): a week or two before the partner's family's big holiday, a few
+            already-written lessons about it (extras, never sits); and seven days walked side by side */}
+        <HolidayCard quiet={quiet} onOpen={(d, n) => router.push({ pathname: "/session/[door]/[day]", params: { door: d, day: String(n) } })} />
+        <WalkTogetherCard quiet={quiet} />
 
         {streakOn && sk.earnBack && !quiet ? (
           // the streak broke: for 3 days, two lessons in one day bring it back. An offer, never a bill.

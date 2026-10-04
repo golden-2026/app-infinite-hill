@@ -11,7 +11,8 @@ export const WALKERS_KEY = "ih:walkers";
 /** `friend`: the lantern came with a friend invite, so this person is (or was) also a friend on the friends server. */
 export type Walker = { name: string; door: string; lastLit: string; n: number; friend?: boolean };
 /** `i`: a single-use friend invite code (lib/friends), when the sender's phone could reach the friends server. */
-export type LanternGift = { from: string; line: string; door: string; d: string; n: number; i?: string };
+/** `w`: sent from "walk it together" (content/couple.ts): the other phone offers seven days side by side. */
+export type LanternGift = { from: string; line: string; door: string; d: string; n: number; i?: string; w?: boolean };
 
 const NAME_MAX = 24;
 const LINE_MAX = 220;
@@ -49,11 +50,11 @@ export function readGift(p: Record<string, unknown>, today: string): LanternGift
   const line = cleanText(p.line, LINE_MAX);
   if (!door || !line) return null;
   const i = cleanText(p.i, 10);
-  return { from: cleanText(p.from, NAME_MAX), line, door, d: cleanDate(p.d, today), n: cleanDays(p.n), ...(/^[a-z2-9]{10}$/.test(i) ? { i } : {}) };
+  return { from: cleanText(p.from, NAME_MAX), line, door, d: cleanDate(p.d, today), n: cleanDays(p.n), ...(/^[a-z2-9]{10}$/.test(i) ? { i } : {}), ...(cleanText(p.w, 1) === "1" ? { w: true } : {}) };
 }
 
 /** The link a sender shares. The name is only what they typed; empty means it is left out entirely. */
-export function giftLink(g: { from?: string; line: string; door: string; d: string; n: number; i?: string | null }): string {
+export function giftLink(g: { from?: string; line: string; door: string; d: string; n: number; i?: string | null; w?: boolean }): string {
   const q: Record<string, string> = {};
   const from = cleanText(g.from, NAME_MAX);
   if (from) q.from = from;
@@ -62,6 +63,7 @@ export function giftLink(g: { from?: string; line: string; door: string; d: stri
   q.d = g.d;
   q.n = String(cleanDays(g.n));
   if (g.i && /^[a-z2-9]{10}$/.test(g.i)) q.i = g.i;
+  if (g.w) q.w = "1";
   const qs = Object.entries(q).map(([k, v]) => `${k}=${encodeURIComponent(v)}`).join("&");
   const base =
     Platform.OS === "web" && typeof window !== "undefined" ? `${window.location.origin}/with` :
