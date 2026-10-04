@@ -34,7 +34,7 @@ export default function Heard() {
   };
   return (
     <WelcomeFrame step={1} footer={<Btn kind="ghost" testID="heardFrom-skip" onPress={() => pick(null)}>{t("onboarding.heard.skip")}</Btn>}>
-      <Eyebrow style={{ textAlign: "center" }}>{t("onboarding.heard.eyebrow")}</Eyebrow>
+      {next === "/welcome/door" ? <Eyebrow style={{ textAlign: "center" }}>{t("onboarding.heard.eyebrow")}</Eyebrow> : null}
       <Host pose="wave">{HEARD_Q.ask}</Host>
       <View style={{ gap: 8 }} accessibilityRole="radiogroup">
         {HEARD_Q.choices.map((c) => <ChoiceRow key={c.id} testID={`heardFrom-${c.id}`} on={false} onPress={() => pick(c.id)}>{c.label}</ChoiceRow>)}
