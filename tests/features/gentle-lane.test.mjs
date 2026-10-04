@@ -43,10 +43,9 @@ const DOORS = ["HINDUISM", "BUDDHISM", "CHRISTIANITY", "CATHOLIC", "JUDAISM", "I
 /** The welcome screens someone walks, by the routing rules the screens use (welcome/you → door → …), up to the first lesson. */
 function journey(why, door) {
   const steps = ["you"];
-  if (lane.afterYou(why, false) === "/welcome/heard") steps.push("heard");
   steps.push("door");
   const after = lane.afterDoor(why);
-  if (after === "trail") steps.push("trail", ...(door === "SPIRITUAL" ? ["intake", "suggest"] : ["know", "belief", "fit"]), "voice");
+  if (after === "check") steps.push(...(door === "SPIRITUAL" ? ["intake", "suggest"] : ["know", "belief", "fit"]), "voice");
   else if (after === "voice") steps.push("voice");
   if (lane.baselineAtStart(why)) steps.push("wellbeing");
   steps.push(`lesson ${lane.firstLesson(why, door, 1)}`);
@@ -58,6 +57,18 @@ test("every reason has a lane: gentle, light, quick or the full welcome", () => 
   for (const k of WHY_KEYS) assert.equal(lane.laneFor(k), want[k] || "full", k);
   assert.equal(lane.laneFor(null), "full"); // no reason, or "spiritual" (a stance, not a why)
   for (const k of ["grief", "diagnosis", "hard", "forgiveness"]) assert.equal(gentleStart(k), true, k);
+});
+
+test("no one is asked how they heard about us, or shown the five-year map, before their first lesson; heard comes after it", () => {
+  for (const why of [null, "kids", "baby", "own", "sent", "grief"]) for (const door of DOORS) {
+    const steps = journey(why, door);
+    assert.ok(!steps.includes("heard") && !steps.includes("trail"), `${why} ${door}`);
+  }
+  assert.equal(lane.askHeard("kids", undefined), true);
+  assert.equal(lane.askHeard(null, undefined), true);
+  assert.equal(lane.askHeard("kids", "skip"), false); // answered or skipped: never again
+  assert.equal(lane.askHeard("grief", undefined), false); // never on the gentle lane
+  assert.equal(lane.askHeard("sent", undefined), false); // nor for a teen sent by their parents
 });
 
 test("the gentle lane: stance and door, then straight into the first-week lesson (no heard, map, quiz, fit, voice or check-in)", () => {
@@ -74,11 +85,11 @@ test("the gentle lane: stance and door, then straight into the first-week lesson
 });
 
 test("the light lane leads with the first week and no quiz; a teen's is quick; everyone else keeps the full welcome", () => {
-  assert.deepEqual(journey("baby", "BUDDHISM"), ["you", "heard", "door", "voice", "wellbeing", "lesson 23"]);
-  assert.deepEqual(journey("wedding", "SIKHISM"), ["you", "heard", "door", "voice", "wellbeing", "lesson 56"]);
+  assert.deepEqual(journey("baby", "BUDDHISM"), ["you", "door", "voice", "wellbeing", "lesson 23"]);
+  assert.deepEqual(journey("wedding", "SIKHISM"), ["you", "door", "voice", "wellbeing", "lesson 56"]);
   assert.deepEqual(journey("sent", "CATHOLIC"), ["you", "door", "voice", "lesson 1"]);
-  assert.deepEqual(journey("kids", "JUDAISM"), ["you", "heard", "door", "trail", "know", "belief", "fit", "voice", "wellbeing", "lesson 1"]);
-  assert.deepEqual(journey(null, "SPIRITUAL"), ["you", "heard", "door", "trail", "intake", "suggest", "voice", "wellbeing", "lesson 1"]);
+  assert.deepEqual(journey("kids", "JUDAISM"), ["you", "door", "know", "belief", "fit", "voice", "wellbeing", "lesson 1"]);
+  assert.deepEqual(journey(null, "SPIRITUAL"), ["you", "door", "intake", "suggest", "voice", "wellbeing", "lesson 1"]);
   // placement still sets where the full welcome starts; a week-first lane opens its week first
   assert.equal(lane.firstLesson("own", "HINDUISM", 22), 22);
   assert.equal(lane.firstLesson("grief", "HINDUISM", 22), 162);

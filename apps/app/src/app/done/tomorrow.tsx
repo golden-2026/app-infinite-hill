@@ -10,6 +10,7 @@ import { useStore } from "@/lib/store";
 import { todaysThree } from "@/lib/three";
 import { dueAfterLesson, emptyWellbeing } from "@/lib/wellbeing";
 import { gentleStart } from "@/content/life-moments";
+import { askHeard } from "@/lib/lane";
 import { Bubble, Btn, Guy, Link, Screen, Sun, color, font, type } from "@/ui";
 import { t, type Key } from "@/i18n";
 
@@ -52,7 +53,9 @@ export default function Tomorrow() {
     const three = todaysThree({ doneToday: derived.doneToday, glow: st.glow, book: st.book, lanternOn: st.lanternOn, today });
     const then = three.all && !three.opened ? "/lantern" : "/today";
     const m = dueAfterLesson(derived.showedUp, st.wellbeing || emptyWellbeing()); // (a child's lesson ends at /done/kid, never here)
+    const answers = st.profile?.answers;
     if (m) router.replace({ pathname: "/wellbeing", params: { m: String(m), then } });
+    else if (askHeard(answers?.why, answers?.heardFrom)) router.replace({ pathname: "/welcome/heard", params: { then } });
     else if (then === "/lantern") router.replace("/lantern");
     else close();
   };

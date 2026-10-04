@@ -1,6 +1,6 @@
 import { track } from "@/lib/analytics";
 import { useTitle } from "@/lib/title";
-import { router } from "expo-router";
+import { router, useLocalSearchParams } from "expo-router";
 import { useEffect } from "react";
 import { Text, View } from "react-native";
 import { HEARD_Q } from "@/content/intake";
@@ -20,13 +20,17 @@ export default function Heard() {
   const { update, saved, today } = useStore();
   const p = saved.settings.profile;
   const asked = typeof p?.answers.heardFrom === "string";
-  useEffect(() => { if (asked) router.replace("/welcome/door"); }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  // asked after the first finished lesson (done/tomorrow), it goes on to where that lesson was heading
+  const { then } = useLocalSearchParams<{ then?: string }>();
+  const next = then === "/lantern" ? "/lantern" : then === "/today" ? "/today" : "/welcome/door";
+  useEffect(() => { if (asked) router.replace(next); }, []); // eslint-disable-line react-hooks/exhaustive-deps
   const pick = (id: string | null) => {
     const heardFrom = id || "skip";
     if (p && p.door) update({ profile: { ...p, answers: { ...p.answers, heardFrom } } });
     else { const y = youAnswers(p); update({ profile: pendingProfile(today, y.stance, y.raisedIn, y.learning, heardFrom, typeof p?.answers.why === "string" ? p.answers.why : null) }); }
     if (id) track("heard_from", { choice: id });
-    router.push("/welcome/door");
+    if (next === "/welcome/door") router.push(next);
+    else router.replace(next);
   };
   return (
     <WelcomeFrame step={1} footer={<Btn kind="ghost" testID="heardFrom-skip" onPress={() => pick(null)}>{t("onboarding.heard.skip")}</Btn>}>

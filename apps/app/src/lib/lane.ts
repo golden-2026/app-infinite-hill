@@ -31,16 +31,26 @@ export const weekFirst = (why: unknown, door: string) => {
   return (l === "gentle" || l === "light") && !!firstWeekFor(why, door);
 };
 
-/** After the first step (welcome/you): "how did you hear about us?" is skipped by the gentle and quick lanes. */
-export function afterYou(why: unknown, heardAsked: boolean): "/welcome/heard" | "/welcome/door" {
-  const l = laneFor(why);
-  return heardAsked || l === "gentle" || l === "quick" ? "/welcome/door" : "/welcome/heard";
+/** After the first step (welcome/you): straight to the doors. "how did you hear about us?" waits until after the first
+ *  finished lesson (done/tomorrow, askHeard): it helps us, not someone trying to begin. */
+export function afterYou(_why: unknown, _heardAsked: boolean): "/welcome/door" {
+  return "/welcome/door";
 }
 
-/** After the door: the full welcome walks the map; gentle goes straight to "ready"; light and quick meet the voice. */
-export function afterDoor(why: unknown): "trail" | "ready" | "voice" {
+/** After a finished lesson: ask "how did you hear about us?" once, unless already answered or skipped, and never on
+ *  the gentle lane (grief, health news, forgiveness) or for a teen sent by their parents. */
+export function askHeard(why: unknown, heardFrom: unknown): boolean {
   const l = laneFor(why);
-  return l === "full" ? "trail" : l === "gentle" ? "ready" : "voice";
+  return typeof heardFrom !== "string" && l !== "gentle" && l !== "quick";
+}
+
+/** After the door: the full welcome goes to the check; gentle goes straight to "ready"; light and quick meet the voice. */
+// The five-year map is no longer on the way in (2026-10-03 review: a summit at day 1,791 asks for a commitment before
+// day one has earned it). The full welcome goes from the door straight to the "where are you?" check (or, on my own
+// path, its few questions); the map stays one tap away from Today and You for anyone curious.
+export function afterDoor(why: unknown): "check" | "ready" | "voice" {
+  const l = laneFor(why);
+  return l === "full" ? "check" : l === "gentle" ? "ready" : "voice";
 }
 
 /** The first lesson someone opens: the first day of their first-week list on a week-first lane, else where the door stands. */

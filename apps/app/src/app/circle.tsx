@@ -53,7 +53,7 @@ export default function JoinCircle() {
       // still signing up: straight on to the circle's door; offline, the join waits and is tried again later
       if (!r.ok && r.why === "offline") keepPending(code);
       else if (!r.ok) { setMsg(failWords(r.why)); return; }
-      router.replace({ pathname: "/welcome/trail", params: { door: peek.door } });
+      router.replace(peek.door === "SPIRITUAL" ? "/welcome/intake" : { pathname: "/welcome/know", params: { door: peek.door } });
       return;
     }
     if (r.ok) { toast(t("groups.join.joined", { circle: peek.name })); router.replace("/together"); }

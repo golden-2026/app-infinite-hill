@@ -221,6 +221,12 @@ function Session({ door, day, kidId, mode, deep, extra = false, voiceOn, onFinis
   const finished = useRef(false);
   const step = phase === "fixintro" ? { type: "fixintro", id: -1 } : plan.steps.find((s) => s.id === queue[qi]);
   const total = plan.steps.length;
+  // Looking back is separate from answering (2026-10-03 review): the back arrow steps to the previous reading screen,
+  // skipping games already answered, and going forward again skips them too, back to where you were. Answers never
+  // re-open, so nothing is scored twice.
+  const readable = (id: number | undefined) => { const s0 = plan.steps.find((x) => x.id === id); return !!s0 && ["beat", "bell"].includes(s0.type); };
+  const [furthest, setFurthest] = useState<number>(saved0?.qi ?? 0);
+  useEffect(() => { if (phase === "play") setFurthest((f0) => Math.max(f0, qi)); }, [qi, phase]);
   const graded = plan.steps.filter((s) => GRADED.includes(s.type)).length;
 
   // Hardware back / browser back / swipe: ask before throwing the lesson away.
@@ -236,6 +242,12 @@ function Session({ door, day, kidId, mode, deep, extra = false, voiceOn, onFinis
   const next = useCallback((missedNow: number[] = missed) => {
     setPose("wave");
     if (phase === "fixintro") { setPhase("fix"); setQi(0); return; }
+    if (phase === "play" && qi < furthest) {
+      let k = qi + 1;
+      while (k < furthest && !readable(queue[k])) k++;
+      setQi(k);
+      return;
+    }
     const tallyId = plan.steps[plan.steps.length - 1].id;
     const nextId = queue[qi + 1];
     if (phase === "play" && nextId === tallyId && missedNow.length) {
@@ -246,7 +258,7 @@ function Session({ door, day, kidId, mode, deep, extra = false, voiceOn, onFinis
     }
     if (qi + 1 < queue.length) { setQi(qi + 1); return; }
     setQi(queue.length - 1);
-  }, [phase, qi, queue, missed, plan]);
+  }, [phase, qi, queue, missed, plan, furthest]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const verdict = (ok: boolean | null) => {
     // (the combo, sound and mascot already reacted when the answer landed — see `react`)
@@ -328,8 +340,9 @@ function Session({ door, day, kidId, mode, deep, extra = false, voiceOn, onFinis
       .then((ok) => { if (ok) { finished.current = true; hush(); remove(resumeKey); then(); } });
   }
 
-  const prevStep = qi > 0 ? plan.steps.find((x) => x.id === queue[qi - 1]) : null;
-  const canBack = !!prevStep && ["beat", "bell"].includes(prevStep.type) && step?.type !== "tally";
+  let backTo = -1;
+  if (phase === "play") for (let j = qi - 1; j >= 0; j--) if (readable(queue[j])) { backTo = j; break; }
+  const canBack = backTo >= 0;
   const pct = phase === "play" ? Math.round((qi / Math.max(1, total - 1)) * 100) : 100;
   // the welcome is in the voice's own words, so the header says whose welcome it is (the house voice reads it until they record)
   const segLabel = step ? (step.label ? String(step.label) : step.seg === "a welcome" && !kidMode ? t("session.seg.welcomeOf", { name: ic.short }) : step.type === "breath" && step.n > 1 ? t("session.seg.breaths", { count: step.n }) : segName(step.seg, step.type)) : "";
@@ -344,7 +357,7 @@ function Session({ door, day, kidId, mode, deep, extra = false, voiceOn, onFinis
         <NavBar dark close={() => askLeave()} closeLeft
           middle={
             <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}>
-              <Pressable accessibilityRole="button" accessibilityLabel={t("session.prevScreen")} accessibilityState={{ disabled: !canBack }} aria-disabled={!canBack} disabled={!canBack} onPress={() => { tapHaptic(); setQi(qi - 1); }} hitSlop={4}
+              <Pressable accessibilityRole="button" accessibilityLabel={t("session.prevScreen")} accessibilityState={{ disabled: !canBack }} aria-disabled={!canBack} disabled={!canBack} onPress={() => { tapHaptic(); setQi(backTo); }} hitSlop={4}
                 style={({ pressed }) => ({ minWidth: 36, minHeight: 44, alignItems: "center", justifyContent: "center", opacity: !canBack ? 0.25 : pressed ? 0.5 : 0.8 })}>
                 <ChevronLeft color="#fff" size={20} />
               </Pressable>
@@ -428,13 +441,6 @@ function Session({ door, day, kidId, mode, deep, extra = false, voiceOn, onFinis
       // a child's tally: the word, the games, the line, and the "for grown-ups" note for whoever holds the phone
       if (kidMode) return frame(<KidTally plan={plan} day={day} right={score.right} asked={score.asked || graded} best={best} celebrate={<Celebrate />} />, { foot: <Btn testID="finish" kind="gold" onPress={finish}>{t("kids.finish")}</Btn> });
       const info = plan.info;
-      const ideas = Math.min(4, (info?.segments ? screenLines(info.segments.find((g: any) => /teach/.test(g.type))?.screen).length : 2) || 2);
-      const nat = native(plan.word, door);
-      const tiles: [string, string, string, boolean][] = [
-        ["1", t("session.tile.word"), plan.word, true],
-        [String(ideas), t("session.tile.ideas", { count: ideas }), t("session.tile.ideasSub"), false],
-        [`${score.right}/${score.asked || graded}`, t("session.tile.firstTry"), best >= 3 ? t("session.inARow", { n: best }) : score.asked && score.right === score.asked ? t("session.tile.perfect") : t("session.tile.allFixed"), false],
-      ];
       // The win screen, in our own look: the light you earned, how on-target you were and how long it took, on one
       // gold-rimmed card; a fanfare; the mascot celebrating.
       const asked = score.asked || graded;
@@ -495,17 +501,8 @@ function Session({ door, day, kidId, mode, deep, extra = false, voiceOn, onFinis
               </View>
             ))}
           </View>
-          <View style={{ flexDirection: "row", gap: 8, width: "100%" }}>
-            {tiles.map(([n, l, sub, hot]) => (
-              <View key={l} style={[st.tile, hot ? { backgroundColor: color.gold, borderWidth: 0 } : null]}>
-                <Text style={{ fontFamily: font.display[800], fontSize: 22, color: hot ? color.ink : color.gold }} numberOfLines={1} adjustsFontSizeToFit>{n}</Text>
-                <Text style={[type.eyebrow(), { color: hot ? color.ink : "#ffffffaa" }]}>{l}</Text>
-                <Text style={[type.body(11), { color: hot ? color.ink : "#ffffffcc", marginTop: 2 }]} numberOfLines={2}>{sub}</Text>
-              </View>
-            ))}
-          </View>
-          <Text style={{ fontFamily: font.display[500], fontSize: 17, color: "#ffffffcc", marginTop: 8, textAlign: "center" }}>{t("session.tally.line")}<Text style={{ fontStyle: "italic" }}>{/[.?!…]$/.test(plan.carry) ? plan.carry : `${plan.carry}.`}</Text></Text>
-          {nat ? <View style={st.bead}><Text style={{ fontFamily: font.display[800], fontSize: 22, color: color.gold }}>{nat}</Text><Text style={[type.eyebrow(), { color: "#ffffffbb" }]}>{t("session.tally.bead", { n: Math.min(day, 21) })}</Text></View> : null}
+          {/* (2026-10-03 review: the win screen was busy. The word, the line and the bead now live on the next screen,
+              done/index, which leads with them; here it is the celebration, three numbers and how it felt.) */}
           {feelRow}
           <LessonSources sources={script?.sources} />
         </View>,

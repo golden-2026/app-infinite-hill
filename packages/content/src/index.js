@@ -433,6 +433,16 @@ export function planDay({ wing, day, lesson = day, mode = "adult", named = true,
   let steps = given ? withScript(R.steps, given, day) : R.steps;
   if (mode === "adult") {
     if (day === 1) steps = steps.filter((s) => !PACED[s.type]);
+    // day one kept its games for later and read like a run of "next" screens (2026-10-03 review). With a script, it
+    // gets the lesson's own pairs right after the teaching: one quick, hands-on check of the four ideas it just met.
+    const pairs = given?.games?.match;
+    if (day === 1 && pairs && !steps.some((s) => s.type === "match")) {
+      const lastTeach = steps.map((s) => s.type === "beat" && /^the teach/.test(String(s.seg || ""))).lastIndexOf(true);
+      if (lastTeach >= 0) {
+        const nextId = Math.max(...steps.map((s) => s.id)) + 1;
+        steps = [...steps.slice(0, lastTeach + 1), { type: "match", prompt: pairs.prompt, pairs: pairs.pairs, id: nextId }, ...steps.slice(lastTeach + 1)];
+      }
+    }
     const paced = Object.keys(PACED).find((k) => PACED[k] === day);
     // days 2–5 introduce one game each (about today's word when there's a script); from day 6 a script plays one more
     const type = paced || (given && day > 5 ? featureFor(day, given.games) : null);
