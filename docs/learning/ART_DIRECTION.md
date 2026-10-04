@@ -4,6 +4,12 @@ Owner (2026-10-04): the first story panels looked "standard", like the old sun m
 to be the redrawn mascot's level: culture-forward, on-trend, cool. The redrawn mascot is the benchmark: thick confident
 outlines, flat bold color, streetwear (backwards cap, hoodie, sneakers), personality in the pose.
 
+## Decision (owner, 2026-10-04)
+**House style: C, the cinematic graphic-novel look** (warm light, painterly finish, strong silhouettes), judged the
+most on brand. The cool comes from the young cast (trend-right clothes, poses, phones, earbuds) and from dynamic,
+filmic framing; Nani stays classic. Truck-art borders (B) are kept for festival days. Reference sheet: the fourth
+test image (2026-10-04).
+
 ## What "standard" looked like (avoid)
 Soft gouache picture book, warm golden-hour everything, gentle sweet faces, suburban-catalogue interiors. Lovely, but
 it's what every AI tool makes by default and what every kids' faith book already looks like.
@@ -25,6 +31,14 @@ cream), dramatic rim light, filmic framing. Feels premium and older-teen/adult; 
 **Recommendation:** test all three on the same panel, pick one, and make it the house style. My pick to beat is **A**:
 it shares the mascot's DNA (outline, color, streetwear), works for an 8-year-old and a 40-year-old, and no faith app
 looks like it.
+
+## The cast (owner, 2026-10-04: elders stay classic; the young ones carry the cool)
+- **Nani**: classic, warm, real: silver bun, round gold glasses, cotton saree, gold bangles. Not "made cool".
+- **Anika (10)**: trend-right and relatable: claw clip, baggy jeans, oversized cropped hoodie, chunky retro sneakers,
+  beaded friendship bracelets.
+- **Dev (14)**: oversized graphic tee (no readable print), cargo pants, wired earbuds around his neck, fluffy curtain
+  hair, phone always in hand, half-lidded "whatever" look that cracks into a grin.
+- No brand logos or readable text on clothes.
 
 ## Rules for whichever wins
 - One fixed character sheet per recurring character; every prompt references it.
