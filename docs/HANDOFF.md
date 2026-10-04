@@ -48,6 +48,27 @@ design changes go live, ask before deploying, real testimonials only, check usag
 - Usage: weekly allowance resets Tuesday 2 AM Pacific; extra credits this week $312. Fable does NOT avoid credits
   once the weekly limit is hit.
 
+## Session of 2026-10-03 evening (pick up here)
+- Weekly allowance and extra credits ran out mid-run (extra spent this week: about $504). Everything below resumes
+  after the Tuesday 2 AM PT reset. Check usage and quote the owner before restarting big jobs.
+- Owner direction: concentrate on ONE excellent seven-day experience (ChatGPT review). Recommended first user: Hindu
+  parents (Panditji's community); the owner has not confirmed yet. Plan days 1–7 as one arc; hide other features for
+  the alpha.
+- Live (expo-live69): Guide 988 + longer answers, shuffled games, placement restart, homepage evidence moved up.
+- Saved on branch claude/vibrant-lamport-71d977, NOT live: Hinduism question bank (docs/learning/bank, 104 items,
+  blind-checked 78/78), sign-up without "heard" and the five-year map (heard is asked after the first lesson), day-one
+  pairs game, trimmed win screen, back = review reading without re-answering, welcome header names the voice. Needs
+  screenshots to the owner, then deploy.
+- Parked branches (not merged; breadth, keep off for the alpha): worktree-agent-af811feace3e8cb10 (Guide sprint 2:
+  switch to my own path in chat, sampler week, chips, grader scripts/learning/guide-grader.mjs) and
+  worktree-agent-a79829735f4276e67 (couple features).
+- Lesson seams (title-as-carry, phrase-as-word): branch worktree-agent-a47b4a38300d64c48. Hinduism: 644 lessons fixed,
+  1061/1061 validate (the owner okayed the outline/index change). Work files: atlas/seams-work (INSTRUCTIONS.md,
+  apply.mjs, extract.mjs, work/<door>/bNN.in|out.jsonl, queue.txt); first point SP in apply.mjs/extract.mjs at
+  atlas/seams-work. Remaining: Hinduism b05 b11 b14 b16 and every batch of the other seven doors (owner: "do all
+  doors"; about $300–500). One batch = one subagent with INSTRUCTIONS.md; then `node apply.mjs DOOR`,
+  import-outline/import-paths, validate-scripts, commit per door.
+
 ## Review kit findings (2026-10-03, docs/review-kit/, Claude's own baseline: overall 3.6/5)
 Content is mostly accurate (4.0); the learning design is the weak part (2.9). Fix first:
 1. DONE (expo-live69): "what would you do?" games now shuffle (the right answer was option 2 in 88% of lessons).
