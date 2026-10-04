@@ -1,0 +1,289 @@
+<title>Om, Day Two</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Manrope:wght@600;800&family=Inter:wght@400;500;600&family=Tiro+Devanagari+Sanskrit&display=swap">
+<style>
+/* the app's own lesson look: a dusk ground, one gold accent, cream cards. Single dark look by design (lessons are always dusk). */
+:root{
+  color-scheme:dark;
+  --ink:#0A0A0A; --dusk2:#161616; --dusk3:#222222;
+  --gold:#EEFF6A; --cream:#F7F7F5; --line:#ffffff22; --mute:#ffffffaa; --soft:#ffffffcc;
+  --right:#8DE24A; --wrong:#FF6B6B; --cardInk:#0A0A0A; --cardMute:#55554f;
+  --mark:'Baloo 2',system-ui,sans-serif; --display:'Manrope','Inter',system-ui,sans-serif; --body:'Inter',system-ui,sans-serif;
+  --deva:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Mangal',serif;
+}
+html,body{height:100%}
+body{background:linear-gradient(180deg,var(--ink) 0%,var(--dusk2) 60%,var(--dusk3) 100%);background-color:var(--ink);color:#fff;font-family:var(--body)}
+.app{max-width:480px;margin:0 auto;min-height:100%;display:flex;flex-direction:column;padding-inline:16px}
+.top{display:flex;align-items:center;gap:10px;padding-block:12px 6px;position:sticky;top:env(safe-area-inset-top,0px);background:var(--ink);z-index:2}
+.icon{width:40px;height:40px;border-radius:999px;border:0;background:#ffffff14;color:#fff;font-size:18px;display:grid;place-items:center;cursor:pointer;flex:0 0 auto}
+.icon:disabled{opacity:.25;cursor:default}
+.icon[aria-pressed="true"]{background:var(--gold);color:var(--ink)}
+.icon:focus-visible,.btn:focus-visible,.opt:focus-visible,.tile:focus-visible,.frame:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.track{flex:1;height:8px;background:#ffffff22;border-radius:6px;overflow:hidden}
+.bar{height:100%;background:var(--gold);border-radius:6px;transition:width .35s ease}
+.eyebrow{font:600 11px/1.3 var(--display);letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+.eyebrow b{color:var(--gold);font-weight:800}
+main{flex:1;display:flex;flex-direction:column;gap:14px;padding-block:10px 18px}
+/* the story: the picture is the screen; the line sits on it like a comic caption */
+.frame{position:relative;border-radius:22px;overflow:hidden;cursor:pointer;background:#ffffff10}
+.frame img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover}
+.frame.wide img{aspect-ratio:1122/700}
+.cap{position:absolute;left:12px;right:12px;bottom:12px;background:var(--cream);color:var(--cardInk);border-radius:18px 18px 18px 4px;padding:10px 14px;font:600 17px/1.35 var(--body);box-shadow:0 8px 24px #0006}
+.cap .who{display:block;font:800 11px/1 var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--cardMute);margin-bottom:4px}
+.cap.right{border-radius:18px 18px 4px 18px}
+.cap + .cap{bottom:auto;top:12px}
+.tap{font:500 12px/1 var(--body);color:#ffffff77;text-align:center}
+h1{font:800 34px/1.05 var(--mark);color:var(--gold);text-wrap:balance;margin:0}
+h2{font:800 25px/1.15 var(--display);text-wrap:balance;margin:0;letter-spacing:-.01em}
+.card{background:var(--cream);color:var(--cardInk);border-radius:22px;padding:24px 22px;display:flex;flex-direction:column;gap:12px}
+.card.gold{background:var(--gold)}
+.card .eq{font:800 24px/1.2 var(--display)}
+.card p{margin:0;font:500 17px/1.5 var(--body);color:#2a2a26}
+.card .src{font:600 11px/1.3 var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--cardMute)}
+.deva{font:400 76px/1.15 var(--deva);text-align:center;color:var(--cardInk)}
+.split{display:flex;justify-content:center;gap:10px;font:800 20px/1.2 var(--display);text-align:center}
+.split span{background:#0A0A0A10;border-radius:12px;padding:8px 12px}
+.split small{display:block;font:500 13px/1.3 var(--body);color:var(--cardMute)}
+.hear{align-self:center;border:2px solid var(--cardInk);background:transparent;color:var(--cardInk);border-radius:999px;padding:10px 16px;font:800 14px/1 var(--display);letter-spacing:.06em;cursor:pointer}
+.opts{display:flex;flex-direction:column;gap:10px}
+.opt{border:2px solid #ffffff33;background:#ffffff0d;color:#fff;border-radius:16px;padding:14px 16px;text-align:left;font:600 16px/1.35 var(--body);cursor:pointer}
+.opt.right{border-color:var(--right);background:#8DE24A22}
+.opt.wrong{border-color:var(--wrong);background:#FF6B6B1f}
+.opt:disabled{cursor:default}
+.pair{display:flex;gap:10px}
+.pair .opt{flex:1;text-align:center;font-size:18px}
+.claim{background:#ffffff0d;border:1px solid var(--line);border-radius:18px;padding:18px;font:700 20px/1.35 var(--display)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tile{border:2px solid var(--cream);background:var(--cream);color:var(--cardInk);border-radius:14px;padding:12px 10px;font:700 16px/1.25 var(--body);cursor:pointer;min-height:64px}
+.tile.sel{background:#fffbd0;border-color:var(--gold)}
+.tile.done{background:var(--gold);border-color:var(--gold);opacity:.5;cursor:default}
+.tile.miss{animation:shake .3s}
+@keyframes shake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.cheer{display:flex;gap:10px;align-items:center;animation:pop .35s ease}
+.cheer img{width:64px;height:auto;flex:0 0 auto}
+.cheer div{background:var(--cream);color:var(--cardInk);border-radius:16px 16px 16px 4px;padding:10px 14px;font:500 15px/1.4 var(--body)}
+.cheer div b{display:block;font:800 17px/1.2 var(--display)}
+@keyframes pop{from{transform:scale(.92);opacity:.4}to{transform:none;opacity:1}}
+.orb{width:200px;height:200px;margin:24px auto 8px;border:0;border-radius:999px;background:radial-gradient(circle,#EEFF6A 0%,#EEFF6A55 55%,transparent 70%);display:grid;place-items:center;cursor:pointer;transform:scale(.6);transition:transform 4s ease-in-out}
+.orb span{font:800 16px/1 var(--display);color:var(--ink);background:#EEFF6Acc;border-radius:999px;padding:8px 12px}
+.orb.in{transform:scale(1.1)}
+.orb.out{transform:scale(.6)}
+.dolist{display:flex;flex-direction:column;gap:10px}
+.do{background:#ffffff0d;border:1px solid var(--line);border-radius:18px;padding:14px 16px;display:flex;gap:12px;align-items:flex-start}
+.do b{display:block;font:800 13px/1.2 var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.do p{margin:0;font:500 16px/1.45 var(--body);color:var(--soft)}
+.do.kids{background:var(--gold);border-color:var(--gold)}
+.do.kids b{color:var(--ink)}
+.do.kids p{color:#1b1b16}
+.score{font:800 64px/1 var(--mark);color:var(--gold);text-align:center;font-variant-numeric:tabular-nums}
+.stats{display:flex;border:2px solid var(--gold);border-radius:20px;padding-block:12px}
+.stats div{flex:1;text-align:center;border-left:1px solid #ffffff22}
+.stats div:first-child{border-left:0}
+.stats b{display:block;font:800 22px/1.1 var(--display);font-variant-numeric:tabular-nums}
+.stats span{font:600 10px/1 var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.foot{position:sticky;bottom:0;padding-block:10px calc(14px + env(safe-area-inset-bottom,0px));background:linear-gradient(180deg,transparent,var(--dusk3) 35%)}
+.btn{width:100%;border:0;border-radius:999px;padding:16px;font:800 15px/1 var(--display);letter-spacing:.1em;text-transform:uppercase;background:var(--gold);color:var(--ink);cursor:pointer}
+.btn:disabled{opacity:.35;cursor:default}
+.note{font:500 12px/1.4 var(--body);color:#ffffff77;text-align:center;margin:6px 0 0}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="app">
+  <div class="top">
+    <button class="icon" id="back" aria-label="previous screen">‹</button>
+    <div class="track" aria-hidden="true"><div class="bar" id="bar"></div></div>
+    <button class="icon" id="voice" aria-label="read aloud" aria-pressed="false" title="read aloud">🔊</button>
+  </div>
+  <main id="screen" aria-live="polite"></main>
+  <div class="foot"><button class="btn" id="next">next</button>
+    <p class="note">sample lesson · not reviewed by Panditji yet · tap 🔊 to hear it read</p></div>
+</div>
+
+<script>
+// Hinduism day 2 (om), same shape as day 1 v2. Every fact comes from the existing day-2 script and its sources
+// (Mandukya Upanishad 1, 3–5, 7–12; Bhagavad Gita 17.23–24). The family: Nani, Anika, Dev.
+const story = (img, lines) => ({ seg: "the story", kind: "panel", img, lines });
+const S = [
+  { seg: "the hook", kind: "hook", say: "Your yoga teacher says it. Your grandparents chant it. What's actually inside it?" },
+  story("img/p1.webp", [["Dev", "Ommm… whatever that means."]]),
+  story("img/p2.webp", [["Anika", "Nani, is om a word? Does it even mean anything?"]]),
+  story("img/p3.webp", [["Nani", "It's not one sound. Say it slowly. Aaa… uuu… mmm."]]),
+  story("img/p4.webp", [["Dev", "Okay. That's kind of cool."]]),
+  story("img/p5.webp", [["Nani", "An old text, the Mandukya Upanishad, says a is waking, u is dreaming, m is deep sleep."]]),
+  story("img/p6.webp", [["Nani", "And the silence after? The text calls it the fourth. That's the self."]]),
+  { seg: "the sign", kind: "deva" },
+  { seg: "the map", kind: "map" },
+  { seg: "the first sound", kind: "first" },
+  { seg: "play · look back", kind: "back", gate: true },
+  { seg: "play · myth or fact", kind: "myth", gate: true },
+  { seg: "play · the pairs", kind: "pairs", gate: true },
+  { seg: "play · use it", kind: "apply", gate: true },
+  { seg: "one breath", kind: "breath" },
+  { seg: "do", kind: "do" },
+  { seg: "day two", kind: "done" },
+];
+let i = 0, furthest = 0, right = 0, asked = 0, voiceOn = false;
+const answered = {};
+const el = (h) => { const t = document.createElement("template"); t.innerHTML = h.trim(); return t.content; };
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+function speak(text, lang) {
+  try {
+    if (!voiceOn || !window.speechSynthesis) return;
+    speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text); u.rate = 0.95; if (lang) u.lang = lang;
+    speechSynthesis.speak(u);
+  } catch (e) {}
+}
+$("voice").onclick = () => { voiceOn = !voiceOn; $("voice").setAttribute("aria-pressed", String(voiceOn)); if (voiceOn) readScreen(); else try { speechSynthesis.cancel(); } catch (e) {} };
+function readScreen() { const s = S[i]; const t = s.say || (s.lines ? s.lines.map((l) => l[1]).join(" ") : ""); if (t) speak(t); }
+
+function render() {
+  const s = S[i], m = $("screen");
+  m.innerHTML = "";
+  $("bar").style.width = Math.round((i / (S.length - 1)) * 100) + "%";
+  m.append(el(`<div class="eyebrow">hinduism · day two · <b>${esc(s.seg)}</b></div>`));
+  ({ hook, panel, deva, map, first, back, myth, pairs, apply, breath, do: doIt, done })[s.kind](s, m);
+  let b = -1; for (let j = i - 1; j >= 0; j--) if (!S[j].gate) { b = j; break; }
+  $("back").disabled = b < 0; $("back").dataset.to = b;
+  $("next").textContent = s.kind === "done" ? "start again" : s.kind === "panel" ? "next panel" : "next";
+  $("next").disabled = !!(s.gate && !answered[i]);
+  window.scrollTo(0, 0);
+  readScreen();
+}
+function go(n) { i = n; furthest = Math.max(furthest, i); render(); }
+$("next").onclick = () => {
+  if (S[i].kind === "done") { for (const k in answered) delete answered[k]; right = asked = 0; furthest = 0; return go(0); }
+  let k = i + 1;
+  if (i < furthest) while (k < furthest && S[k].gate && answered[k]) k++;
+  go(k);
+};
+$("back").onclick = () => { const to = +$("back").dataset.to; if (to >= 0) { i = to; render(); } };
+function settle(ok, line, m) {
+  if (!answered[i]) { asked++; if (ok) right++; }
+  answered[i] = true; $("next").disabled = false;
+  m.append(el(`<div class="cheer"><img src="img/${ok ? "celebrate" : "think"}.webp" alt=""><div><b>${ok ? ["nice.", "yes!", "right on.", "you got it."][asked % 4] : "almost."}</b>${line}</div></div>`));
+}
+function choice(m, title, opts, rightLine, wrongLine) {
+  m.append(el(`<h2>${esc(title)}</h2>`));
+  const box = el(`<div class="opts"></div>`).firstElementChild;
+  opts.forEach(([t, ok]) => {
+    const b = el(`<button class="opt">${esc(t)}</button>`).firstElementChild;
+    b.onclick = () => {
+      box.querySelectorAll("button").forEach((x, k) => { x.disabled = true; if (opts[k][1]) x.classList.add("right"); });
+      if (!ok) b.classList.add("wrong");
+      settle(!!ok, ok ? rightLine : wrongLine, m);
+    };
+    box.append(b);
+  });
+  m.append(box);
+}
+
+function hook(s, m) {
+  m.append(el(`<div class="frame"><img src="img/hook.webp" alt="People chanting om: a yoga class, a grandmother at a shrine, a teenager humming"></div>
+  <h1>Your yoga teacher says it. Your grandparents chant it. What's actually inside it?</h1>`));
+}
+function panel(s, m) {
+  const caps = s.lines.map(([who, line]) => `<div class="cap${who === "Nani" ? "" : " right"}"><span class="who">${esc(who)}</span>${esc(line)}</div>`).reverse().join("");
+  const f = el(`<div class="frame" tabindex="0" role="button" aria-label="next panel"><img src="${s.img}" alt="">${caps}</div>`).firstElementChild;
+  f.onclick = () => $("next").click();
+  f.onkeydown = (e) => { if (e.key === "Enter") $("next").click(); };
+  m.append(f, el(`<div class="tap">tap the picture to keep going</div>`));
+}
+function deva(s, m) {
+  s.say = "Om. Written as one sacred sign. Say it slowly: a, u, m.";
+  m.append(el(`<div class="card"><div class="src">written as one sacred sign</div><div class="deva" lang="sa">ॐ</div>
+    <button class="hear" id="hear">🔊 hear it: OHM (a-u-m)</button>
+    <div class="split"><span>a<small>aaa</small></span><span>u<small>uuu</small></span><span>m<small>mmm</small></span></div>
+    <p>You'll see it in homes and temples. That's why it's sometimes written <b>aum</b>.</p></div>`));
+  m.querySelector("#hear").onclick = () => { const was = voiceOn; voiceOn = true; speak("aaa, uuu, mmm. om", "hi-IN"); voiceOn = was; };
+}
+function map(s, m) {
+  s.say = "The Mandukya Upanishad gives each sound a state. A is waking. U is dreaming. M is deep sleep. And the silence after is the fourth: the self, peaceful.";
+  m.append(el(`<div class="card"><div class="eq">A map in one breath.</div>
+    <div class="dolist">
+      <div class="do" style="background:#0A0A0A0d;border-color:#0A0A0A22"><div><b style="color:#0A0A0A">a · waking</b><p style="color:#2a2a26">the world you can see and touch</p></div></div>
+      <div class="do" style="background:#0A0A0A0d;border-color:#0A0A0A22"><div><b style="color:#0A0A0A">u · dreaming</b><p style="color:#2a2a26">the inner world, made of the mind</p></div></div>
+      <div class="do" style="background:#0A0A0A0d;border-color:#0A0A0A22"><div><b style="color:#0A0A0A">m · deep sleep</b><p style="color:#2a2a26">quiet, where nothing is wanted</p></div></div>
+      <div class="do kids"><div><b>the silence · the fourth</b><p>no sound at all: the self, peaceful</p></div></div>
+    </div><div class="src">Mandukya Upanishad</div></div>`));
+}
+function first(s, m) {
+  s.say = "Om is said at the start of prayers, mantras and readings. The Bhagavad Gita says acts of offering, giving and discipline begin with it. A first sound, before the words.";
+  m.append(el(`<div class="card gold"><div class="eq">The first sound, before the words.</div>
+    <p>Om opens prayers, mantras and readings of scripture. The Bhagavad Gita says acts of offering, giving and discipline begin with it. So it isn't a sign-off. It's a beginning.</p>
+    <div class="src">Bhagavad Gita 17.23–24</div></div>`));
+}
+function back(s, m) {
+  choice(m, "Quick look back to day one: “te” in namaste means…", [["a bow", 0], ["to you", 1], ["peace", 0], ["the light", 0]],
+    "Namas, a bow. Te, to you. Day one stuck.", "Namas is the bow. Te is “to you”. It'll come back again.");
+}
+function myth(s, m) {
+  m.append(el(`<h2>Myth or fact?</h2><div class="claim">Om is one unbroken sound.</div>`));
+  const row = el(`<div class="pair"><button class="opt" data-v="1">fact</button><button class="opt" data-v="0">myth</button></div>`).firstElementChild;
+  row.querySelectorAll("button").forEach((b) => b.onclick = () => {
+    const ok = b.dataset.v === "0";
+    row.querySelectorAll("button").forEach((x) => { x.disabled = true; if (x.dataset.v === "0") x.classList.add("right"); });
+    if (!ok) b.classList.add("wrong");
+    settle(ok, "The Mandukya hears three sounds inside it, a, u and m, plus a fourth part: the silence.", m);
+  });
+  m.append(row);
+}
+function pairs(s, m) {
+  const P = [["a", "waking"], ["u", "dreaming"], ["m", "deep sleep"], ["the silence", "the fourth"]];
+  const R = ["deep sleep", "the fourth", "waking", "dreaming"];
+  let misses = 0, done = 0, pick = null;
+  m.append(el(`<h2>Match each sound to its state.</h2>`));
+  const grid = el(`<div class="row2"></div>`).firstElementChild;
+  P.forEach(([l], k) => grid.append(el(`<button class="tile" data-k="${k}">${esc(l)}</button>`), el(`<button class="tile" data-r="${esc(R[k])}">${esc(R[k])}</button>`)));
+  grid.querySelectorAll(".tile").forEach((t) => t.onclick = () => {
+    if (t.classList.contains("done")) return;
+    if (t.dataset.k !== undefined) { grid.querySelectorAll("[data-k]").forEach((x) => x.classList.remove("sel")); t.classList.add("sel"); pick = t; return; }
+    if (!pick) return;
+    if (P[+pick.dataset.k][1] === t.dataset.r) {
+      for (const x of [pick, t]) { x.classList.remove("sel"); x.classList.add("done"); x.disabled = true; }
+      pick = null;
+      if (++done === P.length) settle(misses === 0, misses === 0 ? "Clean sweep. A whole day in one breath." : "All matched. Waking, dreaming, deep sleep, and the quiet under them.", m);
+    } else { misses++; t.classList.add("miss"); setTimeout(() => t.classList.remove("miss"), 350); }
+  });
+  m.append(grid);
+}
+function apply(s, m) {
+  choice(m, "Dev says om is “just a sound to end yoga.” What would Nani add?",
+    [["it's a map of a whole day, and of the quiet under it", 1], ["it's the oldest word in Sanskrit", 0], ["it just means peace", 0], ["it's a kind of hello", 0]],
+    "Exactly. Not a sign-off: a map. Waking, dreaming, deep sleep, and the silence.",
+    "Not quite. Nani's point is the map: a, u, m are waking, dreaming, deep sleep, and the silence is the fourth.");
+}
+function breath(s, m) {
+  s.say = "One long om with the circle. Aaa, uuu, mmm. Then sit in the quiet for one more breath. That's the fourth.";
+  m.append(el(`<h2>One om. Then the quiet.</h2>
+    <button class="orb" id="orb" aria-label="start the breath"><span id="orbt">tap to begin</span></button>
+    <p class="reveal" style="text-align:center">Breathe in as it grows. Let it out as aaa… uuu… mmm. Then don't do anything. Notice the quiet.</p>`));
+  const orb = m.querySelector("#orb"), t = m.querySelector("#orbt");
+  orb.onclick = () => {
+    if (orb.dataset.on) return; orb.dataset.on = "1";
+    orb.classList.add("in"); t.textContent = "breathe in…";
+    setTimeout(() => { orb.classList.remove("in"); orb.classList.add("out"); t.textContent = "aaa… uuu… mmm…"; }, 4000);
+    setTimeout(() => { orb.classList.remove("out"); t.textContent = "…the fourth"; }, 9000);
+  };
+}
+function doIt(s, m) {
+  s.say = "Right now, one om, out loud or humming. Today, notice one moment of quiet after noise. Tonight, hum one om together before bed, then count to three in the silence.";
+  m.append(el(`<h2>Make it yours.</h2><div class="dolist">
+    <div class="do"><div><b>right now</b><p>One om, out loud or humming inside. It works the same.</p></div></div>
+    <div class="do"><div><b>today</b><p>Notice one moment of quiet right after noise. That's the fourth.</p></div></div>
+    <div class="do kids"><div><b>tonight, with your family</b><p>Hum one om together before bed, then count to three in the silence.</p></div></div></div>`));
+}
+function done(s, m) {
+  s.say = `You got ${right} out of ${asked}. Two days. Two words. Tomorrow: why kids touch their grandparents' feet.`;
+  const line = right === asked ? "Two for two." : right ? "Solid. It's building." : "You came back. That counts most.";
+  m.append(el(`<img src="img/celebrate.webp" alt="the infinite hill mascot celebrating" style="width:140px;margin:0 auto">
+    <div class="score">${right}/${asked}</div>
+    <h1 style="text-align:center">${line}</h1>
+    <div class="stats"><div><b>+10</b><span>light</span></div><div><b>2</b><span>words</span></div><div><b>2</b><span>day streak</span></div></div>
+    <div class="card"><div class="src">tomorrow</div><div class="eq">Why kids touch their grandparents' feet.</div><p>It opens with a quick one: what's the silence after om called?</p></div>`));
+}
+render();
+</script>
