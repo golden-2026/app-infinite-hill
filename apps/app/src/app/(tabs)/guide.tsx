@@ -18,7 +18,10 @@ import { guideProfile } from "@/lib/profile";
 import { useStore } from "@/lib/store";
 import { today as todayDate } from "@/lib/time";
 import { Eyebrow, Guy, Sun, color, font, type } from "@/ui";
-import { doorLabel, isEs, t } from "@/i18n";
+import { doorLabel, isEs, t, type Key } from "@/i18n";
+import { firstWeekFor } from "@/content/life-moments";
+import { holidayFor } from "@/content/couple";
+import { couplePartnerDoor, coupleWhy } from "@/lib/couple";
 
 // Some lessons' "word" is a line of a prayer ("the Lord's Prayer, line 5"). Name the line itself ("deliver us"),
 // taken from the lesson's own hook, instead of treating the label as a word.
@@ -155,6 +158,26 @@ export default function Guide() {
   }, []);
   const scroller = useRef<ScrollView>(null);
 
+  // The two-faith couple (content/couple.ts): starter questions that honor both families. With the companion off,
+  // they're answered from lessons already written (the partner's family's holiday, or their own door's wedding
+  // lessons), and say so plainly; nothing is guessed.
+  const couple = coupleWhy(saved.settings);
+  const partnerDoor = couplePartnerDoor(saved.settings);
+  const holiday = couple ? holidayFor(partnerDoor, todayDate()) : null;
+  const coupleChips = couple ? [
+    ...(holiday ? [t("couple.guide.chipHoliday", { name: t(`couple.holiday.name.${holiday.key}` as Key) })] : []),
+    couple === "wedding" ? t("couple.guide.chipWedding") : t("couple.guide.chipAsk"),
+    t("couple.guide.chipHolidays"),
+  ].slice(0, 2) : [];
+  const coupleOffline = () => {
+    const [d, days] = holiday ? [holiday.door, holiday.days] : couple === "wedding" ? [wing, firstWeekFor("wedding", wing) || []] : [wing, []];
+    if (!days.length) return t("couple.guide.offlineNone");
+    const list = days.map((n) => `· ${t("common.day", { n })}: ${lessonInfo(d, n)?.title || ""}`).join("\n");
+    return t("couple.guide.offline", { door: doorLabel(d), list });
+  };
+  /** The answer from the lessons when the companion isn't answering (a couple's starter question gets its own). */
+  const fallback = (question: string, suffix = "") => (coupleChips.includes(question) ? coupleOffline() : `${pilotAnswer(wing, question, words, day)}${suffix}`);
+
   const askCompanion = async (history: Line[], question: string) => {
     const gp = guideProfile(saved.settings.profile ?? null, wing);
     const lastRun = (saved.settings.runs || []).filter((r) => r.door === wing).at(-1);
@@ -185,19 +208,19 @@ export default function Guide() {
     } else if (live) {
       const reply = await askCompanion(hist.slice(1), question);
       line = reply?.limited
-        ? ["g", `${pilotAnswer(wing, question, words, day)}${t("companion.guide.limited")}`]
+        ? ["g", fallback(question, t("companion.guide.limited"))]
         : reply?.text
         ? ["g", reply.text, (reply.remember || []).filter((f) => typeof f === "string" && f.trim())]
-        : ["g", `${pilotAnswer(wing, question, words, day)}${t("companion.guide.failed")}`];
+        : ["g", fallback(question, t("companion.guide.failed"))];
     } else {
-      line = ["g", (await askLive(wing, words, hist.slice(1), question, guideProfile(saved.settings.profile ?? null, wing))) || pilotAnswer(wing, question, words, day)];
+      line = ["g", (await askLive(wing, words, hist.slice(1), question, guideProfile(saved.settings.profile ?? null, wing))) || fallback(question)];
     }
     setLog((l) => [...l, line]);
     setBusy(false);
     setTimeout(() => scroller.current?.scrollToEnd({ animated: true }), 50);
   };
   const kept = new Set(memory.facts.map((f) => f.text.trim().toLowerCase()));
-  const chips = [...(book.length ? [t("companion.guide.chipBook")] : []), t("companion.guide.chipMean", { word: wordName(today) }), t("companion.guide.chipStory", { word: wordName(today) })];
+  const chips = [...(book.length ? [t("companion.guide.chipBook")] : []), ...coupleChips, t("companion.guide.chipMean", { word: wordName(today) }), t("companion.guide.chipStory", { word: wordName(today) })];
   return (
     <SafeAreaView edges={["top"]} style={{ flex: 1, backgroundColor: color.cream }}>
       <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : undefined} style={{ flex: 1 }}>

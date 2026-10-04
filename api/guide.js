@@ -78,6 +78,9 @@ function getDoor(system) {
 
 // The person's onboarding profile arrives only as fixed enum values (never free text), and each maps to a fixed
 // sentence here, so nothing a user typed can reach the system prompt through it.
+// The two-faith couple (docs/PERSONAS.md, docs/GUIDE_PLAYBOOK.md moment H): added after the "partner" and "wedding"
+// reasons' own sentences, which stay as they were.
+const COUPLE_RULE = "When they ask about their partner's family, a wedding, or the holidays across two traditions: meet the love in the question first, honor both families and both traditions, rank neither, never suggest that either of them convert or set their own tradition aside, explain what each custom means to the family that keeps it (and that families differ, so asking them is best), and offer one gentle question they could ask their partner or the family.";
 const PROFILE_TEXT = Object.freeze({
   depth: {
     new: "They are new to this tradition: explain from the ground up, define every term.",
@@ -98,11 +101,11 @@ const PROFILE_TEXT = Object.freeze({
     own: "They came to understand their own tradition better: connect ideas to what they may have grown up with.",
     roots: "They want to reconnect with how they grew up: be warm about memory and family, never guilt.",
     god: "They are wondering whether they believe in God: take the question seriously, don't push an answer either way.",
-    partner: "They came through a partner's or family's faith: explain what things mean to the people who practice them.",
+    partner: `They came through a partner's or family's faith: explain what things mean to the people who practice them. ${COUPLE_RULE}`,
     kids: "They want to teach their children: give simple, tellable explanations.",
     baby: "They just had a baby: be warm and practical; share the tradition's own blessings, naming customs and prayers for a new child as the people who keep them do.",
     calm: "They want a calmer daily habit: keep answers practical and short.",
-    wedding: "They are getting married and the two families pray differently: explain their own tradition's marriage teaching and rites as its people keep them; honor the other family's tradition without ranking the two or pushing either of them to convert.",
+    wedding: `They are getting married and the two families pray differently: explain their own tradition's marriage teaching and rites as its people keep them; honor the other family's tradition without ranking the two or pushing either of them to convert. ${COUPLE_RULE}`,
     belonging: "They want people around them who understand: be warm; say how this tradition gathers (its congregation, meals, prayer together) as its people do; do not claim the app has events or members it does not.",
     forgiveness: "They need to forgive someone or be forgiven: be gentle; share the tradition's own teaching on forgiveness and repentance; never tell them they must reconcile with someone who hurt them or stay somewhere unsafe; if they mention being in danger, point them to local emergency help.",
     gratitude: "Something good happened and they want to give thanks: be warm; share the tradition's own words and ways of thanksgiving.",
