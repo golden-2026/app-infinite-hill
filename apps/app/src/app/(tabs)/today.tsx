@@ -223,7 +223,7 @@ export default function Today() {
 
         {/* the two-faith couple (content/couple.ts): a week or two before the partner's family's big holiday, a few
             already-written lessons about it (extras, never sits); and seven days walked side by side */}
-        <HolidayCard quiet={quiet} onOpen={(d, n) => router.push({ pathname: "/session/[door]/[day]", params: { door: d, day: String(n) } })} />
+        <HolidayCard onOpen={(d, n) => router.push({ pathname: "/session/[door]/[day]", params: { door: d, day: String(n) } })} />
         <WalkTogetherCard quiet={quiet} />
 
         {streakOn && sk.earnBack && !quiet ? (

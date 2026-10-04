@@ -36,10 +36,12 @@ export function WalkTogetherCard({ quiet, flush }: { quiet?: boolean; /** inside
     const next = noteSeen(walk.friendId ? walk : { ...walk, friendId: partner.id }, today, partner.doneToday);
     if (next !== walk) update({ walk: next });
   }, [walk, partner?.id, partner?.doneToday, today]); // eslint-disable-line react-hooks/exhaustive-deps
-  if ((!coupleWhy(st) && !flush) || quiet) return null;
+  if (!coupleWhy(st) && !flush) return null;
   if (st.walk?.closed) return null;
   const open = () => router.push("/walk-together");
+  // a quiet day keeps only what is already under way: the offer waits for another day
   if (!walk) {
+    if (quiet) return null;
     return (
       <View testID="walk-offer" style={[c.lite, { flexDirection: "row", alignItems: "center", gap: 12 }]}>
         <Pressable accessibilityRole="button" accessibilityLabel={t("couple.walk.offerA11y")} onPress={open} style={({ pressed }) => ({ flex: 1, flexDirection: "row", gap: 12, alignItems: "center", opacity: pressed ? 0.8 : 1 })}>
@@ -82,12 +84,13 @@ export function WalkTogetherCard({ quiet, flush }: { quiet?: boolean; /** inside
   );
 }
 
-export function HolidayCard({ quiet, onOpen }: { quiet?: boolean; onOpen: (door: string, day: number) => void }) {
+// Shown on quiet days too, like the first-week list: a few lessons, offered, never pressed.
+export function HolidayCard({ onOpen }: { onOpen: (door: string, day: number) => void }) {
   const { saved, today, update } = useStore();
   const st = saved.settings;
   const door = couplePartnerDoor(st);
   const h = holidayFor(door, today);
-  if (!h || quiet || (st.holidaySeen || []).includes(h.id)) return null;
+  if (!h || (st.holidaySeen || []).includes(h.id)) return null;
   const read = new Set(st.forYouDone || []);
   const walked = (n: number) => read.has(`${h.door}:${n}`) || saved.sits.some((x) => !x.kidId && x.door === h.door && x.day === n);
   if (h.days.every(walked)) return null;

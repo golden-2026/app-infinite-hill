@@ -116,7 +116,7 @@ export const es: Dict<typeof en> = {
   "couple.with.ask": "le encantaría caminar siete días lado a lado contigo, cada uno en su propia puerta.",
   "couple.holiday.eyebrow": "antes de la fiesta",
   "couple.holiday.today": "{name} es hoy",
-  "couple.holiday.soon": { one: "{name} es mañana", other: "{name} es en {count} días" },
+  "couple.holiday.soon": { one: "{name} llega mañana", other: "{name} llega en {count} días" },
   "couple.holiday.body": "significa mucho para su familia. unas lecciones cortas sobre la fiesta, para que sepas lo que significa para quienes la guardan. tu propio camino se queda donde está.",
   "couple.holiday.name.navratri": "Navaratri",
   "couple.holiday.name.diwali": "Diwali",
