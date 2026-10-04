@@ -65,6 +65,10 @@ h2{font:800 25px/1.15 var(--display);text-wrap:balance;margin:0;letter-spacing:-
 .cheer div{background:var(--cream);color:var(--cardInk);border-radius:16px 16px 16px 4px;padding:10px 14px;font:500 15px/1.4 var(--body)}
 .cheer div b{display:block;font:800 17px/1.2 var(--display)}
 @keyframes pop{from{transform:scale(.92);opacity:.4}to{transform:none;opacity:1}}
+.orb{width:200px;height:200px;margin:24px auto 8px;border:0;border-radius:999px;background:radial-gradient(circle,#EEFF6A 0%,#EEFF6A55 55%,transparent 70%);display:grid;place-items:center;cursor:pointer;transform:scale(.6);transition:transform 4s ease-in-out}
+.orb span{font:800 16px/1 var(--display);color:var(--ink);background:#EEFF6Acc;border-radius:999px;padding:8px 12px}
+.orb.in{transform:scale(1.1)}
+.orb.out{transform:scale(.6)}
 .dolist{display:flex;flex-direction:column;gap:10px}
 .do{background:#ffffff0d;border:1px solid var(--line);border-radius:18px;padding:14px 16px;display:flex;gap:12px;align-items:flex-start}
 .do b{display:block;font:800 13px/1.2 var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
@@ -93,7 +97,7 @@ h2{font:800 25px/1.15 var(--display);text-wrap:balance;margin:0;letter-spacing:-
   </div>
   <main id="screen" aria-live="polite"></main>
   <div class="foot"><button class="btn" id="next">next</button>
-    <p class="note">sample lesson v2 · not reviewed by Panditji yet · tap 🔊 to hear it read</p></div>
+    <p class="note">sample lesson v2.1 · not reviewed by Panditji yet · tap 🔊 to hear it read</p></div>
 </div>
 
 <script>
@@ -115,6 +119,7 @@ const S = [
   { seg: "play · myth or fact", kind: "myth", gate: true },
   { seg: "play · the pairs", kind: "pairs", gate: true },
   { seg: "play · use it", kind: "apply", gate: true },
+  { seg: "one breath", kind: "breath" },
   { seg: "do", kind: "do" },
   { seg: "day one", kind: "done" },
 ];
@@ -141,7 +146,7 @@ function render() {
   m.innerHTML = "";
   $("bar").style.width = Math.round((i / (S.length - 1)) * 100) + "%";
   m.append(el(`<div class="eyebrow">hinduism · day one · <b>${esc(s.seg)}</b></div>`));
-  ({ hook, panel, deva, gesture, reading, myth, pairs, apply, do: doIt, done })[s.kind](s, m);
+  ({ hook, panel, deva, gesture, reading, myth, pairs, apply, breath, do: doIt, done })[s.kind](s, m);
   // looking back is always open for reading; answered games stay answered
   let b = -1; for (let j = i - 1; j >= 0; j--) if (!S[j].gate) { b = j; break; }
   $("back").disabled = b < 0; $("back").dataset.to = b;
@@ -227,7 +232,7 @@ function pairs(s, m) {
   m.append(grid);
 }
 function apply(s, m) {
-  const o = [["their bad mood", 0], ["the same light that's in you", 1], ["that you're better than them", 0]];
+  const o = [["that it's polite to greet people, even rude ones", 0], ["the same light in them that's in you", 1], ["that they're older, so they get a bow", 0], ["that bowing calms you down first", 0]];
   m.append(el(`<h2>A friend snaps at you. You greet them with namaste the way Nani means it. What are you noticing?</h2>`));
   const box = el(`<div class="opts"></div>`).firstElementChild;
   o.forEach(([t, ok]) => {
@@ -235,11 +240,24 @@ function apply(s, m) {
     b.onclick = () => {
       box.querySelectorAll("button").forEach((x, k) => { x.disabled = true; if (o[k][1]) x.classList.add("right"); });
       if (!ok) b.classList.add("wrong");
-      settle(!!ok, "Read this way, namaste looks past the moment to the light in the person. Even a grumpy one.", m);
+      settle(!!ok, ok ? "Not manners, not age, not calm: the light. Read Nani's way, namaste looks past the moment to the same light in the person. Even a grumpy one." : "Good thought, but that's not Nani's point. Her reading is about the light: the same light in them that's in you.", m);
     };
     box.append(b);
   });
   m.append(box);
+}
+function breath(s, m) {
+  s.say = "One breath. Palms together if you like. Breathe in as the circle grows. Breathe out as it shrinks, with a small bow.";
+  m.append(el(`<h2>One breath. That's the practice.</h2>
+    <button class="orb" id="orb" aria-label="start the breath"><span id="orbt">tap to begin</span></button>
+    <p class="reveal" style="text-align:center">Palms together if you like. In as it grows. Out as it shrinks, with a small bow.</p>`));
+  const orb = m.querySelector("#orb"), t = m.querySelector("#orbt");
+  orb.onclick = () => {
+    if (orb.dataset.on) return; orb.dataset.on = "1";
+    orb.classList.add("in"); t.textContent = "in…";
+    setTimeout(() => { orb.classList.remove("in"); orb.classList.add("out"); t.textContent = "out… a small bow"; }, 4000);
+    setTimeout(() => { orb.classList.remove("out"); t.textContent = "namaste"; }, 8000);
+  };
 }
 function doIt(s, m) {
   s.say = "Try it now. Palms together, breathe in, and as you breathe out, a small bow. Today, greet one person with namaste and see them that way for a second. Tonight, greet your family with namaste at dinner, and each say one thing you see in the other.";
