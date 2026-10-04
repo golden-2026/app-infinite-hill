@@ -39,7 +39,7 @@ design changes go live, ask before deploying, real testimonials only, check usag
 ## How to ship
 - App: `cd apps/app; $env:CI='1'; npx expo export --platform web --output-dir ../../atlas/expo-liveN`, then
   `node atlas/pack-functions.mjs atlas/expo-liveN`, then the Netlify MCP deploy-site (site a55f267b-…), running
-  its npx command inside the export folder (delete .netlify first). Last deploy: expo-live69 (2026-10-03 evening: English Guide gets 988 and room for ~250 words on built paths and hard texts; "your move" and "call it" shuffle answers each visit; placement restart draws new starter questions; homepage evidence moves up after "was that the plan?" with 47% / 1 in 2 lonely / 33% less drug use; research page drops the cigarette line and says "women" for the 16-year study).
+  its npx command inside the export folder (delete .netlify first). Last deploy: expo-live70 (2026-10-04: sign-up without "heard" or the five-year map, heard asked once after the first lesson; day-one pairs game; simpler win screen; back reviews reading without re-answering; "Priyanka's welcome" header). Before that expo-live69 (2026-10-03 evening: English Guide gets 988 and room for ~250 words on built paths and hard texts; "your move" and "call it" shuffle answers each visit; placement restart draws new starter questions; homepage evidence moves up after "was that the plan?" with 47% / 1 in 2 lonely / 33% less drug use; research page drops the cigarette line and says "women" for the 16-year study).
 - Website: edit apps/app/public/site.html with small node scripts; Spanish pairs in atlas/mock/es.mjs (build throws
   on mismatch); rebuild with `node mock/build.mjs --apply` and `--lang es --apply` from atlas/.
 - Lessons: never `npm run lessons` (wipes live lessons); build with `--out` to a scratch folder and merge weeks.
@@ -55,7 +55,7 @@ design changes go live, ask before deploying, real testimonials only, check usag
   parents (Panditji's community); the owner has not confirmed yet. Plan days 1–7 as one arc; hide other features for
   the alpha.
 - Live (expo-live69): Guide 988 + longer answers, shuffled games, placement restart, homepage evidence moved up.
-- Saved on branch claude/vibrant-lamport-71d977, NOT live: Hinduism question bank (docs/learning/bank, 104 items,
+- Now live in expo-live70 (was saved on the branch): Hinduism question bank (docs/learning/bank, 104 items,
   blind-checked 78/78), sign-up without "heard" and the five-year map (heard is asked after the first lesson), day-one
   pairs game, trimmed win screen, back = review reading without re-answering, welcome header names the voice. Needs
   screenshots to the owner, then deploy.
