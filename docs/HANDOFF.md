@@ -32,7 +32,7 @@ design changes go live, ask before deploying, real testimonials only, check usag
 3. Guide, sprint 2: one-tap "switch to my own path" in chat, the sampler week, tidier "remember this" chips, an
    automatic grader for the 30 cases.
 4. Cost per active user; alpha invites (owner picks 10–20 people); 5 interviews; Panditji sign-off; one voice LOI.
-5. The learning engine (owner priority, "as sophisticated as Harvard"): rebuild placement as a real adaptive test (item difficulty, understanding not word-matching, plausible distractors, stop when confident, a short open-answer check before big jumps), then mastery tracking and spaced review.
+5. The learning engine (owner priority, "as sophisticated as Harvard"): rebuild placement as a real adaptive test (item difficulty, understanding not word-matching, plausible distractors, stop when confident, a short open-answer check before big jumps), then mastery tracking and spaced review. Owner decisions (2026-10-03): placement first, Hinduism pilot, answers hidden until the end, outside expert reviews the rules first. Rules drafted: docs/learning/QUESTION_RULES.md. Next: the fake-test-taker simulator (§9), then the Hinduism bank (104 items) after the Tuesday reset.
 6. Owner decisions open: mascot name; founder's note "we don't care which door" (keep or match); research-page
    videos "in production" vs "planned"; privacy page naming the AI provider.
 
