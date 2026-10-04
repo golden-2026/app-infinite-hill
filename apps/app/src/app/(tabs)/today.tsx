@@ -29,6 +29,7 @@ import { QuestTodayCard } from "@/ui/quest";
 import { SettleCard } from "@/ui/settle";
 import { campLabel, campName, doorLabel, isEs, t } from "@/i18n";
 import { firstWeekFor, gentleStart } from "@/content/life-moments";
+import { samplerActive, samplerNext, walkedFrom } from "@/content/sampler";
 import { baselineAtStart, daysCome, laneFor, nextWeekDay } from "@/lib/lane";
 import { dueOnThirdDay, emptyWellbeing } from "@/lib/wellbeing";
 
@@ -217,6 +218,24 @@ export default function Today() {
               ) : null}
               <Text style={[type.body(12), { color: color.mute }]}>{t(why === "wedding" ? "home.forYou.weddingBody" : "home.forYou.body")}</Text>
             </View>
+          );
+        })()}
+
+        {/* the sampler week (content/sampler.ts): while it is under way, its next open day, one tap from Today */}
+        {(() => {
+          const walked = walkedFrom(st.forYouDone, saved.sits);
+          if (!samplerActive(st.sampler, walked)) return null;
+          const next = samplerNext(st.sampler, today, walked);
+          return (
+            <Pressable testID="sampler-card" accessibilityRole="link" accessibilityLabel={next ? t("companion.sampler.cardA11y", { n: next.n, door: doorLabel(next.door) }) : t("companion.sampler.card")} onPress={() => router.push("/sampler")}
+              style={({ pressed }) => [s.lite, { marginTop: 0, opacity: pressed ? 0.9 : 1 }]}>
+              <Guy pose="wave" h={52} />
+              <View style={{ flex: 1, gap: 3 }}>
+                <Text style={[type.eyebrow(8), { color: color.ink }]}>{t("companion.sampler.card")}</Text>
+                <Text style={{ fontFamily: font.display[800], fontSize: 15, color: color.ink }}>{next ? t("companion.sampler.cardLine", { n: next.n, door: doorLabel(next.door) }) : t("companion.sampler.how")}</Text>
+              </View>
+              <Text style={s.chev}>›</Text>
+            </Pressable>
           );
         })()}
 

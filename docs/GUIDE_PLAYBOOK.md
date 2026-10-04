@@ -41,8 +41,8 @@ Never: refuse, say the choice is "theirs alone" as a way of not helping, steer t
 ### B. "I grew up in X and don't care about it now" / "stop talking about X" / "move me somewhere else"
 
 - Respect it at once: no lecture, no "your roots still matter" unless they bring it up warmly.
-- Say plainly they can switch to **my own path** or another door under **You**, and their days come with them
-  (once the in-chat button exists: offer the button).
+- Say plainly they can switch to **my own path** or another door under **You**, and their days come with them.
+  The app shows a "switch to my own path" button under the answer (asks first, can be undone).
 - Stop drawing on X unless they ask. Answer the next question from whatever they want.
 
 ### C. Anger at a hard text or practice ("I hate the story of Abraham and Isaac", "why would God flood the world?",
@@ -81,6 +81,8 @@ mock it, or lecture.
 ## Running the cases
 
 The cases live in `tests/guide-cases/cases.json`: each has `door`, `profile`, `ask`, `must` (what a good answer
-does) and `never` (what it must not do). Until an automated grader exists, run them by hand in the live app or with
-a grader script against the live API, and record pass/fail per case. A change ships only if no case regresses.
+does) and `never` (what it must not do). Grade them with `scripts/learning/guide-grader.mjs`: it asks a Guide running
+on this computer (`node atlas/guide-eval.mjs serve`) each case, has Claude judge the answer against `must` and `never`,
+and writes a pass/fail report to `atlas/img-dev/guide-eval/`. It uses `ANTHROPIC_API_KEY` from the terminal only and
+refuses the live site; `--dry-run` checks the grader itself with canned answers and no key. A change ships only if no case regresses.
 Keepers review the hard-text cases (C) for their tradition before public launch.

@@ -29,6 +29,7 @@ import { ComboBurst, FxProvider, ReactingGuy, cue, poseFor, type Reaction } from
 import { today as todayNow } from "@/lib/time";
 import { voiceLabel } from "@/lib/voice";
 import { opensAhead } from "@/content/life-moments";
+import { samplerOpens } from "@/content/sampler";
 import { BetStep, BreathStep, ForkStep, MatchStep, MythStep, OptionStep, OrderStep, OriginalStep, SitStep, SpeakStep, TapHear, TrapdoorStep } from "@/session/steps";
 import { BottomBar, Btn, Face, Guy, NavBar, Sun, color, confirmSheet, font, type } from "@/ui";
 import { successHaptic, tapHaptic } from "@/lib/haptics";
@@ -85,7 +86,8 @@ export default function SessionScreen() {
   const walkedBefore = !kid && saved.sits.some((x) => !x.kidId && x.door === door && x.day === day);
   if (!DOORS.some(([, w]) => w === door)) return <Redirect href="/today" />;
   // ...except a day on their own first-week list (content/life-moments.ts): it opens as an extra, never moving the path
-  const extra = !kid && Number.isInteger(day) && day > current && !walkedBefore && opensAhead(saved.settings.profile, door, day);
+  // (or a day of their sampler week that has opened, content/sampler.ts: seven doors, one a day, the same way)
+  const extra = !kid && Number.isInteger(day) && day > current && !walkedBefore && (opensAhead(saved.settings.profile, door, day) || samplerOpens(saved.settings.sampler, todayNow(), door, day));
   if (!Number.isInteger(day) || day < 1 || (day > current && !walkedBefore && !extra)) return <Redirect href={{ pathname: "/session/[door]/[day]", params: { door: door || saved.settings.homeWing, day: String(current) } }} />;
   // "go deeper" is an extra round on a lesson already walked today; children don't get it
   const deep = params.deep === "1" && !kid;

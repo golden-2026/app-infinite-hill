@@ -11,6 +11,8 @@ import { KeyboardAvoidingView, Platform, Pressable, ScrollView, Text, TextInput,
 import { SafeAreaView } from "react-native-safe-area-context";
 import { addFact, getMemory, moodOn, MOODS, useMemory } from "@/lib/companion/memory";
 import { crisisWords } from "@/lib/companion/shape";
+import { guideActions, movedOn, seeking, rememberOffers, shortFact, spotOf, switchHome, type DoorSpot, type GuideAction } from "@/lib/companion/guide-actions";
+import { router } from "expo-router";
 import { HelpCard } from "@/ui/companion";
 import { companionAvailable, companionChat, type ChatMessage, type CompanionContext, type CompanionProfile, answerLang } from "@/lib/companion-ai";
 import { flag } from "@/lib/flags";
@@ -121,12 +123,17 @@ function memoryFacts(): string[] {
   return facts;
 }
 
-/** One line in the conversation: who ("g" guide/companion, "u" the person), what was said, and facts offered to keep. */
-type Line = [string, string, string[]?];
+/** One line in the conversation: who ("g" guide/companion, "u" the person), what was said, facts offered to keep, and
+ *  the taps offered under it (lib/companion/guide-actions.ts) or, after a path switch, where to go back to on "undo". */
+// the Guide's tap buttons: ink-filled for the yes, outlined otherwise (44pt tall, as every tap target here)
+const pill = (filled: boolean) => ({ backgroundColor: filled ? color.ink : "#fff", borderWidth: 1.5, borderColor: color.ink, borderRadius: 22, minHeight: 44, justifyContent: "center" as const, paddingHorizontal: 14, paddingVertical: 8, maxWidth: "100%" as const });
+const pillText = (filled: boolean) => ({ fontFamily: font.text[600], fontSize: 13, color: filled ? color.cream : color.ink });
+type Extra = { actions?: GuideAction[]; undo?: DoorSpot };
+type Line = [string, string, string[]?, Extra?];
 
 export default function Guide() {
   useTitle(t("companion.guide.title"));
-  const { door: wing, lessonFor, saved } = useStore();
+  const { door: wing, lessonFor, saved, update } = useStore();
   const memory = useMemory();
   const day = lessonFor(wing);
   const days = camp1(wing);
@@ -154,6 +161,26 @@ export default function Guide() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const scroller = useRef<ScrollView>(null);
+  // the line whose "switch to my own path" is asking to confirm; remember offers closed with "no thanks"; undos used
+  const [asking, setAsking] = useState<number | null>(null);
+  const [closed, setClosed] = useState<Set<number>>(() => new Set());
+  const [undone, setUndone] = useState<Set<number>>(() => new Set());
+  const say = (text: string, extra?: Extra) => {
+    setLog((l) => [...l, ["g", text, undefined, extra]]);
+    setTimeout(() => scroller.current?.scrollToEnd({ animated: true }), 50);
+  };
+  // the same move as You › your path (switchHome): every day walked stays with them; "undo" puts all three back
+  const switchToOwn = () => {
+    const before = spotOf(saved.settings);
+    update(switchHome(saved.settings, "SPIRITUAL"));
+    setAsking(null);
+    say(t("companion.guide.ownPathDone"), { undo: before });
+  };
+  const undoSwitch = (i: number, before: DoorSpot) => {
+    update(before);
+    setUndone((u) => new Set(u).add(i));
+    say(t("companion.guide.undone", { door: doorLabel(before.homeWing) }));
+  };
 
   const askCompanion = async (history: Line[], question: string) => {
     const gp = guideProfile(saved.settings.profile ?? null, wing);
@@ -179,19 +206,23 @@ export default function Guide() {
     if (crisisWords(question)) setHelp(true);
     const hist = log;
     setLog((l) => [...l, ["u", question]]);
+    // the lessons can't answer "move me somewhere else" or "which path is for me?": say the true, kind thing instead
+    const offline = (q2: string) => (movedOn(q2) && wing !== "SPIRITUAL" ? t("companion.guide.movedOffline", { door: doorLabel(wing) }) : seeking(q2) ? t("companion.guide.seekerOffline") : pilotAnswer(wing, q2, words, day));
     let line: Line;
     if (/my book|what i kept|from my (lines|beads)/i.test(question) || /^book$/i.test(question) || BOOK_ASK_ES.test(question.replace(/[¿?¡!]/g, "").trim())) {
       line = ["g", book.length ? t("companion.guide.bookHead") + book.map((b) => `“${b.line}”  — ${doorLabel(b.door)}, ${b.date}`).join("\n") + t("companion.guide.bookTail") : t("companion.guide.bookEmpty")];
     } else if (live) {
       const reply = await askCompanion(hist.slice(1), question);
       line = reply?.limited
-        ? ["g", `${pilotAnswer(wing, question, words, day)}${t("companion.guide.limited")}`]
+        ? ["g", `${offline(question)}${t("companion.guide.limited")}`]
         : reply?.text
-        ? ["g", reply.text, (reply.remember || []).filter((f) => typeof f === "string" && f.trim())]
-        : ["g", `${pilotAnswer(wing, question, words, day)}${t("companion.guide.failed")}`];
+        ? ["g", reply.text, rememberOffers(reply.remember, new Set(getMemory().facts.map((f) => f.text.trim().toLowerCase())))]
+        : ["g", `${offline(question)}${t("companion.guide.failed")}`];
     } else {
-      line = ["g", (await askLive(wing, words, hist.slice(1), question, guideProfile(saved.settings.profile ?? null, wing))) || pilotAnswer(wing, question, words, day)];
+      line = ["g", (await askLive(wing, words, hist.slice(1), question, guideProfile(saved.settings.profile ?? null, wing))) || offline(question)];
     }
+    const actions = guideActions({ question, answer: line[1], door: wing, samplerStarted: !!saved.settings.sampler });
+    if (actions.length) line = [line[0], line[1], line[2], { actions }];
     setLog((l) => [...l, line]);
     setBusy(false);
     setTimeout(() => scroller.current?.scrollToEnd({ animated: true }), 50);
@@ -204,22 +235,57 @@ export default function Guide() {
         <View style={{ paddingHorizontal: 18, paddingBottom: 8 }}><TabHeader eyebrow={t("companion.guide.eyebrow", { door: doorLabel(wing) })} title={t("companion.guide.header")} pose="think" /></View>
         {/* every new line (their question, the "thinking" dots, the answer, the remember chips) brings the bottom into view */}
         <ScrollView ref={scroller} onContentSizeChange={() => scroller.current?.scrollToEnd({ animated: true })} contentContainerStyle={{ paddingHorizontal: 18, paddingVertical: 8, gap: 10 }}>
-          {log.map(([who, said, offers], i) => (
+          {log.map(([who, said, offers, extra], i) => {
+            const allKept = !!offers?.length && offers.every((f) => kept.has(f.trim().toLowerCase()));
+            const actions = (extra?.actions || []).filter((a) => a !== "ownPath" || wing !== "SPIRITUAL");
+            const canUndo = !!extra?.undo && !undone.has(i) && i === log.map((l) => !!l[3]?.undo).lastIndexOf(true);
+            return (
             <View key={i} style={{ gap: 6 }}>
               <View style={{ maxWidth: "88%", alignSelf: who === "u" ? "flex-end" : "flex-start", backgroundColor: who === "u" ? color.ink : "#fff", borderWidth: who === "u" ? 0 : 1, borderColor: color.line, borderRadius: 16, paddingVertical: 10, paddingHorizontal: 14 }}>
                 <Text style={[type.body(), { color: who === "u" ? color.cream : color.text }]}>{said}</Text>
               </View>
-              {offers?.length ? (
+              {actions.length ? (
+                // a next step, one tap (docs/GUIDE_PLAYBOOK.md rule 5); switching asks first and can be undone
+                <View testID="guide-actions" style={{ maxWidth: "88%", gap: 8 }}>
+                  {asking === i ? (
+                    <View testID="own-path-confirm" style={{ backgroundColor: "#fff", borderWidth: 1.5, borderColor: color.ink, borderRadius: 16, padding: 12, gap: 10 }}>
+                      <Text style={[type.body(14), { color: color.text }]}>{t("companion.guide.ownPathAsk")}</Text>
+                      <View style={{ flexDirection: "row", gap: 8, flexWrap: "wrap" }}>
+                        <Pressable testID="own-path-yes" accessibilityRole="button" onPress={switchToOwn} style={pill(true)}><Text style={pillText(true)}>{t("companion.guide.ownPathYes")}</Text></Pressable>
+                        <Pressable testID="own-path-no" accessibilityRole="button" onPress={() => setAsking(null)} style={pill(false)}><Text style={pillText(false)}>{t("companion.guide.ownPathNo")}</Text></Pressable>
+                      </View>
+                    </View>
+                  ) : (
+                    <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
+                      {actions.map((a) => (
+                        <Pressable key={a} testID={`guide-${a}`} accessibilityRole="button" onPress={() => (a === "ownPath" ? setAsking(i) : router.push("/sampler"))} style={pill(false)}>
+                          <Text style={pillText(false)}>{t(a === "ownPath" ? "companion.guide.ownPath" : "companion.guide.sampler")} ›</Text>
+                        </Pressable>
+                      ))}
+                    </View>
+                  )}
+                </View>
+              ) : null}
+              {canUndo ? (
+                <Pressable testID="own-path-undo" accessibilityRole="button" accessibilityLabel={t("companion.guide.undoA11y", { door: doorLabel(extra!.undo!.homeWing) })} onPress={() => undoSwitch(i, extra!.undo!)} style={[pill(false), { alignSelf: "flex-start" }]}>
+                  <Text style={pillText(false)}>↶ {t("companion.guide.undo")}</Text>
+                </Pressable>
+              ) : null}
+              {offers?.length && !closed.has(i) ? (
                 // Nothing is kept unless the person taps it; kept facts show under You → what the companion knows.
-                <View style={{ maxWidth: "88%", gap: 6 }}>
-                  <Text style={[type.body(12), { color: color.mute }]}>{t("companion.guide.remember")}</Text>
-                  <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
+                // One quiet group: a short question, at most two short chips, and "no thanks".
+                <View testID="remember-offers" style={{ maxWidth: "88%", alignSelf: "flex-start", backgroundColor: color.cream, borderWidth: 1, borderColor: color.line, borderRadius: 14, paddingVertical: 8, paddingHorizontal: 10, gap: 6 }}>
+                  <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: 8 }}>
+                    <Text style={[type.body(12), { color: color.mute, flexShrink: 1 }]}>{allKept ? t("companion.guide.rememberDone") : t("companion.guide.remember")}</Text>
+                    {allKept ? null : <Pressable testID="remember-no" accessibilityRole="button" hitSlop={10} onPress={() => setClosed((c) => new Set(c).add(i))}><Text style={[type.body(12), { color: color.mute, textDecorationLine: "underline" }]}>{t("companion.guide.rememberNo")}</Text></Pressable>}
+                  </View>
+                  <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6 }}>
                     {offers.map((f) => {
                       const has = kept.has(f.trim().toLowerCase());
                       return (
                         <Pressable key={f} accessibilityRole="button" accessibilityState={{ disabled: has }} accessibilityLabel={has ? t("companion.guide.keptA11y", { fact: f }) : t("companion.guide.rememberA11y", { fact: f })} disabled={has} onPress={() => addFact(f, todayDate())}
-                          style={{ backgroundColor: has ? color.ink : "#fff", borderWidth: 1.5, borderColor: color.ink, borderRadius: 22, minHeight: 44, justifyContent: "center", paddingHorizontal: 14, paddingVertical: 8, maxWidth: "100%" }}>
-                          <Text style={{ fontFamily: font.text[600], fontSize: 13, lineHeight: 18, flexShrink: 1, color: has ? color.cream : color.ink }}>{has ? t("companion.guide.kept", { fact: f }) : `+ ${f}`}</Text>
+                          style={{ backgroundColor: has ? color.ink : "#fff", borderWidth: 1, borderColor: color.ink, borderRadius: 22, minHeight: 44, justifyContent: "center", paddingHorizontal: 12, paddingVertical: 6, maxWidth: "100%" }}>
+                          <Text numberOfLines={1} style={{ fontFamily: font.text[600], fontSize: 12, lineHeight: 16, flexShrink: 1, color: has ? color.cream : color.ink }}>{has ? t("companion.guide.kept", { fact: shortFact(f) }) : `+ ${shortFact(f)}`}</Text>
                         </Pressable>
                       );
                     })}
@@ -227,7 +293,8 @@ export default function Guide() {
                 </View>
               ) : null}
             </View>
-          ))}
+            );
+          })}
           {help ? <View style={{ marginHorizontal: -18 }}><HelpCard onClose={() => setHelp(false)} /></View> : null}
           {busy ? <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}><Sun size={18} mood="spin" /><Text style={[type.body(12), { color: color.mute }]}>{t("companion.guide.looking")}</Text></View> : null}
           {log.length === 1 ? (

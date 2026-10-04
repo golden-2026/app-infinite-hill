@@ -75,6 +75,8 @@ export type Settings = {
   forYouOn?: string[];
   /** Signed up on a gentle or light way in (lib/lane.ts): Today leads with the first-week list until it's walked. */
   weekFirst?: boolean;
+  /** The sampler week (content/sampler.ts): the day they started it. Its lessons are read as extras (forYouDone). */
+  sampler?: { on: string } | null;
   /** The first-week card on Today, closed. */
   forYouClosed?: boolean;
   /** Where the onboarding check started them, by door ({ HINDUISM: 22 }): they showed they know camp one, and chose
@@ -128,6 +130,7 @@ export function cleanSettings(raw: any): Settings {
     placed: placedStarts(s.placed),
     moved: movedTo(s.moved),
     wellbeing: s.wellbeing ? cleanWellbeing(s.wellbeing) : undefined,
+    sampler: s.sampler && typeof s.sampler === "object" && typeof s.sampler.on === "string" && /^\d{4}-\d{2}-\d{2}$/.test(s.sampler.on) ? { on: s.sampler.on } : null,
   };
 }
 
