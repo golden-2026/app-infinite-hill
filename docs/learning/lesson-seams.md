@@ -6,7 +6,7 @@ Before the fix (2026-10-03): 1496 seam carries, 4481 seam words, 5224 lessons wi
 
 Camp one (days 1–21) takes its word and line from the owner's camp-one design data, not the outline, so it is listed but was left alone.
 
-**Now: 8488 lessons · 1461 seam carries (17%) · 4461 seam words (53%) · 5189 lessons with either.**
+**Now: 8488 lessons · 1039 seam carries (12%) · 4155 seam words (49%) · 4582 lessons with either.**
 
 | door | year | lessons | seam carries (before → now) | seam words (before → now) |
 |---|---|---|---|---|
@@ -19,9 +19,9 @@ Camp one (days 1–21) takes its word and line from the owner's camp-one design 
 | CHRISTIANITY | 1 | 331 | 15 → 15 | 163 → 163 |
 | CHRISTIANITY | 2 | 365 | 50 → 50 | 260 → 260 |
 | CHRISTIANITY | 3 | 365 | 7 → 7 | 175 → 175 |
-| HINDUISM | 1 | 331 | 58 → 58 | 150 → 150 |
-| HINDUISM | 2 | 365 | 192 → 192 | 167 → 167 |
-| HINDUISM | 3 | 365 | 365 → 330 | 110 → 90 |
+| HINDUISM | 1 | 331 | 58 → 9 | 150 → 15 |
+| HINDUISM | 2 | 365 | 192 → 42 | 167 → 63 |
+| HINDUISM | 3 | 365 | 365 → 107 | 110 → 23 |
 | ISLAM | 1 | 331 | 5 → 5 | 115 → 115 |
 | ISLAM | 2 | 365 | 32 → 32 | 231 → 231 |
 | ISLAM | 3 | 365 | 7 → 7 | 210 → 210 |
@@ -1877,185 +1877,13 @@ Camp one (days 1–21) takes its word and line from the owner's camp-one design 
 | HINDUISM | 7 | a handrail made of sound | mantra | a handrail made of sound | camp one; carry: carry=title |
 | HINDUISM | 14 | light passed hand to hand | arti | light passed hand to hand | camp one; carry: carry=title |
 | HINDUISM | 17 | the courage not to strike | ahimsa | do no harm — start with your mouth | camp one; carry: label |
-| HINDUISM | 22 | The boy at the door | The boy at the door | some things need a guard | word: 3+ words |
 | HINDUISM | 23 | Shiva comes home | Shiva comes home | what broke can be mended | word: 3+ words |
 | HINDUISM | 24 | The elephant facing north | The elephant facing north | first, before anyone | word: 3+ words |
-| HINDUISM | 25 | The race around the world | The race around the world | the whole world is close | word: 3+ words |
-| HINDUISM | 26 | The broken tusk | The broken tusk | finish the thing | word: 3+ words |
-| HINDUISM | 29 | The sun for breakfast | The sun for breakfast | reach anyway | word: 3+ words |
-| HINDUISM | 30 | The forgotten strength | The forgotten strength | you're stronger than you remember | word: 3+ words |
-| HINDUISM | 34 | The burning tail | The burning tail | use what they hand you | word: 3+ words |
-| HINDUISM | 36 | A king with no sons | A king with no sons | some things arrive late | word: 3+ words |
 | HINDUISM | 37 | Rama grows up | Rama grows up | your weight | word: 3+ words |
-| HINDUISM | 39 | Kaikeyi's two wishes | Kaikeyi's two wishes | words have weight | word: 3+ words |
-| HINDUISM | 43 | The king dies | The king dies | grief is the cost of love | word: 3+ words |
-| HINDUISM | 44 | Bharata refuses the throne | Bharata refuses the throne | not mine | word: 3+ words |
 | HINDUISM | 49 | The golden deer | The golden deer | wanting is the hook | word: 3+ words |
-| HINDUISM | 55 | Sugriva and Vali | Sugriva and Vali | choose a side carefully | word: 3+ words |
 | HINDUISM | 56 | The monsoon wait | The monsoon wait | waiting is a season | word: 3+ words |
-| HINDUISM | 59 | Angada in the court | Angada in the court | plant your foot | word: 3+ words |
-| HINDUISM | 61 | The first battle | The first battle | still, inside | word: 3+ words |
-| HINDUISM | 65 | Ravana rides out | Ravana rides out | name a head | word: 3+ words |
-| HINDUISM | 66 | The last arrow | The last arrow | it ends | word: 3+ words |
-| HINDUISM | 71 | Two sets of cousins | Two sets of cousins | one house | word: 3+ words |
 | HINDUISM | 75 | Krishna the negotiator | Krishna the negotiator | five villages | word: 3+ words |
-| HINDUISM | 98 | Slow it down | Slow it down | longer out | word: 3+ words |
-| HINDUISM | 105 | Om namah shivaya | Om namah shivaya | I bow to the stillness | word: 3+ words |
-| HINDUISM | 106 | Om gam ganapataye | Om gam ganapataye | clear the road | word: 3+ words |
-| HINDUISM | 119 | Arti at home | Arti at home | light, circled | word: 3+ words |
-| HINDUISM | 120 | Om jai jagadish hare | Om jai jagadish hare | victory to the lord of the world | word: 3+ words |
-| HINDUISM | 121 | Taking the light | Taking the light | take it | word: 3+ words |
-| HINDUISM | 123 | Sunset without objects | Sunset without objects | the original flame | word: 3+ words |
-| HINDUISM | 124 | Your evening routine | Your evening routine | the day put down | word: 3+ words |
-| HINDUISM | 125 | The body as temple | The body as temple | this is where you live | word: 3+ words |
-| HINDUISM | 139 | Diwali (5 days — Dhanteras, Naraka Chaturdashi, Lakshmi puja, Govardhan, Bhai Dooj) | Diwali | Diwali (5 days — Dhanteras, Naraka Chaturdashi, Lakshmi puja, Govardhan, Bhai Dooj) | carry: carry=title |
-| HINDUISM | 140 | Diwali (5 days — Dhanteras, Naraka Chaturdashi, Lakshmi puja, Govardhan, Bhai Dooj) | Diwali | Diwali (5 days — Dhanteras, Naraka Chaturdashi, Lakshmi puja, Govardhan, Bhai Dooj) | carry: carry=title |
-| HINDUISM | 141 | Holi (colors; Prahlada and the fire) | Holi | Holi (colors; Prahlada and the fire) | carry: carry=title |
-| HINDUISM | 142 | Holi (colors; Prahlada and the fire) | Holi | Holi (colors; Prahlada and the fire) | carry: carry=title |
-| HINDUISM | 143 | Navaratri (nine nights, nine forms; Durga) | Navaratri | Navaratri (nine nights, nine forms; Durga) | carry: carry=title |
-| HINDUISM | 144 | Navaratri (nine nights, nine forms; Durga) | Navaratri | Navaratri (nine nights, nine forms; Durga) | carry: carry=title |
-| HINDUISM | 145 | Janmashtami (midnight; Krishna's birth) | Janmashtami | Janmashtami (midnight; Krishna's birth) | carry: carry=title |
-| HINDUISM | 146 | Ganesh Chaturthi (the clay idol; the immersion) | Ganesh Chaturthi | Ganesh Chaturthi (the clay idol; the immersion) | carry: carry=title |
-| HINDUISM | 147 | Ganesh Chaturthi (the clay idol; the immersion) | Ganesh Chaturthi | Ganesh Chaturthi (the clay idol; the immersion) | carry: carry=title |
-| HINDUISM | 148 | Maha Shivaratri (the night vigil) | Maha Shivaratri | Maha Shivaratri (the night vigil) | carry: carry=title |
-| HINDUISM | 149 | Maha Shivaratri (the night vigil) | Maha Shivaratri | Maha Shivaratri (the night vigil) | carry: carry=title |
-| HINDUISM | 150 | Raksha Bandhan (the thread) | Raksha Bandhan | Raksha Bandhan (the thread) | carry: carry=title |
-| HINDUISM | 151 | Makar Sankranti (kites; the sun turns) | Makar Sankranti | Makar Sankranti (kites; the sun turns) | carry: carry=title |
-| HINDUISM | 152 | Makar Sankranti (kites; the sun turns) | Makar Sankranti | Makar Sankranti (kites; the sun turns) | carry: carry=title |
-| HINDUISM | 153 | Pongal / Onam (regional; harvest) | Pongal / Onam | Pongal / Onam (regional; harvest) | carry: carry=title |
-| HINDUISM | 154 | Pongal / Onam (regional; harvest) | Pongal / Onam | Pongal / Onam (regional; harvest) | carry: carry=title |
-| HINDUISM | 155 | *you can do this* | *you can do this* | *you can do this* | carry: carry=title; word: 3+ words |
-| HINDUISM | 156 | Camp 3 close | Camp 3 close | Camp 3 close | carry: carry=title; word: label |
-| HINDUISM | 158 | Arjuna asks to see (1.20–1.27) | Arjuna asks to see | look at them | word: 3+ words |
-| HINDUISM | 159 | "I see no good in killing my kin" (1.28–1.39) | "I see no good in killing my kin" | the honest objection | word: 3+ words |
-| HINDUISM | 160 | The bow drops (1.40–1.47) | The bow drops | I can't | word: 3+ words |
-| HINDUISM | 161 | Krishna's first words: "whence this dejection?" (2.1–2.10) | Krishna's first words | stand up | word: 3+ words |
-| HINDUISM | 162 | The self that is not slain (2.11–2.25) | The self that is not slain | never born, never dies | word: 3+ words |
-| HINDUISM | 163 | Duty and the coward (2.26–2.38) | Duty and the coward | do what's yours | word: 3+ words |
-| HINDUISM | 164 | "You have the right to act, never to the fruit" (2.39–2.53) | "You have the right to act | the line | word: 3+ words |
-| HINDUISM | 165 | The steady one (2.54–2.61) | The steady one | unmoved | word: 3+ words |
-| HINDUISM | 166 | Desire → anger → ruin; the peace at the end (2.62–2.72) | Desire → anger → ruin | the chain, and its end | word: 3+ words |
-| HINDUISM | 167 | Why not just renounce? (3.1–3.9) | Why not just renounce? | act anyway | word: 3+ words |
-| HINDUISM | 168 | The wheel of sacrifice (3.10–3.16) | The wheel of sacrifice | give back | word: 3+ words |
-| HINDUISM | 169 | The example of the wise (3.17–3.29) | The example of the wise | lead by doing | word: 3+ words |
-| HINDUISM | 170 | Desire as the enemy (3.30–3.43) | Desire as the enemy | know the enemy | word: 3+ words |
-| HINDUISM | 171 | "Whenever dharma declines, I come" (4.1–4.8) | "Whenever dharma declines | he returns | word: 3+ words |
-| HINDUISM | 172 | Action without attachment (4.9–4.23) | Action without attachment | free while acting | word: 3+ words |
-| HINDUISM | 173 | Sacrifice as knowledge (4.24–4.33) | Sacrifice as knowledge | knowledge burns karma | word: 3+ words |
-| HINDUISM | 174 | Cut the doubt (4.34–4.42) | Cut the doubt | the sword of knowledge | word: 3+ words |
-| HINDUISM | 176 | The city of nine gates (5.13–5.21) | The city of nine gates | seated within | word: 3+ words |
-| HINDUISM | 177 | The sage's peace (5.22–5.29) | The sage's peace | peace | word: 3+ words |
-| HINDUISM | 178 | Lift yourself by yourself (6.1–6.9) | Lift yourself by yourself | your own friend | word: 3+ words |
-| HINDUISM | 179 | How to sit (6.10–6.17) | How to sit | the posture, the place | word: 3+ words |
-| HINDUISM | 180 | The lamp in a windless place (6.18–6.28) | The lamp in a windless place | flame unwavering | word: 3+ words |
-| HINDUISM | 181 | "The mind is restless" — Arjuna admits it (6.29–6.36) | "The mind is restless" | practice and detachment | word: 3+ words |
-| HINDUISM | 182 | The one who fell short (6.37–6.47) | The one who fell short | nothing is lost | word: 3+ words |
-| HINDUISM | 183 | One in a thousand (7.1–7.12) | One in a thousand | rare | word: 3+ words |
-| HINDUISM | 184 | Four kinds of devotees (7.13–7.19) | Four kinds of devotees | the one who knows | word: 3+ words |
-| HINDUISM | 185 | Maya and the veil (7.20–7.30) | Maya and the veil | behind the veil | word: 3+ words |
-| HINDUISM | 186 | What is Brahman? (8.1–8.7) | What is Brahman? | remember me | word: 3+ words |
-| HINDUISM | 187 | The last thought (8.8–8.16) | The last thought | what you think at the end | word: 3+ words |
-| HINDUISM | 188 | Day and night of Brahma (8.17–8.28) | Day and night of Brahma | the two paths | word: 3+ words |
-| HINDUISM | 189 | "I will tell you the most secret" (9.1–9.10) | "I will tell you the most secret" | the secret | word: 3+ words |
-| HINDUISM | 190 | The one who offers a leaf (9.11–9.25) | The one who offers a leaf | a leaf, a flower, water | word: 3+ words |
-| HINDUISM | 191 | "Whatever you do, offer it" (9.26–9.28) | "Whatever you do | offer everything | word: 3+ words |
-| HINDUISM | 192 | Even the worst (9.29–9.34) | Even the worst | no one is outside | word: 3+ words |
-| HINDUISM | 195 | "I am the taste in water" (10.19–10.42) | "I am the taste in water" | in everything | word: 3+ words |
-| HINDUISM | 196 | Arjuna asks to see (11.1–11.8) | Arjuna asks to see | show me | word: 3+ words |
-| HINDUISM | 197 | The universal form (11.9–11.31) | The universal form | a thousand suns | word: 3+ words |
-| HINDUISM | 198 | "I am Time" (11.32–11.34) | "I am Time" | time | word: 3+ words |
-| HINDUISM | 199 | Arjuna's terror and praise (11.35–11.46) | Arjuna's terror and praise | forgive my familiarity | word: 3+ words |
-| HINDUISM | 200 | The gentle form returns (11.47–11.55) | The gentle form returns | by devotion alone | word: 3+ words |
-| HINDUISM | 201 | Form or formless? (12.1–12.7) | Form or formless? | either way | word: 3+ words |
-| HINDUISM | 202 | The ladder of practice (12.8–12.12) | The ladder of practice | if you can't, then… | carry: label; word: 3+ words |
-| HINDUISM | 203 | The one dear to me (12.13–12.20) | The one dear to me | free from hate, friendly to all | word: 3+ words |
-| HINDUISM | 204 | The body is the field (13.1–13.6) | The body is the field | the field | word: 3+ words |
-| HINDUISM | 205 | Knowledge and its opposite (13.7–13.18) | Knowledge and its opposite | humility first | word: 3+ words |
-| HINDUISM | 206 | Seeing the same in all (13.19–13.34) | Seeing the same in all | the one light | word: 3+ words |
-| HINDUISM | 208 | How they show up (14.10–14.20) | How they show up | notice yours today | word: 3+ words |
-| HINDUISM | 209 | Beyond the three (14.21–14.27) | Beyond the three | the same in praise and blame | word: 3+ words |
-| HINDUISM | 210 | The tree with roots above (15.1–15.6) | The tree with roots above | upside-down tree | word: 3+ words |
-| HINDUISM | 211 | The light in the sun (15.7–15.15) | The light in the sun | I am the light | word: 3+ words |
-| HINDUISM | 212 | The two and the one beyond (15.16–15.20) | The two and the one beyond | know this | word: 3+ words |
-| HINDUISM | 213 | The divine qualities (16.1–16.5) | The divine qualities | fearlessness, purity | word: 3+ words |
-| HINDUISM | 215 | Follow the scripture, not desire (16.21–16.24) | Follow the scripture | know the rule | word: 3+ words |
-| HINDUISM | 216 | Faith follows nature (17.1–17.6) | Faith follows nature | as you believe | word: 3+ words |
-| HINDUISM | 218 | Om tat sat (17.23–17.28) | Om tat sat | om tat sat | carry: carry=title; word: 3+ words |
-| HINDUISM | 219 | Renunciation vs relinquishment (18.1–18.12) | Renunciation vs relinquishment | let go of the fruit, not the act | word: 3+ words |
-| HINDUISM | 220 | Five causes of action (18.13–18.18) | Five causes of action | not I alone | word: 3+ words |
-| HINDUISM | 221 | Three kinds of knowledge, action, doer (18.19–18.28) | Three kinds of knowledge | know your kind | word: 3+ words |
-| HINDUISM | 222 | Duty according to nature (18.41–18.48) | Duty according to nature | your own dharma, imperfect, beats another's, perfect | word: 3+ words |
-| HINDUISM | 223 | The path to Brahman (18.49–18.58) | The path to Brahman | steady | word: 3+ words |
-| HINDUISM | 224 | "I have told you. Now do as you choose." (18.59–18.66) | "I have told you. Now do as you choose." | he hands it back | word: 3+ words |
-| HINDUISM | 225 | "Abandon all dharmas, come to me alone" (18.66–18.72) | "Abandon all dharmas | the last instruction | word: 3+ words |
-| HINDUISM | 227 | The whole Gita in one session | The whole Gita in one session | you read it | word: label |
-| HINDUISM | 228 | Your twelve verses · pick the ones that stayed | Your twelve verses | yours | word: 3+ words |
-| HINDUISM | 229 | The Gita in your week · one verse per day going forward | The Gita in your week | carry | word: 3+ words |
-| HINDUISM | 230 | Gita path in the world: Gandhi, Thoreau, Tilak, Vivekananda | Gita path in the world | who else carried it | word: 3+ words |
-| HINDUISM | 232 | Isha Upanishad (18 verses, one week): "all this is pervaded by the Lord" (1 of 7) | renounce and enjoy | renounce, and enjoy | carry: carry=word; word: 3+ words |
-| HINDUISM | 233 | Isha Upanishad (18 verses, one week): "all this is pervaded by the Lord" (2 of 7) | renounce and enjoy | renounce, and enjoy | carry: carry=word; word: 3+ words |
-| HINDUISM | 234 | Isha Upanishad (18 verses, one week): "all this is pervaded by the Lord" (3 of 7) | renounce and enjoy | renounce, and enjoy | carry: carry=word; word: 3+ words |
-| HINDUISM | 235 | Isha Upanishad (18 verses, one week): "all this is pervaded by the Lord" (4 of 7) | renounce and enjoy | renounce, and enjoy | carry: carry=word; word: 3+ words |
-| HINDUISM | 236 | Isha Upanishad (18 verses, one week): "all this is pervaded by the Lord" (5 of 7) | renounce and enjoy | renounce, and enjoy | carry: carry=word; word: 3+ words |
-| HINDUISM | 237 | Isha Upanishad (18 verses, one week): "all this is pervaded by the Lord" (6 of 7) | renounce and enjoy | renounce, and enjoy | carry: carry=word; word: 3+ words |
-| HINDUISM | 238 | Isha Upanishad (18 verses, one week): "all this is pervaded by the Lord" (7 of 7) | renounce and enjoy | renounce, and enjoy | carry: carry=word; word: 3+ words |
-| HINDUISM | 239 | Kena Upanishad (one week): who impels the mind? (1 of 7) | the story of the gods and Brahman | the one behind the ear | word: 3+ words |
-| HINDUISM | 240 | Kena Upanishad (one week): who impels the mind? (2 of 7) | the story of the gods and Brahman | the one behind the ear | word: 3+ words |
-| HINDUISM | 241 | Kena Upanishad (one week): who impels the mind? (3 of 7) | the story of the gods and Brahman | the one behind the ear | word: 3+ words |
-| HINDUISM | 242 | Kena Upanishad (one week): who impels the mind? (4 of 7) | the story of the gods and Brahman | the one behind the ear | word: 3+ words |
-| HINDUISM | 243 | Kena Upanishad (one week): who impels the mind? (5 of 7) | the story of the gods and Brahman | the one behind the ear | word: 3+ words |
-| HINDUISM | 244 | Kena Upanishad (one week): who impels the mind? (6 of 7) | the story of the gods and Brahman | the one behind the ear | word: 3+ words |
-| HINDUISM | 245 | Kena Upanishad (one week): who impels the mind? (7 of 7) | the story of the gods and Brahman | the one behind the ear | word: 3+ words |
-| HINDUISM | 246 | Katha Upanishad (one week): Nachiketa and Death (1 of 7) | the two paths | choose the good over the pleasant | word: 3+ words |
-| HINDUISM | 247 | Katha Upanishad (one week): Nachiketa and Death (2 of 7) | the two paths | choose the good over the pleasant | word: 3+ words |
-| HINDUISM | 248 | Katha Upanishad (one week): Nachiketa and Death (3 of 7) | the two paths | choose the good over the pleasant | word: 3+ words |
-| HINDUISM | 249 | Katha Upanishad (one week): Nachiketa and Death (4 of 7) | the two paths | choose the good over the pleasant | word: 3+ words |
-| HINDUISM | 250 | Katha Upanishad (one week): Nachiketa and Death (5 of 7) | the two paths | choose the good over the pleasant | word: 3+ words |
-| HINDUISM | 251 | Katha Upanishad (one week): Nachiketa and Death (6 of 7) | the two paths | choose the good over the pleasant | word: 3+ words |
-| HINDUISM | 252 | Katha Upanishad (one week): Nachiketa and Death (7 of 7) | the two paths | choose the good over the pleasant | word: 3+ words |
-| HINDUISM | 260 | Karma yoga deep-dive: action as offering; Karma Yoga as taught by Vivekananda; work as worship (1 of 7) | Karma yoga deep-dive | offer the work | word: 3+ words |
-| HINDUISM | 261 | Karma yoga deep-dive: action as offering; Karma Yoga as taught by Vivekananda; work as worship (2 of 7) | Karma yoga deep-dive | offer the work | word: 3+ words |
-| HINDUISM | 262 | Karma yoga deep-dive: action as offering; Karma Yoga as taught by Vivekananda; work as worship (3 of 7) | Karma yoga deep-dive | offer the work | word: 3+ words |
-| HINDUISM | 263 | Karma yoga deep-dive: action as offering; Karma Yoga as taught by Vivekananda; work as worship (4 of 7) | Karma yoga deep-dive | offer the work | word: 3+ words |
-| HINDUISM | 264 | Karma yoga deep-dive: action as offering; Karma Yoga as taught by Vivekananda; work as worship (5 of 7) | Karma yoga deep-dive | offer the work | word: 3+ words |
-| HINDUISM | 265 | Karma yoga deep-dive: action as offering; Karma Yoga as taught by Vivekananda; work as worship (6 of 7) | Karma yoga deep-dive | offer the work | word: 3+ words |
-| HINDUISM | 266 | Karma yoga deep-dive: action as offering; Karma Yoga as taught by Vivekananda; work as worship (7 of 7) | Karma yoga deep-dive | offer the work | word: 3+ words |
-| HINDUISM | 288 | Dvaita and beyond (Madhva, Ramanuja): the lover and the beloved stay two; why devotion needs difference (1 of 7) | Dvaita and beyond | two, and the space between is love | word: 3+ words |
-| HINDUISM | 289 | Dvaita and beyond (Madhva, Ramanuja): the lover and the beloved stay two; why devotion needs difference (2 of 7) | Dvaita and beyond | two, and the space between is love | word: 3+ words |
 | HINDUISM | 290 | Dvaita and beyond (Madhva, Ramanuja): the lover and the beloved stay two; why devotion needs difference (3 of 7) | Dvaita and beyond | two, and the space between is love | word: 3+ words |
-| HINDUISM | 291 | Dvaita and beyond (Madhva, Ramanuja): the lover and the beloved stay two; why devotion needs difference (4 of 7) | Dvaita and beyond | two, and the space between is love | word: 3+ words |
-| HINDUISM | 292 | Dvaita and beyond (Madhva, Ramanuja): the lover and the beloved stay two; why devotion needs difference (5 of 7) | Dvaita and beyond | two, and the space between is love | word: 3+ words |
-| HINDUISM | 293 | Dvaita and beyond (Madhva, Ramanuja): the lover and the beloved stay two; why devotion needs difference (6 of 7) | Dvaita and beyond | two, and the space between is love | word: 3+ words |
-| HINDUISM | 294 | Dvaita and beyond (Madhva, Ramanuja): the lover and the beloved stay two; why devotion needs difference (7 of 7) | Dvaita and beyond | two, and the space between is love | word: 3+ words |
-| HINDUISM | 295 | Patanjali 1.1–1.16: "now, yoga"; yoga is the stilling of the mind's turnings; practice and non-attachment (1 of 7) | Patanjali 1.1 | now | word: label |
-| HINDUISM | 296 | Patanjali 1.1–1.16: "now, yoga"; yoga is the stilling of the mind's turnings; practice and non-attachment (2 of 7) | Patanjali 1.1 | now | word: label |
-| HINDUISM | 297 | Patanjali 1.1–1.16: "now, yoga"; yoga is the stilling of the mind's turnings; practice and non-attachment (3 of 7) | Patanjali 1.1 | now | word: label |
-| HINDUISM | 298 | Patanjali 1.1–1.16: "now, yoga"; yoga is the stilling of the mind's turnings; practice and non-attachment (4 of 7) | Patanjali 1.1 | now | word: label |
-| HINDUISM | 299 | Patanjali 1.1–1.16: "now, yoga"; yoga is the stilling of the mind's turnings; practice and non-attachment (5 of 7) | Patanjali 1.1 | now | word: label |
-| HINDUISM | 300 | Patanjali 1.1–1.16: "now, yoga"; yoga is the stilling of the mind's turnings; practice and non-attachment (6 of 7) | Patanjali 1.1 | now | word: label |
-| HINDUISM | 301 | Patanjali 1.1–1.16: "now, yoga"; yoga is the stilling of the mind's turnings; practice and non-attachment (7 of 7) | Patanjali 1.1 | now | word: label |
-| HINDUISM | 302 | karma: the Gita's ch. 3 revisited · bhakti: the Bhagavata Purana's Krishna stories (the… | karma | karma: the Gita's ch. 3 revisited · bhakti: the Bhagavata Purana's Krishna stories (the… | carry: carry=title |
-| HINDUISM | 303 | karma: the Gita's ch. 3 revisited · bhakti: the Bhagavata Purana's Krishna stories (the… | karma | karma: the Gita's ch. 3 revisited · bhakti: the Bhagavata Purana's Krishna stories (the… | carry: carry=title |
-| HINDUISM | 304 | karma: the Gita's ch. 3 revisited · bhakti: the Bhagavata Purana's Krishna stories (the… | karma | karma: the Gita's ch. 3 revisited · bhakti: the Bhagavata Purana's Krishna stories (the… | carry: carry=title |
-| HINDUISM | 305 | karma: the Gita's ch. 3 revisited · bhakti: the Bhagavata Purana's Krishna stories (the… | karma | karma: the Gita's ch. 3 revisited · bhakti: the Bhagavata Purana's Krishna stories (the… | carry: carry=title |
-| HINDUISM | 306 | karma: the Gita's ch. 3 revisited · bhakti: the Bhagavata Purana's Krishna stories (the… | karma | karma: the Gita's ch. 3 revisited · bhakti: the Bhagavata Purana's Krishna stories (the… | carry: carry=title |
-| HINDUISM | 307 | karma: the Gita's ch. 3 revisited · bhakti: the Bhagavata Purana's Krishna stories (the… | karma | karma: the Gita's ch. 3 revisited · bhakti: the Bhagavata Purana's Krishna stories (the… | carry: carry=title |
-| HINDUISM | 308 | karma: the Gita's ch. 3 revisited · bhakti: the Bhagavata Purana's Krishna stories (the… | karma | karma: the Gita's ch. 3 revisited · bhakti: the Bhagavata Purana's Krishna stories (the… | carry: carry=title |
-| HINDUISM | 309 | karma: Vivekananda's Karma Yoga lectures · bhakti: the Bhagavata Purana's Krishna… | karma | karma: Vivekananda's Karma Yoga lectures · bhakti: the Bhagavata Purana's Krishna… | carry: carry=title |
-| HINDUISM | 310 | karma: Vivekananda's Karma Yoga lectures · bhakti: the Bhagavata Purana's Krishna… | karma | karma: Vivekananda's Karma Yoga lectures · bhakti: the Bhagavata Purana's Krishna… | carry: carry=title |
-| HINDUISM | 311 | karma: Vivekananda's Karma Yoga lectures · bhakti: the Bhagavata Purana's Krishna… | karma | karma: Vivekananda's Karma Yoga lectures · bhakti: the Bhagavata Purana's Krishna… | carry: carry=title |
-| HINDUISM | 312 | karma: Vivekananda's Karma Yoga lectures · bhakti: the Bhagavata Purana's Krishna… | karma | karma: Vivekananda's Karma Yoga lectures · bhakti: the Bhagavata Purana's Krishna… | carry: carry=title |
-| HINDUISM | 313 | karma: Vivekananda's Karma Yoga lectures · bhakti: the Gita Govinda · jnana:… | karma | karma: Vivekananda's Karma Yoga lectures · bhakti: the Gita Govinda · jnana:… | carry: carry=title |
-| HINDUISM | 314 | karma: Vivekananda's Karma Yoga lectures · bhakti: the Gita Govinda · jnana:… | karma | karma: Vivekananda's Karma Yoga lectures · bhakti: the Gita Govinda · jnana:… | carry: carry=title |
-| HINDUISM | 315 | karma: Vivekananda's Karma Yoga lectures · bhakti: the Gita Govinda · jnana:… | karma | karma: Vivekananda's Karma Yoga lectures · bhakti: the Gita Govinda · jnana:… | carry: carry=title |
-| HINDUISM | 316 | karma: seva as a life · bhakti: the Gita Govinda · jnana: Ramana Maharshi's self-inquiry | karma | karma: seva as a life · bhakti: the Gita Govinda · jnana: Ramana Maharshi's self-inquiry | carry: carry=title |
-| HINDUISM | 317 | karma: seva as a life · bhakti: the Gita Govinda · jnana: Ramana Maharshi's self-inquiry | karma | karma: seva as a life · bhakti: the Gita Govinda · jnana: Ramana Maharshi's self-inquiry | carry: carry=title |
-| HINDUISM | 318 | karma: seva as a life · bhakti: the Gita Govinda · jnana: Ramana Maharshi's self-inquiry | karma | karma: seva as a life · bhakti: the Gita Govinda · jnana: Ramana Maharshi's self-inquiry | carry: carry=title |
-| HINDUISM | 319 | karma: seva as a life · bhakti: the Gita Govinda · jnana: Ramana Maharshi's self-inquiry | karma | karma: seva as a life · bhakti: the Gita Govinda · jnana: Ramana Maharshi's self-inquiry | carry: carry=title |
-| HINDUISM | 320 | karma: seva as a life · bhakti: the Gita Govinda · jnana: Ramana Maharshi's self-inquiry | karma | karma: seva as a life · bhakti: the Gita Govinda · jnana: Ramana Maharshi's self-inquiry | carry: carry=title |
-| HINDUISM | 321 | karma: seva as a life · bhakti: the Gita Govinda · jnana: Ramana Maharshi's self-inquiry | karma | karma: seva as a life · bhakti: the Gita Govinda · jnana: Ramana Maharshi's self-inquiry | carry: carry=title |
-| HINDUISM | 322 | karma: seva as a life · bhakti: the Gita Govinda · jnana: Ramana Maharshi's self-inquiry | karma | karma: seva as a life · bhakti: the Gita Govinda · jnana: Ramana Maharshi's self-inquiry | carry: carry=title |
-| HINDUISM | 323 | Guided visits — one session each — to what the other doors' Camp 1 taught, tagged and unblended: what a Sikh means by seva | what a Buddhist means by the breath | Guided visits — one session each — to what the other doors' Camp 1 taught, tagged and… | carry: label; word: 3+ words |
 | HINDUISM | 324 | Guided visits — one session each — to what the other doors' Camp 1 taught, tagged and unblended: what a Buddhist means by the breath | what a Buddhist means by the breath | Guided visits — one session each — to what the other doors' Camp 1 taught, tagged and… | carry: label; word: 3+ words |
 | HINDUISM | 325 | Guided visits — one session each — to what the other doors' Camp 1 taught, tagged and unblended: what the Sufis mean by remembrance | what a Buddhist means by the breath | Guided visits — one session each — to what the other doors' Camp 1 taught, tagged and… | carry: label; word: 3+ words |
 | HINDUISM | 326 | Guided visits — one session each — to what the other doors' Camp 1 taught, tagged and unblended: what a Jew means by Shabbat | what a Buddhist means by the breath | Guided visits — one session each — to what the other doors' Camp 1 taught, tagged and… | carry: label; word: 3+ words |
@@ -2101,230 +1929,18 @@ Camp one (days 1–21) takes its word and line from the owner's camp-one design 
 | HINDUISM | 391 | The five sheaths: food (2.1) | The five sheaths | annamaya | word: 3+ words |
 | HINDUISM | 394 | "Words and mind turn back from it" (2.4) | "Words and mind turn back from it" | beyond words | word: 3+ words |
 | HINDUISM | 395 | The measure of bliss — a hundred times, a hundred times (2.8) | The measure of bliss | the arithmetic of joy | word: 3+ words |
-| HINDUISM | 396 | Bhrigu asks his father Varuna to teach him Brahman (3.1–3.6) | Bhrigu asks his father Varuna to teach | tapas — go and think | carry: label; word: 3+ words |
-| HINDUISM | 397 | "Do not despise food. Food is Brahman." (3.7–3.10) | "Do not despise food. Food is Brahman." | anna | word: 3+ words |
-| HINDUISM | 398 | The song of one who knows: "I am food, I am the eater of food" (3.10) | The song of one who knows | ha-vu, ha-vu | word: 3+ words |
-| HINDUISM | 399 | In the beginning, the self alone; "let me create worlds" (1.1) | In the beginning | the worlds | word: 3+ words |
-| HINDUISM | 401 | Hunger and thirst ask for a place (1.2) | Hunger and thirst ask for a place | they too need a home | word: 3+ words |
-| HINDUISM | 402 | The self enters through the crown of the head (1.3) | The self enters through the crown | the door at the top | word: 3+ words |
-| HINDUISM | 403 | The three births — conception, birth, and death as birth (2.1) | The three births | three births | word: 3+ words |
-| HINDUISM | 404 | "Consciousness is Brahman" — prajnanam brahma (3.1) | "Consciousness is Brahman" | the great saying | word: 3+ words |
-| HINDUISM | 406 | Q1: where do creatures come from? matter and breath (1) | Q1 | the two paths of the sun | word: label |
-| HINDUISM | 407 | Q2: which gods hold the body? breath proves itself by leaving (2) | Q2 | when breath left, all left | word: label |
-| HINDUISM | 408 | Q3: where does breath come from? the shadow of the self (3) | Q3 | as a shadow | word: label |
 | HINDUISM | 409 | Q4: who sleeps, who dreams, who is awake in sleep? (4) | Q4 | the one who sees | word: label |
 | HINDUISM | 410 | Q5–6: om, and the person of sixteen parts (5–6) | Q5 | the sixteen parts return to the sea | word: label |
-| HINDUISM | 411 | The two knowledges — lower (the Vedas) and higher (that by which the imperishable is grasped) (1.1) | The two knowledges | two knowledges | word: 3+ words |
-| HINDUISM | 412 | The spider and the web; the hair on the body; the plants from the earth (1.1) | The spider and the web | as the spider | word: 3+ words |
-| HINDUISM | 413 | Rituals are leaky boats (1.2) | Rituals are leaky boats | the boat leaks | word: 3+ words |
-| HINDUISM | 414 | Go to a teacher, fuel in hand (1.2) | Go to a teacher | samitpani | word: 3+ words |
-| HINDUISM | 415 | From the blazing fire, sparks (2.1) | From the blazing fire | sparks | word: 3+ words |
-| HINDUISM | 416 | The bow, the arrow, the target — om is the bow, the self the arrow, Brahman the mark (2.2) | The bow | tanmaya — become one with it | carry: label |
-| HINDUISM | 417 | The two birds on one tree — one eats, one watches (3.1) | The two birds on one tree | the one who watches | word: 3+ words |
-| HINDUISM | 418 | "Truth alone prevails" — satyam eva jayate (3.1) | "Truth alone prevails" | the motto on the coins | word: 3+ words |
-| HINDUISM | 419 | Not by eye, not by speech — by the mind made pure (3.1) | Not by eye | purified | word: 3+ words |
-| HINDUISM | 420 | The rivers lose their names in the sea; the knower becomes the Brahman (3.2) | The rivers lose their names in the sea | nama-rupa gone | word: 3+ words |
-| HINDUISM | 421 | What is the cause? time? nature? necessity? chance? (1.1–1.2) | What is the cause? time? nature? | the wheel of Brahman | word: 3+ words |
-| HINDUISM | 422 | The wheel — one rim, three tires, sixteen ends (1.4) | The wheel | the wheel | carry: carry=title |
-| HINDUISM | 423 | The two birds again; the swan in the wheel (1.6) | The two birds again | the swan | word: 3+ words |
-| HINDUISM | 424 | Kindle the fire of meditation (1.13–1.14) | Kindle the fire of meditation | the churning | word: 3+ words |
-| HINDUISM | 425 | How to sit: the body straight, the senses withdrawn (2.8–2.10) | How to sit | the posture | word: 3+ words |
-| HINDUISM | 427 | Smaller than small, greater than great (3.20) | Smaller than small | the paradox | word: 3+ words |
-| HINDUISM | 429 | Block A close · the seven Upanishads in one sit | Block A close | tat tvam asi | word: label |
-| HINDUISM | 431 | Then the seer rests in itself (1.3–1.4) | Then the seer rests in itself | the seer | word: 3+ words |
-| HINDUISM | 432 | The five turnings — right knowledge, error, imagination, sleep, memory (1.5–1.11) | The five turnings | five | word: 3+ words |
-| HINDUISM | 433 | Practice and non-attachment (1.12–1.16) | Practice and non-attachment | abhyasa, vairagya | word: 3+ words |
-| HINDUISM | 434 | Samadhi with seed (1.17–1.18) | Samadhi with seed | with, without | word: 3+ words |
-| HINDUISM | 435 | The born-free and the rest of us (1.19–1.22) | The born-free and the rest of us | mild, medium, intense | word: 3+ words |
-| HINDUISM | 437 | Om is his name; repeat it; know its meaning (1.27–1.29) | Om is his name | japa, again | word: 3+ words |
-| HINDUISM | 438 | The nine obstacles (1.30–1.31) | The nine obstacles | disease, doubt, laziness… | carry: label; word: 3+ words |
-| HINDUISM | 439 | One-pointed practice removes them (1.32) | One-pointed practice removes them | one thing | word: 3+ words |
-| HINDUISM | 443 | Mastery from the smallest to the largest (1.40) | Mastery from the smallest to the largest | the clear crystal | word: 3+ words |
-| HINDUISM | 444 | The stages of absorption (1.41–1.46) | The stages of absorption | the crystal takes the color | word: 3+ words |
-| HINDUISM | 448 | The five afflictions (2.3) | The five afflictions | kleshas | word: 3+ words |
-| HINDUISM | 451 | Attraction and aversion (2.7–2.8) | Attraction and aversion | raga, dvesha | word: 3+ words |
-| HINDUISM | 452 | Fear of death — even in the wise (2.9) | Fear of death | abhinivesha | word: 3+ words |
-| HINDUISM | 453 | Karma and its fruit (2.12–2.14) | Karma and its fruit | the storehouse | word: 3+ words |
-| HINDUISM | 454 | "To the discerning, all is suffering" (2.15–2.17) | "To the discerning | the seen and the seer | word: 3+ words |
-| HINDUISM | 455 | The purpose of the world: experience and liberation (2.18–2.22) | The purpose of the world | for the seer | word: 3+ words |
-| HINDUISM | 456 | Discernment is the way (2.26–2.28) | Discernment is the way | viveka | word: 3+ words |
-| HINDUISM | 457 | The eight limbs (2.29) | The eight limbs | ashtanga | word: 3+ words |
-| HINDUISM | 460 | In the presence of one grounded in non-harm, hostility ceases (2.35–2.39) | In the presence of one grounded | the fruits of the yamas | word: 3+ words |
-| HINDUISM | 461 | Contentment brings unsurpassed happiness (2.40–2.45) | Contentment brings unsurpassed happiness | santosha | word: 3+ words |
-| HINDUISM | 466 | The three together (3.4–3.8) | The three together | samyama | word: 3+ words |
-| HINDUISM | 467 | The transformations of mind (3.9–3.15) | The transformations of mind | what changes | word: 3+ words |
-| HINDUISM | 468 | Knowledge of past and future (3.16) | Knowledge of past and future | the powers begin | word: 3+ words |
-| HINDUISM | 469 | Knowledge of others' minds (3.19) | Knowledge of others' minds | and the warning | word: 3+ words |
-| HINDUISM | 471 | Knowledge of the cosmos, the stars, the body (3.26–3.29) | Knowledge of the cosmos | the inner map | word: 3+ words |
-| HINDUISM | 472 | The heart — knowledge of the mind (3.34) | The heart | the heart | carry: carry=title |
-| HINDUISM | 473 | The powers are obstacles to samadhi (3.37) | The powers are obstacles to samadhi | the warning | word: 3+ words |
-| HINDUISM | 474 | Entering another body; levitation; radiance (3.38–3.45) | Entering another body | read as the tradition reads it | word: 3+ words |
-| HINDUISM | 475 | Mastery of the elements (3.44–3.46) | Mastery of the elements | the body's perfection | word: 3+ words |
-| HINDUISM | 476 | Mastery of the senses (3.47–3.48) | Mastery of the senses | the senses | word: 3+ words |
-| HINDUISM | 478 | Discernment of the moment (3.52–3.54) | Discernment of the moment | the instant | word: 3+ words |
+| HINDUISM | 457 | The eight limbs (2.29) | ashtanga | ashtanga | carry: carry=word |
 | HINDUISM | 480 | The powers by birth, herbs, mantra, discipline, samadhi (4.1) | The powers by birth | five sources | word: 3+ words |
-| HINDUISM | 481 | The mind's transformations from nature (4.2–4.6) | The mind's transformations from nature | the farmer removes the barrier | word: 3+ words |
-| HINDUISM | 482 | Karma of the yogi — neither white nor black (4.7) | Karma of the yogi | neither | word: 3+ words |
-| HINDUISM | 483 | Desires are beginningless (4.10–4.11) | Desires are beginningless | no beginning | word: 3+ words |
-| HINDUISM | 484 | The object exists independent of the mind (4.14–4.17) | The object exists independent | realism | word: 3+ words |
-| HINDUISM | 485 | The mind is not self-luminous (4.18–4.21) | The mind is not self-luminous | the seer knows the mind | word: 3+ words |
-| HINDUISM | 486 | Discernment ends the sense of "I" (4.25–4.26) | Discernment ends the sense of "I" | the mind inclines to freedom | word: 3+ words |
-| HINDUISM | 487 | The rain-cloud of dharma (4.29) | The rain-cloud of dharma | dharma-megha | word: 3+ words |
-| HINDUISM | 488 | The afflictions end; knowledge becomes infinite (4.30–4.31) | The afflictions end | little remains to be known | word: 3+ words |
-| HINDUISM | 490 | Valmiki and Narada | Valmiki and Narada | Valmiki and Narada | carry: carry=title; word: 3+ words |
-| HINDUISM | 491 | Valmiki and Narada | Valmiki and Narada | Valmiki and Narada | carry: carry=title; word: 3+ words |
-| HINDUISM | 492 | Valmiki and Narada | Valmiki and Narada | Valmiki and Narada | carry: carry=title; word: 3+ words |
-| HINDUISM | 493 | the crow and the first verse (the origin of poetry) | the crow and the first verse | the crow and the first verse (the origin of poetry) | carry: carry=title; word: 3+ words |
 | HINDUISM | 494 | the crow and the first verse (the origin of poetry) | the crow and the first verse | the crow and the first verse (the origin of poetry) | carry: carry=title; word: 3+ words |
-| HINDUISM | 495 | Dasharatha's sacrifice | Dasharatha's sacrifice | Dasharatha's sacrifice | carry: carry=title |
-| HINDUISM | 496 | Dasharatha's sacrifice | Dasharatha's sacrifice | Dasharatha's sacrifice | carry: carry=title |
-| HINDUISM | 497 | Dasharatha's sacrifice | Dasharatha's sacrifice | Dasharatha's sacrifice | carry: carry=title |
-| HINDUISM | 498 | Vishvamitra takes the boys | Vishvamitra takes the boys | Vishvamitra takes the boys | carry: carry=title; word: 3+ words |
-| HINDUISM | 499 | Vishvamitra takes the boys | Vishvamitra takes the boys | Vishvamitra takes the boys | carry: carry=title; word: 3+ words |
-| HINDUISM | 500 | Tataka | Tataka | Tataka | carry: carry=title |
-| HINDUISM | 501 | Tataka | Tataka | Tataka | carry: carry=title |
-| HINDUISM | 502 | the weapons | the weapons | the weapons | carry: carry=title |
-| HINDUISM | 503 | the weapons | the weapons | the weapons | carry: carry=title |
-| HINDUISM | 504 | the weapons | the weapons | the weapons | carry: carry=title |
-| HINDUISM | 505 | Ahalya restored | Ahalya restored | Ahalya restored | carry: carry=title |
-| HINDUISM | 506 | Ahalya restored | Ahalya restored | Ahalya restored | carry: carry=title |
-| HINDUISM | 507 | Janaka's bow | Janaka's bow | Janaka's bow | carry: carry=title |
-| HINDUISM | 508 | Janaka's bow | Janaka's bow | Janaka's bow | carry: carry=title |
-| HINDUISM | 509 | Janaka's bow | Janaka's bow | Janaka's bow | carry: carry=title |
-| HINDUISM | 510 | the four weddings | the four weddings | the four weddings | carry: carry=title; word: 3+ words |
-| HINDUISM | 511 | the four weddings | the four weddings | the four weddings | carry: carry=title; word: 3+ words |
-| HINDUISM | 512 | Parashurama's challenge | Parashurama's challenge | Parashurama's challenge | carry: carry=title |
-| HINDUISM | 513 | Parashurama's challenge | Parashurama's challenge | Parashurama's challenge | carry: carry=title |
-| HINDUISM | 514 | the coronation planned | the coronation planned | the coronation planned | carry: carry=title; word: 3+ words |
 | HINDUISM | 515 | the coronation planned | the coronation planned | the coronation planned | carry: carry=title; word: 3+ words |
 | HINDUISM | 516 | the coronation planned | the coronation planned | the coronation planned | carry: carry=title; word: 3+ words |
-| HINDUISM | 517 | Manthara | Manthara | Manthara | carry: carry=title |
-| HINDUISM | 518 | Manthara | Manthara | Manthara | carry: carry=title |
-| HINDUISM | 519 | Manthara | Manthara | Manthara | carry: carry=title |
-| HINDUISM | 520 | Kaikeyi's boons | Kaikeyi's boons | Kaikeyi's boons | carry: carry=title |
-| HINDUISM | 521 | Kaikeyi's boons | Kaikeyi's boons | Kaikeyi's boons | carry: carry=title |
-| HINDUISM | 522 | Kaikeyi's boons | Kaikeyi's boons | Kaikeyi's boons | carry: carry=title |
-| HINDUISM | 523 | Rama's calm | Rama's calm | Rama's calm | carry: carry=title |
-| HINDUISM | 524 | Rama's calm | Rama's calm | Rama's calm | carry: carry=title |
-| HINDUISM | 525 | Rama's calm | Rama's calm | Rama's calm | carry: carry=title |
-| HINDUISM | 526 | Sita's argument | Sita's argument | Sita's argument | carry: carry=title |
-| HINDUISM | 527 | Sita's argument | Sita's argument | Sita's argument | carry: carry=title |
-| HINDUISM | 528 | Lakshmana's rage and restraint | Lakshmana's rage and restraint | Lakshmana's rage and restraint | carry: carry=title; word: 3+ words |
-| HINDUISM | 529 | Lakshmana's rage and restraint | Lakshmana's rage and restraint | Lakshmana's rage and restraint | carry: carry=title; word: 3+ words |
-| HINDUISM | 530 | Lakshmana's rage and restraint | Lakshmana's rage and restraint | Lakshmana's rage and restraint | carry: carry=title; word: 3+ words |
-| HINDUISM | 531 | the departure | the departure | the departure | carry: carry=title |
-| HINDUISM | 532 | the departure | the departure | the departure | carry: carry=title |
-| HINDUISM | 533 | the departure | the departure | the departure | carry: carry=title |
-| HINDUISM | 534 | Guha the boatman | Guha the boatman | Guha the boatman | carry: carry=title; word: 3+ words |
-| HINDUISM | 535 | Guha the boatman | Guha the boatman | Guha the boatman | carry: carry=title; word: 3+ words |
-| HINDUISM | 536 | Guha the boatman | Guha the boatman | Guha the boatman | carry: carry=title; word: 3+ words |
-| HINDUISM | 537 | Bharadvaja | Bharadvaja | Bharadvaja | carry: carry=title |
-| HINDUISM | 538 | Bharadvaja | Bharadvaja | Bharadvaja | carry: carry=title |
-| HINDUISM | 539 | Chitrakoot | Chitrakoot | Chitrakoot | carry: carry=title |
-| HINDUISM | 540 | Chitrakoot | Chitrakoot | Chitrakoot | carry: carry=title |
-| HINDUISM | 541 | Chitrakoot | Chitrakoot | Chitrakoot | carry: carry=title |
-| HINDUISM | 542 | Dasharatha's death and the curse that caused it (Shravana Kumara) | Dasharatha's death and the curse that | Dasharatha's death and the curse that caused it (Shravana Kumara) | carry: carry=title; word: 3+ words |
 | HINDUISM | 543 | Dasharatha's death and the curse that caused it (Shravana Kumara) | Dasharatha's death and the curse that | Dasharatha's death and the curse that caused it (Shravana Kumara) | carry: carry=title; word: 3+ words |
-| HINDUISM | 544 | Dasharatha's death and the curse that caused it (Shravana Kumara) | Dasharatha's death and the curse that | Dasharatha's death and the curse that caused it (Shravana Kumara) | carry: carry=title; word: 3+ words |
-| HINDUISM | 545 | Bharata's journey | Bharata's journey | Bharata's journey | carry: carry=title |
-| HINDUISM | 546 | Bharata's journey | Bharata's journey | Bharata's journey | carry: carry=title |
-| HINDUISM | 547 | Bharata's journey | Bharata's journey | Bharata's journey | carry: carry=title |
-| HINDUISM | 548 | the sandals | the sandals | the sandals | carry: carry=title |
-| HINDUISM | 549 | the sandals | the sandals | the sandals | carry: carry=title |
-| HINDUISM | 550 | the sages | the sages | the sages | carry: carry=title |
-| HINDUISM | 551 | the sages | the sages | the sages | carry: carry=title |
-| HINDUISM | 552 | the sages | the sages | the sages | carry: carry=title |
-| HINDUISM | 553 | Viradha | Viradha | Viradha | carry: carry=title |
-| HINDUISM | 554 | Viradha | Viradha | Viradha | carry: carry=title |
-| HINDUISM | 555 | Sharabhanga | Sharabhanga | Sharabhanga | carry: carry=title |
-| HINDUISM | 556 | Sharabhanga | Sharabhanga | Sharabhanga | carry: carry=title |
-| HINDUISM | 557 | Agastya's weapons | Agastya's weapons | Agastya's weapons | carry: carry=title |
-| HINDUISM | 558 | Agastya's weapons | Agastya's weapons | Agastya's weapons | carry: carry=title |
-| HINDUISM | 559 | Panchavati | Panchavati | Panchavati | carry: carry=title |
-| HINDUISM | 560 | Panchavati | Panchavati | Panchavati | carry: carry=title |
-| HINDUISM | 561 | Shurpanakha | Shurpanakha | Shurpanakha | carry: carry=title |
-| HINDUISM | 562 | Shurpanakha | Shurpanakha | Shurpanakha | carry: carry=title |
-| HINDUISM | 563 | Khara and Dushana | Khara and Dushana | Khara and Dushana | carry: carry=title; word: 3+ words |
-| HINDUISM | 564 | Khara and Dushana | Khara and Dushana | Khara and Dushana | carry: carry=title; word: 3+ words |
-| HINDUISM | 565 | Ravana and Maricha's warning | Ravana and Maricha's warning | Ravana and Maricha's warning | carry: carry=title; word: 3+ words |
-| HINDUISM | 566 | Ravana and Maricha's warning | Ravana and Maricha's warning | Ravana and Maricha's warning | carry: carry=title; word: 3+ words |
-| HINDUISM | 567 | Ravana and Maricha's warning | Ravana and Maricha's warning | Ravana and Maricha's warning | carry: carry=title; word: 3+ words |
 | HINDUISM | 568 | the golden deer | the golden deer | the golden deer | carry: carry=title; word: 3+ words |
-| HINDUISM | 569 | the golden deer | the golden deer | the golden deer | carry: carry=title; word: 3+ words |
-| HINDUISM | 570 | the line | the line | the line | carry: carry=title |
-| HINDUISM | 571 | the line | the line | the line | carry: carry=title |
-| HINDUISM | 572 | the abduction | the abduction | the abduction | carry: carry=title |
-| HINDUISM | 573 | the abduction | the abduction | the abduction | carry: carry=title |
-| HINDUISM | 574 | Jatayu | Jatayu | Jatayu | carry: carry=title |
-| HINDUISM | 575 | Jatayu | Jatayu | Jatayu | carry: carry=title |
-| HINDUISM | 576 | Kabandha | Kabandha | Kabandha | carry: carry=title |
-| HINDUISM | 577 | Kabandha | Kabandha | Kabandha | carry: carry=title |
-| HINDUISM | 578 | Shabari | Shabari | Shabari | carry: carry=title |
-| HINDUISM | 579 | Shabari | Shabari | Shabari | carry: carry=title |
-| HINDUISM | 580 | Hanuman's first words | Hanuman's first words | Hanuman's first words | carry: carry=title; word: 3+ words |
-| HINDUISM | 581 | Hanuman's first words | Hanuman's first words | Hanuman's first words | carry: carry=title; word: 3+ words |
-| HINDUISM | 582 | Hanuman's first words | Hanuman's first words | Hanuman's first words | carry: carry=title; word: 3+ words |
-| HINDUISM | 583 | the pact with Sugriva | the pact with Sugriva | the pact with Sugriva | carry: carry=title; word: 3+ words |
-| HINDUISM | 584 | the pact with Sugriva | the pact with Sugriva | the pact with Sugriva | carry: carry=title; word: 3+ words |
-| HINDUISM | 585 | the pact with Sugriva | the pact with Sugriva | the pact with Sugriva | carry: carry=title; word: 3+ words |
-| HINDUISM | 586 | Vali's death and Tara's lament | Vali's death and Tara's lament | Vali's death and Tara's lament | carry: carry=title; word: 3+ words |
-| HINDUISM | 587 | Vali's death and Tara's lament | Vali's death and Tara's lament | Vali's death and Tara's lament | carry: carry=title; word: 3+ words |
-| HINDUISM | 588 | the rains | the rains | the rains | carry: carry=title |
-| HINDUISM | 589 | the rains | the rains | the rains | carry: carry=title |
-| HINDUISM | 590 | the rains | the rains | the rains | carry: carry=title |
-| HINDUISM | 591 | Lakshmana's warning | Lakshmana's warning | Lakshmana's warning | carry: carry=title |
-| HINDUISM | 592 | Lakshmana's warning | Lakshmana's warning | Lakshmana's warning | carry: carry=title |
-| HINDUISM | 593 | Lakshmana's warning | Lakshmana's warning | Lakshmana's warning | carry: carry=title |
 | HINDUISM | 594 | the search parties | the search parties | the search parties | carry: carry=title; word: 3+ words |
-| HINDUISM | 595 | the search parties | the search parties | the search parties | carry: carry=title; word: 3+ words |
-| HINDUISM | 596 | the cave of Svayamprabha | the cave of Svayamprabha | the cave of Svayamprabha | carry: carry=title; word: 3+ words |
 | HINDUISM | 597 | the cave of Svayamprabha | the cave of Svayamprabha | the cave of Svayamprabha | carry: carry=title; word: 3+ words |
-| HINDUISM | 598 | the cave of Svayamprabha | the cave of Svayamprabha | the cave of Svayamprabha | carry: carry=title; word: 3+ words |
-| HINDUISM | 599 | Sampati | Sampati | Sampati | carry: carry=title |
-| HINDUISM | 600 | Sampati | Sampati | Sampati | carry: carry=title |
-| HINDUISM | 601 | Sampati | Sampati | Sampati | carry: carry=title |
-| HINDUISM | 602 | the leap decided | the leap decided | the leap decided | carry: carry=title; word: 3+ words |
-| HINDUISM | 603 | the leap decided | the leap decided | the leap decided | carry: carry=title; word: 3+ words |
-| HINDUISM | 604 | the leap | the leap | the leap | carry: carry=title |
-| HINDUISM | 605 | the leap | the leap | the leap | carry: carry=title |
-| HINDUISM | 606 | Mainaka | Mainaka | Mainaka | carry: carry=title |
-| HINDUISM | 607 | Mainaka | Mainaka | Mainaka | carry: carry=title |
-| HINDUISM | 608 | Surasa | Surasa | Surasa | carry: carry=title |
-| HINDUISM | 609 | Surasa | Surasa | Surasa | carry: carry=title |
-| HINDUISM | 610 | Simhika | Simhika | Simhika | carry: carry=title |
-| HINDUISM | 611 | Simhika | Simhika | Simhika | carry: carry=title |
-| HINDUISM | 612 | Lanka by night | Lanka by night | Lanka by night | carry: carry=title; word: 3+ words |
-| HINDUISM | 613 | Lanka by night | Lanka by night | Lanka by night | carry: carry=title; word: 3+ words |
-| HINDUISM | 614 | Ravana's palace | Ravana's palace | Ravana's palace | carry: carry=title |
-| HINDUISM | 615 | Ravana's palace | Ravana's palace | Ravana's palace | carry: carry=title |
-| HINDUISM | 616 | the ashoka grove | the ashoka grove | the ashoka grove | carry: carry=title; word: 3+ words |
 | HINDUISM | 617 | the ashoka grove | the ashoka grove | the ashoka grove | carry: carry=title; word: 3+ words |
-| HINDUISM | 618 | Sita found | Sita found | Sita found | carry: carry=title |
-| HINDUISM | 619 | Sita found | Sita found | Sita found | carry: carry=title |
-| HINDUISM | 620 | the ring | the ring | the ring | carry: carry=title |
-| HINDUISM | 621 | the ring | the ring | the ring | carry: carry=title |
-| HINDUISM | 622 | her doubt | her doubt | her doubt | carry: carry=title |
-| HINDUISM | 623 | her doubt | her doubt | her doubt | carry: carry=title |
-| HINDUISM | 624 | Hanuman's counsel | Hanuman's counsel | Hanuman's counsel | carry: carry=title |
-| HINDUISM | 625 | Hanuman's counsel | Hanuman's counsel | Hanuman's counsel | carry: carry=title |
-| HINDUISM | 626 | the fight | the fight | the fight | carry: carry=title |
-| HINDUISM | 627 | the fight | the fight | the fight | carry: carry=title |
-| HINDUISM | 628 | the burning | the burning | the burning | carry: carry=title |
-| HINDUISM | 629 | the burning | the burning | the burning | carry: carry=title |
-| HINDUISM | 630 | the return | the return | the return | carry: carry=title |
-| HINDUISM | 631 | the return | the return | the return | carry: carry=title |
-| HINDUISM | 632 | "seen, Sita" | "seen | "seen, Sita" | carry: carry=title |
-| HINDUISM | 633 | "seen, Sita" | "seen | "seen, Sita" | carry: carry=title |
-| HINDUISM | 634 | the bridge | the bridge | the bridge | carry: carry=title |
-| HINDUISM | 635 | the bridge | the bridge | the bridge | carry: carry=title |
-| HINDUISM | 636 | the bridge | the bridge | the bridge | carry: carry=title |
-| HINDUISM | 637 | Vibhishana's crossing | Vibhishana's crossing | Vibhishana's crossing | carry: carry=title |
-| HINDUISM | 638 | Vibhishana's crossing | Vibhishana's crossing | Vibhishana's crossing | carry: carry=title |
-| HINDUISM | 639 | the siege | the siege | the siege | carry: carry=title |
-| HINDUISM | 640 | the siege | the siege | the siege | carry: carry=title |
-| HINDUISM | 641 | Indrajit's arrows | Indrajit's arrows | Indrajit's arrows | carry: carry=title |
-| HINDUISM | 642 | Indrajit's arrows | Indrajit's arrows | Indrajit's arrows | carry: carry=title |
-| HINDUISM | 643 | the serpent-arrows and Garuda | the serpent-arrows and Garuda | the serpent-arrows and Garuda | carry: carry=title; word: 3+ words |
 | HINDUISM | 644 | the serpent-arrows and Garuda | the serpent-arrows and Garuda | the serpent-arrows and Garuda | carry: carry=title; word: 3+ words |
 | HINDUISM | 645 | Kumbhakarna | Kumbhakarna | Kumbhakarna | carry: carry=title |
 | HINDUISM | 646 | Kumbhakarna | Kumbhakarna | Kumbhakarna | carry: carry=title |
@@ -2371,96 +1987,8 @@ Camp one (days 1–21) takes its word and line from the owner's camp-one design 
 | HINDUISM | 707 | Shantanu and Ganga | Shantanu and Ganga | Shantanu and Ganga | carry: carry=title; word: 3+ words |
 | HINDUISM | 708 | Shantanu and Ganga | Shantanu and Ganga | Shantanu and Ganga | carry: carry=title; word: 3+ words |
 | HINDUISM | 709 | Shantanu and Ganga | Shantanu and Ganga | Shantanu and Ganga | carry: carry=title; word: 3+ words |
-| HINDUISM | 710 | Bhishma's vow | Bhishma's vow | Bhishma's vow | carry: carry=title |
-| HINDUISM | 711 | Bhishma's vow | Bhishma's vow | Bhishma's vow | carry: carry=title |
-| HINDUISM | 712 | Bhishma's vow | Bhishma's vow | Bhishma's vow | carry: carry=title |
-| HINDUISM | 713 | Bhishma's vow | Bhishma's vow | Bhishma's vow | carry: carry=title |
-| HINDUISM | 714 | Bhishma's vow | Bhishma's vow | Bhishma's vow | carry: carry=title |
-| HINDUISM | 715 | Bhishma's vow | Bhishma's vow | Bhishma's vow | carry: carry=title |
-| HINDUISM | 716 | Satyavati | Satyavati | Satyavati | carry: carry=title |
-| HINDUISM | 717 | Satyavati | Satyavati | Satyavati | carry: carry=title |
-| HINDUISM | 718 | Satyavati | Satyavati | Satyavati | carry: carry=title |
-| HINDUISM | 719 | Satyavati | Satyavati | Satyavati | carry: carry=title |
-| HINDUISM | 720 | Satyavati | Satyavati | Satyavati | carry: carry=title |
-| HINDUISM | 721 | Satyavati | Satyavati | Satyavati | carry: carry=title |
-| HINDUISM | 722 | the birth of the cousins | the birth of the cousins | the birth of the cousins | carry: carry=title; word: 3+ words |
-| HINDUISM | 723 | the birth of the cousins | the birth of the cousins | the birth of the cousins | carry: carry=title; word: 3+ words |
-| HINDUISM | 724 | the birth of the cousins | the birth of the cousins | the birth of the cousins | carry: carry=title; word: 3+ words |
-| HINDUISM | 725 | the birth of the cousins | the birth of the cousins | the birth of the cousins | carry: carry=title; word: 3+ words |
-| HINDUISM | 726 | the birth of the cousins | the birth of the cousins | the birth of the cousins | carry: carry=title; word: 3+ words |
-| HINDUISM | 727 | the birth of the cousins | the birth of the cousins | the birth of the cousins | carry: carry=title; word: 3+ words |
-| HINDUISM | 728 | Karna's abandonment | Karna's abandonment | Karna's abandonment | carry: carry=title |
-| HINDUISM | 729 | Karna's abandonment | Karna's abandonment | Karna's abandonment | carry: carry=title |
-| HINDUISM | 730 | Karna's abandonment | Karna's abandonment | Karna's abandonment | carry: carry=title |
-| HINDUISM | 731 | Karna's abandonment | Karna's abandonment | Karna's abandonment | carry: carry=title |
-| HINDUISM | 732 | Karna's abandonment | Karna's abandonment | Karna's abandonment | carry: carry=title |
-| HINDUISM | 733 | Karna's abandonment | Karna's abandonment | Karna's abandonment | carry: carry=title |
-| HINDUISM | 734 | the lac house | the lac house | the lac house | carry: carry=title; word: 3+ words |
-| HINDUISM | 735 | the lac house | the lac house | the lac house | carry: carry=title; word: 3+ words |
 | HINDUISM | 736 | the lac house | the lac house | the lac house | carry: carry=title; word: 3+ words |
-| HINDUISM | 737 | the lac house | the lac house | the lac house | carry: carry=title; word: 3+ words |
-| HINDUISM | 738 | the lac house | the lac house | the lac house | carry: carry=title; word: 3+ words |
-| HINDUISM | 739 | the lac house | the lac house | the lac house | carry: carry=title; word: 3+ words |
-| HINDUISM | 740 | Draupadi's swayamvara | Draupadi's swayamvara | Draupadi's swayamvara | carry: carry=title |
-| HINDUISM | 741 | Draupadi's swayamvara | Draupadi's swayamvara | Draupadi's swayamvara | carry: carry=title |
-| HINDUISM | 742 | Draupadi's swayamvara | Draupadi's swayamvara | Draupadi's swayamvara | carry: carry=title |
-| HINDUISM | 743 | Draupadi's swayamvara | Draupadi's swayamvara | Draupadi's swayamvara | carry: carry=title |
-| HINDUISM | 744 | Draupadi's swayamvara | Draupadi's swayamvara | Draupadi's swayamvara | carry: carry=title |
-| HINDUISM | 745 | Draupadi's swayamvara | Draupadi's swayamvara | Draupadi's swayamvara | carry: carry=title |
-| HINDUISM | 746 | Sabha: Indraprastha | Sabha | Sabha: Indraprastha | carry: carry=title |
-| HINDUISM | 747 | Sabha: Indraprastha | Sabha | Sabha: Indraprastha | carry: carry=title |
-| HINDUISM | 748 | Sabha: Indraprastha | Sabha | Sabha: Indraprastha | carry: carry=title |
-| HINDUISM | 749 | Sabha: Indraprastha | Sabha | Sabha: Indraprastha | carry: carry=title |
-| HINDUISM | 750 | Sabha: Indraprastha | Sabha | Sabha: Indraprastha | carry: carry=title |
-| HINDUISM | 751 | Sabha: Indraprastha | Sabha | Sabha: Indraprastha | carry: carry=title |
-| HINDUISM | 752 | the Rajasuya | the Rajasuya | the Rajasuya | carry: carry=title |
-| HINDUISM | 753 | the Rajasuya | the Rajasuya | the Rajasuya | carry: carry=title |
-| HINDUISM | 754 | the Rajasuya | the Rajasuya | the Rajasuya | carry: carry=title |
-| HINDUISM | 755 | the Rajasuya | the Rajasuya | the Rajasuya | carry: carry=title |
-| HINDUISM | 756 | the Rajasuya | the Rajasuya | the Rajasuya | carry: carry=title |
-| HINDUISM | 757 | the Rajasuya | the Rajasuya | the Rajasuya | carry: carry=title |
-| HINDUISM | 758 | Shishupala | Shishupala | Shishupala | carry: carry=title |
-| HINDUISM | 759 | Shishupala | Shishupala | Shishupala | carry: carry=title |
-| HINDUISM | 760 | Shishupala | Shishupala | Shishupala | carry: carry=title |
-| HINDUISM | 761 | Shishupala | Shishupala | Shishupala | carry: carry=title |
-| HINDUISM | 762 | Shishupala | Shishupala | Shishupala | carry: carry=title |
-| HINDUISM | 763 | Shishupala | Shishupala | Shishupala | carry: carry=title |
-| HINDUISM | 764 | the dice game | the dice game | the dice game | carry: carry=title; word: 3+ words |
-| HINDUISM | 765 | the dice game | the dice game | the dice game | carry: carry=title; word: 3+ words |
-| HINDUISM | 766 | the dice game | the dice game | the dice game | carry: carry=title; word: 3+ words |
-| HINDUISM | 767 | the dice game | the dice game | the dice game | carry: carry=title; word: 3+ words |
 | HINDUISM | 768 | the dice game | the dice game | the dice game | carry: carry=title; word: 3+ words |
-| HINDUISM | 769 | the dice game | the dice game | the dice game | carry: carry=title; word: 3+ words |
-| HINDUISM | 770 | Draupadi's question | Draupadi's question | Draupadi's question | carry: carry=title |
-| HINDUISM | 771 | Draupadi's question | Draupadi's question | Draupadi's question | carry: carry=title |
-| HINDUISM | 772 | Draupadi's question | Draupadi's question | Draupadi's question | carry: carry=title |
-| HINDUISM | 773 | Draupadi's question | Draupadi's question | Draupadi's question | carry: carry=title |
-| HINDUISM | 774 | Draupadi's question | Draupadi's question | Draupadi's question | carry: carry=title |
-| HINDUISM | 775 | Draupadi's question | Draupadi's question | Draupadi's question | carry: carry=title |
-| HINDUISM | 776 | Vana: exile | Vana | Vana: exile | carry: carry=title |
-| HINDUISM | 777 | Vana: exile | Vana | Vana: exile | carry: carry=title |
-| HINDUISM | 778 | Vana: exile | Vana | Vana: exile | carry: carry=title |
-| HINDUISM | 779 | Vana: exile | Vana | Vana: exile | carry: carry=title |
-| HINDUISM | 780 | Vana: exile | Vana | Vana: exile | carry: carry=title |
-| HINDUISM | 781 | Vana: exile | Vana | Vana: exile | carry: carry=title |
-| HINDUISM | 782 | Arjuna's austerities | Arjuna's austerities | Arjuna's austerities | carry: carry=title |
-| HINDUISM | 783 | Arjuna's austerities | Arjuna's austerities | Arjuna's austerities | carry: carry=title |
-| HINDUISM | 784 | Arjuna's austerities | Arjuna's austerities | Arjuna's austerities | carry: carry=title |
-| HINDUISM | 785 | Arjuna's austerities | Arjuna's austerities | Arjuna's austerities | carry: carry=title |
-| HINDUISM | 786 | Arjuna's austerities | Arjuna's austerities | Arjuna's austerities | carry: carry=title |
-| HINDUISM | 787 | Arjuna's austerities | Arjuna's austerities | Arjuna's austerities | carry: carry=title |
-| HINDUISM | 788 | Nala and Damayanti | Nala and Damayanti | Nala and Damayanti | carry: carry=title; word: 3+ words |
-| HINDUISM | 789 | Nala and Damayanti | Nala and Damayanti | Nala and Damayanti | carry: carry=title; word: 3+ words |
-| HINDUISM | 790 | Nala and Damayanti | Nala and Damayanti | Nala and Damayanti | carry: carry=title; word: 3+ words |
-| HINDUISM | 791 | Nala and Damayanti | Nala and Damayanti | Nala and Damayanti | carry: carry=title; word: 3+ words |
-| HINDUISM | 792 | Nala and Damayanti | Nala and Damayanti | Nala and Damayanti | carry: carry=title; word: 3+ words |
-| HINDUISM | 793 | Nala and Damayanti | Nala and Damayanti | Nala and Damayanti | carry: carry=title; word: 3+ words |
-| HINDUISM | 794 | Nala and Damayanti | Nala and Damayanti | Nala and Damayanti | carry: carry=title; word: 3+ words |
-| HINDUISM | 795 | Savitri and Satyavan | Savitri and Satyavan | Savitri and Satyavan | carry: carry=title; word: 3+ words |
-| HINDUISM | 796 | Savitri and Satyavan | Savitri and Satyavan | Savitri and Satyavan | carry: carry=title; word: 3+ words |
-| HINDUISM | 797 | Savitri and Satyavan | Savitri and Satyavan | Savitri and Satyavan | carry: carry=title; word: 3+ words |
-| HINDUISM | 798 | Savitri and Satyavan | Savitri and Satyavan | Savitri and Satyavan | carry: carry=title; word: 3+ words |
-| HINDUISM | 799 | Savitri and Satyavan | Savitri and Satyavan | Savitri and Satyavan | carry: carry=title; word: 3+ words |
 | HINDUISM | 800 | Savitri and Satyavan | Savitri and Satyavan | Savitri and Satyavan | carry: carry=title; word: 3+ words |
 | HINDUISM | 801 | the Yaksha's questions | the Yaksha's questions | the Yaksha's questions | carry: carry=title; word: 3+ words |
 | HINDUISM | 802 | the Yaksha's questions | the Yaksha's questions | the Yaksha's questions | carry: carry=title; word: 3+ words |
@@ -2506,51 +2034,6 @@ Camp one (days 1–21) takes its word and line from the owner's camp-one design 
 | HINDUISM | 842 | Karna: the wheel stuck, the death | Karna | Karna: the wheel stuck, the death | carry: carry=title |
 | HINDUISM | 843 | Shalya: Duryodhana in the lake, the mace fight | Shalya | Shalya: Duryodhana in the lake, the mace fight | carry: carry=title |
 | HINDUISM | 844 | Shalya: Duryodhana in the lake, the mace fight | Shalya | Shalya: Duryodhana in the lake, the mace fight | carry: carry=title |
-| HINDUISM | 845 | Shalya: Duryodhana in the lake, the mace fight | Shalya | Shalya: Duryodhana in the lake, the mace fight | carry: carry=title |
-| HINDUISM | 846 | Shalya: Duryodhana in the lake, the mace fight | Shalya | Shalya: Duryodhana in the lake, the mace fight | carry: carry=title |
-| HINDUISM | 847 | Shalya: Duryodhana in the lake, the mace fight | Shalya | Shalya: Duryodhana in the lake, the mace fight | carry: carry=title |
-| HINDUISM | 848 | Shalya: Duryodhana in the lake, the mace fight | Shalya | Shalya: Duryodhana in the lake, the mace fight | carry: carry=title |
-| HINDUISM | 849 | Sauptika: the night massacre | Sauptika | Sauptika: the night massacre | carry: carry=title |
-| HINDUISM | 850 | Sauptika: the night massacre | Sauptika | Sauptika: the night massacre | carry: carry=title |
-| HINDUISM | 851 | Sauptika: the night massacre | Sauptika | Sauptika: the night massacre | carry: carry=title |
-| HINDUISM | 852 | Sauptika: the night massacre | Sauptika | Sauptika: the night massacre | carry: carry=title |
-| HINDUISM | 853 | Sauptika: the night massacre | Sauptika | Sauptika: the night massacre | carry: carry=title |
-| HINDUISM | 854 | Sauptika: the night massacre | Sauptika | Sauptika: the night massacre | carry: carry=title |
-| HINDUISM | 855 | Stri: Gandhari's curse | Stri | Stri: Gandhari's curse | carry: carry=title |
-| HINDUISM | 856 | Stri: Gandhari's curse | Stri | Stri: Gandhari's curse | carry: carry=title |
-| HINDUISM | 857 | Stri: Gandhari's curse | Stri | Stri: Gandhari's curse | carry: carry=title |
-| HINDUISM | 858 | Stri: Gandhari's curse | Stri | Stri: Gandhari's curse | carry: carry=title |
-| HINDUISM | 859 | Stri: Gandhari's curse | Stri | Stri: Gandhari's curse | carry: carry=title |
-| HINDUISM | 860 | Stri: Gandhari's curse | Stri | Stri: Gandhari's curse | carry: carry=title |
-| HINDUISM | 861 | Shanti and Anushasana: Bhishma's teachings from the bed of arrows (selections) | Shanti and Anushasana | Shanti and Anushasana: Bhishma's teachings from the bed of arrows (selections) | carry: carry=title; word: 3+ words |
-| HINDUISM | 862 | Shanti and Anushasana: Bhishma's teachings from the bed of arrows (selections) | Shanti and Anushasana | Shanti and Anushasana: Bhishma's teachings from the bed of arrows (selections) | carry: carry=title; word: 3+ words |
-| HINDUISM | 863 | Shanti and Anushasana: Bhishma's teachings from the bed of arrows (selections) | Shanti and Anushasana | Shanti and Anushasana: Bhishma's teachings from the bed of arrows (selections) | carry: carry=title; word: 3+ words |
-| HINDUISM | 864 | Shanti and Anushasana: Bhishma's teachings from the bed of arrows (selections) | Shanti and Anushasana | Shanti and Anushasana: Bhishma's teachings from the bed of arrows (selections) | carry: carry=title; word: 3+ words |
-| HINDUISM | 865 | Shanti and Anushasana: Bhishma's teachings from the bed of arrows (selections) | Shanti and Anushasana | Shanti and Anushasana: Bhishma's teachings from the bed of arrows (selections) | carry: carry=title; word: 3+ words |
-| HINDUISM | 866 | Shanti and Anushasana: Bhishma's teachings from the bed of arrows (selections) | Shanti and Anushasana | Shanti and Anushasana: Bhishma's teachings from the bed of arrows (selections) | carry: carry=title; word: 3+ words |
-| HINDUISM | 867 | Ashvamedhika | Ashvamedhika | Ashvamedhika | carry: carry=title |
-| HINDUISM | 868 | Ashvamedhika | Ashvamedhika | Ashvamedhika | carry: carry=title |
-| HINDUISM | 869 | Ashvamedhika | Ashvamedhika | Ashvamedhika | carry: carry=title |
-| HINDUISM | 870 | Ashvamedhika | Ashvamedhika | Ashvamedhika | carry: carry=title |
-| HINDUISM | 871 | Ashvamedhika | Ashvamedhika | Ashvamedhika | carry: carry=title |
-| HINDUISM | 872 | Ashvamedhika | Ashvamedhika | Ashvamedhika | carry: carry=title |
-| HINDUISM | 873 | the Pandavas' last journey, Yudhishthira's dog, heaven | the Pandavas' last journey | the Pandavas' last journey, Yudhishthira's dog, heaven | carry: carry=title; word: 3+ words |
-| HINDUISM | 874 | the Pandavas' last journey, Yudhishthira's dog, heaven | the Pandavas' last journey | the Pandavas' last journey, Yudhishthira's dog, heaven | carry: carry=title; word: 3+ words |
-| HINDUISM | 875 | the Pandavas' last journey, Yudhishthira's dog, heaven | the Pandavas' last journey | the Pandavas' last journey, Yudhishthira's dog, heaven | carry: carry=title; word: 3+ words |
-| HINDUISM | 876 | the Pandavas' last journey, Yudhishthira's dog, heaven | the Pandavas' last journey | the Pandavas' last journey, Yudhishthira's dog, heaven | carry: carry=title; word: 3+ words |
-| HINDUISM | 877 | the Pandavas' last journey, Yudhishthira's dog, heaven | the Pandavas' last journey | the Pandavas' last journey, Yudhishthira's dog, heaven | carry: carry=title; word: 3+ words |
-| HINDUISM | 878 | the Pandavas' last journey, Yudhishthira's dog, heaven | the Pandavas' last journey | the Pandavas' last journey, Yudhishthira's dog, heaven | carry: carry=title; word: 3+ words |
-| HINDUISM | 879 | the birth | the birth | the birth | carry: carry=title |
-| HINDUISM | 880 | the birth | the birth | the birth | carry: carry=title |
-| HINDUISM | 881 | the birth | the birth | the birth | carry: carry=title |
-| HINDUISM | 882 | the crossing of the Yamuna | the crossing of the Yamuna | the crossing of the Yamuna | carry: carry=title; word: 3+ words |
-| HINDUISM | 883 | the crossing of the Yamuna | the crossing of the Yamuna | the crossing of the Yamuna | carry: carry=title; word: 3+ words |
-| HINDUISM | 884 | the crossing of the Yamuna | the crossing of the Yamuna | the crossing of the Yamuna | carry: carry=title; word: 3+ words |
-| HINDUISM | 885 | Putana | Putana | Putana | carry: carry=title |
-| HINDUISM | 886 | Putana | Putana | Putana | carry: carry=title |
-| HINDUISM | 887 | the butter thief | the butter thief | the butter thief | carry: carry=title; word: 3+ words |
-| HINDUISM | 888 | the butter thief | the butter thief | the butter thief | carry: carry=title; word: 3+ words |
-| HINDUISM | 889 | the butter thief | the butter thief | the butter thief | carry: carry=title; word: 3+ words |
 | HINDUISM | 890 | the mouth full of universe | the mouth full of universe | the mouth full of universe | carry: carry=title; word: 3+ words |
 | HINDUISM | 891 | the mouth full of universe | the mouth full of universe | the mouth full of universe | carry: carry=title; word: 3+ words |
 | HINDUISM | 892 | Kaliya | Kaliya | Kaliya | carry: carry=title |
@@ -2596,96 +2079,6 @@ Camp one (days 1–21) takes its word and line from the owner's camp-one design 
 | HINDUISM | 932 | Mirabai's songs | Mirabai's songs | Mirabai's songs | carry: carry=title |
 | HINDUISM | 933 | Chaitanya and the Bengal kirtan | Chaitanya and the Bengal kirtan | Chaitanya and the Bengal kirtan | carry: carry=title; word: 3+ words |
 | HINDUISM | 934 | Chaitanya and the Bengal kirtan | Chaitanya and the Bengal kirtan | Chaitanya and the Bengal kirtan | carry: carry=title; word: 3+ words |
-| HINDUISM | 935 | Ramakrishna (the Gospel, selections) | Ramakrishna | Ramakrishna (the Gospel, selections) | carry: carry=title |
-| HINDUISM | 936 | Ramakrishna (the Gospel, selections) | Ramakrishna | Ramakrishna (the Gospel, selections) | carry: carry=title |
-| HINDUISM | 937 | Ramakrishna (the Gospel, selections) | Ramakrishna | Ramakrishna (the Gospel, selections) | carry: carry=title |
-| HINDUISM | 938 | Ramakrishna (the Gospel, selections) | Ramakrishna | Ramakrishna (the Gospel, selections) | carry: carry=title |
-| HINDUISM | 939 | Vivekananda (Chicago 1893 | Vivekananda | Vivekananda (Chicago 1893 | carry: carry=title |
-| HINDUISM | 940 | Vivekananda (Chicago 1893 | Vivekananda | Vivekananda (Chicago 1893 | carry: carry=title |
-| HINDUISM | 941 | Vivekananda (Chicago 1893 | Vivekananda | Vivekananda (Chicago 1893 | carry: carry=title |
-| HINDUISM | 942 | Karma Yoga | Karma Yoga | Karma Yoga | carry: carry=title |
-| HINDUISM | 943 | Karma Yoga | Karma Yoga | Karma Yoga | carry: carry=title |
-| HINDUISM | 944 | Karma Yoga | Karma Yoga | Karma Yoga | carry: carry=title |
-| HINDUISM | 945 | Karma Yoga | Karma Yoga | Karma Yoga | carry: carry=title |
-| HINDUISM | 946 | Raja Yoga) | Raja Yoga) | Raja Yoga) | carry: carry=title; word: label |
-| HINDUISM | 947 | Raja Yoga) | Raja Yoga) | Raja Yoga) | carry: carry=title; word: label |
-| HINDUISM | 948 | Raja Yoga) | Raja Yoga) | Raja Yoga) | carry: carry=title; word: label |
-| HINDUISM | 949 | Ramana Maharshi (Who Am I?) | Ramana Maharshi | Ramana Maharshi (Who Am I?) | carry: carry=title |
-| HINDUISM | 950 | Ramana Maharshi (Who Am I?) | Ramana Maharshi | Ramana Maharshi (Who Am I?) | carry: carry=title |
-| HINDUISM | 951 | Ramana Maharshi (Who Am I?) | Ramana Maharshi | Ramana Maharshi (Who Am I?) | carry: carry=title |
-| HINDUISM | 952 | Ramana Maharshi (Who Am I?) | Ramana Maharshi | Ramana Maharshi (Who Am I?) | carry: carry=title |
-| HINDUISM | 953 | Aurobindo (selections) | Aurobindo | Aurobindo (selections) | carry: carry=title |
-| HINDUISM | 954 | Aurobindo (selections) | Aurobindo | Aurobindo (selections) | carry: carry=title |
-| HINDUISM | 955 | Aurobindo (selections) | Aurobindo | Aurobindo (selections) | carry: carry=title |
-| HINDUISM | 956 | Gandhi's Gita | Gandhi's Gita | Gandhi's Gita | carry: carry=title |
-| HINDUISM | 957 | Gandhi's Gita | Gandhi's Gita | Gandhi's Gita | carry: carry=title |
-| HINDUISM | 958 | Gandhi's Gita | Gandhi's Gita | Gandhi's Gita | carry: carry=title |
-| HINDUISM | 959 | Gandhi's Gita | Gandhi's Gita | Gandhi's Gita | carry: carry=title |
-| HINDUISM | 960 | Tagore's Gitanjali (public domain, 1912) | Tagore's Gitanjali | Tagore's Gitanjali (public domain, 1912) | carry: carry=title |
-| HINDUISM | 961 | Tagore's Gitanjali (public domain, 1912) | Tagore's Gitanjali | Tagore's Gitanjali (public domain, 1912) | carry: carry=title |
-| HINDUISM | 962 | Tagore's Gitanjali (public domain, 1912) | Tagore's Gitanjali | Tagore's Gitanjali (public domain, 1912) | carry: carry=title |
-| HINDUISM | 963 | karma: the Gita ch. 3, 4, 5 re-read with commentary | karma | karma: the Gita ch. 3, 4, 5 re-read with commentary | carry: carry=title |
-| HINDUISM | 964 | karma: the Gita ch. 3, 4, 5 re-read with commentary | karma | karma: the Gita ch. 3, 4, 5 re-read with commentary | carry: carry=title |
-| HINDUISM | 965 | karma: the Gita ch. 3, 4, 5 re-read with commentary | karma | karma: the Gita ch. 3, 4, 5 re-read with commentary | carry: carry=title |
-| HINDUISM | 966 | karma: the Gita ch. 3, 4, 5 re-read with commentary | karma | karma: the Gita ch. 3, 4, 5 re-read with commentary | carry: carry=title |
-| HINDUISM | 967 | karma: the Gita ch. 3, 4, 5 re-read with commentary | karma | karma: the Gita ch. 3, 4, 5 re-read with commentary | carry: carry=title |
-| HINDUISM | 968 | karma: the Gita ch. 3, 4, 5 re-read with commentary | karma | karma: the Gita ch. 3, 4, 5 re-read with commentary | carry: carry=title |
-| HINDUISM | 969 | a year of service designed | a year of service designed | a year of service designed | carry: carry=title; word: 3+ words |
-| HINDUISM | 970 | a year of service designed | a year of service designed | a year of service designed | carry: carry=title; word: 3+ words |
-| HINDUISM | 971 | a year of service designed | a year of service designed | a year of service designed | carry: carry=title; word: 3+ words |
-| HINDUISM | 972 | a year of service designed | a year of service designed | a year of service designed | carry: carry=title; word: 3+ words |
-| HINDUISM | 973 | a year of service designed | a year of service designed | a year of service designed | carry: carry=title; word: 3+ words |
-| HINDUISM | 974 | a year of service designed | a year of service designed | a year of service designed | carry: carry=title; word: 3+ words |
-| HINDUISM | 975 | bhakti: the Gita Govinda | bhakti | bhakti: the Gita Govinda | carry: carry=title |
-| HINDUISM | 976 | bhakti: the Gita Govinda | bhakti | bhakti: the Gita Govinda | carry: carry=title |
-| HINDUISM | 977 | bhakti: the Gita Govinda | bhakti | bhakti: the Gita Govinda | carry: carry=title |
-| HINDUISM | 978 | bhakti: the Gita Govinda | bhakti | bhakti: the Gita Govinda | carry: carry=title |
-| HINDUISM | 979 | bhakti: the Gita Govinda | bhakti | bhakti: the Gita Govinda | carry: carry=title |
-| HINDUISM | 980 | bhakti: the Gita Govinda | bhakti | bhakti: the Gita Govinda | carry: carry=title |
-| HINDUISM | 981 | the Bhagavata's tenth book continued | the Bhagavata's tenth book continued | the Bhagavata's tenth book continued | carry: carry=title; word: label |
-| HINDUISM | 982 | the Bhagavata's tenth book continued | the Bhagavata's tenth book continued | the Bhagavata's tenth book continued | carry: carry=title; word: label |
-| HINDUISM | 983 | the Bhagavata's tenth book continued | the Bhagavata's tenth book continued | the Bhagavata's tenth book continued | carry: carry=title; word: label |
-| HINDUISM | 984 | the Bhagavata's tenth book continued | the Bhagavata's tenth book continued | the Bhagavata's tenth book continued | carry: carry=title; word: label |
-| HINDUISM | 985 | the Bhagavata's tenth book continued | the Bhagavata's tenth book continued | the Bhagavata's tenth book continued | carry: carry=title; word: label |
-| HINDUISM | 986 | the Bhagavata's tenth book continued | the Bhagavata's tenth book continued | the Bhagavata's tenth book continued | carry: carry=title; word: label |
-| HINDUISM | 987 | kirtan repertoire (20 songs) | kirtan repertoire | kirtan repertoire (20 songs) | carry: carry=title |
-| HINDUISM | 988 | kirtan repertoire (20 songs) | kirtan repertoire | kirtan repertoire (20 songs) | carry: carry=title |
-| HINDUISM | 989 | kirtan repertoire (20 songs) | kirtan repertoire | kirtan repertoire (20 songs) | carry: carry=title |
-| HINDUISM | 990 | kirtan repertoire (20 songs) | kirtan repertoire | kirtan repertoire (20 songs) | carry: carry=title |
-| HINDUISM | 991 | kirtan repertoire (20 songs) | kirtan repertoire | kirtan repertoire (20 songs) | carry: carry=title |
-| HINDUISM | 992 | kirtan repertoire (20 songs) | kirtan repertoire | kirtan repertoire (20 songs) | carry: carry=title |
-| HINDUISM | 993 | jnana: Shankara's *Vivekachudamani* (selections) | jnana | jnana: Shankara's *Vivekachudamani* (selections) | carry: carry=title |
-| HINDUISM | 994 | jnana: Shankara's *Vivekachudamani* (selections) | jnana | jnana: Shankara's *Vivekachudamani* (selections) | carry: carry=title |
-| HINDUISM | 995 | jnana: Shankara's *Vivekachudamani* (selections) | jnana | jnana: Shankara's *Vivekachudamani* (selections) | carry: carry=title |
-| HINDUISM | 996 | jnana: Shankara's *Vivekachudamani* (selections) | jnana | jnana: Shankara's *Vivekachudamani* (selections) | carry: carry=title |
-| HINDUISM | 997 | jnana: Shankara's *Vivekachudamani* (selections) | jnana | jnana: Shankara's *Vivekachudamani* (selections) | carry: carry=title |
-| HINDUISM | 998 | jnana: Shankara's *Vivekachudamani* (selections) | jnana | jnana: Shankara's *Vivekachudamani* (selections) | carry: carry=title |
-| HINDUISM | 999 | the Ashtavakra Gita complete | the Ashtavakra Gita complete | the Ashtavakra Gita complete | carry: carry=title; word: label |
-| HINDUISM | 1000 | the Ashtavakra Gita complete | the Ashtavakra Gita complete | the Ashtavakra Gita complete | carry: carry=title; word: label |
-| HINDUISM | 1001 | the Ashtavakra Gita complete | the Ashtavakra Gita complete | the Ashtavakra Gita complete | carry: carry=title; word: label |
-| HINDUISM | 1002 | the Ashtavakra Gita complete | the Ashtavakra Gita complete | the Ashtavakra Gita complete | carry: carry=title; word: label |
-| HINDUISM | 1003 | the Ashtavakra Gita complete | the Ashtavakra Gita complete | the Ashtavakra Gita complete | carry: carry=title; word: label |
-| HINDUISM | 1004 | the Ashtavakra Gita complete | the Ashtavakra Gita complete | the Ashtavakra Gita complete | carry: carry=title; word: label |
-| HINDUISM | 1005 | pranayama sequences | pranayama sequences | pranayama sequences | carry: carry=title |
-| HINDUISM | 1006 | pranayama sequences | pranayama sequences | pranayama sequences | carry: carry=title |
-| HINDUISM | 1007 | pranayama sequences | pranayama sequences | pranayama sequences | carry: carry=title |
-| HINDUISM | 1008 | pranayama sequences | pranayama sequences | pranayama sequences | carry: carry=title |
-| HINDUISM | 1009 | pranayama sequences | pranayama sequences | pranayama sequences | carry: carry=title |
-| HINDUISM | 1010 | pranayama sequences | pranayama sequences | pranayama sequences | carry: carry=title |
-| HINDUISM | 1011 | pranayama sequences | pranayama sequences | pranayama sequences | carry: carry=title |
-| HINDUISM | 1012 | mantra sadhana (a 40-day japa discipline) | mantra sadhana | mantra sadhana (a 40-day japa discipline) | carry: carry=title |
-| HINDUISM | 1013 | mantra sadhana (a 40-day japa discipline) | mantra sadhana | mantra sadhana (a 40-day japa discipline) | carry: carry=title |
-| HINDUISM | 1014 | mantra sadhana (a 40-day japa discipline) | mantra sadhana | mantra sadhana (a 40-day japa discipline) | carry: carry=title |
-| HINDUISM | 1015 | mantra sadhana (a 40-day japa discipline) | mantra sadhana | mantra sadhana (a 40-day japa discipline) | carry: carry=title |
-| HINDUISM | 1016 | mantra sadhana (a 40-day japa discipline) | mantra sadhana | mantra sadhana (a 40-day japa discipline) | carry: carry=title |
-| HINDUISM | 1017 | mantra sadhana (a 40-day japa discipline) | mantra sadhana | mantra sadhana (a 40-day japa discipline) | carry: carry=title |
-| HINDUISM | 1018 | mantra sadhana (a 40-day japa discipline) | mantra sadhana | mantra sadhana (a 40-day japa discipline) | carry: carry=title |
-| HINDUISM | 1019 | yoga nidra | yoga nidra | yoga nidra | carry: carry=title |
-| HINDUISM | 1020 | yoga nidra | yoga nidra | yoga nidra | carry: carry=title |
-| HINDUISM | 1021 | yoga nidra | yoga nidra | yoga nidra | carry: carry=title |
-| HINDUISM | 1022 | yoga nidra | yoga nidra | yoga nidra | carry: carry=title |
-| HINDUISM | 1023 | yoga nidra | yoga nidra | yoga nidra | carry: carry=title |
-| HINDUISM | 1024 | yoga nidra | yoga nidra | yoga nidra | carry: carry=title |
 | HINDUISM | 1060 | Year 3: year close | Year 3 | Year 3: year close | carry: carry=title; word: label |
 | HINDUISM | 1061 | year 3 · the ranges | year 3 | year 3 · the ranges | carry: carry=title; word: label |
 | ISLAM | 5 | plainly, in one session, as a shape not a checklist | the five pillars | five things that hold a life up | camp one; word: 3+ words |
