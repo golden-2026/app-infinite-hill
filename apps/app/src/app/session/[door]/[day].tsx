@@ -331,7 +331,8 @@ function Session({ door, day, kidId, mode, deep, extra = false, voiceOn, onFinis
   const prevStep = qi > 0 ? plan.steps.find((x) => x.id === queue[qi - 1]) : null;
   const canBack = !!prevStep && ["beat", "bell"].includes(prevStep.type) && step?.type !== "tally";
   const pct = phase === "play" ? Math.round((qi / Math.max(1, total - 1)) * 100) : 100;
-  const segLabel = step ? (step.label ? String(step.label) : step.type === "breath" && step.n > 1 ? t("session.seg.breaths", { count: step.n }) : segName(step.seg, step.type)) : "";
+  // the welcome is in the voice's own words, so the header says whose welcome it is (the house voice reads it until they record)
+  const segLabel = step ? (step.label ? String(step.label) : step.seg === "a welcome" && !kidMode ? t("session.seg.welcomeOf", { name: ic.short }) : step.type === "breath" && step.n > 1 ? t("session.seg.breaths", { count: step.n }) : segName(step.seg, step.type)) : "";
   if (!step) return null;
   const k = `${phase}-${qi}-${step.id}`;
 
