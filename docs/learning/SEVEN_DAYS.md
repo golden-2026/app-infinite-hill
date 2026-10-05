@@ -55,6 +55,10 @@ A short session built from the six days, not new teaching:
 4. **What's next, offered, never pushed**: the path continues from day 9 at the same five minutes, or a gentle reminder
    time.
 
+## Keep going (owner, 2026-10-04)
+After any day, people can continue straight to the next one ("keep going: day N →"). The streak still counts one
+day per calendar day, and look-back questions still reach back to earlier days.
+
 ## Switched off for the alpha
 
 Other doors (visible as "coming soon" or hidden, owner's choice), couple features, circles, plans and gifts, the
