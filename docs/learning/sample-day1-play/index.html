@@ -195,7 +195,7 @@ function myths(m) {
   const show = () => { claim.textContent = Q[k][0]; row.querySelectorAll("button").forEach((b) => { b.disabled = false; b.className = "opt"; }); };
   row.querySelectorAll("button").forEach((b) => b.onclick = () => {
     const ok = (b.dataset.v === "1") === Q[k][1]; b.classList.add(ok ? "right" : "wrong"); row.querySelectorAll("button").forEach((x) => x.disabled = true); score(ok, 10);
-    setTimeout(() => { k++; if (k < Q.length) show(); else { claim.textContent = ""; out.append(el(`<div class="reveal">The text is the <b>Chandogya Upanishad</b>: out there and in here, one light. That's why Maya's reading makes sense.<span class="src">Chandogya Upanishad 3.13.7</span></div>`)); unlock(); } }, 650);
+    setTimeout(() => { k++; if (k < Q.length) show(); else { claim.textContent = "All three. The light idea comes from a real text:"; out.append(el(`<div class="reveal">The text is the <b>Chandogya Upanishad</b>: out there and in here, one light. That's why Maya's reading makes sense.<span class="src">Chandogya Upanishad 3.13.7</span></div>`)); unlock(); } }, 650);
   });
   show();
 }
@@ -222,9 +222,10 @@ function boss(m) {
 function finish(m) {
   const secs = Math.round((Date.now() - t0) / 1000);
   let hi = 0; try { hi = +localStorage.getItem("ih-namaste-hi") || 0; if (pts > hi) localStorage.setItem("ih-namaste-hi", String(pts)); } catch (e) {}
-  m.append(el(`<div class="eyebrow" style="text-align:center">day one · namaste</div>
-    <div class="big">${right}/${asked}</div>
-    <p class="note" style="font-size:14px">${Math.floor(secs / 60)}:${String(secs % 60).padStart(2, "0")}${hi ? ` · your best ${Math.max(hi, pts)} pts` : ""}</p>
+  m.append(el(`<img src="img/celebrate.webp" alt="the infinite hill mascot celebrating" style="width:130px;margin:0 auto">
+    <div class="big">${pts}</div>
+    <h1 style="text-align:center">${pts > hi && hi ? "New high score!" : right === asked ? "Perfect day one." : "Day one, done."}</h1>
+    <div class="stats"><div><b>${right}/${asked}</b><span>right</span></div><div><b>${best}</b><span>best streak</span></div><div><b>${Math.floor(secs / 60)}:${String(secs % 60).padStart(2, "0")}</b><span>time</span></div></div>
     <div class="do"><b>one thing today</b>Greet someone with namaste, out loud or inside, and see them that way for a second. Then tell someone what it really means. Most people get it wrong, like Maya.</div>
     <a class="btn" style="display:block;text-align:center;text-decoration:none" href="https://claude.ai/artifact/6yJjW3C2ESxr1ZYVKewFti" target="_blank" rel="noopener">keep going: day 2 →</a>`));
   unlock("play again");
