@@ -140,11 +140,13 @@ test("all fifteen website keys: one per picker card, and each one an onboarding 
     assert.ok(LIFE_MOMENTS.includes(k), k);
     assert.deepEqual(whyParam(k), { why: k, stance: null });
   }
-  // the website picker: 14 "what brings you" cards plus "spiritual" (my own path), each "start here" carrying its key
+  // the website picker (owner, 2026-10-05): the eight most pressing reasons only; the others stay sign-up answers.
+  // Each "start here" carries its key, and every card is a real sign-up answer.
   for (const file of ["site.html", "site-es.html"]) {
     const html = readFileSync(`${root}apps/app/public/${file}`, "utf8");
     const keys = [...html.matchAll(/id="pkt-([a-z]+)"/g)].map((m) => m[1]);
-    assert.deepEqual([...keys].sort(), [...WHY_KEYS.filter((k) => k !== "calm"), "spiritual"].sort(), file);
+    assert.deepEqual([...keys].sort(), ["kids", "grief", "partner", "hard", "own", "god", "diagnosis", "sent"].sort(), file);
+    for (const k of keys) assert.ok(WHY_KEYS.includes(k), `${file}: ${k} is a sign-up answer`);
     for (const k of keys) assert.match(html, new RegExp(`welcome/you\\?(lang=es&)?why=${k}"`), `${file}: ${k} start here`);
   }
 });

@@ -21,9 +21,9 @@ promise per persona.
 
 ## How the reasons show
 
-The homepage shows **eight reasons up front**, in a fresh random order on every visit (kids, grief, partner, hard,
-own, god, diagnosis, sent); the other eight sit behind **"more reasons people come"**. Without JavaScript every card
-shows as a plain list. Each card's "start here" opens sign-up with `?why=<key>`, so "what brings you" is already
+The homepage shows **eight reasons** (kids, grief, partner, hard, own, god, diagnosis, sent), in a fresh random order
+on every visit, in one row (owner, 2026-10-05: the other eight were taken off the homepage; they remain sign-up answers).
+Without JavaScript every card shows as a plain list. Each card's "start here" opens sign-up with `?why=<key>`, so "what brings you" is already
 answered; the same answers appear in sign-up for anyone who skips the website.
 
 Life-moment reasons (grief, baby, diagnosis, belonging, forgiveness, wedding, gratitude) also get a **for you this
