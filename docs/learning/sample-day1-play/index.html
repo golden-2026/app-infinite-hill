@@ -68,8 +68,8 @@ h2{font:800 25px/1.15 var(--display);text-wrap:balance;margin:0;letter-spacing:-
 .stats span{font:600 10px/1 var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
 .do{background:var(--gold);color:var(--ink);border-radius:18px;padding:14px 16px;font:600 16px/1.45 var(--body)}
 .do b{display:block;font:800 12px/1.2 var(--display);letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px}
-.mascot{display:flex;gap:10px;align-items:center}
-.mascot img{width:64px;height:auto}
+.mascot{display:flex;gap:10px;align-items:flex-end}
+.mascot img{width:72px;height:auto;flex:0 0 auto;animation:pop .3s ease}
 .mascot div{background:var(--cream);color:var(--cardInk);border-radius:16px 16px 16px 4px;padding:10px 14px;font:600 15px/1.35 var(--body)}
 .foot{position:sticky;bottom:0;padding-block:10px calc(14px + env(safe-area-inset-bottom,0px));background:linear-gradient(180deg,transparent,var(--dusk3) 35%)}
 .btn{box-sizing:border-box;width:100%;border:0;border-radius:999px;padding:16px;font:800 15px/1 var(--display);letter-spacing:.1em;text-transform:uppercase;background:var(--gold);color:var(--ink);cursor:pointer}
@@ -112,10 +112,19 @@ $("snd").onclick = () => { soundOn = !soundOn; $("snd").setAttribute("aria-press
 
 function score(ok, base = 10) {
   asked++;
-  if (ok) { right++; combo++; best = Math.max(best, combo); const g = base; pts += g; ding(); bump(); return g; }
-  combo = 0; buzz(); bump(); return 0;
+  if (ok) { right++; combo++; best = Math.max(best, combo); const g = base; pts += g; ding(); bump(); react(true, combo >= 3 ? `${combo} in a row. you're on a roll.` : ["nice.", "yes. that's it.", "you got it."][asked % 3], ""); return g; }
+  combo = 0; buzz(); bump(); react(false, "", "almost. that one trips up a lot of grown-ups."); return 0;
 }
 function bump() {}
+// the mascot hosts every screen: a pose and a line, swapped when something happens
+function host(m, pose, line) { const h = el(`<div class="mascot" id="host"><img src="img/${pose}.webp" alt=""><div>${line}</div></div>`); m.prepend(h); }
+function react(ok, rightLine, wrongLine) {
+  const h = document.getElementById("host"); if (!h) return;
+  const poses = ok ? ["cheer", "thumbs_up", "tap_reaction"] : ["think"];
+  h.querySelector("img").src = `img/${poses[asked % poses.length]}.webp`;
+  h.querySelector("div").innerHTML = ok ? rightLine : wrongLine;
+  h.querySelector("img").style.animation = "none"; void h.offsetWidth; h.querySelector("img").style.animation = "";
+}
 const unlock = (label = "next") => { $("next").disabled = false; $("next").textContent = label; };
 const lock = () => { $("next").disabled = true; };
 
@@ -131,12 +140,14 @@ function hook(m) {
   m.append(el(`<div class="eyebrow">hinduism · day one · <b>namaste</b></div>
   <div class="frame"><img src="img/hook.webp" alt="People greeting with palms pressed together"></div>
   <h1>You've said it a hundred times. What does it actually mean?</h1>`));
+  host(m, "wave", "hey. i'm going to ask you about a word you already know. six quick rounds.");
   unlock("start");
 }
 function story([img, who, line, r], after) {
   return (m) => {
     m.append(el(`<div class="eyebrow">the setup</div><div class="frame"><img src="${img}" alt=""><div class="cap${r ? " r" : ""}"><span class="who">${esc(who)}</span>${esc(line)}</div></div>`));
     if (after) m.append(el(`<h2>${esc(after)}</h2>`));
+    host(m, after ? "think" : "peek", after ? "hmm. is she? let's find out." : "watch this.");
   };
 }
 function choice(m, title, opts, why, base) {
@@ -156,6 +167,7 @@ function choice(m, title, opts, why, base) {
 }
 function guess(m) {
   m.append(el(`<div class="eyebrow">1 of 6 · <b>guess</b></div>`));
+  host(m, "think", "go with your gut. no wrong guesses on a first try.");
   choice(m, "What does namaste literally mean?", [["the light in me sees the light in you", 0], ["peace be with you", 0], ["I bow to you", 1], ["hello, friend", 0]],
     `<b>I bow to you.</b> Two Sanskrit words: <b>namas</b>, a bow, + <b>te</b>, to you. Maya's line is a famous <i>reading</i> of it, not what the word says.<span class="src">Monier-Williams, Sanskrit-English Dictionary</span>`, 10);
 }
@@ -163,6 +175,7 @@ function build(m) {
   m.append(el(`<div class="eyebrow">2 of 6 · <b>build it</b></div><h2>Build the word.</h2>
     <div class="slots"><div class="slot" id="s0">?</div><div class="slot" id="s1">?</div></div>
     <div class="chips" id="chips"><button class="chip" data-p="te">te</button><button class="chip" data-p="om">om</button><button class="chip" data-p="namas">namas</button><button class="chip" data-p="shanti">shanti</button></div>`));
+  host(m, "read", "it's made of two older words. find them.");
   lock(); const want = ["namas", "te"]; let at = 0, miss = 0;
   m.querySelectorAll(".chip").forEach((c) => c.onclick = () => {
     if (c.dataset.p === want[at]) { $("s" + at).textContent = c.dataset.p; c.disabled = true; at++;
@@ -175,6 +188,7 @@ function pairs(m) {
   const P = [["namas", "a bow"], ["te", "to you"], ["palms together", "the gesture"], ["Chandogya Upanishad", "the same light, inside you"]];
   const R = ["the gesture", "the same light, inside you", "a bow", "to you"];
   m.append(el(`<div class="eyebrow">3 of 6 · <b>match</b></div><h2>Match them up.</h2>`));
+  host(m, "tap_reaction", "tap one on the left, then its partner.");
   const grid = el(`<div class="row2"></div>`).firstElementChild; lock(); let pick = null, done = 0;
   P.forEach(([l], k) => grid.append(el(`<button class="tile" data-k="${k}">${esc(l)}</button>`), el(`<button class="tile" data-r="${esc(R[k])}">${esc(R[k])}</button>`)));
   grid.querySelectorAll(".tile").forEach((t) => t.onclick = () => {
@@ -191,7 +205,7 @@ function myths(m) {
   const Q = [["Namaste is made of two Sanskrit words.", true], ["Namaste literally means “the light in me sees the light in you.”", false], ["An old text says the light above the heavens is the same light inside a person.", true]];
   m.append(el(`<div class="eyebrow">4 of 6 · <b>myth or fact</b></div>`));
   const claim = el(`<div class="claim" id="claim"></div>`).firstElementChild, row = el(`<div class="pair"><button class="opt" data-v="1">fact</button><button class="opt" data-v="0">myth</button></div>`).firstElementChild, out = el(`<div></div>`).firstElementChild;
-  m.append(claim, row, out); lock(); let k = 0;
+  m.append(claim, row, out); host(m, "peek", "three claims. which ones are true?"); lock(); let k = 0;
   const show = () => { claim.textContent = Q[k][0]; row.querySelectorAll("button").forEach((b) => { b.disabled = false; b.className = "opt"; }); };
   row.querySelectorAll("button").forEach((b) => b.onclick = () => {
     const ok = (b.dataset.v === "1") === Q[k][1]; b.classList.add(ok ? "right" : "wrong"); row.querySelectorAll("button").forEach((x) => x.disabled = true); score(ok, 10);
@@ -200,12 +214,14 @@ function myths(m) {
   show();
 }
 function cutscene(m) {
+  host(m, "heart", "this is my favorite part.");
   m.append(el(`<div class="eyebrow">meanwhile</div><div class="frame"><img src="img/p5.webp" alt=""><div class="cap"><span class="who">Nani</span>So Maya's not wrong. It's a reading: the light in me sees the light in you.</div></div>`));
   win();
 }
 function speed(m) {
   const Q = [["namas means…", ["a bow", "to you", "peace"], 0], ["te means…", ["light", "to you", "bow"], 1], ["The gesture is…", ["a wave", "palms together", "a fist bump"], 1], ["Literally, namaste is…", ["I bow to you", "light in me", "good morning"], 0], ["The light idea comes from…", ["a yoga mat", "the Upanishads", "a movie"], 1]];
   m.append(el(`<div class="eyebrow">5 of 6 · <b>quick five</b> · 20 seconds</div><div class="timer"><i id="tbar"></i></div><h2 id="sq"></h2><div class="opts" id="so"></div><div id="sout"></div>`));
+  host(m, "cheer", "quick five. twenty seconds. go.");
   lock(); let k = 0, gotIt = 0, over = false; const end = Date.now() + 20000;
   const tick = setInterval(() => { const left = Math.max(0, end - Date.now()); const bar = $("tbar"); if (bar) bar.style.width = (left / 200) + "%"; if (!left) finish(); }, 100);
   function finish() { if (over) return; over = true; clearInterval(tick); $("so").innerHTML = ""; $("sq").textContent = `${gotIt} of ${Q.length} before the buzzer.`; unlock(); }
@@ -215,6 +231,7 @@ function speed(m) {
 }
 function boss(m) {
   m.append(el(`<div class="eyebrow">6 of 6 · <b>last one</b></div>`));
+  host(m, "meditate", "last one. this is the one that matters most.");
   choice(m, "A friend snaps at you. You greet them with namaste the way Nani means it. What are you noticing?",
     [["that it's polite to greet people, even rude ones", 0], ["the same light in them that's in you", 1], ["that they're older, so they get a bow", 0], ["that bowing calms you down first", 0]],
     "Not manners, not age, not calm: <b>the light</b>. Read Nani's way, namaste looks past the moment to the same light in the person.", 10);
