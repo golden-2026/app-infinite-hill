@@ -124,7 +124,7 @@ const S = [
   { seg: "do", kind: "do" },
   { seg: "day one", kind: "done" },
 ];
-let i = 0, furthest = 0, right = 0, asked = 0, voiceOn = false, who = "kids";
+let i = 0, furthest = 0, right = 0, asked = 0, voiceOn = false;
 const answered = {};
 const el = (h) => { const t = document.createElement("template"); t.innerHTML = h.trim(); return t.content; };
 const $ = (id) => document.getElementById(id);
@@ -172,13 +172,7 @@ function settle(ok, line, m) {
 
 function hook(s, m) {
   m.append(el(`<div class="frame"><img src="img/hook.webp" alt="Three people greeting with palms pressed together: a yoga class, a shop in Chennai, a doorway in New Jersey"></div>
-  <h1>You've said it a hundred times. Do you know what it means?</h1>
-  <div class="eyebrow" style="margin-top:4px">doing this…</div>
-  <div class="pair" id="who"><button class="opt" data-w="me">on my own</button><button class="opt" data-w="kids">with my kids</button></div>`));
-  m.querySelectorAll("#who button").forEach((b) => {
-    if (b.dataset.w === who) b.classList.add("right");
-    b.onclick = () => { who = b.dataset.w; m.querySelectorAll("#who button").forEach((x) => x.classList.toggle("right", x === b)); };
-  });
+  <h1>You've said it a hundred times. Do you know what it means?</h1>`));
 }
 function panel(s, m) {
   const caps = s.lines.map(([who2, line]) => `<div class="cap${who2 === "Nani" ? "" : " right"}"><span class="who">${esc(who2)}</span>${esc(line)}</div>`).reverse().join("");
@@ -267,10 +261,9 @@ function breath(s, m) {
   };
 }
 function doIt(s, m) {
-  // one lesson for everyone; only these suggestions change with who's doing it
-  const kids = who === "kids";
-  const today = kids ? "Greet one person with namaste and see them that way for a second." : "Greet a coworker, a neighbor or a stranger with namaste, out loud or inside, and see them that way for a second.";
-  const tonight = kids ? ["tonight, with your kids", "Namaste at dinner. Each person says one thing they see in someone else."] : ["tonight, with someone", "Text a friend what namaste really means. Most people get it wrong, like Maya did."];
+  // one offering for everyone: the same suggestions whether you're on your own, a kid, or a family
+  const today = "Greet someone with namaste, out loud or inside: a friend, a coworker, a stranger. See them that way for a second.";
+  const tonight = ["tonight, share it", "Tell someone what namaste really means: your kids at dinner, a friend, your family. Most people get it wrong, like Maya did."];
   s.say = `Try it now. Palms together, breathe in, and as you breathe out, a small bow. Today: ${today} Tonight: ${tonight[1]}`;
   m.append(el(`<h2>Make it yours.</h2><div class="dolist">
     <div class="do"><div><b>right now</b><p>Palms together. Breathe in. Breathe out with a small bow.</p></div></div>

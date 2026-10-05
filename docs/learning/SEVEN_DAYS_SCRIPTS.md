@@ -10,8 +10,8 @@ kid asks), **Dev** (14, Anika's cousin, rolls his eyes, secretly into it; the te
 dad, appears on day 4), **Maya** (22, Anika's cousin home from college: the grown-up questions and misconceptions).
 
 **Works for adults alone, kids alone, or together (owner, 2026-10-04):** every story has a beat for each age (Maya's
-adult question or misconception, Anika's curiosity, Dev's skepticism). One lesson for everyone; only the "make it
-yours" lines change with a one-tap "on my own / with my kids" choice at the start.
+adult question or misconception, Anika's curiosity, Dev's skepticism). One lesson, one offering for everyone: no
+"on my own / with my kids" choice; the "make it yours" lines are written so they fit anyone (owner, 2026-10-04).
 
 ---
 
