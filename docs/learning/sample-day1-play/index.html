@@ -83,13 +83,11 @@ h2{font:800 25px/1.15 var(--display);text-wrap:balance;margin:0;letter-spacing:-
 <div class="app">
   <div class="top">
     <div class="track" aria-hidden="true"><div class="bar" id="bar"></div></div>
-    <span class="combo" id="combo" aria-live="polite"></span>
-    <span class="pts" id="pts" aria-label="points">0</span>
     <button class="icon" id="snd" aria-label="sound" aria-pressed="true">🔊</button>
   </div>
   <main id="screen" aria-live="polite"></main>
   <div class="foot"><button class="btn" id="next">start</button>
-    <p class="note">game-first sample · Hinduism day 1 · not reviewed by Panditji yet</p></div>
+    <p class="note">sample · Hinduism day 1 · not reviewed by Panditji yet</p></div>
 </div>
 
 <script>
@@ -108,16 +106,16 @@ function tone(freqs, dur = 0.09) {
     freqs.forEach((f, k) => { const o = ac.createOscillator(), g = ac.createGain(); o.type = "triangle"; o.frequency.value = f; g.gain.value = 0.08; o.connect(g); g.connect(ac.destination); const st = ac.currentTime + k * dur; o.start(st); g.gain.exponentialRampToValueAtTime(0.0001, st + dur * 1.6); o.stop(st + dur * 1.7); });
   } catch (e) {}
 }
-const ding = () => tone([660, 880, 1320]), buzz = () => tone([180, 140], 0.12), win = () => tone([523, 659, 784, 1046], 0.12);
+const ding = () => {}, buzz = () => {}, win = () => {};
 function say(text, lang) { try { if (!soundOn || !window.speechSynthesis) return; speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(text); u.rate = 0.9; if (lang) u.lang = lang; speechSynthesis.speak(u); } catch (e) {} }
 $("snd").onclick = () => { soundOn = !soundOn; $("snd").setAttribute("aria-pressed", String(soundOn)); $("snd").textContent = soundOn ? "🔊" : "🔈"; };
 
 function score(ok, base = 10) {
   asked++;
-  if (ok) { right++; combo++; best = Math.max(best, combo); const g = base * Math.min(combo, 5); pts += g; ding(); bump(); return g; }
+  if (ok) { right++; combo++; best = Math.max(best, combo); const g = base; pts += g; ding(); bump(); return g; }
   combo = 0; buzz(); bump(); return 0;
 }
-function bump() { $("pts").textContent = pts; const c = $("combo"); c.textContent = combo >= 2 ? `🔥 x${Math.min(combo, 5)}` : ""; c.classList.toggle("on", combo >= 2); }
+function bump() {}
 const unlock = (label = "next") => { $("next").disabled = false; $("next").textContent = label; };
 const lock = () => { $("next").disabled = true; };
 
@@ -132,9 +130,8 @@ $("next").onclick = () => { if (i === 0) t0 = Date.now(); if (i < STEPS.length -
 function hook(m) {
   m.append(el(`<div class="eyebrow">hinduism · day one · <b>namaste</b></div>
   <div class="frame"><img src="img/hook.webp" alt="People greeting with palms pressed together"></div>
-  <h1>You've said it a hundred times. Bet you can't say what it means.</h1>
-  <div class="mascot"><img src="img/namaste.webp" alt=""><div>6 rounds. Points for every right answer. Get a streak going for a multiplier. 🔥</div></div>`));
-  unlock("let's play");
+  <h1>You've said it a hundred times. What does it actually mean?</h1>`));
+  unlock("start");
 }
 function story([img, who, line, r], after) {
   return (m) => {
@@ -151,25 +148,25 @@ function choice(m, title, opts, why, base) {
       box.querySelectorAll("button").forEach((x, k) => { x.disabled = true; if (opts[k][1]) x.classList.add("right"); });
       if (!ok) b.classList.add("wrong");
       const g = score(!!ok, base);
-      m.append(el(`${g ? `<div class="gain">+${g}</div>` : ""}<div class="reveal">${why}</div>`)); unlock();
+      m.append(el(`<div class="reveal">${why}</div>`)); unlock();
     };
     box.append(b);
   });
   m.append(box);
 }
 function guess(m) {
-  m.append(el(`<div class="eyebrow">round 1 · <b>guess</b></div>`));
+  m.append(el(`<div class="eyebrow">1 of 6 · <b>guess</b></div>`));
   choice(m, "What does namaste literally mean?", [["the light in me sees the light in you", 0], ["peace be with you", 0], ["I bow to you", 1], ["hello, friend", 0]],
     `<b>I bow to you.</b> Two Sanskrit words: <b>namas</b>, a bow, + <b>te</b>, to you. Maya's line is a famous <i>reading</i> of it, not what the word says.<span class="src">Monier-Williams, Sanskrit-English Dictionary</span>`, 10);
 }
 function build(m) {
-  m.append(el(`<div class="eyebrow">round 2 · <b>build the word</b></div><h2>Tap the pieces in order to build it.</h2>
+  m.append(el(`<div class="eyebrow">2 of 6 · <b>build it</b></div><h2>Build the word.</h2>
     <div class="slots"><div class="slot" id="s0">?</div><div class="slot" id="s1">?</div></div>
     <div class="chips" id="chips"><button class="chip" data-p="te">te</button><button class="chip" data-p="om">om</button><button class="chip" data-p="namas">namas</button><button class="chip" data-p="shanti">shanti</button></div>`));
   lock(); const want = ["namas", "te"]; let at = 0, miss = 0;
   m.querySelectorAll(".chip").forEach((c) => c.onclick = () => {
-    if (c.dataset.p === want[at]) { $("s" + at).textContent = c.dataset.p; c.disabled = true; tone([700 + at * 200]); at++;
-      if (at === 2) { const g = score(miss === 0, 10); m.append(el(`${g ? `<div class="gain">+${g}</div>` : ""}<div class="deva" lang="sa">नमस्ते</div><div class="reveal"><b>namas + te = namaste.</b> Tap the letters to hear it: <b>na-mas-TAY</b>.</div>`));
+    if (c.dataset.p === want[at]) { $("s" + at).textContent = c.dataset.p; c.disabled = true; at++;
+      if (at === 2) { const g = score(miss === 0, 10); m.append(el(`<div class="deva" lang="sa">नमस्ते</div><div class="reveal"><b>namas + te = namaste.</b> Tap the letters to hear it: <b>na-mas-TAY</b>.</div>`));
         m.querySelector(".deva").onclick = () => say("namaste", "hi-IN"); say("namaste", "hi-IN"); unlock(); }
     } else { miss++; c.classList.add("miss"); buzz(); setTimeout(() => c.classList.remove("miss"), 300); }
   });
@@ -177,7 +174,7 @@ function build(m) {
 function pairs(m) {
   const P = [["namas", "a bow"], ["te", "to you"], ["palms together", "the gesture"], ["Chandogya Upanishad", "the same light, inside you"]];
   const R = ["the gesture", "the same light, inside you", "a bow", "to you"];
-  m.append(el(`<div class="eyebrow">round 3 · <b>match fast</b></div><h2>Match them. Every clean match keeps your streak.</h2>`));
+  m.append(el(`<div class="eyebrow">3 of 6 · <b>match</b></div><h2>Match them up.</h2>`));
   const grid = el(`<div class="row2"></div>`).firstElementChild; lock(); let pick = null, done = 0;
   P.forEach(([l], k) => grid.append(el(`<button class="tile" data-k="${k}">${esc(l)}</button>`), el(`<button class="tile" data-r="${esc(R[k])}">${esc(R[k])}</button>`)));
   grid.querySelectorAll(".tile").forEach((t) => t.onclick = () => {
@@ -192,47 +189,45 @@ function pairs(m) {
 }
 function myths(m) {
   const Q = [["Namaste is made of two Sanskrit words.", true], ["Namaste literally means “the light in me sees the light in you.”", false], ["An old text says the light above the heavens is the same light inside a person.", true]];
-  m.append(el(`<div class="eyebrow">round 4 · <b>myth or fact</b> · three in a row</div>`));
+  m.append(el(`<div class="eyebrow">4 of 6 · <b>myth or fact</b></div>`));
   const claim = el(`<div class="claim" id="claim"></div>`).firstElementChild, row = el(`<div class="pair"><button class="opt" data-v="1">fact</button><button class="opt" data-v="0">myth</button></div>`).firstElementChild, out = el(`<div></div>`).firstElementChild;
   m.append(claim, row, out); lock(); let k = 0;
   const show = () => { claim.textContent = Q[k][0]; row.querySelectorAll("button").forEach((b) => { b.disabled = false; b.className = "opt"; }); };
   row.querySelectorAll("button").forEach((b) => b.onclick = () => {
     const ok = (b.dataset.v === "1") === Q[k][1]; b.classList.add(ok ? "right" : "wrong"); row.querySelectorAll("button").forEach((x) => x.disabled = true); score(ok, 10);
-    setTimeout(() => { k++; if (k < Q.length) show(); else { claim.textContent = "3 down."; out.append(el(`<div class="reveal">The text is the <b>Chandogya Upanishad</b>: out there and in here, one light. That's why Maya's reading makes sense.<span class="src">Chandogya Upanishad 3.13.7</span></div>`)); unlock(); } }, 650);
+    setTimeout(() => { k++; if (k < Q.length) show(); else { claim.textContent = ""; out.append(el(`<div class="reveal">The text is the <b>Chandogya Upanishad</b>: out there and in here, one light. That's why Maya's reading makes sense.<span class="src">Chandogya Upanishad 3.13.7</span></div>`)); unlock(); } }, 650);
   });
   show();
 }
 function cutscene(m) {
-  m.append(el(`<div class="eyebrow">bonus scene</div><div class="frame"><img src="img/p5.webp" alt=""><div class="cap"><span class="who">Nani</span>So Maya's not wrong. It's a reading: the light in me sees the light in you.</div></div>`));
+  m.append(el(`<div class="eyebrow">meanwhile</div><div class="frame"><img src="img/p5.webp" alt=""><div class="cap"><span class="who">Nani</span>So Maya's not wrong. It's a reading: the light in me sees the light in you.</div></div>`));
   win();
 }
 function speed(m) {
   const Q = [["namas means…", ["a bow", "to you", "peace"], 0], ["te means…", ["light", "to you", "bow"], 1], ["The gesture is…", ["a wave", "palms together", "a fist bump"], 1], ["Literally, namaste is…", ["I bow to you", "light in me", "good morning"], 0], ["The light idea comes from…", ["a yoga mat", "the Upanishads", "a movie"], 1]];
-  m.append(el(`<div class="eyebrow">round 5 · <b>speed round</b> · 20 seconds</div><div class="timer"><i id="tbar"></i></div><h2 id="sq"></h2><div class="opts" id="so"></div><div id="sout"></div>`));
+  m.append(el(`<div class="eyebrow">5 of 6 · <b>quick five</b> · 20 seconds</div><div class="timer"><i id="tbar"></i></div><h2 id="sq"></h2><div class="opts" id="so"></div><div id="sout"></div>`));
   lock(); let k = 0, gotIt = 0, over = false; const end = Date.now() + 20000;
   const tick = setInterval(() => { const left = Math.max(0, end - Date.now()); const bar = $("tbar"); if (bar) bar.style.width = (left / 200) + "%"; if (!left) finish(); }, 100);
-  function finish() { if (over) return; over = true; clearInterval(tick); $("so").innerHTML = ""; $("sq").textContent = `${gotIt} of ${Q.length} before the buzzer.`; if (gotIt === Q.length) { pts += 25; bump(); win(); $("sout").append(el(`<div class="gain">perfect run +25</div>`)); } unlock(); }
+  function finish() { if (over) return; over = true; clearInterval(tick); $("so").innerHTML = ""; $("sq").textContent = `${gotIt} of ${Q.length} before the buzzer.`; unlock(); }
   function show() { if (k >= Q.length) return finish(); const [q, o, a] = Q[k]; $("sq").textContent = q; const so = $("so"); so.innerHTML = "";
     o.forEach((t, j) => { const b = el(`<button class="opt">${esc(t)}</button>`).firstElementChild; b.onclick = () => { if (over) return; const ok = j === a; if (ok) gotIt++; score(ok, 5); b.classList.add(ok ? "right" : "wrong"); so.querySelectorAll("button").forEach((x) => x.disabled = true); setTimeout(() => { k++; show(); }, 350); }; so.append(b); }); }
   show();
 }
 function boss(m) {
-  m.append(el(`<div class="eyebrow">round 6 · <b>boss question</b> · double points</div>`));
+  m.append(el(`<div class="eyebrow">6 of 6 · <b>last one</b></div>`));
   choice(m, "A friend snaps at you. You greet them with namaste the way Nani means it. What are you noticing?",
     [["that it's polite to greet people, even rude ones", 0], ["the same light in them that's in you", 1], ["that they're older, so they get a bow", 0], ["that bowing calms you down first", 0]],
-    "Not manners, not age, not calm: <b>the light</b>. Read Nani's way, namaste looks past the moment to the same light in the person. Even a grumpy one.", 20);
+    "Not manners, not age, not calm: <b>the light</b>. Read Nani's way, namaste looks past the moment to the same light in the person.", 10);
 }
 function finish(m) {
   const secs = Math.round((Date.now() - t0) / 1000);
   let hi = 0; try { hi = +localStorage.getItem("ih-namaste-hi") || 0; if (pts > hi) localStorage.setItem("ih-namaste-hi", String(pts)); } catch (e) {}
-  win();
-  m.append(el(`<img src="img/celebrate.webp" alt="the infinite hill mascot celebrating" style="width:130px;margin:0 auto">
-    <div class="big">${pts}</div>
-    <h1 style="text-align:center">${pts > hi && hi ? "New high score!" : right === asked ? "Perfect day one." : "Day one, done."}</h1>
-    <div class="stats"><div><b>${right}/${asked}</b><span>right</span></div><div><b>🔥 ${best}</b><span>best streak</span></div><div><b>${Math.floor(secs / 60)}:${String(secs % 60).padStart(2, "0")}</b><span>time</span></div></div>
+  m.append(el(`<div class="eyebrow" style="text-align:center">day one · namaste</div>
+    <div class="big">${right}/${asked}</div>
+    <p class="note" style="font-size:14px">${Math.floor(secs / 60)}:${String(secs % 60).padStart(2, "0")}${hi ? ` · your best ${Math.max(hi, pts)} pts` : ""}</p>
     <div class="do"><b>one thing today</b>Greet someone with namaste, out loud or inside, and see them that way for a second. Then tell someone what it really means. Most people get it wrong, like Maya.</div>
     <a class="btn" style="display:block;text-align:center;text-decoration:none" href="https://claude.ai/artifact/6yJjW3C2ESxr1ZYVKewFti" target="_blank" rel="noopener">keep going: day 2 →</a>`));
-  unlock("play again: beat your score");
+  unlock("play again");
 }
 render();
 </script>
