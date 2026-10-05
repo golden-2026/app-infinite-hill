@@ -38,6 +38,11 @@ looks like it.
   beaded friendship bracelets.
 - **Dev (14)**: oversized graphic tee (no readable print), cargo pants, wired earbuds around his neck, fluffy curtain
   hair, phone always in hand, half-lidded "whatever" look that cracks into a grin.
+- **Maya (22)**, Anika's cousin, home from college: the young-adult lead who asks the grown-up questions and holds
+  the common adult misconceptions. Effortless, current style (oversized blazer or cardigan over a plain tee, wide-leg
+  trousers, small gold hoops, hair in a low claw clip, laptop or tote).
+- **Grounded, not cute (owner, 2026-10-04):** natural expressions and proportions, adult-relevant moments; the same
+  warm cinematic style, so it works for adults alone, kids alone, and both together.
 - No brand logos or readable text on clothes.
 
 ## Rules for whichever wins

@@ -109,10 +109,11 @@ const S = [
   { seg: "the hook", kind: "hook", say: "You've said it a hundred times. Do you know what it means?" },
   story("img/p1.webp", [["Nani", "Namaste!"]]),
   story("img/p2.webp", [["Anika", "Nani, why do you say namaste to everyone? Even the delivery guy?"]]),
-  story("img/p3.webp", [["Nani", "It's two old Sanskrit words. Namas: a bow. Te: to you."]]),
-  story("img/p4.webp", [["Anika", "So it just means “I bow to you”?"], ["Nani", "That's the dictionary. But bow to what?"]]),
-  story("img/p5.webp", [["Nani", "An old text says the light beyond the sky is the same light inside you."]]),
-  story("img/p6.webp", [["Nani", "So namaste means: the light in me sees the light in you."]]),
+  story("img/pmaya.webp", [["Maya", "Easy. It means “the light in me sees the light in you.” It's literally on my yoga mat."]]),
+  story("img/p3.webp", [["Nani", "Lovely. But that's not what the word says. Namas: a bow. Te: to you. I bow to you."]]),
+  story("img/p4.webp", [["Maya", "Wait. So my yoga mat is wrong?"], ["Nani", "Not wrong. It's a reading. Bow to what?"]]),
+  story("img/p5.webp", [["Nani", "An old text, the Chandogya Upanishad, says the light beyond the sky is the same light inside you."]]),
+  story("img/p6.webp", [["Nani", "That's why the reading fits: the light in me sees the light in you."]]),
   { seg: "the word", kind: "deva" },
   { seg: "the gesture", kind: "gesture" },
   { seg: "the reading", kind: "reading" },
@@ -123,7 +124,7 @@ const S = [
   { seg: "do", kind: "do" },
   { seg: "day one", kind: "done" },
 ];
-let i = 0, furthest = 0, right = 0, asked = 0, voiceOn = false;
+let i = 0, furthest = 0, right = 0, asked = 0, voiceOn = false, who = "kids";
 const answered = {};
 const el = (h) => { const t = document.createElement("template"); t.innerHTML = h.trim(); return t.content; };
 const $ = (id) => document.getElementById(id);
@@ -171,10 +172,16 @@ function settle(ok, line, m) {
 
 function hook(s, m) {
   m.append(el(`<div class="frame"><img src="img/hook.webp" alt="Three people greeting with palms pressed together: a yoga class, a shop in Chennai, a doorway in New Jersey"></div>
-  <h1>You've said it a hundred times. Do you know what it means?</h1>`));
+  <h1>You've said it a hundred times. Do you know what it means?</h1>
+  <div class="eyebrow" style="margin-top:4px">doing this…</div>
+  <div class="pair" id="who"><button class="opt" data-w="me">on my own</button><button class="opt" data-w="kids">with my kids</button></div>`));
+  m.querySelectorAll("#who button").forEach((b) => {
+    if (b.dataset.w === who) b.classList.add("right");
+    b.onclick = () => { who = b.dataset.w; m.querySelectorAll("#who button").forEach((x) => x.classList.toggle("right", x === b)); };
+  });
 }
 function panel(s, m) {
-  const caps = s.lines.map(([who, line], k) => `<div class="cap${who === "Anika" ? " right" : ""}"><span class="who">${esc(who)}</span>${esc(line)}</div>`).reverse().join("");
+  const caps = s.lines.map(([who2, line]) => `<div class="cap${who2 === "Nani" ? "" : " right"}"><span class="who">${esc(who2)}</span>${esc(line)}</div>`).reverse().join("");
   const f = el(`<div class="frame${s.wide ? " wide" : ""}" tabindex="0" role="button" aria-label="next panel"><img src="${s.img}" alt="">${caps}</div>`).firstElementChild;
   f.onclick = () => $("next").click();
   f.onkeydown = (e) => { if (e.key === "Enter") $("next").click(); };
@@ -260,11 +267,15 @@ function breath(s, m) {
   };
 }
 function doIt(s, m) {
-  s.say = "Try it now. Palms together, breathe in, and as you breathe out, a small bow. Today, greet one person with namaste and see them that way for a second. Tonight, greet your family with namaste at dinner, and each say one thing you see in the other.";
+  // one lesson for everyone; only these suggestions change with who's doing it
+  const kids = who === "kids";
+  const today = kids ? "Greet one person with namaste and see them that way for a second." : "Greet a coworker, a neighbor or a stranger with namaste, out loud or inside, and see them that way for a second.";
+  const tonight = kids ? ["tonight, with your kids", "Namaste at dinner. Each person says one thing they see in someone else."] : ["tonight, with someone", "Text a friend what namaste really means. Most people get it wrong, like Maya did."];
+  s.say = `Try it now. Palms together, breathe in, and as you breathe out, a small bow. Today: ${today} Tonight: ${tonight[1]}`;
   m.append(el(`<h2>Make it yours.</h2><div class="dolist">
     <div class="do"><div><b>right now</b><p>Palms together. Breathe in. Breathe out with a small bow.</p></div></div>
-    <div class="do"><div><b>today</b><p>Greet one person with namaste and see them that way for a second.</p></div></div>
-    <div class="do kids"><div><b>tonight, with your family</b><p>Namaste at dinner. Each person says one thing they see in someone else.</p></div></div></div>`));
+    <div class="do"><div><b>today</b><p>${today}</p></div></div>
+    <div class="do kids"><div><b>${tonight[0]}</b><p>${tonight[1]}</p></div></div></div>`));
 }
 function done(s, m) {
   s.say = `You got ${right} out of ${asked}. Day one. You came. That's everything. Tomorrow: om, the sound the universe hums.`;

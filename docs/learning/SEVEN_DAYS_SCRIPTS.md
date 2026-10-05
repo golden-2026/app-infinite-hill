@@ -7,7 +7,11 @@ Panditji's review. Images follow docs/learning/ART_DIRECTION.md once a style is 
 
 **The recurring family:** **Nani** (70, the one who knows, warm with a little swagger), **Anika** (10, asks what every
 kid asks), **Dev** (14, Anika's cousin, rolls his eyes, secretly into it; the teen who was "sent"), **Papa** (Anika's
-dad, appears on day 4).
+dad, appears on day 4), **Maya** (22, Anika's cousin home from college: the grown-up questions and misconceptions).
+
+**Works for adults alone, kids alone, or together (owner, 2026-10-04):** every story has a beat for each age (Maya's
+adult question or misconception, Anika's curiosity, Dev's skepticism). One lesson for everyone; only the "make it
+yours" lines change with a one-tap "on my own / with my kids" choice at the start.
 
 ---
 
