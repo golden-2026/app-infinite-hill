@@ -1,0 +1,238 @@
+<title>Namaste, Play</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Manrope:wght@600;800&family=Inter:wght@400;500;600&family=Tiro+Devanagari+Sanskrit&display=swap">
+<style>
+/* the app's lesson look (dusk ground, one gold accent), played as a game. Single dark look by design. */
+:root{
+  color-scheme:dark;
+  --ink:#0A0A0A; --dusk2:#161616; --dusk3:#222222;
+  --gold:#EEFF6A; --cream:#F7F7F5; --line:#ffffff22; --mute:#ffffffaa; --soft:#ffffffcc;
+  --right:#8DE24A; --wrong:#FF6B6B; --cardInk:#0A0A0A; --cardMute:#55554f;
+  --mark:'Baloo 2',system-ui,sans-serif; --display:'Manrope','Inter',system-ui,sans-serif; --body:'Inter',system-ui,sans-serif;
+  --deva:'Tiro Devanagari Sanskrit','Noto Sans Devanagari','Mangal',serif;
+}
+html,body{height:100%}
+body{background:linear-gradient(180deg,var(--ink) 0%,var(--dusk2) 60%,var(--dusk3) 100%);background-color:var(--ink);color:#fff;font-family:var(--body)}
+.app{max-width:480px;margin:0 auto;min-height:100%;display:flex;flex-direction:column;padding-inline:16px}
+.top{display:flex;align-items:center;gap:10px;padding-block:12px 6px;position:sticky;top:env(safe-area-inset-top,0px);background:var(--ink);z-index:2}
+.track{flex:1;height:10px;background:#ffffff22;border-radius:6px;overflow:hidden}
+.bar{height:100%;background:var(--gold);border-radius:6px;transition:width .35s ease}
+.pts{font:800 18px/1 var(--mark);color:var(--gold);font-variant-numeric:tabular-nums;min-width:58px;text-align:right}
+.combo{font:800 13px/1 var(--display);color:var(--ink);background:var(--gold);border-radius:999px;padding:6px 9px;visibility:hidden}
+.combo.on{visibility:visible;animation:pop .3s ease}
+.icon{width:38px;height:38px;border-radius:999px;border:0;background:#ffffff14;color:#fff;font-size:16px;display:grid;place-items:center;cursor:pointer;flex:0 0 auto}
+.icon[aria-pressed="true"]{background:var(--gold);color:var(--ink)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.eyebrow{font:600 11px/1.3 var(--display);letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+.eyebrow b{color:var(--gold);font-weight:800}
+main{flex:1;display:flex;flex-direction:column;gap:14px;padding-block:10px 18px}
+.frame{position:relative;border-radius:22px;overflow:hidden;background:#ffffff10}
+.frame img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover}
+.cap{position:absolute;left:12px;right:12px;bottom:12px;background:var(--cream);color:var(--cardInk);border-radius:18px 18px 18px 4px;padding:10px 14px;font:600 17px/1.35 var(--body);box-shadow:0 8px 24px #0006}
+.cap .who{display:block;font:800 11px/1 var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--cardMute);margin-bottom:4px}
+.cap.r{border-radius:18px 18px 4px 18px}
+h1{font:800 32px/1.05 var(--mark);color:var(--gold);text-wrap:balance;margin:0}
+h2{font:800 25px/1.15 var(--display);text-wrap:balance;margin:0;letter-spacing:-.01em}
+.opts{display:flex;flex-direction:column;gap:10px}
+.opt{border:2px solid #ffffff33;background:#ffffff0d;color:#fff;border-radius:16px;padding:15px 16px;text-align:left;font:700 17px/1.3 var(--body);cursor:pointer;transition:transform .08s}
+.opt:active{transform:scale(.98)}
+.opt.right{border-color:var(--right);background:#8DE24A26}
+.opt.wrong{border-color:var(--wrong);background:#FF6B6B22;animation:shake .3s}
+.opt:disabled{cursor:default}
+.pair{display:flex;gap:10px}
+.pair .opt{flex:1;text-align:center;font-size:19px}
+.claim{background:#ffffff0d;border:1px solid var(--line);border-radius:18px;padding:18px;font:700 20px/1.35 var(--display);min-height:84px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tile{border:2px solid var(--cream);background:var(--cream);color:var(--cardInk);border-radius:14px;padding:12px 10px;font:700 16px/1.25 var(--body);cursor:pointer;min-height:64px}
+.tile.sel{background:#fffbd0;border-color:var(--gold);transform:scale(1.03)}
+.tile.done{background:var(--gold);border-color:var(--gold);opacity:.45;cursor:default}
+.tile.miss{animation:shake .3s}
+.slots{display:flex;gap:10px;justify-content:center;min-height:64px}
+.slot{min-width:110px;border:2px dashed #ffffff44;border-radius:14px;display:grid;place-items:center;font:800 22px/1 var(--display);color:var(--gold)}
+.chips{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.chip{border:0;border-radius:999px;background:var(--cream);color:var(--cardInk);padding:12px 18px;font:800 18px/1 var(--display);cursor:pointer}
+.chip:disabled{opacity:.3}
+.deva{font:400 84px/1.15 var(--deva);text-align:center;color:var(--gold)}
+.reveal{background:var(--cream);color:var(--cardInk);border-radius:18px;padding:14px 16px;font:500 16px/1.45 var(--body);animation:pop .35s ease}
+.reveal b{font-weight:800}
+.reveal .src{display:block;margin-top:6px;font:600 11px/1.3 var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--cardMute)}
+.gain{font:800 22px/1 var(--mark);color:var(--gold);text-align:center;animation:pop .35s ease}
+.timer{height:8px;background:#ffffff22;border-radius:6px;overflow:hidden}
+.timer i{display:block;height:100%;background:var(--wrong);width:100%}
+.big{font:800 64px/1 var(--mark);color:var(--gold);text-align:center;font-variant-numeric:tabular-nums}
+.stats{display:flex;border:2px solid var(--gold);border-radius:20px;padding-block:12px}
+.stats div{flex:1;text-align:center;border-left:1px solid #ffffff22}
+.stats div:first-child{border-left:0}
+.stats b{display:block;font:800 22px/1.1 var(--display);font-variant-numeric:tabular-nums}
+.stats span{font:600 10px/1 var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.do{background:var(--gold);color:var(--ink);border-radius:18px;padding:14px 16px;font:600 16px/1.45 var(--body)}
+.do b{display:block;font:800 12px/1.2 var(--display);letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px}
+.mascot{display:flex;gap:10px;align-items:center}
+.mascot img{width:64px;height:auto}
+.mascot div{background:var(--cream);color:var(--cardInk);border-radius:16px 16px 16px 4px;padding:10px 14px;font:600 15px/1.35 var(--body)}
+.foot{position:sticky;bottom:0;padding-block:10px calc(14px + env(safe-area-inset-bottom,0px));background:linear-gradient(180deg,transparent,var(--dusk3) 35%)}
+.btn{box-sizing:border-box;width:100%;border:0;border-radius:999px;padding:16px;font:800 15px/1 var(--display);letter-spacing:.1em;text-transform:uppercase;background:var(--gold);color:var(--ink);cursor:pointer}
+.btn:disabled{opacity:.35;cursor:default}
+.note{font:500 12px/1.4 var(--body);color:#ffffff77;text-align:center;margin:6px 0 0}
+@keyframes pop{from{transform:scale(.9);opacity:.3}to{transform:none;opacity:1}}
+@keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="app">
+  <div class="top">
+    <div class="track" aria-hidden="true"><div class="bar" id="bar"></div></div>
+    <span class="combo" id="combo" aria-live="polite"></span>
+    <span class="pts" id="pts" aria-label="points">0</span>
+    <button class="icon" id="snd" aria-label="sound" aria-pressed="true">🔊</button>
+  </div>
+  <main id="screen" aria-live="polite"></main>
+  <div class="foot"><button class="btn" id="next">start</button>
+    <p class="note">game-first sample · Hinduism day 1 · not reviewed by Panditji yet</p></div>
+</div>
+
+<script>
+// Hinduism day 1 (namaste), game-first: a 3-panel hook, then you learn by playing. Every fact comes from the existing
+// day-1 script and its sources (Monier-Williams; Chandogya Upanishad 3.13.7) and its "how it's done" note.
+let pts = 0, combo = 0, best = 0, right = 0, asked = 0, i = 0, soundOn = true, t0 = 0;
+const $ = (id) => document.getElementById(id);
+const el = (h) => { const t = document.createElement("template"); t.innerHTML = h.trim(); return t.content; };
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+// little game sounds (Web Audio; quietly nothing if unavailable)
+let ac = null;
+function tone(freqs, dur = 0.09) {
+  try {
+    if (!soundOn) return; ac = ac || new (window.AudioContext || window.webkitAudioContext)();
+    freqs.forEach((f, k) => { const o = ac.createOscillator(), g = ac.createGain(); o.type = "triangle"; o.frequency.value = f; g.gain.value = 0.08; o.connect(g); g.connect(ac.destination); const st = ac.currentTime + k * dur; o.start(st); g.gain.exponentialRampToValueAtTime(0.0001, st + dur * 1.6); o.stop(st + dur * 1.7); });
+  } catch (e) {}
+}
+const ding = () => tone([660, 880, 1320]), buzz = () => tone([180, 140], 0.12), win = () => tone([523, 659, 784, 1046], 0.12);
+function say(text, lang) { try { if (!soundOn || !window.speechSynthesis) return; speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(text); u.rate = 0.9; if (lang) u.lang = lang; speechSynthesis.speak(u); } catch (e) {} }
+$("snd").onclick = () => { soundOn = !soundOn; $("snd").setAttribute("aria-pressed", String(soundOn)); $("snd").textContent = soundOn ? "🔊" : "🔈"; };
+
+function score(ok, base = 10) {
+  asked++;
+  if (ok) { right++; combo++; best = Math.max(best, combo); const g = base * Math.min(combo, 5); pts += g; ding(); bump(); return g; }
+  combo = 0; buzz(); bump(); return 0;
+}
+function bump() { $("pts").textContent = pts; const c = $("combo"); c.textContent = combo >= 2 ? `🔥 x${Math.min(combo, 5)}` : ""; c.classList.toggle("on", combo >= 2); }
+const unlock = (label = "next") => { $("next").disabled = false; $("next").textContent = label; };
+const lock = () => { $("next").disabled = true; };
+
+const STEPS = [hook, story(["img/p1.webp", "Nani", "Namaste!"]), story(["img/p2.webp", "Anika", "Nani, why do you say namaste to everyone? Even the delivery guy?", 1]), story(["img/pmaya.webp", "Maya", "Easy. It means “the light in me sees the light in you.” It's on my yoga mat.", 1], "Nani smiles. Is Maya right? Your move."),
+  guess, build, pairs, myths, cutscene, speed, boss, finish];
+function render() {
+  const m = $("screen"); m.innerHTML = ""; $("bar").style.width = Math.round((i / (STEPS.length - 1)) * 100) + "%";
+  unlock(); STEPS[i](m); window.scrollTo(0, 0);
+}
+$("next").onclick = () => { if (i === 0) t0 = Date.now(); if (i < STEPS.length - 1) { i++; render(); } else { pts = combo = best = right = asked = 0; bump(); i = 0; render(); } };
+
+function hook(m) {
+  m.append(el(`<div class="eyebrow">hinduism · day one · <b>namaste</b></div>
+  <div class="frame"><img src="img/hook.webp" alt="People greeting with palms pressed together"></div>
+  <h1>You've said it a hundred times. Bet you can't say what it means.</h1>
+  <div class="mascot"><img src="img/namaste.webp" alt=""><div>6 rounds. Points for every right answer. Get a streak going for a multiplier. 🔥</div></div>`));
+  unlock("let's play");
+}
+function story([img, who, line, r], after) {
+  return (m) => {
+    m.append(el(`<div class="eyebrow">the setup</div><div class="frame"><img src="${img}" alt=""><div class="cap${r ? " r" : ""}"><span class="who">${esc(who)}</span>${esc(line)}</div></div>`));
+    if (after) m.append(el(`<h2>${esc(after)}</h2>`));
+  };
+}
+function choice(m, title, opts, why, base) {
+  m.append(el(`<h2>${esc(title)}</h2>`));
+  const box = el(`<div class="opts"></div>`).firstElementChild; lock();
+  opts.forEach(([t, ok]) => {
+    const b = el(`<button class="opt">${esc(t)}</button>`).firstElementChild;
+    b.onclick = () => {
+      box.querySelectorAll("button").forEach((x, k) => { x.disabled = true; if (opts[k][1]) x.classList.add("right"); });
+      if (!ok) b.classList.add("wrong");
+      const g = score(!!ok, base);
+      m.append(el(`${g ? `<div class="gain">+${g}</div>` : ""}<div class="reveal">${why}</div>`)); unlock();
+    };
+    box.append(b);
+  });
+  m.append(box);
+}
+function guess(m) {
+  m.append(el(`<div class="eyebrow">round 1 · <b>guess</b></div>`));
+  choice(m, "What does namaste literally mean?", [["the light in me sees the light in you", 0], ["peace be with you", 0], ["I bow to you", 1], ["hello, friend", 0]],
+    `<b>I bow to you.</b> Two Sanskrit words: <b>namas</b>, a bow, + <b>te</b>, to you. Maya's line is a famous <i>reading</i> of it, not what the word says.<span class="src">Monier-Williams, Sanskrit-English Dictionary</span>`, 10);
+}
+function build(m) {
+  m.append(el(`<div class="eyebrow">round 2 · <b>build the word</b></div><h2>Tap the pieces in order to build it.</h2>
+    <div class="slots"><div class="slot" id="s0">?</div><div class="slot" id="s1">?</div></div>
+    <div class="chips" id="chips"><button class="chip" data-p="te">te</button><button class="chip" data-p="om">om</button><button class="chip" data-p="namas">namas</button><button class="chip" data-p="shanti">shanti</button></div>`));
+  lock(); const want = ["namas", "te"]; let at = 0, miss = 0;
+  m.querySelectorAll(".chip").forEach((c) => c.onclick = () => {
+    if (c.dataset.p === want[at]) { $("s" + at).textContent = c.dataset.p; c.disabled = true; tone([700 + at * 200]); at++;
+      if (at === 2) { const g = score(miss === 0, 10); m.append(el(`${g ? `<div class="gain">+${g}</div>` : ""}<div class="deva" lang="sa">नमस्ते</div><div class="reveal"><b>namas + te = namaste.</b> Tap the letters to hear it: <b>na-mas-TAY</b>.</div>`));
+        m.querySelector(".deva").onclick = () => say("namaste", "hi-IN"); say("namaste", "hi-IN"); unlock(); }
+    } else { miss++; c.classList.add("miss"); buzz(); setTimeout(() => c.classList.remove("miss"), 300); }
+  });
+}
+function pairs(m) {
+  const P = [["namas", "a bow"], ["te", "to you"], ["palms together", "the gesture"], ["Chandogya Upanishad", "the same light, inside you"]];
+  const R = ["the gesture", "the same light, inside you", "a bow", "to you"];
+  m.append(el(`<div class="eyebrow">round 3 · <b>match fast</b></div><h2>Match them. Every clean match keeps your streak.</h2>`));
+  const grid = el(`<div class="row2"></div>`).firstElementChild; lock(); let pick = null, done = 0;
+  P.forEach(([l], k) => grid.append(el(`<button class="tile" data-k="${k}">${esc(l)}</button>`), el(`<button class="tile" data-r="${esc(R[k])}">${esc(R[k])}</button>`)));
+  grid.querySelectorAll(".tile").forEach((t) => t.onclick = () => {
+    if (t.classList.contains("done")) return;
+    if (t.dataset.k !== undefined) { grid.querySelectorAll("[data-k]").forEach((x) => x.classList.remove("sel")); t.classList.add("sel"); pick = t; return; }
+    if (!pick) return;
+    if (P[+pick.dataset.k][1] === t.dataset.r) { for (const x of [pick, t]) { x.classList.remove("sel"); x.classList.add("done"); x.disabled = true; } pick = null; score(true, 5);
+      if (++done === P.length) { m.append(el(`<div class="reveal">Hindus greet with <b>palms together at the chest, head slightly bowed</b>: to friends, elders, guests, and before images of the gods.</div>`)); unlock(); }
+    } else { score(false); t.classList.add("miss"); setTimeout(() => t.classList.remove("miss"), 300); }
+  });
+  m.append(grid);
+}
+function myths(m) {
+  const Q = [["Namaste is made of two Sanskrit words.", true], ["Namaste literally means “the light in me sees the light in you.”", false], ["An old text says the light above the heavens is the same light inside a person.", true]];
+  m.append(el(`<div class="eyebrow">round 4 · <b>myth or fact</b> · three in a row</div>`));
+  const claim = el(`<div class="claim" id="claim"></div>`).firstElementChild, row = el(`<div class="pair"><button class="opt" data-v="1">fact</button><button class="opt" data-v="0">myth</button></div>`).firstElementChild, out = el(`<div></div>`).firstElementChild;
+  m.append(claim, row, out); lock(); let k = 0;
+  const show = () => { claim.textContent = Q[k][0]; row.querySelectorAll("button").forEach((b) => { b.disabled = false; b.className = "opt"; }); };
+  row.querySelectorAll("button").forEach((b) => b.onclick = () => {
+    const ok = (b.dataset.v === "1") === Q[k][1]; b.classList.add(ok ? "right" : "wrong"); row.querySelectorAll("button").forEach((x) => x.disabled = true); score(ok, 10);
+    setTimeout(() => { k++; if (k < Q.length) show(); else { claim.textContent = "3 down."; out.append(el(`<div class="reveal">The text is the <b>Chandogya Upanishad</b>: out there and in here, one light. That's why Maya's reading makes sense.<span class="src">Chandogya Upanishad 3.13.7</span></div>`)); unlock(); } }, 650);
+  });
+  show();
+}
+function cutscene(m) {
+  m.append(el(`<div class="eyebrow">bonus scene</div><div class="frame"><img src="img/p5.webp" alt=""><div class="cap"><span class="who">Nani</span>So Maya's not wrong. It's a reading: the light in me sees the light in you.</div></div>`));
+  win();
+}
+function speed(m) {
+  const Q = [["namas means…", ["a bow", "to you", "peace"], 0], ["te means…", ["light", "to you", "bow"], 1], ["The gesture is…", ["a wave", "palms together", "a fist bump"], 1], ["Literally, namaste is…", ["I bow to you", "light in me", "good morning"], 0], ["The light idea comes from…", ["a yoga mat", "the Upanishads", "a movie"], 1]];
+  m.append(el(`<div class="eyebrow">round 5 · <b>speed round</b> · 20 seconds</div><div class="timer"><i id="tbar"></i></div><h2 id="sq"></h2><div class="opts" id="so"></div><div id="sout"></div>`));
+  lock(); let k = 0, gotIt = 0, over = false; const end = Date.now() + 20000;
+  const tick = setInterval(() => { const left = Math.max(0, end - Date.now()); const bar = $("tbar"); if (bar) bar.style.width = (left / 200) + "%"; if (!left) finish(); }, 100);
+  function finish() { if (over) return; over = true; clearInterval(tick); $("so").innerHTML = ""; $("sq").textContent = `${gotIt} of ${Q.length} before the buzzer.`; if (gotIt === Q.length) { pts += 25; bump(); win(); $("sout").append(el(`<div class="gain">perfect run +25</div>`)); } unlock(); }
+  function show() { if (k >= Q.length) return finish(); const [q, o, a] = Q[k]; $("sq").textContent = q; const so = $("so"); so.innerHTML = "";
+    o.forEach((t, j) => { const b = el(`<button class="opt">${esc(t)}</button>`).firstElementChild; b.onclick = () => { if (over) return; const ok = j === a; if (ok) gotIt++; score(ok, 5); b.classList.add(ok ? "right" : "wrong"); so.querySelectorAll("button").forEach((x) => x.disabled = true); setTimeout(() => { k++; show(); }, 350); }; so.append(b); }); }
+  show();
+}
+function boss(m) {
+  m.append(el(`<div class="eyebrow">round 6 · <b>boss question</b> · double points</div>`));
+  choice(m, "A friend snaps at you. You greet them with namaste the way Nani means it. What are you noticing?",
+    [["that it's polite to greet people, even rude ones", 0], ["the same light in them that's in you", 1], ["that they're older, so they get a bow", 0], ["that bowing calms you down first", 0]],
+    "Not manners, not age, not calm: <b>the light</b>. Read Nani's way, namaste looks past the moment to the same light in the person. Even a grumpy one.", 20);
+}
+function finish(m) {
+  const secs = Math.round((Date.now() - t0) / 1000);
+  let hi = 0; try { hi = +localStorage.getItem("ih-namaste-hi") || 0; if (pts > hi) localStorage.setItem("ih-namaste-hi", String(pts)); } catch (e) {}
+  win();
+  m.append(el(`<img src="img/celebrate.webp" alt="the infinite hill mascot celebrating" style="width:130px;margin:0 auto">
+    <div class="big">${pts}</div>
+    <h1 style="text-align:center">${pts > hi && hi ? "New high score!" : right === asked ? "Perfect day one." : "Day one, done."}</h1>
+    <div class="stats"><div><b>${right}/${asked}</b><span>right</span></div><div><b>🔥 ${best}</b><span>best streak</span></div><div><b>${Math.floor(secs / 60)}:${String(secs % 60).padStart(2, "0")}</b><span>time</span></div></div>
+    <div class="do"><b>one thing today</b>Greet someone with namaste, out loud or inside, and see them that way for a second. Then tell someone what it really means. Most people get it wrong, like Maya.</div>
+    <a class="btn" style="display:block;text-align:center;text-decoration:none" href="https://claude.ai/artifact/6yJjW3C2ESxr1ZYVKewFti" target="_blank" rel="noopener">keep going: day 2 →</a>`));
+  unlock("play again: beat your score");
+}
+render();
+</script>
