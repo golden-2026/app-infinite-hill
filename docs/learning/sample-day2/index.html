@@ -107,6 +107,7 @@ const story = (img, lines) => ({ seg: "the story", kind: "panel", img, lines });
 const S = [
   { seg: "the hook", kind: "hook", say: "Your yoga teacher says it. Your grandparents chant it. What's actually inside it?" },
   story("img/p1.webp", [["Dev", "Ommm… whatever that means."]]),
+  story("img/pmaya.webp", [["Maya", "Om is how you end yoga. Like a cooldown. My class says it once at the end and we roll up the mats."]]),
   story("img/p2.webp", [["Anika", "Nani, is om a word? Does it even mean anything?"]]),
   story("img/p3.webp", [["Nani", "It's not one sound. Say it slowly. Aaa… uuu… mmm."]]),
   story("img/p4.webp", [["Dev", "Okay. That's kind of cool."]]),
@@ -213,7 +214,7 @@ function map(s, m) {
 function first(s, m) {
   s.say = "Om is said at the start of prayers, mantras and readings. The Bhagavad Gita says acts of offering, giving and discipline begin with it. A first sound, before the words.";
   m.append(el(`<div class="card gold"><div class="eq">The first sound, before the words.</div>
-    <p>Om opens prayers, mantras and readings of scripture. The Bhagavad Gita says acts of offering, giving and discipline begin with it. So it isn't a sign-off. It's a beginning.</p>
+    <p>Om opens prayers, mantras and readings of scripture. The Bhagavad Gita says acts of offering, giving and discipline begin with it. So it isn't a cooldown, Maya. It's a beginning.</p>
     <div class="src">Bhagavad Gita 17.23–24</div></div>`));
 }
 function back(s, m) {
