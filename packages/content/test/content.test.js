@@ -82,10 +82,11 @@ test("camp one's guess: one right, specific answer (not the carry line) and dist
   }
 });
 
-test("the named quizzes: Father, kingdom and al-Fatiha answer with their meaning", () => {
+test("the named quizzes: Father, grace and al-Fatiha answer with their meaning", () => {
   const guess = (wing, day) => planDay({ wing, day, script: scriptFor(wing, day) }).steps.find((s) => s.type === "guess");
-  assert.match(guess("CHRISTIANITY", 4).answer, /family word/);
-  assert.match(guess("CHRISTIANITY", 5).answer, /reign/);
-  assert.match(guess("ISLAM", 6).answer, /^the opening/);
-  assert.ok(!guess("ISLAM", 6).options.includes("in the name of the merciful"));
+  // first camp reordered 2026-10-06: the Lord's Prayer is Christianity day 11, al-Fatiha Islam day 2; kingdom left camp one
+  assert.match(guess("CHRISTIANITY", 11).answer, /opening with Father/);
+  assert.match(guess("CHRISTIANITY", 9).answer, /gift you didn't earn/);
+  assert.match(guess("ISLAM", 2).answer, /^the opening/);
+  assert.ok(!guess("ISLAM", 2).options.includes("in the name of the merciful"));
 });

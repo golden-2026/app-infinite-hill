@@ -77,13 +77,14 @@ test("the rhythm never gets a one-tap round: a one-syllable word is tapped with 
       if (r) assert.ok(r.syllables.length >= 2 && r.syllables.length <= 6, `${wing} ${day}: ${r.syllables.join("·")}`);
     }
   }
-  const dhikr = planDay({ wing: "ISLAM", day: 17, level: 2 }).steps.find((s) => s.type === "rhythm");
-  assert.ok(dhikr && dhikr.syllables[0] === "dhikr" && dhikr.syllables.length > 1);
+  // dhikr left camp one (Islam's week one, 2026-10-06); Judaism day 3's "mensch" is the one-syllable word now
+  const mensch = planDay({ wing: "JUDAISM", day: 3, level: 2 }).steps.find((s) => s.type === "rhythm");
+  assert.ok(mensch && mensch.syllables[0] === "mensch" && mensch.syllables.length > 1);
 });
 
 test("tap what you hear: a short line still makes a round, and tiles keep their apostrophes", () => {
-  // Islam day 10's line is one word ("one"): the round was a single tap
-  const tap = planDay({ wing: "ISLAM", day: 10 }).steps.find((s) => s.type === "taphear");
+  // Islam day 15's line is one word ("one"): the round was a single tap
+  const tap = planDay({ wing: "ISLAM", day: 15 }).steps.find((s) => s.type === "taphear");
   assert.equal(tap.speak, "tawhid, one");
   assert.deepEqual(tap.words, ["tawhid", "one"]);
   assert.equal(tap.answer, "tawhid one");

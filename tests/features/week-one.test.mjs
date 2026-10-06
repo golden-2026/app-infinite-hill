@@ -34,7 +34,8 @@ test("a look back reaches two days back from day 3, and day 7 ends with the week
   const check = plan(7).steps.find((s) => s.type === "checkin");
   assert.equal(check.items.length, WEEK_ONE.HINDUISM.length);
   for (const q of check.items) assert.ok(q.options.includes(q.answer));
-  assert.equal(lookBack("CHRISTIANITY", 3), null);
+  // every path has its week one now (2026-10-06); a day past the week has no look back
+  assert.equal(lookBack("CHRISTIANITY", 10), null);
 });
 
 test("teaching bubbles are short, and a head only sits over the bubble that says it", () => {
@@ -44,7 +45,8 @@ test("teaching bubbles are short, and a head only sits over the bubble that says
 });
 
 test("lessons without the upgrade are built exactly as before", () => {
-  const p = planDay({ wing: "CHRISTIANITY", day: 3, script: script(3, "christianity"), level: 1 });
+  // Christianity days 1–7 have the upgrade now (2026-10-06); day 10 does not
+  const p = planDay({ wing: "CHRISTIANITY", day: 10, script: script(10, "christianity"), level: 1 });
   for (const t of ["story", "wrong", "build", "lookback", "think", "checkin"]) assert.ok(!types(p).includes(t));
 });
 

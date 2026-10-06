@@ -10,12 +10,16 @@ import { lessonInfo } from "../src/index.js";
 const here = dirname(fileURLToPath(import.meta.url));
 const EXAMPLE = join(here, "..", "..", "..", "docs", "curriculum", "christianity", "scripts", "y1", "day-0001.json");
 const example = () => JSON.parse(readFileSync(EXAMPLE, "utf8"));
+// a lesson without the week-one upgrade (amen moved from day 1 to day 8 on 2026-10-06), for the plain planDay path
+const PLAIN = join(here, "..", "..", "..", "docs", "curriculum", "christianity", "scripts", "y1", "day-0008.json");
+const plainScript = () => JSON.parse(readFileSync(PLAIN, "utf8"));
 const indexOf = (door, day) => { const i = lessonInfo(door, day); return { title: i.title, word: i.word, carry: i.carry }; };
 
 test("the example script passes the format check", () => {
   const r = checkScript(example(), { index: indexOf("CHRISTIANITY", 1), door: "CHRISTIANITY", day: 1 });
   assert.deepEqual(r.errors, []);
-  assert.ok(r.stats.total >= 380 && r.stats.total <= 700, `spoken words ${r.stats.total}`);
+  // within the validator's aim (WORDS.total 280–640; the floors came down for the rebuilt first week, 2026-10-06)
+  assert.ok(r.stats.total >= 280 && r.stats.total <= 640, `spoken words ${r.stats.total}`);
 });
 
 test("the format check catches filler, missing segments, a changed word, non-public-domain quotes and British spelling", () => {
@@ -24,7 +28,7 @@ test("the format check catches filler, missing segments, a changed word, non-pub
   assert.match(errs((s) => { s.segments = s.segments.filter((g) => g.type !== "the practice"); }), /segments must be/);
   assert.match(errs((s) => { s.word = "hallelujah"; }), /doesn't match the index/);
   assert.match(errs((s) => { s.sources[0].translation = "NIV"; }), /public-domain list/);
-  assert.match(errs((s) => { s.segments[2].voice = s.segments[2].voice.replace("The kind of thing", "The honour of the thing"); }), /British spelling/);
+  assert.match(errs((s) => { s.segments[2].voice = s.segments[2].voice.replace("Here's the surprise", "Here's the honour of it"); }), /British spelling/);
   assert.match(errs((s) => { s.segments[2].voice += " You must believe this."; }), /tells people what to believe/);
   assert.match(errs((s) => { s.review.status = "approved"; }), /pending/);
   assert.match(errs((s) => { s.games.match.pairs = s.games.match.pairs.slice(0, 2); }), /3–4 pairs/);
@@ -39,8 +43,8 @@ test("feature games follow the design's pacing, then rotate, skipping a missing 
 });
 
 test("planDay with a script: today's pairs, the script's practice, one feature game, unique ids, the tally last", () => {
-  const s = { ...example(), day: 9 };
-  s.segments = s.segments.map((g) => (g.type === "the bell" ? { ...g, screen: ["`DAY NINE.`"] } : g));
+  const s = { ...plainScript(), day: 9 };
+  s.segments = s.segments.filter((g) => g.type !== "review").map((g) => (g.type === "the bell" ? { ...g, screen: ["`DAY NINE.`"] } : g));
   s.segments.splice(1, 0, { type: "review", duration: "20 sec", voice: "Yesterday: deliver us. You can ask. Day nine.", screen: [] });
   const plain = planDay({ wing: "CHRISTIANITY", day: 9 });
   const p = planDay({ wing: "CHRISTIANITY", day: 9, script: s });
@@ -63,7 +67,7 @@ test("planDay with a script: today's pairs, the script's practice, one feature g
 test("planDay with a script on days 1–7 speaks the script's practice, not the fixed line", () => {
   const p = planDay({ wing: "CHRISTIANITY", day: 1, script: example() });
   const practice = p.steps.filter((x) => x.type === "beat" && /practice/.test(x.seg)).map((x) => x.text).join(" ");
-  assert.match(practice, /One breath, with the bell/);
+  assert.match(practice, /One breath with the bell/);
   assert.ok(p.steps.some((x) => x.type === "breath"));
   assert.ok(p.steps.some((x) => x.type === "bet"), "day one keeps its bet");
 });
@@ -96,7 +100,7 @@ test("lessonScript fetches the week once, returns the day, and null for a day wi
   const s = compileScript(example());
   const { fetch, calls } = fakeServer({ "manifest.json": manifest("abc"), "christianity/001.json": week("abc", { 1: s }) });
   const got = await lessonScript("christianity", 1, { fetch });
-  assert.equal(got.word, "amen");
+  assert.equal(got.word, "communion");
   assert.equal(got.door, "CHRISTIANITY");
   assert.equal(await lessonScript("CHRISTIANITY", 2, { fetch }), null, "same week, no script for day 2");
   assert.equal(calls.filter((u) => u.includes("001.json")).length, 1, "the week is fetched once");
@@ -114,7 +118,7 @@ test("lessonScript works offline from what it kept, and never throws", async () 
   assert.equal(store.m.size, 1, "the week is kept");
   resetLessonCache(); // a new app session, no network
   const offline = async () => { throw new Error("offline"); };
-  assert.equal((await lessonScript("CHRISTIANITY", 1, { fetch: offline, store }))?.word, "amen");
+  assert.equal((await lessonScript("CHRISTIANITY", 1, { fetch: offline, store }))?.word, "communion");
   resetLessonCache();
   assert.equal(await lessonScript("CHRISTIANITY", 1, { fetch: offline }), null, "nothing kept: the outline lesson");
   resetLessonCache();
@@ -128,7 +132,7 @@ test("lessonScript replaces a kept week when the manifest says it changed", asyn
   const s = compileScript(example());
   store.m.set("ih:lessons:CHRISTIANITY:001", week("old", { 1: { ...s, carry: "old line" } }));
   const { fetch, calls } = fakeServer({ "manifest.json": manifest("new"), "christianity/001.json": week("new", { 1: s }) });
-  assert.equal((await lessonScript("CHRISTIANITY", 1, { fetch, store })).carry, "let it be so");
+  assert.equal((await lessonScript("CHRISTIANITY", 1, { fetch, store })).carry, "a meal is a memory");
   assert.ok(calls.some((u) => u === "/lessons/christianity/001.json?v=new"), "cache-busted by hash");
   assert.equal(store.m.get("ih:lessons:CHRISTIANITY:001").hash, "new");
 });
@@ -143,7 +147,7 @@ test("the build compiles passing scripts into week files and a manifest, without
     assert.ok(m.doors.CHRISTIANITY.chunks["001"]);
     const w = JSON.parse(readFileSync(join(out, "christianity", "001.json"), "utf8"));
     assert.equal(w.hash, m.doors.CHRISTIANITY.chunks["001"]);
-    assert.equal(w.days["1"].word, "amen");
+    assert.equal(w.days["1"].word, "communion");
     assert.equal(w.days["1"].review, "pending");
     assert.ok(!JSON.stringify(w).includes("\"notes\""), "review notes stay in docs/");
     assert.ok(readdirSync(join(out, "christianity")).every((f) => /^\d{3}\.json$/.test(f)));
