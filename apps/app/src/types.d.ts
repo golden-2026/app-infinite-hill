@@ -61,6 +61,11 @@ declare module "@ih/content" {
   export function camp1(wing: string): any[];
   export function screenLines(a: string[] | undefined): string[];
   export function splitBeats(text: string, max?: number, cap?: number): string[];
+  // the upgraded first week (packages/content/src/week.js)
+  export const WEEK_ONE: Readonly<Record<string, { day: number; word: string; q: string; options: string[]; answer: number }[]>>;
+  export const SAY_IT: Readonly<Record<string, Record<string, string>>>;
+  export function lookBack(door: string, day: number): { day: number; word: string; q: string; options: string[]; answer: number } | null;
+  export function sayable(door: string, text: string): { text: string; say?: string }[];
   export function native(word: string, wing?: string): any;
   export function skyFor(...a: any[]): any;
   export function faceFor(...a: any[]): any;

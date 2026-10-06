@@ -9,7 +9,7 @@
   "length": "6:00",
   "tomorrow": "the thing that's yours to do",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY TWO.`"] },
+    {"type": "the bell", "duration": null,"voice": "", "screen": ["`DAY TWO.`"]},
     {
       "type": "review",
       "duration": "20 sec",
@@ -26,7 +26,9 @@
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "Say it slowly and feel where it lives. Aaa: the mouth wide open, the sound at the back of the throat. Uuu: the lips round, and the sound moves forward. Mmm: the lips close, and the hum sits in the front of your face. Open, middle, closed. That's why it's sometimes written aum. The text I mentioned is the Mandukya Upanishad. It opens with a big claim: om is all of this. All that was, all that is, all that will be, and whatever lies beyond time too. Then it does something careful. It gives each sound a state of being. A is waking: the world of things you can see and touch. U is dreaming: the inner world, made of the mind. M is deep, dreamless sleep, where everything goes quiet and nothing is wanted. Three sounds, three states a person passes through in an ordinary day. And then the fourth. The Upanishad calls it simply the fourth. It has no sound. It's the silence after the mmm runs out, and the text says that silence is the self, peaceful, where the noise of the world falls away. So om isn't a sign-off. It's a map. Everything you go through in a day, in one breath, and then the quiet under all of it. Om is said at the start of prayers and readings. The Bhagavad Gita says that acts of offering, giving and discipline begin with it. A first sound, before the words.",
-      "screen": ["`A — WAKING.` · `U — DREAMING.` · `M — DEEP SLEEP.` · `THE FOURTH — THE SILENCE.` · then, large: `EVERYTHING, IN ONE BREATH.`"]
+      "screen": [
+        "`A — WAKING.` · `U — DREAMING.` · `M — DEEP SLEEP.` · `THE FOURTH — THE SILENCE.` · then, large: `EVERYTHING, IN ONE BREATH.`"
+      ]
     },
     {
       "type": "the practice",
@@ -43,10 +45,15 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line to carry: one sound, before words. Once today, before you say something that matters, a text, a call, a hard sentence, take one breath first. That's all. Day two.",
+      "voice": "Your line to carry: one sound, before words. Once today, before you say something that matters, a text, a call, a hard sentence, take one breath first. That's all. If someone's with you, hum it once together. Strangers do it in yoga classes; family can too. Day two.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 2 COUNTS.` → `TOMORROW: THE THING THAT'S YOURS TO DO.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": ["`DAY 2 COUNTS.` → `TOMORROW: THE THING THAT'S YOURS TO DO.`"]
+    }
   ],
   "howItsDone": "Hindus chant om at the start of prayers, mantras and readings of scripture, often at the end too, and it is written as a single sacred sign, ॐ, in homes and temples.",
   "games": {
@@ -55,9 +62,21 @@
       "pairs": [["a", "waking"], ["u", "dreaming"], ["m", "deep, dreamless sleep"], ["the fourth", "the silence after the sound"]]
     },
     "myth": [
-      ["om is one unbroken sound", false, "the Mandukya Upanishad hears three sounds inside it, a, u and m, and a fourth part: the silence."],
-      ["a whole Upanishad is built around om", true, "the Mandukya opens by saying om is all of this, then maps its sounds onto waking, dreaming and deep sleep."],
-      ["om only belongs at the end of a class", false, "the Bhagavad Gita says acts of offering, giving and discipline begin with om."]
+      [
+        "om is one unbroken sound",
+        false,
+        "the Mandukya Upanishad hears three sounds inside it, a, u and m, and a fourth part: the silence."
+      ],
+      [
+        "a whole Upanishad is built around om",
+        true,
+        "the Mandukya opens by saying om is all of this, then maps its sounds onto waking, dreaming and deep sleep."
+      ],
+      [
+        "om only belongs at the end of a class",
+        false,
+        "the Bhagavad Gita says acts of offering, giving and discipline begin with om."
+      ]
     ],
     "fork": {
       "setup": "the Mandukya Upanishad gives a to waking, u to dreaming and m to deep sleep. what does it give the fourth part?",
@@ -65,16 +84,41 @@
       "answer": 1,
       "reveal": "the fourth has no sound at all. the text calls it the self, peaceful, where the noise of the world falls away."
     },
-    "original": { "script": "ॐ", "say": "OHM (a-u-m)", "note": "Sanskrit: the sacred syllable, written as one sign. the Mandukya Upanishad hears a, u and m inside it." },
+    "original": {
+      "script": "ॐ",
+      "say": "OHM (a-u-m)",
+      "note": "Sanskrit: the sacred syllable, written as one sign. the Mandukya Upanishad hears a, u and m inside it."
+    },
     "trapdoor": [
       "what you thought: a hum to end a yoga class.",
       "what it means: three sounds and a silence, the whole of a day in one breath.",
       "what a scholar hears: Mandukya Upanishad: a for waking, u for dream, m for deep sleep, and the soundless fourth, called simply the fourth (chaturtha; later teachers call it turiya)."
-    ]
+    ],
+    "story": {
+      "title": "the boy who waited for Death",
+      "text": "In the Katha Upanishad, a boy named Nachiketa is sent, in his angry father's words, to Death. He goes. Yama, the lord of death, is away, and the boy waits three days at his door without food. To make up for it, Yama offers him three wishes. For the third, Nachiketa asks what happens after we die. Yama offers him gold, long life, kingdoms, anything else. The boy says no. So Yama teaches him, and part of the teaching is a single word: the word all the Vedas point to is om.",
+      "source": "Katha Upanishad 1.1–1.2.15"
+    },
+    "wrong": {
+      "myth": "om is a hum to end a yoga class.",
+      "truth": "an Upanishad treats it as a map: a, u and m for waking, dreaming and deep sleep, and the silence after it as the fourth."
+    },
+    "build": {
+      "prompt": "build the sound in order: open, middle, closed.",
+      "pieces": ["a", "u", "m"],
+      "decoys": ["o", "e"],
+      "word": "aum"
+    },
+    "think": {
+      "setup": "you're about to send an angry text. what does today's line suggest?",
+      "options": ["send it before you lose your nerve.", "take one breath first, then decide.", "never answer at all."],
+      "answer": 1,
+      "reveal": "one sound, before words. the breath doesn't decide for you; it gives you a second to decide."
+    }
   },
   "sources": [
-    { "ref": "Mandukya Upanishad 1, 3–5, 7–12","work": "Mandukya Upanishad", "translation": null, "quoted": null },
-    { "ref": "Bhagavad Gita 17.23–24", "work": "Bhagavad Gita", "translation": null, "quoted": null }
+    {"ref": "Mandukya Upanishad 1, 3–5, 7–12", "work": "Mandukya Upanishad", "translation": null,"quoted": null},
+    {"ref": "Bhagavad Gita 17.23–24", "work": "Bhagavad Gita", "translation": null,"quoted": null}
   ],
   "review": {
     "status": "pending",
@@ -85,8 +129,13 @@
       "Cut from manuscript day 2 under the claims rule: 'every yoga class on earth', 'the most-analyzed syllable in human history', the Mandukya being 'about eight hundred words' and 'one of the shortest'.",
       "Title keeps the index ('the sound the universe hums'); the script doesn't claim the universe literally hums. Keeper may want a line on how tradition speaks of om as the primal sound.",
       "Editor pass: hook no longer tells the listener they felt self-conscious ('some people feel'); 'in about ten seconds' cut to 'in a single breath' under the claims rule; Mandukya ref widened to 1, 3–5, 7–12, since the states (waking, dream, deep sleep, the fourth) are described in 3–5 and 7 and mapped to a, u, m and the soundless fourth in 8–12.",
-      "Editor review 2: trapdoor said the Mandukya calls the fourth 'turiya'; the Mandukya's own word is chaturtha (verses 7, 12), and turiya is the later term (Gaudapada and others), so the floor now says both. Spoken lines read and left as they were."
+      "Editor review 2: trapdoor said the Mandukya calls the fourth 'turiya'; the Mandukya's own word is chaturtha (verses 7, 12), and turiya is the later term (Gaudapada and others), so the floor now says both. Spoken lines read and left as they were.",
+      "Week-one upgrade (2026-10-06): games.story (the story behind it), games.wrong (what most people get wrong), games.build, games.think and the carry's together line were added by Claude for the owner's seven-day pilot; confirm each story's telling and source."
     ]
   },
-  "meta": { "index": "the sound the universe hums · om · one sound, before words (camp 1 manuscript, day 2)", "writer": "writer agent (hinduism 1–7)", "written": "2026-10-01" }
+  "meta": {
+    "index": "the sound the universe hums · om · one sound, before words (camp 1 manuscript, day 2)",
+    "writer": "writer agent (hinduism 1–7)",
+    "written": "2026-10-01"
+  }
 }

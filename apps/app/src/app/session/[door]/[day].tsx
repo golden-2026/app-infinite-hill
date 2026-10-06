@@ -16,6 +16,7 @@ import { LESSONS_BASE, lessonStore } from "@/lib/lessons";
 import { scriptWithin } from "@/session/script-load";
 import { LessonSources } from "@/session/sources-sheet";
 import { RhythmStep, RushStep, SayStep, ScenesStep, TypeItStep } from "@/session/games";
+import { BuildStep, CheckinStep, SayText, StoryStep, ThinkStep, WrongStep } from "@/session/week";
 import { LinearGradient } from "expo-linear-gradient";
 import { Redirect, router, useLocalSearchParams, useNavigation } from "expo-router";
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
@@ -39,7 +40,7 @@ import { Enter } from "@/ui/enter";
 import { useChrome } from "@/ui/chrome";
 
 // The eyebrow over each step: the lesson part's name (planDay's segment type), or else the app's own name for the step.
-const SEG_TYPES = ["recall", "bet", "myth", "fork", "original", "trapdoor", "bell", "guess", "order", "match", "listen", "scenes", "say", "rhythm", "typeit", "rush", "sit", "breath", "speak", "taphear", "fixintro", "tally"];
+const SEG_TYPES = ["recall", "bet", "myth", "fork", "original", "trapdoor", "bell", "guess", "order", "match", "listen", "scenes", "say", "rhythm", "typeit", "rush", "sit", "breath", "speak", "taphear", "fixintro", "tally", "wrong", "story", "build", "think", "lookback", "checkin"];
 function segName(seg: string | undefined, type: string): string {
   if (seg) {
     const k = `session.part.${seg}` as Key;
@@ -260,6 +261,16 @@ function Session({ door, day, kidId, mode, deep, extra = false, voiceOn, onFinis
     setQi(queue.length - 1);
   }, [phase, qi, queue, missed, plan, furthest]); // eslint-disable-line react-hooks/exhaustive-deps
 
+  // Upgraded lessons (a script with games.build): getting the opener right offers to skip the rest of the teaching. The
+  // teaching bubbles still ahead drop out of the queue; every game stays.
+  const upgraded = plan.steps.some((s) => s.type === "build");
+  const isTeachBeat = (id: number) => { const s0 = plan.steps.find((x) => x.id === id); return !!s0 && s0.type === "beat" && /^the teach/.test(String(s0.seg || "")); };
+  const skipTeach = (ok: boolean | null) => {
+    setQueue((q) => [...q.slice(0, qi + 1), ...q.slice(qi + 1).filter((id) => !isTeachBeat(id))]);
+    track("lesson_step", { door, day, i: qi, of: queue.length, type: "skip_teach", phase });
+    verdict(ok);
+  };
+
   const verdict = (ok: boolean | null) => {
     // (the combo, sound and mascot already reacted when the answer landed — see `react`)
     if (ok === null || ok === undefined) return next();
@@ -406,7 +417,7 @@ function Session({ door, day, kidId, mode, deep, extra = false, voiceOn, onFinis
         <View style={{ width: "100%", maxWidth: 380, gap: 12, alignSelf: "center" }}>
           {step.head ? <Text style={[type.eyebrow(11), { color: color.gold, letterSpacing: 1.76, textAlign: "center" }]}>{step.head}</Text> : null}
           <View style={{ backgroundColor: "#fff", borderRadius: 22, paddingVertical: 16, paddingHorizontal: 18 }}>
-            <Text style={{ fontFamily: font.display[700], fontSize: fs, lineHeight: fs * 1.3, color: color.ink, letterSpacing: -0.2 }}>{step.text}</Text>
+            <SayText door={door} text={step.text} style={{ fontFamily: font.display[700], fontSize: fs, lineHeight: fs * 1.3, color: color.ink, letterSpacing: -0.2 }} />
           </View>
           <View style={{ width: 0, height: 0, marginLeft: 38, marginTop: -12, borderLeftWidth: 12, borderRightWidth: 12, borderTopWidth: 14, borderLeftColor: "transparent", borderRightColor: "transparent", borderTopColor: "#fff" }} />
           <Guy pose={BEAT_POSES[qi % BEAT_POSES.length]} h={150} style={{ alignSelf: "flex-start", marginLeft: 6 }} />
@@ -414,14 +425,20 @@ function Session({ door, day, kidId, mode, deep, extra = false, voiceOn, onFinis
         { foot: <View style={{ gap: 4 }}><Pressable accessibilityRole="button" accessibilityLabel={t("session.hearAgainA11y")} onPress={() => (kidMode ? speakChrome : speak)(step.text, true)} style={({ pressed }) => ({ minHeight: 44, flexDirection: "row", gap: 8, alignItems: "center", justifyContent: "center", opacity: pressed ? 0.5 : 1 })}><SpeakerIcon color="#ffffff99" /><Text style={[type.eyebrow(), { color: "#ffffff99" }]}>{t("session.hearAgain")}</Text></Pressable><Btn testID="next" kind="gold" onPress={() => next()}>{t("session.next")}</Btn></View> },
       );
     }
-    case "bet": return frame(<BetStep step={step} onDone={verdict} />, { top: true });
+    case "bet": return frame(<BetStep step={step} onDone={verdict} onSkip={upgraded && phase === "play" ? () => skipTeach(true) : undefined} />, { top: true });
     case "myth": return frame(<MythStep step={step} onDone={verdict} />, { top: true });
     case "fork": return frame(<ForkStep step={step} onDone={() => next()} />, { top: true });
     case "original": return frame(<OriginalStep step={step} voiceOn={voiceOn} onDone={() => next()} />, { top: true });
     case "trapdoor": return frame(<TrapdoorStep step={step} onDone={() => next()} />, { top: true });
+    case "wrong": return frame(<WrongStep step={step} onDone={() => next()} />);
+    case "story": return frame(<StoryStep step={step} door={door} onDone={() => next()} />, { top: true });
+    case "build": return frame(<BuildStep step={step} onDone={verdict} />, { top: true });
+    case "think": return frame(<ThinkStep step={step} onDone={verdict} />, { top: true });
+    case "checkin": return frame(<CheckinStep step={step} onMiss={(w) => { pairSlips.current.push(w); }} onDone={verdict} />, { top: true });
     case "guess":
+    case "lookback":
     case "recall":
-    case "listen": return frame(<OptionStep step={step} voiceOn={voiceOn} onDone={verdict} />);
+    case "listen": return frame(<OptionStep step={step} voiceOn={voiceOn} onDone={verdict} onSkip={upgraded && phase === "play" && step.type === "guess" ? () => skipTeach(null) : undefined} />);
     case "order":
       return frame(<View style={{ width: "100%" }}><Text style={[type.h1(24), { color: "#fff", marginBottom: 14 }]}>{step.prompt}</Text><View style={st.cream}><OrderStep step={step} onDone={(ok) => setTimeout(() => verdict(ok), 500)} /></View></View>, { top: true });
     case "match":

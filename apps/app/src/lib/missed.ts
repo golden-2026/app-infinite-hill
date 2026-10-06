@@ -76,9 +76,11 @@ export function dueCards(cards: Card[], door: string, today: string, { n = 5, sk
 }
 
 /** Which words a missed step was about (only the door's own words, which have a line to come back with). */
-export function slipsFor(step: { type: string; answer?: unknown; pairs?: unknown }, lessonWord: string, extra: string[] = []): string[] {
+export function slipsFor(step: { type: string; answer?: unknown; pairs?: unknown; word?: unknown }, lessonWord: string, extra: string[] = []): string[] {
   if (step.type === "listen" || step.type === "typeit") return typeof step.answer === "string" ? [step.answer] : [];
-  if (step.type === "taphear") return lessonWord ? [lessonWord] : [];
-  if (step.type === "match" || step.type === "rush") return extra;
+  if (step.type === "taphear" || step.type === "build") return lessonWord ? [lessonWord] : [];
+  // the upgraded week: a look back is about an earlier day's word; the week's check-in hands over the words it missed
+  if (step.type === "lookback") return typeof step.word === "string" ? [step.word] : [];
+  if (step.type === "match" || step.type === "rush" || step.type === "checkin") return extra;
   return [];
 }

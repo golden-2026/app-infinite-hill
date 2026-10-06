@@ -49,7 +49,7 @@ function RoundBtn({ glyph, label, onPress, active, size = 84 }: { glyph: string;
 }
 
 // ─── guess · listen ─────────────────────────────────────────────────────
-export function OptionStep({ step, voiceOn, onDone }: { step: any; voiceOn: boolean; onDone: Done }) {
+export function OptionStep({ step, voiceOn, onDone, onSkip }: { step: any; voiceOn: boolean; onDone: Done; onSkip?: () => void }) {
   const [picked, setPicked] = useState<string | null>(null);
   const [replays, setReplays] = useState<number>(step.replays ?? 99);
   useEffect(() => {
@@ -66,8 +66,18 @@ export function OptionStep({ step, voiceOn, onDone }: { step: any; voiceOn: bool
       <Prompt>{step.prompt}</Prompt>
       {step.speak ? <View style={{ marginVertical: 8, alignItems: "center", gap: 6 }}><RoundBtn glyph="🔊" label={replays > 0 ? t("session.hearAgainA11y") : t("session.noReplays")} onPress={replays > 0 ? () => { speak(step.speak, true); setReplays((n) => n - 1); } : undefined} />{step.replays != null && step.replays < 9 ? <Text style={[type.eyebrow(8), { color: "#ffffff88" }]}>{replays > 0 ? t("session.replaysLeft", { count: replays }) : t("session.noReplaysTrust")}</Text> : null}</View> : null}
       {step.options.map((o: string) => <Choice key={o} text={o} on={picked === o} right={picked !== null && !guess && o === step.answer} disabled={picked !== null} onPress={() => pick(o)} />)}
+      {picked !== null && onSkip && picked === step.answer ? <SkipAhead onPress={onSkip} /> : null}
       {picked !== null ? <Verdict ok={guess ? null : ok} seed={step.prompt.length} title={guess ? t("session.guess.title") : undefined} body={guess ? t("session.guess.body") : ok ? undefined : t("session.itsAnswer", { a: step.answer })} onNext={() => onDone(guess ? null : ok)} /> : null}
     </View>
+  );
+}
+
+/** Got the opener right on an upgraded lesson: skip the rest of the teaching, straight to the games. */
+function SkipAhead({ onPress }: { onPress: () => void }) {
+  return (
+    <Pressable testID="skip-teach" accessibilityRole="button" onPress={onPress} style={({ pressed }) => ({ alignSelf: "center", minHeight: 44, justifyContent: "center", paddingHorizontal: 14, marginTop: 4, opacity: pressed ? 0.6 : 1 })}>
+      <Text style={[type.eyebrow(), { color: color.gold, textDecorationLine: "underline" }]}>{t("session.skipTeach")}</Text>
+    </Pressable>
   );
 }
 
@@ -316,7 +326,7 @@ export function SitStep({ secs, onDone }: { secs: number; onDone: () => void }) 
 }
 
 // ─── the adult game (day 1): bet · myth · fork · original · trapdoor ────
-export function BetStep({ step, onDone }: { step: any; onDone: Done }) {
+export function BetStep({ step, onDone, onSkip }: { step: any; onDone: Done; onSkip?: () => void }) {
   const [picked, setPicked] = useState<string | null>(null);
   const ok = picked === step.answer;
   const fx = useFx();
@@ -331,6 +341,7 @@ export function BetStep({ step, onDone }: { step: any; onDone: Done }) {
       <Kicker>{t("session.seg.bet")}</Kicker>
       <Prompt size={26}>{t("session.bet.q", { word: step.word })}</Prompt>
       {options.map((o: string) => <Choice key={o} text={o} on={picked === o} right={picked !== null && o === step.answer} disabled={picked !== null} onPress={() => { setPicked(o); fx.react(o === step.answer ? "right" : "wrong"); }} />)}
+      {picked !== null && ok && onSkip ? <SkipAhead onPress={onSkip} /> : null}
       {picked !== null ? <Verdict ok={ok} seed={step.word.length} body={step.reveal} onNext={() => onDone(ok)} /> : null}
     </View>
   );

@@ -466,13 +466,83 @@ export function planDay({ wing, day, lesson = day, mode = "adult", named = true,
   // the guess answers with what the word means, not the day's carry line (after the level's own guess, which reaches
   // for carry lines): camp one's quiz table first, then the script's own gloss
   steps = applyGuess(steps, wing, lesson, given || info, level >= 3 && mode === "adult" ? 3 : 2);
+  if (mode === "adult" && given?.games?.build) steps = upgradeWeek(steps, given, wing, day);
   return { steps, word: R.word, carry: R.carry, title: info?.title || d1.title || "", info };
 }
 
-export const GRADED = Object.freeze(["order", "match", "listen", "taphear", "bet", "myth", "scenes", "typeit", "rush", "rhythm"]);
+export const GRADED = Object.freeze(["order", "match", "listen", "taphear", "bet", "myth", "scenes", "typeit", "rush", "rhythm", "build", "lookback", "think", "checkin"]);
+
+// The upgraded first week (week.js; owner, 2026-10-06). Shorter bubbles; fewer, better games (build the word, a look
+// back past yesterday, a last thinking question; on day 7 a check-in on the week instead of the quick round); what most
+// people get wrong, and the story behind it as an optional card, right after the teaching.
+const SHORT = /^(review|the hook|the teach|the practice|the word|the carry|a welcome)/;
+const DROP = new Set(["listen", "say", "rhythm", "scenes", "rush"]);
+const seeded = (arr, seed) => arr.map((v, i) => [Math.sin(seed * 7.13 + i * 3.7), v]).sort((a, b) => a[0] - b[0]).map((x) => x[1]);
+function upgradeWeek(steps0, info, wing, day) {
+  const G = info.games;
+  let id = Math.max(...steps0.map((s) => s.id)) + 1;
+  const steps = [];
+  for (const s of steps0) {
+    if (DROP.has(s.type)) continue;
+    if (s.type === "beat" && SHORT.test(String(s.seg || "")) && s.text.split(/\s+/).length > 46) {
+      splitBeats(s.text, 38, 99).forEach((text, k) => steps.push({ ...s, text, head: k ? null : s.head, id: k ? id++ : s.id }));
+    } else steps.push(s);
+  }
+  // a head stays only over the bubble that says it (re-splitting left heads over the wrong lines); the opener's answer
+  // can be the script's own, plainer reveal
+  const shares = (head, text) => String(head || "").toLowerCase().split(/[^\p{L}]+/u).some((w) => w.length >= 4 && String(text).toLowerCase().includes(w));
+  for (const s of steps) {
+    if (s.type === "beat" && s.head && /^the teach/.test(String(s.seg || "")) && !shares(s.head, s.text)) s.head = null;
+    if (s.type === "bet" && G.betReveal) s.reveal = G.betReveal;
+  }
+  const at = (pred) => steps.reduce((last, s, k) => (pred(s) ? k : last), -1);
+  const put = (k, add) => steps.splice(k, 0, ...add.filter(Boolean).map((s) => ({ ...s, id: id++ })));
+  // after the teaching: what most people get wrong, the story (optional), then build the word right after the pairs
+  const teach = at((s) => s.type === "beat" && /^the teach/.test(String(s.seg || "")));
+  if (teach >= 0) put(teach + 1, [G.wrong && { type: "wrong", ...G.wrong }, G.story && { type: "story", ...G.story }]);
+  const match = at((s) => s.type === "match");
+  const build = G.build && { type: "build", prompt: G.build.prompt, pieces: G.build.pieces, decoys: G.build.decoys || [], word: G.build.word };
+  // build the word goes inside the teaching, as soon as every piece has been said (it breaks up a long run of reading)
+  if (build) {
+    let said = "", k0 = -1;
+    const has = (p) => new RegExp(`(^|[^\\p{L}])${p.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}([^\\p{L}]|$)`, "iu").test(said);
+    for (let k = 0; k < steps.length && k0 < 0; k++) {
+      const s = steps[k];
+      if (s.type === "beat" && /^the teach/.test(String(s.seg || ""))) { said += ` ${s.text}`; if (build.pieces.every(has)) k0 = k; }
+    }
+    const lastTeach = at((s) => s.type === "beat" && /^the teach/.test(String(s.seg || "")));
+    put(k0 >= 0 && k0 < lastTeach - 1 ? k0 + 1 : match >= 0 ? match + 1 : lastTeach + 1, [build]);
+  }
+  // a long stretch of teaching left (six bubbles or more) gets "what most people get wrong" in its middle instead
+  const isTeach = (s) => s?.type === "beat" && /^the teach/.test(String(s.seg || ""));
+  let run = [0, 0];
+  for (let k = 0, start = -1; k <= steps.length; k++) {
+    if (isTeach(steps[k])) { if (start < 0) start = k; } else if (start >= 0) { if (k - start > run[1] - run[0]) run = [start, k]; start = -1; }
+  }
+  const wrongAt = steps.findIndex((s) => s.type === "wrong");
+  if (wrongAt >= 0 && run[1] - run[0] >= 6) {
+    const [w] = steps.splice(wrongAt, 1);
+    steps.splice(run[0] + Math.ceil((run[1] - run[0]) / 2), 0, w);
+  }
+  // a look back past yesterday, right after the review
+  const back = lookBack(wing, day);
+  if (back) {
+    const review = at((s) => s.type === "beat" && /^review/.test(String(s.seg || "")));
+    const options = seeded(back.options, day * 13 + 5);
+    put(review >= 0 ? review + 1 : 1, [{ type: "lookback", graded: true, word: back.word, from: back.day, prompt: back.q, options, answer: back.options[back.answer] }]);
+  }
+  // the last thinking question and, at the end of the week, the check-in, just before the tally
+  const tally = steps.length - 1;
+  const week = WEEK_ONE[wing];
+  const checkin = week && day === week.length && { type: "checkin", items: week.map((x, k) => ({ ...x, options: seeded(x.options, day * 31 + k), answer: x.options[x.answer] })) };
+  put(tally, [G.think && { type: "think", ...G.think }, checkin]);
+  return steps;
+}
 
 import { levelUp, tapRound } from "./level.js";
 import { QUIZ } from "./quiz.js";
+import { WEEK_ONE, lookBack } from "./week.js";
+export { SAY_IT, WEEK_ONE, lookBack, sayable } from "./week.js";
 import { featureFor, lessonFromScript } from "./lesson-script.js";
 export { FORMAT as SCRIPT_FORMAT, checkScript, chunkOf, chunkPath, compileScript, featureFor, lessonFromScript, lessonScript, orderIdeas, resetLessonCache, spoken } from "./lesson-script.js";
 export { LEVELS, clampLevel, deeperRound, knownSoFar, levelUp, likeness, rushStep, syllables, tapRound, tile, tileKey, wrongAnswers } from "./level.js";

@@ -9,7 +9,7 @@
   "length": "6:15",
   "tomorrow": "the one at every doorway",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY FIVE.`"] },
+    {"type": "the bell", "duration": null,"voice": "", "screen": ["`DAY FIVE.`"]},
     {
       "type": "review",
       "duration": "20 sec",
@@ -26,12 +26,14 @@
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "Pranam. It's Sanskrit, built from pra, forward, and nam, to bend or bow. To bend forward: a respectful greeting. You met its cousin on day one. Namaste and pranam share that same bowing root. Touching the feet has its own name, charan sparsh. Charan, the feet. Sparsh, a touch. Here's one way it's explained. The head is the high point of a person, where the pride sits, and the opinions. The feet are the low point, and they've walked further down the road than yours have. So when the high point of you meets the low point of them, the gesture says something like: you've been where I'm going. Thank you. Now watch the other half. The elder doesn't just receive it. A hand comes down onto the head. That's a blessing, an ashirvad, given back. Respect is given. A blessing comes back. Nobody walks away smaller. An old law book, the Manusmriti, puts a promise on this habit. For the one who greets and serves elders, it says, four things grow: length of life, learning, good name and strength. Some read that as a promise, some as a description of what the habit does to a person. Either way, the gesture says one plain thing: nobody invents themselves. Somebody walked ahead, did hard things, and passed the road down. Pranam is a two-second way of saying so.",
-      "screen": ["`PRA + NAM — TO BEND FORWARD.` · `HIGH POINT MEETS LOW POINT.` · `RESPECT GIVEN, BLESSING BACK.` · `FOUR THINGS GROW.` · then, large: `YOU'VE BEEN WHERE I'M GOING.`"]
+      "screen": [
+        "`PRA + NAM — TO BEND FORWARD.` · `HIGH POINT MEETS LOW POINT.` · `RESPECT GIVEN, BLESSING BACK.` · `FOUR THINGS GROW.` · then, large: `YOU'VE BEEN WHERE I'M GOING.`"
+      ]
     },
     {
       "type": "the practice",
       "duration": "1 min",
-      "voice": "Bring to mind one person who came before you. A grandparent, a teacher, anyone who made your road easier, living or not. Let their face come clear. Then, with the bell, breathe in, and as you breathe out, bow to them in your mind. Or tip your head a little, for real. Stay bowed for one more breath, and picture the hand coming back, resting on your head. Whatever they'd have said, let them say it.",
+      "voice": "Bring to mind one person who came before you. A grandparent, a teacher, anyone who made your road easier, living or not. Let their face come clear. Then, with the bell, breathe in, and as you breathe out, bow your head to them, a little, for real. Stay bowed for one more breath. Whatever they'd have said to you, let it come.",
       "screen": []
     },
     {
@@ -43,21 +45,39 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: bow to what came before you. Today, thank one older person for one specific thing they did. A text is fine. That's day five.",
+      "voice": "Your line: bow to what came before you. Today, thank one older person for one specific thing they did. A text is fine. If there's an elder in your home, today is a good day to try it, or just to say thank you out loud. That's day five.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 5 COUNTS.` → `TOMORROW: THE ONE AT EVERY DOORWAY.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": ["`DAY 5 COUNTS.` → `TOMORROW: THE ONE AT EVERY DOORWAY.`"]
+    }
   ],
   "howItsDone": "In Hindu families, children and younger adults greet parents, grandparents and teachers with pranam, often bending to touch their feet, and the elder answers with a hand on the head and a blessing.",
   "games": {
     "match": {
       "prompt": "what's inside the bow — tap the pairs.",
-      "pairs": [["pranam", "to bend forward, a respectful greeting"], ["charan sparsh", "touching the feet"], ["the elder's hand on the head", "a blessing, given back"], ["the Manusmriti", "four things grow for one who greets elders"]]
+      "pairs": [
+        ["pranam", "to bend forward, a respectful greeting"],
+        ["charan sparsh", "touching the feet"],
+        ["the elder's hand on the head", "a blessing, given back"],
+        ["the Manusmriti", "four things grow for one who greets elders"]
+      ]
     },
     "myth": [
-      ["touching an elder's feet only goes one way", false, "the elder answers with a hand on the head: respect given, a blessing back."],
-      ["an old text says greeting and serving elders makes four things grow", true, "the Manusmriti names length of life, learning, good name and strength."],
-      ["pranam and namaste share a root", true, "both come from nam, to bend or bow."]
+      [
+        "touching an elder's feet only goes one way",
+        false,
+        "the elder answers with a hand on the head: respect given, a blessing back."
+      ],
+      [
+        "an old text says greeting and serving elders makes four things grow",
+        true,
+        "the Manusmriti names length of life, learning, good name and strength."
+      ],
+      ["pranam and namaste share a root",true,"both come from nam, to bend or bow."]
     ],
     "fork": {
       "setup": "your grandson has just bent down and touched your feet. what do you do?",
@@ -65,16 +85,41 @@
       "answer": 1,
       "reveal": "a hand comes down on the head: a blessing, an ashirvad. the bow is answered, and nobody walks away smaller."
     },
-    "original": { "script": "प्रणाम", "say": "pra-NAAM", "note": "Sanskrit: pra, forward, and nam, to bend. a bow of respect." },
+    "original": {"script": "प्रणाम", "say": "pra-NAAM", "note": "Sanskrit: pra, forward, and nam, to bend. a bow of respect."},
     "trapdoor": [
       "what you thought: bowing down to a boss.",
       "what it means: thanks to someone further down the road, and a blessing that comes back.",
       "what a scholar hears: pra + nam, to bend forward; Manusmriti 2.121 says life, learning, fame and strength grow for one who habitually greets and serves elders."
-    ]
+    ],
+    "story": {
+      "title": "the bow before the battle",
+      "text": "On the morning of the great war in the Mahabharata, with both armies ready, Yudhishthira takes off his armor, puts down his weapons and walks alone toward the enemy's lines. His own side thinks he's surrendering. He isn't. He goes to his great-uncle Bhishma and his teacher Drona, who are fighting against him, bows to their feet, and asks for their blessing. Bhishma tells him that if he hadn't come, he would have wished him defeat. Because he came, he blesses him instead.",
+      "source": "Mahabharata, Bhishma Parva 41 (critical edition)"
+    },
+    "wrong": {
+      "myth": "touching an elder's feet means you're beneath them.",
+      "truth": "it goes both ways: respect is given, and a blessing comes back. nobody walks away smaller."
+    },
+    "build": {"prompt": "build the word: forward + to bend.", "pieces": ["pra", "nam"],"decoys": ["namas", "sva"],"word": "pranam"},
+    "think": {
+      "setup": "you're visiting an older neighbor who isn't family and isn't Hindu. what's the spirit of pranam you could bring?",
+      "options": [
+        "touch their feet anyway.",
+        "thank them for one specific thing they did.",
+        "nothing: it's only for grandparents."
+      ],
+      "answer": 1,
+      "reveal": "the gesture is one way of saying it. the spirit is: somebody walked ahead of you, and you noticed."
+    }
   },
   "sources": [
-    { "ref": "Manusmriti 2.121", "work": "Manusmriti (Laws of Manu)", "translation": null, "quoted": null },
-    { "ref": "pranama; nam", "work": "Monier-Williams, A Sanskrit-English Dictionary (1899)", "translation": null, "quoted": null }
+    {"ref": "Manusmriti 2.121", "work": "Manusmriti (Laws of Manu)", "translation": null,"quoted": null},
+    {
+      "ref": "pranama; nam",
+      "work": "Monier-Williams, A Sanskrit-English Dictionary (1899)",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -87,8 +132,13 @@
       "Hook uses a twelve-year-old in the scene; the age is part of the picture, not a claim.",
       "Audit pass: 'respect goes down, blessing comes up' had the directions backwards (the blessing comes down onto the head); now 'respect is given, a blessing comes back' in the teach, screen head, myth reveal and day 6 review screen.",
       "Editor pass: practice reshaped so it no longer repeats the 'three breaths with the bell, on the first / second / third' template used on days 3, 4 and 6; same steps (bring someone to mind, bow, the hand coming back). Checked Manusmriti 2.121's four things (life, learning, fame, strength) against the paraphrase; no other changes.",
-      "Editor review 2: the 'promise or description, either way the point is the same' line was filler, and 'you didn't invent yourself' told the listener about themselves; now attributed to readers and to the gesture."
+      "Editor review 2: the 'promise or description, either way the point is the same' line was filler, and 'you didn't invent yourself' told the listener about themselves; now attributed to readers and to the gesture.",
+      "Week-one upgrade (2026-10-06): games.story (the story behind it), games.wrong (what most people get wrong), games.build, games.think and the carry's together line were added by Claude for the owner's seven-day pilot; confirm each story's telling and source."
     ]
   },
-  "meta": { "index": "why Indian kids touch their grandparents' feet · pranam · bow to what came before you (camp 1 manuscript, day 5)", "writer": "writer agent (hinduism 1–7)", "written": "2026-10-01" }
+  "meta": {
+    "index": "why Indian kids touch their grandparents' feet · pranam · bow to what came before you (camp 1 manuscript, day 5)",
+    "writer": "writer agent (hinduism 1–7)",
+    "written": "2026-10-01"
+  }
 }

@@ -17,13 +17,14 @@ export const DOOR_KEYS = Object.freeze(["HINDUISM", "CHRISTIANITY", "CATHOLIC", 
 export const SEGMENTS = Object.freeze(["the bell", "review", "the hook", "the teach", "the practice", "the word", "the carry", "the close"]);
 export const FEATURES = Object.freeze(["myth", "fork", "original", "trapdoor"]);
 
-// Spoken length. People hear about 150 words a minute; a day is 3–4 spoken minutes, so with the games and the sit the
-// whole session runs about five. Bounds are [error below, warn below, warn above, error above].
+// Spoken length. People hear about 150 words a minute; a day is 2–4 spoken minutes, so with the games and the sit the
+// whole session runs about five. Bounds are [error below, warn below, warn above, error above]. (2026-10-06, owner: adults
+// get it the first time, so a tightened lesson may say it once: the floors came down for the upgraded first week.)
 export const WORDS = Object.freeze({
-  total: [380, 430, 640, 700],
+  total: [280, 290, 640, 700],
   review: [8, 12, 60, 80],
-  "the hook": [55, 70, 150, 180],
-  "the teach": [160, 190, 330, 380],
+  "the hook": [35, 45, 150, 180],
+  "the teach": [130, 140, 330, 380],
   "the practice": [35, 45, 150, 180],
   "the word": [6, 10, 45, 60],
   "the carry": [12, 18, 70, 90],
