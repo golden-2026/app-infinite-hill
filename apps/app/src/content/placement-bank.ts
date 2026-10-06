@@ -93,7 +93,7 @@ export const PLACEMENT_BANK: Record<string, { lastWritten: number; stops: BankSt
     { first: 97, last: 156, camp: "Camp 3", name: "The practices", qs: [
       {"day":107,"kind":"fork","q":"you're sitting in prayer with the companions, saying: peace be on Allah, peace on Jibril, peace on Mika'il. the Prophet ﷺ turns to you. what does he say?","o":["keep going, and add more names","don't say peace on Allah, for Allah is the Peace","stay silent in the sitting"],"a":1},
       {"day":127,"kind":"word","term":"eid mubarak","o":["a blessed Eid","from a root for returning","an odd number of dates"],"a":0},
-      {"day":144,"kind":"fork","q":"a traveler, dusty and disheveled, raises his hands and cries 'O Lord, O Lord'. but everything he eats, drinks and wears is unlawful. what does the Prophet ﷺ ask?","o":["how could he not be answered?","how could he be answered?","why doesn't he pray in Arabic?"],"a":1},
+      {"day":144,"kind":"fork","q":"a friend asks you quietly: is it haram just to like someone? what does the lesson say first?","o":["any feeling at all is already a sin.","a feeling isn't a sin; what you do with it is.","islam has nothing to say about it."],"a":1},
     ] },
     { first: 157, last: 231, camp: "Camp 4", name: "The text", qs: [
       {"day":172,"kind":"fork","q":"two companions of the Prophet meet on the road and talk. before they part, what is it reported they did?","o":["shook hands and left","one recited Surah al-'Asr to the other","exchanged news of the market"],"a":1},
@@ -220,7 +220,7 @@ export const PLACEMENT_BANK: Record<string, { lastWritten: number; stops: BankSt
       {"day":16,"kind":"fork","q":"the Buddha finds a monk lying sick and alone, and nobody is looking after him. what does he do?","o":["sends someone to find a doctor.","washes and cares for him himself.","asks the monk what he did to deserve it."],"a":1},
     ] },
     { first: 22, last: 96, camp: "Camp 2", name: "The stories", qs: [
-      {"day":40,"kind":"fork","q":"you're the prince, now robed. Channa begs to stay with you. what do you do?","o":["let Channa and Kanthaka come along.","send them both home with your jewels.","keep the horse, send Channa home."],"a":1},
+      {"day":38,"kind":"fork","q":"you're the prince, now robed. Channa begs to stay with you. what do you do?","o":["let Channa and Kanthaka come along.","send them both home with your jewels.","keep the horse, send Channa home."],"a":1},
       {"day":59,"kind":"word","term":"Brahma Sahampati","o":["knelt and asked him to teach","people who could understand","people at every depth"],"a":0},
       {"day":73,"kind":"fork","q":"you're Angulimala. you've been told to say, 'since I was born, I have never intended to take a life.' what do you do?","o":["say it anyway, to help her.","tell the Buddha it would be a lie.","refuse and walk away."],"a":1},
     ] },

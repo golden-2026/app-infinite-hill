@@ -74,7 +74,7 @@ test("no one is asked how they heard about us, or shown the five-year map, befor
 test("the gentle lane: stance and door, then straight into the first-week lesson (no heard, map, quiz, fit, voice or check-in)", () => {
   assert.deepEqual(journey("grief", "HINDUISM"), ["you", "door", "lesson 162"]);
   assert.deepEqual(journey("diagnosis", "CHRISTIANITY"), ["you", "door", "lesson 175"]);
-  assert.deepEqual(journey("forgiveness", "JUDAISM"), ["you", "door", "lesson 17"]);
+  assert.deepEqual(journey("forgiveness", "JUDAISM"), ["you", "door", "lesson 19"]); // teshuvah (day 17 is the minyan)
   // something hard: the homepage promises the door's own day one ("a breath, a story, one line to carry")
   assert.deepEqual(journey("hard", "ISLAM"), ["you", "door", "lesson 1"]);
   for (const why of ["grief", "diagnosis", "forgiveness"]) for (const door of DOORS) {

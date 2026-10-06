@@ -42,7 +42,7 @@ export const HOLIDAY_DEFS: HolidayDef[] = [
   } },
   { key: "ramadan", season: "ramadan", at: "start", lessons: { ISLAM: [[120, "Ramadan: the new moon"], [122, "Ramadan: breaking with a date"], [127, "Eid al-Fitr"]] } },
   { key: "roshhashanah", season: "awe", at: "start", lessons: { JUDAISM: [[123, "Rosh Hashanah: the shofar"], [124, "Rosh Hashanah: apples, honey, water"], [125, "Yom Kippur: the fast"]] } },
-  { key: "passover", season: "omer", at: "before", lessons: { JUDAISM: [[135, "Passover: the seder"], [678, "Passover: the seder plate"]] } },
+  { key: "passover", season: "omer", at: "before", lessons: { JUDAISM: [[135, "Passover: a seat at the seder"], [678, "Passover: the seder plate"]] } },
   { key: "vaisakhi", season: "vaisakhi", at: "end", lessons: { SIKHISM: [[145, "Vaisakhi: the harvest"], [84, "Vaisakhi, 1699: the call"], [146, "Vaisakhi: the procession"]] } },
   { key: "gurpurab", season: "gurpurab", at: "end", lessons: { SIKHISM: [[147, "Guru Nanak's gurpurab"], [22, "Born at Talwandi, 1469"]] } },
   { key: "vesak", season: "vesak", at: "end", lessons: { BUDDHISM: [[145, "Vesak"], [682, "Vesak, deeper"], [23, "Born in a grove"]] } },

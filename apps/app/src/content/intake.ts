@@ -264,7 +264,7 @@ export const BRIDGES: Bridge[] = [
   ] },
   { id: "name", idea: "repeating a holy word until it quiets you", why: "a single word to come back to when your mind won't settle", tags: ["name", "stillness", "sound"], members: [
     { door: "HINDUISM", word: "japa", day: 13, gloss: "a name repeated, counted on beads" },
-    { door: "ISLAM", word: "dhikr", day: 113, gloss: "remembrance: repeating words that praise God" },
+    { door: "ISLAM", word: "dhikr", day: 114, gloss: "remembrance: repeating words that praise God" },
     { door: "SIKHISM", word: "simran", day: 14, gloss: "remembering the Name, again and again" },
     { door: "CATHOLIC", word: "the rosary, beads", day: 4, gloss: "prayers counted on beads" },
   ] },
@@ -321,7 +321,7 @@ export const BRIDGES: Bridge[] = [
   { id: "stillness", idea: "sitting in silence on purpose", why: "a few quiet minutes that ask nothing of you", tags: ["stillness"], members: [
     { door: "BUDDHISM", word: "sati", day: 3, gloss: "mindfulness: noticing what's here" },
     { door: "CHRISTIANITY", word: "be still", day: 145, gloss: "quiet is where he is" },
-    { door: "ISLAM", word: "muraqaba", day: 113, gloss: "watchful, quiet attention" },
+    { door: "ISLAM", word: "muraqaba", gloss: "watchful, quiet attention" },
     { door: "JUDAISM", word: "kavanah", day: 14, gloss: "intention: meaning what you say" },
     { door: "SPIRITUAL", word: "silence", day: 12, gloss: "a few minutes of nothing" },
   ] },
