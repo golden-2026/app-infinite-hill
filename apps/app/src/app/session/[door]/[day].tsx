@@ -31,6 +31,8 @@ import { today as todayNow } from "@/lib/time";
 import { voiceLabel } from "@/lib/voice";
 import { opensAhead } from "@/content/life-moments";
 import { samplerOpens } from "@/content/sampler";
+import { holidayOpens } from "@/content/couple";
+import { couplePartnerDoor } from "@/lib/couple";
 import { BetStep, BreathStep, ForkStep, MatchStep, MythStep, OptionStep, OrderStep, OriginalStep, SitStep, SpeakStep, TapHear, TrapdoorStep } from "@/session/steps";
 import { BottomBar, Btn, Face, Guy, NavBar, Sun, color, confirmSheet, font, type } from "@/ui";
 import { successHaptic, tapHaptic } from "@/lib/haptics";
@@ -88,7 +90,9 @@ export default function SessionScreen() {
   if (!DOORS.some(([, w]) => w === door)) return <Redirect href="/today" />;
   // ...except a day on their own first-week list (content/life-moments.ts): it opens as an extra, never moving the path
   // (or a day of their sampler week that has opened, content/sampler.ts: seven doors, one a day, the same way)
-  const extra = !kid && Number.isInteger(day) && day > current && !walkedBefore && (opensAhead(saved.settings.profile, door, day) || samplerOpens(saved.settings.sampler, todayNow(), door, day));
+  // ...or a lesson on the partner's family's door about its holiday coming up (content/couple.ts), while that card is up
+  const extra = !kid && Number.isInteger(day) && day > current && !walkedBefore
+    && (opensAhead(saved.settings.profile, door, day) || samplerOpens(saved.settings.sampler, todayNow(), door, day) || holidayOpens(couplePartnerDoor(saved.settings), door, day, todayNow()));
   if (!Number.isInteger(day) || day < 1 || (day > current && !walkedBefore && !extra)) return <Redirect href={{ pathname: "/session/[door]/[day]", params: { door: door || saved.settings.homeWing, day: String(current) } }} />;
   // "go deeper" is an extra round on a lesson already walked today; children don't get it
   const deep = params.deep === "1" && !kid;

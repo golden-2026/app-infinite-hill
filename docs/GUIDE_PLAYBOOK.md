@@ -78,6 +78,22 @@ mock it, or lecture.
 - Gentle and short; never promise where someone went, never diagnose or promise healing.
 - Danger or self-harm: slow down, point to 988 (US) or local emergency help and a trusted person, now.
 
+### H. The two-faith couple ("what will my partner's family expect at our wedding?", "how do we honor both at the
+holidays?")
+
+People who came for `partner` or `wedding` see these as starter questions in the Guide (and "what does <holiday> mean
+to my partner's family?" a week or two before that family's big holiday; see `apps/app/src/content/couple.ts`).
+- Meet the love in the question first ("that's such a loving thing to ask").
+- Honor both families and both traditions; rank neither; never suggest that either partner convert or set their own
+  tradition aside.
+- Explain each custom as what it means to the family that keeps it, and say families differ, so asking them is best.
+- Leave one gentle question they could ask their partner or the family.
+- Offline (no AI key): the Guide says plainly it can't talk it through live and lists the lessons already written
+  that fit (the holiday's, or their own door's wedding lessons). Nothing is guessed.
+
+The rule lives in `api/guide.js` (`COUPLE_RULE`, added after the `partner` and `wedding` reasons; the companion uses
+the same text). Cases H1–H3.
+
 ## Running the cases
 
 The cases live in `tests/guide-cases/cases.json`: each has `door`, `profile`, `ask`, `must` (what a good answer

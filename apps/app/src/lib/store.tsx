@@ -13,6 +13,7 @@ import { cleanProfile, type Profile } from "./profile";
 import { eraseCompanion } from "./companion/memory";
 import { addMinutes, type Timed } from "./year";
 import type { QuestState } from "@/content/seasons";
+import type { Walk } from "@/content/couple";
 import { leaveFriends } from "./friends";
 import { leaveAllCircles } from "./circles";
 import { forgetPulse } from "./pulse";
@@ -90,6 +91,12 @@ export type Settings = {
   /** The 30-second check-in (lib/wellbeing): each WHO-5 score with its milestone and date, and the milestones offered.
    *  Personal: stays with the settings (export, synced snapshot); only an anonymous { door, bucket, score } ever leaves. */
   wellbeing?: Wellbeing;
+  /** The two-faith couple (content/couple.ts): "walk it together" (seven days side by side with a partner on the
+   *  friends server; only their progress signal is ever seen), the door their partner's family keeps (chosen under
+   *  "walk it together"), and the "before the holiday" cards they've closed, by holiday id ("navratri-2026-10-11"). */
+  walk?: Walk | null;
+  partnerDoor?: string | null;
+  holidaySeen?: string[];
 };
 
 /** `missed`: words that slipped, and when each comes back (lib/missed.ts). On this phone only: not in settings, so never synced. */
@@ -131,6 +138,15 @@ export function cleanSettings(raw: any): Settings {
     moved: movedTo(s.moved),
     wellbeing: s.wellbeing ? cleanWellbeing(s.wellbeing) : undefined,
     sampler: s.sampler && typeof s.sampler === "object" && typeof s.sampler.on === "string" && /^\d{4}-\d{2}-\d{2}$/.test(s.sampler.on) ? { on: s.sampler.on } : null,
+    partnerDoor: door(s.partnerDoor),
+    walk: s.walk && typeof s.walk === "object" && typeof s.walk.on === "string" && /^\d{4}-\d{2}-\d{2}$/.test(s.walk.on) ? {
+      on: s.walk.on,
+      ...(typeof s.walk.friendId === "string" ? { friendId: s.walk.friendId } : {}),
+      known: arr(s.walk.known).filter((x: unknown) => typeof x === "string"),
+      seen: arr(s.walk.seen).filter((x: unknown) => typeof x === "string"),
+      ...(s.walk.closed === true ? { closed: true } : {}),
+    } : null,
+    holidaySeen: arr(s.holidaySeen).filter((x: unknown) => typeof x === "string"),
   };
 }
 

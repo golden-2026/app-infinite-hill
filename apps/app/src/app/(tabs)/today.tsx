@@ -28,6 +28,7 @@ import { useSeasons } from "@/lib/quests";
 import { newYearNow } from "@/content/seasons";
 import { QuestTodayCard } from "@/ui/quest";
 import { SettleCard } from "@/ui/settle";
+import { HolidayCard, WalkTogetherCard } from "@/ui/couple";
 import { campLabel, campName, doorLabel, isEs, t } from "@/i18n";
 import { firstWeekFor, gentleStart } from "@/content/life-moments";
 import { samplerActive, samplerNext, walkedFrom } from "@/content/sampler";
@@ -225,7 +226,7 @@ export default function Today() {
         {/* the sampler week (content/sampler.ts): while it is under way, its next open day, one tap from Today */}
         {(() => {
           const walked = walkedFrom(st.forYouDone, saved.sits);
-          if (!samplerActive(st.sampler, walked)) return null;
+          if (focused || !samplerActive(st.sampler, walked)) return null;
           const next = samplerNext(st.sampler, today, walked);
           return (
             <Pressable testID="sampler-card" accessibilityRole="link" accessibilityLabel={next ? t("companion.sampler.cardA11y", { n: next.n, door: doorLabel(next.door) }) : t("companion.sampler.card")} onPress={() => router.push("/sampler")}
@@ -239,6 +240,10 @@ export default function Today() {
             </Pressable>
           );
         })()}
+        {/* the two-faith couple (content/couple.ts): a week or two before the partner's family's big holiday, a few
+            already-written lessons about it (extras, never sits); and seven days walked side by side */}
+        {focused ? null : <HolidayCard onOpen={(d, n) => router.push({ pathname: "/session/[door]/[day]", params: { door: d, day: String(n) } })} />}
+        {focused ? null : <WalkTogetherCard quiet={quiet} />}
 
         {streakOn && sk.earnBack && !quiet ? (
           // the streak broke: for 3 days, two lessons in one day bring it back. An offer, never a bill.
