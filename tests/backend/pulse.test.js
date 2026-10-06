@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test, beforeEach, afterEach } from "node:test";
-import pulse, { BACK_DAYS, MAX_VARIANTS, cleanPing, resetPulseLimit, usePulseStore } from "../../api/pulse.js";
+import pulse, { BACK_DAYS, MAX_VARIANTS, cleanPing, countPing, readCounts, resetPulseLimit, usePulseStore } from "../../api/pulse.js";
 import { handler } from "../../netlify/functions/pulse.js";
 
 const NOW = new Date("2026-10-07T16:00:00Z");
@@ -74,7 +74,7 @@ test("returns are kept for days 1 to 30 per cohort; later opens still count as o
   assert.equal((await ping({ cohortDate: "2026-10-21", daysSince: BACK_DAYS, event: "open" }, late)).status, 204);
   const r = await call({ method: "GET", query: "?from=2026-10-01&to=2026-11-20", auth: KEY, now: late });
   assert.deepEqual(r.body.cohorts, [{ date: "2026-10-21", variant: null, installs: 0, back: { 30: 1 } }]);
-  assert.deepEqual(r.body.days, [{ date: "2026-11-20", variant: null, first: 0, opens: 2, lessons: 0 }]);
+  assert.deepEqual(r.body.days, [{ date: "2026-11-20", variant: null, first: 0, opens: 2, lessons: 0, week: {} }]);
 });
 
 test("variants are counted apart, and there can only be a few", async () => {
@@ -123,7 +123,7 @@ test("a flood is slowed down", async () => {
 });
 
 test("cleanPing works out the event's date from the phone's own numbers", () => {
-  assert.deepEqual(cleanPing({ cohortDate: "2026-09-30", daysSince: 7, event: "open" }, NOW), { cohortDate: "2026-09-30", daysSince: 7, event: "open", variant: "-", date: "2026-10-07" });
+  assert.deepEqual(cleanPing({ cohortDate: "2026-09-30", daysSince: 7, event: "open" }, NOW), { cohortDate: "2026-09-30", daysSince: 7, event: "open", variant: "-", date: "2026-10-07", week: null });
   assert.equal(cleanPing(null, NOW), null);
 });
 
@@ -132,4 +132,16 @@ test("the Netlify function answers through the adapter (in memory without Blobs)
   assert.equal(r.statusCode, 204);
   const bad = await handler({ httpMethod: "POST", rawUrl: "https://example.test/api/pulse", headers: { "content-type": "application/json" }, body: JSON.stringify({ door: "ISLAM" }) });
   assert.equal(bad.statusCode, 400);
+});
+
+test("a week-one lesson says which of days 1–7 it was, and nothing else; other events can't carry it", async () => {
+  usePulseStore();
+  resetPulseLimit();
+  assert.equal(cleanPing({ cohortDate: "2026-10-05", daysSince: 2, event: "lesson", week: 3 }, NOW).week, 3);
+  assert.equal(cleanPing({ cohortDate: "2026-10-05", daysSince: 2, event: "open", week: 3 }, NOW), null);
+  assert.equal(cleanPing({ cohortDate: "2026-10-05", daysSince: 2, event: "lesson", week: 8 }, NOW), null);
+  await countPing(cleanPing({ cohortDate: "2026-10-05", daysSince: 2, event: "lesson", week: 3 }, NOW));
+  await countPing(cleanPing({ cohortDate: "2026-10-05", daysSince: 2, event: "lesson" }, NOW));
+  const r = await readCounts({ from: "2026-10-07", to: "2026-10-07" });
+  assert.deepEqual(r.days.map((d) => [d.lessons, d.week]), [[2, { 3: 1 }]]);
 });

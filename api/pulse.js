@@ -6,10 +6,12 @@
 //        daysSince   whole days from cohortDate to today on that phone (0 on the first day)
 //        event       "first" (the very first open, daysSince 0) | "open" (the first open of a later day) | "lesson"
 //        variant     optional short label for comparing two versions later (e.g. "finish-b"); nothing by default
+//        week        optional, "lesson" only: 1–7 when the finished lesson was day 1–7 of a path (the first-week funnel;
+//                    no door, so it can't say which faith)
 //   GET  /api/pulse?from=YYYY-MM-DD&to=YYYY-MM-DD   (Authorization: Bearer <PULSE_READ_KEY>) → the counts as JSON
 //
 // What is stored: counters only. Per cohort day: how many first opens, and how many opens on day 1…30 after it. Per
-// calendar day: first opens, opens, lessons finished. Each per variant. There is no identifier of any kind in the
+// calendar day: first opens, opens, lessons finished, and how many of those were week-one lessons 1–7. Each per variant. There is no identifier of any kind in the
 // request or in storage: no install id, no account, no door or religion, no lesson, no Guide text. The IP address and
 // user agent are never read and never stored. Nothing is logged. The phone decides "already pinged today" itself.
 // Storage: Netlify Blobs in production (netlify/_shared/pulse-store.js); a Map in tests and local development.
@@ -98,7 +100,7 @@ export function resetPulseLimit() { minute = { slot: "", n: 0 }; }
 /** The ping, checked: only these four fields, each in range, and dated today somewhere on Earth. */
 export function cleanPing(body, now) {
   if (!isObject(body)) return null;
-  const allowed = ["cohortDate", "daysSince", "event", "variant"];
+  const allowed = ["cohortDate", "daysSince", "event", "variant", "week"];
   if (!Object.keys(body).every((k) => allowed.includes(k))) return null;
   const { cohortDate, daysSince, event } = body;
   if (!validDate(cohortDate) || cohortDate < EARLIEST) return null;
@@ -111,9 +113,14 @@ export function cleanPing(body, now) {
     if (typeof body.variant !== "string" || !VARIANT_RE.test(body.variant)) return null;
     variant = body.variant;
   }
+  let week = null;
+  if (body.week !== undefined && body.week !== null) {
+    if (event !== "lesson" || !Number.isInteger(body.week) || body.week < 1 || body.week > 7) return null;
+    week = body.week;
+  }
   const date = addDays(cohortDate, daysSince);
   if (!plausible(date, now)) return null;
-  return { cohortDate, daysSince, event, variant, date };
+  return { cohortDate, daysSince, event, variant, date, week };
 }
 
 const inc = (o, k) => { o[k] = (o[k] || 0) + 1; };
@@ -140,7 +147,7 @@ export async function countPing(p) {
     }
     await store.bump(dayKey, (doc) => { const d = doc || {}; inc(d, "opens"); return d; });
   } else {
-    await store.bump(dayKey, (doc) => { const d = doc || {}; inc(d, "lessons"); return d; });
+    await store.bump(dayKey, (doc) => { const d = doc || {}; inc(d, "lessons"); if (p.week) { d.week = d.week || {}; inc(d.week, String(p.week)); } return d; });
   }
 }
 
@@ -154,7 +161,7 @@ export async function readCounts({ from, to }) {
       const c = await store.get(`cohort/${v}/${date}`);
       if (c) cohorts.push({ date, variant: v === NO_VARIANT ? null : v, installs: c.installs || 0, back: c.back || {} });
       const d = await store.get(`day/${v}/${date}`);
-      if (d) days.push({ date, variant: v === NO_VARIANT ? null : v, first: d.first || 0, opens: d.opens || 0, lessons: d.lessons || 0 });
+      if (d) days.push({ date, variant: v === NO_VARIANT ? null : v, first: d.first || 0, opens: d.opens || 0, lessons: d.lessons || 0, week: d.week || {} });
     }
   }
   return { from, to, cohorts, days };

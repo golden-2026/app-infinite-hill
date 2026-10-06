@@ -1,6 +1,6 @@
 // Anonymous return counts (api/pulse.js). On by default, switched off under You › Your data. Once a day on open, and
 // once per finished lesson, the phone sends { cohortDate, daysSince, event } (and a variant label only if this build
-// has one). No id, no door, no lesson, no words. The two dates it works from stay on this phone under "ih:pulse".
+// has one; and, for a path's days 1–7, which of the seven). No id, no door, no words. The two dates it works from stay on this phone under "ih:pulse".
 import { Platform } from "react-native";
 import Constants from "expo-constants";
 import { readJSON, remove, writeJSON } from "./storage";
@@ -44,11 +44,11 @@ export async function pulseOpen(today: string, earliestSit: string | null) {
 }
 
 /** One finished lesson (your own; not a child's, not the extra round). Best effort, never retried. */
-export function pulseLesson(today: string) {
+export function pulseLesson(today: string, week?: number | null) {
   if (!pulseOn()) return;
   const rec = readJSON<PulseRec | null>(PULSE_KEY, null);
   if (!rec) return; // no open has been counted on this phone yet
-  const p = lessonPing(startRec(rec, today, null), today, VARIANT);
+  const p = lessonPing(startRec(rec, today, null), today, VARIANT, week);
   if (p) send(p);
 }
 

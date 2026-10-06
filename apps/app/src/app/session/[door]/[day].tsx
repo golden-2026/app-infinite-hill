@@ -332,7 +332,7 @@ function Session({ door, day, kidId, mode, deep, extra = false, voiceOn, onFinis
     const outcome = onFinish({ door, day, kidId });
     if (!kidId) earnLight(lessonLight(score.right, score.asked || graded, best), best, score.asked > 0 && score.right === score.asked);
     track("lesson_done", { door, day, right: score.right, asked: score.asked, newDay: outcome.isNewDay, kid: !!kidId });
-    if (!kidId) pulseLesson(todayNow()); // anonymous: only "a lesson was finished today" (lib/pulse)
+    if (!kidId) pulseLesson(todayNow(), day <= 7 ? day : null); // anonymous: "a lesson was finished today", and which of days 1–7 (lib/pulse)
     // a child's sit moves the child's hill and the child's streak, not yours: a kid-sized cheer, then back to the table
     if (kidId) {
       if (me.settings.streakOn !== false && outcome.streak.grew) router.replace({ pathname: "/done/kid", params: { door, day: String(day), kid: kidId, streak: String(outcome.streak.after), prev: String(outcome.streak.before) } });

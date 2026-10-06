@@ -3,7 +3,7 @@
 // whole ping, so the server never needs an identifier: { cohortDate, daysSince, event, variant? }. See api/pulse.js.
 
 export type PulseEvent = "first" | "open" | "lesson";
-export type Ping = { cohortDate: string; daysSince: number; event: PulseEvent; variant?: string };
+export type Ping = { cohortDate: string; daysSince: number; event: PulseEvent; variant?: string; week?: number };
 /** first: the first-open date (the cohort). firstSent: its "first" ping landed (or it was never due). opened: the last
  *  date an open landed. */
 export type PulseRec = { first: string; firstSent: boolean; opened: string | null };
@@ -39,8 +39,10 @@ export function afterOpen(rec: PulseRec, ping: Ping, today: string): PulseRec {
   return { ...rec, opened: today, firstSent: rec.firstSent || ping.event === "first" };
 }
 
-/** A finished lesson. */
-export function lessonPing(rec: PulseRec, today: string, variant?: string | null): Ping | null {
+/** A finished lesson; week: 1–7 when it was day 1–7 of a path (the first-week funnel), else left out. */
+export function lessonPing(rec: PulseRec, today: string, variant?: string | null, week?: number | null): Ping | null {
   const d = daysFrom(rec.first, today);
-  return d < 0 ? null : withVariant({ cohortDate: rec.first, daysSince: d, event: "lesson" }, variant);
+  if (d < 0) return null;
+  const p = withVariant({ cohortDate: rec.first, daysSince: d, event: "lesson" }, variant);
+  return Number.isInteger(week) && week! >= 1 && week! <= 7 ? { ...p, week: week! } : p;
 }
