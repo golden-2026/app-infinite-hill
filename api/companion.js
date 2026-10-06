@@ -351,10 +351,10 @@ function capWords(s, max) {
 const oneLine = (s) => s.replace(/\s+/g, " ").trim();
 
 // A deterministic safety net under the prompt: if the person's message sounds like crisis, make sure real help is named.
-const CRISIS = /\b(kill(ing)? myself|suicid\w*|end (it all|my life)|want(ed)? to die|don'?t want to (live|be alive|be here)|hurt(ing)? myself|self[- ]?harm|cut(ting)? myself|overdose|no reason to live|better off (dead|without me))\b/i;
+const CRISIS = /\b(kill(ing)? myself|suicid\w*|end (it all|my life)|want(ed)? to die|don'?t want to (live|be alive|be here)|hurt(ing)? myself|self[- ]?harm|cut(ting)? myself|overdose|no reason to live|better off (dead|without me)|deserve to die|don'?t deserve to (live|be alive|exist)|shouldn'?t (be alive|exist)|what'?s the point (of|in) (living|life|being alive|going on|anything( anymore)?|it all|trying anymore)|can'?t (go on|keep going) anymore)\b/i;
 const HELP_LINE = "if you're thinking about hurting yourself or you're in danger, please reach out right now: in the US, call or text 988; anywhere else, your local emergency number. you don't have to carry this alone.";
 // The same net in Spanish (checked whatever the language, since people write in the language they think in).
-const CRISIS_ES = /(suicid|quitarme la vida|matarme|me quiero morir|quiero morirme|no quiero (vivir|seguir viviendo|estar aqu[ií])|hacerme da[ñn]o|lastimarme|autolesi|cortarme|sobredosis|no tengo (raz[oó]n|motivo)s? para vivir|mejor sin m[ií]|acabar con (todo|mi vida))/i;
+const CRISIS_ES = /(suicid|quitarme la vida|matarme|me quiero morir|quiero morirme|no quiero (vivir|seguir viviendo|estar aqu[ií])|hacerme da[ñn]o|lastimarme|autolesi|cortarme|sobredosis|no tengo (raz[oó]n|motivo)s? para vivir|mejor sin m[ií]|acabar con (todo|mi vida)|merezco morir|no merezco (vivir|existir)|para qu[eé] (vivir|seguir viviendo)|no puedo seguir (as[ií]|viviendo))/i;
 const HELP_LINE_ES = "si estás pensando en hacerte daño o estás en peligro, busca ayuda ahora mismo: en EE. UU., llama al 988 y oprime 2 para español, o envía un mensaje de texto al 988; en cualquier otro lugar, llama al número de emergencias de tu país. no tienes que cargar con esto sin ayuda.";
 
 function checkShape(out, r) {

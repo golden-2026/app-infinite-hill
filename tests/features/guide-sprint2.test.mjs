@@ -139,9 +139,9 @@ test("the grader never reads, prints or stores the key itself", () => {
 
 test("grading: a short or malformed verdict never passes; the report lists what went wrong", async () => {
   const all = grader.loadCases();
-  assert.equal(all.length, 33); // the 30 cases plus the couple cases (H1–H3)
+  assert.equal(all.length, 41); // the 30 cases, the couple cases (H1–H3) and 8 from the 2026-10 research
   assert.deepEqual(grader.pickCases(all, { only: "a1, b1" }).map((c) => c.id), ["A1", "B1"]);
-  assert.equal(grader.pickCases(all, { moment: "f" }).length, 3);
+  assert.equal(grader.pickCases(all, { moment: "f" }).length, 5);
   const b1 = byId.B1;
   const good = { must: b1.must.map(() => ({ ok: true, why: "yes" })), never: b1.never.map(() => ({ happened: false, why: "no" })) };
   assert.equal(grader.gradeFromVerdict(b1, good).status, "pass");

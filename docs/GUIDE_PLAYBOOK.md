@@ -94,6 +94,18 @@ to my partner's family?" a week or two before that family's big holiday; see `ap
 The rule lives in `api/guide.js` (`COUPLE_RULE`, added after the `partner` and `wedding` reasons; the companion uses
 the same text). Cases H1–H3.
 
+## What the 2026-10 research added
+
+Real wording from Reddit and YouTube (`docs/learning/research-extra/`):
+- **Crisis in everyday words.** "i deserve to die", "what's the point of living", "can't go on anymore" (and Spanish
+  "merezco morir", "para qué vivir") now trip the crisis check in `api/companion.js` and the app
+  (`apps/app/src/lib/companion/shape.ts`); "what's the point of fasting?" does not. Cases F4, F5.
+- **Shame about a lapsed practice** (missed salah, years away from confession, cut hair): welcome and the tradition's
+  own words on mercy and return come first, never shame. Cases E3, E4, B4.
+- **"Who is allowed?"** (women and the Gayatri): say honestly that teachers and families differ; don't rule. Case C9.
+- **Psychedelics, channeling, spirit guides:** no doses or how-tos; respect the longing; don't present these as a
+  tradition's teaching; offer the traditions' own practices. Cases A7, A8.
+
 ## Running the cases
 
 The cases live in `tests/guide-cases/cases.json`: each has `door`, `profile`, `ask`, `must` (what a good answer

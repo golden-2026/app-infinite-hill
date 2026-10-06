@@ -234,6 +234,28 @@ test("a message that sounds like crisis always names real help and remembers not
   }
 });
 
+// Wording real people used on Reddit (2026-10 research): it must reach the help line too; ordinary "what's the
+// point" questions about practice must not.
+test("crisis wording from the research names real help; everyday 'what's the point' questions don't", async () => {
+  process.env.ANTHROPIC_API_KEY = "test-server-key";
+  try {
+    const crisis = ["honestly i deserve to die", "what's the point of living anymore", "i don't deserve to be alive", "i can't go on anymore", "merezco morir", "¿para qué vivir?"];
+    for (const content of crisis) {
+      globalThis.fetch = provider({ text: "i'm here with you." });
+      const lang = /merezco|para qué/.test(content) ? "es" : "en";
+      const result = await call({ kind: "chat", body: chatBody({ profile: { ...profile, lang }, messages: [{ role: "user", content }] }) });
+      assert.match(result.body.text, /988/, content);
+    }
+    for (const content of ["what's the point of fasting?", "what's the point of the bell?"]) {
+      globalThis.fetch = provider({ text: "a good question." });
+      const result = await call({ kind: "chat", body: chatBody({ messages: [{ role: "user", content }] }) });
+      assert.doesNotMatch(result.body.text, /988/, content);
+    }
+  } finally {
+    restore();
+  }
+});
+
 test("provider failures, refusals and timeouts become a generic 502", async () => {
   process.env.ANTHROPIC_API_KEY = "test-server-key";
   try {
