@@ -253,11 +253,11 @@ export type Bridge = {
 export const BRIDGES: Bridge[] = [
   { id: "greeting", idea: "a hello that is also a blessing", why: "a way to meet people that wishes them well", tags: ["greeting", "kindness"], members: [
     { door: "HINDUISM", word: "namaste", day: 4, gloss: "the light in me sees the light in you" },
-    { door: "JUDAISM", word: "shalom", day: 1, gloss: "hello, goodbye, peace — and wholeness" },
+    { door: "JUDAISM", word: "shalom", day: 12, gloss: "hello, goodbye, peace — and wholeness" },
     { door: "ISLAM", word: "salaam", day: 1, gloss: "peace be upon you" },
   ] },
   { id: "rest", idea: "a day set apart to stop", why: "permission to stop, built into the week", tags: ["rest", "stillness", "community"], members: [
-    { door: "JUDAISM", word: "Shabbat", day: 3, gloss: "from Friday sundown, the week stops" },
+    { door: "JUDAISM", word: "Shabbat", day: 11, gloss: "from Friday sundown, the week stops" },
     { door: "CHRISTIANITY", word: "the Sabbath", day: 9, gloss: "a day of rest, kept holy" },
     { door: "CATHOLIC", word: "Sunday", day: 13, gloss: "one day that isn't yours to fill" },
     { door: "ISLAM", word: "Jumu'ah", day: 16, gloss: "Friday's gathering for prayer" },
@@ -271,7 +271,7 @@ export const BRIDGES: Bridge[] = [
   { id: "service", idea: "giving as a practice, not a feeling", why: "doing something for someone else, quietly, as part of your day", tags: ["service", "kindness"], members: [
     { door: "SIKHISM", word: "seva", day: 1, gloss: "selfless service" },
     { door: "HINDUISM", word: "seva", day: 15, gloss: "service offered without expecting return" },
-    { door: "JUDAISM", word: "tzedakah", day: 10, gloss: "giving as justice, not only charity" },
+    { door: "JUDAISM", word: "tzedakah", day: 16, gloss: "giving as justice, not only charity" },
     { door: "ISLAM", word: "zakat", day: 19, gloss: "a share of what you have, owed to others" },
     { door: "BUDDHISM", word: "dana", day: 14, gloss: "generosity" },
   ] },
@@ -282,14 +282,14 @@ export const BRIDGES: Bridge[] = [
     { door: "CHRISTIANITY", word: "love", day: 13, gloss: "love as something you do" },
   ] },
   { id: "return", idea: "you can turn around and start again", why: "a way back after getting it wrong", tags: ["patience", "compassion"], members: [
-    { door: "JUDAISM", word: "teshuvah", day: 17, gloss: "returning — repair and start over" },
+    { door: "JUDAISM", word: "teshuvah", day: 19, gloss: "returning — repair and start over" },
     { door: "CATHOLIC", word: "confession", day: 12, gloss: "saying it out loud, and being forgiven" },
     { door: "CHRISTIANITY", word: "the Prodigal Son", day: 11, gloss: "the son who comes home and is welcomed" },
   ] },
   { id: "oneness", idea: "one, underneath everything", why: "an old idea about how everything fits together", tags: ["oneness"], members: [
     { door: "SIKHISM", word: "Ik Onkar", day: 4, gloss: "there is one" },
     { door: "ISLAM", word: "tawhid", day: 10, gloss: "the oneness of God" },
-    { door: "JUDAISM", word: "the Shema", day: 2, gloss: "hear: the Lord is one" },
+    { door: "JUDAISM", word: "the Shema", day: 13, gloss: "hear: the Lord is one" },
     { door: "HINDUISM", word: "Brahman", day: 11, gloss: "the one reality behind all things" },
   ] },
   { id: "sound", idea: "a sound that starts the quiet", why: "something to hear that brings you back to now", tags: ["sound", "stillness"], members: [
@@ -299,7 +299,7 @@ export const BRIDGES: Bridge[] = [
   ] },
   { id: "blessing", idea: "starting something by saying why it matters", why: "a small pause before ordinary things", tags: ["blessing", "gratitude"], members: [
     { door: "ISLAM", word: "bismillah", day: 2, gloss: "in the name of God — before a meal, a journey, a first line" },
-    { door: "JUDAISM", word: "bracha", day: 5, gloss: "a blessing said before and after" },
+    { door: "JUDAISM", word: "bracha", day: 15, gloss: "a blessing said before and after" },
     { door: "CATHOLIC", word: "the sign of the cross", day: 2, gloss: "head, heart, shoulders — all of you" },
   ] },
   { id: "gratitude", idea: "thanks, said out loud", why: "noticing what's already good", tags: ["gratitude"], members: [
@@ -310,7 +310,7 @@ export const BRIDGES: Bridge[] = [
     { door: "SIKHISM", word: "sangat", day: 13, gloss: "the gathered community" },
     { door: "BUDDHISM", word: "the sangha", day: 17, gloss: "the community that walks together" },
     { door: "HINDUISM", word: "satsang", day: 20, gloss: "gathering in truth" },
-    { door: "JUDAISM", word: "minyan", day: 18, gloss: "ten people, so prayer can begin" },
+    { door: "JUDAISM", word: "minyan", day: 17, gloss: "ten people, so prayer can begin" },
     { door: "SIKHISM", word: "langar", day: 8, gloss: "a free kitchen: everyone eats, side by side" },
   ] },
   { id: "patience", idea: "staying steady when things are hard", why: "something to hold when you can't fix it", tags: ["patience"], members: [
@@ -322,7 +322,7 @@ export const BRIDGES: Bridge[] = [
     { door: "BUDDHISM", word: "sati", day: 9, gloss: "mindfulness: noticing what's here" },
     { door: "CHRISTIANITY", word: "silence", day: 18, gloss: "quiet is where he is" },
     { door: "ISLAM", word: "muraqaba", day: 17, gloss: "watchful, quiet attention" },
-    { door: "JUDAISM", word: "hitbodedut", day: 15, gloss: "being alone to speak freely with God" },
+    { door: "JUDAISM", word: "kavanah", day: 14, gloss: "intention: meaning what you say" },
     { door: "SPIRITUAL", word: "silence", day: 10, gloss: "a few minutes of nothing" },
   ] },
   { id: "stories", idea: "old stories about starting over", why: "stories people have told for thousands of years because they still work", tags: ["stories"], members: [
