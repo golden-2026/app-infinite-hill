@@ -21,13 +21,13 @@ export const FEATURES = Object.freeze(["myth", "fork", "original", "trapdoor"]);
 // whole session runs about five. Bounds are [error below, warn below, warn above, error above]. (2026-10-06, owner: adults
 // get it the first time, so a tightened lesson may say it once: the floors came down for the upgraded first week.)
 export const WORDS = Object.freeze({
-  total: [280, 290, 640, 700],
+  total: [270, 280, 640, 700],
   review: [8, 12, 60, 80],
   "the hook": [35, 45, 150, 180],
   "the teach": [130, 140, 330, 380],
-  "the practice": [35, 45, 150, 180],
+  "the practice": [30, 35, 150, 180],
   "the word": [6, 10, 45, 60],
-  "the carry": [12, 18, 70, 90],
+  "the carry": [12, 15, 70, 90],
 });
 
 // Things a script must never say. Each entry: [pattern, why]. Quoted scripture is exempt only from the spelling rule.
