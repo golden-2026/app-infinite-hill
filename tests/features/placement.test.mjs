@@ -108,11 +108,22 @@ test("the bank's questions are the lessons' own: each one matches its day's scri
 });
 
 test("stop 0 is camp one's basics; the screen gets three of them, and the lessons' questions above", () => {
-  const stops = C.placeStops("HINDUISM", 7);
+  const stops = C.placeStops("ISLAM", 7);
   assert.equal(stops[0].first, 1);
   assert.equal(stops[0].qs.length, 3);
-  assert.ok(stops[0].qs.every((q) => q.kind === "basic" && data.PLACEMENT.HINDUISM.some((b) => b.q === q.q)));
+  assert.ok(stops[0].qs.every((q) => q.kind === "basic" && data.PLACEMENT.ISLAM.some((b) => b.q === q.q)));
   assert.ok(stops.slice(1).every((s) => s.qs.every((q) => q.kind === "fork" || (q.kind === "word" && q.term))));
+});
+
+test("the Hindu door asks the hand-checked bank at every stop: three per stop, easiest first, others on a restart", () => {
+  const stops = C.placeStops("HINDUISM", 7);
+  assert.equal(stops.length, C.stopFirsts("HINDUISM").length);
+  for (const s of stops) {
+    assert.equal(s.qs.length, 3);
+    for (const q of s.qs) { assert.equal(q.kind, "fork"); assert.equal(q.o.length, 4); assert.ok(q.a >= 0 && q.a < 4); assert.ok(q.es && q.es.o.length === 4); }
+  }
+  const again = C.placeStops("HINDUISM", 8, stops.flatMap((s) => s.qs.map((q) => q.q)));
+  for (let i = 0; i < stops.length; i++) for (const q of again[i].qs) assert.ok(!stops[i].qs.some((x) => x.q === q.q), "a restart sees other questions");
 });
 
 test("every level lands at the start of the highest stretch they know, in 14 questions or fewer", () => {

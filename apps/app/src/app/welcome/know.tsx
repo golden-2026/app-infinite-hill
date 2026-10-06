@@ -3,7 +3,7 @@ import { useTitle } from "@/lib/title";
 import { router, useLocalSearchParams } from "expo-router";
 import { useEffect, useMemo, useState } from "react";
 import { Text, View } from "react-native";
-import { campLabel, campName, doorLabel, stretchLabel, t } from "@/i18n";
+import { campLabel, campName, doorLabel, isEs, stretchLabel, t } from "@/i18n";
 import { placeStops, type PlaceQ } from "@/content/placement";
 import { atOffer, climbState, placementResult, withStart, type Answer, type Climb } from "@/lib/placement";
 import { profileFor } from "@/lib/onboard";
@@ -58,7 +58,9 @@ export default function Know() {
   const state = climbState(climb);
   const cur: PlaceQ | undefined = state.probe === null ? undefined : stops[state.probe]?.qs[state.nth];
   const qKey = `${state.probe}:${state.nth}`;
-  const options = useMemo(() => (cur ? shuffled(cur.o.map((o, k) => ({ o, k })), seed + answers.length * 7) : []), [qKey, seed]); // eslint-disable-line react-hooks/exhaustive-deps
+  // a hand-checked question carries its own Spanish (docs/learning/bank); the lessons' own stay in English
+  const es = isEs() && cur?.es ? cur.es : null;
+  const options = useMemo(() => (cur ? shuffled((es?.o || cur.o).map((o, k) => ({ o, k })), seed + answers.length * 7) : []), [qKey, seed, !!es]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => { if (!door) router.replace("/welcome/door"); }, [door]);
   if (!door) return null;
@@ -92,7 +94,7 @@ export default function Know() {
   // the whole check over from its intro, and from the intro it leaves.
   const stepBack = () => {
     if (picked) return true;
-    setSeen((xs) => [...new Set([...xs, ...(stops[0]?.qs || []).map((q) => q.q)])]);
+    setSeen((xs) => [...new Set([...xs, ...stops.flatMap((st) => st.qs.map((q) => q.q))])]);
     setSeed(Math.floor(Math.random() * 10000) + 1);
     setAnswers([]);
     setOffer("open");
@@ -161,8 +163,8 @@ export default function Know() {
       setAnswers((xs) => [...xs, { stop: state.probe!, ok }]);
     }, 650);
   };
-  const itWas = t("onboarding.know.itWas", { answer: q.o[q.a] });
-  const prompt = q.kind === "word" ? t("onboarding.know.fits", { term: q.term || q.q }) : q.kind === "basic" ? q.q.replace(UNDERNEATH, t("onboarding.know.underneath")) : q.q;
+  const itWas = t("onboarding.know.itWas", { answer: (es?.o || q.o)[q.a] });
+  const prompt = q.kind === "word" ? t("onboarding.know.fits", { term: q.term || q.q }) : q.kind === "basic" ? q.q.replace(UNDERNEATH, t("onboarding.know.underneath")) : es?.q || q.q;
   return (
     <WelcomeFrame step={4} door={door} onBack={stepBack}>
       <Eyebrow style={{ textAlign: "center" }}>{t("onboarding.know.step", { n: answers.length + 1, where: where(stop) })}</Eyebrow>

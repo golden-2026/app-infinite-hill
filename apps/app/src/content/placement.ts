@@ -5,12 +5,13 @@
 // questions, are pending Keeper review (docs/CONTENT_RELEASE.md). "My own path" has no knowledge check.
 import { data } from "@ih/content";
 import { BANK_STATUS, PLACEMENT_BANK } from "./placement-bank";
+import { CURATED } from "./placement-curated";
 
 export const CONTENT_STATUS = BANK_STATUS;
 
 /** basic: camp one's word ("namaste. what's actually being said?"); fork: a lesson's story question; word: a lesson's
  *  term with three meanings (the screen frames it as "{term} — which fits it best?"). `a`: the right option. */
-export type PlaceQ = { kind: "basic" | "fork" | "word"; q: string; term?: string; o: string[]; a: number; day?: number };
+export type PlaceQ = { kind: "basic" | "fork" | "word"; q: string; term?: string; o: string[]; a: number; day?: number; es?: { q: string; o: string[] } };
 export type PlaceStop = { first: number; last: number; camp: string; name: string; qs: PlaceQ[] };
 
 /** A small seeded pick, so a second try at the check sees other basics. */
@@ -29,6 +30,17 @@ function pick<T>(xs: T[], n: number, seed: number): T[] {
 export function placeStops(door: string, seed = 1, seen: string[] = []): PlaceStop[] {
   const bank = PLACEMENT_BANK[door];
   if (!bank) return [];
+  // A door with a hand-checked bank (docs/learning/bank; the Hindu pilot, 2026-10-06) asks those questions at every stop,
+  // basics included: three per stop, easiest first, a different three on a restart. They test understanding, and their
+  // right answer is no longer usually the longest one.
+  const cur = CURATED[door];
+  if (cur && cur.length === bank.stops.length) {
+    return bank.stops.map((st, i) => {
+      const fresh = cur[i].filter((q) => !seen.includes(q.q)), old = cur[i].filter((q) => seen.includes(q.q));
+      const three = [...pick(fresh, 3, seed + i), ...pick(old, 3, seed + i)].slice(0, 3).sort((x, y) => x.d - y.d);
+      return { first: st.first, last: st.last, camp: st.camp, name: st.name, qs: three.map((q) => ({ kind: "fork" as const, q: q.q, o: q.o, a: q.a, day: q.day, es: q.es })) };
+    });
+  }
   const basics: PlaceQ[] = ((data?.PLACEMENT?.[door] || []) as { q: string; o: string[]; a: number }[]).map((x) => ({ kind: "basic" as const, ...x }));
   return bank.stops.map((st, i) => ({
     first: st.first, last: st.last, camp: st.camp, name: st.name,
