@@ -9,6 +9,7 @@ import { tapHaptic } from "@/lib/haptics";
 import { GuideIcon, TodayIcon, TogetherIcon, YouIcon } from "@/ui/tab-icons";
 import { color, font } from "@/ui";
 import { t } from "@/i18n";
+import { focused } from "@/lib/focus";
 
 // the black tab bar: today · guide · together · you (owner's order, 10/1): profile and settings are a real tab now,
 // not a hidden ☰ (flow audit 9/25).
@@ -45,7 +46,7 @@ export default function TabsLayout() {
     <Tabs>
       <TabSlot style={{ flex: 1 }} />
       <TabList style={[styles.bar, { paddingBottom: Math.max(insets.bottom, 8) }]} accessibilityRole="tablist">
-        {TABS.map((tab) => (
+        {TABS.filter((tab) => !(focused && tab.name === "together")).map((tab) => (
           <TabTrigger key={tab.name} name={tab.name} href={tab.href} asChild>
             <TabButton label={t(tab.label)} root={tab.href} Icon={tab.Icon} />
           </TabTrigger>

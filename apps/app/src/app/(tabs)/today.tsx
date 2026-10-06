@@ -1,4 +1,5 @@
 import { tg } from "@/lib/gentle-t";
+import { focused } from "@/lib/focus";
 import { track } from "@/lib/analytics";
 import { useTitle } from "@/lib/title";
 // Today, redesigned (owner brief 2026-10-01): one obvious next step. The hero holds today's lesson and its start
@@ -202,7 +203,7 @@ export default function Today() {
                   </Pressable>
                 );
               })}
-              {why === "belonging" ? (
+              {why === "belonging" && !focused ? (
                 // belonging: the way to real people here is a circle (start one, or join with a code) on Together
                 <Pressable testID="for-you-circle" accessibilityRole="link" accessibilityLabel={t("home.forYou.circleA11y")} onPress={() => router.push("/together")}
                   style={({ pressed }) => [{ minHeight: 40, justifyContent: "center", opacity: pressed ? 0.8 : 1 }]}>
@@ -321,7 +322,7 @@ export default function Today() {
         })()}
 
         {/* friends, at a glance (from what's already on the phone; Together has the full list, cheers and the board) */}
-        {friends.friends.length > 0 && !quiet ? (
+        {friends.friends.length > 0 && !quiet && !focused ? (
           <Pressable testID="today-friends" accessibilityRole="link" accessibilityLabel={t("home.today.friendsA11y")} onPress={() => router.push("/together")} style={({ pressed }) => [s.lite, { marginTop: 0, flexDirection: "column", alignItems: "stretch", gap: 6 }, pressed && { opacity: 0.85 }]}>
             <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
               <Text style={type.eyebrow(8)}>{t("home.today.friendsEyebrow")}</Text>
@@ -357,7 +358,7 @@ export default function Today() {
               sees nothing about other religions here. Only people who said they love those connections, or are
               walking their own path, get ONE quiet card — and it opens a short taste, never a switch of course.
               Someone unsure where they stand gets one soft line, never a push. */}
-          {(() => {
+          {focused ? null : (() => {
             const pr = st.profile;
             const ownPath = st.homeWing === "SPIRITUAL";
             const unsure = !ownPath && !!pr && (pr.answers?.hold === "figuring" || pr.answers?.why === "god");

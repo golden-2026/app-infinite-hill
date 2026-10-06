@@ -1,4 +1,5 @@
 import { track } from "@/lib/analytics";
+import { FOCUS_DOOR } from "@/lib/focus";
 import { useTitle } from "@/lib/title";
 import { router } from "expo-router";
 import { useState, useEffect, type ReactNode } from "react";
@@ -22,7 +23,8 @@ import { WelcomeFrame } from "@/ui/welcome-frame";
 //   grew up in one and left it         → "my own path" and their roots with fresh eyes, both offered softly
 //   no religion / exploring / spiritual → "my own path" as the hero, "or walk one door" below
 //   nothing told (a deep link)          → every door, "my own path" as a big card, and a way to tell us first
-const TRADITIONS: string[] = DOORS.map(([, w]: [string, string]) => w).filter((w: string) => w !== "SPIRITUAL");
+// the tester build (lib/focus) shows only its one door
+const TRADITIONS: string[] = DOORS.map(([, w]: [string, string]) => w).filter((w: string) => w !== "SPIRITUAL" && (!FOCUS_DOOR || w === FOCUS_DOOR));
 
 export default function PickDoor() {
   useEffect(() => { track("onboard_step", { step: "door" }); }, []);

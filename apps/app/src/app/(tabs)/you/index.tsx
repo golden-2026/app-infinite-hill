@@ -1,4 +1,5 @@
 import { TabHeader } from "@/ui/tab-header";
+import { focused } from "@/lib/focus";
 import { useTitle } from "@/lib/title";
 // You: who you are on the hill (three numbers), where you are on the path (the camp you're in, what's next), then every
 // setting in plain groups: your practice, what you've kept, your people, your data, plan, language, help & legal.
@@ -240,21 +241,21 @@ export default function You() {
             {derived.showedUp >= 7 ? <Row a={t("companion.weekPage.title")} b={t("companion.you.weekB")} onPress={() => router.push("/reflect")} /> : null}
           </Group>
 
-          <View style={{ gap: space.md }}>
+          {focused ? null : <View style={{ gap: space.md }}>
             <Group title={t("companion.you.gPeople")}>
               <Row testID="row-friends" a={t("companion.you.friends")} b={people || t("companion.you.friendsEmpty")} onPress={() => router.push("/together")} />
               <Row a={t("companion.you.table")} b={st.kids.length ? t("companion.you.tableB", { names: st.kids.map((k) => k.name).join(", ") }) : t("companion.you.tableEmpty")} onPress={() => router.push("/you/table")} />
               <Row a={t("companion.you.gift")} b={t("companion.you.giftB")} onPress={() => router.push("/you/gift")} />
             </Group>
             <InvitesCard />
-          </View>
+          </View>}
 
           <Group title={t("companion.you.gData")}>
             <Row testID="row-account" a={accountsOn() ? t("companion.you.account") : t("companion.you.yourData")} b={email ? t("companion.you.accountEmail", { email }) : accountsOn() ? t("companion.you.accountSave") : t("companion.you.accountLocal")} onPress={() => router.push("/you/account")} />
           </Group>
-          <Group title={t("companion.you.gPlan")}>
+          {focused ? null : <Group title={t("companion.you.gPlan")}>
             <Row a={t("companion.you.plan")} b={t("companion.you.planB")} onPress={() => router.push("/you/plans")} />
-          </Group>
+          </Group>}
           <Group title={t("common.language")}>
             <Row testID="row-language" a={t("common.language")} b={t("common.language.b")} right={lang === "es" ? t("common.language.es") : t("common.language.en")} cycle onPress={() => setLang(lang === "es" ? "en" : "es")} />
           </Group>
