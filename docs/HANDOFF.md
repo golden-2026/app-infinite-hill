@@ -50,6 +50,19 @@ design changes go live, ask before deploying, real testimonials only, check usag
   once the weekly limit is hit.
 
 ## Session of 2026-10-06 (pick up here; newest first)
+- LATEST (evening): LIVE is expo-live73 (the rebuilt Hindu week). Committed, NOT live: every other path's first camp
+  rebuilt from its audience research (docs/learning/week1/<DOOR>.json → week1-data.js; scripts/learning/fix-day-refs.mjs
+  and fix-app-days.mjs move later citations and app day links), tests updated (463/465; the 2 old environment failures
+  remain). Needs phone screenshots to the owner, then deploy approval (expo-live74). Screenshot robot for any path:
+  scratchpad w1door.mjs <out> <day> <maxShots> <DOOR>.
+- Seams applied and committed: Hinduism, Judaism, Buddhism, Catholic, Christianity (101 rejects), Islam (57 rejects;
+  batch b06 was split into b06a/b06b, so apply with --only=b01,…,b06a,b06b,…). Sikhism b01–b06 done, b07–b10 running,
+  b11–b16 left; Spiritual b01–b18 not started. Rejects are mostly "word isn't in the lesson" (agents re-spelled a
+  term): redo with extract.mjs DOOR 45 --only ids.json, telling agents to copy the word character for character.
+- Research extras: docs/learning/research-extra/REDDIT.md (search-engine snippets only; Reddit itself is blocked) and
+  SOCIAL.md (Instagram/TikTok read-only in the owner's Chrome; TikTok logged out, so views but no likes). Not yet
+  folded into the week-one lessons. Still missing: Reddit replies, YouTube comments (owner asked for exhaustive).
+- Validator: "mum" British-spelling check no longer flags names like Mumtaz/Mumbai.
 - LIVE: expo-live72 (2026-10-06, owner approved "publish the normal one"): the Hindu week-one upgrade (story card,
   "most people get this wrong", build the word, look-backs, thinking question, day-7 check-in, tap-to-hear, "i knew
   that · skip to the games"), days tightened and lightened, curated Hindu placement (docs/learning/bank → apps/app/src/
