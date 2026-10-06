@@ -49,7 +49,34 @@ design changes go live, ask before deploying, real testimonials only, check usag
 - Usage: weekly allowance resets Tuesday 2 AM Pacific; extra credits this week $312. Fable does NOT avoid credits
   once the weekly limit is hit.
 
-## Session of 2026-10-03 evening (pick up here)
+## Session of 2026-10-06 (pick up here; newest first)
+- LIVE: expo-live72 (2026-10-06, owner approved "publish the normal one"): the Hindu week-one upgrade (story card,
+  "most people get this wrong", build the word, look-backs, thinking question, day-7 check-in, tap-to-hear, "i knew
+  that · skip to the games"), days tightened and lightened, curated Hindu placement (docs/learning/bank → apps/app/src/
+  content/placement-curated.ts via scripts/learning/build-curated.mjs), tester switch EXPO_PUBLIC_FOCUS_DOOR (off),
+  pulse week-one funnel, Guide sprint 2 + couple features merged, Hinduism 644 seams. NOT yet live (committed after):
+  the REBUILT Hindu week one (below), Hinduism/Judaism/Buddhism seams batches.
+- Hindu week one REBUILT from docs/learning/AUDIENCE_RESEARCH.md (owner: "meet them where they are", "don't freak
+  people out"): 1 Ganesha · 2 om · 3 Gayatri (mantra folds in) · 4 namaste + touching feet (pranam folds in) · 5 arti +
+  prasad · 6 why so many gods (ishta devata, ekam sat) · 7 karma + check-in · 8 puja · 9 dharma · 10 atman · 11 Brahman ·
+  12 guru · 13 japa · 14 shanti · 15–21 unchanged. Index override: packages/content/src/hindu-week.js (applied in
+  index.js, plus ADULT.HINDUISM day-1 bet = Ganesha); QUIZ, WEEK_ONE, sampler/life-moments/intake day numbers updated.
+  Needs owner screenshots review, then publish. Panditji/Keeper review pending for all new copy.
+- Owner rules saved: light start (memory light-start), one famous text name a day max early, stories open with drama,
+  no Manusmriti early; no comics; no homework asks; adults get it the first time.
+- Audience research for all 8 paths: docs/learning/AUDIENCE_RESEARCH*.md (Catholic report was still running). Next:
+  rebuild each path's week one from its report, like Hinduism (owner asked for this).
+- Seams job (big job 1 of 3): work in C:/Users/shset/code/golden-app/atlas/seams-work (apply.mjs now takes
+  --only=b05,b11; SP/WT point at this worktree). Subagents (Sonnet) often write their output into THIS worktree's
+  atlas/seams-work/work/<door>/ — copy those into the main atlas folder before apply. Done and committed: Hinduism,
+  Judaism, Buddhism. Catholic batches mostly done/running; Christianity, Islam, Sikhism, Spiritual not started. Redo
+  batches: judaism retry01/02 (apply when retry02 lands), Buddhism's 35 rejects. A batch can exceed the 64K output cap:
+  split it (b06a/b06b). After apply: import-outline, import-paths, validate-scripts, then
+  scratchpad ship-door.mjs (rebuilds that door's week files, keeping live days 1062–1064 in chunk 152).
+- Big jobs 2–3 (Year 4 checks, Opus second pass) need the owner to say "use a workflow" (Workflow tool opt-in).
+- Jewish day 1025 (1948): word "atzmaut", voice names the Nakba too; flagged for Keeper review.
+
+## Session of 2026-10-03 evening
 - Weekly allowance and extra credits ran out mid-run (extra spent this week: about $504). Everything below resumes
   after the Tuesday 2 AM PT reset. Check usage and quote the owner before restarting big jobs.
 - Owner direction: concentrate on ONE excellent seven-day experience (ChatGPT review). Recommended first user: Hindu
