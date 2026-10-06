@@ -3,7 +3,7 @@
 // five are planned week by week, so each block's topics are spread across its days.
 //   node packages/content/scripts/import-outline.mjs
 // These are OUTLINES (title, hook, practice, carry) — the full scripts come after Keeper review.
-import { readFileSync, writeFileSync } from "node:fs";
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -158,6 +158,9 @@ for (let d = 23; d <= lastDay; d++) {
   if (!sessions.has(d) && prev) add(d, { ...prev, title: `${prev.camp}: year close`, hook: "the summit sit — look back over the year", practice: null, carry: null, weekly: false });
 }
 
+// index fixes: a day's word or carry corrected over the plan (docs/curriculum/index-fixes/hinduism.json, {day: {word, carry}})
+const fixFile = join(root, "docs", "curriculum", "index-fixes", "hinduism.json");
+if (existsSync(fixFile)) for (const [day, fix] of Object.entries(JSON.parse(readFileSync(fixFile, "utf8")))) { const s = sessions.get(Number(day)); if (s) Object.assign(s, fix); }
 const list = [...sessions.values()].sort((a, b) => a.day - b.day);
 const days = list.map((s) => s.day);
 const gaps = [];
