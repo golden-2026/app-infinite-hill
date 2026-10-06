@@ -49,7 +49,7 @@ export const FORBIDDEN = Object.freeze([
   [/\b(amazing!!|you failed|you missed a day)\b/i, "guilt or hype"],
 ]);
 // British spellings (checked outside quotation marks: quoted scripture keeps its translation's spelling).
-export const BRITISH = /\b(colour|honour|favour|behaviour|neighbour|labour|centre|theatre|realise|recognise|organise|apologise|practise|judgement|travelled|travelling|cancelled|grey|mum|whilst|amongst)\w*\b/i;
+export const BRITISH = /\b(colour|honour|favour|behaviour|neighbour|labour|centre|theatre|realise|recognise|organise|apologise|practise|judgement|travelled|travelling|cancelled|grey|whilst|amongst)\w*\b|\bmums?\b/i;
 
 // Public-domain translations a source may name. Anything else must be marked "paraphrase" (quoted: null).
 export const PD_TRANSLATIONS = Object.freeze([
