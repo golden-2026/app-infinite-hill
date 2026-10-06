@@ -2,7 +2,7 @@
 
 Claude's browser tools are blocked from Reddit, so these need a person. For each link: open it (old.reddit.com shows all the top replies on one page), press Ctrl+S, choose "Webpage, HTML only", and save it into this folder:
 
-`C:Usersshsetcodegolden-appeddit-saved`
+`C:\Users\shset\code\golden-app\reddit-saved`
 
 (Name doesn't matter.) Then tell Claude "reddit saved". Nothing is posted or voted; just reading and saving.
 
