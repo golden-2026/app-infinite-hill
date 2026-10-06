@@ -440,7 +440,14 @@ function Session({ door, day, kidId, mode, deep, extra = false, voiceOn, onFinis
     case "story": return frame(<StoryStep step={step} door={door} onDone={() => next()} />, { top: true });
     case "build": return frame(<BuildStep step={step} onDone={verdict} />, { top: true });
     case "think": return frame(<ThinkStep step={step} onDone={verdict} />, { top: true });
-    case "checkin": return frame(<CheckinStep step={step} onMiss={(w) => { pairSlips.current.push(w); }} onDone={verdict} />, { top: true });
+    // the week's check-in is its own score: counted once, never sent back through "one more time"; what slipped joins
+    // the missed-words review
+    case "checkin": return frame(<CheckinStep step={step} onMiss={(w) => { pairSlips.current.push(w); }} onDone={(ok) => {
+      const words = pairSlips.current.filter((w) => vocab.has(w.toLowerCase()));
+      pairSlips.current = [];
+      if (phase === "play") { if (own && words.length) setSlips((x) => [...new Set([...x, ...words])]); setScore((sc) => ({ right: sc.right + (ok ? 1 : 0), asked: sc.asked + 1 })); }
+      next();
+    }} />, { top: true });
     case "guess":
     case "lookback":
     case "recall":
