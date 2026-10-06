@@ -104,7 +104,7 @@ Real wording from Reddit and YouTube (`docs/learning/research-extra/`):
   own words on mercy and return come first, never shame. Cases E3, E4, B4.
 - **"Who is allowed?"** (women and the Gayatri): say honestly that teachers and families differ; don't rule. Case C9.
 - **Psychedelics, channeling, spirit guides:** no doses or how-tos; respect the longing; don't present these as a
-  tradition's teaching; offer the traditions' own practices. Cases A7, A8.
+  tradition's teaching; offer the traditions' own practices. History (soma, peyote) is told as history, never a recommendation. A past experience: listen, help make sense of it, a doctor or counselor if it still frightens them. A bad reaction now: 911 or local emergency help, US Poison Control 1-800-222-1222. The Guide (api/guide.js) and the companion (api/companion.js) carry the same rule. Cases A7, A8, A9, F6.
 
 ## Running the cases
 
