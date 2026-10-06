@@ -258,7 +258,7 @@ export const BRIDGES: Bridge[] = [
   ] },
   { id: "rest", idea: "a day set apart to stop", why: "permission to stop, built into the week", tags: ["rest", "stillness", "community"], members: [
     { door: "JUDAISM", word: "Shabbat", day: 11, gloss: "from Friday sundown, the week stops" },
-    { door: "CHRISTIANITY", word: "the Sabbath", day: 9, gloss: "a day of rest, kept holy" },
+    { door: "CHRISTIANITY", word: "grace", day: 9, gloss: "a gift you didn't earn" },
     { door: "CATHOLIC", word: "Sunday", day: 14, gloss: "one day that isn't yours to fill" },
     { door: "ISLAM", word: "Jumu'ah", day: 18, gloss: "Friday's gathering for prayer" },
   ] },
@@ -279,12 +279,12 @@ export const BRIDGES: Bridge[] = [
     { door: "BUDDHISM", word: "metta", day: 15, gloss: "loving-kindness, wished outward" },
     { door: "BUDDHISM", word: "karuna", day: 16, gloss: "compassion for suffering" },
     { door: "CATHOLIC", word: "mercy", day: 18, gloss: "kindness you didn't earn" },
-    { door: "CHRISTIANITY", word: "love", day: 13, gloss: "love as something you do" },
+    { door: "CHRISTIANITY", word: "love", day: 15, gloss: "love as something you do" },
   ] },
   { id: "return", idea: "you can turn around and start again", why: "a way back after getting it wrong", tags: ["patience", "compassion"], members: [
     { door: "JUDAISM", word: "teshuvah", day: 19, gloss: "returning — repair and start over" },
     { door: "CATHOLIC", word: "confession", day: 3, gloss: "saying it out loud, and being forgiven" },
-    { door: "CHRISTIANITY", word: "the Prodigal Son", day: 11, gloss: "the son who comes home and is welcomed" },
+    { door: "CHRISTIANITY", word: "the Prodigal Son", day: 13, gloss: "the son who comes home and is welcomed" },
   ] },
   { id: "oneness", idea: "one, underneath everything", why: "an old idea about how everything fits together", tags: ["oneness"], members: [
     { door: "SIKHISM", word: "Ik Onkar", day: 9, gloss: "there is one" },
@@ -320,20 +320,20 @@ export const BRIDGES: Bridge[] = [
   ] },
   { id: "stillness", idea: "sitting in silence on purpose", why: "a few quiet minutes that ask nothing of you", tags: ["stillness"], members: [
     { door: "BUDDHISM", word: "sati", day: 3, gloss: "mindfulness: noticing what's here" },
-    { door: "CHRISTIANITY", word: "silence", day: 18, gloss: "quiet is where he is" },
+    { door: "CHRISTIANITY", word: "be still", day: 145, gloss: "quiet is where he is" },
     { door: "ISLAM", word: "muraqaba", day: 113, gloss: "watchful, quiet attention" },
     { door: "JUDAISM", word: "kavanah", day: 14, gloss: "intention: meaning what you say" },
     { door: "SPIRITUAL", word: "silence", day: 12, gloss: "a few minutes of nothing" },
   ] },
   { id: "stories", idea: "old stories about starting over", why: "stories people have told for thousands of years because they still work", tags: ["stories"], members: [
-    { door: "CHRISTIANITY", word: "the Prodigal Son", day: 11, gloss: "the son who comes home" },
+    { door: "CHRISTIANITY", word: "the Prodigal Son", day: 13, gloss: "the son who comes home" },
     { door: "ISLAM", word: "Yusuf", gloss: "the brother sold, who forgives" },
     { door: "BUDDHISM", word: "the Jataka", day: 18, gloss: "the Buddha's past lives, as stories" },
     { door: "SIKHISM", word: "the sakhis", day: 95, gloss: "stories of the Gurus" },
   ] },
   { id: "golden", idea: "treat others the way you'd want to be treated", why: "the rule nearly every tradition arrived at on its own", tags: ["kindness", "oneness"], members: [
     { door: "SPIRITUAL", word: "the golden rule", day: 15, gloss: "be good to others as to yourself" },
-    { door: "CHRISTIANITY", word: "the Good Samaritan", day: 10, gloss: "the stranger who stopped to help" },
+    { door: "CHRISTIANITY", word: "the Good Samaritan", day: 12, gloss: "the stranger who stopped to help" },
     { door: "HINDUISM", word: "ahimsa", day: 17, gloss: "do no harm" },
   ] },
 ];

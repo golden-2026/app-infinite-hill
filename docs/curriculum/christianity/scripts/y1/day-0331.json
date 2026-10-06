@@ -9,7 +9,7 @@
   "length": "6:45",
   "tomorrow": "In the beginning",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY THREE-HUNDRED-THIRTY-ONE.`"] },
+    {"type": "the bell", "duration": null,"voice": "", "screen": ["`DAY THREE-HUNDRED-THIRTY-ONE.`"]},
     {
       "type": "review",
       "duration": "20 sec",
@@ -19,14 +19,16 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "On a long trail there's a moment hikers talk about. Hours of looking down at boots: the next rock, the next root, the next switchback. Then the path opens out onto a ledge, and you turn around. And there it all is. The parking lot, tiny. The river you crossed. The steep bit that nearly made you quit. All that, walked one step at a time. That's today. On day one you started at the bottom of this hill with one small word. Today we stop at the big lookout, turn around, and look back at the whole climb, before the path goes on.",
+      "voice": "On a long trail there's a moment hikers talk about. Hours of looking down at boots: the next rock, the next root, the next switchback. Then the path opens out onto a ledge, and you turn around. And there it all is. The parking lot, tiny. The river you crossed. The steep bit that nearly made you quit. All that, walked one step at a time. That's today. On day one you started at the bottom of this hill with one shared meal. Today we stop at the big lookout, turn around, and look back at the whole climb, before the path goes on.",
       "screen": ["`HOURS OF LOOKING DOWN AT BOOTS.` → `THE PATH OPENS ONTO A LEDGE.` → `YOU TURN AROUND.`"]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "Camp one was first words. Amen, a word you'd said a thousand times. Grace, a gift you didn't earn. The Lord's Prayer, one line a day: our Father, thy kingdom come, daily bread, forgive us, deliver us. Agape. The cross. Easter morning, and the women at the tomb first. Camp two was the stories. A sower flinging seed on every kind of ground. A father running down the road. A girl in Nazareth, a small carpenter's town. A road through Galilee, a last week in Jerusalem, and then Acts, the story carrying on, all the way to a shipwreck and to Rome. Camp three was the practices: ways to pray, Advent candles and the circle of the year, Sabbath, singing, giving, the sacraments, and a rule of life. Camp four was one Gospel, Mark, read in order, breathless, from the first line to the empty tomb and the young man's words: he's going ahead of you to Galilee. And camp five went deep: the Sermon on the Mount, the mystics, the whole family of churches, the creeds that grew from that seed, and these last weeks, Paul's letter to Rome. From a mustard seed to a creed. Paul, writing from prison, far along his own long road, wrote to his friends in Philippi, in the King James Bible: \"forgetting those things which are behind, and reaching forth unto those things which are before, I press toward the mark.\" The mark. The target. Remember hamartia, the word for sin that some readers hear as missing the mark? Paul's answer isn't to stop aiming. It's to keep pressing on. That's where year two begins: the whole Bible, in order, from its first line.",
-      "screen": ["`CAMP ONE: FIRST WORDS.` · `CAMPS TWO AND THREE: STORIES, PRACTICES.` · `CAMP FOUR: MARK, IN ORDER.` · `CAMP FIVE: THE DEPTHS, AND ROMANS.` · then, large: `I PRESS TOWARD THE MARK.`"]
+      "screen": [
+        "`CAMP ONE: FIRST WORDS.` · `CAMPS TWO AND THREE: STORIES, PRACTICES.` · `CAMP FOUR: MARK, IN ORDER.` · `CAMP FIVE: THE DEPTHS, AND ROMANS.` · then, large: `I PRESS TOWARD THE MARK.`"
+      ]
     },
     {
       "type": "the practice",
@@ -46,26 +48,43 @@
       "voice": "Your line: the hill goes on. Today, put your one line where you'll see it tomorrow morning: on the fridge, the mirror, your phone. Year two starts at the very beginning. Day three hundred thirty-one.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 331 COUNTS.` → `TOMORROW: IN THE BEGINNING.`"] }
+    {"type": "the close", "duration": null,"voice": "", "screen": ["`DAY 331 COUNTS.` → `TOMORROW: IN THE BEGINNING.`"]}
   ],
   "howItsDone": "Some Christians mark the end of a season or a year by looking back, giving thanks for what has passed before setting out again; in the Ignatian tradition a daily version of this is called the examen.",
   "games": {
     "match": {
       "prompt": "which camp was it — tap the pairs.",
-      "pairs": [["camp one", "first words: amen, grace, agape"], ["camp two", "the stories: parables to Rome"], ["camp four", "Mark, read in order"], ["camp five", "the depths: the Sermon to Romans"]]
+      "pairs": [
+        ["camp one", "first words: amen, grace, agape"],
+        ["camp two", "the stories: parables to Rome"],
+        ["camp four", "Mark, read in order"],
+        ["camp five", "the depths: the Sermon to Romans"]
+      ]
     },
     "myth": [
-      ["the first camp began with the word amen", true, "a word you'd said a thousand times, and the first on the hill."],
-      ["camp four read all four Gospels side by side", false, "camp four read one Gospel, Mark, in order, from the first line to the empty tomb."],
-      ["year two begins with the whole Bible in order, from its first line", true, "tomorrow: in the beginning."]
+      [
+        "the first camp began with the word amen",
+        true,
+        "a word you'd said a thousand times, and the first on the hill."
+      ],
+      [
+        "camp four read all four Gospels side by side",
+        false,
+        "camp four read one Gospel, Mark, in order, from the first line to the empty tomb."
+      ],
+      ["year two begins with the whole Bible in order, from its first line",true,"tomorrow: in the beginning."]
     ],
     "fork": {
       "setup": "you're Paul, writing from prison to friends in Philippi. you look back on everything. what do you say?",
-      "options": ["I've arrived; there's nothing left to climb.", "forgetting what's behind, I press toward the mark.", "I wish I'd taken an easier road."],
+      "options": [
+        "I've arrived; there's nothing left to climb.",
+        "forgetting what's behind, I press toward the mark.",
+        "I wish I'd taken an easier road."
+      ],
       "answer": 1,
       "reveal": "\"forgetting those things which are behind, and reaching forth unto those things which are before, I press toward the mark.\" the hill goes on."
     },
-    "original": { "script": "σκοπός", "say": "skoh-POS", "note": "Greek: the mark, the goal you keep your eyes on." },
+    "original": {"script": "σκοπός", "say": "skoh-POS", "note": "Greek: the mark, the goal you keep your eyes on."},
     "trapdoor": [
       "what you thought: the big lookout is the end of the climb.",
       "what it means: a place to stop, turn around, see the whole year, and then face the path ahead.",
@@ -73,8 +92,18 @@
     ]
   },
   "sources": [
-    { "ref": "Philippians 3:13–14", "work": "The Bible", "translation": "KJV (1769)", "quoted": "forgetting those things which are behind, and reaching forth unto those things which are before, I press toward the mark" },
-    { "ref": "Matthew 13:31–32; Luke 15:11–32; Mark 16:7; Acts 27–28", "work": "The Bible", "translation": null, "quoted": null }
+    {
+      "ref": "Philippians 3:13–14",
+      "work": "The Bible",
+      "translation": "KJV (1769)",
+      "quoted": "forgetting those things which are behind, and reaching forth unto those things which are before, I press toward the mark"
+    },
+    {
+      "ref": "Matthew 13:31–32; Luke 15:11–32; Mark 16:7; Acts 27–28",
+      "work": "The Bible",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -87,5 +116,9 @@
       "'A creed said by churches around the world': the Nicene Creed is used by Catholic, Orthodox and many Protestant churches, though some Protestant traditions don't use creeds. Confirm wording."
     ]
   },
-  "meta": { "index": "331. The big lookout · — · from a carpenter's town to Rome, from a seed to a creed: look back at the hill you've climbed · write the one line you'll carry into year two · the hill goes on", "writer": "writer agent (christianity 313–331)", "written": "2026-09-30" }
+  "meta": {
+    "index": "331. The big lookout · — · from a carpenter's town to Rome, from a seed to a creed: look back at the hill you've climbed · write the one line you'll carry into year two · the hill goes on",
+    "writer": "writer agent (christianity 313–331)",
+    "written": "2026-09-30"
+  }
 }

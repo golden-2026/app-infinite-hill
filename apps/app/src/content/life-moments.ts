@@ -67,7 +67,7 @@ export const FIRST_WEEK: Record<LifeMoment, Record<string, Pick[]>> = {
     // thin: no year 1–3 lesson is about kshama or prayashchitta as such; these are the epics' and the Gita's own scenes
     HINDUISM: [[779, "Vana: Draupadi argues for anger, Yudhishthira for forgiveness"], [593, "Lakshmana's warning (an apology and an embrace)"], [199, "Arjuna's terror and praise (forgive my familiarity, 11.35–11.46)"], [166, "Desire, anger, ruin; the peace at the end (2.62–2.72)"]],
     BUDDHISM: [[666, "Removing grudges"], [202, "Overcome anger by kindness (Dhammapada 223–228)"], [531, "The king's regret (regret, confessed)"], [857, "Ashoka's remorse"]],
-    CHRISTIANITY: [[7, "Forgive us as we forgive"], [11, "The father runs (the prodigal son)"], [31, "The unforgiving servant (Matthew 18:21–35)"], [586, "Father, forgive them (Luke 23:32–43)"]],
+    CHRISTIANITY: [[11, "Forgive us as we forgive"], [13, "The father runs (the prodigal son)"], [31, "The unforgiving servant (Matthew 18:21–35)"], [586, "Father, forgive them (Luke 23:32–43)"]],
     CATHOLIC: [[129, "Reconciliation"], [135, "The act of contrition"], [485, "Father, forgive them (Luke 23:34)"], [925, "Forgiving the gunman (1983)"]],
     JUDAISM: [[17, "Return, not repentance (teshuvah)"], [652, "Yom Kippur: ask first"], [120, "The bedtime Shema (forgive before sleeping)"], [583, "Forgive us (selach lanu)"]],
     ISLAM: [[27, "The words of return (we wronged ourselves; forgive us)"], [118, "Astaghfirullah, a hundred times"], [496, "Don't you want to be forgiven?"], [634, "Sincere repentance (tawbah)"]],
