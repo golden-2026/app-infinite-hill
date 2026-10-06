@@ -252,7 +252,7 @@ export type Bridge = {
 
 export const BRIDGES: Bridge[] = [
   { id: "greeting", idea: "a hello that is also a blessing", why: "a way to meet people that wishes them well", tags: ["greeting", "kindness"], members: [
-    { door: "HINDUISM", word: "namaste", day: 1, gloss: "the light in me sees the light in you" },
+    { door: "HINDUISM", word: "namaste", day: 4, gloss: "the light in me sees the light in you" },
     { door: "JUDAISM", word: "shalom", day: 1, gloss: "hello, goodbye, peace — and wholeness" },
     { door: "ISLAM", word: "salaam", day: 1, gloss: "peace be upon you" },
   ] },

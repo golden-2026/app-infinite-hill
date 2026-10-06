@@ -42,7 +42,7 @@ export const FIRST_WEEK: Record<LifeMoment, Record<string, Pick[]>> = {
   // scary news about health, mine or someone close
   diagnosis: {
     // thin: no year 1–3 lesson is about illness or healing prayer; these speak to fear, care for the body, and peace
-    HINDUISM: [[35, "The mountain of herbs"], [4, "Why it's said three times (om shanti shanti shanti)"], [125, "The body as temple"], [213, "The divine qualities (Gita 16.1–16.5, fearlessness)"]],
+    HINDUISM: [[35, "The mountain of herbs"], [14, "Why it's said three times (om shanti shanti shanti)"], [125, "The body as temple"], [213, "The divine qualities (Gita 16.1–16.5, fearlessness)"]],
     BUDDHISM: [[3, "Not \"suffering\" (dukkha)"], [257, "The second arrow"], [274, "Without fear"], [673, "Read to the sick"]],
     CHRISTIANITY: [[175, "Asleep on a cushion (Mark 4:35–41)"], [417, "Whom shall I fear? (Psalm 27)"], [549, "Fear not, little flock (Luke 12:22–34)"], [154, "Confession and anointing"]],
     CATHOLIC: [[42, "The storm (Mark 4:35–41)"], [130, "Anointing of the sick"], [165, "The Lord is my light (Psalm 26 [27])"], [607, "Is any man sick (James 5:13–16)"]],

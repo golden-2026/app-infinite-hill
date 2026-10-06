@@ -9,7 +9,7 @@
   "length": "6:30",
   "tomorrow": "the mountain ahead",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY TWENTY.`"] },
+    {"type": "the bell", "duration": null,"voice": "", "screen": ["`DAY TWENTY.`"]},
     {
       "type": "review",
       "duration": "20 sec",
@@ -26,7 +26,9 @@
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "Satsang. Sat means true, real, good. Sang means company, being together. Satsang is good company, the company of what's true and of people turned toward it. Here's the chain from Bhaja Govindam, in plain words. From good company comes letting go. From letting go comes freedom from delusion. From freedom from delusion comes a mind that stays steady. And from a steady mind comes freedom while you're still alive. Look at what's in that chain. Delusion: think of the snake on the rope from day eighteen. Freedom is moksha from yesterday. And the thing that starts it all isn't a technique. It's a room. In Hindu life, a satsang is often an actual gathering. People meet in a home or a temple hall to sing, to hear a teacher, to read a text together, to sit in silence side by side. Nobody has to be advanced. You come, you sit, you listen. The idea underneath the verse is simple and a little uncomfortable: company shapes a person. A friend's worries can become your worries; a grandmother's patience can become your patience. The verse doesn't say go find perfect people. It puts company first in the chain, and leaves the question with you: what is your company doing to you, and how much time do you spend near what's true? That first domino has a name and a face.",
-      "screen": ["`SAT — TRUE. SANG — COMPANY.` · `GOOD COMPANY, THEN LETTING GO, THEN FREEDOM.` · `A ROOM, NOT A TECHNIQUE.` · `WE TAKE THE SHAPE OF OUR COMPANY.` · then, large: `GOOD COMPANY CHANGES YOU.`"]
+      "screen": [
+        "`SAT — TRUE. SANG — COMPANY.` · `GOOD COMPANY, THEN LETTING GO, THEN FREEDOM.` · `A ROOM, NOT A TECHNIQUE.` · `WE TAKE THE SHAPE OF OUR COMPANY.` · then, large: `GOOD COMPANY CHANGES YOU.`"
+      ]
     },
     {
       "type": "the practice",
@@ -46,18 +48,31 @@
       "voice": "Your line: good company changes you. Today, spend ten unhurried minutes with one person who steadies you. In person, if you can. Day twenty.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 20 COUNTS.` → `TOMORROW: THE MOUNTAIN AHEAD.`"] }
+    {"type": "the close", "duration": null,"voice": "", "screen": ["`DAY 20 COUNTS.` → `TOMORROW: THE MOUNTAIN AHEAD.`"]}
   ],
   "howItsDone": "Hindus gather for satsang in homes, temples and ashrams to sing bhajans, hear a teacher, read scripture together and sit in silence, and some families hold one on special days.",
   "games": {
     "match": {
       "prompt": "what's inside the word — tap the pairs.",
-      "pairs": [["sat", "true, real, good"], ["sang", "company, being together"], ["Bhaja Govindam", "the chain of dominoes"], ["the first domino", "who you spend time with"]]
+      "pairs": [
+        ["sat", "true, real, good"],
+        ["sang", "company, being together"],
+        ["Bhaja Govindam", "the chain of dominoes"],
+        ["the first domino", "who you spend time with"]
+      ]
     },
     "myth": [
-      ["in the Bhaja Govindam chain, the first step is years of hard study", false, "the first step is good company. letting go, clarity and freedom follow."],
-      ["a satsang can be an actual gathering in a home or temple", true, "people meet to sing, hear a teacher, read together and sit in silence."],
-      ["you have to be advanced to join a satsang", false, "nobody has to be advanced. you come, you sit, you listen."]
+      [
+        "in the Bhaja Govindam chain, the first step is years of hard study",
+        false,
+        "the first step is good company. letting go, clarity and freedom follow."
+      ],
+      [
+        "a satsang can be an actual gathering in a home or temple",
+        true,
+        "people meet to sing, hear a teacher, read together and sit in silence."
+      ],
+      ["you have to be advanced to join a satsang",false,"nobody has to be advanced. you come, you sit, you listen."]
     ],
     "fork": {
       "setup": "you want the steadiness this path keeps pointing toward. the old verse gives you a row of dominoes. which one do you push first?",
@@ -65,7 +80,11 @@
       "answer": 1,
       "reveal": "Bhaja Govindam starts with satsang: from good company comes letting go, and the chain runs all the way to freedom while living."
     },
-    "original": { "script": "सत्सङ्ग", "say": "SUT-sung", "note": "Sanskrit: sat, true or good, and sanga, company. The company of what's true." },
+    "original": {
+      "script": "सत्सङ्ग",
+      "say": "SUT-sung",
+      "note": "Sanskrit: sat, true or good, and sanga, company. The company of what's true."
+    },
     "trapdoor": [
       "what you thought: satsang is a meeting with a guru.",
       "what it means: good company, the company of what's true and of people turned toward it. it can be any room.",
@@ -73,7 +92,12 @@
     ]
   },
   "sources": [
-    { "ref": "Bhaja Govindam (Moha Mudgara), verse 9, traditionally attributed to Adi Shankara", "work": "Bhaja Govindam", "translation": null, "quoted": null }
+    {
+      "ref": "Bhaja Govindam (Moha Mudgara), verse 9, traditionally attributed to Adi Shankara",
+      "work": "Bhaja Govindam",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -88,5 +112,9 @@
       "Audit (2026-10-01): Bhaja Govindam chain and glosses checked; no factual errors. 'People take on the shape of those they keep close' was stated as fact by the narrator; now framed as the idea underneath the verse ('company shapes a person', with 'can become'). Cut the closing repeat of 'isn't a technique' (already said two sentences earlier). Note 'nirmohatvam' is freedom from moha (delusion, infatuation), not maya; the link to day 18 is only 'think of', which seems fair."
     ]
   },
-  "meta": { "index": "20. good company · satsang · good company changes you", "writer": "writer agent (hinduism 15–21)", "written": "2026-10-01" }
+  "meta": {
+    "index": "20. good company · satsang · good company changes you",
+    "writer": "writer agent (hinduism 15–21)",
+    "written": "2026-10-01"
+  }
 }

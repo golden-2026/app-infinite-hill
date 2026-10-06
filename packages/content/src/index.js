@@ -2,6 +2,7 @@
 // scripts/extract-design.mjs), plus the one piece of lesson assembly that lived inside v175's Session.
 import data from "../generated/data.js";
 import * as logic from "../generated/logic.js";
+import { HINDU_WEEK } from "./hindu-week.js";
 
 // Camps 2–5 are outline titles lifted from the design doc; a few are editing notes, not titles ("as in the Catholic
 // lane above" ×38, "public-domain translation"). Shown to people as "tomorrow: as in the Catholic lane above", so
@@ -12,6 +13,21 @@ for (const camps of Object.values(data.LATER || {})) {
     const name = (data.CAMPS.find(([c]) => c === camp) || [])[1];
     if (name && Array.isArray(titles)) camps[camp] = titles.map((t) => (typeof t === "string" && OUTLINE_SCRAP.test(t.trim()) ? name.toLowerCase() : t));
   }
+}
+
+// The Hindu week one, rebuilt from the audience research (owner, 2026-10-06; docs/learning/AUDIENCE_RESEARCH.md): days
+// 1–14 follow the new order, and day one's opening question is about Ganesha, not namaste (namaste is now day four).
+for (const [day, e] of Object.entries(HINDU_WEEK)) {
+  const at = (data.CAMP1_HIN || []).findIndex((x) => x.day === +day);
+  if (at >= 0) Object.assign(data.CAMP1_HIN[at], e);
+}
+if (data.ADULT?.HINDUISM) {
+  data.ADULT.HINDUISM.word = "Ganesha";
+  data.ADULT.HINDUISM.bet = {
+    options: ["the god of good luck", "the remover of obstacles", "the god of elephants", "a god of war"],
+    answer: "the remover of obstacles",
+    reveal: "he's Vighnaharta, the remover of obstacles. that's why he goes first: before weddings, exams, new shops, and this.",
+  };
 }
 
 // The pilot has no accounts and a different analytics list than the design build assumed; say what's true.

@@ -9,12 +9,12 @@
   "length": "6:00",
   "tomorrow": "the ocean the wave forgets it is",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY TEN.`"] },
+    {"type": "the bell", "duration": null,"voice": "", "screen": ["`DAY TEN.`"]},
     {
       "type": "review",
-      "duration": "20 sec",
-      "voice": "Yesterday: karma. Your line was what you do, you become. Did you plant one thing on purpose? Today we turn from what gets done to the one doing it. Day ten.",
-      "screen": ["`WHAT YOU DO, YOU BECOME.` → `DAY 10.`"]
+      "duration": "10 sec",
+      "voice": "Yesterday: dharma. Your line was do the thing that's yours to do. Today we turn from what gets done to the one doing it. Day ten.",
+      "screen": ["`DO THE THING THAT'S YOURS TO DO.` → `DAY 10.`"]
     },
     {
       "type": "the hook",
@@ -26,7 +26,9 @@
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "Atman. The self. Not the self in selfie, the personality you show the world. The Upanishads use atman for the deepest you: the one that is aware. And they notice something strange about it. You can't look straight at it. In the Brihadaranyaka Upanishad, a questioner keeps pressing the teacher Yajnavalkya: show me this self, plainly, the way you'd point and say, that's a cow, that's a horse. And Yajnavalkya answers, in effect: you can't see the seer of seeing. You can't hear the hearer of hearing. The one who looks can't become one more thing on the table to be looked at. So, in other passages, the same Upanishad describes the self by saying what it is not: neti, neti. Not this, not this. Whatever you can point to, the body, the breath, the busy mind, the self is not that. One way to put the Upanishad's point: take away everything that can be watched, and what's left is the watching. Put plainly: someone is in there. Today that someone gets its name. Here's where it turns practical. When worry comes, it comes as something seen: a thought, a tight chest, a story about tomorrow. The Upanishad points past it, to the one who sees. Hindu schools describe the atman in different ways. Some teach that the self is one with the whole. Others teach that it is a distinct soul, forever dear to God and dependent on God. Tomorrow brings the word for the whole. Today, just the turn this word makes: away from what's being watched, toward the one who is watching.",
-      "screen": ["`ATMAN — THE SELF THAT IS AWARE` · `THE SEER OF SEEING` · `NETI, NETI — NOT THIS, NOT THIS` · `THE WATCHING, NOT THE WATCHED` · then, large: `SOMEONE IS IN THERE.`"]
+      "screen": [
+        "`ATMAN — THE SELF THAT IS AWARE` · `THE SEER OF SEEING` · `NETI, NETI — NOT THIS, NOT THIS` · `THE WATCHING, NOT THE WATCHED` · then, large: `SOMEONE IS IN THERE.`"
+      ]
     },
     {
       "type": "the practice",
@@ -46,18 +48,36 @@
       "voice": "Your line: someone is in there. When worry shows up today, ask once, quietly: who is seeing this? Just the question. Day ten.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 10 COUNTS.` → `TOMORROW: THE OCEAN THE WAVE FORGETS IT IS.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": ["`DAY 10 COUNTS.` → `TOMORROW: THE OCEAN THE WAVE FORGETS IT IS.`"]
+    }
   ],
   "howItsDone": "Hindus who follow the Upanishads study the self through teachers and texts, and in meditation and self-inquiry turn attention from thoughts to the one who is aware of them; schools differ on how the self relates to God.",
   "games": {
     "match": {
       "prompt": "what's inside the word — tap the pairs.",
-      "pairs": [["atman", "the self that is aware"], ["neti, neti", "not this, not this"], ["Yajnavalkya", "the teacher in the Brihadaranyaka"], ["the seer of seeing", "can't be pointed at like a cow"]]
+      "pairs": [
+        ["atman", "the self that is aware"],
+        ["neti, neti", "not this, not this"],
+        ["Yajnavalkya", "the teacher in the Brihadaranyaka"],
+        ["the seer of seeing", "can't be pointed at like a cow"]
+      ]
     },
     "myth": [
-      ["atman means the personality you show the world", false, "the Upanishads use atman for the deepest self, the one that is aware."],
-      ["the Upanishad describes the self by saying what it is not", true, "neti, neti: not this, not this."],
-      ["every Hindu school describes the atman the same way", false, "some teach it is one with the whole; others, a distinct soul, dear to God and dependent on God."]
+      [
+        "atman means the personality you show the world",
+        false,
+        "the Upanishads use atman for the deepest self, the one that is aware."
+      ],
+      ["the Upanishad describes the self by saying what it is not",true,"neti, neti: not this, not this."],
+      [
+        "every Hindu school describes the atman the same way",
+        false,
+        "some teach it is one with the whole; others, a distinct soul, dear to God and dependent on God."
+      ]
     ],
     "fork": {
       "setup": "you're pressing the teacher Yajnavalkya: show me the self plainly, the way you'd point at a cow. what does he say?",
@@ -65,7 +85,7 @@
       "answer": 1,
       "reveal": "the one who sees can't become one more thing seen. elsewhere the same Upanishad says it another way: not this, not this."
     },
-    "original": { "script": "आत्मन्", "say": "AHT-mun", "note": "Sanskrit: the self, the inner one who is aware." },
+    "original": {"script": "आत्मन्", "say": "AHT-mun", "note": "Sanskrit: the self, the inner one who is aware."},
     "trapdoor": [
       "what you thought: the self is your personality, or a ghost inside the body.",
       "what it means: the self that is aware: not the body, not the thoughts, the one who sees them.",
@@ -73,8 +93,18 @@
     ]
   },
   "sources": [
-    { "ref": "Brihadaranyaka Upanishad 4.2.4 (also 3.9.26, 4.4.22, 4.5.15)", "work": "Brihadaranyaka Upanishad", "translation": "public domain (original) Sanskrit", "quoted": "neti, neti" },
-    { "ref": "Brihadaranyaka Upanishad 3.4.1–3.4.2 (Ushasta questions Yajnavalkya)", "work": "Brihadaranyaka Upanishad", "translation": null, "quoted": null }
+    {
+      "ref": "Brihadaranyaka Upanishad 4.2.4 (also 3.9.26, 4.4.22, 4.5.15)",
+      "work": "Brihadaranyaka Upanishad",
+      "translation": "public domain (original) Sanskrit",
+      "quoted": "neti, neti"
+    },
+    {
+      "ref": "Brihadaranyaka Upanishad 3.4.1–3.4.2 (Ushasta questions Yajnavalkya)",
+      "work": "Brihadaranyaka Upanishad",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -89,5 +119,9 @@
       "Editor review 2: practice opener varied; days 10 to 19 nearly all opened 'Here's the practice: ... Sit and breathe.'"
     ]
   },
-  "meta": { "index": "10. the one behind your eyes · atman · someone is in there (camp 1, CAMP1_HIN day 10; sit: 45 seconds; feature: myth)", "writer": "writer agent (hinduism 8–14)", "written": "2026-10-01" }
+  "meta": {
+    "index": "10. the one behind your eyes · atman · someone is in there (camp 1, CAMP1_HIN day 10; sit: 45 seconds; feature: myth)",
+    "writer": "writer agent (hinduism 8–14)",
+    "written": "2026-10-01"
+  }
 }

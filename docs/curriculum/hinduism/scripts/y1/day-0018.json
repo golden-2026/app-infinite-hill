@@ -9,7 +9,7 @@
   "length": "6:30",
   "tomorrow": "the exit door",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY EIGHTEEN.`"] },
+    {"type": "the bell", "duration": null,"voice": "", "screen": ["`DAY EIGHTEEN.`"]},
     {
       "type": "review",
       "duration": "20 sec",
@@ -26,7 +26,9 @@
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "Maya. It often gets translated as illusion, and that one word causes a lot of confusion. It sounds like the tradition is saying the world is fake. Your kitchen, your friends, your job, none of it real. That isn't what it says. The Svetasvatara Upanishad puts it this way: know that nature is maya, and that the great Lord is the one who works the maya. So maya isn't nothing. It's the power that makes the world appear the way it does, so convincingly that we stop looking past it. Schools of the tradition read this differently, and they've argued about it with great care. Advaita Vedanta, the school of Shankara, says the world we see is an appearance laid over Brahman, the way the snake is laid over the rope. The rope is what's really there. Other schools, like those of Ramanuja and Madhva, hold that the world is fully real, made by God, and that maya names God's wondrous power. Both readings agree on one thing. The surface is not the whole story. And that's where the word walks into an ordinary day. A post makes someone's life look perfect. A comment feels like an attack on all of you. A bad morning looks like a bad life. Each one is a snake on the path, until the lamp comes. Neither reading asks anyone to stop living in the world. Only to stop gripping it as if the surface were everything. Hold it lightly.",
-      "screen": ["`NOT FAKE. NOT THE WHOLE STORY.` · `THE POWER THAT MAKES IT APPEAR.` · `SNAKE ON A ROPE, OR GOD'S POWER?` · `A POST. A COMMENT. A BAD MORNING.` · then, large: `HOLD IT LIGHTLY.`"]
+      "screen": [
+        "`NOT FAKE. NOT THE WHOLE STORY.` · `THE POWER THAT MAKES IT APPEAR.` · `SNAKE ON A ROPE, OR GOD'S POWER?` · `A POST. A COMMENT. A BAD MORNING.` · then, large: `HOLD IT LIGHTLY.`"
+      ]
     },
     {
       "type": "the practice",
@@ -46,18 +48,31 @@
       "voice": "Your line: hold it lightly. Today, when something makes you jump, take one breath and ask: snake, or rope? Day eighteen.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 18 COUNTS.` → `TOMORROW: THE EXIT DOOR.`"] }
+    {"type": "the close", "duration": null,"voice": "", "screen": ["`DAY 18 COUNTS.` → `TOMORROW: THE EXIT DOOR.`"]}
   ],
   "howItsDone": "Hindu teachers explain maya through stories like the rope and the snake, and the schools of Vedanta read it in different ways, some as the appearance of the world over Brahman, others as God's real and wondrous power.",
   "games": {
     "match": {
       "prompt": "what's inside the word — tap the pairs.",
-      "pairs": [["the snake", "what you thought you saw"], ["the rope", "what was really there"], ["the lamp", "lets you look again"], ["Svetasvatara Upanishad", "the great Lord works the maya"]]
+      "pairs": [
+        ["the snake", "what you thought you saw"],
+        ["the rope", "what was really there"],
+        ["the lamp", "lets you look again"],
+        ["Svetasvatara Upanishad", "the great Lord works the maya"]
+      ]
     },
     "myth": [
-      ["maya means the world is fake and doesn't matter", false, "maya isn't nothing. the Svetasvatara Upanishad calls it the power that makes the world appear."],
-      ["in the rope story, the fear was never really felt", false, "the pulse and the fear were real. what caused them was never there."],
-      ["in the story, the rope never changed", true, "only the seeing changed. the snake was never there."]
+      [
+        "maya means the world is fake and doesn't matter",
+        false,
+        "maya isn't nothing. the Svetasvatara Upanishad calls it the power that makes the world appear."
+      ],
+      [
+        "in the rope story, the fear was never really felt",
+        false,
+        "the pulse and the fear were real. what caused them was never there."
+      ],
+      ["in the story, the rope never changed",true,"only the seeing changed. the snake was never there."]
     ],
     "fork": {
       "setup": "it's dusk, and something is coiled across your path. your heart is pounding. what does the old story say to do?",
@@ -65,7 +80,11 @@
       "answer": 1,
       "reveal": "the lamp shows a rope. nothing about the rope changed; only the seeing did. that's the gap the word maya names."
     },
-    "original": { "script": "माया", "say": "MAA-yah", "note": "Sanskrit: the power that makes things appear; often translated as illusion." },
+    "original": {
+      "script": "माया",
+      "say": "MAA-yah",
+      "note": "Sanskrit: the power that makes things appear; often translated as illusion."
+    },
     "trapdoor": [
       "what you thought: maya means everything is an illusion.",
       "what it means: the power that makes the world appear, so well we stop looking past the surface. hold it lightly.",
@@ -73,8 +92,13 @@
     ]
   },
   "sources": [
-    { "ref": "Svetasvatara Upanishad 4.10", "work": "Upanishads", "translation": null, "quoted": null },
-    { "ref": "Rope and snake illustration (Advaita Vedanta teaching tradition, Shankara)", "work": "Advaita Vedanta", "translation": null, "quoted": null }
+    {"ref": "Svetasvatara Upanishad 4.10", "work": "Upanishads", "translation": null,"quoted": null},
+    {
+      "ref": "Rope and snake illustration (Advaita Vedanta teaching tradition, Shankara)",
+      "work": "Advaita Vedanta",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -89,5 +113,9 @@
       "Editor review 2: practice opener varied; checked Svetasvatara 4.10 and the school summaries; no other change."
     ]
   },
-  "meta": { "index": "18. why the world looks solid · maya · hold it lightly", "writer": "writer agent (hinduism 15–21)", "written": "2026-10-01" }
+  "meta": {
+    "index": "18. why the world looks solid · maya · hold it lightly",
+    "writer": "writer agent (hinduism 15–21)",
+    "written": "2026-10-01"
+  }
 }

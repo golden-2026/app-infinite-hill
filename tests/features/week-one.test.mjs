@@ -27,7 +27,7 @@ test("each day of the Hindu week gets the story, what most people get wrong, bui
 test("a look back reaches two days back from day 3, and day 7 ends with the week's check-in", () => {
   assert.equal(types(plan(2)).includes("lookback"), false);
   const back = plan(3).steps.find((s) => s.type === "lookback");
-  assert.equal(back.word, "namaste");
+  assert.equal(back.word, "Ganesha");
   assert.ok(back.options.includes(back.answer));
   const t7 = types(plan(7));
   assert.ok(t7.indexOf("checkin") === t7.length - 2, "the check-in sits just before the tally");

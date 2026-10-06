@@ -5,13 +5,13 @@ import { camp1, GUIDE_NO_MATCH, guideFallback, lessonCovers } from "../src/index
 
 const DOORS = ["HINDUISM", "CHRISTIANITY", "CATHOLIC", "ISLAM", "JUDAISM", "BUDDHISM", "SIKHISM", "SPIRITUAL"];
 
-test("a lesson's word alone isn't enough: the Gayatri mantra isn't day 7 (mantra)", () => {
-  const day7 = camp1("HINDUISM").find((d) => d.day === 7);
-  assert.equal(day7.word, "mantra");
-  assert.equal(lessonCovers(day7, "what is the meaning of the Gayatri mantra?"), false);
-  assert.equal(guideFallback("HINDUISM", "What is the meaning of the Gayatri mantra?"), GUIDE_NO_MATCH);
-  // day 7 still answers a question it does cover
-  assert.match(guideFallback("HINDUISM", "what does mantra actually mean?"), /that's from day 7\./);
+test("a lesson's word alone isn't enough, and the Gayatri now has its own day (3, since the week-one rebuild)", () => {
+  const day3 = camp1("HINDUISM").find((d) => d.day === 3);
+  assert.equal(day3.word, "Gayatri");
+  assert.equal(lessonCovers(day3, "what is the meaning of the Gayatri mantra?"), true);
+  assert.match(guideFallback("HINDUISM", "What is the meaning of the Gayatri mantra?"), /that's from day 3./);
+  // a question about a word no lesson is named for still gets the honest no-match line
+  assert.equal(guideFallback("HINDUISM", "what does mantra actually mean?"), GUIDE_NO_MATCH);
 });
 
 test("questions no lesson covers get the honest no-match line, never a day", () => {
