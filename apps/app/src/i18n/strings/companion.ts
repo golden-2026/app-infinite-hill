@@ -252,6 +252,7 @@ const base = {
   // when the live Guide is off, moment B and the seeker still get a real answer (not "none of your lessons covers it")
   "companion.guide.movedOffline": "of course. i'll leave {door} be. you can move to my own path right here: wisdom from many traditions, each tagged with where it came from. every day you've walked comes with you. or pick any other door under you.",
   "companion.guide.seekerOffline": "i love that you're looking. one easy way in: a week of many paths, seven short lessons from seven doors, one a day. see what stays with you. you can also visit any door under you, or ask me about any tradition.",
+  "companion.guide.crisisOffline": "i'm really glad you told me. what you're feeling matters, and so do you. i can't talk this through live right now, so please reach a real person: the card just below has 988, any hour, call or text. i'm right here.",
 
   // ─── the sampler week (app/sampler.tsx, content/sampler.ts) ───
   "companion.sampler.title": "a week of many paths",
@@ -524,6 +525,7 @@ const baseEs: Dict<typeof base> = {
   "companion.guide.sampler": "probar una semana de muchos caminos",
   "companion.guide.movedOffline": "claro. dejo {door} a un lado. puedes pasar a mi propio camino aquí mismo: sabiduría de muchas tradiciones, cada una con su origen. cada día que caminaste viene contigo. o elige cualquier otra puerta en tú.",
   "companion.guide.seekerOffline": "me encanta que estés buscando. una forma fácil de empezar: una semana de muchos caminos, siete lecciones cortas de siete puertas, una al día. mira qué se queda contigo. también puedes visitar cualquier puerta en tú, o preguntarme por cualquier tradición.",
+  "companion.guide.crisisOffline": "me alegra mucho que me lo dijeras. lo que sientes importa, y tú también. ahora no puedo hablarlo en vivo, así que busca a una persona real: en la tarjeta de abajo está el 988 (llama y oprime 2), a cualquier hora. aquí sigo.",
 
   "companion.sampler.title": "una semana de muchos caminos",
   "companion.sampler.eyebrow": "siete días · siete puertas",

@@ -230,7 +230,8 @@ export default function Guide() {
     const hist = log;
     setLog((l) => [...l, ["u", question]]);
     // the lessons can't answer "move me somewhere else" or "which path is for me?": say the true, kind thing instead
-    const offline = (q2: string) => (movedOn(q2) && wing !== "SPIRITUAL" ? t("companion.guide.movedOffline", { door: doorLabel(wing) }) : seeking(q2) ? t("companion.guide.seekerOffline") : pilotAnswer(wing, q2, words, day));
+    // someone who may be in danger never gets "that's a good question": a warm line, and the help card just below
+    const offline = (q2: string) => (crisisWords(q2) ? t("companion.guide.crisisOffline") : movedOn(q2) && wing !== "SPIRITUAL" ? t("companion.guide.movedOffline", { door: doorLabel(wing) }) : seeking(q2) ? t("companion.guide.seekerOffline") : pilotAnswer(wing, q2, words, day));
     let line: Line;
     if (/my book|what i kept|from my (lines|beads)/i.test(question) || /^book$/i.test(question) || BOOK_ASK_ES.test(question.replace(/[¿?¡!]/g, "").trim())) {
       line = ["g", book.length ? t("companion.guide.bookHead") + book.map((b) => `“${b.line}”  — ${doorLabel(b.door)}, ${b.date}`).join("\n") + t("companion.guide.bookTail") : t("companion.guide.bookEmpty")];
