@@ -2,7 +2,7 @@ import { track } from "@/lib/analytics";
 import { useTitle } from "@/lib/title";
 import { router } from "expo-router";
 import { useEffect, useMemo } from "react";
-import { Text, View } from "react-native";
+import { Pressable, Text, View } from "react-native";
 import { doorLabel, t } from "@/i18n";
 import { suggestFor } from "@/lib/profile";
 import { useStore } from "@/lib/store";
@@ -15,7 +15,7 @@ import { WelcomeFrame } from "@/ui/welcome-frame";
 export default function Suggest() {
   useEffect(() => { track("onboard_step", { step: "suggest" }); }, []);
   useTitle(t("onboarding.suggest.title"));
-  const { saved } = useStore();
+  const { saved, today, update } = useStore();
   const p = saved.settings.profile?.door === "SPIRITUAL" ? saved.settings.profile : null;
   const picks = useMemo(() => (p ? suggestFor(p.answers) : []), [p]);
   const keepAway = p?.answers.organized === "away";
@@ -37,6 +37,14 @@ export default function Suggest() {
       <Text style={[type.caption(), { textAlign: "center" }]}>
         {t("onboarding.suggest.caption")}
       </Text>
+      {/* the sampler week (content/sampler.ts): seven doors, one lesson a day, alongside their own path; it waits on Today */}
+      {saved.settings.sampler ? (
+        <Text testID="suggest-sampler-on" accessibilityLiveRegion="polite" style={[type.body(14), { textAlign: "center", color: color.ink }]}>✓ {t("companion.sampler.suggestOn")}</Text>
+      ) : (
+        <Pressable testID="suggest-sampler" accessibilityRole="button" onPress={() => update({ sampler: { on: today } })} style={{ minHeight: 44, justifyContent: "center", alignItems: "center" }}>
+          <Text style={{ fontFamily: font.text[600], fontSize: 14, color: color.ink, textDecorationLine: "underline" }}>{t("companion.sampler.suggest")}</Text>
+        </Pressable>
+      )}
     </WelcomeFrame>
   );
 }

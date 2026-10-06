@@ -1,6 +1,7 @@
 import { TabHeader } from "@/ui/tab-header";
 import { focused } from "@/lib/focus";
 import { useTitle } from "@/lib/title";
+import { switchHome } from "@/lib/companion/guide-actions";
 // You: who you are on the hill (three numbers), where you are on the path (the camp you're in, what's next), then every
 // setting in plain groups: your practice, what you've kept, your people, your data, plan, language, help & legal.
 import { DOORS, SUN_NOTES, data, icon, lessonInfo, pos } from "@ih/content";
@@ -201,7 +202,7 @@ export default function You() {
 
           <Group title={t("companion.you.gPractice")}>
             <Row a={t("companion.you.gPath")} b={t("companion.you.pathB", { door: doorLabel(wing), voice: voiceLabel(wing, ic.short).short })} onPress={() => setChanging(!changing)} right={changing ? t("common.close") : t("common.change")} />
-            {changing ? <View style={{ paddingHorizontal: 16, paddingBottom: 12 }}><DoorGrid current={wing} onPick={(w) => { update({ homeWing: w, visitWing: st.visitWing === w ? null : st.visitWing, active: "home" }); setChanging(false); }} /></View> : null}
+            {changing ? <View style={{ paddingHorizontal: 16, paddingBottom: 12 }}><DoorGrid current={wing} onPick={(w) => { update(switchHome(st, w)); setChanging(false); }} /></View> : null}
             <Row a={t("companion.you.also")} b={st.visitWing ? `${doorLabel(st.visitWing)} · ${t("common.day", { n: lessonFor(st.visitWing) })}` : t("companion.you.alsoB")} onPress={() => setAdding(!adding)} right={adding ? t("common.close") : st.visitWing ? t("common.change") : t("common.add")} />
             {adding ? (
               <View style={{ paddingHorizontal: 16, paddingBottom: 12 }}>

@@ -29,8 +29,9 @@ design changes go live, ask before deploying, real testimonials only, check usag
    `write-lessons-new-process` (script: scripts/workflows/write-lessons-new-process.js, run with the Workflow tool, scriptPath; args {year:4, batch:10, ranges per door
    1062–1426}). Then an Opus second pass on years 1–4. Push each year live only with the owner's okay.
 2. Couple features: "walk it together", "before the holiday", couple Guide questions.
-3. Guide, sprint 2: one-tap "switch to my own path" in chat, the sampler week, tidier "remember this" chips, an
-   automatic grader for the 30 cases.
+3. Guide, sprint 2 (built on a branch, not live): one-tap "switch to my own path" in chat (confirm + undo), the
+   sampler week (app/sampler.tsx; 7 written lessons from 7 doors, Keeper review of the picks pending), tidier
+   "remember this" chips, and the grader (scripts/learning/guide-grader.mjs; needs a key to run for real).
 4. Cost per active user; alpha invites (owner picks 10–20 people); 5 interviews; Panditji sign-off; one voice LOI.
 5. The learning engine (owner priority, "as sophisticated as Harvard"): rebuild placement as a real adaptive test (item difficulty, understanding not word-matching, plausible distractors, stop when confident, a short open-answer check before big jumps), then mastery tracking and spaced review. Owner decisions (2026-10-03): placement first, Hinduism pilot, answers hidden until the end, outside expert reviews the rules first. Rules drafted: docs/learning/QUESTION_RULES.md. Next: the fake-test-taker simulator (§9), then the Hinduism bank (104 items) after the Tuesday reset.
 6. Owner decisions open: mascot name; founder's note "we don't care which door" (keep or match); research-page
