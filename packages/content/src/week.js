@@ -4,7 +4,9 @@
 // on day 7 a check-in on the whole week. Other lessons are built exactly as before.
 
 /** One question per day of the first week: the look-backs and the day-7 check-in. */
-export const WEEK_ONE = Object.freeze({
+import { CHECKIN, SAY_IT as SAY_EXTRA } from "./week1-data.js";
+
+const WEEK_ONE_BASE = {
   HINDUISM: [
     { day: 1, word: "Ganesha", q: "Vighnaharta, Ganesha's title, means…", options: ["remover of obstacles.", "elephant god.", "lord of the dance."], answer: 0 },
     { day: 2, word: "om", q: "in om, the silence after the sound is called…", options: ["the fourth.", "the end of the prayer.", "deep sleep."], answer: 0 },
@@ -14,10 +16,13 @@ export const WEEK_ONE = Object.freeze({
     { day: 6, word: "ishta devata", q: "an old Hindu verse says truth is one, and the wise…", options: ["call it by many names.", "argue about which god is real.", "keep it secret."], answer: 0 },
     { day: 7, word: "karma", q: "karma, the word, means…", options: ["action.", "payback.", "fate."], answer: 0 },
   ],
-});
+};
+
+/** The rebuilt paths' questions (docs/learning/week1) win over the ones written here. */
+export const WEEK_ONE = Object.freeze({ ...WEEK_ONE_BASE, ...CHECKIN });
 
 /** Words in a lesson bubble you can tap to hear said (term → how to say it). Longest first when matching. */
-export const SAY_IT = Object.freeze({
+const SAY_IT_BASE = {
   HINDUISM: {
     namaste: "na mas tay", namas: "na mas", namaskar: "na mas kar", om: "ohm", aum: "ah oo mm", dharma: "dhar ma", svadharma: "sva dhar ma",
     shanti: "shaan tee", pranam: "pra naam", "charan sparsh": "cha ran sparsh", ashirvad: "aa sheer vaad", ganesha: "ga nay sha", ganapati: "ga na pa tee",
@@ -25,7 +30,9 @@ export const SAY_IT = Object.freeze({
     savitar: "sa vi tar", upanishad: "oo pa ni shad", mandukya: "maan dook ya", chandogya: "chaan dog ya", "bhagavad gita": "bha ga vad gee ta", gita: "gee ta",
     arjuna: "ar ju na", krishna: "krish na", kurukshetra: "ku ruk shay tra", manusmriti: "ma nu smri tee", vyasa: "vyaa sa", shiva: "shi va", gayatri: "gaa ya tree", "bhur bhuvah svah": "bhoor bhoo vah svah", "tat savitur varenyam": "tat sa vi toor va rayn yam", "bhargo devasya dhimahi": "bhar go day vas ya dhee ma hee", "dhiyo yo nah prachodayat": "dhee yo yo nah pra cho da yaat", arti: "aar tee", prasad: "pra saad", "ishta devata": "ish ta day va taa", "ekam sat": "ay kam sat", karma: "kar ma", vighnaharta: "vigh na har ta",
   },
-});
+};
+
+export const SAY_IT = Object.freeze(Object.fromEntries([...new Set([...Object.keys(SAY_IT_BASE), ...Object.keys(SAY_EXTRA)])].map((d) => [d, { ...(SAY_IT_BASE[d] || {}), ...(SAY_EXTRA[d] || {}) }])));
 
 /** The look-back for day `day`: a question from two days before (from day 3 on), so review reaches past yesterday. */
 export function lookBack(door, day) {

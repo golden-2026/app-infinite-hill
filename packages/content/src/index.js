@@ -2,7 +2,7 @@
 // scripts/extract-design.mjs), plus the one piece of lesson assembly that lived inside v175's Session.
 import data from "../generated/data.js";
 import * as logic from "../generated/logic.js";
-import { HINDU_WEEK } from "./hindu-week.js";
+import { BET, QUIZ as WEEK_QUIZ, WEEK_INDEX } from "./week1-data.js";
 
 // Camps 2–5 are outline titles lifted from the design doc; a few are editing notes, not titles ("as in the Catholic
 // lane above" ×38, "public-domain translation"). Shown to people as "tomorrow: as in the Catholic lane above", so
@@ -15,19 +15,17 @@ for (const camps of Object.values(data.LATER || {})) {
   }
 }
 
-// The Hindu week one, rebuilt from the audience research (owner, 2026-10-06; docs/learning/AUDIENCE_RESEARCH.md): days
-// 1–14 follow the new order, and day one's opening question is about Ganesha, not namaste (namaste is now day four).
-for (const [day, e] of Object.entries(HINDU_WEEK)) {
-  const at = (data.CAMP1_HIN || []).findIndex((x) => x.day === +day);
-  if (at >= 0) Object.assign(data.CAMP1_HIN[at], e);
-}
-if (data.ADULT?.HINDUISM) {
-  data.ADULT.HINDUISM.word = "Ganesha";
-  data.ADULT.HINDUISM.bet = {
-    options: ["the god of good luck", "the remover of obstacles", "the god of elephants", "a god of war"],
-    answer: "the remover of obstacles",
-    reveal: "he's Vighnaharta, the remover of obstacles. that's why he goes first: before weddings, exams, new shops, and this.",
-  };
+// Each path's rebuilt first week (owner, 2026-10-06; docs/learning/week1/<DOOR>.json, built by scripts/learning/
+// build-week1.mjs into week1-data.js): days 1–21 of the camp-one index follow the new order, day one's opening
+// question matches it, and the "what do you think it means?" answers follow the days.
+for (const [door, days] of Object.entries(WEEK_INDEX)) {
+  const table = door === "HINDUISM" ? data.CAMP1_HIN : data.CAMP1_ALL?.[door];
+  for (const [day, e] of Object.entries(days)) {
+    const at = (table || []).findIndex((x) => x.day === +day);
+    if (at >= 0) Object.assign(table[at], e);
+  }
+  if (BET[door] && data.ADULT?.[door]) { data.ADULT[door].word = BET[door].word; data.ADULT[door].bet = { options: BET[door].options, answer: BET[door].answer, reveal: BET[door].reveal }; }
+  if (WEEK_QUIZ[door] && QUIZ[door]) Object.assign(QUIZ[door], WEEK_QUIZ[door]);
 }
 
 // The pilot has no accounts and a different analytics list than the design build assumed; say what's true.
