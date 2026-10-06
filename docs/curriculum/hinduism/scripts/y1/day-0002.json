@@ -19,13 +19,13 @@
     {
       "type": "the hook",
       "duration": "20 sec",
-      "voice": "Om. A yoga class ends with it, and a lot of Hindu prayers begin with it. Most people treat it as one long hum. One of the Upanishads hears four parts in it: three sounds, and a fourth that isn't a sound at all. First, a guess.",
+      "voice": "Om. A yoga class ends with it, and a lot of Hindu prayers begin with it. Most people treat it as one long hum. One of the oldest Hindu texts hears four parts in it: three sounds, and a fourth that isn't a sound at all. First, a guess.",
       "screen": ["`OM.` → `ONE HUM?` → `FOUR PARTS.`"]
     },
     {
       "type": "the teach",
       "duration": "1 min",
-      "voice": "Say it slowly and you can feel three sounds. A, with the mouth open. U, as the lips round. M, as they close. That's why it's sometimes written aum. The Mandukya Upanishad, a text of just twelve verses, starts by saying om is all of this: past, present, future, and whatever lies beyond time. Then it maps the sounds onto your day. A is waking, the world you can see and touch. U is dreaming, the world made of the mind. M is deep, dreamless sleep, where nothing is wanted. The fourth part has no sound. It's the silence after the m runs out, and the text calls it simply the fourth: the self, at peace. So om isn't a sign-off. It's a map of a whole day in one breath, with the quiet underneath it. The Bhagavad Gita says acts of offering, giving and discipline begin with it.",
+      "voice": "Say it slowly and you can feel three sounds. A, with the mouth open. U, as the lips round. M, as they close. That's why it's sometimes written aum. An old text of just twelve verses starts by saying om is all of this: past, present, future, and whatever lies beyond time. Then it maps the sounds onto your day. A is waking, the world you can see and touch. U is dreaming, the world made of the mind. M is deep, dreamless sleep, where nothing is wanted. The fourth part has no sound. It's the silence after the m runs out, and the text calls it simply the fourth: the self, at peace. So om isn't a sign-off. It's a map of a whole day in one breath, with the quiet underneath it. The Bhagavad Gita says acts of offering, giving and discipline begin with it.",
       "screen": ["`A — WAKING.` · `U — DREAMING.` · `M — DEEP SLEEP.` · `THE FOURTH — THE SILENCE.`"]
     },
     {
@@ -63,12 +63,12 @@
       [
         "om is one unbroken sound",
         false,
-        "the Mandukya Upanishad hears three sounds inside it, a, u and m, and a fourth part: the silence."
+        "an old Hindu text hears three sounds inside it, a, u and m, and a fourth part: the silence."
       ],
       [
-        "a whole Upanishad is built around om",
+        "a whole Hindu text is built around om",
         true,
-        "the Mandukya opens by saying om is all of this, then maps its sounds onto waking, dreaming and deep sleep."
+        "a short text of twelve verses says om is all of this, then maps its sounds onto waking, dreaming and deep sleep."
       ],
       [
         "om only belongs at the end of a class",
@@ -77,7 +77,7 @@
       ]
     ],
     "fork": {
-      "setup": "the Mandukya Upanishad gives a to waking, u to dreaming and m to deep sleep. what does it give the fourth part?",
+      "setup": "an old Hindu text gives a to waking, u to dreaming and m to deep sleep. what does it give the fourth part?",
       "options": ["a fourth, louder sound.", "the silence after the sound.", "a second om."],
       "answer": 1,
       "reveal": "the fourth has no sound at all. the text calls it the self, peaceful, where the noise of the world falls away."
@@ -85,7 +85,7 @@
     "original": {
       "script": "ॐ",
       "say": "OHM (a-u-m)",
-      "note": "Sanskrit: the sacred syllable, written as one sign. the Mandukya Upanishad hears a, u and m inside it."
+      "note": "Sanskrit: the sacred syllable, written as one sign, with a, u and m inside it."
     },
     "trapdoor": [
       "what you thought: a hum to end a yoga class.",
@@ -94,12 +94,12 @@
     ],
     "story": {
       "title": "the boy who waited for Death",
-      "text": "In the Katha Upanishad, a boy named Nachiketa is sent, in his angry father's words, to Death. He goes. Yama, the lord of death, is away, and the boy waits three days at his door without food. To make up for it, Yama offers him three wishes. For the third, Nachiketa asks what happens after we die. Yama offers him gold, long life, kingdoms, anything else. The boy says no. So Yama teaches him, and part of the teaching is a single word: the word all the Vedas point to is om.",
+      "text": "A boy named Nachiketa is sent to Death by his angry father, and he actually goes. Death isn't home, so the boy waits three days at the door without food. To make up for it, Death offers him three wishes. For the third, Nachiketa asks what happens after we die. Death offers him gold, long life, whole kingdoms, anything else instead. The boy says no. So Death teaches him, and part of the teaching is a single word: om.",
       "source": "Katha Upanishad 1.1–1.2.15"
     },
     "wrong": {
       "myth": "om is a hum to end a yoga class.",
-      "truth": "an Upanishad treats it as a map: a, u and m for waking, dreaming and deep sleep, and the silence after it as the fourth."
+      "truth": "one of the oldest Hindu texts treats it as a map: a, u and m for waking, dreaming and deep sleep, and the silence after it as the fourth."
     },
     "build": {
       "prompt": "build the sound in order: open, middle, closed.",
@@ -129,7 +129,8 @@
       "Editor pass: hook no longer tells the listener they felt self-conscious ('some people feel'); 'in about ten seconds' cut to 'in a single breath' under the claims rule; Mandukya ref widened to 1, 3–5, 7–12, since the states (waking, dream, deep sleep, the fourth) are described in 3–5 and 7 and mapped to a, u, m and the soundless fourth in 8–12.",
       "Editor review 2: trapdoor said the Mandukya calls the fourth 'turiya'; the Mandukya's own word is chaturtha (verses 7, 12), and turiya is the later term (Gaudapada and others), so the floor now says both. Spoken lines read and left as they were.",
       "Week-one upgrade (2026-10-06): games.story (the story behind it), games.wrong (what most people get wrong), games.build, games.think and the carry's together line were added by Claude for the owner's seven-day pilot; confirm each story's telling and source.",
-      "Tightened 2026-10-06 like day 1 (owner): said once, no homework asks, no repeated sign-off; the together line came out of the carry."
+      "Tightened 2026-10-06 like day 1 (owner): said once, no homework asks, no repeated sign-off; the together line came out of the carry.",
+      "Lightened 2026-10-06 (owner: week one must not feel like an advanced religion class): at most one famous text named a day, stories open with the drama, exact citations kept in sources."
     ]
   },
   "meta": {

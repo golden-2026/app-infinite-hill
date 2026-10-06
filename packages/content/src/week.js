@@ -7,7 +7,7 @@
 export const WEEK_ONE = Object.freeze({
   HINDUISM: [
     { day: 1, word: "namaste", q: "namaste, word for word, means…", options: ["I bow to you.", "the light in me sees the light in you.", "peace be with you."], answer: 0 },
-    { day: 2, word: "om", q: "in the Mandukya Upanishad, the silence after om is…", options: ["the fourth.", "the end of the prayer.", "deep sleep."], answer: 0 },
+    { day: 2, word: "om", q: "in om, the silence after the sound is called…", options: ["the fourth.", "the end of the prayer.", "deep sleep."], answer: 0 },
     { day: 3, word: "dharma", q: "dharma comes from a root meaning…", options: ["to hold.", "to obey.", "to pray."], answer: 0 },
     { day: 4, word: "shanti", q: "the third shanti is peace toward…", options: ["your own mind.", "the weather.", "other people."], answer: 0 },
     { day: 5, word: "pranam", q: "when you touch an elder's feet, what comes back?", options: ["a blessing, a hand on the head.", "nothing; it goes one way.", "a bow back to your feet."], answer: 0 },
