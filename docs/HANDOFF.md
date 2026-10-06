@@ -50,10 +50,10 @@ design changes go live, ask before deploying, real testimonials only, check usag
   once the weekly limit is hit.
 
 ## Session of 2026-10-06 (pick up here; newest first)
-- LATEST (evening): LIVE is expo-live73 (the rebuilt Hindu week). Committed, NOT live: every other path's first camp
+- LIVE: expo-live74 (2026-10-06 night, owner: "publish now, then fold in the findings"): every path's rebuilt first camp. Before that expo-live73 (the rebuilt Hindu week). Was committed before expo-live74: every other path's first camp
   rebuilt from its audience research (docs/learning/week1/<DOOR>.json → week1-data.js; scripts/learning/fix-day-refs.mjs
   and fix-app-days.mjs move later citations and app day links), tests updated (463/465; the 2 old environment failures
-  remain). Needs phone screenshots to the owner, then deploy approval (expo-live74). Screenshot robot for any path:
+  remain). Next: fold docs/learning/research-extra/THREADS_AND_COMMENTS.md into the first weeks (screenshots before it goes live). Screenshot robot for any path:
   scratchpad w1door.mjs <out> <day> <maxShots> <DOOR>.
 - Seams applied and committed: Hinduism, Judaism, Buddhism, Catholic, Christianity (101 rejects), Islam (57 rejects;
   batch b06 was split into b06a/b06b, so apply with --only=b01,…,b06a,b06b,…). Sikhism b01–b06 done, b07–b10 running,
