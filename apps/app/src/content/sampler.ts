@@ -11,9 +11,9 @@ type Pick = [door: string, day: number, title: string];
 export const SAMPLER_WEEK: readonly Pick[] = Object.freeze([
   ["JUDAISM", 109, "Modeh Ani (the first words on waking)"],
   ["BUDDHISM", 257, "The second arrow (SN 36.6)"],
-  ["SIKHISM", 8, "Everyone on the floor, everyone the same meal (langar)"],
+  ["SIKHISM", 2, "Everyone on the floor, everyone the same meal (langar)"],
   ["HINDUISM", 14, "Why it's said three times (om shanti shanti shanti)"],
-  ["ISLAM", 3, "Thank-you as a reflex (alhamdulillah)"],
+  ["ISLAM", 11, "Thank-you as a reflex (alhamdulillah)"],
   ["CHRISTIANITY", 89, "Love is patient (1 Corinthians 13)"],
   ["SPIRITUAL", 20, "Every tradition says it: you can't do this alone"],
 ]);

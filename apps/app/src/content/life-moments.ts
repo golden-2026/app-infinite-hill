@@ -35,7 +35,7 @@ export const FIRST_WEEK: Record<LifeMoment, Record<string, Pick[]>> = {
     CATHOLIC: [[126, "Baptism"], [27, "Simeon and Anna (Luke 2:22–38)"], [218, "Let the children come (Mark 10:1–16)"], [421, "Before I formed thee (Jeremiah 1)"]],
     JUDAISM: [[101, "Blessing the children"], [179, "Vayera: Isaac is born (Genesis 21:1–7)"], [395, "Tazria: after a birth (Leviticus 12)"], [336, "Bo: tell your child (Exodus 13:8)"]],
     // the adhan said in a newborn's ear is told inside day 15; no lesson on aqiqah or tahnik in years 1–3
-    ISLAM: [[15, "The call to prayer (and the adhan in a newborn's ear)"], [23, "The names"], [344, "The prayer at the foundations (pray for the ones not born)"], [21, "The short surahs (the ones every child knows)"]],
+    ISLAM: [[17, "The call to prayer (and the adhan in a newborn's ear)"], [23, "The names"], [344, "The prayer at the foundations (pray for the ones not born)"], [21, "The short surahs (the ones every child knows)"]],
     SIKHISM: [[656, "A child is born (Asa M5, ang 396)"], [53, "The song of bliss (sung at a baby's naming)"], [22, "Born at Talwandi, 1469"], [745, "Telling a sakhi to a child"]],
     SPIRITUAL: [[93, "The story you'd tell a child"], [816, "Welcoming birth"], [863, "Loving children"], [1042, "A newborn"]],
   },
@@ -43,12 +43,12 @@ export const FIRST_WEEK: Record<LifeMoment, Record<string, Pick[]>> = {
   diagnosis: {
     // thin: no year 1–3 lesson is about illness or healing prayer; these speak to fear, care for the body, and peace
     HINDUISM: [[35, "The mountain of herbs"], [14, "Why it's said three times (om shanti shanti shanti)"], [125, "The body as temple"], [213, "The divine qualities (Gita 16.1–16.5, fearlessness)"]],
-    BUDDHISM: [[3, "Not \"suffering\" (dukkha)"], [257, "The second arrow"], [274, "Without fear"], [673, "Read to the sick"]],
+    BUDDHISM: [[8, "Not \"suffering\" (dukkha)"], [257, "The second arrow"], [274, "Without fear"], [673, "Read to the sick"]],
     CHRISTIANITY: [[175, "Asleep on a cushion (Mark 4:35–41)"], [417, "Whom shall I fear? (Psalm 27)"], [549, "Fear not, little flock (Luke 12:22–34)"], [154, "Confession and anointing"]],
     CATHOLIC: [[42, "The storm (Mark 4:35–41)"], [130, "Anointing of the sick"], [165, "The Lord is my light (Psalm 26 [27])"], [607, "Is any man sick (James 5:13–16)"]],
     JUDAISM: [[302, "A very narrow bridge"], [328, "Psalms for the sick"], [585, "Heal us (refuah)"], [601, "Prayers for others (Mi Sheberach)"]],
     ISLAM: [[58, "The shirt and the false blood (beautiful patience)"], [287, "The illness"], [516, "Who feeds me and heals me"], [667, "A healing and a mercy (shifa')"]],
-    SIKHISM: [[6, "Without fear, without hate (Mool Mantar, line 2)"], [414, "Why worry, mind"], [495, "He knows your pain"], [358, "Jaap for courage"]],
+    SIKHISM: [[11, "Without fear, without hate (Mool Mantar, line 2)"], [414, "Why worry, mind"], [495, "He knows your pain"], [358, "Jaap for courage"]],
     SPIRITUAL: [[114, "Serenity, courage, wisdom"], [300, "Is this what I feared?"], [701, "The second arrow"], [756, "To someone suffering now"]],
   },
   // i want people around me who get it (Today also points to circles on the Together tab)
@@ -58,9 +58,9 @@ export const FIRST_WEEK: Record<LifeMoment, Record<string, Pick[]>> = {
     CHRISTIANITY: [[20, "Not a building (where two or three)"], [140, "Fellowship (Acts 2:42)"], [337, "Not good to be alone (Genesis 2:18–25)"], [163, "Through the roof (Mark 2:1–12)"]],
     CATHOLIC: [[74, "The first community (Acts 2:42–47)"], [104, "The entrance (we gather first)"], [318, "The body of Christ (CCC 787–796)"], [36, "Through the roof (Mark 2:1–12)"]],
     JUDAISM: [[18, "Why some prayers need ten people (the minyan)"], [27, "Not good to be alone (Genesis 2:18–25)"], [500, "Re'eh: rejoice together (Deuteronomy 16:11, 14)"], [1054, "The synagogue today"]],
-    ISLAM: [[16, "Friday (gather: jumu'ah)"], [259, "Brothers across tribes"], [369, "The rope of Allah (hold it together)"], [1040, "Your nearest mosque"]],
-    SIKHISM: [[13, "The congregation (sangat)"], [8, "Everyone on the floor, everyone the same meal (langar)"], [144, "Sitting in the sangat"], [465, "Living ashtpadi 7 (choose your company)"]],
-    SPIRITUAL: [[20, "Every tradition says it: you can't do this alone"], [17, "You're not the only one"], [278, "Sikhism: the free kitchen"], [421, "Alone, not lonely"]],
+    ISLAM: [[18, "Friday (gather: jumu'ah)"], [259, "Brothers across tribes"], [369, "The rope of Allah (hold it together)"], [1040, "Your nearest mosque"]],
+    SIKHISM: [[15, "The congregation (sangat)"], [2, "Everyone on the floor, everyone the same meal (langar)"], [144, "Sitting in the sangat"], [465, "Living ashtpadi 7 (choose your company)"]],
+    SPIRITUAL: [[20, "Every tradition says it: you can't do this alone"], [18, "You're not the only one"], [278, "Sikhism: the free kitchen"], [421, "Alone, not lonely"]],
   },
   // i need to forgive someone. or be forgiven.
   forgiveness: {
@@ -98,9 +98,9 @@ export const FIRST_WEEK: Record<LifeMoment, Record<string, Pick[]>> = {
     CHRISTIANITY: [[563, "Ten healed, one returned (Luke 17:11–19)"], [431, "Bless the Lord, O my soul (Psalm 103)"], [153, "The table, many views (eucharist: thanksgiving)"], [1059, "Thanksgiving"]],
     CATHOLIC: [[128, "The Eucharist"], [23, "My soul doth magnify (Luke 1:46–55)"], [177, "Bless the Lord, O my soul (Psalm 102 [103])"], [435, "The three young men (Daniel 3)"]],
     JUDAISM: [[116, "For firsts (Shehecheyanu)"], [109, "Modeh Ani"], [593, "We thank you (Modim)"], [387, "Tzav: the thanks offering (Leviticus 7:12)"]],
-    ISLAM: [[3, "Thank-you as a reflex (alhamdulillah)"], [445, "If you are grateful (shukr, 14:7)"], [188, "Ad-Duha: speak of the blessings"], [694, "Sulayman's du'a"]],
-    SIKHISM: [[642, "Ardas in joy"], [457, "Living ashtpadi 5 (count the ten)"], [204, "Pauri 25: even hunger is a gift"], [2, "Waheguru: wonder + teacher"]],
-    SPIRITUAL: [[9, "Three things, out loud, badly"], [118, "Counting blessings"], [119, "Thank them directly"], [120, "Gratitude without the forced smile"]],
+    ISLAM: [[11, "Thank-you as a reflex (alhamdulillah)"], [445, "If you are grateful (shukr, 14:7)"], [188, "Ad-Duha: speak of the blessings"], [694, "Sulayman's du'a"]],
+    SIKHISM: [[642, "Ardas in joy"], [457, "Living ashtpadi 5 (count the ten)"], [204, "Pauri 25: even hunger is a gift"], [1, "Waheguru: wonder + teacher"]],
+    SPIRITUAL: [[14, "Three things, out loud, badly"], [118, "Counting blessings"], [119, "Thank them directly"], [120, "Gratitude without the forced smile"]],
   },
 };
 
