@@ -39,12 +39,13 @@ export function sayable(door, text) {
   const terms = SAY_IT[door];
   if (!terms || !text) return [{ text: String(text || "") }];
   const keys = Object.keys(terms).sort((a, b) => b.length - a.length).map((k) => k.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
-  const re = new RegExp(`\\b(${keys.join("|")})\\b`, "gi");
+  // trailing punctuation rides with the word, so a line never breaks before its comma
+  const re = new RegExp(`\\b(${keys.join("|")})\\b([,.;:!?…]*)`, "gi");
   const out = [];
   let at = 0;
   for (const m of String(text).matchAll(re)) {
     if (m.index > at) out.push({ text: text.slice(at, m.index) });
-    out.push({ text: m[0], say: terms[m[0].toLowerCase()] });
+    out.push({ text: m[0], say: terms[m[1].toLowerCase()] });
     at = m.index + m[0].length;
   }
   if (at < text.length) out.push({ text: text.slice(at) });

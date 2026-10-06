@@ -50,7 +50,7 @@ test("lessons without the upgrade are built exactly as before", () => {
 
 test("old-language words in a line can be tapped to hear them", () => {
   const parts = sayable("HINDUISM", "Namaste is Sanskrit. Shri ganeshaya namah, before the work.");
-  assert.deepEqual(parts.filter((p) => p.say).map((p) => p.text), ["Namaste", "Shri ganeshaya namah"]);
+  assert.deepEqual(parts.filter((p) => p.say).map((p) => p.text), ["Namaste", "Shri ganeshaya namah,"]);
   assert.equal(parts.map((p) => p.text).join(""), "Namaste is Sanskrit. Shri ganeshaya namah, before the work.");
   assert.equal(sayable("JUDAISM", "shalom").length, 1);
 });
