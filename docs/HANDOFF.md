@@ -50,6 +50,14 @@ design changes go live, ask before deploying, real testimonials only, check usag
   once the weekly limit is hit.
 
 ## Session of 2026-10-06 (pick up here; newest first)
+- JOB 2 (style pass, owner: "use a workflow"): brief docs/learning/map/JOB2_BRIEF.md; examples STYLE_EXAMPLES.md;
+  machine checklist scripts/learning/style-lint.mjs DOOR FROM TO; guard scripts/learning/style-guard.mjs REV. Pilot done and
+  committed (days 22-34, all paths). Year 1 days 35-331 running as workflow style-pass-year-1 (run wf_9f95203f-822; resume
+  with its scriptPath + resumeFromRunId). After it: lint every path 35-331, guard vs the pre-run commit, validate, ship-door
+  all 8, commit, screenshots, ask to deploy. Years 2-3 (days 332-1061) after the Tuesday reset unless the owner pays extra.
+  Lessons learned: open-ended reviewer loops don't converge; machine-check the mechanical rules, review only lost/invented.
+- Also done 2026-10-06/07: scholar packets docs/review/<PATH>.md (scripts/learning/review-packets.mjs); cleanup round
+  (apply.mjs now merges index fields); site video label + demo day numbers (not live); games.guess support; YEARS_4_5.md.
 - LIVE: expo-live75 (2026-10-06 night, owner: "publish as is"): job 1 from the five-year map on all 8 paths
   (~55 lessons; docs/learning/map/), seams on all 8 paths, Guide safety (crisis wording, offline crisis reply, psychedelics
   and channeling rules, 43 cases). Research: docs/learning/research-extra/ (Reddit saved by the owner into
