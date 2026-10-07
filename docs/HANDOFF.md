@@ -50,6 +50,7 @@ design changes go live, ask before deploying, real testimonials only, check usag
   once the weekly limit is hit.
 
 ## Session of 2026-10-06 (pick up here; newest first)
+- LIVE: expo-live77 (2026-10-07, owner: "make day 30 live"): the new-style lesson pilot on Hindu day 30 (games.chat / games.gloss / games.recall turn on packages/content/src/v2.js: new word first, tap-for-meaning, complete the chat, old words in the pairs, one rotating game, challenge finale, "one you missed", identity line; explain-my-answer opens the Guide prefilled). Every other lesson is built as before.
 - LIVE: expo-live76 (2026-10-07, owner: "publish it"): the style pass on all of year 1 (days 22-331, all 8 paths), the
   cleanup round, the site video label and demo day numbers. Next: years 2-3 style pass (days 332-1061) after the Tuesday
   2026-10-13 reset with the same workflow (scriptPath style-pass-year-1; change FIRST/LAST and the y1 folder to y2/y3).
