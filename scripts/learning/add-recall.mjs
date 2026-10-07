@@ -17,7 +17,15 @@ const meaningOf = (o) => {
   const p = (o.games?.match?.pairs || []).find((x) => String(x[0]).toLowerCase() === String(o.word).toLowerCase());
   return p ? p[1] : null;
 };
-const short = (m) => { let x = String(m).trim(); if (x.length > 42) x = x.split(/[,;:(]/)[0].trim(); return x.length <= 42 ? x : null; };
+// a meaning that fits a pair tile (42 characters); a clipped clause must not end on a little word ("maps a")
+const short = (m) => {
+  const x = String(m).trim();
+  if (x.length <= 42) return x;
+  const y = x.split(/[,;:(]/)[0].trim();
+  return y.length >= 10 && y.length <= 42 && !/(a|an|the|of|to|that|and|or|for|with|in|on|by|who|which)$/i.test(y) ? y : null;
+};
+// a real term, not a lesson's phrase-title ("The leap", "Ravana hears", "Fourteen years")
+const isTerm = (w) => !/^[A-Z][a-z]+ [a-z]+$/.test(String(w)) && !/^(two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|after|before)/i.test(String(w));
 for (let d = +FROM; d <= +TO; d++) {
   const f = file(d); if (!f) continue;
   const raw = fs.readFileSync(f, "utf8");
@@ -28,7 +36,7 @@ for (let d = +FROM; d <= +TO; d++) {
     const o = read(e);
     const raw0 = o ? meaningOf(o) : null;
     const m = raw0 ? short(raw0) : null;
-    if (!m || today.has(String(o.word).toLowerCase()) || picks.some((p) => p[0].toLowerCase() === String(o.word).toLowerCase())) continue;
+    if (!m || !isTerm(o.word) || today.has(String(o.word).toLowerCase()) || picks.some((p) => p[0].toLowerCase() === String(o.word).toLowerCase())) continue;
     picks.push([o.word, m]);
   }
   if (!picks.length) { console.log(`${DOOR}:${d} no earlier words with a meaning`); continue; }
