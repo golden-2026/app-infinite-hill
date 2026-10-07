@@ -50,6 +50,7 @@ design changes go live, ask before deploying, real testimonials only, check usag
   once the weekly limit is hit.
 
 ## Session of 2026-10-06 (pick up here; newest first)
+- LIVE: expo-live78 (2026-10-07, owner: "publish the pilot"): job 3 pilot, the new recipe on days 22-28 of all 8 paths (brief docs/learning/map/V2_BRIEF.md; checks scripts/learning/v2-lint.mjs, scripts/learning/add-recall.mjs). Owner then approved year 1 on all 8 paths now, extra charges okay.
 - LIVE: expo-live77 (2026-10-07, owner: "make day 30 live"): the new-style lesson pilot on Hindu day 30 (games.chat / games.gloss / games.recall turn on packages/content/src/v2.js: new word first, tap-for-meaning, complete the chat, old words in the pairs, one rotating game, challenge finale, "one you missed", identity line; explain-my-answer opens the Guide prefilled). Every other lesson is built as before.
 - LIVE: expo-live76 (2026-10-07, owner: "publish it"): the style pass on all of year 1 (days 22-331, all 8 paths), the
   cleanup round, the site video label and demo day numbers. Next: years 2-3 style pass (days 332-1061) after the Tuesday
