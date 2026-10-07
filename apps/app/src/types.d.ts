@@ -45,6 +45,9 @@ declare module "@ih/content" {
   export const OUTLINES: Readonly<Record<string, Map<number, any>>>;
   export const DOORS: [string, string][];
   export const GRADED: readonly string[];
+  export function isV2(script: any): boolean;
+  export function glossIn(gloss: any, text: string): Record<string, { meaning: string; script?: string; say?: string }> | null;
+  export function composeV2(steps: any[], script: any, day: number): any[];
   export function planDay(o: { wing: string; day: number; lesson?: number; mode?: string; named?: boolean; level?: number; script?: any | null }): { steps: any[]; word: string; carry: string; title: string; info: any };
   export const LEVELS: readonly string[];
   export function clampLevel(n: number): number;

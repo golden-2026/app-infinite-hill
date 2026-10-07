@@ -1,5 +1,6 @@
 // @ih/content: the published design build's content and lesson logic (generated/ comes from
 // scripts/extract-design.mjs), plus the one piece of lesson assembly that lived inside v175's Session.
+import { composeV2, isV2 } from "./v2.js";
 import data from "../generated/data.js";
 import * as logic from "../generated/logic.js";
 import { BET, QUIZ as WEEK_QUIZ, WEEK_INDEX } from "./week1-data.js";
@@ -484,10 +485,12 @@ export function planDay({ wing, day, lesson = day, mode = "adult", named = true,
   // for carry lines): camp one's quiz table first, then the script's own gloss
   steps = applyGuess(steps, wing, lesson, given || info, level >= 3 && mode === "adult" ? 3 : 2);
   if (mode === "adult" && given?.games?.build) steps = upgradeWeek(steps, given, wing, day);
+  // the new recipe (v2.js), for a script that carries its data
+  if (mode === "adult" && script && script.day === lesson && isV2(script)) steps = composeV2(steps, script, day);
   return { steps, word: R.word, carry: R.carry, title: info?.title || d1.title || "", info };
 }
 
-export const GRADED = Object.freeze(["order", "match", "listen", "taphear", "bet", "myth", "scenes", "typeit", "rush", "rhythm", "build", "lookback", "think", "checkin"]);
+export const GRADED = Object.freeze(["chat", "order", "match", "listen", "taphear", "bet", "myth", "scenes", "typeit", "rush", "rhythm", "build", "lookback", "think", "checkin"]);
 
 // The upgraded first week (week.js; owner, 2026-10-06). Shorter bubbles; fewer, better games (build the word, a look
 // back past yesterday, a last thinking question; on day 7 a check-in on the week instead of the quick round); what most
@@ -560,6 +563,7 @@ import { levelUp, tapRound } from "./level.js";
 import { QUIZ } from "./quiz.js";
 import { WEEK_ONE, lookBack } from "./week.js";
 export { SAY_IT, WEEK_ONE, lookBack, sayable } from "./week.js";
+export { composeV2, glossIn, isV2 } from "./v2.js";
 import { featureFor, lessonFromScript } from "./lesson-script.js";
 export { FORMAT as SCRIPT_FORMAT, checkScript, chunkOf, chunkPath, compileScript, featureFor, lessonFromScript, lessonScript, orderIdeas, resetLessonCache, spoken } from "./lesson-script.js";
 export { LEVELS, clampLevel, deeperRound, knownSoFar, levelUp, likeness, rushStep, syllables, tapRound, tile, tileKey, wrongAnswers } from "./level.js";

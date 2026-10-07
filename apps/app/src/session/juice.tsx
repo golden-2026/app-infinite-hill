@@ -2,6 +2,7 @@
 // combos that burst, and a progress bar that heats up. Steps call `useFx().react(...)` the moment an answer
 // is known; the lesson frame shows the mascot and the combo burst; `Verdict` is the banner each step shows.
 import { createContext, useContext, useEffect, type ReactNode , useState } from "react";
+import { router } from "expo-router";
 import { Text, View , Pressable } from "react-native";
 import Animated, { Easing, useAnimatedStyle, useReducedMotion, useSharedValue, withDelay, withSequence, withSpring, withTiming } from "react-native-reanimated";
 import { Sparkle } from "@/fx/Sparkle";
@@ -91,7 +92,7 @@ const SPARK_ON_GOLD = ["#FFFFFF", "#F08C00", "#FFFFFF", "#B86B00"];
 
 /** The verdict banner: springs up in the bottom bar with the next button (gold = right, coral = not quite).
  *  Right answers throw a little burst of sun specks off the badge; a miss gives the banner a small head-shake. */
-export function Verdict({ ok, title, body, onNext, label, seed = 0 }: { ok: boolean | null; title?: string; body?: string; onNext: () => void; label?: string; seed?: number }) {
+export function Verdict({ ok, title, body, onNext, label, seed = 0, explain }: { ok: boolean | null; title?: string; body?: string; onNext: () => void; label?: string; seed?: number; explain?: string }) {
   const reduce = useReducedMotion();
   const y = useSharedValue(reduce ? 0 : 56), o = useSharedValue(0), x = useSharedValue(0), badge = useSharedValue(reduce ? 1 : 0.4);
   const bad = ok === false;
@@ -121,6 +122,7 @@ export function Verdict({ ok, title, body, onNext, label, seed = 0 }: { ok: bool
           <Text accessibilityLiveRegion="polite" style={{ fontFamily: font.display[800], fontSize: 20, color: bad ? RED : color.ink }}>{head}</Text>
         </View>
         {body ? <Text style={[type.body(14), { color: bad ? "#7a2320" : color.ink }]}>{body}</Text> : null}
+        {explain ? <Pressable testID="explain" accessibilityRole="button" onPress={() => { tapHaptic(); router.push({ pathname: "/guide", params: { q: explain } }); }} style={({ pressed }) => ({ minHeight: 44, borderRadius: 999, borderWidth: 2, borderColor: bad ? RED : color.ink, alignItems: "center", justifyContent: "center", opacity: pressed ? 0.6 : 1 })}><Text style={[type.eyebrow(), { color: bad ? RED : color.ink }]}>{t("session.explain")}</Text></Pressable> : null}
         <Btn kind={bad ? "miss" : "ink"} onPress={onNext}>{label ?? (bad ? t("session.okayNext") : t("session.next"))}</Btn>
       </Animated.View>
     </SlotFill>

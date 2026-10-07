@@ -12,7 +12,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { addFact, getMemory, moodOn, MOODS, useMemory } from "@/lib/companion/memory";
 import { crisisWords } from "@/lib/companion/shape";
 import { guideActions, movedOn, seeking, rememberOffers, shortFact, spotOf, switchHome, type DoorSpot, type GuideAction } from "@/lib/companion/guide-actions";
-import { router } from "expo-router";
+import { router, useLocalSearchParams } from "expo-router";
 import { HelpCard } from "@/ui/companion";
 import { companionAvailable, companionChat, type ChatMessage, type CompanionContext, type CompanionProfile, answerLang } from "@/lib/companion-ai";
 import { flag } from "@/lib/flags";
@@ -143,7 +143,10 @@ export default function Guide() {
   const words = days.filter((d: any) => d.day <= day).map(wordName);
   const today = days.find((d: any) => d.day === day) || days[0] || data.DAY1[wing] || data.DAY1.SPIRITUAL;
   const book = saved.settings.book;
-  const [q, setQ] = useState("");
+  // "explain my answer" in a lesson opens here with the question filled in (never sent on its own)
+  const params = useLocalSearchParams<{ q?: string }>();
+  const [q, setQ] = useState(() => (typeof params.q === "string" ? params.q.slice(0, 400) : ""));
+  useEffect(() => { if (typeof params.q === "string" && params.q) setQ(params.q.slice(0, 400)); }, [params.q]);
   const [busy, setBusy] = useState(false);
   // words that mean someone may be in danger bring up real help (988), as in the journal. nothing is logged.
   const [help, setHelp] = useState(false);

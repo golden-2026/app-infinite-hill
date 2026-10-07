@@ -3,7 +3,7 @@ import { pulseLesson } from "@/lib/pulse";
 import { useTitle } from "@/lib/title";
 // A day's lesson: v175 Session, as a real screen. Queue of steps, combo, "one more time" on the misses
 // (nothing counted twice), then the tally. Leaving asks first; finishing records the sit and opens /done.
-import { DOORS, GRADED, data, deeperRound, icon, kidLesson, knownSoFar, lessonInfo, native, planDay, pos, screenLines, splitBeats } from "@ih/content";
+import { DOORS, GRADED, data, isV2, deeperRound, icon, kidLesson, knownSoFar, lessonInfo, native, planDay, pos, screenLines, splitBeats } from "@ih/content";
 import { KidTally, kidPlanFor } from "@/session/kids";
 import { dueCards, slipsFor } from "@/lib/missed";
 import { recallQuestion } from "@/session/recall";
@@ -16,7 +16,7 @@ import { LESSONS_BASE, lessonStore } from "@/lib/lessons";
 import { scriptWithin } from "@/session/script-load";
 import { LessonSources } from "@/session/sources-sheet";
 import { RhythmStep, RushStep, SayStep, ScenesStep, TypeItStep } from "@/session/games";
-import { BuildStep, CheckinStep, SayText, StoryStep, ThinkStep, WrongStep } from "@/session/week";
+import { BuildStep, ChatStep, CheckinStep, GlossText, SayText, StoryStep, ThinkStep, WrongStep } from "@/session/week";
 import { LinearGradient } from "expo-linear-gradient";
 import { Redirect, router, useLocalSearchParams, useNavigation } from "expo-router";
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
@@ -43,7 +43,7 @@ import { Enter } from "@/ui/enter";
 import { useChrome } from "@/ui/chrome";
 
 // The eyebrow over each step: the lesson part's name (planDay's segment type), or else the app's own name for the step.
-const SEG_TYPES = ["recall", "bet", "myth", "fork", "original", "trapdoor", "bell", "guess", "order", "match", "listen", "scenes", "say", "rhythm", "typeit", "rush", "sit", "breath", "speak", "taphear", "fixintro", "tally", "wrong", "story", "build", "think", "lookback", "checkin"];
+const SEG_TYPES = ["chat", "recall", "bet", "myth", "fork", "original", "trapdoor", "bell", "guess", "order", "match", "listen", "scenes", "say", "rhythm", "typeit", "rush", "sit", "breath", "speak", "taphear", "fixintro", "tally", "wrong", "story", "build", "think", "lookback", "checkin"];
 function segName(seg: string | undefined, type: string): string {
   if (seg) {
     const k = `session.part.${seg}` as Key;
@@ -395,7 +395,11 @@ function Session({ door, day, kidId, mode, deep, extra = false, voiceOn, onFinis
         {kidMode ? null : <EsLessonNote />}
         <ScrollView key={k} contentContainerStyle={[st.body, { justifyContent: top ? "flex-start" : "center" }]}>
           <Enter style={{ width: "100%", alignItems: "center" }}>
-            {step.newToday ? <View style={[st.newPill, { alignSelf: "flex-start" }]} accessibilityLabel={t("session.newToday")}><Text style={[type.eyebrow(), { color: color.ink }]}>{t("session.newToday")}</Text></View> : null}
+            {(() => {
+              // a pill over the step: "new word" / "challenge" (the new lesson recipe), "one you missed" in the fix round
+              const tag: Key | null = phase === "fix" && step.type !== "tally" ? "session.tag.again" : step.tag ? (`session.tag.${step.tag}` as Key) : step.newToday ? "session.newToday" : null;
+              return tag ? <View style={[st.newPill, { alignSelf: "flex-start" }, phase === "fix" ? { backgroundColor: "#FF9B85" } : null]} accessibilityLabel={t(tag)}><Text style={[type.eyebrow(), { color: color.ink }]}>{t(tag)}</Text></View> : null;
+            })()}
             {children}
           </Enter>
         </ScrollView>
@@ -423,7 +427,7 @@ function Session({ door, day, kidId, mode, deep, extra = false, voiceOn, onFinis
         <View style={{ width: "100%", maxWidth: 380, gap: 12, alignSelf: "center" }}>
           {step.head ? <Text style={[type.eyebrow(11), { color: color.gold, letterSpacing: 1.76, textAlign: "center" }]}>{step.head}</Text> : null}
           <View style={{ backgroundColor: "#fff", borderRadius: 22, paddingVertical: 16, paddingHorizontal: 18 }}>
-            <SayText door={door} text={step.text} style={{ fontFamily: font.display[700], fontSize: fs, lineHeight: fs * 1.3, color: color.ink, letterSpacing: -0.2 }} />
+            {step.gloss ? <GlossText door={door} text={step.text} gloss={step.gloss} style={{ fontFamily: font.display[700], fontSize: fs, lineHeight: fs * 1.3, color: color.ink, letterSpacing: -0.2 }} /> : <SayText door={door} text={step.text} style={{ fontFamily: font.display[700], fontSize: fs, lineHeight: fs * 1.3, color: color.ink, letterSpacing: -0.2 }} />}
           </View>
           <View style={{ width: 0, height: 0, marginLeft: 38, marginTop: -12, borderLeftWidth: 12, borderRightWidth: 12, borderTopWidth: 14, borderLeftColor: "transparent", borderRightColor: "transparent", borderTopColor: "#fff" }} />
           <Guy pose={BEAT_POSES[qi % BEAT_POSES.length]} h={150} style={{ alignSelf: "flex-start", marginLeft: 6 }} />
@@ -439,6 +443,7 @@ function Session({ door, day, kidId, mode, deep, extra = false, voiceOn, onFinis
     case "wrong": return frame(<WrongStep step={step} onDone={() => next()} />);
     case "story": return frame(<StoryStep step={step} door={door} onDone={() => next()} />, { top: true });
     case "build": return frame(<BuildStep step={step} onDone={verdict} />, { top: true });
+    case "chat": return frame(<ChatStep step={step} onDone={verdict} />, { top: true });
     case "think": return frame(<ThinkStep step={step} onDone={verdict} />, { top: true });
     // the week's check-in is its own score: counted once, never sent back through "one more time"; what slipped joins
     // the missed-words review
@@ -522,6 +527,7 @@ function Session({ door, day, kidId, mode, deep, extra = false, voiceOn, onFinis
           <Text accessibilityRole="header" style={{ fontFamily: font.mark[800], fontSize: 36, color: color.gold, textAlign: "center" }}>{day === 1 ? t("session.tally.first") : t("session.tally.day", { day })}</Text>
           {mode === "adult" && day > 1 ? <LevelPill level={level} up={nextLevel > level} /> : null}
           <Text style={[type.body(15), { color: "#ffffffcc", marginTop: -8 }]}>{acc === 100 ? t("session.tally.clean") : t("session.tally.body")}</Text>
+          {isV2(script) ? <Text style={[type.h1(22), { color: "#fff", textAlign: "center" }]}>{t(`session.tally.id.${day % 5}` as Key)}</Text> : null}
           <View style={{ flexDirection: "row", width: "100%", borderRadius: 22, borderWidth: 2, borderColor: color.gold, backgroundColor: "#ffffff0d", paddingVertical: 14 }}>
             {stats.map(([g, v, l], k) => (
               <View key={l} style={{ flex: 1, alignItems: "center", borderLeftWidth: k ? 1 : 0, borderLeftColor: "#ffffff22" }}>

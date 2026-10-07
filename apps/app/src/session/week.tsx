@@ -135,6 +135,79 @@ export function ThinkStep({ step, onDone }: { step: any; onDone: Done }) {
   );
 }
 
+// ─── complete the chat (the new recipe, @ih/content v2.js): someone asks, you pick the best reply ──
+export function ChatStep({ step, onDone }: { step: any; onDone: Done }) {
+  const [picked, setPicked] = useState<string | null>(null);
+  const fx = useFx();
+  const [order] = useState<string[]>(() => shuffled(step.options));
+  const ok = picked === step.answer;
+  return (
+    <View style={{ gap: 12, width: "100%" }}>
+      <Kicker>{t("session.chat.title")}</Kicker>
+      <View style={{ gap: 4, maxWidth: "88%" }}>
+        <Text style={[type.eyebrow(8), { color: "#ffffff99" }]}>{t("session.chat.who", { who: step.who })}</Text>
+        <View style={[s.bubble, { backgroundColor: "#fff", borderBottomLeftRadius: 6 }]}>
+          <Text style={[s.line, { color: color.ink }]}>{step.says}</Text>
+        </View>
+      </View>
+      <View style={[s.bubble, { alignSelf: "flex-end", minWidth: "60%", minHeight: 52, borderStyle: "dashed", borderWidth: 1.5, borderColor: picked ? color.gold : "#ffffff55", backgroundColor: picked ? color.gold : "transparent", borderBottomRightRadius: 6 }]}>
+        <Text style={[s.line, { fontSize: 16, color: picked ? color.ink : "#ffffff66" }]}>{picked ?? "…"}</Text>
+      </View>
+      {order.map((o) => {
+        const right = picked !== null && o === step.answer;
+        return (
+          <Pressable key={o} accessibilityRole="button" accessibilityLabel={o} disabled={picked !== null} onPress={() => { setPicked(o); fx.react(o === step.answer ? "right" : "wrong"); }}
+            style={[s.choice, { borderColor: right ? color.gold : "#ffffff44", backgroundColor: right ? "#ffffff18" : "#ffffff10", opacity: picked !== null && !right && picked !== o ? 0.5 : 1 }]}>
+            <Text style={{ fontFamily: font.text[600], fontSize: 15, color: "#fff" }}>{o}</Text>
+          </Pressable>
+        );
+      })}
+      {picked !== null ? <Verdict ok={ok} seed={step.says.length} body={step.meaning ? t("session.meaning", { m: step.meaning }) : ok ? undefined : t("session.itsAnswer", { a: step.answer })} explain={t("session.explain.q", { says: step.says, answer: step.answer })} onNext={() => onDone(ok)} /> : null}
+    </View>
+  );
+}
+
+/** Teaching text whose terms (games.gloss) can be tapped: the word, its original script with the sound above it, and
+ *  what it means, in a small card under the bubble. Terms the door can say aloud are still said on tap. */
+export function GlossText({ door, text, gloss, style }: { door: string; text: string; gloss: Record<string, { meaning: string; script?: string; say?: string }>; style: TextStyle }) {
+  const [open, setOpen] = useState<string | null>(null);
+  const keys = Object.keys(gloss).sort((a, b) => b.length - a.length).map((k) => k.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+  const re = new RegExp(`\\b(${keys.join("|")})\\b`, "gi");
+  const parts: { text: string; term?: string }[] = [];
+  let at = 0;
+  for (const m of text.matchAll(re)) {
+    if (m.index! > at) parts.push({ text: text.slice(at, m.index) });
+    const term = Object.keys(gloss).find((k) => k.toLowerCase() === m[1].toLowerCase())!;
+    parts.push({ text: m[0], term });
+    at = m.index! + m[0].length;
+  }
+  if (at < text.length) parts.push({ text: text.slice(at) });
+  const g = open ? gloss[open] : null;
+  return (
+    <View style={{ gap: 10 }}>
+      <Text style={style}>
+        {parts.map((p, k) => p.term ? (
+          <Text key={k} accessibilityRole="button" accessibilityLabel={t("session.gloss.a11y", { term: p.text })} onPress={() => { tapHaptic(); setOpen(open === p.term ? null : p.term!); }}
+            style={{ color: color.ink, textDecorationLine: "underline", textDecorationStyle: "dotted", textDecorationColor: color.gold, backgroundColor: open === p.term ? "#FFF3C4" : undefined }}>{p.text}</Text>
+        ) : <SayText key={k} door={door} text={p.text} style={style} />)}
+      </Text>
+      {g ? (
+        <View accessibilityLiveRegion="polite" style={[s.card, { backgroundColor: color.cream, borderColor: color.gold, gap: 4 }]}>
+          {g.script ? (
+            <View style={{ alignItems: "flex-start" }}>
+              {g.say ? <Text style={[type.eyebrow(9), { color: "#8a6d00" }]}>{g.say}</Text> : null}
+              <Text style={{ fontFamily: font.display[700], fontSize: 26, color: color.ink }}>{g.script}</Text>
+            </View>
+          ) : null}
+          <Text style={{ fontFamily: font.display[800], fontSize: 16, color: color.ink }}>{open}</Text>
+          <Text style={{ fontFamily: font.text[400], fontSize: 15, lineHeight: 21, color: color.ink }}>{g.meaning}</Text>
+          {g.say || g.script ? <Pressable accessibilityRole="button" accessibilityLabel={t("session.sayIt.a11y", { term: open! })} onPress={() => speak(open!, true)} style={{ minHeight: 36, justifyContent: "center" }}><Text style={[type.eyebrow(), { color: color.ink }]}>🔊 {open}</Text></Pressable> : null}
+        </View>
+      ) : null}
+    </View>
+  );
+}
+
 // ─── the week's check-in (day 7): one question per day, then the score ──
 export function CheckinStep({ step, onDone, onMiss }: { step: any; onDone: Done; onMiss: (word: string) => void }) {
   const fx = useFx();
@@ -192,4 +265,5 @@ const s = StyleSheet.create({
   chip: { borderWidth: 2, borderRadius: 14, paddingVertical: 12, paddingHorizontal: 18, minHeight: 44, justifyContent: "center" },
   slot: { minHeight: 64, borderBottomWidth: 1, borderBottomColor: "#ffffff33", alignItems: "center", justifyContent: "center", paddingBottom: 8 },
   choice: { borderWidth: 1.5, borderRadius: 16, paddingVertical: 15, paddingHorizontal: 17 },
+  bubble: { borderRadius: 20, paddingVertical: 12, paddingHorizontal: 16 },
 });
