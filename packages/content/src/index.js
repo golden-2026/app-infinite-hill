@@ -415,6 +415,9 @@ export function guessFor(wing, lesson, info) {
   const fixed = lesson <= 21 ? QUIZ[wing]?.[lesson] : null;
   if (fixed) return { answer: fixed[0], wrong: fixed.slice(1) };
   if (!info?.script) return null;
+  // the script's own choices (games.guess: [what the word means, wrong, wrong]), written for the lesson (2026-10 style pass)
+  const own = info.games?.guess;
+  if (Array.isArray(own) && own.length === 3 && own.every((x) => typeof x === "string" && x.trim())) return { answer: own[0], wrong: own.slice(1) };
   const meaning = scriptMeaning(info) || trapdoorMeaning(info);
   if (!meaning) return null;
   const seen = new Set([bare(meaning), bare(info.word)]);

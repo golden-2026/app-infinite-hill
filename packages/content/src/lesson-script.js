@@ -191,6 +191,13 @@ export function checkScript(s, { index = null, door = null, day = null } = {}) {
     const want3 = [/^what you thought:/, /^what it means:/, /^what a scholar hears:/];
     G.trapdoor.forEach((x, k) => { if (!want3[k].test(x)) err(`games.trapdoor floor ${k + 1} starts "${want3[k].source.slice(1, -1)}"`); });
   }
+  if ("guess" in G) {
+    // optional: "what do you think it means?" choices, [the right meaning, wrong, wrong]
+    const g = G.guess;
+    if (!Array.isArray(g) || g.length !== 3 || !g.every((x) => typeof x === "string" && x.trim() && x.length <= 90)) err("games.guess needs 3 short strings: [the right meaning, wrong, wrong]");
+    else if (new Set(g.map((x) => x.toLowerCase().trim())).size !== 3) err("games.guess has a repeated choice");
+    else if (g[0].toLowerCase().replace(/[^a-z0-9]+/g, " ").trim() === String(s.carry || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim()) err("games.guess: the right meaning must differ from the carry line");
+  }
   for (const [re, why] of FORBIDDEN) if (re.test(JSON.stringify(G))) err(`games: ${why}`);
   const brit = unquoted(JSON.stringify(G)).match(BRITISH);
   if (brit) err(`games: British spelling "${brit[0]}"`);
