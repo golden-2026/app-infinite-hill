@@ -16,7 +16,7 @@ Append both review notes to `review.notes`: the job 2 restyle note and the job 3
 ## Checks, all must be clean before you finish
 
 - `node scripts/learning/style-lint.mjs DOOR FROM TO` reports 0 problems.
-- `node scripts/learning/style-guard.mjs REV`: run it the way JOB2_BRIEF says, if it applies to your range.
+- `node scripts/learning/style-guard.mjs HEAD DOOR` (compares with the last saved version) reports 0 problems for your days.
 - `node scripts/learning/v2-lint.mjs DOOR FROM TO` reports 0 problems.
 - `node packages/content/scripts/validate-scripts.mjs` shows 0 fail in your files.
 
