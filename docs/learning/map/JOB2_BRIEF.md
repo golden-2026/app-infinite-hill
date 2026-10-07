@@ -16,7 +16,27 @@ validator rules in `packages/content/src/lesson-script.js` (`WORDS`, `FORBIDDEN`
 - Any lesson whose review notes say "Rewritten 2026-10-06 from the five-year map" or "Week one rebuilt": leave its
   voice alone; only add `games.guess` if it's missing.
 
-## Change (only where needed; a lesson that already reads well gets only `games.guess`)
+## Every lesson gets the full pass (the pilot's lesson, 2026-10-07)
+A pilot where writers "only added games.guess" scored 2/5: the old habits stayed. So every lesson in your batch gets
+a real voice edit, and must pass this checklist before you move on:
+- [ ] No "the bell holds the time", and no stock replacement phrase repeated across lessons.
+- [ ] No homework in the carry ("today, do…", "tell someone…", "send one…"); the carry is the line + at most one
+      plain sentence.
+- [ ] The review never checks up on homework ("Did you…?", "Who got your…?"): it recaps yesterday's word and idea.
+- [ ] Practice: two or three sentences, a real practice, ends cleanly (no "after the bell, go do it").
+- [ ] Hook opens on the scene, surprise or question; no "Camp two. The stories. Yesterday…" throat-clearing, no recap.
+- [ ] Repeats cut: each point said once. Spoken text (all voice segments) 300–480 words.
+- [ ] Sign-off differs from the previous day's.
+- [ ] Nothing lost: every fact, name, number, quote, story beat and teaching point from before is still there (cut
+      only repetition and filler). Never add a fact, a motive, or a claim the sources don't make.
+- [ ] `games.guess`: right answer first; all three within ±25% of each other's length (the right one must NOT be
+      the longest by much); wrong choices are believable confusions, never contain today's word, never repeat
+      something just taught as the answer to another day; proper names capitalized; the right answer is not just the
+      word or title restated.
+- [ ] Replace the review note with "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged."
+      only when the voice actually changed.
+
+## Change
 1. **Say it once.** Cut repeated points, restatements and throat-clearing ("so, as we said…", "in other words…").
 2. **Lead with the interesting.** The hook opens with the scene, the surprise or the question, not with a book's name
    or a definition. Stories open with the drama.
