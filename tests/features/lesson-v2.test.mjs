@@ -28,13 +28,14 @@ test("Hindu day 30 is built in the new order", () => {
 });
 
 test("a script without games.chat is untouched", () => {
-  const script = read("hinduism/scripts/y1/day-0031.json");
+  const script = read("hinduism/scripts/y1/day-0010.json");
   assert.ok(!isV2(script));
-  assert.ok(!planDay({ wing: "HINDUISM", day: 31, mode: "adult", script }).steps.some((s) => s.type === "chat"));
+  assert.ok(!planDay({ wing: "HINDUISM", day: 10, mode: "adult", script }).steps.some((s) => s.type === "chat"));
 });
 
 test("glossIn matches whole words only", () => {
   const g = { Lanka: { meaning: "an island" } };
   assert.ok(glossIn(g, "He leapt to Lanka."));
   assert.equal(glossIn(g, "Lankan shores"), null);
+  assert.ok(glossIn({ "taṇhā": { meaning: "craving" } }, "the Pali is taṇhā."));
 });

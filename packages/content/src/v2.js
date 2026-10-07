@@ -21,7 +21,8 @@ export function glossIn(gloss, text) {
   if (!gloss || !text) return null;
   const found = {};
   for (const term of Object.keys(gloss).sort((a, b) => b.length - a.length)) {
-    const re = new RegExp(`\\b${term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "i");
+    // whole words, accented letters included (taṇhā, Ávila)
+    const re = new RegExp(`(?<![\\p{L}\\p{M}])${term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(?![\\p{L}\\p{M}])`, "iu");
     if (re.test(text)) found[term] = gloss[term];
   }
   return Object.keys(found).length ? found : null;

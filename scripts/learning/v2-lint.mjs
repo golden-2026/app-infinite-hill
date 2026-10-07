@@ -42,7 +42,7 @@ for (let d = +FROM; d <= +TO; d++) {
   const terms = Object.keys(gl);
   if (terms.length < 3 || terms.length > 6) p.push(`gloss has ${terms.length} terms (3-6)`);
   for (const t of terms) {
-    const re = new RegExp(`\\b${t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "i");
+    const re = new RegExp(`(?<![\\p{L}\\p{M}])${t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(?![\\p{L}\\p{M}])`, "iu");
     if (!re.test(voice)) p.push(`gloss "${t}" isn't in the spoken text`);
     const e = gl[t] || {};
     if (!e.meaning || words(e.meaning) > 14) p.push(`gloss "${t}": meaning missing or over 14 words`);
