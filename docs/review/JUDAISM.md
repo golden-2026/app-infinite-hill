@@ -312,7 +312,7 @@ Word: **the parsha** · Line: *join the cycle wherever it is*
 Sources: Babylonian Talmud, Bava Kamma 82a (Ezra and the Monday and Thursday readings); Babylonian Talmud, Berakhot 8a (twice in Hebrew, once in translation); The annual Torah reading cycle (54 portions)
 
 ## Day 45 · Father of many nations (Genesis 17:5)
-Word: **av hamon goyim** · Line: *no test at the door*
+Word: **Ovadiah** · Line: *no test at the door*
 
 - Rewritten 2026-10-06 from the five-year map; confirm with the Keeper.
 - Replaces 'Arguing for Sodom' (Genesis 18:16–33), which repeated day 8 almost line for line (same quotes, Moses, Job, the Hasidic rabbi). The Sodom argument still lives in day 8; day 46 continues the Sodom story; day 177 (Vayera: shall not the Judge do justly?) returns to it.
@@ -419,7 +419,7 @@ Word: **nichum avelim** · Line: *show up, say less*
 Sources: Genesis 23:2; Genesis 50:10; Job 2:13 (seven days and seven nights in silence); Babylonian Talmud, Moed Katan 28b (comforters wait for the mourner to speak); Babylonian Talmud, Sotah 14a (God comforted mourners; so should we); Shulchan Aruch, Yoreh De'ah 376:1 (comforting mourners)
 
 ## Day 669 · The Tenth of Tevet
-Word: **The Tenth of Tevet** · Line: *for the unknown dates*
+Word: **yahrzeit** · Line: *for the unknown dates*
 
 - Added 2026-10-06 from the five-year map (standing rule: every fast-day lesson carries the health line; never present fasting as required at risk to health): one sentence that health and life come first. Minor fasts (Tenth of Tevet, Fast of Esther, Seventeenth of Tammuz): the ill, pregnant and nursing are generally excused (Shulchan Aruch, Orach Chayim 550:1 and 686:2 with commentaries). Tisha B'Av: the ill and anyone at risk eat; others ask a doctor and a rabbi (OC 554:5-6). Confirm with the Keeper.
 - Audit (y2 second sample): 'the first of the fasts' was ambiguous (in calendar order the Fast of Gedaliah comes first); now says the day remembers where the destruction began.
@@ -432,7 +432,7 @@ Word: **The Tenth of Tevet** · Line: *for the unknown dates*
 Sources: Shulchan Aruch, Orach Chayim 550:1; 554:5–6 (who is excused from the fasts); 2 Kings 25:1; Zechariah 8:19; Israeli Chief Rabbinate decision on Yom HaKaddish HaKlali
 
 ## Day 672 · The Fast of Esther (Esther 4:16)
-Word: **The Fast of Esther** · Line: *before the feast, a fast*
+Word: **Mordecai** · Line: *before the feast, a fast*
 
 - Added 2026-10-06 from the five-year map (standing rule: every fast-day lesson carries the health line; never present fasting as required at risk to health): one sentence that health and life come first. Minor fasts (Tenth of Tevet, Fast of Esther, Seventeenth of Tammuz): the ill, pregnant and nursing are generally excused (Shulchan Aruch, Orach Chayim 550:1 and 686:2 with commentaries). Tisha B'Av: the ill and anyone at risk eat; others ask a doctor and a rabbi (OC 554:5-6). Confirm with the Keeper.
 - Editor review (2026-10-01): cut the superlatives ("the most powerful man in the world", "one of the bravest lines in the Bible") and softened "many give" to a custom.

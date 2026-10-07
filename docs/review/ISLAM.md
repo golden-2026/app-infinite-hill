@@ -272,7 +272,7 @@ Word: **juz' 'amma** · Line: *the ones every Muslim child knows*
 Sources: Qur'an 78:1; Qur'an 78–114 (juz' 'amma); 112 (al-Ikhlas); 113 (al-Falaq); 114 (an-Nas)
 
 ## Day 113 · When you stop, and start again
-Word: **wa in qall** · Line: *small, steady, and back again*
+Word: **adwamuha** · Line: *small, steady, and back again*
 
 - Rewritten 2026-10-06 from the five-year map; confirm with the Keeper.
 - NEW lesson from the map's #1 change (the pray-stop-restart cycle, the most repeated r/islam theme: REDDIT.md #5; REDDIT_REPLIES.md §6; THREADS_AND_COMMENTS.md §5). It replaces 'The fingers will testify' (Tirmidhi 3583, counting on the fingertips); that content now lives as one line in day 114, and the post-prayer count is still taught on days 114 and 116.
