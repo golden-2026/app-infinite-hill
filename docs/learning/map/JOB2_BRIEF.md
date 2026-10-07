@@ -33,6 +33,12 @@ a real voice edit, and must pass this checklist before you move on:
       the longest by much); wrong choices are believable confusions, never contain today's word, never repeat
       something just taught as the answer to another day; proper names capitalized; the right answer is not just the
       word or title restated.
+- [ ] (from pilot 2) Keep every inclusive option ("if you don't pray, …", a fallback for people without music);
+      keep small story beats that make a twist or a point land; never add a new practice, prayer or claim (e.g.
+      "in every Gospel", "what Catholics sing at Mass") the old lesson didn't make; keep hedges ("tradition says",
+      "nobody has a record"); every screen still matches its voice; the word segment stays as it was (trim only).
+- [ ] (from pilot 2) No new stock phrase across a batch (e.g. every practice opening "Let the breath…"); the carry's
+      extra sentence doesn't repeat the teach's last line and isn't an instruction.
 - [ ] Replace the review note with "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged."
       only when the voice actually changed.
 
