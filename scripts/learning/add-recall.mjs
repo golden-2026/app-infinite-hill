@@ -26,6 +26,7 @@ const short = (m) => {
 };
 // a real term, not a lesson's phrase-title ("The leap", "Ravana hears", "Fourteen years")
 const isTerm = (w) => !/^[A-Z][a-z]+ [a-z]+$/.test(String(w)) && !/^(two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|after|before)/i.test(String(w));
+let prev = new Set(); // yesterday's old words: not again today, so the review keeps moving
 for (let d = +FROM; d <= +TO; d++) {
   const f = file(d); if (!f) continue;
   const raw = fs.readFileSync(f, "utf8");
@@ -36,11 +37,12 @@ for (let d = +FROM; d <= +TO; d++) {
     const o = read(e);
     const raw0 = o ? meaningOf(o) : null;
     const m = raw0 ? short(raw0) : null;
-    if (!m || !isTerm(o.word) || today.has(String(o.word).toLowerCase()) || picks.some((p) => p[0].toLowerCase() === String(o.word).toLowerCase())) continue;
+    if (!m || !isTerm(o.word) || today.has(String(o.word).toLowerCase()) || prev.has(String(o.word).toLowerCase()) || picks.some((p) => p[0].toLowerCase() === String(o.word).toLowerCase())) continue;
     picks.push([o.word, m]);
   }
   if (!picks.length) { console.log(`${DOOR}:${d} no earlier words with a meaning`); continue; }
   s.games.recall = picks;
+  prev = new Set(picks.map((p) => String(p[0]).toLowerCase()));
   const indent = /^\{\n( +)/.exec(raw)?.[1].length || 2;
   fs.writeFileSync(f, JSON.stringify(s, null, indent) + "\n");
   console.log(`${DOOR}:${d}`, JSON.stringify(picks));
