@@ -201,11 +201,7 @@ export function levelUp(steps, { wing, day, level = 1, seed = day * 7 + 3 }) {
         break;
       }
       case "listen": {
-        if (L >= 4) {
-          // no choices at all: hear it, type it
-          out.push({ ...s, type: "typeit", prompt: "type the word you hear.", answer: s.answer, replays: 2, level: L });
-          break;
-        }
+        // (owner, 2026-10-07: no typing anywhere, like Duolingo; the hardest level gets more, closer choices and one replay)
         const n = L >= 3 ? 3 : 2;
         out.push({ ...s, options: shuffle([s.answer, ...wrongAnswers(s.answer, words, { n, level: L, seed: seed + 2 })], seed + 3), replays: L >= 3 ? 1 : 99, level: L });
         break;
@@ -270,7 +266,8 @@ export function deeperRound(wing, day, level) {
   const vocab = pool(wing);
   let id = 0;
   const steps = [];
-  steps.push({ id: id++, type: "typeit", prompt: "type the word you hear.", speak: today.word, answer: today.word, replays: 1, level: L });
+  // hear it, tap it (no typing anywhere)
+  steps.push({ id: id++, type: "listen", graded: true, prompt: "which word did you hear?", speak: today.word, options: shuffle([today.word, ...wrongAnswers(today.word, known.map((k) => k.word), { n: 3, level: 5, seed: seed + 9 })], seed + 9), answer: today.word, replays: 1, level: L });
   steps.push({ id: id++, type: "guess", graded: true, prompt: `${today.word} — which line is it?`, options: shuffle([today.carry, ...wrongAnswers(today.carry, vocab.map((v) => v.carry), { n: 3, level: 5, seed, meaning: true })], seed), answer: today.carry, level: L });
   const r = rushStep(wing, day, L, seed + 1, { n: Math.min(6, Math.max(3, known.length)) });
   if (r) steps.push({ ...r, id: id++ });

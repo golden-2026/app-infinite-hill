@@ -8,6 +8,7 @@ import { speak } from "@/lib/sound";
 import { tapHaptic } from "@/lib/haptics";
 import { Btn, color, font, type } from "@/ui";
 import { SlotFill } from "@/ui/slot";
+import { Enter } from "@/ui/enter";
 import { Verdict, useFx } from "@/session/juice";
 import { t } from "@/i18n";
 
@@ -150,9 +151,14 @@ export function ChatStep({ step, onDone }: { step: any; onDone: Done }) {
           <Text style={[s.line, { color: color.ink }]}>{step.says}</Text>
         </View>
       </View>
-      <View style={[s.bubble, { alignSelf: "flex-end", minWidth: "60%", minHeight: 52, borderStyle: "dashed", borderWidth: 1.5, borderColor: picked ? color.gold : "#ffffff55", backgroundColor: picked ? color.gold : "transparent", borderBottomRightRadius: 6 }]}>
-        <Text style={[s.line, { fontSize: 16, color: picked ? color.ink : "#ffffff66" }]}>{picked ?? "…"}</Text>
-      </View>
+      {/* your reply appears only once you tap one (owner, 2026-10-07: an empty bubble read like a box to type in) */}
+      {picked ? (
+        <Enter style={{ alignSelf: "flex-end", maxWidth: "88%" }}>
+          <View style={[s.bubble, { backgroundColor: color.gold, borderBottomRightRadius: 6 }]}>
+            <Text style={[s.line, { fontSize: 16, color: color.ink }]}>{picked}</Text>
+          </View>
+        </Enter>
+      ) : null}
       {order.map((o) => {
         const right = picked !== null && o === step.answer;
         return (

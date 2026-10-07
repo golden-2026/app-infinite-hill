@@ -60,7 +60,8 @@ test("a script day plays the script: its spoken text and its games", { skip: !bu
     assert.ok(beats(p).includes(hook.split(/(?<=[.?!])\s/)[0]), `${door} ${day}: the hook's first sentence is spoken`);
     assert.notEqual(beats(p), beats(plain));
     const match = p.steps.find((x) => x.type === "match");
-    if (match) assert.deepEqual(match.pairs, s.games.match.pairs);
+    // the new recipe (games.chat) keeps today's pairs first, then mixes in up to two old words (games.recall), five at most
+    if (match) { const recall = s.games.chat ? (s.games.recall || []).slice(0, 2) : []; assert.deepEqual(match.pairs, [...s.games.match.pairs.slice(0, 5 - recall.length), ...recall]); }
     if (day === 3) assert.equal(p.steps.find((x) => x.type === "fork")?.setup, s.games.fork.setup);
   }
 });

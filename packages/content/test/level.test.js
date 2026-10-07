@@ -25,7 +25,7 @@ test("levels change the games: more choices, typing, dragging, the rhythm and th
   const low = planDay({ wing: "HINDUISM", day: 14, level: 1 }).steps;
   const high = planDay({ wing: "HINDUISM", day: 14, level: 4 }).steps;
   assert.equal(low.find((s) => s.type === "listen").options.length, 3);
-  assert.ok(high.some((s) => s.type === "typeit"));
+  assert.ok(!high.some((s) => s.type === "typeit")); // no typing anywhere (owner, 2026-10-07)
   assert.ok(!high.some((s) => s.type === "order") && high.some((s) => s.type === "scenes"));
   assert.ok(high.some((s) => s.type === "rhythm"));
   assert.ok(high.some((s) => s.type === "rush"), "day 14 is a week's end");
@@ -46,7 +46,7 @@ test("the quick round and go-deeper use only words already met", () => {
   assert.ok(r.pairs.every(([w]) => known.has(w)));
   const deep = deeperRound("HINDUISM", 10, 2);
   assert.equal(deep.at(-1).type, "tally");
-  assert.ok(deep.some((s) => s.type === "typeit"));
+  assert.ok(!deep.some((s) => s.type === "typeit") && deep.some((s) => s.type === "listen"));
 });
 
 // The rhythm game split "sign of peace" into sig·nof·pea·ce and "kingdom" into ki·ngdom (atlas, 2026-09-30).
