@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: the enchiridion, the little book kept in the hand. Your line was keep it at hand. Is your note still in your pocket? Day three hundred thirty-three.",
+      "voice": "Yesterday's word was enchiridion, the little book kept in the hand. Your line was keep it at hand.",
       "screen": [
         "`ENCHIRIDION — KEEP IT AT HAND.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Page one of the handbook is not a pep talk. It's a sorting job. Two piles. Into the first goes everything that is really yours. Into the second, everything else. That's section one. No warm-up, no story, no promise. Epictetus seems to think that if this one sorting goes wrong, nothing else in the book will help, and if it goes right, the rest will start to make sense on its own. So before the handbook says anything about living well, it asks a plainer question. Today: what is ours.",
+      "voice": "Page one of the handbook is not a pep talk. It's a sorting job. Two piles: into the first goes everything that is really yours; into the second, everything else. No warm-up, no story, no promise. Epictetus seems to think that if this one sorting goes wrong, nothing else in the book will help, and if it goes right, the rest will start to make sense on its own. So before it says anything about living well, the handbook asks a plainer question: what is ours?",
       "screen": [
         "`PAGE ONE: A SORTING JOB.` → `TWO PILES.` → `WHAT IS OURS?`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the line itself. In George Long's translation of 1877, the handbook begins: \"Of things some are in our power, and others are not.\" Then the lists. In our power: our opinions, our impulses toward things, our desires, our aversions. In a word, whatever is our own doing. Not in our power: the body, property, reputation, office. In a word, whatever is not our own doing. Second, the surprise. Look what's in the second pile. Your own body. Your good name. Your job. On a list of what's mine, those might come first. Epictetus says no: your body can get sick without asking you, your reputation lives in other people's heads, your job can be taken by a letter. What you do with all of it, how you judge it, what you reach for and what you push away, that stays with you. Third, why it matters. The things in our power, he says, are free by nature, nothing can block them. The things not in our power are weak, slavish, easily blocked, and belong to others. Treat the second pile as if it were the first, and you'll be frustrated, he warns, and you'll blame gods and people. Fourth, the tool. When something harsh shows up, he suggests saying to it: you are an appearance, not necessarily the thing you seem. Then ask one question. Is this in my power or not? If it isn't, be ready to say: it is nothing to me. That sounds cold at first. Epictetus means something narrower. Not that it doesn't matter, but that it isn't where your work is. Your work starts here.",
+      "voice": "In George Long's translation of 1877, the handbook begins: \"Of things some are in our power, and others are not.\" In our power: our opinions, our impulses toward things, our desires, our aversions; in a word, whatever is our own doing. Not in our power: the body, property, reputation, office; whatever is not our own doing. Now look what's in the second pile. Your own body. Your good name. Your job. On a list of what's mine, those might come first. Epictetus says no: your body can get sick without asking you, your reputation lives in other people's heads, your job can be taken by a letter. What you do with all of it, how you judge it, what you reach for and what you push away, stays with you. Why it matters: the things in our power, he says, are free by nature; nothing can block them. The rest are weak, slavish, easily blocked, and belong to others. Treat the second pile as if it were the first, he warns, and you'll be frustrated, and you'll blame gods and people. Then the tool. When something harsh shows up, he suggests saying to it: you are an appearance, not necessarily the thing you seem. Then ask one question: is this in my power or not? If it isn't, be ready to say: it is nothing to me. That sounds cold at first, but Epictetus means something narrower. Not that it doesn't matter, but that it isn't where your work is. Your work starts here.",
       "screen": [
         "`SOME THINGS ARE IN OUR POWER.` · `BODY, PROPERTY, NAME: NOT OURS.` · `FREE BY NATURE, OR EASILY BLOCKED.` · `ASK: IS THIS IN MY POWER?` · then, large: `START HERE.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Take a pen and paper, or do it in your head. Draw a line down the middle. On the left, list three things that are yours in Epictetus' sense: maybe how you'll speak to someone today, what you'll aim at, what you'll let go of. On the right, list three that aren't: the weather, a decision someone else is making, how a test comes back. Read both lists slowly. Then rest your eyes on the left side, and breathe. The bell holds the time.",
+      "voice": "Draw a line down the middle of a page, or do it in your head. On the left, three things that are yours in Epictetus' sense, like how you'll speak to someone, what you'll aim at, what you'll let go of; on the right, three that aren't, like the weather, someone else's decision, how a test comes back. Read both lists slowly, then rest your eyes on the left side and breathe.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: start here. The first time today you feel stuck or stirred up, ask Epictetus' question: is this in my power? Then start there. Day three hundred thirty-three.",
+      "voice": "Your line: start here. One plain question, is this in my power, and the work begins on your side of it. See you tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "People who practice Stoicism often sort a worry into what is up to them and what isn't, sometimes on paper in two columns, and put their effort into the first.",
   "games": {
+    "guess": [
+      "the translator whose 1877 English opens the handbook",
+      "an English poet who wrote verses on the Stoics",
+      "a Stoic teacher from the city of Rome"
+    ],
     "match": {
       "prompt": "two piles — tap the pairs.",
       "pairs": [
@@ -139,7 +144,30 @@
         "sublimis",
         "Latin for high or lofty"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your sister",
+      "says": "What's the very first thing Epictetus' handbook teaches?",
+      "options": [
+        "Sort things into what's in your power, like your judgments, and what isn't.",
+        "That your body, your job and your good name are what's truly yours.",
+        "That nothing outside you matters at all, so stop caring about it."
+      ],
+      "answer": 0,
+      "meaning": "Section one sorts things: judgments, desires and aversions are in our power; body, property, reputation and office are not."
+    },
+    "gloss": {
+      "George Long": {
+        "meaning": "the scholar whose 1877 English translation of the handbook is quoted"
+      },
+      "Epictetus": {
+        "meaning": "a Stoic teacher who grew up enslaved and wrote nothing himself",
+        "say": "ep-ik-TEE-tus"
+      },
+      "handbook": {
+        "meaning": "the Enchiridion: Arrian's short book of Epictetus' teaching"
+      }
+    }
   },
   "sources": [
     {
@@ -163,7 +191,9 @@
       "Enchiridion 1, Long 1877: confirm exact wording 'Of things some are in our power, and others are not.'",
       "The lists (opinion, movement toward a thing, desire, aversion; body, property, reputation, offices) are paraphrased from Long's chapter 1.",
       "'you are an appearance, and not at all the thing which you appear to be' and 'it is nothing to me': paraphrased; confirm sense.",
-      "Greek τὰ ἐφ᾽ ἡμῖν and its transliteration: confirm."
+      "Greek τὰ ἐφ᾽ ἡμῖν and its transliteration: confirm.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

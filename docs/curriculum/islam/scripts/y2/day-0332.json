@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday you stood at the big lookout, at the top of year one, back at salaam. Your line was from here you can see. What did you see when you looked back? Day three hundred thirty-two.",
+      "voice": "Yesterday you stood at the big lookout, at the top of year one, back at salaam. Your line was from here you can see.",
       "screen": [
         "`FROM HERE YOU CAN SEE.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Pick up a printed Qur'an and open it at the front. If it's an Arabic copy, the front is on the right, because Arabic reads right to left. The first page is short: seven verses, often framed in gold. Turn it, and the second surah begins and keeps going for dozens of pages. Year one walked this book from the back, where the surahs are short enough to learn in an afternoon. Year two opens it at the front and reads forward. Today: the whole book.",
+      "voice": "Pick up a printed Qur'an and open it at the front. In an Arabic copy, the front is on the right, because Arabic reads right to left. The first page is short: seven verses, often framed in gold. Turn it, and the second surah begins and keeps going for dozens of pages. Year one walked this book from the back, where the surahs are short enough to learn in an afternoon. Year two opens it at the front and reads forward. Today: the whole book.",
       "screen": [
         "`OPEN IT AT THE FRONT.` → `SEVEN VERSES, FRAMED IN GOLD.` → `YEAR TWO READS FORWARD.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "The word Qur'an means a recitation, something read aloud. It shares a root with iqra', read, the command that tradition says came to the Prophet Muhammad ﷺ in the cave. So the book is named for being heard. The written copy has a different name: mushaf, a bound set of pages. A mushaf is the recitation, bound. Now a fact about the order. The book isn't arranged in the order the verses came down. The verses tradition counts as the first revealed sit near the back, in Surah al-Alaq. The book opens instead with a short prayer and then the long surah al-Baqarah. Scholars hold that the order of verses within each surah was set by the Prophet himself; on the order of the surahs, some say the same, and others say it came partly from his companions. Either way, it's the order Muslims read in today. So this year reads that way. From al-Fatiha, the Opening, through al-Baqarah and the long Medinan surahs, through Yusuf and Maryam and the Cave, onward, until we reach the edge of the part you already walked, the thirtieth juz'. In Ramadan some read one juz' a night and close the book on the last nights. Bukhari records that the Prophet told a companion, Abdullah ibn Amr, who wanted to read it constantly, to take a month for each reading. We'll take a year, a few verses at a time, slow enough to hear each one. Muslims call a full reading a khatm, a sealing. This year is a long, slow khatm.",
+      "voice": "The word Qur'an means a recitation, something read aloud. It shares a root with iqra', read, the command that tradition says came to the Prophet Muhammad ﷺ in the cave. So the book is named for being heard. The written copy has another name: mushaf, a bound set of pages, the recitation, bound. Now a fact about the order. The book isn't arranged in the order the verses came down. The verses tradition counts as the first revealed sit near the back, in Surah al-Alaq. The book opens instead with a short prayer and then the long surah al-Baqarah. Scholars hold that the order of verses within each surah was set by the Prophet himself; on the order of the surahs, some say the same, and others say it came partly from his companions. Either way, it's the order Muslims read in today, so this year reads that way. From al-Fatiha, the Opening, through al-Baqarah and the long Medinan surahs, through Yusuf and Maryam and the Cave, onward, to the edge of the part you already walked, the thirtieth juz'. In Ramadan some read one juz' a night and close the book on the last nights. Bukhari records that the Prophet told a companion, Abdullah ibn Amr, who wanted to read it constantly, to take a month for each reading. This year takes it a few verses at a time, slow enough to hear each one. Muslims call a full reading a khatm, a sealing.",
       "screen": [
         "`QUR'AN: A RECITATION, READ ALOUD` · `NOT THE ORDER IT CAME DOWN` · `FROM THE OPENING, ONWARD` · `A KHATM: A FULL READING, SEALED`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: choose a daily reading time. Not a big one. A slot that already exists in your day: after the dawn prayer, on the bus, with the first coffee, before you sleep. Sit now, and picture tomorrow. Where are you when you have five quiet minutes? Picture yourself there, opening the book or this app at that time. Let it become an appointment you keep. If you pray, you can say bismillah as you decide. The bell holds the time.",
+      "voice": "Choose a daily reading time, a slot that already exists in your day: after the dawn prayer, on the bus, with the first coffee, before you sleep. Picture yourself there tomorrow, with five quiet minutes, opening the book or this app. If you pray, you can say bismillah as you decide.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: from the opening, onward. Today, set an alarm or a note for the reading time you chose, and keep it tomorrow. Day three hundred thirty-two.",
+      "voice": "Your line: from the opening, onward. A few verses at a time is still the whole book. Year two, day one.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Many Muslims keep a fixed daily time for reading the Qur'an, often after the dawn prayer, and aim to complete a full reading, a khatm, over a month, a Ramadan, or longer.",
   "games": {
+    "guess": [
+      "a full reading of the Qur'an, start to finish",
+      "the seal stamped on a printed copy of the Qur'an",
+      "one of the thirty parts read in Ramadan"
+    ],
     "match": {
       "prompt": "the whole book — tap the pairs.",
       "pairs": [
@@ -139,7 +144,45 @@
         "sajdah",
         "a prostration, forehead to the ground"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "a coworker",
+      "says": "Why doesn't the Qur'an start with the first verses that were revealed?",
+      "options": [
+        "It follows the reading order Muslims use, not the order verses came down.",
+        "It does; the opening surah is what came to the Prophet in the cave.",
+        "The first verses were lost early, so the book begins with later ones."
+      ],
+      "answer": 0,
+      "meaning": "The first verses revealed sit near the back, in al-Alaq. The book opens with al-Fatiha, in the order Muslims read today."
+    },
+    "gloss": {
+      "Qur'an": {
+        "meaning": "a recitation, something read aloud",
+        "script": "قرآن",
+        "say": "qur-AAN"
+      },
+      "mushaf": {
+        "meaning": "a written copy of the Qur'an, bound in pages",
+        "script": "مصحف",
+        "say": "MUS-haf"
+      },
+      "al-Alaq": {
+        "meaning": "Surah 96, where the first revealed verses sit",
+        "script": "العلق",
+        "say": "al-A-laq"
+      },
+      "juz'": {
+        "meaning": "one of the Qur'an's thirty parts",
+        "script": "جزء",
+        "say": "JUZ"
+      },
+      "khatm": {
+        "meaning": "a full reading of the Qur'an; literally a sealing",
+        "script": "ختم",
+        "say": "KHATM"
+      }
+    }
   },
   "sources": [
     {
@@ -169,7 +212,9 @@
       "The arrangement of the surahs: stated as 'most scholars hold the verse order was set by the Prophet; some say the surah order came partly from the companions.' Confirm this is a fair summary of the positions.",
       "Year two's scope follows the index ('from the Opening to the edge of the juz' you already know'); the script names Yusuf, Maryam and al-Kahf as stops on the way. Confirm against the year-two outline.",
       "Year opening: picks up the year-one lookout (day 331) and points at al-Fatiha (day 333).",
-      "Editor review (2026-10-01): cut 'most scholars', 'many read', 'the longest surah', 'the first command' and two stock lines; restated the verse-order vs surah-order positions; named Abdullah ibn Amr; softened the mushaf root claim. Confirm 'scholars hold the verse order was set by the Prophet' is fair."
+      "Editor review (2026-10-01): cut 'most scholars', 'many read', 'the longest surah', 'the first command' and two stock lines; restated the verse-order vs surah-order positions; named Abdullah ibn Amr; softened the mushaf root claim. Confirm 'scholars hold the verse order was set by the Prophet' is fair.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

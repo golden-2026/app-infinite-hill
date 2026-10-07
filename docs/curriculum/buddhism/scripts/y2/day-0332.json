@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: appamada, year one close, and your line, there's always more. Did you find a leaf to stand for the handful you carry? Year two starts now. Day three hundred thirty-two.",
+      "voice": "Yesterday: appamada, year one close, and your line, there's always more. Year two starts now.",
       "screen": [
         "`APPAMADA — THERE'S ALWAYS MORE.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Mud after rain, on a forest track in northern India. A deer has crossed here, and a jackal, and a wild boar, and something small with claws. Their prints are everywhere, crisscrossing. And then, right in the middle, one print so wide that you could set every other print inside it with room to spare. An elephant came this way. Year two of the path is called the Buddha's own words, and it begins with that footprint. It isn't the Buddha who points to it, though. It's one of his chief students, standing up before the monks to explain how everything fits together.",
+      "voice": "Mud after rain, on a forest track in northern India. A deer has crossed here, and a jackal, and a wild boar, and something small with claws. Their prints crisscross everywhere. And then, right in the middle, one print so wide you could set every other print inside it with room to spare. An elephant came this way. Year two of the path is the Buddha's own words, and it begins with that footprint. It isn't the Buddha who points to it, though. It's one of his chief students, standing up before the monks to explain how everything fits together.",
       "screen": [
         "`MUD AFTER RAIN.` → `A DEER, A JACKAL, A BOAR.` → `ONE PRINT HOLDS THEM ALL.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "The student is Sariputta, the monk tradition remembers for his wisdom. The talk is number twenty-eight in the Middle-Length Discourses, and its name means the great simile of the elephant's footprint. Sariputta tells the monks: just as the footprints of every creature that walks will fit inside an elephant's footprint, which is the biggest of them all, so every good and wholesome teaching fits inside the four noble truths. Then he names them. The truth of dukkha, the pain and unsatisfactoriness of life. The truth of where it comes from. The truth that it can end. The truth of the way that leads there. You met all four in year one. Here's the surprise. Sariputta doesn't then wander off into lofty ideas. He spends most of the talk on the first truth, and he gets very ordinary about it: your body, made of earth, water, fire and air; the hair, the bones, the breath. He even talks about being insulted and hit, and how to stay steady. In other words, the biggest footprint isn't somewhere far off. It runs right through a regular day. That's the plan for the next three weeks. Each truth, one at a time, in the Buddha's own words where we have them. Then the jobs the Buddha gave each truth, then the chain of causes that sits underneath them. Whatever you learn about generosity, kindness, meditation or ethics later, the claim of this sutta is that it's already inside this one print.",
+      "voice": "The student is Sariputta, the monk tradition remembers for his wisdom. The talk is number twenty-eight in the Middle-Length Discourses, and its name means the great simile of the elephant's footprint. Sariputta tells the monks: just as the footprints of every creature that walks fit inside an elephant's, the biggest of them all, so every good and wholesome teaching fits inside the four noble truths. Then he names them. The truth of dukkha, the pain and unsatisfactoriness of life. The truth of where it comes from. The truth that it can end. The truth of the way that leads there. You met all four in year one. Here's the surprise. Sariputta doesn't wander off into lofty ideas. He spends most of the talk on the first truth, and he gets very ordinary: your body, made of earth, water, fire and air; the hair, the bones, the breath. He even talks about being insulted and hit, and how to stay steady. The biggest footprint isn't somewhere far off. It runs right through a regular day. That's the plan for the next three weeks: each truth, one at a time, in the Buddha's own words where the texts give them; then the jobs the Buddha gave each truth; then the chain of causes underneath them. Whatever you learn later about generosity, kindness, meditation or ethics, this sutta's claim is that it's already inside this one print.",
       "screen": [
         "`SARIPUTTA'S GREAT SIMILE.` · `EVERY PRINT FITS INSIDE.` · `FOUR TRUTHS, NAMED AGAIN.` · `THE PRINT RUNS THROUGH A DAY.` · then, large: `THE BIGGEST FOOTPRINT.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Today's practice is to recall the four truths. Sit comfortably and let the breath settle. On one breath, think: there is dukkha. On the next: it has a cause. Then: it can end. Then: there is a way. Go around the four slowly, one per breath, like stepping into four prints in the mud. If your mind wanders, start again at the first. Nothing to solve. Just walking the outline of the footprint. The bell holds the time.",
+      "voice": "Sit comfortably and walk the four truths, one per breath: there is dukkha; it has a cause; it can end; there is a way. Go around them slowly, like stepping into four prints in the mud, and if your mind wanders, start again at the first. Nothing to solve, just the outline of the footprint.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the biggest footprint. Today, when you notice something that bothers you, see if it fits inside the first truth: there is dukkha. Just notice the fit. Day three hundred thirty-two.",
+      "voice": "Your line: the biggest footprint. Even an ordinary day fits inside the first truth. Year two has begun.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Buddhist teachers in different schools present the four noble truths as a frame for the rest of the teaching, and they are often recited in short form at the start of a talk or retreat.",
   "games": {
+    "guess": [
+      "the elephant's print that holds every other print",
+      "the path an elephant clears through a forest",
+      "a Buddha's footprint carved in stone for worship"
+    ],
     "match": {
       "prompt": "match each piece of today's talk.",
       "pairs": [
@@ -139,7 +144,38 @@
         "five precepts",
         "five training rules"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your roommate",
+      "says": "Why compare the four truths to an elephant's footprint?",
+      "options": [
+        "Every good teaching fits inside them, as every print fits in an elephant's.",
+        "Elephants are sacred, so the truths were named after them out of respect.",
+        "The truths are huge and far from daily life, meant for monks alone."
+      ],
+      "answer": 0,
+      "meaning": "Sariputta says every wholesome teaching fits inside the four truths, as every creature's print fits inside the elephant's."
+    },
+    "gloss": {
+      "Hatthipada": {
+        "meaning": "the elephant's footprint, Sariputta's image for the four truths",
+        "script": "हत्थिपद",
+        "say": "HUT-thi-pah-duh"
+      },
+      "Sariputta": {
+        "meaning": "a chief student of the Buddha, remembered for wisdom",
+        "script": "सारिपुत्त",
+        "say": "SAH-ree-poot-tuh"
+      },
+      "Middle-Length Discourses": {
+        "meaning": "a collection of the Buddha's talks, the Majjhima Nikaya"
+      },
+      "dukkha": {
+        "meaning": "pain, suffering, the unsatisfactoriness of life",
+        "script": "दुक्ख",
+        "say": "DOOK-khuh"
+      }
+    }
   },
   "sources": [
     {
@@ -157,7 +193,9 @@
       "Sariputta described as praised above others for wisdom (AN 1, etadagga list): confirm phrasing.",
       "Devanagari for hatthipada and the pronunciation guide should be checked.",
       "The plan for the next three weeks summarizes Block A of docs/curriculum/buddhism/y2.md.",
-      "Editor review (2026-10-01): cut unsourced superlatives (closest student; praised above all others for wisdom), changed 'the rest of the talk' to 'most of the talk' because MN 28 closes on dependent origination (used on day 351), removed the unchecked 'first week' curriculum claim, softened howItsDone."
+      "Editor review (2026-10-01): cut unsourced superlatives (closest student; praised above all others for wisdom), changed 'the rest of the talk' to 'most of the talk' because MN 28 closes on dependent origination (used on day 351), removed the unchecked 'first week' curriculum claim, softened howItsDone.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

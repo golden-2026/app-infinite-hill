@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, a conversation, and your line: he answers each line. Did you leave a breath of space between the verses? Today, look at the order those lines come in. Day three hundred thirty-five.",
+      "voice": "Yesterday: a conversation, and your line, he answers each line. Today, look at the order those lines come in.",
       "screen": [
         "`HE ANSWERS EACH LINE.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Count the verses as day three hundred thirty-three did, with the bismillah first. One: in the name of Allah, the Beneficent, the Merciful. Two: praise be to Allah, Lord of the Worlds. Three: the Beneficent, the Merciful. Four: Owner of the Day of Judgment. Four verses, and every one of them is about who God is. Then verse five turns: Thee alone we worship, Thee alone we ask for help. And only in verses six and seven comes a request: show us the straight path. The book's opening surah carries an order inside it. A hadith makes that order explicit. Fadalah ibn Ubayd reported, in the collections of Abu Dawud and at-Tirmidhi, that the Prophet Muhammad ﷺ heard a man making a supplication in his prayer without praising God or sending blessings on the Prophet. He said: this man has rushed. Then he taught: when one of you prays, begin with the praise of your Lord, then send blessings on the Prophet, then ask for whatever you wish. So Muslim supplications are often taught in that shape: praise, blessing, then the need. Praise puts the one being addressed first, before the want. It also changes the asking. A request made after four verses about mercy, lordship and judgment comes out smaller and clearer. The straight path, in the Fatiha, isn't a demand. It's what you ask for after you've remembered whom you're asking. Praise first. Then ask for anything.",
+      "voice": "Count the verses as day three hundred thirty-three did, with the bismillah first. One: in the name of Allah, the Beneficent, the Merciful. Two: praise be to Allah, Lord of the Worlds. Three: the Beneficent, the Merciful. Four: Owner of the Day of Judgment. Four verses, every one of them about who God is. Then verse five turns: Thee alone we worship, Thee alone we ask for help. Only in verses six and seven comes a request: show us the straight path. A hadith makes that order explicit. Fadalah ibn Ubayd reported, in the collections of Abu Dawud and at-Tirmidhi, that the Prophet Muhammad ﷺ heard a man making a supplication in his prayer without praising God or sending blessings on the Prophet. He said: this man has rushed. Then he taught: when one of you prays, begin with the praise of your Lord, then send blessings on the Prophet, then ask for whatever you wish. So Muslim supplications are often taught in that shape: praise, blessing, then the need. Praise puts the one being addressed first, before the want. It also changes the asking. A request made after four verses about mercy, lordship and judgment comes out smaller and clearer. The straight path, in the Fatiha, isn't a demand. It's what you ask for after you've remembered whom you're asking.",
       "screen": [
         "`FOUR VERSES ABOUT WHO GOD IS` · `VERSE FIVE: THE TURN` · `THIS MAN HAS RUSHED` · `PRAISE, BLESSING, THEN THE NEED`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: praise before you ask today. Sit now, and think of one thing you want, something real, large or small. Hold it, but don't say it yet. First, for a few breaths, name what you're grateful for, or, if you pray, what you know of God: merciful, near, the Lord of the worlds. Let that settle. Then, only at the end, let the request come. Notice whether it sounds different when it finally arrives. The bell holds the time.",
+      "voice": "Think of one thing you want, something real, large or small, and hold it without saying it yet. First, for a few breaths, name what you're grateful for, or, if you pray, what you know of God: merciful, near, the Lord of the worlds. Then let the request come, and hear whether it sounds different when it finally arrives.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: praise first. Today, before you ask anyone for something, a colleague, a parent, God, start with one honest word of thanks. Day three hundred thirty-five.",
+      "voice": "Your line: praise first. The asking can wait four verses. That's day three hundred thirty-five.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Many Muslims open a du'a by praising Allah and sending blessings on the Prophet before making their request, following the order of al-Fatiha and the hadith of Fadalah ibn Ubayd.",
   "games": {
+    "guess": [
+      "honoring God for who He is, before any request",
+      "thanking God after a prayer has been answered",
+      "a song sung aloud at the end of the prayer"
+    ],
     "match": {
       "prompt": "the order of a prayer — tap the pairs.",
       "pairs": [
@@ -134,7 +139,40 @@
         "iltifat",
         "a sudden shift in who is speaking"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your teenage daughter",
+      "says": "Why does the Fatiha wait four verses before asking God for anything?",
+      "options": [
+        "It praises first; a hadith calls asking without praise rushing.",
+        "Asking God for things is discouraged, so the request is hidden.",
+        "The first verses are for the imam; the request is for everyone."
+      ],
+      "answer": 0,
+      "meaning": "The Prophet heard a man ask without praise and said: this man has rushed. Begin with praise, then blessings, then ask."
+    },
+    "gloss": {
+      "bismillah": {
+        "meaning": "in the name of Allah; counted here as verse one",
+        "script": "بسم الله",
+        "say": "bis-mil-LAAH"
+      },
+      "Fadalah ibn Ubayd": {
+        "meaning": "a companion of the Prophet who reported this hadith",
+        "script": "فضالة بن عبيد",
+        "say": "fa-DAA-la ibn u-BAYD"
+      },
+      "Abu Dawud": {
+        "meaning": "compiler of a major hadith collection",
+        "script": "أبو داود",
+        "say": "A-boo da-WOOD"
+      },
+      "at-Tirmidhi": {
+        "meaning": "compiler of a major hadith collection",
+        "script": "الترمذي",
+        "say": "at-TIR-mi-dhee"
+      }
+    }
   },
   "sources": [
     {
@@ -163,7 +201,9 @@
       "Hadith of Fadalah ibn Ubayd: numbers (Abu Dawud 1481, Tirmidhi 3477) and wording ('he has rushed') cited from memory; please confirm. At-Tirmidhi grades it hasan sahih in common editions; confirm.",
       "Four verses of praise assumes the count with the bismillah as verse one, matching the index and day 333.",
       "Pickthall's 'Owner of the Day of Judgment' is quoted as it appears in year one; the other verses are paraphrased.",
-      "Editor review (2026-10-01): cut 'as most printed copies do', the overclaim that the Qur'an 'teaches the order of a prayer before anything else', 'many supplications' and the vague 'scholars give reasons'; hook no longer tells the listener what they feel."
+      "Editor review (2026-10-01): cut 'as most printed copies do', the overclaim that the Qur'an 'teaches the order of a prayer before anything else', 'many supplications' and the vague 'scholars give reasons'; hook no longer tells the listener what they feel.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: Rumi's reed, at the big lookout, the top of year one. Your line was look how far. Did you tell someone you'd finished a whole year? Day three hundred thirty-two. Year two begins.",
+      "voice": "Yesterday: Rumi's reed, at the big lookout, the top of year one. Your line was look how far. Today, year two begins.",
       "screen": [
         "`LOOK HOW FAR.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Most books that change lives are too heavy to carry. This one fits in a coat pocket. Around fifty short sections. You can read it on a bus ride and spend the rest of your life on it. Nearly two thousand years ago, in a school on the western coast of Greece, a young man named Arrian sat writing down everything his teacher said. The teacher was an old man with a lame leg who had grown up enslaved, and he never wrote a word himself. The student wrote it all, then boiled it down. Year two opens on the porch. Today: the handbook for the road.",
+      "voice": "Most books that change lives are too heavy to carry. This one fits in a coat pocket: around fifty short sections. You can read it on a bus ride and spend the rest of your life on it. Nearly two thousand years ago, in a school on the western coast of Greece, a young man named Arrian sat writing down everything his teacher said. The teacher was an old man with a lame leg who had grown up enslaved, and he never wrote a word himself. The student wrote it all, then boiled it down. Year two opens on the porch. Today: the handbook for the road.",
       "screen": [
         "`A BOOK THAT FITS IN A POCKET.` → `A STUDENT TAKING NOTES.` → `THE HANDBOOK FOR THE ROAD.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the teacher. Epictetus was born around the year fifty in Hierapolis, in what is now Turkey, and grew up enslaved. His owner, Epaphroditus, was a freedman who served at the court of Nero. Somehow the young man was allowed to study with Musonius Rufus, the Stoic we met in year one, the one who called plain food training. Later he was freed and taught philosophy in Rome, until the emperor Domitian banished philosophers from the city near the end of the first century. Epictetus moved to Nicopolis in Greece and opened a school. Like Socrates, he wrote nothing. Second, the student. Arrian, who went on to become a Roman governor and the historian of Alexander the Great, took down his teacher's talks. Those notes became the Discourses; four books survive. Then Arrian made something smaller: the best of it in short, plain sections. Third, the word. Enchiridion is Greek: en, in, and cheir, the hand. Something kept in the hand. The same word could mean a hand-knife, a small blade you keep close. Not a book for the shelf. A tool for the road. People have carried it ever since. Marcus Aurelius thanks one of his teachers for lending him a copy of Epictetus' notes. Christian monks later adapted the handbook for life in their communities. Fourth, the plan. This year we read the Stoics properly and in order: the handbook first, a section or two a day, then the Discourses, Seneca's letters, the whole of Marcus. They're one school among many, and we'll read them on their own terms.",
+      "voice": "Epictetus was born around the year fifty in Hierapolis, in what is now Turkey, and grew up enslaved. His owner, Epaphroditus, was a freedman who served at the court of Nero. Somehow the young man was allowed to study with Musonius Rufus, the Stoic from year one who called plain food training. Later he was freed and taught philosophy in Rome, until the emperor Domitian banished philosophers from the city near the end of the first century. Epictetus moved to Nicopolis in Greece and opened a school. Like Socrates, he wrote nothing. Arrian, later a Roman governor and the historian of Alexander the Great, took down his teacher's talks. Those notes became the Discourses; four books survive. Then Arrian made something smaller: the best of it in short, plain sections. Enchiridion is Greek: en, in, and cheir, the hand. Something kept in the hand. The same word could mean a hand-knife, a small blade you keep close. Not a book for the shelf; a tool for the road. People have carried it ever since. Marcus Aurelius thanks one of his teachers for lending him a copy of Epictetus' notes, and Christian monks later adapted the handbook for life in their communities. This year the Stoics get read properly and in order: the handbook first, a section or two a day, then the Discourses, Seneca's letters, the whole of Marcus. They're one school among many, read here on their own terms.",
       "screen": [
         "`EPICTETUS: ENSLAVED, FREED, A TEACHER.` · `ARRIAN TAKES THE NOTES.` · `ENCHIRIDION: KEPT IN THE HAND.` · `A YEAR ON THE PORCH, IN ORDER.` · then, large: `KEEP IT AT HAND.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Find a scrap of paper, or the notes on your phone. Write one line from year one that you want close. Maybe breathe. Maybe look how far. Maybe a line that has stayed with you all year. Fold the paper small and put it in a pocket, a wallet, behind your phone case. Now rest your hand where the note is. Feel how small it is, and how near. Breathe, and let the line sit there under your hand. The bell holds the time.",
+      "voice": "Write one line from year one that you want close, on a scrap of paper or in your phone's notes: maybe breathe, maybe look how far. Fold it small and tuck it in a pocket, a wallet or behind your phone case. Rest your hand where the note is, feel how small and near it is, and breathe with the line under your hand.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: keep it at hand. Carry your note all day. When the day gets loud, touch it once, and read it. Day three hundred thirty-two.",
+      "voice": "Your line: keep it at hand. A small book, and a small note, both made to travel. Day three hundred thirty-two, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Many people who practice Stoicism keep a copy of Epictetus' Handbook nearby, or copy a single line onto a card, and reread it during the day.",
   "games": {
+    "guess": [
+      "a small book of teaching made to be kept in the hand",
+      "a long scholarly commentary on an older book",
+      "a secret teaching shared only with close students"
+    ],
     "match": {
       "prompt": "the handbook — tap the pairs.",
       "pairs": [
@@ -133,13 +138,47 @@
     "recall": [
       [
         "funnel",
-        "a sales path"
+        "a sales path, pricier at each step"
       ],
       [
         "Peripatetics",
         "Aristotle's students"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your coworker",
+      "says": "What's the Enchiridion? Did Epictetus write it himself?",
+      "options": [
+        "No, he wrote nothing; his student Arrian boiled his talks into a pocket book.",
+        "Yes, Epictetus wrote it himself in Rome as a guide for his students.",
+        "It's a big library volume of every talk he gave, word for word."
+      ],
+      "answer": 0,
+      "meaning": "Epictetus wrote nothing. Arrian took down his talks, then made the Handbook: short, plain sections kept in the hand."
+    },
+    "gloss": {
+      "Epictetus": {
+        "meaning": "a Stoic teacher who grew up enslaved and wrote nothing himself",
+        "say": "ep-ik-TEE-tus"
+      },
+      "Arrian": {
+        "meaning": "Epictetus' student, who wrote down his talks and made the handbook",
+        "say": "AIR-ee-un"
+      },
+      "Enchiridion": {
+        "meaning": "Greek for something kept in the hand; Epictetus' little handbook",
+        "script": "ἐγχειρίδιον",
+        "say": "en-kye-RID-ee-on"
+      },
+      "Nicopolis": {
+        "meaning": "the town in Greece where Epictetus opened his school",
+        "say": "nih-KOP-uh-lis"
+      },
+      "Musonius Rufus": {
+        "meaning": "a Stoic teacher Epictetus studied with as a young man",
+        "say": "myoo-SOH-nee-us ROO-fus"
+      }
+    }
   },
   "sources": [
     {
@@ -171,7 +210,9 @@
       "ἐγχειρίδιον can mean 'hand-knife, dagger' as well as 'handbook' (LSJ); confirm.",
       "Meditations 1.7: Marcus thanks Rusticus for sharing his copy of Epictetus' notes ('hypomnemata'); paraphrased.",
       "Christian monastic adaptations of the Enchiridion (e.g. the paraphrase attributed to Nilus): confirm the phrasing 'adapted the handbook for life in their communities'.",
-      "Musonius Rufus as Epictetus' teacher: links to year one, day 299 ('plain food, Musonius's training'). Year two open; camp open."
+      "Musonius Rufus as Epictetus' teacher: links to year one, day 299 ('plain food, Musonius's training'). Year two open; camp open.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

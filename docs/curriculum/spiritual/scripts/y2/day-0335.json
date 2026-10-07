@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: desire, held lightly. Your line was gently, for now. Did you add the quiet clause to a plan: if nothing prevents me? Day three hundred thirty-five.",
+      "voice": "Yesterday's word was desire: for a beginner, set it down for now and choose lightly. Your line was gently, for now.",
       "screen": [
         "`DESIRE — GENTLY, FOR NOW.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A mug that nobody else is allowed to use. Chipped, maybe. A gift, maybe. Somebody's grandmother's. One morning it slips off the counter, and the small crack on the tile floor can land like bad news. It's a mug. Everyone in the kitchen knows it's a mug. And still. Epictetus, teaching in a Greek town, picked almost exactly this object to start with. Not a great loss. A clay pot from the kitchen. Today: it's a jug.",
+      "voice": "A mug that nobody else is allowed to use. Chipped, maybe. A gift, maybe. Somebody's grandmother's. One morning it slips off the counter, and the small crack on the tile floor can land like bad news. Everyone in the kitchen knows it's a mug. And still. Epictetus, teaching in a Greek town, picked almost exactly this object to start with: not a great loss, a clay pot from the kitchen. Today: it's a jug.",
       "screen": [
         "`THE MUG NOBODY ELSE USES.` → `A CRACK ON THE TILE.` → `IT'S A JUG.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the instruction. In section three of the handbook, Epictetus says: with everything that delights you, or is useful, or that you love, remind yourself what kind of thing it is. And start with the smallest things. If you're fond of a jug, say: I'm fond of a jug. Then when it breaks, you won't be thrown. Second, the point isn't to love it less. You can still drink from the good mug every morning. The practice is to name it truly while you have it. Clay breaks; that's part of what clay is. When you've said so ahead of time, the breaking is a sad thing that happened, not a betrayal. Third, the hard part. The same section doesn't stop at jugs. Epictetus goes on: when you kiss your child or your wife, say to yourself that you are kissing a human being, and then if one of them dies, you won't be overwhelmed. Readers argue about this line. Some find it cold, a way of guarding the heart against the people it should be open to. Others hear it as tender: everyone you love is mortal, and saying so can make each goodbye at the door count. The text itself doesn't settle it, and you don't have to either. Fourth, why he starts small. Epictetus is a trainer. Nobody lifts the heaviest weight on the first day. Practice on the jug, the phone screen, the favorite sweater. Learn the move where it costs little. That's why the handbook says: begin with the smallest things.",
+      "voice": "In section three of the handbook, Epictetus says: with everything that delights you, or is useful, or that you love, remind yourself what kind of thing it is. Start with the smallest things. If you're fond of a jug, say: I'm fond of a jug. Then when it breaks, you won't be thrown. The point isn't to love it less. You can still drink from the good mug every morning; the practice is to name it truly while you have it. Clay breaks; that's part of what clay is. Said ahead of time, the breaking is a sad thing that happened, not a betrayal. Then the hard part. The same section doesn't stop at jugs. When you kiss your child or your wife, Epictetus goes on, say to yourself that you are kissing a human being, and then if one of them dies, you won't be overwhelmed. Readers argue about this line. Some find it cold, a way of guarding the heart against the people it should be open to. Others hear it as tender: everyone you love is mortal, and saying so can make each goodbye at the door count. The text itself doesn't settle it, and you don't have to either. Why start small? Epictetus is a trainer, and nobody lifts the heaviest weight on the first day. Practice on the jug, the phone screen, the favorite sweater, and learn the move where it costs little.",
       "screen": [
         "`SAY WHAT KIND OF THING IT IS.` · `LOVE IT, AND NAME IT TRULY.` · `THE HARD LINE: A HUMAN BEING.` · `BEGIN WITH THE SMALLEST THINGS.` · then, large: `IT'S A JUG.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Look around you and choose one small thing you're fond of. A cup, a pen, a pair of shoes, a plant. If you can, hold it, or rest your eyes on it. Now name it plainly, the way Epictetus would. This is a cup, and cups break. Say it without coldness, the way you'd say it's raining. Then notice what's left: you still like it. Maybe you like it a little more. Stay with the thing and the breath. The bell holds the time.",
+      "voice": "Choose one small thing you're fond of, a cup, a pen, a pair of shoes, a plant, and hold it or rest your eyes on it. Name it plainly, without coldness, the way you'd say it's raining: this is a cup, and cups break. Then notice what's left: you still like it, maybe a little more.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: clay breaks; that's part of what clay is. When something small breaks, spills or goes missing today, say the line once before anything else. Day three hundred thirty-five.",
+      "voice": "Your line: clay breaks; that's part of what clay is. Love the thing, and know what kind of thing it is. Day three hundred thirty-five, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Some people who practice Stoicism name a cherished object plainly to themselves, 'this is a cup, and cups break', practicing on small things first.",
   "games": {
+    "guess": [
+      "the teacher who says: name what you love for what it is",
+      "a philosopher who taught people to own nothing",
+      "a poet who wrote sad songs about lost things"
+    ],
     "match": {
       "prompt": "it's a jug — tap the pairs.",
       "pairs": [
@@ -136,10 +141,33 @@
         "someone looking"
       ],
       [
-        "liminal",
-        "the in-between stage"
+        "seeker",
+        "someone looking, with or without a home"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your grandmother",
+      "says": "What's that old Stoic idea about the jug?",
+      "options": [
+        "Love it, but name it truly: clay breaks, so breaking won't throw you.",
+        "Don't get fond of anything at all, so nothing can ever hurt you.",
+        "Only keep things sturdy enough that they can never break."
+      ],
+      "answer": 0,
+      "meaning": "Section three says to remind yourself what kind of thing you love, starting with the smallest, like a jug. You can still love it."
+    },
+    "gloss": {
+      "Epictetus": {
+        "meaning": "a Stoic teacher who grew up enslaved and wrote nothing himself",
+        "say": "ep-ik-TEE-tus"
+      },
+      "handbook": {
+        "meaning": "the Enchiridion: Arrian's short book of Epictetus' teaching"
+      },
+      "jug": {
+        "meaning": "Epictetus' first example: a clay pot from the kitchen"
+      }
+    }
   },
   "sources": [
     {
@@ -157,7 +185,9 @@
       "Enchiridion 3 paraphrased: 'with everything that delights, is useful, or is loved, remember to say what kind of thing it is, beginning from the smallest'; the jug; kissing a child or wife as 'a human being'. Confirm.",
       "Greek χύτρα for the jug or pot in Enchiridion 3: confirm.",
       "The two readings (cold vs. tender) are presented as reader responses, without ranking; a Keeper may want to soften or expand.",
-      "Sensitive content: death of a child or spouse is named, briefly and gently."
+      "Sensitive content: death of a child or spouse is named, briefly and gently.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {
