@@ -294,6 +294,7 @@ Word: **four seasons** · Line: *seasons turn*
 - Sensitive topic: the hook and practice explicitly allow any response to grief, suggest a small loss if a big one is too near, and the teach says the story isn't a rule against crying and ranks no way of mourning.
 - Chinese 鼓盆而歌 (gǔ pén ér gē): confirm. The 'pot' is a basin or clay vessel (盆).
 - Editor review (days 39-56 pass): cut the stock line 'here is the part people often skip' and the superlative 'the most honest thing he could give her'; the carry no longer tells the listener that 'everything is moving, and that's not a mistake' (a worldview claim in the narrator's voice) and points to Zhuangzi's turning year instead; howItsDone's unsourced 'often discussed' softened.
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: Zhuangzi, chapter 18 (Zhile), Zhuangzi's wife dies
 
@@ -305,6 +306,7 @@ Word: **Kisa Gotami** · Line: *no house without it*
 - Kisa = thin, lean (Pali kisa): confirm. Devanagari spelling किसा गोतमी: confirm.
 - Tone: a grief lesson. The practice offers an alternative for those without a loss in mind. A Buddhist scholar should check the phrase 'remembered as one of the wise women of early Buddhism' (she is traditionally named foremost among nuns in wearing coarse robes).
 - Editor review (days 58-75 pass): hook drops "most of us know", the two-and-a-half-thousand-years date and telling the listener what they'll do in grief; "not with a sermon" corrected, since in the commentary the Buddha speaks a verse after her walk; "one of the wise women of early Buddhism" replaced with what the Therigatha shows (her own verses are kept there); "often at funerals" softened.
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: Kisa Gotami (commentary on Therigatha 213–223); Dhammapada commentary on verse 114
 
@@ -319,6 +321,7 @@ Word: **sati** · Line: *remember, come back*
 - Breathing 'in long… out short' paraphrases the Anapanasati/Satipatthana formula; not quoted.
 - MBSR began in 1979 at the University of Massachusetts Medical School (Worcester). Kabat-Zinn (living) is named only as the course's founder, as on day 132; no endorsement.
 - Day 100's counting practice is from the Zen world (susokukan): 'three days ago' is correct.
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: Anapanasati Sutta (Majjhima Nikaya 118) and Satipatthana Sutta (Majjhima Nikaya 10): breathing in long, one knows it; Buddhist Suttas, Sacred Books of the East vol. 11 (1881): 'mindfulness' for sati; dhyana (Sanskrit) → chan (Chinese) → seon (Korean) → zen (Japanese); Mindfulness-Based Stress Reduction, University of Massachusetts Medical School, 1979
 
@@ -331,6 +334,7 @@ Word: **apatheia** · Line: *not unfeeling*
 - Historia Augusta, Antoninus Pius 10.5: Marcus weeping for his tutor (educator); the Historia Augusta is a late and unreliable source, as the script says.
 - English 'stoic' meaning unfeeling and 'apathy' from apatheia: standard etymology.
 - Editor review 2026-10-01: Marcus was not yet emperor when he wept for his tutor (Historia Augusta, Antoninus Pius 10.5), so 'a young emperor' is now 'a future emperor'; cut the claim about what people who never read Seneca think; 'how later Romans remembered him' narrowed to the one late history; 'the real Stoic' framed as these writers' view.
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: Discourses 3.2.4; Moral Letters 63.1, 63.14; Historia Augusta, Life of Antoninus Pius 10.5
 
@@ -344,6 +348,7 @@ Word: **horoscope** · Line: *a mirror, not a forecast*
 - Tarot: tarocchi/trionfi in 15th-century northern Italy; Antoine Court de Gébelin's Egyptian claim (1781); the Rider-Waite(-Smith) deck published by Rider in London, 1909, art by Pamela Colman Smith. 'Most decks today follow' it: a common claim; soften to 'many' if the Keeper prefers.
 - Carlson 1985: astrologers matched natal charts to California Psychological Inventory profiles at chance. Forer 1949: one generic sketch, average rating about 4.3 of 5. Summarized, not quoted.
 - No living astrologer, reader or app is named.
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: Babylonian celestial omens and the zodiac; Hellenistic horoscopic astrology; tarot as a fifteenth-century Italian card game; occult use from Court de Gébelin, Le Monde primitif, vol. 8 (1781); the Rider-Waite deck (London, 1909), drawn by Pamela Colman Smith; Carlson, 'A double-blind test of astrology', Nature 318 (1985): 419–425; Forer, 'The fallacy of personal validation', Journal of Abnormal and Social Psychology 44 (1949): 118–123
 
@@ -357,6 +362,7 @@ Word: **ego death** · Line: *the self can step aside*
 - 'Higher self' via Theosophy (late 1800s): the phrase appears in Blavatsky's Key to Theosophy (1889); confirm 'came into wide use' wording.
 - Self-distancing: Kross et al. 2014 found third-person self-talk improved emotion regulation under stress; summarized modestly.
 - Safety: day 307 (Britton et al. 2017, difficult meditation experiences) is referenced; the caution to stop, ground and talk to someone repeats it.
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: 'ego death' in 1960s writing on psychedelic experience (e.g. The Psychedelic Experience, 1964); 'Higher Self' in Theosophical writing (Blavatsky, The Key to Theosophy, 1889); Anattalakkhana Sutta (Samyutta Nikaya 22.59): not-self; fana (passing away of the self) in classical Sufi teaching, e.g. al-Qushayri's Risala; Meister Eckhart, The Talks of Instruction (letting go of self); Kross et al., 'Self-talk as a regulatory mechanism', Journal of Personality and Social Psychology 106 (2014)
 
@@ -370,6 +376,7 @@ Word: **funnel** · Line: *by their fruits*
 - Matthew 7:16 KJV: 'Ye shall know them by their fruits.' Confirm wording.
 - Kalama Sutta (AN 3.65) paraphrased: not by tradition, scripture, or a teacher's standing alone, but knowing for yourselves what is harmful and what leads to welfare. Buddhist Keeper: confirm the paraphrase doesn't overstate it as 'trust only yourself'.
 - Neither text is used to rank traditions; each is named in its own house.
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: Matthew 7:16; Matthew 7:15 (wolves in sheep's clothing); Kalama Sutta (Anguttara Nikaya 3.65); the finger pointing at the moon (Surangama Sutra; see day 48)
 
@@ -383,6 +390,7 @@ Word: **liminal** · Line: *between is a place too*
 - Crisis care: includes a gentle 988 / local emergency line for heavy lostness, per the brief.
 - Pew 2015 (RLS): 34% of U.S. adults have a religious identity different from childhood when Protestantism is treated as one group (42% counting switches between Protestant families). 'About a third' uses the conservative figure. Confirm.
 - Van Gennep's three stages and Turner's 1964 essay title: confirm.
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: America's Changing Religious Landscape (2015): about a third of U.S. adults have a religious identity different from their childhood one; Les rites de passage (1909): separation, transition (liminal), incorporation; 'Betwixt and Between: The Liminal Period in Rites de Passage' (1964)
 
@@ -395,6 +403,7 @@ Word: **ritual** · Line: *keep the giving*
 - SENSITIVE: 'Jewish life has long included secular and cultural Jews, and many lead a seder whatever they believe': Jewish Keeper to confirm the framing. No tradition is ranked; returning is named as a good outcome.
 - Cultural appropriation framed gently ('as a guest'), consistent with day 232 'How to be a guest'.
 - Ritual research cited to Hobson et al. 2018 and Xygalatas 2022; deliberately not to studies by a researcher whose other work faced data-integrity findings. Claims kept general ('can steady people… and bind them').
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: 'The Psychology of Rituals: An Integrative Review and Process-Based Framework', Personality and Social Psychology Review 22 (2018); Ritual: How Seemingly Senseless Acts Make Life Worth Living (2022); secular and cultural Jewish practice, including the home seder
 
@@ -406,5 +415,6 @@ Word: **seeker** · Line: *every door stays open*
 - Map need: faith deconstruction, 'you don't have to pick a door' (research Q29–32). Third of three days.
 - SENSITIVE: the research flags the Reddit framing 'religion is a cage, spirituality is freedom' as ranking paths; this lesson says plainly the path 'isn't against religion' and that returning or joining a faith is honored. All Keepers may want to read it.
 - Pew 2017: 27% of U.S. adults say they are spiritual but not religious, up from 19% in 2012. 'About a quarter' used. Confirm.
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: 'More Americans now say they're spiritual but not religious' (September 6, 2017): 27% of U.S. adults; days 232–280: seven visits to seven traditions as a guest

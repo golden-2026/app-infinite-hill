@@ -284,6 +284,7 @@ Word: **upasaka** · Line: *love without the grip*
 - Why: the research's repeated worry that non-attachment means loving family less (map need 4). The deeper teaching on clinging as metta's near enemy stays on day 233; equanimity vs indifference on day 241.
 - Confirm: AN 4.55 summary (Nakula's father's words paraphrased); the town name Sumsumaragira (Bhagga country); the etadagga listing of Nakulapita and Nakulamata as foremost in trust/intimacy (vissasaka).
 - 'Most Buddhists in history have lived that way' (lay life): Keeper to confirm or soften.
+- Job 2 (2026-10-07): voice left as rewritten; the practice was folded into three sentences and the bell line cut; games.guess added.
 
 Sources: Anguttara Nikaya 4.55 (Samajivi Sutta): Nakula's parents wish to meet in the next life; Anguttara Nikaya 1 (Etadagga vagga): Nakulapita and Nakulamata foremost in trust; Nidanakatha (introduction to the Jataka): Kanthaka's death
 
@@ -296,6 +297,7 @@ Word: **assasa** · Line: *good either way*
 - Sensitive (rebirth): the script says rebirth runs through the teaching and many hold it close, and gives two readings of the sutta without choosing. Confirm the framing.
 - Confirm: the four assurances paraphrased from AN 3.65; the spelling assasa/assāsa and the 'breathing' sense in the original game.
 - Chronology: the Kalama visit is not dated in the texts; placed in the 'teaching spreads' week without claiming when it happened.
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: Anguttara Nikaya 3.65 (Kalama Sutta / Kesamutti Sutta): the four comforts; Vinaya, Mahavagga 1.10–1.11: Yasa's friends, and the sixty sent out
 
@@ -308,6 +310,7 @@ Word: **mala** · Line: *the hands remember*
 - Confirm: the Soapberry Seed sutra (Mu Huanzi Jing, believed Taisho 786): the king (Virudhaka/Vaidurya in some readings), war and sickness, 108 seeds, recollecting the three jewels. Paraphrased; no number given in the spoken text.
 - Confirm: Jodo Shinshu and other Pure Land practice described only as holding beads while saying Amida's name (Shin practice does not always count).
 - Mudra names are given in English only (dhyana, bhumisparsha, abhaya, dharmacakra). The thumbs instruction is attributed to 'many Zen teachers'.
+- Job 2 (2026-10-07): voice left as rewritten; added games.guess and cut the closing bell line from the practice.
 
 Sources: Sutra of the Soapberry Seeds (Mu Huanzi Jing), Chinese Buddhist canon: the king and the 108 seeds; Majjhima Nikaya 86 (Angulimala Sutta): the name 'finger garland'; Nidanakatha (introduction to the Jataka): the earth as witness on the night of the awakening
 
@@ -318,6 +321,7 @@ Word: **namo tassa** · Line: *a bow in a word*
 - Dhananjani's stumbling and exclaiming the homage three times (MN 100) should be confirmed; the young Brahmin Sangarava hears her and later meets the Buddha.
 - Word meanings (bhagavant, arahant, sammasambuddha) are standard; the gloss 'by himself' for sam- follows common teaching.
 - The link of namo to namaste (Sanskrit namas) is etymological; confirm the phrasing.
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: The homage (Namo tassa), Theravada chanting tradition; Majjhima Nikaya 100 (Sangarava Sutta), Dhananjani's exclamation
 
@@ -330,6 +334,7 @@ Word: **buddharupa** · Line: *customs differ, care doesn't*
 - Sensitive: decor and tattoos. Confirm the tone holds for heritage and convert listeners alike.
 - Confirm: 'some countries limit taking Buddha images abroad' (e.g. Thailand's export permits) and 'some temples post signs' (campaigns against Buddha decor/tattoos); kept general on purpose.
 - Confirm the looting line ('temple statues broken up and sold') is fair and not overstated.
+- Job 2 (2026-10-07): voice left as rewritten; only the practice tightened (bell line removed) and games.guess added.
 
 Sources: Samyutta Nikaya 22.87 (Vakkali Sutta): whoever sees the dhamma sees me
 
@@ -354,6 +359,7 @@ Word: **Cautions** · Line: *test it yourself*
 - The line distinguishing restricted Vajrayana transmissions from harmful secrecy should be checked by a Tibetan Keeper.
 - DN 16 section number (2.25 in Rhys Davids' numbering) for 'closed fist': confirm.
 - Editor review (2026-10-01): rewrote the hook to drop the banned 'Picture' opener, the invented 'busy road' and 'every few weeks' details and the 'most famous / most misquoted' superlative; the hook now follows the sutta's own setup. The teach no longer mentions 'the index' to the listener.
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: Anguttara Nikaya 3.65, Kalama Sutta; Anguttara Nikaya 3.129 (three things that shine openly); Digha Nikaya 16, Mahaparinibbana Sutta 2.25 (no teacher's closed fist)
 

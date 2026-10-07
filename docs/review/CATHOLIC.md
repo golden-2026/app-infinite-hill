@@ -297,6 +297,7 @@ Word: **parish** · Line: *welcome home*
 - OCIA naming: the US bishops' new English translation renamed RCIA the Order of Christian Initiation of Adults; confirm the current status and wording for non-US parishes.
 - Douay-Rheims 1 Peter 2:11 fragment 'strangers and pilgrims': confirm wording.
 - Etymology of parish (paroikia, sojourning): confirm against a standard lexicon.
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: 1 Peter 2:11; Catechism of the Catholic Church 2179 (the parish); Catechism of the Catholic Church 1385 (receiving Communion after confession of grave sin); Order of Christian Initiation of Adults (formerly Rite of Christian Initiation of Adults, RCIA); Oxford English Dictionary / Etymonline, 'parish' (Late Latin parochia, Greek paroikia, from paroikos 'dwelling near; sojourner')
 
@@ -310,6 +311,7 @@ Word: **Baptism** · Line: *your first birthday*
 - Week-end look-back in the carry covers days 120–126. Carry 'your first birthday' framed as a second birth; confirm the Keeper likes the image.
 - Editor review (2026-10-01): replaced the 'Picture the back of a church' opener; cut 'about four seconds', 'usually furious', the dye illustration (that usage belongs to the related verb bapto), the unsourced 'first Christians were often baptized by going under', 'most other Christian churches' and 'many Protestants/many others'; Matthew 28:19 is no longer said to be the source of the three pourings; the line 'your first birthday is the day you came out of your mother; this is the other one' contradicted the carry and is reworded.
 - Rewritten 2026-10-06 from the five-year map; confirm with the Keeper. Added godparents, padrinos/compadres and ninong/ninang (map change #4; AUDIENCE_RESEARCH_CATHOLIC Q37–40), framed 'in many families'. Canon law (c. 873) allows one or two sponsors; in Filipino custom additional ninong/ninang often stand as witnesses. Confirm the wording 'there are often several' and the compadrazgo line.
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: Matthew 28:19; John 3:5; Matthew 3:13–17; Catechism of the Catholic Church 1213, 1255, 1256, 1262–1274; Code of Canon Law, canons 872–874 (sponsors at baptism)
 
@@ -322,6 +324,7 @@ Word: **chrism** · Line: *sealed*
 - Seven gifts: from Isaiah 11:2–3 in the Septuagint/Vulgate (piety added). Listed with CCC 1831's names. Confirm.
 - Confirmation names: a custom, not required. Latin Church age varies by country (US: roughly 7–16). Confirm phrasing.
 - Rewritten 2026-10-06 from the five-year map; confirm with the Keeper. Added the confirmation name (map change #3; AUDIENCE_RESEARCH_CATHOLIC Q7–8): a custom not a rule, the biblical pattern of new names, a saint as model and intercessor, keeping the baptismal name. The teach no longer repeats that chrismation is given by Eastern Catholics and the Orthodox by name, and the teenager myth item was swapped for a confirmation-name item. Confirm 'in some places it's fading' and the line on keeping the baptismal name.
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: Acts 8:17; Acts 8:14–17; Isaiah 11:2–3; Paul VI, Divinae consortium naturae (1971); Rite of Confirmation; Catechism of the Catholic Church 1285, 1289, 1290–1292, 1300; Genesis 17:5; John 1:42 (new names for a new task)
 
@@ -335,6 +338,7 @@ Word: **Reconciliation** · Line: *there's always a way back*
 - 'Being somewhere with no Mass within reach is not a sin at all': based on canon 1248 §2 and CCC 2181 (serious reason / impossibility). Confirm wording.
 - Scrupulosity: described pastorally; 'a good counselor' is mentioned because scrupulosity can overlap with OCD. Confirm.
 - Mortal and venial sin are taught in depth on day 311; 'we'll go deeper on that later in the year' points there.
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: Luke 15:20; Luke 15:11–32; Catechism of the Catholic Church 2181 (Sunday obligation; excused for a serious reason); Catechism of the Catholic Church 1857–1861 (conditions for mortal sin; judgment of persons belongs to God); Catechism of the Catholic Church 1385, 1422–1424, 1457 (confession before Communion; names of the sacrament); Code of Canon Law, canon 1248 §2 (when no Mass is available)
 
@@ -348,6 +352,7 @@ Word: **Advent** · Line: *wait well*
 - adventus used for imperial visits: standard. Confirm.
 - Editor review (2026-10-01): 'first half' corrected to 'first part' (the shift comes on Dec 17, not midway); cut 'a skill most of us have lost' and 'many families'.
 - Rewritten 2026-10-06 from the five-year map; confirm with the Keeper. Added Simbang Gabi and Las Posadas (map change #4; AUDIENCE_RESEARCH_CATHOLIC Q37–40), named by community and without counts, since 'many families' was cut here before. Simbang Gabi: nine dawn (or, in many places now, evening) Masses, 16–24 December; Las Posadas: 16–24 December. Confirm dates and wording.
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: Isaiah 9:2; Isaiah 40; Universal Norms on the Liturgical Year and the Calendar 39–42 (1969); Johann Hinrich Wichern and the Rauhes Haus, Hamburg (1839); Directory on Popular Piety and the Liturgy (2001) 97–104 (Advent customs); Simbang Gabi (Philippines); Las Posadas (Mexico)
 
@@ -360,6 +365,7 @@ Word: **creation** · Line: *it was very good*
 - 'Only after humans appear does good become very good' (fork reveal): the 'very good' covers all creation at the end of day six; confirm phrasing.
 - Season of Creation (1 September–4 October) and the blessing of animals on Saint Francis's feast; confirm howItsDone.
 - Rewritten 2026-10-06 from the five-year map; confirm with the Keeper. Added the faith-and-science answer on evolution (map change #5; REDDIT_REPLIES §4: 'Catholics reject evolution' is a misconception, and this fact brought one returner back). Humani Generis 36 paraphrased (body's origin open to inquiry; souls immediately created by God; the encyclical also cautions against treating it as fully proven and on polygenism, not mentioned here). John Paul II 1996: 'new knowledge has led to the recognition of the theory of evolution as more than a hypothesis', paraphrased. 'A young-earth reading isn't Catholic teaching' means it is not required; confirm wording. The six-days myth item was swapped for an evolution item (the six days stay in the teach). Faith and reason in general stays on day 292.
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: Genesis 1:1; Genesis 1:31; Catechism of the Catholic Church 295–301, 337–339; Pius XII, Humani Generis 36 (1950); John Paul II, Message to the Pontifical Academy of Sciences on evolution (22 October 1996); Francis of Assisi, Canticle of the Creatures; Pope Francis, Laudato Si' (2015)
 
@@ -373,5 +379,6 @@ Word: **purgatory** · Line: *purified by love*
 - The dinner-invitation image is the script's own illustration.
 - Rewritten 2026-10-06 from the five-year map; confirm with the Keeper. Added purgatory vs. limbo (map change #6; AUDIENCE_RESEARCH_CATHOLIC Q22–24), named as a common mix-up, not a quiz. Limbo: never defined (the 2007 ITC document calls it a possible theological opinion, not dogma); CCC 1261 entrusts unbaptized children to God's mercy and allows hope. Because the line can touch parents who lost a baby, a gentle 988 line was added. The 'smaller hell' myth item was swapped for a limbo item (that point stays in the teach). Confirm wording.
 - Editor review (2026-10-01): hook no longer opens 'Imagine' and drops the superlatives 'most important dinner of your life' and 'one of its most misunderstood words' and the 'most of us' claim; 'from the earliest centuries' now cites CCC 1032 ('from the beginning'); 'most Protestants' softened to 'many'; Benedict XVI's fire framed as a view he took up (Spe Salvi 47 credits it to some recent theologians); narrator no longer tells the listener 'until you're whole'; practice rewritten because day 322 already prayed for a loved one with the 'eternal rest' line, so today turns to the forgotten dead; fork setup follows 2 Maccabees 12:40 (things consecrated to idols under their coats).
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: 1 Corinthians 3:15; 2 Maccabees 12:46; Catechism of the Catholic Church 1030–1032; Benedict XVI, Spe Salvi 47 (2007); Eternal rest (Requiem aeternam); Catechism of the Catholic Church 1261 (children who die without baptism); International Theological Commission, The Hope of Salvation for Infants Who Die Without Being Baptised (2007)

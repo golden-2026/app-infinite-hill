@@ -288,6 +288,7 @@ Word: **Sikhi** · Line: *start where you are*
 - 'The house of Nanak is open to all' is given as a common saying (it was the top reply in the r/Sikh thread on cut hair); confirm it's fair to call it an old saying.
 - Language: 'plenty of Sikhs, especially those who grew up far from Punjab' can't read Gurmukhi is kept general on purpose. The map's line that 'most of an estimated 20 million Sikhs' can't speak Punjabi is not used: most Sikhs live in Punjab and speak it.
 - Day 272 (Many ways of being Sikh) now points back to this day and keeps the deeper teaching (amritdhari, keshdhari, sahajdhari, mona, the court cases).
+- 2026-10-07 (job 2): voice left as rewritten; games.guess added, 'the bell holds the time' cut and the practice's sentences joined (same words otherwise).
 
 Sources: Sikh Rehat Maryada, chapter 1, article 1 (definition of a Sikh); Sikh Rehat Maryada, on the gurdwara and langar (open to all)
 
@@ -299,6 +300,7 @@ Word: **Japji Sahib** · Line: *listen before you understand*
 - The four suniai pauris are 8–11. Confirm.
 - Review (2026-10-01): hook no longer opens 'Think of'; 'most Sikh children', 'many Sikhs' and the unsourced 'around twenty minutes' removed or softened (also in the myth reveal and howItsDone).
 - Added 2026-10-06 from the five-year map (language-gap reassurance, map change 4; AUDIENCE_RESEARCH_SIKHISM.md §2–§4): the teach now says plainly that many Sikhs, especially far from Punjab, can't read Gurmukhi or follow all the Punjabi, that there's no need for embarrassment, and that this camp is built for them. Confirm with the Keeper.
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: Guru Granth Sahib, Ang 1–8 (Japji); Macauliffe, The Sikh Religion (1909), vol. 1, the Japji
 
@@ -310,6 +312,7 @@ Word: **The kirpan** · Line: *mercy first*
 - The suggested answer is phrased as something a wearer might say ('an article of my faith'); it is offered as an example, not a script the voice claims for itself. Confirm.
 - Practical claims kept general on purpose: 'airports in many countries allow no blade in the cabin' (e.g. the US TSA bars kirpans from carry-on bags; India allows a small kirpan on domestic flights for Sikh passengers); 'courts in some countries have accepted the kirpan with safeguards, like a sheath sewn shut' (Multani, 2006 SCC 6). No laws are stated as advice. Confirm the wording and whether to name the Sikh Coalition or similar groups.
 - Etymology: kirpan from Sanskrit kṛpāṇa (sword); kirpa + aan presented as a teaching reading, as before. Confirm.
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: Sikh Rehat Maryada, on the five Ks (the kirpan worn by initiated Sikhs); Multani v. Commission scolaire Marguerite-Bourgeoys, 2006 SCC 6 (kirpan at school with safeguards); Guru Granth Sahib, 'kirpa' for God's grace (throughout)
 
@@ -323,6 +326,7 @@ Word: **Oak Creek** · Line: *the doors stayed open*
 - Pardeep Kaleka's work with Arno Michaelis (Serve2Unite) is described without names for the second man; confirm.
 - Editor review (2026-10-01): cut the superlative 'most ordinary morning in any gurdwara anywhere' and the invented dough/dal/Punjabi-class details; reordered so the hall is cleaned after police released the building; softened 'many Americans for the first time' and 'every year since' (run described as a remembrance run named for chardi kala); review line no longer claims the whole country was surprised; trapdoor reworded so the FBI change is not stated as directly caused.
 - Added 2026-10-06 from the five-year map (map change 3; REDDIT_TRENDING.md §6: attacks on Sikhs topped r/Sikh in 2026): the teach now says attacks on Sikhs continue in recent years (US and Britain), with grounding: get safe, call emergency help, tell someone, report it (the Sikh Coalition in the US); the practice adds 988 / local emergency help. Kept short and calm, with no new incident named. Keeper or owner to confirm the wording is accurate without being frightening, and whether to name the Sikh Coalition or a UK group too.
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: Sikh Temple of Wisconsin shooting, Oak Creek, August 5, 2012; The sangat as the place of the Guru (a recurring teaching of the Guru Granth Sahib)
 

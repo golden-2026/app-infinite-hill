@@ -280,6 +280,7 @@ Word: **adwamuha** · Line: *small, steady, and back again*
 - It deliberately doesn't rule on the status of someone who has stopped praying (the schools differ, and a Hanbali position is severe) or on how to make up years of missed prayers (qada'); it sends that question to a trusted teacher.
 - Hadith numbers cited from memory; please confirm: Bukhari 6464 / Muslim 783 (adwamuha wa in qall), Bukhari 7405 (hadith qudsi), Abu Dawud 1522 (Mu'adh, 'la tada'anna fi dubur kulli salah').
 - 'Across the major schools' for the five prayers being obligatory: the four Sunni schools and the Ja'fari school; confirm the wording.
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: Sahih al-Bukhari 6464 (the most beloved deeds to Allah are the most constant, even if small); Sahih Muslim 783 (Aisha: when he did a deed, he kept it up); Sahih al-Bukhari 7405 (hadith qudsi: a hand's span, an arm's length; walking, running); Sunan Abi Dawud 1522 (Mu'adh: O Allah, help me to remember You, thank You and worship You well); Qur'an 4:103 (prayer prescribed for believers at fixed times)
 
@@ -293,6 +294,7 @@ Word: **sa'atan wa sa'atan** · Line: *an hour, and an hour*
 - The garment report ('faith wears out in the heart of one of you as a garment wears out, so ask Allah to renew faith in your hearts'): al-Hakim's Mustadrak and al-Tabarani; graded sahih/hasan by some, weaker by others; the script says 'scholars grade differently'. Confirm the references.
 - Pickthall 13:28 quoted from memory ('...Verily in the remembrance of Allah do hearts find rest!'); please check.
 - Day 127 (Eid al-Fitr) now points back here for the post-Ramadan dip.
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: Sahih Muslim 2750 (Hanzalah: 'Hanzalah has become a hypocrite'; sa'atan wa sa'atan); Qur'an 13:28; al-Hakim, al-Mustadrak; al-Tabarani, al-Mu'jam al-Kabir (faith wears out like a garment; ask Allah to renew it); Qur'an 48:4 (that they might add faith unto their faith)
 
@@ -306,6 +308,7 @@ Word: **hamm** · Line: *the du'a and the doctor*
 - Pickthall 12:86 quoted from memory ('He said: I expose my distress and anguish only unto Allah, and I know from Allah that which ye know not'); please check.
 - Hadith numbers cited from memory; please confirm: Bukhari 1303 (Ibrahim), Bukhari 6369 (Anas, 'kuntu asma'uhu yukthiru'), Abu Dawud 3855 (Usamah ibn Sharik, tadawaw), Bukhari 5678.
 - 'Many Muslim scholars and counselors today apply that to the mind as well as the body' is a general description; a Keeper may prefer to name an institution.
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: Qur'an 12:86; Qur'an 12:84–85 (his eyes whitened with grief; his sons' warning); Sahih al-Bukhari 1303 (the eyes shed tears and the heart grieves); Sahih al-Bukhari 6369 (Anas: the du'a against worry and grief, helplessness and laziness, miserliness and cowardice, debt and being overpowered); Sunan Abi Dawud 3855 (seek treatment, servants of Allah); Sahih al-Bukhari 5678 (no disease without a cure)
 
@@ -319,6 +322,7 @@ Word: **hijab** · Line: *dignity, not blame*
 - Pickthall 24:30 and 24:31 quoted from memory; please check ('Tell the believing men to lower their gaze and be modest. That is purer for them...'; '...and to draw their veils over their bosoms...').
 - Bukhari 4758 (murut torn and used as khimar) paraphrased as 'outer wraps'; translations say aprons, waist-sheets or woolen garments, and 'covered themselves' (heads or faces, readings differ). Confirm the number and gloss.
 - Hadith numbers cited from memory: Muslim 35, Muslim 2564.
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: Qur'an 24:30; Qur'an 24:31; Qur'an 33:53 (hijab: speak to them from behind a curtain); Sahih al-Bukhari 4758 (Aisha: the early emigrant women tore their wraps and covered themselves); Sahih Muslim 35 (modesty, haya', is a branch of faith); Sahih Muslim 2564 (Allah does not look at your forms or wealth, but at your hearts and deeds)
 
@@ -330,6 +334,7 @@ Word: **nikah** · Line: *a feeling isn't a sin*
 - Sensitive (teen audience): the lesson states the near-universal agreement (no sex outside nikah; caution about seclusion), describes 'dating' in its movie sense as outside the lines for most scholars, and presents the ways communities meet ('with intention', chaperones, introductions, apps) as places families differ, without endorsing a model. It never says dating is fine. It deliberately leaves out interfaith marriage and LGBTQ questions (out of scope per the map).
 - Pickthall 17:32 quoted from memory; please check.
 - Hadith numbers cited from memory: Tirmidhi 2165, Tirmidhi 1087 ('ahra an yu'dama baynakuma', rendered 'more likely to make things last between you'), Bukhari 5269 (already used on day 26), Ibn Majah 1847 (graded sahih by some). Please confirm.
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: Qur'an 17:32; Jami' at-Tirmidhi 2165 (when a man is alone with a woman, Shaytan is the third); Jami' at-Tirmidhi 1087 (al-Mughirah: go and look at her, it is more likely to make things last between you); Sahih al-Bukhari 5269 (Allah forgives what the soul whispers, unless acted on or spoken); Sunan Ibn Majah 1847 (nothing like marriage has been seen for two who love each other)
 
@@ -341,6 +346,7 @@ Word: **ikhtilaf** · Line: *where scholars differ, ask why*
 - Sensitive: neither topic is settled one way. Music: 'many classical scholars across the four Sunni schools' forbid instruments; Ibn Hazm (rejected the ma'azif hadith's chain) and al-Ghazali (allowed singing and some instruments, with conditions; he excluded certain string and wind instruments) are named as the other side. Tattoos: most Sunni scholars forbid permanent tattoos; many Shia jurists permit them. Please confirm both summaries and that naming al-Ghazali and Ibn Hazm is right.
 - The relief line ('if you already have one... your wudu and your prayer count') reflects the widely held view that ink under the skin doesn't block water. 'Many scholars say there's no need to remove it, and nearly all say not if removing it would cause harm': classical Shafi'i texts required removal where possible without harm. Please confirm wording.
 - Hadith numbers cited from memory: Bukhari 5590 (narrated mu'allaq), 952, 5147, 5937. Please confirm.
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: Sahih al-Bukhari 5590 (people who will treat instruments, al-ma'azif, as lawful); Sahih al-Bukhari 952 (two girls singing on Eid: every people has its festival); Sahih al-Bukhari 5147 (the daff at a wedding); Ibn Hazm, al-Muhalla (on singing and instruments); al-Ghazali, Ihya 'Ulum al-Din, the book on listening (sama'); Sahih al-Bukhari 5937 (the one who tattoos and the one who is tattooed)
 
@@ -353,5 +359,6 @@ Word: **shahada** · Line: *everyone started new*
 - 'Many scholars add that a new Muslim doesn't need to change a name with a good meaning': the common view (a name is changed only if its meaning is objectionable). Confirm.
 - Hadith numbers cited from memory: Muslim 121 (also numbered 192 in some editions), Bukhari 1385, Bukhari 46. Please confirm.
 - 'Some say it in a mosque after Friday prayer, to a room that breaks into Allahu akbar' describes a common custom, not a requirement; the script never says witnesses are required.
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: Sahih Muslim 121 (Amr ibn al-As: Islam wipes out what came before it); Sahih al-Bukhari 1385 (every child is born on the fitrah); Qur'an 30:30 (the fitrah of Allah upon which He created people); Sahih al-Bukhari 46 (the man from Najd: he has succeeded, if he is truthful); Qur'an 9:60 (those whose hearts are to be reconciled)

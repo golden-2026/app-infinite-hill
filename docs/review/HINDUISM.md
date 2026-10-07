@@ -198,6 +198,7 @@ Word: **Makhan Chor** · Line: *close enough to scold*
 - Map change #1 (Krishna and the gods' colors), part one: who Krishna is, early. Confirm the paraphrase of Bhagavata 10.8.29–31 (calves untied, curd and butter stolen, fed to monkeys, pots broken, stools and mortar stacked, innocent face when caught).
 - 'Some devotees say' the butter stands for the devotee's heart: a common devotional reading, not a text. Confirm wording.
 - Laddu Gopal: a popular name for the crawling child Krishna with a laddu, cared for daily in many (especially North Indian) homes. Confirm.
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: Bhagavata Purana 10.8.29–31 (the gopis complain to Yashoda about the butter thefts); gopāla; Laddu Gopal (home worship of the child Krishna)
 
@@ -209,6 +210,7 @@ Word: **murti** · Line: *he's not an art critic*
 - Map change #2 (devotional art, 'is my offering enough?'). Gita 9.26 itself is already taught early, at day 8 (and 113, 115), so this day is about the art-anxiety angle and the murti, with 9.26 only recalled.
 - The hook describes a real, public 2026 r/hinduism post (a handmade clay Ganesha and the poster's jealousy), without names or numbers. 'Ganesha isn't an art critic' was a reply there; the script says 'as people like to put it' rather than quoting anyone. Confirm the owner is comfortable with the framing.
 - Shaligram: ammonite fossil stones from the Gandaki river in Nepal, worshiped as Vishnu. Ganesha in a turmeric cone or betel nut: common in North and West Indian pujas. Confirm.
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: Bhagavad Gita 9.26 (a leaf, a flower, a fruit, water, offered with devotion); mūrti; home Ganesh Chaturthi practice; Ganesha invoked in turmeric or a betel nut; lingam and shaligram worship
 
@@ -220,6 +222,7 @@ Word: **Shyama** · Line: *dark as a rain cloud*
 - Map change #1, part two: colorism and media depictions (the most-discussed r/hinduism post this year). Sensitive: no movie, actor or artist is named or blamed. Keeper review before publishing.
 - Facts to confirm: krishna = dark/black (Monier-Williams); the 'one who attracts' reading (from krish, to draw) is offered as what 'some teachers' hear; Draupadi called Krishnaa for her complexion (Adi Parva); Arjuna's name Krishna explained by his complexion (Virata Parva, the ten names); Rama described as dark (the script says only 'Rama too is described as dark'; the verse cited is Hanuman's description in Sundara Kanda 35; please confirm or supply a better verse).
 - 'Over the centuries it brightened' and 'blue is the color of the sky and ocean' are framed as painting history and devotees' meaning, not text. Confirm.
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: kṛṣṇa; śyāma; Adi Parva (Draupadi's birth from the fire; named Krishnaa for her dark complexion); Virata Parva (Arjuna explains his ten names to Uttara, including Krishna); Sundara Kanda 35 (Hanuman describes Rama to Sita); Braj tradition of Holi (Yashoda tells Krishna to color Radha's face)
 
@@ -231,6 +234,7 @@ Word: **jati** · Line: *you don't have to defend what you didn't choose*
 - Replaces the third-pass festival buffer day 'Diwali: the row of lamps' (Narakasura and the South Indian oil bath). That story still lives at days 81 and 139 (Naraka Chaturdashi); Diwali itself at 81, 88, 139–140. Day 96's review is updated.
 - Satyakama (Chandogya 4.4): the mother Jabala says she was a servant (paricarini) moving about in her youth and does not know his gotra; the teacher says none but a brahmin could speak so, and asks him to bring fuel. Paraphrased. The two readings (birth set aside for truth / the old label still used) are both offered; confirm.
 - Ravidas described as 'a leatherworker by trade' and 'still sung and honored'; Ambedkar 'born into a family treated as untouchable' (Mahar), chaired the constitution's drafting committee ('helped write'). No politics, parties or present-day policy are mentioned. Confirm wording.
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: Chandogya Upanishad 4.4.1–5 (Satyakama Jabala and the teacher Haridrumata Gautama); Bhagavad Gita 4.13 (the four varnas made by quality and action); caste, from Portuguese casta; Article 17 (abolition of untouchability), in force 26 January 1950
 
@@ -242,6 +246,7 @@ Word: **ishta** · Line: *one that fits*
 - 'Hindus often speak of one divine reality with many faces': a common framing, but traditions differ (e.g. Vaishnava and Shaiva schools hold one deity supreme). Confirm wording.
 - The claim that the ishta 'finds you as much as you find it' is framed as what many Hindus say. Confirm.
 - Week 16 opens: four openly chanted mantras (days 105–108); the Gayatri's openness is itself debated (see day 108).
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: ishta devata and mantra diksha (Hindu devotional and guru traditions)
 
@@ -253,6 +258,7 @@ Word: **samskara** · Line: *this step matters*
 - Facts to confirm: naming 'often on the eleventh or twelfth day' (Paraskara 1.17 gives the tenth day after birth for the father to name the child; many families keep the 11th or 12th; please adjust); annaprashana in the sixth month (Paraskara 1.19); tonsure in the first or third year (Paraskara 2.1); 'later lists often count sixteen' (shodasha samskaras; lists vary).
 - Hair offered at a temple or holy river: common (e.g. Tirumala); not named here to keep one famous text/place light. Confirm.
 - Index fixes: this day's word, carry and title are new; old index 'Prasad again · the sweet returns'.
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: Paraskara Grihya Sutra 1.17 (naming), 1.19 (first feeding, sixth month), 2.1 (tonsure, first or third year); saṃskāra; vidyarambha and the custom of touching a book stepped on (Saraswati)
 
@@ -263,6 +269,7 @@ Word: **tilak** · Line: *a mark of what you honor*
 - Replaces 'Rest' (the Mandukya's three states and sleep). That teaching still lives at day 2 (om, the Mandukya's a-u-m and the silence) and in the full Mandukya week, days 253–259. This day now closes the 'Body and food' week. Map change #4 ('things you grew up with': tilak and bindi).
 - Facts to confirm: kumkum from turmeric (with lime); three horizontal lines (tripundra) common among Shaivas; upright U/V (urdhva pundra) among many Vaishnavas, with a central line in several sampradayas; red dot common among Shaktas and others; bindi not by itself a marriage sign; sindoor in the parting marks married women in many North Indian families; ajna between the brows in later yoga/tantra texts. Shat-chakra-nirupana verse range is approximate; please check.
 - Day 132's review now recaps this day.
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: tilaka; bindu; tripundra (three lines of ash); ajna, the center between the brows
 
@@ -274,6 +281,7 @@ Word: **saptapadi** · Line: *seven steps make a friend*
 - APP: apps/app/src/content/life-moments.ts lists [137, 'Kirtan (call, answer)'] under 'belonging'; that entry should change. The 'wedding' list there notes 'no year 1–3 lesson on the vivaha rite itself (saptapadi)'; day 137 now is one.
 - Facts to confirm: Paraskara 1.8.1 order (ishe, urje, rayasposhaya, mayobhavyaya, pashubhyah, ritubhyah, sakha saptapada bhava); 'five for the herds' renders pashubhyah (cattle); Manusmriti 8.227 (marriage complete at the seventh step) is named only as 'an old law book'; seven pheras common, four in some communities (e.g. some Gujarati and Sindhi weddings); mangalsutra of black beads and gold; sindoor in many North Indian weddings; kundli matching optional; joota chupai a game.
 - Kanyadaan described neutrally ('many families now do differently or reword'); confirm the Keeper is comfortable.
+- Style pass 2026-10-07 (job 2): this lesson was rewritten 2026-10-06, so its voice was left alone; only the practice was trimmed (bell line cut, same steps) and games.guess added.
 
 Sources: Paraskara Grihya Sutra 1.8.1 (the seven steps: food, strength, wealth, happiness, cattle, seasons, friendship); saptapadī
 
@@ -286,6 +294,7 @@ Word: **svadharma** · Line: *your own dharma, imperfect, beats another's, perfe
 - Reviewer removed the earlier attribution of the temperament reading to Gandhi and Vivekananda: Gandhi for much of his life defended varna as hereditary occupation (while opposing untouchability and hierarchy), so naming him there overstated a debated point. If a Keeper wants named examples, choose and phrase them carefully.
 - Ambedkar source citation: confirm title and publication details.
 - Editor review (2026-10-01): cut the unsourced 'for centuries' and 'many modern teachers' (now 'some'); 'the teaching that survives every reading' (a narrator's verdict) now 'whatever one makes of the varna verses, these last four say'; 'your work can be worship' tied to verse 46; hook no longer tells the listener what they'll see. Keeper and owner should still review the caste paragraph.
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: Bhagavad Gita 18.41–18.44 (the four varnas and their work); Bhagavad Gita 18.45–18.48 (perfection through one's own work; svadharma; fire and smoke); Bhagavad Gita 3.35 and 4.13 (svadharma; varna by quality and action); B. R. Ambedkar's critique of the Gita (e.g., 'Krishna and His Gita', in his unfinished Revolution and Counter-Revolution in Ancient India)
 
@@ -296,6 +305,7 @@ Word: **nazar** · Line: *someone was looking out for you*
 - Replaces the guided visit 'what a Catholic means by the rosary' (rosarium). The week still visits five houses (Sikh seva, Buddhist breath, Sufi dhikr, Jewish Shabbat, Christian grace); the rosary is taught on the Catholic path. The week now turns, for its last two days, to the questions neighbors ask about the Hindu house. Map change #4 ('things you grew up with': red thread, baby's black dot, nazar).
 - Framed explicitly as folk custom, not scripture, with 'some families take them seriously, some with a smile, some skip them'. Confirm.
 - Facts to confirm: kalava/mauli usually red and yellow cotton; right wrist for men, left for married women in many families; nimbu-mirchi as lemon and seven green chilies; nazar from Arabic/Persian, 'sight, look' (Platts).
+- Job 2 (2026-10-07): voice kept (rewritten 2026-10-06); the practice trimmed to three sentences without the bell line, and games.guess added.
 
 Sources: naz̤ar; kalava / raksha sutra tied at the close of puja (often with the verse 'yena baddho bali raja'); kajal dot and nimbu-mirchi against nazar
 
@@ -307,5 +317,6 @@ Word: **abhaya mudra** · Line: *your worth isn't up for a vote*
 - Crisis care: includes local emergency services and 988 (US, call or text). Keep in every language version.
 - Replaces the week close 'the light in me sees the light in you' (namaste, with Jewish, Sikh and Quaker parallels). Namaste and its line still live at day 4; this day keeps the namaste close in its last line and still closes the neighbors week. Note: the old day 329 said namaste was 'day one' and 'your first word'; that was stale after the week-one rebuild (namaste is day 4).
 - Gita 2.23 paraphrased. 'One truth, many names' is day 6's line.
+- Job 2 (2026-10-07): voice kept (rewritten 2026-10-06); the practice trimmed without the bell line, the sign-off varied from day 328's, and games.guess added.
 
 Sources: Bhagavad Gita 2.23 (weapons do not cut it, fire does not burn it); abhaya; mudrā; 988 Suicide & Crisis Lifeline (call or text 988, US)

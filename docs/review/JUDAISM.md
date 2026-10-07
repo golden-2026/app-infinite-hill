@@ -322,6 +322,7 @@ Word: **Ovadiah** · Line: *no test at the door*
 - Ovadiah's question (may he say 'our God and God of our fathers') and Maimonides' reply (yes; Abraham is father of all who enter; do not let your lineage be lowly in your eyes) are paraphrased from the Letter to Ovadiah the Convert. 'More than eight hundred years ago' rests on Maimonides' life (1138–1204); confirm.
 - Jerusalem Talmud Bikkurim 1:4: a convert brings first fruits and recites, citing Genesis 17:5; Maimonides follows in Laws of First Fruits 4:3. Confirm references.
 - The pronunciation guide for av hamon goyim (AHV hah-MOHN goy-EEM) should be confirmed.
+- Job 2 (2026-10-07): voice left as rewritten; the practice was folded into three sentences and the bell line cut; the sign-off varied; games.guess added.
 
 Sources: Genesis 17:5; Jerusalem Talmud, Bikkurim 1:4 (a convert may say "our fathers", from Genesis 17:5); Maimonides, Letter to Ovadiah the Convert; Maimonides, Mishneh Torah, Laws of First Fruits 4:3; Genesis Rabbah 38:13 (Abram in his father's idol shop); CCAR Resolution on the Status of Children of Mixed Marriages (1983); Reconstructionist position on patrilineal descent (1968)
 
@@ -335,6 +336,7 @@ Word: **Shabbat shalom** · Line: *you don't have to know the words*
 - The no-talking custom between netilat yadayim and hamotzi is described as a custom; confirm framing and the Berakhot 42a source (tekef linetilat yadayim beracha).
 - Guest tips (arrive before candle-lighting, flowers are safe, ask before bringing food or wine, observant hosts don't drive or use phones on Shabbat) are general practice, not law; confirm wording.
 - The Talmud line (Shabbat 127a: greater is hospitality than receiving the Shekhinah) is paraphrased; it was also taught on day 43.
+- Style pass 2026-10-07 (job 2): this lesson was rewritten 2026-10-06, so its voice is left alone except the practice (bell line removed, trimmed to three sentences, nothing cut) and the hook's opening 'Here's the good news first:' (no content lost); games.guess added.
 
 Sources: Babylonian Talmud, Shabbat 127a (welcoming guests is greater than receiving the Divine Presence); Babylonian Talmud, Berakhot 42a (the blessing follows the washing of hands immediately); Genesis 18:1–8 (Abraham runs to the guests); Exodus 20:8 (Kiddush: remember the Sabbath day)
 
@@ -349,6 +351,7 @@ Word: **baruch** · Line: *six words before anything*
 - Links of bracha to berech (knee) and breichah (pool) are popular homiletic etymologies; presented as 'some connect'. Confirm.
 - The practice invites saying the divine name only 'if you pray'; learners may say the English. Confirm the Keeper is comfortable with voicing Adonai in an audio lesson.
 - Week-end look-back in the review names days 106–111.
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: Psalm 103:1; Babylonian Talmud, Berakhot 40b (name and kingship); Medieval commentary on the shift from you to who in blessings (e.g. the Rashba)
 
@@ -362,6 +365,7 @@ Word: **ha lachma anya** · Line: *all who are hungry, come*
 - Drops of wine for the plagues: the custom is old; the 'joy diminished by others' suffering' explanation is a later, popular one, framed as 'many explain'. Confirm.
 - Reclining to the left, four cups (grape juice permitted for many), afikoman, Elijah's cup and opening the door: customs vary by family; confirm wording.
 - 'No bread, cake or regular baked goods all week' describes homes that keep Passover; framed as 'in many homes'.
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: Passover Haggadah, Ha Lachma Anya; Mishnah Pesachim 10:1 (four cups; even the poorest reclines); Mishnah Pesachim 10:4 (the child asks; the parent teaches each according to their understanding); Exodus 12:15–20 (no leaven for seven days); Malachi 3:23 (Elijah, sent before the great day)
 
@@ -375,6 +379,7 @@ Word: **Tisha B'Av** · Line: *the floor holds grief*
 - The practice line 'renew our days' is quoted from Lamentations as optional for those who pray; not a new prayer.
 - End of the 'holidays as they arrive' section (days 121–138): look-back list in the teach.
 - Editor review (Oct 2026): SERIOUS fix: the script and myth said Lamentations 'ends with' 5:21's plea; the book's last verse is 5:22, and 5:21 is repeated after it in the reading. Also: hook rewritten (it opened 'Walk into a synagogue' and repeated day 137's night-synagogue scene); 'saddest day' superlatives cut (review, teach, original note); destruction dates and 1492 cut per the claims rule; the Mishnah named as the source for both Temples on the ninth; 'three things' miscount replaced.
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: Shulchan Aruch, Orach Chayim 550:1; 554:5–6 (who is excused from the fasts); Lamentations 1:1; Lamentations 5:21; Mishnah Taanit 4:6; Yoma 9b; Jerusalem Talmud Berakhot 2:4; Lamentations 5:22 (5:21 repeated after it in the public reading)
 
@@ -387,6 +392,7 @@ Word: **hamaor shebah** · Line: *the light inside it*
 - SENSITIVE: belief. Traditions stated side by side without ranking: Maimonides' principles central in much Orthodox teaching; other movements put people and practice first; Humanistic Judaism does not center God. Confirm framing.
 - Midrash paraphrased: Lamentations Rabbah Petichta 2 / JT Chagigah 1:7 (also Pesikta de-Rav Kahana 15). Some texts read hamaor shebah (the light in it), others se'or (leaven); confirm the reading and transliteration.
 - 'An old book about grief' refers to the midrash on Lamentations; confirm the description is fair.
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: Lamentations Rabbah, Petichta 2 (if only they had left Me and kept My Torah); Jerusalem Talmud, Chagigah 1:7; Exodus 24:7 (we will do, and we will hear); Maimonides, Commentary on the Mishnah, Sanhedrin 10 (the thirteen principles); Society for Humanistic Judaism, statement of purpose
 
@@ -400,6 +406,7 @@ Word: **Lech Lecha** · Line: *the road ran everywhere*
 - Sigd also includes a fast in the morning; deliberately not mentioned here. If a later edit adds it, include the health line (life and health come first).
 - SENSITIVE: Israel is mentioned only as one place where these families now live, alongside North America and elsewhere; no politics. Keep it that way.
 - Word kept as 'Lech Lecha', following the camp 4 convention (each portion day's word is the portion's name).
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: Genesis 12:1; Genesis 12:4; Nathan Katz, Who Are the Jews of India? (2000); Shalva Weil, ed., India's Jewish Heritage: Ritual, Art and Life-Cycle (2002); Steven Kaplan, The Beta Israel (Falasha) in Ethiopia (1992); Paradesi Synagogue, Kochi (built 1568)
 
@@ -415,6 +422,7 @@ Word: **nichum avelim** · Line: *show up, say less*
 - Leaving line: 'HaMakom yenachem etchem betoch she'ar avelei Tziyon v'Yerushalayim' (Ashkenazi custom); Sephardi communities often say 'min hashamayim tenuchamu'. Only the English is given; confirm.
 - Day 49 already quotes Genesis 23:2 and its small kaf; this lesson only calls back to the verse. Sotah 14a (God comforts mourners, from Genesis 25:11) is paraphrased; confirm.
 - The 'I'm so sorry' line uses I as a quoted phrase a visitor might say, not the narrator's voice.
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: Genesis 23:2; Genesis 50:10; Job 2:13 (seven days and seven nights in silence); Babylonian Talmud, Moed Katan 28b (comforters wait for the mourner to speak); Babylonian Talmud, Sotah 14a (God comforted mourners; so should we); Shulchan Aruch, Yoreh De'ah 376:1 (comforting mourners)
 

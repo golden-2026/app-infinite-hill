@@ -282,6 +282,7 @@ Word: **dryness** · Line: *a dry prayer still counts*
 - Mental-health line: depression named as an illness, help-seeking named as not a lack of faith (research: 'is therapy or medicine a sin?' asked repeatedly), with 988 / local emergency help. Tone check requested.
 - Hebrew tsiyyah (צִיָּה) as the word for 'dry' in Psalm 63:1 (be'eretz tsiyyah ve'ayef): confirm spelling and pointing.
 - John of the Cross, Dark Night 1.9: the three signs and the mention of melancholy, paraphrased in the trapdoor. Confirm.
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: Psalm 63:1; Psalm 42:2; Psalm 42:3; C. S. Lewis, The Screwtape Letters (1942), letter 8; John of the Cross, Dark Night of the Soul, book 1, ch. 9; 988 Suicide & Crisis Lifeline (US)
 
@@ -292,6 +293,7 @@ Word: **adiaphora** · Line: *be persuaded, and be kind*
 - No verdicts given: each topic states who says what. Confirm fairness: Coptic wrist-cross tattoo custom; Catholic/Orthodox/Lutheran/Anglican wine at communion vs many Baptist, Pentecostal and Methodist churches asking members to abstain and serving grape juice; UMC opposition to gambling; CCC 2413 paraphrase.
 - Sex and dating deliberately left for a later, careful lesson (one line only).
 - 'Adiaphora' history: Stoic origin; the Lutheran adiaphorist controversy (Leipzig Interim, 1548); Formula of Concord Article X. Confirm.
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: Romans 14:1; Romans 14:5; 1 Corinthians 10:23; Leviticus 19:28; Ephesians 5:18; Romans 14:13; John 2:1–11; 1 Corinthians 8; Catechism of the Catholic Church 2413; The United Methodist Church, Social Principles (gambling); Formula of Concord, Article X
 
@@ -302,6 +304,7 @@ Word: **lucre** · Line: *open books, open hands*
 - Describes a pattern only (a viral photo of a preacher's sneakers); no living pastor, church or social-media account is named, by design.
 - 'Some pastors work a second job so a small church can afford them' (bivocational ministry) and 'some churches publish their budgets' are stated as 'some'. Confirm.
 - Greek aischrokerdōs (1 Peter 5:2) and the Jerusalem collection references: confirm.
+- Job 2 (2026-10-07): games.guess added; the review's homework check, the bell line and the practice's length trimmed for the style checklist; the rest of this rewritten lesson's voice left as it was.
 
 Sources: 1 Peter 5:2; 1 Corinthians 9:14; 2 Corinthians 8:21; 2 Corinthians 8:18–20; 1 Corinthians 16:1–4; Romans 15:25–26; Acts 18:3; 1 Thessalonians 2:9
 
@@ -312,6 +315,7 @@ Word: **church hurt** · Line: *a bruised reed he will not break*
 - Abuse line: 'it was not your fault' and 'telling someone safe outside that church matters'; 988 / local emergency help included. Tone check requested: the lesson should believe the hurt without attacking the church.
 - 'Most churches teach that faith is meant to be lived with others' (Hebrews 10:25): confirm wording is fair.
 - Greek κάλαμον συντετριμμένον (Matthew 12:20): confirm.
+- Job 2 (2026-10-07): voice kept as rewritten on 2026-10-06; only the checklist fixes (homework check in the review, practice trimmed with every option kept, no bell line, carry trimmed; 'the week turns from together to alone' now lives in day 144's review) and games.guess added.
 
 Sources: Psalm 55:12; Psalm 55:14; Ezekiel 34:2; Matthew 12:20; Isaiah 42:3; Hebrews 10:24–25; 988 Suicide & Crisis Lifeline (US)
 
@@ -325,6 +329,7 @@ Word: **Maccabees** · Line: *my words won't pass away*
 - Antiochus IV's altar (167 BCE) and Hanukkah's rededication (1 Maccabees 4); 'about two centuries before Jesus'. Confirm.
 - 'Mark does something he never does anywhere else': the parenthetical address to the reader in 13:14 is unique in Mark. Confirm.
 - Pronunciation of βδέλυγμα given as BDEL-oog-mah; Keeper to confirm.
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: Mark 13:14; 1 Thessalonians 4:17; Mark 13:31; Mark 13:14–27; Daniel 9:27; 11:31; 12:11; Daniel 7:13; Isaiah 13:10; 1 Maccabees 1:10, 1:54; 4:52–59
 
@@ -338,6 +343,7 @@ Word: **Life everlasting** · Line: *mercy has the last word*
 - Purgatory: Catholic teaching; Orthodox pray for the dead without defining purgatory; most Protestants reject it. Confirm.
 - Part close: days 297–311 walked the creed.
 - Editor review (2026-10-01): cut the superlatives "the first book in English known to be written by a woman" (hook and myth) and "the best-known verse in the Bible"; cut "comforted people for six hundred years" and "spends the rest of her life"; "last rites" now the bedside visit her text describes; "all/most churches" claims rewritten; added Revelations ch. 2–3 as the source for her age and the 1373 date.
+- Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.
 
 Sources: John 3:16; Revelation 21:4; Julian of Norwich, Revelations of Divine Love, ch. 27; Julian of Norwich, Revelations of Divine Love, ch. 2–3 (her age and the date of the visions); John 17:3; 1 Corinthians 13:12
 
