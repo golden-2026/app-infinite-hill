@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "Dearer than oneself",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY SIX-HUNDRED-FIFTEEN.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY SIX-HUNDRED-FIFTEEN.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday: the end of Bahiya's story, and your line, today is today's. Did one thing come off the someday list? Today, a scene by the road, and one question. Day six hundred fifteen.",
-      "screen": ["`TODAY IS TODAY'S.`"]
+      "screen": [
+        "`TODAY IS TODAY'S.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Kids at the edge of a pond. A stick, a jar, a dare. Somebody pokes at a frog to see it jump. Nobody's being evil; they're curious, and bored, and in a group. The Udana has a scene like that. The Buddha is walking between the city of Savatthi and the monastery at Jeta's Grove, and on the way he sees a crowd of boys tormenting fish. He could walk past. He could scold. He does neither. He stops, and asks them a question. Today: the boys and the fish.",
-      "screen": ["`A STICK, A JAR, A DARE.` → `ON THE ROAD TO JETA'S GROVE.` → `HE STOPS AND ASKS.`"]
+      "screen": [
+        "`A STICK, A JAR, A DARE.` → `ON THE ROAD TO JETA'S GROVE.` → `HE STOPS AND ASKS.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "Boys, he says, are you afraid of pain? Do you dislike pain? Yes, sir, they say. We're afraid of pain. We don't like it. Two questions, two honest answers. And then, knowing the meaning of it, he speaks the verse. If you fear pain, if you dislike pain, don't do a bad deed, openly or in secret. If you do, or are doing one, you won't be free of pain, even if you run and fly away. Notice the teaching method. He doesn't begin with the fish. He begins with the boys. He doesn't tell them what fish feel; he asks what they feel. And once they've said it out loud, the rest follows on its own: if you don't like pain, you already know something about everyone who can feel it. The Dhammapada has the same insight in its chapter on punishment: everyone trembles at the rod; putting yourself in their place, don't strike or cause to strike. The Udana gives it a scene and a pond. Notice, too, that the verse doesn't threaten the boys with a stranger's punishment. It points at the plain logic of cause and result: what you do follows you, even if you run. It's the thread of only by deeds and fear from the rod, a few days back, and now it has a pond.",
-      "screen": ["`ARE YOU AFRAID OF PAIN?` · `START WITH THE BOYS, NOT THE FISH.` · `OPENLY OR IN SECRET.` · `EVEN IF YOU RUN.` · then, large: `ALL DISLIKE PAIN.`"]
+      "screen": [
+        "`ARE YOU AFRAID OF PAIN?` · `START WITH THE BOYS, NOT THE FISH.` · `OPENLY OR IN SECRET.` · `EVEN IF YOU RUN.` · then, large: `ALL DISLIKE PAIN.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Dukkha, pain. In the Udana, the Buddha asks boys tormenting fish whether they dislike dukkha, and lets their answer teach them. Today's word.",
-      "screen": ["`DUKKHA — today's word`."]
+      "screen": [
+        "`DUKKHA — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,35 +61,99 @@
       "voice": "Your line: all dislike pain. Today, before one sharp act or word, ask yourself his question first: would I want this? Day six hundred fifteen.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 615 COUNTS.` → `TOMORROW: DEARER THAN ONESELF.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 615 COUNTS.` → `TOMORROW: DEARER THAN ONESELF.`"
+      ]
+    }
   ],
   "howItsDone": "The first of the five precepts lay Buddhists undertake is to refrain from killing living beings, and teachers sometimes explain it, as here, by putting oneself in the other's place.",
   "games": {
     "match": {
       "prompt": "the boys and the fish: tap the pairs.",
-      "pairs": [["the boys", "said yes, we're afraid of pain"], ["the road", "between Savatthi and Jeta's Grove"], ["openly or in secret", "don't do a bad deed either way"], ["run and fly away", "still not free of pain"]]
+      "pairs": [
+        [
+          "the boys",
+          "said yes, we're afraid of pain"
+        ],
+        [
+          "the road",
+          "between Savatthi and Jeta's Grove"
+        ],
+        [
+          "openly or in secret",
+          "don't do a bad deed either way"
+        ],
+        [
+          "run and fly away",
+          "still not free of pain"
+        ]
+      ]
     },
     "myth": [
-      ["the Buddha scolded the boys and sent them home", false, "he asked them two questions and let their answers lead to the verse."],
-      ["the verse says a bad deed done in secret still brings pain", true, "openly or in secret, and even if you run and fly away."],
-      ["the Dhammapada has a similar teaching about the rod", true, "in its chapter on punishment: all tremble at the rod; put yourself in their place."]
+      [
+        "the Buddha scolded the boys and sent them home",
+        false,
+        "he asked them two questions and let their answers lead to the verse."
+      ],
+      [
+        "the verse says a bad deed done in secret still brings pain",
+        true,
+        "openly or in secret, and even if you run and fly away."
+      ],
+      [
+        "the Dhammapada has a similar teaching about the rod",
+        true,
+        "in its chapter on punishment: all tremble at the rod; put yourself in their place."
+      ]
     ],
     "fork": {
       "setup": "you're walking on a road and see boys tormenting fish in a pond. you're the Buddha in the Udana. what do you do?",
-      "options": ["walk on; it's not your business.", "ask them whether they're afraid of pain.", "take the fish away."],
+      "options": [
+        "walk on; it's not your business.",
+        "ask them whether they're afraid of pain.",
+        "take the fish away."
+      ],
       "answer": 1,
       "reveal": "he starts with what the boys feel, not with the fish. once they say they dislike pain, the verse follows."
     },
-    "original": { "script": "दुक्ख", "say": "DUK-kha", "note": "Pali dukkha: pain, suffering, unsatisfactoriness. the boys say they fear dukkha." },
+    "original": {
+      "script": "दुक्ख",
+      "say": "DUK-kha",
+      "note": "Pali dukkha: pain, suffering, unsatisfactoriness. the boys say they fear dukkha."
+    },
     "trapdoor": [
       "what you thought: be kind to animals because it's nice.",
       "what it means: the Buddha starts from the boys' own dislike of pain; knowing that, they know something about every creature.",
       "what a scholar hears: Udana 5.4's verse is its own, but Dhammapada 129–130 on the rod reasons the same way, from oneself to others."
+    ],
+    "recall": [
+      [
+        "kataññuta",
+        "gratitude: knowing what was done"
+      ],
+      [
+        "mangala",
+        "blessing, good fortune"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Udana 5.4 (Kumaraka Sutta)", "work": "Udana", "translation": null, "quoted": null },
-    { "ref": "Dhammapada 129–130 (Dandavagga)", "work": "Dhammapada", "translation": null, "quoted": null }
+    {
+      "ref": "Udana 5.4 (Kumaraka Sutta)",
+      "work": "Udana",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Dhammapada 129–130 (Dandavagga)",
+      "work": "Dhammapada",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -86,5 +165,9 @@
       "Editor review (y2 614-631): the trapdoor wrongly said Udana 5.4's verse parallels Dhp 129-132 (the close verse parallel to Dhp 131-132 is Udana 2.3, boys and a snake); now says only that Dhp 129-130 reasons the same way, and the source range is narrowed. Hook no longer opens 'Anyone who has watched...'; fixed the garbled look-back line; softened 'many Buddhists' in howItsDone."
     ]
   },
-  "meta": { "index": "615. The boys and the fish · — · boys tormenting fish; would you want pain? (Udana 5.4) · stop one small cruelty · all dislike pain", "writer": "writer agent (buddhism 602–631)", "written": "2026-09-30" }
+  "meta": {
+    "index": "615. The boys and the fish · — · boys tormenting fish; would you want pain? (Udana 5.4) · stop one small cruelty · all dislike pain",
+    "writer": "writer agent (buddhism 602–631)",
+    "written": "2026-09-30"
+  }
 }

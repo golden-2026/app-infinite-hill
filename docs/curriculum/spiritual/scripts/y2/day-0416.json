@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "Three fields",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY FOUR-HUNDRED-SIXTEEN.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY FOUR-HUNDRED-SIXTEEN.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday: no scorekeeping, the puppies and the piece of meat, and your line, nothing to keep score of. Did you do something for a friend without counting it? Day four hundred sixteen.",
-      "screen": ["`NO SCOREKEEPING.`"]
+      "screen": [
+        "`NO SCOREKEEPING.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "A young student of public speaking came to Epictetus with his hair dressed more elaborately than usual, his whole appearance polished to a shine. Should a teacher say something? Epictetus weighs it. If I keep quiet, he reasons, this young man may someday say: Epictetus saw me like that, and never said a word. So he speaks. But he doesn't mock. He asks a question about dogs and horses. Today: real beauty.",
-      "screen": ["`HAIR DRESSED WITH GREAT CARE.` → `SHOULD HE SAY SOMETHING?` → `A QUESTION ABOUT DOGS.`"]
+      "screen": [
+        "`HAIR DRESSED WITH GREAT CARE.` → `SHOULD HE SAY SOMETHING?` → `A QUESTION ABOUT DOGS.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "This is Discourses book three, chapter one. Tell me, Epictetus says to the young man, don't you think some dogs are beautiful? Some horses? Yes. Is it the same thing that makes each of them beautiful, or something different? Think about it. A dog is beautiful when it's excellent as a dog. A horse when it's excellent as a horse. A beautiful racehorse and a beautiful sheepdog aren't beautiful in the same way; each is beautiful by being very good at being what it is. So what makes a human being beautiful? Excellence as a human. And what is that? Justice. Moderation. Self-control. If you want to be beautiful, Epictetus tells him, work on those. Then comes the line that turns it from a lecture into a kindness. You aren't your hair, he says, or your skin. You're your will, your choosing self. Make that beautiful, and you will be beautiful. Notice he's not against looking after yourself. Elsewhere in the Discourses he's quite firm that students should keep clean and not put people off. His point is about where the real work goes. A morning in front of the mirror shapes the hair. A morning of being honest, patient and fair shapes the person. Only one of those, for Epictetus, is the beauty that belongs to a human being.",
-      "screen": ["`WHAT MAKES A DOG BEAUTIFUL?` · `EXCELLENT AT BEING WHAT IT IS.` · `JUSTICE, MODERATION, SELF-CONTROL.` · `YOU AREN'T YOUR HAIR.` · then, large: `REAL BEAUTY.`"]
+      "screen": [
+        "`WHAT MAKES A DOG BEAUTIFUL?` · `EXCELLENT AT BEING WHAT IT IS.` · `JUSTICE, MODERATION, SELF-CONTROL.` · `YOU AREN'T YOUR HAIR.` · then, large: `REAL BEAUTY.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Real beauty. Epictetus to a carefully groomed young man: each creature is beautiful by excelling at what it is, and a human's excellence is justice and self-control.",
-      "screen": ["`REAL BEAUTY — today's word`."]
+      "screen": [
+        "`REAL BEAUTY — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,35 +61,99 @@
       "voice": "Your line: you're your will, your choosing self. Today, compliment someone's character, not their looks: their honesty, their patience, their kindness. Day four hundred sixteen.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 416 COUNTS.` → `TOMORROW: THREE FIELDS.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 416 COUNTS.` → `TOMORROW: THREE FIELDS.`"
+      ]
+    }
   ],
   "howItsDone": "Some readers of this chapter make a point of praising others for their character rather than their appearance, and give their own mornings to character as well as grooming.",
   "games": {
     "match": {
       "prompt": "real beauty: tap the pairs.",
-      "pairs": [["a beautiful dog", "excellent at being a dog"], ["a human's excellence", "justice and self-control"], ["the young student", "hair dressed with great care"], ["what you are", "your will, not your hair"]]
+      "pairs": [
+        [
+          "a beautiful dog",
+          "excellent at being a dog"
+        ],
+        [
+          "a human's excellence",
+          "justice and self-control"
+        ],
+        [
+          "the young student",
+          "hair dressed with great care"
+        ],
+        [
+          "what you are",
+          "your will, not your hair"
+        ]
+      ]
     },
     "myth": [
-      ["Epictetus mocks the young man's hair in front of the class", false, "he asks him a gentle question about dogs and horses."],
-      ["he says each creature is beautiful by being excellent at what it is", true, "a dog as a dog, a horse as a horse, a human as a human."],
-      ["Epictetus tells his students not to bother keeping clean", false, "elsewhere he insists they keep clean; his point is where the real work goes."]
+      [
+        "Epictetus mocks the young man's hair in front of the class",
+        false,
+        "he asks him a gentle question about dogs and horses."
+      ],
+      [
+        "he says each creature is beautiful by being excellent at what it is",
+        true,
+        "a dog as a dog, a horse as a horse, a human as a human."
+      ],
+      [
+        "Epictetus tells his students not to bother keeping clean",
+        false,
+        "elsewhere he insists they keep clean; his point is where the real work goes."
+      ]
     ],
     "fork": {
       "setup": "you're Epictetus. a student walks in with elaborately styled hair. what do you do?",
-      "options": ["say nothing; it's his business.", "ask him what makes a dog or a horse beautiful.", "send him home to change."],
+      "options": [
+        "say nothing; it's his business.",
+        "ask him what makes a dog or a horse beautiful.",
+        "send him home to change."
+      ],
       "answer": 1,
       "reveal": "he worried the young man would one day say Epictetus never told him, so he asked about dogs and horses, and led him to human excellence."
     },
-    "original": { "script": "κάλλος", "say": "KAL-los", "note": "Greek kallos: beauty (as in calligraphy, beautiful writing); 3.1 asks what makes each creature beautiful." },
+    "original": {
+      "script": "κάλλος",
+      "say": "KAL-los",
+      "note": "Greek kallos: beauty (as in calligraphy, beautiful writing); 3.1 asks what makes each creature beautiful."
+    },
     "trapdoor": [
       "what you thought: beauty is only skin deep.",
       "what it means: each thing is beautiful by excelling at what it is, and a human's excellence is character.",
       "what a scholar hears: the Greek word for excellence, aretē, applied to horses and knives as well as people, so 'beautiful as a human' means 'excellent as a human' for Epictetus."
+    ],
+    "recall": [
+      [
+        "Arrian",
+        "the student who wrote it down"
+      ],
+      [
+        "Cleanthes",
+        "lead me, Zeus, and you, Destiny"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Discourses 3.1 (of adornment)", "work": "Epictetus, Discourses (Arrian)", "translation": null, "quoted": null },
-    { "ref": "Discourses 4.11 (of cleanliness)", "work": "Epictetus, Discourses (Arrian)", "translation": null, "quoted": null }
+    {
+      "ref": "Discourses 3.1 (of adornment)",
+      "work": "Epictetus, Discourses (Arrian)",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Discourses 4.11 (of cleanliness)",
+      "work": "Epictetus, Discourses (Arrian)",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -85,5 +164,9 @@
       "Editor review (2026-10-01): 3.1 lists justice, temperance and self-control as a human's excellence; removed 'self-mastery', 'faithful and fair' (not in the passage) and fixed the screen head; 'elaborate curls' became 'hair dressed with great care' (the text says dressed more carefully than usual; day 417's review still says 'curls'); hook drops the invented 'one morning', 'you can picture the other students' and 'Picture' framing; practice no longer tells the listener what they feel."
     ]
   },
-  "meta": { "index": "416. Real beauty · — · to a young man with elaborate hair: beauty is in excellence, not in grooming (Discourses 3.1) · compliment someone's character · real beauty", "writer": "writer agent (spiritual 392–421)", "written": "2026-09-30" }
+  "meta": {
+    "index": "416. Real beauty · — · to a young man with elaborate hair: beauty is in excellence, not in grooming (Discourses 3.1) · compliment someone's character · real beauty",
+    "writer": "writer agent (spiritual 392–421)",
+    "written": "2026-09-30"
+  }
 }

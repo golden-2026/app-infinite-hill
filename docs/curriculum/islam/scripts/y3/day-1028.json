@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "Malcolm X at Hajj",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-THOUSAND-TWENTY-EIGHT.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY ONE-THOUSAND-TWENTY-EIGHT.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, Muslims in Britain: a dome in Woking, a terraced house in Liverpool where Abdullah Quilliam opened a mosque, a chapel on Brick Lane that became a mosque. Your line was: a long british story. What did you find out about the mosque nearest you? Day one thousand twenty-eight.",
-      "screen": ["`A LONG BRITISH STORY.`"]
+      "screen": [
+        "`A LONG BRITISH STORY.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Friday, just after noon, in a mosque in an American city. A man in a Detroit auto plant jacket. A doctor whose parents came from Lahore. A grandmother whose family has been Black and Muslim in Philadelphia for generations. A young woman from a Lutheran family in Minnesota who became Muslim in college. A Somali taxi driver. A Bosnian baker. They stand in one row, and nobody needs to ask where anyone is really from. The answer, for all of them, is here. Today: Muslims in America.",
-      "screen": ["`FRIDAY, JUST AFTER NOON.` → `DETROIT, LAHORE, PHILADELPHIA, MINNESOTA.` → `WHERE ARE YOU FROM? HERE.`"]
+      "screen": [
+        "`FRIDAY, JUST AFTER NOON.` → `DETROIT, LAHORE, PHILADELPHIA, MINNESOTA.` → `WHERE ARE YOU FROM? HERE.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "American Muslims are a very varied community, and three big streams run into it. The first stream is immigrants. Arab families settled in the Midwest and worked in factories; South Asians came as doctors, engineers and students; later came people from Iran, Turkey, Bosnia, Somalia and many other places. The second stream is African American Muslims. Two days ago we met enslaved Africans who prayed in chains. Slavery made that faith hard to hand down. Later, Black Americans found their way to Islam again, through several movements. Some passed through the Nation of Islam, and under Warith Deen Mohammed much of that community turned to mainstream Sunni practice. The third stream is converts of every background, who walked into a mosque one day and said the shahada. Here is the idea worth keeping. For the people in that Friday row, American and Muslim are not two halves pulling apart. They are one life. The boxer Muhammad Ali took the name, prayed, fought, joked, and was American to his fingertips. The Qur'an says plainly: \"There is no compulsion in religion.\" In America that line can be heard twice: as a teaching of the faith, and as something close to the country's own promise that belief is free. A convert chooses. An immigrant family chooses to stay. A grandchild of the old streams chooses to keep praying.",
-      "screen": ["`THREE STREAMS.` · `IMMIGRANTS FROM EVERYWHERE.` · `AFRICAN AMERICAN MUSLIMS, RETURNING.` · `CONVERTS WHO CHOSE.` · then, large: `THERE IS NO COMPULSION IN RELIGION.`"]
+      "screen": [
+        "`THREE STREAMS.` · `IMMIGRANTS FROM EVERYWHERE.` · `AFRICAN AMERICAN MUSLIMS, RETURNING.` · `CONVERTS WHO CHOSE.` · then, large: `THERE IS NO COMPULSION IN RELIGION.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Shahada, the declaration a convert speaks on becoming Muslim, one of the three streams that make up American Islam. Today's word.",
-      "screen": ["`SHAHADA — today's word`."]
+      "screen": [
+        "`SHAHADA — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,35 +61,99 @@
       "voice": "Your line: american and muslim. Today, read or listen to one American Muslim telling their own story, in their own words, for five minutes. Day one thousand twenty-eight.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 1028 COUNTS.` → `TOMORROW: MALCOLM X AT HAJJ.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 1028 COUNTS.` → `TOMORROW: MALCOLM X AT HAJJ.`"
+      ]
+    }
   ],
   "howItsDone": "American Muslims gather in mosques and Islamic centers founded by immigrant, African American and convert communities, and many mosques hold open houses where neighbors can visit and ask questions.",
   "games": {
     "match": {
       "prompt": "Muslims in America — tap the pairs.",
-      "pairs": [["the first stream", "immigrants from many lands"], ["the second stream", "African American Muslims"], ["the third stream", "converts of every background"], ["Warith Deen Mohammed", "led many into Sunni practice"]]
+      "pairs": [
+        [
+          "the first stream",
+          "immigrants from many lands"
+        ],
+        [
+          "the second stream",
+          "African American Muslims"
+        ],
+        [
+          "the third stream",
+          "converts of every background"
+        ],
+        [
+          "Warith Deen Mohammed",
+          "led many into Sunni practice"
+        ]
+      ]
     },
     "myth": [
-      ["American Muslims mostly come from one country", false, "immigrants came from many lands, alongside African American Muslims and converts."],
-      ["the Qur'an says there is no compulsion in religion", true, "Qur'an 2:256: \"There is no compulsion in religion.\""],
-      ["the Nation of Islam's community stayed apart from Sunni practice", false, "under Warith Deen Mohammed, much of that community turned to mainstream Sunni practice."]
+      [
+        "American Muslims mostly come from one country",
+        false,
+        "immigrants came from many lands, alongside African American Muslims and converts."
+      ],
+      [
+        "the Qur'an says there is no compulsion in religion",
+        true,
+        "Qur'an 2:256: \"There is no compulsion in religion.\""
+      ],
+      [
+        "the Nation of Islam's community stayed apart from Sunni practice",
+        false,
+        "under Warith Deen Mohammed, much of that community turned to mainstream Sunni practice."
+      ]
     ],
     "fork": {
       "setup": "a coworker tells you she's Muslim. what's the most useful next question?",
-      "options": ["so where are you really from?", "how did your family come to the faith, or you?", "do you speak Arabic?"],
+      "options": [
+        "so where are you really from?",
+        "how did your family come to the faith, or you?",
+        "do you speak Arabic?"
+      ],
       "answer": 1,
       "reveal": "she might be an immigrant's daughter, the grandchild of African American Muslims, or a convert. the story is the interesting part."
     },
-    "original": { "script": "مُسْلِم", "say": "MUS-lim", "note": "Arabic: a Muslim, one who submits to God." },
+    "original": {
+      "script": "مُسْلِم",
+      "say": "MUS-lim",
+      "note": "Arabic: a Muslim, one who submits to God."
+    },
     "trapdoor": [
       "what you thought: American Muslims are recent immigrants.",
       "what it means: three streams, immigrants, African American Muslims and converts, making one very varied community.",
       "what a scholar hears: Qur'an 2:256, no compulsion in religion, meeting a country built on free belief, and a community many of whose members chose the faith."
+    ],
+    "recall": [
+      [
+        "imaret",
+        "the Ottoman soup kitchen"
+      ],
+      [
+        "waqf",
+        "property set aside forever for good"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Qur'an 2:256", "work": "The Qur'an", "translation": "Pickthall 1930", "quoted": "There is no compulsion in religion." },
-    { "ref": "American Muslim history (immigrant, African American and convert communities)", "work": "general history", "translation": null, "quoted": null }
+    {
+      "ref": "Qur'an 2:256",
+      "work": "The Qur'an",
+      "translation": "Pickthall 1930",
+      "quoted": "There is no compulsion in religion."
+    },
+    {
+      "ref": "American Muslim history (immigrant, African American and convert communities)",
+      "work": "general history",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",

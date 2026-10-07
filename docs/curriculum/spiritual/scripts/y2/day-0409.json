@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "Start with weakness",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY FOUR-HUNDRED-NINE.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY FOUR-HUNDRED-NINE.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday: sphaira, Socrates handling what he was tossed, and your line, let the ball be the ball. Which task did you play for the skill, not the prize? Day four hundred nine.",
-      "screen": ["`SPHAIRA.`"]
+      "screen": [
+        "`SPHAIRA.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "In a single afternoon you might be a manager in a meeting, a customer on hold, a daughter on the phone with her mother, a neighbor waving across the fence, and a stranger letting someone merge in traffic. Each one asks something slightly different of you. It's easy to switch between them without noticing, and sometimes to bring the wrong one into the room: the boss into the family dinner, the tired customer into the conversation with a friend. Epictetus had a method for this. Today: onoma.",
-      "screen": ["`MANAGER, CUSTOMER, DAUGHTER, NEIGHBOR.` → `EACH ASKS SOMETHING DIFFERENT.` → `THE WRONG ONE IN THE ROOM.`"]
+      "screen": [
+        "`MANAGER, CUSTOMER, DAUGHTER, NEIGHBOR.` → `EACH ASKS SOMETHING DIFFERENT.` → `THE WRONG ONE IN THE ROOM.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "This is Discourses book two, chapter ten: how to find what you owe from the names you carry. Consider who you are, Epictetus says. First, a human being, which means someone with a will, and nothing in you ranks higher than that. Second, a citizen of the world, a part of it, and not a minor part. So act the way a hand or a foot would act if it could think: never just for itself, always as part of the whole body. Then the names get closer to home. Remember you're a son, he tells his students. What does that name ask? To treat what's yours as your father's, to give way to him, never to speak badly of him to others. Remember you're a brother. That name asks you to yield, to be courteous, and never to fight your brother over things that don't really matter. Then, he says, if you sit on a city council, remember you're a councilor. If you're young, remember you're young. If old, old. If a father, a father. Each name, if you stop and think about it, tells you what to do. His examples are sons, brothers and fathers. The method fits daughters, sisters, parents, partners, coworkers, anyone. And it's simple enough to use at a doorway: before you walk in, ask which name you're carrying into this room, and what that name asks of you.",
-      "screen": ["`FIRST, A HUMAN BEING.` · `A CITIZEN OF THE WORLD.` · `SON, BROTHER, COUNCILOR, FATHER.` · `EACH NAME TELLS YOU WHAT TO DO.` · then, large: `WHO AM I HERE?`"]
+      "screen": [
+        "`FIRST, A HUMAN BEING.` · `A CITIZEN OF THE WORLD.` · `SON, BROTHER, COUNCILOR, FATHER.` · `EACH NAME TELLS YOU WHAT TO DO.` · then, large: `WHO AM I HERE?`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Onoma. Greek for name: Epictetus' method of names, human, citizen of the world, child, sibling, parent, each telling you what you owe.",
-      "screen": ["`ONOMA — today's word`."]
+      "screen": [
+        "`ONOMA — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,34 +61,93 @@
       "voice": "Your line: each name tells you what to do. At one doorway today, pause and ask it, then act well from that one role. Day four hundred nine.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 409 COUNTS.` → `TOMORROW: START WITH WEAKNESS.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 409 COUNTS.` → `TOMORROW: START WITH WEAKNESS.`"
+      ]
+    }
   ],
   "howItsDone": "Some Stoic readers pause before entering a room or conversation to name the role they're stepping into, and ask what it asks of them.",
   "games": {
     "match": {
       "prompt": "who am I here: tap the pairs.",
-      "pairs": [["a human being", "someone with a will"], ["a citizen of the world", "act like a hand that can think"], ["a brother", "yield; don't fight over trifles"], ["each name", "tells you what to do"]]
+      "pairs": [
+        [
+          "a human being",
+          "someone with a will"
+        ],
+        [
+          "a citizen of the world",
+          "act like a hand that can think"
+        ],
+        [
+          "a brother",
+          "yield; don't fight over trifles"
+        ],
+        [
+          "each name",
+          "tells you what to do"
+        ]
+      ]
     },
     "myth": [
-      ["Epictetus starts with your job title", false, "he starts with being a human being, then a citizen of the world."],
-      ["he says a citizen of the world acts like a hand or foot that could think", true, "never just for itself, always as part of the whole."],
-      ["the method only fits sons and brothers", false, "his examples are sons and brothers; the method fits any name you carry."]
+      [
+        "Epictetus starts with your job title",
+        false,
+        "he starts with being a human being, then a citizen of the world."
+      ],
+      [
+        "he says a citizen of the world acts like a hand or foot that could think",
+        true,
+        "never just for itself, always as part of the whole."
+      ],
+      [
+        "the method only fits sons and brothers",
+        false,
+        "his examples are sons and brothers; the method fits any name you carry."
+      ]
     ],
     "fork": {
       "setup": "you're about to walk into a room and you're not sure how to act. what does Epictetus say to do?",
-      "options": ["act the way you feel.", "ask which name you carry here, and what it asks of you.", "copy whoever's in charge."],
+      "options": [
+        "act the way you feel.",
+        "ask which name you carry here, and what it asks of you.",
+        "copy whoever's in charge."
+      ],
       "answer": 1,
       "reveal": "he says each name, human, citizen, son, brother, councilor, father, tells you what to do if you think about it."
     },
-    "original": { "script": "ὄνομα", "say": "ON-o-ma", "note": "Greek onoma: a name; Epictetus says the names we carry show us our duties." },
+    "original": {
+      "script": "ὄνομα",
+      "say": "ON-o-ma",
+      "note": "Greek onoma: a name; Epictetus says the names we carry show us our duties."
+    },
     "trapdoor": [
       "what you thought: be yourself everywhere.",
       "what it means: you carry many names, and each one asks something specific of you.",
       "what a scholar hears: this is the Stoic idea of 'appropriate acts' (kathēkonta): duties that follow from who and where you are."
+    ],
+    "recall": [
+      [
+        "Helvidius Priscus",
+        "the senator who kept going in"
+      ],
+      [
+        "prohairesis",
+        "the power to choose"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Discourses 2.10 (how we may discover the duties of life from names)", "work": "Epictetus, Discourses (Arrian)", "translation": null, "quoted": null }
+    {
+      "ref": "Discourses 2.10 (how we may discover the duties of life from names)",
+      "work": "Epictetus, Discourses (Arrian)",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -85,5 +159,9 @@
       "Editor review (2026-10-01): the son's duty now matches 2.10 (what is yours belongs to your father, not 'the family'); removed the unsourced claim that his students were young men (teach and myth reveal); hook no longer says 'most of us'; howItsDone 'many' softened to 'some'; trapdoor no longer says 'later writers' developed roles (Panaetius' personae predate Epictetus)."
     ]
   },
-  "meta": { "index": "409. Who am I here? · — · remember who you are, a human, a citizen, a son, a brother, and act from each (Discourses 2.10) · act well from one role · who am i here", "writer": "writer agent (spiritual 392–421)", "written": "2026-09-30" }
+  "meta": {
+    "index": "409. Who am I here? · — · remember who you are, a human, a citizen, a son, a brother, and act from each (Discourses 2.10) · act well from one role · who am i here",
+    "writer": "writer agent (spiritual 392–421)",
+    "written": "2026-09-30"
+  }
 }

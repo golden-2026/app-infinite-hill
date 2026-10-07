@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "Savitri and Satyavan",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY SEVEN-HUNDRED-NINETY-NINE.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY SEVEN-HUNDRED-NINETY-NINE.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, Savitri and Satyavan: his head in her lap, Yama with his noose, and Savitri getting up to follow. Your line was sit with someone tired, without fixing. Did you sit with someone tired? Day seven hundred ninety-nine.",
-      "screen": ["`SAVITRI AND SATYAVAN.` · `SHE FOLLOWS DEATH.`"]
+      "screen": [
+        "`SAVITRI AND SATYAVAN.` · `SHE FOLLOWS DEATH.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Yama hears footsteps behind him. He is heading south with Satyavan's life bound in his noose, and someone is following. He turns. Go back, Savitri, he tells her. Go and perform his last rites. You have come as far as anyone can come. She doesn't argue about the distance. She talks about something else entirely. And Death stops to listen. Behind them, in the clearing, Satyavan's body lies still under the trees.",
-      "screen": ["`FOOTSTEPS BEHIND DEATH.` → `GO BACK, SAVITRI.` → `DEATH STOPS TO LISTEN.`"]
+      "screen": [
+        "`FOOTSTEPS BEHIND DEATH.` → `GO BACK, SAVITRI.` → `DEATH STOPS TO LISTEN.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "Savitri's first answer is simple. Where my husband is taken, I go too. That is the old way. And then she says something about friendship. The wise say, she tells him, that walking seven steps together makes people friends. We have walked more than that, you and I. So, as a friend, hear me. Then she speaks about dharma, the right way, and about the good, the people who keep it. Yama is pleased. Ask for a gift, he says. Anything except his life. Savitri doesn't ask for herself. Her father-in-law is blind and living in the forest. Let him see, she says. Granted. Now go back, Yama says, you're worn out. How could I be tired, she answers, when I'm walking beside my husband? And she keeps talking: about how good it is to be near the good, even for a moment. Yama is pleased again. Another gift, anything but his life. Give my father-in-law back his kingdom, she says. Granted. She speaks again, about how the good are kind even to those who wrong them. A third gift. Her own father has no sons, so she asks for sons for him. Granted. Notice the pattern. Every gift goes to someone else. And every time, what moves Yama isn't her grief. It's what she says about goodness, said to Death himself, on the road. She hasn't asked for Satyavan once. Not yet.",
-      "screen": ["`WHERE HE GOES, I GO.` · `SEVEN STEPS MAKE A FRIEND.` · `SIGHT, THEN A KINGDOM, THEN SONS.` · then, large: `EVERY GIFT FOR SOMEONE ELSE.`"]
+      "screen": [
+        "`WHERE HE GOES, I GO.` · `SEVEN STEPS MAKE A FRIEND.` · `SIGHT, THEN A KINGDOM, THEN SONS.` · then, large: `EVERY GIFT FOR SOMEONE ELSE.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Sat, the good, the true. Today, Savitri walks behind Death, talking about the good, and asking every gift for someone else.",
-      "screen": ["`SAT — today's word`."]
+      "screen": [
+        "`SAT — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,34 +61,93 @@
       "voice": "Your line: ask a favor on someone else's behalf. Today, if someone offers you a favor, ask for it on behalf of someone else. Day seven hundred ninety-nine.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 799 COUNTS.` → `TOMORROW: SAVITRI AND SATYAVAN.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 799 COUNTS.` → `TOMORROW: SAVITRI AND SATYAVAN.`"
+      ]
+    }
   ],
   "howItsDone": "In the epic, each gift Yama offers Savitri on the road follows a speech of hers about dharma and the good.",
   "games": {
     "match": {
       "prompt": "the gifts on the road — tap the pairs.",
-      "pairs": [["the first gift", "sight for her father-in-law"], ["the second gift", "his kingdom given back"], ["the third gift", "sons for her own father"], ["seven steps", "what the wise say makes a friend"]]
+      "pairs": [
+        [
+          "the first gift",
+          "sight for her father-in-law"
+        ],
+        [
+          "the second gift",
+          "his kingdom given back"
+        ],
+        [
+          "the third gift",
+          "sons for her own father"
+        ],
+        [
+          "seven steps",
+          "what the wise say makes a friend"
+        ]
+      ]
     },
     "myth": [
-      ["Savitri begged Yama for Satyavan's life at once", false, "every gift she asks for on the road goes to someone else."],
-      ["Yama offered his gifts because her words about goodness pleased him", true, "each time she speaks of dharma and the good, he offers another."],
-      ["Yama told her she could have anything, including Satyavan's life", false, "he offers anything except his life."]
+      [
+        "Savitri begged Yama for Satyavan's life at once",
+        false,
+        "every gift she asks for on the road goes to someone else."
+      ],
+      [
+        "Yama offered his gifts because her words about goodness pleased him",
+        true,
+        "each time she speaks of dharma and the good, he offers another."
+      ],
+      [
+        "Yama told her she could have anything, including Satyavan's life",
+        false,
+        "he offers anything except his life."
+      ]
     ],
     "fork": {
       "setup": "you're Savitri. Death offers you any gift except your husband's life. what do you ask for first?",
-      "options": ["the right to keep following him.", "sight for your blind father-in-law.", "riches for your own family."],
+      "options": [
+        "the right to keep following him.",
+        "sight for your blind father-in-law.",
+        "riches for your own family."
+      ],
       "answer": 1,
       "reveal": "she asks that her father-in-law may see. then his kingdom, then sons for her father. she still hasn't asked for Satyavan."
     },
-    "original": { "script": "सत्", "say": "SUT", "note": "Sanskrit sat: the good, the true; Savitri speaks to Yama about the good and how they live." },
+    "original": {
+      "script": "सत्",
+      "say": "SUT",
+      "note": "Sanskrit sat: the good, the true; Savitri speaks to Yama about the good and how they live."
+    },
     "trapdoor": [
       "what you thought: a wife begging Death for her husband back.",
       "what it means: she talks about friendship and goodness, and asks each gift for someone else.",
       "what a scholar hears: the epic shows Yama as moved by her words on dharma and the good, not by tears; the gifts come in answer to what she says."
+    ],
+    "recall": [
+      [
+        "Kali",
+        "waits for a lapse, then enters Nala"
+      ],
+      [
+        "Damayanti",
+        "daughter of King Bhima of Vidarbha"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Mahabharata, Vana Parva, Pativrata-mahatmya Parva (Markandeya's story of Savitri): Savitri follows Yama; friendship from seven steps; her speeches on dharma and the good; the boons of sight, kingdom and sons for her father", "work": "Mahabharata (K. M. Ganguli's English, paraphrased)", "translation": null, "quoted": null }
+    {
+      "ref": "Mahabharata, Vana Parva, Pativrata-mahatmya Parva (Markandeya's story of Savitri): Savitri follows Yama; friendship from seven steps; her speeches on dharma and the good; the boons of sight, kingdom and sons for her father",
+      "work": "Mahabharata (K. M. Ganguli's English, paraphrased)",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -87,5 +161,9 @@
       "Audit: boon order (sight, kingdom, sons for Ashvapati), the seven-paces friendship and 'how can I be tired beside my husband' match Ganguli. No changes needed."
     ]
   },
-  "meta": { "index": "Year 3 · The Mahabharata as a serial (Ganguli; 182 sessions) · Savitri and Satyavan", "writer": "writer agent (hinduism 797–806)", "written": "2026-10-01" }
+  "meta": {
+    "index": "Year 3 · The Mahabharata as a serial (Ganguli; 182 sessions) · Savitri and Satyavan",
+    "writer": "writer agent (hinduism 797–806)",
+    "written": "2026-10-01"
+  }
 }

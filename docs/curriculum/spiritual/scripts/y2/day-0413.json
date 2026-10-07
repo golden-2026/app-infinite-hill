@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "Show me one",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY FOUR-HUNDRED-THIRTEEN.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY FOUR-HUNDRED-THIRTEEN.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday: hexis, walk to become a walker, and your line, one ordinary step at a time. Which good act did you repeat on purpose? Day four hundred thirteen, the end of the week.",
-      "screen": ["`HEXIS.`"]
+      "screen": [
+        "`HEXIS.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Days on a language app. Days on this path. Steps on a watch. Streaks are everywhere, and a number going up has a way of keeping people showing up. Miss a day, and it stings a little. The idea is older than it looks. Epictetus gave his students a streak to keep, not for steps or lessons, but for something much harder: the days they got through without losing their temper. Today: orgē.",
-      "screen": ["`STREAKS EVERYWHERE.` → `A NUMBER GOING UP.` → `DAYS WITHOUT LOSING YOUR TEMPER.`"]
+      "screen": [
+        "`STREAKS EVERYWHERE.` → `A NUMBER GOING UP.` → `DAYS WITHOUT LOSING YOUR TEMPER.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "This is the same chapter as yesterday, Discourses book two, chapter eighteen, where hexis is formed. If you don't want to be quick-tempered, Epictetus says, then don't feed the habit. Don't give it anything that makes it grow. And at first, keep quiet and count the days you weren't angry. I used to be angry every day. Now every other day. Then every third. Then every fourth. And if you go thirty days, he says, make an offering to God, because the habit is first weakened, and then it's wiped out. Notice how kind this is. He doesn't say, never get angry again starting today. He expects relapses. Every other day is progress. Every third day is more. He's measuring the gaps between angry days getting longer. In the same chapter he gives a tool for the moment the anger rises. When an impression hits you hard, he says, don't let it carry you off. Say to it: wait for me a little, impression. Let me see what you are, and what you're about. Let me test you. That little pause is how the count goes up. And there's a detail that's easy to miss. His very first instruction is: keep quiet. Be still at first, and give the anger nothing to burn. The counting grows out of that stillness. Look back at the week: bold outside, sphaira, onoma, astheneia, agōnia, habits grow by use. And today, count the calm days.",
-      "screen": ["`DON'T FEED THE HABIT.` · `EVERY DAY, EVERY OTHER, EVERY THIRD.` · `WAIT FOR ME A LITTLE, IMPRESSION.` · `KEEP STILL, THEN COUNT.` · then, large: `COUNT THE CALM DAYS.`"]
+      "screen": [
+        "`DON'T FEED THE HABIT.` · `EVERY DAY, EVERY OTHER, EVERY THIRD.` · `WAIT FOR ME A LITTLE, IMPRESSION.` · `KEEP STILL, THEN COUNT.` · then, large: `COUNT THE CALM DAYS.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Orgē. Greek for anger: Epictetus' plan for a quick temper, angry every day, then every other, then every third, until thirty calm days in a row.",
-      "screen": ["`ORGĒ — today's word`."]
+      "screen": [
+        "`ORGĒ — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,34 +61,93 @@
       "voice": "Your line: give the anger nothing to burn. Tonight, if today was calm, mark it and start the count. Day four hundred thirteen, and a week done.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 413 COUNTS.` → `TOMORROW: SHOW ME ONE.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 413 COUNTS.` → `TOMORROW: SHOW ME ONE.`"
+      ]
+    }
   ],
   "howItsDone": "Some people who practice Stoicism keep a private tally of days without anger, expecting setbacks and watching the gaps between angry days grow.",
   "games": {
     "match": {
       "prompt": "count the calm days: tap the pairs.",
-      "pairs": [["the first step", "don't feed the habit"], ["the count", "every day, every other, every third"], ["thirty calm days", "make an offering to God"], ["the pause", "wait for me a little, impression"]]
+      "pairs": [
+        [
+          "the first step",
+          "don't feed the habit"
+        ],
+        [
+          "the count",
+          "every day, every other, every third"
+        ],
+        [
+          "thirty calm days",
+          "make an offering to God"
+        ],
+        [
+          "the pause",
+          "wait for me a little, impression"
+        ]
+      ]
     },
     "myth": [
-      ["Epictetus expects you to stop being angry all at once", false, "he expects progress: every other day, then every third, then every fourth."],
-      ["he tells his students to count the days they weren't angry", true, "and if they reach thirty, to make an offering to God."],
-      ["he says to start by fighting the anger head-on", false, "he says first keep quiet, give the habit nothing to feed on, and count."]
+      [
+        "Epictetus expects you to stop being angry all at once",
+        false,
+        "he expects progress: every other day, then every third, then every fourth."
+      ],
+      [
+        "he tells his students to count the days they weren't angry",
+        true,
+        "and if they reach thirty, to make an offering to God."
+      ],
+      [
+        "he says to start by fighting the anger head-on",
+        false,
+        "he says first keep quiet, give the habit nothing to feed on, and count."
+      ]
     ],
     "fork": {
       "setup": "a hot impression hits you and you feel your temper rising. what does Epictetus tell you to say to it?",
-      "options": ["you're right, let's go.", "wait for me a little; let me see what you are.", "nothing; just leave the room."],
+      "options": [
+        "you're right, let's go.",
+        "wait for me a little; let me see what you are.",
+        "nothing; just leave the room."
+      ],
       "answer": 1,
       "reveal": "he tells students to make the impression wait, so they can look at it and test it before being carried off."
     },
-    "original": { "script": "ὀργή", "say": "or-GAY", "note": "Greek orgē: anger; the habit Epictetus says to weaken by counting the days without it." },
+    "original": {
+      "script": "ὀργή",
+      "say": "or-GAY",
+      "note": "Greek orgē: anger; the habit Epictetus says to weaken by counting the days without it."
+    },
     "trapdoor": [
       "what you thought: never get angry again.",
       "what it means: count the calm days, expect relapses, and watch the gaps between angry days grow.",
       "what a scholar hears: Epictetus treats anger as a habit (hexis) that grows by use and shrinks by disuse, so the cure is gradual, not a single act of willpower."
+    ],
+    "recall": [
+      [
+        "Helvidius Priscus",
+        "the senator who kept going in"
+      ],
+      [
+        "prohairesis",
+        "the power to choose"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Discourses 2.18 (counting the days without anger; 'wait for me a little, impression')", "work": "Epictetus, Discourses (Arrian)", "translation": null, "quoted": null }
+    {
+      "ref": "Discourses 2.18 (counting the days without anger; 'wait for me a little, impression')",
+      "work": "Epictetus, Discourses (Arrian)",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -85,5 +159,9 @@
       "Editor review (2026-10-01): SERIOUS fix: 2.18's 'at first keep quiet' (be still) had been read as 'keep your count secret, don't post it', which the text doesn't say and which also pre-empted day 420's train-in-private; teach, screen head, myth item and carry rewritten. 'Offer thanks to God' changed to 'make an offering to God', closer to Long's 'make a sacrifice'. Hook drops 'nearly two thousand years ago' and 'you've probably got a streak'."
     ]
   },
-  "meta": { "index": "413. Count the calm days · — · count the days you weren't angry: every day, then every other, then every third (Discourses 2.18) · mark today if calm · count the calm days", "writer": "writer agent (spiritual 392–421)", "written": "2026-09-30" }
+  "meta": {
+    "index": "413. Count the calm days · — · count the days you weren't angry: every day, then every other, then every third (Discourses 2.18) · mark today if calm · count the calm days",
+    "writer": "writer agent (spiritual 392–421)",
+    "written": "2026-09-30"
+  }
 }

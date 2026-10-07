@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "Lav 1",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY SIX-HUNDRED-SIXTY-ONE.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY SIX-HUNDRED-SIXTY-ONE.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, sir, and your line: guarded. Did you touch your head when fear rose? Today, a hymn of arrival, sung at Sikh weddings. Day six hundred sixty-one.",
-      "screen": ["`GUARDED.`"]
+      "screen": [
+        "`GUARDED.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "The doorbell rings and you already know who it is. Maybe a brother back from deployment, a daughter home from her first semester, an old friend you haven't seen in ten years. You open the door and the whole house changes. The air feels different. Somebody starts cooking. Guru Nanak wrote a hymn for exactly that feeling, the instant the one you've waited for crosses the threshold. And it is sung on a wedding morning.",
-      "screen": ["`THE DOORBELL RINGS.` → `THE WHOLE HOUSE CHANGES.` → `A HYMN FOR THE THRESHOLD.`"]
+      "screen": [
+        "`THE DOORBELL RINGS.` → `THE WHOLE HOUSE CHANGES.` → `A HYMN FOR THE THRESHOLD.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "The hymn is a chhant, a longer song form, in Raag Suhi, on ang 764. It opens, in effect: the friend has come to my home; the True One has brought about this meeting. Then: the meeting came naturally, pleasing to the Lord's mind; I've found what my heart was set on. Night and day there is union, my mind is content, my home and temple are made beautiful. The unstruck music plays. The friend has come to my home. The word is saajan: friend, beloved, the dear one. The verb, aae, can be read as one honored friend or many friends, and the hymn holds both. On the surface, guests arriving for a celebration, the house filling up. Underneath, the Beloved, the One, arriving in the heart. Tradition links Raag Suhi with weddings, and this chhant is sung at Sikh weddings before the couple walks the lavan. You can see why. A family's home fills with friends. Two people are brought together, and the hymn says plainly who did it: the True One made the meeting. And beneath it all, Gurbani's image of the soul as a bride waiting for the Beloved to come home. Notice the order in the hymn: the arrival first, and then the house becomes beautiful. Not the other way around. In the hymn, the home doesn't have to be perfect before the friend comes. The coming makes it beautiful. Tomorrow, the first of those four wedding rounds.",
-      "screen": ["`SAAJAN: FRIEND, BELOVED.` · `THE TRUE ONE MADE THE MEETING.` · `SUNG AS A WEDDING BEGINS.` · `THE COMING MAKES THE HOUSE BEAUTIFUL.` · then, large: `THE FRIEND IS HOME.`"]
+      "screen": [
+        "`SAAJAN: FRIEND, BELOVED.` · `THE TRUE ONE MADE THE MEETING.` · `SUNG AS A WEDDING BEGINS.` · `THE COMING MAKES THE HOUSE BEAUTIFUL.` · then, large: `THE FRIEND IS HOME.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Saajan, friend, beloved, the dear one: Guru Nanak's wedding chhant says the saajan has come to my home, the True One made the meeting, and the house is made beautiful.",
-      "screen": ["`SAAJAN — today's word`."]
+      "screen": [
+        "`SAAJAN — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,34 +61,93 @@
       "voice": "Your line: the friend is home. Today, welcome someone home properly: get up, go to the door, and greet them like you've been waiting. Day six hundred sixty-one.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 661 COUNTS.` → `TOMORROW: LAV 1.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 661 COUNTS.` → `TOMORROW: LAV 1.`"
+      ]
+    }
   ],
   "howItsDone": "Sikhs sing Guru Nanak's Suhi chhant 'ham ghar saajan aae' in kirtan, and it is sung at the Anand Karaj, the wedding, before the lavan.",
   "games": {
     "match": {
       "prompt": "the friend is home — tap the pairs.",
-      "pairs": [["saajan", "friend, beloved"], ["chhant", "a longer song form"], ["the True One", "brought about the meeting"], ["Raag Suhi", "linked by tradition with weddings"]]
+      "pairs": [
+        [
+          "saajan",
+          "friend, beloved"
+        ],
+        [
+          "chhant",
+          "a longer song form"
+        ],
+        [
+          "the True One",
+          "brought about the meeting"
+        ],
+        [
+          "Raag Suhi",
+          "linked by tradition with weddings"
+        ]
+      ]
     },
     "myth": [
-      ["the house must be made beautiful before the friend can come", false, "in the hymn the arrival comes first; the coming makes the house beautiful."],
-      ["the hymn can be heard as both guests and the Beloved arriving", true, "saajan can mean the friends arriving and the One arriving in the heart."],
-      ["this chhant is sung at Sikh weddings", true, "before the couple walks the four lavan."]
+      [
+        "the house must be made beautiful before the friend can come",
+        false,
+        "in the hymn the arrival comes first; the coming makes the house beautiful."
+      ],
+      [
+        "the hymn can be heard as both guests and the Beloved arriving",
+        true,
+        "saajan can mean the friends arriving and the One arriving in the heart."
+      ],
+      [
+        "this chhant is sung at Sikh weddings",
+        true,
+        "before the couple walks the four lavan."
+      ]
     ],
     "fork": {
       "setup": "the one you've waited for is at the door, but your house is a mess. what does the hymn suggest?",
-      "options": ["keep them waiting until it's clean.", "open the door: the coming makes the house beautiful.", "pretend no one's home."],
+      "options": [
+        "keep them waiting until it's clean.",
+        "open the door: the coming makes the house beautiful.",
+        "pretend no one's home."
+      ],
       "answer": 1,
       "reveal": "the friend has come home, and then the home and temple are made beautiful. the arrival does the adorning."
     },
-    "original": { "script": "ਸਾਜਨ", "say": "SAA-jan", "note": "Gurmukhi: friend, beloved; ham ghar saajan aae, the friend has come to my home." },
+    "original": {
+      "script": "ਸਾਜਨ",
+      "say": "SAA-jan",
+      "note": "Gurmukhi: friend, beloved; ham ghar saajan aae, the friend has come to my home."
+    },
     "trapdoor": [
       "what you thought: a song about guests arriving.",
       "what it means: guests and the Beloved at once: the True One makes the meeting and the house becomes beautiful.",
       "what a scholar hears: the Suhi chhant uses bridal imagery for the soul's union with the One; anahad shabad, the unstruck music, marks it as mystical union as well as celebration."
+    ],
+    "recall": [
+      [
+        "shabad",
+        "a hymn, and the Word"
+      ],
+      [
+        "benti",
+        "a humble request"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Suhi Chhant M1, Ang 764 (ham ghar saajan aae, saachai mel milaae)", "work": "Guru Granth Sahib", "translation": null, "quoted": null }
+    {
+      "ref": "Suhi Chhant M1, Ang 764 (ham ghar saajan aae, saachai mel milaae)",
+      "work": "Guru Granth Sahib",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -86,5 +160,9 @@
       "Editor review (2026-10-01): removed 'many Sikh weddings', 'often sung at the start' and 'Sikhs hear both' generalizations (teach, review, myth, match, howItsDone); the Suhi-wedding link is now given as tradition; the soul-as-bride image is attributed to Gurbani rather than 'every soul'; the practice no longer tells the listener what they feel."
     ]
   },
-  "meta": { "index": "661. The Friend has come home · — · the Friend has come to my home; the True One brought us together (Suhi M1, ang 764) · welcome someone home · the friend is home", "writer": "writer agent (sikhism 632–661)", "written": "2026-09-30" }
+  "meta": {
+    "index": "661. The Friend has come home · — · the Friend has come to my home; the True One brought us together (Suhi M1, ang 764) · welcome someone home · the friend is home",
+    "writer": "writer agent (sikhism 632–661)",
+    "written": "2026-09-30"
+  }
 }

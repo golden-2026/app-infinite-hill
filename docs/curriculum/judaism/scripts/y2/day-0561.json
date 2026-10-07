@@ -9,24 +9,37 @@
   "length": "6:45",
   "tomorrow": "Light, renewed daily (Isaiah 45:7)",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY FIVE-HUNDRED-SIXTY-ONE.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY FIVE-HUNDRED-SIXTY-ONE.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, Yishtabach, the final chord of the verses of song. Your line was praised forever. What three good things did you stack? The verses of song are done. Today, a new part of the service begins with a call. Day five hundred sixty-one.",
-      "screen": ["`PRAISED FOREVER.`"]
+      "screen": [
+        "`PRAISED FOREVER.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Much of the morning service can be prayed alone at a kitchen table. The blessings for waking, the study, the psalms: they work with a congregation of one. A few moments don't. The Kaddish is one of them. And right after the half Kaddish that follows Yishtabach comes another. The prayer leader turns toward the room and calls out two words, and the room has to answer. If there are fewer than ten people there, the call isn't said at all. It's the hinge of the morning. Before it, the verses of song. After it, the Shema and its blessings.",
-      "screen": ["`MUCH OF THE SERVICE WORKS ALONE.` → `A FEW MOMENTS DON'T.` → `THE HINGE OF THE MORNING.`"]
+      "screen": [
+        "`MUCH OF THE SERVICE WORKS ALONE.` → `A FEW MOMENTS DON'T.` → `THE HINGE OF THE MORNING.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "The leader says: Barchu et Adonai hamevorach. Bless the LORD, the blessed one. And the congregation answers: Baruch Adonai hamevorach le'olam va'ed. Blessed is the LORD, the blessed one, forever and ever. Then the leader repeats the answer, so that the one who called isn't left out of the response. Many people bow as they say it. It's the same call that opens a reading from the Torah. The idea of calling others to praise is old. A psalm says, in the old Jewish translation: \"O magnify the LORD with me, and let us exalt His name together.\" With me. Together. Why ten? The Talmud, in tractate Berakhot, teaches that any matter of holiness needs at least ten people, a minyan. It learns the number by a chain of verses: the word congregation, used for the ten spies in the wilderness, links to the verse that says God will be hallowed among the children of Israel. So a congregation, for these purposes, starts at ten. Communities differ on who counts toward the ten: in Orthodox practice, ten adult men; in other communities, ten adults of any gender. But all of them share the shape. One voice calls. Many answer. And the caller answers too, so nobody in the room is left out of the blessing.",
-      "screen": ["`BARCHU: BLESS THE LORD.` · `THE ROOM ANSWERS, THE LEADER TOO.` · `O MAGNIFY THE LORD WITH ME.` · `TEN FOR A MATTER OF HOLINESS.` · then, large: `ANSWER THE CALL.`"]
+      "screen": [
+        "`BARCHU: BLESS THE LORD.` · `THE ROOM ANSWERS, THE LEADER TOO.` · `O MAGNIFY THE LORD WITH ME.` · `TEN FOR A MATTER OF HOLINESS.` · then, large: `ANSWER THE CALL.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Barchu. Bless: the leader's call to prayer, answered by the congregation, said only with a minyan of ten.",
-      "screen": ["`BARCHU — today's word`."]
+      "screen": [
+        "`BARCHU — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,37 +61,111 @@
       "voice": "Your line: answer the call. Today, answer the call you've been leaving hanging, and answer it warmly. Day five hundred sixty-one.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 561 COUNTS.` → `TOMORROW: LIGHT, RENEWED DAILY (ISAIAH 45:7).`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 561 COUNTS.` → `TOMORROW: LIGHT, RENEWED DAILY (ISAIAH 45:7).`"
+      ]
+    }
   ],
   "howItsDone": "In a minyan, the prayer leader calls out Barchu before the Shema and its blessings in the morning and evening services, and before each Torah reading; the congregation answers aloud, and many bow.",
   "games": {
     "match": {
       "prompt": "inside Barchu — tap the pairs.",
-      "pairs": [["barchu", "bless!"], ["hamevorach", "the blessed one"], ["le'olam va'ed", "forever and ever"], ["a minyan", "ten, for a matter of holiness"]]
+      "pairs": [
+        [
+          "barchu",
+          "bless!"
+        ],
+        [
+          "hamevorach",
+          "the blessed one"
+        ],
+        [
+          "le'olam va'ed",
+          "forever and ever"
+        ],
+        [
+          "a minyan",
+          "ten, for a matter of holiness"
+        ]
+      ]
     },
     "myth": [
-      ["Barchu can be said by one person praying alone", false, "it's a call and an answer; it needs a minyan of ten."],
-      ["the leader repeats the congregation's answer", true, "so the one who called is included in the response."],
-      ["Barchu is said only in the morning service", false, "it opens the Shema's blessings morning and evening, and comes before each Torah reading."]
+      [
+        "Barchu can be said by one person praying alone",
+        false,
+        "it's a call and an answer; it needs a minyan of ten."
+      ],
+      [
+        "the leader repeats the congregation's answer",
+        true,
+        "so the one who called is included in the response."
+      ],
+      [
+        "Barchu is said only in the morning service",
+        false,
+        "it opens the Shema's blessings morning and evening, and comes before each Torah reading."
+      ]
     ],
     "fork": {
       "setup": "you're leading prayer and you reach Barchu. only eight people are in the room. what happens?",
-      "options": ["say it anyway, quietly.", "skip the call; it needs ten.", "count the chairs as two more."],
+      "options": [
+        "say it anyway, quietly.",
+        "skip the call; it needs ten.",
+        "count the chairs as two more."
+      ],
       "answer": 1,
       "reveal": "the Talmud teaches any matter of holiness needs ten. without a minyan, the call isn't said, and each person continues on their own."
     },
-    "original": { "script": "בָּרְכוּ", "say": "BAR-khoo", "note": "Hebrew: bless! a command, said to many people at once." },
+    "original": {
+      "script": "בָּרְכוּ",
+      "say": "BAR-khoo",
+      "note": "Hebrew: bless! a command, said to many people at once."
+    },
     "trapdoor": [
       "what you thought: a cue that the service is starting.",
       "what it means: one voice calls, the room answers, and the caller answers too. prayer as an invitation that needs others.",
       "what a scholar hears: Berakhot 21b derives the minyan for devarim shebikdushah from Leviticus 22:32 and Numbers 14:27 by gezerah shavah; Mishnah Megillah 4:3 requires ten for the Shema's public recital."
+    ],
+    "recall": [
+      [
+        "Baruch She'amar",
+        "blessed is the one who spoke"
+      ],
+      [
+        "peah",
+        "the corner of the field, left for the poor"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Psalms 34:4", "work": "The Holy Scriptures", "translation": "JPS 1917", "quoted": "O magnify the LORD with me, and let us exalt His name together." },
-    { "ref": "Babylonian Talmud, Berakhot 21b", "work": "Talmud", "translation": null, "quoted": null },
-    { "ref": "Mishnah Megillah 4:3", "work": "Mishnah", "translation": null, "quoted": null },
-    { "ref": "Leviticus 22:32; Numbers 14:27", "work": "The Holy Scriptures", "translation": null, "quoted": null }
+    {
+      "ref": "Psalms 34:4",
+      "work": "The Holy Scriptures",
+      "translation": "JPS 1917",
+      "quoted": "O magnify the LORD with me, and let us exalt His name together."
+    },
+    {
+      "ref": "Babylonian Talmud, Berakhot 21b",
+      "work": "Talmud",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Mishnah Megillah 4:3",
+      "work": "Mishnah",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Leviticus 22:32; Numbers 14:27",
+      "work": "The Holy Scriptures",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -90,5 +179,9 @@
       "Editor review: hook claimed Barchu is the first moment that needs a minyan, but Kaddish (including the half Kaddish just before Barchu) needs ten too; fixed. 'Warm-up' framing of the verses of song removed; closing uplift replaced with the text's own detail."
     ]
   },
-  "meta": { "index": "561. The call · Barchu · the leader calls the congregation to bless, and they answer; it needs a minyan · answer when you're called · answer the call", "writer": "writer agent (judaism y2 542–571)", "written": "2026-09-30" }
+  "meta": {
+    "index": "561. The call · Barchu · the leader calls the congregation to bless, and they answer; it needs a minyan · answer when you're called · answer the call",
+    "writer": "writer agent (judaism y2 542–571)",
+    "written": "2026-09-30"
+  }
 }

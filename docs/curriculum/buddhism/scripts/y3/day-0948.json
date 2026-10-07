@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "Temples in the West",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY NINE-HUNDRED-FORTY-EIGHT.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY NINE-HUNDRED-FORTY-EIGHT.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, Chicago, and two Buddhist voices on one stage. Your line was the teaching speaks. What was your one sentence? Day nine hundred forty-eight.",
-      "screen": ["`THE TEACHING SPEAKS.`"]
+      "screen": [
+        "`THE TEACHING SPEAKS.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "A story told in Zen circles. A learned visitor comes to a Zen teacher to ask about Zen. The teacher serves tea. He pours into the visitor's cup until it's full, and keeps pouring. Tea runs over the rim and across the table. Stop, says the visitor, it's full, nothing more will go in. Like this cup, the teacher answers, you are full of your own opinions. How can I show you Zen unless you first empty your cup? Stories like that one crossed the ocean in books, and some Western readers met Zen first on the page. Today, Suzuki.",
-      "screen": ["`A CUP OF TEA.` → `IT OVERFLOWS.` → `FIRST, EMPTY YOUR CUP.`"]
+      "screen": [
+        "`A CUP OF TEA.` → `IT OVERFLOWS.` → `FIRST, EMPTY YOUR CUP.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "First, the student. Yesterday we met a young layman who helped the Zen abbot Soyen Shaku with his English in Chicago. D. T. Suzuki had trained in Zen under that abbot in Kamakura. Afterward he went to America and spent years there translating and writing. Second, the books. Suzuki wrote about Zen in English, in essays and translations, and later he lectured to university audiences. Readers who had never met a Zen teacher met Zen through him: the sudden awakenings, the strange questions, the teachers who answered with a shout. Third, the stories. What crossed the ocean most easily were the short stories, like the cup of tea. Zen describes itself with a saying tradition gives to Bodhidharma, whom we met on the road through China: a special transmission outside the scriptures, not depending on words, pointing straight at the mind. There's a gentle joke in that. A tradition that says it does not depend on words reached the West through a great many of them. Fourth, the cushion. Zen keeps pointing past the book. The stories are meant to unsettle the mind that thinks it already knows, and the tradition's answer to that unsettled mind is to sit. So the books were followed by people. Japanese teachers came to the West to lead sittings, and Western students went to Japan to train in monasteries and came home to teach. A cup of tea in a book, and then real cups of tea at real meditation halls, across the ocean.",
-      "screen": ["`SUZUKI, A STUDENT OF ZEN.` · `BOOKS IN ENGLISH.` · `STORIES THAT CROSSED.` · `FROM THE BOOK TO THE CUSHION.` · then, large: `ACROSS THE OCEAN.`"]
+      "screen": [
+        "`SUZUKI, A STUDENT OF ZEN.` · `BOOKS IN ENGLISH.` · `STORIES THAT CROSSED.` · `FROM THE BOOK TO THE CUSHION.` · then, large: `ACROSS THE OCEAN.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Suzuki. D. T. Suzuki, the Zen student whose books and lectures carried the teaching to America, and the stories like the cup of tea. Today's word.",
-      "screen": ["`SUZUKI — today's word`."]
+      "screen": [
+        "`SUZUKI — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,40 +61,99 @@
       "voice": "Your line: across the ocean. Today, the next time someone hands you a cup or pours you a drink, let it remind you to listen before you answer. Day nine hundred forty-eight.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 948 COUNTS.` → `TOMORROW: TEMPLES IN THE WEST.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 948 COUNTS.` → `TOMORROW: TEMPLES IN THE WEST.`"
+      ]
+    }
   ],
   "howItsDone": "Zen communities in the West sit together in meditation halls, often under teachers trained in Japan or in lineages that came from there, and read short Zen stories as part of their study.",
   "games": {
     "match": {
       "prompt": "Zen comes west: tap the pairs.",
       "pairs": [
-        ["D. T. Suzuki", "wrote about Zen in English"],
-        ["Soyen Shaku", "Suzuki's teacher in Kamakura"],
-        ["the cup of tea", "first, empty your cup"],
-        ["Bodhidharma", "a transmission outside the scriptures"]
+        [
+          "D. T. Suzuki",
+          "wrote about Zen in English"
+        ],
+        [
+          "Soyen Shaku",
+          "Suzuki's teacher in Kamakura"
+        ],
+        [
+          "the cup of tea",
+          "first, empty your cup"
+        ],
+        [
+          "Bodhidharma",
+          "a transmission outside the scriptures"
+        ]
       ]
     },
     "myth": [
-      ["D. T. Suzuki learned about Zen only from books", false, "he trained in Zen under the abbot Soyen Shaku in Kamakura."],
-      ["in the story, the teacher stops pouring when the cup is full", false, "he keeps pouring until the tea runs over."],
-      ["Western students went to Japan to train and came home to teach", true, "the books were followed by people who sat."]
+      [
+        "D. T. Suzuki learned about Zen only from books",
+        false,
+        "he trained in Zen under the abbot Soyen Shaku in Kamakura."
+      ],
+      [
+        "in the story, the teacher stops pouring when the cup is full",
+        false,
+        "he keeps pouring until the tea runs over."
+      ],
+      [
+        "Western students went to Japan to train and came home to teach",
+        true,
+        "the books were followed by people who sat."
+      ]
     ],
     "fork": {
       "setup": "you're the teacher. a learned guest has come to ask about Zen, and he's full of opinions. what do you do?",
-      "options": ["give him a long lecture.", "pour his tea until it overflows.", "send him away."],
+      "options": [
+        "give him a long lecture.",
+        "pour his tea until it overflows.",
+        "send him away."
+      ],
       "answer": 1,
       "reveal": "in the story, the teacher keeps pouring until the cup overflows, then says the guest is just as full."
     },
-    "original": { "script": "ध्यान", "say": "DHYAH-nuh", "note": "Sanskrit dhyana: meditation, the practice Zen keeps pointing back to, past the books." },
+    "original": {
+      "script": "ध्यान",
+      "say": "DHYAH-nuh",
+      "note": "Sanskrit dhyana: meditation, the practice Zen keeps pointing back to, past the books."
+    },
     "trapdoor": [
       "what you thought: a word for calm, on candles and spa signs.",
       "what it means: a school of the Buddha's teaching that came west through Suzuki's books and through teachers and students who sat.",
       "what a scholar hears: Suzuki trained under Soyen Shaku; the saying about a transmission outside the scriptures is one tradition gives to Bodhidharma."
+    ],
+    "recall": [
+      [
+        "tulku",
+        "a teacher recognized again in a child"
+      ],
+      [
+        "terma",
+        "hidden teachings, treasures"
+      ]
     ]
   },
   "sources": [
-    { "ref": "The cup of tea (a traditional Zen story, often told of the teacher Nan-in)", "work": "Zen story (oral tradition)", "translation": null, "quoted": null },
-    { "ref": "The four-line saying attributed to Bodhidharma (a special transmission outside the scriptures)", "work": "Chan/Zen tradition", "translation": null, "quoted": null }
+    {
+      "ref": "The cup of tea (a traditional Zen story, often told of the teacher Nan-in)",
+      "work": "Zen story (oral tradition)",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "The four-line saying attributed to Bodhidharma (a special transmission outside the scriptures)",
+      "work": "Chan/Zen tradition",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -93,5 +167,9 @@
       "Softened to 'some Western readers' under the claims rule."
     ]
   },
-  "meta": { "index": "948. Zen comes west · — · teachers like D. T. Suzuki carry Zen to Western readers · read one short Zen story · across the ocean", "writer": "writer agent (buddhism 947–956)", "written": "2026-10-01" }
+  "meta": {
+    "index": "948. Zen comes west · — · teachers like D. T. Suzuki carry Zen to Western readers · read one short Zen story · across the ocean",
+    "writer": "writer agent (buddhism 947–956)",
+    "written": "2026-10-01"
+  }
 }

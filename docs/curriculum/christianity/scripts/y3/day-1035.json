@@ -9,24 +9,42 @@
   "length": "6:45",
   "tomorrow": "Orthodox Pascha",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-THOUSAND-THIRTY-FIVE.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY ONE-THOUSAND-THIRTY-FIVE.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, Exsultet: a fire by the door, one tall candle, and a song that kept saying this is the night. Your line was this is the night. What did one small light show you? Day one thousand thirty-five.",
-      "screen": ["`THIS IS THE NIGHT.`"]
+      "screen": [
+        "`THIS IS THE NIGHT.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Folding chairs on wet grass, set out in rows facing east. A hillside, a park, a beach, a churchyard. It's cold and still mostly dark, and people are arriving in coats with blankets and thermoses, talking in low voices. A guitar is being tuned somewhere, or a little brass band is warming up. Nobody has lit a candle. They're waiting for the sun. Then, as the sky over the hill goes from gray to pink, they start to sing. Some Protestant churches gather like this on Easter morning, outdoors, timed to the dawn. Today, the sunrise service.",
-      "screen": ["`CHAIRS ON WET GRASS, FACING EAST.`", "`STILL DARK, AND COLD.`", "`SINGING AS THE SKY TURNS.`"]
+      "screen": [
+        "`CHAIRS ON WET GRASS, FACING EAST.`",
+        "`STILL DARK, AND COLD.`",
+        "`SINGING AS THE SKY TURNS.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "Why dawn? Because that's when the Gospels say the women went to the tomb, and they don't all describe the light the same way. Mark, in the King James, says they came \"very early in the morning the first day of the week\" and \"at the rising of the sun.\" John says Mary Magdalene came \"early, when it was yet dark.\" One has the sun coming up, the other has it still dark. A sunrise service sits right in that gap, in the half-light between them. Now stay with John's version, because it's built on that half-light. Mary finds the stone rolled away and the tomb empty. She stands outside weeping. A man speaks to her, and she takes him for the gardener and asks where they've put the body. Then, in the King James: \"Jesus saith unto her, Mary. She turned herself, and saith unto him, Rabboni; which is to say, Master.\" She doesn't know him by his face. She knows him when he says her name. Tradition traces the outdoor dawn service to Moravian Christians, and some Moravian congregations still gather in their graveyards at sunrise on Easter, among the graves, to sing. Other churches gather on hillsides, in parks, on beaches. The setting changes. The hour doesn't. People get up in the cold and stand in the dark on purpose, the way the women did, and wait for it to get light.",
-      "screen": ["`AT THE RISING OF THE SUN.`", "`EARLY, WHEN IT WAS YET DARK.`", "`SHE KNOWS HIM WHEN HE SAYS HER NAME.`", "`IN THE GRAVEYARD, AT DAWN.`"]
+      "screen": [
+        "`AT THE RISING OF THE SUN.`",
+        "`EARLY, WHEN IT WAS YET DARK.`",
+        "`SHE KNOWS HIM WHEN HE SAYS HER NAME.`",
+        "`IN THE GRAVEYARD, AT DAWN.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +56,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Sunrise service. An Easter service held outdoors at dawn, at the hour the Gospels say the women came to the tomb.",
-      "screen": ["`SUNRISE SERVICE — today's word`."]
+      "screen": [
+        "`SUNRISE SERVICE — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,38 +66,117 @@
       "voice": "Your line: early, while it was dark. Tomorrow, or the next clear morning, get up early enough to watch the sky change, even for one minute. Day one thousand thirty-five.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 1035 COUNTS.` → `TOMORROW: ORTHODOX PASCHA.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 1035 COUNTS.` → `TOMORROW: ORTHODOX PASCHA.`"
+      ]
+    }
   ],
   "howItsDone": "Some Protestant congregations hold an Easter sunrise service outdoors, on a hill, in a park or churchyard, with hymns and the Gospel reading of the empty tomb as the sun comes up; some Moravian congregations hold theirs in their burial grounds.",
   "games": {
     "match": {
       "prompt": "morning at the tomb — tap the pairs.",
-      "pairs": [["Mark", "at the rising of the sun"], ["John", "early, when it was yet dark"], ["the gardener", "who Mary thought he was"], ["Rabboni", "master"]]
+      "pairs": [
+        [
+          "Mark",
+          "at the rising of the sun"
+        ],
+        [
+          "John",
+          "early, when it was yet dark"
+        ],
+        [
+          "the gardener",
+          "who Mary thought he was"
+        ],
+        [
+          "Rabboni",
+          "master"
+        ]
+      ]
     },
     "myth": [
-      ["Mark and John describe the light at the tomb the same way", false, "Mark says at the rising of the sun; John says early, when it was yet dark."],
-      ["Mary recognized Jesus as soon as she saw him", false, "she took him for the gardener until he said her name."],
-      ["some Moravian congregations sing at dawn in their graveyards on Easter", true, "tradition traces the outdoor sunrise service to them."]
+      [
+        "Mark and John describe the light at the tomb the same way",
+        false,
+        "Mark says at the rising of the sun; John says early, when it was yet dark."
+      ],
+      [
+        "Mary recognized Jesus as soon as she saw him",
+        false,
+        "she took him for the gardener until he said her name."
+      ],
+      [
+        "some Moravian congregations sing at dawn in their graveyards on Easter",
+        true,
+        "tradition traces the outdoor sunrise service to them."
+      ]
     ],
     "fork": {
       "setup": "you're Mary Magdalene, weeping outside the empty tomb. a man you take for the gardener asks why you're crying. what happens next?",
-      "options": ["he explains the scriptures to you.", "he says your name, and you know him.", "he walks away without a word."],
+      "options": [
+        "he explains the scriptures to you.",
+        "he says your name, and you know him.",
+        "he walks away without a word."
+      ],
       "answer": 1,
       "reveal": "\"Jesus saith unto her, Mary.\" she turns and says, Rabboni. it's her name that does it."
     },
-    "original": { "script": "ῥαββουνί", "say": "rab-boo-NEE", "note": "Mary's word to Jesus in John 20:16; John explains it means master." },
+    "original": {
+      "script": "ῥαββουνί",
+      "say": "rab-boo-NEE",
+      "note": "Mary's word to Jesus in John 20:16; John explains it means master."
+    },
     "trapdoor": [
       "what you thought: church held outdoors because it's spring.",
       "what it means: gathering at the hour the women came to the tomb, between dark and sunrise, waiting for the light.",
       "what a scholar hears: Mark 16:2 says \"at the rising of the sun\", John 20:1 says \"when it was yet dark\". the service sits in the gap between."
+    ],
+    "recall": [
+      [
+        "Theophany",
+        "God made visible"
+      ],
+      [
+        "Herod",
+        "mocked of the wise men, exceeding wroth"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Mark 16:2", "work": "The Bible", "translation": "KJV (1769)", "quoted": "very early in the morning the first day of the week" },
-    { "ref": "Mark 16:2", "work": "The Bible", "translation": "KJV (1769)", "quoted": "at the rising of the sun" },
-    { "ref": "John 20:1", "work": "The Bible", "translation": "KJV (1769)", "quoted": "early, when it was yet dark" },
-    { "ref": "John 20:16", "work": "The Bible", "translation": "KJV (1769)", "quoted": "Jesus saith unto her, Mary. She turned herself, and saith unto him, Rabboni; which is to say, Master." },
-    { "ref": "John 20:11–15", "work": "The Bible", "translation": null, "quoted": null }
+    {
+      "ref": "Mark 16:2",
+      "work": "The Bible",
+      "translation": "KJV (1769)",
+      "quoted": "very early in the morning the first day of the week"
+    },
+    {
+      "ref": "Mark 16:2",
+      "work": "The Bible",
+      "translation": "KJV (1769)",
+      "quoted": "at the rising of the sun"
+    },
+    {
+      "ref": "John 20:1",
+      "work": "The Bible",
+      "translation": "KJV (1769)",
+      "quoted": "early, when it was yet dark"
+    },
+    {
+      "ref": "John 20:16",
+      "work": "The Bible",
+      "translation": "KJV (1769)",
+      "quoted": "Jesus saith unto her, Mary. She turned herself, and saith unto him, Rabboni; which is to say, Master."
+    },
+    {
+      "ref": "John 20:11–15",
+      "work": "The Bible",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -91,5 +190,9 @@
       "Audit pass: quotations checked against KJV, attributions and claims checked; no changes needed."
     ]
   },
-  "meta": { "index": "1035. Sunrise service · — · Protestants often gather outdoors at dawn on Easter morning · watch a sunrise · early, while it was dark", "writer": "writer agent (christianity 1027–1036)", "written": "2026-10-01" }
+  "meta": {
+    "index": "1035. Sunrise service · — · Protestants often gather outdoors at dawn on Easter morning · watch a sunrise · early, while it was dark",
+    "writer": "writer agent (christianity 1027–1036)",
+    "written": "2026-10-01"
+  }
 }

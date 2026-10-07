@@ -13,25 +13,33 @@
       "type": "the bell",
       "duration": null,
       "voice": "",
-      "screen": ["`DAY NINE-HUNDRED-FOUR.`"]
+      "screen": [
+        "`DAY NINE-HUNDRED-FOUR.`"
+      ]
     },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, Kumarajiva, the monk from Kucha whose Chinese reads clear and flowing. Your line was the translator. Did the clear sentence land? Today, the strange story told about how his life ended. Day nine hundred four.",
-      "screen": ["`THE TRANSLATOR.`"]
+      "screen": [
+        "`THE TRANSLATOR.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "A translator's whole life's work rests on one question: did I get it right? Nobody can fully answer that for themselves. Readers decide, slowly, over generations. Kumarajiva, the story goes, asked for a different kind of answer. Near the end of his life, he made a promise in front of his students, and the proof would come only after he was gone, in the fire. Today, a legend. The tongue that did not burn.",
-      "screen": ["`DID I GET IT RIGHT?` → `A PROMISE BEFORE HIS STUDENTS.` → `THE PROOF IN THE FIRE.`"]
+      "screen": [
+        "`DID I GET IT RIGHT?` → `A PROMISE BEFORE HIS STUDENTS.` → `THE PROOF IN THE FIRE.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "First, the promise. His biography tells it this way. Knowing he was dying, Kumarajiva spoke to the monks around him. He said, in effect: if what I have translated does not betray the meaning of the teaching, then when my body is burned, my tongue will not burn. Second, the fire. After his death, the story says, his body was cremated in the Buddhist way. The flames did their work. And when the fire died down, his tongue remained, unburned. Third, what the story is saying. It makes its claim in the language of wonder. The tongue is the organ of speech, the thing that spoke every sentence of those translations. For it to survive the fire says, in a picture, that the words were sound. His students, and the readers after them, could point to it. Fourth, how people hold it. Some Buddhists receive the story as a sign. Historians read it as a legend that grew around a translator people already trusted. Tradition says the tongue was enshrined in a pagoda, and a pagoda in the frontier town where he was once held is still linked to it. Either way, the story sits at the very end of his life, after years of readers had already found his Chinese clear and faithful. Readers go on testing a translation slowly, in their own mouths. The story gives his work a single, vivid image: the tongue remained.",
-      "screen": ["`A PROMISE: MY TONGUE WILL NOT BURN.` · `THE FIRE, AND WHAT REMAINED.` · `A CLAIM IN THE LANGUAGE OF WONDER.` · `TRUST FIRST, THEN THE LEGEND.` · then, large: `THE TONGUE REMAINED.`"]
+      "screen": [
+        "`A PROMISE: MY TONGUE WILL NOT BURN.` · `THE FIRE, AND WHAT REMAINED.` · `A CLAIM IN THE LANGUAGE OF WONDER.` · `TRUST FIRST, THEN THE LEGEND.` · then, large: `THE TONGUE REMAINED.`"
+      ]
     },
     {
       "type": "the practice",
@@ -43,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Kumarajiva. The translator whose tongue, legend says, survived his cremation as a sign that his Chinese translations were faithful. Today's word.",
-      "screen": ["`KUMARAJIVA — today's word`."]
+      "screen": [
+        "`KUMARAJIVA — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -55,7 +65,9 @@
       "type": "the close",
       "duration": null,
       "voice": "",
-      "screen": ["`DAY 904 COUNTS.` → `TOMORROW: FAXIAN WALKS TO INDIA.`"]
+      "screen": [
+        "`DAY 904 COUNTS.` → `TOMORROW: FAXIAN WALKS TO INDIA.`"
+      ]
     }
   ],
   "howItsDone": "Chinese Buddhists retell the story of Kumarajiva's tongue as a sign of his faithfulness, and a pagoda associated with the relic is visited in western China.",
@@ -63,16 +75,40 @@
     "match": {
       "prompt": "the tongue that did not burn: tap the pairs.",
       "pairs": [
-        ["the promise", "if my translations are true"],
-        ["the fire", "his body cremated"],
-        ["the tongue", "remained, unburned"],
-        ["historians", "read it as a legend"]
+        [
+          "the promise",
+          "if my translations are true"
+        ],
+        [
+          "the fire",
+          "his body cremated"
+        ],
+        [
+          "the tongue",
+          "remained, unburned"
+        ],
+        [
+          "historians",
+          "read it as a legend"
+        ]
       ]
     },
     "myth": [
-      ["the story is told as a sign the translations were faithful", true, "he promised his tongue would not burn if he had not betrayed the meaning."],
-      ["the legend came first, and then people began trusting his translations", false, "the trust came first, from readers of his Chinese; the story of the fire comes at the end of his life."],
-      ["historians and believers all read the story the same way", false, "some Buddhists receive it as a sign; historians read it as a legend."]
+      [
+        "the story is told as a sign the translations were faithful",
+        true,
+        "he promised his tongue would not burn if he had not betrayed the meaning."
+      ],
+      [
+        "the legend came first, and then people began trusting his translations",
+        false,
+        "the trust came first, from readers of his Chinese; the story of the fire comes at the end of his life."
+      ],
+      [
+        "historians and believers all read the story the same way",
+        false,
+        "some Buddhists receive it as a sign; historians read it as a legend."
+      ]
     ],
     "fork": {
       "setup": "you're one of Kumarajiva's students, and he says his tongue will not burn if his translations are true. what do you do?",
@@ -84,15 +120,34 @@
       "answer": 1,
       "reveal": "in the story, after the cremation, his tongue remained, and his students took it as proof his words were sound."
     },
-    "original": { "script": "जिह्वा", "say": "JIH-vah", "note": "Sanskrit: jihvā, the tongue, the organ of speech the legend says did not burn." },
+    "original": {
+      "script": "जिह्वा",
+      "say": "JIH-vah",
+      "note": "Sanskrit: jihvā, the tongue, the organ of speech the legend says did not burn."
+    },
     "trapdoor": [
       "what you thought: a miracle story about a burned body.",
       "what it means: a legend saying, in a picture, that Kumarajiva's translations were faithful.",
       "what a scholar hears: his biography records the vow, and a pagoda tied to the tongue relic still stands; historians read it as trust in his work told in the language of wonder."
+    ],
+    "recall": [
+      [
+        "Ledi Sayadaw",
+        "taught meditation to lay people"
+      ],
+      [
+        "Pindapata",
+        "the alms round"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Biography of Kumarajiva, Biographies of Eminent Monks (Gaoseng zhuan)", "work": "Chinese Buddhist records", "translation": null, "quoted": null }
+    {
+      "ref": "Biography of Kumarajiva, Biographies of Eminent Monks (Gaoseng zhuan)",
+      "work": "Chinese Buddhist records",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",

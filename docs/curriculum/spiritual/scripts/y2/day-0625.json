@@ -9,24 +9,37 @@
   "length": "6:30",
   "tomorrow": "Remember a good person",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY SIX-HUNDRED-TWENTY-FIVE.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY SIX-HUNDRED-TWENTY-FIVE.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday: my child. Your line was nine reminders. Which reminder loosened a knot for you? Day six hundred twenty-five.",
-      "screen": ["`NINE REMINDERS.`"]
+      "screen": [
+        "`NINE REMINDERS.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Mechanics have a short list of the ways an engine goes wrong. Doctors have one for the body. Marcus, right after his nine reminders, wrote a short list of the ways a mind goes wrong: four of them, each with a sentence to say when you catch it. It reads like a small diagnostic card, the kind you could tape inside a kitchen cabinet and glance at every morning. Today: four failures.",
-      "screen": ["`AN ENGINE'S SHORT LIST.` → `THE MIND'S SHORT LIST.` → `FOUR FAILURES.`"]
+      "screen": [
+        "`AN ENGINE'S SHORT LIST.` → `THE MIND'S SHORT LIST.` → `FOUR FAILURES.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "First, the frame. There are four wrong turns of the ruling part of the mind, Marcus writes, that you should constantly watch for, and wipe out when you catch them, saying a line to each. Second, the first two. One: a thought you don't need. When you catch it, say: this thought isn't necessary. The replay of an old argument, a worry you've already dealt with, a fantasy that goes nowhere. Two: something that pulls people apart. Say: this loosens the bonds between people. A cutting remark, a bit of gossip, a scheme that works for you by working against others. Third, words. Three: you're about to say something that isn't what you really think. Marcus says to count it among the most absurd things there are, to speak not from your own mind. Flattery, a fake agreement, a performance. Fourth, the body. Four: the moment you catch yourself reproaching yourself, because the more divine part of you has been beaten and has given way to the less honorable, mortal part, the body and its coarse pleasures. Notice what he calls it: a defeat of the ruling part, not a crime. So four questions, really. Is this thought necessary? Does this act bind people or break them? Do I mean what I'm about to say? Who's in charge here, my reason or my appetite? He doesn't ask himself never to fail. He asks himself to catch it, wipe it out, and keep going.",
-      "screen": ["`FOUR WRONG TURNS TO WATCH FOR.` · `UNNEEDED THOUGHTS, UNSOCIAL ACTS.` · `WORDS YOU DON'T MEAN.` · `APPETITE IN CHARGE.` · then, large: `FOUR FAILURES.`"]
+      "screen": [
+        "`FOUR WRONG TURNS TO WATCH FOR.` · `UNNEEDED THOUGHTS, UNSOCIAL ACTS.` · `WORDS YOU DON'T MEAN.` · `APPETITE IN CHARGE.` · then, large: `FOUR FAILURES.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Four failures. Marcus's short list of the mind's wrong turns: needless thoughts, unsocial acts, words you don't mean, and appetite in charge. Today's word.",
-      "screen": ["`FOUR FAILURES — today's word`."]
+      "screen": [
+        "`FOUR FAILURES — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,40 +61,96 @@
       "voice": "Your line: wipe it out. Run the list once today, catch one failure, name it, and wipe it out. Day six hundred twenty-five.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 625 COUNTS.` → `TOMORROW: REMEMBER A GOOD PERSON.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 625 COUNTS.` → `TOMORROW: REMEMBER A GOOD PERSON.`"
+      ]
+    }
   ],
   "howItsDone": "Stoic readers sometimes use Marcus's four checks as a quick daily review: needless thoughts, divisive acts, insincere words, and moments when appetite took over.",
   "games": {
     "match": {
       "prompt": "four failures — tap the pairs.",
-      "pairs": [["an unneeded thought", "this isn't necessary"], ["an unsocial act", "this loosens the bonds"], ["words you don't mean", "among the most absurd things"], ["the body in charge", "the diviner part gave way"]]
+      "pairs": [
+        [
+          "an unneeded thought",
+          "this isn't necessary"
+        ],
+        [
+          "an unsocial act",
+          "this loosens the bonds"
+        ],
+        [
+          "words you don't mean",
+          "among the most absurd things"
+        ],
+        [
+          "the body in charge",
+          "the diviner part gave way"
+        ]
+      ]
     },
     "myth": [
-      ["Marcus expected never to fail in these four ways", false, "he tells himself to watch for them constantly and wipe them out when he catches them."],
-      ["one of the four is saying what you don't really think", true, "he counts speaking not from your own mind among the most absurd things."]
+      [
+        "Marcus expected never to fail in these four ways",
+        false,
+        "he tells himself to watch for them constantly and wipe them out when he catches them."
+      ],
+      [
+        "one of the four is saying what you don't really think",
+        true,
+        "he counts speaking not from your own mind among the most absurd things."
+      ]
     ],
     "fork": {
       "setup": "you're about to agree with your boss to keep things smooth, though you don't agree. you're Marcus with his list. which failure is it?",
-      "options": ["an unneeded thought.", "speaking not from your own mind.", "letting the body rule."],
+      "options": [
+        "an unneeded thought.",
+        "speaking not from your own mind.",
+        "letting the body rule."
+      ],
       "answer": 1,
       "reveal": "that's the third: saying what isn't your real thought, which Marcus counts among the most absurd things."
     },
-    "original": { "script": "ἡγεμονικόν", "say": "hay-geh-mo-nee-KON", "note": "Greek: the ruling part, the mind's command center in Stoic thought. all four failures are its wrong turns." },
+    "original": {
+      "script": "ἡγεμονικόν",
+      "say": "hay-geh-mo-nee-KON",
+      "note": "Greek: the ruling part, the mind's command center in Stoic thought. all four failures are its wrong turns."
+    },
     "trapdoor": [
       "what you thought: a list of sins.",
       "what it means: four ways the mind slips, each caught with a sentence and wiped out, not dwelt on.",
       "what a scholar hears: hēgemonikon, the ruling part, is the Stoic name for the mind's command center; each failure is a turning of it away from its job."
+    ],
+    "recall": [
+      [
+        "aktines",
+        "rays, in Greek"
+      ],
+      [
+        "Antoninus",
+        "the name being spelled"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Meditations 11.19", "work": "Marcus Aurelius, Meditations", "translation": null, "quoted": null }
+    {
+      "ref": "Meditations 11.19",
+      "work": "Marcus Aurelius, Meditations",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
     "keeper": null,
     "notes": [
       "11.19 paraphrased (Long: 'There are four principal aberrations of the superior faculty against which thou shouldst be constantly on thy guard... This thought is not necessary: this tends to destroy social union: this which thou art going to say comes not from the real thoughts... the fourth is when thou shalt reproach thyself for anything, for this is an evidence of the diviner part within thee being overpowered and yielding to the less honourable and to the perishable part, the body, and to its gross pleasures.'). Confirm.",
-      "The outline's hook says 'false impressions' for the first failure; Marcus's text is closer to 'unnecessary thoughts'. The script follows the text. A Keeper may wish to adjust the index hook.", "Editor review (year 2): smoothed the clumsy 'third, the third / fourth, the fourth' signposts and reworded the closing claim about what Marcus expected so it rests on the text."
+      "The outline's hook says 'false impressions' for the first failure; Marcus's text is closer to 'unnecessary thoughts'. The script follows the text. A Keeper may wish to adjust the index hook.",
+      "Editor review (year 2): smoothed the clumsy 'third, the third / fourth, the fourth' signposts and reworded the closing claim about what Marcus expected so it rests on the text."
     ]
   },
   "meta": {

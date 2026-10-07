@@ -9,24 +9,37 @@
   "length": "6:30",
   "tomorrow": "Same word, different meaning",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY SIX-HUNDRED-FIFTY-NINE.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY SIX-HUNDRED-FIFTY-NINE.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday: Theodoric, the king Boethius served before his fall. Your line was philosophy visits. What question did the wise visitor ask you? Day six hundred fifty-nine.",
-      "screen": ["`PHILOSOPHY VISITS.`"]
+      "screen": [
+        "`PHILOSOPHY VISITS.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Your team wins the championship one year and finishes last the next. A stock soars, then sinks. A friend's business is on the news in spring and closed by fall. Up, then down, and the down tends to land as something personal. Medieval artists drew it as a picture: a great wheel, a crowned figure at the top, someone falling off the side, someone crushed at the bottom. One book gave that wheel a voice, the book we opened yesterday. Today: Fortune's wheel.",
-      "screen": ["`CHAMPIONS ONE YEAR, LAST THE NEXT.` → `A WHEEL, A CROWN, A FALL.` → `FORTUNE'S WHEEL.`"]
+      "screen": [
+        "`CHAMPIONS ONE YEAR, LAST THE NEXT.` → `A WHEEL, A CROWN, A FALL.` → `FORTUNE'S WHEEL.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "First, the diagnosis. In book two of the Consolation, Philosophy tells Boethius what's really wrong with him. He's not suffering because Fortune changed. He's suffering because he forgot what Fortune is. You knew her, she says. She was always like this. Her only constancy is that she changes. If she stopped turning, she wouldn't be Fortune. Second, Fortune speaks. Then Philosophy does something striking: she lets Fortune talk for herself. Fortune says, in effect: everything you had, wealth, honors, family glory, was mine, lent to you. I turn my wheel; that's my game. I bring the low up and the high down. Climb on if you like, but don't call it unjust when the turn brings you down. Third, the comfort that isn't fake. Philosophy doesn't say the loss doesn't hurt. She reminds Boethius of what Fortune never took: people who love him, his wife and sons still living, and his own mind, which no turn of the wheel can reach. And she adds something sharp: bad fortune can teach more than good. Good fortune flatters; bad fortune shows you who your real friends are. Fourth, a neighbor's version. Epictetus, a Stoic, said much the same in plainer words: never say of anything, I have lost it; say, I have given it back. Boethius gave the idea a picture people could hold: a turning wheel, and a voice explaining it. When the wheel turns down, you can still say: I knew this was a wheel.",
-      "screen": ["`YOU FORGOT WHAT FORTUNE IS.` · `FORTUNE SPEAKS: IT WAS ALL LENT.` · `WHAT THE WHEEL CAN'T REACH.` · `NOT LOST: GIVEN BACK.` · then, large: `THE WHEEL TURNS.`"]
+      "screen": [
+        "`YOU FORGOT WHAT FORTUNE IS.` · `FORTUNE SPEAKS: IT WAS ALL LENT.` · `WHAT THE WHEEL CAN'T REACH.` · `NOT LOST: GIVEN BACK.` · then, large: `THE WHEEL TURNS.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Fortune's wheel. In the Consolation, Fortune turns her wheel, lifting and dropping, and Philosophy says: you always knew she was like this. Today's word.",
-      "screen": ["`FORTUNE'S WHEEL — today's word`."]
+      "screen": [
+        "`FORTUNE'S WHEEL — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,35 +61,99 @@
       "voice": "Your line: the wheel turns. When something goes up or down today, say it quietly, and look for what stayed at the hub. Day six hundred fifty-nine.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 659 COUNTS.` → `TOMORROW: SAME WORD, DIFFERENT MEANING.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 659 COUNTS.` → `TOMORROW: SAME WORD, DIFFERENT MEANING.`"
+      ]
+    }
   ],
   "howItsDone": "Readers of Boethius use the image of Fortune's wheel to meet gains and losses with less surprise, turning their attention to what no turn of fortune can take.",
   "games": {
     "match": {
       "prompt": "Fortune's wheel. tap the pairs.",
-      "pairs": [["Fortune's constancy", "that she always changes"], ["Fortune's speech", "all you had was lent to you"], ["bad fortune", "shows who your real friends are"], ["the hub", "what the wheel can't reach"]]
+      "pairs": [
+        [
+          "Fortune's constancy",
+          "that she always changes"
+        ],
+        [
+          "Fortune's speech",
+          "all you had was lent to you"
+        ],
+        [
+          "bad fortune",
+          "shows who your real friends are"
+        ],
+        [
+          "the hub",
+          "what the wheel can't reach"
+        ]
+      ]
     },
     "myth": [
-      ["Philosophy tells Boethius his loss doesn't really hurt", false, "she doesn't deny the pain; she reminds him what the wheel never took."],
-      ["in book two, Fortune herself speaks", true, "Philosophy lets her say that everything was lent, and turning is her game."],
-      ["Philosophy says bad fortune can teach more than good", true, "good fortune flatters; bad fortune reveals true friends."]
+      [
+        "Philosophy tells Boethius his loss doesn't really hurt",
+        false,
+        "she doesn't deny the pain; she reminds him what the wheel never took."
+      ],
+      [
+        "in book two, Fortune herself speaks",
+        true,
+        "Philosophy lets her say that everything was lent, and turning is her game."
+      ],
+      [
+        "Philosophy says bad fortune can teach more than good",
+        true,
+        "good fortune flatters; bad fortune reveals true friends."
+      ]
     ],
     "fork": {
       "setup": "you're Boethius, and you've just lost everything. Philosophy asks why you're so shocked. what's her answer?",
-      "options": ["Fortune made an unusual mistake.", "you forgot what Fortune is: she always turns.", "you'll get it all back soon."],
+      "options": [
+        "Fortune made an unusual mistake.",
+        "you forgot what Fortune is: she always turns.",
+        "you'll get it all back soon."
+      ],
       "answer": 1,
       "reveal": "Philosophy's diagnosis: Boethius knew Fortune's nature and forgot it. if she stopped turning, she wouldn't be Fortune."
     },
-    "original": { "script": "rota Fortunae", "say": "ROH-tah for-TOO-nye", "note": "Latin: the wheel of Fortune. The wheel Boethius's Fortune turns in book two." },
+    "original": {
+      "script": "rota Fortunae",
+      "say": "ROH-tah for-TOO-nye",
+      "note": "Latin: the wheel of Fortune. The wheel Boethius's Fortune turns in book two."
+    },
     "trapdoor": [
       "what you thought: the wheel of fortune is a game show.",
       "what it means: Fortune turns, lifting and dropping, and that is simply what she does; the mind at the hub is not hers to take.",
       "what a scholar hears: Consolation 2, prose 1–2 gives Fortune's own speech (a prosopopoeia), and the image fed medieval art and poems like the Carmina Burana's O Fortuna."
+    ],
+    "recall": [
+      [
+        "Lucretius",
+        "the time before birth, a mirror"
+      ],
+      [
+        "ataraxia",
+        "an untroubled mind"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Consolation of Philosophy 2, prose 1–4, prose 8", "work": "Boethius, The Consolation of Philosophy", "translation": null, "quoted": null },
-    { "ref": "Enchiridion 11", "work": "Epictetus, Enchiridion", "translation": null, "quoted": null }
+    {
+      "ref": "Consolation of Philosophy 2, prose 1–4, prose 8",
+      "work": "Boethius, The Consolation of Philosophy",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Enchiridion 11",
+      "work": "Epictetus, Enchiridion",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",

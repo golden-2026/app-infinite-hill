@@ -9,24 +9,37 @@
   "length": "6:30",
   "tomorrow": "Fortune's wheel",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY SIX-HUNDRED-FIFTY-EIGHT.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY SIX-HUNDRED-FIFTY-EIGHT.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday: Aristotle's middle, the right amount for you, here, now. Your line was the mean. Which habit took a step toward the middle? This week: Epicurus on death and friends, Seneca the scout, the skeptics, Socrates, Aristotle. Day six hundred fifty-eight.",
-      "screen": ["`THE MEAN.` → `A WEEK OF NEIGHBORS.`"]
+      "screen": [
+        "`THE MEAN.` → `A WEEK OF NEIGHBORS.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "A man who had everything is sitting in a cell. Not long ago he held high office in Italy. His two sons were made consuls on the same day, and he gave the speech. Now he's been accused of treason, condemned without a real hearing, and he's waiting to be killed. He does the natural thing in a dark hour: he writes sad poems about how unfair it all is. And then, in his book, someone walks into the cell. Today: Theodoric.",
-      "screen": ["`FROM HIGH OFFICE TO A CELL.` → `SAD POEMS IN A DARK HOUR.` → `SOMEONE WALKS IN.`"]
+      "screen": [
+        "`FROM HIGH OFFICE TO A CELL.` → `SAD POEMS IN A DARK HOUR.` → `SOMEONE WALKS IN.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "First, the man. Boethius was a Roman senator serving Theodoric, the Gothic king who ruled Italy. He was a scholar too, steeped in Greek philosophy. In the book he says he was accused of treason partly for defending another senator, and condemned far away, without being heard. He was executed not long after. Second, the visitor. The Consolation of Philosophy opens with Boethius weeping over verses, the Muses of poetry gathered round him. Then a woman appears: hard to measure, sometimes ordinary height, sometimes her head seems to touch the sky. Her robe is woven with Greek letters and a ladder between them, and it's torn. She's Philosophy. She sends the Muses away, and sits down on his bed. Third, the torn robe. She explains it: after Socrates and Plato, rival crowds tried to seize her, Epicureans and Stoics among them, each tearing away a scrap and thinking they had the whole. It's a fitting image after this week of neighbors. Fourth, what kind of book it is. Boethius was a Christian; he wrote works of theology. Yet the Consolation never names Christ and argues from philosophy alone. Scholars still debate why. What he does is talk with Philosophy, in prose and poetry, about fortune, happiness and God, while waiting to die. And it begins with something anyone can do in a hard hour: stop only lamenting, and let a wiser voice, even your own, ask you some questions.",
-      "screen": ["`A SENATOR CONDEMNED.` · `A WOMAN WALKS IN: PHILOSOPHY.` · `HER ROBE TORN BY RIVAL SCHOOLS.` · `A CHRISTIAN ARGUING FROM REASON.` · then, large: `PHILOSOPHY VISITS.`"]
+      "screen": [
+        "`A SENATOR CONDEMNED.` · `A WOMAN WALKS IN: PHILOSOPHY.` · `HER ROBE TORN BY RIVAL SCHOOLS.` · `A CHRISTIAN ARGUING FROM REASON.` · then, large: `PHILOSOPHY VISITS.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Theodoric. The Gothic king Boethius served as a Roman senator before being condemned and imprisoned, awaiting execution. Today's word.",
-      "screen": ["`THEODORIC — today's word`."]
+      "screen": [
+        "`THEODORIC — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,34 +61,93 @@
       "voice": "Your line: philosophy visits. The next time a complaint starts looping today, invite the wise visitor in, and let her ask one question. Day six hundred fifty-eight.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 658 COUNTS.` → `TOMORROW: FORTUNE'S WHEEL.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 658 COUNTS.` → `TOMORROW: FORTUNE'S WHEEL.`"
+      ]
+    }
   ],
   "howItsDone": "Readers have turned to Boethius's Consolation of Philosophy in times of loss and injustice, some reading it as a dialogue with their own wiser mind.",
   "games": {
     "match": {
       "prompt": "Boethius in prison. tap the pairs.",
-      "pairs": [["Theodoric", "the Gothic king Boethius served"], ["the Muses", "sent away by Philosophy"], ["the torn robe", "rival schools grabbing scraps"], ["a ladder", "woven between letters on her robe"]]
+      "pairs": [
+        [
+          "Theodoric",
+          "the Gothic king Boethius served"
+        ],
+        [
+          "the Muses",
+          "sent away by Philosophy"
+        ],
+        [
+          "the torn robe",
+          "rival schools grabbing scraps"
+        ],
+        [
+          "a ladder",
+          "woven between letters on her robe"
+        ]
+      ]
     },
     "myth": [
-      ["the Consolation repeatedly names Christ", false, "Boethius was a Christian, but the book argues from philosophy and never names Christ."],
-      ["in the book, Epicureans and Stoics tore Philosophy's robe", true, "each crowd seized a scrap and thought it had the whole."],
-      ["Philosophy's robe is woven with Greek letters and a ladder", true, "and it's torn, by rival crowds who each grabbed a scrap."]
+      [
+        "the Consolation repeatedly names Christ",
+        false,
+        "Boethius was a Christian, but the book argues from philosophy and never names Christ."
+      ],
+      [
+        "in the book, Epicureans and Stoics tore Philosophy's robe",
+        true,
+        "each crowd seized a scrap and thought it had the whole."
+      ],
+      [
+        "Philosophy's robe is woven with Greek letters and a ladder",
+        true,
+        "and it's torn, by rival crowds who each grabbed a scrap."
+      ]
     ],
     "fork": {
       "setup": "you're Boethius, condemned, writing sad verses with the Muses of poetry. Philosophy walks in. what does she do first?",
-      "options": ["joins in the lament.", "sends the Muses away and sits down on your bed.", "promises you'll be freed."],
+      "options": [
+        "joins in the lament.",
+        "sends the Muses away and sits down on your bed.",
+        "promises you'll be freed."
+      ],
       "answer": 1,
       "reveal": "she drives off the Muses who were feeding his grief, sits beside him, and begins to ask him questions."
     },
-    "original": { "script": "consolatio", "say": "kon-so-LAH-tee-oh", "note": "Latin: consolation, comfort. Consolatio Philosophiae, the comfort that philosophy gives." },
+    "original": {
+      "script": "consolatio",
+      "say": "kon-so-LAH-tee-oh",
+      "note": "Latin: consolation, comfort. Consolatio Philosophiae, the comfort that philosophy gives."
+    },
     "trapdoor": [
       "what you thought: a book of comfort is gentle and sweet.",
       "what it means: a condemned man argues with Philosophy about fortune, happiness and God while waiting to die.",
       "what a scholar hears: the Consolation mixes prose and verse (a Menippean form), its robe carries the letters pi and theta for practical and theoretical philosophy, and it was translated by King Alfred, Chaucer and Elizabeth I."
+    ],
+    "recall": [
+      [
+        "autarkeia",
+        "self-sufficiency"
+      ],
+      [
+        "Hipparchia",
+        "chose Crates and his poverty"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Consolation of Philosophy 1, prose 1–4", "work": "Boethius, The Consolation of Philosophy", "translation": null, "quoted": null }
+    {
+      "ref": "Consolation of Philosophy 1, prose 1–4",
+      "work": "Boethius, The Consolation of Philosophy",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",

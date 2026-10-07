@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "Who am I here?",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY FOUR-HUNDRED-EIGHT.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY FOUR-HUNDRED-EIGHT.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday: bold outside, the deer and the feathers, and your line, turn the mask around. Which outside thing were you bold about? Day four hundred eight.",
-      "screen": ["`TURN THE MASK AROUND.`"]
+      "screen": [
+        "`TURN THE MASK AROUND.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Watch a pickup basketball game in a park. Nobody stops to argue about whether the ball is a good ball or a bad ball. It's just the ball. Everything they care about is what they do with it: the pass, the catch, the footwork, the shot. A great player with a scuffed, half-flat ball is still a joy to watch. Epictetus used ball games, and dice, to answer a hard puzzle in Stoic thought. Today: sphaira.",
-      "screen": ["`NOBODY ARGUES ABOUT THE BALL.` → `THE PASS, THE CATCH, THE SHOT.` → `A HARD STOIC PUZZLE.`"]
+      "screen": [
+        "`NOBODY ARGUES ABOUT THE BALL.` → `THE PASS, THE CATCH, THE SHOT.` → `A HARD STOIC PUZZLE.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "Here's the puzzle. The Stoics said outside things, money, health, even life itself, are neither good nor bad. Only how we use them is. So why care about anything? Why not shrug at everything? That's Discourses book two, chapter five: how greatness of mind fits with carefulness. And Epictetus answers with games. Look at people playing dice, he says. The dice don't matter, the counters don't matter, and you can't control what falls. But using well what falls: that's your job, and you can do it with real care. Then the ball players. None of them argues about whether the ball is good or bad. They argue about throwing and catching, and there they're all skill, speed and attention. Then he turns to a game with far more at stake. Socrates, he says, knew how to play ball, even in the court where he was tried. And what was the ball? Life. Chains. Exile. Drinking poison. Being taken from his wife, and leaving his children without a father. Those were the things he was handed, and he played with them, Epictetus says, and handled them with good form. So the answer to the puzzle is this: don't treat the ball as everything, and don't treat the game as nothing. Pour all your care into the playing. Let the ball be the ball. A job, a diagnosis, a family situation: those are what's been tossed to you. How you catch them and pass them on is where the skill lives.",
-      "screen": ["`THE PUZZLE: WHY CARE?` · `THE DICE DON'T MATTER, THE PLAY DOES.` · `SOCRATES KNEW HOW TO PLAY BALL.` · `ALL YOUR CARE GOES INTO THE PLAYING.` · then, large: `PLAY THE BALL WELL.`"]
+      "screen": [
+        "`THE PUZZLE: WHY CARE?` · `THE DICE DON'T MATTER, THE PLAY DOES.` · `SOCRATES KNEW HOW TO PLAY BALL.` · `ALL YOUR CARE GOES INTO THE PLAYING.` · then, large: `PLAY THE BALL WELL.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Sphaira. Greek for ball: Epictetus' image for life's outside things, the dice and the ball we're handed, where the point isn't the ball but how we play it.",
-      "screen": ["`SPHAIRA — today's word`."]
+      "screen": [
+        "`SPHAIRA — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,34 +61,93 @@
       "voice": "Your line: let the ball be the ball. Pick one task today and play it with full care, for the skill of it, not for the prize. Day four hundred eight.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 408 COUNTS.` → `TOMORROW: WHO AM I HERE?`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 408 COUNTS.` → `TOMORROW: WHO AM I HERE?`"
+      ]
+    }
   ],
   "howItsDone": "Some Stoic practitioners separate the outcome of a task from the way they do it, and judge their day by the quality of their effort, the way the ball players in this chapter care only about the throwing and catching.",
   "games": {
     "match": {
       "prompt": "play the ball well: tap the pairs.",
-      "pairs": [["the dice", "you can't control what falls"], ["the ball players", "argue about throwing and catching"], ["Socrates' ball", "chains, exile, poison"], ["your care", "goes into the playing"]]
+      "pairs": [
+        [
+          "the dice",
+          "you can't control what falls"
+        ],
+        [
+          "the ball players",
+          "argue about throwing and catching"
+        ],
+        [
+          "Socrates' ball",
+          "chains, exile, poison"
+        ],
+        [
+          "your care",
+          "goes into the playing"
+        ]
+      ]
     },
     "myth": [
-      ["Epictetus says if outside things aren't good, you shouldn't care about anything", false, "he says pour all your care into how you play the ball."],
-      ["he says Socrates at his trial knew how to play ball", true, "the ball was life, chains, exile and poison, and he played it with good form."],
-      ["ball players argue about whether the ball is good or bad", false, "they argue only about throwing and catching."]
+      [
+        "Epictetus says if outside things aren't good, you shouldn't care about anything",
+        false,
+        "he says pour all your care into how you play the ball."
+      ],
+      [
+        "he says Socrates at his trial knew how to play ball",
+        true,
+        "the ball was life, chains, exile and poison, and he played it with good form."
+      ],
+      [
+        "ball players argue about whether the ball is good or bad",
+        false,
+        "they argue only about throwing and catching."
+      ]
     ],
     "fork": {
       "setup": "you're Socrates, and the ball you've been tossed is a trial and a cup of poison. what does Epictetus say you did?",
-      "options": ["dropped the ball and ran.", "played it with good form.", "argued that the ball was unfair."],
+      "options": [
+        "dropped the ball and ran.",
+        "played it with good form.",
+        "argued that the ball was unfair."
+      ],
       "answer": 1,
       "reveal": "Epictetus says Socrates knew how to play ball: he handled life, chains, exile and poison with skill."
     },
-    "original": { "script": "σφαῖρα", "say": "SFAI-ra", "note": "Greek sphaira: a ball (our word sphere); Epictetus' image for the outside things life tosses us." },
+    "original": {
+      "script": "σφαῖρα",
+      "say": "SFAI-ra",
+      "note": "Greek sphaira: a ball (our word sphere); Epictetus' image for the outside things life tosses us."
+    },
     "trapdoor": [
       "what you thought: it's not whether you win, it's how you play.",
       "what it means: outside things are the ball; your care belongs in the playing, not the prize.",
       "what a scholar hears: 2.5 tackles a real tension in Stoicism, that 'indifferents' still deserve careful handling, and Epictetus resolves it with dice and ball games."
+    ],
+    "recall": [
+      [
+        "Arrian",
+        "the student who wrote it down"
+      ],
+      [
+        "Cleanthes",
+        "lead me, Zeus, and you, Destiny"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Discourses 2.5 (how greatness of mind is consistent with care)", "work": "Epictetus, Discourses (Arrian)", "translation": null, "quoted": null }
+    {
+      "ref": "Discourses 2.5 (how greatness of mind is consistent with care)",
+      "work": "Epictetus, Discourses (Arrian)",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -84,5 +158,9 @@
       "Editor review (2026-10-01): removed the invented claim that Epictetus 'watched ball games' and the superlatives ('one of the hardest puzzles', 'the most serious ball game he knows'); placed Socrates' ball-play 'in the court where he was tried' as 2.5 has it; 'prison' changed to 'chains' to match the text's list; howItsDone no longer claims 'many trace' the idea."
     ]
   },
-  "meta": { "index": "408. Play the ball well · — · players care about handling the ball well, not about the ball (Discourses 2.5) · play one task well, not for the prize · play the ball well", "writer": "writer agent (spiritual 392–421)", "written": "2026-09-30" }
+  "meta": {
+    "index": "408. Play the ball well · — · players care about handling the ball well, not about the ball (Discourses 2.5) · play one task well, not for the prize · play the ball well",
+    "writer": "writer agent (spiritual 392–421)",
+    "written": "2026-09-30"
+  }
 }

@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "Every one had a name",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-THOUSAND-TWENTY-ONE.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY ONE-THOUSAND-TWENTY-ONE.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, witness, and your line: the listening is the next link. Did you hear a survivor's voice? Today, a question some of them carried out of the camps, about God. Day one thousand twenty-one.",
-      "screen": ["`WITNESS.`"]
+      "screen": [
+        "`WITNESS.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Elie Wiesel told a story from the camp where he was held. A few prisoners, learned men, decided to put God on trial. They argued the case through the nights, like a court. At the end, they reached a verdict: guilty. And then, the story goes, one of them looked up and said it was time for the evening prayer. And they prayed. Hold both halves of that story at once. The verdict, and the prayer. Today, faith after.",
-      "screen": ["`GOD ON TRIAL.` → `THE VERDICT: GUILTY.` → `THEN, EVENING PRAYER.`"]
+      "screen": [
+        "`GOD ON TRIAL.` → `THE VERDICT: GUILTY.` → `THEN, EVENING PRAYER.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "Survivors came out of the Holocaust with faith in very different shapes. Some lost it. They had prayed, and the prayers seemed to meet nothing, and they could not go back. That answer is honored. Some kept it. They rebuilt synagogues, said Kaddish for their parents, taught their children the blessings over bread and candles. That answer is honored. And some argued. They kept speaking to God, and the speaking was a fight. That third way has deep roots in the Tanakh. When Abraham hears that Sodom will be destroyed, he argues with God to God's face: \"Shall not the Judge of all the earth do justly?\" The psalmist, feeling abandoned, shouts upward: \"Awake, why sleepest Thou, O Lord?\" Job argues his case at length, and at the end God says that Job has spoken rightly, and his comforters have not. In this tradition, arguing with God can itself be a kind of prayer. After the war, Jewish thinkers offered many answers, and none of them won. Some reached for an old phrase from Deuteronomy, hester panim, God hiding the face. Some said there is no answer, and that building one would wrong the dead. Some said the only answer was to go on living as Jews, so the story would not end there. This path doesn't pick among them. The person who stopped praying, the one who never stopped, the one who prayed through clenched teeth: each one is honored, and none of them is ours to judge.",
-      "screen": ["`SOME LOST FAITH.` · `SOME KEPT IT.` · `SOME ARGUED WITH GOD.` · `EVERY ANSWER IS HONORED.`"]
+      "screen": [
+        "`SOME LOST FAITH.` · `SOME KEPT IT.` · `SOME ARGUED WITH GOD.` · `EVERY ANSWER IS HONORED.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Faith after. What survivors did with faith after the Holocaust: some lost it, some kept it, some argued with God. Today's word.",
-      "screen": ["`FAITH AFTER — today's word`."]
+      "screen": [
+        "`FAITH AFTER — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,43 +61,123 @@
       "voice": "Your line: every answer is honored. Today, when someone tells you how they believe, or don't, listen all the way through without correcting them. Day one thousand twenty-one.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 1021 COUNTS.` → `TOMORROW: EVERY ONE HAD A NAME.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 1021 COUNTS.` → `TOMORROW: EVERY ONE HAD A NAME.`"
+      ]
+    }
   ],
   "howItsDone": "Jewish communities hold a wide range of responses to the Holocaust side by side; on Yom HaShoah, memorial services may include psalms, the memorial prayer and Kaddish, and also readings of doubt and protest.",
   "games": {
     "match": {
       "prompt": "faith after — tap the pairs.",
-      "pairs": [["Abraham", "argued with God over Sodom"], ["the psalmist", "awake, why sleepest Thou?"], ["hester panim", "God hiding the face"], ["Wiesel's story", "God put on trial"]]
+      "pairs": [
+        [
+          "Abraham",
+          "argued with God over Sodom"
+        ],
+        [
+          "the psalmist",
+          "awake, why sleepest Thou?"
+        ],
+        [
+          "hester panim",
+          "God hiding the face"
+        ],
+        [
+          "Wiesel's story",
+          "God put on trial"
+        ]
+      ]
     },
     "myth": [
-      ["arguing with God has no place in the Jewish tradition", false, "Abraham argues over Sodom, the psalmist cries awake, and Job argues at length."],
-      ["in the story Wiesel told, the prisoners prayed after finding God guilty", true, "the verdict, then the evening prayer: both halves at once."],
-      ["Jewish thinkers after the war agreed on one answer", false, "they offered many, and none of them won."]
+      [
+        "arguing with God has no place in the Jewish tradition",
+        false,
+        "Abraham argues over Sodom, the psalmist cries awake, and Job argues at length."
+      ],
+      [
+        "in the story Wiesel told, the prisoners prayed after finding God guilty",
+        true,
+        "the verdict, then the evening prayer: both halves at once."
+      ],
+      [
+        "Jewish thinkers after the war agreed on one answer",
+        false,
+        "they offered many, and none of them won."
+      ]
     ],
     "fork": {
       "setup": "you're one of the prisoners who has just found God guilty. evening comes. what do you do?",
-      "options": ["refuse to pray.", "go to the evening prayer.", "leave the group."],
+      "options": [
+        "refuse to pray.",
+        "go to the evening prayer.",
+        "leave the group."
+      ],
       "answer": 1,
       "reveal": "in the story Wiesel told, someone said it was time for the evening prayer, and they prayed."
     },
-    "original": { "script": "הֶסְתֵּר פָּנִים", "say": "HES-ter pa-NEEM", "note": "Hebrew: the hiding of the face, an old phrase from Deuteronomy some thinkers reached for after the war." },
+    "original": {
+      "script": "הֶסְתֵּר פָּנִים",
+      "say": "HES-ter pa-NEEM",
+      "note": "Hebrew: the hiding of the face, an old phrase from Deuteronomy some thinkers reached for after the war."
+    },
     "trapdoor": [
       "what you thought: after the Holocaust, survivors either kept their faith or lost it.",
       "what it means: at least three ways: lost, kept, and argued with God. every one is honored.",
       "what a scholar hears: hester panim, God hiding the face, from Deuteronomy 31, alongside Abraham's \"shall not the Judge of all the earth do justly?\""
+    ],
+    "recall": [
+      [
+        "Oneg Shabbat",
+        "the joy of the Sabbath, a code name"
+      ],
+      [
+        "Kristallnacht",
+        "crystal night"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Genesis 18:25", "work": "Tanakh", "translation": "JPS 1917", "quoted": "Shall not the Judge of all the earth do justly?" },
-    { "ref": "Psalm 44:24", "work": "Tanakh", "translation": "JPS 1917", "quoted": "Awake, why sleepest Thou, O Lord?" },
-    { "ref": "Deuteronomy 31:17–18", "work": "Tanakh", "translation": null, "quoted": null },
-    { "ref": "Job 42:7", "work": "Tanakh", "translation": null, "quoted": null },
-    { "ref": "the trial of God", "work": "Elie Wiesel (account)", "translation": null, "quoted": null }
+    {
+      "ref": "Genesis 18:25",
+      "work": "Tanakh",
+      "translation": "JPS 1917",
+      "quoted": "Shall not the Judge of all the earth do justly?"
+    },
+    {
+      "ref": "Psalm 44:24",
+      "work": "Tanakh",
+      "translation": "JPS 1917",
+      "quoted": "Awake, why sleepest Thou, O Lord?"
+    },
+    {
+      "ref": "Deuteronomy 31:17–18",
+      "work": "Tanakh",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Job 42:7",
+      "work": "Tanakh",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "the trial of God",
+      "work": "Elie Wiesel (account)",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
     "keeper": null,
-    "notes": ["Audit: no change. Genesis 18:25 and Psalm 44:24 JPS 1917 checked; Job 42:7 paraphrase accurate; the three responses are unranked.", 
+    "notes": [
+      "Audit: no change. Genesis 18:25 and Psalm 44:24 JPS 1917 checked; Job 42:7 paraphrase accurate; the three responses are unranked.",
       "Claims rule: no counts of survivors who kept or lost faith; the three responses are given as 'some'.",
       "Genesis 18:25 and Psalm 44:24 are quoted as JPS 1917 (KJV differs: 'do right'; Psalm 44:23). Please confirm JPS wording and verse numbers.",
       "The God-on-trial story is attributed to Elie Wiesel (told in interviews; dramatized in The Trial of God). The prayer-after-the-verdict ending follows his telling; please check.",
@@ -91,5 +186,9 @@
       "Editor: 'Job... is not silenced for asking' was inaccurate (God answers from the whirlwind and Job falls silent); replaced with a paraphrase of Job 42:7, where God says Job spoke rightly and his friends did not, and the Job source now cites 42:7. 'Arguing with God, it turns out' became 'In this tradition'; the review's 'many of them' softened to 'some of them'."
     ]
   },
-  "meta": { "index": "1021. Faith after · — · some survivors lost faith, some kept it, some argued with God; all are honored · hold one question without answering it · every answer is honored", "writer": "writer agent (judaism y3 1017–1026)", "written": "2026-10-01" }
+  "meta": {
+    "index": "1021. Faith after · — · some survivors lost faith, some kept it, some argued with God; all are honored · hold one question without answering it · every answer is honored",
+    "writer": "writer agent (judaism y3 1017–1026)",
+    "written": "2026-10-01"
+  }
 }

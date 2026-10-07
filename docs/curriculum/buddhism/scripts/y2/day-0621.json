@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "A hundred dear, a hundred sorrows",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY SIX-HUNDRED-TWENTY-ONE.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY SIX-HUNDRED-TWENTY-ONE.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday: insects falling into the lamps, and your line, the moths and the flame. Did you pause one breath before flying in? Today, a woman in pain who still thinks of others. Day six hundred twenty-one.",
-      "screen": ["`THE MOTHS AND THE FLAME.`"]
+      "screen": [
+        "`THE MOTHS AND THE FLAME.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "A hospital waiting room. The coffee goes cold. The clock seems broken. Every time the door opens, every head looks up. The Udana tells of a woman named Suppavasa, a Koliyan noblewoman, whose wait the text measures in years. The text says she carried her child for seven years, and was in labor for seven days. Readers take those numbers in different ways; what's plain is a very long, very hard wait. And in the middle of it, she does something unexpected. Today: she still gave.",
-      "screen": ["`A HOSPITAL WAITING ROOM.` → `SUPPAVASA, THE KOLIYAN.` → `A VERY LONG, VERY HARD WAIT.`"]
+      "screen": [
+        "`A HOSPITAL WAITING ROOM.` → `SUPPAVASA, THE KOLIYAN.` → `A VERY LONG, VERY HARD WAIT.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "In her pain, the text says, Suppavasa holds on to three thoughts. The Buddha teaches the way out of suffering like this. His community practices the way out of suffering like this. And there is a peace where suffering like this doesn't exist. The teacher, the community, the peace: held in labor. Then she sends her husband to the Buddha, to bow at his feet in her name and tell him how she is. The Buddha says: may Suppavasa be well and free from illness, and give birth to a healthy son. And at that moment, the text says, she does. Then the part the title is about. As soon as she's able, Suppavasa sends her husband back to invite the Buddha and the monks for meals, seven days in a row. She has just come through seven days of labor, and her first wish is to give. The Buddha even asks her: would you want another child like this one? And she says yes, she would have seven more. The verse that follows is surprising: what is unpleasant comes disguised as pleasant, the hateful as dear, pain in the form of happiness, and overwhelms the heedless. Readers take it in different ways; some hear it as the Buddha seeing her joy and her pain held together. Tradition says the child grew up to be the monk Sivali, remembered for how freely gifts came to him.",
-      "screen": ["`THREE THOUGHTS, HELD IN LABOR.` · `MAY SHE BE WELL.` · `SEVEN DAYS OF MEALS.` · `PAIN IN THE FORM OF HAPPINESS.` · then, large: `SHE STILL GAVE.`"]
+      "screen": [
+        "`THREE THOUGHTS, HELD IN LABOR.` · `MAY SHE BE WELL.` · `SEVEN DAYS OF MEALS.` · `PAIN IN THE FORM OF HAPPINESS.` · then, large: `SHE STILL GAVE.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Dana, giving. Suppavasa, after a long and terrible labor, invited the Buddha and the monks for seven days of meals. Today's word.",
-      "screen": ["`DANA — today's word`."]
+      "screen": [
+        "`DANA — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,35 +61,99 @@
       "voice": "Your line: give one small thing anyway. Today, on a hard day, offer a meal, a minute, or a kind word. Day six hundred twenty-one.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 621 COUNTS.` → `TOMORROW: A HUNDRED DEAR, A HUNDRED SORROWS.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 621 COUNTS.` → `TOMORROW: A HUNDRED DEAR, A HUNDRED SORROWS.`"
+      ]
+    }
   ],
   "howItsDone": "In some Theravada communities families invite monks for a meal and a blessing around a birth, and protective chants are sometimes recited for women in childbirth.",
   "games": {
     "match": {
       "prompt": "she still gave: tap the pairs.",
-      "pairs": [["Suppavasa", "a Koliyan noblewoman"], ["three thoughts", "the teacher, the community, the peace"], ["seven days", "of meals for the Buddha and monks"], ["Sivali", "the child, as tradition says"]]
+      "pairs": [
+        [
+          "Suppavasa",
+          "a Koliyan noblewoman"
+        ],
+        [
+          "three thoughts",
+          "the teacher, the community, the peace"
+        ],
+        [
+          "seven days",
+          "of meals for the Buddha and monks"
+        ],
+        [
+          "Sivali",
+          "the child, as tradition says"
+        ]
+      ]
     },
     "myth": [
-      ["Suppavasa went to the Buddha herself while in labor", false, "she sent her husband to bow in her name."],
-      ["after the birth she invited the Buddha and monks for seven days of meals", true, "her first wish, once she was able, was to give."],
-      ["asked if she'd want another child like this, she said no", false, "she said she would have seven more."]
+      [
+        "Suppavasa went to the Buddha herself while in labor",
+        false,
+        "she sent her husband to bow in her name."
+      ],
+      [
+        "after the birth she invited the Buddha and monks for seven days of meals",
+        true,
+        "her first wish, once she was able, was to give."
+      ],
+      [
+        "asked if she'd want another child like this, she said no",
+        false,
+        "she said she would have seven more."
+      ]
     ],
     "fork": {
       "setup": "you're Suppavasa. after seven days of labor, you've given birth safely. what do you do first, in the Udana?",
-      "options": ["rest and see no one.", "invite the Buddha and monks to seven days of meals.", "ask for a blessing for the child only."],
+      "options": [
+        "rest and see no one.",
+        "invite the Buddha and monks to seven days of meals.",
+        "ask for a blessing for the child only."
+      ],
       "answer": 1,
       "reveal": "she gives. it's why the day is called she still gave."
     },
-    "original": { "script": "दान", "say": "DAA-na", "note": "Pali dana: giving, generosity, the first of the perfections; Suppavasa's meals are dana." },
+    "original": {
+      "script": "दान",
+      "say": "DAA-na",
+      "note": "Pali dana: giving, generosity, the first of the perfections; Suppavasa's meals are dana."
+    },
     "trapdoor": [
       "what you thought: giving is something you do when things are going well.",
       "what it means: Suppavasa gave right after her hardest week, holding three thoughts, of the teacher, the community and the peace, through the pain.",
       "what a scholar hears: Udana 2.8's verse (asatam satarupena...) turns on pain appearing as pleasure; the commentary identifies the child as Sivali, foremost among monks in receiving gifts (AN 1)."
+    ],
+    "recall": [
+      [
+        "appamada",
+        "heedfulness, not letting things slide"
+      ],
+      [
+        "Vangisa",
+        "a monk who had been a wandering poet"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Udana 2.8 (Suppavasa Sutta)", "work": "Udana", "translation": null, "quoted": null },
-    { "ref": "Anguttara Nikaya 1, Etadagga Vagga (Sivali)", "work": "Anguttara Nikaya", "translation": null, "quoted": null }
+    {
+      "ref": "Udana 2.8 (Suppavasa Sutta)",
+      "work": "Udana",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Anguttara Nikaya 1, Etadagga Vagga (Sivali)",
+      "work": "Anguttara Nikaya",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -87,5 +166,9 @@
       "Editor review (y2 614-631): the narrator no longer calls the text's seven years 'a story-world number' (now: readers take the numbers in different ways); the three thoughts are no longer called 'three refuges' (the third is nibbana, not the Dhamma); the invitation goes through her husband, as in the text; cut 'longer than anyone's', 'hardest week of her life', 'a little playfully', the 'anyone who has sat' opener, and 'many' claims."
     ]
   },
-  "meta": { "index": "621. She still gave · — · Suppavasa, in a long and hard pregnancy, still gives; she is safely delivered (Udana 2.8) · bless someone who is waiting · she still gave", "writer": "writer agent (buddhism 602–631)", "written": "2026-09-30" }
+  "meta": {
+    "index": "621. She still gave · — · Suppavasa, in a long and hard pregnancy, still gives; she is safely delivered (Udana 2.8) · bless someone who is waiting · she still gave",
+    "writer": "writer agent (buddhism 602–631)",
+    "written": "2026-09-30"
+  }
 }

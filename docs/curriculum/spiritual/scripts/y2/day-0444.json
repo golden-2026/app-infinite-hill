@@ -9,24 +9,37 @@
   "length": "6:30",
   "tomorrow": "Choose a Cato",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY FOUR-HUNDRED-FORTY-FOUR.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY FOUR-HUNDRED-FORTY-FOUR.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday: Stilpo, in fallen Megara, and your line, you won't lose yourself. Did you keep your short list of what can't be taken? Day four hundred forty-four.",
-      "screen": ["`STILPO.`"]
+      "screen": [
+        "`STILPO.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Behind a closed door, where nobody will ever know, small choices get made: whether to return the extra change, whether to read the message over someone's shoulder, whether to say the unkind thing in a private chat. The person making them isn't always the one the world sees. Seneca's tenth letter is about being alone, and it ends with a sentence that closes the gap between the two versions of us from both directions. Today: Athenodorus.",
-      "screen": ["`WHEN THE DOOR IS CLOSED.` → `TWO SLIGHTLY DIFFERENT PEOPLE.` → `AS IF SEEN.`"]
+      "screen": [
+        "`WHEN THE DOOR IS CLOSED.` → `TWO SLIGHTLY DIFFERENT PEOPLE.` → `AS IF SEEN.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "First, a warning about being alone. Seneca tells a story about Crates, the Cynic. He saw a young man walking by himself and asked what he was doing out there alone. I'm talking with myself, the young man said. Crates answered: be careful, then, you're talking with a bad man. Solitude is only good, Seneca says, if the company inside is good. Second, the open prayer. Then Seneca passes on a saying of Athenodorus, a philosopher he quotes. You'll know you're free of your cravings, he said, when you ask God for nothing that you couldn't ask for openly, in front of everyone. Seneca notes how many people whisper prayers they'd be ashamed for others to hear. Third, the sentence. And then Seneca's own line: live among people as if God were watching; speak with God as if people were listening. Two directions. When you're with others, act as you would before the highest witness you know. When you're alone with the highest, ask only for what you'd be glad to have heard. Fourth, the witness. Seneca says God here. Listeners of any faith may hear that word in their own way, and those without one can think of the best witness they can imagine. The point is the same either way. A life lived as if seen, by someone kind and clear-eyed, doesn't need two versions. The person behind the closed door and the person in the crowd can finally be the same.",
-      "screen": ["`CRATES: TALKING WITH A BAD MAN.` · `ASK ONLY WHAT YOU'D ASK OPENLY.` · `LIVE AS IF GOD SAW YOU.` · `ONE PERSON, NOT TWO VERSIONS.` · then, large: `AS IF SEEN.`"]
+      "screen": [
+        "`CRATES: TALKING WITH A BAD MAN.` · `ASK ONLY WHAT YOU'D ASK OPENLY.` · `LIVE AS IF GOD SAW YOU.` · `ONE PERSON, NOT TWO VERSIONS.` · then, large: `AS IF SEEN.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Athenodorus. The philosopher Seneca quotes: you'll know you're free of your cravings when you ask God for nothing you couldn't ask for openly, in front of everyone.",
-      "screen": ["`ATHENODORUS — today's word`."]
+      "screen": [
+        "`ATHENODORUS — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,34 +61,93 @@
       "voice": "Your line: the private and public self become one. Once today, when no one is watching, act as if someone kind and clear-eyed were. Day four hundred forty-four.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 444 COUNTS.` → `TOMORROW: CHOOSE A CATO.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 444 COUNTS.` → `TOMORROW: CHOOSE A CATO.`"
+      ]
+    }
   ],
   "howItsDone": "Some people, religious and not, try to act in private as they would before a kind and clear-eyed witness, so that their private and public lives match.",
   "games": {
     "match": {
       "prompt": "as if seen — tap the pairs.",
-      "pairs": [["Crates", "you're talking with a bad man"], ["Athenodorus", "ask only what you'd ask openly"], ["among people", "live as if God were watching"], ["with God", "speak as if people were listening"]]
+      "pairs": [
+        [
+          "Crates",
+          "you're talking with a bad man"
+        ],
+        [
+          "Athenodorus",
+          "ask only what you'd ask openly"
+        ],
+        [
+          "among people",
+          "live as if God were watching"
+        ],
+        [
+          "with God",
+          "speak as if people were listening"
+        ]
+      ]
     },
     "myth": [
-      ["Seneca says being alone is always good for you", false, "only if the company inside is good; Crates warns the young man."],
-      ["the open-prayer saying comes from Athenodorus", true, "Seneca passes it on from Athenodorus."],
-      ["Seneca's line only runs one way: act well in public", false, "it runs both ways: among people as if God saw, with God as if people heard."]
+      [
+        "Seneca says being alone is always good for you",
+        false,
+        "only if the company inside is good; Crates warns the young man."
+      ],
+      [
+        "the open-prayer saying comes from Athenodorus",
+        true,
+        "Seneca passes it on from Athenodorus."
+      ],
+      [
+        "Seneca's line only runs one way: act well in public",
+        false,
+        "it runs both ways: among people as if God saw, with God as if people heard."
+      ]
     ],
     "fork": {
       "setup": "you're Crates. you see a young man walking alone, and he says he's talking with himself. what do you say?",
-      "options": ["good for you: solitude is wisdom.", "careful, you're talking with a bad man.", "come and join the crowd."],
+      "options": [
+        "good for you: solitude is wisdom.",
+        "careful, you're talking with a bad man.",
+        "come and join the crowd."
+      ],
       "answer": 1,
       "reveal": "Crates' joke has a point: solitude only helps if the company inside is good."
     },
-    "original": { "script": "tamquam deus videat", "say": "TAM-kwam DEH-us WI-deh-at", "note": "Latin: as if God sees, from Seneca's tenth letter." },
+    "original": {
+      "script": "tamquam deus videat",
+      "say": "TAM-kwam DEH-us WI-deh-at",
+      "note": "Latin: as if God sees, from Seneca's tenth letter."
+    },
     "trapdoor": [
       "what you thought: behave because someone's watching.",
       "what it means: Seneca says live among people as if God saw you, and speak with God as if people heard, so there's one self, not two.",
       "what a scholar hears: the Latin is two matched halves, sic vive cum hominibus tamquam deus videat, sic loquere cum deo tamquam homines audiant: one about public conduct, one about private prayer."
+    ],
+    "recall": [
+      [
+        "Lucilius",
+        "a friend serving in Sicily"
+      ],
+      [
+        "prosochē",
+        "holding the mind toward"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Moral Letters 10.1, 10.5", "work": "Seneca, Moral Letters to Lucilius", "translation": null, "quoted": null }
+    {
+      "ref": "Moral Letters 10.1, 10.5",
+      "work": "Seneca, Moral Letters to Lucilius",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -86,5 +160,9 @@
       "Classical Latin pronunciation used for 'tamquam deus videat'."
     ]
   },
-  "meta": { "index": "444. As if seen · — · live among people as if God saw you, speak to God as if people heard (Letters 10) · act once as if watched kindly · as if seen", "writer": "spiritual writer agent (days 422–451)", "written": "2026-09-30" }
+  "meta": {
+    "index": "444. As if seen · — · live among people as if God saw you, speak to God as if people heard (Letters 10) · act once as if watched kindly · as if seen",
+    "writer": "spiritual writer agent (days 422–451)",
+    "written": "2026-09-30"
+  }
 }

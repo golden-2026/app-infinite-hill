@@ -9,24 +9,37 @@
   "length": "6:30",
   "tomorrow": "We come to you",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY SEVEN-HUNDRED-SEVENTY-THREE.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY SEVEN-HUNDRED-SEVENTY-THREE.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, the ghats at Varanasi, where death is kept in plain sight. Your line was kept in plain sight. Did a flame or a flight of steps bring them back? Today, Jewish voices, and a mourner's prayer. Day seven hundred seventy-three.",
-      "screen": ["`KEPT IN PLAIN SIGHT.`"]
+      "screen": [
+        "`KEPT IN PLAIN SIGHT.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "A mourner stands up in a synagogue, weeks after a funeral, and begins to speak in Aramaic. Around the room, people answer: amen. The prayer is the Kaddish, said by Jewish mourners for the people they have lost. Read it through, start to finish, and something is missing. It never mentions death. Not the person who died, not grief, not what comes after. Today: why the mourner's prayer is all praise.",
-      "screen": ["`A MOURNER STANDS.` → `THE ROOM ANSWERS: AMEN.` → `NO WORD ABOUT DEATH.`"]
+      "screen": [
+        "`A MOURNER STANDS.` → `THE ROOM ANSWERS: AMEN.` → `NO WORD ABOUT DEATH.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "First, the words. The Kaddish opens, yitgadal v'yitkadash sh'mei rabba: may God's great name be made great and holy. Then it keeps going: blessed, praised, glorified, lifted up. It even says God is beyond all the blessings and songs anyone can say. Second, the answer. The mourner doesn't carry it alone. The Kaddish is said with a minyan, a gathered quorum, and at its heart the whole room answers together: may his great name be blessed, forever and ever. Third, the ending. The last line asks for peace, for the people praying and for all Israel. It echoes a verse in the book of Job: \"he maketh peace in his high places.\" Praise, then peace. And still no death. Fourth, why. Jewish teachers give more than one answer, and they don't cancel each other out. Some say the mourner, whose world has just gotten smaller, stands up in public and declares that God is still great: faith said aloud at the hardest moment. Tradition also holds that a child's Kaddish honors a parent who has died, so the praise is said for them, on their behalf. And some point to the room: the community's answer pulls the mourner back into the circle, again and again. A person in grief may have no words of their own. The Kaddish hands them old words, about something larger than the loss, and a room full of people to say amen.",
-      "screen": ["`MAY HIS GREAT NAME BE GREAT.` · `THE ROOM ANSWERS TOGETHER.` · `IT ENDS IN PEACE.` · `WHY PRAISE, AND NOT DEATH?` · then, large: `PRAISE, NOT DEATH.`"]
+      "screen": [
+        "`MAY HIS GREAT NAME BE GREAT.` · `THE ROOM ANSWERS TOGETHER.` · `IT ENDS IN PEACE.` · `WHY PRAISE, AND NOT DEATH?` · then, large: `PRAISE, NOT DEATH.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Kaddish: the Jewish prayer said by mourners, mostly in Aramaic, that praises God, asks for peace, and never mentions death. Today's word.",
-      "screen": ["`KADDISH — today's word`."]
+      "screen": [
+        "`KADDISH — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,35 +61,99 @@
       "voice": "Your line: faith said aloud. Today, say your one sentence of praise for that life to someone else, aloud. Day seven hundred seventy-three.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 773 COUNTS.` → `TOMORROW: WE COME TO YOU.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 773 COUNTS.` → `TOMORROW: WE COME TO YOU.`"
+      ]
+    }
   ],
   "howItsDone": "Jewish mourners say the Mourner's Kaddish at services with a minyan, during the period of mourning and on the anniversary of a death, and the congregation answers with amen and the response 'may his great name be blessed'.",
   "games": {
     "match": {
       "prompt": "inside the mourner's prayer — tap the pairs.",
-      "pairs": [["Kaddish", "a mourner's prayer of praise"], ["minyan", "the gathered quorum it's said with"], ["amen", "the room's answer"], ["peace in his high places", "how it ends, echoing Job"]]
+      "pairs": [
+        [
+          "Kaddish",
+          "a mourner's prayer of praise"
+        ],
+        [
+          "minyan",
+          "the gathered quorum it's said with"
+        ],
+        [
+          "amen",
+          "the room's answer"
+        ],
+        [
+          "peace in his high places",
+          "how it ends, echoing Job"
+        ]
+      ]
     },
     "myth": [
-      ["the Kaddish never mentions death", true, "it praises God and asks for peace. no word about the person who died, or grief."],
-      ["a mourner says the Kaddish alone, privately", false, "it's said with a minyan, and the whole room answers."],
-      ["the Kaddish ends with a prayer for peace", true, "its last line echoes Job: he maketh peace in his high places."]
+      [
+        "the Kaddish never mentions death",
+        true,
+        "it praises God and asks for peace. no word about the person who died, or grief."
+      ],
+      [
+        "a mourner says the Kaddish alone, privately",
+        false,
+        "it's said with a minyan, and the whole room answers."
+      ],
+      [
+        "the Kaddish ends with a prayer for peace",
+        true,
+        "its last line echoes Job: he maketh peace in his high places."
+      ]
     ],
     "fork": {
       "setup": "you've just buried someone you love. at the service, you stand to say the mourner's prayer. what do its words talk about?",
-      "options": ["the person who died.", "God's greatness, and peace, and never death.", "what happens after death."],
+      "options": [
+        "the person who died.",
+        "God's greatness, and peace, and never death.",
+        "what happens after death."
+      ],
       "answer": 1,
       "reveal": "praise from start to finish, then peace. the mourner says it, the room answers amen, and death is never named."
     },
-    "original": { "script": "יִתְגַּדַּל", "say": "yit-ga-DAL", "note": "the Kaddish's opening word: may it be made great." },
+    "original": {
+      "script": "יִתְגַּדַּל",
+      "say": "yit-ga-DAL",
+      "note": "the Kaddish's opening word: may it be made great."
+    },
     "trapdoor": [
       "what you thought: the Kaddish is a prayer about the dead.",
       "what it means: a prayer of praise for God, said by mourners, that never mentions death.",
       "what a scholar hears: a mostly Aramaic prayer whose heart is the congregation's response, may his great name be blessed, ending in a line that echoes Job 25:2."
+    ],
+    "recall": [
+      [
+        "Yad Vashem",
+        "a place and a name, from Isaiah"
+      ],
+      [
+        "Tisha B'Av",
+        "the ninth of the month of Av"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Mourner's Kaddish (traditional Aramaic prayer)", "work": "Siddur (Jewish prayer book)", "translation": null, "quoted": null },
-    { "ref": "Job 25:2", "work": "The Bible", "translation": "KJV (1769)", "quoted": "he maketh peace in his high places" }
+    {
+      "ref": "Mourner's Kaddish (traditional Aramaic prayer)",
+      "work": "Siddur (Jewish prayer book)",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Job 25:2",
+      "work": "The Bible",
+      "translation": "KJV (1769)",
+      "quoted": "he maketh peace in his high places"
+    }
   ],
   "review": {
     "status": "pending",
@@ -89,5 +168,9 @@
       "Audit (2026-10-01): the Kaddish's closing line (oseh shalom) is Hebrew, so 'in Aramaic' became 'mostly in Aramaic' in the word and trapdoor; Job 25:2 KJV confirmed; practice opener varied."
     ]
   },
-  "meta": { "index": "773. Praise, not death · Kaddish · the mourner's prayer praises God and never mentions death (traditional Aramaic prayer) · say one sentence of praise for a life · praise, not death", "writer": "spiritual writer agent (days 767–776)", "written": "2026-10-01" }
+  "meta": {
+    "index": "773. Praise, not death · Kaddish · the mourner's prayer praises God and never mentions death (traditional Aramaic prayer) · say one sentence of praise for a life · praise, not death",
+    "writer": "spiritual writer agent (days 767–776)",
+    "written": "2026-10-01"
+  }
 }

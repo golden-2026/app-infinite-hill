@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "John Fisher (1535)",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY EIGHT-HUNDRED-FORTY-TWO.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY EIGHT-HUNDRED-FORTY-TWO.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, Utopia, written by Thomas More while trading jokes in Latin with Erasmus. Your line was witty and holy. Who did you make laugh? Day eight hundred forty-two.",
-      "screen": ["`WITTY AND HOLY.`"]
+      "screen": [
+        "`WITTY AND HOLY.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "A farmer behind a plow, singing to himself as he works. A weaver at the loom, humming in time with the shuttle. A traveler on a long road, passing the miles with a story. Erasmus wrote that picture into the front of a book, and the songs he wanted them singing were the words of the Gospel, from their own memory, in their own tongue. Today's word is the scholar who dreamed it: Erasmus.",
-      "screen": ["`A FARMER SINGING AT THE PLOW.` → `A WEAVER HUMMING AT THE LOOM.` → `THE GOSPEL IN THEIR OWN TONGUE.`"]
+      "screen": [
+        "`A FARMER SINGING AT THE PLOW.` → `A WEAVER HUMMING AT THE LOOM.` → `THE GOSPEL IN THEIR OWN TONGUE.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "First, the book. Erasmus worked from old Greek manuscripts of the New Testament and published the Greek text with his own Latin translation beside it, so readers could check the Latin against the language the apostles wrote in. That was his kind of reform: go back to the sources and read them carefully. Second, the preface. He called it the Paraclesis, an exhortation, and in it he paints that farmer and weaver and traveler. He wished the Gospels and Paul's letters were in every language, so that ordinary people could know them by heart. Third, the gentleness. Erasmus saw plenty wrong in the Church of his day, and said so, often with jokes. But when Martin Luther broke with Rome, Erasmus did not follow him. He stayed Catholic, and when he finally disagreed with Luther in print, about whether the human will is free, he called his book a discussion, not an attack. Luther answered sharply, in a book of his own. Fourth, the hope underneath it all. Paul writes to the Romans, in the Douay-Rheims: \"And be not conformed to this world; but be reformed in the newness of your mind.\" Erasmus seems to have taken that line at its word. Change the mind, by giving it the text. Reform would come through learning, through reading, through patience, rather than through anger. Whether it can always work that way is still an open question. But he spent his life betting that it could.",
-      "screen": ["`GREEK AND LATIN, SIDE BY SIDE.` · `THE PARACLESIS: SCRIPTURE FOR ALL.` · `HE STAYED, AND DISAGREED GENTLY.` · `REFORMED IN THE NEWNESS OF YOUR MIND.` · then, large: `REFORM BY LEARNING.`"]
+      "screen": [
+        "`GREEK AND LATIN, SIDE BY SIDE.` · `THE PARACLESIS: SCRIPTURE FOR ALL.` · `HE STAYED, AND DISAGREED GENTLY.` · `REFORMED IN THE NEWNESS OF YOUR MIND.` · then, large: `REFORM BY LEARNING.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Erasmus. The scholar who printed the New Testament in Greek beside his own Latin, wanted scripture in every language, and hoped the Church would be reformed by learning. Today's word.",
-      "screen": ["`ERASMUS — today's word`."]
+      "screen": [
+        "`ERASMUS — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,37 +61,111 @@
       "voice": "Your line: reform by learning. Today, before you argue with someone, read or ask one thing that helps you understand them better. Day eight hundred forty-two.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 842 COUNTS.` → `TOMORROW: JOHN FISHER (1535).`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 842 COUNTS.` → `TOMORROW: JOHN FISHER (1535).`"
+      ]
+    }
   ],
   "howItsDone": "Erasmus is not a canonized saint and has no feast day; Catholics and Protestants alike read his editions, letters and satires as part of the history of reform, and scholars still argue over how to place him.",
   "games": {
     "match": {
       "prompt": "the scholar's reform — tap the pairs.",
-      "pairs": [["his New Testament", "Greek beside his own Latin"], ["the Paraclesis", "a farmer singing the Gospel"], ["his book to Luther", "a discussion, not an attack"], ["Romans 12", "reformed in the newness of your mind"]]
+      "pairs": [
+        [
+          "his New Testament",
+          "Greek beside his own Latin"
+        ],
+        [
+          "the Paraclesis",
+          "a farmer singing the Gospel"
+        ],
+        [
+          "his book to Luther",
+          "a discussion, not an attack"
+        ],
+        [
+          "Romans 12",
+          "reformed in the newness of your mind"
+        ]
+      ]
     },
     "myth": [
-      ["Erasmus left the Catholic Church to follow Luther", false, "he stayed Catholic, and disagreed with Luther in print about free will."],
-      ["he wished the Gospels were in every language", true, "in the Paraclesis he pictures farmers and weavers knowing them by heart."],
-      ["Erasmus only translated, and never looked at Greek", false, "he worked from Greek manuscripts and printed the Greek text beside his Latin."]
+      [
+        "Erasmus left the Catholic Church to follow Luther",
+        false,
+        "he stayed Catholic, and disagreed with Luther in print about free will."
+      ],
+      [
+        "he wished the Gospels were in every language",
+        true,
+        "in the Paraclesis he pictures farmers and weavers knowing them by heart."
+      ],
+      [
+        "Erasmus only translated, and never looked at Greek",
+        false,
+        "he worked from Greek manuscripts and printed the Greek text beside his Latin."
+      ]
     ],
     "fork": {
       "setup": "you're Erasmus. you see real problems in the Church, and a fierce reformer is breaking with Rome. what do you do?",
-      "options": ["stay, and argue for reform by learning and patience.", "join him and call for the old Church to be torn down.", "say nothing about anything ever again."],
+      "options": [
+        "stay, and argue for reform by learning and patience.",
+        "join him and call for the old Church to be torn down.",
+        "say nothing about anything ever again."
+      ],
       "answer": 0,
       "reveal": "he stayed Catholic, kept criticizing abuses, and disagreed with Luther in a book he called a discussion. Luther answered sharply."
     },
-    "original": { "script": "παράκλησις", "say": "pa-RAH-klay-sis", "note": "Greek: an exhortation, an appeal. Erasmus's name for the preface to his New Testament." },
+    "original": {
+      "script": "παράκλησις",
+      "say": "pa-RAH-klay-sis",
+      "note": "Greek: an exhortation, an appeal. Erasmus's name for the preface to his New Testament."
+    },
     "trapdoor": [
       "what you thought: Erasmus was a reformer who almost became a Protestant.",
       "what it means: he wanted reform from inside, by learning: scripture read carefully and known by ordinary people.",
       "what a scholar hears: Greek text and Latin side by side, a preface wishing the Gospel in every tongue, and a polite book on free will that drew a sharp reply."
+    ],
+    "recall": [
+      [
+        "nepotism",
+        "offices handed to family for being family"
+      ],
+      [
+        "Brother Sun",
+        "brings the day"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Romans 12:2", "work": "The Bible", "translation": "Douay-Rheims (Challoner)", "quoted": "And be not conformed to this world; but be reformed in the newness of your mind" },
-    { "ref": "Erasmus, Paraclesis (preface to his edition of the New Testament)", "work": "Paraclesis", "translation": null, "quoted": null },
-    { "ref": "Erasmus, On Free Will (De libero arbitrio diatribe sive collatio)", "work": "On Free Will", "translation": null, "quoted": null },
-    { "ref": "Martin Luther, The Bondage of the Will", "work": "The Bondage of the Will", "translation": null, "quoted": null }
+    {
+      "ref": "Romans 12:2",
+      "work": "The Bible",
+      "translation": "Douay-Rheims (Challoner)",
+      "quoted": "And be not conformed to this world; but be reformed in the newness of your mind"
+    },
+    {
+      "ref": "Erasmus, Paraclesis (preface to his edition of the New Testament)",
+      "work": "Paraclesis",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Erasmus, On Free Will (De libero arbitrio diatribe sive collatio)",
+      "work": "On Free Will",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Martin Luther, The Bondage of the Will",
+      "work": "The Bondage of the Will",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -93,5 +182,9 @@
       "Auditor: deep-read against days 827–836; facts, Douay-Rheims quotations and framing checked; no change needed."
     ]
   },
-  "meta": { "index": "842. Erasmus · — · a scholar who wanted reform by learning and gentleness · reform one thing gently · reform by learning", "writer": "writer agent (catholic 837–846)", "written": "2026-10-01" }
+  "meta": {
+    "index": "842. Erasmus · — · a scholar who wanted reform by learning and gentleness · reform one thing gently · reform by learning",
+    "writer": "writer agent (catholic 837–846)",
+    "written": "2026-10-01"
+  }
 }

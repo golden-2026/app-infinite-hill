@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "Elizabeth of Portugal (4 July)",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-THOUSAND-FIVE.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY ONE-THOUSAND-FIVE.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, the first martyrs of Rome, the crowd with no names. Your line was no names, all known. Whose name did you learn? Day one thousand five.",
-      "screen": ["`NO NAMES, ALL KNOWN.`"]
+      "screen": [
+        "`NO NAMES, ALL KNOWN.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "\"Doubting Thomas.\" People say it at work about the colleague who wants to see the numbers, at home about the kid who won't believe the stove is hot. It has stuck to him. But read John's Gospel, and the man who doubts is also the man who, the first time we hear him speak, offers to die. And when he finally believes, what he says about Jesus is startlingly plain. Yesterday, witnesses with no names. Today, a witness with a nickname he might not have chosen. Thomas.",
-      "screen": ["`DOUBTING THOMAS.` → `THE MAN WHO OFFERED TO DIE.` → `STARTLINGLY PLAIN WORDS.`"]
+      "screen": [
+        "`DOUBTING THOMAS.` → `THE MAN WHO OFFERED TO DIE.` → `STARTLINGLY PLAIN WORDS.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "First scene. Jesus decides to go back toward Judea, where people had tried to stone him, because his friend Lazarus has died. The disciples protest. Thomas, John says, \"who is called Didymus,\" which is Greek for twin, turns to the others: \"Let us also go, that we may die with him.\" Grim, maybe. But brave. Second scene. On the evening of the resurrection day, Jesus appears to the disciples, and Thomas isn't there. They tell him. He refuses to take it secondhand. \"Except I shall see in his hands the print of the nails, and put my finger into the place of the nails, and put my hand into his side, I will not believe.\" That's the line that earned the nickname. Third scene, eight days later. Thomas is with them. Jesus comes, stands among them, and offers Thomas exactly what he asked for: put your finger here, see my hands. John never says Thomas touches him. What he says is: \"Thomas answered, and said to him: My Lord and my God.\" Not teacher. Not prophet. My Lord and my God. Catholics hear in it a full confession of faith in Jesus, and it comes from the man who wouldn't believe secondhand. Jesus answers: blessed are those who have not seen, and have believed. Then the Gospel goes quiet about him. Tradition carries on. It says Thomas went east, preached in India, and died there as a martyr. Some Christians in India, above all the Saint Thomas Christians of Kerala, trace their church to him. Historians debate the details. For those churches, the tradition is their own story.",
-      "screen": ["`LET US ALSO GO, THAT WE MAY DIE.` · `UNLESS I SEE, I WILL NOT BELIEVE.` · `HE NEVER SAYS HE TOUCHED.` · `TRADITION: EAST TO INDIA.` · then, large: `MY LORD AND MY GOD.`"]
+      "screen": [
+        "`LET US ALSO GO, THAT WE MAY DIE.` · `UNLESS I SEE, I WILL NOT BELIEVE.` · `HE NEVER SAYS HE TOUCHED.` · `TRADITION: EAST TO INDIA.` · then, large: `MY LORD AND MY GOD.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Thomas. The apostle called the Twin, who doubted, then said my Lord and my God, and who, tradition says, carried the gospel to India.",
-      "screen": ["`THOMAS — today's word`."]
+      "screen": [
+        "`THOMAS — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,39 +61,123 @@
       "voice": "Your line: my lord and my god. Today, when you doubt something, say so honestly, and stay in the room long enough to see. Day one thousand five.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 1005 COUNTS.` → `TOMORROW: ELIZABETH OF PORTUGAL.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 1005 COUNTS.` → `TOMORROW: ELIZABETH OF PORTUGAL.`"
+      ]
+    }
   ],
   "howItsDone": "The Church keeps the feast of Saint Thomas the Apostle on 3 July; in India, the Saint Thomas Christians of Kerala keep it as the feast of the apostle they trace their church to.",
   "games": {
     "match": {
       "prompt": "Thomas — tap the pairs.",
-      "pairs": [["Didymus", "Greek for twin"], ["going to Lazarus", "let us also go, that we may die with him"], ["the print of the nails", "what Thomas wanted to see"], ["India", "where tradition says he preached"]]
+      "pairs": [
+        [
+          "Didymus",
+          "Greek for twin"
+        ],
+        [
+          "going to Lazarus",
+          "let us also go, that we may die with him"
+        ],
+        [
+          "the print of the nails",
+          "what Thomas wanted to see"
+        ],
+        [
+          "India",
+          "where tradition says he preached"
+        ]
+      ]
     },
     "myth": [
-      ["John says Thomas put his finger in the wounds", false, "Jesus offers, but John never says he touched; he records only Thomas's answer."],
-      ["Thomas once offered to go and die with Jesus", true, "before Lazarus is raised: let us also go, that we may die with him."],
-      ["Thomas's story ends in the Gospels", false, "the Gospels go quiet, but tradition says he preached and died in India."]
+      [
+        "John says Thomas put his finger in the wounds",
+        false,
+        "Jesus offers, but John never says he touched; he records only Thomas's answer."
+      ],
+      [
+        "Thomas once offered to go and die with Jesus",
+        true,
+        "before Lazarus is raised: let us also go, that we may die with him."
+      ],
+      [
+        "Thomas's story ends in the Gospels",
+        false,
+        "the Gospels go quiet, but tradition says he preached and died in India."
+      ]
     ],
     "fork": {
       "setup": "you're Thomas. the others say they've seen the risen Lord. you weren't there. what do you do?",
-      "options": ["believe them straight away.", "say you won't believe unless you see the wounds.", "leave the group for good."],
+      "options": [
+        "believe them straight away.",
+        "say you won't believe unless you see the wounds.",
+        "leave the group for good."
+      ],
       "answer": 1,
       "reveal": "Thomas refused to take it secondhand, and eight days later Jesus came back and offered him exactly that."
     },
-    "original": { "script": "Δίδυμος", "say": "DID-ee-mos", "note": "Greek: twin — John's name for Thomas." },
+    "original": {
+      "script": "Δίδυμος",
+      "say": "DID-ee-mos",
+      "note": "Greek: twin — John's name for Thomas."
+    },
     "trapdoor": [
       "what you thought: doubting Thomas, the apostle who failed.",
       "what it means: the brave, blunt apostle whose confession is startlingly plain.",
       "what a scholar hears: John 20:27–28 offers touch but records only speech; the India tradition appears in the Acts of Thomas, and Kerala's Saint Thomas Christians claim him as founder."
+    ],
+    "recall": [
+      [
+        "Christopher Magallanes",
+        "a parish priest, remembered today"
+      ],
+      [
+        "Philip",
+        "asks: show us the Father"
+      ]
     ]
   },
   "sources": [
-    { "ref": "John 11:16", "work": "The Bible", "translation": "Douay-Rheims (Challoner)", "quoted": "Let us also go, that we may die with him." },
-    { "ref": "John 11:16", "work": "The Bible", "translation": "Douay-Rheims (Challoner)", "quoted": "who is called Didymus" },
-    { "ref": "John 20:25", "work": "The Bible", "translation": "Douay-Rheims (Challoner)", "quoted": "Except I shall see in his hands the print of the nails, and put my finger into the place of the nails, and put my hand into his side, I will not believe." },
-    { "ref": "John 20:28", "work": "The Bible", "translation": "Douay-Rheims (Challoner)", "quoted": "Thomas answered, and said to him: My Lord and my God." },
-    { "ref": "John 11:8, 16; 20:24–29", "work": "The Bible", "translation": null, "quoted": null },
-    { "ref": "Acts of Thomas; Roman Calendar, 3 July", "work": "Tradition and General Roman Calendar", "translation": null, "quoted": null }
+    {
+      "ref": "John 11:16",
+      "work": "The Bible",
+      "translation": "Douay-Rheims (Challoner)",
+      "quoted": "Let us also go, that we may die with him."
+    },
+    {
+      "ref": "John 11:16",
+      "work": "The Bible",
+      "translation": "Douay-Rheims (Challoner)",
+      "quoted": "who is called Didymus"
+    },
+    {
+      "ref": "John 20:25",
+      "work": "The Bible",
+      "translation": "Douay-Rheims (Challoner)",
+      "quoted": "Except I shall see in his hands the print of the nails, and put my finger into the place of the nails, and put my hand into his side, I will not believe."
+    },
+    {
+      "ref": "John 20:28",
+      "work": "The Bible",
+      "translation": "Douay-Rheims (Challoner)",
+      "quoted": "Thomas answered, and said to him: My Lord and my God."
+    },
+    {
+      "ref": "John 11:8, 16; 20:24–29",
+      "work": "The Bible",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Acts of Thomas; Roman Calendar, 3 July",
+      "work": "Tradition and General Roman Calendar",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -91,8 +190,13 @@
       "India tradition: 'tradition says' kept; 'The tradition itself is old' and 'held dearly' unsourced; Keeper to confirm. Saint Thomas Christians of Kerala naming is standard.",
       "'Eight days later' is in John 20:26.",
       "howItsDone: 'great devotion' in Kerala; confirm or soften.",
-      "Editor: John 20:19 sets the appearance on the evening of the resurrection day, not 'the night after'; 'Christians in India' (all) narrowed to 'some'; quoted 'who is called Didymus' added to sources; howItsDone 'great devotion' claim cut.", "Audit: 'going to Mass' changed to 'going to church' (India's churches include Syro-Malabar, Orthodox and Protestant communities, who name their liturgy differently); stock practice opening varied."
+      "Editor: John 20:19 sets the appearance on the evening of the resurrection day, not 'the night after'; 'Christians in India' (all) narrowed to 'some'; quoted 'who is called Didymus' added to sources; howItsDone 'great devotion' claim cut.",
+      "Audit: 'going to Mass' changed to 'going to church' (India's churches include Syro-Malabar, Orthodox and Protestant communities, who name their liturgy differently); stock practice opening varied."
     ]
   },
-  "meta": { "index": "1005. Thomas (3 July) · — · the doubter who, tradition says, took the gospel to India · pray for Christians in India · my lord and my god", "writer": "writer agent (catholic 997–1006)", "written": "2026-10-01" }
+  "meta": {
+    "index": "1005. Thomas (3 July) · — · the doubter who, tradition says, took the gospel to India · pray for Christians in India · my lord and my god",
+    "writer": "writer agent (catholic 997–1006)",
+    "written": "2026-10-01"
+  }
 }

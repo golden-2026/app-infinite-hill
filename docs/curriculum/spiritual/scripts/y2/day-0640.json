@@ -9,24 +9,37 @@
   "length": "6:30",
   "tomorrow": "Zeno's lost books",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY SIX-HUNDRED-FORTY.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY SIX-HUNDRED-FORTY.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday: Carnuntum, where Marcus is thought to have written to himself. Your line was to myself. Did you add a fourth line last night? Day six hundred forty.",
-      "screen": ["`TO MYSELF.`"]
+      "screen": [
+        "`TO MYSELF.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Day five hundred twenty-one, we opened a notebook kept by a Roman emperor and started reading it in order. It's easy to dip into a book like this, find a line for a mug, and close it again. We went the long way: twelve books, a hundred and twenty days, the dull pages along with the famous ones. Today the notebook closes. Not with a test. With a question Marcus would ask: what will you actually do with it now? Today: know again.",
-      "screen": ["`DAY 521: THE NOTEBOOK OPENS.` → `TWELVE BOOKS, THE LONG WAY.` → `THE NOTEBOOK CLOSES.`"]
+      "screen": [
+        "`DAY 521: THE NOTEBOOK OPENS.` → `TWELVE BOOKS, THE LONG WAY.` → `THE NOTEBOOK CLOSES.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "First, look back at the road. Book one is all thank-yous: to his grandfather, his mother, his teachers, his adoptive father, one by one, for what each taught him. Then book two opens with a morning warning: today you'll meet people who are rude, ungrateful, dishonest; they're kin; don't be harmed. From there the notebook wanders and circles: retreat into yourself; get up and do your work; all is opinion; the view from above; Alexander and his mule driver; and finally, in book twelve, two gates, a small share of time, and an actor leaving the stage at peace. Second, what reading straight through gives you. The famous lines sit in context. You see Marcus repeat himself, contradict himself, fall short, try again. You meet a person, not a quote generator. Third, the Greek word for reading, anagignōskō. Dictionaries also give it an older sense: to recognize, to know again. Some readers find that fits this book. Marcus wasn't learning new things in it. He was recognizing old ones, again. Fourth, what readers do now. Some readers who finish the Meditations start over. Some keep a single page open for a season. Some read one passage every morning, the way Marcus told himself to prepare for the day. There's no wrong way, except treating it as finished. Tomorrow the path widens: the Stoics who came before Marcus, and the neighbors who argued with them.",
-      "screen": ["`BOOK ONE: THANK-YOUS. BOOK TWELVE: GO.` · `STRAIGHT THROUGH: A PERSON, NOT QUOTES.` · `ANAGIGNŌSKŌ: TO READ, TO KNOW AGAIN.` · `NOT FINISHED: START OVER.` · then, large: `READ IT AGAIN.`"]
+      "screen": [
+        "`BOOK ONE: THANK-YOUS. BOOK TWELVE: GO.` · `STRAIGHT THROUGH: A PERSON, NOT QUOTES.` · `ANAGIGNŌSKŌ: TO READ, TO KNOW AGAIN.` · `NOT FINISHED: START OVER.` · then, large: `READ IT AGAIN.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Know again. The old sense of the Greek word for reading: not learning something new, but recognizing it, to know again. Today's word.",
-      "screen": ["`KNOW AGAIN — today's word`."]
+      "screen": [
+        "`KNOW AGAIN — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,34 +61,93 @@
       "voice": "Your line: read it again. Choose your favorite passage as a morning reading for the coming week, and open it once each day before the phone. Day six hundred forty.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 640 COUNTS.` → `TOMORROW: ZENO'S LOST BOOKS.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 640 COUNTS.` → `TOMORROW: ZENO'S LOST BOOKS.`"
+      ]
+    }
   ],
   "howItsDone": "Some readers who finish the Meditations begin again, often reading one passage each morning, the way Marcus prepared himself for the day.",
   "games": {
     "match": {
       "prompt": "Meditations close. tap the pairs.",
-      "pairs": [["book one", "thank-yous to family and teachers"], ["book two", "a morning warning about difficult people"], ["book twelve", "an actor leaving the stage at peace"], ["anagignōskō", "to read; also, to recognize"]]
+      "pairs": [
+        [
+          "book one",
+          "thank-yous to family and teachers"
+        ],
+        [
+          "book two",
+          "a morning warning about difficult people"
+        ],
+        [
+          "book twelve",
+          "an actor leaving the stage at peace"
+        ],
+        [
+          "anagignōskō",
+          "to read; also, to recognize"
+        ]
+      ]
     },
     "myth": [
-      ["the Meditations open with the morning warning about difficult people", false, "book one is thank-yous; the morning warning opens book two."],
-      ["the Greek verb for reading can also mean to recognize", true, "dictionaries give anagignōskō both senses: to read, and to know again."],
-      ["the Meditations end with book one's thank-yous", false, "book one is the thank-yous; book twelve ends with the actor leaving the stage."]
+      [
+        "the Meditations open with the morning warning about difficult people",
+        false,
+        "book one is thank-yous; the morning warning opens book two."
+      ],
+      [
+        "the Greek verb for reading can also mean to recognize",
+        true,
+        "dictionaries give anagignōskō both senses: to read, and to know again."
+      ],
+      [
+        "the Meditations end with book one's thank-yous",
+        false,
+        "book one is the thank-yous; book twelve ends with the actor leaving the stage."
+      ]
     ],
     "fork": {
       "setup": "you've just finished all twelve books of the Meditations. what now?",
-      "options": ["shelve it, it's done.", "pick a passage and read it again, as a daily practice.", "only keep the famous quotations."],
+      "options": [
+        "shelve it, it's done.",
+        "pick a passage and read it again, as a daily practice.",
+        "only keep the famous quotations."
+      ],
       "answer": 1,
       "reveal": "the notebook was practice for Marcus, rules reread until they sank in. finishing it is a start, not an end."
     },
-    "original": { "script": "ἀναγιγνώσκω", "say": "ah-nah-gig-NOH-skoh", "note": "Greek: to read; in older Greek, also to recognize, to know again." },
+    "original": {
+      "script": "ἀναγιγνώσκω",
+      "say": "ah-nah-gig-NOH-skoh",
+      "note": "Greek: to read; in older Greek, also to recognize, to know again."
+    },
     "trapdoor": [
       "what you thought: closing a book means you're done with it.",
       "what it means: twelve books read through, from thank-yous to a peaceful exit, and now read again.",
       "what a scholar hears: the Meditations are full of repetition by design, the same Stoic rules rewritten so they could be reread and practiced."
+    ],
+    "recall": [
+      [
+        "Epictetus",
+        "the teacher who had been enslaved"
+      ],
+      [
+        "Phocion",
+        "bore no grudge against Athens"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Meditations 1.1–17, 2.1, 4.3, 5.1, 12.36", "work": "Marcus Aurelius, Meditations", "translation": null, "quoted": null }
+    {
+      "ref": "Meditations 1.1–17, 2.1, 4.3, 5.1, 12.36",
+      "work": "Marcus Aurelius, Meditations",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -82,7 +156,8 @@
       "Block D runs days 521–640 (120 days). Confirm the count matches the outline.",
       "Book one's thank-yous: grandfather (Verus), mother, teachers, Antoninus Pius as adoptive father, among others. Paraphrased.",
       "ἀναγιγνώσκω = ἀνά + γιγνώσκω, 'to know again, recognize', standard sense 'to read'. Confirm in LSJ.",
-      "Inner retreat: 4.3; morning warning: 2.1; getting up: 5.1; actor: 12.36. Paraphrased.", "Editor review (year 2): reframed anagignōskō as a dictionary sense (to recognize, know again) rather than a 'literally' etymology, and fixed the match, myth and original note to match; cut 'which most people never do' and 'many people' claims; replaced the unsourced 'many readers start over' myth with one from the text; trimmed the tease of the next block to what the outline promises."
+      "Inner retreat: 4.3; morning warning: 2.1; getting up: 5.1; actor: 12.36. Paraphrased.",
+      "Editor review (year 2): reframed anagignōskō as a dictionary sense (to recognize, know again) rather than a 'literally' etymology, and fixed the match, myth and original note to match; cut 'which most people never do' and 'many people' claims; replaced the unsourced 'many readers start over' myth with one from the text; trimmed the tease of the next block to what the outline promises."
     ]
   },
   "meta": {

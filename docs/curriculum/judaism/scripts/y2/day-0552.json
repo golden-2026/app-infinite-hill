@@ -9,24 +9,37 @@
   "length": "6:45",
   "tomorrow": "Warming up",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY FIVE-HUNDRED-FIFTY-TWO.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY FIVE-HUNDRED-FIFTY-TWO.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, korbanot, the offerings read in place of the altar. Your line was words instead of offerings. Did you say the words to the person they belonged to? Today, the prayer that closes that section. Day five hundred fifty-two.",
-      "screen": ["`WORDS INSTEAD OF OFFERINGS.`"]
+      "screen": [
+        "`WORDS INSTEAD OF OFFERINGS.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Every teacher had a teacher. The fourth-grade teacher who read aloud with all the voices learned it from someone. So did the coach, and the grandmother at the kitchen table. And who taught them? Somewhere back along that line is a stranger whose patience is still being passed along, though nobody remembers their name. Jewish prayer has a moment set aside for that whole invisible line. It comes right after a few minutes of study, and it's one of the forms of the Kaddish.",
-      "screen": ["`EVERY TEACHER HAD A TEACHER.` → `AND WHO TAUGHT THEM?` → `AN INVISIBLE LINE.`"]
+      "screen": [
+        "`EVERY TEACHER HAD A TEACHER.` → `AND WHO TAUGHT THEM?` → `AN INVISIBLE LINE.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "The Kaddish is often thought of as the mourner's prayer. In fact it comes in several forms, and all of them share a core, in Aramaic, the everyday language of many Jews in the age of the Talmud: may God's great name be made great and holy in the world. The congregation answers: may God's great name be blessed forever. The Kaddish d'Rabbanan, the Kaddish of the rabbis, is said after a group has studied rabbinic teaching together. In the morning service it comes at the end of the readings you heard about yesterday. And it adds one paragraph that no other Kaddish has. It asks for blessing on Israel, and on the teachers, and on their students, and on all their students' students, and on everyone who studies Torah, here and in every place. It asks for peace, grace, kindness and compassion, long life, enough to live on, and help from heaven. Notice how far it reaches. Not just my teacher. The teachers, the students, the students of the students, spreading out across places and generations. Like every Kaddish, it's said only with a minyan, the quorum for communal prayer, and often mourners lead it. The Talmud, in tractate Sotah, says the world is held up by the response to the Kaddish said after study. Learning isn't treated as private. It ends with a prayer for everyone who carried it to you, and everyone you'll carry it to.",
-      "screen": ["`KADDISH: MAY THE NAME BE HALLOWED.` · `SAID AFTER STUDYING TOGETHER.` · `TEACHERS, STUDENTS, THEIR STUDENTS.` · `ONLY WITH A MINYAN.` · then, large: `PRAY FOR THE TEACHERS.`"]
+      "screen": [
+        "`KADDISH: MAY THE NAME BE HALLOWED.` · `SAID AFTER STUDYING TOGETHER.` · `TEACHERS, STUDENTS, THEIR STUDENTS.` · `ONLY WITH A MINYAN.` · then, large: `PRAY FOR THE TEACHERS.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Kaddish d'Rabbanan. The Kaddish of the rabbis, said after study, with a paragraph for teachers and their students' students.",
-      "screen": ["`KADDISH D'RABBANAN — today's word`."]
+      "screen": [
+        "`KADDISH D'RABBANAN — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,35 +61,99 @@
       "voice": "Your line: pray for the teachers. Today, send a short thank you to one teacher, or tell someone else about them if you can't reach them anymore. Day five hundred fifty-two.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 552 COUNTS.` → `TOMORROW: WARMING UP.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 552 COUNTS.` → `TOMORROW: WARMING UP.`"
+      ]
+    }
   ],
   "howItsDone": "Kaddish d'Rabbanan is said in a minyan after a passage of rabbinic study, including in the morning service after the readings on the offerings; mourners often lead it, and the congregation answers.",
   "games": {
     "match": {
       "prompt": "inside this Kaddish — tap the pairs.",
-      "pairs": [["Kaddish", "may the great name be hallowed"], ["d'Rabbanan", "of the rabbis"], ["the extra paragraph", "teachers and their students' students"], ["a minyan", "the quorum needed to say it"]]
+      "pairs": [
+        [
+          "Kaddish",
+          "may the great name be hallowed"
+        ],
+        [
+          "d'Rabbanan",
+          "of the rabbis"
+        ],
+        [
+          "the extra paragraph",
+          "teachers and their students' students"
+        ],
+        [
+          "a minyan",
+          "the quorum needed to say it"
+        ]
+      ]
     },
     "myth": [
-      ["Kaddish is only ever said by mourners", false, "it comes in several forms; this one is said after study, though mourners often lead it."],
-      ["the Kaddish is in Aramaic", true, "the everyday language of many Jews in the age of the Talmud."],
-      ["Kaddish d'Rabbanan has a paragraph no other Kaddish has", true, "a prayer for teachers, students, and their students' students."]
+      [
+        "Kaddish is only ever said by mourners",
+        false,
+        "it comes in several forms; this one is said after study, though mourners often lead it."
+      ],
+      [
+        "the Kaddish is in Aramaic",
+        true,
+        "the everyday language of many Jews in the age of the Talmud."
+      ],
+      [
+        "Kaddish d'Rabbanan has a paragraph no other Kaddish has",
+        true,
+        "a prayer for teachers, students, and their students' students."
+      ]
     ],
     "fork": {
       "setup": "you've just finished studying a passage of rabbinic teaching with nine other people. what comes next?",
-      "options": ["close the book and go.", "say the Kaddish d'Rabbanan together.", "start the next passage right away."],
+      "options": [
+        "close the book and go.",
+        "say the Kaddish d'Rabbanan together.",
+        "start the next passage right away."
+      ],
       "answer": 1,
       "reveal": "a group that studies together closes with the Kaddish of the rabbis, asking blessing for the teachers and everyone who studies."
     },
-    "original": { "script": "קַדִּישׁ דְּרַבָּנָן", "say": "ka-DEESH d'ra-ba-NAN", "note": "Aramaic: the Kaddish of the rabbis. kaddish means holy, sanctified." },
+    "original": {
+      "script": "קַדִּישׁ דְּרַבָּנָן",
+      "say": "ka-DEESH d'ra-ba-NAN",
+      "note": "Aramaic: the Kaddish of the rabbis. kaddish means holy, sanctified."
+    },
     "trapdoor": [
       "what you thought: a prayer for the dead.",
       "what it means: after study, a prayer for everyone who carried the teaching, and everyone it will reach.",
       "what a scholar hears: the al Yisrael paragraph is unique to this Kaddish; Sotah 49a says the world stands on the yehei shemei rabba said after aggadic study."
+    ],
+    "recall": [
+      [
+        "ya'ef",
+        "worn out from effort"
+      ],
+      [
+        "sechvi",
+        "a rare word: rooster, or heart"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Babylonian Talmud, Sotah 49a", "work": "Talmud", "translation": null, "quoted": null },
-    { "ref": "Kaddish d'Rabbanan, traditional siddur", "work": "Siddur", "translation": null, "quoted": null }
+    {
+      "ref": "Babylonian Talmud, Sotah 49a",
+      "work": "Talmud",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Kaddish d'Rabbanan, traditional siddur",
+      "work": "Siddur",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -87,5 +166,9 @@
       "'Ten adults': traditional Orthodox practice counts ten men; many non-Orthodox communities count women. Wording kept neutral; confirm."
     ]
   },
-  "meta": { "index": "552. Kaddish for the teachers · Kaddish d'Rabbanan · a Kaddish praying for teachers, their students and their students' students · pray for a teacher · pray for the teachers", "writer": "writer agent (judaism y2 542–571)", "written": "2026-09-30" }
+  "meta": {
+    "index": "552. Kaddish for the teachers · Kaddish d'Rabbanan · a Kaddish praying for teachers, their students and their students' students · pray for a teacher · pray for the teachers",
+    "writer": "writer agent (judaism y2 542–571)",
+    "written": "2026-09-30"
+  }
 }

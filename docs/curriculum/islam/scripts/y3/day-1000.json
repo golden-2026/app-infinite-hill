@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "Xi'an's Great Mosque",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-THOUSAND.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY ONE-THOUSAND.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, the sultanates of the islands: Brunei's Jawi street signs, the Moro of Sulu and Mindanao, the Darangen sung by Lake Lanao. Which island story did you find? Day one thousand.",
-      "screen": ["`THE SULTANATES OF THE ISLANDS.`"]
+      "screen": [
+        "`THE SULTANATES OF THE ISLANDS.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "A noodle shop on a busy street in a Chinese city. Steam on the windows. A cook slaps a rope of dough against the counter, stretches it, folds it, stretches it again, until it falls into the pot as a tangle of thin strands. The broth is beef. There's no pork anywhere in the kitchen. Above the door, two Chinese characters: qingzhen. The cook wears a small white cap. Everything here is Chinese, down to the chopsticks, and everything here is halal. Today: the Hui of China.",
-      "screen": ["`A NOODLE SHOP, STEAM ON THE GLASS.` → `NO PORK IN THE KITCHEN.` → `QINGZHEN ABOVE THE DOOR.`"]
+      "screen": [
+        "`A NOODLE SHOP, STEAM ON THE GLASS.` → `NO PORK IN THE KITCHEN.` → `QINGZHEN ABOVE THE DOOR.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "The Hui are Muslims who speak Chinese as their own language. Their story, as Hui families and historians tell it, begins with traders: Arab and Persian merchants who came to China's ports by sea and its cities by the Silk Road, and later others from Central Asia. Some stayed. They married local women, raised children who spoke Chinese, and kept the prayer. Over generations the newcomers became neighbors, and the neighbors became a people. That is the heart of the Hui story. They don't have a separate homeland language or a far-off country to point to. They are Chinese, all the way through, and Muslim, all the way through. Their word for halal carries the same double belonging. Qingzhen is usually rendered pure and true. It is written over restaurants and butcher shops, and it is also used for a mosque, a qingzhen si, a temple of the pure and true. Hui scholars went further. Writers such as Wang Daiyu and Liu Zhi explained Islam in classical Chinese, using the vocabulary of Confucian learning, so that Chinese readers could meet the faith in their own philosophy. There is a saying people quote about this land, often attributed to the Prophet Muhammad, peace be upon him: seek knowledge even as far as China. Hadith scholars have judged that saying weak, so it can't be leaned on as his words. But the Hui never needed it to belong. Their ancestors came, settled, and stayed. Chinese and Muslim.",
-      "screen": ["`TRADERS BY SEA AND SILK ROAD.` · `NEIGHBORS BECOME A PEOPLE.` · `QINGZHEN: PURE AND TRUE.` · `ISLAM IN CLASSICAL CHINESE.` · then, large: `CHINESE AND MUSLIM.`"]
+      "screen": [
+        "`TRADERS BY SEA AND SILK ROAD.` · `NEIGHBORS BECOME A PEOPLE.` · `QINGZHEN: PURE AND TRUE.` · `ISLAM IN CLASSICAL CHINESE.` · then, large: `CHINESE AND MUSLIM.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Hui. Chinese-speaking Muslims whose ancestors came as traders, settled, and became a people of their own in China. Today's word.",
-      "screen": ["`HUI — today's word`."]
+      "screen": [
+        "`HUI — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,35 +61,99 @@
       "voice": "Your line: chinese and muslim. Today, look for a qingzhen or halal Chinese restaurant near you, or find one recipe for hand-pulled noodles and save it. Day one thousand.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 1000 COUNTS.` → `TOMORROW: XI'AN'S GREAT MOSQUE.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 1000 COUNTS.` → `TOMORROW: XI'AN'S GREAT MOSQUE.`"
+      ]
+    }
   ],
   "howItsDone": "Hui Muslims pray in mosques called qingzhen si, keep halal kitchens marked qingzhen, and speak Chinese as their own language; Hui cooking, such as beef noodles and lamb dishes, is known across China.",
   "games": {
     "match": {
       "prompt": "the Hui of China — tap the pairs.",
-      "pairs": [["qingzhen", "pure and true: halal"], ["qingzhen si", "a mosque"], ["Wang Daiyu and Liu Zhi", "Islam in classical Chinese"], ["the first Hui ancestors", "traders by sea and Silk Road"]]
+      "pairs": [
+        [
+          "qingzhen",
+          "pure and true: halal"
+        ],
+        [
+          "qingzhen si",
+          "a mosque"
+        ],
+        [
+          "Wang Daiyu and Liu Zhi",
+          "Islam in classical Chinese"
+        ],
+        [
+          "the first Hui ancestors",
+          "traders by sea and Silk Road"
+        ]
+      ]
     },
     "myth": [
-      ["the Hui speak Arabic as their home language", false, "they speak Chinese as their own language. Arabic is for prayer."],
-      ["\"seek knowledge even as far as China\" is a firmly sound hadith", false, "hadith scholars have judged it weak."],
-      ["qingzhen is written over halal restaurants", true, "the same word names a mosque: qingzhen si."]
+      [
+        "the Hui speak Arabic as their home language",
+        false,
+        "they speak Chinese as their own language. Arabic is for prayer."
+      ],
+      [
+        "\"seek knowledge even as far as China\" is a firmly sound hadith",
+        false,
+        "hadith scholars have judged it weak."
+      ],
+      [
+        "qingzhen is written over halal restaurants",
+        true,
+        "the same word names a mosque: qingzhen si."
+      ]
     ],
     "fork": {
       "setup": "you're a Hui scholar. Chinese readers know Confucius, not Arabic. how do you explain your faith to them?",
-      "options": ["write only in Arabic.", "explain Islam in classical Chinese, with Confucian words.", "don't explain it at all."],
+      "options": [
+        "write only in Arabic.",
+        "explain Islam in classical Chinese, with Confucian words.",
+        "don't explain it at all."
+      ],
       "answer": 1,
       "reveal": "writers such as Wang Daiyu and Liu Zhi explained Islam in classical Chinese, in the vocabulary of Confucian learning."
     },
-    "original": { "script": "回族", "say": "HWAY-dzoo", "note": "Chinese: the Hui people. the Hui write and speak Chinese." },
+    "original": {
+      "script": "回族",
+      "say": "HWAY-dzoo",
+      "note": "Chinese: the Hui people. the Hui write and speak Chinese."
+    },
     "trapdoor": [
       "what you thought: Muslims who happen to live in China.",
       "what it means: a people who are Chinese all the way through and Muslim all the way through, with no other homeland language.",
       "what a scholar hears: descendants of Arab, Persian and Central Asian traders who settled, the qingzhen of pure and true, and the Han Kitab writers like Wang Daiyu and Liu Zhi."
+    ],
+    "recall": [
+      [
+        "Mumtaz Mahal",
+        "at the exact center"
+      ],
+      [
+        "Hagia Sophia",
+        "Greek for Holy Wisdom"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Wang Daiyu and Liu Zhi (Han Kitab writings on Islam in classical Chinese)", "work": "Han Kitab", "translation": null, "quoted": null },
-    { "ref": "'Seek knowledge even unto China' (attributed; reported by al-Bayhaqi, Shu'ab al-Iman, and graded weak)", "work": "hadith literature", "translation": null, "quoted": null }
+    {
+      "ref": "Wang Daiyu and Liu Zhi (Han Kitab writings on Islam in classical Chinese)",
+      "work": "Han Kitab",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "'Seek knowledge even unto China' (attributed; reported by al-Bayhaqi, Shu'ab al-Iman, and graded weak)",
+      "work": "hadith literature",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",

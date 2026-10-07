@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "The road houses",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-THOUSAND-FOURTEEN.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY ONE-THOUSAND-FOURTEEN.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, waqf, the endowment: keep the root, give the fruit. Your line was: given forever. What did you give that keeps on giving? Day one thousand fourteen.",
-      "screen": ["`GIVEN FOREVER.`"]
+      "screen": [
+        "`GIVEN FOREVER.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "A pillar in a big mosque. A teacher sits with his back against it, a book open on his knees. Around him on the floor, in a half circle, his students: a boy from the town, an old merchant, a traveler who arrived last week. He reads a line, explains it, and they write. When the lesson ends, they stand up and the circle disappears. Tomorrow it forms again at the same pillar. That circle is called a halaqa, and learning in Muslim lands often happened in circles like it, before there was any building called a school. Today: the school.",
-      "screen": ["`A TEACHER AGAINST A PILLAR.` → `A HALF CIRCLE ON THE FLOOR.` → `THE HALAQA.`"]
+      "screen": [
+        "`A TEACHER AGAINST A PILLAR.` → `A HALF CIRCLE ON THE FLOOR.` → `THE HALAQA.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "A saying of the Prophet Muhammad, peace be upon him, in Sahih Muslim, makes a promise: whoever travels a road seeking knowledge, God makes easy for them a road to paradise. So people traveled, and sat in circles. Over time the circles needed rooms, food, books and paid teachers, and the madrasah grew around them. You met the great colleges of Baghdad and Fez earlier on this path. Today, step inside an ordinary one. A courtyard with a fountain. Small rooms around it where students lived. A prayer hall. A shelf of books. Classes in Qur'an and hadith, law, and Arabic grammar, and in some, logic or arithmetic. And at the end, no diploma from the building. Instead, a person. You met the calligrapher's license a few days ago; the schools had their own: a teacher could give you an ijazah, written permission to teach a book, naming who had taught it to him, and who had taught that teacher, back through a chain of names. The knowledge belonged to the chain, not to the walls. One more surprise: in Arabic, madrasah simply means school. Any school. A child in Cairo goes to a madrasah to learn math and science. Places to learn.",
-      "screen": ["`A CIRCLE AT A PILLAR.` · `A ROAD TO KNOWLEDGE.` · `A COURTYARD OF STUDENTS.` · `THE IJAZAH: A CHAIN OF TEACHERS.` · then, large: `PLACES TO LEARN.`"]
+      "screen": [
+        "`A CIRCLE AT A PILLAR.` · `A ROAD TO KNOWLEDGE.` · `A COURTYARD OF STUDENTS.` · `THE IJAZAH: A CHAIN OF TEACHERS.` · then, large: `PLACES TO LEARN.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "The school. From the halaqa at a mosque pillar to the madrasah with its courtyard, its students and its chain of teachers. Today's word.",
-      "screen": ["`THE SCHOOL — today's word`."]
+      "screen": [
+        "`THE SCHOOL — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,34 +61,93 @@
       "voice": "Your line: places to learn. Today, thank a school or a teacher in writing, even two lines. Day one thousand fourteen.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 1014 COUNTS.` → `TOMORROW: THE ROAD HOUSES.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 1014 COUNTS.` → `TOMORROW: THE ROAD HOUSES.`"
+      ]
+    }
   ],
   "howItsDone": "Muslim children and adults study in mosque circles and madrasahs of every kind, from weekend Qur'an classes to seminaries; in traditional study a student may still receive an ijazah from a teacher, naming the chain of teachers behind it.",
   "games": {
     "match": {
       "prompt": "the school — tap the pairs.",
-      "pairs": [["halaqa", "a study circle around a teacher"], ["madrasah", "in Arabic, any school"], ["ijazah", "permission to teach, with a chain of names"], ["Sahih Muslim", "a road to knowledge, a road to paradise"]]
+      "pairs": [
+        [
+          "halaqa",
+          "a study circle around a teacher"
+        ],
+        [
+          "madrasah",
+          "in Arabic, any school"
+        ],
+        [
+          "ijazah",
+          "permission to teach, with a chain of names"
+        ],
+        [
+          "Sahih Muslim",
+          "a road to knowledge, a road to paradise"
+        ]
+      ]
     },
     "myth": [
-      ["in Arabic, madrasah means only a religious school", false, "it simply means school; a child in Cairo goes to a madrasah to learn math and science."],
-      ["an ijazah named the chain of teachers behind the one who gave it", true, "the knowledge belonged to the chain, not to the walls."],
-      ["Muslim learning began inside purpose-built school buildings", false, "it grew in study circles in the mosque, the halaqa, before the madrasah."]
+      [
+        "in Arabic, madrasah means only a religious school",
+        false,
+        "it simply means school; a child in Cairo goes to a madrasah to learn math and science."
+      ],
+      [
+        "an ijazah named the chain of teachers behind the one who gave it",
+        true,
+        "the knowledge belonged to the chain, not to the walls."
+      ],
+      [
+        "Muslim learning began inside purpose-built school buildings",
+        false,
+        "it grew in study circles in the mosque, the halaqa, before the madrasah."
+      ]
     ],
     "fork": {
       "setup": "you've studied a book with your teacher for a long time and want to teach it yourself. what do you need?",
-      "options": ["a diploma from the building.", "your teacher's ijazah, naming the chain behind him.", "nothing; just start."],
+      "options": [
+        "a diploma from the building.",
+        "your teacher's ijazah, naming the chain behind him.",
+        "nothing; just start."
+      ],
       "answer": 1,
       "reveal": "the ijazah came from a person, not a building: written permission to teach that book, with the chain of teachers behind it."
     },
-    "original": { "script": "مَدْرَسَة", "say": "MAD-ra-sa", "note": "Arabic: a school, any school." },
+    "original": {
+      "script": "مَدْرَسَة",
+      "say": "MAD-ra-sa",
+      "note": "Arabic: a school, any school."
+    },
     "trapdoor": [
       "what you thought: a madrasah is a narrow religious school.",
       "what it means: the Arabic word for any school; historically a courtyard of students, teachers and books.",
       "what a scholar hears: the halaqa before the building, and the ijazah: knowledge passed person to person through a chain."
+    ],
+    "recall": [
+      [
+        "khatt",
+        "a line, handwriting, calligraphy"
+      ],
+      [
+        "Jawi",
+        "Malay written in an Arabic-based script"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Sahih Muslim 2699", "work": "Sahih Muslim", "translation": null, "quoted": null }
+    {
+      "ref": "Sahih Muslim 2699",
+      "work": "Sahih Muslim",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",

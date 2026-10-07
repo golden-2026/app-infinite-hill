@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "Four places",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY FIVE-HUNDRED-FORTY-EIGHT.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY FIVE-HUNDRED-FORTY-EIGHT.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday: an open hand at Beluva, and your line, an open hand in both directions. What did you share without keeping the best part back? Today, if nothing is secret, how do you spot a fake? Day five hundred forty-eight.",
-      "screen": ["`AN OPEN HAND IN BOTH DIRECTIONS.`"]
+      "screen": [
+        "`AN OPEN HAND IN BOTH DIRECTIONS.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "A screenshot is going around. A famous quote, a soft background, a name underneath: the Buddha. Did he actually say it? Most people have no idea how to check, and the quote travels anyway. This is not a new problem. The Buddha knew that after he was gone people would say, I heard this from his own lips. So on the road north, at a town called Bhoganagara, he gave the monks a method. Four situations, one test. Today: check it against the texts.",
-      "screen": ["`A QUOTE WITH HIS NAME ON IT.` → `I HEARD IT FROM HIM.` → `A METHOD AT BHOGANAGARA.`"]
+      "screen": [
+        "`A QUOTE WITH HIS NAME ON IT.` → `I HEARD IT FROM HIM.` → `A METHOD AT BHOGANAGARA.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "The Mahaparinibbana Sutta calls them the four great references, the mahapadesa. Suppose a monk says: I heard this from the Blessed One himself; this is the teaching, this is the discipline. Or: I heard it from a whole community, with its elders. Or: from a group of learned elders who know the texts by heart. Or: from one learned elder. Four sources, from the most impressive to the most modest. And the instruction is the same for all four. Don't welcome it, and don't scorn it. Neither applaud nor reject. Learn the words carefully, and then set them beside the discourses and compare them with the discipline. If they don't fit, conclude: this isn't the Buddha's word; this monk got it wrong. Set it aside. If they do fit, conclude: this is the Buddha's word; he got it right. Look at what the test doesn't care about. Not how famous the speaker is. Not how many people agree. Not even the claim, I heard it from him. The words themselves are checked against the body of teaching everyone can hear. It's the open hand from yesterday, turned into a safeguard. Because nothing was secret, everything can be compared. Different Buddhist traditions have worked out over the centuries which texts count as the measure, and they don't all draw that line in the same place. But the habit itself, check it against what's been taught, goes back to this road.",
-      "screen": ["`FOUR CLAIMS, ONE TEST.` · `DON'T APPLAUD, DON'T SCORN.` · `SET IT BESIDE THE DISCOURSES.` · `THE WORDS, NOT THE SPEAKER.` · then, large: `CHECK IT AGAINST THE TEXTS.`"]
+      "screen": [
+        "`FOUR CLAIMS, ONE TEST.` · `DON'T APPLAUD, DON'T SCORN.` · `SET IT BESIDE THE DISCOURSES.` · `THE WORDS, NOT THE SPEAKER.` · then, large: `CHECK IT AGAINST THE TEXTS.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "mahapadesa. The four great references in the Mahaparinibbana Sutta: whoever claims a teaching, set the words beside the discourses and the discipline. Today's word.",
-      "screen": ["`MAHAPADESA — today's word`."]
+      "screen": [
+        "`MAHAPADESA — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,35 +61,99 @@
       "voice": "Your line: set the words beside the discourses. Today, before you share a quote, wise or not, look for where it came from. Day five hundred forty-eight.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 548 COUNTS.` → `TOMORROW: FOUR PLACES.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 548 COUNTS.` → `TOMORROW: FOUR PLACES.`"
+      ]
+    }
   ],
   "howItsDone": "Buddhist scholars and teachers still appeal to the four great references when weighing a disputed teaching, and different traditions define the body of texts used as the measure in their own ways.",
   "games": {
     "match": {
       "prompt": "check it against the texts: tap the pairs.",
-      "pairs": [["mahapadesa", "the four great references"], ["Bhoganagara", "where the Buddha taught them"], ["the first claim", "I heard it from the Buddha himself"], ["the test", "the discourses and the discipline"]]
+      "pairs": [
+        [
+          "mahapadesa",
+          "the four great references"
+        ],
+        [
+          "Bhoganagara",
+          "where the Buddha taught them"
+        ],
+        [
+          "the first claim",
+          "I heard it from the Buddha himself"
+        ],
+        [
+          "the test",
+          "the discourses and the discipline"
+        ]
+      ]
     },
     "myth": [
-      ["a teaching heard from the Buddha's own lips is accepted without checking", false, "even that claim is set beside the discourses and the discipline."],
-      ["the monks are told neither to welcome nor to scorn a claimed teaching at first", true, "learn the words, then compare."],
-      ["the four references are about four different kinds of source", true, "the Buddha himself, a community, a group of elders, one elder."]
+      [
+        "a teaching heard from the Buddha's own lips is accepted without checking",
+        false,
+        "even that claim is set beside the discourses and the discipline."
+      ],
+      [
+        "the monks are told neither to welcome nor to scorn a claimed teaching at first",
+        true,
+        "learn the words, then compare."
+      ],
+      [
+        "the four references are about four different kinds of source",
+        true,
+        "the Buddha himself, a community, a group of elders, one elder."
+      ]
     ],
     "fork": {
       "setup": "a respected elder tells you a teaching he says the Buddha gave. you've never heard it. what do the four great references say to do?",
-      "options": ["accept it: he's an elder.", "reject it: you haven't heard it.", "learn the words, then compare them with the discourses and the discipline."],
+      "options": [
+        "accept it: he's an elder.",
+        "reject it: you haven't heard it.",
+        "learn the words, then compare them with the discourses and the discipline."
+      ],
       "answer": 2,
       "reveal": "neither applaud nor scorn. learn it, compare it, and keep it only if it fits."
     },
-    "original": { "script": "महापदेस", "say": "ma-haa-pa-DE-sa", "note": "Pali mahapadesa: a great reference, a standard to appeal to. DN 16 gives four." },
+    "original": {
+      "script": "महापदेस",
+      "say": "ma-haa-pa-DE-sa",
+      "note": "Pali mahapadesa: a great reference, a standard to appeal to. DN 16 gives four."
+    },
     "trapdoor": [
       "what you thought: if someone important says the Buddha said it, he said it.",
       "what it means: every claim, whoever makes it, is checked against the discourses and the discipline.",
       "what a scholar hears: the mahapadesa passage (sutte otaretabbani, vinaye sandassetabbani) is one of the earliest hermeneutic rules in the canon, and later traditions applied it to their own scriptural collections."
+    ],
+    "recall": [
+      [
+        "andhaveni",
+        "a line of the blind"
+      ],
+      [
+        "viññana",
+        "consciousness"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Digha Nikaya 16 (Mahaparinibbana Sutta), the four great references at Bhoganagara", "work": "Digha Nikaya (Long Discourses)", "translation": null, "quoted": null },
-    { "ref": "Anguttara Nikaya 4.180 (Mahapadesa Sutta), parallel", "work": "Anguttara Nikaya (Numerical Discourses)", "translation": null, "quoted": null }
+    {
+      "ref": "Digha Nikaya 16 (Mahaparinibbana Sutta), the four great references at Bhoganagara",
+      "work": "Digha Nikaya (Long Discourses)",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Anguttara Nikaya 4.180 (Mahapadesa Sutta), parallel",
+      "work": "Anguttara Nikaya (Numerical Discourses)",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -85,5 +164,9 @@
       "The statement that traditions define the measuring texts differently is general and deliberately unranked; confirm framing."
     ]
   },
-  "meta": { "index": "548. Check it against the texts · — · the four great references: test any claimed teaching against the discourses and the discipline (DN 16) · check one teaching's source · check it against the texts", "writer": "writer agent (buddhism 542–571)", "written": "2026-09-30" }
+  "meta": {
+    "index": "548. Check it against the texts · — · the four great references: test any claimed teaching against the discourses and the discipline (DN 16) · check one teaching's source · check it against the texts",
+    "writer": "writer agent (buddhism 542–571)",
+    "written": "2026-09-30"
+  }
 }

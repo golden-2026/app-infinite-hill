@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "Easter Monday, 2025",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY NINE-HUNDRED-THIRTY-SIX.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY NINE-HUNDRED-THIRTY-SIX.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, human fraternity: a pope and a Grand Imam signing one document in Abu Dhabi. Your line was brothers and sisters. Whose name did you use in a greeting? Day nine hundred thirty-six.",
-      "screen": ["`BROTHERS AND SISTERS.`"]
+      "screen": [
+        "`BROTHERS AND SISTERS.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Evening. Rain on the stones. St Peter's Square, built to hold huge crowds, is completely empty. The city is locked down; a virus is moving through the world, and people are dying in hospitals without their families beside them. Up the wide steps, under a canopy, one figure in white walks slowly, alone. No crowd answers him. Cameras carry the picture into kitchens and living rooms and hospital break rooms around the world. The pope has come out to pray, for a world that can't come to him. And the reading he chose is about a boat in a storm.",
-      "screen": ["`RAIN, AND AN EMPTY SQUARE.` → `ONE FIGURE IN WHITE.` → `A BOAT IN A STORM.`"]
+      "screen": [
+        "`RAIN, AND AN EMPTY SQUARE.` → `ONE FIGURE IN WHITE.` → `A BOAT IN A STORM.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "The service was plain, and each piece of it was chosen. First, the reading. Mark's Gospel tells of the disciples crossing the lake at night when a great storm comes up and the waves pour into the boat. Jesus is asleep in the stern on a cushion. They wake him, and in the Douay-Rheims they say: \"Master, doth it not concern thee that we perish?\" He calms the wind, and then asks them: \"Why are you fearful? have you not faith yet?\" Second, what Francis heard in it. In his homily he said the storm had shown that we are all in the same boat, fragile and disoriented, and all needing each other. The storm, he said, strips away the comfortable things we use to look secure. He didn't say the storm was a punishment. He said everyone was in it. Third, what stood beside him. A wooden crucifix from a church in Rome, which tradition says was once carried through the streets in a time of plague, stood out in the rain. And an icon of Mary from a Roman basilica. Fourth, the blessing. At the end he held up the Eucharist in a monstrance and gave the blessing the popes call to the city and to the world, over an empty square, to everyone watching wherever they were. Bells rang. Sirens could be heard in the distance. The picture is plain: a man alone in the rain, praying for people he would never meet, many of them dying alone.",
-      "screen": ["`THE STORM AND THE SLEEPING JESUS.` · `ALL IN THE SAME BOAT.` · `A CRUCIFIX AND AN ICON IN THE RAIN.` · `A BLESSING OVER AN EMPTY SQUARE.` · then, large: `WHY ARE YOU FEARFUL?`"]
+      "screen": [
+        "`THE STORM AND THE SLEEPING JESUS.` · `ALL IN THE SAME BOAT.` · `A CRUCIFIX AND AN ICON IN THE RAIN.` · `A BLESSING OVER AN EMPTY SQUARE.` · then, large: `WHY ARE YOU FEARFUL?`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Monstrance. The vessel in which Pope Francis held up the Eucharist to bless the city and the world, alone in the rain over an empty St Peter's Square.",
-      "screen": ["`MONSTRANCE — today's word`."]
+      "screen": [
+        "`MONSTRANCE — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,36 +61,105 @@
       "voice": "Your line: we are in the same boat. Today, check in on someone who spent those months alone, and ask how they're doing now. Day nine hundred thirty-six.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 936 COUNTS.` → `TOMORROW: EASTER MONDAY, 2025.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 936 COUNTS.` → `TOMORROW: EASTER MONDAY, 2025.`"
+      ]
+    }
   ],
   "howItsDone": "Catholics pray for the dead at every Mass and in November especially, and the blessing Urbi et Orbi is usually given by the pope at Christmas and Easter, and on rare occasions like this one.",
   "games": {
     "match": {
       "prompt": "the empty square — tap the pairs.",
-      "pairs": [["Mark 4", "a boat in a storm"], ["the same boat", "what Francis said the storm showed"], ["the crucifix", "carried in a time of plague, tradition says"], ["Urbi et Orbi", "to the city and to the world"]]
+      "pairs": [
+        [
+          "Mark 4",
+          "a boat in a storm"
+        ],
+        [
+          "the same boat",
+          "what Francis said the storm showed"
+        ],
+        [
+          "the crucifix",
+          "carried in a time of plague, tradition says"
+        ],
+        [
+          "Urbi et Orbi",
+          "to the city and to the world"
+        ]
+      ]
     },
     "myth": [
-      ["Francis said the storm was a punishment", false, "he said it showed we are all in the same boat."],
-      ["in Mark's story, Jesus is asleep during the storm", true, "asleep in the stern on a cushion, until the disciples wake him."],
-      ["the square was full of people that evening", false, "it was empty, in the rain; the world watched on screens."]
+      [
+        "Francis said the storm was a punishment",
+        false,
+        "he said it showed we are all in the same boat."
+      ],
+      [
+        "in Mark's story, Jesus is asleep during the storm",
+        true,
+        "asleep in the stern on a cushion, until the disciples wake him."
+      ],
+      [
+        "the square was full of people that evening",
+        false,
+        "it was empty, in the rain; the world watched on screens."
+      ]
     ],
     "fork": {
       "setup": "you're Francis. the world is locked down and the square is empty. what reading do you choose?",
-      "options": ["a reading about the end of the world.", "the disciples in a boat in a storm, waking Jesus.", "a reading about a great feast."],
+      "options": [
+        "a reading about the end of the world.",
+        "the disciples in a boat in a storm, waking Jesus.",
+        "a reading about a great feast."
+      ],
       "answer": 1,
       "reveal": "he chose Mark 4: the storm, the sleeping Jesus, and the question, why are you fearful?"
     },
-    "original": { "script": "Urbi et Orbi", "say": "OOR-bee et OR-bee", "note": "Latin: to the city and to the world, the name of the blessing he gave over the empty square." },
+    "original": {
+      "script": "Urbi et Orbi",
+      "say": "OOR-bee et OR-bee",
+      "note": "Latin: to the city and to the world, the name of the blessing he gave over the empty square."
+    },
     "trapdoor": [
       "what you thought: a pope standing in the rain.",
       "what it means: a prayer service for a world in lockdown, built on the storm at sea in Mark 4.",
       "what a scholar hears: a blessing Urbi et Orbi with the Eucharist, given outside its usual feasts, to a square with no one in it."
+    ],
+    "recall": [
+      [
+        "safeguarding",
+        "rules that protect children now"
+      ],
+      [
+        "Jean Donovan",
+        "a lay missionary, not a nun"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Mark 4:38", "work": "The Bible", "translation": "Douay-Rheims (Challoner)", "quoted": "Master, doth it not concern thee that we perish?" },
-    { "ref": "Mark 4:40", "work": "The Bible", "translation": "Douay-Rheims (Challoner)", "quoted": "Why are you fearful? have you not faith yet?" },
-    { "ref": "Extraordinary moment of prayer in time of epidemic, homily (Statio Orbis)", "work": "Pope Francis, homily in St Peter's Square", "translation": null, "quoted": null }
+    {
+      "ref": "Mark 4:38",
+      "work": "The Bible",
+      "translation": "Douay-Rheims (Challoner)",
+      "quoted": "Master, doth it not concern thee that we perish?"
+    },
+    {
+      "ref": "Mark 4:40",
+      "work": "The Bible",
+      "translation": "Douay-Rheims (Challoner)",
+      "quoted": "Why are you fearful? have you not faith yet?"
+    },
+    {
+      "ref": "Extraordinary moment of prayer in time of epidemic, homily (Statio Orbis)",
+      "work": "Pope Francis, homily in St Peter's Square",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -91,5 +175,9 @@
       "Auditor: read in full; Mark 4:38 and 4:40 match the Douay-Rheims (which says Jesus slept on a pillow; the voice paraphrases as cushion); no change."
     ]
   },
-  "meta": { "index": "936. The empty square (2020) · — · in the pandemic Francis prays alone in the rain in St Peter's Square · pray for those who died alone · we are in the same boat", "writer": "writer agent (catholic 927–936)", "written": "2026-10-01" }
+  "meta": {
+    "index": "936. The empty square (2020) · — · in the pandemic Francis prays alone in the rain in St Peter's Square · pray for those who died alone · we are in the same boat",
+    "writer": "writer agent (catholic 927–936)",
+    "written": "2026-10-01"
+  }
 }

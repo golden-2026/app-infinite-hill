@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "Dymphna (15 May)",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY NINE-HUNDRED-NINETY.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY NINE-HUNDRED-NINETY.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, Matthias, the faithful disciple the lot fell on. Your line was the replacement. Whose place did you fill, or who filled yours? Day nine hundred ninety.",
-      "screen": ["`THE REPLACEMENT.`"]
+      "screen": [
+        "`THE REPLACEMENT.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "What does a landowner do when his workers complain about one of their own? This one, near Madrid, rides out early in the morning to check on his hired man. The hired man, they say, comes late to the fields every day. He stops at church first. So the landowner goes to see for himself. And here the story turns into legend. Out in the field, the hired man's plow is moving. Beside it, another plow, pulled by white oxen, driven by figures nobody can name. Today, a saint who never left the farm. Isidore the Farmer.",
-      "screen": ["`THE OTHER WORKERS COMPLAIN.` → `THE LANDOWNER RIDES OUT.` → `A SECOND PLOW IN THE FIELD.`"]
+      "screen": [
+        "`THE OTHER WORKERS COMPLAIN.` → `THE LANDOWNER RIDES OUT.` → `A SECOND PLOW IN THE FIELD.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "Isidore worked land that belonged to someone else. Tradition says he married a woman named Maria, who is honored too, and that the two of them lived simply and shared what little they had. That's close to all the story needs. He left no writings and held no office. He plowed. The legend of the angels is told in more than one version, and it isn't in scripture. It comes down as a story people have loved, told to point at something. And what does it point at? Not that prayer gets you out of work. Isidore still plows. It points at the old worry he had to face: that time given to God is time stolen from the job. In the legend the field doesn't suffer. The work gets done. There's a line in the Psalms, in the Douay-Rheims, that fits a farm as well as a building site: \"Unless the Lord build the house, they labour in vain that build it.\" The farmer's version would be: unless the Lord plows the field. Isidore's story takes that literally, with oxen. Other stories told about him lean the same way. Tradition says he poured out grain for hungry birds in winter, and that his sack was still full when he reached the mill. Catholics have made him a patron of farmers and of the people who grow what everyone else eats, often without anyone noticing. In the end it's a story about a hired hand who believed the God he prayed to was also out in the field.",
-      "screen": ["`A HIRED HAND WHO PLOWED.` · `A LEGEND POINTING AT SOMETHING TRUE.` · `UNLESS THE LORD BUILD THE HOUSE.` · `PATRON OF THOSE WHO GROW OUR FOOD.` · then, large: `ANGELS PLOW.`"]
+      "screen": [
+        "`A HIRED HAND WHO PLOWED.` · `A LEGEND POINTING AT SOMETHING TRUE.` · `UNLESS THE LORD BUILD THE HOUSE.` · `PATRON OF THOSE WHO GROW OUR FOOD.` · then, large: `ANGELS PLOW.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Isidore, the farmer of Madrid. A hired hand who prayed before he plowed, and whose field, legend says, angels helped to plow.",
-      "screen": ["`ISIDORE — today's word`."]
+      "screen": [
+        "`ISIDORE — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,22 +61,62 @@
       "voice": "Your line: angels plow. Today, before you start your work, take one breath and give it away first. Then eat one bite slowly, and think of the field it came from. Day nine hundred ninety.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 990 COUNTS.` → `TOMORROW: DYMPHNA.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 990 COUNTS.` → `TOMORROW: DYMPHNA.`"
+      ]
+    }
   ],
   "howItsDone": "Catholics in farming areas often keep Saint Isidore's day on 15 May with Masses and blessings of fields, animals or tractors, and pray for farmers and a good harvest.",
   "games": {
     "match": {
       "prompt": "Isidore the Farmer — tap the pairs.",
-      "pairs": [["the landowner", "rides out to check on him"], ["the other workers", "complain he comes late"], ["the second plow", "the angels of the legend"], ["Maria", "his wife, honored too"]]
+      "pairs": [
+        [
+          "the landowner",
+          "rides out to check on him"
+        ],
+        [
+          "the other workers",
+          "complain he comes late"
+        ],
+        [
+          "the second plow",
+          "the angels of the legend"
+        ],
+        [
+          "Maria",
+          "his wife, honored too"
+        ]
+      ]
     },
     "myth": [
-      ["the landowner rode out because Isidore asked him to", false, "the other workers complained that he came late, so the landowner went to see for himself."],
-      ["in the legend, Isidore's field suffers because he prays", false, "the work gets done. that's the point of the story."],
-      ["Isidore was a farmworker on someone else's land", true, "he was a hired hand who plowed another man's land."]
+      [
+        "the landowner rode out because Isidore asked him to",
+        false,
+        "the other workers complained that he came late, so the landowner went to see for himself."
+      ],
+      [
+        "in the legend, Isidore's field suffers because he prays",
+        false,
+        "the work gets done. that's the point of the story."
+      ],
+      [
+        "Isidore was a farmworker on someone else's land",
+        true,
+        "he was a hired hand who plowed another man's land."
+      ]
     ],
     "fork": {
       "setup": "you're the landowner. your workers say your hired man stops at church every morning and comes late. what do you do?",
-      "options": ["fire him on the spot.", "ride out and see for yourself.", "ignore the complaint."],
+      "options": [
+        "fire him on the spot.",
+        "ride out and see for yourself.",
+        "ignore the complaint."
+      ],
       "answer": 1,
       "reveal": "he rides out to check, and the legend says he finds a second plow at work beside Isidore's."
     },
@@ -70,11 +125,31 @@
       "what you thought: a cute story about magic oxen.",
       "what it means: a hired hand's answer to the worry that time with God is stolen from work.",
       "what a scholar hears: the angel-plow legend is told in several versions in Isidore's lives; Psalm 126 in the Douay-Rheims numbering (127 in Hebrew) carries the same thought."
+    ],
+    "recall": [
+      [
+        "Quechua",
+        "the language he learned"
+      ],
+      [
+        "André Bessette",
+        "doorkeeper of a college in Montreal"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Psalm 126:1 (Douay-Rheims numbering; Psalm 127:1)", "work": "The Bible", "translation": "Douay-Rheims (Challoner)", "quoted": "Unless the Lord build the house, they labour in vain that build it." },
-    { "ref": "Lives of Saint Isidore the Farmer (traditional legends)", "work": "hagiography", "translation": null, "quoted": null }
+    {
+      "ref": "Psalm 126:1 (Douay-Rheims numbering; Psalm 127:1)",
+      "work": "The Bible",
+      "translation": "Douay-Rheims (Challoner)",
+      "quoted": "Unless the Lord build the house, they labour in vain that build it."
+    },
+    {
+      "ref": "Lives of Saint Isidore the Farmer (traditional legends)",
+      "work": "hagiography",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -89,5 +164,9 @@
       "Audit: 'not a priest, or a scholar, or a founder of anything' echoed day 985's 'never ran a school, never preached, never founded anything'; replaced. 'So take it as the Church takes it ... pointing at something true' told the listener how to take the legend and affirmed it in the narrator's voice; now descriptive. DR Psalm 126:1 checked."
     ]
   },
-  "meta": { "index": "990. Isidore the Farmer (15 May) · — · a Spanish farmworker whose ploughing, legend says, angels helped with while he prayed · pray for farmers · angels plow", "writer": "writer agent (catholic 987–996)", "written": "2026-10-01" }
+  "meta": {
+    "index": "990. Isidore the Farmer (15 May) · — · a Spanish farmworker whose ploughing, legend says, angels helped with while he prayed · pray for farmers · angels plow",
+    "writer": "writer agent (catholic 987–996)",
+    "written": "2026-10-01"
+  }
 }

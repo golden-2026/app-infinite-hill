@@ -9,24 +9,37 @@
   "length": "6:45",
   "tomorrow": "Afternoon learning",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY SIX-HUNDRED-TWENTY-TWO.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY SIX-HUNDRED-TWENTY-TWO.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, Musaf, the extra prayer for an extra day. Your line was an extra portion. What extra good thing did you add? Today, Shabbat afternoon, when the Torah comes out one more time. Day six hundred twenty-two.",
-      "screen": ["`AN EXTRA PORTION.`"]
+      "screen": [
+        "`AN EXTRA PORTION.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "TV shows end an episode with a few seconds of next week's story. Just enough so you come back. Shabbat afternoon has its own version. The morning's long reading is done, lunch has been eaten, maybe a nap was taken. Then, late in the day, at the afternoon service, the scroll comes out of the ark again. But it isn't rolled back to this week's portion. It's rolled forward. Three people are called up, and the congregation hears the opening of next week's portion. A preview.",
-      "screen": ["`A FEW SECONDS OF NEXT WEEK.` → `THE SCROLL COMES OUT AGAIN.` → `ROLLED FORWARD.`"]
+      "screen": [
+        "`A FEW SECONDS OF NEXT WEEK.` → `THE SCROLL COMES OUT AGAIN.` → `ROLLED FORWARD.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "Where does this come from? The Talmud, in tractate Bava Kamma, lists ten enactments it credits to Ezra the scribe, and reading the Torah at Shabbat afternoon prayer is one of them. The reason it gives is practical: for the shopkeepers. As the commentator Rashi explains, these were people too busy all week to hear Torah on Monday and Thursday. Wait, Monday and Thursday? Yes. That same short section, the opening of the coming week's portion, is read again on Monday and Thursday mornings. So the week has a rhythm. Saturday afternoon, a taste. Monday, again. Thursday, again. And then, next Saturday morning, the whole portion. The Talmud traces the Monday and Thursday readings to a verse from Exodus. Right after crossing the sea, the people \"went three days in the wilderness, and found no water,\" and when they finally found some, it was bitter. The rabbis read water as Torah. Three days without it is too long. So the Torah is never more than three days away. In many communities, the afternoon service says a verse about timing just before the scroll comes out. In the old Jewish translation, Psalm 69: \"But as for me, let my prayer be unto Thee, O LORD, in an acceptable time.\" Late Shabbat afternoon is treated as one of those times. Notice what that does. Shabbat is about stopping, but it also leans forward. Even on the day of rest, you're handed a little of what's coming. You start next week before this week ends.",
-      "screen": ["`EZRA: FOR THE SHOPKEEPERS.` · `SATURDAY, MONDAY, THURSDAY.` · `NEVER THREE DAYS WITHOUT WATER.` · `IN AN ACCEPTABLE TIME.` · then, large: `A TASTE OF NEXT WEEK.`"]
+      "screen": [
+        "`EZRA: FOR THE SHOPKEEPERS.` · `SATURDAY, MONDAY, THURSDAY.` · `NEVER THREE DAYS WITHOUT WATER.` · `IN AN ACCEPTABLE TIME.` · then, large: `A TASTE OF NEXT WEEK.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Ezra, the scribe credited with the custom of reading a taste of the coming week's Torah portion on Shabbat afternoon, and again Monday and Thursday.",
-      "screen": ["`EZRA — today's word`."]
+      "screen": [
+        "`EZRA — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,41 +61,111 @@
       "voice": "Your line: you start next week before this week ends. Today, do one small thing that starts something you're looking forward to. Day six hundred twenty-two.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 622 COUNTS.` → `TOMORROW: AFTERNOON LEARNING.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 622 COUNTS.` → `TOMORROW: AFTERNOON LEARNING.`"
+      ]
+    }
   ],
   "howItsDone": "At Shabbat Mincha the Torah is taken out and three people are called up for the opening section of the next week's portion; the same section is read on Monday and Thursday mornings, before the full portion is read the following Shabbat.",
   "games": {
     "match": {
       "prompt": "the afternoon reading — tap the pairs.",
-      "pairs": [["Shabbat afternoon", "three people called up"], ["Ezra", "credited with the afternoon reading"], ["the shopkeepers", "too busy to hear it all week"], ["three days without water", "why Monday and Thursday"]]
+      "pairs": [
+        [
+          "Shabbat afternoon",
+          "three people called up"
+        ],
+        [
+          "Ezra",
+          "credited with the afternoon reading"
+        ],
+        [
+          "the shopkeepers",
+          "too busy to hear it all week"
+        ],
+        [
+          "three days without water",
+          "why Monday and Thursday"
+        ]
+      ]
     },
     "myth": [
-      ["the Shabbat afternoon reading repeats that morning's portion", false, "it begins next week's portion."],
-      ["the same short section is read on Monday and Thursday", true, "a taste, again and again, before the whole portion."],
-      ["the rabbis read the water in the wilderness as Torah", true, "three days without it is too long."]
+      [
+        "the Shabbat afternoon reading repeats that morning's portion",
+        false,
+        "it begins next week's portion."
+      ],
+      [
+        "the same short section is read on Monday and Thursday",
+        true,
+        "a taste, again and again, before the whole portion."
+      ],
+      [
+        "the rabbis read the water in the wilderness as Torah",
+        true,
+        "three days without it is too long."
+      ]
     ],
     "fork": {
       "setup": "it's Shabbat afternoon, and the Torah comes out again. which portion do they read from?",
-      "options": ["this morning's portion, again.", "the opening of next week's portion.", "a random passage."],
+      "options": [
+        "this morning's portion, again.",
+        "the opening of next week's portion.",
+        "a random passage."
+      ],
       "answer": 1,
       "reveal": "the opening of the coming week's portion: a taste, repeated Monday and Thursday."
     },
-    "original": { "script": "פָּרָשָׁה", "say": "pah-rah-SHAH", "note": "Hebrew: a portion, the weekly section of the Torah." },
+    "original": {
+      "script": "פָּרָשָׁה",
+      "say": "pah-rah-SHAH",
+      "note": "Hebrew: a portion, the weekly section of the Torah."
+    },
     "trapdoor": [
       "what you thought: one more reading to fill the afternoon.",
       "what it means: a preview that ties the weeks together, so Torah is never three days away.",
       "what a scholar hears: Bava Kamma 82a credits Ezra with the Shabbat Mincha reading and ties Monday and Thursday to Exodus 15:22."
+    ],
+    "recall": [
+      [
+        "Lecha Dodi",
+        "come, my beloved"
+      ],
+      [
+        "Hashkiveinu",
+        "lay us down"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Exodus 15:22", "work": "The Holy Scriptures", "translation": "JPS 1917", "quoted": "went three days in the wilderness, and found no water" },
-    { "ref": "Psalm 69:14", "work": "The Holy Scriptures", "translation": "JPS 1917", "quoted": "But as for me, let my prayer be unto Thee, O LORD, in an acceptable time" },
-    { "ref": "Babylonian Talmud, Bava Kamma 82a", "work": "Talmud", "translation": null, "quoted": null }
+    {
+      "ref": "Exodus 15:22",
+      "work": "The Holy Scriptures",
+      "translation": "JPS 1917",
+      "quoted": "went three days in the wilderness, and found no water"
+    },
+    {
+      "ref": "Psalm 69:14",
+      "work": "The Holy Scriptures",
+      "translation": "JPS 1917",
+      "quoted": "But as for me, let my prayer be unto Thee, O LORD, in an acceptable time"
+    },
+    {
+      "ref": "Babylonian Talmud, Bava Kamma 82a",
+      "work": "Talmud",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
     "keeper": null,
-    "notes": ["Editor review (2026-10-01): replaced the 'You know the trick' hook opener; trimmed stock adjectives ('lovely', 'classic').", 
+    "notes": [
+      "Editor review (2026-10-01): replaced the 'You know the trick' hook opener; trimmed stock adjectives ('lovely', 'classic').",
       "Exodus 15:22 and Psalm 69:14 quoted from JPS 1917 from memory; verify.",
       "Bava Kamma 82a: Ezra's enactments include Shabbat Mincha reading 'because of the shopkeepers' (yoshvei keranot); Monday/Thursday readings attributed there to the prophets among them / Moses, with Ezra adding the number of readers. Simplified; confirm.",
       "Psalm 69:14 is said at Shabbat Mincha in Ashkenazi practice before the Torah reading; customs vary. Teach now says 'in many communities'.",
@@ -88,5 +173,9 @@
       "Exodus 15:22–23: three days without water, then bitter water at Marah; earlier 'they grew bitter' corrected to the water being bitter."
     ]
   },
-  "meta": { "index": "622. A taste of next week · — · the Shabbat afternoon reading begins next week's portion · look ahead to next week's portion · a taste of next week", "writer": "writer agent (judaism y2 602–631)", "written": "2026-09-30" }
+  "meta": {
+    "index": "622. A taste of next week · — · the Shabbat afternoon reading begins next week's portion · look ahead to next week's portion · a taste of next week",
+    "writer": "writer agent (judaism y2 602–631)",
+    "written": "2026-09-30"
+  }
 }

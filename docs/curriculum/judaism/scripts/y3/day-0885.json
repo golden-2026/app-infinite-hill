@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "Every word has a tune",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY EIGHT-HUNDRED-EIGHTY-FIVE.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY EIGHT-HUNDRED-EIGHTY-FIVE.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, the Song of Songs and Ecclesiastes were argued into the canon, and the argument was kept. Your line was a doubt didn't throw a book out. What did you look at more closely? Today, now that the books are on the shelf: how do you read them? Day eight hundred eighty-five.",
-      "screen": ["`ARGUED INTO THE CANON.`"]
+      "screen": [
+        "`ARGUED INTO THE CANON.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "An orchard. In the Song of Songs, the lover says, in the King James words, \"Thy plants are an orchard of pomegranates, with pleasant fruits.\" The Hebrew word there for orchard is pardes. Much later, Jewish readers took that same word and turned it into a map for reading scripture. Its four consonants, P, R, D, S, became the first letters of four ways into a text. So a single verse becomes an orchard: you can walk in at the gate and see the trees, or go deeper and find what's growing underneath. Today we take the walk, and we learn which gate comes first.",
-      "screen": ["`AN ORCHARD OF POMEGRANATES.` → `PARDES: P, R, D, S.` → `FOUR WAYS INTO A TEXT.`"]
+      "screen": [
+        "`AN ORCHARD OF POMEGRANATES.` → `PARDES: P, R, D, S.` → `FOUR WAYS INTO A TEXT.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "Here are the four. P is peshat: the plain meaning, what the words say in their own setting. R is remez: the hint, a meaning pointed to by a detail, a number, a strange word choice. D is derash: the teaching drawn out by searching the text, the way the rabbis of the midrash read it, finding lessons and stories in its gaps. And S is sod: the secret, the hidden meaning the mystics looked for. Take the Song of Songs. Its peshat is a love poem between two people. Its derash, in rabbinic tradition, is the love between God and the people of Israel. Both readings live side by side. But there's an order. The Talmud, in tractate Shabbat, records a short rule: a verse does not depart from its plain meaning. You can read deeper, but you can't read past the words as if they weren't there. Plain meaning first. The commentator Rashi, in his note on Genesis 3:8, says he has come only for the plain sense of the verse, and for the midrash that helps settle its words. The same rule works far from any scroll. A text, a message, a friend's sentence can all be read for hidden meanings before anyone has read what they actually say. The orchard has deep roots, but you enter through the gate. Before you hunt for the hint, the teaching or the secret, ask the plain question first: what do these words say?",
-      "screen": ["`PESHAT, REMEZ, DERASH, SOD.` · `ONE SONG, TWO READINGS.` · then, large: `A VERSE KEEPS ITS PLAIN MEANING.` · then: `ENTER THROUGH THE GATE.`"]
+      "screen": [
+        "`PESHAT, REMEZ, DERASH, SOD.` · `ONE SONG, TWO READINGS.` · then, large: `A VERSE KEEPS ITS PLAIN MEANING.` · then: `ENTER THROUGH THE GATE.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Peshat. The plain meaning of a verse, the first of the four ways into the orchard: peshat, remez, derash, sod. Today's word.",
-      "screen": ["`PESHAT — today's word`."]
+      "screen": [
+        "`PESHAT — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,37 +61,111 @@
       "voice": "Your line: plain meaning first. Today, before you read between the lines of a message, read the lines themselves. Day eight hundred eighty-five.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 885 COUNTS.` → `TOMORROW: EVERY WORD HAS A TUNE.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 885 COUNTS.` → `TOMORROW: EVERY WORD HAS A TUNE.`"
+      ]
+    }
   ],
   "howItsDone": "Jewish Bibles are studied with commentaries printed around the text, such as Rashi, which give the plain meaning and rabbinic teachings side by side, and students learn to say which kind of reading they are offering.",
   "games": {
     "match": {
       "prompt": "the four letters of pardes — tap the pairs.",
-      "pairs": [["peshat", "the plain meaning"], ["remez", "the hint"], ["derash", "the teaching drawn out"], ["sod", "the secret"]]
+      "pairs": [
+        [
+          "peshat",
+          "the plain meaning"
+        ],
+        [
+          "remez",
+          "the hint"
+        ],
+        [
+          "derash",
+          "the teaching drawn out"
+        ],
+        [
+          "sod",
+          "the secret"
+        ]
+      ]
     },
     "myth": [
-      ["pardes is a Hebrew word for orchard", true, "it appears in the Song of Songs: an orchard of pomegranates."],
-      ["the deeper readings replace the plain meaning", false, "the Talmud says a verse does not depart from its plain meaning."],
-      ["the Song of Songs can only be read one way", false, "its plain meaning is a love poem; rabbinic tradition also reads it as God and Israel."]
+      [
+        "pardes is a Hebrew word for orchard",
+        true,
+        "it appears in the Song of Songs: an orchard of pomegranates."
+      ],
+      [
+        "the deeper readings replace the plain meaning",
+        false,
+        "the Talmud says a verse does not depart from its plain meaning."
+      ],
+      [
+        "the Song of Songs can only be read one way",
+        false,
+        "its plain meaning is a love poem; rabbinic tradition also reads it as God and Israel."
+      ]
     ],
     "fork": {
       "setup": "you're reading a verse for the first time. which of the four ways do you start with?",
-      "options": ["sod, the secret.", "peshat, the plain meaning.", "remez, the hint."],
+      "options": [
+        "sod, the secret.",
+        "peshat, the plain meaning.",
+        "remez, the hint."
+      ],
       "answer": 1,
       "reveal": "plain meaning first. the Talmud's rule: a verse does not depart from its plain meaning."
     },
-    "original": { "script": "פְּשָׁט", "say": "p'SHAHT", "note": "Hebrew: peshat, the plain meaning of a text." },
+    "original": {
+      "script": "פְּשָׁט",
+      "say": "p'SHAHT",
+      "note": "Hebrew: peshat, the plain meaning of a text."
+    },
     "trapdoor": [
       "what you thought: the Bible has one meaning, or else any meaning you like.",
       "what it means: pardes names four ways in, plain, hint, teaching, secret, and the plain meaning comes first.",
       "what a scholar hears: pardes is the Song of Songs' word for orchard, reused as an acronym, and the Talmud's rule that a verse keeps its plain meaning anchors the other three."
+    ],
+    "recall": [
+      [
+        "Hadassah",
+        "Esther's other name"
+      ],
+      [
+        "hashivenu",
+        "turn us, bring us back"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Song of Songs 4:13", "work": "The Bible", "translation": "KJV (1769)", "quoted": "Thy plants are an orchard of pomegranates, with pleasant fruits" },
-    { "ref": "Shabbat 63a", "work": "Babylonian Talmud", "translation": null, "quoted": null },
-    { "ref": "Rashi on Genesis 3:8", "work": "Rashi's commentary on the Torah", "translation": null, "quoted": null },
-    { "ref": "2 Chronicles 36:23", "work": "The Holy Scriptures", "translation": null, "quoted": null }
+    {
+      "ref": "Song of Songs 4:13",
+      "work": "The Bible",
+      "translation": "KJV (1769)",
+      "quoted": "Thy plants are an orchard of pomegranates, with pleasant fruits"
+    },
+    {
+      "ref": "Shabbat 63a",
+      "work": "Babylonian Talmud",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Rashi on Genesis 3:8",
+      "work": "Rashi's commentary on the Torah",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "2 Chronicles 36:23",
+      "work": "The Holy Scriptures",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -91,5 +180,9 @@
       "Auditor: read in full; Song 4:13, Shabbat 63a and Rashi on Genesis 3:8 checked; no change. The practice reuses 'let him go up' from day 882 as a deliberate callback."
     ]
   },
-  "meta": { "index": "885. Four levels of reading · peshat · the plain meaning, the hint, the teaching and the secret: pardes · read one verse two ways · plain meaning first", "writer": "writer agent (judaism y3 877–886)", "written": "2026-10-01" }
+  "meta": {
+    "index": "885. Four levels of reading · peshat · the plain meaning, the hint, the teaching and the secret: pardes · read one verse two ways · plain meaning first",
+    "writer": "writer agent (judaism y3 877–886)",
+    "written": "2026-10-01"
+  }
 }

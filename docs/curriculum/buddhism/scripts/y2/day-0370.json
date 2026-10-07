@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "Right action",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY THREE-HUNDRED-SEVENTY.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY THREE-HUNDRED-SEVENTY.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday: pisuna vaca, and your line, a sentence that mends. Did one piece of gossip stop with you, and did any sentence mend something? Day three hundred seventy.",
-      "screen": ["`PISUNA VACA — A SENTENCE THAT MENDS.`"]
+      "screen": [
+        "`PISUNA VACA — A SENTENCE THAT MENDS.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Evening, outside a hermitage near Savatthi. The Buddha is standing at a closed door, waiting. Inside, a group of his monks are deep in conversation about the teaching. He could walk straight in. They'd stop mid-sentence and bow, and the whole room would turn toward him. Instead he stays on the step, in the evening light, and lets them finish. Only when the talk has come to its end does he clear his throat and knock. It's a quiet moment, and it opens a long sutta. Today: speak or be silent.",
-      "screen": ["`A TEACHER AT THE DOOR.` → `HE LETS THEM FINISH.` → `THEN HE KNOCKS.`"]
+      "screen": [
+        "`A TEACHER AT THE DOOR.` → `HE LETS THEM FINISH.` → `THEN HE KNOCKS.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "The sutta is the Noble Search, in the Middle Length Discourses. The monks had been hoping to hear a talk from the Buddha himself, and Ananda brought him to the hermitage of a brahmin named Rammaka, where they were gathered. When the door opens, the Buddha sits down, asks what they were discussing, and approves. Then he gives them a rule of thumb short enough to remember for life. When you gather together, he says, do one of two things: discuss the teaching, or keep noble silence. That's all. Two options, and everything else falls away. Notice what this does to idle chatter, the fourth guard from earlier this week. It isn't fought with a ban. It's crowded out. If you're not talking about what matters, you can simply be quiet together, and that quiet has a name: ariya tuṇhībhāva, noble silence. Not sulking, not awkwardness, not waiting for your turn to talk. A chosen stillness, shared. Elsewhere in the canon, Moggallana gives noble silence a deeper meaning: a level of meditation where even thinking falls still. Modern retreats borrow the phrase for days spent without talking at all. Both point the same direction. And look at what the Buddha does before he says any of it. He doesn't interrupt a good conversation, even one he could improve. He waits outside. Then he speaks. The sutta that follows is long, and full of his own story: leaving home, his teachers, his awakening. It begins with a man waiting quietly on a step.",
-      "screen": ["`TWO OPTIONS WHEN YOU GATHER.` · `CROWDING OUT THE CHATTER.` · `NOBLE SILENCE, CHOSEN TOGETHER.` · `FIRST, HE WAITS OUTSIDE.` · then, large: `SPEAK OR BE SILENT.`"]
+      "screen": [
+        "`TWO OPTIONS WHEN YOU GATHER.` · `CROWDING OUT THE CHATTER.` · `NOBLE SILENCE, CHOSEN TOGETHER.` · `FIRST, HE WAITS OUTSIDE.` · then, large: `SPEAK OR BE SILENT.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Ariya tunhibhava, noble silence. The Buddha's rule for gathering: talk about what matters, or keep noble silence.",
-      "screen": ["`ARIYA TUNHIBHAVA — today's word`."]
+      "screen": [
+        "`ARIYA TUNHIBHAVA — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,35 +61,99 @@
       "voice": "Your line: a chosen stillness, shared. Today, keep one silent hour, messages included, and notice what you didn't miss. Day three hundred seventy.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 370 COUNTS.` → `TOMORROW: RIGHT ACTION.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 370 COUNTS.` → `TOMORROW: RIGHT ACTION.`"
+      ]
+    }
   ],
   "howItsDone": "Many Buddhist retreats keep noble silence for their whole length, with talk only for teaching interviews and practical needs; some monasteries keep silence at meals or through the night until morning.",
   "games": {
     "match": {
       "prompt": "at Rammaka's hermitage: tap the pairs.",
-      "pairs": [["Rammaka", "the brahmin whose hermitage it was"], ["the two options", "discuss the teaching, or noble silence"], ["ariya tuṇhībhāva", "noble silence"], ["the Buddha at the door", "waits until the talk ends"]]
+      "pairs": [
+        [
+          "Rammaka",
+          "the brahmin whose hermitage it was"
+        ],
+        [
+          "the two options",
+          "discuss the teaching, or noble silence"
+        ],
+        [
+          "ariya tuṇhībhāva",
+          "noble silence"
+        ],
+        [
+          "the Buddha at the door",
+          "waits until the talk ends"
+        ]
+      ]
     },
     "myth": [
-      ["the Buddha interrupted the monks to set them straight", false, "he stood outside until their talk ended, then cleared his throat and knocked."],
-      ["in the canon, noble silence can also mean a meditation where thinking falls still", true, "in SN 21.1 Moggallana calls the second jhāna noble silence."],
-      ["noble silence means sulking quietly", false, "it's a chosen, shared stillness, not avoidance."]
+      [
+        "the Buddha interrupted the monks to set them straight",
+        false,
+        "he stood outside until their talk ended, then cleared his throat and knocked."
+      ],
+      [
+        "in the canon, noble silence can also mean a meditation where thinking falls still",
+        true,
+        "in SN 21.1 Moggallana calls the second jhāna noble silence."
+      ],
+      [
+        "noble silence means sulking quietly",
+        false,
+        "it's a chosen, shared stillness, not avoidance."
+      ]
     ],
     "fork": {
       "setup": "you're the Buddha, outside the door. inside, your monks are mid-conversation about the teaching. what do you do?",
-      "options": ["walk in; they'll want to hear you.", "wait until they finish, then knock.", "leave quietly; they don't need you."],
+      "options": [
+        "walk in; they'll want to hear you.",
+        "wait until they finish, then knock.",
+        "leave quietly; they don't need you."
+      ],
       "answer": 1,
       "reveal": "in MN 26 he stands outside until the talk ends, then clears his throat and knocks, and afterward praises them for discussing the teaching."
     },
-    "original": { "script": "अरिय तुण्हीभाव", "say": "A-ri-ya TUN-hee-bhaa-va", "note": "Pali ariya tuṇhībhāva: noble silence, one of the two things to do when monks gather." },
+    "original": {
+      "script": "अरिय तुण्हीभाव",
+      "say": "A-ri-ya TUN-hee-bhaa-va",
+      "note": "Pali ariya tuṇhībhāva: noble silence, one of the two things to do when monks gather."
+    },
     "trapdoor": [
       "what you thought: noble silence is a retreat rule about not talking.",
       "what it means: the Buddha's alternative to idle talk: when you gather, discuss the teaching or be still together.",
       "what a scholar hears: MN 26 gives the two options; SN 21.1 identifies noble silence with the second jhāna, where applied and sustained thought subside."
+    ],
+    "recall": [
+      [
+        "kusala",
+        "wholesome, skillful"
+      ],
+      [
+        "magga",
+        "a path, a road"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Majjhima Nikaya 26 (Ariyapariyesana Sutta, the noble search)", "work": "Pali canon", "translation": null, "quoted": null },
-    { "ref": "Samyutta Nikaya 21.1 (Kolita Sutta, noble silence as the second jhana)", "work": "Pali canon", "translation": null, "quoted": null }
+    {
+      "ref": "Majjhima Nikaya 26 (Ariyapariyesana Sutta, the noble search)",
+      "work": "Pali canon",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Samyutta Nikaya 21.1 (Kolita Sutta, noble silence as the second jhana)",
+      "work": "Pali canon",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -86,5 +165,9 @@
       "Retreat customs in howItsDone are general and vary by center."
     ]
   },
-  "meta": { "index": "370. Speak or be silent · — · when together, talk about the teaching or keep noble silence (MN 26) · keep one silent hour · speak or be silent", "writer": "writer agent (buddhism 362–391)", "written": "2026-09-30" }
+  "meta": {
+    "index": "370. Speak or be silent · — · when together, talk about the teaching or keep noble silence (MN 26) · keep one silent hour · speak or be silent",
+    "writer": "writer agent (buddhism 362–391)",
+    "written": "2026-09-30"
+  }
 }

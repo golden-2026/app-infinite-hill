@@ -9,24 +9,37 @@
   "length": "6:45",
   "tomorrow": "Saint Stephen (26 December)",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY SIX-HUNDRED-FORTY.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY SIX-HUNDRED-FORTY.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, Midnight Mass: an emperor, a manger, shepherds on the night shift. Your line was a light at midnight. Who did you think of, working while others slept? Day six hundred forty.",
-      "screen": ["`A LIGHT AT MIDNIGHT.`"]
+      "screen": [
+        "`A LIGHT AT MIDNIGHT.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Come back to church on Christmas morning, and something odd happens. The gospel has no manger. No shepherds, no angels, no star, no donkey, no inn. Mary isn't named. Bethlehem isn't mentioned. Instead the reader starts before the world existed, with three words that echo the first line of Genesis: in the beginning. The night Mass told what happened in a stable. The day Mass tells who was born there. Today's word is the feast's own name.",
-      "screen": ["`NO MANGER, NO SHEPHERDS.` → `IN THE BEGINNING.` → `WHO WAS BORN THERE.`"]
+      "screen": [
+        "`NO MANGER, NO SHEPHERDS.` → `IN THE BEGINNING.` → `WHO WAS BORN THERE.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "Nativity comes from the Latin nativitas, a birth. The Church's formal name for December 25 is the Nativity of the Lord. And its daytime gospel is the prologue of John, eighteen verses that read like a poem. In the Douay-Rheims: \"In the beginning was the Word, and the Word was with God, and the Word was God.\" Word, in Greek, is logos: speech, reason, the meaning behind things. John says this Word made everything, that in him was life, and the life was the light of people. \"And the light shineth in darkness, and the darkness did not comprehend it.\" The old word comprehend can mean understand, or grasp, even overpower; the Greek allows both, and translators still differ. Then the line the whole day turns on: \"And the Word was made flesh, and dwelt among us.\" Flesh, not spirit dressed up as a man. Skin, hunger, a body that could get cold. The word for dwelt literally means pitched a tent, the way God's presence lived in a tent among the Israelites in the desert. Catholics mark this line with their bodies. Each Sunday at the Creed, people bow at the words about the incarnation; on Christmas, and on the Annunciation, they kneel. Luke and John are telling the same Christmas from two ends. Luke says: here is a baby, wrapped and laid in a trough. John says: that baby is the Word that was there in the beginning. Put them together and you have the whole surprise of the day.",
-      "screen": ["`NATIVITAS: A BIRTH.` · `IN THE BEGINNING WAS THE WORD.` · `THE LIGHT SHINETH IN DARKNESS.` · `HE PITCHED HIS TENT AMONG US.` · then, large: `THE WORD WAS MADE FLESH.`"]
+      "screen": [
+        "`NATIVITAS: A BIRTH.` · `IN THE BEGINNING WAS THE WORD.` · `THE LIGHT SHINETH IN DARKNESS.` · `HE PITCHED HIS TENT AMONG US.` · then, large: `THE WORD WAS MADE FLESH.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Nativity. From the Latin for birth; the Church's name for Christmas, the Nativity of the Lord, when the Word was made flesh. Today's word.",
-      "screen": ["`NATIVITY — today's word`."]
+      "screen": [
+        "`NATIVITY — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,38 +61,117 @@
       "voice": "Your line: the word made flesh. Today, do one bodily kindness: food, warmth, a hand on a shoulder. Day six hundred forty.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 640 COUNTS.` → `TOMORROW: SAINT STEPHEN.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 640 COUNTS.` → `TOMORROW: SAINT STEPHEN.`"
+      ]
+    }
   ],
   "howItsDone": "At the Mass during the Day on Christmas, Catholics hear the prologue of John's Gospel, and at the Creed the congregation kneels at the words about the incarnation.",
   "games": {
     "match": {
       "prompt": "Christmas morning — tap the pairs.",
-      "pairs": [["nativitas", "Latin: a birth"], ["logos", "Greek: word, meaning"], ["dwelt among us", "pitched his tent"], ["Greccio", "Francis's living crib"]]
+      "pairs": [
+        [
+          "nativitas",
+          "Latin: a birth"
+        ],
+        [
+          "logos",
+          "Greek: word, meaning"
+        ],
+        [
+          "dwelt among us",
+          "pitched his tent"
+        ],
+        [
+          "Greccio",
+          "Francis's living crib"
+        ]
+      ]
     },
     "myth": [
-      ["the Christmas day gospel has the shepherds", false, "it's John's prologue: no manger, no shepherds, just in the beginning."],
-      ["Catholics kneel at the Creed on Christmas", true, "at the words about the incarnation, on Christmas and the Annunciation."],
-      ["dwelt among us, in the Greek, pictures a tent", true, "the Word pitched his tent among us."]
+      [
+        "the Christmas day gospel has the shepherds",
+        false,
+        "it's John's prologue: no manger, no shepherds, just in the beginning."
+      ],
+      [
+        "Catholics kneel at the Creed on Christmas",
+        true,
+        "at the words about the incarnation, on Christmas and the Annunciation."
+      ],
+      [
+        "dwelt among us, in the Greek, pictures a tent",
+        true,
+        "the Word pitched his tent among us."
+      ]
     ],
     "fork": {
       "setup": "you're writing a gospel. you could start Jesus's story at his birth, or his baptism. where does John start?",
-      "options": ["with the manger in Bethlehem.", "in the beginning, before creation.", "with John the Baptist preaching."],
+      "options": [
+        "with the manger in Bethlehem.",
+        "in the beginning, before creation.",
+        "with John the Baptist preaching."
+      ],
       "answer": 1,
       "reveal": "in the beginning was the Word. John goes back before the world, then says that Word was made flesh."
     },
-    "original": { "script": "ὁ λόγος σὰρξ ἐγένετο", "say": "ho LOH-gos SARX eh-GEH-neh-toh", "note": "Greek: the Word became flesh, John 1:14." },
+    "original": {
+      "script": "ὁ λόγος σὰρξ ἐγένετο",
+      "say": "ho LOH-gos SARX eh-GEH-neh-toh",
+      "note": "Greek: the Word became flesh, John 1:14."
+    },
     "trapdoor": [
       "what you thought: Nativity means the crib scene.",
       "what it means: the birth of the Lord, the feast's own name, when Catholics hear that the Word was made flesh.",
       "what a scholar hears: John's eskēnōsen, pitched his tent, recalls God's dwelling in the desert tabernacle; katelaben in 1:5 can mean grasp or overpower."
+    ],
+    "recall": [
+      [
+        "Maranatha",
+        "Aramaic: our Lord, come"
+      ],
+      [
+        "Lukewarm",
+        "useful for neither"
+      ]
     ]
   },
   "sources": [
-    { "ref": "John 1:1", "work": "The Bible", "translation": "Douay-Rheims (Challoner)", "quoted": "In the beginning was the Word, and the Word was with God, and the Word was God." },
-    { "ref": "John 1:5", "work": "The Bible", "translation": "Douay-Rheims (Challoner)", "quoted": "And the light shineth in darkness, and the darkness did not comprehend it." },
-    { "ref": "John 1:14", "work": "The Bible", "translation": "Douay-Rheims (Challoner)", "quoted": "And the Word was made flesh, and dwelt among us" },
-    { "ref": "Bonaventure, Life of Saint Francis 10.7; Thomas of Celano, First Life 84–86", "work": "Franciscan sources", "translation": null, "quoted": null },
-    { "ref": "General Instruction of the Roman Missal 137", "work": "Roman Missal", "translation": null, "quoted": null }
+    {
+      "ref": "John 1:1",
+      "work": "The Bible",
+      "translation": "Douay-Rheims (Challoner)",
+      "quoted": "In the beginning was the Word, and the Word was with God, and the Word was God."
+    },
+    {
+      "ref": "John 1:5",
+      "work": "The Bible",
+      "translation": "Douay-Rheims (Challoner)",
+      "quoted": "And the light shineth in darkness, and the darkness did not comprehend it."
+    },
+    {
+      "ref": "John 1:14",
+      "work": "The Bible",
+      "translation": "Douay-Rheims (Challoner)",
+      "quoted": "And the Word was made flesh, and dwelt among us"
+    },
+    {
+      "ref": "Bonaventure, Life of Saint Francis 10.7; Thomas of Celano, First Life 84–86",
+      "work": "Franciscan sources",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "General Instruction of the Roman Missal 137",
+      "work": "Roman Missal",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -89,5 +183,9 @@
       "Editor review (2026-10-01): dropped 'in a cave' and '1223' for Greccio (Celano gives neither directly) and 'argued for centuries'."
     ]
   },
-  "meta": { "index": "640. Christmas Day (John 1:1–18) · Nativity · the day Mass reads the Word made flesh · visit a crib or nativity scene · the word made flesh", "writer": "writer agent (catholic 632–661)", "written": "2026-09-30" }
+  "meta": {
+    "index": "640. Christmas Day (John 1:1–18) · Nativity · the day Mass reads the Word made flesh · visit a crib or nativity scene · the word made flesh",
+    "writer": "writer agent (catholic 632–661)",
+    "written": "2026-09-30"
+  }
 }

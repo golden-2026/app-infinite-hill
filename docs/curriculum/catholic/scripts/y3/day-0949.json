@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "Relics, honestly",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY NINE-HUNDRED-FORTY-NINE.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY NINE-HUNDRED-FORTY-NINE.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday's word was canonization, and your line was tested, then declared. Did you give anything the slow treatment? Today, the steps before that declaration. Day nine hundred forty-nine.",
-      "screen": ["`TESTED, THEN DECLARED.`"]
+      "screen": [
+        "`TESTED, THEN DECLARED.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "On a parish noticeboard, a small printed card: a photograph of a nun in an old-fashioned habit, and underneath, her name, with the words Servant of God in front of it. A few streets away, a church window shows a priest with Blessed before his name. Neither is called saint. Both are clearly on their way somewhere. Those titles are not decoration. Each one marks a step on a long road, and the step in the middle has its own word.",
-      "screen": ["`SERVANT OF GOD, ON A NOTICEBOARD.` → `BLESSED, IN A CHURCH WINDOW.` → `STEPS ON A LONG ROAD.`"]
+      "screen": [
+        "`SERVANT OF GOD, ON A NOTICEBOARD.` → `BLESSED, IN A CHURCH WINDOW.` → `STEPS ON A LONG ROAD.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "Yesterday you heard about the whole process. Today, the titles along the way, because each one tells you exactly where a person stands. The first is Servant of God. It begins when a cause is officially opened. It makes no judgment yet; it only says the Church has started looking. The second is Venerable. That comes when the pope approves a decree that this person lived the virtues to a heroic degree. People may now point to that life as an example. The third is Blessed, and the step that gives that title is today's word: beatification. It comes from the Latin beatus, the word the Latin Bible uses for blessed in the Beatitudes. In the Douay-Rheims, they begin: \"Blessed are the poor in spirit: for theirs is the kingdom of heaven.\" For beatification, the Church usually requires a miracle, examined carefully, after people asked the Venerable person to pray for them. Martyrs are the exception; their death for the faith can be enough for this step. Once beatified, a Blessed can be honored publicly, but usually in a particular place: a diocese, a country, a religious community. Their feast is kept there, not everywhere. The final step is canonization, which opens that honor to the whole Church. So a Blessed is honored at home; a Saint is honored everywhere. Some people stay at one of these steps for a long time, sometimes for good, and that's not a verdict on their lives. It's simply where the examination has reached. The long line keeps moving, one careful step at a time.",
-      "screen": ["`SERVANT OF GOD: THE CAUSE IS OPEN.` · `VENERABLE: HEROIC VIRTUE APPROVED.` · `BLESSED: HONORED IN A PARTICULAR PLACE.` · `SAINT: HONORED BY THE WHOLE CHURCH.` · then, large: `BLESSED ARE THE POOR IN SPIRIT.`"]
+      "screen": [
+        "`SERVANT OF GOD: THE CAUSE IS OPEN.` · `VENERABLE: HEROIC VIRTUE APPROVED.` · `BLESSED: HONORED IN A PARTICULAR PLACE.` · `SAINT: HONORED BY THE WHOLE CHURCH.` · then, large: `BLESSED ARE THE POOR IN SPIRIT.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Beatification. The step that declares a person Blessed, usually after a miracle, so they can be honored publicly in a particular place.",
-      "screen": ["`BEATIFICATION — today's word`."]
+      "screen": [
+        "`BEATIFICATION — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,36 +61,105 @@
       "voice": "Your line: the long line. Today, notice something good that's only partway done, yours or someone else's, and let it be partway without judging it. Day nine hundred forty-nine.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 949 COUNTS.` → `TOMORROW: RELICS, HONESTLY.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 949 COUNTS.` → `TOMORROW: RELICS, HONESTLY.`"
+      ]
+    }
   ],
   "howItsDone": "A cause moves through the titles Servant of God, Venerable, Blessed and Saint; beatification Masses are usually held in the Blessed's home region, and the feast of a Blessed is kept locally.",
   "games": {
     "match": {
       "prompt": "the steps — tap the pairs.",
-      "pairs": [["Servant of God", "the cause is officially open"], ["Venerable", "heroic virtue approved by decree"], ["Blessed", "honored in a particular place"], ["Saint", "honored by the whole Church"]]
+      "pairs": [
+        [
+          "Servant of God",
+          "the cause is officially open"
+        ],
+        [
+          "Venerable",
+          "heroic virtue approved by decree"
+        ],
+        [
+          "Blessed",
+          "honored in a particular place"
+        ],
+        [
+          "Saint",
+          "honored by the whole Church"
+        ]
+      ]
     },
     "myth": [
-      ["a Blessed is usually honored everywhere in the Church", false, "a Blessed's feast is usually kept in a particular place: a diocese, a country, a community."],
-      ["martyrs can be beatified without a miracle", true, "their death for the faith can be enough for this step."],
-      ["staying Venerable for a long time is a judgment against a person", false, "it only shows where the examination has reached."]
+      [
+        "a Blessed is usually honored everywhere in the Church",
+        false,
+        "a Blessed's feast is usually kept in a particular place: a diocese, a country, a community."
+      ],
+      [
+        "martyrs can be beatified without a miracle",
+        true,
+        "their death for the faith can be enough for this step."
+      ],
+      [
+        "staying Venerable for a long time is a judgment against a person",
+        false,
+        "it only shows where the examination has reached."
+      ]
     ],
     "fork": {
       "setup": "a Venerable woman's cause is waiting for the next step. what does the Church usually need before she can be called Blessed?",
-      "options": ["a vote by her parish.", "a carefully examined miracle.", "a long wait after her death."],
+      "options": [
+        "a vote by her parish.",
+        "a carefully examined miracle.",
+        "a long wait after her death."
+      ],
       "answer": 1,
       "reveal": "for beatification, the Church usually requires a miracle examined after people asked her to pray. martyrs are the exception."
     },
-    "original": { "script": "beatus", "say": "beh-AH-toos", "note": "Latin: blessed, the title given at beatification, and the word of the Beatitudes in the Latin Bible." },
+    "original": {
+      "script": "beatus",
+      "say": "beh-AH-toos",
+      "note": "Latin: blessed, the title given at beatification, and the word of the Beatitudes in the Latin Bible."
+    },
     "trapdoor": [
       "what you thought: blessed is just a softer word for saint.",
       "what it means: a Blessed has been beatified, the step before canonization, and is honored in a particular place.",
       "what a scholar hears: beatus is the Latin of the Beatitudes, so every Blessed carries the Sermon on the Mount in their title."
+    ],
+    "recall": [
+      [
+        "Assisi",
+        "the town of Saint Francis"
+      ],
+      [
+        "Nirmal Hriday",
+        "their home for the dying in Kolkata"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Matthew 5:3", "work": "The Bible", "translation": "Douay-Rheims (Challoner)", "quoted": "Blessed are the poor in spirit: for theirs is the kingdom of heaven." },
-    { "ref": "Matthew 5:3 (Latin Vulgate: 'Beati pauperes spiritu')", "work": "The Bible (Vulgate)", "translation": null, "quoted": null },
-    { "ref": "Dicastery for the Causes of Saints, norms on the stages of a cause (Servant of God, Venerable, Blessed, Saint)", "work": "Holy See", "translation": null, "quoted": null }
+    {
+      "ref": "Matthew 5:3",
+      "work": "The Bible",
+      "translation": "Douay-Rheims (Challoner)",
+      "quoted": "Blessed are the poor in spirit: for theirs is the kingdom of heaven."
+    },
+    {
+      "ref": "Matthew 5:3 (Latin Vulgate: 'Beati pauperes spiritu')",
+      "work": "The Bible (Vulgate)",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Dicastery for the Causes of Saints, norms on the stages of a cause (Servant of God, Venerable, Blessed, Saint)",
+      "work": "Holy See",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -90,5 +174,9 @@
       "Audit: checked titles, Vulgate 'beati' and DR Matthew 5:3; no change. Days 947-949 practices all send the listener to search online; consider varying one."
     ]
   },
-  "meta": { "index": "949. Venerable and blessed · beatification · steps along the way: Servant of God, Venerable, Blessed, Saint · learn one Blessed from your country · the long line", "writer": "writer agent (catholic 947–956)", "written": "2026-10-01" }
+  "meta": {
+    "index": "949. Venerable and blessed · beatification · steps along the way: Servant of God, Venerable, Blessed, Saint · learn one Blessed from your country · the long line",
+    "writer": "writer agent (catholic 947–956)",
+    "written": "2026-10-01"
+  }
 }

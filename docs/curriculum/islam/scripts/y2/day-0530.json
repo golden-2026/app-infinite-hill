@@ -9,24 +9,39 @@
   "length": "7:00",
   "tomorrow": "Love and mercy between you",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY FIVE-HUNDRED-THIRTY.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY FIVE-HUNDRED-THIRTY.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, al-'ankabut, and your line was not the spider's house. What thin thing did you catch yourself reaching for? Day five hundred thirty, and a new surah.",
-      "screen": ["`NOT THE SPIDER'S HOUSE.`"]
+      "screen": [
+        "`NOT THE SPIDER'S HOUSE.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "News of a far-off war reaches Mecca. Two empires are fighting: the Romans of Constantinople, whom historians now call the Byzantines, and the Persians. And the Romans are losing. In Mecca, far from the fighting, people take sides. A report in Tirmidhi says the Muslims wanted the Romans to win, since they were people of a scripture, and the Quraysh wanted the Persians to win, since the Persians, like them, had no scripture. And then a surah opens with a headline.",
-      "screen": ["`TWO EMPIRES AT WAR.`", "`MECCA TAKES SIDES.`", "`A SURAH OPENS WITH A HEADLINE.`"]
+      "screen": [
+        "`TWO EMPIRES AT WAR.`",
+        "`MECCA TAKES SIDES.`",
+        "`A SURAH OPENS WITH A HEADLINE.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "Surah Ar-Rum, the Romans, the thirtieth. Pickthall: \"The Romans have been defeated\". In the nearer land, the verses go on, and after their defeat they will be victorious, within a few years. The phrase is bid' sinin. Bid' in Arabic means a handful, a small number; the same report in Tirmidhi gives it as between three and nine. And then: on that day the believers will rejoice in God's help. The Quraysh laughed at it. The report says Abu Bakr was so sure that he made a wager with some of them, before wagers like that were forbidden, and when the Romans won, he won it. Tradition says the emperor Heraclius turned the war. Some commentators link the believers' rejoicing to the same season as their own victory at Badr; others read it differently, and scholars have discussed exactly which events fit. But the verses don't stay with empires. The very next lines say: God's is the command, before and after. And then the surah widens out into a long meditation on signs: night and day, rain on dead earth, the cycle of life. In the surah's picture, a defeat isn't the end of a story. It's a chapter. The defeated can win, within a handful of years, and the One who turns it is the One who brings green out of dead ground.",
-      "screen": ["`THE ROMANS HAVE BEEN DEFEATED.` · `BID' SININ: A HANDFUL OF YEARS.` · `ABU BAKR'S WAGER.` · `GOD'S IS THE COMMAND, BEFORE AND AFTER.`"]
+      "screen": [
+        "`THE ROMANS HAVE BEEN DEFEATED.` · `BID' SININ: A HANDFUL OF YEARS.` · `ABU BAKR'S WAGER.` · `GOD'S IS THE COMMAND, BEFORE AND AFTER.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +53,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Defeated. The opening of Ar-Rum: the Romans have been defeated, and after their defeat they will win, within a handful of years. Today's word.",
-      "screen": ["`DEFEATED — today's word`."]
+      "screen": [
+        "`DEFEATED — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,36 +63,105 @@
       "voice": "Your line: within a few years. Today, take the small step you pictured toward the reversal, even if it's tiny. Day five hundred thirty.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 530 COUNTS.` → `TOMORROW: LOVE AND MERCY BETWEEN YOU.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 530 COUNTS.` → `TOMORROW: LOVE AND MERCY BETWEEN YOU.`"
+      ]
+    }
   ],
   "howItsDone": "Muslims read the opening of Surah Ar-Rum as a prophecy fulfilled in the Byzantine recovery under Heraclius, and as a reminder that the outcome of events belongs to God.",
   "games": {
     "match": {
       "prompt": "defeated, then victorious — tap the pairs.",
-      "pairs": [["Ar-Rum", "the Romans, surah thirty"], ["bid' sinin", "a handful of years, three to nine"], ["Abu Bakr", "made a wager on the verse"], ["the Quraysh", "laughed, and backed the Persians"]]
+      "pairs": [
+        [
+          "Ar-Rum",
+          "the Romans, surah thirty"
+        ],
+        [
+          "bid' sinin",
+          "a handful of years, three to nine"
+        ],
+        [
+          "Abu Bakr",
+          "made a wager on the verse"
+        ],
+        [
+          "the Quraysh",
+          "laughed, and backed the Persians"
+        ]
+      ]
     },
     "myth": [
-      ["when the verse came, the Romans were winning", false, "it opens: the Romans have been defeated."],
-      ["the report in Tirmidhi gives bid' as three to nine", true, "the verse says within a handful of years."],
-      ["the surah stays focused on the war to its end", false, "it widens straight into signs: night and day, rain, life from dead earth."]
+      [
+        "when the verse came, the Romans were winning",
+        false,
+        "it opens: the Romans have been defeated."
+      ],
+      [
+        "the report in Tirmidhi gives bid' as three to nine",
+        true,
+        "the verse says within a handful of years."
+      ],
+      [
+        "the surah stays focused on the war to its end",
+        false,
+        "it widens straight into signs: night and day, rain, life from dead earth."
+      ]
     ],
     "fork": {
       "setup": "you're in Mecca. the Romans have been defeated. the verse says they'll win within a few years. the Quraysh laugh. what does Abu Bakr do?",
-      "options": ["keep quiet and wait.", "make a wager that it will come true.", "agree it's unlikely."],
+      "options": [
+        "keep quiet and wait.",
+        "make a wager that it will come true.",
+        "agree it's unlikely."
+      ],
       "answer": 1,
       "reveal": "a report in Tirmidhi says he wagered with some of the Quraysh, before such wagers were forbidden, and won."
     },
-    "original": { "script": "غُلِبَتِ الرُّومُ", "say": "GHU-li-ba-tir-ROOM", "note": "Arabic: 'the Romans have been defeated', the opening words of surah thirty after alif, lam, mim." },
+    "original": {
+      "script": "غُلِبَتِ الرُّومُ",
+      "say": "GHU-li-ba-tir-ROOM",
+      "note": "Arabic: 'the Romans have been defeated', the opening words of surah thirty after alif, lam, mim."
+    },
     "trapdoor": [
       "what you thought: an old news story about an empire.",
       "what it means: a defeat named plainly, a reversal promised within a handful of years, and God's command over both.",
       "what a scholar hears: ghulibat ar-rum; bid' sinin, three to nine years in the report; Abu Bakr's wager in Tirmidhi 3193, made before such wagers were forbidden."
+    ],
+    "recall": [
+      [
+        "al-mudtarr",
+        "the one forced into a corner"
+      ],
+      [
+        "hilal",
+        "the new crescent moon"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Qur'an 30:2", "work": "The Qur'an", "translation": "Pickthall 1930", "quoted": "The Romans have been defeated" },
-    { "ref": "Qur'an 30:3–5 (victory within a few years; God's command)", "work": "The Qur'an", "translation": null, "quoted": null },
-    { "ref": "Jami' at-Tirmidhi 3193 (Abu Bakr's wager)", "work": "Jami' at-Tirmidhi", "translation": null, "quoted": null }
+    {
+      "ref": "Qur'an 30:2",
+      "work": "The Qur'an",
+      "translation": "Pickthall 1930",
+      "quoted": "The Romans have been defeated"
+    },
+    {
+      "ref": "Qur'an 30:3–5 (victory within a few years; God's command)",
+      "work": "The Qur'an",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Jami' at-Tirmidhi 3193 (Abu Bakr's wager)",
+      "work": "Jami' at-Tirmidhi",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -88,5 +174,9 @@
       "Editor review (2026-10-01): unsourced dates and history cut under the claims rule ('early six hundreds', Jerusalem 614, Syria and Egypt, the 620s campaign and peace terms, 'the two great empires of the world'); the hook now rests on the Tirmidhi report of who wanted which side to win; 'three to nine' now credited to that report; Heraclius kept only as 'tradition says'; 'many commentators' on Badr softened to 'some'; the narrator's 'the verses say a defeat is a chapter' reframed as the surah's picture. Keeper: the 'three to nine' wording may sit in Tirmidhi 3191 rather than 3193; confirm."
     ]
   },
-  "meta": { "index": "530. Defeated, then victorious · — · the Romans have been defeated, and within a few years will win (30:2–4) · hope in a reversal · within a few years", "writer": "writer agent (islam 512–541)", "written": "2026-09-30" }
+  "meta": {
+    "index": "530. Defeated, then victorious · — · the Romans have been defeated, and within a few years will win (30:2–4) · hope in a reversal · within a few years",
+    "writer": "writer agent (islam 512–541)",
+    "written": "2026-09-30"
+  }
 }

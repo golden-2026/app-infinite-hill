@@ -13,25 +13,33 @@
       "type": "the bell",
       "duration": null,
       "voice": "",
-      "screen": ["`DAY NINE-HUNDRED-EIGHT.`"]
+      "screen": [
+        "`DAY NINE-HUNDRED-EIGHT.`"
+      ]
     },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, Xuanzang crossed the desert, lost his water, and turned his horse west again. Your line: alone across the sand. What was the first step you took? Day nine hundred eight.",
-      "screen": ["`ALONE ACROSS THE SAND.`"]
+      "screen": [
+        "`ALONE ACROSS THE SAND.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "What does a person do after crossing deserts and mountain passes to reach the place he set out for? Throw a party? Write home? Xuanzang became a student again. He reached Nalanda, the great monastery of learning in north India that we visited earlier this year, and instead of collecting texts and hurrying back, he stayed. He learned the language. He sat in lectures. He read the same difficult books over and over. Earlier we saw Nalanda as a place. Today we see it through one pair of eyes, a guest from China who made it his school.",
-      "screen": ["`THE TRAVELER ARRIVES.` → `HE STAYS.` → `NALANDA THROUGH ONE PAIR OF EYES.`"]
+      "screen": [
+        "`THE TRAVELER ARRIVES.` → `HE STAYS.` → `NALANDA THROUGH ONE PAIR OF EYES.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "First, the teacher who was waiting. The head of Nalanda in Xuanzang's day was an old monk named Shilabhadra, deeply honored there, his biography says. And it tells a striking story: years before, Shilabhadra had been ill and in pain, and in a dream he was told to bear it, because a monk from China would come to learn from him. When Xuanzang arrived, the story of that dream was told to him. Second, what he came to learn. Shilabhadra taught the Yogacara, a school whose great subject is the mind: how what we experience is shaped by the mind that experiences it. Xuanzang had come for one long text of that school in particular, and he heard it taught through from beginning to end. Third, life inside the walls. The biography describes monks discussing and debating from morning until night, rooms given to guests, and food supplied so the students could study. Xuanzang learned Sanskrit well enough to read, argue and later translate. Fourth, why it matters. He could have filled his bags and left. He didn't. He stayed for years, because some things don't open on a first reading. The Dhammapada, the Buddha's sayings, begins with a line that points the same way: \"All that we are is the result of what we have thought.\" A line like that is easy to say and slow to understand. Depth can look like this: coming back to the same thing until it gives up what it has.",
-      "screen": ["`AN OLD TEACHER WAITING.` · `A SCHOOL ABOUT THE MIND.` · `DEBATE FROM MORNING TO NIGHT.` · `STAYING UNTIL IT OPENS.` · then, large: `YEARS AT NALANDA.`"]
+      "screen": [
+        "`AN OLD TEACHER WAITING.` · `A SCHOOL ABOUT THE MIND.` · `DEBATE FROM MORNING TO NIGHT.` · `STAYING UNTIL IT OPENS.` · then, large: `YEARS AT NALANDA.`"
+      ]
     },
     {
       "type": "the practice",
@@ -43,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Nalanda. The great monastery of learning in north India where Xuanzang studied for years with the teacher Shilabhadra. Today's word.",
-      "screen": ["`NALANDA — today's word`."]
+      "screen": [
+        "`NALANDA — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -55,7 +65,9 @@
       "type": "the close",
       "duration": null,
       "voice": "",
-      "screen": ["`DAY 908 COUNTS.` → `TOMORROW: HOME WITH THE TEXTS.`"]
+      "screen": [
+        "`DAY 908 COUNTS.` → `TOMORROW: HOME WITH THE TEXTS.`"
+      ]
     }
   ],
   "howItsDone": "In monastic schools of several Buddhist traditions, students still study a few core texts slowly with a teacher, memorizing, discussing and debating them.",
@@ -63,16 +75,40 @@
     "match": {
       "prompt": "Xuanzang at Nalanda: tap the pairs.",
       "pairs": [
-        ["Shilabhadra", "the old teacher who had been waiting"],
-        ["Yogacara", "a school whose subject is the mind"],
-        ["Nalanda", "a monastery of learning in north India"],
-        ["the Dhammapada's first line", "all that we are comes from thought"]
+        [
+          "Shilabhadra",
+          "the old teacher who had been waiting"
+        ],
+        [
+          "Yogacara",
+          "a school whose subject is the mind"
+        ],
+        [
+          "Nalanda",
+          "a monastery of learning in north India"
+        ],
+        [
+          "the Dhammapada's first line",
+          "all that we are comes from thought"
+        ]
       ]
     },
     "myth": [
-      ["Xuanzang collected texts at Nalanda and left right away", false, "he stayed for years, learning Sanskrit and hearing teachings in full."],
-      ["his biography says the old teacher had dreamed of a monk from China", true, "in the dream Shilabhadra was told to bear his illness, because that monk would come to learn from him."],
-      ["at Nalanda, Xuanzang only read in Chinese", false, "he learned Sanskrit well enough to argue and later translate."]
+      [
+        "Xuanzang collected texts at Nalanda and left right away",
+        false,
+        "he stayed for years, learning Sanskrit and hearing teachings in full."
+      ],
+      [
+        "his biography says the old teacher had dreamed of a monk from China",
+        true,
+        "in the dream Shilabhadra was told to bear his illness, because that monk would come to learn from him."
+      ],
+      [
+        "at Nalanda, Xuanzang only read in Chinese",
+        false,
+        "he learned Sanskrit well enough to argue and later translate."
+      ]
     ],
     "fork": {
       "setup": "you've crossed deserts and mountains to reach the teachers you wanted. the texts are here. what do you do?",
@@ -84,16 +120,40 @@
       "answer": 1,
       "reveal": "Xuanzang stayed. he learned Sanskrit, heard the long Yogacara text taught through, and joined the debates from morning to night."
     },
-    "original": { "script": "नालन्दा", "say": "nah-LUN-dah", "note": "Sanskrit: Nalanda, the monastery of learning in north India where Xuanzang studied." },
+    "original": {
+      "script": "नालन्दा",
+      "say": "nah-LUN-dah",
+      "note": "Sanskrit: Nalanda, the monastery of learning in north India where Xuanzang studied."
+    },
     "trapdoor": [
       "what you thought: a famous old university Xuanzang visited.",
       "what it means: the place where a traveler stopped traveling and studied the mind with a teacher for years.",
       "what a scholar hears: Shilabhadra taught him the Yogacara, the school of the mind, which Xuanzang later carried into Chinese."
+    ],
+    "recall": [
+      [
+        "An Shigao",
+        "a monk from Parthia"
+      ],
+      [
+        "Ledi Sayadaw",
+        "taught meditation to lay people"
+      ]
     ]
   },
   "sources": [
-    { "ref": "The Life of Hiuen-Tsiang by Hwui Li, book 3 (Nalanda, Shilabhadra's dream, the teaching)", "work": "The Life of Hiuen-Tsiang", "translation": null, "quoted": null },
-    { "ref": "Dhammapada 1", "work": "The Dhammapada", "translation": "Max Müller 1881", "quoted": "All that we are is the result of what we have thought" }
+    {
+      "ref": "The Life of Hiuen-Tsiang by Hwui Li, book 3 (Nalanda, Shilabhadra's dream, the teaching)",
+      "work": "The Life of Hiuen-Tsiang",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Dhammapada 1",
+      "work": "The Dhammapada",
+      "translation": "Max Müller 1881",
+      "quoted": "All that we are is the result of what we have thought"
+    }
   ],
   "review": {
     "status": "pending",

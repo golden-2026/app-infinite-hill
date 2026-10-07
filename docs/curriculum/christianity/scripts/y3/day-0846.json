@@ -9,24 +9,42 @@
   "length": "6:45",
   "tomorrow": "Margery Kempe",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY EIGHT-HUNDRED-FORTY-SIX.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY EIGHT-HUNDRED-FORTY-SIX.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, monasteries as hospitals: herbs by the infirmary, books in the scriptorium. Your line was keepers of the light. Who got your herb? Day eight hundred forty-six.",
-      "screen": ["`KEEPERS OF THE LIGHT.`"]
+      "screen": [
+        "`KEEPERS OF THE LIGHT.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "A knock at the monastery gate, after dark. Rain. On the other side of the door, a stranger: muddy boots, a wet cloak, nobody the porter has ever seen. Could be a pilgrim. Could be a thief. Could be a lord in disguise or a beggar with nowhere else to go. The old porter gets up from his bench by the gate, and the words he's been taught to say come out first, before any question about who this is: thanks be to God. Today: guests as Christ.",
-      "screen": ["`A KNOCK AFTER DARK.`", "`A STRANGER IN THE RAIN.`", "`THANKS BE TO GOD.`"]
+      "screen": [
+        "`A KNOCK AFTER DARK.`",
+        "`A STRANGER IN THE RAIN.`",
+        "`THANKS BE TO GOD.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "The Rule of Benedict, the guidebook for monks we met yesterday, has a chapter on guests, and it opens with a startling instruction. Let every guest who comes be received as Christ. Why? Because, the Rule says, Christ himself will one day say the words of Matthew's Gospel, in the King James Bible: \"I was a stranger, and ye took me in.\" So the stranger at the gate is not an interruption. In the Rule's eyes, the stranger is Christ, arriving in disguise. And the chapter gets specific. The superior and the brothers go out to meet the guest. They pray together, and then exchange the kiss of peace. The abbot pours water over the guest's hands, and he and the community wash the guest's feet. Visitors are fed. And the Rule adds a line that is easy to miss: the poor and pilgrims are to be shown the most care, because in them Christ is received more especially. The rich, it notes dryly, get respect anyway, because people are wary of them. Then it is practical too. The abbot and the guests have their own kitchen, so people arriving at all hours don't disturb the brothers. Holiness with a spare kitchen. The first letter of Peter puts the same welcome in a few plain words: \"Use hospitality one to another without grudging.\" Without grudging, even at the door after dark. The idea underneath doesn't need a monastery. Every door, sooner or later, has a stranger on the other side.",
-      "screen": ["`RECEIVED AS CHRIST.`", "`I WAS A STRANGER, AND YE TOOK ME IN.`", "`WATER, FEET, BREAD, THE POOR FIRST.`", "`WITHOUT GRUDGING.`"]
+      "screen": [
+        "`RECEIVED AS CHRIST.`",
+        "`I WAS A STRANGER, AND YE TOOK ME IN.`",
+        "`WATER, FEET, BREAD, THE POOR FIRST.`",
+        "`WITHOUT GRUDGING.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +56,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Hospes. The Latin word for guest, and also host, in the Rule of Benedict's chapter that says every guest should be received as Christ.",
-      "screen": ["`HOSPES — today's word`."]
+      "screen": [
+        "`HOSPES — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,37 +66,111 @@
       "voice": "Your line: receive them as christ. Today, when the person you chose turns up, stand up, look up, or put the phone down, and greet them first. Day eight hundred forty-six.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 846 COUNTS.` → `TOMORROW: MARGERY KEMPE.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 846 COUNTS.` → `TOMORROW: MARGERY KEMPE.`"
+      ]
+    }
   ],
   "howItsDone": "Benedictine monasteries and convents keep guest houses where visitors can stay, pray with the community and share meals, and the porter or guest master greets them in the spirit of Rule 53.",
   "games": {
     "match": {
       "prompt": "the guest at the gate — tap the pairs.",
-      "pairs": [["the guest", "received as Christ"], ["the abbot", "pours water over the guest's hands"], ["the poor and pilgrims", "shown the most care"], ["a separate kitchen", "for the abbot and guests"]]
+      "pairs": [
+        [
+          "the guest",
+          "received as Christ"
+        ],
+        [
+          "the abbot",
+          "pours water over the guest's hands"
+        ],
+        [
+          "the poor and pilgrims",
+          "shown the most care"
+        ],
+        [
+          "a separate kitchen",
+          "for the abbot and guests"
+        ]
+      ]
     },
     "myth": [
-      ["Benedict's Rule tells monks to receive only important visitors", false, "every guest is received as Christ, and the poor and pilgrims are shown the most care."],
-      ["the Rule bases its welcome on a line from Matthew", true, "\"I was a stranger, and ye took me in.\""],
-      ["the Rule sets aside a kitchen for the abbot and guests", true, "so people arriving at all hours don't disturb the brothers."]
+      [
+        "Benedict's Rule tells monks to receive only important visitors",
+        false,
+        "every guest is received as Christ, and the poor and pilgrims are shown the most care."
+      ],
+      [
+        "the Rule bases its welcome on a line from Matthew",
+        true,
+        "\"I was a stranger, and ye took me in.\""
+      ],
+      [
+        "the Rule sets aside a kitchen for the abbot and guests",
+        true,
+        "so people arriving at all hours don't disturb the brothers."
+      ]
     ],
     "fork": {
       "setup": "you're the porter of a monastery. a stranger knocks after dark: muddy, soaked, unknown. what does the Rule have you do first?",
-      "options": ["ask who they are and what they want.", "greet them with thanks to God and receive them as Christ.", "tell them to come back in the morning."],
+      "options": [
+        "ask who they are and what they want.",
+        "greet them with thanks to God and receive them as Christ.",
+        "tell them to come back in the morning."
+      ],
       "answer": 1,
       "reveal": "the Rule has the brothers go out to meet the guest and receive them as Christ, with the poor and pilgrims shown the most care."
     },
-    "original": { "script": "hospes", "say": "HOS-pes", "note": "Latin: guest, and also host, the word for guest in the Rule of Benedict." },
+    "original": {
+      "script": "hospes",
+      "say": "HOS-pes",
+      "note": "Latin: guest, and also host, the word for guest in the Rule of Benedict."
+    },
     "trapdoor": [
       "what you thought: monks being polite to visitors.",
       "what it means: every guest received as Christ himself, with the poor and pilgrims first.",
       "what a scholar hears: Rule of Benedict chapter 53, built on Matthew 25:35, with the foot-washing, the kiss of peace and the guests' own kitchen."
+    ],
+    "recall": [
+      [
+        "al-Kamil",
+        "the Sultan who received Francis"
+      ],
+      [
+        "Glagolitic",
+        "the alphabet he made"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Matthew 25:35", "work": "The Bible", "translation": "KJV (1769)", "quoted": "I was a stranger, and ye took me in" },
-    { "ref": "1 Peter 4:9", "work": "The Bible", "translation": "KJV (1769)", "quoted": "Use hospitality one to another without grudging." },
-    { "ref": "Rule of Saint Benedict, chapter 53 (on the reception of guests)", "work": "Rule of Saint Benedict", "translation": null, "quoted": null },
-    { "ref": "Rule of Saint Benedict, chapter 66 (the porter answers with Deo gratias)", "work": "Rule of Saint Benedict", "translation": null, "quoted": null }
+    {
+      "ref": "Matthew 25:35",
+      "work": "The Bible",
+      "translation": "KJV (1769)",
+      "quoted": "I was a stranger, and ye took me in"
+    },
+    {
+      "ref": "1 Peter 4:9",
+      "work": "The Bible",
+      "translation": "KJV (1769)",
+      "quoted": "Use hospitality one to another without grudging."
+    },
+    {
+      "ref": "Rule of Saint Benedict, chapter 53 (on the reception of guests)",
+      "work": "Rule of Saint Benedict",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Rule of Saint Benedict, chapter 66 (the porter answers with Deo gratias)",
+      "work": "Rule of Saint Benedict",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -89,8 +183,13 @@
       "Index hook cites 'Rule 53'; kept in the hook field.",
       "Tomorrow: Margery Kempe; not previewed beyond the title.",
       "Editor: Hebrews 13:2 (quoted on day 828) replaced with 1 Peter 4:9; cut the uncited present-day claim about guest houses from the teach (it stays in howItsDone); the Rule's line on the rich now matches its reason (people fear them).",
-      "Editor 2: Rule 53's separate kitchen is for the abbot and guests, not guests alone; teach, match and myth corrected; stock 'Settle, and breathe' cut.", "Audit: practice opener no longer asks every listener to treat someone 'as if they were Christ' (a belief frame); now 'the way the Rule welcomes a guest'. Matthew 25:35, 1 Peter 4:9 KJV and Rule 53/66 paraphrases checked."
+      "Editor 2: Rule 53's separate kitchen is for the abbot and guests, not guests alone; teach, match and myth corrected; stock 'Settle, and breathe' cut.",
+      "Audit: practice opener no longer asks every listener to treat someone 'as if they were Christ' (a belief frame); now 'the way the Rule welcomes a guest'. Matthew 25:35, 1 Peter 4:9 KJV and Rule 53/66 paraphrases checked."
     ]
   },
-  "meta": { "index": "846. Guests as Christ · — · the Rule of Benedict: let all guests be received as Christ (Rule 53) · welcome someone as if they were Christ · receive them as christ", "writer": "writer agent (christianity 837–846)", "written": "2026-10-01" }
+  "meta": {
+    "index": "846. Guests as Christ · — · the Rule of Benedict: let all guests be received as Christ (Rule 53) · welcome someone as if they were Christ · receive them as christ",
+    "writer": "writer agent (christianity 837–846)",
+    "written": "2026-10-01"
+  }
 }

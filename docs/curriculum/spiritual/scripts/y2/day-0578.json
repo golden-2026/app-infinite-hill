@@ -9,24 +9,37 @@
   "length": "6:30",
   "tomorrow": "Show me I'm wrong",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY FIVE-HUNDRED-SEVENTY-EIGHT.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY FIVE-HUNDRED-SEVENTY-EIGHT.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday: in and out, things hurrying into being and hurrying away. What beginning and what ending did you notice? Day five hundred seventy-eight.",
-      "screen": ["`ALREADY OUT OF SIGHT.`"]
+      "screen": [
+        "`ALREADY OUT OF SIGHT.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Pickup basketball, Saturday morning. Going for a rebound, a guy catches you with an elbow, right in the ribs. It hurts. He says, sorry, man. And here's the strange thing: you don't go home and lie awake wondering what he really meant. You don't tell your friends he's out to get you. It's the game. Bodies collide. Now move that same elbow into an office, a family, a group chat, and suddenly it's a plot. Marcus Aurelius noticed the difference on the training ground.",
-      "screen": ["`AN ELBOW IN THE RIBS.` → `IT'S THE GAME.` → `THE SAME ELBOW AT WORK.`"]
+      "screen": [
+        "`AN ELBOW IN THE RIBS.` → `IT'S THE GAME.` → `THE SAME ELBOW AT WORK.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "First, the gym. In Meditations six, twenty, Marcus describes training in the gymnasium. Someone scratches you with his nails, or butts you with his head. You don't make a show of anger. You aren't offended. And you don't suspect him afterward of plotting against you. Second, the caution. Marcus is not naive. He says you do keep an eye on him next time. But not as an enemy, and not with suspicion. Just with good-natured care, the way you'd step around a puppy that jumps. Watchful, not hostile. Third, the move. Then he says: let it be like this in the rest of life too. Overlook a lot in the people who are, so to speak, training alongside you. It's possible, he says, to step out of the way without suspecting or hating anyone. Fourth, why the gym helps. In training, everyone knows bumps come with the sport. Nobody takes them personally because nobody expected a world without contact. Life with other people is also a contact sport. Coworkers forget to cc you. A friend cancels. Your sister says the thing in the wrong tone. Plenty of these are elbows under a rebound, not schemes. Marcus isn't saying nobody ever means harm. He's saying the scratch shouldn't grow into a story. Treat it as what it probably was, and keep playing.",
-      "screen": ["`SCRATCHED WHILE TRAINING.` · `WATCHFUL, NOT AN ENEMY.` · `OVERLOOK MUCH IN FELLOW ATHLETES.` · `LIFE IS A CONTACT SPORT.` · then, large: `JUST A SCRATCH.`"]
+      "screen": [
+        "`SCRATCHED WHILE TRAINING.` · `WATCHFUL, NOT AN ENEMY.` · `OVERLOOK MUCH IN FELLOW ATHLETES.` · `LIFE IS A CONTACT SPORT.` · then, large: `JUST A SCRATCH.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Gymnasium. Marcus's training ground, where a scratch or a bump isn't a plot, and most of life's bumps aren't either. Today's word.",
-      "screen": ["`GYMNASIUM — today's word`."]
+      "screen": [
+        "`GYMNASIUM — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,34 +61,93 @@
       "voice": "Your line: just a scratch. When someone bumps you today, in words or in a hallway, let one accident be an accident. Say the line, and keep playing. Day five hundred seventy-eight.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 578 COUNTS.` → `TOMORROW: SHOW ME I'M WRONG.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 578 COUNTS.` → `TOMORROW: SHOW ME I'M WRONG.`"
+      ]
+    }
   ],
   "howItsDone": "Readers of Marcus often use the gym image to keep small slights at their actual size: they stay alert to a pattern without assuming hostile intent from a single bump.",
   "games": {
     "match": {
       "prompt": "the scratch in the gym — tap the pairs.",
-      "pairs": [["the scratch", "an accident of training"], ["next time", "watch him, not as an enemy"], ["fellow athletes", "people we overlook much in"], ["the story", "what the scratch shouldn't grow into"]]
+      "pairs": [
+        [
+          "the scratch",
+          "an accident of training"
+        ],
+        [
+          "next time",
+          "watch him, not as an enemy"
+        ],
+        [
+          "fellow athletes",
+          "people we overlook much in"
+        ],
+        [
+          "the story",
+          "what the scratch shouldn't grow into"
+        ]
+      ]
     },
     "myth": [
-      ["Marcus says never be careful around someone who hurt you", false, "he says keep an eye on him, but without suspicion or hatred."],
-      ["the passage describes being scratched or butted while training in the gymnasium", true, "and not suspecting the other person of plotting afterward."],
-      ["Marcus says nobody ever means harm", false, "he says most bumps can be stepped around without suspicion; he doesn't deny that harm exists."]
+      [
+        "Marcus says never be careful around someone who hurt you",
+        false,
+        "he says keep an eye on him, but without suspicion or hatred."
+      ],
+      [
+        "the passage describes being scratched or butted while training in the gymnasium",
+        true,
+        "and not suspecting the other person of plotting afterward."
+      ],
+      [
+        "Marcus says nobody ever means harm",
+        false,
+        "he says most bumps can be stepped around without suspicion; he doesn't deny that harm exists."
+      ]
     ],
     "fork": {
       "setup": "your training partner catches you with an elbow. it hurts. what do you do next session?",
-      "options": ["refuse to train with him.", "keep an eye out, but treat him as a friend, not an enemy.", "tell everyone he did it on purpose."],
+      "options": [
+        "refuse to train with him.",
+        "keep an eye out, but treat him as a friend, not an enemy.",
+        "tell everyone he did it on purpose."
+      ],
       "answer": 1,
       "reveal": "Meditations 6.20: we watch out for him, but not as an enemy and without suspicion, and we can do the same in life."
     },
-    "original": { "script": "γυμνάσιον", "say": "goom-NAH-see-on", "note": "Greek: a training ground, where athletes exercised; the setting Marcus pictures in 6.20." },
+    "original": {
+      "script": "γυμνάσιον",
+      "say": "goom-NAH-see-on",
+      "note": "Greek: a training ground, where athletes exercised; the setting Marcus pictures in 6.20."
+    },
     "trapdoor": [
       "what you thought: just ignore people who hurt you.",
       "what it means: treat most bumps as accidents, stay watchful without hostility, and don't let the scratch become a story.",
       "what a scholar hears: Marcus asks himself to overlook much in those who are like fellow athletes, so ordinary life becomes a shared training ground where bumps are expected."
+    ],
+    "recall": [
+      [
+        "Heraclitus",
+        "no stepping in the same river twice"
+      ],
+      [
+        "galene",
+        "a sea gone flat after wind"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Meditations 6.20", "work": "Marcus Aurelius, Meditations", "translation": null, "quoted": null }
+    {
+      "ref": "Meditations 6.20",
+      "work": "Marcus Aurelius, Meditations",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",

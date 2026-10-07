@@ -9,24 +9,37 @@
   "length": "6:30",
   "tomorrow": "Worn clothes",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY SEVEN-HUNDRED-SIXTY-NINE.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY SEVEN-HUNDRED-SIXTY-NINE.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, rebirth, as Buddhists teach it: a lamp lit from a lamp. Your line was as they teach it. Did you ask anyone in your family? Today, from Japan, a few lines written at the end. Day seven hundred sixty-nine.",
-      "screen": ["`AS THEY TEACH IT.`"]
+      "screen": [
+        "`AS THEY TEACH IT.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "A brush, a sheet of paper, and not much time. In Japan, Zen monks and poets kept a custom: as death came near, they would leave a short poem behind. It was called a jisei, a farewell poem. Not a will, not a speech, not a list of regrets. Sometimes just a picture: a field, a moon, a sound in the night. Today: what someone chooses to see when they know they're writing the last thing.",
-      "screen": ["`A BRUSH, NOT MUCH TIME.` → `NOT A WILL, A POEM.` → `WHAT DO YOU SEE LAST?`"]
+      "screen": [
+        "`A BRUSH, NOT MUCH TIME.` → `NOT A WILL, A POEM.` → `WHAT DO YOU SEE LAST?`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "First, the custom. A farewell poem was a way of meeting death with attention instead of only fear. Tradition says some Zen teachers were expected to leave a verse for their students, a last teaching in a handful of words. Poets took up the practice too. Second, a sickbed. The poet Matsuo Bashō walked the roads of Japan and wrote about them. He fell ill on a journey, and his students wrote down a poem from those days. In plain English, it says something like this: sick on a journey, my dreams go wandering over withered fields. That's it. No lesson about death. Just a traveler who, lying still, is still traveling in his dreams, across a winter landscape. Third, a story people tell. When his students asked for a death poem, the story goes, Bashō answered that every poem he had written was his death poem. Whether or not he said it, the idea has stayed: if any poem might be the last, each one is written with that care. Fourth, why it matters on a Tuesday. A last poem asks a simple question. If there were only a few words left, what would be worth seeing? The answer can be small, the way Bashō's was: a field, gone brown, and a traveler's dream crossing it. Writing one long before the end isn't gloomy. It's a way of finding out what you notice when you stop to look.",
-      "screen": ["`A FAREWELL POEM.` · `SICK ON A JOURNEY.` · `EVERY POEM A LAST POEM.` · `WHAT'S WORTH SEEING NOW?` · then, large: `A LAST POEM.`"]
+      "screen": [
+        "`A FAREWELL POEM.` · `SICK ON A JOURNEY.` · `EVERY POEM A LAST POEM.` · `WHAT'S WORTH SEEING NOW?` · then, large: `A LAST POEM.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Jisei: a Japanese farewell poem, written by monks and poets as death drew near, sometimes about something small seen clearly. Today's word.",
-      "screen": ["`JISEI — today's word`."]
+      "screen": [
+        "`JISEI — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,35 +61,99 @@
       "voice": "Your line: a traveler's dream crossing it. Today, write down the three lines you made, and put them somewhere you'll find them again. Day seven hundred sixty-nine.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 769 COUNTS.` → `TOMORROW: WORN CLOTHES.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 769 COUNTS.` → `TOMORROW: WORN CLOTHES.`"
+      ]
+    }
   ],
   "howItsDone": "In Japan, Zen monks and poets kept a custom of writing a short farewell poem, a jisei, as death approached; these poems are still collected, read and written today.",
   "games": {
     "match": {
       "prompt": "the last poem — tap the pairs.",
-      "pairs": [["jisei", "a farewell poem as death nears"], ["Bashō", "a poet who fell ill on a journey"], ["withered fields", "where his dreams go wandering"], ["the story people tell", "every poem was his death poem"]]
+      "pairs": [
+        [
+          "jisei",
+          "a farewell poem as death nears"
+        ],
+        [
+          "Bashō",
+          "a poet who fell ill on a journey"
+        ],
+        [
+          "withered fields",
+          "where his dreams go wandering"
+        ],
+        [
+          "the story people tell",
+          "every poem was his death poem"
+        ]
+      ]
     },
     "myth": [
-      ["a farewell poem has to talk about death directly", false, "Bashō's sickbed poem speaks of a journey, dreams and withered fields."],
-      ["Bashō's students wrote down a poem from his sickbed", true, "he fell ill on a journey, and they kept what he said."],
-      ["the custom belonged only to monks", false, "monks and poets both kept it."]
+      [
+        "a farewell poem has to talk about death directly",
+        false,
+        "Bashō's sickbed poem speaks of a journey, dreams and withered fields."
+      ],
+      [
+        "Bashō's students wrote down a poem from his sickbed",
+        true,
+        "he fell ill on a journey, and they kept what he said."
+      ],
+      [
+        "the custom belonged only to monks",
+        false,
+        "monks and poets both kept it."
+      ]
     ],
     "fork": {
       "setup": "you're one of Bashō's students, by his sickbed. you ask him for a death poem. what does the story say he answered?",
-      "options": ["he refused to write anything at all.", "every poem he had written was his death poem.", "he asked a student to write it for him."],
+      "options": [
+        "he refused to write anything at all.",
+        "every poem he had written was his death poem.",
+        "he asked a student to write it for him."
+      ],
       "answer": 1,
       "reveal": "so the story goes. his students still kept a poem from those days: sick on a journey, dreams wandering over withered fields."
     },
-    "original": { "script": "辞世", "say": "JEE-say", "note": "Japanese: jisei, the word for a farewell poem left at the end of life." },
+    "original": {
+      "script": "辞世",
+      "say": "JEE-say",
+      "note": "Japanese: jisei, the word for a farewell poem left at the end of life."
+    },
     "trapdoor": [
       "what you thought: a death poem is a gloomy goodbye.",
       "what it means: a short farewell poem, sometimes about one ordinary thing seen clearly at the end.",
       "what a scholar hears: Bashō's sickbed poem, kept by his students, beside the story that he called every poem his last."
+    ],
+    "recall": [
+      [
+        "Yad Vashem",
+        "a place and a name, from Isaiah"
+      ],
+      [
+        "Tisha B'Av",
+        "the ninth of the month of Av"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Matsuo Bashō, last poem, as recorded by his students (tabi ni yande)", "work": "Bashō's poems", "translation": null, "quoted": null },
-    { "ref": "the story of Bashō's answer about a death poem, as told in later accounts", "work": "Bashō tradition", "translation": null, "quoted": null }
+    {
+      "ref": "Matsuo Bashō, last poem, as recorded by his students (tabi ni yande)",
+      "work": "Bashō's poems",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "the story of Bashō's answer about a death poem, as told in later accounts",
+      "work": "Bashō tradition",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -89,5 +168,9 @@
       "Audit (2026-10-01): practice opener 'For these two minutes' still present despite editor note; varied. Bashō content unchanged (sickbed poem paraphrased, 'every poem my death poem' kept as a story)."
     ]
   },
-  "meta": { "index": "769. A last poem · jisei · Japanese monks and poets wrote a short poem as death approached · write a three-line poem · a last poem", "writer": "spiritual writer agent (days 767–776)", "written": "2026-10-01" }
+  "meta": {
+    "index": "769. A last poem · jisei · Japanese monks and poets wrote a short poem as death approached · write a three-line poem · a last poem",
+    "writer": "spiritual writer agent (days 767–776)",
+    "written": "2026-10-01"
+  }
 }

@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "Monte Cassino",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY SEVEN-HUNDRED-FIFTY.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY SEVEN-HUNDRED-FIFTY.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, Leo's Christmas sermon: Christian, recognize your dignity. Your line was know your dignity. What did you do with care for yourself? Day seven hundred fifty.",
-      "screen": ["`KNOW YOUR DIGNITY.`"]
+      "screen": [
+        "`KNOW YOUR DIGNITY.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "A rope comes down a rock face, with a loaf of bread tied to the end and a little bell on it. Below, in a cave in the hills east of Rome, a young man hears the bell, reaches out, and takes his bread. Up above, a monk named Romanus has saved it from his own meals. He does this, day after day, for a young man nobody else knows is there. The young man is Benedict. He was supposed to be a student in Rome. Today, how he ended up at the bottom of that rope.",
-      "screen": ["`A ROPE, A LOAF, A BELL.` → `A MONK ABOVE.` → `A YOUNG MAN BELOW.`"]
+      "screen": [
+        "`A ROPE, A LOAF, A BELL.` → `A MONK ABOVE.` → `A YOUNG MAN BELOW.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "Our source is Pope Gregory the Great, who wrote Benedict's life in his Dialogues. He says he heard it from Benedict's own disciples. Here's how it starts. Benedict came from a good family in the region of Nursia, and was sent to Rome to study. And there he looked around. Gregory says he saw many of the students sliding into vice, and pulled back the foot he'd just set in the world, afraid that if he took in too much of it, he'd fall in headlong himself. So he left his books, his father's house and his inheritance, wanting to please God alone. Next, a phrase of Gregory's worth keeping. He says Benedict left knowingly ignorant and wisely unlearned. He wasn't running from learning. He was running from a kind of life. Now the cave. Benedict went to a wild place called Subiaco. On the way he met Romanus, a monk, who gave him the monk's habit and kept his secret. Benedict lived in a narrow cave, Gregory says, for three years, unknown to everyone except Romanus, who lowered bread down to him on that rope with its bell. Gregory also says the devil once threw a stone and broke the bell. Romanus kept feeding him anyway. And here's the twist. Eventually shepherds found him, and at first they took him for a wild animal, dressed as he was in skins. But once they talked with him, many of them changed their lives. The hiding place started to become a gathering place. Catholics still visit the cave at Subiaco today, with a monastery built around it. It began with a young man who left Rome wanting to please God alone.",
-      "screen": ["`A STUDENT IN ROME.` · `KNOWINGLY IGNORANT.` · `THREE YEARS IN A CAVE.` · `THE SHEPHERDS FIND HIM.` · then, large: `AWAY FROM ROME.`"]
+      "screen": [
+        "`A STUDENT IN ROME.` · `KNOWINGLY IGNORANT.` · `THREE YEARS IN A CAVE.` · `THE SHEPHERDS FIND HIM.` · then, large: `AWAY FROM ROME.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "specus. Latin for a cave, the word Gregory used for Benedict's hiding place at Subiaco, fed by a rope and a bell. Today's word.",
-      "screen": ["`SPECUS — today's word`."]
+      "screen": [
+        "`SPECUS — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,34 +61,93 @@
       "voice": "Your line: away from rome. Today, find one quiet stretch, even ten minutes, and protect it from the noise. Day seven hundred fifty.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 750 COUNTS.` → `TOMORROW: MONTE CASSINO.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 750 COUNTS.` → `TOMORROW: MONTE CASSINO.`"
+      ]
+    }
   ],
   "howItsDone": "Catholics honor Saint Benedict as a saint and a founder of monastic life, and pilgrims visit the Sacred Cave at Subiaco, where a monastery now stands around the place he lived.",
   "games": {
     "match": {
       "prompt": "Benedict in the cave — tap the pairs.",
-      "pairs": [["Gregory the Great", "wrote Benedict's life"], ["Romanus", "lowered bread on a rope"], ["Subiaco", "where the cave is"], ["the shepherds", "first took him for an animal"]]
+      "pairs": [
+        [
+          "Gregory the Great",
+          "wrote Benedict's life"
+        ],
+        [
+          "Romanus",
+          "lowered bread on a rope"
+        ],
+        [
+          "Subiaco",
+          "where the cave is"
+        ],
+        [
+          "the shepherds",
+          "first took him for an animal"
+        ]
+      ]
     },
     "myth": [
-      ["Benedict left Rome because he failed his studies", false, "Gregory says he saw students sliding into vice and left so he wouldn't fall in himself."],
-      ["Gregory says Benedict lived in the cave for three years", true, "known only to Romanus, who fed him with bread on a rope."],
-      ["nobody ever found Benedict's cave", false, "shepherds found him, and many of them changed their lives after talking with him."]
+      [
+        "Benedict left Rome because he failed his studies",
+        false,
+        "Gregory says he saw students sliding into vice and left so he wouldn't fall in himself."
+      ],
+      [
+        "Gregory says Benedict lived in the cave for three years",
+        true,
+        "known only to Romanus, who fed him with bread on a rope."
+      ],
+      [
+        "nobody ever found Benedict's cave",
+        false,
+        "shepherds found him, and many of them changed their lives after talking with him."
+      ]
     ],
     "fork": {
       "setup": "you're Benedict, a student in Rome. your classmates are sliding into a life you don't want. what do you do?",
-      "options": ["stay and try to fix the city.", "leave your books and your inheritance and go to the hills.", "finish your studies first and decide later."],
+      "options": [
+        "stay and try to fix the city.",
+        "leave your books and your inheritance and go to the hills.",
+        "finish your studies first and decide later."
+      ],
       "answer": 1,
       "reveal": "Gregory says Benedict left knowingly ignorant and wisely unlearned, and went to live in a cave at Subiaco."
     },
-    "original": { "script": "specus", "say": "SPEH-koos", "note": "Latin: a cave — the word Gregory's Latin uses for Benedict's hiding place." },
+    "original": {
+      "script": "specus",
+      "say": "SPEH-koos",
+      "note": "Latin: a cave — the word Gregory's Latin uses for Benedict's hiding place."
+    },
     "trapdoor": [
       "what you thought: monks are people who never wanted anything from the world.",
       "what it means: Benedict had a place in Rome, saw where it was leading, and chose a cave at Subiaco instead.",
       "what a scholar hears: Gregory's phrase from the Dialogues, knowingly ignorant and wisely unlearned (scienter nescius et sapienter indoctus)."
+    ],
+    "recall": [
+      [
+        "Paula",
+        "a Roman widow who sailed for Bethlehem"
+      ],
+      [
+        "mystagogy",
+        "from the sign to what it signifies"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Dialogues 2, prologue and 1", "work": "Gregory the Great, Dialogues", "translation": null, "quoted": null }
+    {
+      "ref": "Dialogues 2, prologue and 1",
+      "work": "Gregory the Great, Dialogues",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -88,5 +162,9 @@
       "Second editor pass: 'an old monk' cut to 'a monk' (Gregory gives no age for Romanus); closing line no longer says Rome was 'too loud' (Gregory's reason is vice and the wish to please God alone)."
     ]
   },
-  "meta": { "index": "750. Benedict in the cave (c. 500) · a student leaves Rome in disgust and lives three years in a cave at Subiaco · leave one noisy place · away from rome", "writer": "writer agent (catholic 747–756)", "written": "2026-10-01" }
+  "meta": {
+    "index": "750. Benedict in the cave (c. 500) · a student leaves Rome in disgust and lives three years in a cave at Subiaco · leave one noisy place · away from rome",
+    "writer": "writer agent (catholic 747–756)",
+    "written": "2026-10-01"
+  }
 }

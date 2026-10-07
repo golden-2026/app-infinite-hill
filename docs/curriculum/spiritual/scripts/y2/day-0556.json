@@ -9,24 +9,37 @@
   "length": "6:30",
   "tomorrow": "The emerald",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY FIVE-HUNDRED-FIFTY-SIX.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY FIVE-HUNDRED-FIFTY-SIX.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday: time gained. Your line was run straight along the line, without swerving. Which comparison did you skip, and where did those minutes go instead? Day five hundred fifty-six.",
-      "screen": ["`RUN STRAIGHT ALONG THE LINE, WITHOUT SWERVING.`"]
+      "screen": [
+        "`RUN STRAIGHT ALONG THE LINE, WITHOUT SWERVING.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Name your great-grandparents. All eight of them. Try it, without looking anything up. These were people who worked, loved, worried about money, told jokes at dinner, and were, for a while, the center of somebody's world. Three generations on, some of their names have slipped even from their own family. Marcus Aurelius, a man whose face was stamped on coins across an empire, did that same arithmetic about himself. And he used it to loosen the grip of wanting to be remembered. Today: fame forgets.",
-      "screen": ["`NAME ALL EIGHT GREAT-GRANDPARENTS.` → `THREE GENERATIONS LATER.` → `FAME FORGETS.`"]
+      "screen": [
+        "`NAME ALL EIGHT GREAT-GRANDPARENTS.` → `THREE GENERATIONS LATER.` → `FAME FORGETS.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "First, the chain of the forgetting. In the nineteenth entry of book four Marcus writes about the person who longs to be remembered after death. They don't stop to think, he says, that every one of those who remember them will soon die too, and then those who come after, until the whole memory goes out, passed from one person to the next, through people who admire and then die. Second, suppose they don't die. Then Marcus pushes further. Suppose the people who remember you were immortal, and the memory too. What would that be to you? You'd be gone. Praise can't reach the dead. Third, even praise now. And to the living, he asks, what is praise, except for some practical use? It's information at best. It doesn't make the act better or worse. Fourth, no credit. So what's left is the act itself. If you do good to be remembered, you're building on something that will dissolve. If you do it because it's good, it's complete the moment it's done. This can sound bleak. But look at the questions it answers: will anyone notice, will this count, will they know it was me? Marcus sets them down. In the end, nobody will remember. So the good thing can be done without an audience, the way a great-grandmother might once have fed a neighbor's child and never written it down. Her name may be gone. The meal was still eaten.",
-      "screen": ["`EVERYONE WHO REMEMBERS WILL DIE TOO.` · `EVEN IF THEY DIDN'T, WHAT IS IT TO YOU?` · `PRAISE DOESN'T CHANGE THE ACT.` · `THE ACT IS COMPLETE WHEN DONE.` · then, large: `NO CREDIT.`"]
+      "screen": [
+        "`EVERYONE WHO REMEMBERS WILL DIE TOO.` · `EVEN IF THEY DIDN'T, WHAT IS IT TO YOU?` · `PRAISE DOESN'T CHANGE THE ACT.` · `THE ACT IS COMPLETE WHEN DONE.` · then, large: `NO CREDIT.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Fame forgets. Marcus notes that everyone who remembers you will die too; so do good for its own sake, complete without credit. Today's word.",
-      "screen": ["`FAME FORGETS — today's word`."]
+      "screen": [
+        "`FAME FORGETS — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,34 +61,93 @@
       "voice": "Your line: no credit. Do one good thing today that nobody will know was you. Day five hundred fifty-six.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 556 COUNTS.` → `TOMORROW: THE EMERALD.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 556 COUNTS.` → `TOMORROW: THE EMERALD.`"
+      ]
+    }
   ],
   "howItsDone": "Readers of Marcus Aurelius sometimes answer Meditations 4.19 with anonymous acts: a good deed done so that no one will know who did it.",
   "games": {
     "match": {
       "prompt": "no credit — tap the pairs.",
-      "pairs": [["those who remember you", "will soon die too"], ["the memory", "passed on until it goes out"], ["praise to the dead", "can't reach them"], ["a good act", "complete when it's done"]]
+      "pairs": [
+        [
+          "those who remember you",
+          "will soon die too"
+        ],
+        [
+          "the memory",
+          "passed on until it goes out"
+        ],
+        [
+          "praise to the dead",
+          "can't reach them"
+        ],
+        [
+          "a good act",
+          "complete when it's done"
+        ]
+      ]
     },
     "myth": [
-      ["Marcus says the people who remember you will keep your memory alive", false, "he says each of them will soon die too, until the whole memory goes out."],
-      ["Marcus asks what lasting memory would be to you even if it lasted", true, "you'd be gone; praise can't reach the dead."],
-      ["Marcus says praise to the living makes an act better", false, "he asks what praise is, except for some practical use."]
+      [
+        "Marcus says the people who remember you will keep your memory alive",
+        false,
+        "he says each of them will soon die too, until the whole memory goes out."
+      ],
+      [
+        "Marcus asks what lasting memory would be to you even if it lasted",
+        true,
+        "you'd be gone; praise can't reach the dead."
+      ],
+      [
+        "Marcus says praise to the living makes an act better",
+        false,
+        "he asks what praise is, except for some practical use."
+      ]
     ],
     "fork": {
       "setup": "you fixed a mistake that would have cost your team a week. nobody noticed. what fits Meditations 4.19?",
-      "options": ["make sure everyone hears about it.", "let it stand, complete, without credit.", "stop fixing things nobody notices."],
+      "options": [
+        "make sure everyone hears about it.",
+        "let it stand, complete, without credit.",
+        "stop fixing things nobody notices."
+      ],
       "answer": 1,
       "reveal": "Marcus says memory and praise both fade; the good act is already whole, credited or not."
     },
-    "original": { "script": "ὑστεροφημία", "say": "hoo-steh-roh-fay-MEE-ah", "note": "Greek, 'after-fame', fame after death: the craving Marcus answers in 4.19. The same word ends book two: after-fame is oblivion." },
+    "original": {
+      "script": "ὑστεροφημία",
+      "say": "hoo-steh-roh-fay-MEE-ah",
+      "note": "Greek, 'after-fame', fame after death: the craving Marcus answers in 4.19. The same word ends book two: after-fame is oblivion."
+    },
     "trapdoor": [
       "what you thought: fame doesn't last.",
       "what it means: since memory fades, do good for its own sake, complete without anyone's credit.",
       "what a scholar hears: Marcus's word here is husterophemia, 'after-fame', the same word he set beside oblivion at the end of book two (2.17)."
+    ],
+    "recall": [
+      [
+        "Flesh",
+        "blood, bones, a net of nerves"
+      ],
+      [
+        "Claudius Maximus",
+        "senator, Stoic, governor of Africa"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Meditations 4.19", "work": "Marcus Aurelius, Meditations", "translation": null, "quoted": null }
+    {
+      "ref": "Meditations 4.19",
+      "work": "Marcus Aurelius, Meditations",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",

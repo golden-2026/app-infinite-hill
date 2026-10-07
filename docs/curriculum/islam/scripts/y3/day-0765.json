@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "The cave of Thawr",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY SEVEN-HUNDRED-SIXTY-FIVE.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY SEVEN-HUNDRED-SIXTY-FIVE.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, al-Amin's trusts returned. Your line was: trusts returned, even then. What did you give back? Day seven hundred sixty-five.",
-      "screen": ["`TRUSTS RETURNED, EVEN THEN.`"]
+      "screen": [
+        "`TRUSTS RETURNED, EVEN THEN.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "The city that just tried to kill him is behind him now. Its leaders mocked him. Its council voted on his death. Its young men waited at his door with swords. And as the Prophet Muhammad, peace be upon him, leaves it, the hadith keep words he speaks to it. Not to the people. To the place itself. Two companions report what he said, and both reports are kept in the hadith collection of al-Tirmidhi. Today: Mecca.",
-      "screen": ["`THE CITY BEHIND HIM.` → `HE SPEAKS TO MECCA.` → `HE SPEAKS TO THE PLACE.`"]
+      "screen": [
+        "`THE CITY BEHIND HIM.` → `HE SPEAKS TO MECCA.` → `HE SPEAKS TO THE PLACE.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "In one report, from Abdullah ibn Adi, the Prophet stands at a spot in Mecca and says: by God, you are the best of God's earth, and the dearest of God's earth to God. And if I had not been driven out of you, I would never have left. In the other, from Ibn Abbas, he speaks more personally: how good you are as a land, and how dear you are to me. If my people had not driven me out, I would never have lived anywhere but you. Listen to the two halves of that. The first half is pure love: dearest, best, how good you are. The second half names exactly what happened, with no softening: I was driven out. He doesn't pretend he's leaving by choice. And he doesn't let what the people did turn into hatred for the place. The Qur'an uses the same plain language. It speaks of the town that drove you out. So here's a man saying goodbye honestly. Grief and love, and the truth about why, all in two sentences. Anyone who has left a hometown, a country, a house they grew up in, may know the shape of it. You can love a place and still be forced to leave it. You can say both things out loud. And the story doesn't end here. Mecca will come back into his life later. Here, he says goodbye.",
-      "screen": ["`THE DEAREST OF GOD'S EARTH.` · `IF I HADN'T BEEN DRIVEN OUT.` · `LOVE AND TRUTH TOGETHER.` · `THE TOWN THAT DROVE YOU OUT.` · then, large: `THE DEAREST LAND.`"]
+      "screen": [
+        "`THE DEAREST OF GOD'S EARTH.` · `IF I HADN'T BEEN DRIVEN OUT.` · `LOVE AND TRUTH TOGETHER.` · `THE TOWN THAT DROVE YOU OUT.` · then, large: `THE DEAREST LAND.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Mecca. Leaving the city, the Prophet told it he would never have left if he hadn't been driven out, the dearest land to him. Today's word.",
-      "screen": ["`MECCA — today's word`."]
+      "screen": [
+        "`MECCA — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,36 +61,105 @@
       "voice": "Your line: grief and love, both true. Today, tell someone about a place you love and had to leave, and say honestly why you left. Day seven hundred sixty-five.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 765 COUNTS.` → `TOMORROW: THE CAVE OF THAWR.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 765 COUNTS.` → `TOMORROW: THE CAVE OF THAWR.`"
+      ]
+    }
   ],
   "howItsDone": "Many Muslims quote the Prophet's farewell to Mecca when they speak of love for one's homeland, and Mecca remains the city Muslims face in prayer and travel to on pilgrimage.",
   "games": {
     "match": {
       "prompt": "the dearest land — tap the pairs.",
-      "pairs": [["Abdullah ibn Adi", "best and dearest of God's earth"], ["Ibn Abbas", "how dear you are to me"], ["if I hadn't been driven out", "I would never have left"], ["the town that drove you out", "the Qur'an's plain words"]]
+      "pairs": [
+        [
+          "Abdullah ibn Adi",
+          "best and dearest of God's earth"
+        ],
+        [
+          "Ibn Abbas",
+          "how dear you are to me"
+        ],
+        [
+          "if I hadn't been driven out",
+          "I would never have left"
+        ],
+        [
+          "the town that drove you out",
+          "the Qur'an's plain words"
+        ]
+      ]
     },
     "myth": [
-      ["he cursed Mecca as he left", false, "he told it that it was the dearest land to him."],
-      ["he said plainly that he was driven out", true, "if my people had not driven me out, I would never have left."],
-      ["the farewell is reported by two companions", true, "Abdullah ibn Adi and Ibn Abbas, both in al-Tirmidhi."]
+      [
+        "he cursed Mecca as he left",
+        false,
+        "he told it that it was the dearest land to him."
+      ],
+      [
+        "he said plainly that he was driven out",
+        true,
+        "if my people had not driven me out, I would never have left."
+      ],
+      [
+        "the farewell is reported by two companions",
+        true,
+        "Abdullah ibn Adi and Ibn Abbas, both in al-Tirmidhi."
+      ]
     ],
     "fork": {
       "setup": "you're leaving the city that tried to kill you. you stop at its edge. what do you say to it?",
-      "options": ["good riddance.", "you are the dearest land to me.", "nothing; just keep walking."],
+      "options": [
+        "good riddance.",
+        "you are the dearest land to me.",
+        "nothing; just keep walking."
+      ],
       "answer": 1,
       "reveal": "he told Mecca it was the dearest land, and that he would never have left if his people hadn't driven him out."
     },
-    "original": { "script": "أَحَبّ", "say": "A-habb", "note": "Arabic: dearer, dearest; most beloved." },
+    "original": {
+      "script": "أَحَبّ",
+      "say": "A-habb",
+      "note": "Arabic: dearer, dearest; most beloved."
+    },
     "trapdoor": [
       "what you thought: he was glad to get away.",
       "what it means: he said goodbye with love for the place and honesty about why he had to go.",
       "what a scholar hears: two reports in Jami' al-Tirmidhi, from Abdullah ibn Adi and Ibn Abbas; the Qur'an speaks of the town that drove him out (47:13)."
+    ],
+    "recall": [
+      [
+        "Yathrib",
+        "a town worn down by feuds"
+      ],
+      [
+        "Musa",
+        "urged him to ask for less"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Jami' al-Tirmidhi 3925 (Abdullah ibn Adi ibn al-Hamra: the best and dearest of God's earth; if I had not been driven out I would not have left)", "work": "Jami' al-Tirmidhi", "translation": null, "quoted": null },
-    { "ref": "Jami' al-Tirmidhi 3926 (Ibn Abbas: how good you are as a land and how dear to me; if my people had not driven me out I would not have lived elsewhere)", "work": "Jami' al-Tirmidhi", "translation": null, "quoted": null },
-    { "ref": "Qur'an 47:13 (the township which drove you out)", "work": "The Qur'an", "translation": null, "quoted": null }
+    {
+      "ref": "Jami' al-Tirmidhi 3925 (Abdullah ibn Adi ibn al-Hamra: the best and dearest of God's earth; if I had not been driven out I would not have left)",
+      "work": "Jami' al-Tirmidhi",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Jami' al-Tirmidhi 3926 (Ibn Abbas: how good you are as a land and how dear to me; if my people had not driven me out I would not have lived elsewhere)",
+      "work": "Jami' al-Tirmidhi",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Qur'an 47:13 (the township which drove you out)",
+      "work": "The Qur'an",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",

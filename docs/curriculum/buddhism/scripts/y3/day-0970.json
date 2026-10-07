@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "Marpa",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY NINE-HUNDRED-SEVENTY.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY NINE-HUNDRED-SEVENTY.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, the grumpy cook Atisha kept on purpose. Your line was my teacher of patience. Who earned that title from you? Day nine hundred seventy.",
-      "screen": ["`MY TEACHER OF PATIENCE.`"]
+      "screen": [
+        "`MY TEACHER OF PATIENCE.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Naropa had what scholars dream of. In the stories, he held a high post at Nalanda, a great monastic university in India, where he defended the teaching in debate and could recite texts by the shelf. One day, as he sat reading, a shadow fell across the page. An old woman, bent and ugly in the telling, asked him a question. Do you understand the words, or the meaning? Naropa said: the words. She laughed with delight. Then he added: and the meaning. And she wept. Today: dakini.",
-      "screen": ["`A SCHOLAR AT NALANDA.` → `A SHADOW ON THE PAGE.` → `WORDS, OR MEANING?`"]
+      "screen": [
+        "`A SCHOLAR AT NALANDA.` → `A SHADOW ON THE PAGE.` → `WORDS, OR MEANING?`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "First, the question. In Tibetan tellings, the old woman is a dakini, a wisdom figure in disguise. Her laughter and her tears say it all: Naropa knew the words; he did not yet know the meaning. When he asked who did, she named Tilopa. Second, the leaving. Naropa gave up his post and went looking. The stories make this hard. He finds Tilopa nowhere and everywhere: in strange people on the road who disgust him, whom he refuses to help, and who turn out, too late, to have been Tilopa all along. Third, the teacher. When Naropa finally finds him, Tilopa looks nothing like a professor. In some tellings he's a wild man by a river, living on scraps of fish. He doesn't lecture. He sets Naropa trials, one after another, many of them painful and some frightening, and teaches through each one in a few words. Fourth, the turn. The legend is extreme, and Kagyu tellings hold it up as a picture of devotion to a teacher. What it carries is a reversal. The celebrated scholar becomes the servant of someone with no titles, because that person knows the meaning. In the Kagyu tradition, Tilopa and Naropa stand at the head of a lineage, teacher to student, that we will follow over the coming days. Away from Nalanda, the story has a gentler edge. Knowing the words is good. Somewhere near you, someone with no credentials may know the meaning.",
-      "screen": ["`THE DAKINI LAUGHS, THEN WEEPS.` · `NAROPA LEAVES HIS POST.` · `A WILD TEACHER BY THE RIVER.` · `THE SCHOLAR BECOMES THE SERVANT.` · then, large: `THE SCHOLAR SERVED.`"]
+      "screen": [
+        "`THE DAKINI LAUGHS, THEN WEEPS.` · `NAROPA LEAVES HIS POST.` · `A WILD TEACHER BY THE RIVER.` · `THE SCHOLAR BECOMES THE SERVANT.` · then, large: `THE SCHOLAR SERVED.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Dakini. A wisdom figure in disguise, like the old woman whose question sent Naropa to find his teacher Tilopa. Today's word.",
-      "screen": ["`DAKINI — today's word`."]
+      "screen": [
+        "`DAKINI — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,27 +61,62 @@
       "voice": "Your line: the scholar served. Today, learn one thing from someone you wouldn't usually ask, and tell them thank you. Day nine hundred seventy.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 970 COUNTS.` → `TOMORROW: MARPA.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 970 COUNTS.` → `TOMORROW: MARPA.`"
+      ]
+    }
   ],
   "howItsDone": "In the Kagyu school of Tibetan Buddhism, Tilopa and Naropa are honored at the head of the lineage, and the story of Naropa's search is told to students as a picture of devotion and of the gap between knowing words and knowing their meaning.",
   "games": {
     "match": {
       "prompt": "Tilopa and Naropa: tap the pairs.",
       "pairs": [
-        ["Naropa", "the scholar of Nalanda"],
-        ["Tilopa", "the wild teacher"],
-        ["the old woman", "a dakini in disguise"],
-        ["she wept", "he claimed the meaning too"]
+        [
+          "Naropa",
+          "the scholar of Nalanda"
+        ],
+        [
+          "Tilopa",
+          "the wild teacher"
+        ],
+        [
+          "the old woman",
+          "a dakini in disguise"
+        ],
+        [
+          "she wept",
+          "he claimed the meaning too"
+        ]
       ]
     },
     "myth": [
-      ["the old woman laughed when Naropa said he understood the meaning", false, "she laughed at 'the words' and wept at 'the meaning'."],
-      ["Tilopa taught Naropa through trials rather than lectures", true, "the stories have him teach through each trial, in a few words."],
-      ["Naropa stopped to help each stranger on the road", false, "he refused them, and each turned out to have been Tilopa."]
+      [
+        "the old woman laughed when Naropa said he understood the meaning",
+        false,
+        "she laughed at 'the words' and wept at 'the meaning'."
+      ],
+      [
+        "Tilopa taught Naropa through trials rather than lectures",
+        true,
+        "the stories have him teach through each trial, in a few words."
+      ],
+      [
+        "Naropa stopped to help each stranger on the road",
+        false,
+        "he refused them, and each turned out to have been Tilopa."
+      ]
     ],
     "fork": {
       "setup": "you're Naropa. a stranger on the road is doing something that disgusts you and asks for your help. what do you do?",
-      "options": ["walk past; you have a teacher to find.", "stop and help.", "lecture the stranger on proper conduct."],
+      "options": [
+        "walk past; you have a teacher to find.",
+        "stop and help.",
+        "lecture the stranger on proper conduct."
+      ],
       "answer": 0,
       "reveal": "in the stories Naropa walks past, again and again, and each stranger turns out to have been Tilopa."
     },
@@ -75,10 +125,25 @@
       "what you thought: an old story about a teacher and a student.",
       "what it means: a great scholar leaves his post to serve a teacher with no titles, because that teacher knows the meaning.",
       "what a scholar hears: the dakini's question, words or meaning, and the head of the Kagyu lineage, passed from teacher to student."
+    ],
+    "recall": [
+      [
+        "Yogacara",
+        "the practice of yoga, the meditators' path"
+      ],
+      [
+        "Maitreya",
+        "the Buddha who is to come"
+      ]
     ]
   },
   "sources": [
-    { "ref": "the life of Naropa (Tibetan hagiography)", "work": "Tibetan Kagyu tradition", "translation": null, "quoted": null }
+    {
+      "ref": "the life of Naropa (Tibetan hagiography)",
+      "work": "Tibetan Kagyu tradition",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -91,5 +156,9 @@
       "Editor: removed the unsupported superlative 'best-read man in the room' (spoken and screen) and varied the repeated 'on an ordinary day' turn."
     ]
   },
-  "meta": { "index": "970. Tilopa and Naropa · — · the scholar Naropa leaves his university post to serve the wild teacher Tilopa · learn from someone unexpected · the scholar served", "writer": "writer agent (buddhism 967–976)", "written": "2026-10-01" }
+  "meta": {
+    "index": "970. Tilopa and Naropa · — · the scholar Naropa leaves his university post to serve the wild teacher Tilopa · learn from someone unexpected · the scholar served",
+    "writer": "writer agent (buddhism 967–976)",
+    "written": "2026-10-01"
+  }
 }

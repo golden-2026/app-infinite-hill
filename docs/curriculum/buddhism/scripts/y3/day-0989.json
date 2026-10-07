@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "Cold Mountain",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY NINE-HUNDRED-EIGHTY-NINE.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY NINE-HUNDRED-EIGHTY-NINE.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, Zhaozhou's tea, the same plain cup for the newcomer, the regular and the man who wanted reasons. Your line was have some tea. Did one cup get your full attention? Day nine hundred eighty-nine.",
-      "screen": ["`HAVE SOME TEA.`"]
+      "screen": [
+        "`HAVE SOME TEA.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Name tags at a conference. Doctor, director, intern, guest. Titles on the email signature, ranks on the uniform, the little line under your name on a profile. On any given day a person carries a few of them, and they do real work: they tell people who to ask and what to expect. A Chan teacher named Linji once stood in front of his assembly and pointed at something none of those titles reach. He said it lives right here, in this lump of flesh, and comes and goes through the doors of your face. He gave it a name. Today, Linji.",
-      "screen": ["`DOCTOR. DIRECTOR. INTERN. GUEST.` → `LINJI POINTS PAST THE TITLES.`"]
+      "screen": [
+        "`DOCTOR. DIRECTOR. INTERN. GUEST.` → `LINJI POINTS PAST THE TITLES.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "First, the sermon. In the Record of Linji, he climbs to the teaching seat and says, roughly: on your lump of red flesh there is a true person of no rank, always going in and out through the gates of your face. Those who haven't seen it yet, look, look. Rank here means a place in the order of things: high or low, monk or lay, teacher or student. The true person has none. Second, the challenge. A monk steps forward and asks, what is this true person of no rank? Linji comes down from the seat, grabs him, and says, speak, speak! The monk hesitates, reaching for the right answer. Linji pushes him away with a blunt insult and goes back to his room. Third, why so rough. The monk had turned the true person into a topic, something to be defined. Linji wanted him to show it, right then, in his own seeing and hearing and speaking. The moment he went looking for a correct reply, he had put the rank back on. Fourth, an ordinary Tuesday. You can be a manager, a parent, a patient, a beginner. Those roles matter, and Linji isn't asking you to throw them away. He is pointing at whatever is looking out of your eyes before any of the labels arrive. It hears the kettle the same way whether you're the boss or the new hire. That one, Linji says, has no rank.",
-      "screen": ["`A TRUE PERSON OF NO RANK.` · `WHAT IS IT? SPEAK, SPEAK!` · `THE MONK REACHES FOR AN ANSWER.` · `BEFORE ANY LABEL ARRIVES.`"]
+      "screen": [
+        "`A TRUE PERSON OF NO RANK.` · `WHAT IS IT? SPEAK, SPEAK!` · `THE MONK REACHES FOR AN ANSWER.` · `BEFORE ANY LABEL ARRIVES.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Linji. The Chan teacher who pointed to the true person of no rank, seeing and hearing through your face before any title arrives. Today's word.",
-      "screen": ["`LINJI — today's word`."]
+      "screen": [
+        "`LINJI — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,39 +61,93 @@
       "voice": "Your line: no rank. Today, drop one title for a day. Introduce yourself without it, or do one thing without letting it decide how you act. Day nine hundred eighty-nine.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 989 COUNTS.` → `TOMORROW: COLD MOUNTAIN.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 989 COUNTS.` → `TOMORROW: COLD MOUNTAIN.`"
+      ]
+    }
   ],
   "howItsDone": "Linji's sayings are studied in the Rinzai Zen tradition, which takes its name from him, and the true person of no rank appears among the koans that teachers give students to work on in meditation and interviews.",
   "games": {
     "match": {
       "prompt": "the true person of no rank: tap the pairs.",
       "pairs": [
-        ["where it lives", "this lump of red flesh"],
-        ["how it moves", "in and out through the face"],
-        ["Linji's reply", "speak, speak!"],
-        ["rank", "high or low, monk or lay"]
+        [
+          "where it lives",
+          "this lump of red flesh"
+        ],
+        [
+          "how it moves",
+          "in and out through the face"
+        ],
+        [
+          "Linji's reply",
+          "speak, speak!"
+        ],
+        [
+          "rank",
+          "high or low, monk or lay"
+        ]
       ]
     },
     "myth": [
-      ["Linji told his listeners to throw away their roles", false, "he pointed at what is there before the roles; he didn't ask anyone to abandon them."],
-      ["the monk got a gentle explanation", false, "Linji grabbed him, said speak, and pushed him away."],
-      ["Linji said the true person goes in and out through the face", true, "seeing, hearing, speaking: right here, already."]
+      [
+        "Linji told his listeners to throw away their roles",
+        false,
+        "he pointed at what is there before the roles; he didn't ask anyone to abandon them."
+      ],
+      [
+        "the monk got a gentle explanation",
+        false,
+        "Linji grabbed him, said speak, and pushed him away."
+      ],
+      [
+        "Linji said the true person goes in and out through the face",
+        true,
+        "seeing, hearing, speaking: right here, already."
+      ]
     ],
     "fork": {
       "setup": "Linji grabs you and says, speak, speak! about the true person of no rank. what do you do?",
-      "options": ["give a careful definition", "hesitate and search for the right answer", "answer from right here, without reaching"],
+      "options": [
+        "give a careful definition",
+        "hesitate and search for the right answer",
+        "answer from right here, without reaching"
+      ],
       "answer": 2,
       "reveal": "the monk in the story hesitated, and Linji pushed him away. what he was asking for was a living response, not a definition."
     },
-    "original": { "script": "無位真人", "say": "woo-WAY jen-REN", "note": "Chinese wu wei zhen ren: true person with no rank, no position." },
+    "original": {
+      "script": "無位真人",
+      "say": "woo-WAY jen-REN",
+      "note": "Chinese wu wei zhen ren: true person with no rank, no position."
+    },
     "trapdoor": [
       "what you thought: a nice line about everyone being equal.",
       "what it means: Linji points at the one who sees and hears through your face before any title, and demands you show it, not define it.",
       "what a scholar hears: some readers hear in zhen ren, true person, an echo of the Daoist realized sage, turned by Linji toward the ordinary person in front of him."
+    ],
+    "recall": [
+      [
+        "The Karmapas",
+        "heads of the Karma Kagyu"
+      ],
+      [
+        "Nettles",
+        "what grew by the cave"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Record of Linji (Linji lu), the 'true person of no rank' sermon", "work": "Chan recorded sayings", "translation": null, "quoted": null }
+    {
+      "ref": "Record of Linji (Linji lu), the 'true person of no rank' sermon",
+      "work": "Chan recorded sayings",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -91,5 +160,9 @@
       "Editor: the trapdoor's flat claim that zhen ren 'was also a Daoist term' (not in the Linji lu) is now framed as what some readers hear; the rest checked against the Linji lu and left as is."
     ]
   },
-  "meta": { "index": "989. The true person of no rank · — · Linji: a true person of no rank goes in and out of your face · drop one title for a day · no rank", "writer": "writer agent (buddhism 987–996)", "written": "2026-10-01" }
+  "meta": {
+    "index": "989. The true person of no rank · — · Linji: a true person of no rank goes in and out of your face · drop one title for a day · no rank",
+    "writer": "writer agent (buddhism 987–996)",
+    "written": "2026-10-01"
+  }
 }

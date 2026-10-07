@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "The honeyball",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY FOUR-HUNDRED-TWELVE.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY FOUR-HUNDRED-TWELVE.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday: pleasure, and your line, the escape is from the hook. Did you say the three words before one small pleasure, and then enjoy it anyway? Day four hundred twelve.",
-      "screen": ["`PLEASURE — THE ESCAPE IS FROM THE HOOK.`"]
+      "screen": [
+        "`PLEASURE — THE ESCAPE IS FROM THE HOOK.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "A farmer can buy the best seed in the world, and if the field is full of stones and old stumps, not much comes up. Before planting, you clear the ground. It's slow, heavy work, with nothing to show for it yet. The Buddha described five patches of barren, stony ground in the heart, and five things that tie it down, and said the practice won't grow until they're dealt with. Today: wildernesses of the heart.",
-      "screen": ["`THE BEST SEED.` → `A FIELD FULL OF STONES.` → `CLEAR THE GROUND FIRST.`"]
+      "screen": [
+        "`THE BEST SEED.` → `A FIELD FULL OF STONES.` → `CLEAR THE GROUND FIRST.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "MN 16, the Cetokhila. Ceto means heart or mind. Khila is harder to pin down: translators render it barrenness, wasteland, or a stake, something hard and stiff driven into the ground. Either way, it's ground that won't take seed. The five are these. Doubt about the Teacher. Doubt about the teaching. Doubt about the community. Doubt about the training. And the fifth: anger at your companions in the practice, being displeased and resentful toward them. Notice that last one. It isn't about doctrine at all. Being irritated with the people you practice alongside can make the ground as barren as any doubt. Then come five shackles that bind the heart: desire for sense pleasures, attachment to the body, attachment to outward forms, eating your fill and then indulging in sleep and lying around, and living the spiritual life only to be reborn among the gods. And then a picture for what happens when the field is cleared. A hen has eight or ten or twelve eggs. She sits on them, keeps them warm, turns them properly. Even if no wish arises in her, may my chicks break out safely with their claws and beaks, they'll hatch anyway. Clear the ground and do the patient work, and the result comes, whether you wish for it or not. In the sutta, the hen's patient work stands for fifteen things: the five wildernesses cleared, the five shackles cut, four bases of spiritual power developed, and enthusiasm. The eggs are warmed, not forced.",
-      "screen": ["`KHILA — BARREN, STONY GROUND.` · `FOUR DOUBTS AND ONE ANGER.` · `FIVE SHACKLES.` · `THE HEN AND HER EGGS.` · then, large: `CLEAR THE FIELD.`"]
+      "screen": [
+        "`KHILA — BARREN, STONY GROUND.` · `FOUR DOUBTS AND ONE ANGER.` · `FIVE SHACKLES.` · `THE HEN AND HER EGGS.` · then, large: `CLEAR THE FIELD.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Cetokhila, barrenness of the heart. Five barren places, four doubts and anger at your companions, cleared so the practice can grow.",
-      "screen": ["`CETOKHILA — today's word`."]
+      "screen": [
+        "`CETOKHILA — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,34 +61,93 @@
       "voice": "Your line: clear the field. Today, clear one stony patch: ask the question you've been doubting about, or soften toward one companion. Day four hundred twelve.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 412 COUNTS.` → `TOMORROW: THE HONEYBALL.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 412 COUNTS.` → `TOMORROW: THE HONEYBALL.`"
+      ]
+    }
   ],
   "howItsDone": "Buddhist communities often encourage practitioners to bring doubts to a teacher rather than leave them unspoken, and the monastic rule sets out procedures for settling disputes between members.",
   "games": {
     "match": {
       "prompt": "match the pieces of MN 16.",
-      "pairs": [["ceto", "heart, mind"], ["khila", "barren, stony ground"], ["the fifth wilderness", "anger at your companions"], ["the hen", "warms her eggs; they hatch anyway"]]
+      "pairs": [
+        [
+          "ceto",
+          "heart, mind"
+        ],
+        [
+          "khila",
+          "barren, stony ground"
+        ],
+        [
+          "the fifth wilderness",
+          "anger at your companions"
+        ],
+        [
+          "the hen",
+          "warms her eggs; they hatch anyway"
+        ]
+      ]
     },
     "myth": [
-      ["all five wildernesses are kinds of doubt", false, "four are doubts; the fifth is anger at your companions."],
-      ["the hen has to wish for her chicks to hatch", false, "even with no wish, eggs brooded properly hatch."],
-      ["one shackle is practicing only to be reborn among the gods", true, "the fifth of the five shackles."]
+      [
+        "all five wildernesses are kinds of doubt",
+        false,
+        "four are doubts; the fifth is anger at your companions."
+      ],
+      [
+        "the hen has to wish for her chicks to hatch",
+        false,
+        "even with no wish, eggs brooded properly hatch."
+      ],
+      [
+        "one shackle is practicing only to be reborn among the gods",
+        true,
+        "the fifth of the five shackles."
+      ]
     ],
     "fork": {
       "setup": "a hen has twelve eggs. what does the simile say she has to do for them to hatch?",
-      "options": ["wish hard for her chicks every day", "sit on them, keep them warm, turn them properly", "crack the shells to help"],
+      "options": [
+        "wish hard for her chicks every day",
+        "sit on them, keep them warm, turn them properly",
+        "crack the shells to help"
+      ],
       "answer": 1,
       "reveal": "she just does the patient work. the chicks hatch whether or not she wishes for it."
     },
-    "original": { "script": "चेतोखिल", "say": "CHE-to KHI-la", "note": "Pali cetokhila: wilderness, barrenness or stake of the heart; the name of MN 16." },
+    "original": {
+      "script": "चेतोखिल",
+      "say": "CHE-to KHI-la",
+      "note": "Pali cetokhila: wilderness, barrenness or stake of the heart; the name of MN 16."
+    },
     "trapdoor": [
       "what you thought: wilderness, like the woods where monks meditate.",
       "what it means: hard, barren ground in the heart: doubt and resentment that keep a practice from growing.",
       "what a scholar hears: khila can mean fallow ground or a stiff stake; translators split between 'barrenness' and 'stake', and both images say: nothing grows here yet."
+    ],
+    "recall": [
+      [
+        "jhana",
+        "meditative absorption"
+      ],
+      [
+        "samadhi",
+        "the mind gathered"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Majjhima Nikaya 16, Cetokhila Sutta", "work": "Majjhima Nikaya", "translation": null, "quoted": null }
+    {
+      "ref": "Majjhima Nikaya 16, Cetokhila Sutta",
+      "work": "Majjhima Nikaya",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -85,5 +159,9 @@
       "Editor review (2026-10-01): the closing uplift replaced with what the hen simile stands for in MN 16 (the fifteen factors); 'nobody likes that part' cut; howItsDone now points to monastic dispute procedures instead of a general claim. Keeper: confirm the fifteen (5 + 5 + four bases of power + enthusiasm)."
     ]
   },
-  "meta": { "index": "412. Wildernesses of the heart · — · five barren places in the heart: doubt about teacher, teaching, community, training, and anger at companions (MN 16) · clear one barren patch · clear the field", "writer": "writer agent (buddhism 392–421)", "written": "2026-09-30" }
+  "meta": {
+    "index": "412. Wildernesses of the heart · — · five barren places in the heart: doubt about teacher, teaching, community, training, and anger at companions (MN 16) · clear one barren patch · clear the field",
+    "writer": "writer agent (buddhism 392–421)",
+    "written": "2026-09-30"
+  }
 }

@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "Zen and the arts",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY NINE-HUNDRED-TWENTY-EIGHT.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY NINE-HUNDRED-TWENTY-EIGHT.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, Koyasan, where Kukai made his mountain home and pilgrims still walk his road. Your line was the pilgrim's road. Which ordinary walk became a small pilgrimage? Day nine hundred twenty-eight.",
-      "screen": ["`THE PILGRIM'S ROAD.`"]
+      "screen": [
+        "`THE PILGRIM'S ROAD.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Mount Hiei trained monk after monk in long years of study. Some of them came down the mountain with a blunt question: what about everyone who can't live up here? The farmer. The fisherman. The mother with a baby on her back. The soldier who may not see next spring. Can they walk this path too, today, without years in a monastery? In the Kamakura era, several teachers answered yes, each in a different way, and each answer became a school. Today's word: new schools.",
-      "screen": ["`DOWN FROM THE MOUNTAIN.` → `WHAT ABOUT EVERYONE ELSE?` → `SEVERAL ANSWERS.`"]
+      "screen": [
+        "`DOWN FROM THE MOUNTAIN.` → `WHAT ABOUT EVERYONE ELSE?` → `SEVERAL ANSWERS.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "Three doors opened. The first is Pure Land. Honen taught that in a hard age, the way open to anyone is to call on Amida Buddha by name, with trust: Namu Amida Butsu. His student Shinran went further: even the calling, he taught, is Amida's gift, not your own achievement. The second door is Zen. Eisai brought Rinzai Zen back from China, with its sharp questions, and Dogen brought Soto Zen, teaching that sitting itself, just sitting, is already awakening at work. No ladder to climb first. The third door is Nichiren. He taught that the Lotus Sutra holds the whole teaching, and that chanting its title, Namu Myoho Renge Kyo, opens it to anyone. Here's what the three share, even where they argue. Each puts one practice at the heart of the path: a name, a sitting, a title. You don't need a library. You need a voice, or a cushion, or a breath. And these founders, their biographies say, had studied on Mount Hiei first, then left to teach what had opened the way for them. The schools disagreed with each other, sometimes sharply, about faith and effort and which teaching stands at the center, and their heirs still discuss it. They also reached different people: Pure Land and Nichiren preachers went out to villages and towns, while Zen found early patrons among warriors and the court. That's the honest picture: several new schools, each in its own way carrying the path beyond the monastery walls.",
-      "screen": ["`PURE LAND: CALL THE NAME.` · `ZEN: JUST SIT.` · `NICHIREN: CHANT THE TITLE.` · `ONE PRACTICE, WITHIN REACH.` · then, large: `FOR ORDINARY PEOPLE.`"]
+      "screen": [
+        "`PURE LAND: CALL THE NAME.` · `ZEN: JUST SIT.` · `NICHIREN: CHANT THE TITLE.` · `ONE PRACTICE, WITHIN REACH.` · then, large: `FOR ORDINARY PEOPLE.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "New schools. Pure Land, Zen and Nichiren teachers in the Kamakura era, each putting one practice within reach of ordinary people. Today's word.",
-      "screen": ["`NEW SCHOOLS — today's word`."]
+      "screen": [
+        "`NEW SCHOOLS — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,41 +61,105 @@
       "voice": "Your line: for ordinary people. Today, make one good thing easier for someone else to start: share a first step, lend a tool, or explain it plainly. Day nine hundred twenty-eight.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 928 COUNTS.` → `TOMORROW: ZEN AND THE ARTS.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 928 COUNTS.` → `TOMORROW: ZEN AND THE ARTS.`"
+      ]
+    }
   ],
   "howItsDone": "Japanese Pure Land Buddhists recite Namu Amida Butsu, Zen practitioners sit zazen, and Nichiren Buddhists chant Namu Myoho Renge Kyo, often together at temples or in home groups.",
   "games": {
     "match": {
       "prompt": "new schools: tap the pairs.",
       "pairs": [
-        ["Honen", "call Amida's name with trust"],
-        ["Dogen", "just sitting"],
-        ["Nichiren", "chant the Lotus Sutra's title"],
-        ["Eisai", "brought Rinzai Zen from China"]
+        [
+          "Honen",
+          "call Amida's name with trust"
+        ],
+        [
+          "Dogen",
+          "just sitting"
+        ],
+        [
+          "Nichiren",
+          "chant the Lotus Sutra's title"
+        ],
+        [
+          "Eisai",
+          "brought Rinzai Zen from China"
+        ]
       ]
     },
     "myth": [
-      ["the new schools agreed on everything", false, "they disagreed, sometimes sharply, about faith, effort and which teaching stands at the center."],
-      ["each school put one practice at the heart of the path", true, "a name, a sitting, a title."],
-      ["these founders never studied on Mount Hiei", false, "their biographies say they studied there first, then left to teach."]
+      [
+        "the new schools agreed on everything",
+        false,
+        "they disagreed, sometimes sharply, about faith, effort and which teaching stands at the center."
+      ],
+      [
+        "each school put one practice at the heart of the path",
+        true,
+        "a name, a sitting, a title."
+      ],
+      [
+        "these founders never studied on Mount Hiei",
+        false,
+        "their biographies say they studied there first, then left to teach."
+      ]
     ],
     "fork": {
       "setup": "you're a monk trained on Mount Hiei. farmers and fishermen ask whether the path is for them too. what do you do?",
-      "options": ["tell them to come live on the mountain.", "give them one practice they can do anywhere.", "tell them to wait for a better life."],
+      "options": [
+        "tell them to come live on the mountain.",
+        "give them one practice they can do anywhere.",
+        "tell them to wait for a better life."
+      ],
       "answer": 1,
       "reveal": "Honen gave the name, Dogen the sitting, Nichiren the title: one practice each, within reach of ordinary people."
     },
-    "original": { "script": "नमो", "say": "NAH-mo", "note": "Sanskrit: homage, bowing. The Japanese namu that opens both Namu Amida Butsu and Namu Myoho Renge Kyo comes from it." },
+    "original": {
+      "script": "नमो",
+      "say": "NAH-mo",
+      "note": "Sanskrit: homage, bowing. The Japanese namu that opens both Namu Amida Butsu and Namu Myoho Renge Kyo comes from it."
+    },
     "trapdoor": [
       "what you thought: new schools means new buildings.",
       "what it means: Pure Land, Zen and Nichiren teachers who each put one practice within reach of ordinary people.",
       "what a scholar hears: these founders trained in the Tendai monastery on Mount Hiei before leaving to found schools of their own."
+    ],
+    "recall": [
+      [
+        "Huayan",
+        "a net where every jewel reflects all"
+      ],
+      [
+        "Baizhang",
+        "shaped the rules for Chan communities"
+      ]
     ]
   },
   "sources": [
-    { "ref": "lives and teachings of Honen and Shinran (Pure Land)", "work": "Japanese Pure Land tradition", "translation": null, "quoted": null },
-    { "ref": "lives and teachings of Eisai and Dogen (Rinzai and Soto Zen)", "work": "Japanese Zen tradition", "translation": null, "quoted": null },
-    { "ref": "life and teaching of Nichiren; the Lotus Sutra's title", "work": "Nichiren tradition", "translation": null, "quoted": null }
+    {
+      "ref": "lives and teachings of Honen and Shinran (Pure Land)",
+      "work": "Japanese Pure Land tradition",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "lives and teachings of Eisai and Dogen (Rinzai and Soto Zen)",
+      "work": "Japanese Zen tradition",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "life and teaching of Nichiren; the Lotus Sutra's title",
+      "work": "Nichiren tradition",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",

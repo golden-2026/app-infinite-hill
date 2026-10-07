@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "Adam and Eve (24 December)",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-THOUSAND-FIFTY-FIVE.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY ONE-THOUSAND-FIFTY-FIVE.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, Lucy, the martyr of Syracuse and the crown of candles. Your line was light in december. Did you bring a little light into a room? Day one thousand fifty-five.",
-      "screen": ["`LIGHT IN DECEMBER.`"]
+      "screen": [
+        "`LIGHT IN DECEMBER.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "A professor walks home through a winter street in Kraków, wearing the long gown of a university teacher. It sweeps the ground as he goes. If you lifted the hem, the story says, you would find his feet bare in the cold. Earlier, on the way, he met a poor man with nothing on his feet, and handed over his own shoes. The gown is long enough that nobody notices. A man who lectured on God all day, walking home on cold stone. Today, John of Kanty.",
-      "screen": ["`A PROFESSOR IN A LONG GOWN.` → `BARE FEET UNDER THE HEM.` → `A LECTURER ON COLD STONE.`"]
+      "screen": [
+        "`A PROFESSOR IN A LONG GOWN.` → `BARE FEET UNDER THE HEM.` → `A LECTURER ON COLD STONE.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "John of Kanty was a priest who taught at the university in Kraków. His job was ideas: lectures, books, students, arguments about God. But the stories people kept about him are about clothes, food and money leaving his hands. Tradition says he gave his coat to a man shivering in the street, and on another day his shoes. When a hungry person came to the door during a meal, he was known to send his own plate out. There's a story about robbers, too. Thieves stopped him on the road, took what he had, and asked if there was anything more. He said no. Then he found a few coins sewn into his clothes, and he ran after the robbers to hand them over, because he had told them there was nothing left. They were so shaken, the story goes, that they gave everything back. Behind all this is a very plain line from Luke's gospel. The crowds ask John the Baptist what they should do, and he answers, in the Douay-Rheims: \"He that hath two coats, let him give to him that hath none.\" No theory. Just coats. Jesus, in the parable of the last judgment, lists what the blessed did for him without knowing it, and one line is: \"Naked, and you covered me.\" A professor could have lectured on those verses. The stories remember him doing them, in the snow, with cold feet under his gown. His feast falls on 23 December, two days before Christmas, when the coats come out of the closet.",
-      "screen": ["`A PROFESSOR WHOSE JOB WAS IDEAS.` · `HIS COAT, HIS SHOES, HIS PLATE.` · `HE RAN AFTER THE ROBBERS.` · `TWO COATS: GIVE ONE AWAY.` · then, large: `NAKED, AND YOU COVERED ME.`"]
+      "screen": [
+        "`A PROFESSOR WHOSE JOB WAS IDEAS.` · `HIS COAT, HIS SHOES, HIS PLATE.` · `HE RAN AFTER THE ROBBERS.` · `TWO COATS: GIVE ONE AWAY.` · then, large: `NAKED, AND YOU COVERED ME.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Kanty. The Kraków professor whose learning was real, but who is remembered for the coat and shoes he gave away, even in the snow.",
-      "screen": ["`KANTY — today's word`."]
+      "screen": [
+        "`KANTY — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,22 +61,62 @@
       "voice": "Your line: the professor's coat. Today, take that coat out of the closet and put it in a bag by the door, so it actually leaves the house. Day one thousand fifty-five.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 1055 COUNTS.` → `TOMORROW: ADAM AND EVE.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 1055 COUNTS.` → `TOMORROW: ADAM AND EVE.`"
+      ]
+    }
   ],
   "howItsDone": "Saint John of Kanty is remembered on 23 December, especially in Poland and at the university in Kraków where he taught; some parishes and schools collect coats and warm clothing around his feast.",
   "games": {
     "match": {
       "prompt": "John of Kanty — tap the pairs.",
-      "pairs": [["Kraków", "the city where he taught"], ["the long gown", "hid his bare feet"], ["two coats", "give to him that hath none"], ["the robbers", "he ran after them with more coins"]]
+      "pairs": [
+        [
+          "Kraków",
+          "the city where he taught"
+        ],
+        [
+          "the long gown",
+          "hid his bare feet"
+        ],
+        [
+          "two coats",
+          "give to him that hath none"
+        ],
+        [
+          "the robbers",
+          "he ran after them with more coins"
+        ]
+      ]
     },
     "myth": [
-      ["John of Kanty was a university professor", true, "a priest who taught at the university in Kraków."],
-      ["the line about two coats is spoken by Jesus", false, "in Luke's gospel it is John the Baptist, answering the crowds."],
-      ["he chased the robbers to get his money back", false, "he chased them to give them the coins they had missed."]
+      [
+        "John of Kanty was a university professor",
+        true,
+        "a priest who taught at the university in Kraków."
+      ],
+      [
+        "the line about two coats is spoken by Jesus",
+        false,
+        "in Luke's gospel it is John the Baptist, answering the crowds."
+      ],
+      [
+        "he chased the robbers to get his money back",
+        false,
+        "he chased them to give them the coins they had missed."
+      ]
     ],
     "fork": {
       "setup": "you're John of Kanty, walking home in the cold. a poor man with no shoes asks for help, and you've already given your coat away today. what do you do?",
-      "options": ["apologize: you have nothing left", "give him your shoes, and let the gown hide your feet", "send him to the university to ask there"],
+      "options": [
+        "apologize: you have nothing left",
+        "give him your shoes, and let the gown hide your feet",
+        "send him to the university to ask there"
+      ],
       "answer": 1,
       "reveal": "the story says he handed over his shoes and walked home barefoot under his long gown, so nobody would notice."
     },
@@ -74,13 +129,43 @@
       "what you thought: a saint with an unusual name.",
       "what it means: a Kraków professor remembered less for his lectures than for the coat and shoes he gave away.",
       "what a scholar hears: Luke 3:11 lived literally: he that hath two coats, let him give to him that hath none."
+    ],
+    "recall": [
+      [
+        "little ones",
+        "shown what the clever miss"
+      ],
+      [
+        "Hippolytus",
+        "the learned priest who split from Rome"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Luke 3:11", "work": "The Bible", "translation": "Douay-Rheims (Challoner)", "quoted": "He that hath two coats, let him give to him that hath none" },
-    { "ref": "Matthew 25:36", "work": "The Bible", "translation": "Douay-Rheims (Challoner)", "quoted": "Naked, and you covered me" },
-    { "ref": "Traditional stories of Saint John of Kanty (John Cantius)", "work": "Hagiographical tradition", "translation": null, "quoted": null },
-    { "ref": "General Roman Calendar, 23 December", "work": "Roman Missal", "translation": null, "quoted": null }
+    {
+      "ref": "Luke 3:11",
+      "work": "The Bible",
+      "translation": "Douay-Rheims (Challoner)",
+      "quoted": "He that hath two coats, let him give to him that hath none"
+    },
+    {
+      "ref": "Matthew 25:36",
+      "work": "The Bible",
+      "translation": "Douay-Rheims (Challoner)",
+      "quoted": "Naked, and you covered me"
+    },
+    {
+      "ref": "Traditional stories of Saint John of Kanty (John Cantius)",
+      "work": "Hagiographical tradition",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "General Roman Calendar, 23 December",
+      "work": "Roman Missal",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -95,5 +180,9 @@
       "Editor pass: hook tense smoothed so the shoe gift reads as earlier on the walk; otherwise unchanged."
     ]
   },
-  "meta": { "index": "1055. John of Kanty (23 December) · — · a Kraków professor who gave away his coat and shoes · give away a coat · the professor's coat", "writer": "writer agent (catholic 1047–1056)", "written": "2026-10-01" }
+  "meta": {
+    "index": "1055. John of Kanty (23 December) · — · a Kraków professor who gave away his coat and shoes · give away a coat · the professor's coat",
+    "writer": "writer agent (catholic 1047–1056)",
+    "written": "2026-10-01"
+  }
 }

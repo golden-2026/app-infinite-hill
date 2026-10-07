@@ -9,24 +9,39 @@
   "length": "7:00",
   "tomorrow": "Fine bodies, empty words",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY SIX-HUNDRED-TWENTY-SEVEN.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY SIX-HUNDRED-TWENTY-SEVEN.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, khutbah, the Friday sermon, and your line was leave trade for a while. What did you arrive early to, and what did the waiting feel like? Day six hundred twenty-seven.",
-      "screen": ["`LEAVE TRADE FOR A WHILE.`"]
+      "screen": [
+        "`LEAVE TRADE FOR A WHILE.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "The Friday prayer ends. People stand, shake hands, find their shoes in the pile by the door. Within ten minutes, the shutters are back up, the taxis are moving, the office towers are filling again. A holy day might sound like a day off, a whole day set apart from work and money. The very next verse of Surah Al-Jumu'ah doesn't tell people to stay. It sends them out the door.",
-      "screen": ["`THE PRAYER ENDS.`", "`SHOES FROM THE PILE BY THE DOOR.`", "`THE SHUTTERS GO BACK UP.`"]
+      "screen": [
+        "`THE PRAYER ENDS.`",
+        "`SHOES FROM THE PILE BY THE DOOR.`",
+        "`THE SHUTTERS GO BACK UP.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "Verse ten. Pickthall: \"And when the prayer is ended, then disperse in the land and seek of Allah's bounty, and remember Allah much, that ye may be successful.\" Three verbs. Fantashiru, disperse, spread out through the land. Wabtaghu, seek, from God's bounty, fadl, which commentators read here as earning a living. And udhkuru, remember God much. Commentators read the command to go out as a permission, not an obligation: the restriction of the previous verse is lifted. Still, the order is telling. In these verses, Friday isn't a day off. It's a day with one hour carved out for gathering, and then work resumes, with remembrance carried into it. Then verse eleven tells a story against the community itself. While the Prophet ﷺ was giving the sermon one Friday, a trade caravan arrived in Medina. People slipped out to it, and left him standing. Bukhari and Muslim report that only twelve men remained. The verse records it plainly, and adds: what is with God is better than amusement and trade, and God is the best of providers. So verses nine to eleven make a little circle. Leave trade for the prayer. After the prayer, go seek a living. But never leave the prayer for the trade. Remembrance at the center, work around it, and the word much: remember God much, not only in the mosque, but out in the market too.",
-      "screen": ["`DISPERSE, SEEK, REMEMBER.` · `NOT A DAY OFF.` · `THE CARAVAN AND THE TWELVE.` · `REMEMBER GOD MUCH, OUT IN THE MARKET.`"]
+      "screen": [
+        "`DISPERSE, SEEK, REMEMBER.` · `NOT A DAY OFF.` · `THE CARAVAN AND THE TWELVE.` · `REMEMBER GOD MUCH, OUT IN THE MARKET.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +53,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Fadl: God's bounty, what Surah Al-Jumu'ah tells believers to go out and seek once the Friday prayer ends. Today's word.",
-      "screen": ["`FADL — today's word`."]
+      "screen": [
+        "`FADL — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,36 +63,105 @@
       "voice": "Your line: pray, then work. Today, after your pause, do your next task well, and remember once in the middle of it. Day six hundred twenty-seven.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 627 COUNTS.` → `TOMORROW: FINE BODIES, EMPTY WORDS.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 627 COUNTS.` → `TOMORROW: FINE BODIES, EMPTY WORDS.`"
+      ]
+    }
   ],
   "howItsDone": "After the Friday prayer, many Muslims return to work or business; Friday is a day of congregation rather than a required day of rest, though some countries include it in the weekend.",
   "games": {
     "match": {
       "prompt": "after the Friday prayer — tap the pairs.",
-      "pairs": [["fantashiru", "disperse through the land"], ["fadl", "God's bounty, a living"], ["the caravan", "arrived during the sermon"], ["twelve", "men who remained"]]
+      "pairs": [
+        [
+          "fantashiru",
+          "disperse through the land"
+        ],
+        [
+          "fadl",
+          "God's bounty, a living"
+        ],
+        [
+          "the caravan",
+          "arrived during the sermon"
+        ],
+        [
+          "twelve",
+          "men who remained"
+        ]
+      ]
     },
     "myth": [
-      ["the Qur'an makes Friday a day of rest from work", false, "after the prayer, it says disperse and seek God's bounty."],
-      ["when a caravan arrived during the sermon, only twelve men stayed", true, "Bukhari and Muslim report it, and verse eleven records it."],
-      ["the verse says to remember God much, not only in the mosque", true, "remember God much, that you may succeed."]
+      [
+        "the Qur'an makes Friday a day of rest from work",
+        false,
+        "after the prayer, it says disperse and seek God's bounty."
+      ],
+      [
+        "when a caravan arrived during the sermon, only twelve men stayed",
+        true,
+        "Bukhari and Muslim report it, and verse eleven records it."
+      ],
+      [
+        "the verse says to remember God much, not only in the mosque",
+        true,
+        "remember God much, that you may succeed."
+      ]
     ],
     "fork": {
       "setup": "the Prophet is giving the Friday sermon. word comes that a trade caravan has arrived in town. what do many of the people do?",
-      "options": ["stay and listen.", "slip out to the caravan, leaving him standing.", "ask him to finish quickly."],
+      "options": [
+        "stay and listen.",
+        "slip out to the caravan, leaving him standing.",
+        "ask him to finish quickly."
+      ],
       "answer": 1,
       "reveal": "many left; only twelve remained. verse eleven records it and says what is with God is better than amusement and trade."
     },
-    "original": { "script": "فَانتَشِرُوا فِي الْأَرْضِ", "say": "fan-ta-SHI-roo fil-ARD", "note": "Arabic: then disperse in the land. Spoken right after the Friday prayer ends." },
+    "original": {
+      "script": "فَانتَشِرُوا فِي الْأَرْضِ",
+      "say": "fan-ta-SHI-roo fil-ARD",
+      "note": "Arabic: then disperse in the land. Spoken right after the Friday prayer ends."
+    },
     "trapdoor": [
       "what you thought: Friday is the Muslim day of rest.",
       "what it means: one hour for gathering, then back to work, with remembrance carried along.",
       "what a scholar hears: the imperative after a prohibition read as permission (ibaha) by most usul scholars; the caravan of 62:11 in Bukhari 936 and Muslim 863; fadl read as livelihood."
+    ],
+    "recall": [
+      [
+        "Musa",
+        "saw the mountain crumble"
+      ],
+      [
+        "ithar",
+        "preferring others over yourself"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Qur'an 62:10", "work": "The Qur'an", "translation": "Pickthall 1930", "quoted": "And when the prayer is ended, then disperse in the land and seek of Allah's bounty, and remember Allah much, that ye may be successful." },
-    { "ref": "Qur'an 62:11 (the caravan and the people who left)", "work": "The Qur'an", "translation": null, "quoted": null },
-    { "ref": "Sahih al-Bukhari 936; Sahih Muslim 863 (only twelve remained)", "work": "Sahih al-Bukhari; Sahih Muslim", "translation": null, "quoted": null }
+    {
+      "ref": "Qur'an 62:10",
+      "work": "The Qur'an",
+      "translation": "Pickthall 1930",
+      "quoted": "And when the prayer is ended, then disperse in the land and seek of Allah's bounty, and remember Allah much, that ye may be successful."
+    },
+    {
+      "ref": "Qur'an 62:11 (the caravan and the people who left)",
+      "work": "The Qur'an",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Sahih al-Bukhari 936; Sahih Muslim 863 (only twelve remained)",
+      "work": "Sahih al-Bukhari; Sahih Muslim",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -87,5 +173,9 @@
       "Editor review 2026-10-01: fadl no longer glossed as 'the ordinary word for earnings' (it means bounty; commentators read it as livelihood here); cut 'most jurists', the 'many Muslim-majority countries' claim, and the unsourced drums detail (voice and fork); 'not a sabbath of rest' rephrased as 'not a day off' so Friday isn't set against the Jewish Sabbath; the hook no longer tells listeners what surprises them."
     ]
   },
-  "meta": { "index": "627. Then go out and seek · — · when the prayer is done, disperse and seek Allah's bounty (62:10) · work well after praying · pray, then work", "writer": "writer agent (islam 602–631)", "written": "2026-09-30" }
+  "meta": {
+    "index": "627. Then go out and seek · — · when the prayer is done, disperse and seek Allah's bounty (62:10) · work well after praying · pray, then work",
+    "writer": "writer agent (islam 602–631)",
+    "written": "2026-09-30"
+  }
 }

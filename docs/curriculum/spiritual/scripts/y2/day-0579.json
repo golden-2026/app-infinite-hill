@@ -9,24 +9,37 @@
   "length": "6:30",
   "tomorrow": "Letter by letter",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY FIVE-HUNDRED-SEVENTY-NINE.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY FIVE-HUNDRED-SEVENTY-NINE.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday: gymnasium, the bump that isn't a plot. Your line was just a scratch. Did you let one accident be an accident? Day five hundred seventy-nine.",
-      "screen": ["`JUST A SCRATCH.`"]
+      "screen": [
+        "`JUST A SCRATCH.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "The last argument you lost. Not lost on points. Lost because the other person was right, and some part of you knew it halfway through. What happened next? Often the mind goes hunting for a technicality. A side issue. A tone to object to. Anything but the plain sentence, you're right, I was wrong. Marcus Aurelius spent his days among courtiers and petitioners, and in book six he wrote himself a note that goes the other way. It's an emperor's note, and it opens a door.",
-      "screen": ["`THE ARGUMENT YOU LOST.` → `HUNTING FOR A TECHNICALITY.` → `AN EMPEROR'S NOTE.`"]
+      "screen": [
+        "`THE ARGUMENT YOU LOST.` → `HUNTING FOR A TECHNICALITY.` → `AN EMPEROR'S NOTE.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "First, the offer. In Meditations six, twenty-one, Marcus says that if anyone can convince him and show him that he isn't thinking or acting rightly, he'll gladly change. Not grudgingly. Gladly. Second, the reason. In George Long's translation, he says: \"I seek the truth, by which no man was ever injured.\" Then the other half: the one who is harmed is the person who stays in their error. Being corrected feels like a loss. Marcus flips it. The correction is the gift. Staying wrong is the injury. Third, the stakes. This note was written by an emperor, and an emperor is easy to agree with. In book one he thanks his teacher Rusticus for showing him that his character needed correcting and discipline, and he praises his adoptive father, Antoninus, for listening to anyone with something useful for the common good. Read together, these lines suggest a man trying to make himself someone it was safe to correct. Fourth, the hard part. The offer has a condition: show me. He isn't promising to change his mind for anyone who's loud, or for whoever spoke last. He's asking for a reason. That's a high bar for others, and an even higher one for yourself. It means when you are shown, you really do move. Not later. Not after saving face. Changing your own mind, out loud, takes a small courage, and an ordinary day offers the chance more than once.",
-      "screen": ["`SHOW ME, AND I'LL GLADLY CHANGE.` · `TRUTH NEVER INJURED ANYONE.` · `SAFE TO CORRECT AN EMPEROR.` · `THE CONDITION: SHOW ME.` · then, large: `SHOW ME.`"]
+      "screen": [
+        "`SHOW ME, AND I'LL GLADLY CHANGE.` · `TRUTH NEVER INJURED ANYONE.` · `SAFE TO CORRECT AN EMPEROR.` · `THE CONDITION: SHOW ME.` · then, large: `SHOW ME.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Rusticus, the teacher Marcus thanks for showing him his character needed correction, behind the emperor's standing offer: show me I'm wrong, and I'll gladly change. Today's word.",
-      "screen": ["`RUSTICUS — today's word`."]
+      "screen": [
+        "`RUSTICUS — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,34 +61,94 @@
       "voice": "Your line: show me. Today, change one mind, your own, about something small, and say so out loud. Day five hundred seventy-nine.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 579 COUNTS.` → `TOMORROW: LETTER BY LETTER.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 579 COUNTS.` → `TOMORROW: LETTER BY LETTER.`"
+      ]
+    }
   ],
   "howItsDone": "Readers of Marcus often hold to 6.21 as a habit of inviting correction: asking colleagues or friends to point out where they're wrong, and saying plainly when they've been shown.",
   "games": {
     "match": {
       "prompt": "show me I'm wrong — tap the pairs.",
-      "pairs": [["being corrected", "the gift, for Marcus"], ["staying in error", "the real injury"], ["Antoninus", "listened to anyone with something useful"], ["the condition", "show me a reason"]]
+      "pairs": [
+        [
+          "being corrected",
+          "the gift, for Marcus"
+        ],
+        [
+          "staying in error",
+          "the real injury"
+        ],
+        [
+          "Antoninus",
+          "listened to anyone with something useful"
+        ],
+        [
+          "the condition",
+          "show me a reason"
+        ]
+      ]
     },
     "myth": [
-      ["Marcus promised to change his mind for whoever argued loudest", false, "his condition is that someone show him he's wrong."],
-      ["Marcus says the person harmed is the one who stays in error", true, "the truth, he says, never injured anyone."]
+      [
+        "Marcus promised to change his mind for whoever argued loudest",
+        false,
+        "his condition is that someone show him he's wrong."
+      ],
+      [
+        "Marcus says the person harmed is the one who stays in error",
+        true,
+        "the truth, he says, never injured anyone."
+      ]
     ],
     "fork": {
       "setup": "halfway through an argument, you realize the other person is right. what does Marcus's note say to do?",
-      "options": ["find a side issue to win on.", "change your mind gladly, and say so.", "go quiet and hope it passes."],
+      "options": [
+        "find a side issue to win on.",
+        "change your mind gladly, and say so.",
+        "go quiet and hope it passes."
+      ],
       "answer": 1,
       "reveal": "Meditations 6.21: if anyone can show me I'm wrong, I'll gladly change, for I seek the truth, by which no one was ever injured."
     },
-    "original": { "script": "ἀλήθεια", "say": "ah-LAY-thay-ah", "note": "Greek: truth, the thing Marcus says he seeks in 6.21." },
+    "original": {
+      "script": "ἀλήθεια",
+      "say": "ah-LAY-thay-ah",
+      "note": "Greek: truth, the thing Marcus says he seeks in 6.21."
+    },
     "trapdoor": [
       "what you thought: a polite way to say I'm open-minded.",
       "what it means: being shown your error is a gift, and refusing it is the real harm.",
       "what a scholar hears: 6.21 fits the Stoic teaching that only vice harms a person, so error held onto damages you, while losing an argument costs nothing real."
+    ],
+    "recall": [
+      [
+        "hegemonikon",
+        "the ruling part, the steering center"
+      ],
+      [
+        "Nestor",
+        "lived into a third generation"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Meditations 6.21", "work": "Marcus Aurelius, Meditations", "translation": "Long 1862", "quoted": "I seek the truth, by which no man was ever injured." },
-    { "ref": "Meditations 1.7, 1.16", "work": "Marcus Aurelius, Meditations", "translation": null, "quoted": null }
+    {
+      "ref": "Meditations 6.21",
+      "work": "Marcus Aurelius, Meditations",
+      "translation": "Long 1862",
+      "quoted": "I seek the truth, by which no man was ever injured."
+    },
+    {
+      "ref": "Meditations 1.7, 1.16",
+      "work": "Marcus Aurelius, Meditations",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",

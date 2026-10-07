@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "the round city",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY NINE-HUNDRED-TWELVE.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY NINE-HUNDRED-TWELVE.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, the fall: black banners from Khurasan, a hidden name spoken in Kufa, and the end of Umayyad rule in Damascus. Your line was: dynasties fall. How did you use the small power you hold? Day nine hundred twelve.",
-      "screen": ["`DYNASTIES FALL.`"]
+      "screen": [
+        "`DYNASTIES FALL.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "A young man is sitting in a house near the Euphrates when his small son runs in, frightened. Outside, black banners. The Abbasid horsemen have come for what is left of the Umayyad family. He grabs his younger brother and they run for the river. They plunge in and swim. From the bank, the soldiers shout: come back, you're safe, nobody will harm you. The younger brother, tired and afraid of drowning, turns back. The older one keeps swimming. From the far bank, the histories say, he watched them kill his brother. His name was Abd al-Rahman, a grandson of the caliph Hisham. Today: the one who escaped.",
-      "screen": ["`BLACK BANNERS OUTSIDE.` → `INTO THE EUPHRATES.` → `ONE TURNS BACK, ONE SWIMS ON.`"]
+      "screen": [
+        "`BLACK BANNERS OUTSIDE.` → `INTO THE EUPHRATES.` → `ONE TURNS BACK, ONE SWIMS ON.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "What do you do when everything you belonged to is gone? Abd al-Rahman went west. The Andalusian histories say he traveled in hiding through North Africa with a freedman named Badr, staying with his mother's people, the Berbers, for a time, slipping away when local rulers grew suspicious. Al-Andalus, across the strait, was full of quarreling factions, and among them were old clients and supporters of the Umayyad house. Badr crossed first to sound them out. Then Abd al-Rahman landed. He gathered supporters, defeated the governor, and entered Cordoba as its ruler. He didn't claim to be caliph. He ruled as emir, and the state he founded would last long after him. People gave him a nickname, al-Dakhil, the one who entered. And there's a tender story people tell. In a garden near Cordoba, he is said to have planted a palm tree, the kind that grew back in Syria, and written lines of poetry to it. In the poem, as the story goes, he speaks to the palm as a fellow stranger: you too are far from your home, you too were brought to a land not your own. So the founder of a state is remembered talking to a tree about homesickness. That's what makes this more than a war story. He lost much of his family, his city and his world. He did not get them back. He started again, in a new place, with what he carried.",
-      "screen": ["`WEST THROUGH NORTH AFRICA.` · `BADR CROSSES FIRST.` · `CORDOBA, AND AN EMIR.` · then, large: `A PALM FAR FROM HOME.`"]
+      "screen": [
+        "`WEST THROUGH NORTH AFRICA.` · `BADR CROSSES FIRST.` · `CORDOBA, AND AN EMIR.` · then, large: `A PALM FAR FROM HOME.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Al-Dakhil, the one who enters: the nickname given to Abd al-Rahman, the Umayyad prince who swam the Euphrates and founded a new state in al-Andalus. Today's word.",
-      "screen": ["`AL-DAKHIL — today's word`."]
+      "screen": [
+        "`AL-DAKHIL — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,35 +61,99 @@
       "voice": "Your line: he started again. Today, take the one small first step you chose, somewhere new. Day nine hundred twelve.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 912 COUNTS.` → `TOMORROW: THE ROUND CITY.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 912 COUNTS.` → `TOMORROW: THE ROUND CITY.`"
+      ]
+    }
   ],
   "howItsDone": "The story of Abd al-Rahman's escape and his palm-tree poem is retold in histories of al-Andalus, and the Great Mosque of Cordoba, which tradition says he began, still stands.",
   "games": {
     "match": {
       "prompt": "the one who escaped — tap the pairs.",
-      "pairs": [["the Euphrates", "where he swam to escape"], ["Badr", "the freedman who crossed first"], ["al-Dakhil", "the one who entered"], ["the palm tree", "a fellow stranger far from home"]]
+      "pairs": [
+        [
+          "the Euphrates",
+          "where he swam to escape"
+        ],
+        [
+          "Badr",
+          "the freedman who crossed first"
+        ],
+        [
+          "al-Dakhil",
+          "the one who entered"
+        ],
+        [
+          "the palm tree",
+          "a fellow stranger far from home"
+        ]
+      ]
     },
     "myth": [
-      ["both brothers swam the river to safety", false, "the younger turned back on a promise of safety and was killed."],
-      ["Abd al-Rahman ruled al-Andalus as emir, not caliph", true, "he didn't claim to be caliph."],
-      ["Abd al-Rahman won back Damascus", false, "he never got his old world back; he started again in al-Andalus."]
+      [
+        "both brothers swam the river to safety",
+        false,
+        "the younger turned back on a promise of safety and was killed."
+      ],
+      [
+        "Abd al-Rahman ruled al-Andalus as emir, not caliph",
+        true,
+        "he didn't claim to be caliph."
+      ],
+      [
+        "Abd al-Rahman won back Damascus",
+        false,
+        "he never got his old world back; he started again in al-Andalus."
+      ]
     ],
     "fork": {
       "setup": "you're swimming the Euphrates. soldiers on the bank promise you'll be safe if you come back. what do you do?",
-      "options": ["turn back and trust them.", "keep swimming to the far bank.", "wait in the water to see what happens."],
+      "options": [
+        "turn back and trust them.",
+        "keep swimming to the far bank.",
+        "wait in the water to see what happens."
+      ],
       "answer": 1,
       "reveal": "the histories say his younger brother turned back and was killed, and Abd al-Rahman swam on."
     },
-    "original": { "script": "الدَّاخِل", "say": "ad-DAA-khil", "note": "Arabic: the one who enters, the nickname given to Abd al-Rahman for entering al-Andalus." },
+    "original": {
+      "script": "الدَّاخِل",
+      "say": "ad-DAA-khil",
+      "note": "Arabic: the one who enters, the nickname given to Abd al-Rahman for entering al-Andalus."
+    },
     "trapdoor": [
       "what you thought: a prince who got lucky.",
       "what it means: a refugee who lost his family and his world, and built a new state far away.",
       "what a scholar hears: the Andalusian histories' escape story, the nickname al-Dakhil, and the palm-tree poem preserved in later anthologies."
+    ],
+    "recall": [
+      [
+        "Yahya",
+        "John the Baptist, honored with a shrine"
+      ],
+      [
+        "turbah",
+        "a clay tablet for the forehead"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Akhbar Majmu'a (Abd al-Rahman's escape across the Euphrates, his journey through North Africa, Badr, and his arrival in al-Andalus)", "work": "History", "translation": null, "quoted": null },
-    { "ref": "al-Maqqari, Nafh al-Tib (the palm-tree verses attributed to Abd al-Rahman; the nickname al-Dakhil)", "work": "History", "translation": null, "quoted": null }
+    {
+      "ref": "Akhbar Majmu'a (Abd al-Rahman's escape across the Euphrates, his journey through North Africa, Badr, and his arrival in al-Andalus)",
+      "work": "History",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "al-Maqqari, Nafh al-Tib (the palm-tree verses attributed to Abd al-Rahman; the nickname al-Dakhil)",
+      "work": "History",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",

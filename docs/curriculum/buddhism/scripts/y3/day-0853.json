@@ -13,25 +13,33 @@
       "type": "the bell",
       "duration": null,
       "voice": "",
-      "screen": ["`DAY EIGHT-HUNDRED-FIFTY-THREE.`"]
+      "screen": [
+        "`DAY EIGHT-HUNDRED-FIFTY-THREE.`"
+      ]
     },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, thus have I heard: a teaching held in people before it was written. Your line was the binding of an unwritten book. Is your memorized line still there? Today, one thing nobody remembered to ask. Day eight hundred fifty-three.",
-      "screen": ["`THE BINDING OF AN UNWRITTEN BOOK.`"]
+      "screen": [
+        "`THE BINDING OF AN UNWRITTEN BOOK.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Which rules are minor? It sounds like a small question. In the account of the Buddha's last days, he tells Ananda that after he is gone, the community may, if it wishes, set aside the lesser and minor rules. It's a generous permission. A teacher loosening his grip, trusting his students. But it comes with a gap in it, and at the first council, the gap opens. Today, the minor rules.",
-      "screen": ["`WHICH RULES ARE MINOR?` → `YOU MAY SET THEM ASIDE.` → `A GAP IN THE PERMISSION.`"]
+      "screen": [
+        "`WHICH RULES ARE MINOR?` → `YOU MAY SET THEM ASIDE.` → `A GAP IN THE PERMISSION.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "First, the report. At the council, Ananda tells the elders what the Buddha said: the minor rules may be dropped. The elders ask the obvious thing. Which ones? Did you ask him? And Ananda says no. He didn't ask. Second, the guesses. The Vinaya lets us hear the elders trying. Some say every rule except the gravest ones is minor. Others draw the line a little higher, then higher again. Each answer is reasonable. None of them settles it, because the one person who could settle it is gone. Third, Mahakassapa's answer. He turns the question around. Lay people know which things are proper for monks, he says. If we start dropping rules now, they'll say the teacher's rules lasted only as long as the teacher, like smoke. So let us not add rules the Buddha didn't make, and let us not take away rules he did make. The elders agree. They kept them all. Fourth, the cost to Ananda. After the council, the elders name several things Ananda did wrong, and failing to ask which rules were minor is one of them. Ananda says he didn't see it as a fault, but out of trust in the elders he acknowledges it. Some readers hear the elders being hard on him. Others hear the community choosing steadiness over its own best guess. Either way, the council kept the whole set of rules, and in the Theravada telling, that is why the small rules are still kept alongside the great ones.",
-      "screen": ["`DID YOU ASK HIM WHICH?` · `SOME DRAW THE LINE HERE, SOME THERE.` · `NOT ADD, NOT TAKE AWAY.` · `ANANDA ACKNOWLEDGES IT.` · then, large: `THEY KEPT THEM ALL.`"]
+      "screen": [
+        "`DID YOU ASK HIM WHICH?` · `SOME DRAW THE LINE HERE, SOME THERE.` · `NOT ADD, NOT TAKE AWAY.` · `ANANDA ACKNOWLEDGES IT.` · then, large: `THEY KEPT THEM ALL.`"
+      ]
     },
     {
       "type": "the practice",
@@ -43,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Mahakassapa. He argued that no rule should be added or dropped, since the one person who could say which were minor was gone. Today's word.",
-      "screen": ["`MAHAKASSAPA — today's word`."]
+      "screen": [
+        "`MAHAKASSAPA — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -55,7 +65,9 @@
       "type": "the close",
       "duration": null,
       "voice": "",
-      "screen": ["`DAY 853 COUNTS.` → `TOMORROW: THE SECOND COUNCIL.`"]
+      "screen": [
+        "`DAY 853 COUNTS.` → `TOMORROW: THE SECOND COUNCIL.`"
+      ]
     }
   ],
   "howItsDone": "Theravada monks keep the full code of monastic rules, minor ones included, and recite it together at regular gatherings of the community.",
@@ -63,16 +75,40 @@
     "match": {
       "prompt": "the minor rules: tap the pairs.",
       "pairs": [
-        ["the Buddha", "said minor rules may be set aside"],
-        ["Ananda", "never asked which ones"],
-        ["the elders", "drew the line in different places"],
-        ["Mahakassapa", "not add, not take away"]
+        [
+          "the Buddha",
+          "said minor rules may be set aside"
+        ],
+        [
+          "Ananda",
+          "never asked which ones"
+        ],
+        [
+          "the elders",
+          "drew the line in different places"
+        ],
+        [
+          "Mahakassapa",
+          "not add, not take away"
+        ]
       ]
     },
     "myth": [
-      ["the Buddha said every rule must be kept forever", false, "in his last days he allowed the community, if it wished, to set aside the lesser and minor rules."],
-      ["Ananda asked the Buddha which rules were minor", false, "he didn't ask, and the elders later counted that among his faults."],
-      ["the elders decided to keep all the rules", true, "Mahakassapa proposed adding none and dropping none, and the council agreed."]
+      [
+        "the Buddha said every rule must be kept forever",
+        false,
+        "in his last days he allowed the community, if it wished, to set aside the lesser and minor rules."
+      ],
+      [
+        "Ananda asked the Buddha which rules were minor",
+        false,
+        "he didn't ask, and the elders later counted that among his faults."
+      ],
+      [
+        "the elders decided to keep all the rules",
+        true,
+        "Mahakassapa proposed adding none and dropping none, and the council agreed."
+      ]
     ],
     "fork": {
       "setup": "you're an elder at the council. the Buddha allowed minor rules to be dropped, but no one knows which ones he meant. what do you propose?",
@@ -84,16 +120,40 @@
       "answer": 1,
       "reveal": "Mahakassapa proposes keeping them all, so no one could say the rules lasted only as long as the teacher. the elders agree."
     },
-    "original": { "script": "खुद्दानुखुद्दक", "say": "KHOOD-daa-noo-KHOOD-duh-kuh", "note": "Pali: the lesser and minor, the words used for the rules the Buddha said could be set aside." },
+    "original": {
+      "script": "खुद्दानुखुद्दक",
+      "say": "KHOOD-daa-noo-KHOOD-duh-kuh",
+      "note": "Pali: the lesser and minor, the words used for the rules the Buddha said could be set aside."
+    },
     "trapdoor": [
       "what you thought: some rules don't really matter.",
       "what it means: the Buddha allowed small rules to be dropped, but no one knew which, so the elders kept every one.",
       "what a scholar hears: Digha Nikaya 16 gives the permission and Cullavagga 11 the council's refusal to use it; the elders' different guesses show the question was open from the start."
+    ],
+    "recall": [
+      [
+        "Sama",
+        "the son at the river"
+      ],
+      [
+        "Chaddanta",
+        "the six-tusked elephant king"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Digha Nikaya 16 (Mahaparinibbana Sutta), the lesser and minor rules", "work": "Digha Nikaya", "translation": null, "quoted": null },
-    { "ref": "Vinaya, Cullavagga 11.1.9–10 (the minor rules and Ananda's faults)", "work": "Vinaya Pitaka", "translation": null, "quoted": null }
+    {
+      "ref": "Digha Nikaya 16 (Mahaparinibbana Sutta), the lesser and minor rules",
+      "work": "Digha Nikaya",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Vinaya, Cullavagga 11.1.9–10 (the minor rules and Ananda's faults)",
+      "work": "Vinaya Pitaka",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",

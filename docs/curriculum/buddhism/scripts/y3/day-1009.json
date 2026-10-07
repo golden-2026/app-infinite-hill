@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "Lay meditation",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-THOUSAND-NINE.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY ONE-THOUSAND-NINE.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, Ryokan plays, curled up in the straw at dawn. Your line was still hiding. What did you play, and did you stay in it? Day one thousand nine.",
-      "screen": ["`STILL HIDING.`"]
+      "screen": [
+        "`STILL HIDING.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "An old wooden bucket, its staves held together by a hoop of bamboo. A nun carries it out at night to fetch water. She fills it, and as she walks back she glances down: the full moon is floating in the water, bright and round, held right there in her bucket. Then the bamboo hoop snaps. The staves spring apart, the bottom drops out, and the water rushes onto the ground. The moon in the bucket is gone. Tradition says that in that moment, the nun Chiyono woke up. Today's word: no water.",
-      "screen": ["`THE MOON IN HER BUCKET.` → `THE HOOP SNAPS.` → `THE WATER IS GONE.`"]
+      "screen": [
+        "`THE MOON IN HER BUCKET.` → `THE HOOP SNAPS.` → `THE WATER IS GONE.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "First, Chiyono. She comes to us through Zen stories as a woman who practiced for a long time, working and sitting at a temple, without the breakthrough she hoped for. Tellings differ about her life before; they agree about the bucket. Second, the moon in the water. Buddhist writing uses this picture to describe things that look solid and aren't. The moon in a bucket looks real. It's bright. You could almost scoop it out. But it's a reflection, and it lasts only as long as the water stays still and the bucket holds. Third, the bottom falls out. Tradition gives Chiyono a short verse about that night. In plain English it says, roughly: I tried this way and that to keep the old bucket together, until the bottom fell out. Where no water stays, no moon lives. Read that way, her years of effort were the bamboo hoop. She kept holding things together, the bucket, the practice, the picture of what awakening should look like. When the hoop gave way, what she'd been holding so carefully turned out not to be what she was looking for. Fourth, what's not lost. The story never says the moon left the sky. Only the copy went, with the water. Some readers hear the self in that bucket, a reflection carried carefully from place to place. Others hear every idea of awakening, which has to spill before awakening can happen. The story leaves room for both, and the real moon stays where it always was.",
-      "screen": ["`CHIYONO AND THE OLD BUCKET.` · `THE MOON IN THE WATER.` · `THE BOTTOM FALLS OUT.` · `ONLY THE REFLECTION IS GONE.`"]
+      "screen": [
+        "`CHIYONO AND THE OLD BUCKET.` · `THE MOON IN THE WATER.` · `THE BOTTOM FALLS OUT.` · `ONLY THE REFLECTION IS GONE.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "No water. Chiyono's bucket breaks, the water spills, and the moon's reflection is gone, while the moon itself stays in the sky. Today's word.",
-      "screen": ["`NO WATER — today's word`."]
+      "screen": [
+        "`NO WATER — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,39 +61,93 @@
       "voice": "Your line: the bottom fell out. Today, watch water spill, from a tap, a cup or a puddle, and when something you've been holding together gives way, look up before you clean up. Day one thousand nine.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 1009 COUNTS.` → `TOMORROW: LAY MEDITATION.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 1009 COUNTS.` → `TOMORROW: LAY MEDITATION.`"
+      ]
+    }
   ],
   "howItsDone": "Chiyono's story and her verse about the broken bucket are retold in Zen collections, alongside other stories of awakening that come in an ordinary moment.",
   "games": {
     "match": {
       "prompt": "no water, no moon: tap the pairs.",
       "pairs": [
-        ["the bamboo hoop", "held the old bucket together"],
-        ["the moon in the bucket", "a reflection, held by water"],
-        ["the moon in the sky", "never went anywhere"],
-        ["Chiyono", "a nun who woke up as it spilled"]
+        [
+          "the bamboo hoop",
+          "held the old bucket together"
+        ],
+        [
+          "the moon in the bucket",
+          "a reflection, held by water"
+        ],
+        [
+          "the moon in the sky",
+          "never went anywhere"
+        ],
+        [
+          "Chiyono",
+          "a nun who woke up as it spilled"
+        ]
       ]
     },
     "myth": [
-      ["when the bucket broke, the moon vanished from the sky", false, "only its reflection went with the water."],
-      ["Chiyono's verse ties the water and the moon together", true, "where no water stays, no moon lives."],
-      ["the story says Chiyono woke up on her first night at the temple", false, "she comes to us as someone who practiced a long time first."]
+      [
+        "when the bucket broke, the moon vanished from the sky",
+        false,
+        "only its reflection went with the water."
+      ],
+      [
+        "Chiyono's verse ties the water and the moon together",
+        true,
+        "where no water stays, no moon lives."
+      ],
+      [
+        "the story says Chiyono woke up on her first night at the temple",
+        false,
+        "she comes to us as someone who practiced a long time first."
+      ]
     ],
     "fork": {
       "setup": "you're Chiyono, walking back with a full bucket and the moon in it. the bamboo hoop is cracking. what happens?",
-      "options": ["you tie it tighter and carry on.", "the bottom falls out, and the moon in it is gone.", "you set it down and fetch another bucket."],
+      "options": [
+        "you tie it tighter and carry on.",
+        "the bottom falls out, and the moon in it is gone.",
+        "you set it down and fetch another bucket."
+      ],
       "answer": 1,
       "reveal": "the hoop snaps, the water spills, the reflection disappears, and tradition says that is the moment she woke up."
     },
-    "original": { "script": "月", "say": "TSOO-kee", "note": "Japanese tsuki: moon. the one in Chiyono's bucket, and the one that stayed in the sky." },
+    "original": {
+      "script": "月",
+      "say": "TSOO-kee",
+      "note": "Japanese tsuki: moon. the one in Chiyono's bucket, and the one that stayed in the sky."
+    },
     "trapdoor": [
       "what you thought: a sad little story about a broken bucket.",
       "what it means: when the water spills, the reflection goes, and Chiyono wakes up to what was never in the bucket.",
       "what a scholar hears: the moon in water is a Buddhist picture of things that look solid but depend on conditions; here the conditions give way."
+    ],
+    "recall": [
+      [
+        "Bassui",
+        "a Rinzai teacher with one question"
+      ],
+      [
+        "Mazu",
+        "this very mind is Buddha"
+      ]
     ]
   },
   "sources": [
-    { "ref": "the story of the nun Chiyono and her verse on the broken bucket", "work": "Zen tradition", "translation": null, "quoted": null }
+    {
+      "ref": "the story of the nun Chiyono and her verse on the broken bucket",
+      "work": "Zen tradition",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -87,7 +156,13 @@
       "Chiyono's story and verse are paraphrased; English versions in circulation are modern. Confirm the paraphrase of the verse.",
       "Some tellings identify Chiyono with the abbess Mugai Nyodai; the script avoids this. Confirm whether a Keeper wants it named.",
       "The moon-in-water image as a Buddhist picture of dependent, insubstantial things is stated generally; confirm.",
-      "Index word is 'No water' (title's head); kept exactly.", "Audit: howItsDone's unsourced claims (told to straining students; copied as calligraphy) replaced with a plain description."]
+      "Index word is 'No water' (title's head); kept exactly.",
+      "Audit: howItsDone's unsourced claims (told to straining students; copied as calligraphy) replaced with a plain description."
+    ]
   },
-  "meta": { "index": "1009. No water, no moon · — · the nun Chiyono's bucket bottom breaks, the moon's reflection vanishes, and she awakens · watch water spill · no water, no moon", "writer": "writer agent (buddhism 1007–1016)", "written": "2026-10-01" }
+  "meta": {
+    "index": "1009. No water, no moon · — · the nun Chiyono's bucket bottom breaks, the moon's reflection vanishes, and she awakens · watch water spill · no water, no moon",
+    "writer": "writer agent (buddhism 1007–1016)",
+    "written": "2026-10-01"
+  }
 }

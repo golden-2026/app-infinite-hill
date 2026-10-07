@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "Andrew Kim Taegon and companions (20 September)",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-THOUSAND-TWENTY-FIVE.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY ONE-THOUSAND-TWENTY-FIVE.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, Joseph of Cupertino, the slow student who was carried through. Your line was patron of exams. Who did you encourage before a test? Day one thousand twenty-five.",
-      "screen": ["`PATRON OF EXAMS.`"]
+      "screen": [
+        "`PATRON OF EXAMS.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "The cathedral in Naples is packed, and everyone is waiting. Up front, a priest holds a small glass reliquary. Inside is something dark and solid, which the people of Naples say is the dried blood of their patron saint. The priest turns it slowly, again and again, so the crowd can see. People pray, some of them out loud. And they watch to see whether, today, it will turn to liquid. When it does, a cry goes up. When it doesn't, the city worries. Today, the bishop at the center of all that waiting. Januarius.",
-      "screen": ["`A PACKED CATHEDRAL.` → `A SMALL GLASS VESSEL.` → `WILL IT TURN TO LIQUID?`"]
+      "screen": [
+        "`A PACKED CATHEDRAL.` → `A SMALL GLASS VESSEL.` → `WILL IT TURN TO LIQUID?`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "First, the man. Tradition says Januarius was a bishop of Benevento, in southern Italy, killed for his faith in a Roman persecution, near Naples. Beyond that, little can be confirmed. His relics came to Naples, and Naples took him as its own. He is the city's patron. Second, the blood. Tradition says it was gathered after his death and kept. The vessels are kept in the cathedral, and on his feast and on some other days in the year the reliquary is brought out, and the people wait. Often, witnesses say, the dark mass turns liquid. Sometimes it doesn't. Third, what the Church says, and this matters. The Church hasn't ruled on it. It allows the devotion. It doesn't require anyone to believe that the change is a miracle. People have offered natural explanations, and the question stays open. Catholics are free to hold it either way. So the center of this day isn't a verdict. It's a city standing together, hoping. A line from the Psalms, in the Douay-Rheims, is close to the heart of it: \"Precious in the sight of the Lord is the death of his saints.\" Whatever happens inside that glass, the people of Naples have kept a martyr's death close, and treated it as precious. And there's something else in the scene. The waiting itself. A crowd that has nothing to do but pray and watch and wait together. Some days the answer comes quickly. Some days it's slow. Some days it doesn't come at all, and they come back anyway.",
-      "screen": ["`A BISHOP AND MARTYR.` · `THE BLOOD IN THE GLASS.` · `THE CHURCH HASN'T RULED.` · `A CITY WAITING TOGETHER.` · then, large: `PRECIOUS IN THE SIGHT OF THE LORD.`"]
+      "screen": [
+        "`A BISHOP AND MARTYR.` · `THE BLOOD IN THE GLASS.` · `THE CHURCH HASN'T RULED.` · `A CITY WAITING TOGETHER.` · then, large: `PRECIOUS IN THE SIGHT OF THE LORD.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Januarius. The bishop and martyr, patron of Naples, whose blood in a glass vessel is said to turn liquid. The Church hasn't ruled on it.",
-      "screen": ["`JANUARIUS — today's word`."]
+      "screen": [
+        "`JANUARIUS — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,22 +61,62 @@
       "voice": "Your line: the people wait. Today, when you have to wait, in a line, on hold, for news, let the waiting be a kind of prayer, or at least a kind of patience. Day one thousand twenty-five.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 1025 COUNTS.` → `TOMORROW: ANDREW KIM TAEGON AND COMPANIONS.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 1025 COUNTS.` → `TOMORROW: ANDREW KIM TAEGON AND COMPANIONS.`"
+      ]
+    }
   ],
   "howItsDone": "On 19 September, and on some other days in the year, the reliquary of Saint Januarius is shown in the cathedral of Naples while the faithful pray and wait to see whether the blood liquefies; elsewhere Catholics may keep his optional memorial.",
   "games": {
     "match": {
       "prompt": "Januarius — tap the pairs.",
-      "pairs": [["Januarius", "bishop and martyr"], ["Naples", "the city that keeps his relic"], ["the vessel", "dried blood said to turn liquid"], ["the Church", "hasn't ruled on it"]]
+      "pairs": [
+        [
+          "Januarius",
+          "bishop and martyr"
+        ],
+        [
+          "Naples",
+          "the city that keeps his relic"
+        ],
+        [
+          "the vessel",
+          "dried blood said to turn liquid"
+        ],
+        [
+          "the Church",
+          "hasn't ruled on it"
+        ]
+      ]
     },
     "myth": [
-      ["Catholics are required to believe the blood liquefies", false, "the Church hasn't ruled on it. it allows the devotion, and Catholics are free to hold it either way."],
-      ["much of Januarius's life can't be confirmed", true, "tradition calls him a bishop and martyr; beyond that, little is certain."],
-      ["when the blood stays solid, the city worries", true, "the people wait, and when it doesn't happen, they worry and come back anyway."]
+      [
+        "Catholics are required to believe the blood liquefies",
+        false,
+        "the Church hasn't ruled on it. it allows the devotion, and Catholics are free to hold it either way."
+      ],
+      [
+        "much of Januarius's life can't be confirmed",
+        true,
+        "tradition calls him a bishop and martyr; beyond that, little is certain."
+      ],
+      [
+        "when the blood stays solid, the city worries",
+        true,
+        "the people wait, and when it doesn't happen, they worry and come back anyway."
+      ]
     ],
     "fork": {
       "setup": "you're a Church official. people want the liquefaction declared a miracle, once and for all. what do you do?",
-      "options": ["declare it a miracle.", "declare it a trick.", "let the people keep praying, and leave the question open."],
+      "options": [
+        "declare it a miracle.",
+        "declare it a trick.",
+        "let the people keep praying, and leave the question open."
+      ],
       "answer": 2,
       "reveal": "the Church has left it open. the devotion goes on, and no one is required to believe it."
     },
@@ -70,11 +125,31 @@
       "what you thought: a miracle the Church officially vouches for.",
       "what it means: a martyr bishop, a city's patron, and a relic whose blood is said to liquefy, while the Church leaves the question open.",
       "what a scholar hears: the Douay-Rheims numbers that line Psalm 115:15, following the Latin and Greek count; Bibles that follow the Hebrew count call it Psalm 116:15."
+    ],
+    "recall": [
+      [
+        "Martha",
+        "busy with much serving"
+      ],
+      [
+        "Tacitus",
+        "the Roman historian who records it"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Psalm 115:15 (Psalm 116:15 in Hebrew numbering)", "work": "The Bible", "translation": "Douay-Rheims (Challoner)", "quoted": "Precious in the sight of the Lord is the death of his saints." },
-    { "ref": "traditions of Saint Januarius and the Naples relic", "work": "hagiography", "translation": null, "quoted": null }
+    {
+      "ref": "Psalm 115:15 (Psalm 116:15 in Hebrew numbering)",
+      "work": "The Bible",
+      "translation": "Douay-Rheims (Challoner)",
+      "quoted": "Precious in the sight of the Lord is the death of his saints."
+    },
+    {
+      "ref": "traditions of Saint Januarius and the Naples relic",
+      "work": "hagiography",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -90,5 +165,9 @@
       "Editor: cut the unsupported 'for a very long time'; practice changed from 'hold a city', which repeated day 1016's hold-a-country and day 1026's Korea practice, to waiting alongside Naples."
     ]
   },
-  "meta": { "index": "1025. Januarius (19 September) · — · a bishop-martyr of Naples whose relic of blood is said to liquefy; the Church hasn't ruled on it · pray for Naples · the people wait", "writer": "writer agent (catholic 1017–1026)", "written": "2026-10-01" }
+  "meta": {
+    "index": "1025. Januarius (19 September) · — · a bishop-martyr of Naples whose relic of blood is said to liquefy; the Church hasn't ruled on it · pray for Naples · the people wait",
+    "writer": "writer agent (catholic 1017–1026)",
+    "written": "2026-10-01"
+  }
 }

@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "No water, no moon",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-THOUSAND-EIGHT.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY ONE-THOUSAND-EIGHT.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, Ryokan and the thief, the monk who gave away his clothes and kept the moon. Your line was I wish I could give the moon. What did you give away? Day one thousand eight.",
-      "screen": ["`I WISH I COULD GIVE THE MOON.`"]
+      "screen": [
+        "`I WISH I COULD GIVE THE MOON.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Late afternoon in a village. A group of children run up to an old monk with a begging bowl and shout his name. Not to ask for a blessing. To ask him to play. He sets the bowl down. They play ball, then hide and seek, and when it's his turn to hide he crawls into a pile of straw in a field and goes perfectly still. The children search. It gets dark. They go home for supper and forget all about him. The next morning, the story goes, a farmer comes to move the straw and finds the monk still there. Shh, the monk whispers. The children will find me. Today's word: Ryokan plays.",
-      "screen": ["`THE CHILDREN WANT TO PLAY.` → `HE HIDES IN THE STRAW.` → `SHH. THEY'LL FIND ME.`"]
+      "screen": [
+        "`THE CHILDREN WANT TO PLAY.` → `HE HIDES IN THE STRAW.` → `SHH. THEY'LL FIND ME.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "First, how the story reaches us. Like the thief story, it's a story people tell about Ryokan. Versions differ on where he hid; the monk stays the same. Second, play as practice. Ryokan's poems, as they've come down to us, keep returning to children, to a ball, to a spring day that ends too soon. Tradition says he carried a cloth handball in his sleeve. For him, playing doesn't seem to have been time stolen from practice. It was a place practice showed up: full attention, no score worth keeping, no reputation to protect. Third, still hiding. Why stay all night? Some readers hear a holy fool, a man too simple to notice the game was over. Others hear faithfulness: he gave his word to the game, and he kept it. Others hear complete absorption, so present to hiding that nobody was left inside to give up. The story doesn't choose for you. Fourth, the week behind us. It's been a week of teachers from Japan. Bassui asked who is hearing. Bankei pointed to the unborn mind, already here. Basho heard the sound of water when a frog jumped into an old pond. Hakuin, blamed for a baby that wasn't his, said is that so, and taught the butter that melts. Ryokan gave away his clothes and kept the moon. And today he's in the straw, still hiding, waiting for the children to come back.",
-      "screen": ["`VERSIONS DIFFER ON WHERE HE HID.` · `PLAY AS A PLACE FOR PRACTICE.` · `WHY STAY ALL NIGHT?` · `A WEEK OF TEACHERS FROM JAPAN.`"]
+      "screen": [
+        "`VERSIONS DIFFER ON WHERE HE HID.` · `PLAY AS A PLACE FOR PRACTICE.` · `WHY STAY ALL NIGHT?` · `A WEEK OF TEACHERS FROM JAPAN.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Ryokan plays. The monk who hid in the straw for the children's game and was still hiding at dawn. Today's word.",
-      "screen": ["`RYOKAN PLAYS — today's word`."]
+      "screen": [
+        "`RYOKAN PLAYS — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,40 +61,99 @@
       "voice": "Your line: still hiding. Today, play for five minutes, a game, a ball, a song, all the way in, as if nobody were keeping score. Day one thousand eight.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 1008 COUNTS.` → `TOMORROW: NO WATER, NO MOON.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 1008 COUNTS.` → `TOMORROW: NO WATER, NO MOON.`"
+      ]
+    }
   ],
   "howItsDone": "Ryokan's poems about children and play are read in Zen communities and in Japanese schools and homes, and his story is told as a picture of practice that includes simple joy.",
   "games": {
     "match": {
       "prompt": "Ryokan plays: tap the pairs.",
       "pairs": [
-        ["the children", "asked him to play"],
-        ["the straw", "where he hid, in one telling"],
-        ["the farmer", "found him the next morning"],
-        ["the handball", "carried in his sleeve, tradition says"]
+        [
+          "the children",
+          "asked him to play"
+        ],
+        [
+          "the straw",
+          "where he hid, in one telling"
+        ],
+        [
+          "the farmer",
+          "found him the next morning"
+        ],
+        [
+          "the handball",
+          "carried in his sleeve, tradition says"
+        ]
       ]
     },
     "myth": [
-      ["the children found Ryokan before dark", false, "they went home for supper and forgot him. a farmer found him in the morning."],
-      ["Ryokan's poems keep returning to children and play", true, "a ball, children, a spring day that ends too soon."],
-      ["every version of the story agrees on where he hid", false, "versions differ on the hiding place; the monk stays the same."]
+      [
+        "the children found Ryokan before dark",
+        false,
+        "they went home for supper and forgot him. a farmer found him in the morning."
+      ],
+      [
+        "Ryokan's poems keep returning to children and play",
+        true,
+        "a ball, children, a spring day that ends too soon."
+      ],
+      [
+        "every version of the story agrees on where he hid",
+        false,
+        "versions differ on the hiding place; the monk stays the same."
+      ]
     ],
     "fork": {
       "setup": "you're Ryokan, hidden in the straw. it's dark, and the children have gone quiet. what do you do?",
-      "options": ["go home; the game is over.", "stay hidden; they'll find me.", "call out so they can find you."],
+      "options": [
+        "go home; the game is over.",
+        "stay hidden; they'll find me.",
+        "call out so they can find you."
+      ],
       "answer": 1,
       "reveal": "in the story he stays put all night, and when the farmer finds him, he whispers: shh, the children will find me."
     },
-    "original": { "script": "かくれんぼ", "say": "kah-koo-REN-boh", "note": "Japanese kakurenbo: hide and seek, the children's game Ryokan stayed in all night." },
+    "original": {
+      "script": "かくれんぼ",
+      "say": "kah-koo-REN-boh",
+      "note": "Japanese kakurenbo: hide and seek, the children's game Ryokan stayed in all night."
+    },
     "trapdoor": [
       "what you thought: a sweet story about a forgetful old man.",
       "what it means: Ryokan gives the game his whole self, and keeps his word to it until morning.",
       "what a scholar hears: a story told in several versions, set beside Ryokan's poems that keep returning to children and a ball."
+    ],
+    "recall": [
+      [
+        "shikantaza",
+        "nothing but sitting"
+      ],
+      [
+        "Patrul Rinpoche",
+        "a tulku who chose the road"
+      ]
     ]
   },
   "sources": [
-    { "ref": "the story of Ryokan hiding during the children's game", "work": "traditional stories of Ryokan", "translation": null, "quoted": null },
-    { "ref": "Ryokan's poems on playing ball with children", "work": "poems of Ryokan", "translation": null, "quoted": null }
+    {
+      "ref": "the story of Ryokan hiding during the children's game",
+      "work": "traditional stories of Ryokan",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Ryokan's poems on playing ball with children",
+      "work": "poems of Ryokan",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -92,5 +166,9 @@
       "Editor: fixed 'like the thief' wording; cut the week-closing summary line, which repeated day 1001's 'drop the extras, meet what's here' wrap-up."
     ]
   },
-  "meta": { "index": "1008. Ryokan plays · — · Ryokan plays hide and seek with village children till after dark · play for five minutes · still hiding", "writer": "writer agent (buddhism 1007–1016)", "written": "2026-10-01" }
+  "meta": {
+    "index": "1008. Ryokan plays · — · Ryokan plays hide and seek with village children till after dark · play for five minutes · still hiding",
+    "writer": "writer agent (buddhism 1007–1016)",
+    "written": "2026-10-01"
+  }
 }

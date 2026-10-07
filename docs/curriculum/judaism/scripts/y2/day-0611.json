@@ -9,24 +9,37 @@
   "length": "6:45",
   "tomorrow": "Counting by night",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY SIX-HUNDRED-ELEVEN.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY SIX-HUNDRED-ELEVEN.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, Maariv, Jacob's prayer on the road at sundown. Your line was meet the place you've landed. Where were you when the sky went dark? Today, a blessing for the night itself. Day six hundred eleven.",
-      "screen": ["`MEET THE PLACE YOU'VE LANDED.`"]
+      "screen": [
+        "`MEET THE PLACE YOU'VE LANDED.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "For a child, the night's fear is the dark under the bed. Later the list changes. The bill on the counter. The test result that hasn't come. The person who didn't text back. The noise downstairs. In the daytime they're errands; after midnight, with the house quiet, they can get very loud. The evening service has a blessing for exactly that hour. It's said every night, between the Shema and the silent prayer, and it's the one that asks for a roof.",
-      "screen": ["`THE DARK UNDER THE BED.` → `LATER, THE LIST CHANGES.` → `A BLESSING THAT ASKS FOR A ROOF.`"]
+      "screen": [
+        "`THE DARK UNDER THE BED.` → `LATER, THE LIST CHANGES.` → `A BLESSING THAT ASKS FOR A ROOF.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "Hashkiveinu means lay us down. The prayer begins, in plain English: lay us down, LORD our God, in peace, and raise us up again, our King, to life. Notice the pair. Lying down and getting up. It doesn't ask for a perfect night. It asks to make it through to morning. Then the central image: spread over us your shelter of peace. In Hebrew, sukkat shlomecha. A sukkah, like the booth of the festival. Not a fortress with stone walls. A light hut with leaves for a roof, where you can see the stars through the gaps. Shelter that is real, but fragile. Then the prayer gets specific. It asks to be kept from enemies, from disease, from sword, from hunger and from sorrow. And it asks God to remove the adversary from before us and behind us. The night's fears, named one by one. The Talmud calls this blessing a long extension of the blessing about redemption that comes just before it. Some connect it with the first Passover night in Egypt, when families stayed inside their houses while danger passed through the streets. How does it end? On weekdays, in most communities: blessed are you, who guards his people Israel forever. On Friday nights, the ending changes: who spreads the shelter of peace over us, over all his people Israel, and over Jerusalem. On Shabbat, the shelter is the last word.",
-      "screen": ["`LAY US DOWN, RAISE US UP.` · `A SUKKAH, NOT A FORTRESS.` · `THE NIGHT'S FEARS, NAMED.` · `ON FRIDAY NIGHT, THE SHELTER.` · then, large: `SPREAD THE SHELTER.`"]
+      "screen": [
+        "`LAY US DOWN, RAISE US UP.` · `A SUKKAH, NOT A FORTRESS.` · `THE NIGHT'S FEARS, NAMED.` · `ON FRIDAY NIGHT, THE SHELTER.` · then, large: `SPREAD THE SHELTER.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Hashkiveinu. Lay us down. The evening blessing that asks for peace through the night, and a shelter spread overhead.",
-      "screen": ["`HASHKIVEINU — today's word`."]
+      "screen": [
+        "`HASHKIVEINU — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,36 +61,105 @@
       "voice": "Your line: spread the shelter. Today, be a roof for someone: check in on someone who might lie awake worried tonight. Day six hundred eleven.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 611 COUNTS.` → `TOMORROW: COUNTING BY NIGHT.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 611 COUNTS.` → `TOMORROW: COUNTING BY NIGHT.`"
+      ]
+    }
   ],
   "howItsDone": "Hashkiveinu is the second blessing after the Shema in the evening service, said every night; on Friday nights its closing changes to 'who spreads the shelter of peace', and many congregations sing it.",
   "games": {
     "match": {
       "prompt": "inside Hashkiveinu — tap the pairs.",
-      "pairs": [["hashkiveinu", "lay us down"], ["sukkat shlomecha", "your shelter of peace"], ["weekday ending", "who guards his people Israel"], ["Friday night ending", "who spreads the shelter of peace"]]
+      "pairs": [
+        [
+          "hashkiveinu",
+          "lay us down"
+        ],
+        [
+          "sukkat shlomecha",
+          "your shelter of peace"
+        ],
+        [
+          "weekday ending",
+          "who guards his people Israel"
+        ],
+        [
+          "Friday night ending",
+          "who spreads the shelter of peace"
+        ]
+      ]
     },
     "myth": [
-      ["Hashkiveinu asks for a night with no troubles at all", false, "it asks to lie down in peace and rise again to life."],
-      ["the shelter in the prayer is a sukkah, a light booth", true, "sukkat shlomecha: not a fortress, a covering."],
-      ["the blessing ends the same way every night", false, "on Friday nights it ends with the shelter of peace."]
+      [
+        "Hashkiveinu asks for a night with no troubles at all",
+        false,
+        "it asks to lie down in peace and rise again to life."
+      ],
+      [
+        "the shelter in the prayer is a sukkah, a light booth",
+        true,
+        "sukkat shlomecha: not a fortress, a covering."
+      ],
+      [
+        "the blessing ends the same way every night",
+        false,
+        "on Friday nights it ends with the shelter of peace."
+      ]
     ],
     "fork": {
       "setup": "it's Friday night, and the leader reaches the end of Hashkiveinu. what's the last line?",
-      "options": ["who guards his people Israel forever.", "who spreads the shelter of peace over us.", "who brings on the evenings."],
+      "options": [
+        "who guards his people Israel forever.",
+        "who spreads the shelter of peace over us.",
+        "who brings on the evenings."
+      ],
       "answer": 1,
       "reveal": "on Shabbat the ending changes: who spreads the shelter of peace over us, over all Israel, and over Jerusalem."
     },
-    "original": { "script": "סֻכַּת שְׁלוֹמֶךָ", "say": "soo-KAHT shloh-MEH-khah", "note": "Hebrew: your shelter of peace, from the Hashkiveinu blessing." },
+    "original": {
+      "script": "סֻכַּת שְׁלוֹמֶךָ",
+      "say": "soo-KAHT shloh-MEH-khah",
+      "note": "Hebrew: your shelter of peace, from the Hashkiveinu blessing."
+    },
     "trapdoor": [
       "what you thought: a bedtime wish for good sleep.",
       "what it means: a request to make it through the night, under a shelter that's real but light, like a sukkah.",
       "what a scholar hears: Berakhot 4b calls it an extended redemption blessing; its Friday-night ending names the sukkah of peace."
+    ],
+    "recall": [
+      [
+        "Aleinu",
+        "it is upon us: our duty"
+      ],
+      [
+        "haftarah",
+        "the concluding reading"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Hashkiveinu (siddur, evening service)", "work": "Siddur", "translation": null, "quoted": null },
-    { "ref": "Babylonian Talmud, Berakhot 4b", "work": "Talmud", "translation": null, "quoted": null },
-    { "ref": "Exodus 12:22–23", "work": "The Holy Scriptures", "translation": null, "quoted": null }
+    {
+      "ref": "Hashkiveinu (siddur, evening service)",
+      "work": "Siddur",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Babylonian Talmud, Berakhot 4b",
+      "work": "Talmud",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Exodus 12:22–23",
+      "work": "The Holy Scriptures",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -88,5 +172,9 @@
       "Editor review (y2 595–612): hook rewritten so it no longer asks 'what are you afraid of' and then tells the listener ('for a grown-up, it's usually...', 'anyone who's lain awake... knows that'); the 3am image also echoed day 608's clock-time opener. Practice's 'Imagine' changed to 'Bring to mind'. Teach unchanged."
     ]
   },
-  "meta": { "index": "611. Spread over us · Hashkiveinu · lay us down in peace and spread over us your shelter · picture a shelter over you tonight · spread the shelter", "writer": "writer agent (judaism y2 602–631)", "written": "2026-09-30" }
+  "meta": {
+    "index": "611. Spread over us · Hashkiveinu · lay us down in peace and spread over us your shelter · picture a shelter over you tonight · spread the shelter",
+    "writer": "writer agent (judaism y2 602–631)",
+    "written": "2026-09-30"
+  }
 }

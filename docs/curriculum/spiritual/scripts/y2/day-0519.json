@@ -9,24 +9,37 @@
   "length": "6:30",
   "tomorrow": "Between two teachers",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY FIVE-HUNDRED-NINETEEN.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY FIVE-HUNDRED-NINETEEN.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday: tempus, one of five candidates, three chosen. Your line was three keepers. Which three did you write down? Day five hundred nineteen.",
-      "screen": ["`THREE KEEPERS.`"]
+      "screen": [
+        "`THREE KEEPERS.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Close to ninety days ago, we opened a letter that begins with a command: claim yourself for yourself. Since then we've read a man who got seasick, wept too much, owned too much, flattered an emperor, tutored another, consoled grieving mothers, and died slowly with his friends around him. A flawed, wise friend. Today we close the circle by going back to the first page, and seeing how different it reads now. Seneca close.",
-      "screen": ["`BACK TO LETTER ONE.` → `A FLAWED, WISE FRIEND.` → `BACK TO THE FIRST PAGE.`"]
+      "screen": [
+        "`BACK TO LETTER ONE.` → `A FLAWED, WISE FRIEND.` → `BACK TO THE FIRST PAGE.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "First, the command. Letter one opens: claim yourself for yourself, and gather up the time that's been taken from you, stolen, or let slip. And the line that becomes our carry: \"Hold every hour in your grasp.\" Back then it could sound like productivity advice. Now we know who wrote it: a busy man at the edge of a dangerous court, who had lost years to exile and would lose his life to an emperor's order. Second, three ways time leaves. Some is snatched away, Seneca says, some is quietly taken, and some just slips. And the most shameful loss is the one that comes from carelessness. Not the hours stolen. The hours we let go without noticing. Third, his honesty, already on page one. Seneca doesn't claim to waste nothing. He says he can't say that, but he can say what he loses, and why, and how. He keeps the account. That's the whole friend in miniature: not perfect, but paying attention. Fourth, the bottom of the jar. He ends with an old saying: thrift comes too late at the bottom of the jar, because what's left down there is the least, and the worst. Start saving now, while the jar is still full. That's how this stretch began, and it's a fair way to end them. Seneca never pretended to be the sage. He was the friend in the next seat, working on the same lesson, and leaving it in writing. Tomorrow, before we open Marcus Aurelius, we'll set him beside one more teacher.",
-      "screen": ["`CLAIM YOURSELF FOR YOURSELF.` · `SNATCHED, TAKEN, OR LET SLIP.` · `HE KEEPS THE ACCOUNT.` · `THE BOTTOM OF THE JAR.` · then, large: `HOLD EVERY HOUR.`"]
+      "screen": [
+        "`CLAIM YOURSELF FOR YOURSELF.` · `SNATCHED, TAKEN, OR LET SLIP.` · `HE KEEPS THE ACCOUNT.` · `THE BOTTOM OF THE JAR.` · then, large: `HOLD EVERY HOUR.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "The jar, Seneca's closing image: thrift comes too late at the bottom of it, so start saving your hours now, while it's still full. Today's word.",
-      "screen": ["`THE JAR — today's word`."]
+      "screen": [
+        "`THE JAR — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,36 +61,105 @@
       "voice": "Your line: hold every hour. Pick one hour today and decide in advance what it's for. When it comes, keep it. Day five hundred nineteen.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 519 COUNTS.` → `TOMORROW: BETWEEN TWO TEACHERS.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 519 COUNTS.` → `TOMORROW: BETWEEN TWO TEACHERS.`"
+      ]
+    }
   ],
   "howItsDone": "Some readers of Seneca return to his first letter on time, and some keep a simple record of where their hours go, as he describes doing.",
   "games": {
     "match": {
       "prompt": "Seneca close — tap the pairs.",
-      "pairs": [["letter one opens", "claim yourself for yourself"], ["the most shameful loss", "time lost through carelessness"], ["Seneca's account", "what he loses, why and how"], ["the bottom of the jar", "thrift that comes too late"]]
+      "pairs": [
+        [
+          "letter one opens",
+          "claim yourself for yourself"
+        ],
+        [
+          "the most shameful loss",
+          "time lost through carelessness"
+        ],
+        [
+          "Seneca's account",
+          "what he loses, why and how"
+        ],
+        [
+          "the bottom of the jar",
+          "thrift that comes too late"
+        ]
+      ]
     },
     "myth": [
-      ["in Letter 1 Seneca claims he wastes no time at all", false, "he says he can't claim that, but he can say what he loses, why and how."],
-      ["Seneca says the worst loss of time comes from carelessness", true, "worse than time snatched or stolen."],
-      ["the 'bottom of the jar' saying means save what's left at the end", false, "it means thrift at the bottom comes too late: start while the jar is full."]
+      [
+        "in Letter 1 Seneca claims he wastes no time at all",
+        false,
+        "he says he can't claim that, but he can say what he loses, why and how."
+      ],
+      [
+        "Seneca says the worst loss of time comes from carelessness",
+        true,
+        "worse than time snatched or stolen."
+      ],
+      [
+        "the 'bottom of the jar' saying means save what's left at the end",
+        false,
+        "it means thrift at the bottom comes too late: start while the jar is full."
+      ]
     ],
     "fork": {
       "setup": "Lucilius writes back: and you, Seneca, do you waste no time? what does Letter 1 say?",
-      "options": ["I waste none at all.", "I can't say that, but I can tell you what I lose, and why, and how.", "time isn't worth counting."],
+      "options": [
+        "I waste none at all.",
+        "I can't say that, but I can tell you what I lose, and why, and how.",
+        "time isn't worth counting."
+      ],
       "answer": 1,
       "reveal": "he admits losses, and keeps the account. that honesty is there on the very first page."
     },
-    "original": { "script": "vindica te tibi", "say": "WIN-dih-kah teh TIH-bee", "note": "Latin: claim yourself for yourself. The opening command of Letter 1." },
+    "original": {
+      "script": "vindica te tibi",
+      "say": "WIN-dih-kah teh TIH-bee",
+      "note": "Latin: claim yourself for yourself. The opening command of Letter 1."
+    },
     "trapdoor": [
       "what you thought: a time-management tip.",
       "what it means: claim your life back, hour by hour, from the ways it slips away, and keep honest account of it.",
       "what a scholar hears: vindicare is a legal word, to claim something as your own, even to set a slave free; Seneca opens by asking Lucilius to free himself."
+    ],
+    "recall": [
+      [
+        "studiosa luxuria",
+        "learned luxury"
+      ],
+      [
+        "vale",
+        "be well, farewell"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Letter 1", "work": "Seneca, Moral Letters to Lucilius", "translation": "Seneca, Gummere 1917", "quoted": "Hold every hour in your grasp." },
-    { "ref": "Letters 53, 63 (seasickness; tears)", "work": "Seneca, Moral Letters to Lucilius", "translation": null, "quoted": null },
-    { "ref": "Letter 1 (time snatched, taken, slipped; keeping the account; the bottom of the jar)", "work": "Seneca, Moral Letters to Lucilius", "translation": null, "quoted": null }
+    {
+      "ref": "Letter 1",
+      "work": "Seneca, Moral Letters to Lucilius",
+      "translation": "Seneca, Gummere 1917",
+      "quoted": "Hold every hour in your grasp."
+    },
+    {
+      "ref": "Letters 53, 63 (seasickness; tears)",
+      "work": "Seneca, Moral Letters to Lucilius",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Letter 1 (time snatched, taken, slipped; keeping the account; the bottom of the jar)",
+      "work": "Seneca, Moral Letters to Lucilius",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",

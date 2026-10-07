@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "Habits grow by use",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY FOUR-HUNDRED-ELEVEN.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY FOUR-HUNDRED-ELEVEN.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday: astheneia, the door into philosophy, and your line, honest about being unfinished. Was there a weakness you admitted, even quietly? Day four hundred eleven.",
-      "screen": ["`ASTHENEIA.`"]
+      "screen": [
+        "`ASTHENEIA.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "In the shower, a person can sing. Really sing. Full voice, the high note, the whole song. Then someone hands that same person a microphone at a wedding, and the throat closes up. The voice didn't change between the bathroom and the reception hall. The skill didn't change. Something else walked into the room. Epictetus describes this exact moment, with a singer in a theater, and he names what walked in. Today: agōnia.",
-      "screen": ["`IN THE SHOWER, YOU CAN SING.` → `A MICROPHONE AT A WEDDING.` → `SOMETHING ELSE WALKED IN.`"]
+      "screen": [
+        "`IN THE SHOWER, YOU CAN SING.` → `A MICROPHONE AT A WEDDING.` → `SOMETHING ELSE WALKED IN.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "This is Discourses book two, chapter thirteen, on anxiety. Epictetus starts like a doctor making a diagnosis. When I see someone anxious, he says, I ask: what does this person want? Because if they didn't want something outside their control, why would they be anxious? Then the musician. A lyre player singing by himself isn't anxious at all. But when he walks into the theater, even if he has a fine voice and plays beautifully, he's anxious. Why? Because he doesn't only want to sing well. He wants to be applauded, and that isn't up to him. Where his skill is, there's confidence. Bring in a crowd he wants something from, and the anxiety arrives. Epictetus then gives a pair of real people. When Zeno, the founder of the Stoic school, went to see King Antigonus, Zeno wasn't anxious. Antigonus was. The king wanted to impress the philosopher; the philosopher wanted nothing from the king. The one with the power was the one sweating. The fix isn't to stop caring about doing well. Practice your craft, Epictetus says; get good. The fix is to notice when part of you is singing for the applause, and to bring the attention back to the singing. You can stand in a full room and still, inside, be singing without the crowd.",
-      "screen": ["`WHAT DOES THE ANXIOUS ONE WANT?` · `ALONE: NO ANXIETY. THE THEATER: ANXIETY.` · `ZENO CALM, THE KING ANXIOUS.` · `BACK TO THE SINGING.` · then, large: `WITHOUT THE CROWD.`"]
+      "screen": [
+        "`WHAT DOES THE ANXIOUS ONE WANT?` · `ALONE: NO ANXIETY. THE THEATER: ANXIETY.` · `ZENO CALM, THE KING ANXIOUS.` · `BACK TO THE SINGING.` · then, large: `WITHOUT THE CROWD.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Agōnia. Greek for the strain of a contest, anxiety: Epictetus' diagnosis of nerves, the singer alone is calm, and the anxiety comes with wanting applause.",
-      "screen": ["`AGŌNIA — today's word`."]
+      "screen": [
+        "`AGŌNIA — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,34 +61,93 @@
       "voice": "Your line: singing for the applause. Do one thing today with no audience at all, and notice how it feels to do it just to do it well. Day four hundred eleven.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 411 COUNTS.` → `TOMORROW: HABITS GROW BY USE.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 411 COUNTS.` → `TOMORROW: HABITS GROW BY USE.`"
+      ]
+    }
   ],
   "howItsDone": "Stoic practitioners often meet nerves by asking what they want that isn't in their control, usually approval, and turning their attention back to doing the task well.",
   "games": {
     "match": {
       "prompt": "without the crowd: tap the pairs.",
-      "pairs": [["the lyre player alone", "not anxious at all"], ["the lyre player in the theater", "wants the applause"], ["Zeno", "calm before the king"], ["Antigonus", "the anxious one"]]
+      "pairs": [
+        [
+          "the lyre player alone",
+          "not anxious at all"
+        ],
+        [
+          "the lyre player in the theater",
+          "wants the applause"
+        ],
+        [
+          "Zeno",
+          "calm before the king"
+        ],
+        [
+          "Antigonus",
+          "the anxious one"
+        ]
+      ]
     },
     "myth": [
-      ["Epictetus says anxiety comes from a bad voice or poor skill", false, "the singer has a fine voice; the anxiety comes from wanting applause."],
-      ["when Zeno met King Antigonus, the king was the anxious one", true, "the king wanted to impress the philosopher, who wanted nothing from him."],
-      ["Epictetus tells his students to stop caring about doing well", false, "he says practice your craft; just stop singing for the applause."]
+      [
+        "Epictetus says anxiety comes from a bad voice or poor skill",
+        false,
+        "the singer has a fine voice; the anxiety comes from wanting applause."
+      ],
+      [
+        "when Zeno met King Antigonus, the king was the anxious one",
+        true,
+        "the king wanted to impress the philosopher, who wanted nothing from him."
+      ],
+      [
+        "Epictetus tells his students to stop caring about doing well",
+        false,
+        "he says practice your craft; just stop singing for the applause."
+      ]
     ],
     "fork": {
       "setup": "you're Zeno, founder of the Stoic school, about to meet King Antigonus. who's anxious?",
-      "options": ["you, because he's a king.", "the king, because he wants to impress you.", "both of you."],
+      "options": [
+        "you, because he's a king.",
+        "the king, because he wants to impress you.",
+        "both of you."
+      ],
       "answer": 1,
       "reveal": "Epictetus says Zeno wasn't anxious, Antigonus was: the one who wanted something from the other felt the strain."
     },
-    "original": { "script": "ἀγωνία", "say": "a-go-NEE-a", "note": "Greek agōnia: the strain of a contest, anxiety (our word agony); 2.13 is on being anxious." },
+    "original": {
+      "script": "ἀγωνία",
+      "say": "a-go-NEE-a",
+      "note": "Greek agōnia: the strain of a contest, anxiety (our word agony); 2.13 is on being anxious."
+    },
     "trapdoor": [
       "what you thought: stage fright means you're not good enough.",
       "what it means: anxiety comes from wanting something outside your control, like applause.",
       "what a scholar hears: the Greek word for anxiety, agōnia, comes from the athletic contest, which fits Epictetus' habit of drawing on the games."
+    ],
+    "recall": [
+      [
+        "Helvidius Priscus",
+        "the senator who kept going in"
+      ],
+      [
+        "prohairesis",
+        "the power to choose"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Discourses 2.13 (of anxiety)", "work": "Epictetus, Discourses (Arrian)", "translation": null, "quoted": null }
+    {
+      "ref": "Discourses 2.13 (of anxiety)",
+      "work": "Epictetus, Discourses (Arrian)",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -84,5 +158,9 @@
       "Editor review (2026-10-01): hook no longer tells the listener their throat closes up, and drops the unsourced 'two thousand years ago, watching musicians'; practice 'feel the difference' became 'notice any difference'. The agōnia etymology in the original/trapdoor is standard lexicon (LSJ) but not stated in 2.13; Keeper may cut."
     ]
   },
-  "meta": { "index": "411. Without the crowd · — · the singer is only anxious when he wants the crowd's applause (Discourses 2.13) · do one thing with no audience · without the crowd", "writer": "writer agent (spiritual 392–421)", "written": "2026-09-30" }
+  "meta": {
+    "index": "411. Without the crowd · — · the singer is only anxious when he wants the crowd's applause (Discourses 2.13) · do one thing with no audience · without the crowd",
+    "writer": "writer agent (spiritual 392–421)",
+    "written": "2026-09-30"
+  }
 }

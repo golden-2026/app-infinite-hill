@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "The Litany of the Saints",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY NINE-HUNDRED-FIFTY-ONE.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY NINE-HUNDRED-FIFTY-ONE.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday's word was relic, and your line was bodies that loved god. Which body did you treat with honor? Today, saints with a job description. Day nine hundred fifty-one.",
-      "screen": ["`BODIES THAT LOVED GOD.`"]
+      "screen": [
+        "`BODIES THAT LOVED GOD.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Lost your keys? Some Catholics will tell you, half laughing and fully serious, to ask Saint Anthony. A small statue of Saint Joseph on a carpenter's workbench. A medal of Saint Christopher clipped to a car's sun visor. A doctor with a picture of Saint Luke in her locker. It can look like a phone directory of heaven: one saint per department. There's something truer underneath it, and today's word holds it.",
-      "screen": ["`ASK SAINT ANTHONY.` → `JOSEPH ON A WORKBENCH.` → `ONE SAINT PER DEPARTMENT?`"]
+      "screen": [
+        "`ASK SAINT ANTHONY.` → `JOSEPH ON A WORKBENCH.` → `ONE SAINT PER DEPARTMENT?`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "A patron saint is a saint Catholics ask to pray for a particular place, people, work or need. Countries have patrons, and cities, and parishes. So do jobs. Joseph, the carpenter, for workers. Luke, called a physician in a letter of Paul, for doctors. Cecilia, remembered for music, for musicians. Thomas More, the lawyer who refused to swear an oath against his conscience, for politicians. Sometimes a pope names a patron officially; sometimes the connection grew up among ordinary people over time. Underneath every patron is a simple idea from the letter of James. In the Douay-Rheims: \"pray one for another, that you may be saved. For the continual prayer of a just man availeth much.\" Catholics believe the saints are alive with God, and so they can still do what friends do: pray for you. The Catechism says the saints don't stop interceding for us. A patron is not a replacement for God, and not a vending machine for favors. In Catholic teaching, asking a saint for help means asking that saint to pray with you, to God. Why a particular saint? Because they know the job. A saint who worked with wood knows splinters. A saint who was a doctor knows the night shift. Asking a patron is a little like asking a colleague who has done your work before, and done it with love, to put in a word. Not a department of heaven. A friend for the job.",
-      "screen": ["`A SAINT FOR A PLACE, A PEOPLE, A WORK.` · `JOSEPH, LUKE, CECILIA, THOMAS MORE.` · `PRAY ONE FOR ANOTHER.` · `A FRIEND WHO KNOWS THE JOB.` · then, large: `THE CONTINUAL PRAYER OF A JUST MAN AVAILETH MUCH.`"]
+      "screen": [
+        "`A SAINT FOR A PLACE, A PEOPLE, A WORK.` · `JOSEPH, LUKE, CECILIA, THOMAS MORE.` · `PRAY ONE FOR ANOTHER.` · `A FRIEND WHO KNOWS THE JOB.` · then, large: `THE CONTINUAL PRAYER OF A JUST MAN AVAILETH MUCH.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Patron. A saint Catholics ask to pray for a particular place, people, work or need: a friend in heaven who knows the job.",
-      "screen": ["`PATRON — today's word`."]
+      "screen": [
+        "`PATRON — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,36 +61,105 @@
       "voice": "Your line: a friend for the job. Today, ask someone who has done what you're doing for one piece of advice, and listen. Day nine hundred fifty-one.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 951 COUNTS.` → `TOMORROW: THE LITANY OF THE SAINTS.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 951 COUNTS.` → `TOMORROW: THE LITANY OF THE SAINTS.`"
+      ]
+    }
   ],
   "howItsDone": "Catholics ask patron saints to pray for them in particular needs, places or kinds of work; parishes and countries keep their patron's feast, and some people keep a patron's image or medal at work or at home.",
   "games": {
     "match": {
       "prompt": "patron saints — tap the pairs.",
-      "pairs": [["Joseph", "the carpenter, for workers"], ["Luke", "called a physician, for doctors"], ["Cecilia", "remembered for music, for musicians"], ["Thomas More", "the lawyer, for politicians"]]
+      "pairs": [
+        [
+          "Joseph",
+          "the carpenter, for workers"
+        ],
+        [
+          "Luke",
+          "called a physician, for doctors"
+        ],
+        [
+          "Cecilia",
+          "remembered for music, for musicians"
+        ],
+        [
+          "Thomas More",
+          "the lawyer, for politicians"
+        ]
+      ]
     },
     "myth": [
-      ["in Catholic teaching, a patron saint answers prayers in place of God", false, "Catholics ask a saint to pray with them, to God."],
-      ["patrons can be named officially by a pope or grow up among ordinary people", true, "both happen: some by decree, some by long custom."],
-      ["only countries and cities have patron saints", false, "jobs, parishes, peoples and needs have patrons too."]
+      [
+        "in Catholic teaching, a patron saint answers prayers in place of God",
+        false,
+        "Catholics ask a saint to pray with them, to God."
+      ],
+      [
+        "patrons can be named officially by a pope or grow up among ordinary people",
+        true,
+        "both happen: some by decree, some by long custom."
+      ],
+      [
+        "only countries and cities have patron saints",
+        false,
+        "jobs, parishes, peoples and needs have patrons too."
+      ]
     ],
     "fork": {
       "setup": "the letter of James gives a reason for asking others to pray for you. what does it say?",
-      "options": ["prayer is only for priests.", "the continual prayer of a just man availeth much.", "it's best to pray alone."],
+      "options": [
+        "prayer is only for priests.",
+        "the continual prayer of a just man availeth much.",
+        "it's best to pray alone."
+      ],
       "answer": 1,
       "reveal": "James tells Christians to pray one for another. Catholics extend that to the saints, who they believe are alive with God."
     },
-    "original": { "script": "patronus", "say": "pah-TROH-noos", "note": "Latin: protector, advocate, someone who stands up for you; the word behind patron saint." },
+    "original": {
+      "script": "patronus",
+      "say": "pah-TROH-noos",
+      "note": "Latin: protector, advocate, someone who stands up for you; the word behind patron saint."
+    },
     "trapdoor": [
       "what you thought: a patron saint is heaven's department head for one problem.",
       "what it means: a saint Catholics ask to pray for them in a particular need, a friend who knows the job.",
       "what a scholar hears: it rests on James's call to pray one for another, and the Catechism's teaching that the saints keep interceding."
+    ],
+    "recall": [
+      [
+        "Assisi",
+        "the town of Saint Francis"
+      ],
+      [
+        "Nirmal Hriday",
+        "their home for the dying in Kolkata"
+      ]
     ]
   },
   "sources": [
-    { "ref": "James 5:16", "work": "The Bible", "translation": "Douay-Rheims (Challoner)", "quoted": "pray one for another, that you may be saved. For the continual prayer of a just man availeth much." },
-    { "ref": "Colossians 4:14 (Luke the physician)", "work": "The Bible", "translation": null, "quoted": null },
-    { "ref": "Catechism of the Catholic Church 956, 2683", "work": "Catechism of the Catholic Church", "translation": null, "quoted": null }
+    {
+      "ref": "James 5:16",
+      "work": "The Bible",
+      "translation": "Douay-Rheims (Challoner)",
+      "quoted": "pray one for another, that you may be saved. For the continual prayer of a just man availeth much."
+    },
+    {
+      "ref": "Colossians 4:14 (Luke the physician)",
+      "work": "The Bible",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Catechism of the Catholic Church 956, 2683",
+      "work": "Catechism of the Catholic Church",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -89,5 +173,9 @@
       "Audit: Luke is the patron of physicians, not commonly of nurses; hook's nurse changed to a doctor to match the teach. Softened the sweeping 'every prayer to a saint is a request' to a plain statement of the teaching."
     ]
   },
-  "meta": { "index": "951. Patron saints · patron · Catholics ask particular saints to pray for particular needs · pick a patron for your work · a friend for the job", "writer": "writer agent (catholic 947–956)", "written": "2026-10-01" }
+  "meta": {
+    "index": "951. Patron saints · patron · Catholics ask particular saints to pray for particular needs · pick a patron for your work · a friend for the job",
+    "writer": "writer agent (catholic 947–956)",
+    "written": "2026-10-01"
+  }
 }

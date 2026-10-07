@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "\"The dearest land\"",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY SEVEN-HUNDRED-SIXTY-FOUR.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY SEVEN-HUNDRED-SIXTY-FOUR.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, the plot. Your line was: they planned; Allah planned. Which outcome did you manage to hand over? Day seven hundred sixty-four.",
-      "screen": ["`THEY PLANNED; ALLAH PLANNED.`"]
+      "screen": [
+        "`THEY PLANNED; ALLAH PLANNED.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Night. Outside the house of the Prophet Muhammad, peace be upon him, young men from every clan are waiting with their swords, watching the door. Ibn Ishaq says they planned to strike when he came out. Inside, the Prophet turns to his young cousin, Ali, and gives him a strange instruction. Lie down on my bed. Wrap yourself in my green cloak and sleep in it. Nothing you dislike will happen to you. Today: Ali in the bed.",
-      "screen": ["`SWORDS AT THE DOOR.` → `LIE DOWN ON MY BED.` → `WRAP YOURSELF IN MY CLOAK.`"]
+      "screen": [
+        "`SWORDS AT THE DOOR.` → `LIE DOWN ON MY BED.` → `WRAP YOURSELF IN MY CLOAK.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "So Ali lies down where the men outside expect their target to be. Through the night they see a shape under the Prophet's cloak, and they wait. Ibn Ishaq says the Prophet went out among them, took a handful of dust, and scattered it over their heads, reciting from Ya Sin: and We have covered them so that they see not. And he passed, and they didn't see him. In the morning someone tells them he's gone. They look again at the bed, and it's Ali who gets up. But that isn't the end of Ali's job. Ibn Ishaq says that people in Mecca who had something they feared for left it with the Prophet, because he was known for his honesty. Tradition calls him al-Amin, the trustworthy. Ibn Ishaq says that when he left, he told Ali to stay behind in Mecca and return every one of those deposits to its owners. And Ali did. For days, in a city that had just tried to kill his cousin, he went door to door handing back what belonged to them. Then he set out for Yathrib himself. Consider who those owners were. The people who had left those deposits were, some of them, the same people who wanted him dead. And the Prophet's instruction about them, on the night he ran for his life, was about their property: make sure they get it back. Trust held, even then. Even toward them.",
-      "screen": ["`ALI UNDER THE GREEN CLOAK.` · `WE HAVE COVERED THEM.` · `AL-AMIN, THE TRUSTWORTHY.` · `EVERY DEPOSIT RETURNED.` · then, large: `TRUSTS RETURNED, EVEN THEN.`"]
+      "screen": [
+        "`ALI UNDER THE GREEN CLOAK.` · `WE HAVE COVERED THEM.` · `AL-AMIN, THE TRUSTWORTHY.` · `EVERY DEPOSIT RETURNED.` · then, large: `TRUSTS RETURNED, EVEN THEN.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Al-Amin, the trustworthy: what Mecca called the Prophet, the reason people left their valuables with him even the night men waited outside his door with swords. Today's word.",
-      "screen": ["`AL-AMIN — today's word`."]
+      "screen": [
+        "`AL-AMIN — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,35 +61,99 @@
       "voice": "Your line: trusts returned, even then. Today, give back one thing you've been holding for someone else, even if you'd rather not see them. Day seven hundred sixty-four.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 764 COUNTS.` → `TOMORROW: THE DEAREST LAND.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 764 COUNTS.` → `TOMORROW: THE DEAREST LAND.`"
+      ]
+    }
   ],
   "howItsDone": "Muslims retell Ali's night in the Prophet's bed as part of the hijra story, and point to the returned deposits when they speak of amana, keeping what is entrusted to you.",
   "games": {
     "match": {
       "prompt": "Ali in the bed — tap the pairs.",
-      "pairs": [["Ali", "slept under the green cloak"], ["the young men", "waited at the door with swords"], ["al-Amin", "the trustworthy"], ["the deposits", "returned to their owners"]]
+      "pairs": [
+        [
+          "Ali",
+          "slept under the green cloak"
+        ],
+        [
+          "the young men",
+          "waited at the door with swords"
+        ],
+        [
+          "al-Amin",
+          "the trustworthy"
+        ],
+        [
+          "the deposits",
+          "returned to their owners"
+        ]
+      ]
     },
     "myth": [
-      ["the men outside saw the Prophet leave", false, "Ibn Ishaq says he scattered dust over them and passed, and they did not see him."],
-      ["Ali left Mecca the same night", false, "he stayed behind to return the deposits, then set out."],
-      ["people who rejected his message trusted him with their valuables", true, "Ibn Ishaq says Meccans who feared for their things left them with him, for his honesty."]
+      [
+        "the men outside saw the Prophet leave",
+        false,
+        "Ibn Ishaq says he scattered dust over them and passed, and they did not see him."
+      ],
+      [
+        "Ali left Mecca the same night",
+        false,
+        "he stayed behind to return the deposits, then set out."
+      ],
+      [
+        "people who rejected his message trusted him with their valuables",
+        true,
+        "Ibn Ishaq says Meccans who feared for their things left them with him, for his honesty."
+      ]
     ],
     "fork": {
       "setup": "you're the Prophet, leaving at night with killers at your door. people who want you gone have left valuables with you. what do you do?",
-      "options": ["take them with you.", "leave them in the house.", "have Ali stay and return them."],
+      "options": [
+        "take them with you.",
+        "leave them in the house.",
+        "have Ali stay and return them."
+      ],
       "answer": 2,
       "reveal": "he told Ali to stay in Mecca and return every deposit to its owner, and Ali did, before setting out himself."
     },
-    "original": { "script": "أَمَانَة", "say": "a-MAA-na", "note": "Arabic: a trust; something left in your keeping." },
+    "original": {
+      "script": "أَمَانَة",
+      "say": "a-MAA-na",
+      "note": "Arabic: a trust; something left in your keeping."
+    },
     "trapdoor": [
       "what you thought: Ali was a decoy.",
       "what it means: he was a decoy, and then a trustee, handing back the property of the people who wanted his cousin dead.",
       "what a scholar hears: Ibn Ishaq's account of the green Hadrami cloak, the dust and Ya Sin 36:9, and Ali staying to return the deposits held by al-Amin."
+    ],
+    "recall": [
+      [
+        "al-Siddiq",
+        "the one who affirms the truth"
+      ],
+      [
+        "Jibril",
+        "spoke to him from a cloud"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Ibn Ishaq, Sirat Rasul Allah (Ali sleeps in the Prophet's bed in his green cloak; the Prophet scatters dust and recites Ya Sin; Ali stays to return the deposits)", "work": "Sirat Rasul Allah", "translation": null, "quoted": null },
-    { "ref": "Qur'an 36:9", "work": "The Qur'an", "translation": null, "quoted": null }
+    {
+      "ref": "Ibn Ishaq, Sirat Rasul Allah (Ali sleeps in the Prophet's bed in his green cloak; the Prophet scatters dust and recites Ya Sin; Ali stays to return the deposits)",
+      "work": "Sirat Rasul Allah",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Qur'an 36:9",
+      "work": "The Qur'an",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",

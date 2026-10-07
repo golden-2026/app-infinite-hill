@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "Six animals",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY THREE-HUNDRED-NINETY-ONE.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY THREE-HUNDRED-NINETY-ONE.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday: the gatekeeper, and your line, know who's who. When a mood arrived, did you name it before you let it in? Day three hundred ninety-one.",
-      "screen": ["`THE GATEKEEPER — KNOW WHO'S WHO.`"]
+      "screen": [
+        "`THE GATEKEEPER — KNOW WHO'S WHO.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "A huge crowd is gathering in the town square. Word has spread: the most beautiful woman in the land is here, and she's dancing and singing. People are pushing to see. Now a man is handed a bowl filled to the very brim with oil, and told to carry it straight through the middle of all that, between the crowd and the dancer. Behind him walks another man, with a drawn sword. Spill one drop, he's told, and you lose your head. Today: the bowl of oil.",
-      "screen": ["`THE CROWD PUSHES TO SEE.` → `A BOWL FULL TO THE BRIM.` → `A DRAWN SWORD BEHIND.`"]
+      "screen": [
+        "`THE CROWD PUSHES TO SEE.` → `A BOWL FULL TO THE BRIM.` → `A DRAWN SWORD BEHIND.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "The Buddha tells this at Sedaka, the same town as the acrobats. And he asks his monks a simple question. Would that man stop paying attention to the bowl, and let his eyes drift to the dancer? No, sir, they say. Of course not. Then the Buddha says what the picture means. The bowl of oil filled to the brim stands for mindfulness of the body. So train yourselves, he says, to develop mindfulness of the body, to make it your vehicle and your ground. The picture is extreme on purpose, and each piece is worth a look. The crowd and the dancer are everything that pulls attention outward: the alerts, the drama, the bright, loud, lovely things. The sutta doesn't explain the sword, but one way to read it is as the seriousness of the stakes. Not that distraction is a crime; just that it may cost more than we tend to think. And the bowl is the body itself: the breath, the feet, the hands, right here. Not something far away. The thing you're already carrying. Notice what the man doesn't do. He doesn't shut his eyes. He doesn't stay home. He walks straight through the crowd while the music plays. The practice isn't avoiding life. It's carrying something steady through the middle of it. That's right mindfulness at its most physical. Attention isn't floating somewhere up in the head. It's in your hands, at the brim of the bowl, step by step, while everything around you invites you to look away.",
-      "screen": ["`WOULD HE LOOK AWAY?` · `THE BOWL: MINDFULNESS OF THE BODY.` · `THE SWORD: THE STAKES ARE REAL.` · `THROUGH THE CROWD, NOT AROUND IT.` · then, large: `DON'T SPILL.`"]
+      "screen": [
+        "`WOULD HE LOOK AWAY?` · `THE BOWL: MINDFULNESS OF THE BODY.` · `THE SWORD: THE STAKES ARE REAL.` · `THROUGH THE CROWD, NOT AROUND IT.` · then, large: `DON'T SPILL.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Kayagata sati, mindfulness of the body. The Buddha's image for mindfulness of the body: carried brim-full through the crowd, without spilling.",
-      "screen": ["`KAYAGATA SATI — today's word`."]
+      "screen": [
+        "`KAYAGATA SATI — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,34 +61,93 @@
       "voice": "Your line: don't spill. Today, carry one full cup slowly, through your kitchen or your office, and let the rest of the room wait. Day three hundred ninety-one.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 391 COUNTS.` → `TOMORROW: SIX ANIMALS.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 391 COUNTS.` → `TOMORROW: SIX ANIMALS.`"
+      ]
+    }
   ],
   "howItsDone": "Many Buddhists practice mindfulness of the body in walking meditation and daily tasks, and some teachers have students carry a full cup or bowl slowly as a training in steady attention.",
   "games": {
     "match": {
       "prompt": "the bowl of oil: tap the pairs.",
-      "pairs": [["the bowl of oil", "mindfulness of the body"], ["the dancer and the crowd", "what pulls attention outward"], ["the man with the sword", "the stakes are real"], ["Sedaka", "the same town as the acrobats"]]
+      "pairs": [
+        [
+          "the bowl of oil",
+          "mindfulness of the body"
+        ],
+        [
+          "the dancer and the crowd",
+          "what pulls attention outward"
+        ],
+        [
+          "the man with the sword",
+          "the stakes are real"
+        ],
+        [
+          "Sedaka",
+          "the same town as the acrobats"
+        ]
+      ]
     },
     "myth": [
-      ["the man avoids the crowd by taking another route", false, "he walks straight between the crowd and the dancer."],
-      ["the brim-full bowl stands for mindfulness of the body", true, "the Buddha says so, then tells the monks to train in it."],
-      ["the practice the simile teaches is avoiding busy places", false, "it's carrying something steady through the middle of them."]
+      [
+        "the man avoids the crowd by taking another route",
+        false,
+        "he walks straight between the crowd and the dancer."
+      ],
+      [
+        "the brim-full bowl stands for mindfulness of the body",
+        true,
+        "the Buddha says so, then tells the monks to train in it."
+      ],
+      [
+        "the practice the simile teaches is avoiding busy places",
+        false,
+        "it's carrying something steady through the middle of them."
+      ]
     ],
     "fork": {
       "setup": "you're carrying a bowl of oil full to the brim. the crowd roars: the dancer has started. a man with a sword walks behind you. what do you do?",
-      "options": ["glance at the dancer, just once.", "keep your attention on the bowl.", "set the bowl down and watch."],
+      "options": [
+        "glance at the dancer, just once.",
+        "keep your attention on the bowl.",
+        "set the bowl down and watch."
+      ],
       "answer": 1,
       "reveal": "the monks answer that the man wouldn't neglect the bowl for a moment; the Buddha says the bowl is mindfulness of the body."
     },
-    "original": { "script": "कायगता सति", "say": "KAA-ya-ga-taa SA-ti", "note": "Pali kāyagatā sati: mindfulness directed to the body, which the brim-full bowl stands for." },
+    "original": {
+      "script": "कायगता सति",
+      "say": "KAA-ya-ga-taa SA-ti",
+      "note": "Pali kāyagatā sati: mindfulness directed to the body, which the brim-full bowl stands for."
+    },
     "trapdoor": [
       "what you thought: mindfulness is a mental exercise.",
       "what it means: attention held in the body, carried steady through the middle of ordinary life.",
       "what a scholar hears: SN 47.20 calls the brim-full bowl a designation for kāyagatā sati, and the dancer is the janapadakalyāṇī, 'the beauty of the land'."
+    ],
+    "recall": [
+      [
+        "abhaya",
+        "freedom from fear"
+      ],
+      [
+        "kamma",
+        "action, deed"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Samyutta Nikaya 47.20 (Janapadakalyani Sutta)", "work": "Pali canon", "translation": null, "quoted": null }
+    {
+      "ref": "Samyutta Nikaya 47.20 (Janapadakalyani Sutta)",
+      "work": "Pali canon",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -86,5 +160,9 @@
       "Editor review (2026-10-01): review line reworded ('your line was the word itself'); otherwise unchanged."
     ]
   },
-  "meta": { "index": "391. The bowl of oil · — · carry a full bowl of oil past a crowd and a dancing beauty, a swordsman behind you (SN 47.20) · carry a full cup slowly · don't spill", "writer": "writer agent (buddhism 362–391)", "written": "2026-09-30" }
+  "meta": {
+    "index": "391. The bowl of oil · — · carry a full bowl of oil past a crowd and a dancing beauty, a swordsman behind you (SN 47.20) · carry a full cup slowly · don't spill",
+    "writer": "writer agent (buddhism 362–391)",
+    "written": "2026-09-30"
+  }
 }
