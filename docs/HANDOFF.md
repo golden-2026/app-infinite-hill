@@ -50,6 +50,12 @@ design changes go live, ask before deploying, real testimonials only, check usag
   once the weekly limit is hit.
 
 ## Session of 2026-10-06 (pick up here; newest first)
+- LIVE: expo-live75 (2026-10-06 night, owner: "publish as is"): job 1 from the five-year map on all 8 paths
+  (~55 lessons; docs/learning/map/), seams on all 8 paths, Guide safety (crisis wording, offline crisis reply, psychedelics
+  and channeling rules, 43 cases). Research: docs/learning/research-extra/ (Reddit saved by the owner into
+  reddit-saved/, git-ignored; YouTube; IG/TikTok; app reviews). Next: job 2 (style pass for days 22+, needs "use a
+  workflow"), seams rejects + 65 plain words + 7 Sikh titled names, Keeper review lists in each lesson's notes, year-4
+  plan moves, website (Day-1 video label "amen", demo day numbers), celebrity name in scenes prompts (owner kept it).
 - LIVE: expo-live74 (2026-10-06 night, owner: "publish now, then fold in the findings"): every path's rebuilt first camp. Before that expo-live73 (the rebuilt Hindu week). Was committed before expo-live74: every other path's first camp
   rebuilt from its audience research (docs/learning/week1/<DOOR>.json → week1-data.js; scripts/learning/fix-day-refs.mjs
   and fix-app-days.mjs move later citations and app day links), tests updated (463/465; the 2 old environment failures
