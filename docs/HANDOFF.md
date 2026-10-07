@@ -50,6 +50,9 @@ design changes go live, ask before deploying, real testimonials only, check usag
   once the weekly limit is hit.
 
 ## Session of 2026-10-06 (pick up here; newest first)
+- LIVE: expo-live76 (2026-10-07, owner: "publish it"): the style pass on all of year 1 (days 22-331, all 8 paths), the
+  cleanup round, the site video label and demo day numbers. Next: years 2-3 style pass (days 332-1061) after the Tuesday
+  2026-10-13 reset with the same workflow (scriptPath style-pass-year-1; change FIRST/LAST and the y1 folder to y2/y3).
 - JOB 2 (style pass, owner: "use a workflow"): brief docs/learning/map/JOB2_BRIEF.md; examples STYLE_EXAMPLES.md;
   machine checklist scripts/learning/style-lint.mjs DOOR FROM TO; guard scripts/learning/style-guard.mjs REV. Pilot done and
   committed (days 22-34, all paths). Year 1 days 35-331 running as workflow style-pass-year-1 (run wf_9f95203f-822; resume
