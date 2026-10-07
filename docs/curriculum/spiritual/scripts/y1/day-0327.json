@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "No door required",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY THREE-HUNDRED-TWENTY-SEVEN.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY THREE-HUNDRED-TWENTY-SEVEN.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday: liminal, the doorway, and the door you left. Your line: between is a place too.",
-      "screen": ["`BETWEEN IS A PLACE TOO.`"]
+      "screen": [
+        "`BETWEEN IS A PLACE TOO.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "45 sec",
       "voice": "Someone who isn't sure what they believe still lights candles on Friday night. Someone who stopped going to church still sings every word of the carols. Someone who hasn't prayed in years still says a blessing over food, because their grandmother did. Are they doing it wrong? Is it fake to keep a ritual without the whole creed behind it? Plenty of people quietly wonder. Today: keep what you loved.",
-      "screen": ["`CANDLES, CAROLS, A BLESSING.` → `WITHOUT THE WHOLE CREED?` → `KEEP WHAT YOU LOVED.`"]
+      "screen": [
+        "`CANDLES, CAROLS, A BLESSING.` → `WITHOUT THE WHOLE CREED?` → `KEEP WHAT YOU LOVED.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "First, it's common, and it's old. In many families, practice and belief don't move in step. People keep a holiday, a fast, a song or a meal long after they've stopped being sure about everything behind it. Some traditions have deep room for this. Jewish life, for instance, has long included secular and cultural Jews, and many lead a seder at home whatever they believe. Second, why rituals help. Researchers who study ritual find that repeated, structured acts can steady people when life feels out of control, and bind them to each other. The anthropologist Dimitris Xygalatas has spent years measuring this, in festivals and in homes. A ritual doesn't need you to be certain to do its work. Third, keep it honest. A ritual belongs to a people. If you keep one from the tradition you grew up in, it's yours too. If you borrow one from a tradition that isn't yours, do it the way you visited this year: as a guest. Learn what it means. Ask someone who keeps it. Don't remix it into something it isn't. Fourth, how to choose. Ask of each ritual: what did it give me? Calm, company, a marked season, a thread back to someone I loved? Keep the giving. Leave what hurt. Some people find that, kept long enough, an old ritual starts to mean something new. Some find their way back into the whole tradition through it. Either is fine.",
-      "screen": ["`PRACTICE AND BELIEF DON'T ALWAYS MATCH.` · `RITUAL STEADIES AND BINDS.` · `YOURS, OR AS A GUEST.` · `KEEP THE GIVING, LEAVE THE HURT.`"]
+      "screen": [
+        "`PRACTICE AND BELIEF DON'T ALWAYS MATCH.` · `RITUAL STEADIES AND BINDS.` · `YOURS, OR AS A GUEST.` · `KEEP THE GIVING, LEAVE THE HURT.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "20 sec",
       "voice": "Ritual, from the Latin ritus, a rite or custom: a repeated act that marks time and binds people. You can keep one gratefully. Today's word.",
-      "screen": ["`RITUAL — today's word`."]
+      "screen": [
+        "`RITUAL — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,37 +61,110 @@
       "voice": "Your line: keep the giving. Whatever a ritual gave you, it's allowed to stay. That's day three hundred twenty-seven.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 327 COUNTS.` → `TOMORROW: NO DOOR REQUIRED.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 327 COUNTS.` → `TOMORROW: NO DOOR REQUIRED.`"
+      ]
+    }
   ],
   "howItsDone": "Many people keep family rituals, such as holiday candles, songs, a blessing over food or a festival meal, whatever their beliefs; borrowing a ritual from another tradition is done as a guest, by learning its meaning from those who keep it.",
   "games": {
     "match": {
       "prompt": "keeping a ritual — tap the pairs.",
-      "pairs": [["ritus", "Latin: a rite or custom"], ["a seder at home", "kept by many, whatever they believe"], ["Xygalatas", "measures what rituals do"], ["a borrowed ritual", "kept as a guest"]]
+      "pairs": [
+        [
+          "ritus",
+          "Latin: a rite or custom"
+        ],
+        [
+          "a seder at home",
+          "kept by many, whatever they believe"
+        ],
+        [
+          "Xygalatas",
+          "measures what rituals do"
+        ],
+        [
+          "a borrowed ritual",
+          "kept as a guest"
+        ]
+      ]
     },
     "myth": [
-      ["a ritual is fake unless you're certain of the beliefs behind it", false, "in many families practice and belief don't move in step, and some traditions have deep room for that."],
-      ["structured, repeated acts can steady people under stress", true, "researchers who study ritual find it can steady people and bind them together."],
-      ["any ritual is fine to remix however you like", false, "a ritual belongs to a people; borrow as a guest, learning its meaning from those who keep it."]
+      [
+        "a ritual is fake unless you're certain of the beliefs behind it",
+        false,
+        "in many families practice and belief don't move in step, and some traditions have deep room for that."
+      ],
+      [
+        "structured, repeated acts can steady people under stress",
+        true,
+        "researchers who study ritual find it can steady people and bind them together."
+      ],
+      [
+        "any ritual is fine to remix however you like",
+        false,
+        "a ritual belongs to a people; borrow as a guest, learning its meaning from those who keep it."
+      ]
     ],
     "fork": {
       "setup": "you stopped believing much of what you grew up with, but you miss lighting the lamp at the festival. what fits this path?",
-      "options": ["never light it again, or it's hypocritical.", "light it, knowing what it gives you: calm, a season, a thread to family.", "light it as a joke."],
+      "options": [
+        "never light it again, or it's hypocritical.",
+        "light it, knowing what it gives you: calm, a season, a thread to family.",
+        "light it as a joke."
+      ],
       "answer": 1,
       "reveal": "keep the giving. a ritual can do its work without certainty, and it may come to mean something new."
     },
-    "original": { "script": "ritus", "say": "REE-toos", "note": "Latin: a rite, a custom, especially a religious one; the root of ritual." },
+    "original": {
+      "script": "ritus",
+      "say": "REE-toos",
+      "note": "Latin: a rite, a custom, especially a religious one; the root of ritual."
+    },
     "trapdoor": [
       "what you thought: keeping a ritual without the full belief is pretending.",
       "what it means: a common, honest way to keep what a tradition gave you, as an heir or a respectful guest.",
       "what a scholar hears: practice and belief in religious life; cultural and secular Jewish practice; the psychology of ritual (Hobson et al., 2018; Xygalatas, Ritual, 2022)."
     ],
-    "guess": ["a repeated act that marks time and binds people", "a belief you must hold before you can take part", "a superstition with no real effect on anyone"]
+    "guess": [
+      "a repeated act that marks time and binds people",
+      "a belief you must hold before you can take part",
+      "a superstition with no real effect on anyone"
+    ],
+    "recall": [
+      [
+        "Green helps",
+        "time among trees can quiet a brooding mind"
+      ],
+      [
+        "sublimis",
+        "Latin for high or lofty"
+      ]
+    ]
   },
   "sources": [
-    { "ref": "'The Psychology of Rituals: An Integrative Review and Process-Based Framework', Personality and Social Psychology Review 22 (2018)", "work": "Hobson, Schroeder, Risen, Xygalatas and Inzlicht", "translation": null, "quoted": null },
-    { "ref": "Ritual: How Seemingly Senseless Acts Make Life Worth Living (2022)", "work": "Dimitris Xygalatas", "translation": null, "quoted": null },
-    { "ref": "secular and cultural Jewish practice, including the home seder", "work": "Jewish practice (paraphrased)", "translation": null, "quoted": null }
+    {
+      "ref": "'The Psychology of Rituals: An Integrative Review and Process-Based Framework', Personality and Social Psychology Review 22 (2018)",
+      "work": "Hobson, Schroeder, Risen, Xygalatas and Inzlicht",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Ritual: How Seemingly Senseless Acts Make Life Worth Living (2022)",
+      "work": "Dimitris Xygalatas",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "secular and cultural Jewish practice, including the home seder",
+      "work": "Jewish practice (paraphrased)",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -91,5 +179,9 @@
       "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged."
     ]
   },
-  "meta": { "index": "327. Keep what you loved · ritual · candles on Friday without certainty, carols without church: keeping a ritual without the whole creed is common, and it isn't fake · remember one family ritual and what it gave you · *keep the giving*", "writer": "spiritual writer (job 1, five-year map)", "written": "2026-10-06" }
+  "meta": {
+    "index": "327. Keep what you loved · ritual · candles on Friday without certainty, carols without church: keeping a ritual without the whole creed is common, and it isn't fake · remember one family ritual and what it gave you · *keep the giving*",
+    "writer": "spiritual writer (job 1, five-year map)",
+    "written": "2026-10-06"
+  }
 }

@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "The body as temple",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-HUNDRED-TWENTY-FOUR.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY ONE-HUNDRED-TWENTY-FOUR.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, surya, the sun: just him, and you facing it. Your line was the original flame.",
-      "screen": ["`SUNSET WITHOUT OBJECTS — THE ORIGINAL FLAME.`"]
+      "screen": [
+        "`SUNSET WITHOUT OBJECTS — THE ORIGINAL FLAME.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "The phone falls on your face at midnight. Most days don't end. They just stop. Last week you built a morning. This week you've gathered the other end of the day, piece by piece. Sandhya, the hour where day and night join. Arti at home, a small flame circled. Om jai jagadish hare, the song everyone knows. Taking the light, hands over the flame to your eyes. Family arti, one more person in the room. And yesterday, the sun itself. Today they become the other bookend: your evening routine.",
-      "screen": ["`MOST DAYS DON'T END, THEY STOP.` → `A WEEK OF DUSK.` → `TODAY: THE OTHER BOOKEND.`"]
+      "screen": [
+        "`MOST DAYS DON'T END, THEY STOP.` → `A WEEK OF DUSK.` → `TODAY: THE OTHER BOOKEND.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "Here's a shape: four pieces, about five minutes, built only from things you already know. First, the bell. One ring, followed all the way to silence: arriving, from day one hundred fourteen. Second, the breath you learned back in week fifteen: in for four, out for six. A few rounds of the longer out-breath tell the body the day is closing. Third, arti. If you have a lamp, light it and circle it slowly, maybe humming the first line of the song. If you don't, face the window, toward where the sun went down. Then take the light: hands over the flame, back to your eyes. And fourth, one line. Many Hindu prayers close the same way, with Om and three shantis: Om shanti, shanti, shanti. Your fourth word, peace, peace, peace. Some people use their own mantra here instead. Just one line, said slowly, as the last thing. Bell, breath, arti, one line. Now notice what it's for. The morning puja offers the day before it starts. The evening routine hands the day back. Whatever happened, the good meeting, the argument, the thing you forgot, you don't have to carry it into sleep. People in many traditions have a way of closing the day. This is one Hindu way: a flame, a breath, a word of peace, and the day put down.",
-      "screen": ["`THE BELL: ARRIVE.` · `THE BREATH: LONGER OUT.` · `ARTI: THE FLAME, OR THE WINDOW.` · `ONE LINE: OM SHANTI, SHANTI, SHANTI.`"]
+      "screen": [
+        "`THE BELL: ARRIVE.` · `THE BREATH: LONGER OUT.` · `ARTI: THE FLAME, OR THE WINDOW.` · `ONE LINE: OM SHANTI, SHANTI, SHANTI.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Dinacharya, the course of the day: bell, breath, arti, one line, five minutes that close it instead of letting it just stop. Today's word.",
-      "screen": ["`DINACHARYA — today's word`."]
+      "screen": [
+        "`DINACHARYA — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,35 +61,98 @@
       "voice": "Your line: the day put down. Even a shortened version of the four pieces closes it. That's the week, and day one hundred twenty-four.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 124 COUNTS.` → `TOMORROW: THE BODY AS TEMPLE.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 124 COUNTS.` → `TOMORROW: THE BODY AS TEMPLE.`"
+      ]
+    }
   ],
   "howItsDone": "Many Hindu households close the day with evening arti at the home shrine, often with a bell, the circled lamp, a song or mantra, and a closing invocation of peace such as Om shanti shanti shanti.",
   "games": {
-    "guess": ["the daily routine: the course of the day", "a fast kept from sunrise until sunset", "a closing prayer of peace said at night"],
+    "guess": [
+      "the daily routine: the course of the day",
+      "a fast kept from sunrise until sunset",
+      "a closing prayer of peace said at night"
+    ],
     "match": {
       "prompt": "the four pieces — tap the pairs.",
-      "pairs": [["the bell", "follow it to silence"], ["the breath", "in for four, out for six"], ["arti", "the flame, or the window"], ["one line", "Om shanti, shanti, shanti"]]
+      "pairs": [
+        [
+          "the bell",
+          "follow it to silence"
+        ],
+        [
+          "the breath",
+          "in for four, out for six"
+        ],
+        [
+          "arti",
+          "the flame, or the window"
+        ],
+        [
+          "one line",
+          "Om shanti, shanti, shanti"
+        ]
+      ]
     },
     "myth": [
-      ["an evening routine needs an hour", false, "four pieces, about five minutes."],
-      ["many Hindu prayers close with Om and three shantis", true, "peace, peace, peace: the fourth word of the path."],
-      ["the morning puja and the evening routine do the same job", false, "the morning offers the day before it starts; the evening hands it back."]
+      [
+        "an evening routine needs an hour",
+        false,
+        "four pieces, about five minutes."
+      ],
+      [
+        "many Hindu prayers close with Om and three shantis",
+        true,
+        "peace, peace, peace: the fourth word of the path."
+      ],
+      [
+        "the morning puja and the evening routine do the same job",
+        false,
+        "the morning offers the day before it starts; the evening hands it back."
+      ]
     ],
     "fork": {
       "setup": "it's late, and you have no lamp tonight. which piece of the evening routine do you change?",
-      "options": ["skip the whole thing.", "turn toward the window where the sun went down.", "do the breath only, twice as long."],
+      "options": [
+        "skip the whole thing.",
+        "turn toward the window where the sun went down.",
+        "do the breath only, twice as long."
+      ],
       "answer": 1,
       "reveal": "if there's no flame, face the window, toward the original flame. the other pieces stay the same."
     },
-    "original": { "script": "दिनचर्या", "say": "din-uh-CHUR-yah", "note": "Sanskrit dinacaryā: the daily routine, the course of the day from waking to sleep." },
+    "original": {
+      "script": "दिनचर्या",
+      "say": "din-uh-CHUR-yah",
+      "note": "Sanskrit dinacaryā: the daily routine, the course of the day from waking to sleep."
+    },
     "trapdoor": [
       "what you thought: a bedtime ritual.",
       "what it means: bell, breath, arti and one line: five minutes that hand the day back instead of just stopping.",
       "what a scholar hears: the closing Om shanti shanti shanti ends many Upanishadic peace invocations; dinacharya, the daily routine, is a classical Ayurvedic idea that frames the day as a sequence of practices."
+    ],
+    "recall": [
+      [
+        "naivedya",
+        "food offered to the divine"
+      ],
+      [
+        "The water",
+        "water that washes"
+      ]
     ]
   },
   "sources": [
-    { "ref": "The shanti invocations that open and close the Upanishads (ending Om shanti shanti shanti)", "work": "The Upanishads", "translation": null, "quoted": null }
+    {
+      "ref": "The shanti invocations that open and close the Upanishads (ending Om shanti shanti shanti)",
+      "work": "The Upanishads",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -87,5 +165,9 @@
       "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged."
     ]
   },
-  "meta": { "index": "124. Your evening routine · — · assemble: bell, breath, arti, one line · 5 min · the day put down", "writer": "writer agent (hinduism 112–141)", "written": "2026-09-30" }
+  "meta": {
+    "index": "124. Your evening routine · — · assemble: bell, breath, arti, one line · 5 min · the day put down",
+    "writer": "writer agent (hinduism 112–141)",
+    "written": "2026-09-30"
+  }
 }

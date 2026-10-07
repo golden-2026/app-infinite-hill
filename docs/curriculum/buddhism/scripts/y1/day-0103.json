@@ -9,24 +9,37 @@
   "length": "6:45",
   "tomorrow": "All beings",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-HUNDRED-THREE.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY ONE-HUNDRED-THREE.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday: vera, the difficult person, met with a small, sincere wish. Your line: a little, honestly.",
-      "screen": ["`VERA — A LITTLE, HONESTLY.`"]
+      "screen": [
+        "`VERA — A LITTLE, HONESTLY.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "The lifeboat question: one seat left, who gets it? People argue about it at dinner parties and in philosophy classes. Fifteen hundred years ago, a Buddhist monk in Sri Lanka wrote his own version, as a test for anyone practicing metta. Four people are sitting together. Bandits burst in. They say: give us one of you. We're going to kill that one. Who do you hand over? It's a strange question for a book about kindness. But the answer is the point of the last six days.",
-      "screen": ["`THE LIFEBOAT QUESTION.` → `BANDITS BURST IN.` → `GIVE US ONE OF YOU.`"]
+      "screen": [
+        "`THE LIFEBOAT QUESTION.` → `BANDITS BURST IN.` → `GIVE US ONE OF YOU.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "The monk is Buddhaghosa, and the test is in the ninth chapter of the Visuddhimagga. The four people are the ones you've practiced with over these past days: yourself, a dear person, a neutral person, a hostile person. The bandits demand one. Now watch the manual's answers. If you think, take the enemy, your metta isn't finished: there's still a barrier around the one you dislike. Take the stranger: the same. And here's the twist most people don't expect. If you think, take me, spare the others, that's not the answer either. It sounds noble, but the manual says it still shows a barrier, around yourself. You've made yourself the one who doesn't count. The test is passed only when you can't find anyone to hand over. Not the enemy, not the stranger, not the friend, not you. Each one's life weighs the same in your heart. That's what the manual calls breaking the barriers, sima-sambheda: the walls between the categories come down. This is a picture, not a plan for a real emergency, a way of checking where the walls still stand. Most people, honestly, find a wall somewhere, and the manual doesn't shame anyone for that. It describes the goal: a mind where kindness no longer sorts people into loved, ignored and disliked. After six days of taking the categories one at a time, this is where they meet. Tomorrow, the circle opens all the way: every direction, every being.",
-      "screen": ["`FOUR PEOPLE, AND BANDITS.` · `TAKE THE ENEMY? A WALL.` · `TAKE ME? STILL A WALL.` · `NO ONE TO HAND OVER.` · then, large: `NO ONE HANDED OVER.`"]
+      "screen": [
+        "`FOUR PEOPLE, AND BANDITS.` · `TAKE THE ENEMY? A WALL.` · `TAKE ME? STILL A WALL.` · `NO ONE TO HAND OVER.` · then, large: `NO ONE HANDED OVER.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Sima-sambheda. The breaking of boundaries between people: the manual's test of metta, when bandits demand one of four and you find no one to hand over.",
-      "screen": ["`SIMA-SAMBHEDA — today's word`."]
+      "screen": [
+        "`SIMA-SAMBHEDA — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,35 +61,98 @@
       "voice": "Your line: no one handed over. Not the enemy, not the stranger, not you. One hundred and three days in.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 103 COUNTS.` → `TOMORROW: ALL BEINGS.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 103 COUNTS.` → `TOMORROW: ALL BEINGS.`"
+      ]
+    }
   ],
   "howItsDone": "Following the Visuddhimagga, Buddhist meditators aim to extend metta equally to themselves, dear, neutral and hostile persons, and teachers use the manual's bandit test to show what that evenness means.",
   "games": {
-    "guess": ["breaking the walls between people", "a bell rung to start meditation", "a vow to protect all who are in danger"],
+    "guess": [
+      "breaking the walls between people",
+      "a bell rung to start meditation",
+      "a vow to protect all who are in danger"
+    ],
     "match": {
       "prompt": "what the answers show — tap the pairs.",
-      "pairs": [["take the enemy", "a wall around the one you dislike"], ["take the stranger", "a wall around the neutral one"], ["take me", "a wall around yourself"], ["no one", "the barriers are broken"]]
+      "pairs": [
+        [
+          "take the enemy",
+          "a wall around the one you dislike"
+        ],
+        [
+          "take the stranger",
+          "a wall around the neutral one"
+        ],
+        [
+          "take me",
+          "a wall around yourself"
+        ],
+        [
+          "no one",
+          "the barriers are broken"
+        ]
+      ]
     },
     "myth": [
-      ["offering yourself to the bandits passes the manual's test", false, "the manual says that still shows a barrier, around yourself."],
-      ["the test is meant as a plan for real emergencies", false, "it's a picture for checking where the walls in the mind still stand."],
-      ["the four people are yourself, dear, neutral and hostile", true, "the same four you've practiced with over these past days."]
+      [
+        "offering yourself to the bandits passes the manual's test",
+        false,
+        "the manual says that still shows a barrier, around yourself."
+      ],
+      [
+        "the test is meant as a plan for real emergencies",
+        false,
+        "it's a picture for checking where the walls in the mind still stand."
+      ],
+      [
+        "the four people are yourself, dear, neutral and hostile",
+        true,
+        "the same four you've practiced with over these past days."
+      ]
     ],
     "fork": {
       "setup": "bandits demand one of four people: you, a friend, a stranger, an enemy. what answer passes the manual's test?",
-      "options": ["give them the enemy.", "give them yourself.", "find no one to hand over."],
+      "options": [
+        "give them the enemy.",
+        "give them yourself.",
+        "find no one to hand over."
+      ],
       "answer": 2,
       "reveal": "only when no one can be handed over, not even yourself, does the manual say the barriers are broken."
     },
-    "original": { "script": "सीमासम्भेद", "say": "SEE-maa-sam-BHAY-da", "note": "Pali: the breaking down of boundaries between persons in metta practice." },
+    "original": {
+      "script": "सीमासम्भेद",
+      "say": "SEE-maa-sam-BHAY-da",
+      "note": "Pali: the breaking down of boundaries between persons in metta practice."
+    },
     "trapdoor": [
       "what you thought: a gruesome riddle.",
       "what it means: a check on whether kindness still sorts people into loved, ignored and disliked.",
       "what a scholar hears: Visuddhimagga IX presents the bandit test as the sign of sima-sambheda, after which the meditator develops the sign for absorption in metta."
+    ],
+    "recall": [
+      [
+        "Vessantara's children",
+        "Jali and Kanhajina"
+      ],
+      [
+        "Vessantara gives",
+        "a prince's gift that cost him his home"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Visuddhimagga IX: the breaking of the barriers (sima-sambheda)", "work": "The Path of Purification (Buddhaghosa)", "translation": null, "quoted": null }
+    {
+      "ref": "Visuddhimagga IX: the breaking of the barriers (sima-sambheda)",
+      "work": "The Path of Purification (Buddhaghosa)",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -88,5 +166,9 @@
       "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged."
     ]
   },
-  "meta": { "index": "103. Breaking the barriers · — · the manual's test: bandits demand one of four people; metta hands over none (Visuddhimagga 9) · hold four people equally · no one handed over", "writer": "writer agent (buddhism 91–120)", "written": "2026-09-30" }
+  "meta": {
+    "index": "103. Breaking the barriers · — · the manual's test: bandits demand one of four people; metta hands over none (Visuddhimagga 9) · hold four people equally · no one handed over",
+    "writer": "writer agent (buddhism 91–120)",
+    "written": "2026-09-30"
+  }
 }

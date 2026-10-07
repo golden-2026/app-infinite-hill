@@ -9,24 +9,37 @@
   "length": "6:30",
   "tomorrow": "Is this what I feared?",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY TWO-HUNDRED-NINETY-NINE.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY TWO-HUNDRED-NINETY-NINE.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday: apatheia. The Stoics weren't unfeeling: honest tears, a steady center. Your line was not unfeeling.",
-      "screen": ["`APATHEIA — NOT UNFEELING.`"]
+      "screen": [
+        "`APATHEIA — NOT UNFEELING.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Count the decisions food asks of you in a day. What to order. Which of the forty cereals. Whether the coffee has the right milk. Delivery or pickup. The next small pleasure is always one tap away, and the choosing never quite stops. In imperial Rome, a teacher looked at the rich tables of his city, dish after imported dish, feasts that ran for hours, and gave his students some unfashionable advice.",
-      "screen": ["`FORTY KINDS OF CEREAL.` → `ONE TAP AWAY.` → `PLAIN FOOD.`"]
+      "screen": [
+        "`FORTY KINDS OF CEREAL.` → `ONE TAP AWAY.` → `PLAIN FOOD.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "That teacher was Musonius Rufus, whom we met four days ago arguing that women should study philosophy. Two of his lectures are about food, and he says something that sounds too simple: self-control at the table is the beginning and the foundation of self-control everywhere else. Why food? Because it comes around several times a day, a test you meet over and over. His advice is concrete. Prefer food that's cheap and easy to find: fruit, vegetables, milk, cheese, honey. Eat to nourish the body, not to chase the next flavor. He repeats an old saying often credited to Socrates: most people live to eat, but a good person eats to live. In another lecture he turns to clothing and houses. Clothes are for protecting the body, not for showing off; a house is for shelter from heat and cold, not for being admired. And in a lecture on training, he says a person should get used to cold and heat, thirst and hunger, a hard bed and plain meals, not as punishment, but as practice. The Greek word is askēsis, training, the word athletes used; it's where English gets ascetic. For Musonius, plain food isn't about being miserable, or saving money, or looking virtuous. It's a gym. Each simple meal is a small rep that makes you less easy to push around by wanting. His point: someone content with bread and cheese is harder to bribe, easier to please, and freer. Plain is training.",
-      "screen": ["`SELF-CONTROL STARTS AT THE TABLE.` · `CHEAP, SIMPLE, EASY TO FIND.` · `EAT TO LIVE.` · `ASKĒSIS: TRAINING, LIKE AN ATHLETE.` · then, large: `PLAIN IS TRAINING.`"]
+      "screen": [
+        "`SELF-CONTROL STARTS AT THE TABLE.` · `CHEAP, SIMPLE, EASY TO FIND.` · `EAT TO LIVE.` · `ASKĒSIS: TRAINING, LIKE AN ATHLETE.` · then, large: `PLAIN IS TRAINING.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Plain food. Musonius Rufus's training: simple meals and a little hardship, practiced so wanting has less hold on you.",
-      "screen": ["`PLAIN FOOD — today's word`."]
+      "screen": [
+        "`PLAIN FOOD — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,37 +61,110 @@
       "voice": "Your line: plain is training. If you have a medical diet, it comes first. Two hundred ninety-nine days now.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 299 COUNTS.` → `TOMORROW: IS THIS WHAT I FEARED?`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 299 COUNTS.` → `TOMORROW: IS THIS WHAT I FEARED?`"
+      ]
+    }
   ],
   "howItsDone": "Some Stoic practitioners keep simple meals and occasional small hardships, like a cold shower or a plain lunch, as training in contentment rather than as punishment.",
   "games": {
     "match": {
       "prompt": "plain food — tap the pairs.",
-      "pairs": [["the table", "where self-control begins"], ["clothing", "to protect, not to show off"], ["a house", "for shelter, not admiration"], ["askēsis", "training, like an athlete's"]]
+      "pairs": [
+        [
+          "the table",
+          "where self-control begins"
+        ],
+        [
+          "clothing",
+          "to protect, not to show off"
+        ],
+        [
+          "a house",
+          "for shelter, not admiration"
+        ],
+        [
+          "askēsis",
+          "training, like an athlete's"
+        ]
+      ]
     },
     "myth": [
-      ["Musonius taught plain food as punishment", false, "he taught it as training, a gym for contentment."],
-      ["the English word ascetic comes from the Greek for training", true, "askēsis was the word athletes used."],
-      ["Musonius cared only about food", false, "he also taught simple clothing, simple houses, and getting used to cold and heat."]
+      [
+        "Musonius taught plain food as punishment",
+        false,
+        "he taught it as training, a gym for contentment."
+      ],
+      [
+        "the English word ascetic comes from the Greek for training",
+        true,
+        "askēsis was the word athletes used."
+      ],
+      [
+        "Musonius cared only about food",
+        false,
+        "he also taught simple clothing, simple houses, and getting used to cold and heat."
+      ]
     ],
     "fork": {
       "setup": "Musonius says self-control starts somewhere specific. where?",
-      "options": ["in the gym.", "at the table.", "in the marketplace."],
+      "options": [
+        "in the gym.",
+        "at the table.",
+        "in the marketplace."
+      ],
       "answer": 1,
       "reveal": "food comes two or three times a day, so the table is a training ground you visit every day."
     },
-    "original": { "script": "ἄσκησις", "say": "AS-kay-sis", "note": "Greek: training, exercise; the root of ascetic." },
+    "original": {
+      "script": "ἄσκησις",
+      "say": "AS-kay-sis",
+      "note": "Greek: training, exercise; the root of ascetic."
+    },
     "trapdoor": [
       "what you thought: plain food is about dieting or saving money.",
       "what it means: simple meals as training, so wanting has less hold on you.",
       "what a scholar hears: Musonius, Lectures 6 and 18A–18B: askēsis for body and soul, and the table as the start of self-control."
     ],
-    "guess": ["simple meals practiced as training in self-control", "a strict diet meant to punish the body for its wants", "cheap meals eaten mainly to save money for later"]
+    "guess": [
+      "simple meals practiced as training in self-control",
+      "a strict diet meant to punish the body for its wants",
+      "cheap meals eaten mainly to save money for later"
+    ],
+    "recall": [
+      [
+        "kosmopolitēs",
+        "a citizen of the whole world"
+      ],
+      [
+        "eupatheia",
+        "good feelings"
+      ]
+    ]
   },
   "sources": [
-    { "ref": "Musonius Rufus, Lectures 18A–18B (On food)", "work": "Musonius Rufus, Lectures, in Stobaeus", "translation": null, "quoted": null },
-    { "ref": "Musonius Rufus, Lecture 19 (On clothing and shelter)", "work": "Musonius Rufus, Lectures, in Stobaeus", "translation": null, "quoted": null },
-    { "ref": "Musonius Rufus, Lecture 6 (On training)", "work": "Musonius Rufus, Lectures, in Stobaeus", "translation": null, "quoted": null }
+    {
+      "ref": "Musonius Rufus, Lectures 18A–18B (On food)",
+      "work": "Musonius Rufus, Lectures, in Stobaeus",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Musonius Rufus, Lecture 19 (On clothing and shelter)",
+      "work": "Musonius Rufus, Lectures, in Stobaeus",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Musonius Rufus, Lecture 6 (On training)",
+      "work": "Musonius Rufus, Lectures, in Stobaeus",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -90,5 +178,9 @@
       "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged."
     ]
   },
-  "meta": { "index": "299. Plain food, hard ground · — · Musonius taught plain food and hard work as training (Musonius Rufus, Lectures 18–19) · eat one plain meal · plain is training", "writer": "spiritual writer agent (days 278–307)", "written": "2026-09-30" }
+  "meta": {
+    "index": "299. Plain food, hard ground · — · Musonius taught plain food and hard work as training (Musonius Rufus, Lectures 18–19) · eat one plain meal · plain is training",
+    "writer": "spiritual writer agent (days 278–307)",
+    "written": "2026-09-30"
+  }
 }

@@ -9,24 +9,37 @@
   "length": "6:30",
   "tomorrow": "Christianity: grace",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY TWO-HUNDRED-FIFTY-FIVE.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY TWO-HUNDRED-FIFTY-FIVE.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday: the Beatitudes, and makarios, truly well off. Your line was blessed are the peacemakers.",
-      "screen": ["`BLESSED ARE THE PEACEMAKERS.`"]
+      "screen": [
+        "`BLESSED ARE THE PEACEMAKERS.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Our Father, who art in heaven. Those six words travel a long way from any church: into school halls, hospital rooms, gravesides and old films. Catholics, Orthodox Christians and Protestants all pray what follows, each in their own language and their own version, with small differences in the wording. It all began with a simple request. In Luke's Gospel, the disciples watch Jesus pray and ask him: teach us.",
-      "screen": ["`OUR FATHER, WHO ART IN HEAVEN.` → `CATHOLIC, ORTHODOX, PROTESTANT.` → `TEACH US.`"]
+      "screen": [
+        "`OUR FATHER, WHO ART IN HEAVEN.` → `CATHOLIC, ORTHODOX, PROTESTANT.` → `TEACH US.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "Matthew chapter six, in the King James Version: \"Our Father which art in heaven, Hallowed be thy name. Thy kingdom come. Thy will be done in earth, as it is in heaven. Give us this day our daily bread.\" Then forgiveness, as we forgive others; then protection from temptation and evil. It's short on purpose: just before it, Jesus warns against heaping up words, as if length impressed God. Look at the shape. The first half faces God: the name, the kingdom, the will. The second half faces us: bread, forgiveness, protection. Big things, then small things, allowed in the same breath. Now today's line. The Greek word translated daily, epiousios, appears almost nowhere else in all of Greek writing, and nobody is certain what it means. Daily? For tomorrow? Needed for existence? Early Christian writers already argued about it, and some read it as the bread of the Eucharist too. However it's translated, the request is small: enough for today, not a year's supply. It echoes the manna in the wilderness, from the story of the going out from Egypt: bread that came each morning, enough for that day, and spoiled if hoarded. The endings differ. Many Protestants close with for thine is the kingdom, the power and the glory. Luke's version doesn't have that line, and at Catholic Mass it comes a little later, after another short prayer.",
-      "screen": ["`TEACH US TO PRAY.` · `GOD'S NAME FIRST, THEN OUR BREAD.` · `EPIOUSIOS — NOBODY IS SURE.` · `ENOUGH FOR TODAY, LIKE MANNA.` · then, large: `DAILY BREAD.`"]
+      "screen": [
+        "`TEACH US TO PRAY.` · `GOD'S NAME FIRST, THEN OUR BREAD.` · `EPIOUSIOS — NOBODY IS SURE.` · `ENOUGH FOR TODAY, LIKE MANNA.` · then, large: `DAILY BREAD.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Christianity, through the Lord's Prayer: the prayer Jesus taught, God's name first, then bread for today. Today's word.",
-      "screen": ["`CHRISTIANITY: THE LORD'S PRAYER — today's word`."]
+      "screen": [
+        "`CHRISTIANITY: THE LORD'S PRAYER — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,37 +61,110 @@
       "voice": "Your line: daily bread. Enough for today; tomorrow's worries can wait. That's two hundred fifty-five.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 255 COUNTS.` → `TOMORROW: CHRISTIANITY: GRACE.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 255 COUNTS.` → `TOMORROW: CHRISTIANITY: GRACE.`"
+      ]
+    }
   ],
   "howItsDone": "Catholic, Orthodox and Protestant Christians all pray the Lord's Prayer, many daily, and congregations often say it together; Catholics call it the Our Father and pray it in the rosary.",
   "games": {
     "match": {
       "prompt": "inside the prayer — tap the pairs.",
-      "pairs": [["the first half", "God's name, kingdom and will"], ["the second half", "bread, forgiveness, protection"], ["epiousios", "the Greek word no one is sure of"], ["manna", "enough for that day"]]
+      "pairs": [
+        [
+          "the first half",
+          "God's name, kingdom and will"
+        ],
+        [
+          "the second half",
+          "bread, forgiveness, protection"
+        ],
+        [
+          "epiousios",
+          "the Greek word no one is sure of"
+        ],
+        [
+          "manna",
+          "enough for that day"
+        ]
+      ]
     },
     "myth": [
-      ["the Greek word for daily is common and clear", false, "epiousios appears almost nowhere else; its meaning is debated."],
-      ["the closing line 'for thine is the kingdom' is in Luke's version", false, "Luke's shorter version doesn't have it; at Catholic Mass it comes a little later."],
-      ["Jesus warned against heaping up words just before teaching it", true, "Matthew 6:7: people think they'll be heard for their many words."]
+      [
+        "the Greek word for daily is common and clear",
+        false,
+        "epiousios appears almost nowhere else; its meaning is debated."
+      ],
+      [
+        "the closing line 'for thine is the kingdom' is in Luke's version",
+        false,
+        "Luke's shorter version doesn't have it; at Catholic Mass it comes a little later."
+      ],
+      [
+        "Jesus warned against heaping up words just before teaching it",
+        true,
+        "Matthew 6:7: people think they'll be heard for their many words."
+      ]
     ],
     "fork": {
       "setup": "the disciples ask Jesus: teach us to pray. what does he give them?",
-      "options": ["a long prayer to recite for an hour.", "a short prayer: God's name first, then daily bread.", "silence."],
+      "options": [
+        "a long prayer to recite for an hour.",
+        "a short prayer: God's name first, then daily bread.",
+        "silence."
+      ],
       "answer": 1,
       "reveal": "he gives a short prayer and warns against piling up words; the small needs come in the same breath as the great."
     },
-    "original": { "script": "ἐπιούσιος", "say": "eh-pee-OO-see-os", "note": "Greek of Matthew 6:11: daily, or for tomorrow; the meaning is debated." },
+    "original": {
+      "script": "ἐπιούσιος",
+      "say": "eh-pee-OO-see-os",
+      "note": "Greek of Matthew 6:11: daily, or for tomorrow; the meaning is debated."
+    },
     "trapdoor": [
       "what you thought: the prayer from funerals and films.",
       "what it means: the prayer Jesus taught: God's name and kingdom first, then bread, forgiveness and protection.",
       "what a scholar hears: epiousios is nearly unique in Greek; Luke 11 has a shorter form, and the doxology is a later addition to Matthew's text."
     ],
-    "guess": ["the short prayer Jesus taught when asked: teach us", "a prayer written by the early church for Mass", "a psalm of David sung in the Temple"]
+    "guess": [
+      "the short prayer Jesus taught when asked: teach us",
+      "a prayer written by the early church for Mass",
+      "a psalm of David sung in the Temple"
+    ],
+    "recall": [
+      [
+        "Torah",
+        "teaching"
+      ],
+      [
+        "brit",
+        "covenant"
+      ]
+    ]
   },
   "sources": [
-    { "ref": "Matthew 6:9–11", "work": "The Bible", "translation": "KJV (1769)", "quoted": "Our Father which art in heaven, Hallowed be thy name. Thy kingdom come. Thy will be done in earth, as it is in heaven. Give us this day our daily bread." },
-    { "ref": "Matthew 6:7, 6:12–13; Luke 11:1–4", "work": "The Bible", "translation": null, "quoted": null },
-    { "ref": "Exodus 16:16–21", "work": "The Bible", "translation": null, "quoted": null }
+    {
+      "ref": "Matthew 6:9–11",
+      "work": "The Bible",
+      "translation": "KJV (1769)",
+      "quoted": "Our Father which art in heaven, Hallowed be thy name. Thy kingdom come. Thy will be done in earth, as it is in heaven. Give us this day our daily bread."
+    },
+    {
+      "ref": "Matthew 6:7, 6:12–13; Luke 11:1–4",
+      "work": "The Bible",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Exodus 16:16–21",
+      "work": "The Bible",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -91,5 +179,9 @@
       "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged."
     ]
   },
-  "meta": { "index": "255. Christianity: the Lord's Prayer · — · the prayer Jesus taught his followers (Matthew 6:9–13) · read it slowly once · daily bread", "writer": "spiritual writer agent (days 248–277)", "written": "2026-09-30" }
+  "meta": {
+    "index": "255. Christianity: the Lord's Prayer · — · the prayer Jesus taught his followers (Matthew 6:9–13) · read it slowly once · daily bread",
+    "writer": "spiritual writer agent (days 248–277)",
+    "written": "2026-09-30"
+  }
 }

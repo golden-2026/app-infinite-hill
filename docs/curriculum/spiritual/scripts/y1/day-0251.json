@@ -9,24 +9,37 @@
   "length": "6:30",
   "tomorrow": "Passover, the freedom meal",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY TWO-HUNDRED-FIFTY-ONE.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY TWO-HUNDRED-FIFTY-ONE.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday: bracha, the blessing, a sentence for bread and thunder. Your line was blessed is.",
-      "screen": ["`BRACHA — BLESSED IS.`"]
+      "screen": [
+        "`BRACHA — BLESSED IS.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Friday, late afternoon. The inbox still open, the groceries half put away, the phone buzzing with plans. At the same hour, in a Jewish home, a kitchen table is set. Someone strikes a match and lights two candles. She draws her hands around the flames three times, covers her eyes, and says a blessing. When she uncovers them, nothing in the room has moved, and yet the week is over. Until nightfall tomorrow, it's Shabbat.",
-      "screen": ["`FRIDAY, THE INBOX STILL OPEN.` → `A MATCH, TWO FLAMES.` → `THE WEEK IS OVER.`"]
+      "screen": [
+        "`FRIDAY, THE INBOX STILL OPEN.` → `A MATCH, TWO FLAMES.` → `THE WEEK IS OVER.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "Shabbat means rest, or ceasing. It runs from just before sunset on Friday until nightfall on Saturday. Why two candles? A common answer: the Ten Commandments appear twice in the Torah. In Exodus the commandment begins, in the 1917 Jewish Publication Society words, \"Remember the sabbath day, to keep it holy.\" In Deuteronomy it begins with a different verb: observe it, or guard it. Remember, and keep. One candle for each. In many homes the woman of the house lights them, though anyone may, and a little before sunset, so no one lights a fire once Shabbat has begun. That's why the eyes are covered. A blessing usually comes before the act, but here the blessing is what begins the rest, so you light, hide the flames, bless, and then look. The big idea: for six days, the Torah says, God made the world, and on the seventh God rested. Shabbat invites people to copy that rhythm. No work, no buying and selling, in many homes no phones or driving. Observance varies widely: Orthodox, Conservative, Reform and secular Jews keep it in very different ways. The twentieth-century teacher Abraham Joshua Heschel called Shabbat a palace in time: most holy places are buildings, but this one is built out of hours. And an old saying from the writer Ahad Ha'am turns it around: more than the Jews have kept Shabbat, Shabbat has kept the Jews.",
-      "screen": ["`SHABBAT — REST, CEASING.` · `REMEMBER, AND KEEP: TWO CANDLES.` · `LIGHT, COVER, BLESS, LOOK.` · `A PALACE IN TIME.` · then, large: `REST ARRIVES.`"]
+      "screen": [
+        "`SHABBAT — REST, CEASING.` · `REMEMBER, AND KEEP: TWO CANDLES.` · `LIGHT, COVER, BLESS, LOOK.` · `A PALACE IN TIME.` · then, large: `REST ARRIVES.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Judaism, through Shabbat: rest from Friday sunset to Saturday night, begun with two candles for remember and keep. Today's word.",
-      "screen": ["`JUDAISM: SHABBAT — today's word`."]
+      "screen": [
+        "`JUDAISM: SHABBAT — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,39 +61,122 @@
       "voice": "Your line: rest arrives. You don't have to chase it; at sundown, it comes. That's day two hundred fifty-one.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 251 COUNTS.` → `TOMORROW: PASSOVER, THE FREEDOM MEAL.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 251 COUNTS.` → `TOMORROW: PASSOVER, THE FREEDOM MEAL.`"
+      ]
+    }
   ],
   "howItsDone": "In many Jewish homes, two candles are lit shortly before sunset on Friday with a blessing, the eyes covered, and Shabbat is kept until nightfall on Saturday; how strictly varies from family to family.",
   "games": {
     "match": {
       "prompt": "the two candles — tap the pairs.",
-      "pairs": [["Shabbat", "rest, ceasing"], ["Exodus", "remember the sabbath day"], ["Deuteronomy", "observe it, guard it"], ["Heschel", "a palace in time"]]
+      "pairs": [
+        [
+          "Shabbat",
+          "rest, ceasing"
+        ],
+        [
+          "Exodus",
+          "remember the sabbath day"
+        ],
+        [
+          "Deuteronomy",
+          "observe it, guard it"
+        ],
+        [
+          "Heschel",
+          "a palace in time"
+        ]
+      ]
     },
     "myth": [
-      ["Shabbat runs from Friday sunset to Saturday nightfall", true, "from candle lighting on Friday to nightfall on Saturday."],
-      ["the two candles are commonly linked to remember and keep", true, "the commandment is worded two ways, in Exodus and in Deuteronomy."],
-      ["all Jews keep Shabbat in exactly the same way", false, "Orthodox, Conservative, Reform and secular Jews keep it very differently."]
+      [
+        "Shabbat runs from Friday sunset to Saturday nightfall",
+        true,
+        "from candle lighting on Friday to nightfall on Saturday."
+      ],
+      [
+        "the two candles are commonly linked to remember and keep",
+        true,
+        "the commandment is worded two ways, in Exodus and in Deuteronomy."
+      ],
+      [
+        "all Jews keep Shabbat in exactly the same way",
+        false,
+        "Orthodox, Conservative, Reform and secular Jews keep it very differently."
+      ]
     ],
     "fork": {
       "setup": "a blessing usually comes before the act. but this blessing begins Shabbat, when lighting fire stops. what do you do?",
-      "options": ["bless first, then light.", "light, cover your eyes, bless, then look.", "skip the blessing."],
+      "options": [
+        "bless first, then light.",
+        "light, cover your eyes, bless, then look.",
+        "skip the blessing."
+      ],
       "answer": 1,
       "reveal": "many light first, cover their eyes, say the blessing, and uncover: so seeing the flames still follows the blessing."
     },
-    "original": { "script": "שַׁבָּת", "say": "shah-BAHT", "note": "Hebrew: rest, ceasing; many Ashkenazi Jews say SHAH-bes." },
+    "original": {
+      "script": "שַׁבָּת",
+      "say": "shah-BAHT",
+      "note": "Hebrew: rest, ceasing; many Ashkenazi Jews say SHAH-bes."
+    },
     "trapdoor": [
       "what you thought: Jewish Sunday.",
       "what it means: a weekly day of rest, copying God's rest on the seventh day, begun with candles.",
       "what a scholar hears: remember in Exodus 20:8, observe in Deuteronomy 5:12; the rabbis read the two verbs as spoken at once, and two candles honor both."
     ],
-    "guess": ["a weekly day of rest, Friday sunset to Saturday night", "a Jewish holiday held once a year in the autumn", "the Jewish name for a Sunday church service"]
+    "guess": [
+      "a weekly day of rest, Friday sunset to Saturday night",
+      "a Jewish holiday held once a year in the autumn",
+      "the Jewish name for a Sunday church service"
+    ],
+    "recall": [
+      [
+        "sangha",
+        "the community of the path"
+      ],
+      [
+        "metta",
+        "goodwill"
+      ]
+    ]
   },
   "sources": [
-    { "ref": "Exodus 20:8", "work": "The Hebrew Bible", "translation": "JPS 1917", "quoted": "Remember the sabbath day, to keep it holy." },
-    { "ref": "Deuteronomy 5:12", "work": "The Hebrew Bible", "translation": null, "quoted": null },
-    { "ref": "Genesis 2:2–3; Exodus 20:11", "work": "The Hebrew Bible", "translation": null, "quoted": null },
-    { "ref": "The Sabbath (1951)", "work": "Abraham Joshua Heschel", "translation": null, "quoted": null },
-    { "ref": "saying attributed to Ahad Ha'am", "work": "Ahad Ha'am", "translation": null, "quoted": null }
+    {
+      "ref": "Exodus 20:8",
+      "work": "The Hebrew Bible",
+      "translation": "JPS 1917",
+      "quoted": "Remember the sabbath day, to keep it holy."
+    },
+    {
+      "ref": "Deuteronomy 5:12",
+      "work": "The Hebrew Bible",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Genesis 2:2–3; Exodus 20:11",
+      "work": "The Hebrew Bible",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "The Sabbath (1951)",
+      "work": "Abraham Joshua Heschel",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "saying attributed to Ahad Ha'am",
+      "work": "Ahad Ha'am",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -94,5 +192,9 @@
       "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged."
     ]
   },
-  "meta": { "index": "251. Judaism: Shabbat candles · — · on Friday at dusk, two candles are lit and rest begins · light two candles on Friday · rest arrives", "writer": "spiritual writer agent (days 248–277)", "written": "2026-09-30" }
+  "meta": {
+    "index": "251. Judaism: Shabbat candles · — · on Friday at dusk, two candles are lit and rest begins · light two candles on Friday · rest arrives",
+    "writer": "spiritual writer agent (days 248–277)",
+    "written": "2026-09-30"
+  }
 }

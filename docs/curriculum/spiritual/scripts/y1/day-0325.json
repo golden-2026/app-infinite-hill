@@ -9,24 +9,37 @@
   "length": "6:30",
   "tomorrow": "The door you left",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY THREE-HUNDRED-TWENTY-FIVE.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY THREE-HUNDRED-TWENTY-FIVE.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday: the funnel, and how to test a teaching. Your line: by their fruits.",
-      "screen": ["`BY THEIR FRUITS.`"]
+      "screen": [
+        "`BY THEIR FRUITS.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Halfway up a real hill, there's a moment worth waiting for. You've been staring at your feet for an hour, at the next rock, the next root. It seems you've gone nowhere. Then you stop, turn around, and there it is: the parking lot is a speck, the town is a map, and the path you walked winds all the way up to where you're standing. You didn't feel yourself climbing. You just kept putting one foot down. That's where you are now. Six days from now, year one ends, so this last week is a lookout. Today, turn around.",
-      "screen": ["`STARING AT YOUR FEET.` → `THEN YOU TURN AROUND.` → `THE PATH, ALL THE WAY UP.`"]
+      "screen": [
+        "`STARING AT YOUR FEET.` → `THEN YOU TURN AROUND.` → `THE PATH, ALL THE WAY UP.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "Start at the bottom of the hill. The very first thing on this path was a breath. One breath, with the bell, and the discovery that in Latin, Greek and Hebrew, one word can mean both breath and spirit. Your line was wander, notice, come back. Then the camps. The stories: Marcus arguing with his blanket, Nasruddin looking for his key under the lamp, Zhuangzi and the butterfly, Hillel on one foot. The practices: breath, the evening review, the view from above, the digital sabbath, sunset. The text: Rumi's reed flute, with Marcus Aurelius beside him. And this last camp, the depths: visits to seven traditions as a guest, the Stoics up close, and the science of practice. Why look back at all? Kierkegaard, the walker from four days ago, wrote in his journal that life can only be understood looking backward, but has to be lived looking forward. In the middle of a day, you can't see the shape. From up here, you can. Just don't grade yourself. Some days you skipped, and some weeks the practice was one breath in a parked car. That counts. The habit study said one missed day doesn't reset anything. Look back the way you'd look at a friend's photos from a long trip: with curiosity, and a little wonder that they went so far. Notice what changed, even a little, and what didn't. Both are data. Both belong to the climb.",
-      "screen": ["`DAY ONE: ONE BREATH.` · `STORIES, PRACTICES, THE TEXT, THE DEPTHS.` · `UNDERSTOOD BACKWARD, LIVED FORWARD.` · `NOT A GRADE: A FRIEND'S PHOTOS.` · then, large: `HOW FAR.`"]
+      "screen": [
+        "`DAY ONE: ONE BREATH.` · `STORIES, PRACTICES, THE TEXT, THE DEPTHS.` · `UNDERSTOOD BACKWARD, LIVED FORWARD.` · `NOT A GRADE: A FRIEND'S PHOTOS.` · then, large: `HOW FAR.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Looking back. Turning around on the path to see how far you've come, with curiosity, not a grade. Today's word.",
-      "screen": ["`LOOKING BACK — today's word`."]
+      "screen": [
+        "`LOOKING BACK — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,22 +61,62 @@
       "voice": "Your line: how far. The top of year one is six days off. Day three hundred twenty-five, done.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 325 COUNTS.` → `TOMORROW: THE DOOR YOU LEFT.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 325 COUNTS.` → `TOMORROW: THE DOOR YOU LEFT.`"
+      ]
+    }
   ],
   "howItsDone": "Many traditions and many people mark the end of a season or year by looking back: rereading journals, reviewing the year's practice, and noticing what changed, without judgment.",
   "games": {
     "match": {
       "prompt": "the climb so far — tap the pairs.",
-      "pairs": [["day one", "one breath, with the bell"], ["camp two", "the stories"], ["camp four", "Rumi, with Marcus beside him"], ["Kierkegaard", "understood backward, lived forward"]]
+      "pairs": [
+        [
+          "day one",
+          "one breath, with the bell"
+        ],
+        [
+          "camp two",
+          "the stories"
+        ],
+        [
+          "camp four",
+          "Rumi, with Marcus beside him"
+        ],
+        [
+          "Kierkegaard",
+          "understood backward, lived forward"
+        ]
+      ]
     },
     "myth": [
-      ["looking back means grading every missed day", false, "one missed day doesn't reset anything; look back with curiosity."],
-      ["the first thing on this path was a single breath", true, "day one: one breath, and one word for both breath and spirit."],
-      ["Kierkegaard said life can only be understood looking backward", true, "and that it has to be lived looking forward."]
+      [
+        "looking back means grading every missed day",
+        false,
+        "one missed day doesn't reset anything; look back with curiosity."
+      ],
+      [
+        "the first thing on this path was a single breath",
+        true,
+        "day one: one breath, and one word for both breath and spirit."
+      ],
+      [
+        "Kierkegaard said life can only be understood looking backward",
+        true,
+        "and that it has to be lived looking forward."
+      ]
     ],
     "fork": {
       "setup": "you reread your early notes and see weeks you barely practiced. what now?",
-      "options": ["decide the year didn't count.", "notice what changed and what didn't, with curiosity.", "start the whole year over."],
+      "options": [
+        "decide the year didn't count.",
+        "notice what changed and what didn't, with curiosity.",
+        "start the whole year over."
+      ],
       "answer": 1,
       "reveal": "look back like a friend's travel photos. what changed and what didn't are both data, and both belong to the climb."
     },
@@ -71,10 +126,29 @@
       "what it means: turning around on the path to see its shape.",
       "what a scholar hears: Kierkegaard's 1843 journal entry: life understood backward, lived forward."
     ],
-    "guess": ["turning around to see how far you've come, kindly", "grading yourself on every day you missed this year", "wishing you could go back to how things used to be"]
+    "guess": [
+      "turning around to see how far you've come, kindly",
+      "grading yourself on every day you missed this year",
+      "wishing you could go back to how things used to be"
+    ],
+    "recall": [
+      [
+        "Green helps",
+        "time among trees can quiet a brooding mind"
+      ],
+      [
+        "sublimis",
+        "Latin for high or lofty"
+      ]
+    ]
   },
   "sources": [
-    { "ref": "Journals, 1843 (JJ:167)", "work": "Søren Kierkegaard, Journals", "translation": null, "quoted": null }
+    {
+      "ref": "Journals, 1843 (JJ:167)",
+      "work": "Søren Kierkegaard, Journals",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -87,5 +161,9 @@
       "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged."
     ]
   },
-  "meta": { "index": "325. Looking back · — · 331 days ago you breathed at the bottom of the hill · reread your first note · how far", "writer": "spiritual writer agent (days 308–331)", "written": "2026-09-30" }
+  "meta": {
+    "index": "325. Looking back · — · 331 days ago you breathed at the bottom of the hill · reread your first note · how far",
+    "writer": "spiritual writer agent (days 308–331)",
+    "written": "2026-09-30"
+  }
 }

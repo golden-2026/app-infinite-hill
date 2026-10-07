@@ -9,24 +9,37 @@
   "length": "6:30",
   "tomorrow": "Judaism: Shabbat candles",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY TWO-HUNDRED-FIFTY.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY TWO-HUNDRED-FIFTY.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, tikkun olam, repairing the world one spark at a time. Your line was repair. Day two hundred fifty.",
-      "screen": ["`TIKKUN OLAM — REPAIR.`"]
+      "screen": [
+        "`TIKKUN OLAM — REPAIR.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Thunder rolls over the house. The usual response: a flinch, a look out the window, maybe the weather app. Now suppose the first response, before any of that, was a sentence. A short, fixed sentence learned for exactly this moment. Another for the first rainbow after the storm. Another for the first bite of bread. Another for new shoes, or seeing the ocean after a long time away. Your whole day would be stitched with small sentences, each one a way of noticing. In Jewish life, there really is a sentence for all of these. Today: the bracha, the blessing.",
-      "screen": ["`THUNDER OVER THE HOUSE.` → `A SENTENCE FOR THIS MOMENT.` → `THE BRACHA.`"]
+      "screen": [
+        "`THUNDER OVER THE HOUSE.` → `A SENTENCE FOR THIS MOMENT.` → `THE BRACHA.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "Bracha, blessing. A standard blessing opens with fixed words: baruch atah Adonai, eloheinu melech ha-olam. Blessed are you, Lord our God, ruler of the universe. Then comes the ending that fits the moment. Before bread: who brings forth bread from the earth. That's the blessing called hamotzi. For thunder: whose strength and might fill the world. For a rainbow: who remembers the covenant and keeps the promise, a nod back to Noah, and to brit, the covenant, from a few days ago. Why bless before eating something you already have? The Talmud gives a sharp answer. It quotes a psalm, in the King James words, \"The earth is the LORD's, and the fulness thereof,\" and reasons that enjoying anything from the world without a blessing is like taking what isn't yours. The blessing is a kind of asking permission and a kind of thank-you, at once. There's even a goal. The Talmud records a teaching of Rabbi Meir that a person should say a hundred blessings every day. The daily prayers, the meals and the moments are how an observant day can add up to it. A blessing makes you stop and name the thing. You can't bless bread you haven't noticed. You can't bless thunder while scrolling past it. The fixed words do the noticing for you, until noticing becomes a habit.",
-      "screen": ["`BLESSED ARE YOU, RULER OF THE UNIVERSE.` · `BREAD, THUNDER, RAINBOW.` · `THE EARTH IS THE LORD'S.` · `A HUNDRED BLESSINGS A DAY.` · then, large: `BLESSED IS.`"]
+      "screen": [
+        "`BLESSED ARE YOU, RULER OF THE UNIVERSE.` · `BREAD, THUNDER, RAINBOW.` · `THE EARTH IS THE LORD'S.` · `A HUNDRED BLESSINGS A DAY.` · then, large: `BLESSED IS.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Bracha. A blessing: a fixed sentence that begins blessed are you, and turns bread, thunder and rainbows into moments noticed. Today's word.",
-      "screen": ["`BRACHA — today's word`."]
+      "screen": [
+        "`BRACHA — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,38 +61,116 @@
       "voice": "Your line: blessed is. Two words, and the ordinary gets noticed. Two hundred fifty days now.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 250 COUNTS.` → `TOMORROW: JUDAISM: SHABBAT CANDLES.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 250 COUNTS.` → `TOMORROW: JUDAISM: SHABBAT CANDLES.`"
+      ]
+    }
   ],
   "howItsDone": "Observant Jews say a bracha before and after eating and at many moments of the day, from waking to seeing lightning or a rainbow, and many aim for a hundred blessings daily.",
   "games": {
     "match": {
       "prompt": "which blessing? — tap the pairs.",
-      "pairs": [["bread", "who brings forth bread from the earth"], ["thunder", "whose strength and might fill the world"], ["a rainbow", "who remembers the covenant"], ["Rabbi Meir", "a hundred blessings a day"]]
+      "pairs": [
+        [
+          "bread",
+          "who brings forth bread from the earth"
+        ],
+        [
+          "thunder",
+          "whose strength and might fill the world"
+        ],
+        [
+          "a rainbow",
+          "who remembers the covenant"
+        ],
+        [
+          "Rabbi Meir",
+          "a hundred blessings a day"
+        ]
+      ]
     },
     "myth": [
-      ["Jewish blessings are only said in synagogue", false, "there are blessings for bread, thunder, rainbows, new clothes and more, said anywhere."],
-      ["the Talmud compares enjoying the world without a blessing to taking what isn't yours", true, "it reasons from the psalm: the earth is the LORD's."],
-      ["the standard blessing opens with fixed words", true, "blessed are you, Lord our God, ruler of the universe."]
+      [
+        "Jewish blessings are only said in synagogue",
+        false,
+        "there are blessings for bread, thunder, rainbows, new clothes and more, said anywhere."
+      ],
+      [
+        "the Talmud compares enjoying the world without a blessing to taking what isn't yours",
+        true,
+        "it reasons from the psalm: the earth is the LORD's."
+      ],
+      [
+        "the standard blessing opens with fixed words",
+        true,
+        "blessed are you, Lord our God, ruler of the universe."
+      ]
     ],
     "fork": {
       "setup": "you're about to eat bread you already own. why would a blessing come first?",
-      "options": ["to make it taste better.", "because the earth is the LORD's: it's a way of asking and thanking.", "only on holidays."],
+      "options": [
+        "to make it taste better.",
+        "because the earth is the LORD's: it's a way of asking and thanking.",
+        "only on holidays."
+      ],
       "answer": 1,
       "reveal": "the Talmud quotes Psalm 24: the earth is the LORD's. the blessing turns taking into receiving."
     },
-    "original": { "script": "בְּרָכָה", "say": "brah-KHAH", "note": "Hebrew: blessing; baruch, blessed, shares the root." },
+    "original": {
+      "script": "בְּרָכָה",
+      "say": "brah-KHAH",
+      "note": "Hebrew: blessing; baruch, blessed, shares the root."
+    },
     "trapdoor": [
       "what you thought: saying grace.",
       "what it means: a fixed sentence of praise for a specific moment, from bread to thunder.",
       "what a scholar hears: the root b-r-k; the Talmud's tractate Berakhot begins the whole Talmud, and Menachot 43b keeps Rabbi Meir's hundred a day."
     ],
-    "guess": ["a blessing: a set sentence of praise for a moment", "a prayer asking God for something you need", "a rule about which foods may be eaten"]
+    "guess": [
+      "a blessing: a set sentence of praise for a moment",
+      "a prayer asking God for something you need",
+      "a rule about which foods may be eaten"
+    ],
+    "recall": [
+      [
+        "metta",
+        "goodwill"
+      ],
+      [
+        "anicca",
+        "impermanence"
+      ]
+    ]
   },
   "sources": [
-    { "ref": "Psalm 24:1", "work": "The Bible", "translation": "KJV (1769)", "quoted": "The earth is the LORD's, and the fulness thereof" },
-    { "ref": "Berakhot 35a", "work": "Babylonian Talmud", "translation": null, "quoted": null },
-    { "ref": "Menachot 43b", "work": "Babylonian Talmud", "translation": null, "quoted": null },
-    { "ref": "Berakhot 54a, 59a (blessings on thunder and the rainbow)", "work": "Mishnah and Babylonian Talmud", "translation": null, "quoted": null }
+    {
+      "ref": "Psalm 24:1",
+      "work": "The Bible",
+      "translation": "KJV (1769)",
+      "quoted": "The earth is the LORD's, and the fulness thereof"
+    },
+    {
+      "ref": "Berakhot 35a",
+      "work": "Babylonian Talmud",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Menachot 43b",
+      "work": "Babylonian Talmud",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Berakhot 54a, 59a (blessings on thunder and the rainbow)",
+      "work": "Mishnah and Babylonian Talmud",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -91,5 +184,9 @@
       "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged."
     ]
   },
-  "meta": { "index": "250. Judaism: blessings · bracha · a blessing for bread, for thunder, for a rainbow: noticing through words · bless one ordinary thing · blessed is", "writer": "spiritual writer agent (days 248–277)", "written": "2026-09-30" }
+  "meta": {
+    "index": "250. Judaism: blessings · bracha · a blessing for bread, for thunder, for a rainbow: noticing through words · bless one ordinary thing · blessed is",
+    "writer": "spiritual writer agent (days 248–277)",
+    "written": "2026-09-30"
+  }
 }

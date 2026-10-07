@@ -9,24 +9,37 @@
   "length": "6:30",
   "tomorrow": "Catholic: works of mercy",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY TWO-HUNDRED-SIXTY-FOUR.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY TWO-HUNDRED-SIXTY-FOUR.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday: lectio divina, one verse read four times. Your line was read slowly.",
-      "screen": ["`LECTIO DIVINA — READ SLOWLY.`"]
+      "screen": [
+        "`LECTIO DIVINA — READ SLOWLY.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Two women, one old and one very young, both unexpectedly pregnant. The younger one has just traveled into the hill country to see her older cousin. She walks through the door, says hello, and before she can explain anything, the older woman cries out a blessing, and the baby in her own womb leaps. The younger one is Mary. The older one is Elizabeth. Part of what Elizabeth cried out that day is still prayed by Catholics, over and over, in one short prayer: the Hail Mary.",
-      "screen": ["`TWO WOMEN, BOTH EXPECTING.` → `THE BABY LEAPS.` → `STILL PRAYED TODAY.`"]
+      "screen": [
+        "`TWO WOMEN, BOTH EXPECTING.` → `THE BABY LEAPS.` → `STILL PRAYED TODAY.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "The Hail Mary is built like a mosaic, from pieces of Luke's Gospel. The first piece comes from the angel Gabriel, who visits Mary in Nazareth. In the Douay-Rheims translation, the Catholic English Bible: \"Hail, full of grace, the Lord is with thee: blessed art thou among women.\" The second comes from Elizabeth, a few verses later: \"Blessed art thou among women, and blessed is the fruit of thy womb.\" Put them together, add the name Jesus, and you have the first half of the prayer, all of it straight from scripture. The second half, added later in the Church's history, is a request: Mary, the mother of God, is asked to pray for us, now and at the hour of our death. Today's line, full of grace, comes from a single Greek word Gabriel uses, kecharitomene. You can hear charis inside it, grace, from the week with Christianity. It means something like one who has been graced, favored, filled with favor. The King James Version translates it \"highly favoured\"; Catholic translations, following Latin, say full of grace. Catholic teaching honors Mary as the mother of Jesus and asks her prayers, as it asks the saints'; Catholics are clear that they don't worship her. Orthodox Christians have a similar prayer that also begins with the angel's greeting. In Protestant churches Mary is honored as a model of faith, and Luke's words are read rather than prayed. For Catholics it's a prayer learned in childhood, and repeated ten times in each decade of the rosary.",
-      "screen": ["`THE ANGEL: HAIL, FULL OF GRACE.` · `ELIZABETH: BLESSED ART THOU.` · `THEN A REQUEST: PRAY FOR US.` · `KECHARITOMENE — FILLED WITH FAVOR.` · then, large: `FULL OF GRACE.`"]
+      "screen": [
+        "`THE ANGEL: HAIL, FULL OF GRACE.` · `ELIZABETH: BLESSED ART THOU.` · `THEN A REQUEST: PRAY FOR US.` · `KECHARITOMENE — FILLED WITH FAVOR.` · then, large: `FULL OF GRACE.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Catholic, through the Hail Mary: a prayer built from the angel's and Elizabeth's greetings to Mary, then a request for her prayers. Today's word.",
-      "screen": ["`CATHOLIC: THE HAIL MARY — today's word`."]
+      "screen": [
+        "`CATHOLIC: THE HAIL MARY — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,39 +61,122 @@
       "voice": "Your line: full of grace. It began as greetings: an angel's, and a cousin's at the door. Until tomorrow.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 264 COUNTS.` → `TOMORROW: CATHOLIC: WORKS OF MERCY.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 264 COUNTS.` → `TOMORROW: CATHOLIC: WORKS OF MERCY.`"
+      ]
+    }
   ],
   "howItsDone": "Catholics learn the Hail Mary as children and pray it on its own, in the rosary, and in the Angelus; its first half comes from Luke's Gospel and its second half asks Mary to pray for us.",
   "games": {
     "match": {
       "prompt": "the Hail Mary — tap the pairs.",
-      "pairs": [["Gabriel", "hail, full of grace"], ["Elizabeth", "blessed is the fruit of thy womb"], ["the second half", "a request: pray for us"], ["kecharitomene", "one filled with favor"]]
+      "pairs": [
+        [
+          "Gabriel",
+          "hail, full of grace"
+        ],
+        [
+          "Elizabeth",
+          "blessed is the fruit of thy womb"
+        ],
+        [
+          "the second half",
+          "a request: pray for us"
+        ],
+        [
+          "kecharitomene",
+          "one filled with favor"
+        ]
+      ]
     },
     "myth": [
-      ["the first half of the Hail Mary comes from Luke's Gospel", true, "the angel's greeting and Elizabeth's blessing."],
-      ["the whole prayer, both halves, is word for word in the Bible", false, "the request, pray for us, was added later."],
-      ["Catholics worship Mary", false, "Catholics honor her and ask her prayers; worship belongs to God alone."]
+      [
+        "the first half of the Hail Mary comes from Luke's Gospel",
+        true,
+        "the angel's greeting and Elizabeth's blessing."
+      ],
+      [
+        "the whole prayer, both halves, is word for word in the Bible",
+        false,
+        "the request, pray for us, was added later."
+      ],
+      [
+        "Catholics worship Mary",
+        false,
+        "Catholics honor her and ask her prayers; worship belongs to God alone."
+      ]
     ],
     "fork": {
       "setup": "Mary walks into Elizabeth's house and says hello. what happens first?",
-      "options": ["Elizabeth asks why she came.", "the baby leaps, and Elizabeth cries out a blessing.", "they sit down to eat."],
+      "options": [
+        "Elizabeth asks why she came.",
+        "the baby leaps, and Elizabeth cries out a blessing.",
+        "they sit down to eat."
+      ],
       "answer": 1,
       "reveal": "Luke 1:41–42: the baby leaps in her womb, and Elizabeth cries, blessed art thou among women."
     },
-    "original": { "script": "κεχαριτωμένη", "say": "keh-khah-ree-toh-MEH-nay", "note": "Greek of Luke 1:28: graced, highly favored; Latin gratia plena, full of grace." },
+    "original": {
+      "script": "κεχαριτωμένη",
+      "say": "keh-khah-ree-toh-MEH-nay",
+      "note": "Greek of Luke 1:28: graced, highly favored; Latin gratia plena, full of grace."
+    },
     "trapdoor": [
       "what you thought: a desperate last-second pass in football.",
       "what it means: a Catholic prayer built from Luke 1, greeting Mary and asking her prayers.",
       "what a scholar hears: kecharitomene, a perfect participle of charitoo; Jerome's gratia plena gives 'full of grace'; the KJV renders it as highly favored."
     ],
-    "guess": ["a prayer built from greetings to Mary in Luke", "a prayer asking Mary to forgive our sins", "a last-second prayer for a lucky break"]
+    "guess": [
+      "a prayer built from greetings to Mary in Luke",
+      "a prayer asking Mary to forgive our sins",
+      "a last-second prayer for a lucky break"
+    ],
+    "recall": [
+      [
+        "Christianity",
+        "the feast of Jesus rising"
+      ],
+      [
+        "grace",
+        "God's love given first"
+      ]
+    ]
   },
   "sources": [
-    { "ref": "Luke 1:28", "work": "The Bible", "translation": "Douay-Rheims (Challoner)", "quoted": "Hail, full of grace, the Lord is with thee: blessed art thou among women." },
-    { "ref": "Luke 1:42", "work": "The Bible", "translation": "Douay-Rheims (Challoner)", "quoted": "Blessed art thou among women, and blessed is the fruit of thy womb." },
-    { "ref": "Luke 1:39–45", "work": "The Bible", "translation": null, "quoted": null },
-    { "ref": "Catechism of the Catholic Church 2676–2678, 971", "work": "Catechism", "translation": null, "quoted": null },
-    { "ref": "Luke 1:28", "work": "The Bible", "translation": "KJV (1769)", "quoted": "highly favoured" }
+    {
+      "ref": "Luke 1:28",
+      "work": "The Bible",
+      "translation": "Douay-Rheims (Challoner)",
+      "quoted": "Hail, full of grace, the Lord is with thee: blessed art thou among women."
+    },
+    {
+      "ref": "Luke 1:42",
+      "work": "The Bible",
+      "translation": "Douay-Rheims (Challoner)",
+      "quoted": "Blessed art thou among women, and blessed is the fruit of thy womb."
+    },
+    {
+      "ref": "Luke 1:39–45",
+      "work": "The Bible",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Catechism of the Catholic Church 2676–2678, 971",
+      "work": "Catechism",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Luke 1:28",
+      "work": "The Bible",
+      "translation": "KJV (1769)",
+      "quoted": "highly favoured"
+    }
   ],
   "review": {
     "status": "pending",
@@ -93,5 +191,9 @@
       "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged."
     ]
   },
-  "meta": { "index": "264. Catholic: the Hail Mary · — · a prayer drawn from the angel's and Elizabeth's words to Mary (Luke 1:28, 1:42) · read it once, slowly · full of grace", "writer": "spiritual writer agent (days 248–277)", "written": "2026-09-30" }
+  "meta": {
+    "index": "264. Catholic: the Hail Mary · — · a prayer drawn from the angel's and Elizabeth's words to Mary (Luke 1:28, 1:42) · read it once, slowly · full of grace",
+    "writer": "spiritual writer agent (days 248–277)",
+    "written": "2026-09-30"
+  }
 }

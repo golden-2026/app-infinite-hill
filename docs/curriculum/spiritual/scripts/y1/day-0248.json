@@ -9,24 +9,37 @@
   "length": "6:30",
   "tomorrow": "Judaism: repair",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY TWO-HUNDRED-FORTY-EIGHT.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY TWO-HUNDRED-FORTY-EIGHT.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, brit, the covenant: a people bound to God by a promise. Your line was a promise kept. Day two hundred forty-eight.",
-      "screen": ["`BRIT — A PROMISE KEPT.`"]
+      "screen": [
+        "`BRIT — A PROMISE KEPT.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "A room full of long tables. Two people sit across from each other with one big book open between them, and they are arguing. Not whispering. Arguing, out loud, fingers on the page, one shaking her head, the other laughing. Pair after pair like that, all at once, loud as a train station. To a stranger it might sound like something has gone wrong. In a traditional Jewish house of study, it's the sound of something going right. Today: why study itself can be holy, and why the arguing is part of it.",
-      "screen": ["`A ROOM OF LONG TABLES.` → `PAIRS, ARGUING OUT LOUD.` → `THE SOUND OF SOMETHING GOING RIGHT.`"]
+      "screen": [
+        "`A ROOM OF LONG TABLES.` → `PAIRS, ARGUING OUT LOUD.` → `THE SOUND OF SOMETHING GOING RIGHT.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "Start with the word. Torah. In the narrowest sense it means the five books of Moses, the scroll in the ark of a synagogue. The Hebrew root has to do with teaching, pointing the way, so the word also stretches to mean all Jewish teaching, the whole conversation that grew around the scroll. That conversation has a famous first line. Pirkei Avot, the Ethics of the Fathers, a short book of sayings in the Mishnah, opens by tracing a chain: Moses received Torah at Sinai and handed it to Joshua, Joshua to the elders, the elders to the prophets, and on to the teachers of the great assembly. Learning is handed from person to person, like a lamp passed down a line. The Torah itself asks for this. Right after the Shema, Deuteronomy says, in the 1917 Jewish Publication Society translation, \"thou shalt teach them diligently unto thy children.\" Teaching the young isn't a hobby here; it sits inside the central prayer. Then the surprise: Jewish tradition honors argument. The Talmud records the debates of two ancient schools, the house of Hillel and the house of Shammai, who disagreed again and again. A heavenly voice, the story goes, declared that both were the words of the living God, and the law followed Hillel partly because his students were humble and taught Shammai's view before their own. And study often happens in pairs, called chavruta, from the word for friend. You don't learn alone. You push, your partner pushes back, and the text opens.",
-      "screen": ["`TORAH — TEACHING, POINTING THE WAY.` · `A CHAIN FROM SINAI, HAND TO HAND.` · `TEACH THEM DILIGENTLY.` · `BOTH ARE WORDS OF THE LIVING GOD.` · then, large: `LEARN TOGETHER.`"]
+      "screen": [
+        "`TORAH — TEACHING, POINTING THE WAY.` · `A CHAIN FROM SINAI, HAND TO HAND.` · `TEACH THEM DILIGENTLY.` · `BOTH ARE WORDS OF THE LIVING GOD.` · then, large: `LEARN TOGETHER.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Torah. From a root about teaching and pointing the way: the five books of Moses, and the whole living conversation around them. Today's word.",
-      "screen": ["`TORAH — today's word`."]
+      "screen": [
+        "`TORAH — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,37 +61,110 @@
       "voice": "Your line: learn together. A lamp passed hand to hand, and argued over on the way. That's day two hundred forty-eight.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 248 COUNTS.` → `TOMORROW: JUDAISM: REPAIR.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 248 COUNTS.` → `TOMORROW: JUDAISM: REPAIR.`"
+      ]
+    }
   ],
   "howItsDone": "Many Jews study Torah and Talmud in pairs called chavruta, reading aloud and debating line by line, and a weekly portion of the Torah is read in synagogue through the year.",
   "games": {
     "match": {
       "prompt": "the house of study — tap the pairs.",
-      "pairs": [["Torah", "teaching, pointing the way"], ["Pirkei Avot", "sayings that open with a chain from Sinai"], ["Hillel and Shammai", "two schools that argued"], ["chavruta", "study in pairs, from friend"]]
+      "pairs": [
+        [
+          "Torah",
+          "teaching, pointing the way"
+        ],
+        [
+          "Pirkei Avot",
+          "sayings that open with a chain from Sinai"
+        ],
+        [
+          "Hillel and Shammai",
+          "two schools that argued"
+        ],
+        [
+          "chavruta",
+          "study in pairs, from friend"
+        ]
+      ]
     },
     "myth": [
-      ["Torah can mean the five books and all Jewish teaching", true, "narrowly the scroll, broadly the whole conversation around it."],
-      ["in Jewish tradition, arguing over a text is disrespectful", false, "the Talmud keeps both sides, and calls both the words of the living God."],
-      ["the law followed Hillel partly because his students were humble", true, "the story says they taught Shammai's view before their own."]
+      [
+        "Torah can mean the five books and all Jewish teaching",
+        true,
+        "narrowly the scroll, broadly the whole conversation around it."
+      ],
+      [
+        "in Jewish tradition, arguing over a text is disrespectful",
+        false,
+        "the Talmud keeps both sides, and calls both the words of the living God."
+      ],
+      [
+        "the law followed Hillel partly because his students were humble",
+        true,
+        "the story says they taught Shammai's view before their own."
+      ]
     ],
     "fork": {
       "setup": "two schools disagree again and again. a voice from heaven speaks. what does it say?",
-      "options": ["Shammai is right.", "both are the words of the living God.", "stop arguing."],
+      "options": [
+        "Shammai is right.",
+        "both are the words of the living God.",
+        "stop arguing."
+      ],
       "answer": 1,
       "reveal": "the Talmud says both were the words of the living God, and the law followed Hillel, whose students taught the other side first."
     },
-    "original": { "script": "תּוֹרָה", "say": "toh-RAH", "note": "Hebrew: teaching, instruction; many Ashkenazi Jews say TOY-rah." },
+    "original": {
+      "script": "תּוֹרָה",
+      "say": "toh-RAH",
+      "note": "Hebrew: teaching, instruction; many Ashkenazi Jews say TOY-rah."
+    },
     "trapdoor": [
       "what you thought: the Jewish bible.",
       "what it means: the five books of Moses, and all the teaching that grew around them.",
       "what a scholar hears: from the root y-r-h, to throw, to aim, to teach; Pirkei Avot opens by tracing it hand to hand from Sinai."
     ],
-    "guess": ["teaching: the five books and the talk around them", "the law code of an ancient Jewish kingdom", "the prayer book used in synagogue services"]
+    "guess": [
+      "teaching: the five books and the talk around them",
+      "the law code of an ancient Jewish kingdom",
+      "the prayer book used in synagogue services"
+    ],
+    "recall": [
+      [
+        "anicca",
+        "impermanence"
+      ],
+      [
+        "dukkha",
+        "life's unsatisfactoriness"
+      ]
+    ]
   },
   "sources": [
-    { "ref": "Pirkei Avot 1.1", "work": "Mishnah, Pirkei Avot", "translation": null, "quoted": null },
-    { "ref": "Deuteronomy 6:7", "work": "The Hebrew Bible", "translation": "JPS 1917", "quoted": "thou shalt teach them diligently unto thy children" },
-    { "ref": "Eruvin 13b", "work": "Babylonian Talmud", "translation": null, "quoted": null }
+    {
+      "ref": "Pirkei Avot 1.1",
+      "work": "Mishnah, Pirkei Avot",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Deuteronomy 6:7",
+      "work": "The Hebrew Bible",
+      "translation": "JPS 1917",
+      "quoted": "thou shalt teach them diligently unto thy children"
+    },
+    {
+      "ref": "Eruvin 13b",
+      "work": "Babylonian Talmud",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -92,5 +180,9 @@
       "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged."
     ]
   },
-  "meta": { "index": "248. Judaism: study is holy · Torah · learning is itself worship, and argument is honored (Pirkei Avot 1.1) · study one line with someone · learn together", "writer": "spiritual writer agent (days 248–277)", "written": "2026-09-30" }
+  "meta": {
+    "index": "248. Judaism: study is holy · Torah · learning is itself worship, and argument is honored (Pirkei Avot 1.1) · study one line with someone · learn together",
+    "writer": "spiritual writer agent (days 248–277)",
+    "written": "2026-09-30"
+  }
 }

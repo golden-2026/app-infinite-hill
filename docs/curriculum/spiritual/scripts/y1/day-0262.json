@@ -9,24 +9,37 @@
   "length": "6:30",
   "tomorrow": "Catholic: sacred reading",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY TWO-HUNDRED-SIXTY-TWO.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY TWO-HUNDRED-SIXTY-TWO.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday: the rosary, prayers counted in decades. Your line was one bead at a time.",
-      "screen": ["`ROSARY — ONE BEAD AT A TIME.`"]
+      "screen": [
+        "`ROSARY — ONE BEAD AT A TIME.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "The last mile of a marathon. Your legs are gone. You're sure you can't finish. Then you hear it: the crowd along the barriers, thousands of strangers shouting your name off the bib on your chest. Somehow you keep going. Now imagine that crowd isn't strangers. It's everyone who ran this course before you, who hit the same wall and got through, still watching, still cheering. That's close to how Catholics picture the saints. Today: the communion of saints.",
-      "screen": ["`THE LAST MILE OF A MARATHON.` → `A CROWD SHOUTING YOUR NAME.` → `EVERYONE WHO RAN IT BEFORE.`"]
+      "screen": [
+        "`THE LAST MILE OF A MARATHON.` → `A CROWD SHOUTING YOUR NAME.` → `EVERYONE WHO RAN IT BEFORE.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "The picture comes from the letter to the Hebrews. After a long list of faithful people from the Hebrew Bible, Abraham, Sarah, Moses and more, the writer says, in the King James Version: \"Wherefore seeing we also are compassed about with so great a cloud of witnesses, let us lay aside every weight.\" And run the race. A cloud, meaning a great crowd; witnesses, people who've seen it through. Saint comes from the Latin sanctus, holy. In the New Testament, Paul calls all believers saints. Over time the Church also began to honor particular people, first the martyrs, then others, whose lives showed holiness clearly, and today Catholics recognize some of them formally through a long process called canonization. The Apostles' Creed, said by many Christians, includes the line I believe in the communion of saints. For Catholics that means the Church isn't only the people in the pews: it includes those who have died in Christ, and the bond isn't broken by death. So Catholics ask the saints to pray for them, the way you'd ask a friend. They're careful to say they honor saints and ask for their prayers; worship belongs to God alone. There are patron saints for almost everything: Francis for animals, Anthony for lost things, Joseph for workers and fathers. Christians differ here. Orthodox Christians also honor the saints and ask their prayers, often through icons. Many Protestants honor faithful people of the past as examples, but don't ask them to pray, preferring to pray to God directly. Either way, the old letter's picture holds: you are not the first to run this.",
-      "screen": ["`SO GREAT A CLOUD OF WITNESSES.` · `SANCTUS — HOLY.` · `DEATH DOESN'T BREAK THE BOND.` · `HONORED, ASKED TO PRAY, NOT WORSHIPED.` · then, large: `A CLOUD OF WITNESSES.`"]
+      "screen": [
+        "`SO GREAT A CLOUD OF WITNESSES.` · `SANCTUS — HOLY.` · `DEATH DOESN'T BREAK THE BOND.` · `HONORED, ASKED TO PRAY, NOT WORSHIPED.` · then, large: `A CLOUD OF WITNESSES.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Catholic, through the saints: the communion of saints, a great cloud of witnesses who, Catholics believe, still pray with the living. Today's word.",
-      "screen": ["`CATHOLIC: THE SAINTS — today's word`."]
+      "screen": [
+        "`CATHOLIC: THE SAINTS — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,37 +61,110 @@
       "voice": "Your line: a cloud of witnesses. The crowd at the barriers is bigger than it looks. That's day two hundred sixty-two.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 262 COUNTS.` → `TOMORROW: CATHOLIC: SACRED READING.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 262 COUNTS.` → `TOMORROW: CATHOLIC: SACRED READING.`"
+      ]
+    }
   ],
   "howItsDone": "Catholics celebrate saints' feast days through the year and All Saints' Day on November 1, take a saint's name at confirmation, and ask saints to pray for them, often through a patron saint.",
   "games": {
     "match": {
       "prompt": "the saints — tap the pairs.",
-      "pairs": [["sanctus", "holy"], ["canonization", "the Church's formal recognition"], ["Anthony", "patron of lost things"], ["Hebrews 12", "so great a cloud of witnesses"]]
+      "pairs": [
+        [
+          "sanctus",
+          "holy"
+        ],
+        [
+          "canonization",
+          "the Church's formal recognition"
+        ],
+        [
+          "Anthony",
+          "patron of lost things"
+        ],
+        [
+          "Hebrews 12",
+          "so great a cloud of witnesses"
+        ]
+      ]
     },
     "myth": [
-      ["Catholics worship the saints", false, "Catholics honor saints and ask for their prayers; worship belongs to God alone."],
-      ["Paul uses the word saints for all believers", true, "his letters greet whole churches as saints."],
-      ["all Christians ask the saints to pray for them", false, "Catholics and Orthodox do; many Protestants pray to God directly."]
+      [
+        "Catholics worship the saints",
+        false,
+        "Catholics honor saints and ask for their prayers; worship belongs to God alone."
+      ],
+      [
+        "Paul uses the word saints for all believers",
+        true,
+        "his letters greet whole churches as saints."
+      ],
+      [
+        "all Christians ask the saints to pray for them",
+        false,
+        "Catholics and Orthodox do; many Protestants pray to God directly."
+      ]
     ],
     "fork": {
       "setup": "you're in the last hard mile of something. who does the letter to the Hebrews say is watching?",
-      "options": ["no one.", "a great cloud of witnesses who ran before you.", "only your critics."],
+      "options": [
+        "no one.",
+        "a great cloud of witnesses who ran before you.",
+        "only your critics."
+      ],
       "answer": 1,
       "reveal": "Hebrews 12:1: so great a cloud of witnesses. so lay aside every weight and run."
     },
-    "original": { "script": "sanctus", "say": "SAHNK-toos", "note": "Latin: holy; the root of saint." },
+    "original": {
+      "script": "sanctus",
+      "say": "SAHNK-toos",
+      "note": "Latin: holy; the root of saint."
+    },
     "trapdoor": [
       "what you thought: statues and stained glass.",
       "what it means: holy people who, Catholics believe, still pray with the living.",
       "what a scholar hears: Hebrews 12:1 follows the roll call of chapter 11; Catholic teaching distinguishes honor (dulia) from worship (latria)."
     ],
-    "guess": ["holy people who still pray with the living", "people the Church worships alongside God", "only the martyrs who died for the faith"]
+    "guess": [
+      "holy people who still pray with the living",
+      "people the Church worships alongside God",
+      "only the martyrs who died for the faith"
+    ],
+    "recall": [
+      [
+        "Christianity",
+        "the short prayer Jesus taught when asked"
+      ],
+      [
+        "Judaism",
+        "a weekly day of rest"
+      ]
+    ]
   },
   "sources": [
-    { "ref": "Hebrews 12:1", "work": "The Bible", "translation": "KJV (1769)", "quoted": "Wherefore seeing we also are compassed about with so great a cloud of witnesses, let us lay aside every weight" },
-    { "ref": "Hebrews 11; Romans 1:7", "work": "The Bible", "translation": null, "quoted": null },
-    { "ref": "Apostles' Creed; Catechism of the Catholic Church 946–962, 2683", "work": "Creed; Catechism", "translation": null, "quoted": null }
+    {
+      "ref": "Hebrews 12:1",
+      "work": "The Bible",
+      "translation": "KJV (1769)",
+      "quoted": "Wherefore seeing we also are compassed about with so great a cloud of witnesses, let us lay aside every weight"
+    },
+    {
+      "ref": "Hebrews 11; Romans 1:7",
+      "work": "The Bible",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Apostles' Creed; Catechism of the Catholic Church 946–962, 2683",
+      "work": "Creed; Catechism",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -89,5 +177,9 @@
       "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged."
     ]
   },
-  "meta": { "index": "262. Catholic: the saints · — · Catholics speak of the communion of saints, friends in heaven who pray with the living (Hebrews 12:1) · name a person who inspires you · a cloud of witnesses", "writer": "spiritual writer agent (days 248–277)", "written": "2026-09-30" }
+  "meta": {
+    "index": "262. Catholic: the saints · — · Catholics speak of the communion of saints, friends in heaven who pray with the living (Hebrews 12:1) · name a person who inspires you · a cloud of witnesses",
+    "writer": "spiritual writer agent (days 248–277)",
+    "written": "2026-09-30"
+  }
 }

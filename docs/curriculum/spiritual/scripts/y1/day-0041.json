@@ -9,24 +9,37 @@
   "length": "6:30",
   "tomorrow": "the smuggler",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY FORTY-ONE.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY FORTY-ONE.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, the kazan that gave birth, and then died: if it can give birth, it can die.",
-      "screen": ["`IF IT CAN GIVE BIRTH.`"]
+      "screen": [
+        "`IF IT CAN GIVE BIRTH.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "A speaker clears his throat and says, I'll be brief. Forty minutes later, the back row is counting ceiling tiles. Nasruddin's sermon goes wrong the other way. The village has asked him to give the sermon, and the room fills up with people who've come to hear the famous teacher. He climbs up, looks out at all of them, and asks a single question: do you know what I'm going to say? Whatever they answer, he finds a way not to say it. Three weeks in a row.",
-      "screen": ["`I'LL BE BRIEF.` → `THE ROOM FILLS UP.` → `DO YOU KNOW WHAT I'LL SAY?`"]
+      "screen": [
+        "`I'LL BE BRIEF.` → `THE ROOM FILLS UP.` → `DO YOU KNOW WHAT I'LL SAY?`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "The first week, the crowd answers honestly: no, we don't know. Then, says Nasruddin, I have nothing to say to people who don't even know what I'm talking about. He climbs down and goes home. The next week, they've worked it out. Do you know what I'm going to say? Yes! they shout. Then there's no need for me to tell you. Home again. The third week, they've made a plan: half the room shouts yes and half shouts no. Surely now he has to preach. Nasruddin smiles. Wonderful, he says. Let those who know tell those who don't. And he goes home. It's a trickster's escape, three times, and it's funny because he wriggles out of work every single week. But the last line is better than a joke. The crowd came to receive wisdom from one man at the front, and Nasruddin hands the job back to them. Half the room already knows something; the other half needs it. They don't need him standing between them. A lot of learning happens that way: not from the pulpit, but from the person in the next seat who figured it out last week. A grandmother showing how to fold the dough. A coworker who knows the shortcut. A friend who went through it first. Each of us is on the knowing side of something. So the question the story leaves isn't what Nasruddin would have said. It's what you know that someone near you doesn't, yet.",
-      "screen": ["`NO? THEN I HAVE NOTHING TO SAY.` · `YES? THEN NO NEED TO TELL YOU.` · `HALF KNOW, HALF DON'T.` · `THE JOB GOES BACK TO THE ROOM.` · then, large: `LET THOSE WHO KNOW TELL THE OTHERS.`"]
+      "screen": [
+        "`NO? THEN I HAVE NOTHING TO SAY.` · `YES? THEN NO NEED TO TELL YOU.` · `HALF KNOW, HALF DON'T.` · `THE JOB GOES BACK TO THE ROOM.` · then, large: `LET THOSE WHO KNOW TELL THE OTHERS.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "khutba, Arabic for a sermon. Nasruddin dodged his three weeks running, then handed the teaching back to the room.",
-      "screen": ["`KHUTBA — today's word`."]
+      "screen": [
+        "`KHUTBA — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,35 +61,98 @@
       "voice": "Your line: let those who know tell the others. No pulpit required, just the person in the next seat. Until tomorrow.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 41 COUNTS.` → `TOMORROW: THE SMUGGLER.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 41 COUNTS.` → `TOMORROW: THE SMUGGLER.`"
+      ]
+    }
   ],
   "howItsDone": "The unpreached sermon is a Nasruddin tale told in Turkey, Iran, Central Asia and beyond, and its last line is sometimes borrowed by teachers who want a class to teach each other.",
   "games": {
-    "guess": ["the Arabic word for a sermon","the Arabic word for a prayer rug","the Arabic word for a riddle"],
+    "guess": [
+      "the Arabic word for a sermon",
+      "the Arabic word for a prayer rug",
+      "the Arabic word for a riddle"
+    ],
     "match": {
       "prompt": "three weeks, three answers — tap the pairs.",
-      "pairs": [["week one: no", "then I have nothing to say"], ["week two: yes", "then no need to tell you"], ["week three: half and half", "let those who know tell the others"], ["the crowd", "came to hear one man at the front"]]
+      "pairs": [
+        [
+          "week one: no",
+          "then I have nothing to say"
+        ],
+        [
+          "week two: yes",
+          "then no need to tell you"
+        ],
+        [
+          "week three: half and half",
+          "let those who know tell the others"
+        ],
+        [
+          "the crowd",
+          "came to hear one man at the front"
+        ]
+      ]
     },
     "myth": [
-      ["Nasruddin finally gives the sermon in the third week", false, "he never preaches: the half who know are to tell the half who don't."],
-      ["the crowd changes its answer to trap him", true, "no, then yes, then half and half. he escapes every time."],
-      ["the story says only teachers at the front can teach", false, "its last line hands the teaching back to the room."]
+      [
+        "Nasruddin finally gives the sermon in the third week",
+        false,
+        "he never preaches: the half who know are to tell the half who don't."
+      ],
+      [
+        "the crowd changes its answer to trap him",
+        true,
+        "no, then yes, then half and half. he escapes every time."
+      ],
+      [
+        "the story says only teachers at the front can teach",
+        false,
+        "its last line hands the teaching back to the room."
+      ]
     ],
     "fork": {
       "setup": "third week. you've asked the crowd if they know what you'll say. half shout yes, half shout no. what do you do?",
-      "options": ["give the sermon at last.", "let those who know tell those who don't.", "ask the question again."],
+      "options": [
+        "give the sermon at last.",
+        "let those who know tell those who don't.",
+        "ask the question again."
+      ],
       "answer": 1,
       "reveal": "Nasruddin smiles, hands the job to the room, and goes home. a trickster's escape, and a real point about how people learn."
     },
-    "original": { "script": "خطبة", "say": "KHUT-bah", "note": "Arabic, khutba: a sermon, like the one given at Friday prayers. Tellings differ on which kind of sermon Nasruddin was asked to give." },
+    "original": {
+      "script": "خطبة",
+      "say": "KHUT-bah",
+      "note": "Arabic, khutba: a sermon, like the one given at Friday prayers. Tellings differ on which kind of sermon Nasruddin was asked to give."
+    },
     "trapdoor": [
       "what you thought: a lazy teacher dodging work.",
       "what it means: people who know something can teach those who don't, without anyone at the front.",
       "what a scholar hears: a three-part trickster tale, the classic folk rhythm of three tries, ending on a line that turns the escape into the lesson."
+    ],
+    "recall": [
+      [
+        "imago vitae",
+        "the picture of how a person lived"
+      ],
+      [
+        "consolatio",
+        "a Latin letter written to comfort someone"
+      ]
     ]
   },
   "sources": [
-    { "ref": "the sermon he didn't give (traditional tale; versions vary)", "work": "Nasruddin tales (Turkish, Persian and wider Muslim folk tradition)", "translation": null, "quoted": null }
+    {
+      "ref": "the sermon he didn't give (traditional tale; versions vary)",
+      "work": "Nasruddin tales (Turkish, Persian and wider Muslim folk tradition)",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -87,5 +165,9 @@
       "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged."
     ]
   },
-  "meta": { "index": "41. The sermon he didn't give · — · \"do you know what I'll say?\" and whatever the crowd answers, he finds a reason not to preach (Nasruddin tale) · teach someone one small thing · let those who know tell the others", "writer": "spiritual writer agent (days 38–67)", "written": "2026-09-30" }
+  "meta": {
+    "index": "41. The sermon he didn't give · — · \"do you know what I'll say?\" and whatever the crowd answers, he finds a reason not to preach (Nasruddin tale) · teach someone one small thing · let those who know tell the others",
+    "writer": "spiritual writer agent (days 38–67)",
+    "written": "2026-09-30"
+  }
 }

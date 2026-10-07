@@ -9,24 +9,37 @@
   "length": "6:30",
   "tomorrow": "Slave and emperor",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY TWO-HUNDRED-NINETY-FIVE.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY TWO-HUNDRED-NINETY-FIVE.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday: the citadel, the mind free from runaway passions. Your line was one quiet room inside you.",
-      "screen": ["`ONE QUIET ROOM INSIDE YOU.`"]
+      "screen": [
+        "`ONE QUIET ROOM INSIDE YOU.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Rome, in the age of the emperors. A girl learns to spin wool, run a household, keep accounts, and marry well. Her brother, if the family has money, learns rhetoric and philosophy. That's how things are usually done. Then a Stoic teacher stands up in front of his students and questions it. Not in a whisper: as a lecture, with arguments, one after another. His name was Musonius Rufus, and one of his students is someone this path has quoted again and again. This week, the Stoics honestly, starting with him.",
-      "screen": ["`ROME, IN THE AGE OF EMPERORS.` → `SPINNING FOR HER, BOOKS FOR HIM.` → `A TEACHER QUESTIONS IT.`"]
+      "screen": [
+        "`ROME, IN THE AGE OF EMPERORS.` → `SPINNING FOR HER, BOOKS FOR HIM.` → `A TEACHER QUESTIONS IT.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "Musonius Rufus was a Roman Stoic who taught in Greek, was banished by emperors who found him inconvenient, and taught a young man named Epictetus. His lectures survive because a student wrote them down and a later collector, Stobaeus, preserved them. The third lecture asks whether women should study philosophy, and his answer is yes. The arguments are simple and sharp. Women have received from the gods the same power of reason as men. The same senses: sight, hearing, touch. The same natural desire for goodness, and they're just as pleased by fine and just actions. So why should it be fitting for men to seek how to live well, and not for women? In the next lecture he goes further: daughters should be educated the same way as sons, because the virtues, courage, justice, self-control, wisdom, are the same for everyone. Now the honesty this week promises. Musonius still pictured most women running households, and he thought some tasks suit men and some suit women. He wasn't arguing for everything people argue for today. But he did say the one thing that mattered most to a Stoic, virtue, belongs equally to both. And women had a place in this family of schools long before him: Hipparchia, the Cynic philosopher, married Crates, dressed like him, argued in public and was remembered for it. So in a school that says the only true good is character, the door to philosophy was, at least in principle, open to everyone with a mind. Philosophy for everyone.",
-      "screen": ["`MUSONIUS, TEACHER OF EPICTETUS.` · `THE SAME REASON, THE SAME SENSES.` · `THE SAME VIRTUES FOR ALL.` · `NOT EVERYTHING, BUT THE MAIN THING.` · then, large: `PHILOSOPHY FOR EVERYONE.`"]
+      "screen": [
+        "`MUSONIUS, TEACHER OF EPICTETUS.` · `THE SAME REASON, THE SAME SENSES.` · `THE SAME VIRTUES FOR ALL.` · `NOT EVERYTHING, BUT THE MAIN THING.` · then, large: `PHILOSOPHY FOR EVERYONE.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Musonius. The Roman Stoic teacher who argued women share the same reason and virtues as men, so philosophy belongs to them too.",
-      "screen": ["`MUSONIUS — today's word`."]
+      "screen": [
+        "`MUSONIUS — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,37 +61,110 @@
       "voice": "Your line: philosophy for everyone. Same reason, same senses, same virtues. Day two hundred ninety-five, in the books.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 295 COUNTS.` → `TOMORROW: SLAVE AND EMPEROR.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 295 COUNTS.` → `TOMORROW: SLAVE AND EMPEROR.`"
+      ]
+    }
   ],
   "howItsDone": "People of many backgrounds read the Stoics today, and some point to Musonius Rufus's lectures as an early argument that philosophy belongs to all.",
   "games": {
     "match": {
       "prompt": "Musonius Rufus — tap the pairs.",
-      "pairs": [["Musonius Rufus", "Stoic teacher of Epictetus"], ["Lecture 3", "women should study philosophy"], ["Lecture 4", "daughters educated like sons"], ["Hipparchia", "Cynic philosopher, wife of Crates"]]
+      "pairs": [
+        [
+          "Musonius Rufus",
+          "Stoic teacher of Epictetus"
+        ],
+        [
+          "Lecture 3",
+          "women should study philosophy"
+        ],
+        [
+          "Lecture 4",
+          "daughters educated like sons"
+        ],
+        [
+          "Hipparchia",
+          "Cynic philosopher, wife of Crates"
+        ]
+      ]
     },
     "myth": [
-      ["Musonius argued women have the same reason as men", true, "the same reason, senses and desire for goodness."],
-      ["Musonius wanted exactly the equality we'd argue for today", false, "he still pictured different tasks, but the same virtues for all."],
-      ["we have Musonius's lectures because a student wrote them down", true, "and Stobaeus later preserved them."]
+      [
+        "Musonius argued women have the same reason as men",
+        true,
+        "the same reason, senses and desire for goodness."
+      ],
+      [
+        "Musonius wanted exactly the equality we'd argue for today",
+        false,
+        "he still pictured different tasks, but the same virtues for all."
+      ],
+      [
+        "we have Musonius's lectures because a student wrote them down",
+        true,
+        "and Stobaeus later preserved them."
+      ]
     ],
     "fork": {
       "setup": "a Roman asks Musonius: should my daughter get the same education as my son?",
-      "options": ["no, only spinning.", "yes, the virtues are the same for both.", "only if she won't marry."],
+      "options": [
+        "no, only spinning.",
+        "yes, the virtues are the same for both.",
+        "only if she won't marry."
+      ],
       "answer": 1,
       "reveal": "in his fourth lecture he says daughters should be educated like sons, because courage, justice and wisdom are for all."
     },
-    "original": { "script": "φιλοσοφία", "say": "fee-lo-so-FEE-ah", "note": "Greek: love of wisdom, from philos, loving, and sophia, wisdom." },
+    "original": {
+      "script": "φιλοσοφία",
+      "say": "fee-lo-so-FEE-ah",
+      "note": "Greek: love of wisdom, from philos, loving, and sophia, wisdom."
+    },
     "trapdoor": [
       "what you thought: ancient philosophy was only for men.",
       "what it means: Musonius argued women share the same reason and virtues, so philosophy is theirs too.",
       "what a scholar hears: his Lectures 3 and 4 survive in Stobaeus, from a student's notes; he kept traditional roles."
     ],
-    "guess": ["a Stoic teacher who argued women should study philosophy", "the Roman emperor who wrote the Meditations in Greek", "a Roman general who led armies against Carthage"]
+    "guess": [
+      "a Stoic teacher who argued women should study philosophy",
+      "the Roman emperor who wrote the Meditations in Greek",
+      "a Roman general who led armies against Carthage"
+    ],
+    "recall": [
+      [
+        "eupatheia",
+        "good feelings"
+      ],
+      [
+        "primus motus",
+        "the first flinch"
+      ]
+    ]
   },
   "sources": [
-    { "ref": "Musonius Rufus, Lecture 3 (That women too should study philosophy)", "work": "Musonius Rufus, Lectures, in Stobaeus", "translation": null, "quoted": null },
-    { "ref": "Musonius Rufus, Lecture 4 (Should daughters receive the same education as sons?)", "work": "Musonius Rufus, Lectures, in Stobaeus", "translation": null, "quoted": null },
-    { "ref": "Diogenes Laërtius 6.96–98 (Hipparchia)", "work": "Diogenes Laërtius, Lives of Eminent Philosophers", "translation": null, "quoted": null }
+    {
+      "ref": "Musonius Rufus, Lecture 3 (That women too should study philosophy)",
+      "work": "Musonius Rufus, Lectures, in Stobaeus",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Musonius Rufus, Lecture 4 (Should daughters receive the same education as sons?)",
+      "work": "Musonius Rufus, Lectures, in Stobaeus",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Diogenes Laërtius 6.96–98 (Hipparchia)",
+      "work": "Diogenes Laërtius, Lives of Eminent Philosophers",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -90,5 +178,9 @@
       "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged."
     ]
   },
-  "meta": { "index": "295. Philosophy for women too · — · Musonius Rufus argued women should study philosophy as men do (Musonius Rufus, Lecture 3) · share an idea with someone · philosophy for everyone", "writer": "spiritual writer agent (days 278–307)", "written": "2026-09-30" }
+  "meta": {
+    "index": "295. Philosophy for women too · — · Musonius Rufus argued women should study philosophy as men do (Musonius Rufus, Lecture 3) · share an idea with someone · philosophy for everyone",
+    "writer": "spiritual writer agent (days 278–307)",
+    "written": "2026-09-30"
+  }
 }
