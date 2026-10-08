@@ -61,7 +61,13 @@ export default function Tomorrow() {
   };
 
   return (
-    <Screen close={finish} scroll footer={<Btn testID="see-you" onPress={finish}>{t("session.tomorrow.done")}</Btn>} contentStyle={{ flexGrow: 1, justifyContent: "center", gap: 16 }}>
+    <Screen close={finish} scroll footer={
+      // (owner, 2026-10-08: "what if i want to keep going?") the next lesson, right now, as many as they like; the
+      // streak still counts once a day
+      <View style={{ gap: 8 }}>
+        <Btn testID="keep-going" kind="gold" onPress={() => router.replace({ pathname: "/session/[door]/[day]", params: { door: p.door, day: String(day + 1) } })}>{t("session.tomorrow.keepGoing", { day: day + 1 })}</Btn>
+        <Btn testID="see-you" onPress={finish}>{t("session.tomorrow.done")}</Btn>
+      </View>} contentStyle={{ flexGrow: 1, justifyContent: "center", gap: 16 }}>
       <View style={{ flexDirection: "row", gap: 14, alignItems: "flex-start" }}><Guy pose="wave" h={96} /><Bubble>{t("session.tomorrow.bubble")}</Bubble></View>
 
       {/* after a gentle lesson (grief, scary health news, something hard, forgiveness): the Guide, offered softly */}

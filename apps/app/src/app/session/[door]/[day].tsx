@@ -93,7 +93,10 @@ export default function SessionScreen() {
   // ...or a lesson on the partner's family's door about its holiday coming up (content/couple.ts), while that card is up
   const extra = !kid && Number.isInteger(day) && day > current && !walkedBefore
     && (opensAhead(saved.settings.profile, door, day) || samplerOpens(saved.settings.sampler, todayNow(), door, day) || holidayOpens(couplePartnerDoor(saved.settings), door, day, todayNow()));
-  if (!Number.isInteger(day) || day < 1 || (day > current && !walkedBefore && !extra)) return <Redirect href={{ pathname: "/session/[door]/[day]", params: { door: door || saved.settings.homeWing, day: String(current) } }} />;
+  // ...or "keep going" (owner, 2026-10-08): once today's lesson on this door is done, the next one opens right away, as
+  // many as they like; the streak still counts the date once
+  const keepGoing = !kid && day === current + 1 && derived.paths[door]?.done === true;
+  if (!Number.isInteger(day) || day < 1 || (day > current && !walkedBefore && !extra && !keepGoing)) return <Redirect href={{ pathname: "/session/[door]/[day]", params: { door: door || saved.settings.homeWing, day: String(current) } }} />;
   // "go deeper" is an extra round on a lesson already walked today; children don't get it
   const deep = params.deep === "1" && !kid;
   // a child under 13 sits the door's kids' track, never the grown-up lesson (no script is fetched for it)
