@@ -50,6 +50,7 @@ design changes go live, ask before deploying, real testimonials only, check usag
   once the weekly limit is hit.
 
 ## Session of 2026-10-06 (pick up here; newest first)
+- LIVE: expo-live82 (2026-10-08): finish screen "keep going: day N" opens the next lesson right away, no limit; streak counts the day once. Built from code only (year 4 scripts not compiled in).
 - LIVE: expo-live81 (2026-10-08): placement quiz waits on a wrong/unsure answer with the right one in green until Next.
 - LIVE: expo-live80 (2026-10-08, owner: "publish years 2-3"): years 2-3 (days 332-1061, all 8 paths): style pass + new recipe in one go via workflow (docs/learning/map/JOB23_BRIEF.md), 304 batches each written then independently checked (1,782 fixes), style-lint/v2-lint/style-guard/validator all clean; 64 plainer chat replies (owner-approved). Extra usage for the run ~$380. Waiting on owner okay to publish.
 - LIVE: expo-live79 (2026-10-07, owner: "publish everything"): job 3 complete on year 1 of all 8 paths (days 22-331: chat, tap-a-word, old words in the pairs; ~1,300 second-reader fixes), no typing anywhere (chat reply bubble appears only on tap; level 4 / go-deeper listen is tap). Next: years 2-3 after the Oct 13 reset.
