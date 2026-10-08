@@ -158,10 +158,13 @@ export default function Know() {
     if (picked) return;
     const ok = k === q.a;
     setPicked({ o: o ?? "unsure", ok });
-    setTimeout(() => {
-      setPicked(null);
-      setAnswers((xs) => [...xs, { stop: state.probe!, ok }]);
-    }, 650);
+    // right: a beat to enjoy it, then on. wrong or unsure: stay until they tap next, so the answer can be read
+    // (owner, 2026-10-08: "the correct answer goes away too quickly")
+    if (ok) setTimeout(() => next(true), 1000);
+  };
+  const next = (ok: boolean) => {
+    setPicked(null);
+    setAnswers((xs) => [...xs, { stop: state.probe!, ok }]);
   };
   const itWas = t("onboarding.know.itWas", { answer: (es?.o || q.o)[q.a] });
   const prompt = q.kind === "word" ? t("onboarding.know.fits", { term: q.term || q.q }) : q.kind === "basic" ? q.q.replace(UNDERNEATH, t("onboarding.know.underneath")) : es?.q || q.q;
@@ -172,10 +175,11 @@ export default function Know() {
       <Text accessibilityRole="header" style={[type.h1(q.kind === "fork" ? 20 : 24), { textAlign: "center" }]}>{prompt}</Text>
       <View style={{ gap: 8 }} accessibilityRole="radiogroup">
         {options.map(({ o, k }) => (
-          <ChoiceRow key={o} on={picked?.o === o} onPress={() => answer(o, k)} sub={picked?.o === o ? (picked.ok ? t("onboarding.know.right") : itWas) : undefined}>{o}</ChoiceRow>
+          <ChoiceRow key={o} on={picked?.o === o || (!!picked && !picked.ok && k === q.a)} onPress={() => answer(o, k)} sub={picked?.o === o ? (picked.ok ? t("onboarding.know.right") : itWas) : picked && !picked.ok && k === q.a ? t("onboarding.know.answer") : undefined}>{o}</ChoiceRow>
         ))}
         <ChoiceRow on={picked?.o === "unsure"} onPress={() => answer(null, null)} sub={picked?.o === "unsure" ? itWas : undefined}>{t("onboarding.know.unsure")}</ChoiceRow>
       </View>
+      {picked && !picked.ok ? <Btn kind="gold" onPress={() => next(false)}>{t("session.next")}</Btn> : null}
       <Text style={[type.caption(), { textAlign: "center" }]}>{t("onboarding.know.noScore")}</Text>
     </WelcomeFrame>
   );
