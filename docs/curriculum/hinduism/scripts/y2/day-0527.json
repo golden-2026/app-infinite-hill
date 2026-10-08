@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: Sita's argument, part one. A wife shares her husband's fortune, she said, and she'd walk ahead through the thorns. Did you ask someone what they wanted before deciding for them? Today Rama tries again, and so does she. Day five hundred twenty-seven.",
+      "voice": "Yesterday: Sita's argument began. A wife shares her husband's fortune, she said, and she'd walk ahead through the thorns. Today Rama tries again, and so does she.",
       "screen": [
         "`I'LL WALK AHEAD, TRAMPLING THORNS.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "How do you stop someone you love from following you into danger, without forbidding it? Rama tries a list. Every hardship the forest holds, named one by one. It's love, mostly. It's also a way of winning without saying no. He has watched his father break and his mother weep today, and he wants one person he loves kept safe. He means every word. And Sita, who has been patient, finally runs out of patience.",
+      "voice": "How do you stop someone you love from following you into danger, without forbidding it? Rama tries a list: every hardship the forest holds, one by one. It's love, mostly, and also a way of winning without saying no. He has watched his father break and his mother weep today, and he wants one person he loves kept safe. He means every word. And Sita, who has been patient, runs out of patience.",
       "screen": [
         "`THE LIST OF DANGERS.` → `WINNING WITHOUT SAYING NO.` → `SITA LOSES HER PATIENCE.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "The forest is hard, Rama says. Lions roar from mountain caves. Rivers are full of crocodiles and hard to cross. You sleep on fallen leaves on the ground. You eat whatever fruit you find, or nothing. Wind, darkness, hunger, snakes, scorpions, thorns. Stay here. Sita answers his list one item at a time. With you, she says, the hardships become comforts. The grass will feel like a soft blanket. The fruit you bring me will taste like nectar. And she adds something new. When I was a girl in my father's house, she says, people who read the signs told my family that one day I would live in a forest. I've wanted to see it ever since. Then Rama still hesitates, and she says something with a sting in it. What was my father thinking, she asks, when he chose as his son-in-law a woman in the form of a man? It's a hard thing to say, and Valmiki doesn't soften it. Sita is accusing Rama of failing at the one thing a protector is for: keeping her with him. Then she breaks down and weeps. And Rama gives way. He holds her and says: I didn't know your mind. I wouldn't want heaven itself without you. Come with me. Give away your things, and let's go. It's worth noticing who wins this argument. In a story about a son obeying his father's word without a question, the wife questions, pushes, and changes her husband's mind. Valmiki honors both.",
+      "voice": "The forest is hard, Rama says. Lions roar from mountain caves. Rivers are full of crocodiles and hard to cross. You sleep on fallen leaves and eat whatever fruit you find, or nothing. Wind, darkness, hunger, snakes, scorpions, thorns. Stay here. Sita answers his list item by item. With you, the hardships become comforts. The grass will feel like a soft blanket; the fruit you bring me will taste like nectar. And something new: when I was a girl in my father's house, people who read the signs told my family I would one day live in a forest. I've wanted to see it ever since. Still Rama hesitates, and she stings. What was my father thinking, she asks, when he chose as his son-in-law a woman in the form of a man? It's a hard thing to say, and Valmiki doesn't soften it. She's accusing Rama of failing at the one thing a protector is for: keeping her with him. Then she breaks down and weeps. And Rama gives way. He holds her. I didn't know your mind, he says. I wouldn't want heaven itself without you. Come with me. Give away your things, and let's go. Notice who wins. In a story about a son obeying his father's word without a question, the wife questions, pushes, and changes her husband's mind. Valmiki honors both.",
       "screen": [
         "`LIONS, CROCODILES, THORNS.` · `WITH YOU, HARDSHIP IS COMFORT.` · `A WOMAN IN THE FORM OF A MAN?` · `I DIDN'T KNOW YOUR MIND. COME.` · then, large: `SHE CHANGES HIS MIND.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Sit and settle into the breath. Think of a time someone changed your mind, maybe sharply, and they were right. Let the memory come back, even the sting of it. Breathe in, and feel the moment you resisted. Breathe out, and feel the moment you gave way. Stay with the gratitude, if it's there, for someone who loved you enough to argue. The bell holds the time.",
+      "voice": "Remember a time someone changed your mind, maybe sharply, and they were right, sting and all. Breathe in and feel the moment you resisted; breathe out and feel the moment you gave way. Stay with the gratitude, if it's there, for someone who loved you enough to argue.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: I didn't know your mind. Today, let someone change your mind about one thing, and tell them they did. Day five hundred twenty-seven.",
+      "voice": "Your line: I didn't know your mind. Sita won; she's going too. That's day five hundred twenty-seven.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Valmiki keeps Sita's rebuke sharp, and the scene shows her going to the forest by her own choice, against her husband's first wish.",
   "games": {
+    "guess": [
+      "how Sita answers every danger until Rama gives way",
+      "how Sita talks Rama into defying his father",
+      "how Sita convinces Bharata to refuse the throne"
+    ],
     "match": {
       "prompt": "the argument — tap the pairs.",
       "pairs": [
@@ -130,14 +135,42 @@
       "what it means: she argued, rebuked him sharply, and changed his mind.",
       "what a scholar hears: Sita's rebuke, asking what her father was thinking when he took a woman in a man's form as son-in-law, questions Rama's very manhood, and Valmiki leaves it unsoftened."
     ],
+    "chat": {
+      "who": "your daughter",
+      "says": "Did Rama just decide for Sita, or did she get a say?",
+      "options": [
+        "She argued, even sharply, and changed his mind: I didn't know your mind, he said.",
+        "He decided for her, and she quietly packed her things and followed him.",
+        "She got a say, but only after the king ordered Rama to take her along."
+      ],
+      "answer": 0,
+      "meaning": "Sita answered every danger and rebuked Rama sharply. He gave way: I didn't know your mind; come with me."
+    },
+    "gloss": {
+      "Sita": {
+        "meaning": "Rama's wife, King Janaka's daughter",
+        "script": "सीता",
+        "say": "SEE-tah"
+      },
+      "Rama": {
+        "meaning": "prince of Ayodhya, hero of the Ramayana",
+        "script": "राम",
+        "say": "RAH-muh"
+      },
+      "Valmiki": {
+        "meaning": "the poet-sage who composed the Ramayana",
+        "script": "वाल्मीकि",
+        "say": "vahl-MEE-kee"
+      }
+    },
     "recall": [
       [
-        "abhisheka",
-        "an anointing, a sacred pouring"
+        "vara",
+        "a boon the receiver gets to choose"
       ],
       [
-        "yuvaraja",
-        "young king, the heir who shares the rule"
+        "valmika",
+        "an anthill"
       ]
     ]
   },
@@ -163,7 +196,9 @@
       "Sita's rebuke (Ayodhya 30.3, vulgate): paraphrased, not quoted. Confirm wording and placement.",
       "The prediction that Sita would live in a forest: confirm who made it (brahmins/astrologers, and a female ascetic in some readings).",
       "'Some later retellings leave it out': general claim; a Keeper may want a specific example or a softer phrasing.",
-      "Editor review (2026-10-01): rewrote the hook ('we often try a list' generalized about the listener); removed 'remembered for its sting', 'retellings differ', 'many readers point', and the trapdoor superlative and unsourced claim that later retellings leave the rebuke out."
+      "Editor review (2026-10-01): rewrote the hook ('we often try a list' generalized about the listener); removed 'remembered for its sting', 'retellings differ', 'many readers point', and the trapdoor superlative and unsourced claim that later retellings leave the rebuke out.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

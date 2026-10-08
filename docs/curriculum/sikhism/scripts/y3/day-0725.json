@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Bala, and your line, told by a friend. Whose voice did a story reach you in, and did it change how much you trusted it? Day seven hundred twenty-five.",
+      "voice": "Yesterday, Bala: warm tellings framed as a friend's memories, with historians still asking whether he was there. Your line was told by a friend.",
       "screen": [
         "`TOLD BY A FRIEND.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Start with the family. Prithi Chand was the elder brother of Guru Arjan, the fifth Guru. When Guru Ram Das chose Arjan as the next Guru, Prithi Chand did not accept it, and his line set itself up apart. Sikh tradition remembers them as rivals to the Gurus. Miharban was Prithi Chand's son, and a janamsakhi comes down under his name. Now the book itself. It doesn't read like the plain Puratan stories or the warm, wonder-filled Bala ones. It's reflective. A sakhi sets the scene, and then the telling stops to talk: a discourse, a gosht, in which Guru Nanak's own hymns are explained in the setting of the story. It reads less like a storyteller and more like a teacher thinking aloud. So how do Sikhs read a book from that line? Carefully, and not all in the same way. Some keep their distance from it because of where it came from. Some historians and readers take it seriously as one more early witness, and value its long reflections on Nanak's hymns. Neither group pretends the family quarrel didn't happen. Here's the lesson in it. A telling from someone you'd rather not agree with can still add something: a detail, a reading, a question. Taking it in isn't the same as taking their side. And every telling adds something of its teller too, which is exactly why it's worth knowing who the teller was.",
+      "voice": "Start with the family. Prithi Chand was the elder brother of Guru Arjan, the fifth Guru. When Guru Ram Das chose Arjan as the next Guru, Prithi Chand did not accept it, and his line set itself up apart. Sikh tradition remembers them as rivals to the Gurus. Miharban was Prithi Chand's son, and a janamsakhi comes down under his name. It doesn't read like the plain Puratan stories or the warm, wonder-filled Bala ones. It's reflective. A sakhi sets the scene, and then the telling stops to talk: a discourse, a gosht, in which Guru Nanak's own hymns are explained in the setting of the story. It reads less like a storyteller and more like a teacher thinking aloud. So how do Sikhs read a book from that line? Carefully, and not all in the same way. Some keep their distance from it because of where it came from. Some historians and readers take it seriously as one more early witness, and value its long reflections on Nanak's hymns. Neither group pretends the family quarrel didn't happen. Here's the lesson in it. A telling from someone you'd rather not agree with can still add something: a detail, a reading, a question. Taking it in isn't the same as taking their side. And every telling adds something of its teller too, which is exactly why it's worth knowing who the teller was.",
       "screen": [
         "`PRITHI CHAND, GURU ARJAN'S ELDER BROTHER.` · `MIHARBAN, HIS SON, AND HIS TELLING.` · `A SAKHI, THEN A DISCOURSE.` · `READ CAREFULLY, AND DIFFERENTLY.` · then, large: `EVERY TELLING ADDS.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: listen to someone you disagree with. Use the sit to bring one person to mind. Not someone dangerous: just someone whose views or choices you'd rather not share. A relative, a coworker, a voice you usually scroll past. Now ask one honest question of yourself: what might they know or notice that I don't? Let one possibility come. You don't have to agree with it. You only have to hear it. If you get the chance today, listen to them for a minute longer than usual. If you pray, you can say Waheguru for them. The bell holds the time.",
+      "voice": "Bring one person to mind, not someone dangerous, just someone whose views or choices you'd rather not share: a relative, a coworker, a voice you usually scroll past. Ask yourself one honest question, what might they know or notice that I don't, and let one possibility come; you don't have to agree with it, only hear it. If you pray, you can say Waheguru for them.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: every telling adds. Today, give one view you'd usually dismiss a full hearing, and see what it adds. Day seven hundred twenty-five.",
+      "voice": "Your line: every telling adds. Taking it in isn't taking sides. Seven hundred twenty-five days in.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Scholars of Sikh history read Miharban's janamsakhi alongside the other traditions, mindful of its origin in the line of Prithi Chand, and some draw on its discourses on Guru Nanak's hymns.",
   "games": {
+    "guess": [
+      "a reflective janamsakhi from a rival line",
+      "the oldest and plainest life of Nanak",
+      "a telling in a companion's own voice"
+    ],
     "match": {
       "prompt": "the family and the book — tap the pairs.",
       "pairs": [
@@ -128,14 +133,46 @@
     ],
     "recall": [
       [
-        "One",
-        "is a Sikh"
+        "Rehat Maryada",
+        "the Sikh code of conduct"
       ],
       [
-        "kalyug",
-        "the dark age"
+        "Gurmukhi",
+        "the script Guru Angad shaped and spread"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "a neighbor",
+      "says": "There's a janamsakhi from the Gurus' rivals? Why would anyone read it?",
+      "options": [
+        "It's Miharban's, from Prithi Chand's line: reflective, and read carefully for its discourses.",
+        "It's the oldest, plainest telling, so every Sikh trusts it first, whoever wrote it.",
+        "Nobody does: it was lost centuries ago, and no copy of it survives anywhere today."
+      ],
+      "answer": 0,
+      "meaning": "Miharban was Prithi Chand's son. His telling opens sakhis into discourses on Nanak's hymns; Sikhs read it carefully, and not all alike."
+    },
+    "gloss": {
+      "Miharban": {
+        "meaning": "Prithi Chand's son; a janamsakhi carries his name",
+        "script": "ਮਿਹਰਬਾਨ",
+        "say": "MEH-ur-baan"
+      },
+      "Prithi Chand": {
+        "meaning": "Guru Arjan's elder brother",
+        "script": "ਪ੍ਰਿਥੀ ਚੰਦ",
+        "say": "PRI-thee CHUND"
+      },
+      "Guru Arjan": {
+        "meaning": "the fifth Guru",
+        "script": "ਗੁਰੂ ਅਰਜਨ",
+        "say": "GOO-roo UR-jun"
+      },
+      "gosht": {
+        "meaning": "a discourse explaining the hymns within a story",
+        "say": "GOSHT"
+      }
+    }
   },
   "sources": [
     {
@@ -155,7 +192,9 @@
       "Original left null: unsure of the Gurmukhi spelling of gosht (ਗੋਸਟਿ as in Sidh Gosti?); a Keeper may add it.",
       "Feature game is trapdoor.",
       "Editor: cut 'line by line' from the description of the goshts (unverified detail about the text's method).",
-      "Auditor: the hook's 'he was there' implied Miharban was a witness to Guru Nanak's life (he lived generations later); fixed. The fork's 'your great-grandfather' implied the Gurus' line descended from Guru Nanak; reworded."
+      "Auditor: the hook's 'he was there' implied Miharban was a witness to Guru Nanak's life (he lived generations later); fixed. The fork's 'your great-grandfather' implied the Gurus' line descended from Guru Nanak; reworded.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

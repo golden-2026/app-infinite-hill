@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: sunbulah, the ear of grain, and your line, one grain, seven hundred. Did you give the small thing? Today, al-Baqarah tells you how a gift can be lost after it's given. Day three hundred sixty.",
+      "voice": "Yesterday: sunbulah, the ear of grain, and your line, one grain, seven hundred. Today, how a gift can be lost after it's given.",
       "screen": [
         "`ONE GRAIN, SEVEN HUNDRED.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Remember when I drove the truck? Remember who paid for the pizza? A relative helps someone move, years ago, and mentions it at every holiday since. The help was real: a whole Saturday, a borrowed truck, a sore back. But somewhere around the tenth reminder, the help starts to feel like a bill. The gift has turned into a debt that can never be paid off. Al-Baqarah knows this relative. Today: don't spoil it with reminders.",
+      "voice": "Remember when I drove the truck? Remember who paid for the pizza? A relative helped someone move years ago, and mentions it at every holiday since. The help was real: a whole Saturday, a borrowed truck, a sore back. But somewhere around the tenth reminder, the help starts to feel like a bill, a debt that can never be paid off. Al-Baqarah knows this relative.",
       "screen": [
         "`REMEMBER WHEN I DROVE THE TRUCK?` → `MENTIONED AT EVERY HOLIDAY.` → `A GIFT TURNED INTO A DEBT.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Right after the seven ears of grain, the surah adds a condition. Verse two hundred sixty-two: those who spend and then don't follow it with reminders of their generosity, or with hurt, their reward is with their Lord. Verse two hundred sixty-three, in Pickthall's words: “A kind word with forgiveness is better than almsgiving followed by injury.” The Arabic for those reminders is mann: bringing up the favor, holding it over someone. Then verse two sixty-four gives the picture of what mann does. A smooth rock with a thin layer of soil on it. It looks like a field. Then heavy rain falls, and washes it bare. Nothing grows. That's a gift spoiled by reminders: it looked like soil, but there was only stone underneath. The very next verse paints the opposite. A garden on high ground. Heavy rain falls, and it doubles its fruit. And if no heavy rain comes, even a light drizzle is enough. That's the gift given for God's sake, with no strings: it grows whatever weather comes. The tradition takes mann seriously. A hadith in Sahih Muslim names three people God will not speak to on the Day of Judgment, and one of them is al-mannan, the one who reminds people of what he gave. Notice what the verse ranks above a spoiled gift: a kind word. You can give nothing at all, and say something gentle, and that's better than money with a sting. Give and forget.",
+      "voice": "Right after the seven ears of grain, the surah adds a condition. Verse two hundred sixty-two: those who spend and don't follow it with reminders of their generosity, or with hurt, their reward is with their Lord. Verse two hundred sixty-three, in Pickthall's words: “A kind word with forgiveness is better than almsgiving followed by injury.” The Arabic for those reminders is mann: bringing up the favor, holding it over someone. Verse two sixty-four pictures what mann does. A smooth rock with a thin layer of soil on it. It looks like a field. Heavy rain falls and washes it bare. Nothing grows: there was only stone underneath. The next verse paints the opposite. A garden on high ground. Heavy rain falls, and it doubles its fruit; if no heavy rain comes, a light drizzle is enough. That's the gift given for God's sake, with no strings: it grows whatever the weather. The tradition takes mann seriously. A hadith in Sahih Muslim names three people God will not speak to on the Day of Judgment, and one is al-mannan, the one who reminds people of what he gave. And notice what the verse ranks above a spoiled gift: a kind word. Something gentle, with no money at all, is better than money with a sting.",
       "screen": [
         "`NO REMINDERS, NO HURT` · `A KIND WORD IS BETTER` · `THE ROCK WASHED BARE` · `THE GARDEN ON THE HILL`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: give without mentioning it later. Sit, and think of something good you've done for someone that you've brought up since, out loud or in your head. The favor you keep score of. Picture it like a stone you've been carrying. Now picture setting it down by the road and walking on, without looking back. If you pray, you can leave it with God. If you don't, simply let it go. The bell holds the time.",
+      "voice": "Think of a favor you've done for someone and kept score of since, out loud or in your head, and picture it as a stone you've been carrying. Set it down by the road and walk on without looking back; if you pray, leave it with God, and if you don't, simply let it go.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: give and forget. Today, do one kind thing, and don't mention it to anyone, including the person you did it for. Day three hundred sixty.",
+      "voice": "Your line: give and forget. A kind word can be the whole gift. Day three hundred sixty, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Muslims are taught to give without reminding the recipient or expecting thanks; mann, recounting one's favors, is counted a serious fault, and many give quietly so as not to be tempted toward it.",
   "games": {
+    "guess": [
+      "holding a favor over someone by bringing it up",
+      "a gift handed back to the giver later on",
+      "thanking someone again and again for a gift"
+    ],
     "match": {
       "prompt": "the rock and the garden — tap the pairs.",
       "pairs": [
@@ -127,14 +132,46 @@
     ],
     "recall": [
       [
-        "sawm",
-        "to hold back, to abstain"
+        "jidal",
+        "quarreling, disputing"
       ],
       [
-        "ayah",
-        "a sign, and a verse of the Qur'an"
+        "wasat",
+        "the middle; also the best, most just"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your sister",
+      "says": "If I helped someone a lot, isn't it fair to remind them sometimes?",
+      "options": [
+        "Al-Baqarah says reminders spoil it; a kind word beats a gift with a sting.",
+        "Yes, the verse says a reminder now and then keeps people grateful.",
+        "Only if the gift was large; small favors should be forgotten."
+      ],
+      "answer": 0,
+      "meaning": "Verse 262 praises giving not followed by reminders or hurt; 263 says a kind word with forgiveness beats charity followed by injury."
+    },
+    "gloss": {
+      "mann": {
+        "meaning": "reminding someone of a favor, holding it over them",
+        "script": "منّ",
+        "say": "MANN"
+      },
+      "al-mannan": {
+        "meaning": "the one who reminds people of what he gave",
+        "script": "المنان",
+        "say": "al-man-NAAN"
+      },
+      "Sahih Muslim": {
+        "meaning": "a major collection of hadith",
+        "script": "صحيح مسلم",
+        "say": "sa-HEEH MUS-lim"
+      },
+      "Pickthall": {
+        "meaning": "the 1930 English translator this path quotes",
+        "say": "PIK-thawl"
+      }
+    }
   },
   "sources": [
     {
@@ -163,7 +200,9 @@
       "Pickthall's 2:263 quoted as in year one; please confirm.",
       "Sahih Muslim 106 cited from memory; confirm number and that al-mannan is among the three.",
       "Year one (days 149–150) used 2:263–264 for the kind word and hidden charity; this day focuses on mann and the rock/garden parables of 2:264–265.",
-      "Editor review (2026-10-01): the hook opened with a sweeping 'Every family has one' and told the listener what they'd wish; it now opens on the relative's own line and describes the effect without assigning the listener a feeling."
+      "Editor review (2026-10-01): the hook opened with a sweeping 'Every family has one' and told the listener what they'd wish; it now opens on the relative's own line and describes the effect without assigning the listener a feeling.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

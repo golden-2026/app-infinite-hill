@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the railing around the roof, built before anyone falls. Your line was build the railing. Did you fix your hazard? Today, a law about the end of a work day. Day five hundred nine.",
+      "voice": "Yesterday, the railing around the roof, built before anyone falls. Your line was build the railing. Today, a law about the end of a work day.",
       "screen": [
         "`BUILD THE RAILING.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the Torah says, don't oppress a hired worker who is poor and needy, whether they're one of your own people or a stranger living in your towns. Then the rule, in the old Jewish translation: \"In the same day thou shalt give him his hire, neither shall the sun go down upon it; for he is poor, and setteth his heart upon it.\" Leviticus says it too, from the other side of the clock: don't keep a worker's wages with you overnight until morning. The rabbis called this prohibition bal talin, do not hold it overnight. Now look at the reason. For he is poor, and setteth his heart upon it. In Hebrew, the phrase is closer to: he lifts up his soul to it. His whole self is hanging on that pay. The Talmud, in Bava Metzia, reads those words and asks: why did this worker climb the high ramp, hang from the tree, risk his life? For his wages. So when you hold back what he earned, the Talmud says, it's as if you've taken his life. That's strong language for a late payment. But it's the worker's view, not the employer's. The one who pays sees an amount. The one who's paid sees a day of his life, already spent, waiting to come back as bread. The verse ends with a warning: or he will cry to the LORD against you, and it will be counted as sin. The cry of the unpaid is heard.",
+      "voice": "First, the Torah says, don't oppress a hired worker who is poor and needy, whether one of your own people or a stranger living in your towns. Then the rule, in the old Jewish translation: \"In the same day thou shalt give him his hire, neither shall the sun go down upon it; for he is poor, and setteth his heart upon it.\" Leviticus says it too, from the other side of the clock: don't keep a worker's wages overnight until morning. The rabbis called this prohibition bal talin, do not hold it overnight. Now look at the reason. In Hebrew, setteth his heart upon it is closer to: he lifts up his soul to it. His whole self is hanging on that pay. The Talmud, in Bava Metzia, reads those words and asks: why did this worker climb the high ramp, hang from the tree, risk his life? For his wages. So holding back what he earned, the Talmud says, is as if you've taken his life. Strong language for a late payment. But it's the worker's view. The one who pays sees an amount. The one who's paid sees a day of his life, already spent, waiting to come back as bread. The verse ends with a warning: or he will cry to the LORD against you, and it will be counted as sin.",
       "screen": [
         "`DON'T OPPRESS THE POOR WORKER.` · `BEFORE THE SUN GOES DOWN.` · `HE LIFTS UP HIS SOUL TO IT.` · `HE CLIMBED, HUNG, RISKED HIS LIFE.` · then, large: `PAY TODAY.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: pay one bill or debt promptly. Settle, and breathe. Think of what you owe that's sitting on your list. Not just bills. The babysitter you meant to pay back. The friend who covered lunch. The contractor's invoice. The kid down the street who mowed the lawn. Picture the person on the other end, not the amount. What are they waiting to do with it? Choose one, and decide to pay it before today's sunset. The bell holds the time.",
+      "voice": "Think of what you owe that's sitting on your list: not just bills, but the babysitter, the friend who covered lunch, the kid down the street who mowed the lawn. Picture the person on the other end, not the amount, and what they're waiting to do with it. Let one of them stay with you while the sun is still up.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: pay today. Before the sun goes down, pay one person you owe, especially someone who works for you. Day five hundred nine.",
+      "voice": "Your line: pay today. To the one who waits, it's a day of his life. That's day five hundred nine.",
       "screen": []
     },
     {
@@ -132,14 +132,47 @@
     ],
     "recall": [
       [
-        "Shoftim",
-        "judges"
+        "tzedek",
+        "justice, rightness"
       ],
       [
-        "simcha",
-        "joy, the festival kind"
+        "yovel",
+        "the jubilee, the fiftieth year"
       ]
-    ]
+    ],
+    "guess": [
+      "when you go out, the words that open this portion",
+      "when you pay, the opening words of the wage law",
+      "when you lend, the opening words of the debt law"
+    ],
+    "chat": {
+      "who": "a coworker",
+      "says": "If I pay the contractor next week instead of today, what's the big deal?",
+      "options": [
+        "The Torah says pay by sunset; to the worker it's a day of his life, already spent, waiting to become bread.",
+        "None, as long as it's paid within the month; the Torah only forbids never paying at all.",
+        "It only matters if the worker is a stranger; your own people can be asked to wait a while."
+      ],
+      "meaning": "Deuteronomy says pay before the sun goes down, for he is poor and sets his heart on it; the Talmud likens holding back wages to taking his life.",
+      "answer": 0
+    },
+    "gloss": {
+      "bal talin": {
+        "meaning": "do not hold it overnight: the rule against delaying wages",
+        "script": "בל תלין",
+        "say": "bahl tah-LEEN"
+      },
+      "Bava Metzia": {
+        "meaning": "a Talmud tractate; here, on the worker who risks his life",
+        "script": "בבא מציעא",
+        "say": "BAH-vah m'TSEE-ah"
+      },
+      "Ki Teitzei": {
+        "meaning": "when you go out; the portion where wages can't wait",
+        "script": "כי תצא",
+        "say": "kee teh-TZAY"
+      }
+    }
   },
   "sources": [
     {
@@ -173,7 +206,9 @@
     "notes": [
       "Deuteronomy 24:15 quoted from JPS 1917 from memory; verify.",
       "Bava Metzia 112a: 'why did he climb the ramp and hang from the tree and give himself over to death? for his wages'; and withholding is as if taking his life; paraphrased.",
-      "Bal talin details (day worker paid by nightfall, night worker by morning; exemptions when the worker doesn't demand it) simplified."
+      "Bal talin details (day worker paid by nightfall, night worker by morning; exemptions when the worker doesn't demand it) simplified.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

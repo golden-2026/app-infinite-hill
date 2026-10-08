@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the camel knelt near Abu Ayyub's house, on two orphans' land. Your line was: let the camel choose. Which small choice did you hand away? Day seven hundred seventy-two.",
+      "voice": "Yesterday: the camel knelt on two orphans' land, near Abu Ayyub's house. Your line was: let the camel choose.",
       "screen": [
         "`LET THE CAMEL CHOOSE.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Too many hadith. Some people grumbled that Abu Hurayra reported too many sayings of the Prophet. That complaint is old enough to be answered inside Sahih al-Bukhari, by Abu Hurayra himself. His answer is about where he spent his days. His brothers among the emigrants, he says, were busy with trading in the markets. His brothers among the people of Medina were busy working their property. And he stayed close to the Prophet Muhammad, peace be upon him, content with whatever filled his stomach, present when others were away, remembering what others forgot. He had a place to stay close. Today: ahl al-suffah, the people of the bench.",
+      "voice": "Too many hadith. Some people grumbled that Abu Hurayra reported too many sayings of the Prophet, a complaint old enough to be answered inside Sahih al-Bukhari, by Abu Hurayra himself. His answer is about where he spent his days. His brothers among the emigrants, he says, were busy trading in the markets. His brothers among the people of Medina were busy working their property. And he stayed close to the Prophet Muhammad, peace be upon him, content with whatever filled his stomach, present when others were away, remembering what others forgot. Today: ahl al-suffah, the people of the bench.",
       "screen": [
         "`TOO MANY HADITH?` → `OTHERS IN THE MARKET.` → `HE STAYED CLOSE.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "When the mosque of Medina was built, part of it had a covered, shaded platform. The Arabic word is suffah, and the people who lived there were called ahl al-suffah, the people of the suffah, the people of the bench. Who were they? Bukhari has Abu Hurayra describe them in another report: the guests of Islam, people with no family to go to and no wealth to fall back on. The bench was their home, and the mosque was their school. Bukhari also shows how they were fed. When charity came to the Prophet, he sent it to them and took none of it himself. When a gift came, he shared in it with them. In one long report, Abu Hurayra is so hungry he can barely stand, and the Prophet sends him to call the people of the bench to share a single bowl of milk. Abu Hurayra worries there will be nothing left for him. He serves them all, and in that story there's enough. The arrangement says something. The community put the people with the least in the middle of the mosque itself. Not at the edge of town. Not out of sight. In the mosque, beside the teaching. And the poor were not only receivers. Because they stayed, they listened. Because they listened, they remembered. And Abu Hurayra, who stayed close while others were busy, became the man people asked why he had so many sayings to report.",
+      "voice": "When the mosque of Medina was built, part of it had a covered, shaded platform. The Arabic word is suffah, and the people who lived there were called ahl al-suffah, the people of the bench. Who were they? In another report in Bukhari, Abu Hurayra calls them the guests of Islam: people with no family to go to and no wealth to fall back on. The bench was their home, and the mosque was their school. Bukhari also shows how they were fed. When charity came to the Prophet, he sent it to them and took none of it himself. When a gift came, he shared in it with them. In one long report, Abu Hurayra is so hungry he can barely stand, and the Prophet sends him to call the people of the bench to share a single bowl of milk. Abu Hurayra worries there'll be nothing left for him. He serves them all, and in that story there's enough. The community put the people with the least in the middle of the mosque itself. Not at the edge of town, not out of sight, but beside the teaching. And the poor weren't only receivers. Because they stayed, they listened. Because they listened, they remembered. And Abu Hurayra, who stayed close while others were busy, became the man people asked why he had so many sayings to report.",
       "screen": [
         "`A SHADED PLATFORM IN THE MOSQUE.` · `THE GUESTS OF ISLAM.` · `CHARITY SENT TO THEM.` · `THE POOR WHO REMEMBERED.` · then, large: `THE BENCH OF THE POOR.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: give to students. Breathe slowly and settle. Bring to mind someone who is learning right now and doesn't have much: a student you know, a young person in your family, someone retraining, someone studying their faith. Picture them on that bench. What would help them stay close to what they're learning? A meal, a book, a little money, your time, a word of encouragement. Choose one small thing you could actually give this week. If you pray, you can ask Allah to open their way. Keep their face in mind. The bell holds the time.",
+      "voice": "Bring to mind someone who is learning right now and doesn't have much, a student you know, a young person in your family, someone retraining or studying their faith, and picture them on that bench. What would help them stay close to what they're learning: a meal, a book, your time, a word of encouragement? If you pray, you can ask Allah to open their way.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the bench of the poor. Today, make room for one learner who has little, and give them something that helps them stay. Day seven hundred seventy-two.",
+      "voice": "Your line: the bench of the poor. Right in the middle of the mosque, not out of sight. That's today.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Muslims remember ahl al-suffah as a model of learning and of caring for the poor, and some mosques and schools support students who live and study on site.",
   "games": {
+    "guess": [
+      "the poor who lived on the mosque's bench",
+      "the companions who traded in the market",
+      "the scholars who wrote down the hadith"
+    ],
     "match": {
       "prompt": "the people of the bench — tap the pairs.",
       "pairs": [
@@ -132,14 +137,47 @@
     ],
     "recall": [
       [
-        "Aqaba",
-        "a narrow pass, away from crowds"
+        "Mecca",
+        "the city he called the dearest land"
       ],
       [
-        "al-Siddiq",
-        "the one who affirms the truth"
+        "Sumayyah",
+        "mother of Ammar, wife of Yasir"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your roommate",
+      "says": "Who were the people of the bench in early Medina?",
+      "options": [
+        "Poor companions with no family or wealth, living and learning in the mosque.",
+        "Elders who sat on a bench by the city gate to settle disputes.",
+        "Merchants who rested in the mosque between their market days."
+      ],
+      "answer": 0,
+      "meaning": "Abu Hurayra calls them the guests of Islam: no family, no wealth. They lived on the mosque's shaded platform, fed by charity, close to the teaching."
+    },
+    "gloss": {
+      "Abu Hurayra": {
+        "meaning": "a companion who stayed close and reported many sayings",
+        "script": "أبو هريرة",
+        "say": "A-boo hu-RAY-ra"
+      },
+      "suffah": {
+        "meaning": "a covered, shaded platform in the mosque of Medina",
+        "script": "صفة",
+        "say": "SUF-fa"
+      },
+      "ahl al-suffah": {
+        "meaning": "the people of the bench, who lived on that platform",
+        "script": "أهل الصفة",
+        "say": "ahl as-SUF-fa"
+      },
+      "Sahih al-Bukhari": {
+        "meaning": "a major collection of the Prophet's sayings",
+        "script": "صحيح البخاري",
+        "say": "sa-HEEH al-bu-KHAA-ree"
+      }
+    }
   },
   "sources": [
     {
@@ -165,7 +203,9 @@
       "'Some had left everything in Mecca. Some were simply poor.' is a general description; confirm.",
       "The bowl-of-milk story echoes the milk in day 769; kept brief here.",
       "Audit pass: the myth said 'the poor of Medina', but the suffah housed the people of the bench, not all the city's poor; narrowed. The hook implies Abu Hurayra lived on the bench; 6452 places him among them as recalled; confirm.",
-      "Editor pass: cut the unsourced 'some had left everything in Mecca, some were simply poor'; fixed the garbled 'the people with the least right' and dropped the superlative 'its most important building'; replaced the unsupported 'a great deal of what Muslims know of the Prophet's words came down through a man who once slept on that bench' with a line that closes on Bukhari 118's own question; varied the 'look at' opener."
+      "Editor pass: cut the unsourced 'some had left everything in Mecca, some were simply poor'; fixed the garbled 'the people with the least right' and dropped the superlative 'its most important building'; replaced the unsupported 'a great deal of what Muslims know of the Prophet's words came down through a man who once slept on that bench' with a line that closes on Bukhari 118's own question; varied the 'look at' opener.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

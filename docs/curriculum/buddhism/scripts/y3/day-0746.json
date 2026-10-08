@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Bhadda Kapilani took the left-hand road, and your line was her own path. Did you ask someone about a road they walk that you don't? Today a new group of disciples, starting with the one nobody expected. Day seven hundred forty-six.",
+      "voice": "Yesterday: Bhadda Kapilani, who took the left-hand road. Your line was her own path. Today a new group of disciples, starting with the one nobody expected.",
       "screen": [
         "`HER OWN PATH.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, Upali's choice. In the Vinaya he thinks it through on the road. The Sakyans are fierce, he reasons; if I come home with their jewels, they'll think I harmed the princes. And then a bigger thought: if these young men are leaving home, why shouldn't I? So he hangs the bundle on a tree, for anyone who wants it, and goes back to them. Second, the princes' request. They bring Upali to the Buddha, and they ask for something surprising. Ordain the barber first, they say. We Sakyans are proud. He's served us for a long time. If he's ordained before us, we'll have to stand for him, bow to him, show him respect, and our pride will be humbled. Third, why the order matters. In the monastic community, rank comes from when you were ordained, not from your family. So whoever goes first is senior, for good. By sending the barber ahead, the princes give away the one thing their birth had always handed them: going first. And the Buddha does as they ask. Upali is ordained, then the princes. Fourth, what it shows. The story doesn't ask the barber to rise to their level. It asks the princes to step down to his, on purpose, before their pride has a chance to set. And the overlooked man, the one who was sent home with a bundle of jewelry, becomes their elder. The barber first.",
+      "voice": "First, Upali's choice. In the Vinaya he thinks it through on the road. The Sakyans are fierce, he reasons; if I come home with their jewels, they'll think I harmed the princes. Then a bigger thought: if these young men are leaving home, why shouldn't I? So he hangs the bundle on a tree, for anyone who wants it, and goes back to them. Second, the princes' request. They bring Upali to the Buddha and ask for something surprising. Ordain the barber first, they say. We Sakyans are proud. He's served us a long time. If he's ordained before us, we'll have to stand for him, bow to him, show him respect, and our pride will be humbled. Third, why the order matters. In the monastic community, rank comes from when you were ordained, not from your family, so whoever goes first is senior for good. By sending the barber ahead, the princes give away the one thing their birth always handed them: going first. And the Buddha does as they ask. Upali is ordained, then the princes. Fourth, what it shows. The story doesn't ask the barber to rise to their level. It asks the princes to step down to his, on purpose, before their pride can set. And the overlooked man, sent home with a bundle of jewelry, becomes their elder.",
       "screen": [
         "`A BUNDLE HUNG ON A TREE.` · `ORDAIN THE BARBER FIRST.` · `RANK BY ORDINATION, NOT BIRTH.` · `PRIDE HUMBLED ON PURPOSE.` · then, large: `THE BARBER FIRST.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: honor someone overlooked. Settle, and breathe. Think of someone whose work keeps your days running and who rarely gets noticed. The person who cleans your building. The one who cuts your hair. A coworker who fixes things quietly. A relative who always does the dishes. Hold their face in mind. Let them go first in your thoughts for a minute, the way the princes let Upali go first. Notice what they actually give. Then rest with the breath. The bell holds the time.",
+      "voice": "Think of someone whose work keeps your days running and who rarely gets noticed: the person who cleans your building, the one who cuts your hair, a relative who always does the dishes. Hold their face in mind and let them go first in your thoughts for a minute, the way the princes let Upali go first. Notice what they actually give, then rest with the breath.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the barber first. Today, let one overlooked person go first, through a door, in a line, in a conversation, and thank them by name if you can. Day seven hundred forty-six.",
+      "voice": "Your line: the barber first. Rank by ordination, not by birth. Day seven hundred forty-six.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "In Theravada monasteries monks still sit, walk and receive offerings in order of ordination, so a monk from a poor family who was ordained earlier is senior to a later monk from a wealthy one.",
   "games": {
+    "guess": [
+      "the barber ordained before the princes",
+      "the charioteer on the night the prince left",
+      "a prince who later split the community"
+    ],
     "match": {
       "prompt": "the barber first: tap the pairs.",
       "pairs": [
@@ -136,10 +141,42 @@
         "later called Sariputta"
       ],
       [
-        "Yashodhara",
-        "asks why he left without her"
+        "assu",
+        "a tear, shed over loss"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your best friend",
+      "says": "Why did the princes want their barber ordained before them?",
+      "options": [
+        "To humble their pride: rank goes by ordination, so he'd be their senior.",
+        "Because the Buddha ruled that servants must always be ordained first.",
+        "So he could keep carrying their things and serving them as monks."
+      ],
+      "answer": 0,
+      "meaning": "In the community, rank comes from when you were ordained, not birth. By sending Upali first, the princes chose to bow to him and humble their pride."
+    },
+    "gloss": {
+      "Upali": {
+        "meaning": "the princes' barber, ordained before them",
+        "script": "उपालि",
+        "say": "oo-PAH-lee"
+      },
+      "Sakyan": {
+        "meaning": "of the Sakya clan, the Buddha's own people",
+        "say": "SAHK-yun"
+      },
+      "Anuruddha": {
+        "meaning": "a Sakyan prince who left home with the others",
+        "script": "अनुरुद्ध",
+        "say": "uh-noo-ROOD-duh"
+      },
+      "Devadatta": {
+        "meaning": "a Sakyan prince who left home with the others",
+        "script": "देवदत्त",
+        "say": "day-vuh-DUT-tuh"
+      }
+    }
   },
   "sources": [
     {
@@ -157,7 +194,9 @@
       "Confirm: they set out as if for a pleasure trip; take off their ornaments and give them to Upali; Upali's fear that the Sakyans would think he had killed the youths; hanging the bundle on a tree for whoever finds it; the princes' request and reason (to humble Sakyan pride, so they could greet, rise for and salute him).",
       "'Rank comes from when you were ordained' describes monastic seniority by date of upasampada; confirm framing in the teach and howItsDone.",
       "Original: उपसम्पदा (upasampada); confirm.",
-      "Editor: 'sent home with the bags' corrected to 'with a bundle of jewelry' to match the Vinaya's single bundle of ornaments."
+      "Editor: 'sent home with the bags' corrected to 'with a bundle of jewelry' to match the Vinaya's single bundle of ornaments.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

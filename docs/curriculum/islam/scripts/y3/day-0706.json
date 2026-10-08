@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Abraha's elephant. Your line was: the house has a lord. What did you loosen your grip on, and how did it feel to look after only your own camels? Day seven hundred six.",
+      "voice": "Yesterday, Abraha's elephant, and an army turned back. Your line was: the house has a lord.",
       "screen": [
         "`THE HOUSE HAS A LORD.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: the meaning of your own name. Settle, and breathe. Say your own name silently. Do you know what it means, or why it was chosen, or who chose it? If you do, hold the meaning for a while, and ask whether you've grown into it. If you don't, hold the not-knowing, and the person who chose it for you. A name is often somebody's hope. If you pray, you can thank Allah for whoever named you. If you don't, just let your name sound once more, gently, in your head. The bell holds the time.",
+      "voice": "Say your own name silently, and ask whether you know what it means, or who chose it and why; if you do, hold the meaning a while, and if you don't, hold the not-knowing, and the person who chose it for you. A name is often somebody's hope. If you pray, you can thank Allah for whoever named you; if you don't, let your name sound once more, gently, in your head.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the praised one. Today, find out what your own name means, or ask the person who chose it why they did. Tomorrow, Halimah's thin donkey. Day seven hundred six.",
+      "voice": "Your line: the praised one. Tomorrow, Halimah's thin donkey. That's day seven hundred six.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Muhammad and Ahmad are given as names in honor of the Prophet ﷺ, and some Muslims fast on Mondays, following his practice and remembering his birth.",
   "games": {
+    "guess": [
+      "the much-praised, from the root of praise",
+      "the messenger, the one who is sent",
+      "the orphan, the one with no father"
+    ],
     "match": {
       "prompt": "a name no one had heard — tap the pairs.",
       "pairs": [
@@ -132,14 +137,52 @@
     ],
     "recall": [
       [
-        "qabilah",
-        "tribe"
+        "Abdullah",
+        "the son ransomed with a hundred camels"
       ],
       [
-        "sirah",
-        "the story of the Prophet's life"
+        "sha'ir",
+        "poet, like those at 'Ukaz"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your coworker",
+      "says": "Does the name Muhammad actually mean something?",
+      "options": [
+        "Tradition explains it from the root of praise: the much-praised, praised again and again.",
+        "It means messenger; the Qur'an gives it that meaning in surah forty-eight.",
+        "It means orphan, a name his grandfather chose because Abdullah had died."
+      ],
+      "answer": 0,
+      "meaning": "Tradition explains Muhammad from h-m-d, praise, the root of al-hamdu lillah: the one praised, and praised again."
+    },
+    "gloss": {
+      "Muhammad": {
+        "meaning": "the much-praised, as tradition explains it",
+        "script": "محمد",
+        "say": "mu-HAM-mad"
+      },
+      "Ahmad": {
+        "meaning": "another form from the root of praise, in surah 61",
+        "script": "أحمد",
+        "say": "AH-mad"
+      },
+      "al-hamdu lillah": {
+        "meaning": "praise belongs to Allah",
+        "script": "الحمد لله",
+        "say": "al-HAM-du lil-LAAH"
+      },
+      "Fatiha": {
+        "meaning": "the Qur'an's opening surah",
+        "script": "الفاتحة",
+        "say": "FAA-ti-ha"
+      },
+      "basmala": {
+        "meaning": "the line: in the name of Allah",
+        "script": "البسملة",
+        "say": "BAS-ma-la"
+      }
+    }
   },
   "sources": [
     {
@@ -197,7 +240,9 @@
       "Bukhari 3532 (names) and 3539 (name yourselves with my name, but not my kunya) cited from memory; confirm numbers.",
       "Muhammad glossed as an intensive passive form (the much-praised); confirm against a standard lexicon.",
       "The fork answer and the hook both use Sahih Muslim 1162; confirm number and wording.",
-      "Editor: the h-m-d etymology is now framed as tradition's explanation (teach, myth, original note, trapdoor), and the trapdoor's 'intensive passive form' grammar claim is replaced by Pickthall's rendering of Ahmad; cut 'some historians point to a few others' (unsourced), 'families ever since', and 'every name was somebody's hope'; Abdullah's prior death marked as the sirah's; howItsDone drops 'many Muslims'."
+      "Editor: the h-m-d etymology is now framed as tradition's explanation (teach, myth, original note, trapdoor), and the trapdoor's 'intensive passive form' grammar claim is replaced by Pickthall's rendering of Ahmad; cut 'some historians point to a few others' (unsourced), 'families ever since', and 'every name was somebody's hope'; Abdullah's prior death marked as the sirah's; howItsDone drops 'many Muslims'.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

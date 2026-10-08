@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Xuanzang came home with the texts, and a novel later named him Tripitaka, giving him a monkey for company. Your line: the monkey and the monk. Who heard your journey? Day nine hundred ten.",
+      "voice": "Yesterday: Xuanzang came home with the texts, and a novel later named him Tripitaka and gave him a monkey for company. Your line: the monkey and the monk.",
       "screen": [
         "`THE MONKEY AND THE MONK.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Four names, said slowly. Tiantai. Huayan. Chan. Pure Land. Translators like Kumarajiva had filled Chinese libraries with sutras, and the sutras didn't all say the same thing. Some taught emptiness, some praised a Buddha in a distant land, some described whole universes inside a speck of dust. Chinese teachers asked a fair question: how does all of this fit together? Different teachers answered in different ways, and schools grew up around their answers. Today, a first look at four of them. Each one gets its own days later, and none is ranked above another.",
+      "voice": "Four names, said slowly. Tiantai. Huayan. Chan. Pure Land. Translators like Kumarajiva had filled Chinese libraries with sutras, and the sutras didn't all say the same thing. Some taught emptiness, some praised a Buddha in a distant land, some described whole universes inside a speck of dust. Chinese teachers asked a fair question: how does all of this fit together? Different teachers answered in different ways, and schools grew up around their answers. Today, a first look at four of them, none ranked above another.",
       "screen": [
         "`FOUR NAMES.` → `SO MANY SUTRAS.` → `HOW DOES IT FIT TOGETHER?`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, Tiantai. It's named after a mountain, Mount Tiantai, where the teacher Zhiyi lived and taught. Tiantai puts the Lotus Sutra at the center, and it tries to hold all the Buddha's teachings in one big order, as one teaching given in different ways to different listeners, the way a good teacher explains the same idea to a child and to a scholar. Second, Huayan, which means flower garland, after the Flower Garland Sutra. Its great picture is connection: every thing in the universe reflects every other thing, the way jewels in a net catch each other's light. Third, Chan. Tradition hears in the name the Sanskrit word dhyana, meditation. Chan trusts sitting and direct seeing over long study, and its teachers tell sharp, surprising stories. Later it would travel to Korea as Seon and to Japan as Zen. Fourth, Pure Land. Its center is Amitabha, the Buddha of boundless light, who in the sutras vows to welcome into his Pure Land anyone who calls on him with faith. Its practice is simple and can be done anywhere: reciting his name. One more thing worth knowing. In China these schools were often not walled off from one another. One monastery might hold Chan sitting in the morning and Pure Land chanting in the evening, under the same roof. They're less like rival teams than like rooms in one house.",
+      "voice": "First, Tiantai. It's named after a mountain, Mount Tiantai, where the teacher Zhiyi lived and taught. Tiantai puts the Lotus Sutra at the center, and it tries to hold all the Buddha's teachings in one big order, as one teaching given in different ways to different listeners, the way a good teacher explains the same idea to a child and to a scholar. Second, Huayan, which means flower garland, after the Flower Garland Sutra. Its great picture is connection: every thing in the universe reflects every other thing, the way jewels in a net catch each other's light. Third, Chan. Tradition hears in the name the Sanskrit word dhyana, meditation. Chan trusts sitting and direct seeing over long study, and its teachers tell sharp, surprising stories. Later it would travel to Korea as Seon and to Japan as Zen. Fourth, Pure Land. Its center is Amitabha, the Buddha of boundless light, who in the sutras vows to welcome into his Pure Land anyone who calls on him with faith. Its practice is simple and can be done anywhere: reciting his name. One more thing. In China these schools were often not walled off from one another. One monastery might hold Chan sitting in the morning and Pure Land chanting in the evening, under the same roof. They're less like rival teams than like rooms in one house.",
       "screen": [
         "`TIANTAI: A MOUNTAIN AND THE LOTUS.` · `HUAYAN: THE FLOWER GARLAND.` · `CHAN: SITTING AND DIRECT SEEING.` · `PURE LAND: CALLING AMITABHA'S NAME.` · then, large: `FOUR CHINESE SCHOOLS.`"
       ]
@@ -44,13 +44,13 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: name the four. Sit comfortably and let the breath settle. On the next out-breath, say silently: Tiantai, and remember the mountain and the Lotus. Breathe. Then Huayan, and remember the net of jewels. Breathe. Then Chan, and simply sit for a few breaths, since sitting is at its heart. Then Pure Land, and remember the Buddha of boundless light. After that, rest in the breath with no names at all. The bell holds the time.",
+      "voice": "Breathe out on each name in turn: Tiantai, with the mountain and the Lotus; Huayan, with the net of jewels; Chan, with a few breaths of simply sitting; Pure Land, with the Buddha of boundless light. Then rest in the breath with no names at all.",
       "screen": []
     },
     {
       "type": "the word",
       "duration": "25 sec",
-      "voice": "Tiantai. Named for the mountain where Zhiyi taught, holding all the Buddha's teachings in one order, for different listeners. Today's word.",
+      "voice": "Tiantai. Named for the mountain where Zhiyi taught, holding all the Buddha's teachings in one order, for different listeners.",
       "screen": [
         "`TIANTAI — today's word`."
       ]
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: four Chinese schools. Today, see if you can name all four once, out loud, without looking. Day nine hundred ten.",
+      "voice": "Your line: four Chinese schools. Four different answers to one fair question. See you tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "In Chinese Buddhist temples today, practices from these schools often sit side by side: sutra study, sitting meditation, and chanting the name of Amitabha Buddha.",
   "games": {
+    "guess": [
+      "a mountain school with the Lotus Sutra at its center",
+      "a Chinese word for meditation, said Zen in Japan",
+      "the Buddha of boundless light in Pure Land"
+    ],
     "match": {
       "prompt": "the Chinese schools: tap the pairs.",
       "pairs": [
@@ -136,10 +141,45 @@
         "a monk from Parthia"
       ],
       [
-        "Ledi Sayadaw",
-        "taught meditation to lay people"
+        "Sthaviras",
+        "the elders' side of the first split"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "a friend who does yoga",
+      "says": "Are Chan and Pure Land rival Buddhist teams in China?",
+      "options": [
+        "Often not: one monastery might keep Chan sitting mornings and Pure Land chanting evenings.",
+        "Yes, and a monk had to pick one school for life and never visit another.",
+        "Yes, the emperor made every monastery choose one school and close the rest."
+      ],
+      "answer": 0,
+      "meaning": "In China these schools were often not walled off. One monastery might hold Chan sitting in the morning and Pure Land chanting in the evening."
+    },
+    "gloss": {
+      "Zhiyi": {
+        "meaning": "the teacher who lived and taught on Mount Tiantai",
+        "say": "jir-YEE"
+      },
+      "Huayan": {
+        "meaning": "flower garland: a school whose great picture is connection",
+        "say": "hwah-YEN"
+      },
+      "dhyana": {
+        "meaning": "Sanskrit for meditation",
+        "script": "ध्यान",
+        "say": "DYAH-nuh"
+      },
+      "Amitabha": {
+        "meaning": "the Buddha of boundless light",
+        "script": "अमिताभ",
+        "say": "uh-mi-TAH-buh"
+      },
+      "Seon": {
+        "meaning": "the name Chan took in Korea",
+        "say": "SUN"
+      }
+    }
   },
   "sources": [
     {
@@ -171,7 +211,9 @@
       "The net of jewels (Indra's net) is usually attributed to Huayan teachers drawing on the Avatamsaka; confirm the citation is fair.",
       "Amitabha 'vows to welcome into his Pure Land anyone who calls on him with faith': simplified summary of the vows in the Larger Sukhavativyuha; confirm phrasing.",
       "'Never walled off from one another': a general historical claim about Chinese Buddhism; confirm, or soften to 'often mixed'.",
-      "Editor: the Chan/dhyana etymology now framed as tradition (claims rule) and removed from match, myth, screen head and practice; 'never walled off' softened to 'often not'; dropped Xuanzang from the hook since Tiantai predates him."
+      "Editor: the Chan/dhyana etymology now framed as tradition (claims rule) and removed from match, myth, screen head and practice; 'never walled off' softened to 'often not'; dropped Xuanzang from the hook since Tiantai predates him.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

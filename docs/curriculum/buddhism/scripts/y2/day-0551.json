@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: Ananda in the doorway, and your line, you've done well, Ananda. Who did you thank by name? Today, the question every grieving student asks: who teaches us now? Day five hundred fifty-one.",
+      "voice": "Yesterday: Ananda in the doorway, comforted and praised. Your line: you've done well, Ananda. Today, the question every grieving student asks: who teaches us now?",
       "screen": [
         "`YOU'VE DONE WELL, ANANDA.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A piano teacher dies. Her students still have the exercises she wrote in pencil on their sheet music, the habits she drilled into their hands, the sound of her voice saying slower. Do they have a teacher anymore? In one sense, no. In another, she's in every scale they play. The Buddha is lying between the sal trees, and before anyone asks, he names the question himself. Today: the teaching as teacher.",
+      "voice": "A piano teacher dies. Her students still have the exercises she wrote in pencil on their sheet music, the habits she drilled into their hands, the sound of her voice saying slower. Do they have a teacher anymore? In one sense, no. In another, she's in every scale they play. The Buddha is lying between the sal trees, and before anyone asks, he names the question himself.",
       "screen": [
         "`PENCIL MARKS ON THE SHEET MUSIC.` → `DO THEY STILL HAVE A TEACHER?` → `HE ANSWERS BEFORE IT'S ASKED.`"
       ]
@@ -44,13 +44,13 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Sit as if a teacher you trust were in the room. Not watching you critically, just present. Let your posture settle the way it would if they were there. Breathe the way they'd remind you to breathe. Then let the picture go, and keep the posture and the breath. Notice that what they taught is still here, in your back and in your lungs. The bell holds the time.",
+      "voice": "Sit as if a teacher you trust were in the room, not watching you critically, just present, and let your posture and breath settle the way they'd remind you to. Then let the picture go, and keep the posture and the breath. What they taught is still here, in your back and in your lungs.",
       "screen": []
     },
     {
       "type": "the word",
       "duration": "25 sec",
-      "voice": "dhamma-vinaya. The Buddha's words at Kusinara: when I am gone, the teaching and the discipline I taught will be your teacher. Today's word.",
+      "voice": "Dhamma-vinaya. The Buddha's words at Kusinara: when I am gone, the teaching and the discipline I taught will be your teacher. Today's word.",
       "screen": [
         "`DHAMMA-VINAYA — today's word`."
       ]
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the teaching is the teacher. Today, when you're unsure what to do, ask what a teaching you trust already says, and let it teach you. Day five hundred fifty-one.",
+      "voice": "Your line: the teaching is the teacher. No successor, just something anyone can open. See you tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Theravada monastics treat the Dhamma and Vinaya as their teacher, reciting the monastic rules every fortnight, and many Buddhist schools also honor living lineages of teachers who pass the teaching on.",
   "games": {
+    "guess": [
+      "the teaching and the discipline together",
+      "a successor chosen to lead the monks",
+      "the final rules for choosing a council"
+    ],
     "match": {
       "prompt": "the teaching as teacher: tap the pairs.",
       "pairs": [
@@ -132,14 +137,46 @@
     ],
     "recall": [
       [
-        "brahmavihara",
-        "a dwelling of Brahma"
+        "paticcasamuppada",
+        "dependent origination"
       ],
       [
-        "anukampa",
-        "compassion, care for others' welfare"
+        "uposatha",
+        "the observance day at the moon's turning"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "a coworker",
+      "says": "Who would teach the Buddha's followers once he was gone?",
+      "options": [
+        "The teaching and the discipline he gave; he said they would be the teacher.",
+        "Nobody; he said the community would simply end along with him.",
+        "A council of kings, chosen to rule the monks and protect them."
+      ],
+      "answer": 0,
+      "meaning": "At Kusinara the Buddha said the Dhamma and the discipline he taught would be their teacher, then asked three times if anyone had a doubt."
+    },
+    "gloss": {
+      "Dhamma-vinaya": {
+        "meaning": "the teaching and the discipline, together",
+        "script": "धम्मविनय",
+        "say": "DUM-muh-vi-NUH-yuh"
+      },
+      "Dhamma": {
+        "meaning": "the Buddha's teaching",
+        "script": "धम्म",
+        "say": "DUM-muh"
+      },
+      "Ananda": {
+        "meaning": "the Buddha's attendant",
+        "script": "आनन्द",
+        "say": "AH-nun-duh"
+      },
+      "Kusinara": {
+        "meaning": "the town where the Buddha lay between the sal trees",
+        "say": "koo-si-NAH-ruh"
+      }
+    }
   },
   "sources": [
     {
@@ -156,7 +193,9 @@
       "DN 16 paraphrased. Confirm the Pali in the scholar floor and the three-times invitation to ask, including the suggestion to ask through a friend.",
       "The script skips the intervening instructions (forms of address, minor rules, the penalty for Channa); a Keeper may want one mentioned.",
       "howItsDone mentions living lineages in other schools; framed without ranking. Confirm.",
-      "Editor review (2026-10-01): DN 16 does not say the Buddha saw the question in Ananda's mind; now he raises it before anyone asks. Removed a repeated open-hand line and a Picture filler."
+      "Editor review (2026-10-01): DN 16 does not say the Buddha saw the question in Ananda's mind; now he raises it before anyone asks. Removed a repeated open-hand line and a Picture filler.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

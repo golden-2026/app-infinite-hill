@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, habl, the rope of Allah, held by everyone together. Your line was hold the rope together. Did you take one step to mend a split? Day three hundred seventy.",
+      "voice": "Yesterday: habl, the rope of Allah, held by everyone together. Your line was hold the rope together.",
       "screen": [
         "`HOLD THE ROPE TOGETHER.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Every group chat has one. The person who posts the fundraiser link, reminds everyone it's someone's birthday, suggests visiting the friend in the hospital, and, now and then, says gently, maybe let's not share that. Sometimes people roll their eyes. The group would miss them if they left. The very next verse after the rope of Allah describes a whole community of people like that, and gives them a job description.",
+      "voice": "Every group chat has one. The person who posts the fundraiser link, reminds everyone it's someone's birthday, suggests visiting the friend in the hospital, and now and then says gently, maybe let's not share that. Sometimes people roll their eyes. The group would miss them if they left. The very next verse after the rope of Allah describes a whole community of people like that, and gives them a job description.",
       "screen": [
         "`THE ONE IN THE GROUP CHAT.` → `THE BIRTHDAY, THE HOSPITAL VISIT.` → `A JOB DESCRIPTION.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "In Pickthall's translation, 3:104 says: \"And there may spring from you a nation who invite to goodness, and enjoin right conduct and forbid indecency. Such are they who are successful.\" The famous Arabic phrase inside it is al-amr bil-ma'ruf wan-nahy 'an al-munkar: enjoining what is right and forbidding what is wrong. Listen to the two key words. Ma'ruf comes from a root meaning to know. The good here is the recognized good, the kind decent people know when they see it. Munkar, the wrong, is what's rejected, what people recognize as not right. And the verse starts with invite. Invitation comes first, the open door, before any correcting. Scholars noticed a small word too: min, from you. Does it mean a group among you should do this, or that all of you should be this kind of people? Some classical scholars read it as some among you, a duty a part of the community fulfills for everyone. Others read it as describing the whole community. A well-known hadith in Sahih Muslim sets out the steps. Whoever sees a wrong, let him change it with his hand; if he can't, then with his tongue; if he can't, then in his heart, and that is the weakest of faith. Scholars such as al-Ghazali attached conditions: know the matter well, act gently, and don't cause a greater harm than the one you're stopping. So the verse isn't a license to police strangers. It begins with the person who invites, and the good it means is the kind everyone recognizes.",
+      "voice": "In Pickthall's translation, 3:104 says: \"And there may spring from you a nation who invite to goodness, and enjoin right conduct and forbid indecency. Such are they who are successful.\" Inside it is a famous phrase, al-amr bil-ma'ruf wan-nahy 'an al-munkar: enjoining what is right and forbidding what is wrong. Ma'ruf comes from a root meaning to know: the recognized good, the kind decent people know when they see it. Munkar is what's rejected, what people recognize as not right. And the verse starts with invite. The open door comes before any correcting. Scholars noticed a small word too: min, from you. Does it mean a group among you should do this, or that all of you should be this kind of people? Some classical scholars read it as some among you, a duty a part of the community fulfills for everyone. Others read it as describing the whole community. A well-known hadith in Sahih Muslim sets out the steps: whoever sees a wrong, let him change it with his hand; if he can't, then with his tongue; if he can't, then in his heart, and that is the weakest of faith. Scholars such as al-Ghazali attached conditions: know the matter well, act gently, and don't cause a greater harm than the one you're stopping. So the verse isn't a license to police strangers. It begins with the person who invites, and the good it means is the kind everyone recognizes.",
       "screen": [
         "`INVITE, ENJOIN, FORBID` · `MA'RUF: THE GOOD EVERYONE KNOWS` · `SOME OF YOU, OR ALL OF YOU?` · `HAND, TONGUE, HEART` · then, large: `A PEOPLE WHO INVITE TO GOODNESS.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "When the bell starts, think of one good thing already happening around you that could use a push. A cousin's small business, a friend's effort to quit something, a neighbor organizing a food drive, a child practicing an instrument. Picture the person. Then picture yourself encouraging them: the exact words, the message, the way you'd say it. Keep it warm and specific. You're not correcting anyone today. You're inviting good to grow. The bell holds the time.",
+      "voice": "Think of one good thing already happening around you that could use a push: a cousin's small business, a friend's effort to quit something, a neighbor's food drive, a child practicing an instrument. Picture the person, and the warm, specific words you'd use to encourage them; you're not correcting anyone, just inviting good to grow.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: invite to good. Today, send that encouragement you just pictured, one real message to one real person doing something good. Day three hundred seventy.",
+      "voice": "Your line: invite to good. The open door comes first. Day three hundred seventy, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Muslims describe enjoining good and forbidding wrong as a communal duty; in practice it ranges from encouraging prayer and charity to gently advising friends, with scholars stressing knowledge, gentleness and avoiding greater harm.",
   "games": {
+    "guess": [
+      "the known good, what decent people recognize",
+      "a rule known only to trained scholars",
+      "the wrong that everyone rejects"
+    ],
     "match": {
       "prompt": "calling to good — tap the pairs.",
       "pairs": [
@@ -132,14 +137,47 @@
     ],
     "recall": [
       [
-        "yas'alunaka",
-        "they ask you"
+        "kalimatin sawa'",
+        "a word level between both sides"
       ],
       [
         "jidal",
         "quarreling, disputing"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your friend from the gym",
+      "says": "Does 'enjoin good, forbid wrong' mean Muslims should police other people?",
+      "options": [
+        "3:104 starts with invite; scholars add: know the matter, act gently, cause no greater harm.",
+        "Yes: 3:104 tells every Muslim to police strangers as strictly as they can.",
+        "No: it's only about your own heart, never about speaking or acting at all."
+      ],
+      "answer": 0,
+      "meaning": "3:104 begins with inviting to goodness. Scholars such as al-Ghazali added conditions: know the matter, act gently, don't cause a greater harm."
+    },
+    "gloss": {
+      "ma'ruf": {
+        "meaning": "the known good, what decent people recognize",
+        "script": "معروف",
+        "say": "ma-ROOF"
+      },
+      "munkar": {
+        "meaning": "the wrong, what people recognize as not right",
+        "script": "منكر",
+        "say": "MUN-kar"
+      },
+      "al-Ghazali": {
+        "meaning": "a classical scholar who set conditions for correcting wrong",
+        "script": "الغزالي",
+        "say": "al-gha-ZAA-lee"
+      },
+      "Sahih Muslim": {
+        "meaning": "a major collection of hadith",
+        "script": "صحيح مسلم",
+        "say": "sa-HEEH MUS-lim"
+      }
+    }
   },
   "sources": [
     {
@@ -169,7 +207,9 @@
       "Pickthall wording of 3:104 quoted from memory; check every word.",
       "Sahih Muslim 49 cited from memory; confirm.",
       "Two readings of 'min' summarized; confirm that 'some among you' is the majority classical reading as implied.",
-      "Conditions (knowledge, gentleness, no greater harm) are a summary of scholarly discussion; confirm."
+      "Conditions (knowledge, gentleness, no greater harm) are a summary of scholarly discussion; confirm.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, gardens with running water, and the jannah they point toward. Your line was: under which rivers flow. Did you drink a glass of water slowly? Day one thousand ten.",
+      "voice": "Yesterday: jannah, the garden, and the walled courtyard gardens under which rivers flow.",
       "screen": [
         "`UNDER WHICH RIVERS FLOW.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Start with the rug. A saying of the Prophet Muhammad, peace be upon him, in Sahih al-Bukhari, says the earth has been made for him a place of prayer, and pure. Any clean ground will do. So a prayer rug isn't required. It does a quieter job: it marks off a clean patch of floor, and it lets someone carry a place of prayer rolled up under one arm. Another hadith in al-Bukhari mentions the Prophet praying on a small mat. On many prayer rugs, the weaver puts an arch at one end, the shape of the mihrab, the niche in a mosque wall that shows the direction of prayer. Lay the rug the right way, and the little arch points where to face. Then there are the great carpets, Persian and Turkish and more, knotted by hand. Some are woven as gardens, yesterday's channels and all: a garden you can keep on the floor. The Qur'an's own picture of paradise has carpets in it. In Pickthall's translation: \"And silken carpets spread.\" Now the tiles. In the town of Iznik, in Turkey, potters made tiles in white, cobalt blue and turquoise, with a red that sits up slightly from the glaze. The Ottomans lined mosques with them, so tulips climb the walls around the people praying. One more thing, because it gets told a lot: people say weavers leave a deliberate mistake in every carpet, because only God is perfect. It's a story people tell. There's no sure source behind it, and a weaver's mistakes can arrive on their own. Woven prayer.",
+      "voice": "Start with the rug. A saying of the Prophet Muhammad, peace be upon him, in Sahih al-Bukhari, says the earth has been made for him a place of prayer, and pure. Any clean ground will do. So a prayer rug isn't required. It does a quieter job: it marks off a clean patch of floor, and lets someone carry a place of prayer rolled up under one arm. Another hadith in al-Bukhari mentions the Prophet praying on a small mat. On many prayer rugs the weaver puts an arch at one end, the shape of the mihrab, the niche in a mosque wall that shows the direction of prayer. Lay the rug the right way, and the little arch points where to face. Then there are the great carpets, Persian, Turkish and more, knotted by hand. Some are woven as gardens, yesterday's channels and all. The Qur'an's own picture of paradise has carpets in it. In Pickthall's translation: \"And silken carpets spread.\" Now the tiles. In the town of Iznik, in Turkey, potters made tiles in white, cobalt blue and turquoise, with a red that sits up slightly from the glaze. The Ottomans lined mosques with them, so tulips climb the walls around the people praying. One more thing, because it gets told a lot: people say weavers leave a deliberate mistake in every carpet, because only God is perfect. It's a story people tell. There's no sure source behind it, and a weaver's mistakes can arrive on their own. Woven prayer.",
       "screen": [
         "`ANY CLEAN GROUND WILL DO.` · `AN ARCH THAT POINTS THE WAY.` · `A GARDEN ON THE FLOOR.` · `TULIPS CLIMB THE IZNIK TILES.` · then, large: `WOVEN PRAYER.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: touch a woven thing. A rug, a scarf, a blanket, the sleeve of what you're wearing. Settle, and breathe. Run your fingers slowly across it. Feel where the threads cross, and cross again. Someone put every one of those crossings there, by hand or with a machine that someone built and tended. Think about those hands for a moment. If you pray, you can thank God for them. If you don't, just thank them, quietly, wherever they are. The bell holds the time.",
+      "voice": "Rest your fingers on something woven, a rug, a scarf, your own sleeve, and feel slowly where the threads cross and cross again. Someone put every crossing there, by hand or with a machine someone built and tended; think of those hands for a moment. If you pray, you can thank God for them; if you don't, just thank them quietly, wherever they are.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: woven prayer. Today, notice one handmade thing you use, and handle it with a little more care. Day one thousand ten.",
+      "voice": "Your line: woven prayer. Any clean ground will do; the rug just carries it. Day one thousand ten.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "At home or at work, a Muslim may pray on a prayer rug laid toward Mecca, though any clean place is enough; mosque floors are commonly carpeted, and some Ottoman mosques are lined with Iznik tiles.",
   "games": {
+    "guess": [
+      "the niche in a mosque wall that shows the way to pray",
+      "the raised pulpit where the Friday sermon is given",
+      "a small prayer rug carried rolled under one arm"
+    ],
     "match": {
       "prompt": "carpets and tiles — tap the pairs.",
       "pairs": [
@@ -132,14 +137,44 @@
     ],
     "recall": [
       [
-        "khatt",
-        "a line, handwriting, calligraphy"
+        "minaret",
+        "the tower that lifts the call to prayer"
       ],
       [
         "Mumtaz Mahal",
-        "at the exact center"
+        "the empress the Taj Mahal was built for"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your officemate",
+      "says": "Do Muslims need a special rug to be able to pray?",
+      "options": [
+        "No. Any clean ground will do; a rug just marks off a clean place to pray.",
+        "Yes. Prayer only counts on a rug that has an arch woven at one end.",
+        "Yes. Each rug must be blessed in a mosque before anyone prays on it."
+      ],
+      "answer": 0,
+      "meaning": "In Sahih al-Bukhari, the earth is made a place of prayer, and pure. A rug isn't required; it marks a clean patch, and its arch points the way."
+    },
+    "gloss": {
+      "mihrab": {
+        "meaning": "the niche showing the direction of prayer",
+        "script": "محراب",
+        "say": "mih-RAHB"
+      },
+      "Iznik": {
+        "meaning": "a town in Turkey famous for its tiles",
+        "say": "IZ-nik"
+      },
+      "Istanbul": {
+        "meaning": "a city in Turkey with old tiled mosques",
+        "say": "IS-tahn-bool"
+      },
+      "Ottomans": {
+        "meaning": "the Turkish dynasty whose mosques were lined with Iznik tiles",
+        "say": "OT-uh-munz"
+      }
+    }
   },
   "sources": [
     {
@@ -171,7 +206,9 @@
       "The 'deliberate flaw' tale is framed as a story people tell with no sure source; confirm the framing is fair.",
       "Original: sajjada sharing a root with sujud is a morphology claim; confirm.",
       "Pickthall 88:16 quoted from memory; verify.",
-      "Audit: Bukhari 335/381 and Pickthall 88:16 check out; the flaw tale is fairly framed; no change."
+      "Audit: Bukhari 335/381 and Pickthall 88:16 check out; the flaw tale is fairly framed; no change.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

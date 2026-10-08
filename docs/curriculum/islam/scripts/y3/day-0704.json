@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Zamzam found again. Your line was: the old well, found. What good thing did you take one small step back toward? Day seven hundred four.",
+      "voice": "Yesterday, Zamzam, the old well dug out again. Your line was: the old well, found.",
       "screen": [
         "`THE OLD WELL, FOUND.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "He gathered his sons, the sirah says, told them of the vow, and they agreed. Lots were cast at the House with marked arrows, and the lot fell on Abdullah, the youngest, his father's favorite. He led the boy toward the place of sacrifice. And Mecca stopped him. Quraysh, and the boy's family on his mother's side, stood in his way: if you do this, they said, men will start bringing their sons here to sacrifice. Find another way. They sent him to a woman people consulted on hard questions. She asked what the blood-money was among them. Ten camels. Then cast lots, she said, between the boy and ten camels. If the lot falls on the boy, add ten more, and keep going until your Lord is satisfied. They cast. Abdullah. Twenty camels. Abdullah. Thirty. Abdullah. On and on, until at a hundred camels the lot fell on the camels. The sirah says he cast it three more times to be sure, and each time it fell on the camels. They were slaughtered and left for anyone to eat. Abdullah lived, and he would become the father of the Prophet Muhammad ﷺ. Some who tell this story hear in it an echo of Ibrahim, who was told to sacrifice his son and was stopped. In surah thirty-seven, Pickthall translates that moment: \"Then We ransomed him with a tremendous victim.\" Ransomed: a life paid for with something else. And the sirah leaves a picture close to it: a son walking away from the altar alive, and later, a ransomed father.",
+      "voice": "He gathered his sons, the sirah says, told them of the vow, and they agreed. Lots were cast at the House with marked arrows, and the lot fell on Abdullah, the youngest, his father's favorite. He led the boy toward the place of sacrifice. And Mecca stopped him. Quraysh, and the boy's family on his mother's side, stood in his way: if you do this, they said, men will start bringing their sons here to sacrifice. Find another way. They sent him to a woman people consulted on hard questions. She asked what the blood-money was among them. Ten camels. Then cast lots, she said, between the boy and ten camels. If the lot falls on the boy, add ten more, and keep going until your Lord is satisfied. They cast. Abdullah. Twenty camels. Abdullah. Thirty. Abdullah. On and on, until at a hundred camels the lot fell on the camels. The sirah says he cast it three more times to be sure, and each time it fell on the camels. They were slaughtered and left for anyone to eat. Abdullah lived, and he would become the father of the Prophet Muhammad ﷺ. Some who tell this story hear in it an echo of Ibrahim, who was told to sacrifice his son and was stopped. In surah thirty-seven, Pickthall translates that moment: \"Then We ransomed him with a tremendous victim.\" Ransomed: a life paid for with something else. The sirah leaves a picture close to it: a son walking away from the altar alive, and later, a ransomed father.",
       "screen": [
         "`THE LOT FALLS ON ABDULLAH.` · `MECCA STANDS IN THE WAY.` · `TEN CAMELS AT A TIME.` · `RANSOMED, LIKE IBRAHIM'S SON.` · then, large: `WE RANSOMED HIM WITH A TREMENDOUS VICTIM.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: a life spared. Settle, and breathe slowly. Bring to mind a life that was spared: maybe your own, in a near miss on the road or an illness that turned, maybe someone you love who came through when they might not have. Let the memory come without the fear, just the fact of it: they are here. You are here. Stay with that. If you pray, you can thank Allah for that life, in your own words. If you don't, simply let gratitude sit where the fear once was. The bell holds the time.",
+      "voice": "Bring to mind a life that was spared, maybe your own in a near miss or an illness that turned, maybe someone you love who came through when they might not have, and let the memory come without the fear, just the fact of it: they are here, you are here. If you pray, you can thank Allah for that life in your own words; if you don't, simply let gratitude sit where the fear once was.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: a ransomed father. Today, tell the person whose life you remembered that you're glad they're here. Tomorrow, Abraha's elephant. Day seven hundred four.",
+      "voice": "Your line: a ransomed father. Tomorrow, Abraha's elephant. Day seven hundred four, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "The story of Abdullah's ransom is told in the sirah books and in mosque classes on the Prophet's family, and the sacrifice at Eid al-Adha remembers Ibrahim's ransomed son.",
   "games": {
+    "guess": [
+      "the son ransomed by a hundred camels",
+      "the uncle who raised the orphaned boy",
+      "the grandfather who dug out the old well"
+    ],
     "match": {
       "prompt": "a hundred camels — tap the pairs.",
       "pairs": [
@@ -132,14 +137,47 @@
     ],
     "recall": [
       [
-        "sirah",
-        "the story of the Prophet's life"
+        "hanif",
+        "upright, turned toward the one God"
       ],
       [
-        "Qalb",
-        "heart, the thing that turns"
+        "bismillah",
+        "in the name of Allah"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your teenage son",
+      "says": "Did Abd al-Muttalib actually sacrifice his son?",
+      "options": [
+        "No. Lots were cast against camels, ten more each time, until a hundred ransomed him.",
+        "Yes, but Abdullah was brought back to life afterward, the sirah says.",
+        "No, the boy ran away from Mecca before the lots could even be cast."
+      ],
+      "answer": 0,
+      "meaning": "The sirah says the lot kept falling on Abdullah until a hundred camels; the camels were slaughtered instead, and he lived."
+    },
+    "gloss": {
+      "Abdullah": {
+        "meaning": "Abd al-Muttalib's youngest son, the Prophet's father",
+        "script": "عبد الله",
+        "say": "ab-DUL-lah"
+      },
+      "Abd al-Muttalib": {
+        "meaning": "the Prophet's grandfather, who made the vow",
+        "script": "عبد المطلب",
+        "say": "ABD al-mut-TA-lib"
+      },
+      "Quraysh": {
+        "meaning": "the tribe of Mecca",
+        "script": "قريش",
+        "say": "qu-RAYSH"
+      },
+      "Ibrahim": {
+        "meaning": "Abraham, told to sacrifice his son and stopped",
+        "script": "إبراهيم",
+        "say": "ib-raa-HEEM"
+      }
+    }
   },
   "sources": [
     {
@@ -164,7 +202,9 @@
       "Abdullah as the youngest and his father's favorite, the role of his maternal kin (Banu Makhzum), and the woman consulted (a diviner, in Ibn Ishaq) are from memory; confirm. The script calls her 'a woman known for judging such questions' rather than a diviner; confirm this is fair.",
       "The 'son of the two sacrificed' saying is said to be graded weak; confirm grading and wording.",
       "Commentators differ on whether the son in 37:107 is Isma'il or Ishaq; the script does not name the son in the verse, and names Isma'il only as the meaning of the weak saying.",
-      "Editor: cut the weak 'son of the two sacrificed' saying (teach, trapdoor, source) and the fida' word-family claim, since neither is in the cited texts; the closing now rests on 37:107 and the sirah only. The consulted woman is 'a woman people consulted on hard questions'. howItsDone no longer generalizes about Muslims. The note above on Isma'il and the weak saying no longer applies."
+      "Editor: cut the weak 'son of the two sacrificed' saying (teach, trapdoor, source) and the fida' word-family claim, since neither is in the cited texts; the closing now rests on 37:107 and the sirah only. The consulted woman is 'a woman people consulted on hard questions'. howItsDone no longer generalizes about Muslims. The note above on Isma'il and the weak saying no longer applies.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

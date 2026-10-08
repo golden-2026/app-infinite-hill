@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the road houses, caravanserais and khans along the trade roads. Your line was: rest for the traveler. Whose journey did you make easier? Day one thousand sixteen.",
+      "voice": "Yesterday: caravanserais and khans, road houses that made a stranger a guest: rest for the traveler.",
       "screen": [
         "`REST FOR THE TRAVELER.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Washing sits close to the heart of Muslim practice. Before prayer comes wudu: washing the face, the hands and arms, wiping the head, and then the feet, as surah five of the Qur'an sets out. Sunni Muslims wash the feet; Shia Muslims read the same verse as asking them to wipe. After certain states, such as sex or menstruation, comes ghusl, a full bath. A saying of the Prophet Muhammad, peace be upon him, in Sahih Muslim calls purity half of faith. Another, in Sahih al-Bukhari, asks those coming to Friday prayer to bathe first. And the Qur'an says that God loves those who turn to Him, and loves those who keep themselves clean. So in a town where houses had no running water, a public bath was not a luxury. It was where the town got ready to pray. Hammams were built near mosques and markets. Some were endowed as waqf, and their fees helped pay for the mosque or school next door. Inside, a path from cool to warm to hot, and back again. Men and women went at separate hours or to separate baths. And the hammam was more than washing. Neighbors met there. Before a wedding, or after a birth, families came with food and music. People also tell of mothers looking over the young women at the baths for a bride for their sons. There were limits too: a hadith collected by al-Tirmidhi tells men to enter only with a waist cloth. The hammam held both: strict about the body, generous with company. Clean together.",
+      "voice": "Washing sits close to the heart of Muslim practice. Before prayer comes wudu: washing the face, the hands and arms, wiping the head, and then the feet, as surah five of the Qur'an sets out. Sunni Muslims wash the feet; Shia Muslims read the same verse as asking them to wipe. After certain states, such as sex or menstruation, comes ghusl, a full bath. A saying of the Prophet Muhammad, peace be upon him, in Sahih Muslim calls purity half of faith. Another, in Sahih al-Bukhari, asks those coming to Friday prayer to bathe first. And the Qur'an says that God loves those who turn to Him, and loves those who keep themselves clean. So in a town where houses had no running water, a public bath wasn't a luxury. It was where the town got ready to pray. Hammams were built near mosques and markets. Some were endowed as waqf, and their fees helped pay for the mosque or school next door. Inside, a path from cool to warm to hot, and back again. Men and women went at separate hours or to separate baths. And the hammam was more than washing. Neighbors met there. Before a wedding, or after a birth, families came with food and music. People also tell of mothers looking over the young women at the baths for a bride for their sons. There were limits too: a hadith collected by al-Tirmidhi tells men to enter only with a waist cloth. The hammam held both: strict about the body, generous with company. Clean together.",
       "screen": [
         "`WUDU, GHUSL, HALF OF FAITH.` · `A TOWN GETTING READY TO PRAY.` · `COOL, WARM, HOT, AND BACK.` · `STRICT ABOUT BODIES, GENEROUS WITH COMPANY.` · then, large: `CLEAN TOGETHER.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: take a long, grateful wash. Later today, take a shower or a bath a little slower than usual. Right now, wash your hands and face, slowly, or simply imagine it. Settle, and breathe. Feel the water's temperature. Follow it: the hands, then the face, then the back of the neck. Notice where it feels cool and where it warms. If you pray, you can make it your wudu, with intention. If you don't, let it simply be a slow, careful wash. The bell holds the time.",
+      "voice": "Wash your hands and face slowly now, or simply imagine it, and feel the water's temperature: the hands, then the face, then the back of the neck, where it feels cool and where it warms. If you pray, you can make it your wudu, with intention; if you don't, let it be a slow, careful wash.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: clean together. Today, share something that refreshes with someone nearby: a meal, a walk, a cold drink, a clean shared space. Day one thousand sixteen.",
+      "voice": "Your line: clean together. A town getting ready to pray, side by side. See you tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Muslims make wudu before prayer and ghusl after major impurity and, by custom, before Friday prayer; historic hammams are still in use in cities such as Istanbul, Fez, Cairo and Damascus, with separate hours or sections for men and women.",
   "games": {
+    "guess": [
+      "a public bathhouse, near the mosque and the market",
+      "the washing before prayer: face, hands, head, feet",
+      "a full bath taken at home after certain states"
+    ],
     "match": {
       "prompt": "hammam — tap the pairs.",
       "pairs": [
@@ -132,14 +137,52 @@
     ],
     "recall": [
       [
-        "jannah",
-        "a garden, and the word for paradise"
+        "The Burdah",
+        "al-Busiri's poem of the cloak"
       ],
       [
-        "khatt",
-        "a line, handwriting, calligraphy"
+        "minaret",
+        "the tower that lifts the call to prayer"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your friend from school",
+      "says": "Why were old public baths built right next to mosques?",
+      "options": [
+        "Washing comes before prayer, and many homes had no running water.",
+        "Every Muslim had to take a full bath before each daily prayer.",
+        "Baths held the sermon when the mosque next door got too full."
+      ],
+      "answer": 0,
+      "meaning": "Wudu comes before prayer and ghusl after certain states. Where houses had no running water, the hammam was where the town got ready to pray."
+    },
+    "gloss": {
+      "hammam": {
+        "meaning": "a public bathhouse",
+        "script": "حمام",
+        "say": "ham-MAHM"
+      },
+      "wudu": {
+        "meaning": "the washing before prayer",
+        "script": "وضوء",
+        "say": "woo-DOO"
+      },
+      "ghusl": {
+        "meaning": "a full ritual bath",
+        "script": "غسل",
+        "say": "GHUSL"
+      },
+      "al-Tirmidhi": {
+        "meaning": "compiler of a major hadith collection",
+        "script": "الترمذي",
+        "say": "at-TIR-mi-dhee"
+      },
+      "waqf": {
+        "meaning": "property endowed forever for good",
+        "script": "وقف",
+        "say": "WAKF"
+      }
+    }
   },
   "sources": [
     {
@@ -183,7 +226,10 @@
       "Wudu summary from 5:6 (face, hands to elbows, wipe head, feet); confirm.",
       "Hammam endowed as waqf supporting a neighboring mosque/school, the cool-warm-hot sequence, separate hours, wedding/birth gatherings, and the bride-seeking custom (framed as 'people tell') are general social history; confirm.",
       "Pickthall 2:222 quoted from memory; verify.",
-      "Audit: the wudu line said the feet are washed 'as surah five sets out', which reads 5:6 one way only; it now says Sunni Muslims wash the feet and Shia Muslims read the same verse as asking them to wipe. Cut the filler line about old men arguing over prices and poems. A Keeper may want the trapdoor or howItsDone to mention the Sunni/Shia difference too."
+      "Audit: the wudu line said the feet are washed 'as surah five sets out', which reads 5:6 one way only; it now says Sunni Muslims wash the feet and Shia Muslims read the same verse as asking them to wipe. Cut the filler line about old men arguing over prices and poems. A Keeper may want the trapdoor or howItsDone to mention the Sunni/Shia difference too.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "Job 2: the practice's 'later today, take a shower' line was cut as homework; the slow wash and the wudu option stay.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Shawwal, and your line was six more. Which small Ramadan habit did you keep going for one more day? Day five hundred thirteen.",
+      "voice": "Yesterday: Shawwal, and six more fasts after the month ends. Your line was six more.",
       "screen": [
         "`SIX MORE.`"
       ]
@@ -38,7 +38,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "In Sahih al-Bukhari, Ibn 'Abbas reports that the Prophet Muhammad ﷺ said there are no days in which good deeds are more beloved to God than these, meaning the first ten days of Dhul Hijjah. The companions were startled. Not even striving in the path of God? Not even that, he said, except a man who goes out with his life and his wealth and comes back with nothing. It's a striking answer. An ordinary good deed, done in these ten days, is set beside the hardest sacrifice there is. Commentators also connect the days to the Qur'an. Surah Al-Fajr opens with an oath, by the dawn, and ten nights, and commentators going back to Ibn 'Abbas understood those ten nights as these. And Surah Al-Hajj speaks of remembering God's name on appointed days, which Ibn 'Abbas is reported to have explained as the ten. What do people actually do? They do more of what they already do. Extra prayer, charity, reading, kindness. Some fast the first nine days. Others fast at least the ninth, the day of 'Arafah, when the pilgrims stand on the plain; a hadith in Sahih Muslim hopes that fast wipes away the faults of the year before and the year after. Some companions, Bukhari notes, used to walk through the markets in these days saying the takbir aloud, and people around them took it up. And a hadith in Muslim says that someone planning to offer a sacrifice for Eid shouldn't cut their hair or nails from the start of the month, a small mark in the body that the season has begun. The point isn't a new set of rules. It's a window: the same deeds, in a season when they weigh more.",
+      "voice": "In Sahih al-Bukhari, Ibn 'Abbas reports that the Prophet Muhammad ﷺ said there are no days in which good deeds are more beloved to God than these, meaning the first ten days of Dhul Hijjah. The companions were startled. Not even striving in the path of God? Not even that, he said, except a man who goes out with his life and his wealth and comes back with nothing. An ordinary good deed, done in these ten days, is set beside the hardest sacrifice there is. Commentators also connect the days to the Qur'an. Surah Al-Fajr opens with an oath, by the dawn, and ten nights, and commentators going back to Ibn 'Abbas understood those ten nights as these. And Surah Al-Hajj speaks of remembering God's name on appointed days, which Ibn 'Abbas is reported to have explained as the ten. What do people do? More of what they already do: extra prayer, charity, reading, kindness. Some fast the first nine days. Others fast at least the ninth, the day of 'Arafah, when the pilgrims stand on the plain; a hadith in Sahih Muslim hopes that fast wipes away the faults of the year before and the year after. Some companions, Bukhari notes, used to walk through the markets in these days saying the takbir aloud, and people around them took it up. And a hadith in Muslim says that someone planning to offer a sacrifice for Eid shouldn't cut their hair or nails from the start of the month, a small mark in the body that the season has begun. The point isn't a new set of rules. It's a window: the same deeds, in a season when they weigh more.",
       "screen": [
         "`NO DAYS DEARER FOR GOOD DEEDS.` · `BY THE DAWN, AND TEN NIGHTS.` · `THE FAST OF 'ARAFAH.` · `THE SAME DEEDS, A HEAVIER SEASON.`"
       ]
@@ -46,7 +46,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: one extra good, each day. Sit, and let the breath settle. Think of ten days, starting today. Choose one small good you could add to each of them. Not a heroic one. A text to someone who's lonely. A coin in a box. Ten minutes of reading. Picking up litter on the walk home. Pick something you can actually do ten times. Picture yourself doing it on day twelve, when you're tired. If it still fits, keep it. If you pray, you can make your intention now. The bell holds the time.",
+      "voice": "Think of ten days, starting today, and choose one small good you could add to each: a text to someone who's lonely, a coin in a box, ten minutes of reading, picking up litter on the walk home. Picture doing it near the end, when you're tired; if it still fits, keep it. If you pray, you can make your intention now.",
       "screen": []
     },
     {
@@ -60,7 +60,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the best ten days. Today, do the first of your ten small goods, and mark it somewhere so day two remembers. Day five hundred thirteen.",
+      "voice": "Your line: the best ten days. A window that opens once a year. That's day five hundred thirteen.",
       "screen": []
     },
     {
@@ -74,6 +74,11 @@
   ],
   "howItsDone": "In the first ten days of Dhul Hijjah many Muslims increase prayer, charity, remembrance and takbir; many fast the day of 'Arafah, and some fast the first nine days.",
   "games": {
+    "guess": [
+      "the month of pilgrimage, the last of the year",
+      "the feast that ends the month of fasting",
+      "the day pilgrims stand on the plain of 'Arafah"
+    ],
     "match": {
       "prompt": "the ten days — tap the pairs.",
       "pairs": [
@@ -134,14 +139,47 @@
     ],
     "recall": [
       [
-        "Mi'raj",
-        "the ascent through the heavens"
+        "takbirat",
+        "the takbirs: God is greatest"
       ],
       [
-        "Mistah",
-        "relative who spread the slander"
+        "talbiya",
+        "the pilgrims' call: here I am, O God"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "a friend from the gym",
+      "says": "If you're not going on Hajj, does the pilgrimage month mean anything for you?",
+      "options": [
+        "Yes, a hadith calls its first ten days the dearest to God for good deeds.",
+        "No, the ten days only count for pilgrims standing at 'Arafah.",
+        "Yes, everyone at home must fast all ten days, including Eid."
+      ],
+      "answer": 0,
+      "meaning": "In Bukhari, no days are dearer to God for good deeds than these ten; people at home keep them with prayer, charity and fasting."
+    },
+    "gloss": {
+      "Dhul Hijjah": {
+        "meaning": "the month of pilgrimage, the last of the year",
+        "script": "ذو الحجة",
+        "say": "dhul-HIJ-ja"
+      },
+      "'Arafah": {
+        "meaning": "the plain where pilgrims stand on the ninth",
+        "script": "عرفة",
+        "say": "A-ra-fa"
+      },
+      "Al-Fajr": {
+        "meaning": "Surah eighty-nine, which opens: by the dawn, and ten nights",
+        "script": "الفجر",
+        "say": "al-FAJR"
+      },
+      "Ibn 'Abbas": {
+        "meaning": "a companion who reported and explained these days",
+        "script": "ابن عباس",
+        "say": "ibn ab-BAAS"
+      }
+    }
   },
   "sources": [
     {
@@ -190,7 +228,9 @@
       "Ibn 'Abbas on 22:28 'appointed days' as the ten: reported as a ta'liq in Bukhari; confirm.",
       "The hair-and-nails ruling: schools differ on whether it is obligatory or recommended; script keeps it descriptive.",
       "The hook says Ramadan's nights carry Laylat al-Qadr and that this hadith names different days; scholars discuss how the two compare (days vs nights). Confirm the framing is fair.",
-      "Editor review (2026-10-01): hook no longer opens 'Ask most people' (repeated day 508's opener and made a 'most' claim); 'millions of pilgrims', 'many commentators', 'many fast' and 'most keep the season at home' cut or softened; fork no longer casts the listener as a companion."
+      "Editor review (2026-10-01): hook no longer opens 'Ask most people' (repeated day 508's opener and made a 'most' claim); 'millions of pilgrims', 'many commentators', 'many fast' and 'most keep the season at home' cut or softened; fork no longer casts the listener as a companion.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

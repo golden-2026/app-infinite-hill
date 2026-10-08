@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: confiteri, and jumps. Your line was awake to it. Did you name one fault you'd only just noticed? Day four hundred sixty-six.",
+      "voice": "Yesterday's word was confiteri: admitting your faults is a sign of health. Your line was awake to it.",
       "screen": [
         "`CONFITERI — AWAKE TO IT.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Some weekends we rest. We sleep, walk, cook slowly, see a friend, and come back to Monday with something refilled. Other weekends we just disappear. Phone face down, curtains closed, three seasons of a show, not because we're restoring anything but because we can't face the world. From the outside the two can look identical. In the fifty-fifth letter, Seneca is being carried along the coast near Baiae and passes the seaside villa of a rich man people once envied for his peaceful life. Seneca has a different word for it. Today: hiding isn't leisure.",
+      "voice": "Some weekends you rest. You sleep, walk, cook slowly, see a friend, and come back to Monday with something refilled. Other weekends you just disappear: phone face down, curtains closed, three seasons of a show, not restoring anything but hiding from the world. From the outside the two can look identical. In the fifty-fifth letter, Seneca is carried along the coast near Baiae and passes the seaside villa of a rich man people once envied for his peaceful life. Seneca has a different word for it.",
       "screen": [
         "`SOME WEEKENDS WE REST.` → `SOME WEEKENDS WE DISAPPEAR.` → `THE VILLA EVERYONE ENVIED.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the villa. Servilius Vatia was a wealthy former official who withdrew to his house by the sea and stayed there. When Rome was dangerous, when friends of powerful men were falling, Vatia was safe in retirement, and people used to say: O Vatia, you alone know how to live. Second, Seneca's verdict. No, he says. He knew how to hide, not how to live. There's a huge difference, he adds, between a life of leisure and a life of doing nothing. Third, what real leisure is. The Romans had a word, otium: time away from public business. Seneca thinks it's precious, but only when it's used. Rest that reads, thinks, writes and keeps friends close isn't hiding. It's working on the self. Vatia, as Seneca tells it, withdrew to stay safe while others fell, and was known for nothing but his leisure. Fourth, the place doesn't matter. Seneca says the house is pleasant, with its caves and its stream, but no place gives peace by itself. It's the mind that makes any place restful or restless. You can be at rest in a crowded city, and hiding in a beautiful villa. The question isn't where you went. It's what you were running from, and what you were running toward.",
+      "voice": "Servilius Vatia was a wealthy former official who withdrew to his house by the sea and stayed there. When Rome was dangerous, when friends of powerful men were falling, Vatia was safe in retirement, and people used to say: O Vatia, you alone know how to live. No, Seneca says. He knew how to hide, not how to live. There's a huge difference between a life of leisure and a life of doing nothing. The Romans had a word, otium: time away from public business. Seneca thinks it's precious, but only when it's used. Rest that reads, thinks, writes and keeps friends close isn't hiding; it's working on the self. Vatia, as Seneca tells it, withdrew to stay safe while others fell, and was known for nothing but his leisure. And the place doesn't matter. The house is pleasant, Seneca says, with its caves and its stream, but no place gives peace by itself. The mind makes any place restful or restless. You can be at rest in a crowded city, and hiding in a beautiful villa. The question isn't where you went. It's what you were running from, and what you were running toward.",
       "screen": [
         "`VATIA'S VILLA BY THE SEA.` · `HE KNEW HOW TO HIDE, NOT LIVE.` · `OTIUM: LEISURE THAT'S USED.` · `THE MIND MAKES THE PLACE.` · then, large: `REST, NOT HIDING.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Think of your last real break: an evening, a weekend, a day off. Was it rest or hiding? Maybe some of each. Without judging, notice what you were moving toward, and what you might have been avoiding. Then picture your next free hour. What would make it rest rather than hiding? A walk, a call, a book, a nap you actually chose. Let the picture settle. The bell holds the time.",
+      "voice": "Think of your last real break, an evening, a weekend, a day off, and ask without judging: was it rest or hiding, or some of each? Then picture your next free hour, and what would make it rest: a walk, a call, a book, a nap you actually chose.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: rest, not hiding. Take one real rest today, chosen on purpose, and spend part of it moving toward something you love. Day four hundred sixty-six.",
+      "voice": "Your line: rest, not hiding. Leisure counts when it's used. Day four hundred sixty-six, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Readers of Seneca often plan their leisure as time for reading, reflection and friendship, and check whether a retreat is chosen out of love or out of fear.",
   "games": {
+    "guess": [
+      "leisure, time away from work, precious when it's used",
+      "laziness, a whole life spent doing nothing at all",
+      "a seaside villa where rich Romans went to retire"
+    ],
     "match": {
       "prompt": "Vatia's villa — tap the pairs.",
       "pairs": [
@@ -132,14 +137,39 @@
     ],
     "recall": [
       [
-        "Socrates",
-        "you take yourself along"
+        "lucus",
+        "a sacred grove"
       ],
       [
-        "Pacuvius",
-        "a funeral feast every evening"
+        "Hecaton",
+        "the Stoic: stop hoping, stop fearing"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your best friend",
+      "says": "I spent all weekend under a blanket. Isn't that just rest?",
+      "options": [
+        "Seneca would say rest is time used for something good; hiding is running from things.",
+        "Seneca would say any time off work counts as rest, however you spend it.",
+        "Seneca would say real rest only happens far from the city, in a quiet villa."
+      ],
+      "answer": 0,
+      "meaning": "Letter fifty-five: Vatia knew how to hide, not how to live. Otium is precious when it's used, and the mind, not the place, brings peace."
+    },
+    "gloss": {
+      "otium": {
+        "meaning": "Latin: leisure, time away from public business",
+        "say": "OH-tee-um"
+      },
+      "Servilius Vatia": {
+        "meaning": "a rich former official who retired to a villa by the sea",
+        "say": "ser-VIL-ee-us VAH-tee-uh"
+      },
+      "Baiae": {
+        "meaning": "a Roman resort town on the coast",
+        "say": "BY-eye"
+      }
+    }
   },
   "sources": [
     {
@@ -162,7 +192,9 @@
       "Letters 55.2–4: Seneca carried in a litter past Vatia's villa near Baiae (Cumae); Servilius Vatia, a rich ex-praetor; his retirement during the fall of friends of Sejanus and others; 'O Vatia, solus scis vivere'; 'at ille latere sciebat, non vivere'. Confirm.",
       "55.4 the difference between otiosa vita and ignava; 55.6–8 the villa's caves and stream; 55.8 the mind makes the place. Confirm.",
       "De Otio is mentioned without a date relative to Letters 55, since that dating is uncertain.",
-      "Editor review (2026-10-01): 'everyone in Rome envied' softened to what 55.3 reports (people exclaimed 'O Vatia, solus scis vivere'); replaced the unsourced 'stays in touch with the whole world' and the bare 'chosen out of fear' with 55.3's own detail that Vatia was known for nothing but his leisure ('nulla alia re quam otio notus'). Confirm."
+      "Editor review (2026-10-01): 'everyone in Rome envied' softened to what 55.3 reports (people exclaimed 'O Vatia, solus scis vivere'); replaced the unsourced 'stays in touch with the whole world' and the bare 'chosen out of fear' with 55.3's own detail that Vatia was known for nothing but his leisure ('nulla alia re quam otio notus'). Confirm.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

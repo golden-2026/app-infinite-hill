@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Elveden, and your line was far from punjab. Where did your mind go when you asked where you belong? Today, someone arrives who remembers. Day nine hundred forty-three.",
+      "voice": "Yesterday, Elveden, and your line was far from punjab. Today, someone arrives who remembers.",
       "screen": [
         "`FAR FROM PUNJAB.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "What do you say to a mother you last saw when you were small? A hotel in Calcutta. A grown man in English clothes waits in a room. The door opens, and a woman comes in, older than he remembers, her eyesight failing. She is Maharani Jind Kaur, the queen who was sent away. When she reaches him, the story goes, she runs her hands over his head, looking for his uncut hair, and finds it cut short. Today: mother and son again.",
+      "voice": "What do you say to a mother you last saw when you were small? A hotel in Calcutta. A grown man in English clothes waits in a room. The door opens, and a woman comes in, older than he remembers, her eyesight failing. She is Maharani Jind Kaur, the queen who was sent away. When she reaches him, the story goes, she runs her hands over his head, looking for his uncut hair, and finds it cut short.",
       "screen": [
         "`A HOTEL IN CALCUTTA.` → `A QUEEN WHOSE EYES ARE FAILING.` → `HER HANDS ON HIS HEAD.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, where she had been. After she was separated from her son and sent away, Jind Kaur was held as a prisoner. She escaped, in disguise, and made her way to Nepal, where she lived in exile under the protection of its rulers. All those years, letters between mother and son were watched or stopped. Second, the meeting. Duleep Singh asked to see her, and in time the British allowed it, as long as she did not go back to the Punjab. They met in Calcutta. The boy she had last held was now a grown man, a Christian, living as an English gentleman. Third, what she told him. Jind Kaur came with him to England and lived near him in London. She talked to him about the Punjab, about his father, Ranjit Singh, about the kingdom and how it was lost, and about the Sikh faith he had been raised away from. Histories that follow his life mark this as the moment something in him began to turn. Fourth, a mother's blessing in the Guru Granth Sahib. There's a hymn of Guru Arjan in which a mother speaks to her son: this is your mother's blessing, son, that you never forget the Lord for even an instant. The blessing is about remembering the Lord. In Calcutta, and then in London, this mother's gift was a remembering too: she gave her son back the story of who he was. That's today's line.",
+      "voice": "After she was separated from her son, Jind Kaur was held as a prisoner. She escaped in disguise and made her way to Nepal, where she lived in exile under the protection of its rulers. All those years, letters between mother and son were watched or stopped. Duleep Singh asked to see her, and in time the British allowed it, as long as she did not go back to the Punjab. They met in Calcutta. The boy she had last held was now a grown man, a Christian, living as an English gentleman. She came with him to England and lived near him in London. She talked to him about the Punjab, about his father, Ranjit Singh, about the kingdom and how it was lost, and about the Sikh faith he had been raised away from. Histories that follow his life mark this as the moment something in him began to turn. There's a hymn of Guru Arjan in which a mother speaks to her son: this is your mother's blessing, son, that you never forget the Lord for even an instant. That blessing is about remembering the Lord. In Calcutta, and then in London, this mother's gift was a remembering too: she gave her son back the story of who he was.",
       "screen": [
         "`AN ESCAPE TO NEPAL.` · `A MEETING IN CALCUTTA.` · `STORIES OF THE PUNJAB.` · `A MOTHER'S BLESSING.` · then, large: `SHE TOLD HIM WHO HE WAS.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Two minutes with an elder. Sit, and let your breath slow. Bring to mind your mother, or a grandparent, or any elder who knew you when you were small. Picture their face, their hands, the sound of their voice. What did they tell you about where you come from? If they're living, think of one question you'd like to ask them. If they've died, think of one thing they told you that you'd like to keep. If you pray, you can say Waheguru on each breath out. The bell holds the time.",
+      "voice": "Bring to mind your mother, a grandparent, or any elder who knew you when you were small: their face, their hands, the sound of their voice, and what they told you about where you come from. If they're living, think of one question you'd like to ask them; if they've died, think of one thing they told you that you'd like to keep. If you pray, you can hold them before Waheguru for a few breaths.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: she told him who he was. Today, call your mother or an elder, and ask them one thing about where you come from. Day nine hundred forty-three.",
+      "voice": "Your line: she told him who he was. Some of the best gifts are stories. Day nine hundred forty-three.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Sikhs honor Maharani Jind Kaur as a mother who never stopped resisting the loss of her son and her kingdom, and the meeting in Calcutta is told as the moment Duleep Singh began to recover his heritage.",
   "games": {
+    "guess": [
+      "a blessing, like a mother's for her son",
+      "a farewell spoken at a long parting",
+      "a family story passed down to a child"
+    ],
     "match": {
       "prompt": "mother and son — tap the pairs.",
       "pairs": [
@@ -132,14 +137,49 @@
     ],
     "recall": [
       [
-        "samadhi",
-        "a memorial over cremation ashes"
+        "sarnai",
+        "shelter, sanctuary in the Lord"
       ],
       [
-        "Duleep Singh",
-        "youngest son of Ranjit Singh"
+        "Kaur",
+        "the name of women in the Khalsa"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your mom",
+      "says": "What changed when Duleep Singh met his mother again after all those years?",
+      "options": [
+        "She told him about his father, his kingdom and his faith, and something in him turned.",
+        "Nothing much; she went straight back to Nepal, and they never spoke of the Punjab.",
+        "She took him home to the Punjab, where he was crowned Maharaja a second time."
+      ],
+      "answer": 0,
+      "meaning": "Jind Kaur came with him to England and told him about Ranjit Singh, the kingdom and the Sikh faith; histories mark it as when he began to turn."
+    },
+    "gloss": {
+      "Jind Kaur": {
+        "meaning": "Ranjit Singh's queen and Duleep Singh's mother",
+        "script": "ਜਿੰਦ ਕੌਰ",
+        "say": "JIND KOR"
+      },
+      "Maharani": {
+        "meaning": "great queen",
+        "script": "ਮਹਾਰਾਣੀ",
+        "say": "ma-haa-RAA-nee"
+      },
+      "Calcutta": {
+        "meaning": "the city where mother and son met again",
+        "say": "kal-KUT-uh"
+      },
+      "Nepal": {
+        "meaning": "where Jind Kaur lived in exile after her escape",
+        "say": "nuh-PAWL"
+      },
+      "Guru Arjan": {
+        "meaning": "the Guru whose hymn gives a mother's blessing",
+        "say": "GOO-roo AR-jun"
+      }
+    }
   },
   "sources": [
     {
@@ -165,7 +205,9 @@
       "'Letters ... watched or stopped' — confirm.",
       "Editor: 'would not stay in the Punjab' changed to 'did not go back to the Punjab' (she was in Nepal, not the Punjab, before the meeting), in the teach and the myth item.",
       "Guru Arjan's hymn (poota maataa kee asees...) paraphrased; confirm Ang 496 and Gurmukhi ਅਸੀਸ.",
-      "Audit: the teach no longer equates the hymn's blessing (remembering the Lord) with Jind Kaur telling her son his history; it now draws the link without claiming they are the same."
+      "Audit: the teach no longer equates the hymn's blessing (remembering the Lord) with Jind Kaur telling her son his history; it now draws the link without claiming they are the same.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

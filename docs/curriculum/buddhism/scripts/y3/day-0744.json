@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Mahakassapa: the strict elder and the one who smiled. Your line was both are him. Did someone show you a second picture of themselves? Today, the strict elder at a turning point. Day seven hundred forty-four.",
+      "voice": "Yesterday: Mahakassapa, the strict elder and the one who smiled. Your line was both are him. Today, the strict elder at a turning point.",
       "screen": [
         "`BOTH ARE HIM.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Kassapa is on the road with a large company of monks when a traveler tells them the news: the teacher has died. Some of the monks fall to the ground weeping. Others, calmer, say that all things that come together come apart. And then one monk, named Subhadda, says something else. Enough, friends. Don't grieve. We're free of the great ascetic now. He was always telling us this is allowed, this isn't. From now on we can do as we like. The long discourse on the Buddha's last days records that sentence. And Kassapa is listening.",
+      "voice": "Kassapa is on the road with a large company of monks when a traveler brings the news: the teacher has died. Some monks fall to the ground weeping. Others, calmer, say that all things that come together come apart. Then one monk, named Subhadda, says something else. Enough, friends. Don't grieve. We're free of the great ascetic now. He was always telling us this is allowed, this isn't. From now on we can do as we like. The long discourse on the Buddha's last days records that sentence. And Kassapa is listening.",
       "screen": [
         "`NEWS ON THE ROAD.` → `SOME WEEP, SOME ARE CALM.` → `NOW WE CAN DO AS WE LIKE.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the danger he saw. In the Vinaya, after the funeral, Kassapa tells the monks what Subhadda said. And he says: let us recite the teaching and the discipline together, before what isn't the teaching starts to shine and what is starts to fade. It's not panic. It's foresight. One careless sentence on a road was enough to show how a teaching could bend once its teacher was gone. Second, the choosing. The monks ask him to choose the elders, and the Vinaya numbers them at five hundred, with Ananda among them. They agree to spend the rains in Rajagaha, and they agree that no one else will settle there that season, so the work can go on undisturbed. Third, the work itself. Before they begin, the text says, they spend time repairing the dwellings. Then they meet, and the teaching is asked for and recited and agreed, piece by piece, so that it can be carried in many voices. Fourth, what kind of leadership this is. Kassapa isn't trying to become the new Buddha. The texts don't give him that place. He's gathering people around something bigger than any one of them. The forest monk who wanted almost nothing for himself turned out to want one thing very much: that the teaching wouldn't be lost. So it isn't lost.",
+      "voice": "First, the danger he saw. In the Vinaya, after the funeral, Kassapa tells the monks what Subhadda said, and proposes: let us recite the teaching and the discipline together, before what isn't the teaching starts to shine and what is starts to fade. It's not panic; it's foresight. One careless sentence on a road showed how a teaching could bend once its teacher was gone. Second, the choosing. The monks ask him to choose the elders, and the Vinaya numbers them at five hundred, with Ananda among them. They agree to spend the rains in Rajagaha, and that no one else will settle there that season, so the work can go on undisturbed. Third, the work. First, the text says, they spend time repairing the dwellings. Then they meet, and the teaching is asked for, recited and agreed, piece by piece, so it can be carried in many voices. Fourth, what kind of leadership this is. Kassapa isn't trying to become the new Buddha; the texts don't give him that place. He's gathering people around something bigger than any one of them. The forest monk who wanted almost nothing for himself turned out to want one thing very much: that the teaching wouldn't be lost.",
       "screen": [
         "`ONE CARELESS SENTENCE.` · `RECITE IT BEFORE IT FADES.` · `ELDERS CHOSEN, A PLACE AGREED.` · `GATHERING, NOT RULING.` · then, large: `SO IT ISN'T LOST.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: gather people for a good purpose. Settle, and breathe. Think of something good that could slip away if nobody tends it. A family recipe. A grandparent's stories. A neighborhood habit. The way someone you lost used to do things. Then think of two or three people who also care about it. Picture asking them to sit down together, just once, to say it out loud and keep it. You don't have to send the message yet. Let the idea settle, then rest with the breath. The bell holds the time.",
+      "voice": "Think of something good that could slip away if nobody tends it: a family recipe, a grandparent's stories, the way someone you lost used to do things. Then think of two or three people who also care about it, and picture sitting down together, just once, to say it out loud and keep it. Let the idea settle, then rest with the breath.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: so it isn't lost. Today, write down or say out loud one thing worth keeping, a story, a recipe, a saying, and share it with one person who'll remember it with you. Day seven hundred forty-four.",
+      "voice": "Your line: so it isn't lost. One careless sentence started it; a room full of voices kept the teaching. Rest well.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Theravada tradition counts the gathering at Rajagaha as the first council, and later councils, including modern ones in Myanmar, gathered monks to recite and check the texts together in the same spirit.",
   "games": {
+    "guess": [
+      "a reciting together of the teaching",
+      "a monk's vow to stay silent for life",
+      "a song sung at the Buddha's funeral"
+    ],
     "match": {
       "prompt": "the council: tap the pairs.",
       "pairs": [
@@ -132,14 +137,45 @@
     ],
     "recall": [
       [
-        "Upatissa",
-        "later called Sariputta"
-      ],
-      [
         "Yashodhara",
         "asks why he left without her"
+      ],
+      [
+        "buddhavacana",
+        "the word of the Buddha"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your neighbor",
+      "says": "Why did the elders hold a council so soon after the Buddha died?",
+      "options": [
+        "So the teaching wouldn't bend or fade: they recited and agreed it together.",
+        "To choose Kassapa as the new Buddha, to lead everyone in his place.",
+        "To write the first Buddhist books before all the monks scattered."
+      ],
+      "answer": 0,
+      "meaning": "After Subhadda's careless remark, Kassapa proposed reciting the teaching together, before what isn't the teaching shines and what is fades."
+    },
+    "gloss": {
+      "Sangiti": {
+        "meaning": "a reciting together of the teaching; the word for a council",
+        "script": "सङ्गीति",
+        "say": "SUNG-gee-tee"
+      },
+      "Subhadda": {
+        "meaning": "the monk who said: now we can do as we like",
+        "script": "सुभद्द",
+        "say": "soo-BHUD-duh"
+      },
+      "Rajagaha": {
+        "meaning": "the city where the elders spent the rains reciting",
+        "script": "राजगह",
+        "say": "RAH-juh-guh-huh"
+      },
+      "the rains": {
+        "meaning": "the rainy season, when monks stay in one place"
+      }
+    }
   },
   "sources": [
     {
@@ -165,7 +201,9 @@
       "'The texts don't give him that place': DN 16 / MN 108 show no successor appointed; confirm framing.",
       "howItsDone mentions later councils, including in Myanmar; confirm wording (no dates or numbers given).",
       "Original: सङ्गीति (sangiti); the note gives its meaning, not an etymology. Confirm.",
-      "Editor: replaced 'Kassapa never forgot it' (not in the text) with 'Kassapa is listening'; 'his most important moment' (unsourced superlative) to 'a turning point'; 'how fast a teaching can bend' softened to 'how a teaching could bend'."
+      "Editor: replaced 'Kassapa never forgot it' (not in the text) with 'Kassapa is listening'; 'his most important moment' (unsourced superlative) to 'a turning point'; 'how fast a teaching can bend' softened to 'how a teaching could bend'.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: onoma, the names you carry through the day, and your line, each name tells you what to do. Which role did you step into on purpose? Day four hundred ten.",
+      "voice": "Yesterday's word was onoma: each name you carry tells you what you owe. Your line was each name tells you what to do.",
       "screen": [
         "`ONOMA.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Nobody walks into a calculus class insisting they already know calculus. Nobody sits down at a piano for the first time convinced they can play Chopin. With those things, we know what we don't know. But ask a room full of people what's fair, what a good life is, or how to treat a difficult relative, and plenty of people are sure they already know. Epictetus found that strange, and he said it's exactly where philosophy has to begin. Today: astheneia.",
+      "voice": "Nobody walks into a calculus class insisting they already know calculus. Nobody sits down at a piano for the first time convinced they can play Chopin. With those things, we know what we don't know. But ask a room full of people what's fair, what a good life is, or how to treat a difficult relative, and plenty of people are sure they already know. Epictetus found that strange, and said it's exactly where philosophy has to begin.",
       "screen": [
         "`NOBODY THINKS THEY KNOW CALCULUS.` → `EVERYONE KNOWS WHAT'S FAIR.` → `WHERE PHILOSOPHY BEGINS.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "This is Discourses book two, chapter eleven: what the beginning of philosophy is. For anyone who comes in by the right door, Epictetus says, it begins with noticing your own weakness and inability in the things that matter most. Why there? He explains with geometry and music. Nobody is born with an idea of a right triangle, or of a musical interval. We learn those from teachers, so nobody who hasn't learned them thinks they know them. But good and bad, fair and unfair, noble and shameful: everyone arrives with some sense of those. We're born with the outline. And because we have the outline, we assume we know how to fill it in. That's the trap. Two people can both love justice and still disagree completely about what's just in a given case. So who's right? You can't both be. Seeming right to yourself isn't enough; people who are wrong feel just as certain. So philosophy, he says, starts by admitting that, and then looking for a standard, the way people found the balance for weighing and the rule for measuring straight lines, so that arguments could be settled by something outside our feelings. It's an oddly hopeful beginning. Weakness here doesn't mean you're bad. It means you're honest about being unfinished. The person who says, I don't actually know how to handle my anger, is further along than the person who's sure they've got it figured out.",
+      "voice": "This is Discourses book two, chapter eleven: what the beginning of philosophy is. For anyone who comes in by the right door, Epictetus says, it begins with noticing your own weakness and inability in the things that matter most. Why there? Nobody is born with an idea of a right triangle, or of a musical interval. We learn those from teachers, so nobody who hasn't learned them thinks they know them. But good and bad, fair and unfair, noble and shameful: everyone arrives with some sense of those. We're born with the outline, and because we have it, we assume we know how to fill it in. That's the trap. Two people can both love justice and still disagree completely about what's just in a given case. You can't both be right, and seeming right to yourself isn't enough; people who are wrong feel just as certain. So philosophy starts by admitting that, and then looks for a standard, the way people found the balance for weighing and the rule for measuring straight lines, so that arguments could be settled by something outside our feelings. It's an oddly hopeful beginning. Weakness here doesn't mean you're bad. It means you're honest about being unfinished. The person who says, I don't actually know how to handle my anger, is further along than the person who's sure they've got it figured out.",
       "screen": [
         "`THE RIGHT DOOR IN.` · `NO ONE IS BORN KNOWING GEOMETRY.` · `WE ALL THINK WE KNOW WHAT'S GOOD.` · `LOOK FOR A STANDARD.` · then, large: `START WITH WEAKNESS.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Sit comfortably and breathe. Ask yourself, gently: where am I sure I'm right, and might not be? Maybe about a person, a decision, a way of doing things. Let one come up. Don't argue with it yet. Just say to yourself, plainly: here, I'm not as strong as I think. Notice how that feels: maybe uncomfortable, maybe a strange relief. Then breathe, and let the admission be a beginning. The bell holds the time.",
+      "voice": "Ask yourself, gently: where am I sure I'm right, and might not be? Let one come up, about a person, a decision, a way of doing things, and say plainly inside: here, I'm not as strong as I think. Notice whether that feels uncomfortable or like a strange relief, and let the admission be a beginning.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: honest about being unfinished. Today, admit one weakness, to yourself or to someone you trust, and treat it as a starting line. Day four hundred ten.",
+      "voice": "Your line: honest about being unfinished. That's the right door into philosophy. See you tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Some people who practice Stoicism begin by naming an area where they feel certain but may be wrong, and treat that honest admission as the start of their training.",
   "games": {
+    "guess": [
+      "weakness: seeing you're less sure than you think",
+      "laziness that keeps a student from studying",
+      "the shame of losing an argument in public"
+    ],
     "match": {
       "prompt": "start with weakness: tap the pairs.",
       "pairs": [
@@ -132,14 +137,44 @@
     ],
     "recall": [
       [
-        "Arrian",
-        "the student who wrote it down"
+        "prokopē",
+        "progress, and the one making it"
       ],
       [
-        "Cleanthes",
-        "lead me, Zeus, and you, Destiny"
+        "Arrian",
+        "the student who wrote it down"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your dad",
+      "says": "Why would admitting weakness be the start of anything good?",
+      "options": [
+        "Epictetus said we think we already know good and bad; admitting we don't opens the door.",
+        "Epictetus said weak people should stay quiet and leave big questions to experts.",
+        "Epictetus said weakness proves you're bad, so you have to face it every day."
+      ],
+      "answer": 0,
+      "meaning": "In 2.11, we're born with an outline of good and bad and assume we can fill it in. Philosophy starts by admitting weakness, then seeks a standard."
+    },
+    "gloss": {
+      "astheneia": {
+        "meaning": "Greek for weakness",
+        "script": "ἀσθένεια",
+        "say": "as-THEN-ay-uh"
+      },
+      "Chopin": {
+        "meaning": "a composer famous for demanding piano music",
+        "say": "SHOH-pan"
+      },
+      "Discourses": {
+        "meaning": "Epictetus' talks, written down by his student Arrian",
+        "say": "DIS-kor-siz"
+      },
+      "Epictetus": {
+        "meaning": "a Stoic teacher, once enslaved and later freed",
+        "say": "ep-ik-TEE-tus"
+      }
+    }
   },
   "sources": [
     {
@@ -155,7 +190,9 @@
     "notes": [
       "Discourses 2.11 paraphrased: awareness of one's own weakness and inability about necessary things; no natural notion of a right triangle or a musical interval (half-tone/quarter-tone); natural preconceptions of good and bad; disagreement requires a standard, like weights (the balance) and measures (the rule). Confirm.",
       "Greek ἀσθένεια as the word in 2.11; confirm.",
-      "Editor review (2026-10-01): hook's 'almost everyone is sure' softened; 'invented scales and rulers' changed to 'found the balance and the rule', closer to 2.11's 'discovered'; howItsDone 'many' softened to 'some'."
+      "Editor review (2026-10-01): hook's 'almost everyone is sure' softened; 'invented scales and rulers' changed to 'found the balance and the rule', closer to 2.11's 'discovered'; howItsDone 'many' softened to 'some'.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

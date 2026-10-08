@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday the summit sit went back to Krishna's childhood, and Yashoda saw the universe and was given back her son. Did you come back to something small and near? Today, the singers. Day one thousand forty-nine.",
+      "voice": "Yesterday, vatsalya: Yashoda saw the universe in her son's mouth, and a mother's love gave her back her son. Today, the singers.",
       "screen": [
         "`THE SUMMIT SIT.` · `VAST, AND SMALL, AT ONCE.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A weaver at his loom in Varanasi, throwing the shuttle and singing. A tailor in Maharashtra with a needle in his hand and a name of God on his lips. A shopkeeper whose ledgers of money owed to him, the story goes, ended up in the river. A princess in Rajasthan who sang that she had no one but Krishna. A girl in a Tamil temple town who wore the garland meant for the god before it was offered. Those are some of the faces from the weeks of the saints of bhakti. Today's summit sit climbs back to them.",
+      "voice": "A weaver at his loom in Varanasi, throwing the shuttle and singing. A tailor in Maharashtra with a needle in his hand and a name of God on his lips. A shopkeeper whose ledgers of money owed to him, the story goes, ended up in the river. A princess in Rajasthan who sang that she had no one but Krishna. A girl in a Tamil temple town who wore the garland meant for the god before it was offered. Faces from the weeks of the saints of bhakti.",
       "screen": [
         "`A WEAVER, A TAILOR, A SHOPKEEPER.` → `A PRINCESS, A GARDEN GIRL.` → `THE SAINTS OF BHAKTI.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Sit for the bell's two minutes. Find the language you first heard tenderness in, whatever it is. If you pray, you can let one name of God, in that language, rest on the breath, quietly, again and again, the way the saints repeated a name. If you don't, choose a plain word for thanks in that same tongue. No need to say it aloud. Let it come and go with the breath, like a weaver's shuttle, back and forth. The bell holds the time.",
+      "voice": "Find the language you first heard tenderness in, whatever it is. If you pray, let one name of God in that language rest on the breath, again and again, the way the saints repeated a name; if you don't, choose a plain word for thanks in that same tongue. Let it come and go with the breath, like a weaver's shuttle, back and forth.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: say one kind thing in your first language. Today, say one kind thing in the language you grew up with, to someone who will understand it, or quietly to yourself. Day one thousand forty-nine.",
+      "voice": "Your line: say one kind thing in your first language. Tomorrow, the modern teachers. Day one thousand forty-nine, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "The songs of the bhakti saints are sung in homes, temples and on pilgrim walks across India: Tukaram's abhangas, Kabir's dohas, Mirabai's bhajans and Andal's Tiruppavai, each in its own language.",
   "games": {
+    "guess": [
+      "loving devotion to God, sung in the language of home",
+      "temple ritual done strictly by trained priests",
+      "a vow to leave home and live as a wandering monk"
+    ],
     "match": {
       "prompt": "the saints of bhakti — tap the pairs.",
       "pairs": [
@@ -132,14 +137,56 @@
     ],
     "recall": [
       [
-        "ka",
-        "the throat"
+        "mukta",
+        "free, unbound"
       ],
       [
-        "trataka",
-        "a still gaze at a small mark"
+        "ajapa",
+        "japa that goes on without effort"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your college roommate",
+      "says": "What did the bhakti saints share, if their gods and languages differed?",
+      "options": [
+        "Love for God spoken plainly, in the language of home, by anyone at all.",
+        "They all belonged to one sect and followed the same teacher.",
+        "They were all born into palaces and gave up their wealth."
+      ],
+      "answer": 0,
+      "meaning": "A weaver, a tailor, a trader, a princess, a gardener's girl: different gods named, different tongues, one shared move, love spoken plainly."
+    },
+    "gloss": {
+      "Kabir": {
+        "meaning": "the weaver-poet of Varanasi",
+        "script": "कबीर",
+        "say": "kuh-BEER"
+      },
+      "Namdev": {
+        "meaning": "a tailor poet-saint of Maharashtra",
+        "script": "नामदेव",
+        "say": "NAHM-dayv"
+      },
+      "Tukaram": {
+        "meaning": "a trader poet-saint who sang in Marathi",
+        "script": "तुकाराम",
+        "say": "too-kah-RAHM"
+      },
+      "Andal": {
+        "meaning": "a Tamil poet-saint, raised by a temple gardener",
+        "say": "AHN-dahl"
+      },
+      "Giridhar Gopal": {
+        "meaning": "the cowherd who lifted the mountain: Krishna",
+        "script": "गिरिधर गोपाल",
+        "say": "gi-ri-DHUR go-PAHL"
+      },
+      "Mirabai": {
+        "meaning": "a princess poet-saint devoted to Krishna",
+        "script": "मीराबाई",
+        "say": "MEE-rah-bye"
+      }
+    }
   },
   "sources": [
     {
@@ -165,7 +212,9 @@
       "Kabir paraphrase draws on Songs of Kabir I (Tagore 1915, public domain but not on the validator's list); it mentions temple and mosque as Kabir does. Mirabai paraphrase of 'mere to giridhar gopal, dusro na koi'.",
       "The teach lists the five by trade or station (looms, needles, ledgers, a palace, a garden) without ranking them; confirm the framing.",
       "Editor pass: fixed the garbled Tukaram line (the ledgers in the river were debts owed to him); Andal 'wore' the garland; Chaitanya line no longer implies kirtan was wholly Bengali; the Kabir paraphrase now says God is the speaker, as in the song; fork no longer casts the listener as Kabir.",
-      "Audit 2026-10-01: checked the Kabir paraphrase against Songs of Kabir I and the trade and language attributions; no change."
+      "Audit 2026-10-01: checked the Kabir paraphrase against Songs of Kabir I and the trade and language attributions; no change.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, a thousand cows with gold on their horns, and Yajnavalkya's answer: we bow to the wisest, we just want the cows. Your line was who is the wisest? Did you answer something without proving yourself first? Day three hundred seventy-two.",
+      "voice": "Yesterday, a thousand cows with gold on their horns, and Yajnavalkya's answer: we bow to the wisest, we just want the cows. Your line was who is the wisest?",
       "screen": [
         "`WHO IS THE WISEST?`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Yajnavalkya, Ashvala says, everything here is caught by death. By what does the one who offers the sacrifice get free of death? By the hotri priest, Yajnavalkya answers, by fire, by speech. Speech is the hotri of the sacrifice. Speech is this fire. And that is freedom. That is freedom beyond. Ashvala tries again. Everything is caught by day and night. How does one get free of them? By the priest who handles the offerings, by the eye, by the sun. Everything is caught by the waxing and waning moon. By the priest who sings, by breath, by wind. And the sky has no stairs. How does the sacrificer climb to heaven? By the priest who oversees, by the mind, by the moon. Notice the pattern. Each of the four priests of the great sacrifice turns out to be a part of the person, speech, eye, breath, mind, and each of those turns out to be a power of the cosmos, fire, sun, wind, moon. Yajnavalkya doesn't tell Ashvala the ritual is useless. He shows him what it's a picture of. The priest at the fire is also the voice in your throat. Then Ashvala asks a string of technical questions, how many verses, how many offerings, and Yajnavalkya answers each one. And Ashvala falls silent. Hindu thinkers have weighed this differently. The Mimamsa school held that the rites themselves are the heart of the Veda. Vedanta teachers read passages like this one as the rites pointing past themselves. Both kept the rites, and the fire rites are still performed today.",
+      "voice": "Yajnavalkya, Ashvala says, everything here is caught by death. By what does the one who offers the sacrifice get free of death? By the hotri priest, Yajnavalkya answers, by fire, by speech. Speech is the hotri of the sacrifice. Speech is this fire. That is freedom; that is freedom beyond. Ashvala tries again. Everything is caught by day and night. How does one get free of them? By the priest who handles the offerings, by the eye, by the sun. Everything is caught by the waxing and waning moon. By the priest who sings, by breath, by wind. And the sky has no stairs. How does the sacrificer climb to heaven? By the priest who oversees, by the mind, by the moon. See the pattern. Each of the four priests of the great sacrifice turns out to be a part of the person, speech, eye, breath, mind, and each of those a power of the cosmos, fire, sun, wind, moon. Yajnavalkya doesn't tell Ashvala the ritual is useless. He shows him what it's a picture of. The priest at the fire is also the voice in your throat. Then Ashvala asks a string of technical questions, how many verses, how many offerings, and Yajnavalkya answers each one. And Ashvala falls silent. Hindu thinkers have weighed this differently. The Mimamsa school held that the rites themselves are the heart of the Veda. Vedanta teachers read passages like this one as the rites pointing past themselves. Both kept the rites, and the fire rites are still performed today.",
       "screen": [
         "`CAUGHT BY DEATH: HOW TO GET FREE?` · `THE PRIEST IS SPEECH; SPEECH IS FIRE.` · `FOUR PRIESTS, FOUR FACULTIES, FOUR POWERS.` · `ASHVALA FALLS SILENT.` · then, large: `FREEDOM, AND FREEDOM BEYOND.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Two minutes with the four priests inside you. Sit, and breathe. First, notice speech, even unspoken: the words forming in your mind. Let it be the fire. Then the eyes, resting closed: let them be the sun. Then the breath, coming and going: the wind. Then the mind, watching all of it: the moon. Nothing to perform. You're the whole ritual, sitting still. The bell holds the time.",
+      "voice": "Notice speech first, even unspoken, the words forming in your mind, and let it be the fire. Then let your resting eyes be the sun, the breath coming and going the wind, and the mind watching all of it the moon. Nothing to perform: you're the whole ritual, sitting still.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the priest who goes beyond. Today, take one routine you do on autopilot and ask what it's a picture of. Day three hundred seventy-two.",
+      "voice": "Your line: the priest who goes beyond. Tomorrow, a question about what stays when we die. See you then.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Vedic fire rituals, with their four kinds of priests, are still performed in parts of India; Hindu homes and temples keep smaller fire offerings, and Vedanta teachers read passages like this as showing the inner meaning of the rite.",
   "games": {
+    "guess": [
+      "freedom beyond: what the rite points to",
+      "the fee a priest is paid after a rite",
+      "the last offering poured into the fire"
+    ],
     "match": {
       "prompt": "priest, faculty, power — tap the pairs.",
       "pairs": [
@@ -130,14 +135,52 @@
       "what it means: each priest of the sacrifice is a faculty in you, and each faculty a power of the cosmos.",
       "what a scholar hears: hotṛ, adhvaryu, udgātṛ, brahman: the four priests mapped to speech/fire, eye/sun, breath/wind, mind/moon (3.1.3–6); sā muktiḥ sātimuktiḥ."
     ],
+    "chat": {
+      "who": "your cousin",
+      "says": "So did Yajnavalkya tell the priest his rituals were pointless?",
+      "options": [
+        "No, he showed what each rite pictures: the priest is speech, and speech is fire.",
+        "Yes, he told Ashvala the rites were useless and the fire should be put out.",
+        "No, but he admitted he didn't know what the four priests were for."
+      ],
+      "answer": 0,
+      "meaning": "Yajnavalkya showed each priest as a part of the person and a power of the cosmos: the hotri is speech, and speech is fire."
+    },
+    "gloss": {
+      "Ashvala": {
+        "meaning": "King Janaka's hotri priest, the first challenger",
+        "script": "अश्वल",
+        "say": "UHSH-vuh-luh"
+      },
+      "hotri": {
+        "meaning": "the priest who recites the hymns at the fire sacrifice",
+        "script": "होतृ",
+        "say": "HOH-tree"
+      },
+      "Rig Veda": {
+        "meaning": "the oldest Veda, a collection of hymns",
+        "script": "ऋग्वेद",
+        "say": "rig-VAY-duh"
+      },
+      "Mimamsa": {
+        "meaning": "the school that holds the rites are the heart of the Veda",
+        "script": "मीमांसा",
+        "say": "mee-MAHM-sah"
+      },
+      "Atimukti": {
+        "meaning": "freedom beyond",
+        "script": "अतिमुक्ति",
+        "say": "uh-tee-MOOK-tee"
+      }
+    },
     "recall": [
       [
         "priya",
         "dear, beloved"
       ],
       [
-        "ashanaya",
-        "hunger"
+        "Himalaya",
+        "the abode of snow"
       ]
     ]
   },
@@ -157,7 +200,9 @@
       "Mapping in 3.1.3–6: hotṛ/speech/fire (freed from death); adhvaryu/eye/sun (from day and night); udgātṛ/breath/wind (from the waxing and waning fortnights); brahman/mind/moon (the ladder to heaven). Confirm.",
       "Mimamsa versus Vedanta on the rites is stated briefly and without ranking; confirm fairness.",
       "Technical questions (verses, oblations, deities) in 3.1.7–10 summarized.",
-      "Editor review (2026-10-01): Ashvala called the king's hotri rather than 'chief priest' in the hook line; uncited 'many Hindu families' claim removed (teach and howItsDone); the word segment now names the index word, keeping atimukti inside."
+      "Editor review (2026-10-01): Ashvala called the king's hotri rather than 'chief priest' in the hook line; uncited 'many Hindu families' claim removed (teach and howItsDone); the word segment now names the index word, keeping atimukti inside.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

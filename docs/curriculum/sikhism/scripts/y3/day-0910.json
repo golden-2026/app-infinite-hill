@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Lahore: a gate opened from inside, and the city became his. Your line was the city opened. What did you walk into? Today, the end of a week, and a name for a kingdom. Day nine hundred ten.",
+      "voice": "Yesterday, Lahore, a gate opened from inside; your line was the city opened. Today, the end of a week, and a name for a kingdom.",
       "screen": [
         "`THE CITY OPENED.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A ruler holds the great city of the Punjab. Now comes a question a new king has to answer. What's this called? Whose is it? The usual answer for a king is a family name: this is my house, my throne, my reign, and the coins carry my face. Ranjit Singh takes the title Maharaja. And then, by the histories' account, he does something odd with it. He gives the credit away. Today: the Sarkar-e-Khalsa.",
+      "voice": "A ruler holds the great city of the Punjab, and a new king has a question to answer: what's this called, and whose is it? The usual answer is a family name: my house, my throne, my reign, the coins carrying my face. Ranjit Singh takes the title Maharaja. And then, by the histories' account, he does something odd with it. He gives the credit away.",
       "screen": [
         "`A NEW KING, A NEW NAME.` → `THE TITLE: MAHARAJA.` → `HE GIVES THE CREDIT AWAY.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Sarkar-e-Khalsa means, roughly, the government of the Khalsa. Not the government of Ranjit Singh. The state, in its own name, belonged to the Khalsa, the community Guru Gobind Singh had founded. The Maharaja was its servant, at least in the way it spoke of itself. Next, the coins. A ruler's coins are a loud announcement; they pass from hand to hand across the land. Ranjit Singh's coins did not carry his own name or face. They carried a Persian verse giving the victory to Guru Nanak and Guru Gobind Singh, a verse Sikhs had used on coins and seals before him. The money said, in effect, everything here was given by the Gurus. Then the throne. Tradition says he was reluctant to sit high, and liked to hold court sitting cross-legged on a chair or among his chiefs. And tradition says people called him simply Sarkar, more readily than any grand title. Now, none of this means he was shy of power. He held a great deal of it. But the way the kingdom named itself kept pointing past the king. It echoes the misl years, when bands of equals decided before the Guru, even as those bands were giving way to one ruler. Some historians say it was faith, some say it was wise politics, some say both. Either way, the message was on every coin in every market: the khalsa's rule.",
+      "voice": "Sarkar-e-Khalsa means, roughly, the government of the Khalsa. Not of Ranjit Singh. The state, in its own name, belonged to the Khalsa, the community Guru Gobind Singh had founded, and the Maharaja was its servant, at least in the way it spoke of itself. Next, the coins. A ruler's coins are a loud announcement, passing from hand to hand across the land. Ranjit Singh's coins did not carry his own name or face. They carried a Persian verse giving the victory to Guru Nanak and Guru Gobind Singh, a verse Sikhs had used on coins and seals before him. The money said, in effect: everything here was given by the Gurus. Then the throne. Tradition says he was reluctant to sit high, and liked to hold court sitting cross-legged on a chair or among his chiefs, and that people called him simply Sarkar, more readily than any grand title. None of this means he was shy of power; he held a great deal of it. But the way the kingdom named itself kept pointing past the king. It echoes the misl years, when bands of equals decided before the Guru, even as those bands gave way to one ruler. Some historians say it was faith, some wise politics, some both. Either way, the message was on every coin in every market.",
       "screen": [
         "`THE GOVERNMENT OF THE KHALSA.` · `COINS IN THE GURUS' NAMES.` · `NO HIGH THRONE.` · `POINTING PAST THE KING.` · then, large: `THE KHALSA'S RULE.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Two minutes giving credit. Settle, and breathe. Think of a piece of shared work where your part was the one people saw: a project at work, a family event, a meal, a team win. Now find the part nobody praised. The one who set up the chairs, checked the numbers, washed the pots, made the call. Choose one of them. Shape a single plain sentence you could say about what they did, in front of others. If you pray, you can say Waheguru on each breath out. The bell holds the time.",
+      "voice": "Think of shared work where your part was the one people saw, a project, a family event, a team win, and find the part nobody praised: who set up the chairs, checked the numbers, washed the pots? Pick one of them and shape a single plain sentence you could say about what they did, in front of others; if you pray, breathe Waheguru as you go.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the khalsa's rule. Today, when someone praises you for something, name one person who helped, out loud. Day nine hundred ten.",
+      "voice": "Your line: the khalsa's rule. The king kept pointing past himself. That's the week.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Sikhs remember Maharaja Ranjit Singh's state as the Sarkar-e-Khalsa, the government of the Khalsa, and his coins, known as Nanakshahi coins, carried a verse in the names of the Gurus rather than his own.",
   "games": {
+    "guess": [
+      "the government of the Khalsa, not of a king",
+      "the royal house of Ranjit Singh's family",
+      "the council of the twelve misl chiefs"
+    ],
     "match": {
       "prompt": "a kingdom that gave the credit away — tap the pairs.",
       "pairs": [
@@ -132,14 +137,44 @@
     ],
     "recall": [
       [
-        "Phul",
-        "the boy Guru Har Rai blessed"
+        "Gujranwala",
+        "where Ranjit Singh was born"
       ],
       [
-        "Karora Singh",
-        "the leader the misl is named for"
+        "nirvair",
+        "without hate"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your uncle who collects coins",
+      "says": "Whose name was on Ranjit Singh's coins?",
+      "options": [
+        "Not his own: a Persian verse giving the victory to Guru Nanak and Guru Gobind Singh.",
+        "His own name and face, as on the coins of most kings before and after him.",
+        "The names of the twelve misl chiefs, to honor the bands that came before him."
+      ],
+      "answer": 0,
+      "meaning": "His coins carried a Persian verse crediting the Gurus, so the kingdom, the Sarkar-e-Khalsa, kept pointing past the king."
+    },
+    "gloss": {
+      "Sarkar-e-Khalsa": {
+        "meaning": "the government of the Khalsa",
+        "say": "sur-KAAR-ay-KHAAL-saa"
+      },
+      "Maharaja": {
+        "meaning": "a great king; the title Ranjit Singh took",
+        "script": "ਮਹਾਰਾਜਾ",
+        "say": "muh-haa-RAA-jaa"
+      },
+      "Guru Gobind Singh": {
+        "meaning": "the Guru who founded the Khalsa",
+        "say": "GOO-roo go-BIND SINGH"
+      },
+      "Guru Nanak": {
+        "meaning": "the first Guru of the Sikhs",
+        "say": "GOO-roo NAA-nuk"
+      }
+    }
   },
   "sources": [
     {
@@ -161,7 +196,9 @@
       "'Some historians say it was faith, some say politics, some say both': a softened characterization; consider cutting if a Keeper prefers.",
       "Gurmukhi ਸਰਕਾਰ-ਏ-ਖ਼ਾਲਸਾ and pronunciation: confirm spelling.",
       "Week-end recap in the word segment lists the index titles for days 904–910.",
-      "Audit: cut the stock opener 'Start with the name' (used on 897, 914 and nearby days); stale Singh Sahib note corrected."
+      "Audit: cut the stock opener 'Start with the name' (used on 897, 914 and nearby days); stale Singh Sahib note corrected.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

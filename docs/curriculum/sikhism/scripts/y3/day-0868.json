@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Diwali at the ruins: lamps at a broken Harmandir, and the first stones moved. Your line was begin again. What was your first stone? Today, a city with a long shadow. Day eight hundred sixty-eight.",
+      "voice": "Yesterday, lamps at a broken Harmandir, and the first stones moved. Your line was begin again. Today, a city with a long shadow.",
       "screen": [
         "`BEGIN AGAIN.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Sirhind. This path has stood here before. Once in grief, at the wall where the Guru's youngest sons were put to death on the governor's order. And once with Banda Singh Bahadur's forces, who took the city years later. Then the city passed out of Sikh hands again, and the hard decades you've been hearing about came down. Now the riders of the Dal Khalsa are outside its walls once more. Today: Sirhind.",
+      "voice": "Sirhind. This path has stood here before. Once in grief, at the wall where the Guru's youngest sons were put to death on the governor's order. And once with Banda Singh Bahadur's forces, who took the city years later. Then the city passed out of Sikh hands again, and the hard decades you've been hearing about came down. Now the riders of the Dal Khalsa are outside its walls once more.",
       "screen": [
         "`THE WALL WHERE THE SAHIBZADE DIED.` → `TAKEN BY BANDA, THEN LOST.` → `THE DAL KHALSA AT THE GATES AGAIN.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Here's the story in three movements. The first is the taking. Tradition says the bands of the Dal Khalsa came together against Sirhind, defeated its governor, and he was killed in the fighting. For Sikhs, this wasn't just another town on the map. It was the place their memory kept circling back to. The second movement is what they did with the city. Tradition says Sikhs treated Sirhind as a place under a shadow, and that for a long time Sikhs passing by would take a brick from its ruins and throw it in the river. Some tellings call it the city the Guru's curse fell on. And at the spot where the young Sahibzade died, Sikhs marked the ground; a gurdwara called Fatehgarh Sahib stands there now. Its name carries the name of the younger of the two, Fateh Singh, and fateh means victory. The place of the children's deaths bears a word for victory. The third movement is the land. After Sirhind, the territory around it was divided among the Sikh confederacies, the misls, each band holding its own share. In this telling, the chiefs stop being hunted riders and start holding the countryside. Bands who had once hidden in forests and deserts now held the villages. That's the turn. Nothing about the hard decades had promised it. The persecutions, the great killing, the temple blown up: people at Sirhind remembered all of it. And here, at the city where the smallest martyrs died, the tide turned.",
+      "voice": "The story comes in three movements. First, the taking. Tradition says the bands of the Dal Khalsa came together against Sirhind and defeated its governor, who was killed in the fighting. For Sikhs, this wasn't just another town on the map. It was the place their memory kept circling back to. Second, what they did with the city. Tradition says Sikhs treated Sirhind as a place under a shadow, and that for a long time Sikhs passing by would take a brick from its ruins and throw it in the river. Some tellings call it the city the Guru's curse fell on. And at the spot where the young Sahibzade died, Sikhs marked the ground; a gurdwara called Fatehgarh Sahib stands there now. Its name carries the name of the younger of the two, Fateh Singh, and fateh means victory. The place of the children's deaths bears a word for victory. Third, the land. After Sirhind, the territory around it was divided among the Sikh confederacies, the misls, each band holding its own share. In this telling, the chiefs stop being hunted riders and start holding the countryside. Bands who had once hidden in forests and deserts now held the villages. That's the turn, and nothing about the hard decades had promised it. The persecutions, the great killing, the temple blown up: people at Sirhind remembered all of it. And here, at the city where the smallest martyrs died, the tide turned.",
       "screen": [
         "`THE DAL KHALSA TAKES SIRHIND.` · `A BRICK THROWN IN THE RIVER.` · `FATEHGARH: FATEH SINGH'S NAME, A WORD FOR VICTORY.` · `THE LAND PASSES TO THE MISLS.` · then, large: `THE TIDE TURNED.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Two minutes with a turning point. Settle, and breathe. Look back over your own life and find one moment when something changed direction: a phone call, a door that opened, a day you stopped doing something, or started. It may not have looked like much at the time. Turning points rarely do. Hold it in mind. Notice what came before it, and how long the before lasted. If you pray, you can say Waheguru on each breath out. The bell holds the time.",
+      "voice": "Look back over your own life and find one moment when something changed direction: a phone call, a door that opened, a day you stopped doing something, or started. It may not have looked like much at the time; hold it in mind, and notice what came before it, and how long the before lasted. If you pray, say Waheguru on each breath out.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the tide turned. Today, when something goes a little better than it has been going, stop and notice it out loud. Turns are easy to miss. Day eight hundred sixty-eight.",
+      "voice": "Your line: the tide turned. Turns are easy to miss while they happen. Day eight hundred sixty-eight.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Sikhs remember the fall of Sirhind in Sikh histories, and gather at Gurdwara Fatehgarh Sahib, where the younger Sahibzade died, to remember them.",
   "games": {
+    "guess": [
+      "the city of the Sahibzade's deaths, later taken by Sikhs",
+      "the fort where Guru Gobind Singh fought at Chamkaur",
+      "the town where the Harmandir was first built"
+    ],
     "match": {
       "prompt": "the city with a long shadow — tap the pairs.",
       "pairs": [
@@ -132,14 +137,50 @@
     ],
     "recall": [
       [
-        "nirvair",
-        "without hate"
+        "Harimandar",
+        "the house of God at Amritsar"
       ],
       [
-        "Subeg Singh",
-        "a Sikh with a post in Lahore"
+        "Todar Mal",
+        "covered the ground in gold at Sirhind"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your nephew",
+      "says": "Why does Sirhind matter so much in the Sikh story?",
+      "options": [
+        "The Guru's youngest sons died there. Later the Dal Khalsa took it, and the land passed to the misls.",
+        "It's where the Khalsa was founded, so Sikhs gather there every spring for Vaisakhi.",
+        "It was the Sikh capital, built by Banda Singh, and it never left Sikh hands at all."
+      ],
+      "answer": 0,
+      "meaning": "Sirhind is where the younger Sahibzade died. Tradition says the Dal Khalsa took it, and the land around it passed to the misls: the tide turned."
+    },
+    "gloss": {
+      "Sahibzade": {
+        "meaning": "the Guru's sons",
+        "script": "ਸਾਹਿਬਜ਼ਾਦੇ",
+        "say": "SAA-hib-zaa-day"
+      },
+      "Fatehgarh Sahib": {
+        "meaning": "the gurdwara where the young Sahibzade died",
+        "script": "ਫ਼ਤਿਹਗੜ੍ਹ ਸਾਹਿਬ",
+        "say": "fa-TEH-gurh SAA-hib"
+      },
+      "fateh": {
+        "meaning": "victory",
+        "script": "ਫ਼ਤਿਹ",
+        "say": "fa-TEH"
+      },
+      "misls": {
+        "meaning": "Sikh confederacies, each band holding its own share",
+        "say": "MIS-uls"
+      },
+      "Banda Singh Bahadur": {
+        "meaning": "the leader whose forces once took Sirhind",
+        "say": "BUN-daa SING buh-HAA-dur"
+      }
+    }
   },
   "sources": [
     {
@@ -160,7 +201,9 @@
       "Gurmukhi ਸਰਹਿੰਦ and pronunciation; confirm.",
       "Week-end recap in the word segment lists the index titles for days 862–868.",
       "Editor: Fatehgarh Sahib was presented as 'named for victory'; it carries Sahibzada Fateh Singh's name, so the voice, screen, myth and fork now say that. Removed 'each December' from howItsDone and the awkward 'the year in today's title'.",
-      "Audit: 'the hard century' changed to 'the hard decades' (the persecutions ran roughly half a century before 1764). Keeper: the 'Guru's curse' phrase about Sirhind is kept as a telling; decide whether it suits a general audience."
+      "Audit: 'the hard century' changed to 'the hard decades' (the persecutions ran roughly half a century before 1764). Keeper: the 'Guru's curse' phrase about Sirhind is kept as a telling; decide whether it suits a general audience.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

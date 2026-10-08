@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: khuluq, and your line, great character. Did the trait you picked get tested? Today al-Qalam tells a story, about some people whose character failed one morning. Day six hundred forty-two.",
+      "voice": "Yesterday: khuluq, character, and your line, great character. Today al-Qalam tells a story about some people whose character failed one morning.",
       "screen": [
         "`GREAT CHARACTER.`"
       ]
@@ -38,7 +38,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Surah al-Qalam, verses seventeen to thirty-three. The owners swore they'd harvest in the morning, and the Qur'an adds a small detail: they made no exception. Commentators understand that as: they didn't say in sha' Allah, if God wills. They spoke as if tomorrow was theirs. Then, while they slept, a visitation from their Lord passed over the garden, and by morning it was like a field already reaped, black, stripped. At dawn they called to one another, set out, whispering on the road: let no needy person come in on you today. They arrived, and at first they didn't recognize it. We must have lost our way, they said. Then: no, we've been deprived. Then the turn. The middlemost of them, the most balanced one, says: didn't I tell you? Why didn't you glorify Allah? And they did. They said glory to our Lord, we were wrong. Then they turned on each other, blaming. Then they admitted it together: we were the ones who overstepped. And they ended with hope: perhaps our Lord will give us something better in its place. The Qur'an doesn't tell us where this garden was or who the men were. Commentators tell a fuller story: the garden belonged to a good man in Yemen who always left a share for the poor, and after he died his sons decided to stop. That backstory comes from the commentaries, not the verses. But the verses are clear enough. They lost the whole harvest trying to keep the poor's share. And the story doesn't end in the ashes. It ends in repentance and hope.",
+      "voice": "Surah al-Qalam, verses seventeen to thirty-three. The owners swore they'd harvest in the morning, and the Qur'an adds a small detail: they made no exception. Commentators understand that as: they didn't say in sha' Allah, if God wills. They spoke as if tomorrow was theirs. While they slept, a visitation from their Lord passed over the garden, and by morning it was like a field already reaped, black, stripped. At dawn they called to one another and set out, whispering on the road: let no needy person come in on you today. They arrived, and at first they didn't recognize it. We must have lost our way, they said. Then: no, we've been deprived. Then the turn. The middlemost of them, the most balanced one, says: didn't I tell you? Why didn't you glorify Allah? And they did: glory to our Lord, we were wrong. Then they turned on each other, blaming. Then they admitted it together: we were the ones who overstepped. And they ended with hope: perhaps our Lord will give us something better in its place. The Qur'an doesn't say where this garden was or who the men were. Commentators tell a fuller story: the garden belonged to a good man in Yemen who always left a share for the poor, and after he died his sons decided to stop. That backstory comes from the commentaries, not the verses. But the verses are clear enough. They lost the whole harvest trying to keep the poor's share. And the story doesn't end in the ashes. It ends in repentance and hope.",
       "screen": [
         "`THEY MADE NO EXCEPTION.`",
         "`BY MORNING, BLACK AND STRIPPED.`",
@@ -49,7 +49,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: share part of something before you use it. Sit, and think of something you'll receive or use today: a paycheck, a meal, a bag of groceries, a free hour. Picture it in your hands. Now picture setting aside a small part before you start, not from the leftovers, from the top. A coin, a plate for a neighbor, ten minutes for someone who needs it. Decide what that share is. The bell holds the time.",
+      "voice": "Think of something you'll receive or use today: a paycheck, a meal, a bag of groceries, a free hour. Picture setting aside a small part before you start, not from the leftovers but from the top: a coin, a plate for a neighbor, ten minutes for someone who needs it. Decide what that share is.",
       "screen": []
     },
     {
@@ -63,7 +63,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the poor's share first. Today, before you spend or eat or use something, set a small part aside for someone else, from the top. Day six hundred forty-two.",
+      "voice": "Your line: the poor's share first. From the top, not the leftovers. Day six hundred forty-two, done.",
       "screen": []
     },
     {
@@ -77,6 +77,11 @@
   ],
   "howItsDone": "Muslims give zakat on harvests and wealth and voluntary charity (sadaqah); saying in sha' Allah, if God wills, of future plans follows 18:23–24, and the story of the garden owners is told to teach both.",
   "games": {
+    "guess": [
+      "not saying 'if God wills' about tomorrow's plans",
+      "refusing to let any poor person into the garden",
+      "a promise to share the harvest with everyone"
+    ],
     "match": {
       "prompt": "the garden owners — tap the pairs.",
       "pairs": [
@@ -137,14 +142,42 @@
     ],
     "recall": [
       [
-        "Asiya",
-        "Pharaoh's wife, named in the hadith"
+        "ar-Rahman",
+        "the Merciful, who holds the birds up"
       ],
       [
-        "makhraj",
-        "a way out, an exit"
+        "ahsanu 'amalan",
+        "best in deed"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your roommate",
+      "says": "What went wrong for the garden owners in that Qur'an story?",
+      "options": [
+        "They planned to keep the poor out and didn't say 'if God wills'.",
+        "They forgot to water the garden, so the fruit dried up overnight.",
+        "They shared too much, so nothing was left for their own family."
+      ],
+      "answer": 0,
+      "meaning": "They swore to harvest before the needy came, making no exception, and a visitation passed over the garden by night."
+    },
+    "gloss": {
+      "in sha' Allah": {
+        "meaning": "if God wills",
+        "script": "إن شاء الله",
+        "say": "in SHAA al-laah"
+      },
+      "al-Qalam": {
+        "meaning": "the Pen; Surah 68",
+        "script": "القلم",
+        "say": "al-QA-lam"
+      },
+      "Yemen": {
+        "meaning": "where the commentators' backstory places the garden",
+        "script": "اليمن",
+        "say": "YEH-men"
+      }
+    }
   },
   "sources": [
     {
@@ -175,7 +208,9 @@
       "Reading la yastathnun as not saying in sha' Allah is the majority interpretation; confirm.",
       "'Like a field already reaped, black' paraphrases as-sarim; commentators differ (reaped, or dark as night).",
       "The hook and index say the garden was found 'burned'; the verses say only that a visitation passed over it and it became as-sarim. Burning (a fire) is a tafsir reading. The script body avoids it; a Keeper may want the hook to say 'ruined' instead (left unchanged here because the hook mirrors the curriculum index).",
-      "Editor review 2026-10-01: 'brothers in many retellings' now credited to the commentators; stock 'here's the turn' trimmed; 'many say' in howItsDone tied to 18:23–24 instead. Story sequence checked against 68:17–33."
+      "Editor review 2026-10-01: 'brothers in many retellings' now credited to the commentators; stock 'here's the turn' trimmed; 'many say' in howItsDone tied to 18:23–24 instead. Story sequence checked against 68:17–33.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

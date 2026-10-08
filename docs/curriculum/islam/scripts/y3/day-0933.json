@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, knowledge as worship, and a look back over the age of the House of Wisdom. Your line was: a path to the garden. Did you take one step toward what you chose to learn? Day nine hundred thirty-three.",
+      "voice": "Yesterday, ilm, knowledge as worship, and a look back over the age of the House of Wisdom. Your line was: a path to the garden.",
       "screen": [
         "`A PATH TO THE GARDEN.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Tariq ibn Ziyad served Musa ibn Nusayr, who governed for the Umayyads in North Africa. Tradition remembers Tariq as a Berber, one of the peoples of North Africa, which matters: the story of al-Andalus begins with North Africans as much as Arabs. He crossed the strait with an army, landed by the rock, and marched inland. The Visigothic king, Roderic, met him in battle and was defeated, and the kingdom of the Visigoths came apart. That's how Muslim rule began in the land Arabic writers called al-Andalus, much of what is now Spain and Portugal. For the Christians of the Visigothic kingdom, it was a defeat and the loss of a kingdom; for Muslims, it was the start of a long chapter of life, learning and building in that land. Both memories are real, and both are kept. Then come the legends. Later histories give Tariq a famous speech to his frightened soldiers: the sea is behind you, the enemy before you. Some tellings add that he burned his ships so no one could turn back. These scenes come from later histories, and some historians treat them as legend: stories people tell, the kind that grow around a crossing that changed the map. So hold onto what lasts: a man's name, carried in the name of a rock, said every day by people who've never heard of him. The mountain of Tariq.",
+      "voice": "Tariq ibn Ziyad served Musa ibn Nusayr, who governed for the Umayyads in North Africa. Tradition remembers Tariq as a Berber, one of the peoples of North Africa, and that matters: the story of al-Andalus begins with North Africans as much as Arabs. He crossed the strait with an army, landed by the rock, and marched inland. The Visigothic king, Roderic, met him in battle and was defeated, and the kingdom of the Visigoths came apart. So began Muslim rule in the land Arabic writers called al-Andalus, much of what is now Spain and Portugal. For the Christians of the Visigothic kingdom, it was a defeat and the loss of a kingdom; for Muslims, it was the start of a long chapter of life, learning and building in that land. Both memories are real, and both are kept. Then come the legends. Later histories give Tariq a famous speech to his frightened soldiers: the sea is behind you, the enemy before you. Some tellings add that he burned his ships so no one could turn back. These scenes come from later histories, and some historians treat them as legend, the kind of story that grows around a crossing that changed the map. What lasts is simpler: a man's name, carried in the name of a rock, said every day by people who've never heard of him.",
       "screen": [
         "`TARIQ, A BERBER COMMANDER.` · `ACROSS THE STRAIT, RODERIC FALLS.` · `A DEFEAT, AND A BEGINNING.` · `THE SEA BEHIND YOU: A LATER LEGEND.` · then, large: `THE MOUNTAIN OF TARIQ.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: look at a map of the strait, in your mind for now. Settle, and breathe. Picture two continents almost touching. Africa to the south, its mountains rising from the water. Europe to the north, with one great rock standing up at its tip. Between them, a narrow channel of sea. Picture the boats crossing, loaded with people, horses and fear. Then picture the same water today, ferries, fishing boats, and people still crossing it for every reason people cross water. After the bell, if you like, find the strait on a real map. If you pray, you can remember everyone who has crossed it. If you don't, just hold them in mind. The bell holds the time.",
+      "voice": "Picture two continents almost touching: Africa to the south, its mountains rising from the water, and Europe to the north, with one great rock standing at its tip. See the boats crossing, loaded with people, horses and fear, and then the same water today, ferries, fishing boats, people still crossing for every reason people cross water. If you pray, you can remember everyone who has crossed it; if not, just hold them in mind.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the mountain of tariq. Today, notice one place name around you and wonder whose name, or which old language, might be hiding inside it. Day nine hundred thirty-three.",
+      "voice": "Your line: the mountain of tariq. A commander's name, worn into a rock. Day nine hundred thirty-three.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Muslim histories remember al-Andalus as a land of faith and learning, and they tell its story beginning with Tariq ibn Ziyad's crossing of the strait.",
   "games": {
+    "guess": [
+      "the rock we call Gibraltar, from Jabal Tariq",
+      "a peak in Morocco where an army camped",
+      "a hill outside Cordoba named for a saint"
+    ],
     "match": {
       "prompt": "Tariq's mountain — tap the pairs.",
       "pairs": [
@@ -132,14 +137,46 @@
     ],
     "recall": [
       [
-        "bimaristan",
-        "the place of the sick"
+        "Ashura",
+        "the tenth day of Muharram"
       ],
       [
-        "sifr",
-        "the empty place"
+        "Ibn al-Haytham",
+        "tested how light reaches the eye"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your friend planning a trip to Spain",
+      "says": "Is it true the name Gibraltar comes from Arabic?",
+      "options": [
+        "By the usual account, yes: Jabal Tariq, Tariq's mountain.",
+        "Yes, it means the gate of Africa, named by Roman sailors.",
+        "No, it's a Spanish word for a rock that guards a harbor."
+      ],
+      "answer": 0,
+      "meaning": "By the usual account, Gibraltar is a worn-down Jabal Tariq: jabal is mountain, and Tariq the commander who crossed there."
+    },
+    "gloss": {
+      "jabal": {
+        "meaning": "mountain",
+        "script": "جبل",
+        "say": "JA-bal"
+      },
+      "Tariq ibn Ziyad": {
+        "meaning": "the commander who crossed the strait into al-Andalus",
+        "script": "طارق بن زياد",
+        "say": "TAA-rik ibn zi-YAAD"
+      },
+      "al-Andalus": {
+        "meaning": "the Arabic name for much of Spain and Portugal",
+        "script": "الأندلس",
+        "say": "al-AN-da-lus"
+      },
+      "Berber": {
+        "meaning": "one of the peoples of North Africa",
+        "say": "BUR-ber"
+      }
+    }
   },
   "sources": [
     {
@@ -166,7 +203,9 @@
       "howItsDone attributes the memory to 'Muslim histories'; confirm.",
       "Christian and Muslim memories of the conquest are both stated; confirm the framing is fair.",
       "Editor: replaced the unsourced manuscript claim about what the earliest surviving accounts omit with 'these scenes come from later histories, and some historians treat them as legend' (teach, myth item, fork reveal, trapdoor); 'at the southern tip' to 'near'; removed the doubled 'Today'; added the 'if you don't' line to the practice.",
-      "Auditor: fixed the garbled 'Muslim rule in Spain and Portugal began, a land Arabic writers called al-Andalus'; dropped the stock 'Today: ...' hook ending."
+      "Auditor: fixed the garbled 'Muslim rule in Spain and Portugal began, a land Arabic writers called al-Andalus'; dropped the stock 'Today: ...' hook ending.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the ranges ahead, and Shiva's ridge, with a hunter who kept a holy night without knowing it. Did you do one kind thing without checking where it landed? Today, another ridge. Day one thousand fifty-six.",
+      "voice": "Yesterday, the bilva tree, and a hunter who kept Shiva's holy night without knowing it. Today, another ridge.",
       "screen": [
         "`THE RANGES AHEAD.` · `A NIGHT KEPT WITHOUT KNOWING.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "This year, in the dice game, Draupadi was dragged into a hall full of men and asked them a question. Had her husband lost himself before he staked her? If he had, was she his to lose? Bhishma answered that the way of dharma was too subtle for him to decide. Young Vikarna spoke up for her and was shouted down. The question hung in the air of the Mahabharata and never quite came down. Draupadi's voice reaches us inside a vast story told about her. There are also women in this tradition who left their own words behind, poems and sayings in their own voices. A season of them waits in year four. That's today's ridge.",
+      "voice": "This year, in the dice game, Draupadi was dragged into a hall full of men and asked them a question. Had her husband lost himself before he staked her? If he had, was she his to lose? Bhishma answered that the way of dharma was too subtle for him to decide. Young Vikarna spoke up for her and was shouted down. The question hung in the air of the Mahabharata and never quite came down. Draupadi's voice reaches readers inside a vast story told about her. But some women in this tradition left their own words behind. A season of them waits in year four.",
       "screen": [
         "`DRAUPADI'S QUESTION.` → `THE ELDERS CAN'T SETTLE IT.` → `WOMEN, IN THEIR OWN WORDS.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Sit for the bell's two minutes. Bring to mind a woman whose voice shaped yours: a mother, a grandmother, a teacher, an aunt, a friend. Not what people said about her. Something she herself said, a phrase you can still hear in her tone. Let it come back in her voice. Rest with it for a few breaths. If more of her words come, let them. If only one, that's enough. The bell holds the time.",
+      "voice": "Bring to mind a woman whose voice shaped yours: a mother, a grandmother, a teacher, an aunt, a friend. Not what people said about her, but something she herself said, a phrase you can still hear in her tone. Rest with it for a few breaths; if more of her words come, let them, and if only one, that's enough.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: listen to it in her own words. Today, ask a woman in your life about something she believes or remembers, and listen to it in her own words. Day one thousand fifty-six.",
+      "voice": "Your line: listen to it in her own words. Tomorrow, one more ridge. Day one thousand fifty-six.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Akka Mahadevi's vachanas are sung and recited in Karnataka, Lal Ded's sayings are quoted in Kashmir, and the women of the epics are honored in stories, songs and festivals across India.",
   "games": {
+    "guess": [
+      "a saying: Akka Mahadevi's short free poems",
+      "a long hymn sung in Sanskrit at dawn",
+      "a vow a woman makes before leaving home"
+    ],
     "match": {
       "prompt": "women in their own words — tap the pairs.",
       "pairs": [
@@ -132,14 +137,48 @@
     ],
     "recall": [
       [
-        "visarga",
-        "a breath after the vowel"
+        "Govinda",
+        "the cowherd, a name of Krishna"
       ],
       [
-        "ṛ",
-        "the r that is a vowel"
+        "bhranti",
+        "error, mistaking one thing for another"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your grandmother",
+      "says": "Did any women in Hindu tradition leave their own words, not just stories about them?",
+      "options": [
+        "Yes: Akka Mahadevi's Kannada vachanas, and Lal Ded's Kashmiri sayings.",
+        "No: women appear only as characters in stories men wrote down.",
+        "Only Draupadi, whose speeches in the epic she wrote herself."
+      ],
+      "answer": 0,
+      "meaning": "Akka Mahadevi sang vachanas in Kannada to Shiva; Lal Ded left sayings in Kashmiri. Year four reads their own words."
+    },
+    "gloss": {
+      "vachanas": {
+        "meaning": "sayings: short free poems in Kannada",
+        "say": "vuh-CHUH-nuhz"
+      },
+      "Akka Mahadevi": {
+        "meaning": "a Kannada poet-saint devoted to Shiva",
+        "say": "UK-kuh muh-hah-DAY-vee"
+      },
+      "Chennamallikarjuna": {
+        "meaning": "Akka's name for Shiva: the lord white as jasmine",
+        "say": "chen-nuh-mul-li-KAR-joo-nuh"
+      },
+      "Lal Ded": {
+        "meaning": "a Kashmiri woman saint, also called Lalla",
+        "say": "LAHL DED"
+      },
+      "Vikarna": {
+        "meaning": "the young man in the hall who spoke up for Draupadi",
+        "script": "विकर्ण",
+        "say": "vi-KUR-nuh"
+      }
+    }
   },
   "sources": [
     {
@@ -172,7 +211,9 @@
       "'Women like Draupadi, Kunti and Gandhari often stand at the story's hardest turns' is an interpretive line; confirm.",
       "games.original uses Kannada script for vachana (ವಚನ); confirm spelling and transliteration.",
       "Editor pass: the judgment on Akka's poems is now framed as some readers' hearing; 'often' dropped from the line on the epic women.",
-      "Audit 2026-10-01: 'the elders went quiet' and 'no man will answer' misstated the Sabha Parva: Bhishma replies that dharma is too subtle for him to decide, and Vikarna argues she was not won and is shouted down. Hook, hook screen, voice and fork reveal corrected. Check the Vikarna line."
+      "Audit 2026-10-01: 'the elders went quiet' and 'no man will answer' misstated the Sabha Parva: Bhishma replies that dharma is too subtle for him to decide, and Vikarna argues she was not won and is shouted down. Hook, hook screen, voice and fork reveal corrected. Check the Vikarna line.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

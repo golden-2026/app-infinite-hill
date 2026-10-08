@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: Calvisius Sabinus. Your line was nobody can learn it for me. Did the line you memorized come back without looking? Day four hundred fifty-seven.",
+      "voice": "Yesterday's word was Calvisius Sabinus, who tried to buy a memory. Your line was nobody can learn it for me.",
       "screen": [
         "`CALVISIUS SABINUS — NOBODY CAN LEARN IT FOR ME.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "It's three in the afternoon on a gray Wednesday and you're scrolling flights. Somewhere warm. Somewhere with a different language and a different you, the one who's relaxed and reads novels and doesn't check email. Maybe you even go. And on the third night, in the lovely room by the sea, the same old worry turns up, like it had a ticket too. Lucilius has been traveling, hoping to shake off a heaviness he can't name. In the twenty-eighth letter, Seneca says he's not surprised it didn't work, and he explains why in one sentence. Today: you take yourself along.",
+      "voice": "It's three in the afternoon on a gray Wednesday and you're scrolling flights. Somewhere warm, with a different language and a different you, the one who's relaxed, reads novels and doesn't check email. Maybe you even go. And on the third night, in the lovely room by the sea, the same old worry turns up, like it had a ticket too. Lucilius has been traveling, hoping to shake off a heaviness he can't name. In the twenty-eighth letter, Seneca says he's not surprised it didn't work, and explains why in one sentence.",
       "screen": [
         "`SCROLLING FLIGHTS ON A GRAY WEDNESDAY.` → `THE WORRY HAD A TICKET TOO.` → `LUCILIUS TRAVELS, AND IT DOESN'T WORK.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the diagnosis. Do you think you're the only one, Seneca asks, who has found that long trips and changes of scenery don't shake off sadness? You need to change your soul, not your sky. In Latin: animum debes mutare, non caelum. Second, Socrates. Seneca passes on a reply attributed to him, to someone who complained that travel did him no good: why are you surprised, when you take yourself along? The same cause that drove you out goes with you. Third, the cargo picture. Seneca says the trouble is like a heavy load that's badly stowed. Every lurch of the ship makes it worse. Run from place to place and you shake the load around. Set it down and the journey becomes a pleasure. Fourth, what he's not saying. He's not against travel. Once the soul is steadier, he says, any place is pleasant, and he adds a line that sounds very Stoic: I wasn't born for one corner; this whole world is my homeland. The change he's after isn't scenery. It's a habit, a judgment, a way of meeting the morning. Those come with you to the beach, and to the office, and they're the only luggage worth repacking.",
+      "voice": "Do you think you're the only one, Seneca asks, who has found that long trips and changes of scenery don't shake off sadness? You need to change your soul, not your sky. In Latin: animum debes mutare, non caelum. Then he passes on a reply attributed to Socrates, to someone who complained that travel did him no good: why are you surprised, when you take yourself along? The same cause that drove you out goes with you. Seneca's picture is cargo: a heavy load, badly stowed. Every lurch of the ship makes it worse. Run from place to place and you shake the load around. Set it down and the journey becomes a pleasure. He's not against travel. Once the soul is steadier, he says, any place is pleasant, and he adds a line that sounds very Stoic: I wasn't born for one corner; this whole world is my homeland. The change he's after isn't scenery. It's a habit, a judgment, a way of meeting the morning. Those come with you to the beach and to the office, and they're the only luggage worth repacking.",
       "screen": [
         "`CHANGE YOUR SOUL, NOT YOUR SKY.` · `SOCRATES: YOU TAKE YOURSELF ALONG.` · `A BADLY STOWED LOAD.` · `THE WHOLE WORLD IS MY HOMELAND.` · then, large: `A CHANGE OF SOUL.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Think of something you've been hoping a change of place would fix: a new job, a move, a trip, a different chair. Hold it lightly. Then ask: what's the habit underneath it? Maybe rushing, or comparing, or never saying no. Name it in a few words. Now picture tomorrow morning in the same room you always wake up in, with that habit just slightly different. One small shift. Breathe there. The bell holds the time.",
+      "voice": "Think of something you've hoped a change of place would fix: a new job, a move, a trip, a different chair. Ask what habit sits underneath it, rushing, comparing, never saying no, and name it in a few words. Then picture tomorrow morning in the same room you always wake up in, with that habit just slightly different.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: a change of soul. Today, change one habit, not one place: the small shift you pictured, tried once, right where you are. Day four hundred fifty-seven.",
+      "voice": "Your line: a change of soul. The sky can stay the same. Day four hundred fifty-seven, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "People who follow Seneca's advice often look for the habit behind a restless wish to be elsewhere, and work on that habit where they already are.",
   "games": {
+    "guess": [
+      "the one who said you take yourself along",
+      "the friend who traveled to shake off sadness",
+      "a Greek who praised travel as a cure for grief"
+    ],
     "match": {
       "prompt": "the restless traveler — tap the pairs.",
       "pairs": [
@@ -132,14 +137,39 @@
     ],
     "recall": [
       [
-        "Athenodorus",
-        "ask only what you'd ask openly"
+        "Salian priests",
+        "their hopping dance, a quick exercise"
       ],
       [
-        "Stilpo",
-        "the philosopher in fallen Megara"
+        "adelphos",
+        "brother: kin, born of the same womb"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your brother",
+      "says": "I'm so stuck lately. Maybe a big trip will finally fix me?",
+      "options": [
+        "Seneca says change your soul, not your sky; wherever you go, you take yourself along.",
+        "Seneca says travel is harmful, so the wise person never leaves home at all.",
+        "Seneca says a far enough trip will leave your old worries behind for good."
+      ],
+      "answer": 0,
+      "meaning": "Socrates asked why travel surprised anyone who takes himself along. The change Seneca wants is a habit or judgment, not scenery."
+    },
+    "gloss": {
+      "animum debes mutare, non caelum": {
+        "meaning": "Latin: you must change your soul, not your sky",
+        "say": "AH-nee-moom DEH-bays moo-TAH-reh nohn KAI-loom"
+      },
+      "Socrates": {
+        "meaning": "the Athenian philosopher whose reply Seneca passes on",
+        "say": "SOK-ruh-teez"
+      },
+      "Lucilius": {
+        "meaning": "Seneca's friend, to whom the moral letters are written",
+        "say": "loo-SIL-ee-us"
+      }
+    }
   },
   "sources": [
     {
@@ -161,7 +191,9 @@
     "notes": [
       "Letters 28.1 'animum debes mutare, non caelum'; 28.2 Socrates' reply ('quid miraris... cum te circumferas?'); 28.3 the badly stowed cargo; 28.4 'non sum uni angulo natus, patria mea totus hic mundus est'. Confirm wording and numbering.",
       "The Socrates saying is reported by Seneca; no earlier source is certain. Script says 'attributed to him'.",
-      "Lucilius's travel as the occasion of the letter: confirm framing."
+      "Lucilius's travel as the occasion of the letter: confirm framing.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

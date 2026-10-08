@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, unknown teachers: the grandmothers, chanters and village monks the books let go. Your line: no one wrote them down. Whose name did you say under your breath? Day one thousand twenty-eight.",
+      "voice": "Yesterday: unknown teachers, the grandmothers, chanters and village monks the books let go. Your line: no one wrote them down.",
       "screen": [
         "`NO ONE WROTE THEM DOWN.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A note in the margin of an old school essay, in red pen: good, now say what you mean. A coach's voice from the sideline, repeating the same two words all season. An aunt in a kitchen, measuring salt by the look of it, not the spoon. Some of the people who teach have titles. Teacher, coach, aunt. Some have none at all: a coworker, a kid down the street, a stranger on a long bus ride who told the truth when a polite lie would have been easier. Yesterday was for the teachers history forgot. Today turns the lamp around, toward the ones in a life like yours.",
+      "voice": "A note in red pen in the margin of an old school essay: good, now say what you mean. A coach's voice from the sideline, repeating the same two words all season. An aunt in a kitchen, measuring salt by the look of it, not the spoon. Some teachers have titles. Some have none: a coworker, a kid down the street, a stranger on a long bus ride who told the truth when a polite lie would have been easier. Today turns the lamp toward the teachers in a life like yours.",
       "screen": [
         "`A NOTE IN RED PEN.`",
         "`A VOICE FROM THE SIDELINE.`",
@@ -38,7 +38,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Today's text is the Buddha's advice to a young householder named Sigala. As the story goes, Sigala's father, when he was dying, told him to honor the directions, so each morning Sigala bows to the east, the south, the west, the north, the sky and the earth. The Buddha meets him and gives the old custom a new meaning. The directions, he says, are the people in your life: parents, teachers, a spouse and children, friends, workers, and religious teachers. Honor them by how you treat them. The teachers are the south. The text describes how a student looks after a teacher: rising to greet them, attending on them, wanting to learn, listening closely. Then it turns around and describes what a teacher owes the student: training them well, making sure they've really grasped what was taught, and speaking well of them to friends. So in this picture a teacher isn't a vending machine for facts. A teacher is someone who keeps an eye on you, checks you understood, and is proud of you in public. The same discourse also describes a true friend, and one kind sounds a lot like a teacher: the friend who gives good counsel. That friend, the text says, keeps you from wrong, encourages you in what is good, tells you what you hadn't heard before, and shows you the way to heaven. No robe is mentioned. Put those together. In this discourse, learning happens in households and friendships, not only in temples. A teacher might be the monk at the local vihara. It might also be the friend who drove you to the hospital, or the boss who corrected you without shaming you. The text doesn't call every friend a teacher. It describes what the good ones do.",
+      "voice": "Today's text is the Buddha's advice to a young householder named Sigala. As the story goes, Sigala's dying father told him to honor the directions, so each morning Sigala bows to the east, south, west, north, the sky and the earth. The Buddha gives the old custom a new meaning. The directions, he says, are the people in your life: parents, teachers, a spouse and children, friends, workers, and religious teachers. Honor them by how you treat them. The teachers are the south. A student looks after a teacher by rising to greet them, attending on them, wanting to learn, listening closely. Then the text turns around: a teacher owes the student good training, makes sure they've really grasped what was taught, and speaks well of them to friends. So a teacher isn't a vending machine for facts. A teacher keeps an eye on you, checks you understood, and is proud of you in public. The same discourse describes a true friend who sounds a lot like a teacher: the friend who gives good counsel. That friend keeps you from wrong, encourages you in what is good, tells you what you hadn't heard before, and shows you the way to heaven. No robe is mentioned. Learning here happens in households and friendships, not only temples. A teacher might be the monk at the local vihara. It might be the friend who drove you to the hospital, or the boss who corrected you without shaming you. The text doesn't call every friend a teacher. It describes what the good ones do.",
       "screen": [
         "`SIGALA BOWS TO THE DIRECTIONS.`",
         "`THE TEACHERS ARE THE SOUTH.`",
@@ -49,13 +49,13 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice, if you'd like it: list three. Sit and let the breath slow down. Then, without hurrying, let three people come to mind who taught you something true. Not necessarily the most important three. Just three. For each one, find the single thing they taught you, in a few plain words. She taught me to finish what I start. He taught me it's fine to ask. Hold each one for a few breaths before moving on. If someone difficult shows up on the list, that's allowed; hard teachers count too. The bell holds the time.",
+      "voice": "Let three people come to mind who taught you something true; not the most important three, just three. For each, find the single thing they taught you in a few plain words, like she taught me to finish what I start, and hold it for a few breaths before moving on. If someone difficult shows up on the list, that's allowed; hard teachers count too.",
       "screen": []
     },
     {
       "type": "the word",
       "duration": "25 sec",
-      "voice": "Your teachers. The people who taught you anything true, with or without a title. In the advice to Sigala, they're a direction worth bowing to. Today's words.",
+      "voice": "Your teachers. The people who taught you anything true, with or without a title. In the advice to Sigala, they're a direction worth bowing to.",
       "screen": [
         "`YOUR TEACHERS — today's word`."
       ]
@@ -63,7 +63,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: proud of you in public. Today, tell one of your three what they taught you, by text, by phone, or out loud if they're near. Keep it to one sentence. Day one thousand twenty-eight.",
+      "voice": "Your line: proud of you in public. That's what the good ones do. See you tomorrow.",
       "screen": []
     },
     {
@@ -77,6 +77,11 @@
   ],
   "howItsDone": "Buddhists in many places honor teachers with bows, offerings and gratitude ceremonies, and the advice to Sigala is taught in some communities as a guide to everyday relationships, teachers among them.",
   "games": {
+    "guess": [
+      "anyone who taught you something true",
+      "only the teachers you had at school",
+      "the monks who lead your local temple"
+    ],
     "match": {
       "prompt": "your teachers: tap the pairs.",
       "pairs": [
@@ -137,14 +142,39 @@
     ],
     "recall": [
       [
-        "bhikkhuni",
-        "a fully ordained nun"
+        "parampara",
+        "the chain of tradition"
       ],
       [
-        "Buddhadasa",
-        "taught in plain Thai"
+        "Dipa Ma",
+        "a laywoman who practiced through grief"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your younger brother",
+      "says": "Does a Buddhist teacher have to be a monk in a robe?",
+      "options": [
+        "No; in the advice to Sigala, a friend who gives good counsel teaches, no robe needed.",
+        "Yes, only ordained monks may ever be called someone's teacher.",
+        "No, and anyone who gives you advice at all counts as a teacher, good or bad."
+      ],
+      "answer": 0,
+      "meaning": "In the advice to Sigala, the friend who gives good counsel keeps you from wrong and tells you what you hadn't heard. No robe is mentioned."
+    },
+    "gloss": {
+      "Sigala": {
+        "meaning": "a young householder the Buddha advised",
+        "say": "si-GAH-luh"
+      },
+      "vihara": {
+        "meaning": "a Buddhist monastery or temple",
+        "script": "विहार",
+        "say": "vi-HAH-ruh"
+      },
+      "householder": {
+        "meaning": "a lay person with a home and family"
+      }
+    }
   },
   "sources": [
     {
@@ -165,7 +195,9 @@
       "DN 31 duties of pupil and teacher summarized selectively (the text lists more on each side); the script deliberately gives no count. Confirm the selection is fair.",
       "'In these texts, learning the path happens between people' is an interpretive summary of the two texts; soften if needed.",
       "Practice follows the outline ('list three').",
-      "Audit 2026-10-01: read in full; DN 31 directions (teachers = south), the reciprocal duties and the counseling friend (atthakkhāyī) check out. Notes on SN 45.2, Ananda as cousin and the kalyāṇamitta gloss are stale (that material was cut). No text change."
+      "Audit 2026-10-01: read in full; DN 31 directions (teachers = south), the reciprocal duties and the counseling friend (atthakkhāyī) check out. Notes on SN 45.2, Ananda as cousin and the kalyāṇamitta gloss are stale (that material was cut). No text change.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

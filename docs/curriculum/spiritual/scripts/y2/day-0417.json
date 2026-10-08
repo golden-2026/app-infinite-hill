@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: real beauty, the dog, the horse and the young man's curls, and your line, you're your will, your choosing self. Whose character did you get to praise? Day four hundred seventeen.",
+      "voice": "Yesterday's word was real beauty: a human's excellence is justice and self-control. Your line was you're your will, your choosing self.",
       "screen": [
         "`REAL BEAUTY.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A good gym program doesn't just say get fit. It splits the work: one day legs, one day upper body, one day endurance. You know what you're training today, and why. A few weeks ago, back on not more books, Epictetus told a proud student to show him his progress in desire, action and judgment. Now, at the start of book three of the Discourses, he lays out that training plan in full, three fields, in order, with a warning about which one people skip to first. Today: three fields.",
+      "voice": "A good gym program doesn't just say get fit. It splits the work: one day legs, one day upper body, one day endurance. You know what you're training today, and why. A few weeks ago, back on not more books, Epictetus told a proud student to show him his progress in desire, action and judgment. Now, at the start of book three of the Discourses, he lays out that plan in full: three fields, in order, with a warning about which one people skip to first.",
       "screen": [
         "`LEGS, UPPER BODY, ENDURANCE.` → `DESIRE, ACTION, JUDGMENT.` → `THE ONE PEOPLE SKIP TO.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "This is Discourses book three, chapter two. There are three fields, Epictetus says, in which anyone who wants to be good has to train. The first is desire and aversion: learning to want and avoid things so that you're never let down by what you want, and never trapped by what you're trying to avoid. He calls this the most urgent, because it's where the storms come from: grief, envy, fear, the feeling of being thwarted. They all start when a desire misses or an aversion hits. The second field is action, our impulses to do or not do: acting in order, thoughtfully, not carelessly. And here he adds a line that surprises people who think Stoics are cold. I'm not supposed to be unfeeling, he says, like a statue. I'm supposed to keep up my relationships, the ones I was born into and the ones I chose: as a son, a brother, a father, a citizen, someone who honors the gods. The third field is assent: not being fooled, not agreeing too quickly. This one, he says, is for people who are already making progress, so that their judgment holds even when they're tired, or sad, or half asleep. And his warning: the philosophers of his day loved to skip straight to the third field, to clever arguments and logic puzzles, while their desires and relationships were a mess. Start where the storms start, he says. The logic can come later.",
+      "voice": "This is Discourses book three, chapter two. There are three fields, Epictetus says, in which anyone who wants to be good has to train. The first is desire and aversion: learning to want and avoid things so that you're never let down by what you want, and never trapped by what you're trying to avoid. He calls this the most urgent, because it's where the storms come from: grief, envy, fear, the feeling of being thwarted. They all start when a desire misses or an aversion hits. The second field is action, our impulses to do or not do: acting in order, thoughtfully, not carelessly. And here's a line that surprises people who think Stoics are cold. I'm not supposed to be unfeeling like a statue, he says. I'm supposed to keep up my relationships, the ones I was born into and the ones I chose: as a son, a brother, a father, a citizen, someone who honors the gods. The third field is assent: not being fooled, not agreeing too quickly. This one is for people already making progress, so that their judgment holds even when they're tired, or sad, or half asleep. And his warning: the philosophers of his day loved to skip straight to the third field, to clever arguments and logic puzzles, while their desires and relationships were a mess. Start where the storms start, he says. The logic can come later.",
       "screen": [
         "`FIRST: DESIRE AND AVERSION.` · `SECOND: ACTION, NOT LIKE A STATUE.` · `THIRD: ASSENT, NOT FOOLED.` · `DON'T SKIP TO THE THIRD.` · then, large: `THREE FIELDS.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Sit and breathe. Hold the three fields in mind like three doors. Desire: what am I wanting or dreading today? Action: who do I owe something to today, and how will I act toward them? Assent: what thought am I likely to believe too quickly? Let each door open for a few breaths. Then pick one, just one, as your training field for the rest of the day. The bell holds the time.",
+      "voice": "Hold the three fields in mind like three doors. Desire: what am I wanting or dreading today? Action: who do I owe something to, and how will I act toward them? Assent: what thought am I likely to believe too quickly? Let each door open for a few breaths, then pick one as your training field.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: let each door open for a few breaths. Pick one of the three for today, desire, action or assent, and train only that one. Day four hundred seventeen.",
+      "voice": "Your line: let each door open for a few breaths. Desire comes first, where the storms start. Until tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Many modern Stoic practitioners organize their practice around Epictetus' three fields, sometimes focusing on one per day: desire, action or assent.",
   "games": {
+    "guess": [
+      "desire, action and assent: where to train",
+      "body, mind and soul, the parts of a person",
+      "the farms a student worked to pay his fees"
+    ],
     "match": {
       "prompt": "three fields: tap the pairs.",
       "pairs": [
@@ -132,14 +137,43 @@
     ],
     "recall": [
       [
-        "Helvidius Priscus",
-        "the senator who kept going in"
+        "kybernetes",
+        "the ship's captain"
       ],
       [
-        "prohairesis",
-        "the power to choose"
+        "onoma",
+        "name: each one tells you what to do"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your gym buddy",
+      "says": "Where should someone start if they want to train like a Stoic?",
+      "options": [
+        "With desire and aversion, Epictetus said, since that's where grief, envy and fear begin.",
+        "With logic and clever arguments, since sharp reasoning fixes everything else.",
+        "With the body: get fit first, and the mind will follow on its own."
+      ],
+      "answer": 0,
+      "meaning": "In 3.2, desire and aversion come first, since the storms start there; then action in our relationships; then assent. Don't skip to the logic."
+    },
+    "gloss": {
+      "assent": {
+        "meaning": "agreeing that a thought or impression is true",
+        "say": "uh-SENT"
+      },
+      "Stoics": {
+        "meaning": "followers of the Greek school of thought Epictetus taught",
+        "say": "STOH-iks"
+      },
+      "Discourses": {
+        "meaning": "Epictetus' talks, written down by his student Arrian",
+        "say": "DIS-kor-siz"
+      },
+      "Epictetus": {
+        "meaning": "a Stoic teacher, once enslaved and later freed",
+        "say": "ep-ik-TEE-tus"
+      }
+    }
   },
   "sources": [
     {
@@ -160,7 +194,9 @@
     "keeper": null,
     "notes": [
       "Discourses 3.2.1–6 paraphrased: three topoi (desire/aversion; impulse/duty; assent), the first as most urgent because passions arise from failed desire or aversion; 'I ought not to be unfeeling like a statue' but maintain natural and acquired relations (as pious person, son, brother, father, citizen); third field for those progressing, even when asleep, drunk or melancholy; philosophers who start with the third. Confirm.",
-      "Whether the three topoi are Epictetus' innovation is debated; the trapdoor says 'often seen as'. Confirm, and confirm the Marcus echo (e.g. Meditations 8.7, 9.6)."
+      "Whether the three topoi are Epictetus' innovation is debated; the trapdoor says 'often seen as'. Confirm, and confirm the Marcus echo (e.g. Meditations 8.7, 9.6).",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

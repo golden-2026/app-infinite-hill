@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Your line was not afraid, only resting, and yesterday Duryodhana lay hidden in the lake until some hunters gave him away. What did you find you'd been hiding under the surface? Day eight hundred forty-six.",
+      "voice": "Yesterday, in the Shalya book, Duryodhana lay hidden in the lake until some hunters gave him away. Your line was not afraid, only resting.",
       "screen": [
         "`SHALYA.` · `THE HUNTERS OVERHEAR.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "An offer rises from under the water. Take the whole earth, Duryodhana says, in effect. My friends are dead, my brothers are dead. I have no wish to rule an empty kingdom. I'll go to the forest, dressed in deerskins, and live there. The kingdom is yours. It sounds like surrender. It sounds like the end of the war, handed over without another blow. And Yudhishthira, standing on the bank, refuses. Today, why he won't take it, and the risky thing he offers instead.",
+      "voice": "An offer rises from under the water. Take the whole earth, Duryodhana says, in effect. My friends are dead, my brothers are dead. I have no wish to rule an empty kingdom. I'll go to the forest, dressed in deerskins, and live there. It sounds like surrender, the end of the war handed over without another blow. And Yudhishthira, standing on the bank, refuses.",
       "screen": [
         "`TAKE THE WHOLE EARTH.` → `I'LL GO TO THE FOREST.` → `YUDHISHTHIRA REFUSES.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "It isn't yours to give, Yudhishthira answers, in Ganguli's telling. When we asked for land before the war, you wouldn't give us as much ground as the point of a needle would cover. Now that you've lost it, you offer it all as a gift? A warrior doesn't take a kingdom as charity. Come out and fight. Then Yudhishthira goes further, and it gets dangerous. Choose any one of us, he says, with any weapon you like. Beat that one, and the kingdom is yours. Krishna is alarmed. He tells Yudhishthira he has put everything at risk again, on a single throw, and that none of the brothers but Bhima can match Duryodhana with the mace, and even Bhima has less skill. Some readers hear in this the old dice game coming back. The king who lost everything once by gambling has just gambled again. Duryodhana rises out of the lake, dripping, wounded, mace on his shoulder, and he chooses the mace. And Bhima steps forward to meet him. The fight is agreed. Two cousins who have hated each other since boyhood will settle it alone, with everyone else watching.",
+      "voice": "It isn't yours to give, Yudhishthira answers, in Ganguli's telling. When we asked for land before the war, you wouldn't give us as much ground as the point of a needle would cover. Now that you've lost it, you offer it all as a gift? A warrior doesn't take a kingdom as charity. Come out and fight. Then he goes further, and it gets dangerous. Choose any one of us, he says, with any weapon you like. Beat that one, and the kingdom is yours. Krishna is alarmed. He tells Yudhishthira he has put everything at risk again, on a single throw, and that none of the brothers but Bhima can match Duryodhana with the mace, and even Bhima has less skill. Some readers hear in this the old dice game coming back: the king who lost everything once by gambling has just gambled again. Duryodhana rises out of the lake, dripping, wounded, mace on his shoulder, and he chooses the mace. And Bhima steps forward to meet him. The fight is agreed. Two cousins who have hated each other since boyhood will settle it alone, with everyone else watching.",
       "screen": [
         "`IT ISN'T YOURS TO GIVE` · `CHOOSE ANY ONE OF US` · `KRISHNA IS ALARMED` · then, large: `DURYODHANA RISES`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Sit, and rest your hands open in your lap. Breathe in. Breathe out. Bring to mind a time you offered something only after you'd already lost it, or were offered something that way. Notice how the offer felt from each side. Don't judge it. Breathe in, and let your hands stay open. Breathe out, and let your shoulders drop. If you pray, you can bring that memory into your prayer. The bell holds the time.",
+      "voice": "Rest your hands open in your lap. Bring to mind a time you offered something only after you'd already lost it, or were offered something that way, and notice how it felt from each side, without judging. If you pray, you can bring that memory into your prayer.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: it isn't yours to give. Today, before you make a bold offer, take one breath and count what it puts at risk. Day eight hundred forty-six.",
+      "voice": "Your line: it isn't yours to give. A warrior won't take a kingdom as charity. That's day eight hundred forty-six.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "The exchange at the lake, from the Shalya Parva, is retold in readings and serials of the Mahabharata, and Duryodhana's earlier refusal of even a needle's point of land is recalled there.",
   "games": {
+    "guess": [
+      "the book where Duryodhana rises from the lake to fight",
+      "the cousin who refuses the earth offered from the lake",
+      "the old dice game that comes back to haunt the brothers"
+    ],
     "match": {
       "prompt": "at the lake's edge — tap the pairs.",
       "pairs": [
@@ -132,14 +137,42 @@
     ],
     "recall": [
       [
-        "Karna",
-        "the one it's aimed at"
+        "Karkotaka",
+        "bites Nala and changes his shape"
       ],
       [
-        "Drona",
-        "hid Jayadratha at the back"
+        "jnana",
+        "knowing that frees"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your uncle",
+      "says": "Duryodhana offered him the whole kingdom. Why wouldn't Yudhishthira just take it?",
+      "options": [
+        "It wasn't Duryodhana's to give, and a warrior won't take a kingdom as charity.",
+        "He suspected a trap, since the voice was coming from under the water.",
+        "He had promised Krishna that the war would end only with a duel."
+      ],
+      "answer": 0,
+      "meaning": "Duryodhana had refused even a needle's point of land before the war. Now the earth wasn't his to give, and a warrior won't take charity."
+    },
+    "gloss": {
+      "Yudhishthira": {
+        "meaning": "the eldest Pandava, who refuses the offer",
+        "script": "युधिष्ठिर",
+        "say": "yoo-DHISH-tih-ruh"
+      },
+      "Duryodhana": {
+        "meaning": "the eldest Kaurava, who rises from the lake",
+        "script": "दुर्योधन",
+        "say": "door-YOH-duh-nuh"
+      },
+      "Bhima": {
+        "meaning": "the Pandava brother who steps forward with the mace",
+        "script": "भीम",
+        "say": "BHEE-muh"
+      }
+    }
   },
   "sources": [
     {
@@ -165,7 +198,10 @@
       "Confirm Krishna's rebuke and its content (rashness; only Bhima can face Duryodhana with the mace; Duryodhana's greater skill). The dice-game echo is framed as 'some readers'; check whether Krishna himself makes the comparison in Ganguli.",
       "The script stops before Balarama's arrival and the duel, which day 847 tells.",
       "'Hated each other since boyhood' rests on the Adi Parva (the poisoning of Bhima, etc.); soften if a Keeper prefers.",
-      "Audit: deep-read against the Karna and Shalya Parva paraphrases and days 827-836; no factual, framing or repetition problem found, no change."
+      "Audit: deep-read against the Karna and Shalya Parva paraphrases and days 827-836; no factual, framing or repetition problem found, no change.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "Recall pairs chosen by hand (2026-10-07) so no old word repeats on nearby days; meanings follow each word's own lesson.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the opening of an-Nisa: all people from one soul, and the ties of the womb. Your line was from one soul. Did you call your mother, or pray for her? Day three hundred seventy-seven.",
+      "voice": "Yesterday: the opening of an-Nisa, all people from one soul, and the ties of the womb. Your line was from one soul.",
       "screen": [
         "`FROM ONE SOUL.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Surah 4, verse 2, says: give orphans their property. Don't exchange the good for the bad. Don't eat up their wealth by mixing it with your own; that is a great sin. Three precise warnings, aimed at exactly the tricks a guardian might use. Some commentators read these lines against Medina after Uhud, with its new orphans and widows, and the surah turns to them from its first lines. A few verses later, 4:6 gives a whole procedure. Test the orphans as they near the age of marriage. If you find sound judgment in them, rushd, hand their property over. Don't rush to spend it before they grow up. If the guardian is well off, he should take nothing for his work; if he's poor, he may take what is fair. And when you hand it over, call witnesses. Then 4:10 gives a stark picture: those who unjustly consume orphans' wealth are swallowing fire into their bellies. Why so much care? One reason is close to home. The Prophet ﷺ was himself an orphan. His father died before he was born, and his mother while he was still a small child. Surah 93 says to him, in Pickthall's words: \"Did He not find thee an orphan and protect (thee)?\" And a hadith in Sahih al-Bukhari reports him holding up two fingers, side by side, and saying that he and the one who looks after an orphan will be in Paradise like this. The verse turns that warmth into accounting. Love the orphan, yes. And also keep the ledger straight, because theirs is theirs.",
+      "voice": "Surah 4, verse 2, says: give orphans their property. Don't exchange the good for the bad. Don't eat up their wealth by mixing it with your own; that is a great sin. Three precise warnings, aimed at exactly the tricks a guardian might use. Some commentators read these lines against Medina after Uhud, with its new orphans and widows. A few verses later, 4:6 gives a whole procedure. Test the orphans as they near the age of marriage. If you find sound judgment in them, rushd, hand their property over. Don't rush to spend it before they grow up. A guardian who is well off should take nothing for his work; a poor one may take what is fair. And when you hand it over, call witnesses. Then 4:10 gives a stark picture: those who unjustly consume orphans' wealth are swallowing fire into their bellies. Why so much care? One reason is close to home. The Prophet ﷺ was himself an orphan. His father died before he was born, and his mother while he was still a small child. Surah 93 says to him, in Pickthall's words: \"Did He not find thee an orphan and protect (thee)?\" And a hadith in Sahih al-Bukhari reports him holding up two fingers, side by side, and saying that he and the one who looks after an orphan will be in Paradise like this. The verse turns that warmth into accounting. Love the orphan, yes, and keep the ledger straight, because theirs is theirs.",
       "screen": [
         "`NO SWAPPING, NO MIXING` · `TEST FOR SOUND JUDGMENT, THEN HAND IT OVER` · `THE PROPHET WAS AN ORPHAN` · `TWO FINGERS, SIDE BY SIDE` · then, large: `GIVE ORPHANS THEIR PROPERTY.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "When the bell starts, think of a child somewhere who has lost a parent: someone you know, a family in your community, or children you'll never meet. Hold them in mind for a moment without rushing to fix anything. If you pray, you can ask God to protect them. Then think of one concrete way to help: a sponsorship, a donation to an orphan charity, time with a child who needs an adult. Pick the one you'll actually do. The bell holds the time.",
+      "voice": "Hold in mind a child who has lost a parent, someone you know, a family in your community, or children you'll never meet, without rushing to fix anything. If you pray, you can ask God to protect them, and you might think of one real way to help: a sponsorship, a donation, time with a child who needs an adult.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: theirs is theirs. Today, support an orphan cause in one real way, and return anything you're holding that belongs to someone else. Day three hundred seventy-seven.",
+      "voice": "Your line: theirs is theirs. The Prophet knew what it was to be an orphan. Day three hundred seventy-seven, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Muslims treat caring for orphans and guarding their wealth as a serious duty; orphan sponsorship is a widespread form of Muslim charity, and Islamic law sets rules for guardians managing a minor's property.",
   "games": {
+    "guess": [
+      "an orphan, whose property must be kept safe",
+      "a guardian who manages a child's wealth",
+      "a widow left alone after a battle"
+    ],
     "match": {
       "prompt": "the orphans' property — tap the pairs.",
       "pairs": [
@@ -132,14 +137,47 @@
     ],
     "recall": [
       [
-        "ma'ruf",
-        "the good that is known, recognized"
+        "shura",
+        "consultation, deciding together"
       ],
       [
-        "kalimatin sawa'",
-        "a word level between both sides"
+        "dha'iqa",
+        "tasting: brief, and personal"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your brother-in-law",
+      "says": "If nobody's checking, can a guardian swap an orphan's good things for worse ones?",
+      "options": [
+        "No: 4:2 says give orphans their property and don't swap the good for the bad.",
+        "Yes, if the guardian is poor, any swap counts as fair pay for the work.",
+        "Yes, small swaps are fine as long as the total looks the same at the end."
+      ],
+      "answer": 0,
+      "meaning": "4:2: give orphans their property; don't exchange the good for the bad, or eat up their wealth by mixing it with your own."
+    },
+    "gloss": {
+      "yatim": {
+        "meaning": "an orphan",
+        "script": "يتيم",
+        "say": "ya-TEEM"
+      },
+      "rushd": {
+        "meaning": "sound judgment, the sign an orphan is ready",
+        "script": "رشد",
+        "say": "RUSHD"
+      },
+      "an-Nisa": {
+        "meaning": "the Women, Surah 4",
+        "script": "النساء",
+        "say": "an-ni-SAA"
+      },
+      "Uhud": {
+        "meaning": "the battle near Medina that left new orphans and widows",
+        "script": "أحد",
+        "say": "u-HUD"
+      }
+    }
   },
   "sources": [
     {
@@ -169,7 +207,9 @@
       "4:2, 4:6 and 4:10 paraphrased. Pickthall wording of 93:6 quoted from memory; check.",
       "Bukhari 5304 cited from memory; confirm.",
       "Setting after Uhud (many orphans) is a common tafsir observation; confirm.",
-      "The Prophet's mother died when he was about six: standard sira; confirm."
+      "The Prophet's mother died when he was about six: standard sira; confirm.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

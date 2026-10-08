@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: Guha the boatman, part three. Sita prayed to the river in midstream, and Guha watched them go from the far shore. Did you pause between one part of your day and the next? Today, a sage at the meeting of rivers. Day five hundred thirty-seven.",
+      "voice": "Yesterday: the Ganga, honored as goddess and mother. Sita prayed in midstream, and Guha watched them go. Today, a sage where two rivers meet.",
       "screen": [
         "`GUHA WATCHES FROM THE SHORE.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Their first night alone, on the far side of the Ganga, is hard. Valmiki lets Rama's calm slip. He lies awake and worries out loud to Lakshmana: about his father, about his mother, about what Kaikeyi might do now. He even tells Lakshmana to go back and look after them. Lakshmana refuses. In the morning they walk on, and toward evening, they see something a traveler in the forest hopes to see: smoke rising above the trees.",
+      "voice": "Their first night alone, on the far side of the Ganga, is hard. Valmiki lets Rama's calm slip. He lies awake and worries out loud to Lakshmana: about his father, his mother, what Kaikeyi might do now. He even tells Lakshmana to go back and look after them. Lakshmana refuses. In the morning they walk on, and toward evening they see what a traveler in the forest hopes to see: smoke rising above the trees.",
       "screen": [
         "`THE FIRST NIGHT ALONE.` → `RAMA WORRIES OUT LOUD.` → `SMOKE ABOVE THE TREES.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Rama knows what the smoke means. Look, he tells Lakshmana, that's the smoke of a sacred fire. A sage must live there. We must be near Prayaga, where the Ganga and the Yamuna meet. You can hear the two rivers crashing together. They follow the smoke, and come to the hermitage of Bharadvaja. Bharadvaja is a great sage, surrounded by his students, sitting by his fire. Rama introduces himself, Sita and Lakshmana, and explains that they've been sent to the forest by his father's command. And Bharadvaja, it turns out, already knows. I've been expecting you, he says. I heard you'd been sent away for no fault of your own. He welcomes them as honored guests, with water for their feet, a cow, and food of the forest, fruit and roots. And he makes them an offer. Stay here, at the meeting of the rivers. It's a holy place. It's beautiful. You can live here for the fourteen years. Rama answers thoughtfully. It's too close to home, he says. The people of the cities will hear that I'm here and keep coming to see us, Sita and me. Find us somewhere more secluded. That's worth a pause. Rama is turning down comfort and holiness, not because they're bad, but because he wants the exile to be a real exile, and he wants the people back home to let him go. Bharadvaja understands at once, and says he knows just the place. Tomorrow he'll describe it. Tonight, the three exiles sleep in a sage's hermitage, by the meeting of two rivers.",
+      "voice": "Rama knows what the smoke means. That's the smoke of a sacred fire, he tells Lakshmana. A sage must live there. We must be near Prayaga, where the Ganga and the Yamuna meet; you can hear the two rivers crashing together. They follow the smoke to the hermitage of Bharadvaja, a great sage sitting by his fire among his students. Rama introduces the three of them and explains they've been sent to the forest by his father's command. Bharadvaja, it turns out, already knows. I've been expecting you, he says. I heard you'd been sent away for no fault of your own. He welcomes them as honored guests, with water for their feet, a cow, and food of the forest, fruit and roots. Then an offer. Stay here, at the meeting of the rivers. It's holy, and beautiful. You can live here for the fourteen years. Rama answers thoughtfully. It's too close to home. The people of the cities will hear I'm here and keep coming to see Sita and me. Find us somewhere more secluded. That's worth a pause. Rama turns down comfort and holiness, not because they're bad, but because he wants the exile to be a real exile, and the people back home to let him go. Bharadvaja understands at once, and says he knows just the place. Tonight, the three exiles sleep in a sage's hermitage, by the meeting of two rivers.",
       "screen": [
         "`THE SMOKE OF A SACRED FIRE.` · `PRAYAGA: WHERE TWO RIVERS MEET.` · `I'VE BEEN EXPECTING YOU.` · `TOO CLOSE TO HOME.` · then, large: `A SAGE WHO UNDERSTANDS AT ONCE.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Sit and listen. Rama knew where he was by a sound and a sign: water meeting water, smoke above the trees. Let the breath be easy, and notice what you can hear right now: the farthest sound first, then a nearer one, then the nearest, your own breathing. Rest with whatever reaches you. Each sound tells you a little about where you are. The bell holds the time.",
+      "voice": "Rama knew where he was by a sound and a sign: water meeting water, smoke above the trees. Let the breath be easy, and notice what you can hear: the farthest sound first, then a nearer one, then the nearest, your own breathing. Rest with whatever reaches you.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: I've been expecting you. Today, welcome someone the way the sage did, as if you'd been expecting them. Day five hundred thirty-seven.",
+      "voice": "Your line: I've been expecting you. Tomorrow, the sage gives directions. Day five hundred thirty-seven, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Prayaga, now Prayagraj, is a place of pilgrimage; pilgrims bathe at the Sangam, where the Ganga and Yamuna meet, and the Kumbh Mela is held there.",
   "games": {
+    "guess": [
+      "the sage at Prayaga who welcomes the exiles",
+      "the sage who first tells Valmiki Rama's story",
+      "Rama's family teacher, who stays in Ayodhya"
+    ],
     "match": {
       "prompt": "the meeting of rivers — tap the pairs.",
       "pairs": [
@@ -130,14 +135,52 @@
       "what it means: it's the meeting of the Ganga and Yamuna, a holy place with a great sage's hermitage.",
       "what a scholar hears: tradition also gives the name Bharadvaja to a family of Vedic seers credited with hymns of the Rigveda; whether the epic's sage is meant as the same figure is a matter of tradition."
     ],
+    "chat": {
+      "who": "your little sister",
+      "says": "Bharadvaja offered them a holy, beautiful place. Why did Rama say no?",
+      "options": [
+        "It was too close to home; people would keep coming, and he wanted a real exile.",
+        "He didn't trust the sage, who already knew far too much about them.",
+        "The rivers were too loud, and Sita couldn't sleep beside them."
+      ],
+      "answer": 0,
+      "meaning": "Prayaga was too close to the cities. Rama wanted the exile to be real, and the people back home to let him go."
+    },
+    "gloss": {
+      "Prayaga": {
+        "meaning": "the place where the Ganga and Yamuna meet",
+        "script": "प्रयाग",
+        "say": "pruh-YAHG"
+      },
+      "Yamuna": {
+        "meaning": "the great river that meets the Ganga at Prayaga",
+        "script": "यमुना",
+        "say": "YUH-moo-nah"
+      },
+      "Bharadvaja": {
+        "meaning": "the great sage whose hermitage is at Prayaga",
+        "script": "भरद्वाज",
+        "say": "bhuh-ruhd-VAH-juh"
+      },
+      "Ganga": {
+        "meaning": "the river honored as a goddess and a mother",
+        "script": "गङ्गा",
+        "say": "GUNG-gah"
+      },
+      "Kaikeyi": {
+        "meaning": "Dasharatha's queen, Bharata's mother",
+        "script": "कैकेयी",
+        "say": "KY-kay-yee"
+      }
+    },
     "recall": [
       [
-        "Urmila",
-        "Lakshmana's wife, Sita's sister"
+        "Janaka",
+        "Sita's father, keeper of Shiva's bow"
       ],
       [
-        "Lakshmana",
-        "offers to fight the whole city"
+        "daiva",
+        "what the gods give; fate"
       ]
     ]
   },
@@ -163,7 +206,9 @@
       "Rama's night lament (Ayodhya 53) includes harsh words about Kaikeyi and a wish that Lakshmana return; summarized gently. Confirm.",
       "Rama hearing the sound of the two rivers meeting: confirm.",
       "Trapdoor link to the Rigveda's sixth mandala (Bharadvaja family): confirm wording.",
-      "Editor review (2026-10-01): removed 'for once' (Rama grieves elsewhere in this book), 'every traveler ... watched for', 'one of the holiest places', the 'place of sacrifice' etymology and the Rigveda book count; replaced a second river-breath practice in a row (days 536 and 538 both use rivers) with a listening practice."
+      "Editor review (2026-10-01): removed 'for once' (Rama grieves elsewhere in this book), 'every traveler ... watched for', 'one of the holiest places', the 'place of sacrifice' etymology and the Rigveda book count; replaced a second river-breath practice in a row (days 536 and 538 both use rivers) with a listening practice.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

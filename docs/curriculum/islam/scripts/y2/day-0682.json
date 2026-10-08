@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, al-Anfal, and your line: read it in context. Did you find the sentence before and after something before reacting? Today, a theme about what's in your pocket. Day six hundred eighty-two.",
+      "voice": "Yesterday: al-Anfal, and if they incline to peace, incline to it too. Your line was read it in context. Today, what's in your pocket.",
       "screen": [
         "`READ IT IN CONTEXT.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A friend hands over a house key before a long trip. With it you can go in, water the plants, use the kitchen, even sleep there. But you'd never sell the sofa. It isn't yours, and you both know it. You're holding it for someone, and one day you'll hand it back. One verse of the Qur'an talks about money in much the same way, and it has a word for the person holding it.",
+      "voice": "A friend hands you a house key before a long trip. With it you can go in, water the plants, use the kitchen, even sleep there. But you'd never sell the sofa. It isn't yours, and you both know it. You're holding it for someone, and one day you'll hand it back. One verse of the Qur'an talks about money in much the same way, and it has a word for the person holding it.",
       "screen": [
         "`A FRIEND'S HOUSE KEY.`",
         "`USE IT, DON'T SELL THE SOFA.`",
@@ -38,7 +38,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Surah al-Hadid, verse seven, in Pickthall's translation, tells believers to \"spend of that whereof He hath made you trustees.\" The Arabic word is mustakhlafin. It comes from kh-l-f, the root of khalifah, a successor, someone who stands in for another. In this picture, a person holds wealth that someone held before and someone will hold after, and the owner is Allah. Then surah fifty-one, and surah seventy, add the second half. In the wealth of the righteous, they say, there's a right, a known right, for the one who asks and the one who is deprived. Not a favor. A right. The money is held in trust, and part of it already belongs to someone else. Islamic law gives that part a shape in zakat: each year, a fixed share of savings above a set minimum goes to those in need. Beyond it there's sadaqah, given freely, any time. A hadith in Sahih Muslim pictures the person who says, my wealth, my wealth. The Prophet ﷺ said: what is yours of it is only what you ate and finished, wore and wore out, or gave away and so sent ahead. Everything else, you're leaving for others. And another hadith in Muslim's collection: charity never decreased wealth. The trust doesn't get smaller when you hand part of it on. It's how the trust gets kept.",
+      "voice": "Surah al-Hadid, verse seven, in Pickthall's translation, tells believers to \"spend of that whereof He hath made you trustees.\" The Arabic word is mustakhlafin. It comes from kh-l-f, the root of khalifah, a successor, someone who stands in for another. In this picture, a person holds wealth that someone held before and someone will hold after, and the owner is Allah. Surahs fifty-one and seventy add the second half: in the wealth of the righteous there's a right, a known right, for the one who asks and the one who is deprived. Not a favor. A right. The money is held in trust, and part of it already belongs to someone else. Islamic law gives that part a shape in zakat: each year, a fixed share of savings above a set minimum goes to those in need. Beyond it there's sadaqah, given freely, any time. A hadith in Sahih Muslim pictures the person who says, my wealth, my wealth. The Prophet ﷺ said: what is yours of it is only what you ate and finished, wore and wore out, or gave away and so sent ahead. Everything else, you're leaving for others. And another hadith in Muslim's collection: charity never decreased wealth. The trust doesn't get smaller when you hand part of it on. It's how the trust gets kept.",
       "screen": [
         "`MUSTAKHLAFIN: TRUSTEES.`",
         "`A KNOWN RIGHT FOR THE POOR.`",
@@ -49,7 +49,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: give from what you hold. Sit, and picture what you own as if it were on loan: your money, your phone, your time, your skills. Hold the thought: I'm looking after this. Then ask: whose known right is in it? A relative struggling, a neighbor, a charity you trust, a coworker who needs an hour of your help. Pick one. Decide the amount, or the hour, now, before the bell ends, and decide when you'll give it today. The bell holds the time.",
+      "voice": "Picture what you own as if it were on loan: your money, your phone, your time, your skills, and hold the thought, I'm looking after this. Then ask whose known right is in it: a relative who's struggling, a neighbor, a charity you trust, a coworker who needs an hour of your help.",
       "screen": []
     },
     {
@@ -63,7 +63,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: held in trust. Today, give the amount or the hour you chose, and think of it as returning, not losing. Day six hundred eighty-two.",
+      "voice": "Your line: held in trust. Giving is returning, not losing. That's day six hundred eighty-two.",
       "screen": []
     },
     {
@@ -77,6 +77,11 @@
   ],
   "howItsDone": "Muslims pay zakat each year, commonly 2.5 percent of savings held above a minimum (nisab) for a lunar year, and give voluntary charity (sadaqah) at any time; many reckon zakat during Ramadan.",
   "games": {
+    "guess": [
+      "trustees, holding what is Allah's",
+      "the poor, who have a right to wealth",
+      "people who give their yearly zakat"
+    ],
     "match": {
       "prompt": "wealth as a trust — tap the pairs.",
       "pairs": [
@@ -137,14 +142,52 @@
     ],
     "recall": [
       [
-        "qussihi",
-        "follow his tracks"
+        "shifa'",
+        "healing"
       ],
       [
-        "ayah",
-        "a verse, and a sign"
+        "lawwamah",
+        "the self that blames itself"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your roommate",
+      "says": "Why do Muslims give zakat? Isn't money just yours?",
+      "options": [
+        "The Qur'an calls owners trustees, and says the poor have a known right in wealth.",
+        "Because giving is an optional favor, done only when you feel generous.",
+        "Because wealth is sinful, so believers try to get rid of as much as they can."
+      ],
+      "answer": 0,
+      "meaning": "57:7 calls people trustees of what they hold; 51:19 and 70:24 say the poor have a known right in it. Not a favor. A right."
+    },
+    "gloss": {
+      "mustakhlafin": {
+        "meaning": "trustees: people who hold something in another's place",
+        "script": "مستخلفين",
+        "say": "mus-takh-la-FEEN"
+      },
+      "khalifah": {
+        "meaning": "a successor, one who stands in for another",
+        "script": "خليفة",
+        "say": "kha-LEE-fa"
+      },
+      "zakat": {
+        "meaning": "the fixed yearly share of savings given to those in need",
+        "script": "زكاة",
+        "say": "za-KAAT"
+      },
+      "sadaqah": {
+        "meaning": "charity given freely, any time",
+        "script": "صدقة",
+        "say": "SA-da-qa"
+      },
+      "al-Hadid": {
+        "meaning": "Surah 57, the Iron",
+        "script": "الحديد",
+        "say": "al-ha-DEED"
+      }
+    }
   },
   "sources": [
     {
@@ -180,7 +223,9 @@
       "Hadith numbers cited from memory (Muslim 2958/2959; Muslim 2588); confirm.",
       "Zakat summarized: commonly 2.5% of savings above nisab held a lunar year; schools differ on details and on other categories (crops, livestock).",
       "Day 594 taught 51:19 from surah adh-Dhariyat; this day leads with 57:7 and the trustee picture.",
-      "Editor review 2026-10-01: hook no longer opens 'Think about' / 'Now imagine', and 'the Qur'an describes money exactly this way' softened to 'in much the same way'. 'The real owner is Allah' (narrator stating belief) now framed as the verse's picture. Cut 'many Muslims give much more' and, under the claims rule, the 2.5 percent figure from the voice (kept in howItsDone as the common rate; a Keeper may prefer it back in the teach). 'The Prophet answered' changed to 'said': the hadith is a saying, not a reply."
+      "Editor review 2026-10-01: hook no longer opens 'Think about' / 'Now imagine', and 'the Qur'an describes money exactly this way' softened to 'in much the same way'. 'The real owner is Allah' (narrator stating belief) now framed as the verse's picture. Cut 'many Muslims give much more' and, under the claims rule, the 2.5 percent figure from the voice (kept in howItsDone as the common rate; a Keeper may prefer it back in the teach). 'The Prophet answered' changed to 'said': the hadith is a saying, not a reply.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

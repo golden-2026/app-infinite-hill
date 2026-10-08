@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: Suppavasa's meal, and your line, a gift that comes back. Who did you feed? Today, what happens after a good meal, when you sit down to meditate and your head starts to drop. Day six hundred sixty-eight.",
+      "voice": "Yesterday: Suppavasa's meal, and your line, a gift that comes back. Today, what happens after a good meal, when you sit down to meditate and your head starts to drop.",
       "screen": [
         "`A GIFT THAT COMES BACK.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "The breath is slow, the room is warm, and then your chin dips toward your chest, and you jerk back up, hoping no one saw. Anyone who has sat to meditate knows that moment. In the Book of Sevens, it happens to Moggallana, one of the Buddha's two chief disciples, famous in the tradition for his powers of mind. He's sitting in meditation near a village in Magadha, and he keeps nodding. The Buddha, the text says, sees it from far away, and comes to him with a list of remedies. Today: pacala.",
+      "voice": "The breath is slow, the room is warm, and then your chin dips toward your chest, and you jerk back up, hoping no one saw. Anyone who has sat to meditate knows that moment. In the Book of Sevens, it happens to Moggallana, one of the Buddha's two chief disciples, famous in the tradition for his powers of mind. He's sitting in meditation near a village in Magadha, and he keeps nodding. The Buddha, the text says, sees it from far away, and comes to him with a list of remedies.",
       "screen": [
         "`THE CHIN DIPS.` → `EVEN MOGGALLANA NODDED.` → `A LIST OF REMEDIES.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Are you nodding, Moggallana? the Buddha asks. Yes, sir. Then comes a ladder, each step tried only if the one before doesn't work. First: whatever thought you were on when drowsiness came, stop giving it attention. Second: if that fails, think over a teaching you've learned. Third: recite a teaching out loud, in detail. Fourth: pull both your earlobes and rub your limbs with your hands. Fifth: get up, wash your eyes with water, and look around in every direction, and up at the stars. Sixth: bring to mind the perception of light, the idea of daytime, day and night alike. Seventh: walk up and down, with your senses gathered in. And if none of that works? Eighth: lie down on your right side, like a lion, mindful, with the thought of getting up again, and when you wake, get up promptly. Notice how practical this is. No one is scolded. Sleepiness isn't treated as a sin, just as a state with causes and cures. Thinking, then talking, then the body, then cold water and open sky, then movement, and last of all, permission to rest. The order matters. Most of us skip straight to the last step, or fight the first one forever. And then the sutta keeps going, with advice on pride and on argument. But the ear-pulling is the part people remember.",
+      "voice": "Are you nodding, Moggallana? Yes, sir. Then comes a ladder, each step tried only if the one before doesn't work. First: whatever thought you were on when drowsiness came, stop giving it attention. Second: think over a teaching you've learned. Third: recite a teaching out loud, in detail. Fourth: pull both your earlobes and rub your limbs with your hands. Fifth: get up, wash your eyes with water, and look around in every direction, and up at the stars. Sixth: bring to mind the perception of light, the idea of daytime, day and night alike. Seventh: walk up and down, with your senses gathered in. And if none of that works? Eighth: lie down on your right side, like a lion, mindful, with the thought of getting up again, and when you wake, get up promptly. No one is scolded. Sleepiness isn't treated as a sin, just a state with causes and cures. Thinking, then talking, then the body, then cold water and open sky, then movement, and last of all, permission to rest. The order matters. The sutta goes on with advice on pride and on argument, but the ear-pulling is the part people remember.",
       "screen": [
         "`ARE YOU NODDING, MOGGALLANA?` · `THINK, RECITE, PULL YOUR EARS.` · `WATER, STARS, LIGHT, WALKING.` · then, large: `LAST OF ALL, REST.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: try one remedy. Sit up, and notice your level of alertness right now, honestly. If it's low, try the fourth step: gently take both earlobes between thumb and finger and give them a slow pull. Rub your hands together, then along your arms. Feel the body wake. If you're already alert, simply rest with the breath, and notice what alertness feels like, so you'll know it when it fades. The bell holds the time.",
+      "voice": "Check your alertness right now, honestly. If it's low, try the fourth step: take both earlobes between thumb and finger and give them a slow pull, then rub your hands together and along your arms. If you're already alert, rest with the breath and learn what alertness feels like, so you'll know it when it fades.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: climb the ladder. Today, when the afternoon slump comes, climb the ladder: change the thought, splash water, look at the sky, walk. Day six hundred sixty-eight.",
+      "voice": "Your line: climb the ladder. Rest is a rung too; it's just the last one. See you tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Meditation teachers in many Buddhist traditions still give these remedies for sleepiness, such as opening the eyes, standing, or switching to walking meditation, and some retreats offer standing or walking periods for exactly this.",
   "games": {
+    "guess": [
+      "nodding off, drowsy while sitting",
+      "a restless urge to get up and pace",
+      "the trance of very deep meditation"
+    ],
     "match": {
       "prompt": "pull your ears: tap the pairs.",
       "pairs": [
@@ -132,14 +137,45 @@
     ],
     "recall": [
       [
-        "iriyapatha",
-        "the postures, ways of moving"
+        "santutthi",
+        "contentment with what's enough"
       ],
       [
-        "hiri",
-        "conscience, looking in"
+        "veluriya",
+        "a beryl, a clear and flawless gem"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "a friend from yoga class",
+      "says": "I keep nodding off when I meditate. Did the Buddha say anything about that?",
+      "options": [
+        "Yes: he gave Moggallana a ladder of remedies, from pulling your ears to walking, and last, rest.",
+        "Yes: he scolded Moggallana, saying sleepiness in meditation is a sin to confess.",
+        "No; he told Moggallana that nodding off means a person isn't suited to meditation."
+      ],
+      "answer": 0,
+      "meaning": "In AN 7.58 the Buddha gives nodding Moggallana remedies in order: change the thought, recite, pull your ears, water, stars, walking, and last, mindful rest."
+    },
+    "gloss": {
+      "Moggallana": {
+        "meaning": "one of the Buddha's two chief disciples",
+        "script": "मोग्गल्लान",
+        "say": "mohg-GUL-lah-nuh"
+      },
+      "Magadha": {
+        "meaning": "a kingdom in the Buddha's India",
+        "script": "मगध",
+        "say": "MUG-uh-duh"
+      },
+      "pacala": {
+        "meaning": "nodding, drowsiness",
+        "script": "पचला",
+        "say": "puh-chuh-LAH"
+      },
+      "Book of Sevens": {
+        "meaning": "the part of the Numbered Discourses grouped in sevens"
+      }
+    }
   },
   "sources": [
     {
@@ -157,7 +193,9 @@
       "Confirm the Buddha 'sees from far away' by psychic power per the text; the script says only 'sees it from far away'.",
       "Confirm Devanagari पचला and the stress mark; the sutta name may be given as Pacala or Capala in different editions.",
       "Numbering of AN 7 suttas differs between editions (7.58 vs 7.61); confirm.",
-      "Audit (y2 10% sample): removed the stock line 'you are in very good company' and the 'If you've ever... you know' opening that day 659 also uses; the hook now opens on the scene."
+      "Audit (y2 10% sample): removed the stock line 'you are in very good company' and the 'If you've ever... you know' opening that day 659 also uses; the hook now opens on the scene.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

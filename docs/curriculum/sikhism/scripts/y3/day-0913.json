@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, a river for a border: the Sutlej, and a line he chose to keep. Your line was the river line. Which boundary did you let stand? Day nine hundred thirteen.",
+      "voice": "Yesterday, the Sutlej, a river line he chose to keep; your line was the river line. Today, a parade ground.",
       "screen": [
         "`THE RIVER LINE.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A parade ground outside Lahore, early morning. Rows of foot soldiers in matching jackets march in step to drums, turn on one command, and fire together. Across the field, the officers shout their orders in a mix of languages. Some of those officers are Punjabi chiefs whose families rode with the misls. And some have come from very far away, from France and Italy, men who learned soldiering in the wars of Europe. The misls fought as bands of horsemen. This is something new. Today: a modern army.",
+      "voice": "A parade ground outside Lahore, early morning. Rows of foot soldiers in matching jackets march in step to drums, turn on one command, and fire together. Officers shout orders in a mix of languages. Some are Punjabi chiefs whose families rode with the misls. Some have come from very far away, from France and Italy, men who learned soldiering in the wars of Europe. The misls fought as bands of horsemen. This is something new.",
       "screen": [
         "`A PARADE GROUND OUTSIDE LAHORE.` → `DRUMS, DRILL AND VOLLEYS.` → `OFFICERS FROM FAR AWAY.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Here's the problem Ranjit Singh had. The misl way of fighting, fast riders striking and vanishing, had won the Punjab. But he had now seen the British across the river, with trained infantry and artillery that fought as one machine. He could ignore that, or learn from it. He learned. Ranjit Singh built new regiments of infantry and artillery drilled in the European way. To train them, he hired European officers, among them Jean-Baptiste Ventura and Jean-François Allard, who had served in Napoleon's armies. Accounts say he set them conditions: to respect Sikh ways in his lands, and, some sources say, not to eat beef or smoke. They taught drill and gunnery, and some led the new regiments on campaign. But the Maharaja kept command in his own hands, and his great campaigns were led by his own generals, Sikh and Punjabi. Now, a Sikh angle on this. Learning from outside is not new in Sikh history. The Guru Granth Sahib itself holds the hymns of the Gurus beside the hymns of saints from very different backgrounds: Kabir the weaver, Ravidas the leatherworker, Namdev the tailor, and Sheikh Farid, a Muslim Sufi. In Sikh telling, those words were placed in the scripture for what they say, not for where their writers came from. Guru Arjan gathered them into the book himself. Ranjit Singh's parade ground was a long way from the pages of the Granth. But the habit underneath was the same one: truth and skill can come through anyone. Learn from all.",
+      "voice": "Ranjit Singh had a problem. The misl way of fighting, fast riders striking and vanishing, had won the Punjab. But across the river he had seen the British, with trained infantry and artillery that fought as one machine. He could ignore that, or learn from it. He learned. He built new regiments of infantry and artillery drilled in the European way, and hired European officers to train them, among them Jean-Baptiste Ventura and Jean-François Allard, who had served in Napoleon's armies. Accounts say he set them conditions: to respect Sikh ways in his lands and, some sources say, not to eat beef or smoke. They taught drill and gunnery, and some led the new regiments on campaign. But the Maharaja kept command in his own hands, and his great campaigns were led by his own generals, Sikh and Punjabi. Learning from outside is not new in Sikh history. The Guru Granth Sahib holds the Gurus' hymns beside those of saints from very different backgrounds: Kabir the weaver, Ravidas the leatherworker, Namdev the tailor, and Sheikh Farid, a Muslim Sufi. In Sikh telling, those words were placed in the scripture for what they say, not for where their writers came from, and Guru Arjan gathered them into the book himself. The parade ground was a long way from the Granth. But the habit underneath was the same: truth and skill can come through anyone.",
       "screen": [
         "`THE MISLS FOUGHT AS RIDERS.` · `EUROPEAN DRILL, SIKH COMMAND.` · `CONDITIONS FOR THE OFFICERS.` · `SAINTS OF EVERY BACKGROUND IN THE GRANTH.` · then, large: `LEARN FROM ALL.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Two minutes with an unlikely teacher. Settle, and breathe. Think of someone you don't usually learn from: a person much younger, someone from a very different background, a coworker you find irritating, a stranger you overheard once. What do they know how to do that you don't? Let one skill or one way of seeing come to mind. Hold it with curiosity rather than judgment. If you pray, you can say Waheguru on each breath out. The bell holds the time.",
+      "voice": "Think of someone you don't usually learn from: someone much younger, from a very different background, a coworker you find irritating, a stranger you overheard once. Let one thing they know how to do, or one way they see, come to mind, and hold it with curiosity rather than judgment, Waheguru on the breath out if you pray.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: learn from all. Today, ask one person you'd normally overlook to show you how they do something. Then really watch. Day nine hundred thirteen.",
+      "voice": "Your line: learn from all. A weaver, a leatherworker, a Sufi, all in one book. Day nine hundred thirteen, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Sikh histories remember Ranjit Singh's army, trained in part by European officers and led by Sikh and Punjabi generals; the Guru Granth Sahib includes the hymns of the Gurus alongside those of saints from many backgrounds, Hindu and Muslim.",
   "games": {
+    "guess": [
+      "a European officer who drilled Ranjit's army",
+      "a Sikh general who held the north-west frontier",
+      "the British envoy at the Sutlej treaty talks"
+    ],
     "match": {
       "prompt": "who taught, who led, who sang — tap the pairs.",
       "pairs": [
@@ -123,14 +128,49 @@
     ],
     "recall": [
       [
-        "gurmata",
-        "a decision made before the Guru"
+        "misl",
+        "a band with its own chief"
       ],
       [
-        "shaheed",
-        "a martyr"
+        "Bandi Chhor",
+        "the one who freed captives"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "a friend in the army reserve",
+      "says": "Did European officers run Ranjit Singh's army?",
+      "options": [
+        "They trained it in drill and gunnery, but command stayed with him and his own generals.",
+        "Yes; he handed the whole army to them and stayed in Lahore during campaigns.",
+        "No; he refused all outside help and kept the old misl way of fighting."
+      ],
+      "answer": 0,
+      "meaning": "Officers like Ventura and Allard drilled the new regiments, but the Maharaja kept command, and his own generals led his great campaigns."
+    },
+    "gloss": {
+      "Ventura": {
+        "meaning": "a European officer who drilled Ranjit Singh's new regiments",
+        "say": "ven-TOO-raa"
+      },
+      "Kabir": {
+        "meaning": "a weaver-saint whose hymns are in the Guru Granth Sahib",
+        "script": "ਕਬੀਰ",
+        "say": "kuh-BEER"
+      },
+      "Ravidas": {
+        "meaning": "a leatherworker-saint whose hymns are in the Granth",
+        "script": "ਰਵਿਦਾਸ",
+        "say": "RUV-ee-daas"
+      },
+      "Namdev": {
+        "meaning": "a tailor-saint whose hymns are in the Granth",
+        "say": "NAAM-dave"
+      },
+      "Sheikh Farid": {
+        "meaning": "a Muslim Sufi whose words are in the Granth",
+        "say": "SHAYKH fuh-REED"
+      }
+    }
   },
   "sources": [
     {
@@ -156,7 +196,9 @@
       "Bhagat backgrounds (Kabir a weaver, Ravidas a leatherworker, Namdev a tailor/calico printer, Sheikh Farid a Muslim Sufi): confirm descriptions.",
       "'Guru Arjan's choice to gather wisdom from all directions is part of the book's DNA': Guru Arjan compiled the Adi Granth; 'DNA' is figurative. Confirm the Keeper is comfortable.",
       "Original null: no single Gurmukhi term is central to the day (Fauj-i-Khas could be added if the Keeper wishes).",
-      "Audit: Ventura and Allard did lead the Fauj-i-Khas in the field (and Avitabile governed Peshawar), so 'command stayed with his own generals' and the myth 'the European officers commanded his armies: false' overstated it. Now: the Maharaja kept command; his own generals led his campaigns."
+      "Audit: Ventura and Allard did lead the Fauj-i-Khas in the field (and Avitabile governed Peshawar), so 'command stayed with his own generals' and the myth 'the European officers commanded his armies: false' overstated it. Now: the Maharaja kept command; his own generals led his campaigns.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

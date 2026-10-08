@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, sifr, numbers from India: a small circle for the empty place, carried west in Arabic books. Your line was: nothing, as a number. Did you leave a place empty? Day nine hundred nineteen.",
+      "voice": "Yesterday, sifr, the empty place: a small circle from India's way of counting, carried west in Arabic books. Your line was: nothing, as a number.",
       "screen": [
         "`NOTHING, AS A NUMBER.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A letter arrives, and every word is scrambled. The letters have been swapped for other letters by a secret rule, and you don't know the rule. Where do you even start? A scholar in Baghdad wrote down an answer. Take a long ordinary text in the same language and count how often each letter appears. Then count the letters in the secret message. The sign that shows up most in the secret letter is probably standing in for the letter that shows up most in ordinary writing. Match them up, one by one, and the message begins to open. The man who wrote that method also wrote on light, on music, and on God. His name was al-Kindi.",
+      "voice": "A letter arrives, and every word is scrambled. The letters have been swapped for others by a secret rule, and you don't know the rule. Where do you even start? A scholar in Baghdad wrote down an answer. Count how often each letter appears in a long ordinary text in the same language. Then count the signs in the secret message. The sign that shows up most is probably standing in for the letter that shows up most in ordinary writing. Match them up, one by one, and the message begins to open. The man who wrote that method also wrote on light, on music, and on God. His name was al-Kindi.",
       "screen": [
         "`A SCRAMBLED LETTER.` → `COUNT THE LETTERS.` → `THE MESSAGE OPENS.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Yaqub ibn Ishaq al-Kindi worked in Baghdad in the age of the House of Wisdom, where Greek books were being turned into Arabic. Later writers gave him a title: the philosopher of the Arabs. He wrote philosophy in Arabic, using the new translations, asking the old Greek questions in the language of the Qur'an. His range is the first surprise. He wrote on optics, asking how rays travel and how we see. He wrote on music, on the strings of the oud and how notes fit together. He wrote on medicine, on the tides, on swords and perfumes, and on breaking codes, as in the hook. The second surprise is how he defends the whole project. Some people in his day were suspicious of learning that came from the Greeks. Al-Kindi answered, in his book on first philosophy, with an idea worth hearing slowly. He says we should not be ashamed to welcome the truth and take it in, wherever it comes from, even from distant peoples. The truth, he says, does not make the one who seeks it smaller. It honors him. And he wrote that philosophy at its highest is knowing the true One, the cause of all things. For al-Kindi, reason and faith in one God were meant to walk the same road. Muslim thinkers after him took different positions on how far philosophy should go, and that argument comes later in the path. Today, just meet one of its early voices.",
+      "voice": "Yaqub ibn Ishaq al-Kindi worked in Baghdad in the age of the House of Wisdom, when Greek books were being turned into Arabic. Later writers gave him a title: the philosopher of the Arabs. He wrote philosophy in Arabic, using the new translations, asking the old Greek questions in the language of the Qur'an. His range is the first surprise. Optics: how rays travel and how we see. Music: the strings of the oud and how notes fit together. Medicine, the tides, swords and perfumes, and breaking codes, as in the hook. The second surprise is how he defends the whole project. Some people in his day were suspicious of learning that came from the Greeks. Al-Kindi answered, in his book on first philosophy: we should not be ashamed to welcome the truth and take it in, wherever it comes from, even from distant peoples. The truth, he says, does not make the one who seeks it smaller. It honors him. And he wrote that philosophy at its highest is knowing the true One, the cause of all things. For al-Kindi, reason and faith in one God were meant to walk the same road. Muslim thinkers after him took different positions on how far philosophy should go, and that argument comes later in the path. Today, just meet one of its early voices.",
       "screen": [
         "`A TITLE: PHILOSOPHER OF THE ARABS.` · `OPTICS, MUSIC, CODES.` · `TAKE THE TRUTH FROM WHEREVER.` · `KNOWING THE TRUE ONE.` · then, large: `THE PHILOSOPHER OF THE ARABS.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: learn one unusual fact. Before the bell, choose one small thing from today you didn't know, maybe that a philosopher broke codes by counting letters. Settle, and breathe. Hold the fact in mind. Turn it over. Where did it come from? Who first noticed it? Then let your mind rest on al-Kindi's idea: welcome the truth, wherever it comes from. If you pray, you can thank God for one thing you learned this week. If you don't, just be glad of it. The bell holds the time.",
+      "voice": "Hold one small fact from today that you didn't know, maybe that a philosopher broke codes by counting letters, and turn it over: where did it come from, and who first noticed it? Then let your mind rest on al-Kindi's idea: welcome the truth, wherever it comes from. If you pray, you can thank God for one thing you learned this week; if not, just be glad of it.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the philosopher of the arabs. Today, take one good idea from a source you'd usually skip, and give it a fair hearing. Day nine hundred nineteen.",
+      "voice": "Your line: the philosopher of the arabs. Truth doesn't make the seeker smaller. See you tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Muslim students of philosophy read al-Kindi as an early thinker who wrote philosophy in Arabic and held that reason and belief in one God could work together.",
   "games": {
+    "guess": [
+      "a Baghdad philosopher who welcomed truth from anywhere",
+      "a Greek thinker whose books were put into Arabic",
+      "a poet who praised the caliphs of Baghdad in verse"
+    ],
     "match": {
       "prompt": "al-Kindi — tap the pairs.",
       "pairs": [
@@ -132,14 +137,40 @@
     ],
     "recall": [
       [
-        "al-Dakhil",
-        "the one who entered"
+        "Ansar",
+        "the helpers who took the Prophet in"
       ],
       [
-        "dinar",
-        "the gold coin"
+        "mushaf",
+        "a written copy of the Qur'an"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your coworker",
+      "says": "Didn't scholars back then refuse anything that came from the Greeks?",
+      "options": [
+        "Al-Kindi argued we should welcome truth wherever it comes from.",
+        "Al-Kindi agreed and kept Greek books out of Arabic entirely.",
+        "Al-Kindi read Greek books only in secret, away from Baghdad."
+      ],
+      "answer": 0,
+      "meaning": "Some were suspicious, but al-Kindi wrote that truth, even from distant peoples, honors the one who seeks it."
+    },
+    "gloss": {
+      "al-Kindi": {
+        "meaning": "Yaqub ibn Ishaq, called the philosopher of the Arabs",
+        "script": "الكندي",
+        "say": "al-KIN-dee"
+      },
+      "oud": {
+        "meaning": "a stringed instrument al-Kindi wrote about",
+        "script": "عود",
+        "say": "OOD"
+      },
+      "House of Wisdom": {
+        "meaning": "Baghdad's center where Greek books were put into Arabic"
+      }
+    }
   },
   "sources": [
     {
@@ -163,7 +194,9 @@
       "List of subjects (optics, music, medicine, tides, swords, perfumes, codes) is from the standard list of his works (Ibn al-Nadim's Fihrist); confirm each is safe to state.",
       "'Some people in his day were suspicious of learning from the Greeks' reflects the context of On First Philosophy; confirm.",
       "Later disagreements (al-Ghazali, etc.) are only mentioned as 'later in the path'; no school is ranked.",
-      "Editor: removed the unsourced explanation of what the title 'philosopher of the Arabs' meant, and the implied 'first' claim ('the man who started it')."
+      "Editor: removed the unsourced explanation of what the title 'philosopher of the Arabs' meant, and the implied 'first' claim ('the man who started it').",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

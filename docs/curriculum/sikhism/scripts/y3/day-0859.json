@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, rakhi: Sikh bands guarding villages from plunder for a share of the harvest. Your line was keep the village safe. Who did you look out for? Today, the bands themselves face a choice. Day eight hundred fifty-nine.",
+      "voice": "Yesterday, rakhi: Sikh bands guarding villages for a share of the harvest. Your line was keep the village safe. Today, the bands themselves face a choice.",
       "screen": [
         "`KEEP THE VILLAGE SAFE.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Horsemen are riding into Amritsar from every direction. Each group has its own leader, its own banner, its own story of the hard years. Some leaders have never ridden together. Some have quarreled. Each band has kept itself alive by being quick and independent, answering to no one but its own chief. Now they are all dismounting at the same place, near the Harmandir, for a gathering Sikhs call the Sarbat Khalsa: the whole Khalsa, together. On the table is a question that asks a lot of proud people. Should each of us keep riding alone? Today's word is the answer they gave: Dal Khalsa.",
+      "voice": "Horsemen are riding into Amritsar from every direction. Each group has its own leader, its own banner, its own story of the hard years; some leaders have quarreled. Each band has survived by being quick and independent, answering to no one but its chief. Now they are all dismounting near the Harmandir, for a gathering Sikhs call the Sarbat Khalsa: the whole Khalsa, together. On the table is a question that asks a lot of proud people. Should each of us keep riding alone? Today's word is their answer: Dal Khalsa.",
       "screen": [
         "`BANDS RIDE IN FROM EVERY SIDE.` → `EACH WITH ITS OWN CHIEF.` → `SARBAT KHALSA: THE WHOLE KHALSA.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Dal means an army, a host. Dal Khalsa: the army of the Khalsa. This path met the name once before, alongside the gurmata, the decision the gathering makes together. Today, look at what the decision cost. Tradition says it was Nawab Kapur Singh, the humble leader who had once been fanning the sangat, who pressed for it. The scattered bands would become one army. They wouldn't disappear. Each chief kept his own band, his own riders. But they would answer to one command, and gather again at Amritsar to decide things together. And as the head of that one army, the gathering chose Jassa Singh Ahluwalia. So every chief in that gathering gave something up. Not his men, not his name, but the right to do whatever he liked. That's the hard part of unity. It's easy to agree that we'd be stronger together. It's much harder to be the one who steps back so it can happen. Where did the Sikhs get the nerve to try? From something older than the army. Guru Gobind Singh had founded the Khalsa as one body, with one initiation, drinking from one bowl. And the Sikh scripture speaks again and again of the sangat, the company of the faithful, as the place where the Guru is found. The Dal Khalsa took that spiritual idea and gave it saddles. There's something else worth noticing. The gathering decided in front of the Harmandir, with the Granth present. Sikhs understand those decisions as made in the Guru's presence, not just as a vote of the strongest. When the bands rode out of Amritsar, they rode out as one army.",
+      "voice": "Dal means an army, a host. Dal Khalsa: the army of the Khalsa. This path met the name once before, beside the gurmata, the decision the gathering makes together. Today, look at what it cost. Tradition says it was Nawab Kapur Singh, the humble leader who had once been fanning the sangat, who pressed for it. The scattered bands would become one army. They wouldn't disappear: each chief kept his own band and his own riders. But they would answer to one command, and gather again at Amritsar to decide things together. As head of that army, the gathering chose Jassa Singh Ahluwalia. So every chief gave something up. Not his men, not his name, but the right to do whatever he liked. That's the hard part of unity: not agreeing it would help, but being the one who steps back so it can happen. Where did the Sikhs get the nerve to try? From something older than the army. Guru Gobind Singh had founded the Khalsa as one body, with one initiation, drinking from one bowl. And the Sikh scripture speaks again and again of the sangat, the company of the faithful, as the place where the Guru is found. The Dal Khalsa gave that idea saddles. And the gathering decided in front of the Harmandir, with the Granth present. Sikhs understand those decisions as made in the Guru's presence, not just a vote of the strongest. When the bands rode out of Amritsar, they rode out as one army.",
       "screen": [
         "`DAL: AN ARMY, A HOST.` · `EACH CHIEF STEPPED BACK A LITTLE.` · `UNITY IS EASY TO PRAISE, HARD TO DO.` · `DECIDED IN THE GURU'S PRESENCE.` · then, large: `ONE ARMY.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: join with others. Settle, and breathe. Bring to mind a group you belong to: a family, a team, a congregation, a group chat that's gone quiet. Notice where you've been riding alone in it, doing things your own way and waiting for the others to catch up. Ask honestly: what would I have to give up, a little, for this group to move together? An opinion held too tight, a habit, the need to be in charge. Don't decide anything yet. Just let yourself see it, and breathe with it. If you pray, you can say Waheguru, and hold the group in mind. The bell holds the time.",
+      "voice": "Bring to mind a group you belong to, a family, a team, a congregation, and notice where you've been riding alone in it. Ask honestly what you'd give up, a little, for it to move together: an opinion held too tight, the need to be in charge. Just see it and breathe, and if you pray, say Waheguru with the group in mind.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: one army. Today, in one group you're part of, step back a little so the whole can move together. Day eight hundred fifty-nine.",
+      "voice": "Your line: one army. Each chief gave up a little of his own way. That's day eight hundred fifty-nine.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Sikhs still speak of the Sarbat Khalsa, a gathering of the whole community at Amritsar, as the place where the Panth decides together in the presence of the Guru Granth Sahib.",
   "games": {
+    "guess": [
+      "the army of the Khalsa: the bands joined under one command",
+      "the council of elders that wrote the Khalsa's rules down",
+      "a single band of riders led by Nawab Kapur Singh"
+    ],
     "match": {
       "prompt": "one army — tap the pairs.",
       "pairs": [
@@ -133,13 +138,50 @@
     "recall": [
       [
         "Kapur Singh",
-        "was fanning the sangat"
+        "chosen while fanning the sangat"
       ],
       [
-        "sidak",
-        "faith that stays fixed"
+        "hukamnama",
+        "a letter carrying the Guru's hukam"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your teenage cousin",
+      "says": "When the bands formed the Dal Khalsa, did each chief lose his own band?",
+      "options": [
+        "No. Each chief kept his riders, but they answered to one command and decided together.",
+        "Yes. All the bands were merged, and every chief handed his riders to Jassa Singh.",
+        "No. Nothing really changed; it was a new name for the same scattered bands."
+      ],
+      "answer": 0,
+      "meaning": "Tradition says each chief kept his band, but all answered to one command under Jassa Singh Ahluwalia and gathered at Amritsar to decide together."
+    },
+    "gloss": {
+      "Sarbat Khalsa": {
+        "meaning": "the whole Khalsa, gathered together",
+        "script": "ਸਰਬੱਤ ਖ਼ਾਲਸਾ",
+        "say": "SUR-but KHAAL-saa"
+      },
+      "gurmata": {
+        "meaning": "a decision the gathering makes together",
+        "script": "ਗੁਰਮਤਾ",
+        "say": "GUR-ma-taa"
+      },
+      "Harmandir": {
+        "meaning": "the temple in the middle of the pool at Amritsar",
+        "script": "ਹਰਿਮੰਦਰ",
+        "say": "HAR-mun-dur"
+      },
+      "sangat": {
+        "meaning": "the company of the faithful, gathered together",
+        "script": "ਸੰਗਤ",
+        "say": "SUNG-ut"
+      },
+      "Jassa Singh Ahluwalia": {
+        "meaning": "the leader chosen to head the Dal Khalsa",
+        "say": "JUS-saa SING aah-loo-VAA-lee-aa"
+      }
+    }
   },
   "sources": [
     {
@@ -164,7 +206,9 @@
       "Year one (day 289) covered the Dal Khalsa and gurmata; this day takes the angle of what each chief gave up. Confirm no conflict.",
       "'Dal means an army, a host': standard meaning, not an etymology claim; confirm.",
       "'The Sikh scripture speaks again and again of the sangat' is a general description; confirm wording.",
-      "Audit pass: read in full; no changes. Dal Khalsa at Vaisakhi 1748 with Jassa Singh Ahluwalia at Nawab Kapur Singh's suggestion matches the standard telling."
+      "Audit pass: read in full; no changes. Dal Khalsa at Vaisakhi 1748 with Jassa Singh Ahluwalia at Nawab Kapur Singh's suggestion matches the standard telling.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

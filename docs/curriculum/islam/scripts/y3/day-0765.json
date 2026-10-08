@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, al-Amin's trusts returned. Your line was: trusts returned, even then. What did you give back? Day seven hundred sixty-five.",
+      "voice": "Yesterday: al-Amin, and Ali returning every trust. Your line was: trusts returned, even then.",
       "screen": [
         "`TRUSTS RETURNED, EVEN THEN.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "The city that just tried to kill him is behind him now. Its leaders mocked him. Its council voted on his death. Its young men waited at his door with swords. And as the Prophet Muhammad, peace be upon him, leaves it, the hadith keep words he speaks to it. Not to the people. To the place itself. Two companions report what he said, and both reports are kept in the hadith collection of al-Tirmidhi. Today: Mecca.",
+      "voice": "The city that just tried to kill him is behind him now. Its leaders mocked him. Its council voted on his death. Its young men waited at his door with swords. And as the Prophet Muhammad, peace be upon him, leaves it, the hadith keep words he speaks to it. Not to the people. To the place itself. Two companions report what he said, and both reports are kept in the collection of al-Tirmidhi. Today: Mecca.",
       "screen": [
         "`THE CITY BEHIND HIM.` → `HE SPEAKS TO MECCA.` → `HE SPEAKS TO THE PLACE.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "In one report, from Abdullah ibn Adi, the Prophet stands at a spot in Mecca and says: by God, you are the best of God's earth, and the dearest of God's earth to God. And if I had not been driven out of you, I would never have left. In the other, from Ibn Abbas, he speaks more personally: how good you are as a land, and how dear you are to me. If my people had not driven me out, I would never have lived anywhere but you. Listen to the two halves of that. The first half is pure love: dearest, best, how good you are. The second half names exactly what happened, with no softening: I was driven out. He doesn't pretend he's leaving by choice. And he doesn't let what the people did turn into hatred for the place. The Qur'an uses the same plain language. It speaks of the town that drove you out. So here's a man saying goodbye honestly. Grief and love, and the truth about why, all in two sentences. Anyone who has left a hometown, a country, a house they grew up in, may know the shape of it. You can love a place and still be forced to leave it. You can say both things out loud. And the story doesn't end here. Mecca will come back into his life later. Here, he says goodbye.",
+      "voice": "In one report, from Abdullah ibn Adi, the Prophet stands at a spot in Mecca and says: by God, you are the best of God's earth, and the dearest of God's earth to God. And if I had not been driven out of you, I would never have left. In the other, from Ibn Abbas, he speaks more personally: how good you are as a land, and how dear you are to me. If my people had not driven me out, I would never have lived anywhere but you. Listen to the two halves. The first is pure love: dearest, best, how good you are. The second names what happened, with no softening: I was driven out. He doesn't pretend he's leaving by choice. And he doesn't let what the people did turn into hatred for the place. The Qur'an uses the same plain language: the town that drove you out. Grief and love, and the truth about why, all in two sentences. Anyone who has left a hometown, a country, a house they grew up in, may know the shape of it. You can love a place and still be forced to leave it, and you can say both out loud. Mecca will come back into his life later. Here, he says goodbye.",
       "screen": [
         "`THE DEAREST OF GOD'S EARTH.` · `IF I HADN'T BEEN DRIVEN OUT.` · `LOVE AND TRUTH TOGETHER.` · `THE TOWN THAT DROVE YOU OUT.` · then, large: `THE DEAREST LAND.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: say goodbye to a place you love. Sit, and breathe. Let a place come to you: a childhood home, a city you moved away from, a room that isn't yours anymore, a street, a kitchen, a country. Walk through it slowly in your mind. The light. The smell. Who was there. Notice if there's a reason you left that still stings, and let it be true without arguing with it. Then, silently or under your breath, tell the place what it was to you. In one or two plain sentences, the way he did. If you pray, you can thank God for that place. The bell holds the time.",
+      "voice": "Let a place you've left come to you, a childhood home, a city, a room that isn't yours anymore, and walk through it slowly: the light, the smell, who was there. If the reason you left still stings, let it be true without arguing with it, then silently tell the place what it was to you, in one or two plain sentences, the way he did. If you pray, you can thank God for that place.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: grief and love, both true. Today, tell someone about a place you love and had to leave, and say honestly why you left. Day seven hundred sixty-five.",
+      "voice": "Your line: grief and love, both true. Neither one had to cancel the other. See you tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Many Muslims quote the Prophet's farewell to Mecca when they speak of love for one's homeland, and Mecca remains the city Muslims face in prayer and travel to on pilgrimage.",
   "games": {
+    "guess": [
+      "the city he called the dearest land",
+      "the town that welcomed him as its own",
+      "the place he chose to leave of his own will"
+    ],
     "match": {
       "prompt": "the dearest land — tap the pairs.",
       "pairs": [
@@ -132,14 +137,47 @@
     ],
     "recall": [
       [
-        "Yathrib",
-        "a town worn down by feuds"
+        "al-Siddiq",
+        "the one who affirms the truth"
       ],
       [
-        "Musa",
-        "urged him to ask for less"
+        "ar-Rahman",
+        "the surah Ibn Mas'ud recited aloud"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your best friend",
+      "says": "Was the Prophet glad to leave Mecca, after how it treated him?",
+      "options": [
+        "No. He called it the dearest land; he left only because he was driven out.",
+        "Yes. He was relieved to get away, and he never spoke of it fondly.",
+        "He left angry, and cursed the city on his way out of it."
+      ],
+      "answer": 0,
+      "meaning": "In al-Tirmidhi he tells Mecca how dear it is, and that he would never have left if his people hadn't driven him out."
+    },
+    "gloss": {
+      "al-Tirmidhi": {
+        "meaning": "compiler of a major collection of the Prophet's sayings",
+        "script": "الترمذي",
+        "say": "at-tir-MI-dhee"
+      },
+      "Abdullah ibn Adi": {
+        "meaning": "a companion who reported the farewell to Mecca",
+        "script": "عبد الله بن عدي",
+        "say": "ab-DUL-lah ibn A-dee"
+      },
+      "Ibn Abbas": {
+        "meaning": "a companion who reported the second version",
+        "script": "ابن عباس",
+        "say": "IB-n ab-BAAS"
+      },
+      "Mecca": {
+        "meaning": "the Prophet's home city, which drove him out",
+        "script": "مكة",
+        "say": "MAK-ka"
+      }
+    }
   },
   "sources": [
     {
@@ -171,7 +209,9 @@
       "'Mecca will come back into his life, years from now' alludes to the later conquest without dating it.",
       "Qur'an 47:13 paraphrased only.",
       "Editor pass: cut the invented 'he stops, and turns' staging; cut 'where he was born, where Khadijah is buried' (not in the cited texts); 47:13 no longer said to be 'about that night'; 'will recognize' softened so the narrator doesn't tell listeners what they feel; cut the claim about what he did not know, and 'years from now'.",
-      "Audit pass: 'two companions remember' changed to 'report' (Ibn Abbas was a small child at the hijra); cut 'asleep in the dark' and 'tonight' staging, since the Abdullah ibn Adi report places him standing at al-Hazwara; howItsDone softened to 'many Muslims'."
+      "Audit pass: 'two companions remember' changed to 'report' (Ibn Abbas was a small child at the hijra); cut 'asleep in the dark' and 'tonight' staging, since the Abdullah ibn Adi report places him standing at al-Hazwara; howItsDone softened to 'many Muslims'.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

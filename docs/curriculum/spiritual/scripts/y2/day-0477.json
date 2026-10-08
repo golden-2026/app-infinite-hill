@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: balneolum. Your line was plain was enough. What plain thing did you enjoy fully, without upgrading it? Day four hundred seventy-seven.",
+      "voice": "Yesterday's word was balneolum, Scipio's small, dark bath. Your line was plain was enough.",
       "screen": [
         "`BALNEOLUM — PLAIN WAS ENOUGH.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Where exactly did Odysseus wander on his way home? Was Penelope really faithful, and did she guess it was him before he told her? In Seneca's Rome, scholars spent whole careers on questions like these, and some of them were very proud of it. Seneca himself had the education well-born Romans received: grammar, rhetoric and more. In the eighty-eighth letter, Lucilius asks what he thinks of those subjects, the ones Romans called the liberal arts. Seneca's answer is respectful, sharp and still uncomfortable. Today: what learning is for.",
+      "voice": "Where exactly did Odysseus wander on his way home? Was Penelope really faithful, and did she guess it was him before he told her? In Seneca's Rome, scholars spent whole careers on questions like these, and some were very proud of it. Seneca himself had the education well-born Romans received: grammar, rhetoric and more. In the eighty-eighth letter, Lucilius asks what he thinks of those subjects, the ones Romans called the liberal arts. Seneca's answer is respectful, sharp and still uncomfortable.",
       "screen": [
         "`WHERE DID ODYSSEUS WANDER?` → `WHOLE CAREERS ON SUCH QUESTIONS.` → `WHAT ARE THE LIBERAL ARTS FOR?`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the name. They're called liberal studies, Seneca says, because they're thought worthy of a free person, a liber. But only one study is truly liberal, he argues: the one that makes you free. That's the study of wisdom, of how to live. Second, the honest limit. Grammar teaches you to read a line of poetry, he says, but not to be steady when life goes wrong. Geometry can measure a field, but it can't tell you how much land is enough. Music can teach harmony between notes, but not between your desires. Third, preparing the ground. So are these studies useless? No. They don't give virtue, he says, but they prepare the mind to receive it, the way the first lessons in letters prepare a child for the higher subjects. They clear the soil. They don't plant the seed. Fourth, the trivia trap. Seneca pokes fun at a scholar named Didymus, who wrote thousands of books on questions like Homer's birthplace and Aeneas's real mother. Much of that, he says, would be better unlearned. The question he leaves Lucilius with is simple. For anything you study, ask: what is it for? Does it make me freer, kinder, steadier? Or is it just more to carry?",
+      "voice": "They're called liberal studies, Seneca says, because they're thought worthy of a free person, a liber. But only one study is truly liberal: the one that makes you free. That's the study of wisdom, of how to live. Grammar teaches you to read a line of poetry, he says, but not to be steady when life goes wrong. Geometry can measure a field, but it can't tell you how much land is enough. Music can teach harmony between notes, but not between your desires. So are these studies useless? No. They don't give virtue, but they prepare the mind to receive it, the way the first lessons in letters prepare a child for higher subjects. They clear the soil. They don't plant the seed. Then he pokes fun at a scholar named Didymus, who wrote thousands of books on questions like Homer's birthplace and Aeneas's real mother. Much of that, he says, would be better unlearned. The question he leaves Lucilius with is simple. For anything you study: what is it for? Does it make me freer, kinder, steadier? Or is it just more to carry?",
       "screen": [
         "`ONLY ONE STUDY TRULY FREES.` · `GEOMETRY CAN'T MEASURE ENOUGH.` · `THEY PREPARE THE GROUND.` · `DIDYMUS AND THE TRIVIA TRAP.` · then, large: `WHAT IS IT FOR?`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Think of one thing you've been learning lately: a skill for work, a podcast series, a language, even this path. Hold it for a moment. Then ask Seneca's question, quietly: what is it for? Not what will it get me, but what will it make of me? Let an honest answer come, even if it's mixed. If the answer is good, notice that. If it's thin, notice that too. The bell holds the time.",
+      "voice": "Think of one thing you've been learning lately, a skill for work, a language, even this path, and ask Seneca's question quietly: what is it for? Not what will it get me, but what will it make of me. Let an honest answer come, even a mixed one, and simply notice it.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: what is it for. Ask that of one lesson, one article or one class today, and let the answer shape what you do with it. Day four hundred seventy-seven.",
+      "voice": "Your line: what is it for. The ground gets cleared so something can grow. Day four hundred seventy-seven.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Readers of Seneca sometimes review what they study by asking what it is for, valuing learning that helps them live well over learning gathered for display.",
   "games": {
+    "guess": [
+      "the studies worthy of a free person, which prepare the mind",
+      "lessons offered free of charge to any Roman who asked",
+      "subjects taught to slaves so they could serve better"
+    ],
     "match": {
       "prompt": "the liberal arts — tap the pairs.",
       "pairs": [
@@ -132,14 +137,47 @@
     ],
     "recall": [
       [
-        "otium",
-        "leisure that's used"
+        "apes",
+        "Latin for bees"
       ],
       [
-        "Harpaste",
-        "blind, and didn't know it"
+        "viva vox",
+        "the living voice of a teacher"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your cousin",
+      "says": "So was Seneca against studying things like geometry and grammar?",
+      "options": [
+        "No. He said they don't make you good, but they prepare the mind to receive virtue.",
+        "Yes. He said grammar and geometry were only for slaves, never for free people.",
+        "No. He said geometry matters most, since it measures how much land you need."
+      ],
+      "answer": 0,
+      "meaning": "Letter eighty-eight: the liberal studies don't give virtue, but they prepare the ground. Only the study of wisdom truly frees."
+    },
+    "gloss": {
+      "Odysseus": {
+        "meaning": "Homer's hero, who wandered for years on his way home",
+        "say": "oh-DIS-ee-us"
+      },
+      "Penelope": {
+        "meaning": "Odysseus's wife, who waited for him",
+        "say": "puh-NEL-uh-pee"
+      },
+      "Didymus": {
+        "meaning": "a scholar Seneca teases for thousands of books of trivia",
+        "say": "DID-ih-mus"
+      },
+      "Aeneas": {
+        "meaning": "a Trojan hero of legend",
+        "say": "ih-NEE-us"
+      },
+      "Liberalia studia": {
+        "meaning": "Latin: studies worthy of a free person",
+        "say": "lib-er-AH-lee-uh STOO-dee-uh"
+      }
+    }
   },
   "sources": [
     {
@@ -156,7 +194,9 @@
       "Audit (2026-10-01): the hook and fork used the Homeric questions about Odysseus's rowers and the order of the Iliad and Odyssey, which come from On the Shortness of Life 13, not Letter 88; replaced with Letter 88's own examples (where Odysseus wandered, whether Penelope was faithful).",
       "Letters 88.2: 'liberalia studia... quia homine libero digna sunt; ceterum unum studium vere liberale est quod liberum facit'. 88.20: 'non quia virtutem dare possunt, sed quia animum ad accipiendam virtutem praeparant'. 88.10–11 geometry and how much is enough; 88.9 music. 88.37: Didymus's 4,000 books on Homer's homeland, Aeneas's true mother, etc. Confirm details and numbers.",
       "Seneca's grammar and rhetoric training is well attested; the script keeps the claim general.",
-      "Odysseus's wanderings and Penelope's faithfulness come from 88.7–8. Confirm."
+      "Odysseus's wanderings and Penelope's faithfulness come from 88.7–8. Confirm.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

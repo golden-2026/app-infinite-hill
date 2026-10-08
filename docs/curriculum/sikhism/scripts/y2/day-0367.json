@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, bak dhiaan, and your line, not for show. Did you manage one good thing nobody found out about? Today the savaiye widen the circle. Day three hundred sixty-seven.",
+      "voice": "Yesterday, bak dhiaan, crane meditation, and your line, not for show. Today the savaiye widen the circle.",
       "screen": [
         "`NOT FOR SHOW.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Make a list of everything people in one town do to be religious. Some wear something around their neck. Some keep a special object in the house. Some face a certain direction to pray. Some walk to a holy place, some fast, some give to charity, some read the same book every day for years. A poet looks at all of it, all at once, his own neighbors and his own people too, and asks one quiet question about every single practice. Not is it right. Not whose is best. Just: is the secret inside it? Today: bhed.",
+      "voice": "Make a list of everything people in one town do to be religious. Some wear something around their neck. Some keep a special object in the house. Some face a certain direction to pray. Some walk to a holy place, some fast, some give to charity, some read the same book every day for years. A poet looks at all of it at once, his own neighbors and his own people too, and asks one quiet question of every practice. Not is it right, or whose is best. Just: is the secret inside it?",
       "screen": [
         "`WHAT PEOPLE DO TO BE RELIGIOUS.` → `ALL AT ONCE, NEIGHBORS AND OWN.` → `IS THE SECRET INSIDE IT?`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Two of the savaiye make long lists like this. One, in paraphrase: bathing at pilgrim places, compassion, restraint, charity, vows and disciplines of many kinds; reading the scriptures of many peoples; living on air, keeping celibacy, weighing a thousand opinions. Without the Lord, the verse says, not one of these counts for anything. Another lists the outward signs of the Guru's world, things people carried, wore, faced and bowed to, the practices of the communities all around him. It ends: the whole world is tangled in false, outward rites, and no one has found the secret of the Lord. The word for secret is bhed, the hidden thing, what's actually going on inside. Now, this needs to be heard fairly. The verse names practices of the Guru's neighbors, but it isn't a list of other people's mistakes. Notice that compassion and charity are on it, things the Sikh Gurus taught constantly. So the verse can't mean they're bad. It means they're empty when they're done for their own sake, as a box to tick. And Sikh teachers are quick to turn it on Sikh habits too. Bowing to the Guru Granth Sahib without listening to it. Keeping the outward form of the faith while the heart is somewhere else. Saying the Nitnem fast, to get it done. The secret, the savaiye have been saying all week, is love. A ritual with love in it is alive. The same ritual without it is a costume.",
+      "voice": "Two of the savaiye make long lists like this. One, in paraphrase: bathing at pilgrim places, compassion, restraint, charity, vows and disciplines of many kinds; reading the scriptures of many peoples; living on air, keeping celibacy, weighing a thousand opinions. Without the Lord, not one of these counts for anything. The other lists the outward signs of the Guru's world, things people carried, wore, faced and bowed to, the practices of the communities all around him. It ends: the whole world is tangled in false, outward rites, and no one has found the secret of the Lord. The word for secret is bhed, the hidden thing, what's actually going on inside. Hear it fairly. The verse names practices of the Guru's neighbors, but it isn't a list of other people's mistakes. Compassion and charity are on it, things the Sikh Gurus taught constantly, so it can't mean they're bad. It means they're empty when done for their own sake, as a box to tick. Sikh teachers are quick to turn it on Sikh habits too: bowing to the Guru Granth Sahib without listening to it, keeping the outward form while the heart is elsewhere, saying the Nitnem fast to get it done. The secret, the savaiye have been saying all week, is love. A ritual with love in it is alive. The same ritual without it is a costume.",
       "screen": [
         "`TWO LISTS OF EVERY PRACTICE.` · `NO ONE FOUND THE SECRET, THE BHED.` · `COMPASSION IS ON THE LIST TOO.` · `TURNED ON SIKH HABITS AS WELL.` · then, large: `THE SECRET IS LOVE.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: check one habit for its heart. Sit and breathe slowly. Pick one thing you do regularly, religious or not. A prayer you say, a visit you make, a call to a parent, a donation, a family dinner. Walk through it in your mind, step by step. Then ask, gently: is there love in it right now, or has it become a box I tick? Don't judge the answer. Just see it clearly. If it's gone dry, think of one small way to put the heart back in tomorrow. If you pray, you can say Waheguru before you begin. The bell holds the time.",
+      "voice": "Pick one thing you do regularly, religious or not, a prayer, a visit, a call to a parent, a family dinner, and walk through it in your mind. Ask gently: is there love in it right now, or has it become a box I tick? Don't judge the answer, just see it clearly, and if you pray, let Waheguru sit with it.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the secret is love. Today, before you do one of your regular habits, pause for a breath and put the heart back in it on purpose. Day three hundred sixty-seven.",
+      "voice": "Your line: the secret is love. The heart, not the count. Day three hundred sixty-seven, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Many Sikhs recite these verses as part of the Tav Prasad Savaiye each morning, and gurdwara teachers often apply them to Sikh practice itself, warning against rituals done without love.",
   "games": {
+    "guess": [
+      "the secret, the hidden heart of a thing",
+      "an outward rite done in the right order",
+      "a holy object worn around the neck"
+    ],
     "match": {
       "prompt": "every outward ritual — tap the pairs.",
       "pairs": [
@@ -130,14 +135,47 @@
       "what it means: a list of every outward practice, compassion and charity included, all empty without love.",
       "what a scholar hears: the two savaiye name pilgrimages, vows and practices of the Guru's Hindu and Muslim neighbors alike, and Sikh exegesis has long applied them to Sikh ritual as well."
     ],
+    "chat": {
+      "who": "your aunt",
+      "says": "Do the savaiye say rituals like charity and pilgrimage are wrong?",
+      "options": [
+        "No; even compassion is on the list. Without love inside, any practice misses the secret.",
+        "Yes; the savaiye say every outward practice is wrong and should be dropped.",
+        "Only other communities' rituals; the savaiye list them as other people's mistakes."
+      ],
+      "answer": 0,
+      "meaning": "Compassion and charity are on the list, things the Gurus taught. The verses say a practice done without love misses the bhed, the secret."
+    },
+    "gloss": {
+      "bhed": {
+        "meaning": "the secret, the hidden thing inside",
+        "script": "ਭੇਦ",
+        "say": "BHAYD"
+      },
+      "Nitnem": {
+        "meaning": "the daily round of set Sikh prayers",
+        "script": "ਨਿਤਨੇਮ",
+        "say": "NIT-naym"
+      },
+      "Guru Granth Sahib": {
+        "meaning": "the Sikh scripture, honored as the living Guru",
+        "script": "ਗੁਰੂ ਗ੍ਰੰਥ ਸਾਹਿਬ",
+        "say": "GOO-roo GRUNTH SAA-hib"
+      },
+      "savaiye": {
+        "meaning": "the ten four-line verses Sikhs say each morning",
+        "script": "ਸਵੈਯੇ",
+        "say": "sa-VAI-yay"
+      }
+    },
     "recall": [
       [
-        "abhai",
-        "without fear, in Jaap"
+        "sach",
+        "truth, what's real and lasts"
       ],
       [
-        "Gobind",
-        "the sustainer"
+        "naam",
+        "the Name, the presence of the One"
       ]
     ]
   },
@@ -164,7 +202,9 @@
       "Claim that Sikh teachers apply the verses to Sikh habits (bowing without listening, rushing Nitnem): a common gurdwara reading. Confirm phrasing.",
       "The trapdoor names 'Hindu and Muslim neighbors alike'; confirm this is fair and accurate.",
       "Original: ਭੇਦ (bhed). Confirm.",
-      "Editor review (2026-10-01): hook no longer opens 'Think about' / 'Now imagine'; 'koor kriaa' rendered 'false, outward rites' rather than 'outward actions'; cut the closing lines that repeated day 363's 'said in the morning' and told the listener what is hard to hear."
+      "Editor review (2026-10-01): hook no longer opens 'Think about' / 'Now imagine'; 'koor kriaa' rendered 'false, outward rites' rather than 'outward actions'; cut the closing lines that repeated day 363's 'said in the morning' and told the listener what is hard to hear.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

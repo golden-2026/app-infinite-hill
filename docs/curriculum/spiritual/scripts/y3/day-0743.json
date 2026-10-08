@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, a hand on the heart. Your line was others feel this too. Did you say it once to yourself, plainly, the way you'd say it to a friend? A new week starts now. Day seven hundred forty-three.",
+      "voice": "Yesterday's word was Kristin Neff, and her self-compassion break. Your line was others feel this too.",
       "screen": [
         "`OTHERS FEEL THIS TOO.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A casserole dish on a doorstep, covered in foil, with a note taped to the lid. By evening there's another. Then a bag of bagels, a tray of fruit, somebody's aunt at the door with a pot of soup. On some streets, when there's been a death, the food starts arriving before anyone asks for it. And for the family inside, the hard part may not be cooking at all. It's opening the door. Yesterday turned care inward. Today turns it around again. In more than one tradition, grief is not meant to be carried alone in a quiet house. It is meant to have company.",
+      "voice": "A casserole dish on a doorstep, covered in foil, with a note taped to the lid. By evening there's another. Then a bag of bagels, a tray of fruit, somebody's aunt at the door with a pot of soup. On some streets, when there's been a death, the food starts arriving before anyone asks for it. And for the family inside, the hard part may not be cooking at all. It's opening the door. In more than one tradition, grief is meant to have company, not a quiet house.",
       "screen": [
         "`A DISH ON THE DOORSTEP.` → `THE HARD PART: OPENING THE DOOR.` → `GRIEF IS MEANT TO HAVE COMPANY.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Settle, and let the breath slow. Bring to mind one person who has offered help, recently or a while ago, help you waved away. Or someone who would come if you asked. You don't have to call them now. Just let the door open in your mind, and let them stand there with whatever they're carrying. Notice what happens when you imagine saying yes. If something tightens, breathe there. If you pray, you can bring that person to God by name. Then, for the rest of the sit, simply breathe, as someone who is allowed to be cared for. The bell holds the time.",
+      "voice": "Bring to mind one person who has offered help you waved away, or someone who would come if you asked. Let the door open in your mind, let them stand there with whatever they're carrying, and notice what happens when you imagine saying yes; if something tightens, breathe there. If you pray, you can bring that person to God by name, and then simply breathe, as someone who is allowed to be cared for.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: someone else's hands. Today, say yes to one offer of help, however small: a ride, a coffee, a hand with the bags. Day seven hundred forty-three.",
+      "voice": "Your line: someone else's hands. Even a small yes, a ride or a coffee, counts. That's day seven hundred forty-three.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Jewish mourners sit shiva at home while the community visits and brings food, and in some Muslim families relatives and neighbors receive visitors and send meals for three days after a death.",
   "games": {
+    "guess": [
+      "the week a Jewish family mourns at home as people visit",
+      "the Jewish prayer said over a grave at the burial",
+      "a meal of thanks held a year after a death"
+    ],
     "match": {
       "prompt": "who brings what to grief — tap the pairs.",
       "pairs": [
@@ -132,14 +137,46 @@
     ],
     "recall": [
       [
-        "hukam",
-        "the order everything moves within"
+        "bhana",
+        "the will, what pleases God"
       ],
       [
-        "acchedya",
-        "uncuttable"
+        "Elijah",
+        "the prophet fed under the juniper tree"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your neighbor",
+      "says": "Their family is sitting shiva. Shouldn't I give them space and stay away?",
+      "options": [
+        "During shiva the community comes to them. Bringing food and showing up is the custom.",
+        "Shiva is a private week, so visitors wait until the seven days are over.",
+        "Only close family visit during shiva; neighbors send a card afterward."
+      ],
+      "answer": 0,
+      "meaning": "In shiva the family stays home and the community comes to them. Neighbors cook; the mourner's part is to let them."
+    },
+    "gloss": {
+      "shiva": {
+        "meaning": "the days a Jewish family mourns at home after a burial",
+        "script": "שִׁבְעָה",
+        "say": "SHIV-uh"
+      },
+      "Talmud": {
+        "meaning": "the great collection of Jewish law and discussion",
+        "script": "תַּלְמוּד",
+        "say": "TAHL-mood"
+      },
+      "Ja'far": {
+        "meaning": "a man whose family the Prophet told people to feed",
+        "script": "جعفر",
+        "say": "JAH-far"
+      },
+      "Tirmidhi": {
+        "meaning": "the compiler of a major hadith collection",
+        "say": "tir-MID-hee"
+      }
+    }
   },
   "sources": [
     {
@@ -176,7 +213,9 @@
       "Original game: שִׁבְעָה glossed as 'the word for seven'; please confirm the pointing and the pronunciation 'shiv-AH' (colloquially SHIV-uh).",
       "Islam Keeper: the Ja'far hadith is paraphrased (Abu Dawud 3132, Tirmidhi 998); please confirm numbering. The script deliberately does not state Ja'far's relationship to the Prophet or how he died, since the hadith text cited does not say so.",
       "The index hook says 'many Muslims receive mourners for three'; softened to 'some Muslim families' under the claims rule. Bukhari 1280 is listed as background for the three-day limit on mourning; scholars differ on how it relates to the custom of receiving condolences, so the script does not link them explicitly.",
-      "The index hook says 'Jews sit shiva for seven days'; the script says the family sits shiva and grounds 'seven days' in Genesis 50:10 rather than stating a rule of practice."
+      "The index hook says 'Jews sit shiva for seven days'; the script says the family sits shiva and grounds 'seven days' in Genesis 50:10 rather than stating a rule of practice.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

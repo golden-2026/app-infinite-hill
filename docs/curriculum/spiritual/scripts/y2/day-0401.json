@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: never alone, the dark room that isn't empty, and your line, a guardian spirit who never sleeps. How did the unseen hours go? Day four hundred one.",
+      "voice": "Yesterday's word was never alone: the dark room isn't empty. Your line was a guardian spirit who never sleeps.",
       "screen": [
         "`NEVER ALONE.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Someone bumps your cart hard in the grocery store and keeps walking. You turn, ready to say something, and see the white cane. The bump is exactly as hard as it was a second ago. The only thing that's different is what you now understand about the person. Your shin still stings just the same. Epictetus asks: what if you understood everyone who wrongs you that way? Today: blind, not wicked.",
+      "voice": "Someone bumps your cart hard in the grocery store and keeps walking. You turn, ready to say something, and see the white cane. The bump was exactly as hard as it was a second ago, and your shin stings just the same. The only thing that's different is what you now understand about the person. Epictetus asks: what if you understood everyone who wrongs you that way?",
       "screen": [
         "`A HARD BUMP IN THE AISLE.` → `THEN YOU SEE THE CANE.` → `WHAT IF YOU SAW EVERYONE THAT WAY?`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Discourses book one, chapter eighteen: that we ought not to be angry with the mistakes of others. Epictetus starts from something he thinks is true of all of us. Every person agrees with what seems true to them and reaches for what seems good to them. No one does wrong while thinking, this is bad for me, and I want it anyway. So when someone steals or cheats, what's actually happened? They've misjudged. They think the stolen thing is good for them, and they're wrong about what's good. That's the whole diagnosis. Now his students push back. But they're thieves! Robbers! Shouldn't such a person be put to death? And Epictetus says: then say it accurately. Shouldn't this person, who has been deceived about the most important things, who is blind, not in the eyes that tell white from black, but in the judgment that tells good from bad, be put to death? Say it that way, he says, and you'll hear how harsh it is. You wouldn't call for the blind or the deaf to be punished for not seeing or hearing. Pity them instead. Show them the mistake, and you may see them stop. This doesn't mean pretending harm didn't happen, or that no one should be held to account. Epictetus is talking about anger, the heat inside you. His claim is that the heat rests on a picture of the other person as wicked by choice, and that the picture is usually wrong.",
+      "voice": "Discourses book one, chapter eighteen: that we ought not to be angry with the mistakes of others. Epictetus, the Stoic teacher, starts from something he thinks is true of all of us. Every person agrees with what seems true to them and reaches for what seems good to them. No one does wrong while thinking, this is bad for me, and I want it anyway. So when someone steals or cheats, they've misjudged. They think the stolen thing is good for them, and they're wrong about what's good. That's the whole diagnosis. His students push back. But they're thieves! Robbers! Shouldn't such a person be put to death? Then say it accurately, Epictetus answers. Shouldn't this person, deceived about the most important things, blind, not in the eyes that tell white from black, but in the judgment that tells good from bad, be put to death? Say it that way, and you'll hear how harsh it is. You wouldn't punish the blind or the deaf for not seeing or hearing. Pity them instead. Show them the mistake, and you may see them stop. This doesn't mean pretending harm didn't happen, or that no one should be held to account. Epictetus is talking about anger, the heat inside you. His claim is that the heat rests on a picture of the other person as wicked by choice, and that the picture is usually wrong.",
       "screen": [
         "`EVERYONE REACHES FOR WHAT SEEMS GOOD.` · `THE WRONGDOER HAS MISJUDGED.` · `BLIND IN JUDGMENT, NOT IN EYES.` · `PITY, NOT ANGER.` · then, large: `BLIND, NOT WICKED.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Sit and breathe. Bring to mind someone who has wronged you, not the worst person in your life, just someone who's annoyed you lately. Picture what they did. Now ask: what did they think was good, when they did it? Comfort, safety, being right, getting ahead? See them reaching for it, and missing. Notice if the heat in your chest shifts, even a little, toward something like pity. If it doesn't, that's all right. Just keep looking. The bell holds the time.",
+      "voice": "Bring to mind someone who has annoyed you lately, not the worst person in your life, and picture what they did. Ask what they thought was good when they did it: comfort, safety, being right, getting ahead? See them reaching for it and missing, and notice whether the heat in your chest shifts, even a little, toward pity; if it doesn't, that's all right.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: pity them instead. The next time someone wrongs you today, try seeing them as someone who misjudged what was good, and try pity instead of anger once. Day four hundred one.",
+      "voice": "Your line: pity them instead. Anger pictures wickedness; Epictetus sees a misjudgment. See you tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Some Stoic practitioners reframe a person who has wronged them as mistaken about what is good, which can soften anger without excusing the harm.",
   "games": {
+    "guess": [
+      "unable to judge good from bad, not wicked by choice",
+      "unable to see, and so owed special care in public",
+      "too angry to think clearly about what happened"
+    ],
     "match": {
       "prompt": "blind, not wicked: tap the pairs.",
       "pairs": [
@@ -132,14 +137,39 @@
     ],
     "recall": [
       [
-        "Helvidius Priscus",
-        "the senator who kept going in"
+        "dynamis",
+        "the power to meet each event"
       ],
       [
-        "prohairesis",
-        "the power to choose"
+        "symposion",
+        "the Greek word for banquet"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your sister",
+      "says": "How can you not be angry at someone who stole from you?",
+      "options": [
+        "Epictetus said they misjudged what's good, like a blindness, so pity fits better than anger.",
+        "Epictetus said theft doesn't really harm anyone, so there's nothing to be angry about.",
+        "Epictetus said to get even quietly, so the thief learns his lesson."
+      ],
+      "answer": 0,
+      "meaning": "In 1.18, the thief is blind in the judgment that tells good from bad. Anger rests on picturing wickedness by choice; pity fits a mistake."
+    },
+    "gloss": {
+      "Epictetus": {
+        "meaning": "a Stoic teacher, once enslaved and later freed",
+        "say": "ep-ik-TEE-tus"
+      },
+      "Stoic": {
+        "meaning": "of the Greek school of thought Epictetus taught",
+        "say": "STOH-ik"
+      },
+      "Discourses": {
+        "meaning": "Epictetus' talks, written down by his student Arrian",
+        "say": "DIS-kor-siz"
+      }
+    }
   },
   "sources": [
     {
@@ -156,7 +186,9 @@
       "Discourses 1.18 paraphrased: the common principle of assent and impulse, thieves as mistaken about good and bad, 'shouldn't this robber be put to death?', blindness in judgment rather than sight, pity rather than anger. Confirm.",
       "Socratic 'no one errs willingly' (Plato, Protagoras 345d–e, Meno 77–78) named in the trapdoor as background; confirm.",
       "The script adds that Epictetus' target is anger, not accountability; check this is a fair reading.",
-      "Editor review (2026-10-01): hook no longer tells the listener what they feel ('the anger is just gone'); carry says 'try pity' rather than 'feel pity'; howItsDone 'often/many find' softened."
+      "Editor review (2026-10-01): hook no longer tells the listener what they feel ('the anger is just gone'); carry says 'try pity' rather than 'feel pity'; howItsDone 'often/many find' softened.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

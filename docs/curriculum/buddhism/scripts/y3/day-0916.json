@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Huineng's verse on the wall: a mirror to be wiped, and a mirror with no stand. Your line: where does dust land. Did you ask it while wiping something? Day nine hundred sixteen.",
+      "voice": "Yesterday: Huineng's verse on the wall, a mirror with no stand. Your line: where does dust land.",
       "screen": [
         "`WHERE DOES DUST LAND?`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A wooden board is struck outside the meditation hall, and the monks file out. Not to chant this time. To the fields. They carry hoes and baskets. The cook is already at the stove, the youngest monks are hauling water, and somewhere among them, bent over a row of vegetables, is the abbot. In a Chan monastery, the stories say, nobody was too senior to dig. Two teachers stand behind this picture: Mazu, who shook his students awake, and his student Baizhang, who gave the community its shape. Today, the Chan monastery.",
+      "voice": "A wooden board is struck outside the meditation hall, and the monks file out. Not to chant this time. To the fields, with hoes and baskets. The cook is already at the stove, the youngest monks are hauling water, and somewhere among them, bent over a row of vegetables, is the abbot. In a Chan monastery, the stories say, nobody was too senior to dig. Two teachers stand behind this picture: Mazu, who shook his students awake, and his student Baizhang, who gave the community its shape.",
       "screen": [
         "`THE BOARD IS STRUCK.` → `EVERYONE TO THE FIELDS.` → `THE ABBOT DIGS TOO.`"
       ]
@@ -44,13 +44,13 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: do one chore as practice. Choose a chore you'll do today: dishes, folding clothes, sweeping, making a bed. Now, sitting here, walk through it slowly in your mind. Feel the water's temperature, the weight of the cloth, the sound of the broom. Notice where the mind usually runs off to while you do it. Then decide, gently, that this time you'll stay with your hands. Come back to the breath, and let the chore wait for its moment. The bell holds the time.",
+      "voice": "Choose a chore you'll do today, dishes, folding clothes, sweeping, and walk through it slowly in your mind: the water's temperature, the weight of the cloth, the sound of the broom. Notice where the mind usually runs off to while you do it. Then come back to the breath, and let the chore wait for its moment.",
       "screen": []
     },
     {
       "type": "the word",
       "duration": "25 sec",
-      "voice": "Baizhang. The teacher credited with shaping Chan monastery life: a hall for sitting, meals eaten together, and work shared by everyone. Today's word.",
+      "voice": "Baizhang. The teacher credited with shaping Chan monastery life: a hall for sitting, meals eaten together, and work shared by everyone.",
       "screen": [
         "`BAIZHANG — today's word`."
       ]
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: work is practice. Today, do that one chore with your whole attention, start to finish, and see how it feels. Day nine hundred sixteen.",
+      "voice": "Your line: work is practice. The same attention fits the hall and the garden. Day nine hundred sixteen, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "In Chan and Zen monasteries today, residents share daily work periods, often called samu in Japanese, alongside meditation and meals eaten together in a set form.",
   "games": {
+    "guess": [
+      "the teacher credited with the rules of Chan monastery life",
+      "a Chan teacher famous for shouts and sudden questions",
+      "the layman whose verse was about hauling firewood"
+    ],
     "match": {
       "prompt": "the Chan monastery: tap the pairs.",
       "pairs": [
@@ -133,13 +138,41 @@
     "recall": [
       [
         "Tripitaka",
-        "the monk's name in the novel"
+        "the three baskets of the canon"
       ],
       [
-        "Xuanzang",
-        "a Chinese monk heading to India for texts"
+        "Sama",
+        "the son who cared for blind parents"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "a roommate",
+      "says": "Isn't a Chan monastery just a place where monks sit and meditate all day?",
+      "options": [
+        "Its rules put sitting inside a whole day: meals together and shared work, even for the abbot.",
+        "Yes, work was banned there so nothing would pull the monks away from sitting.",
+        "No, Chan monks stopped meditating and spent the whole day farming instead."
+      ],
+      "answer": 0,
+      "meaning": "Tradition credits Baizhang with rules that put sitting inside a whole day: a meditation hall, meals eaten together, and shared work for everyone."
+    },
+    "gloss": {
+      "Mazu": {
+        "meaning": "a Chan teacher who said this very mind is Buddha",
+        "say": "MAH-dzoo"
+      },
+      "Baizhang": {
+        "meaning": "the teacher credited with shaping Chan monastery rules",
+        "say": "bye-JAHNG"
+      },
+      "Pang": {
+        "meaning": "a layman who studied with Mazu",
+        "say": "PAHNG"
+      },
+      "Gateless Gate": {
+        "meaning": "a collection of Chan stories with short comments"
+      }
+    }
   },
   "sources": [
     {
@@ -173,7 +206,9 @@
       "Layman Pang's verse paraphrased ('supernatural powers and marvelous deeds: carrying water and hauling firewood'); confirm, and confirm Pang studied with Mazu.",
       "howItsDone mentions samu (Japanese for work period); confirm.",
       "Original now 清規 (qinggui): confirm characters and pronunciation guide.",
-      "Editor: removed the Chan/dhyana etymology (unsourced, and a repeat of day 910) from the teach and swapped the original to 清規 (qinggui, pure rules, from the cited Pure Rules of Baizhang); cut unsourced 'later Chan teachers repeated / took seriously' claims; cut the 'ordinary Tuesday' stock phrase."
+      "Editor: removed the Chan/dhyana etymology (unsourced, and a repeat of day 910) from the teach and swapped the original to 清規 (qinggui, pure rules, from the cited Pure Rules of Baizhang); cut unsourced 'later Chan teachers repeated / took seriously' claims; cut the 'ordinary Tuesday' stock phrase.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

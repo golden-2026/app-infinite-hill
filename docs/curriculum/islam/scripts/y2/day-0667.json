@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the unseen, and your line: faith in the unseen. Did you leave one guess about the future where it belongs? Today, what the book says it does for the one who hears it. Day six hundred sixty-seven.",
+      "voice": "Yesterday: the unseen, and your line, faith in the unseen. Today, what the book says it does for the one who hears it.",
       "screen": [
         "`FAITH IN THE UNSEEN.`"
       ]
@@ -38,7 +38,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "When the companions got back to Medina and told the Prophet ﷺ, he asked the reciter: how did you know it was a ruqyah, a recitation for healing? He approved what they'd done. That story sits behind a word the Qur'an uses about itself. Surah seventeen, verse eighty-two, in Pickthall's translation: \"And We reveal of the Qur'an that which is a healing and a mercy for believers.\" The word for healing is shifa'. Elsewhere the Qur'an calls itself a healing for what is in the breasts, the hearts, in surah ten, and a guidance and a healing in surah forty-one. Notice which sickness these verses point to first. Commentators say the first sickness in view is in the heart: doubt, fear, grief, a restless mind. The book is a mercy for that. Scholars also cite hadith like the scorpion story to hold that its recitation can be a means of healing for the body. And Islamic teaching doesn't set this against medicine. A hadith in al-Bukhari says Allah has not sent down a disease without sending down a cure for it. So shifa' comes in two hands at once. A doctor's prescription in one. A verse in the other. Neither has to cancel the other out. On a low day, the second hand is the one people sometimes forget they have.",
+      "voice": "Back in Medina, they told the Prophet ﷺ, and he asked the reciter: how did you know it was a ruqyah, a recitation for healing? He approved what they'd done. That story sits behind a word the Qur'an uses about itself. Surah seventeen, verse eighty-two, in Pickthall's translation: \"And We reveal of the Qur'an that which is a healing and a mercy for believers.\" The word for healing is shifa'. Elsewhere the Qur'an calls itself a healing for what is in the breasts, the hearts, in surah ten, and a guidance and a healing in surah forty-one. Notice which sickness these verses point to first. Commentators say it's in the heart: doubt, fear, grief, a restless mind. The book is a mercy for that. Scholars also cite hadith like the scorpion story to hold that its recitation can be a means of healing for the body. And Islamic teaching doesn't set this against medicine. A hadith in al-Bukhari says Allah has not sent down a disease without sending down a cure for it. So shifa' comes in two hands at once: a doctor's prescription in one, a verse in the other. Neither has to cancel the other out. On a low day, the second hand is the one people sometimes forget they have.",
       "screen": [
         "`A RECITATION FOR HEALING.`",
         "`SHIFA': A HEALING AND A MERCY.`",
@@ -49,7 +49,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: read a verse when you're low. You don't have to be low right now. Practice for the day you are. Sit and breathe slowly. Bring to mind a short verse or passage you know, the Fatiha, or any line from this year that stayed with you. If none comes, simply hold the words a healing and a mercy. Say it slowly, inside or aloud, three times, letting each word take a full breath. Notice whether anything in your chest loosens even a little. The bell holds the time.",
+      "voice": "You don't have to be low right now; this is practice for the day you are. Bring to mind a short verse or line you know, the Fatiha or anything from this year that stayed with you, or simply the words a healing and a mercy. Say it slowly three times, letting each word take a full breath, and notice whether anything in your chest loosens, even a little.",
       "screen": []
     },
     {
@@ -63,7 +63,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: a healing. Today, choose one verse or line and keep it somewhere you'll see it, a note on your phone or a slip in your wallet, for the next low moment. Day six hundred sixty-seven.",
+      "voice": "Your line: a healing. One line, held close, for the low days ahead. Until tomorrow.",
       "screen": []
     },
     {
@@ -77,6 +77,11 @@
   ],
   "howItsDone": "In ruqyah, Muslims recite the Fatiha, the last two surahs and other verses over someone who is ill, alongside medical treatment; a hadith in al-Bukhari says Allah sent down no disease without its cure.",
   "games": {
+    "guess": [
+      "healing, first of all for the heart",
+      "a cure that replaces seeing a doctor",
+      "a mercy promised only in the next life"
+    ],
     "match": {
       "prompt": "a healing — tap the pairs.",
       "pairs": [
@@ -137,14 +142,47 @@
     ],
     "recall": [
       [
-        "'ala hubbihi",
-        "for love of Him, or despite loving it"
+        "mala'ikah",
+        "angels, created from light"
       ],
       [
-        "tartil",
-        "slow, clear, measured recitation"
+        "al-Muddaththir",
+        "the one cloaked, told to arise"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your sister",
+      "says": "If the Qur'an is a healing, does that mean I can skip the doctor?",
+      "options": [
+        "No: a hadith says every disease has a cure, so medicine and verse go together.",
+        "Yes: a verse can only work once you stop all your medicine.",
+        "No: the Qur'an only heals the body, so it can't help with grief."
+      ],
+      "answer": 0,
+      "meaning": "Shifa' comes in two hands: the Qur'an, a healing first for the heart, and medicine, since Allah sent down a cure for every disease."
+    },
+    "gloss": {
+      "Fatiha": {
+        "meaning": "the Opening, the Qur'an's first surah",
+        "script": "الفاتحة",
+        "say": "FAA-ti-ha"
+      },
+      "ruqyah": {
+        "meaning": "a recitation for healing",
+        "script": "رقية",
+        "say": "RUQ-ya"
+      },
+      "shifa'": {
+        "meaning": "healing",
+        "script": "شفاء",
+        "say": "shi-FAA"
+      },
+      "Medina": {
+        "meaning": "the city where the Prophet lived his last years",
+        "script": "المدينة",
+        "say": "ma-DEE-na"
+      }
+    }
   },
   "sources": [
     {
@@ -180,7 +218,9 @@
       "Pickthall wording of 17:82 quoted from memory (first part of the verse only); please confirm.",
       "Hadith numbers cited from memory (Bukhari 5749 / 2276 for the scorpion story; Bukhari 5678); confirm. The 'freed from a rope' image is a paraphrase of the hadith's wording.",
       "Views on ruqyah for physical illness stated as 'many hold'; confirm framing.",
-      "'Muslim physicians built hospitals and wrote medical books for centuries' is a general historical statement; confirm wording."
+      "'Muslim physicians built hospitals and wrote medical books for centuries' is a general historical statement; confirm wording.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

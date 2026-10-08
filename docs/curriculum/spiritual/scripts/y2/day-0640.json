@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: Carnuntum, where Marcus is thought to have written to himself. Your line was to myself. Did you add a fourth line last night? Day six hundred forty.",
+      "voice": "Yesterday's word was Carnuntum, the army base where Marcus is thought to have written to himself. Your line was to myself.",
       "screen": [
         "`TO MYSELF.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Day five hundred twenty-one, we opened a notebook kept by a Roman emperor and started reading it in order. It's easy to dip into a book like this, find a line for a mug, and close it again. We went the long way: twelve books, a hundred and twenty days, the dull pages along with the famous ones. Today the notebook closes. Not with a test. With a question Marcus would ask: what will you actually do with it now? Today: know again.",
+      "voice": "Day five hundred twenty-one, you and i opened a notebook kept by a Roman emperor and started reading it in order. It's easy to dip into a book like this, find a line for a mug, and close it again. This went the long way: twelve books, a hundred and twenty days, the dull pages along with the famous ones. Today the notebook closes. Not with a test. With a question Marcus would ask: what will you actually do with it now?",
       "screen": [
         "`DAY 521: THE NOTEBOOK OPENS.` → `TWELVE BOOKS, THE LONG WAY.` → `THE NOTEBOOK CLOSES.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, look back at the road. Book one is all thank-yous: to his grandfather, his mother, his teachers, his adoptive father, one by one, for what each taught him. Then book two opens with a morning warning: today you'll meet people who are rude, ungrateful, dishonest; they're kin; don't be harmed. From there the notebook wanders and circles: retreat into yourself; get up and do your work; all is opinion; the view from above; Alexander and his mule driver; and finally, in book twelve, two gates, a small share of time, and an actor leaving the stage at peace. Second, what reading straight through gives you. The famous lines sit in context. You see Marcus repeat himself, contradict himself, fall short, try again. You meet a person, not a quote generator. Third, the Greek word for reading, anagignōskō. Dictionaries also give it an older sense: to recognize, to know again. Some readers find that fits this book. Marcus wasn't learning new things in it. He was recognizing old ones, again. Fourth, what readers do now. Some readers who finish the Meditations start over. Some keep a single page open for a season. Some read one passage every morning, the way Marcus told himself to prepare for the day. There's no wrong way, except treating it as finished. Tomorrow the path widens: the Stoics who came before Marcus, and the neighbors who argued with them.",
+      "voice": "First, the road. Book one is all thank-yous: to his grandfather, his mother, his teachers, his adoptive father, one by one, for what each taught him. Book two opens with a morning warning: today you'll meet people who are rude, ungrateful, dishonest; they're kin; don't be harmed. From there the notebook wanders and circles: retreat into yourself; get up and do your work; all is opinion; the view from above; Alexander and his mule driver; and finally, in book twelve, two gates, a small share of time, and an actor leaving the stage at peace. Second, what reading straight through gives you. The famous lines sit in context. You see Marcus repeat himself, contradict himself, fall short, try again. You meet a person, not a quote generator. Third, the Greek word for reading, anagignōskō. Dictionaries also give it an older sense: to recognize, to know again. Some readers find that fits this book. Marcus wasn't learning new things in it. He was recognizing old ones, again. Fourth, what readers do now. Some who finish the Meditations start over. Some keep a single page open for a season. Some read one passage every morning, the way Marcus told himself to prepare for the day. There's no wrong way, except treating it as finished. Tomorrow the path widens: the Stoics who came before Marcus, and the neighbors who argued with them.",
       "screen": [
         "`BOOK ONE: THANK-YOUS. BOOK TWELVE: GO.` · `STRAIGHT THROUGH: A PERSON, NOT QUOTES.` · `ANAGIGNŌSKŌ: TO READ, TO KNOW AGAIN.` · `NOT FINISHED: START OVER.` · then, large: `READ IT AGAIN.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Sit, and let the breath settle. Think back over these weeks of the notebook. Maybe one passage stuck: the morning warning, the inner retreat, all is opinion, the small share of time, the actor leaving the stage. Pick the one that comes first. If you have the book or a note nearby, find it and read it once, slowly. If not, say it to yourself in your own words. Notice what it means to you today that it didn't the first time. The bell holds the time.",
+      "voice": "Let one passage from these weeks come to mind first: the morning warning, the inner retreat, all is opinion, the small share of time, the actor leaving the stage. If the book or a note is nearby, read it once, slowly; if not, say it to yourself in your own words. Notice what it means to you today that it didn't the first time.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: read it again. Choose your favorite passage as a morning reading for the coming week, and open it once each day before the phone. Day six hundred forty.",
+      "voice": "Your line: read it again. Twelve books, and the first page is waiting again. That's the notebook closed, and day six hundred forty.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Some readers who finish the Meditations begin again, often reading one passage each morning, the way Marcus prepared himself for the day.",
   "games": {
+    "guess": [
+      "to recognize what you already knew",
+      "to memorize a text word for word",
+      "to read a whole book straight through"
+    ],
     "match": {
       "prompt": "Meditations close. tap the pairs.",
       "pairs": [
@@ -132,14 +137,38 @@
     ],
     "recall": [
       [
-        "Epictetus",
-        "the teacher who had been enslaved"
+        "hegemonikon",
+        "the ruling part, where judgments happen"
       ],
       [
-        "Phocion",
-        "bore no grudge against Athens"
+        "Rusticus",
+        "taught Marcus his character needed work"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your friend",
+      "says": "You finished the Meditations. Why would you start reading it again?",
+      "options": [
+        "Reading it is recognizing old truths again, and it's never really finished.",
+        "Because the first time only gives the outline; the real ideas come later.",
+        "Because you have to memorize it before the ideas start to work."
+      ],
+      "answer": 0,
+      "meaning": "Marcus wasn't learning new things; he was recognizing old ones. Some readers start over; the only wrong way is treating it as finished."
+    },
+    "gloss": {
+      "anagignōskō": {
+        "meaning": "Greek for to read; also, to recognize, to know again",
+        "script": "ἀναγιγνώσκω",
+        "say": "an-ah-gig-NOH-skoh"
+      },
+      "Meditations": {
+        "meaning": "the later English title of Marcus's notebook to himself"
+      },
+      "kin": {
+        "meaning": "Marcus's word for difficult people: family, part of the same whole"
+      }
+    }
   },
   "sources": [
     {
@@ -157,7 +186,9 @@
       "Book one's thank-yous: grandfather (Verus), mother, teachers, Antoninus Pius as adoptive father, among others. Paraphrased.",
       "ἀναγιγνώσκω = ἀνά + γιγνώσκω, 'to know again, recognize', standard sense 'to read'. Confirm in LSJ.",
       "Inner retreat: 4.3; morning warning: 2.1; getting up: 5.1; actor: 12.36. Paraphrased.",
-      "Editor review (year 2): reframed anagignōskō as a dictionary sense (to recognize, know again) rather than a 'literally' etymology, and fixed the match, myth and original note to match; cut 'which most people never do' and 'many people' claims; replaced the unsourced 'many readers start over' myth with one from the text; trimmed the tease of the next block to what the outline promises."
+      "Editor review (year 2): reframed anagignōskō as a dictionary sense (to recognize, know again) rather than a 'literally' etymology, and fixed the match, myth and original note to match; cut 'which most people never do' and 'many people' claims; replaced the unsourced 'many readers start over' myth with one from the text; trimmed the tease of the next block to what the outline promises.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

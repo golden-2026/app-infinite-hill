@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: Marcus's old man, who took a toy seriously for a child's sake. Your line was honest comfort. Did you get to offer some? Day five hundred seventy-three.",
+      "voice": "Yesterday: Marcus's old man, who took a toy seriously for a child's sake. Your line was honest comfort.",
       "screen": [
         "`HONEST COMFORT.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Three in the morning. The baby is crying again, and it's your turn. Or the alarm goes off for the early shift and the room is freezing. Or you promised to help a friend move, and you slept four hours. It's easy to keep a list of conditions under which we'd do the thing well. Warm, rested, appreciated, in the mood. Today we open book six of the Meditations, and its second entry crosses that whole list out.",
+      "voice": "Three in the morning. The baby is crying again, and it's your turn. Or the alarm goes off for the early shift and the room is freezing. Or you promised to help a friend move, and you slept four hours. It's easy to keep a list of conditions for doing a thing well: warm, rested, appreciated, in the mood. Book six of the Meditations opens, and its second entry crosses that whole list out.",
       "screen": [
         "`THREE A.M., YOUR TURN.` → `THE LIST OF CONDITIONS.` → `BOOK SIX OPENS.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the line. In George Long's translation, Meditations six, two begins: \"Let it make no difference to thee whether thou art cold or warm, if thou art doing thy duty.\" Then Marcus keeps going, pair by pair. Drowsy or rested. Spoken badly of or praised. Even dying or doing something else. Second, why the pairs. Each one is a condition we use as an excuse. I'll be patient when I've slept. I'll be generous when people notice. Marcus treats all of them as weather. Real, uncomfortable, and not in charge. The job in front of you doesn't change because you're cold. Third, the surprise at the end. He says dying is one of the acts of life too, and in that act, as in any other, it's enough to do well the thing in hand. That's typical Marcus. He doesn't make death a special exam. It's one more task, done as well as you can on the day it comes. Fourth, what he isn't saying. He isn't saying ignore your body or never rest. Elsewhere he admits that staying under the covers feels more pleasant. The point is narrower. When the duty is actually yours, right now, the shivering isn't a reason to do it badly. And there's a quiet dignity in work done well while tired. A nurse at the end of a double shift, a parent at three in the morning. Nobody claps. The work is good anyway.",
+      "voice": "In George Long's translation, Meditations six, two begins: \"Let it make no difference to thee whether thou art cold or warm, if thou art doing thy duty.\" Then Marcus keeps going, pair by pair. Drowsy or rested. Spoken badly of or praised. Even dying or doing something else. Each pair is a condition we use as an excuse. I'll be patient when I've slept. I'll be generous when people notice. Marcus treats them all as weather: real, uncomfortable, and not in charge. Then the surprise at the end. He says dying is one of the acts of life too, and in that act, as in any other, it's enough to do well the thing in hand. He doesn't make death a special exam. It's one more task, done as well as you can on the day it comes. What he isn't saying: ignore your body, or never rest. Elsewhere he admits that staying under the covers feels more pleasant. The point is narrower. When the duty is actually yours, right now, the shivering isn't a reason to do it badly. And there's a quiet dignity in work done well while tired. A nurse at the end of a double shift. A parent at three in the morning. Nobody claps. The work is good anyway.",
       "screen": [
         "`COLD OR WARM, DO YOUR DUTY.` · `EACH PAIR IS AN EXCUSE.` · `EVEN DYING IS AN ACT OF LIFE.` · `NOT 'NEVER REST.'` · then, large: `COLD OR WARM.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Settle in. Notice whatever discomfort you have right now: tired eyes, a stiff back, a cold hand, a mind that wants to be elsewhere. Name it plainly. Tired. Cold. Restless. Don't fight it. Then think of one duty waiting for you today that you'd rather do when you feel better. Dishes, a call, a report, a bedtime story. Picture doing it today, as you are, and doing it well. Rest in that picture for the sit. The bell holds the time.",
+      "voice": "Notice whatever discomfort you have right now, tired eyes, a stiff back, a cold hand, and name it plainly without fighting it. Then picture one duty waiting for you, dishes, a call, a bedtime story, done today as you are, and done well.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: nobody claps, the work is good anyway. Pick one duty you're too tired for today, and do it anyway, carefully. Day five hundred seventy-three.",
+      "voice": "Your line: nobody claps, the work is good anyway. Cold or warm, it's only weather. That's day five hundred seventy-three.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Readers of Marcus often use 'cold or warm' as a private reminder when they're tired or unappreciated, to do the task in front of them as well as they would on a good day.",
   "games": {
+    "guess": [
+      "the translator whose English gives Marcus's 'cold or warm'",
+      "a Roman general who wrote about soldiers' duty in winter",
+      "an English poet who rewrote Marcus as one long poem"
+    ],
     "match": {
       "prompt": "cold or warm — tap the pairs.",
       "pairs": [
@@ -132,14 +137,38 @@
     ],
     "recall": [
       [
-        "Nestor",
-        "lived into a third generation"
+        "Asclepius",
+        "the Greek god of healing"
       ],
       [
-        "Flesh",
-        "blood, bones, a net of nerves"
+        "Serenus",
+        "felt neither sick nor well"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your brother",
+      "says": "I'm exhausted. Can't I do this report badly and fix it when I'm rested?",
+      "options": [
+        "Marcus would say tired is weather, not a reason; if it's yours now, do it well.",
+        "Sure, good work only counts when you feel rested and appreciated.",
+        "Never rest at all; a Stoic should push through every single need."
+      ],
+      "answer": 0,
+      "meaning": "Marcus says cold or warm, drowsy or rested, makes no difference if you're doing your duty. That isn't 'never rest'; it's no excuse."
+    },
+    "gloss": {
+      "George Long": {
+        "meaning": "an English translator of the Meditations, in 1862"
+      },
+      "Meditations": {
+        "meaning": "Marcus Aurelius's private notebook, written in Greek to himself",
+        "say": "med-ih-TAY-shunz"
+      },
+      "thou": {
+        "meaning": "old English for 'you', used in Long's translation",
+        "say": "THOW"
+      }
+    }
   },
   "sources": [
     {
@@ -163,7 +192,9 @@
       "6.2's pairs (drowsy/satisfied with sleep, ill-spoken of/praised, dying/doing something else) and the line that dying is one of the acts of life: confirm.",
       "Whether 'duty' in 6.2 renders a form of kathēkon or a different Greek phrase should be checked; the trapdoor speaks of Stoic usage generally.",
       "'Elsewhere he admits how much he loves staying in bed' refers to 5.1.",
-      "Editor review (year 2, days 558–575): the Greek of 6.2 reads to prepon ('the fitting'), not kathēkon; original and trapdoor corrected (confirm). 'Every one of us' softened; 'how much he loves staying in bed' overstated 5.1 and now follows it; dropped a 'Think of' opener."
+      "Editor review (year 2, days 558–575): the Greek of 6.2 reads to prepon ('the fitting'), not kathēkon; original and trapdoor corrected (confirm). 'Every one of us' softened; 'how much he loves staying in bed' overstated 5.1 and now follows it; dropped a 'Think of' opener.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

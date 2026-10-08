@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: satipatthana, and your line, the long way. Where did you watch a craving start and stop? Today, a long argument, and nobody in it is a villain. Day five hundred fifty-six.",
+      "voice": "Yesterday: satipatthana, the four foundations walked the long way. Your line: the long way. Today, a long argument, and nobody in it is a villain.",
       "screen": [
         "`THE LONG WAY.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Payasi is a ruler of the town of Setavya, and he has a firm view. There is no world after this one. No beings reborn. No fruit of good or bad deeds. And he's not lazy about it. He's tested it. He's asked dying friends who lived badly to come back and warn him, if there's anything after. None came. He's asked dying friends who lived well to come back and tell him. None came. So he concludes: nothing. When a monk named Kumara Kassapa comes through, Payasi goes out to argue. Today: the sceptic's parables.",
+      "voice": "Payasi is a ruler of the town of Setavya, and he has a firm view. There is no world after this one. No beings reborn. No fruit of good or bad deeds. And he's not lazy about it. He's tested it. He's asked dying friends who lived badly to come back and warn him, if there's anything after. None came. He's asked dying friends who lived well to come back and tell him. None came. So he concludes: nothing. When a monk named Kumara Kassapa comes through, Payasi goes out to argue.",
       "screen": [
         "`NO WORLD BEYOND, SAYS PAYASI.` → `HE ASKED THE DYING TO RETURN.` → `NONE CAME.`"
       ]
@@ -44,13 +44,13 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Sit, and bring to mind one doubt you hold. About a teaching, about yourself, about anything. Don't try to settle it. Treat it the way Kassapa treated Payasi: as a fair question from someone worth talking to. Breathe with it. Then check, gently: am I keeping this view because I've weighed it, or because I've carried it a long way? Either answer is fine. Just notice. The bell holds the time.",
+      "voice": "Bring to mind one doubt you hold, about a teaching, about yourself, about anything, and treat it the way Kassapa treated Payasi: as a fair question from someone worth talking to. Breathe with it, then check gently: am I keeping this view because I've weighed it, or because I've carried it a long way? Either answer is fine.",
       "screen": []
     },
     {
       "type": "the word",
       "duration": "25 sec",
-      "voice": "upama. In DN 23 Kumara Kassapa answers Payasi's doubts about rebirth with stories, never with scorn. Today's word.",
+      "voice": "Upama. In DN 23 Kumara Kassapa answers Payasi's doubts about rebirth with stories, never with scorn. Today's word.",
       "screen": [
         "`UPAMA — today's word`."
       ]
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: a picture, not a put-down. Today, when someone doubts something you care about, answer their question respectfully, with a picture rather than a put-down. Day five hundred fifty-six.",
+      "voice": "Your line: a picture, not a put-down. Kassapa never mocks; he simply answers. Until tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Buddhist teachers often retell the parables of the Payasi Sutta, especially the hemp carrier, when talking about holding views, and many traditions treat honest doubt as a question to explore rather than a fault.",
   "games": {
+    "guess": [
+      "a simile, a picture used to explain",
+      "a scornful reply that ends a debate",
+      "a proof drawn from a dying friend"
+    ],
     "match": {
       "prompt": "the sceptic's parables: tap the pairs.",
       "pairs": [
@@ -132,14 +137,44 @@
     ],
     "recall": [
       [
-        "Vipassi",
-        "the first of seven Buddhas named"
+        "anukampa",
+        "compassion, care for others' welfare"
       ],
       [
-        "andhaveni",
-        "a line of the blind"
+        "anatta",
+        "not-self"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your uncle",
+      "says": "How did the monk Kassapa answer a ruler who doubted any life after this one?",
+      "options": [
+        "With stories anyone could weigh, treating his doubt as a fair question, never mocking.",
+        "He mocked the ruler's doubts until the ruler felt too foolish to argue.",
+        "He refused to talk with a doubter until the ruler first accepted rebirth."
+      ],
+      "answer": 0,
+      "meaning": "In the Payasi Sutta, Kumara Kassapa answers each of Payasi's arguments with a parable, treating the doubt as a real question."
+    },
+    "gloss": {
+      "Payasi": {
+        "meaning": "a ruler of Setavya who doubted any world after this one",
+        "say": "pah-YAH-see"
+      },
+      "Kumara Kassapa": {
+        "meaning": "the monk who answered Payasi with stories",
+        "say": "koo-MAH-ruh KUS-suh-puh"
+      },
+      "Setavya": {
+        "meaning": "the town Payasi ruled",
+        "say": "say-TUV-yuh"
+      },
+      "Upama": {
+        "meaning": "a simile, a comparison",
+        "script": "उपमा",
+        "say": "OO-puh-mah"
+      }
+    }
   },
   "sources": [
     {
@@ -156,7 +191,9 @@
       "DN 23 paraphrased. Confirm that the sutta is set after the Buddha's parinibbana, and Payasi's role (a royal chieftain at Setavya, holding it as a gift from King Pasenadi).",
       "Confirm the order and details of the parables used: the thief, the man in the cesspit, the conch-blower, and the hemp carrier (and that the hemp carrier comes at Payasi's 'I can't give up this view').",
       "The script deliberately leaves the question of rebirth open to the listener ('yours to decide'); Keepers may wish to phrase how Buddhists understand Kassapa's answers.",
-      "Editor review (2026-10-01): Payasi does not say he is half persuaded before the hemp parable; best one changed to one more; trapdoor drops a longest-debates superlative."
+      "Editor review (2026-10-01): Payasi does not say he is half persuaded before the hemp parable; best one changed to one more; trapdoor drops a longest-debates superlative.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

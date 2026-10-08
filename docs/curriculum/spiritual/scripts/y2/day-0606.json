@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: the third door. Your line was teach or bear. Which door did you choose, and with whom? Day six hundred six.",
+      "voice": "Yesterday's word was third door, the one Marcus leaves out when he says teach or bear. Your line was teach or bear.",
       "screen": [
         "`TEACH OR BEAR.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A cashier gives you too much change. Ten dollars, maybe. Nobody saw. The store is big; it'll never notice. There may be a small tug anyway, even if it's hard to say why. Book nine of the Meditations opens with Marcus's answer, and it's bigger than ten dollars. He says a wrong like that isn't only against the cashier. It's against the whole. Today, as book nine begins: pulled thread.",
+      "voice": "A cashier gives you too much change. Ten dollars, maybe. Nobody saw. The store is big; it'll never notice. There may be a small tug anyway, even if it's hard to say why. Book nine of the Meditations opens with Marcus's answer, and it's bigger than ten dollars. A wrong like that, he says, isn't only against the cashier. It's against the whole.",
       "screen": [
         "`TOO MUCH CHANGE.` → `NOBODY SAW.` → `BOOK NINE OPENS.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the claim. Marcus opens book nine with a startling sentence: whoever acts unjustly acts impiously. A wrong done to a person is also a wrong against the order of things itself. Second, the reason. Nature, he says, made rational beings for one another, to help each other as each deserves, and never to harm. So when you harm someone, you're not just breaking a rule. You're working against what you were made for, and against the nature of the whole, which Marcus here calls the most ancient of divinities. Third, the stretch. He doesn't stop at cheating. Lying, he says, is impiety too, because the nature of the whole is truth, and the liar sets himself at odds with it, whether on purpose or carelessly. Even being thrown around by pleasure and pain, he says, ends up unjust, because it makes us unfair in how we treat people and things. Fourth, how far it reaches. Marcus's view rests on nature and the gods, and not everyone shares it. But his picture is easy to test on an ordinary day. The extra ten dollars, the excuse that wasn't true, the credit taken for someone else's work: on his view, none of them stays in its box, because the box was never separate. For Marcus we're one fabric, and a pulled thread puckers the whole cloth.",
+      "voice": "Marcus opens book nine with a startling sentence: whoever acts unjustly acts impiously. A wrong done to a person is also a wrong against the order of things itself. His reason: nature made rational beings for one another, to help each other as each deserves, and never to harm. So harming someone isn't just breaking a rule. It's working against what you were made for, and against the nature of the whole, which Marcus here calls the most ancient of divinities. He doesn't stop at cheating. Lying is impiety too, because the nature of the whole is truth, and the liar sets himself at odds with it, whether on purpose or carelessly. Even being thrown around by pleasure and pain ends up unjust, he says, because it makes us unfair in how we treat people and things. Marcus's view rests on nature and the gods, and not everyone shares it. But his picture is easy to test on an ordinary day. The extra ten dollars, the excuse that wasn't true, the credit taken for someone else's work: on his view, none of them stays in its box, because the box was never separate. For Marcus we're one fabric, and a pulled thread puckers the whole cloth.",
       "screen": [
         "`INJUSTICE IS IMPIETY.` · `MADE TO HELP, NEVER TO HARM.` · `LYING, TOO, IS AT ODDS WITH THE WHOLE.` · `SMALL WRONGS LEAK.` · then, large: `FOR ONE ANOTHER.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Settle, and breathe. Look back over the last few days for one small wrong you did. Nothing dramatic: a sharp word, a corner cut, a promise that slid, change you didn't hand back. Don't punish yourself. Just find it. Now picture the smallest way to set it right: a message, an apology, a returned thing, a task redone. See yourself doing it. Picture the thread pulling straight. The bell holds the time.",
+      "voice": "Look back over the last few days for one small wrong you did: a sharp word, a corner cut, a promise that slid, change you didn't hand back. Don't punish yourself; just find it. Then picture the smallest way to set it right, a message, an apology, a returned thing, a task redone, and see the thread pulling straight.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: we're one fabric. Right one small wrong today, however small. Notice how the whole feels afterward. Day six hundred six.",
+      "voice": "Your line: we're one fabric. On Marcus's view, no wrong stays in its box. That's day six hundred six.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Readers who take this passage to heart often treat small wrongs as worth fixing even when no one would notice: returning the extra change, correcting the excuse, giving the credit back.",
   "games": {
+    "guess": [
+      "one small wrong that puckers the whole cloth",
+      "a small mistake that only touches you",
+      "a loose end best cut off and forgotten"
+    ],
     "match": {
       "prompt": "for one another — tap the pairs.",
       "pairs": [
@@ -127,14 +132,36 @@
     ],
     "recall": [
       [
-        "Heraclitus",
-        "no stepping in the same river twice"
+        "tumor",
+        "a soul raging against what happens"
       ],
       [
-        "galene",
-        "a sea gone flat after wind"
+        "Severus",
+        "taught Marcus one law for all"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your teenager",
+      "says": "The cashier gave us ten extra dollars. It's a huge store. Who does it hurt?",
+      "options": [
+        "Marcus says a wrong is never only against one person; it pulls on the whole we share.",
+        "Marcus says it's only wrong if someone notices it and gets hurt by it.",
+        "Marcus says small sums don't count; only the big wrongs touch the whole."
+      ],
+      "answer": 0,
+      "meaning": "In 9.1 Marcus calls injustice impiety: we're made to help one another, so even a small wrong works against the whole."
+    },
+    "gloss": {
+      "Meditations": {
+        "meaning": "Marcus's twelve books of private notes to himself"
+      },
+      "impiously": {
+        "meaning": "against what is holy, or owed to the divine"
+      },
+      "divinities": {
+        "meaning": "gods or divine powers"
+      }
+    }
   },
   "sources": [
     {
@@ -150,7 +177,9 @@
     "notes": [
       "9.1 paraphrased: injustice is impiety; nature made rational animals for one another, to help according to worth and never to harm; the transgressor is impious toward the most ancient (eldest) of divinities; the liar is impious because nature is truth (intentional and unintentional liars); being swayed by pleasure and pain leads to injustice. Confirm.",
       "Check the phrase rendered 'most ancient of divinities' (πρεσβυτάτη θεῶν?) and adjust the English if needed.",
-      "Editor review (2026-10-01): the narrator no longer states Marcus's metaphysics as fact ('we're one fabric' now attributed to Marcus) or tells the listener what they feel ('most people feel a tug', 'most of us sense', 'feel the pull', 'feel the thread pull straight')."
+      "Editor review (2026-10-01): the narrator no longer states Marcus's metaphysics as fact ('we're one fabric' now attributed to Marcus) or tells the listener what they feel ('most people feel a tug', 'most of us sense', 'feel the pull', 'feel the thread pull straight').",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

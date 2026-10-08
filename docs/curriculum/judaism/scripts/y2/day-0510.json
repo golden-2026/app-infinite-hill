@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the worker paid before sunset. Your line was pay today. Who did you pay? Today, still in the fields, a commandment you can only keep by accident. Day five hundred ten.",
+      "voice": "Yesterday, the worker paid before sunset. Your line was pay today. Today, still in the fields, a commandment you can only keep by accident.",
       "screen": [
         "`PAY TODAY.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "In the old Jewish translation: \"When thou reapest thy harvest in thy field, and hast forgot a sheaf in the field, thou shalt not go back to fetch it; it shall be for the stranger, for the fatherless, and for the widow.\" The same goes for olives: don't beat the branches a second time. And grapes: don't go back over the vines. What's left belongs to the people who have no field. The Hebrew name for the forgotten sheaf is shichecha, from the word for forgetting. And here's the odd thing about it. Many commandments can be planned. You set aside, you measure, you decide. This one can only be kept by accident. If you leave a sheaf on purpose, it's a gift, a good one, but it isn't shichecha. Only what you truly forgot counts. The verse ends with a promise: that the LORD thy God may bless thee in all the work of thy hands. Rashi, quoting the early midrash, notices how strange that is. You're blessed for something you didn't even mean to do? Yes, he says, and how much more for good you do on purpose. And then he draws a line to everyday life: if a coin falls out of your pocket and a poor person finds it and lives on it, you're blessed through it too. There's even a story in the Tosefta of a pious man who discovered he'd forgotten a sheaf, and was so happy at getting to fulfill this commandment that he told his son to bring offerings of thanks. A mistake, turned into a gift.",
+      "voice": "In the old Jewish translation: \"When thou reapest thy harvest in thy field, and hast forgot a sheaf in the field, thou shalt not go back to fetch it; it shall be for the stranger, for the fatherless, and for the widow.\" The same goes for olives: don't beat the branches a second time. And grapes: don't go back over the vines. What's left belongs to the people who have no field. The Hebrew name for the forgotten sheaf is shichecha, from the word for forgetting. And here's the odd thing. Many commandments can be planned. This one can only be kept by accident. Leave a sheaf on purpose and it's a gift, a good one, but it isn't shichecha. Only what you truly forgot counts. The verse ends with a promise: that the LORD thy God may bless thee in all the work of thy hands. Rashi, quoting the early midrash, notices how strange that is. Blessed for something you didn't mean to do? Yes, he says, and how much more for good you do on purpose. And if a coin falls out of your pocket and a poor person finds it and lives on it, you're blessed through it too. There's even a story in the Tosefta of a pious man who found he'd forgotten a sheaf, and was so happy to fulfill this commandment that he told his son to bring offerings of thanks. A mistake, turned into a gift.",
       "screen": [
         "`DON'T GO BACK FOR IT.` · `SHICHECHA: THE FORGOTTEN ONE.` · `KEPT ONLY BY ACCIDENT.` · `THE DROPPED COIN.` · then, large: `FORGOTTEN BECOMES GIVEN.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: let one lost thing become a gift. Settle, and breathe. Think of something you lost or left behind lately and still feel a small sting about. The umbrella on the train. The twenty that slipped out of your pocket. The jacket at the restaurant. Instead of the sting, try the farmer's view. Someone may have found it, and needed it. Let it go as a gift you didn't know you were giving. Then think: is there anything you're keeping that you've really forgotten you own? The bell holds the time.",
+      "voice": "Think of something you lost or left behind lately that still stings a little: the umbrella on the train, the twenty that slipped out of your pocket. Instead of the sting, try the farmer's view: someone may have found it, and needed it. Let it go as a gift you didn't know you were giving.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: forgotten becomes given. Today, when you lose or forget something small, don't chase it. Bless whoever finds it. Day five hundred ten.",
+      "voice": "Your line: forgotten becomes given. Even a dropped coin can feed someone. See you tomorrow.",
       "screen": []
     },
     {
@@ -132,14 +132,52 @@
     ],
     "recall": [
       [
-        "tzedek",
-        "justice, rightness"
+        "mo'adim",
+        "appointed times, the sacred calendar"
       ],
       [
-        "tzedakah",
-        "giving, from tzedek: justice"
+        "ona'at devarim",
+        "wronging someone with words"
       ]
-    ]
+    ],
+    "guess": [
+      "when you go out, the opening words here",
+      "when you gather, the words of the harvest",
+      "when you forget, the words of the sheaf law"
+    ],
+    "chat": {
+      "who": "your grandfather",
+      "says": "How can forgetting something count as keeping a commandment?",
+      "options": [
+        "Shichecha counts only if you truly forgot the sheaf; left on purpose, it's a gift, but not this commandment.",
+        "It can't; the rabbis said only sheaves left on purpose count, since a commandment needs a plan.",
+        "It counts only if you go back for it later and carry it to a poor family yourself, as a gift."
+      ],
+      "meaning": "The verse says don't go back for a forgotten sheaf; it's for the stranger, the orphan and the widow. Only what you truly forgot counts as shichecha.",
+      "answer": 0
+    },
+    "gloss": {
+      "shichecha": {
+        "meaning": "the forgotten sheaf, left for the poor",
+        "script": "שכחה",
+        "say": "shee-kheh-KHAH"
+      },
+      "Rashi": {
+        "meaning": "a medieval commentator, here quoting the early midrash",
+        "script": "רש\"י",
+        "say": "RAH-shee"
+      },
+      "midrash": {
+        "meaning": "early rabbinic teaching drawn from the Bible's verses",
+        "script": "מדרש",
+        "say": "MID-rahsh"
+      },
+      "Tosefta": {
+        "meaning": "an early collection of rabbinic teachings, beside the Mishnah",
+        "script": "תוספתא",
+        "say": "toh-SEF-tah"
+      }
+    }
   },
   "sources": [
     {
@@ -175,7 +213,9 @@
       "Rashi on 24:19 (from Sifrei): blessing even without intent; a sela dropped and found by a poor person; paraphrased.",
       "Tosefta Peah 3:8: the pious man who forgot a sheaf and told his son to offer a bull as a burnt offering and a peace offering; confirm.",
       "Whether gifts to the poor from the field apply outside the land of Israel today: generally not biblically; howItsDone says some farmers in Israel observe them.",
-      "Editor review (2026-10-01): replaced 'here's what makes it unique. Most commandments you plan' with a softer line, avoiding an unsourced 'unique' and 'most'."
+      "Editor review (2026-10-01): replaced 'here's what makes it unique. Most commandments you plan' with a softer line, avoiding an unsourced 'unique' and 'most'.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

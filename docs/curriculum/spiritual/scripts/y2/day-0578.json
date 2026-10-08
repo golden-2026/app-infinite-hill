@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: in and out, things hurrying into being and hurrying away. What beginning and what ending did you notice? Day five hundred seventy-eight.",
+      "voice": "Yesterday: in and out, things hurrying into being and hurrying away. Your line was already out of sight.",
       "screen": [
         "`ALREADY OUT OF SIGHT.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Pickup basketball, Saturday morning. Going for a rebound, a guy catches you with an elbow, right in the ribs. It hurts. He says, sorry, man. And here's the strange thing: you don't go home and lie awake wondering what he really meant. You don't tell your friends he's out to get you. It's the game. Bodies collide. Now move that same elbow into an office, a family, a group chat, and suddenly it's a plot. Marcus Aurelius noticed the difference on the training ground.",
+      "voice": "Pickup basketball, Saturday morning. Going for a rebound, a guy catches you with an elbow, right in the ribs. It hurts. He says, sorry, man. And here's the strange thing: you don't go home and lie awake wondering what he really meant, or tell your friends he's out to get you. It's the game. Bodies collide. Now move that same elbow into an office, a family, a group chat, and suddenly it's a plot. Marcus Aurelius noticed the difference on the training ground.",
       "screen": [
         "`AN ELBOW IN THE RIBS.` → `IT'S THE GAME.` → `THE SAME ELBOW AT WORK.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the gym. In Meditations six, twenty, Marcus describes training in the gymnasium. Someone scratches you with his nails, or butts you with his head. You don't make a show of anger. You aren't offended. And you don't suspect him afterward of plotting against you. Second, the caution. Marcus is not naive. He says you do keep an eye on him next time. But not as an enemy, and not with suspicion. Just with good-natured care, the way you'd step around a puppy that jumps. Watchful, not hostile. Third, the move. Then he says: let it be like this in the rest of life too. Overlook a lot in the people who are, so to speak, training alongside you. It's possible, he says, to step out of the way without suspecting or hating anyone. Fourth, why the gym helps. In training, everyone knows bumps come with the sport. Nobody takes them personally because nobody expected a world without contact. Life with other people is also a contact sport. Coworkers forget to cc you. A friend cancels. Your sister says the thing in the wrong tone. Plenty of these are elbows under a rebound, not schemes. Marcus isn't saying nobody ever means harm. He's saying the scratch shouldn't grow into a story. Treat it as what it probably was, and keep playing.",
+      "voice": "In Meditations six, twenty, Marcus describes training in the gymnasium. Someone scratches you with his nails, or butts you with his head. You don't make a show of anger. You aren't offended. And you don't suspect him afterward of plotting against you. Marcus is not naive. You do keep an eye on him next time, he says, but not as an enemy, and not with suspicion: with good-natured care, the way you'd step around a puppy that jumps. Watchful, not hostile. Then the move: let it be like this in the rest of life too. Overlook a lot in the people who are, so to speak, training alongside you. It's possible, he says, to step out of the way without suspecting or hating anyone. In training, everyone knows bumps come with the sport; nobody expected a world without contact. Life with other people is a contact sport too. A coworker forgets to cc you. A friend cancels. Your sister says the thing in the wrong tone. Plenty of these are elbows under a rebound, not schemes. Marcus isn't saying nobody ever means harm. He's saying the scratch shouldn't grow into a story. Treat it as what it probably was, and keep playing.",
       "screen": [
         "`SCRATCHED WHILE TRAINING.` · `WATCHFUL, NOT AN ENEMY.` · `OVERLOOK MUCH IN FELLOW ATHLETES.` · `LIFE IS A CONTACT SPORT.` · then, large: `JUST A SCRATCH.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Sit comfortably, and breathe. Think of a small hurt from the past week. Someone's careless word, a missed reply, a bump in a crowded doorway. Notice if you've built a story around it: what they meant, what it says about them. Now picture it as an elbow in a pickup game. Clumsy, accidental, part of being near people. Let the story shrink back to the size of the scratch. Breathe there. The bell holds the time.",
+      "voice": "Think of a small hurt from the past week, a careless word, a missed reply, a bump in a crowded doorway, and notice whether you've built a story around it. Picture it as an elbow in a pickup game, clumsy and part of being near people, and let the story shrink back to the size of the scratch.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: just a scratch. When someone bumps you today, in words or in a hallway, let one accident be an accident. Say the line, and keep playing. Day five hundred seventy-eight.",
+      "voice": "Your line: just a scratch. Watchful, not hostile. See you on the court tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Readers of Marcus often use the gym image to keep small slights at their actual size: they stay alert to a pattern without assuming hostile intent from a single bump.",
   "games": {
+    "guess": [
+      "a training ground where bumps aren't taken as plots",
+      "an arena where gladiators fought before crowds",
+      "a bathhouse where Romans went to rest and talk"
+    ],
     "match": {
       "prompt": "the scratch in the gym — tap the pairs.",
       "pairs": [
@@ -132,14 +137,40 @@
     ],
     "recall": [
       [
-        "Heraclitus",
-        "no stepping in the same river twice"
+        "Corsica",
+        "eight years of Seneca's exile"
       ],
       [
-        "galene",
-        "a sea gone flat after wind"
+        "beneficium",
+        "a good deed, a favor"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your roommate",
+      "says": "My friend forgot my birthday. Does that mean she doesn't care?",
+      "options": [
+        "Maybe it's just an elbow in the game; don't let a scratch grow into a story.",
+        "Probably; small slips like that usually show what people really think.",
+        "Cut her off now, so she can't ever hurt you like that again."
+      ],
+      "answer": 0,
+      "meaning": "In the gymnasium a scratch isn't a plot. Marcus says overlook a lot in those training alongside you: watchful, but not as an enemy."
+    },
+    "gloss": {
+      "gymnasium": {
+        "meaning": "an ancient training ground where athletes exercised",
+        "script": "γυμνάσιον",
+        "say": "jim-NAY-zee-um"
+      },
+      "Meditations": {
+        "meaning": "Marcus Aurelius's private notebook, written in Greek to himself",
+        "say": "med-ih-TAY-shunz"
+      },
+      "Marcus Aurelius": {
+        "meaning": "Roman emperor and Stoic who wrote the Meditations to himself",
+        "say": "MAR-kus aw-REE-lee-us"
+      }
+    }
   },
   "sources": [
     {
@@ -156,7 +187,9 @@
       "Editor review (y2 pass): removed the 'nearly two thousand years ago' date, the 'wrestling' detail not in 6.20 (Long: 'in the gymnastic exercises'), the gymnos etymology in the trapdoor and original note, and a 'most' claim. Confirm γυμνάσιον (plural γυμνασίοις) appears in the Greek of 6.20.",
       "Meditations 6.20 paraphrased: in the gymnasium someone tears us with his nails or butts us with his head; no anger, no offense, no suspicion of plotting; we watch him, not as an enemy, with good-natured avoidance; so in life overlook much in fellow athletes. Confirm.",
       "The puppy image is the script's illustration, not Marcus's.",
-      "Etymology of gymnasion from gymnos (naked): confirm against LSJ."
+      "Etymology of gymnasion from gymnos (naked): confirm against LSJ.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

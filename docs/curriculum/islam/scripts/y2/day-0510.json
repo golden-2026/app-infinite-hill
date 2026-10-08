@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, i'tikaf, and your line was withdraw to draw near. Is your offline evening in the calendar? Day five hundred ten.",
+      "voice": "Yesterday: i'tikaf, a retreat in the mosque, and your line, withdraw to draw near.",
       "screen": [
         "`I'TIKAF — WITHDRAW TO DRAW NEAR.`"
       ]
@@ -46,7 +46,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: mark your progress. Sit, and let the breath settle. Think of something long you've started: a book, a course, a habit, maybe this path. Picture where you began, and where you are now. Picture the end. If you read the Qur'an, mark the place you've reached with a ribbon or a note. If you don't, mark your place in whatever long thing you're doing. The bell holds the time.",
+      "voice": "Think of something long you've started: a book, a course, a habit, maybe this path. Picture where you began, where you are now, and the end. If you read the Qur'an, mark the place you've reached with a ribbon or a note; if not, mark your place in whatever long thing you're doing.",
       "screen": []
     },
     {
@@ -60,7 +60,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: one juz' a night. Today, take one steady step on your long thing, and stop there. Tomorrow, another. Day five hundred ten.",
+      "voice": "Your line: one juz' a night. Next comes Eid morning. That's day five hundred ten.",
       "screen": []
     },
     {
@@ -74,6 +74,11 @@
   ],
   "howItsDone": "Many mosques recite one juz' a night in the tarawih prayers to complete the Qur'an by the end of Ramadan, often closing with a khatm supplication, and many Muslims read a juz' a day at home.",
   "games": {
+    "guess": [
+      "the fasting month, when many hear the whole Qur'an",
+      "the last night, when the Qur'an's recitation ends",
+      "one of thirty parts of the Qur'an for reading"
+    ],
     "match": {
       "prompt": "the whole book — tap the pairs.",
       "pairs": [
@@ -134,14 +139,52 @@
     ],
     "recall": [
       [
-        "qawam",
-        "a firm station, upright between"
+        "masajid",
+        "mosques, protected in 22:40's list"
       ],
       [
-        "uns",
-        "ease, feeling at home"
+        "as-sab' al-mathani",
+        "the Fatiha's seven oft-repeated verses"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your daughter",
+      "says": "How do people get through the whole Qur'an in one Ramadan?",
+      "options": [
+        "It's in thirty parts, each a juz'; one a night finishes it in a month.",
+        "They read it in one sitting on the Night of Power, start to finish.",
+        "The imam reads it all on the first night; then it's repeated daily."
+      ],
+      "answer": 0,
+      "meaning": "The Qur'an is divided for reading into thirty parts; a mosque reciting one juz' a night in tarawih finishes by month's end."
+    },
+    "gloss": {
+      "juz'": {
+        "meaning": "one of thirty reading parts of the Qur'an",
+        "script": "جزء",
+        "say": "JUZ'"
+      },
+      "hizb": {
+        "meaning": "half of a juz'",
+        "script": "حزب",
+        "say": "HIZB"
+      },
+      "tartil": {
+        "meaning": "unhurried recitation, each letter given its due",
+        "script": "ترتيل",
+        "say": "tar-TEEL"
+      },
+      "khatm": {
+        "meaning": "completing the whole Qur'an, closed with a supplication",
+        "script": "ختم",
+        "say": "KHATM"
+      },
+      "An-Nas": {
+        "meaning": "the last surah of the Qur'an",
+        "script": "الناس",
+        "say": "an-NAAS"
+      }
+    }
   },
   "sources": [
     {
@@ -171,7 +214,9 @@
       "Hadith numbers (Bukhari 5054, Abu Dawud 1394) cited from memory; confirm.",
       "'About twenty pages' per juz' in a standard Madani mushaf, and 30–45 minutes reading time, are approximations framed as 'many people say'; confirm.",
       "Many mosques finish on the 27th or 29th night; the script says 'one of the last nights'.",
-      "Editor review (2026-10-01): 'thirty nights earlier' contradicted 'one of the last nights' and is cut; 'equal parts', 'most printed copies', 'children learn first', the twenty-pages and 30-45 minute figures and the stated purpose of the divisions removed or softened (unsourced); garbled fork option ('then, at most, in seven') fixed."
+      "Editor review (2026-10-01): 'thirty nights earlier' contradicted 'one of the last nights' and is cut; 'equal parts', 'most printed copies', 'children learn first', the twenty-pages and 30-45 minute figures and the stated purpose of the divisions removed or softened (unsourced); garbled fork option ('then, at most, in seven') fixed.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

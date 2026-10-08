@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: ictus animi. Your line was the first jolt. When something startled you, did you take one breath before deciding what it meant? Day four hundred sixty-nine.",
+      "voice": "Yesterday's word was ictus animi, the jolt even the wise feel. Your line was the first jolt.",
       "screen": [
         "`ICTUS ANIMI — THE FIRST JOLT.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Lucilius has lost a friend named Flaccus, and he's taking it hard. Seneca writes back with the advice a Stoic is supposed to give: grieve, but within measure. Don't let your eyes stay dry, he says, and don't let them flood either. Weep, but don't wail. It's sensible. It's balanced. And then, near the end of the sixty-third letter, Seneca does something unexpected in a letter of advice. He turns the light on himself, and tells his friend about the time he didn't follow his own advice at all. Today, the last day of this week in the letters: I wept too much.",
+      "voice": "Lucilius has lost a friend named Flaccus, and he's taking it hard. Seneca writes back with the advice a Stoic is supposed to give: grieve, but within measure. Don't let your eyes stay dry, and don't let them flood. Weep, but don't wail. It's sensible and balanced. Then, near the end of the sixty-third letter, Seneca does something unexpected in a letter of advice. He turns the light on himself, and tells his friend about the time he didn't follow his own advice at all.",
       "screen": [
         "`LUCILIUS LOSES FLACCUS.` → `WEEP, BUT DON'T WAIL.` → `THEN SENECA TURNS THE LIGHT ON HIMSELF.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the advice. Seneca's rule for grief is in the middle: let the eyes be neither dry nor overflowing. Tears are natural. Endless, performed grief, he thinks, often has more to do with being seen to grieve than with the friend. Second, the confession. I write this to you, he says, I who wept for my dear friend Annaeus Serenus so far beyond measure that, against my will, I'm one of the examples of people conquered by grief. Third, the reason. Serenus was younger than Seneca, and a close friend. Seneca admits he'd never once considered that Serenus might die first. He'd thought only of their ages, as if death went in order. Now, he says, I condemn myself for that, because I didn't think it could happen. Fourth, what we learn from the admission. A teacher who'd never failed his own rule would be easier to admire and harder to trust. Seneca gives Lucilius the rule and the stumble together, and the stumble makes the rule human. Looking back on our week, from the dark house to the seasick swim to the tunnel, the man keeps telling stories against himself. Grief, in his own story, is honest even when it overflows. The lesson isn't don't weep. It's: weep, and don't pretend it couldn't happen.",
+      "voice": "Seneca's rule for grief sits in the middle: let the eyes be neither dry nor overflowing. Tears are natural. Endless, performed grief, he thinks, often has more to do with being seen to grieve than with the friend. Then the confession. I write this to you, he says, I who wept for my dear friend Annaeus Serenus so far beyond measure that, against my will, I'm one of the examples of people conquered by grief. Serenus was younger than Seneca, and a close friend. Seneca had never once considered that Serenus might die first. He'd thought only of their ages, as if death went in order. Now, he says, I condemn myself for that, because I didn't think it could happen. A teacher who'd never failed his own rule would be easier to admire and harder to trust. Seneca gives Lucilius the rule and the stumble together, and the stumble makes the rule human. Looking back on the week, from the dark house to the seasick swim to the tunnel, the man keeps telling stories against himself. The lesson isn't don't weep. It's: weep, and don't pretend it couldn't happen.",
       "screen": [
         "`NEITHER DRY NOR OVERFLOWING.` · `I WEPT FOR SERENUS BEYOND MEASURE.` · `I NEVER THOUGHT HE'D GO FIRST.` · `THE STUMBLE MAKES THE RULE HUMAN.` · then, large: `GRIEF IS HONEST.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Go gently here. If a loss is very fresh, you can simply breathe and rest instead. Otherwise, bring to mind one person or thing you've lost. Let yourself feel it honestly, whatever is there: sadness, anger, numbness, even relief. You don't need to measure it. If tears come, let them. If they don't, that's fine too. Breathe with the loss, as you would sit with a friend. The bell holds the time.",
+      "voice": "Go gently here; if a loss is very fresh, simply breathe and rest instead. Otherwise, bring to mind one person or thing you've lost and let yourself feel whatever is there, sadness, anger, numbness, even relief, without measuring it. If tears come, let them; if not, that's fine too, and breathe with the loss as you'd sit with a friend.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: grief is honest. Today, if someone tells you about a loss, don't fix it. Just say: I'm sorry, tell me about them. That's our week in the letters. Next week, more Seneca. Day four hundred sixty-nine.",
+      "voice": "Your line: grief is honest. Honest even when it overflows. Another week of letters, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Readers of Seneca often take from this letter permission to grieve honestly, and to admit when grief has overflowed their own expectations.",
   "games": {
+    "guess": [
+      "Latin for tears, which Seneca let overflow for Serenus",
+      "Latin for the grief people perform in order to be seen",
+      "Latin for a Roman funeral song sung for a friend"
+    ],
     "match": {
       "prompt": "the sixty-third letter — tap the pairs.",
       "pairs": [
@@ -132,14 +137,43 @@
     ],
     "recall": [
       [
-        "Calvisius Sabinus",
-        "bought people to memorize poets"
+        "confiteri",
+        "to confess; a sign of health"
       ],
       [
-        "cotidie morimur",
-        "we die every day"
+        "Socrates",
+        "you take yourself along"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your aunt",
+      "says": "Is it wrong to cry a lot when someone dies?",
+      "options": [
+        "Seneca advised measure, yet admitted he wept for Serenus beyond it; grief is honest.",
+        "Seneca said tears are only for family, never for a friend.",
+        "Seneca said to cry as loudly and long as you can, so others see your love."
+      ],
+      "answer": 0,
+      "meaning": "Letter sixty-three: tears are natural, and Seneca confesses he wept for Serenus beyond his own rule. The stumble makes the rule human."
+    },
+    "gloss": {
+      "Flaccus": {
+        "meaning": "the friend whose death Lucilius was grieving",
+        "say": "FLAK-us"
+      },
+      "Annaeus Serenus": {
+        "meaning": "Seneca's younger close friend, whom he grieved beyond measure",
+        "say": "uh-NEE-us suh-REE-nus"
+      },
+      "Lacrimae": {
+        "meaning": "Latin for tears",
+        "say": "LAK-rih-my"
+      },
+      "Lucilius": {
+        "meaning": "Seneca's friend, to whom the letters are written",
+        "say": "loo-SIL-ee-us"
+      }
+    }
   },
   "sources": [
     {
@@ -157,7 +191,9 @@
       "Serenus as addressee of De Tranquillitate Animi and De Constantia Sapientis, and as a possible relative: confirm.",
       "Practice offers an opt-out for very fresh loss. Sensitivity check welcome.",
       "Week look-back mentions days 464–468.",
-      "Editor review (2026-10-01): cut the sweeping claim that advice-givers 'almost never' confess; softened 'he shows' so the narrator's reading isn't attributed to Seneca (63.14–15 has Seneca condemning himself)."
+      "Editor review (2026-10-01): cut the sweeping claim that advice-givers 'almost never' confess; softened 'he shows' so the narrator's reading isn't attributed to Seneca (63.14–15 has Seneca condemning himself).",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

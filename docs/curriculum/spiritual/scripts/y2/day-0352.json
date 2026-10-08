@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: not my contest, agon. Your line was stand at the line. Did you skip one comparison and go back to your own race? Day three hundred fifty-two.",
+      "voice": "Yesterday's word was agon, the contest. Your line was stand at the line.",
       "screen": [
         "`STAND AT THE LINE.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A story told about Socrates in Diogenes Laertius' Lives of the Philosophers. A man in the street kicks him. His friends are outraged and want him to take the man to court. Socrates shrugs. If a donkey had kicked me, he asks, would I sue the donkey? We might not all manage that shrug. Somebody cuts in front at the pharmacy and calls you something under their breath, and for the rest of the afternoon you're writing speeches to them in your head. Section twenty of the handbook asks where, exactly, the injury happened. Today: the insult.",
+      "voice": "A man in the street kicks Socrates. His friends are outraged and want him to take the man to court. Socrates shrugs. If a donkey had kicked me, he asks, would I sue the donkey? The story is told in Diogenes Laertius' Lives of the Philosophers. Not everyone manages that shrug. Somebody cuts in front at the pharmacy and calls you something under their breath, and for the rest of the afternoon you're writing speeches to them in your head. Section twenty of the handbook asks where, exactly, the injury happened.",
       "screen": [
         "`SOCRATES IS KICKED.` → `WOULD I SUE THE DONKEY?` → `WHERE DID THE INJURY HAPPEN?`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the claim. Remember, Epictetus says, that it isn't the one who abuses you or hits you who insults you. It's your judgment about them, that they've insulted you. The Greek verb is from hybris, outrage, the word behind our hubris. The outrage, he says, is completed inside. Second, the follow-through. So when someone provokes you, know that it's your own judgment that has provoked you. That sounds like blaming the victim, and it's worth slowing down here. Epictetus isn't saying the person behaved well, or that you shouldn't defend yourself or others from real harm. He's talking about the second injury, the one that keeps going all afternoon: the speeches in your head. That part, he says, runs on your verdict, and it can be looked at. Third, the tool. Try above all, he says, not to be carried off by the impression. If you once gain time and delay, you'll more easily master yourself. Time and delay. A breath. A count of three. Going to the window before answering the email. Fourth, an echo. Seneca, writing a whole essay on anger, said much the same: delay is the greatest remedy for anger. It's one of the places where the Stoic writers agree closely. The first flash is fast and hot. Many people find that if they give it a few seconds, it often cools enough for them to choose. So today's practice is small and exact. Not suppressing anything. Just putting one breath between the sting and the reply.",
+      "voice": "Remember, Epictetus says, that it isn't the one who abuses you or hits you who insults you. It's your judgment about them, that they've insulted you. The Greek verb is from hybris, outrage, the word behind our hubris. The outrage, he says, is completed inside. So when someone provokes you, know that it's your own judgment that has provoked you. That sounds like blaming the victim, and it's worth slowing down here. Epictetus isn't saying the person behaved well, or that you shouldn't defend yourself or others from real harm. He's talking about the second injury, the one that keeps going all afternoon: the speeches in your head. That part, he says, runs on your verdict, and it can be looked at. Then the tool. Try above all, he says, not to be carried off by the impression. If you once gain time and delay, you'll more easily master yourself. Time and delay. A breath. A count of three. Going to the window before answering the email. Seneca, writing a whole essay on anger, said much the same: delay is the greatest remedy for anger. It's one of the places where the Stoic writers agree closely. The first flash is fast and hot. Many people find that if they give it a few seconds, it often cools enough for them to choose. Not suppressing anything. Just one breath between the sting and the reply.",
       "screen": [
         "`NOT THE INSULTER, BUT YOUR JUDGMENT.` · `THE SECOND INJURY.` · `GAIN TIME AND DELAY.` · `SENECA: DELAY IS THE REMEDY.` · then, large: `A BREATH BEFORE.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Remember a moment when someone said something that stung. Let it replay, just once. Feel the heat rise, the reply forming. Now, at the exact point where you would answer, stop, and take one slow breath in and out. Only one. Notice what's different on the other side of it. Maybe the reply is the same. Maybe it's softer, or unnecessary. Then rest in the ordinary breathing that follows. The bell holds the time.",
+      "voice": "Remember a moment when someone said something that stung, and let it replay once: the heat rising, the reply forming. At the exact point where you would answer, stop, and take one slow breath in and out. Notice what's different on the other side of it; maybe the reply is the same, maybe it's softer, or unnecessary.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: a breath before. Delay one reaction today by a single breath, the next time something stings. Then answer, if it still needs answering. Day three hundred fifty-two.",
+      "voice": "Your line: a breath before. The sting comes fast; the answer can come after. Until tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Some people who practice Stoicism pause, even for a single breath, before replying to an insult, giving the first flash of anger time to cool.",
   "games": {
+    "guess": [
+      "a wrong completed by your own judgment of it",
+      "any harsh word, which always does real harm",
+      "a formal charge brought against you in court"
+    ],
     "match": {
       "prompt": "the insult — tap the pairs.",
       "pairs": [
@@ -133,13 +138,43 @@
     "recall": [
       [
         "Crates",
-        "cracked the pot of soup"
+        "the Cynic who cracked Zeno's soup pot"
       ],
       [
-        "amor fati",
-        "Nietzsche's later phrase"
+        "docta ignorantia",
+        "knowing the limits of what you can know"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your coworker",
+      "says": "Some guy cursed at me in traffic and I'm still fuming. Is that on me?",
+      "options": [
+        "He acted badly, but the hours of fuming run on your verdict; a breath helps.",
+        "Yes, it's all your fault; he did nothing wrong, you just took it badly.",
+        "No, he ruined your day, and there's nothing you can do until he apologizes."
+      ],
+      "meaning": "Section twenty: the outrage is completed by your judgment. Epictetus doesn't excuse the person; he says time and delay help you master yourself.",
+      "answer": 0
+    },
+    "gloss": {
+      "Socrates": {
+        "meaning": "the Athenian philosopher whom Plato wrote about",
+        "say": "SOK-ruh-teez"
+      },
+      "Diogenes Laertius": {
+        "meaning": "an ancient writer of philosophers' lives who tells the donkey story",
+        "say": "dy-OJ-uh-neez lay-UR-shee-us"
+      },
+      "hybris": {
+        "meaning": "Greek for outrage; the word behind hubris",
+        "script": "ὕβρις",
+        "say": "HOO-bris"
+      },
+      "Seneca": {
+        "meaning": "a Roman Stoic who wrote a whole essay on anger",
+        "say": "SEN-uh-kuh"
+      }
+    }
   },
   "sources": [
     {
@@ -169,7 +204,9 @@
       "Socrates and the donkey: Diogenes Laertius 2.21; confirm reference and wording (paraphrased).",
       "Seneca, De Ira: 'the greatest remedy for anger is delay' (maximum remedium irae mora est) — commonly cited as 2.29 or 3.12; confirm section.",
       "Review fix: removed the uncited 'modern research on anger tends to point the same way' and softened 'agree almost word for word' to 'agree closely' (Epictetus and Seneca agree in sense, not wording); the cooling claim is now framed as common experience. A reviewer may restore a research claim only with a citation.",
-      "ὕβρις / ὑβρίζει in Enchiridion 20 and hybris as an Athenian legal offense (graphe hybreos): confirm."
+      "ὕβρις / ὑβρίζει in Enchiridion 20 and hybris as an Athenian legal offense (graphe hybreos): confirm.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

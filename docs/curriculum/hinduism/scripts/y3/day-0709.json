@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Devavrata: a river held back by arrows, and a father introduced to his own son. What did you ask someone close? Day seven hundred nine.",
+      "voice": "Yesterday: Devavrata, a river held back by arrows, and a father introduced to his own son.",
       "screen": [
         "`INTRODUCED TO HIS OWN SON.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Vasishtha. Ushanas. Brihaspati. Rama, the son of Jamadagni. That's the list Ganga gives the king. She's standing before Shantanu at the river's edge, holding their grown son by the hand, and before she lets go of him she tells his father what the boy has learned while he was away, and whose learning he holds. It's an extraordinary list. And the first name on it is the one that should make us stop.",
+      "voice": "Vasishtha. Ushanas. Brihaspati. Rama, the son of Jamadagni. That's the list Ganga gives the king. She's standing before Shantanu at the river's edge, holding their grown son by the hand, and before she lets go of him she tells his father what the boy has learned while he was away, and whose learning he holds. It's an extraordinary list. And the first name on it should make us stop.",
       "screen": [
         "`A LIST OF TEACHERS.` → `SPOKEN AT THE RIVER'S EDGE.` → `THE FIRST NAME.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "He studied the Vedas, Ganga says, with Vasishtha. Two days ago we heard that name. Vasishtha is the sage whose cow was stolen, who cursed the Vasus, and who said the one who took her would live long on earth. The one who took her was Dyu. And Dyu is this young man. So the sage who sentenced him to a human life is the one who taught him how to live it. Then the list goes on. He knows, Ganga says, everything Ushanas knows, the teacher the asuras follow, and everything Brihaspati knows, the teacher of the gods. And he knows every weapon known to Rama, the son of Jamadagni, the warrior sage tradition calls Parashurama. Take him home, she says. And she goes back into the water, and this time she doesn't return to the story for a long while. Shantanu brings his son to the capital and makes him heir to the throne, and the text says the people of the kingdom are glad of him. Now step back, because this is the last day of Shantanu and Ganga, and the pieces fit. A king stared in heaven, and was born on earth to meet the river. Gods stole a cow, and were born to leave as fast as they came. A vow made by a riverbank kept a father silent seven times. And the one who broke the vow saved the one son who was always meant to stay. One Vasu remains on earth, taught by the sage who cursed him, heir to a throne, and marked, by that same curse, to have no children. The next turn of the story asks what that long life will cost him.",
+      "voice": "He studied the Vedas, Ganga says, with Vasishtha. That's the sage whose cow was stolen, who cursed the Vasus, and who said the one who took her would live long on earth. The one who took her was Dyu. And Dyu is this young man. So the sage who sentenced him to a human life is the one who taught him how to live it. Then the list goes on. He knows everything Ushanas knows, the teacher the asuras follow, and everything Brihaspati knows, the teacher of the gods. And he knows every weapon known to Rama, the son of Jamadagni, the warrior sage tradition calls Parashurama. Take him home, she says. And she goes back into the water, and this time she doesn't return to the story for a long while. Shantanu brings his son to the capital and makes him heir to the throne, and the text says the people are glad of him. Step back, because this is the last day of Shantanu and Ganga, and the pieces fit. A king stared in heaven, and was born on earth to meet the river. Gods stole a cow, and were born to leave as fast as they came. A vow by a riverbank kept a father silent seven times. And the one who broke the vow saved the one son who was always meant to stay. One Vasu remains on earth, taught by the sage who cursed him, heir to a throne, and marked by that same curse to have no children. The next turn asks what that long life will cost him.",
       "screen": [
         "`TAUGHT BY THE SAGE WHO CURSED HIM.` · `THE TEACHERS OF GODS AND ASURAS.` · `TAKE HIM HOME.` · `HEIR TO THE THRONE.` · then, large: `ONE VASU STAYS.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Rest your hands where you can feel them. Choose one ordinary thing those hands know how to do: cook a meal, drive, type, tie a knot, hold a child. Now trace it back. Who taught you? Maybe one person. Maybe several, some you'd never have picked. Let a face or two come. Breathe in, and feel the skill in your hands. Breathe out, and let a quiet thank you go to whoever it was, in whatever way is yours. The bell holds the time.",
+      "voice": "Choose one ordinary thing your hands know how to do, cook a meal, drive, tie a knot, hold a child, and trace it back to whoever taught you, even someone you'd never have picked. Breathe in and feel the skill in your hands; breathe out and let a quiet thank you go to them, in whatever way is yours.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: one Vasu stays. Today, tell one person, plainly, something they taught you. Day seven hundred nine.",
+      "voice": "Your line: one Vasu stays. Next, a scent on the wind, and a woman with a boat. Until tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Some Hindus set aside Guru Purnima, a full-moon day, to honor their teachers, and some students begin a course of study by touching the teacher's feet or offering a small gift.",
   "games": {
+    "guess": [
+      "Ganga's son: the name of the heir she hands back to his father",
+      "a sage who taught both the gods and the asuras their wisdom",
+      "the warrior sage whose weapons the young prince learned"
+    ],
     "match": {
       "prompt": "the son's teachers — tap the pairs.",
       "pairs": [
@@ -132,14 +137,57 @@
     ],
     "recall": [
       [
-        "rajadharma",
-        "the duty of a king"
+        "Nandini",
+        "Vasishtha's wondrous cow"
       ],
       [
-        "Sita",
-        "her name means furrow"
+        "atithi",
+        "a guest who comes without a set day"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your nephew",
+      "says": "Who taught Ganga's son? Was it someone important?",
+      "options": [
+        "He studied the Vedas with Vasishtha, the very sage whose curse sent him to earth.",
+        "Only his mother taught him, deep under the river, and no one else at all.",
+        "His father Shantanu taught him at court, once he'd been made the heir."
+      ],
+      "answer": 0,
+      "meaning": "Ganga says he studied the Vedas with Vasishtha: the sage whose curse sent the Vasu Dyu to earth taught him how to live there."
+    },
+    "gloss": {
+      "Vasishtha": {
+        "meaning": "the sage who cursed the Vasus, and taught this son the Vedas",
+        "script": "वसिष्ठ",
+        "say": "vuh-SISHT-huh"
+      },
+      "Ushanas": {
+        "meaning": "the teacher the asuras follow",
+        "script": "उशनस्",
+        "say": "OO-shuh-nus"
+      },
+      "Brihaspati": {
+        "meaning": "the teacher of the gods",
+        "script": "बृहस्पति",
+        "say": "bri-HUS-puh-tee"
+      },
+      "asuras": {
+        "meaning": "beings often set against the gods in the old stories",
+        "script": "असुर",
+        "say": "uh-SOO-ruz"
+      },
+      "Jamadagni": {
+        "meaning": "a sage, father of the warrior sage Parashurama",
+        "script": "जमदग्नि",
+        "say": "juh-muh-DUG-nee"
+      },
+      "Parashurama": {
+        "meaning": "the warrior sage, Rama son of Jamadagni",
+        "script": "परशुराम",
+        "say": "puh-ruh-shoo-RAA-muh"
+      }
+    }
   },
   "sources": [
     {
@@ -161,7 +209,9 @@
       "The link Dyu = Devavrata follows Ganga's explanation on day 707; Vasishtha teaching the Vasu he cursed is the script's observation from the text's details.",
       "howItsDone mentions Guru Purnima and touching a teacher's feet as things some Hindus do; confirm the phrasing.",
       "Editor (y3 audit): Ganga says he studied the Vedas with Vasishtha and knows what Ushanas, Brihaspati and Rama know, not that all of them taught him; the hook ('who taught him') and trapdoor now say so.",
-      "Audit (y3, 707-716): the closing line no longer repeats day 706's 'carries the Vasus' power'; 'told he'll have no children' (nobody tells him in the text) became 'marked, by that same curse, to have no children'."
+      "Audit (y3, 707-716): the closing line no longer repeats day 706's 'carries the Vasus' power'; 'told he'll have no children' (nobody tells him in the text) became 'marked, by that same curse, to have no children'.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

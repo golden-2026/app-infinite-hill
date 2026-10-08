@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: Athenodorus, one self instead of two, and your line, the private and public self become one. Did you act once, alone, as if someone kind were watching? Day four hundred forty-five.",
+      "voice": "Yesterday's word was Athenodorus: ask for nothing you couldn't ask openly. Your line was the private and public self become one.",
       "screen": [
         "`ATHENODORUS.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "When you're stuck on something, a hard conversation, a temptation, a choice at work, there's a question people reach for: what would she do? My grandmother. My old coach. The best boss I ever had. Some people keep a name on a bracelet for just that moment. The move is old. Yesterday Seneca said to live as if God saw you. In his eleventh letter he makes it more human and more specific, with advice he borrows, once again, from Epicurus. Today: choose a Cato.",
+      "voice": "When you're stuck on something, a hard conversation, a temptation, a choice at work, there's a question people reach for: what would she do? My grandmother. My old coach. The best boss I ever had. Some people keep a name on a bracelet for just that moment. The move is old. Yesterday Seneca said to live as if God saw you. In his eleventh letter he makes it more human and more specific, with advice borrowed, once again, from Epicurus.",
       "screen": [
         "`WHAT WOULD SHE DO?` → `A NAME ON A BRACELET.` → `CHOOSE A CATO.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the blush. The letter starts with a young friend of Lucilius who blushed while talking to Seneca. Seneca liked him for it. Blushing, he says, is natural, and no amount of wisdom removes it. Actors can fake tears or fear on stage, but they can't blush on command. Some things in us we can't control; character is about what we do with the rest. Second, the guardian. Then the advice. Epicurus, Seneca says, told his students to pick out a person of good character and keep them always before their eyes, living as if that person were watching and acting as if that person could see. A guardian, Seneca calls it, a witness you carry with you. Third, the names. Choose a Cato, Seneca says. Cato the Younger was the stern Roman Stoic who refused to bend to Julius Caesar and died rather than submit. If Cato feels too severe, Seneca adds, choose Laelius, a gentler man, a statesman known as the Wise. Choose someone whose life and words and even face have pleased you. Fourth, the ruler. Why does it work? Because, Seneca says, you can't straighten something crooked without a ruler. We need a measure outside ourselves to see where we bend. Your Cato doesn't have to be famous, or Roman, or even alive. It can be a grandmother, a saint, a teacher, a neighbor. It just has to be someone whose goodness you're sure of, and whose imagined gaze makes you stand a little straighter.",
+      "voice": "The letter starts with a young friend of Lucilius who blushed while talking to Seneca. Seneca liked him for it. Blushing is natural, he says, and no amount of wisdom removes it. Actors can fake tears or fear on stage, but they can't blush on command. Some things in us we can't control; character is about what we do with the rest. Then the advice. Epicurus told his students to pick a person of good character and keep them always before their eyes, living as if that person were watching and acting as if that person could see. A guardian, Seneca calls it, a witness you carry with you. Choose a Cato, he says. Cato the Younger was the stern Roman Stoic who refused to bend to Julius Caesar and died rather than submit. If Cato feels too severe, choose Laelius, a gentler man, a statesman known as the Wise. Choose someone whose life, words and even face have pleased you. Why does it work? You can't straighten something crooked without a ruler. We need a measure outside ourselves to see where we bend. Your Cato doesn't have to be famous, or Roman, or even alive: a grandmother, a saint, a teacher, a neighbor. Just someone whose goodness you're sure of, and whose imagined gaze makes you stand a little straighter.",
       "screen": [
         "`THE BLUSH NO WISDOM REMOVES.` · `KEEP A GOOD PERSON BEFORE YOU.` · `CATO, OR GENTLER LAELIUS.` · `NO STRAIGHT LINE WITHOUT A RULER.` · then, large: `CHOOSE A CATO.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Let your breath settle. Now let faces come to mind, people whose goodness you trust. Living or gone. Famous or known only to you. Don't pick yet, just let them come. Then let one step forward. That's your Cato. Recall one thing you actually saw them do, or know they did: a small, straight act. Hold it up like a ruler next to one choice you're facing this week. Where does your line bend away from theirs? No scolding. Just measure. The bell holds the time.",
+      "voice": "Let faces come to mind, people whose goodness you trust, living or gone, famous or known only to you, and let one step forward. Recall one small, straight thing they actually did. Hold it like a ruler beside one choice you're facing, and simply measure, no scolding.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: stand a little straighter. Keep the watcher you picked with you today. At one decision, ask what they'd see, and let that be your ruler. Day four hundred forty-five.",
+      "voice": "Your line: stand a little straighter. A good witness goes wherever you go. Until tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Some people who practice Stoicism keep a chosen model in mind, a person of good character, and ask in hard moments what that person would see in their choices.",
   "games": {
+    "guess": [
+      "a good person you keep before your eyes",
+      "a Roman judge who sent Seneca into exile",
+      "a Stoic rule book every Roman student kept"
+    ],
     "match": {
       "prompt": "choose a cato — tap the pairs.",
       "pairs": [
@@ -132,14 +137,43 @@
     ],
     "recall": [
       [
-        "Hecaton",
-        "the Stoic Seneca calls our Hecaton"
+        "docta ignorantia",
+        "knowing the limits of what you can know"
       ],
       [
-        "Epictetus",
-        "the teacher who wrote nothing"
+        "adelphos",
+        "brother: kin, born of the same womb"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your gym buddy",
+      "says": "When you're tempted to cut corners, how does picturing your old coach help?",
+      "options": [
+        "Seneca says keep a good person before your eyes; their imagined gaze is a ruler to straighten by.",
+        "Seneca says copy everything your hero does, even their mistakes and their quirks.",
+        "Seneca says to picture a rival instead, so you'll want to beat them at all costs."
+      ],
+      "answer": 0,
+      "meaning": "Borrowing from Epicurus, Seneca says choose a Cato: live as if a good person were watching. You can't straighten without a ruler."
+    },
+    "gloss": {
+      "Cato": {
+        "meaning": "Cato the Younger, a stern Roman Stoic who defied Caesar",
+        "say": "KAY-toh"
+      },
+      "Laelius": {
+        "meaning": "a gentler Roman statesman known as the Wise",
+        "say": "LEE-lee-us"
+      },
+      "Epicurus": {
+        "meaning": "a Greek philosopher; Seneca borrows his advice here",
+        "say": "ep-ih-KYOOR-us"
+      },
+      "Lucilius": {
+        "meaning": "Seneca's friend, to whom the moral letters are written",
+        "say": "loo-SIL-ee-us"
+      }
+    }
   },
   "sources": [
     {
@@ -157,7 +191,9 @@
       "Letter 11.1–7: the young man who blushed; blushing not removed by wisdom; actors cannot blush at will. 11.8–10: Epicurus' advice to keep a good man before one's eyes as guardian (custos); 'elige itaque Catonem'; or Laelius, of gentler spirit; the ruler (regula) that straightens the crooked. Paraphrased; confirm.",
       "Cato the Younger's death at Utica, 46 BCE, after Thapsus; Laelius as 'Sapiens' (Gaius Laelius, friend of Scipio Aemilianus). Confirm.",
       "Carry is lowercase as indexed ('choose a cato'); the spoken carry follows the index exactly. Keeper may want the index to capitalize Cato.",
-      "Utica date given as 46 BCE."
+      "Utica date given as 46 BCE.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

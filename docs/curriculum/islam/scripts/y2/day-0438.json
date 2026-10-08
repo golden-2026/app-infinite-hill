@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the guests and Lut, two hosts who guarded strangers. Your line was hospitality protects. Who did you greet, and what did you offer? Day four hundred thirty-eight.",
+      "voice": "Yesterday: Lut, and two hosts who guarded strangers. Your line was hospitality protects.",
       "screen": [
         "`HOSPITALITY PROTECTS.`"
       ]
@@ -46,7 +46,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: fix one small thing. Sit, and breathe. Think of one small thing in your world that isn't quite right: a wobbly chair, a bill that's wrong in your favor, a cold silence between two people you know. Not the whole world. One thing, as far as you're able. Then check Shu'ayb's first rule: is there anything you ask of others that you don't do yourself? Picture setting one thing right. If you pray, you can say his words: my success comes only from God. The bell holds the time.",
+      "voice": "Think of one small thing in your world that isn't quite right: a wobbly chair, a bill that's wrong in your favor, a cold silence between two people you know. Not the whole world, one thing, as far as you're able, and check Shu'ayb's first rule: do you ask of others what you don't do yourself? If you pray, you can say his words: my success comes only from God.",
       "screen": []
     },
     {
@@ -60,7 +60,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: only to set things right. Today, fix the one small thing you pictured, as far as you're able. Day four hundred thirty-eight.",
+      "voice": "Your line: only to set things right. As far as you're able. Day four hundred thirty-eight, done.",
       "screen": []
     },
     {
@@ -74,6 +74,11 @@
   ],
   "howItsDone": "Some Muslims write or say wa ma tawfiqi illa billah, my success comes only from God, from 11:88, at the start of a book, a thesis or a new venture, and scholars cite Shu'ayb's words as a model for anyone working for reform.",
   "games": {
+    "guess": [
+      "repair, setting things right, making them whole",
+      "a punishment sent down on a corrupt town",
+      "a rebellion against a town's leaders"
+    ],
     "match": {
       "prompt": "Shu'ayb's answer — tap the pairs.",
       "pairs": [
@@ -134,14 +139,52 @@
     ],
     "recall": [
       [
-        "Yunus",
-        "had already left in anger"
+        "Hud",
+        "the surah that turned his hair gray"
       ],
       [
-        "wali",
-        "friend, ally, someone near"
+        "birr",
+        "a wide, warm word for goodness"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your uncle",
+      "says": "When Shu'ayb told Madyan to change, what did he say he wanted?",
+      "options": [
+        "Only reform, as far as he was able, with his success from God alone.",
+        "Control of the market, so he could set fair prices himself.",
+        "To fix everything in Madyan at once, whatever it took."
+      ],
+      "answer": 0,
+      "meaning": "Verse 88: I desire naught save reform so far as I am able. Not fixing everything; his success comes only from God."
+    },
+    "gloss": {
+      "Shu'ayb": {
+        "meaning": "the prophet sent to Madyan",
+        "script": "شعيب",
+        "say": "shu-AYB"
+      },
+      "Madyan": {
+        "meaning": "the trading town of the crooked scales",
+        "script": "مدين",
+        "say": "MAD-yan"
+      },
+      "islah": {
+        "meaning": "reform, repair, setting things right",
+        "script": "إصلاح",
+        "say": "is-LAAH"
+      },
+      "sulh": {
+        "meaning": "reconciliation, making peace between two people",
+        "script": "صلح",
+        "say": "SULH"
+      },
+      "wadud": {
+        "meaning": "loving; a name of God",
+        "script": "ودود",
+        "say": "wa-DOOD"
+      }
+    }
   },
   "sources": [
     {
@@ -165,7 +208,9 @@
       "Day 411 (al-A'raf) already told the scales and quoted the 11:87–88 exchange briefly; this day goes deeper into 11:88's three parts and 11:89–92.",
       "The claim that wa ma tawfiqi illa billah is commonly written on thesis pages and shop walls is a cultural observation; confirm or soften.",
       "Root s-l-h linking islah, Salih, sulh and maslaha: standard, but please confirm.",
-      "Editor review (2026-10-01): rewrote the hook's unsourced claims ('a good chance', 'most people who write it', 'fewer know'), cut 'where most people stop quoting', and changed the carry's add-on so it doesn't repeat day 424's 'without telling anyone'. Pickthall renders the tawfiq clause 'My welfare is only in Allah'; the script paraphrases it."
+      "Editor review (2026-10-01): rewrote the hook's unsourced claims ('a good chance', 'most people who write it', 'fewer know'), cut 'where most people stop quoting', and changed the carry's add-on so it doesn't repeat day 424's 'without telling anyone'. Pickthall renders the tawfiq clause 'My welfare is only in Allah'; the script paraphrases it.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

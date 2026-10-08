@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: push it away. Your line was a sea gone flat. Which small troubling thought did you notice and set down? Day five hundred sixty-four.",
+      "voice": "Yesterday's word was galene, the calm of a sea gone flat. Your line was a sea gone flat.",
       "screen": [
         "`PUSH IT AWAY.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "There's always someone ready to comment. You start eating differently and a relative has notes. You speak up at a meeting and someone rolls their eyes. You give money to a cause and a friend tells you it's naive. Sometimes the critic is right, and it's worth listening. But often the right thing simply comes with a small crowd of people who'd rather you didn't. Marcus Aurelius, whose every public act had an audience, gave himself a rule for that crowd. Today: fit for you.",
+      "voice": "There's always someone with notes. You start eating differently and a relative comments. You speak up at a meeting and someone rolls their eyes. You give money to a cause and a friend calls it naive. Sometimes the critic is right, and it's worth listening. But often the right thing simply comes with a small crowd of people who'd rather you didn't. Marcus Aurelius, whose every public act had an audience, gave himself a rule for that crowd.",
       "screen": [
         "`THERE'S ALWAYS SOMEONE WITH NOTES.` → `THE RIGHT THING HAS CRITICS.` → `FIT FOR YOU.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the standard. Judge every word and act that is in line with nature, Marcus writes in the third entry of book five, as fit for you. In Stoic terms, in line with nature means in line with what a reasoning, social creature is made for: honest, fair, useful to others. That's the test, and it comes first. Second, the blame that follows. Don't let the blame or the talk of certain people that follows turn you aside. If a thing is good to do or say, he says, don't think it beneath you. Notice the order. You test the act first. Then, if it passes, the critics don't get a vote. Third, they have their own guide. Those people, Marcus says, have their own ruling mind and follow their own impulses. Don't keep looking over at them. That isn't contempt. It's simply that their mind is theirs to steer, and yours is yours. You can't hand your conscience to someone else's mood. Fourth, the straight road. Go straight on, he finishes, following your own nature and the common nature, because the road of both is one. What's right for you, done honestly, is also what's right for the whole. Here's the useful part. This rule doesn't mean ignore all feedback. Marcus elsewhere asks to be corrected, gladly, when he's wrong. The difference is the order. A critic with a reason gets heard, and maybe changes your mind. A critic with only disapproval doesn't get to decide what's fit for you.",
+      "voice": "Judge every word and act that is in line with nature, Marcus writes in book five, entry three, as fit for you. In Stoic terms, in line with nature means in line with what a reasoning, social creature is made for: honest, fair, useful to others. That's the test, and it comes first. Then: don't let the blame or the talk of certain people that follows turn you aside. If a thing is good to do or say, don't think it beneath you. Notice the order. Test the act first. If it passes, the critics don't get a vote. Those people, he says, have their own ruling mind and follow their own impulses. Don't keep looking over at them. That isn't contempt. Their mind is theirs to steer, and yours is yours. Go straight on, he finishes, following your own nature and the common nature, because the road of both is one. What's right for you, done honestly, is also right for the whole. This doesn't mean ignore all feedback. Elsewhere Marcus asks to be corrected, gladly, when he's wrong. A critic with a reason gets heard, and maybe changes your mind. A critic with only disapproval doesn't get to decide what's fit for you.",
       "screen": [
         "`JUDGE EACH ACT AS FIT FOR YOU.` · `DON'T LET THE BLAME TURN YOU ASIDE.` · `THEY HAVE THEIR OWN RULING MIND.` · `ONE STRAIGHT ROAD.` · then, large: `FIT FOR ME.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Settle, and breathe. Think of one right thing you've been holding back from because of a critic, real or imagined. Test it first, honestly: is it fair, true, useful? If it fails, let it go. If it passes, picture the critic's face. Let them have their own mind and their own opinion. Then picture yourself doing it anyway, calmly, without needing to win them over. The bell holds the time.",
+      "voice": "Think of one right thing you've held back from because of a critic, real or imagined, and test it honestly: is it fair, true, useful? If it fails, let it go. If it passes, let the critic keep their own mind, and picture yourself doing it calmly, without needing to win them over.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: fit for me. Do one right thing today that someone might criticize. Test it first, then don't wait for their approval. Day five hundred sixty-four.",
+      "voice": "Your line: fit for me. Test the act first; then the critics don't get a vote. Until tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Readers of Marcus Aurelius often use Meditations 5.3 in two steps: first test an act for fairness and honesty, then, if it passes, don't let disapproval alone turn them aside.",
   "games": {
+    "guess": [
+      "the Stoic emperor who tested acts, then ignored mere blame",
+      "a Roman general who cared most about the crowd's praise",
+      "a Greek teacher who said to follow public opinion"
+    ],
     "match": {
       "prompt": "fit for me — tap the pairs.",
       "pairs": [
@@ -132,14 +137,41 @@
     ],
     "recall": [
       [
-        "Flesh",
-        "blood, bones, a net of nerves"
+        "Seneca",
+        "born rich in Córdoba"
       ],
       [
-        "Claudius Maximus",
-        "senator, Stoic, governor of Africa"
+        "Thrasea and Helvidius",
+        "senators who stood up to emperors"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "a classmate",
+      "says": "My friends think volunteering on weekends is lame. Should I quit?",
+      "options": [
+        "First ask if it's fair and useful; if it is, their disapproval doesn't get a vote.",
+        "Yes, if most of your friends disagree, it's probably the wrong choice.",
+        "Ignore every opinion anyone gives you, even ones with good reasons."
+      ],
+      "answer": 0,
+      "meaning": "Marcus tests the act first: honest, fair, useful. If it passes, blame without a reason shouldn't turn you aside."
+    },
+    "gloss": {
+      "Marcus Aurelius": {
+        "meaning": "Roman emperor and Stoic who wrote the Meditations to himself",
+        "say": "MAR-kus aw-REE-lee-us"
+      },
+      "in line with nature": {
+        "meaning": "Stoic: fitting what a reasoning, social creature is made for"
+      },
+      "ruling mind": {
+        "meaning": "a person's inner steering center; everyone has their own"
+      },
+      "Stoic": {
+        "meaning": "the ancient Greek and Roman school of philosophy Marcus followed",
+        "say": "STOH-ik"
+      }
+    }
   },
   "sources": [
     {
@@ -162,7 +194,9 @@
       "5.3 paraphrased: judge every word and deed in accordance with nature to be fit for you; don't be diverted by the blame which follows from any people, nor by their words; if a thing is good to be done or said, don't consider it unworthy of you; those persons have their own ruling faculty and follow their own movement; don't regard them, but go straight on, following your own nature and the common nature, for the way of both is one. Confirm.",
       "6.21: if anyone can show me that I do not think or act rightly, I will gladly change. Cited for 'asks to be corrected, gladly'. Confirm.",
       "'Criticized for a living' is light shorthand for an emperor's public life; confirm tone.",
-      "Editor review (year 2, days 558–575): replaced the jokey unsourced 'criticized for a living'; softened the general claim about what all Stoics meant."
+      "Editor review (year 2, days 558–575): replaced the jokey unsourced 'criticized for a living'; softened the general claim about what all Stoics meant.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

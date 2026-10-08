@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: al-Muddaththir, and your line, arise. Did you get up for something you wanted to hide from? Two verses further into al-Muddaththir, a fifth command. Day six hundred fifty-six.",
+      "voice": "Yesterday: al-Muddaththir, and your line, arise. Two verses further on, a fifth command.",
       "screen": [
         "`ARISE.`"
       ]
@@ -38,7 +38,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Verse six is four words in Arabic: wa la tamnun tastakthir. Don't give, seeking more. Tamnun comes from mann, which carries two ideas: to bestow a favor, and to remind someone of it, to hold it over them. Tastakthir means to seek more, or to count something as a lot. And the commentators read the verse in more than one way. One early reading, reported from Ibn 'Abbas, is the plainest: don't give a gift so that you'll get a bigger one back. Another reading: don't consider what you've done as much. Don't stand before your Lord counting your good deeds as if they were a favor to Him. A third: don't remind people of the good you've done for them. Many commentators say the verse holds all of these. They're the same habit, seen from different sides: keeping score. The Qur'an returns to this in surah al-Baqarah, where it says: don't cancel your charity with reminders and hurt. A gift held over someone isn't really a gift anymore; it's a loan with interest. And look at what comes right after, verse seven: for your Lord, be patient. The giving and the patience are a pair. If you give without expecting a return, you'll need patience, because sometimes nothing comes back. No thanks, no favor, no recognition. The verse doesn't promise you'll be repaid by people. It removes the repayment from the transaction entirely. You give, and then you let it go, and you wait, if you wait at all, on Someone else.",
+      "voice": "Verse six is four words in Arabic: wa la tamnun tastakthir. Don't give, seeking more. Tamnun comes from mann, which carries two ideas: to bestow a favor, and to remind someone of it, to hold it over them. Tastakthir means to seek more, or to count something as a lot. Commentators read the verse in more than one way. One early reading, reported from Ibn 'Abbas, is the plainest: don't give a gift so that you'll get a bigger one back. Another: don't consider what you've done as much; don't stand before your Lord counting your good deeds as if they were a favor to Him. A third: don't remind people of the good you've done for them. Many commentators say the verse holds all of these, the same habit seen from different sides: keeping score. The Qur'an returns to this in surah al-Baqarah: don't cancel your charity with reminders and hurt. A gift held over someone isn't really a gift anymore; it's a loan with interest. Then verse seven: for your Lord, be patient. The giving and the patience are a pair. If you give without expecting a return, you'll need patience, because sometimes nothing comes back: no thanks, no favor, no recognition. The verse doesn't promise you'll be repaid by people. It removes the repayment from the transaction entirely. You give, you let it go, and you wait, if you wait at all, on Someone else.",
       "screen": [
         "`MANN: A FAVOR, HELD OVER SOMEONE.`",
         "`DON'T GIVE TO GET MORE BACK.`",
@@ -49,7 +49,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: give with nothing in return. Sit, and think of someone you could give something to today. Time, a meal, a ride, a coin, a kind word. Then check for a string. Do I want thanks? Credit? A favor later? Don't scold yourself if you find one; almost everyone does. Just notice it, and picture cutting it. Picture giving, and then not mentioning it to anyone, ever. The bell holds the time.",
+      "voice": "Think of someone you could give to today, time, a meal, a ride, a kind word, and check gently for a string: do I want thanks, credit, a favor later? If you find one, don't scold yourself; almost everyone does. Just notice it, picture cutting it, and picture giving without ever mentioning it.",
       "screen": []
     },
     {
@@ -63,7 +63,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: give, don't count. Today, give one thing quietly, and then leave it out of every conversation, including the one in your head. Day six hundred fifty-six.",
+      "voice": "Your line: give, don't count. A gift without a ledger is still a gift. See you tomorrow.",
       "screen": []
     },
     {
@@ -77,6 +77,11 @@
   ],
   "howItsDone": "Muslims are taught to give charity without reminding the recipient of it or expecting return, citing 74:6 and 2:264; many give secretly so that, as a hadith says, the left hand doesn't know what the right gave.",
   "games": {
+    "guess": [
+      "don't give seeking more, or hold a favor over anyone",
+      "don't give more than you can afford to lose",
+      "don't accept gifts from people you don't know"
+    ],
     "match": {
       "prompt": "don't give to get more — tap the pairs.",
       "pairs": [
@@ -137,14 +142,52 @@
     ],
     "recall": [
       [
-        "da'imun",
-        "constant, steady"
+        "istighfar",
+        "asking forgiveness"
       ],
       [
-        "sabr jamil",
-        "beautiful patience (70:5)"
+        "'ajab",
+        "wondrous, astonishing"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "a friend from the gym",
+      "says": "What's wrong with giving someone a gift and hoping for something back?",
+      "options": [
+        "74:6 says don't give seeking more; a favor held over someone isn't a gift.",
+        "Nothing; the verse says to give generously so you'll be repaid twice.",
+        "It says gifts are wrong, so it's better not to give anything at all."
+      ],
+      "answer": 0,
+      "meaning": "Wa la tamnun tastakthir: don't give seeking more. Commentators read it as: don't seek a bigger return, don't count your deeds as much, don't remind people."
+    },
+    "gloss": {
+      "tamnun": {
+        "meaning": "you bestow a favor, or hold it over someone",
+        "script": "تمنن",
+        "say": "TAM-nun"
+      },
+      "tastakthir": {
+        "meaning": "seeking more, or counting it as a lot",
+        "script": "تستكثر",
+        "say": "tas-TAK-thir"
+      },
+      "mann": {
+        "meaning": "a favor, and reminding someone of it",
+        "script": "منّ",
+        "say": "MANN"
+      },
+      "al-Baqarah": {
+        "meaning": "the surah that warns against reminders and hurt",
+        "script": "البقرة",
+        "say": "al-BA-qa-ra"
+      },
+      "Ibn 'Abbas": {
+        "meaning": "a companion; the plainest early reading is his",
+        "script": "ابن عباس",
+        "say": "ibn 'ab-BAAS"
+      }
+    }
   },
   "sources": [
     {
@@ -178,7 +221,9 @@
     "notes": [
       "74:6 paraphrased, not quoted; Pickthall's exact wording was not certain.",
       "The readings of 74:6 (Ibn 'Abbas: don't give to receive more; don't count your deeds as much; don't remind of a favor) follow classical tafsir such as at-Tabari and Ibn Kathir; confirm attributions.",
-      "Bukhari 1423 (the seven under Allah's shade, including secret charity) cited from memory in howItsDone; confirm."
+      "Bukhari 1423 (the seven under Allah's shade, including secret charity) cited from memory in howItsDone; confirm.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

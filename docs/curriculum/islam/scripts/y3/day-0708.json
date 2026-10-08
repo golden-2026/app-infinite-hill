@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, barakah. Your line was: blessing came with him. Whose arrival did you name, and did you tell them? Day seven hundred eight.",
+      "voice": "Yesterday, barakah, the blessing that came with the baby nobody wanted. Your line was: blessing came with him.",
       "screen": [
         "`BLESSING CAME WITH HIM.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Here is what Muslim reports. While the boy was playing, Jibril came to him, laid him down, and opened his chest. He took out the heart, and from it drew out a clot, and said: this was the share of Satan in you. Then he washed the heart in a basin of gold, with the water of Zamzam, the well his grandfather found again, and put it back in its place. Anas adds a small detail that brings the whole thing close: he says he used to see the mark of the stitching on the Prophet's chest. Ibn Ishaq tells the same event in Halimah's voice, with two men in white, and says it frightened the family into taking the boy back to his mother in Mecca. So the sources differ on the details, and say so. What does the story mean? Readers take it in different ways. Some take it as a real event that happened to his body. Others stress what it points to: a heart prepared early, cleaned of what pulls toward harm, before anything was asked of it. Some commentators connect it with the opening of surah ninety-four, which Pickthall translates: \"Have We not caused thy bosom to dilate.\" The Arabic there speaks of opening, or expanding, the chest. Notice what the story does not say. It doesn't say the boy did anything to earn it. He was playing. The washing came to him, the way water comes to a dry field. And notice the water: not something exotic, but Zamzam, the well from a few days ago, the water of Hajar's search.",
+      "voice": "Here is what Muslim reports. While the boy was playing, Jibril came to him, laid him down, and opened his chest. He took out the heart, drew out a clot from it, and said: this was the share of Satan in you. Then he washed the heart in a basin of gold, with the water of Zamzam, and put it back in its place. Anas adds a small detail that brings the whole thing close: he says he used to see the mark of the stitching on the Prophet's chest. Ibn Ishaq tells the same event in Halimah's voice, with two men in white, and says it frightened the family into taking the boy back to his mother in Mecca. So the sources differ on the details, and say so. What does the story mean? Readers take it in different ways. Some take it as a real event that happened to his body. Others stress what it points to: a heart prepared early, cleaned of what pulls toward harm, before anything was asked of it. Some commentators connect it with the opening of surah ninety-four, which Pickthall translates: \"Have We not caused thy bosom to dilate.\" The Arabic there speaks of opening, or expanding, the chest. Notice what the story does not say. It doesn't say the boy did anything to earn it. He was playing. The washing came to him, the way water comes to a dry field. And notice the water: Zamzam, the well his grandfather found again, the water of Hajar's search.",
       "screen": [
         "`JIBRIL OPENS THE CHEST.` · `WASHED WITH ZAMZAM IN A GOLD BASIN.` · `ANAS SAW THE STITCHING MARK.` · `A HEART PREPARED EARLY.` · then, large: `HAVE WE NOT CAUSED THY BOSOM TO DILATE.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: wash your hands and face slowly. If there's water near you, go to it now. If not, do this in your mind, just as slowly. Let cool water run over your hands. Feel the wrists, the palms, the space between the fingers. Then cup the water and bring it to your face. Hold it there for a breath. Muslims wash before prayer in a set order; this is not that, just a slow washing. As the water goes, let one thing you've been carrying go with it. If you pray, you can ask Allah for a clean heart in your own words. The bell holds the time.",
+      "voice": "If there's water near you, wash your hands and face slowly; if not, do it in your mind, cool water over the wrists and palms, then cupped to your face for one breath, and let one thing you've been carrying go with it. Muslims wash before prayer in a set order; this is not that, just a slow washing. If you pray, you can ask Allah for a clean heart in your own words.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: a washed heart. Today, each time you wash your hands, let it be slow for one breath, and set down one grudge with the water. Day seven hundred eight.",
+      "voice": "Your line: a washed heart. Tomorrow, Aminah at Abwa. See you there.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Muslims know this event as sharh al-sadr, the opening of the chest; it is retold in sirah and hadith study, and some connect it with the opening of surah al-Sharh (94).",
   "games": {
+    "guess": [
+      "the well at Mecca whose water washed his heart",
+      "the river where pilgrims bathe before prayer",
+      "a gold basin kept inside the Ka'ba"
+    ],
     "match": {
       "prompt": "the opening of the chest — tap the pairs.",
       "pairs": [
@@ -132,14 +137,52 @@
     ],
     "recall": [
       [
-        "Ka'ba",
-        "a stone house, roughly a cube"
+        "Muhammad",
+        "the much-praised"
       ],
       [
-        "qabilah",
-        "tribe"
+        "khatm",
+        "completing the whole Qur'an"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your sister",
+      "says": "Did the boy do something special to earn having his heart washed?",
+      "options": [
+        "No; he was just playing. The account says the washing came to him, unearned.",
+        "Yes; he had fasted for days, and this was the reward for it.",
+        "Yes; Halimah prayed for it after she saw the blessings he brought."
+      ],
+      "answer": 0,
+      "meaning": "The account doesn't say he earned it. He was playing; the washing came to him, the way water comes to a dry field."
+    },
+    "gloss": {
+      "Jibril": {
+        "meaning": "the angel Gabriel",
+        "script": "جبريل",
+        "say": "jib-REEL"
+      },
+      "Anas ibn Malik": {
+        "meaning": "a companion of the Prophet who passed on this account",
+        "script": "أنس بن مالك",
+        "say": "A-nas ibn MAA-lik"
+      },
+      "sharh as-sadr": {
+        "meaning": "the opening, or expanding, of the chest",
+        "script": "شرح الصدر",
+        "say": "SHARH as-SADR"
+      },
+      "Zamzam": {
+        "meaning": "the well his grandfather found again",
+        "script": "زمزم",
+        "say": "ZAM-zam"
+      },
+      "Banu Sa'd": {
+        "meaning": "Halimah's desert tribe",
+        "script": "بنو سعد",
+        "say": "BA-noo SAAD"
+      }
+    }
   },
   "sources": [
     {
@@ -171,7 +214,9 @@
       "'Some take it as a real event... others stress what it points to' describes a range of readings without ranking; a Keeper may want to name which schools or scholars hold which view.",
       "The practice explicitly says it is not wudu, to avoid teaching an incomplete ablution. Confirm that framing.",
       "Anas 'served the Prophet for years in Medina' is stated without a count; confirm.",
-      "Editor: cut the hook's biographical aside about Anas serving the Prophet for years (not in the cited report; now just 'a companion'), and 'standing' (Muslim says only that they found him pale)."
+      "Editor: cut the hook's biographical aside about Anas serving the Prophet for years (not in the cited report; now just 'a companion'), and 'standing' (Muslim says only that they found him pale).",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

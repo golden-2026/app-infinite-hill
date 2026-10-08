@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: Scipio's dream, Rome a tiny point from the stars, fame short, service still worth doing. Your line was from the stars. Did you rise for a breath when you wanted credit? Day six hundred forty-eight.",
+      "voice": "Yesterday's word was Scipio's dream: Rome a tiny point from the stars, fame short, service still worth doing. Your line was from the stars.",
       "screen": [
         "`FROM THE STARS.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Who handles the dentist appointments in your house? Who remembers birthdays, notices the milk is low, sits up with the sick kid? Couples argue about it, and the question is old. In the Roman world, marriage was usually arranged around property, heirs and family alliances, and the law gave husbands far more room than wives. Then a Stoic teacher in Rome, the man who taught Epictetus, gave a lecture describing marriage in terms that still sound fresh. Today: koinōnia.",
+      "voice": "Who handles the dentist appointments in your house? Who remembers birthdays, notices the milk is low, sits up with the sick kid? Couples argue about it, and the question is old. In the Roman world, marriage was usually arranged around property, heirs and family alliances, and the law gave husbands far more room than wives. Then a Stoic teacher in Rome, the man who taught Epictetus, gave a lecture describing marriage in terms that still sound fresh.",
       "screen": [
         "`WHO REMEMBERS THE BIRTHDAYS?` → `ROMAN MARRIAGE: PROPERTY AND HEIRS.` → `EPICTETUS'S TEACHER SPEAKS.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the teacher. Gaius Musonius Rufus taught Stoicism in Rome in the first century AD, and was exiled more than once by emperors who didn't like him. He wrote nothing we have. His lectures survive because a student wrote them down and a later anthologist, Stobaeus, kept them. Second, the lecture. Asked what the chief purpose of marriage is, Musonius answers: a shared life, and children. But children alone aren't enough, he says; animals have offspring too. What makes a marriage is companionship and care for each other, in health and in sickness, at every moment. Each should want to outdo the other in caring. When that's present, he says, the marriage is beautiful. When each looks only to their own interest, it falls apart, even if they live under the same roof. Third, the surprising part for his time. In other lectures, Musonius argued that women should study philosophy, because they have the same reason and the same virtues as men, and that daughters should be educated like sons. He also held husbands to the same standard of faithfulness he expected of wives. He wasn't modern in everything: he still assigned men and women different work. But the center of his picture was a partnership. Fourth, what we can take, partnered or not. Musonius's test works for any close bond, a marriage, a friendship, a sibling: does each of you look to the other's good, or only your own?",
+      "voice": "First, the teacher. Gaius Musonius Rufus taught Stoicism in Rome in the first century AD, and was exiled more than once by emperors who didn't like him. He wrote nothing that survives. His lectures do, because a student wrote them down and a later anthologist, Stobaeus, kept them. Second, the lecture. Asked what the chief purpose of marriage is, Musonius answers: a shared life, and children. But children alone aren't enough, he says; animals have offspring too. What makes a marriage is companionship and care for each other, in health and in sickness, at every moment, each wanting to outdo the other in caring. When that's present, he says, the marriage is beautiful. When each looks only to their own interest, it falls apart, even under the same roof. Third, the surprising part for his time. In other lectures, Musonius argued that women should study philosophy, because they have the same reason and the same virtues as men, and that daughters should be educated like sons. He also held husbands to the same standard of faithfulness he expected of wives. He wasn't modern in everything: he still assigned men and women different work. But the center of his picture was a partnership. Fourth, the test, partnered or not. It works for any close bond, a marriage, a friendship, a sibling: does each of you look to the other's good, or only your own?",
       "screen": [
         "`THE TEACHER OF EPICTETUS.` · `A SHARED LIFE, CARE IN SICKNESS.` · `THE SAME STANDARD FOR BOTH.` · `WHOSE GOOD ARE YOU LOOKING TO?` · then, large: `FULL PARTNERSHIP.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Sit, and breathe. Bring to mind your closest bond: a partner, a friend, a sister, a parent. See their face. Now ask Musonius's question honestly: lately, have I been looking to their good, or mostly my own? No guilt, just a look. Then think of one small way to care for them this week that they wouldn't expect. Something from their list, not yours. The errand they dread. The call they'd love. Hold that one thing in mind. The bell holds the time.",
+      "voice": "Bring to mind your closest bond, a partner, a friend, a sister, a parent, and ask Musonius's question honestly: lately, have I been looking to their good, or mostly my own? No guilt, just a look. Then let one small, unexpected way to care for them come to mind, something from their list, not yours: the errand they dread, the call they'd love.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: full partnership. Do your one unexpected act of care today, for a partner or a friend, and don't mention it. Day six hundred forty-eight.",
+      "voice": "Your line: full partnership. Each one trying to outdo the other in care. See you tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Readers of Musonius Rufus often point to his Lecture 13 as an ancient description of marriage as mutual care and partnership.",
   "games": {
+    "guess": [
+      "a partnership of shared life and mutual care",
+      "a contract joining two families' property",
+      "a duty to have children and heirs"
+    ],
     "match": {
       "prompt": "Musonius on marriage. tap the pairs.",
       "pairs": [
@@ -132,14 +137,44 @@
     ],
     "recall": [
       [
-        "Carnuntum",
-        "an army base on the Danube"
+        "Chrysippus",
+        "the third head of the Stoics, the builder"
       ],
       [
-        "Commodus",
-        "Marcus's son, made co-emperor"
+        "vast gulf",
+        "the endless time around a short life"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your partner",
+      "says": "What did the old Stoics think made a marriage work?",
+      "options": [
+        "Musonius said companionship and care, each trying to outdo the other.",
+        "Musonius said having children was all a marriage really needed.",
+        "Musonius said a good marriage was mostly about joining property."
+      ],
+      "answer": 0,
+      "meaning": "Children alone aren't enough, Musonius says. Marriage is companionship and care in health and sickness, each wanting to outdo the other."
+    },
+    "gloss": {
+      "Musonius Rufus": {
+        "meaning": "a Stoic teacher in first-century Rome",
+        "say": "myoo-SOH-nee-us ROO-fus"
+      },
+      "Stobaeus": {
+        "meaning": "the later anthologist who kept his lectures",
+        "say": "stoh-BEE-us"
+      },
+      "Epictetus": {
+        "meaning": "a later Stoic teacher, taught by Musonius",
+        "say": "ep-ik-TEE-tus"
+      },
+      "koinōnia": {
+        "meaning": "Greek for partnership, a shared life",
+        "script": "κοινωνία",
+        "say": "koy-noh-NEE-uh"
+      }
+    }
   },
   "sources": [
     {
@@ -164,7 +199,9 @@
       "Lecture 13A: companionship and care in health and sickness; each competing to outdo the other in care; marriage ruined when each looks to self. Paraphrased; confirm.",
       "Lecture 3 (women should study philosophy), Lecture 4 (daughters educated like sons), Lecture 12 (same sexual standard for husbands). Confirm numbering (Lutz's numbering).",
       "Roman marriage legal framing is simplified; confirm 'the law gave husbands far more room than wives' is fair.",
-      "Editor review (year 2): cut the unsourced 'couples argue about this more than almost anything' and 'which many Romans didn't', and the superlative 'one of the ancient world's clearest' in howItsDone."
+      "Editor review (year 2): cut the unsourced 'couples argue about this more than almost anything' and 'which many Romans didn't', and the superlative 'one of the ancient world's clearest' in howItsDone.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

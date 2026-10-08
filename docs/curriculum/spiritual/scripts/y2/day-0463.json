@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: the forty-seventh letter. Your line was born of the same seeds. Did you thank someone who served you, by name, and look them in the eye? Day four hundred sixty-three.",
+      "voice": "Yesterday's word was they're people: in the forty-seventh letter, the enslaved are born of the same seeds as their masters. Your line was born of the same seeds.",
       "screen": [
         "`BORN OF THE SAME SEEDS.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Watch how someone talks to their boss. Then watch how the same person talks to a new intern, a cleaner, a delivery driver who's running late. The gap between those two voices tells you more about a person than almost anything they say about themselves. Everyone has someone above them and someone below them, in some room, on some day. A manager, a landlord, a parent, a customer. In the middle of the forty-seventh letter, Seneca pauses and says: if you want the whole of my advice in one sentence, here it is. Today: treat those below you.",
+      "voice": "Watch how someone talks to their boss. Then watch the same person talk to a new intern, a cleaner, a delivery driver who's running late. The gap between those two voices tells you more about a person than almost anything they say about themselves. Everyone has someone above them and someone below, in some room, on some day. In the middle of the forty-seventh letter, Seneca pauses: if you want the whole of my advice in one sentence, here it is.",
       "screen": [
         "`ONE VOICE FOR THE BOSS.` → `ANOTHER FOR THE INTERN.` → `THE WHOLE ADVICE IN ONE SENTENCE.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the sentence. This, Seneca says, is the heart of my teaching: live with someone beneath you the way you'd want someone above you to live with you. Whenever you remember how much power you have over another person, remember that someone has just as much power over you. Second, the turn of fortune. He reminds Lucilius of the year a Roman army was destroyed in Germany, under the general Varus. Men of high birth, who'd hoped to climb into the Senate, ended up enslaved, one herding sheep, another guarding a hut. Above and below can swap in a single disaster. Third, who is really free? Is he a slave? Seneca asks. Show me someone who isn't. One is a slave to lust, another to greed, another to ambition, and all of us to hope and to fear. The one serving may be freer inside than the one being served. Fourth, respect rather than fear. Seneca says a master should want to be respected rather than feared. Fear makes enemies; respect can make something close to friendship. Other paths have their own form of this rule; Seneca's has a particular angle. It's aimed at whoever holds the power right now, which on some days is you.",
+      "voice": "Live with someone beneath you the way you'd want someone above you to live with you. That, he says, is the heart of his teaching. Whenever you remember how much power you have over another person, remember that someone has just as much power over you. Fortune can swap the places. He reminds Lucilius of the Roman army destroyed in Germany under the general Varus. Men of high birth, who'd hoped to climb into the Senate, ended up enslaved, one herding sheep, another guarding a hut. Then a sharper question. Is he a slave? Seneca asks. Show me someone who isn't. One is a slave to lust, another to greed, another to ambition, and all of us to hope and to fear. The one serving may be freer inside than the one being served. Last, a master should want to be respected rather than feared. Fear makes enemies; respect can make something close to friendship. Other paths have their own form of this rule; Seneca's has a particular angle. It's aimed at whoever holds the power right now, which on some days is you.",
       "screen": [
         "`AS YOU'D BE TREATED FROM ABOVE.` · `FORTUNE CAN SWAP THE PLACES.` · `SHOW ME SOMEONE WHO ISN'T A SLAVE.` · `RESPECTED, NOT FEARED.` · then, large: `AS I'D BE TREATED.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Think of one place in your life where you have a little power over someone: a child, a junior colleague, a tenant, a younger sibling, a server, a pet even. Picture the last time you spoke to them. Now picture the person who has power over you, speaking to you in exactly that tone. How does it feel? Breathe. Then imagine one small change in how you'll speak to them next. The bell holds the time.",
+      "voice": "Think of one place where you have a little power over someone, a child, a junior colleague, a younger sibling, a pet even, and picture the last time you spoke to them. Now picture the person with power over you speaking to you in exactly that tone, and notice how it feels. Breathe, and imagine one small change in how you'll speak next time.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: as I'd be treated. Be fair to one person with less power than you today: more patience, a clearer explanation, a thank-you. Day four hundred sixty-three.",
+      "voice": "Your line: as I'd be treated. Power over someone is a place fortune can swap. Day four hundred sixty-three.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Readers of Seneca sometimes check how they speak to people with less power than they have, asking whether they'd accept the same tone from someone above them.",
   "games": {
+    "guess": [
+      "the general whose lost army sent noblemen into slavery",
+      "a Roman senator who freed all of his own slaves",
+      "an emperor remembered for cruelty to his servants"
+    ],
     "match": {
       "prompt": "above and below — tap the pairs.",
       "pairs": [
@@ -132,14 +137,38 @@
     ],
     "recall": [
       [
-        "Calvisius Sabinus",
-        "bought people to memorize poets"
-      ],
-      [
         "cotidie morimur",
         "we die every day"
+      ],
+      [
+        "earthenware",
+        "plain clay, used as if it were silver"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your sister",
+      "says": "What was Seneca's one-sentence advice about people who work under you?",
+      "options": [
+        "Treat those below you the way you'd want those above you to treat you.",
+        "Leave them alone to manage, so you never have to talk with them.",
+        "Be kind only to the ones who've earned your trust and your respect."
+      ],
+      "answer": 0,
+      "meaning": "Letter forty-seven: live with those beneath you as you'd want those above to live with you, since fortune can swap the places."
+    },
+    "gloss": {
+      "Varus": {
+        "meaning": "the Roman general whose army was destroyed in Germany",
+        "say": "VAIR-us"
+      },
+      "Senate": {
+        "meaning": "Rome's council of leading men, which the nobles hoped to join"
+      },
+      "Lucilius": {
+        "meaning": "Seneca's friend, to whom the letters are written",
+        "say": "loo-SIL-ee-us"
+      }
+    }
   },
   "sources": [
     {
@@ -163,7 +192,9 @@
       "Letters 47.11 'haec tamen praecepti mei summa est: sic cum inferiore vivas quemadmodum tecum superiorem velis vivere' paraphrased in English; Gummere's wording not quoted. Confirm.",
       "47.10: the Varian disaster (9 CE) and noblemen enslaved, one as a shepherd, one as a hut-keeper; confirm details.",
       "47.17 ('servus est... ostende quis non sit') and 47.18 (colant potius eum quam timeant): confirm.",
-      "Golden-rule mention kept to one neutral sentence with no tradition named, to avoid comparison."
+      "Golden-rule mention kept to one neutral sentence with no tradition named, to avoid comparison.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

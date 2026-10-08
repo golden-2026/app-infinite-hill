@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Rani Sada Kaur, the widow who led the Kanhaiya misl and turned a feud into an alliance. Your line was she backed him. Which young person did you put something behind? Today, the boy she backed. Day nine hundred five.",
+      "voice": "Yesterday, Sada Kaur, who turned a feud into an alliance; your line was she backed him. Today, the boy she backed.",
       "screen": [
         "`SHE BACKED HIM.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "The chief of the Sukerchakia misl is out on campaign, Sikh histories say, besieging a fort, when he falls ill. He doesn't recover. Maha Singh is dead, and the band he and his father built has no grown man to lead it. What it has is his son. Ranjit. A boy, twelve years old in the usual telling, who until that day has been somebody's child. Now the riders are looking at him. Today: a boy of twelve.",
+      "voice": "The chief of the Sukerchakia misl is out on campaign, Sikh histories say, besieging a fort, when he falls ill. He doesn't recover. Maha Singh is dead, and the band he and his father built has no grown man to lead it. What it has is his son, Ranjit: a boy, twelve years old in the usual telling, who until that day has been somebody's child. Now the riders are looking at him.",
       "screen": [
         "`MAHA SINGH FALLS ILL ON CAMPAIGN.` → `THE CHIEF IS DEAD.` → `THE RIDERS LOOK AT RANJIT.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Start with how a misl passed from hand to hand. A misl was a band of equals around a chief, and the chief's place could pass to his son. That kept the band together. It also meant that sometimes the son was very young. The riders didn't get to pick a seasoned commander. They got the boy they had. So the first thing to see here is the weight. A boy who should be learning to ride well is suddenly the name on the banner. Every rival chief nearby notices. Some see an opening. Second, notice that Sikh memory already held stories of the very young carrying great weight. Guru Har Krishan became Guru as a small child, and Sikhs remember him for compassion, tending the sick in Delhi. The Guru's younger sons, the Sahibzade, stood firm at Sirhind when they were children. Ranjit is not a Guru and not a martyr. But the people around him had been raised on the idea that age is not the measure of a person. Third, a boy of twelve doesn't lead alone. Sikh histories say others helped hold the reins at first: his mother, his father's trusted men, and the family he was promised into. That help is a story for a few days from now. For today, notice how the young chief begins: with grief, with a band waiting for orders, and with a name he hasn't grown into yet. The histories tell what he grew into. That comes soon. But every one of those later chapters starts here, with a boy standing where his father used to stand. Twelve, and leading.",
+      "voice": "A misl was a band of equals around a chief, and the chief's place could pass to his son. That kept the band together. It also meant the son was sometimes very young. The riders didn't get to pick a seasoned commander; they got the boy they had. So feel the weight. A boy who should be learning to ride well is suddenly the name on the banner, and every rival chief nearby notices. Some see an opening. Sikh memory already held stories of the very young carrying great weight. Guru Har Krishan became Guru as a small child, and Sikhs remember him for compassion, tending the sick in Delhi. The Guru's younger sons, the Sahibzade, stood firm at Sirhind as children. Ranjit is not a Guru and not a martyr, but the people around him had been raised on the idea that age is not the measure of a person. And a boy of twelve doesn't lead alone. Sikh histories say others helped hold the reins at first: his mother, his father's trusted men, and the family he was promised into. That help is a story for a few days from now. For today, see how the young chief begins: with grief, a band waiting for orders, and a name he hasn't grown into yet. Every later chapter starts here, with a boy standing where his father used to stand.",
       "screen": [
         "`THE CHIEF'S PLACE PASSES TO HIS SON.` · `THE WEIGHT ON A BOY.` · `AGE IS NOT THE MEASURE.` · `HE DOESN'T LEAD ALONE.` · then, large: `TWELVE, AND LEADING.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Two minutes for a young person carrying too much. Settle, and breathe. Bring to mind someone young who has had to grow up fast: a kid looking after younger siblings, a teenager working to help at home, a young adult who lost a parent, maybe the person you once were. Hold them in mind. What would it have meant, or what would it mean now, to hear one sentence of encouragement from an older person? Find that sentence. Keep it simple. If you pray, you can say Waheguru on each breath out. The bell holds the time.",
+      "voice": "Bring to mind someone young who had to grow up fast, a kid looking after younger siblings, a teenager working to help at home, maybe the person you once were. Find one plain sentence of encouragement an older person could say to them, and keep it simple; Waheguru with each breath out, if you pray.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: twelve, and leading. Today, encourage one young person who's carrying something heavy. Say the sentence you found. Day nine hundred five.",
+      "voice": "Your line: twelve, and leading. Age is not the measure. That's day nine hundred five.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Sikh histories tell of Maha Singh's death and the young Ranjit Singh inheriting the Sukerchakia misl, the start of the story Sikhs remember as the rise of the Maharaja.",
   "games": {
+    "guess": [
+      "the boy who led the Sukerchakia at twelve",
+      "a Guru who led the Sikhs as a small child",
+      "Sada Kaur's son, heir to the Kanhaiya band"
+    ],
     "match": {
       "prompt": "the boy chief — tap the pairs.",
       "pairs": [
@@ -132,10 +137,41 @@
         "a martyr"
       ],
       [
-        "Singhpura",
-        "the town of the Singhs"
+        "sant-sipahi",
+        "saint-soldier"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your coworker",
+      "says": "Ranjit Singh led a misl at twelve? How did a kid manage that?",
+      "options": [
+        "He didn't lead alone: his mother, his father's men and Sada Kaur's family helped him.",
+        "He was already a seasoned commander, chosen by the riders for his skill in war.",
+        "He'd been made Guru as a small child, like Guru Har Krishan, so riders obeyed."
+      ],
+      "answer": 0,
+      "meaning": "Sikh histories say others helped hold the reins at first: his mother, his father's trusted men and the family he was promised into."
+    },
+    "gloss": {
+      "Maha Singh": {
+        "meaning": "the Sukerchakia chief, Ranjit's father",
+        "say": "MUH-haa SINGH"
+      },
+      "Guru Har Krishan": {
+        "meaning": "became Guru as a small child; remembered for tending the sick",
+        "say": "GOO-roo HAR KRISH-un"
+      },
+      "Sahibzade": {
+        "meaning": "the Guru's sons; the younger two stood firm at Sirhind",
+        "script": "ਸਾਹਿਬਜ਼ਾਦੇ",
+        "say": "saa-hib-ZAA-day"
+      },
+      "Sirhind": {
+        "meaning": "the town where the Guru's younger sons stood firm",
+        "script": "ਸਰਹਿੰਦ",
+        "say": "sur-HIND"
+      }
+    }
   },
   "sources": [
     {
@@ -162,7 +198,9 @@
       "Smallpox and Gujranwala left for day 907.",
       "Original-language game left null.",
       "Editor: Ranjit was betrothed, not yet married, when Maha Singh died; 'the family he had married into' changed to 'the family he was promised into'.",
-      "Audit: read clean; no change."
+      "Audit: read clean; no change.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

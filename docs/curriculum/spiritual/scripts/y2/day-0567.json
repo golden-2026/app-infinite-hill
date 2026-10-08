@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: nature's prescription. Your line was the prescription. When something hard came, could you ask what it was medicine for? Day five hundred sixty-seven, the end of a week.",
+      "voice": "Yesterday: nature's prescription, hard things taken as medicine. Your line was the prescription. And today the week closes.",
       "screen": [
         "`THE PRESCRIPTION.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A knitter drops a stitch three rows back. There are two ways this can go. In one, there's a sigh, a crochet hook, the stitch is picked up, and the scarf carries on. In the other, the whole thing is yanked off the needles in disgust and shoved in a drawer for a year. The dropped stitch is the same in both. The difference is the next minute. In the ninth entry of book five, Marcus Aurelius writes to himself about exactly that minute. Today: back to it.",
+      "voice": "A knitter drops a stitch three rows back. There are two ways this can go. In one, there's a sigh, a crochet hook, the stitch is picked up, and the scarf carries on. In the other, the whole thing is yanked off the needles in disgust and shoved in a drawer for a year. The dropped stitch is the same in both. The difference is the next minute. In book five, entry nine, Marcus Aurelius writes to himself about exactly that minute.",
       "screen": [
         "`A DROPPED STITCH.` → `PICK IT UP, OR PULL IT ALL OUT?` → `BACK TO IT.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, don't be disgusted. Don't be disgusted, discouraged or dissatisfied, Marcus tells himself, if you don't manage to do everything by right principles. Notice that he expects to fall short. A man who wrote this much about virtue knew how often he missed it. Second, return. When you've been knocked off, he says, come back again. The whole practice is in that one word. Not never fall. Return. Third, most of it is enough. And be content, he adds, if the greater part of what you do is worthy of a human being. Not all of it. The greater part. Love the thing you're returning to. Fourth, not a schoolmaster. Then a lovely detail. Don't go back to philosophy, he says, as if to a schoolmaster with a cane, but the way people with sore eyes go back to a sponge and egg, or someone goes back to a soothing bandage or a warm compress. Philosophy, for Marcus, is the medicine, not the punishment. You return to it because it helps. And look at what this week built. Good fortune: luck is in the bearing. The gulf of time: a life against eternity. Push it away: set the troubling thought down. Fit for me: test the act, not the critics. What is mine: sincerity, dignity, endurance. The prescription: hard things as medicine. And now, back to it. You'll forget most of these lines by Thursday. That's fine. The practice was never to remember perfectly. It's to come back.",
+      "voice": "Don't be disgusted, discouraged or dissatisfied, Marcus tells himself, if you don't manage to do everything by right principles. He expects to fall short. A man who wrote this much about virtue knew how often he missed it. When you've been knocked off, he says, come back again. The whole practice is in that one word: not never fall, but return. And be content if the greater part of what you do is worthy of a human being. Not all of it. The greater part. Love the thing you're returning to. Then a lovely detail. Don't go back to philosophy as if to a schoolmaster with a cane, he says, but the way people with sore eyes go back to a sponge and egg, or someone goes back to a soothing bandage or a warm compress. Philosophy, for Marcus, is the medicine, not the punishment. You return because it helps. Now look at this week. Good fortune: luck is in the bearing. The gulf of time: a life against eternity. Push it away: set the troubling thought down. Fit for me: test the act, not the critics. What is mine: sincerity, dignity, endurance. The prescription: hard things as medicine. And now, back to it. You'll forget most of these lines by Thursday. That's fine. The practice was never to remember perfectly. It's to come back.",
       "screen": [
         "`DON'T BE DISGUSTED.` · `WHEN KNOCKED OFF, RETURN.` · `CONTENT IF MOST OF IT IS DECENT.` · `A COMPRESS, NOT A SCHOOLMASTER.` · then, large: `BACK TO IT.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Settle, and breathe. Think of one recent slip, something you meant to do or not do, and didn't manage. Notice the voice that comes with it, the disgust or the why bother. Let it speak, then let it pass. Now picture returning: the next small step back into the habit, today, as if reaching for something soothing rather than something stern. Decide what that step is. The bell holds the time.",
+      "voice": "Think of one recent slip, and let the voice that comes with it, the disgust or the why bother, speak and pass. Then picture the next small step back into the habit, as if reaching for something soothing rather than something stern.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: a sponge and egg. After your next slip, skip the speech to yourself and take the next small step back, the way you'd reach for a soothing bandage. Day five hundred sixty-seven.",
+      "voice": "Your line: a sponge and egg. Philosophy is the compress, not the cane. Day five hundred sixty-seven, and another week.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Readers of Marcus Aurelius often use Meditations 5.9 after a lapse: no self-disgust, just a return to the practice, and contentment if most of their acts are decent.",
   "games": {
+    "guess": [
+      "the emperor who said: after a slip, return without disgust",
+      "a Roman teacher who corrected his students with a cane",
+      "a Roman general who said one failure ruins a whole campaign"
+    ],
     "match": {
       "prompt": "back to it — tap the pairs.",
       "pairs": [
@@ -132,14 +137,40 @@
     ],
     "recall": [
       [
-        "Claudius Maximus",
-        "senator, Stoic, governor of Africa"
+        "Trajan",
+        "the second, closer age Marcus pictures"
       ],
       [
-        "Severus",
-        "'my brother', probably family by marriage"
+        "mora",
+        "delay, the greatest remedy for anger"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your best friend",
+      "says": "I broke my meditation streak again. Should I just give up?",
+      "options": [
+        "Don't be disgusted; just come back. If most of it is decent, that's enough.",
+        "Only if you can promise never to slip again; otherwise start over later.",
+        "Yes, missing once shows it was never really meant for you anyway."
+      ],
+      "answer": 0,
+      "meaning": "Marcus expects to fall short. After a slip, return without disgust, and be content if the greater part is worthy."
+    },
+    "gloss": {
+      "sponge and egg": {
+        "meaning": "an old remedy people with sore eyes went back to"
+      },
+      "schoolmaster": {
+        "meaning": "an old-style teacher, here one holding a cane"
+      },
+      "warm compress": {
+        "meaning": "a warm pad laid on a sore spot to soothe it"
+      },
+      "Marcus Aurelius": {
+        "meaning": "Roman emperor and Stoic who wrote the Meditations to himself",
+        "say": "MAR-kus aw-REE-lee-us"
+      }
+    }
   },
   "sources": [
     {
@@ -156,7 +187,9 @@
       "5.9 paraphrased: be not disgusted, discouraged or dissatisfied if you do not succeed in doing everything according to right principles; when beaten back, return again, and be content if the greater part of what you do is consistent with man's nature, and love this to which you return; do not return to philosophy as to a master, but act like those with sore eyes who apply a bit of sponge and egg, or another a plaster, or a fomentation (warm compress). Confirm.",
       "The trapdoor's description of sponge and egg as an ordinary eye remedy is inferred from the text; confirm.",
       "Week look-back lists the carries of days 561–567.",
-      "Audit (year 2, second sample): the hook's unsourced claim ('that voice has ended more good habits than laziness ever did') was cut, and the 'day four of the new habit / see, you always do this' scene, which day 683 (Stoic in failure) repeats almost word for word on the same 5.9 text, was replaced with a dropped-stitch picture."
+      "Audit (year 2, second sample): the hook's unsourced claim ('that voice has ended more good habits than laziness ever did') was cut, and the 'day four of the new habit / see, you always do this' scene, which day 683 (Stoic in failure) repeats almost word for word on the same 5.9 text, was replaced with a dropped-stitch picture.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

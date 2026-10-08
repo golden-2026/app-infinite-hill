@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: Lakshmana wounded, and Rama beside him. They chose to endure Brahma's weapon, and fell with much of the army. Did you try accepting something you couldn't fight? Tonight, two survivors walk the field. Day six hundred forty-eight.",
+      "voice": "Yesterday: Rama and Lakshmana chose to endure Brahma's weapon, and fell with much of the army. The strength to accept a blow.",
       "screen": [
         "`THE STRENGTH TO ACCEPT A BLOW.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Two people are still on their feet. Vibhishana, who knows the weapons of Lanka, and Hanuman. It's night. They take torches and walk out across the battlefield, stepping between fallen warriors, looking for anyone still alive. Rama and Lakshmana lie in the arrows. Leader after leader lies still. And then, in the torchlight, they find Jambavan, the old king of the bears, so pierced with arrows he can't open his eyes, still breathing.",
+      "voice": "Two people are still on their feet: Vibhishana, who knows the weapons of Lanka, and Hanuman. It's night. They take torches and walk out across the battlefield, stepping between fallen warriors, looking for anyone still alive. Rama and Lakshmana lie in the arrows. Leader after leader lies still. Then, in the torchlight, they find Jambavan, the old king of the bears, so pierced with arrows he can't open his eyes, still breathing.",
       "screen": [
         "`TWO STILL STANDING.` → `TORCHES ACROSS THE FIELD.` → `JAMBAVAN, STILL BREATHING.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Vibhishana kneels and asks if he's alive. Jambavan knows the voice, though he can't see. And his first question isn't about Rama, or Lakshmana, or Sugriva his king. It's this: is Hanuman alive? Vibhishana is puzzled. Why ask about Hanuman, and not the princes? Jambavan's answer is short and startling. If Hanuman lives, he says, then the whole army lives, even if it has been killed. If Hanuman is dead, then we're dead, even though we're still breathing. Hanuman steps forward and bows at the old bear's feet. And Jambavan, revived by the sound of him, gives his orders. Go north, over the ocean, to the Himalaya. Between Mount Rishabha and Mount Kailasa there's a mountain covered with healing herbs. He names four of them. One that brings back life. One that draws out arrows. One that restores the body's color. One that joins what's broken. Bring them back, Jambavan says, and the army will rise. Why does Jambavan ask about Hanuman first? One way to read it: he's thinking like an elder. Who can still act tonight? Who can cross a sea and come back before dawn? Grief would ask about the princes first. Wisdom asks about the one who can save them. And it's Jambavan, you may remember, who once reminded Hanuman of his own strength, before the great leap to Lanka. Now, on a dark field, he does it again.",
+      "voice": "Vibhishana kneels and asks if he's alive. Jambavan knows the voice, though he can't see. And his first question isn't about Rama, or Lakshmana, or Sugriva his king. It's this: is Hanuman alive? Vibhishana is puzzled. Why Hanuman, and not the princes? Jambavan's answer is short and startling. If Hanuman lives, the whole army lives, even if it has been killed. If Hanuman is dead, we're dead, though we're still breathing. Hanuman steps forward and bows at the old bear's feet. Jambavan, revived by the sound of him, gives his orders. Go north, over the ocean, to the Himalaya. Between Mount Rishabha and Mount Kailasa is a mountain covered with healing herbs. He names four. One that brings back life. One that draws out arrows. One that restores the body's color. One that joins what's broken. Bring them back, and the army will rise. Why ask about Hanuman first? One way to read it: he's thinking like an elder. Who can still act tonight? Who can cross a sea and come back before dawn? Grief would ask about the princes. Wisdom asks about the one who can save them. And it was Jambavan, you may remember, who once reminded Hanuman of his own strength before the great leap to Lanka. Now, on a dark field, he does it again.",
       "screen": [
         "`IS HANUMAN ALIVE?` · `IF HE LIVES, WE ALL LIVE.` · `FOUR HERBS ON A HIMALAYAN PEAK.` · `WISDOM ASKS WHO CAN ACT.` · then, large: `THE OLD BEAR SENDS HIM AGAIN.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Sit, and let the breath slow. Think of a hard situation around you right now, at home or at work. Instead of asking whose fault it is, or who's hurt most, ask Jambavan's question: who can still act? Maybe it's a friend, maybe a professional, maybe you. Picture them standing in the torchlight. Breathe in steadiness. Breathe out panic. The bell holds the time.",
+      "voice": "Take a hard situation around you, at home or at work, and set aside for a moment whose fault it is or who is hurt most. Breathe slowly, and ask Jambavan's question instead: who can still act?",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: is Hanuman alive. Today, in one tangle, ask who can still act, and start there. Day six hundred forty-eight.",
+      "voice": "Your line: is Hanuman alive. A flight north before dawn comes next. That's day six hundred forty-eight.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Devotees of Hanuman often retell Jambavan's question, is Hanuman alive, as a sign of Hanuman's place in the Ramayana.",
   "games": {
+    "guess": [
+      "the night search where Jambavan asks first for Hanuman",
+      "the night Lakshmana is carried off to Lanka's prison",
+      "the night Sugriva calls the whole army to retreat"
+    ],
     "match": {
       "prompt": "the night search — tap the pairs.",
       "pairs": [
@@ -130,14 +135,52 @@
       "what it means: Jambavan asks who can still act; if Hanuman lives, the army can live.",
       "what a scholar hears: Jambavan's four herbs are named in Valmiki: mṛtasañjīvanī, viśalyakaraṇī, sauvarṇakaraṇī and sandhānī."
     ],
+    "chat": {
+      "who": "your mom",
+      "says": "Why did Jambavan ask about Hanuman before asking about Rama?",
+      "options": [
+        "Hanuman could still act: if he lived, he could fetch the herbs and save everyone.",
+        "He thought Rama had already died, so there was no point in asking.",
+        "He'd already heard Rama was safe, so he didn't need to ask about him."
+      ],
+      "answer": 0,
+      "meaning": "Jambavan thinks like an elder: who can still act tonight? If Hanuman lives, he can cross the sea for the herbs that raise the army."
+    },
+    "gloss": {
+      "Jambavan": {
+        "meaning": "the old bear king, who asks first for Hanuman",
+        "script": "जाम्बवान्",
+        "say": "JAHM-buh-vahn"
+      },
+      "Himalaya": {
+        "meaning": "the great snowy mountains to the north",
+        "script": "हिमालय",
+        "say": "hi-MAA-luh-yuh"
+      },
+      "Rishabha": {
+        "meaning": "a Himalayan peak beside the mountain of herbs",
+        "script": "ऋषभ",
+        "say": "RI-shuh-bhuh"
+      },
+      "Kailasa": {
+        "meaning": "a Himalayan peak beside the mountain of herbs",
+        "script": "कैलास",
+        "say": "kai-LAA-suh"
+      },
+      "Vibhishana": {
+        "meaning": "Ravana's brother, who walks the field with Hanuman",
+        "script": "विभीषण",
+        "say": "vi-BHEE-shuh-nuh"
+      }
+    },
     "recall": [
       [
-        "Lanka",
-        "a golden fortress on a mountain"
+        "the ring",
+        "marked with Rama's name"
       ],
       [
-        "Simhika",
-        "a threat, answered with force"
+        "shabdavedhi",
+        "one who shoots at a sound"
       ]
     ]
   },
@@ -158,7 +201,9 @@
       "The four herbs' names and functions (mṛtasañjīvanī, viśalyakaraṇī, sāvarṇyakaraṇī, sandhānī): spellings and order to confirm.",
       "Jambavan's earlier role in reminding Hanuman of his strength before the leap (Kishkindha Kanda 66) is assumed to have been told around days 602–603; confirm.",
       "Hanuman being prayed to in illness is a general statement; a Keeper may refine it.",
-      "Editor review (2026-10-01): third herb name corrected to sauvarṇakaraṇī (was sāvarṇyakaraṇī); cut 'one of the great lines of the war'; the reading of Jambavan's motive is marked as a reading; howItsDone no longer repeats the prayer-in-illness line used on days 649–651."
+      "Editor review (2026-10-01): third herb name corrected to sauvarṇakaraṇī (was sāvarṇyakaraṇī); cut 'one of the great lines of the war'; the reading of Jambavan's motive is marked as a reading; howItsDone no longer repeats the prayer-in-illness line used on days 649–651.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

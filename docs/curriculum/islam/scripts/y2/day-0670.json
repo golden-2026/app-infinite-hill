@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, ayah, and your line: the world is signs. What did you read slowly, an ant, a tree, a cloud? Today, one sign that runs through the whole book like a river. Day six hundred seventy.",
+      "voice": "Yesterday: ayah, and your line, the world is signs. Today, one sign that runs through the whole book like a river.",
       "screen": [
         "`THE WORLD IS SIGNS.`"
       ]
@@ -38,7 +38,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Start at the beginning of things. Surah twenty-one says Allah made every living thing from water. Surah eleven pictures His throne upon the water before the heavens and earth were made. Then the rain. Surah seven describes the winds sent ahead as good news, going before His mercy, and that mercy is the rain: clouds driven to a dead land, and out of it every kind of fruit. In that verse, rain and mercy share a sentence. Springs burst from rock when Musa strikes it with his staff, twelve of them, one for each tribe. And at the far end of the book, the Garden is again and again called gardens beneath which rivers flow. Surah forty-seven names rivers of water that never goes stale. Water is in the daily life of the faith too. No prayer without washing first, the wudu: hands, mouth, nose, face, arms, head, feet. And here's a detail that surprises people. A hadith in al-Bukhari says the Prophet ﷺ would do his whole wudu with about one mudd of water, roughly two cupped handfuls, and bathe with a few times that. Another hadith, in Abu Dawud, says Muslims are partners in three things: water, pasture and fire. So water in Islamic teaching is a mercy from above, a trust held in common, and something not to be poured away. The same tradition that promises rivers remembers a Prophet who used a handful well.",
+      "voice": "Start at the beginning of things. Surah twenty-one says Allah made every living thing from water. Surah eleven pictures His throne upon the water before the heavens and earth were made. Then the rain. Surah seven describes the winds sent ahead as good news, going before His mercy, and that mercy is the rain: clouds driven to a dead land, and out of it every kind of fruit. Rain and mercy share a sentence. Springs burst from rock when Musa strikes it with his staff, twelve of them, one for each tribe. And at the far end of the book, the Garden is again and again called gardens beneath which rivers flow; surah forty-seven names rivers of water that never goes stale. Water is in the daily life of the faith too. No prayer without washing first, the wudu: hands, mouth, nose, face, arms, head, feet. And a detail that surprises people: a hadith in al-Bukhari says the Prophet ﷺ would do his whole wudu with about one mudd of water, roughly two cupped handfuls, and bathe with a few times that. Another hadith, in Abu Dawud, says Muslims are partners in three things: water, pasture and fire. So water in Islamic teaching is a mercy from above, a trust held in common, and something not to be poured away. The same tradition that promises rivers remembers a Prophet who used a handful well.",
       "screen": [
         "`EVERY LIVING THING FROM WATER.`",
         "`RAIN GOES BEFORE HIS MERCY.`",
@@ -49,7 +49,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: don't waste a drop today. Start here. If you have a glass of water, hold it. If not, picture one. Look at it before you drink. Think of where it came from: a cloud, a river, a reservoir, a pipe someone laid. Then drink slowly, in small sips, with a breath between each, until it's gone or you've had enough. If you'd like, you can begin, as Muslims are taught to, with bismillah, and finish with alhamdulillah. Notice that you didn't spill any. The bell holds the time.",
+      "voice": "Hold a glass of water, or picture one, and look at it before you drink: a cloud, a river, a reservoir, a pipe someone laid. Then drink slowly, in small sips, with a breath between each. If you'd like, begin as Muslims are taught to, with bismillah, and finish with alhamdulillah.",
       "screen": []
     },
     {
@@ -63,7 +63,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: water is mercy. Today, turn off one tap sooner than you usually would, while brushing, washing, or waiting for it to warm. Day six hundred seventy.",
+      "voice": "Your line: water is mercy. About two handfuls, used well, were enough for him. Day six hundred seventy.",
       "screen": []
     },
     {
@@ -77,6 +77,11 @@
   ],
   "howItsDone": "Muslims wash with water (wudu) before prayer and are taught to use little of it, following hadith about the Prophet's small measure; saying bismillah before drinking and alhamdulillah after is a common practice.",
   "games": {
+    "guess": [
+      "the washing before prayer, with a little water",
+      "the call to prayer, sung from the minaret",
+      "a pilgrim's drink from the well of Zamzam"
+    ],
     "match": {
       "prompt": "water all through it — tap the pairs.",
       "pairs": [
@@ -137,14 +142,52 @@
     ],
     "recall": [
       [
-        "adhkar",
-        "remembrances said at both ends of the day"
+        "'ilm",
+        "knowledge"
       ],
       [
-        "ad-Dahr",
-        "Time: the surah's other name"
+        "adhkar",
+        "morning and evening remembrances"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your roommate",
+      "says": "Why do Muslims wash before praying, and does it take a lot of water?",
+      "options": [
+        "Wudu comes before prayer, and a hadith says the Prophet used two handfuls.",
+        "Wudu means a full bath every time, so it takes a lot of water.",
+        "The washing is optional; prayer counts the same without it."
+      ],
+      "answer": 0,
+      "meaning": "No prayer without wudu first, and a hadith in al-Bukhari says the Prophet did his whole wudu with about one mudd of water."
+    },
+    "gloss": {
+      "Hijaz": {
+        "meaning": "western Arabia, where the Qur'an was first heard",
+        "script": "الحجاز",
+        "say": "hi-JAAZ"
+      },
+      "wudu": {
+        "meaning": "the washing before prayer",
+        "script": "وضوء",
+        "say": "wu-DOO"
+      },
+      "mudd": {
+        "meaning": "a measure, roughly two cupped handfuls",
+        "script": "مد",
+        "say": "MUDD"
+      },
+      "Abu Dawud": {
+        "meaning": "a major hadith collection, named for its compiler",
+        "script": "أبو داود",
+        "say": "a-boo daa-WOOD"
+      },
+      "bismillah": {
+        "meaning": "in the name of God",
+        "script": "بسم الله",
+        "say": "bis-MIL-lah"
+      }
+    }
   },
   "sources": [
     {
@@ -185,7 +228,9 @@
       "Hadith numbers cited from memory (Bukhari 201; Abu Dawud 3477); confirm. 'Roughly two cupped handfuls' for a mudd is an approximation; confirm wording.",
       "Bathing with 'a few times that' reflects the same hadith (a sa' to five mudds); confirm.",
       "The wudu list is a simplified description; schools differ on details.",
-      "Editor review 2026-10-01: hook no longer uses 'Now imagine' and drops the 'first pages to last' claim. Abu Dawud 3477 reads 'Muslims are partners' (al-muslimun shuraka'), not 'people'; teach, myth and trapdoor corrected (Ibn Majah has a variant). 'Rain is so often paired with mercy... in many places' cut to what 7:57 says. 'The same book... asks you to use a handful' fixed: the handful is in hadith, not the Qur'an. 'Many Muslims begin with bismillah' and 'before every prayer' softened."
+      "Editor review 2026-10-01: hook no longer uses 'Now imagine' and drops the 'first pages to last' claim. Abu Dawud 3477 reads 'Muslims are partners' (al-muslimun shuraka'), not 'people'; teach, myth and trapdoor corrected (Ibn Majah has a variant). 'Rain is so often paired with mercy... in many places' cut to what 7:57 says. 'The same book... asks you to use a handful' fixed: the handful is in hadith, not the Qur'an. 'Many Muslims begin with bismillah' and 'before every prayer' softened.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

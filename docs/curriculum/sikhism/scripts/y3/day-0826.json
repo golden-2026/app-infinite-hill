@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Bhai Moti Ram Mehra, the cook who carried warm milk up the cold tower. Your line was milk in the cold tower. Did you bring someone something warm? Today, the same town, and a voice raised in the governor's court. Day eight hundred twenty-six.",
+      "voice": "Yesterday, Bhai Moti Ram Mehra, the cook who carried warm milk up the cold tower. Your line: milk in the cold tower. Today, the same town, and a voice raised in the governor's court.",
       "screen": [
         "`MILK IN THE COLD TOWER.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "His name was Sher Muhammad Khan, the Nawab, the ruler, of a small state called Malerkotla. Tradition says he was present at Sirhind when the governor, Wazir Khan, was deciding what to do with Zorawar Singh and Fateh Singh, the Guru's younger sons. He was not a friend of the Guru. Tradition even says he had fought against the Guru's forces. And still, when the sentence of death was spoken, he protested. The boys were children, he said, and children must not be punished for what their father had done. Sikhs call his protest the haa da naara, the cry of protest against injustice. Here is the hard part. It didn't work. The governor went ahead. The boys were killed. The Nawab could not save them. So why do Sikhs remember him with such honor? Sikh memory doesn't measure speaking up only by whether it wins. He told the truth in a room that didn't want to hear it, at a cost to himself, for children of another faith. Tradition says that when Guru Gobind Singh heard what the Nawab had done, he blessed him and his town. And Sikhs have honored Malerkotla ever since. Set him beside yesterday's cook with his cup of milk. Two people at Sirhind, a Muslim noble in the court and a cook in the kitchen, who could not change the sentence and still did not look away. One carried something warm up the stairs. The other said, out loud, in front of the governor, that children must not be punished.",
+      "voice": "His name was Sher Muhammad Khan, the Nawab, the ruler, of a small state called Malerkotla. Tradition says he was present at Sirhind when the governor, Wazir Khan, was deciding what to do with Zorawar Singh and Fateh Singh, the Guru's younger sons. He was not a friend of the Guru. Tradition even says he had fought against the Guru's forces. And still, when the sentence of death was spoken, he protested. The boys were children, he said, and children must not be punished for what their father had done. Sikhs call his protest the haa da naara, the cry of protest against injustice. Here is the hard part. It didn't work. The governor went ahead. The boys were killed. The Nawab could not save them. So why do Sikhs remember him with such honor? Sikh memory doesn't measure speaking up only by whether it wins. He told the truth in a room that didn't want to hear it, at a cost to himself, for children of another faith. Tradition says that when Guru Gobind Singh heard what the Nawab had done, he blessed him and his town, and Sikhs have honored Malerkotla ever since. Set him beside yesterday's cook. Two people at Sirhind, a Muslim noble in the court and a cook in the kitchen, who could not change the sentence and still did not look away. One carried something warm up the stairs. The other said, out loud, in front of the governor, that children must not be punished.",
       "screen": [
         "`SHER MUHAMMAD KHAN OF MALERKOTLA.` · `CHILDREN MUST NOT BE PUNISHED.` · `IT DID NOT SAVE THEM.` · `THE GURU BLESSED HIS TOWN.` · then, large: `HE SPOKE UP.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: speak up for the helpless. Let the breath settle. Think of a room you'll be in soon, a meeting, a group chat, a family table, where someone without much power gets talked about or decided about. A new employee. A kid. Someone who isn't there to defend themselves. Find the sentence you could say. Keep it simple, the way the Nawab's was: that isn't fair, or they're just a child, or let's hear their side. Rehearse it once, quietly, on an out-breath. The bell holds the time.",
+      "voice": "Think of a room you'll be in soon, a meeting, a family table, where someone without much power gets talked about or decided about: a new employee, a kid, someone who isn't there. Find the one simple sentence you could say, the way the Nawab's was simple: that isn't fair, or let's hear their side. Rehearse it once, quietly, on an out-breath.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: he spoke up. Today, when someone with less power is being treated unfairly in front of you, say the one simple sentence, even if it doesn't win. Day eight hundred twenty-six, and the end of a week.",
+      "voice": "Your line: he spoke up. It didn't win, and it still counts. That's the end of a week.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Sikhs remember the Nawab of Malerkotla's protest whenever the story of the Sahibzade is told, especially in the December remembrances, and speak of the town of Malerkotla with gratitude.",
   "games": {
+    "guess": [
+      "the small state whose Nawab protested the boys' sentence",
+      "the governor's city where the Guru's sons were sentenced",
+      "the fort where the Guru's elder sons fell fighting"
+    ],
     "match": {
       "prompt": "the voice in the court — tap the pairs.",
       "pairs": [
@@ -132,14 +137,44 @@
     ],
     "recall": [
       [
-        "Bhangani",
-        "where two of his sons fell"
+        "Pathan brothers",
+        "carried the Guru past the soldiers"
       ],
       [
-        "Mata Nanaki",
-        "Guru Hargobind's wife"
+        "Baba Buddha",
+        "a wise elder who served the Gurus"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "a friend from the gym",
+      "says": "The Nawab of Malerkotla couldn't save the boys. Why do Sikhs still honor him?",
+      "options": [
+        "He spoke up for the boys in court, and tradition says the Guru blessed his town.",
+        "Because the Nawab hid the two boys in his town until the danger had passed.",
+        "Because the Nawab was a secret Sikh who fought beside the Guru at Chamkaur."
+      ],
+      "meaning": "Sher Muhammad Khan's protest, the haa da naara, didn't save the boys; Sikhs honor him for speaking up anyway.",
+      "answer": 0
+    },
+    "gloss": {
+      "Nawab": {
+        "meaning": "a ruler; here, of the small state of Malerkotla",
+        "say": "nuh-WAAB"
+      },
+      "Wazir Khan": {
+        "meaning": "the governor at Sirhind",
+        "say": "wuh-ZEER KHAAN"
+      },
+      "haa da naara": {
+        "meaning": "the cry of protest against injustice",
+        "script": "ਹਾਅ ਦਾ ਨਾਅਰਾ",
+        "say": "HAA daa NAA-raa"
+      },
+      "Malerkotla": {
+        "meaning": "the small state whose Nawab spoke up",
+        "say": "muh-LAIR-kot-laa"
+      }
+    }
   },
   "sources": [
     {
@@ -160,7 +195,9 @@
       "'Sikhs have honored Malerkotla ever since' is from the index hook; confirm the phrasing.",
       "'A guest of that court' is a soft description of his presence at Sirhind; confirm.",
       "Editor: rewrote the hook so it no longer repeats day 821's 'silent room, one man stands' angle and screen; replaced the week roll call (same device as day 819) with a pairing to day 825; removed the uncited superlative 'youngest sons'; cut a narrator line pushing a conclusion.",
-      "Audit: cut a closing line that restated the same point twice ('could not change the sentence' / 'couldn't stop the sentence')."
+      "Audit: cut a closing line that restated the same point twice ('could not change the sentence' / 'couldn't stop the sentence').",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

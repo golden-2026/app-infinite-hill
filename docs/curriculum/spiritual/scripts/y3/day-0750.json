@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, a city sitting alone like a widow, read low on the ninth of Av. Your line was how lonely sits the city. Did one verse find you? Today, another day kept for grief. Day seven hundred fifty.",
+      "voice": "Yesterday's word was Tisha B'Av, the ninth of Av. Your line was how lonely sits the city. Today, another day kept for grief.",
       "screen": [
         "`HOW LONELY SITS THE CITY.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "For these two minutes, begin a quiet hour. Put the phone face down, or across the room. Let the sounds around you be the only sounds. If a thought pulls at you, notice it and let the quiet return. You don't need to think about the cross unless you want to. You can simply practice the thing the day teaches: staying with something hard without rushing to the next thing. If you pray, you can pray with the words from Luke, into thy hands. The bell holds the time.",
+      "voice": "For these minutes, put the phone face down or across the room, and let the sounds around you be the only sounds. You don't need to think about the cross unless you want to; just practice what the day teaches, staying with something hard without rushing to the next thing. If you pray, you can pray with the words from Luke: into thy hands.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: a quiet hour. Today, keep one hour quiet: no screens, no background noise, just the hour. Day seven hundred fifty.",
+      "voice": "Your line: a quiet hour. Some days are kept best with fewer words. Day seven hundred fifty.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "On Good Friday, Christians gather to hear the passion read, pray at the cross, and keep the day quietly; Catholics have no Mass that day, and Orthodox Christians sing laments around the epitaphios, the image of Christ in the tomb.",
   "games": {
+    "guess": [
+      "the Friday Christians remember the crucifixion of Jesus",
+      "the Friday when Christians celebrate Jesus rising",
+      "the Friday when Jesus shared the Last Supper"
+    ],
     "match": {
       "prompt": "which Gospel gives which words — tap the pairs.",
       "pairs": [
@@ -133,13 +138,39 @@
     "recall": [
       [
         "shiva",
-        "the family stays home, the community comes"
+        "mourners stay home; the community comes"
       ],
       [
         "tonglen",
-        "sending and taking"
+        "sending and taking, on the breath"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your coworker",
+      "says": "If it's the day Jesus died, why is it called Good Friday?",
+      "options": [
+        "Christians hold that his death opened forgiveness and the way to Easter.",
+        "Because it's a joyful feast day, with flowers on the altar and bells ringing.",
+        "Because it's the day Jesus rose, and the bare altar gets decorated after."
+      ],
+      "answer": 0,
+      "meaning": "Christian teaching answers 'why good' with what it holds that death opened: forgiveness and the way to Easter. The day itself stays quiet."
+    },
+    "gloss": {
+      "Pontius Pilate": {
+        "meaning": "the Roman governor under whom Jesus was crucified",
+        "say": "PON-shus PY-lut"
+      },
+      "Psalm 22": {
+        "meaning": "a psalm of lament opening my God, my God"
+      },
+      "Lord's Passion": {
+        "meaning": "Jesus' suffering and death"
+      },
+      "veneration of the cross": {
+        "meaning": "honoring the cross, as people walk up to it one by one"
+      }
+    }
   },
   "sources": [
     {
@@ -189,7 +220,9 @@
       "Original: Matthew 27:46 has Ἠλί (Mark 15:34 Ἐλωΐ). Confirm the spelling and note; consider null if uncertain.",
       "Hook: bare altar, silent bells, veneration of a cross: practices vary by church; framed with 'some' and 'may'.",
       "Editor: hook no longer opens 'A church in the afternoon' (too many nearby hooks open on 'A [noun]'). Cut 'Good Friday services read the passion in full and let all of it stand', which implied all three accounts are read (the Catholic liturgy reads John's passion); now 'the Bible keeps all three side by side'. Sweeping 'Christians don't choose / believe / say' lines recast as Christian belief or teaching; fork drops 'two days away'.",
-      "Audit: original note implied Ἠλί is a Greek word for 'my God'; it is Matthew's transliteration of the Hebrew cry, which he then translates. Note corrected."
+      "Audit: original note implied Ἠλί is a Greek word for 'my God'; it is Matthew's transliteration of the Hebrew cry, which he then translates. Note corrected.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

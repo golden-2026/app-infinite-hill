@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: tempus, one of five candidates, three chosen. Your line was three keepers. Which three did you write down? Day five hundred nineteen.",
+      "voice": "Yesterday's word was tempus, time: one of five keepers from Seneca, and you chose three. Your line was three keepers.",
       "screen": [
         "`THREE KEEPERS.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Close to ninety days ago, we opened a letter that begins with a command: claim yourself for yourself. Since then we've read a man who got seasick, wept too much, owned too much, flattered an emperor, tutored another, consoled grieving mothers, and died slowly with his friends around him. A flawed, wise friend. Today we close the circle by going back to the first page, and seeing how different it reads now. Seneca close.",
+      "voice": "Close to ninety days ago, this path opened a letter that begins with a command: claim yourself for yourself. Since then you've read a man who got seasick, wept too much, owned too much, flattered an emperor, tutored another, consoled grieving mothers, and died slowly with his friends around him. A flawed, wise friend. Today the circle closes where it began, on the first page, and it reads differently now.",
       "screen": [
         "`BACK TO LETTER ONE.` → `A FLAWED, WISE FRIEND.` → `BACK TO THE FIRST PAGE.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the command. Letter one opens: claim yourself for yourself, and gather up the time that's been taken from you, stolen, or let slip. And the line that becomes our carry: \"Hold every hour in your grasp.\" Back then it could sound like productivity advice. Now we know who wrote it: a busy man at the edge of a dangerous court, who had lost years to exile and would lose his life to an emperor's order. Second, three ways time leaves. Some is snatched away, Seneca says, some is quietly taken, and some just slips. And the most shameful loss is the one that comes from carelessness. Not the hours stolen. The hours we let go without noticing. Third, his honesty, already on page one. Seneca doesn't claim to waste nothing. He says he can't say that, but he can say what he loses, and why, and how. He keeps the account. That's the whole friend in miniature: not perfect, but paying attention. Fourth, the bottom of the jar. He ends with an old saying: thrift comes too late at the bottom of the jar, because what's left down there is the least, and the worst. Start saving now, while the jar is still full. That's how this stretch began, and it's a fair way to end them. Seneca never pretended to be the sage. He was the friend in the next seat, working on the same lesson, and leaving it in writing. Tomorrow, before we open Marcus Aurelius, we'll set him beside one more teacher.",
+      "voice": "First, the command. Letter one opens: claim yourself for yourself, and gather up the time that's been taken from you, stolen, or let slip. Then the line that becomes today's carry: \"Hold every hour in your grasp.\" Back then it could sound like productivity advice. Now you know who wrote it: a busy man at the edge of a dangerous court, who had lost years to exile and would lose his life to an emperor's order. Second, three ways time leaves. Some is snatched away, Seneca says, some is quietly taken, and some just slips. The most shameful loss comes from carelessness: not the hours stolen, but the hours let go without noticing. Third, his honesty, already on page one. Seneca doesn't claim to waste nothing. He can't say that, he admits, but he can say what he loses, and why, and how. He keeps the account. That's the whole friend in miniature: not perfect, but paying attention. Fourth, the bottom of the jar. He ends with an old saying: thrift comes too late at the bottom of the jar, because what's left down there is the least, and the worst. Start saving now, while the jar is still full. Seneca never pretended to be the sage. He was the friend in the next seat, working on the same lesson, and leaving it in writing. Tomorrow, before Marcus Aurelius, he'll stand beside one more teacher.",
       "screen": [
         "`CLAIM YOURSELF FOR YOURSELF.` · `SNATCHED, TAKEN, OR LET SLIP.` · `HE KEEPS THE ACCOUNT.` · `THE BOTTOM OF THE JAR.` · then, large: `HOLD EVERY HOUR.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "If you can, find Letter one and reread it; it's short. If not, sit with what you remember of it, and breathe slowly. Then look back over yesterday. Where did an hour go that you didn't choose? Don't scold yourself. Just keep the account, the way Seneca did: what, and why, and how. Then choose one hour of tomorrow, and hold it. The bell holds the time.",
+      "voice": "If you can, reread Letter one, which is short; if not, sit with what you remember of it. Then look back over yesterday and find one hour that went somewhere you didn't choose. Don't scold yourself; just keep the account, the way Seneca did: what, and why, and how.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: hold every hour. Pick one hour today and decide in advance what it's for. When it comes, keep it. Day five hundred nineteen.",
+      "voice": "Your line: hold every hour. The jar is still full. Day five hundred nineteen, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Some readers of Seneca return to his first letter on time, and some keep a simple record of where their hours go, as he describes doing.",
   "games": {
+    "guess": [
+      "start saving your hours early, while there's plenty left",
+      "a store of coins kept safe for old age and hard times",
+      "Seneca's habit of drinking only plain water from a jug"
+    ],
     "match": {
       "prompt": "Seneca close — tap the pairs.",
       "pairs": [
@@ -132,14 +137,41 @@
     ],
     "recall": [
       [
-        "studiosa luxuria",
-        "learned luxury"
+        "tempus",
+        "Latin for time, Seneca's first keeper"
       ],
       [
-        "vale",
-        "be well, farewell"
+        "mora",
+        "Latin for delay, the cure for anger"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "a friend",
+      "says": "You keep mentioning Seneca's jar. What's that about?",
+      "options": [
+        "Thrift at the bottom comes too late, so value your time now, while there's plenty.",
+        "Save your best hours for the end of life, when you'll finally have time.",
+        "Spend freely while you're young; worrying about time can wait till later."
+      ],
+      "answer": 0,
+      "meaning": "Letter one ends with an old saying: thrift comes too late at the bottom of the jar. Start saving your hours while it's full."
+    },
+    "gloss": {
+      "Seneca": {
+        "meaning": "a Roman Stoic writer and adviser to Nero",
+        "say": "SEN-uh-kuh"
+      },
+      "Letter one": {
+        "meaning": "the first of Seneca's moral letters to his friend Lucilius"
+      },
+      "sage": {
+        "meaning": "the Stoics' ideal wise person, which Seneca never claimed to be"
+      },
+      "Marcus Aurelius": {
+        "meaning": "a Roman emperor whose private notes come next on this path",
+        "say": "MAR-kus aw-REE-lee-us"
+      }
+    }
   },
   "sources": [
     {
@@ -169,7 +201,9 @@
       "Letter 1 opening 'vindica te tibi' and the legal sense of vindicare (to claim; also used in manumission, vindicta). Confirm the trapdoor wording.",
       "'Hold every hour in your grasp' from Gummere 1917, as used on day 432; confirm.",
       "Letter 1: 'sera parsimonia in fundo est', a saying Seneca adapts from Hesiod (Works and Days 369). Confirm.",
-      "Block C runs days 431–520; 'ninety days' is the outline's figure (day 519 is the 89th day of the block)."
+      "Block C runs days 431–520; 'ninety days' is the outline's figure (day 519 is the 89th day of the block).",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

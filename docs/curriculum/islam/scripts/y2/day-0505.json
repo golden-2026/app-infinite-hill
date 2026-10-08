@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Husayn at Karbala, and your line was he stood for justice. Who did you hand a cup of water? Day five hundred five.",
+      "voice": "Yesterday: 'Ashura's second memory, Husayn at Karbala, and your line, he stood for justice.",
       "screen": [
         "`HE STOOD FOR JUSTICE.`"
       ]
@@ -46,7 +46,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: send salawat ten times. Sit, and let the breath settle. If you pray, say a blessing on the Prophet ten times, slowly. Many Muslims use the short form, sallallahu 'alayhi wa sallam, may God bless him and give him peace. If you don't pray, spend the time thinking of one thing about the Prophet's life you've learned on this path that stayed with you. The bell holds the time.",
+      "voice": "If you pray, say a blessing on the Prophet ten times, slowly; many Muslims use the short form, sallallahu 'alayhi wa sallam, may God bless him and give him peace. If you don't pray, spend the time with one thing from the Prophet's life, learned on this path, that stayed with you.",
       "screen": []
     },
     {
@@ -60,7 +60,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: peace on the one born. Today, whenever you hear or say his name, add the blessing, or simply notice the name. Day five hundred five.",
+      "voice": "Your line: peace on the one born. Lit streets or quiet houses, the blessing is shared. Day five hundred five, done.",
       "screen": []
     },
     {
@@ -74,6 +74,11 @@
   ],
   "howItsDone": "Many Muslims mark the Mawlid in Rabi' al-Awwal with gatherings, poetry such as the Burda, and charity, while others, following scholars who regard it as a later practice, do not celebrate it; nearly all send blessings on the Prophet.",
   "games": {
+    "guess": [
+      "the Prophet's birthday, honored with poems",
+      "the night the Qur'an was first sent down",
+      "the feast that ends the month of fasting"
+    ],
     "match": {
       "prompt": "the Mawlid — tap the pairs.",
       "pairs": [
@@ -134,14 +139,52 @@
     ],
     "recall": [
       [
-        "Mistah",
-        "relative who spread the slander"
+        "Hijri",
+        "the calendar counted from the Hijra"
       ],
       [
-        "mishkat",
-        "a niche in the wall"
+        "ni'mah",
+        "a favor, a blessing too many to count"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your sister-in-law",
+      "says": "Do all Muslims celebrate the Prophet's birthday?",
+      "options": [
+        "Many do, with poems and gatherings; others don't. Both send blessings on him.",
+        "Yes, every Muslim marks it the same way, on exactly the same date.",
+        "No, it's a holiday that only started in the last hundred years."
+      ],
+      "answer": 0,
+      "meaning": "Some mark the Mawlid with poems and gatherings, others don't mark it; what both share is the salawat, blessings on the Prophet."
+    },
+    "gloss": {
+      "Mawlid": {
+        "meaning": "birth, or the time and place of a birth",
+        "script": "مولد",
+        "say": "MAW-lid"
+      },
+      "Rabi' al-Awwal": {
+        "meaning": "the third month of the Islamic year",
+        "script": "ربيع الأول",
+        "say": "ra-BEE al-AW-wal"
+      },
+      "Burda": {
+        "meaning": "the Mantle, al-Busiri's poem in the Prophet's praise",
+        "script": "بردة",
+        "say": "BUR-da"
+      },
+      "salawat": {
+        "meaning": "blessings sent on the Prophet",
+        "script": "صلوات",
+        "say": "sa-la-WAAT"
+      },
+      "Irbil": {
+        "meaning": "a city in northern Iraq, home to early Mawlid gatherings",
+        "script": "أربيل",
+        "say": "ir-BEEL"
+      }
+    }
   },
   "sources": [
     {
@@ -178,7 +221,9 @@
       "Dates: 12 Rabi' al-Awwal (commonly Sunni) and 17 Rabi' al-Awwal (commonly Shia); confirm.",
       "History of public Mawlid (Fatimids; Muzaffar al-Din at Irbil) summarized; confirm.",
       "Both positions on the Mawlid are described without ranking; a Keeper should confirm the balance.",
-      "Editor review (2026-10-01): unsupported 'almost everything the earliest sources say' replaced with a narrower claim; 'many Sunni/many Shia', 'many scholars' and 'nearly everyone' claims softened; Irbil dated 'early 1200s'."
+      "Editor review (2026-10-01): unsupported 'almost everything the earliest sources say' replaced with a narrower claim; 'many Sunni/many Shia', 'many scholars' and 'nearly everyone' claims softened; Irbil dated 'early 1200s'.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

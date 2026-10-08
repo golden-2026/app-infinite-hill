@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Isfahan, and a mosque that turned away from the square to face Mecca. Your line was: half the world. What beautiful made thing stopped you? Day nine hundred eighty-nine.",
+      "voice": "Yesterday: Isfahan, where a mosque turned away from the square to face Mecca. Your line was half the world.",
       "screen": [
         "`HALF THE WORLD.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Registan, in Persian, is usually explained as the sandy place. It was an open ground in the middle of Samarkand, where people gathered for markets, announcements and public occasions. Samarkand was the capital of Timur, a conqueror from Central Asia whose campaigns left terrible destruction across many lands, and who also brought craftsmen from the cities he took to build his capital. His descendants, the Timurids, ruled after him, and some of them spent their wealth on learning. Around the sandy place, they and later rulers raised madrasahs, schools where students lived and studied. Ulugh Beg, Timur's grandson, built one of the madrasahs that face the square. Tomorrow's lesson is his. Later came the Sher-Dor, the one with the cats and the suns, and the Tilya-Kori, whose name speaks of gold, with a mosque inside covered in gilding. A madrasah is a courtyard ringed with small rooms, where students slept, read, copied and argued, with a teacher's lecture hall and a place to pray. The Qur'an's first revelation, as tradition tells it, begins with a command to read. In Pickthall's translation: \"Read: In the name of thy Lord Who createth.\" And it goes on to speak of the Lord who taught by the pen. So a public square, once just sand, was ringed with schools. And the cats on the Sher-Dor? Mosques and madrasahs commonly use letters and patterns rather than pictures of living creatures, and some scholars disapproved of such pictures. The Sher-Dor's builders put them right on the gate. People still argue about what the suns and cats meant. The sandy place.",
+      "voice": "Registan, in Persian, is usually explained as the sandy place. It was an open ground in the middle of Samarkand, where people gathered for markets, announcements and public occasions. Samarkand was the capital of Timur, a conqueror from Central Asia whose campaigns left terrible destruction across many lands, and who also brought craftsmen from the cities he took to build his capital. His descendants, the Timurids, ruled after him, and some of them spent their wealth on learning. Around the sandy place, they and later rulers raised madrasahs, schools where students lived and studied. Ulugh Beg, Timur's grandson, built one of the madrasahs that face the square. Tomorrow's lesson is his. Later came the Sher-Dor, the one with the cats and the suns, and the Tilya-Kori, whose name speaks of gold, with a mosque inside covered in gilding. A madrasah is a courtyard ringed with small rooms, where students slept, read, copied and argued, with a teacher's lecture hall and a place to pray. The Qur'an's first revelation, as tradition tells it, begins with a command to read. In Pickthall's translation: \"Read: In the name of thy Lord Who createth.\" And it goes on to speak of the Lord who taught by the pen. And the cats on the Sher-Dor? Mosques and madrasahs commonly use letters and patterns rather than pictures of living creatures, and some scholars disapproved of such pictures. The Sher-Dor's builders put them right on the gate. People still argue about what the suns and cats meant. The sandy place.",
       "screen": [
         "`REGISTAN: THE SANDY PLACE.` · `TIMUR'S CITY, HIS GRANDSON'S SCHOOL.` · `A COURTYARD OF STUDENTS' ROOMS.` · `READ: IN THE NAME OF THY LORD.` · then, large: `THE SANDY PLACE.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: look at the Registan. A photo of the square, or of the Sher-Dor gate with its cats and suns, will do if one is close at hand. Otherwise, picture an empty patch of sand in a city center, and then picture schools rising on its sides. Settle, and breathe. Look slowly. Find the gate, the domes, the tiles, the doors to the students' rooms. Think of one thing you are learning right now, however small. If you pray, you can ask for understanding. If you don't, simply hold your question. The bell holds the time.",
+      "voice": "Look at a photo of the Registan, or of the Sher-Dor gate with its cats and suns, or picture an empty patch of sand in a city with schools rising on its sides. Find the gate, the domes, the doors to the students' rooms, and think of one thing you're learning right now, however small. If you pray, you can ask for understanding.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the sandy place. Today, find one ordinary open space you pass, a lot, a park, a lobby, and wonder what could be built there for learning. Day nine hundred eighty-nine.",
+      "voice": "Your line: the sandy place. Open ground in the middle of a city, given over to learning. Until tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Madrasahs are schools of Islamic learning where students study the Qur'an, hadith and law, traditionally living in rooms around a courtyard; the Registan's madrasahs are now visited as historic monuments.",
   "games": {
+    "guess": [
+      "an open square in Samarkand ringed with madrasahs",
+      "the royal palace where Timur's grandsons lived",
+      "a Persian word for the courtyard of a school"
+    ],
     "match": {
       "prompt": "the Registan — tap the pairs.",
       "pairs": [
@@ -132,14 +137,49 @@
     ],
     "recall": [
       [
-        "mansa",
-        "the king of Mali"
+        "millet",
+        "an Ottoman religious community"
       ],
       [
-        "Misr",
-        "Egypt, in Arabic and in the Qur'an"
+        "hajj",
+        "the pilgrimage to Mecca"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your little cousin",
+      "says": "Why are there cats and faces on that school gate in Samarkand?",
+      "options": [
+        "Nobody's sure: madrasahs usually use patterns, but these builders chose cats.",
+        "Islam always required pictures of animals on the gates of its schools.",
+        "They mark the Sher-Dor as a royal zoo, not a school for students."
+      ],
+      "answer": 0,
+      "meaning": "Mosques and madrasahs commonly use letters and patterns, yet the Sher-Dor's builders put cats and suns on the gate; people still argue why."
+    },
+    "gloss": {
+      "Registan": {
+        "meaning": "Persian, usually explained as the sandy place",
+        "script": "ریگستان",
+        "say": "re-gi-STAAN"
+      },
+      "Samarkand": {
+        "meaning": "old Silk Road city, Timur's capital, now in Uzbekistan",
+        "script": "سمرقند",
+        "say": "SAM-ar-kand"
+      },
+      "Sher-Dor": {
+        "meaning": "Registan madrasah with cats and suns on its gate",
+        "say": "SHER-dor"
+      },
+      "Tilya-Kori": {
+        "meaning": "Registan madrasah whose name speaks of gold",
+        "say": "TIL-ya ko-REE"
+      },
+      "Timur": {
+        "meaning": "Central Asian conqueror whose capital was Samarkand",
+        "say": "tee-MOOR"
+      }
+    }
   },
   "sources": [
     {
@@ -168,7 +208,9 @@
       "Pickthall 96:1 quoted from memory; confirm exact wording and capitalization ('Who createth'). 96:1 as the first revelation is attributed to tradition.",
       "Original: ریگستان and the pronunciation; confirm.",
       "Editor pass: 'built the first of the madrasahs' changed to 'built one of the madrasahs' (superlative cut); garbled 'Tomorrow is his' made 'Tomorrow's lesson is his'; the original note's derivation 'from reg, sand' cut and hedged to 'usually explained as'.",
-      "Audit (2026-10-01): practice opener reworded so it no longer repeats day 988's 'If you have a screen nearby, find one photo' line for line."
+      "Audit (2026-10-01): practice opener reworded so it no longer repeats day 988's 'If you have a screen nearby, find one photo' line for line.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

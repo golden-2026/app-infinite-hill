@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: sphaira, Socrates handling what he was tossed, and your line, let the ball be the ball. Which task did you play for the skill, not the prize? Day four hundred nine.",
+      "voice": "Yesterday's word was sphaira, the ball Socrates played with good form. Your line was let the ball be the ball.",
       "screen": [
         "`SPHAIRA.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "In a single afternoon you might be a manager in a meeting, a customer on hold, a daughter on the phone with her mother, a neighbor waving across the fence, and a stranger letting someone merge in traffic. Each one asks something slightly different of you. It's easy to switch between them without noticing, and sometimes to bring the wrong one into the room: the boss into the family dinner, the tired customer into the conversation with a friend. Epictetus had a method for this. Today: onoma.",
+      "voice": "In a single afternoon you might be a manager in a meeting, a customer on hold, a daughter on the phone with her mother, a neighbor waving across the fence, and a stranger letting someone merge in traffic. Each one asks something slightly different of you. It's easy to switch without noticing, and sometimes to bring the wrong one into the room: the boss into the family dinner, the tired customer into a talk with a friend. Epictetus had a method for this.",
       "screen": [
         "`MANAGER, CUSTOMER, DAUGHTER, NEIGHBOR.` → `EACH ASKS SOMETHING DIFFERENT.` → `THE WRONG ONE IN THE ROOM.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "This is Discourses book two, chapter ten: how to find what you owe from the names you carry. Consider who you are, Epictetus says. First, a human being, which means someone with a will, and nothing in you ranks higher than that. Second, a citizen of the world, a part of it, and not a minor part. So act the way a hand or a foot would act if it could think: never just for itself, always as part of the whole body. Then the names get closer to home. Remember you're a son, he tells his students. What does that name ask? To treat what's yours as your father's, to give way to him, never to speak badly of him to others. Remember you're a brother. That name asks you to yield, to be courteous, and never to fight your brother over things that don't really matter. Then, he says, if you sit on a city council, remember you're a councilor. If you're young, remember you're young. If old, old. If a father, a father. Each name, if you stop and think about it, tells you what to do. His examples are sons, brothers and fathers. The method fits daughters, sisters, parents, partners, coworkers, anyone. And it's simple enough to use at a doorway: before you walk in, ask which name you're carrying into this room, and what that name asks of you.",
+      "voice": "This is Discourses book two, chapter ten: how to find what you owe from the names you carry. Consider who you are, Epictetus says. First, a human being, which means someone with a will, and nothing in you ranks higher than that. Second, a citizen of the world, a part of it, and not a minor part. So act the way a hand or a foot would act if it could think: never just for itself, always as part of the whole body. Then the names come closer to home. Remember you're a son. That name asks you to treat what's yours as your father's, to give way to him, never to speak badly of him to others. Remember you're a brother: yield, be courteous, and never fight your brother over things that don't really matter. If you sit on a city council, remember you're a councilor. If young, young; if old, old; if a father, a father. Each name, if you stop and think about it, tells you what to do. His examples are sons, brothers and fathers. The method fits daughters, sisters, parents, partners, coworkers, anyone. And it's simple enough to use at a doorway: which name am I carrying into this room, and what does it ask of me?",
       "screen": [
         "`FIRST, A HUMAN BEING.` · `A CITIZEN OF THE WORLD.` · `SON, BROTHER, COUNCILOR, FATHER.` · `EACH NAME TELLS YOU WHAT TO DO.` · then, large: `WHO AM I HERE?`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Sit and breathe. Think of the next place you'll walk into today: an office, a kitchen, a classroom, a call. Name who you'll be there: parent, colleague, friend, customer, neighbor. Now ask what that name asks of you. Patience? Honesty? Generosity? Leadership? Let one quality come forward. Picture yourself crossing the doorway carrying that name, and acting from it. The bell holds the time.",
+      "voice": "Think of the next place you'll walk into today, an office, a kitchen, a classroom, a call, and name who you'll be there: parent, colleague, friend, neighbor. Ask what that name asks of you, patience, honesty, generosity, and let one quality come forward. Picture crossing the doorway carrying it.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: each name tells you what to do. At one doorway today, pause and ask it, then act well from that one role. Day four hundred nine.",
+      "voice": "Your line: each name tells you what to do. A human being first, then all the rest. Day four hundred nine.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Some Stoic readers pause before entering a room or conversation to name the role they're stepping into, and ask what it asks of them.",
   "games": {
+    "guess": [
+      "name: each role you carry, and what it asks of you",
+      "a family name passed down from father to son",
+      "a nickname a teacher gives to a student"
+    ],
     "match": {
       "prompt": "who am I here: tap the pairs.",
       "pairs": [
@@ -132,14 +137,43 @@
     ],
     "recall": [
       [
-        "Helvidius Priscus",
-        "the senator who kept going in"
+        "Musonius Rufus",
+        "Epictetus' own teacher"
       ],
       [
-        "prohairesis",
-        "the power to choose"
+        "syngeneia",
+        "kinship: a share in the world's reason"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your coworker",
+      "says": "How do I know what I owe people? Everyone wants something different.",
+      "options": [
+        "Epictetus says look at the name you carry, child, sibling, colleague; each one tells you.",
+        "Epictetus says you owe everyone exactly the same thing, no matter who they are.",
+        "Epictetus says you owe whatever the loudest person around you demands."
+      ],
+      "answer": 0,
+      "meaning": "In 2.10, you're first a human being and a citizen of the world; then son, brother, councilor, father. Each name tells you what to do."
+    },
+    "gloss": {
+      "onoma": {
+        "meaning": "Greek for name",
+        "script": "ὄνομα",
+        "say": "ON-oh-muh"
+      },
+      "citizen of the world": {
+        "meaning": "a Stoic idea: each person is a part of the whole"
+      },
+      "Discourses": {
+        "meaning": "Epictetus' talks, written down by his student Arrian",
+        "say": "DIS-kor-siz"
+      },
+      "Epictetus": {
+        "meaning": "a Stoic teacher, once enslaved and later freed",
+        "say": "ep-ik-TEE-tus"
+      }
+    }
   },
   "sources": [
     {
@@ -156,7 +190,9 @@
       "Discourses 2.10 paraphrased: human being with will as most authoritative; citizen of the world as a principal part; hand and foot analogy; son (yield to the father, never speak ill of him); brother (yield, courtesy, never compete over indifferents); councilor, young, old, father. Confirm details.",
       "The script notes Epictetus addressed young men and extends the method to all roles; check framing.",
       "Kathēkonta and the later 'roles' (e.g. Panaetius' four personae in Cicero, De Officiis 1) alluded to in the trapdoor; confirm.",
-      "Editor review (2026-10-01): the son's duty now matches 2.10 (what is yours belongs to your father, not 'the family'); removed the unsourced claim that his students were young men (teach and myth reveal); hook no longer says 'most of us'; howItsDone 'many' softened to 'some'; trapdoor no longer says 'later writers' developed roles (Panaetius' personae predate Epictetus)."
+      "Editor review (2026-10-01): the son's duty now matches 2.10 (what is yours belongs to your father, not 'the family'); removed the unsourced claim that his students were young men (teach and myth reveal); hook no longer says 'most of us'; howItsDone 'many' softened to 'some'; trapdoor no longer says 'later writers' developed roles (Panaetius' personae predate Epictetus).",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

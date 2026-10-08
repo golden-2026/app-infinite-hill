@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: do less. Your line was ask who actually needs me now. Which task did you cross off, and did anything bad actually happen? Day five hundred fifty-nine.",
+      "voice": "Yesterday: do less, only what's necessary. Your line was ask who actually needs me now.",
       "screen": [
         "`ASK WHO ACTUALLY NEEDS ME NOW.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Find an old photograph of your street, or your town's main square, from about a hundred years ago. Look at the people in it. A man in a hat hurrying somewhere. Two women talking outside a shop. A boy with a bicycle. Each of them was in the middle of something urgent: a debt, a crush, a quarrel with a brother. Every one of those urgencies is finished now. Marcus Aurelius did this exercise without photographs, using an emperor from an earlier generation of Rome. Today: the time of Vespasian.",
+      "voice": "Find an old photograph of your street from about a hundred years ago. A man in a hat hurrying somewhere. Two women talking outside a shop. A boy with a bicycle. Each of them was in the middle of something urgent: a debt, a crush, a quarrel with a brother. Every one of those urgencies is finished now. Marcus Aurelius did this exercise without photographs, using an emperor from an earlier generation of Rome.",
       "screen": [
         "`A PHOTO OF YOUR STREET, 100 YEARS AGO.` → `EVERYONE IN IT, IN A HURRY.` → `THE TIME OF VESPASIAN.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the picture. Think of the times of Vespasian, Marcus writes in the thirty-second entry of book four. Vespasian was an emperor from before Marcus's time. Second, the list. And what do you see? People marrying, raising children, getting sick, dying, fighting wars, feasting, trading, farming, flattering, being stubbornly proud, suspecting, plotting, wishing others dead, grumbling at the present, loving, piling up treasure, longing for high office and for power. It's a list of everything people did then, and everything they do now. Third, all gone. And that whole life of theirs, Marcus says, no longer exists anywhere. Then he does it again, with the emperor Trajan's time, a little closer. Same list. Also gone. Fourth, why look. Marcus isn't doing this to feel gloomy or superior. He's doing it to measure. The quarrel that feels enormous this week is the same size as the quarrels in Vespasian's Rome. The flattering, the plotting, the grumbling: all of it went the way of the man in the hat. Marcus says to look at how many people threw themselves into these things, and then fell, and came apart. What lasts, for him, is not the outcome of the hurry. It's whether, in the middle of it, a person kept to what is right. The exercise shrinks the hurry and leaves the goodness the same size. That's the trade. The worries get smaller. Character doesn't.",
+      "voice": "Think of the times of Vespasian, Marcus writes in book four, entry thirty-two. Vespasian was an emperor from before Marcus's time. And what do you see? People marrying, raising children, getting sick, dying, fighting wars, feasting, trading, farming, flattering, being stubbornly proud, suspecting, plotting, wishing others dead, grumbling at the present, loving, piling up treasure, longing for high office and for power. Everything people did then, and do now. And that whole life of theirs, Marcus says, no longer exists anywhere. Then he does it again with the emperor Trajan's time, a little closer. Same list. Also gone. He isn't doing this to feel gloomy or superior. He's doing it to measure. The quarrel that feels enormous this week is the same size as the quarrels in Vespasian's Rome. Look, he says, at how many threw themselves into these things, and then fell, and came apart. What lasts, for him, is not the outcome of the hurry. It's whether, in the middle of it, a person kept to what is right. The exercise shrinks the hurry, not the good. The worries get smaller. Character doesn't.",
       "screen": [
         "`THINK OF THE TIMES OF VESPASIAN.` · `MARRYING, FARMING, FLATTERING, PLOTTING.` · `THAT WHOLE LIFE IS GONE.` · `IT SHRINKS THE HURRY, NOT THE GOOD.` · then, large: `ALL GONE.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Settle, and breathe. Picture the place you live, a century ago. The same ground, different buildings. People walking, working, worrying, each one sure their worry was the big one. Watch them for a few breaths. Then let the picture fade, the way it has. Now bring up one worry of your own and set it among them. Notice its size there. What's left that still matters? The bell holds the time.",
+      "voice": "Picture the place you live a century ago: the same ground, different buildings, people walking and worrying, each one sure their worry was the big one. Then set one worry of your own among them, and notice its size there. What's left that still matters?",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: all gone. When something feels urgent today, picture it in a hundred-year-old photograph, and see what size it becomes. Day five hundred fifty-nine.",
+      "voice": "Your line: all gone. Every urgency in that old photograph has finished. See you tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Readers of Marcus Aurelius sometimes picture their own town a century ago, as in Meditations 4.32, to see their present worries at their true size.",
   "games": {
+    "guess": [
+      "the emperor whose age Marcus pictures, now all gone",
+      "the emperor Marcus served under as a young man",
+      "a Roman god of time and of things passing"
+    ],
     "match": {
       "prompt": "all gone — tap the pairs.",
       "pairs": [
@@ -132,14 +137,39 @@
     ],
     "recall": [
       [
-        "Severus",
-        "'my brother', probably family by marriage"
+        "Rusticus",
+        "said Marcus's character needed work"
       ],
       [
-        "Alexander",
-        "a teacher of grammar"
+        "Quadi",
+        "a people north of the Danube"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "a friend",
+      "says": "Why would picturing people from long ago help with my stress today?",
+      "options": [
+        "Their urgent worries are all gone now, so mine shrink to their real size.",
+        "It reminds you nothing you do matters at all, so stop caring.",
+        "It shows people back then had real problems, unlike ours today."
+      ],
+      "answer": 0,
+      "meaning": "Marcus pictures Vespasian's age, all its marrying and plotting gone, to measure today's hurry. The worries shrink; doing what's right doesn't."
+    },
+    "gloss": {
+      "Vespasian": {
+        "meaning": "a Roman emperor from before Marcus's time",
+        "say": "veh-SPAY-zhun"
+      },
+      "Trajan": {
+        "meaning": "a later Roman emperor whose time Marcus pictures next",
+        "say": "TRAY-jun"
+      },
+      "Marcus Aurelius": {
+        "meaning": "Roman emperor and Stoic who wrote the Meditations to himself",
+        "say": "MAR-kus aw-REE-lee-us"
+      }
+    }
   },
   "sources": [
     {
@@ -156,7 +186,9 @@
       "4.32 paraphrased: consider the times of Vespasian: people marrying, bringing up children, sick, dying, warring, feasting, trafficking, cultivating the ground, flattering, obstinately arrogant, suspecting, plotting, wishing for some to die, grumbling about the present, loving, heaping up treasure, desiring consulship and kingly power; that life no longer exists; then the times of Trajan, all the same, also dead; consider how many after great efforts soon fell and were resolved into the elements. Confirm list and the 'fell and came apart' phrasing.",
       "Vespasian reigned 69–79 CE; Trajan 98–117 CE. Confirm.",
       "The trapdoor's observation that the exercise moves forward toward Marcus's own time is interpretive; confirm.",
-      "Editor review (year 2, days 558–575): removed reign dates and 'a century before' from the voice, match and original note (not in the cited text); Long's 4.32 gives no dates."
+      "Editor review (year 2, days 558–575): removed reign dates and 'a century before' from the voice, match and original note (not in the cited text); Long's 4.32 gives no dates.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

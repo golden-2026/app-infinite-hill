@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Shalya took command after Duryodhana turned down Kripa's plea for peace. Did you hear the voice that says it isn't too late? Day eight hundred forty-four.",
+      "voice": "Yesterday: Duryodhana turned down Kripa's plea for peace, and Shalya took command. Your line was it isn't too late.",
       "screen": [
         "`SHALYA.` · `KRIPA SAYS MAKE PEACE.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Who should face Shalya? On the Pandava side, the question goes to Krishna, and his answer is not the obvious one. Not Arjuna. Not Bhima. Yudhishthira. The eldest brother, the one who lost everything at dice, the one Karna sent back to camp humiliated just the day before. Shalya is strong, Krishna says, in effect, and you are the one to meet him. Put away your gentleness for today. And Yudhishthira, the man the epic keeps showing us as patient, picks up his weapons. Today, the gentle brother at war, and an old debt from the dice hall paid.",
+      "voice": "Who should face Shalya? On the Pandava side, the question goes to Krishna, and his answer is not the obvious one. Not Arjuna. Not Bhima. Yudhishthira: the eldest brother, the one who lost everything at dice, the one Karna sent back to camp humiliated just the day before. Shalya is strong, Krishna says, in effect, and you are the one to meet him. Put away your gentleness for today. And Yudhishthira, the man the epic keeps showing us as patient, picks up his weapons.",
       "screen": [
         "`WHO SHOULD FACE SHALYA?` → `NOT ARJUNA. NOT BHIMA.` → `YUDHISHTHIRA.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "The fight is long and fierce, and in Ganguli's English the patient king is almost unrecognizable: steady, fearless, pressing forward. Shalya fights hard too. He has led the army since dawn. At last Yudhishthira takes up a dart, a spear made for throwing, and hurls it with all his strength. It strikes Shalya, and the king of Madra falls to the earth. The man who once held Karna's reins, and then led the whole army himself, lies still on the field. The twins have lost their uncle, at their brother's hand. And as Shalya's army breaks, another fight finishes something older. Shakuni, Duryodhana's uncle, the man who threw the dice in the rigged game that cost the Pandavas everything, is still on the field. In the dice hall, years before, the youngest brother Sahadeva had sworn that Shakuni would die by his hand. Now Sahadeva finds him. The dice-master has no dice here. Sahadeva kills him, and the vow from that hall is kept. On a single day, the gentle brother kills a king, and the quiet brother pays back the gambler. The Kaurava army is nearly gone. And Duryodhana, looking around, finds himself almost alone.",
+      "voice": "The fight is long and fierce, and in Ganguli's English the patient king is almost unrecognizable: steady, fearless, pressing forward. Shalya fights hard too; he has led the army since dawn. At last Yudhishthira takes up a dart, a spear made for throwing, and hurls it with all his strength. It strikes Shalya, and the king of Madra falls to the earth. The man who once held Karna's reins, and then led the whole army himself, lies still on the field. The twins have lost their uncle, at their brother's hand. As Shalya's army breaks, another fight finishes something older. Shakuni, Duryodhana's uncle, the man who threw the dice in the rigged game that cost the Pandavas everything, is still on the field. In the dice hall, years before, the youngest brother Sahadeva had sworn that Shakuni would die by his hand. Now Sahadeva finds him. The dice-master has no dice here. Sahadeva kills him, and the vow from that hall is kept. On a single day, the gentle brother kills a king, and the quiet brother pays back the gambler. The Kaurava army is nearly gone. And Duryodhana, looking around, finds himself almost alone.",
       "screen": [
         "`THE PATIENT KING FIGHTS` · `SHALYA FALLS` · `SAHADEVA FINDS SHAKUNI` · then, large: `DURYODHANA ALMOST ALONE`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Sit up, and feel your back straighten without strain. Breathe in, and let some steadiness come. Breathe out. Bring to mind something you've been too gentle to face, a conversation, a task, a decision. Not with anger. Just with steadiness, the kind Yudhishthira found that day. Breathe in, and feel your feet. Breathe out, and let your face soften while your spine stays tall. If you pray, you can ask for that steadiness in your own words. The bell holds the time.",
+      "voice": "Sit up, letting your back straighten without strain, and let your face soften while your spine stays tall. Bring to mind something you've been too gentle to face, and meet it in your mind with steadiness, not anger, the kind Yudhishthira found that day. If you pray, you can ask for that steadiness in your own words.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the vow from that hall is kept. Today, face one thing you've been too gentle to face, steadily, and without anger. Day eight hundred forty-four.",
+      "voice": "Your line: the vow from that hall is kept. The quiet brother remembered. See you tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Yudhishthira's battle with Shalya and Sahadeva's killing of Shakuni are told in the Shalya Parva and in retellings and serials of the Mahabharata, as the moment the war's last vows begin to be kept.",
   "games": {
+    "guess": [
+      "the commander who falls to the patient eldest brother's dart",
+      "the dice-master Sahadeva had sworn to kill",
+      "the Pandava twin who keeps his vow from the dice hall"
+    ],
     "match": {
       "prompt": "the last commander — tap the pairs.",
       "pairs": [
@@ -132,14 +137,47 @@
     ],
     "recall": [
       [
-        "Karna",
-        "the new commander"
+        "Pandu",
+        "the pale one, born to Ambalika"
       ],
       [
-        "Drona",
-        "hid Jayadratha at the back"
+        "arani",
+        "fire-sticks rubbed to light a sacred fire"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your sister",
+      "says": "Gentle Yudhishthira killed Shalya? How did that happen?",
+      "options": [
+        "Krishna chose him to face Shalya, and he fought steadily and threw the dart.",
+        "Arjuna was wounded that day, so Yudhishthira had to fight in his place.",
+        "Shalya surrendered, and Yudhishthira struck him as he laid down his arms."
+      ],
+      "answer": 0,
+      "meaning": "Krishna told Yudhishthira he was the one to meet Shalya. The patient king fought fiercely, and his dart brought Shalya down."
+    },
+    "gloss": {
+      "Sahadeva": {
+        "meaning": "the youngest Pandava brother, one of the twins",
+        "script": "सहदेव",
+        "say": "suh-huh-DAY-vuh"
+      },
+      "Shakuni": {
+        "meaning": "Duryodhana's uncle, who threw the dice in the rigged game",
+        "script": "शकुनि",
+        "say": "SHUH-koo-nee"
+      },
+      "Bhima": {
+        "meaning": "the second Pandava brother, a mighty fighter",
+        "script": "भीम",
+        "say": "BHEE-muh"
+      },
+      "Madra": {
+        "meaning": "Shalya's kingdom",
+        "script": "मद्र",
+        "say": "MUH-druh"
+      }
+    }
   },
   "sources": [
     {
@@ -171,7 +209,10 @@
       "Confirm Sahadeva's vow in the Sabha Parva and that he kills Shakuni in the Shalya Parva on the same day as Shalya's death.",
       "The hook says Karna humiliated Yudhishthira 'only days of fighting ago' and the teach says the dice hall was 'years before'; both are vague on purpose.",
       "The trapdoor's third floor is an interpretation; a Keeper may cut it.",
-      "Audit: 'only days of fighting ago' corrected to 'just the day before' (Karna spared Yudhishthira on the war's seventeenth day; Shalya commands on the eighteenth); 'led the army all day' to 'since dawn', since Shalya falls before the day ends."
+      "Audit: 'only days of fighting ago' corrected to 'just the day before' (Karna spared Yudhishthira on the war's seventeenth day; Shalya commands on the eighteenth); 'led the army all day' to 'since dawn', since Shalya falls before the day ends.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "Recall pairs chosen by hand (2026-10-07) so no old word repeats on nearby days; meanings follow each word's own lesson.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

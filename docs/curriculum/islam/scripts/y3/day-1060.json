@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, a well, a book and a child's prayer, and your line: three doors left open. Did you take the first small step on your lasting good? Day one thousand sixty.",
+      "voice": "Yesterday, a well, a book and a child's prayer: sadaqa jariya. Your line was three doors left open.",
       "screen": [
         "`WHAT WILL YOU LEAVE?`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Who taught you to tie your shoes? The name may be gone already. Try another one. Who taught you the first prayer you knew, or the first verse, or the first words of a language you love? Sometimes a name comes back for that one. Now ask who taught them. And who taught that person. For the Qur'an and the sayings of the Prophet ﷺ, Muslims say the thread doesn't vanish into fog. It runs back, teacher before teacher, to the companions who heard him. Each person along it is one link. Today, the chain.",
+      "voice": "Who taught you to tie your shoes? The name may be gone already. Try another: who taught you the first prayer you knew, or the first verse, or the first words of a language you love? Sometimes that name comes back. Now ask who taught them, and who taught that person. For the Qur'an and the sayings of the Prophet ﷺ, Muslims say the thread doesn't vanish into fog. It runs back, teacher before teacher, to the companions who heard him. Each person along it is one link.",
       "screen": [
         "`WHO TAUGHT YOU?` → `AND WHO TAUGHT THEM?` → `BACK TO THE COMPANIONS.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the word. Open a hadith collection and the reports begin with names: so-and-so told us that so-and-so told him, that so-and-so heard the Prophet say. That list of names is called the isnad, the chain a saying leans on. Scholars weighed each link: was this person honest, careful, did they actually meet the one they quote? Second, why it mattered. In the introduction to Sahih Muslim, the scholar Abdullah ibn al-Mubarak is quoted saying, in effect, that the isnad is part of the religion, and without it anyone could say whatever they liked. The chain was a guard against invention. Third, the chain is people, not paper. Qur'an recitation is still taught face to face, the student reading to a teacher who listens and corrects, and some receive a written permission, an ijaza, that lists their teachers, and their teachers' teachers. A student holding one is holding a list of names. Fourth, how the chain grows. The Prophet said, in Sahih al-Bukhari: convey from me, even a single verse. And in another hadith there: the best of you are those who learn the Qur'an and teach it. So learning is only half of it. The isnad itself names particular transmitters, weighed one by one. But the command to convey asks for as little as one verse, and the same habit of passing on runs through lives no chain records. A mother teaching a du'a. A neighbor showing a new Muslim how to make wudu. A teacher who stayed late. Everything this year has told was carried this way. Not by a book alone, but by a chain of people.",
+      "voice": "First, the word. Open a hadith collection and the reports begin with names: so-and-so told us that so-and-so told him, that so-and-so heard the Prophet say. That list of names is the isnad, the chain a saying leans on. Scholars weighed each link: was this person honest, careful, did they actually meet the one they quote? Second, why it mattered. In the introduction to Sahih Muslim, the scholar Abdullah ibn al-Mubarak is quoted saying, in effect, that the isnad is part of the religion, and without it anyone could say whatever they liked. The chain was a guard against invention. Third, the chain is people, not paper. Qur'an recitation is still taught face to face, the student reading to a teacher who listens and corrects, and some receive a written permission, an ijaza, that lists their teachers, and their teachers' teachers. Fourth, how the chain grows. The Prophet said, in Sahih al-Bukhari: convey from me, even a single verse. And in another hadith there: the best of you are those who learn the Qur'an and teach it. Learning is only half of it. The isnad itself names particular transmitters, weighed one by one. But the command to convey asks for as little as one verse, and the same habit of passing on runs through lives no chain records: a mother teaching a du'a, a neighbor showing a new Muslim how to make wudu, a teacher who stayed late. Everything this year has told was carried this way. Not by a book alone, but by a chain of people.",
       "screen": [
         "`ISNAD: SO-AND-SO TOLD US THAT…` · `A GUARD AGAINST INVENTION.` · `IJAZA: A LIST OF TEACHERS IN YOUR HAND.` · `CONVEY FROM ME, EVEN ONE VERSE.` · then, large: `LEARN THE QUR'AN AND TEACH IT.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: thank your teacher. Settle, and breathe. This time, start from the thing, not the person. Pick one thing you know by heart: a verse, a du'a, a recipe, a rule for fixing things, a line of advice. Say it to yourself once, slowly. Now ask where it came from. Whose voice did you first hear it in? That person is your link. Then try one step further back: where did they get it? If you don't know, that's a question you could ask them. Before the bell, shape one plain sentence you could send them: you taught me this, and I still use it. If you pray, you can make du'a for that teacher, living or gone. The bell holds the time.",
+      "voice": "Pick one thing you know by heart, a verse, a du'a, a recipe, a line of advice, and say it to yourself once, slowly. Then ask whose voice you first heard it in: that person is your link, and if you can, go one step further back to where they got it. If you pray, you can make du'a for that teacher, living or gone; if not, simply hold a quiet thank-you for them.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: a chain of people. Today, send your teacher the sentence you shaped, by message, by call, or, if they're gone, in a prayer. Day one thousand sixty.",
+      "voice": "Your line: a chain of people. What you know came to you through someone. See you tomorrow, for the last day of year three.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Hadith are studied with their chains of narrators, and Qur'an recitation is traditionally learned face to face with a teacher; some receive an ijaza, a permission to teach that names the teachers before them.",
   "games": {
+    "guess": [
+      "the chain of narrators behind a hadith",
+      "a teacher's written permission to teach",
+      "the text of a saying, its actual words"
+    ],
     "match": {
       "prompt": "the chain back to him — tap the pairs.",
       "pairs": [
@@ -132,14 +137,52 @@
     ],
     "recall": [
       [
-        "musaharati",
-        "the Ramadan drummer before dawn"
+        "qibla",
+        "the direction of prayer, toward the Ka'ba"
       ],
       [
-        "fanous",
-        "the Arabic word for lantern"
+        "mahmal",
+        "the litter sent with a Hajj caravan"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your classmate",
+      "says": "How did people know which sayings really came from the Prophet?",
+      "options": [
+        "Scholars checked the isnad, the chain of who told whom, and weighed every link.",
+        "Scholars kept any saying that sounded beautiful, whoever had passed it on.",
+        "Scholars counted how many people liked a saying and kept the popular ones."
+      ],
+      "answer": 0,
+      "meaning": "Hadith begin with a chain of names, the isnad, and scholars weighed each link. Without it, Ibn al-Mubarak is quoted saying, anyone could say anything."
+    },
+    "gloss": {
+      "isnad": {
+        "meaning": "the chain of narrators behind a hadith",
+        "script": "إسناد",
+        "say": "is-NAAD"
+      },
+      "Abdullah ibn al-Mubarak": {
+        "meaning": "an early scholar quoted calling the isnad part of the religion",
+        "script": "عبد الله بن المبارك",
+        "say": "ab-DUL-lah ibn al-mu-BAA-rak"
+      },
+      "ijaza": {
+        "meaning": "a written permission that names one's teachers",
+        "script": "إجازة",
+        "say": "i-JAA-za"
+      },
+      "du'a": {
+        "meaning": "a personal prayer, asking God",
+        "script": "دعاء",
+        "say": "du-AA"
+      },
+      "wudu": {
+        "meaning": "the washing before prayer",
+        "script": "وضوء",
+        "say": "wu-DOO"
+      }
+    }
   },
   "sources": [
     {
@@ -170,7 +213,9 @@
       "Bukhari 3461 ('convey from me even if one verse') and 5027 ('the best of you are those who learn the Qur'an and teach it'): paraphrased without quotation marks in sources; screen head uses the phrase 'learn the Qur'an and teach it' as a paraphrase. Confirm numbers.",
       "Ijaza description (written permission naming one's teachers) kept general with 'some'.",
       "Audit (serious): the teach and a myth reveal said anyone who learned something and passed it on 'became a link' in the chain; in hadith science an isnad link is a named, assessed transmitter, so a hadith scholar would reject this. Teach now separates the technical isnad from the wider habit of passing knowledge on; the myth item replaced with one on Ibn al-Mubarak's saying, taught in the teach.",
-      "Editor: rewrote the hook (was a grandmother teaching the Fatiha, close to day 1050's kitchen-table opening surah) and the practice (was 'see their face', close to day 1050's thank-an-ordinary-believer practice) so today starts from a thing known by heart and traces it back; carry follows the new practice. Cut 'every reciter, every grandmother' and 'many students' (claims rule), cut the 'support' gloss of isnad from teach, original and trapdoor (etymology rule), and cut the cave-of-Hira line that tomorrow's hook uses."
+      "Editor: rewrote the hook (was a grandmother teaching the Fatiha, close to day 1050's kitchen-table opening surah) and the practice (was 'see their face', close to day 1050's thank-an-ordinary-believer practice) so today starts from a thing known by heart and traces it back; carry follows the new practice. Cut 'every reciter, every grandmother' and 'many students' (claims rule), cut the 'support' gloss of isnad from teach, original and trapdoor (etymology rule), and cut the cave-of-Hira line that tomorrow's hook uses.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

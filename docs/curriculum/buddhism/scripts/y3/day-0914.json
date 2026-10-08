@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Huike went looking for his anxious mind. Your line: I can't find it. When you went looking for a worry, what did you find instead? Day nine hundred fourteen.",
+      "voice": "Yesterday: Huike went looking for his anxious mind. Your line: I can't find it.",
       "screen": [
         "`I CAN'T FIND IT.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, who he was. His name was Huineng, and the Platform Sutra lets him tell his own story. His father died when he was young. He and his mother were poor, and he sold firewood in the market to keep them both. He couldn't read or write. Second, what he heard. The text the stranger was reciting was the Diamond Sutra, a teaching on letting go of fixed ideas, even fixed ideas about the Buddha. Huineng asked where he had learned it. The man said: on East Mountain, from the teacher Hongren, who tells everyone to keep this sutra. The Platform Sutra says Huineng made sure his mother was provided for, and then walked north to find him. Third, the first meeting. Hongren asks where he's from and what he wants. Huineng says he's from the far south, and he wants only one thing: to become a Buddha. Hongren tests him with an insult. You're from the south, a barbarian, he says. How could you become a Buddha? Huineng answers: people may be from the north or the south, but Buddha-nature has no north or south. Fourth, the threshing room. Hongren doesn't praise him. He sends him to the back of the monastery to split wood and pound rice, and there Huineng works, unnoticed. Notice where this story puts its turning point: not in a temple hall or a library, but in a market, between a sale and the door, through a stranger who probably never knew. A line can arrive anywhere.",
+      "voice": "First, who he was. His name was Huineng, and the Platform Sutra lets him tell his own story. His father died when he was young. He and his mother were poor, and he sold firewood in the market to keep them both. He couldn't read or write. Second, what he heard. The text the stranger was reciting was the Diamond Sutra, a teaching on letting go of fixed ideas, even fixed ideas about the Buddha. Huineng asked where he had learned it. The man said: on East Mountain, from the teacher Hongren, who tells everyone to keep this sutra. The Platform Sutra says Huineng made sure his mother was provided for, and then walked north to find him. Third, the first meeting. Hongren asks where he's from and what he wants. Huineng says he's from the far south, and he wants only one thing: to become a Buddha. Hongren tests him with an insult. You're from the south, a barbarian, he says. How could you become a Buddha? Huineng answers: people may be from the north or the south, but Buddha-nature has no north or south. Fourth, the threshing room. Hongren doesn't praise him. He sends him to the back of the monastery to split wood and pound rice, and there Huineng works, unnoticed. Notice where this story puts its turning point: not in a temple hall or a library, but in a market, between a sale and the door, through a stranger who probably never knew.",
       "screen": [
         "`A WOODCUTTER WHO CAN'T READ.` · `THE DIAMOND SUTRA IN THE MARKET.` · `BUDDHA-NATURE HAS NO NORTH OR SOUTH.` · `SENT TO POUND RICE.` · then, large: `HEARD IN THE MARKET.`"
       ]
@@ -44,13 +44,13 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: hear one line with fresh ears. Sit comfortably and let the breath settle. Choose a sentence you've heard so often you've stopped hearing it: a saying from your family, a line from a prayer, a phrase from a song. Say it silently, slowly, as if a stranger in a market just said it and you were hearing it for the first time. Let one word stand out. Stay with that word for a few breaths. If nothing opens, that's fine; you've listened. The bell holds the time.",
+      "voice": "Choose a sentence you've heard so often you've stopped hearing it: a saying from your family, a line from a prayer, a phrase from a song. Say it silently and slowly, as if a stranger in a market had just said it, and stay a few breaths with whichever word stands out. If nothing opens, that's fine; you've listened.",
       "screen": []
     },
     {
       "type": "the word",
       "duration": "25 sec",
-      "voice": "The woodcutter. Huineng, who couldn't read, heard the Diamond Sutra in a market and walked north to find the teacher. Today's word.",
+      "voice": "The woodcutter. Huineng, who couldn't read, heard the Diamond Sutra in a market and walked north to find the teacher.",
       "screen": [
         "`THE WOODCUTTER — today's word`."
       ]
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: heard in the market. Today, listen for one sentence from a stranger, a sign or a passing conversation, and let it land. Day nine hundred fourteen.",
+      "voice": "Your line: heard in the market. A line can arrive anywhere. Day nine hundred fourteen, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Chan and Zen communities honor Huineng as the Sixth Ancestor, and the Platform Sutra, his story and teaching, is read and taught in Chinese, Korean, Japanese and Vietnamese temples.",
   "games": {
+    "guess": [
+      "Huineng, who heard a sutra while selling firewood",
+      "a monk who chopped wood as a punishment",
+      "Hongren, the teacher who ran East Mountain"
+    ],
     "match": {
       "prompt": "the woodcutter: tap the pairs.",
       "pairs": [
@@ -132,14 +137,44 @@
     ],
     "recall": [
       [
-        "Xuanzang",
-        "a Chinese monk heading to India for texts"
+        "Attachment",
+        "the pain of parting from what we love"
       ],
       [
-        "An Shigao",
-        "a monk from Parthia"
+        "Xuanzang",
+        "a Chinese monk heading to India for texts"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "a neighbor",
+      "says": "Didn't Huineng have to study for years before anything opened for him?",
+      "options": [
+        "No; the Platform Sutra says he couldn't read, and his mind opened at a sutra in a market.",
+        "Yes, he studied scriptures for years in a temple library before it happened.",
+        "Yes, Hongren had to teach him to read before he could hear anything at all."
+      ],
+      "answer": 0,
+      "meaning": "Huineng sold firewood and couldn't read. The Platform Sutra says his mind opened as he heard a stranger recite the Diamond Sutra."
+    },
+    "gloss": {
+      "Huineng": {
+        "meaning": "the woodcutter Chan honors as its Sixth Ancestor",
+        "say": "hway-NUNG"
+      },
+      "Platform Sutra": {
+        "meaning": "the Chan text in which Huineng tells his own story"
+      },
+      "Diamond Sutra": {
+        "meaning": "a teaching on letting go of fixed ideas"
+      },
+      "Hongren": {
+        "meaning": "the teacher on East Mountain",
+        "say": "hong-REN"
+      },
+      "Buddha-nature": {
+        "meaning": "what Huineng says has no north or south"
+      }
+    }
   },
   "sources": [
     {
@@ -166,7 +201,9 @@
       "howItsDone lists Chinese, Korean, Japanese and Vietnamese temples; confirm.",
       "Original 慧能: confirm pronunciation guide.",
       "Editor: hook now opens on the voice at the door instead of a third object-first opener (wall, firewood, board) within a few days; cut 'he has never studied anything' (not in the text); 'his biography' corrected to the Platform Sutra, his own account.",
-      "Auditor: the reciter was called 'a customer', which blurs him with the customer who bought the firewood in the Platform Sutra; now 'a stranger' (the text says a guest/a man was reciting as Huineng left). Hook reordered so the woodcutter is introduced before the voice he hears."
+      "Auditor: the reciter was called 'a customer', which blurs him with the customer who bought the firewood in the Platform Sutra; now 'a stranger' (the text says a guest/a man was reciting as Huineng left). Hook reordered so the woodcutter is introduced before the voice he hears.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

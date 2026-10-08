@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: four great references, and your line, set the words beside the discourses. Did you trace a quote back to its source? Today, a worry about the future, and four places on a map. Day five hundred forty-nine.",
+      "voice": "Yesterday: mahapadesa, the four great references. Your line: set the words beside the discourses. Today, a worry about the future, and four places on a map.",
       "screen": [
         "`SET THE WORDS BESIDE THE DISCOURSES.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "The Buddha is lying between the twin sal trees at Kusinara now, near the end. And Ananda raises a practical worry. Until now, he says, at the end of every rainy season, monks from all over came to see the Blessed One, and we got to see them, and learn from them. When you're gone, we won't have that. Where will people go? Underneath it sits a plainer question: where do we go now, to feel close? The Buddha's answer is very concrete. Today: four places.",
+      "voice": "The Buddha is lying between the twin sal trees at Kusinara now, near the end. And Ananda raises a practical worry. Until now, he says, at the end of every rainy season, monks from all over came to see the Blessed One, and we got to see them, and learn from them. When you're gone, we won't have that. Where will people go? Underneath it sits a plainer question: where do we go now, to feel close? The Buddha's answer is very concrete.",
       "screen": [
         "`BETWEEN THE SAL TREES.` → `WHERE WILL PEOPLE GO?` → `A CONCRETE ANSWER.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Sit, and picture the four places one at a time. A grove where a child is born. A tree where a man sits until he understands. A deer park where five friends listen. Two sal trees where an old man lies down. Give each one a few breaths. Then, if you like, picture four places in your own life: where you began, where something woke up in you, where you first shared it, and where you let something go. The bell holds the time.",
+      "voice": "Picture the four places one at a time, a few breaths each: a grove where a child is born, a tree where a man sits until he understands, a deer park where five friends listen, two sal trees where an old man lies down. Then, if you like, picture four places in your own life: where you began, where something woke up in you, where you first shared it, and where you let something go.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: places that stir the heart. Today, when you pass a place that matters to you, slow down for one breath and let it stir you. Day five hundred forty-nine.",
+      "voice": "Your line: places that stir the heart. Born, awakened, taught, passed: one life's four turning points. That's day five hundred forty-nine.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Buddhists from across Asia and the world make pilgrimage to Lumbini, Bodh Gaya, Sarnath and Kushinagar, often visiting all four on one journey, chanting, meditating and making offerings at each.",
   "games": {
+    "guess": [
+      "his birth, awakening, first teaching and passing",
+      "the four cities where the Buddha spent the rains",
+      "four shrines that hold the Buddha's relics today"
+    ],
     "match": {
       "prompt": "four places: tap the pairs.",
       "pairs": [
@@ -136,10 +141,44 @@
         "a dwelling of Brahma"
       ],
       [
-        "anukampa",
-        "compassion, care for others' welfare"
+        "sacca",
+        "truth"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your dad",
+      "says": "Did the Buddha ever say there were places worth visiting?",
+      "options": [
+        "Yes: where he was born, awakened, first taught and passed away.",
+        "No; he taught only looking inward, so he never named any places.",
+        "Yes: one great temple, where all his followers must gather yearly."
+      ],
+      "answer": 0,
+      "meaning": "Near the end, the Buddha named four places that stir the heart: birth, awakening, first teaching and final passing. The sutta itself just says here, here, here, here."
+    },
+    "gloss": {
+      "samvejaniya": {
+        "meaning": "stirring, moving; places that stir the heart",
+        "script": "संवेजनीय",
+        "say": "sum-vay-juh-NEE-yuh"
+      },
+      "Kusinara": {
+        "meaning": "the town where the Buddha lay between the sal trees",
+        "say": "koo-si-NAH-ruh"
+      },
+      "Lumbini": {
+        "meaning": "the place tradition names as his birthplace, now in Nepal",
+        "say": "LOOM-bi-nee"
+      },
+      "Bodh Gaya": {
+        "meaning": "the place tradition names for his awakening, under the tree",
+        "say": "bohd GUH-yah"
+      },
+      "Sarnath": {
+        "meaning": "today's name for the deer park at Isipatana",
+        "say": "SAHR-naht"
+      }
+    }
   },
   "sources": [
     {
@@ -156,7 +195,9 @@
       "DN 16 paraphrased. Confirm the passage comes while the Buddha lies at Kusinara, and that the four places are not named in the sutta text.",
       "The Ashokan Rummindei pillar inscription at Lumbini (c. 249 BCE) is in the scholar floor; confirm the dating phrasing 'third century BCE'.",
       "Rebirth in a good destination for those who die on pilgrimage with a confident heart: confirm wording (sugati, sagga).",
-      "Editor review (2026-10-01): removed a line telling the listener what they feel, the two-thousand-years date and an empty uplift line; trapdoor drops the BCE date and says the Ashokan inscription records a royal visit."
+      "Editor review (2026-10-01): removed a line telling the listener what they feel, the two-thousand-years date and an empty uplift line; trapdoor drops the BCE date and says the Ashokan inscription records a royal visit.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

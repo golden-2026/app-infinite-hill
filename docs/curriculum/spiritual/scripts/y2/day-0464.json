@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: Varus. Your line was as I'd be treated. Who had less power than you, and how did you speak to them? Day four hundred sixty-four.",
+      "voice": "Yesterday's word was Varus, whose lost army showed how fortune can swap above and below. Your line was as I'd be treated.",
       "screen": [
         "`VARUS — AS I'D BE TREATED.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "The traffic made me late. The weather put me in a mood. My coworker made me snap. The city is too loud for me to think. Listen to the sentences we say in a single day, and count how many of them put the cause of our trouble somewhere outside the skin. Seneca tells a story about this in the fiftieth letter. It's about a woman in his household who lost her sight and didn't know it, and Seneca himself admits it sounds hard to believe. He tells it, though, to make a point about himself and his readers, not about her. Today: the dark house.",
+      "voice": "The traffic made me late. The weather put me in a mood. My coworker made me snap. Count the sentences in a single day that put the cause of trouble somewhere outside the skin. In the fiftieth letter, Seneca tells a story about this, about a woman in his household who lost her sight and didn't know it. He admits it sounds hard to believe. He tells it to make a point about himself and his readers, not about her.",
       "screen": [
         "`THE TRAFFIC MADE ME LATE.` → `MY COWORKER MADE ME SNAP.` → `A WOMAN WHO DIDN'T KNOW SHE WAS BLIND.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, Harpaste. She had belonged to his wife's household, kept to amuse, a custom Seneca says he himself disliked, and she stayed on in his house as an inherited charge. She had suddenly gone blind. But she didn't know it. She kept asking her attendant to take her somewhere else, because, she said, the house was dark. Second, the turn. What we laugh at in her, Seneca writes, happens to all of us. Nobody thinks they're greedy. Nobody admits they're stingy. The ambitious person says it's just how you get on in Rome. The extravagant one says the city demands it. It's my youth, says another. It's not my fault, I can't help it. Third, the line. Our trouble isn't outside us, he says. It's inside, settled deep in our vital organs. And because we don't know we're sick, getting well is harder. Fourth, the hope. Seneca says it's never too late to be healed, and the mind, unlike the body, can be reshaped at any age, if we start by admitting where the dark actually is. That admission isn't self-hatred. It's the first piece of good news. If the dark is in the house, you have to move. If it's in me, I can do something about it today, wherever I am.",
+      "voice": "Harpaste had belonged to his wife's household, kept to amuse, a custom Seneca says he himself disliked, and she stayed on in his house as an inherited charge. She had suddenly gone blind, but she didn't know it. She kept asking her attendant to take her somewhere else, because, she said, the house was dark. What we laugh at in her, Seneca writes, happens to all of us. Nobody thinks they're greedy. Nobody admits they're stingy. The ambitious person says it's just how you get on in Rome. The extravagant one says the city demands it. It's my youth, says another. It's not my fault, I can't help it. Our trouble isn't outside us, he says. It's inside, settled deep in our vital organs, and because we don't know we're sick, getting well is harder. Then the hope. It's never too late to be healed, and the mind, unlike the body, can be reshaped at any age, if we start by admitting where the dark actually is. That admission isn't self-hatred. It's the first piece of good news. If the dark is in the house, you have to move. If it's in me, I can do something about it, wherever I am.",
       "screen": [
         "`HARPASTE SAYS THE HOUSE IS DARK.` · `NOBODY THINKS THEY'RE GREEDY.` · `THE TROUBLE IS INSIDE US.` · `NEVER TOO LATE TO HEAL.` · then, large: `THE DARK IS IN ME.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Think back over the last week to one moment you blamed on circumstance: the traffic, the weather, someone else's mood. Replay it gently. Then try the other sentence, just to see how it fits: part of that was in me. Impatience, maybe, or worry, or pride. No scolding. Just turning on a light in the right room. Breathe, and notice whether anything feels lighter once it's named. The bell holds the time.",
+      "voice": "Think back to one moment this week you blamed on circumstance, the traffic, the weather, someone else's mood, and replay it gently. Then try the other sentence, just to see how it fits: part of that was in me. No scolding; just turning on a light in the right room.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the dark is in me. Today, catch one it's-not-my-fault sentence before it's finished, and own the part that's yours. Day four hundred sixty-four.",
+      "voice": "Your line: the dark is in me. That's where the light switch is, too. More tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Stoic practitioners often review the day by asking, of each frustration, which part came from outside and which part came from their own judgment or habit.",
   "games": {
+    "guess": [
+      "the woman who went blind and said the house was dark",
+      "a Roman goddess of the night and its shadows",
+      "a servant who ran away from Seneca's household"
+    ],
     "match": {
       "prompt": "the dark house — tap the pairs.",
       "pairs": [
@@ -132,14 +137,38 @@
     ],
     "recall": [
       [
-        "Socrates",
-        "you take yourself along"
+        "Calvisius Sabinus",
+        "bought people to memorize poets"
       ],
       [
-        "Pacuvius",
-        "a funeral feast every evening"
+        "real traces",
+        "what a friend's letter carries"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your roommate",
+      "says": "What's the point of that story about the woman who thought the house was dark?",
+      "options": [
+        "We blame what's outside when the trouble is inside us, and seeing that starts healing.",
+        "That old Roman houses were dark, so people should build bigger windows.",
+        "That it's too late to change once a fault has settled in deep."
+      ],
+      "answer": 0,
+      "meaning": "Letter fifty: our trouble isn't outside us but inside, and it's never too late to heal once we admit where the dark is."
+    },
+    "gloss": {
+      "Harpaste": {
+        "meaning": "a woman in Seneca's household who went blind and blamed the dark house",
+        "say": "har-PAS-tee"
+      },
+      "Seneca": {
+        "meaning": "the Roman Stoic whose letters this path is reading",
+        "say": "SEN-uh-kuh"
+      },
+      "Rome": {
+        "meaning": "the capital city, whose ways get blamed in the excuses"
+      }
+    }
   },
   "sources": [
     {
@@ -162,7 +191,9 @@
       "Letters 50.2: Harpaste, his wife's fatua, an inherited burden; Seneca says he himself dislikes such 'prodigies'. The script describes her role neutrally and keeps the focus on Seneca's point. Check tone, especially around disability.",
       "50.3 the excuses (ambition, extravagance, youth); 50.4 'non est extrinsecus malum nostrum: intra nos est, in visceribus ipsis sedet'; 50.4–6 never too late to heal and the mind's plasticity. Confirm.",
       "'Kept as an entertainer' renders fatua loosely; confirm.",
-      "Editor review (2026-10-01): cut the unsourced superlative 'one of the strangest stories in the collection' (replaced with Seneca's own 'hard to believe, but true', 50.2) and the general claim 'as rich Romans sometimes did'; Harpaste's role now follows 50.2 (his wife's fatua, an inherited charge, a custom Seneca disliked)."
+      "Editor review (2026-10-01): cut the unsourced superlative 'one of the strangest stories in the collection' (replaced with Seneca's own 'hard to believe, but true', 50.2) and the general claim 'as rich Romans sometimes did'; Harpaste's role now follows 50.2 (his wife's fatua, an inherited charge, a custom Seneca disliked).",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

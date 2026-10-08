@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Holy Saturday: the bare altar, the open tabernacle. Your line was the day of waiting. What were you waiting on when the bell rang? Day six hundred sixty-three.",
+      "voice": "Yesterday, Holy Saturday: the bare altar, the open tabernacle. Your line was the day of waiting.",
       "screen": [
         "`THE DAY OF WAITING.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "It's dark outside, and the church is dark inside. A fire is lit at the door. A single tall candle is carried in, and the flame passes hand to hand down the pews until the whole room is lit by small candles. A deacon or cantor sings the Exsultet, the great Easter proclamation. Then everyone sits down, because this is going to take a while. Before anyone says alleluia, the Church opens the Bible at page one and reads its way forward. Today, the readings of that long night.",
+      "voice": "It's dark outside, and the church is dark inside. A fire is lit at the door. A single tall candle is carried in, and the flame passes hand to hand down the pews until the whole room is lit by small candles. A deacon or cantor sings the Exsultet, the great Easter proclamation. Then everyone sits down, because this is going to take a while. Before anyone says alleluia, the Church opens the Bible at page one and reads its way forward.",
       "screen": [
         "`A FIRE AT THE DOOR.` → `ONE CANDLE, THEN HUNDREDS.` → `BACK TO PAGE ONE.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: read Genesis 1 again. Open a Bible or an app to the first page, and read slowly, as if you were in that dark church with a candle in your hand. You don't have to finish. Notice the rhythm: God said, and it was made, and it was good. Then close it and sit. Think about the first light you saw this morning. If you pray, you can thank God for one thing that was made. The bell holds the time.",
+      "voice": "Open a Bible or an app to Genesis 1 and read slowly, as if you were in that dark church with a candle in your hand; you don't have to finish. Notice the rhythm, God said, and it was made, and it was good, then close it and think of the first light you saw this morning. If you pray, you can thank God for one thing that was made.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the whole story in one night. Today, tell someone the shortest version of your own story you can, beginning to now, and see what it was heading toward. Day six hundred sixty-three.",
+      "voice": "Your line: the whole story in one night. From the first light to a heart of flesh. Tomorrow, the alleluia.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "At the Easter Vigil, Catholics gather after dark, light the Easter candle from a new fire, hear up to seven Old Testament readings with psalms, then sing the Gloria and the first alleluia since Lent; adults preparing for baptism are baptized and confirmed at this Mass.",
   "games": {
+    "guess": [
+      "the Easter proclamation sung by candlelight",
+      "the first reading of the Vigil, from Genesis",
+      "the Gloria sung as the bells ring out again"
+    ],
     "match": {
       "prompt": "the readings of the night — tap the pairs.",
       "pairs": [
@@ -132,14 +137,42 @@
     ],
     "recall": [
       [
-        "Bernadette",
-        "a poor, often sick teenager"
+        "bereshit",
+        "in the beginning, the Bible's first word"
       ],
       [
-        "Ananias",
-        "objected, but called him brother"
+        "Nahshon",
+        "the man said to walk into the sea first"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your college roommate",
+      "says": "Why does the Easter Vigil read so much of the Old Testament first?",
+      "options": [
+        "To tell the whole story from creation: Easter is what it was all heading toward.",
+        "Because those are the readings from Lent that hadn't been read aloud yet.",
+        "Because the Old Testament is read only once a year, at this one Mass."
+      ],
+      "answer": 0,
+      "meaning": "The Church's claim is that Easter isn't a lucky ending tacked on; it's what the whole story was heading toward, from the first light."
+    },
+    "gloss": {
+      "Exsultet": {
+        "meaning": "the great Easter proclamation, sung by candlelight",
+        "say": "ex-SOOL-tet"
+      },
+      "Baruch": {
+        "meaning": "a prophet's book praising wisdom, read at the Vigil",
+        "say": "bah-ROOK"
+      },
+      "Ezekiel": {
+        "meaning": "the prophet who promises a heart of flesh for one of stone",
+        "say": "ih-ZEE-kee-ul"
+      },
+      "Red Sea": {
+        "meaning": "the sea Israel crossed from slavery to freedom"
+      }
+    }
   },
   "sources": [
     {
@@ -175,7 +208,9 @@
       "The altar candles lit before the Gloria and bells rung: standard rubric; confirm.",
       "Adult baptism at the Vigil (RCIA/OCIA) occurs after the homily, in the Baptismal Liturgy; 'right after the readings' is simplified; confirm.",
       "The Exsultet may be sung by a deacon, priest or cantor.",
-      "Editor review (2026-10-01): cut 'hundreds of small candles' (a count) and 'something it does on no other night' (unsourced superlative); the candle no longer 'is meant to echo' Genesis (an unsourced intention); 'Many adults... right after the readings' corrected to baptism after the readings and the homily, without the 'many' claim."
+      "Editor review (2026-10-01): cut 'hundreds of small candles' (a count) and 'something it does on no other night' (unsourced superlative); the candle no longer 'is meant to echo' Genesis (an unsourced intention); 'Many adults... right after the readings' corrected to baptism after the readings and the homily, without the 'many' claim.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

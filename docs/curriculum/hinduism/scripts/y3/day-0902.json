@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, rasa lila ended: the search, the song by the river, and the circle with Krishna between every two gopis. What did you remember, when you missed someone yesterday? Day nine hundred two.",
+      "voice": "Yesterday: rasa lila ended. The search, the song by the river, and the circle, with Krishna between every two gopis.",
       "screen": [
         "`RASA LILA.` · `BETWEEN EVERY TWO.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A chariot is on the road to Vraja, and the man driving it is carrying a trap. King Kamsa of Mathura has learned that the cowherd boy everyone talks about is the son he was warned of, the one born to kill him. So Kamsa plans a festival, a contest of wrestlers, and an elephant at the gate. All he needs is someone the boys will trust to bring them. He chooses Akrura, a respected elder of their own clan. Akrura agrees to go. Today the story turns toward the road out of the village: leaving Vrindavan.",
+      "voice": "A chariot is on the road to Vraja, and its driver is carrying a trap. King Kamsa of Mathura has learned that the cowherd boy everyone talks about is the son he was warned of, the one born to kill him. So Kamsa plans a festival: a contest of wrestlers, and an elephant at the gate. All he needs is someone the boys will trust to bring them. He chooses Akrura, a respected elder of their own clan. Akrura agrees to go.",
       "screen": [
         "`A CHARIOT CARRYING A TRAP.` → `KAMSA NEEDS A MESSENGER.` → `AKRURA AGREES TO GO.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Here is the surprise. Akrura is Kamsa's messenger, and Krishna's devotee. The Bhagavata spends the whole ride inside his head, and what's in there isn't dread. It's longing. All the way down the road he is turning one thought over: I'm going to see him. He wonders whether Krishna will look at him kindly, whether he'll be welcomed or held at arm's length as the king's man. He counts the long errand as good fortune, because of where it ends. He reaches Vraja at sunset, when the cows are coming home. And in the dust of the cow pen he sees footprints, and he knows whose they are; the text says they carry the marks devotees look for on the soles of Krishna's feet. Akrura jumps down from his chariot and rolls in that dust, overcome. Then Krishna and Balarama come out to meet him. They don't hold him at arm's length. The brothers embrace him, take his hand, lead him in, wash his feet and feed him. Krishna asks after his family, and only then asks what brought him. And Akrura, the king's messenger, tells them everything: Kamsa's hatred, the festival, the plan. Krishna and Balarama laugh, and agree to go. So the road out of Vrindavan begins with a man who came carrying the king's summons, and spent the journey hoping. Two loyalties ride in that chariot, and the story doesn't scold him for either one. It just lets us watch a man doing a hard errand with his heart pointed somewhere else.",
+      "voice": "Here's the surprise. Akrura is Kamsa's messenger, and Krishna's devotee. The Bhagavata spends the whole ride inside his head, and what's there isn't dread. It's longing. All the way he turns one thought over: I'm going to see him. Will Krishna look at him kindly, or hold him at arm's length as the king's man? He counts the long errand as good fortune, because of where it ends. He reaches Vraja at sunset, as the cows come home. In the dust of the cow pen he sees footprints, and knows whose they are; the text says they carry the marks devotees look for on the soles of Krishna's feet. Akrura jumps down from his chariot and rolls in that dust, overcome. Then Krishna and Balarama come out to meet him. No arm's length. The brothers embrace him, take his hand, lead him in, wash his feet and feed him. Krishna asks after his family, and only then asks what brought him. And Akrura, the king's messenger, tells them everything: Kamsa's hatred, the festival, the plan. Krishna and Balarama laugh, and agree to go. Two loyalties ride in that chariot, and the story doesn't scold him for either. It lets us watch a man doing a hard errand with his heart pointed somewhere else.",
       "screen": [
         "`THE KING'S MAN, AND KRISHNA'S DEVOTEE.` · `FOOTPRINTS IN THE DUST.` · `WASHED, FED, ASKED AFTER.` · then, large: `HE TELLS THEM EVERYTHING.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Sit, and let your breath slow down. Bring to mind one errand or duty ahead of you that you'd rather not do. Hold it lightly. Now look past it, the way Akrura looked down the road: who or what will be at the end of it? A person, a finished job, a quiet evening. Breathe with that. You don't have to love the errand. Just let your heart point at what it's for. If you pray, you can offer the errand to God, or to Krishna, before you begin it. The bell holds the time.",
+      "voice": "Bring to mind one errand ahead that you'd rather not do, and hold it lightly. Then look past it, the way Akrura looked down the road, to who or what waits at the end, and breathe with that; you don't have to love the errand. If you pray, you can offer it to God, or to Krishna, before you begin.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: Akrura in the dust. Today, before a task you dread, name one good thing waiting at the far end of it. Day nine hundred two.",
+      "voice": "Your line: Akrura in the dust. He carried the king's summons and spent the road hoping. Day nine hundred two.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Akrura is remembered by devotees as a model of longing to see God; the chapters of his journey to Vraja are recited from the Bhagavata, and pilgrims to the Vrindavan area visit places linked with the story.",
   "games": {
+    "guess": [
+      "the turn where Krishna leaves his village for Mathura",
+      "the gopis' move to the city to follow Krishna",
+      "the exile of the cowherds after a great flood"
+    ],
     "match": {
       "prompt": "the road to Vraja — tap the pairs.",
       "pairs": [
@@ -130,14 +135,52 @@
       "what it means: Kamsa's summons, carried by Akrura, pulls him toward Mathura and a trap.",
       "what a scholar hears: the Bhagavata tells the ride from inside Akrura's mind: a messenger of the enemy, full of devotion."
     ],
+    "chat": {
+      "who": "your uncle",
+      "says": "Wait, Akrura was working for Kamsa? Why do devotees honor him?",
+      "options": [
+        "He carried the king's summons, but longed for Krishna all the way and told him the plan.",
+        "He secretly turned back halfway, so the summons never reached Vraja at all.",
+        "He refused to go at all, so Kamsa had to send the elephant instead."
+      ],
+      "answer": 0,
+      "meaning": "Akrura was Kamsa's messenger and Krishna's devotee. He rode with longing, rolled in Krishna's footprints, and told the brothers Kamsa's plan."
+    },
+    "gloss": {
+      "Akrura": {
+        "meaning": "an elder of Krishna's clan, sent by Kamsa to fetch him",
+        "script": "अक्रूर",
+        "say": "uh-KROO-ruh"
+      },
+      "Kamsa": {
+        "meaning": "the king of Mathura, who fears Krishna",
+        "script": "कंस",
+        "say": "KUM-suh"
+      },
+      "Mathura": {
+        "meaning": "Kamsa's city on the Yamuna",
+        "script": "मथुरा",
+        "say": "MUH-too-rah"
+      },
+      "Vraja": {
+        "meaning": "the cowherd country where Krishna grew up",
+        "script": "व्रज",
+        "say": "VRUH-juh"
+      },
+      "Balarama": {
+        "meaning": "Krishna's elder brother",
+        "script": "बलराम",
+        "say": "buh-luh-RAH-muh"
+      }
+    },
     "recall": [
       [
-        "maya",
-        "a veil, here shaped like a mother's love"
+        "Putana",
+        "the demoness Kamsa sent with poison"
       ],
       [
-        "Putana",
-        "comes as a beautiful woman"
+        "Bhima",
+        "the strong one of the five brothers"
       ]
     ]
   },
@@ -158,7 +201,9 @@
       "The marks on Krishna's soles (lotus, flag, etc.) are not listed in the script; confirm the paraphrase 'the marks devotees look for'.",
       "howItsDone mentions pilgrimage places linked with the story; confirm or cut.",
       "Original: वृन्दावन; confirm pronunciation for Hindi vs Sanskrit.",
-      "Editor pass: in 10.38 Balarama does much of the welcoming (leading him in, washing his feet), so the welcome is now given to both brothers in the teach, match and myth; cut 'Akrura can't refuse the king', which the text does not say."
+      "Editor pass: in 10.38 Balarama does much of the welcoming (leading him in, washing his feet), so the welcome is now given to both brothers in the teach, match and myth; cut 'Akrura can't refuse the king', which the text does not say.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

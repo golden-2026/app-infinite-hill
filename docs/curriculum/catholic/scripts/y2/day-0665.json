@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Easter Sunday, and the word that came back. Your line was alleluia. Did you say it out loud? Day six hundred sixty-five.",
+      "voice": "Yesterday, Easter Sunday and the word that came back. Your line was alleluia.",
       "screen": [
         "`ALLELUIA.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Most parties end when the guests go home. The dishes are done Monday, and by Tuesday it's just Tuesday. The Church does something odd with Easter. On Monday the Gloria is sung again. On Tuesday, again. All week the prayers at Mass keep saying this day, today, as if the sun hadn't set. The dismissal still ends with a double alleluia. In parts of Europe, Easter Monday is a public holiday, and the visiting goes on. It's as if the calendar refuses to turn the page. Today's word is the name for that refusal.",
+      "voice": "Most parties end when the guests go home. By Tuesday it's just Tuesday. The Church does something odd with Easter. On Monday the Gloria is sung again. On Tuesday, again. All week the prayers at Mass keep saying this day, today, as if the sun hadn't set, and the dismissal still ends with a double alleluia. In parts of Europe, Easter Monday is a public holiday, and the visiting goes on. The calendar refuses to turn the page.",
       "screen": [
         "`THE GLORIA ON MONDAY.` → `STILL SAYING THIS DAY.` → `THE PAGE DOESN'T TURN.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: keep Easter going all week. Sit for a moment and pick one thing from Sunday that you can repeat each day until next Sunday. A candle at dinner. One alleluia at the door as you leave. A piece of chocolate saved for each evening. A flower on the table. Make it small enough that you'll actually do it. If you pray, you can say the Gloria, or just the line this is the day the Lord hath made. The bell holds the time.",
+      "voice": "Pick one small thing from Sunday you could repeat each day until next Sunday: a candle at dinner, one alleluia at the door, a flower on the table, a piece of chocolate saved for each evening. Hold it in mind, small enough to keep. If you pray, you can say the Gloria, or just the line this is the day the Lord hath made.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: one long day. Today, when it feels like an ordinary weekday, do your small Easter thing anyway, and let Sunday keep going. Day six hundred sixty-five.",
+      "voice": "Your line: one long day. Eight days, one Easter, and the page still hasn't turned. Day six hundred sixty-five.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "During the Easter octave Catholics celebrate each day from Easter Sunday to the following Sunday as a solemnity, with the Gloria at Mass and a double alleluia at the dismissal; in many countries Easter Monday is a public holiday.",
   "games": {
+    "guess": [
+      "a feast kept for eight days as one",
+      "the eighth note of a hymn, sung higher",
+      "a week of fasting after a great feast"
+    ],
     "match": {
       "prompt": "the octave — tap the pairs.",
       "pairs": [
@@ -132,14 +137,42 @@
     ],
     "recall": [
       [
-        "Bernadette",
-        "a poor, often sick teenager"
+        "baptizo",
+        "to plunge or immerse, as in baptism"
       ],
       [
-        "Ananias",
-        "objected, but called him brother"
+        "sursum corda",
+        "lift up your hearts"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your aunt",
+      "says": "Why is the Gloria still sung at Mass on the Tuesday after Easter?",
+      "options": [
+        "It's the octave: the first eight days of Easter are kept as one great day.",
+        "Easter week just reuses Sunday's prayers until the new ones are ready.",
+        "The Gloria is sung at every weekday Mass of the year, Easter or not."
+      ],
+      "answer": 0,
+      "meaning": "The first eight days of the Easter season make up its octave, celebrated as solemnities: one great day stretched across eight."
+    },
+    "gloss": {
+      "octava": {
+        "meaning": "Latin: the eighth",
+        "say": "ok-TAH-vah"
+      },
+      "solemnities": {
+        "meaning": "feasts of the highest rank in the Church's calendar",
+        "say": "suh-LEM-nih-teez"
+      },
+      "Liturgy of the Hours": {
+        "meaning": "the Church's daily prayer, prayed at set hours"
+      },
+      "Justin Martyr": {
+        "meaning": "an early Christian writer who called Sunday the eighth day",
+        "say": "JUS-tin MAR-ter"
+      }
+    }
   },
   "sources": [
     {
@@ -170,7 +203,9 @@
       "Eight-sided baptisteries/fonts (e.g. the Lateran baptistery; Ambrose's inscription at Milan); stated as 'often'; confirm.",
       "Newly baptized wearing white through the week (hence 'Sunday in white', Dominica in albis): traditional; confirm.",
       "Week 95 look-back lists days 659–665.",
-      "Editor review (2026-10-01): 'the Psalm... keeps being sung all week' was inaccurate for Mass (the octave's weekday responsorial psalms vary); now placed in the Liturgy of the Hours, where 'This is the day' replaces the responsory through the octave (confirm). 'Some of the earliest Christian writers' now names Barnabas and Justin; eight-sided fonts softened to 'some old fonts... some readers'; white garments as 'tradition says'; cut 'once there were many' and 'the holiest stretch of the year'."
+      "Editor review (2026-10-01): 'the Psalm... keeps being sung all week' was inaccurate for Mass (the octave's weekday responsorial psalms vary); now placed in the Liturgy of the Hours, where 'This is the day' replaces the responsory through the octave (confirm). 'Some of the earliest Christian writers' now names Barnabas and Justin; eight-sided fonts softened to 'some old fonts... some readers'; white garments as 'tradition says'; cut 'once there were many' and 'the holiest stretch of the year'.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: aktines. Your line was poured out. Whom did your attention reach today, and did it run out? Day six hundred five.",
+      "voice": "Yesterday's word was aktines, rays that pour out without being used up. Your line was poured out.",
       "screen": [
         "`POURED OUT.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Somebody at work does it wrong again. The same report, the same mistake, the same cheerful shrug. You have a few options. Explain it, one more time. Let it go. Or the third thing, the one that tends to happen without anyone deciding on it: stew, complain about them to someone else, and slowly come to dislike them. Marcus has an entry in book eight that's only two short sentences long, and it leaves that third option out. Today: the third door.",
+      "voice": "Somebody at work does it wrong again. Same report, same mistake, same cheerful shrug. You have a few options. Explain it, one more time. Let it go. Or the third thing, the one that tends to happen without anyone deciding on it: stew, complain about them to someone else, and slowly come to dislike them. Marcus has an entry in book eight only two short sentences long, and it leaves that third option out.",
       "screen": [
         "`THE SAME MISTAKE AGAIN.` → `THREE OPTIONS.` → `TEACH OR BEAR WITH THEM.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the line, in George Long's 1862 translation: “Men exist for the sake of one another. Teach them then or bear with them.” That's the whole entry. Second, the reason comes first. Before the advice, Marcus lays the ground under it: people are for each other. The idea comes back again and again in the Meditations. We're made to work together, like hands, or feet, or eyelids, or the rows of upper and lower teeth, an image he used back in book two. If that's true, then the person who frustrates you is still someone you exist for. Third, two doors. If you can show them a better way, teach. Not lecture, not win: teach, which means you actually want them to understand. And if you can't, because they won't listen, or it isn't your place, or you've already tried, then bear with them. Put up with them. Carry it. Fourth, the missing door. Notice what isn't on the list: resent them, gossip about them, write them off. Marcus doesn't argue against those here. He just doesn't offer them. This note quietly shuts that third door. And it works in both directions. Somewhere, someone is deciding right now whether to teach you or bear with you.",
+      "voice": "Here it is, in George Long's 1862 translation: “Men exist for the sake of one another. Teach them then or bear with them.” That's the whole entry. The reason comes first: people are for each other. The idea comes back again and again in the Meditations. We're made to work together, like hands, or feet, or eyelids, or the rows of upper and lower teeth, an image he used back in book two. If that's true, the person who frustrates you is still someone you exist for. Then two doors. If you can show them a better way, teach. Not lecture, not win: teach, which means you actually want them to understand. And if you can't, because they won't listen, or it isn't your place, or you've already tried, then bear with them. Put up with them. Carry it. Now notice what isn't on the list: resent them, gossip about them, write them off. Marcus doesn't argue against those here. He just doesn't offer them, and so the note quietly shuts that third door. It works in both directions, too. Somewhere, someone is deciding right now whether to teach you or bear with you.",
       "screen": [
         "`MEN EXIST FOR ONE ANOTHER.` · `MADE TO WORK TOGETHER.` · `DOOR ONE: TEACH. DOOR TWO: BEAR.` · `NO THIRD DOOR.` · then, large: `TEACH OR BEAR.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Settle, and breathe. Think of one person who frustrates you, in a small, ordinary way. Picture the thing they do. Now ask honestly: is this something I can teach? Is there a kind, clear way to show them, one they could actually hear? If yes, picture saying it, gently, once. If no, picture bearing it: letting it pass through you without the stewing. Choose one door for this person. Breathe with that choice. The bell holds the time.",
+      "voice": "Think of one person who frustrates you in a small, ordinary way, and ask honestly: is there a kind, clear way to show them, one they could actually hear? If yes, picture saying it gently, once. If no, picture bearing it, letting it pass through you without the stewing, and breathe with the door you chose.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: teach or bear. Today, teach one person something kindly, or bear with one person quietly. Skip the third door. Day six hundred five.",
+      "voice": "Your line: teach or bear. Two doors, both kind, and no third. See you tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "People who live by this line of Marcus often make the choice consciously when someone frustrates them: either explain once, kindly, or let it go without resentment.",
   "games": {
+    "guess": [
+      "the option Marcus leaves out: resent and gossip",
+      "the patient choice to bear with someone",
+      "a last chance before you end a friendship"
+    ],
     "match": {
       "prompt": "teach or bear with them — tap the pairs.",
       "pairs": [
@@ -132,14 +137,36 @@
     ],
     "recall": [
       [
-        "Antoninus",
-        "the name being spelled"
+        "Rusticus",
+        "the teacher who gave Marcus Epictetus"
       ],
       [
-        "hegemonikon",
-        "the ruling part, the steering center"
+        "officium",
+        "Latin for duty, service"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your coworker",
+      "says": "The new guy botched the report again. Want to grab coffee and vent about him?",
+      "options": [
+        "Marcus would say teach him or bear with him. Want to help me show him how?",
+        "Marcus says venting is fine as long as the new guy never finds out.",
+        "Marcus says after one mistake we've done our part and can write him off."
+      ],
+      "answer": 0,
+      "meaning": "In 8.59 Marcus gives two doors, teach them or bear with them, because people exist for one another. Resenting and gossiping aren't offered."
+    },
+    "gloss": {
+      "George Long": {
+        "meaning": "translator of the Meditations into English, 1862"
+      },
+      "Meditations": {
+        "meaning": "Marcus's twelve books of private notes to himself"
+      },
+      "Marcus": {
+        "meaning": "Marcus Aurelius, Roman emperor who wrote the Meditations"
+      }
+    }
   },
   "sources": [
     {
@@ -162,7 +189,9 @@
       "Confirm the exact wording of Long's 8.59: 'Men exist for the sake of one another. Teach them then or bear with them.'",
       "2.1: 'like feet, like hands, like eyelids, like the rows of the upper and lower teeth.' Confirm.",
       "Original: ἀλλήλων as in 'for the sake of one another' (ἀλλήλων ἕνεκεν). Confirm the Greek of 8.59.",
-      "Editor review (2026-10-01): cut the 'most of us choose' and 'a lot of offices and families run on' generalizations, the invented 'fifth time' count, the intent claim 'on purpose', and softened 'runs all through the book'."
+      "Editor review (2026-10-01): cut the 'most of us choose' and 'a lot of offices and families run on' generalizations, the invented 'fifth time' count, the intent claim 'on purpose', and softened 'runs all through the book'.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

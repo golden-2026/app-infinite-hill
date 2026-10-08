@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Suleyman the Lawgiver: kanun beside the sharia, and justice even against yourself. Your line was: the lawgiver. Which rule did you keep fairly? Day nine hundred eighty-five.",
+      "voice": "Yesterday: Suleyman the Lawgiver, and kanun beside the sharia. Your line was the lawgiver.",
       "screen": [
         "`THE LAWGIVER.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: look at a dome. If you're near one, a mosque, a church, a station, a planetarium, go and look up. If not, search for a photo of the inside of the Suleymaniye's dome, or simply look up at whatever ceiling is above you right now. Settle, and breathe. Notice where the light comes from. Notice how the shape gathers your eyes upward. If you pray, you can let the looking become prayer. If you don't, let it simply be looking. The bell holds the time.",
+      "voice": "Look up at whatever ceiling is above you, or at a photo of the inside of the Suleymaniye's dome. Notice where the light comes from, and how the shape gathers your eyes upward. If you pray, you can let the looking become prayer.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the architect. Today, look up inside one building you use every day, and notice where its light comes from. Day nine hundred eighty-five.",
+      "voice": "Your line: the architect. He rests near the sultan he served, but not inside. Day nine hundred eighty-five, and still looking up.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Sinan's mosques, including the Suleymaniye in Istanbul and the Selimiye in Edirne, are still used for daily and Friday prayers, with worshipers in rows under their domes.",
   "games": {
+    "guess": [
+      "the soldier-engineer who became chief Ottoman architect",
+      "the sultan who paid for the great mosque on the hill",
+      "an Ottoman word for a dome that is full of light"
+    ],
     "match": {
       "prompt": "Sinan the architect — tap the pairs.",
       "pairs": [
@@ -132,14 +137,47 @@
     ],
     "recall": [
       [
-        "mansa",
-        "the king of Mali"
+        "Constantinople",
+        "the Byzantine capital, later Istanbul"
       ],
       [
-        "Misr",
-        "Egypt, in Arabic and in the Qur'an"
+        "Ibn Khaldun",
+        "historian: bonds build, luxury loosens"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your friend who loves buildings",
+      "says": "What was Sinan going for in his mosques?",
+      "options": [
+        "Space and light: open rooms where rows of worshipers share one unbroken dome.",
+        "Height above all: the tallest minarets the empire had ever seen.",
+        "Mystery: dark, narrow halls that keep worshipers apart from each other."
+      ],
+      "answer": 0,
+      "meaning": "Sinan chased space and light: under his domes, rows of worshipers on one carpet share a single, unbroken sky."
+    },
+    "gloss": {
+      "Sinan": {
+        "meaning": "soldier-engineer who became the Ottoman chief architect",
+        "script": "سنان",
+        "say": "si-NAAN"
+      },
+      "Suleymaniye": {
+        "meaning": "Sinan's mosque complex in Istanbul, built for Suleyman",
+        "say": "soo-lay-MAH-nee-yeh"
+      },
+      "Selimiye": {
+        "meaning": "Sinan's mosque in Edirne, which he called his masterpiece",
+        "say": "seh-LEE-mee-yeh"
+      },
+      "Edirne": {
+        "meaning": "a city in Turkey, home of the Selimiye",
+        "say": "eh-DEER-neh"
+      },
+      "Golden Horn": {
+        "meaning": "the curved harbor of Istanbul"
+      }
+    }
   },
   "sources": [
     {
@@ -165,7 +203,9 @@
       "Sinan's early life is given as 'taken as a young man into the sultan's service' (the devshirme) without naming his birth faith or dates; confirm.",
       "The apprentice / journeyman / master ranking (Şehzade, Süleymaniye, Selimiye) comes from his memoirs as written by Sai Mustafa Çelebi; confirm the attribution and the reading of the early mosque as the Şehzade.",
       "Description of the Suleymaniye complex (madrasas, hospital, soup kitchen, hammam, shops) and the locations of Suleyman's and Sinan's tombs should be confirmed.",
-      "Pickthall 24:35 opening quoted; confirm."
+      "Pickthall 24:35 opening quoted; confirm.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

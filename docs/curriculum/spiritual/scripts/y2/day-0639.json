@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: Pierre Hadot, and the five themes: death, the whole, duty, kindness, the present. Your line was my theme. Which one did you write down? Day six hundred thirty-nine.",
+      "voice": "Yesterday's word was Pierre Hadot, who found five themes in the notebook: death, the whole, duty, kindness, the present. Your line was my theme.",
       "screen": [
         "`MY THEME.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Notes app, a voice memo, the back of a receipt. Plenty of people write to themselves: grocery lists, reminders, half a thought at 2am. None of it is meant for anyone else, and much of it gets deleted. Marcus Aurelius did something similar, in Greek, and by the book's own headings, some of it in army camps on the frontier. He didn't write for us. He wrote to himself, the way you'd leave a note on the fridge. And it survived. Today: Carnuntum.",
+      "voice": "Notes app, a voice memo, the back of a receipt. Plenty of people write to themselves: grocery lists, reminders, half a thought at 2am. None of it is meant for anyone else, and much of it gets deleted. Marcus Aurelius did something similar, in Greek, and by the book's own headings, some of it in army camps on the frontier. He didn't write for us. He wrote to himself, the way you'd leave a note on the fridge. And it survived.",
       "screen": [
         "`NOTES APP, VOICE MEMO, A RECEIPT.` → `GREEK, IN AN ARMY CAMP.` → `YOUR OWN NOTEBOOK.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the title. In the old manuscripts the book is called Ta eis heauton: the things to himself. Scholars doubt Marcus gave it that name, but it fits. Meditations is a later English title. Second, the place. Two of the books carry little headings: one written among the Quadi, by the river Granua; another at Carnuntum, an army base on the Danube. So at least some of it was written on campaign, by an emperor at war on the frontier. Not in a library. Third, how he talks. Read any page and notice the voice: you. You'll meet difficult people today. You're getting angry again. Remember. He isn't explaining Stoicism to a reader. He's coaching the one person who most needs it, and he's honest with him. He repeats himself. He scolds himself. He changes his mind. That's what a notebook is for. Fourth, why it works. Writing a rule down is different from knowing it. The pen slows you down. It makes the vague thing exact. And rereading your own words, later, in your own handwriting, lands differently from reading anyone else's. Marcus wasn't writing a classic. He was practicing, the way a musician practices scales, and the practice happened to be on paper. Nothing stops anyone from doing the same. No Greek, no empire, no audience required. Three honest lines, to yourself, are already a notebook.",
+      "voice": "First, the title. In the old manuscripts the book is called Ta eis heauton: the things to himself. Scholars doubt Marcus gave it that name, but it fits. Meditations is a later English title. Second, the place. Two of the books carry little headings: one written among the Quadi, by the river Granua; another at Carnuntum, an army base on the Danube. So at least some of it was written on campaign, by an emperor at war on the frontier, not in a library. Third, the voice. Read any page and it's you: you'll meet difficult people today; you're getting angry again; remember. He isn't explaining Stoicism to a reader. He's coaching the one person who most needs it, and he's honest with him. He repeats himself, scolds himself, changes his mind. That's what a notebook is for. Fourth, why it works. Writing a rule down is different from knowing it. The pen slows you down and makes the vague thing exact. And your own words, reread later in your own handwriting, land differently from anyone else's. Marcus wasn't writing a classic. He was practicing, the way a musician practices scales, and the practice happened to be on paper. No Greek, no empire, no audience required. Three honest lines to yourself are already a notebook.",
       "screen": [
         "`TA EIS HEAUTON: TO HIMSELF.` · `WRITTEN ON CAMPAIGN BY A RIVER.` · `THE VOICE IS \"YOU.\"` · `THE PEN MAKES IT EXACT.` · then, large: `TO MYSELF.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "If you can, get something to write with: paper, or the notes on your phone. Breathe once or twice. Now write three lines to yourself, the way Marcus did, using you. One line about something you keep forgetting. One about a person you'll see today. One about what matters most this week. Don't make them pretty. Make them true. Then read them back once, slowly, as if someone who loves you wrote them. The bell holds the time.",
+      "voice": "If you have paper or the notes on your phone, write three lines to yourself the way Marcus did, using you: one about something you keep forgetting, one about a person you'll see today, one about what matters most this week. Don't make them pretty; make them true. Then read them back once, slowly, as if someone who loves you wrote them.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: to myself. Before you sleep, reread your three lines, and add one more, about what today taught you. Day six hundred thirty-nine.",
+      "voice": "Your line: to myself. The notebook was never meant for anyone else. Good to see you today.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Many people who read Marcus keep a private notebook of their own, writing short reminders to themselves in the second person and rereading them.",
   "games": {
+    "guess": [
+      "an army base on the Danube where Marcus wrote",
+      "the Latin name for Marcus's private notebook",
+      "a river where Marcus fought the Quadi tribe"
+    ],
     "match": {
       "prompt": "your own notebook. tap the pairs.",
       "pairs": [
@@ -132,14 +137,44 @@
     ],
     "recall": [
       [
-        "aktines",
-        "rays, in Greek"
+        "Nestor",
+        "an old king who outlived two generations"
       ],
       [
-        "Antoninus",
-        "the name being spelled"
+        "galene",
+        "a sea gone flat after the wind"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your coworker",
+      "says": "Did Marcus Aurelius write the Meditations as a book for the public?",
+      "options": [
+        "No, he wrote to himself, partly on campaign, coaching himself as you.",
+        "Yes, he wrote it as a guide to Stoicism for future emperors.",
+        "Yes, he gave it as lectures to his students in Rome."
+      ],
+      "answer": 0,
+      "meaning": "The old title means the things to himself. He coaches himself as you, repeats and scolds himself, as a notebook does."
+    },
+    "gloss": {
+      "Ta eis heauton": {
+        "meaning": "the old Greek title: the things to himself",
+        "script": "τὰ εἰς ἑαυτόν",
+        "say": "tah ays heh-ow-TON"
+      },
+      "Carnuntum": {
+        "meaning": "a Roman army base on the Danube frontier",
+        "say": "kar-NOON-tum"
+      },
+      "Quadi": {
+        "meaning": "a people on the frontier, where one book was written",
+        "say": "KWAH-dee"
+      },
+      "Granua": {
+        "meaning": "a river where one book of the notebook was written",
+        "say": "GRAN-oo-uh"
+      }
+    }
   },
   "sources": [
     {
@@ -162,7 +197,9 @@
       "The headings 'among the Quadi at the Granua' and 'at Carnuntum' stand at the end of book 1 / start of book 2 and at the start of book 3 in the manuscripts; editors differ on placement. Phrased as 'two of the books carry little headings'; confirm.",
       "Title Τὰ εἰς ἑαυτόν: transmitted in the manuscript tradition; most scholars doubt it is Marcus's own. Confirm.",
       "Marcus was around fifty at Carnuntum (born 121; based there c. 171–173; wars c. 166–180). Confirm.",
-      "Editor review (year 2): cut the unsourced age and tiredness ('a tired man around fifty') and the screen's 'at night'; limited 'army camps' to what the book headings support; softened 'most of us' and 'almost all of it gets deleted'."
+      "Editor review (year 2): cut the unsourced age and tiredness ('a tired man around fifty') and the screen's 'at night'; limited 'army camps' to what the book headings support; softened 'most of us' and 'almost all of it gets deleted'.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the woodcutter Huineng heard a sutra between a sale and the door. Your line: heard in the market. What sentence did you hear with fresh ears? Day nine hundred fifteen.",
+      "voice": "Yesterday: the woodcutter Huineng heard a sutra between a sale and the door. Your line: heard in the market.",
       "screen": [
         "`HEARD IN THE MARKET.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Late at night, by lamplight, a monk walks down a corridor with a brush and ink. He writes a short verse on the wall and goes back to his room without signing it. In the morning the whole monastery is reading it. The teacher Hongren had set a test: write a verse that shows your understanding, and whoever truly understands will receive the robe and become the next teacher in the line. Everyone expected the head monk to win. This is his verse. Today, two verses on the wall.",
+      "voice": "Late at night, by lamplight, a monk walks down a corridor with a brush and ink. He writes a short verse on the wall and goes back to his room without signing it. In the morning the whole monastery is reading it. The teacher Hongren had set a test: write a verse that shows your understanding, and whoever truly understands will receive the robe and become the next teacher in the line. Everyone expected the head monk to win. This is his verse.",
       "screen": [
         "`A VERSE WRITTEN AT NIGHT.` → `HONGREN'S TEST.` → `TWO VERSES ON THE WALL.`"
       ]
@@ -44,13 +44,13 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: wipe a mirror, then look. If there's a mirror nearby, or a phone screen, wipe it slowly with your sleeve or a cloth. Watch the smudges go. That's Shenxiu's verse: patient, honest work. Now set it down and close your eyes. Notice what's aware of the breath right now. Is there any dust on that? Any smudge? Rest for a few breaths with Huineng's question, where does dust land, without needing an answer. Then let both pictures go and simply breathe. The bell holds the time.",
+      "voice": "If there's a mirror or a phone screen nearby, wipe it slowly and watch the smudges go: that's Shenxiu's patient, honest work. Then close your eyes and notice what's aware of the breath right now. Rest a few breaths with Huineng's question, where does dust land, without needing an answer.",
       "screen": []
     },
     {
       "type": "the word",
       "duration": "25 sec",
-      "voice": "Huineng. The monk whose verse answered Shenxiu's on the monastery wall: no tree, no stand, and nowhere for dust to land. Today's word.",
+      "voice": "Huineng. The monk whose verse answered Shenxiu's on the monastery wall: no tree, no stand, and nowhere for dust to land.",
       "screen": [
         "`HUINENG — today's word`."
       ]
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: where does dust land. Today, when you wipe a counter or a screen, ask the question once. Day nine hundred fifteen.",
+      "voice": "Your line: where does dust land. Two verses, still read side by side. See you tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Chan and Zen students learn both verses, Shenxiu's and Huineng's, and teachers use them to talk about steady practice and the mind's original clarity.",
   "games": {
+    "guess": [
+      "the woodcutter monk whose verse said the mirror has no stand",
+      "the head monk whose verse said to keep wiping the mirror",
+      "the teacher who set the verse test and gave the robe"
+    ],
     "match": {
       "prompt": "two verses on the wall: tap the pairs.",
       "pairs": [
@@ -132,14 +137,46 @@
     ],
     "recall": [
       [
-        "Nalanda",
-        "a monastery of learning in north India"
+        "Chariot",
+        "no single part, yet the word works"
       ],
       [
-        "Theravada",
-        "the way of the elders"
+        "Asana",
+        "the empty seat under the bodhi tree"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your sister",
+      "says": "So was Shenxiu's verse about wiping the mirror just wrong?",
+      "options": [
+        "Not simply; both verses are still read, and some find room for both: wiping, and seeing.",
+        "Yes, the Platform Sutra calls his verse nonsense, and he was thrown out for it.",
+        "Yes, and Chan says practice is pointless, since nothing ever needs any care."
+      ],
+      "answer": 0,
+      "meaning": "Shenxiu was a respected teacher, and his verse a picture of patient care. Both verses are still read, and some readers find room for both."
+    },
+    "gloss": {
+      "Shenxiu": {
+        "meaning": "the head monk whose verse said to keep the mirror wiped",
+        "say": "shun-SHYOH"
+      },
+      "Hongren": {
+        "meaning": "the teacher who set the verse test",
+        "say": "hong-REN"
+      },
+      "Dunhuang": {
+        "meaning": "where an older version of the Platform Sutra was found",
+        "say": "dwun-HWAHNG"
+      },
+      "Huineng": {
+        "meaning": "the woodcutter whose verse said the mirror has no stand",
+        "say": "hway-NUNG"
+      },
+      "Buddha-nature": {
+        "meaning": "the clear nature the Dunhuang version calls always pure"
+      }
+    }
   },
   "sources": [
     {
@@ -158,7 +195,9 @@
       "Shenxiu described fairly as 'a respected teacher in his own right'; later Northern/Southern (gradual/sudden) framing noted as told from Huineng's side. Keeper to confirm the framing is fair.",
       "'Everyone expected the head monk to win': from the Platform Sutra's own narrative; confirm.",
       "Original 明鏡: confirm.",
-      "Editor: cut the 'ordinary Tuesday' stock phrase and framed the closing as 'some readers'; removed the line-count claim from the myth reveal."
+      "Editor: cut the 'ordinary Tuesday' stock phrase and framed the closing as 'some readers'; removed the line-count claim from the myth reveal.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

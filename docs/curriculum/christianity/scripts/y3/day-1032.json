@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Cyrenian: a walk with stops, and Simon carrying the beam behind Jesus. Your line was step by step with him. What did you take one stop at a time? Day one thousand thirty-two.",
+      "voice": "Yesterday, Cyrenian: a walk with stops, and Simon carrying the beam behind Jesus. Your line was step by step with him.",
       "screen": [
         "`STEP BY STEP WITH HIM.`"
       ]
@@ -38,7 +38,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Start with the texts themselves. No single Gospel has all of them. Tradition gathers seven sayings from the four Gospels and sets them in an order. In Luke, Jesus says, \"Father, forgive them; for they know not what they do.\" To a criminal crucified beside him, who asks to be remembered, he says, \"To day shalt thou be with me in paradise.\" In John, he looks down at his mother and his friend: \"Woman, behold thy son!\" and to the friend, \"Behold thy mother!\" Then the cry Matthew and Mark both keep: \"My God, my God, why hast thou forsaken me?\" the first line of Psalm 22. Back in John: \"I thirst.\" Then: \"It is finished.\" And Luke's last: \"Father, into thy hands I commend my spirit.\" Now look at the shape the order makes. The first three words are for other people: the ones killing him, a stranger dying next to him, his mother. In that much pain, he's still giving things away. Then the dark center, the cry of being forsaken, prayed in the words of a psalm. Then the body: thirst. Then the work done. Then trust. Christians hear different things in the sayings, and the churches that keep the three hours may preach on each in turn. But the order alone teaches something. It moves from others, through abandonment, to rest in God's hands. The three hours give each word room, so none of them gets rushed.",
+      "voice": "No single Gospel has all seven sayings. Tradition gathers them from the four Gospels and sets them in an order. In Luke, Jesus says, \"Father, forgive them; for they know not what they do.\" To a criminal crucified beside him, who asks to be remembered: \"To day shalt thou be with me in paradise.\" In John, he looks down at his mother and his friend: \"Woman, behold thy son!\" and to the friend, \"Behold thy mother!\" Then the cry Matthew and Mark both keep: \"My God, my God, why hast thou forsaken me?\" the first line of Psalm 22. Back in John: \"I thirst.\" Then: \"It is finished.\" And Luke's last: \"Father, into thy hands I commend my spirit.\" Now look at the shape. The first three words are for other people: the ones killing him, a stranger dying next to him, his mother. In that much pain, he's still giving things away. Then the dark center, the cry of being forsaken, prayed in the words of a psalm. Then the body: thirst. Then the work done. Then trust. Christians hear different things in the sayings, and churches that keep the three hours may preach on each in turn. But the order alone teaches something: from others, through abandonment, to rest in God's hands. The three hours give each word room, so none gets rushed.",
       "screen": [
         "`NO GOSPEL HAS ALL SEVEN.`",
         "`FIRST, WORDS FOR OTHER PEOPLE.`",
@@ -49,7 +49,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: read the seven words. Slowly, with one breath between each, aloud or under your breath. Forgive them, for they know not what they do. Today, paradise. Behold thy son. Behold thy mother. Why hast thou forsaken me. I thirst. It is finished. Into thy hands. Then go back to whichever one caught on something, and stay with it for the rest of the time. If you pray, you can let it become your prayer. If you don't, just let it sit with you. The bell holds the time.",
+      "voice": "Read the seven words slowly, a breath between each: forgive them, today in paradise, behold thy son, behold thy mother, why hast thou forsaken me, I thirst, it is finished, into thy hands. Go back to whichever one caught on something and stay with it, and if you pray, let it become your prayer; if not, just let it sit with you.",
       "screen": []
     },
     {
@@ -63,7 +63,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the seven words. Today, choose one of the seven and carry it with you until three o'clock this afternoon, or tomorrow's if three has passed. Day one thousand thirty-two.",
+      "voice": "Your line: the seven words. Each one given room. Day one thousand thirty-two, done.",
       "screen": []
     },
     {
@@ -77,6 +77,11 @@
   ],
   "howItsDone": "Some churches hold a Good Friday service from noon to three, with readings, hymns, silence and short meditations on each of the seven sayings of Jesus from the cross; people may stay for part or all of it.",
   "games": {
+    "guess": [
+      "the day of the cross, kept with silence and readings",
+      "the Friday before Lent, when the fast begins",
+      "the Friday a church gives food to the poor"
+    ],
     "match": {
       "prompt": "where each word comes from — tap the pairs.",
       "pairs": [
@@ -137,14 +142,39 @@
     ],
     "recall": [
       [
-        "Clean Monday",
-        "the first day of the fast"
+        "Mothering Sunday",
+        "a mid-Lent Sunday for going home"
       ],
       [
-        "Epiphany",
-        "a showing, an appearing"
+        "antiphon",
+        "a short line framing a psalm or canticle"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your mom",
+      "says": "Where do the seven last words of Jesus come from? Which Gospel?",
+      "options": [
+        "No single Gospel has all seven; tradition gathers them from all four.",
+        "They're all in John, the last Gospel, read in order on Good Friday.",
+        "They were gathered by Paul, in his letter to the Romans."
+      ],
+      "answer": 0,
+      "meaning": "Luke, John, Matthew and Mark each record some of the sayings. Tradition gathers seven and sets them in an order."
+    },
+    "gloss": {
+      "paradise": {
+        "meaning": "what Jesus promises the criminal crucified beside him"
+      },
+      "sixth hour": {
+        "meaning": "around noon, on our clocks"
+      },
+      "ninth hour": {
+        "meaning": "around three in the afternoon, on our clocks"
+      },
+      "Good Friday": {
+        "meaning": "the Friday before Easter, the day of the cross"
+      }
+    }
   },
   "sources": [
     {
@@ -217,7 +247,9 @@
       "Mark 15:34 KJV renders the cry 'My God, my God, why hast thou forsaken me?' identically to Matthew 27:46; confirm.",
       "Original: τετέλεσται (John 19:30); confirm pronunciation.",
       "Editor pass: replaced the Psalm 22 myth item, which repeated day 1030's myth item, with one on John 19:26–27.",
-      "Audit pass: quotations checked against KJV, attributions and claims checked; no changes needed."
+      "Audit pass: quotations checked against KJV, attributions and claims checked; no changes needed.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

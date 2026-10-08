@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: the sages, part two. Forest dwellers, seers and silent ones, living by tapas, the heat of discipline. Did you give a conversation a moment of silence? Day five hundred fifty-two.",
+      "voice": "Yesterday: the sages, and your line, tapas, the heat of discipline. They are seers and silent ones, powerful, and choosing not to fight.",
       "screen": [
         "`TAPAS: THE HEAT OF DISCIPLINE.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "At a grandmother's house, in India and plenty of other places, a visitor's rules are old ones. You will sit. You will be given water. You will be fed, whether or not you're hungry, and you will not be allowed to help with the dishes. The sages of Dandaka own almost nothing: a hut, a water pot, the bark they wear. And the first thing they do for Rama, Sita and Lakshmana is exactly that.",
+      "voice": "At a grandmother's house, in India and plenty of other places, a visitor's rules are old ones. You will sit. You will be given water. You will be fed, hungry or not, and you will not be allowed to help with the dishes. The sages of Dandaka own almost nothing: a hut, a water pot, the bark they wear. And the first thing they do for Rama, Sita and Lakshmana is exactly that.",
       "screen": [
         "`YOU WILL SIT. YOU WILL BE FED.` → `THE SAGES OWN ALMOST NOTHING.` → `THEY HOST ANYWAY.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "In the Ramayana, hospitality is almost a rite of its own. When a guest comes to a hermitage, the hosts offer water to wash the feet, water for the hands and mouth, a seat, and food, usually fruit and roots, whatever the forest gives. The Sanskrit word for a guest is atithi. One old explanation reads it as the one who comes without a date, the visitor you didn't plan for. And one of the Upanishads, the Taittiriya, gives a teacher's parting words to a student, and among them is a line still quoted today: treat the guest as a god. It's set alongside honoring your mother, your father and your teacher. So when the sages spread grass for the travelers to sit on and bring them what they have, they're not being polite. They're keeping a duty as serious as their prayers. Rama spends the night with them, rested and honored. And in the morning, at sunrise, he takes his leave and walks on, deeper into Dandaka. Valmiki lets you feel the change. The ring of huts falls behind. The trees close in. The forest grows dense, loud with crickets, full of wild animals, with pools half dried and no paths. The hospitality of the sages is the last soft place for a while. Welcome first, then the wild. Tomorrow, out of that thick forest, comes the first danger of the third book.",
+      "voice": "In the Ramayana, hospitality is almost a rite of its own. When a guest comes to a hermitage, the hosts offer water to wash the feet, water for the hands and mouth, a seat, and food, usually fruit and roots, whatever the forest gives. The Sanskrit word for a guest is atithi. One old explanation reads it as the one who comes without a date, the visitor you didn't plan for. And the Taittiriya Upanishad gives a teacher's parting words to a student, among them a line still quoted today: treat the guest as a god. It sits beside honoring your mother, your father and your teacher. So when the sages spread grass for the travelers and bring them what they have, they aren't just being polite. They're keeping a duty as serious as their prayers. Rama spends the night, rested and honored. At sunrise he takes his leave and walks on, deeper into Dandaka. Valmiki lets you feel the change. The ring of huts falls behind. The trees close in. The forest grows dense and loud with crickets, full of wild animals, with pools half dried and no paths. The sages' welcome is the last soft place for a while. Welcome first, then the wild. Out of that thick forest, the third book's first danger is coming.",
       "screen": [
         "`WATER, A SEAT, AND FOOD.` · `ATITHI: THE GUEST.` · `TREAT THE GUEST AS A GOD.` · `MORNING: DEEPER INTO DANDAKA.` · then, large: `THE LAST SOFT PLACE.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Sit easily. Remember a time someone welcomed you when you arrived tired: a host, a relative, a stranger, a coworker who cleared a chair. Picture the moment you were handed something, water, tea, a seat. Feel how your body relaxed when you were taken care of. Now imagine being the one who offers that to someone else. Breathe in being welcomed. Breathe out welcoming. The bell holds the time.",
+      "voice": "Remember a time someone welcomed you when you arrived tired, and the moment you were handed something: water, tea, a seat. Feel how your body relaxed, then picture being the one who offers it; breathe in being welcomed, and breathe out welcoming.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the last soft place. Today, offer the next person who comes to you a glass of water or a seat, before anything else. Day five hundred fifty-two.",
+      "voice": "Your line: the last soft place. After this, the forest closes in. That's day five hundred fifty-two.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Hindu households often welcome a guest with water, a seat and food before conversation, and the Upanishad's line atithi devo bhava, treat the guest as a god, is still quoted.",
   "games": {
+    "guess": [
+      "forest hosts who give Rama water, a seat and food",
+      "forest hermits who turn Rama away from their huts",
+      "forest kings who rule the land of Dandaka"
+    ],
     "match": {
       "prompt": "a guest in the forest — tap the pairs.",
       "pairs": [
@@ -132,14 +137,47 @@
     ],
     "recall": [
       [
-        "Bharadvaja",
-        "the sage at Prayaga"
+        "Sumantra",
+        "Dasharatha's charioteer"
       ],
       [
-        "Guha",
-        "king of the Nishadas"
+        "Vamana",
+        "the dwarf who took three strides"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your little brother",
+      "says": "Why did the poor forest sages bother feeding Rama when they had almost nothing?",
+      "options": [
+        "Welcoming a guest was a sacred duty: treat the guest as a god.",
+        "They hoped Rama would pay them back with gold from Ayodhya.",
+        "They were afraid of his bow and fed him so he'd leave them alone."
+      ],
+      "answer": 0,
+      "meaning": "In the Ramayana hospitality is almost a rite. The Taittiriya Upanishad says treat the guest as a god, beside mother, father and teacher."
+    },
+    "gloss": {
+      "atithi": {
+        "meaning": "a guest; read by tradition as one who comes without a date",
+        "script": "अतिथि",
+        "say": "UH-ti-thee"
+      },
+      "Taittiriya Upanishad": {
+        "meaning": "an Upanishad with a teacher's parting words to a student",
+        "script": "तैत्तिरीय उपनिषद्",
+        "say": "tai-ti-REE-yuh oo-PUH-ni-shud"
+      },
+      "Dandaka": {
+        "meaning": "the great wild forest of the south in the Ramayana",
+        "script": "दण्डक",
+        "say": "DUN-duh-kuh"
+      },
+      "Lakshmana": {
+        "meaning": "Rama's brother, who went with him into exile",
+        "script": "लक्ष्मण",
+        "say": "LUKSH-muh-nuh"
+      }
+    }
   },
   "sources": [
     {
@@ -163,7 +201,9 @@
       "The a-tithi ('without a date') reading is a traditional explanation, given as such; confirm.",
       "The description of the deep forest (dense, crickets, wild animals, dried pools) paraphrases the opening of Aranya 2; confirm.",
       "Taittiriya Upanishad 1.11.2 reference: confirm numbering.",
-      "Review (538–556 pass): hook no longer tells the listener 'you know the drill'; the guest line does not close the list in Taittiriya 1.11.2 (the teaching continues), fixed, and 'many Hindus know by heart' cut; dropped the stock line 'the shape of a lot of journeys'."
+      "Review (538–556 pass): hook no longer tells the listener 'you know the drill'; the guest line does not close the list in Taittiriya 1.11.2 (the teaching continues), fixed, and 'many Hindus know by heart' cut; dropped the stock line 'the shape of a lot of journeys'.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

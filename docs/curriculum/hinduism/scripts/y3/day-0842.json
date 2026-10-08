@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Karna's wheel sank into the earth and his weapon slipped from memory, two old curses at once. What wouldn't budge for you, and did you breathe before pulling? Day eight hundred forty-two.",
+      "voice": "Yesterday: Karna's wheel sank into the earth and his weapon slipped from memory. Your line was two old curses at once.",
       "screen": [
         "`KARNA.` · `THE EARTH HOLDS THE WHEEL.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Wait. That's what Karna calls out, standing on the ground with his hands on the wheel. Wait, Arjuna. A warrior in a chariot shouldn't strike a man who is on foot, whose wheel is stuck, who isn't ready. Those are the rules of fair fighting, he says, in effect. You know them. Remember dharma. Give me a moment to free the wheel. By the rules the armies agreed to, it sounds like a fair request, made by a man in real trouble. And it isn't Arjuna who answers. It's Krishna, from the driver's seat. Today, the answer, and the end of Karna.",
+      "voice": "Wait. That's what Karna calls out, standing on the ground with his hands on the wheel. Wait, Arjuna. A warrior in a chariot shouldn't strike a man who is on foot, whose wheel is stuck, who isn't ready. Those are the rules of fair fighting, he says, in effect. Remember dharma. Give me a moment to free the wheel. By the rules the armies agreed to, it sounds like a fair request, made by a man in real trouble. And it isn't Arjuna who answers. It's Krishna, from the driver's seat.",
       "screen": [
         "`WAIT, ARJUNA.` → `REMEMBER DHARMA.` → `KRISHNA ANSWERS.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Krishna's answer is a string of questions. Now you remember dharma, Karna? Where was it when Draupadi was dragged into the assembly hall and you mocked her? Where was it at the rigged game of dice? Where was it when young Abhimanyu was surrounded by many warriors at once and cut down? In Ganguli's English, Karna hears this, and he hangs his head in shame, and says nothing. He doesn't argue. He climbs back into the stuck chariot and fights on as well as he can. Then Arjuna, urged on by Krishna, takes up a single great arrow, and with it he cuts off Karna's head. Karna falls. And the epic gives one more picture. A light rises from Karna's fallen body and goes up into the sky, into the sun. Karna was, as the epic told it long before, a son of the sun god. Hold both halves of this man together, because the story does. The Karna who kept his promise to Kunti, and the Karna who laughed at Draupadi. The friend who never left Duryodhana, and the man who stood by while wrong was done. And one more thing. The Pandavas, cheering on the field, still don't know who just died. Kunti knows. Her sons will learn after the war that they have killed their eldest brother.",
+      "voice": "Krishna's answer is a string of questions. Now you remember dharma, Karna? Where was it when Draupadi was dragged into the assembly hall and you mocked her? Where was it at the rigged game of dice? Where was it when young Abhimanyu was surrounded by many warriors at once and cut down? In Ganguli's English, Karna hears this, and he hangs his head in shame, and says nothing. He doesn't argue. He climbs back into the stuck chariot and fights on as well as he can. Then Arjuna, urged on by Krishna, takes up a single great arrow and cuts off Karna's head. Karna falls. And the epic gives one more picture: a light rises from his body and goes up into the sky, into the sun. Karna was, as the epic told it long before, a son of the sun god. Hold both halves of this man together, because the story does. The Karna who kept his promise to Kunti, and the Karna who laughed at Draupadi. The friend who never left Duryodhana, and the man who stood by while wrong was done. One more thing. The Pandavas, cheering on the field, still don't know who just died. Kunti knows. Her sons will learn after the war that they have killed their eldest brother.",
       "screen": [
         "`NOW YOU REMEMBER DHARMA?` · `KARNA HANGS HIS HEAD` · `THE LIGHT GOES TO THE SUN` · then, large: `A BROTHER THEY DIDN'T KNOW`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Sit still, and let your breath slow down. Let a question come to mind that you'd rather not be asked, one about something you did or didn't do. Don't build a defense. Don't explain. Just let the question be asked, and let the quiet after it stay quiet, the way Karna said nothing. Breathe in. Breathe out. Nothing to win here. If you pray, you can bring that question into your prayer. The bell holds the time.",
+      "voice": "Let a question come to mind that you'd rather not be asked, about something you did or didn't do. Don't build a defense; let the question be asked, and let the quiet after it stay quiet. If you pray, you can bring that question into your prayer.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: he hangs his head in shame, and says nothing. Today, when you ask someone for fairness, remember once when you didn't give it. Day eight hundred forty-two.",
+      "voice": "Your line: he hangs his head in shame, and says nothing. He asked for a fairness he hadn't given. Day eight hundred forty-two, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Karna's death is retold in readings, regional theater, poems and serials, and Karna is discussed as a figure hard to judge: generous, loyal, wronged at birth, and complicit in wrong.",
   "games": {
+    "guess": [
+      "the son of the sun who dies fighting his unknowing brothers",
+      "the son of Drona, who fights on after the war is over",
+      "the charioteer's son who switches to the Pandava side"
+    ],
     "match": {
       "prompt": "the death — tap the pairs.",
       "pairs": [
@@ -132,14 +137,47 @@
     ],
     "recall": [
       [
-        "Drona",
-        "hid Jayadratha at the back"
+        "Vidura",
+        "the king's wise half-brother"
       ],
       [
-        "Karkotaka",
-        "bites Nala and changes his shape"
+        "vara",
+        "a boon, a gift granted by a god"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your nephew",
+      "says": "When Karna begged Arjuna to wait and fight fair, why didn't Krishna let him?",
+      "options": [
+        "Krishna asked where his dharma was when Draupadi was mocked. Karna had no answer.",
+        "Krishna said the agreed rules of fair fighting had ended once Bhishma fell.",
+        "Krishna told Arjuna that Karna was only pretending his wheel was stuck."
+      ],
+      "answer": 0,
+      "meaning": "Krishna answered Karna's plea with questions: Draupadi in the hall, the rigged dice, Abhimanyu. Karna hung his head and said nothing."
+    },
+    "gloss": {
+      "dharma": {
+        "meaning": "right living, duty and truth, all in one word",
+        "script": "धर्म",
+        "say": "DHUR-muh"
+      },
+      "Draupadi": {
+        "meaning": "the Pandavas' wife, dragged into the assembly hall",
+        "script": "द्रौपदी",
+        "say": "DROH-puh-dee"
+      },
+      "Abhimanyu": {
+        "meaning": "Arjuna's young son, surrounded and cut down in the war",
+        "script": "अभिमन्यु",
+        "say": "uh-bhih-MUN-yoo"
+      },
+      "Kunti": {
+        "meaning": "mother of the Pandavas, and of Karna",
+        "script": "कुन्ती",
+        "say": "KOON-tee"
+      }
+    }
   },
   "sources": [
     {
@@ -165,7 +203,10 @@
       "Confirm the light (energy) rising from Karna's body and entering the sun, as described in the Karna Parva.",
       "The trapdoor's third floor now says 'some readers ask'; a Keeper may prefer to cut it.",
       "Kunti's revelation is in the Stri Parva (and Yudhishthira's grief in the Shanti Parva); confirm.",
-      "Audit: the narrator no longer rules the request fair on its own authority ('it sounds like a fair request'), and the unsourced 'Arjuna hesitates' was cut. Keeper: the rules of fair fight are agreed in the Bhishma Parva; confirm the framing."
+      "Audit: the narrator no longer rules the request fair on its own authority ('it sounds like a fair request'), and the unsourced 'Arjuna hesitates' was cut. Keeper: the rules of fair fight are agreed in the Bhishma Parva; confirm the framing.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "Recall pairs chosen by hand (2026-10-07) so no old word repeats on nearby days; meanings follow each word's own lesson.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

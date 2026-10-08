@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the birth of John the Baptist and a father who wrote a name, Yohanan. Your line was his name is john. Whose name did you ask about? Day six hundred seventy-five.",
+      "voice": "Yesterday, the birth of John the Baptist and the name Yohanan. Your line was his name is john.",
       "screen": [
         "`HIS NAME IS JOHN.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Two giant stone statues stand guard in front of Saint Peter's Basilica in Rome. On one side, Peter, holding keys. On the other, Paul, holding a sword. The Church gives them one feast together, on the twenty-ninth of June. Which is a little funny, because they didn't always get along. One was a fisherman from Galilee. The other was an educated Pharisee from a city in what is now southern Turkey who made tents for a living. And once, in front of everyone, one of them told the other he was wrong.",
+      "voice": "Two giant stone statues stand guard in front of Saint Peter's Basilica in Rome. On one side, Peter, holding keys. On the other, Paul, holding a sword. The Church gives them one feast together, on the twenty-ninth of June, which is a little funny, because they didn't always get along. One was a fisherman from Galilee. The other was an educated Pharisee from a city in what is now southern Turkey who made tents for a living. And once, in front of everyone, one of them told the other he was wrong.",
       "screen": [
         "`KEYS AND A SWORD.` → `THE FISHERMAN AND THE TENTMAKER.` → `ONE FEAST FOR BOTH.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: hold the Church of Rome. Sit, and picture the city: the basilica over Peter's grave, the pope, the parishes, the people on buses and the poor sleeping near the colonnade. If you pray, you can pray for the pope and for the people of Rome. If you don't, think of two people in your own life who don't always agree, but hold something up together, and be grateful for both. The bell holds the time.",
+      "voice": "Picture Rome: the basilica over Peter's grave, the pope, the parishes, the people on buses and the poor sleeping near the colonnade. If you pray, you can pray for the pope and the people of Rome; if you don't, think of two people in your own life who don't always agree but hold something up together, and be grateful for both.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: two pillars. Today, thank someone you've disagreed with for the thing you hold up together: a family, a team, a parish. Day six hundred seventy-five.",
+      "voice": "Your line: two pillars. A fisherman and a tentmaker, one feast. Day six hundred seventy-five.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Catholics keep the solemnity of Saints Peter and Paul on 29 June; in Rome it's a city holiday, and the pope blesses the pallium, a woolen band, for archbishops appointed during the year.",
   "games": {
+    "guess": [
+      "Greek for rock, the name Jesus gave Simon",
+      "Greek for fisherman, Simon's old trade",
+      "Greek for keys, from Peter's statue"
+    ],
     "match": {
       "prompt": "the two pillars — tap the pairs.",
       "pairs": [
@@ -132,14 +137,47 @@
     ],
     "recall": [
       [
-        "Mandatum",
-        "Latin: commandment"
+        "ekklēsia",
+        "the assembly, Luke's word for the church"
       ],
       [
-        "Bernadette",
-        "a poor, often sick teenager"
+        "council",
+        "a gathering of leaders deciding together"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your brother-in-law",
+      "says": "Why do Peter and Paul share one feast if they argued?",
+      "options": [
+        "The Church honors both as pillars: different, at times at odds, holding up one roof.",
+        "Their argument happened in Rome, and the feast marks the day they made peace.",
+        "They later wrote a letter together, and the feast remembers the day they sent it."
+      ],
+      "answer": 0,
+      "meaning": "The Church calls them two pillars: different men, once at odds at Antioch, holding up the same roof."
+    },
+    "gloss": {
+      "Petros": {
+        "meaning": "Greek: rock, the name Jesus gave Simon",
+        "say": "PET-ros"
+      },
+      "Tarsus": {
+        "meaning": "Saul's home city, in what is now southern Turkey",
+        "say": "TAR-sus"
+      },
+      "Galatians": {
+        "meaning": "Paul's letter telling how he faced Peter at Antioch",
+        "say": "guh-LAY-shunz"
+      },
+      "Antioch": {
+        "meaning": "the city where Paul withstood Peter to his face",
+        "say": "AN-tee-ok"
+      },
+      "Nero": {
+        "meaning": "the Roman emperor under whom tradition says both died",
+        "say": "NEER-oh"
+      }
+    }
   },
   "sources": [
     {
@@ -187,7 +225,9 @@
       "Paul's beheading as a Roman citizen: tradition; confirm.",
       "Pallium blessing for new metropolitan archbishops on 29 June; confirm current practice.",
       "Galatians 2:12 'stricter visitors' summarizes 'certain came from James'; confirm fair framing (not a foil for Jewish practice).",
-      "Editor review (2026-10-01): hook no longer opens 'Walk into'; invented 'smelled of the lake' cut; Matthew 16:18 quote starts at the Douay's own words ('thou art Peter', the verse reads 'That thou art Peter'); 'so as not to be a burden' moved from Acts to Paul's letters (1 Thess 2:9); Galatians 2:12 now says 'men came from James' instead of 'stricter visitors'; 'in the 60s' cut; 2 Timothy named instead of 'Paul's own words near the end'."
+      "Editor review (2026-10-01): hook no longer opens 'Walk into'; invented 'smelled of the lake' cut; Matthew 16:18 quote starts at the Douay's own words ('thou art Peter', the verse reads 'That thou art Peter'); 'so as not to be a burden' moved from Acts to Paul's letters (1 Thess 2:9); Galatians 2:12 now says 'men came from James' instead of 'stricter visitors'; 'in the 60s' cut; 2 Timothy named instead of 'Paul's own words near the end'.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the Wali Songo, the nine saints of Java. Your line was: they taught with music. Did you find the rest of that half-known song? Day nine hundred ninety-eight.",
+      "voice": "Yesterday: the Wali Songo, the nine saints of Java, who taught with music.",
       "screen": [
         "`THEY TAUGHT WITH MUSIC.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Quick question. Where do the most Muslims on earth live? Not, by the usual count, in the lands of Arabic street signs. The answer lies far to the east, across an ocean, in a country of islands and volcanoes and rice terraces, where the street signs are in the Latin alphabet and the call to prayer drifts over palm trees and motorbikes. Java, where the nine saints taught, is one of its islands. Today: Indonesia.",
+      "voice": "Quick question. Where do the most Muslims on earth live? Not, by the usual count, in the lands of Arabic street signs. Go far to the east, across an ocean, to a country of islands, volcanoes and rice terraces, where the street signs are in the Latin alphabet and the call to prayer drifts over palm trees and motorbikes. Java, where the nine saints taught, is one of its islands. Today: Indonesia.",
       "screen": [
         "`WHERE DO THE MOST MUSLIMS LIVE?` → `NOT WHERE THE FIRST GUESS LANDS.` → `ISLANDS, VOLCANOES, RICE.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Indonesia is usually counted as the country with the largest Muslim population in the world. And here is the surprise packed inside that line: the faith that arrived with traders and teachers didn't erase the islands' languages. It learned them. Indonesians speak many languages at home, and share one national language, Bahasa Indonesia, written in Latin letters. The prayers are in Arabic, the sermons are often in Indonesian, and the songs may be in Javanese or Sundanese or another of the island tongues. The Qur'an has a line for that: \"And of His signs is the creation of the heavens and the earth, and the difference of your languages and colours.\" Differences of language, in that verse, are not a problem to be solved. They are signs. Indonesia also holds its Muslims alongside neighbors of other faiths: Christians, Hindus in Bali, Buddhists, Confucians. Its national motto is in Old Javanese, Bhinneka Tunggal Ika, usually rendered unity in diversity. Among Muslims there, two well-known movements stand out. Nahdlatul Ulama tends to keep the older customs of the pesantren, the village boarding school, and of visiting the graves of saints. Muhammadiyah, more of a reform movement, runs schools and hospitals and prefers a plainer practice. They differ, they argue, and both are deeply Indonesian. So when someone says the largest Muslim country, the number is only the doorway. Inside is a faith that speaks with many island accents.",
+      "voice": "Indonesia is usually counted as the country with the largest Muslim population in the world. And inside that line is a surprise: the faith that arrived with traders and teachers didn't erase the islands' languages. It learned them. Indonesians speak many languages at home and share one national language, Bahasa Indonesia, written in Latin letters. The prayers are in Arabic, the sermons often in Indonesian, and the songs may be in Javanese or Sundanese or another island tongue. The Qur'an has a line for that: \"And of His signs is the creation of the heavens and the earth, and the difference of your languages and colours.\" In that verse, differences of language aren't a problem to be solved. They're signs. Indonesia also holds its Muslims alongside neighbors of other faiths: Christians, Hindus in Bali, Buddhists, Confucians. Its national motto is Old Javanese, Bhinneka Tunggal Ika, usually rendered unity in diversity. Among Muslims there, two well-known movements stand out. Nahdlatul Ulama tends to keep the older customs: the pesantren, the village boarding school, and visiting the graves of saints. Muhammadiyah, more of a reform movement, runs schools and hospitals and prefers a plainer practice. They differ, they argue, and both are deeply Indonesian. So the number is only the doorway. Inside is a faith that speaks with many island accents.",
       "screen": [
         "`THE LARGEST MUSLIM POPULATION.` · `ONE FAITH, MANY LANGUAGES.` · `THE DIFFERENCE OF YOUR LANGUAGES: A SIGN.` · `TWO MOVEMENTS, BOTH INDONESIAN.` · then, large: `THE LARGEST MUSLIM COUNTRY.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: learn one Indonesian word. Here it is: terima kasih. It means thank you. Say it slowly: teh-REE-mah KAH-see. Settle, and breathe. On each out-breath, say it once, quietly. Then think of three people you could thank today, and give each of them your new word in your head. If you pray, you can thank God in whatever language you pray in. If not, let the thanks land on the people. The bell holds the time.",
+      "voice": "Here's an Indonesian word: terima kasih, thank you. Say it slowly, teh-REE-mah KAH-see, once on each out-breath, and give it in your head to three people you'd like to thank. If you pray, you can thank God in whatever language you pray in; if not, let the thanks land on the people.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the largest muslim country. Today, say terima kasih once, out loud, to someone who helps you, and tell them what it means. Day nine hundred ninety-eight.",
+      "voice": "Your line: the largest muslim country. Prayers in Arabic, sermons in Indonesian, songs in Javanese. Day nine hundred ninety-eight, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Indonesian Muslims pray in Arabic, often hear the Friday sermon in Indonesian or a local language, and students may study in pesantren or schools run by movements such as Nahdlatul Ulama and Muhammadiyah.",
   "games": {
+    "guess": [
+      "an island nation usually counted as home to the most Muslims",
+      "an Arabic-speaking country at the center of the Muslim world",
+      "a single island where the nine saints of Java taught"
+    ],
     "match": {
       "prompt": "Indonesia — tap the pairs.",
       "pairs": [
@@ -128,14 +133,47 @@
     ],
     "recall": [
       [
-        "Hagia Sophia",
-        "Greek for Holy Wisdom"
+        "millet",
+        "an Ottoman religious community"
       ],
       [
-        "Osman",
-        "the founder the Ottomans are named for"
+        "Mumtaz Mahal",
+        "the empress the Taj Mahal was built for"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "a coworker",
+      "says": "Do Muslims in Indonesia have to give up their own languages?",
+      "options": [
+        "No. Prayers are in Arabic, but sermons and songs are often in local languages.",
+        "Yes. Islam there replaced the island languages with Arabic for daily life.",
+        "Only Javanese is allowed in mosques; the other island tongues are kept out."
+      ],
+      "answer": 0,
+      "meaning": "The faith learned the islands' languages. The Qur'an calls the difference of languages one of God's signs (30:22)."
+    },
+    "gloss": {
+      "Bahasa Indonesia": {
+        "meaning": "the shared national language, written in Latin letters",
+        "say": "bah-HAH-sah in-doh-NEE-zhah"
+      },
+      "pesantren": {
+        "meaning": "a village Islamic boarding school",
+        "say": "peh-SAHN-tren"
+      },
+      "Nahdlatul Ulama": {
+        "meaning": "a movement that keeps older customs like the pesantren",
+        "say": "NAH-dlah-tool oo-LAH-mah"
+      },
+      "Muhammadiyah": {
+        "meaning": "a reform movement that runs schools and hospitals",
+        "say": "moo-hah-mah-DEE-yah"
+      },
+      "Bhinneka Tunggal Ika": {
+        "meaning": "Indonesia's motto, usually rendered unity in diversity",
+        "say": "bin-NEH-kah TOONG-gahl EE-kah"
+      }
+    }
   },
   "sources": [
     {
@@ -155,7 +193,9 @@
       "Recognized religions listed without numbers (Christians, Hindus in Bali, Buddhists, Confucians); confirm wording.",
       "Pickthall 30:22 quoted from memory; confirm exact wording ('colours' is Pickthall's spelling).",
       "Editor: removed the hook's guess about what listeners assume (and its desert-and-camels stereotype); cut the unsourced 'shape much of daily religious life' claim about NU and Muhammadiyah.",
-      "Audit: hook line said the trade routes and nine saints 'led there', though Java already is Indonesia; reworded."
+      "Audit: hook line said the trade routes and nine saints 'led there', though Java already is Indonesia; reworded.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

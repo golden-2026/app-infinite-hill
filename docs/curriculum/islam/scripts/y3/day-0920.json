@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, al-Kindi: codes, light, music, and truth welcomed from wherever it comes. Your line was: the philosopher of the arabs. What fact did you pick up? Day nine hundred twenty.",
+      "voice": "Yesterday, al-Kindi: codes, light, music, and truth welcomed from wherever it comes. Your line was: the philosopher of the arabs.",
       "screen": [
         "`THE PHILOSOPHER OF THE ARABS.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A traveler falls ill far from home. No family nearby, no money to speak of, no one who knows his name. That is a hard place to be. But historians describe, in the great cities of the Muslim world, a building where he could walk in the door. Separate wards for different illnesses. Physicians making rounds, students following them. A pharmacy. Water running through the courtyard. And in some of these houses, the historians say, musicians played for the patients, and storytellers sat with those who could not sleep. Nobody asked first whether he could pay. The building had a Persian name: bimaristan.",
+      "voice": "A traveler falls ill far from home. No family nearby, no money, no one who knows his name. But historians describe, in the great cities of the Muslim world, a building where he could walk in the door. Separate wards for different illnesses. Physicians on rounds, students behind them. A pharmacy. Water running through the courtyard. And in some of these houses, the historians say, musicians played for the patients, and storytellers sat with those who could not sleep. Nobody asked first whether he could pay. The building had a Persian name: bimaristan.",
       "screen": [
         "`A TRAVELER FALLS ILL.` → `A DOOR THAT OPENS.` → `MUSIC IN THE WARDS.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Bimaristan is usually explained as the place of the sick. The word came into Arabic from Persian, and in Cairo and Damascus, in Baghdad and beyond, it named a hospital. Three things made these houses work. First, the money. Historians describe them as paid for by waqf, an endowment: a ruler or a wealthy donor set aside shops, farms or rents forever, and their income kept the hospital open. Care was free because someone, long before, had given so it could be. Second, the order inside. Historians describe wards for fevers, for eye diseases, for surgery, for those whose minds were troubled. Physicians trained students at the bedside. Records were kept. Third, and most of all, the door: care for all who come. Men and women, rich and poor, locals and strangers. Muslims trace that door back to the Prophet Muhammad, peace be upon him. In a hadith in Sahih al-Bukhari, he tells his followers to feed the hungry, to visit the sick, and to free the captive. In another, he says that God has not sent down a disease without also sending down its cure. Visiting the sick was already a teaching of the Prophet. Looking for the cure was an act of hope. And the Qur'an, in a passage addressed to the Children of Israel, says that whoever saves one life, it is as if he had saved all humanity. Some have seen that verse put into stone in a hospital that turns no one away. Tomorrow, we meet one of the physicians who walked those wards.",
+      "voice": "Bimaristan is usually explained as the place of the sick. The word came into Arabic from Persian, and in Cairo and Damascus, Baghdad and beyond, it named a hospital. Three things made these houses work. First, the money. Historians describe them as paid for by waqf, an endowment: a ruler or a wealthy donor set aside shops, farms or rents forever, and their income kept the hospital open. Care was free because someone, long before, had given. Second, the order inside: wards for fevers, for eye diseases, for surgery, for those whose minds were troubled. Physicians trained students at the bedside, and records were kept. Third, the door: care for all who come. Men and women, rich and poor, locals and strangers. Muslims trace that door back to the Prophet Muhammad, peace be upon him. In a hadith in Sahih al-Bukhari, he tells his followers to feed the hungry, visit the sick, and free the captive. In another, he says that God has not sent down a disease without also sending down its cure. Visiting the sick was already a teaching of the Prophet. Looking for the cure was an act of hope. And the Qur'an, in a passage addressed to the Children of Israel, says that whoever saves one life, it is as if he had saved all humanity. Some have seen that verse put into stone in a hospital that turns no one away. Tomorrow, one of the physicians who walked those wards.",
       "screen": [
         "`BIMARISTAN: THE PLACE OF THE SICK.` · `PAID FOR BY WAQF.` · `WARDS, ROUNDS AND RECORDS.` · `VISIT THE SICK. SEEK THE CURE.` · then, large: `CARE FOR ALL WHO COME.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: give toward a hospital. Settle, and breathe. Bring to mind one hospital you know. Where you were born, or where someone you love was treated. Picture its door, and the people walking through it today, some of them frightened, some of them alone. Breathe for them. Then choose one small way to give: a donation, however small, to a hospital or a clinic that treats people who can't pay, or a visit to someone who is sick. If you pray, you can pray for the patients and the people caring for them. If you don't, just hold them in mind. The bell holds the time.",
+      "voice": "Bring to mind one hospital you know and picture its door and the people walking through it today, some frightened, some alone. Breathe for them, and choose one small way to give: a little to a clinic that treats people who can't pay, or a visit to someone who is sick. If you pray, you can pray for the patients and the people caring for them; if not, just hold them in mind.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: care for all who come. Today, give your full attention to whoever walks up to you, before you decide whether they deserve it. Day nine hundred twenty.",
+      "voice": "Your line: care for all who come. Rich or poor, local or stranger. Day nine hundred twenty, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Visiting the sick is a practice Muslims trace to the Prophet's teaching, and in Muslim history hospitals were often funded as waqf, a charitable endowment, so they could treat people who could not pay.",
   "games": {
+    "guess": [
+      "a hospital, from Persian: the place of the sick",
+      "a covered market where healing herbs were sold",
+      "a guesthouse for pilgrims on the road to Mecca"
+    ],
     "match": {
       "prompt": "the bimaristan — tap the pairs.",
       "pairs": [
@@ -132,14 +137,47 @@
     ],
     "recall": [
       [
-        "al-Mansur",
-        "the caliph who founded it"
+        "sahabi",
+        "one who met the Prophet as a believer"
       ],
       [
-        "Yahya",
-        "John the Baptist, honored with a shrine"
+        "diwan",
+        "a register of names"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your grandmother",
+      "says": "Who could get care in those old hospitals?",
+      "options": [
+        "Anyone who came: rich and poor, men and women, locals and strangers.",
+        "Only Muslims who could show they had paid toward the endowment.",
+        "Mostly the caliph's soldiers and officials, and others if beds were free."
+      ],
+      "answer": 0,
+      "meaning": "Historians describe care paid for by waqf, so no one had to pay first: care for all who come."
+    },
+    "gloss": {
+      "bimaristan": {
+        "meaning": "a hospital; from Persian, the place of the sick",
+        "script": "بيمارستان",
+        "say": "bee-maa-ris-TAAN"
+      },
+      "waqf": {
+        "meaning": "an endowment whose income keeps a good work going",
+        "script": "وقف",
+        "say": "WAKF"
+      },
+      "hadith": {
+        "meaning": "a report of the Prophet's words or deeds",
+        "script": "حديث",
+        "say": "ha-DEETH"
+      },
+      "Sahih al-Bukhari": {
+        "meaning": "a widely trusted collection of hadith",
+        "script": "صحيح البخاري",
+        "say": "sa-HEEH al-bu-KHAA-ree"
+      }
+    }
   },
   "sources": [
     {
@@ -177,7 +215,9 @@
       "Etymology of bimaristan (Persian, 'place of the sick') attributed as 'usually explained'; confirm.",
       "Practice 'donate to a hospital' rewritten as an invitation with smaller options.",
       "Editor: fixed a garbled sentence ('describe them as paid for'); the link from the hadith to the hospital door and from Qur'an 5:32 to the hospital is now attributed (Muslims trace / some have seen) rather than asserted by the narrator; 5:32 given its context.",
-      "Audit: 'visiting the sick was already a duty' softened; jurists differ on its legal status (recommended, or a communal obligation)."
+      "Audit: 'visiting the sick was already a duty' softened; jurists differ on its legal status (recommended, or a communal obligation).",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

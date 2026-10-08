@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Muslims in Britain: a dome in Woking, a terraced house in Liverpool where Abdullah Quilliam opened a mosque, a chapel on Brick Lane that became a mosque. Your line was: a long british story. What did you find out about the mosque nearest you? Day one thousand twenty-eight.",
+      "voice": "Yesterday: Muslims in Britain, from a dome in Woking to Abdullah Quilliam's terraced houses in Liverpool. Your line was a long british story.",
       "screen": [
         "`A LONG BRITISH STORY.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "American Muslims are a very varied community, and three big streams run into it. The first stream is immigrants. Arab families settled in the Midwest and worked in factories; South Asians came as doctors, engineers and students; later came people from Iran, Turkey, Bosnia, Somalia and many other places. The second stream is African American Muslims. Two days ago we met enslaved Africans who prayed in chains. Slavery made that faith hard to hand down. Later, Black Americans found their way to Islam again, through several movements. Some passed through the Nation of Islam, and under Warith Deen Mohammed much of that community turned to mainstream Sunni practice. The third stream is converts of every background, who walked into a mosque one day and said the shahada. Here is the idea worth keeping. For the people in that Friday row, American and Muslim are not two halves pulling apart. They are one life. The boxer Muhammad Ali took the name, prayed, fought, joked, and was American to his fingertips. The Qur'an says plainly: \"There is no compulsion in religion.\" In America that line can be heard twice: as a teaching of the faith, and as something close to the country's own promise that belief is free. A convert chooses. An immigrant family chooses to stay. A grandchild of the old streams chooses to keep praying.",
+      "voice": "American Muslims are a very varied community, and three big streams run into it. The first is immigrants. Arab families settled in the Midwest and worked in factories; South Asians came as doctors, engineers and students; later came people from Iran, Turkey, Bosnia, Somalia and many other places. The second is African American Muslims. Two days ago we met enslaved Africans who prayed in chains. Slavery made that faith hard to hand down. Later, Black Americans found their way to Islam again, through several movements. Some passed through the Nation of Islam, and under Warith Deen Mohammed much of that community turned to mainstream Sunni practice. The third stream is converts of every background, who walked into a mosque one day and said the shahada. Here's the idea worth keeping. For the people in that Friday row, American and Muslim are not two halves pulling apart. They are one life. The boxer Muhammad Ali took the name, prayed, fought, joked, and was American to his fingertips. The Qur'an says plainly: \"There is no compulsion in religion.\" In America that line can be heard twice: as a teaching of the faith, and as something close to the country's own promise that belief is free. A convert chooses. An immigrant family chooses to stay. A grandchild of the old streams chooses to keep praying.",
       "screen": [
         "`THREE STREAMS.` · `IMMIGRANTS FROM EVERYWHERE.` · `AFRICAN AMERICAN MUSLIMS, RETURNING.` · `CONVERTS WHO CHOSE.` · then, large: `THERE IS NO COMPULSION IN RELIGION.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: learn one American Muslim's story. Settle, and breathe. Think of an American Muslim you know of: a neighbor, a coworker, a doctor, an athlete, a poet, someone from the news. What do you actually know about their life, beyond the label? Where did their family come from, or how did they come to the faith? If no one comes to mind, notice that, and choose one name to look up later today, maybe Muhammad Ali, maybe someone in your own town. If you pray, you can ask God's blessing on that person. The bell holds the time.",
+      "voice": "Think of an American Muslim you know of: a neighbor, a coworker, a doctor, an athlete, a poet, someone from the news. What do you actually know about their life beyond the label, where their family came from, or how they came to the faith? If you pray, ask God's blessing on them; if not, just let their story be bigger than the label.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: american and muslim. Today, read or listen to one American Muslim telling their own story, in their own words, for five minutes. Day one thousand twenty-eight.",
+      "voice": "Your line: american and muslim. It's one life, not two halves pulling apart. Catch you tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "American Muslims gather in mosques and Islamic centers founded by immigrant, African American and convert communities, and many mosques hold open houses where neighbors can visit and ask questions.",
   "games": {
+    "guess": [
+      "the declaration of faith spoken on becoming Muslim",
+      "the first Friday prayer a new Muslim attends",
+      "the certificate a mosque gives after a wedding"
+    ],
     "match": {
       "prompt": "Muslims in America — tap the pairs.",
       "pairs": [
@@ -132,14 +137,43 @@
     ],
     "recall": [
       [
-        "imaret",
-        "the Ottoman soup kitchen"
+        "Abdullah Quilliam",
+        "Liverpool solicitor who opened a mosque"
       ],
       [
-        "waqf",
-        "property set aside forever for good"
+        "khalifa",
+        "a successor or deputy; the caliph's title"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your best friend",
+      "says": "Where do American Muslims come from? Isn't it all recent immigrants?",
+      "options": [
+        "Three streams: immigrants, African American Muslims, and converts of every background.",
+        "Only immigrants. Islam reached America with the factory workers of the Midwest.",
+        "Only converts. Nearly all were raised in other faiths and chose Islam as adults."
+      ],
+      "answer": 0,
+      "meaning": "The lesson names three streams: immigrants, African American Muslims, and converts of every background who said the shahada."
+    },
+    "gloss": {
+      "shahada": {
+        "meaning": "the declaration spoken on becoming Muslim",
+        "script": "شهادة",
+        "say": "sha-HAA-da"
+      },
+      "Nation of Islam": {
+        "meaning": "an American movement some Black Muslims passed through"
+      },
+      "Warith Deen Mohammed": {
+        "meaning": "led much of that community to mainstream Sunni practice",
+        "say": "WAA-rith DEEN mo-HAM-med"
+      },
+      "Muhammad Ali": {
+        "meaning": "the American boxer who became Muslim",
+        "say": "mu-HAM-mad a-LEE"
+      }
+    }
   },
   "sources": [
     {
@@ -166,7 +200,9 @@
       "Muhammad Ali named as a well-known American Muslim; no claims about his draft case.",
       "'Something close to the country's own promise that belief is free' is a light reference to American religious liberty; confirm it doesn't read as political.",
       "Editor: 'their faith was mostly lost to their descendants' (unsourced proportion) became 'slavery made that faith hard to hand down'; 'in the last century' became 'later'; 'for many of these people' became 'for the people in that Friday row'; the hook's 'shoulder to shoulder' cut because day 1029 uses the same image twice.",
-      "Audit: \"the same Sunni practice as Muslims around the world\" implied all Muslims are Sunni; now \"mainstream Sunni practice\". Thin myth (\"Muhammad Ali was a Muslim\") replaced with a Warith Deen Mohammed item taught in the teach."
+      "Audit: \"the same Sunni practice as Muslims around the world\" implied all Muslims are Sunni; now \"mainstream Sunni practice\". Thin myth (\"Muhammad Ali was a Muslim\") replaced with a Warith Deen Mohammed item taught in the teach.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

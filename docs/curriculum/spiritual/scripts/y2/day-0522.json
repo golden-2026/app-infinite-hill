@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: the Meditations, twelve books, in order. Your line was in order now. Did you write one line to yourself? Day five hundred twenty-two.",
+      "voice": "Yesterday's word was Meditations: an emperor's notes to himself, read in order from book one. Your line was in order now.",
       "screen": [
         "`IN ORDER NOW.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "What's the best money anyone ever spent on you? Not the biggest gift. The one that kept paying. For a lot of people, it's a lesson: the piano teacher a grandparent paid for, the tutor that got you through chemistry, the swim class that means you can still save yourself in deep water. Book one of the Meditations is Marcus's list of debts, one person at a time. The fourth entry is about exactly this kind of spending. Today: great-grandfather's advice.",
+      "voice": "What's the best money anyone ever spent on you? Not the biggest gift. The one that kept paying. For a lot of people, it's a lesson: the piano teacher a grandparent paid for, the tutor that got you through chemistry, the swim class that means you can still save yourself in deep water. Book one of the Meditations is Marcus's list of debts, one person at a time, and the fourth entry is about exactly this kind of spending.",
       "screen": [
         "`THE BEST MONEY SPENT ON YOU.` → `THE LESSON THAT KEPT PAYING.` → `GREAT-GRANDFATHER'S ADVICE.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the line. Section four is one sentence. From his great-grandfather, Marcus says, he learned not to go to the public schools, to have good teachers at home, and, in the old Long translation, to know \"that on such things a man should spend liberally.\" That's all. Second, who he was. Scholars usually identify him as Catilius Severus, an important senator on his mother's side of the family; exactly how the two were related is still debated. Marcus was a boy from a rich and powerful family, and it shows. Third, be honest about it. This is a wealthy household's advice. Most children in Rome never had a tutor at all, and many never learned to read. The line isn't a plan most families could follow. But underneath it is a principle anyone can hold: education is worth spending on, generously, even when it costs. Fourth, look at what follows. The rest of book one shows where the spending went. Of its seventeen entries, a great many are teachers: a painting teacher, a teacher of grammar, a teacher of rhetoric, several philosophers. Marcus remembers each one by what they taught him to be, not just what they taught him to know. Patience. Plain speech. Steadiness. Good teachers, it turns out, were the inheritance. And spending isn't only money. It's time with someone who knows more than you. It's the humility to be corrected. It's a library card, a mentor's hour, a class you're nervous about. Marcus's great-grandfather left him one sentence. It's worth keeping.",
+      "voice": "First, the line. Section four is one sentence. From his great-grandfather, Marcus says, he learned not to go to the public schools, to have good teachers at home, and, in the old Long translation, to know \"that on such things a man should spend liberally.\" That's all. Second, who he was. Scholars usually identify him as Catilius Severus, an important senator on his mother's side of the family; exactly how the two were related is still debated. Marcus was a boy from a rich and powerful family, and it shows. Third, be honest about it. This is a wealthy household's advice. Most children in Rome never had a tutor at all, and many never learned to read. But underneath it is a principle anyone can hold: education is worth spending on, generously, even when it costs. Fourth, look at what follows. Of book one's seventeen entries, a great many are teachers: a painting teacher, a teacher of grammar, a teacher of rhetoric, several philosophers. Marcus remembers each one by what they taught him to be, not just what they taught him to know: patience, plain speech, steadiness. Good teachers were the inheritance. And spending isn't only money. It's time with someone who knows more than you, the humility to be corrected, a library card, a mentor's hour, a class you're nervous about. His great-grandfather left him one sentence, and it's worth keeping.",
       "screen": [
         "`NO PUBLIC SCHOOL; GOOD TEACHERS AT HOME.` · `CATILIUS SEVERUS, A RICH SENATOR.` · `A WEALTHY FAMILY'S ADVICE.` · `TEACHERS WERE THE INHERITANCE.` · then, large: `SPEND ON TEACHERS.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Settle, and breathe. Think of one teacher who shaped you, in school or out of it. A coach, a grandparent, a boss, an author. Picture them. What did they teach you to be, not only to know? Stay with that. Then think of something you'd like to learn now. Who could teach it? What would it cost you, in money, or time, or pride? Is it worth it? The bell holds the time.",
+      "voice": "Think of one teacher who shaped you, in school or out of it: a coach, a grandparent, a boss, an author. Picture them, and ask what they taught you to be, not only to know. Then think of one thing you'd like to learn now, and what it would cost you in money, time or pride.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: spend on teachers. Today, invest in one good teacher: buy the book, sign up for the class, or ask someone wiser for an hour. Day five hundred twenty-two.",
+      "voice": "Your line: spend on teachers. A good teacher is an inheritance that keeps paying. Day five hundred twenty-two, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Readers who take this line to heart often set aside money or time each year for learning: books, classes, or time with a mentor.",
   "games": {
+    "guess": [
+      "have good teachers, and spend generously on learning",
+      "save money and leave all of it to your grandchildren",
+      "skip teachers and learn everything from books alone"
+    ],
     "match": {
       "prompt": "great-grandfather's advice — tap the pairs.",
       "pairs": [
@@ -132,14 +137,41 @@
     ],
     "recall": [
       [
-        "Serenus",
-        "neither sick nor well"
+        "Arrian",
+        "took down Epictetus' teaching"
       ],
       [
-        "Sotion",
-        "you lose nothing either way"
+        "persona",
+        "Latin for an actor's mask"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your dad",
+      "says": "What did Marcus Aurelius's great-grandfather tell him about school?",
+      "options": [
+        "Have good teachers, and spend generously on that kind of thing; it's worth the cost.",
+        "Skip teachers entirely and learn everything from reading old books alone.",
+        "Go to the public schools, so he'd grow up among ordinary Roman children."
+      ],
+      "answer": 0,
+      "meaning": "Meditations 1.4: no public schools, good teachers at home, and on such things spend liberally. Underneath: learning is worth paying for."
+    },
+    "gloss": {
+      "Catilius Severus": {
+        "meaning": "a Roman senator, usually identified as Marcus's great-grandfather",
+        "say": "kuh-TIL-ee-us suh-VEER-us"
+      },
+      "Long translation": {
+        "meaning": "George Long's old English translation of the Meditations"
+      },
+      "rhetoric": {
+        "meaning": "the art of public speaking and persuasive writing",
+        "say": "RET-uh-rik"
+      },
+      "Meditations": {
+        "meaning": "Marcus's twelve books of notes to himself"
+      }
+    }
   },
   "sources": [
     {
@@ -163,7 +195,9 @@
       "Great-grandfather usually identified as Lucius Catilius Severus, Marcus's maternal great-grandfather (strictly, step-great-grandfather in some reconstructions); confirm. Reviewer replaced 'his mother's grandfather' with 'on his mother's side; exactly how related is debated'.",
       "Diognetus as a painting teacher comes from the Historia Augusta (Marcus 4.9), not from 1.6 itself; confirm the teach's 'a painting teacher' is fair.",
       "'Most children in Rome never had a tutor, and many never learned to read': general claim about Roman literacy; confirm the hedge.",
-      "Book one entries named as teachers: Diognetus (painting/drawing, 1.6), Alexander the grammarian (1.10), Fronto (rhetoric, 1.11), Rusticus, Apollonius, Sextus (philosophy). Confirm."
+      "Book one entries named as teachers: Diognetus (painting/drawing, 1.6), Alexander the grammarian (1.10), Fronto (rhetoric, 1.11), Rusticus, Apollonius, Sextus (philosophy). Confirm.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

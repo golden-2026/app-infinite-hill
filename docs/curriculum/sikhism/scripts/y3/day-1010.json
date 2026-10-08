@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Green Revolution, and your line was fed a nation. Did you name the field behind one meal? The fields were full, and the questions left open from the new map were still waiting. Day one thousand ten.",
+      "voice": "Yesterday, Green Revolution, and your line was fed a nation. The fields were full, and the questions left open by the new map were still waiting.",
       "screen": [
         "`FED A NATION.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "One document, two readers. The first reads it and sees a fair request: let a state run more of its own affairs. The second reads the very same pages and sees a warning sign: the start of breaking away. They may even be holding the same pages. What differs is the fear each brings to them. In the year in today's title, the Akali Dal met at Anandpur Sahib, the town where the Khalsa was born, and set down what it wanted for Punjab. That document is the Anandpur resolution, and how people read it shaped the years that followed.",
+      "voice": "One document, two readers. The first reads it and sees a fair request: let a state run more of its own affairs. The second sees a warning sign: the start of breaking away. They may even be holding the same pages. What differs is the fear each brings to them. In the year in today's title, the Akali Dal met at Anandpur Sahib, the town where the Khalsa was born, and set down what it wanted for Punjab. That document is the Anandpur resolution, and how people read it shaped the years that followed.",
       "screen": [
         "`ONE DOCUMENT, TWO READERS.` → `A FAIR ASK, OR A WARNING?` → `MET AT ANANDPUR SAHIB.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the place. Anandpur Sahib is where tradition says Guru Gobind Singh called the Khalsa into being. Meeting there tied the demands to the heart of the panth's story. Second, what it asked. Histories summarize it like this. The central government should keep a short list of powers, such as defense, foreign affairs and currency, and leave the rest to the states. Chandigarh should go to Punjab. Punjab's share of the river waters should be settled fairly. And it set out religious and social aims for the Sikhs as well. Third, the two readings. Akali leaders said it was about federalism: more say for every state, not just Punjab, inside India. Critics in Delhi and elsewhere read it as a step toward a separate Sikh country. It didn't help that more than one version of the text went around, and people quoted the version that fit their fear. Historians still describe it in different ways. Fourth, the root. At Ang 97 of the Guru Granth Sahib, Guru Arjan says that all are partners in the Lord's care, and no one is outside it. A partner's voice is worth hearing in full, before it's labeled. When one text is read two ways, the work is to find out what each reader is afraid of. That's today's line: read both sides.",
+      "voice": "First, the place. Anandpur Sahib is where tradition says Guru Gobind Singh called the Khalsa into being. Meeting there tied the demands to the heart of the panth's story. Second, what it asked. Histories summarize it like this. The central government should keep a short list of powers, such as defense, foreign affairs and currency, and leave the rest to the states. Chandigarh should go to Punjab. Punjab's share of the river waters should be settled fairly. And it set out religious and social aims for the Sikhs as well. Third, the two readings. Akali leaders said it was about federalism: more say for every state, not just Punjab, inside India. Critics in Delhi and elsewhere read it as a step toward a separate Sikh country. It didn't help that more than one version of the text went around, and people quoted the version that fit their fear. Historians still describe it in different ways. Fourth, the root. At Ang 97 of the Guru Granth Sahib, Guru Arjan says that all are partners in the Lord's care, and no one is outside it. A partner's voice is worth hearing in full, before it's labeled. When one text is read two ways, the work is to find out what each reader is afraid of.",
       "screen": [
         "`ANANDPUR: WHERE THE KHALSA BEGAN.` · `FEWER POWERS FOR THE CENTER.` · `FEDERALISM, OR BREAKING AWAY?` · `ANG 97: ALL ARE PARTNERS.` · then, large: `READ BOTH SIDES.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Two minutes to read both sides of one issue. Sit upright, and let the breath even out. Choose one argument in your life or in the news where you already know whose side you're on. Breathe in, and say to yourself, as fairly as you can, what your side wants. Breathe out, and say what the other side wants, in words they would recognize. Breathe in, and name what your side fears. Breathe out, and name what theirs fears. You don't have to change your mind. Just hear both. If you pray, you can rest on Waheguru at the end. The bell holds the time.",
+      "voice": "Choose one argument, in your life or in the news, where you already know whose side you're on. Breathe in and say, as fairly as you can, what your side wants and what it fears; breathe out and say what the other side wants and fears, in words they would recognize. You don't have to change your mind, only hear both, and if you pray, rest on Waheguru at the end.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: read both sides. Today, before you share an opinion on something that divides people, read one honest piece from the side you disagree with. Day one thousand ten.",
+      "voice": "Your line: read both sides. A partner's voice, heard in full before the label. See you tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "The Anandpur Sahib resolution is still debated in Punjab politics; Akali leaders have described it as a call for federalism, and historians present its different readings and versions side by side.",
   "games": {
+    "guess": [
+      "the Akali Dal's statement of what it wanted for Punjab",
+      "the order that first called the Khalsa into being",
+      "a treaty that settled Punjab's share of river waters"
+    ],
     "match": {
       "prompt": "one text, two readings — tap the pairs.",
       "pairs": [
@@ -136,10 +141,43 @@
         "Guru Nanak's birthplace"
       ],
       [
-        "Rawalpindi",
-        "the district where villages were attacked"
+        "Ghadar",
+        "a word usually given as revolt"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "a friend in your book club",
+      "says": "Was the Anandpur resolution asking for fairness, or a step toward breaking away?",
+      "options": [
+        "Read both ways: Akali leaders said more say for each state; critics feared a split.",
+        "Everyone at the time agreed it simply asked for Punjab to leave India.",
+        "Nobody argued about it; it was only a plan to rename the city of Chandigarh."
+      ],
+      "answer": 0,
+      "meaning": "Akali leaders called it federalism, more say for every state; critics read it as a step toward a separate country, and more than one version circulated."
+    },
+    "gloss": {
+      "Anandpur Sahib": {
+        "meaning": "the town where tradition says the Khalsa was born",
+        "script": "ਅਨੰਦਪੁਰ ਸਾਹਿਬ",
+        "say": "uh-NUND-pur SAA-hib"
+      },
+      "Guru Gobind Singh": {
+        "meaning": "the Guru who called the Khalsa into being",
+        "script": "ਗੁਰੂ ਗੋਬਿੰਦ ਸਿੰਘ",
+        "say": "GOO-roo GO-bind SING"
+      },
+      "Akali Dal": {
+        "meaning": "a Sikh political party",
+        "script": "ਅਕਾਲੀ ਦਲ",
+        "say": "uh-KAA-lee DUL"
+      },
+      "Chandigarh": {
+        "meaning": "the shared capital Punjab asked to have",
+        "script": "ਚੰਡੀਗੜ੍ਹ",
+        "say": "CHUN-dee-gur"
+      }
+    }
   },
   "sources": [
     {
@@ -165,7 +203,9 @@
       "The year appears only via the index title. 'Historians still describe it in different ways' is a general statement; confirm.",
       "Ang 97 paraphrased (sabhe sājhīvāl sadāin(i) tūn kisai na disahi bāhrā jīu); please confirm the Ang and the attribution to Guru Arjan.",
       "Original: ਅਨੰਦਪੁਰ spelling, pronunciation and the gloss of anand and pur.",
-      "Audit pass: hook said 'neither of them is reading a different text', which contradicted the teach and myth (more than one version circulated); rewritten to 'they may even be holding the same pages'."
+      "Audit pass: hook said 'neither of them is reading a different text', which contradicted the teach and myth (more than one version circulated); rewritten to 'they may even be holding the same pages'.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

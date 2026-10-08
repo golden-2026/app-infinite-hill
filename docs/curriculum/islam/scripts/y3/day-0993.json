@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the Mughals: Babur's homesick garden, Akbar's hall of debate. Your line was: he missed the melons. Did you plant anything where you are? Day nine hundred ninety-three.",
+      "voice": "Yesterday: the Mughals, Babur's homesick garden. Your line was he missed the melons.",
       "screen": [
         "`HE MISSED THE MELONS.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: remember a love that's gone. Settle, and breathe. Bring to mind someone you loved who has died, or a love that ended, or a person who moved far away. Let their face come. Let one ordinary memory come: a voice, a kitchen, a joke. You don't have to build anything. Just hold them for a minute, the way the garden holds the tomb at its center. If grief comes, let it. If you pray, you can pray for them, as Muslims pray for their dead. If you don't, simply say their name. The bell holds the time.",
+      "voice": "Bring to mind someone you loved who has died, or a love that ended, or a person now far away, and let one ordinary memory come: a voice, a kitchen, a joke. Just hold them for a minute, the way the garden holds the tomb at its center, and if grief comes, let it. If you pray, you can pray for them, as Muslims pray for their dead; if not, simply say their name.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: a tomb for love. Today, do one small thing to honor someone you've lost: say their name aloud, cook their dish, or tell someone a story about them. Day nine hundred ninety-three.",
+      "voice": "Your line: a tomb for love. Everything in pairs, and one tomb off-center. Day nine hundred ninety-three, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Muslims pray for the dead and visit graves to remember them; the mosque beside the Taj Mahal is still used for Friday prayer.",
   "games": {
+    "guess": [
+      "the empress whose tomb is the Taj Mahal",
+      "the white marble used to build the Taj",
+      "the calligrapher who signed the Taj's verses"
+    ],
     "match": {
       "prompt": "the Taj Mahal — tap the pairs.",
       "pairs": [
@@ -132,14 +137,50 @@
     ],
     "recall": [
       [
-        "Kanun",
-        "the law a ruler issues"
+        "Chishti",
+        "the Sufi order of Ajmer and Delhi"
       ],
       [
-        "Hafiz",
-        "opened at random at the table"
+        "Osman",
+        "the founder the Ottomans are named for"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your partner",
+      "says": "Isn't the Taj Mahal just a big monument to love?",
+      "options": [
+        "It is, but its Qur'an verses also speak of death, judgment and the soul's return.",
+        "No, it was a royal palace that was only later turned into a tomb.",
+        "Yes, and it carries no religious writing at all, only flower carvings."
+      ],
+      "answer": 0,
+      "meaning": "It honors Shah Jahan's wife, and its verses, like Return unto thy Lord, also speak of death, judgment and paradise."
+    },
+    "gloss": {
+      "Mumtaz Mahal": {
+        "meaning": "title of the empress buried at the center of the Taj",
+        "script": "ممتاز محل",
+        "say": "mum-TAAZ ma-HAL"
+      },
+      "Shah Jahan": {
+        "meaning": "the Mughal emperor who built the Taj for his wife",
+        "script": "شاه جهان",
+        "say": "SHAAH ja-HAAN"
+      },
+      "cenotaphs": {
+        "meaning": "memorial tombs, here two in marble side by side",
+        "say": "SEN-uh-tafs"
+      },
+      "Amanat Khan": {
+        "meaning": "the calligrapher who signed the Taj's lettering",
+        "say": "a-MAA-nat KHAAN"
+      },
+      "al-Fajr": {
+        "meaning": "the Dawn, a surah of the Qur'an",
+        "script": "الفجر",
+        "say": "al-FAJR"
+      }
+    }
   },
   "sources": [
     {
@@ -169,7 +210,9 @@
       "The validator's British-spelling check flags 'Mumtaz' (it matches 'mum'); the name is set in quotation marks in the voice to pass. Consider whitelisting the name.",
       "Original: 'crown of the palace' is a popular etymology, given as 'often explained'; confirm or cut.",
       "Editor pass: cut the passage on Muslims' differing views of grand tombs (and the matching myth item and howItsDone clause), which repeated day 991's shrine-debate angle almost word for word; new myth item on Amanat Khan's signature; 'covered in writing' made 'framed with writing'. The note above on views about tombs no longer applies.",
-      "Audit (2026-10-01): read in full against days 977-986; no factual, translation, framing or repetition problems found; no changes."
+      "Audit (2026-10-01): read in full against days 977-986; no factual, translation, framing or repetition problems found; no changes.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

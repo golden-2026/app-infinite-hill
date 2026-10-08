@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Exsultet, from the first light to a heart of flesh. Your line was the whole story in one night. Whose story did you tell? Day six hundred sixty-four.",
+      "voice": "Yesterday, the Exsultet, and the whole Bible story read by candlelight. Your line was the whole story in one night.",
       "screen": [
         "`THE WHOLE STORY IN ONE NIGHT.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Since Ash Wednesday, a single word has been missing from the Mass. Not dropped by accident: put away. In some places, children even wrote it on a banner before Lent and buried it in the churchyard. All through Lent the Gospel was greeted with other words. Then last night, after the readings, the priest sang it, three times, each time a little higher, and the people sang it back. This morning it's everywhere: on the doors, in the hymns, at the end of Mass, doubled. Easter Sunday, and the word that came back.",
+      "voice": "Since Ash Wednesday, a single word has been missing from the Mass. Not dropped by accident: put away. In some places, children even wrote it on a banner before Lent and buried it in the churchyard. All through Lent the Gospel was greeted with other words. Then last night, after the readings, the priest sang it three times, each time a little higher, and the people sang it back. This morning it's everywhere: on the doors, in the hymns, doubled at the end of Mass.",
       "screen": [
         "`ALL LENT WITHOUT IT.` → `SUNG THREE TIMES, RISING.` → `EASTER MORNING.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: say he is risen to someone. First, sit for a moment and picture who it could be. A parent, a friend, someone at Mass, a group chat. Then say it, or send it, in whatever words fit: Christ is risen, or happy Easter, or simply alleluia. If you're not someone who says those words, picture the women running from the tomb, and notice what good news does to a body. The bell holds the time.",
+      "voice": "Picture someone to tell, a parent, a friend, someone at Mass, a group chat, and say it to them quietly in whatever words fit: Christ is risen, or happy Easter, or simply alleluia. If those aren't your words, picture the women running from the tomb, and notice what good news does to a body.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: alleluia. Praise the Lord, everybody. Today, say it out loud at least once, even quietly, even to the kitchen, for the first time since Lent began. Day six hundred sixty-four.",
+      "voice": "Your line: alleluia. Praise the Lord, everybody, sung again after the long quiet of Lent. Happy Easter.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "On Easter Sunday Catholics celebrate Mass with the Gospel of the empty tomb, sing the alleluia that was silent through Lent, end Mass with a double alleluia, and often greet each other with Christ is risen and the answer he is risen indeed.",
   "games": {
+    "guess": [
+      "the morning of the empty tomb, when alleluia returns",
+      "the Sunday Jesus rode into Jerusalem on a donkey",
+      "the day the Spirit came down on the apostles"
+    ],
     "match": {
       "prompt": "Easter morning — tap the pairs.",
       "pairs": [
@@ -132,14 +137,42 @@
     ],
     "recall": [
       [
-        "Laetare",
-        "rejoice, said to one"
+        "anastasis",
+        "resurrection: a standing up again"
       ],
       [
-        "cathedra",
-        "the teacher's chair"
+        "Emmanuel",
+        "a name meaning God is with us"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your best friend",
+      "says": "What does alleluia actually mean? I hear it everywhere at Easter.",
+      "options": [
+        "Hebrew for praise the Lord, all of you: hallelu plus Yah, God's name.",
+        "It's Latin for he is risen, the greeting people say at Easter.",
+        "It's Greek for joy, a word the first Christians made up for Easter."
+      ],
+      "answer": 0,
+      "meaning": "Alleluia is Hebrew: hallelu, praise, said to all of you, and Yah, the short form of God's name. Praise the Lord, everybody."
+    },
+    "gloss": {
+      "hallelu": {
+        "meaning": "Hebrew: praise, said to many",
+        "say": "hah-leh-LOO"
+      },
+      "Yah": {
+        "meaning": "the short form of God's name in Hebrew",
+        "say": "YAH"
+      },
+      "Book of Revelation": {
+        "meaning": "the Bible's last book, where heaven sings alleluia"
+      },
+      "octave": {
+        "meaning": "the eight days from Easter Sunday kept as one feast",
+        "say": "OK-tiv"
+      }
+    }
   },
   "sources": [
     {
@@ -182,7 +215,9 @@
       "Solemn alleluia at the Vigil intoned by the priest three times, raising the pitch; confirm.",
       "The paschal greeting 'Christ is risen / he is risen indeed' attributed to Eastern Christian usage; confirm phrasing.",
       "Psalm references for alleluia given in Hebrew numbering; Douay numbering differs.",
-      "Editor review (2026-10-01): the alleluia is omitted from Ash Wednesday to the Vigil, about forty-six days, so 'for forty days' (hook, screen, carry) is corrected to 'since Ash Wednesday' / 'since Lent began'; 'every Catholic Mass' trimmed; 'the younger one' (not in John 20) now 'the other disciple, the one Jesus loved', also in the fork; cut 'the greatest feast of the Catholic year', 'all through the Psalms', 'in many Catholic homes' and 'everything else they believe grows from that morning' (now Paul's line, 1 Corinthians 15:14, paraphrased and cited); the myth on the alleluia in Lent repeated day 663's, replaced with one on John 20."
+      "Editor review (2026-10-01): the alleluia is omitted from Ash Wednesday to the Vigil, about forty-six days, so 'for forty days' (hook, screen, carry) is corrected to 'since Ash Wednesday' / 'since Lent began'; 'every Catholic Mass' trimmed; 'the younger one' (not in John 20) now 'the other disciple, the one Jesus loved', also in the fork; cut 'the greatest feast of the Catholic year', 'all through the Psalms', 'in many Catholic homes' and 'everything else they believe grows from that morning' (now Paul's line, 1 Corinthians 15:14, paraphrased and cited); the myth on the alleluia in Lent repeated day 663's, replaced with one on John 20.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: Manthara, and the king's forgotten battlefield promise. Kaikeyi went into the anger room and lay on the floor: the rest will be done by a promise. Did you think about a promise you've made? Today, the king walks in. Day five hundred twenty.",
+      "voice": "Yesterday: Manthara, and the king's forgotten battlefield promise. Kaikeyi lay down on the floor of the anger room. Today, the king walks in.",
       "screen": [
         "`THE KING OWES YOU TWO BOONS.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Dasharatha has had a wonderful day. The assembly said yes. The city is glowing. Tomorrow his favorite son becomes his heir. He wants to tell the person he most enjoys telling things to, so he walks to Kaikeyi's rooms, which Valmiki describes as beautiful, full of birds and music and flowering trees. She isn't on her couch. A doorkeeper tells him, nervously, that the queen has gone into the anger room. And the king, happy a moment ago, goes cold.",
+      "voice": "Dasharatha has had a wonderful day. The assembly said yes, the city is glowing, and tomorrow his favorite son becomes his heir. He wants to tell the person he most enjoys telling things to, so he walks to Kaikeyi's rooms, which Valmiki describes as beautiful, full of birds and music and flowering trees. Her couch is empty. A doorkeeper tells him, nervously, that the queen has gone into the anger room. And the king, happy a moment ago, goes cold.",
       "screen": [
         "`A WONDERFUL DAY.` → `HER COUCH IS EMPTY.` → `SHE'S IN THE ANGER ROOM.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "He finds her lying on the floor with her jewels scattered around her, and he kneels down and strokes her hair. Are you ill? Has someone insulted you? Tell me who, and I'll punish them. Tell me who you want rewarded, and I'll reward them. Anything you want, it's yours. This is exactly the opening Manthara predicted. Kaikeyi doesn't refuse him. She asks him to promise first. And Dasharatha, wanting only to see her get up off the floor, swears by the thing he loves most. He swears by Rama. You know there's no one I love more than you, he says, except Rama, without whom I couldn't live for an hour. By Rama, I'll do what you ask. Now Kaikeyi makes the promise as public as she can. She calls the gods to witness: the sun and moon, the sky, the planets, night and day, the directions, the earth, the beings of the heavens and the household gods. Let them all hear that the king has sworn. Then she reminds him of the old war with Shambara, the day she saved his life, and the two boons he gave her. And she asks. Let Bharata be consecrated with the waters that are ready. And let Rama go to the Dandaka forest for fourteen years, wearing bark and deerskin, with matted hair. The Sanskrit for boon is vara, a gift the receiver gets to choose. These two were freely given, years ago, out of gratitude. Tonight they come due, and the king learns what he gave away.",
+      "voice": "He finds her on the floor among her scattered jewels, kneels, and strokes her hair. Are you ill? Has someone insulted you? Tell me who, and I'll punish them; tell me who you want rewarded, and I'll reward them. Anything you want is yours. It's exactly the opening Manthara predicted. Kaikeyi asks him to swear first. And Dasharatha, wanting only to see her get up off the floor, swears by the one he loves most. There's no one I love more than you, he says, except Rama, without whom I couldn't live an hour. By Rama, I'll do what you ask. Now Kaikeyi makes the promise as public as she can. She calls the gods to witness: sun and moon, sky and planets, night and day, the directions, the earth, the beings of the heavens and the household gods. Let them all hear that the king has sworn. She reminds him of the war with Shambara, the day she saved his life, and the two boons. And she asks. Let Bharata be consecrated with the waters that are ready. Let Rama go to the Dandaka forest for fourteen years, in bark and deerskin, with matted hair. The Sanskrit for boon is vara, a gift the receiver gets to choose. These two were freely given, years ago, out of gratitude. Tonight they come due, and the king learns what he gave away.",
       "screen": [
         "`TELL ME WHO, AND I'LL PUNISH THEM.` · `SWEAR FIRST.` · `HE SWEARS BY RAMA.` · `THE GODS ARE CALLED TO WITNESS.` · then, large: `BHARATA CROWNED. RAMA TO THE FOREST.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Sit and settle into the breath. Think of a time you said yes before you knew the question, to a friend, a boss, a child. It's a loving habit, and sometimes a costly one. Let the memory come without judging it. On each breath in, feel the warmth that made you say yes. On each breath out, imagine pausing, gently, long enough to hear the whole question. The bell holds the time.",
+      "voice": "Remember a time you said yes before you knew the question, to a friend, a boss, a child: a loving habit, and sometimes a costly one. On each breath in, feel the warmth that made you say yes. On each breath out, imagine pausing, gently, long enough to hear the whole question.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: a gift the receiver gets to choose. Today, if someone asks you to promise before they ask, kindly ask to hear the question first. Day five hundred twenty.",
+      "voice": "Your line: a gift the receiver gets to choose. Tomorrow, the longest night in Ayodhya. See you then.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "In the epic, a vara, a boon, once granted binds the one who gave it, and this scene shows a king's pride in his word becoming the thing that holds him.",
   "games": {
+    "guess": [
+      "two old gifts the king owed her, claimed to exile Rama",
+      "two curses Manthara laid on the king long ago",
+      "two wishes the gods granted Bharata at his birth"
+    ],
     "match": {
       "prompt": "the oath — tap the pairs.",
       "pairs": [
@@ -130,14 +135,52 @@
       "what it means: the boons are real; she makes him swear, then claims what he owed her.",
       "what a scholar hears: the king swears by Rama himself, so his oath binds him to exile the very son he swore by."
     ],
+    "chat": {
+      "who": "your coworker",
+      "says": "Why didn't the king just say no once he heard what she wanted?",
+      "options": [
+        "He had already sworn by Rama, with the gods as witnesses, before she asked.",
+        "He did say no, but Kaikeyi went to the assembly and won them over.",
+        "He never heard her ask; Manthara brought him the news instead."
+      ],
+      "answer": 0,
+      "meaning": "Kaikeyi made him swear first, by Rama, and called the gods to witness. Only then did she name the boons."
+    },
+    "gloss": {
+      "Dasharatha": {
+        "meaning": "king of Ayodhya, Rama's father",
+        "script": "दशरथ",
+        "say": "duh-SHUH-ruh-tuh"
+      },
+      "Shambara": {
+        "meaning": "the demon the gods fought, with Dasharatha's help",
+        "script": "शम्बर",
+        "say": "SHUM-buh-ruh"
+      },
+      "vara": {
+        "meaning": "a boon, a gift the receiver gets to choose",
+        "script": "वर",
+        "say": "VUH-ruh"
+      },
+      "Dandaka": {
+        "meaning": "the great forest of Rama's exile",
+        "script": "दण्डक",
+        "say": "DUN-duh-kuh"
+      },
+      "Bharata": {
+        "meaning": "Kaikeyi's son, Rama's younger brother",
+        "script": "भरत",
+        "say": "BHUH-ruh-tuh"
+      }
+    },
     "recall": [
       [
-        "Vishvamitra",
-        "a king who became a sage"
+        "Tataka",
+        "the yakshi cursed by Agastya"
       ],
       [
-        "krauncha",
-        "a crane or curlew, not a crow"
+        "samkshepa",
+        "the short form, a summary"
       ]
     ]
   },
@@ -157,7 +200,9 @@
       "The list of witnesses Kaikeyi invokes is condensed; confirm.",
       "The king's line (no one dearer than Kaikeyi except Rama, without whom he cannot live): paraphrased; confirm.",
       "vara from the root vṛ 'to choose': standard (Monier-Williams); confirm.",
-      "Editor review (2026-10-01): removed the root etymology of vara (spoken teach and original note now give only the meaning), the unsourced claim that a boon 'cannot be taken back' in Hindu storytelling, and 'readers have long pointed to the irony'; softened 'in the largest possible way'."
+      "Editor review (2026-10-01): removed the root etymology of vara (spoken teach and original note now give only the meaning), the unsourced claim that a boon 'cannot be taken back' in Hindu storytelling, and 'readers have long pointed to the irony'; softened 'in the largest possible way'.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

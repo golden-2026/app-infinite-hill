@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Ramadan, and your line was the month of the book. What did you read instead of scrolling? Day five hundred nine.",
+      "voice": "Yesterday: Ramadan, named first by its book. Your line was the month of the book.",
       "screen": [
         "`THE MONTH OF THE BOOK.`"
       ]
@@ -38,7 +38,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "This is i'tikaf. The word means staying at something, keeping yourself to it. In i'tikaf, a person stays in the mosque with the intention of devoting themselves to God: prayer, Qur'an, remembrance, quiet. The Qur'an mentions it in Surah Al-Baqarah, in the verses about fasting, as people staying in the mosques. 'A'isha reports, in Bukhari, that the Prophet ﷺ used to spend the last ten days of every Ramadan in i'tikaf until he died, and that his wives kept the practice after him. Why the last ten? Because somewhere in them is Laylat al-Qadr, the Night of Power. A hadith tells Muslims to seek it in the odd nights of the last ten. So i'tikaf is a way of being present for whichever night it turns out to be. Schools of law differ on details: how long it must last, and whether a woman may keep it in a prayer space at home, as the Hanafis allow, or in the mosque, as others teach. Some who can't take ten days keep a single day, or a night. And here's a human detail Bukhari keeps. While the Prophet was in i'tikaf, his wife Safiyya came to visit him one night. They talked, and when she rose to go home, he got up and walked her back. Withdrawal in this picture isn't coldness. It's closing the door on the noise, not on the people you love. Withdraw to draw near: the outer world gets smaller, so that something else can get larger.",
+      "voice": "This is i'tikaf. The word means staying at something, keeping yourself to it. A person stays in the mosque with the intention of devoting themselves to God: prayer, Qur'an, remembrance, quiet. The Qur'an mentions it in Surah Al-Baqarah, in the verses about fasting, as people staying in the mosques. 'A'isha reports, in Bukhari, that the Prophet ﷺ used to spend the last ten days of every Ramadan in i'tikaf until he died, and that his wives kept the practice after him. Why the last ten? Because somewhere in them is Laylat al-Qadr, the Night of Power. A hadith tells Muslims to seek it in the odd nights of the last ten. So i'tikaf is a way of being present for whichever night it turns out to be. Schools of law differ on details: how long it must last, and whether a woman may keep it in a prayer space at home, as the Hanafis allow, or in the mosque, as others teach. Some who can't take ten days keep a single day, or a night. And here's a human detail Bukhari keeps. While the Prophet was in i'tikaf, his wife Safiyya came to visit him one night. They talked, and when she rose to go home, he got up and walked her back. Withdrawal in this picture isn't coldness. It's closing the door on the noise, not on the people you love. Withdraw to draw near: the outer world gets smaller, so that something else can get larger.",
       "screen": [
         "`I'TIKAF: TO STAY, TO KEEP TO IT.` · `THE LAST TEN DAYS, EVERY YEAR.` · `WAITING FOR THE NIGHT OF POWER.` · `HE WALKED SAFIYYA BACK.`"
       ]
@@ -46,7 +46,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: a small seclusion. Sit somewhere you can close a door, if you can. Put your phone in another room, or face down and silent. For this sit, the world is a little smaller on purpose. Let the breath settle. Then, if you're able, choose one evening this week to stay offline for a few hours. If you pray, give it to prayer and the Qur'an. If you don't, give it to quiet. The bell holds the time.",
+      "voice": "Close a door if you can, and put your phone in another room, or face down and silent: for these few minutes, the world is a little smaller on purpose. If you pray, give the time to prayer or a few verses of the Qur'an; if you don't, give it to quiet.",
       "screen": []
     },
     {
@@ -60,7 +60,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: withdraw to draw near. Today, pick your offline evening and put it in your calendar, so it actually happens. Day five hundred nine.",
+      "voice": "Your line: withdraw to draw near. Ten days, a night, or a few quiet minutes. See you tomorrow.",
       "screen": []
     },
     {
@@ -74,6 +74,11 @@
   ],
   "howItsDone": "In the last ten days of Ramadan, some Muslims stay in the mosque in i'tikaf, leaving only for essential needs; others keep it for a day or a night, and practice for women varies between schools of law.",
   "games": {
+    "guess": [
+      "staying in the mosque in devotion, a retreat",
+      "a fast kept on the Night of Power alone",
+      "the night prayer recited in long sections"
+    ],
     "match": {
       "prompt": "inside i'tikaf — tap the pairs.",
       "pairs": [
@@ -134,14 +139,46 @@
     ],
     "recall": [
       [
-        "Mistah",
-        "relative who spread the slander"
+        "Sha'ban",
+        "the month before Ramadan"
       ],
       [
-        "husn al-zann",
-        "thinking well, the good guess"
+        "yaqin",
+        "certainty, the certain thing"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "a coworker",
+      "says": "Why would someone sleep in a mosque for ten days in Ramadan?",
+      "options": [
+        "It's i'tikaf: a retreat in the last ten days, seeking the Night of Power.",
+        "It's required of every Muslim once in a lifetime, like the pilgrimage.",
+        "Mosques host travelers who can't get home before Eid begins."
+      ],
+      "answer": 0,
+      "meaning": "'A'isha reports the Prophet spent the last ten days of every Ramadan in i'tikaf; the Night of Power is sought in those nights."
+    },
+    "gloss": {
+      "i'tikaf": {
+        "meaning": "staying in the mosque in devotion",
+        "script": "اعتكاف",
+        "say": "i'-ti-KAAF"
+      },
+      "Laylat al-Qadr": {
+        "meaning": "the Night of Power, sought in the odd nights of the last ten",
+        "script": "ليلة القدر",
+        "say": "LAY-lat al-QADR"
+      },
+      "Safiyya": {
+        "meaning": "the Prophet's wife, who visited him in i'tikaf",
+        "script": "صفية",
+        "say": "sa-FEE-ya"
+      },
+      "Hanafis": {
+        "meaning": "followers of the Hanafi school of law",
+        "say": "HA-na-fees"
+      }
+    }
   },
   "sources": [
     {
@@ -177,7 +214,9 @@
       "Bukhari numbers (2017, 2026, 2035) cited from memory; confirm.",
       "The Hanafi allowance for women's i'tikaf in a home prayer space vs. other schools: confirm the summary.",
       "The hook's mosque 'campsite' scene is an illustration; confirm it is appropriate.",
-      "Editor review (2026-10-01): hook no longer opens 'walk into a large mosque'; root etymology ('-k-f, to cling) replaced with the word's plain meaning in teach, screen, match and original; 'many people' softened; fork fixed (it addressed the listener as 'you' in i'tikaf, then asked what the Prophet did)."
+      "Editor review (2026-10-01): hook no longer opens 'walk into a large mosque'; root etymology ('-k-f, to cling) replaced with the word's plain meaning in teach, screen, match and original; 'many people' softened; fork fixed (it addressed the listener as 'you' in i'tikaf, then asked what the Prophet did).",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

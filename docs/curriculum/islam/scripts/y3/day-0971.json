@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Timbuktu's manuscripts, books that sold for more than other goods in the market. Your line was: the city of manuscripts. What did you write by hand? Day nine hundred seventy-one.",
+      "voice": "Yesterday: Timbuktu's manuscripts, books that sold for more than other goods in the market. Your line was the city of manuscripts.",
       "screen": [
         "`THE CITY OF MANUSCRIPTS.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Mud is a strange thing to build a great mosque from. Sun-dried bricks, held together and coated with more mud, mixed with things like rice husks so it holds. It is cool inside in the heat. But mud has an enemy: rain. The rainy season washes some of the walls away. So, by long custom, the town comes out together and puts it back. The masons lead; their skill is handed down in families. Everyone else carries. That bundle of palm sticks poking out of the walls is not decoration. It is scaffolding that never comes down. The chronicler al-Sa'di tells how the town's first mosque came to be: a ruler of Djenné became Muslim, tore down his own palace, and built a mosque on the site. The building that stands today is not that first one, but it stands in its line. The Qur'an has a line about who looks after the houses of God. In Pickthall's translation: \"He only shall tend Allah's sanctuaries who believeth in Allah and the Last Day.\" And a hadith in Sahih al-Bukhari says that whoever builds a mosque for God, God builds the like of it for them in Paradise. In Djenné, building is never finished. The mosque would melt without the town, and the town gathers because of the mosque. Nobody owns the job. Everyone owns a basket.",
+      "voice": "Mud is a strange thing to build a great mosque from: sun-dried bricks, held together and coated with more mud, mixed with things like rice husks so it holds. It is cool inside in the heat. But mud has an enemy: rain. The rainy season washes some of the walls away. So, by long custom, the town comes out together and puts it back. The masons lead; their skill is handed down in families. Everyone else carries. Those palm sticks poking out of the walls aren't decoration. They're scaffolding that never comes down. The chronicler al-Sa'di tells how the town's first mosque came to be: a ruler of Djenné became Muslim, tore down his own palace, and built a mosque on the site. The building that stands today is not that first one, but it stands in its line. The Qur'an has a line about who looks after the houses of God. In Pickthall's translation: \"He only shall tend Allah's sanctuaries who believeth in Allah and the Last Day.\" And a hadith in Sahih al-Bukhari says that whoever builds a mosque for God, God builds the like of it for them in Paradise. In Djenné, building is never finished. The mosque would melt without the town, and the town gathers because of the mosque. Nobody owns the job. Everyone owns a basket.",
       "screen": [
         "`SUN-DRIED BRICK, COATED IN MUD.` · `THE RAINS WASH THE WALLS AWAY.` · `A PALACE TORN DOWN FOR A MOSQUE.` · `THE MOSQUE WOULD MELT WITHOUT THE TOWN.` · then, large: `THE WHOLE TOWN REPLASTERS.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: repair something together. Settle, and breathe. Think of something shared that is wearing thin. A fence between neighbors. A family tradition nobody has organized lately. A friendship that needs a visit. A room at your mosque, church or community center that needs a coat of paint. Ask who else cares about it, and what one basket of mud you could carry. Hold those people in mind. If you pray, you can ask God's blessing on the work. If you don't, simply picture it finished. The bell holds the time.",
+      "voice": "Think of something shared that is wearing thin: a fence between neighbors, a family tradition nobody has organized lately, a room at your mosque, church or community center. Ask who else cares about it, and what one basket of mud you could carry. If you pray, ask God's blessing on the work; if not, simply picture it finished.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the whole town replasters. Today, ask one person to fix something with you, and carry your share. Day nine hundred seventy-one.",
+      "voice": "Your line: the whole town replasters. A mosque that would melt, and a town that won't let it. Day nine hundred seventy-one, done.",
       "screen": []
     },
     {
@@ -127,14 +127,46 @@
     ],
     "recall": [
       [
-        "Salah al-Din",
-        "the righteousness of the faith"
+        "Ibn Arabi",
+        "a mystic from Murcia"
       ],
       [
-        "madrasah",
-        "a place of study, a school"
+        "Al-Farabi",
+        "the scholar called the second teacher"
       ]
-    ]
+    ],
+    "guess": [
+      "a Malian town with a great mosque made of earth",
+      "a desert salt town on the caravan road north",
+      "a coral-stone port on the Indian Ocean coast"
+    ],
+    "chat": {
+      "who": "your little cousin",
+      "says": "Why does the whole town of Djenné plaster their mosque again and again?",
+      "options": [
+        "Rain washes the mud away, so by long custom everyone helps put it back.",
+        "The old mosque fell down, and they're building a brand-new one.",
+        "Only the masons may touch it; the town comes to watch them work."
+      ],
+      "answer": 0,
+      "meaning": "The mosque is mud, and the rainy season wears it down. The masons lead, everyone carries: nobody owns the job, everyone owns a basket."
+    },
+    "gloss": {
+      "Djenné": {
+        "meaning": "an old town on a river in Mali",
+        "say": "jen-NAY"
+      },
+      "al-Sa'di": {
+        "meaning": "a chronicler of Timbuktu",
+        "script": "السعدي",
+        "say": "as-SAA-dee"
+      },
+      "Sahih al-Bukhari": {
+        "meaning": "a major collection of the Prophet's sayings",
+        "script": "صحيح البخاري",
+        "say": "sa-HEEH al-bu-KHAA-ree"
+      }
+    }
   },
   "sources": [
     {
@@ -169,7 +201,9 @@
       "The practice uses 'picture it finished' (not a hook opening); fine under the rules, but flagging.",
       "Original 'masjid' gloss 'place of prostration' is the common Arabic sense from s-j-d; confirm.",
       "Editor: corrected the review line, which said books were 'worth more than gold'; Leo Africanus says only that they sold for more than other merchandise.",
-      "Audit: Bukhari 450's wording is that God builds 'the like of it' in Paradise (the 'house' wording is Muslim's version); the voice and trapdoor now follow Bukhari, which is the cited collection."
+      "Audit: Bukhari 450's wording is that God builds 'the like of it' in Paradise (the 'house' wording is Muslim's version); the voice and trapdoor now follow Bukhari, which is the cited collection.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

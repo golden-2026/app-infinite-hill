@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Louis the Ninth, a king who fed the poor and also went to war, and we held both at once. Your line was a king at table with the poor. Who did you make room for? Day eight hundred seventeen.",
+      "voice": "Yesterday, Louis the Ninth, a king who fed the poor and also went to war, both true at once. Your line was a king at table with the poor.",
       "screen": [
         "`A KING AT TABLE WITH THE POOR.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A mason sets a block high in a wall, taps it level, and climbs down the scaffold. There is no roof above him yet. There is no tower. His son may lay the next row of stone, and his grandson may be the one who hears the first Mass under the finished vault. Some great churches rose this way, a few courses at a time, while the people who began them grew old and were buried in the churchyard beside the work. Today's word is the building they gave their lives to: the cathedral.",
+      "voice": "A mason sets a block high in a wall, taps it level, and climbs down the scaffold. There's no roof above him yet, and no tower. His son may lay the next row of stone, and his grandson may be the one who hears the first Mass under the finished vault. Some great churches rose this way, a few courses at a time, while the people who began them grew old and were buried in the churchyard beside the work.",
       "screen": [
         "`A STONE SET, NO ROOF ABOVE.` → `THE SON LAYS THE NEXT ROW.` → `THE GRANDSON HEARS THE MASS.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Start with what makes a church a cathedral. It isn't size. A cathedral is the church that holds a bishop's chair, called the cathedra, the sign of his work of teaching and shepherding. A small church with that chair is a cathedral. An enormous church without it is not. So at the heart of the grandest building in town sits a piece of furniture, and a job. Next, the long build. A cathedral could outlast the people who started it. Masons, carpenters, glassmakers, donors who paid for one window or gave one season of labor. The building outlasts their names. Then, the reason. The Douay-Rheims psalm puts it in one line: \"Unless the Lord build the house, they labour in vain that build it.\" The psalm isn't about masonry, but people raised these churches as if the stonework itself could be offered, as if every block were laid for God before it was laid for a town. Finally, the posture. The letter to the Hebrews remembers the ancestors of faith who died still waiting, \"not having received the promises, but beholding them afar off.\" That is the cathedral builder's stance. You lay a stone you will never stand under. You trust someone you will never meet to finish it. A cathedral is a long sentence, and each generation gets to write a few words of it.",
+      "voice": "Start with what makes a church a cathedral. It isn't size. A cathedral is the church that holds a bishop's chair, called the cathedra, the sign of his work of teaching and shepherding. A small church with that chair is a cathedral; an enormous church without it is not. At the heart of the grandest building in town sits a piece of furniture, and a job. Next, the long build. Masons, carpenters, glassmakers, donors who paid for one window or gave one season of labor: the building could outlast them all, and their names. Then, the reason. A psalm in the Douay-Rheims puts it in one line: \"Unless the Lord build the house, they labour in vain that build it.\" The psalm isn't about masonry, but people raised these churches as if every block were laid for God before it was laid for a town. Finally, the posture. The letter to the Hebrews remembers the ancestors of faith who died still waiting, \"not having received the promises, but beholding them afar off.\" That's the cathedral builder's stance. You lay a stone you'll never stand under, and trust someone you'll never meet to finish it. A cathedral is a long sentence, and each generation gets to write a few words of it.",
       "screen": [
         "`A CATHEDRAL HOLDS A BISHOP'S CHAIR.` · `THE BUILD OUTLASTS THE BUILDERS.` · `UNLESS THE LORD BUILD THE HOUSE.` · `BEHOLDING THEM AFAR OFF.` · then, large: `BUILT FOR GRANDCHILDREN.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: lay one stone. Before the sit, choose something small you could begin that will outlast today. A seed in a pot. The first page of a notebook for someone younger. A jar for coins toward a cause you care about. A letter meant to be opened years from now. Name it. Then settle, and breathe slowly. Picture the person who might finish it, or simply be glad of it one day: a child, a grandchild, a stranger. If you pray, you can borrow the line from Hebrews, beholding them afar off. If you don't, just hold the face of whoever comes after you. The bell holds the time.",
+      "voice": "Choose something small you could begin that will outlast today: a seed in a pot, the first page of a notebook for someone younger, a jar of coins for a cause you love, a letter meant to be opened years from now. Picture the person who might finish it, or simply be glad of it one day. If you pray, borrow the line from Hebrews, beholding them afar off; if not, just hold the face of whoever comes after you.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: built for grandchildren. Today, take the first small step on the thing you named, a seed, a page, a coin, and leave it for someone later to find. Day eight hundred seventeen.",
+      "voice": "Your line: built for grandchildren. Someone you'll never meet may stand under what you begin. See you tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Each Catholic diocese has a cathedral where the bishop's chair stands; the bishop presides there at major celebrations, such as the Chrism Mass in Holy Week, and the anniversary of the cathedral's dedication is kept as a feast in the diocese.",
   "games": {
+    "guess": [
+      "the church that holds a bishop's chair",
+      "any very large and very old church",
+      "the main church of a religious order"
+    ],
     "match": {
       "prompt": "the cathedrals — tap the pairs.",
       "pairs": [
@@ -128,14 +133,39 @@
     ],
     "recall": [
       [
-        "San Damiano",
-        "the church falling down"
+        "university",
+        "a sworn company of masters and students"
       ],
       [
-        "synod",
-        "walking together"
+        "Cluny",
+        "a monastery free to choose its abbot"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your coworker",
+      "says": "Is a cathedral just the biggest church in a city?",
+      "options": [
+        "No, it's the church with the bishop's chair; even a small one counts.",
+        "Yes, any church becomes one once it's big and old enough.",
+        "No, it's a church that took several generations to build."
+      ],
+      "answer": 0,
+      "meaning": "A cathedral is the church that holds the bishop's chair, the cathedra. Size has nothing to do with it."
+    },
+    "gloss": {
+      "cathedra": {
+        "meaning": "the bishop's chair, sign of his teaching and shepherding",
+        "say": "kuh-THEE-druh"
+      },
+      "Douay-Rheims": {
+        "meaning": "an English Bible translation quoted in these lessons",
+        "say": "doo-AY REEMZ"
+      },
+      "Hebrews": {
+        "meaning": "a New Testament letter remembering the ancestors of faith",
+        "say": "HEE-brooz"
+      }
+    }
   },
   "sources": [
     {
@@ -168,7 +198,9 @@
       "Review assumes day 816 (Louis IX) presents both his care for the poor and his crusades; adjust if day 816's angle differs.",
       "Editor pass: cut unsourced claims (churches 'often' rose over generations, arch styles changing partway up, 'few names survive', cathedrals still unfinished, 'raised in the middle ages'); replaced the arch-style myth item and trapdoor line; practice now borrows Hebrews 11:13 instead of Psalm 126:1, since day 810's practice already used that psalm verse.",
       "Editor pass 2: cut the uncited claim that builders 'knew' the cathedral would outlast them.",
-      "Audit (catholic 817-826): fork reveal no longer claims, without a source, why the cathedrals stand; ties the choice to Hebrews 11:13 instead."
+      "Audit (catholic 817-826): fork reveal no longer claims, without a source, why the cathedrals stand; ties the choice to Hebrews 11:13 instead.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

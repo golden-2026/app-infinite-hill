@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: great-grandfather's advice, good teachers and spending liberally on them. Your line was spend on teachers. What did you invest in? Day five hundred twenty-three.",
+      "voice": "Yesterday's word was great-grandfather's advice: good teachers, and spend liberally on them. Your line was spend on teachers.",
       "screen": [
         "`SPEND ON TEACHERS.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A racetrack packed all the way to the rails. Chariot teams, each in its own color. Fans who wore the colors, bet on them, argued over them. Rome's races at the Circus Maximus drew huge crowds, and Marcus names two of the colors: the Greens and the Blues. A little boy in Rome would have heard which side everyone was on. His tutor taught him something else. Today: neither green nor blue.",
+      "voice": "A racetrack packed all the way to the rails. Chariot teams, each in its own color. Fans who wore the colors, bet on them, argued over them. Rome's races at the Circus Maximus drew huge crowds, and Marcus names two of the colors: the Greens and the Blues. A little boy in Rome would have heard which side everyone was on. His tutor taught him something else.",
       "screen": [
         "`THE CIRCUS MAXIMUS.` → `FANS WHO WORE THE COLORS.` → `NEITHER GREEN NOR BLUE.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the tutor. Section five begins, From my governor. Marcus never names him. He was the man who looked after and taught him as a boy, and whatever his name was, his lessons made the list. Second, the line. In Long's translation, Marcus learned from him \"to be neither of the green nor of the blue party at the games in the Circus,\" nor a fan of one kind of gladiator over another. The races drew enormous crowds. The fan clubs were loud and loyal. And the tutor told a boy who would one day sit in the emperor's box: don't belong to a color. Third, the rest of the list. The same tutor taught him to put up with hard work, to want little, to work with his own hands, not to meddle in other people's business, and not to be quick to listen to slander. Read it again and the thread appears. Every item is about not being pulled. Not by a crowd's color. Not by comfort. Not by other people's affairs. Not by gossip about someone. Fourth, why it lasts. Marcus didn't have to avoid the games. As emperor, he would be expected to show up. The lesson wasn't, never enjoy a race. It was, don't hand your mind to a team. That lands differently now, in a world of team colors, party colors and online feuds where the first question is often which side are you on. The tutor's answer was simple, and a little brave: neither. Watch the race. Keep your head.",
+      "voice": "First, the tutor. Section five begins, From my governor. Marcus never names him: the man who looked after and taught him as a boy, whose lessons made the list. Second, the line. In Long's translation, Marcus learned from him \"to be neither of the green nor of the blue party at the games in the Circus,\" nor a fan of one kind of gladiator over another. The fan clubs were loud and loyal, and the tutor told a boy who would one day sit in the emperor's box: don't belong to a color. Third, the rest of the list. The same tutor taught him to put up with hard work, to want little, to work with his own hands, not to meddle in other people's business, and not to be quick to listen to slander. The thread: every item is about not being pulled. Not by a crowd's color, or comfort, or other people's affairs, or gossip about someone. Fourth, why it lasts. Marcus didn't have to avoid the games; as emperor, he'd be expected to show up. The lesson wasn't, never enjoy a race. It was, don't hand your mind to a team. That lands differently now, in a world of team colors, party colors and online feuds where the first question is often which side are you on. The tutor's answer was simple, and a little brave: neither.",
       "screen": [
         "`FROM MY GOVERNOR, UNNAMED.` · `NO GREEN, NO BLUE, NO GLADIATOR TEAM.` · `HARD WORK, LITTLE WANTS, NO SLANDER.` · `DON'T HAND YOUR MIND TO A TEAM.` · then, large: `NEITHER GREEN NOR BLUE.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Settle, and breathe. Think of one rivalry you're part of that doesn't really need you. A fan feud. An office camp. An argument online between two sides you've joined by habit. Picture yourself wearing the color. Now picture taking it off, folding it, and setting it down. You can still watch the race. Notice what changes in your chest. Breathe there. The bell holds the time.",
+      "voice": "Bring to mind one rivalry you've joined by habit: a fan feud, an office camp, an argument between two sides online. Picture taking off the color, folding it, and setting it down; you can still watch the race. Notice what changes in your chest, and breathe there.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: watch the race, keep your head. Today, skip one pointless rivalry: one argument, one side, one dig at the other team. Day five hundred twenty-three.",
+      "voice": "Your line: watch the race, keep your head. You can enjoy the game without handing your mind to a team. See you tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Some readers of the Meditations take this line as a reason to step back from fan rivalries, office factions and online feuds, and to work with their hands and avoid gossip.",
   "games": {
+    "guess": [
+      "a team or party, like Rome's Greens and Blues",
+      "a Roman fact, written down and sworn as true",
+      "a chariot driver who raced at the Circus Maximus"
+    ],
     "match": {
       "prompt": "neither green nor blue — tap the pairs.",
       "pairs": [
@@ -132,14 +137,41 @@
     ],
     "recall": [
       [
-        "studiosa luxuria",
-        "learned luxury"
+        "Meditations",
+        "Marcus's notes to himself"
       ],
       [
-        "vale",
-        "be well, farewell"
+        "apes",
+        "Latin for bees: gather, then make honey"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your nephew",
+      "says": "Did Marcus Aurelius cheer for the Greens or the Blues?",
+      "options": [
+        "Neither. His tutor taught him not to join a racing team or hand his mind to one.",
+        "The Greens. His tutor said an emperor should back the crowd's favorite team.",
+        "Neither, because his tutor banned him from ever going to the races at all."
+      ],
+      "answer": 0,
+      "meaning": "Meditations 1.5: be neither of the green nor the blue party. He could watch the race; the lesson was not to be pulled by a team."
+    },
+    "gloss": {
+      "Circus Maximus": {
+        "meaning": "Rome's great chariot-racing track",
+        "say": "SUR-kus MAK-sih-mus"
+      },
+      "Factio": {
+        "meaning": "Latin for a party or team, like the racing Greens and Blues",
+        "say": "FAHK-tee-oh"
+      },
+      "Greens": {
+        "meaning": "one of Rome's chariot-racing teams, with its loyal fans"
+      },
+      "governor": {
+        "meaning": "Marcus's unnamed boyhood tutor"
+      }
+    }
   },
   "sources": [
     {
@@ -157,7 +189,9 @@
       "Long 1862, 1.5: 'From my governor, to be neither of the green nor of the blue party at the games in the Circus, nor a partizan either of the Parmularius or the Scutarius at the gladiators' fights; from him too I learned endurance of labour, and to want little, and to work with my own hands, and not to meddle with other people's affairs, and not to be ready to listen to slander.' Confirm the quoted clause.",
       "Circus Maximus capacity ('a quarter of a million, by some ancient estimates', from Pliny the Elder's figure) is hedged; modern estimates are often lower (about 150,000). Confirm.",
       "Four factions (Reds, Whites, Greens, Blues), with Greens and Blues dominant: confirm for the 2nd century.",
-      "Nika riots, Constantinople, AD 532: confirm."
+      "Nika riots, Constantinople, AD 532: confirm.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

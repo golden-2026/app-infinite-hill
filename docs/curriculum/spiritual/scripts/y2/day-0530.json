@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: Claudius Maximus, cheerful even when ill. Your line was no complaint. Which duty did you do without a word of grumbling? Day five hundred thirty.",
+      "voice": "Yesterday's word was Claudius Maximus, cheerful even when ill. Your line was no complaint.",
       "screen": [
         "`NO COMPLAINT.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Where do you picture the Meditations being written? A marble study, maybe, with a view over Rome. A quiet library. Scrolls, oil lamps, silence. Then you reach the end of book one, and there, in the manuscripts, is a short line that changes the picture. It isn't philosophy. It's a place name. Among the Quadi, at the Granua. A tribe, and a river, far from Rome, on the edge of the empire, in the middle of a war. Today: among the Quadi.",
+      "voice": "Where do you picture the Meditations being written? A marble study, maybe, with a view over Rome. A quiet library. Scrolls, oil lamps, silence. Then you reach the end of book one, and there, in the manuscripts, is a short line that changes the picture. It isn't philosophy. It's a place name. Among the Quadi, at the Granua. A tribe and a river, far from Rome, on the edge of the empire, in the middle of a war.",
       "screen": [
         "`A MARBLE STUDY IN ROME?` → `A LINE AT THE END OF BOOK ONE.` → `AMONG THE QUADI.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the note. Between books one and two, the manuscripts carry a few words: among the Quadi, at the Granua. The Quadi were a Germanic people living north of the Danube. The Granua is a river there, usually identified with the Hron, which flows through what's now Slovakia. Second, the war. The historian Cassius Dio tells of Marcus on the Danube frontier, leading campaigns against the Marcomanni, the Quadi and other peoples, year after year. The emperor spent long seasons in army camps, in the cold, far from Rome. Third, where the note belongs. Scholars aren't agreed. It could be a closing note for book one, or a heading for book two. Some editors read it as a heading for book two, because a similar note, at Carnuntum, a legionary fortress on the Danube, stands before book three. Either way, at least some of this notebook was written in a camp, at war. Fourth, what that changes. Read book one again with a tent around it. A tired man at the frontier, far from his family, sat down and listed, one by one, the people who had made him who he was. A great-grandfather. A tutor. Rusticus. Apollonius. Sextus. Alexander. Severus. Maximus. Not a victory list. A gratitude list. And tomorrow, when book two begins, the camp is still there.",
+      "voice": "First, the note. Between books one and two, the manuscripts carry a few words: among the Quadi, at the Granua. The Quadi were a Germanic people living north of the Danube. The Granua is a river there, usually identified with the Hron, which flows through what's now Slovakia. Second, the war. The historian Cassius Dio tells of Marcus on the Danube frontier, leading campaigns against the Marcomanni, the Quadi and other peoples, year after year. The emperor spent long seasons in army camps, in the cold, far from Rome. Third, where the note belongs. Scholars aren't agreed. It could close book one, or head book two. Some editors read it as a heading for book two, because a similar note, at Carnuntum, a legionary fortress on the Danube, stands before book three. Either way, at least some of this notebook was written in a camp, at war. Fourth, what that changes. Read book one again with a tent around it. A tired man at the frontier, far from his family, sat down and listed, one by one, the people who had made him who he was. A great-grandfather. A tutor. Rusticus. Apollonius. Sextus. Alexander. Severus. Maximus. Not a victory list. A gratitude list. And when book two begins tomorrow, the camp is still there.",
       "screen": [
         "`AMONG THE QUADI, AT THE GRANUA.` · `YEARS ON THE DANUBE FRONTIER.` · `END OF BOOK ONE, OR START OF TWO?` · `A GRATITUDE LIST, IN A TENT.` · then, large: `WRITTEN IN CAMP.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Settle, and breathe. Picture the camp: a cold river, tents, smoke, soldiers' voices outside. Inside one tent, a man with a pen, writing to himself. Now think of the least likely place you could write something today. A bus seat. A hospital waiting room. A break room. Your car in a parking lot. Picture yourself writing one true line there, just for you. The bell holds the time.",
+      "voice": "Picture the camp: a cold river, tents, smoke, soldiers' voices outside, and inside one tent a man writing to himself. Now picture the least likely place you might write something, a bus seat, a hospital waiting room, your car in a parking lot, and imagine one true line you'd write there, just for you.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: written in camp. Write one line to yourself today somewhere unlikely, in the middle of things, the way Marcus did. Day five hundred thirty.",
+      "voice": "Your line: written in camp. A gratitude list, in the middle of a war. Day five hundred thirty, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Some people who keep a journal in Marcus's spirit write wherever they happen to be, on commutes, breaks or travels, rather than waiting for a quiet desk.",
   "games": {
+    "guess": [
+      "a people on the Danube, where Marcus wrote in camp",
+      "a Roman unit of four soldiers who shared one tent",
+      "the Latin word for a page in an emperor's notebook"
+    ],
     "match": {
       "prompt": "among the Quadi — tap the pairs.",
       "pairs": [
@@ -128,14 +133,47 @@
     ],
     "recall": [
       [
-        "Paulina",
-        "said she would die with him"
+        "Severus",
+        "gave Marcus the idea of equal speech"
       ],
       [
-        "Serenus",
-        "neither sick nor well"
+        "divitiae",
+        "Latin for riches"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your friend who loves history",
+      "says": "Where did Marcus Aurelius write the Meditations? In a palace?",
+      "options": [
+        "At least partly in army camps on the Danube, at war; a note says among the Quadi.",
+        "In his palace library in Rome, after the wars were over and he had retired.",
+        "In a quiet villa by the sea, far away from the army and the frontier wars."
+      ],
+      "answer": 0,
+      "meaning": "A note in the manuscripts, among the Quadi, at the Granua, places at least some of the notebook in a camp on the Danube frontier."
+    },
+    "gloss": {
+      "Quadi": {
+        "meaning": "a Germanic people living north of the Danube",
+        "say": "KWAH-dee"
+      },
+      "Granua": {
+        "meaning": "a river there, usually identified with the Hron",
+        "say": "GRAN-oo-uh"
+      },
+      "Danube": {
+        "meaning": "the great river along Rome's northern frontier",
+        "say": "DAN-yoob"
+      },
+      "Marcomanni": {
+        "meaning": "one of the peoples Marcus campaigned against",
+        "say": "mar-koh-MAN-ee"
+      },
+      "Carnuntum": {
+        "meaning": "a legionary fortress on the Danube",
+        "say": "kar-NUN-tum"
+      }
+    }
   },
   "sources": [
     {
@@ -165,7 +203,9 @@
       "Note 'among the Quadi at the Granua' (τὰ ἐν Κουάδοις πρὸς τῷ Γρανούᾳ) and its placement: confirm the manuscript position and the debate over whether it closes book one or heads book two.",
       "Granua identified with the Hron (Garam) in Slovakia: confirm.",
       "Marcomannic Wars c. 166/167–180; Marcus on the Danube for much of the 170s; Antonine plague: confirm.",
-      "Carnuntum note before Book 3: confirm."
+      "Carnuntum note before Book 3: confirm.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

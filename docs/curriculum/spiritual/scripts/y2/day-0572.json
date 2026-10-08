@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: soon ashes, and the job Marcus gives the time in between. Your line was meanwhile, do good. What good thing did you do in the meanwhile? Day five hundred seventy-two.",
+      "voice": "Yesterday: soon ashes, and the job Marcus gives the time in between. Your line was meanwhile, do good.",
       "screen": [
         "`MEANWHILE, DO GOOD.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A four-year-old drops an ice cream cone on the sidewalk. The wail is total. The world has ended. Two grown-ups are standing there. One says, it's only ice cream, stop crying. The other kneels down, says, oh no, your cone, and holds the child until the storm passes. Neither of them thinks the cone was a tragedy. Only one of them was any comfort. Marcus Aurelius, near the end of book five, has a picture for the second grown-up. It's an old man and a child's spinning top.",
+      "voice": "A four-year-old drops an ice cream cone on the sidewalk. The wail is total. The world has ended. Two grown-ups are standing there. One says, it's only ice cream, stop crying. The other kneels down, says, oh no, your cone, and holds the child until the storm passes. Neither of them thinks the cone was a tragedy. Only one of them was any comfort. Near the end of book five, Marcus Aurelius has a picture for the second grown-up: an old man and a child's spinning top.",
       "screen": [
         "`THE DROPPED CONE.` → `TWO GROWN-UPS.` → `AN OLD MAN AND A TOP.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the problem. Marcus believes most of what people grieve over isn't truly harmful: money, a post, a reputation. Only acting badly harms the self. That could make a Stoic cold. Someone loses their job, and the Stoic says, that's an indifferent, you're fine. Marcus doesn't want that. In Meditations five, thirty-six, he says: don't be carried away by how things look. Help people as far as you can and as each case deserves, even when what they've lost is one of those indifferent things. But don't imagine the loss is a real harm to them. That's a bad habit of mind. Second, the picture. He says to be like the old man who, when he was leaving, asked for his foster child's top back, remembering all along that it was a top. The old man plays along. He takes the toy seriously because the child does. He just doesn't forget what it is. Third, honesty about the passage. The Greek here is compressed, and the end of this section is partly damaged in the manuscripts. Translators fill the gaps in different ways, and scholars still argue about exactly what the old man is doing. The core is clear enough, though: kindness on the outside, clarity on the inside. Fourth, why it's honest comfort. The old man never lies to the child. He doesn't say the top is worth a fortune. He also doesn't lecture. He meets the child where the child is, and keeps his own head. That's a skill most of us need at a hospital bedside, a breakup, a lost game. Be warm with the sorrow. Stay clear about the size of things, privately.",
+      "voice": "Marcus believes most of what people grieve over isn't truly harmful: money, a post, a reputation. Only acting badly harms the self. That could make a Stoic cold. Someone loses their job, and the Stoic says, that's an indifferent, you're fine. Marcus doesn't want that. In book five, entry thirty-six, he says: don't be carried away by how things look. Help people as far as you can and as each case deserves, even when what they've lost is one of those indifferent things. But don't imagine the loss is a real harm to them; that's a bad habit of mind. Then the picture: be like the old man who, when he was leaving, asked for his foster child's top back, remembering all along that it was a top. He takes the toy seriously because the child does. He just doesn't forget what it is. An honest note: the Greek here is compressed, and the end of this section is partly damaged in the manuscripts. Translators fill the gaps in different ways, and scholars still argue about exactly what the old man is doing. The core is clear enough: kindness on the outside, clarity on the inside. The old man never lies to the child, and he doesn't lecture. He meets the child where the child is, and keeps his own head. That's a skill most of us need at a hospital bedside, a breakup, a lost game. Be warm with the sorrow. Stay clear about the size of things, privately.",
       "screen": [
         "`MOST LOSSES AREN'T TRUE HARMS.` · `THE OLD MAN AND THE TOP.` · `THE GREEK IS DAMAGED HERE.` · `WARM OUTSIDE, CLEAR INSIDE.` · then, large: `HONEST COMFORT.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Sit comfortably and let your breath slow down. Bring to mind someone who is upset right now about something you think is small. A friend's canceled trip. A kid's lost game. A parent's broken phone. Notice the urge to fix it with a fact. Set the fact down. Picture saying instead, oh no, that's hard, and meaning it. Then notice, quietly, that you can still see the size of the thing. Both at once. Stay with that for the sit. The bell holds the time.",
+      "voice": "Bring to mind someone who is upset right now about something you think is small, a canceled trip, a lost game, a broken phone, and notice the urge to fix it with a fact. Set the fact down, and picture saying, oh no, that's hard, and meaning it. Notice that you can still see the size of the thing: both at once.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: honest comfort. Today, when someone's upset, skip the correction. Say one true, kind sentence about how it feels, and keep your perspective to yourself. Day five hundred seventy-two.",
+      "voice": "Your line: honest comfort. Warm with the sorrow, clear about the size. Gently, until tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "People who practice Stoic ethics often describe comforting others warmly while keeping their own judgment about what is truly harmful, rather than either lecturing or catching the panic.",
   "games": {
+    "guess": [
+      "the Stoic who comforted warmly but saw losses clearly",
+      "the Stoic who told grieving people to stop crying",
+      "the emperor who taught that every loss is a real harm"
+    ],
     "match": {
       "prompt": "the child's top — tap the pairs.",
       "pairs": [
@@ -132,14 +137,41 @@
     ],
     "recall": [
       [
-        "galene",
-        "a sea gone flat after wind"
+        "amicitia",
+        "friendship; calm is catching"
       ],
       [
-        "Vespasian",
-        "the first age Marcus pictures"
+        "Metronax",
+        "the philosopher Seneca heard"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your aunt",
+      "says": "My son is crushed his team lost the final. It's just a game, right?",
+      "options": [
+        "Maybe, but tell him it's hard and mean it; keep the size of it in your own head.",
+        "Tell him it's just a game and he should stop being upset about it.",
+        "Agree it's a tragedy, so he knows you take him completely seriously."
+      ],
+      "answer": 0,
+      "meaning": "Marcus's old man takes the top seriously because the child does, without forgetting it's a top: warm outside, clear inside."
+    },
+    "gloss": {
+      "indifferent": {
+        "meaning": "Stoic term: things like money or reputation, neither good nor bad"
+      },
+      "Stoic": {
+        "meaning": "the ancient Greek and Roman school of philosophy Marcus followed",
+        "say": "STOH-ik"
+      },
+      "manuscripts": {
+        "meaning": "old handwritten copies through which a text survives"
+      },
+      "Marcus Aurelius": {
+        "meaning": "Roman emperor and Stoic who wrote the Meditations to himself",
+        "say": "MAR-kus aw-REE-lee-us"
+      }
+    }
   },
   "sources": [
     {
@@ -157,7 +189,9 @@
       "The claim that the end of 5.36 is textually corrupt (the 'on the rostra' clause and the old man's gesture) should be checked against Farquharson or another critical edition.",
       "Greek στρόμβος for the top: confirm it is the word in 5.36.",
       "The ice cream scene is an invented illustration, not from the text.",
-      "Reviewer changed 'as far as they need' to 'as each case deserves' to follow the Greek kata ten axian (Long: 'their fitness'); confirm."
+      "Reviewer changed 'as far as they need' to 'as each case deserves' to follow the Greek kata ten axian (Long: 'their fitness'); confirm.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

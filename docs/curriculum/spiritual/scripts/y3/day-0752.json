@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Ashura: a fast for Moses' rescue, and mourning for Husayn at Karbala. Your line was remembered grief. What did you learn, and who did you tell? Today, a day of remembering in our own time. Day seven hundred fifty-two.",
+      "voice": "Yesterday's word was Ashura: a fast for Moses' rescue, and mourning for Husayn. Your line was remembered grief.",
       "screen": [
         "`REMEMBERED GRIEF.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the day. In a resolution, the United Nations General Assembly set an international day of remembrance on the anniversary of the liberation of Auschwitz, in January. It remembers the Jews who were murdered, along with members of other minorities. Among the Nazis' other victims were Roma and disabled people. Israel and Jewish communities also keep their own day of remembrance, Yom HaShoah, in the spring. Second, a place and a name. The Holocaust memorial in Jerusalem is called Yad Vashem, words taken from the book of Isaiah. In the King James Bible, God promises people who feared they would leave nothing behind: \"Even unto them will I give in mine house and within my walls a place and a name better than of sons and of daughters: I will give them an everlasting name, that shall not be cut off.\" A place, and a name, that shall not be cut off. Third, why names. The scale of the Holocaust is so vast that the mind can go blank before it, the way it can go numb before distant suffering, as we heard a few days ago. A name undoes that. A name had a kitchen, a street, a favorite song, someone who called it at dinnertime. Reading one name turns a number back into a person. Fourth, remembering as a duty. Some survivors spoke and wrote so that what happened would not be forgotten or denied. Remembering here is not dwelling. It is keeping faith with people who were meant to vanish without a trace, and keeping watch over the present, so that hatred is recognized early.",
+      "voice": "First, the day. In a resolution, the United Nations General Assembly set an international day of remembrance on the anniversary of the liberation of Auschwitz, in January. It remembers the Jews who were murdered, along with members of other minorities. Among the Nazis' other victims were Roma and disabled people. Israel and Jewish communities also keep their own day of remembrance, Yom HaShoah, in the spring. Second, a place and a name. The Holocaust memorial in Jerusalem is called Yad Vashem, words taken from the book of Isaiah. In the King James Bible, God promises people who feared they would leave nothing behind: \"Even unto them will I give in mine house and within my walls a place and a name better than of sons and of daughters: I will give them an everlasting name, that shall not be cut off.\" A place, and a name, that shall not be cut off. Third, why names. The scale of the Holocaust is so vast that the mind can go blank before it, the way it can go numb before distant suffering, as this path heard a few days ago. A name undoes that. A name had a kitchen, a street, a favorite song, someone who called it at dinnertime. Reading one name turns a number back into a person. Fourth, remembering as a duty. Some survivors spoke and wrote so that what happened would not be forgotten or denied. Remembering here is not dwelling. It is keeping faith with people who were meant to vanish without a trace, and keeping watch over the present, so that hatred is recognized early.",
       "screen": [
         "`A DAY THE WORLD SET ASIDE.` · `A PLACE AND A NAME.` · `A NAME TURNS A NUMBER INTO A PERSON.` · `KEEPING FAITH WITH THE MURDERED.` · then, large: `REMEMBER.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "If you can do it safely, light a candle. If not, picture one. Sit with the flame for a few breaths. Later today, find one name of someone murdered in the Holocaust; memorials keep online lists of names and stories for exactly this. For now, sit quietly, and let the flame stand in for that person you haven't met yet. When you find the name, read it aloud once, slowly, with their town if it's given. If you pray, you can hold them in prayer. The bell holds the time.",
+      "voice": "If you can do it safely, light a candle, or picture one, and sit with the flame for a few breaths. Let it stand in for one person murdered in the Holocaust, someone you haven't met yet; memorials keep online lists of names and stories for exactly this. If you pray, you can hold them in prayer.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: remember. Today, light a candle, real or imagined, and read one name aloud. Day seven hundred fifty-two.",
+      "voice": "Your line: remember. Names keep the people, not just the numbers. That's day seven hundred fifty-two.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "On Holocaust remembrance days, communities, schools and governments hold ceremonies where names of victims are read aloud, candles are lit, and survivors' testimonies are heard; Jewish communities also keep Yom HaShoah in the spring.",
   "games": {
+    "guess": [
+      "Jerusalem's Holocaust memorial, named from Isaiah",
+      "a Hebrew prayer said in memory of the dead",
+      "the spring day of Holocaust remembrance in Israel"
+    ],
     "match": {
       "prompt": "what's inside the day of remembrance — tap the pairs.",
       "pairs": [
@@ -132,14 +137,49 @@
     ],
     "recall": [
       [
-        "Chiron",
-        "a centaur with a wound that won't heal"
+        "Ashura",
+        "the tenth of Muharram"
       ],
       [
-        "shiva",
-        "the family stays home, the community comes"
+        "Chiron",
+        "a centaur with a wound that won't heal"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your kid",
+      "says": "Why do they read out every single name at the ceremony?",
+      "options": [
+        "A name turns a number back into a person. Remembering keeps faith with them.",
+        "To make sure the list is complete before it goes into the archive.",
+        "Mostly so the ceremony fills the time between the speeches."
+      ],
+      "answer": 0,
+      "meaning": "The scale is so vast the mind can go blank before it. A name undoes that: it turns a number back into a person."
+    },
+    "gloss": {
+      "Yad Vashem": {
+        "meaning": "Jerusalem's Holocaust memorial; a place and a name",
+        "script": "יָד וָשֵׁם",
+        "say": "YAHD vah-SHEM"
+      },
+      "Auschwitz": {
+        "meaning": "the camp whose liberation, in January, marks the day",
+        "say": "OWSH-vits"
+      },
+      "Yom HaShoah": {
+        "meaning": "the spring day of Holocaust remembrance kept by Israel",
+        "script": "יוֹם הַשּׁוֹאָה",
+        "say": "YOHM hah-shoh-AH"
+      },
+      "Roma": {
+        "meaning": "a people among the Nazis' other victims",
+        "say": "ROH-muh"
+      },
+      "Isaiah": {
+        "meaning": "the biblical book the memorial's name comes from",
+        "say": "eye-ZAY-uh"
+      }
+    }
   },
   "sources": [
     {
@@ -166,7 +206,9 @@
       "'Survivors spoke and wrote so that what happened would not be forgotten or denied' is a general statement; confirm or soften.",
       "Day 747 callback ('go numb before distant suffering') is intentional.",
       "Practice: online name databases (e.g. Yad Vashem's) described generically, not named.",
-      "Editor: the teach had the UN resolution itself naming the Roma and the disabled; Res. 60/7 speaks of 'countless members of other minorities', so the resolution line now says 'members of other minorities' and Roma and disabled victims are named in a separate sentence (myth reveal matched). 'Survivors spoke and wrote' softened to 'Some survivors'. Hook no longer opens on 'A small room...' to vary the run of 'A [noun]' openers."
+      "Editor: the teach had the UN resolution itself naming the Roma and the disabled; Res. 60/7 speaks of 'countless members of other minorities', so the resolution line now says 'members of other minorities' and Roma and disabled victims are named in a separate sentence (myth reveal matched). 'Survivors spoke and wrote' softened to 'Some survivors'. Hook no longer opens on 'A small room...' to vary the run of 'A [noun]' openers.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

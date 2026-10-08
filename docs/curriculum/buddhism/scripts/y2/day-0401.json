@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: the path, and your line, eight together. How many of the eight did you find in one ordinary task? Day four hundred one, and a new block begins.",
+      "voice": "Yesterday: the path, eight factors walked together. Your line: eight together. Today a new block begins, with a book.",
       "screen": [
         "`THE PATH — EIGHT TOGETHER.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Some books you read cover to cover. Some you live in. For the next hundred and twenty-one days, we're going to live in one: the Majjhima Nikaya, the Middle-Length Sayings of the Buddha. Not every page, but its highlights, in order. Here's some of what's coming. A man who sits alone in a forest at night until fear arrives. A raft. A saw. A water snake. A murderer who becomes a monk. A man shot with a poisoned arrow who won't let the doctor touch it until he knows who fired it. Today: the book itself.",
+      "voice": "Some books you read cover to cover. Some you live in. For the next hundred and twenty-one days, this path lives in one: the Majjhima Nikaya, the Middle-Length Sayings of the Buddha. Not every page, but its highlights, in order. A man alone in a forest at night, waiting for fear to arrive. A raft. A saw. A water snake. A murderer who becomes a monk. A man shot with a poisoned arrow who won't let the doctor touch it until he knows who fired it.",
       "screen": [
         "`A BOOK TO LIVE IN.` → `A RAFT, A SAW, A WATER SNAKE.` → `THE POISONED ARROW.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Nikaya means a collection, a group. Majjhima means middle. The discourse basket of the Pali canon holds five nikayas, sorted partly by length: the Long Discourses, the Middle-Length, the Connected, the Numbered, and a collection of shorter books. The middle one holds a hundred and fifty-two discourses of middle length, arranged in three sets of fifty, with fifty-two in the last. Who's speaking? Mostly the Buddha, but not only. Sariputta teaches. Mahakaccana unpacks a riddle. The nun Dhammadinna answers hard questions. Kings, brahmins, Jain ascetics and wandering philosophers all walk through, and a murderer named Angulimala. Some well-known teachings live here: the foundations of mindfulness in MN 10, the raft in MN 22, the noble search in MN 26, the poisoned arrow in MN 63, Angulimala in MN 86. Tradition says these discourses were recited together after the Buddha's death and carried for centuries by memory, by monks who specialized in chanting particular collections, before being written down in Sri Lanka around the first century BCE. In English, a translation by Lord Chalmers, Further Dialogues of the Buddha, appeared in the 1920s; we'll lean on it and on the Pali, mostly in our own retelling. One more thing you'll notice. This book has the feel of a real world. People argue. People misunderstand. Some walk away unconvinced. Not every discourse ends with everyone nodding, and the reciters kept those too.",
+      "voice": "Nikaya means a collection, a group. Majjhima means middle. The discourse basket of the Pali canon holds five nikayas, sorted partly by length: the Long Discourses, the Middle-Length, the Connected, the Numbered, and a collection of shorter books. The middle one holds a hundred and fifty-two discourses, in three sets of fifty, with fifty-two in the last. Mostly the Buddha speaks, but not only. Sariputta teaches. Mahakaccana unpacks a riddle. The nun Dhammadinna answers hard questions. Kings, brahmins, Jain ascetics and wandering philosophers walk through, and a murderer named Angulimala. Some well-known teachings live here: the foundations of mindfulness in MN 10, the raft in MN 22, the noble search in MN 26, the poisoned arrow in MN 63, Angulimala in MN 86. Tradition says these discourses were recited together after the Buddha's death and carried for centuries by memory, by monks who specialized in chanting particular collections, before being written down in Sri Lanka around the first century BCE. In English, Lord Chalmers' translation, Further Dialogues of the Buddha, appeared in the 1920s; these lessons lean on it and on the Pali, mostly retold. And the book has the feel of a real world. People argue. People misunderstand. Some walk away unconvinced, and the reciters kept those too.",
       "screen": [
         "`NIKAYA — A COLLECTION.` · `152 DISCOURSES, THREE FIFTIES.` · `SARIPUTTA, KINGS, A NUN, A MURDERER.` · `CARRIED BY MEMORY, WRITTEN LATER.` · then, large: `THE MIDDLE LENGTH.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "If you have the list of titles nearby, in a book or on a page, read down it slowly. If not, take these: the root of all things. All the taints. Heirs in the teaching. Fear and dread. The simile of the cloth. The simile of the saw. The water snake. The anthill. Let one title catch you, and don't ask why. Then put the list down, rest with the breath, and let that one title sit beside you. The bell holds the time.",
+      "voice": "Read these titles slowly: the root of all things, all the taints, heirs in the teaching, fear and dread, the simile of the cloth, the simile of the saw, the water snake, the anthill. Let one catch you, without asking why. Then rest with the breath, and let that one title sit beside you.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the middle length. Today, read one thing of middle length all the way through, a long article, a letter, a chapter, without skimming. Day four hundred one.",
+      "voice": "Your line: the middle length. A book to live in, a little at a time. Day four hundred one, and a new block.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "In Theravada countries the Majjhima Nikaya is studied in monasteries and recited in Pali, and many lay Buddhists read it in translation; its suttas are often the texts teachers return to for instruction.",
   "games": {
+    "guess": [
+      "the Middle-Length Sayings, a collection of discourses",
+      "a book of monastic rules for monks and nuns",
+      "a later commentary explaining the suttas"
+    ],
     "match": {
       "prompt": "match the words and the discourses.",
       "pairs": [
@@ -132,14 +137,47 @@
     ],
     "recall": [
       [
-        "abhaya",
-        "freedom from fear"
+        "jhana",
+        "meditative absorption"
       ],
       [
-        "kamma",
-        "action, deed"
+        "vipaka",
+        "the ripening, the result"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your roommate",
+      "says": "What's actually in the Majjhima Nikaya?",
+      "options": [
+        "152 middle-length talks: the Buddha, his disciples, kings, even skeptics.",
+        "Mostly the rules for monks and nuns, with few conversations.",
+        "One long sermon the Buddha gave on the night he awoke."
+      ],
+      "answer": 0,
+      "meaning": "The Middle-Length Sayings hold 152 discourses. Mostly the Buddha speaks, but Sariputta, a nun, kings and wanderers appear too."
+    },
+    "gloss": {
+      "Nikaya": {
+        "meaning": "a collection of discourses",
+        "script": "निकाय",
+        "say": "ni-KAH-yuh"
+      },
+      "Sariputta": {
+        "meaning": "one of the Buddha's two chief disciples",
+        "script": "सारिपुत्त",
+        "say": "SAH-ri-PUT-tuh"
+      },
+      "Mahakaccana": {
+        "meaning": "a monk known for unpacking brief sayings",
+        "script": "महाकच्चान",
+        "say": "muh-HAH-kuch-CHAH-nuh"
+      },
+      "Angulimala": {
+        "meaning": "a murderer who became a monk",
+        "script": "अङ्गुलिमाल",
+        "say": "UNG-goo-li-MAH-luh"
+      }
+    }
   },
   "sources": [
     {
@@ -163,7 +201,9 @@
       "Writing down of the canon in Sri Lanka around the first century BCE is the traditional account (Alu Vihara); stated as tradition.",
       "The 'majjhima-bhanaka' reciters are mentioned in the commentaries; please confirm.",
       "Block C opens here (days 401–521, 121 days).",
-      "Editor review (2026-10-01): cut 'longer than a page and shorter than a chapter' (some MN suttas are long) and softened 'many of the best-known'."
+      "Editor review (2026-10-01): cut 'longer than a page and shorter than a chapter' (some MN suttas are long) and softened 'many of the best-known'.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

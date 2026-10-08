@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, leading at twelve: a boy at the head of a council, carried like the Panj Pyare carried their Guru, by the people around him. Your line was help makes the leader. Whose help did you say yes to? Day nine hundred nine.",
+      "voice": "Yesterday, the Panj Pyare, and a boy carried by the people around him; your line was help makes the leader. Today, a city.",
       "screen": [
         "`HELP MAKES THE LEADER.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Lahore. Walls, gates, bazaars, a great fort, the domes of mosques and the roofs of temples, all crowded together. For years the city has been split among rival Sikh chiefs, and the histories say its people are tired of it. So, tradition says, some of its leading citizens, Muslim and Hindu notables among them, send word to the young Sukerchakia chief: come. Not a siege. An invitation, from inside the walls. Today: Lahore.",
+      "voice": "Lahore. Walls, gates, bazaars, a great fort, the domes of mosques and the roofs of temples, all crowded together. For years the city has been split among rival Sikh chiefs, and the histories say its people are tired of it. So, tradition says, some of its leading citizens, Muslim and Hindu notables among them, send word to the young Sukerchakia chief: come. Not a siege. An invitation, from inside the walls.",
       "screen": [
         "`A CITY SPLIT AMONG RIVAL CHIEFS.` → `ITS PEOPLE SEND WORD.` → `NOT A SIEGE: AN INVITATION.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Three things to see in this day. First, how he came in. Tradition says Ranjit Singh rode to Lahore with his own riders and Sada Kaur's, and that friends inside opened a gate to him. There was some fighting, the histories say, but the city did not have to be broken to be taken. The rival chiefs left, and Ranjit was in. The city opened. Second, what Lahore already meant to Sikhs. This was not a foreign town. Sikh tradition remembers Lahore as the birthplace of Guru Ram Das, the fourth Guru. And it remembers Lahore as the place where Guru Arjan, the fifth Guru, was tortured and died, and a gurdwara called Dera Sahib marks that spot by the river. So the city held both a cradle and a grave. Now a young Sikh chief rode through its gates, not as a prisoner, but as its ruler. Third, what he did once inside. The stories that come down to us show him moving carefully: keeping the city's peace, protecting its markets, showing respect to its mosques and temples alike, so that the people who had invited him would not be sorry. A welcome is easy to lose. He seems to have known it. And that's the shape of this day. Not just a conquest, but a door that people on the other side chose to open. Lahore would be his capital for the rest of his life. It's where the next part of this story is going to happen.",
+      "voice": "First, how he came in. Tradition says Ranjit Singh rode to Lahore with his own riders and Sada Kaur's, and that friends inside opened a gate to him. There was some fighting, the histories say, but the city did not have to be broken to be taken. The rival chiefs left, and Ranjit was in. Second, what Lahore already meant to Sikhs. Sikh tradition remembers it as the birthplace of Guru Ram Das, the fourth Guru, and as the place where Guru Arjan, the fifth Guru, was tortured and died; a gurdwara called Dera Sahib marks that spot by the river. The city held both a cradle and a grave, and now a young Sikh chief rode through its gates, not as a prisoner, but as its ruler. Third, what he did inside. The stories that come down to us show him moving carefully: keeping the city's peace, protecting its markets, showing respect to its mosques and temples alike, so that the people who had invited him would not be sorry. A welcome is easy to lose, and he seems to have known it. Not just a conquest, then, but a door that people on the other side chose to open. Lahore would be his capital for the rest of his life.",
       "screen": [
         "`A GATE OPENED FROM INSIDE.` · `BIRTHPLACE OF GURU RAM DAS.` · `WHERE GURU ARJAN DIED.` · `KEEPING THE CITY'S PEACE.` · then, large: `THE CITY OPENED.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Two minutes at a gate. Settle, and breathe. Think of one new start in front of you right now: a new job, a new place, a new habit, a conversation you've been putting off. Let it be a city gate, already open. You don't have to break anything down. Walk through it in your mind, slowly, carefully, and treating everything on the other side with respect. Notice how that feels in your chest. If you pray, you can say Waheguru on each breath out. The bell holds the time.",
+      "voice": "Think of one new start in front of you, a new job, a new place, a conversation you've been putting off, and let it be a city gate, already open. Walk through it in your mind slowly, treating everything on the other side with respect, and notice how that feels in your chest; Waheguru on each breath out, if you pray.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the city opened. Today, step into one new thing you've been circling, and walk in gently, like a guest who was invited. Day nine hundred nine.",
+      "voice": "Your line: the city opened. Invited in, and careful once inside. That's day nine hundred nine.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Sikhs remember Lahore as the city of Guru Ram Das's birth and Guru Arjan's martyrdom, and visit Gurdwara Dera Sahib there; the city later became the capital of Maharaja Ranjit Singh's kingdom.",
   "games": {
+    "guess": [
+      "the city that opened its gates to Ranjit",
+      "the fort town of the Sukerchakia chiefs",
+      "the city where the misls met twice a year"
+    ],
     "match": {
       "prompt": "the city with a cradle and a grave — tap the pairs.",
       "pairs": [
@@ -132,14 +137,50 @@
     ],
     "recall": [
       [
-        "gurmata",
-        "a decision made before the Guru"
+        "itihas",
+        "history"
       ],
       [
-        "shaheed",
-        "a martyr"
+        "Diwali",
+        "the festival of lamps"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "a friend whose family is from Punjab",
+      "says": "Did Ranjit Singh take Lahore by storming its walls?",
+      "options": [
+        "Mostly not: tradition says its citizens invited him, and friends inside opened a gate.",
+        "Yes: a long siege broke the walls, and the city was taken by force alone.",
+        "No: the British handed Lahore to him as part of a treaty on the river."
+      ],
+      "answer": 0,
+      "meaning": "Tradition says leading citizens sent word to come, and a gate was opened from inside; the city didn't have to be broken."
+    },
+    "gloss": {
+      "Lahore": {
+        "meaning": "the city that opened to Ranjit Singh and became his capital",
+        "script": "ਲਾਹੌਰ",
+        "say": "luh-HOR"
+      },
+      "Guru Ram Das": {
+        "meaning": "the fourth Guru, born in Lahore",
+        "say": "GOO-roo RAAM DAAS"
+      },
+      "Guru Arjan": {
+        "meaning": "the fifth Guru, who died in Lahore",
+        "say": "GOO-roo AR-jun"
+      },
+      "Dera Sahib": {
+        "meaning": "the gurdwara marking where Guru Arjan died",
+        "script": "ਡੇਰਾ ਸਾਹਿਬ",
+        "say": "DAY-raa SAA-hib"
+      },
+      "gurdwara": {
+        "meaning": "a Sikh place of worship",
+        "script": "ਗੁਰਦੁਆਰਾ",
+        "say": "gurd-WAA-raa"
+      }
+    }
   },
   "sources": [
     {
@@ -166,7 +207,9 @@
       "'Keeping the city's peace... respecting mosques and temples alike' is kept general and attributed to 'the stories'; confirm.",
       "'Lahore would be his capital for the rest of his life': confirm phrasing.",
       "Gurmukhi ਲਾਹੌਰ and pronunciation: confirm.",
-      "Audit: the histories usually name the inviting notables as Muslim and Hindu (e.g. Mian Ashiq Muhammad, Mian Mohkam Din, Hakim Rai); 'and Sikhs' cut."
+      "Audit: the histories usually name the inviting notables as Muslim and Hindu (e.g. Mian Ashiq Muhammad, Mian Mohkam Din, Hakim Rai); 'and Sikhs' cut.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

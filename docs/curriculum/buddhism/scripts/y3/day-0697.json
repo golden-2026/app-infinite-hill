@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday closed year two. Your line was you've read his words. Which line did you write down, and where did you put it? Year three starts now. Day six hundred ninety-seven.",
+      "voice": "Yesterday closed year two: buddhavacana, the word of the Buddha. Your line: you've read his words. Year three starts now.",
       "screen": [
         "`YOU'VE READ HIS WORDS.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "In year one this path walked through the Buddha's life the plain way: a dream, a grove, four sights on a road, a ride out at midnight. Short scenes, mostly from the old discourses and the commentaries. Then a whole year of his own words. Now the same life comes back, but in a different voice. Not a monk's report. A poet's. Somebody sat down with this story and decided it deserved everything a poet can give a king's tale: long descriptions, speeches, gardens, gods leaning in from the sky, a father who can't stop worrying. For the next stretch of days, we read that poem, one scene at a time.",
+      "voice": "Same prince, same road, a new voice. In year one this path walked through the Buddha's life the plain way: a dream, a grove, four sights on a road, a ride out at midnight, short scenes mostly from the old discourses and the commentaries. Then came a whole year of his own words. Now the life comes back as a poem. Not a monk's report: a poet's, with long descriptions, speeches, gardens, gods leaning in from the sky, and a father who can't stop worrying. For the next stretch of days, i'll read it with you, one scene at a time.",
       "screen": [
         "`THE SAME LIFE, A NEW VOICE.` → `NOT A REPORT. A POEM.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "The poem is called the Buddhacarita. Translators give the title as the life of the Buddha, or the acts of the Buddha. Tradition names its poet Ashvaghosha, and calls him a monk who was also a master of Sanskrit verse. This path follows an English translation by E. B. Cowell. So what changes when a life becomes a poem? First, the pace. A discourse might give the prince's comfort in a sentence. The poem lingers. It lets you hear the music in the palace and smell the gardens. Second, people speak. In the poem the king argues, a friend makes his case for pleasure, a charioteer pleads, and the prince answers each of them in his own words. You get to hear the arguments he had to get past, not only the result. Third, the sky takes part. Gods arrange what the prince sees. Doors open on their own. Some readers take these as wonders that happened. Others read them as a poet's way of saying the whole world was turning toward this moment. The poem doesn't stop to settle it. And fourth, it's still the same story. The poem keeps the beats the tradition knows: the dream, the birth, the sage, the sights, the leaving. It doesn't invent a new Buddha. It slows the old one down so you can walk beside him. That's the gift of the next weeks. Not new facts. The same steps, taken slowly, one canto at a time.",
+      "voice": "The poem is the Buddhacarita: the life, or the acts, of the Buddha. Tradition names its poet Ashvaghosha, and calls him a monk who was also a master of Sanskrit verse. This path follows an English translation by E. B. Cowell. So what changes when a life becomes a poem? First, the pace. A discourse might give the prince's comfort in a sentence; the poem lingers, so you hear the music in the palace and smell the gardens. Second, people speak. The king argues, a friend makes his case for pleasure, a charioteer pleads, and the prince answers each of them in his own words. You hear the arguments he had to get past, not only the result. Third, the sky takes part. Gods arrange what the prince sees. Doors open on their own. Some readers take these as wonders that happened. Others read them as a poet's way of saying the whole world was turning toward this moment. The poem doesn't stop to settle it. And fourth, it's still the same story: the dream, the birth, the sage, the sights, the leaving. It doesn't invent a new Buddha. It slows the old one down so you can walk beside him. Not new facts: the same steps, taken slowly, one canto at a time.",
       "screen": [
         "`BUDDHACARITA: THE LIFE OF THE BUDDHA.` · `A POEM LINGERS.` · `PEOPLE ARGUE, AND HE ANSWERS.` · `THE SAME STEPS, TAKEN SLOWLY.` · then, large: `THE LIFE AS A POEM.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: hear the opening slowly. Settle, and let the breath find its own pace. The poem begins with a city, the old home of a sage named Kapila, a king of the Shakya clan named Shuddhodana, and his queen, Maya. That's all. A city, a king, a queen. Hold the three of them in mind the way you'd hold the first page of a long book, before anything has happened. No need to guess what comes next. Just stay with the opening, the way you'd sit at the start of a long walk. The bell holds the time.",
+      "voice": "The poem begins with a city, the old home of a sage named Kapila, a king of the Shakya clan named Shuddhodana, and his queen, Maya. Hold the three in mind, a city, a king, a queen, the way you'd hold the first page of a long book before anything has happened. No need to guess what comes next; just stay with the opening.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the life as a poem. Today, tell one ordinary moment of your day slowly, to yourself, the way a poet would, and notice what you missed the first time. Day six hundred ninety-seven.",
+      "voice": "Your line: the life as a poem. Year three opens in a poet's voice. Day six hundred ninety-seven, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Buddhists come to the Buddha's life through many tellings, from the discourses and commentaries to later poems like the Buddhacarita, and in some communities these stories are read aloud, studied in classes or told at festivals.",
   "games": {
+    "guess": [
+      "a Sanskrit poem telling the Buddha's life",
+      "a Pali list of the Buddha's rules",
+      "a Tibetan prayer to the Buddha"
+    ],
     "match": {
       "prompt": "the poem: tap the pairs.",
       "pairs": [
@@ -132,14 +137,52 @@
     ],
     "recall": [
       [
-        "Pavarana",
-        "the invitation at the rains' end"
+        "jara",
+        "old age, which spares no one"
       ],
       [
-        "vassa",
-        "rain, and a monk's year"
+        "Vesak",
+        "full moon of birth, awakening, passing"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your friend",
+      "says": "Is the Buddhacarita a different story of the Buddha's life?",
+      "options": [
+        "No, it's the same steps, birth, sights, leaving, told slowly as a poem.",
+        "Yes, the poet invents a new Buddha with a whole new life story.",
+        "No, it's a list of his rules for monks, set to Sanskrit verse."
+      ],
+      "answer": 0,
+      "meaning": "The poem keeps the beats the tradition knows. It doesn't invent a new Buddha; it slows the old story down."
+    },
+    "gloss": {
+      "Buddhacarita": {
+        "meaning": "a Sanskrit poem telling the Buddha's life",
+        "script": "बुद्धचरित",
+        "say": "BOOD-dhuh-CHUH-ri-tuh"
+      },
+      "Ashvaghosha": {
+        "meaning": "the poet tradition names as the poem's author",
+        "script": "अश्वघोष",
+        "say": "UHSH-vuh-GHOH-shuh"
+      },
+      "Shakya": {
+        "meaning": "the clan of the prince's family",
+        "script": "शाक्य",
+        "say": "SHAHK-yuh"
+      },
+      "Shuddhodana": {
+        "meaning": "the Shakya king, the prince's father",
+        "script": "शुद्धोदन",
+        "say": "shood-DHOH-duh-nuh"
+      },
+      "Maya": {
+        "meaning": "the queen, the prince's mother",
+        "script": "माया",
+        "say": "MAH-yuh"
+      }
+    }
   },
   "sources": [
     {
@@ -165,7 +208,9 @@
       "Practice paraphrases the poem's opening (the Shakya city, King Shuddhodana, Queen Maya). Confirm the opening verses' order in Cowell; the Sanskrit begins with verses before the king is introduced.",
       "Trapdoor calls the Buddhacarita kavya (court poetry, a mahakavya); confirm wording.",
       "Tradition calls Ashvaghosha a monk; stated as 'tradition'.",
-      "Editor: hook 'A year ago' corrected to 'In year one' (year two came between); invented 'can't sleep' cut; 'Buddhists hold both readings' cut (claims rule); stock 'poet holding the lamp' cut; practice's unsourced 'in the foothills' replaced by Kapila's city; 'all Buddhists' myth item replaced."
+      "Editor: hook 'A year ago' corrected to 'In year one' (year two came between); invented 'can't sleep' cut; 'Buddhists hold both readings' cut (claims rule); stock 'poet holding the lamp' cut; practice's unsourced 'in the foothills' replaced by Kapila's city; 'all Buddhists' myth item replaced.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

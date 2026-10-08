@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the angels, and your line: the ones who write. Did you hand them one good intention? Angels are part of something larger the Qur'an names right at its start. Day six hundred sixty-six.",
+      "voice": "Yesterday: mala'ikah, the angels, and your line, the ones who write. Angels are part of something larger the Qur'an names right at its start.",
       "screen": [
         "`THE ONES WHO WRITE.`"
       ]
@@ -38,7 +38,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Al-Baqarah begins by calling the book a guidance for those who keep their duty, and then describes them. Verse three, in Pickthall's translation, starts: \"Who believe in the Unseen.\" Before prayer, before giving, before anything they do, the first thing named is what they trust. The Arabic is al-ghayb. The root gh-y-b means to be absent, hidden from view. A student who misses class is gha'ib, absent. So the unseen isn't the imaginary. It's what is real but not in front of you. What's in it? A well-known hadith in Sahih Muslim, where Jibril comes as a stranger and questions the Prophet, lists the heart of faith: Allah, His angels, His books, His messengers, the Last Day, and the measuring out of good and bad. Almost all of it sits in the unseen. And the Qur'an is honest about who holds it. In surah six it says that with Allah are the keys of the unseen, and no one knows them but Him. It adds a small, startling picture: not a leaf falls but He knows it. Surah twenty-seven says no one in the heavens or the earth knows the unseen except Allah. That's why classical scholars were firm about fortune-tellers: a hadith in Sahih Muslim warns that whoever consults one to ask about hidden things has their prayer unaccepted for forty nights. Faith in the unseen, then, has two sides. It trusts what can't be seen. And it doesn't pretend to see it. The future, the hidden, the leaf before it falls: those stay with Allah.",
+      "voice": "Al-Baqarah begins by calling the book a guidance for those who keep their duty, and then describes them. Verse three, in Pickthall's translation, starts: \"Who believe in the Unseen.\" Before prayer, before giving, the first thing named is what they trust. The Arabic is al-ghayb. The root gh-y-b means to be absent, hidden from view; a student who misses class is gha'ib, absent. So the unseen isn't the imaginary. It's what is real but not in front of you. What's in it? A well-known hadith in Sahih Muslim, where Jibril comes as a stranger and questions the Prophet, lists the heart of faith: Allah, His angels, His books, His messengers, the Last Day, and the measuring out of good and bad. Almost all of it sits in the unseen. And the Qur'an is honest about who holds it. Surah six says that with Allah are the keys of the unseen, and no one knows them but Him. It adds a small, startling picture: not a leaf falls but He knows it. Surah twenty-seven says no one in the heavens or the earth knows the unseen except Allah. That's why classical scholars were firm about fortune-tellers: a hadith in Sahih Muslim warns that whoever consults one to ask about hidden things has their prayer unaccepted for forty nights. So faith in the unseen has two sides. It trusts what can't be seen. And it doesn't pretend to see it. The future, the hidden, the leaf before it falls: those stay with Allah.",
       "screen": [
         "`THE FIRST QUALITY: THE UNSEEN.`",
         "`GH-Y-B: ABSENT, NOT IMAGINARY.`",
@@ -49,7 +49,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: trust one unseen thing. Sit still and close your eyes, so the seen goes quiet. Feel your breath coming in. You can't see the air, but you're living on it. Feel your heart, if you can find it, doing its work without your watching. Now pick one unseen thing to rest your weight on for the rest of this sit. It might be your breath, someone's love for you, or, if you believe, Allah's care. Don't try to picture it. Just lean on it. The bell holds the time.",
+      "voice": "Close your eyes so the seen goes quiet, and feel your breath coming in: you can't see the air, but you're living on it. Pick one unseen thing to rest your weight on for the rest of this sit: your breath, someone's love for you, or, if you believe, Allah's care. Don't try to picture it; just lean on it.",
       "screen": []
     },
     {
@@ -63,7 +63,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: faith in the unseen. Today, when you catch yourself guessing the future, let one guess go and leave it with the one who holds the keys. Day six hundred sixty-six.",
+      "voice": "Your line: faith in the unseen. The keys stay with the One who holds them. Day six hundred sixty-six.",
       "screen": []
     },
     {
@@ -77,6 +77,11 @@
   ],
   "howItsDone": "Muslims describe faith (iman) as belief in Allah, the angels, the revealed books, the messengers, the Last Day and divine decree, much of it in the unseen; classical scholars warned against fortune-telling as a claim on what only Allah knows.",
   "games": {
+    "guess": [
+      "what is real but hidden from view",
+      "what is imagined and not truly real",
+      "the far future, which can be foretold"
+    ],
     "match": {
       "prompt": "the unseen — tap the pairs.",
       "pairs": [
@@ -137,14 +142,47 @@
     ],
     "recall": [
       [
-        "ad-Dahr",
-        "Time: the surah's other name"
+        "nabi",
+        "a prophet, one who brings news"
       ],
       [
-        "al-Muddaththir",
-        "the one cloaked"
+        "qiyam al-layl",
+        "standing the night in prayer"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your coworker",
+      "says": "Isn't believing in the unseen just believing in something imaginary?",
+      "options": [
+        "Al-ghayb means absent, not imaginary: real, but not in front of you.",
+        "Yes; the Qur'an asks people to accept things that aren't there.",
+        "No; it's what fortune-tellers can see for us ahead of time."
+      ],
+      "answer": 0,
+      "meaning": "The root gh-y-b means absent: the unseen is what is real but out of view. And its keys, the Qur'an says, are with Allah alone."
+    },
+    "gloss": {
+      "al-ghayb": {
+        "meaning": "the unseen: what is real but hidden from view",
+        "script": "الغيب",
+        "say": "al-GHAYB"
+      },
+      "gha'ib": {
+        "meaning": "absent, like a student missing class",
+        "script": "غائب",
+        "say": "GHAA-ib"
+      },
+      "Al-Baqarah": {
+        "meaning": "the Cow, surah two",
+        "script": "البقرة",
+        "say": "al-BA-qa-ra"
+      },
+      "Jibril": {
+        "meaning": "Gabriel, the angel of revelation",
+        "script": "جبريل",
+        "say": "jib-REEL"
+      }
+    }
   },
   "sources": [
     {
@@ -184,7 +222,9 @@
     "notes": [
       "Pickthall wording of the opening of 2:3 quoted from memory; please confirm.",
       "Hadith numbers cited from memory (Muslim 8; Muslim 2230); confirm.",
-      "Day 666: the number has popular associations in other contexts; nothing in the script refers to them. Flag only if the owner wants to avoid it."
+      "Day 666: the number has popular associations in other contexts; nothing in the script refers to them. Flag only if the owner wants to avoid it.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

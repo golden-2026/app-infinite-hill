@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: three presents. Your line was it suffices. When the wanting started, did enough hold? Day six hundred ten.",
+      "voice": "Yesterday's word was three presents: judgment, action, acceptance, all here now. Your line was it suffices.",
       "screen": [
         "`IT SUFFICES.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A friend says something you're fairly sure is wrong. Not dangerous, just wrong: a bad plan, a mistaken idea about a coworker, a choice about their kids. You can feel the correction loading in your mouth. And then a second voice: is this the moment? Will they hear it? Marcus met that fork too. In book nine he wrote down what to do when correcting doesn't work. Today: correct, or be kind.",
+      "voice": "A friend says something you're fairly sure is wrong. Not dangerous, just wrong: a bad plan, a mistaken idea about a coworker, a choice about their kids. You can feel the correction loading in your mouth. And then a second voice: is this the moment? Will they hear it? Marcus met that fork too. In book nine he wrote down what to do when correcting doesn't work.",
       "screen": [
         "`THE CORRECTION LOADING.` → `IS THIS THE MOMENT?` → `CORRECT, OR BE KIND.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the first branch. If you can, Marcus writes, set them right by teaching. Correction isn't forbidden. A friend who never tells you the truth isn't much of a friend. Second, the second branch. But if you can't, remember that kindness was given to you for exactly this. Not as decoration, not as a personality trait, but as equipment for this moment, the moment correction fails. Third, the surprising part. Even the gods, Marcus says, are kind to such people. They help them to health, to wealth, to reputation; that's how generous they are. Whatever you believe about the gods, look at the logic. If the highest powers keep helping people who get things wrong, then kindness can't be a prize for being right. It's given to the wrong as well. Fourth, the last line. And it's in your power too, he says. Or tell me: who's stopping you? His point: no circumstance can take away the ability to be kind. The other person can refuse your correction. Your kindness is yours to give whether they take it well or not. It's a close cousin of the third door, from book eight. Here the second door gets a warmer name. Not bear: be kind.",
+      "voice": "If you can, Marcus writes, set them right by teaching. Correction isn't forbidden; a friend who never tells you the truth isn't much of a friend. But if you can't, remember that kindness was given to you for exactly this. Not as decoration, not as a personality trait, but as equipment for the moment correction fails. Then the surprising part. Even the gods, Marcus says, are kind to such people. They help them to health, to wealth, to reputation; that's how generous they are. Whatever you believe about the gods, look at the logic. If the highest powers keep helping people who get things wrong, then kindness can't be a prize for being right. It's given to the wrong as well. And the last line: it's in your power too, he says. Or tell me: who's stopping you? His point: no circumstance can take away the ability to be kind. The other person can refuse your correction. Your kindness is yours to give, whether they take it well or not. It's a close cousin of the third door, from book eight. Here the second door gets a warmer name. Not bear: be kind.",
       "screen": [
         "`IF YOU CAN, CORRECT BY TEACHING.` · `IF NOT, KINDNESS WAS GIVEN FOR THIS.` · `EVEN THE GODS ARE KIND TO THEM.` · `WHO'S STOPPING YOU?` · then, large: `CORRECT OR BE KIND.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Settle, and breathe. Think of one person you've wanted to correct lately. Picture the correction honestly. Could they hear it? Is it yours to give? If yes, picture saying it once, plainly and warmly, and then letting it go. If no, set it down. Let the point stay unmade for now, without keeping score. Instead, choose one kindness for that person, something small and concrete you could do this week. Hold your choice for a few breaths: correction, or kindness. The bell holds the time.",
+      "voice": "Think of one person you've wanted to correct lately, and ask honestly: could they hear it, and is it yours to give? If yes, picture saying it once, plainly and warmly, then letting it go; if no, set the point down without keeping score and choose one small, concrete kindness for them instead. Hold your choice for a few breaths.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: who's stopping you. Choose one, on purpose, with one person today, and notice which one the moment really needed. Day six hundred ten.",
+      "voice": "Your line: who's stopping you. A correction can be refused; kindness is still yours to give. See you tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "People who draw on this entry often decide deliberately whether a correction can actually be heard; when it can't, they choose a concrete kindness instead of repeating the point.",
   "games": {
+    "guess": [
+      "set someone right by teaching, if they can hear it",
+      "prove you were right and win the argument",
+      "punish a mistake so it won't happen again"
+    ],
     "match": {
       "prompt": "correct, or be kind — tap the pairs.",
       "pairs": [
@@ -127,14 +132,36 @@
     ],
     "recall": [
       [
-        "Heraclitus",
-        "no stepping in the same river twice"
+        "Sextus",
+        "taught Marcus kindness without show"
       ],
       [
-        "galene",
-        "a sea gone flat after wind"
+        "vitia",
+        "Latin for faults, vices"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your brother",
+      "says": "My friend's plan is a mess, but she won't listen to me. Now what?",
+      "options": [
+        "Marcus says if you can't correct by teaching, kindness was given to you for exactly this.",
+        "Marcus says keep correcting her until she admits it, since the truth comes first.",
+        "Marcus says kindness is only for people who listen, so step back from her."
+      ],
+      "answer": 0,
+      "meaning": "In 9.11 Marcus says correct by teaching if you can; if you can't, kindness was given you for this, and no one can stop you."
+    },
+    "gloss": {
+      "Marcus": {
+        "meaning": "Marcus Aurelius, Roman emperor who wrote the Meditations"
+      },
+      "third door": {
+        "meaning": "the option Marcus leaves out: resent, gossip, write them off"
+      },
+      "gods": {
+        "meaning": "the divine powers Marcus speaks of in his notes"
+      }
+    }
   },
   "sources": [
     {
@@ -156,7 +183,9 @@
     "notes": [
       "9.11 paraphrased (Long: 'If thou art able, correct by teaching those who do wrong; but if thou canst not, remember that indulgence [benevolence] is given to thee for this purpose. And the gods, too, are benevolent to such persons; and for some purposes they even help them to get health, wealth, reputation; so good they are. And it is in thy power also; or say, who hinders thee?'). Confirm, including whether the Greek is εὐμένεια.",
       "The outline's word is 'Correct' (title head); kept exactly.",
-      "Editor review (2026-10-01): cut the unsourced 'faced that fork constantly; an empire's worth of people'; attributed 'no circumstance can take away kindness' to Marcus; changed the fork scene so it no longer repeats day 605's coworker-who-won't-learn fork."
+      "Editor review (2026-10-01): cut the unsourced 'faced that fork constantly; an empire's worth of people'; attributed 'no circumstance can take away kindness' to Marcus; changed the fork scene so it no longer repeats day 605's coworker-who-won't-learn fork.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

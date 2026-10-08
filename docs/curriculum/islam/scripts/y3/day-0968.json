@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, across the Sahara, with a town of salt and a caravan that ran on trust. Your line was: salt, gold and books. Did a book change hands? Day nine hundred sixty-eight.",
+      "voice": "Yesterday: across the Sahara, with a town of salt and a caravan that ran on trust. Your line was salt, gold and books.",
       "screen": [
         "`SALT, GOLD AND BOOKS.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Friday, in the capital of a West African king. If you get to the mosque late, there is no room left to pray. So people send servants ahead early in the morning, carrying prayer mats, to spread them out and hold a place. A visitor from Morocco noticed this and wrote it down. It is Ibn Battuta again, now at the court of the mansa, the king of Mali. He had complaints. The welcome gift the king sent him, a little bread, some meat and some yogurt, struck him as far too small, and he said so. But on other things he wrote with open admiration. Today: the empire of Mali.",
+      "voice": "Friday, in the capital of a West African king. Get to the mosque late and there's no room left to pray, so people send servants ahead early in the morning with prayer mats, to spread them out and hold a place. A visitor from Morocco wrote it down: Ibn Battuta again, now at the court of the mansa, the king of Mali. He had complaints. The welcome gift the king sent him, a little bread, some meat and some yogurt, struck him as far too small, and he said so. But on other things he wrote with open admiration. Today: the empire of Mali.",
       "screen": [
         "`FRIDAY: NO ROOM LEFT TO PRAY.` → `PRAYER MATS SENT AHEAD.` → `A VISITOR AT THE MANSA'S COURT.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Mali grew along the Niger River, close to the gold fields of West Africa, where the trade roads from the desert came down to the water. Its people remember the empire's founder through the epic of Sundiata, a story sung by griots, the keepers of history in song. Its kings were Muslim, and the court held both worlds at once: Ibn Battuta saw the griots performing before the king, and he saw the judge and the preachers of the mosque. What impressed him? First, safety. He wrote that a traveler in Mali had no need to fear robbers on the road. Second, honesty with the dead. When a stranger died in the country, his goods were not seized; they were kept in trust until the rightful heir came to claim them. Third, care for prayer: the crowded Fridays, the clean white clothes. And fourth, care for the Qur'an, which children were made to learn by heart. That second point echoes a verse. In Pickthall's translation: \"Lo! Allah commandeth you that ye restore deposits to their owners, and, if ye judge between mankind, that ye judge justly.\" A dead stranger's goods are a hard deposit to return, because nobody is watching. Ibn Battuta noticed it. Gold made Mali rich. What a traveler remembered was whether his bags, and his life, were safe on its roads.",
+      "voice": "Mali grew along the Niger River, close to the gold fields of West Africa, where the trade roads from the desert came down to the water. Its people remember the empire's founder through the epic of Sundiata, a story sung by griots, the keepers of history in song. Its kings were Muslim, and the court held both worlds at once: Ibn Battuta saw the griots performing before the king, and he saw the judge and the preachers of the mosque. What impressed him? First, safety: a traveler in Mali, he wrote, had no need to fear robbers on the road. Second, honesty with the dead. When a stranger died in the country, his goods were not seized; they were kept in trust until the rightful heir came to claim them. Third, care for prayer: the crowded Fridays, the clean white clothes. And fourth, care for the Qur'an, which children were made to learn by heart. That second point echoes a verse. In Pickthall's translation: \"Lo! Allah commandeth you that ye restore deposits to their owners, and, if ye judge between mankind, that ye judge justly.\" A dead stranger's goods are a hard deposit to return, because nobody is watching. Ibn Battuta noticed. Gold made Mali rich. What a traveler remembered was whether his bags, and his life, were safe on its roads.",
       "screen": [
         "`ALONG THE NIGER, NEAR THE GOLD.` · `GRIOTS AND JUDGES AT ONE COURT.` · `SAFE ROADS, GOODS KEPT IN TRUST.` · `RESTORE DEPOSITS TO THEIR OWNERS.` · then, large: `THE EMPIRE OF MALI.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: look at a map of West Africa. If you have one nearby, open it now; if not, see it as well as you can. Find the Sahara at the top. Find the Atlantic coast on the left. Then find the Niger River, and follow it as it runs inland, away from the sea, before it turns. That bend is where caravans met the boats. Breathe slowly as you trace it. If you pray, you can remember the people who prayed in the mosques along that river. If you don't, simply stay with the river. The bell holds the time.",
+      "voice": "Picture a map of West Africa: the Sahara at the top, the Atlantic on the left, and the Niger River running inland, away from the sea, before it turns. That bend is where caravans met the boats; trace it slowly as you breathe. If you pray, remember the people who prayed in the mosques along that river; if not, simply stay with the river.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: safe on its roads. Today, give something back that isn't yours, a borrowed tool, a lost item, a debt, before anyone asks. Day nine hundred sixty-eight.",
+      "voice": "Your line: safe on its roads. Nobody was watching, and the deposit went back anyway. Until tomorrow.",
       "screen": []
     },
     {
@@ -127,14 +127,48 @@
     ],
     "recall": [
       [
-        "Ghazan",
-        "Mongol ruler of Persia who became Muslim"
+        "Qarawiyyin",
+        "Fatimah al-Fihri's mosque in Fez"
       ],
       [
-        "Baghdad",
-        "the city of the Abbasid caliphs"
+        "mihrab",
+        "the niche that shows which way to pray"
       ]
-    ]
+    ],
+    "guess": [
+      "the title of the king of Mali",
+      "a singer who keeps history in song",
+      "the judge of the Friday mosque"
+    ],
+    "chat": {
+      "who": "your dad",
+      "says": "What impressed Ibn Battuta most about the empire of Mali?",
+      "options": [
+        "Safe roads, and a dead stranger's goods kept in trust for his heir.",
+        "Its welcome: the king sent him a lavish gift the day he arrived.",
+        "Only its gold; he found nothing else there worth writing about."
+      ],
+      "answer": 0,
+      "meaning": "He wrote that travelers in Mali feared no robbers, and a stranger's goods were kept in trust until the rightful heir came."
+    },
+    "gloss": {
+      "mansa": {
+        "meaning": "the king of Mali",
+        "say": "MAN-sa"
+      },
+      "Sundiata": {
+        "meaning": "the founder of Mali, remembered in a sung epic",
+        "say": "soon-JAH-ta"
+      },
+      "griots": {
+        "meaning": "keepers of history in song",
+        "say": "GREE-ohz"
+      },
+      "Niger": {
+        "meaning": "a great river of West Africa",
+        "say": "NY-jer"
+      }
+    }
   },
   "sources": [
     {
@@ -167,7 +201,9 @@
       "Ibn Battuta also criticized some customs at the Mali court; the script mentions only the gift complaint. Keeper may want a note of balance.",
       "Carry is lowercase in the index ('the empire of mali'); kept exactly.",
       "Editor: replaced the narrator's superlative 'the hardest deposit of all to return' with 'a hard deposit to return'.",
-      "Audit: no changes. Ibn Battuta's Mali details (welcome gift, prayer mats, safe roads, dead strangers' goods, white clothes, Qur'an memorization) and Pickthall 4:58 check out."
+      "Audit: no changes. Ibn Battuta's Mali details (welcome gift, prayer mats, safe roads, dead strangers' goods, white clothes, Qur'an memorization) and Pickthall 4:58 check out.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

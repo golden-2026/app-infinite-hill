@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: the headland. Your line was spray flies up and falls back. When a wave hit, did you stand still and let it settle? Day five hundred sixty-one.",
+      "voice": "Yesterday's word was the headland: it stands firm, and the water settles. Your line was spray flies up and falls back.",
       "screen": [
         "`SPRAY FLIES UP AND FALLS BACK.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Listen to how people tell bad news. Of course it happened to me. Just my luck. Why does this always happen to me? The sentence starts before we've even decided what we think. It's almost a reflex, a little story about being the unlucky one. Yesterday Marcus Aurelius gave us the headland. In the same entry, a few lines later, he catches himself in exactly that reflex, and rewrites the sentence. Same event. Different words. And the new words change what the event is. Today: lucky to bear it.",
+      "voice": "Listen to how people tell bad news. Just my luck. Why does this always happen to me? The sentence starts before we've decided what we think: a little reflex story about being the unlucky one. In the same entry as the headland, a few lines later, Marcus Aurelius catches himself in exactly that reflex, and rewrites the sentence. Same event. Different words. And the new words change what the event is.",
       "screen": [
         "`JUST MY LUCK.` → `A REFLEX SENTENCE.` → `LUCKY TO BEAR IT.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the rewrite. Unlucky me, that this happened, Marcus imagines saying. Then he corrects himself. Not at all. Rather: lucky me, that though this happened, I'm still standing, not crushed by the present and not afraid of what's coming. Second, why that's luck. Something like this could have happened to anyone, he says. But not everyone would have come through it unbroken. So why call the event bad luck, rather than calling your steadiness good luck? Both are true. You get to choose which one is the headline. Third, the test. Then he gives a test. Does what happened stop you from being just, generous, self-controlled, sensible, careful in judgment, honest, modest, free? If it doesn't touch those, it hasn't touched what makes you who you are. Fourth, the rule to carry. Marcus ends with a sentence for every future vexation. Remember, he says: this is not a misfortune, but bearing it well is good fortune. This is not pretending. Marcus doesn't call the loss a gain. He doesn't say it didn't hurt. He moves the word luck from the event, which you didn't choose, to the bearing, which you did. That's a real shift, and anyone can try it. The flat tire is a flat tire. Changing it calmly, on the shoulder, in the rain, without taking it out on anyone: that's the part that's yours, and it's a kind of luck to be able to.",
+      "voice": "Unlucky me, that this happened, Marcus imagines saying. Then he corrects himself. Not at all. Rather: lucky me, that though this happened, I'm still standing, not crushed by the present and not afraid of what's coming. Why call that luck? Something like this could have happened to anyone, he says, but not everyone would have come through it unbroken. So why call the event bad luck, rather than calling your steadiness good luck? Both are true; you choose the headline. Then a test. Does what happened stop you from being just, generous, self-controlled, sensible, careful in judgment, honest, modest, free? If it doesn't touch those, it hasn't touched what makes you who you are. And a rule for every future vexation: this is not a misfortune, but bearing it well is good fortune. This isn't pretending. Marcus doesn't call the loss a gain, or say it didn't hurt. He moves the word luck from the event, which you didn't choose, to the bearing, which is yours. The flat tire is a flat tire. Changing it calmly, on the shoulder, in the rain, without taking it out on anyone: that's the part that's yours, and it's a kind of luck to be able to.",
       "screen": [
         "`NOT UNLUCKY ME: LUCKY ME.` · `ANYONE COULD MEET IT; NOT ALL BEAR IT.` · `DOES IT STOP YOU BEING JUST?` · `BEARING IT WELL IS GOOD FORTUNE.` · then, large: `LUCKY TO BEAR IT.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Settle, and breathe. Bring to mind one misfortune, recent or old. Say the reflex sentence to yourself first: just my luck, or why me. Notice how it feels. Now try Marcus's rewrite: this happened, and I'm still standing. Then ask his test: did it stop me from being fair, honest, kind? If not, say quietly: lucky to bear it. Notice whether anything in your body changes. The bell holds the time.",
+      "voice": "Bring to mind one misfortune, recent or old, and hear the reflex sentence first: just my luck. Then try Marcus's rewrite, this happened and I'm still standing, and ask his test: did it stop me from being fair, honest, kind? If not, say quietly: lucky to bear it.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: still standing, not crushed. The next time you hear yourself say just my luck, rephrase it: this happened, and I'm lucky to bear it well. Day five hundred sixty-one.",
+      "voice": "Your line: still standing, not crushed. Luck lives in the bearing, not the event. That's day five hundred sixty-one.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Readers of Marcus Aurelius often apply the rule at the end of Meditations 4.49 to setbacks: the event is not a misfortune, but bearing it well is good fortune.",
   "games": {
+    "guess": [
+      "luck found in bearing a hard thing well",
+      "an event that turns out well by chance",
+      "a lucky break that comes out of nowhere"
+    ],
     "match": {
       "prompt": "lucky to bear it — tap the pairs.",
       "pairs": [
@@ -132,14 +137,37 @@
     ],
     "recall": [
       [
-        "Severus",
-        "'my brother', probably family by marriage"
+        "Sextus",
+        "from Chaeronea, Plutarch's relative"
       ],
       [
-        "Alexander",
-        "a teacher of grammar"
+        "euscholia",
+        "good leisure, free time"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your sister",
+      "says": "My car broke down on the way to work. Just my luck, right?",
+      "options": [
+        "Maybe the luck is in how you're handling it: still standing, not crushed.",
+        "Yes, and once one thing goes wrong, the whole day is ruined.",
+        "Pretend it didn't happen, and then it can't bother you."
+      ],
+      "answer": 0,
+      "meaning": "Marcus moves luck from the event to the bearing: this isn't misfortune, but bearing it well is good fortune."
+    },
+    "gloss": {
+      "good fortune": {
+        "meaning": "for Marcus, not the event itself but bearing it well"
+      },
+      "headland": {
+        "meaning": "a high point of land the sea breaks against"
+      },
+      "Marcus Aurelius": {
+        "meaning": "Roman emperor and Stoic who wrote the Meditations to himself",
+        "say": "MAR-kus aw-REE-lee-us"
+      }
+    }
   },
   "sources": [
     {
@@ -155,7 +183,9 @@
     "notes": [
       "4.49 paraphrased (second half): 'Unhappy am I, because this has happened to me. Not so, but happy am I, though this has happened, because I continue free from pain, neither crushed by the present nor fearing the future'; such a thing might happen to every man, but not every man would have continued free from pain; will this prevent you being just, magnanimous, temperate, prudent, secure against inconsiderate opinions and falsehood, modest, free? Remember: this is not a misfortune, but to bear it nobly is good fortune. Confirm.",
       "Greek atyches/eutyches in 4.49: confirm.",
-      "Editor review (year 2, days 558–575): cut the superlative 'the question that matters most'; trapdoor restated as the standard Stoic view (only virtue is good) rather than 'only the bearing'."
+      "Editor review (year 2, days 558–575): cut the superlative 'the question that matters most'; trapdoor restated as the standard Stoic view (only virtue is good) rather than 'only the bearing'.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

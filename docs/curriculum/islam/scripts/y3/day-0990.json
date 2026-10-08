@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Samarkand's Registan, a square of sand ringed with schools, and a gate with cats and faced suns. Your line was: the sandy place. Which open space did you notice? Day nine hundred ninety.",
+      "voice": "Yesterday: Samarkand's Registan, a square of sand ringed with schools. Your line was the sandy place.",
       "screen": [
         "`THE SANDY PLACE.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Ulugh Beg was a grandson of Timur, the conqueror whose capital was Samarkand. Where his grandfather was remembered for war, Ulugh Beg is remembered for study. He governed Samarkand and built the madrasah on the Registan you met yesterday, and he gathered mathematicians and astronomers around him. Then he built the observatory on the hill, with its great curved instrument set along the line from north to south. Night after night, his astronomers measured. Out of their work came tables of the stars: where each one sat in the sky, with tables of the sun, moon and planets. Astronomers in later centuries, in other lands, studied and copied them. Why would a Muslim ruler care so much about the sky? Partly because a Muslim day is shaped by it. The daily prayers follow the sun. The months follow the moon. The direction of prayer, toward Mecca, has to be worked out from wherever you stand. Astronomy served all of that. And the Qur'an itself points upward. It says God appointed the stars so that people could find their way by them in the darkness of land and sea, and that the moon was measured out in stages so people could know the number of the years and the reckoning of time. The Qur'an calls such things signs, and an astronomer measuring them was working inside that picture of the sky. His story ends hard. In a struggle over power, his own son turned against him, and Ulugh Beg was killed. Later the observatory was ruined and buried, and the curved trench waited in the earth. The astronomer king.",
+      "voice": "Ulugh Beg was a grandson of Timur, the conqueror whose capital was Samarkand. Where his grandfather was remembered for war, Ulugh Beg is remembered for study. He governed Samarkand and built the madrasah on the Registan you met yesterday, and he gathered mathematicians and astronomers around him. Then he built the observatory on the hill, with its great curved instrument set along the line from north to south. Night after night, his astronomers measured. Out of their work came tables of the stars: where each one sat in the sky, with tables of the sun, moon and planets. Astronomers in later centuries, in other lands, studied and copied them. Why would a Muslim ruler care so much about the sky? Partly because a Muslim day is shaped by it. The daily prayers follow the sun. The months follow the moon. The direction of prayer, toward Mecca, has to be worked out from wherever you stand. And the Qur'an itself points upward. It says God appointed the stars so that people could find their way by them in the darkness of land and sea, and that the moon was measured out in stages so people could know the number of the years and the reckoning of time. The Qur'an calls such things signs. His story ends hard. In a struggle over power, his own son turned against him, and Ulugh Beg was killed. Later the observatory was ruined and buried, and the curved trench waited in the earth. The astronomer king.",
       "screen": [
         "`TIMUR'S GRANDSON, REMEMBERED FOR STUDY.` · `AN OBSERVATORY ON THE HILL.` · `PRAYER FOLLOWS THE SUN AND MOON.` · `STARS TO FIND YOUR WAY BY.` · then, large: `THE ASTRONOMER KING.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: count the stars you can see. If it's dark where you are, step outside or go to a window. If it's daytime, close your eyes and remember the last night sky you saw clearly. Settle, and breathe. Count slowly, one star at a time, not to get a number, but to notice each one. When you lose count, start again. Notice the brightest one and where it sits. If you pray, you can let each star be a sign you thank God for. If you don't, simply look. The bell holds the time.",
+      "voice": "If it's dark, go to a window and count the stars, slowly, one at a time, to notice each one rather than reach a number; if it's daytime, remember the last clear night sky you saw. If you pray, you can let each star be a sign you thank God for.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the astronomer king. Tonight, look up once before you sleep, find one star or the moon, and remember where it was. Tomorrow night, check if it moved. Day nine hundred ninety.",
+      "voice": "Your line: the astronomer king. The trench waited in the earth, but the star tables traveled. Day nine hundred ninety, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Muslims time the daily prayers by the sun and the months of the Islamic calendar by the moon, and mosques and prayer apps today still use astronomical calculation to set prayer times and the direction of Mecca.",
   "games": {
+    "guess": [
+      "Timur's grandson, a ruler who measured the stars",
+      "a Turkic title meaning master of the sky",
+      "Timur's general who built the Registan's gates"
+    ],
     "match": {
       "prompt": "Ulugh Beg — tap the pairs.",
       "pairs": [
@@ -132,14 +137,50 @@
     ],
     "recall": [
       [
-        "Hagia Sophia",
-        "Greek for Holy Wisdom"
+        "The Safavids",
+        "made Twelver Shi'ism Iran's state faith"
       ],
       [
-        "Osman",
-        "the founder the Ottomans are named for"
+        "Sa'di",
+        "the Shiraz poet of the Gulistan"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your dad",
+      "says": "Why would a Muslim ruler bother building an observatory?",
+      "options": [
+        "Prayers follow the sun, months follow the moon, and the qibla must be worked out.",
+        "Mainly to forecast battles, since rulers trusted stars over scholars.",
+        "The Qur'an forbids looking at the sky without proper instruments."
+      ],
+      "answer": 0,
+      "meaning": "A Muslim day is shaped by the sky: prayers follow the sun, months follow the moon, and the direction of Mecca must be worked out."
+    },
+    "gloss": {
+      "Ulugh Beg": {
+        "meaning": "Timur's grandson, ruler of Samarkand and an astronomer",
+        "say": "oo-LOOG BEG"
+      },
+      "Timur": {
+        "meaning": "the conqueror whose capital was Samarkand",
+        "say": "tee-MOOR"
+      },
+      "Samarkand": {
+        "meaning": "Timur's capital, in what is now Uzbekistan",
+        "script": "سمرقند",
+        "say": "SAM-ar-kand"
+      },
+      "Registan": {
+        "meaning": "Samarkand's square, ringed with madrasahs",
+        "script": "ریگستان",
+        "say": "re-gi-STAAN"
+      },
+      "Mecca": {
+        "meaning": "the city of the Kaaba, which Muslims face in prayer",
+        "script": "مكة",
+        "say": "MAK-ka"
+      }
+    }
   },
   "sources": [
     {
@@ -165,7 +206,9 @@
       "Qur'an 6:97 and 10:5 paraphrased.",
       "Editor pass: hook no longer opens 'On a hill', which repeated day 985's opener; the 10:5 paraphrase now follows the verse (the moon measured out in stages, the number of the years and the reckoning) instead of 'sun and moon set in their courses'.",
       "Original: زيج (zij) as astronomical handbook; confirm spelling and note.",
-      "Audit (2026-10-01): unsourced claim about the motives of Ulugh Beg's circle ('a way of reading signs') replaced with what the Qur'an itself says (such things are signs)."
+      "Audit (2026-10-01): unsourced claim about the motives of Ulugh Beg's circle ('a way of reading signs') replaced with what the Qur'an itself says (such things are signs).",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

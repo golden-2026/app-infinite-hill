@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: keep your footing, enstasis, your stance. Your line was keep my footing. Did you skip one automatic yes and say something honest and kind? Day three hundred fifty-six.",
+      "voice": "Yesterday's word was enstasis, your stance. Your line was keep my footing.",
       "screen": [
         "`KEEP MY FOOTING.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Down the hall lives the neighbor who signs for your packages and actually remembers to tell you. Who returns the ladder. Who says she'll water the plants while you're away, and you come home to plants that are alive. She doesn't sit on the city council. She'll never have a plaque. But the whole building runs a little better because she's in it. Section twenty-four of the handbook imagines a student who worries that a philosopher with no money and no office is useless to his friends and his city. Epictetus answers him, and that neighbor is in the answer. Today: faithful and modest.",
+      "voice": "Down the hall lives the neighbor who signs for your packages and actually remembers to tell you. Who returns the ladder. Who says she'll water the plants while you're away, and you come home to plants that are alive. She doesn't sit on the city council. She'll never have a plaque. But the whole building runs a little better because she's in it. Section twenty-four of the handbook imagines a student who worries that a philosopher with no money and no office is useless to his friends and his city. Epictetus answers, and that neighbor is in the answer.",
       "screen": [
         "`THE NEIGHBOR WHO SIGNS FOR PACKAGES.` → `NO OFFICE, NO PLAQUE.` → `IS A PHILOSOPHER USELESS?`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the worry. Don't let thoughts like this trouble you, Epictetus says: I'll live without honor, a nobody everywhere. Getting an office, being invited to a dinner, those aren't up to you. So how can missing them be your dishonor? You only need to be somebody in what's yours, and there you can be worth a great deal. Second, the friends. But my friends will get no help from me, the student says. What help? Epictetus asks. Money? Roman citizenship? Who told you those were in your power? Show me how to get them while staying trustworthy and self-respecting and generous, and I'll get them. But if you ask me to lose my own good so you can have things that aren't truly good, see how unfair that is. And what would you rather have, he asks: money, or a faithful, self-respecting friend? Third, the city. But my country will get no help from me. What help? It won't get colonnades or public baths from you. Fine. It doesn't get shoes from the blacksmith either, or weapons from the shoemaker. It's enough if each does their own work. If you made one more citizen trustworthy and self-respecting, would that be no use? Fourth, the two words. Faithful is pistos: trustworthy, the one whose word holds. Modest is aidemon: self-respecting, with a sense of shame in the good sense, the person who won't do what's beneath them. What place will you hold in the city, then? Whatever place you can hold while staying faithful and modest. Lose those trying to help, he says, and what use will you be, faithless and shameless? The neighbor with the ladder already knows this.",
+      "voice": "Don't let thoughts like this trouble you, Epictetus says: I'll live without honor, a nobody everywhere. Getting an office, being invited to a dinner, those aren't up to you. So how can missing them be your dishonor? You only need to be somebody in what's yours, and there you can be worth a great deal. But my friends will get no help from me, the student says. What help? Epictetus asks. Money? Roman citizenship? Who told you those were in your power? Show me how to get them while staying trustworthy and self-respecting and generous, and I'll get them. But if you ask me to lose my own good so you can have things that aren't truly good, see how unfair that is. And which would you rather have: money, or a faithful, self-respecting friend? But my country will get no help from me. What help? It won't get colonnades or public baths from you. Fine. It doesn't get shoes from the blacksmith either, or weapons from the shoemaker. It's enough if each does their own work. If you made one more citizen trustworthy and self-respecting, would that be no use? Faithful is pistos: trustworthy, the one whose word holds. Modest is aidemon: self-respecting, with a sense of shame in the good sense, the person who won't do what's beneath them. What place will you hold in the city, then? Whatever place you can hold while staying faithful and modest. Lose those trying to help, he says, and what use will you be, faithless and shameless?",
       "screen": [
         "`A NOBODY EVERYWHERE?` · `MONEY, OR A FAITHFUL FRIEND?` · `NO BATHS FROM YOU, AND THAT'S FINE.` · `PISTOS AND AIDEMON.` · then, large: `FAITHFUL AND MODEST.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Think of one small promise you've made lately that's still open. Returning something. Answering a message. Showing up when you said. Picture the person waiting on it. Picture yourself keeping it today, simply, without fuss. Notice how small it is, and how much it says. Then let the words settle in you, slowly, with the breath: faithful, on the in breath; modest, on the out. The bell holds the time.",
+      "voice": "Think of one small promise that's still open, returning something, answering a message, showing up when you said, and picture keeping it simply, without fuss. Notice how small it is, and how much it says. Let the words settle with the breath: faithful on the in breath, modest on the out.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: each does their own work. Be reliable in one small thing today: keep the little promise you pictured, and don't mention it. Day three hundred fifty-six.",
+      "voice": "Your line: each does their own work. A word that holds is no small use. Until tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Some Stoic practitioners measure their usefulness less by status or money than by being trustworthy and self-respecting in ordinary dealings.",
   "games": {
+    "guess": [
+      "faithful: trustworthy, the one whose word holds",
+      "a famous public official honored with a plaque",
+      "a generous donor who builds a city's baths"
+    ],
     "match": {
       "prompt": "faithful and modest — tap the pairs.",
       "pairs": [
@@ -133,13 +138,44 @@
     "recall": [
       [
         "hypokrites",
-        "Greek for actor"
+        "Greek for actor, root of hypocrite"
       ],
       [
-        "symposion",
-        "drinking together"
+        "Crates",
+        "the Cynic who cracked Zeno's soup pot"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your grandfather",
+      "says": "I'm retired with no title anymore. Am I any use to anyone now?",
+      "options": [
+        "Yes; to Epictetus, being trustworthy and self-respecting is real use to others.",
+        "Only if you can still give money or favors; that's what helps people.",
+        "Not really; Epictetus says only those holding office serve their city."
+      ],
+      "meaning": "Section twenty-four: your city doesn't need baths from you. One more faithful, self-respecting citizen is real use; each does their own work.",
+      "answer": 0
+    },
+    "gloss": {
+      "pistos": {
+        "meaning": "Greek for faithful: trustworthy, the one whose word holds",
+        "script": "πιστός",
+        "say": "pis-TOSS"
+      },
+      "aidemon": {
+        "meaning": "Greek for modest: self-respecting, with a good sense of shame",
+        "script": "αἰδήμων",
+        "say": "eye-DAY-mon"
+      },
+      "colonnades": {
+        "meaning": "rows of columns along public walkways, built for a city",
+        "say": "kol-uh-NAYDZ"
+      },
+      "Epictetus": {
+        "meaning": "a Stoic teacher who grew up enslaved and wrote nothing himself",
+        "say": "ep-ik-TEE-tus"
+      }
+    }
   },
   "sources": [
     {
@@ -157,7 +193,9 @@
       "Enchiridion 24 paraphrased (unhonored, a nobody everywhere; office and invitations not in our power; friends: money, Roman citizenship; 'modest, faithful, magnanimous'; country: porticoes and baths; blacksmith and shoemaker; one more faithful and modest citizen; what place in the city). Confirm.",
       "Greek πιστὸς καὶ αἰδήμων in Enchiridion 24 (in the accusative in the text): confirm.",
       "'money, or a faithful, self-respecting friend' paraphrases Epictetus' question in the same chapter; confirm.",
-      "Apartment neighbor is an illustration."
+      "Apartment neighbor is an illustration.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

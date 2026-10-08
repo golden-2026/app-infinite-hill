@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the Mandatum: a towel, a basin, and the new commandment, love one another. What humble job did you take on? Day six hundred sixty-one.",
+      "voice": "Yesterday, the Mandatum: a towel, a basin, and the new commandment. Your line was love one another.",
       "screen": [
         "`LOVE ONE ANOTHER.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Three o'clock on a Friday afternoon. People in the pews, and almost no sound. The altar is bare. No bells, no opening song. The priest and ministers walk in without a word, and then the priest does something you won't see on an ordinary Sunday: he lies face down on the floor, or kneels, and stays there in silence. Nobody explains it. Everyone waits. Today, in the Roman Rite, there is no Mass at all, and the service that takes its place begins like this.",
+      "voice": "Three o'clock on a Friday afternoon. People in the pews, and almost no sound. The altar is bare. No bells, no opening song. The priest and ministers walk in without a word, and then the priest does something you won't see on an ordinary Sunday: he lies face down on the floor, or kneels, and stays there in silence. Nobody explains it. Everyone waits. Today, in the Roman Rite, there is no Mass at all.",
       "screen": [
         "`THREE O'CLOCK, ALMOST NO SOUND.` → `FACE DOWN ON THE FLOOR.` → `NO MASS TODAY.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: touch a cross. If there's a crucifix in your home, or a cross on a chain, or one in a church you can reach, hold it, touch it, or kiss it the way people do at the veneration. If you have none, trace one on your palm with a finger. Then sit in silence, the way the church does today. Don't fill it. Let it be heavy if it's heavy. If you pray, you can whisper the old words, behold the wood of the cross. If you don't, simply stay with the silence. The bell holds the time.",
+      "voice": "If there's a crucifix in your home, a cross on a chain, or one in a church you can reach, hold it, touch it or kiss it the way people do at the veneration; if you have none, trace one on your palm with a finger. Then sit in silence, the way the church does today, and let it be heavy if it's heavy. If you pray, whisper the old words, behold the wood of the cross; if you don't, simply stay with the silence.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: behold the wood of the cross. Today, keep three o'clock quiet, even for one minute, wherever you are. Day six hundred sixty-one.",
+      "voice": "Your line: behold the wood of the cross. The quiet holds until the Vigil. See you tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "On Good Friday Catholics celebrate the Passion of the Lord, often at 3 p.m., with John's Passion, the Solemn Intercessions, the veneration of the cross and Communion; no Mass is celebrated, and it is a day of fasting and abstinence.",
   "games": {
+    "guess": [
+      "the day Jesus died, kept with no Mass and the cross",
+      "the day of the Last Supper and the foot washing",
+      "a Friday for blessing the year's holy oils"
+    ],
     "match": {
       "prompt": "Good Friday — tap the pairs.",
       "pairs": [
@@ -132,14 +137,41 @@
     ],
     "recall": [
       [
-        "Bernadette",
-        "a poor, often sick teenager"
+        "eved",
+        "servant, as in Isaiah's suffering servant"
       ],
       [
-        "Ananias",
-        "objected, but called him brother"
+        "Ecce Homo",
+        "behold the man: Pilate's words"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your neighbor",
+      "says": "If it's the day Jesus died, why do Catholics call it Good Friday?",
+      "options": [
+        "Because of what they believe was finished on the cross; good may once have meant holy.",
+        "Because the fast ends at three o'clock, and the evening turns into a feast.",
+        "Because it began as a spring festival that the Church renamed much later."
+      ],
+      "answer": 0,
+      "meaning": "Catholics call it good because of what they believe was finished on the cross; some say the word once carried a sense close to holy."
+    },
+    "gloss": {
+      "Roman Rite": {
+        "meaning": "the usual form of worship in the Latin Catholic Church"
+      },
+      "Solemn Intercessions": {
+        "meaning": "ten long prayers for the Church and the whole world"
+      },
+      "Ecce lignum Crucis": {
+        "meaning": "Latin: behold the wood of the cross",
+        "say": "EK-chay LEEN-yoom KROO-chees"
+      },
+      "veneration": {
+        "meaning": "coming forward to honor the cross by a touch, kiss or genuflection",
+        "say": "ven-uh-RAY-shun"
+      }
+    }
   },
   "sources": [
     {
@@ -176,7 +208,9 @@
       "Etymology of 'Good' in Good Friday: the 'holy' sense is the prevailing view (vs. 'God's Friday'). Confirm wording.",
       "Prostration may be replaced by kneeling (rubric); hook now says so. Prostration also occurs at ordinations, so the earlier 'no other day of the year' claim was softened to 'not on an ordinary Sunday'. Confirm.",
       "Tetelestai (John 19:30) and the DR 'consummated' (from Vulgate 'consummatum est').",
-      "Editor review (2026-10-01): the hook opened 'Walk into a Catholic church...' (banned opener) and listed the bare altar and open tabernacle that days 660 and 662 also describe; rewritten as a three-o'clock scene, without 'no Mass anywhere in the Catholic world' (now 'in the Roman Rite') or 'and yet churches fill'. Cut 'most word historians think' (etymology claim) and its myth item, replaced with a myth on the Solemn Intercessions; Isaiah 53:5 now 'wounded for our iniquities'; John's Passion 'often' (not always) read in parts."
+      "Editor review (2026-10-01): the hook opened 'Walk into a Catholic church...' (banned opener) and listed the bare altar and open tabernacle that days 660 and 662 also describe; rewritten as a three-o'clock scene, without 'no Mass anywhere in the Catholic world' (now 'in the Roman Rite') or 'and yet churches fill'. Cut 'most word historians think' (etymology claim) and its myth item, replaced with a myth on the Solemn Intercessions; Isaiah 53:5 now 'wounded for our iniquities'; John's Passion 'often' (not always) read in parts.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

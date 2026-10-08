@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the flight, and your line: the gates open. Did you say out loud what you need? Today the night ride ends at the edge of a forest. Day seven hundred seven.",
+      "voice": "Yesterday: the flight, the prince's night ride through gates that opened by themselves. Your line: the gates open.",
       "screen": [
         "`THE GATES OPEN.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the thanks. Before any parting, the prince praises Chandaka. In the poem he says, in paraphrase, that this loyalty is rare: a man who follows his master when there is nothing to gain by it. The thank-you comes first. Second, the jewels. The prince takes off his ornaments and puts them in Chandaka's hands, with a message for the king. Tell my father, he says, that I haven't gone into the forest out of anger, or for lack of love, or out of longing for heaven. I've gone to put an end to old age and death. Don't grieve for me. Third, the begging. Chandaka weeps. How can I lead this horse home with an empty saddle? What do I say to your father, to the queen who raised you, to your wife? Don't send me back. The prince answers gently, with an image from the poem: beings meet the way birds gather in one tree for the night, and in the morning they fly off in different directions. Parting comes for everyone, he says; this one, at least, has a purpose. Fourth, the last things. With his own sword the prince cuts off his long hair. A hunter in a dull-colored robe passes by, and the prince trades his fine silk clothes for that plain cloth. The poem says the hunter was a god in disguise. Then Chandaka turns for home, slowly, leading Kanthaka, and the poem says the horse licked the prince's feet and wept before he went. Since the old man on the cleared road, the poem has been taking things from the prince one at a time: his ease, a garden's charm, a friend's good argument, the palace. Today it's the jewels, his hair, his clothes and his last companion, and each one goes back with care.",
+      "voice": "First, the thanks. Before any parting, the prince praises Chandaka: this loyalty, he says in paraphrase, is rare, a man who follows his master when there is nothing to gain by it. Second, the jewels. He takes off his ornaments and puts them in Chandaka's hands, with a message for the king. Tell my father I haven't gone into the forest out of anger, or for lack of love, or out of longing for heaven. I've gone to put an end to old age and death. Don't grieve for me. Third, the begging. Chandaka weeps. How can I lead this horse home with an empty saddle? What do I say to your father, to the queen who raised you, to your wife? The prince answers gently, with an image from the poem: beings meet the way birds gather in one tree for the night, and in the morning they fly off in different directions. Parting comes for everyone; this one, at least, has a purpose. Fourth, the last things. With his own sword the prince cuts off his long hair. A hunter in a dull-colored robe passes by, and the prince trades his fine silk clothes for that plain cloth; the poem says the hunter was a god in disguise. Then Chandaka turns for home, slowly, leading Kanthaka, and the poem says the horse licked the prince's feet and wept before he went. Since the old man on the cleared road, the poem has been taking things from the prince one at a time: his ease, a garden's charm, a friend's good argument, the palace. Today it's the jewels, his hair, his clothes and his last companion, and each one goes back with care.",
       "screen": [
         "`FIRST, THE THANK-YOU.` · `THE JEWELS AND A MESSAGE.` · `BIRDS IN ONE TREE FOR A NIGHT.` · `HAIR CUT, SILK TRADED.` · then, large: `SENT HOME WITH THE JEWELS.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: give back one thing you don't need. Settle, and breathe. Bring to mind one thing you're holding that isn't really yours to keep. A borrowed book. A coat that hasn't left the closet in years. A job on a committee you agreed to long ago. Pick one. Now picture giving it back the way the prince did: thanks first, then a clear word about why, then open hands. No slammed door. When you've pictured it, let your hands rest open in your lap for the rest of the sit. Later today, if it's a thing, give it back for real. The bell holds the time.",
+      "voice": "Bring to mind one thing you're holding that isn't really yours to keep: a borrowed book, a coat that hasn't left the closet in years, a job on a committee you agreed to long ago. Picture giving it back the way the prince did, thanks first, then a clear word about why, then open hands. Let your hands rest open in your lap for the rest of the sit.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: sent home with the jewels. Today, when you let something or someone go, send it off with thanks and one honest sentence about why. Day seven hundred seven.",
+      "voice": "Your line: sent home with the jewels. Thanks first, then the honest reason. That's day seven hundred seven.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "The cutting of the hair and the change into a plain robe are remembered in Buddhist ordinations, where in some communities a new monk or nun has the head shaved and puts on the robe before taking vows.",
   "games": {
+    "guess": [
+      "the prince's attendant, sent home with the horse",
+      "the hermit who greets the prince at dawn",
+      "the prince's cousin, who rides beside him"
+    ],
     "match": {
       "prompt": "the parting at the forest's edge: tap the pairs.",
       "pairs": [
@@ -132,14 +137,39 @@
     ],
     "recall": [
       [
-        "Pavarana",
-        "the invitation at the rains' end"
+        "pabbajja",
+        "going forth: leaving home"
       ],
       [
-        "peta",
-        "a hungry ghost, in Pali"
+        "samvibhaga",
+        "sharing, dividing out a gift"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "a coworker",
+      "says": "What message did the prince send his father with the jewels?",
+      "options": [
+        "That he left not in anger or for lack of love, but to end age and death.",
+        "That he was angry at being kept in the palace, and wouldn't forgive it.",
+        "That he'd come home in a year, once he had seen the wider world."
+      ],
+      "answer": 0,
+      "meaning": "Not anger, lack of love or longing for heaven: he tells Chandaka he has gone to put an end to old age and death."
+    },
+    "gloss": {
+      "Chandaka": {
+        "meaning": "the prince's attendant, sent home from the forest",
+        "script": "छन्दक",
+        "say": "CHUN-duh-kuh"
+      },
+      "Kanthaka": {
+        "meaning": "the prince's horse",
+        "say": "KUN-tuh-kuh"
+      },
+      "hermitage": {
+        "meaning": "a forest home where holy people live apart"
+      }
+    }
   },
   "sources": [
     {
@@ -160,7 +190,9 @@
       "Week-end look back (days 701-707) is in the last lines of the teach.",
       "howItsDone: confirm the general description of head-shaving and robing at ordination; it avoids naming specific schools.",
       "Auditor: hook's 'for the first time, Chandaka says no' cut to 'Chandaka says no' (unsourced count claim); the teach's 'better it come now, for a reason, than later, for none' softened to a paraphrase that parting is certain and this one has a purpose; confirm against Cowell canto 6.",
-      "Editor: cut 'without asking why' (not in the poem as summarized); cut 'A week ago' (count claim; days 701-707 are six apart) and smoothed the garbled 'each one handed back' line; howItsDone 'many communities' softened to 'some'."
+      "Editor: cut 'without asking why' (not in the poem as summarized); cut 'A week ago' (count claim; days 701-707 are six apart) and smoothed the garbled 'each one handed back' line; howItsDone 'many communities' softened to 'some'.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

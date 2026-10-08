@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday closed Karna's abandonment: a crown, a bow to the old charioteer, and an insult at sunset — it follows him into every room. Did you ask someone what they love before where they're from? Day seven hundred thirty-four.",
+      "voice": "Yesterday closed Karna's abandonment: a crown, a bow to the old charioteer, an insult at sunset. It follows him into every room.",
       "screen": [
         "`IT FOLLOWS HIM INTO EVERY ROOM.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Talk in the streets of Hastinapura: in squares and courtyards, people are saying Yudhishthira should be king. He's fair, they say, he's truthful, he's Pandu's eldest. Dhritarashtra is blind, so he was passed over before; why should his line rule now? Word of it reaches Duryodhana, and it burns. The Mahabharata gives him a long, anguished speech to his father. If Yudhishthira takes the throne, the crown will pass down his line, and we and our children will be shut out and disregarded. Today begins the lac house, and it begins with gossip.",
+      "voice": "Talk in the streets of Hastinapura: people are saying Yudhishthira should be king. He's fair, he's truthful, he's Pandu's eldest. Dhritarashtra is blind, so he was passed over before; why should his line rule now? Word reaches Duryodhana, and it burns. The Mahabharata gives him a long, anguished speech to his father: if Yudhishthira takes the throne, the crown will pass down his line, and we and our children will be shut out.",
       "screen": [
         "`THE STREETS TALK.` → `YUDHISHTHIRA SHOULD BE KING.` → `DURYODHANA BURNS.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Duryodhana has a plan, and it's dressed up as a kindness. Send the Pandavas away, he tells his father, to the town of Varanavata, where a festival of Pashupati, a name of Shiva, is under way. Let them enjoy themselves for a while. Out of the capital, out of the people's eyes. Dhritarashtra hesitates. Pandu was good to me, he says, and the people love his sons; how can I do this? But he loves his own son, and in the end he agrees. So the old king calls his nephews in and speaks warmly about Varanavata: what a lovely town, what a festival, go and enjoy it. Yudhishthira sees the purpose behind it, the text says, but he's alone and without friends at court, and he agrees. Then Duryodhana calls a minister named Purochana, and gives him the real job. Go ahead to Varanavata. Build a fine house for the Pandavas. Build it out of lac and resin and other things that burn, and plaster it over so it looks like any house. Treat them well. Earn their trust. And one night, when they're asleep, set it on fire. Notice the shape of the plot. Nothing is done in the open. A father is persuaded. A holiday is offered. A house is built with care. Every step looks generous. That's the lac house before a single wall goes up: a trap made of kindness. And it can't happen without the blind king, who hesitated, and then said yes.",
+      "voice": "Duryodhana's plan is dressed up as a kindness. Send the Pandavas away, he tells his father, to the town of Varanavata, where a festival of Pashupati, a name of Shiva, is under way. Let them enjoy themselves, out of the capital, out of the people's eyes. Dhritarashtra hesitates. Pandu was good to me, he says, and the people love his sons; how can I do this? But he loves his own son, and in the end he agrees. So the old king calls his nephews in and speaks warmly of Varanavata: a lovely town, a festival, go and enjoy it. Yudhishthira sees the purpose behind it, the text says, but he's alone and without friends at court, and he agrees. Then Duryodhana calls a minister named Purochana and gives him the real job. Go ahead to Varanavata. Build a fine house for the Pandavas, out of lac and resin and other things that burn, plastered over so it looks like any house. Treat them well. Earn their trust. And one night, while they sleep, set it on fire. Notice the shape of the plot. Nothing is done in the open. A father is persuaded, a holiday offered, a house built with care. Every step looks generous: a trap made of kindness. And it can't happen without the blind king, who hesitated, and then said yes.",
       "screen": [
         "`SEND THEM ON A HOLIDAY.` · `THE BLIND KING HESITATES.` · `PUROCHANA'S REAL JOB.` · `A HOUSE BUILT TO BURN.` · then, large: `A TRAP MADE OF KINDNESS.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Settle in, and let the breath slow. Recall a time you went along with something you suspected wasn't right, because it was easier, or because someone you loved wanted it. Don't scold yourself. Just look at the moment honestly, the way the story looks at Dhritarashtra. Where did you feel the hesitation? Notice that place now. The bell holds the time.",
+      "voice": "Recall a time you went along with something you suspected wasn't right, because it was easier, or because someone you loved wanted it. Don't scold yourself; just look at the moment honestly, the way the story looks at Dhritarashtra, and notice where the hesitation lived.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: a trap made of kindness. Today, when an offer seems too generous, ask quietly what it's made of. Day seven hundred thirty-four.",
+      "voice": "Your line: a trap made of kindness. Every step looked generous, and the house is going up. Until tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "The bait in this story is a festival of Pashupati, a name of Shiva; Hindus still worship Shiva as Pashupati, and the Pashupatinath temple in Kathmandu carries the name.",
   "games": {
+    "guess": [
+      "the minister sent to build a house that would burn",
+      "the priest who led the Shiva festival in Varanavata",
+      "the king of Varanavata, who ruled for Dhritarashtra"
+    ],
     "match": {
       "prompt": "the plot — tap the pairs.",
       "pairs": [
@@ -130,14 +135,52 @@
       "what it means: a house planned to burn, offered as a kindness, with every step of the plot made to look generous.",
       "what a scholar hears: the plot needs the blind king's consent, and the text shows him hesitating before he gives it."
     ],
+    "chat": {
+      "who": "your roommate",
+      "says": "Why did Duryodhana send his cousins to a festival in Varanavata?",
+      "options": [
+        "To get them out of the capital, into a house built to burn.",
+        "To reward them for their skill in the arena with a holiday.",
+        "To make peace, because the people wanted the cousins to share."
+      ],
+      "answer": 0,
+      "meaning": "The holiday was a cover. Purochana was sent ahead to build a house of lac and resin, earn their trust, and set it on fire."
+    },
+    "gloss": {
+      "Varanavata": {
+        "meaning": "the town where the Pandavas were sent",
+        "script": "वारणावत",
+        "say": "vaa-ruh-NAA-vuh-tuh"
+      },
+      "Pashupati": {
+        "meaning": "a name of Shiva, honored at the Varanavata festival",
+        "script": "पशुपति",
+        "say": "PUH-shoo-puh-tee"
+      },
+      "Purochana": {
+        "meaning": "Duryodhana's minister, who built the house to burn",
+        "script": "पुरोचन",
+        "say": "poo-ROH-chuh-nuh"
+      },
+      "Pandavas": {
+        "meaning": "the five sons of Pandu",
+        "script": "पाण्डव",
+        "say": "PAAN-duh-vuhz"
+      },
+      "Yudhishthira": {
+        "meaning": "the eldest Pandava, son of Dharma",
+        "script": "युधिष्ठिर",
+        "say": "yoo-DHISH-thi-ruh"
+      }
+    },
     "recall": [
       [
-        "Pandu",
-        "born pale"
+        "shapa",
+        "a curse, like the sage Kindama's"
       ],
       [
-        "Satyavati",
-        "asks Bhishma to take the throne"
+        "Kusha",
+        "Sita's son, named for sacred grass"
       ]
     ]
   },
@@ -157,7 +200,9 @@
       "Confirm the materials named for the house (lac, resin, hemp, mixed with earth and ghee; the script names only lac and resin) and Purochana's instructions to win their trust and burn the house while they sleep.",
       "The counsel of Kanika is left out; a Keeper may want it included on a neighboring day.",
       "Editor pass: Duryodhana's 'rule forever' and 'living on their charity' brought closer to the text (excluded and disregarded); named the festival of Pashupati and gave Yudhishthira's reason for agreeing (he perceives the motive but is friendless; confirm both in Ganguli); practice opener varied; generic howItsDone replaced with Shiva as Pashupati.",
-      "Audit pass (2026-10-01): checked against the Jatugriha Parva (citizens' talk, Dhritarashtra's hesitation, the Pashupati festival, Yudhishthira weak and friendless, Purochana's orders); no changes needed. Kanika's counsel still omitted, as noted."
+      "Audit pass (2026-10-01): checked against the Jatugriha Parva (citizens' talk, Dhritarashtra's hesitation, the Pashupati festival, Yudhishthira weak and friendless, Purochana's orders); no changes needed. Kanika's counsel still omitted, as noted.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

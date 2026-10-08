@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: the horse is handsome, not you. That was also your line. Did you catch one borrowed pride and give the shine back? Day three hundred thirty-nine.",
+      "voice": "Yesterday: the horse is handsome. The shine belongs to the horse; what's yours is how you meet what shows up.",
       "screen": [
         "`THE HORSE IS HANDSOME.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A ship drops anchor off a rocky island. Fresh water is low, so the crew rows a few passengers ashore with jars to fill at a spring. The beach is lovely. There are shells in the shallows, and wild onions growing in the dunes. Someone kneels to dig one up. Someone else wanders down the shore after a bigger shell. Out on the water, the captain is watching the wind turn. Any minute now, a shout will come across the bay. Epictetus tells this little story in section seven of the handbook. Today: when the captain calls.",
+      "voice": "A ship drops anchor off a rocky island. Fresh water is low, so the crew rows a few passengers ashore with jars to fill at a spring. The beach is lovely. Shells glint in the shallows, wild onions grow in the dunes. Someone kneels to dig one up. Someone else wanders down the shore after a bigger shell. Out on the water, the captain is watching the wind turn. Any minute now, a shout will come across the bay. Epictetus tells this little story in section seven of the handbook.",
       "screen": [
         "`AN ISLAND, A SPRING, A BEACH.` → `SHELLS AND WILD ONIONS.` → `THE WIND TURNS.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the picture. On a voyage, Epictetus says, when the ship is at anchor and you go ashore for water, you may pick up a shellfish or a little bulb along the way. Nothing wrong with that. But keep your mind on the ship, and keep turning around to listen for the captain. If he calls, drop everything and run, or you'll be hauled on board tied up like the sheep. Second, the turn. So it is in life, he says. If instead of a bulb and a shell you're given a spouse and a child, nothing stops you having them. But if the captain calls, run to the ship and leave them behind, without looking back. And if you're old, don't wander far from the ship at all, or you may not make it when you're called. Third, what the call is. The handbook doesn't spell it out. Some readers hear the captain as God or the order of nature, and the call as death. Others hear any moment that asks you to let go. It's a stark picture, and some readers find the family line hard to hear. Others notice what it allows: you may gather. Love, collecting, beauty on the beach. The Stoic only asks that you keep one ear on the water. Fourth, the word. The Greek for the captain is kybernetes, the one who steers. Dictionaries trace English govern back to it, through Latin gubernare. Someone else is steering the ship. Your job ashore is simpler. Enjoy the beach. Fill your jar. Listen.",
+      "voice": "On a voyage, Epictetus says, when the ship is at anchor and you go ashore for water, you may pick up a shellfish or a little bulb along the way. Nothing wrong with that. But keep your mind on the ship, and keep turning around to listen for the captain. If he calls, drop everything and run, or you'll be hauled aboard tied up like the sheep. Then the turn. So it is in life, he says. If instead of a bulb and a shell you're given a spouse and a child, nothing stops you having them. But if the captain calls, run to the ship and leave them, without looking back. And if you're old, don't wander far from the ship at all, or you may not make it when you're called. What is the call? The handbook doesn't spell it out. Some readers hear the captain as God or the order of nature, and the call as death. Others hear any moment that asks you to let go. It's a stark picture, and some readers find the family line hard to hear. Others notice what it allows: you may gather. Love, collecting, beauty on the beach. The Stoic only asks that you keep one ear on the water. The Greek for the captain is kybernetes, the one who steers. Dictionaries trace English govern back to it, through Latin gubernare. Someone else is steering the ship. Your job ashore is simpler: enjoy the beach, fill your jar, listen.",
       "screen": [
         "`ASHORE: SHELLS AND BULBS ARE FINE.` · `IN LIFE: A SPOUSE, A CHILD.` · `WHAT IS THE CALL?` · `KYBERNETES: THE ONE WHO STEERS.` · then, large: `LISTEN FOR THE CALL.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Think of one pleasure you'll pick up today. A coffee, a show, a scroll, a long lunch, an afternoon with someone you like. Hold it in your mind, and enjoy it there. Then picture the shout across the water: the moment it's time to stop. Picture yourself setting it down easily, the way you'd drop a shell back in the sand, and walking on. Breathe, and keep one ear turned toward the ship. The bell holds the time.",
+      "voice": "Picture one pleasure waiting in your day, a coffee, a show, a long lunch, an afternoon with someone you like, and enjoy it there in your mind. Then hear the shout across the water, the moment it's time to stop, and see yourself setting it down easily, the way you'd drop a shell back in the sand. Breathe, with one ear turned toward the ship.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: listen for the call. Enjoy one pleasure fully today, and when it's time to stop, put it down the first time you're called. Day three hundred thirty-nine.",
+      "voice": "Your line: listen for the call. The beach is yours to enjoy, with one ear on the water. See you tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Some Stoic practitioners enjoy small pleasures while keeping in mind that they may be called away from them, and practice setting them down easily.",
   "games": {
+    "guess": [
+      "the ship's captain, the one who steers",
+      "a sailor who rows passengers to shore",
+      "the ship's lookout who watches the wind"
+    ],
     "match": {
       "prompt": "when the captain calls — tap the pairs.",
       "pairs": [
@@ -133,13 +138,42 @@
     "recall": [
       [
         "enchiridion",
-        "something kept in the hand"
+        "a small book kept in the hand"
       ],
       [
         "seeker",
-        "someone looking"
+        "someone looking, home tradition or not"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your friend",
+      "says": "What's that Stoic story about the ship and the beach?",
+      "options": [
+        "Enjoy the shells ashore, but keep listening; when the captain calls, go.",
+        "Never go ashore at all, since anything you pick up will be lost.",
+        "Gather all you can, since the captain will wait until you're done."
+      ],
+      "meaning": "Section seven allows the shells and bulbs, even a spouse and child, but asks you to keep listening and go when called.",
+      "answer": 0
+    },
+    "gloss": {
+      "kybernetes": {
+        "meaning": "Greek for the ship's captain, the one who steers",
+        "script": "κυβερνήτης",
+        "say": "kib-er-NEE-teez"
+      },
+      "gubernare": {
+        "meaning": "Latin for to steer; dictionaries trace govern to it",
+        "say": "goo-ber-NAH-ray"
+      },
+      "Epictetus": {
+        "meaning": "a Stoic teacher who grew up enslaved and wrote nothing himself",
+        "say": "ep-ik-TEE-tus"
+      },
+      "handbook": {
+        "meaning": "the Enchiridion: Arrian's short book of Epictetus' teaching"
+      }
+    }
   },
   "sources": [
     {
@@ -158,7 +192,9 @@
       "Interpretation of the captain as God/nature and the call as death is presented as what most readers hear; the text doesn't say. Confirm.",
       "κυβερνήτης → Latin gubernare → English govern: standard etymology; confirm.",
       "Helmsman as an image for divine governance in Plato and the Stoics (trapdoor): confirm or soften.",
-      "Sensitive: leaving spouse and child is named, with the note that some readers find it hard."
+      "Sensitive: leaving spouse and child is named, with the note that some readers find it hard.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

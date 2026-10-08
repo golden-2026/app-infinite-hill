@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the plot. Your line was: they planned; Allah planned. Which outcome did you manage to hand over? Day seven hundred sixty-four.",
+      "voice": "Yesterday: the plot in the council house. Your line was: they planned; Allah planned.",
       "screen": [
         "`THEY PLANNED; ALLAH PLANNED.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "So Ali lies down where the men outside expect their target to be. Through the night they see a shape under the Prophet's cloak, and they wait. Ibn Ishaq says the Prophet went out among them, took a handful of dust, and scattered it over their heads, reciting from Ya Sin: and We have covered them so that they see not. And he passed, and they didn't see him. In the morning someone tells them he's gone. They look again at the bed, and it's Ali who gets up. But that isn't the end of Ali's job. Ibn Ishaq says that people in Mecca who had something they feared for left it with the Prophet, because he was known for his honesty. Tradition calls him al-Amin, the trustworthy. Ibn Ishaq says that when he left, he told Ali to stay behind in Mecca and return every one of those deposits to its owners. And Ali did. For days, in a city that had just tried to kill his cousin, he went door to door handing back what belonged to them. Then he set out for Yathrib himself. Consider who those owners were. The people who had left those deposits were, some of them, the same people who wanted him dead. And the Prophet's instruction about them, on the night he ran for his life, was about their property: make sure they get it back. Trust held, even then. Even toward them.",
+      "voice": "So Ali lies down where the men outside expect their target to be. Through the night they see a shape under the Prophet's cloak, and they wait. Ibn Ishaq says the Prophet went out among them, took a handful of dust, and scattered it over their heads, reciting from Ya Sin: and We have covered them so that they see not. He passed, and they didn't see him. In the morning someone tells them he's gone. They look at the bed again, and it's Ali who gets up. But Ali's job isn't finished. Ibn Ishaq says that people in Mecca who had something they feared for left it with the Prophet, because he was known for his honesty. Tradition calls him al-Amin, the trustworthy. When he left, Ibn Ishaq says, he told Ali to stay behind and return every one of those deposits to its owners. And Ali did. For days, in a city that had just tried to kill his cousin, he went door to door handing back what belonged to them. Then he set out for Yathrib himself. Some of the people who had left those deposits were the same people who wanted him dead. And the Prophet's instruction about them, on the night he ran for his life, was about their property: make sure they get it back. Trust held, even toward them.",
       "screen": [
         "`ALI UNDER THE GREEN CLOAK.` · `WE HAVE COVERED THEM.` · `AL-AMIN, THE TRUSTWORTHY.` · `EVERY DEPOSIT RETURNED.` · then, large: `TRUSTS RETURNED, EVEN THEN.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: return what you're holding for others. Sit, and breathe. Take a slow inventory. What do you have that isn't yours? A borrowed book. A dish from someone's kitchen. A tool. Money you owe, even a little. A favor promised and not done. Somebody's secret, which is also something held in trust. Let each one come to mind without guilt, just as a list. Then pick one you can actually return this week, and picture handing it back. Notice how Ali's job wasn't glamorous: knock, hand it over, next door. If you pray, you can ask God to help you keep what's entrusted to you. The bell holds the time.",
+      "voice": "Take a slow inventory of what you're holding that isn't yours: a borrowed book, a dish from someone's kitchen, money you owe, a favor promised, even somebody's secret, which is also held in trust. Let each one come to mind without guilt, just as a list, and picture handing one of them back. If you pray, you can ask God to help you keep what's entrusted to you.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: trusts returned, even then. Today, give back one thing you've been holding for someone else, even if you'd rather not see them. Day seven hundred sixty-four.",
+      "voice": "Your line: trusts returned, even then. Ali's job wasn't glamorous: knock, hand it back, next door. That's today's lesson.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Muslims retell Ali's night in the Prophet's bed as part of the hijra story, and point to the returned deposits when they speak of amana, keeping what is entrusted to you.",
   "games": {
+    "guess": [
+      "the trustworthy, what Mecca called him",
+      "the generous one, a title for Mecca's merchants",
+      "the swift one, who left Mecca by night"
+    ],
     "match": {
       "prompt": "Ali in the bed — tap the pairs.",
       "pairs": [
@@ -132,14 +137,47 @@
     ],
     "recall": [
       [
-        "al-Siddiq",
-        "the one who affirms the truth"
+        "bismika Allahumma",
+        "in your name, O God"
       ],
       [
-        "Jibril",
-        "spoke to him from a cloud"
+        "Zayd",
+        "the freed man who chose to stay"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your grandmother",
+      "says": "Why did Ali stay behind in Mecca after the Prophet left?",
+      "options": [
+        "To return the valuables people had left with the Prophet, even his enemies'.",
+        "To guard the family house so they could come back to it later.",
+        "To sell off the family's land in Mecca before he followed."
+      ],
+      "answer": 0,
+      "meaning": "Ibn Ishaq says the Prophet told Ali to stay and return every deposit to its owner. For days, Ali went door to door."
+    },
+    "gloss": {
+      "Ali": {
+        "meaning": "the Prophet's young cousin",
+        "script": "علي",
+        "say": "a-LEE"
+      },
+      "Ya Sin": {
+        "meaning": "Surah thirty-six of the Qur'an",
+        "script": "يس",
+        "say": "yaa SEEN"
+      },
+      "al-Amin": {
+        "meaning": "the trustworthy; what Mecca called the Prophet",
+        "script": "الأمين",
+        "say": "al-a-MEEN"
+      },
+      "Ibn Ishaq": {
+        "meaning": "an early biographer of the Prophet",
+        "script": "ابن إسحاق",
+        "say": "IB-n is-HAAQ"
+      }
+    }
   },
   "sources": [
     {
@@ -164,7 +202,9 @@
       "'Watching through a gap' is a loose paraphrase of the watchers seeing Ali in the bed; confirm or cut.",
       "The deposit instruction is from Ibn Ishaq; confirm sourcing.",
       "Editor pass: cut the invented 'watching through a gap'; replaced 'had long been known as al-Amin' with Ibn Ishaq's own reason for the deposits (his honesty) plus 'tradition calls him al-Amin'; cut the stock 'part of the night that's easy to miss' and 'Think about what that means'; myth reveal now rests on Ibn Ishaq.",
-      "Audit pass: fixed a reversed line ('the people who held the deposits' meant the owners who left them with the Prophet); dropped the unsourced 'last instruction'."
+      "Audit pass: fixed a reversed line ('the people who held the deposits' meant the owners who left them with the Prophet); dropped the unsourced 'last instruction'.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

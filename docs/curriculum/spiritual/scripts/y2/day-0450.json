@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: Salian priests. Your line was brief for the body. Did you take a short walk, and then think one thing through? Day four hundred fifty.",
+      "voice": "Yesterday's word was Salian priests, whose hopping dance made Seneca's short list of exercise. Your line was brief for the body.",
       "screen": [
         "`BRIEF FOR THE BODY.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Some people can quote a whole shelf of self-help books and still lose their temper in a parking lot. Others have never read a page of philosophy and are the steadiest person in any room. Knowing and living don't always travel together. Four hundred and fifty days into this path, there are a fair number of good lines behind us. Seneca's sixteenth letter asks the uncomfortable question: what are they actually doing? Today: shape the soul.",
+      "voice": "Some people can quote a whole shelf of self-help books and still lose their temper in a parking lot. Others have never read a page of philosophy and are the steadiest person in any room. Knowing and living don't always travel together. Four hundred and fifty days into this path, there are a fair number of good lines behind you. Seneca's sixteenth letter asks the uncomfortable question: what are they actually doing?",
       "screen": [
         "`QUOTES THE BOOK, LOSES IT IN TRAFFIC.` → `KNOWING ISN'T LIVING.` → `SHAPE THE SOUL.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the daily part. Seneca starts by telling Lucilius that it's not enough to have made good resolutions. Keeping them takes more work than making them. You have to strengthen them every day, until good intention becomes settled character. Second, what philosophy isn't. Then he says it plainly. Philosophy isn't a trick for the crowd, or something to show off. It's not a way to pass the time pleasantly or chase away boredom. In the Latin, one short phrase: non in verbis, sed in rebus. Not in words, but in deeds. Third, what it is. It shapes and builds the soul, Seneca says. It puts life in order. It guides what you do. It shows you what to take up and what to leave. And then, a picture: it sits at the helm and steers us through the waves. A soul isn't something you're simply handed, finished. It's something that gets formed, like clay on a wheel, by what you do over and over. Fourth, the objection. Someone might say: what good is all this, if fate rules everything, or God, or blind chance? Seneca's answer is that whichever is true, we still have to live, and philosophy is what helps us bear it well. Then he signs off with a gift from Epicurus: live by nature and you'll never be poor; live by opinion and you'll never be rich. So the test of four hundred fifty days isn't how many lines you can quote. It's whether one of them has changed what your hands do on a Tuesday.",
+      "voice": "It's not enough to have made good resolutions, Seneca tells Lucilius. Keeping them takes more work than making them. You have to strengthen them every day, until good intention becomes settled character. Then he says it plainly. Philosophy isn't a trick for the crowd, or something to show off, or a way to pass the time and chase away boredom. In the Latin: non in verbis, sed in rebus. Not in words, but in deeds. It shapes and builds the soul, he says. It puts life in order, guides what you do, and shows you what to take up and what to leave. It sits at the helm and steers us through the waves. A soul isn't handed to you finished. It gets formed, like clay on a wheel, by what you do over and over. Someone might object: what good is all this, if fate rules everything, or God, or blind chance? Seneca's answer: whichever is true, we still have to live, and philosophy is what helps us bear it well. Then he signs off with a gift from Epicurus: live by nature and you'll never be poor; live by opinion and you'll never be rich. So the test of four hundred fifty days isn't how many lines you can quote. It's whether one of them has changed what your hands do on a Tuesday.",
       "screen": [
         "`KEEPING RESOLUTIONS TAKES WORK.` · `NOT IN WORDS, BUT IN DEEDS.` · `IT SHAPES THE SOUL, STEERS THE SHIP.` · `FATE, GOD OR CHANCE: STILL LIVE WELL.` · then, large: `NOT WORDS, SHAPE.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Think of one thing you genuinely believe about how to live. Maybe one of the lines from this path. Maybe something older, from your own family or faith. Say it to yourself in a few words. Now ask: where did I act on it this week? Where didn't I? No scolding. Just look. Then choose one small act today that would put that belief into your hands instead of your head. Picture yourself doing it. Breathe. The bell holds the time.",
+      "voice": "Say to yourself, in a few words, one thing you truly believe about how to live, from this path or from your own family or faith. Ask, without scolding, where you acted on it this week and where you didn't. Then picture one small act that would put that belief into your hands instead of your head.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: not words, shape. Act once today on something you believe, in a way someone could see. Let it shape you a little. Day four hundred fifty.",
+      "voice": "Your line: not words, shape. Deeds, done over and over, form the soul. Four hundred fifty days now.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "For Stoics, philosophy is measured by conduct: people who practice it try to turn a belief into one concrete action each day, and to renew their resolutions daily.",
   "games": {
+    "guess": [
+      "a Greek who said: live by nature, never be poor",
+      "a Roman Stoic who said riches bring wisdom",
+      "the Greek who taught that all is fate"
+    ],
     "match": {
       "prompt": "shape the soul — tap the pairs.",
       "pairs": [
@@ -133,13 +138,38 @@
     "recall": [
       [
         "Stilpo",
-        "the philosopher in fallen Megara"
+        "Megara's philosopher: all mine is with me"
       ],
       [
-        "Lucilius",
-        "a friend serving in Sicily"
+        "Agrippinus",
+        "the man who wouldn't weigh some questions"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your book club friend",
+      "says": "You've read so much philosophy. Hasn't that made you wise already?",
+      "options": [
+        "Seneca says it's not in words but in deeds; it only counts once it shapes what I do.",
+        "Seneca says knowing the right quotes is what makes a person truly wise.",
+        "Seneca says philosophy is mainly a pleasant way to pass the time."
+      ],
+      "answer": 0,
+      "meaning": "Philosophy, Seneca says, is non in verbis, sed in rebus: not in words but in deeds. It shapes the soul and steers what you do."
+    },
+    "gloss": {
+      "non in verbis, sed in rebus": {
+        "meaning": "Latin: not in words, but in deeds",
+        "say": "nohn in WER-bees sed in RAY-boos"
+      },
+      "Epicurus": {
+        "meaning": "a Greek philosopher of a rival school whom Seneca often quotes",
+        "say": "ep-ih-KYOOR-us"
+      },
+      "Lucilius": {
+        "meaning": "Seneca's friend, to whom the moral letters are written",
+        "say": "loo-SIL-ee-us"
+      }
+    }
   },
   "sources": [
     {
@@ -156,7 +186,9 @@
       "Editor review 2026-10-01: fixed the count 'four short words' (non in verbis, sed in rebus is six); hook no longer uses the snap-at-the-waiter image that day 452 uses, nor 'most of us', nor tells the listener what they've collected; dropped 'as he often does' and the craftsman-verb etymology.",
       "Letter 16.1–2: resolutions strengthened daily; 16.3: 'non est philosophia populare artificium nec ostentationi paratum; non in verbis sed in rebus est... animum format et fabricat, vitam disponit, actiones regit... sedet ad gubernaculum'; 16.4–6: fate, God or chance objection; 16.7: Epicurus on nature and opinion. Paraphrased; confirm wording and section numbers.",
       "Gummere's 'It moulds and constructs the soul' is close to the script's paraphrase; left unquoted.",
-      "Trapdoor reading of fabricat as a craftsman's verb: confirm."
+      "Trapdoor reading of fabricat as a craftsman's verb: confirm.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

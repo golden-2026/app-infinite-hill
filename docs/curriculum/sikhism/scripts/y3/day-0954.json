@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, a family table and a big question, and your line was neither Hindu nor Muslim. What answer stayed with you? Today, one man who seemed very sure of his. Day nine hundred fifty-four.",
+      "voice": "Yesterday, a family table and a big question, and your line was neither Hindu nor Muslim. Today, one man who seemed very sure of his answer.",
       "screen": [
         "`WHO ARE WE.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Singapore, a busy port city far across the sea from Punjab. In a gurdwara there, the sangat keeps a memorial to a Sikh holy man from Punjab. He didn't come to Singapore to trade, or to serve in a regiment. He came as a prisoner, sent far away from Punjab on purpose. He never went home. But the people who remember him there have made sure he isn't forgotten. Today: Bhai Maharaj Singh.",
+      "voice": "Singapore, a busy port city far across the sea from Punjab. In a gurdwara there, the sangat keeps a memorial to a Sikh holy man from Punjab. He didn't come to Singapore to trade, or to serve in a regiment. He came as a prisoner, sent far away from Punjab on purpose, and he never went home. But the people who remember him there have made sure he isn't forgotten.",
       "screen": [
         "`A MEMORIAL IN SINGAPORE.` → `HE CAME AS A PRISONER.` → `HE NEVER WENT HOME.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the saint. Bhai Maharaj Singh was a holy man in Punjab, the head of a dera, a religious center, where people came for his blessing and for langar. Bhai is a title of respect, meaning brother. People came to him for his devotion first; the resistance came later. Second, the resister. As the British took control of Punjab, he would not accept it. Sikh histories remember him moving through the countryside after the wars, encouraging resistance and refusing to surrender. The British saw him as dangerous: a respected holy man who could gather people around him. Third, the exile. When he was finally captured, the British didn't keep him in Punjab, where people might gather around him again. They sent him across the sea to Singapore and held him in prison there. Cut off from his people, his health failed, and he died in exile. Fourth, the line that fits him. In the saloks of Guru Tegh Bahadur, near the end of the Guru Granth Sahib, the Guru says the wise one frightens no one and is afraid of no one. That is how Sikh tellings remember Bhai Maharaj Singh: not cruel, not afraid. And here's the turn in his story. He was sent away to be forgotten, and Singapore is where he is remembered. Sikhs there keep his memorial, and people still come to pay their respects. The far-off place his captors chose became the place that holds his name. That's today's word.",
+      "voice": "Bhai Maharaj Singh was a holy man in Punjab, the head of a dera, a religious center, where people came for his blessing and for langar. Bhai is a title of respect, meaning brother. People came to him for his devotion first; the resistance came later. As the British took control of Punjab, he would not accept it. Sikh histories remember him moving through the countryside after the wars, encouraging resistance and refusing to surrender. The British saw him as dangerous: a respected holy man who could gather people around him. When he was finally captured, they didn't keep him in Punjab, where people might gather around him again. They sent him across the sea to Singapore and held him in prison there. Cut off from his people, his health failed, and he died in exile. In the saloks of Guru Tegh Bahadur, near the end of the Guru Granth Sahib, the Guru says the wise one frightens no one and is afraid of no one. That is how Sikh tellings remember Bhai Maharaj Singh: not cruel, not afraid. And here's the turn in his story. He was sent away to be forgotten, and Singapore is where he is remembered. Sikhs there keep his memorial, and people still come to pay their respects. The far-off place his captors chose became the place that holds his name.",
       "screen": [
         "`A HOLY MAN WITH A DERA.` · `HE WOULD NOT SURRENDER.` · `SENT ACROSS THE SEA TO SINGAPORE.` · `AFRAID OF NO ONE.` · then, large: `REMEMBERED FAR AWAY.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Two minutes for a far-off grave. Sit, and breathe slowly. Bring to mind someone who is buried, or whose ashes rest, far from where you are: a grandparent in another country, a friend in another city, an ancestor whose grave you've never seen. If no one comes, think of all those who died far from home. Picture the place, as best you can. Say their name in your mind. Let them be remembered for these two minutes, right here. If you pray, you can say Waheguru on each breath out. The bell holds the time.",
+      "voice": "Bring to mind someone who is buried, or whose ashes rest, far from where you are, a grandparent in another country, a friend in another city, an ancestor whose grave you've never seen, or, if no one comes, all those who died far from home. Picture the place as best you can, say their name in your mind, and let them be remembered here for a while. If you pray, let Waheguru close each breath.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: remembered far away. Today, say the name of someone buried far from you, out loud or in a message to someone who knew them. Day nine hundred fifty-four.",
+      "voice": "Your line: remembered far away. Sent off to be forgotten, he is remembered there instead. See you tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Sikhs in Singapore keep a memorial to Bhai Maharaj Singh at a gurdwara there, and visitors come to pay their respects to him as a saint who resisted British rule.",
   "games": {
+    "guess": [
+      "a Sikh holy man exiled to Singapore for resisting",
+      "a Sikh general who won the last battle at Gujrat",
+      "a Maharaja who ruled Punjab after Ranjit Singh"
+    ],
     "match": {
       "prompt": "the saint in exile — tap the pairs.",
       "pairs": [
@@ -132,14 +137,52 @@
     ],
     "recall": [
       [
-        "amrit",
-        "the Khalsa initiation"
+        "mahant",
+        "the head of a religious house"
       ],
       [
-        "samadhi",
-        "a memorial over cremation ashes"
+        "nirbhau",
+        "without fear"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "a friend in Singapore",
+      "says": "Why is there a memorial in Singapore to a Sikh holy man from Punjab?",
+      "options": [
+        "The British exiled him there for resisting, he died there, and Sikhs there keep his memory.",
+        "He sailed there as a trader, built a gurdwara by the harbor, and retired there in peace.",
+        "He served there in a Sikh regiment and died defending the port in a battle."
+      ],
+      "answer": 0,
+      "meaning": "Bhai Maharaj Singh resisted British rule, was captured and sent to Singapore, and died there in exile; Sikhs there keep his memorial."
+    },
+    "gloss": {
+      "Bhai": {
+        "meaning": "brother, a title of respect",
+        "script": "ਭਾਈ",
+        "say": "BHAA-ee"
+      },
+      "dera": {
+        "meaning": "a religious center led by a holy man",
+        "script": "ਡੇਰਾ",
+        "say": "DAY-raa"
+      },
+      "langar": {
+        "meaning": "the free kitchen open to all",
+        "script": "ਲੰਗਰ",
+        "say": "LUNG-ur"
+      },
+      "Guru Tegh Bahadur": {
+        "meaning": "the Guru whose saloks say: afraid of no one",
+        "script": "ਗੁਰੂ ਤੇਗ ਬਹਾਦਰ",
+        "say": "GOO-roo TAYG ba-HAA-dur"
+      },
+      "sangat": {
+        "meaning": "the congregation, the gathered Sikh community",
+        "script": "ਸੰਗਤ",
+        "say": "SUNG-ut"
+      }
+    }
   },
   "sources": [
     {
@@ -165,7 +208,9 @@
       "Ang 1427 (bhai kaahoo kau det neh neh bhai maanat aan) paraphrased; confirm.",
       "His later blindness in prison, reported in some accounts, is not stated.",
       "Editor: 'he came in chains' softened to 'he came as a prisoner' (unverified detail); the loose 'far side of the Bay of Bengal' replaced; 'rallying point', already used on days 941 and 945, reworded; 'how Sikhs remember' narrowed to 'how Sikh tellings remember'.",
-      "Audit: replaced a filler line on his devotion; facts checked against the outline (Naurangabad dera, deportation to Singapore, Ang 1427 salok 16 paraphrase) with no further changes."
+      "Audit: replaced a filler line on his devotion; facts checked against the outline (Naurangabad dera, deportation to Singapore, Ang 1427 salok 16 paraphrase) with no further changes.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

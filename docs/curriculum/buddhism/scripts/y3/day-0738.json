@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, arahant: Ananda set down the strain, and your line, before his head reached the pillow. Did you put one strain down, even for a breath? This morning he walks into the council. Day seven hundred thirty-eight.",
+      "voice": "Yesterday: arahant. Ananda set down the strain and was freed. Your line: before his head reached the pillow. This morning he walks into the council.",
       "screen": [
         "`ARAHANT.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "One elder asks. One elder answers. The teacher who spoke these words is gone. And a room full of elders at Rajagaha has one job: make sure what he said doesn't drift away. So the Vinaya describes something like a very calm exam. Mahakassapa, presiding, asks questions. Ananda answers. And everyone else listens closely, because once the answers are agreed, this is the teaching they will carry. It all rests on one man's memory, and on a room willing to check it. Today, the recital.",
+      "voice": "One elder asks. One elder answers. The teacher who spoke these words is gone, and a room full of elders at Rajagaha has one job: make sure what he said doesn't drift away. So the Vinaya describes something like a very calm exam. Mahakassapa, presiding, asks. Ananda answers. Everyone else listens closely, because once the answers are agreed, this is the teaching they will carry. It all rests on one man's memory, and on a room willing to check it.",
       "screen": [
         "`THE TEACHER IS GONE.` → `KASSAPA ASKS.` → `ANANDA ANSWERS.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the questions. They aren't about doctrine first. They're about place and people. In the Vinaya's account Kassapa asks: where was the discourse called the Net of Brahma spoken? Ananda answers: on the road between Rajagaha and Nalanda, at the king's rest house in Ambalatthika. And about whom? About a wanderer named Suppiya and a young brahmin, his pupil. Then the next discourse, and the next, through the collections. Second, why place and people. A teaching remembered with its setting is harder to bend. If you know who was standing there and what they asked, you know what the answer was answering. It may be part of why the discourses begin where they do, with a town, a grove, a person. Third, an honest gap. During the council Ananda also reports something the Buddha told him near the end: that after he was gone the community could drop the lesser and minor rules. The elders ask which ones those are. And Ananda has to say he didn't ask. The council talks it over, and Kassapa proposes they keep every rule as it was, and the elders agree. A good memory, it turns out, also remembers what it never got. Fourth, the room. Ananda recited, but he didn't recite alone in the end. Tradition says the elders chanted it back together, and that from then on the teaching lived in voices: groups of monks carrying it, generation after generation, reciting it aloud. One man remembered. A whole room made sure the memory held.",
+      "voice": "First, the questions. They're about place and people before doctrine. In the Vinaya's account Kassapa asks: where was the discourse called the Net of Brahma spoken? Ananda answers: on the road between Rajagaha and Nalanda, at the king's rest house in Ambalatthika. And about whom? A wanderer named Suppiya and a young brahmin, his pupil. Then the next discourse, and the next, through the collections. Second, why place and people. A teaching remembered with its setting is harder to bend. If you know who was standing there and what they asked, you know what the answer was answering. It may be part of why the discourses begin with a town, a grove, a person. Third, an honest gap. Ananda also reports that near the end the Buddha told him the community could drop the lesser and minor rules after he was gone. Which ones, the elders ask. And Ananda has to say he didn't ask. They talk it over, Kassapa proposes keeping every rule as it was, and the elders agree. A good memory also remembers what it never got. Fourth, the room. Tradition says the elders chanted it back together, and from then on the teaching lived in voices: groups of monks reciting it aloud, generation after generation. One man remembered. A whole room made sure the memory held.",
       "screen": [
         "`WHERE WAS IT SPOKEN? TO WHOM?` · `A SETTING KEEPS THE MEANING.` · `THE QUESTION HE NEVER ASKED.` · `A ROOM RECITES IT BACK.` · then, large: `HE REMEMBERED.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: recite one verse by heart. Pick a line you'd like to carry, from any tradition you love, or try this one from the Dhammapada, in Max Müller's old translation: \"For hatred does not cease by hatred at any time: hatred ceases by love—this is an old rule.\" Say it slowly, three or four times, out loud if you can. Then close your eyes and say it without looking. Where you stumble, look once, and try again. When it holds, let it go quiet and rest with the breath. The bell holds the time.",
+      "voice": "Recite one verse by heart: a line from any tradition you love, or this one from the Dhammapada, in Max Müller's old translation: \"For hatred does not cease by hatred at any time: hatred ceases by love—this is an old rule.\" Say it slowly three or four times, out loud if you can, then close your eyes and say it without looking. Where you stumble, look once and try again, and when it holds, let it go quiet and rest with the breath.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: he remembered. Today, say your verse once more, somewhere ordinary, on the stairs or in the car, and notice that it's still there. Day seven hundred thirty-eight.",
+      "voice": "Your line: he remembered. A setting keeps the meaning from bending. Day seven hundred thirty-eight, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Monks and nuns in Theravada communities still learn discourses and verses by heart and chant them together, and the recitation of texts is a regular part of monastery life.",
   "games": {
+    "guess": [
+      "the council asking and answering from memory",
+      "a public reading from a written book",
+      "a monk's private chanting each morning"
+    ],
     "match": {
       "prompt": "the recital: tap the pairs.",
       "pairs": [
@@ -132,14 +137,44 @@
     ],
     "recall": [
       [
-        "Upatissa",
-        "later called Sariputta"
+        "Prakriti",
+        "hesitates to give Ananda water"
       ],
       [
-        "Yashodhara",
-        "asks why he left without her"
+        "deathless",
+        "what Upatissa found in Assaji's verse"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your grandmother",
+      "says": "How did the Buddha's words survive when nobody wrote them down?",
+      "options": [
+        "Ananda recited them at the council, and the elders chanted them back together.",
+        "Ananda wrote them all down at the council so nobody would forget them.",
+        "Each monk kept his own private version, and they never compared notes."
+      ],
+      "answer": 0,
+      "meaning": "In the Vinaya's account Kassapa asked and Ananda answered from memory; tradition says the elders chanted it back, and the teaching lived on in voices."
+    },
+    "gloss": {
+      "Mahakassapa": {
+        "meaning": "the elder who presided at the council and asked the questions",
+        "script": "महाकस्सप",
+        "say": "muh-hah-KUSS-uh-puh"
+      },
+      "Net of Brahma": {
+        "meaning": "a discourse, the one Kassapa asks about first"
+      },
+      "Ambalatthika": {
+        "meaning": "the king's rest house where that discourse was spoken",
+        "say": "um-buh-LUT-thi-kuh"
+      },
+      "Dhammapada": {
+        "meaning": "a collection of short verses of the Buddha's teaching",
+        "script": "धम्मपद",
+        "say": "DHUM-muh-puh-duh"
+      }
+    }
   },
   "sources": [
     {
@@ -172,7 +207,9 @@
       "The council's other business (Upali reciting the Vinaya, Ananda's faults) is left for day 747 and elsewhere.",
       "Original: बहुस्सुत (bahussuta); confirm.",
       "Editor: cut the hook's 'no paper, no ink' (a claim the Vinaya passage does not make) and its screen line; softened 'that's why the discourses begin where they do' to 'it may be part of why'; put the elders chanting it back under 'tradition says'; restored Müller's dash in Dhammapada 5 ('love—this is an old rule').",
-      "Auditor: fixed a missing space in the hook screen. The teach's second step (settings open the discourses) touches day 732's angle; kept short, but a Keeper may prefer it trimmed."
+      "Auditor: fixed a missing space in the hook screen. The teach's second step (settings open the discourses) touches day 732's angle; kept short, but a Keeper may prefer it trimmed.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

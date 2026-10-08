@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Seneca's letter about a city burned in one night. Your line was a city, rising. What first stone did you set? Today, we start to close the question of suffering, with a pencil. Day seven hundred fifty-four.",
+      "voice": "Yesterday's word was Seneca, writing about a city burned in one night. Your line was a city, rising.",
       "screen": [
         "`A CITY, RISING.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, a map, not a creed. A creed says what is true for everyone. A map of suffering says something smaller and more useful: what has actually helped this one person, on this one road. It doesn't have to settle why suffering exists. It only has to mark the springs and the floods. Second, look back at what we've walked. The Buddha's teaching of the second arrow: the pain, and then the pain we add to it. The psalmist's question, how long, said straight to God. Patience, sabr, in the Qur'an. The friends who sat with Job in silence, before they ruined it by talking. Viktor Frankl's last freedom, the choice of an attitude. These last two weeks: a small mercy, a quiet hour, one day at a time, a city rising. Each came from its own tradition, and each stays with its own source. Your map can hold several without blending them into one teaching. Third, two columns. On one side, what helps. On the other, what doesn't, even when it's supposed to. Some people find advice makes things worse, and silence helps. Some find a practice that works on a bad day and fails on a terrible one. Both are worth writing down. An honest map has X marks too. Fourth, maps change. A map drawn young looks different later on. A teaching that meant nothing last year may be the spring you need next year. So the map stays in pencil. Write it today, and expect to erase.",
+      "voice": "First, a map, not a creed. A creed says what is true for everyone. A map of suffering says something smaller and more useful: what has actually helped this one person, on this one road. It doesn't have to settle why suffering exists. It only has to mark the springs and the floods. Second, look back at the road so far. The Buddha's teaching of the second arrow: the pain, and then the pain we add to it. The psalmist's question, how long, said straight to God. Patience, sabr, in the Qur'an. The friends who sat with Job in silence, before they ruined it by talking. Viktor Frankl's last freedom, the choice of an attitude. These last two weeks: a small mercy, a quiet hour, one day at a time, a city rising. Each came from its own tradition, and each stays with its own source. Your map can hold several without blending them into one teaching. Third, two columns. On one side, what helps. On the other, what doesn't, even when it's supposed to. Some people find advice makes things worse, and silence helps. Some find a practice that works on a bad day and fails on a terrible one. Both are worth writing down. An honest map has X marks too. Fourth, maps change. A map drawn young looks different later on. A teaching that meant nothing last year may be the spring you need next year. So the map stays in pencil. Write it today, and expect to erase.",
       "screen": [
         "`A MAP, NOT A CREED.` · `WHAT WE'VE WALKED, EACH IN ITS PLACE.` · `WHAT HELPS, WHAT DOESN'T.` · `KEEP IT IN PENCIL.` · then, large: `WHAT HELPS ME.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Take a piece of paper, or a note on your phone. Draw a line down the middle. On the left, write what helps when things are hard: a teaching, a practice, a person, a place, a song. On the right, what doesn't help, even if it's meant to. Don't think too long. Three on each side is plenty. Then sit quietly and look at the left column. Notice which one you'd reach for first. If you pray, prayer may be on your map; it belongs there if it helps. The bell holds the time.",
+      "voice": "On paper or a phone note, draw a line down the middle: on the left, what helps when things are hard, a teaching, a practice, a person, a place, a song; on the right, what doesn't help, even if it's meant to. Three on each side is plenty, so don't think too long, then look at the left column and notice which one you'd reach for first. If you pray, prayer may be on your map; it belongs there if it helps.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: what helps me. Today, keep the map somewhere you'll find it on a bad day, and add one mark before bed. Day seven hundred fifty-four.",
+      "voice": "Your line: what helps me. An honest map has X marks too. Day seven hundred fifty-four.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Some people keep a written list of what helps in hard times, from scripture verses and prayers to walks and phone numbers, and some therapists and chaplains help people draw up such a plan before a crisis.",
   "games": {
+    "guess": [
+      "the pain we add on top of pain, in the Buddha's image",
+      "a second injury that follows the first by chance",
+      "the spare arrow an archer keeps in case the first misses"
+    ],
     "match": {
       "prompt": "which teaching came from where — tap the pairs.",
       "pairs": [
@@ -128,14 +133,46 @@
     ],
     "recall": [
       [
-        "Chiron",
-        "a centaur with a wound that won't heal"
+        "Good Friday",
+        "the day Christians mark Jesus' death"
       ],
       [
-        "shiva",
-        "the family stays home, the community comes"
+        "Elijah",
+        "the prophet fed under the juniper tree"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your sister",
+      "says": "What's the point of listing what helps when I'm struggling?",
+      "options": [
+        "It's a map, not a creed: what's actually helped you, kept in pencil to change.",
+        "It's to settle once and for all why suffering happens, in a single answer.",
+        "It's a list to memorize, so every teaching gets blended into one rule."
+      ],
+      "answer": 0,
+      "meaning": "A map of suffering marks what has helped one person on one road, plus the X marks. It stays in pencil, because maps change."
+    },
+    "gloss": {
+      "second arrow": {
+        "meaning": "the Buddha's image for the pain we add to pain"
+      },
+      "sabr": {
+        "meaning": "Arabic for patience, in the Qur'an",
+        "script": "صبر",
+        "say": "SAH-bur"
+      },
+      "Viktor Frankl": {
+        "meaning": "a psychiatrist who wrote of the last freedom: choosing an attitude",
+        "say": "VIK-tor FRANK-ul"
+      },
+      "Job": {
+        "meaning": "the biblical sufferer whose friends first sat in silence",
+        "say": "JOHB"
+      },
+      "creed": {
+        "meaning": "a statement of what is true for everyone"
+      }
+    }
   },
   "sources": [
     {
@@ -178,7 +215,9 @@
       "Qur'an 2:153 cited as one sabr verse; confirm it matches what day 720 taught.",
       "'Some therapists and chaplains help people draw up such a plan' (howItsDone) refers to safety/coping plans generally; confirm wording.",
       "'A map drawn at twenty looks different at fifty' is illustrative, not a claim.",
-      "Editor: replaced the ages 'at twenty ... at fifty' with 'drawn young ... later on' (claims rule on ages)."
+      "Editor: replaced the ages 'at twenty ... at fifty' with 'drawn young ... later on' (claims rule on ages).",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

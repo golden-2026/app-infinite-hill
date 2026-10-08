@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: good fortune. Your line was still standing, not crushed. Did you catch a just-my-luck sentence and rewrite it? Day five hundred sixty-two.",
+      "voice": "Yesterday's word was good fortune, which lives in bearing a hard thing well. Your line was still standing, not crushed.",
       "screen": [
         "`STILL STANDING, NOT CRUSHED.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Go outside on a clear night, away from the streetlights, and look up. Some of the light reaching your eyes left its star centuries ago, long before anyone alive today was born. You're looking backward in time. Plenty of people feel two things at once out there: very small, and strangely calm. Marcus Aurelius had no telescope. But near the end of his fourth book he stands at the edge of the same view, and asks what it does to the length of one life. Today: the gulf of time.",
+      "voice": "On a clear night, away from the streetlights, look up. Some of that light left its star centuries ago, long before anyone alive today was born. You're looking backward in time. Plenty of people feel two things at once out there: very small, and strangely calm. Marcus Aurelius had no telescope, but near the end of his fourth book he stands at the edge of the same view, and asks what it does to the length of one life.",
       "screen": [
         "`A CLEAR NIGHT, NO STREETLIGHTS.` → `LIGHT OLDER THAN ANYONE ALIVE.` → `THE GULF OF TIME.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, a plain help. Marcus calls this an unphilosophical but still useful aid against the fear of death: think of the people who clung hard to life. What did they gain over those who died young? He names a few Romans who lived long and buried many others, and then were buried themselves. The gap between a short life and a long one, he says, is small. Second, the gulf. Then the view opens. Look at the vast gulf of time behind you, he writes, and the other boundless stretch ahead. Endless before you were born. Endless after. Third, what a life measures against it. In that infinity, Marcus asks, what's the difference between someone who lives three days and someone who lives three generations? He seems to be playing on old Homer here: Nestor, the wise old king, who outlived two generations of men and ruled among the third. Against the gulf, Nestor and an infant are almost the same size. Fourth, small and calm. Some people find that view frightening. The French writer Blaise Pascal, many centuries later, wrote, in Trotter's 1910 translation: \"The eternal silence of these infinite spaces frightens me.\" Marcus finds something else in it: relief. If a life is a flicker in that dark either way, then the length of it is not the thing to fight over. What matters is what you do inside your flicker. Both reactions are honest. You may feel one, or the other, or both on the same night.",
+      "voice": "He starts with what he calls an unphilosophical but still useful aid against the fear of death: think of the people who clung hard to life. What did they gain over those who died young? He names a few Romans who lived long and buried many others, and then were buried themselves. The gap between a short life and a long one, he says, is small. Then the view opens. Look at the vast gulf of time behind you, he writes, and the other boundless stretch ahead. In that infinity, what's the difference between someone who lives three days and someone who lives three generations? He seems to be playing on old Homer here: Nestor, the wise old king who outlived two generations of men and ruled among the third. Against the gulf, Nestor and an infant are almost the same size. Some people find that view frightening. The French writer Blaise Pascal, many centuries later, wrote, in Trotter's 1910 translation: \"The eternal silence of these infinite spaces frightens me.\" Marcus finds something else in it: relief. If a life is a flicker in that dark either way, its length is not the thing to fight over. What matters is what you do inside your flicker. Both reactions are honest, and you may feel both on the same night.",
       "screen": [
         "`THINK OF THOSE WHO CLUNG TO LIFE.` · `THE GULF BEHIND, THE GULF AHEAD.` · `THREE DAYS, OR THREE GENERATIONS?` · `SMALL, AND CALM.` · then, large: `THE GULF OF TIME.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Settle, and breathe. If it's night, go look up at the sky, or picture it if you can't. Feel the time behind you: centuries, then millennia, then more, with no floor. Feel the time ahead, just as open. Now find yourself in it: one breath, one small light. Don't try to feel anything in particular. Just notice what comes, smallness or calm or both. The bell holds the time.",
+      "voice": "Look up at the sky if it's night, or picture it if you can't. Feel the time behind you, centuries and then more with no floor, and the time ahead, just as open, and find yourself in it: one breath, one small light. Notice what comes, smallness or calm or both.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: almost the same size. Look up at the night sky tonight, even for a minute, and let one worry be measured against it. Day five hundred sixty-two.",
+      "voice": "Your line: almost the same size. What counts is what you do inside your flicker. Rest easy tonight.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Readers of Marcus Aurelius sometimes take the view of Meditations 4.50 outdoors, looking at the night sky and measuring a worry against the vastness of time.",
   "games": {
+    "guess": [
+      "Homer's old king, long-lived yet tiny beside endless time",
+      "a Roman emperor who ruled long and was soon forgotten",
+      "a Greek astronomer who first mapped the night sky"
+    ],
     "match": {
       "prompt": "the gulf of time — tap the pairs.",
       "pairs": [
@@ -132,14 +137,43 @@
     ],
     "recall": [
       [
-        "Flesh",
-        "blood, bones, a net of nerves"
+        "Arrian",
+        "took down Epictetus' teaching"
       ],
       [
-        "Claudius Maximus",
-        "senator, Stoic, governor of Africa"
+        "dogmata",
+        "the beliefs you actually live by"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your grandmother",
+      "says": "What did Marcus Aurelius mean by the gulf of time?",
+      "options": [
+        "The endless time before and after us; beside it, long and short lives look almost alike.",
+        "The years we waste on things that don't matter, which he wanted to get back.",
+        "The gap between ancient Rome and our time, which he could somehow foresee."
+      ],
+      "answer": 0,
+      "meaning": "Marcus looks at the boundless time behind and ahead. Against it, Nestor and an infant are almost the same size."
+    },
+    "gloss": {
+      "Nestor": {
+        "meaning": "Homer's wise old king, who outlived two generations of men",
+        "say": "NES-ter"
+      },
+      "Homer": {
+        "meaning": "the ancient Greek poet of the Iliad",
+        "say": "HOH-mer"
+      },
+      "Blaise Pascal": {
+        "meaning": "a French writer and thinker, centuries after Marcus",
+        "say": "BLEZ pass-KAL"
+      },
+      "Marcus Aurelius": {
+        "meaning": "Roman emperor and Stoic who wrote the Meditations to himself",
+        "say": "MAR-kus aw-REE-lee-us"
+      }
+    }
   },
   "sources": [
     {
@@ -170,7 +204,9 @@
       "Iliad 1.250–252: Nestor had seen two generations pass and ruled among the third. Confirm.",
       "Hook softened to light that left its star 'centuries ago, long before anyone alive today was born': true of many naked-eye stars (hundreds of light-years or more); confirm.",
       "Nestor corrected from 'outliving three generations' to Homer's wording (outlived two, ruled among the third); the Nestor wordplay in Marcus is a scholarly reading and is now hedged ('seems to be playing').",
-      "10% audit (year 2): hook's unsourced 'most people feel' softened to 'plenty of people feel', and the vague 'the looking doesn't end' cut."
+      "10% audit (year 2): hook's unsourced 'most people feel' softened to 'plenty of people feel', and the vague 'the looking doesn't end' cut.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

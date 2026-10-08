@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the plowed field, stillness, and your line: grief for the small. Did you look down once and let a small life be real? Today, night falls on the palace. Day seven hundred six.",
+      "voice": "Yesterday: stillness under a rose-apple tree, after the prince grieved for small lives in a plowed field. Your line: grief for the small.",
       "screen": [
         "`GRIEF FOR THE SMALL.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Before he leaves, he asks. That's the part of the flight that's easy to forget. The prince comes back from the field and goes to his father, bows, and says it out loud: let me go and become a wanderer. The king weeps. Not yet, he says. You're young. Wait. Then the prince makes an offer. Promise me four things, and I'll stay: that my life won't end in death, that sickness won't take my health, that age won't take my youth, that misfortune won't take what I have. The king can't promise any of them. Nobody could. And so the asking ends, and the night begins.",
+      "voice": "Before he leaves, he asks. That's the part of the flight that's easy to forget. The prince comes back from the field, goes to his father, bows, and says it out loud: let me go and become a wanderer. The king weeps. Not yet, he says. You're young. Wait. Then the prince makes an offer. Promise me four things, and I'll stay: that my life won't end in death, that sickness won't take my health, that age won't take my youth, that misfortune won't take what I have. The king can't promise any of them. Nobody could. And so the asking ends, and the night begins.",
       "screen": [
         "`FIRST, HE ASKS.` → `PROMISE ME FOUR THINGS.` → `NO ONE COULD.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the sleeping palace. Back in his rooms, the women play music for him as always, but the poem says the gods send a heavy sleep over them, and they fall where they are, instruments still in their arms. Year one stood in that room. Tonight the poem only passes through it on the way to the door. Second, the horse. The prince wakes Chandaka, his attendant, and asks for Kanthaka, his horse. And Chandaka brings him. The prince speaks to the horse as to a friend, asking him to carry him well this one time. Third, the gates. All his life this palace has been a machine for keeping the prince in and the world out. Heavy doors. Bars. Guards. And tonight, the poem says, the gates that took strength to move swing open by themselves, without a sound. The city sleeps on. Fourth, the look back. Outside the city, the poem has the prince turn toward it and make a vow: he won't come back into this city until he has seen the far shore of birth and death. Then he rides on into the dark. Here's the arc of the last days. A father built walls. A cleared road, a garden, a friend's advice, a palace full of music. One by one, they gave. Tonight, the last one does. The gates open.",
+      "voice": "First, the sleeping palace. Back in his rooms the women play music for him as always, but the poem says the gods send a heavy sleep over them, and they fall where they are, instruments still in their arms. Year one stood in that room; tonight the poem only passes through it on the way to the door. Second, the horse. The prince wakes Chandaka, his attendant, and asks for Kanthaka, his horse. Chandaka brings him, and the prince speaks to the horse as to a friend, asking him to carry him well this one time. Third, the gates. All his life this palace has been a machine for keeping the prince in and the world out: heavy doors, bars, guards. Tonight, the poem says, gates that took strength to move swing open by themselves, without a sound. The city sleeps on. Fourth, the look back. Outside the city the prince turns toward it and vows not to come back until he has seen the far shore of birth and death. Then he rides on into the dark. A father built walls: a cleared road, a garden, a friend's advice, a palace full of music. One by one, they gave. Tonight, the last one does.",
       "screen": [
         "`THE PALACE FALLS ASLEEP.` · `CHANDAKA BRINGS THE HORSE.` · `HEAVY GATES, OPENING ALONE.` · `A VOW TO THE FAR SHORE.` · then, large: `THE GATES OPEN.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: move quietly for a minute. Stand if you can, or stay seated and move just your hands. Then move as if everyone in the house were asleep. Slow. Soft. Set each foot down so it makes no sound. Lift a cup and set it down without a click. Notice how much attention quiet takes, and how the room seems to get bigger when you stop making noise in it. When the minute's done, sit, and rest in the hush you made. The bell holds the time.",
+      "voice": "Stand if you can, or stay seated and move just your hands, and move as if everyone in the house were asleep: slow, soft, each foot set down without a sound, a cup lifted and lowered without a click. Notice how much attention quiet takes, and how the room seems to grow when you stop making noise in it. Then sit, and rest in the hush you made.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the gates open. Today, notice one door you've been waiting on, and ask whether you've said out loud what you need. Day seven hundred six.",
+      "voice": "Your line: the gates open. He asked first, and then he went. See you tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "The prince's leaving, often called the great going forth, is remembered in Buddhist art and at festivals, and in Theravada countries young men about to ordain sometimes ride in procession on a horse or are carried, recalling the prince's ride out of the city.",
   "games": {
+    "guess": [
+      "the prince's night departure from the palace",
+      "the prince's escape from enemies at war",
+      "a journey on a flying horse to heaven"
+    ],
     "match": {
       "prompt": "the night of the flight: tap the pairs.",
       "pairs": [
@@ -128,14 +133,39 @@
     ],
     "recall": [
       [
-        "Buddhacarita",
-        "the life, or acts, of the Buddha"
+        "Parayana",
+        "the way to the far shore"
       ],
       [
-        "Rohatsu",
-        "eighth day of the twelfth month"
+        "ogha",
+        "a flood that sweeps beings along"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your dad",
+      "says": "Did the prince just sneak out of the palace one night?",
+      "options": [
+        "No, he asked his father first, and left only after he was refused.",
+        "Yes, he told no one and slipped out while the guards were away.",
+        "No, his father agreed and sent him off with a royal escort."
+      ],
+      "answer": 0,
+      "meaning": "The poem has him ask the king first, offering to stay for four promises no one could make. Only then does he go."
+    },
+    "gloss": {
+      "Chandaka": {
+        "meaning": "the prince's attendant, who brings the horse",
+        "script": "छन्दक",
+        "say": "CHUN-duh-kuh"
+      },
+      "Kanthaka": {
+        "meaning": "the prince's horse",
+        "say": "KUN-tuh-kuh"
+      },
+      "far shore": {
+        "meaning": "an image for freedom beyond birth and death"
+      }
+    }
   },
   "sources": [
     {
@@ -155,7 +185,9 @@
       "Confirm the gates opening by themselves noiselessly, the prince addressing Kanthaka, and the vow not to re-enter Kapilavastu until he has seen the further shore of birth and death.",
       "howItsDone describes the Theravada ordination procession recalling the going forth; confirm, or cut to the first clause.",
       "Editor: muffled hoofbeats cut (not confirmed in Buddhacarita 5); the wonder-or-picture readings angle cut (fourth repeat in this run); 'for years' changed to 'all his life'.",
-      "Auditor (2026-10-01): 'his charioteer, Chandaka' implied he is the unnamed charioteer of the sights in canto 3; in the poem Chandaka is the horse attendant/groom (later tellings merge the two). Now 'his attendant'; confirm Cowell's term."
+      "Auditor (2026-10-01): 'his charioteer, Chandaka' implied he is the unnamed charioteer of the sights in canto 3; in the poem Chandaka is the horse attendant/groom (later tellings merge the two). Now 'his attendant'; confirm Cowell's term.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

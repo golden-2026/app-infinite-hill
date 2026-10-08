@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday Dona asked god, spirit or human, and heard: be awake for one moment. Did one ordinary moment get your full attention? Today, a piece of burnt wood. Day six hundred sixty-three.",
+      "voice": "Yesterday Dona asked god, spirit or human, and heard a different word: buddha, awake. Your line, be awake for one moment. Today, a piece of burnt wood.",
       "screen": [
         "`BE AWAKE FOR ONE MOMENT.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "In ancient India the dead were burned on open pyres at the edge of town. When the fire went down, what was left was a mess: ash, bone, and charred sticks of wood. Picture one of those sticks. Burning at both ends, and in the middle smeared with dung. Nobody would carry it home for the kitchen fire. Nobody would take it into the forest to build with. It's not good for anything, in the village or out of it. The Buddha picks up exactly that stick, in words, and holds it up to a room of monks. Today: the firebrand.",
+      "voice": "In ancient India the dead were burned on open pyres at the edge of town. When the fire went down, what was left was ash, bone and charred sticks. Picture one of those sticks, burning at both ends and smeared with dung in the middle. Nobody would carry it home for the kitchen fire, or take it into the forest to build with. It's good for nothing, in the village or out of it. The Buddha picks up exactly that stick, in words, and holds it up to a room of monks.",
       "screen": [
         "`AFTER THE PYRE.` → `BURNING AT BOTH ENDS.` → `GOOD FOR NOTHING.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "The sutta is in the Book of Fours, and it sorts people into four kinds. The first practices neither for their own good nor for the good of others. That's the firebrand: of no use in the village or the forest. The second practices for the good of others, but not their own. The third practices for their own good, but not for others. The fourth practices for both. Look at the order of the middle two. The Buddha puts the one who works on themselves above the one who works only for others. That can sound selfish, until you think about what 'own good' means here: taming greed, hatred and confusion in yourself. Someone who rushes to fix everyone else while their own temper is on fire can make a lot of smoke. The texts elsewhere give a picture for this: you can't pull someone out of a swamp while you're sinking in it yourself. But the sutta doesn't stop at self. The highest of the four, it says, is the one who practices for both. Then it adds a dairy image. From a cow comes milk, from milk curd, from curd butter, from butter ghee, and from ghee the cream of ghee, the finest of all. That cream is the person who works for self and others together. Not first one, then the other. Both, in the same life, in the same day.",
+      "voice": "The sutta, in the Book of Fours, sorts people into four kinds. The first practices neither for their own good nor for the good of others. That's the firebrand. The second practices for the good of others, but not their own. The third, for their own good, but not for others. The fourth, for both. Look at the middle two. The Buddha puts the one who works on themselves above the one who works only for others. That can sound selfish, until you see what 'own good' means here: taming greed, hatred and confusion in yourself. Someone who rushes to fix everyone else while their own temper is on fire can make a lot of smoke. The texts elsewhere give a picture: you can't pull someone out of a swamp while you're sinking in it yourself. But the sutta doesn't stop at self. The highest of the four is the one who practices for both. Then a dairy image. From a cow comes milk, from milk curd, from curd butter, from butter ghee, and from ghee the cream of ghee, the finest of all. That cream is the person who works for self and others together. Not first one, then the other: both, in the same life, in the same day.",
       "screen": [
         "`FOUR KINDS OF PEOPLE.` · `THE FIREBRAND: NO USE AT ALL.` · `OWN GOOD ABOVE OTHERS' GOOD ALONE.` · then, large: `THE BEST: FOR SELF AND OTHERS.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: be useful to someone. Sit, and settle for a few breaths. First, the own-good half: notice one thing in you that's smoking right now, a worry, an irritation. Breathe with it, gently, and let it cool a little. Then the others half: bring to mind one person who could use a small, real help today. A message, a dish washed, a question asked and listened to. Picture yourself doing it. Breathe in for yourself. Breathe out for them. The bell holds the time.",
+      "voice": "Notice one thing in you that's smoking right now, a worry, an irritation, and breathe with it gently until it cools a little. Then bring to mind one person who could use a small, real help: a message, a dish washed, a question asked and listened to. Breathe in for yourself, and breathe out for them.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: for self and others. Today, do one thing that cools your own fire, and one thing that helps someone else. Both before bed. Day six hundred sixty-three.",
+      "voice": "Your line: for self and others. The firebrand warms no one, inside or out. See you tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Many Buddhist teachers describe practice as having two sides, working on one's own mind and serving others, and the firebrand sutta is one of the early texts they cite for holding the two together.",
   "games": {
+    "guess": [
+      "a stick from a pyre, useful to no one",
+      "a torch carried to light the way home",
+      "a fiery speaker who stirs up a crowd"
+    ],
     "match": {
       "prompt": "the firebrand: tap the pairs.",
       "pairs": [
@@ -132,14 +137,40 @@
     ],
     "recall": [
       [
-        "pabhassara",
-        "luminous, shining"
+        "adhipataka",
+        "a moth or winged insect"
       ],
       [
-        "yathavadi tathakari",
-        "as he says, so he does"
+        "sangiti",
+        "reciting the teaching together, aloud"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your roommate",
+      "says": "Isn't working on yourself kind of selfish? Shouldn't you just help others?",
+      "options": [
+        "The sutta ranks taming your own greed above helping others alone, and both together highest.",
+        "The sutta ranks helping others alone highest, even while your own mind stays on fire.",
+        "The sutta says work only on yourself and leave others to their own karma."
+      ],
+      "answer": 0,
+      "meaning": "In AN 4.95, own good, taming greed, hatred and confusion, ranks above others' good alone. Highest, the cream of ghee, is working for both."
+    },
+    "gloss": {
+      "firebrand": {
+        "meaning": "a burning stick from a funeral pyre, of use to no one"
+      },
+      "pyres": {
+        "meaning": "open fires where the dead were burned"
+      },
+      "ghee": {
+        "meaning": "butter cooked down until clear, prized in Indian cooking",
+        "say": "GHEE"
+      },
+      "Book of Fours": {
+        "meaning": "the part of the Numbered Discourses grouped in fours"
+      }
+    }
   },
   "sources": [
     {
@@ -163,7 +194,9 @@
       "The swamp image (one sinking in mud can't pull another out) is from MN 8; confirm wording is fair as a paraphrase.",
       "Confirm the Devanagari छवालात and the etymology chava + alata.",
       "Trapdoor cites the Itivuttaka (Iti 91) firebrand comparison; confirm the reference or replace with another occurrence.",
-      "Audit (second sample): replaced the stock line 'here's where it surprises people', and the teach head 'your own good comes first', which overstates AN 4.95 (it ranks own-good above others-only, and both together highest)."
+      "Audit (second sample): replaced the stock line 'here's where it surprises people', and the teach head 'your own good comes first', which overstates AN 4.95 (it ranks own-good above others-only, and both together highest).",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: one action at a time, a life built the way you'd build a wall, stone by stone. Your line was pick up the next stone. Which action did you do well? Day six hundred two, the end of a week.",
+      "voice": "Yesterday's word was Marcus, who built a life the way you'd build a wall, stone by stone. Your line was pick up the next stone.",
       "screen": [
         "`ONE ACTION AT A TIME.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "It's Sunday night and you open the calendar. Not this week. The whole year. The lease renewal, the move, the parent who's getting older, the money that has to stretch until spring. In thirty seconds every trouble you might ever have is sitting on your chest at once. None of it is happening yet. All of it feels heavy. Marcus Aurelius knew that weight. He ruled through years of war and plague, and a few entries after yesterday's, he wrote himself a short note about exactly this feeling. Today: not the whole life at once.",
+      "voice": "It's Sunday night and you open the calendar. Not this week: the whole year. The lease renewal, the move, the parent who's getting older, the money that has to stretch until spring. In thirty seconds every trouble you might ever have is sitting on your chest at once. None of it is happening yet. All of it feels heavy. Marcus Aurelius ruled through years of war and plague, and a few entries after yesterday's, he wrote himself a short note about exactly this feeling.",
       "screen": [
         "`THE WHOLE YEAR ON YOUR CHEST.` → `NONE OF IT HAPPENING YET.` → `NOT THE WHOLE LIFE AT ONCE.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the note. In book eight Marcus tells himself not to let his thoughts gather up, all at once, every hardship he expects to meet. George Long's 1862 translation begins it plainly: “Do not disturb thyself by thinking of the whole of thy life.” Second, the question. Instead, Marcus says, with each thing as it arrives, ask: what in this is actually unbearable, past bearing? He thinks you'd be embarrassed to answer. Most present moments, looked at alone, are smaller than the dread that came with them. Third, the shrinking trick. Neither the past nor the future weighs on you, he writes, only the present. And even the present gets smaller if you mark it off by itself, draw its edges tight around this hour, and then ask your mind whether it really can't hold out against something so little. Fourth, why it isn't avoidance. Marcus planned campaigns and wrote laws; he didn't stop thinking ahead. The note is about carrying, not planning. You can plan the year on paper and still carry only today. And the week, looking back: not by reputation, steadily, no blaming, fig, what it means, one action at a time, and now, this piece only. Book eight keeps making the same move. It shrinks the field until what's left is something a person can actually do.",
+      "voice": "In book eight Marcus tells himself not to let his thoughts gather up, all at once, every hardship he expects to meet. George Long's 1862 translation begins it plainly: “Do not disturb thyself by thinking of the whole of thy life.” Instead, with each thing as it arrives, ask: what in this is actually unbearable, past bearing? He thinks you'd be embarrassed to answer. Most present moments, looked at alone, are smaller than the dread that came with them. Then a shrinking trick. Neither the past nor the future weighs on you, he writes, only the present. And even the present gets smaller if you mark it off by itself, draw its edges tight around this hour, and ask your mind whether it really can't hold out against something so little. This isn't avoidance. Marcus planned campaigns and wrote laws; he didn't stop thinking ahead. The note is about carrying, not planning: you can plan the year on paper and still carry only today. And the week, looking back: not by reputation, steadily, no blaming, fig, what it means, one action at a time, and now, this piece only. Book eight keeps shrinking the field until what's left is something a person can actually do.",
       "screen": [
         "`DON'T PICTURE THE WHOLE LIFE.` · `ASK: WHAT HERE IS UNBEARABLE?` · `MARK THE PRESENT OFF BY ITSELF.` · `PLAN THE YEAR, CARRY THE DAY.` · then, large: `THIS PIECE ONLY.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Settle, and breathe. Let the big picture come up for a moment: the year, the list, the worries. Notice its weight. Now draw a small box around today. Just today. What actually has to happen between now and sleep? Name two or three things, no more. Anything outside the box, set it on a shelf. It will still be there tomorrow, and tomorrow it gets its own box. Breathe with only today's box in view. The bell holds the time.",
+      "voice": "Let the big picture come up for a moment, the year, the list, the worries, and notice its weight. Now draw a small box around today and name two or three things that actually have to happen before sleep, no more. Set everything outside the box on a shelf; tomorrow it gets its own box.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: this piece only. Plan only today. When tomorrow's worry shows up, say this piece only, and come back to the box. Day six hundred two.",
+      "voice": "Your line: this piece only. The present, marked off, is small enough to hold. A week of book eight, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Many people who read the Meditations keep a list for today rather than a worry list for the year, and when dread about the future rises they ask Marcus's question of the present hour: what here is actually unbearable?",
   "games": {
+    "guess": [
+      "the translator of the 1862 English Meditations",
+      "a Roman senator who copied out Marcus's notes",
+      "the scholar who found the lost Greek manuscript"
+    ],
     "match": {
       "prompt": "not the whole life at once — tap the pairs.",
       "pairs": [
@@ -132,14 +137,37 @@
     ],
     "recall": [
       [
-        "Heraclitus",
-        "no stepping in the same river twice"
+        "Serenus",
+        "neither sick nor well, he wrote to Seneca"
       ],
       [
-        "galene",
-        "a sea gone flat after wind"
+        "fortuna",
+        "Latin for fortune, chance"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your sister",
+      "says": "When I think about this whole year ahead, I can't breathe. How do you handle it?",
+      "options": [
+        "Marcus says don't carry your whole life at once. Plan the year, but carry just today.",
+        "Marcus says stop planning ahead at all, since thinking about the future is the problem.",
+        "Marcus says the heavy feeling proves the year will be hard, so brace for all of it now."
+      ],
+      "answer": 0,
+      "meaning": "In 8.36 Marcus says not to gather every expected hardship at once. He still planned ahead; the note is about carrying only the present."
+    },
+    "gloss": {
+      "George Long": {
+        "meaning": "translator of the Meditations into English, 1862"
+      },
+      "Marcus Aurelius": {
+        "meaning": "Roman emperor whose notes to himself became the Meditations",
+        "say": "MAR-kus aw-REE-lee-us"
+      },
+      "campaigns": {
+        "meaning": "a series of military operations in a war"
+      }
+    }
   },
   "sources": [
     {
@@ -163,7 +191,9 @@
       "8.36 paraphrase: don't gather all expected troubles; ask of each 'what is there in this which is intolerable'; neither past nor future pains you, only the present, which is diminished if circumscribed. Confirm.",
       "Week look-back lists the carries of days 596–602.",
       "Reviewer softened the hook: 'he was running an empire at war' became 'he ruled through years of war and plague', since where and when book 8 was written is unknown (same softening as day 601). Confirm.",
-      "Trapdoor: the manuscript heading τὰ εἰς ἑαυτόν and doubt about whether it is Marcus's own title. Confirm wording."
+      "Trapdoor: the manuscript heading τὰ εἰς ἑαυτόν and doubt about whether it is Marcus's own title. Confirm wording.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

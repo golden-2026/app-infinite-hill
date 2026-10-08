@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the people of the bench, poor companions living in the mosque. Your line was: the bench of the poor. Which learner came to mind, and what could you give them? Day seven hundred seventy-three.",
+      "voice": "Yesterday: the people of the bench, poor companions living in the mosque. Your line was: the bench of the poor.",
       "screen": [
         "`THE BENCH OF THE POOR.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Sa'd says, in Abd al-Rahman's telling: I am the wealthiest of the Ansar. I will divide my wealth in half, and half is yours. Weigh that offer. This is not a meal or a loan. It is half of everything, given to a man he has just met, because the Prophet called them brothers. Abd al-Rahman's answer is the line we're carrying today. He says, in effect: I have no need of that. Is there a market here where trade goes on? Sa'd tells him: the market of Qaynuqa. The next morning Abd al-Rahman is there. He buys and sells dried curd and clarified butter, small goods, and keeps going back day after day. Before long, Bukhari says, he turns up with a trace of yellow perfume on him, the sign of a bridegroom. He has earned enough to marry. Look at the two men side by side. Neither of them is the hero alone. Sa'd's generosity is real and total: he offered half, and meant it. Abd al-Rahman's refusal is not pride. He answers with thanks, and with a blessing on Sa'd's family and wealth. What he asks for instead is a door: not the money, but the place where money is honestly made. Both are kindness. One gives. The other protects the giver, and keeps his own dignity. The brotherhood stayed whole, and so did both men's dignity.",
+      "voice": "Sa'd says, in Abd al-Rahman's telling: I am the wealthiest of the Ansar. I will divide my wealth in half, and half is yours. Weigh that. Not a meal or a loan: half of everything, to a man he has just met, because the Prophet called them brothers. Abd al-Rahman answers, in effect: I have no need of that. Is there a market here where trade goes on? Sa'd tells him: the market of Qaynuqa. The next morning Abd al-Rahman is there. He buys and sells dried curd and clarified butter, small goods, and keeps going back, day after day. Before long, Bukhari says, he turns up with a trace of yellow perfume on him, the sign of a bridegroom. He has earned enough to marry. Neither man is the hero alone. Sa'd's generosity is real and total: he offered half, and meant it. Abd al-Rahman's refusal isn't pride. He answers with thanks, and with a blessing on Sa'd's family and wealth. What he asks for instead is a door: not the money, but the place where money is honestly made. Both are kindness. One gives. The other protects the giver, and keeps his own dignity. The brotherhood stayed whole.",
       "screen": [
         "`HALF OF EVERYTHING IS YOURS.` · `IS THERE A MARKET HERE?` · `CURD AND BUTTER, DAY AFTER DAY.` · `ONE GIVES, ONE PROTECTS THE GIVER.` · then, large: `SHOW ME THE MARKET.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: earn something honestly. Sit, and let your breathing slow. Think about your work, paid or unpaid, and the way you earn what you have. Notice one place where it's honest and clean, and let yourself be glad of it. Then notice one place that could be cleaner: a shortcut, an exaggeration, a corner cut. Don't argue with it. Just see it. Choose one small thing you'll do today to earn your keep straight. If you pray, you can ask Allah to bless what you earn. Rest there. The bell holds the time.",
+      "voice": "Think about your work, paid or unpaid, and the way you earn what you have, and let yourself be glad of one place where it's honest and clean. Then notice one place that could be cleaner, a shortcut, an exaggeration, a corner cut, and simply see it, without arguing with it. If you pray, you can ask Allah to bless what you earn.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: a trace of yellow perfume. Today, when someone offers to carry you, thank them, and ask for the door instead. Day seven hundred seventy-three.",
+      "voice": "Your line: a trace of yellow perfume. He asked for the door, and walked through it himself. See you tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Muslims tell the story of Abd al-Rahman ibn Awf and Sa'd ibn al-Rabi' when speaking of the brotherhood (mu'akhah) between the emigrants and the Ansar, and of earning an honest living.",
   "games": {
+    "guess": [
+      "the market where Abd al-Rahman began to trade",
+      "the yellow perfume worn by a new bridegroom",
+      "the clan of Sa'd, who offered half his wealth"
+    ],
     "match": {
       "prompt": "show me the market — tap the pairs.",
       "pairs": [
@@ -132,14 +137,47 @@
     ],
     "recall": [
       [
-        "al-Amin",
-        "the trustworthy"
+        "Thawr",
+        "the mountain with the cave where they hid"
       ],
       [
-        "Yathrib",
-        "a town worn down by feuds"
+        "barakah",
+        "blessing, good that stays"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your little sister",
+      "says": "Why didn't Abd al-Rahman just accept half of Sa'd's wealth?",
+      "options": [
+        "He blessed Sa'd and asked for the market instead, to earn his own way.",
+        "He was too proud to accept help from anyone in Medina.",
+        "He didn't trust that Sa'd really meant the offer he made."
+      ],
+      "answer": 0,
+      "meaning": "He thanked and blessed Sa'd, then asked: is there a market here? Both were kind: one gave, the other protected the giver."
+    },
+    "gloss": {
+      "Abd al-Rahman ibn Awf": {
+        "meaning": "an emigrant from Mecca who asked for the market",
+        "script": "عبد الرحمن بن عوف",
+        "say": "ab-dur-RAH-maan ibn AWF"
+      },
+      "Sa'd ibn al-Rabi'": {
+        "meaning": "his brother in Medina, who offered half his wealth",
+        "script": "سعد بن الربيع",
+        "say": "SAAD ibn ar-ra-BEE"
+      },
+      "Ansar": {
+        "meaning": "the helpers: the believers of Medina",
+        "script": "الأنصار",
+        "say": "an-SAAR"
+      },
+      "Qaynuqa": {
+        "meaning": "the market Sa'd sent him to",
+        "script": "قينقاع",
+        "say": "qay-nu-QAA"
+      }
+    }
   },
   "sources": [
     {
@@ -165,7 +203,9 @@
       "Abd al-Rahman's blessing on Sa'd's family and wealth is in Bukhari 2049 (Anas); confirm.",
       "'Paired them up with the people of the city': the mu'akhah; script gives no count of pairs.",
       "Audit pass: 'each newcomer was given a local brother' (a count no cited text gives) became 'newcomers were given local brothers'; 'saffron' became 'yellow perfume' (sufrah; confirm the wording); cut 'nobody had to carry anybody', which cast Sa'd's offer as a burden.",
-      "Editor pass: cut the flourish 'by a single word' from the hook (no cited text says how the pairing was made); 'Think about what that offer means' became 'Weigh that offer' to avoid the banned 'Think' opener pattern."
+      "Editor pass: cut the flourish 'by a single word' from the hook (no cited text says how the pairing was made); 'Think about what that offer means' became 'Weigh that offer' to avoid the banned 'Think' opener pattern.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

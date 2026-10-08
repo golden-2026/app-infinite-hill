@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: pleasure, and your line, the escape is from the hook. Did you say the three words before one small pleasure, and then enjoy it anyway? Day four hundred twelve.",
+      "voice": "Yesterday: pleasure, seen three ways: the gratification, the danger and the escape. Your line: the escape is from the hook.",
       "screen": [
         "`PLEASURE — THE ESCAPE IS FROM THE HOOK.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A farmer can buy the best seed in the world, and if the field is full of stones and old stumps, not much comes up. Before planting, you clear the ground. It's slow, heavy work, with nothing to show for it yet. The Buddha described five patches of barren, stony ground in the heart, and five things that tie it down, and said the practice won't grow until they're dealt with. Today: wildernesses of the heart.",
+      "voice": "A farmer can buy the best seed in the world, and if the field is full of stones and old stumps, not much comes up. Before planting, you clear the ground. It's slow, heavy work, with nothing to show for it yet. The Buddha described five patches of barren, stony ground in the heart, and five things that tie it down, and said the practice won't grow until they're dealt with.",
       "screen": [
         "`THE BEST SEED.` → `A FIELD FULL OF STONES.` → `CLEAR THE GROUND FIRST.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "MN 16, the Cetokhila. Ceto means heart or mind. Khila is harder to pin down: translators render it barrenness, wasteland, or a stake, something hard and stiff driven into the ground. Either way, it's ground that won't take seed. The five are these. Doubt about the Teacher. Doubt about the teaching. Doubt about the community. Doubt about the training. And the fifth: anger at your companions in the practice, being displeased and resentful toward them. Notice that last one. It isn't about doctrine at all. Being irritated with the people you practice alongside can make the ground as barren as any doubt. Then come five shackles that bind the heart: desire for sense pleasures, attachment to the body, attachment to outward forms, eating your fill and then indulging in sleep and lying around, and living the spiritual life only to be reborn among the gods. And then a picture for what happens when the field is cleared. A hen has eight or ten or twelve eggs. She sits on them, keeps them warm, turns them properly. Even if no wish arises in her, may my chicks break out safely with their claws and beaks, they'll hatch anyway. Clear the ground and do the patient work, and the result comes, whether you wish for it or not. In the sutta, the hen's patient work stands for fifteen things: the five wildernesses cleared, the five shackles cut, four bases of spiritual power developed, and enthusiasm. The eggs are warmed, not forced.",
+      "voice": "MN 16, the Cetokhila. Ceto means heart or mind. Khila is harder to pin down: translators render it barrenness, wasteland, or a stake, something hard and stiff driven into the ground. Either way, it's ground that won't take seed. The five are doubt about the Teacher, the teaching, the community, and the training. And the fifth: anger at your companions in the practice, being displeased and resentful toward them. That last one isn't about doctrine at all. Irritation with the people you practice alongside can make the ground as barren as any doubt. Then five shackles that bind the heart: desire for sense pleasures, attachment to the body, attachment to outward forms, eating your fill and then indulging in sleep and lying around, and living the spiritual life only to be reborn among the gods. And a picture for the cleared field. A hen has eight or ten or twelve eggs. She sits on them, keeps them warm, turns them properly. Even if no wish arises in her, may my chicks break out safely with their claws and beaks, they'll hatch anyway. In the sutta, the hen's patient work stands for fifteen things: the five wildernesses cleared, the five shackles cut, four bases of spiritual power developed, and enthusiasm. The eggs are warmed, not forced.",
       "screen": [
         "`KHILA — BARREN, STONY GROUND.` · `FOUR DOUBTS AND ONE ANGER.` · `FIVE SHACKLES.` · `THE HEN AND HER EGGS.` · then, large: `CLEAR THE FIELD.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Sit, and look over the field honestly. Is there a doubt that's gone hard and stony: about a teacher, a practice, a community you belong to? Or is it the fifth one, irritation with someone who shares a path with you? Pick one patch. You don't need to solve it. Just loosen it a little: breathe with it, the way a hen sits warmly on her eggs. The bell holds the time.",
+      "voice": "Look over the field honestly: is there a doubt that's gone hard and stony, about a teacher, a practice, a community you belong to? Or is it the fifth one, irritation with someone who shares your path? Pick one patch and just loosen it a little, breathing with it the way a hen sits warmly on her eggs.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: clear the field. Today, clear one stony patch: ask the question you've been doubting about, or soften toward one companion. Day four hundred twelve.",
+      "voice": "Your line: clear the field. Patient work, and the eggs hatch in their time. See you tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Buddhist communities often encourage practitioners to bring doubts to a teacher rather than leave them unspoken, and the monastic rule sets out procedures for settling disputes between members.",
   "games": {
+    "guess": [
+      "a barren, stony place in the heart",
+      "a fence built around a sacred grove",
+      "a heavy stone used to grind grain"
+    ],
     "match": {
       "prompt": "match the pieces of MN 16.",
       "pairs": [
@@ -132,14 +137,42 @@
     ],
     "recall": [
       [
-        "jhana",
-        "meditative absorption"
+        "samma-ditthi",
+        "right view"
       ],
       [
-        "samadhi",
-        "the mind gathered"
+        "vedana",
+        "feeling"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your friend from book club",
+      "says": "I'm annoyed with someone in my meditation group. Is that a big deal?",
+      "options": [
+        "MN 16 names anger at companions a barren patch, as stunting as any doubt.",
+        "No, only doubts about the teaching can get in the way of practice.",
+        "Yes, it means your meditation has stopped working completely."
+      ],
+      "answer": 0,
+      "meaning": "MN 16's fifth barren place is anger at companions in the practice: not about doctrine, yet it makes the ground as barren as doubt."
+    },
+    "gloss": {
+      "Cetokhila": {
+        "meaning": "barrenness of the heart",
+        "script": "चेतोखिल",
+        "say": "CHAY-toh-KHI-luh"
+      },
+      "Ceto": {
+        "meaning": "heart or mind",
+        "script": "चेतो",
+        "say": "CHAY-toh"
+      },
+      "Khila": {
+        "meaning": "barren ground, or a stake driven in",
+        "script": "खिल",
+        "say": "KHI-luh"
+      }
+    }
   },
   "sources": [
     {
@@ -156,7 +189,9 @@
       "Meanings of khila (barrenness / stake) given as translators' range; please confirm.",
       "Five shackles (vinibandha) summarized from memory; please confirm the fourth (eating one's fill, indulging in sleep and lying down).",
       "The hen simile also appears elsewhere (e.g. MN 53); fine to keep here.",
-      "Editor review (2026-10-01): the closing uplift replaced with what the hen simile stands for in MN 16 (the fifteen factors); 'nobody likes that part' cut; howItsDone now points to monastic dispute procedures instead of a general claim. Keeper: confirm the fifteen (5 + 5 + four bases of power + enthusiasm)."
+      "Editor review (2026-10-01): the closing uplift replaced with what the hen simile stands for in MN 16 (the fifteen factors); 'nobody likes that part' cut; howItsDone now points to monastic dispute procedures instead of a general claim. Keeper: confirm the fifteen (5 + 5 + four bases of power + enthusiasm).",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

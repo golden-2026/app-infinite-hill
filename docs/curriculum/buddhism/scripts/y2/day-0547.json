@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Last time: Ambapali's invitation, and your line, first come, first honored. Did you keep a promise when something shinier came along? Today the rains come, and the Buddha falls ill. Day five hundred forty-seven.",
+      "voice": "Last time: Ambapali's invitation, and a promise kept to the one who asked first. Your line: first come, first honored. Today the rains come, and the Buddha falls ill.",
       "screen": [
         "`FIRST COME, FIRST HONORED.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "The rains are about to begin. The Buddha sends the monks off to spend the season around Vesali, wherever they have friends, and stays on with Ananda in the little village of Beluva. Then the illness comes, sharp and dangerous. Ananda watches, frightened, and holds on to one hope. Surely the teacher won't go without some last word for the community. Something kept for the end, saved for the people closest to him. Today: no closed fist.",
+      "voice": "The rains are about to begin. The Buddha sends the monks off to spend the season around Vesali, wherever they have friends, and stays on with Ananda in the little village of Beluva. Then the illness comes, sharp and dangerous. Ananda watches, frightened, and holds on to one hope. Surely the teacher won't go without some last word for the community. Something kept for the end, saved for the people closest to him.",
       "screen": [
         "`THE RAINS AT BELUVA.` → `A SHARP ILLNESS.` → `WAITING FOR A LAST WORD.`"
       ]
@@ -44,13 +44,13 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Sit, and make a loose fist with one hand. Feel how much effort it takes to hold it closed. Breathe. Now, slowly, let the fingers open, until the hand rests palm up on your knee. Leave it there. Notice whether there's something you've been holding back from someone: a piece of knowledge, a skill, an honest word, or the plain fact that you're tired. Just notice it, with the hand open. The bell holds the time.",
+      "voice": "Make a loose fist with one hand and feel the effort it takes to hold it closed. Then slowly let the fingers open, until the hand rests palm up on your knee. With the hand open, notice whether there's something you've been holding back from someone: a piece of knowledge, a skill, an honest word, or the plain fact that you're tired.",
       "screen": []
     },
     {
       "type": "the word",
       "duration": "25 sec",
-      "voice": "acariyamutthi. The Buddha's words at Beluva: there is nothing kept back, no secret teaching saved for the end. Today's word.",
+      "voice": "Acariyamutthi. The Buddha's words at Beluva: there is nothing kept back, no secret teaching saved for the end. Today's word.",
       "screen": [
         "`ACARIYAMUTTHI — today's word`."
       ]
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: an open hand in both directions. Today, share one thing you know that would help someone, fully, without keeping the best part for yourself. Day five hundred forty-seven.",
+      "voice": "Your line: an open hand in both directions. Nothing hidden in the teaching, and nothing hidden about his frailty. Day five hundred forty-seven, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Buddhist teachers often cite the open hand of DN 16 when they say there is no secret core held back for insiders, and Theravada communities chant and teach the suttas openly to anyone who comes.",
   "games": {
+    "guess": [
+      "a teacher's closed fist, holding back",
+      "a teacher's blessing given at the end",
+      "a secret teaching for the closest pupils"
+    ],
     "match": {
       "prompt": "no closed fist: tap the pairs.",
       "pairs": [
@@ -136,10 +141,47 @@
         "compassion, care for others' welfare"
       ],
       [
-        "patihariya",
-        "wonder, marvel"
+        "upadana",
+        "clinging, grasping"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your grandmother",
+      "says": "Did the Buddha save some last secret for his closest students before he died?",
+      "options": [
+        "No: he said he taught with no closed fist, holding nothing back for the end.",
+        "Yes: he promised Ananda one final secret once the rains were over.",
+        "No, but he hid how ill he was, so the monks wouldn't worry about him."
+      ],
+      "answer": 0,
+      "meaning": "At Beluva he told Ananda he taught without inside or outside, with no teacher's closed fist, and he was just as open about his frail body."
+    },
+    "gloss": {
+      "acariyamutthi": {
+        "meaning": "a teacher's closed fist, holding something back",
+        "script": "आचरियमुट्ठि",
+        "say": "AH-chuh-ri-yuh-MOOT-thi"
+      },
+      "Beluva": {
+        "meaning": "the village near Vesali where the Buddha fell ill",
+        "say": "bay-LOO-vuh"
+      },
+      "Tathagata": {
+        "meaning": "a title the Buddha uses for himself",
+        "script": "तथागत",
+        "say": "tuh-TAH-guh-tuh"
+      },
+      "Dhamma": {
+        "meaning": "the Buddha's teaching",
+        "script": "धम्म",
+        "say": "DUM-muh"
+      },
+      "Vesali": {
+        "meaning": "the city near where the monks spent the rains",
+        "script": "वेसाली",
+        "say": "vay-SAH-lee"
+      }
+    }
   },
   "sources": [
     {
@@ -156,7 +198,9 @@
       "DN 16 paraphrased. Rhys Davids (SBE XI, 1881) renders the closed-fist passage, but the exact wording was not quoted because it could not be confirmed.",
       "Confirm: Beluva near Vesali, the rains retreat; suppressing the illness by effort; 'eighty years old'; the strapped cart simile.",
       "The scholar floor's 'often cited against an esoteric core' is a general observation; schools that teach later esoteric transmissions read the passage in their own ways. Keepers may want to phrase this.",
-      "Editor review (2026-10-01): rewrote the hook: dropped the recipe image and the unsourced claim that ancient teachers kept secrets; Ananda now hopes for a last instruction for the community, as in DN 16, not a secret. Softened many/many in howItsDone."
+      "Editor review (2026-10-01): rewrote the hook: dropped the recipe image and the unsourced claim that ancient teachers kept secrets; Ananda now hopes for a last instruction for the community, as in DN 16, not a secret. Softened many/many in howItsDone.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

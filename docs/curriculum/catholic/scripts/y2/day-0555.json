@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the farewell on the beach at Miletus. Your line was coveted no one's silver. What did you do with open hands? Day five hundred fifty-five.",
+      "voice": "Yesterday, the farewell on the beach at Miletus. Your line was coveted no one's silver.",
       "screen": [
         "`COVETED NO ONE'S SILVER.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Some visitors from Asia see Paul in the Temple and shout that he has brought Greeks into the holy place. He hadn't. They'd seen him in the city earlier with Trophimus, a Gentile from Ephesus, and assumed. The crowd seizes Paul, drags him out, and the gates are shut. They're trying to kill him when word reaches the Roman commander of the garrison, who runs down with soldiers. The beating stops. Paul is chained and carried up the steps of the barracks, because the crowd is so violent. And at the top of the steps, bruised, in chains, Paul asks to speak. The commander is surprised he speaks Greek. Paul tells him he is a Jew of Tarsus in Cilicia, in the Douay-Rheims, \"a citizen of no mean city.\" Then he turns and speaks to the crowd in their own language, Hebrew or Aramaic, and they fall quiet. What does he say? Not an argument. His story. I was brought up in this city at the feet of Gamaliel. I persecuted this Way. On the road to Damascus a light shone around me, and I heard a voice: \"Saul, Saul, why persecutest thou me?\" Then a devout man named Ananias came and said, Brother Saul, look up. That's all. What happened to me. They listen, until he says the Lord sent him to the Gentiles. Then the uproar starts again. Later, about to be flogged, Paul quietly asks the centurion whether it's lawful to scourge a Roman citizen who hasn't been condemned. It isn't. The flogging stops.",
+      "voice": "Some visitors from Asia see Paul in the Temple and shout that he has brought Greeks into the holy place. He hadn't. They'd seen him in the city earlier with Trophimus, a Gentile from Ephesus, and assumed. The crowd seizes Paul, drags him out, and the gates are shut. They're trying to kill him when word reaches the Roman commander of the garrison, who runs down with soldiers. The beating stops. Paul is chained and carried up the steps of the barracks, the crowd is so violent. At the top of the steps, bruised and in chains, Paul asks to speak. The commander is surprised he speaks Greek. Paul says he is a Jew of Tarsus in Cilicia, in the Douay-Rheims, \"a citizen of no mean city.\" Then he turns and speaks to the crowd in their own language, Hebrew or Aramaic, and they fall quiet. What does he say? Not an argument. His story. I was brought up in this city at the feet of Gamaliel. I persecuted this Way. On the road to Damascus a light shone around me, and I heard a voice: \"Saul, Saul, why persecutest thou me?\" Then a devout man named Ananias came and said, Brother Saul, look up. That's all: what happened to him. They listen, until he says the Lord sent him to the Gentiles. Then the uproar starts again. Later, about to be flogged, Paul quietly asks the centurion whether it's lawful to scourge a Roman citizen who hasn't been condemned. It isn't. The flogging stops.",
       "screen": [
         "`A RUMOR IN THE TEMPLE.` · `CHAINED ON THE BARRACKS STEPS.` · `A JEW OF TARSUS, ASKING TO SPEAK.` · `SAUL, SAUL, WHY PERSECUTEST THOU ME?` · then, large: `HE TELLS WHAT HAPPENED.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: tell your story simply. Settle, and breathe. If someone asked you why you're on this path, practicing, listening, whatever brought you here, what would you say? Not an argument. Just what happened. Who you were before. One moment that changed something. Where you are now. Try it in three short sentences, in your head. It doesn't have to be dramatic. A quiet story told honestly is still yours. If you pray, you can thank God for one moment in it. The bell holds the time.",
+      "voice": "If someone asked why you're on this path, practicing, listening, whatever brought you here, what would you say? Not an argument, just what happened: who you were before, one moment that changed something, where you are now, in three short sentences in your head. It doesn't have to be dramatic, and if you pray, thank God for one moment in it.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: tell what happened. Today, if anyone asks why you do what you do, tell them simply and honestly. Day five hundred fifty-five.",
+      "voice": "Your line: tell what happened. A quiet story told honestly is still yours. That's day five hundred fifty-five.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "In Catholic parishes, adults entering the Church often share their faith story with sponsors and the community during their preparation, and Catholics speak of giving witness by telling plainly what God has done in their lives.",
   "games": {
+    "guess": [
+      "seized in the Temple over a rumor, then held by Rome",
+      "taken by the Temple guard for preaching in its courts",
+      "turned in by the elders for breaking the Law of Moses"
+    ],
     "match": {
       "prompt": "in Jerusalem — tap the pairs.",
       "pairs": [
@@ -132,14 +137,47 @@
     ],
     "recall": [
       [
-        "Rhoda",
-        "so glad she forgot to open the gate"
+        "parrēsia",
+        "boldness, plain speech"
       ],
       [
-        "Tabitha",
-        "Dorcas in Greek: a gazelle"
+        "egō eimi",
+        "I am he: Jesus in the garden"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your brother-in-law",
+      "says": "When Paul was seized in Jerusalem, how did he defend himself?",
+      "options": [
+        "From the barracks steps he told the crowd his story: who he was, the road, Ananias.",
+        "He argued the Law line by line until the whole crowd agreed he was right.",
+        "He stayed silent and let the Roman commander speak in his defense."
+      ],
+      "meaning": "Paul didn't argue. In the crowd's own language he told what happened: brought up under Gamaliel, the persecutor, the light on the road, and Ananias.",
+      "answer": 0
+    },
+    "gloss": {
+      "Agabus": {
+        "meaning": "a prophet who tied himself with Paul's belt",
+        "say": "AG-uh-bus"
+      },
+      "Trophimus": {
+        "meaning": "a Gentile from Ephesus seen with Paul in the city",
+        "say": "TROF-ih-mus"
+      },
+      "Cilicia": {
+        "meaning": "the region where Paul's city, Tarsus, stood",
+        "say": "sih-LISH-uh"
+      },
+      "centurion": {
+        "meaning": "a Roman officer over soldiers",
+        "say": "sen-TOOR-ee-un"
+      },
+      "Gamaliel": {
+        "meaning": "the teacher Paul was brought up under",
+        "say": "guh-MAY-lee-ul"
+      }
+    }
   },
   "sources": [
     {
@@ -170,7 +208,9 @@
       "The framing emphasizes a rumor and avoids blaming 'the Jews'; Paul is himself a Jew worshiping in the Temple. A Keeper should confirm the tone.",
       "'Hebrew dialect' commonly understood as Aramaic: confirm.",
       "Roman citizens' protection from flogging (Lex Porcia / Lex Julia): confirm.",
-      "Editor review (2026-10-01): SERIOUS: Acts 21:39 was quoted from the KJV; now the Douay-Rheims, verified; 22:7 is identical in both and its source now names the Douay. Ananias's words follow Douay 22:13 ('Brother Saul, look up') instead of the KJV's 'receive thy sight'. Cut the stock line 'Rumors move faster than facts'; the vow now follows 21:23–26."
+      "Editor review (2026-10-01): SERIOUS: Acts 21:39 was quoted from the KJV; now the Douay-Rheims, verified; 22:7 is identical in both and its source now names the Douay. Ananias's words follow Douay 22:13 ('Brother Saul, look up') instead of the KJV's 'receive thy sight'. Cut the stock line 'Rumors move faster than facts'; the vow now follows 21:23–26.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: animus. Your line was the mind helps. Were you gentle with an ache, without adding the story? Day four hundred seventy-three.",
+      "voice": "Yesterday's word was animus, the mind that keeps a sick body kind company. Your line was the mind helps.",
       "screen": [
         "`ANIMUS — THE MIND HELPS.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Everyone who usually bothers Seneca has gone off to watch a public match, and for once nobody knocks on his door. In the quiet, he writes the eightieth letter, and his mind wanders to the theater. On the stage, an actor in a purple robe strides forward and declares that he rules over Argos. Another threatens to kill Menelaus with his own hand. Then the play ends, and the kings go home. Seneca knows exactly what that actor earns. And he thinks the same thing is happening on the streets of Rome every day, without a stage. Today: stage kings and masks.",
+      "voice": "Everyone who usually bothers Seneca has gone off to watch a public match, and for once nobody knocks on his door. In the quiet, he writes the eightieth letter, and his mind wanders to the theater. On stage, an actor in a purple robe strides forward and declares he rules over Argos. Another threatens to kill Menelaus with his own hand. Then the play ends, and the kings go home. Seneca knows exactly what that actor earns, and he thinks the same thing happens on the streets of Rome every day, without a stage.",
       "screen": [
         "`EVERYONE'S GONE TO THE MATCH.` → `A KING IN PURPLE ON THE STAGE.` → `THEN THE PLAY ENDS.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the actor. The man who stalks across the stage saying he rules Argos, Seneca says, is a slave, paid five measures of grain and five denarii. The one threatening Menelaus is paid by the day and sleeps on rags. The purple is costume. The crown is borrowed. Second, the street. The people carried along in litters above the crowd are the same, he says. His word for their happiness is personata: masked. Take off the mask, and there may be little left to envy. Third, how to judge. When you buy a horse, Seneca points out, you have the saddle and the blanket taken off, so you can see the animal. When you judge a person, don't count the estate, the clothes or the title. Strip those away and weigh the person, not the wrapping around them. Fourth, the mask. Persona was the Latin word for an actor's mask, and dictionaries trace our word person back to it. Seneca's point turns both ways. Don't be fooled by someone else's mask, and don't confuse your own with your face. The job title, the follower count, the nice car: costumes. Useful sometimes. Not you.",
+      "voice": "The man who stalks across the stage saying he rules Argos, Seneca says, is a slave, paid five measures of grain and five denarii. The one threatening Menelaus is paid by the day and sleeps on rags. The purple is costume. The crown is borrowed. The people carried in litters above the crowd are the same, he says. His word for their happiness is personata: masked. Take off the mask, and there may be little left to envy. When you buy a horse, Seneca points out, you have the saddle and blanket taken off, so you can see the animal. When you judge a person, don't count the estate, the clothes or the title. Weigh the person, not the wrapping. Persona was the Latin word for an actor's mask, and dictionaries trace our word person back to it. Seneca's point cuts both ways. Don't be fooled by someone else's mask, and don't confuse your own with your face. The job title, the follower count, the nice car: costumes. Useful sometimes. Not you.",
       "screen": [
         "`THE KING EARNS A FEW COINS.` · `ENVIED LIVES, MASKED HAPPINESS.` · `TAKE THE SADDLE OFF THE HORSE.` · `PERSONA: THE MASK, NOT THE FACE.` · then, large: `BEHIND THE MASK.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Think of one person whose life looks enviable to you: a neighbor, a colleague, someone online. Picture their costume: the clothes, the house, the title. Now, gently, imagine them at home after the play, the robe off, sitting on the edge of the bed. What might they be worried about? Let them be a person, not a role. Then, briefly, take off one piece of your own costume, and breathe as yourself. The bell holds the time.",
+      "voice": "Think of one person whose life looks enviable to you, and picture their costume: the clothes, the house, the title. Now imagine them at home after the play, robe off, sitting on the edge of the bed, and let them be a person, not a role. Then take off one piece of your own costume, and breathe as yourself.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: behind the mask. Today, look past one mask: when someone's title or costume impresses or annoys you, ask what the person behind it might need. Day four hundred seventy-three.",
+      "voice": "Your line: behind the mask. Under every costume, a person. Day four hundred seventy-three, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Readers of Seneca often try to judge others, and themselves, apart from wealth, titles and appearances, the way he says a buyer looks at a horse without its saddle.",
   "games": {
+    "guess": [
+      "Latin for an actor's mask, the root of our word person",
+      "a famous Roman actor who played the kings of Argos",
+      "the inner self you show only to close friends"
+    ],
     "match": {
       "prompt": "the stage king — tap the pairs.",
       "pairs": [
@@ -132,14 +137,47 @@
     ],
     "recall": [
       [
-        "otium",
-        "leisure that's used"
+        "Metronax",
+        "the teacher Seneca heard in old age"
       ],
       [
-        "Harpaste",
-        "blind, and didn't know it"
+        "meditare mortem",
+        "rehearse death"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your classmate",
+      "says": "That influencer has the perfect life. Why can't mine look like that?",
+      "options": [
+        "Seneca would say envied lives wear masks; take off the costume and judge the person.",
+        "Seneca would say their life really is perfect, so the only fix is to copy it.",
+        "Seneca would say only actors wear masks; everyone else shows you their real face."
+      ],
+      "answer": 0,
+      "meaning": "Letter eighty: stage kings earn a few coins, and envied happiness is masked. Judge a person as you'd judge a horse, with the saddle off."
+    },
+    "gloss": {
+      "Argos": {
+        "meaning": "a Greek city; the actor plays its king",
+        "say": "AR-gos"
+      },
+      "Menelaus": {
+        "meaning": "a king of Greek legend, threatened on stage",
+        "say": "men-uh-LAY-us"
+      },
+      "denarii": {
+        "meaning": "Roman silver coins",
+        "say": "deh-NAIR-ee-eye"
+      },
+      "personata": {
+        "meaning": "Latin: masked; Seneca's word for envied happiness",
+        "say": "per-soh-NAH-tuh"
+      },
+      "Persona": {
+        "meaning": "Latin: an actor's mask",
+        "say": "per-SOH-nuh"
+      }
+    }
   },
   "sources": [
     {
@@ -156,7 +194,9 @@
       "Letters 80.1: quiet day while the crowd is at a show (sphaeromachia). 80.7: the actor who says he rules Argos is a slave paid five measures of grain and five denarii; the script says 'a small ration of grain and a few coins a month'. 80.9: buying a horse without its trappings. 80.8–10: the rich as stage figures. Confirm details and whether the payment is monthly.",
       "Persona etymology: Latin 'persona' = mask is standard; per-sonare (Gellius 5.7) is doubted; Etruscan phersu commonly proposed. Confirm wording.",
       "Seneca doesn't use the word persona in this letter as far as the writer knows; the script presents it as the Latin word for a mask, not as Seneca's term. Confirm.",
-      "Editor review (2026-10-01): the hook invented a holiday and a 'son of a god' line and the 'audience swept up'; now follows 80.1 (the bothersome crowd gone to a sphaeromachia) and 80.7 (the Argos king; the actor threatening Menelaus, paid daily, sleeping on rags). The wage is now the text's own 'five measures of grain and five denarii' with no unsourced 'a month'. Seneca does use the related word in 80.8, 'personata felicitas', so the teach now quotes that instead of inventing anxiety and debt; dropped the 'so the back rows could see' explanation of the mask. The earlier note saying Seneca doesn't use the word is superseded."
+      "Editor review (2026-10-01): the hook invented a holiday and a 'son of a god' line and the 'audience swept up'; now follows 80.1 (the bothersome crowd gone to a sphaeromachia) and 80.7 (the Argos king; the actor threatening Menelaus, paid daily, sleeping on rags). The wage is now the text's own 'five measures of grain and five denarii' with no unsourced 'a month'. Seneca does use the related word in 80.8, 'personata felicitas', so the teach now quotes that instead of inventing anxiety and debt; dropped the 'so the back rows could see' explanation of the mask. The earlier note saying Seneca doesn't use the word is superseded.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

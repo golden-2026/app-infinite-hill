@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: iucunda memoria. Your line was sweet memory. Which happy story did you tell, and which friend did you spend a few greedy minutes with? Day four hundred seventy-one.",
+      "voice": "Yesterday's word was iucunda memoria, the memory that turns like old wine. Your line was sweet memory.",
       "screen": [
         "`IUCUNDA MEMORIA — SWEET MEMORY.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Five days in a row now, a man long past his student years has gone to a philosopher's school in Naples and sat through the afternoon lecture. The lecturer is named Metronax. The student is Seneca. In the seventy-sixth letter he reports it to Lucilius, and he can already hear the teasing coming back: at your age? He answers it before Lucilius can finish the joke. And on the way to class, he passes a building far more crowded than the school. Today: to school when old.",
+      "voice": "Five days in a row now, a man long past his student years has gone to a philosopher's school in Naples and sat through the afternoon lecture. The lecturer is named Metronax. The student is Seneca. In the seventy-sixth letter he reports it to Lucilius, and he can already hear the teasing coming back: at your age? He answers it before Lucilius can finish the joke. And on the way to class, he passes a building far more crowded than the school.",
       "screen": [
         "`FIVE DAYS AT METRONAX'S SCHOOL.` → `AT YOUR AGE?` → `A BUILDING MORE CROWDED THAN SCHOOL.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the teasing. Seneca puts it in Lucilius's mouth himself: at your age! He doesn't deny his age. He turns the question around: what could be sillier than refusing to learn because you haven't learned for a long time? Second, his rule. Learning, he says, should last as long as your ignorance lasts. In Latin: tamdiu discendum est, quamdiu nescias. And if we believe the proverb, he adds, that means as long as you live. There's never a day when you've finished not knowing something. Third, the theater next door. On his way to the lecture, Seneca passes the theater of Naples, packed to the rafters. People crowd in to hear a flute player, or to decide who's the better musician. The philosopher's school, meanwhile, has only a handful of listeners, and the crowd thinks those few have nothing better to do. Seneca finds this a little sad, and a little funny. Fourth, why it matters. Seneca isn't saying an old person needs to catch up. He's saying the posture of a student is the posture of a living mind. Seneca on his fifth day of class is a quiet rebuttal to anyone who thinks they're too old, too busy or too established to begin something new.",
+      "voice": "Seneca puts the teasing in Lucilius's mouth himself: at your age! He doesn't deny his age. He turns the question around: what could be sillier than refusing to learn because you haven't learned for a long time? Then his rule. Learning should last as long as your ignorance lasts: tamdiu discendum est, quamdiu nescias. And if we believe the proverb, he adds, that means as long as you live. There's never a day when you've finished not knowing something. On his way to the lecture, Seneca passes the theater of Naples, packed to the rafters. People crowd in to hear a flute player, or to decide who's the better musician. The philosopher's school has only a handful of listeners, and the crowd thinks those few have nothing better to do. Seneca finds this a little sad, and a little funny. He isn't saying an old person needs to catch up. The posture of a student is the posture of a living mind. Seneca on his fifth day of class is a quiet answer to anyone who thinks they're too old, too busy or too established to begin something new.",
       "screen": [
         "`AT YOUR AGE? WHY NOT?` · `LEARN AS LONG AS YOU DON'T KNOW.` · `THE THEATER FULL, THE SCHOOL EMPTY.` · `A STUDENT'S POSTURE, A LIVING MIND.` · then, large: `LEARN AS LONG AS I LIVE.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Think of something you've told yourself you're too old, too late or too settled to learn. A language, an instrument, a skill, a subject, a way of praying or thinking. Hold it lightly. Notice what the too-old voice sounds like, and whose voice it might be. Then picture yourself as Seneca on his fifth day of class, unbothered by the teasing. What would the first small lesson be? The bell holds the time.",
+      "voice": "Think of something you've told yourself you're too old, too late or too settled to learn, and notice what that too-old voice sounds like, and whose it might be. Then picture yourself as Seneca on his fifth day of class, unbothered by the teasing, and ask what the first small lesson would be.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: learn as long as I live. Learn one new thing today, deliberately, from someone or something: a word, a fact, a skill. Take the first small lesson. Day four hundred seventy-one.",
+      "voice": "Your line: learn as long as I live. There's always something left not to know. Class is out for today.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "People who take Seneca's advice keep learning at any age, coming to a new subject as a beginner without apology.",
   "games": {
+    "guess": [
+      "the philosopher whose lectures Seneca attended when old",
+      "a young student who teased Seneca about his old age",
+      "the flute player who packed the theater in Naples"
+    ],
     "match": {
       "prompt": "to school when old — tap the pairs.",
       "pairs": [
@@ -132,14 +137,43 @@
     ],
     "recall": [
       [
-        "Harpaste",
-        "blind, and didn't know it"
+        "lacrimae",
+        "Latin for tears"
       ],
       [
-        "Calvisius Sabinus",
-        "bought people to memorize poets"
+        "tranquillitas",
+        "calm, even above a noisy bath"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your mom",
+      "says": "Aren't I too old to start learning piano now?",
+      "options": [
+        "Seneca went to school in old age: learn as long as you don't know, so as long as you live.",
+        "Seneca said learning is for the young; older people should teach, not study.",
+        "Seneca said it's fine only if you're catching up on what you missed earlier."
+      ],
+      "answer": 0,
+      "meaning": "Letter seventy-six: learning should last as long as ignorance does, which means as long as you live. Seneca sat in class at Metronax's school."
+    },
+    "gloss": {
+      "Metronax": {
+        "meaning": "the philosopher whose school in Naples Seneca attended",
+        "say": "MET-roh-naks"
+      },
+      "tamdiu discendum est, quamdiu nescias": {
+        "meaning": "Latin: keep learning as long as you don't know",
+        "say": "TAM-dee-oo dis-KEN-dum est KWAM-dee-oo NESS-kee-ahs"
+      },
+      "Naples": {
+        "meaning": "the city of Metronax's school and the packed theater",
+        "say": "NAY-pulz"
+      },
+      "Lucilius": {
+        "meaning": "Seneca's friend, to whom the letters are written",
+        "say": "loo-SIL-ee-us"
+      }
+    }
   },
   "sources": [
     {
@@ -162,7 +196,9 @@
       "Letters 76.1: five days at Metronax's school; 76.3: 'tamdiu discendum est, quamdiu nescias; si proverbio credimus, quamdiu vivas'; 76.4: the packed theater at Naples. Confirm Latin and numbers.",
       "The script says Seneca was 'sixty-something'; Letters 76 is usually dated to c. 64 CE, and Seneca's birth is usually put c. 4 BCE–1 CE, so he would be in his sixties. Confirm.",
       "'Rich beyond counting' and 'former adviser to the emperor' are general biographical descriptions (Nero's adviser).",
-      "Editor review (2026-10-01): the hook opened with the banned 'Picture' and invented a scene (twenty-year-olds, third row, notebook, smirking students) plus unsourced claims ('one of the most famous writers in Rome', 'rich beyond counting'); rewritten from 76.1–4 (fifth day at Metronax's school 'ab octava', Lucilius's imagined 'bona aetate!', the crowded Naples theater). Cut 'sixty-something' (no age in the text). Teach adds 76.1 'quid autem stultius est quam quia diu non didiceris non discere?'. howItsDone's 'one new subject a year' habit removed. 'Afternoon lecture' renders 'ab octava' (the eighth hour); confirm."
+      "Editor review (2026-10-01): the hook opened with the banned 'Picture' and invented a scene (twenty-year-olds, third row, notebook, smirking students) plus unsourced claims ('one of the most famous writers in Rome', 'rich beyond counting'); rewritten from 76.1–4 (fifth day at Metronax's school 'ab octava', Lucilius's imagined 'bona aetate!', the crowded Naples theater). Cut 'sixty-something' (no age in the text). Teach adds 76.1 'quid autem stultius est quam quia diu non didiceris non discere?'. howItsDone's 'one new subject a year' habit removed. 'Afternoon lecture' renders 'ab octava' (the eighth hour); confirm.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

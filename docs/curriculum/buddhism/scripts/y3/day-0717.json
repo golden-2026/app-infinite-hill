@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Mara defeated, and your line: the army scatters. Did you let one fear pass without chasing it? Today the field is empty, and the night is still young. Day seven hundred seventeen.",
+      "voice": "Yesterday: Mara defeated. The army threw everything, nothing landed, and your line was the army scatters. Now the field is empty, and the night is still young.",
       "screen": [
         "`THE ARMY SCATTERS.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "The noise is over. Mara's army, the arrows, the shrieking shapes, the whole storm of the last two lessons, is gone. What's left is a man sitting under a tree, and a night ahead of him. A story could stop here, with the victory. The poem doesn't. It slows down. It walks through the hours of the dark one stretch at a time, the way someone who can't sleep feels every hour of a long night. The battle was loud. The awakening, in Ashvaghosha's telling, is quiet, and it takes all night.",
+      "voice": "The noise is over. Mara's army, the arrows, the shrieking shapes, is gone. What's left is a man under a tree, and a night ahead of him. A story could stop here, with the victory. The poem doesn't. It slows down and walks through the dark one stretch at a time, the way someone who can't sleep feels every hour of a long night. The battle was loud. The awakening, in Ashvaghosha's telling, is quiet, and it takes all night.",
       "screen": [
         "`THE BATTLE IS OVER.` → `A MAN UNDER A TREE.` → `THE NIGHT, HOUR BY HOUR.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, he looks back. In the first watch of the night, the poem says, he remembers his own former lives, one after another: where he was born, what his name was, what happened to him. And what he feels, looking back, is not pride. It's compassion, for every being caught in that long turning. Second, he looks out. In the middle watch, the poem gives him a clear, divine sight. He sees beings everywhere dying and being born again, rising and falling according to what they have done. Good deeds, hard deeds, and their fruit. The whole world, the poem says, seems to him to have no solid core, like the stem of a plantain plant, layers with nothing hard in the middle. Third, he looks in. In the last watch, he asks the question under all the others: where do old age and death come from? From birth. And birth? From becoming. Link by link, he follows the chain back, down to not knowing, ignorance. And then he sees it the other way: when ignorance ends, the chain comes apart, link by link, all the way to the end of old age and death. And fourth, the dawn. As the night ends, the poem says, he reaches perfect knowledge. He has become the Buddha, the awakened one. The earth sways, flowers fall, and the gods rejoice. But at the center of all that color is one still figure who has finished a long question. The discourses tell this night in a plainer way, with the same three watches. The poem adds the beauty. Both agree on the shape: looking back, looking out, looking in, and then light.",
+      "voice": "First, he looks back. In the first watch of the night, the poem says, he remembers his own former lives, one after another: where he was born, what his name was, what happened to him. What he feels, looking back, is not pride. It's compassion, for every being caught in that long turning. Second, he looks out. In the middle watch, the poem gives him a clear, divine sight. He sees beings everywhere dying and being born again, rising and falling according to what they have done. The whole world seems to him to have no solid core, like the stem of a plantain plant: layers, with nothing hard in the middle. Third, he looks in. In the last watch, he asks the question under all the others: where do old age and death come from? From birth. And birth? From becoming. Link by link, he follows the chain back to not knowing, ignorance. Then he sees it the other way: when ignorance ends, the chain comes apart, link by link, all the way to the end of old age and death. Fourth, the dawn. As the night ends, the poem says, he reaches perfect knowledge. He has become the Buddha, the awakened one. The earth sways, flowers fall, and the gods rejoice. At the center of all that color sits one still figure who has finished a long question. The discourses tell this night more plainly, with the same three watches. The poem adds the beauty. Both share the shape: looking back, looking out, looking in, and then light.",
       "screen": [
         "`FIRST WATCH: HIS OWN PAST LIVES.` · `MIDDLE WATCH: ALL BEINGS, COMING AND GOING.` · `LAST WATCH: THE CHAIN OF CAUSES.` · `DAWN: THE AWAKENED ONE.` · then, large: `THE NIGHT OF KNOWING.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: sit through the evening quietly. Tonight, if you can, give the evening a few unhurried minutes with no screen and no sound. For now, a small version. Settle. For a few breaths, look back over today: what happened, without judging it. Then look out: the people around you, near and far, each going through their own day. Then look in: just this breath, coming and going. Let the order be enough. The bell holds the time.",
+      "voice": "For a few breaths, look back over today, what happened, without judging it. Then look out at the people around you, near and far, each going through their own day, and then look in, at just this breath, coming and going.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the night of knowing. Tonight, before sleep, sit for a minute in the dark and let the day settle, back, out and in. Day seven hundred seventeen.",
+      "voice": "Your line: the night of knowing. Back, out, in, and then the dawn. Day seven hundred seventeen, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "The awakening is remembered at Vesak (or Wesak), when in many places temples are lit and people gather to meditate, keep precepts and hear teachings; in some places devotees sit through the night in memory of the night under the tree.",
   "games": {
+    "guess": [
+      "the full understanding he reached at dawn",
+      "a secret he learned from his old teachers",
+      "knowing every fact there is to know"
+    ],
     "match": {
       "prompt": "the night of awakening: tap the pairs.",
       "pairs": [
@@ -128,14 +133,45 @@
     ],
     "recall": [
       [
-        "Buddhacarita",
-        "the life, or acts, of the Buddha"
+        "Kanthaka",
+        "the prince's horse"
       ],
       [
-        "Rohatsu",
-        "eighth day of the twelfth month"
+        "Asita",
+        "the sage who wept over the newborn"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your roommate",
+      "says": "Did the Buddha wake up the moment Mara ran off?",
+      "options": [
+        "No. In the poem it takes all night: past lives, all beings, then causes.",
+        "Yes. The moment Mara left, he woke up, and the night was over.",
+        "No. He fasted for years more after Mara before he finally woke up."
+      ],
+      "answer": 0,
+      "meaning": "The poem walks through the watches of one night: he remembers, sees and understands, and at dawn reaches perfect knowledge."
+    },
+    "gloss": {
+      "Ashvaghosha": {
+        "meaning": "the poet tradition names as author of this life in verse",
+        "script": "अश्वघोष",
+        "say": "ash-vuh-GO-shuh"
+      },
+      "Mara": {
+        "meaning": "the tempter who tried to stop him under the tree",
+        "script": "मार",
+        "say": "MAH-ruh"
+      },
+      "plantain": {
+        "meaning": "a banana-like plant whose stem is layers with no hard core"
+      },
+      "Buddha": {
+        "meaning": "one who has woken up, the awakened one",
+        "script": "बुद्ध",
+        "say": "BOOD-uh"
+      }
+    }
   },
   "sources": [
     {
@@ -163,7 +199,9 @@
       "Hook 'the last two days' refers to days 715–716 of the path (Mara comes, Mara defeated), not days in the story.",
       "howItsDone: confirm the all-night sitting practice at Vesak in some communities; soften if unsupported.",
       "Editor: fixed 'where does old age and death' grammar; hook 'last two days' made 'last two lessons' (path days, not story time); howItsDone no longer says 'many Buddhists'.",
-      "Audit: the poem's compassion after recalling past births is for all living beings; dropped 'for himself' from the teach and the myth reveal (not in the canto as usually translated). Also note MN 36's third knowledge is the destruction of the taints through the four truths, not the causal chain; the teach only claims the same three-watch shape, which holds."
+      "Audit: the poem's compassion after recalling past births is for all living beings; dropped 'for himself' from the teach and the myth reveal (not in the canto as usually translated). Also note MN 36's third knowledge is the destruction of the taints through the four truths, not the causal chain; the teach only claims the same three-watch shape, which holds.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

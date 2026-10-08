@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: persona. Your line was behind the mask. Whose costume did you look past, and what did you find? Day four hundred seventy-four.",
+      "voice": "Yesterday's word was persona, the mask that isn't the face. Your line was behind the mask.",
       "screen": [
         "`PERSONA — BEHIND THE MASK.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "What do you actually do all day? What time do you get up? What do you eat? It's what we ask anyone whose life we're curious about, and it's what Lucilius has asked Seneca. In the eighty-third letter, Seneca answers, hour by hour, with surprising honesty and quite a lot of humor at his own expense. What comes back is a day in the life of an aging Roman philosopher, and it's very ordinary. Today: a day accounted for.",
+      "voice": "What do you actually do all day? What time do you get up? What do you eat? It's what people ask anyone whose life they're curious about, and it's what Lucilius has asked Seneca. In the eighty-third letter, Seneca answers, hour by hour, with surprising honesty and quite a lot of humor at his own expense. What comes back is a day in the life of an aging Roman philosopher, and it's very ordinary.",
       "screen": [
         "`WHAT DO YOU DO ALL DAY?` → `HOUR BY HOUR, HONESTLY.` → `A DAY IN AN OLD PHILOSOPHER'S LIFE.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, why tell it. We should live, Seneca says, as if we lived in plain sight, as if God could look into our hearts at any time. So he'll watch himself and review his day, which he calls a most useful practice. Today, he says, is whole: nobody stole any of it. Second, the run. He's taken up a little running, with a young slave named Pharius as his partner. They're at the same turning point, he jokes, since both of them are losing teeth, and soon he won't be able to keep up. Third, the plunge. Seneca was once a great cold-water bather. He used to greet the first of January with a plunge into the canal. Then he moved to the Tiber. Then to a tub. And now, he confesses, it's a tub the sun has warmed, on his bravest days. That's an old man's honest report. Fourth, the meal and the nap. Lunch is dry bread, with no table needed, and so simple there's no washing of hands afterward. Then a very short nap. Nothing heroic. What's striking is the honesty. He doesn't polish the day. He shows the decline, the jokes, the plain bread. Accounting for a day like that isn't about judging it. It's about seeing where it actually went.",
+      "voice": "We should live, Seneca says, as if in plain sight, as if God could look into our hearts at any time. So he'll watch himself and review his day, which he calls a most useful practice. Today, he says, is whole: nobody stole any of it. He's taken up a little running, with a young slave named Pharius as his partner. They're at the same turning point, he jokes, since both are losing teeth, and soon he won't be able to keep up. Seneca was once a great cold-water bather. He used to greet the first of January with a plunge into the canal. Then he moved to the Tiber. Then to a tub. And now, he confesses, it's a tub the sun has warmed, on his bravest days. Lunch is dry bread, no table needed, so simple there's no washing of hands afterward. Then a very short nap. Nothing heroic. What's striking is the honesty. He doesn't polish the day. He shows the decline, the jokes, the plain bread. Accounting for a day like that isn't about judging it. It's about seeing where it actually went.",
       "screen": [
         "`LIVE AS IF IN PLAIN SIGHT.` · `A RACE WITH PHARIUS.` · `CANAL, RIVER, TUB, WARM WATER.` · `DRY BREAD AND A SHORT NAP.` · then, large: `MY DAY, HONESTLY.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Walk back through today so far, the way Seneca does, hour by hour. When did you wake? What came first: the phone, a coffee, a person? What did you eat? Where did the middle of the day go? Don't polish it and don't scold it. Just let the timetable appear, as it really was. Notice one hour that was wholly yours, and one that got stolen. The bell holds the time.",
+      "voice": "Walk back through today so far, hour by hour, the way Seneca does: when you woke, what came first, what you ate, where the middle of the day went. Don't polish it and don't scold it. Notice one hour that was wholly yours, and one that got stolen.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: my day, honestly. Tonight, write today's timetable in a few plain lines, with no polishing. Mark the hour that was wholly yours. Day four hundred seventy-four.",
+      "voice": "Your line: my day, honestly. Even the bread and the nap count. That's today, accounted for.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Some Stoic practitioners write a plain account of their day in the evening, noting where the hours went without praising or scolding themselves.",
   "games": {
+    "guess": [
+      "a whole day, with none of it stolen",
+      "a day spent in hard training for a race",
+      "a holiday when Romans plunged into cold water"
+    ],
     "match": {
       "prompt": "Seneca's day — tap the pairs.",
       "pairs": [
@@ -132,14 +137,43 @@
     ],
     "recall": [
       [
-        "Socrates",
-        "you take yourself along"
+        "animus",
+        "the mind, which can ease illness"
       ],
       [
-        "Calvisius Sabinus",
-        "bought people to memorize poets"
+        "Pacuvius",
+        "held a funeral feast every evening"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "a new friend",
+      "says": "Why would Seneca write down something as boring as his daily routine?",
+      "options": [
+        "He reviewed his day honestly, as if in plain sight, to see where his hours really went.",
+        "He wanted readers to copy his routine exactly: cold plunges, running and dry bread.",
+        "He was proud of his strict habits and wanted to show how disciplined he was."
+      ],
+      "answer": 0,
+      "meaning": "Letter eighty-three: Seneca reviews his day without polish, warm tub, lost teeth and all, and calls it a most useful practice."
+    },
+    "gloss": {
+      "Pharius": {
+        "meaning": "the young enslaved man Seneca ran with",
+        "say": "FAIR-ee-us"
+      },
+      "Tiber": {
+        "meaning": "Rome's river, where Seneca once took cold plunges",
+        "say": "TY-ber"
+      },
+      "Dies solidus": {
+        "meaning": "Latin: a whole, unbroken day",
+        "say": "DEE-ays SOL-ih-dus"
+      },
+      "Lucilius": {
+        "meaning": "Seneca's friend, who asked about his day",
+        "say": "loo-SIL-ee-us"
+      }
+    }
   },
   "sources": [
     {
@@ -162,7 +196,9 @@
       "Letters 83.1–2: live as if in plain sight, God sees within; 83.2–3 'dies integer est', self-observation and review of the day. 83.4: running with Pharius, both losing teeth. 83.5: from the Euripus (canal) on the Kalends of January, to the Tiber, to a tub, to warm water. 83.6: dry bread, no table, no washing of hands, a very short sleep. Confirm details.",
       "The index's hook says 'a cold plunge'; the script reports Seneca's own confession that the water is now warm. Keeper may want the index hook adjusted.",
       "On Anger 3.36: nightly self-examination following Sextius. Confirm.",
-      "Editor review (2026-10-01): the original-language phrase was wrong: 83.3 reads 'hodiernus dies solidus est', not 'integer'; corrected. Sextius was not Seneca's own teacher (Seneca studied under Sotion, a Sextian); trapdoor fixed. Cut the unsourced superlative 'the closest thing we have to a day in the life'. The Pharius joke now follows 83.4 (same crisis, both losing teeth, soon he can't keep up) rather than 'he'll need a younger runner'. 83.5's plunge: New Year's Day canal, then the Tiber, then a sun-warmed tub 'cum fortissimus sum'; 'as a younger man' removed. Hook reopened with the question to vary from day 472's 'Lucilius is sick' opener. Confirm 83.4 wording."
+      "Editor review (2026-10-01): the original-language phrase was wrong: 83.3 reads 'hodiernus dies solidus est', not 'integer'; corrected. Sextius was not Seneca's own teacher (Seneca studied under Sotion, a Sextian); trapdoor fixed. Cut the unsourced superlative 'the closest thing we have to a day in the life'. The Pharius joke now follows 83.4 (same crisis, both losing teeth, soon he can't keep up) rather than 'he'll need a younger runner'. 83.5's plunge: New Year's Day canal, then the Tiber, then a sun-warmed tub 'cum fortissimus sum'; 'as a younger man' removed. Hook reopened with the question to vary from day 472's 'Lucilius is sick' opener. Confirm 83.4 wording.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Aurangzeb and Dara Shikoh, and a hard history between two sons of the Taj's builder. Your line was: two brothers, two paths. What did you ask someone you disagree with? Day nine hundred ninety-five.",
+      "voice": "Yesterday: Aurangzeb and Dara Shikoh, two sons of the Taj's builder. Your line was two brothers, two paths.",
       "screen": [
         "`TWO BROTHERS, TWO PATHS.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A ship sits in harbor on the coast of Sumatra, waiting for the wind to turn. It could be weeks. The merchants aboard can't sail home until the monsoon shifts, so they come ashore. They rent rooms, open shops, buy pepper, sell cloth. On Friday they find a quiet place and pray together. They make friends at the market. Some marry and stay. A teacher among them starts answering questions from curious neighbors. Nobody marches in. No banners. The new part of our path begins here: East and Southeast Asia. And it begins with people who came to sell things. Today: traders.",
+      "voice": "A ship sits in harbor on the coast of Sumatra, waiting for the wind to turn. It could be weeks. The merchants aboard can't sail home until the monsoon shifts, so they come ashore. They rent rooms, open shops, buy pepper, sell cloth. On Friday they find a quiet place and pray together. They make friends at the market. Some marry and stay. A teacher among them starts answering questions from curious neighbors. Nobody marches in. No banners. A new part of the path begins here: East and Southeast Asia. It begins with people who came to sell things. Today: traders.",
       "screen": [
         "`A SHIP WAITING FOR THE WIND.` → `SHOPS, FRIENDS, A FRIDAY PRAYER.` → `A NEW PART: EAST AND SOUTHEAST ASIA.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: trade honestly. Begin by looking at your own trades. Settle, and breathe. Think about the exchanges in your week: what you buy, what you sell, what you're paid for, what you promise. A job, a favor, a used bike online, a bill you're splitting. Is there one where you've been a little less than clear? A detail left out, a corner cut? Don't scold yourself. Just name it, and decide what clear would look like. If you pray, you can ask for honest hands. If you don't, simply decide. The bell holds the time.",
+      "voice": "Think about the exchanges in your week: what you buy, sell, get paid for or promise, a job, a favor, a bill you split. Is there one where you've been a little less than clear? Don't scold yourself; just name it, and picture what clear would look like, and if you pray, ask for honest hands.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: merchants carried it. Today, in one exchange, buying, selling or splitting a bill, be completely clear and fair, even where nobody would notice. Day nine hundred ninety-five.",
+      "voice": "Your line: merchants carried it. Fair weights all week, then the Friday prayer. Until tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Muslim teaching on trade stresses honest weights, clear terms and keeping one's word, and in Southeast Asia, as elsewhere, Muslim traders may close their shops for Friday prayer and reopen afterward.",
   "games": {
+    "guess": [
+      "merchants who carried Islam along the sea routes",
+      "soldiers who conquered the islands port by port",
+      "Sufi poets who wrote of one long sea voyage"
+    ],
     "match": {
       "prompt": "traders, not armies — tap the pairs.",
       "pairs": [
@@ -132,14 +137,49 @@
     ],
     "recall": [
       [
-        "Kanun",
-        "the law a ruler issues"
+        "millet",
+        "an Ottoman religious community"
       ],
       [
-        "Hafiz",
-        "opened at random at the table"
+        "Sinan",
+        "the Ottoman chief architect"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your coworker",
+      "says": "How did Islam reach Indonesia and Malaysia without an army?",
+      "options": [
+        "Along trade routes: merchants and Sufi teachers came, and port rulers took it up.",
+        "A Mughal fleet sailed east and set Muslim governors in every port.",
+        "Ibn Battuta preached there for years and converted the islands himself."
+      ],
+      "answer": 0,
+      "meaning": "In much of the region, Islam came along Indian Ocean trade routes with merchants and Sufi teachers, port by port, as rulers took it up."
+    },
+    "gloss": {
+      "Sumatra": {
+        "meaning": "a large island in today's Indonesia",
+        "say": "soo-MAA-tra"
+      },
+      "Samudra": {
+        "meaning": "a port in Sumatra whose Muslim sultan loved debate",
+        "say": "sa-MOO-dra"
+      },
+      "Ibn Battuta": {
+        "meaning": "the traveler who described Samudra and its sultan",
+        "script": "ابن بطوطة",
+        "say": "IB-un ba-TOO-ta"
+      },
+      "monsoon": {
+        "meaning": "the seasonal wind that shifts direction through the year",
+        "say": "mon-SOON"
+      },
+      "Sahih al-Bukhari": {
+        "meaning": "a major collection of the Prophet's sayings",
+        "script": "صحيح البخاري",
+        "say": "sa-HEEH al-bu-KHAA-ree"
+      }
+    }
   },
   "sources": [
     {
@@ -179,7 +219,9 @@
       "Sahih al-Bukhari 2079 (buyer and seller truthful, blessed) paraphrased; confirm number.",
       "Qur'an 4:29 paraphrased. The Prophet as a merchant before his call: from the sira, not cited; confirm.",
       "howItsDone says 'Muslim traders may close their shops for Friday prayer': soften if needed.",
-      "Audit (2026-10-01): trapdoor no longer puts 'Islam spread everywhere by the sword' in the listener's mouth; myth reveal hedged to 'in much of the region, historians point to'; missing space in a screen line fixed."
+      "Audit (2026-10-01): trapdoor no longer puts 'Islam spread everywhere by the sword' in the listener's mouth; myth reveal hedged to 'in much of the region, historians point to'; missing space in a screen line fixed.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

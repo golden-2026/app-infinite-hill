@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Thomas Becket, the archbishop who told his monks to leave the doors open. Your line was killed in the cathedral. Did you hold a church leader in your prayer or your attention? Day one thousand fifty-nine.",
+      "voice": "Yesterday, Thomas Becket, the archbishop who told his monks to leave the doors open. Your line was killed in the cathedral.",
       "screen": [
         "`KILLED IN THE CATHEDRAL.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Why would a New Year's party be named after a pope? In Vienna or Berlin, ask what the night of 31 December is called and you may hear a name instead of a date: Silvester. In Warsaw, Sylwester. Fireworks, countdowns, glasses raised at midnight, and the whole night carries a saint's name. He was a pope, and his feast happens to fall on the last day of the calendar year. Today, the man whose name ends the year.",
+      "voice": "Why would a New Year's party be named after a pope? In Vienna or Berlin, ask what the night of 31 December is called and you may hear a name instead of a date: Silvester. In Warsaw, Sylwester. Fireworks, countdowns, glasses raised at midnight, and the whole night carries a saint's name. He was a pope, and his feast falls on the last day of the calendar year.",
       "screen": [
         "`A PARTY NAMED FOR A POPE?` → `SILVESTER, SYLWESTER.` → `WHO WAS SYLVESTER?`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Sylvester was bishop of Rome in the time of the emperor Constantine, the years when persecution gave way to imperial favor. Before, Christians could lose their property or their lives for gathering to worship. Now an emperor was building churches. For a pope in that moment, everything was changing. Here's the honest part: we know surprisingly little for certain about Sylvester himself. The old book of the popes, the Liber Pontificalis, lists churches built and gifts given in his time. When the bishops gathered at Nicaea to answer the question of who Christ is, the usual account is that Sylvester didn't travel there himself, but sent representatives. And where the facts ran thin, stories grew. A later legend says Sylvester cured Constantine of a disease and baptized him in Rome. The older histories tell it differently, with the emperor baptized near the end of his life, far from Rome. So the Church remembers a pope partly hidden behind his own legends. Maybe that's fitting for a man kept on New Year's Eve. A year can look like that from its last night: a few moments stay clear, and the rest blurs. A psalm in the Douay-Rheims says to God, \"Thou shalt bless the crown of the year of thy goodness.\" The crown of the year: the whole circle of it, the clear days and the blurry ones, held up and blessed. Sylvester's feast puts a saint at the very edge of the calendar, and some Catholics read that as a sign that even the last night of the year belongs to God.",
+      "voice": "Sylvester was bishop of Rome in the time of the emperor Constantine, when persecution gave way to imperial favor. Christians who once could lose their property or their lives for gathering to worship now watched an emperor build churches. For a pope, everything was changing. The honest part: we know surprisingly little for certain about Sylvester himself. The old book of the popes, the Liber Pontificalis, lists churches built and gifts given in his time. When the bishops gathered at Nicaea to answer who Christ is, the usual account is that Sylvester didn't go himself but sent representatives. Where the facts ran thin, stories grew. A later legend says he cured Constantine of a disease and baptized him in Rome. The older histories tell it differently: the emperor was baptized near the end of his life, far from Rome. So the Church remembers a pope partly hidden behind his own legends. Maybe that fits a man kept on New Year's Eve. From its last night, a year can look the same way: a few moments stay clear, and the rest blurs. A psalm in the Douay-Rheims says to God, \"Thou shalt bless the crown of the year of thy goodness.\" The crown of the year: the whole circle of it, clear days and blurry ones, held up and blessed. Sylvester's feast puts a saint at the very edge of the calendar, and some Catholics read that as a sign that even the year's last night belongs to God.",
       "screen": [
         "`THE POPE OF CONSTANTINE'S TIME.` · `LITTLE KNOWN FOR CERTAIN.` · `LEGENDS FILL THE GAPS.` · `THE CROWN OF THE YEAR.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: give thanks for the year. Settle, and breathe. Let this year go by like pages turning, without stopping to fix anything. A morning you remember. A person who showed up. Something that went wrong and turned out survivable. Something small that you'd forgotten until now. When one comes back, stay with it for a breath and say thank you, inside. If you pray, you can offer the whole year back to God, the clear parts and the blurry ones. If you don't, simply let the thank-yous pile up, one memory at a time. The bell holds the time.",
+      "voice": "Let this year go by like pages turning, without stopping to fix anything: a morning you remember, a person who showed up, something that went wrong and turned out survivable. When a memory comes back, stay with it for a breath and say thank you, inside. If you pray, offer the whole year back to God, the clear parts and the blurry ones; if you don't, simply let the thank-yous pile up, one memory at a time.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the year's last saint. Today, before you sleep, name three things from this year you're glad happened, one out loud. Day one thousand fifty-nine.",
+      "voice": "Your line: the year's last saint. Even the calendar's final night has a name. Day one thousand fifty-nine.",
       "screen": []
     },
     {
@@ -132,14 +132,48 @@
     ],
     "recall": [
       [
-        "little ones",
-        "shown what the clever miss"
+        "Juan Diego",
+        "the humble man Mary sent to the bishop"
       ],
       [
-        "Hippolytus",
-        "the learned priest who split from Rome"
+        "Philippine",
+        "French nun who prayed among the Potawatomi"
       ]
-    ]
+    ],
+    "guess": [
+      "a pope of Constantine's time, kept on 31 December",
+      "the emperor who first made Christianity legal",
+      "a German saint who first lit New Year's fireworks"
+    ],
+    "chat": {
+      "who": "your roommate",
+      "says": "Why do people in Berlin call New Year's Eve Silvester?",
+      "options": [
+        "It's the feast of Sylvester, a pope of Constantine's time, kept on 31 December.",
+        "Silvester was a German king whose coronation fell on the last night of the year.",
+        "It's an old Latin word for midnight, used long before any saint had that name."
+      ],
+      "answer": 0,
+      "meaning": "Sylvester was bishop of Rome in Constantine's time; his feast falls on 31 December, so the night carries his name."
+    },
+    "gloss": {
+      "Silvester": {
+        "meaning": "a name for New Year's Eve in Vienna and Berlin",
+        "say": "sil-VES-ter"
+      },
+      "Constantine": {
+        "meaning": "the Roman emperor under whom persecution gave way to favor",
+        "say": "KON-stun-teen"
+      },
+      "Liber Pontificalis": {
+        "meaning": "the old book of the popes",
+        "say": "LEE-ber pon-tih-fih-KAH-lis"
+      },
+      "Nicaea": {
+        "meaning": "where the bishops gathered to answer who Christ is",
+        "say": "ny-SEE-uh"
+      }
+    }
   },
   "sources": [
     {
@@ -179,7 +213,9 @@
       "howItsDone: Te Deum on 31 December (a plenary indulgence is attached to its public recitation that day); confirm wording.",
       "Editor: hook now opens with a question instead of a scene fragment, adds the Polish form Sylwester, and drops the claim about what partygoers know; 'came up out of the catacombs' (a popular myth) replaced with 'persecution gave way to imperial favor'; 'nobody had done this before' (unsourced superlative) cut; the line telling the listener how they remember a year softened; 'belongs to God' framed as what the feast means for Catholics; stock 'have the last word' replaced in the practice.",
       "Original: Latin form Silvester, not an original-language word with deep meaning; may be set to null.",
-      "Auditor: closing line no longer speaks for all Catholics ('for Catholics, it is a sign' to 'some Catholics read that as a sign'). Psalm 64:12 Challoner wording, Nicaea legates and the Eusebius/Actus Silvestri contrast checked."
+      "Auditor: closing line no longer speaks for all Catholics ('for Catholics, it is a sign' to 'some Catholics read that as a sign'). Psalm 64:12 Challoner wording, Nicaea legates and the Eusebius/Actus Silvestri contrast checked.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

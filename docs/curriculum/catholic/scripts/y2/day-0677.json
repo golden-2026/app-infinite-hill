@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Saint Mary Magdalene, apostolorum apostola, the apostle to the apostles. Your line was she was sent. Who got your good news? Day six hundred seventy-seven.",
+      "voice": "Yesterday, Saint Mary Magdalene, apostolorum apostola, the apostle to the apostles. Your line was she was sent.",
       "screen": [
         "`SHE WAS SENT.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Who taught you your first prayer? For a surprising number of people, the answer isn't a priest or a parent. It's a grandmother. A woman at a kitchen table with a rosary, or a grandfather who took you to Mass when nobody else would. Today the Church remembers a grandmother and grandfather, the parents of Mary and so the grandparents of Jesus. And here's the twist: the Bible never mentions them. Not their names, not a single line.",
+      "voice": "Who taught you your first prayer? For a surprising number of people, the answer isn't a priest or a parent. It's a grandmother. A woman at a kitchen table with a rosary, or a grandfather who took you to Mass when nobody else would. Today the Church remembers a grandmother and grandfather, the parents of Mary and so the grandparents of Jesus. And here's the twist: the Bible never mentions them. Not their names, not a line.",
       "screen": [
         "`WHO TAUGHT YOU TO PRAY?` → `JESUS'S GRANDPARENTS.` → `THE BIBLE NEVER NAMES THEM.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: call someone older. First, sit, and bring to mind an older person who carried something to you: a prayer, a recipe, a way of being patient, a story. They might be a grandparent, a neighbor, a teacher. If they've died, simply remember them and give thanks, if you pray. If they're living, decide now when you'll call them, today or this week, and what you'll ask them about. Then sit with their face for the rest of the time. The bell holds the time.",
+      "voice": "Bring to mind an older person who carried something to you, a prayer, a recipe, a way of being patient, a story: a grandparent, a neighbor, a teacher. Sit with their face for a while and remember what they gave. If you pray, give thanks for them, whether they're living or have died; if you don't, simply hold them in mind with gratitude.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the old carry the faith. Today, ask an older person one question about their life, and let them talk as long as they want. Day six hundred seventy-seven.",
+      "voice": "Your line: the old carry the faith. Lois, then Eunice, then Timothy. See you tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Catholics remember Saints Joachim and Anne on 26 July, and on the fourth Sunday of July keep the World Day for Grandparents and the Elderly, begun by Pope Francis in 2021; Saint Anne is honored at many shrines as a patron of grandmothers and mothers.",
   "games": {
+    "guess": [
+      "the Hebrew name behind Anne, meaning grace",
+      "a Hebrew word for a woman who waits in prayer",
+      "the Hebrew word for grandmother"
+    ],
     "match": {
       "prompt": "Mary's parents — tap the pairs.",
       "pairs": [
@@ -132,14 +137,47 @@
     ],
     "recall": [
       [
-        "Pentecost",
-        "the fiftieth day"
+        "chesed",
+        "kindness, faithful love beyond duty"
       ],
       [
-        "Mandatum",
-        "Latin: commandment"
+        "Benedicite",
+        "a song calling every creature to bless God"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your daughter",
+      "says": "Where does the Bible talk about Jesus's grandparents, Joachim and Anne?",
+      "options": [
+        "It doesn't; their names come from the Protoevangelium of James, which isn't scripture.",
+        "In Luke's Gospel, in the chapter just before the angel comes to Mary.",
+        "In Acts, where they pray with Mary and the apostles in the upper room."
+      ],
+      "answer": 0,
+      "meaning": "The Bible never names them. Their names come from the Protoevangelium of James, widely read but never made scripture."
+    },
+    "gloss": {
+      "Protoevangelium of James": {
+        "meaning": "a second-century writing, not scripture, that names Mary's parents",
+        "say": "proh-toh-ee-van-JEL-ee-um"
+      },
+      "Joachim": {
+        "meaning": "Mary's father, as tradition names him",
+        "say": "JOH-uh-kim"
+      },
+      "Simeon": {
+        "meaning": "an old man in the Temple who held the infant Jesus",
+        "say": "SIM-ee-un"
+      },
+      "Lois": {
+        "meaning": "Timothy's grandmother, named in Paul's letter",
+        "say": "LOH-iss"
+      },
+      "Eunice": {
+        "meaning": "Timothy's mother",
+        "say": "YOO-nis"
+      }
+    }
   },
   "sources": [
     {
@@ -175,7 +213,9 @@
       "Protoevangelium of James dated mid-to-late second century; confirm.",
       "Anne as the Greek/Latin form of Hebrew Hannah ('grace, favor'): standard; confirm.",
       "World Day for Grandparents and the Elderly: announced January 2021, first kept 25 July 2021, on the fourth Sunday of July. Confirm.",
-      "Memorial of Joachim and Anne joined on 26 July since the 1969 calendar; confirm."
+      "Memorial of Joachim and Anne joined on 26 July since the 1969 calendar; confirm.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

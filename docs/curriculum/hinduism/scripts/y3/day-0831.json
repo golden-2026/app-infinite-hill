@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Bhishma's fall ended with a pillow of arrows and a plea for peace that Duryodhana turned down. Did you ask anyone what they actually needed? Now the Kauravas need a new commander. Day eight hundred thirty-one.",
+      "voice": "Bhishma's fall ended with a pillow of arrows and a plea for peace that Duryodhana turned down. Now the Kauravas need a new commander.",
       "screen": [
         "`BHISHMA'S FALL.` · `A PLEA TURNED DOWN.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A teacher takes command of an army sent against his own students. That's where the Kauravas are now. Bhishma lies on the field, and the man they choose to lead them is Drona, the master of arms who trained both sets of cousins as boys, who once tested the princes with a toy bird in a treetop and found that only Arjuna saw nothing but its head. Duryodhana honors him, and Drona, pleased, offers him a gift. Ask for whatever you want. Duryodhana's answer surprises him. Not Arjuna's death. Not victory. Bring me Yudhishthira, he says. Alive. Today, why he wanted him breathing.",
+      "voice": "A teacher takes command of an army sent against his own students. Bhishma lies on the field, and the man the Kauravas choose to lead them is Drona, the master of arms who trained both sets of cousins as boys, who once tested the princes with a toy bird in a treetop and found that only Arjuna saw nothing but its head. Duryodhana honors him, and Drona, pleased, offers him a gift: ask for whatever you want. Duryodhana's answer surprises him. Not Arjuna's death. Not victory. Bring me Yudhishthira, he says. Alive.",
       "screen": [
         "`THE TEACHER TAKES COMMAND.` → `ASK FOR ANYTHING.` → `\"BRING ME YUDHISHTHIRA ALIVE.\"`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Drona is glad to hear it, at first. In Ganguli's telling, he praises Duryodhana: you don't want your cousin killed, so maybe you mean to make peace. But the text lets Duryodhana's reasons show. If Yudhishthira is captured, he can be drawn into the dice again, and the Pandavas can be sent back to the forest. Same game, second round. Drona agrees, with one condition he says out loud. He can take Yudhishthira only if Arjuna isn't standing beside him. Word of the promise reaches the Pandava camp, and Arjuna answers it plainly. While he lives, Drona won't lay a hand on his brother. So the Kauravas need Arjuna somewhere else. That's when a band of warriors from the Trigarta country steps forward and takes a dreadful oath. They'll challenge Arjuna, and they won't come back until they've killed him or died trying. They're called the samshaptakas, the sworn ones. And Arjuna won't refuse a challenge. He leaves another warrior to guard Yudhishthira, and rides away to fight them. Watch the pieces moving. A teacher's promise, a cousin's old game, an oath meant to draw one man off. In the coming days, that empty space where Arjuna should be will matter.",
+      "voice": "Drona is glad to hear it, at first. In Ganguli's telling, he praises Duryodhana: you don't want your cousin killed, so maybe you mean to make peace. But the text lets Duryodhana's reasons show. If Yudhishthira is captured, he can be drawn into the dice again, and the Pandavas can be sent back to the forest. Same game, second round. Drona agrees, with one condition he says out loud. He can take Yudhishthira only if Arjuna isn't standing beside him. Word of the promise reaches the Pandava camp, and Arjuna answers it plainly. While he lives, Drona won't lay a hand on his brother. So the Kauravas need Arjuna somewhere else. That's when a band of warriors from the Trigarta country steps forward and takes a dreadful oath. They'll challenge Arjuna, and they won't come back until they've killed him or died trying. They're called the samshaptakas, the sworn ones. And Arjuna won't refuse a challenge. He leaves another warrior to guard Yudhishthira, and rides away to fight them. Watch the pieces moving: a teacher's promise, a cousin's old game, an oath meant to draw one man off. In the coming days, that empty space where Arjuna should be will matter.",
       "screen": [
         "`DRONA HOPES FOR PEACE` · `THE DICE AGAIN` · `ONLY IF ARJUNA IS AWAY` · then, large: `THE SWORN ONES`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Sit comfortably and let your breath slow down. Think of a request someone made of you recently, one you said yes to quickly. Breathe in, and turn it over. What did they really want? Breathe out, and notice whether your yes still feels right. No need to fix anything now. Just see it more clearly, the way Drona might have, if he'd stopped to ask. If you pray, you can bring that request into your prayer. The bell holds the time.",
+      "voice": "Think of a request someone made of you recently that you said yes to quickly. Breathe in and turn it over: what did they really want? Breathe out and notice whether your yes still feels right, the way Drona might have, if he'd stopped to ask, and if you pray, bring that request into your prayer.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the empty space where Arjuna should be. Today, before you promise something, ask once what it's really for. Day eight hundred thirty-one.",
+      "voice": "Your line: the empty space where Arjuna should be. One promise, and a whole plan built around a gap. That's day eight hundred thirty-one.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Drona is honored in Hindu tradition as the guru of the Kauravas and the Pandavas, and the Drona Parva, the book of the Mahabharata named for him, tells his command after Bhishma's fall.",
   "games": {
+    "guess": [
+      "the teacher of both houses, now commanding the Kaurava army",
+      "the Trigarta warrior sworn to kill Arjuna or die trying",
+      "the dice master who plans to win Yudhishthira's kingdom"
+    ],
     "match": {
       "prompt": "the new command — tap the pairs.",
       "pairs": [
@@ -130,14 +135,47 @@
       "what it means: he wanted Yudhishthira alive to drag him back to the dice.",
       "what a scholar hears: the war's plan repeats the gambling hall: the same game, played again with armies."
     ],
+    "chat": {
+      "who": "your uncle",
+      "says": "Why did Duryodhana want Yudhishthira captured alive instead of killed?",
+      "options": [
+        "To draw him into the dice again and send the Pandavas back to the forest.",
+        "Because he secretly wanted peace and hoped to strike a deal with him.",
+        "Because Drona refused to harm any of his own former students at all."
+      ],
+      "answer": 0,
+      "meaning": "Drona first hoped it meant peace, but the text shows Duryodhana's reason: a captured Yudhishthira could be drawn into the dice and exiled again."
+    },
+    "gloss": {
+      "Drona": {
+        "meaning": "the master of arms who trained both sets of cousins",
+        "script": "द्रोण",
+        "say": "DROH-nuh"
+      },
+      "Trigarta": {
+        "meaning": "a country whose warriors swear to kill Arjuna or die",
+        "script": "त्रिगर्त",
+        "say": "tri-GAR-tuh"
+      },
+      "samshaptakas": {
+        "meaning": "the sworn ones, who vow to kill Arjuna or die trying",
+        "script": "संशप्तक",
+        "say": "sum-SHUP-tuh-kuz"
+      },
+      "Yudhishthira": {
+        "meaning": "the eldest Pandava, whom Duryodhana wants captured alive",
+        "script": "युधिष्ठिर",
+        "say": "yoo-DHISH-ti-ruh"
+      }
+    },
     "recall": [
       [
-        "Virata",
-        "threw the dice at Kanka"
+        "Kali",
+        "waits for a lapse, then enters Nala"
       ],
       [
-        "Yama",
-        "dark, in red, with a noose"
+        "abhyasa",
+        "practice, coming back again and again"
       ]
     ]
   },
@@ -165,7 +203,9 @@
       "Sub-parva names (Dronabhisheka, Samsaptaka-vadha) should be checked against Ganguli's headings.",
       "Editor: cut the narrator's verdict on Duryodhana ('learned nothing'), the stock close 'more than anyone expects', and fixed the band/step agreement.",
       "Carry is the index line with capitals; validator warns on capitals but it must match the index.",
-      "Auditor: \"taught Arjuna to hit the bird's eye\" is the popular version; in Ganguli's Adi Parva Arjuna sees only the head of an artificial bird and shoots it off. Hook now says he saw nothing but its head."
+      "Auditor: \"taught Arjuna to hit the bird's eye\" is the popular version; in Ganguli's Adi Parva Arjuna sees only the head of an artificial bird and shoots it off. Hook now says he saw nothing but its head.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: hold every hour, Seneca's first letter. Your line was hold this hour. Did one hour today go where you sent it? Day four hundred thirty-three.",
+      "voice": "Yesterday's word was three thieves: time torn away, stolen, or let slip. Your line was hold this hour.",
       "screen": [
         "`HOLD THIS HOUR.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Fourteen browser tabs. Three half-read books by the bed. Two podcasts paused in the middle. A language app, a cooking channel, a course you paid for in January. None of it bad. All of it started. Very little finished. Seneca's second letter opens by praising Lucilius for not living like that, and then warns him how easily he could start. We met one line of this letter back in year one, about reading slowly. Today we go underneath it, to the restlessness itself. Today: nowhere and everywhere.",
+      "voice": "Fourteen browser tabs. Three half-read books by the bed. Two podcasts paused in the middle. A language app, a cooking channel, a course you paid for in January. None of it bad. All of it started. Very little finished. Seneca's second letter praises Lucilius for not living like that, then warns how easily he could start. We met one line of this letter in year one, about reading slowly. Today we go underneath it, to the restlessness itself.",
       "screen": [
         "`FOURTEEN TABS OPEN.` → `ALL STARTED, LITTLE FINISHED.` → `NOWHERE AND EVERYWHERE.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the good sign. Seneca opens kindly. He's heard that Lucilius isn't rushing from place to place, and he takes it as a sign of a settled mind. A mind in order, he says, can stop and spend time with itself. Second, the restlessness. Then the warning. Be careful, he says, that reading many authors and every kind of book doesn't make you just as restless as constant travel. In Gummere's translation, three words: Everywhere means nowhere. Third, the pictures. Seneca piles them up. A person who spends all their life traveling ends up with many acquaintances and no friends. Food that comes straight back up doesn't nourish the body. A wound doesn't heal if you keep changing the medicine. A plant that's moved again and again can't grow strong roots. Every picture says the same thing: depth needs staying. Fourth, the cure. So stay with a few, Seneca says, and let them sink in. When you feel like a change, go back to someone you've already read. And each day take away one thought to digest. That's why this day's line is go deep. Not because new things are bad. But you can't take root in fourteen places at once. The restless person isn't everywhere. They're nowhere for very long. The one who stays can finally arrive.",
+      "voice": "Seneca opens kindly. He's heard that Lucilius isn't rushing from place to place, and takes it as a sign of a settled mind. A mind in order, he says, can stop and spend time with itself. Then the warning. Be careful that reading many authors and every kind of book doesn't make you as restless as constant travel. In Gummere's translation, three words: Everywhere means nowhere. Seneca piles up pictures. A person who spends life traveling ends up with many acquaintances and no friends. Food that comes straight back up doesn't nourish the body. A wound doesn't heal if you keep changing the medicine. A plant moved again and again can't grow strong roots. Every picture says the same thing: depth needs staying. So stay with a few, Seneca says, and let them sink in. When you feel like a change, go back to someone you've already read. And each day take away one thought to digest. Not because new things are bad. But you can't take root in fourteen places at once. The restless person isn't everywhere. They're nowhere for very long. The one who stays can finally arrive.",
       "screen": [
         "`A SETTLED MIND CAN STAY.` · `EVERYWHERE MEANS NOWHERE.` · `THE PLANT MOVED TOO OFTEN.` · `STAY WITH A FEW; DIGEST ONE.` · then, large: `GO DEEP.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Take one short thing to read: a line you love, a verse, a paragraph from a book nearby, even today's line, go deep. Read it once, at normal speed. Then close your eyes and breathe. Now read it again, slower, as if you'd never seen it. Notice one word you missed the first time. Stay with that word. Let it put down one small root, the way Seneca's plant does when it's finally left in one place. The bell holds the time.",
+      "voice": "Take one short thing to read, a line you love, a verse, today's line, and read it once at normal speed. Then read it again, slower, as if you'd never seen it, and notice one word you missed the first time. Stay with that word, and let it put down one small root.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: go deep. Read one thing twice today instead of two things once. Close one tab you'll never get to. Day four hundred thirty-three.",
+      "voice": "Your line: go deep. One thought a day, digested, is plenty. That's day four hundred thirty-three.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Readers following Seneca's advice sometimes stay with a few trusted authors, reread rather than skim, and take away one thought each day to carry.",
   "games": {
+    "guess": [
+      "what can grow only when you stay in one place",
+      "a family history that goes back generations",
+      "firm beliefs that no argument can ever shake"
+    ],
     "match": {
       "prompt": "nowhere and everywhere — tap the pairs.",
       "pairs": [
@@ -132,14 +137,41 @@
     ],
     "recall": [
       [
-        "Helvidius Priscus",
-        "the senator who kept going in"
+        "eleutheria",
+        "Greek for freedom"
       ],
       [
-        "prohairesis",
-        "the power to choose"
+        "orgē",
+        "anger; first, don't feed the habit"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "a friend from your book club",
+      "says": "I've got ten books going at once. Isn't reading widely always good?",
+      "options": [
+        "Seneca says stay with a few and let them sink in. Everywhere means nowhere.",
+        "Seneca says read as many authors as you can; the more the better.",
+        "Seneca says never reread a book; always move on to something new."
+      ],
+      "answer": 0,
+      "meaning": "In Letter two, a plant moved too often can't grow strong roots. Seneca says stay with a few authors, and digest one thought a day."
+    },
+    "gloss": {
+      "Seneca": {
+        "meaning": "a rich Roman Stoic who wrote letters to his friend Lucilius",
+        "say": "SEN-uh-kuh"
+      },
+      "Lucilius": {
+        "meaning": "Seneca's friend, a Roman official in Sicily",
+        "say": "loo-SIL-ee-us"
+      },
+      "Gummere": {
+        "meaning": "translator of the 1917 English edition of Seneca's letters"
+      },
+      "Everywhere means nowhere": {
+        "meaning": "Gummere's English for Seneca's line about restless reading"
+      }
+    }
   },
   "sources": [
     {
@@ -164,7 +196,9 @@
       "Letter 2.1–4: the settled mind; the traveler with many acquaintances and no friends; food that is vomited; the wound with changing remedies; the plant often moved; return to authors already read; one thought a day. Paraphrased; confirm.",
       "Latin 'nusquam est qui ubique est' (Letter 2.2). Confirm.",
       "Year one day 229 used this letter for reading slowly; this day takes the restlessness angle to avoid repeating it.",
-      "Seneca's habit of quoting Epicurus and defending it (e.g. Letters 8.8, 12.11, 16.7): confirm references."
+      "Seneca's habit of quoting Epicurus and defending it (e.g. Letters 8.8, 12.11, 16.7): confirm references.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

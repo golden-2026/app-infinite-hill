@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: the eleven blessings of metta, and your line, wish one person well. How was the night? Today, a new week, and a different bedside: someone who is ill. Day six hundred seventy-three.",
+      "voice": "Yesterday: the eleven blessings of metta, and your line, wish one person well. Today, a new week, and a different bedside: someone who is ill.",
       "screen": [
         "`WISH ONE PERSON WELL.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "When someone we love is sick, we bring things. Soup, flowers, a phone charger, a magazine nobody reads. What we really want to bring is something that helps, and we often don't know what that is. In the Book of Tens, a monk named Girimananda is sick, in pain, gravely ill. Ananda, the Buddha's attendant, comes to the Buddha and asks him to visit, out of compassion. The Buddha does something unexpected. He doesn't go himself. He sends Ananda back with something to bring. Not medicine. A list of ten things to read aloud. Today: sanna.",
+      "voice": "When someone we love is sick, we bring things: soup, flowers, a phone charger, a magazine nobody reads. What we really want to bring is something that helps, and we often don't know what that is. In the Book of Tens, a monk named Girimananda is sick, in pain, gravely ill. Ananda, the Buddha's attendant, asks the Buddha to visit him, out of compassion. The Buddha does something unexpected. He doesn't go himself. He sends Ananda back with something to bring: not medicine, but a list of ten things to read aloud.",
       "screen": [
         "`WHAT DO WE BRING THE SICK?` → `GIRIMANANDA IS GRAVELY ILL.` → `ANANDA IS SENT WITH A LIST.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "If you go to Girimananda, the Buddha says, and tell him the ten perceptions, it's possible his illness will subside at once. Then he gives them. One, impermanence: the body, feelings, all of it, changing. Two, not-self: none of it is me or mine. Three, the unattractive: the body seen plainly, hair, skin, bones, the inside as well as the outside. Four, drawbacks: the body as a home for many illnesses, and the text names a long list of them, eye disease to fever. Five, abandoning: letting go of harmful thoughts. Six, dispassion. Seven, cessation. Eight, not delighting in the whole world. Nine, the impermanence of all that's made. And ten, mindfulness of breathing, given in full: breathing in long, breathing out long, and on through sixteen steps. Ananda learns them, goes to Girimananda, and recites them. And the text says Girimananda recovered from that illness. Notice what kind of list this is. It isn't comforting in the usual way. It doesn't say you'll be fine. It looks straight at the body, its fragility and its changes, and ends with the simplest thing a sick person can still do: breathe, and know they're breathing. One modern reading is that a mind steadied and less gripped by fear helps the body. The text itself doesn't explain it. It just says he recovered. In some Theravada communities, this sutta is still chanted for people who are ill.",
+      "voice": "If you tell Girimananda the ten perceptions, the Buddha says, it's possible his illness will subside at once. Then he gives them. One, impermanence: the body, feelings, all of it, changing. Two, not-self: none of it is me or mine. Three, the unattractive: the body seen plainly, hair, skin, bones, the inside as well as the outside. Four, drawbacks: the body as a home for many illnesses, and the text names a long list of them, eye disease to fever. Five, abandoning: letting go of harmful thoughts. Six, dispassion. Seven, cessation. Eight, not delighting in the whole world. Nine, the impermanence of all that's made. Ten, mindfulness of breathing, given in full: breathing in long, breathing out long, and on through sixteen steps. Ananda learns them, goes to Girimananda and recites them, and the text says Girimananda recovered from that illness. It isn't comforting in the usual way. It doesn't say you'll be fine. It looks straight at the body, its fragility and its changes, and ends with the simplest thing a sick person can still do: breathe, and know they're breathing. One modern reading is that a mind steadied and less gripped by fear helps the body. The text itself doesn't explain it; it just says he recovered. In some Theravada communities, this sutta is still chanted for people who are ill.",
       "screen": [
         "`THE BUDDHA SENDS ANANDA.` · `IMPERMANENCE, NOT-SELF.` · `ENDING WITH THE BREATH.` · then, large: `HE RECOVERED.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: read something kind to someone ill. Sit, and settle with the tenth perception, the breath. Breathing in long, know it. Breathing out long, know it. Now bring to mind someone who is unwell, near or far. Picture sitting beside them. What could you read or say that would steady them? A favorite line, a message, a memory. If you pray, you can hold them in prayer. Choose one thing, and plan to send it today. The bell holds the time.",
+      "voice": "Settle with the tenth perception: breathing in long, know it; breathing out long, know it. Then bring to mind someone who is unwell, near or far, and picture sitting beside them, wondering what line, message or memory might steady them. If you pray, you can hold them in prayer.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: ten perceptions. Today, send one steadying word to someone who's unwell, and take one long, known breath for them. Day six hundred seventy-three.",
+      "voice": "Your line: ten perceptions. Ten things to read aloud, and the last one is simply a breath. Day six hundred seventy-three.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "In parts of the Theravada world, monks chant the Girimananda Sutta for the sick, and visiting and reading to ill people, lay or ordained, is a long-standing Buddhist act of care.",
   "games": {
+    "guess": [
+      "perception, the way the mind notes things",
+      "a feeling of pain or pleasure in the body",
+      "a blessing read aloud for someone sick"
+    ],
     "match": {
       "prompt": "read to the sick: tap the pairs.",
       "pairs": [
@@ -132,14 +137,49 @@
     ],
     "recall": [
       [
-        "buddha",
-        "the one who has woken up"
+        "sutta",
+        "a discourse, often explained as a thread"
       ],
       [
-        "pabhassara",
-        "luminous, shining"
+        "dakkhina",
+        "an offering, a gift given with respect"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your aunt",
+      "says": "My friend is in the hospital. What did the Buddha send to a sick monk?",
+      "options": [
+        "Ten perceptions to read aloud, from impermanence to mindful breathing; then he recovered.",
+        "A promise he'd be fine soon, since a good monk could never fall seriously ill.",
+        "Only herbs and a doctor; he said the teachings are no use when someone is ill."
+      ],
+      "answer": 0,
+      "meaning": "In AN 10.60 the Buddha sends Ananda with ten perceptions to recite to Girimananda, ending with mindfulness of breathing; the text says he recovered."
+    },
+    "gloss": {
+      "Girimananda": {
+        "meaning": "a monk who was gravely ill",
+        "say": "gi-ri-MAH-nun-duh"
+      },
+      "Ananda": {
+        "meaning": "the Buddha's attendant",
+        "script": "आनन्द",
+        "say": "AH-nun-duh"
+      },
+      "sanna": {
+        "meaning": "perception, recognition",
+        "script": "सञ्ञा",
+        "say": "SUN-nyah"
+      },
+      "Theravada": {
+        "meaning": "the 'teaching of the elders,' a major Buddhist school",
+        "script": "थेरवाद",
+        "say": "tay-ruh-VAH-duh"
+      },
+      "Book of Tens": {
+        "meaning": "the part of the Numbered Discourses grouped in tens"
+      }
+    }
   },
   "sources": [
     {
@@ -157,7 +197,9 @@
       "'Many teachers read the healing this way' is a general characterization; the text gives no mechanism.",
       "Confirm that the Girimananda Sutta is chanted for the sick in some Theravada communities (it is included in some paritta collections).",
       "The practice includes 'if you pray, you can hold them in prayer'; no prayer text is given.",
-      "Audit (second sample): replaced the vague 'many teachers read the healing this way' with a reading marked as one modern interpretation, and the trapdoor's unsourced 'one of the canon's longest medical lists' with checkable details."
+      "Audit (second sample): replaced the vague 'many teachers read the healing this way' with a reading marked as one modern interpretation, and the trapdoor's unsourced 'one of the canon's longest medical lists' with checkable details.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

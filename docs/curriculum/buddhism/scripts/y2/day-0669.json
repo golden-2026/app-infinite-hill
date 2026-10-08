@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: drowsy Moggallana and your line, climb the ladder. Did you climb the ladder in the slump? Today, eight things that blow through every life, sleepy or awake. Day six hundred sixty-nine.",
+      "voice": "Yesterday: drowsy Moggallana, and your line, climb the ladder. Today, eight things that blow through every life, sleepy or awake.",
       "screen": [
         "`CLIMB THE LADDER.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "People in China tell a story about the poet Su Dongpo. He wrote a poem saying his meditation had grown so steady that the eight winds could not move him, and sent it across the river to his friend, a monk. The monk wrote one rude word on it and sent it back. The poet, furious, rowed straight over to complain. The monk laughed: eight winds can't move you, but one little puff blew you across the river. The story is legend. The eight winds are not. They come from a short sutta in the Book of Eights. Today: eight winds.",
+      "voice": "People in China tell a story about the poet Su Dongpo. He wrote a poem saying his meditation had grown so steady that the eight winds could not move him, and sent it across the river to his friend, a monk. The monk wrote one rude word on it and sent it back. The poet, furious, rowed straight over to complain. The monk laughed: eight winds can't move you, but one little puff blew you across the river. The story is legend. The eight winds are not; they come from a short sutta in the Book of Eights.",
       "screen": [
         "`A POET'S PROUD POEM.` → `ONE RUDE WORD BACK.` → `ACROSS THE RIVER.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "In the Book of Eights, the Buddha says: these eight worldly conditions turn the world, and the world turns after them. Gain and loss. Fame and disrepute. Praise and blame. Pleasure and pain. Four pairs. One side of each pair we chase, the other we run from, and between the chasing and the running, a lot of life goes by. In Pali they're the lokadhamma, the ways of the world. The East Asian name, eight winds, is a good picture: they come and go, they push from different sides, and you don't choose the weather. Then, in the next discourse, he makes a sharp point. These eight come to everyone. To the person who hasn't heard the teaching, and to the noble disciple who has. So what's the difference? The untaught person, when gain comes, doesn't reflect: this is impermanent, painful, bound to change. So gain grabs their mind, and when loss comes, loss grabs it too. They're delighted, then crushed, and they don't get free. The taught disciple meets the same eight, and sees them for what they are. Gain doesn't take over the mind. Loss doesn't either. Notice: the disciple still gets praised and still gets blamed. Practice doesn't stop the weather. It changes how much the weather decides. That's the poet's joke, too. He was right about the eight winds, and wrong about himself.",
+      "voice": "These eight worldly conditions, the Buddha says, turn the world, and the world turns after them. Gain and loss. Fame and disrepute. Praise and blame. Pleasure and pain. Four pairs: one side we chase, the other we run from, and between the chasing and the running, a lot of life goes by. In Pali they're the lokadhamma, the ways of the world. The East Asian name, eight winds, is a good picture: they come and go, they push from different sides, and you don't choose the weather. In the next discourse he makes a sharp point. These eight come to everyone, to the person who hasn't heard the teaching and to the noble disciple who has. So what's the difference? The untaught person, when gain comes, doesn't reflect that it's impermanent, painful, bound to change. So gain grabs their mind, and when loss comes, loss grabs it too. They're delighted, then crushed, and they don't get free. The taught disciple meets the same eight and sees them for what they are: neither gain nor loss takes over the mind. The disciple still gets praised and still gets blamed. Practice doesn't stop the weather; it changes how much the weather decides. That's the poet's joke, too. He was right about the eight winds, and wrong about himself.",
       "screen": [
         "`FOUR PAIRS OF WINDS.` · `THEY COME TO EVERYONE.` · `ONE IS SWEPT AWAY.` · then, large: `ONE SEES THEM PASS.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Sit, and let the breath settle. Then ask: which wind blew hardest on me today? A gain or a loss? Some praise, some blame? A pleasure, a pain? Name it, plainly, the way a forecaster names the weather. Feel where it lands in the body. Then just watch it, the way you'd watch wind move a tree. It came. It's moving. It will pass. The tree stays rooted. The bell holds the time.",
+      "voice": "Ask which wind blew hardest on you today, gain or loss, praise or blame, pleasure or pain, and name it plainly, the way a forecaster names the weather. Feel where it lands in the body, then watch it the way you'd watch wind move a tree: it came, it's moving, it will pass, and the tree stays rooted.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: let the wind blow past. Today, when praise or blame comes your way, name the wind silently, and let it blow past. Day six hundred sixty-nine.",
+      "voice": "Your line: let the wind blow past. Praise and blame still come; they just don't get the last word. Rest well.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Buddhist teachers in many traditions teach the eight worldly conditions as a check on daily life, and in East Asian Buddhism the 'eight winds' are a common image in sermons and poems about steadiness of mind.",
   "games": {
+    "guess": [
+      "four pairs of ups and downs that hit everyone",
+      "eight storms that ruined an ancient city",
+      "eight breaths that begin a meditation session"
+    ],
     "match": {
       "prompt": "eight winds: tap the pairs.",
       "pairs": [
@@ -132,14 +137,42 @@
     ],
     "recall": [
       [
-        "buddha",
-        "the one who has woken up"
+        "accaya",
+        "a wrong, a going beyond the line"
       ],
       [
-        "pabhassara",
-        "luminous, shining"
+        "jati",
+        "birth, and the group one is born into"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your teammate",
+      "says": "If I meditate enough, will praise and blame stop coming my way?",
+      "options": [
+        "They'll still come; the sutta says the taught disciple meets them too, but isn't swept away.",
+        "Yes: the sutta says the eight winds stop blowing on anyone who has practiced long enough.",
+        "Only the painful four are winds; gain, fame, praise and pleasure can't knock anyone over."
+      ],
+      "answer": 0,
+      "meaning": "In AN 8.5 and 8.6, the eight worldly conditions come to everyone. The untaught are swept by gain and loss; the taught disciple sees them as impermanent."
+    },
+    "gloss": {
+      "Su Dongpo": {
+        "meaning": "a Chinese poet of the Song dynasty, in a legendary story",
+        "say": "SOO dong-POH"
+      },
+      "lokadhamma": {
+        "meaning": "the ways of the world: the eight worldly conditions",
+        "script": "लोकधम्म",
+        "say": "LOH-kuh-DUM-muh"
+      },
+      "noble disciple": {
+        "meaning": "one who has heard the teaching and lives by it"
+      },
+      "Book of Eights": {
+        "meaning": "the part of the Numbered Discourses grouped in eights"
+      }
+    }
   },
   "sources": [
     {
@@ -168,7 +201,9 @@
       "AN 8.6 paraphrased. Confirm the 'turn the world, and the world turns after them' framing (AN 8.5 Lokadhamma Sutta has it; AN 8.6 has the taught/untaught contrast). The script cites 8.6 per the outline.",
       "The Su Dongpo / Foyin story is presented as legend ('a story people tell'); the 'rude word' is the traditional 'fart' left unspoken. Confirm tone is acceptable.",
       "'Nine hundred years ago' for Su Dongpo (1037–1101) is approximate.",
-      "Review (y2 editor pass): the 'turn the world' line is AN 8.5 and the taught/untaught contrast AN 8.6; the teach now says so and AN 8.5 is added to sources. Cut 'nine hundred years ago' (date not in the cited text). Varied the 'Here's the practice' opener."
+      "Review (y2 editor pass): the 'turn the world' line is AN 8.5 and the taught/untaught contrast AN 8.6; the teach now says so and AN 8.5 is added to sources. Cut 'nine hundred years ago' (date not in the cited text). Varied the 'Here's the practice' opener.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

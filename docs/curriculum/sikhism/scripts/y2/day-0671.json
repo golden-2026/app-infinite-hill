@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, jog, and your line: you made me worthy. Did you thank someone for help they'd forgotten giving? Today, a song from the hardest night of the Tenth Guru's life. Day six hundred seventy-one.",
+      "voice": "Yesterday, jog, worthiness given before it's seen, and your line: you made me worthy. Today, a song from the hardest night of the Tenth Guru's life.",
       "screen": [
         "`YOU MADE ME WORTHY.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A mud fortress at Chamkaur in Punjab, surrounded by a much larger army. Inside, Guru Gobind Singh and a small band of Sikhs. By the end of the fighting, his two elder sons, Ajit Singh and Jujhar Singh, are dead, along with many of his companions. At the Sikhs' insistence, the Guru leaves in the dark. Sikh tradition remembers him alone in the forest near Machhiwara, on the cold ground, his clothes torn. And there, it says, he sang. Today: tell the beloved friend.",
+      "voice": "A mud fortress at Chamkaur in Punjab, surrounded by a much larger army. Inside, Guru Gobind Singh and a small band of Sikhs. By the end of the fighting, his two elder sons, Ajit Singh and Jujhar Singh, have fallen, along with many of his companions. At the Sikhs' insistence, the Guru leaves in the dark. Sikh tradition remembers him alone in the forest near Machhiwara, on the cold ground, his clothes torn. And there, it says, he sang.",
       "screen": [
         "`A MUD FORTRESS AT CHAMKAUR.` → `TWO SONS FALLEN.` → `ALONE IN THE FOREST, HE SINGS.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "The song is called a khayal, and it's in the Dasam Granth, the collection of writings associated with the Tenth Guru. Much of that collection is in Braj, an old literary language of north India. This song is in Punjabi, simple and close. It begins: mitra piaare noo, haal mureedaan daa kahinaa. In paraphrase: go, tell the beloved Friend the state of His disciples. Without You, soft quilts are like sickness, and living in comfortable houses is like living with snakes. The water jug is like a spike, the cup like a dagger. And then: a straw mat with the Friend is better than grand houses that burn like a furnace. Who's the Friend? God. A disciple, a mureed, is sending word to the Beloved by any messenger who'll go. The striking thing is what's not in it. There's no complaint about the enemy, no counting of losses, no call for revenge. A father who has just lost two sons speaks only of being apart from God, and of preferring the hardest ground with God to every comfort without Him. Historians debate when the khayal was written, and the tradition that places it at Machhiwara is just that, a tradition. But for Sikhs, that setting is how the song is heard. Today it's often sung slowly and softly: a tender song from a Guru whose life was full of steel. Grief, here, isn't hidden. It's sent, as a message, to the Friend.",
+      "voice": "The song is called a khayal, and it's in the Dasam Granth, the collection of writings associated with the Tenth Guru. Much of that collection is in Braj, an old literary language of north India. This song is in Punjabi, simple and close. It begins: mitra piaare noo, haal mureedaan daa kahinaa. In paraphrase: go, tell the beloved Friend the state of His disciples. Without You, soft quilts are like sickness, and living in comfortable houses is like living with snakes. The water jug is like a spike, the cup like a dagger. And then: a straw mat with the Friend is better than grand houses that burn like a furnace. The Friend is God. A disciple, a mureed, sends word to the Beloved by any messenger who'll go. What's striking is what's not in it. No complaint about the enemy, no counting of losses, no call for revenge. A father who has just lost two sons speaks only of being apart from God, and of preferring the hardest ground with God to every comfort without Him. Historians debate when the khayal was written, and the tradition that places it at Machhiwara is just that, a tradition. But for Sikhs, that setting is how the song is heard. It's often sung slowly and softly: a tender song from a Guru whose life was full of steel. Grief, here, isn't hidden. It's sent, as a message, to the Friend.",
       "screen": [
         "`A KHAYAL IN PUNJABI.` · `GO, TELL THE BELOVED FRIEND.` · `COMFORT WITHOUT HIM IS SICKNESS.` · `GRIEF SENT AS A MESSAGE.` · then, large: `TELL THE FRIEND.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: send word to a friend. Sit, and think of someone you haven't told how things really are with you. Picture what you'd say, plainly, without dressing it up. Then, if it feels right, write them a short message after the bell: a few true lines. If you pray, you can tell God the same thing in your own words first, or say Waheguru and let that be the message. The bell holds the time.",
+      "voice": "Think of someone you haven't told how things really are with you, and picture what you'd say, plainly, without dressing it up. If you pray, tell God the same thing in your own words first, or say Waheguru and let that be the message.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: tell the friend. Today, send one honest message to someone who'd want to know how you really are. Day six hundred seventy-one.",
+      "voice": "Your line: tell the friend. Grief doesn't have to be hidden; it can be sent. Until tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Sikhs sing mitra piaare noo softly in kirtan, and it is often sung in December, during the weeks that recall Chamkaur and the martyrdom of the Guru's sons.",
   "games": {
+    "guess": [
+      "beloved friend; here, God",
+      "a loyal disciple of the Guru",
+      "a messenger sent with news"
+    ],
     "match": {
       "prompt": "the song in the forest — tap the pairs.",
       "pairs": [
@@ -132,14 +137,55 @@
     ],
     "recall": [
       [
-        "bairaag",
-        "the warm ache of longing"
+        "baani",
+        "the Word, speech from the Master"
       ],
       [
-        "lav",
-        "one round of the wedding"
+        "sir",
+        "the head, where blessing lands"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "a friend who is grieving",
+      "says": "Did the Sikh Gurus ever grieve, or were they always strong?",
+      "options": [
+        "Tradition remembers the Tenth Guru, after losing two sons, sending his grief to God in song.",
+        "They never grieved; Guru Gobind Singh moved on at once, without looking back.",
+        "They grieved, but kept it private and never put it into words or song."
+      ],
+      "answer": 0,
+      "meaning": "In the khayal tradition places at Machhiwara, Guru Gobind Singh makes no complaint, only tells the beloved Friend of being apart from Him."
+    },
+    "gloss": {
+      "Chamkaur": {
+        "meaning": "where the Guru's two elder sons fell",
+        "script": "ਚਮਕੌਰ",
+        "say": "chum-KOWR"
+      },
+      "Machhiwara": {
+        "meaning": "where tradition remembers the Guru singing in the forest",
+        "script": "ਮਾਛੀਵਾੜਾ",
+        "say": "maa-chhee-VAA-raa"
+      },
+      "khayal": {
+        "meaning": "a song form; here, the Tenth Guru's song",
+        "say": "khi-YAAL"
+      },
+      "mureed": {
+        "meaning": "a disciple",
+        "script": "ਮੁਰੀਦ",
+        "say": "moo-REED"
+      },
+      "Dasam Granth": {
+        "meaning": "writings associated with the Tenth Guru",
+        "script": "ਦਸਮ ਗ੍ਰੰਥ",
+        "say": "DUS-um GRUNTH"
+      },
+      "Braj": {
+        "meaning": "an old literary language of north India",
+        "say": "BRUJ"
+      }
+    }
   },
   "sources": [
     {
@@ -163,7 +209,9 @@
       "Khayal paraphrased (quilts like sickness, houses like snakes, jug like a spike, cup like a dagger, the friend's straw bed better than furnace-like dwellings). Confirm images and wording.",
       "Chamkaur in December 1704 and the deaths of Ajit Singh and Jujhar Singh: some sources date it December 1704, others 1705 by calendar conversion; confirm.",
       "Dasam Granth authorship and compilation are discussed among Sikhs; script says 'associated with the Tenth Guru'. Keeper to confirm wording.",
-      "Braj vs Punjabi characterization: confirm."
+      "Braj vs Punjabi characterization: confirm.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

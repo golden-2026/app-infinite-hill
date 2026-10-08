@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: one thing, ekagra. Pick one, and stay, because the obstacles feed on scattering. Did you close every tab but one for an hour? Today, Patanjali's first suggestion for what that one thing could be. Day four hundred forty.",
+      "voice": "Yesterday: ekagra, one thing. The obstacles feed on scattering, so pick one, and stay. Today, a first candidate for that one thing.",
       "screen": [
         "`ONE THING — PICK ONE, AND STAY.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Scroll through any feed for two minutes. A friend from school got engaged. A stranger lost their home in a flood. Someone you admire did something generous. Someone else did something cruel, and the comments are on fire. Four kinds of news, and each can tug a mind a different way: envy, overwhelm, cynicism, rage. Sutra 1.33 starts out there, with other people, and with four kinds of people much like these.",
+      "voice": "Scroll through a feed for two minutes. A friend from school got engaged. A stranger lost their home in a flood. Someone you admire did something generous. Someone else did something cruel, and the comments are on fire. Four kinds of news, and each can tug a mind a different way: envy, overwhelm, cynicism, rage. Sutra 1.33 starts out there, with other people, four kinds of them.",
       "screen": [
         "`AN ENGAGEMENT. A FLOOD.` → `A KINDNESS. A CRUELTY.` → `FOUR TUGS ON THE MIND.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Sutra 1.33 pairs four attitudes with four kinds of people. Maitri, friendliness, toward the happy. Karuna, compassion, toward those who suffer. Mudita, gladness, toward the good. And upeksha, equanimity, toward those who do wrong. By cultivating these, the sutra says, the mind becomes clear and settled. The Sanskrit for that is chitta prasadana, the mind made calm and bright, like water once the mud has settled. Look at how precise the pairing is. Commentators read friendliness toward the happy as the answer to envy: their good news isn't your loss. Compassion toward the suffering keeps you from looking away. Gladness toward the good is harder than it sounds; it means being glad when someone else does right, without needing to be the one who did it. And equanimity toward wrongdoers doesn't mean approving. It means not letting their wrong take over your mind. Some modern teachers call these the four locks and the four keys: each kind of person a lock, each attitude the key that fits it. Buddhists know the same four qualities by another name, the brahma viharas, and practice them too. The Yoga Sutras place them right after one-pointed practice, as the first of several things the mind can rest on. So your one thing doesn't have to be the breath. It can be a way of meeting people.",
+      "voice": "Sutra 1.33 pairs four attitudes with four kinds of people. Maitri, friendliness, toward the happy. Karuna, compassion, toward those who suffer. Mudita, gladness, toward the good. And upeksha, equanimity, toward those who do wrong. Cultivate these, the sutra says, and the mind becomes clear and settled: chitta prasadana, the mind made calm and bright, like water once the mud has settled. The pairing is precise. Commentators read friendliness toward the happy as the answer to envy: their good news isn't your loss. Compassion toward the suffering keeps you from looking away. Gladness toward the good is harder than it sounds: being glad when someone else does right, without needing to be the one who did it. And equanimity toward wrongdoers doesn't mean approving. It means not letting their wrong take over your mind. Some modern teachers call these the four locks and the four keys: each kind of person a lock, each attitude the key that fits. Buddhists know the same four qualities by another name, the brahma viharas, and practice them too. The Yoga Sutras place them right after one-pointed practice, the first of several things the mind can rest on. So your one thing doesn't have to be the breath. It can be a way of meeting people.",
       "screen": [
         "`FOUR PEOPLE, FOUR ATTITUDES.` · `CHITTA PRASADANA: THE MIND MADE CLEAR.` · `EQUANIMITY ISN'T APPROVAL.` · then, large: `THE FOUR KEYS.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Sit and settle. Bring to mind someone who's happy right now, and let a little friendliness toward them rise: good for you. Then someone who's suffering, and let compassion come: may this ease. Then someone who did something good, and let yourself be glad. Then, gently, someone who did wrong, and just let your mind stay level, not agreeing, not boiling. Then return to the breath, and notice whether the water looks any clearer. The bell holds the time.",
+      "voice": "Bring to mind someone happy right now and let a little friendliness rise; then someone suffering, and let compassion come; then someone who did good, and be glad. Then, gently, someone who did wrong, and let your mind stay level, not agreeing, not boiling. Come back to the breath and notice whether the water looks any clearer.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the four keys. Today, the next time news of someone tugs at you, ask which of the four people this is, and try the key that fits. Day four hundred forty.",
+      "voice": "Your line: the four keys. Friendliness, compassion, gladness and equanimity, one for each kind of person. See you tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Many yoga teachers present sutra 1.33 as a daily practice for relationships, consciously meeting the happy with friendliness, the suffering with compassion, the good with gladness and wrongdoers with equanimity.",
   "games": {
+    "guess": [
+      "maitri: goodwill toward people who are happy",
+      "goodwill saved for close friends only",
+      "agreeing with whatever others do"
+    ],
     "match": {
       "prompt": "the four keys, each to its lock.",
       "pairs": [
@@ -132,14 +137,52 @@
     ],
     "recall": [
       [
-        "drashtri",
-        "the seer, pure awareness"
+        "tapas",
+        "heat; focused effort"
       ],
       [
-        "anor aniyan",
-        "smaller than the small"
+        "brahmanishtha",
+        "established in Brahman"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your sister",
+      "says": "Equanimity toward people who do wrong? Doesn't that just let them off the hook?",
+      "options": [
+        "No. It isn't approval; it means not letting their wrong take over your own mind.",
+        "Yes. Equanimity means approving of what they did, so you can stay calm.",
+        "No. It means staying angry at them, so you never forget what they did."
+      ],
+      "answer": 0,
+      "meaning": "Sutra 1.33 pairs equanimity with wrongdoers. Equanimity isn't approval; it keeps their wrong from taking over your mind."
+    },
+    "gloss": {
+      "maitri": {
+        "meaning": "friendliness, offered toward the happy",
+        "script": "मैत्री",
+        "say": "MY-tree"
+      },
+      "karuna": {
+        "meaning": "compassion, offered toward those who suffer",
+        "script": "करुणा",
+        "say": "KUH-roo-nah"
+      },
+      "mudita": {
+        "meaning": "gladness, offered toward the good",
+        "script": "मुदिता",
+        "say": "MOO-dih-tah"
+      },
+      "upeksha": {
+        "meaning": "equanimity, offered toward those who do wrong",
+        "script": "उपेक्षा",
+        "say": "oo-PAYK-shah"
+      },
+      "chitta prasadana": {
+        "meaning": "the mind made calm and bright, like settled water",
+        "script": "चित्तप्रसादन",
+        "say": "CHIT-tuh pruh-SAH-duh-nuh"
+      }
+    }
   },
   "sources": [
     {
@@ -168,7 +211,9 @@
       "Editor review (y2 pass): cut 'most meditation advice starts inside your head' (unsourced 'most' claim) and the hook's telling the listener what they feel; envy reading attributed to commentators; the practice no longer promises clear water.",
       "Upeksha toward the apunya (non-virtuous) rendered 'equanimity toward those who do wrong'; some render 'indifference'. Confirm.",
       "The 'locks and keys' image is attributed to modern teachers (popularized by Swami Satchidananda); paraphrased, not quoted.",
-      "Brief Buddhist neighbor mention (brahma viharas) is descriptive only; check Keeper is comfortable."
+      "Brief Buddhist neighbor mention (brahma viharas) is descriptive only; check Keeper is comfortable.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

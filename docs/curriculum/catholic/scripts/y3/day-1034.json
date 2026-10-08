@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Bruno, and the Carthusians in their silent valley. Your line was the cross stands while the world turns. What did you keep still? Day one thousand thirty-four.",
+      "voice": "Yesterday, Bruno, and the Carthusians in their silent valley. Your line was the cross stands while the world turns.",
       "screen": [
         "`THE CROSS STANDS WHILE THE WORLD TURNS.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Start with an early layer of the story, from Gregory of Tours, a bishop who wrote a history of the Franks. He says Denis was sent to Gaul, to the town that would become Paris, as its bishop, and that he died by the sword for Christ. Other old accounts fill in more: he preached, people came to faith, and in a time of persecution he was arrested with two companions, a priest named Rusticus and a deacon named Eleutherius, and all three were beheaded. That's the core the Church keeps on his feast: Denis and companions, martyrs. Then the legend grew. Later tellings say that after Denis was beheaded on the hill, he stood up, picked up his own head, and walked away, preaching as he went, until he reached the place where he wanted to be buried. That's the bishop on the front of Notre-Dame. It's a story people tell, not a record. Some read it as a picture of how Parisians felt: their bishop was not finished by a sword. And the hill? Tradition reads its name, Montmartre, as the mountain of martyrs, for Denis and his companions. Historians debate where the name really comes from, but the story stuck to the place. There's one more twist. In Acts, when Paul preaches in Athens, among those who believe is a man named Dionysius the Areopagite. Medieval writers decided that Dionysius and Denis were the same man, Paul's convert sailing to Paris. Today the Church treats them as two different saints. Same name, different men, mixed together by people who loved them both.",
+      "voice": "Start with an early layer of the story, from Gregory of Tours, a bishop who wrote a history of the Franks. He says Denis was sent to Gaul, to the town that would become Paris, as its bishop, and that he died by the sword for Christ. Other old accounts fill in more: he preached, people came to faith, and in a time of persecution he was arrested with two companions, a priest named Rusticus and a deacon named Eleutherius, and all three were beheaded. That's the core the Church keeps on his feast: Denis and companions, martyrs. Then the legend grew. Later tellings say that after Denis was beheaded on the hill, he stood up, picked up his own head, and walked away, preaching as he went, until he reached the place where he wanted to be buried. That's the bishop on the front of Notre-Dame. It's a story people tell, not a record. Some read it as a picture of how Parisians felt: their bishop was not finished by a sword. And the hill? Tradition reads its name, Montmartre, as the mountain of martyrs. Historians debate where the name really comes from, but the story stuck to the place. One more twist. In Acts, when Paul preaches in Athens, among those who believe is a man named Dionysius the Areopagite. Medieval writers decided that Dionysius and Denis were the same man, Paul's convert sailing to Paris. Today the Church treats them as two different saints: same name, different men, mixed together by people who loved them both.",
       "screen": [
         "`SENT TO GAUL AS BISHOP.` · `BEHEADED WITH HIS TWO COMPANIONS.` · `THE LEGEND: HE CARRIED HIS HEAD.` · `NOT THE MAN PAUL MET IN ATHENS.` · then, large: `MONTMARTRE: THE MOUNTAIN OF MARTYRS.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: pray for France. Let your breath settle. Bring to mind France: Paris and its old churches, small villages with a bell tower in the center, and people of every faith and none who live there now. If you know someone French, start with them. If you pray, you can ask Denis, the bishop on the hill, to pray for the country he served. If you don't, simply hold its people in mind with good will. The bell holds the time.",
+      "voice": "Bring to mind France: Paris and its old churches, small villages with a bell tower in the center, and people of every faith and none who live there now, starting with anyone French you know. If you pray, ask Denis, the bishop on the hill, to pray for the country he served; if you don't, simply hold its people in mind with good will.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the mountain of martyrs. Today, when you pass an ordinary place, ask what happened there before you, and who might still remember. Day one thousand thirty-four.",
+      "voice": "Your line: the mountain of martyrs. A legend grew, and the hill kept the name. One thousand thirty-four days now.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Saint Denis and companions are remembered on 9 October; in France, and especially in Paris and at the basilica of Saint-Denis north of the city, the feast is kept with Mass.",
   "games": {
+    "guess": [
+      "an early bishop of Paris, martyred with companions",
+      "a French king who built the cathedral of Notre-Dame",
+      "a monk who copied the Gospels by hand in Paris"
+    ],
     "match": {
       "prompt": "Denis — tap the pairs.",
       "pairs": [
@@ -128,14 +133,46 @@
     ],
     "recall": [
       [
-        "Januarius",
-        "bishop and martyr"
+        "Matthew",
+        "the tax collector who got up and followed"
       ],
       [
-        "Jeanne Jugan",
-        "gave her own bed away"
+        "Mark",
+        "the evangelist marked by the lion"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "a friend just back from Paris",
+      "says": "Why does a statue on Notre-Dame show a bishop holding his own head?",
+      "options": [
+        "It's Denis; a later legend says after he was beheaded, he carried his head away.",
+        "It's a warning carved for kings who disobeyed the bishops of Paris.",
+        "It shows a Gospel scene: a bishop beheaded on Herod's orders."
+      ],
+      "answer": 0,
+      "meaning": "Denis was martyred with his companions; later tellings say he picked up his head and walked away preaching. It's a story people tell, not a record."
+    },
+    "gloss": {
+      "Notre-Dame": {
+        "meaning": "the great cathedral of Paris",
+        "say": "NOH-truh DAHM"
+      },
+      "Montmartre": {
+        "meaning": "the Paris hill tradition reads as the mountain of martyrs",
+        "say": "mohn-MAR-truh"
+      },
+      "Gaul": {
+        "meaning": "the old Roman name for the land that became France",
+        "say": "GAWL"
+      },
+      "Gregory of Tours": {
+        "meaning": "a bishop who wrote a history of the Franks"
+      },
+      "Areopagite": {
+        "meaning": "of Athens' council hill; Dionysius, Paul's convert there",
+        "say": "air-ee-OP-uh-gite"
+      }
+    }
   },
   "sources": [
     {
@@ -175,7 +212,9 @@
       "'Today the Church treats them as two different saints': Dionysius the Areopagite has his own commemoration (3 October in the Martyrology); confirm.",
       "Acts 17:34 paraphrased; 'among those who believe' summarizes the verse. Confirm or soften.",
       "Editor: Gregory of Tours (History 1.30) gives only the mission to Paris and death by the sword, so the companions and beheading are now attributed to 'other old accounts', and 'sent from Rome' became 'sent to Gaul'; 'the history the Church keeps' became 'the core'; cut the stock 'every hill has a story' from the carry; match pair reworded.",
-      "Audit: narrator line 'it says something true about how Parisians felt' reframed as 'some read it as'. Facts re-checked; no other changes."
+      "Audit: narrator line 'it says something true about how Parisians felt' reframed as 'some read it as'. Facts re-checked; no other changes.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

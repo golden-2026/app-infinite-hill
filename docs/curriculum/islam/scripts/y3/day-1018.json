@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the imaret, the soup kitchen beside the mosque, paid for so the bowls kept going out. Your line was: soup for all. Did someone get fed because of you? Day one thousand eighteen.",
+      "voice": "Yesterday: the imaret, the soup kitchen beside the mosque, paid for so the bowls kept going out. Your line was soup for all.",
       "screen": [
         "`SOUP FOR ALL.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A family in Timbuktu opens a wooden chest. Inside, wrapped in cloth and leather, are pages written by hand: prayers, law, astronomy, letters, poems, notes in the margins from readers long dead. Families in that desert city kept papers like these for generations, and when they were threatened, people carried them away to safety. Why would anyone risk that much for old paper? Because, to those families, a book was more than an object. In city after city across the Muslim world, people built rooms for books and opened their doors. Today: the libraries.",
+      "voice": "A family in Timbuktu opens a wooden chest. Inside, wrapped in cloth and leather, are pages written by hand: prayers, law, astronomy, letters, poems, notes in the margins from readers long dead. Families in that desert city kept papers like these for generations, and when they were threatened, people carried them away to safety. Why risk that much for old paper? Because, to those families, a book was more than an object. In city after city across the Muslim world, people built rooms for books and opened their doors. Today: the libraries.",
       "screen": [
         "`A CHEST OPENS IN TIMBUKTU.` → `PAGES CARRIED TO SAFETY.` → `WHY RISK IT FOR PAPER?`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Start with an oath. One surah of the Qur'an opens by swearing on writing itself. In Pickthall's translation: \"By the pen and that which they write.\" A scripture that takes an oath on the pen and on what is written. Now walk the map. In Cordoba, in Muslim Spain, the court of the caliphs gathered a royal library, and chroniclers wrote of its size with open wonder. In Cairo, the Fatimid rulers founded a house of knowledge, Dar al-Ilm, where people could come to read, copy and study. In Timbuktu, the books lived not only in one great hall but in mosques, schools and family homes, passed down hand to hand. Three cities, three shapes of the same habit. What filled the shelves? The Qur'an and its commentaries, yes, and law and hadith. But also medicine, mathematics, grammar, poetry, geography, the stars. Some of these collections were endowed through a waqf, like the soup kitchen yesterday, so the books stayed open to readers rather than locked away. Some of these libraries burned, were scattered in wars, or sold off page by page. Some survive in pieces in archives around the world. What lasted longest was the expectation itself: that a city worth the name kept its books, and let people read them. A library in every city.",
+      "voice": "Start with an oath. One surah of the Qur'an opens by swearing on writing itself. In Pickthall's translation: \"By the pen and that which they write.\" Now walk the map. In Cordoba, in Muslim Spain, the court of the caliphs gathered a royal library, and chroniclers wrote of its size with open wonder. In Cairo, the Fatimid rulers founded a house of knowledge, Dar al-Ilm, where people could come to read, copy and study. In Timbuktu, the books lived not only in one great hall but in mosques, schools and family homes, passed down hand to hand. Three cities, three shapes of the same habit. What filled the shelves? The Qur'an and its commentaries, law and hadith, yes. But also medicine, mathematics, grammar, poetry, geography, the stars. Some collections were endowed through a waqf, like yesterday's soup kitchen, so the books stayed open to readers rather than locked away. Some of these libraries burned, were scattered in wars, or were sold off page by page; some survive in pieces in archives around the world. What lasted longest was the expectation itself: that a city worth the name kept its books, and let people read them. A library in every city.",
       "screen": [
         "`AN OATH BY THE PEN.` · `CORDOBA: THE CALIPHS' LIBRARY.` · `CAIRO: THE HOUSE OF KNOWLEDGE.` · `TIMBUKTU: BOOKS IN FAMILY HOMES.` · then, large: `BY THE PEN AND THAT WHICH THEY WRITE.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: borrow a book, and choose it now. Settle, and breathe. Think of one thing you've been curious about and never looked into. A place, a craft, a stretch of history, a question about the stars. Let it come. Then picture the nearest library, the shelf, the spine of the book, the card or the app that lets you take it home. Hold the small surprise of it: someone saved this, so a stranger could read it for free. If you pray, you can ask to learn something good. If not, just stay curious and breathe. The bell holds the time.",
+      "voice": "Think of one thing you've always been curious about and never looked into: a place, a craft, a stretch of history, a question about the stars. Picture the library shelf and the book that could answer it, kept by someone so a stranger could read it for free. If you pray, ask to learn something good; if not, just stay curious and breathe.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: a library in every city. Today, borrow one book, from a library, a friend, or a digital shelf, and read its first page. Day one thousand eighteen.",
+      "voice": "Your line: a library in every city. Every open shelf was someone's gift to a stranger. Day one thousand eighteen, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Muslims often treat books of religious learning with care, keeping copies of the Qur'an on a high shelf, and mosques often keep a small library for study and teaching.",
   "games": {
+    "guess": [
+      "rooms of books kept open for readers, often by endowment",
+      "private book rooms open only to a ruler and his court",
+      "schools where pupils copied out the Qur'an by heart"
+    ],
     "match": {
       "prompt": "the libraries — tap the pairs.",
       "pairs": [
@@ -132,14 +137,45 @@
     ],
     "recall": [
       [
-        "jannah",
-        "a garden, and the word for paradise"
+        "hammam",
+        "the public bathhouse near the mosque"
       ],
       [
-        "khatt",
-        "a line, handwriting, calligraphy"
+        "Kufic",
+        "the angular, carved Arabic script"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your niece",
+      "says": "Did the old Muslim libraries only keep religious books?",
+      "options": [
+        "No. Beside Qur'an, law and hadith, they held medicine, math, poetry, geography and the stars.",
+        "Yes. Their shelves held the Qur'an and its commentaries, and nothing else at all.",
+        "Mostly. Science books were kept in separate rooms, closed to ordinary readers."
+      ],
+      "answer": 0,
+      "meaning": "The shelves held the Qur'an, its commentaries, law and hadith, and also medicine, mathematics, grammar, poetry, geography and the stars."
+    },
+    "gloss": {
+      "Timbuktu": {
+        "meaning": "a desert city where families kept old manuscripts for generations",
+        "say": "tim-buk-TOO"
+      },
+      "Cordoba": {
+        "meaning": "a city in Muslim Spain with the caliphs' royal library",
+        "script": "قرطبة",
+        "say": "KOR-do-ba"
+      },
+      "Fatimid": {
+        "meaning": "the rulers who founded Dar al-Ilm in Cairo",
+        "say": "FAT-i-mid"
+      },
+      "Dar al-Ilm": {
+        "meaning": "house of knowledge: a place in Cairo to read, copy, study",
+        "script": "دار العلم",
+        "say": "daar al-ILM"
+      }
+    }
   },
   "sources": [
     {
@@ -164,7 +200,9 @@
       "Dar al-Ilm in Fatimid Cairo described as a place to read, copy and study; confirm.",
       "Timbuktu: manuscripts in family collections and the effort to move them to safety in recent conflict are described without a date; confirm wording is fair.",
       "'Many of these collections were endowed through a waqf': confirm this is a fair generalization or soften to 'some'.",
-      "Audit (2026-10-01): content checked (al-Hakam II's library, Fatimid Dar al-Ilm, Timbuktu evacuations, 68:1); no change to the spoken script. Removed a stale note about 96:1–5, which the script no longer quotes; the 'many ... waqf' note is already answered ('some'). Pickthall 68:1 begins 'Nun.' and ends '(therein)'; the quote is a fair excerpt."
+      "Audit (2026-10-01): content checked (al-Hakam II's library, Fatimid Dar al-Ilm, Timbuktu evacuations, 68:1); no change to the spoken script. Removed a stale note about 96:1–5, which the script no longer quotes; the 'many ... waqf' note is already answered ('some'). Pickthall 68:1 begins 'Nun.' and ends '(therein)'; the quote is a fair excerpt.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

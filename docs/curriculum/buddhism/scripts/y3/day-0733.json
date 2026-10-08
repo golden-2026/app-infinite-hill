@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Ananda: the witness who remembered. Your line, a letter with an address attached. Did you pass something on exactly as it was said? Today, what stood behind that remembering: years of showing up. Day seven hundred thirty-three.",
+      "voice": "Yesterday: Ananda, the witness behind thus have I heard, and your line, a letter with an address attached. Today, what stood behind that remembering: years of showing up.",
       "screen": [
         "`ANANDA.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Some jobs leave no record but the person doing them. The cup is filled, the door is answered, the visitor waits the right amount of time, and none of it gets written down. Ananda's job was that kind. In the verses the Theragatha gives him, he does something unexpected. He counts. Not his insights. Not his sermons. His years of service. Twenty-five of them, he says, at the Buddha's side. And he says what kind of years they were.",
+      "voice": "Some jobs leave no record but the person doing them. The cup is filled, the door is answered, the visitor waits the right amount of time, and none of it gets written down. Ananda's job was that kind. In the verses the Theragatha gives him, he does something unexpected. He counts. Not his insights, not his sermons: his years of service. Twenty-five of them, he says, at the Buddha's side. And he says what kind of years they were.",
       "screen": [
         "`WORK THAT LEAVES NO RECORD.` → `HE COUNTS THE YEARS.` → `TWENTY-FIVE.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: serve someone quietly. Settle, and breathe. Think of the people you'll be around today. Pick one. Now find a small thing you could do for them that they may never notice. Refill the water. Clear the sink. Hold a door. Send the file before they ask. Hold that one task in mind, and how you'll do it: with your hands, with your words, with a kind thought, like Ananda's three. Let the wish to be thanked come up, and let it go by. Then rest with the breath. The bell holds the time.",
+      "voice": "Think of one person you'll be around today and a small thing you could do for them that they may never notice: refill the water, clear the sink, hold a door. Hold it in mind the way Ananda served, with hands, words and a kind thought, and let the wish to be thanked come up and go by.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: like a shadow that never leaves. Today, do one quiet service for someone and don't mention it, not even later. Day seven hundred thirty-three.",
+      "voice": "Your line: like a shadow that never leaves. In deed, in word, in thought. Day seven hundred thirty-three, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "In Buddhist monasteries, junior monks and nuns may attend their teachers, bringing water and food and caring for their needs, and Ananda is remembered as the model attendant.",
   "games": {
+    "guess": [
+      "how long Ananda says he attended the Buddha",
+      "the length of the Buddha's whole teaching life",
+      "how long Ananda trained before ordination"
+    ],
     "match": {
       "prompt": "Ananda the attendant: tap the pairs.",
       "pairs": [
@@ -132,14 +137,45 @@
     ],
     "recall": [
       [
-        "Chandaka",
-        "weeps and begs to stay"
+        "Sanjaya",
+        "a wandering teacher in Rajagaha"
       ],
       [
-        "Buddhacarita",
-        "the life, or acts, of the Buddha"
+        "Kanthaka",
+        "the prince's horse"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your neighbor",
+      "says": "What did Ananda actually do as the Buddha's attendant?",
+      "options": [
+        "Fetched water, kept time at night, and served in deed, word and thought.",
+        "He mostly managed the money and gifts people gave the Buddha.",
+        "He wrote down every talk the Buddha gave on palm leaves each night."
+      ],
+      "answer": 0,
+      "meaning": "In his verses he counts twenty-five years of service in deed, word and thought; the discourses show him fetching water and keeping time."
+    },
+    "gloss": {
+      "Theragatha": {
+        "meaning": "verses of the elder monks",
+        "script": "थेरगाथा",
+        "say": "TAY-ruh-GAH-tuh"
+      },
+      "Udana": {
+        "meaning": "a collection of the Buddha's inspired sayings",
+        "script": "उदान",
+        "say": "oo-DAH-nuh"
+      },
+      "Blessed One": {
+        "meaning": "a respectful title for the Buddha"
+      },
+      "Ananda": {
+        "meaning": "the Buddha's cousin and attendant",
+        "script": "आनन्द",
+        "say": "AH-nun-duh"
+      }
+    }
   },
   "sources": [
     {
@@ -177,7 +213,9 @@
       "Ananda's conditions (the 'eight boons') are commentarial; script attributes them to 'the commentaries' and 'tradition says'. Confirm the items named.",
       "howItsDone: phrased generally; confirm.",
       "Editor: cut 'late in life' (not in Thag), changed the superlative 'the best attendant' to 'a devoted attendant', and softened howItsDone 'often'.",
-      "Auditor: \"asked twice\" corrected to \"asked three times\"; in DN 16 the Buddha asks three times before Ananda goes."
+      "Auditor: \"asked twice\" corrected to \"asked three times\"; in DN 16 the Buddha asks three times before Ananda goes.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

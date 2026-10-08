@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: the water clock. Your line was notice the water running. Did you catch an hour being spent, and spend the next one on purpose? Day four hundred fifty-five.",
+      "voice": "Yesterday's word was cotidie morimur: we die every day. Your line was notice the water running.",
       "screen": [
         "`THE WATER CLOCK — NOTICE THE WATER RUNNING.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Actors rehearse the hardest scene the most. Pilots practice the engine failure in a simulator, over and over, so that on the real day their hands already know what to do. Nobody calls that morbid. It's how you get calm about something you can't avoid. In the twenty-sixth letter, Seneca is old, and he says so. His body is wearing out. And he gives Lucilius a piece of advice he borrowed, cheerfully, from a rival school. It's the one scene every one of us will play exactly once. Today, the last day of this week in the letters: rehearse the end.",
+      "voice": "Actors rehearse the hardest scene the most. Pilots practice the engine failure in a simulator, over and over, so that on the real day their hands already know what to do. Nobody calls that morbid. It's how you get calm about something you can't avoid. In the twenty-sixth letter, Seneca is old, and says so. And he gives Lucilius a piece of advice borrowed, cheerfully, from a rival school, about the one scene everyone plays exactly once.",
       "screen": [
         "`PILOTS PRACTICE THE ENGINE FAILURE.` → `SENECA IS OLD, AND SAYS SO.` → `THE SCENE WE PLAY ONCE.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the old man. Seneca writes that his body is worn, but his mind feels young and glad to have less to do with the body. Old age, he says, has taken away his vices more than his strength. Second, the examiner. He says he'll let death decide how far he has come. Talk is cheap. Anyone can sound brave in a letter. The last day will show whether his calm was real or a performance. So he prepares for it, the way a student prepares for an exam whose date is unknown. Third, the borrowed advice. It comes from Epicurus, whose school disagreed with the Stoics about a great deal. Seneca quotes him anyway: rehearse death. And he adds his own gloss: whoever tells you this is telling you to rehearse freedom. A person who has learned how to die, he says, has unlearned how to be a slave. Fear of the end is the leash that lets everything else pull us around. Fourth, our week, looked back. We started with a short walk and back to the mind, then words that shape the soul, starting poor, deeds that match words, real joy, the water clock, and now this. Every one asks the same thing: do you live it, or only say it? Rehearsing the end asks it where it's hardest to fake.",
+      "voice": "Seneca writes that his body is worn, but his mind feels young and glad to have less to do with the body. Old age, he says, has taken away his vices more than his strength. He'll let death decide how far he has come. Talk is cheap; anyone can sound brave in a letter. The last day will show whether his calm was real or a performance. So he prepares, the way a student prepares for an exam whose date is unknown. The advice comes from Epicurus, whose school disagreed with the Stoics about a great deal. Seneca quotes him anyway: rehearse death. And he adds his own gloss: whoever tells you this is telling you to rehearse freedom. A person who has learned how to die has unlearned how to be a slave. Fear of the end is the leash that lets everything else pull us around. Look back at this week: a short walk and back to the mind, words that shape the soul, starting poor, deeds that match words, real joy, the water clock, and now this. Every one asks the same thing: do you live it, or only say it? Rehearsing the end asks it where it's hardest to fake.",
       "screen": [
         "`AN OLD BODY, A YOUNG MIND.` · `LET DEATH BE THE EXAMINER.` · `REHEARSE DEATH: REHEARSE FREEDOM.` · `THE WEEK: LIVE IT, NOT ONLY SAY IT.` · then, large: `READY, CALMLY.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "This is gentle. If today is a hard day for this, simply rest with your breath instead. Otherwise, sit comfortably and let the thought arrive: one day, I'll end. Don't picture how. Just let the fact be in the room, the way Seneca does in this letter. Notice what your body does. Then ask quietly: if that day came, what would I want to have done, said, set right? Let one answer surface. Breathe with it. The bell holds the time.",
+      "voice": "This is gentle; if today is a hard day for it, simply rest with your breath instead. Otherwise, let one plain thought into the room, one day I'll end, without picturing how, and notice what your body does. Then ask quietly what you'd want to have done, said or set right, and breathe with whatever answer comes.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: ready, calmly. Take the one answer that surfaced, the thing you'd want done or said, and do a small piece of it today. That's our week in Seneca's letters. Next week, more letters. Day four hundred fifty-five.",
+      "voice": "Your line: ready, calmly. That's our week in Seneca's letters, start to finish. Next week, more letters.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Stoic practitioners sometimes keep a brief, calm reflection on their own mortality, often in the evening, and use it to set right something they would not want left undone.",
   "games": {
+    "guess": [
+      "rehearse death, and so rehearse freedom",
+      "dwell on death until you lose all hope",
+      "a Latin prayer said at Roman funerals"
+    ],
     "match": {
       "prompt": "the old man's letter — tap the pairs.",
       "pairs": [
@@ -132,14 +137,39 @@
     ],
     "recall": [
       [
-        "Athenodorus",
-        "ask only what you'd ask openly"
+        "Pacuvius",
+        "a funeral feast every evening"
       ],
       [
-        "Stilpo",
-        "the philosopher in fallen Megara"
+        "dogma",
+        "a judgment that shapes how you react"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your aunt",
+      "says": "Isn't thinking about your own death kind of morbid?",
+      "options": [
+        "Seneca got it from Epicurus: practice facing death and you practice freedom; fear stops pushing you around.",
+        "Seneca thought it meant giving up on life's plans, since everything ends soon anyway.",
+        "Seneca thought it meant dwelling on death until every small fear grows into a bigger dread."
+      ],
+      "answer": 0,
+      "meaning": "Whoever has learned to die has unlearned slavery. Fear of the end is the leash; rehearsing it calmly loosens it."
+    },
+    "gloss": {
+      "Meditare mortem": {
+        "meaning": "Latin: rehearse, or think on, death",
+        "say": "meh-dee-TAH-reh MOR-tem"
+      },
+      "Epicurus": {
+        "meaning": "a Greek philosopher of a rival school whom Seneca often quotes",
+        "say": "ep-ih-KYOOR-us"
+      },
+      "Lucilius": {
+        "meaning": "Seneca's friend, to whom the moral letters are written",
+        "say": "loo-SIL-ee-us"
+      }
+    }
   },
   "sources": [
     {
@@ -163,7 +193,9 @@
       "Letters 26.2: old age has taken away vices more than strength (paraphrase); 26.5–6: death will judge his progress; 26.8 'meditare mortem'; 26.10 'qui mori didicit servire dedidicit'. Confirm wording and numbers.",
       "Practice keeps the reflection gentle and offers an opt-out ('if today is a hard day for this'); no method of death is mentioned. Sensitivity check welcome.",
       "Week look-back names days 449–454 by theme.",
-      "Seneca's frequent quoting of Epicurus at the close of the early letters: confirm the 'Letters 1–29' range in the trapdoor."
+      "Seneca's frequent quoting of Epicurus at the close of the early letters: confirm the 'Letters 1–29' range in the trapdoor.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

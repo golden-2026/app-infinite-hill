@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: upakkilesa, and your line, clean cloth takes dye. Did you clear one small thing before starting something good? Day four hundred eight.",
+      "voice": "Yesterday: upakkilesa, the stains, and the cloth that takes dye once it's clean. Your line: clean cloth takes dye.",
       "screen": [
         "`UPAKKILESA — CLEAN CLOTH TAKES DYE.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "In almost any group there comes a moment when someone says: everyone does it. Everyone pads the expense report a little. Everyone talks about the boss when she's out of the room. Everyone's a bit cruel online; it's just how it works. It's hard to argue with, mostly because it's often true, at least a little. A discourse in the Middle-Length Sayings has an answer to it, set out forty-four times. Today: effacement.",
+      "voice": "In almost any group there comes a moment when someone says: everyone does it. Everyone pads the expense report a little. Everyone talks about the boss when she's out of the room. Everyone's a bit cruel online. It's hard to argue with, mostly because it's often a little true. A discourse in the Middle-Length Sayings has an answer to it, set out forty-four times.",
       "screen": [
         "`EVERYONE DOES IT.` → `HARD TO ARGUE WITH.` → `AN ANSWER, FORTY-FOUR TIMES.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "MN 8, the Sallekha. A monk named Mahacunda asks how to let go of the many views people hold about the self and the world. The Buddha's answer begins somewhere unexpected. A monk might reach the deep meditative states, the jhanas, and think he's effacing. He isn't, the Buddha says. They're pleasant abidings, peaceful abidings, here and now. Effacement is something else. Sallekha comes from a verb meaning to scrape away, to pare down: the slow whittling of what doesn't belong. And then comes the refrain. Others will be cruel; we will not be cruel here: that is how you should efface. Others will kill living beings; we won't. Others will take what isn't given; we won't. Others will speak falsely, maliciously, harshly, idly; we won't. Others will be envious, stingy, deceitful, arrogant, hard to correct; we won't. Others will cling to their own views and let them go only with difficulty; we won't. Forty-four in all. Two things stand out. The refrain doesn't condemn the others. It never adds: and they're terrible. It says: here, among us, this is how we'll be. It draws a line around your own conduct. And it doesn't wait for everyone else to agree first. The Buddha gives a picture: just as there might be an uneven road, and another, even road to go around it, so not being cruel is the even road around cruelty. And the sutta ends with a line he repeats to many students: here are the roots of trees, here are empty huts. Meditate. Don't delay, or you'll regret it later.",
+      "voice": "MN 8, the Sallekha. A monk named Mahacunda asks how to let go of the many views people hold about the self and the world. The Buddha's answer starts somewhere unexpected. A monk might reach the jhanas, the deep meditative states, and think he's effacing. He isn't, the Buddha says; those are pleasant abidings, peaceful abidings, here and now. Sallekha comes from a verb meaning to scrape away, to pare down: the slow whittling of what doesn't belong. Then the refrain. Others will be cruel; we will not be cruel here: that is how you should efface. Others will kill living beings; we won't. Others will take what isn't given; we won't. Others will speak falsely, maliciously, harshly, idly; we won't. Others will be envious, stingy, deceitful, arrogant, hard to correct; we won't. Others will cling to their own views and let go only with difficulty; we won't. Forty-four in all. Two things stand out. The refrain never adds: and they're terrible. It draws a line around your own conduct. And it doesn't wait for everyone else to agree first. The Buddha gives a picture: as there might be an uneven road, and an even road to go around it, so not being cruel is the even road around cruelty. The sutta ends with a line he repeats to many students: here are the roots of trees, here are empty huts. Meditate. Don't delay, or you'll regret it later.",
       "screen": [
         "`JHANAS ARE NOT EFFACEMENT.` · `SALLEKHA — PARING DOWN.` · `OTHERS WILL; WE WON'T, HERE.` · `THE EVEN ROAD AROUND.` · then, large: `OTHERS MAY, WE WON'T.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Sit, and let the refrain run quietly, one line per breath. Others may be harsh; I won't be harsh here. Others may gossip; I won't gossip here. Others may cling to their views; I won't cling here. Let one of them land, the one that fits your week. Then drop the words, and just sit with that one resolve, like a smooth stone in your pocket. The bell holds the time.",
+      "voice": "Let the refrain run quietly, one line per breath: others may be harsh, I won't be harsh here; others may gossip, I won't gossip here; others may cling to their views, I won't cling here. Then drop the words, and keep the one resolve that fits your week, like a smooth stone in your pocket.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: others may, we won't. Today, when you hear everyone does it, quietly keep your one resolve anyway. Day four hundred eight.",
+      "voice": "Your line: others may, we won't. No waiting for everyone else to agree. See you tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Theravada teachers often use the Sallekha Sutta's refrain as a model for personal resolves, and monastic training emphasizes keeping one's own conduct whatever others around one do.",
   "games": {
+    "guess": [
+      "effacement: paring away what doesn't belong",
+      "the calm of deep meditation, the jhanas",
+      "a vow of silence kept during a retreat"
+    ],
     "match": {
       "prompt": "match the pieces of MN 8.",
       "pairs": [
@@ -132,14 +137,41 @@
     ],
     "recall": [
       [
-        "samadhi",
-        "the mind gathered"
+        "bhaya-bherava",
+        "fear and dread"
       ],
       [
-        "baizhang",
-        "a Chan master who kept working"
+        "anavajja-sukha",
+        "the happiness of blamelessness"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your coworker",
+      "says": "Everyone at work pads their hours a little. Why should I be different?",
+      "options": [
+        "Others may, we won't, says MN 8: you draw the line around your own conduct.",
+        "You shouldn't, but only because people who do it are bad.",
+        "You should report them first, then you can stop doing it yourself."
+      ],
+      "answer": 0,
+      "meaning": "MN 8's refrain, others will, we won't here, never condemns the others and doesn't wait for anyone else to agree first."
+    },
+    "gloss": {
+      "Sallekha": {
+        "meaning": "effacement: scraping away, paring down",
+        "script": "सल्लेख",
+        "say": "sul-LAY-khuh"
+      },
+      "Mahacunda": {
+        "meaning": "a monk who asks how to let go of views",
+        "script": "महाचुन्द",
+        "say": "muh-HAH-CHOON-duh"
+      },
+      "jhanas": {
+        "meaning": "deep meditative states",
+        "say": "JHAH-nuhz"
+      }
+    }
   },
   "sources": [
     {
@@ -156,7 +188,9 @@
       "The forty-four items are summarized, not listed; the order of examples in the teach is approximate.",
       "Etymology of sallekha (to scrape, pare down) stated simply; please confirm.",
       "The 'roots of trees, empty huts' closing appears in several suttas (e.g. MN 19, MN 106); please confirm it closes MN 8.",
-      "Audit (10% sample): Mahacunda asks only how to abandon views (the jhanas come up in the Buddha's answer), so the teach and match pair were corrected; dropped the unsourced 'most persuasive sentence' claim and 'had them repeat it'."
+      "Audit (10% sample): Mahacunda asks only how to abandon views (the jhanas come up in the Buddha's answer), so the teach and match pair were corrected; dropped the unsourced 'most persuasive sentence' claim and 'had them repeat it'.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

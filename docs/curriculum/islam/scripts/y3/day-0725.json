@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday's word was three times: read, I am not a reader, and then the words given anyway. Your line was: read, and read again. What did you go back to a second time? Day seven hundred twenty-five.",
+      "voice": "Yesterday's word was three times: read, I am not a reader, and the words came anyway. Your line was: read, and read again.",
       "screen": [
         "`READ, AND READ AGAIN.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Here's the answer, as Sahih al-Bukhari keeps it from 'Aishah. Never, by Allah. Allah would never disgrace you. And then her reasons. You keep the ties of kinship. You carry the burden of the weak. You give to those who have nothing. You honor your guest. And you stand by people when real trouble comes. It's an odd kind of comfort. She doesn't explain the angel; she can't, and doesn't pretend to. She argues from evidence she has seen with her own eyes: how he treats people. Her logic: a God who sees all that will not shame this man. Now the first item. The Arabic says he keeps the rahim, a word for the womb, used for the bonds of family. A hadith in Sahih al-Bukhari says the rahim is a branch of ar-Rahman, the Merciful, and that whoever keeps it connected, Allah keeps connected. So the first thing she names is tied, in his own later words, to mercy. Then there's an echo. Years later, when the Prophet's friend Abu Bakr was leaving Mecca under pressure, a chief named Ibn al-Daghinah stopped him and said a man like you should not be driven out, and gave almost the same list. Keeps ties. Carries the weak. Gives to those with nothing. Honors guests. Bukhari records both. The qualities Khadijah named weren't only a wife's praise; an outsider named them too. Allah would never disgrace you.",
+      "voice": "Here's the answer, as Sahih al-Bukhari keeps it from 'Aishah. Never, by Allah. Allah would never disgrace you. Then her reasons. You keep the ties of kinship. You carry the burden of the weak. You give to those who have nothing. You honor your guest. And you stand by people when real trouble comes. It's an odd kind of comfort. She doesn't explain the angel; she can't, and doesn't pretend to. She argues from evidence she has seen with her own eyes: how he treats people. Her logic: a God who sees all that will not shame this man. Now the first item. The Arabic says he keeps the rahim, a word for the womb, used for the bonds of family. A hadith in Sahih al-Bukhari says the rahim is a branch of ar-Rahman, the Merciful, and that whoever keeps it connected, Allah keeps connected. So the first thing she names is tied, in his own later words, to mercy. Then an echo. Years later, when the Prophet's friend Abu Bakr was leaving Mecca under pressure, a chief named Ibn al-Daghinah stopped him, said a man like you should not be driven out, and gave almost the same list. Keeps ties. Carries the weak. Gives to those with nothing. Honors guests. Bukhari records both. The qualities Khadijah named weren't only a wife's praise; an outsider named them too.",
       "screen": [
         "`NEVER, BY ALLAH.` · `HER REASONS ARE HIS DEEDS.` · `THE RAHIM, A BRANCH OF MERCY.` · `THE SAME LIST FOR ABU BAKR.` · then, large: `ALLAH WOULD NEVER DISGRACE YOU.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: tell someone the good they do. Settle, and breathe. Think of a person who's frightened, or doubting themselves, or just tired. Then do what Khadijah did: don't argue with the fear, list the evidence. What do they actually do? Who do they show up for? Who do they feed, carry, call, welcome? Make the list specific, three or four things. If you pray, you can thank Allah for the good in them. If not, simply hold the list. You'll use it today. The bell holds the time.",
+      "voice": "Think of someone who's frightened, doubting themselves, or just tired, and do what Khadijah did: don't argue with the fear, list the evidence. Who do they show up for, feed, carry, welcome? Make it three or four specific things, and if you pray, thank Allah for the good in them.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: allah would never disgrace you. Today, send that person your list, the specific good you've seen them do, with no advice attached. Day seven hundred twenty-five.",
+      "voice": "Your line: allah would never disgrace you. Her comfort was a list of his deeds. See you tomorrow.",
       "screen": []
     },
     {
@@ -132,14 +132,50 @@
     ],
     "recall": [
       [
-        "Abu Talib",
-        "full brother of the boy's father"
+        "Zamzam",
+        "the well in Mecca, found again"
       ],
       [
-        "Zamzam",
-        "the water used to wash it"
+        "tartil",
+        "reciting in measured, unhurried tones"
       ]
-    ]
+    ],
+    "guess": [
+      "her list of his good deeds when he came home afraid",
+      "her explanation of the angel he had seen",
+      "the cloak she wrapped him in on the mountain"
+    ],
+    "chat": {
+      "who": "your best friend",
+      "says": "When the Prophet came home terrified, how did Khadijah calm him down?",
+      "options": [
+        "She listed the good he did: kept family ties, carried the weak, honored guests.",
+        "She told him the angel's name and explained what the visit meant.",
+        "She told him to forget the cave and never go back up there again."
+      ],
+      "answer": 0,
+      "meaning": "In Bukhari she says Allah would never disgrace you, then names his deeds; she argues from how he treats people."
+    },
+    "gloss": {
+      "rahim": {
+        "meaning": "the womb; used for the bonds of family",
+        "script": "رحم",
+        "say": "RA-him"
+      },
+      "ar-Rahman": {
+        "meaning": "the Merciful, a name of God",
+        "script": "الرحمن",
+        "say": "ar-rah-MAAN"
+      },
+      "Ibn al-Daghinah": {
+        "meaning": "a chief who stopped Abu Bakr from leaving Mecca"
+      },
+      "Abu Bakr": {
+        "meaning": "the Prophet's close friend",
+        "script": "أبو بكر",
+        "say": "A-bu BAKR"
+      }
+    }
   },
   "sources": [
     {
@@ -170,7 +206,9 @@
       "The rahim/Rahman link is stated only as the hadith states it, not as an etymology.",
       "Year 1 day 87 already told 'cover me' and the list; this day leads with the argument-from-evidence, the rahim hadith and the Ibn al-Daghinah echo.",
       "Editor: cut the superlative 'the one most woven into mercy' and the stock 'something worth telling a friend'; 'goodness a whole city could recognize' (overclaim) changed to 'an outsider named them too'; varied the 'notice' cue; dropped 'that's the line for today'.",
-      "Audit: read in full; Khadijah's list, Bukhari 5988 and the Ibn al-Daghinah echo (3905) are consistent with the reports. No changes."
+      "Audit: read in full; Khadijah's list, Bukhari 5988 and the Ibn al-Daghinah echo (3905) are consistent with the reports. No changes.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

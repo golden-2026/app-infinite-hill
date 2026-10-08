@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: dogma, Felicio the shoemaker and the tyrant who can't reach the mind, and your line, the choosing stays with you. Which fear did you sort? Day four hundred four.",
+      "voice": "Yesterday's word was dogma: the judgments that shape our reactions, out of any tyrant's reach. Your line was the choosing stays with you.",
       "screen": [
         "`DOGMA.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Hand a cashier a hundred-dollar bill and watch. They hold it up to the light. They run a pen across it. They feel the paper between finger and thumb. Nobody's offended; it's just what you do with money, because fakes exist. Now think how many thoughts you accepted today without holding a single one up to the light. Epictetus noticed the same mismatch in the markets of his own time. Today: money-changer.",
+      "voice": "Hand a cashier a hundred-dollar bill and watch. They hold it up to the light, run a pen across it, feel the paper between finger and thumb. Nobody's offended; it's just what you do with money, because fakes exist. Now think how many thoughts you accepted today without holding a single one up to the light. Epictetus noticed the same mismatch in the markets of his own time.",
       "screen": [
         "`HELD UP TO THE LIGHT.` → `BECAUSE FAKES EXIST.` → `HOW MANY THOUGHTS DID YOU CHECK?`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "This is Discourses book one, chapter twenty, on reason examining itself. Every skill, Epictetus says, looks at something outside itself. The cobbler looks at leather, the musician at sound. Reason is the one faculty that can look at itself, and at the impressions that come to it. And then he goes to the market. Look at the money-changer, the person whose job is to test coins. For coins, he says, we've invented a whole craft. The tester uses sight. He uses touch. He even uses smell. And last of all, hearing: he drops the coin on the counter and listens to it ring. Not once. Again and again, until his ear is as trained as a musician's. Where people think a mistake would cost them, Epictetus says, they bring every sense to bear. But with the impressions that come to the mind, the passing thought that someone is insulting you, that you're a failure, that you need this thing right now, we yawn and accept whatever is handed to us. Epictetus calls this the philosopher's first and greatest work: to test impressions, and let none in untested. An impression is a coin someone has passed you. It might be real. It might be lead painted gold. Before you spend it, before you act on it, say it, or let it set your mood, you can turn it over, hold it to the light, and drop it on the counter to hear how it rings.",
+      "voice": "This is Discourses book one, chapter twenty, on reason examining itself. Every skill, Epictetus says, looks at something outside itself: the cobbler at leather, the musician at sound. Reason is the one faculty that can look at itself, and at the impressions that come to it. Then he goes to the market, to the money-changer, whose job is to test coins. For coins, he says, we've invented a whole craft. The tester uses sight, touch, even smell, and last of all hearing: he drops the coin on the counter and listens to it ring. Not once. Again and again, until his ear is as trained as a musician's. Where people think a mistake would cost them, they bring every sense to bear. But the impressions that come to the mind, the passing thought that someone is insulting you, that you're a failure, that you need this thing right now, we accept with a yawn. Epictetus calls this the philosopher's first and greatest work: to test impressions, and let none in untested. An impression is a coin someone has passed you. It might be real. It might be lead painted gold. Before you act on it, say it, or let it set your mood, you can turn it over, hold it to the light, and hear how it rings.",
       "screen": [
         "`REASON LOOKS AT ITSELF.` · `THE MONEY-CHANGER'S SENSES.` · `THOUGHTS ACCEPTED WITH A YAWN.` · `HEAR HOW IT RINGS.` · then, large: `TEST THE COIN.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Sit and breathe. Let the next thought that shows up be the coin on the counter: a worry, a judgment about someone, a plan. Don't spend it yet. Look at it: is it a fact, or a story about a fact? Feel its weight: is it heavier than it needs to be? Listen to it ring: does it sound true, or a little hollow? Then set it down, and wait for the next one. The bell holds the time.",
+      "voice": "Let the next thought that shows up be the coin on the counter: a worry, a judgment about someone, a plan. Is it a fact, or a story about a fact? Is it heavier than it needs to be, and does it ring true or a little hollow? Then set it down, and wait for the next one.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: an impression is a coin someone has passed you. Before you act on one strong thought today, hold it up to the light and listen to how it rings. Day four hundred four.",
+      "voice": "Your line: an impression is a coin someone has passed you. Not every coin is gold. Day four hundred four, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Some Stoic practitioners pause on a strong first impression, asking whether it's a fact or an interpretation, before acting on it, a habit some trace to this chapter.",
   "games": {
+    "guess": [
+      "a coin-tester: Epictetus' picture for testing thoughts",
+      "a banker who lends at interest to people in need",
+      "a thief who shaves silver off the edges of coins"
+    ],
     "match": {
       "prompt": "test the coin: tap the pairs.",
       "pairs": [
@@ -132,14 +137,41 @@
     ],
     "recall": [
       [
-        "Arrian",
-        "the student who wrote it down"
+        "ophrys",
+        "a raised eyebrow, a superior look"
       ],
       [
-        "Cleanthes",
-        "lead me, Zeus, and you, Destiny"
+        "enstasis",
+        "your stance, your chosen plan of life"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your teenager",
+      "says": "How do I stop believing every harsh thought I have about myself?",
+      "options": [
+        "Test each one like a coin: look at it, weigh it, and hear how it rings first.",
+        "Wait for someone else to tell you which of your thoughts are true.",
+        "Trust each thought as it comes, since your own mind knows you best of all."
+      ],
+      "answer": 0,
+      "meaning": "In 1.20, the money-changer tests coins with every sense. Epictetus calls testing impressions the first work: let none in untested."
+    },
+    "gloss": {
+      "money-changer": {
+        "meaning": "a market worker whose job was testing coins"
+      },
+      "impressions": {
+        "meaning": "for Stoics, the thoughts and appearances that come to the mind"
+      },
+      "Discourses": {
+        "meaning": "Epictetus' talks, written down by his student Arrian",
+        "say": "DIS-kor-siz"
+      },
+      "Epictetus": {
+        "meaning": "a Stoic teacher, once enslaved and later freed",
+        "say": "ep-ik-TEE-tus"
+      }
+    }
   },
   "sources": [
     {
@@ -155,7 +187,9 @@
     "notes": [
       "Discourses 1.20 paraphrased: reason contemplating itself; the money-tester (argyrognōmōn) using sight, touch, smell and hearing, throwing the denarius repeatedly; carelessness about the ruling faculty. Confirm details, including smell.",
       "Greek δοκιμάζω as the general verb for testing coins; the exact verb in 1.20 may differ. Confirm.",
-      "Editor review (2026-10-01): practice opening reworded so it no longer mirrors day 389's ('wait for an impression to arrive... a worry, a judgment, a plan'); day 389's coin image was moved off that day; vague 'the image this whole path keeps returning to' replaced with 1.20's own claim; trapdoor superlative ('one of his most practical pictures') and howItsDone 'many/often' softened."
+      "Editor review (2026-10-01): practice opening reworded so it no longer mirrors day 389's ('wait for an impression to arrive... a worry, a judgment, a plan'); day 389's coin image was moved off that day; vague 'the image this whole path keeps returning to' replaced with 1.20's own claim; trapdoor superlative ('one of his most practical pictures') and howItsDone 'many/often' softened.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

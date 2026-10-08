@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: money-changer, listening for the ring, and your line, an impression is a coin someone has passed you. Which thought did you hold up to the light before spending it? Day four hundred five.",
+      "voice": "Yesterday's word was money-changer: test each thought before you spend it. Your line was an impression is a coin someone has passed you.",
       "screen": [
         "`MONEY-CHANGER.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "In a boxing gym, the coach looks over the new kid and pairs him, on purpose, not with the easiest partner but with someone a little rougher, a little stronger, someone who makes him sweat and sometimes puts him down. He goes home sore and annoyed. A few months on, he moves differently. Epictetus took that gym wisdom and pointed it at the hardest things in life. Today: sparring partner.",
+      "voice": "In a boxing gym, the coach looks over the new kid and pairs him, on purpose, not with the easiest partner but with someone a little rougher, a little stronger, someone who makes him sweat and sometimes puts him down. He goes home sore and annoyed. A few months on, he moves differently. Epictetus took that gym wisdom and pointed it at the hardest things in life.",
       "screen": [
         "`THE COACH PAIRS HIM ROUGHER.` → `SORE AND ANNOYED.` → `A FEW MONTHS ON.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "This is Discourses book one, chapter twenty-four, on how to struggle with circumstances. It opens with a short line: it's difficulties that show what people are. Not comfortable days. Hard ones. And then the picture. When a difficulty lands on you, Epictetus says, remember that God, like a wrestling trainer, has paired you with a rough young opponent. Why? So that you can become an Olympic champion. And that doesn't happen without sweat. Then he says something bold. No one, he tells his student, has ever been handed a better difficulty than yours, if you're willing to use it the way an athlete uses a tough sparring partner. Notice what he's not saying. He isn't saying the difficulty is good in itself, or that you deserved it, or that suffering is secretly pleasant. The opponent is rough. It hurts. What he's changing is the question. Instead of, why is this happening to me, he asks: what is this making of me? A sparring partner isn't your enemy, even when he puts you on the mat. He's how you find out what you've got, and how you get more of it. For the Stoics, the trainer is God, the reason that runs the world. Some readers keep that, and some keep only the gym. Either way, the hard conversation, the setback at work, the stubborn habit, all of them can be read as the partner your training needed.",
+      "voice": "This is Discourses book one, chapter twenty-four, on how to struggle with circumstances. It opens with a short line: it's difficulties that show what people are. Then the picture. When a difficulty lands on you, Epictetus says, remember that God, like a wrestling trainer, has paired you with a rough young opponent. Why? So that you can become an Olympic champion, and that doesn't happen without sweat. Then something bold. No one, he tells his student, has ever been handed a better difficulty than yours, if you're willing to use it the way an athlete uses a tough sparring partner. Notice what he's not saying. Not that the difficulty is good in itself, or that you deserved it, or that suffering is secretly pleasant. The opponent is rough. It hurts. What he changes is the question. Instead of, why is this happening to me, he asks: what is this making of me? A sparring partner isn't your enemy, even when he puts you on the mat. He's how you find out what you've got, and how you get more of it. For the Stoics, the trainer is God, the reason that runs the world. Some readers keep that, and some keep only the gym. Either way, a hard conversation, a setback at work, a stubborn habit can be read as the partner your training needed.",
       "screen": [
         "`DIFFICULTIES SHOW WHAT PEOPLE ARE.` · `THE TRAINER PAIRS YOU ROUGH.` · `NO BETTER DIFFICULTY THAN YOURS.` · `WHAT IS THIS MAKING OF ME?` · then, large: `A GOOD OPPONENT.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Sit and breathe. Bring to mind one difficulty you're facing right now. Picture it, not as a wall, but as a rough young opponent across the mat. What is it testing? Patience, courage, honesty, endurance? Name the one muscle it's working. Then breathe, and let yourself step onto the mat, not happy about it, just willing. You don't have to win today. You just have to train. The bell holds the time.",
+      "voice": "Bring to mind one difficulty you're facing now, and picture it not as a wall but as a rough young opponent across the mat. What is it working in you: patience, courage, honesty, endurance? Step onto the mat in your mind, not happy about it, just willing; you don't have to win today.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: what is this making of me. When something hard meets you today, ask what it's training, and meet one difficulty as a sparring partner. Day four hundred five.",
+      "voice": "Your line: what is this making of me. The opponent is rough, and the training is real. Same time tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Some Stoic practitioners reframe a difficulty as a training partner, asking what virtue it calls on, a habit drawn from this chapter's wrestling image.",
   "games": {
+    "guess": [
+      "a hardship that trains you, like a rough gym partner",
+      "an enemy you have to beat before you can rest",
+      "a friend who always takes your side in a fight"
+    ],
     "match": {
       "prompt": "a good opponent: tap the pairs.",
       "pairs": [
@@ -132,14 +137,39 @@
     ],
     "recall": [
       [
-        "Helvidius Priscus",
-        "the senator who kept going in"
+        "pistos",
+        "faithful, the one whose word holds"
       ],
       [
-        "prohairesis",
-        "the power to choose"
+        "obol",
+        "a small coin, the price of lettuce"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your little brother",
+      "says": "Why do hard things keep happening to me? It doesn't feel fair.",
+      "options": [
+        "Epictetus would ask what it's making of you, like a rough partner in training.",
+        "Epictetus would say hard things don't hurt at all, once you're strong enough.",
+        "Epictetus would say to avoid every hard thing, since it only wears you down."
+      ],
+      "answer": 0,
+      "meaning": "In 1.24, difficulties show what people are. The opponent is rough and it hurts, but the question becomes: what is this making of me?"
+    },
+    "gloss": {
+      "Epictetus": {
+        "meaning": "a Stoic teacher, once enslaved and later freed",
+        "say": "ep-ik-TEE-tus"
+      },
+      "Discourses": {
+        "meaning": "Epictetus' talks, written down by his student Arrian",
+        "say": "DIS-kor-siz"
+      },
+      "Stoics": {
+        "meaning": "followers of the Greek school of thought Epictetus taught",
+        "say": "STOH-iks"
+      }
+    }
   },
   "sources": [
     {
@@ -155,7 +185,9 @@
     "notes": [
       "Discourses 1.24.1–2 paraphrased: difficulties show what men are; God like a trainer matching you with a rough young man; to become an Olympic victor, not without sweat; no one has had a more profitable difficulty, if used as an athlete uses an opponent. Confirm.",
       "The scout passage later in 1.24 is left for day 422 (3.22).",
-      "Editor review (2026-10-01): hook's sweeping 'any coach will tell you' and 'three months later' replaced with a concrete gym scene; 'a line his students would have remembered' cut (speculative); trapdoor 'constantly' replaced with the two places this path has shown; howItsDone 'often' softened."
+      "Editor review (2026-10-01): hook's sweeping 'any coach will tell you' and 'three months later' replaced with a concrete gym scene; 'a line his students would have remembered' cut (speculative); trapdoor 'constantly' replaced with the two places this path has shown; howItsDone 'often' softened.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

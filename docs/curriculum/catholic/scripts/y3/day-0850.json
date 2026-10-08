@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the Jesuits: a failed pilgrimage, an offer to the pope, and a motto. Your line was for the greater glory. Which choice served more? Today one of Ignatius's roommates is sent east. Day eight hundred fifty.",
+      "voice": "Yesterday, the Jesuits: a failed pilgrimage, an offer to the pope, and a motto. Your line was for the greater glory. Today one of Ignatius's roommates is sent east.",
       "screen": [
         "`FOR THE GREATER GLORY.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "The ending comes first. A small island off the coast of China, a hut, a fever, and a man waiting for a boat that never comes. He has a plan to slip into the mainland, where foreigners are forbidden, and he's been told it could cost him his freedom or his life. He's still waiting when he dies. Behind him lie India, the islands of the spice trade, and Japan. He was once a promising young teacher in Paris, rooming with an older student who kept asking him an uncomfortable question. The older student was Ignatius. The young teacher was Francis Xavier.",
+      "voice": "The ending comes first. A small island off the coast of China, a hut, a fever, and a man waiting for a boat that never comes. He plans to slip into the mainland, where foreigners are forbidden, and he's been told it could cost him his freedom or his life. He's still waiting when he dies. Behind him lie India, the islands of the spice trade, and Japan. He was once a promising young teacher in Paris, rooming with an older student who kept asking him an uncomfortable question. The older student was Ignatius. The young teacher was Francis Xavier.",
       "screen": [
         "`AN ISLAND OFF CHINA.` → `A BOAT THAT NEVER COMES.` → `ONCE A TEACHER IN PARIS.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the question. Tradition says Ignatius kept repeating one line of the Gospel to his ambitious roommate, from Matthew, in the Douay-Rheims: \"For what doth it profit a man, if he gain the whole world, and suffer the loss of his own soul?\" Xavier wanted a career. That question slowly turned him around. Second, the sending. When the king of Portugal asked for missionaries for India, another Jesuit was chosen and fell ill. Xavier was sent instead, almost overnight. He never saw Ignatius again. Third, the road. In India he walked the coast, taught children prayers in their own language, and baptized. Then he went on, to the islands, to Japan. In Japan he learned that his ragged clothes made people take him less seriously, not more, and he changed his approach. Then China. He never reached the mainland. Fourth, the letters. Xavier wrote long letters home to his brothers in Europe, and they were copied and read aloud. In one he says he wishes he could run through the universities of Europe shouting to the students about the people waiting for someone to come. It's also true that his travels went by Portuguese ships, inside a trading empire, and that empire's record is a hard one. The Church names him a patron of the missions. His line, if he had one, was always further.",
+      "voice": "Tradition says Ignatius kept repeating one line of the Gospel to his ambitious roommate, from Matthew, in the Douay-Rheims: \"For what doth it profit a man, if he gain the whole world, and suffer the loss of his own soul?\" Xavier wanted a career. That question slowly turned him around. Then, the sending. When the king of Portugal asked for missionaries for India, another Jesuit was chosen and fell ill. Xavier was sent instead, almost overnight. He never saw Ignatius again. Then, the road. In India he walked the coast, taught children prayers in their own language, and baptized. He went on to the islands, and to Japan, where he learned that his ragged clothes made people take him less seriously, not more, and changed his approach. Then China, whose mainland he never reached. All along, Xavier wrote long letters home to his brothers in Europe, and they were copied and read aloud. In one he wishes he could run through the universities of Europe shouting to the students about the people waiting for someone to come. It's also true that his travels went by Portuguese ships, inside a trading empire, and that empire's record is a hard one. The Church names him a patron of the missions. His line, if he had one, was always further.",
       "screen": [
         "`WHAT DOTH IT PROFIT A MAN?` · `SENT IN ANOTHER MAN'S PLACE.` · `INDIA, THE ISLANDS, JAPAN.` · `LETTERS READ ALOUD IN EUROPE.` · then, large: `ALWAYS FURTHER.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: write to someone far away. Settle, and breathe. Bring to mind someone at a distance: another city, another country, or just far from you in the ways that count. Picture their face. What would they be glad to hear from you? Start a message. A few lines are enough. Don't send it yet if you'd rather wait; just begin. If you pray, you can pray for them as you write. If you don't, simply keep them in mind. The bell holds the time.",
+      "voice": "Bring to mind someone far from you, in another city, another country, or just far in the ways that count, and picture their face. Ask what they'd be glad to hear from you, and let a few lines take shape in your mind. If you pray, pray for them as the words come; if you don't, simply keep them in mind.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: always further. Today, send the message you started, or go one step past where you'd usually stop for someone: one more call, one more mile, one more try. Day eight hundred fifty.",
+      "voice": "Your line: always further. One more step past where you'd usually stop. Day eight hundred fifty, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Catholics keep Francis Xavier's feast, and he is honored as a patron of missions; his remains are venerated in Goa, India.",
   "games": {
+    "guess": [
+      "a Jesuit sent east to India and Japan",
+      "the founder of the Franciscan friars",
+      "a Portuguese king who sent missionaries east"
+    ],
     "match": {
       "prompt": "Francis Xavier — tap the pairs.",
       "pairs": [
@@ -128,14 +133,42 @@
     ],
     "recall": [
       [
-        "Sublimis Deus",
-        "the sublime God"
+        "reformamini",
+        "be reformed"
       ],
       [
-        "nepotism",
-        "offices handed to family for being family"
+        "veneration",
+        "honor, a bow, a kiss, a candle"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your little brother",
+      "says": "Who was Francis Xavier? Is he the same as Saint Francis?",
+      "options": [
+        "No, a different Francis: Ignatius's Paris roommate, a Jesuit sent to India and Japan.",
+        "Yes. Francis Xavier is Saint Francis of Assisi's full name, as used in Spain.",
+        "No. He was the Portuguese king who sent the first missionaries to India."
+      ],
+      "answer": 0,
+      "meaning": "Francis Xavier was Ignatius's roommate in Paris, sent east to India, the islands and Japan; he died off China, still going further."
+    },
+    "gloss": {
+      "Francis Xavier": {
+        "meaning": "a Jesuit sent east, who died off the coast of China",
+        "say": "FRAN-sis ZAY-vee-er"
+      },
+      "Ignatius": {
+        "meaning": "the founder of the Jesuits, Xavier's older roommate",
+        "say": "ig-NAY-shus"
+      },
+      "patron of the missions": {
+        "meaning": "a saint named to watch over missionary work"
+      },
+      "Douay-Rheims": {
+        "meaning": "an old English Catholic translation of the Bible",
+        "say": "DOO-ay REEMZ"
+      }
+    }
   },
   "sources": [
     {
@@ -169,7 +202,9 @@
       "Change of dress/approach in Japan (presenting himself more formally to the daimyo) paraphrased; confirm.",
       "Honest note on the Portuguese trading empire kept brief and unranked; a Keeper may wish to mention his request for the Inquisition in Goa or leave it out.",
       "howItsDone: feast on December 3 and relics in Goa (Bom Jesus); the month is stated, confirm.",
-      "Editor: superlatives cut (\"sent the farthest\", \"the farthest goal of all\"); unverified \"found Ignatius annoying\" replaced with the question the teach describes; \"historians note\" generalization removed; hook opener varied; feast month dropped from howItsDone."
+      "Editor: superlatives cut (\"sent the farthest\", \"the farthest goal of all\"); unverified \"found Ignatius annoying\" replaced with the question the teach describes; \"historians note\" generalization removed; hook opener varied; feast month dropped from howItsDone.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

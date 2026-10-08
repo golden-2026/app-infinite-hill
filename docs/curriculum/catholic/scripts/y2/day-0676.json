@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Saints Peter and Paul, Petros, the fisherman and the tentmaker. Your line was two pillars. Whom did you thank? Day six hundred seventy-six.",
+      "voice": "Yesterday, Saints Peter and Paul, the fisherman and the tentmaker. Your line was two pillars.",
       "screen": [
         "`TWO PILLARS.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Mary Magdalene, the repentant prostitute: that's the woman in a great many paintings, films and sermons, going back centuries. Here's the problem. The Gospels never say it. Not once. What they do say about her is far more interesting, and in 2016 the Church did something about it. Pope Francis raised her day, the twenty-second of July, from a memorial to a feast, the same rank as the apostles. And the Vatican's decree gave her an old title: apostle of the apostles.",
+      "voice": "Mary Magdalene, the repentant prostitute: that's the woman in a great many paintings, films and sermons, going back centuries. The Gospels never say it. Not once. What they do say about her is far more interesting, and in 2016 the Church did something about it. Pope Francis raised her day, the twenty-second of July, from a memorial to a feast, the same rank as the apostles. And the Vatican's decree gave her an old title: apostle of the apostles.",
       "screen": [
         "`WHAT PEOPLE THINK THEY KNOW.` → `THE GOSPELS NEVER SAY IT.` → `2016: RAISED TO A FEAST.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: carry good news. Sit, and think back over the last week. Find one piece of genuinely good news, yours or someone else's: a recovery, a kindness, a baby, a reconciliation, a small win. Hold it for a moment and let yourself feel it. Then decide who needs to hear it, and how you'll tell them today. If you pray, you can give thanks for it first. The bell holds the time.",
+      "voice": "Think back over the last week and find one piece of genuinely good news, yours or someone else's: a recovery, a kindness, a baby, a reconciliation, a small win. Hold it a moment, let yourself feel it, and picture who would be glad to hear it. If you pray, you can give thanks for it first.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: she was sent. Today, tell the good news you found to the person who needs it, before the day is out. Day six hundred seventy-six.",
+      "voice": "Your line: she was sent. Sent from a garden, with one sentence to carry. Day six hundred seventy-six, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Catholics keep the feast of Saint Mary Magdalene on 22 July, raised from a memorial in 2016; the Gospel at Mass is John's account of her meeting the risen Jesus in the garden and being sent to the disciples.",
   "games": {
+    "guess": [
+      "apostle of the apostles, sent first with the news",
+      "the first woman to write down a Gospel",
+      "the leader of the women who followed Jesus"
+    ],
     "match": {
       "prompt": "Mary Magdalene — tap the pairs.",
       "pairs": [
@@ -132,14 +137,41 @@
     ],
     "recall": [
       [
-        "Laetare",
-        "rejoice, said to one"
+        "Emmaus",
+        "where two knew him at the table"
       ],
       [
-        "cathedra",
-        "the teacher's chair"
+        "eirene",
+        "peace, given even in trouble"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your book club friend",
+      "says": "Wasn't Mary Magdalene a repentant prostitute? That's how the paintings show her.",
+      "options": [
+        "The Gospels never say so; it came from Gregory the Great treating three women as one.",
+        "Yes; John's Gospel tells that story of her just before she finds the empty tomb.",
+        "No; she was Peter's wife, which is why Mark names her at the cross."
+      ],
+      "answer": 0,
+      "meaning": "The Gospels never say it. In 591 Gregory the Great treated three women as one person, and that reading shaped Western art for centuries."
+    },
+    "gloss": {
+      "apostolorum apostola": {
+        "meaning": "Latin: apostle of the apostles",
+        "say": "ah-pos-toh-LOH-room ah-POS-toh-lah"
+      },
+      "Gregory the Great": {
+        "meaning": "the pope whose homily of 591 merged three women into one"
+      },
+      "Mary of Bethany": {
+        "meaning": "a different Mary, merged with Magdalene in Gregory's homily"
+      },
+      "Thomas Aquinas": {
+        "meaning": "a medieval theologian who called her apostle of the apostles",
+        "say": "TOM-us uh-KWY-nus"
+      }
+    }
   },
   "sources": [
     {
@@ -181,7 +213,9 @@
       "Gregory the Great, Homily 33 (591): identification of Mary Magdalene with the sinful woman of Luke 7 and Mary of Bethany; confirm.",
       "1969 calendar reform and change of Gospel reading; confirm.",
       "Matthew 27:56, Mark 15:40 and John 19:25 name her at the cross; all four Gospels name her at the tomb (Luke 24:10). Confirm.",
-      "Editor review (2026-10-01): hook no longer tells the listener what 'many' people say or claims 'fourteen centuries'; the three Gospels at the cross named and sourced; 'first person sent' scoped to John; 'never merged' softened and 1969 replaced with 'after the Second Vatican Council'."
+      "Editor review (2026-10-01): hook no longer tells the listener what 'many' people say or claims 'fourteen centuries'; the three Gospels at the cross named and sourced; 'first person sent' scoped to John; 'never merged' softened and 1969 replaced with 'after the Second Vatican Council'.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: Rusticus, and the emperor who invited correction. Your line was show me. Did you change a mind, your own? Day five hundred eighty.",
+      "voice": "Yesterday's word was Rusticus, the teacher behind an emperor's offer: show me I'm wrong, and I'll gladly change. Your line was show me.",
       "screen": [
         "`SHOW ME.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "You're on the phone with customer service, spelling your last name. The agent gets it wrong. You spell it again, slowly. Wrong again, a different letter this time. Now there's a little heat in your voice, and the letters start coming out louder, as if volume could fix it. Marcus Aurelius uses this very moment, spelling a name aloud, as a picture for how to get through a whole day's work.",
+      "voice": "You're on the phone with customer service, spelling your last name. The agent gets it wrong. You spell it again, slowly. Wrong again, a different letter this time. Now there's a little heat in your voice, and the letters come out louder, as if volume could fix it. Marcus Aurelius uses this very moment, spelling a name aloud, as a picture for getting through a whole day's work.",
       "screen": [
         "`SPELLING YOUR NAME.` → `WRONG AGAIN.` → `LOUDER DOESN'T HELP.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the scene. In Meditations six, twenty-six, Marcus says: suppose someone asks you how to write the name Antoninus. That was the name of his adoptive father. Do you shout each letter at him? And if he gets angry, do you get angry back? No. You just go on, calmly, counting off the letters one at a time. Second, the lesson. So it is in life, he says. Every duty is made up of certain parts, like a name is made of letters. Notice them. Do them in order. Third, the part about anger. Marcus adds that you should keep going without being disturbed, and without showing anger toward people who are angry with you. That's the phone call. The other person's frustration doesn't change the next letter. You still say N, then T, then O. Getting louder just adds another angry person to the line. Fourth, why it works. A whole duty can feel huge and blurry. A tax return. A hard conversation. A move. Broken into letters, each piece is small enough to say clearly. And there's an odd calm in it. When you're on the letter T, you don't have to be on the letter S. You just have to say T well. Marcus isn't describing a productivity trick. He's describing a temper. The person who goes letter by letter is less likely to lose their head, because they always know exactly what comes next.",
+      "voice": "In Meditations six, twenty-six, Marcus says: suppose someone asks you how to write the name Antoninus. That was the name of his adoptive father. Do you shout each letter at him? And if he gets angry, do you get angry back? No. You go on calmly, counting off the letters one at a time. So it is in life, he says. Every duty is made up of certain parts, the way a name is made of letters. Notice them, and do them in order. Then the part about anger: keep going without being disturbed, and without showing anger toward people who are angry with you. That's the phone call. Their frustration doesn't change the next letter. You still say N, then T, then O. Getting louder just adds another angry person to the line. Why it works: a whole duty, a tax return, a hard conversation, a move, can feel huge and blurry. Broken into letters, each piece is small enough to say clearly. And there's an odd calm in it. When you're on T, you don't have to be on S. You just have to say T well. Marcus isn't describing a productivity trick. He's describing a temper: the person who goes letter by letter is less likely to lose their head, because they always know exactly what comes next.",
       "screen": [
         "`HOW DO YOU SPELL ANTONINUS?` · `EVERY DUTY HAS ITS LETTERS.` · `DON'T SHOUT BACK.` · `ONE LETTER IS SMALL ENOUGH.` · then, large: `LETTER BY LETTER.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Sit, and breathe. Pick one task waiting for you today that feels too big or tangled. Now break it into letters. What's the very first piece? The second? The third? Name three, slowly, in your mind. Don't do them yet. Just see them in order, like letters in a name. Then come back to the breath, one at a time, in and out, letter by letter. The bell holds the time.",
+      "voice": "Choose one task waiting for you that feels too big or tangled, and break it into letters: the very first piece, the second, the third. Name them slowly, without doing them yet, like letters in a name. Then come back to the breath, one at a time, in and out.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: one letter at a time. Today, take that tangled task and finish just the first letter, then the next, all the way through. Day five hundred eighty.",
+      "voice": "Your line: one letter at a time. A whole duty is just its letters, said in order. See you tomorrow.",
       "screen": []
     },
     {
@@ -127,14 +127,43 @@
     ],
     "recall": [
       [
-        "Heraclitus",
-        "no stepping in the same river twice"
+        "hegemonikon",
+        "the ruling part, the steering center"
       ],
       [
-        "galene",
-        "a sea gone flat after wind"
+        "amicitia",
+        "friendship, best kept with steady people"
       ]
-    ]
+    ],
+    "guess": [
+      "his adoptive father's name, spelled calmly letter by letter",
+      "a Roman general who conquered the tribes of the north",
+      "the Greek teacher who taught young Marcus to write"
+    ],
+    "chat": {
+      "who": "your teenage son",
+      "says": "How am I supposed to finish this huge project when it feels impossible?",
+      "options": [
+        "Marcus says every duty has parts, like letters in a name: do them in order, calmly.",
+        "Marcus says wait until you feel inspired, then do the whole thing at once.",
+        "Marcus says a big duty is best rushed, so the stress is over quickly."
+      ],
+      "answer": 0,
+      "meaning": "In 6.26 Marcus compares a duty to spelling Antoninus: count off each letter calmly, in order, without shouting or anger."
+    },
+    "gloss": {
+      "Antoninus": {
+        "meaning": "Marcus's adoptive father; the name in Marcus's spelling picture",
+        "say": "an-toh-NYE-nus"
+      },
+      "Marcus Aurelius": {
+        "meaning": "Roman emperor and Stoic who wrote the Meditations",
+        "say": "MAR-kus aw-REE-lee-us"
+      },
+      "Meditations": {
+        "meaning": "Marcus's private notebook of notes to himself"
+      }
+    }
   },
   "sources": [
     {
@@ -151,7 +180,9 @@
       "Editor review (y2 pass): cut 'everyone has been there', the adoption date (138) and the claim that Marcus bore the name, and the 'grammar' etymology. The identification of Antoninus in 6.26 with Antoninus Pius is historical, not stated in 6.26; Keeper to confirm it may stand.",
       "Meditations 6.26 paraphrased: asked how to write the name Antoninus, would you shout each letter, and get angry if he's angry? You count off each letter; so every duty is made of parts; go on without being disturbed or angry at the angry. Confirm.",
       "Marcus was adopted by Antoninus Pius in AD 138 and took the name Antoninus; confirm date and naming.",
-      "'Grammar' from grammata via gramma: confirm standard etymology."
+      "'Grammar' from grammata via gramma: confirm standard etymology.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

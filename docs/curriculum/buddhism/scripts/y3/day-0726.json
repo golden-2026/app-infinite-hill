@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Upatissa, and your line: the show was empty. Did you notice a moment when fun went flat, and ask what you were looking for? Today the two friends set out. Day seven hundred twenty-six.",
+      "voice": "Yesterday: Upatissa and Kolita, gone quiet at the festival, and your line, the show was empty. Today the two friends set out.",
       "screen": [
         "`THE SHOW WAS EMPTY.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Two hikers come to a fork in a trail at dusk, and they agree to split up. Whoever finds the way down first comes back for the other. It's a simple deal, and it only works if both of them would really come back. Upatissa and Kolita make a deal like that. Not about a trail, about the deepest thing they can name. They've left the festival, left their families' comforts, and gone to live as wanderers. And somewhere along the way they make each other a promise that will shape the rest of their lives.",
+      "voice": "Two hikers reach a fork in a trail at dusk and agree to split up. Whoever finds the way down first comes back for the other. It's a simple deal, and it only works if both of them would really come back. Upatissa and Kolita make a deal like that, not about a trail, but about the deepest thing they can name. They've left the festival and their families' comforts to live as wanderers. And along the way they make each other a promise that will shape the rest of their lives.",
       "screen": [
         "`A FORK IN THE TRAIL.` → `WHOEVER FINDS IT, COMES BACK.` → `THE TWO FRIENDS PROMISE.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the teacher. In Rajagaha lives a wandering teacher named Sanjaya, with a large following of wanderers. The two friends go forth under him. The commentaries say they learned everything he had to teach, quickly, and then asked: is there more? And there wasn't. In another discourse, Sanjaya is remembered for answers that slip away when you reach for them: asked a hard question, he would neither say yes, nor no, nor neither. For these two, that was not a place to stop. Second, the word. What were they looking for? The Vinaya uses one word for it: the deathless. In Pali, amata. Not long life. Not a heaven that might end. The deathless is a way of naming freedom from the whole round of birth and death, the thing the festival couldn't give. Third, the pact. And here it is, as the Vinaya tells it: the two of them had given their word to each other. Whoever reaches the deathless first will tell the other. That's all. No conditions. No race. No prize for winning. Just: if I get there, you'll hear of it. Fourth, why it matters. It would be easy for a seeker to turn inward and forget everyone else. These two built friendship into the search itself. Each one's freedom was tied to the other's. And notice what the pact assumes: that one of them might get there without the other, and that whoever did would not be too proud, too busy, or too far gone to come back. Tomorrow, one of them finds something, and we'll see if the promise holds.",
+      "voice": "First, the teacher. In Rajagaha lives a wandering teacher named Sanjaya, with a large following of wanderers. The two friends go forth under him. The commentaries say they quickly learned everything he had to teach, and then asked: is there more? There wasn't. In another discourse, Sanjaya is remembered for answers that slip away when you reach for them: asked a hard question, he would say neither yes, nor no, nor neither. For these two, that was not a place to stop. Second, the word. What were they looking for? The Vinaya uses one word for it: the deathless. In Pali, amata. Not long life. Not a heaven that might end. The deathless names freedom from the whole round of birth and death, the thing the festival couldn't give. Third, the pact. As the Vinaya tells it, the two had given their word to each other: whoever reaches the deathless first will tell the other. No conditions. No race. No prize for winning. Just: if I get there, you'll hear of it. Fourth, why it matters. A seeker could easily turn inward and forget everyone else. These two built friendship into the search itself; each one's freedom was tied to the other's. And the pact assumes something: that one of them might get there without the other, and that whoever did would not be too proud, too busy or too far gone to come back. Tomorrow, one of them finds something.",
       "screen": [
         "`A TEACHER WITH NO MORE TO GIVE.` · `AMATA: THE DEATHLESS.` · `WHOEVER FINDS IT FIRST WILL TELL.` · `FRIENDSHIP BUILT INTO THE SEARCH.` · then, large: `WHOEVER FINDS IT FIRST.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: make one promise to a friend. Settle, and breathe. Bring a friend to mind, someone whose good you want. Think of one small, honest promise you could make them and keep: I'll send you that book when I've read it. I'll tell you if I find a good doctor. I'll call you on Sunday. Not a grand vow. Something you will really do. Hold it, picture keeping it, and then rest with the breath. The bell holds the time.",
+      "voice": "Bring a friend to mind, someone whose good you want, and think of one small, honest promise you could keep for them: not a grand vow, just something true. Hold it, picture keeping it, and rest with the breath.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: whoever finds it first. Today, make the promise you thought of, to the friend you thought of, and mean it. Day seven hundred twenty-six.",
+      "voice": "Your line: whoever finds it first. Friendship, built into the search itself. See you tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Buddhist teaching gives great weight to good friendship; in the discourses the Buddha calls admirable friendship the whole of the holy life (SN 45.2), and in some communities monks and lay people practice in small groups who support each other.",
   "games": {
+    "guess": [
+      "a promise the two friends make to each other",
+      "a contract to serve one teacher for life",
+      "a vow never to go back to their families"
+    ],
     "match": {
       "prompt": "the pact: tap the pairs.",
       "pairs": [
@@ -132,14 +137,47 @@
     ],
     "recall": [
       [
-        "Yashodhara",
-        "asks why he left without her"
+        "Yasas",
+        "woke at night and walked out"
       ],
       [
-        "Chandaka",
-        "weeps and begs to stay"
+        "Bimbisara",
+        "the king of Magadha"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your coworker",
+      "says": "What did those two friends promise each other?",
+      "options": [
+        "Whoever found the deathless first would come back and tell the other.",
+        "To stay with their teacher Sanjaya forever, whatever happened.",
+        "To race each other, and the winner would become the leader."
+      ],
+      "answer": 0,
+      "meaning": "The Vinaya says they gave their word: whoever reaches the deathless first will tell the other. No race, no prize."
+    },
+    "gloss": {
+      "Sanjaya": {
+        "meaning": "a wandering teacher in Rajagaha",
+        "script": "सञ्जय",
+        "say": "SUN-juh-yuh"
+      },
+      "amata": {
+        "meaning": "the deathless, freedom from the round of birth and death",
+        "script": "अमत",
+        "say": "uh-MUH-tuh"
+      },
+      "Vinaya": {
+        "meaning": "the monks' book of discipline",
+        "script": "विनय",
+        "say": "VIN-uh-yuh"
+      },
+      "Rajagaha": {
+        "meaning": "a city ringed by hills, Bimbisara's capital",
+        "script": "राजगह",
+        "say": "RAH-juh-guh-huh"
+      }
+    }
   },
   "sources": [
     {
@@ -178,7 +216,9 @@
       "Hook: the friends 'left their families' comforts' summarizes their going forth; the script does not use the commentary's numbers of followers.",
       "howItsDone cites SN 45.2 (Ananda calls good friendship half the holy life; the Buddha says the whole); paraphrased.",
       "Editor: fixed garbled line (the round of birth and death 'went flat at the festival'); 'if I get there, you get there' made 'you'll hear of it' to match the pact; dropped the faint-praise line about Sanjaya; howItsDone 'often' softened.",
-      "Audit: fixed the fragment 'for these two, not a place to finish'. Facts checked: Mahavagga 1.23 pact on the deathless, DN 2 Sanjaya's evasions, SN 45.2 whole of the holy life."
+      "Audit: fixed the fragment 'for these two, not a place to finish'. Facts checked: Mahavagga 1.23 pact on the deathless, DN 2 Sanjaya's evasions, SN 45.2 whole of the holy life.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

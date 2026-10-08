@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Aisha, who checked what she heard against the text. Your line was: she taught the teachers. Did your question find someone to answer it? Day eight hundred ten.",
+      "voice": "Yesterday: Aisha, who checked what she heard against the text and her own eyes. Your line was she taught the teachers.",
       "screen": [
         "`SHE TAUGHT THE TEACHERS.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Hafsah was the daughter of Umar ibn al-Khattab and a wife of the Prophet Muhammad, peace be upon him. Her place in this story comes from two reports in Sahih al-Bukhari, told one after the other. The first is a gathering. After a battle in which many who knew the Qur'an by heart were killed, Umar urged Abu Bakr to collect the Qur'an in writing. Abu Bakr hesitated: how could he do something the Prophet had not done? In the end he agreed, and gave the task to Zayd ibn Thabit. Zayd says it would have been easier to move a mountain. He searched for the verses, gathering them from what was written and from the memories of men. The sheets, Bukhari says, stayed with Abu Bakr until he died, then with Umar for the rest of his life, and then with Hafsah, daughter of Umar. The second report is the knock at her door. In Uthman's time, people in distant lands were reciting differently and arguing over it. Uthman sent to Hafsah, asking for the sheets so they could be copied, with a promise to return them. She sent them. Copies were made and sent out to the regions. And the sheets went back to Hafsah. Look at what kind of honor this is. Hafsah did not write the pages or gather them. She kept them. When the community needed a trusted standard, it knew exactly whose house to ask, and the pages came back to the place they had been safe. Keeping is quiet work, and it is real work. She kept the pages.",
+      "voice": "Hafsah was the daughter of Umar ibn al-Khattab and a wife of the Prophet Muhammad, peace be upon him. Her place in this story comes from two reports in Sahih al-Bukhari, told one after the other. The first is a gathering. After a battle in which many who knew the Qur'an by heart were killed, Umar urged Abu Bakr to collect the Qur'an in writing. Abu Bakr hesitated: how could he do something the Prophet had not done? In the end he agreed, and gave the task to Zayd ibn Thabit. Zayd says it would have been easier to move a mountain. He searched for the verses, gathering them from what was written and from the memories of men. The sheets, Bukhari says, stayed with Abu Bakr until he died, then with Umar for the rest of his life, and then with Hafsah, daughter of Umar. The second report is the knock at her door. In Uthman's time, people in distant lands were reciting differently and arguing over it. Uthman sent to Hafsah, asking for the sheets so they could be copied, with a promise to return them. She sent them. Copies were made and sent out to the regions, and the sheets went back to Hafsah. Look at what kind of honor this is. Hafsah did not write the pages or gather them. She kept them. When the community needed a trusted standard, it knew exactly whose house to ask, and the pages came back to the place they had been safe. Keeping is quiet work, and it is real work.",
       "screen": [
         "`ZAYD GATHERS THE VERSES.` · `ABU BAKR, THEN UMAR, THEN HAFSAH.` · `UTHMAN SENDS TO HER DOOR.` · `THE SHEETS COME BACK TO HER.` · then, large: `SHE KEPT THE PAGES.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: keep something precious safe. Settle, and breathe. Think of one thing you've been trusted with. A letter, a photograph, a recipe, a secret someone told you, a copy of a holy book on your shelf. Picture where it is right now. Is it safe there? Would it come back to you if you lent it? Breathe in, and hold it in mind with care. If you pray, you can give thanks for what has been placed in your keeping. The bell holds the time.",
+      "voice": "Think of one thing you've been trusted with: a letter, a photograph, a recipe, a secret someone told you, a copy of a holy book on your shelf. Picture where it is right now, and whether it is safe there, and hold it in mind with care. If you pray, give thanks for what has been placed in your keeping.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: she kept the pages. Today, put one precious thing somewhere safe, or give back something you've borrowed. Day eight hundred ten.",
+      "voice": "Your line: she kept the pages. The whole community knew which door to knock on. Day eight hundred ten, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Muslims who study how the Qur'an was gathered learn the reports in Sahih al-Bukhari of Zayd ibn Thabit's collection under Abu Bakr and Uthman's copying from the sheets kept by Hafsah.",
   "games": {
+    "guess": [
+      "Umar's daughter, who kept the Qur'an's pages",
+      "the scribe who wrote the Qur'an from memory",
+      "Umar's sister, who read him the surah Ta-Ha"
+    ],
     "match": {
       "prompt": "Hafsah — tap the pairs.",
       "pairs": [
@@ -132,14 +137,47 @@
     ],
     "recall": [
       [
-        "al-Faruq",
-        "the one who distinguishes"
+        "Sawdah",
+        "the wife who made him smile"
       ],
       [
-        "Abu Sufyan",
-        "rode ahead to announce it"
+        "Uthman",
+        "the modest one, Dhu al-Nurayn"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your grandmother",
+      "says": "Why did Uthman send to Hafsah's house when he wanted the Qur'an copied?",
+      "options": [
+        "The gathered sheets had passed to her after Umar, and she kept them.",
+        "She had written the sheets herself from what she had memorized.",
+        "Her house was the largest library in Medina at the time."
+      ],
+      "answer": 0,
+      "meaning": "Bukhari says the sheets stayed with Abu Bakr, then Umar, then Hafsah; Uthman borrowed them for copying and returned them."
+    },
+    "gloss": {
+      "Hafsah": {
+        "meaning": "Umar's daughter, a mother of the believers",
+        "script": "حفصة",
+        "say": "HAF-sa"
+      },
+      "Zayd ibn Thabit": {
+        "meaning": "the companion who gathered the Qur'an's verses",
+        "script": "زيد بن ثابت",
+        "say": "zayd ibn THAA-bit"
+      },
+      "Umar ibn al-Khattab": {
+        "meaning": "Hafsah's father, a close companion",
+        "script": "عمر بن الخطاب",
+        "say": "U-mar ibn al-khat-TAAB"
+      },
+      "Uthman": {
+        "meaning": "the caliph who had the copies made",
+        "script": "عثمان",
+        "say": "uth-MAAN"
+      }
+    }
   },
   "sources": [
     {
@@ -162,7 +200,9 @@
       "Hadith numbers cited from memory; confirm.",
       "The battle (Yamamah) is not named, and no count of those killed is given, under the claims rule.",
       "Confirm the transliteration and stress of suhuf.",
-      "Bukhari 4987 also says Uthman ordered other copies burned; left out as outside today's point. Keeper may wish to add context."
+      "Bukhari 4987 also says Uthman ordered other copies burned; left out as outside today's point. Keeper may wish to add context.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

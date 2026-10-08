@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the Mi'raj, and your line was the prayers were a gift. Which prayer time did you notice, and where were you? Day five hundred seven.",
+      "voice": "Yesterday: the Mi'raj, and five prayers that count as fifty. Your line was the prayers were a gift.",
       "screen": [
         "`THE PRAYERS WERE A GIFT.`"
       ]
@@ -46,7 +46,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: train for something before it starts. Sit, and let the breath settle. If you fast, choose one day this coming week to fast as practice, and picture how the day will go: the early meal, the long afternoon, the evening. If you don't fast, rehearse one small piece of it instead: plan to wake fifteen minutes early one morning, the way someone fasting rises for the pre-dawn meal, and picture that. Notice what feels hard ahead of time. The bell holds the time.",
+      "voice": "If you fast, choose one day this coming week to fast as practice, and picture how it will go: the early meal, the long afternoon, the evening. If you don't, picture waking fifteen minutes early one morning, the way someone fasting rises for the pre-dawn meal. Notice what feels hard ahead of time.",
       "screen": []
     },
     {
@@ -60,7 +60,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: prepare the ground. Today, do one small thing now that will make something coming up easier: a list, a conversation, an early night. Day five hundred seven.",
+      "voice": "Your line: prepare the ground. Training first, then the race. That's day five hundred seven.",
       "screen": []
     },
     {
@@ -74,6 +74,11 @@
   ],
   "howItsDone": "Many Muslims increase voluntary fasting in Sha'ban to prepare for Ramadan; some communities spend the 15th night in prayer (Shab-e-Barat in South Asia, and for Twelver Shia also the Mahdi's birth), while others do not mark it.",
   "games": {
+    "guess": [
+      "the month before Ramadan, a time of getting ready",
+      "the month of pilgrimage at the end of the year",
+      "the first month of the Islamic new year"
+    ],
     "match": {
       "prompt": "Sha'ban — tap the pairs.",
       "pairs": [
@@ -134,14 +139,46 @@
     ],
     "recall": [
       [
-        "Mistah",
-        "relative who spread the slander"
+        "Mawlid",
+        "the Prophet's birth"
       ],
       [
-        "husn al-zann",
-        "thinking well, the good guess"
+        "hikmah",
+        "wisdom: holding firm, judging well"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "a teammate",
+      "says": "What's special about the month just before Ramadan?",
+      "options": [
+        "The Prophet fasted more in Sha'ban than any month but Ramadan, getting ready.",
+        "It's when the Qur'an was first revealed, so it's the holiest month.",
+        "Fasting is forbidden all month, so people can rest before Ramadan."
+      ],
+      "answer": 0,
+      "meaning": "'A'isha said she never saw him fast more in any month than in Sha'ban; he called it a month people neglect."
+    },
+    "gloss": {
+      "Sha'ban": {
+        "meaning": "the eighth month, just before Ramadan",
+        "script": "شعبان",
+        "say": "sha'-BAAN"
+      },
+      "Shab-e-Barat": {
+        "meaning": "the South Asian name for the middle night of Sha'ban",
+        "say": "SHAB-e ba-RAAT"
+      },
+      "al-Mahdi": {
+        "meaning": "for Twelver Shia Muslims, the twelfth Imam",
+        "script": "المهدي",
+        "say": "al-MAH-dee"
+      },
+      "Usama ibn Zayd": {
+        "meaning": "the companion who reported the hadith in an-Nasa'i",
+        "script": "أسامة بن زيد",
+        "say": "u-SAA-ma ibn ZAYD"
+      }
+    }
   },
   "sources": [
     {
@@ -170,7 +207,9 @@
       "No direct quotations; hadith paraphrased. Numbers (Bukhari 1969, 1914; an-Nasa'i 2357) cited from memory; confirm.",
       "Shab-e-Barat and the Twelver Shia observance of the Mahdi's birth on 15 Sha'ban: confirm framing.",
       "The weak-hadith judgment on the 15th night is attributed to 'scholars'; some scholars accept parts of it; confirm balance.",
-      "Editor review (2026-10-01): cut the unsourced 'knew his habits as well as anyone'; dropped the 'night of release' gloss on Shab-e-Barat (an unsourced etymology); 'many Muslims' and 'scholars have judged' softened; non-fasting practice changed so it doesn't repeat day 503's 'give up one comfort'."
+      "Editor review (2026-10-01): cut the unsourced 'knew his habits as well as anyone'; dropped the 'night of release' gloss on Shab-e-Barat (an unsourced etymology); 'many Muslims' and 'scholars have judged' softened; non-fasting practice changed so it doesn't repeat day 503's 'give up one comfort'.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

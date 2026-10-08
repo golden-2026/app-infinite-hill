@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Sirhind: the city of the Sahibzade's deaths, taken by the Dal Khalsa. Your line was the tide turned. Did you catch a small turn? Today, the turn isn't finished yet. Day eight hundred sixty-nine.",
+      "voice": "Yesterday, the Dal Khalsa took Sirhind, the city of the Sahibzade's deaths. Your line was the tide turned. Today, the turn isn't finished yet.",
       "screen": [
         "`THE TIDE TURNED.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Word reaches Amritsar that the invader is coming back. The main bands of the Khalsa are far off. The Harmandir still bears the scars of the last time. Anyone with sense would pack up and go, and people do go, down the roads out of the city. But tradition says a small group stays, around an older Sikh named Baba Gurbakhsh Singh. Not an army. A handful. Tradition gives the number as thirty. Today: shaheedi bunga.",
+      "voice": "Word reaches Amritsar that the invader is coming back. The main bands of the Khalsa are far off. The Harmandir still bears the scars of the last time. Anyone with sense would pack up and go, and people do go, down the roads out of the city. But tradition says a small group stays, around an older Sikh named Baba Gurbakhsh Singh. Not an army. A handful. Tradition gives the number as thirty.",
       "screen": [
         "`THE INVADER RETURNS.` → `THE BANDS ARE FAR AWAY.` → `A HANDFUL STAYS.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Start with what they were not doing. They were not expecting to win. Nobody in this story imagines thirty people stopping an army. That's what makes it worth telling. The second thing is what they were doing: keeping a place from being left empty. The Harmandir was where the Guru's word was sung, day after day. Tradition says that before the army arrived, the thirty prepared the way Sikhs prepare for anything serious: they bathed, they prayed, they listened to the Guru's word. Then, when the army came, they went out to meet it rather than wait behind the walls. And they died, every one, tradition says, with Baba Gurbakhsh Singh. The third thing is how Sikhs keep it. Near the Akal Takht in Amritsar there's a place that bears his name, a shaheedi bunga, a martyrs' tower, remembering him and the others. So people praying at the Harmandir today walk past the spot that remembers the thirty. And here's the fourth, the part for an ordinary day. Not everyone is asked to be brave in a big way. Plenty of duties are small and unwatched: the one person who stays to lock up, the one who keeps showing up when everyone else drifts off, the one who stays on the phone. The thirty are remembered for staying where they were needed when there was no hope of a reward. Thirty stood.",
+      "voice": "Start with what they were not doing. They were not expecting to win. Nobody in this story imagines thirty people stopping an army. That's what makes it worth telling. Then, what they were doing: keeping a place from being left empty. The Harmandir was where the Guru's word was sung, day after day. Tradition says that before the army arrived, the thirty prepared the way Sikhs prepare for anything serious: they bathed, they prayed, they listened to the Guru's word. When the army came, they went out to meet it rather than wait behind the walls. And they died, every one, tradition says, with Baba Gurbakhsh Singh. Then, how Sikhs keep it. Near the Akal Takht in Amritsar there's a place that bears his name, a shaheedi bunga, a martyrs' tower, remembering him and the others. People praying at the Harmandir today walk past the spot that remembers the thirty. And last, the part for an ordinary day. Not everyone is asked to be brave in a big way. Plenty of duties are small and unwatched: the one who stays to lock up, the one who keeps showing up when everyone else drifts off, the one who stays on the phone. The thirty are remembered for staying where they were needed when there was no hope of a reward. Thirty stood.",
       "screen": [
         "`NO HOPE OF WINNING.` · `KEEPING THE PLACE FROM BEING LEFT EMPTY.` · `A MARTYRS' BUNGA NEAR THE AKAL TAKHT.` · `STAYING WHERE YOU'RE NEEDED.` · then, large: `THIRTY STOOD.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Let's spend two minutes on one small duty. Sit up a little, as if you're on watch. Breathe. Bring to mind one thing that's yours to keep: a promise, a plant someone asked you to water, a person who counts on your call, a task at work nobody checks. Picture yourself staying with it today, even when it would be easy to drift off. Feel your feet on the floor while you hold it. If you pray, you can say Waheguru on each breath out. The bell holds the time.",
+      "voice": "Sit up a little, as if you're on watch, and bring to mind one thing that's yours to keep: a promise, a plant someone asked you to water, a person who counts on your call. Picture yourself staying with it today, even when drifting off would be easy, and feel your feet on the floor while you hold it. If you pray, say Waheguru on each breath out.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: thirty stood. Today, choose one small duty and stay with it to the end, even if nobody notices that you did. Day eight hundred sixty-nine.",
+      "voice": "Your line: thirty stood. They kept a place from being left empty. Day eight hundred sixty-nine, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Sikhs remember Baba Gurbakhsh Singh and his companions among the martyrs, and at the Harmandir Sahib complex a place near the Akal Takht bears his name.",
   "games": {
+    "guess": [
+      "a martyrs' tower near the Akal Takht in Amritsar",
+      "a bell tower that calls Sikhs to the morning prayer",
+      "a fort the Dal Khalsa built to guard the city gates"
+    ],
     "match": {
       "prompt": "the ones who stayed — tap the pairs.",
       "pairs": [
@@ -132,14 +137,47 @@
     ],
     "recall": [
       [
-        "sant-sipahi",
-        "saint-soldier"
+        "Diwali",
+        "the festival of lamps"
       ],
       [
-        "rakhi",
-        "guarding, protection"
+        "Jassa Singh",
+        "Sultan-ul-Qaum, king of the community"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your teammate",
+      "says": "Thirty people against an army? Why would anyone stay for that?",
+      "options": [
+        "They didn't expect to win. They stayed so the Harmandir wouldn't be left empty.",
+        "They expected the main bands to arrive in time and win the fight for them.",
+        "They stayed because they had no horses and no way to leave the city in time."
+      ],
+      "answer": 0,
+      "meaning": "Tradition says the thirty, with Baba Gurbakhsh Singh, prepared, went out to meet the army and died, so the Guru's house wasn't left empty."
+    },
+    "gloss": {
+      "Baba Gurbakhsh Singh": {
+        "meaning": "the older Sikh the thirty stayed with",
+        "script": "ਬਾਬਾ ਗੁਰਬਖ਼ਸ਼ ਸਿੰਘ",
+        "say": "BAA-baa gur-BUKHSH SING"
+      },
+      "Akal Takht": {
+        "meaning": "a seat of Sikh authority in Amritsar",
+        "script": "ਅਕਾਲ ਤਖ਼ਤ",
+        "say": "a-KAAL TUKHT"
+      },
+      "shaheedi bunga": {
+        "meaning": "a martyrs' tower",
+        "script": "ਸ਼ਹੀਦੀ ਬੁੰਗਾ",
+        "say": "sha-HEE-dee BOON-gaa"
+      },
+      "Harmandir": {
+        "meaning": "the temple in the middle of the pool at Amritsar",
+        "script": "ਹਰਿਮੰਦਰ",
+        "say": "HAR-mun-dur"
+      }
+    }
   },
   "sources": [
     {
@@ -159,7 +197,9 @@
       "'the Guru's word was sung every day, from early morning into the night' at the Harmandir in that period; confirm or soften.",
       "No year is given in the voice; the index places it in 1764.",
       "Editor: cut the unsourced 'from early morning into the night', changed 'beside' to 'near' the Akal Takht, and removed the howItsDone implication that the Ardas names him.",
-      "Audit: the hook said the Harmandir was 'still being rebuilt' in late 1764; major rebuilding is usually dated from 1765, so it now says the Harmandir 'still bears the scars of the last time'."
+      "Audit: the hook said the Harmandir was 'still being rebuilt' in late 1764; major rebuilding is usually dated from 1765, so it now says the Harmandir 'still bears the scars of the last time'.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

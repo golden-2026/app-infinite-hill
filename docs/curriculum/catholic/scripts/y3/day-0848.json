@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Pamplona: a cannonball, a sickbed, and nothing to read but saints. Your line was the cannonball. Did something interrupt your plans? Today the soldier gets up and walks. Day eight hundred forty-eight.",
+      "voice": "Yesterday, Pamplona: a cannonball, a sickbed, and nothing to read but saints. Your line was the cannonball. Today the soldier gets up and walks.",
       "screen": [
         "`THE CANNONBALL.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A notebook, in the hand of a man dressed in sackcloth. Before he reached this town he had stopped at the shrine of Our Lady at Montserrat, hung up his sword and dagger there, and given his fine clothes to a beggar. He meant to stay a few days in the small town down the hill. He stayed far longer. He begged for food, let his hair and nails grow, and prayed for hours every day. Tradition points to a cave above the river where he went to pray. And all the while he kept writing in that notebook. The town is Manresa.",
+      "voice": "A notebook, in the hand of a man dressed in sackcloth. On his way here he had stopped at the shrine of Our Lady at Montserrat, hung up his sword and dagger, and given his fine clothes to a beggar. He meant to stay a few days in the small town down the hill. He stayed far longer, begging for food, letting his hair and nails grow, praying for hours every day. Tradition points to a cave above the river where he went to pray. And all the while he kept writing in that notebook. The town is Manresa.",
       "screen": [
         "`A SWORD LEFT AT MONTSERRAT.` → `A FEW DAYS BECOME A LONG STAY.` → `A NOTEBOOK.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Manresa was not a peaceful retreat. Ignatius's own account shows four sides of it. First, the dark. He was tormented by scruples, the fear that he hadn't confessed his sins fully. He confessed again and again and found no rest. He says he was tempted to despair. He doesn't hide it. Second, the school. Later he described how God dealt with him at Manresa the way a schoolmaster deals with a child, teaching him one lesson at a time. He wasn't learning from books. He was learning from what happened in him when he prayed. Third, the river. One day, sitting by the river Cardoner, he says the eyes of his understanding began to open. He saw no vision, he says, but understood many things about faith and learning, and everything seemed new. Fourth, the notes. Through all of it, he wrote down what he noticed: what helped, what pulled him under, which way of praying led where. Those notes, reworked over years, became a small handbook called the Spiritual Exercises. It isn't a book to read straight through. It's a set of instructions for someone guiding another person through prayer, step by step. Some readers hear an echo of Mary in the Gospel of Luke, in the Douay-Rheims: \"But Mary kept all these words, pondering them in her heart.\" Ignatius kept them on paper. A soldier who knew nothing about prayer paid close attention, and wrote it down.",
+      "voice": "Manresa was no peaceful retreat; his own account shows four sides of it. First, the dark. He was tormented by scruples, the fear that he hadn't confessed his sins fully. He confessed again and again and found no rest. He says he was tempted to despair, and he doesn't hide it. Second, the school. Later he described how God dealt with him there the way a schoolmaster deals with a child, one lesson at a time. He wasn't learning from books, but from what happened in him when he prayed. Third, the river. One day, sitting by the river Cardoner, he says the eyes of his understanding began to open. He saw no vision, he says, but understood many things about faith and learning, and everything seemed new. Fourth, the notes. Through it all, he wrote down what he noticed: what helped, what pulled him under, which way of praying led where. Reworked over years, those notes became a small handbook called the Spiritual Exercises. It isn't a book to read straight through. It's a set of instructions for someone guiding another person through prayer, step by step. Some readers hear an echo of Mary in Luke's Gospel, in the Douay-Rheims: \"But Mary kept all these words, pondering them in her heart.\" Ignatius kept them on paper. A soldier who knew nothing about prayer paid close attention, and wrote it down.",
       "screen": [
         "`THE DARK: SCRUPLES.` · `GOD AS A SCHOOLMASTER.` · `BY THE RIVER CARDONER.` · `THE NOTES BECOME THE EXERCISES.` · then, large: `PONDERING THEM IN HER HEART.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: write down one thing you noticed in prayer, or in quiet. Settle, and breathe. If you pray, pray for a little while in whatever way you usually do. If you don't, just sit and let your mind be still. Then ask one plain question: what did I notice? A word that stayed. A feeling that came or went. A person who came to mind. Don't judge it. Afterward, write it in one line, on paper or on your phone. The bell holds the time.",
+      "voice": "If you pray, pray a little while in whatever way you usually do; if you don't, just sit and let your mind be still. Then ask one plain question: what did I notice? A word that stayed, a feeling that came or went, a person who came to mind; don't judge it, and if you like, put it into one line on paper.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: notes from a cave. Today, keep the line you wrote, and tonight read it once more. Add a second line if one comes. Day eight hundred forty-eight.",
+      "voice": "Your line: notes from a cave. Paying attention is where his prayer began. See you tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Catholics make the Spiritual Exercises on retreats, either as a silent retreat away from home or in daily life over a longer stretch, with a guide who meets them regularly.",
   "games": {
+    "guess": [
+      "the town where Ignatius prayed and began his notes",
+      "the shrine where Ignatius hung up his sword",
+      "the fortress where a cannonball wounded Ignatius"
+    ],
     "match": {
       "prompt": "Manresa — tap the pairs.",
       "pairs": [
@@ -132,14 +137,46 @@
     ],
     "recall": [
       [
-        "Sublimis Deus",
-        "the sublime God"
+        "ex cathedra",
+        "from the chair: a solemn definition"
       ],
       [
-        "nepotism",
-        "offices handed to family for being family"
+        "Nostra Aetate",
+        "in our time"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your teenage son",
+      "says": "What are the Spiritual Exercises? A workout plan for the soul?",
+      "options": [
+        "Sort of: Ignatius's notes on prayer, made into steps for guiding someone through prayer.",
+        "A book of daily prayers Ignatius wrote to be read straight through, cover to cover.",
+        "Physical exercises Ignatius did in a cave to train his body for a life of prayer."
+      ],
+      "answer": 0,
+      "meaning": "The Spiritual Exercises grew from Ignatius's Manresa notes: not a book to read through, but instructions for guiding someone through prayer."
+    },
+    "gloss": {
+      "Montserrat": {
+        "meaning": "a shrine of Our Lady where he hung up his sword",
+        "say": "mont-seh-RAHT"
+      },
+      "scruples": {
+        "meaning": "an anxious fear of having sinned or confessed badly",
+        "say": "SKROO-pulz"
+      },
+      "Cardoner": {
+        "meaning": "the river at Manresa where his understanding opened",
+        "say": "kar-doh-NAIR"
+      },
+      "Spiritual Exercises": {
+        "meaning": "Ignatius's handbook for guiding someone through prayer"
+      },
+      "Manresa": {
+        "meaning": "the town where Ignatius prayed and kept his notebook",
+        "say": "mahn-RAY-sah"
+      }
+    }
   },
   "sources": [
     {
@@ -172,7 +209,9 @@
       "Latin pronunciation given in ecclesiastical style; confirm.",
       "Editor: \"swapped his clothes with a beggar\" corrected to \"given his fine clothes to a beggar\" (Autobiography ch. 2); \"Catholics hear\" softened to \"some readers hear\".",
       "Editor (second pass): hook no longer says twice that he gave away his clothes (sackcloth per Autobiography ch. 2); awkward \"turns it four ways\" reworded.",
-      "Audit: ecclesiastical pronunciation of Exercitia Spiritualia corrected (c before i is 'ch', 'tu' is 'too', not 'tsoo')."
+      "Audit: ecclesiastical pronunciation of Exercitia Spiritualia corrected (c before i is 'ch', 'tu' is 'too', not 'tsoo').",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

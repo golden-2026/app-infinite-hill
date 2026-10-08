@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, waqf, the endowment: keep the root, give the fruit. Your line was: given forever. What did you give that keeps on giving? Day one thousand fourteen.",
+      "voice": "Yesterday: waqf, the endowment. Keep the root, give the fruit: given forever.",
       "screen": [
         "`GIVEN FOREVER.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "A saying of the Prophet Muhammad, peace be upon him, in Sahih Muslim, makes a promise: whoever travels a road seeking knowledge, God makes easy for them a road to paradise. So people traveled, and sat in circles. Over time the circles needed rooms, food, books and paid teachers, and the madrasah grew around them. You met the great colleges of Baghdad and Fez earlier on this path. Today, step inside an ordinary one. A courtyard with a fountain. Small rooms around it where students lived. A prayer hall. A shelf of books. Classes in Qur'an and hadith, law, and Arabic grammar, and in some, logic or arithmetic. And at the end, no diploma from the building. Instead, a person. You met the calligrapher's license a few days ago; the schools had their own: a teacher could give you an ijazah, written permission to teach a book, naming who had taught it to him, and who had taught that teacher, back through a chain of names. The knowledge belonged to the chain, not to the walls. One more surprise: in Arabic, madrasah simply means school. Any school. A child in Cairo goes to a madrasah to learn math and science. Places to learn.",
+      "voice": "A saying of the Prophet Muhammad, peace be upon him, in Sahih Muslim, makes a promise: whoever travels a road seeking knowledge, God makes easy for them a road to paradise. So people traveled, and sat in circles. Over time the circles needed rooms, food, books and paid teachers, and the madrasah grew around them. You met the great colleges of Baghdad and Fez earlier on this path. Today, step inside an ordinary one. A courtyard with a fountain. Small rooms around it where students lived. A prayer hall. A shelf of books. Classes in Qur'an and hadith, law and Arabic grammar, and in some, logic or arithmetic. And at the end, no diploma from the building. Instead, a person. You met the calligrapher's license a few days ago; the schools had their own. A teacher could give you an ijazah, written permission to teach a book, naming who had taught it to him, and who had taught that teacher, back through a chain of names. The knowledge belonged to the chain, not to the walls. One more surprise: in Arabic, madrasah simply means school. Any school. A child in Cairo goes to a madrasah to learn math and science. Places to learn.",
       "screen": [
         "`A CIRCLE AT A PILLAR.` · `A ROAD TO KNOWLEDGE.` · `A COURTYARD OF STUDENTS.` · `THE IJAZAH: A CHAIN OF TEACHERS.` · then, large: `PLACES TO LEARN.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: thank a school. Settle, and breathe. Bring back one place where you learned something that stayed: a classroom, a mosque circle, a library, a kitchen table, a workshop. Then one teacher there. What did they hand you that you still carry? If you pray, you can pray for them, living or gone. If you don't, simply hold their face in mind for a moment. Later today, if you can, write a thank-you: to the person, or to the school itself. The bell holds the time.",
+      "voice": "Bring back one place where you learned something that stayed, a classroom, a mosque circle, a library, a kitchen table, and one teacher there. What did they hand you that you still carry? If you pray, you can pray for them, living or gone; if you don't, just hold their face in mind for a moment.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: places to learn. Today, thank a school or a teacher in writing, even two lines. Day one thousand fourteen.",
+      "voice": "Your line: places to learn. The knowledge lived in people, passed hand to hand. Until tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Muslim children and adults study in mosque circles and madrasahs of every kind, from weekend Qur'an classes to seminaries; in traditional study a student may still receive an ijazah from a teacher, naming the chain of teachers behind it.",
   "games": {
+    "guess": [
+      "places to learn, from a mosque circle to a college",
+      "a building that hands out diplomas to its graduates",
+      "a seminary that trains only future prayer leaders"
+    ],
     "match": {
       "prompt": "the school — tap the pairs.",
       "pairs": [
@@ -132,14 +137,46 @@
     ],
     "recall": [
       [
-        "khatt",
-        "a line, handwriting, calligraphy"
+        "Wali Songo",
+        "the nine saints of Java"
       ],
       [
-        "Jawi",
-        "Malay written in an Arabic-based script"
+        "Moro",
+        "Muslim peoples of Sulu and Mindanao"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your daughter",
+      "says": "Did old madrasahs hand out diplomas like schools do now?",
+      "options": [
+        "Not from the building; a teacher gave an ijazah, naming the chain of teachers behind it.",
+        "Yes. Each madrasah stamped its own diploma for every student who finished.",
+        "No. Students got nothing written; learning there was only ever spoken."
+      ],
+      "answer": 0,
+      "meaning": "At the end came no diploma from the building but a person: an ijazah, written permission to teach a book, naming a chain of teachers."
+    },
+    "gloss": {
+      "halaqa": {
+        "meaning": "a study circle around a teacher",
+        "script": "حلقة",
+        "say": "HA-la-qa"
+      },
+      "madrasah": {
+        "meaning": "Arabic for school; any school",
+        "script": "مدرسة",
+        "say": "MAD-ra-sa"
+      },
+      "ijazah": {
+        "meaning": "a teacher's written permission to teach a book",
+        "script": "إجازة",
+        "say": "ee-JAA-zah"
+      },
+      "Fez": {
+        "meaning": "a city in Morocco with a great old college",
+        "say": "FEZ"
+      }
+    }
   },
   "sources": [
     {
@@ -159,7 +196,10 @@
       "Ijazah described as permission to teach a book with a chain (isnad) of teachers; confirm.",
       "'The narrow meaning some English speakers give the word is newer than the word itself' is a soft claim about English usage; confirm or cut.",
       "Muslim 2699 paraphrased; confirm number. Pickthall 96:1, 96:4–5 quoted from memory; verify.",
-      "Audit: Muslim 2699 checks out; no change to the script. The note about Pickthall 96 is stale (that passage was cut)."
+      "Audit: Muslim 2699 checks out; no change to the script. The note about Pickthall 96 is stale (that passage was cut).",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "Job 2: the practice's 'later today, write a thank-you' line was cut as homework.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

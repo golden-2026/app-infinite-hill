@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, wudu, and your line: water is mercy. Did one tap get turned off a little sooner? Today a new thread through the book: its women. Day six hundred seventy-one.",
+      "voice": "Yesterday: wudu, and your line, water is mercy. Today a new thread through the book: its women.",
       "screen": [
         "`WATER IS MERCY.`"
       ]
@@ -38,7 +38,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Maryam. Mary, the mother of 'Isa, Jesus. By the usual count her name appears thirty-four times, and surah nineteen bears it. Why her? The Qur'an doesn't explain its choice, and scholars have offered reasons rather than one answer. But look at how it speaks of her. In Al 'Imran the angels say: Allah has chosen you and purified you, and chosen you above the women of all the worlds. As a girl in the temple's prayer niche, she's found with provision no one brought her, and when Zakariyya asks where it came from, she answers simply: from Allah. Then the hardest scene. Surah nineteen says the pains of labor drove her, alone, to the trunk of a palm tree, and she cried that she wished she'd died before this and been forgotten. Forgotten. Of all words. And she's answered: a stream is set beneath her, the palm will drop fresh dates if she shakes it, so eat, drink and be comforted. When she brings the child home and her people accuse her, she doesn't argue. She points to the baby, and the baby speaks. One more detail. Her son is called, again and again, 'Isa ibn Maryam, Jesus son of Mary. In a culture that named people by their fathers, he is named by his mother. Christians honor her too, with their own ways of speaking about her. In the Qur'an, the woman who feared being forgotten is the one whose name it keeps.",
+      "voice": "Maryam. Mary, the mother of 'Isa, Jesus. By the usual count her name appears thirty-four times, and surah nineteen bears it. Why her? The Qur'an doesn't explain its choice, and scholars have offered reasons rather than one answer. But look at how it speaks of her. In Al 'Imran the angels say: Allah has chosen you and purified you, and chosen you above the women of all the worlds. As a girl in the temple's prayer niche, she's found with provision no one brought her, and when Zakariyya asks where it came from, she answers simply: from Allah. Then the hardest scene. Surah nineteen says the pains of labor drove her, alone, to the trunk of a palm tree, and she cried that she wished she'd died before this and been forgotten. Forgotten, of all words. And she's answered: a stream is set beneath her, the palm will drop fresh dates if she shakes it, so eat, drink and be comforted. When she brings the child home and her people accuse her, she doesn't argue. She points to the baby, and the baby speaks. One more detail. Her son is called, again and again, 'Isa ibn Maryam, Jesus son of Mary. In a culture that named people by their fathers, he is named by his mother. Christians honor her too, with their own ways of speaking about her. In the Qur'an, the woman who feared being forgotten is the one whose name it keeps.",
       "screen": [
         "`THIRTY-FOUR TIMES, AND A SURAH.`",
         "`CHOSEN ABOVE THE WOMEN OF THE WORLDS.`",
@@ -49,7 +49,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: honor a woman who shaped you. Sit and let one woman come to mind. A mother, a grandmother, an aunt, a teacher, a neighbor, a friend. Someone whose care made you who you are, even if few people know it. Say her name, quietly or in your head, slowly. Then recall one specific thing she did: a meal, a word, a night she sat up with you. If she has died and you pray, you can ask for mercy for her. If she's alive, think of how she'd like to hear from you. The bell holds the time.",
+      "voice": "Let one woman come to mind whose care made you who you are, a mother, a grandmother, a teacher, a neighbor, even if few people know it. Say her name slowly, and recall one specific thing she did: a meal, a word, a night she sat up with you. If she has died and you pray, you can ask mercy for her; if she's alive, just hold her in mind with thanks.",
       "screen": []
     },
     {
@@ -63,7 +63,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: named. Today, say the name of the woman you thought of to someone else, or to her, and tell one thing she did. Day six hundred seventy-one.",
+      "voice": "Your line: named. Named about thirty-four times, and a surah of her own. Day six hundred seventy-one, done.",
       "screen": []
     },
     {
@@ -77,6 +77,11 @@
   ],
   "howItsDone": "Muslims honor Maryam as one of the greatest women; Maryam is a common name for Muslim girls, and surah Maryam is widely recited and memorized.",
   "games": {
+    "guess": [
+      "Mary, mother of 'Isa, the only woman named",
+      "Zakariyya's wife, the mother of the prophet Yahya",
+      "the sister of Musa who watched the river"
+    ],
     "match": {
       "prompt": "Maryam — tap the pairs.",
       "pairs": [
@@ -137,14 +142,47 @@
     ],
     "recall": [
       [
-        "nabi",
-        "a prophet, one who brings news"
+        "ayah",
+        "a verse, and a sign"
       ],
       [
-        "'ala hubbihi",
-        "for love of Him, or despite loving it"
+        "halu'",
+        "anxious, the word the Qur'an defines"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your best friend",
+      "says": "Is Mary really in the Qur'an? I thought she was only in the Bible.",
+      "options": [
+        "Yes: she's the only woman it names, and surah nineteen bears her name.",
+        "Only briefly: she's mentioned once, as a woman with no name.",
+        "Yes, but only as Musa's sister, not as the mother of Jesus."
+      ],
+      "answer": 0,
+      "meaning": "Maryam is named about thirty-four times, surah nineteen bears her name, and her son is called 'Isa ibn Maryam, son of Mary."
+    },
+    "gloss": {
+      "Maryam": {
+        "meaning": "Mary, mother of 'Isa; surah nineteen bears her name",
+        "script": "مريم",
+        "say": "MAR-yam"
+      },
+      "Al 'Imran": {
+        "meaning": "the Family of 'Imran, surah three",
+        "script": "آل عمران",
+        "say": "aal im-RAAN"
+      },
+      "Zakariyya": {
+        "meaning": "the prophet who found her provision in the prayer niche",
+        "script": "زكريا",
+        "say": "za-ka-RIY-ya"
+      },
+      "'Isa ibn Maryam": {
+        "meaning": "Jesus son of Mary",
+        "script": "عيسى ابن مريم",
+        "say": "EE-sa ibn MAR-yam"
+      }
+    }
   },
   "sources": [
     {
@@ -174,7 +212,9 @@
       "'Only woman named' follows the standard view; confirm.",
       "The note on naming by the mother is presented as a commentators' observation; confirm.",
       "Christianity mentioned only as a neighbor that also honors Mary, with no comparison of beliefs.",
-      "Audit 2026-10-01: factual fix: Hajar running between Safa and Marwah is in hadith (Bukhari 3364), not the Qur'an, so the hook's list of women in the Qur'an now has Sarah laughing at the news of a son (11:71) instead."
+      "Audit 2026-10-01: factual fix: Hajar running between Safa and Marwah is in hadith (Bukhari 3364), not the Qur'an, so the hook's list of women in the Qur'an now has Sarah laughing at the news of a son (11:71) instead.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

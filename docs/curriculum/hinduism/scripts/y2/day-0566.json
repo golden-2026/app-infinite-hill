@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: Ravana and Maricha's warning, part one. Maricha talked Ravana out of the plan, until Shurpanakha shamed him in his court: pride stung in public is harder to talk down. Did you wait before deciding with stung pride? Day five hundred sixty-six.",
+      "voice": "Yesterday: Maricha talked Ravana out of the plan, until Shurpanakha shamed him in his court. Pride stung in public is harder to talk down.",
       "screen": [
         "`PRIDE STUNG IN PUBLIC.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Ravana sets out again in his flying chariot, along the coast. Valmiki slows down to paint it: the shore lined with coconut palms and sandalwood, pearls drying on the beaches, hermitages of sages, and the ships of merchants. Then the chariot lands at Maricha's hermitage for the second time. The old rakshasa, in bark clothes and matted hair, welcomes his king with food and water, and then asks, carefully: why have you come back?",
+      "voice": "Ravana sets out again in his flying chariot, along the coast. Valmiki slows down to paint it: shores lined with coconut palms and sandalwood, pearls drying on the beaches, hermitages of sages, and merchants' ships. Then the chariot lands at Maricha's hermitage a second time. The old rakshasa, in bark clothes and matted hair, welcomes his king with food and water, and asks, carefully: why have you come back?",
       "screen": [
         "`A FLYING CHARIOT ALONG THE COAST.` → `PEARLS ON THE BEACHES.` → `WHY HAVE YOU COME BACK?`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Ravana spells out the plan. Turn yourself into a golden deer, spotted with silver, and wander near Rama's hut. Sita will want you. Rama and Lakshmana will go after you. Then I'll take her. Maricha begins with a saying: people who say pleasant things are always easy to find, king. But someone who says what is unpleasant and good for you, and someone who will listen to it, those are rare. Then he tells Ravana the truth he doesn't want. You don't know who Rama is. He wasn't sent to the forest for any crime. He went to keep his father's word. And then a short line in Sanskrit, ramo vigrahavan dharmah: Rama is dharma in bodily form. Right living, duty, truth, with a body and a bow. To steal his wife, Maricha says, is to walk into a fire. You'll ruin yourself, your city and your people. Notice who's speaking. Not a sage, not a god, not one of Rama's friends. A rakshasa, Rama's old enemy, who was once hurled across the sea by him. That's what gives the words their weight. He has met Rama as an enemy, and he speaks from that. And he's using everything he knows to try to save his own king from himself.",
+      "voice": "Ravana spells out the plan. Turn yourself into a golden deer, spotted with silver, and wander near Rama's hut. Sita will want you. Rama and Lakshmana will go after you. Then I'll take her. Maricha begins with a saying: people who say pleasant things are always easy to find, king. But someone who says what is unpleasant and good for you, and someone who will listen to it, those are rare. Then he tells Ravana the truth he doesn't want. You don't know who Rama is. He wasn't sent to the forest for any crime; he went to keep his father's word. And then a short line in Sanskrit: ramo vigrahavan dharmah. Rama is dharma in bodily form: right living, duty and truth, with a body and a bow. To steal his wife is to walk into a fire. You'll ruin yourself, your city and your people. Look at who's speaking. Not a sage, not a god, not one of Rama's friends, but a rakshasa, Rama's old enemy, once hurled across the sea by him. He has met Rama as an enemy, and that gives his words their weight. He's using everything he knows to save his own king from himself.",
       "screen": [
         "`BECOME A GOLDEN DEER.` · `PLEASANT WORDS ARE EASY TO FIND.` · `RAMA IS DHARMA IN BODILY FORM.` · `THE WARNING FROM AN OLD ENEMY.` · then, large: `TRYING TO SAVE HIS KING.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Sit and settle. Bring to mind one person who has told you something you didn't want to hear, that turned out to be true. Picture their face as they said it. Notice what it cost them to say it. Then let a little gratitude toward them rise. If someone comes to mind whom you've been meaning to tell a hard truth, kindly, just hold that too, without planning. Breathe steadily. The bell holds the time.",
+      "voice": "Bring to mind someone who told you something you didn't want to hear that turned out to be true, and picture their face as they said it. Notice what it cost them, and let a little gratitude rise. If a hard truth you've meant to say kindly to someone comes to mind, just hold it too, without planning.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: pleasant things are easy to find. Today, listen all the way through to one thing you'd rather not hear. Day five hundred sixty-six.",
+      "voice": "Your line: pleasant things are easy to find. The rare friend says the hard thing, and the rare listener hears it. See you tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Maricha's line ramo vigrahavan dharmah, Rama is dharma in bodily form, is quoted on its own in Hindu teaching, as are his lines on rare, honest advice.",
   "games": {
+    "guess": [
+      "right living, duty and truth, all in one word",
+      "the fate a person can't escape, whatever they do",
+      "a royal law that a king writes for his people"
+    ],
     "match": {
       "prompt": "the second visit — tap the pairs.",
       "pairs": [
@@ -130,14 +135,47 @@
       "what it means: he's the one who warns Ravana, and calls Rama dharma itself.",
       "what a scholar hears: Aranya 37 holds both the verse on rare honest advice and 'ramo vigrahavan dharmah', two lines that stand on their own as sayings."
     ],
+    "chat": {
+      "who": "your roommate",
+      "says": "What did Maricha mean when he called Rama dharma in bodily form?",
+      "options": [
+        "That Rama is right living, duty and truth in a person, so attacking him is walking into fire.",
+        "That Rama was sent to the forest as a punishment, so he knew the law better than anyone.",
+        "That Rama was a strict judge who would hunt down and punish every rakshasa in the forest."
+      ],
+      "answer": 0,
+      "meaning": "Maricha says Rama went to the forest to keep his father's word: dharma with a body and a bow. Stealing his wife would bring ruin."
+    },
+    "gloss": {
+      "dharma": {
+        "meaning": "right living, duty, truth",
+        "script": "धर्म",
+        "say": "DHUR-muh"
+      },
+      "ramo vigrahavan dharmah": {
+        "meaning": "Sanskrit: Rama is dharma in bodily form",
+        "script": "रामो विग्रहवान् धर्मः",
+        "say": "RAA-mo vig-ruh-huh-VAAN DHUR-muh-ha"
+      },
+      "Maricha": {
+        "meaning": "the old rakshasa who warns his king",
+        "script": "मारीच",
+        "say": "MAA-ree-chuh"
+      },
+      "rakshasa": {
+        "meaning": "a demon-like being of the forest and of Lanka",
+        "script": "राक्षस",
+        "say": "RAAK-shuh-suh"
+      }
+    },
     "recall": [
       [
         "Panchavati",
         "the place of five banyans"
       ],
       [
-        "Sharabhanga",
-        "rises from the fire to Brahma's world"
+        "sahadharmachari",
+        "a companion on the path of dharma"
       ]
     ]
   },
@@ -168,7 +206,9 @@
       "Verse numbers 37.2 and 37.13 follow the vulgate; confirm (critical edition numbering differs).",
       "Both famous lines are paraphrased in English; the Sanskrit phrase appears in the original game. Confirm transliteration.",
       "Coastal description (palms, sandalwood, pearls, merchant ships) paraphrased from Aranya 35; confirm.",
-      "Editor review: removed unsourced superlatives and time claims ('one of the most quoted speeches', 'quoted for many centuries', 'two of the epic's most quoted lines', 'widely quoted'), cut 'the person who knows Rama best', and dropped 'alone this time', which wrongly implied company on the first visit."
+      "Editor review: removed unsourced superlatives and time claims ('one of the most quoted speeches', 'quoted for many centuries', 'two of the epic's most quoted lines', 'widely quoted'), cut 'the person who knows Rama best', and dropped 'alone this time', which wrongly implied company on the first visit.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

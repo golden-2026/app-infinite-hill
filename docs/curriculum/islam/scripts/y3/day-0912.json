@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the fall: black banners from Khurasan, a hidden name spoken in Kufa, and the end of Umayyad rule in Damascus. Your line was: dynasties fall. How did you use the small power you hold? Day nine hundred twelve.",
+      "voice": "Yesterday: the fall, black banners and the end of Umayyad rule. Your line was dynasties fall.",
       "screen": [
         "`DYNASTIES FALL.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A young man is sitting in a house near the Euphrates when his small son runs in, frightened. Outside, black banners. The Abbasid horsemen have come for what is left of the Umayyad family. He grabs his younger brother and they run for the river. They plunge in and swim. From the bank, the soldiers shout: come back, you're safe, nobody will harm you. The younger brother, tired and afraid of drowning, turns back. The older one keeps swimming. From the far bank, the histories say, he watched them kill his brother. His name was Abd al-Rahman, a grandson of the caliph Hisham. Today: the one who escaped.",
+      "voice": "A young man is sitting in a house near the Euphrates when his small son runs in, frightened. Outside, black banners: the Abbasid horsemen have come for what is left of the Umayyad family. He grabs his younger brother and they run for the river. They plunge in and swim. From the bank, the soldiers shout: come back, you're safe, nobody will harm you. The younger brother, tired and afraid of drowning, turns back. The older one keeps swimming. From the far bank, the histories say, he watched them kill his brother. His name was Abd al-Rahman, a grandson of the caliph Hisham. Today: the one who escaped.",
       "screen": [
         "`BLACK BANNERS OUTSIDE.` → `INTO THE EUPHRATES.` → `ONE TURNS BACK, ONE SWIMS ON.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "What do you do when everything you belonged to is gone? Abd al-Rahman went west. The Andalusian histories say he traveled in hiding through North Africa with a freedman named Badr, staying with his mother's people, the Berbers, for a time, slipping away when local rulers grew suspicious. Al-Andalus, across the strait, was full of quarreling factions, and among them were old clients and supporters of the Umayyad house. Badr crossed first to sound them out. Then Abd al-Rahman landed. He gathered supporters, defeated the governor, and entered Cordoba as its ruler. He didn't claim to be caliph. He ruled as emir, and the state he founded would last long after him. People gave him a nickname, al-Dakhil, the one who entered. And there's a tender story people tell. In a garden near Cordoba, he is said to have planted a palm tree, the kind that grew back in Syria, and written lines of poetry to it. In the poem, as the story goes, he speaks to the palm as a fellow stranger: you too are far from your home, you too were brought to a land not your own. So the founder of a state is remembered talking to a tree about homesickness. That's what makes this more than a war story. He lost much of his family, his city and his world. He did not get them back. He started again, in a new place, with what he carried.",
+      "voice": "What do you do when everything you belonged to is gone? Abd al-Rahman went west. The Andalusian histories say he traveled in hiding through North Africa with a freedman named Badr, staying for a time with his mother's people, the Berbers, and slipping away when local rulers grew suspicious. Al-Andalus, across the strait, was full of quarreling factions, and among them were old clients and supporters of the Umayyad house. Badr crossed first to sound them out. Then Abd al-Rahman landed. He gathered supporters, defeated the governor, and entered Cordoba as its ruler. He didn't claim to be caliph. He ruled as emir, and the state he founded would last long after him. People gave him a nickname, al-Dakhil, the one who entered. And there's a tender story people tell. In a garden near Cordoba, he is said to have planted a palm tree, the kind that grew back in Syria, and written lines of poetry to it. In the poem, as the story goes, he speaks to the palm as a fellow stranger: you too are far from your home, brought to a land not your own. So the founder of a state is remembered talking to a tree about homesickness. He lost much of his family, his city and his world, and he did not get them back. He started again, in a new place, with what he carried.",
       "screen": [
         "`WEST THROUGH NORTH AFRICA.` · `BADR CROSSES FIRST.` · `CORDOBA, AND AN EMIR.` · then, large: `A PALM FAR FROM HOME.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: start again somewhere new. Sit comfortably and breathe out slowly. Bring to mind a time something ended for you: a move, a loss, a door that closed. Breathe in. Notice what you carried out of it, even if it was small: a habit, a friend, a skill, a stubbornness. Breathe out. Now bring to mind one place in your life today where you could begin fresh. A new routine, a new conversation, a corner of the room. Choose one small first step you could take today. If you pray, you can ask for strength for new beginnings, in your own words. The bell holds the time.",
+      "voice": "Bring to mind a time something ended for you, a move, a loss, a door that closed, and notice what you carried out of it, even something small: a habit, a friend, a skill, a stubbornness. If you pray, ask for strength for new beginnings in your own words; if you don't, just let what you carried be counted.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: he started again. Today, take the one small first step you chose, somewhere new. Day nine hundred twelve.",
+      "voice": "Your line: he started again. Homesick and far from home, and still beginning. Until tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "The story of Abd al-Rahman's escape and his palm-tree poem is retold in histories of al-Andalus, and the Great Mosque of Cordoba, which tradition says he began, still stands.",
   "games": {
+    "guess": [
+      "the one who enters, Abd al-Rahman's nickname",
+      "the stranger, a title for exiled princes",
+      "the palm tree he planted near Cordoba"
+    ],
     "match": {
       "prompt": "the one who escaped — tap the pairs.",
       "pairs": [
@@ -133,13 +138,46 @@
     "recall": [
       [
         "Yahya",
-        "John the Baptist, honored with a shrine"
+        "the Qur'an's name for John the Baptist"
       ],
       [
-        "turbah",
-        "a clay tablet for the forehead"
+        "Ikrimah",
+        "fled Mecca, brought back by his wife"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your cousin",
+      "says": "How did an Umayyad prince end up ruling in Spain?",
+      "options": [
+        "He escaped the Abbasids, crossed North Africa in hiding, and entered Cordoba.",
+        "The Abbasids sent him there as their governor after the revolution.",
+        "He was born in Cordoba and simply inherited the land from his father."
+      ],
+      "answer": 0,
+      "meaning": "Abd al-Rahman swam the Euphrates, traveled in hiding with Badr, and entered Cordoba as emir, so people called him al-Dakhil."
+    },
+    "gloss": {
+      "Abd al-Rahman": {
+        "meaning": "the Umayyad prince who escaped and ruled in al-Andalus",
+        "script": "عبد الرحمن",
+        "say": "AB-dur-rah-MAAN"
+      },
+      "Cordoba": {
+        "meaning": "the city in al-Andalus he entered as ruler",
+        "script": "قرطبة",
+        "say": "KOR-do-ba"
+      },
+      "Hisham": {
+        "meaning": "an Umayyad caliph, Abd al-Rahman's grandfather",
+        "script": "هشام",
+        "say": "hi-SHAAM"
+      },
+      "emir": {
+        "meaning": "a commander or prince; a ruler below a caliph",
+        "script": "أمير",
+        "say": "e-MEER"
+      }
+    }
   },
   "sources": [
     {
@@ -165,7 +203,9 @@
       "Abd al-Rahman as grandson of the caliph Hisham and his mother's Berber family: confirm.",
       "The palm-tree poem is paraphrased and presented as a story people tell; confirm attribution.",
       "'The state he founded would last long after him' is deliberately general (no dates). Confirm.",
-      "howItsDone mentions the Great Mosque of Cordoba as begun by him; confirm, and that the claim about visitors is acceptable."
+      "howItsDone mentions the Great Mosque of Cordoba as begun by him; confirm, and that the claim about visitors is acceptable.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

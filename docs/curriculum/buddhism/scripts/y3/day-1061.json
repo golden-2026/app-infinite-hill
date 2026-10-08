@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the whole year in one sitting, the Buddhacarita's poem and all that followed: the disciples, the songs, the tales, the roads, the teachers, the history. Your line: look how far. Which story did you tell? Day one thousand sixty-one.",
+      "voice": "Yesterday, the whole year in one sitting: the Buddhacarita's poem and all that followed it. Your line: look how far.",
       "screen": [
         "`LOOK HOW FAR.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A gate opens in the middle of the night, and a prince rides out of his father's palace. In the poem that opened this year, that night is the turning point of the great story. It doesn't end there, and it doesn't end with him. It runs on, hand to hand, road to road, until it reaches a temple down some street near you, a lamp lit on a windowsill, a person sitting still for two minutes on an ordinary morning. Today, the last day of year three, the whole story in one telling, from that gate to today.",
+      "voice": "A gate opens at night, and a prince rides out of his father's palace. In the poem that opened this year, that night is the turning point of the great story. It doesn't end there, and it doesn't end with him. It runs on, hand to hand, road to road, to a temple down some street near you, a lamp on a windowsill, a person sitting still for two minutes on an ordinary morning. Today, the last day of year three: the whole story, from that gate to today.",
       "screen": [
         "`A GATE OPENS AT NIGHT.` → `HAND TO HAND, ROAD TO ROAD.` → `FROM THE GATE TO TODAY.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "The prince sees age, sickness and death, and a wanderer at peace, and he leaves. He strives until he is thin as a shadow. He sits beneath a tree, and Mara comes with his army of desire and doubt, and the seeker doesn't get up. He wakes up. He walks to the deer park and turns the wheel of the teaching for his old companions. Friends come, then strangers, then kings and courtesans and outcasts. Women ask to be ordained, and an order of nuns begins. For years he walks the roads and teaches, and at the end, lying between two trees, he gives his last instruction, the one you heard on the day of renewal: in paraphrase, all made things come apart, so keep going with care. Then the story passes to other hands. The elders meet and recite what they remember. Reciters carry it by memory; later, tradition says, scribes write it down. An emperor carves teachings into stone. Monks and nuns carry it south across the sea, and north along the caravan roads, into new languages. Teachers argue and explain and build new schools on it. Buddhists tell some parts differently: which texts come first, which teachers matter most. Each school keeps its own telling. Then the hard chapters: monasteries burned, monks killed, texts lost. And each time someone gathers what's left and begins again. Which brings the story here, to temples far from where it started, to chaplains in hospitals, to festivals with sweet tea and lamps. A story that started with one person leaving home is now kept by people in many homes.",
+      "voice": "The prince sees age, sickness and death, and a wanderer at peace, and he leaves. He strives until he is thin as a shadow. He sits beneath a tree; Mara comes with his army of desire and doubt, and the seeker doesn't get up. He wakes up. At the deer park he turns the wheel of the teaching for his old companions. Friends come, then strangers, then kings and courtesans and outcasts. Women ask to be ordained, and an order of nuns begins. For years he walks the roads and teaches, and at the end, lying between two trees, he gives his last instruction, the one you heard on the day of renewal: in paraphrase, all made things come apart, so keep going with care. Then the story passes to other hands. The elders meet and recite what they remember. Reciters carry it by memory; later, tradition says, scribes write it down. An emperor carves teachings into stone. Monks and nuns carry it south across the sea and north along the caravan roads, into new languages. Teachers argue, explain, and build new schools on it. Buddhists tell some parts differently: which texts come first, which teachers matter most. Each school keeps its own telling. Then the hard chapters: monasteries burned, monks killed, texts lost. And each time, someone gathers what's left and begins again. Which brings the story here: to temples far from where it started, to chaplains in hospitals, to festivals with sweet tea and lamps. A story that started with one person leaving home is now kept by people in many homes.",
       "screen": [
         "`THE PALACE, THE TREE, THE DEER PARK.` · `KEEP GOING WITH CARE.` · `MEMORY, STONE, ROADS AND SCHOOLS.` · then, large: `BROKEN, AND BEGUN AGAIN.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice, if you'd like: rest, and look out. If there's a window near you, turn toward it. If not, a doorway, or just the far side of the room. Sit, and let your eyes rest on what's out there without naming it. The story you heard this year went out through a palace gate and onto the roads. Let your attention go out the same way, gently, as far as it likes, and then come back to the breath. Nothing to finish. Just rest. The bell holds the time.",
+      "voice": "If there's a window near you, turn toward it; if not, a doorway, or the far side of the room. Let your eyes rest there without naming anything, and let your attention go out the way the story went through the palace gate, gently, then back to the breath. Nothing to finish; just rest.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: you know the story now. Today, look out a window for one quiet minute before the next thing. Tomorrow, year four opens with the higher teaching. Day one thousand sixty-one.",
+      "voice": "Your line: you know the story now. Tomorrow, year four opens with the higher teaching. Year three, complete.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Buddhists tell the Buddha's life and the story of the teaching at festivals, in temple paintings and in chanting, and some communities close a year of study by dedicating its merit to others.",
   "games": {
+    "guess": [
+      "the awakened one, a title, not a name",
+      "the prince's family name from birth",
+      "a god who rules over the heavens"
+    ],
     "match": {
       "prompt": "you know the story now: tap the pairs.",
       "pairs": [
@@ -132,14 +137,40 @@
     ],
     "recall": [
       [
-        "dhammaraja",
-        "a king who rules by dhamma"
+        "bodhisatta",
+        "one on the way to awakening, for others"
       ],
       [
-        "sangha",
-        "the community, made of people"
+        "nibbana",
+        "a flame going out; the path's goal"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your nephew",
+      "says": "Did the Buddha's story end when he died?",
+      "options": [
+        "No: it passed hand to hand, road to road, all the way to today.",
+        "Yes: after he died, the teaching stayed with his family only.",
+        "No: he wrote it all down himself before he passed away."
+      ],
+      "answer": 0,
+      "meaning": "After his death, the elders recited it, reciters carried it, and monks and nuns took it across the sea and the caravan roads to today."
+    },
+    "gloss": {
+      "Buddha": {
+        "meaning": "the awakened one, at the center of the great story",
+        "script": "बुद्ध",
+        "say": "BOOD-duh"
+      },
+      "Mara": {
+        "meaning": "the tempter, with his army of desire and doubt",
+        "script": "मार",
+        "say": "MAH-ruh"
+      },
+      "deer park": {
+        "meaning": "where the Buddha first taught his old companions"
+      }
+    }
   },
   "sources": [
     {
@@ -178,7 +209,9 @@
       "The howItsDone line says 'some communities' dedicate merit at the close of study; soften if a Keeper prefers.",
       "Year-three close: tomorrow opens year four (Abhidhamma).",
       "Editor pass: the hook said the Buddhacarita 'begins' the story at the night departure, but the poem opens with the birth; now called the turning point. The last-words quotation repeated day 1051's centerpiece ten days earlier, so it is paraphrased and pointed back to that day, the screen line and a myth item were replaced, and the source set to paraphrase. 'Then scribes write it down' softened to 'later, tradition says'.",
-      "Audit pass: garbled pointer to day 1051 ('the one heard on this path when it spoke of renewal') rewritten; 'they keep their tellings side by side' (an unsourced claim about how schools coexist) changed to 'each school keeps its own telling'."
+      "Audit pass: garbled pointer to day 1051 ('the one heard on this path when it spoke of renewal') rewritten; 'they keep their tellings side by side' (an unsourced claim about how schools coexist) changed to 'each school keeps its own telling'.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Exsultet: a fire by the door, one tall candle, and a song that kept saying this is the night. Your line was this is the night. What did one small light show you? Day one thousand thirty-five.",
+      "voice": "Yesterday, the Exsultet: a fire by the door, one tall candle, and a song that kept saying this is the night. Your line was this is the night.",
       "screen": [
         "`THIS IS THE NIGHT.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Folding chairs on wet grass, set out in rows facing east. A hillside, a park, a beach, a churchyard. It's cold and still mostly dark, and people are arriving in coats with blankets and thermoses, talking in low voices. A guitar is being tuned somewhere, or a little brass band is warming up. Nobody has lit a candle. They're waiting for the sun. Then, as the sky over the hill goes from gray to pink, they start to sing. Some Protestant churches gather like this on Easter morning, outdoors, timed to the dawn. Today, the sunrise service.",
+      "voice": "Folding chairs on wet grass, set out in rows facing east. A hillside, a park, a beach, a churchyard. It's cold and still mostly dark, and people arrive in coats with blankets and thermoses, talking in low voices. A guitar is tuned somewhere, or a little brass band warms up. Nobody has lit a candle. They're waiting for the sun. Then, as the sky over the hill goes from gray to pink, they start to sing. Some Protestant churches gather like this on Easter morning, outdoors, timed to the dawn.",
       "screen": [
         "`CHAIRS ON WET GRASS, FACING EAST.`",
         "`STILL DARK, AND COLD.`",
@@ -38,7 +38,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Why dawn? Because that's when the Gospels say the women went to the tomb, and they don't all describe the light the same way. Mark, in the King James, says they came \"very early in the morning the first day of the week\" and \"at the rising of the sun.\" John says Mary Magdalene came \"early, when it was yet dark.\" One has the sun coming up, the other has it still dark. A sunrise service sits right in that gap, in the half-light between them. Now stay with John's version, because it's built on that half-light. Mary finds the stone rolled away and the tomb empty. She stands outside weeping. A man speaks to her, and she takes him for the gardener and asks where they've put the body. Then, in the King James: \"Jesus saith unto her, Mary. She turned herself, and saith unto him, Rabboni; which is to say, Master.\" She doesn't know him by his face. She knows him when he says her name. Tradition traces the outdoor dawn service to Moravian Christians, and some Moravian congregations still gather in their graveyards at sunrise on Easter, among the graves, to sing. Other churches gather on hillsides, in parks, on beaches. The setting changes. The hour doesn't. People get up in the cold and stand in the dark on purpose, the way the women did, and wait for it to get light.",
+      "voice": "Why dawn? Because that's when the Gospels say the women went to the tomb, and they don't all describe the light the same way. Mark, in the King James, says they came \"very early in the morning the first day of the week\" and \"at the rising of the sun.\" John says Mary Magdalene came \"early, when it was yet dark.\" One has the sun coming up, the other still dark. A sunrise service sits right in that half-light. Stay with John's version. Mary finds the stone rolled away and the tomb empty. She stands outside weeping. A man speaks to her, and she takes him for the gardener and asks where they've put the body. Then, in the King James: \"Jesus saith unto her, Mary. She turned herself, and saith unto him, Rabboni; which is to say, Master.\" She doesn't know him by his face. She knows him when he says her name. Tradition traces the outdoor dawn service to Moravian Christians, and some Moravian congregations still gather in their graveyards at sunrise on Easter, among the graves, to sing. Other churches gather on hillsides, in parks, on beaches. The setting changes; the hour doesn't. People get up in the cold and stand in the dark on purpose, the way the women did, and wait for it to get light.",
       "screen": [
         "`AT THE RISING OF THE SUN.`",
         "`EARLY, WHEN IT WAS YET DARK.`",
@@ -49,7 +49,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: watch a sunrise. If it's dawn where you are, go to a window that faces the light. If it isn't, turn toward the brightest window or lamp nearby, or close your eyes and remember a sunrise you've seen. Settle, and breathe. Notice how slowly the light comes: gray first, then color. Nothing about it hurries. If you pray, you can sit in the quiet the way Mary stood at the tomb, listening. If you don't, simply watch the light, or remember it, for the time. The bell holds the time.",
+      "voice": "If it's dawn, go to a window facing the light; if not, turn toward the brightest window or lamp nearby, or close your eyes and remember a sunrise you've seen. Notice how slowly the light comes, gray first, then color; nothing about it hurries. If you pray, sit in the quiet the way Mary stood at the tomb, listening; if not, simply watch.",
       "screen": []
     },
     {
@@ -63,7 +63,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: early, while it was dark. Tomorrow, or the next clear morning, get up early enough to watch the sky change, even for one minute. Day one thousand thirty-five.",
+      "voice": "Your line: early, while it was dark. The hour the women went. Day one thousand thirty-five, done.",
       "screen": []
     },
     {
@@ -77,6 +77,11 @@
   ],
   "howItsDone": "Some Protestant congregations hold an Easter sunrise service outdoors, on a hill, in a park or churchyard, with hymns and the Gospel reading of the empty tomb as the sun comes up; some Moravian congregations hold theirs in their burial grounds.",
   "games": {
+    "guess": [
+      "an Easter service held outdoors at dawn",
+      "a daily morning prayer said in monasteries",
+      "a church service to welcome the first day of spring"
+    ],
     "match": {
       "prompt": "morning at the tomb — tap the pairs.",
       "pairs": [
@@ -137,14 +142,40 @@
     ],
     "recall": [
       [
-        "Theophany",
-        "God made visible"
+        "alabaster",
+        "the jar broken open at Bethany"
       ],
       [
-        "Herod",
-        "mocked of the wise men, exceeding wroth"
+        "Cyrenian",
+        "Simon, made to carry the cross"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "a new friend",
+      "says": "Why do some churches hold Easter services outdoors at sunrise?",
+      "options": [
+        "The Gospels say the women came to the tomb at dawn; people wait as they did.",
+        "Early Christians had to hide, so they met before anyone was awake.",
+        "It's an old rule that Easter prayers must end before the sun is up."
+      ],
+      "answer": 0,
+      "meaning": "Mark says the women came at the rising of the sun; John says early, when it was yet dark. A sunrise service waits in that half-light."
+    },
+    "gloss": {
+      "Mary Magdalene": {
+        "meaning": "a follower of Jesus who found the tomb empty",
+        "say": "MAG-duh-leen"
+      },
+      "Rabboni": {
+        "meaning": "Mary's word for Jesus; John says it means master",
+        "script": "ῥαββουνί",
+        "say": "rab-boo-NEE"
+      },
+      "Moravian": {
+        "meaning": "a Protestant church tradition links to Easter dawn services",
+        "say": "mor-AY-vee-un"
+      }
+    }
   },
   "sources": [
     {
@@ -187,7 +218,9 @@
       "Original: ῥαββουνί (John 20:16); the Greek text transliterates an Aramaic/Hebrew word. Only John's own gloss ('Master') is given. Confirm accents.",
       "Practice adapts 'watch a sunrise' for listeners who aren't at dawn (window, lamp, or memory).",
       "Editor pass: fixed a garbled screen line ('knows him by her name'); cut 'in the dim light', which John doesn't give as the reason she didn't know him; removed an unsourced history of the custom spreading.",
-      "Audit pass: quotations checked against KJV, attributions and claims checked; no changes needed."
+      "Audit pass: quotations checked against KJV, attributions and claims checked; no changes needed.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

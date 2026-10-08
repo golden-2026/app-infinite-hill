@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday Ashvamedhika opened with Yudhishthira on the riverbank, an empty treasury, and Vyasa pointing to old King Marutta's gold. Your line was a man who can't stand up. Who offered you something practical lately? Day eight hundred sixty-eight.",
+      "voice": "Yesterday Ashvamedhika opened with Yudhishthira on the riverbank, an empty treasury, and Vyasa pointing to old King Marutta's gold. Your line was a man who can't stand up.",
       "screen": [
         "`ASHVAMEDHIKA.` · `MARUTTA'S GOLD.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "I've forgotten it. That, in plain terms, is what Arjuna tells Krishna. The war is over. The two friends are walking together in the great assembly hall the Pandavas have won back, with time on their hands at last. And Arjuna brings up the conversation in the chariot, between the two armies, before the fighting began. The teaching people now call the Bhagavad Gita. What you told me then, he says, has slipped away from my mind. Please tell it to me again. Today, Krishna's answer.",
+      "voice": "I've forgotten it. That, in plain terms, is what Arjuna tells Krishna. The war is over. The two friends are walking in the great assembly hall the Pandavas have won back, with time on their hands at last. And Arjuna brings up the conversation in the chariot, between the two armies, before the fighting began: the teaching people now call the Bhagavad Gita. What you told me then, he says, has slipped from my mind. Please tell it to me again.",
       "screen": [
         "`THE WAR IS OVER.` → `A WALK IN THE HALL.` → `\"I'VE FORGOTTEN IT.\"`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Krishna doesn't pretend that's fine. In Ganguli's telling, he's displeased. You didn't hold on to what I told you in confidence, he says, and I'm sorry you forgot it. And then he says something surprising: he can't simply repeat it. What he spoke on the battlefield, he explains, he spoke while united in yoga, and he can't call it back word for word. So instead he tells Arjuna an old story. A brahmana meets a perfected sage, a siddha, and asks him the big questions: how a living being dies, how it is born again, what binds it to action, and how it goes free. The siddha answers at length. Then come more old dialogues: a brahmana and his wife, a teacher and his student. Together these chapters are known as the Anugita. They return to the Gita's ground, the self, action and freedom, but in a different shape: no army, no chariot, no crisis. Just questions asked in peace. There's something honest about this. That first conversation happened between two armies, with the war about to begin, and afterward even Arjuna, who heard it face to face, lost hold of it. Insight doesn't keep by itself. The teacher's answer isn't a recording. It's a new conversation, built for a calmer day. Krishna doesn't hand Arjuna the old words. He sits down in the hall and starts again.",
+      "voice": "Krishna doesn't pretend that's fine. In Ganguli's telling he's displeased. You didn't hold on to what I told you in confidence, he says, and I'm sorry you forgot it. Then something surprising: he can't simply repeat it. He spoke on the battlefield, he explains, while united in yoga, and he can't call it back word for word. So instead he tells Arjuna an old story. A brahmana meets a perfected sage, a siddha, and asks the big questions: how a living being dies, how it is born again, what binds it to action, and how it goes free. The siddha answers at length. Then come more old dialogues: a brahmana and his wife, a teacher and his student. Together these chapters are known as the Anugita. They return to the Gita's ground, the self, action and freedom, but in a different shape: no army, no chariot, no crisis, just questions asked in peace. There's something honest in this. The first conversation happened between two armies, with war about to begin, and afterward even Arjuna, who heard it face to face, lost hold of it. Insight doesn't keep by itself. The teacher's answer isn't a recording. It's a new conversation, built for a calmer day. Krishna doesn't hand Arjuna the old words. He sits down in the hall and starts again.",
       "screen": [
         "`KRISHNA IS DISPLEASED` · `\"I SPOKE IT IN YOGA\"` · `A SAGE ANSWERS A BRAHMANA` · then, large: `THE ANUGITA: THE TEACHING RETOLD`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Sit comfortably and let your breath settle. Bring back one thing you once understood clearly, a lesson, a promise to yourself, something someone wise told you, that has faded since. Don't try to recover all of it. Breathe in and find just one sentence of it. Breathe out and say it to yourself quietly, in your own words, as if for the first time. If you pray, you can ask in your own way to keep hold of it. The bell holds the time.",
+      "voice": "Bring back one thing you once understood clearly, a lesson, a promise to yourself, something someone wise told you, that has faded since. Don't try to recover all of it: breathe in and find just one sentence, breathe out and say it to yourself quietly in your own words, as if for the first time. If you pray, you can ask in your own way to keep hold of it.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: I've forgotten it. Today, ask someone to remind you of something you've lost hold of, and don't be embarrassed to ask. Day eight hundred sixty-eight.",
+      "voice": "Your line: I've forgotten it. Even Arjuna had to ask a second time. Day eight hundred sixty-eight.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "The Anugita is read by students of the Mahabharata alongside the Bhagavad Gita, and commentators and teachers in several Hindu traditions have discussed how the two teachings relate.",
   "games": {
+    "guess": [
+      "the book of the horse sacrifice, after the war",
+      "the book of the great war's final battle",
+      "a hymn chanted as the horse is set free"
+    ],
     "match": {
       "prompt": "the teaching retold — tap the pairs.",
       "pairs": [
@@ -130,14 +135,52 @@
       "what it means: even Arjuna, who heard it face to face, forgot it once the crisis passed.",
       "what a scholar hears: Krishna can't repeat words spoken in yoga, so the teaching returns as a new set of dialogues, the Anugita."
     ],
+    "chat": {
+      "who": "your study partner",
+      "says": "Did Arjuna still remember the Gita after the war?",
+      "options": [
+        "No. He admitted forgetting, and Krishna taught again in a new form: the Anugita.",
+        "Yes, word for word, and he recited it back to Krishna in the hall.",
+        "No, so Krishna repeated the whole Gita to him exactly as before."
+      ],
+      "answer": 0,
+      "meaning": "In the Ashvamedhika, Arjuna says the Gita has slipped from his mind. Krishna can't repeat it, and teaches its ground anew as the Anugita."
+    },
+    "gloss": {
+      "Bhagavad Gita": {
+        "meaning": "the Song of the Blessed One: Krishna's teaching to Arjuna before the war",
+        "script": "भगवद्गीता",
+        "say": "BHUG-uh-vud GEE-tah"
+      },
+      "Anugita": {
+        "meaning": "the 'after-Gita': Krishna's later teaching, told through old dialogues",
+        "script": "अनुगीता",
+        "say": "uh-noo-GEE-tah"
+      },
+      "siddha": {
+        "meaning": "a perfected sage",
+        "script": "सिद्ध",
+        "say": "SID-dhuh"
+      },
+      "brahmana": {
+        "meaning": "a member of the priestly and learned class",
+        "script": "ब्राह्मण",
+        "say": "BRAH-muh-nuh"
+      },
+      "yoga": {
+        "meaning": "union; here, Krishna's deep inner absorption",
+        "script": "योग",
+        "say": "YOH-guh"
+      }
+    },
     "recall": [
       [
-        "Shanti",
-        "peace"
+        "vijnana",
+        "knowing by experience, not just facts"
       ],
       [
-        "Shalya",
-        "the driver becomes commander"
+        "shloka",
+        "a verse, made to be chanted"
       ]
     ]
   },
@@ -158,7 +201,9 @@
       "The order and naming of the Anugita's embedded dialogues (brahmana and siddha, brahmana and wife, preceptor and disciple) should be checked against Ganguli's section headings.",
       "No claim is made about the date or authorship relation between the Anugita and the Bhagavad Gita.",
       "Editor pass: cut the superlative 'worst pressure imaginable' and the stock closing line ('kind piece of realism'); now ends on Krishna starting again.",
-      "Audit: removed quotation marks around the hook's opening gloss (I've forgotten it), since it is not Ganguli's wording."
+      "Audit: removed quotation marks around the hook's opening gloss (I've forgotten it), since it is not Ganguli's wording.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: no blaming, the complaint stopped mid-sentence. Your line was turn back to what you can do. Did you catch one? Day five hundred ninety-nine.",
+      "voice": "Yesterday's word was no blaming: the complaint stopped mid-sentence. Your line was turn back to what you can do.",
       "screen": [
         "`TURN BACK TO WHAT YOU CAN DO.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Your uncle, the one who always brings up politics at dinner, brings up politics at dinner. Your coworker, the one who's always late, is late. The airline loses your bag, the toddler spills the juice, and the friend who never texts back doesn't text back. And every single time, there's a little jolt of outrage, as if this were brand new. Marcus Aurelius thought the jolt was the odd part. In book eight he compares it to walking up to a fig tree and being shocked to find figs.",
+      "voice": "Your uncle, the one who always brings up politics at dinner, brings up politics at dinner. Your coworker, the one who's always late, is late. The airline loses your bag, the toddler spills the juice, and the friend who never texts back doesn't. And every time there's a little jolt of outrage, as if this were brand new. Marcus Aurelius thought the jolt was the odd part. In book eight he compares it to walking up to a fig tree and being shocked to find figs.",
       "screen": [
         "`THE UNCLE AT DINNER.` → `THE JOLT, EVERY TIME.` → `SHOCKED BY FIGS.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the fig tree. In Meditations eight, fifteen, Marcus says it would be shameful to be surprised that a fig tree bears figs. And just as shameful to be surprised when the world bears the kind of fruit it bears. Rudeness, lateness, lost bags: these are what this world, and these people, grow. Second, the professionals. Then he adds two more pictures. A doctor shouldn't be surprised that a patient has a fever. A ship's pilot shouldn't be surprised that the wind turns against him. Fevers and headwinds are their whole job. Being shocked by them would make them worse at it. Third, the shift. Notice what Marcus is doing. He's not saying the uncle is right, or that lateness doesn't matter. He's moving your reaction from surprise to readiness. When you expect the fig, you can plan around it. You can bring a topic to steer the dinner. You can tell your coworker the meeting starts ten minutes early. The doctor treats the fever because she expected fevers. Fourth, the kindness in it. There's something gentle hidden here, too. Expecting someone to be themselves is a way of accepting them. The fig tree isn't doing figs at you. It's just being a fig tree. Usually, people aren't doing their habits at you either. Drop the surprise, and a lot of the anger goes with it. What's left is room to respond well, and sometimes even to smile.",
+      "voice": "In Meditations eight, fifteen, Marcus says it would be shameful to be surprised that a fig tree bears figs, and just as shameful to be surprised when the world bears the fruit it bears. Rudeness, lateness, lost bags: this is what this world, and these people, grow. Then two more pictures. A doctor shouldn't be surprised that a patient has a fever. A ship's pilot shouldn't be surprised that the wind turns against him. Fevers and headwinds are their whole job; being shocked by them would make them worse at it. Marcus isn't saying the uncle is right, or that lateness doesn't matter. He's moving your reaction from surprise to readiness. Expect the fig, and you can plan around it: bring a topic to steer the dinner, tell your coworker the meeting starts ten minutes early. The doctor treats the fever because she expected fevers. And there's something gentle hidden here. Expecting someone to be themselves is a way of accepting them. The fig tree isn't doing figs at you; it's just being a fig tree. Usually, people aren't doing their habits at you either. Drop the surprise, and a lot of the anger goes with it. What's left is room to respond well, and sometimes even to smile.",
       "screen": [
         "`A FIG TREE BEARS FIGS.` · `THE DOCTOR AND THE PILOT.` · `FROM SURPRISE TO READINESS.` · `THEY'RE NOT DOING IT AT YOU.` · then, large: `FIGS ON A FIG TREE.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Sit, and breathe. Think of someone whose habits regularly annoy you. Picture the habit, clearly. The lateness, the opinions, the mess. Now picture them as a fig tree, and the habit as a fig. Of course it's there. Let the surprise drain out. Then ask: since I know the fig is coming, how could I meet it well? Picture that. Breathe. The bell holds the time.",
+      "voice": "Think of someone whose habits regularly annoy you, and picture the habit clearly: the lateness, the opinions, the mess. Now see them as a fig tree and the habit as a fig, of course it's there, and let the surprise drain out. Then ask: since I know the fig is coming, how could I meet it well?",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the wind turns against him. Today, expect one person to be exactly themselves, and plan for it kindly instead of being surprised. Day five hundred ninety-nine.",
+      "voice": "Your line: the wind turns against him. A good pilot is ready for it. See you tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Readers of Marcus often use the fig tree image to expect familiar behavior in others, which lets them plan a calm response instead of reacting with fresh outrage each time.",
   "games": {
+    "guess": [
+      "the fruit a thing is bound to bear, so no surprise",
+      "a small sweet gift that someone offers you",
+      "a sign that a bad season is on its way"
+    ],
     "match": {
       "prompt": "figs on a fig tree — tap the pairs.",
       "pairs": [
@@ -127,14 +132,37 @@
     ],
     "recall": [
       [
-        "Antoninus",
-        "the name being spelled"
+        "prosochē",
+        "Greek for attention, a watchful mind"
       ],
       [
-        "hegemonikon",
-        "the ruling part, the steering center"
+        "Lucilius",
+        "the friend Seneca's letters went to"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your coworker",
+      "says": "Why don't you get worked up anymore when our boss runs late?",
+      "options": [
+        "Marcus says don't be shocked that a fig tree bears figs. I expect it and plan around it.",
+        "Marcus says lateness doesn't matter, so I've stopped caring whether people show up.",
+        "Marcus says the boss is right to run late, since bosses set the schedule."
+      ],
+      "answer": 0,
+      "meaning": "Marcus moves the reaction from surprise to readiness: expect people to be themselves, plan for it, and a lot of the anger goes."
+    },
+    "gloss": {
+      "Marcus Aurelius": {
+        "meaning": "Roman emperor whose notes to himself became the Meditations",
+        "say": "MAR-kus aw-REE-lee-us"
+      },
+      "Meditations": {
+        "meaning": "Marcus's twelve books of private notes to himself"
+      },
+      "ship's pilot": {
+        "meaning": "the person who steers a ship, its helmsman"
+      }
+    }
   },
   "sources": [
     {
@@ -151,7 +179,9 @@
       "Meditations 8.15 paraphrased: shameful to be surprised if the fig tree produces figs, or the world its fruit; for the physician and the helmsman it's shameful to be surprised at a fever or a contrary wind. Confirm.",
       "Fig tree recurrences: 4.6 and 12.16 (wishing the bad man not to do wrong is like wishing the fig tree not to have juice in its figs). Confirm references.",
       "The uncle and coworker examples are the script's illustrations.",
-      "Editor review (2026-10-01): softened 'the strangest part' (8.15 says 'shameful', not strange) and the sweeping 'most people' line."
+      "Editor review (2026-10-01): softened 'the strangest part' (8.15 says 'shameful', not strange) and the sweeping 'most people' line.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the bimaristan: an endowed hospital with its door open to rich and poor. Your line was: care for all who come. Who walked up to you, and did they get your full attention? Day nine hundred twenty-one.",
+      "voice": "Yesterday, the bimaristan: an endowed hospital with its door open to rich and poor. Your line was: care for all who come.",
       "screen": [
         "`CARE FOR ALL WHO COME.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Baghdad needs a new hospital, and someone has to choose where to put it. There is a story people tell about how it was done. The physician in charge had pieces of fresh meat hung up in different quarters of the city. Then he waited, and went around to look. Where the meat spoiled fastest, he reasoned, the air was worst. Where it stayed fresh longest, the sick would heal best. That is where the hospital should go. Whether it happened just that way, nobody can be sure; it comes from a later book of physicians' lives. But it fits what else is told about him. His name was Abu Bakr al-Razi.",
+      "voice": "Baghdad needs a new hospital, and someone has to choose where it goes. There's a story people tell about how it was done. The physician in charge had pieces of fresh meat hung up in different quarters of the city, then went around to look. Where the meat spoiled fastest, he reasoned, the air was worst. Where it stayed fresh longest, the sick would heal best, and that's where the hospital should go. Whether it happened just that way, nobody can be sure; it comes from a later book of physicians' lives. But it fits what else is told about him. His name was Abu Bakr al-Razi.",
       "screen": [
         "`WHERE SHOULD THE HOSPITAL GO?` → `MEAT HUNG ACROSS THE CITY.` → `WATCH WHERE IT SPOILS.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Al-Razi means the man from Rayy, a city in Persia. He became a physician and led hospitals, in Rayy and in Baghdad, and his habit was simple and stubborn: look first. He kept notes on his patients, case after case, what they said, what he saw, what he gave them, and what happened next. After his death, his students gathered his notes into a huge book, al-Hawi, the comprehensive book, so that later doctors could learn from his bedside. One short work is on two diseases that came with fever and spots on the skin: smallpox and measles. Al-Razi watched closely and wrote down how they differed: how each began, how the rash came out, which signs warned of danger. Told apart, they could be treated apart. That is the whole method in a sentence. Observe, then treat. He also wrote that a doctor should not trust only the books. If what you see in a patient disagrees with what an old authority says, what is in front of you counts. And he did not write only for doctors with hospitals behind them. Al-Razi, the books say, wrote a little treatise for the poor: how to treat illness when there's no doctor and no money. Care for all who come, with your eyes open.",
+      "voice": "Al-Razi means the man from Rayy, a city in Persia. He became a physician and led hospitals in Rayy and in Baghdad, and his habit was simple and stubborn: look first. He kept notes on his patients, case after case: what they said, what he saw, what he gave them, what happened next. After his death, his students gathered those notes into a huge book, al-Hawi, the comprehensive book, so later doctors could learn from his bedside. One short work is on two diseases that came with fever and spots on the skin: smallpox and measles. Al-Razi watched closely and wrote down how they differed: how each began, how the rash came out, which signs warned of danger. Told apart, they could be treated apart. That's the whole method in a sentence. He also wrote that a doctor shouldn't trust only the books. If what you see in a patient disagrees with what an old authority says, what's in front of you counts. And he didn't write only for doctors with hospitals behind them. Al-Razi, the books say, wrote a little treatise for the poor: how to treat illness when there's no doctor and no money. Care for all who come, with your eyes open.",
       "screen": [
         "`AL-RAZI, THE MAN FROM RAYY.` · `NOTES AT THE BEDSIDE.` · `SMALLPOX IS NOT MEASLES.` · `WHAT YOU SEE COUNTS.` · then, large: `OBSERVE, THEN TREAT.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: thank a doctor. Settle, and breathe. Bring to mind a doctor or nurse who once looked at you closely, really looked, and saw what was wrong. Or one who cared for someone you love. Hold their face in mind. Breathe in. What did they notice that others missed? Breathe out. Then decide how you'll thank them, or someone like them: a message, a note, a word at your next appointment. If you pray, you can pray for the people who heal. If you don't, just hold your gratitude. The bell holds the time.",
+      "voice": "Bring to mind a doctor or nurse who once looked at you closely, really looked, and saw what was wrong, or one who cared for someone you love. Hold their face in mind and ask what they noticed that others missed, and how you might thank them, or someone like them. If you pray, you can pray for the people who heal; if not, just hold your gratitude.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: observe, then treat. Today, before you try to fix someone's problem, ask one more question and listen to the whole answer. Day nine hundred twenty-one.",
+      "voice": "Your line: observe, then treat. Look first, and what's in front of you counts. That's day nine hundred twenty-one.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Muslim physicians such as al-Razi kept careful case notes and wrote treatises on telling diseases apart, and his writings were studied by later doctors.",
   "games": {
+    "guess": [
+      "the man from Rayy, a physician who looked before he treated",
+      "a Persian king who paid for Baghdad's first hospital",
+      "a judge in Rayy who wrote on inheritance law"
+    ],
     "match": {
       "prompt": "al-Razi — tap the pairs.",
       "pairs": [
@@ -132,14 +137,42 @@
     ],
     "recall": [
       [
-        "al-Dakhil",
-        "the one who entered"
+        "Abu Turab",
+        "father of dust, a name Ali loved"
       ],
       [
-        "dinar",
-        "the gold coin"
+        "majlis",
+        "a sitting, a gathering"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your roommate",
+      "says": "What made al-Razi such a careful doctor?",
+      "options": [
+        "He kept notes on every patient and trusted what he saw at the bedside.",
+        "He followed the old Greek books exactly, even when patients differed.",
+        "He treated every fever the same way, so no patient was missed."
+      ],
+      "answer": 0,
+      "meaning": "He looked first: notes at the bedside, smallpox told from measles, and what's in front of you counts over an old book."
+    },
+    "gloss": {
+      "al-Razi": {
+        "meaning": "the man from Rayy: physician, hospital leader, note-keeper",
+        "script": "الرازي",
+        "say": "ar-RAA-zee"
+      },
+      "Rayy": {
+        "meaning": "a city in Persia, al-Razi's home",
+        "script": "الري",
+        "say": "RAY"
+      },
+      "al-Hawi": {
+        "meaning": "the comprehensive book, gathered from his notes",
+        "script": "الحاوي",
+        "say": "al-HAA-wee"
+      }
+    }
   },
   "sources": [
     {
@@ -167,7 +200,9 @@
     "notes": [
       "The meat-and-hospital-site story is from Ibn Abi Usaybi'a and is framed as a story people tell; confirm attribution.",
       "Leading hospitals in Rayy and Baghdad, al-Hawi compiled posthumously by students, the treatise for the poor (Man la yahduruhu al-tabib) and his remark that observation counts against authority: confirm phrasing.",
-      "Editor: removed the 'no disease without its cure' hadith (repeated from day 920) and its source; cut the superlative 'most famous'; softened the narrator's guess about why the meat story is told."
+      "Editor: removed the 'no disease without its cure' hadith (repeated from day 920) and its source; cut the superlative 'most famous'; softened the narrator's guess about why the meat story is told.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

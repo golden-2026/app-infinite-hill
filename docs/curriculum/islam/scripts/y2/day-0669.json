@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, 'ilm, and your line: seek knowledge. Did you check where one thing came from before passing it on? Today, the book points away from its own pages. Day six hundred sixty-nine.",
+      "voice": "Yesterday: 'ilm, and your line, seek knowledge. Today, the book points away from its own pages.",
       "screen": [
         "`SEEK KNOWLEDGE.`"
       ]
@@ -38,7 +38,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "The word the Qur'an keeps using for this is ayah. It's the word for a verse of the Qur'an. But it also means a sign, a mark that points beyond itself. The same word names a line of scripture and a sunset. That's the theme in one word. Then the book fills a whole zoo with it. Several surahs carry animal names: the Cow, the Bee, the Ant, the Spider, the Elephant. The bee is inspired by its Lord to build homes in hills and trees and bring out a drink of many colors. An ant calls out a warning to its colony so they won't be crushed, and a prophet smiles at it. The spider's house is called the frailest of houses. Rain comes down on dead ground and brings it back. Stars are set for travelers to find their way by in the dark. And again and again, a passage like these ends with a phrase like: in this are signs for people who reflect, or who use their reason, or who listen. In surah three, the creation of the heavens and the earth, and the night and day taking turns, are signs for people of understanding. Some Muslim thinkers put it this way: there are two books open at once, the written one and the created one, and each helps you read the other. In these passages, noticing the world isn't a distraction from faith. The book keeps sending its listeners back outside.",
+      "voice": "The word the Qur'an keeps using for this is ayah. It's the word for a verse of the Qur'an. But it also means a sign, a mark that points beyond itself. The same word names a line of scripture and a sunset. Then the book fills a whole zoo with it. Several surahs carry animal names: the Cow, the Bee, the Ant, the Spider, the Elephant. The bee is inspired by its Lord to build homes in hills and trees and bring out a drink of many colors. An ant calls out a warning to its colony so they won't be crushed, and a prophet smiles at it. The spider's house is called the frailest of houses. Rain comes down on dead ground and brings it back. Stars are set for travelers to find their way by in the dark. And again and again, a passage like these ends with a phrase like: in this are signs for people who reflect, or who use their reason, or who listen. In surah three, the creation of the heavens and the earth, and the night and day taking turns, are signs for people of understanding. Some Muslim thinkers put it this way: there are two books open at once, the written one and the created one, and each helps you read the other. In these passages, noticing the world isn't a distraction from faith. The book keeps sending its listeners back outside.",
       "screen": [
         "`AYAH: A VERSE, AND A SIGN.`",
         "`THE BEE, THE ANT, THE SPIDER, THE RAIN.`",
@@ -49,7 +49,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: take a slow walk outside. If you can, go now; the bell will keep the time. If you can't, sit by a window. Walk or look more slowly than usual. Let your eyes stop on one living thing: an ant on the pavement, a bird, a tree, a cloud, a weed in a crack. Stay with it. How is it made? What does it need? What is it doing right now, without any help from you? Treat it as a line you're reading. The bell holds the time.",
+      "voice": "Take a slow walk outside, or sit by a window, and let your eyes stop on one living thing: an ant on the pavement, a bird, a tree, a cloud, a weed in a crack. How is it made, what does it need, what is it doing right now without any help from you? Read it the way you'd read a line of a verse.",
       "screen": []
     },
     {
@@ -63,7 +63,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the world is signs. Today, pick one ordinary creature or plant you pass, and read it like a verse: once, slowly. Day six hundred sixty-nine.",
+      "voice": "Your line: the world is signs. Two books open at once, as some Muslim thinkers put it. See you tomorrow.",
       "screen": []
     },
     {
@@ -77,6 +77,11 @@
   ],
   "howItsDone": "Muslims call each verse of the Qur'an an ayah, a sign, and the same word is used for the signs in creation; reflection on nature (tafakkur) is a long-standing devotional practice.",
   "games": {
+    "guess": [
+      "a verse, and also a sign pointing beyond itself",
+      "a chapter of the Qur'an named after an animal",
+      "a miracle that breaks the laws of nature"
+    ],
     "match": {
       "prompt": "signs in nature — tap the pairs.",
       "pairs": [
@@ -137,14 +142,41 @@
     ],
     "recall": [
       [
-        "'ala hubbihi",
-        "for love of Him, or despite loving it"
+        "shifa'",
+        "healing"
       ],
       [
-        "al-Muddaththir",
-        "the one cloaked"
+        "ad-Dahr",
+        "Time: al-Insan's other name"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "a friend on a hike",
+      "says": "Why does the Qur'an keep talking about bees, ants and rain?",
+      "options": [
+        "They're ayat, signs: the same word as verse, pointing beyond themselves.",
+        "They're there to teach farming and herding to its first listeners.",
+        "They're only symbols; the real creatures don't matter to the book."
+      ],
+      "answer": 0,
+      "meaning": "Ayah means both a verse and a sign. Passages about bees, ants and rain end: in this are signs for people who reflect."
+    },
+    "gloss": {
+      "surah": {
+        "meaning": "a chapter of the Qur'an",
+        "script": "سورة",
+        "say": "SOO-ra"
+      },
+      "Pickthall": {
+        "meaning": "Marmaduke Pickthall, whose 1930 English Qur'an is quoted here",
+        "say": "PIK-thawl"
+      },
+      "ayah": {
+        "meaning": "a verse of the Qur'an, and a sign",
+        "script": "آية",
+        "say": "AA-ya"
+      }
+    }
   },
   "sources": [
     {
@@ -179,7 +211,9 @@
       "Pickthall wording of 88:17 quoted from memory; please confirm.",
       "'Two books open at once' (the written Qur'an and the book of creation) is attributed to 'some Muslim thinkers' without a named source; confirm or name a source.",
       "Verse references for rain and stars chosen as representative; confirm.",
-      "Editor review 2026-10-01: hook no longer opens 'Picture the first listeners' (banned opener, and the desert-listeners angle recurred on 670 and 687); it now opens on the 88:17 verse. 'Its first meaning is a sign' softened to 'it also means a sign'; the 'never asks you to stop noticing' line made descriptive; match pair on the spider swapped for the ant (day 676 uses the spider's house); fork reveal's superlative removed."
+      "Editor review 2026-10-01: hook no longer opens 'Picture the first listeners' (banned opener, and the desert-listeners angle recurred on 670 and 687); it now opens on the 88:17 verse. 'Its first meaning is a sign' softened to 'it also means a sign'; the 'never asks you to stop noticing' line made descriptive; match pair on the spider swapped for the ant (day 676 uses the spider's house); fork reveal's superlative removed.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: orgē, every day, then every other, then every third, and your line, give the anger nothing to burn. Did today get a mark? Day four hundred fourteen.",
+      "voice": "Yesterday's word was orgē, anger, and the count of calm days. Your line was give the anger nothing to burn.",
       "screen": [
         "`ORGĒ.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Somebody at a party explains, in great detail, the whole theory of mindfulness. Five minutes later they're furious at the bartender. The theory was flawless. The bartender saw none of it. Knowing the words is one thing; living them is another. Epictetus had students who could talk their way through Stoic arguments with ease. In one talk he turns on them, and asks for something no amount of reciting could fake. Today: the Master Argument.",
+      "voice": "Somebody at a party explains, in great detail, the whole theory of mindfulness. Five minutes later they're furious at the bartender. The theory was flawless. The bartender saw none of it. Knowing the words is one thing; living them is another. Epictetus had students who could talk their way through Stoic arguments with ease. In one talk he turns on them, and asks for something no amount of reciting could fake.",
       "screen": [
         "`THE WHOLE THEORY OF MINDFULNESS.` → `FURIOUS AT THE BARTENDER.` → `SOMETHING RECITING CAN'T FAKE.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "This is Discourses book two, chapter nineteen. It opens with a famous puzzle in logic, the Master Argument, and the people who show off by discussing it. Epictetus lets them talk, and then turns. You can all recite the arguments, he says. So who among you is a Stoic? We call a statue Phidian when it's shaped by Phidias' art. Show me a person shaped by the beliefs they talk about. Then comes the list. Show me someone who is sick, and happy. In danger, and happy. Dying, and happy. Exiled, and happy. Disgraced, and happy. Show me! By the gods, he says, I long to see a Stoic. And then he does something disarming. He lowers the bar. You can't show me one who's finished, he admits. Then show me one who's being shaped, who has started leaning that way. Do an old man a favor. Don't keep from me a sight I've never yet seen. Sit with that. Epictetus, a Stoic teacher, says he has never yet seen a finished Stoic. That's not despair. It's the honesty that keeps the whole thing real. Nobody here is finished. The question is only whether you're being shaped, whether someone watching you on a hard day could see the arguments turning into a person. Not the whole statue. One recognizable line of it.",
+      "voice": "This is Discourses book two, chapter nineteen. It opens with a famous puzzle in logic, the Master Argument, and the people who show off by discussing it. Epictetus lets them talk, and then turns. You can all recite the arguments, he says. So who among you is a Stoic? We call a statue Phidian when it's shaped by Phidias' art. Show me a person shaped by the beliefs they talk about. Then the list. Show me someone who is sick, and happy. In danger, and happy. Dying, and happy. Exiled, and happy. Disgraced, and happy. Show me! By the gods, he says, I long to see a Stoic. Then he does something disarming. He lowers the bar. You can't show me one who's finished, he admits. Then show me one who's being shaped, who has started leaning that way. Do an old man a favor. Don't keep from me a sight I've never yet seen. Sit with that. A Stoic teacher says he has never yet seen a finished Stoic. That's not despair. It's the honesty that keeps the whole thing real. Nobody here is finished. The question is only whether you're being shaped, whether someone watching you on a hard day could see the arguments turning into a person. Not the whole statue. One recognizable line of it.",
       "screen": [
         "`CLEVER ARGUMENTS, RECITED.` · `SHAPED LIKE A STATUE BY PHIDIAS.` · `SICK AND HAPPY, EXILED AND HAPPY.` · `SHOW ME ONE BEING SHAPED.` · then, large: `SHOW ME ONE.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Sit and breathe. Pick one thing you believe about how to live: be patient, be honest, don't panic over what you can't control. Now picture a small hard moment coming today: a delay, a criticism, bad news. Imagine someone watching you in that moment. What would you want them to see? Not perfection. Just one visible line of what you believe. Picture yourself showing it. The bell holds the time.",
+      "voice": "Pick one thing you believe about how to live: be patient, be honest, don't panic over what you can't control. Picture a small hard moment ahead, a delay, a criticism, bad news, and someone watching you in it. Not perfection; just one visible line of what you believe, and you showing it.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: one who's being shaped. In one small hard moment today, be the example, not with words, but with how you handle it. Day four hundred fourteen.",
+      "voice": "Your line: one who's being shaped. Not finished, just leaning the right way. Day four hundred fourteen.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Some readers of Epictetus judge their practice less by what they know about Stoicism than by how they act on an ordinary hard day.",
   "games": {
+    "guess": [
+      "a famous logic puzzle, recited by students showing off",
+      "the final debate a student must win to graduate",
+      "a teacher's rule that his students must obey"
+    ],
     "match": {
       "prompt": "show me one: tap the pairs.",
       "pairs": [
@@ -128,14 +133,42 @@
     ],
     "recall": [
       [
-        "Arrian",
-        "the student who wrote it down"
+        "agōn",
+        "a contest that can't be put off"
       ],
       [
-        "Cleanthes",
-        "lead me, Zeus, and you, Destiny"
+        "adelphos",
+        "brother: the one who serves you is kin"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "a friend from book club",
+      "says": "If someone can explain Stoic ideas perfectly, doesn't that make them a Stoic?",
+      "options": [
+        "Epictetus said no: show me someone shaped by them, sick and happy, or at least leaning that way.",
+        "Epictetus said yes: knowing the arguments well is what makes someone a real Stoic.",
+        "Epictetus said yes, as long as they can win arguments against the other schools."
+      ],
+      "answer": 0,
+      "meaning": "In 2.19, he asks for a person shaped by beliefs the way a Phidian statue is shaped, then lowers the bar: show me one being shaped."
+    },
+    "gloss": {
+      "Phidias": {
+        "meaning": "a famous sculptor of ancient Athens",
+        "say": "FID-ee-us"
+      },
+      "Phidian": {
+        "meaning": "shaped by Phidias' art",
+        "say": "FID-ee-un"
+      },
+      "Master Argument": {
+        "meaning": "a famous puzzle in ancient logic"
+      },
+      "Stoic": {
+        "meaning": "of the Greek school of thought Epictetus taught",
+        "say": "STOH-ik"
+      }
+    }
   },
   "sources": [
     {
@@ -151,7 +184,9 @@
     "notes": [
       "Discourses 2.19 paraphrased: the Master Argument (Diodorus Cronus) at the opening; 'as we call a statue Phidian'; 'show me one who is sick and happy, in danger and happy, dying and happy, in exile and happy, in disgrace and happy'; 'by the gods, I long to see a Stoic'; 'show me one being formed'; 'do not grudge an old man a sight he has not yet seen'. Confirm.",
       "The script draws out that Epictetus doesn't claim to be a finished Stoic himself; check that this is a fair inference rather than a claim he makes outright.",
-      "Editor review (2026-10-01): removed the superlative 'the most famous Stoic teacher of his day' and the inference 'not even himself'; hook no longer says 'we've all been that person' or invents a classroom 'full of young men' and a day he 'stopped being impressed'; opening of 2.19 described as the Master Argument and those who show off with it; howItsDone 'many' softened."
+      "Editor review (2026-10-01): removed the superlative 'the most famous Stoic teacher of his day' and the inference 'not even himself'; hook no longer says 'we've all been that person' or invents a classroom 'full of young men' and a day he 'stopped being impressed'; opening of 2.19 described as the Master Argument and those who show off with it; howItsDone 'many' softened.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

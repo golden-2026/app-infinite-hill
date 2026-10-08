@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the Ottomans rise: Osman's small frontier state, growing one town at a time. Your line was: from small beginnings. What seed did you plant? Day nine hundred eighty-two.",
+      "voice": "Yesterday: Osman's small frontier state, growing one town at a time. Your line was from small beginnings.",
       "screen": [
         "`FROM SMALL BEGINNINGS.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Constantinople sat where Europe meets Asia, on a narrow strait called the Bosphorus, with the Golden Horn harbor on one side. Its land walls had turned back earlier armies, including Muslim ones. The city had also been in Muslim imaginations for a long time. A saying attributed to the Prophet Muhammad, peace be upon him, recorded in the Musnad of Ahmad ibn Hanbal, praises the commander and the army who will one day take Constantinople. Scholars have debated how strong that saying's chain of narrators is, but the Ottomans took it to heart. Mehmed prepared like a builder. He raised a fortress on the European shore of the Bosphorus to control the strait. He brought great cannons to batter the walls. When the chain kept his fleet out of the harbor, he moved the ships overland. After a long siege, the walls were breached. The last Byzantine emperor died in the fighting. And then came days that need to be told honestly: the city was plundered, and people were killed or carried off into captivity. Conquest in that age was cruel, and Orthodox Christians still remember the day as the fall of the city. Then Mehmed set about refilling the city. He brought in Muslims, Christians and Jews from across his lands, and made it his capital. In time, the name Istanbul took hold, though Ottoman documents went on using forms of the old name too. For Muslims it became the seat of an empire; for Orthodox Christians, it remains the city of their ancient patriarch. One city, carrying both. Istanbul.",
+      "voice": "Constantinople sat where Europe meets Asia, on a narrow strait called the Bosphorus, with the Golden Horn harbor on one side. Its land walls had turned back earlier armies, including Muslim ones. And the city had long been in Muslim imaginations. A saying attributed to the Prophet Muhammad, peace be upon him, recorded in the Musnad of Ahmad ibn Hanbal, praises the commander and the army who will one day take Constantinople. Scholars have debated how strong that saying's chain of narrators is, but the Ottomans took it to heart. Mehmed prepared like a builder. He raised a fortress on the European shore of the Bosphorus to control the strait. He brought great cannons to batter the walls. When the chain kept his fleet out of the harbor, he moved the ships overland. After a long siege, the walls were breached, and the last Byzantine emperor died in the fighting. Then came days that need to be told honestly: the city was plundered, and people were killed or carried off into captivity. Conquest in that age was cruel, and Orthodox Christians still remember the day as the fall of the city. Then Mehmed set about refilling the city. He brought in Muslims, Christians and Jews from across his lands, and made it his capital. In time the name Istanbul took hold, though Ottoman documents went on using forms of the old name too. For Muslims it became the seat of an empire; for Orthodox Christians, it remains the city of their ancient patriarch. One city, carrying both. Istanbul.",
       "screen": [
         "`WHERE EUROPE MEETS ASIA.` · `A SAYING ABOUT ITS CONQUEST.` · `A FORTRESS, CANNONS, SHIPS OVERLAND.` · `PLUNDER, THEN A CITY REFILLED.` · then, large: `ISTANBUL.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: look at a map of the city. If you have a phone, open a map of Istanbul. If you don't, picture it: a long blue strait running north to south, a curved harbor cutting in from the side, and a city spread over both shores, one in Europe and one in Asia. Settle, and breathe. Find the old peninsula where the walls stood. Think of the people inside them, and the people outside. If you pray, you can remember all of them. If you don't, simply look. The bell holds the time.",
+      "voice": "Open a map of Istanbul, or picture it: a long blue strait running north to south, a curved harbor cutting in from the side, and a city on both shores, one in Europe and one in Asia. Find the old peninsula where the walls stood, and think of the people inside them, and the people outside. If you pray, you can remember all of them.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: istanbul. Today, when you see a place with two names, ask who calls it what, and why both names matter to someone. Day nine hundred eighty-two.",
+      "voice": "Your line: istanbul. A conquest for some, a fall for others. Day nine hundred eighty-two counts.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "The conquest is commemorated in Istanbul, while Orthodox Christians remember the same event as the fall of the city; the Ecumenical Patriarchate still has its seat there.",
   "games": {
+    "guess": [
+      "the Byzantine capital on the Bosphorus, later Istanbul",
+      "an Ottoman fortress built to guard the Bosphorus",
+      "the Byzantine emperors' palace by the Golden Horn"
+    ],
     "match": {
       "prompt": "Constantinople — tap the pairs.",
       "pairs": [
@@ -132,14 +137,48 @@
     ],
     "recall": [
       [
-        "Ghazan",
-        "Mongol ruler of Persia who became Muslim"
+        "Sa'di",
+        "the Shiraz poet of the Gulistan"
       ],
       [
         "Baghdad",
         "the city of the Abbasid caliphs"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your roommate",
+      "says": "Why do some say the conquest of Istanbul and others the fall of Constantinople?",
+      "options": [
+        "Same event, two memories: for Muslims, the new heart of an empire; for Orthodox Christians, a lasting loss.",
+        "Mehmed took Istanbul, but a different Christian city called Constantinople fell later.",
+        "The city changed hands peacefully, so only its name was ever argued about."
+      ],
+      "answer": 0,
+      "meaning": "For Muslims it became the seat of an empire; Orthodox Christians still remember the day as the fall of the city."
+    },
+    "gloss": {
+      "Bosphorus": {
+        "meaning": "the narrow strait where Europe meets Asia",
+        "say": "BOS-fuh-rus"
+      },
+      "Golden Horn": {
+        "meaning": "the curved harbor on one side of the old city"
+      },
+      "Mehmed": {
+        "meaning": "the young Ottoman sultan who took the city",
+        "script": "محمد",
+        "say": "MEH-med"
+      },
+      "Musnad": {
+        "meaning": "Ahmad ibn Hanbal's large collection of the Prophet's sayings",
+        "script": "مسند",
+        "say": "MUS-nad"
+      },
+      "Istanbul": {
+        "meaning": "the name that took hold for the city in time",
+        "say": "is-tan-BOOL"
+      }
+    }
   },
   "sources": [
     {
@@ -166,7 +205,9 @@
       "'Earlier Muslim sieges' of Constantinople stated without dates or counts; confirm.",
       "The plunder, killings and captives after the conquest are stated plainly per the guide's history rule; confirm the tone is fair to both Muslim and Orthodox readers.",
       "The claim that Ottoman documents kept using forms of the old name (Kostantiniyye) alongside Istanbul; a historian should confirm. No etymology of 'Istanbul' given.",
-      "The hook ('ships moving over a hill') and howItsDone (annual commemoration; Ecumenical Patriarchate) should be confirmed."
+      "The hook ('ships moving over a hill') and howItsDone (annual commemoration; Ecumenical Patriarchate) should be confirmed.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

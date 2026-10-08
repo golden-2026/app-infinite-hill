@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the empire of Mali, with safe roads and a dead stranger's goods kept for his heir. Your line was: safe on its roads. Did you give back something that wasn't yours? Day nine hundred sixty-nine.",
+      "voice": "Yesterday: the empire of Mali, with safe roads and a dead stranger's goods kept for his heir. Your line was safe on its roads.",
       "screen": [
         "`SAFE ON ITS ROADS.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Hajj is not optional for a Muslim who can manage it. In Pickthall's translation of the Qur'an: \"And pilgrimage to the House is a duty unto Allah for mankind, for him who can find a way thither.\" Mansa Musa, king of Mali, could find a way. He crossed the desert with a great company of people and a great deal of gold, and he did not keep it to himself. In Cairo he spent and gave so freely, al-Umari reports, that gold lost its value in the city, and the people of Cairo were still talking about it years later. Turn that around for a moment. A man gave away so much that the price of the thing he gave fell. And then there is the ending. On the way home, al-Umari says, Mansa Musa ran short, and had to borrow from the merchants of Cairo. The king of gold, in debt at the end of his pilgrimage. Some people call him the richest pilgrim. Nobody can really count his gold. What the sources describe is something else: a pilgrim who refused to bow to a sultan, bowed to God instead, gave without counting, and came home with less. After the Hajj, tradition says, Mali's name traveled north to the cities of the Mediterranean, and scholars and builders traveled back with him. Generosity, here, was not a side detail. It was the story.",
+      "voice": "Hajj is not optional for a Muslim who can manage it. In Pickthall's translation of the Qur'an: \"And pilgrimage to the House is a duty unto Allah for mankind, for him who can find a way thither.\" Mansa Musa, king of Mali, could find a way. He crossed the desert with a great company of people and a great deal of gold, and he did not keep it to himself. In Cairo he spent and gave so freely, al-Umari reports, that gold lost its value in the city, and people there were still talking about it years later. Turn that around for a moment: a man gave away so much that the price of the thing he gave fell. Then the ending. On the way home, al-Umari says, Mansa Musa ran short and had to borrow from the merchants of Cairo. The king of gold, in debt at the end of his pilgrimage. Some call him the richest pilgrim. Nobody can really count his gold. What the sources describe is something else: a pilgrim who refused to bow to a sultan, bowed to God instead, gave without counting, and came home with less. After the Hajj, tradition says, Mali's name traveled north to the cities of the Mediterranean, and scholars and builders traveled back with him. Generosity, here, was not a side detail. It was the story.",
       "screen": [
         "`A DUTY FOR WHOEVER CAN FIND A WAY.` · `SO MUCH GOLD THAT ITS VALUE FELL.` · `THE KING BORROWS TO GET HOME.` · `MALI'S NAME TRAVELS NORTH.` · then, large: `THE RICHEST PILGRIM.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: give generously. Settle, and breathe. Generosity doesn't need gold. It needs something you would rather keep. Your time, your attention, money, praise, the last of something good. Let one person come to mind who could use what you have. Notice what in you hesitates, and don't argue with it; just see it. Then decide on one gift for today, slightly bigger than feels comfortable. If you pray, you can offer that gift to God before you give it. If you don't, simply hold the person in mind. The bell holds the time.",
+      "voice": "Generosity doesn't need gold; it needs something you'd rather keep: your time, your attention, money, praise, the last of something good. Let one person come to mind who could use what you have, notice what in you hesitates without arguing with it, and choose one gift slightly bigger than feels comfortable. If you pray, offer that gift to God before you give it; if not, simply hold the person in mind.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the richest pilgrim. Today, give one gift, of time or money or care, a little larger than you'd planned. Day nine hundred sixty-nine.",
+      "voice": "Your line: the richest pilgrim. He bowed to God, and came home with less. Day nine hundred sixty-nine.",
       "screen": []
     },
     {
@@ -127,14 +127,51 @@
     ],
     "recall": [
       [
-        "Salah al-Din",
-        "the righteousness of the faith"
+        "al-Andalus",
+        "the Muslim-ruled lands of Spain"
       ],
       [
-        "madrasah",
-        "a place of study, a school"
+        "dinar",
+        "the gold coin of the caliphs"
       ]
-    ]
+    ],
+    "guess": [
+      "the pilgrimage to Mecca, a duty for those able",
+      "a visit to a saint's tomb on a holy day",
+      "the yearly fast in the month of Ramadan"
+    ],
+    "chat": {
+      "who": "your roommate",
+      "says": "Wait, Mansa Musa was so rich. How did he end up borrowing money?",
+      "options": [
+        "He gave so freely in Cairo that he ran short on the way home.",
+        "Robbers took his gold in the desert before he reached Mecca.",
+        "The sultan of Egypt seized his gold when he refused to bow."
+      ],
+      "answer": 0,
+      "meaning": "Al-Umari reports he gave so freely that gold lost its value in Cairo, then borrowed from Cairo's merchants to get home."
+    },
+    "gloss": {
+      "Mansa Musa": {
+        "meaning": "the king of Mali who made the Hajj",
+        "say": "MAN-sa MOO-sa"
+      },
+      "al-Umari": {
+        "meaning": "a Cairo writer who recorded the story",
+        "script": "العمري",
+        "say": "al-U-ma-ree"
+      },
+      "Hajj": {
+        "meaning": "the pilgrimage to Mecca",
+        "script": "حج",
+        "say": "HAJJ"
+      },
+      "Mecca": {
+        "meaning": "the city the pilgrims travel to",
+        "script": "مكة",
+        "say": "MAK-ka"
+      }
+    }
   },
   "sources": [
     {
@@ -161,7 +198,9 @@
       "'Scholars and builders traveled back with him' (e.g. the poet-architect al-Sahili) is a widely told claim not directly in al-Umari; confirm or cut.",
       "Pickthall 3:97 quoted from memory; confirm exact wording.",
       "Editor: cut the unsourced 'modern lists call him the richest man who ever lived' superlative; replaced the stock line 'the part people forget'; put the scholars-and-builders return under 'tradition says'; changed the original gloss to 'whoever can find a way' to match 3:97; fixed the review's missing colon.",
-      "Audit: no changes. al-Umari's audience scene, gold's fall in value and the borrowing match the source; Pickthall 3:97 checks out. The earlier note quoting 'people still call him' and 'modern lists' is stale: the voice now says only 'Some people call him the richest pilgrim'."
+      "Audit: no changes. al-Umari's audience scene, gold's fall in value and the borrowing match the source; Pickthall 3:97 checks out. The earlier note quoting 'people still call him' and 'modern lists' is stale: the voice now says only 'Some people call him the richest pilgrim'.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

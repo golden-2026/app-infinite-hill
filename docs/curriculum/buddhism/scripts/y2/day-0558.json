@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: the quail and the hawk, and your line, come back to your own ground. Did you come back to your own ground? Today the same discourse leaves the field and walks into a palace. Day five hundred fifty-eight.",
+      "voice": "Yesterday: gocara, the quail and the hawk. Your line: come back to your own ground. Today the same discourse leaves the field and walks into a palace.",
       "screen": [
         "`COME BACK TO YOUR OWN GROUND.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "In the old story there are wheel-turning kings, rulers so just that a great jeweled wheel appears in the sky and rolls ahead of them, and other kingdoms simply welcome them. The first, Dalhanemi, grows old, hands the throne to his son, and goes forth. The wheel vanishes. The son asks his father what to do, and is told: the wheel isn't an inheritance. You have to earn it. Rule by the Dhamma. Protect everyone, even the birds and beasts. And give wealth to those who have none. Generations later, a king forgets that last part. Today: poverty breeds violence.",
+      "voice": "In the old story there are wheel-turning kings, rulers so just that a great jeweled wheel appears in the sky and rolls ahead of them, and other kingdoms simply welcome them. The first, Dalhanemi, grows old, hands the throne to his son, and goes forth. The wheel vanishes. The son asks his father what to do, and is told: the wheel isn't an inheritance. You have to earn it. Rule by the Dhamma. Protect everyone, even the birds and beasts. And give wealth to those who have none. Generations later, a king forgets that last part.",
       "screen": [
         "`A WHEEL IN THE SKY.` → `NOT AN INHERITANCE.` → `ONE KING FORGETS.`"
       ]
@@ -44,13 +44,13 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Sit, and think of someone who doesn't have enough. A person you pass on the street, a family you've heard about, a cause you care about. Let their situation be real for a moment, not an idea. Breathe with it. Then let one small, concrete thing come to mind that you could give: money, food, time, a phone call. You don't have to decide yet. Just let it be clear. The bell holds the time.",
+      "voice": "Think of someone who doesn't have enough, a person you pass on the street, a family you've heard about, and let their situation be real for a moment, not an idea. Breathe with it, then let one small, concrete thing come to mind that you could give: money, food, time, a phone call. You don't have to decide yet; just let it be clear.",
       "screen": []
     },
     {
       "type": "the word",
       "duration": "25 sec",
-      "voice": "daliddiya. In DN 26 a king stops giving to the needy; theft follows, then a harsh punishment, then weapons and killing. Today's word.",
+      "voice": "Daliddiya. In DN 26 a king stops giving to the needy; theft follows, then a harsh punishment, then weapons and killing. Today's word.",
       "screen": [
         "`DALIDDIYA — today's word`."
       ]
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: give something real, however small. Today, give something real to someone in need, however small, the way the old kings were told to. Day five hundred fifty-eight.",
+      "voice": "Your line: give something real, however small. The trouble began with a king who didn't share. See you tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Buddhist social thinkers in Asia and beyond often cite the Cakkavatti Sihanada Sutta when they speak about poverty and crime, and many Buddhist communities run food banks, clinics and relief work.",
   "games": {
+    "guess": [
+      "poverty, having nothing to live on",
+      "theft, taking what isn't given",
+      "a harsh drum beaten for the guilty"
+    ],
     "match": {
       "prompt": "poverty breeds violence: tap the pairs.",
       "pairs": [
@@ -132,14 +137,45 @@
     ],
     "recall": [
       [
-        "Vipassi",
-        "the first of seven Buddhas named"
+        "dhamma-vinaya",
+        "the teaching and the discipline"
       ],
       [
         "andhaveni",
         "a line of the blind"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your classmate",
+      "says": "In that old Buddhist story about kings, where does all the violence start?",
+      "options": [
+        "With a king who stopped giving to the needy; then poverty, theft, killing.",
+        "With one wicked thief, born bad, who led all the others into crime.",
+        "With people who had plenty but stole anyway, just for the thrill of it."
+      ],
+      "answer": 0,
+      "meaning": "In DN 26 the trouble begins when a king stops giving wealth to the needy. Poverty spreads, and harsh punishment turns theft into killing."
+    },
+    "gloss": {
+      "Daliddiya": {
+        "meaning": "poverty",
+        "script": "दालिद्दिय",
+        "say": "dah-LID-di-yuh"
+      },
+      "Dalhanemi": {
+        "meaning": "the first wheel-turning king in the story",
+        "say": "DUL-huh-NAY-mee"
+      },
+      "Cakkavatti Sihanada": {
+        "meaning": "the lion's roar on the wheel-turning king, DN 26",
+        "say": "CHUK-kuh-VUT-ti SEE-huh-NAH-duh"
+      },
+      "Dhamma": {
+        "meaning": "the teaching; the new king is told to rule by it",
+        "script": "धम्म",
+        "say": "DUM-muh"
+      }
+    }
   },
   "sources": [
     {
@@ -156,7 +192,9 @@
       "DN 26 paraphrased. Confirm: Dalhanemi as first king; the wheel disappearing and the father's advice; the duties including giving to the needy; the first thief helped with money for parents, wife and children, business and offerings.",
       "Confirm the execution details (bound, shaved head, harsh drum, beheaded south of the city) and the sequence: weapons, killing, lying, slander.",
       "The script calls it 'an old Indian story with fantastic numbers'; Keepers may prefer a different framing of the sutta's mythic register.",
-      "Audit (y2 10% sample): replaced the stock closing phrase 'plain enough for an ordinary Tuesday' with a plainer line that keeps the claim attributed to the text."
+      "Audit (y2 10% sample): replaced the stock closing phrase 'plain enough for an ordinary Tuesday' with a plainer line that keeps the claim attributed to the text.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

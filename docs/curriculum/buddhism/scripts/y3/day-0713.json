@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, passions spurned, and your line: fuel doesn't quench fire. Did you wait a breath before feeding a want? Today the prince finally finds a teacher. Day seven hundred thirteen.",
+      "voice": "Yesterday: passions spurned, half a kingdom refused and a friend kept. Your line: fuel doesn't quench fire.",
       "screen": [
         "`FUEL DOESN'T QUENCH FIRE.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the map. In the poem, Arada explains the world as he sees it: a nature that changes and unfolds, and a knower who watches it. Suffering comes from not telling the two apart. Free the knower from what it watches, and you're free. Second, the ladder. Then he describes the climb. Leave home. Live simply. Settle the mind. Then rise through deeper and deeper states of meditation, leaving more behind at each step, until the mind rests in a state of nothingness, where nothing at all is held. That, Arada says, is liberation. Third, the prince learns it. He doesn't just listen. He practices. The old Pali discourses tell this part too, where the teacher is called Alara Kalama: the Buddha later says he reached that same state of nothingness under him, and that Arada offered to lead the community with him, as an equal. The student had matched the master. Fourth, the question. And here the poem gives the prince his doubt, paraphrased: if the knower is still there at the top of the ladder, then something is still there that can be bound again. It's like a seed that's been kept dry. Give it rain, and it sprouts. Nothingness is deep, and quiet, and good. But it isn't the end of the road. It's not final. So he thanks Arada and leaves. The poem has him try one more teacher, Udraka, who teaches a state subtler still, and he finds the same thing there. The respect in this is worth slowing down for. He learns all they have to give, reaches the top of it, and then, honestly, keeps going. A good teacher can take you all the way to the end of what they know. The next step may have to be yours.",
+      "voice": "First, the map. Arada explains the world as he sees it: a nature that changes and unfolds, and a knower who watches it. Suffering comes from not telling the two apart. Free the knower from what it watches, and you're free. Second, the ladder. Leave home. Live simply. Settle the mind. Then rise through deeper and deeper states of meditation, leaving more behind at each step, until the mind rests in a state of nothingness, where nothing at all is held. That, Arada says, is liberation. Third, the prince learns it, and practices. The old Pali discourses tell this part too, where the teacher is called Alara Kalama: the Buddha later says he reached that same state of nothingness under him, and that Arada offered to lead the community with him, as an equal. The student had matched the master. Fourth, the question. Here the poem gives the prince his doubt, in paraphrase: if the knower is still there at the top of the ladder, then something is still there that can be bound again, like a seed that's been kept dry. Give it rain, and it sprouts. Nothingness is deep, and quiet, and good, but it isn't the end of the road. So he thanks Arada and leaves. The poem has him try one more teacher, Udraka, who teaches a state subtler still, and he finds the same thing there. He learns all they have to give, reaches the top of it, and then, honestly, keeps going.",
       "screen": [
         "`ARADA'S MAP: NATURE AND KNOWER.` · `A LADDER UP TO NOTHINGNESS.` · `THE STUDENT MATCHES THE MASTER.` · `A SEED KEPT DRY CAN SPROUT.` · then, large: `NOT FINAL.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: finish something, then ask more. Settle, and breathe. For the first part of the sit, do one simple thing completely: follow ten breaths, counting each one, all the way to ten. If you lose count, start again. When you reach ten, you've finished. Notice the small satisfaction. Then ask, gently, without any pressure: is there more here? Keep breathing, without counting now, and see what's left when the task is done. The bell holds the time.",
+      "voice": "Follow ten breaths, counting each one all the way to ten, and if you lose count, start again. When you reach ten, notice the small satisfaction of finishing. Then ask gently, without any pressure, is there more here, and keep breathing without counting to see what's left when the task is done.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: not final. Today, when you finish something you worked hard at, enjoy it, and then ask whether there's a next step only you can take. Day seven hundred thirteen.",
+      "voice": "Your line: not final. A good teacher can take you to the end of what they know. Day seven hundred thirteen.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "The deep meditative states the prince learned from his first teachers are still described in Buddhist meditation teaching, where they are counted as refined states of mind, valued but not the same as awakening.",
   "games": {
+    "guess": [
+      "a deep meditation where nothing is held",
+      "giving away every possession you own",
+      "a blank sleep that comes after death"
+    ],
     "match": {
       "prompt": "the prince with Arada: tap the pairs.",
       "pairs": [
@@ -132,14 +137,42 @@
     ],
     "recall": [
       [
-        "Pavarana",
-        "the invitation at the rains' end"
+        "Asita",
+        "the sage who wept over the newborn"
       ],
       [
-        "peta",
-        "a hungry ghost, in Pali"
+        "moneyya",
+        "the way of a sage: quiet fullness"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your aunt",
+      "says": "If the prince mastered Arada's meditation, why did he leave him?",
+      "options": [
+        "He saw the knower remained, like a dry seed that could still sprout.",
+        "He couldn't reach the state Arada taught, so he gave up on it.",
+        "He decided meditation was a waste, and wanted to try fasting."
+      ],
+      "answer": 0,
+      "meaning": "He reached nothingness, matching his teacher, but saw something remained that could be bound again, like a seed kept dry."
+    },
+    "gloss": {
+      "Arada": {
+        "meaning": "a calm, learned teacher of deep meditation",
+        "say": "AH-ruh-duh"
+      },
+      "Alara Kalama": {
+        "meaning": "Arada's name in the old Pali discourses",
+        "say": "AH-luh-ruh KAH-luh-muh"
+      },
+      "Udraka": {
+        "meaning": "a second teacher, of a state subtler still",
+        "say": "OOD-ruh-kuh"
+      },
+      "nothingness": {
+        "meaning": "a deep state of meditation where nothing at all is held"
+      }
+    }
   },
   "sources": [
     {
@@ -165,7 +198,9 @@
       "Trapdoor floor 3: the Samkhya resemblance is a standard scholarly reading; confirm wording.",
       "Original: confirm the Devanagari and stress for akincanya.",
       "Auditor: the teach now names Alara Kalama as the Pali name for Arada so the MN 26 claim is clearly attributed; fork rewritten (it repeated day 708's 'thank them, and move on' answer) to ask the prince's own question, the dry seed.",
-      "Editor: 'He doesn't call these teachers wrong' cut (third use of the 'doesn't call them fools' turn in a week)."
+      "Editor: 'He doesn't call these teachers wrong' cut (third use of the 'doesn't call them fools' turn in a week).",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

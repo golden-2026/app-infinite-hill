@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, a bare altar and a cry from Psalm 22. Your line was a quiet hour. Did you find one, and what filled it? Today, one day on the Muslim calendar, remembered in two ways. Day seven hundred fifty-one.",
+      "voice": "Yesterday's word was Good Friday, with its bare altars and silence. Your line was a quiet hour.",
       "screen": [
         "`A QUIET HOUR.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Sit, and let the breath settle. Choose one thing you learned about Karbala today: a small band of companions, a river cut off, a grandson who would not give his allegiance. Hold that one fact, gently, as you would hold a name at a memorial. Then let a grief of your own come near, if one is there. Don't push it away, and don't dig. Just let it be remembered, here, for a few breaths, in company with a much older grief. The bell holds the time.",
+      "voice": "Choose one thing you learned about Karbala today, a small band of companions, a river cut off, a grandson who would not give his allegiance, and hold it gently, as you'd hold a name at a memorial. Then, if a grief of your own is there, let it come near without pushing it away or digging for it. Let it be remembered for a few breaths, in company with a much older grief.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: remembered grief. Today, learn one more fact about Karbala from a Shia source, and say it to someone. Day seven hundred fifty-one.",
+      "voice": "Your line: remembered grief. One day can hold a rescue and a mourning at once. Day seven hundred fifty-one, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "On Ashura, Shia Muslims gather at majalis to hear the story of Karbala retold, recite laments, and join processions in mourning for Husayn; Sunni Muslims fast the day, following the hadith about Moses' rescue, and some fast the day before as well.",
   "games": {
+    "guess": [
+      "the tenth of Muharram: a fast, and grief for Husayn",
+      "the festival that ends the fasting month of Ramadan",
+      "the night the Qur'an was first sent down"
+    ],
     "match": {
       "prompt": "what's inside Ashura — tap the pairs.",
       "pairs": [
@@ -132,14 +137,52 @@
     ],
     "recall": [
       [
-        "hesed",
-        "mercy, kindness, lovingkindness"
+        "Tisha B'Av",
+        "the ninth of Av, a day of mourning"
       ],
       [
-        "posttraumatic growth",
-        "Tedeschi and Calhoun's name for it"
+        "Kristin Neff",
+        "psychologist of the self-compassion break"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your friend",
+      "says": "Is Ashura a fasting day or a mourning day? I've heard both.",
+      "options": [
+        "Both. Sunni tradition fasts for Moses' rescue; Shia tradition mourns Husayn at Karbala.",
+        "It's a fast for the Prophet's birthday, and the mourning comes later in the year.",
+        "It's a mourning day for Moses, remembered on the tenth of Muharram."
+      ],
+      "answer": 0,
+      "meaning": "Ashura, the tenth of Muharram, holds two remembrances: a fast for Moses' rescue, and Shia mourning for Husayn at Karbala."
+    },
+    "gloss": {
+      "Ashura": {
+        "meaning": "the tenth day of the month of Muharram",
+        "script": "عاشوراء",
+        "say": "ah-SHOO-rah"
+      },
+      "Muharram": {
+        "meaning": "a month of the Muslim calendar",
+        "script": "محرم",
+        "say": "moo-HAR-rum"
+      },
+      "Karbala": {
+        "meaning": "the plain, in today's Iraq, where Husayn was killed",
+        "script": "كربلاء",
+        "say": "KAR-buh-lah"
+      },
+      "Husayn": {
+        "meaning": "the Prophet's grandson, son of Ali and Fatima",
+        "script": "حسين",
+        "say": "hoo-SAYN"
+      },
+      "majalis": {
+        "meaning": "gatherings where Husayn's story is retold",
+        "script": "مجالس",
+        "say": "mah-JAH-lis"
+      }
+    }
   },
   "sources": [
     {
@@ -172,7 +215,9 @@
       "'For Shia Muslims, mourning Husayn is loyalty to him, and his stand is remembered as a stand against injustice': confirm phrasing with a Shia reviewer.",
       "Karbala 'in what is now Iraq': confirm.",
       "Original عاشوراء: confirm spelling (with hamza) and pronunciation guide.",
-      "Editor: blanket 'Sunni Muslims keep / Shia Muslims remember / honor / know' lines recast as 'Sunni tradition' and 'Shia tradition' (claims rule against all-of-a-community statements); hook's 'the whole room weeps' softened to 'people in the room weep with him'."
+      "Editor: blanket 'Sunni Muslims keep / Shia Muslims remember / honor / know' lines recast as 'Sunni tradition' and 'Shia tradition' (claims rule against all-of-a-community statements); hook's 'the whole room weeps' softened to 'people in the room weep with him'.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

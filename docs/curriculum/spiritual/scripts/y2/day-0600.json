@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: fig, the surprise swapped for readiness. Your line was the wind turns against him. Who were you ready for? And today is a milestone. Day six hundred.",
+      "voice": "Yesterday's word was fig: the surprise swapped for readiness. Your line was the wind turns against him.",
       "screen": [
         "`THE WIND TURNS AGAINST HIM.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Six hundred days. If you've been here for many of them, you've heard a lot of good lines. And here's an honest question: how many of them changed what you did this afternoon? Collecting wisdom can feel like progress. Highlighting a sentence can feel like living it. Marcus Aurelius knew a version of this. In book eight he caught himself, with a short entry that has a sting in its tail.",
+      "voice": "Six hundred days. If you've been here for many of them, you've heard a lot of good lines. So, an honest question: how many of them changed what you did this afternoon? Collecting wisdom can feel like progress. Highlighting a sentence can feel like living it. Marcus Aurelius knew a version of this. In book eight he caught himself, in a short entry with a sting in its tail.",
       "screen": [
         "`SIX HUNDRED DAYS.` → `COLLECTING ISN'T LIVING.` → `A STING IN THE TAIL.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the instruction. Meditations eight, twenty-two, begins: attend to what's in front of you. Then Marcus breaks it down. The thing itself, the matter at hand. What's being done, the act. And what it means, the principle or sense behind it. Translators divide his short list a little differently, but the shape is clear. Look at what's here, what you're doing, and why it matters. Second, the three together. It's easy to hold just one at a time. We see the matter but forget the meaning: we wash the dishes resentfully, missing that it's care for the people we live with. Or we have the meaning but lose the matter: big ideals, sloppy follow-through. Marcus wants all three in the same moment. Third, the sting. Then he turns on himself. In George Long's translation: \"Thou sufferest this justly: for thou choosest rather to become good to-morrow than to be good to-day.\" You deserve the trouble you're in, he tells himself, because you keep planning to become good tomorrow instead of being good today. Fourth, the six-hundredth day. For a milestone, it's a fitting line. Not a celebration of how far you've come. A quiet nudge: today, not tomorrow. The six hundred days count, and this one is the one you can still do something with. Pick up the thing in front of you, notice what you're doing, and remember what it means. Then do it now.",
+      "voice": "Meditations eight, twenty-two, begins: attend to what's in front of you. Then Marcus breaks it down: the thing itself, the matter at hand; what's being done, the act; and what it means, the principle or sense behind it. Translators divide his short list a little differently, but the shape is clear: look at what's here, what you're doing, and why it matters. It's easy to hold just one at a time. We see the matter and forget the meaning: we wash the dishes resentfully, missing that it's care for the people we live with. Or we hold the meaning and lose the matter: big ideals, sloppy follow-through. Marcus wants all three in the same moment. Then he turns on himself. In George Long's translation: \"Thou sufferest this justly: for thou choosest rather to become good to-morrow than to be good to-day.\" You deserve the trouble you're in, he tells himself, because you keep planning to become good tomorrow instead of being good today. For a milestone, it's a fitting line. Not a celebration of how far you've come, but a quiet nudge: today, not tomorrow. The six hundred days count, and this one is the one you can still do something with.",
       "screen": [
         "`ATTEND TO WHAT'S IN FRONT OF YOU.` · `THE THING, THE ACT, THE MEANING.` · `GOOD TOMORROW, OR GOOD TODAY?` · `DAY SIX HUNDRED: THIS ONE.` · then, large: `WHAT IT MEANS.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Sit, and breathe. Pick one ordinary thing you'll do in the next hour. Making food, answering a message, walking somewhere. See the matter: the actual objects, the actual people. See the act: what your hands and voice will do. Then find the meaning: who it serves, what it expresses. Hold all three at once, lightly. Then rest in the breath. The bell holds the time.",
+      "voice": "Pick one ordinary thing you'll do in the next hour: making food, answering a message, walking somewhere. See the matter, the actual objects and people; the act, what your hands and voice will do; and the meaning, who it serves and what it expresses. Hold all three at once, lightly, and rest in the breath.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: what it means. Today, do one ordinary act with its meaning in mind, and do it now, not tomorrow. Day six hundred.",
+      "voice": "Your line: what it means. Being good today, not becoming good tomorrow. Day six hundred, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Readers of Marcus sometimes pause before an everyday task to notice the thing, the action and its meaning together, and use 8.22's sting as a reminder not to postpone being good.",
   "games": {
+    "guess": [
+      "the thing in front of you, the stuff at hand",
+      "a problem that is bothering you right now",
+      "what counts most, above everything else"
+    ],
     "match": {
       "prompt": "matter, act, meaning — tap the pairs.",
       "pairs": [
@@ -127,14 +132,37 @@
     ],
     "recall": [
       [
-        "Heraclitus",
-        "no stepping in the same river twice"
+        "earthenware",
+        "plain dishes used as if they were silver"
       ],
       [
-        "galene",
-        "a sea gone flat after wind"
+        "Cleanthes",
+        "the poet: fate leads the willing"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your best friend",
+      "says": "Six hundred days of lessons! Doesn't knowing all that wisdom make you better already?",
+      "options": [
+        "Marcus warns about that: planning to be good tomorrow instead of being good today.",
+        "Marcus says collecting good lines is the work; living them can wait till later.",
+        "Marcus says six hundred days earns a rest from minding the small things."
+      ],
+      "answer": 0,
+      "meaning": "In 8.22 Marcus scolds himself for choosing to become good tomorrow rather than be good today. The point is the thing in front of you, now."
+    },
+    "gloss": {
+      "George Long": {
+        "meaning": "translator of the Meditations into English, 1862"
+      },
+      "Meditations": {
+        "meaning": "Marcus's twelve books of private notes to himself"
+      },
+      "Marcus Aurelius": {
+        "meaning": "Roman emperor whose notes to himself became the Meditations",
+        "say": "MAR-kus aw-REE-lee-us"
+      }
+    }
   },
   "sources": [
     {
@@ -152,7 +180,9 @@
       "The first sentence of 8.22 is paraphrased; translators render its list differently (subject, activity, principle, meaning; Long has 'opinion or act or word'). Confirm the 'thing, act, meaning' framing is fair.",
       "Greek ὕλη (hylē) is offered as Marcus's general word for matter (e.g. 4.21, 12.29), not as the word in 8.22. Confirm.",
       "Day 600 is treated as a milestone in the review, hook and teach.",
-      "Editor review (2026-10-01): cut unsourced superlatives ('one of the oldest traps on any path', 'one of the sharpest lines in the book', 'the best line we could have'), the 'most of us' claim and the empty 'They really do'. Note: the Greek of 8.22 lists four things (subject, activity, principle, meaning) while Long renders 'opinion or act or word'; the teach hedges with 'translators divide his list differently'."
+      "Editor review (2026-10-01): cut unsourced superlatives ('one of the oldest traps on any path', 'one of the sharpest lines in the book', 'the best line we could have'), the 'most of us' claim and the empty 'They really do'. Note: the Greek of 8.22 lists four things (subject, activity, principle, meaning) while Long renders 'opinion or act or word'; the teach hedges with 'translators divide his list differently'.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

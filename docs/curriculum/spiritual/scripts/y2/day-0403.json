@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: lychnos, and your line, a clay lamp. Was there something small you let go of? Day four hundred three.",
+      "voice": "Yesterday's word was lychnos, the stolen lamp. Your line was a clay lamp: replace it simply, and keep what can't be stolen.",
       "screen": [
         "`A CLAY LAMP.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Epictetus' old master, Epaphroditus, once sold a slave who made shoes, because he thought the man was useless. Then the shoemaker was bought by someone in the emperor's household and became the emperor's own shoemaker. Suddenly Epaphroditus couldn't do enough for him. How is our dear Felicio, he'd ask. And if you came looking for Epaphroditus, you'd be told he was in a meeting with Felicio. Epictetus tells it with a straight face, and lets it sit. Today: dogma.",
+      "voice": "Epictetus' old master, Epaphroditus, once sold a slave who made shoes, because he thought the man was useless. Then someone in the emperor's household bought the shoemaker, and he became the emperor's own shoemaker. Suddenly Epaphroditus couldn't do enough for him. How is our dear Felicio, he'd ask. Come looking for Epaphroditus, and you'd be told he was in a meeting with Felicio. Epictetus tells it with a straight face, and lets it sit.",
       "screen": [
         "`THE USELESS SHOEMAKER.` → `NOW HE WORKS FOR THE EMPEROR.` → `IN A MEETING WITH FELICIO.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "This is Discourses book one, chapter nineteen: how we should behave toward tyrants. Felicio is the joke that opens the door. Why did Epaphroditus suddenly fawn over his old shoemaker? Not because Felicio changed. Because Felicio was now near the emperor. Then Epictetus asks the real question. What is it that frightens people? The tyrant and his guards? No. Nothing that is free by nature can be troubled by anything but itself. What troubles us is our own judgments. So when the tyrant says, I'll chain your leg, the person who prizes the leg begs for mercy. The person who prizes their own will says: if it seems better to you, chain it. Take the body, if you have power over it. But no one, Epictetus says, has power over another person's will. They can threaten. They can make choosing costly. But the choosing stays with you. Tyrants come in small sizes, too: a boss who controls your schedule, a relative who controls the family's approval, an online crowd that controls how you feel about yourself. Epictetus' question works on all of them. What exactly can they touch? Your paycheck, maybe. Your mood, only if you hand it over. Your judgment: never. That's not a promise that standing firm will be painless. It's a map of where the fight actually is.",
+      "voice": "This is Discourses book one, chapter nineteen: how we should behave toward tyrants. Felicio is the joke that opens the door. Why did Epaphroditus suddenly fawn over his old shoemaker? Not because Felicio changed, but because Felicio was now near the emperor. Then the real question. What frightens people? The tyrant and his guards? No. Nothing that is free by nature can be troubled by anything but itself. What troubles us is our own judgments. So when the tyrant says, I'll chain your leg, the person who prizes the leg begs for mercy. The person who prizes their own will says: if it seems better to you, chain it. Take the body, if you have power over it. But no one, Epictetus says, has power over another person's will. They can threaten, and make choosing costly, but the choosing stays with you. Tyrants come in small sizes, too: a boss who controls your schedule, a relative who controls the family's approval, an online crowd that controls how you feel about yourself. The question works on all of them: what exactly can they touch? Your paycheck, maybe. Your mood, only if you hand it over. Your judgment, never. That's not a promise that standing firm will be painless. It's a map of where the fight actually is.",
       "screen": [
         "`WHY FAWN OVER FELICIO?` · `OUR OWN JUDGMENTS FRIGHTEN US.` · `THE TYRANT CAN'T REACH THE WILL.` · `TYRANTS IN SMALL SIZES.` · then, large: `NOT MY JUDGMENT.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Sit and breathe. Name one fear that's been pressing on you lately: losing a job, someone's disapproval, a diagnosis, money. Say it plainly to yourself. Now sort it. What could this actually touch? Write the list in your mind: my income, my plans, my comfort, my body. Then name what it can't touch: what I value, how I treat people, whether I stay honest. Rest your attention on that second list for the rest of the sit. The bell holds the time.",
+      "voice": "Name one fear that's been pressing on you lately: losing a job, someone's disapproval, a diagnosis, money. Sort it, first what it could touch, my income, my plans, my comfort, my body, then what it can't: what I value, how I treat people, whether I stay honest. Rest your attention on that second list.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the choosing stays with you. When someone with power over you leans on you today, ask quietly what they can touch, and remind yourself: the choosing stays with you. Day four hundred three.",
+      "voice": "Your line: the choosing stays with you. They can make it costly; they can't make it for you. Until tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Some Stoic readers sort a fear into what it could touch and what it can't, keeping their attention on their own judgment and choices.",
   "games": {
+    "guess": [
+      "a judgment, the settled view that shapes how you react",
+      "a rigid rule that nobody is allowed to question",
+      "a tyrant's order that has to be obeyed at once"
+    ],
     "match": {
       "prompt": "not my judgment: tap the pairs.",
       "pairs": [
@@ -132,14 +137,44 @@
     ],
     "recall": [
       [
-        "Helvidius Priscus",
-        "the senator who kept going in"
+        "memento mori",
+        "remember you'll die"
       ],
       [
-        "prohairesis",
-        "the power to choose"
+        "Helvidius Priscus",
+        "the senator who defied an emperor"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your friend from work",
+      "says": "My boss controls my schedule. Doesn't that mean she controls me?",
+      "options": [
+        "Epictetus would say she can touch your schedule, but your judgment stays yours.",
+        "Epictetus would say she controls nothing at all, so just ignore her requests.",
+        "Epictetus would say to flatter her, the way Epaphroditus fawned over Felicio."
+      ],
+      "answer": 0,
+      "meaning": "In 1.19, what frightens us is our own judgments. A tyrant can chain the leg, but no one has power over another person's will."
+    },
+    "gloss": {
+      "dogma": {
+        "meaning": "Greek for judgment, a settled opinion",
+        "script": "δόγμα",
+        "say": "DOG-muh"
+      },
+      "Epaphroditus": {
+        "meaning": "Epictetus' former master, who fawned over Felicio",
+        "say": "eh-paf-roh-DYE-tus"
+      },
+      "Felicio": {
+        "meaning": "a shoemaker sold as useless, later the emperor's shoemaker",
+        "say": "feh-LISS-ee-oh"
+      },
+      "Discourses": {
+        "meaning": "Epictetus' talks, written down by his student Arrian",
+        "say": "DIS-kor-siz"
+      }
+    }
   },
   "sources": [
     {
@@ -156,7 +191,9 @@
       "Discourses 1.19 paraphrased: Felicio the shoemaker sold by Epaphroditus and later Caesar's shoemaker; 'he is consulting with Felicio'; no one fears Caesar himself but death, exile, prison, loss of property. Confirm details.",
       "The 'I'll chain you' exchange overlaps day 390 (1.1); the script keeps it short and focuses on Felicio and on what the tyrant can touch.",
       "The 'tyrants in small sizes' application (boss, relative, online crowd) is the script's own.",
-      "Editor review (2026-10-01): SERIOUS: the teach attributed to 1.19 the lines 'no one fears Caesar himself... nor loves him... whoever controls these is your master', which are Discourses 4.1.60; rewritten from 1.19 itself (it is our judgments, not the tyrant and his guards, that disturb us; the one who prizes his will says 'chain it'; no one has power over another's will). Myth, match, fork and teach heads updated to match. 'devastating', 'one of the few glimpses' and howItsDone 'often' softened."
+      "Editor review (2026-10-01): SERIOUS: the teach attributed to 1.19 the lines 'no one fears Caesar himself... nor loves him... whoever controls these is your master', which are Discourses 4.1.60; rewritten from 1.19 itself (it is our judgments, not the tyrant and his guards, that disturb us; the one who prizes his will says 'chain it'; no one has power over another's will). Myth, match, fork and teach heads updated to match. 'devastating', 'one of the few glimpses' and howItsDone 'often' softened.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

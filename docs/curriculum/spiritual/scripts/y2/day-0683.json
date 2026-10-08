@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday: Antoninus Pius, and Marcus warning himself not to be Caesarified. Your line was not my horse. Whom did you thank for a win? Day six hundred eighty-three.",
+      "voice": "Yesterday's word was Antoninus Pius, who enjoyed power's comforts without showing off. Your line was not my horse.",
       "screen": [
         "`NOT MY HORSE.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Day twelve of the new habit. Eleven days of getting up early, and this morning you hit snooze three times and lay there scrolling. Or it's bigger: the job interview that went badly, the diet that collapsed at a birthday party, the promise to yourself about drinking, broken again. And the voice arrives: see, you always do this. Might as well quit. The emperor of Rome wrote about this in his private notebook. He fell short of his own rules often enough to need a rule for falling short. Today: Stoic in failure.",
+      "voice": "Day twelve of the new habit. Eleven days of getting up early, and this morning you hit snooze three times and lay there scrolling. Or it's bigger: the job interview that went badly, the diet that collapsed at a birthday party, the promise to yourself about drinking, broken again. And the voice arrives: see, you always do this. Might as well quit. The emperor of Rome wrote about this in his private notebook. He fell short of his own rules often enough to need a rule for falling short.",
       "screen": [
         "`DAY TWELVE: SNOOZE, THREE TIMES.` → `YOU ALWAYS DO THIS.` → `MARCUS NEEDED A RULE FOR FAILING.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the rule. In book five of the Meditations, Marcus tells himself: don't be disgusted, discouraged or dissatisfied if you don't manage to do everything by right principles. When you've been knocked off course, return. And be content if the greater part of what you do is worthy of a human being. Three moves: no disgust, return, be glad of the greater part. Second, how to return. Marcus adds a detail: don't go back to philosophy as to a schoolmaster with a cane, but the way someone with sore eyes goes back to the soothing sponge. He doesn't say start over from zero. He says return to the practice, as if it had been waiting for you. A missed day is not a broken streak of character. It's a step off the path, and the path is still there. Third, being glad of what went well. This is the part people skip. Marcus says to love the practice you return to, and to be content with the larger share that was done well. Eleven early mornings are not erased by one late one. They happened. They count. Fourth, Epictetus on falling. He compares the student to an athlete: a fall in the contest doesn't stop you from contending again. He tells his students that if they slip, they shouldn't give up on themselves; they can begin again. Put Marcus and Epictetus together and the Stoic in failure isn't someone who never fails. It's someone who's very good at coming back.",
+      "voice": "First, the rule. In book five of the Meditations, Marcus tells himself: don't be disgusted, discouraged or dissatisfied if you don't manage to do everything by right principles. When you've been knocked off course, return. And be content if the greater part of what you do is worthy of a human being. Three moves: no disgust, return, be glad of the greater part. Second, how to return. Don't go back to philosophy as to a schoolmaster with a cane, Marcus adds, but the way someone with sore eyes goes back to the soothing sponge. Not starting over from zero: returning to the practice, as if it had been waiting for you. A missed day is not a broken streak of character. It's a step off the path, and the path is still there. Third, being glad of what went well. This is the part people skip. Love the practice you return to, Marcus says, and be content with the larger share done well. Eleven early mornings aren't erased by one late one. They happened. They count. Fourth, Epictetus on falling. He compares the student to an athlete: a fall in the contest doesn't stop you from contending again. If you slip, he tells his students, don't give up on yourself; begin again. Put Marcus and Epictetus together, and the Stoic in failure isn't someone who never fails. It's someone who's very good at coming back.",
       "screen": [
         "`NOT DISGUSTED, NOT DISCOURAGED.` · `RETURN, AS TO A SOOTHING REMEDY.` · `GLAD OF THE GREATER PART.` · `A FALL, THEN CONTEND AGAIN.` · then, large: `RETURN.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Think of one recent failure, a habit dropped, a promise broken, a day that went wrong. Notice the voice that says you always do this. Don't argue with it; just hear it. Then count, honestly, what went well before the failure: the days, the efforts, the times you kept going. Let those count. Now picture yourself returning, not starting from zero but simply stepping back onto the path. What's the very next small step? The bell holds the time.",
+      "voice": "Think of one recent failure, a habit dropped, a promise broken, a day that went wrong, and hear the voice that says you always do this, without arguing. Then count, honestly, what went well before it: the days, the efforts, the times you kept going. Picture yourself stepping back onto the path, not from zero, and notice the very next small step.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: return. Take the very next small step back onto the path you slipped from today, without a speech to yourself about it. Day six hundred eighty-three.",
+      "voice": "Your line: return. The path is still there, and so are the good days behind you. Day six hundred eighty-three counts.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Some Stoic practitioners meet failure by returning to their practice without self-disgust and counting what went well, following Marcus Aurelius's advice in Meditations 5.9.",
   "games": {
+    "guess": [
+      "Marcus's notebook: no disgust at slipping; simply return",
+      "Epictetus's lectures, written down by his student",
+      "Seneca's letters to a friend about starting over"
+    ],
     "match": {
       "prompt": "return — tap the pairs.",
       "pairs": [
@@ -128,14 +133,38 @@
     ],
     "recall": [
       [
-        "Saturnalia",
-        "Rome's midwinter festival"
+        "emerald",
+        "keep your color, whatever others do"
       ],
       [
-        "teshuvah",
-        "turning back, repentance"
+        "Paulinus",
+        "friend Seneca wrote to on time well lived"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your sister",
+      "says": "I broke my streak again. Should I just give up on it?",
+      "options": [
+        "No. Marcus says skip the disgust, return, and count what went well.",
+        "Yes. A real Stoic who slips once has proven the habit isn't for them.",
+        "No, but start over from day one, since the missed day erased the rest."
+      ],
+      "answer": 0,
+      "meaning": "In book five Marcus says not to be disgusted at falling short: return, and be content if the greater part was done well."
+    },
+    "gloss": {
+      "Meditations": {
+        "meaning": "Marcus Aurelius's private notebook, written to himself"
+      },
+      "Marcus": {
+        "meaning": "Marcus Aurelius, Roman emperor and Stoic",
+        "say": "MAR-kus"
+      },
+      "Epictetus": {
+        "meaning": "a Stoic teacher who compared students to athletes who fall and rise",
+        "say": "ep-ik-TEE-tus"
+      }
+    }
   },
   "sources": [
     {
@@ -158,7 +187,9 @@
       "Meditations 5.9 paraphrased (be not disgusted, discouraged or dissatisfied; when beaten back, return; be content if the greater part of what you do is consistent with man's nature; love that to which you return). Confirm.",
       "Discourses 3.25: on not giving up after failure, athletic imagery (you can begin again). Confirm section; similar imagery in 4.9.",
       "'Return' as a traveler/student image is the writer's gloss, not a Greek etymology claim.",
-      "Review (y2 editor, days 670–688): replaced the writer's invented gloss on 'return' (traveler, student) with Marcus's own image in 5.9 (not a schoolmaster, but a remedy for sore eyes); Epictetus's athlete line brought closer to Discourses 3.25; cut 'more than once' and 'here's a surprise'."
+      "Review (y2 editor, days 670–688): replaced the writer's invented gloss on 'return' (traveler, student) with Marcus's own image in 5.9 (not a schoolmaster, but a remedy for sore eyes); Epictetus's athlete line brought closer to Discourses 3.25; cut 'more than once' and 'here's a surprise'.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

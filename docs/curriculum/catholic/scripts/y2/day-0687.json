@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, All Souls, candles on the graves and names read aloud. Your line was we remember. Where did you put your list of names? Day six hundred eighty-seven.",
+      "voice": "Yesterday, All Souls, candles on the graves and names read aloud. Your line was we remember.",
       "screen": [
         "`WE REMEMBER.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Quick question: what's the pope's cathedral? Most people say Saint Peter's. It's the biggest, it's where the pope says the big Masses, it's on every postcard. But it's the wrong answer. The pope is the bishop of Rome, and the bishop of Rome's cathedral is across the city, in a quieter neighborhood near the old walls: the Archbasilica of Saint John Lateran. Carved on its front, in Latin, is a claim no other church makes. And on the ninth of November, every Catholic parish in the world keeps the birthday of this one building.",
+      "voice": "Quick question: what's the pope's cathedral? Most people say Saint Peter's: it's the biggest, it's where the pope says the big Masses, it's on every postcard. But it's the wrong answer. The pope is the bishop of Rome, and the bishop of Rome's cathedral is across the city, in a quieter neighborhood near the old walls: the Archbasilica of Saint John Lateran. Carved on its front, in Latin, is a claim no other church makes. And on the ninth of November, every Catholic parish in the world keeps the birthday of this one building.",
       "screen": [
         "`NOT SAINT PETER'S.` → `THE BISHOP OF ROME'S CATHEDRAL.` → `A BIRTHDAY FOR A BUILDING.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "The land once belonged to a Roman family, the Laterani, and then to the emperor. After Constantine made Christianity legal, he gave the property to the bishop of Rome, and a basilica was built and dedicated in the early 300s, traditionally by Pope Sylvester. It was the first great public church in the city. For roughly a thousand years the popes lived next door, in the Lateran Palace, until they moved to Avignon in the 1300s. Five ecumenical councils met there. The full name is the Archbasilica of the Most Holy Savior and of Saints John the Baptist and John the Evangelist. And the inscription on the front calls it the mother and head of all the churches of the city and of the world. That's why the feast is kept everywhere. It isn't about Roman architecture. It's about belonging: every parish, in Lagos or Lima or Little Rock, is connected to this one, through its bishop, to the bishop of Rome. The feast ranks high enough that when the ninth of November falls on a Sunday, it replaces the ordinary Sunday. The Gospel for the day is Jesus driving the sellers out of the Temple, and the second reading is Paul's question to Corinth, in the Douay-Rheims: \"Know you not, that you are the temple of God, and that the Spirit of God dwelleth in you?\" The feast does what that line does. It honors a building, then turns around and says: the real building is the people.",
+      "voice": "The land once belonged to a Roman family, the Laterani, and then to the emperor. After Constantine made Christianity legal, he gave the property to the bishop of Rome, and a basilica was built and dedicated in the early 300s, traditionally by Pope Sylvester. It was the first great public church in the city. For roughly a thousand years the popes lived next door, in the Lateran Palace, until they moved to Avignon in the 1300s, and five ecumenical councils met there. The full name is the Archbasilica of the Most Holy Savior and of Saints John the Baptist and John the Evangelist. The inscription on the front calls it the mother and head of all the churches of the city and of the world. That's why the feast is kept everywhere. It isn't about Roman architecture; it's about belonging. Every parish, in Lagos or Lima or Little Rock, is connected to this one, through its bishop, to the bishop of Rome. The feast ranks high enough that when the ninth of November falls on a Sunday, it replaces the ordinary Sunday. The Gospel for the day is Jesus driving the sellers out of the Temple, and the second reading is Paul's question to Corinth, in the Douay-Rheims: \"Know you not, that you are the temple of God, and that the Spirit of God dwelleth in you?\" The feast does what that line does. It honors a building, then turns around and says: the real building is the people.",
       "screen": [
         "`THE LATERANI, THEN CONSTANTINE.` · `A THOUSAND YEARS OF POPES.` · `MOTHER AND HEAD OF ALL CHURCHES.` · `THE REAL BUILDING IS THE PEOPLE.` · then, large: `KNOW YOU NOT, THAT YOU ARE THE TEMPLE OF GOD?`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: hold your own parish church. Picture the building you know best, or the one nearest you: the doors, the smell, the light through the windows, where people usually sit. Then picture the people: the usher, the choir, the family that's always late, the old man in the back pew. If you pray, you can pray for that church and those people by name. If you don't belong to a parish, picture any community you belong to. The bell holds the time.",
+      "voice": "Picture the church you know best, or the one nearest you: the doors, the smell, the light through the windows. Then picture the people: the usher, the choir, the family that's always late, the old man in the back pew. If you pray, pray for that church and those people by name; if you don't belong to a parish, picture any community you belong to.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the mother church. Today, do one small thing for your own parish or community: a message to the pastor, a coin in the box, a thank-you to a volunteer. Day six hundred eighty-seven.",
+      "voice": "Your line: the mother church. Every parish, everywhere, is tied to it. Day six hundred eighty-seven, done.",
       "screen": []
     },
     {
@@ -132,14 +132,48 @@
     ],
     "recall": [
       [
-        "Yohanan",
-        "God has been gracious"
+        "solemnity",
+        "the highest rank of Catholic day"
       ],
       [
-        "Corpus Christi",
-        "the body of Christ"
+        "tabernacle",
+        "a tent: God dwelling with his people"
       ]
-    ]
+    ],
+    "guess": [
+      "the pope's own cathedral as bishop of Rome",
+      "the pope's summer home outside Rome",
+      "the basilica built over Saint Peter's tomb"
+    ],
+    "chat": {
+      "who": "your uncle",
+      "says": "Isn't Saint Peter's the pope's cathedral?",
+      "options": [
+        "No, it's Saint John Lateran, the bishop of Rome's cathedral, mother of all churches.",
+        "Yes, Saint Peter's became his cathedral when the popes came back from Avignon.",
+        "No, his cathedral is in Avignon, where the popes have lived since the 1300s."
+      ],
+      "answer": 0,
+      "meaning": "The pope is the bishop of Rome, and his cathedral is the Lateran, called the mother and head of all churches."
+    },
+    "gloss": {
+      "Laterani": {
+        "meaning": "the Roman family who once owned the land",
+        "say": "lah-teh-RAH-nee"
+      },
+      "Sylvester": {
+        "meaning": "the pope who, by tradition, dedicated the basilica",
+        "say": "sil-VES-ter"
+      },
+      "Avignon": {
+        "meaning": "the French city the popes moved to in the 1300s",
+        "say": "ah-veen-YOHN"
+      },
+      "ecumenical councils": {
+        "meaning": "gatherings of bishops from the whole Church",
+        "say": "ek-yoo-MEN-ih-kul KOWN-sulz"
+      }
+    }
   },
   "sources": [
     {
@@ -175,7 +209,9 @@
       "Five ecumenical (Lateran) councils: 1123, 1139, 1179, 1215, 1512–1517; confirm.",
       "The feast replaces a Sunday in Ordinary Time as a feast of the Lord (dedication of the cathedral of Rome); confirm.",
       "Inscription reads 'Sacrosancta Lateranensis ecclesia omnium urbis et orbis ecclesiarum mater et caput'; confirm.",
-      "Popes resided at the Lateran from the 4th century to 1309; 'roughly a thousand years' approximate."
+      "Popes resided at the Lateran from the 4th century to 1309; 'roughly a thousand years' approximate.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

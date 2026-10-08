@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Sinan the architect, the soldier who built bridges and then domes full of light. Your line was: the architect. What did you notice when you looked up? Day nine hundred eighty-six.",
+      "voice": "Yesterday: Sinan, the soldier who built bridges and then domes full of light. Your line was the architect.",
       "screen": [
         "`THE ARCHITECT.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: respect a community's own ways. Settle, and breathe. Think of a community near you whose ways are not yours: a church, a synagogue, a mosque, a temple, a gurdwara, or simply a neighborhood with customs you don't share. Bring to mind one thing they do that you don't fully understand: a fast, a holiday, a way of dressing, a way of mourning. Let yourself be curious about it. What does it protect for them? If you pray, you can ask to see them with respect. If you don't, simply hold the question. The bell holds the time.",
+      "voice": "Think of a community near you whose ways aren't yours, a church, a synagogue, a mosque, a temple, a gurdwara, and one thing they do that you don't fully understand: a fast, a holiday, a way of mourning. Be curious about it: what does it protect for them? If you pray, you can ask to see them with respect.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: each its own community. Today, learn one thing about how a neighboring community celebrates or mourns, and ask about it with respect. Day nine hundred eighty-six.",
+      "voice": "Your line: each its own community. Side by side, though not as equals. That's nine hundred eighty-six days.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "In Turkey today, the Greek Orthodox and Armenian patriarchates and a chief rabbinate still have their seats in Istanbul, a living trace of the Ottoman community arrangements.",
   "games": {
+    "guess": [
+      "an Ottoman religious community with its own leaders",
+      "a Turkish word for a busy neighborhood market",
+      "a protected subject who paid a special tax"
+    ],
     "match": {
       "prompt": "communities in the empire — tap the pairs.",
       "pairs": [
@@ -132,14 +137,50 @@
     ],
     "recall": [
       [
-        "Hafiz",
-        "opened at random at the table"
+        "Hagia Sophia",
+        "Greek for Holy Wisdom"
       ],
       [
-        "Ghazan",
-        "Mongol ruler of Persia who became Muslim"
+        "Djenné",
+        "the town of the great mud mosque"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your coworker",
+      "says": "So were Christians and Jews equal citizens in the Ottoman Empire?",
+      "options": [
+        "Not equal: protected, with their own courts, but taxed and under limits.",
+        "Yes: every community took its turn holding the empire's top offices.",
+        "No: they had no leaders of their own and no say over their own weddings."
+      ],
+      "answer": 0,
+      "meaning": "Christians and Jews were protected subjects with their own leaders and law, but paid the jizya and lived under limits Muslims did not."
+    },
+    "gloss": {
+      "millet": {
+        "meaning": "a religious community in the Ottoman Empire",
+        "script": "ملت",
+        "say": "mil-LET"
+      },
+      "milla": {
+        "meaning": "the Qur'an's word for a religion, a way of faith",
+        "script": "ملة",
+        "say": "MIL-la"
+      },
+      "dhimmis": {
+        "meaning": "protected non-Muslim subjects under Muslim rule",
+        "say": "DHIM-meez"
+      },
+      "jizya": {
+        "meaning": "a special tax paid by protected non-Muslims",
+        "script": "جزية",
+        "say": "JIZ-ya"
+      },
+      "patriarch": {
+        "meaning": "the head of an Orthodox or Armenian church",
+        "say": "PAY-tree-ark"
+      }
+    }
   },
   "sources": [
     {
@@ -165,7 +206,9 @@
       "Mehmed's restoration of the patriarchate (Gennadios Scholarios) and the Armenian patriarch and chief rabbi are stated without dates or names; a historian should confirm.",
       "The historiographical debate over the 'millet system' (e.g. its formalization mainly in the nineteenth century) is summarized; confirm fairness.",
       "The scope of communal autonomy (marriage, divorce, inheritance, worship, schools, charity) is general; confirm.",
-      "Pickthall 2:135 and 5:48 quoted (partial) from memory; confirm exact wording."
+      "Pickthall 2:135 and 5:48 quoted (partial) from memory; confirm exact wording.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Ibn al-Haytham: a dark room, a few lamps, and light coming into the eye. Your line was: test it. Which assumption did you test, and what happened? Day nine hundred twenty-six.",
+      "voice": "Yesterday, Ibn al-Haytham: a dark room, a few lamps, and light coming into the eye. Your line was: test it.",
       "screen": [
         "`TEST IT.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "It's night in a desert town. No clock on the wall, no phone in a pocket. A man steps into the courtyard holding a disk of brass, hung from a ring on his thumb. He lifts it to his eye, sights a bright star along a little bar on the back, and reads a mark on the rim. Then he turns the disk over and rotates a lacy brass cutout on the front until that star's pointer sits at the height he just read. And now he can read the hour. He can tell which way is north, and which way faces Makkah. A whole sky, folded into his hand. It is called the astrolabe.",
+      "voice": "It's night in a desert town. No clock on the wall, no phone in a pocket. A man steps into the courtyard holding a disk of brass, hung from a ring on his thumb. He lifts it to his eye, sights a bright star along a little bar on the back, and reads a mark on the rim. Then he turns the disk over and rotates a lacy brass cutout on the front until that star's pointer sits at the height he just read. Now he can read the hour. He can tell which way is north, and which way faces Makkah. A whole sky, folded into his hand. It's called the astrolabe.",
       "screen": [
         "`A BRASS DISK ON A THUMB RING.` → `SIGHT A STAR.` → `READ THE HOUR.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "The astrolabe is older than Islam; Greek writers described it. But in the Muslim world it was refined, written about and made beautiful. Here's how it works, in plain terms. On the back is a sighting bar. You use it to measure how high the sun or a star stands above the horizon. On the front is a plate engraved with lines for the latitude where you live, and over it turns an open brass web, often called in Arabic al-ankabut, the spider, with little pointers for bright stars. Set the spider so your star sits at the height you just measured, and the instrument shows you the time, and where the sky will be. The Qur'an says that God has set the stars for people so they may guide their way by them in the darkness of land and sea. For people who pray at set times and face the Kaaba in Makkah when they pray, that guidance mattered every single day. Some mosques kept a timekeeper, called the muwaqqit, whose work was to find the times of prayer from the sun and the stars. And makers took pride in the craft. Ibn al-Nadim, writing a catalog of books and scholars in Baghdad, names an astrolabe maker of Aleppo, a woman called al-Ijliya, who worked for its ruler. The brass is engraved with star names, some of them Arabic, and some of those names still sit on our star maps. The stars tell the time, if you know how to read them.",
+      "voice": "The astrolabe is older than Islam; Greek writers described it. But in the Muslim world it was refined, written about and made beautiful. On the back is a sighting bar, to measure how high the sun or a star stands above the horizon. On the front is a plate engraved with lines for the latitude where you live, and over it turns an open brass web, often called in Arabic al-ankabut, the spider, with little pointers for bright stars. Set the spider so your star sits at the height you just measured, and the instrument shows you the time, and where the sky will be. The Qur'an says that God has set the stars for people so they may guide their way by them in the darkness of land and sea. For people who pray at set times and face the Kaaba in Makkah, that guidance mattered every day. Some mosques kept a timekeeper, called the muwaqqit, whose work was to find the times of prayer from the sun and the stars. And makers took pride in the craft. Ibn al-Nadim, writing a catalog of books and scholars in Baghdad, names an astrolabe maker of Aleppo, a woman called al-Ijliya, who worked for its ruler. The brass is engraved with star names, some of them Arabic, and some of those names still sit on our star maps. The stars tell the time, if you know how to read them.",
       "screen": [
         "`OLDER THAN ISLAM, REFINED IN IT.` · `THE SIGHTING BAR AND THE SPIDER.` · `STARS SET FOR GUIDANCE.` · `THE TIMEKEEPER AND THE MAKERS.` · then, large: `THE STARS TELL THE TIME.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: find north. Settle, and breathe. If you know which way north is from where you're sitting, turn your face toward it now. If you don't, guess, and later check with a compass or the night sky. Breathe in. Feel the directions around you, north, east, south, west, as if you were standing in that courtyard with the brass disk. Breathe out. Tonight, if the sky is clear, step outside and look up for one minute. If you pray, you can bring to mind the direction you face in prayer. If you don't, just let the sky be big. The bell holds the time.",
+      "voice": "If you know which way north is from where you're sitting, turn your face toward it; if you don't, make a guess. Feel the directions around you, north, east, south, west, as if you stood in that courtyard with the brass disk. If you pray, you can bring to mind the direction you face in prayer; if not, just let the sky be big.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the stars tell the time. Today, look for the sun or the stars once, and guess the time before you check a clock. Day nine hundred twenty-six.",
+      "voice": "Your line: the stars tell the time. A whole sky, folded into a hand. Day nine hundred twenty-six, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Muslims pray at set times and face the Kaaba in Makkah, and astrolabes, along with the work of mosque timekeepers, were used to find the hour and the qiblah from the sun and stars.",
   "games": {
+    "guess": [
+      "a brass disk that reads the hour from a star's height",
+      "a telescope for seeing the planets up close",
+      "a sundial set in a mosque courtyard for prayer times"
+    ],
     "match": {
       "prompt": "the astrolabe — tap the pairs.",
       "pairs": [
@@ -132,14 +137,46 @@
     ],
     "recall": [
       [
-        "al-Khwarizmi",
-        "the man from Khwarazm"
+        "riddah",
+        "a turning back"
       ],
       [
-        "Bayt al-Hikmah",
-        "the House of Wisdom"
+        "mulk",
+        "kingship"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your little brother",
+      "says": "What could someone actually do with an astrolabe?",
+      "options": [
+        "Sight a star's height, then read the hour, north and the way to Makkah.",
+        "Look through it to see far-off stars and planets up close.",
+        "Weigh gold and silver coins in the market, like a fine scale."
+      ],
+      "answer": 0,
+      "meaning": "Set the spider so your star sits at the height you measured, and it shows the time, north and the direction of prayer."
+    },
+    "gloss": {
+      "al-ankabut": {
+        "meaning": "the spider: the astrolabe's open brass web of stars",
+        "script": "العنكبوت",
+        "say": "al-an-ka-BOOT"
+      },
+      "muwaqqit": {
+        "meaning": "a mosque timekeeper who found prayer times from the sky",
+        "script": "موقت",
+        "say": "mu-WAK-kit"
+      },
+      "Kaaba": {
+        "meaning": "the house in Makkah that Muslims face in prayer",
+        "script": "الكعبة",
+        "say": "KAA-ba"
+      },
+      "al-Ijliya": {
+        "meaning": "an astrolabe maker of Aleppo, named by Ibn al-Nadim",
+        "say": "al-ij-LEE-ya"
+      }
+    }
   },
   "sources": [
     {
@@ -170,7 +207,9 @@
       "Qur'an 6:97 and 2:144 paraphrased; Pickthall wording could be quoted if confirmed.",
       "The muwaqqit as an institution grew later than the Abbasid period; 'some mosques kept' is left undated. Confirm.",
       "Tomorrow covers why astronomy served prayer; today touches the qiblah only as the index hook requires.",
-      "Editor: fixed the hook's description of setting the rete (the star's pointer is set to the measured height, matching the teach)."
+      "Editor: fixed the hook's description of setting the rete (the star's pointer is set to the measured height, matching the teach).",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

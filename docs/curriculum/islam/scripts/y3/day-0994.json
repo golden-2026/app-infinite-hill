@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the Taj Mahal: a tomb for love, framed with verses about the soul returning to its Lord. Your line was: a tomb for love. Whose name did you say aloud? Day nine hundred ninety-four.",
+      "voice": "Yesterday: the Taj Mahal, framed with verses about the soul's return. Your line was a tomb for love.",
       "screen": [
         "`A TOMB FOR LOVE.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: think about brothers who disagree, or sisters, or friends. Settle, and breathe. Bring to mind two people you love who see faith or life very differently. Maybe one of them is you. Don't decide who's right. Notice what each one is holding onto, and what they're afraid of losing. Then think about this week's road: Isfahan's turning mosque, the sandy place in Samarkand, the astronomer king, the open kitchen, Babur's garden, the Taj. If you pray, you can pray for the people you love who disagree. If you don't, simply hold them both. The bell holds the time.",
+      "voice": "Bring to mind two people you love who see faith or life very differently; maybe one of them is you. Don't decide who's right: notice what each is holding onto, and what each is afraid of losing. If you pray, you can pray for them both; if not, simply hold them both.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: two brothers, two paths. That closes Persia, the Turks and the great empires. Tomorrow the road turns east, to Southeast Asia. Today, ask one person you disagree with a real question, and listen to the answer. Day nine hundred ninety-four.",
+      "voice": "Your line: two brothers, two paths. That closes Persia, the Turks and the great empires, from Isfahan's turning mosque to the Taj; tomorrow the road turns east, to Southeast Asia. Day nine hundred ninety-four, and a new coast ahead.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Muslims remember Aurangzeb and Dara Shikoh in different ways: some honor Aurangzeb's personal piety and his sponsorship of Islamic law, some honor Dara Shikoh's Sufi search, and historians continue to debate both.",
   "games": {
+    "guess": [
+      "a prince who sought where the two seas meet",
+      "the soldier son who won the Mughal throne",
+      "a Sufi master in Delhi who fed the poor"
+    ],
     "match": {
       "prompt": "two brothers — tap the pairs.",
       "pairs": [
@@ -132,14 +137,49 @@
     ],
     "recall": [
       [
-        "Hagia Sophia",
-        "Greek for Holy Wisdom"
+        "The Mughals",
+        "Babur's dynasty in South Asia"
       ],
       [
-        "Osman",
-        "the founder the Ottomans are named for"
+        "Constantinople",
+        "the Byzantine capital, later Istanbul"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your study partner",
+      "says": "Who was Dara Shikoh, and why do people still talk about him?",
+      "options": [
+        "A Mughal prince who had the Upanishads translated, lost the war for the throne, and was executed.",
+        "A Mughal emperor who ruled in peace for decades after his brother stepped aside.",
+        "A Hindu king who defeated Aurangzeb and then kept the Mughal throne himself."
+      ],
+      "answer": 0,
+      "meaning": "Dara Shikoh studied with Sufis and Hindu scholars, translated the Upanishads into Persian, and was put to death after Aurangzeb won the war."
+    },
+    "gloss": {
+      "Dara Shikoh": {
+        "meaning": "Shah Jahan's son, a Sufi scholar-prince",
+        "script": "دارا شکوه",
+        "say": "DAA-raa shi-KOH"
+      },
+      "Aurangzeb": {
+        "meaning": "Shah Jahan's son who won the throne",
+        "say": "aw-rung-ZEB"
+      },
+      "Upanishads": {
+        "meaning": "Hindu scriptures Dara had translated into Persian",
+        "say": "oo-PAN-i-shadz"
+      },
+      "Majma al-Bahrayn": {
+        "meaning": "the meeting place of the two seas: Dara's book",
+        "script": "مجمع البحرين",
+        "say": "MAJ-ma al-bah-RAYN"
+      },
+      "Qadiri": {
+        "meaning": "the Sufi path Dara Shikoh followed",
+        "say": "QAA-di-ree"
+      }
+    }
   },
   "sources": [
     {
@@ -166,7 +206,9 @@
       "Editor pass: cut the garbled closing line 'The Mughal story asks both questions, and doesn't settle them' (no questions had been posed); replaced the 'everyone remembers Aurangzeb the same way' myth, a repeat of the 'everyone/all agree' pattern on days 982, 986 and 991, with one on Dara working with Hindu scholars.",
       "Majma al-Bahrayn echoing Qur'an 18:60 (majma' al-bahrayn): confirm. Pickthall 18:60 quoted from memory; confirm wording ('two rivers').",
       "Week-end look back (988-994) in the practice; part end (Persia, the Turks and the great empires, 977-994) named in the carry.",
-      "Audit (2026-10-01): read in full against days 977-986; no factual, translation, framing or repetition problems found; no changes."
+      "Audit (2026-10-01): read in full against days 977-986; no factual, translation, framing or repetition problems found; no changes.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

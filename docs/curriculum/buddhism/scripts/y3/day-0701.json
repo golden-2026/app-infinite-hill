@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, life in the palace, and your line: a father's fear. Did you find the love inside someone's grip? Today the prince asks to go outside. Day seven hundred one.",
+      "voice": "Yesterday: life in the palace, every comfort arranged by a king afraid his son will leave. Your line: a father's fear.",
       "screen": [
         "`A FATHER'S FEAR.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Orders go out across the city. Sweep the royal road. Hang garlands. Set out banners and flowers. And one more order, the strange one: anyone old, anyone sick, anyone suffering, keep them off the road today. The prince has heard about the gardens outside the walls and asked to see them, and the king has said yes, on one condition. The world his son sees will be a world with the hard parts taken out. By the time the chariot rolls through the gate, the street is perfect. Faces at every window. Not a single bent back in sight.",
+      "voice": "Orders go out across the city. Sweep the royal road. Hang garlands. Set out banners and flowers. And one more order, the strange one: anyone old, anyone sick, anyone suffering, keep them off the road today. The prince has asked to see the gardens outside the walls, and the king, Shuddhodana, has said yes, on one condition. The world his son sees will have the hard parts taken out. By the time the chariot rolls through the gate, the street is perfect. Faces at every window. Not a single bent back in sight.",
       "screen": [
         "`SWEEP THE ROAD. HANG GARLANDS.` → `KEEP THE OLD AND SICK AWAY.` → `A PERFECT STREET.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the crowd. The poem spends time on the city's excitement. People hurry to rooftops and windows to catch sight of the prince going by, and they look at him with delight. It's a parade. And for a moment the king's plan seems to work. Second, the gap. The road has been cleared. Nobody old should be there. So the poem says the gods of the pure abodes made one: an old man appears in the prince's path, bent over, white-haired, leaning on a stick. The wall the king built was solid. Something came through it anyway. Third, the question. The prince turns to his charioteer and asks what this is. A man who looks like that, what happened to him? The charioteer answers simply: this is old age. It takes beauty and strength and memory. This man was a child once, and grew, and this is where the years have brought him. Then the question that matters. Will this happen to me? The answer is yes. To you, and to everyone. Fourth, the unease. In the poem the prince is shaken to the core. He can't enjoy the gardens. He asks to turn back. So here's the turn the poem is making. The king's whole plan was about keeping things out. The poem's answer is that some truths don't need permission. The road was cleared, and it got through.",
+      "voice": "First, the crowd. People hurry to rooftops and windows to catch sight of the prince going by, and they look at him with delight. It's a parade, and for a moment the king's plan seems to work. Second, the gap. The road has been cleared; nobody old should be there. So the poem says the gods of the pure abodes made one: an old man appears in the prince's path, bent over, white-haired, leaning on a stick. The wall the king built was solid. Something came through it anyway. Third, the question. The prince turns to his charioteer and asks what this is. The charioteer answers simply: this is old age. It takes beauty and strength and memory. This man was a child once, and grew, and this is where the years have brought him. Then the question that matters. Will this happen to me? The answer is yes. To you, and to everyone. Fourth, the unease. The prince is shaken to the core. He can't enjoy the gardens, and asks to turn back. The king's whole plan was about keeping things out. The poem's answer is that some truths don't need permission.",
       "screen": [
         "`A CITY AT ITS WINDOWS.` · `THE GODS PLACE AN OLD MAN.` · `WILL THIS HAPPEN TO ME?` · `SOME TRUTHS DON'T NEED PERMISSION.` · then, large: `IT GETS THROUGH ANYWAY.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: look at your own hands. Settle, and breathe. Turn your hands over slowly and look at them as if for the first time. The lines at the knuckles. The creases of the palm. Any scar, any spot. These hands were small once. They will change again. Ask the prince's question quietly, without fear: will this happen to me? Let the honest answer be there, and keep breathing beside it. The bell holds the time.",
+      "voice": "Turn your hands over slowly and look at them as if for the first time: the lines at the knuckles, the creases of the palm, any scar, any spot. These hands were small once, and they will change again. Ask the prince's question quietly, without fear, will this happen to me, and keep breathing beside the honest answer.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: it gets through anyway. Today, when a hard truth slips past your defenses, let it finish speaking before you turn the chariot around. Day seven hundred one.",
+      "voice": "Your line: it gets through anyway. The road was cleared, and old age still found it. Day seven hundred one.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Buddhist teachers return to the sights of old age, sickness and death when teaching impermanence, and the scenes are painted on temple walls and told to children in Buddhist communities.",
   "games": {
+    "guess": [
+      "what time brings to everyone, prince included",
+      "an illness that strikes only the unlucky",
+      "a punishment the gods send to one man"
+    ],
     "match": {
       "prompt": "the first sight in the poem: tap the pairs.",
       "pairs": [
@@ -128,14 +133,38 @@
     ],
     "recall": [
       [
-        "Pavarana",
-        "the invitation at the rains' end"
+        "phena",
+        "foam, the picture for the body"
       ],
       [
-        "vassa",
-        "rain, and a monk's year"
+        "Kalama",
+        "the clan who asked whom to trust"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your nephew",
+      "says": "What did the prince learn when he saw the old man on the road?",
+      "options": [
+        "That aging comes to everyone, and one day it would come to him.",
+        "That the old man was a beggar the king had failed to help.",
+        "That the old man was sick, and needed a doctor right away."
+      ],
+      "answer": 0,
+      "meaning": "The charioteer names it old age: it takes beauty, strength and memory, and it comes to everyone, the prince included."
+    },
+    "gloss": {
+      "Shuddhodana": {
+        "meaning": "the king, the prince's father",
+        "script": "शुद्धोदन",
+        "say": "shood-DHOH-duh-nuh"
+      },
+      "pure abodes": {
+        "meaning": "high heavens; in the poem their gods make the old man appear"
+      },
+      "charioteer": {
+        "meaning": "the prince's driver, who answers his questions"
+      }
+    }
   },
   "sources": [
     {
@@ -153,7 +182,9 @@
       "Confirm in Cowell canto 3: the king's order to clear the road of the afflicted; the crowds at windows and rooftops; the Shuddhadhivasa gods creating the old man; the charioteer's explanation and 'will this happen to me'; the prince's reaction (the 'thunder' simile is a paraphrase guess; Cowell may have the prince trembling 'like a bull at a thunderbolt' or similar; confirm or remove) and his turning back.",
       "Pali spelling in the trapdoor: suddhavasa (Pali) / shuddhavasa or shuddhadhivasa (Sanskrit); confirm the form.",
       "Some Pali commentarial tellings also have gods create the sights; the script does not claim the poem is unique in this.",
-      "Editor: invented 'before dawn' cut; uncertain thunder simile cut; the gods-as-wonder-or-picture angle (repeated from days 697 and 698) cut; practice changed from 'notice what you've been shielded from' (a repeat of day 700's practice) to looking at one's own hands; carry reworded so it no longer matches day 702's 'ask it one honest question'."
+      "Editor: invented 'before dawn' cut; uncertain thunder simile cut; the gods-as-wonder-or-picture angle (repeated from days 697 and 698) cut; practice changed from 'notice what you've been shielded from' (a repeat of day 700's practice) to looking at one's own hands; carry reworded so it no longer matches day 702's 'ask it one honest question'.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

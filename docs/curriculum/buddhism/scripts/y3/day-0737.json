@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the teacher had died, and Ananda wept, still unawakened. Your line was soon, not now. Were you patient with yourself somewhere, even once? Tonight the council is one day away, and Ananda is still not there. Day seven hundred thirty-seven.",
+      "voice": "Yesterday: not yet. The teacher had died, and Ananda wept, still a learner. Your line was soon, not now. Tonight the council is one day away.",
       "screen": [
         "`SOON, NOT NOW.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A deadline, and a sacred one. The elders are gathering at Rajagaha to recite the teaching together, and in the Vinaya's account every one of them has already reached the end of the path. Every one except Ananda. He's the man who walked beside the Buddha, carried his water, heard the discourses day after day. And he hasn't arrived. So on the last night he does the obvious thing with a deadline. He works. He practices hard, attending to the body, hour after hour, pushing at a door that won't open. Then, toward dawn, he stops pushing. He decides to lie down. Today is about what happens in that small space, between standing and lying.",
+      "voice": "A deadline, and a sacred one. The elders are gathering at Rajagaha to recite the teaching together, and in the Vinaya's account every one of them has already reached the end of the path. Every one except Ananda: the man who walked beside the Buddha, carried his water, heard the discourses day after day. So on the last night he does the obvious thing with a deadline. He works, attending to the body hour after hour, pushing at a door that won't open. Then, toward dawn, he stops pushing. He decides to lie down.",
       "screen": [
         "`A COUNCIL TOMORROW.` → `EVERYONE ARRIVED BUT ONE.` → `HE PUSHES ALL NIGHT.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the push. The Vinaya says Ananda spent much of that night in mindfulness of the body. This isn't a lazy man looking for a shortcut. It's a careful one, doing the practice the way he was taught. And still, by effort alone, nothing gives. Second, the letting go. Toward dawn he thinks: let me lie down. He isn't quitting the path. He's setting down the strain. A later commentary adds a reason. It says he saw that his effort had grown too tight, and he eased it. Third, the moment itself. He leans his body toward the bed. And the text says that before his head reached the pillow, and while his feet had not yet left the ground, his mind was freed. Not sitting. Not walking. Not lying down. Somewhere in between. It's a detail worth staying with: the thing he had chased for so long came in a moment that doesn't even have a name. Fourth, what it says to an ordinary evening. Ananda didn't stop practicing. He had practiced for a long time, and that practice was the ground under his feet. What he stopped was the clutching. The story doesn't say effort is useless. It says effort can tighten into a fist, and a closed fist can't receive anything. In the morning, the account goes on, he took his place among the elders as one of them.",
+      "voice": "First, the push. The Vinaya says Ananda spent much of that night in mindfulness of the body. This isn't a lazy man looking for a shortcut; it's a careful one, practicing the way he was taught. And still, by effort alone, nothing gives. Second, the letting go. Toward dawn he thinks: let me lie down. He isn't quitting the path, only setting down the strain. A later commentary adds a reason: he saw that his effort had grown too tight, and he eased it. Third, the moment itself. He leans his body toward the bed, and the text says that before his head reached the pillow, while his feet had not yet left the ground, his mind was freed. Not sitting, not walking, not lying down. Somewhere in between. The thing he had chased so long came in a moment that doesn't even have a name. Fourth, what it says. Ananda didn't stop practicing; his long practice was the ground under his feet. What he stopped was the clutching. The story doesn't say effort is useless. It says effort can tighten into a fist, and a closed fist can't receive anything. In the morning, the account goes on, he took his place among the elders as one of them.",
       "screen": [
         "`HE PUSHED ALL NIGHT.` · `HE LET GO, AND LAY DOWN.` · `BEFORE HIS HEAD TOUCHED THE PILLOW.` · `EFFORT, WITHOUT THE FIST.` · then, large: `BETWEEN STANDING AND LYING.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: stop straining, for once. Settle where you are, and notice where you're pushing right now. The jaw. The shoulders. The space between the eyebrows. Maybe even the breath, being managed. Let one of those go, the way Ananda let himself lie down. You're not giving anything up. You're only setting down the extra. If you catch yourself working hard at relaxing, notice that too, and smile at it. Then stay with the breath as it is, without trying to improve it. The bell holds the time.",
+      "voice": "Notice where you're pushing right now: the jaw, the shoulders, the space between the eyebrows, maybe even the breath, being managed. Let one of those go, the way Ananda let himself lie down; you're only setting down the extra, and if you catch yourself working hard at relaxing, smile at it. Then stay with the breath as it is, without trying to improve it.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: before his head reached the pillow. Today, when you catch yourself straining at something that won't move, put it down for one breath, and see what comes into the gap. Day seven hundred thirty-seven.",
+      "voice": "Your line: before his head reached the pillow. What he chased came when the clutching stopped. Rest easy.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Teachers in several Buddhist traditions tell Ananda's last night as a story about balanced effort, and recall it for students whose practice has grown tight and forced.",
   "games": {
+    "guess": [
+      "one who has reached the end of the path",
+      "a senior monk who presides at a council",
+      "a monk who keeps the strictest practices"
+    ],
     "match": {
       "prompt": "Ananda's last night: tap the pairs.",
       "pairs": [
@@ -132,14 +137,47 @@
     ],
     "recall": [
       [
-        "Sariputta",
-        "keeps the wheel rolling"
+        "Mahapajapati",
+        "the first woman ordained"
       ],
       [
-        "Chandaka",
-        "weeps and begs to stay"
+        "kalyanamitta",
+        "a good or lovely friend"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your coworker",
+      "says": "Did Ananda awaken because he finally pushed hard enough?",
+      "options": [
+        "No: he'd practiced hard, but release came when he set the strain down.",
+        "Yes: he pushed all night, and the effort itself broke through at dawn.",
+        "No: he gave up the path that night, and freedom came by itself."
+      ],
+      "answer": 0,
+      "meaning": "He practiced hard all night, but his mind was freed as he lay down, when the clutching stopped. The practice was the ground; the strain was what he set down."
+    },
+    "gloss": {
+      "Arahant": {
+        "meaning": "one who has reached the end of the path",
+        "script": "अरहन्त",
+        "say": "uh-ruh-HUN-tuh"
+      },
+      "Ananda": {
+        "meaning": "the Buddha's attendant, still a learner when the Buddha died",
+        "script": "आनन्द",
+        "say": "AH-nun-duh"
+      },
+      "Rajagaha": {
+        "meaning": "the city where the elders gathered for the council",
+        "script": "राजगह",
+        "say": "RAH-juh-guh-huh"
+      },
+      "Vinaya": {
+        "meaning": "the books of monastic discipline, which tell of the council",
+        "script": "विनय",
+        "say": "VIN-uh-yuh"
+      }
+    }
   },
   "sources": [
     {
@@ -167,7 +205,9 @@
       "'In the morning he took his place among the elders': commentaries embellish his arrival (e.g. appearing through the earth); kept plain.",
       "Original: अरहन्त (arahant); confirm Devanagari form and pronunciation guide.",
       "Editor: softened 'of the holiest kind' and 'some teachers like this detail best of all' (unsourced superlatives); replaced the myth item 'Ananda was already awakened' because day 736 used nearly the same item.",
-      "Auditor: the Vinaya times the moment 'toward dawn' (rattiya paccusasamayam), not 'late in the night'; corrected in the hook, teach, match pair and fork."
+      "Auditor: the Vinaya times the moment 'toward dawn' (rattiya paccusasamayam), not 'late in the night'; corrected in the hook, teach, match pair and fork.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

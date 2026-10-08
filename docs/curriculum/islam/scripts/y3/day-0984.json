@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Hagia Sophia: Holy Wisdom, a church, a mosque, a museum and a mosque again. Your line was: a building many love. Did you hear what each side loves? Day nine hundred eighty-four.",
+      "voice": "Yesterday: Hagia Sophia, Holy Wisdom, and your line, a building many love.",
       "screen": [
         "`A BUILDING MANY LOVE.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: keep one rule fairly. Settle, and breathe. Think of a rule you're in charge of: at home, at work, in a team, with your kids, with yourself. Bedtime. Screen time. Who does the dishes. Who gets the last word in a meeting. Ask one honest question: do I keep this rule the same for everyone, including me? Pick one rule to keep evenly today, even against yourself. If you pray, you can ask for a fair heart. If you don't, simply pick the rule. The bell holds the time.",
+      "voice": "Think of one rule you're in charge of, at home, at work, with your kids or with yourself: bedtime, screen time, who does the dishes. Ask one honest question: do I keep this rule the same for everyone, including me? If you pray, you can ask for a fair heart.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the lawgiver. Today, keep one rule fairly, the same for everyone, and notice if it costs you. Day nine hundred eighty-four.",
+      "voice": "Your line: the lawgiver. Staunch in justice, even against yourself. Day nine hundred eighty-four, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "In Turkey, Suleyman is known as Kanuni, the Lawgiver, and Muslim scholars still distinguish between the sharia and the laws a ruler issues on matters the sharia leaves open.",
   "games": {
+    "guess": [
+      "a ruler's law, issued where the sharia left room",
+      "the Ottoman name for God's law, the sharia",
+      "the chief mufti's ruling on a single case"
+    ],
     "match": {
       "prompt": "Suleyman the Lawgiver — tap the pairs.",
       "pairs": [
@@ -132,14 +137,50 @@
     ],
     "recall": [
       [
-        "Hafiz",
-        "opened at random at the table"
+        "Osman",
+        "the founder the Ottomans are named for"
       ],
       [
-        "Ghazan",
-        "Mongol ruler of Persia who became Muslim"
+        "Ibn Battuta",
+        "Moroccan traveler who wrote the Rihla"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your sister",
+      "says": "Couldn't an Ottoman sultan just change Islamic law whenever he wanted?",
+      "options": [
+        "No. He couldn't change the sharia; his kanun covered matters it left open.",
+        "Yes. Kanun was the sultan's power to rewrite the sharia when needed.",
+        "No. Sultans made no laws at all; judges alone decided every matter."
+      ],
+      "answer": 0,
+      "meaning": "The sultan could not change the sharia; kanun was his decrees on things it left open, like land, taxes and officials."
+    },
+    "gloss": {
+      "Kanun": {
+        "meaning": "law, specifically the law a ruler issues",
+        "script": "قانون",
+        "say": "kaa-NOON"
+      },
+      "sharia": {
+        "meaning": "God's law as worked out by Muslim scholars",
+        "script": "شريعة",
+        "say": "sha-REE-a"
+      },
+      "mufti": {
+        "meaning": "a scholar who gives rulings on Islamic law",
+        "script": "مفتي",
+        "say": "MUF-tee"
+      },
+      "Ebussuud Efendi": {
+        "meaning": "Suleyman's chief mufti",
+        "say": "eh-boos-soo-OOD eh-fen-DEE"
+      },
+      "Muhibbi": {
+        "meaning": "Suleyman's pen name as a poet: the loving one",
+        "say": "mu-hib-BEE"
+      }
+    }
   },
   "sources": [
     {
@@ -160,7 +201,9 @@
       "Ebussuud Efendi's role as chief mufti (Shaykh al-Islam) harmonizing kanun and sharia is stated generally; confirm.",
       "Suleyman's pen name Muhibbi and its gloss 'the loving one'; confirm.",
       "The execution of his son (Mustafa) is mentioned without detail; confirm the tone is fair.",
-      "Pickthall 4:135 quoted (partial) from memory; confirm exact wording."
+      "Pickthall 4:135 quoted (partial) from memory; confirm exact wording.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {
