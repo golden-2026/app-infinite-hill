@@ -1,0 +1,95 @@
+{
+  "format": "ih-lesson/1",
+  "door": "CATHOLIC",
+  "day": 1222,
+  "title": "Keepers of the Holy Land",
+  "word": "Keepers of the Holy Land",
+  "hook": "brown-robed friars who keep watch over the places of Jesus's life, and the walk they brought home",
+  "carry": "the custody",
+  "length": "7:00",
+  "tomorrow": "The Capuchins (1528)",
+  "segments": [
+    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-THOUSAND-TWO-HUNDRED-TWENTY-TWO.`"] },
+    {
+      "type": "review",
+      "duration": "20 sec",
+      "voice": "Yesterday, the Franciscan crown: a rosary that walks through Mary's joys instead of her sorrows. Your line was seven joys. Which one stayed with you? Day one thousand two hundred twenty-two.",
+      "screen": ["`SEVEN JOYS.`"]
+    },
+    {
+      "type": "the hook",
+      "duration": "50 sec",
+      "voice": "A brown habit. A rope belt with knots in it. Sandals. That outfit belongs to Assisi, to Francis and his brothers walking the Italian hills. But you can also meet it in the narrow stone streets of Jerusalem, in Bethlehem, in Nazareth, on a friar who isn't visiting. He lives there. He sweeps the floor of a shrine, unlocks a door for pilgrims at dawn, and sings the hours in a chapel built over a place from the Gospels. Tradition says the brothers of Francis have kept watch over these places for centuries. Today, those keepers, and the walk they taught the rest of the Church to take at home.",
+      "screen": ["`A BROWN HABIT, A ROPE BELT.` → `IN JERUSALEM, NOT ASSISI.` → `HE ISN'T VISITING. HE LIVES THERE.`"]
+    },
+    {
+      "type": "the teach",
+      "duration": "2 min 15",
+      "voice": "The friars call their charge the Custody of the Holy Land, and the brother who leads them is called the Custos, the keeper. The job is plain and endless: care for the shrines, pray in them, and welcome the pilgrims who arrive with sore feet. Some of the holiest places are not theirs alone. At the church over Calvary and the empty tomb, several Christian churches share the building, Orthodox and Armenian and others alongside the Catholics, each keeping its own corners and its own hours. So part of keeping the Holy Land is keeping the peace in it. Then there's the walk. In Jerusalem, pilgrims wanted to follow the road Jesus took to the cross, stopping to pray along the way. Luke tells one of those stops. Women follow him, weeping, and he turns to them. In the Douay-Rheims: \"Daughters of Jerusalem, weep not over me; but weep for yourselves, and for your children.\" Here is the problem. Not everyone can get to that street. So the walk was carried home. The friars helped spread the Stations of the Cross: a series of crosses or pictures on a church wall, so a grandmother in a village could walk the road to Calvary in her own parish. A surprise on that wall: some of the stops come straight from the Gospels, like Simon of Cyrene taking up the cross, and some come from tradition, like Veronica wiping his face. The Gospels never mention her. The Stations hold both, and the friars kept both.",
+      "screen": ["`THE CUSTODY: KEEP, PRAY, WELCOME.` · `HOLY PLACES SHARED WITH OTHER CHURCHES.` · `A WALK THROUGH JERUSALEM'S STREETS.` · `THE WALK CARRIED HOME TO EVERY PARISH.` · then, large: `DAUGHTERS OF JERUSALEM, WEEP NOT OVER ME.`"]
+    },
+    {
+      "type": "the practice",
+      "duration": "2 min 30",
+      "voice": "Here's the practice: walk a few stations where you are. Stand up if you can. Take a few slow steps and stop. Bring to mind Jesus being handed over to die. Breathe. Take a few more steps and stop. Bring to mind Simon, a stranger pulled out of the crowd to carry the cross. Breathe. A few more steps, and stop. Bring to mind the women on the road, and the words he said to them. If you pray, you can say an Our Father at the last stop. If not, just stand still and let the road be quiet. The bell holds the time.",
+      "screen": []
+    },
+    {
+      "type": "the word",
+      "duration": "25 sec",
+      "voice": "Keepers of the Holy Land. The friars in brown who care for the places of Jesus's life, and who helped carry his road home to every parish. Today's word.",
+      "screen": ["`KEEPERS OF THE HOLY LAND — today's word`."]
+    },
+    {
+      "type": "the carry",
+      "duration": "15 sec",
+      "voice": "Your line: the custody. Today, take custody of one small place, a shelf, a doorstep, a corner of a room, and care for it as if someone holy had stood there. Day one thousand two hundred twenty-two.",
+      "screen": []
+    },
+    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 1222 COUNTS.` → `TOMORROW: THE CAPUCHINS (1528).`"] }
+  ],
+  "howItsDone": "Catholics pray the Stations of the Cross in parish churches, especially on the Fridays of Lent, walking or turning from one station to the next; in Jerusalem, Franciscan friars lead the walk through the streets of the old city.",
+  "games": {
+    "match": {
+      "prompt": "the keepers — tap the pairs.",
+      "pairs": [["the Custos", "the friar who leads the custody"], ["Simon of Cyrene", "a stop that comes from the Gospels"], ["Veronica", "a stop that comes from tradition"], ["the Stations", "Jerusalem's walk carried home"]]
+    },
+    "myth": [
+      ["the friars keep the church of the tomb all by themselves", false, "several Christian churches share it, Orthodox and Armenian among them, each with its own corners and hours."],
+      ["every stop on the Stations of the Cross comes from the Gospels", false, "some do, like Simon of Cyrene. Veronica comes from tradition; the Gospels never mention her."],
+      ["the Stations were spread so people far from Jerusalem could walk the road too", true, "the walk was carried home, so a village parish could follow the road to Calvary."]
+    ],
+    "fork": {
+      "setup": "you long to walk the road Jesus took to the cross, but you will never get to Jerusalem. what do you do?",
+      "options": ["give up: it only counts in Jerusalem.", "send someone else to walk it for you.", "walk the Stations on your own parish church's walls."],
+      "answer": 2,
+      "reveal": "that's what the Stations are for. the friars helped carry Jerusalem's walk home, so anyone could take it in their own church."
+    },
+    "original": { "script": "Custodia Terrae Sanctae", "say": "koo-STOH-dee-ah TEH-reh SAHNK-teh", "note": "Latin: the Custody of the Holy Land, the friars' name for their charge." },
+    "trapdoor": [
+      "what you thought: the Stations of the Cross are pictures on a church wall.",
+      "what it means: a walk. pilgrims in Jerusalem followed Jesus's road to the cross, and the friars helped bring that walk home.",
+      "what a scholar hears: the Stations mix Gospel scenes, like the weeping women of Luke 23, with stops from tradition, like Veronica, whom the Gospels never name."
+    ]
+  },
+  "sources": [
+    { "ref": "Luke 23:28", "work": "The Bible", "translation": "Douay-Rheims (Challoner)", "quoted": "Daughters of Jerusalem, weep not over me; but weep for yourselves, and for your children." },
+    { "ref": "Luke 23:26–27", "work": "The Bible", "translation": null, "quoted": null },
+    { "ref": "The Custody of the Holy Land and the Stations of the Cross (history of the devotion)", "work": "Franciscan and Catholic tradition", "translation": null, "quoted": null }
+  ],
+  "review": {
+    "status": "pending",
+    "keeper": null,
+    "notes": [
+      "Claims rule: the index hook's date (1342, the papal recognition of the Franciscan custody under Clement VI) is left out of the voice; the voice says only 'tradition says ... for centuries'. Confirm that phrasing.",
+      "Confirm: the head of the Custody is called the Custos; friars of the Custody serve shrines in Jerusalem, Bethlehem and Nazareth.",
+      "Confirm the fair description of the Church of the Holy Sepulchre as shared by several churches (Greek Orthodox, Armenian Apostolic, Catholic via the Franciscans, with Coptic, Ethiopian and Syriac presences) without counts.",
+      "The Franciscan role in spreading the Stations is taken from the index hook (e.g., St. Leonard of Port Maurice in the 18th century; the indulgence attached to Stations erected by Franciscans). Stated generally; confirm.",
+      "Veronica and Jesus's falls are not in the canonical Gospels; Simon of Cyrene (Luke 23:26) and the women of Jerusalem (Luke 23:27–31) are. Confirm.",
+      "Douay-Rheims wording of Luke 23:28 to confirm.",
+      "howItsDone: confirm the Franciscan-led Way of the Cross through the old city (commonly on Fridays).",
+      "Editor pass: cut the stock phrase 'full hearts' from the teach; checked Luke 23:28 wording, word, carry and neighbors. The 'brown habit, rope belt' image is kept here and removed from the hooks of 1223 and 1227 to avoid repetition."
+    ]
+  },
+  "meta": { "index": "1222. Keepers of the Holy Land · — · Franciscans have cared for the holy places since 1342 and spread the Stations · walk the Stations · the custody", "writer": "writer agent (catholic 1222–1231)", "written": "2026-10-01" }
+}

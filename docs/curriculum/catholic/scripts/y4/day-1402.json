@@ -1,0 +1,96 @@
+{
+  "format": "ih-lesson/1",
+  "door": "CATHOLIC",
+  "day": 1402,
+  "title": "Bells",
+  "word": "Bells",
+  "hook": "church bells call to Mass, ring the Angelus and toll for the dead",
+  "carry": "the bell calls",
+  "length": "7:00",
+  "tomorrow": "Many customs",
+  "segments": [
+    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-THOUSAND-FOUR-HUNDRED-TWO.`"] },
+    {
+      "type": "review",
+      "duration": "20 sec",
+      "voice": "Yesterday, processions: a statue, a candle, a crowd, and the church walking out its own front door. Your line was faith in the streets. Did a prayer get to go for a walk with you? Day one thousand four hundred two.",
+      "screen": ["`FAITH IN THE STREETS.`"]
+    },
+    {
+      "type": "the hook",
+      "duration": "50 sec",
+      "voice": "Noon on a weekday. In a town square, a bell starts up in the church tower: a few strokes, a pause, a few more. A woman at a café table sets her cup down. A man unloading a van stops with a box in his arms, just for a moment. Others keep walking. The bell rings either way. The painter Jean-François Millet caught the same moment in a field, in a canvas called The Angelus: two farm workers, a pitchfork and a basket at their feet, heads bowed while a far-off steeple rings. A bell is an odd thing to build a tower for. It can't say a single word. It can only call. Today, bells.",
+      "screen": ["`NOON. A BELL IN THE TOWER.` → `A CUP SET DOWN.` → `IT CAN ONLY CALL.`"]
+    },
+    {
+      "type": "the teach",
+      "duration": "2 min 15",
+      "voice": "A bell in a tower can't preach or explain. In a Catholic parish it has jobs anyway. It calls people to Mass. When it rings before the liturgy, everyone within earshot knows the doors are open and the people are gathering. It rings the Angelus. The name comes from the prayer's first words in Latin, Angelus Domini, the angel of the Lord. The prayer walks through the Annunciation, and at its heart are Mary's words in the Douay-Rheims: \"Behold the handmaid of the Lord; be it done to me according to thy word.\" Then a line from John's Gospel: \"And the Word was made flesh, and dwelt among us.\" Tradition rings it morning, noon and evening, so an ordinary day gets stitched together, again and again, with the moment God came close. And it tolls for the dead. Slow strokes, spaced far apart, tell the street that someone has died or is being buried. Nobody has to post a notice. The neighbors know to pray. There's a smaller bell inside, too. The Church's instructions for Mass allow a server to ring a little bell just before the consecration, and again as the priest lifts the host and then the chalice. Heads come up. Something is happening. Then there's the week the bells go quiet. On Holy Thursday they ring out during the Gloria, and after that the Missal has them fall silent, all through Good Friday. They come back at the Easter Vigil, when the Gloria is sung again. For a few days, the silence does the calling.",
+      "screen": ["`A BELL CALLS PEOPLE TO MASS.` · `THE ANGELUS: THE WORD MADE FLESH.` · `A SLOW TOLL FOR THE DEAD.` · `SILENT FROM HOLY THURSDAY TO EASTER.` · then, large: `BE IT DONE TO ME ACCORDING TO THY WORD.`"]
+    },
+    {
+      "type": "the practice",
+      "duration": "2 min 30",
+      "voice": "Here's the practice: pause at a bell. Settle, and breathe. For this sit, let the app's bell be your church bell. When it sounds, stop whatever your hands were about to do. Let your shoulders drop and your jaw loosen. If you pray, you can say the Angelus, or only Mary's line: be it done to me according to thy word. If you don't, simply notice where you are, who is near, and what this hour is holding. When a thought pulls you away, let the memory of the bell call you back. The bell holds the time.",
+      "screen": []
+    },
+    {
+      "type": "the word",
+      "duration": "25 sec",
+      "voice": "Bells. In a Catholic parish, the sound that calls people to Mass, rings the Angelus, and tolls for the dead, and that falls silent from Holy Thursday until Easter. Today's word.",
+      "screen": ["`BELLS — today's word`."]
+    },
+    {
+      "type": "the carry",
+      "duration": "15 sec",
+      "voice": "Your line: the bell calls. Today, choose one sound that comes back again and again, a phone chime, a microwave, a door, and let it be your bell: two seconds of stillness each time you hear it. Day one thousand four hundred two.",
+      "screen": []
+    },
+    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 1402 COUNTS.` → `TOMORROW: MANY CUSTOMS.`"] }
+  ],
+  "howItsDone": "Catholic parishes may ring a bell before Mass, and some still ring the Angelus in the morning, at noon and in the evening, when people who hear it may stop to pray it. Bells are tolled for funerals, a small bell may be rung at the consecration, and the bells fall silent from the Gloria of Holy Thursday until the Gloria of the Easter Vigil.",
+  "games": {
+    "match": {
+      "prompt": "what the bells say — tap the pairs.",
+      "pairs": [["the tower bell before Mass", "the doors are open, come"], ["the Angelus", "the Annunciation, prayed through the day"], ["slow, spaced strokes", "someone has died"], ["the small bell at Mass", "rung at the consecration"]]
+    },
+    "myth": [
+      ["church bells are only rung to call people to Mass", false, "they also ring the Angelus and toll for the dead."],
+      ["at Mass, a server may ring a small bell at the consecration", true, "the Church's instructions for Mass allow it before the consecration and at each elevation."],
+      ["church bells ring all through Holy Week, louder each day", false, "after the Gloria on Holy Thursday they fall silent, and return at the Gloria of the Easter Vigil."]
+    ],
+    "fork": {
+      "setup": "it's Holy Thursday evening. the Gloria begins and every bell in the church rings out. what happens to the bells next?",
+      "options": ["they ring every hour through the night.", "they fall silent until the Gloria of the Easter Vigil.", "they're rung only once more, for Good Friday's procession."],
+      "answer": 1,
+      "reveal": "the Missal has them go quiet after the Gloria. they don't ring again until the Gloria is sung at the Easter Vigil, so for a few days, silence does the calling."
+    },
+    "original": { "script": "Angelus Domini", "say": "AHN-jeh-loos DOH-mee-nee", "note": "Latin, \"the angel of the Lord,\" the first words of the prayer the noon bell rings for." },
+    "trapdoor": [
+      "what you thought: noise from a steeple.",
+      "what it means: a call. to gather for Mass, to pause for the Angelus, to pray for someone who has died.",
+      "what a scholar hears: the Angelus is named for its opening Latin words, Angelus Domini, and the Roman Missal silences the bells from the Gloria of Holy Thursday to the Gloria of the Easter Vigil."
+    ]
+  },
+  "sources": [
+    { "ref": "Luke 1:38", "work": "The Bible", "translation": "Douay-Rheims (Challoner)", "quoted": "Behold the handmaid of the Lord; be it done to me according to thy word." },
+    { "ref": "John 1:14", "work": "The Bible", "translation": "Douay-Rheims (Challoner)", "quoted": "And the Word was made flesh, and dwelt among us" },
+    { "ref": "The Angelus (traditional prayer)", "work": "Catholic devotion", "translation": null, "quoted": null },
+    { "ref": "General Instruction of the Roman Missal 150", "work": "Roman Missal", "translation": null, "quoted": null },
+    { "ref": "Holy Thursday, Evening Mass of the Lord's Supper (rubric on the Gloria and the bells)", "work": "Roman Missal", "translation": null, "quoted": null }
+  ],
+  "review": {
+    "status": "pending",
+    "keeper": null,
+    "notes": [
+      "Douay-Rheims wording of Luke 1:38 and John 1:14: confirm.",
+      "The Angelus is described as rung 'morning, noon and evening' as tradition; the exact pattern of strokes is deliberately left out. Confirm the phrasing.",
+      "GIRM 150: a server may ring a small bell a little before the consecration and at each elevation, according to local custom. Paraphrased; confirm.",
+      "Holy Thursday rubric: bells rung during the Gloria and then silent until the Gloria of the Easter Vigil. Paraphrased; confirm.",
+      "Millet's painting The Angelus: described only as two farm workers with heads bowed in a field and a distant steeple; no date given. Confirm the description.",
+      "howItsDone says parishes 'may' ring a bell before Mass and 'some still ring the Angelus': no claim about how widespread either is.",
+      "Editor: cut the unsourced claim that tower bells were how towns once knew the hour."
+    ]
+  },
+  "meta": { "index": "1402. Bells · — · church bells call to Mass, ring the Angelus and toll for the dead · pause at a bell · the bell calls", "writer": "writer agent (catholic 1402–1411)", "written": "2026-10-01" }
+}
