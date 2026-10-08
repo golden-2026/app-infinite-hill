@@ -78,6 +78,9 @@ export type Settings = {
   weekFirst?: boolean;
   /** The sampler week (content/sampler.ts): the day they started it. Its lessons are read as extras (forYouDone). */
   sampler?: { on: string } | null;
+  /** The course someone is on (content/courses.ts): which one and the day they started it. Its days are sits tagged
+   *  with the course (they count for the streak; no door's path moves). */
+  course?: { id: string; on: string } | null;
   /** The first-week card on Today, closed. */
   forYouClosed?: boolean;
   /** Where the onboarding check started them, by door ({ HINDUISM: 22 }): they showed they know camp one, and chose
@@ -137,6 +140,7 @@ export function cleanSettings(raw: any): Settings {
     placed: placedStarts(s.placed),
     moved: movedTo(s.moved),
     wellbeing: s.wellbeing ? cleanWellbeing(s.wellbeing) : undefined,
+    course: s.course && typeof s.course === "object" && typeof s.course.id === "string" && /^[a-z-]{2,30}$/.test(s.course.id) && typeof s.course.on === "string" && /^\d{4}-\d{2}-\d{2}$/.test(s.course.on) ? { id: s.course.id, on: s.course.on } : null,
     sampler: s.sampler && typeof s.sampler === "object" && typeof s.sampler.on === "string" && /^\d{4}-\d{2}-\d{2}$/.test(s.sampler.on) ? { on: s.sampler.on } : null,
     partnerDoor: door(s.partnerDoor),
     walk: s.walk && typeof s.walk === "object" && typeof s.walk.on === "string" && /^\d{4}-\d{2}-\d{2}$/.test(s.walk.on) ? {
@@ -179,7 +183,7 @@ type Store = {
   lessonFor: (door: string) => number;
   /** The day placement started them on this door (1 unless they chose to skip camp one). */
   startFor: (door: string) => number;
-  completeSit: (o: { door: string; day: number; kidId?: string | null }) => ReturnType<typeof sitOutcome>;
+  completeSit: (o: { door: string; day: number; kidId?: string | null; course?: string | null }) => ReturnType<typeof sitOutcome>;
   update: (patch: Partial<Settings>) => void;
   setGoal: (days: number | "not_yet") => void;
   keepLine: (line: string, door: string) => void;
@@ -238,11 +242,11 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     door,
     lessonFor: (d) => derived.paths[d]?.day ?? 1,
     startFor: (d) => saved.settings.placed?.[d] ?? 1,
-    completeSit: ({ door: d, day, kidId = null }) => {
+    completeSit: ({ door: d, day, kidId = null, course = null }) => {
       const date = todayNow();
       // the streak outcome is the kid's own for a kid's sit, the parent's own otherwise (never mixed)
       const outcome = sitOutcome(saved.sits, date, kidId);
-      const sit = makeSit({ id: randomId("sit_"), door: d, day, date, tz: timeZone(), kidId, deviceId: saved.deviceId, at: new Date().toISOString() });
+      const sit = makeSit({ id: randomId("sit_"), door: d, day, date, tz: timeZone(), kidId, deviceId: saved.deviceId, at: new Date().toISOString(), course: kidId ? undefined : course ?? undefined });
       commit((s) => ({ ...s, sits: mergeSits(s.sits, [sit]), outbox: [...s.outbox, sit.id] }));
       return kidId ? { isNewDay: false, showedUp: outcome.showedUp - (outcome.isNewDay ? 1 : 0), milestone: null, streak: outcome.streak } : outcome;
     },

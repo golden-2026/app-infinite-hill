@@ -10,7 +10,8 @@ import * as kids from "./kids";
 import * as waitlist from "./waitlist";
 import * as wellbeing from "./wellbeing";
 import * as couple from "./couple";
+import * as courses from "./courses";
 
-export const EN = { ...common.en, ...onboarding.en, ...home.en, ...session.en, ...companion.en, ...kids.en, ...groups.en, ...waitlist.en, ...wellbeing.en, ...couple.en };
-export const ES: Dict<typeof EN> = { ...common.es, ...onboarding.es, ...home.es, ...session.es, ...companion.es, ...kids.es, ...groups.es, ...waitlist.es, ...wellbeing.es, ...couple.es };
-export const AREAS = { common, onboarding, home, session, companion, kids, groups, waitlist, wellbeing, couple };
+export const EN = { ...common.en, ...onboarding.en, ...home.en, ...session.en, ...companion.en, ...kids.en, ...groups.en, ...waitlist.en, ...wellbeing.en, ...couple.en, ...courses.en };
+export const ES: Dict<typeof EN> = { ...common.es, ...onboarding.es, ...home.es, ...session.es, ...companion.es, ...kids.es, ...groups.es, ...waitlist.es, ...wellbeing.es, ...couple.es, ...courses.es };
+export const AREAS = { common, onboarding, home, session, companion, kids, groups, waitlist, wellbeing, couple, courses };

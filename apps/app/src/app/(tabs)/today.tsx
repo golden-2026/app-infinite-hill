@@ -32,6 +32,7 @@ import { HolidayCard, WalkTogetherCard } from "@/ui/couple";
 import { campLabel, campName, doorLabel, isEs, t } from "@/i18n";
 import { firstWeekFor, gentleStart } from "@/content/life-moments";
 import { samplerActive, samplerNext, walkedFrom } from "@/content/sampler";
+import { courseById, courseNext, dayName, say } from "@/content/courses";
 import { baselineAtStart, daysCome, laneFor, nextWeekDay } from "@/lib/lane";
 import { dueOnThirdDay, emptyWellbeing } from "@/lib/wellbeing";
 
@@ -156,6 +157,26 @@ export default function Today() {
         {/* settling in after placement: a gentle offer to walk back (or go on ahead), from lib/settle */}
         {quiet ? null : <SettleCard door={wing} />}
 
+        {/* the course they're on (content/courses.ts): first on Today, its next day one tap away; the path waits below */}
+        {(() => {
+          const c = courseById(st.course?.id);
+          const next = c ? courseNext(c, saved.sits) : null;
+          if (!c || !next) return null;
+          return (
+            <Pressable testID="course-card" accessibilityRole="link" accessibilityLabel={`${t("courses.today.line", { title: say(c.title), n: next.n })}. ${dayName(next.door, next.day)}`}
+              onPress={() => router.push({ pathname: "/session/[door]/[day]", params: { door: next.door, day: String(next.day), course: c.id } })}
+              style={({ pressed }) => [s.lite, { marginTop: 4, borderColor: color.ink, opacity: pressed ? 0.9 : 1 }]}>
+              <Guy pose="wave" h={56} />
+              <View style={{ flex: 1, gap: 3 }}>
+                <Text style={[type.eyebrow(8), { color: color.ink }]}>{t("courses.today.line", { title: say(c.title), n: next.n })}</Text>
+                <Text style={{ fontFamily: font.display[800], fontSize: 16, color: color.ink }}>{dayName(next.door, next.day)}</Text>
+                <Text style={[type.body(12), { color: color.mute }]}>{t("courses.today.from", { door: doorLabel(next.door).toLowerCase() })}</Text>
+              </View>
+              <Text style={s.chev}>›</Text>
+            </Pressable>
+          );
+        })()}
+
         {/* the one thing to do today */}
         {!doneHere && weekNext !== null ? (
           // the first week leads (lib/lane.ts): its next lesson, whenever they're ready (no "done for today": these are
@@ -235,6 +256,21 @@ export default function Today() {
               <View style={{ flex: 1, gap: 3 }}>
                 <Text style={[type.eyebrow(8), { color: color.ink }]}>{t("companion.sampler.card")}</Text>
                 <Text style={{ fontFamily: font.display[800], fontSize: 15, color: color.ink }}>{next ? t("companion.sampler.cardLine", { n: next.n, door: doorLabel(next.door) }) : t("companion.sampler.how")}</Text>
+              </View>
+              <Text style={s.chev}>›</Text>
+            </Pressable>
+          );
+        })()}
+        {/* the course shelf (content/courses.ts): open to everyone, a quiet row while no course is under way */}
+        {(() => {
+          const c = courseById(st.course?.id);
+          if (focused || quiet || (c && courseNext(c, saved.sits))) return null;
+          return (
+            <Pressable testID="courses-card" accessibilityRole="link" onPress={() => router.push("/courses")} style={({ pressed }) => [s.lite, { marginTop: 0, opacity: pressed ? 0.9 : 1 }]}>
+              <Guy pose="think" h={52} />
+              <View style={{ flex: 1, gap: 3 }}>
+                <Text style={{ fontFamily: font.display[800], fontSize: 15, color: color.ink }}>{t("courses.today.browse")}</Text>
+                <Text style={[type.body(12), { color: color.mute }]}>{t("courses.today.browseSub")}</Text>
               </View>
               <Text style={s.chev}>›</Text>
             </Pressable>

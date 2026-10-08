@@ -19,6 +19,8 @@ import { WelcomeFrame } from "@/ui/welcome-frame";
 // a door for anyone; every door stays open. Answers stay on the device (belief data: never sent to analytics).
 // Someone who came from the website's "which one sounds like you?" is met first (gentle.hello.<why>): warm first,
 // then the question. Learning a partner's faith ("partner") skips straight to "which faith are you learning?".
+const SEEKERS = new Set<string>(["curious", "many", "spiritual"]);
+
 export default function You() {
   useEffect(() => { track("onboard_step", { step: "you" }); }, []);
   useTitle(t("onboarding.you.title"));
@@ -43,7 +45,10 @@ export default function You() {
     update({ profile: pendingProfile(today, s, raisedIn, learning, heardFrom, fromSite.why) });
     // "how did you hear about us?": once, right after this step; never again once answered or skipped, and never on
     // the gentle or quick ways in (lib/lane.ts)
-    router.push(afterYou(fromSite.why, !!heardFrom));
+    // seekers (no religion, more than one, spiritual not religious) say what would help first (welcome/help): a course,
+    // simply spiritual, or the sampler week; a website "why" (grief, partner…) keeps its own way in
+    if (s && SEEKERS.has(s) && !fromSite.why) router.push("/welcome/help");
+    else router.push(afterYou(fromSite.why, !!heardFrom));
   };
   const pick = (id: string | null) => {
     if (step === 0) {

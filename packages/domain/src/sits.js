@@ -8,8 +8,10 @@ const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 const ID_RE = /^[A-Za-z0-9_-]{8,64}$/;
 
 /** A new sit record. `id` must be unique (a random id from the caller). */
-export function makeSit({ id, door, day, date, tz, kidId = null, deviceId = null, at }) {
-  const sit = { id, door, day, date, tz: tz || null, kidId, deviceId, at };
+// `course`: a lesson taken as a day of a course (apps/app/src/content/courses.ts). It counts for the streak and the
+// days walked like any lesson, but never moves that door's path (the path is where someone is on that tradition).
+export function makeSit({ id, door, day, date, tz, kidId = null, deviceId = null, at, course = null }) {
+  const sit = { id, door, day, date, tz: tz || null, kidId, deviceId, at, ...(course ? { course } : {}) };
   const problem = invalidSit(sit);
   if (problem) throw new Error(`makeSit: ${problem}`);
   return sit;
@@ -22,6 +24,7 @@ export function invalidSit(s) {
   if (!Number.isInteger(s.day) || s.day < 1) return "bad day";
   if (!DATE_RE.test(s.date)) return "bad date";
   if (typeof s.at !== "string" || Number.isNaN(Date.parse(s.at))) return "bad at";
+  if (s.course != null && (typeof s.course !== "string" || !/^[a-z-]{2,30}$/.test(s.course))) return "bad course";
   return null;
 }
 
@@ -90,7 +93,7 @@ export function deriveState(sitLog, { today, settings = {} } = {}) {
   const dates = [...new Set(own.map((s) => s.date))].sort();
 
   const doors = {};
-  for (const s of own) (doors[s.door] ||= []).push(s);
+  for (const s of own) if (!s.course) (doors[s.door] ||= []).push(s); // a course day never moves the path
   const placed = placedStarts(settings.placed);
   const moved = movedTo(settings.moved);
   const paths = Object.fromEntries(Object.entries(doors).map(([door, list]) => [door, pathFrom(list, today, placed[door], moved[door])]));

@@ -1,6 +1,6 @@
 // The shared packages are plain JS (tested with node --test). Loose types here; screens narrow as needed.
 declare module "@ih/domain" {
-  export type Sit = { id: string; door: string; day: number; date: string; tz: string | null; kidId: string | null; deviceId: string | null; at: string };
+  export type Sit = { id: string; door: string; day: number; date: string; tz: string | null; kidId: string | null; deviceId: string | null; at: string; course?: string };
   export type Derived = {
     showedUp: number; dates: string[]; paths: Record<string, { day: number; done: boolean; lastDate: string | null }>;
     kids: any[]; sitsToday: number; doneToday: boolean; goal: { days: number; done: number; reached: boolean } | null;

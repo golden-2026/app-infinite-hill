@@ -88,3 +88,16 @@ test("placement: a door placed at 22 stands there before anything is walked; cat
   assert.equal(deriveState([], { today: "2026-10-18", settings: { placed: { ISLAM: "22", JUDAISM: 1, X: -4 } } }).paths.ISLAM, undefined);
   assert.deepEqual(deriveState([], { today: "2026-10-18", settings: { placed: null } }).paths, {});
 });
+
+test("a course day (owner, 2026-10-08): counts for the streak and the days walked, never moves that door's path", () => {
+  const log = [sit("2026-10-18", "SPIRITUAL", 1), sit("2026-10-19", "ISLAM", 43, { course: "worry" })];
+  const s = deriveState(log, { today: "2026-10-19" });
+  assert.equal(s.showedUp, 2);
+  assert.equal(s.doneToday, true);
+  assert.equal(s.paths.ISLAM, undefined); // Islam's path never started: the course day didn't start it at day 43
+  assert.deepEqual(s.paths.SPIRITUAL, { day: 2, done: false, lastDate: "2026-10-18" });
+  assert.equal(s.streak.streak, 2); // the course day kept the streak going
+  assert.equal(makeSit({ id: "sit_course0001", door: "ISLAM", day: 43, date: "2026-10-19", at: "2026-10-19T20:00:00.000Z" }).course, undefined);
+  assert.throws(() => makeSit({ id: "sit_course0002", door: "ISLAM", day: 43, date: "2026-10-19", at: "2026-10-19T20:00:00.000Z", course: "Not OK!" }));
+  assert.equal(mergeSits(log).length, 2); // a course sit syncs like any other
+});

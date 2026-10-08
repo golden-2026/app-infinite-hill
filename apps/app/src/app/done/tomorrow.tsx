@@ -11,8 +11,9 @@ import { todaysThree } from "@/lib/three";
 import { dueAfterLesson, emptyWellbeing } from "@/lib/wellbeing";
 import { gentleStart } from "@/content/life-moments";
 import { askHeard } from "@/lib/lane";
+import { courseById, courseNext, dayName, say } from "@/content/courses";
 import { Bubble, Btn, Guy, Link, Screen, Sun, color, font, type } from "@/ui";
-import { t, type Key } from "@/i18n";
+import { doorLabel, t, type Key } from "@/i18n";
 
 /** The times offered here (the full list lives in You → Reminders). "auto" = about a day after today's lesson. */
 const TIMES: [string, Key][] = [["auto", "session.tomorrow.t.auto"], ["07:00", "companion.remPage.t.07"], ["12:00", "companion.remPage.t.12"], ["sundown", "companion.remPage.t.sundown"], ["21:00", "companion.remPage.t.21"]];
@@ -36,7 +37,13 @@ export default function Tomorrow() {
   const asked = !!st.remindOffer && daysFrom(st.remindOffer, today) < ASK_AGAIN_DAYS;
   const [offer] = useState(() => ready && !r.on && !asked); // decided once, so turning it on shows the confirmation here
   const note = !ready && remindersServer() ? reminderSupport().note : null; // e.g. iPhone: add to Home Screen first
-  const teaser = p.tomorrow || t("session.tomorrow.fallback");
+  // a course day (content/courses.ts): what comes next is the course's next day, not this door's next lesson
+  const course = courseById(p.course);
+  const cNext = course ? courseNext(course, saved.sits) : null;
+  const teaser = course ? (cNext ? dayName(cNext.door, cNext.day) : t("courses.tomorrow.finished", { title: say(course.title) })) : p.tomorrow || t("session.tomorrow.fallback");
+  const openNext = () => (course
+    ? cNext ? router.replace({ pathname: "/session/[door]/[day]", params: { door: cNext.door, day: String(cNext.day), course: course.id } }) : router.replace("/courses")
+    : router.replace({ pathname: "/session/[door]/[day]", params: { door: p.door, day: String(day + 1) } }));
   const when = (!r.set ? t("session.tomorrow.when.auto") : LABEL[r.time] ? t(LABEL[r.time]) : r.time).replace(/\.$/, ""); // "7:00 a. m." ends in its own period
 
   const turnOn = async () => {
@@ -65,7 +72,7 @@ export default function Tomorrow() {
       // (owner, 2026-10-08: "what if i want to keep going?") the next lesson, right now, as many as they like; the
       // streak still counts once a day
       <View style={{ gap: 8 }}>
-        <Btn testID="keep-going" kind="gold" onPress={() => router.replace({ pathname: "/session/[door]/[day]", params: { door: p.door, day: String(day + 1) } })}>{t("session.tomorrow.keepGoing", { day: day + 1 })}</Btn>
+        <Btn testID="keep-going" kind="gold" onPress={openNext}>{course ? (cNext ? t("courses.tomorrow.keepGoing", { n: cNext.n }) : t("courses.page.another")) : t("session.tomorrow.keepGoing", { day: day + 1 })}</Btn>
         <Btn testID="see-you" onPress={finish}>{t("session.tomorrow.done")}</Btn>
       </View>} contentStyle={{ flexGrow: 1, justifyContent: "center", gap: 16 }}>
       <View style={{ flexDirection: "row", gap: 14, alignItems: "flex-start" }}><Guy pose="wave" h={96} /><Bubble>{t("session.tomorrow.bubble")}</Bubble></View>
@@ -80,9 +87,9 @@ export default function Tomorrow() {
 
       {/* the reason to come back: tomorrow's lesson, by name */}
       <View testID="tomorrow-card" style={{ backgroundColor: color.ink, borderRadius: 22, paddingVertical: 18, paddingHorizontal: 18, gap: 6 }}>
-        <Text style={[type.eyebrow(9), { color: color.gold }]}>{t("session.tomorrow.eyebrow", { n: day + 1 })}</Text>
+        <Text style={[type.eyebrow(9), { color: color.gold }]}>{course ? (cNext ? t("courses.tomorrow.next", { title: say(course.title), n: cNext.n }) : say(course.title)) : t("session.tomorrow.eyebrow", { n: day + 1 })}</Text>
         <Text accessibilityRole="header" style={{ fontFamily: font.display[800], fontSize: 26, lineHeight: 30, color: "#fff" }}>{teaser}</Text>
-        <Text style={[type.body(14), { color: "#ffffffcc" }]}>{t("session.tomorrow.sub")}</Text>
+        <Text style={[type.body(14), { color: "#ffffffcc" }]}>{course ? (cNext ? t("courses.today.from", { door: doorLabel(cNext.door).toLowerCase() }) : t("courses.tomorrow.finishedSub")) : t("session.tomorrow.sub")}</Text>
       </View>
 
       {r.on ? (

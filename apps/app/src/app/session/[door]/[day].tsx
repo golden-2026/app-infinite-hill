@@ -31,6 +31,7 @@ import { today as todayNow } from "@/lib/time";
 import { voiceLabel } from "@/lib/voice";
 import { opensAhead } from "@/content/life-moments";
 import { samplerOpens } from "@/content/sampler";
+import { courseById, courseDayOf, courseNext, courseOpens, say } from "@/content/courses";
 import { holidayOpens } from "@/content/couple";
 import { couplePartnerDoor } from "@/lib/couple";
 import { BetStep, BreathStep, ForkStep, MatchStep, MythStep, OptionStep, OrderStep, OriginalStep, SitStep, SpeakStep, TapHear, TrapdoorStep } from "@/session/steps";
@@ -76,8 +77,16 @@ function EsLessonNote() {
   );
 }
 
+// "Day one hundred eighty-two, done." / "That's day twelve." at a lesson's close: the door's day count, which means
+// nothing inside a course (it is day 3 of the course). Only a whole sentence made of a spelled-out number goes.
+const NUM = "(?:one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety|hundred|thousand|and)";
+const DAY_DONE = new RegExp("(^|[.!?] +)(?:that's )?day " + NUM + "(?:[ -]" + NUM + ")*(?:,? (?:done|complete|counts|and a full week|the end of a week))?[.!]", "gi");
+export function dropDayDone(text: string) {
+  return text.replace(DAY_DONE, (_m, lead) => (lead ? lead.replace(/ +$/, " ") : "")).trim();
+}
+
 export default function SessionScreen() {
-  const params = useLocalSearchParams<{ door: string; day: string; kid?: string; deep?: string }>();
+  const params = useLocalSearchParams<{ door: string; day: string; kid?: string; deep?: string; course?: string }>();
   const { lessonFor, saved, derived, completeSit } = useStore();
   const door = String(params.door || "").toUpperCase();
   const day = Number(params.day);
@@ -95,8 +104,11 @@ export default function SessionScreen() {
     && (opensAhead(saved.settings.profile, door, day) || samplerOpens(saved.settings.sampler, todayNow(), door, day) || holidayOpens(couplePartnerDoor(saved.settings), door, day, todayNow()));
   // ...or "keep going" (owner, 2026-10-08): once today's lesson on this door is done, the next one opens right away, as
   // many as they like; the streak still counts the date once
+  // ...or a day of the course they are on (content/courses.ts): a sit tagged with the course, so the streak counts it
+  // and this door's path stays put
+  const course = !kid && params.course && courseOpens(saved.settings.course, saved.sits, params.course, door, day) ? params.course : null;
   const keepGoing = !kid && day === current + 1 && derived.paths[door]?.done === true;
-  if (!Number.isInteger(day) || day < 1 || (day > current && !walkedBefore && !extra && !keepGoing)) return <Redirect href={{ pathname: "/session/[door]/[day]", params: { door: door || saved.settings.homeWing, day: String(current) } }} />;
+  if (!Number.isInteger(day) || day < 1 || (day > current && !walkedBefore && !extra && !keepGoing && !course)) return <Redirect href={{ pathname: "/session/[door]/[day]", params: { door: door || saved.settings.homeWing, day: String(current) } }} />;
   // "go deeper" is an extra round on a lesson already walked today; children don't get it
   const deep = params.deep === "1" && !kid;
   // a child under 13 sits the door's kids' track, never the grown-up lesson (no script is fetched for it)
@@ -104,7 +116,7 @@ export default function SessionScreen() {
     if (!kidLesson(door, day)) return <Redirect href="/you/table" />;
     return <Session key={`${door}:${day}:kid`} door={door} day={day} kidId={kid?.id ?? null} mode="kid" deep={false} voiceOn={saved.settings.voiceOn} onFinish={completeSit} script={null} />;
   }
-  return <ScriptedSession key={`${door}:${day}`} door={door} day={day} kidId={kid?.id ?? null} mode={mode} deep={deep} extra={extra} voiceOn={saved.settings.voiceOn} onFinish={completeSit} />;
+  return <ScriptedSession key={`${door}:${day}${course ? `:${course}` : ""}`} door={door} day={day} kidId={kid?.id ?? null} mode={mode} deep={deep} extra={extra && !course} course={course} voiceOn={saved.settings.voiceOn} onFinish={completeSit} />;
 }
 
 // The day's full script (docs/curriculum/LESSON_LOADER.md) is resolved before the lesson starts, so the steps never
@@ -132,7 +144,7 @@ function LessonLoading() {
   );
 }
 
-function Session({ door, day, kidId, mode, deep, extra = false, voiceOn, onFinish, script = null }: { door: string; day: number; kidId: string | null; mode: string; deep: boolean; extra?: boolean; voiceOn: boolean; onFinish: ReturnType<typeof useStore>["completeSit"]; script?: any | null }) {
+function Session({ door, day, kidId, mode, deep, extra = false, course = null, voiceOn, onFinish, script = null }: { door: string; day: number; kidId: string | null; mode: string; deep: boolean; extra?: boolean; course?: string | null; voiceOn: boolean; onFinish: ReturnType<typeof useStore>["completeSit"]; script?: any | null }) {
   const ic = icon(door);
   const { earnLight, recordRun, recordFeel, update, noteLearning, saved: me } = useStore();
   useTitle(`${t("session.title", { door: doorLabel(door).toLowerCase(), day })}${deep ? t("session.title.deeper") : ""}`);
@@ -143,7 +155,7 @@ function Session({ door, day, kidId, mode, deep, extra = false, voiceOn, onFinis
   const [learn] = useState(() => practiceModeOf(me.settings.profile) === "learn");
   // Words that slipped before and are due today come back as "one from before" (two at most, fixed for the lesson;
   // grown-ups' own lessons only). The door's words so far are what a slip can be about.
-  const own = mode === "adult" && !kidId && !deep && !extra;
+  const own = mode === "adult" && !kidId && !deep && !extra && !course;
   const [recallCards] = useState(() => (own ? dueCards(me.missed || [], door, todayNow(), { n: 2 }) : []));
   const vocab = useMemo(() => new Map(knownSoFar(door, day).map((k) => [k.word.toLowerCase(), k])), [door, day]);
   // The first lesson after placement (day 22 for someone who skipped camp one): there was no "yesterday" on this path,
@@ -180,6 +192,21 @@ function Session({ door, day, kidId, mode, deep, extra = false, voiceOn, onFinis
         steps = [...steps.slice(0, where), ...welcome, ...steps.slice(where)];
       }
     }
+    if (course) {
+      // A course day (content/courses.ts): no "yesterday" (the day before on this door is not part of the course); a
+      // one-line setup where the lesson starts mid-story; and no "day 182, done" (it is day 3 of the course)
+      const at = steps.findIndex((x: any) => x.type === "beat" && /^review/.test(String(x.seg || "")));
+      steps = steps.filter((x: any) => !(x.type === "beat" && /^review/.test(String(x.seg || ""))));
+      steps = steps.map((x: any) => (x.type === "beat" ? { ...x, text: dropDayDone(String(x.text || "")) } : x)).filter((x: any) => x.type !== "beat" || x.text);
+      const c = courseById(course);
+      const setup = say(c?.days.find((x) => x.door === door && x.day === day)?.setup);
+      if (c) {
+        let id = Math.max(...steps.map((x: any) => x.id)) + 1;
+        const intro = [{ type: "beat", seg: "a welcome", label: say(c.title), text: t("courses.lessonIntro", { n: courseDayOf(course, door, day), title: say(c.title), door: doorLabel(door).toLowerCase() }), head: null, id: id++ }, ...(setup ? [{ type: "beat", seg: "a welcome", label: say(c.title), text: setup, head: null, id: id++ }] : [])];
+        const where = at >= 0 ? at : Math.max(0, steps.findIndex((x: any) => x.type !== "bell"));
+        steps = [...steps.slice(0, where), ...intro, ...steps.slice(where)];
+      }
+    }
     const cards = recallCards.filter((c) => c.word.toLowerCase() !== String(p.word).toLowerCase());
     if (cards.length) {
       let id = Math.max(...steps.map((x: any) => x.id)) + 1;
@@ -190,7 +217,7 @@ function Session({ door, day, kidId, mode, deep, extra = false, voiceOn, onFinis
       steps = [...steps.slice(0, -1), ...recall, steps[steps.length - 1]]; // just before the tally
     }
     return { ...p, steps };
-  }, [door, day, mode, level, deep, learn, script, recallCards, placedFirst, extra]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [door, day, mode, level, deep, learn, script, recallCards, placedFirst, extra, course]); // eslint-disable-line react-hooks/exhaustive-deps
   const shownLevel = deep ? Math.min(5, level + 2) : level;
   const [rushSecs, setRushSecs] = useState<number | null>(null);
   const [feel, setFeel] = useState<string | null>(null);
@@ -338,7 +365,7 @@ function Session({ door, day, kidId, mode, deep, extra = false, voiceOn, onFinis
     if (own) noteLearning({ door, slips: slips.map((w) => vocab.get(w.toLowerCase())!).filter(Boolean), recalled });
     // a one-off visit to another door comes straight back to your own path
     if (!kidId && door !== me.settings.homeWing && me.settings.active === "visit") update({ active: "home" });
-    const outcome = onFinish({ door, day, kidId });
+    const outcome = onFinish({ door, day, kidId, course });
     if (!kidId) earnLight(lessonLight(score.right, score.asked || graded, best), best, score.asked > 0 && score.right === score.asked);
     track("lesson_done", { door, day, right: score.right, asked: score.asked, newDay: outcome.isNewDay, kid: !!kidId });
     if (!kidId) pulseLesson(todayNow(), day <= 7 ? day : null); // anonymous: "a lesson was finished today", and which of days 1–7 (lib/pulse)
@@ -351,7 +378,7 @@ function Session({ door, day, kidId, mode, deep, extra = false, voiceOn, onFinis
     const st = outcome.streak;
     // the streak's facts ride along to the after-lesson screens (the streak screen is /done/lit), and tomorrow's title
     // for the last one (/done/tomorrow); nothing shows in the lesson itself
-    router.replace({ pathname: "/done", params: { door, day: String(day), right: String(score.right), total: String(score.asked), word: plan.word, carry: plan.carry, minutes: String(minutes), newDay: outcome.isNewDay ? "1" : "0", count: String(outcome.showedUp), milestone: st.milestone ? String(st.milestone) : "", streak: String(st.after), prev: String(st.before), restored: st.restored ? "1" : "", tomorrow: (script?.tomorrow || lessonInfo(door, day + 1)?.title || "").slice(0, 120) } });
+    router.replace({ pathname: "/done", params: { door, day: String(day), right: String(score.right), total: String(score.asked), word: plan.word, carry: plan.carry, minutes: String(minutes), newDay: outcome.isNewDay ? "1" : "0", count: String(outcome.showedUp), milestone: st.milestone ? String(st.milestone) : "", streak: String(st.after), prev: String(st.before), restored: st.restored ? "1" : "", tomorrow: (script?.tomorrow || lessonInfo(door, day + 1)?.title || "").slice(0, 120), ...(course ? { course } : {}) } });
   };
   const leave = () => { finished.current = true; hush(); remove(resumeKey); router.canGoBack() ? router.back() : router.replace("/today"); };
   // The one confirm panel the whole app uses, not a lesson-only dialog.
