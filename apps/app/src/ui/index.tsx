@@ -86,10 +86,10 @@ export function Card({ children, dark, onPress, style, label: a11y, testID }: { 
 /** The one answer row for onboarding questions (welcome/*: about you, how you heard, the check, your tradition,
  *  getting to know you). Manrope medium 17/22, one padding and row height, one selected state (ink edge on pale
  *  lemon). Pick-several rows carry a checkbox on the right so they read differently from pick-one. */
-export function ChoiceRow({ on, onPress, children, sub, testID, multi }: { on?: boolean; onPress: () => void; children: string; sub?: string; testID?: string; /** pick-several: a checkbox, not a radio */ multi?: boolean }) {
+export function ChoiceRow({ on, onPress, children, sub, testID, multi, right }: { on?: boolean; onPress: () => void; children: string; sub?: string; testID?: string; /** pick-several: a checkbox, not a radio */ multi?: boolean; /** the right answer, shown green */ right?: boolean }) {
   return (
     <Pressable testID={testID} accessibilityRole={multi ? "checkbox" : "radio"} accessibilityState={{ checked: !!on }} aria-checked={!!on} accessibilityLabel={sub ? `${children}. ${sub}` : children} onPress={() => { tapHaptic(); onPress(); }}
-      style={({ pressed }) => [styles.choice, { borderColor: on ? color.ink : color.line, backgroundColor: on ? CHOSEN : color.white, transform: [{ scale: pressed ? 0.985 : 1 }] }]}>
+      style={({ pressed }) => [styles.choice, { borderColor: right ? RIGHT_LINE : on ? color.ink : color.line, backgroundColor: right ? RIGHT : on ? CHOSEN : color.white, transform: [{ scale: pressed ? 0.985 : 1 }] }]}>
       <View style={{ flex: 1 }}>
         <Text style={type.choice()}>{children}</Text>
         {sub ? <Text style={[type.caption(), { marginTop: 3 }]}>{sub}</Text> : null}
@@ -103,6 +103,8 @@ export function ChoiceRow({ on, onPress, children, sub, testID, multi }: { on?: 
   );
 }
 const CHOSEN = "#FFFBE0";
+const RIGHT = "#E6F6EA"; // the right answer, once shown
+const RIGHT_LINE = "#2E8B57";
 
 /** A small option (Inter 14), for compact pickers outside onboarding. `big` is the onboarding row: use ChoiceRow. */
 export function Opt({ on, onPress, children, sub, testID, big, multi }: { on?: boolean; onPress: () => void; children: string; sub?: string; testID?: string; big?: boolean; /** pick-several: a checkbox, not a radio */ multi?: boolean }) {

@@ -175,7 +175,7 @@ export default function Know() {
       <Text accessibilityRole="header" style={[type.h1(q.kind === "fork" ? 20 : 24), { textAlign: "center" }]}>{prompt}</Text>
       <View style={{ gap: 8 }} accessibilityRole="radiogroup">
         {options.map(({ o, k }) => (
-          <ChoiceRow key={o} on={picked?.o === o || (!!picked && !picked.ok && k === q.a)} onPress={() => answer(o, k)} sub={picked?.o === o ? (picked.ok ? t("onboarding.know.right") : itWas) : picked && !picked.ok && k === q.a ? t("onboarding.know.answer") : undefined}>{o}</ChoiceRow>
+          <ChoiceRow key={o} on={picked?.o === o} right={!!picked && k === q.a} onPress={() => answer(o, k)} sub={picked?.o === o ? (picked.ok ? t("onboarding.know.right") : itWas) : picked && !picked.ok && k === q.a ? t("onboarding.know.answer") : undefined}>{o}</ChoiceRow>
         ))}
         <ChoiceRow on={picked?.o === "unsure"} onPress={() => answer(null, null)} sub={picked?.o === "unsure" ? itWas : undefined}>{t("onboarding.know.unsure")}</ChoiceRow>
       </View>
