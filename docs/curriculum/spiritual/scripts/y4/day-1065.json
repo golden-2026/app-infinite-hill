@@ -9,24 +9,37 @@
   "length": "6:30",
   "tomorrow": "empty, and never used up",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-THOUSAND-SIXTY-FIVE.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY ONE-THOUSAND-SIXTY-FIVE.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, chapter two, and your line was without words: teach by doing, and don't mention it. Did anyone notice? Chapter three asks what happens when we start keeping score. Day one thousand sixty-five.",
-      "screen": ["`WITHOUT WORDS.`"]
+      "screen": [
+        "`WITHOUT WORDS.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "On Monday the office starts a step challenge. There's a leaderboard on the kitchen wall, updated every morning. By Wednesday people are pacing during phone calls. By Friday someone is walking laps of the parking lot at nine at night, and two old friends have stopped eating lunch together because one of them is, frankly, cheating. Nobody set out to make enemies. A board went up on a wall, and a contest grew out of it. Chapter three of the Tao Te Ching has a short, sharp idea about where contests come from.",
-      "screen": ["`A LEADERBOARD GOES UP.` → `LAPS AT NINE AT NIGHT.` → `WHERE DO CONTESTS COME FROM?`"]
+      "screen": [
+        "`A LEADERBOARD GOES UP.` → `LAPS AT NINE AT NIGHT.` → `WHERE DO CONTESTS COME FROM?`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "First, what you prize, people chase. Legge's translation opens the chapter: \"Not to value and employ men of superior ability is the way to keep the people from rivalry among themselves.\" Put a crown on cleverness, and everyone starts competing for the crown. The contest doesn't come from the people. It comes from the prize. Second, rare things make thieves. The chapter goes on: don't treasure things that are hard to get, and people won't steal. Don't parade what stirs up wanting, and minds stay settled. A rare sneaker, a hard-to-get ticket: the rarity is what makes people grab. Third, empty minds, full bellies. Then comes the line in today's title. The sage, the chapter says, empties people's minds and fills their bellies, softens their ambitions and strengthens their bones. Readers hear this two ways. Some hear a ruler keeping people simple and quiet, and find it uneasy reading. Others hear a picture of a life that isn't crowded with comparison: fed, sturdy, and not hungry for rank. The Chinese word here for mind also means heart, and some readers take the emptying as an emptying of wanting more than of thought. Readers still hold both views. Fourth, no contest. The chapter closes by saying that when the sage acts without forcing, nothing falls out of order. Take the prize off the wall, and the race has nowhere to go.",
-      "screen": ["`WHAT YOU PRIZE, PEOPLE CHASE.` · `RARE THINGS MAKE THIEVES.` · `EMPTY MINDS, FULL BELLIES.` · `TAKE THE PRIZE OFF THE WALL.` · then, large: `NO CONTEST.`"]
+      "screen": [
+        "`WHAT YOU PRIZE, PEOPLE CHASE.` · `RARE THINGS MAKE THIEVES.` · `EMPTY MINDS, FULL BELLIES.` · `TAKE THE PRIZE OFF THE WALL.` · then, large: `NO CONTEST.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Empty minds. In chapter three, minds emptied of wanting and comparing, alongside full bellies and strong bones. Today's word.",
-      "screen": ["`EMPTY MINDS — today's word`."]
+      "screen": [
+        "`EMPTY MINDS — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,35 +61,99 @@
       "voice": "Your line: no contest. Today, when you catch yourself keeping score with someone, quietly drop out of the race and let them win it. Day one thousand sixty-five.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 1065 COUNTS.` → `TOMORROW: EMPTY, AND NEVER USED UP.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 1065 COUNTS.` → `TOMORROW: EMPTY, AND NEVER USED UP.`"
+      ]
+    }
   ],
   "howItsDone": "Readers of the Tao Te Ching take chapter three in different ways: some as advice to rulers, others as personal practice, noticing what they prize and letting go of contests that grow out of it.",
   "games": {
     "match": {
       "prompt": "inside chapter three: tap the pairs.",
-      "pairs": [["prize the clever", "people compete"], ["treasure rare things", "people steal"], ["empty minds", "full bellies"], ["soften ambitions", "strengthen bones"]]
+      "pairs": [
+        [
+          "prize the clever",
+          "people compete"
+        ],
+        [
+          "treasure rare things",
+          "people steal"
+        ],
+        [
+          "empty minds",
+          "full bellies"
+        ],
+        [
+          "soften ambitions",
+          "strengthen bones"
+        ]
+      ]
     },
     "myth": [
-      ["chapter three says contests come from the prize, not from the people", true, "put a crown on cleverness, and everyone competes for the crown."],
-      ["empty minds in chapter three means people should stop thinking", false, "the Chinese word for mind also means heart; some readers hear an emptying of wanting more than of thought."],
-      ["all readers agree on what chapter three means", false, "some hear a ruler keeping people simple; others hear a life not crowded with comparison."]
+      [
+        "chapter three says contests come from the prize, not from the people",
+        true,
+        "put a crown on cleverness, and everyone competes for the crown."
+      ],
+      [
+        "empty minds in chapter three means people should stop thinking",
+        false,
+        "the Chinese word for mind also means heart; some readers hear an emptying of wanting more than of thought."
+      ],
+      [
+        "all readers agree on what chapter three means",
+        false,
+        "some hear a ruler keeping people simple; others hear a life not crowded with comparison."
+      ]
     ],
     "fork": {
       "setup": "you run the office. the step-challenge leaderboard has turned friends into rivals. what does chapter three suggest?",
-      "options": ["add a bigger prize so it's worth the trouble.", "take the board off the wall.", "lecture everyone about sportsmanship."],
+      "options": [
+        "add a bigger prize so it's worth the trouble.",
+        "take the board off the wall.",
+        "lecture everyone about sportsmanship."
+      ],
       "answer": 1,
       "reveal": "chapter three goes to the source: don't prize it, and people won't compete for it. take the prize away, and the race has nowhere to go."
     },
-    "original": { "script": "虛其心", "say": "SHU chee SHIN", "note": "Chinese, xū qí xīn: empty their minds. Xīn means both heart and mind." },
+    "original": {
+      "script": "虛其心",
+      "say": "SHU chee SHIN",
+      "note": "Chinese, xū qí xīn: empty their minds. Xīn means both heart and mind."
+    },
     "trapdoor": [
       "what you thought: empty minds means keep people ignorant.",
       "what it means: the chapter pairs empty minds with full bellies and strong bones; since xīn is heart as well as mind, some readers hear a heart-mind not crowded with wanting.",
       "what a scholar hears: the chapter is framed as advice about governing, and readers split: some hear a ruler keeping people simple, others an uncrowded heart-mind."
+    ],
+    "recall": [
+      [
+        "al-Qadr",
+        "power or decree"
+      ],
+      [
+        "eikon",
+        "the Greek word for image"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Tao Te Ching, chapter 3", "work": "Tao Te Ching", "translation": "Lao-tzu, Legge 1891", "quoted": "Not to value and employ men of superior ability is the way to keep the people from rivalry among themselves" },
-    { "ref": "Tao Te Ching, chapter 3 (rare things and thieves; empty minds, full bellies; acting without forcing)", "work": "Tao Te Ching", "translation": null, "quoted": null }
+    {
+      "ref": "Tao Te Ching, chapter 3",
+      "work": "Tao Te Ching",
+      "translation": "Lao-tzu, Legge 1891",
+      "quoted": "Not to value and employ men of superior ability is the way to keep the people from rivalry among themselves"
+    },
+    {
+      "ref": "Tao Te Ching, chapter 3 (rare things and thieves; empty minds, full bellies; acting without forcing)",
+      "work": "Tao Te Ching",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -88,5 +167,9 @@
       "Editor pass: the heart/mind point no longer asserts one reading as fact ('so the emptying is of wanting'); now 'some readers', in teach, myth and trapdoor, since the chapter also speaks of keeping people without knowledge."
     ]
   },
-  "meta": { "index": "1065. Empty minds, full bellies · — · don't prize the clever, and people won't compete (Tao Te Ching 3) · stop one competition · no contest", "writer": "spiritual writer agent (days 1062–1071)", "written": "2026-10-02" }
+  "meta": {
+    "index": "1065. Empty minds, full bellies · — · don't prize the clever, and people won't compete (Tao Te Ching 3) · stop one competition · no contest",
+    "writer": "spiritual writer agent (days 1062–1071)",
+    "written": "2026-10-02"
+  }
 }

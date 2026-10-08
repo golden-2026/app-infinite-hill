@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "Conversion across streams",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-THOUSAND-TWO-HUNDRED-THIRTY-SEVEN.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY ONE-THOUSAND-TWO-HUNDRED-THIRTY-SEVEN.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday's line: still here. The Karaites keep the written Torah, by the barley and the moon, without the rabbinic tradition. What did you read for yourself first? Today, a question the streams answer differently. Day one thousand two hundred thirty-seven.",
-      "screen": ["`STILL HERE.`"]
+      "screen": [
+        "`STILL HERE.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Two cousins at a family wedding. Both grew up with Shabbat dinners at their grandmother's, both learned Hebrew, both had a bar or bat mitzvah. One cousin's mother is Jewish. The other cousin's father is Jewish, and his mother is not. At the reception someone asks, half joking, which of them the synagogue across town would count as Jewish. The table goes quiet. The honest reply is: it depends on which synagogue. The question under that silence is today's word.",
-      "screen": ["`TWO COUSINS, ONE GRANDMOTHER.` → `MOTHER'S SIDE, FATHER'S SIDE.` → `IT DEPENDS WHICH SYNAGOGUE.`"]
+      "screen": [
+        "`TWO COUSINS, ONE GRANDMOTHER.` → `MOTHER'S SIDE, FATHER'S SIDE.` → `IT DEPENDS WHICH SYNAGOGUE.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "Who is a Jew? The classic rule comes first. The Mishnah, in the tractate on marriage, teaches that when a Jewish father and a mother who is not Jewish have a child, the child follows the mother. The Talmud reads this out of a verse in Deuteronomy. In rabbinic law, then, Jewish status passes through the mother, and a person can also become Jewish by conversion, which is tomorrow's story. Orthodox and Conservative Judaism keep this rule. Now a surprise inside the rule. Some things still pass through the father. In the Torah, the people are counted \"after their families, by the house of their fathers,\" and to this day a kohen, a member of the priestly family, is a kohen because his father was. So even in traditional law, the mother's line and the father's line each carry something. Then the other answer. Reform and Reconstructionist Judaism also accept a child of a Jewish father, when the child is raised as a Jew and takes part in Jewish life. For them, a Jewish parent on either side opens the door, and the upbringing walks through it. And what it means for real people. The two cousins at the wedding may be welcomed in one synagogue and asked about their mother in another. Each stream is trying to be faithful to what it holds, and none needs to be painted as cruel or careless to explain itself. Different answers, given with conviction, and real families living right across the line between them.",
-      "screen": ["`THE CHILD FOLLOWS THE MOTHER.` · `THE PRIESTHOOD FOLLOWS THE FATHER.` · `EITHER PARENT, PLUS UPBRINGING.` · `FAMILIES ACROSS THE LINE.` · then, large: `DIFFERENT ANSWERS.`"]
+      "screen": [
+        "`THE CHILD FOLLOWS THE MOTHER.` · `THE PRIESTHOOD FOLLOWS THE FATHER.` · `EITHER PARENT, PLUS UPBRINGING.` · `FAMILIES ACROSS THE LINE.` · then, large: `DIFFERENT ANSWERS.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Who is a Jew? Orthodox and Conservative Judaism follow the mother's line; Reform and Reconstructionist Judaism also accept the father's, with a Jewish upbringing. Today's word.",
-      "screen": ["`WHO IS A JEW? — today's word`."]
+      "screen": [
+        "`WHO IS A JEW? — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,36 +61,105 @@
       "voice": "Your line: different answers. Today, when a question about who belongs comes up, ask whose answer is being used before you give your own. Day one thousand two hundred thirty-seven.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 1237 COUNTS.` → `TOMORROW: CONVERSION ACROSS STREAMS.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 1237 COUNTS.` → `TOMORROW: CONVERSION ACROSS STREAMS.`"
+      ]
+    }
   ],
   "howItsDone": "Orthodox and Conservative communities count as Jewish a child of a Jewish mother or a convert; Reform and Reconstructionist communities also count a child of a Jewish father who is raised with Jewish identity and practice.",
   "games": {
     "match": {
       "prompt": "who is a Jew? — tap the pairs.",
-      "pairs": [["Orthodox and Conservative", "the mother's line"], ["Reform and Reconstructionist", "either parent, plus upbringing"], ["a kohen", "priestly status through the father"], ["the Mishnah", "the child follows the mother"]]
+      "pairs": [
+        [
+          "Orthodox and Conservative",
+          "the mother's line"
+        ],
+        [
+          "Reform and Reconstructionist",
+          "either parent, plus upbringing"
+        ],
+        [
+          "a kohen",
+          "priestly status through the father"
+        ],
+        [
+          "the Mishnah",
+          "the child follows the mother"
+        ]
+      ]
     },
     "myth": [
-      ["in traditional law, nothing passes through the father", false, "a kohen is a kohen because his father was."],
-      ["Reform Judaism accepts a child of a Jewish father who is raised as a Jew", true, "Reconstructionist Judaism does too."],
-      ["every stream gives the same answer", false, "the streams give different answers, held with conviction."]
+      [
+        "in traditional law, nothing passes through the father",
+        false,
+        "a kohen is a kohen because his father was."
+      ],
+      [
+        "Reform Judaism accepts a child of a Jewish father who is raised as a Jew",
+        true,
+        "Reconstructionist Judaism does too."
+      ],
+      [
+        "every stream gives the same answer",
+        false,
+        "the streams give different answers, held with conviction."
+      ]
     ],
     "fork": {
       "setup": "you're the cousin whose father is Jewish and mother is not. you were raised with Shabbat and Hebrew. how do the streams count you?",
-      "options": ["every stream counts you as Jewish.", "Reform and Reconstructionist count you; Orthodox and Conservative look to the mother's line.", "no stream counts you."],
+      "options": [
+        "every stream counts you as Jewish.",
+        "Reform and Reconstructionist count you; Orthodox and Conservative look to the mother's line.",
+        "no stream counts you."
+      ],
       "answer": 1,
       "reveal": "Reform and Reconstructionist accept a Jewish father with a Jewish upbringing; Orthodox and Conservative follow the mother's line, with conversion as the other door."
     },
-    "original": { "script": "מִי הוּא יְהוּדִי", "say": "MEE hoo yeh-hoo-DEE", "note": "Hebrew: who is a Jew?" },
+    "original": {
+      "script": "מִי הוּא יְהוּדִי",
+      "say": "MEE hoo yeh-hoo-DEE",
+      "note": "Hebrew: who is a Jew?"
+    },
     "trapdoor": [
       "what you thought: there's one simple rule everyone uses.",
       "what it means: the streams answer differently: the mother's line, or either parent with a Jewish upbringing.",
       "what a scholar hears: Mishnah Kiddushin 3:12 on the mother's line, while tribe and priesthood still pass through the father."
+    ],
+    "recall": [
+      [
+        "Tanya",
+        "the book's opening word"
+      ],
+      [
+        "bittul",
+        "setting the self aside"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Mishnah Kiddushin 3:12", "work": "Mishnah", "translation": null, "quoted": null },
-    { "ref": "Babylonian Talmud, Kiddushin 68b (on Deuteronomy 7:3–4)", "work": "Talmud", "translation": null, "quoted": null },
-    { "ref": "Numbers 1:2", "work": "The Bible", "translation": "KJV (1769)", "quoted": "after their families, by the house of their fathers" }
+    {
+      "ref": "Mishnah Kiddushin 3:12",
+      "work": "Mishnah",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Babylonian Talmud, Kiddushin 68b (on Deuteronomy 7:3–4)",
+      "work": "Talmud",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Numbers 1:2",
+      "work": "The Bible",
+      "translation": "KJV (1769)",
+      "quoted": "after their families, by the house of their fathers"
+    }
   ],
   "review": {
     "status": "pending",
@@ -89,5 +173,9 @@
       "Editor: hook no longer asks about being counted in a minyan (day 1223's image, and gender-dependent in Orthodox practice); asks who would be counted as Jewish instead; practice ending and teach signposting varied."
     ]
   },
-  "meta": { "index": "1237. Who is a Jew? · — · Orthodox and Conservative follow the mother's line; Reform and Reconstructionist also accept the father's, with upbringing · respect different answers · different answers", "writer": "writer agent (judaism y4 1232–1241)", "written": "2026-10-01" }
+  "meta": {
+    "index": "1237. Who is a Jew? · — · Orthodox and Conservative follow the mother's line; Reform and Reconstructionist also accept the father's, with upbringing · respect different answers · different answers",
+    "writer": "writer agent (judaism y4 1232–1241)",
+    "written": "2026-10-01"
+  }
 }

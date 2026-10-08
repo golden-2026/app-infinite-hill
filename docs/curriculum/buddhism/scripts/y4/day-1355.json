@@ -9,24 +9,37 @@
   "length": "6:30",
   "tomorrow": "Temple and family",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-THOUSAND-THREE-HUNDRED-FIFTY-FIVE.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY ONE-THOUSAND-THREE-HUNDRED-FIFTY-FIVE.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, Humanistic Buddhism: Buddhism in the human world, in schools, hospitals and offices. Your line was this human life. What kind thing did you do at work? Day one thousand three hundred fifty-five.",
-      "screen": ["`THIS HUMAN LIFE.`"]
+      "screen": [
+        "`THIS HUMAN LIFE.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "A line of volunteers in navy blue and white moves through a town after an earthquake. They carry blankets, rice and hot meals. When one of them hands a blanket to an old man, she uses both hands, and then she bows to him and says thank you. Not you're welcome. Thank you. The man looks surprised. Why is the giver thanking him? That small bow belongs to a Buddhist relief movement from Taiwan, one that tells its own beginning as a handful of coins. Today: relief work.",
-      "screen": ["`NAVY BLUE AND WHITE.` → `A BLANKET, WITH BOTH HANDS.` → `THE GIVER SAYS THANK YOU.`"]
+      "screen": [
+        "`NAVY BLUE AND WHITE.` → `A BLANKET, WITH BOTH HANDS.` → `THE GIVER SAYS THANK YOU.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "First, the founder. The movement is called Tzu Chi, which its members translate as compassion and relief. It was founded by a Buddhist nun, Dharma Master Cheng Yen, on Taiwan's east coast. Second, the bamboo tube. The story the movement tells goes like this: she asked a small group of housewives to drop a little coin into a bamboo tube each day, before going to market, to help the poor. A small amount, they asked? Small, she said, but every day. Tradition says that's how it started: not with a big gift but with a daily one. The coins grew into clinics, hospitals and teams of volunteers that now travel to floods, earthquakes and storms far beyond Taiwan. Third, the giving itself. In Buddhism, giving is called dana, a practice anyone can start with. The Dhammapada, in Max Müller's translation, says: \"let him overcome the greedy by liberality.\" Tzu Chi volunteers add a twist. They thank the person who receives, because receiving gives the volunteer a chance to practice. That's why the bow. Fourth, what it asks of the volunteer. Volunteers include ordinary lay people: shopkeepers, teachers, retirees. They clean mud out of houses, cook in field kitchens and sort recycling to raise funds. The movement's way of seeing it is that the work is the practice. Not a reward. Not a good deed to boast about. Hands that help, and a mind that stays humble while they do it.",
-      "screen": ["`A NUN NAMED CHENG YEN.` · `A COIN IN A BAMBOO TUBE.` · `OVERCOME THE GREEDY BY LIBERALITY.` · `THE WORK IS THE PRACTICE.` · then, large: `HANDS THAT HELP.`"]
+      "screen": [
+        "`A NUN NAMED CHENG YEN.` · `A COIN IN A BAMBOO TUBE.` · `OVERCOME THE GREEDY BY LIBERALITY.` · `THE WORK IS THE PRACTICE.` · then, large: `HANDS THAT HELP.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Relief work. Buddhist volunteers bringing food, shelter and care after disasters, treating giving as practice and thanking those who receive. Today's word.",
-      "screen": ["`RELIEF WORK — today's word`."]
+      "screen": [
+        "`RELIEF WORK — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,40 +61,99 @@
       "voice": "Your line: hands that help. Today, give to one relief effort, however small, and if you hand anything to anyone, try using both hands. Day one thousand three hundred fifty-five.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 1355 COUNTS.` → `TOMORROW: TEMPLE AND FAMILY.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 1355 COUNTS.` → `TOMORROW: TEMPLE AND FAMILY.`"
+      ]
+    }
   ],
   "howItsDone": "Tzu Chi volunteers, founded around the nun Cheng Yen in Taiwan, bring food, shelter and medical care after disasters, often handing aid with both hands and thanking those who receive it.",
   "games": {
     "match": {
       "prompt": "relief work: tap the pairs.",
       "pairs": [
-        ["Cheng Yen", "the nun who founded Tzu Chi"],
-        ["the bamboo tube", "a small coin, every day"],
-        ["dana", "giving"],
-        ["the bow", "thanking the one who receives"]
+        [
+          "Cheng Yen",
+          "the nun who founded Tzu Chi"
+        ],
+        [
+          "the bamboo tube",
+          "a small coin, every day"
+        ],
+        [
+          "dana",
+          "giving"
+        ],
+        [
+          "the bow",
+          "thanking the one who receives"
+        ]
       ]
     },
     "myth": [
-      ["Tzu Chi began with a large donation", false, "the story it tells begins with housewives dropping a little coin in a bamboo tube each day."],
-      ["Tzu Chi volunteers thank the people they help", true, "receiving gives the volunteer a chance to practice, so the giver says thank you."],
-      ["the volunteers are all monks and nuns", false, "volunteers include lay people: shopkeepers, teachers, retirees."]
+      [
+        "Tzu Chi began with a large donation",
+        false,
+        "the story it tells begins with housewives dropping a little coin in a bamboo tube each day."
+      ],
+      [
+        "Tzu Chi volunteers thank the people they help",
+        true,
+        "receiving gives the volunteer a chance to practice, so the giver says thank you."
+      ],
+      [
+        "the volunteers are all monks and nuns",
+        false,
+        "volunteers include lay people: shopkeepers, teachers, retirees."
+      ]
     ],
     "fork": {
       "setup": "you're a volunteer after an earthquake. you hand an old man a blanket. what do you say?",
-      "options": ["you're welcome.", "nothing; you hurry on.", "thank you, with a bow."],
+      "options": [
+        "you're welcome.",
+        "nothing; you hurry on.",
+        "thank you, with a bow."
+      ],
       "answer": 2,
       "reveal": "Tzu Chi volunteers thank the one who receives: his need gave them a chance to practice giving."
     },
-    "original": { "script": "दान", "say": "DAA-nuh", "note": "Pali and Sanskrit dana: giving, generosity, the practice behind every blanket and meal." },
+    "original": {
+      "script": "दान",
+      "say": "DAA-nuh",
+      "note": "Pali and Sanskrit dana: giving, generosity, the practice behind every blanket and meal."
+    },
     "trapdoor": [
       "what you thought: Buddhist relief is charity with a temple logo.",
       "what it means: giving treated as practice, done humbly, with thanks to the one who receives.",
       "what a scholar hears: dana at the center, a movement that tells its own beginning as daily coins in a bamboo tube."
+    ],
+    "recall": [
+      [
+        "Shingon",
+        "true word"
+      ],
+      [
+        "Huayan",
+        "named for a sutra"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Dhammapada 223", "work": "The Dhammapada", "translation": "Max Müller 1881", "quoted": "let him overcome the greedy by liberality" },
-    { "ref": "the founding story and practice of Tzu Chi (Dharma Master Cheng Yen)", "work": "modern movement, paraphrased", "translation": null, "quoted": null }
+    {
+      "ref": "Dhammapada 223",
+      "work": "The Dhammapada",
+      "translation": "Max Müller 1881",
+      "quoted": "let him overcome the greedy by liberality"
+    },
+    {
+      "ref": "the founding story and practice of Tzu Chi (Dharma Master Cheng Yen)",
+      "work": "modern movement, paraphrased",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -94,5 +168,9 @@
       "Confirm exact Müller wording of Dhammapada 223 fragment."
     ]
   },
-  "meta": { "index": "1355. Relief work · — · Taiwanese Buddhist relief volunteers at disasters around the world · give to one relief effort · hands that help", "writer": "writer agent (buddhism 1352–1361)", "written": "2026-10-02" }
+  "meta": {
+    "index": "1355. Relief work · — · Taiwanese Buddhist relief volunteers at disasters around the world · give to one relief effort · hands that help",
+    "writer": "writer agent (buddhism 1352–1361)",
+    "written": "2026-10-02"
+  }
 }

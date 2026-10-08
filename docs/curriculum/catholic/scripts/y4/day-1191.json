@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "Obedience",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-THOUSAND-ONE-HUNDRED-NINETY-ONE.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY ONE-THOUSAND-ONE-HUNDRED-NINETY-ONE.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, taking counsel: the abbot calls the whole community, because the Lord often shows what is better to the younger. Your line was the youngest may be right. Whose view did you ask? Day one thousand one hundred ninety-one.",
-      "screen": ["`THE YOUNGEST MAY BE RIGHT.`"]
+      "screen": [
+        "`THE YOUNGEST MAY BE RIGHT.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "A pegboard on a garage wall. Each tool hangs on its own hook, with its outline drawn around it in marker, so you can see at a glance what's missing. Hammer. Level. The good screwdriver somebody borrowed. Nobody uses every tool every day. You grab the one the job needs. Chapter four of Saint Benedict's Rule is a pegboard like that, for the inner life. A long list, hung up in plain sight. Today: the tools of good works.",
-      "screen": ["`A PEGBOARD IN A GARAGE.` → `GRAB THE ONE THE JOB NEEDS.` → `A PEGBOARD FOR THE SOUL.`"]
+      "screen": [
+        "`A PEGBOARD IN A GARAGE.` → `GRAB THE ONE THE JOB NEEDS.` → `A PEGBOARD FOR THE SOUL.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "Benedict doesn't explain the tools. He just lists them, one short line after another. The first is the great commandment. Jesus gives it in the Douay-Rheims: \"Thou shalt love the Lord thy God with thy whole heart, and with thy whole soul, and with thy whole mind.\" Then, love your neighbor as yourself. After that the list runs on, some of it from the Ten Commandments, some of it from the Sermon on the Mount, some of it Benedict's own. Prefer nothing to the love of Christ. Don't give a false peace. Make peace with someone you've quarreled with before the sun goes down. Pray for your enemies. And then two that stop people. Keep death daily before your eyes. That sounds grim, but in the Rule it isn't meant to frighten. It's meant to focus: if today could be the last, what actually matters? And at the very end of the list, the tool Benedict saves for last: never despair of God's mercy. Think about why that one comes last. A monk who's tried to use all the others will fail at some of them. Maybe most of them, on a bad day. The list seems to expect that. So the final tool is the one for when the rest have slipped out of your hands. Then Benedict names the workshop. The place where you use these tools, he says, is the enclosure of the monastery and staying put in the community. Not somewhere far off. Right where you already are. A long list, and one tool you never put down.",
-      "screen": ["`A LIST WITHOUT EXPLANATIONS.` · `KEEP DEATH BEFORE YOUR EYES.` · `THE LAST TOOL: NEVER DESPAIR.` · `THE WORKSHOP IS WHERE YOU ARE.` · then, large: `WITH THY WHOLE HEART.`"]
+      "screen": [
+        "`A LIST WITHOUT EXPLANATIONS.` · `KEEP DEATH BEFORE YOUR EYES.` · `THE LAST TOOL: NEVER DESPAIR.` · `THE WORKSHOP IS WHERE YOU ARE.` · then, large: `WITH THY WHOLE HEART.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "The tools of good works. Chapter four of Benedict's Rule: a long list of short instructions for the inner life, ending with never despair of God's mercy. Today's word.",
-      "screen": ["`THE TOOLS OF GOOD WORKS — today's word`."]
+      "screen": [
+        "`THE TOOLS OF GOOD WORKS — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,35 +61,99 @@
       "voice": "Your line: never despair. Today, use the one tool you picked, once. And if it slips, reach for the last tool on the board. Day one thousand one hundred ninety-one.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 1191 COUNTS.` → `TOMORROW: OBEDIENCE.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 1191 COUNTS.` → `TOMORROW: OBEDIENCE.`"
+      ]
+    }
   ],
   "howItsDone": "Benedictines read chapter 4 of the Rule in turn with the other chapters, and some readers use the list as an examination of conscience.",
   "games": {
     "match": {
       "prompt": "the tools of good works — tap the pairs.",
-      "pairs": [["the first tool", "love God with your whole heart"], ["the last tool", "never despair of God's mercy"], ["keep death before your eyes", "to focus on what matters"], ["the workshop", "the monastery and staying put"]]
+      "pairs": [
+        [
+          "the first tool",
+          "love God with your whole heart"
+        ],
+        [
+          "the last tool",
+          "never despair of God's mercy"
+        ],
+        [
+          "keep death before your eyes",
+          "to focus on what matters"
+        ],
+        [
+          "the workshop",
+          "the monastery and staying put"
+        ]
+      ]
     },
     "myth": [
-      ["Benedict explains each tool at length", false, "he just lists them, one short line after another."],
-      ["the list ends with never despair of God's mercy", true, "the last tool, for when the others have slipped."],
-      ["for Benedict, the workshop is somewhere far away", false, "it's the monastery and staying put in the community: right where you are."]
+      [
+        "Benedict explains each tool at length",
+        false,
+        "he just lists them, one short line after another."
+      ],
+      [
+        "the list ends with never despair of God's mercy",
+        true,
+        "the last tool, for when the others have slipped."
+      ],
+      [
+        "for Benedict, the workshop is somewhere far away",
+        false,
+        "it's the monastery and staying put in the community: right where you are."
+      ]
     ],
     "fork": {
       "setup": "you're Benedict, finishing your long list of tools. which one do you put last?",
-      "options": ["love God with your whole heart.", "keep death daily before your eyes.", "never despair of God's mercy."],
+      "options": [
+        "love God with your whole heart.",
+        "keep death daily before your eyes.",
+        "never despair of God's mercy."
+      ],
       "answer": 2,
       "reveal": "never despair of God's mercy. a monk will fail at some of the others; this is the tool for when they slip."
     },
-    "original": { "script": "de Dei misericordia numquam desperare", "say": "deh DEH-ee mee-zeh-ree-KOR-dee-ah NOOM-kwahm deh-speh-RAH-reh", "note": "Latin, the last line of the Rule's list: never to despair of God's mercy." },
+    "original": {
+      "script": "de Dei misericordia numquam desperare",
+      "say": "deh DEH-ee mee-zeh-ree-KOR-dee-ah NOOM-kwahm deh-speh-RAH-reh",
+      "note": "Latin, the last line of the Rule's list: never to despair of God's mercy."
+    },
     "trapdoor": [
       "what you thought: a monk's rulebook of dos and don'ts.",
       "what it means: a pegboard of short tools for the inner life, used right where you are, ending with never despair.",
       "what a scholar hears: instrumenta bonorum operum; the workshop, officina, is the cloister and stability in the community."
+    ],
+    "recall": [
+      [
+        "Grace",
+        "heals and lifts"
+      ],
+      [
+        "habitus",
+        "linked to habere, to have"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Matthew 22:37", "work": "The Bible", "translation": "Douay-Rheims (Challoner)", "quoted": "Thou shalt love the Lord thy God with thy whole heart, and with thy whole soul, and with thy whole mind." },
-    { "ref": "Rule of Saint Benedict, ch. 4", "work": "The Rule of Saint Benedict", "translation": null, "quoted": null }
+    {
+      "ref": "Matthew 22:37",
+      "work": "The Bible",
+      "translation": "Douay-Rheims (Challoner)",
+      "quoted": "Thou shalt love the Lord thy God with thy whole heart, and with thy whole soul, and with thy whole mind."
+    },
+    {
+      "ref": "Rule of Saint Benedict, ch. 4",
+      "work": "The Rule of Saint Benedict",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -87,5 +166,9 @@
       "Editor pass: 'Benedict expects that' (attributing an intent the text doesn't state) softened to 'the list seems to expect that'; howItsDone's claim about keeping one tool 'for a season' softened."
     ]
   },
-  "meta": { "index": "1191. The tools of good works (ch. 4) · — · a list including keep death daily before your eyes and never despair of God's mercy · pick one tool · never despair", "writer": "writer agent (catholic 1182–1191)", "written": "2026-10-01" }
+  "meta": {
+    "index": "1191. The tools of good works (ch. 4) · — · a list including keep death daily before your eyes and never despair of God's mercy · pick one tool · never despair",
+    "writer": "writer agent (catholic 1182–1191)",
+    "written": "2026-10-01"
+  }
 }

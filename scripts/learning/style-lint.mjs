@@ -7,7 +7,7 @@ import { fileURLToPath } from "node:url";
 const root = fileURLToPath(new URL("../../", import.meta.url));
 const [DOOR, FROM, TO] = process.argv.slice(2);
 const json = process.argv.includes("--json");
-const file = (d) => ["y1", "y2", "y3"].map((y) => `${root}docs/curriculum/${DOOR.toLowerCase()}/scripts/${y}/day-${String(d).padStart(4, "0")}.json`).find(fs.existsSync);
+const file = (d) => ["y1", "y2", "y3", "y4"].map((y) => `${root}docs/curriculum/${DOOR.toLowerCase()}/scripts/${y}/day-${String(d).padStart(4, "0")}.json`).find(fs.existsSync);
 const seg = (s, t) => s.segments.find((g) => g.type === t) || {};
 const words = (t) => (String(t || "").match(/[A-Za-zÀ-ÿ'’-]+/g) || []).length;
 const sentences = (t) => String(t || "").split(/(?<=[.!?])\s+/).filter((x) => x.trim());

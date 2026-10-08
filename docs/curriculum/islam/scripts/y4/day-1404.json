@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "Your circle",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-THOUSAND-FOUR-HUNDRED-FOUR.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY ONE-THOUSAND-FOUR-HUNDRED-FOUR.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, your teacher. Your line: find a teacher. Did you write down the name of one class? Often that class meets in one particular kind of room. Today, that room, and the people in it. Day one thousand four hundred four.",
-      "screen": ["`FIND A TEACHER.`"]
+      "screen": [
+        "`FIND A TEACHER.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Friday, a little after noon. Outside a door, shoes pile up in crooked rows: work boots, sneakers, a toddler's sandals, a pair of polished office shoes. Inside, a man who fixes cars is standing next to a man who teaches at the university, and neither one is thinking about that. A taxi driver arrives late and slips into the back row. Somebody's grandmother is already in her usual spot. For a few minutes, nobody is anyone's boss. Then the row straightens, and they bow together. Today, being part of a community. Your mosque.",
-      "screen": ["`SHOES IN CROOKED ROWS.` → `NOBODY IS ANYONE'S BOSS.` → `THE ROW STRAIGHTENS.`"]
+      "screen": [
+        "`SHOES IN CROOKED ROWS.` → `NOBODY IS ANYONE'S BOSS.` → `THE ROW STRAIGHTENS.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "Start with the call. Surah al-Jumu'ah says, in Pickthall's words: \"O ye who believe! When the call is heard for the prayer of the day of congregation, haste unto remembrance of Allah and leave your trading.\" In the Sunni schools of law the Friday prayer, with its sermon, is required of adult men who are settled in a place, and women may attend. When they do, it takes the place of the noon prayer. Next, why together. In Sahih al-Bukhari the Prophet Muhammad, peace be upon him, says that prayer in congregation is twenty-seven degrees better than prayer alone. Twenty-seven is the hadith's own number. The point underneath it is simple: the same prayer, said shoulder to shoulder, is not the same experience. Third, who gets to come. In another hadith in Bukhari, the Prophet says not to stop the women servants of Allah from the mosques of Allah. Mosques today arrange space for women in different ways, and Muslims discuss openly how well that is working. Last, what belonging asks. A mosque is not a perfect place. The sermon may run long; the parking may be a mess; someone may be rude about where you stood. Belonging is not the same as liking everything. It means you're known by face, you notice when someone is missing, and somebody notices when you are. That is a lot to ask of a building, and it is exactly what people go back for.",
-      "screen": ["`THE CALL ON THE DAY OF CONGREGATION.` · `SHOULDER TO SHOULDER.` · `DON'T STOP THE WOMEN FROM THE MOSQUES.` · `BELONGING IS BEING MISSED.`"]
+      "screen": [
+        "`THE CALL ON THE DAY OF CONGREGATION.` · `SHOULDER TO SHOULDER.` · `DON'T STOP THE WOMEN FROM THE MOSQUES.` · `BELONGING IS BEING MISSED.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Your mosque. The place where the row straightens on Friday, and where you are known, and missed. Today's word.",
-      "screen": ["`YOUR MOSQUE — today's word`."]
+      "screen": [
+        "`YOUR MOSQUE — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,37 +61,111 @@
       "voice": "Your line: belong somewhere. Today, greet one person by name in a place you go often, and ask them one real question. Tomorrow, your circle. Day one thousand four hundred four.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 1404 COUNTS.` → `TOMORROW: YOUR CIRCLE.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 1404 COUNTS.` → `TOMORROW: YOUR CIRCLE.`"
+      ]
+    }
   ],
   "howItsDone": "On Friday around midday, Muslims gather at the mosque for Jumu'ah: a sermon from the imam followed by a congregational prayer, which is required of adult resident men and open to women, and which takes the place of the noon prayer for those who attend.",
   "games": {
     "match": {
       "prompt": "your mosque — tap the pairs.",
-      "pairs": [["the day of congregation", "Friday, in Pickthall's words"], ["twenty-seven degrees", "prayer together, in the hadith"], ["leave your trading", "when the call is heard"], ["the women servants of Allah", "not to be stopped from the mosques"]]
+      "pairs": [
+        [
+          "the day of congregation",
+          "Friday, in Pickthall's words"
+        ],
+        [
+          "twenty-seven degrees",
+          "prayer together, in the hadith"
+        ],
+        [
+          "leave your trading",
+          "when the call is heard"
+        ],
+        [
+          "the women servants of Allah",
+          "not to be stopped from the mosques"
+        ]
+      ]
     },
     "myth": [
-      ["the Friday prayer takes the place of the noon prayer for those who attend", true, "the Friday prayer with its sermon is prayed in place of the noon prayer."],
-      ["women are forbidden from the mosque", false, "in Sahih al-Bukhari the Prophet says not to stop the women servants of Allah from the mosques of Allah."],
-      ["belonging means liking everything about your mosque", false, "belonging means being known by face, and missed when you're gone."]
+      [
+        "the Friday prayer takes the place of the noon prayer for those who attend",
+        true,
+        "the Friday prayer with its sermon is prayed in place of the noon prayer."
+      ],
+      [
+        "women are forbidden from the mosque",
+        false,
+        "in Sahih al-Bukhari the Prophet says not to stop the women servants of Allah from the mosques of Allah."
+      ],
+      [
+        "belonging means liking everything about your mosque",
+        false,
+        "belonging means being known by face, and missed when you're gone."
+      ]
     ],
     "fork": {
       "setup": "it's Friday. you're in the middle of a sale when you hear the call to the Friday prayer. what does surah al-Jumu'ah say?",
-      "options": ["haste unto remembrance of Allah and leave your trading.", "finish the sale, then think about it.", "pray at home instead, alone."],
+      "options": [
+        "haste unto remembrance of Allah and leave your trading.",
+        "finish the sale, then think about it.",
+        "pray at home instead, alone."
+      ],
       "answer": 0,
       "reveal": "\"haste unto remembrance of Allah and leave your trading\" (62:9). the next verse says that once the prayer is ended, people may go out and seek Allah's bounty again."
     },
-    "original": { "script": "جُمُعَة", "say": "JU-mu-ah", "note": "Arabic: Friday, the day of congregation." },
+    "original": {
+      "script": "جُمُعَة",
+      "say": "JU-mu-ah",
+      "note": "Arabic: Friday, the day of congregation."
+    },
     "trapdoor": [
       "what you thought: a mosque is a building for prayer.",
       "what it means: a community that lines up together on Friday, where you are known by face and missed when you're gone.",
       "what a scholar hears: surah al-Jumu'ah's call to leave trading, the hadith of prayer in congregation, and the hadith about not stopping women from the mosques."
+    ],
+    "recall": [
+      [
+        "kafan",
+        "the shroud"
+      ],
+      [
+        "'iyadah",
+        "visiting the sick"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Qur'an 62:9", "work": "The Qur'an", "translation": "Pickthall 1930", "quoted": "O ye who believe! When the call is heard for the prayer of the day of congregation, haste unto remembrance of Allah and leave your trading." },
-    { "ref": "Qur'an 62:10", "work": "The Qur'an", "translation": null, "quoted": null },
-    { "ref": "Sahih al-Bukhari 645", "work": "Sahih al-Bukhari", "translation": null, "quoted": null },
-    { "ref": "Sahih al-Bukhari 900", "work": "Sahih al-Bukhari", "translation": null, "quoted": null }
+    {
+      "ref": "Qur'an 62:9",
+      "work": "The Qur'an",
+      "translation": "Pickthall 1930",
+      "quoted": "O ye who believe! When the call is heard for the prayer of the day of congregation, haste unto remembrance of Allah and leave your trading."
+    },
+    {
+      "ref": "Qur'an 62:10",
+      "work": "The Qur'an",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Sahih al-Bukhari 645",
+      "work": "Sahih al-Bukhari",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Sahih al-Bukhari 900",
+      "work": "Sahih al-Bukhari",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -89,5 +178,9 @@
       "Editor: the legal summary now says 'in the Sunni schools of law' rather than 'in Islamic law', since Shia rulings on Friday prayer differ."
     ]
   },
-  "meta": { "index": "1404. Your mosque · — · being part of a community · go to Jumu'ah · belong somewhere", "writer": "writer agent (islam 1402–1411)", "written": "2026-10-01" }
+  "meta": {
+    "index": "1404. Your mosque · — · being part of a community · go to Jumu'ah · belong somewhere",
+    "writer": "writer agent (islam 1402–1411)",
+    "written": "2026-10-01"
+  }
 }

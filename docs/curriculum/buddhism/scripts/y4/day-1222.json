@@ -13,25 +13,33 @@
       "type": "the bell",
       "duration": null,
       "voice": "",
-      "screen": ["`DAY ONE-THOUSAND-TWO-HUNDRED-TWENTY-TWO.`"]
+      "screen": [
+        "`DAY ONE-THOUSAND-TWO-HUNDRED-TWENTY-TWO.`"
+      ]
     },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, the first oxherding picture: a herdsman out in the tall grass, searching for an ox he has lost. Your line: searching. What did you name as the thing you're looking for? Day one thousand two hundred twenty-two.",
-      "screen": ["`SEARCHING.`"]
+      "screen": [
+        "`SEARCHING.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "A muddy riverbank keeps a footprint for a while. Farmers learn to read those marks, and so does anyone who has lost a dog in the woods: how deep the print sinks, which way the toes point, how fresh the edges look. A print is not the animal. But it tells you the animal is real, that it came this way, and that you're not chasing a rumor. Yesterday the herdsman set out with nothing but the sense that something was missing. In the second of the oxherding pictures, he looks down and sees prints in the mud. Today: seeing the tracks.",
-      "screen": ["`A FOOTPRINT IN THE MUD.` → `NOT THE ANIMAL, BUT PROOF IT'S REAL.` → `THE SECOND PICTURE.`"]
+      "screen": [
+        "`A FOOTPRINT IN THE MUD.` → `NOT THE ANIMAL, BUT PROOF IT'S REAL.` → `THE SECOND PICTURE.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "First, where the tracks are. In the short preface that goes with this picture, the herdsman finds the tracks through the sutras and the teachings. He reads, he asks, he listens to people who have walked this way, and something starts to make sense. That is the footprint: not the ox itself, but real evidence that there is an ox. Second, a track is not the ox. The preface is careful here. He has found traces, it says, but he has not yet entered the gate. He can talk about the ox. He knows what its prints look like. He might even explain them well to someone else. An old Buddhist image says the same thing another way: a finger pointing at the moon. The teaching points, and the trap is to stare at the finger. Third, why this still counts as a step. In the first picture there were no prints at all, just a man lost in the grass. Now there's a direction. The verse with this picture says, in paraphrase, that the prints are scattered along the stream and under the trees, and that however far the ox wanders into the hills, its nose reaches the sky; it can't be hidden. Fourth, what a track looks like on an ordinary day. A line from a talk stays with you for a week. A friend meets bad news with a steadiness that's hard to explain. A few quiet minutes in the morning change how the afternoon goes. None of these is awakening. Each one is a print in the mud, a sign that the way is real and runs somewhere. The picture holds two things at once: the herdsman hasn't arrived, and he isn't making it up.",
-      "screen": ["`TRACKS FOUND IN THE TEACHINGS.` · `A TRACK IS NOT THE OX.` · `STILL A REAL STEP: A DIRECTION.` · `TRACKS ON AN ORDINARY DAY.` · then, large: `SEEING THE TRACKS.`"]
+      "screen": [
+        "`TRACKS FOUND IN THE TEACHINGS.` · `A TRACK IS NOT THE OX.` · `STILL A REAL STEP: A DIRECTION.` · `TRACKS ON AN ORDINARY DAY.` · then, large: `SEEING THE TRACKS.`"
+      ]
     },
     {
       "type": "the practice",
@@ -43,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Seeing the tracks. The second oxherding picture: signs of the ox found in the teachings, real evidence, but not yet the ox itself. Today's word.",
-      "screen": ["`SEEING THE TRACKS — today's word`."]
+      "screen": [
+        "`SEEING THE TRACKS — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -55,7 +65,9 @@
       "type": "the close",
       "duration": null,
       "voice": "",
-      "screen": ["`DAY 1222 COUNTS.` → `TOMORROW: SEEING THE OX.`"]
+      "screen": [
+        "`DAY 1222 COUNTS.` → `TOMORROW: SEEING THE OX.`"
+      ]
     }
   ],
   "howItsDone": "Zen teachers often use the oxherding pictures in talks and retreats as a map of practice, and students reflect on which picture describes where they are; the second picture is commonly read as learning about the way through study.",
@@ -63,20 +75,48 @@
     "match": {
       "prompt": "seeing the tracks: tap the pairs.",
       "pairs": [
-        ["the tracks", "found in the sutras and teachings"],
-        ["not yet entered the gate", "he has traces, not the ox"],
-        ["a finger pointing at the moon", "the teaching points beyond itself"],
-        ["the first picture", "no prints at all, just searching"]
+        [
+          "the tracks",
+          "found in the sutras and teachings"
+        ],
+        [
+          "not yet entered the gate",
+          "he has traces, not the ox"
+        ],
+        [
+          "a finger pointing at the moon",
+          "the teaching points beyond itself"
+        ],
+        [
+          "the first picture",
+          "no prints at all, just searching"
+        ]
       ]
     },
     "myth": [
-      ["in the second picture, the herdsman has found the ox", false, "he has found only its tracks; the preface says he has not yet entered the gate."],
-      ["the tracks are found through the teachings", true, "the preface says he comes to understand something through the sutras and teachings."],
-      ["the picture treats study as worthless", false, "the tracks are real evidence and give him a direction; they just aren't the ox."]
+      [
+        "in the second picture, the herdsman has found the ox",
+        false,
+        "he has found only its tracks; the preface says he has not yet entered the gate."
+      ],
+      [
+        "the tracks are found through the teachings",
+        true,
+        "the preface says he comes to understand something through the sutras and teachings."
+      ],
+      [
+        "the picture treats study as worthless",
+        false,
+        "the tracks are real evidence and give him a direction; they just aren't the ox."
+      ]
     ],
     "fork": {
       "setup": "you're the herdsman. you've found prints by the river and can describe them perfectly. what does the second picture say about where you are?",
-      "options": ["you've caught the ox.", "you've found traces, but haven't entered the gate.", "the prints are a distraction; ignore them."],
+      "options": [
+        "you've caught the ox.",
+        "you've found traces, but haven't entered the gate.",
+        "the prints are a distraction; ignore them."
+      ],
       "answer": 1,
       "reveal": "the preface says he has found the traces but not yet entered the gate. the tracks are real, and they point onward."
     },
@@ -89,11 +129,31 @@
       "what you thought: seeing the tracks means you're nearly there.",
       "what it means: finding real signs of the way in the teachings, while the ox itself is still unseen.",
       "what a scholar hears: the preface draws a line between understanding the traces and entering the gate, the gap a finger pointing at the moon also names."
+    ],
+    "recall": [
+      [
+        "shikantaza",
+        "just sitting, no object"
+      ],
+      [
+        "susokukan",
+        "counting breaths"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Ten Oxherding Pictures, picture 2: preface and verse", "work": "Ten Oxherding Pictures, attributed to Kuoan Shiyuan (Kakuan)", "translation": null, "quoted": null },
-    { "ref": "the finger pointing at the moon (image found in several Mahayana and Chan texts)", "work": "Buddhist teaching image", "translation": null, "quoted": null }
+    {
+      "ref": "Ten Oxherding Pictures, picture 2: preface and verse",
+      "work": "Ten Oxherding Pictures, attributed to Kuoan Shiyuan (Kakuan)",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "the finger pointing at the moon (image found in several Mahayana and Chan texts)",
+      "work": "Buddhist teaching image",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",

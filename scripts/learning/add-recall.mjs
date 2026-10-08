@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url";
 
 const root = fileURLToPath(new URL("../../", import.meta.url));
 const [DOOR, FROM, TO] = process.argv.slice(2);
-const file = (d) => ["y1", "y2", "y3"].map((y) => `${root}docs/curriculum/${DOOR.toLowerCase()}/scripts/${y}/day-${String(d).padStart(4, "0")}.json`).find(fs.existsSync);
+const file = (d) => ["y1", "y2", "y3", "y4"].map((y) => `${root}docs/curriculum/${DOOR.toLowerCase()}/scripts/${y}/day-${String(d).padStart(4, "0")}.json`).find(fs.existsSync);
 const read = (d) => { const f = file(d); return f ? JSON.parse(fs.readFileSync(f, "utf8")) : null; };
 const wk = (() => { try { return JSON.parse(fs.readFileSync(`${root}docs/learning/week1/${DOOR}.json`, "utf8")); } catch { return null; } })();
 // an earlier word's short meaning: its own guess, else week one's quiz (or day one's bet), else its own pair

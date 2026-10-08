@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "Not everyone agreed",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-THOUSAND-ONE-HUNDRED-THIRTY-SIX.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY ONE-THOUSAND-ONE-HUNDRED-THIRTY-SIX.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, principles six to nine, and your line: prophecy and Torah. Did you give one plain line the attention of a famous one? Today, the list's last stretch. Day one thousand one hundred thirty-six.",
-      "screen": ["`PROPHECY AND TORAH.`"]
+      "screen": [
+        "`PROPHECY AND TORAH.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Thirteen lines, and every one opens the same way. I believe with complete faith. That's the shape of a version of Maimonides' list printed in prayer books, set out after the morning service. It isn't his own wording. Someone later recast each foundation as a sentence a person could say in the first person, out loud. So the list stops being a page of philosophy and becomes something said with the mouth. Today, the last four lines, the ones that look ahead.",
-      "screen": ["`THIRTEEN LINES, ONE OPENING.` → `I BELIEVE WITH COMPLETE FAITH.` → `THE LINES THAT LOOK AHEAD.`"]
+      "screen": [
+        "`THIRTEEN LINES, ONE OPENING.` → `I BELIEVE WITH COMPLETE FAITH.` → `THE LINES THAT LOOK AHEAD.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "Principles ten to thirteen. The tenth: God knows what human beings do and think. Not in a general way, from far off. The Psalms say God fashions the hearts of all people and considers all their deeds. Nothing a person does falls outside God's notice. The eleventh: God rewards those who keep the commandments and punishes those who break them. Maimonides holds that the final reward is the world to come, the share this whole list began with. The twelfth: the messiah will come. And here the prayer-book version adds a phrase. Even though he may delay, I wait for him every day that he will come. Not a date on a calendar. A waiting that starts over each morning. The thirteenth: the dead will live again, at a time God chooses. That's the resurrection of the dead, a belief already present in the Mishnah chapter Maimonides was explaining. Now look at the whole list from here. It began with God, who has no beginning. It passed through prophecy and the Torah. And it ends with things that haven't happened yet. A creed that closes on hope rather than on a fact already settled. Some Jews say these lines each morning. Others study them, and argue with them, which is tomorrow. Each line still opens the same way. I believe with complete faith.",
-      "screen": ["`GOD KNOWS WHAT PEOPLE DO.` · `REWARD AND PUNISHMENT.` · `WAITING FOR THE MESSIAH, EVERY DAY.` · `THE DEAD WILL LIVE.` · then, large: `I BELIEVE WITH COMPLETE FAITH.`"]
+      "screen": [
+        "`GOD KNOWS WHAT PEOPLE DO.` · `REWARD AND PUNISHMENT.` · `WAITING FOR THE MESSIAH, EVERY DAY.` · `THE DEAD WILL LIVE.` · then, large: `I BELIEVE WITH COMPLETE FAITH.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Principles ten to thirteen. God knows what people do, God rewards and punishes, the messiah will come, and the dead will live. Today's word.",
-      "screen": ["`PRINCIPLES TEN TO THIRTEEN — today's word`."]
+      "screen": [
+        "`PRINCIPLES TEN TO THIRTEEN — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,37 +61,111 @@
       "voice": "Your line: I believe with complete faith. Today, once, notice something you're waiting for, and let the waiting start fresh instead of stale. Day one thousand one hundred thirty-six.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 1136 COUNTS.` → `TOMORROW: NOT EVERYONE AGREED.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 1136 COUNTS.` → `TOMORROW: NOT EVERYONE AGREED.`"
+      ]
+    }
   ],
   "howItsDone": "Some Jews recite the thirteen \"I believe\" lines, Ani Ma'amin, after the morning service; the twelfth line, about waiting for the messiah, is also sung to several melodies.",
   "games": {
     "match": {
       "prompt": "principles ten to thirteen — tap the pairs.",
-      "pairs": [["principle ten", "God knows what people do"], ["principle eleven", "reward and punishment"], ["principle twelve", "the messiah will come"], ["principle thirteen", "the dead will live again"]]
+      "pairs": [
+        [
+          "principle ten",
+          "God knows what people do"
+        ],
+        [
+          "principle eleven",
+          "reward and punishment"
+        ],
+        [
+          "principle twelve",
+          "the messiah will come"
+        ],
+        [
+          "principle thirteen",
+          "the dead will live again"
+        ]
+      ]
     },
     "myth": [
-      ["the \"I believe\" lines are Maimonides' own wording", false, "a later version recast each foundation as a first-person line."],
-      ["the twelfth line waits for the messiah every day", true, "even though he may delay, the line waits for him each day."],
-      ["the list ends with God's existence", false, "it begins there, and ends with what hasn't happened yet: the messiah and the dead living again."]
+      [
+        "the \"I believe\" lines are Maimonides' own wording",
+        false,
+        "a later version recast each foundation as a first-person line."
+      ],
+      [
+        "the twelfth line waits for the messiah every day",
+        true,
+        "even though he may delay, the line waits for him each day."
+      ],
+      [
+        "the list ends with God's existence",
+        false,
+        "it begins there, and ends with what hasn't happened yet: the messiah and the dead living again."
+      ]
     ],
     "fork": {
       "setup": "you're recasting Maimonides' list so people can say it aloud. how should each line begin?",
-      "options": ["\"Maimonides teaches that...\"", "\"I believe with complete faith...\"", "\"it is required that...\""],
+      "options": [
+        "\"Maimonides teaches that...\"",
+        "\"I believe with complete faith...\"",
+        "\"it is required that...\""
+      ],
       "answer": 1,
       "reveal": "the prayer-book version opens every line with the same first-person words: I believe with complete faith."
     },
-    "original": { "script": "אֲנִי מַאֲמִין", "say": "ah-NEE mah-ah-MEEN", "note": "Hebrew: I believe, the words that open each line of the prayer-book version of the list." },
+    "original": {
+      "script": "אֲנִי מַאֲמִין",
+      "say": "ah-NEE mah-ah-MEEN",
+      "note": "Hebrew: I believe, the words that open each line of the prayer-book version of the list."
+    },
     "trapdoor": [
       "what you thought: four predictions about the end of the world.",
       "what it means: God knows, rewards and punishes, the messiah will come, and the dead will live.",
       "what a scholar hears: the list closing on hope, and the later Ani Ma'amin turning Maimonides' philosophy into first-person lines said aloud."
+    ],
+    "recall": [
+      [
+        "Acher",
+        "the other one"
+      ],
+      [
+        "Mishnah Berurah",
+        "clarified teaching on daily law"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Psalm 33:15", "work": "Tanakh", "translation": null, "quoted": null },
-    { "ref": "Mishnah Sanhedrin 10:1", "work": "Mishnah", "translation": null, "quoted": null },
-    { "ref": "Commentary on the Mishnah, introduction to Sanhedrin 10, principles 10–13", "work": "Commentary on the Mishnah (Maimonides)", "translation": null, "quoted": null },
-    { "ref": "Ani Ma'amin (the thirteen 'I believe' lines)", "work": "Siddur", "translation": null, "quoted": null }
+    {
+      "ref": "Psalm 33:15",
+      "work": "Tanakh",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Mishnah Sanhedrin 10:1",
+      "work": "Mishnah",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Commentary on the Mishnah, introduction to Sanhedrin 10, principles 10–13",
+      "work": "Commentary on the Mishnah (Maimonides)",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Ani Ma'amin (the thirteen 'I believe' lines)",
+      "work": "Siddur",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -92,5 +181,9 @@
       "Editor pass: dropped the word count ('the same five words', true only of the English) from the hook."
     ]
   },
-  "meta": { "index": "1136. Principles ten to thirteen · — · God knows, rewards and punishes, the messiah will come, the dead will live · hold one hope · I believe with complete faith", "writer": "writer agent (judaism y4 1132–1141)", "written": "2026-10-01" }
+  "meta": {
+    "index": "1136. Principles ten to thirteen · — · God knows, rewards and punishes, the messiah will come, the dead will live · hold one hope · I believe with complete faith",
+    "writer": "writer agent (judaism y4 1132–1141)",
+    "written": "2026-10-01"
+  }
 }

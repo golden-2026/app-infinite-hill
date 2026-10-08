@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "The traveling scholars",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-THOUSAND-ONE-HUNDRED-FORTY-NINE.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY ONE-THOUSAND-ONE-HUNDRED-FORTY-NINE.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, mutawatir, and your line: so many said it. When you felt certain of something, was it one voice or many? Day one thousand one hundred forty-nine.",
-      "screen": ["`SO MANY SAID IT.`"]
+      "screen": [
+        "`SO MANY SAID IT.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "A story is told about the hadith scholar Ali ibn al-Madini. Someone asked him about a narrator, and the narrator was his own father. He hesitated, and said: ask someone else. They pressed him. And he answered, as the story goes: this is the religion. My father is weak. Whatever the details, the story shows what a whole field of study asked of people. A son, asked a question, chose accuracy over family pride. Behind that answer was a library of judgments about people. Today, the science of men.",
-      "screen": ["`ASKED ABOUT HIS OWN FATHER.` → `THIS IS THE RELIGION.` → `A LIBRARY ABOUT PEOPLE.`"]
+      "screen": [
+        "`ASKED ABOUT HIS OWN FATHER.` → `THIS IS THE RELIGION.` → `A LIBRARY ABOUT PEOPLE.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "First, the word. Rijal means men, and in hadith study it names the narrators themselves, the people in the chains. Despite the word, the books include women who narrated too. Second, why it began. In the introduction to Sahih Muslim, the early scholar Ibn Sirin is quoted saying, in effect: people didn't use to ask about chains. Then came the time of turmoil, and they said: name your men for us. And Ibn Sirin again: this knowledge is religion, so look at whom you take your religion from. Third, what the books record. Scholars wrote entry after entry, narrator by narrator. Where he lived. Whom he heard from, and who heard from him. Whether he traveled. Was he truthful? Was his memory precise, or did it slip, or did it fade late in life? Did he write his reports down, and keep the pages safe? The field has a blunt name: al-jarh wa al-ta'dil, wounding and vouching. Each narrator could be wounded by a scholar's criticism, or vouched for. Fourth, a hard question the scholars faced openly. Isn't talking about a man's flaws a kind of backbiting? Imam Muslim answers in that same introduction: exposing a narrator's weakness, to protect what's said in the Prophet's name, isn't forbidden backbiting. It's a duty. And, as the story goes, some applied it even to their own fathers. Out of this came books of narrators that students of hadith still open. When a scholar grades a report, this is the shelf behind the grade.",
-      "screen": ["`RIJAL: THE PEOPLE IN THE CHAINS.` · `NAME YOUR MEN FOR US.` · `WOUNDING AND VOUCHING.` · `NOT BACKBITING, A DUTY.`"]
+      "screen": [
+        "`RIJAL: THE PEOPLE IN THE CHAINS.` · `NAME YOUR MEN FOR US.` · `WOUNDING AND VOUCHING.` · `NOT BACKBITING, A DUTY.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Rijal. Literally men: the narrators in the chains, and the science of studying who each one was and whether he can be trusted. Today's word.",
-      "screen": ["`RIJAL — today's word`."]
+      "screen": [
+        "`RIJAL — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,36 +61,105 @@
       "voice": "Your line: who was he? Today, before you share something, look up one thing about who first said it. Tomorrow: the traveling scholars. Day one thousand one hundred forty-nine.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 1149 COUNTS.` → `TOMORROW: THE TRAVELING SCHOLARS.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 1149 COUNTS.` → `TOMORROW: THE TRAVELING SCHOLARS.`"
+      ]
+    }
   ],
   "howItsDone": "Hadith scholars consult biographical dictionaries of narrators, the books of rijal, to check each name in a chain for honesty, memory and whom they met, a field called al-jarh wa al-ta'dil.",
   "games": {
     "match": {
       "prompt": "the science of men — tap the pairs.",
-      "pairs": [["rijal", "the narrators in the chains"], ["al-jarh wa al-ta'dil", "wounding and vouching"], ["Ibn Sirin", "name your men for us"], ["Imam Muslim", "exposing weakness is a duty"]]
+      "pairs": [
+        [
+          "rijal",
+          "the narrators in the chains"
+        ],
+        [
+          "al-jarh wa al-ta'dil",
+          "wounding and vouching"
+        ],
+        [
+          "Ibn Sirin",
+          "name your men for us"
+        ],
+        [
+          "Imam Muslim",
+          "exposing weakness is a duty"
+        ]
+      ]
     },
     "myth": [
-      ["the books of rijal include only men", false, "despite the word, women who narrated are included too."],
-      ["scholars treated criticizing a narrator as forbidden backbiting", false, "Imam Muslim argued it was a duty, to protect what's said in the Prophet's name."],
-      ["Ibn Sirin said to look at whom you take your religion from", true, "quoted in the introduction to Sahih Muslim."]
+      [
+        "the books of rijal include only men",
+        false,
+        "despite the word, women who narrated are included too."
+      ],
+      [
+        "scholars treated criticizing a narrator as forbidden backbiting",
+        false,
+        "Imam Muslim argued it was a duty, to protect what's said in the Prophet's name."
+      ],
+      [
+        "Ibn Sirin said to look at whom you take your religion from",
+        true,
+        "quoted in the introduction to Sahih Muslim."
+      ]
     ],
     "fork": {
       "setup": "you're a hadith scholar, and someone asks you about a narrator. he's your own father, and his memory is weak. what do you say?",
-      "options": ["he's reliable; he's my father.", "the truth: he is weak.", "refuse to answer, ever."],
+      "options": [
+        "he's reliable; he's my father.",
+        "the truth: he is weak.",
+        "refuse to answer, ever."
+      ],
       "answer": 1,
       "reveal": "as the story of Ali ibn al-Madini goes, he hesitated, then said: this is the religion. my father is weak."
     },
-    "original": { "script": "رجال", "say": "ri-JAAL", "note": "men: in hadith study, the narrators, and the science of judging them." },
+    "original": {
+      "script": "رجال",
+      "say": "ri-JAAL",
+      "note": "men: in hadith study, the narrators, and the science of judging them."
+    },
     "trapdoor": [
       "what you thought: rijal is just the Arabic word for men.",
       "what it means: in hadith study, the narrators in the chains, and the study of who each one was.",
       "what a scholar hears: al-jarh wa al-ta'dil, wounding and vouching, defended in Muslim's introduction as a duty, not backbiting."
+    ],
+    "recall": [
+      [
+        "Zamzam",
+        "a well near the Ka'ba"
+      ],
+      [
+        "tawaf",
+        "going around"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Sahih Muslim, introduction (muqaddima): sayings of Ibn Sirin on asking about the isnad and on whom to take religion from", "work": "Sahih Muslim", "translation": null, "quoted": null },
-    { "ref": "Sahih Muslim, introduction (muqaddima): disclosing the weaknesses of narrators is permitted and required, not forbidden backbiting", "work": "Sahih Muslim", "translation": null, "quoted": null },
-    { "ref": "Biographical report on Ali ibn al-Madini and his father (as told in the rijal literature)", "work": "Rijal literature", "translation": null, "quoted": null }
+    {
+      "ref": "Sahih Muslim, introduction (muqaddima): sayings of Ibn Sirin on asking about the isnad and on whom to take religion from",
+      "work": "Sahih Muslim",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Sahih Muslim, introduction (muqaddima): disclosing the weaknesses of narrators is permitted and required, not forbidden backbiting",
+      "work": "Sahih Muslim",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Biographical report on Ali ibn al-Madini and his father (as told in the rijal literature)",
+      "work": "Rijal literature",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -91,5 +175,9 @@
       "Editor: cut the unsourced sweep 'applied it to the pious, to the powerful' and the superlative 'great reference works'; tightened the hook's 'the story is told because it captures something real' line; practice opener varied."
     ]
   },
-  "meta": { "index": "1149. The science of men · rijal · scholars wrote biographies of thousands of narrators to test them · check a source's reputation · who was he?", "writer": "writer agent (islam 1142–1151)", "written": "2026-10-01" }
+  "meta": {
+    "index": "1149. The science of men · rijal · scholars wrote biographies of thousands of narrators to test them · check a source's reputation · who was he?",
+    "writer": "writer agent (islam 1142–1151)",
+    "written": "2026-10-01"
+  }
 }

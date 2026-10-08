@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "Where you belong",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-THOUSAND-TWO-HUNDRED-FORTY-SEVEN.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY ONE-THOUSAND-TWO-HUNDRED-FORTY-SEVEN.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday's line: love your fellow. Ahavat Yisrael, tested by the Jew unlike you. Did you take your small step across a divide? Today, a step you can take with your feet. Day one thousand two hundred forty-seven.",
-      "screen": ["`LOVE YOUR FELLOW.`"]
+      "screen": [
+        "`LOVE YOUR FELLOW.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "A guest slips into the back row of a synagogue that isn't hers. Within five minutes she is lost. The melody for a prayer she has sung all her life is a different melody. Nobody announces page numbers. Everyone stands at a moment she would have sat, and faces a direction she didn't expect. A kind stranger leans over and points to the line. By the end she has learned a tune she'll hum for a week, and noticed something about her own synagogue she never saw from inside it. She was a visitor. Today's word is what she did.",
-      "screen": ["`THE BACK ROW.` → `A DIFFERENT MELODY.` → `A STRANGER POINTS TO THE LINE.`"]
+      "screen": [
+        "`THE BACK ROW.` → `A DIFFERENT MELODY.` → `A STRANGER POINTS TO THE LINE.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "Visiting. Turn it four ways. First, the teaching behind it. In the Mishnah, Ben Zoma asks: who is wise? And answers: the one who learns from every person. Not from every teacher. From every person. A visitor walks in as a learner, which is the posture Ben Zoma calls wise. Second, what you might find. Some synagogues seat men and women apart, with a partition called a mechitza. Some sit together. Some pray almost entirely in Hebrew, quickly, each person at their own pace. Some sing slowly, in Hebrew and English, with the whole room on one tune. Sephardi and Ashkenazi rooms may chant the same words to different melodies. None of these is the visitor's to grade. Each is somebody's home. Third, how to be a guest. Dress the way the room dresses. Follow the room's lead: stand when it stands, keep your phone away where that is the custom. Say less, watch more. Save your questions for afterward, over the cake, when people may be glad to explain. Fourth, what comes home with you. Visitors bring back a melody, a custom, a phrase. They also bring back their own synagogue, seen fresh, the way a trip abroad makes your own kitchen look new. Hosts have their side too: hachnasat orchim, welcoming guests, a value the tradition traces to Abraham running from his tent to greet strangers. A good visit needs a learner at the door and a welcome inside it.",
-      "screen": ["`WHO IS WISE? WHO LEARNS FROM EVERYONE.` · `EACH ROOM IS SOMEBODY'S HOME.` · `SAY LESS, WATCH MORE.` · `YOUR OWN ROOM, SEEN FRESH.` · then, large: `VISIT.`"]
+      "screen": [
+        "`WHO IS WISE? WHO LEARNS FROM EVERYONE.` · `EACH ROOM IS SOMEBODY'S HOME.` · `SAY LESS, WATCH MORE.` · `YOUR OWN ROOM, SEEN FRESH.` · then, large: `VISIT.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Visiting. Going to a service unlike your own as a learner and a guest, and coming home with something new. Today's word.",
-      "screen": ["`VISITING — today's word`."]
+      "screen": [
+        "`VISITING — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,35 +61,99 @@
       "voice": "Your line: visit. Today, find the service you chose and put it on your calendar, in person or on a screen. Day one thousand two hundred forty-seven.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 1247 COUNTS.` → `TOMORROW: WHERE YOU BELONG.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 1247 COUNTS.` → `TOMORROW: WHERE YOU BELONG.`"
+      ]
+    }
   ],
   "howItsDone": "Jews visit synagogues of other streams and styles while traveling, for a friend's celebration, or to learn, following the local customs of dress and seating and asking questions after the service.",
   "games": {
     "match": {
       "prompt": "visiting — tap the pairs.",
-      "pairs": [["Ben Zoma", "the wise learn from every person"], ["mechitza", "a partition between men and women"], ["hachnasat orchim", "welcoming guests"], ["a good guest", "says less, watches more"]]
+      "pairs": [
+        [
+          "Ben Zoma",
+          "the wise learn from every person"
+        ],
+        [
+          "mechitza",
+          "a partition between men and women"
+        ],
+        [
+          "hachnasat orchim",
+          "welcoming guests"
+        ],
+        [
+          "a good guest",
+          "says less, watches more"
+        ]
+      ]
     },
     "myth": [
-      ["Ben Zoma says the wise learn only from great teachers", false, "he says the wise learn from every person."],
-      ["the same prayer can be sung to different melodies in different synagogues", true, "a visitor may know the words and not the tune."],
-      ["a visitor's job is to judge which service does it right", false, "each room is somebody's home; the visitor comes to learn."]
+      [
+        "Ben Zoma says the wise learn only from great teachers",
+        false,
+        "he says the wise learn from every person."
+      ],
+      [
+        "the same prayer can be sung to different melodies in different synagogues",
+        true,
+        "a visitor may know the words and not the tune."
+      ],
+      [
+        "a visitor's job is to judge which service does it right",
+        false,
+        "each room is somebody's home; the visitor comes to learn."
+      ]
     ],
     "fork": {
       "setup": "you're a guest at an unfamiliar service. suddenly everyone stands and turns, and you don't know why. what do you do?",
-      "options": ["stay seated, since it isn't your custom.", "stand with the room, and ask about it afterward.", "leave quietly before you get it wrong again."],
+      "options": [
+        "stay seated, since it isn't your custom.",
+        "stand with the room, and ask about it afterward.",
+        "leave quietly before you get it wrong again."
+      ],
       "answer": 1,
       "reveal": "follow the room's lead and save the question for later: Ben Zoma's wise person is the one who learns from everyone."
     },
-    "original": { "script": "הַכְנָסַת אוֹרְחִים", "say": "hakh-nah-SAHT ohr-KHEEM", "note": "Hebrew: bringing in guests, the value of welcoming visitors." },
+    "original": {
+      "script": "הַכְנָסַת אוֹרְחִים",
+      "say": "hakh-nah-SAHT ohr-KHEEM",
+      "note": "Hebrew: bringing in guests, the value of welcoming visitors."
+    },
     "trapdoor": [
       "what you thought: visiting another synagogue means you're unhappy with your own.",
       "what it means: going as a learner and a guest, and coming home with something new.",
       "what a scholar hears: Ben Zoma in Avot 4:1, who is wise? the one who learns from every person."
+    ],
+    "recall": [
+      [
+        "Tanya",
+        "the book's opening word"
+      ],
+      [
+        "bittul",
+        "setting the self aside"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Mishnah Avot 4:1", "work": "The Mishnah", "translation": null, "quoted": null },
-    { "ref": "Genesis 18:1–8", "work": "The Bible", "translation": null, "quoted": null }
+    {
+      "ref": "Mishnah Avot 4:1",
+      "work": "The Mishnah",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Genesis 18:1–8",
+      "work": "The Bible",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -87,5 +166,9 @@
       "Pronunciation of hachnasat orchim: confirm stress."
     ]
   },
-  "meta": { "index": "1247. Visiting · — · many Jews visit services unlike their own and learn from them · visit a different kind of service, even online · visit", "writer": "writer agent (judaism y4 1242–1251)", "written": "2026-10-01" }
+  "meta": {
+    "index": "1247. Visiting · — · many Jews visit services unlike their own and learn from them · visit a different kind of service, even online · visit",
+    "writer": "writer agent (judaism y4 1242–1251)",
+    "written": "2026-10-01"
+  }
 }

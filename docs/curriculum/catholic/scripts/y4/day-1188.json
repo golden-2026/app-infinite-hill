@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "The abbot",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-THOUSAND-ONE-HUNDRED-EIGHTY-EIGHT.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY ONE-THOUSAND-ONE-HUNDRED-EIGHTY-EIGHT.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, the Rule: Benedict's book for monks opens with one word, listen. Your line was the ear of the heart. Who did you listen to all the way to the end? Day one thousand one hundred eighty-eight.",
-      "screen": ["`THE EAR OF THE HEART.`"]
+      "screen": [
+        "`THE EAR OF THE HEART.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "A bright sticker on the back of a car: student driver. The cars behind it tend to soften. They give more room. They don't honk when it stalls at the light. The sticker doesn't make the driver any better. It just tells the truth: this person is learning, so be patient. Saint Benedict, near the end of the Prologue to his Rule, puts something like that sticker on the whole monastery. Today: a school for beginners.",
-      "screen": ["`STUDENT DRIVER.` → `THE CARS BEHIND GIVE ROOM.` → `BENEDICT'S STICKER.`"]
+      "screen": [
+        "`STUDENT DRIVER.` → `THE CARS BEHIND GIVE ROOM.` → `BENEDICT'S STICKER.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "Benedict tells his monks what he's building. In Latin: dominici schola servitii, a school of the Lord's service. Not a fortress for the already holy. A school. A place where people come because they don't know yet. Then comes the hope that gives this day its line. Benedict says that in setting it up, he hopes to lay down nothing harsh, nothing heavy. He's honest, though. He admits some things may feel a little strict, for good reasons: to correct faults, to protect love. And he asks the beginner not to run away in fear when that happens, because the way in is narrow at the start. Then he makes a promise. As someone goes on in this life and in faith, the heart grows wider, and they run the way of God's commandments with a sweetness of love that's hard to put into words. That's the Rule borrowing a line from the Psalms. In the Douay-Rheims: \"I have run the way of thy commandments, when thou didst enlarge my heart.\" Look at the shape of it. Narrow at the start, wider as you go. Strict in places, but never meant to crush. Benedict isn't writing for heroes. He's writing for people who will stall at the light. And at the very end of the Rule, he'll call it a little rule for beginners. Not just the first chapter. The whole book. In Benedict's school, nobody graduates.",
-      "screen": ["`A SCHOOL OF THE LORD'S SERVICE.` · `NOTHING HARSH, NOTHING HEAVY.` · `NARROW AT THE START.` · `THE HEART GROWS WIDER.` · then, large: `WHEN THOU DIDST ENLARGE MY HEART.`"]
+      "screen": [
+        "`A SCHOOL OF THE LORD'S SERVICE.` · `NOTHING HARSH, NOTHING HEAVY.` · `NARROW AT THE START.` · `THE HEART GROWS WIDER.` · then, large: `WHEN THOU DIDST ENLARGE MY HEART.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "A school for beginners. Benedict's picture of the monastery: a school of the Lord's service, where he hopes to set down nothing harsh or heavy, and where the heart grows wider as you go. Today's word.",
-      "screen": ["`A SCHOOL FOR BEGINNERS — today's word`."]
+      "screen": [
+        "`A SCHOOL FOR BEGINNERS — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,36 +61,105 @@
       "voice": "Your line: nothing harsh. Today, when you stall at something new, talk to yourself the way you'd talk to a student driver. Day one thousand one hundred eighty-eight.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 1188 COUNTS.` → `TOMORROW: THE ABBOT.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 1188 COUNTS.` → `TOMORROW: THE ABBOT.`"
+      ]
+    }
   ],
   "howItsDone": "Benedictine communities welcome newcomers through a period of trial and learning, and Benedictines describe their whole life as a school of the Lord's service.",
   "games": {
     "match": {
       "prompt": "a school for beginners — tap the pairs.",
-      "pairs": [["dominici schola servitii", "a school of the Lord's service"], ["Benedict's hope", "nothing harsh, nothing heavy"], ["the way in", "narrow at the start"], ["Psalm 118:32", "when thou didst enlarge my heart"]]
+      "pairs": [
+        [
+          "dominici schola servitii",
+          "a school of the Lord's service"
+        ],
+        [
+          "Benedict's hope",
+          "nothing harsh, nothing heavy"
+        ],
+        [
+          "the way in",
+          "narrow at the start"
+        ],
+        [
+          "Psalm 118:32",
+          "when thou didst enlarge my heart"
+        ]
+      ]
     },
     "myth": [
-      ["Benedict says nothing in the Rule will ever feel strict", false, "he admits some things may feel a little strict, to correct faults and protect love."],
-      ["Benedict calls the monastery a school", true, "a school of the Lord's service, a place for people still learning."],
-      ["Benedict promises the way stays narrow forever", false, "he says the heart grows wider as you go on."]
+      [
+        "Benedict says nothing in the Rule will ever feel strict",
+        false,
+        "he admits some things may feel a little strict, to correct faults and protect love."
+      ],
+      [
+        "Benedict calls the monastery a school",
+        true,
+        "a school of the Lord's service, a place for people still learning."
+      ],
+      [
+        "Benedict promises the way stays narrow forever",
+        false,
+        "he says the heart grows wider as you go on."
+      ]
     ],
     "fork": {
       "setup": "you're a new monk. the first weeks feel strict, and you want to leave. what does Benedict tell you?",
-      "options": ["leave: this life isn't for you.", "don't run away in fear; the way in is narrow at the start.", "work harder until it stops hurting."],
+      "options": [
+        "leave: this life isn't for you.",
+        "don't run away in fear; the way in is narrow at the start.",
+        "work harder until it stops hurting."
+      ],
       "answer": 1,
       "reveal": "he asks the beginner not to flee, and promises that as you go on, the heart grows wider."
     },
-    "original": { "script": "dominici schola servitii", "say": "doh-MEE-nee-chee SKOH-lah ser-VEE-tsee-ee", "note": "Latin, from the Rule's Prologue: a school of the Lord's service." },
+    "original": {
+      "script": "dominici schola servitii",
+      "say": "doh-MEE-nee-chee SKOH-lah ser-VEE-tsee-ee",
+      "note": "Latin, from the Rule's Prologue: a school of the Lord's service."
+    },
     "trapdoor": [
       "what you thought: monasteries are for people who've already got holiness figured out.",
       "what it means: Benedict calls the monastery a school, and hopes to set down nothing harsh or heavy.",
       "what a scholar hears: nihil asperum, nihil grave; the Prologue's widening heart echoes Psalm 118(119):32."
+    ],
+    "recall": [
+      [
+        "Adoro te devote",
+        "I adore you devoutly"
+      ],
+      [
+        "substance",
+        "what a thing is"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Psalm 118:32 (Psalm 119:32 in Hebrew numbering)", "work": "The Bible", "translation": "Douay-Rheims (Challoner)", "quoted": "I have run the way of thy commandments, when thou didst enlarge my heart." },
-    { "ref": "Rule of Saint Benedict, Prologue (closing section)", "work": "The Rule of Saint Benedict", "translation": null, "quoted": null },
-    { "ref": "Rule of Saint Benedict, ch. 73", "work": "The Rule of Saint Benedict", "translation": null, "quoted": null }
+    {
+      "ref": "Psalm 118:32 (Psalm 119:32 in Hebrew numbering)",
+      "work": "The Bible",
+      "translation": "Douay-Rheims (Challoner)",
+      "quoted": "I have run the way of thy commandments, when thou didst enlarge my heart."
+    },
+    {
+      "ref": "Rule of Saint Benedict, Prologue (closing section)",
+      "work": "The Rule of Saint Benedict",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Rule of Saint Benedict, ch. 73",
+      "work": "The Rule of Saint Benedict",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -89,5 +173,9 @@
       "Editor pass: hook screen 'everyone gives more room' (sweeping) now matches the voice ('the cars behind give room'); 'a few things may feel strict' to 'some things' (the Prologue says 'aliquid', a little), in voice and myth reveal."
     ]
   },
-  "meta": { "index": "1188. A school for beginners (Prologue) · — · Benedict hopes to set down nothing harsh or burdensome · go easy on yourself as a beginner · nothing harsh", "writer": "writer agent (catholic 1182–1191)", "written": "2026-10-01" }
+  "meta": {
+    "index": "1188. A school for beginners (Prologue) · — · Benedict hopes to set down nothing harsh or burdensome · go easy on yourself as a beginner · nothing harsh",
+    "writer": "writer agent (catholic 1182–1191)",
+    "written": "2026-10-01"
+  }
 }

@@ -9,24 +9,37 @@
   "length": "6:45",
   "tomorrow": "praise and blame",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-THOUSAND-SEVENTY-FOUR.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY ONE-THOUSAND-SEVENTY-FOUR.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, thirty spokes, and the hole in the hub that lets the wheel turn. Your line was the empty center. Did you leave a gap open, and did anything move through it? Day one thousand seventy-four.",
-      "screen": ["`THE EMPTY CENTER.`"]
+      "screen": [
+        "`THE EMPTY CENTER.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "A phone screen at the end of a long day. Red badges. A video that starts on its own. A banner sliding down over the banner you were reading. Three tabs of music, two of them playing. None of it is evil. Some of it is even interesting. And yet, after an hour of it, a slice of plain toast can taste like nothing, and a quiet room can feel strangely loud. An old Chinese book, written long before any screen, has a short chapter about exactly this kind of tired. Chapter twelve of the Tao Te Ching.",
-      "screen": ["`RED BADGES, AUTOPLAY, BANNERS.` → `TOAST TASTES LIKE NOTHING.` → `CHAPTER TWELVE.`"]
+      "screen": [
+        "`RED BADGES, AUTOPLAY, BANNERS.` → `TOAST TASTES LIKE NOTHING.` → `CHAPTER TWELVE.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "First, the list. The chapter says the five colors blind the eye. The five notes deafen the ear. The five flavors dull the mouth. Racing and hunting drive the mind wild. Goods that are hard to get lead people astray. It's a list of good things: color, music, food, excitement, treasure. The problem isn't any one of them. The problem is what too much of them does to the senses that take them in. Second, notice the strange result. More color, and you see less. More sound, and you hear less. The senses don't get sharper with more input; in the chapter's picture, they go numb. It's the plain toast after the sugar, the quiet room after the loud one. Third, the turn. So, the chapter says, the sage cares for the belly and not the eye. The belly here isn't about overeating. Some translators read it as what a person actually needs, set against what only dazzles. The eye wants more to look at. The belly wants enough. Then the chapter ends with a short instruction: let go of that, take hold of this. It doesn't spell out which is which. Some readers fill it in: that is the dazzle, this is the plain need underneath. Fourth, what it isn't saying. It isn't telling anyone to hate color or give up music. Read this way, the chapter is about the volume knob, not the radio: turn it down, and the senses can come back.",
-      "screen": ["`FIVE COLORS BLIND THE EYE.` · `MORE TO SEE, AND YOU SEE LESS.` · `THE BELLY, NOT THE EYE.` · `THE VOLUME KNOB, NOT THE RADIO.` · then, large: `LET GO OF THAT. TAKE HOLD OF THIS.`"]
+      "screen": [
+        "`FIVE COLORS BLIND THE EYE.` · `MORE TO SEE, AND YOU SEE LESS.` · `THE BELLY, NOT THE EYE.` · `THE VOLUME KNOB, NOT THE RADIO.` · then, large: `LET GO OF THAT. TAKE HOLD OF THIS.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Five colors. Chapter twelve's picture of too much: color, sound and flavor that, piled up, leave the senses numb. Today's word.",
-      "screen": ["`FIVE COLORS — today's word`."]
+      "screen": [
+        "`FIVE COLORS — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,34 +61,93 @@
       "voice": "Your line: less to see. Choose one hour today with one input turned off, the radio in the car, the second screen, the badges, and notice what comes back. Day one thousand seventy-four.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 1074 COUNTS.` → `TOMORROW: PRAISE AND BLAME.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 1074 COUNTS.` → `TOMORROW: PRAISE AND BLAME.`"
+      ]
+    }
   ],
   "howItsDone": "Some readers of the Tao Te Ching take chapter twelve as a reason to simplify their surroundings for a while: fewer screens, less noise, plainer food, to let the senses recover.",
   "games": {
     "match": {
       "prompt": "chapter twelve: tap the pairs.",
-      "pairs": [["the five colors", "blind the eye"], ["the five notes", "deafen the ear"], ["the five flavors", "dull the mouth"], ["the sage", "cares for the belly, not the eye"]]
+      "pairs": [
+        [
+          "the five colors",
+          "blind the eye"
+        ],
+        [
+          "the five notes",
+          "deafen the ear"
+        ],
+        [
+          "the five flavors",
+          "dull the mouth"
+        ],
+        [
+          "the sage",
+          "cares for the belly, not the eye"
+        ]
+      ]
     },
     "myth": [
-      ["chapter twelve tells people to give up color and music", false, "it's about too much of them. the volume knob, not the radio."],
-      ["the chapter says more input leaves the senses numb", true, "more color, and the eye sees less; more sound, and the ear hears less."],
-      ["the chapter ends: let go of that, take hold of this", true, "it doesn't spell out which is which; some readers fill it in."]
+      [
+        "chapter twelve tells people to give up color and music",
+        false,
+        "it's about too much of them. the volume knob, not the radio."
+      ],
+      [
+        "the chapter says more input leaves the senses numb",
+        true,
+        "more color, and the eye sees less; more sound, and the ear hears less."
+      ],
+      [
+        "the chapter ends: let go of that, take hold of this",
+        true,
+        "it doesn't spell out which is which; some readers fill it in."
+      ]
     ],
     "fork": {
       "setup": "you're the sage in chapter twelve. there's a feast for the eyes on one side and plain food on the other. which do you care for?",
-      "options": ["the eye: more to look at.", "the belly: what's actually needed.", "both equally, as much as possible."],
+      "options": [
+        "the eye: more to look at.",
+        "the belly: what's actually needed.",
+        "both equally, as much as possible."
+      ],
       "answer": 1,
       "reveal": "the sage cares for the belly and not the eye. let go of that, take hold of this."
     },
-    "original": { "script": "五色", "say": "WOO suh", "note": "Chinese: the five colors, the opening words of chapter twelve." },
+    "original": {
+      "script": "五色",
+      "say": "WOO suh",
+      "note": "Chinese: the five colors, the opening words of chapter twelve."
+    },
     "trapdoor": [
       "what you thought: five colors is about painting.",
       "what it means: color, sound, flavor and excitement, piled up, leave the senses numb; the sage chooses what's needed over what dazzles.",
       "what a scholar hears: belly and eye stand for need and appetite; the closing line, let go of that, take hold of this, is left for the reader to fill in."
+    ],
+    "recall": [
+      [
+        "universal form",
+        "Arjuna's vision"
+      ],
+      [
+        "Zhongqiu",
+        "mid-autumn"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Tao Te Ching 12", "work": "Lao-tzu, Tao Te Ching", "translation": null, "quoted": null }
+    {
+      "ref": "Tao Te Ching 12",
+      "work": "Lao-tzu, Tao Te Ching",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -85,5 +159,9 @@
       "Editor pass: the closing 'turn it down, and the senses come back' is now framed as a reading rather than stated as the chapter's claim."
     ]
   },
-  "meta": { "index": "1074. Five colors · — · the five colors blind the eye; the sage cares for the belly, not the eye (Tao Te Ching 12) · turn down one stimulation · less to see", "writer": "spiritual writer agent (days 1072–1081)", "written": "2026-10-02" }
+  "meta": {
+    "index": "1074. Five colors · — · the five colors blind the eye; the sage cares for the belly, not the eye (Tao Te Ching 12) · turn down one stimulation · less to see",
+    "writer": "spiritual writer agent (days 1072–1081)",
+    "written": "2026-10-02"
+  }
 }

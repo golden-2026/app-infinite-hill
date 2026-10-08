@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "Praying on earth",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-THOUSAND-TWO-HUNDRED.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY ONE-THOUSAND-TWO-HUNDRED.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, the marja', and your line: follow the living scholar. What did you ask, and whom did you ask? Day one thousand two hundred.",
-      "screen": ["`FOLLOW THE LIVING SCHOLAR.`"]
+      "screen": [
+        "`FOLLOW THE LIVING SCHOLAR.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Morning, in a narrow lane near a golden dome. Two students sit on a mat with one book open between them. One reads a line and explains it. The other objects. The first pushes back, finds the line again, reads it more slowly. Nobody is angry. This is the work. Yesterday's marja' doesn't appear out of nowhere. He is made, over long years, in lanes and rooms like this one. Today, the places that make them.",
-      "screen": ["`TWO STUDENTS, ONE BOOK.` → `READ, OBJECT, PUSH BACK.` → `WHERE A MARJA' IS MADE.`"]
+      "screen": [
+        "`TWO STUDENTS, ONE BOOK.` → `READ, OBJECT, PUSH BACK.` → `WHERE A MARJA' IS MADE.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "The word is hawzah, the Shia seminary. In full, al-hawzah al-'ilmiyyah, the seat of learning. Today's two cities are Najaf and Qom. Najaf, in Iraq, is the city of the shrine of Imam 'Ali. Tradition says its hawzah grew around the scholar Shaykh al-Tusi, who settled there after leaving Baghdad. Qom, in Iran, holds the shrine of Fatimah al-Ma'sumah, sister of Imam al-Rida, and its hawzah was revived in modern times. Both are shrine cities. The study happens in the shadow of the domes. How does it run? In stages, not in fixed years. First come the preliminaries: Arabic grammar, logic, rhetoric. Then the surfaces, the sutuh: set textbooks of law and of its method, read line by line with a teacher. Then the highest stage, bahth al-kharij, study outside the text. A senior teacher lectures on a question with no set book, weighing the evidence and earlier opinions aloud, and students are expected to argue back. Between lessons, students review in pairs, like the two on the mat. A student chooses teachers, sits in their circles, moves on when ready. Out of long years of that comes a mujtahid, someone able to derive rulings. And from among the mujtahids, through the regard of other scholars and the trust of believers, a marja'. Scholars move between the two cities. A student may begin in one and finish in the other. Najaf and Qom aren't rivals in this telling. They're two lamps in the same tradition, on either side of a border.",
-      "screen": ["`HAWZAH: THE SEAT OF LEARNING.` · `NAJAF AND QOM, TWO SHRINE CITIES.` · `GRAMMAR, TEXTBOOKS, BEYOND THE TEXT.` · `FROM STUDENT TO MUJTAHID TO MARJA'.`"]
+      "screen": [
+        "`HAWZAH: THE SEAT OF LEARNING.` · `NAJAF AND QOM, TWO SHRINE CITIES.` · `GRAMMAR, TEXTBOOKS, BEYOND THE TEXT.` · `FROM STUDENT TO MUJTAHID TO MARJA'.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Hawzah. The Shia seminary, the seat of learning, with its great centers in Najaf and Qom. Today's word.",
-      "screen": ["`HAWZAH — today's word`."]
+      "screen": [
+        "`HAWZAH — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,34 +61,93 @@
       "voice": "Your line: najaf and qom. Today, study one thing properly, with a book or a person, and argue with it a little before you agree. Day one thousand two hundred.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 1200 COUNTS.` → `TOMORROW: PRAYING ON EARTH.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 1200 COUNTS.` → `TOMORROW: PRAYING ON EARTH.`"
+      ]
+    }
   ],
   "howItsDone": "Shia students study at the seminaries of Najaf, Qom and elsewhere, moving from Arabic and logic through set textbooks to advanced lectures beyond the textbook, often reviewing in pairs.",
   "games": {
     "match": {
       "prompt": "the seminaries — tap the pairs.",
-      "pairs": [["Najaf", "city of the shrine of Imam 'Ali"], ["Qom", "shrine of Fatimah al-Ma'sumah"], ["sutuh", "the stage of set textbooks"], ["bahth al-kharij", "study beyond the textbook"]]
+      "pairs": [
+        [
+          "Najaf",
+          "city of the shrine of Imam 'Ali"
+        ],
+        [
+          "Qom",
+          "shrine of Fatimah al-Ma'sumah"
+        ],
+        [
+          "sutuh",
+          "the stage of set textbooks"
+        ],
+        [
+          "bahth al-kharij",
+          "study beyond the textbook"
+        ]
+      ]
     },
     "myth": [
-      ["hawzah students move through fixed years, like a college", false, "they move through stages, choosing teachers and moving on when ready."],
-      ["tradition says Najaf's hawzah grew around Shaykh al-Tusi", true, "he settled there after leaving Baghdad, tradition says."],
-      ["the highest stage is reading a set textbook", false, "it's bahth al-kharij: lectures beyond the text, weighing the evidence aloud."]
+      [
+        "hawzah students move through fixed years, like a college",
+        false,
+        "they move through stages, choosing teachers and moving on when ready."
+      ],
+      [
+        "tradition says Najaf's hawzah grew around Shaykh al-Tusi",
+        true,
+        "he settled there after leaving Baghdad, tradition says."
+      ],
+      [
+        "the highest stage is reading a set textbook",
+        false,
+        "it's bahth al-kharij: lectures beyond the text, weighing the evidence aloud."
+      ]
     ],
     "fork": {
       "setup": "you're a hawzah student. your study partner reads a line and draws a conclusion you think is wrong. what do you do?",
-      "options": ["stay quiet, out of politeness.", "object, and argue it out over the book.", "close the book and leave."],
+      "options": [
+        "stay quiet, out of politeness.",
+        "object, and argue it out over the book.",
+        "close the book and leave."
+      ],
       "answer": 1,
       "reveal": "you object. reading in pairs, explaining and pushing back, is part of how the hawzah studies."
     },
-    "original": { "script": "حوزة", "say": "HAW-zah", "note": "Arabic: a domain, a seat; al-hawzah al-'ilmiyyah, the seat of learning, the Shia seminary." },
+    "original": {
+      "script": "حوزة",
+      "say": "HAW-zah",
+      "note": "Arabic: a domain, a seat; al-hawzah al-'ilmiyyah, the seat of learning, the Shia seminary."
+    },
     "trapdoor": [
       "what you thought: a seminary is a school for priests.",
       "what it means: the hawzah trains jurists in stages, from grammar to lectures beyond the textbook.",
       "what a scholar hears: muqaddimat, sutuh and bahth al-kharij, and the shrine cities of Najaf and Qom."
+    ],
+    "recall": [
+      [
+        "taqlid",
+        "following one who knows"
+      ],
+      [
+        "mubah",
+        "no reward, no blame"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Shia seminary curriculum (muqaddimat, sutuh, bahth al-kharij); biographies of Shaykh al-Tusi", "work": "descriptions of the hawzah", "translation": null, "quoted": null }
+    {
+      "ref": "Shia seminary curriculum (muqaddimat, sutuh, bahth al-kharij); biographies of Shaykh al-Tusi",
+      "work": "descriptions of the hawzah",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -89,5 +163,9 @@
       "Editor pass: removed the superlatives 'above all' and 'a great center of study'; corrected 'a short walk apart' (Najaf and Kufa) and 'a border apart' (Najaf and Qom are far apart) to looser, accurate wording."
     ]
   },
-  "meta": { "index": "1200. The seminaries · hawzah · the great seminaries of Najaf and Qom · look at Najaf on a map · najaf and qom", "writer": "writer agent (islam 1192–1201)", "written": "2026-10-01" }
+  "meta": {
+    "index": "1200. The seminaries · hawzah · the great seminaries of Najaf and Qom · look at Najaf on a map · najaf and qom",
+    "writer": "writer agent (islam 1192–1201)",
+    "written": "2026-10-01"
+  }
 }

@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "The holy society",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-THOUSAND-THREE-HUNDRED-SIXTEEN.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY ONE-THOUSAND-THREE-HUNDRED-SIXTEEN.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday's word was vidui, and your line was ready. What did you say that you'd hate to leave unsaid? This week walked from communities that differ, to peace at home, to endings, beginnings, and the bedside. Today it ends past the last breath. Day one thousand three hundred sixteen.",
-      "screen": ["`READY.`"]
+      "screen": [
+        "`READY.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Two in the morning. A quiet room at a funeral home, one lamp on. In the next room, under a sheet, lies a woman who died yesterday afternoon. In this room, in a plain chair, sits someone with a book of Psalms open on their knee. Maybe a grandson. Maybe a stranger from the synagogue who signed up for the night shift. They aren't there to do anything. They read a little, they sit, they keep awake. At six, someone else will come and take the chair. Between death and burial, she will not be left by herself for a minute. Today's word is the one in the chair.",
-      "screen": ["`TWO IN THE MORNING.` → `A CHAIR AND A BOOK OF PSALMS.` → `SHE IS NOT LEFT ALONE.`"]
+      "screen": [
+        "`TWO IN THE MORNING.` → `A CHAIR AND A BOOK OF PSALMS.` → `SHE IS NOT LEFT ALONE.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "Shomer. A guard, a keeper, a watcher. The practice is called shemira, watching. Turn it four ways. First, the oldest question. Early in Genesis, after Abel is killed, God asks Cain where his brother is, and Cain answers with a question of his own. In the old Jewish Publication Society translation: \"am I my brother's keeper?\" Keeper there is shomer. Cain meant no. The one in the chair at two in the morning is answering yes. Second, why watch someone who has died. The body once held a person made in the image of God, and Jewish law treats it with honor, kavod ha-met, honor for the dead. It is not set aside like an object while the paperwork gets done. Some also teach that the soul lingers near the body until burial, and the watcher keeps it company. Third, what the watcher does. Tradition says to read Psalms, or simply to sit in quiet. Not to eat or chat in the room. The Talmud even exempts someone watching the dead from certain other commandments, because they are busy with this one. Fourth, who does it. Family, if they can. When they can't, volunteers from the community step in, sometimes in shifts through the night, often for someone they never met. So this week ends where it began: with communities. Different practices, different homes, and in the end, a chair by the door, and someone in it. Never alone.",
-      "screen": ["`AM I MY BROTHER'S KEEPER?` · `HONOR FOR THE DEAD.` · `PSALMS, OR QUIET.` · `FAMILY, OR A STRANGER.` · then, large: `NEVER ALONE.`"]
+      "screen": [
+        "`AM I MY BROTHER'S KEEPER?` · `HONOR FOR THE DEAD.` · `PSALMS, OR QUIET.` · `FAMILY, OR A STRANGER.` · then, large: `NEVER ALONE.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Shomer. The keeper who sits with the body from death to burial, reading Psalms or keeping quiet, answering Cain's question with yes. Today's word.",
-      "screen": ["`SHOMER — today's word`."]
+      "screen": [
+        "`SHOMER — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,37 +61,111 @@
       "voice": "Your line: never alone. Today, notice someone sitting by themselves, at work, online, on a bench, and keep them company for a minute. Day one thousand three hundred sixteen.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 1316 COUNTS.` → `TOMORROW: THE HOLY SOCIETY.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 1316 COUNTS.` → `TOMORROW: THE HOLY SOCIETY.`"
+      ]
+    }
   ],
   "howItsDone": "In Jewish communities that keep this custom, family members or volunteers take turns sitting with the body from death until the funeral, a practice called shemira; the shomer often reads Psalms.",
   "games": {
     "match": {
       "prompt": "shomer — tap the pairs.",
-      "pairs": [["shomer", "a keeper, a watcher"], ["shemira", "the practice of watching"], ["kavod ha-met", "honor for the dead"], ["Cain", "\"am I my brother's keeper?\""]]
+      "pairs": [
+        [
+          "shomer",
+          "a keeper, a watcher"
+        ],
+        [
+          "shemira",
+          "the practice of watching"
+        ],
+        [
+          "kavod ha-met",
+          "honor for the dead"
+        ],
+        [
+          "Cain",
+          "\"am I my brother's keeper?\""
+        ]
+      ]
     },
     "myth": [
-      ["the shomer must be a close relative", false, "family if they can; otherwise community volunteers, often for someone they never met."],
-      ["the watcher often reads Psalms", true, "tradition says to read Psalms, or simply to sit in quiet."],
-      ["the body may be left alone overnight", false, "between death and burial, the body is watched over, sometimes in shifts through the night."]
+      [
+        "the shomer must be a close relative",
+        false,
+        "family if they can; otherwise community volunteers, often for someone they never met."
+      ],
+      [
+        "the watcher often reads Psalms",
+        true,
+        "tradition says to read Psalms, or simply to sit in quiet."
+      ],
+      [
+        "the body may be left alone overnight",
+        false,
+        "between death and burial, the body is watched over, sometimes in shifts through the night."
+      ]
     ],
     "fork": {
       "setup": "you're the shomer, alone in the room at two in the morning. what does tradition say to do?",
-      "options": ["read Psalms, or sit in quiet.", "eat and chat on the phone to stay awake.", "lock the door and go home."],
+      "options": [
+        "read Psalms, or sit in quiet.",
+        "eat and chat on the phone to stay awake.",
+        "lock the door and go home."
+      ],
       "answer": 0,
       "reveal": "the watcher reads Psalms or sits quietly; eating and idle talk in the room are avoided out of honor for the dead."
     },
-    "original": { "script": "שׁוֹמֵר", "say": "sho-MER", "note": "Hebrew: a keeper or guard; the same word as Cain's 'keeper'." },
+    "original": {
+      "script": "שׁוֹמֵר",
+      "say": "sho-MER",
+      "note": "Hebrew: a keeper or guard; the same word as Cain's 'keeper'."
+    },
     "trapdoor": [
       "what you thought: someone stays with the body for security.",
       "what it means: shemira, keeping the dead company out of honor until burial, often reading Psalms.",
       "what a scholar hears: Genesis 4:9's shomer, kavod ha-met, and Berakhot 18a exempting the watcher from other commandments."
+    ],
+    "recall": [
+      [
+        "yichud",
+        "being alone together"
+      ],
+      [
+        "sheva brachot",
+        "seven blessings"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Genesis 4:9", "work": "Tanakh", "translation": "JPS 1917", "quoted": "am I my brother's keeper?" },
-    { "ref": "Genesis 1:27", "work": "Tanakh", "translation": null, "quoted": null },
-    { "ref": "Talmud, Berakhot 18a", "work": "Babylonian Talmud", "translation": null, "quoted": null },
-    { "ref": "Shulchan Aruch, Yoreh De'ah 341", "work": "Shulchan Aruch", "translation": null, "quoted": null }
+    {
+      "ref": "Genesis 4:9",
+      "work": "Tanakh",
+      "translation": "JPS 1917",
+      "quoted": "am I my brother's keeper?"
+    },
+    {
+      "ref": "Genesis 1:27",
+      "work": "Tanakh",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Talmud, Berakhot 18a",
+      "work": "Babylonian Talmud",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Shulchan Aruch, Yoreh De'ah 341",
+      "work": "Shulchan Aruch",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -90,5 +179,9 @@
       "Week-end look-back: review names the week's days (1310 communities differ through 1316)."
     ]
   },
-  "meta": { "index": "1316. Never alone · shomer · after death the body is watched over until burial · sit quietly and remember someone · never alone", "writer": "writer agent (judaism y4 1312–1321)", "written": "2026-10-01" }
+  "meta": {
+    "index": "1316. Never alone · shomer · after death the body is watched over until burial · sit quietly and remember someone · never alone",
+    "writer": "writer agent (judaism y4 1312–1321)",
+    "written": "2026-10-01"
+  }
 }

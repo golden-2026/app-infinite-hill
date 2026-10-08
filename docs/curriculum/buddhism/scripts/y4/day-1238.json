@@ -13,25 +13,33 @@
       "type": "the bell",
       "duration": null,
       "voice": "",
-      "screen": ["`DAY ONE-THOUSAND-TWO-HUNDRED-THIRTY-EIGHT.`"]
+      "screen": [
+        "`DAY ONE-THOUSAND-TWO-HUNDRED-THIRTY-EIGHT.`"
+      ]
     },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday: the wooden board, and your line, time passes swiftly. Did a knock or a timer stop you for one breath? Day one thousand two hundred thirty-eight.",
-      "screen": ["`TIME PASSES SWIFTLY.`"]
+      "screen": [
+        "`TIME PASSES SWIFTLY.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Zen has a reputation for silence, so the morning service can come as a surprise. Before breakfast, the whole hall stands or kneels and chants, loudly, in one low, steady pitch. A hollow wooden drum, carved in the shape of a fish, keeps the beat: tok, tok, tok. Nobody is performing. Nobody is singing harmony. Voices that don't match blend into one sound that seems to fill the floorboards. Then it stops, and the silence afterward feels different. Today: chanting in Zen.",
-      "screen": ["`A SILENT SCHOOL THAT CHANTS.` → `ONE LOW PITCH, ONE BEAT.` → `THE SILENCE AFTER.`"]
+      "screen": [
+        "`A SILENT SCHOOL THAT CHANTS.` → `ONE LOW PITCH, ONE BEAT.` → `THE SILENCE AFTER.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "First, the Heart Sutra. You met it earlier on this path: the short text where Avalokiteshvara sees that all five heaps are empty, and tells Shariputra that form is emptiness and emptiness is form. In Zen halls it's chanted often, in Japanese, Chinese, Korean, Vietnamese or English, depending on the community. Chanting it isn't the same as studying it. The aim is to let the text pass through the body until it's breath, not argument. Second, the four vows. These are the bodhisattva vows, said together, often at the end of a service. In plain paraphrase: beings are without number, and I vow to free them. Delusions never run out, and I vow to end them. The gates of the teaching are without limit, and I vow to enter them. The Buddha's way is beyond reach, and I vow to embody it. Notice the shape. Each vow names something impossible, and promises it anyway. Third, the names of the ancestors. Some services chant the lineage: the Buddha, then teacher after teacher, down to the founders of that community's line. It's a family tree said aloud, a way of remembering that this practice came hand to hand, through people. Fourth, why chant at all in a school of sitting. Chanting uses the whole body: breath, belly, throat. It's hard to chant at full voice and think about lunch at the same time. And chanting together makes the hall one body, the same way kinhin made it one line. Zen silence and Zen chanting aren't opposites. Both are ways of being entirely here.",
-      "screen": ["`THE HEART SUTRA, AS BREATH.` · `FOUR VOWS, EACH IMPOSSIBLE.` · `THE ANCESTORS, NAME BY NAME.` · `ONE VOICE, ONE BODY.` · then, large: `CHANTING ZEN.`"]
+      "screen": [
+        "`THE HEART SUTRA, AS BREATH.` · `FOUR VOWS, EACH IMPOSSIBLE.` · `THE ANCESTORS, NAME BY NAME.` · `ONE VOICE, ONE BODY.` · then, large: `CHANTING ZEN.`"
+      ]
     },
     {
       "type": "the practice",
@@ -43,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Chanting in Zen. The Heart Sutra, the four vows and the names of the ancestors, chanted together in one low voice, as practice for the whole body. Today's word.",
-      "screen": ["`CHANTING IN ZEN — today's word`."]
+      "screen": [
+        "`CHANTING IN ZEN — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -55,7 +65,9 @@
       "type": "the close",
       "duration": null,
       "voice": "",
-      "screen": ["`DAY 1238 COUNTS.` → `TOMORROW: THE COOK'S INSTRUCTIONS.`"]
+      "screen": [
+        "`DAY 1238 COUNTS.` → `TOMORROW: THE COOK'S INSTRUCTIONS.`"
+      ]
     }
   ],
   "howItsDone": "Zen communities hold chanting services, often morning and evening, where the Heart Sutra, the four bodhisattva vows, dedications and sometimes the names of the lineage ancestors are chanted together in a steady tone, often kept in time by a wooden drum.",
@@ -63,20 +75,48 @@
     "match": {
       "prompt": "chanting in Zen: tap the pairs.",
       "pairs": [
-        ["the Heart Sutra", "form is emptiness, emptiness is form"],
-        ["the four vows", "impossible promises, made anyway"],
-        ["the names of the ancestors", "the lineage, said aloud"],
-        ["the wooden fish drum", "keeps the beat"]
+        [
+          "the Heart Sutra",
+          "form is emptiness, emptiness is form"
+        ],
+        [
+          "the four vows",
+          "impossible promises, made anyway"
+        ],
+        [
+          "the names of the ancestors",
+          "the lineage, said aloud"
+        ],
+        [
+          "the wooden fish drum",
+          "keeps the beat"
+        ]
       ]
     },
     "myth": [
-      ["Zen is entirely silent, with no chanting", false, "Zen halls chant: the Heart Sutra, the four vows, the names of the ancestors."],
-      ["each of the four vows names something that can't be finished", true, "beings without number, delusions that never run out: promised anyway."],
-      ["Zen chanting is sung in harmony, like a choir", false, "it's one low, steady pitch, many voices blended into one sound."]
+      [
+        "Zen is entirely silent, with no chanting",
+        false,
+        "Zen halls chant: the Heart Sutra, the four vows, the names of the ancestors."
+      ],
+      [
+        "each of the four vows names something that can't be finished",
+        true,
+        "beings without number, delusions that never run out: promised anyway."
+      ],
+      [
+        "Zen chanting is sung in harmony, like a choir",
+        false,
+        "it's one low, steady pitch, many voices blended into one sound."
+      ]
     ],
     "fork": {
       "setup": "you're chanting the four vows: beings are without number, I vow to free them. a voice in you says that's impossible. what does the vow do with that?",
-      "options": ["drops the vow as unrealistic.", "keeps the vow anyway, knowing it can't be finished.", "changes it to a smaller number."],
+      "options": [
+        "drops the vow as unrealistic.",
+        "keeps the vow anyway, knowing it can't be finished.",
+        "changes it to a smaller number."
+      ],
       "answer": 1,
       "reveal": "the vows name the impossible on purpose. they're said anyway, as a direction to walk in, not a task to complete."
     },
@@ -89,12 +129,37 @@
       "what you thought: Zen is all silence.",
       "what it means: Zen chants too: the Heart Sutra, the four vows, the names of the ancestors, in one low voice.",
       "what a scholar hears: the vows are built on impossibility: each names something endless and vows it anyway."
+    ],
+    "recall": [
+      [
+        "No-thought",
+        "the doctrine"
+      ],
+      [
+        "shikantaza",
+        "just sitting, no object"
+      ]
     ]
   },
   "sources": [
-    { "ref": "The Heart Sutra (Prajnaparamita Hridaya)", "work": "Heart Sutra", "translation": null, "quoted": null },
-    { "ref": "The four great bodhisattva vows (shiguseigan)", "work": "Zen liturgy", "translation": null, "quoted": null },
-    { "ref": "Lineage of ancestors chanted in Zen services", "work": "Zen liturgy", "translation": null, "quoted": null }
+    {
+      "ref": "The Heart Sutra (Prajnaparamita Hridaya)",
+      "work": "Heart Sutra",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "The four great bodhisattva vows (shiguseigan)",
+      "work": "Zen liturgy",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Lineage of ancestors chanted in Zen services",
+      "work": "Zen liturgy",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",

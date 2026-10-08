@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "Striving to understand",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-THOUSAND-ONE-HUNDRED-SEVENTY-SEVEN.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY ONE-THOUSAND-ONE-HUNDRED-SEVENTY-SEVEN.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, ahkam, the rulings, and your line: five kinds of acts. When you sorted three of yours, where did they land on the dial? Day one thousand one hundred seventy-seven.",
-      "screen": ["`FIVE KINDS OF ACTS.`"]
+      "screen": [
+        "`FIVE KINDS OF ACTS.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "The Prophet Muhammad, peace be upon him, tells the people that Allah has made the pilgrimage a duty for them. A man calls out: every year, Messenger of Allah? The Prophet stays silent. The man asks again, and again. Finally the answer comes, in Sahih Muslim: if I said yes, it would become a duty every year, and you would not be able to do it. Then a request: leave me as I leave you. Don't go hunting for burdens nobody placed on you. Today's word is the space that request protects.",
-      "screen": ["`EVERY YEAR, MESSENGER?` → `SILENCE.` → `LEAVE ME AS I LEAVE YOU.`"]
+      "screen": [
+        "`EVERY YEAR, MESSENGER?` → `SILENCE.` → `LEAVE ME AS I LEAVE YOU.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "The word is mubah, permitted, the middle of yesterday's dial. No reward for doing it, no blame for leaving it. Just allowed. And jurists have a principle about it that changes how the whole law feels: in things and in dealings, the starting point is permission. Something is permitted unless a text forbids it. Not the other way round. The Qur'an says, in Surah al-Baqarah: \"He it is Who created for you all that is in the earth.\" For you. The food, the trade, the clothes, the games, the jokes, the long walk at dusk. Jurists start from yes, and ask for evidence before they say no. A report in Sahih al-Bukhari puts the warning sharply. The Prophet says the Muslim with the greatest guilt is the one who asks about something that wasn't forbidden, and it becomes forbidden because of his asking. Asking, in that report, isn't the problem. Inventing burdens is. Now one turn, so this isn't misread. The starting point flips for worship. Jurists say a new act of worship needs a text behind it, because worship is offered the way it was taught. So in prayer, start from what was taught. In the market and the kitchen and the park, start from permitted. Put those two together and something becomes visible. The forbidden is a list, and the permitted is a wide field. A person can spend most of a day in the field, eating, working, laughing, resting, and none of it is outside the law. Some of it can even become worship, jurists add, when it's done with a good intention.",
-      "screen": ["`MUBAH: SIMPLY PERMITTED.` · `THE STARTING POINT IS YES.` · `DON'T INVENT BURDENS.` · `WORSHIP STARTS FROM WHAT WAS TAUGHT.`"]
+      "screen": [
+        "`MUBAH: SIMPLY PERMITTED.` · `THE STARTING POINT IS YES.` · `DON'T INVENT BURDENS.` · `WORSHIP STARTS FROM WHAT WAS TAUGHT.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Mubah. Permitted: no reward for doing it, no blame for leaving it, and in things and dealings, the starting point. Today's word.",
-      "screen": ["`MUBAH — today's word`."]
+      "screen": [
+        "`MUBAH — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,36 +61,105 @@
       "voice": "Your line: most is permitted. Today, when you catch yourself inventing a rule nobody gave you, put it down. Leave it as it was left. Day one thousand one hundred seventy-seven.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 1177 COUNTS.` → `TOMORROW: STRIVING TO UNDERSTAND.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 1177 COUNTS.` → `TOMORROW: STRIVING TO UNDERSTAND.`"
+      ]
+    }
   ],
   "howItsDone": "Muslim jurists generally start from permission in food, trade and everyday life, asking for evidence before calling something forbidden, while acts of worship follow what was taught.",
   "games": {
     "match": {
       "prompt": "the wide permitted — tap the pairs.",
-      "pairs": [["mubah", "no reward, no blame"], ["things and dealings", "start from permitted"], ["acts of worship", "start from what was taught"], ["every year?", "leave me as I leave you"]]
+      "pairs": [
+        [
+          "mubah",
+          "no reward, no blame"
+        ],
+        [
+          "things and dealings",
+          "start from permitted"
+        ],
+        [
+          "acts of worship",
+          "start from what was taught"
+        ],
+        [
+          "every year?",
+          "leave me as I leave you"
+        ]
+      ]
     },
     "myth": [
-      ["in Islamic law, things are forbidden until a text allows them", false, "in things and dealings, the starting point is permission; a text is needed to forbid."],
-      ["the Prophet warned about asking until something permitted became forbidden", true, "a report in Sahih al-Bukhari says so."],
-      ["the starting point of permission applies to new acts of worship too", false, "jurists say worship follows what was taught."]
+      [
+        "in Islamic law, things are forbidden until a text allows them",
+        false,
+        "in things and dealings, the starting point is permission; a text is needed to forbid."
+      ],
+      [
+        "the Prophet warned about asking until something permitted became forbidden",
+        true,
+        "a report in Sahih al-Bukhari says so."
+      ],
+      [
+        "the starting point of permission applies to new acts of worship too",
+        false,
+        "jurists say worship follows what was taught."
+      ]
     ],
     "fork": {
       "setup": "the Prophet says pilgrimage is a duty. a man keeps asking: every year? what does the Prophet say?",
-      "options": ["yes, every year, for everyone able.", "if I said yes, it would become a duty, and you couldn't do it.", "ask the scholars after me."],
+      "options": [
+        "yes, every year, for everyone able.",
+        "if I said yes, it would become a duty, and you couldn't do it.",
+        "ask the scholars after me."
+      ],
       "answer": 1,
       "reveal": "he stayed silent, then said a yes would have made it a duty every year. leave me as I leave you."
     },
-    "original": { "script": "مباح", "say": "moo-BAAH", "note": "Arabic: permitted, allowed; the middle of the five rulings." },
+    "original": {
+      "script": "مباح",
+      "say": "moo-BAAH",
+      "note": "Arabic: permitted, allowed; the middle of the five rulings."
+    },
     "trapdoor": [
       "what you thought: a religious law tells you what you're allowed to do.",
       "what it means: in things and dealings, everything starts permitted, and only a text can forbid.",
       "what a scholar hears: al-asl fi al-ashya' al-ibahah, the default in things is permission; and its reverse in worship."
+    ],
+    "recall": [
+      [
+        "shari'ah",
+        "the path Allah set"
+      ],
+      [
+        "mutawatir",
+        "so many chains it's certain"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Sahih Muslim 1337 (every year? leave me as I leave you)", "work": "Sahih Muslim", "translation": null, "quoted": null },
-    { "ref": "Qur'an 2:29", "work": "The Qur'an", "translation": "Pickthall 1930", "quoted": "He it is Who created for you all that is in the earth." },
-    { "ref": "Sahih al-Bukhari 7289 (asking about what was not forbidden)", "work": "Sahih al-Bukhari", "translation": null, "quoted": null }
+    {
+      "ref": "Sahih Muslim 1337 (every year? leave me as I leave you)",
+      "work": "Sahih Muslim",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Qur'an 2:29",
+      "work": "The Qur'an",
+      "translation": "Pickthall 1930",
+      "quoted": "He it is Who created for you all that is in the earth."
+    },
+    {
+      "ref": "Sahih al-Bukhari 7289 (asking about what was not forbidden)",
+      "work": "Sahih al-Bukhari",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -89,5 +173,9 @@
       "Editor pass: Bukhari 7289 paraphrase brought closer to the report ('greatest guilt'); cut the editorial 'like a sigh' and the unsourced 'short list'."
     ]
   },
-  "meta": { "index": "1177. The wide permitted · mubah · most of life is simply permitted · enjoy one permitted thing · most is permitted", "writer": "writer agent (islam 1172–1181)", "written": "2026-10-01" }
+  "meta": {
+    "index": "1177. The wide permitted · mubah · most of life is simply permitted · enjoy one permitted thing · most is permitted",
+    "writer": "writer agent (islam 1172–1181)",
+    "written": "2026-10-01"
+  }
 }

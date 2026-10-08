@@ -9,24 +9,37 @@
   "length": "6:45",
   "tomorrow": "plague years",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-THOUSAND-ONE-HUNDRED-SIXTY-EIGHT.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY ONE-THOUSAND-ONE-HUNDRED-SIXTY-EIGHT.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, the mayor and Montaigne, and your line was two, not one. Did you hang up a role at the door and walk in as yourself? Day one thousand one hundred sixty-eight.",
-      "screen": ["`TWO, NOT ONE.`"]
+      "screen": [
+        "`TWO, NOT ONE.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Perhaps. In some sense. Some. They say. I think. Montaigne writes that he loves these little words, the ones that soften a sentence and take the swagger out of it. It's an odd thing to love. They don't sound brave. But the essay where he says it, in book three, carries an old English title, Of cripples, taken from a passage near its end about a common saying. And much of that essay is about something far heavier than its title: what happens when people are too sure, and someone else pays for it.",
-      "screen": ["`PERHAPS. SOME. I THINK.` → `WORDS THAT SOFTEN.` → `WHEN SURE GETS DANGEROUS.`"]
+      "screen": [
+        "`PERHAPS. SOME. I THINK.` → `WORDS THAT SOFTEN.` → `WHEN SURE GETS DANGEROUS.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "First, how stories grow. Montaigne notices that people would rather explain a strange event than check whether it happened. They skip past the facts, he says, and argue carefully about the causes. And each time a tale is passed along, it grows a little, because the teller wants to make it convincing. Second, the witches. In his time, people accused of witchcraft were put on trial and burned. Montaigne tells of being shown some accused people himself. His judgment was gentle and blunt at once: they seemed to him more in need of medicine than of execution. Then he writes the sentence this essay is remembered for, in his own words, roughly: it is putting a very high price on our guesses to roast a person alive because of them. Third, the little words again. Now perhaps and I think sound different. They aren't weakness. They're a brake. Montaigne says he'd like the young to be taught to answer with words like: what does that mean? I don't understand it. It could be. Better to sound like a learner than to sound certain too soon. Fourth, closer to home. Few of us will sit in judgment at a trial. But we judge all the time: a neighbor's motive, a stranger's character, a relative's choices, often from a story that grew as it was passed along. Montaigne's question still works. How sure am I, really? Sure enough for what it would cost them if I'm wrong?",
-      "screen": ["`STORIES GROW AS THEY'RE PASSED.` · `MEDICINE, NOT THE FIRE.` · `A HIGH PRICE ON OUR GUESSES.` · `HOW SURE AM I, REALLY?` · then, large: `NOT SO SURE.`"]
+      "screen": [
+        "`STORIES GROW AS THEY'RE PASSED.` · `MEDICINE, NOT THE FIRE.` · `A HIGH PRICE ON OUR GUESSES.` · `HOW SURE AM I, REALLY?` · then, large: `NOT SO SURE.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Of cripples. Montaigne's essay against being too sure, especially when someone else will pay for our certainty. Today's word.",
-      "screen": ["`OF CRIPPLES — today's word`."]
+      "screen": [
+        "`OF CRIPPLES — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,34 +61,93 @@
       "voice": "Your line: not so sure. Today, when you catch yourself delivering a verdict on someone, add perhaps, and see what changes. Day one thousand one hundred sixty-eight.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 1168 COUNTS.` → `TOMORROW: PLAGUE YEARS.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 1168 COUNTS.` → `TOMORROW: PLAGUE YEARS.`"
+      ]
+    }
   ],
   "howItsDone": "Readers of Montaigne's essay Of cripples often remember it for its warning against condemning people on uncertain grounds, and for his love of softening words like perhaps and I think.",
   "games": {
     "match": {
       "prompt": "Of cripples: tap the pairs.",
-      "pairs": [["perhaps, some, I think", "words that soften"], ["a tale passed along", "grows each time"], ["the accused he was shown", "needed medicine"], ["roasting someone alive", "a high price on guesses"]]
+      "pairs": [
+        [
+          "perhaps, some, I think",
+          "words that soften"
+        ],
+        [
+          "a tale passed along",
+          "grows each time"
+        ],
+        [
+          "the accused he was shown",
+          "needed medicine"
+        ],
+        [
+          "roasting someone alive",
+          "a high price on guesses"
+        ]
+      ]
     },
     "myth": [
-      ["Montaigne says people check the facts before explaining a strange event", false, "he says they skip the facts and argue carefully about the causes."],
-      ["he says the accused he was shown seemed more in need of medicine", true, "his judgment was gentle and blunt: medicine, not execution."],
-      ["the essay is chiefly about people who are lame", false, "the title comes from a passage near the end; much of the essay is about being too sure."]
+      [
+        "Montaigne says people check the facts before explaining a strange event",
+        false,
+        "he says they skip the facts and argue carefully about the causes."
+      ],
+      [
+        "he says the accused he was shown seemed more in need of medicine",
+        true,
+        "his judgment was gentle and blunt: medicine, not execution."
+      ],
+      [
+        "the essay is chiefly about people who are lame",
+        false,
+        "the title comes from a passage near the end; much of the essay is about being too sure."
+      ]
     ],
     "fork": {
       "setup": "you're Montaigne, and you've been shown people accused of witchcraft. what do you conclude?",
-      "options": ["the evidence is clear; let the trial go on.", "they seem to need medicine more than execution.", "say nothing; it's not your business."],
+      "options": [
+        "the evidence is clear; let the trial go on.",
+        "they seem to need medicine more than execution.",
+        "say nothing; it's not your business."
+      ],
       "answer": 1,
       "reveal": "he judged them more in need of medicine, and said it puts a very high price on our guesses to burn a person for them."
     },
-    "original": { "script": "Des boiteux", "say": "day bwah-TUH", "note": "Montaigne's French title for Essays 3.11, Of cripples, meaning of the lame." },
+    "original": {
+      "script": "Des boiteux",
+      "say": "day bwah-TUH",
+      "note": "Montaigne's French title for Essays 3.11, Of cripples, meaning of the lame."
+    },
     "trapdoor": [
       "what you thought: an essay called Of cripples is about disability.",
       "what it means: much of it is a warning against being too sure, especially when condemning people.",
       "what a scholar hears: the title comes from a passage near the end on a popular saying, a typical Montaigne detour."
+    ],
+    "recall": [
+      [
+        "The back shop",
+        "a room all your own"
+      ],
+      [
+        "essai",
+        "a try, a test, an attempt"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Montaigne, Essays 3.11, Of cripples (words that soften: perhaps, in some sort, some, they say, I think; people pass over facts and examine causes; stories grow in the telling; accused witches who seemed to need medicine; a high price on conjectures to roast a man alive)", "work": "Montaigne, Essays", "translation": null, "quoted": null }
+    {
+      "ref": "Montaigne, Essays 3.11, Of cripples (words that soften: perhaps, in some sort, some, they say, I think; people pass over facts and examine causes; stories grow in the telling; accused witches who seemed to need medicine; a high price on conjectures to roast a man alive)",
+      "work": "Montaigne, Essays",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -86,5 +160,9 @@
       "Editor: the 'I don't know' line is now paraphrased closer to 3.11 (teach the young to answer 'what does that mean? I don't understand it. it could be'); removed the stock 'ordinary Tuesday' turn; changed 'a coworker's motive', which repeated day 1159's example."
     ]
   },
-  "meta": { "index": "1168. Of cripples · — · he warns against being too sure, especially when condemning people as witches (Essays 3.11) · doubt one harsh judgment · not so sure", "writer": "spiritual writer agent (days 1162–1171)", "written": "2026-10-02" }
+  "meta": {
+    "index": "1168. Of cripples · — · he warns against being too sure, especially when condemning people as witches (Essays 3.11) · doubt one harsh judgment · not so sure",
+    "writer": "spiritual writer agent (days 1162–1171)",
+    "written": "2026-10-02"
+  }
 }

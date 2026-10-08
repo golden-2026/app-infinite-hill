@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "Quadragesimo Anno (1931)",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-THOUSAND-THREE-HUNDRED.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY ONE-THOUSAND-THREE-HUNDRED.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, care for creation: Brother Sun, Sister Water. Your line was our common home. Did a tap remind you of someone downstream? Day one thousand three hundred.",
-      "screen": ["`OUR COMMON HOME.`"]
+      "screen": [
+        "`OUR COMMON HOME.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Back to Leo's letter, the one this block opened with. Its closing line says it was given at Rome in 1891. Today, one question inside it, the kind that lands every payday. A worker needs a job. There's no other job in sight. The owner offers a wage too small to live on, and the worker signs. Hands are shaken. Nobody was forced at gunpoint. So is that wage fair, simply because both sides agreed to it? Plenty of arguments say a deal is a deal. Leo's letter says something else. Today, a just wage.",
-      "screen": ["`BACK TO LEO'S LETTER.` → `NO OTHER JOB IN SIGHT.` → `IS A DEAL ALWAYS FAIR?`"]
+      "screen": [
+        "`BACK TO LEO'S LETTER.` → `NO OTHER JOB IN SIGHT.` → `IS A DEAL ALWAYS FAIR?`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "First, Leo's answer. He writes that when a worker accepts harder terms because necessity, or fear of something worse, leaves no choice, the worker is the victim of force and injustice. A signature made with no real alternative doesn't make a wage just. Second, the measure. Leo says a wage must be enough to support a worker who lives frugally and behaves well. And he hopes for more: a wage that lets a worker support a wife and children in reasonable comfort, and still put a little aside, so that over time ordinary workers might come to own something themselves. Third, the roots in scripture. Sending out disciples in Luke, Jesus says, in the Douay-Rheims: \"the labourer is worthy of his hire.\" The Greek word for hire there is misthos, wages. And the letter of James warns the rich that the wages held back from the workers who reaped their fields cry out, and that the cry reaches the ears of the Lord. Leo's letter stands in that line. Fourth, what it means now. The Catechism calls a just wage the legitimate fruit of work, and says that refusing or withholding it can be a grave injustice. Today people speak of a living wage, which is close to what Leo described. What counts as enough changes with the place and the prices. The principle stays put: in this teaching, honest work should pay enough to live on and to raise a family.",
-      "screen": ["`A DEAL ISN'T ENOUGH.` · `ENOUGH FOR A FAMILY.` · then, large: `WORTHY OF HIS HIRE.` · then: `THE LEGITIMATE FRUIT OF WORK.`"]
+      "screen": [
+        "`A DEAL ISN'T ENOUGH.` · `ENOUGH FOR A FAMILY.` · then, large: `WORTHY OF HIS HIRE.` · then: `THE LEGITIMATE FRUIT OF WORK.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Just wage. In Leo's letter, a wage enough for a worker to live on and support a family, and not made just merely because it was agreed. Today's word.",
-      "screen": ["`JUST WAGE — today's word`."]
+      "screen": [
+        "`JUST WAGE — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,37 +61,111 @@
       "voice": "Your line: a just wage. Today, find out one number: what it actually costs to live where you do, and hold it next to the pay of someone who serves you. Day one thousand three hundred.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 1300 COUNTS.` → `TOMORROW: QUADRAGESIMO ANNO.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 1300 COUNTS.` → `TOMORROW: QUADRAGESIMO ANNO.`"
+      ]
+    }
   ],
   "howItsDone": "Catholic bishops and organizations cite Rerum Novarum in debates about minimum and living wages, and Catholic employers are urged by Church teaching to pay wages that let workers support a family.",
   "games": {
     "match": {
       "prompt": "a just wage — tap the pairs.",
-      "pairs": [["worthy of his hire", "Jesus, in Luke"], ["misthos", "wages, hire"], ["a wage signed out of necessity", "not just simply because it was agreed"], ["wages kept back by fraud", "cry out, in James"]]
+      "pairs": [
+        [
+          "worthy of his hire",
+          "Jesus, in Luke"
+        ],
+        [
+          "misthos",
+          "wages, hire"
+        ],
+        [
+          "a wage signed out of necessity",
+          "not just simply because it was agreed"
+        ],
+        [
+          "wages kept back by fraud",
+          "cry out, in James"
+        ]
+      ]
     },
     "myth": [
-      ["for Leo XIII, any wage both sides agree to is just", false, "he writes that a worker who accepts hard terms out of necessity is the victim of force and injustice."],
-      ["Rerum Novarum hopes a wage can let a worker support a family and save a little", true, "so that ordinary workers might come to own something themselves."],
-      ["the Bible is silent about wages", false, "Luke: the worker is worthy of his hire. James: wages kept back cry out to the Lord."]
+      [
+        "for Leo XIII, any wage both sides agree to is just",
+        false,
+        "he writes that a worker who accepts hard terms out of necessity is the victim of force and injustice."
+      ],
+      [
+        "Rerum Novarum hopes a wage can let a worker support a family and save a little",
+        true,
+        "so that ordinary workers might come to own something themselves."
+      ],
+      [
+        "the Bible is silent about wages",
+        false,
+        "Luke: the worker is worthy of his hire. James: wages kept back cry out to the Lord."
+      ]
     ],
     "fork": {
       "setup": "you're a worker with no other job in sight. the owner offers a wage too low to live on, and you sign. in Leo's letter, is that wage now just?",
-      "options": ["yes: you agreed to it.", "no: a deal made out of necessity doesn't make it just.", "only if the owner is losing money."],
+      "options": [
+        "yes: you agreed to it.",
+        "no: a deal made out of necessity doesn't make it just.",
+        "only if the owner is losing money."
+      ],
       "answer": 1,
       "reveal": "Leo writes that a worker forced by necessity or fear to accept harder terms is the victim of force and injustice."
     },
-    "original": { "script": "μισθός", "say": "mis-THOSS", "note": "Greek: wages, hire. the word behind hire in Luke's worthy of his hire." },
+    "original": {
+      "script": "μισθός",
+      "say": "mis-THOSS",
+      "note": "Greek: wages, hire. the word behind hire in Luke's worthy of his hire."
+    },
     "trapdoor": [
       "what you thought: a wage is fair if both sides signed.",
       "what it means: a just wage lets a worker support a family, and a deal made under necessity doesn't make a wage just.",
       "what a scholar hears: Leo's line that a worker who accepts harder terms out of necessity is the victim of force and injustice."
+    ],
+    "recall": [
+      [
+        "mental prayer",
+        "a friendly conversation"
+      ],
+      [
+        "magis",
+        "more"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Luke 10:7", "work": "The Bible", "translation": "Douay-Rheims (Challoner)", "quoted": "the labourer is worthy of his hire" },
-    { "ref": "James 5:4", "work": "The Bible", "translation": null, "quoted": null },
-    { "ref": "Rerum Novarum 45–46 and closing line (Leo XIII)", "work": "Rerum Novarum", "translation": null, "quoted": null },
-    { "ref": "Catechism of the Catholic Church 2434", "work": "Catechism of the Catholic Church", "translation": null, "quoted": null }
+    {
+      "ref": "Luke 10:7",
+      "work": "The Bible",
+      "translation": "Douay-Rheims (Challoner)",
+      "quoted": "the labourer is worthy of his hire"
+    },
+    {
+      "ref": "James 5:4",
+      "work": "The Bible",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Rerum Novarum 45–46 and closing line (Leo XIII)",
+      "work": "Rerum Novarum",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Catechism of the Catholic Church 2434",
+      "work": "Catechism of the Catholic Church",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -90,5 +179,9 @@
       "Editor: cut a line echoing day 1292 ('carried it onto the factory floor'); removed the unsourced 'a full week of work' standard and tied the principle to the teaching; the practice no longer assumes the listener has a parent in care."
     ]
   },
-  "meta": { "index": "1300. Rerum Novarum again (1891) · just wage · a wage that lets a worker support a family · learn what a living wage is · a just wage", "writer": "writer agent (catholic 1292–1301)", "written": "2026-10-01" }
+  "meta": {
+    "index": "1300. Rerum Novarum again (1891) · just wage · a wage that lets a worker support a family · learn what a living wage is · a just wage",
+    "writer": "writer agent (catholic 1292–1301)",
+    "written": "2026-10-01"
+  }
 }

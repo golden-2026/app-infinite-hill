@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "The last kindness",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-THOUSAND-THREE-HUNDRED-TWENTY-ONE.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY ONE-THOUSAND-THREE-HUNDRED-TWENTY-ONE.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday's word was keriah, and your line was the tear: grief made visible. Whose grief did you let show without fixing it? Today the mourners, torn garments and all, walk into the funeral. Day one thousand three hundred twenty-one.",
-      "screen": ["`THE TEAR.`"]
+      "screen": [
+        "`THE TEAR.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "No flowers on the plain wooden coffin. Folding chairs, a small chapel, people in coats they don't wear often. A grandson stands up, unfolds a sheet of paper, and tells a story about fishing that makes the whole room laugh and then go quiet. Someone reads a psalm. And then the cantor, or a rabbi, or a friend who knows the tune, begins to sing in Hebrew. It's slow, rising and falling, and in the middle of it comes a name: the name of the person in the coffin, sung out loud. Today's word is that song.",
-      "screen": ["`A PLAIN COFFIN, NO FLOWERS.` → `A STORY ABOUT FISHING.` → `A NAME, SUNG OUT LOUD.`"]
+      "screen": [
+        "`A PLAIN COFFIN, NO FLOWERS.` → `A STORY ABOUT FISHING.` → `A NAME, SUNG OUT LOUD.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "El Male Rachamim. God full of mercy. Turn the funeral four ways. First, the eulogy, the hesped. When Sarah dies, Genesis says, in the old Jewish Publication Society translation: \"and Abraham came to mourn for Sarah, and to weep for her.\" The rabbis saw a eulogy there. A hesped is meant to do both: speak about the person, and let people weep. The codes ask the speaker to praise truly, not to invent a saint, because an honest picture honors the dead more than a flattering one. Second, the psalms. Psalms are read, and Psalm twenty-three may be among them: \"The LORD is my shepherd; I shall not want.\" It is read as company for the road, not as an explanation. Third, the prayer. El Male Rachamim is a short memorial prayer, usually sung. It calls on God full of mercy, who dwells on high, to give true rest to the soul of the one who has died, beneath the wings of the divine presence, and it names them. It asks that their soul be bound up in the bond of life. It may be sung again at the grave, and later on days of remembrance. Fourth, the name. In the middle of that slow melody, one ordinary name, sung as if it belongs there. In that moment the funeral says, out loud and together, that this person mattered, and to hand them, by name, to mercy. God full of mercy.",
-      "screen": ["`THE HESPED: SPEAK TRULY.` · `THE LORD IS MY SHEPHERD.` · `REST BENEATH THE WINGS.` · `ONE NAME, SUNG.` · then, large: `GOD FULL OF MERCY.`"]
+      "screen": [
+        "`THE HESPED: SPEAK TRULY.` · `THE LORD IS MY SHEPHERD.` · `REST BENEATH THE WINGS.` · `ONE NAME, SUNG.` · then, large: `GOD FULL OF MERCY.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "El Male Rachamim. God full of mercy: the sung memorial prayer that asks rest for the soul and says the person's name. Today's word.",
-      "screen": ["`EL MALE RACHAMIM — today's word`."]
+      "screen": [
+        "`EL MALE RACHAMIM — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,38 +61,117 @@
       "voice": "Your line: god full of mercy. Today, say the name of someone who died, out loud, to someone who loved them too. Day one thousand three hundred twenty-one.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 1321 COUNTS.` → `TOMORROW: THE LAST KINDNESS.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 1321 COUNTS.` → `TOMORROW: THE LAST KINDNESS.`"
+      ]
+    }
   ],
   "howItsDone": "A Jewish funeral is usually simple: a eulogy (hesped), psalms, and the memorial prayer El Male Rachamim, sung by a cantor or rabbi with the name of the person who died; it is often sung again at the graveside.",
   "games": {
     "match": {
       "prompt": "the funeral — tap the pairs.",
-      "pairs": [["hesped", "the eulogy"], ["El Male Rachamim", "God full of mercy"], ["Abraham", "came to mourn for Sarah and weep"], ["Psalm 23", "\"The LORD is my shepherd\""]]
+      "pairs": [
+        [
+          "hesped",
+          "the eulogy"
+        ],
+        [
+          "El Male Rachamim",
+          "God full of mercy"
+        ],
+        [
+          "Abraham",
+          "came to mourn for Sarah and weep"
+        ],
+        [
+          "Psalm 23",
+          "\"The LORD is my shepherd\""
+        ]
+      ]
     },
     "myth": [
-      ["a good eulogy makes the person sound perfect", false, "the codes ask the speaker to praise truly, not to invent a saint."],
-      ["El Male Rachamim names the person who died", true, "in the middle of the melody, their name is sung out loud."],
-      ["the prayer explains why the person died", false, "it asks God full of mercy to give the soul rest beneath the wings of the divine presence."]
+      [
+        "a good eulogy makes the person sound perfect",
+        false,
+        "the codes ask the speaker to praise truly, not to invent a saint."
+      ],
+      [
+        "El Male Rachamim names the person who died",
+        true,
+        "in the middle of the melody, their name is sung out loud."
+      ],
+      [
+        "the prayer explains why the person died",
+        false,
+        "it asks God full of mercy to give the soul rest beneath the wings of the divine presence."
+      ]
     ],
     "fork": {
       "setup": "you're giving the eulogy for your grandfather, who was kind and also famously stubborn. what do the codes advise?",
-      "options": ["describe him as a flawless saint.", "praise him truly, as he was.", "skip the eulogy; say nothing."],
+      "options": [
+        "describe him as a flawless saint.",
+        "praise him truly, as he was.",
+        "skip the eulogy; say nothing."
+      ],
       "answer": 1,
       "reveal": "the codes ask the speaker to praise truly, because an honest picture honors the dead more than flattery."
     },
-    "original": { "script": "אֵל מָלֵא רַחֲמִים", "say": "el mah-LEH ra-kha-MEEM", "note": "Hebrew: God full of mercy, the memorial prayer." },
+    "original": {
+      "script": "אֵל מָלֵא רַחֲמִים",
+      "say": "el mah-LEH ra-kha-MEEM",
+      "note": "Hebrew: God full of mercy, the memorial prayer."
+    },
     "trapdoor": [
       "what you thought: El Male Rachamim is a general prayer for the dead.",
       "what it means: a sung memorial prayer that asks rest for one soul, by name, beneath the wings of the divine presence.",
       "what a scholar hears: its 'bond of life' echoes Abigail's words in 1 Samuel 25:29; the hesped is read from Genesis 23:2."
+    ],
+    "recall": [
+      [
+        "sheva brachot",
+        "seven blessings"
+      ],
+      [
+        "chuppah",
+        "a canopy: roof, no walls"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Genesis 23:2", "work": "Tanakh", "translation": "JPS 1917", "quoted": "and Abraham came to mourn for Sarah, and to weep for her" },
-    { "ref": "Psalm 23:1", "work": "Tanakh", "translation": "JPS 1917", "quoted": "The LORD is my shepherd; I shall not want." },
-    { "ref": "1 Samuel 25:29", "work": "Tanakh", "translation": null, "quoted": null },
-    { "ref": "Shulchan Aruch, Yoreh De'ah 344", "work": "Shulchan Aruch", "translation": null, "quoted": null },
-    { "ref": "El Male Rachamim (memorial prayer, traditional liturgy)", "work": "Jewish liturgy", "translation": null, "quoted": null }
+    {
+      "ref": "Genesis 23:2",
+      "work": "Tanakh",
+      "translation": "JPS 1917",
+      "quoted": "and Abraham came to mourn for Sarah, and to weep for her"
+    },
+    {
+      "ref": "Psalm 23:1",
+      "work": "Tanakh",
+      "translation": "JPS 1917",
+      "quoted": "The LORD is my shepherd; I shall not want."
+    },
+    {
+      "ref": "1 Samuel 25:29",
+      "work": "Tanakh",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Shulchan Aruch, Yoreh De'ah 344",
+      "work": "Shulchan Aruch",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "El Male Rachamim (memorial prayer, traditional liturgy)",
+      "work": "Jewish liturgy",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -92,5 +186,9 @@
       "Editor: softened unsourced frequency claims ('often among them', 'often sung again' → 'may be'), cut the age claim 'ancient melody', and replaced the narrator's 'that's the whole point of a funeral' with a description of what the moment says."
     ]
   },
-  "meta": { "index": "1321. The funeral · El Male Rachamim · eulogy, psalms, and the prayer \"God full of mercy\" · be present for someone grieving · god full of mercy", "writer": "writer agent (judaism y4 1312–1321)", "written": "2026-10-01" }
+  "meta": {
+    "index": "1321. The funeral · El Male Rachamim · eulogy, psalms, and the prayer \"God full of mercy\" · be present for someone grieving · god full of mercy",
+    "writer": "writer agent (judaism y4 1312–1321)",
+    "written": "2026-10-01"
+  }
 }

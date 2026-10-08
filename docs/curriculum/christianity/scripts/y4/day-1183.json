@@ -9,24 +9,42 @@
   "length": "6:45",
   "tomorrow": "No other gods",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-THOUSAND-ONE-HUNDRED-EIGHTY-THREE.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY ONE-THOUSAND-ONE-HUNDRED-EIGHTY-THREE.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, Augustine: love, and do what you will, with every act checked at the root. Your line was love decides. Which choice did love decide? Day one thousand one hundred eighty-three.",
-      "screen": ["`LOVE DECIDES.`"]
+      "screen": [
+        "`LOVE DECIDES.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Ask a few Christians to recite the second commandment, and you may get two different answers, each said with total confidence. One says: no graven images. Another says: don't take the Lord's name in vain. Neither has misremembered. They grew up in churches that count differently. Catholics and Lutherans number the commandments one way. Orthodox and Reformed Christians number them another. The words on the tablets are the same words. Only the dividing lines move. Today: numbering the commandments, and why the Bible lets that happen.",
-      "screen": ["`WHAT'S THE SECOND COMMANDMENT?`", "`TWO ANSWERS, BOTH RIGHT.`", "`SAME WORDS, DIFFERENT LINES.`"]
+      "screen": [
+        "`WHAT'S THE SECOND COMMANDMENT?`",
+        "`TWO ANSWERS, BOTH RIGHT.`",
+        "`SAME WORDS, DIFFERENT LINES.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "Open Exodus 20 and look for the numbers. There aren't any. The passage runs from \"I am the LORD thy God\" to the warning about coveting your neighbor's house, wife, servants, ox and donkey, as one unbroken speech. What the Bible does give is the total. Later in Exodus, the tablets carry \"the words of the covenant, the ten commandments.\" In the Hebrew, that phrase reads, literally, the ten words, which is today's line. So: ten. But where do the cuts go? Catholics and Lutherans, following a division tradition credits to Augustine, keep no other gods and no carved images together as the first word, then split coveting in two at the end: your neighbor's wife, then your neighbor's goods. Orthodox and Reformed Christians, and Anglicans with them, make images a word of its own and keep coveting together as the last. Jewish tradition counts another way again: its first word is God's own introduction, I am the LORD your God, who brought you out of Egypt. Each pattern underlines something. Setting images apart puts weight on how God is worshipped. Splitting coveting, some readers say, makes clear that a person is not a possession. Starting with I am says the law begins with who God is and what God has done, before any rule. Whichever way a church counts, every word is still read. The disagreement is about the dividing lines, not the commandments.",
-      "screen": ["`NO NUMBERS IN EXODUS 20.`", "`THE TEXT SAYS TEN.`", "`WHERE THE CUTS GO.`", "`EVERY WORD KEPT.`"]
+      "screen": [
+        "`NO NUMBERS IN EXODUS 20.`",
+        "`THE TEXT SAYS TEN.`",
+        "`WHERE THE CUTS GO.`",
+        "`EVERY WORD KEPT.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +56,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Numbering the commandments. The same ten words, divided in different places by different churches, with every word kept.",
-      "screen": ["`NUMBERING THE COMMANDMENTS — today's word`."]
+      "screen": [
+        "`NUMBERING THE COMMANDMENTS — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,36 +66,105 @@
       "voice": "Your line: ten words. Today, pick one of the ten and watch for where it touches your day. And that's a week: from Taizé's repeated chant, through Iona, new monastics and prayer walks, to Augustine's love and the ten words. Day one thousand one hundred eighty-three.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 1183 COUNTS.` → `TOMORROW: NO OTHER GODS.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 1183 COUNTS.` → `TOMORROW: NO OTHER GODS.`"
+      ]
+    }
   ],
   "howItsDone": "Christians learn the Ten Commandments in catechism, Sunday school and confirmation classes, and each tradition teaches its own numbering: Catholic and Lutheran catechisms one way, Orthodox, Reformed and Anglican teaching another.",
   "games": {
     "match": {
       "prompt": "who counts how — tap the pairs.",
-      "pairs": [["Catholics and Lutherans", "split coveting into two"], ["Orthodox and Reformed", "make images a word of its own"], ["Jewish tradition", "begins with I am the LORD your God"], ["Exodus 20", "no numbers in the text"]]
+      "pairs": [
+        [
+          "Catholics and Lutherans",
+          "split coveting into two"
+        ],
+        [
+          "Orthodox and Reformed",
+          "make images a word of its own"
+        ],
+        [
+          "Jewish tradition",
+          "begins with I am the LORD your God"
+        ],
+        [
+          "Exodus 20",
+          "no numbers in the text"
+        ]
+      ]
     },
     "myth": [
-      ["the Bible numbers the commandments one to ten", false, "Exodus 20 runs as one speech, with no numbers."],
-      ["the Bible itself says there are ten", true, "the tablets carry \"the words of the covenant, the ten commandments.\""],
-      ["churches that count differently keep different commandments", false, "the words are the same. only the dividing lines move."]
+      [
+        "the Bible numbers the commandments one to ten",
+        false,
+        "Exodus 20 runs as one speech, with no numbers."
+      ],
+      [
+        "the Bible itself says there are ten",
+        true,
+        "the tablets carry \"the words of the covenant, the ten commandments.\""
+      ],
+      [
+        "churches that count differently keep different commandments",
+        false,
+        "the words are the same. only the dividing lines move."
+      ]
     ],
     "fork": {
       "setup": "you're dividing Exodus 20 into ten. you reach the end: don't covet your neighbor's house, wife, servants, ox or donkey. one word, or two?",
-      "options": ["one word: coveting is one desire.", "two words: a person and a possession are different.", "either one: the text gives no numbers."],
+      "options": [
+        "one word: coveting is one desire.",
+        "two words: a person and a possession are different.",
+        "either one: the text gives no numbers."
+      ],
       "answer": 2,
       "reveal": "Exodus gives no numbers. Orthodox and Reformed Christians keep coveting as one word; Catholics and Lutherans make it two. both read every word."
     },
-    "original": { "script": "עֲשֶׂרֶת הַדְּבָרִים", "say": "a-SEH-ret ha-d'va-REEM", "note": "Hebrew: the ten words. The phrase in Exodus 34:28 that the KJV renders the ten commandments." },
+    "original": {
+      "script": "עֲשֶׂרֶת הַדְּבָרִים",
+      "say": "a-SEH-ret ha-d'va-REEM",
+      "note": "Hebrew: the ten words. The phrase in Exodus 34:28 that the KJV renders the ten commandments."
+    },
     "trapdoor": [
       "what you thought: there's one official list of the ten commandments.",
       "what it means: the words are fixed. churches divide them into ten in different places.",
       "what a scholar hears: the Hebrew calls them the ten words, and Exodus 20 itself carries no numbers."
+    ],
+    "recall": [
+      [
+        "Queries",
+        "questions Friends ask themselves"
+      ],
+      [
+        "Nickel Mines",
+        "a village in Amish farm country"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Exodus 20:2", "work": "The Bible", "translation": "KJV (1769)", "quoted": "I am the LORD thy God" },
-    { "ref": "Exodus 34:28", "work": "The Bible", "translation": "KJV (1769)", "quoted": "the words of the covenant, the ten commandments." },
-    { "ref": "Exodus 20:1–17; Deuteronomy 5:6–21", "work": "The Bible", "translation": null, "quoted": null }
+    {
+      "ref": "Exodus 20:2",
+      "work": "The Bible",
+      "translation": "KJV (1769)",
+      "quoted": "I am the LORD thy God"
+    },
+    {
+      "ref": "Exodus 34:28",
+      "work": "The Bible",
+      "translation": "KJV (1769)",
+      "quoted": "the words of the covenant, the ten commandments."
+    },
+    {
+      "ref": "Exodus 20:1–17; Deuteronomy 5:6–21",
+      "work": "The Bible",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -90,5 +179,9 @@
       "Audit pass (2026-10-02): teach said 'in the Hebrew, that phrase is ten words', which reads as if the Hebrew phrase had ten words (it is two: aseret ha-devarim); now 'reads, literally, the ten words'. Numbering by tradition checked; no other changes."
     ]
   },
-  "meta": { "index": "1183. Numbering the commandments · — · Catholics and Lutherans number them one way, Orthodox and Reformed another; the words are the same · read Exodus 20 · ten words", "writer": "writer agent (christianity 1182–1191)", "written": "2026-10-01" }
+  "meta": {
+    "index": "1183. Numbering the commandments · — · Catholics and Lutherans number them one way, Orthodox and Reformed another; the words are the same · read Exodus 20 · ten words",
+    "writer": "writer agent (christianity 1182–1191)",
+    "written": "2026-10-01"
+  }
 }

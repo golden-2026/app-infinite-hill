@@ -9,24 +9,42 @@
   "length": "6:45",
   "tomorrow": "Block close: find your way",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-THOUSAND-ONE-HUNDRED-EIGHTY.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY ONE-THOUSAND-ONE-HUNDRED-EIGHTY.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, new monastics: a rule, a shared table, and neighbors at dinner. Your line was monks among us. Did you set a day? Day one thousand one hundred eighty.",
-      "screen": ["`MONKS AMONG US.`"]
+      "screen": [
+        "`MONKS AMONG US.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "A spiral notebook with a cracked cover, half full. Some pages are lists: a name, a diagnosis, a job interview, a daughter's exam. Next to a few of them, in different ink, written later, a date and one word: answered. Next to others, nothing yet. It's a prayer journal, and evangelical Christians are among those who keep them. Some of them also take the notebook in a pocket and go outside, walking their own street slowly, praying for each house they pass. Two habits, one on paper and one on foot. Today: journaling and prayer walks.",
-      "screen": ["`A NOTEBOOK, HALF FULL.`", "`ANSWERED, IN DIFFERENT INK.`", "`ON PAPER AND ON FOOT.`"]
+      "screen": [
+        "`A NOTEBOOK, HALF FULL.`",
+        "`ANSWERED, IN DIFFERENT INK.`",
+        "`ON PAPER AND ON FOOT.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "Start with the paper. When the prophet Habakkuk waits for God's answer, the answer begins: \"Write the vision, and make it plain upon tables, that he may run that readeth it.\" Write it down, plainly, so it can be carried. The Psalms themselves are written prayers, complaint and praise on the same page. In one of them, the writer is so troubled he can't sleep, and then he turns: \"I will remember the works of the LORD: surely I will remember thy wonders of old.\" That's what a prayer journal is for. Memory is slippery, and a page isn't. Months later you can read what you were afraid of, and see what happened, and see how your own prayers changed. Now the feet. Genesis gives Enoch one short line: \"And Enoch walked with God.\" In that picture, a life with God is a walk. Prayer walkers borrow the picture and take it outdoors. They go slowly, eyes open, and let what they see become the prayer. A swing set: the children on this street. A for-sale sign: whoever's leaving, and whoever's coming. A wheelchair ramp. A window that stays dark. Matthew says that when Jesus went through the towns and saw the crowds, \"he was moved with compassion on them.\" He saw first. Walking slowly is a way of seeing. Some people bring the two habits together. They walk, and then they come home and write down the houses they prayed for. And later, sometimes, they write what happened.",
-      "screen": ["`WRITE THE VISION, MAKE IT PLAIN.`", "`I WILL REMEMBER.`", "`ENOCH WALKED WITH GOD.`", "`EYES OPEN, HOUSE BY HOUSE.`"]
+      "screen": [
+        "`WRITE THE VISION, MAKE IT PLAIN.`",
+        "`I WILL REMEMBER.`",
+        "`ENOCH WALKED WITH GOD.`",
+        "`EYES OPEN, HOUSE BY HOUSE.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +56,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Journaling and prayer walks. Prayers written down to be remembered, and prayers walked, house by house, with eyes open.",
-      "screen": ["`JOURNALING AND PRAYER WALKS — today's word`."]
+      "screen": [
+        "`JOURNALING AND PRAYER WALKS — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,38 +66,117 @@
       "voice": "Your line: pray as you walk. Today, on a walk you already take, to the car, the bus, the mailbox, give each house you pass one silent good word. Tonight, write one of them down. Day one thousand one hundred eighty.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 1180 COUNTS.` → `TOMORROW: BLOCK CLOSE: FIND YOUR WAY.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 1180 COUNTS.` → `TOMORROW: BLOCK CLOSE: FIND YOUR WAY.`"
+      ]
+    }
   ],
   "howItsDone": "Some evangelical Christians keep a notebook of prayer requests and note later when and how they were answered; churches and small groups also organize prayer walks, walking a neighborhood slowly and praying for the homes, schools and businesses they pass.",
   "games": {
     "match": {
       "prompt": "on paper and on foot — tap the pairs.",
-      "pairs": [["Habakkuk", "write the vision, make it plain"], ["Psalm 77", "I will remember"], ["Enoch", "walked with God"], ["a prayer journal", "prayers written, answers noted later"]]
+      "pairs": [
+        [
+          "Habakkuk",
+          "write the vision, make it plain"
+        ],
+        [
+          "Psalm 77",
+          "I will remember"
+        ],
+        [
+          "Enoch",
+          "walked with God"
+        ],
+        [
+          "a prayer journal",
+          "prayers written, answers noted later"
+        ]
+      ]
     },
     "myth": [
-      ["in Habakkuk, God tells the prophet to write the vision down", true, "\"write the vision, and make it plain upon tables.\""],
-      ["a prayer walk is done with eyes closed", false, "it's done eyes open: what you see becomes the prayer."],
-      ["Genesis says Enoch walked with God", true, "\"and Enoch walked with God.\""]
+      [
+        "in Habakkuk, God tells the prophet to write the vision down",
+        true,
+        "\"write the vision, and make it plain upon tables.\""
+      ],
+      [
+        "a prayer walk is done with eyes closed",
+        false,
+        "it's done eyes open: what you see becomes the prayer."
+      ],
+      [
+        "Genesis says Enoch walked with God",
+        true,
+        "\"and Enoch walked with God.\""
+      ]
     ],
     "fork": {
       "setup": "you're the prophet Habakkuk. you've brought your complaint to God and climbed to your watchpost to wait. the answer comes. what are you told to do with it?",
-      "options": ["keep it to yourself.", "write the vision, and make it plain.", "forget it until it happens."],
+      "options": [
+        "keep it to yourself.",
+        "write the vision, and make it plain.",
+        "forget it until it happens."
+      ],
       "answer": 1,
       "reveal": "\"write the vision, and make it plain upon tables, that he may run that readeth it.\" written plainly, so it can be carried."
     },
-    "original": { "script": "הָלַךְ", "say": "hah-LAKH", "note": "Hebrew: to walk, to go. Genesis 5:24 uses a form of it: Enoch walked with God." },
+    "original": {
+      "script": "הָלַךְ",
+      "say": "hah-LAKH",
+      "note": "Hebrew: to walk, to go. Genesis 5:24 uses a form of it: Enoch walked with God."
+    },
     "trapdoor": [
       "what you thought: a prayer journal is a diary.",
       "what it means: prayers written down so they can be remembered, and so you can see them answered or changed.",
       "what a scholar hears: Habakkuk is told to write the vision plain \"that he may run that readeth it\": written so it can be carried."
+    ],
+    "recall": [
+      [
+        "The class meeting",
+        "a weekly Methodist small group"
+      ],
+      [
+        "Meeting for worship",
+        "gathering in silence, waiting on God"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Habakkuk 2:2", "work": "The Bible", "translation": "KJV (1769)", "quoted": "Write the vision, and make it plain upon tables, that he may run that readeth it." },
-    { "ref": "Psalm 77:11", "work": "The Bible", "translation": "KJV (1769)", "quoted": "I will remember the works of the LORD: surely I will remember thy wonders of old." },
-    { "ref": "Genesis 5:24", "work": "The Bible", "translation": "KJV (1769)", "quoted": "And Enoch walked with God" },
-    { "ref": "Matthew 9:35–36", "work": "The Bible", "translation": "KJV (1769)", "quoted": "he was moved with compassion on them" },
-    { "ref": "Habakkuk 1:2–2:1; Psalm 77:2–4", "work": "The Bible", "translation": null, "quoted": null }
+    {
+      "ref": "Habakkuk 2:2",
+      "work": "The Bible",
+      "translation": "KJV (1769)",
+      "quoted": "Write the vision, and make it plain upon tables, that he may run that readeth it."
+    },
+    {
+      "ref": "Psalm 77:11",
+      "work": "The Bible",
+      "translation": "KJV (1769)",
+      "quoted": "I will remember the works of the LORD: surely I will remember thy wonders of old."
+    },
+    {
+      "ref": "Genesis 5:24",
+      "work": "The Bible",
+      "translation": "KJV (1769)",
+      "quoted": "And Enoch walked with God"
+    },
+    {
+      "ref": "Matthew 9:35–36",
+      "work": "The Bible",
+      "translation": "KJV (1769)",
+      "quoted": "he was moved with compassion on them"
+    },
+    {
+      "ref": "Habakkuk 1:2–2:1; Psalm 77:2–4",
+      "work": "The Bible",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -91,5 +190,9 @@
       "Editor pass: 'Prayer walkers take it literally' (a claim about how they read Enoch) changed to 'borrow the picture and take it outdoors'; day 1175's practice was changed so this day's door-by-door walk is no longer a repeat."
     ]
   },
-  "meta": { "index": "1180. Journaling and prayer walks · — · many evangelicals keep prayer journals and walk their streets praying for each house · walk your street praying · pray as you walk", "writer": "writer agent (christianity 1172–1181)", "written": "2026-10-01" }
+  "meta": {
+    "index": "1180. Journaling and prayer walks · — · many evangelicals keep prayer journals and walk their streets praying for each house · walk your street praying · pray as you walk",
+    "writer": "writer agent (christianity 1172–1181)",
+    "written": "2026-10-01"
+  }
 }

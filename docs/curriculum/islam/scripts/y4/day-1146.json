@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "Sound, good, weak",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-THOUSAND-ONE-HUNDRED-FORTY-SIX.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY ONE-THOUSAND-ONE-HUNDRED-FORTY-SIX.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, the isnad, the chain, and your line: who told whom. When you passed on news, did you say where it came from? Today, the other half of every hadith. Day one thousand one hundred forty-six.",
-      "screen": ["`WHO TOLD WHOM.`"]
+      "screen": [
+        "`WHO TOLD WHOM.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Aisha has just heard a report that troubles her. It came through people she respects: Umar, and his son Abdullah. The report says a dead person is punished because their family weeps over them. Someone in the grave, punished for a grieving mother's tears? Aisha doesn't attack the men who carried it. She goes to the words themselves, and to the Qur'an. Her answer, recorded in Sahih al-Bukhari, shows a hadith's text being weighed, not just its chain. Today, the matn.",
-      "screen": ["`A REPORT THAT TROUBLES HER.` → `NOT THE MEN, THE WORDS.` → `WEIGHED AGAINST THE QUR'AN.`"]
+      "screen": [
+        "`A REPORT THAT TROUBLES HER.` → `NOT THE MEN, THE WORDS.` → `WEIGHED AGAINST THE QUR'AN.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "First, the word. Matn is the text of a hadith, the part after the names: what was actually said or done. Yesterday's chain asks who carried it. The matn asks: does this fit? Second, Aisha's test. In Bukhari, she says, in effect: may Allah have mercy on Umar, but the Prophet ﷺ didn't say that about a believer. He said it about a man who rejected faith, whose punishment was being increased while his family wept. And then she reaches for the Qur'an: enough for you is the Book, which says no soul carries another's load. In the version in Sahih Muslim she adds something gentle. The men who reported it weren't liars, she says. But hearing can slip. That's the whole idea in one breath. An honest chain can still carry a misheard sentence, so the words get tested on their own. Third, what later scholars did with it. They didn't simply throw one report away. They asked how the reports fit together. Al-Bukhari's own chapter heading reads the saying narrowly: it applies, he suggests, when wailing had been the dead person's own custom. Others reconciled it in other ways. Fourth, the questions a careful reader asks of any text. Does it clash with the Qur'an? With sunnah that's well established? Does it promise a mountain of reward for a tiny act, or speak in a way that doesn't sound like him at all? Later scholars, such as Ibn al-Qayyim, gathered signs like these in their books. The chain gets a report through the door. The text still has to sit at the table with everything else that's known.",
-      "screen": ["`MATN: THE WORDS THEMSELVES.` · `AISHA REACHES FOR THE QUR'AN.` · `HOW DO THE REPORTS FIT?` · `QUESTIONS FOR ANY TEXT.`"]
+      "screen": [
+        "`MATN: THE WORDS THEMSELVES.` · `AISHA REACHES FOR THE QUR'AN.` · `HOW DO THE REPORTS FIT?` · `QUESTIONS FOR ANY TEXT.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Matn. The text of a hadith, what was said or done, tested on its own against the Qur'an and the known sunnah. Today's word.",
-      "screen": ["`MATN — today's word`."]
+      "screen": [
+        "`MATN — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,37 +61,111 @@
       "voice": "Your line: the words are tested too. Today, before you repeat a quote, read it once without the name attached. Tomorrow: sound, good, weak. Day one thousand one hundred forty-six.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 1146 COUNTS.` → `TOMORROW: SOUND, GOOD, WEAK.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 1146 COUNTS.` → `TOMORROW: SOUND, GOOD, WEAK.`"
+      ]
+    }
   ],
   "howItsDone": "Hadith scholars examine a report's text as well as its chain, asking whether it agrees with the Qur'an, with well-established sunnah and with other reports, and they discuss how apparently conflicting reports fit together.",
   "games": {
     "match": {
       "prompt": "the text itself — tap the pairs.",
-      "pairs": [["matn", "the words: what was said"], ["Aisha", "weighed a report against the Qur'an"], ["no soul carries another's load", "the verse she reached for"], ["hearing can slip", "honest men, a misheard sentence"]]
+      "pairs": [
+        [
+          "matn",
+          "the words: what was said"
+        ],
+        [
+          "Aisha",
+          "weighed a report against the Qur'an"
+        ],
+        [
+          "no soul carries another's load",
+          "the verse she reached for"
+        ],
+        [
+          "hearing can slip",
+          "honest men, a misheard sentence"
+        ]
+      ]
     },
     "myth": [
-      ["once a chain is sound, the text is never questioned", false, "Aisha questioned a report carried by people she trusted, by weighing its words."],
-      ["Aisha called the men who carried the report liars", false, "in Muslim's version she says they weren't liars, but hearing can slip."],
-      ["scholars also tried to fit apparently conflicting reports together", true, "al-Bukhari's chapter heading reads the saying narrowly instead of discarding it."]
+      [
+        "once a chain is sound, the text is never questioned",
+        false,
+        "Aisha questioned a report carried by people she trusted, by weighing its words."
+      ],
+      [
+        "Aisha called the men who carried the report liars",
+        false,
+        "in Muslim's version she says they weren't liars, but hearing can slip."
+      ],
+      [
+        "scholars also tried to fit apparently conflicting reports together",
+        true,
+        "al-Bukhari's chapter heading reads the saying narrowly instead of discarding it."
+      ]
     ],
     "fork": {
       "setup": "you're Aisha. a trusted man reports a saying that seems to clash with the Qur'an. what do you do?",
-      "options": ["accept it; the man is honest.", "call him a liar.", "go to the words and weigh them against the Qur'an."],
+      "options": [
+        "accept it; the man is honest.",
+        "call him a liar.",
+        "go to the words and weigh them against the Qur'an."
+      ],
       "answer": 2,
       "reveal": "she weighed the words against the Qur'an, and said the men weren't liars, but hearing can slip."
     },
-    "original": { "script": "متن", "say": "MATN", "note": "the text of a hadith, the words after the chain." },
+    "original": {
+      "script": "متن",
+      "say": "MATN",
+      "note": "the text of a hadith, the words after the chain."
+    },
     "trapdoor": [
       "what you thought: a hadith is checked by its chain, and that's it.",
       "what it means: the text is tested too: does it fit the Qur'an and the known sunnah?",
       "what a scholar hears: Aisha's correction of the 'weeping' report, and the long work of reconciling reports rather than simply discarding them."
+    ],
+    "recall": [
+      [
+        "The days of tashriq",
+        "days of eating and drinking"
+      ],
+      [
+        "wuquf",
+        "standing, being present"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Sahih al-Bukhari 1288 (Aisha on the report about the dead and the family's weeping)", "work": "Sahih al-Bukhari", "translation": null, "quoted": null },
-    { "ref": "Sahih Muslim 929 (Aisha: not liars, but hearing can err)", "work": "Sahih Muslim", "translation": null, "quoted": null },
-    { "ref": "Qur'an 6:164 and 35:18 (no soul bears another's burden)", "work": "The Qur'an", "translation": null, "quoted": null },
-    { "ref": "Ibn al-Qayyim, al-Manar al-Munif (signs of fabrication in a text)", "work": "al-Manar al-Munif", "translation": null, "quoted": null }
+    {
+      "ref": "Sahih al-Bukhari 1288 (Aisha on the report about the dead and the family's weeping)",
+      "work": "Sahih al-Bukhari",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Sahih Muslim 929 (Aisha: not liars, but hearing can err)",
+      "work": "Sahih Muslim",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Qur'an 6:164 and 35:18 (no soul bears another's burden)",
+      "work": "The Qur'an",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Ibn al-Qayyim, al-Manar al-Munif (signs of fabrication in a text)",
+      "work": "al-Manar al-Munif",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -89,5 +178,9 @@
       "Editor: rewrote the garbled hook line ('punished through her child's grave by her own tears'); Bukhari's chapter heading now says 'custom' only (cut 'or wish', which the heading doesn't say); practice opener varied."
     ]
   },
-  "meta": { "index": "1146. The text itself · matn · scholars also test whether the text fits the Qur'an and known sunnah · read a text critically · the words are tested too", "writer": "writer agent (islam 1142–1151)", "written": "2026-10-01" }
+  "meta": {
+    "index": "1146. The text itself · matn · scholars also test whether the text fits the Qur'an and known sunnah · read a text critically · the words are tested too",
+    "writer": "writer agent (islam 1142–1151)",
+    "written": "2026-10-01"
+  }
 }

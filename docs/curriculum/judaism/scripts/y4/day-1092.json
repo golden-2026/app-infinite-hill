@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "The sugya",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-THOUSAND-NINETY-TWO.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY ONE-THOUSAND-NINETY-TWO.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, reading a mishnah, and your line: a case, then voices. This week walked from holy things, through purity and the mikveh, to the shape of a single mishnah. Today, what happens after the voices stop. Day one thousand ninety-two.",
-      "screen": ["`A CASE, THEN VOICES.`"]
+      "screen": [
+        "`A CASE, THEN VOICES.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Yesterday's mishnah gave its answer, the hour the priests go in to eat their holy food, then a few named opinions about when the time runs out, and stopped. Neat. Short. Done. Except the page isn't done. Right underneath, in a different language, someone raises a hand. Wait. Why does the mishnah ask from when, as if we already know there's a duty at all? Where is the teacher standing when he asks that? That raised hand is today's word.",
-      "screen": ["`FROM WHEN, IN THE EVENING?` → `A NEAT ANSWER.` → `A HAND GOES UP.`"]
+      "screen": [
+        "`FROM WHEN, IN THE EVENING?` → `A NEAT ANSWER.` → `A HAND GOES UP.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "Gemara. It's the name for the long discussion that follows each mishnah in the Talmud. The Mishnah is mostly Hebrew and mostly brief. The Gemara is mostly Aramaic, the everyday language of the sages who came after, and it is anything but brief. Start with what it does first. It questions the mishnah's wording. In tractate Berakhot, the Gemara asks where the mishnah's teacher is standing, and answers that he's standing on a verse: the Shema itself says to speak these words when you lie down and when you rise up. So the duty comes from the Torah, and the mishnah only asks when. Second, the Gemara keeps the questions coming. An answer is never the end of the line; it becomes the ground the next question stands on. Fine, but why start with evening and not morning? That one waits for tomorrow. One question opens the next. Third, notice how it talks. The Gemara is full of little Aramaic signposts. Ta shema: come and hear, which means here comes a source. Mai ka mashma lan: what is it teaching us? Each one tells you what move is being made, like stage directions in a play. Fourth, notice who's in the room. Sages from different places and generations appear on one page as if they were talking across a table. The editors placed them there, so a student reading alone is never really alone. That's the Gemara. Not a list of answers, but a record of people working toward them. The conversation.",
-      "screen": ["`IT QUESTIONS THE WORDING.` · `ONE QUESTION OPENS THE NEXT.` · `ARAMAIC SIGNPOSTS: COME AND HEAR.` · `SAGES ACROSS ONE TABLE.` · then, large: `THE CONVERSATION.`"]
+      "screen": [
+        "`IT QUESTIONS THE WORDING.` · `ONE QUESTION OPENS THE NEXT.` · `ARAMAIC SIGNPOSTS: COME AND HEAR.` · `SAGES ACROSS ONE TABLE.` · then, large: `THE CONVERSATION.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Gemara. The discussion of each mishnah in the Talmud, mostly in Aramaic, that questions, answers and questions again. Today's word.",
-      "screen": ["`GEMARA — today's word`."]
+      "screen": [
+        "`GEMARA — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,36 +61,105 @@
       "voice": "Your line: the conversation. Today, when someone states something as settled, ask one honest follow-up, the way the Gemara would: where are you standing when you say that? Then listen to the answer. Day one thousand ninety-two.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 1092 COUNTS.` → `TOMORROW: THE SUGYA.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 1092 COUNTS.` → `TOMORROW: THE SUGYA.`"
+      ]
+    }
   ],
   "howItsDone": "In a study hall, students learn the Gemara aloud, with a study partner or in a class, reading the Aramaic and talking it through question by question. Daily study cycles move through it page by page.",
   "games": {
     "match": {
       "prompt": "the Gemara — tap the pairs.",
-      "pairs": [["ta shema", "come and hear: here comes a source"], ["mai ka mashma lan", "what is it teaching us?"], ["the Mishnah", "mostly Hebrew, mostly brief"], ["the Gemara", "mostly Aramaic, the long discussion"]]
+      "pairs": [
+        [
+          "ta shema",
+          "come and hear: here comes a source"
+        ],
+        [
+          "mai ka mashma lan",
+          "what is it teaching us?"
+        ],
+        [
+          "the Mishnah",
+          "mostly Hebrew, mostly brief"
+        ],
+        [
+          "the Gemara",
+          "mostly Aramaic, the long discussion"
+        ]
+      ]
     },
     "myth": [
-      ["the Gemara is a list of final answers", false, "it is a record of questions, answers and new questions, sages working toward a ruling."],
-      ["the Gemara asks where the mishnah's teacher is standing", true, "in Berakhot it asks what the mishnah's question rests on, and answers: a verse in the Shema."],
-      ["the Gemara is written mostly in Hebrew", false, "it is mostly Aramaic, the everyday language of the later sages; the Mishnah is mostly Hebrew."]
+      [
+        "the Gemara is a list of final answers",
+        false,
+        "it is a record of questions, answers and new questions, sages working toward a ruling."
+      ],
+      [
+        "the Gemara asks where the mishnah's teacher is standing",
+        true,
+        "in Berakhot it asks what the mishnah's question rests on, and answers: a verse in the Shema."
+      ],
+      [
+        "the Gemara is written mostly in Hebrew",
+        false,
+        "it is mostly Aramaic, the everyday language of the later sages; the Mishnah is mostly Hebrew."
+      ]
     ],
     "fork": {
       "setup": "the mishnah asks: from when may one recite the Shema in the evening? you're the first student in the room to respond. what do you ask?",
-      "options": ["nothing; the mishnah already answered.", "where does the duty to recite it come from at all?", "can we skip the evening one?"],
+      "options": [
+        "nothing; the mishnah already answered.",
+        "where does the duty to recite it come from at all?",
+        "can we skip the evening one?"
+      ],
       "answer": 1,
       "reveal": "the Gemara asks where the mishnah's teacher is standing, and finds the answer in the Shema's own verse: when you lie down and when you rise up."
     },
-    "original": { "script": "גְּמָרָא", "say": "geh-mah-RAH", "note": "Aramaic: the name for the Talmud's discussion of the Mishnah. In Ashkenazi pronunciation, GMAH-rah." },
+    "original": {
+      "script": "גְּמָרָא",
+      "say": "geh-mah-RAH",
+      "note": "Aramaic: the name for the Talmud's discussion of the Mishnah. In Ashkenazi pronunciation, GMAH-rah."
+    },
     "trapdoor": [
       "what you thought: the Gemara is the Talmud's answer key.",
       "what it means: the discussion of each mishnah, mostly in Aramaic, question after question.",
       "what a scholar hears: Berakhot 2a's opening move, asking where the tanna stands, and the Aramaic signposts like ta shema that mark each step of an argument."
+    ],
+    "recall": [
+      [
+        "agunah",
+        "the chained woman"
+      ],
+      [
+        "Moed",
+        "appointed time"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Mishnah Berakhot 1:1", "work": "Mishnah", "translation": null, "quoted": null },
-    { "ref": "Babylonian Talmud, Berakhot 2a", "work": "Talmud", "translation": null, "quoted": null },
-    { "ref": "Deuteronomy 6:7", "work": "Tanakh", "translation": null, "quoted": null }
+    {
+      "ref": "Mishnah Berakhot 1:1",
+      "work": "Mishnah",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Babylonian Talmud, Berakhot 2a",
+      "work": "Talmud",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Deuteronomy 6:7",
+      "work": "Tanakh",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -91,5 +175,9 @@
       "Editor: the hook no longer re-describes Mishnah Berakhot 1:1 (day 1091 opened with it); the teach's second point no longer gives the creation-story answer (Gen 1:5), which day 1093 walks step by step, and Gen 1:5 was dropped from sources; the practice opener was varied."
     ]
   },
-  "meta": { "index": "1092. The Gemara · Gemara · the discussion of each mishnah, mostly in Aramaic · learn one Aramaic word · the conversation", "writer": "writer agent (judaism y4 1092–1101)", "written": "2026-10-01" }
+  "meta": {
+    "index": "1092. The Gemara · Gemara · the discussion of each mishnah, mostly in Aramaic · learn one Aramaic word · the conversation",
+    "writer": "writer agent (judaism y4 1092–1101)",
+    "written": "2026-10-01"
+  }
 }

@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "The books",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-THOUSAND-TWO-HUNDRED-THIRTY-FIVE.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY ONE-THOUSAND-TWO-HUNDRED-THIRTY-FIVE.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, Allah, the One, four verses that equal a third, and your line: one. When your attention split into pieces, did you find the next single thing? Day one thousand two hundred thirty-five.",
-      "screen": ["`ONE.`"]
+      "screen": [
+        "`ONE.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Watch the end of any Muslim prayer. The person sitting on the floor turns the head to the right and says peace be upon you, and the mercy of Allah. Then to the left, the same words. If they're praying in a row, there's a person on each side, so the greeting lands somewhere. But some scholars say it's meant for more than the neighbors. They say it's also for the angels, the ones the Qur'an describes as noble recorders, keeping watch over every person. So a small turn of the head at the close of prayer is a hello to the second article of faith.",
-      "screen": ["`RIGHT, THEN LEFT.` → `PEACE BE UPON YOU.` → `TO WHOM?`"]
+      "screen": [
+        "`RIGHT, THEN LEFT.` → `PEACE BE UPON YOU.` → `TO WHOM?`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "Start with what they're made of. A hadith in Sahih Muslim says the angels were created from light, the jinn from smokeless fire, and Adam from what you have been told: the earth. Three kinds of creature, three materials. Next, what they do. The Qur'an describes angels who carry out what they're commanded and do not disobey, and others who glorify Allah night and day without tiring. Some are known by name and task: Jibril who brought the revelation, Mika'il, and the angel of death. Others record, others guard. Then, a surprise. Obedient doesn't mean silent. In the second surah, Allah tells the angels, in Pickthall's translation, \"Lo! I am about to place a viceroy in the earth.\" And the angels ask a question. Will you put there someone who will do harm and shed blood, when we praise you? Allah answers that He knows what they don't. Then Adam is taught the names of things, and the angels admit they know only what they've been taught. The beings of light ask, and then they learn. Last, why believe in them at all. For Muslims, angels are part of how the unseen world works. Revelation came through one. Deeds are written by others. In this belief, no deed goes unwitnessed. That is held not as a mood but as an article of faith, the second of the six.",
-      "screen": ["`LIGHT, FIRE, EARTH.` · `THEY OBEY AND DON'T TIRE.` · `THE ANGELS ASKED A QUESTION.` · then, large: `NO DEED UNWITNESSED.`"]
+      "screen": [
+        "`LIGHT, FIRE, EARTH.` · `THEY OBEY AND DON'T TIRE.` · `THE ANGELS ASKED A QUESTION.` · then, large: `NO DEED UNWITNESSED.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "The angels. Mala'ikah in Arabic: created from light, obeying their Lord, glorifying Him without tiring. The second article of faith. Today's word.",
-      "screen": ["`THE ANGELS — today's word`."]
+      "screen": [
+        "`THE ANGELS — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,37 +61,111 @@
       "voice": "Your line: made of light. Today, when you walk into a room, say peace in your head to everyone there, seen and unseen. Tomorrow, the third article: the books. Day one thousand two hundred thirty-five.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 1235 COUNTS.` → `TOMORROW: THE BOOKS.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 1235 COUNTS.` → `TOMORROW: THE BOOKS.`"
+      ]
+    }
   ],
   "howItsDone": "Muslims end each prayer by turning the head right and left with the words peace be upon you and the mercy of Allah; belief in angels, including Jibril and the recording angels, is the second article of faith.",
   "games": {
     "match": {
       "prompt": "the angels — tap the pairs.",
-      "pairs": [["the angels", "created from light"], ["the jinn", "created from smokeless fire"], ["Jibril", "brought the revelation"], ["the noble recorders", "write down a person's deeds"]]
+      "pairs": [
+        [
+          "the angels",
+          "created from light"
+        ],
+        [
+          "the jinn",
+          "created from smokeless fire"
+        ],
+        [
+          "Jibril",
+          "brought the revelation"
+        ],
+        [
+          "the noble recorders",
+          "write down a person's deeds"
+        ]
+      ]
     },
     "myth": [
-      ["the angels were created from light", true, "a hadith in Sahih Muslim says so, with the jinn from fire and Adam from earth."],
-      ["obedient angels never ask anything", false, "in Surah al-Baqarah they ask why Allah would place on earth someone who will shed blood."],
-      ["the turn of the head at the end of prayer is only for the people beside you", false, "some scholars say the greeting is also for the angels."]
+      [
+        "the angels were created from light",
+        true,
+        "a hadith in Sahih Muslim says so, with the jinn from fire and Adam from earth."
+      ],
+      [
+        "obedient angels never ask anything",
+        false,
+        "in Surah al-Baqarah they ask why Allah would place on earth someone who will shed blood."
+      ],
+      [
+        "the turn of the head at the end of prayer is only for the people beside you",
+        false,
+        "some scholars say the greeting is also for the angels."
+      ]
     ],
     "fork": {
       "setup": "you are one of the angels. Allah says, I am about to place a viceroy in the earth. what do you do?",
-      "options": ["bow and say nothing.", "ask: will you put there someone who will do harm and shed blood?", "refuse to accept it."],
+      "options": [
+        "bow and say nothing.",
+        "ask: will you put there someone who will do harm and shed blood?",
+        "refuse to accept it."
+      ],
       "answer": 1,
       "reveal": "in Surah al-Baqarah the angels ask exactly that. Allah answers that He knows what they don't, and then Adam is taught the names."
     },
-    "original": { "script": "ملائكة", "say": "ma-LAA-i-kah", "note": "Arabic: angels; one angel is malak." },
+    "original": {
+      "script": "ملائكة",
+      "say": "ma-LAA-i-kah",
+      "note": "Arabic: angels; one angel is malak."
+    },
     "trapdoor": [
       "what you thought: angels are winged babies on greeting cards.",
       "what it means: in Islam, angels are beings of light who carry out Allah's commands: bringing revelation, recording deeds, guarding.",
       "what a scholar hears: the hadith of the three materials, the angels' question in Surah al-Baqarah, and the discussion of whom the closing salam of prayer addresses."
+    ],
+    "recall": [
+      [
+        "mahr",
+        "the bride's gift from the groom"
+      ],
+      [
+        "qadi",
+        "a judge who decides disputes"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Sahih Muslim 2996", "work": "Sahih Muslim", "translation": null, "quoted": null },
-    { "ref": "Qur'an 2:30–32", "work": "The Qur'an", "translation": "Pickthall 1930", "quoted": "Lo! I am about to place a viceroy in the earth" },
-    { "ref": "Qur'an 66:6; 21:19–20", "work": "The Qur'an", "translation": null, "quoted": null },
-    { "ref": "Qur'an 82:10–12", "work": "The Qur'an", "translation": null, "quoted": null }
+    {
+      "ref": "Sahih Muslim 2996",
+      "work": "Sahih Muslim",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Qur'an 2:30–32",
+      "work": "The Qur'an",
+      "translation": "Pickthall 1930",
+      "quoted": "Lo! I am about to place a viceroy in the earth"
+    },
+    {
+      "ref": "Qur'an 66:6; 21:19–20",
+      "work": "The Qur'an",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Qur'an 82:10–12",
+      "work": "The Qur'an",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -91,5 +180,9 @@
       "Editor: 'five times a day' count cut; 'names Muslims learn as children' claim cut; 'never quite alone' stock line replaced with 'no deed unwitnessed'."
     ]
   },
-  "meta": { "index": "1235. The angels · — · created from light, obeying, never tiring · greet the angels · made of light", "writer": "writer agent (islam 1232–1241)", "written": "2026-10-01" }
+  "meta": {
+    "index": "1235. The angels · — · created from light, obeying, never tiring · greet the angels · made of light",
+    "writer": "writer agent (islam 1232–1241)",
+    "written": "2026-10-01"
+  }
 }

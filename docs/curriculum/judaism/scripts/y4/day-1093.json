@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "Let it stand",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-THOUSAND-NINETY-THREE.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY ONE-THOUSAND-NINETY-THREE.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, the Gemara, and your line: the conversation. Did you ask anyone where they were standing? Today we cut that conversation into pieces you can actually carry. Day one thousand ninety-three.",
-      "screen": ["`THE CONVERSATION.`"]
+      "screen": [
+        "`THE CONVERSATION.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Open a page of Talmud for the first time and it looks like one long paragraph with no doors. No chapter breaks inside, no bullet points, sometimes barely a period. Seasoned learners don't read it as a wall, though. They read it in rooms. This room starts with a question. That room ends with an answer, or a shrug. A teacher will say, let's finish this one before we stop. They mean a unit with a beginning and an end. Today's word is the name for one of those rooms.",
-      "screen": ["`A WALL OF TEXT.` → `READ IN ROOMS.` → `FINISH THIS ONE FIRST.`"]
+      "screen": [
+        "`A WALL OF TEXT.` → `READ IN ROOMS.` → `FINISH THIS ONE FIRST.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "Sugya. One unit of Talmudic discussion, from the question that opens it to the place it comes to rest. Let's walk through one, the opening of tractate Berakhot, and watch the shape. Step one: a question. The mishnah asks, from when may one recite the evening Shema? The Gemara asks back: what is this question standing on? Step two: an answer from a text. The Shema's own verse says to speak these words when you lie down and when you rise up. So the duty is already there; the mishnah only asks about the time. Step three: a push. If the verse says lying down first, fine, but is that really why the mishnah starts with evening? The Gemara offers a second root, the creation story, where the old Jewish Publication Society translation reads: \"And there was evening and there was morning, one day.\" Evening comes first in the day itself. Step four: a challenge from somewhere else. A later mishnah in the same chapter talks about the morning first. So which is it? The Gemara works out an answer that holds both, and the room comes to rest. That is a sugya. It isn't a ruling dropped from above. It's a path, and you only understand the end if you walked the steps. That's why learners talk about following a sugya, the way you'd follow a trail. Skip to the bottom and you get a sentence. Walk it and you get an argument: a unit of argument.",
-      "screen": ["`A QUESTION OPENS THE ROOM.` · `AN ANSWER FROM A VERSE.` · `A PUSH: WHY EVENING FIRST?` · `A CHALLENGE, THEN REST.` · then, large: `A UNIT OF ARGUMENT.`"]
+      "screen": [
+        "`A QUESTION OPENS THE ROOM.` · `AN ANSWER FROM A VERSE.` · `A PUSH: WHY EVENING FIRST?` · `A CHALLENGE, THEN REST.` · then, large: `A UNIT OF ARGUMENT.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Sugya. One unit of Talmudic discussion: a question, answers, challenges, and a place where it comes to rest. Today's word.",
-      "screen": ["`SUGYA — today's word`."]
+      "screen": [
+        "`SUGYA — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,37 +61,111 @@
       "voice": "Your line: a unit of argument. Today, when a disagreement starts, try to find its edges. Where did this room open, and where could it come to rest? One room at a time. Day one thousand ninety-three.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 1093 COUNTS.` → `TOMORROW: LET IT STAND.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 1093 COUNTS.` → `TOMORROW: LET IT STAND.`"
+      ]
+    }
   ],
   "howItsDone": "Talmud teachers and study partners commonly work through one sugya at a time, tracing each question and answer back to its start before moving on.",
   "games": {
     "match": {
       "prompt": "inside one sugya — tap the pairs.",
-      "pairs": [["the question", "from when, the evening Shema?"], ["the answer from a text", "when you lie down and when you rise up"], ["the push", "why does evening come first?"], ["the creation story", "there was evening and there was morning"]]
+      "pairs": [
+        [
+          "the question",
+          "from when, the evening Shema?"
+        ],
+        [
+          "the answer from a text",
+          "when you lie down and when you rise up"
+        ],
+        [
+          "the push",
+          "why does evening come first?"
+        ],
+        [
+          "the creation story",
+          "there was evening and there was morning"
+        ]
+      ]
     },
     "myth": [
-      ["a sugya is one ruling, handed down", false, "it's a path: a question, answers, a push and a challenge, until it comes to rest."],
-      ["the Gemara finds evening first in the creation story", true, "\"and there was evening and there was morning, one day.\""],
-      ["a sugya is marked off by chapter breaks on the page", false, "the page has no doors; learners read the discussion in units with a beginning and an end."]
+      [
+        "a sugya is one ruling, handed down",
+        false,
+        "it's a path: a question, answers, a push and a challenge, until it comes to rest."
+      ],
+      [
+        "the Gemara finds evening first in the creation story",
+        true,
+        "\"and there was evening and there was morning, one day.\""
+      ],
+      [
+        "a sugya is marked off by chapter breaks on the page",
+        false,
+        "the page has no doors; learners read the discussion in units with a beginning and an end."
+      ]
     ],
     "fork": {
       "setup": "you've traced the sugya to an answer: evening comes first, from the creation story. then a later mishnah talks about morning first. what does the Gemara do?",
-      "options": ["ignore the later mishnah.", "raise it as a challenge and work out an answer that holds both.", "declare the first answer wrong and start over."],
+      "options": [
+        "ignore the later mishnah.",
+        "raise it as a challenge and work out an answer that holds both.",
+        "declare the first answer wrong and start over."
+      ],
       "answer": 1,
       "reveal": "the challenge is raised out loud, and the Gemara works toward an answer that keeps both mishnayot standing. that's how the room comes to rest."
     },
-    "original": { "script": "סוּגְיָא", "say": "SOOG-yah", "note": "Aramaic: one unit of Talmudic discussion." },
+    "original": {
+      "script": "סוּגְיָא",
+      "say": "SOOG-yah",
+      "note": "Aramaic: one unit of Talmudic discussion."
+    },
     "trapdoor": [
       "what you thought: a sugya is a chapter of the Talmud.",
       "what it means: one unit of discussion, from opening question to resting point.",
       "what a scholar hears: Berakhot 2a's movement from the mishnah's question to a verse, a push to creation's evening and morning, and a challenge from a later mishnah in the same chapter."
+    ],
+    "recall": [
+      [
+        "Kodashim",
+        "holy things"
+      ],
+      [
+        "hashavat aveidah",
+        "returning a lost thing"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Genesis 1:5", "work": "Tanakh", "translation": "JPS 1917", "quoted": "And there was evening and there was morning, one day." },
-    { "ref": "Deuteronomy 6:7", "work": "Tanakh", "translation": null, "quoted": null },
-    { "ref": "Mishnah Berakhot 1:1, 1:4", "work": "Mishnah", "translation": null, "quoted": null },
-    { "ref": "Babylonian Talmud, Berakhot 2a", "work": "Talmud", "translation": null, "quoted": null }
+    {
+      "ref": "Genesis 1:5",
+      "work": "Tanakh",
+      "translation": "JPS 1917",
+      "quoted": "And there was evening and there was morning, one day."
+    },
+    {
+      "ref": "Deuteronomy 6:7",
+      "work": "Tanakh",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Mishnah Berakhot 1:1, 1:4",
+      "work": "Mishnah",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Babylonian Talmud, Berakhot 2a",
+      "work": "Talmud",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -90,5 +179,9 @@
       "Editor: the challenge on Berakhot 2a comes from the seifa, Mishnah Berakhot 1:4 (in the morning one blesses two before... in the evening two before), not 1:2; the source ref was changed to 1:1, 1:4. Day 1092 no longer gives the creation-story answer, so this day owns it. The hook's 'people who learn it for years' was changed to 'seasoned learners' to avoid an implied count of years."
     ]
   },
-  "meta": { "index": "1093. The sugya · sugya · one unit of Talmudic discussion, question to answer · follow one argument to its end · a unit of argument", "writer": "writer agent (judaism y4 1092–1101)", "written": "2026-10-01" }
+  "meta": {
+    "index": "1093. The sugya · sugya · one unit of Talmudic discussion, question to answer · follow one argument to its end · a unit of argument",
+    "writer": "writer agent (judaism y4 1092–1101)",
+    "written": "2026-10-01"
+  }
 }

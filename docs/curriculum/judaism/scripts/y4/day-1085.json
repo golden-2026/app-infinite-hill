@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "Holy things",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-THOUSAND-EIGHTY-FIVE.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY ONE-THOUSAND-EIGHTY-FIVE.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, the Sanhedrin, the court where acquittal is argued first and a cloth can stop the procession. Your line was lean toward life. Did you let someone's defense speak first? Day one thousand eighty-five.",
-      "screen": ["`LEAN TOWARD LIFE.`"]
+      "screen": [
+        "`LEAN TOWARD LIFE.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "The witnesses are brought into the room. A life may depend on what they're about to say. So the court doesn't start with questions. It starts with a speech. The Mishnah, in the tractate Sanhedrin, gives the speech almost line by line, and it's surprising. It doesn't quote a penalty for lying. It tells a story about the first human being, and about coins. Today: what a court says to people before they're allowed to speak about someone else's life.",
-      "screen": ["`BEFORE A WORD IS SAID.` → `NOT A THREAT: A SPEECH.` → `THE FIRST HUMAN, AND COINS.`"]
+      "screen": [
+        "`BEFORE A WORD IS SAID.` → `NOT A THREAT: A SPEECH.` → `THE FIRST HUMAN, AND COINS.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "Warning the witnesses. The speech moves in four steps. First, the Mishnah has the court name the easy mistakes. Perhaps you're speaking from guesswork. Perhaps from hearsay, from one witness repeating another, or from someone you trust. None of that is testimony. Second, the weight. A money case can be repaired with money. A life case can't. The court points to Cain, and to God's words to him, in the old JPS translation: \"the voice of thy brother's blood crieth unto Me from the ground.\" In Hebrew, the Mishnah notes, the word is plural: bloods. His blood, and the blood of every child he would have had. Third, the line people still repeat. Only a single human being was created at the start, the Mishnah says, to teach that whoever destroys one life is counted as if they destroyed a whole world, and whoever sustains one life, as if they sustained a whole world. Fourth, the coins. A person stamps many coins from one seal, and they all come out alike. But every human being is stamped from the seal of the first human, and not one is like another. So, the Mishnah says, each person must be able to say: the world was created for my sake. Put the steps together and the purpose is plain. A witness is about to describe one person. The court wants them to see, before they open their mouth, that they're describing a world.",
-      "screen": ["`NOT GUESSWORK, NOT HEARSAY.` · `BLOODS: THE CHILDREN WHO WOULD HAVE BEEN.` · `ONE LIFE, A WHOLE WORLD.` · `ONE SEAL, AND NO TWO ALIKE.` · then, large: `A WHOLE WORLD.`"]
+      "screen": [
+        "`NOT GUESSWORK, NOT HEARSAY.` · `BLOODS: THE CHILDREN WHO WOULD HAVE BEEN.` · `ONE LIFE, A WHOLE WORLD.` · `ONE SEAL, AND NO TWO ALIKE.` · then, large: `A WHOLE WORLD.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Warning the witnesses. The Mishnah's speech before testimony in a life case: one life is a whole world. Today's word, and the close of a week that ran from the chained woman through damages, lost and found, the cloak and the court.",
-      "screen": ["`WARNING THE WITNESSES — today's word`."]
+      "screen": [
+        "`WARNING THE WITNESSES — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,22 +61,62 @@
       "voice": "Your line: a whole world. Today, before you say something about someone who isn't there, ask yourself: did I see it, or only hear it? Day one thousand eighty-five.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 1085 COUNTS.` → `TOMORROW: HOLY THINGS.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 1085 COUNTS.` → `TOMORROW: HOLY THINGS.`"
+      ]
+    }
   ],
   "howItsDone": "Jews study Mishnah Sanhedrin 4:5 as part of the Talmud's order of damages, and its line about saving one life as saving a whole world is quoted in Jewish teaching, memorials and ethics.",
   "games": {
     "match": {
       "prompt": "the warning, step by step — tap the pairs.",
-      "pairs": [["guesswork and hearsay", "ruled out before testimony"], ["thy brother's blood", "in Hebrew, bloods: plural"], ["one human created first", "one life is a whole world"], ["many coins from one seal", "no two people alike"]]
+      "pairs": [
+        [
+          "guesswork and hearsay",
+          "ruled out before testimony"
+        ],
+        [
+          "thy brother's blood",
+          "in Hebrew, bloods: plural"
+        ],
+        [
+          "one human created first",
+          "one life is a whole world"
+        ],
+        [
+          "many coins from one seal",
+          "no two people alike"
+        ]
+      ]
     },
     "myth": [
-      ["'one life is a whole world' began as a saying about charity", false, "in the Mishnah it is part of the warning given to witnesses in a life-and-death case."],
-      ["the Mishnah reads Cain's story as 'bloods', plural", true, "his brother's blood, and the blood of the children who would have been born."],
-      ["a witness could repeat what someone trustworthy told them", false, "the warning rules out guesswork and hearsay, even from someone you trust."]
+      [
+        "'one life is a whole world' began as a saying about charity",
+        false,
+        "in the Mishnah it is part of the warning given to witnesses in a life-and-death case."
+      ],
+      [
+        "the Mishnah reads Cain's story as 'bloods', plural",
+        true,
+        "his brother's blood, and the blood of the children who would have been born."
+      ],
+      [
+        "a witness could repeat what someone trustworthy told them",
+        false,
+        "the warning rules out guesswork and hearsay, even from someone you trust."
+      ]
     ],
     "fork": {
       "setup": "you're a witness. you didn't see it yourself, but someone you trust told you exactly what happened. what does the court tell you before you speak?",
-      "options": ["repeat it. a trustworthy source is enough.", "hearsay, even from someone trustworthy, isn't testimony.", "say it, but mention it's secondhand."],
+      "options": [
+        "repeat it. a trustworthy source is enough.",
+        "hearsay, even from someone trustworthy, isn't testimony.",
+        "say it, but mention it's secondhand."
+      ],
       "answer": 1,
       "reveal": "the Mishnah's warning names guesswork, hearsay and 'from a trustworthy person' as things a witness must not offer. only what you saw."
     },
@@ -70,11 +125,31 @@
       "what you thought: a nice saying that every life matters.",
       "what it means: part of a warning to witnesses: guesswork can cost a life, and one life is a whole world.",
       "what a scholar hears: Mishnah Sanhedrin 4:5: Cain's 'bloods' in the plural, the first human created alone, and one seal stamping faces where no two are alike."
+    ],
+    "recall": [
+      [
+        "Nashim",
+        "women: the third order"
+      ],
+      [
+        "amora",
+        "a sage of the Gemara"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Mishnah Sanhedrin 4:5", "work": "Mishnah", "translation": null, "quoted": null },
-    { "ref": "Genesis 4:10", "work": "Tanakh", "translation": "JPS 1917", "quoted": "the voice of thy brother's blood crieth unto Me from the ground" }
+    {
+      "ref": "Mishnah Sanhedrin 4:5",
+      "work": "Mishnah",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Genesis 4:10",
+      "work": "Tanakh",
+      "translation": "JPS 1917",
+      "quoted": "the voice of thy brother's blood crieth unto Me from the ground"
+    }
   ],
   "review": {
     "status": "pending",
@@ -89,5 +164,9 @@
       "Original-language game set to null: the day's word is an English title phrase."
     ]
   },
-  "meta": { "index": "1085. Warning the witnesses (Mishnah Sanhedrin 4:5) · — · witnesses in capital cases were told that one life is a whole world · think before you speak about someone · a whole world", "writer": "writer agent (judaism y4 1082–1091)", "written": "2026-10-01" }
+  "meta": {
+    "index": "1085. Warning the witnesses (Mishnah Sanhedrin 4:5) · — · witnesses in capital cases were told that one life is a whole world · think before you speak about someone · a whole world",
+    "writer": "writer agent (judaism y4 1082–1091)",
+    "written": "2026-10-01"
+  }
 }

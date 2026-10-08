@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "Votive candles",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-THOUSAND-THREE-HUNDRED-EIGHTY-NINE.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY ONE-THOUSAND-THREE-HUNDRED-EIGHTY-NINE.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, your local shrine: a grotto off the highway, and Jacob waking on a stone pillow to find the Lord was in that place. Your line was close to home. Did you find the shrine nearest you? Day one thousand three hundred eighty-nine.",
-      "screen": ["`CLOSE TO HOME.`"]
+      "screen": [
+        "`CLOSE TO HOME.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "A glass case in a side chapel. Inside, a nun lies as if asleep, hands folded, face calm. A sign says she died long ago. Tourists lean in close. One whispers that it's a miracle. Another whispers that it must be wax. A child asks, loudly, whether she's real. Nobody quite knows what to say. Here's something neither whisperer may expect: the Catholic Church doesn't count this as proof of anything. Not proof of holiness. Not proof of a miracle. Not proof of the faith. Today, the incorruptibles, honestly.",
-      "screen": ["`A NUN IN A GLASS CASE.` → `MIRACLE, OR WAX?` → `THE CHURCH SAYS: NOT PROOF.`"]
+      "screen": [
+        "`A NUN IN A GLASS CASE.` → `MIRACLE, OR WAX?` → `THE CHURCH SAYS: NOT PROOF.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "Incorruptibles is the name people give to saints whose bodies, when their tombs were opened, were found decayed less than expected. First, what's actually found. The word sounds like a perfect body. That isn't always the honest picture. Some of the bodies are dried, darkened, or partly preserved, and some on display have had their faces and hands covered with wax or a mask, which some shrines say openly when asked. Second, what the Church does with it. When the Church investigates a candidate for sainthood, it looks at a life of heroic virtue and at miracles attributed to the person's prayers after death, such as healings that doctors cannot explain. A preserved body is not on that list. Saints' remains have also decayed in the ordinary way, and that counts against no one. So the Church's posture is careful: interesting, worth studying, not proof. Third, why Catholics honor the remains at all. The body matters in Catholic belief. Paul writes about the resurrection of the dead in the Douay-Rheims: \"It is sown in corruption, it shall rise in incorruption.\" The hope is not that a body stays fresh in a glass case. The hope is that God raises the dead, whatever state the tomb is in. A decayed saint and a preserved saint share the same promise. Last, honesty itself. Some cases have natural explanations: dry air, the burial place, embalming. Some are still debated. A Catholic is free to say, calmly, we don't know. Faith that needs a perfect corpse to stand up would be a fragile faith. The Church doesn't ask anyone to lean on it.",
-      "screen": ["`DECAYED LESS THAN EXPECTED.` · `NOT ON THE CHURCH'S LIST.` · `SOWN IN CORRUPTION.` · `WE DON'T KNOW, SAID CALMLY.` · then, large: `IT SHALL RISE IN INCORRUPTION.`"]
+      "screen": [
+        "`DECAYED LESS THAN EXPECTED.` · `NOT ON THE CHURCH'S LIST.` · `SOWN IN CORRUPTION.` · `WE DON'T KNOW, SAID CALMLY.` · then, large: `IT SHALL RISE IN INCORRUPTION.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Incorruptibles. Saints whose bodies decayed less than expected. Honored, studied, and never treated by the Church as proof. Today's word.",
-      "screen": ["`INCORRUPTIBLES — today's word`."]
+      "screen": [
+        "`INCORRUPTIBLES — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,35 +61,99 @@
       "voice": "Your line: not proof. Today, when you hear a dramatic claim, for or against anything, say, interesting, and ask one honest question before you believe or dismiss it. Day one thousand three hundred eighty-nine.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 1389 COUNTS.` → `TOMORROW: VOTIVE CANDLES.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 1389 COUNTS.` → `TOMORROW: VOTIVE CANDLES.`"
+      ]
+    }
   ],
   "howItsDone": "Catholics venerate the relics of saints, including some whose bodies are displayed in churches; the Church does not treat a body's preservation as a miracle or as evidence in canonization, which looks at heroic virtue and miracles attributed to the saint's intercession.",
   "games": {
     "match": {
       "prompt": "incorruptibles — tap the pairs.",
-      "pairs": [["a preserved body", "interesting, not proof"], ["canonization looks at", "heroic virtue and miracles after death"], ["sown in corruption", "Paul on the resurrection"], ["wax or a mask", "covers some displayed faces"]]
+      "pairs": [
+        [
+          "a preserved body",
+          "interesting, not proof"
+        ],
+        [
+          "canonization looks at",
+          "heroic virtue and miracles after death"
+        ],
+        [
+          "sown in corruption",
+          "Paul on the resurrection"
+        ],
+        [
+          "wax or a mask",
+          "covers some displayed faces"
+        ]
+      ]
     },
     "myth": [
-      ["the Church counts an incorrupt body as a miracle for canonization", false, "canonization looks at heroic virtue and miracles attributed to a saint's prayers. a preserved body isn't on the list."],
-      ["some displayed saints have wax or a mask over the face", true, "some shrines say so openly when asked."],
-      ["a saint whose body decayed is less holy", false, "saints' remains have also decayed in the ordinary way. it counts against no one."]
+      [
+        "the Church counts an incorrupt body as a miracle for canonization",
+        false,
+        "canonization looks at heroic virtue and miracles attributed to a saint's prayers. a preserved body isn't on the list."
+      ],
+      [
+        "some displayed saints have wax or a mask over the face",
+        true,
+        "some shrines say so openly when asked."
+      ],
+      [
+        "a saint whose body decayed is less holy",
+        false,
+        "saints' remains have also decayed in the ordinary way. it counts against no one."
+      ]
     ],
     "fork": {
       "setup": "a saint's tomb is opened and the body is found remarkably preserved. people start calling it proof. what does the Church do?",
-      "options": ["declare it a miracle at once.", "study it with interest, and decline to call it proof.", "close the tomb and forbid any talk of it."],
+      "options": [
+        "declare it a miracle at once.",
+        "study it with interest, and decline to call it proof.",
+        "close the tomb and forbid any talk of it."
+      ],
       "answer": 1,
       "reveal": "the Church treats it as interesting and worth study, and does not count it as proof of holiness or of the faith."
     },
-    "original": { "script": "ἀφθαρσία", "say": "af-thar-SEE-ah", "note": "Greek of 1 Corinthians 15:42: incorruption, what Paul says the dead are raised in." },
+    "original": {
+      "script": "ἀφθαρσία",
+      "say": "af-thar-SEE-ah",
+      "note": "Greek of 1 Corinthians 15:42: incorruption, what Paul says the dead are raised in."
+    },
     "trapdoor": [
       "what you thought: some saints' bodies never decay, and that proves they're saints.",
       "what it means: some bodies decayed less than expected; the Church honors them but does not treat this as proof.",
       "what a scholar hears: canonization rests on heroic virtue and attested miracles; Paul's word aphtharsia, incorruption, names a resurrection hope, not a preserved corpse."
+    ],
+    "recall": [
+      [
+        "private revelation",
+        "outside the deposit of faith"
+      ],
+      [
+        "Memorare",
+        "remember"
+      ]
     ]
   },
   "sources": [
-    { "ref": "1 Corinthians 15:42", "work": "The Bible", "translation": "Douay-Rheims (Challoner)", "quoted": "It is sown in corruption, it shall rise in incorruption." },
-    { "ref": "Canonization procedure (Divinus Perfectionis Magister)", "work": "Catholic Church", "translation": null, "quoted": null }
+    {
+      "ref": "1 Corinthians 15:42",
+      "work": "The Bible",
+      "translation": "Douay-Rheims (Challoner)",
+      "quoted": "It is sown in corruption, it shall rise in incorruption."
+    },
+    {
+      "ref": "Canonization procedure (Divinus Perfectionis Magister)",
+      "work": "Catholic Church",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -88,5 +167,9 @@
       "Editor: 'a fact that surprises people on every side' (sweeping, and tells the listener what they feel) became 'something neither whisperer may expect'; 'shrines say openly' now 'some shrines'; cut the unclear 'Others simply decayed' (the point is made later); 'Catholics can say, we don't know, without anxiety' (states a feeling) became 'a Catholic is free to say, calmly, we don't know'."
     ]
   },
-  "meta": { "index": "1389. Incorruptibles, honestly · — · some saints' bodies decay less than expected; the Church does not treat this as proof · stay curious and humble · not proof", "writer": "writer agent (catholic 1382–1391)", "written": "2026-10-01" }
+  "meta": {
+    "index": "1389. Incorruptibles, honestly · — · some saints' bodies decay less than expected; the Church does not treat this as proof · stay curious and humble · not proof",
+    "writer": "writer agent (catholic 1382–1391)",
+    "written": "2026-10-01"
+  }
 }

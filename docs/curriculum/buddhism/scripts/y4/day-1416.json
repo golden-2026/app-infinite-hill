@@ -9,24 +9,37 @@
   "length": "6:30",
   "tomorrow": "Ullambana",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-THOUSAND-FOUR-HUNDRED-SIXTEEN.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY ONE-THOUSAND-FOUR-HUNDRED-SIXTEEN.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, the first sermon heard again, each truth with its own job. Your line was the wheel turns. When something hard came up, which job did it need? Day one thousand four hundred sixteen.",
-      "screen": ["`THE WHEEL TURNS.`"]
+      "screen": [
+        "`THE WHEEL TURNS.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "A monk has just promised to stay put for the whole rainy season. Then a message comes. A lay family who supports the monastery wants him to come and bless a new house, a few days' walk away. Or worse: his mother is ill. Does he go? Does the promise mean he has to stay inside the monastery walls no matter what? The monks in the Buddha's time asked exactly this kind of question, and the answers are in the monastic rule. You've met the rains retreat before, and how it began with complaints about trampled crops. Today, look at the promise itself, what it holds, and where it bends.",
-      "screen": ["`A PROMISE TO STAY PUT.` → `THEN A MESSAGE COMES.` → `WHERE DOES IT BEND?`"]
+      "screen": [
+        "`A PROMISE TO STAY PUT.` → `THEN A MESSAGE COMES.` → `WHERE DOES IT BEND?`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "First, the promise. At the start of the rains, each monk settles into one dwelling and declares that he will spend the rains retreat there. In Pali the season is vassa, the rains. It isn't a vow of silence or a lockdown. It's a vow of place. Second, the bend. The monastic rule, in the section on entering the rains, allows a monk to leave for a short business, up to seven days, and return. When? If he's sent for by a lay supporter who wants to give a gift or hear the teaching. If a fellow monk or nun is sick and needs help. If his mother or father is ill. The rule is careful: he goes, he does what's needed, he comes back inside the time. So the retreat isn't a wall against people. It's a home base you return to. Third, why staying matters. Wandering is good for meeting people. Staying is good for going deep. In one place for a season, the same path to the same well, the same room, the same faces, there's less to plan and more room to practice. By custom, a monk's seniority is even counted in rains. Fourth, the lay side. In Theravada lands, some lay people take on a practice for the season too: keeping extra precepts on moon days, giving something up, or going to the temple more often. Not a season in a monastery, just one thing, kept in one place, all season long. That's today's invitation.",
-      "screen": ["`A VOW OF PLACE.` · `LEAVE FOR NEED, THEN RETURN.` · `STAYING LETS IT GO DEEP.` · then, large: `STAY IN ONE PLACE.`"]
+      "screen": [
+        "`A VOW OF PLACE.` · `LEAVE FOR NEED, THEN RETURN.` · `STAYING LETS IT GO DEEP.` · then, large: `STAY IN ONE PLACE.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "The rains retreat. Vassa, the season when monks stay in one place, leaving only briefly for real need. Today's word.",
-      "screen": ["`THE RAINS RETREAT — today's word`."]
+      "screen": [
+        "`THE RAINS RETREAT — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,39 +61,93 @@
       "voice": "Your line: stay in one place. Today, pick the spot where you'll do your practice this season, and do it there once. Day one thousand four hundred sixteen.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 1416 COUNTS.` → `TOMORROW: ULLAMBANA.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 1416 COUNTS.` → `TOMORROW: ULLAMBANA.`"
+      ]
+    }
   ],
   "howItsDone": "In Theravada countries monks enter the rains retreat after the Asalha full moon, each declaring a dwelling for the season; some lay people take on extra precepts or give something up for the same months.",
   "games": {
     "match": {
       "prompt": "the rains retreat: tap the pairs.",
       "pairs": [
-        ["vassa", "the rains, the season"],
-        ["the promise", "a vow of place"],
-        ["a sick parent", "a reason to leave, then return"],
-        ["a monk's seniority", "counted in rains"]
+        [
+          "vassa",
+          "the rains, the season"
+        ],
+        [
+          "the promise",
+          "a vow of place"
+        ],
+        [
+          "a sick parent",
+          "a reason to leave, then return"
+        ],
+        [
+          "a monk's seniority",
+          "counted in rains"
+        ]
       ]
     },
     "myth": [
-      ["once the rains retreat begins, a monk may never leave for any reason", false, "the rule allows a short leave, up to seven days, for real need, then he returns."],
-      ["a monk may leave briefly if his mother or father is ill", true, "the rule names sick parents among the reasons."],
-      ["the rains retreat is a vow of silence", false, "it's a vow of place: to spend the rains in one dwelling."]
+      [
+        "once the rains retreat begins, a monk may never leave for any reason",
+        false,
+        "the rule allows a short leave, up to seven days, for real need, then he returns."
+      ],
+      [
+        "a monk may leave briefly if his mother or father is ill",
+        true,
+        "the rule names sick parents among the reasons."
+      ],
+      [
+        "the rains retreat is a vow of silence",
+        false,
+        "it's a vow of place: to spend the rains in one dwelling."
+      ]
     ],
     "fork": {
       "setup": "you've promised to stay in one monastery for the rains. word comes that your mother is ill, a few days' walk away. what does the rule allow?",
-      "options": ["nothing: the promise means staying no matter what.", "go to her, help, and return within seven days.", "leave the retreat for good and start again next year."],
+      "options": [
+        "nothing: the promise means staying no matter what.",
+        "go to her, help, and return within seven days.",
+        "leave the retreat for good and start again next year."
+      ],
       "answer": 1,
       "reveal": "the rule allows a short leave for need, a sick parent among them, as long as you return in time."
     },
-    "original": { "script": "वस्स", "say": "VAS-sa", "note": "Pali vassa: the rains, the rainy season; the retreat is named for it." },
+    "original": {
+      "script": "वस्स",
+      "say": "VAS-sa",
+      "note": "Pali vassa: the rains, the rainy season; the retreat is named for it."
+    },
     "trapdoor": [
       "what you thought: the rains retreat is monks staying indoors during bad weather.",
       "what it means: a vow of place for the season, with a short leave allowed for real need.",
       "what a scholar hears: the seven-day business (sattahakaraniya) allowances in the Vinaya's section on entering the rains."
+    ],
+    "recall": [
+      [
+        "Navayana",
+        "the new vehicle"
+      ],
+      [
+        "Triratna",
+        "the three jewels"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Vinaya, Mahavagga 3 (Vassupanayikakkhandhaka), the seven-day leave", "work": "the monastic rules", "translation": null, "quoted": null }
+    {
+      "ref": "Vinaya, Mahavagga 3 (Vassupanayikakkhandhaka), the seven-day leave",
+      "work": "the monastic rules",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -92,5 +161,9 @@
       "Editor: fixed the garbled \"kept in one place in the week\" line and dropped \"three-month\" from the voice; marked seniority-in-rains as custom (not in the cited section); changed the practice opener, which repeated day 1412's \"Here's a way to choose\"."
     ]
   },
-  "meta": { "index": "1416. The rains retreat again · — · a three-month practice begins · choose this year's practice · stay in one place", "writer": "writer agent (buddhism 1412–1421)", "written": "2026-10-02" }
+  "meta": {
+    "index": "1416. The rains retreat again · — · a three-month practice begins · choose this year's practice · stay in one place",
+    "writer": "writer agent (buddhism 1412–1421)",
+    "written": "2026-10-02"
+  }
 }

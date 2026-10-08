@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "The Musnad",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-THOUSAND-ONE-HUNDRED-NINETY-FOUR.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY ONE-THOUSAND-ONE-HUNDRED-NINETY-FOUR.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, Egypt to Indonesia, and your line: by the monsoon. What crossed an ocean to reach your home, and who carried it? Day one thousand one hundred ninety-four.",
-      "screen": ["`BY THE MONSOON.`"]
+      "screen": [
+        "`BY THE MONSOON.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "An old man walks through Baghdad carrying an inkwell. Someone stops him. You've reached this rank, people call you an imam, and you still carry ink around like a student? His answer, in a saying reported of him: with the inkwell, to the grave. That's Ahmad ibn Hanbal. He was old, honored, and still a student of the reports, still copying them line by line. Today the Hanbali school begins, and it begins with a man who never stopped writing things down.",
-      "screen": ["`AN OLD MAN WITH AN INKWELL.` → `WITH THE INKWELL, TO THE GRAVE.` → `THE HANBALI SCHOOL BEGINS.`"]
+      "screen": [
+        "`AN OLD MAN WITH AN INKWELL.` → `WITH THE INKWELL, TO THE GRAVE.` → `THE HANBALI SCHOOL BEGINS.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "Ahmad ibn Hanbal was a scholar of Baghdad, and above everything a scholar of hadith, the reports of what the Prophet Muhammad, peace be upon him, said and did. He traveled for them, his biographers say, to Kufa and Basra, to Mecca and Medina, and as far as Yemen, hearing reports from the people who carried them and writing them down. He also studied with al-Shafi'i, whose week this has been, and reports say each held the other in high regard. Here's what made his method his own. When a question came, he looked first to the Qur'an and the reports. Then to what the Companions had said. And reports say he would rather act on a weak hadith than on a jurist's analogy, as long as nothing stronger stood against it. Weak, here, doesn't mean made up. It means a chain of narrators with some doubt in it. For him, a report with some doubt was still closer to the Prophet than a clever argument. Some early writers even listed him among the scholars of hadith rather than among the jurists. His students saw it differently. They wrote down his answers to questions, one by one, about prayer, trade, marriage, manners, and out of those answers his school was built. So his law is a law of answers. Ask him something and the reply might be a report, passed on rather than argued. The imam of hadith is the one who kept the reports in front of the reasoning, and kept carrying the ink.",
-      "screen": ["`A SCHOLAR WHO TRAVELED FOR REPORTS.` · `A WEAK REPORT OVER A CLEVER ANALOGY.` · `A LAW OF ANSWERS.` · `AND KEEP CARRYING THE INK.`"]
+      "screen": [
+        "`A SCHOLAR WHO TRAVELED FOR REPORTS.` · `A WEAK REPORT OVER A CLEVER ANALOGY.` · `A LAW OF ANSWERS.` · `AND KEEP CARRYING THE INK.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Ahmad ibn Hanbal. The scholar of Baghdad who traveled for hadith, put reports before reasoning, and whose answers became the Hanbali school. Today's word.",
-      "screen": ["`AHMAD IBN HANBAL — today's word`."]
+      "screen": [
+        "`AHMAD IBN HANBAL — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,35 +61,99 @@
       "voice": "Your line: the imam of hadith. Today, carry your hadith with you, and say it once before something that matters. Day one thousand one hundred ninety-four.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 1194 COUNTS.` → `TOMORROW: THE MUSNAD.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 1194 COUNTS.` → `TOMORROW: THE MUSNAD.`"
+      ]
+    }
   ],
   "howItsDone": "Hanbali scholars look first to the Qur'an and the hadith, then to the sayings of the Companions, and the school's rulings grew from Ahmad ibn Hanbal's recorded answers to questions.",
   "games": {
     "match": {
       "prompt": "Ahmad ibn Hanbal — tap the pairs.",
-      "pairs": [["the inkwell", "carried to the grave"], ["a weak hadith", "a chain with some doubt in it"], ["al-Shafi'i", "one of his teachers"], ["his students", "wrote down his answers"]]
+      "pairs": [
+        [
+          "the inkwell",
+          "carried to the grave"
+        ],
+        [
+          "a weak hadith",
+          "a chain with some doubt in it"
+        ],
+        [
+          "al-Shafi'i",
+          "one of his teachers"
+        ],
+        [
+          "his students",
+          "wrote down his answers"
+        ]
+      ]
     },
     "myth": [
-      ["Ahmad ibn Hanbal was above all a scholar of hadith", true, "he traveled for reports and wrote them down; some early writers didn't list him among the jurists at all."],
-      ["a weak hadith means a made-up one", false, "it means a chain with some doubt in it. reports say Ahmad preferred one to analogy when nothing stronger stood against it."],
-      ["Ahmad and al-Shafi'i never met", false, "he studied with al-Shafi'i, and reports say each held the other in high regard."]
+      [
+        "Ahmad ibn Hanbal was above all a scholar of hadith",
+        true,
+        "he traveled for reports and wrote them down; some early writers didn't list him among the jurists at all."
+      ],
+      [
+        "a weak hadith means a made-up one",
+        false,
+        "it means a chain with some doubt in it. reports say Ahmad preferred one to analogy when nothing stronger stood against it."
+      ],
+      [
+        "Ahmad and al-Shafi'i never met",
+        false,
+        "he studied with al-Shafi'i, and reports say each held the other in high regard."
+      ]
     ],
     "fork": {
       "setup": "you're Ahmad. a question comes. the only report on it has a weak chain, and a colleague offers a neat analogy instead. what do you do?",
-      "options": ["follow the neat analogy.", "act on the weak report, if nothing stronger stands against it.", "refuse to answer anything."],
+      "options": [
+        "follow the neat analogy.",
+        "act on the weak report, if nothing stronger stands against it.",
+        "refuse to answer anything."
+      ],
       "answer": 1,
       "reveal": "reports say he'd act on the weak report. a report with some doubt was still closer to the Prophet, for him, than a clever argument."
     },
-    "original": { "script": "المحبرة", "say": "al-MIH-ba-rah", "note": "Arabic: the inkwell, from the saying reported of him: with the inkwell, to the grave." },
+    "original": {
+      "script": "المحبرة",
+      "say": "al-MIH-ba-rah",
+      "note": "Arabic: the inkwell, from the saying reported of him: with the inkwell, to the grave."
+    },
     "trapdoor": [
       "what you thought: the founder of a school writes a law book.",
       "what it means: Ahmad ibn Hanbal was first a scholar of hadith; his students gathered his answers into a school.",
       "what a scholar hears: the masa'il, books of his recorded answers, and his preference for a weak report over analogy."
+    ],
+    "recall": [
+      [
+        "taqlid",
+        "following one who knows"
+      ],
+      [
+        "mubah",
+        "no reward, no blame"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Sahih al-Bukhari 1 (actions are only by intentions)", "work": "Sahih al-Bukhari", "translation": null, "quoted": null },
-    { "ref": "Ibn Abi Ya'la, Tabaqat al-Hanabilah; Ibn al-Jawzi, Manaqib al-Imam Ahmad (biographical reports: the inkwell saying, travels, method)", "work": "Hanbali biographical works", "translation": null, "quoted": null }
+    {
+      "ref": "Sahih al-Bukhari 1 (actions are only by intentions)",
+      "work": "Sahih al-Bukhari",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Ibn Abi Ya'la, Tabaqat al-Hanabilah; Ibn al-Jawzi, Manaqib al-Imam Ahmad (biographical reports: the inkwell saying, travels, method)",
+      "work": "Hanbali biographical works",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -91,5 +170,9 @@
       "Editor pass: cut the 'I don't know' beat, which repeated Malik's la adri from day 1186 (screen head replaced); dropped the causal 'that's why' about early writers; varied the 'reports place him' phrasing shared with 1192."
     ]
   },
-  "meta": { "index": "1194. Ahmad ibn Hanbal · — · the Baghdad scholar of hadith, d. 855 · memorize one hadith · the imam of hadith", "writer": "writer agent (islam 1192–1201)", "written": "2026-10-01" }
+  "meta": {
+    "index": "1194. Ahmad ibn Hanbal · — · the Baghdad scholar of hadith, d. 855 · memorize one hadith · the imam of hadith",
+    "writer": "writer agent (islam 1192–1201)",
+    "written": "2026-10-01"
+  }
 }

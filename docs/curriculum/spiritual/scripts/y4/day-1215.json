@@ -9,24 +9,37 @@
   "length": "6:45",
   "tomorrow": "Days, the poem",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-THOUSAND-TWO-HUNDRED-FIFTEEN.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY ONE-THOUSAND-TWO-HUNDRED-FIFTEEN.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, the house fire, and a town that rebuilt a roof the self-reliant man couldn't. Your line was neighbors rebuild. Did you carry one board's worth for someone? Day one thousand two hundred fifteen.",
-      "screen": ["`NEIGHBORS REBUILD.`"]
+      "screen": [
+        "`NEIGHBORS REBUILD.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "A story people tell about Emerson in his last years. He wants to ask for his umbrella, and the word won't come. So he describes it instead: the thing that strangers take away. A man who spent his life finding exactly the right word, reaching for an everyday one and missing it, and landing on something oddly lovely anyway. In his old age, Emerson's memory faded. Names slipped, then words. In time the lectures and the writing fell away. And yet the people around him kept telling one more thing about those years, over and over. Today, Emerson forgetting.",
-      "screen": ["`THE WORD WON'T COME.` → `THE THING STRANGERS TAKE AWAY.` → `NAMES, THEN WORDS.`"]
+      "screen": [
+        "`THE WORD WON'T COME.` → `THE THING STRANGERS TAKE AWAY.` → `NAMES, THEN WORDS.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "First, he saw it coming. Some years before the fading, Emerson wrote a poem called Terminus, a word for a boundary stone. It opens, \"It is time to be old,\" and speaks of taking in sail, like a ship coming into harbor. It isn't a bitter poem. It reads like a man setting his affairs in order and choosing to be at peace with the tide. Second, the forgetting itself. Another story people tell: at the funeral of a dear friend, the poet Longfellow, Emerson looked at the face for a long time and said, in effect, that he couldn't remember the name, but this had been a sweet and beautiful soul. The name was gone. The love wasn't. Third, what stayed. Those who cared for him, his daughter Ellen among them, described a man still courteous, still smiling, still kind to visitors he could no longer place. The words had gone, but the manner remained. Fourth, why it matters here. This path has spent weeks with Emerson's mind: the essays, the lectures, the sentences people still quote. His last years ask a quieter question. If the mind goes, what's left? In his case, the answer people remembered was gentleness. Some traditions say something like this in their own way, that who a person is runs deeper than what a person remembers. However you understand that, the picture of the old man forgetting the name and keeping the love is hard to forget.",
-      "screen": ["`IT IS TIME TO BE OLD.` · `THE NAME WAS GONE. THE LOVE WASN'T.` · `THE WORDS WENT. THE MANNER STAYED.` · `DEEPER THAN WHAT WE REMEMBER.` · then, large: `GENTLENESS STAYS.`"]
+      "screen": [
+        "`IT IS TIME TO BE OLD.` · `THE NAME WAS GONE. THE LOVE WASN'T.` · `THE WORDS WENT. THE MANNER STAYED.` · `DEEPER THAN WHAT WE REMEMBER.` · then, large: `GENTLENESS STAYS.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Emerson forgetting. In his last years his memory faded, names and words first, but the people around him remembered his gentleness. Today's word.",
-      "screen": ["`EMERSON FORGETTING — today's word`."]
+      "screen": [
+        "`EMERSON FORGETTING — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,22 +61,62 @@
       "voice": "Your line: gentleness stays. Today, when someone forgets a word, a name or a thing you told them, give them the patient face you practiced. Day one thousand two hundred fifteen.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 1215 COUNTS.` → `TOMORROW: DAYS, THE POEM.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 1215 COUNTS.` → `TOMORROW: DAYS, THE POEM.`"
+      ]
+    }
   ],
   "howItsDone": "Readers of Emerson often end with his late poem Terminus and the accounts of his final years, when his memory faded and those near him remembered his gentleness.",
   "games": {
     "match": {
       "prompt": "Emerson's last years: tap the pairs.",
-      "pairs": [["Terminus", "it is time to be old"], ["the umbrella", "the thing that strangers take away"], ["at Longfellow's funeral", "the name gone, the love not"], ["what stayed", "his gentleness"]]
+      "pairs": [
+        [
+          "Terminus",
+          "it is time to be old"
+        ],
+        [
+          "the umbrella",
+          "the thing that strangers take away"
+        ],
+        [
+          "at Longfellow's funeral",
+          "the name gone, the love not"
+        ],
+        [
+          "what stayed",
+          "his gentleness"
+        ]
+      ]
     },
     "myth": [
-      ["Terminus is a bitter poem about losing everything", false, "it reads like a man setting his affairs in order and choosing peace, taking in sail."],
-      ["those who cared for him remembered him as courteous and kind", true, "the words went; the manner stayed."],
-      ["Emerson kept lecturing to the end", false, "as his memory faded, the lectures and the writing fell away."]
+      [
+        "Terminus is a bitter poem about losing everything",
+        false,
+        "it reads like a man setting his affairs in order and choosing peace, taking in sail."
+      ],
+      [
+        "those who cared for him remembered him as courteous and kind",
+        true,
+        "the words went; the manner stayed."
+      ],
+      [
+        "Emerson kept lecturing to the end",
+        false,
+        "as his memory faded, the lectures and the writing fell away."
+      ]
     ],
     "fork": {
       "setup": "you're Emerson, at a friend's funeral. you look at the face and can't find the name. what do you do?",
-      "options": ["say nothing and hope no one notices.", "say you can't remember the name, but this was a sweet, beautiful soul.", "ask someone to remind you first."],
+      "options": [
+        "say nothing and hope no one notices.",
+        "say you can't remember the name, but this was a sweet, beautiful soul.",
+        "ask someone to remind you first."
+      ],
       "answer": 1,
       "reveal": "the story people tell is that he said he'd lost the name but this had been a sweet and beautiful soul. the name was gone; the love wasn't."
     },
@@ -70,12 +125,37 @@
       "what you thought: in old age Emerson lost his mind.",
       "what it means: his memory faded, first names and then words, but he kept his courtesy and kindness.",
       "what a scholar hears: Terminus, written years before, shows him already accepting age; the umbrella and Longfellow stories come from people around him, not from his own writing."
+    ],
+    "recall": [
+      [
+        "The only gift",
+        "a portion of thyself"
+      ],
+      [
+        "A foolish consistency",
+        "the hobgoblin of little minds"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Terminus, line 1", "work": "Ralph Waldo Emerson, Terminus", "translation": "Emerson", "quoted": "It is time to be old," },
-    { "ref": "Terminus (taking in sail; the port near)", "work": "Ralph Waldo Emerson, Terminus", "translation": null, "quoted": null },
-    { "ref": "Anecdotes of Emerson's last years (the umbrella; Longfellow's funeral)", "work": "Recollections by family and friends, as retold in biographies (paraphrase)", "translation": null, "quoted": null }
+    {
+      "ref": "Terminus, line 1",
+      "work": "Ralph Waldo Emerson, Terminus",
+      "translation": "Emerson",
+      "quoted": "It is time to be old,"
+    },
+    {
+      "ref": "Terminus (taking in sail; the port near)",
+      "work": "Ralph Waldo Emerson, Terminus",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Anecdotes of Emerson's last years (the umbrella; Longfellow's funeral)",
+      "work": "Recollections by family and friends, as retold in biographies (paraphrase)",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -89,5 +169,9 @@
       "This is a sensitive topic for listeners caring for someone with memory loss; the practice is written to be gentle and non-prescriptive."
     ]
   },
-  "meta": { "index": "1215. Emerson forgetting · — · in old age Emerson's memory faded; he forgot words but kept his gentleness · be gentle with someone forgetting · gentleness stays", "writer": "spiritual writer agent (days 1212–1221)", "written": "2026-10-02" }
+  "meta": {
+    "index": "1215. Emerson forgetting · — · in old age Emerson's memory faded; he forgot words but kept his gentleness · be gentle with someone forgetting · gentleness stays",
+    "writer": "spiritual writer agent (days 1212–1221)",
+    "written": "2026-10-02"
+  }
 }

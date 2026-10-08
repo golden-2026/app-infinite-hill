@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "Communities differ",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-THOUSAND-THREE-HUNDRED-NINE.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY ONE-THOUSAND-THREE-HUNDRED-NINE.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday's line was joy and memory: the crash of the glass, and then mazel tov. Whose name did you say? Today, right after the shouting, the couple slips away down the hall. Day one thousand three hundred nine.",
-      "screen": ["`JOY AND MEMORY.`"]
+      "screen": [
+        "`JOY AND MEMORY.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "A small side room, down the hall from the party. A table, two chairs, a little food set out. The door closes. Outside, a couple of friends stand by it, so nobody knocks. Inside are two people who were married a few minutes ago, alone together for the first time all day. Down the hall the band is tuning up, the photographer is checking the light, the guests are finding their tables. And for a short while, nobody can reach the two of them. The room has a name, and so do these minutes.",
-      "screen": ["`A SMALL ROOM DOWN THE HALL.` → `FRIENDS AT THE DOOR.` → `NOBODY CAN REACH THEM.`"]
+      "screen": [
+        "`A SMALL ROOM DOWN THE HALL.` → `FRIENDS AT THE DOOR.` → `NOBODY CAN REACH THEM.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "Yichud. Being alone together. Turn it four ways. First, it belongs to the wedding. Yichud isn't a break from the ceremony. Some authorities count these minutes alone, as a married couple, as part of the wedding itself. The friends at the door serve as witnesses that the two were alone together. Second, the meal. In some communities the bride and groom fast on their wedding day until the ceremony. The food in that room is where they break the fast, side by side, the first meal of their marriage, with no one else at the table. Third, the Torah protects a beginning. Deuteronomy has a law about newlyweds. A new husband isn't sent out to war or loaded with public duties. In the King James words, \"he shall be free at home one year, and shall cheer up his wife which he hath taken.\" The Torah treats the start of a marriage as something the world should leave alone for a while. Yichud is that idea in miniature: a few minutes the whole day agrees not to touch. Fourth, the first moment. Before the speeches, before the photos, before anyone else takes a piece of the day, there's a moment that belongs only to the two of them. Whatever they say in there, or don't say, is theirs. Then the door opens, and they walk out to the music. Today's word says that a shared life needs a little protected quiet at its very start, and the people who love them keep watch at the door.",
-      "screen": ["`PART OF THE WEDDING ITSELF.` · `THE FIRST MEAL, SIDE BY SIDE.` · `FREE AT HOME, THE TORAH SAYS.` · `A MOMENT THAT'S ONLY THEIRS.` · then, large: `THE FIRST MOMENT.`"]
+      "screen": [
+        "`PART OF THE WEDDING ITSELF.` · `THE FIRST MEAL, SIDE BY SIDE.` · `FREE AT HOME, THE TORAH SAYS.` · `A MOMENT THAT'S ONLY THEIRS.` · then, large: `THE FIRST MOMENT.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Yichud: alone together, right after the ceremony. And a week closes: a match, conditions, the canopy, the ketubah read, seven blessings, the glass, and the first moment. Today's word.",
-      "screen": ["`YICHUD — today's word`."]
+      "screen": [
+        "`YICHUD — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,34 +61,93 @@
       "voice": "Your line: the first moment. Today, guard one person's quiet: hold the door, take the call, let them have a few minutes. Day one thousand three hundred nine.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 1309 COUNTS.` → `TOMORROW: COMMUNITIES DIFFER.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 1309 COUNTS.` → `TOMORROW: COMMUNITIES DIFFER.`"
+      ]
+    }
   ],
   "howItsDone": "Right after a traditional Jewish wedding ceremony, the couple spends a few minutes alone in a private room (yichud), often breaking a wedding-day fast together, while friends stand by the door as witnesses.",
   "games": {
     "match": {
       "prompt": "yichud — tap the pairs.",
-      "pairs": [["yichud", "being alone together"], ["the friends at the door", "witnesses that the two were alone"], ["Deuteronomy", "free at home one year"], ["the food in the room", "where some couples break their fast"]]
+      "pairs": [
+        [
+          "yichud",
+          "being alone together"
+        ],
+        [
+          "the friends at the door",
+          "witnesses that the two were alone"
+        ],
+        [
+          "Deuteronomy",
+          "free at home one year"
+        ],
+        [
+          "the food in the room",
+          "where some couples break their fast"
+        ]
+      ]
     },
     "myth": [
-      ["yichud is a break from the wedding", false, "some authorities count those minutes alone as part of the wedding itself."],
-      ["in some communities the couple fasts until the ceremony", true, "the food in the yichud room is where they break the fast together."],
-      ["the Torah frees a new husband from war for a year", true, "\"he shall be free at home one year, and shall cheer up his wife.\""]
+      [
+        "yichud is a break from the wedding",
+        false,
+        "some authorities count those minutes alone as part of the wedding itself."
+      ],
+      [
+        "in some communities the couple fasts until the ceremony",
+        true,
+        "the food in the yichud room is where they break the fast together."
+      ],
+      [
+        "the Torah frees a new husband from war for a year",
+        true,
+        "\"he shall be free at home one year, and shall cheer up his wife.\""
+      ]
     ],
     "fork": {
       "setup": "the ceremony just ended, and you want a photo with the couple. they're heading down the hall to a small room. what do you do?",
-      "options": ["follow them and knock.", "wait: these minutes are theirs.", "ask the friends at the door to let you in."],
+      "options": [
+        "follow them and knock.",
+        "wait: these minutes are theirs.",
+        "ask the friends at the door to let you in."
+      ],
       "answer": 1,
       "reveal": "yichud gives the couple their first moment alone; friends stand at the door so nobody knocks."
     },
-    "original": { "script": "יִחוּד", "say": "yee-KHOOD", "note": "Hebrew: being alone together, the couple's minutes after the ceremony." },
+    "original": {
+      "script": "יִחוּד",
+      "say": "yee-KHOOD",
+      "note": "Hebrew: being alone together, the couple's minutes after the ceremony."
+    },
     "trapdoor": [
       "what you thought: the couple sneaking off for a breather.",
       "what it means: minutes alone together that some authorities count as part of the wedding.",
       "what a scholar hears: witnesses at the door, and Deuteronomy 24:5, where the Torah sets the first stretch of a marriage apart from war and business."
+    ],
+    "recall": [
+      [
+        "Confirmation",
+        "a second yes, after bar or bat mitzvah"
+      ],
+      [
+        "simchat bat",
+        "the joy of a daughter"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Deuteronomy 24:5", "work": "The Bible", "translation": "KJV (1769)", "quoted": "he shall be free at home one year, and shall cheer up his wife which he hath taken." }
+    {
+      "ref": "Deuteronomy 24:5",
+      "work": "The Bible",
+      "translation": "KJV (1769)",
+      "quoted": "he shall be free at home one year, and shall cheer up his wife which he hath taken."
+    }
   ],
   "review": {
     "status": "pending",
@@ -86,5 +160,9 @@
       "Editor: yichud's status softened from 'in traditional practice, part of the wedding itself' to 'some authorities count' it so, since authorities differ (teach, myth, trapdoor)."
     ]
   },
-  "meta": { "index": "1309. The first moment · yichud · the couple spends a few minutes alone right after the ceremony · give someone some quiet · the first moment", "writer": "writer agent (judaism y4 1302–1311)", "written": "2026-10-01" }
+  "meta": {
+    "index": "1309. The first moment · yichud · the couple spends a few minutes alone right after the ceremony · give someone some quiet · the first moment",
+    "writer": "writer agent (judaism y4 1302–1311)",
+    "written": "2026-10-01"
+  }
 }

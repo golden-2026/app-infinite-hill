@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "Your neighbor",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-THOUSAND-FOUR-HUNDRED-EIGHT.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY ONE-THOUSAND-FOUR-HUNDRED-EIGHT.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, your character. Your line: one trait. Did you take a moment last night to see where your trait showed up, and where it slipped? The first place a trait gets tested is usually home. Today, home. Day one thousand four hundred eight.",
-      "screen": ["`ONE TRAIT.`"]
+      "screen": [
+        "`ONE TRAIT.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "A man named al-Aswad put a plain question to Aisha: what did the Prophet Muhammad, peace be upon him, do at home? Not in the mosque, not leading anyone. At home. Her answer, in Sahih al-Bukhari: he would be busy serving his family, and when the time for prayer came, he would go out to pray. That's the whole report. No miracle in it. A man helping around the house, then stopping for prayer. It is a strangely ordinary thing to have been remembered. Today, practice at home, with family.",
-      "screen": ["`WHAT DID HE DO AT HOME?` → `SERVING HIS FAMILY.` → `THEN, THE PRAYER.`"]
+      "screen": [
+        "`WHAT DID HE DO AT HOME?` → `SERVING HIS FAMILY.` → `THEN, THE PRAYER.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "Start with that report, because it sets the order of things. Service at home and prayer are not rivals. The same person does both, in the same afternoon. Next, the house itself. In another hadith in Bukhari, the Prophet tells his followers to pray some of their prayers in their houses, and not to make their houses like graves. The picture is stark: a house with no prayer in it is likened to a grave. Third, praying together. When people pray together, one can lead and the others stand behind in a row. A parent leads, a child stands beside or behind, and the prayer is said at the same pace. Small children wander in and out of it; in Bukhari there's a report of the Prophet praying while carrying his little granddaughter Umamah, setting her down when he went down in prostration and picking her up when he stood. The tradition did not wait for a quiet house to pray in one. Last, families as they really are. Some homes are all Muslim. Some have a new Muslim and parents who aren't. Some have a spouse from another faith or none. Praying together can mean one person praying while another sits nearby in quiet, or a family sharing a meal and saying bismillah before it. In surah Ta Ha, Allah tells the Prophet to bid his household to prayer and to be patient in it. Patient is the word to keep. Habits at home grow slowly, and nobody is helped by being pushed.",
-      "screen": ["`SERVICE AT HOME, THEN PRAYER.` · `DON'T MAKE YOUR HOUSE A GRAVE.` · `ONE LEADS, A CHILD BESIDE.` · `FAMILIES AS THEY REALLY ARE.`"]
+      "screen": [
+        "`SERVICE AT HOME, THEN PRAYER.` · `DON'T MAKE YOUR HOUSE A GRAVE.` · `ONE LEADS, A CHILD BESIDE.` · `FAMILIES AS THEY REALLY ARE.`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "Your family. The first place practice is lived: serving at home, and praying there too. Today's word.",
-      "screen": ["`YOUR FAMILY — today's word`."]
+      "screen": [
+        "`YOUR FAMILY — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,37 +61,111 @@
       "voice": "Your line: pray together. Today, do one small chore for someone at home before they ask, and say nothing about it. Tomorrow, your neighbor. Day one thousand four hundred eight.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 1408 COUNTS.` → `TOMORROW: YOUR NEIGHBOR.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 1408 COUNTS.` → `TOMORROW: YOUR NEIGHBOR.`"
+      ]
+    }
   ],
   "howItsDone": "Muslim families may pray some prayers together at home, with one person leading and the others standing behind in a row and children joining as they learn, following the hadith that encourages praying some prayers in the house.",
   "games": {
     "match": {
       "prompt": "your family — tap the pairs.",
-      "pairs": [["Aisha", "he served his family, then went to pray"], ["your houses", "don't make them like graves"], ["Umamah", "carried while he prayed"], ["surah Ta Ha", "bid your household to prayer, be patient"]]
+      "pairs": [
+        [
+          "Aisha",
+          "he served his family, then went to pray"
+        ],
+        [
+          "your houses",
+          "don't make them like graves"
+        ],
+        [
+          "Umamah",
+          "carried while he prayed"
+        ],
+        [
+          "surah Ta Ha",
+          "bid your household to prayer, be patient"
+        ]
+      ]
     },
     "myth": [
-      ["the Prophet left all housework to others", false, "Aisha said he would be busy serving his family until the time for prayer (Sahih al-Bukhari)."],
-      ["a hadith tells of the Prophet praying while carrying his granddaughter", true, "he carried Umamah, setting her down when he went down in prostration and picking her up when he stood (Sahih al-Bukhari)."],
-      ["prayer is only meant for the mosque", false, "the Prophet told his followers to pray some prayers in their houses and not make them like graves."]
+      [
+        "the Prophet left all housework to others",
+        false,
+        "Aisha said he would be busy serving his family until the time for prayer (Sahih al-Bukhari)."
+      ],
+      [
+        "a hadith tells of the Prophet praying while carrying his granddaughter",
+        true,
+        "he carried Umamah, setting her down when he went down in prostration and picking her up when he stood (Sahih al-Bukhari)."
+      ],
+      [
+        "prayer is only meant for the mosque",
+        false,
+        "the Prophet told his followers to pray some prayers in their houses and not make them like graves."
+      ]
     ],
     "fork": {
       "setup": "you're about to pray, and your small granddaughter won't let go of you. what did the Prophet do?",
-      "options": ["prayed while carrying her, setting her down to prostrate.", "sent her out of the room.", "skipped the prayer."],
+      "options": [
+        "prayed while carrying her, setting her down to prostrate.",
+        "sent her out of the room.",
+        "skipped the prayer."
+      ],
       "answer": 0,
       "reveal": "Sahih al-Bukhari tells of him praying while carrying Umamah, setting her down when he went down in prostration and picking her up when he stood."
     },
-    "original": { "script": "أَهْل", "say": "AHL", "note": "Arabic: family, household, a person's people." },
+    "original": {
+      "script": "أَهْل",
+      "say": "AHL",
+      "note": "Arabic: family, household, a person's people."
+    },
     "trapdoor": [
       "what you thought: religious practice happens at the mosque, and home is time off.",
       "what it means: home is the first place of practice: serving the family, and praying there too.",
       "what a scholar hears: Aisha's report of the Prophet serving his family, the hadith against houses like graves, Umamah carried in prayer, and Ta Ha's command to be patient."
+    ],
+    "recall": [
+      [
+        "kafan",
+        "the shroud"
+      ],
+      [
+        "'iyadah",
+        "visiting the sick"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Sahih al-Bukhari 676", "work": "Sahih al-Bukhari", "translation": null, "quoted": null },
-    { "ref": "Sahih al-Bukhari 432", "work": "Sahih al-Bukhari", "translation": null, "quoted": null },
-    { "ref": "Sahih al-Bukhari 516", "work": "Sahih al-Bukhari", "translation": null, "quoted": null },
-    { "ref": "Qur'an 20:132", "work": "The Qur'an", "translation": null, "quoted": null }
+    {
+      "ref": "Sahih al-Bukhari 676",
+      "work": "Sahih al-Bukhari",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Sahih al-Bukhari 432",
+      "work": "Sahih al-Bukhari",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Sahih al-Bukhari 516",
+      "work": "Sahih al-Bukhari",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Qur'an 20:132",
+      "work": "The Qur'an",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -90,5 +179,9 @@
       "Editor: Sahih al-Bukhari 516 says he set Umamah down when he prostrated, not when he bowed; fixed in the teach, myth, fork option and reveal. Replaced the gloss on the houses-like-graves hadith with the hadith's own picture, and dropped the count in 'two or more people'."
     ]
   },
-  "meta": { "index": "1408. Your family · — · practice at home, with family · pray together once · pray together", "writer": "writer agent (islam 1402–1411)", "written": "2026-10-01" }
+  "meta": {
+    "index": "1408. Your family · — · practice at home, with family · pray together once · pray together",
+    "writer": "writer agent (islam 1402–1411)",
+    "written": "2026-10-01"
+  }
 }

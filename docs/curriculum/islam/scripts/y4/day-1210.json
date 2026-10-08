@@ -9,24 +9,37 @@
   "length": "7:00",
   "tomorrow": "Witr in many ways",
   "segments": [
-    { "type": "the bell", "duration": null, "voice": "", "screen": ["`DAY ONE-THOUSAND-TWO-HUNDRED-TEN.`"] },
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY ONE-THOUSAND-TWO-HUNDRED-TEN.`"
+      ]
+    },
     {
       "type": "review",
       "duration": "20 sec",
       "voice": "Yesterday, touching and wudu, and your line: details differ. Did a small rule surprise you, and did you find the reading behind it? Day one thousand two hundred ten.",
-      "screen": ["`DETAILS DIFFER.`"]
+      "screen": [
+        "`DETAILS DIFFER.`"
+      ]
     },
     {
       "type": "the hook",
       "duration": "50 sec",
       "voice": "Eid morning, and the group chat is arguing. One cousin is already in new clothes, posting photos from the mosque. Another is still fasting, because her mosque says the month has one more day. A third says his community decided weeks ago, by the numbers. Same city, same family, same Ramadan, and two different Eids. It comes from one question about a crescent, answered more than one way. Today, the moon.",
-      "screen": ["`EID MORNING, THE CHAT IS ARGUING.` → `ONE COUSIN FEASTS, ONE FASTS.` → `ONE QUESTION, SEVERAL ANSWERS.`"]
+      "screen": [
+        "`EID MORNING, THE CHAT IS ARGUING.` → `ONE COUSIN FEASTS, ONE FASTS.` → `ONE QUESTION, SEVERAL ANSWERS.`"
+      ]
     },
     {
       "type": "the teach",
       "duration": "2 min 15",
       "voice": "First, why the moon at all. The Islamic months follow the moon, and the Qur'an says of the new moons, in Pickthall's words, \"They are fixed seasons for mankind and for the pilgrimage.\" A month begins with the thin crescent, the hilal, just after sunset. Next, the instruction. In a report in Sahih al-Bukhari, the Prophet Muhammad ﷺ says: fast when you see it, and stop fasting when you see it, and if it's hidden from you, complete the month as thirty days. Seeing is at the heart of it. Then, the first question: whose seeing? In Sahih Muslim, Kurayb travels from Syria to Medina. In Syria, he says, people saw the new moon on Friday night and began fasting. Ibn Abbas, in Medina, answers that they saw it on Saturday night, and they'll keep counting by their own sighting. This is how we were told, he says. Some scholars read that as each region sighting its own moon. Others say one sighting anywhere should bind everyone who hears of it, and so some communities follow the announcement of another country. Last, the second question: what counts as seeing? Some jurists say an eye on the horizon, nothing else. Others answer that astronomers can now say ahead of time when the crescent will be born and when it can be seen, and that a reliable calculation can stand in for the eye, or at least rule out a mistaken sighting. Some councils announce the dates far in advance. So the family chat is arguing over three readings of one sentence about a crescent.",
-      "screen": ["`THE MONTHS FOLLOW THE MOON.` · `FAST WHEN YOU SEE IT.` · `KURAYB, IBN ABBAS: WHOSE SEEING?` · `THE EYE, OR THE CALCULATION?`"]
+      "screen": [
+        "`THE MONTHS FOLLOW THE MOON.` · `FAST WHEN YOU SEE IT.` · `KURAYB, IBN ABBAS: WHOSE SEEING?` · `THE EYE, OR THE CALCULATION?`"
+      ]
     },
     {
       "type": "the practice",
@@ -38,7 +51,9 @@
       "type": "the word",
       "duration": "25 sec",
       "voice": "The moon. The new crescent begins each Islamic month; some sight it locally, some follow another country's sighting, some use calculation. Today's word.",
-      "screen": ["`THE MOON — today's word`."]
+      "screen": [
+        "`THE MOON — today's word`."
+      ]
     },
     {
       "type": "the carry",
@@ -46,36 +61,105 @@
       "voice": "Your line: which moon? Today, find out when your local calendar says the next month begins, and how it decided. Tomorrow, the odd prayer of the night, prayed in many ways. Day one thousand two hundred ten.",
       "screen": []
     },
-    { "type": "the close", "duration": null, "voice": "", "screen": ["`DAY 1210 COUNTS.` → `TOMORROW: WITR IN MANY WAYS.`"] }
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": [
+        "`DAY 1210 COUNTS.` → `TOMORROW: WITR IN MANY WAYS.`"
+      ]
+    }
   ],
   "howItsDone": "Mosques and councils start the Islamic months, including Ramadan and the Eids, by one of several methods: a local sighting of the crescent, following another country's announced sighting, or astronomical calculation.",
   "games": {
     "match": {
       "prompt": "the moon — tap the pairs.",
-      "pairs": [["hilal", "the thin new crescent"], ["Kurayb", "brought news of Syria's sighting"], ["Ibn Abbas", "kept Medina's own sighting"], ["if the moon is hidden", "complete the month as thirty days"]]
+      "pairs": [
+        [
+          "hilal",
+          "the thin new crescent"
+        ],
+        [
+          "Kurayb",
+          "brought news of Syria's sighting"
+        ],
+        [
+          "Ibn Abbas",
+          "kept Medina's own sighting"
+        ],
+        [
+          "if the moon is hidden",
+          "complete the month as thirty days"
+        ]
+      ]
     },
     "myth": [
-      ["the Islamic months follow the moon", true, "the Qur'an calls the new moons fixed seasons for mankind and for the pilgrimage."],
-      ["in the report in Sahih Muslim, Ibn Abbas switched to Syria's sighting", false, "he kept Medina's own sighting and said, this is how we were told."],
-      ["two Eids in one city means someone made a mistake", false, "it comes from honest differences: local sighting, another country's sighting, or calculation."]
+      [
+        "the Islamic months follow the moon",
+        true,
+        "the Qur'an calls the new moons fixed seasons for mankind and for the pilgrimage."
+      ],
+      [
+        "in the report in Sahih Muslim, Ibn Abbas switched to Syria's sighting",
+        false,
+        "he kept Medina's own sighting and said, this is how we were told."
+      ],
+      [
+        "two Eids in one city means someone made a mistake",
+        false,
+        "it comes from honest differences: local sighting, another country's sighting, or calculation."
+      ]
     ],
     "fork": {
       "setup": "you're Ibn Abbas in Medina. Kurayb arrives: Syria saw the new moon a night before you did. do you change your count?",
-      "options": ["yes, switch to Syria's date.", "no, keep counting by Medina's own sighting.", "stop fasting at once."],
+      "options": [
+        "yes, switch to Syria's date.",
+        "no, keep counting by Medina's own sighting.",
+        "stop fasting at once."
+      ],
       "answer": 1,
       "reveal": "Ibn Abbas keeps Medina's sighting and says, this is how we were told. some scholars read local sighting into it; others still hold one sighting can bind everyone who hears of it."
     },
-    "original": { "script": "هلال", "say": "hi-LAAL", "note": "Arabic: the new crescent moon that begins a month." },
+    "original": {
+      "script": "هلال",
+      "say": "hi-LAAL",
+      "note": "Arabic: the new crescent moon that begins a month."
+    },
     "trapdoor": [
       "what you thought: everyone starts Ramadan on the same day.",
       "what it means: communities start the month by local sighting, another country's sighting, or calculation, so dates can differ.",
       "what a scholar hears: 'fast when you see it' in al-Bukhari, the report of Kurayb in Sahih Muslim, and the debate over ikhtilaf al-matali', differing horizons."
+    ],
+    "recall": [
+      [
+        "turbah",
+        "a small tablet of baked clay"
+      ],
+      [
+        "marja'",
+        "the jurist a believer follows"
+      ]
     ]
   },
   "sources": [
-    { "ref": "Qur'an 2:189", "work": "The Qur'an", "translation": "Pickthall 1930", "quoted": "They are fixed seasons for mankind and for the pilgrimage." },
-    { "ref": "Sahih al-Bukhari 1909 (fast when you see it; if hidden, complete thirty)", "work": "Sahih al-Bukhari", "translation": null, "quoted": null },
-    { "ref": "Sahih Muslim 1087 (Kurayb and Ibn Abbas)", "work": "Sahih Muslim", "translation": null, "quoted": null }
+    {
+      "ref": "Qur'an 2:189",
+      "work": "The Qur'an",
+      "translation": "Pickthall 1930",
+      "quoted": "They are fixed seasons for mankind and for the pilgrimage."
+    },
+    {
+      "ref": "Sahih al-Bukhari 1909 (fast when you see it; if hidden, complete thirty)",
+      "work": "Sahih al-Bukhari",
+      "translation": null,
+      "quoted": null
+    },
+    {
+      "ref": "Sahih Muslim 1087 (Kurayb and Ibn Abbas)",
+      "work": "Sahih Muslim",
+      "translation": null,
+      "quoted": null
+    }
   ],
   "review": {
     "status": "pending",
@@ -90,5 +174,9 @@
       "Family-chat scene is illustrative."
     ]
   },
-  "meta": { "index": "1210. The moon · — · some sight the moon locally, some follow another country, some use calculation · learn your mosque's method · which moon?", "writer": "writer agent (islam 1202–1211)", "written": "2026-10-01" }
+  "meta": {
+    "index": "1210. The moon · — · some sight the moon locally, some follow another country, some use calculation · learn your mosque's method · which moon?",
+    "writer": "writer agent (islam 1202–1211)",
+    "written": "2026-10-01"
+  }
 }
