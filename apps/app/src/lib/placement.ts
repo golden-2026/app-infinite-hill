@@ -43,7 +43,7 @@ export function atHome(o: { stance: string | null; raisedIn: string | null; lear
 /** One answer: which stop it was from, and whether it was right ("not sure" is a miss). */
 export type Answer = { stop: number; ok: boolean };
 /** The check so far: how many stops the door has, the answers in order, and whether they stopped after the basics. */
-export type Climb = { stops: number; answers: Answer[]; declined?: boolean };
+export type Climb = { stops: number; answers: Answer[]; declined?: boolean; /** questions available per stop (default PER_STOP) */ per?: number[] };
 export type ClimbState = {
   /** the highest stop known (-1: not even the basics yet) and the lowest stop known not to be known (`stops`: none) */
   lo: number; hi: number;
@@ -54,8 +54,92 @@ export type ClimbState = {
 
 const right = (xs: Answer[]) => xs.filter((x) => x.ok).length;
 
+// The adaptive climb (docs/learning/QUESTION_RULES.md §10), after the basics: a running estimate of the highest stop
+// someone knows, updated after every answer. Knowing a stop, they get its questions right unless they slip; above it,
+// only a lucky guess. The next question comes from the stop the estimate is least sure about, and the check ends when
+// one place (that stop or the one above it) is very likely, or at MAX_ADAPTIVE questions. Never more than that.
+export const SLIP = 0.1; // a question missed from a stop they know
+export const GUESS = 0.4; // a question right from a stop they don't: set above the real 1-in-3 or 1-in-4, so luck never places anyone high
+export const SURE = 0.85; // how likely the place must be to stop asking
+export const MAX_ADAPTIVE = 12; // after up to 3 basics: never more than 15 in all (QUESTION_RULES §10)
+const CAUTIOUS = 0.75; // the place: the highest stop they know with at least this likelihood (never a lucky guess's best case)
+const PRIOR = 0.95; // each stop up is a little less likely before any answer: most people start near the beginning
+
+/** How likely each level is (index = highest stop known, 0 to n-1), from the answers above the basics. */
+export function posterior(n: number, answers: Answer[]): number[] {
+  const p = Array.from({ length: n }, (_, L) => Math.pow(PRIOR, L));
+  for (const a of answers) {
+    if (a.stop < 1) continue;
+    for (let L = 0; L < n; L++) {
+      const knows = a.stop <= L;
+      p[L] *= a.ok ? (knows ? 1 - SLIP : GUESS) : knows ? SLIP : 1 - GUESS;
+    }
+  }
+  const sum = p.reduce((x, y) => x + y, 0) || 1;
+  return p.map((x) => x / sum);
+}
+
+/** The place the estimate is most sure of: the stop p with the most likelihood on "p or p+1" (placed there or one
+ *  below), and how sure. */
+export function bestPlace(post: number[]): { at: number; sure: number } {
+  let at = 0, sure = -1;
+  for (let k = 0; k < post.length; k++) {
+    const s = post[k] + (post[k + 1] ?? 0);
+    if (s > sure + 1e-12) { at = k; sure = s; }
+  }
+  return { at, sure };
+}
+
 /** Replays the answers: where the climb stands and what to ask next. */
 export function climbState(c: Climb): ClimbState {
+  const n = Math.max(0, c.stops);
+  // the basics first, as before: 2 right of up to 3 to know them, 2 missed to start from day 1
+  const basics: Answer[] = [];
+  let i = 0;
+  for (; i < c.answers.length; i++) {
+    const a = c.answers[i];
+    basics.push(a);
+    const r = right(basics), w = basics.length - r;
+    if (r >= NEED || w > PER_STOP - NEED) { i++; break; }
+  }
+  const r0 = right(basics), w0 = basics.length - r0;
+  const basicsDone = r0 >= NEED || w0 > PER_STOP - NEED;
+  if (!n) return { lo: -1, hi: 0, probe: null, nth: 0, asked: c.answers.length, done: true };
+  if (!basicsDone) return { lo: -1, hi: n, probe: 0, nth: basics.length, asked: c.answers.length, done: false };
+  if (r0 < NEED) return { lo: -1, hi: 0, probe: null, nth: 0, asked: c.answers.length, done: true };
+  if (c.declined || n === 1) return { lo: 0, hi: n, probe: null, nth: 0, asked: c.answers.length, done: true };
+  const rest = c.answers.slice(i);
+  const per = c.per || [];
+  const asked = new Map<number, number>();
+  for (const a of rest) asked.set(a.stop, (asked.get(a.stop) || 0) + 1);
+  const post = posterior(n, rest);
+  const best = bestPlace(post);
+  const left = (s: number) => (per[s] ?? PER_STOP) - (asked.get(s) || 0);
+  // the stop to ask next: the one whose answer, right or wrong, is expected to teach the most about where they are
+  // (the largest expected drop in uncertainty), among stops with questions left; an answer they'd surely get right
+  // teaches nothing, so it's never asked just to fill time
+  const H = (q: number[]) => -q.reduce((x, v) => x + (v > 0 ? v * Math.log(v) : 0), 0);
+  const now = H(post);
+  let probe: number | null = null, gain = 1e-6;
+  for (let s = 1; s < n; s++) {
+    if (left(s) <= 0) continue;
+    const pRight = post.reduce((x, v, L) => x + v * (s <= L ? 1 - SLIP : GUESS), 0);
+    const g = now - (pRight * H(posterior(n, [...rest, { stop: s, ok: true }])) + (1 - pRight) * H(posterior(n, [...rest, { stop: s, ok: false }])));
+    if (g > gain) { gain = g; probe = s; }
+  }
+  const done = best.sure >= SURE || rest.length >= MAX_ADAPTIVE || probe === null;
+  // out of questions and still unsure: the cautious side of the estimate (the highest stop they very likely know),
+  // never a lucky guess's best case. Placing a little low is kind; the settling-in offers move them on up.
+  let at = best.at;
+  if (done) {
+    let c = 0;
+    for (let L = n - 1; L >= 0; L--) { c += post[L]; if (c >= CAUTIOUS) { at = Math.min(at, L); break; } }
+  }
+  return { lo: at, hi: Math.min(n, at + 1), probe: done ? null : probe, nth: done || probe === null ? 0 : asked.get(probe) || 0, asked: c.answers.length, done };
+}
+
+/** The old fixed climb (probe 3 per stop, gallop, then halve), kept for comparison in the simulator. */
+export function climbStateFixed(c: Climb): ClimbState {
   const n = Math.max(0, c.stops);
   let lo = -1, hi = n, step = 1, probe: number | null = n ? 0 : null;
   let tally: Answer[] = [];

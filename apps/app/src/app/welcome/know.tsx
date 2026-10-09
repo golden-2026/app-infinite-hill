@@ -54,7 +54,7 @@ export default function Know() {
   const [offer, setOffer] = useState<"open" | "accepted" | "declined">("open");
   const [picked, setPicked] = useState<{ o: string; ok: boolean } | null>(null);
 
-  const climb: Climb = { stops: stops.length, answers, declined: offer === "declined" };
+  const climb: Climb = { stops: stops.length, answers, declined: offer === "declined", per: stops.map((s) => s.qs.length) };
   const state = climbState(climb);
   const cur: PlaceQ | undefined = state.probe === null ? undefined : stops[state.probe]?.qs[state.nth];
   const qKey = `${state.probe}:${state.nth}`;

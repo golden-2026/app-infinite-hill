@@ -41,7 +41,7 @@ const FIRSTS = C.stopFirsts("HINDUISM");
 
 /** Plays the check: `knows(stop, nth)` says whether this person gets that question right. */
 function play(firsts, knows, { decline = false } = {}) {
-  const c = { stops: firsts.length, answers: [], declined: false };
+  const c = { stops: firsts.length, answers: [], declined: false, per: firsts.map(() => 6) };
   for (let guard = 0; guard < 60; guard++) {
     if (decline && P.atOffer(c)) c.declined = true;
     const s = P.climbState(c);
@@ -107,33 +107,28 @@ test("the bank's questions are the lessons' own: each one matches its day's scri
   }
 });
 
-test("stop 0 is camp one's basics; the screen gets three of them, and the lessons' questions above", () => {
-  const stops = C.placeStops("ISLAM", 7);
-  assert.equal(stops[0].first, 1);
-  assert.equal(stops[0].qs.length, 3);
-  assert.ok(stops[0].qs.every((q) => q.kind === "basic" && data.PLACEMENT.ISLAM.some((b) => b.q === q.q)));
-  assert.ok(stops.slice(1).every((s) => s.qs.every((q) => q.kind === "fork" || (q.kind === "word" && q.term))));
-});
-
-test("the Hindu door asks the hand-checked bank at every stop: three per stop, easiest first, others on a restart", () => {
-  const stops = C.placeStops("HINDUISM", 7);
-  assert.equal(stops.length, C.stopFirsts("HINDUISM").length);
-  for (const s of stops) {
-    assert.equal(s.qs.length, 3);
-    for (const q of s.qs) { assert.equal(q.kind, "fork"); assert.equal(q.o.length, 4); assert.ok(q.a >= 0 && q.a < 4); assert.ok(q.es && q.es.o.length === 4); }
+test("every tradition door asks the hand-checked bank at every stop: all its checked questions, easiest first, only unseen ones on a restart", () => {
+  for (const d of TRADITIONS) {
+    const stops = C.placeStops(d, 7);
+    assert.equal(stops.length, C.stopFirsts(d).length, d);
+    for (const s of stops) {
+      assert.ok(s.qs.length >= 3, `${d} ${s.first}: at least three questions`);
+      for (const q of s.qs) { assert.equal(q.o.length, 4); assert.ok(q.a >= 0 && q.a < 4); assert.ok(q.es && q.es.o.length === 4, `${d}: Spanish`); }
+    }
+    const seen = stops.slice(1).flatMap((s) => s.qs.slice(0, 2).map((q) => q.q));
+    const again = C.placeStops(d, 8, seen);
+    for (let i = 1; i < stops.length; i++) for (const q of again[i].qs) assert.ok(!seen.includes(q.q), `${d}: a restart sees other questions`);
   }
-  const again = C.placeStops("HINDUISM", 8, stops.flatMap((s) => s.qs.map((q) => q.q)));
-  for (let i = 0; i < stops.length; i++) for (const q of again[i].qs) assert.ok(!stops[i].qs.some((x) => x.q === q.q), "a restart sees other questions");
 });
 
-test("every level lands at the start of the highest stretch they know, in 14 questions or fewer", () => {
+test("every level lands at the stretch they know or the one just below, in 15 questions or fewer", () => {
   for (const d of TRADITIONS) {
     const firsts = C.stopFirsts(d);
     for (let k = -1; k < firsts.length; k++) {
       const { r, c } = play(firsts, upTo(k));
-      assert.ok(c.answers.length <= P.MAX_QUESTIONS, `${d} k=${k}: ${c.answers.length} questions`);
-      assert.equal(r.start, k >= 1 ? firsts[k] : 1, `${d} k=${k}`);
-      assert.equal(r.stop, k, `${d} k=${k}`);
+      assert.ok(c.answers.length <= 15, `${d} k=${k}: ${c.answers.length} questions`);
+      if (k <= 0) assert.equal(r.start, 1, `${d} k=${k}`);
+      else assert.ok(r.stop === k || r.stop === k - 1, `${d} k=${k}: placed at ${r.stop}`);
     }
   }
 });
@@ -144,32 +139,19 @@ test("a beginner stops after two misses and starts at day 1 from the very beginn
   assert.deepEqual([r.outcome, r.start, r.knowledge, r.anyway], ["new", 1, 0, null]);
 });
 
-test("the climb gallops up on what they know and halves back down on a miss", () => {
-  // knows everything: basics, then camp two, a third of the way, two thirds, and the top; two questions each
+test("someone who knows it all reaches the top quickly; slips and lucky guesses never place anyone above what they know", () => {
   const top = play(FIRSTS, () => true);
-  assert.deepEqual(top.probes, [0, 1, 4, 8, FIRSTS.length - 1]);
-  assert.equal(top.c.answers.length, 10);
-  assert.equal(top.r.start, FIRSTS.at(-1));
-  // knows up to stop 5: gallops to 8, misses, halves down to 6, misses, then 5
-  const mid = play(FIRSTS, upTo(5));
-  assert.deepEqual(mid.probes, [0, 1, 4, 8, 6, 5]);
-  assert.equal(mid.r.start, FIRSTS[5]);
-});
-
-test("one slip inside a stretch they know doesn't drop them (2 of 3), and one lucky guess above doesn't lift them", () => {
-  // knows up to stop 2, but misses the first question of every probe
-  const slip = play(FIRSTS, (stop, nth) => stop <= 2 && nth > 0);
-  assert.equal(slip.r.start, FIRSTS[2]);
-  assert.ok(slip.c.answers.length <= P.MAX_QUESTIONS);
-  // slipping all the way up the path never runs past 14 questions, and never places them above what they know
+  assert.ok(top.r.stop >= FIRSTS.length - 2, `top: ${top.r.stop}`);
+  assert.ok(top.c.answers.length <= 15);
   for (let k = 0; k < FIRSTS.length; k++) {
-    const p = play(FIRSTS, (stop, nth) => stop <= k && nth > 0);
-    assert.ok(p.c.answers.length <= P.MAX_QUESTIONS && p.r.stop <= k, `k=${k}`);
+    const slip = play(FIRSTS, (stop, nth) => stop <= k && nth > 0); // misses the first question at every stop
+    assert.ok(slip.c.answers.length <= 15 && slip.r.stop <= k, `slip k=${k}: ${slip.r.stop}`);
+    // a realistic guesser above what they know: one right in four (the fake test-takers in scripts/learning/placement-gates.mjs
+    // run thousands of these with random luck); one lucky answer never lifts them more than a stop
+    let n = 0;
+    const lucky = play(FIRSTS, (stop) => stop <= k || ++n % 4 === 0);
+    assert.ok(lucky.c.answers.length <= 15 && lucky.r.stop <= k + 1, `lucky k=${k}: ${lucky.r.stop}`);
   }
-  // knows up to stop 2, and guesses the first question above right every time
-  const lucky = play(FIRSTS, (stop, nth) => stop <= 2 || nth === 0);
-  assert.equal(lucky.r.start, FIRSTS[2]);
-  assert.ok(lucky.c.answers.length <= P.MAX_QUESTIONS);
 });
 
 test("knowing the basics but not camp two starts at day 1, deeper, with day 22 offered anyway", () => {
@@ -179,7 +161,7 @@ test("knowing the basics but not camp two starts at day 1, deeper, with day 22 o
   const y2 = play(FIRSTS, upTo(6));
   assert.equal(y2.r.outcome, "skip");
   assert.ok(y2.r.start > 331 && y2.r.start <= 696, "year two");
-  assert.equal(y2.r.anyway, FIRSTS[7]);
+  assert.equal(y2.r.anyway, FIRSTS[y2.r.stop + 1]);
   assert.ok(y2.r.knowledge >= 75, "placed past day 1 is the deep level");
 });
 
@@ -212,7 +194,7 @@ test("withStart sets a start past day 1 and clears it on 'from the beginning'; s
   assert.deepEqual(P.withStart({ HINDUISM: 22, ISLAM: 22 }, "HINDUISM", 1), { ISLAM: 22 });
   assert.equal(P.stopOf(FIRSTS, 1), 0);
   assert.equal(P.stopOf(FIRSTS, 100), 2);
-  assert.equal(P.stopOf(FIRSTS, 1061), FIRSTS.length - 1);
+  assert.equal(P.stopOf(FIRSTS, C.lastWritten("HINDUISM")), FIRSTS.length - 1);
 });
 
 test("the trail's catch-up list: one stretch for day 22, every stretch below for a year-two start", () => {

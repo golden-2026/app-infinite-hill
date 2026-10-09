@@ -37,8 +37,10 @@ export function placeStops(door: string, seed = 1, seen: string[] = []): PlaceSt
   if (cur && cur.length === bank.stops.length) {
     return bank.stops.map((st, i) => {
       const fresh = cur[i].filter((q) => !seen.includes(q.q)), old = cur[i].filter((q) => seen.includes(q.q));
-      const three = [...pick(fresh, 3, seed + i), ...pick(old, 3, seed + i)].slice(0, 3).sort((x, y) => x.d - y.d);
-      return { first: st.first, last: st.last, camp: st.camp, name: st.name, qs: three.map((q) => ({ kind: "fork" as const, q: q.q, o: q.o, a: q.a, day: q.day, es: q.es })) };
+      // every checked question the stop has (the adaptive climb may come back to a stop): unseen ones first, easiest first
+      // on a retake, only questions not seen before (the climb skips a stop that has none left); the basics keep three
+      const all = (i === 0 ? fresh.length >= 3 : fresh.length >= 1) ? pick(fresh, fresh.length, seed + i).sort((x, y) => x.d - y.d) : i === 0 ? [...pick(fresh, fresh.length, seed + i), ...pick(old, old.length, seed + i)] : [];
+      return { first: st.first, last: st.last, camp: st.camp, name: st.name, qs: all.map((q) => ({ kind: "fork" as const, q: q.q, o: q.o, a: q.a, day: q.day, es: q.es })) };
     });
   }
   const basics: PlaceQ[] = ((data?.PLACEMENT?.[door] || []) as { q: string; o: string[]; a: number }[]).map((x) => ({ kind: "basic" as const, ...x }));

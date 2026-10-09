@@ -55,7 +55,7 @@ function take(door, pick, seen = []) {
   const answers = [];
   const asked = [];
   for (let guard = 0; guard < 40; guard++) {
-    const climb = { stops: stops.length, answers, declined: false };
+    const climb = { stops: stops.length, answers, declined: false, per: stops.map((s) => s.qs.length) };
     const st = P.climbState(climb);
     if (st.done) return { ...P.placementResult(climb, firsts), asked, stops: stops.length };
     const q = stops[st.probe]?.qs[st.nth];
@@ -118,6 +118,11 @@ for (const door of DOORS) {
     if (b.asked.some((q) => a.asked.includes(q))) repeats++;
   }
   g.push(["takes it twice: lands within one stop", pct(near / n2), near / n2 >= 0.9]);
+  // how long the check is (QUESTION_RULES §10: usually under 12, never more than 15), over every level of knower
+  { let sum = 0, most = 0, runs = 0;
+    for (let k = 0; k < S; k++) for (let r = 0; r < Math.max(50, Math.round(RUNS / S)); r++) { const res = take(door, LEARNERS.knows(k)); if (!res) continue; sum += res.asked.length; most = Math.max(most, res.asked.length); runs++; }
+    const avg = runs ? sum / runs : 0;
+    g.push([`questions asked: ${avg.toFixed(1)} on average, ${most} at most`, `${most}`, avg < 12 && most <= 15]); }
   g.push(["takes it twice: sees no question again", `${pct(1 - repeats / n2)} of retakes`, repeats === 0]);
   g.push(["expert outsider placed within one stop", "pending: needs blind-solve answers (rules §7)", null]);
   for (const [gate, result, pass] of g) { rows.push({ door, gate, result, pass }); if (pass === false) failed++; }
