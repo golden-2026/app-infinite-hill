@@ -111,7 +111,9 @@ test("every tradition door asks the hand-checked bank at every stop: all its che
   for (const d of TRADITIONS) {
     const stops = C.placeStops(d, 7);
     assert.equal(stops.length, C.stopFirsts(d).length, d);
-    for (const s of stops) {
+    // the first stop is camp one's simple basics (an easy first question); the checked bank starts at camp two
+    assert.ok(stops[0].qs.length === 3 && stops[0].qs.every((q) => q.kind === "basic"), `${d}: basics first`);
+    for (const s of stops.slice(1)) {
       assert.ok(s.qs.length >= 3, `${d} ${s.first}: at least three questions`);
       for (const q of s.qs) { assert.equal(q.o.length, 4); assert.ok(q.a >= 0 && q.a < 4); assert.ok(q.es && q.es.o.length === 4, `${d}: Spanish`); }
     }

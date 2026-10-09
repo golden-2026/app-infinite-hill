@@ -17,7 +17,7 @@ export const en = {
   // shared bits
   "onboarding.ratherNot": "rather not say",
   "onboarding.prevQuestion": "‹ previous question",
-  "onboarding.startMyPath": "Start my path",
+  "onboarding.startMyPath": "Create my own religion",
   // welcome/you
   "onboarding.you.title": "about you",
   "onboarding.you.eyebrow": "before the doors · {n} of 2",
@@ -255,7 +255,7 @@ export const es: Dict<typeof en> = {
   "onboarding.frame.skipA11y": "Saltar y empezar como invitado",
   "onboarding.ratherNot": "prefiero no decirlo",
   "onboarding.prevQuestion": "‹ pregunta anterior",
-  "onboarding.startMyPath": "Empezar mi camino",
+  "onboarding.startMyPath": "Crear mi propia religión",
   "onboarding.you.title": "sobre ti",
   "onboarding.you.eyebrow": "antes de las puertas · {n} de 2",
   "onboarding.heard.title": "cómo nos encontraste",

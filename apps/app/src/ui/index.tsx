@@ -4,7 +4,7 @@ import { FADE } from "@/ui/fade";
 import { useEffect, type ReactNode } from "react";
 import { Image } from "expo-image";
 import { LinearGradient } from "expo-linear-gradient";
-import { Pressable, StyleSheet, Text, View, type StyleProp, type TextStyle, type ViewStyle } from "react-native";
+import { Platform, Pressable, StyleSheet, Text, View, type StyleProp, type TextStyle, type ViewStyle } from "react-native";
 import Animated, { Easing, useAnimatedStyle, useReducedMotion, useSharedValue, withRepeat, withSequence, withSpring, withTiming } from "react-native-reanimated";
 import { art, color, font, radius, type } from "@ih/brand";
 import { data } from "@ih/content";
@@ -34,6 +34,10 @@ const BTN = {
   danger: { bg: "transparent", fg: color.danger, border: color.danger },
   miss: { bg: "#E5484D", fg: "#fff", border: "transparent" }, // the lesson's "not quite" banner
 } as const;
+/** A decorative image or drawing, skipped by screen readers. (On the web, `accessible={false}` would reach the img/svg tag
+ *  as an unknown attribute and warn.) */
+export const decorative = (Platform.OS === "web" ? { "aria-hidden": true } : { accessible: false }) as any;
+
 export function Btn({ children, onPress, kind = "ink", disabled, label: a11y, style, testID }: {
   children: ReactNode; onPress?: () => void; kind?: keyof typeof BTN; disabled?: boolean; label?: string; style?: StyleProp<ViewStyle>; testID?: string;
 }) {
@@ -128,7 +132,7 @@ function Art({ refKey, h, w, style, fit = "contain" }: { refKey: string; h?: num
   if (!a) return null;
   const ratio = a.w / a.h;
   const size = h ? { height: h, width: w ?? h * ratio } : { width: w!, height: (w ?? 0) / ratio };
-  return <Image source={a.src} style={[size, style]} contentFit={fit} transition={FADE} cachePolicy="memory-disk" accessibilityIgnoresInvertColors accessible={false} />;
+  return <Image source={a.src} style={[size, style]} contentFit={fit} transition={FADE} cachePolicy="memory-disk" accessibilityIgnoresInvertColors {...decorative} />;
 }
 
 export function Logo({ h = 44 }: { h?: number }) {
@@ -195,7 +199,7 @@ export function Guy({ pose = "wave", h = 160, style, still }: { pose?: string; h
     // the loop already moves: no extra breathing on top, just the pop when the pose changes
     return (
       <Animated.View style={[style, { transformOrigin: "50% 100%" } as any, still ? null : popOnly]}>
-        <Image source={loop} style={{ width: h, height: h }} contentFit="contain" autoplay accessibilityIgnoresInvertColors accessible={false} />
+        <Image source={loop} style={{ width: h, height: h }} contentFit="contain" autoplay accessibilityIgnoresInvertColors {...decorative} />
       </Animated.View>
     );
   }

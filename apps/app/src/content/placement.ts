@@ -33,9 +33,14 @@ export function placeStops(door: string, seed = 1, seen: string[] = []): PlaceSt
   // A door with a hand-checked bank (docs/learning/bank; the Hindu pilot, 2026-10-06) asks those questions at every stop,
   // basics included: three per stop, easiest first, a different three on a restart. They test understanding, and their
   // right answer is no longer usually the longest one.
+  const basics: PlaceQ[] = ((data?.PLACEMENT?.[door] || []) as { q: string; o: string[]; a: number }[]).map((x) => ({ kind: "basic" as const, ...x }));
+  // the very first questions are camp one's simple basics on every door ("namaste. what's actually being said?"): a
+  // newcomer's first question should feel easy (demo walk-through, 2026-10-09); the checked bank starts at camp two
+  const easy = (seedN: number) => [...pick(basics.filter((q) => !seen.includes(q.q)), 3, seedN), ...pick(basics.filter((q) => seen.includes(q.q)), 3, seedN)].slice(0, 3);
   const cur = CURATED[door];
   if (cur && cur.length === bank.stops.length) {
     return bank.stops.map((st, i) => {
+      if (i === 0 && basics.length >= 3) return { first: st.first, last: st.last, camp: st.camp, name: st.name, qs: easy(seed) };
       const fresh = cur[i].filter((q) => !seen.includes(q.q)), old = cur[i].filter((q) => seen.includes(q.q));
       // every checked question the stop has (the adaptive climb may come back to a stop): unseen ones first, easiest first
       // on a retake, only questions not seen before (the climb skips a stop that has none left); the basics keep three
@@ -43,10 +48,9 @@ export function placeStops(door: string, seed = 1, seen: string[] = []): PlaceSt
       return { first: st.first, last: st.last, camp: st.camp, name: st.name, qs: all.map((q) => ({ kind: "fork" as const, q: q.q, o: q.o, a: q.a, day: q.day, es: q.es })) };
     });
   }
-  const basics: PlaceQ[] = ((data?.PLACEMENT?.[door] || []) as { q: string; o: string[]; a: number }[]).map((x) => ({ kind: "basic" as const, ...x }));
   return bank.stops.map((st, i) => ({
     first: st.first, last: st.last, camp: st.camp, name: st.name,
-    qs: i === 0 && basics.length >= 3 ? [...pick(basics.filter((q) => !seen.includes(q.q)), 3, seed), ...pick(basics.filter((q) => seen.includes(q.q)), 3, seed)].slice(0, 3) : st.qs.map((q) => (q.kind === "word" ? { kind: "word" as const, q: q.term, term: q.term, o: q.o, a: q.a, day: q.day } : { kind: "fork" as const, q: q.q, o: q.o, a: q.a, day: q.day })),
+    qs: i === 0 && basics.length >= 3 ? easy(seed) : st.qs.map((q) => (q.kind === "word" ? { kind: "word" as const, q: q.term, term: q.term, o: q.o, a: q.a, day: q.day } : { kind: "fork" as const, q: q.q, o: q.o, a: q.a, day: q.day })),
   }));
 }
 

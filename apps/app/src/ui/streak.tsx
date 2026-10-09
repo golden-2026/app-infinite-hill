@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { Text, View } from "react-native";
 import Animated, { Easing, useAnimatedStyle, useReducedMotion, useSharedValue, withDelay, withTiming } from "react-native-reanimated";
 import Svg, { Circle, Defs, Mask, Path, Rect } from "react-native-svg";
-import { Sun, color, font, type } from "@/ui";
+import { Sun, color, decorative, font, type } from "@/ui";
 import { getLang, t } from "@/i18n";
 
 export const GOLDEN = "#EEFF6A";
@@ -55,7 +55,7 @@ export function Odometer({ from, to, size = 110, ink = color.ink, delay = 350, d
 export function Moon({ size = 22, fill = MOON, faint = false }: { size?: number; fill?: string; faint?: boolean }) {
   const id = `m${size}${faint ? "f" : ""}`;
   return (
-    <Svg width={size} height={size} viewBox="0 0 24 24" accessible={false}>
+    <Svg width={size} height={size} viewBox="0 0 24 24" {...decorative}>
       <Defs>
         <Mask id={id}><Rect x="0" y="0" width="24" height="24" fill="#fff" /><Circle cx="16" cy="8" r="8" fill="#000" /></Mask>
       </Defs>

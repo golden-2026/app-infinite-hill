@@ -30,7 +30,7 @@ export const en = {
   "door.JUDAISM": "Judaism",
   "door.BUDDHISM": "Buddhism",
   "door.SIKHISM": "Sikhism",
-  "door.SPIRITUAL": "My Own Religion",
+  "door.SPIRITUAL": "my own religion",
   // camps and the years after
   "camp.label": "Camp {n}",
   "camp.Camp 1": "First steps",

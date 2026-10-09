@@ -26,7 +26,7 @@ export default function MeetVoice() {
       <Face ic={ic} w={"100%" as any} h={260} r={22} big />
       <Text style={type.caption()}>
         {t("onboarding.voice.long")}<Text style={{ color: color.ink, fontFamily: font.text[600] }}>{t("onboarding.voice.camps")}</Text>{t("onboarding.voice.campList")}{" "}
-        {v.licensed ? t("onboarding.voice.licensed", { name: ic.short }) : t("onboarding.voice.unlicensed", { name: ic.short })}{t("onboarding.voice.grewUp")}
+        {v.licensed ? t("onboarding.voice.licensed", { name: ic.short }) : t("onboarding.voice.unlicensed", { name: ic.short })}{door === "SPIRITUAL" ? "." : t("onboarding.voice.grewUp")}
       </Text>
     </WelcomeFrame>
   );

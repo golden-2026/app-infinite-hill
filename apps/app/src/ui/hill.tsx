@@ -14,7 +14,7 @@ import Svg, { Circle, Defs, Ellipse, G, Line, Path, RadialGradient, Rect, Stop, 
 import { art } from "@ih/brand";
 import { lookoutArt, SUMMIT_ART } from "@/content/journeys";
 import { FADE } from "@/ui/fade";
-import { color, font } from "@/ui";
+import { color, decorative, font } from "@/ui";
 import { campLabel, campName as campNameOf, isEs, t } from "@/i18n";
 
 const W = 390;
@@ -137,11 +137,11 @@ export function HillScene({ hour, done, total, doneToday, onStart, onReplay, fir
       const shift = (h * (1 - a.w / a.h)) / 2; // the loop is square; keep him centered where the still pose stood (hill units)
       return (
         <View key={pose + x} pointerEvents="none" style={{ position: "absolute", left: px(x - shift), top: py(y), height: py(h), width: px(h), zIndex: 6 }}>
-          <Image source={loop} style={{ width: "100%", height: "100%" }} contentFit="contain" autoplay accessible={false} />
+          <Image source={loop} style={{ width: "100%", height: "100%" }} contentFit="contain" autoplay {...decorative} />
         </View>
       );
     }
-    const img = <Image source={a.src} style={{ height: "100%", aspectRatio: a.w / a.h }} contentFit="contain" transition={FADE} accessible={false} />;
+    const img = <Image source={a.src} style={{ height: "100%", aspectRatio: a.w / a.h }} contentFit="contain" transition={FADE} {...decorative} />;
     return (
       <Animated.View key={pose + x} pointerEvents="none" style={[{ position: "absolute", left: px(x), top: py(y), height: py(h), zIndex: 6 }, animated ? bobStyle : null]}>{img}</Animated.View>
     );
@@ -169,10 +169,10 @@ export function HillScene({ hour, done, total, doneToday, onStart, onReplay, fir
 
   return (
     <View onLayout={(e) => setWidth(e.nativeEvent.layout.width)} style={{ width: "100%", aspectRatio: W / H }}>
-      {bg ? <Image source={bg.src} style={{ position: "absolute", width: "100%", height: "100%" }} contentFit="cover" transition={FADE} cachePolicy="memory-disk" accessible={false} /> : null}
+      {bg ? <Image source={bg.src} style={{ position: "absolute", width: "100%", height: "100%" }} contentFit="cover" transition={FADE} cachePolicy="memory-disk" {...decorative} /> : null}
       {view ? (
         <View pointerEvents="none" style={{ position: "absolute", left: 0, right: 0, top: 0, height: py(viewBottom), overflow: "hidden" }}>
-          <Image source={view.src} style={{ position: "absolute", left: 0, right: 0, bottom: 0, width: "100%", aspectRatio: view.w / view.h }} contentFit="cover" transition={FADE} cachePolicy="memory-disk" accessible={false} />
+          <Image source={view.src} style={{ position: "absolute", left: 0, right: 0, bottom: 0, width: "100%", aspectRatio: view.w / view.h }} contentFit="cover" transition={FADE} cachePolicy="memory-disk" {...decorative} />
         </View>
       ) : null}
       <LinearGradient pointerEvents="none" colors={["rgba(247,247,245,0)", "#F7F7F5"]} style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: 56 }} />
@@ -237,7 +237,9 @@ export function HillScene({ hour, done, total, doneToday, onStart, onReplay, fir
         const onPress = () => {
           if (s === "now") onStart();
           else if (s === "done") onReplay(lesson);
-          else showTip(i, s === "tomorrow" ? (night || hour >= 19 ? t("home.hill.tomorrowNight") : t("home.hill.tomorrowDay")) : t("home.hill.unlocksAfter", { n: String(lesson - 1) }));
+          // the next stone opens right away (owner, 2026-10-08: keep going, as many as you like)
+          else if (s === "tomorrow") onReplay(lesson);
+          else showTip(i, t("home.hill.unlocksAfter", { n: String(lesson - 1) }));
         };
         const weekEnd = lantern ? `${t("home.hill.weekEnd", { n: Math.floor(i / WEEK) + 1 })}${s === "done" ? t("home.hill.lanternLit") : ""}` : "";
         const a11y = (s === "now" ? t("home.hill.startA11y", { label }) : s === "done" ? t("home.hill.doneA11y", { n: String(lesson) }) : s === "tomorrow" ? t("home.hill.tomorrowA11y", { n: String(lesson) }) : t("home.hill.lockedA11y", { n: String(lesson) })) + weekEnd;

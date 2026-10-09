@@ -41,7 +41,7 @@ export default function PickDoor() {
   // one door shown (the faith you're learning, or your own): it's already chosen, so "continue" works straight away
   // ...and someone who said "spiritual, not religious" or "just curious" finds "my own path" already chosen (every door
   // stays one tap away)
-  const single = (mode === "partner" || mode === "yours") && home ? home : stance === "spiritual" || (why === "curious" && mode === "own") ? "SPIRITUAL" : null;
+  const single = (mode === "partner" || mode === "yours") && home ? home : stance === "spiritual" || mode === "own" ? "SPIRITUAL" : null;
   const [door, setDoor] = useState<string | null>(single);
   useEffect(() => { if (single) setDoor((d) => d ?? single); }, [single]);
   const [more, setMore] = useState(false);
