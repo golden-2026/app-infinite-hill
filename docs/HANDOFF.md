@@ -50,6 +50,7 @@ design changes go live, ask before deploying, real testimonials only, check usag
   once the weekly limit is hit.
 
 ## Session of 2026-10-06 (pick up here; newest first)
+- LIVE: expo-live88 (2026-10-09): the alternative path is "my own religion" everywhere (app, site en+es, footer pages, Guide/companion prompts; server still accepts "Simply Spiritual" from old apps). Site: three ways to walk it, FAQ, games line, placement FAQ.
 - LIVE: expo-live87 (2026-10-09): site "make your own path" gains one line naming the three ways (en + es).
 - LIVE: expo-live86 (2026-10-09): Simply Spiritual holds the courses: "your own path, your way" (every day / a course / wander) after picking my own path; religion paths show no courses; no seeker detour before the doors.
 - LIVE: expo-live85 (2026-10-09): placement quiz for all 7 tradition paths through year 4 (hand-checked bank, 17 stops each; adaptive check, see docs/learning/placement-gates.md). Owner approved.
