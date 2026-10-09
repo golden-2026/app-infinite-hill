@@ -209,7 +209,7 @@ test("chat is grounded in the door's lessons, keeps secrets server-side, and off
     assert.equal(JSON.stringify(ok).includes("provider-id-must-not-escape"), false);
 
     // the openness setting changes the rule; labels work as well as keys
-    await call({ kind: "chat", body: chatBody({ profile: { door: "Simply Spiritual", openness: "love" }, context: { ...context, door: "SPIRITUAL" } }) });
+    await call({ kind: "chat", body: chatBody({ profile: { door: "My Own Religion", openness: "love" }, context: { ...context, door: "SPIRITUAL" } }) });
     assert.match(capture.body.system, /you may note a similar idea/);
     assert.match(capture.body.system, /never suggest they need to pick a religion/);
 

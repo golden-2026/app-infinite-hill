@@ -108,7 +108,7 @@ test("rebuilds a server-owned same-Door prompt and shapes only bounded answer te
   assert.equal(JSON.stringify(result).includes("provider-id-must-not-escape"), false);
 });
 
-test("supports all eight exact Door labels, including Simply Spiritual", async () => {
+test("supports all eight exact Door labels, including My Own Religion", async () => {
   process.env.ANTHROPIC_API_KEY = "test-server-key";
   const received = [];
   globalThis.fetch = async (_url, options) => {
@@ -116,12 +116,12 @@ test("supports all eight exact Door labels, including Simply Spiritual", async (
     return new Response(JSON.stringify({ content: [{ type: "text", text: "answer" }] }), { status: 200 });
   };
   try {
-    for (const door of ["Christianity", "Catholicism", "Hinduism", "Islam", "Judaism", "Buddhism", "Sikhism", "Simply Spiritual"]) {
+    for (const door of ["Christianity", "Catholicism", "Hinduism", "Islam", "Judaism", "Buddhism", "Sikhism", "My Own Religion"]) {
       const result = await call({ body: payload({ door }) });
       assert.equal(result.status, 200, door);
     }
     assert.equal(received.length, 8);
-    assert.match(received.at(-1), /Simply Spiritual's own tradition/);
+    assert.match(received.at(-1), /My Own Religion's own tradition/);
   } finally {
     globalThis.fetch = originalFetch;
   }
@@ -193,7 +193,7 @@ test("accepts an enum-only onboarding profile and maps it to fixed prompt senten
     assert.match(systems[0], /explain from the ground up/);
     assert.match(systems[0], /never bring up other traditions/);
 
-    const open = await call({ body: { ...payload({ door: "Simply Spiritual" }), profile: { depth: "some", openness: "love" } } });
+    const open = await call({ body: { ...payload({ door: "My Own Religion" }), profile: { depth: "some", openness: "love" } } });
     assert.equal(open.status, 200);
     assert.match(systems[1], /mention a similar idea from another tradition/);
     assert.match(systems[1], /Never rank religions/);
@@ -289,7 +289,7 @@ test("knowledge rules: full answers beyond the lessons, depth by profile, public
   assert.doesNotMatch(beginner, /200 words|muhurat/);
 
   // each door names its own languages and the person to ask; no profile gets the middle depth
-  const asks = { Christianity: "pastor or priest", Catholicism: "parish priest", Islam: "imam", Buddhism: "monastic", Sikhism: "granthi", "Simply Spiritual": "a teacher they trust" };
+  const asks = { Christianity: "pastor or priest", Catholicism: "parish priest", Islam: "imam", Buddhism: "monastic", Sikhism: "granthi", "My Own Religion": "a teacher they trust" };
   for (const [door, who] of Object.entries(asks)) assert.ok(knowledgeRules(door, null).includes(who), door);
   assert.match(knowledgeRules("Islam", null), /Arabic.*Pickthall/s);
   assert.match(knowledgeRules("Sikhism", null), /Gurmukhi/);
@@ -303,4 +303,20 @@ test("knowledge rules: full answers beyond the lessons, depth by profile, public
   assert.match(es, /paraphrase in Spanish/);
   assert.match(es, /press 2/);
   assert.match(es, /scholar's depth/);
+});
+
+test("an app not yet updated still sends the old name, Simply Spiritual, and is understood as My Own Religion", async () => {
+  process.env.ANTHROPIC_API_KEY = "test-server-key";
+  const received = [];
+  globalThis.fetch = async (_url, options) => {
+    received.push(JSON.parse(options.body).system);
+    return new Response(JSON.stringify({ content: [{ type: "text", text: "answer" }] }), { status: 200 });
+  };
+  try {
+    const result = await call({ body: payload({ door: "Simply Spiritual" }) });
+    assert.equal(result.status, 200);
+    assert.match(received.at(-1), /My Own Religion's own tradition/);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
 });

@@ -171,6 +171,10 @@ function rebuildIslamCamp1() {
   if (data.PLACE_ALL) data.PLACE_ALL.ISLAM = quiz.map((x) => ({ ...x, o: [...x.o] }));
 }
 
+// The alternative to the seven religions is "my own religion" (owner, 2026-10-09; it was "Simply Spiritual" in the
+// design build). The door key stays SPIRITUAL everywhere; only the name people see changes, here at the source.
+{ const own = data.DOORS.find((d) => d[1] === "SPIRITUAL"); if (own) own[0] = "My Own Religion"; }
+
 export { data };
 export const { buildDay, icon, label, camp1, native, skyFor, faceFor, trailX, placeFromScore, iconsShared, splitBeats, screenLines, parseDur } = logic;
 // The design build's offline Guide matched a lesson's word anywhere inside the question ("amin" in "examine",
