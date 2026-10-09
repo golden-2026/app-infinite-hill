@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the meat question: kutha forbidden by the code, and a langar where every plate can match. Your line was different plates. Did you leave someone's plate to them? Day one thousand three hundred fifty-four.",
+      "voice": "Yesterday, the meat question: no ritually slaughtered meat, and a langar where every plate can match. Your line was different plates.",
       "screen": [
         "`DIFFERENT PLATES.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Dasam Granth means the book of the Tenth, the tenth Guru, Guru Gobind Singh. It is a large collection: hymns of praise, long retellings of old stories, poetry about battle, and the Zafarnama, a letter to the emperor. Here the views differ. Some Sikhs hold that the whole collection is the Guru's own work. Others hold that parts of it, especially some of the long story sections, came from poets who gathered at his court. Others take a path between, accepting the prayers sung every day and studying the rest carefully. Scholars write books on it, and the conversation is sometimes heated. Now the part the sides share. Jaap Sahib is a cascade of short, rhythmic lines praising the Timeless One. It opens, here in paraphrase, by describing God as having no mark or sign, no color, no caste, no lineage. Chaupai is a prayer asking God's protection, plain and personal. The Sikh code of conduct places both among the daily prayers, the Nitnem: Jaap Sahib in the morning, Chaupai within the evening prayer. Both are recited when the amrit is prepared. So Sikhs who disagree sharply about the book's edges recite the same lines, morning and evening. That's a useful thing to notice about open questions. A question about authorship doesn't have to empty the prayer. People can keep studying a hard question and keep their thumbs on the same worn page.",
+      "voice": "Dasam Granth means the book of the Tenth, the tenth Guru, Guru Gobind Singh. It is a large collection: hymns of praise, long retellings of old stories, poetry about battle, and the Zafarnama, a letter to the emperor. Here the views differ. Some Sikhs hold that the whole collection is the Guru's own work. Others hold that parts of it, especially some of the long story sections, came from poets who gathered at his court. Others take a path between, accepting the prayers sung every day and studying the rest carefully. Scholars write books on it, and the conversation is sometimes heated. Now the part the sides share. Jaap Sahib is a cascade of short, rhythmic lines praising the Timeless One. It opens, here in paraphrase, by describing God as having no mark or sign, no color, no caste, no lineage. Chaupai is a prayer asking God's protection, plain and personal. The Sikh code of conduct places both among the daily prayers, the Nitnem: Jaap Sahib in the morning, Chaupai within the evening prayer. Both are recited when the amrit is prepared. So Sikhs who disagree sharply about the book's edges recite the same lines, morning and evening. A question about authorship doesn't have to empty the prayer. People can keep studying a hard question and keep their thumbs on the same worn page.",
       "screen": [
         "`DASAM GRANTH: THE BOOK OF THE TENTH.` · `VIEWS DIFFER ON WHO WROTE WHICH PARTS.` · `JAAP AND CHAUPAI: IN THE DAILY PRAYERS.` · `STUDY THE QUESTION, KEEP THE PRAYER.` · then, large: `NO MARK, NO COLOR, NO CASTE.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: hold a question lightly. Settle, and breathe. Bring up one question you carry that doesn't have an answer yet. About faith, about family, about what's true. Instead of gripping it, set it in an open palm. Let your actual hand open on your knee if that helps. Breathe in, and let the question stay. Breathe out, and let it stop demanding a verdict today. If you pray, you can rest on the Timeless One, the one Jaap Sahib praises. The bell holds the time.",
+      "voice": "Bring up one question you carry that has no answer yet, about faith, family or what's true, and instead of gripping it, set it in an open palm; let your hand open on your knee if that helps. Breathe in and let the question stay, breathe out and let it stop demanding a verdict today, and if you pray, rest on the Timeless One whom Jaap Sahib praises.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: shared devotion. Today, with someone you disagree with, find one thing you both still love, and say it out loud. Day one thousand three hundred fifty-four.",
+      "voice": "Your line: shared devotion. Arguing about the edges, praying from the center. Day one thousand three hundred fifty-four is done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Sikhs differ on the authorship of parts of the Dasam Granth, while Jaap Sahib and Chaupai, which the Rehat Maryada places in the daily Nitnem, are recited morning and evening, and both are recited when amrit is prepared.",
   "games": {
+    "guess": [
+      "Sikhs differ on who wrote parts of the book",
+      "whether the Tenth Guru's book should be printed",
+      "which language the daily prayers should use"
+    ],
     "match": {
       "prompt": "inside the Dasam Granth question: tap the pairs.",
       "pairs": [
@@ -139,7 +144,49 @@
         "Nanakpanthi",
         "one who walks on Nanak's path"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "a friend from yoga class",
+      "says": "If Sikhs disagree about who wrote the Dasam Granth, do they still pray from it?",
+      "options": [
+        "Many do. Jaap Sahib and Chaupai come from it, and the code sets both in the daily prayers.",
+        "No. Every Sikh has stopped reciting from it until the authorship question is settled.",
+        "Only on the Tenth Guru's birthday; the rest of the year it stays closed."
+      ],
+      "answer": 0,
+      "meaning": "Views differ on who wrote parts of the Dasam Granth, but Jaap Sahib and Chaupai are in the daily Nitnem, recited across the panth."
+    },
+    "gloss": {
+      "gutka": {
+        "meaning": "a small prayer book",
+        "script": "ਗੁਟਕਾ",
+        "say": "GUT-kaa"
+      },
+      "Dasam Granth": {
+        "meaning": "the book of the Tenth Guru, Guru Gobind Singh",
+        "script": "ਦਸਮ ਗ੍ਰੰਥ",
+        "say": "DUS-um GRUNTH"
+      },
+      "Jaap Sahib": {
+        "meaning": "a morning prayer praising the Timeless One",
+        "script": "ਜਾਪੁ ਸਾਹਿਬ",
+        "say": "JAAP SAA-hib"
+      },
+      "Chaupai": {
+        "meaning": "a prayer asking God's protection",
+        "script": "ਚੌਪਈ",
+        "say": "chau-PAH-ee"
+      },
+      "Nitnem": {
+        "meaning": "the daily prayers",
+        "script": "ਨਿਤਨੇਮ",
+        "say": "NIT-naym"
+      },
+      "Zafarnama": {
+        "meaning": "Guru Gobind Singh's letter to the emperor",
+        "say": "ZUF-ur-naa-maa"
+      }
+    }
   },
   "sources": [
     {
@@ -170,7 +217,9 @@
       "Three positions on authorship described without ranking; no names of scholars or bodies. 'The part the sides share' is a soft claim about shared devotion to Jaap and Chaupai (per the outline): please confirm.",
       "Rehat Maryada placing Jaap Sahib and Chaupai in the Nitnem and Jaap Sahib in the amrit preparation: please confirm.",
       "'In many gutkas' in the hook is a soft observation about worn pages, not a statistic; Keeper may prefer 'in some gutkas'.",
-      "Editor: fixed a factual slip: the Rehat Maryada places Chaupai in the evening prayer (Rehras), not at dawn, so 'at dawn' became 'morning and evening' in the voice, screen, fork and howItsDone; Chaupai is now 'a prayer asking God's protection'; 'his letter' became 'the Zafarnama, a letter to the emperor' to avoid assuming authorship mid-debate; 'always been sung' and 'many gutkas' softened. Please confirm Chaupai is among the banis at amrit preparation."
+      "Editor: fixed a factual slip: the Rehat Maryada places Chaupai in the evening prayer (Rehras), not at dawn, so 'at dawn' became 'morning and evening' in the voice, screen, fork and howItsDone; Chaupai is now 'a prayer asking God's protection'; 'his letter' became 'the Zafarnama, a letter to the emperor' to avoid assuming authorship mid-debate; 'always been sung' and 'many gutkas' softened. Please confirm Chaupai is among the banis at amrit preparation.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

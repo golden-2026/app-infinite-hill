@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, requiem: the old prayer of rest and light for the dead. Your line was let perpetual light shine. Whose name came to you, and did it get its moment? Day one thousand three hundred ninety-four.",
+      "voice": "Yesterday, requiem: the old prayer of rest and light for the dead. Your line was let perpetual light shine.",
       "screen": [
         "`LET PERPETUAL LIGHT SHINE.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "The back page of a parish bulletin, under the Mass times. Saturday evening: for Maria Lopez, deceased. Sunday morning: for the Kowalski family. Tuesday: in thanksgiving, for a safe surgery. Wednesday: for a grandmother, on her birthday. Then, on Saturday evening, the priest says it aloud near the start or in the prayers: this Mass is offered for Maria. A few people in the pews look up. One of them is the one who asked. What does it mean to say a Mass is for someone? And what about the envelope that went to the parish office? Today, Mass intentions.",
+      "voice": "The back page of a parish bulletin, under the Mass times. Saturday evening: for Maria Lopez, deceased. Sunday morning: for the Kowalski family. Tuesday: in thanksgiving, for a safe surgery. Wednesday: for a grandmother, on her birthday. On Saturday evening the priest says it aloud, near the start or in the prayers: this Mass is offered for Maria. A few people in the pews look up. One of them is the one who asked. What does it mean to say a Mass is for someone? And what about the envelope that went to the parish office?",
       "screen": [
         "`THE BACK PAGE OF THE BULLETIN.` → `THIS MASS IS OFFERED FOR MARIA.` → `WHAT ABOUT THE ENVELOPE?`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Start with the old root of the custom. In the second book of Maccabees, after a battle, Judas Maccabeus takes up a collection and sends the silver to Jerusalem so that a sacrifice can be offered for the soldiers who had died. That's the passage that closed with yesterday's holy and wholesome thought. Catholics see in it the shape of a Mass intention: an offering, a sacrifice, and a particular person held up to God. Next, who a Mass can be for. Anyone. The living and the dead. A sick friend, a newborn, a marriage on its anniversary, a soldier far away. Church law says a priest is free to apply the Mass for anyone, living or dead. It doesn't have to be a Catholic. Then the envelope. Church law allows a priest to accept an offering from someone who asks for a Mass for their intention. But the same law insists there must be no hint of trade or commerce in it. The offering is a gift that supports the Church and its priests, not a price that buys a Mass. The law even urges priests to celebrate Mass for the intentions of the faithful, especially the poor, without receiving any offering at all. If you can't give, you can still ask. Last, what the intention does and doesn't do. The Saturday evening Mass isn't a different Mass, and Maria isn't the only person it touches. The whole Church prays, and Christ's offering is the same. The intention simply names one face inside it, the way you might hold up one photograph in a crowded room and say, especially her.",
+      "voice": "Start with an old root. In the second book of Maccabees, after a battle, Judas Maccabeus takes up a collection and sends the silver to Jerusalem so a sacrifice can be offered for the soldiers who died. That's the passage that closed with yesterday's holy and wholesome thought. Catholics see in it the shape of a Mass intention: an offering, a sacrifice, and a particular person held up to God. Who can a Mass be for? Anyone: a sick friend, a newborn, a marriage on its anniversary, a soldier far away. Church law says a priest is free to apply the Mass for anyone, living or dead. It doesn't have to be a Catholic. Then the envelope. Church law allows a priest to accept an offering from someone who asks for a Mass for their intention, but insists there must be no hint of trade or commerce in it. The offering is a gift that supports the Church and its priests, not a price that buys a Mass. The law even urges priests to celebrate Mass for the intentions of the faithful, especially the poor, without receiving any offering at all. If you can't give, you can still ask. Last, what an intention does. Saturday's Mass isn't a different Mass, and Maria isn't the only person it touches. The whole Church prays, and Christ's offering is the same. The intention names one face inside it, like holding up one photograph in a crowded room and saying, especially her.",
       "screen": [
         "`A COLLECTION SENT TO JERUSALEM.` · `FOR ANYONE, LIVING OR DEAD.` · `A GIFT, NOT A PRICE.` · `ONE FACE INSIDE THE WHOLE.` · then, large: `THIS MASS IS OFFERED FOR...`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: get ready to request a Mass for someone. Settle, and breathe. Ask yourself who comes to mind first. Someone who has died, someone sick, someone starting something new, someone you're worried about and can't help. Let one person settle. Hold their face, and simply wish them every good thing for one long breath. If you're Catholic, or would like to be part of this, you can plan to call a parish office this week and ask for a Mass for them. If not, keep them close for the rest of the bell. The bell holds the time.",
+      "voice": "Ask who comes to mind first: someone who has died, someone sick, someone starting something new, someone you worry about and can't help. Let one person settle, hold their face, and wish them every good thing for one long breath. If you're Catholic, or would like to be part of this, you might plan to call a parish office and ask for a Mass for them; if not, keep them close.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: a mass for them. Today, look up a parish office number and ask for a Mass for someone, or simply write that person's name somewhere you'll see it tonight. Day one thousand three hundred ninety-four.",
+      "voice": "Your line: a mass for them. One face, named inside the whole Church's prayer. Day one thousand three hundred ninety-four.",
       "screen": []
     },
     {
@@ -139,7 +139,36 @@
         "Totus Tuus",
         "totally yours"
       ]
-    ]
+    ],
+    "guess": [
+      "a Mass offered for one person, living or dead",
+      "a private Mass held for one paying family",
+      "the reason a priest gives for his homily"
+    ],
+    "chat": {
+      "who": "your neighbor",
+      "says": "Do you have to pay to get a Mass said for someone?",
+      "options": [
+        "No; any offering is a gift, not a price, and priests are urged to say Mass for the poor freely.",
+        "Yes; the envelope is the fee, and without it the Mass can't be offered for them.",
+        "No, but a Mass can only be offered for someone who has already died."
+      ],
+      "answer": 0,
+      "meaning": "Church law allows an offering but forbids any hint of trade; it's a gift, and priests are urged to offer Mass for the poor without one."
+    },
+    "gloss": {
+      "bulletin": {
+        "meaning": "a parish's weekly printed newsletter",
+        "say": "BUL-ih-tin"
+      },
+      "Judas Maccabeus": {
+        "meaning": "a leader in 2 Maccabees who sent silver for a sacrifice for the dead",
+        "say": "JOO-dus mak-uh-BEE-us"
+      },
+      "intention": {
+        "meaning": "the person or need a Mass is offered for"
+      }
+    }
   },
   "sources": [
     {
@@ -176,7 +205,9 @@
       "Bulletin names in the hook are invented examples, not real people;",
       "'The intention names one face inside it' is an image, not a doctrinal formula; a Keeper may want to add the distinction between the general fruits of the Mass and the special fruit applied to the intention, or keep it simple.",
       "Original: 'applicatio Missae' as a canonical/theological term; confirm form and pronunciation.",
-      "Editor pass: fixed the hook's continuity (Maria's Mass is Saturday evening, not a weekday) and the matching teach line."
+      "Editor pass: fixed the hook's continuity (Maria's Mass is Saturday evening, not a weekday) and the matching teach line.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

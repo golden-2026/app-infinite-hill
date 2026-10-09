@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, gurmat sangeet, the schools that teach the ragas, and Malar, the cooling one. Your line was keeping the ragas. What small skill did you keep alive? Day one thousand three hundred forty-eight.",
+      "voice": "Yesterday, gurmat sangeet, and Malar, the cooling raga. Your line was keeping the ragas.",
       "screen": [
         "`KEEPING THE RAGAS.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the small pictures. Illustrated janamsakhis, the life stories of Guru Nanak, show him in little scenes: under a tree, on a road with Mardana and his rabab, talking with holy men. Later, painters trained in the miniature styles of the Punjab hills worked for Sikh courts, painting rulers, Gurus and stories in fine detail with tiny brushes. Second, the modern canvas. In more recent times, painters like Sobha Singh made large, soft-lit portraits of the Gurus. His Guru Nanak, gentle and luminous, is the kind of picture that ends up framed in homes and gurdwara halls. Other modern artists paint the panth's history, its martyrs, and Punjab's daily life, each in their own style. Third, an honest question. Since these faces come from devotion and imagination, each one is an artist's offering. Some Sikhs treasure these pictures as a way into devotion. Others are cautious, and ask that a painting never be bowed to or treated as the Guru, because for Sikhs the Guru today is the Guru Granth Sahib and the Word. Both are said with care. Fourth, what no paint can hold. The Mool Mantar, the opening of the Guru Granth Sahib, speaks of God as akaal moorat: in paraphrase, a form beyond time. A painting can show a Guru as an artist imagines him. It can't show the one the Guru pointed to. And maybe that's the gift these pictures can give: they point past themselves. Faith in paint, held lightly.",
+      "voice": "First, the small pictures. Illustrated janamsakhis, the life stories of Guru Nanak, show him in little scenes: under a tree, on a road with Mardana and his rabab, talking with holy men. Later, painters trained in the miniature styles of the Punjab hills worked for Sikh courts, painting rulers, Gurus and stories in fine detail with tiny brushes. Second, the modern canvas. In more recent times, painters like Sobha Singh made large, soft-lit portraits of the Gurus. His Guru Nanak, gentle and luminous, is the kind of picture that ends up framed in homes and gurdwara halls. Other modern artists paint the panth's history, its martyrs and Punjab's daily life, each in their own style. Third, an honest question. Since these faces come from devotion and imagination, each one is an artist's offering. Some Sikhs treasure these pictures as a way into devotion. Others are cautious, and ask that a painting never be bowed to or treated as the Guru, because for Sikhs the Guru today is the Guru Granth Sahib and the Word. Both are said with care. Fourth, what no paint can hold. The Mool Mantar, the opening of the Guru Granth Sahib, speaks of God as akaal moorat: in paraphrase, a form beyond time. A painting can show a Guru as an artist imagines him. It can't show the one the Guru pointed to. Maybe that's the gift these pictures can give: they point past themselves. Faith in paint, held lightly.",
       "screen": [
         "`JANAMSAKHIS AND HILL MINIATURES.` · `SOBHA SINGH'S GURU NANAK.` · `NO ONE PAINTED THEM FROM LIFE.` · `AKAAL MOORAT: BEYOND TIME.` · then, large: `FAITH IN PAINT.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: look at a Sikh painting closely. Settle, and breathe. If you can, find one: a janamsakhi scene, a hill miniature, or a modern portrait. If you can't, bring to mind any painting you've seen of someone holy to anyone. Let your eyes move slowly. The hands. The background. Where the light falls. What did the painter choose to show, and what did they leave out? Then let the picture point you past itself, toward whatever it was trying to honor. The bell holds the time.",
+      "voice": "If you can, find a Sikh painting, a janamsakhi scene, a hill miniature or a modern portrait; if not, bring to mind any painting of someone holy to anyone. Let your eyes move slowly over the hands, the background, where the light falls, and ask what the painter chose to show and what they left out. Then let the picture point you past itself, toward whatever it was trying to honor.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: faith in paint. Today, look closely at one picture on a wall you pass every day, and ask what its maker was trying to honor. Day one thousand three hundred forty-eight.",
+      "voice": "Your line: faith in paint. Every face here is an offering, not a likeness. That's day one thousand three hundred forty-eight.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Paintings of the Gurus and of Sikh history hang in homes, gurdwara halls and museums; Sikhs differ on how such pictures should be used, and they are not worshiped as the Guru.",
   "games": {
+    "guess": [
+      "art made from devotion and imagination",
+      "portraits of the Gurus painted from life",
+      "decorations painted only on gurdwara walls"
+    ],
     "match": {
       "prompt": "inside Sikh painting: tap the pairs.",
       "pairs": [
@@ -139,7 +144,44 @@
         "Nanakpanthi",
         "one who walks on Nanak's path"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your daughter",
+      "says": "Is the Guru Nanak picture on Grandma's wall what he really looked like?",
+      "options": [
+        "No one painted him from life; it's an artist's devotion and imagination, pointing past itself.",
+        "Yes. It was traced from a portrait made during his lifetime, so every detail is exact.",
+        "No. It's an old photograph of him, colored in by hand by an artist much later."
+      ],
+      "answer": 0,
+      "meaning": "These faces come from devotion and imagination. A painting can show a Guru as an artist imagines him, and point past itself."
+    },
+    "gloss": {
+      "janamsakhis": {
+        "meaning": "illustrated life stories of Guru Nanak",
+        "say": "JUN-um-saa-khees"
+      },
+      "Sobha Singh": {
+        "meaning": "a modern painter of soft-lit portraits of the Gurus",
+        "script": "ਸੋਭਾ ਸਿੰਘ",
+        "say": "SOH-bhaa SING"
+      },
+      "Mool Mantar": {
+        "meaning": "the opening of the Guru Granth Sahib",
+        "script": "ਮੂਲ ਮੰਤਰ",
+        "say": "MOOL MUN-tur"
+      },
+      "akaal moorat": {
+        "meaning": "a form beyond time",
+        "script": "ਅਕਾਲ ਮੂਰਤਿ",
+        "say": "uh-KAAL MOO-rut"
+      },
+      "Mardana": {
+        "meaning": "Guru Nanak's Muslim companion, who played the rabab",
+        "script": "ਮਰਦਾਨਾ",
+        "say": "mur-DAA-naa"
+      }
+    }
   },
   "sources": [
     {
@@ -164,7 +206,9 @@
       "'Akaal moorat' paraphrased as 'a form beyond time'; please confirm the gloss.",
       "The two Sikh attitudes to pictures of the Gurus (treasured as a way into devotion; caution that they not be bowed to or treated as the Guru) are given without ranking; please confirm fairness.",
       "Original: ਚਿੱਤਰਕਾਰੀ (chitarkari) for painting; please confirm spelling and pronunciation.",
-      "Editor: the unsourced historical claim that no one painted the Gurus from life is cut throughout (hook, teach, word, myth, fork); the line telling children what they think is softened."
+      "Editor: the unsourced historical claim that no one painted the Gurus from life is cut throughout (hook, teach, word, myth, fork); the line telling children what they think is softened.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

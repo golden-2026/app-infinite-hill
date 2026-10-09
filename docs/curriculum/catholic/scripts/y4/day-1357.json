@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the close of the days on Mary, at a wedding where the wine ran out. Your line was she points to him. Did you do the one thing you chose? Day one thousand three hundred fifty-seven.",
+      "voice": "Yesterday, the close of the days on Mary, at a wedding where the wine ran out. Your line was she points to him.",
       "screen": [
         "`SHE POINTS TO HIM.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A few streets from a parish with pews and a kneeler in every row, there's another church. Golden domes. Inside, a wall of icons, a cloud of incense, and a priest with a beard. Candles burn in front of the icons. The bulletin is in English and Ukrainian. A Catholic from the first parish walks in, a little unsure, and asks the woman at the door whether this is an Orthodox church. She smiles, because she gets asked that a lot. No, she says. We're Catholic. We just aren't Roman. Today's word is the little Latin phrase that makes that possible.",
+      "voice": "A few streets from a parish with pews and a kneeler in every row, there's another church. Golden domes. Inside, a wall of icons, a cloud of incense, a priest with a beard, candles burning in front of the icons. The bulletin is in English and Ukrainian. A Catholic from the first parish walks in, a little unsure, and asks the woman at the door whether this is an Orthodox church. She smiles; she gets asked that a lot. No, she says. We're Catholic. We just aren't Roman.",
       "screen": [
         "`DOMES, ICONS, INCENSE.` → `IS THIS ORTHODOX?` → `CATHOLIC, JUST NOT ROMAN.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the phrase. Sui iuris is Latin for of its own law. The Code of Canons of the Eastern Churches uses it for a church with its own hierarchy, recognized as self-governing by the Church's highest authority. Its own bishops, and sometimes its own patriarch. Its own law. Its own liturgy, calendar, saints and ways of praying. And all of it in full communion with the bishop of Rome. Second, the families. The Catechism names the great liturgical traditions in use in the Church: the Latin, and then the Byzantine, the Alexandrian or Coptic, the Syriac, the Armenian, the Maronite and the Chaldean. Out of those traditions come the Eastern Catholic churches: Ukrainians and Melkites, Maronites in Lebanon, Syro-Malabar Catholics in India, Chaldeans from Iraq, Copts and Ethiopians and Armenians, and more. Today's title counts them up. Third, equal dignity. The Second Vatican Council, in its decree on the Eastern churches, said these churches are of equal dignity, and that none of them outranks another because of its rite. The Latin Church sits at that table as one church among them, not the owner of the house. The Council asked the Eastern churches to keep their own traditions whole, not trade them for Latin ones. Fourth, the picture. Pope John Paul the Second wrote that the Church must breathe with both its lungs, East and West. Catholic doesn't only mean Roman. So for a Latin Catholic, the parish with the domes down the street isn't a stranger's church. It belongs to the same communion.",
+      "voice": "You met one of these churches, the Ukrainian Greek Catholics, earlier on this path. First, the phrase. Sui iuris is Latin for of its own law. The Code of Canons of the Eastern Churches uses it for a church with its own hierarchy, recognized as self-governing by the Church's highest authority: its own bishops, sometimes its own patriarch, its own law, liturgy, calendar, saints and ways of praying. And all of it in full communion with the bishop of Rome. Second, the families. The Catechism names the great liturgical traditions in the Church: the Latin, and then the Byzantine, the Alexandrian or Coptic, the Syriac, the Armenian, the Maronite and the Chaldean. Out of them come the Eastern Catholic churches: Ukrainians and Melkites, Maronites in Lebanon, Syro-Malabar Catholics in India, Chaldeans from Iraq, Copts, Ethiopians, Armenians and more. Third, equal dignity. The Second Vatican Council, in its decree on the Eastern churches, said these churches are of equal dignity, and that none outranks another because of its rite. The Latin Church sits at that table as one church among them, not the owner of the house. The Council asked the Eastern churches to keep their own traditions whole, not trade them for Latin ones. Fourth, the picture. Pope John Paul the Second wrote that the Church must breathe with both its lungs, East and West. Catholic doesn't only mean Roman. For a Latin Catholic, the parish with the domes isn't a stranger's church. It belongs to the same communion.",
       "screen": [
         "`SUI IURIS: OF ITS OWN LAW.` · `BYZANTINE, COPTIC, SYRIAC, ARMENIAN...` · `EQUAL DIGNITY, ONE COMMUNION.` · `BREATHING WITH BOTH LUNGS.` · then, large: `ONE CHURCH, MANY CHURCHES.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: find the Eastern Catholic church nearest you, starting in your mind. Settle, and breathe. Picture your town or city from above. Somewhere in it, or not far off, there may be a church whose people pray in Arabic, or Ukrainian, or Malayalam, or Syriac, and who are Catholic too. You don't need to know where yet. Just hold them as part of the same family, for a few breaths. If you pray, you can pray for them in any words you know. If you don't, simply let the map grow larger than it was this morning. After the bell, you might look one up. The bell holds the time.",
+      "voice": "Picture your town or city from above: somewhere in it, or not far off, there may be a church whose people pray in Arabic, Ukrainian, Malayalam or Syriac, and who are Catholic too. You don't need to know where; just hold them as part of the same family. If you pray, pray for them in any words you know; if not, simply let the map grow larger than it was this morning.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: one church, many churches. Today, look up the nearest Eastern Catholic parish, and read the name of the church it belongs to. Day one thousand three hundred fifty-seven.",
+      "voice": "Your line: one church, many churches. Each with its own law, all in one communion. Day one thousand three hundred fifty-seven, done.",
       "screen": []
     },
     {
@@ -139,7 +139,45 @@
         "Tower of ivory",
         "a line from the Song of Songs"
       ]
-    ]
+    ],
+    "guess": [
+      "Latin for of its own law: a self-governing church",
+      "Latin for a church that broke away from Rome",
+      "Latin for the rite a church follows at Mass"
+    ],
+    "chat": {
+      "who": "your neighbor",
+      "says": "Is a Ukrainian church with icons and domes really Catholic, or is it Orthodox?",
+      "options": [
+        "It can be Catholic: a church of its own law and liturgy, in full communion with the bishop of Rome.",
+        "Orthodox: any church with its own patriarch and liturgy is outside communion with Rome.",
+        "Catholic, but lesser: the Eastern churches rank below the Latin Church because of their rite."
+      ],
+      "answer": 0,
+      "meaning": "A church sui iuris has its own hierarchy, law and liturgy, in full communion with Rome. The Council called them all of equal dignity."
+    },
+    "gloss": {
+      "sui iuris": {
+        "meaning": "Latin: of its own law",
+        "say": "SOO-ee YOO-ris"
+      },
+      "patriarch": {
+        "meaning": "the head bishop of some Eastern churches",
+        "say": "PAY-tree-ark"
+      },
+      "Melkites": {
+        "meaning": "Eastern Catholics who pray in Arabic and Greek",
+        "say": "MEL-kites"
+      },
+      "Syro-Malabar": {
+        "meaning": "Eastern Catholics of India, in the Syriac tradition",
+        "say": "SY-roh MAL-uh-bar"
+      },
+      "Maronites": {
+        "meaning": "Eastern Catholics whose home is Lebanon",
+        "say": "MAIR-uh-nites"
+      }
+    }
   },
   "sources": [
     {
@@ -175,7 +213,9 @@
       "The sample of Eastern Catholic churches (Ukrainian, Melkite, Maronite, Syro-Malabar, Chaldean, Coptic, Ethiopian, Armenian) is a sample, not a list; confirm names and the places attached (Lebanon, India, Iraq).",
       "John Paul II's 'two lungs' image paraphrased (Ut Unum Sint 54 and elsewhere). Confirm.",
       "Earlier drafts claimed the Latin Church is the largest, a Greek etymology for catholic, and a married priest in the hook; all cut under the claims rule. The hook keeps \"the whole service is sung, start to finish\" as a scene detail; confirm.",
-      "Editor pass: cut 'the whole service is sung' from the hook (day 1359 teaches the singing; 1358 also had it); 'liked to say' now 'wrote' (Ut Unum Sint 54); replaced the 'ordinary Tuesday... another room in your own' ending, which repeated day 1358's 'same Church, different room' and assumed the listener is Catholic."
+      "Editor pass: cut 'the whole service is sung' from the hook (day 1359 teaches the singing; 1358 also had it); 'liked to say' now 'wrote' (Ut Unum Sint 54); replaced the 'ordinary Tuesday... another room in your own' ending, which repeated day 1358's 'same Church, different room' and assumed the listener is Catholic.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

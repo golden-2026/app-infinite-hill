@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, touching and wudu, and your line: details differ. Did a small rule surprise you, and did you find the reading behind it? Day one thousand two hundred ten.",
+      "voice": "Yesterday, touching and wudu: one verb, read more than one way. Your line: details differ.",
       "screen": [
         "`DETAILS DIFFER.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Eid morning, and the group chat is arguing. One cousin is already in new clothes, posting photos from the mosque. Another is still fasting, because her mosque says the month has one more day. A third says his community decided weeks ago, by the numbers. Same city, same family, same Ramadan, and two different Eids. It comes from one question about a crescent, answered more than one way. Today, the moon.",
+      "voice": "Eid morning, and the group chat is arguing. One cousin is already in new clothes, posting photos from the mosque. Another is still fasting, because her mosque says the month has one more day. A third says his community decided weeks ago, by the numbers. Same city, same family, same Ramadan, and two different Eids. It all comes from one question about a crescent, answered more than one way. Today, the moon.",
       "screen": [
         "`EID MORNING, THE CHAT IS ARGUING.` → `ONE COUSIN FEASTS, ONE FASTS.` → `ONE QUESTION, SEVERAL ANSWERS.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, why the moon at all. The Islamic months follow the moon, and the Qur'an says of the new moons, in Pickthall's words, \"They are fixed seasons for mankind and for the pilgrimage.\" A month begins with the thin crescent, the hilal, just after sunset. Next, the instruction. In a report in Sahih al-Bukhari, the Prophet Muhammad ﷺ says: fast when you see it, and stop fasting when you see it, and if it's hidden from you, complete the month as thirty days. Seeing is at the heart of it. Then, the first question: whose seeing? In Sahih Muslim, Kurayb travels from Syria to Medina. In Syria, he says, people saw the new moon on Friday night and began fasting. Ibn Abbas, in Medina, answers that they saw it on Saturday night, and they'll keep counting by their own sighting. This is how we were told, he says. Some scholars read that as each region sighting its own moon. Others say one sighting anywhere should bind everyone who hears of it, and so some communities follow the announcement of another country. Last, the second question: what counts as seeing? Some jurists say an eye on the horizon, nothing else. Others answer that astronomers can now say ahead of time when the crescent will be born and when it can be seen, and that a reliable calculation can stand in for the eye, or at least rule out a mistaken sighting. Some councils announce the dates far in advance. So the family chat is arguing over three readings of one sentence about a crescent.",
+      "voice": "The Islamic months follow the moon, and the Qur'an says of the new moons, in Pickthall's words, \"They are fixed seasons for mankind and for the pilgrimage.\" A month begins with the thin crescent, the hilal, just after sunset. In a report in Sahih al-Bukhari, the Prophet Muhammad ﷺ says: fast when you see it, and stop fasting when you see it, and if it's hidden from you, complete the month as thirty days. Seeing is at the heart of it. So, the first question: whose seeing? In Sahih Muslim, Kurayb travels from Syria to Medina. In Syria, he says, people saw the new moon on Friday night and began fasting. Ibn Abbas, in Medina, answers that they saw it on Saturday night and will keep counting by their own sighting. This is how we were told, he says. Some scholars read that as each region sighting its own moon. Others say one sighting anywhere binds everyone who hears of it, so some communities follow another country's announcement. The second question: what counts as seeing? Some jurists say an eye on the horizon, nothing else. Others answer that astronomers can now say ahead of time when the crescent will be born and when it can be seen, and that a reliable calculation can stand in for the eye, or at least rule out a mistaken sighting. Some councils announce the dates far in advance. So the family chat is arguing over three readings of one sentence about a crescent.",
       "screen": [
         "`THE MONTHS FOLLOW THE MOON.` · `FAST WHEN YOU SEE IT.` · `KURAYB, IBN ABBAS: WHOSE SEEING?` · `THE EYE, OR THE CALCULATION?`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: learn your mosque's method, and look at the sky. If you have a mosque, make a note to ask how it decides the start of the month: local sighting, another country's announcement, or calculation. Then tonight, if you can, step outside and find the moon, or the place it would be. For now, picture it: the thin silver edge low in the west after sunset, the way it looks to anyone waiting for it. Breathe slowly while you hold it. The bell holds the time.",
+      "voice": "Picture the new crescent: a thin silver edge low in the west after sunset, the way it looks to anyone waiting for it. Breathe slowly while you hold it. If you have a mosque, you might ask yourself which way it counts: its own sighting, another country's announcement, or calculation.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: which moon? Today, find out when your local calendar says the next month begins, and how it decided. Tomorrow, the odd prayer of the night, prayed in many ways. Day one thousand two hundred ten.",
+      "voice": "Your line: which moon? One crescent, more than one honest count, and one family. See you tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Mosques and councils start the Islamic months, including Ramadan and the Eids, by one of several methods: a local sighting of the crescent, following another country's announced sighting, or astronomical calculation.",
   "games": {
+    "guess": [
+      "the new crescent that begins each month, sighted or calculated",
+      "the full moon that marks the middle of each Islamic month",
+      "a festival held on the last night of the fasting month"
+    ],
     "match": {
       "prompt": "the moon — tap the pairs.",
       "pairs": [
@@ -132,14 +137,52 @@
     ],
     "recall": [
       [
-        "turbah",
-        "a small tablet of baked clay"
+        "'aql",
+        "reason, the understanding mind"
       ],
       [
-        "marja'",
-        "the jurist a believer follows"
+        "taqlid",
+        "following one who knows"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your cousin",
+      "says": "Why are we celebrating Eid a day apart, when we live in the same city?",
+      "options": [
+        "Mosques count differently: their own sighting, another country's, or a calculation.",
+        "Because one mosque follows a solar calendar and the other a lunar one.",
+        "Because each mosque picks whichever date suits its own crowd best."
+      ],
+      "answer": 0,
+      "meaning": "Fast when you see it, the Prophet said. Scholars differ on whose sighting counts, local or anywhere, and whether calculation can stand in for the eye."
+    },
+    "gloss": {
+      "hilal": {
+        "meaning": "the thin new crescent that begins a month",
+        "script": "هلال",
+        "say": "hi-LAAL"
+      },
+      "Kurayb": {
+        "meaning": "the traveler from Syria in the report on sighting",
+        "script": "كريب",
+        "say": "koo-RAYB"
+      },
+      "Ibn Abbas": {
+        "meaning": "the Companion in Medina who kept his own sighting",
+        "script": "ابن عباس",
+        "say": "IB-n ah-BAHS"
+      },
+      "Eid": {
+        "meaning": "a festival day; here, the one that ends Ramadan",
+        "script": "عيد",
+        "say": "EED"
+      },
+      "Ramadan": {
+        "meaning": "the month of fasting",
+        "script": "رمضان",
+        "say": "rah-mah-DAHN"
+      }
+    }
   },
   "sources": [
     {
@@ -171,7 +214,9 @@
       "Muslim 1087: confirm number and details (Friday night in Syria, Saturday night in Medina).",
       "Positions: local sighting (differing horizons), one sighting binding all who hear, and calculation (either replacing or vetting sightings): confirm fair summary.",
       "'Some councils announce the dates far in advance' (e.g. bodies in North America and Europe using calculation): not named deliberately; confirm.",
-      "Family-chat scene is illustrative."
+      "Family-chat scene is illustrative.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

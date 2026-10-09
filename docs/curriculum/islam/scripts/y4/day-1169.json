@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, shari'ah, and your line: the path and the map. Did you hear the word used, and did the speaker mean the path or a map? Day one thousand one hundred sixty-nine.",
+      "voice": "Yesterday: shari'ah, the path Allah set, and fiqh, the scholars' map of it. Your line: the path and the map.",
       "screen": [
         "`THE PATH AND THE MAP.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, why first. Muslims hold the Qur'an to be the speech of Allah, and the schools of law, Sunni and Shia, begin their reasoning there. A well-known report puts it as a scene. The Prophet Muhammad ﷺ is sending Mu'adh ibn Jabal to Yemen as a judge, and asks him how he'll judge. By the Book of Allah, Mu'adh says. And if it isn't there? By the sunnah. And if it isn't there? By my own careful reasoning. Hadith critics have graded that report differently, exactly the kind of thing the last block taught us to notice. But the order it describes is the order the schools teach. Second, where the law sits. The verses of law aren't gathered into one chapter. They sit among stories, prayers, promises and warnings, so a jurist reads the whole book to find them. Third, the reasons. Like the fasting verse, a ruling often comes with its purpose attached: that ye may ward off evil. Jurists pay close attention to those purposes, and later in this block that attention becomes a method of its own. Fourth, the limits of a single source. The Qur'an commands prayer again and again, but it doesn't spell out every movement of it. For that, the scholars turn to the second source, which is tomorrow. And since today ends a week, look back along it. Careful with the weak. Forty to carry. Explained for us. With a teacher. The chain held. The path and the map. Every one of those was about how carefully a tradition handles its sources. Today the first of them: the book first.",
+      "voice": "First, why first. Muslims hold the Qur'an to be the speech of Allah, and the schools of law, Sunni and Shia, begin their reasoning there. A well-known report puts it as a scene. The Prophet Muhammad ﷺ is sending Mu'adh ibn Jabal to Yemen as a judge, and asks how he'll judge. By the Book of Allah, Mu'adh says. And if it isn't there? By the sunnah. And if it isn't there? By my own careful reasoning. Hadith critics have graded that report differently, exactly what the last block taught us to notice. But the order it describes is the order the schools teach. Second, where the law sits. The verses of law aren't gathered into one chapter. They sit among stories, prayers, promises and warnings, so a jurist reads the whole book to find them. Third, the reasons. Like the fasting verse, a ruling often comes with its purpose attached: that ye may ward off evil. Jurists pay close attention to those purposes, and later in this block that attention becomes a method of its own. Fourth, the limits of a single source. The Qur'an commands prayer again and again, but doesn't spell out every movement of it. For that, scholars turn to the second source, tomorrow. And since today ends a week, look back along it: careful with the weak, forty to carry, explained for us, with a teacher, the chain held, the path and the map. Each was about how carefully a tradition handles its sources. Today, the first of them.",
       "screen": [
         "`BOOK, THEN SUNNAH, THEN REASONING.` · `LAW AMONG THE STORIES.` · `A RULING WITH ITS REASON.` · `THE BOOK DOESN'T STAND ALONE.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: read a verse of law, slowly, in pieces. Settle, and breathe. O ye who believe: who it speaks to. Breathe. Fasting is prescribed for you: the command. Breathe. Even as it was prescribed for those before you: a link to others. Breathe. That ye may ward off evil: the reason. Say each piece once more, with a breath between. Then rest on the last piece, the reason, and let one question sit with you: what is this command for? The bell holds the time.",
+      "voice": "Read the fasting verse in its pieces, with a breath between each: O ye who believe, who it speaks to; fasting is prescribed for you, the command; even as it was prescribed for those before you, a link to others; that ye may ward off evil, the reason. Then rest on the last piece and let one question sit with you: what is this command for?",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the book first. Today, when a question comes up, ask what the source itself says before asking what anyone thinks about it. Tomorrow: the sunnah as second. Day one thousand one hundred sixty-nine.",
+      "voice": "Your line: the book first. Then the sunnah, then careful reasoning. That's the week, and the first source.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "In Islamic law, scholars of the Sunni and Shia schools begin with the Qur'an when working out a ruling, reading its verses of law closely along with their context and purposes.",
   "games": {
+    "guess": [
+      "the schools begin their reasoning from the Qur'an, read closely",
+      "the oldest Qur'an manuscript, kept as the model copy",
+      "the first surah revealed, recited before all the others"
+    ],
     "match": {
       "prompt": "the Qur'an as first source — tap the pairs.",
       "pairs": [
@@ -139,7 +144,33 @@
         "matn",
         "the words: what was said"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your cousin",
+      "says": "If the Qur'an is the first source, why do scholars need anything else?",
+      "options": [
+        "It doesn't spell out everything, like each movement of prayer; for that they turn to the sunnah.",
+        "They don't. Every ruling, down to each movement of prayer, is in one chapter of law.",
+        "Its verses of law were set aside later in favor of the scholars' own reasoning."
+      ],
+      "answer": 0,
+      "meaning": "The Qur'an commands prayer again and again but doesn't spell out every movement. For that, scholars turn to the second source, the sunnah."
+    },
+    "gloss": {
+      "Mu'adh ibn Jabal": {
+        "meaning": "a companion sent to Yemen as a judge",
+        "say": "mu-AADH IB-n JA-bal"
+      },
+      "sunnah": {
+        "meaning": "the Prophet's way: what he said, did and approved",
+        "script": "سنة",
+        "say": "SUN-nah"
+      },
+      "Pickthall": {
+        "meaning": "Marmaduke Pickthall, whose 1930 English Qur'an is quoted here",
+        "say": "PIK-thawl"
+      }
+    }
   },
   "sources": [
     {
@@ -169,7 +200,9 @@
       "The Mu'adh ibn Jabal report (Abu Dawud 3592, Tirmidhi 1327) is paraphrased and flagged as graded differently by critics; confirm numbers and that 'the Prophet approves' fits the report.",
       "'The schools of law, Sunni and Shia, begin their reasoning there' follows the outline hook ('every school begins with the Qur'an'), softened; confirm that Shia (Ja'fari) usul is fairly described.",
       "'The Qur'an commands prayer again and again' — a description, no count; confirm.",
-      "Week-end look-back covers days 1163–1168 by their carries."
+      "Week-end look-back covers days 1163–1168 by their carries.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

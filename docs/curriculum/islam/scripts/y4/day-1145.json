@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, sunnah and hadith: the way, and the reports that carry it. Your line was the way, carried. Which small sunnah did you try? Day one thousand one hundred forty-five.",
+      "voice": "Yesterday: sunnah and hadith, the way and the reports that carry it.",
       "screen": [
         "`THE WAY, CARRIED.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Al-Humaydi told us. Sufyan told us. Yahya ibn Sa'id al-Ansari told us. That's not a cast list. It's how the first report in Sahih al-Bukhari begins, put into plain English. Before the reader reaches a single word the Prophet said, there's a line of people, each handing the words to the next. The words themselves come later, and we met them on this path once already: actions are judged by intentions. Today we stay with the part that's easy to skim. The names. Today, the isnad.",
+      "voice": "Al-Humaydi told us. Sufyan told us. Yahya ibn Sa'id al-Ansari told us. That's not a cast list. It's how the first report in Sahih al-Bukhari begins, put into plain English. Before a single word the Prophet said, there's a line of people, each handing the words to the next. The words come later, and you've met them on this path already: actions are judged by intentions. Today we stay with the part that's easy to skim. The names. Today, the isnad.",
       "screen": [
         "`AL-HUMAYDI TOLD US.` → `BEFORE THE WORDS, THE NAMES.` → `THE PART THAT'S EASY TO SKIM.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, two parts. A hadith, as the scholars lay it out, has a chain and a text. The chain is the isnad: who told whom. The text is the matn: what was said. Tomorrow is the text. Today is the chain. Second, walk it. After Yahya ibn Sa'id, the chain in Bukhari goes on: Muhammad ibn Ibrahim al-Taymi told him that he heard Alqamah ibn Waqqas say: I heard Umar ibn al-Khattab on the pulpit say: I heard the Messenger of Allah ﷺ say. Read in order, it's a road back. From al-Bukhari's own teacher, hand to hand, back to Umar standing on a pulpit, and from him to the Prophet. Third, listen to the verbs. Told us. Told me. I heard. Scholars of hadith paid close attention to those small words, because they can show how each person received the report: in a gathering, alone, face to face. A vaguer word, a plain \"from so-and-so\", could leave room for a question. Did these two actually meet? Fourth, what the chain is for. Once the names are written down, every one of them can be checked. Was he honest? Was his memory careful? Did he live in the same place and time as the man he quotes? A beautiful saying with a gap in its chain, or with a name nobody can vouch for, is held back. Sunni collections build their chains through the companions. Shia collections build theirs too, often running through the Imams of the Prophet's family. Different roads, one habit: before you accept the words, you ask who carried them, one link at a time.",
+      "voice": "A hadith, as the scholars lay it out, has two parts. The chain is the isnad: who told whom. The text is the matn: what was said. Tomorrow is the text. Today is the chain, which you first met as the chain back to him. Walk it. After Yahya ibn Sa'id, the chain in Bukhari goes on: Muhammad ibn Ibrahim al-Taymi told him that he heard Alqamah ibn Waqqas say: I heard Umar ibn al-Khattab on the pulpit say: I heard the Messenger of Allah ﷺ say. Read in order, it's a road back, from al-Bukhari's own teacher, hand to hand, to Umar on the pulpit, and from him to the Prophet. Listen to the verbs. Told us. Told me. I heard. Scholars of hadith paid close attention to those small words, because they can show how each person received the report: in a gathering, alone, face to face. A vaguer word, a plain \"from so-and-so\", could leave room for a question. Did these two actually meet? That's what the chain is for. Once the names are written down, every one can be checked. Was he honest? Was his memory careful? Did he live in the same place and time as the man he quotes? A beautiful saying with a gap in its chain, or a name nobody can vouch for, is held back. Sunni collections build their chains through the companions. Shia collections build theirs too, often through the Imams of the Prophet's family. Different roads, one habit: before you accept the words, ask who carried them, one link at a time.",
       "screen": [
         "`A CHAIN, AND A TEXT.` · `WALK IT BACK TO THE PULPIT.` · `TOLD US. TOLD ME. I HEARD.` · `EVERY NAME CAN BE CHECKED.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: trace one chain. Settle, and breathe. Choose one piece of news you heard this week about someone you know. A job, an illness, a rumor. Now build its isnad, out loud in your head, the way the collections do. Who told me? And who told them? And where did that person get it? Say it in the old form if it helps: so-and-so told me, that so-and-so told her. Go back as far as you honestly can. Then find the link where the chain goes quiet, the place where you have to say: I don't know who told them. Rest there until the bell. The bell holds the time.",
+      "voice": "Choose one piece of news you heard this week about someone you know, a job, an illness, a rumor, and build its isnad in your head the old way: so-and-so told me, that so-and-so told her. Go back as far as you honestly can. Then find the link where the chain goes quiet, where you have to say, I don't know who told them, and rest there.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: who told whom. Today, when you pass on any news, say where you got it. Tomorrow: the text itself. Day one thousand one hundred forty-five.",
+      "voice": "Your line: who told whom. Every link a name, every name checked. Tomorrow: the text itself.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "In hadith collections each report is printed with its chain of narrators before its text, and students of hadith learn to read the chain, check each narrator and notice the words of transmission.",
   "games": {
+    "guess": [
+      "the chain of narrators: who told whom, back to the Prophet",
+      "the text of a report: the words that were actually said",
+      "the grade a scholar gives a report: sound, good or weak"
+    ],
     "match": {
       "prompt": "chain and text — tap the pairs.",
       "pairs": [
@@ -137,9 +142,41 @@
       ],
       [
         "tawaf",
-        "going around"
+        "going around the Ka'ba, seven times"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your sister",
+      "says": "Why do hadith books list all those names before the actual saying?",
+      "options": [
+        "That's the chain: who told whom. Each name can be checked before the words are trusted.",
+        "They're people who later agreed with the saying, listed to show it was popular.",
+        "They're the scribes who copied the book, listed so readers can thank them."
+      ],
+      "meaning": "The isnad is the chain of narrators. Once the names are written down, each can be checked: honest, careful, and did they really meet?",
+      "answer": 0
+    },
+    "gloss": {
+      "isnad": {
+        "meaning": "the chain of narrators: who told whom",
+        "script": "إسناد",
+        "say": "is-NAHD"
+      },
+      "matn": {
+        "meaning": "the text of a hadith: what was said",
+        "script": "متن",
+        "say": "MATN"
+      },
+      "Umar ibn al-Khattab": {
+        "meaning": "a companion of the Prophet, heard here on the pulpit",
+        "script": "عمر بن الخطاب",
+        "say": "OO-mar ibn al-khat-TAHB"
+      },
+      "Al-Humaydi": {
+        "meaning": "al-Bukhari's own teacher, first name in the chain",
+        "say": "al-hoo-MAY-dee"
+      }
+    }
   },
   "sources": [
     {
@@ -157,7 +194,9 @@
       "Statements on words of transmission (haddathana, akhbarana, sami'tu, 'an) and their significance are general hadith-science points, not in the cited text; confirm wording.",
       "Shia chains 'often running through the Imams': confirm phrasing is fair.",
       "Day 1060 used Ibn al-Mubarak's saying and the ijaza; this day avoids both. Day 930 used Bukhari 1's text as its hook; here the focus is its chain.",
-      "Editor: fixed 'read it backward', which contradicted the order given (the chain read in order runs back to the Prophet); 'a caliph' made 'Umar', as the cited text names him on the pulpit; 'they show' softened to 'they can show'; practice opener varied (several days in the range opened 'Bring to mind')."
+      "Editor: fixed 'read it backward', which contradicted the order given (the chain read in order runs back to the Prophet); 'a caliph' made 'Umar', as the cited text names him on the pulpit; 'they show' softened to 'they can show'; practice opener varied (several days in the range opened 'Bring to mind').",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the intention to fast, niyyah, and your line: intend it. The fast starts in the heart, before dawn. Did you stop before one ordinary thing and decide what it was for? Today ends a week. Day one thousand one hundred six.",
+      "voice": "Yesterday, niyyah: intend it. The fast starts in the heart, and the same act can be two things depending on what you meant.",
       "screen": [
         "`INTEND IT.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A fasting day, the office kitchen, a full glass of water, and a hand that's already lifted it halfway before the brain catches up. Or worse: a few swallows gone before anyone remembers. Panic. Is the whole day lost? Do you start over tomorrow, or owe something? The Prophet Muhammad ﷺ was asked about exactly this, and his answer is gentle. But first, the rules it's softening. Today, what breaks the fast, and what doesn't.",
+      "voice": "A fasting day, the office kitchen, a full glass of water, and a hand already lifting it halfway before the brain catches up. Or worse: a few swallows gone before anyone remembers. Panic. Is the whole day lost? Do you start over tomorrow, or owe something? The Prophet Muhammad ﷺ was asked about exactly this, and his answer is gentle. But first, the rules it softens. Today, what breaks the fast, and what doesn't.",
       "screen": [
         "`THE OFFICE KITCHEN. A GLASS OF WATER.` → `A FEW SWALLOWS, THEN: WAIT.` → `IS THE DAY LOST?`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the frame, from surah two. The Qur'an tells the fasting believer, in Pickthall's words, to \"eat and drink until the white thread becometh distinct to you from the black thread of the dawn. Then strictly observe the fast till nightfall.\" The same verse permits marital intimacy in the nights of the fast. So the day runs from the first thread of dawn to sunset, and in those hours the fast is broken by eating, by drinking, and by intimacy. The legal books add details, like deliberately vomiting, and the schools discuss newer questions, but those three are the core. Second, the word that matters is deliberately. Here's the report, in Sahih al-Bukhari. The Prophet ﷺ said that if someone fasting forgets and eats or drinks, they should complete their fast, because it was Allah who fed them and gave them drink. Not a failure. A meal, from Allah. The fast simply continues. Third, what that answer does. The fast is strict about the clock: dawn means dawn. And yet the person who honestly forgot is not counted as having broken anything. The intention from yesterday holds. What the fast asks for is a will, not a flawless memory. Fourth, look back across this week. The eight doors of zakat. Khums, a fifth, in Shia law. Giving as the poor's right, with dignity. Zakat and sadaqah, the measured gift and the free one. The many hands that carry it. Then the turn into the fast: an intention in the heart, and today, a set of rules with mercy built into them. And it reaches past the fast: a slip is not the same as a choice.",
+      "voice": "First, the frame, from surah two. The fasting believer is told, in Pickthall's words, to \"eat and drink until the white thread becometh distinct to you from the black thread of the dawn. Then strictly observe the fast till nightfall.\" The same verse permits marital intimacy in the nights of the fast. So the day runs from the first thread of dawn to sunset, and in those hours the fast is broken by eating, drinking and intimacy. The legal books add details, like deliberately vomiting, and the schools discuss newer questions, but those three are the core. Second, the word that matters is deliberately. In Sahih al-Bukhari, the Prophet ﷺ said that if someone fasting forgets and eats or drinks, they should complete their fast, because it was Allah who fed them and gave them drink. Not a failure: a meal from Allah. The fast simply continues. Third, what that answer does. The fast is strict about the clock; dawn means dawn. Yet the person who honestly forgot hasn't broken anything, and yesterday's intention holds. The fast asks for a will, not a flawless memory. Fourth, this week in one breath: the eight doors of zakat, khums in Shia law, giving with dignity, zakat and sadaqah, the many hands, then the turn into the fast, an intention in the heart, and today, rules with mercy built in. And it reaches past the fast: a slip is not the same as a choice.",
       "screen": [
         "`DAWN'S THREAD TO NIGHTFALL.` · `FORGOT? ALLAH FED YOU.` · `A WILL, NOT A PERFECT MEMORY.` · `THIS WEEK: GIVING, THEN THE FAST.` · then, large: `THEN STRICTLY OBSERVE THE FAST TILL NIGHTFALL.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: forgive yourself a forgetful sip. Settle, and breathe. Bring to mind a recent slip, small and honest: a promise you forgot, a habit you meant to keep and didn't, a word that came out before you thought. Not something you chose. Something that got past you. Look at it plainly. Then set it down, the way the report sets down the forgotten glass of water: finished, and the day goes on. If you pray, you can hand it to Allah. The bell holds the time.",
+      "voice": "Bring to mind a recent slip, small and honest: a promise you forgot, a habit you meant to keep, a word out before you thought. Not something you chose; something that got past you. Look at it plainly, then set it down the way the report sets down the forgotten glass of water, and if you pray, hand it to Allah.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: forgetting is Allah's gift. Today, when you catch a small honest slip, yours or someone else's, let it go without a lecture. Day one thousand one hundred six.",
+      "voice": "Your line: forgetting is Allah's gift. The fast goes on, and so does the day. A week, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Muslims who are fasting abstain from food, drink and marital intimacy from dawn until sunset; someone who eats or drinks by honest mistake carries on fasting, following the report in Sahih al-Bukhari.",
   "games": {
+    "guess": [
+      "eating, drinking or intimacy on purpose between dawn and sunset",
+      "any food or drink at all, even when you honestly forgot",
+      "missing the pre-dawn meal before the fast begins at dawn"
+    ],
     "match": {
       "prompt": "what breaks it — tap the pairs.",
       "pairs": [
@@ -132,14 +137,46 @@
     ],
     "recall": [
       [
-        "hawl",
-        "the year wealth must be held"
-      ],
-      [
         "nisab",
         "the minimum before zakat is due"
+      ],
+      [
+        "khushu'",
+        "humble stillness in prayer"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "a friend at work",
+      "says": "I forgot I was fasting and drank some water. Is my whole day ruined?",
+      "options": [
+        "No. Keep fasting: the Prophet ﷺ said if you forgot, Allah gave you that drink.",
+        "Yes. The day is lost, so you may as well eat and drink until sunset.",
+        "It's fine, but now you owe a whole extra week of fasting."
+      ],
+      "answer": 0,
+      "meaning": "In Bukhari, the one who forgets and eats or drinks completes the fast, because Allah fed them. Eating, drinking or intimacy on purpose is what breaks it."
+    },
+    "gloss": {
+      "khums": {
+        "meaning": "a fifth of the year's surplus, given in Twelver Shia law",
+        "script": "خمس",
+        "say": "KHOOMS"
+      },
+      "sadaqah": {
+        "meaning": "charity given freely: any good deed",
+        "script": "صدقة",
+        "say": "SUD-uh-kuh"
+      },
+      "zakat": {
+        "meaning": "the required yearly giving, one of Islam's pillars",
+        "script": "زكاة",
+        "say": "zuh-KAHT"
+      },
+      "Pickthall": {
+        "meaning": "Marmaduke Pickthall, who translated the Qur'an into English",
+        "say": "PIK-thawl"
+      }
+    }
   },
   "sources": [
     {
@@ -166,7 +203,9 @@
       "Carry is the index's 'forgetting is allah's gift'; spoken as 'Allah' in the voice; the index lowercase 'allah' may want a capital (outline edit).",
       "Week-end look back names days 1100–1105 from the index; 1100–1101 were not on disk when this was written.",
       "Original: نَسِيَ as the key verb; confirm it is the form used in the report's Arabic.",
-      "Editor pass: dropped the clock-time opener (day 1110 opens the same way); removed 'surprisingly' and 'so striking' (telling the listener how to react); stock 'ordinary Tuesday' turn replaced."
+      "Editor pass: dropped the clock-time opener (day 1110 opens the same way); removed 'surprisingly' and 'so striking' (telling the listener how to react); stock 'ordinary Tuesday' turn replaced.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

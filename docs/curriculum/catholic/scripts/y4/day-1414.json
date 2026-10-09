@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the parish: a community before a building, drawn by where you live. Your line was home base. Did you find the parish your street belongs to? Day one thousand four hundred fourteen.",
+      "voice": "Yesterday, the parish: a community before a building, drawn by where you live. Your line was home base.",
       "screen": [
         "`HOME BASE.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Inside a cathedral, somewhere near the altar, stands a chair. Sometimes it's carved stone, sometimes plain wood with a high back. Tourists walk past it on the way to the stained glass. It waits for one person, the bishop, and it is what makes that church a cathedral rather than just a large parish. Around that chair, a whole region of parishes is gathered: city churches, country chapels, schools, hospitals. Today, the diocese.",
+      "voice": "Inside a cathedral, somewhere near the altar, stands a chair. Sometimes it's carved stone, sometimes plain wood with a high back. Tourists walk past it on the way to the stained glass. It waits for one person, the bishop, and it's what makes that church a cathedral rather than just a large parish. Around that chair, a whole region of parishes is gathered: city churches, country chapels, schools, hospitals. Today, the diocese.",
       "screen": [
         "`A CHAIR NEAR THE ALTAR.` → `IT WAITS FOR THE BISHOP.` → `A WHOLE REGION AROUND IT.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, what a diocese is. The Code of Canon Law describes it as a portion of the people of God entrusted to a bishop, to be shepherded with the help of his priests. Portion of the people is the phrase. Like the parish yesterday, a diocese is people before it is a map. Second, what the Second Vatican Council said about it. In a diocese, the council taught, the one, holy, catholic and apostolic Church of Christ is truly present and at work. That's a strong claim. A diocese isn't a branch office of a company headquartered somewhere else. It's the whole Church, present in one place, gathered around its bishop. Third, how old the idea is. Ignatius of Antioch, writing to Christians in Smyrna on the journey that, tradition says, ended in his martyrdom, put it this way: \"Wheresoever the bishop shall appear, there let the people be; even as where Jesus may be, there is the universal Church.\" The chair in the cathedral is a sign of that: teaching and shepherding, rooted in one place. Last, look back at this week. The single life, a whole calling. Religious life and its three vows. Deacons, the servants. Hermits and consecrated virgins, ancient callings. Secular institutes, hidden in the world. And yesterday, the parish, home base. Every one of those callings is lived somewhere, and that somewhere is a local church. The diocese is where all of them belong together, under one bishop, around one altar.",
+      "voice": "What is a diocese? The Code of Canon Law describes it as a portion of the people of God entrusted to a bishop, to be shepherded with the help of his priests. Portion of the people is the phrase: like the parish, a diocese is people before it's a map. The Second Vatican Council went further. In a diocese, it taught, the one, holy, catholic and apostolic Church of Christ is truly present and at work. That's a strong claim. A diocese isn't a branch office of a company headquartered somewhere else. It's the whole Church, present in one place, gathered around its bishop. The idea is old. Ignatius of Antioch, writing to Christians in Smyrna on the journey that, tradition says, ended in his martyrdom, put it this way: \"Wheresoever the bishop shall appear, there let the people be; even as where Jesus may be, there is the universal Church.\" The chair in the cathedral is a sign of that: teaching and shepherding, rooted in one place. Now look back at the week: the single life, a whole calling; religious life and its three vows; deacons, the servants; hermits and consecrated virgins; secular institutes, hidden in the world; and the parish, home base. Every one of those callings is lived somewhere, and that somewhere is a local church. The diocese is where all of them belong together, under one bishop, around one altar.",
       "screen": [
         "`A PORTION OF THE PEOPLE OF GOD.` · `THE WHOLE CHURCH, PRESENT IN ONE PLACE.` · `WHERE THE BISHOP APPEARS.` · `A WEEK OF CALLINGS, ONE LOCAL CHURCH.` · then, large: `THERE LET THE PEOPLE BE.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: learn your diocese's patron. First, settle, and breathe. Bring to mind the cathedral of the place you live, if you know it, or simply the region around you: its towns, its parishes, its hospitals and schools. If you pray, you can pray for the bishop and the people of that local church. If you don't, hold the whole region in mind for a few breaths, with goodwill. After the bell, look up which diocese you live in, its cathedral, and its patron saint. The bell holds the time.",
+      "voice": "Bring to mind the cathedral of the place you live, if you know it, or simply the region around you: its towns, its parishes, its hospitals and schools. If you pray, pray for the bishop and the people of that local church. If you don't, hold the whole region in mind for a few breaths, with goodwill.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the local church. Today, when you pass any church, remember that it belongs to a bigger family gathered around one chair. Day one thousand four hundred fourteen.",
+      "voice": "Your line: the local church. Every church you pass belongs to a bigger family, gathered around one chair. Day one thousand four hundred fourteen.",
       "screen": []
     },
     {
@@ -135,7 +135,41 @@
         "sui iuris",
         "of its own law"
       ]
-    ]
+    ],
+    "guess": [
+      "the whole Church, present in one place under a bishop",
+      "a district office that runs the parishes for Rome",
+      "the cathedral building where the bishop lives"
+    ],
+    "chat": {
+      "who": "your dad",
+      "says": "Isn't a diocese just a regional branch office of the Vatican?",
+      "options": [
+        "The council taught that the whole Church is truly present in a diocese, around its bishop.",
+        "Yes, it's an administrative district; the real Church is the one in Rome.",
+        "No, a diocese is just the cathedral building and the bishop's own household."
+      ],
+      "meaning": "The council taught that in a diocese the one, holy, catholic and apostolic Church is truly present and at work, not a branch office.",
+      "answer": 0
+    },
+    "gloss": {
+      "cathedral": {
+        "meaning": "the church that holds the bishop's chair",
+        "say": "kuh-THEE-drul"
+      },
+      "Ignatius of Antioch": {
+        "meaning": "an early bishop who wrote letters on the way to martyrdom",
+        "say": "ig-NAY-shus of AN-tee-ok"
+      },
+      "Smyrna": {
+        "meaning": "an ancient city whose Christians Ignatius wrote to",
+        "say": "SMUR-nuh"
+      },
+      "martyrdom": {
+        "meaning": "death for the sake of the faith",
+        "say": "MAR-ter-dum"
+      }
+    }
   },
   "sources": [
     {
@@ -167,7 +201,9 @@
       "Canon 369 and Christus Dominus 11 paraphrased (portion of the people of God entrusted to a bishop with the cooperation of the presbyterate; the Church of Christ truly present and operative). Confirm.",
       "Claim that the bishop's chair (cathedra) is what makes a church a cathedral: standard, but confirm phrasing. The etymology of cathedral is deliberately not stated.",
       "howItsDone: the bishop is named in the Eucharistic Prayer at Mass; confirm wording.",
-      "Some local churches are not called dioceses (eparchies, territorial prelatures, apostolic vicariates); the voice speaks of dioceses only."
+      "Some local churches are not called dioceses (eparchies, territorial prelatures, apostolic vicariates); the voice speaks of dioceses only.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

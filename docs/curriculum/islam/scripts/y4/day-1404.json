@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, your teacher. Your line: find a teacher. Did you write down the name of one class? Often that class meets in one particular kind of room. Today, that room, and the people in it. Day one thousand four hundred four.",
+      "voice": "Yesterday: your teacher, Jibril knee to knee, and Musa asking to follow. Your line was find a teacher.",
       "screen": [
         "`FIND A TEACHER.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Friday, a little after noon. Outside a door, shoes pile up in crooked rows: work boots, sneakers, a toddler's sandals, a pair of polished office shoes. Inside, a man who fixes cars is standing next to a man who teaches at the university, and neither one is thinking about that. A taxi driver arrives late and slips into the back row. Somebody's grandmother is already in her usual spot. For a few minutes, nobody is anyone's boss. Then the row straightens, and they bow together. Today, being part of a community. Your mosque.",
+      "voice": "Friday, a little after noon. Outside a door, shoes pile up in crooked rows: work boots, sneakers, a toddler's sandals, polished office shoes. Inside, a man who fixes cars stands next to a man who teaches at the university, and neither one is thinking about that. A taxi driver slips into the back row. Somebody's grandmother is already in her usual spot. For a few minutes, nobody is anyone's boss. Then the row straightens, and they bow together. Day one hundred thirty-seven asked what a mosque is. Today, what it's like to belong to one.",
       "screen": [
         "`SHOES IN CROOKED ROWS.` → `NOBODY IS ANYONE'S BOSS.` → `THE ROW STRAIGHTENS.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Start with the call. Surah al-Jumu'ah says, in Pickthall's words: \"O ye who believe! When the call is heard for the prayer of the day of congregation, haste unto remembrance of Allah and leave your trading.\" In the Sunni schools of law the Friday prayer, with its sermon, is required of adult men who are settled in a place, and women may attend. When they do, it takes the place of the noon prayer. Next, why together. In Sahih al-Bukhari the Prophet Muhammad, peace be upon him, says that prayer in congregation is twenty-seven degrees better than prayer alone. Twenty-seven is the hadith's own number. The point underneath it is simple: the same prayer, said shoulder to shoulder, is not the same experience. Third, who gets to come. In another hadith in Bukhari, the Prophet says not to stop the women servants of Allah from the mosques of Allah. Mosques today arrange space for women in different ways, and Muslims discuss openly how well that is working. Last, what belonging asks. A mosque is not a perfect place. The sermon may run long; the parking may be a mess; someone may be rude about where you stood. Belonging is not the same as liking everything. It means you're known by face, you notice when someone is missing, and somebody notices when you are. That is a lot to ask of a building, and it is exactly what people go back for.",
+      "voice": "Start with the call. Surah al-Jumu'ah says, in Pickthall's words: \"O ye who believe! When the call is heard for the prayer of the day of congregation, haste unto remembrance of Allah and leave your trading.\" In the Sunni schools of law the Friday prayer, with its sermon, is required of adult men who are settled in a place, and women may attend; when they do, it takes the place of the noon prayer. Why together? In Sahih al-Bukhari the Prophet Muhammad, peace be upon him, says prayer in congregation is twenty-seven degrees better than prayer alone. Twenty-seven is the hadith's own number. The point underneath is simple: the same prayer, said shoulder to shoulder, isn't the same experience. Who gets to come? In another hadith in Bukhari, the Prophet says not to stop the women servants of Allah from the mosques of Allah. Mosques today arrange space for women in different ways, and Muslims discuss openly how well that's working. And what belonging asks. A mosque isn't a perfect place. The sermon may run long; the parking may be a mess; someone may be rude about where you stood. Belonging isn't the same as liking everything. It means you're known by face, you notice when someone is missing, and somebody notices when you are. That's a lot to ask of a building, and it's exactly what people go back for.",
       "screen": [
         "`THE CALL ON THE DAY OF CONGREGATION.` · `SHOULDER TO SHOULDER.` · `DON'T STOP THE WOMEN FROM THE MOSQUES.` · `BELONGING IS BEING MISSED.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: go to Jumu'ah. For now, sit still and let your breath slow. Think of a place where you are known by face, a mosque, a team, a building where someone waves. Picture the door of it. Who would notice if you didn't come? Let a name rise. Now think of someone who has stopped turning up somewhere, and let their name rise too. If you pray, you can ask Allah to keep them well. If you don't, simply hold them in mind. If you're Muslim and able, you might plan to go this Friday and arrive a little early. If you aren't Muslim, some mosques welcome visitors; you could find out whether one near you does. The bell holds the time.",
+      "voice": "Think of a place where you're known by face, a mosque, a team, a building where someone waves, and let rise the name of someone who would notice if you didn't come, then the name of someone who has stopped turning up. If you pray, ask Allah to keep them well; if you don't, simply hold them in mind. If you're Muslim and able, you might plan to go this Friday a little early; if you aren't Muslim, some mosques welcome visitors.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: belong somewhere. Today, greet one person by name in a place you go often, and ask them one real question. Tomorrow, your circle. Day one thousand four hundred four.",
+      "voice": "Your line: belong somewhere. Known by face, and missed on the Fridays you're gone. Until tomorrow.",
       "screen": []
     },
     {
@@ -139,7 +139,37 @@
         "'iyadah",
         "visiting the sick"
       ]
-    ]
+    ],
+    "guess": [
+      "a place where the row lines up and you are known, and missed",
+      "any room where Muslims eat together after Friday prayer",
+      "a building only scholars may enter to lead the prayers"
+    ],
+    "chat": {
+      "who": "your neighbor",
+      "says": "Is a mosque just a building where Muslims go to pray?",
+      "options": [
+        "It's also where you're known by face, and missed when you don't come.",
+        "Yes. Once the prayer ends, nobody there really notices who came.",
+        "Yes. Belonging there means agreeing with everything that happens."
+      ],
+      "meaning": "Belonging isn't liking everything. It means you're known by face, you notice when someone is missing, and somebody notices when you are.",
+      "answer": 0
+    },
+    "gloss": {
+      "Surah al-Jumu'ah": {
+        "meaning": "the Qur'an's chapter named for the Friday congregation",
+        "script": "سورة الجمعة",
+        "say": "SOO-rah al-joo-MOO-ah"
+      },
+      "Pickthall": {
+        "meaning": "an English translator of the Qur'an"
+      },
+      "Sahih al-Bukhari": {
+        "meaning": "a major collection of hadith gathered by al-Bukhari",
+        "say": "sah-HEEH al-boo-KHAH-ree"
+      }
+    }
   },
   "sources": [
     {
@@ -175,7 +205,10 @@
       "Check the legal summary: Friday prayer required of adult resident men, open to women, and replacing the noon prayer for those who attend; schools differ in detail and Shia rulings on Friday prayer differ again.",
       "Confirm Sahih al-Bukhari 645 (twenty-seven degrees) and 900 (do not stop the women servants of Allah from the mosques of Allah).",
       "The line about mosques arranging space for women differently and Muslims discussing it should be checked for fair wording.",
-      "Editor: the legal summary now says 'in the Sunni schools of law' rather than 'in Islamic law', since Shia rulings on Friday prayer differ."
+      "Editor: the legal summary now says 'in the Sunni schools of law' rather than 'in Islamic law', since Shia rulings on Friday prayer differ.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "Year 4 pass: the hook points back to day 137 (what a mosque is).",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

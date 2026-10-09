@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, phulkari: silk flowers on hand-spun cotton, given at weddings. Your line was stitched flowers. Whom did you thank for something made slowly? Day one thousand three hundred fifty-one.",
+      "voice": "Yesterday, phulkari: silk flowers on hand-spun cotton, given at weddings. Your line was stitched flowers.",
       "screen": [
         "`STITCHED FLOWERS.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, what Sikh studies is. It's the academic study of the Sikh tradition: its scripture and languages, its history, its music and art, its life in Punjab and in every place Sikhs have settled. Students learn Gurmukhi, read the Guru Granth Sahib closely, and ask how the panth grew. Second, an early bridge. A British official named Max Arthur Macauliffe worked beside Sikh scholars, among them Bhai Kahn Singh of Nabha, to put the Gurus' hymns and lives into English, in a work called The Sikh Religion. He leaned on Sikh learning at every step. This path still quotes his English in places. Third, an honest tension. Some Sikhs welcome study of their tradition, and some communities have helped fund chairs and programs. At times, though, a historian's reading of a manuscript or a story has unsettled Sikhs who hold a different understanding, and there have been real arguments. Sikh scholars work inside the universities too, holding faith and research together. Both trust and caution are part of the story. Fourth, what Guru Nanak said about reading. In the Asa di Var he pictures someone reading cartloads of books, reading for months and years, all through life. And then, in paraphrase: only one thing is of account; the rest is the chatter of ego. Some readers take that one thing as the Name. Study can serve it, or it can get in the way. And this week has walked through the panth's arts: kavishri, katha, the ragas, painting, buildings, phulkari, and now the study of it all. Studied everywhere.",
+      "voice": "First, what Sikh studies is: the academic study of the Sikh tradition, its scripture and languages, its history, its music and art, its life in Punjab and in every place Sikhs have settled. Students learn Gurmukhi, read the Guru Granth Sahib closely, and ask how the panth grew. Second, an early bridge. A British official named Max Arthur Macauliffe worked beside Sikh scholars, among them Bhai Kahn Singh of Nabha, to put the Gurus' hymns and lives into English, in a work called The Sikh Religion. He leaned on Sikh learning at every step, and this path still quotes his English in places. Third, an honest tension. Some Sikhs welcome study of their tradition, and some communities have helped fund chairs and programs. At times, though, a historian's reading of a manuscript or a story has unsettled Sikhs who hold a different understanding, and there have been real arguments. Sikh scholars work inside the universities too, holding faith and research together. Both trust and caution are part of the story. Fourth, what Guru Nanak said about reading. In the Asa di Var he pictures someone reading cartloads of books, reading for months and years, all through life. And then, in paraphrase: only one thing is of account; the rest is the chatter of ego. Some readers take that one thing as the Name. Study can serve it, or it can get in the way.",
       "screen": [
         "`THE ACADEMIC STUDY OF THE PANTH.` · `MACAULIFFE AND BHAI KAHN SINGH.` · `TRUST, AND CAUTION.` · `CARTLOADS OF BOOKS, ONE THING.` · then, large: `STUDIED EVERYWHERE.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: read one scholarly article. Settle, and breathe. For now, just choose: a question about the Sikh tradition you'd genuinely like answered. Hold it. Where did the Gurmukhi script come from? How was the Granth put together? What do the ragas mean? After the bell, look for one careful article on it, from a university or a scholarly journal, and read it slowly. And keep Guru Nanak's line beside you while you read: one thing is of account. The bell holds the time.",
+      "voice": "Choose one question about the Sikh tradition you'd genuinely like answered: where the Gurmukhi script came from, how the Granth was put together, what the ragas mean. Hold it gently, and keep Guru Nanak's line beside it: one thing is of account.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: studied everywhere. Today, learn one fact about a tradition that isn't yours from a careful source, and notice what changes when you know it. Day one thousand three hundred fifty-one.",
+      "voice": "Your line: studied everywhere. Cartloads of books, and one thing of account. See you tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Sikh studies is taught in universities in several countries, sometimes through chairs and programs Sikh communities helped fund; Sikh and non-Sikh scholars study Gurmukhi, scripture, history and the arts.",
   "games": {
+    "guess": [
+      "the academic study of Sikh history and scripture",
+      "the daily reading of the Granth at home",
+      "training to become a granthi at a gurdwara"
+    ],
     "match": {
       "prompt": "inside Sikh studies: tap the pairs.",
       "pairs": [
@@ -135,7 +140,43 @@
         "santhiaa",
         "teacher reads, student repeats"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "a cousin starting college",
+      "says": "A university teaches Sikh studies? Is that only for Sikhs, or for anyone?",
+      "options": [
+        "Anyone. It's the academic study of Sikh scripture, history and arts, with students of every background.",
+        "Only Sikhs. Universities require students to be initiated before they read Gurbani.",
+        "Anyone, but it skips the scripture and covers only Punjab's farming and trade."
+      ],
+      "answer": 0,
+      "meaning": "Sikh studies is the academic study of the tradition's scripture, history and arts, taught far from Punjab and in it, to students of every background."
+    },
+    "gloss": {
+      "Gurmukhi": {
+        "meaning": "the script the Guru Granth Sahib is written in",
+        "script": "ਗੁਰਮੁਖੀ",
+        "say": "GUR-moo-khee"
+      },
+      "Macauliffe": {
+        "meaning": "a British official who put the Gurus' hymns into English",
+        "say": "MAK-uh-liff"
+      },
+      "Bhai Kahn Singh": {
+        "meaning": "a Sikh scholar of Nabha who worked beside Macauliffe",
+        "say": "BHAA-ee KAHN SING"
+      },
+      "Asa di Var": {
+        "meaning": "Guru Nanak's ballad in Raag Asa",
+        "script": "ਆਸਾ ਦੀ ਵਾਰ",
+        "say": "AA-saa dee VAAR"
+      },
+      "panth": {
+        "meaning": "the Sikh community as a whole",
+        "script": "ਪੰਥ",
+        "say": "PUNTH"
+      }
+    }
   },
   "sources": [
     {
@@ -160,7 +201,10 @@
       "'Sikh scholars work inside the universities too' and 'some communities have helped fund chairs and programs' are general claims; please confirm or soften.",
       "The tension between academic historians and some Sikhs is described without naming people or works; please confirm it is fair.",
       "Week end (days 1345–1351) looked back at in the teach's last lines.",
-      "Editor: 'he wasn't Sikh' cut (accounts of Macauliffe's own faith differ); hook opens on a question instead of another object scene, and 'universities around the world' plus the odd library-shelf line removed."
+      "Editor: 'he wasn't Sikh' cut (accounts of Macauliffe's own faith differ); hook opens on a question instead of another object scene, and 'universities around the world' plus the odd library-shelf line removed.",
+      "2026-10-07 (job 2+3): the practice no longer sends the listener off to read an article after the bell; it now holds the chosen question with Guru Nanak's line. The closing week recap was cut as repetition.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

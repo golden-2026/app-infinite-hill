@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, sharh, and your line: explained for us. Did you read past a puzzling line before deciding what it meant? Day one thousand one hundred sixty-six.",
+      "voice": "Yesterday: sharh, the commentary that keeps a saying from being misread, and your line: explained for us.",
       "screen": [
         "`EXPLAINED FOR US.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the whole text. Reports travel now as screenshots and captions, trimmed to fit. A basic habit of hadith study is the one you just heard: find the full report, with its question and its answer, before deciding what it says. Second, the setting. Scholars paid attention to the occasion of a saying, sabab al-wurud: who asked, what had just happened, who was being spoken to. When Abdullah ibn Amr was told that his body had a right over him, it was because he had been fasting every day and standing in prayer every night. Lift that line out of its story and it can be made to say almost anything. Third, the neighbors. A single report sits among others on the same subject, and among the verses of the Qur'an. Jurists read them side by side, and the schools of law sometimes reached different conclusions from the same texts. That's where this year turns next. Fourth, the person. In the introduction to his Sahih, Imam Muslim records a saying of the early scholar Muhammad ibn Sirin: this knowledge is religion, so look carefully at whom you take your religion from. The chain didn't stop when the books were finished. Students went on reading the collections aloud in front of teachers, who could say: this word means this, that report explains this one, and here the scholars differ. That is still how this tradition reads hadith at its most careful. The words, the setting, the other texts, and someone who has walked the road before you.",
+      "voice": "First, the whole text. Reports travel now as screenshots and captions, trimmed to fit. A basic habit of hadith study is the one you just heard: find the full report, question and answer, before deciding what it says. Second, the setting. Scholars paid attention to the occasion of a saying, sabab al-wurud: who asked, what had just happened, who was being spoken to. When Abdullah ibn Amr was told that his body had a right over him, it was because he had been fasting every day and standing in prayer every night. Lift that line out of its story and it can be made to say almost anything. Third, the neighbors. A single report sits among others on the same subject, and among the verses of the Qur'an. Jurists read them side by side, and the schools of law sometimes reached different conclusions from the same texts. That's where this year turns next. Fourth, the person. In the introduction to his Sahih, Imam Muslim records a saying of the early scholar Muhammad ibn Sirin: this knowledge is religion, so look carefully at whom you take your religion from. The chain didn't stop when the books were finished. Students went on reading the collections aloud in front of teachers, who could say: this word means this, that report explains this one, here the scholars differ. That's still how this tradition reads hadith at its most careful: the words, the setting, the other texts, and someone who has walked the road before you.",
       "screen": [
         "`FIND THE WHOLE REPORT.` · `SABAB AL-WURUD: THE SETTING.` · `READ IT BESIDE ITS NEIGHBORS.` · `LOOK AT WHOM YOU LEARN FROM.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: ask someone about a hadith. First, find the one to ask about. Settle, and breathe. Bring to mind a hadith you've heard quoted, maybe recently, maybe on a screen. Say it to yourself as you heard it. Now put today's questions to it, gently. Is that the whole of it? Who was being spoken to? What else is said on this? Don't answer them. Just notice which ones you can't. Then think of one person you could ask: an imam, a teacher, a friend who studies. Hold their face in mind for a breath. The bell holds the time.",
+      "voice": "Bring to mind a hadith you've heard quoted, maybe on a screen, and put today's questions to it gently: is that the whole of it, who was being spoken to, what else is said on this? Notice which ones you can't answer. Then think of one person you could ask, an imam, a teacher, a friend who studies, and hold their face in mind for a breath.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: with a teacher. Today, take the hadith you thought of to one person who has studied it, and ask what they understand by it. Tomorrow: hadith close. Day one thousand one hundred sixty-six.",
+      "voice": "Your line: with a teacher. The whole report, in its setting, beside its neighbors. One more day, kept.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Muslims who study hadith read the collections with a teacher, in a class or circle, who explains each report's setting, its other versions, and how scholars have understood it.",
   "games": {
+    "guess": [
+      "taking a report whole, in its setting, with someone who studied it",
+      "reading hadith only in modern translations, without Arabic",
+      "judging each report by how it sounds to people now"
+    ],
     "match": {
       "prompt": "reading hadith today — tap the pairs.",
       "pairs": [
@@ -139,7 +144,37 @@
         "sahih",
         "sound: unbroken, upright, precise"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your friend",
+      "says": "I saw a hadith online: help your brother, oppressor or oppressed. So always take your side's part?",
+      "options": [
+        "Read the whole report: helping an oppressor means stopping him from oppressing.",
+        "Yes. It means standing with your own people, whatever they've done.",
+        "It was only meant for wartime, so it has nothing to say about daily life."
+      ],
+      "answer": 0,
+      "meaning": "In Sahih al-Bukhari someone asks how to help an oppressor. The answer: by stopping him. Half a hadith pointed the opposite way."
+    },
+    "gloss": {
+      "sabab al-wurud": {
+        "meaning": "the occasion of a saying: who asked, and what had happened",
+        "script": "سبب الورود",
+        "say": "SA-bab al-wu-ROOD"
+      },
+      "Abdullah ibn Amr": {
+        "meaning": "a companion who fasted every day and prayed every night",
+        "say": "ab-dul-LAH IB-n AM-r"
+      },
+      "Muhammad ibn Sirin": {
+        "meaning": "an early scholar: look at whom you take religion from",
+        "say": "mu-HAM-mad IB-n see-REEN"
+      },
+      "Imam Muslim": {
+        "meaning": "compiler of Sahih Muslim",
+        "say": "i-MAAM MUS-lim"
+      }
+    }
   },
   "sources": [
     {
@@ -170,7 +205,9 @@
       "Abdullah ibn Amr callback (day 1113, Bukhari 1975): 'your body has a right over you' tied to his vow to fast daily; confirm.",
       "'Students went on reading the collections aloud in front of teachers' and 'teachers in this tradition say' are general descriptions with no dates; confirm the framing.",
       "Original: سبب الورود (sabab al-wurud), occasion of a hadith; confirm term and pronunciation.",
-      "Editor: Abdullah ibn Amr's situation reworded from 'vowed to fast every day' to 'fasting every day and standing in prayer every night', following the question put to him in Bukhari 1975 (match pair too); 'teachers in this tradition say' replaced so the narrator does not speak for unnamed teachers."
+      "Editor: Abdullah ibn Amr's situation reworded from 'vowed to fast every day' to 'fasting every day and standing in prayer every night', following the question put to him in Bukhari 1975 (match pair too); 'teachers in this tradition say' replaced so the narrator does not speak for unnamed teachers.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

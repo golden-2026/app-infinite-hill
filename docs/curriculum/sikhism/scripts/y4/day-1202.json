@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the heart of the Bavan Akhri: letters learned without the Name stay empty. Your line was learning with heart. What did you learn yesterday that reached past your head? Day one thousand two hundred two.",
+      "voice": "Yesterday, the heart of the Bavan Akhri: letters learned without the Name stay empty. Your line was learning with heart.",
       "screen": [
         "`LEARNING WITH HEART.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A school slate at the end of the day. Chalk dust in the corners, a row of letters copied over and over, a teacher's mark at the bottom. Guru Arjan's Bavan Akhri in Raga Gauri works like a slate, stretched across the pages of the Guru Granth Sahib from Ang two hundred fifty. Letter after letter, each one opens a lesson. For two days we've walked inside it. Today we reach the bottom of the slate, where the teacher leaves the last mark. And the last mark isn't a grade. It's a gift.",
+      "voice": "A school slate at the end of the day. Chalk dust in the corners, a row of letters copied over and over, a teacher's mark at the bottom. Guru Arjan's Bavan Akhri in Raga Gauri works like that slate, stretched across the Guru Granth Sahib from Ang two hundred fifty. Letter after letter, each one opens a lesson. Today, the bottom of the slate, where the teacher leaves the last mark. And the last mark isn't a grade. It's a gift.",
       "screen": [
         "`A SLATE AT THE END OF THE DAY.` → `LETTER AFTER LETTER.` → `THE LAST MARK IS A GIFT.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "An acrostic sets up an expectation. Each letter is a step, and steps sound like effort: learn this, then this, then this, and you'll arrive. The Bavan Akhri uses that shape, and along the way it says hard things, like the sassa stanza's warning about cleverness that goes nowhere. You'd expect the ending to be a reward for the student who finished every letter. Instead, as this path reads it, a long alphabet ends in grace. In that reading, the close turns from the student to the Giver: the Name comes through the Lord's mercy and the Guru's kindness, not through anyone's own cleverness. That turn has a name in Sikh vocabulary. Kirpa is mercy, kindness given freely. Nadar is the gracious glance, the Lord looking with favor. Sikh teaching holds both together with effort. Sikhs are asked to rise, remember, work honestly, serve. And Gurbani speaks of the fruit of all that as a gift. Some readers hear the whole composition as a lesson in the right order of things. First you learn your letters. Then, having learned them, you find out who was holding the chalk. So the long schoolroom poem doesn't end by praising the pupil. It ends with the pupil looking up. That's worth carrying out of a lesson that long: the work was real, and the gift was bigger than the work.",
+      "voice": "An acrostic sets up an expectation. Each letter is a step, and steps sound like effort: learn this, then this, and you'll arrive. The Bavan Akhri uses that shape, and along the way it says hard things, like the sassa stanza's warning about cleverness that goes nowhere. You'd expect the ending to reward the student who finished every letter. Instead, as this path reads it, a long alphabet ends in grace. The close turns from the student to the Giver: the Name comes through the Lord's mercy and the Guru's kindness, not through anyone's own cleverness. Sikh vocabulary has words for that turn. Kirpa is mercy, kindness given freely. Nadar is the gracious glance, the Lord looking with favor. Sikh teaching holds both together with effort. Sikhs are asked to rise, remember, work honestly, serve, and Gurbani speaks of the fruit of all that as a gift. Some readers hear the whole composition as a lesson in the right order of things. First you learn your letters. Then you find out who was holding the chalk. So the long schoolroom poem doesn't end by praising the pupil. It ends with the pupil looking up: the work was real, and the gift was bigger than the work.",
       "screen": [
         "`AN ALPHABET SOUNDS LIKE EFFORT.` · `THE CLOSE TURNS TO THE GIVER.` · `KIRPA AND NADAR.` · `WHO WAS HOLDING THE CHALK?` · then, large: `ENDS IN GRACE.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: read its last stanza. If you have a gutka, an app or a printed Guru Granth Sahib nearby, find the closing lines of the Bavan Akhri in Raga Gauri and read them once, slowly, in Gurmukhi or in translation. If you don't have them to hand, sit with one thing you worked hard for this year, and notice how much of it was also given: a teacher, a chance, a person who said yes. Hold both, the work and the gift. If you pray, you can say Waheguru quietly as you close. The bell holds the time.",
+      "voice": "If you have a gutka, an app or a printed Guru Granth Sahib nearby, find the closing lines of the Bavan Akhri in Raga Gauri and read them once, slowly, in Gurmukhi or in translation. If not, sit with one thing you worked hard for this year and notice how much of it was also given: a teacher, a chance, a person who said yes. Hold both, the work and the gift, and if you pray, close with a quiet Waheguru.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: ends in grace. Today, when you finish something, a task, a meal, a hard conversation, take one breath to notice what was given to you along the way. Day one thousand two hundred two.",
+      "voice": "Your line: ends in grace. The pupil looks up, and the gift is bigger than the work. Until tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "The Bavan Akhri of Guru Arjan is part of the Guru Granth Sahib in Raga Gauri; some Sikhs read it through in their own study or hear it explained in katha at the gurdwara.",
   "games": {
+    "guess": [
+      "the alphabet hymn's ending, turning to grace",
+      "the final exam after learning all fifty-two letters",
+      "the last letter of the Gurmukhi alphabet"
+    ],
     "match": {
       "prompt": "the closing of the alphabet: tap the pairs.",
       "pairs": [
@@ -139,7 +144,44 @@
         "Babarvani",
         "Guru Nanak's hymns on the invasion"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "a classmate",
+      "says": "Does the Bavan Akhri end by praising the student who learned every letter?",
+      "options": [
+        "No. It turns to the Giver: the Name comes through mercy, not cleverness.",
+        "Yes. It ends by praising the pupil who mastered all fifty-two letters.",
+        "No. It ends by saying the letters were never worth learning at all."
+      ],
+      "answer": 0,
+      "meaning": "As this path reads it, the long alphabet ends in grace: the work was real, and the gift was bigger than the work."
+    },
+    "gloss": {
+      "Bavan Akhri": {
+        "meaning": "Guru Arjan's acrostic hymn of fifty-two letters",
+        "script": "ਬਾਵਨ ਅਖਰੀ",
+        "say": "BAA-vun AKH-ree"
+      },
+      "Raga Gauri": {
+        "meaning": "a musical mode; the Bavan Akhri is set in it",
+        "script": "ਰਾਗੁ ਗਉੜੀ",
+        "say": "RAAG GOW-ree"
+      },
+      "Kirpa": {
+        "meaning": "mercy, kindness given freely",
+        "script": "ਕਿਰਪਾ",
+        "say": "KIR-paa"
+      },
+      "Nadar": {
+        "meaning": "the gracious glance; the Lord looking with favor",
+        "say": "NUD-ur"
+      },
+      "Gurbani": {
+        "meaning": "the Gurus' words in scripture",
+        "script": "ਗੁਰਬਾਣੀ",
+        "say": "GUR-baa-nee"
+      }
+    }
   },
   "sources": [
     {
@@ -156,7 +198,10 @@
       "The paraphrase of the Bavan Akhri's closing (the Name found through the Lord's mercy and the Guru's kindness, not won by cleverness) follows the outline's summary, 'a long alphabet ending in grace'; please check it against the actual closing salok and pauri and adjust.",
       "Kirpa and nadar are given as everyday Sikh vocabulary for grace; please confirm the glosses.",
       "Days 1192–1201 are now on disk; the review line matches day 1201's sassa stanza.",
-      "Editor pass: cut the 'many pages' size claim and the unsourced list of the hymn's themes (now tied to day 1201's sassa stanza); the closing paraphrase is now framed as this path's reading rather than the text's words, since it was not checked against the closing salok; replaced a stale note."
+      "Editor pass: cut the 'many pages' size claim and the unsourced list of the hymn's themes (now tied to day 1201's sassa stanza); the closing paraphrase is now framed as this path's reading rather than the text's words, since it was not checked against the closing salok; replaced a stale note.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper.",
+      "2026-10-08: sign-off varied (\"See you tomorrow.\" → \"Until tomorrow.\"), it repeated the day before's."
     ]
   },
   "meta": {

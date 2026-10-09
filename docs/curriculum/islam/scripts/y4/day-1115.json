@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Arafah and Ashura, and your line: two special fasts. Did you find out when the next one falls? Day one thousand one hundred fifteen.",
+      "voice": "Yesterday, Arafah and Ashura: two special fasts, one on the pilgrims' great day, one remembering Musa saved and Husayn lost.",
       "screen": [
         "`TWO SPECIAL FASTS.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "The Prophet Muhammad ﷺ steps out of his house with news. He knows which night it is, the Night of Power, and he's coming to tell the people. But outside, two men are arguing. By the time the quarrel is done, the knowledge has been lifted from him. The report, from Ubadah ibn al-Samit, is in Sahih al-Bukhari, and what the Prophet says next is the surprise. Perhaps it's better for you this way. Seek it. Today, the odd nights.",
+      "voice": "The Prophet Muhammad ﷺ steps out of his house with news. He knows which night it is, the Night of Power, and he's coming to tell the people. But outside, two men are arguing. By the time the quarrel is done, the knowledge has been lifted from him. The report, from Ubadah ibn al-Samit, is in Sahih al-Bukhari, and what the Prophet says next is the surprise. Perhaps it's better for you this way. Seek it.",
       "screen": [
         "`HE COMES OUT WITH NEWS.` → `TWO MEN ARGUING.` → `PERHAPS IT'S BETTER THIS WAY.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the night itself. The Qur'an gives it a short surah of its own, the ninety-seventh. In Pickthall's words: \"The Night of Power is better than a thousand months.\" The same surah opens by saying the Qur'an was sent down on that night, and the hadith place it in Ramadan. Second, where to look. In another report in Bukhari, the Prophet says to seek it in the odd nights of the last ten of Ramadan. Not one night, then. A handful of nights near the end of the month, each one a candidate. Third, why not just say which. The story of the quarrel answers that, at least in part. The date was about to be given and was taken away, and the Prophet didn't call it a loss. Perhaps it's better. If the date were known, people might pour everything into one night and coast through the rest. Unknown, it asks for attention across several nights, and it rewards the person who keeps showing up. Some scholars have drawn exactly that lesson from it; the hadith itself leaves the reason unsaid. Fourth, what people do. Aisha describes the Prophet, when the last ten began, tightening his waist-wrapper, staying up through the night, and waking his family. In some mosques, the last ten nights are full: long prayers, recitation, some people staying in the mosque altogether, children asleep on the carpets at the back. Others keep the odd nights at home, quietly. Either way, the search is the practice. And one small detail is worth keeping from that first story. What hid the night was two men arguing. It's a reminder that a quarrel can cost more than the people in it.",
+      "voice": "First, the night itself. The Qur'an gives it a short surah of its own, the ninety-seventh. In Pickthall's words: \"The Night of Power is better than a thousand months.\" The surah opens by saying the Qur'an was sent down on that night, and the hadith place it in Ramadan. Second, where to look. In another report in Bukhari, the Prophet says to seek it in the odd nights of the last ten of Ramadan. Not one night, then: a handful near the end of the month, each one a candidate. Third, why not just say which? The story of the quarrel answers that, at least in part. The date was about to be given and was taken away, and the Prophet didn't call it a loss. If the date were known, people might pour everything into one night and coast through the rest. Unknown, it asks for attention across several nights, and it rewards the person who keeps showing up. Some scholars have drawn that lesson; the hadith itself leaves the reason unsaid. Fourth, what people do. Aisha describes the Prophet, when the last ten began, tightening his waist-wrapper, staying up through the night, and waking his family. In some mosques the last ten nights are full: long prayers, recitation, some people staying in the mosque altogether, children asleep on the carpets at the back. Others keep the odd nights at home, quietly. Either way, the search is the practice. And one small detail from that first story: what hid the night was two men arguing. A quarrel can cost more than the people in it.",
       "screen": [
         "`BETTER THAN A THOUSAND MONTHS.` · `THE ODD NIGHTS OF THE LAST TEN.` · `HIDDEN, SO YOU KEEP LOOKING.` · `TIGHTENING THE WAIST-WRAPPER.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: pray on an odd night, or get ready to. Settle, and breathe slowly. If you pray, you can choose one night this week, or mark the odd nights of the next Ramadan, and plan a few extra minutes of prayer, or of recitation, before you sleep. If you don't pray, sit with the idea of a night worth staying up for, and ask what you'd want to have done with it. No grand plan. One night, a little longer awake. The bell holds the time.",
+      "voice": "If you pray, choose one night this week, or mark the odd nights of the next Ramadan, and plan a few extra minutes of prayer or recitation before you sleep. If you don't, sit with the idea of a night worth staying up for, and ask what you'd want to have done with it. No grand plan: one night, a little longer awake.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: seek it. Today, when an argument starts, notice what it might be costing, and let it go a little sooner. Tomorrow: Aisha's du'a. Day one thousand one hundred fifteen.",
+      "voice": "Your line: seek it. Several nights, each one a candidate. That's day one thousand one hundred fifteen.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "In the last ten nights of Ramadan, Muslims who keep them spend extra hours in prayer and recitation, especially on the odd nights; some stay in the mosque for the whole ten days, and others keep the nights at home.",
   "games": {
+    "guess": [
+      "the odd-numbered nights of Ramadan's last ten",
+      "the first ten nights of Ramadan, when fasting starts",
+      "nights spent traveling to Mecca for the pilgrimage"
+    ],
     "match": {
       "prompt": "the odd nights — tap the pairs.",
       "pairs": [
@@ -139,7 +144,38 @@
         "nisab",
         "the minimum before zakat is due"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your housemate",
+      "says": "Which night is the Night of Power? Can't someone just tell me the date?",
+      "options": [
+        "It's hidden. Seek it in the odd nights of Ramadan's last ten.",
+        "It's always the first night of Ramadan, when the fast begins.",
+        "It's always the fifteenth, when the moon is full in Ramadan."
+      ],
+      "answer": 0,
+      "meaning": "In Bukhari, the date was lifted after two men quarreled. The Prophet said perhaps it's better, and to seek it in the odd nights of the last ten."
+    },
+    "gloss": {
+      "Night of Power": {
+        "meaning": "the night the Qur'an was sent down, better than a thousand months",
+        "script": "ليلة القدر",
+        "say": "LAY-luh-tul KUD-r"
+      },
+      "Ubadah ibn al-Samit": {
+        "meaning": "the companion who reported the quarrel story",
+        "say": "oo-BAH-duh ibn as-SAH-mit"
+      },
+      "surah": {
+        "meaning": "a chapter of the Qur'an",
+        "script": "سورة",
+        "say": "SOO-ruh"
+      },
+      "Aisha": {
+        "meaning": "a wife of the Prophet, and the source of many reports",
+        "say": "AH-ee-shuh"
+      }
+    }
   },
   "sources": [
     {
@@ -185,7 +221,9 @@
       "'Some scholars have drawn exactly that lesson': general, flagged so a Keeper can name one or cut it.",
       "Description of mosques in the last ten (crowds, i'tikaf, children asleep) is general color, not sourced; check it's fair.",
       "Carry practice ties back to the quarrel; the outline practice (pray on an odd night) is in the practice segment.",
-      "Editor: 'Muslims place it in Ramadan' (an all-Muslims claim) changed to 'the hadith place it in Ramadan', which Bukhari 2017 supports."
+      "Editor: 'Muslims place it in Ramadan' (an all-Muslims claim) changed to 'the hadith place it in Ramadan', which Bukhari 2017 supports.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

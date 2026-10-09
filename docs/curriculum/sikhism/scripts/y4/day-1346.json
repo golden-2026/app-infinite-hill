@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, kavishri: Sikh history sung with nothing but the voice. Your line was voice alone. What did you say to someone without a screen in between? Day one thousand three hundred forty-six.",
+      "voice": "Yesterday, kavishri: Sikh history sung with nothing but the voice. Your line was voice alone.",
       "screen": [
         "`VOICE ALONE.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "The kirtan ends. The music stops, the instruments are set aside, and someone sits down facing the sangat with the scripture open nearby. No singing now. Just talking. They take a single line that was sung a few minutes ago and start to open it: what each word means, which story it brings to mind, what it asks of a person on an ordinary Tuesday. Go to another gurdwara next week and someone else will open the same line in a completely different way. Both are doing katha, explanation. Today is about the different traditions of doing it.",
+      "voice": "The kirtan ends. The instruments are set aside, and someone sits facing the sangat with the scripture open nearby. No singing now, just talking. They take a single line sung a few minutes ago and open it: what each word means, which story it brings to mind, what it asks of a person on an ordinary Tuesday. At another gurdwara next week, someone will open the same line in a completely different way. Both are doing katha, explanation. Today is about the different traditions of doing it.",
       "screen": [
         "`THE MUSIC STOPS. A VOICE BEGINS.` → `ONE LINE, OPENED UP.` → `NEXT WEEK, A DIFFERENT WAY.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, what katha is. The word means telling, or explanation. In a gurdwara, katha is the spoken part beside the sung part: a giani, a learned explainer, takes Gurbani and opens it for the sangat. Second, the styles. Some explainers go word by word, slowly, giving the meaning of each term and how it fits the grammar of the line. Some tell sakhis, stories from the lives of the Gurus, and let the story carry the meaning. Some draw on the vocabulary of older Indian philosophy, as the Nirmala and Udasi scholars did. Some trace their way of reading back through a teaching lineage; the Damdami Taksal, for one, says its line of teachers goes back to Guru Gobind Singh. And some speakers today explain with history, science, or everyday life, for listeners who grew up far from Punjab. Third, why there are many ways. In the sixteenth pauri of Japji, Guru Nanak says, in paraphrase: if anyone tries to tell of it and reflect on it, there is no counting what the Creator has made. If the subject is that wide, no single explanation can finish it. Each school is holding up a lamp to one part of a very large room. Fourth, how Sikhs hold the differences. Explainers sometimes disagree, and Sikhs argue about which readings are faithful, and that argument is part of a living tradition. What sits above all of them is the Guru Granth Sahib itself. The katha is a servant of the line, never its replacement. Many ways to explain, one line being explained.",
+      "voice": "First, what katha is. The word means telling, or explanation. In a gurdwara, katha is the spoken part beside the sung part: a giani, a learned explainer, takes Gurbani and opens it for the sangat. Second, the styles. Some explainers go word by word, giving the meaning of each term and how it fits the grammar of the line. Some tell sakhis, stories from the lives of the Gurus, and let the story carry the meaning. Some draw on the vocabulary of older Indian philosophy, as the Nirmala and Udasi scholars did. Some trace their reading through a teaching lineage; the Damdami Taksal, for one, says its line of teachers goes back to Guru Gobind Singh. And some speakers today explain with history, science or everyday life, for listeners who grew up far from Punjab. Third, why there are many ways. In the sixteenth pauri of Japji, Guru Nanak says, in paraphrase: if anyone tries to tell of it and reflect on it, there is no counting what the Creator has made. If the subject is that wide, no single explanation can finish it. Each school holds up a lamp to one part of a very large room. Fourth, how Sikhs hold the differences. Explainers sometimes disagree, and Sikhs argue about which readings are faithful; that argument is part of a living tradition. Above all of them sits the Guru Granth Sahib itself. The katha is a servant of the line, never its replacement.",
       "screen": [
         "`KATHA: THE SPOKEN EXPLANATION.` · `WORD BY WORD, STORY, OR LINEAGE.` · `THERE IS NO COUNTING IT.` · `THE LINE SITS ABOVE THEM ALL.` · then, large: `MANY WAYS TO EXPLAIN.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: compare two explanations. Settle, and breathe. Bring to mind one line of scripture you know, from any book that matters to you. Recall two ways you've heard it explained, or two ways it could be read. Don't choose between them yet. Hold the first, and see what it lights up. Then hold the second, and see what it lights up. Then let the line itself sit in the middle, bigger than both. The bell holds the time.",
+      "voice": "Bring to mind one line of scripture you know, from any book that matters to you, and two ways you've heard it explained or could read it. Hold the first and see what it lights up, then the second, without choosing. Then let the line itself sit in the middle, bigger than both.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: many ways to explain. Today, when someone explains something you thought you already understood, let them finish, and keep one new thing they showed you. Day one thousand three hundred forty-six.",
+      "voice": "Your line: many ways to explain. Many lamps, and the room is bigger than all of them. Day one thousand three hundred forty-six is yours.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "In gurdwaras a giani may give katha after kirtan, explaining a line or hymn from the Guru Granth Sahib; explainers from different schools use word-by-word meaning, stories of the Gurus, or present-day examples.",
   "games": {
+    "guess": [
+      "the many styles of explaining Gurbani aloud",
+      "the rules for reading the Granth in silence",
+      "the order of hymns sung at a Sikh wedding"
+    ],
     "match": {
       "prompt": "inside katha: tap the pairs.",
       "pairs": [
@@ -139,7 +144,44 @@
         "Nanakpanthi",
         "one who walks on Nanak's path"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your roommate",
+      "says": "Two gurdwaras explained the same line differently. Doesn't that mean one got it wrong?",
+      "options": [
+        "Not always. Katha comes in many styles; no single explanation finishes Gurbani, and the line sits above all.",
+        "Yes. Katha is meant to repeat the line word for word, so adding any explanation is a mistake.",
+        "No. Katha is only personal opinion, so none of the explanations really matter at all."
+      ],
+      "answer": 0,
+      "meaning": "Katha has many styles: word by word, stories, lineages, everyday life. Guru Nanak says there's no counting creation, so no single explanation finishes it."
+    },
+    "gloss": {
+      "katha": {
+        "meaning": "telling, or explanation of scripture",
+        "script": "ਕਥਾ",
+        "say": "KUH-thaa"
+      },
+      "giani": {
+        "meaning": "a learned explainer of Gurbani",
+        "script": "ਗਿਆਨੀ",
+        "say": "gi-AA-nee"
+      },
+      "Gurbani": {
+        "meaning": "the Gurus' words, the hymns of scripture",
+        "script": "ਗੁਰਬਾਣੀ",
+        "say": "GUR-baa-nee"
+      },
+      "sakhis": {
+        "meaning": "stories from the lives of the Gurus",
+        "say": "SAA-khees"
+      },
+      "Damdami Taksal": {
+        "meaning": "a teaching lineage tracing its teachers to Guru Gobind Singh",
+        "script": "ਦਮਦਮੀ ਟਕਸਾਲ",
+        "say": "DUM-duh-mee tuk-SAAL"
+      }
+    }
   },
   "sources": [
     {
@@ -156,7 +198,9 @@
       "Japji pauri 16 ('je ko kahai karai veechaar, karte kai karnai naahee sumaar') paraphrased; please confirm the paraphrase and Ang 3.",
       "The Damdami Taksal's claim of a teaching lineage from Guru Gobind Singh is attributed ('says its line of teachers goes back'); please confirm the wording is fair.",
       "The styles named (word by word, sakhis, Nirmala/Udasi vocabulary, lineages, modern speakers) are given without ranking; please confirm the list is fair and that 'Sikhs argue about which readings are faithful' is well put.",
-      "Editor: carry action rewritten so it no longer repeats day 1343's 'find what each way protects' angle; day 1347's review updated to match."
+      "Editor: carry action rewritten so it no longer repeats day 1343's 'find what each way protects' angle; day 1347's review updated to match.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

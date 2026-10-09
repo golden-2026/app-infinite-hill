@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, mubah, the permitted, and your line: most is permitted. Did you catch yourself inventing a rule nobody gave you, and put it down? Day one thousand one hundred seventy-eight.",
+      "voice": "Yesterday: mubah, the wide field of the permitted. Your line: most is permitted.",
       "screen": [
         "`MOST IS PERMITTED.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: think hard about one question. Pick a real one, small but honest. Should I say yes to this? How should I answer that message? What do I owe this person? Don't grab the first answer. Go in order, the way the schools teach it. What do the things I trust most say about it? What has someone wise already done? And only then, my own best judgment, with full effort. You may still get it wrong. The effort is the point. If you pray, you can ask for guidance. If not, stay with the question. The bell holds the time.",
+      "voice": "Pick one real question, small but honest: should I say yes to this, what do I owe this person? Go in order, the way the schools teach it: what do the things I trust most say, what has someone wise already done, and only then, my own best judgment, with full effort. You may still get it wrong; the effort is the point.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: effort to understand. Today, on one question that matters, give it your full effort before you decide, and let the effort count even if you're wrong. Day one thousand one hundred seventy-eight.",
+      "voice": "Your line: effort to understand. The reward is for the one who did the work. That's day one thousand one hundred seventy-eight.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Qualified jurists, known as mujtahids, derive rulings from the Qur'an, the sunnah and the other sources; Shia Muslims turn to living mujtahids, and Sunni scholars work largely within the established schools.",
   "games": {
+    "guess": [
+      "a qualified scholar's full effort to reach a ruling",
+      "anyone's personal opinion on a religious question",
+      "following a school's ruling without knowing the evidence"
+    ],
     "match": {
       "prompt": "striving to understand — tap the pairs.",
       "pairs": [
@@ -139,7 +144,35 @@
         "sharh",
         "explanation, commentary"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your coworker",
+      "says": "So can anyone with an opinion do ijtihad and still get rewarded?",
+      "options": [
+        "No. It's for a qualified scholar who knows the sources and the method and does the work.",
+        "Yes. Any honest opinion counts as ijtihad, and even a wrong one earns a reward.",
+        "No. It means a judge reading out a ruling someone else already made."
+      ],
+      "answer": 0,
+      "meaning": "Ijtihad is a qualified scholar's full effort. The reward for an honest miss isn't a loophole for any opinion; it's for the one who did the work."
+    },
+    "gloss": {
+      "ijtihad": {
+        "meaning": "striving: a scholar's full effort to reach a ruling",
+        "script": "اجتهاد",
+        "say": "ij-ti-HAAD"
+      },
+      "mujtahid": {
+        "meaning": "a scholar qualified to do ijtihad",
+        "script": "مجتهد",
+        "say": "MUJ-ta-hid"
+      },
+      "Surah al-Nisa'": {
+        "meaning": "the Qur'an's fourth surah, Women",
+        "script": "سورة النساء",
+        "say": "SOO-rah an-ni-SAA"
+      }
+    }
   },
   "sources": [
     {
@@ -164,7 +197,9 @@
       "Conditions of the mujtahid listed generally (Qur'an, sunnah, Arabic, consensus, method): confirm.",
       "'Closing of the door of ijtihad': framed as 'some later Sunni writers' vs 'other Sunni scholars'; confirm fairness. Shia framing (living mujtahids at the center) also to confirm.",
       "Myth item 3 uses 'all Muslims agree' only as the false statement being corrected.",
-      "Editor pass: the two-judges hook, Mu'adh scene, Mu'adh fork and match pairs repeated days 1168–1169 almost exactly; new hook from Qur'an 4:83 (paraphrased), Mu'adh replaced by a short callback to the two judges, new fork, myth item and match pairs; ijtihad/jihad root claim cut. Confirm the 4:83 paraphrase."
+      "Editor pass: the two-judges hook, Mu'adh scene, Mu'adh fork and match pairs repeated days 1168–1169 almost exactly; new hook from Qur'an 4:83 (paraphrased), Mu'adh replaced by a short callback to the two judges, new fork, myth item and match pairs; ijtihad/jihad root claim cut. Confirm the 4:83 paraphrase.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

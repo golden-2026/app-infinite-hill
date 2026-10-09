@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, visiting another stream: shoes off, head covered, cupped hands for karah prashad. Your line was courtesy is enough. Whose custom did you keep? Day one thousand three hundred fifty-nine.",
+      "voice": "Yesterday, visiting another stream: shoes off, head covered, cupped hands for karah prashad. Your line was courtesy is enough.",
       "screen": [
         "`COURTESY IS ENOUGH.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Walk back through the streams and look for the treasure each keeps well. The Nihangs keep the old warrior dress, the martial art of gatka, and a playful, defiant way of speaking. The taksals keep pronunciation: students learn to read Gurbani slowly, syllable by syllable, so that the Guru's words come out whole. The Nirmalas keep learning, scholars reading widely and explaining the Granth. The Udasis keep a life of renunciation and care for shrines. The Namdharis keep simplicity, white dress, and kirtan sung in the old ragas. The gurmat sangeet schools keep those ragas alive for everyone. Sikh Dharma sangats in the West keep early-morning practice, and some Western sangats explain things in English for newcomers. The rababis kept music at the Harmandir, and the dhadis keep history in the voice. Not one of these is the whole panth. Each keeps a corner of the house well lit. Gurbani gives an image for this. In Raag Suhi, around Ang 765, Guru Nanak speaks of a box of virtues: if someone has one, open it and enjoy its fragrance; and if a friend has virtues, become partners in them, and leave faults behind. That's the posture of learning from a stream. You don't have to join it, or agree with it on everything. You can borrow its fragrance: a slower way of reading, an earlier hour, a raga, a straighter back. The streams don't lose anything by sharing. That's how a fragrance works.",
+      "voice": "Walk back through the streams and look for the treasure each keeps well. The Nihangs keep the old warrior dress, the martial art of gatka, and a playful, defiant way of speaking. The taksals keep pronunciation: students learn to read Gurbani slowly, syllable by syllable, so that the Guru's words come out whole. The Nirmalas keep learning, scholars reading widely and explaining the Granth. The Udasis keep a life of renunciation and care for shrines. The Namdharis keep simplicity, white dress, and kirtan sung in the old ragas. The gurmat sangeet schools keep those ragas alive for everyone. Sikh Dharma sangats in the West keep early-morning practice, and some Western sangats explain things in English for newcomers. The rababis kept music at the Harmandir, and the dhadis keep history in the voice. Not one of these is the whole panth. Each keeps a corner of the house well lit. Gurbani gives an image for this. In Raag Suhi, around Ang 765, Guru Nanak speaks of a box of virtues: if someone has one, open it and enjoy its fragrance; and if a friend has virtues, become partners in them, and leave faults behind. That's the posture of learning from a stream. You don't have to join it, or agree with it on everything. You can borrow its fragrance: a slower way of reading, an earlier hour, a raga, a straighter back. The streams lose nothing by sharing. That's how a fragrance works.",
       "screen": [
         "`NIHANGS, TAKSALS, NIRMALAS, UDASIS.` · `NAMDHARIS, RAGAS, WESTERN SANGATS.` · `A BOX OF VIRTUES, OPENED.` · `BORROW THE FRAGRANCE.` · then, large: `EACH KEEPS A TREASURE.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: take one practice from a stream. Settle, and breathe. Go through the list once more, slowly: gatka, careful pronunciation, study, simplicity, ragas, the early morning, history in song. Notice which one your attention lands on. Don't overthink it. Then make it small: read one line of Gurbani slowly, syllable by syllable; wake a little earlier tomorrow; listen to one shabad sung in its raga. Breathe with the choice, and let it stay small. The bell holds the time.",
+      "voice": "Go through the list once more, slowly, gatka, careful pronunciation, study, simplicity, ragas, the early morning, history in song, and notice where your attention lands. Then make it small: read one line of Gurbani slowly, syllable by syllable, or listen to one shabad sung in its raga, and let it stay small.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: each keeps a treasure. Today, try the one practice you chose, even for five minutes, and notice what it gives you. Day one thousand three hundred fifty-nine.",
+      "voice": "Your line: each keeps a treasure. A box of virtues, opened and shared. See you tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Some Sikhs learn from a stream other than their own: practicing gatka with Nihangs, learning pronunciation through taksal teaching, studying raga kirtan at gurmat sangeet schools, or joining early-morning programs in Western sangats.",
   "games": {
+    "guess": [
+      "borrowing one stream's strength without leaving yours",
+      "joining a new stream and leaving your own behind",
+      "choosing the one stream that is most correct"
+    ],
     "match": {
       "prompt": "inside learning from one stream: tap the pairs.",
       "pairs": [
@@ -139,7 +144,42 @@
         "santhiaa",
         "teacher reads, student repeats"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your study partner",
+      "says": "I love how the taksals read so carefully. Do I have to join one to learn that?",
+      "options": [
+        "No. Each stream keeps a treasure, and you can borrow its fragrance without leaving your own.",
+        "Yes. A stream's practices belong only to its members and can't be shared outside.",
+        "No, but careful reading only matters for scholars, so it isn't worth borrowing."
+      ],
+      "answer": 0,
+      "meaning": "Guru Nanak's box of virtues: open it, enjoy its fragrance, and share a friend's virtues. You can learn from a stream without joining it."
+    },
+    "gloss": {
+      "gatka": {
+        "meaning": "the Sikh martial art",
+        "script": "ਗਤਕਾ",
+        "say": "GUT-kaa"
+      },
+      "taksals": {
+        "meaning": "schools that teach careful pronunciation of Gurbani",
+        "say": "tuk-SAALS"
+      },
+      "Nirmalas": {
+        "meaning": "Sikh scholars who read widely and explain the Granth",
+        "say": "nir-MUL-aas"
+      },
+      "Udasis": {
+        "meaning": "a stream of renunciation and care for shrines",
+        "say": "oo-DAA-sees"
+      },
+      "shabad": {
+        "meaning": "a hymn from the Guru Granth Sahib",
+        "script": "ਸ਼ਬਦ",
+        "say": "SHUB-ud"
+      }
+    }
   },
   "sources": [
     {
@@ -156,7 +196,9 @@
       "Ang 765–766 'gunaa kaa hovai vaasulaa kadh vaas laeejai, je gun hovan saajanaa mil saajh kareejai' paraphrased as a box of virtues opened for its fragrance, and becoming partners in virtues while leaving faults. Please confirm Ang and paraphrase.",
       "Summaries of each stream (Nihang dress and gatka; taksal pronunciation; Nirmala learning; Udasi renunciation and care of shrines; Namdhari simplicity and raga kirtan; Western sangats' early practice and English explanation; rababis and dhadis) follow earlier Block F days. Please confirm each is fair; past tense is used only for the rababis at the Harmandir.",
       "Gurmukhi ਸੰਪਰਦਾ (sampardaa) and pronunciation: please confirm; some write ਸੰਪ੍ਰਦਾਇ.",
-      "Editor: the sweeping 'sangats in the West keep early-morning practice' now names Sikh Dharma (day 1316) for the early hours; the repeated 'if you pray' close in the practice was varied; a typo in the notes fixed."
+      "Editor: the sweeping 'sangats in the West keep early-morning practice' now names Sikh Dharma (day 1316) for the early hours; the repeated 'if you pray' close in the practice was varied; a typo in the notes fixed.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

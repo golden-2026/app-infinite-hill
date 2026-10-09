@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, animals' rights, and your line: they have rights. A camel complained in a garden, and the Prophet heard it. Did you check on a creature that couldn't ask? Day one thousand two hundred twenty-nine.",
+      "voice": "Yesterday, animals' rights, and your line: they have rights. A camel complained in a garden, and the Prophet heard it.",
       "screen": [
         "`THEY HAVE RIGHTS.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Brain-dead. A doctor says the word to a family in a hospital corridor, late at night, about their father, and asks gently whether they would consider donating his kidneys. A few floors up, a young couple is talking with a fertility clinic. In a room at the end of the hall, a grandmother's machines are keeping her body going after her doctors say they can no longer help. None of these questions are in the Qur'an by name. The jurists of Baghdad and Cordoba never saw a ventilator. And yet a Muslim family in that corridor might reach for a phone and ask a scholar: what does the law say? Today: an old method, and questions no one could have asked before.",
+      "voice": "Brain-dead. A doctor says the word to a family in a hospital corridor late at night, about their father, and gently asks about donating his kidneys. A few floors up, a young couple is talking with a fertility clinic. At the end of the hall, a grandmother's machines keep her body going after her doctors say they can no longer help. None of this is in the Qur'an by name. The jurists of Baghdad and Cordoba never saw a ventilator. Yet a Muslim family in that corridor might call a scholar and ask: what does the law say?",
       "screen": [
         "`A HOSPITAL CORRIDOR AT NIGHT.` → `DONATION, FERTILITY, MACHINES.` → `NONE OF IT NAMED IN THE TEXT.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Start with medicine itself. In Sahih al-Bukhari, the Prophet Muhammad ﷺ says that God has not sent down a disease without also sending down its cure. Seeking treatment is part of the tradition, not a lack of trust. Then the method. When a new question comes, scholars look for a text that speaks to it, then reason by analogy from cases that do appear, and weigh the purposes of the law, which we'll meet in two days. That effort of reasoning is called ijtihad. Now the questions. Organ transplants: some fiqh councils have allowed donation, within limits, reading it through the verse in surah five that whoever saves a life, it is as if he had saved all of humankind. Other scholars have objected, out of reverence for the body after death, which the tradition protects. Fertility treatment: Sunni councils have allowed IVF between a married couple, using their own egg and sperm, and refused a third party's. Some Shia authorities have reasoned more widely, allowing some forms of donation. Same texts, different reasoning, both careful. End of life: the same verse in surah five likens killing one soul to killing all humankind, and scholars read it as forbidding a deliberately ended life. Some, though, allow a team to stop treatment that only prolongs dying, when doctors judge there is no hope of recovery, and the question of brain death is still argued. So the answer to a medical question is often not one fatwa but a few, each showing its reasoning. That's not confusion. It's an old method, honestly applied, to new questions.",
+      "voice": "Start with medicine itself. In Sahih al-Bukhari, the Prophet Muhammad ﷺ says that God has not sent down a disease without also sending down its cure. Seeking treatment is part of the tradition. Then the method. Scholars look for a text that speaks to the new question, reason by analogy from cases that do appear, and weigh the purposes of the law, which we'll meet in two days. That effort is called ijtihad. Organ transplants: some fiqh councils have allowed donation, within limits, reading it through the verse in surah five that whoever saves a life, it is as if he had saved all of humankind. Other scholars have objected, out of reverence for the body after death, which the tradition protects. Fertility: Sunni councils have allowed IVF between a married couple, using their own egg and sperm, and refused a third party's; some Shia authorities have reasoned more widely, allowing some forms of donation. Same texts, different reasoning, both careful. End of life: the same verse likens killing one soul to killing all humankind, and scholars read it as forbidding a deliberately ended life. Some allow stopping treatment that only prolongs dying, when doctors judge there is no hope of recovery, and brain death is still argued. So the answer is often not one fatwa but a few, each showing its reasoning. That isn't confusion. It's an old method, honestly applied.",
       "screen": [
         "`GOD SENT A CURE WITH EVERY DISEASE.` · `IJTIHAD: TEXT, ANALOGY, PURPOSE.` · `TRANSPLANTS AND IVF: COUNCILS DIFFER.` · `END OF LIFE: NO KILLING, SOME LETTING GO.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Reading a modern fatwa takes longer than this sit, so start the way a scholar starts: with the question. Think of one medical decision someone you love has faced, or might. Name it plainly: donation, a treatment, a hard ending. Then ask the three questions from today. Is there a text? Is there a case like it? What is the law trying to protect here? Later, you can look up one fatwa on it and notice how it reasons. For now, hold the person and the question side by side. The bell holds the time.",
+      "voice": "Think of one medical decision someone you love has faced, or might, and name it plainly: donation, a treatment, a hard ending. Ask today's three questions gently: is there a text, is there a case like it, what is the law trying to protect? Then hold the person and the question side by side. If a hard ending is close for you, or you're thinking of ending your own life, call or text 988 in the US, or your local emergency number.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: old method, new questions. Today, when a new problem lands on you, ask what the old principles you trust would say about it. Tomorrow, the law's own word about ease. Day one thousand two hundred twenty-nine.",
+      "voice": "Your line: old method, new questions. An old method can still reach a hospital corridor. See you tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Muslim patients and families facing questions about transplants, fertility treatment or end-of-life care may ask a trusted scholar or consult the rulings of fiqh councils, which reason from the Qur'an, the hadith and the purposes of the law.",
   "games": {
+    "guess": [
+      "new medical cases answered by reasoning from old sources",
+      "questions the law leaves to doctors, with no say for scholars",
+      "a single fatwa every Muslim follows on modern medicine"
+    ],
     "match": {
       "prompt": "medical questions — tap the pairs.",
       "pairs": [
@@ -139,7 +144,39 @@
         "qadi",
         "a judge who decides disputes"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "a friend at the hospital",
+      "says": "Does Islam allow organ donation? I figured there'd be one clear answer.",
+      "options": [
+        "Some councils allow it to save a life; other scholars object. Both show their reasoning.",
+        "One answer: every scholar forbids it, so the body always stays whole.",
+        "There's no answer; scholars don't touch anything the Qur'an doesn't name."
+      ],
+      "answer": 0,
+      "meaning": "New questions get ijtihad. Some councils allow donation, citing saving a life; other scholars object out of reverence for the body."
+    },
+    "gloss": {
+      "ijtihad": {
+        "meaning": "the effort of reasoning to answer a new legal question",
+        "script": "اجتهاد",
+        "say": "ij-ti-HAHD"
+      },
+      "fatwa": {
+        "meaning": "a scholar's answer to a question about the law",
+        "script": "فتوى",
+        "say": "FAT-wah"
+      },
+      "Baghdad": {
+        "meaning": "a city in Iraq, home to early jurists",
+        "script": "بغداد",
+        "say": "bagh-DAHD"
+      },
+      "Cordoba": {
+        "meaning": "a city in Spain, home to Muslim jurists long ago",
+        "say": "KOR-do-bah"
+      }
+    }
   },
   "sources": [
     {
@@ -165,7 +202,10 @@
       "IVF: Sunni councils (e.g. Al-Azhar) allow within marriage, no third party; some Shia authorities (e.g. a fatwa attributed to Ayatollah Khamenei) allowed donor gametes. Confirm, and whether to name.",
       "End of life: euthanasia forbidden; withdrawing futile treatment allowed by some (e.g. OIC academy rulings): confirm. Brain death debate open.",
       "'Jurists of Baghdad and Cordoba' is illustrative; hospital scene is illustrative.",
-      "Editor: fixed garbled hook line ('long after her doctors say they can help'); hook now opens on the word itself rather than another scene fragment; 'fiqh councils have allowed' softened to 'some'; 'scholars forbid deliberately ending a life' now grounded in 5:32 instead of an all-scholars claim; myth item adjusted to match."
+      "Editor: fixed garbled hook line ('long after her doctors say they can help'); hook now opens on the word itself rather than another scene fragment; 'fiqh councils have allowed' softened to 'some'; 'scholars forbid deliberately ending a life' now grounded in 5:32 instead of an all-scholars claim; myth item adjusted to match.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper.",
+      "Year 4 pass: crisis line added in the practice (988 in the US, or local emergency number), as YEARS_4_5.md asks for despair, grief and end-of-life material; confirm wording."
     ]
   },
   "meta": {

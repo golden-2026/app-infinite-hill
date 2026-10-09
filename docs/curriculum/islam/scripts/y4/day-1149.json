@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, mutawatir, and your line: so many said it. When you felt certain of something, was it one voice or many? Day one thousand one hundred forty-nine.",
+      "voice": "Yesterday: mutawatir, a report carried by so many chains that it gives certainty.",
       "screen": [
         "`SO MANY SAID IT.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A story is told about the hadith scholar Ali ibn al-Madini. Someone asked him about a narrator, and the narrator was his own father. He hesitated, and said: ask someone else. They pressed him. And he answered, as the story goes: this is the religion. My father is weak. Whatever the details, the story shows what a whole field of study asked of people. A son, asked a question, chose accuracy over family pride. Behind that answer was a library of judgments about people. Today, the science of men.",
+      "voice": "A story is told about the hadith scholar Ali ibn al-Madini. Someone asked him about a narrator, and the narrator was his own father. He hesitated, and said: ask someone else. They pressed him. And he answered, as the story goes: this is the religion. My father is weak. Whatever the details, the story shows what a whole field of study asked of people: a son choosing accuracy over family pride. Behind that answer stood a library of judgments about people. Today, the science of men.",
       "screen": [
         "`ASKED ABOUT HIS OWN FATHER.` → `THIS IS THE RELIGION.` → `A LIBRARY ABOUT PEOPLE.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the word. Rijal means men, and in hadith study it names the narrators themselves, the people in the chains. Despite the word, the books include women who narrated too. Second, why it began. In the introduction to Sahih Muslim, the early scholar Ibn Sirin is quoted saying, in effect: people didn't use to ask about chains. Then came the time of turmoil, and they said: name your men for us. And Ibn Sirin again: this knowledge is religion, so look at whom you take your religion from. Third, what the books record. Scholars wrote entry after entry, narrator by narrator. Where he lived. Whom he heard from, and who heard from him. Whether he traveled. Was he truthful? Was his memory precise, or did it slip, or did it fade late in life? Did he write his reports down, and keep the pages safe? The field has a blunt name: al-jarh wa al-ta'dil, wounding and vouching. Each narrator could be wounded by a scholar's criticism, or vouched for. Fourth, a hard question the scholars faced openly. Isn't talking about a man's flaws a kind of backbiting? Imam Muslim answers in that same introduction: exposing a narrator's weakness, to protect what's said in the Prophet's name, isn't forbidden backbiting. It's a duty. And, as the story goes, some applied it even to their own fathers. Out of this came books of narrators that students of hadith still open. When a scholar grades a report, this is the shelf behind the grade.",
+      "voice": "Rijal means men, and in hadith study it names the narrators themselves, the people in the chains. Despite the word, the books include women who narrated too. Why it began: in the introduction to Sahih Muslim, the early scholar Ibn Sirin is quoted saying, in effect, people didn't use to ask about chains. Then came the time of turmoil, and they said: name your men for us. And again: this knowledge is religion, so look at whom you take your religion from. What the books record: entry after entry, narrator by narrator. Where he lived. Whom he heard from, and who heard from him. Whether he traveled. Was he truthful? Was his memory precise, or did it slip, or fade late in life? Did he write his reports down, and keep the pages safe? The field has a blunt name: al-jarh wa al-ta'dil, wounding and vouching. Each narrator could be wounded by a scholar's criticism, or vouched for. Then a hard question, faced openly. Isn't talking about a man's flaws a kind of backbiting? Imam Muslim answers in that same introduction: exposing a narrator's weakness, to protect what's said in the Prophet's name, isn't forbidden backbiting. It's a duty. Out of this came books of narrators that students of hadith still open. When a scholar grades a report, this is the shelf behind the grade.",
       "screen": [
         "`RIJAL: THE PEOPLE IN THE CHAINS.` · `NAME YOUR MEN FOR US.` · `WOUNDING AND VOUCHING.` · `NOT BACKBITING, A DUTY.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: check a source's reputation. Settle, and breathe. Pick one voice you trust for information. A news outlet, a teacher, a channel, a friend who always knows things. Now ask the rijal questions about them, quietly. Where did they get what they tell me? Have they been wrong before, and did they say so? Is their memory careful, or do details drift? Do they have a reason to shade the story? You're not putting them on trial. You're writing a short entry in your own book of narrators. If you pray, you can ask for fairness in judging. The bell holds the time.",
+      "voice": "Pick one voice you trust for information, a news outlet, a teacher, a channel, a friend who always knows things, and quietly ask the rijal questions: where do they get what they tell me, have they been wrong and said so, do details drift, do they have a reason to shade the story? You're not putting them on trial, only writing a short entry in your own book of narrators. If you pray, you can ask for fairness in judging.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: who was he? Today, before you share something, look up one thing about who first said it. Tomorrow: the traveling scholars. Day one thousand one hundred forty-nine.",
+      "voice": "Your line: who was he? Behind every grade, a shelf of lives. Day one thousand one hundred forty-nine, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Hadith scholars consult biographical dictionaries of narrators, the books of rijal, to check each name in a chain for honesty, memory and whom they met, a field called al-jarh wa al-ta'dil.",
   "games": {
+    "guess": [
+      "the narrators in the chains, and the study of who each was",
+      "the companions who fought beside the Prophet in battle",
+      "the men who copied books of hadith by hand for sale"
+    ],
     "match": {
       "prompt": "the science of men — tap the pairs.",
       "pairs": [
@@ -137,9 +142,40 @@
       ],
       [
         "tawaf",
-        "going around"
+        "going around the Ka'ba, seven times"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your grandmother",
+      "says": "Isn't it backbiting for scholars to write about the flaws of narrators?",
+      "options": [
+        "Imam Muslim said exposing a narrator's weakness, to protect the Prophet's words, is a duty.",
+        "Yes, so they only ever wrote praise and left every narrator's flaws unspoken.",
+        "It is, so the scholars hid those books away where no one could read them."
+      ],
+      "meaning": "In his introduction, Imam Muslim says exposing a narrator's weakness, to protect what's said in the Prophet's name, isn't forbidden backbiting. It's a duty.",
+      "answer": 0
+    },
+    "gloss": {
+      "rijal": {
+        "meaning": "men: the narrators in the chains, and their study",
+        "script": "رجال",
+        "say": "ri-JAAL"
+      },
+      "Ali ibn al-Madini": {
+        "meaning": "a hadith scholar asked about his own father",
+        "say": "AH-lee ibn al-ma-DEE-nee"
+      },
+      "Ibn Sirin": {
+        "meaning": "an early scholar: look at whom you take religion from",
+        "say": "IB-n see-REEN"
+      },
+      "al-jarh wa al-ta'dil": {
+        "meaning": "wounding and vouching: the judging of narrators",
+        "script": "الجرح والتعديل",
+        "say": "al-JARH wat-TA-deel"
+      }
+    }
   },
   "sources": [
     {
@@ -172,7 +208,9 @@
       "The hook field was shortened from the index's 'biographies of thousands of narrators' to avoid an unsourced count; the hook is not index-checked, but confirm this is acceptable.",
       "Ikhtilat (memory fading late in life) and whether a narrator wrote his reports down are among the questions in rijal works; general; confirm.",
       "Day 1060 and 1145 covered the chain; this day stays on the people in it.",
-      "Editor: cut the unsourced sweep 'applied it to the pious, to the powerful' and the superlative 'great reference works'; tightened the hook's 'the story is told because it captures something real' line; practice opener varied."
+      "Editor: cut the unsourced sweep 'applied it to the pious, to the powerful' and the superlative 'great reference works'; tightened the hook's 'the story is told because it captures something real' line; practice opener varied.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

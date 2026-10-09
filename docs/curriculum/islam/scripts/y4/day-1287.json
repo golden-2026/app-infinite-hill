@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the valley of greed, and your line: enough is enough. Was there a second valley you caught yourself reaching for? Day one thousand two hundred eighty-seven.",
+      "voice": "Yesterday, the valley of greed, and your line: enough is enough. A want that grows with the having.",
       "screen": [
         "`ENOUGH IS ENOUGH.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Do you know what backbiting is? The Prophet Muhammad, peace be upon him, put that question to his companions, and Sahih Muslim records it. They gave the answer people give a teacher they trust: Allah and his Messenger know best. So he told them. Backbiting is mentioning your brother with something he would dislike. Then someone asked the question group chats ask sooner or later. But what if it's true? What if I'm only saying what he really did? Today: the harm of backbiting, and the answer to that question.",
+      "voice": "Do you know what backbiting is? The Prophet Muhammad, peace be upon him, put that question to his companions, and Sahih Muslim records it. They answered the way people answer a teacher they trust: Allah and his Messenger know best. So he told them. Backbiting is mentioning your brother with something he would dislike. Then someone asked the question group chats ask sooner or later. But what if it's true? What if I'm only saying what he really did? Today: the harm of backbiting, and the answer.",
       "screen": [
         "`DO YOU KNOW WHAT IT IS?` → `WHAT HE WOULD DISLIKE.` → `BUT WHAT IF IT'S TRUE?`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "The answer is the surprise. If what you say about him is true, that is backbiting. If it isn't true, that's something else, buhtan, slander. So truth isn't a defense here; truth is the definition. The test isn't whether it happened. The test is whether he'd dislike hearing it said behind his back. That's the first turn. Second, the Qur'an's picture, and it's a hard one. In Pickthall's words: \"neither backbite one another. Would one of you love to eat the flesh of his dead brother? Ye abhor that\". The image is meant to make the stomach turn. Some readers notice a detail in it: the dead can't answer back, and neither can someone who isn't in the room. Third, the honest exceptions. Scholars such as an-Nawawi listed cases where naming someone's fault is allowed: asking for help against a wrong done to you, seeking a ruling, warning someone about a real danger. In a hadith in al-Bukhari, a woman named Hind told the Prophet that her husband didn't give her enough to live on, and he answered her question. Naming a fault to fix a harm is different from naming it for the pleasure of the telling. And last, the ordinary day. Backbiting is easy because it bonds people. Two friends, a third one absent, and suddenly there's a topic. The practice today is to find another topic.",
+      "voice": "The answer is the surprise. If what you say about him is true, that is backbiting. If it isn't true, that's something else, buhtan, slander. So truth isn't a defense here; truth is the definition. The test is whether he'd dislike hearing it said behind his back. Second, the Qur'an's picture, a hard one, first met on day five hundred eighty-seven. In Pickthall's words: \"neither backbite one another. Would one of you love to eat the flesh of his dead brother? Ye abhor that\". The image is meant to turn the stomach. Some readers notice a detail: the dead can't answer back, and neither can someone who isn't in the room. Third, the honest exceptions. Scholars such as an-Nawawi listed cases where naming someone's fault is allowed: asking for help against a wrong done to you, seeking a ruling, warning someone about a real danger. In a hadith in al-Bukhari, a woman named Hind told the Prophet that her husband didn't give her enough to live on, and he answered her question. Naming a fault to fix a harm is different from naming it for the pleasure of the telling. And last, why it's easy: backbiting bonds people. Two friends, a third one absent, and suddenly there's a topic. The way out is another topic.",
       "screen": [
         "`WHAT HE WOULD DISLIKE.` · `IF IT'S TRUE, IT'S STILL BACKBITING.` · `THE FLESH OF A DEAD BROTHER.` · then, large: `TO FIX A HARM, NOT FOR THE TELLING.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: go a day with no backbiting. Begin here. Settle, and breathe. Bring to mind the people you're most likely to talk about today. A boss, an in-law, a friend who's been difficult. One at a time, picture them walking in while you're speaking about them. Whatever you'd stop saying when they walked in, that's the line. Then prepare one way out: a change of subject, a kind word about them, or simply silence. If you pray, you can ask for help guarding the tongue. The bell holds the time.",
+      "voice": "Bring to mind the people you're most likely to talk about, a boss, an in-law, a friend who's been difficult, and one at a time, picture them walking in while you're speaking about them. Whatever you'd stop saying when they walked in, that's the line. Prepare one way out, a change of subject, a kind word about them, or simply silence, and if you pray, you can ask for help guarding the tongue.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: not behind their backs. Today, if a conversation turns toward someone who isn't there, use the way out you chose. Tomorrow, two roads: the road of lying. Day one thousand two hundred eighty-seven.",
+      "voice": "Your line: not behind their backs. If they'd mind hearing it, it can wait. Tomorrow, two roads, and one of them is lying.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Muslims are taught to avoid ghibah, speaking of an absent person in a way they would dislike even if it is true, following Sahih Muslim and Qur'an 49:12; scholars allow naming faults for specific needs such as seeking help against injustice.",
   "games": {
+    "guess": [
+      "naming someone's true faults behind their back",
+      "spreading lies about someone who isn't there",
+      "criticizing someone directly to their face"
+    ],
     "match": {
       "prompt": "the harm of backbiting — tap the pairs.",
       "pairs": [
@@ -139,7 +144,42 @@
         "mahabbah",
         "love"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your cousin",
+      "says": "It's not backbiting if it's true, right? I'm only saying what she really did.",
+      "options": [
+        "If it's true and she'd dislike it, that is backbiting. If it's false, it's slander.",
+        "Right. Backbiting means spreading lies; anything true is fair to share.",
+        "Right, as long as you only tell close friends and it never reaches her."
+      ],
+      "answer": 0,
+      "meaning": "In Sahih Muslim, backbiting is mentioning your brother with what he'd dislike. If it's true, that's backbiting; if false, it's buhtan, slander."
+    },
+    "gloss": {
+      "ghibah": {
+        "meaning": "backbiting: mentioning someone with what they'd dislike",
+        "script": "غيبة",
+        "say": "GHEE-bah"
+      },
+      "buhtan": {
+        "meaning": "slander: saying something false about someone",
+        "script": "بهتان",
+        "say": "boo-TAHN"
+      },
+      "an-Nawawi": {
+        "meaning": "a great scholar of hadith and law",
+        "script": "النووي",
+        "say": "an-NAH-wa-wee"
+      },
+      "Hind": {
+        "meaning": "a woman who asked the Prophet about her husband's support"
+      },
+      "Sahih Muslim": {
+        "meaning": "a major hadith collection, gathered by Imam Muslim",
+        "say": "sah-HEE MUS-lim"
+      }
+    }
   },
   "sources": [
     {
@@ -175,7 +215,9 @@
       "Sahih Muslim 2589: confirm numbering and paraphrase;",
       "An-Nawawi's list of permitted cases (Riyad as-Salihin; also al-Adhkar): count deliberately omitted; confirm the examples chosen.",
       "Bukhari 5364 (Hind bint Utbah and Abu Sufyan): scholars cite it as a permitted case; confirm the framing.",
-      "Word is the title head, per index."
+      "Word is the title head, per index.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

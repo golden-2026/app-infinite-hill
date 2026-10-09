@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the plain of Arafah, the standing called wuquf, and your line: hajj is arafah. Did you find a quiet stretch to ask for something, standing or sitting? Day one thousand one hundred thirty-two.",
+      "voice": "Yesterday: wuquf, standing on the plain of Arafah from noon to sunset. Your line: hajj is arafah.",
       "screen": [
         "`HAJJ IS ARAFAH.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "The sun is down over Arafah, and nobody has prayed maghrib. That's odd. Maghrib is the sunset prayer, and here is a whole crowd moving off the plain with it still waiting. On the road, Usama ibn Zayd, riding behind the Prophet Muhammad ﷺ, reminds him: the prayer, Messenger of God. The answer comes back: the prayer is ahead of you. Ahead, in the dark, is a stretch of open ground between Arafah and Mina. Tonight the pilgrims sleep there, under the sky. Today, the night at Muzdalifah.",
+      "voice": "The sun is down over Arafah, and nobody has prayed maghrib, the sunset prayer. A whole crowd is moving off the plain with it still waiting. On the road, Usama ibn Zayd, riding behind the Prophet Muhammad ﷺ, reminds him: the prayer, Messenger of God. The answer comes back: the prayer is ahead of you. Ahead, in the dark, is a stretch of open ground between Arafah and Mina. Tonight the pilgrims sleep there, under the sky. Today, the night at Muzdalifah.",
       "screen": [
         "`MAGHRIB HASN'T BEEN PRAYED.` → `THE PRAYER IS AHEAD OF YOU.` → `OPEN GROUND, UNDER THE SKY.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "The step-by-step telling of this night comes from Jabir ibn Abdullah, whose account of the Prophet's Hajj is kept in Sahih Muslim. Follow it step by step. First, the prayers. When they reach Muzdalifah, he prays maghrib and isha together, with one call to prayer, and nothing prayed between them. The travelers have arrived, and the two evening prayers are joined. Second, the sleep. Then, Jabir says, he lay down until dawn. That's the whole report of the night. After a day of standing in du'a, the account describes rest. Some scholars point out what isn't there: no long night vigil is described, and they take the sleep itself as part of what the Prophet did. Third, the mercy. Not everyone stays until dawn. Ibn Abbas reports that he was among the weaker members of the Prophet's household who were sent on ahead during the night. Jurists draw on that permission for the elderly, the unwell, and those caring for them. Fourth, the morning. At dawn he prays fajr, then goes to the place the Qur'an calls the sacred monument, al-Mash'ar al-Haram. Surah Al-Baqarah tells the pilgrims to remember God there, as He has guided them. He faces the qiblah, praises God, and stays until the sky is bright, then moves on before the sun comes up. And the pebbles. Pilgrims often pick up small stones here for the next morning's rite, though some schools allow gathering them elsewhere too. A night on the ground, a pocket of pebbles, and nothing between the sleeper and the sky.",
+      "voice": "The step-by-step telling of this night comes from Jabir ibn Abdullah, whose account of the Prophet's Hajj is kept in Sahih Muslim. First, the prayers. When they reach Muzdalifah, he prays maghrib and isha together, with one call to prayer, and nothing prayed between them. Second, the sleep. Then, Jabir says, he lay down until dawn. That's the whole report of the night. After a day of standing in du'a, the account describes rest. Some scholars point out what isn't there: no long night vigil is described, and they take the sleep itself as part of what the Prophet did. Third, the mercy. Not everyone stays until dawn. Ibn Abbas reports that he was among the weaker members of the Prophet's household who were sent on ahead during the night. Jurists draw on that permission for the elderly, the unwell, and those caring for them. Fourth, the morning. At dawn he prays fajr, then goes to the place the Qur'an calls the sacred monument, al-Mash'ar al-Haram, where Surah Al-Baqarah tells the pilgrims to remember God as He has guided them. He faces the qiblah, praises God, and stays until the sky is bright, then moves on before the sun comes up. And the pebbles: pilgrims often pick up small stones here for the next morning's rite, though some schools allow gathering them elsewhere too. A night on the ground, a pocket of pebbles, and nothing between the sleeper and the sky.",
       "screen": [
         "`TWO PRAYERS, JOINED.` · `HE LAY DOWN UNTIL DAWN.` · `THE WEAK SENT AHEAD.` · `DAWN AT THE SACRED MONUMENT.` · then, large: `THE PRAYER IS AHEAD OF YOU.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: rest, on purpose. If you can, lie down on the floor, or sit low, close to the ground. Breathe. Feel what's holding you up. Nothing is asked of you for the next two minutes except to be still, the way the pilgrims lie still on that open ground. If you pray, you can say a quiet alhamdulillah for the day that's ending. If you don't, notice one thing today asked of you, and set it down. Tonight, try sleeping simply: fewer screens, less fuss, lights off a little early. The bell holds the time.",
+      "voice": "Lie down on the floor, or sit low, close to the ground, and feel what's holding you up; for now nothing is asked of you except to be still, the way the pilgrims lie on that open ground. If you pray, say a quiet alhamdulillah for the day that's ending; if not, name one thing today asked of you, and set it down.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: a night under the sky. Tonight, before sleep, step outside or open a window and look up for one minute. Tomorrow: the stoning. Day one thousand one hundred thirty-two.",
+      "voice": "Your line: a night under the sky. After the long standing, rest is part of the journey too. Sleep well.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "After sunset on the day of Arafah, pilgrims travel to Muzdalifah, pray maghrib and isha together, spend the night on open ground, and gather pebbles for the stoning; the elderly and weak may move on during the night.",
   "games": {
+    "guess": [
+      "after Arafah: two prayers joined, then sleep in the open",
+      "a night kept awake in prayer beside the Ka'ba",
+      "the evening pilgrims stone the three pillars at Mina"
+    ],
     "match": {
       "prompt": "the night at muzdalifah — tap the pairs.",
       "pairs": [
@@ -139,7 +144,45 @@
         "istita'ah",
         "being able"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "a coworker",
+      "says": "What do pilgrims do the night after Arafah? Pray all night long?",
+      "options": [
+        "Mostly rest. The Prophet joined two prayers, then lay down until dawn.",
+        "Yes. The rite is a full night vigil with no sleep until fajr.",
+        "They head straight back to Mecca to circle the Ka'ba again."
+      ],
+      "answer": 0,
+      "meaning": "Jabir reports the Prophet prayed maghrib and isha together at Muzdalifah, then lay down until dawn. No long night vigil is described."
+    },
+    "gloss": {
+      "Muzdalifah": {
+        "meaning": "open ground between Arafah and Mina, where pilgrims sleep",
+        "script": "مزدلفة",
+        "say": "muz-DAH-li-fah"
+      },
+      "maghrib": {
+        "meaning": "the sunset prayer",
+        "script": "مغرب",
+        "say": "MUGH-rib"
+      },
+      "isha": {
+        "meaning": "the night prayer",
+        "script": "عشاء",
+        "say": "ih-SHAH"
+      },
+      "al-Mash'ar al-Haram": {
+        "meaning": "the sacred monument at Muzdalifah",
+        "script": "المشعر الحرام",
+        "say": "al-MASH-ar al-ha-RAHM"
+      },
+      "fajr": {
+        "meaning": "the dawn prayer",
+        "script": "فجر",
+        "say": "FAJR"
+      }
+    }
   },
   "sources": [
     {
@@ -177,7 +220,9 @@
       "'Some scholars point out no night vigil is described' (e.g. Ibn al-Qayyim, Zad al-Ma'ad) is attributed, not stated as fact; confirm.",
       "Where pebbles are gathered: stated that pilgrims pick them up here and scholars allow other places; confirm the phrasing across schools.",
       "Practice invites an alhamdulillah 'if you pray'; no new prayer written.",
-      "Editor: cut the superlative 'fullest telling'; softened the pebble-gathering line to 'often' and 'some schools'; cut the closing uplift line 'the plainness is the point'."
+      "Editor: cut the superlative 'fullest telling'; softened the pebble-gathering line to 'often' and 'some schools'; cut the closing uplift line 'the plainness is the point'.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

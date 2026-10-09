@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, kutub, the books, and your line: every age had a book. Which book sits highest in your home? Today, the people who carried them. Day one thousand two hundred thirty-seven.",
+      "voice": "Yesterday, kutub, the books, and your line: every age had a book. Today, the people who carried them.",
       "screen": [
         "`EVERY AGE HAD A BOOK.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "\"And verily We have raised in every nation a messenger.\" That's Pickthall's translation of a verse in the sixteenth surah, and it is a big sentence to sit inside. Every nation. Not just the ones whose stories made it into a book you've read. The valley towns, the islands, the peoples on the far side of every map. Somewhere among each of them, the verse says, a messenger stood up and spoke. Today, the fourth article of faith, and the question it leaves open: who were they all?",
+      "voice": "\"And verily We have raised in every nation a messenger.\" That's Pickthall's translation of a verse in the sixteenth surah, and it's a big sentence to sit inside. Every nation. Not just the ones whose stories reached a book you've read. The valley towns, the islands, the peoples on the far side of every map. Among each of them, the verse says, a messenger stood up and spoke. Today, the fourth article of faith, and the question it leaves open: who were they all?",
       "screen": [
         "`IN EVERY NATION A MESSENGER.` → `NOT JUST THE FAMOUS ONES.` → `WHO WERE THEY ALL?`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the word. Rusul means messengers; one is a rasul, one who is sent. Scholars also use the word nabi, prophet. One common way they put it: every messenger is a prophet, but not every prophet is a messenger; a messenger is sent with a message to deliver to a people. Second, the ones the Qur'an names. Nuh, Ibrahim, Musa, Dawud, Isa, Yunus, Yusuf, and more, ending with the Prophet Muhammad ﷺ, whom the Qur'an calls the seal of the prophets. The verse in the sixteenth surah also says what they came to say: worship Allah alone. Many voices, one core message. Third, the ones it doesn't name. Another verse tells the Prophet that some messengers' stories have been told to him, and some have not. So the list in the Qur'an is not the whole list. There are messengers whose names no Muslim knows, sent to peoples whose languages may be gone. Belief in them is still part of the fourth article. Last, how they're held. In the verse that lists the articles of faith, the believers say, in Pickthall's words, \"We make no distinction between any of His messengers.\" The Qur'an also says some messengers were given gifts above others. But the belief takes in all of them, the named and the unnamed, the ones with long stories and the ones with no story at all.",
+      "voice": "First, the word. Rusul means messengers; one is a rasul, one who is sent. Scholars also use the word nabi, prophet. One common way they put it: every messenger is a prophet, but not every prophet is a messenger, since a messenger is sent with a message to deliver to a people. Second, the named. Nuh, Ibrahim, Musa, Dawud, Isa, Yunus, Yusuf and more, ending with the Prophet Muhammad ﷺ, whom the Qur'an calls the seal of the prophets. The verse in the sixteenth surah also says what they came to say: worship Allah alone. Many voices, one core message. Third, the unnamed. Another verse tells the Prophet that some messengers' stories have been told to him, and some have not. So the Qur'an's list isn't the whole list. There are messengers whose names no Muslim knows, sent to peoples whose languages may be gone, and belief in them is still part of the fourth article. Last, how they're held. In the verse that lists the articles of faith, the believers say, in Pickthall's words, \"We make no distinction between any of His messengers.\" The Qur'an also says some messengers were given gifts above others. But the belief takes in all of them, the ones with long stories and the ones with no story at all.",
       "screen": [
         "`RUSUL: THOSE WHO ARE SENT.` · `MANY NAMED, ONE MESSAGE.` · `SOME NEVER NAMED.` · then, large: `NO DISTINCTION BETWEEN THEM.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: think of the prophets unnamed. Let your mind go somewhere far away and long ago: a mountain village, a fishing coast, a city whose name nobody remembers. Somewhere in it, by this belief, someone was sent. You don't know their name. You don't know their language. Just hold the thought that they were there, speaking to their own people. Then move to another place, and another. If you pray, you can send peace upon the messengers, as Muslims do when a prophet is named. If you don't, just let each place go by in silence. The bell holds the time.",
+      "voice": "Let your mind go somewhere far away and long ago, a mountain village, a fishing coast, a city whose name nobody remembers, and hold the thought that someone was sent there, speaking to their own people in a language you don't know. Then move to another place, and another. If you pray, you can send peace upon the messengers, as Muslims do when a prophet is named; if not, let each place go by in silence.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: every people had one. Today, when you pass a stranger, a place, or a language you don't know, remember the verse said every nation. Tomorrow, the fifth article: the Last Day. Day one thousand two hundred thirty-seven.",
+      "voice": "Your line: every people had one. The named and the unnamed alike, every one of them sent. Rest well.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Muslims affirm belief in all of Allah's messengers, named and unnamed, and when a prophet's name is mentioned they commonly add a phrase asking peace upon him.",
   "games": {
+    "guess": [
+      "those God sent with a message to deliver to a people",
+      "the scholars who wrote down the Prophet's sayings",
+      "the companions who spread Islam after the Prophet"
+    ],
     "match": {
       "prompt": "the messengers — tap the pairs.",
       "pairs": [
@@ -139,7 +144,45 @@
         "qadi",
         "a judge who decides disputes"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your teenage son",
+      "says": "Did God only send prophets to the Middle East?",
+      "options": [
+        "No. The Qur'an says a messenger was raised in every nation, many never named.",
+        "Yes. The messengers the Qur'an names are the full list there ever was.",
+        "No, but only the ones named in the Qur'an count as real messengers."
+      ],
+      "answer": 0,
+      "meaning": "The sixteenth surah says a messenger was raised in every nation, and another verse says some messengers' stories were never told to the Prophet."
+    },
+    "gloss": {
+      "rasul": {
+        "meaning": "a messenger, one who is sent",
+        "script": "رسول",
+        "say": "ra-SOOL"
+      },
+      "nabi": {
+        "meaning": "a prophet",
+        "script": "نبي",
+        "say": "na-BEE"
+      },
+      "Nuh": {
+        "meaning": "Noah",
+        "script": "نوح",
+        "say": "NOOH"
+      },
+      "Yunus": {
+        "meaning": "Jonah",
+        "script": "يونس",
+        "say": "YOO-nus"
+      },
+      "Yusuf": {
+        "meaning": "Joseph",
+        "script": "يوسف",
+        "say": "YOO-suf"
+      }
+    }
   },
   "sources": [
     {
@@ -176,7 +219,9 @@
       "nabi/rasul distinction given as 'one common way they put it'; scholars define it differently. Confirm.",
       "'Muslims honor some for particular things' with examples (Ibrahim's trust, Musa's courage, Isa's mercy): the examples are the writer's gloss; confirm or replace. The Qur'an (2:253) also says some messengers were preferred above others; Keeper may want that nuance.",
       "Practice invites 'send peace upon the messengers' as Muslims do (alayhi as-salam), described, not written as a new prayer.",
-      "Editor: nabi/rasul sentence completed (not every prophet is a messenger); seal of the prophets attributed to the Qur'an (33:40); writer's gloss on Ibrahim/Musa/Isa and 'without picking favorites' replaced, since 2:253 says some were preferred; closing image line cut; garbled myth item rewritten."
+      "Editor: nabi/rasul sentence completed (not every prophet is a messenger); seal of the prophets attributed to the Qur'an (33:40); writer's gloss on Ibrahim/Musa/Isa and 'without picking favorites' replaced, since 2:253 says some were preferred; closing image line cut; garbled myth item rewritten.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

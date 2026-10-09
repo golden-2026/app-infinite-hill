@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, two rak'ahs behind Ibrahim's station, and your line: where ibrahim stood. Did you stop for a minute between one thing and the next? Day one thousand one hundred twenty-eight.",
+      "voice": "Yesterday: two rak'ahs behind Ibrahim's station, a stillness after the circling. Your line: where ibrahim stood.",
       "screen": [
         "`WHERE IBRAHIM STOOD.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A glass of water, and a question before you drink it: what is this for? On an ordinary day, the question doesn't come up. Thirst, habit, the meeting's running long. But there's a hadith in the collection of Ibn Majah that makes the question matter. The Prophet Muhammad ﷺ is reported to have said that the water of Zamzam is for whatever it is drunk for. Not just for thirst. For whatever the drinker brings to it. We've met this well before on the path. Today it comes back, in the middle of the pilgrimage, with a new job.",
+      "voice": "A glass of water, and a question before you drink it: what is this for? On an ordinary day, the question never comes up. Thirst, habit, the meeting running long. But a hadith in the collection of Ibn Majah makes it matter. The Prophet Muhammad ﷺ is reported to have said that the water of Zamzam is for whatever it is drunk for. Not just thirst. Whatever the drinker brings to it. You met this well back on day forty. Today it comes back, in the middle of the pilgrimage, with a new job.",
       "screen": [
         "`A GLASS OF WATER.` → `WHAT IS THIS FOR?` → `FOR WHATEVER IT IS DRUNK FOR.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, where the water comes from. Zamzam is a well inside the sacred mosque in Mecca, close to the Ka'ba. In a long report in Sahih al-Bukhari, Ibn Abbas tells how it first appeared: a mother alone in a dry valley with her baby, searching, and water breaking out of the ground. Her search is tomorrow's story, so for today, just the water. Second, the Prophet at the well. Jabir's account of the pilgrimage, in Sahih Muslim, has him coming to the people of his own clan who were drawing water at Zamzam and giving it out. They handed him a bucket, and he drank. Ibn Abbas adds, in Bukhari, that he was the one who gave the Prophet Zamzam, and that the Prophet drank it standing. A simple scene: a man, a bucket, a crowd, a drink. Third, the hadith from Ibn Majah. Water for whatever it's drunk for. Some pilgrims take that literally. They stand by the taps and fountains and drink, and before they drink, or while they drink, they ask for something. Healing for someone at home. Knowledge. Forgiveness. A child. Some carry bottles of it home for the people who couldn't come. Fourth, what changes. Nothing about the glass is different. The water is still water. What changes is that the drinker stops, names a purpose, and turns a reflex into a request. Scholars have discussed the grading of this hadith, and readers take it in different ways; the habit it has formed is easy to see at the fountains. A drink, and an intention said before it. That's the whole practice.",
+      "voice": "First, where the water comes from. Zamzam is a well inside the sacred mosque in Mecca, close to the Ka'ba. In a long report in Sahih al-Bukhari, Ibn Abbas tells how it first appeared: a mother alone in a dry valley with her baby, searching, and water breaking out of the ground. Her search is tomorrow's story. Second, the Prophet at the well. Jabir's account of the pilgrimage, in Sahih Muslim, has him coming to the people of his own clan as they drew water at Zamzam and gave it out. They handed him a bucket, and he drank. Ibn Abbas adds, in Bukhari, that he was the one who gave the Prophet Zamzam, and that the Prophet drank it standing. A man, a bucket, a crowd, a drink. Third, the hadith from Ibn Majah. Some pilgrims take it literally. They stand by the taps and fountains, and before they drink, or while they drink, they ask for something. Healing for someone at home. Knowledge. Forgiveness. A child. Some carry bottles of it home for the people who couldn't come. Scholars have discussed the grading of this hadith, and readers take it in different ways; the habit it has formed is easy to see at the fountains. Fourth, what changes. Nothing about the glass is different. The water is still water. What changes is that the drinker stops, names a purpose, and turns a reflex into a request.",
       "screen": [
         "`A WELL NEAR THE KA'BA.` · `A BUCKET, AND HE DRANK.` · `FOR WHATEVER IT IS DRUNK FOR.` · `A REFLEX TURNED INTO A REQUEST.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: drink water with an intention. Get a glass of ordinary water, if you can, and hold it. Before you drink, settle, and breathe. Then name one thing you want, for yourself or for someone else, plainly and quietly. If you pray, you can make it a du'a, a request to God in your own words, and say bismillah before you drink. If you don't, just name the hope. Then drink slowly, and sit with the glass. The bell holds the time.",
+      "voice": "Hold a glass of ordinary water, if you have one, and before you drink, name one thing you hope for, for yourself or for someone else, plainly and quietly. If you pray, make it a du'a in your own words and say bismillah; if not, just name the hope. Then drink slowly.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: drink with intention. Today, before one glass of water, pause and name what it's for. Day one thousand one hundred twenty-eight.",
+      "voice": "Your line: drink with intention. The water stays the same; the drinker changes. That's day eleven twenty-eight.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Pilgrims drink Zamzam water in the sacred mosque, often making a du'a before drinking, and some bring containers of it home to share with family and friends.",
   "games": {
+    "guess": [
+      "the well by the Ka'ba whose water is drunk with a hope",
+      "a spring pilgrims bathe in to wash away their sins",
+      "a river outside Mecca where pilgrims gather to pray"
+    ],
     "match": {
       "prompt": "Zamzam, again — tap the pairs.",
       "pairs": [
@@ -139,7 +144,39 @@
         "fidyah",
         "given in place of a fast"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your roommate",
+      "says": "Why do pilgrims pause and ask for something before drinking Zamzam? Isn't it just water?",
+      "options": [
+        "The water's the same; a hadith says it's for whatever it's drunk for.",
+        "Because pilgrims aren't allowed to drink anything else during Hajj.",
+        "Because Zamzam is only for healing; drinking it for thirst is wrong."
+      ],
+      "answer": 0,
+      "meaning": "A hadith in Ibn Majah says Zamzam is for whatever it is drunk for, so the drinker pauses and names a purpose. Scholars discuss its grading."
+    },
+    "gloss": {
+      "Zamzam": {
+        "meaning": "the well beside the Ka'ba in Mecca",
+        "script": "زمزم",
+        "say": "ZAM-zam"
+      },
+      "Ibn Majah": {
+        "meaning": "compiler of one of the classical hadith collections",
+        "say": "ib-un MAH-jah"
+      },
+      "bismillah": {
+        "meaning": "in the name of God",
+        "script": "بسم الله",
+        "say": "bis-mil-LAH"
+      },
+      "du'a": {
+        "meaning": "a personal request to God",
+        "script": "دعاء",
+        "say": "doo-AH"
+      }
+    }
   },
   "sources": [
     {
@@ -177,7 +214,10 @@
       "Bukhari 1637 (Ibn Abbas: 'I gave the Prophet Zamzam and he drank standing'): confirm number.",
       "'Some carry bottles of it home' is general color; check or soften.",
       "Earlier days on this path covered Zamzam (hence 'again'); the angle here is the Ibn Majah hadith and intention.",
-      "Editor: 'Pilgrims take that literally' softened to 'Some pilgrims' (claims rule)."
+      "Editor: 'Pilgrims take that literally' softened to 'Some pilgrims' (claims rule).",
+      "Job 2/3 (year 4): the hook's 'we've met this well before' is now a point-back to day 40 (Seven runs and a spring).",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

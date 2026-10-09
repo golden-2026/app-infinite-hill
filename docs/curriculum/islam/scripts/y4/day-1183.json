@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, ra'y, considered judgment, and your line: reasoned preference. When you chose between two good options, could you name the reason out loud? Day one thousand one hundred eighty-three.",
+      "voice": "Yesterday: ra'y, a considered judgment, and istihsan, choosing the stronger reason. Your line: reasoned preference.",
       "screen": [
         "`REASONED PREFERENCE.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "In the classic Hanafi law books, a small, strange habit shows up again and again. A ruling is given, and then: Abu Hanifa said this, but Abu Yusuf and Muhammad said that. The founder of the school, contradicted by his own students, on the same page, in the school's own book. Nobody tore the page out. Nobody threw the students out. Their names sit beside his, and sometimes later Hanafi scholars even follow the students' view instead of the teacher's. That's an odd way to honor a teacher, until you see what the students were doing. Today: his students.",
+      "voice": "In the classic Hanafi law books, a strange habit shows up again and again. A ruling is given, and then: Abu Hanifa said this, but Abu Yusuf and Muhammad said that. The founder, contradicted by his own students, on the same page of the school's own book. Nobody tore the page out. Nobody threw the students out. Their names sit beside his, and sometimes later Hanafi scholars even follow the students' view over the teacher's. An odd way to honor a teacher, until you see what the students were doing.",
       "screen": [
         "`ABU HANIFA SAID THIS.` → `HIS STUDENTS SAID THAT.` → `ON THE SAME PAGE.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "The first is Abu Yusuf. He sat in Abu Hanifa's circle in Kufa, and later he served as a judge for the Abbasid caliphs. For the caliph Harun al-Rashid he wrote a book on taxes and the public treasury, Kitab al-Kharaj, giving the school's reasoning a place at court. The second is Muhammad ibn al-Hasan al-Shaybani, the great writer of the pair. His books set down the school's positions in order, and Hanafi scholars came to treat a set of them as the school's core record. Hanafi scholars say that much of Abu Hanifa's teaching reached later readers through what these two wrote. Next, the habit from the hook. Hanafi books call the three the imams of the school, and the students are called the two companions. When they disagreed with their teacher, they said so, and the books kept every view. For a school built on reasoned judgment, that fits. A student who repeats a teacher's answers carries the answers. A student who learned the method can carry the method, even past the teacher. Then this week, because today closes it. Most of life simply permitted. Ijtihad, the effort to understand. Taqlid, following one who knows. Difference as mercy. Abu Hanifa the merchant, and ra'y, judgment with a proof behind it. And now the people who made sure any of it survived. Last, the sentence under all of it. A school isn't one man. It's a teacher, and students honest enough to argue with him, and to write it all down.",
+      "voice": "The first is Abu Yusuf. He sat in Abu Hanifa's circle in Kufa and later served as a judge for the Abbasid caliphs. For the caliph Harun al-Rashid he wrote Kitab al-Kharaj, a book on taxes and the public treasury, giving the school's reasoning a place at court. The second is Muhammad ibn al-Hasan al-Shaybani, the great writer of the pair. His books set down the school's positions in order, and Hanafi scholars came to treat a set of them as the school's core record. They say much of Abu Hanifa's teaching reached later readers through what these two wrote. Hanafi books call the three the imams of the school, and the students the two companions. When the companions disagreed with their teacher, they said so, and the books kept every view. For a school built on reasoned judgment, that fits. A student who repeats a teacher's answers carries the answers. A student who learned the method can carry the method, even past the teacher. So the week closes: most of life simply permitted, ijtihad, taqlid, difference as mercy, Abu Hanifa and his ra'y, and now the people who made sure any of it survived. A school isn't one man. It's a teacher, and students honest enough to argue with him, and to write it all down.",
       "screen": [
         "`ABU YUSUF: THE JUDGE AT COURT.` · `AL-SHAYBANI: THE WRITER.` · `THE TWO COMPANIONS DISAGREE ON THE PAGE.` · `A WEEK OF METHOD, CARRIED ON.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: thank a student who carried your work. Bring to mind someone who learned something from you. A younger sibling you taught to ride a bike. A new colleague you trained. A child who now does a recipe your way, or better than your way. Hold their face for a moment. Notice what they kept, and what they changed. If they disagree with you now on something, notice that too. Then decide on one short thank-you you could send today. If you pray, you can remember them in your prayer. The bell holds the time.",
+      "voice": "Bring to mind someone who learned something from you: a younger sibling you taught to ride a bike, a new colleague, a child who now makes a recipe your way, or better than your way. Hold their face for a moment and notice what they kept, what they changed, and where they disagree with you now. If you pray, you can remember them in your prayer.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: students carry it. Today, send that thank-you to someone who learned from you, and tell them one thing they do better than you did. Day one thousand one hundred eighty-three.",
+      "voice": "Your line: students carry it. The method can travel even past the teacher. Day one thousand one hundred eighty-three, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Hanafi law books record the views of Abu Hanifa beside those of his students Abu Yusuf and Muhammad al-Shaybani, and later Hanafi jurists weigh all three when deciding the school's position.",
   "games": {
+    "guess": [
+      "Abu Yusuf and al-Shaybani, who wrote the Hanafi school down",
+      "Malik and al-Shafi'i, who studied in his circle in Kufa",
+      "Abu Hanifa's sons, who took over his cloth trade"
+    ],
     "match": {
       "prompt": "his students — tap the pairs.",
       "pairs": [
@@ -139,7 +144,45 @@
         "shari'ah",
         "the path Allah set"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your younger brother",
+      "says": "Why would a law school keep its students' views when they disagree with its founder?",
+      "options": [
+        "They learned his method, not just his answers, and the books kept every view.",
+        "The founder's views were lost, so only the students' answers remained.",
+        "The students overruled him, so his own views were dropped from the books."
+      ],
+      "answer": 0,
+      "meaning": "The two companions learned Abu Hanifa's method, so they could reason past him. When they disagreed, they said so, and Hanafi books kept every view."
+    },
+    "gloss": {
+      "Abu Yusuf": {
+        "meaning": "Abu Hanifa's student, later a judge for the Abbasid caliphs",
+        "script": "أبو يوسف",
+        "say": "AH-boo YOO-suf"
+      },
+      "al-Shaybani": {
+        "meaning": "Abu Hanifa's student who wrote the school's positions down",
+        "script": "الشيباني",
+        "say": "ash-shay-BAA-nee"
+      },
+      "Kitab al-Kharaj": {
+        "meaning": "Abu Yusuf's book on taxes and the public treasury",
+        "script": "كتاب الخراج",
+        "say": "ki-TAAB al-kha-RAAJ"
+      },
+      "Harun al-Rashid": {
+        "meaning": "an Abbasid caliph, for whom Abu Yusuf wrote",
+        "script": "هارون الرشيد",
+        "say": "haa-ROON ar-ra-SHEED"
+      },
+      "Kufa": {
+        "meaning": "a city in Iraq where Abu Hanifa taught",
+        "script": "الكوفة",
+        "say": "KOO-fah"
+      }
+    }
   },
   "sources": [
     {
@@ -165,7 +208,9 @@
       "'Later Hanafi scholars sometimes follow the students' view': confirm; the 'three imams' and 'the two companions' (sahiban) labels: confirm.",
       "Week-end look-back covers days 1177–1182 by their index titles and carries (days 1177–1181 were not on disk when this was written).",
       "Original: تلاميذ (talamidh), plural of tilmidh; confirm spelling and pronunciation.",
-      "Editor pass: changed the hook opener (day 1173 also opened 'Open al-Kafi'); cut 'younger' (an unsourced age claim) and 'the post his teacher never held' (pre-empted day 1185); attributed the 'much of what anyone knows' claim to Hanafi scholars."
+      "Editor pass: changed the hook opener (day 1173 also opened 'Open al-Kafi'); cut 'younger' (an unsourced age claim) and 'the post his teacher never held' (pre-empted day 1185); attributed the 'much of what anyone knows' claim to Hanafi scholars.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, reading hadith today, and your line: with a teacher. Did you ask someone, and what did they tell you? Day one thousand one hundred sixty-seven.",
+      "voice": "Yesterday: reading hadith today, whole, in its setting, beside the other texts, and your line: with a teacher.",
       "screen": [
         "`WITH A TEACHER.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Walk back down the block, link by link. A hadith: a report of what the Prophet said, did or approved. Sunnah and hadith: the way, carried. Chain and text: who told whom. The text itself, because the words are tested too. Sound, good, weak: graded with care. Many chains. The science of men: who was he? Scholars on the road for a single report. Fabrications exposed, because they checked. Then the books: Bukhari's sound collection, Muslim's, the four Sunan that complete the six books, the early collections of Malik and Ahmad, and the four books of the Shia with their own science of grading. Then the sacred hadith, Jibril's questions, the women who taught the Sahih, memory, weak reports, the forties, commentary, and reading with a teacher. Three threads run through it. Honesty: the warnings against lying about the Prophet, taken seriously enough to build a whole craft of checking. Memory: words carried by heart, passed on just as they were heard. Travel: students crossing long distances to sit in front of one narrator. And one more thing the chain needed, which nobody could see from outside. Every link was a person who could have cut a corner, and the narrators the critics trusted were the ones who didn't. That's what the line means. The chain held. Not that every report is sound; this block spent whole days on weak and fabricated ones. What held was the method. Name your source. Test it. Say how sure you are. Tomorrow a new block begins: fiqh and the schools, what scholars built from the Qur'an and these reports.",
+      "voice": "Walk back down the block, link by link. A hadith: a report of what the Prophet said, did or approved. Sunnah and hadith: the way, carried. Chain and text: who told whom, and the words, tested too. Sound, good, weak: graded with care. Many chains. The science of men: who was he? Scholars on the road for a single report. Fabrications exposed, because they checked. Then the books: Bukhari's sound collection, Muslim's, the four Sunan that complete the six books, the early collections of Malik and Ahmad, and the four books of the Shia with their own science of grading. Then the sacred hadith, Jibril's questions, the women who taught the Sahih, memory, weak reports, the forties, commentary, and reading with a teacher. Three threads run through it all. Honesty: the warnings against lying about the Prophet, taken seriously enough to build a whole craft of checking. Memory: words carried by heart, passed on just as they were heard. Travel: students crossing long distances to sit in front of one narrator. And one thing nobody could see from outside: every link was a person who could have cut a corner, and the narrators the critics trusted were the ones who didn't. So the chain held. Not that every report is sound; this block spent whole days on weak and fabricated ones. What held was the method. Name your source. Test it. Say how sure you are. Tomorrow a new block begins: fiqh and the schools, what scholars built from the Qur'an and these reports.",
       "screen": [
         "`LINK BY LINK, THE WHOLE BLOCK.` · `HONESTY, MEMORY, TRAVEL.` · `A PERSON AT EVERY LINK.` · `THE METHOD HELD.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: thank the transmitters. Settle, and breathe. Bring to mind one hadith from this block that stayed with you. Now walk back along its chain in your mind. The person or book you learned it from. The collector who checked it. The narrators before him, one by one. A companion who first heard it. You don't need their names. Just see the line of people, hand to hand. If you pray, you can ask mercy for them. If you don't, simply let some thanks go to each pair of hands. The bell holds the time.",
+      "voice": "Bring to mind one hadith from this block that stayed with you, and walk back along its chain: the person or book you learned it from, the collector who checked it, the narrators before him, the companion who first heard it. You don't need their names, just the line of people, hand to hand. If you pray, ask mercy for them; if you don't, let some thanks go to each pair of hands.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the chain held. Today, thank one living link, someone who taught you something you still carry, and tell them so. Tomorrow: shari'ah and fiqh. Day one thousand one hundred sixty-seven.",
+      "voice": "Your line: the chain held. Hand to hand, all the way to you. The hadith block is done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Muslims often ask Allah's mercy for the scholars and narrators who carried the hadith, and students of hadith sometimes name their chain of teachers back to the Prophet when they teach.",
   "games": {
+    "guess": [
+      "the end of the hadith block: a science of honest, checked reports",
+      "the moment the last hadith collection was finally closed",
+      "a ruling that every report about the Prophet is sound"
+    ],
     "match": {
       "prompt": "the hadith block — tap the pairs.",
       "pairs": [
@@ -139,7 +144,40 @@
         "matn",
         "the words: what was said"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your neighbor",
+      "says": "So after all that checking, is every hadith about the Prophet reliable?",
+      "options": [
+        "No, some are weak or made up. What held was the method of checking.",
+        "Yes. Once a saying made it into any book, the critics guaranteed it.",
+        "No. The chains were lost long ago, so nobody can check any of them."
+      ],
+      "answer": 0,
+      "meaning": "The block spent whole days on weak and fabricated reports. What held was the method: name your source, test it, say how sure you are."
+    },
+    "gloss": {
+      "Sunan": {
+        "meaning": "hadith collections; four of them complete the six books",
+        "script": "سنن",
+        "say": "SU-nan"
+      },
+      "Jibril": {
+        "meaning": "the angel Gabriel",
+        "script": "جبريل",
+        "say": "jib-REEL"
+      },
+      "ihsan": {
+        "meaning": "worshipping Allah as if you see Him",
+        "script": "إحسان",
+        "say": "ih-SAAN"
+      },
+      "fiqh": {
+        "meaning": "understanding: the scholars' work of law",
+        "script": "فقه",
+        "say": "FIKH"
+      }
+    }
   },
   "sources": [
     {
@@ -169,7 +207,9 @@
       "Bukhari 7405 cited for the hadith qudsi 'whoever comes walking, I come running' (paraphrased); confirm number. Bukhari 110 for the warning against lying about the Prophet; Tirmidhi 2656 for passing words on as heard.",
       "'The narrators the critics trusted were the ones who didn't cut corners' is an interpretive summary of the science of narrators; confirm the framing.",
       "howItsDone: asking mercy for scholars and reciting one's isnad when teaching; 'often' and 'sometimes' used; soften if needed.",
-      "Original: إسناد (isnad); confirm pronunciation 'is-NAAD'."
+      "Original: إسناد (isnad); confirm pronunciation 'is-NAAD'.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

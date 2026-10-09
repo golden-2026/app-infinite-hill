@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, sidq, and your line: with the truthful. Did you reach out to one honest friend? Today, what to do when someone close has not been truthful at all. Day one thousand three hundred ten.",
+      "voice": "Yesterday: sidq, truthfulness, and the company of the truthful. Today, what to do when someone close has not been truthful at all, a story day four hundred ninety-six first told.",
       "screen": [
         "`WITH THE TRUTHFUL.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "The verse is in surah al-Nur. It speaks to people of means who swear off giving to their relatives and the needy. Then, in Pickthall's translation: \"Let them forgive and show indulgence. Yearn ye not that Allah may forgive you? Allah is Forgiving, Merciful.\" Two verbs: forgive, and show indulgence. In Arabic, wal-ya'fu wal-yasfahu. Pardon, and overlook. 'Afw is letting go of what you're owed: the debt, the punishment, the right to get even. Overlooking goes one step further: not raising it again, not keeping it ready for the next argument. And then the question. Yearn ye not that Allah may forgive you? The verse doesn't argue that Mistah deserved help. It doesn't say the slander was small. It asks Abu Bakr about himself. Do you want to be forgiven? Here's what he said, in Bukhari, in paraphrase: yes, by Allah, I love that Allah should forgive me. And he went back to supporting Mistah, and said he would never stop. Notice the order. The wrong was named first. 'A'ishah's innocence was declared in the Qur'an itself. Pardon came after the truth, not instead of it. The hadith on humility from a few days ago, in Sahih Muslim, has a line for this too, in paraphrase: no servant pardons except that Allah increases him in honor. In that hadith's terms, pardon costs no honor. So 'afw isn't pretending. It's choosing, with the wrong fully seen, to let the debt go, and then to stop bringing it up.",
+      "voice": "The verse is in surah al-Nur. It speaks to people of means who swear off giving to their relatives and the needy. Then, in Pickthall's translation: \"Let them forgive and show indulgence. Yearn ye not that Allah may forgive you? Allah is Forgiving, Merciful.\" Two verbs, in Arabic wal-ya'fu wal-yasfahu: pardon, and overlook. 'Afw is letting go of what you're owed: the debt, the punishment, the right to get even. Overlooking goes one step further: not raising it again, not keeping it ready for the next argument. Then the question. The verse doesn't argue that Mistah deserved help, or that the slander was small. It asks Abu Bakr about himself: do you want to be forgiven? His answer, in Bukhari, in paraphrase: yes, by Allah, I love that Allah should forgive me. And he went back to supporting Mistah, and said he would never stop. Notice the order. The wrong was named first; 'A'ishah's innocence was declared in the Qur'an itself. Pardon came after the truth, not instead of it. The hadith from the humility day, in Sahih Muslim, has a line for this too, in paraphrase: no servant pardons except that Allah increases him in honor. So 'afw isn't pretending. It's choosing, with the wrong fully seen, to let the debt go, and then to stop bringing it up.",
       "screen": [
         "`AL-NUR: FORGIVE AND SHOW INDULGENCE.` · `PARDON, THEN OVERLOOK.` · `DON'T YOU WANT TO BE FORGIVEN?` · `THE TRUTH FIRST, THEN PARDON.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Settle, and breathe. Bring to mind one person who owes you something: an apology, money, a fairer word. Not the deepest wound you carry. Something you can hold. Name the wrong to yourself, plainly. Don't shrink it. Then hear the verse's question, turned toward you: is there anything you hope to be forgiven for? Stay with that for a few breaths. If you're ready, let one piece of the debt go. Maybe not all of it. If you pray, you can recite the verse's last words in your heart: Allah is Forgiving, Merciful. The bell holds the time.",
+      "voice": "Bring to mind one person who owes you something, an apology, money, a fairer word: not the deepest wound you carry, just something you can hold, and name the wrong plainly without shrinking it. Then hear the verse's question turned toward you, is there anything you hope to be forgiven for, and if you're ready, let one piece of the debt go, maybe not all of it. If you pray, you can say the verse's last words in your heart: Allah is Forgiving, Merciful.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: pardon and overlook. Today, pardon one person for one thing, and then don't mention it again. Tomorrow, gentleness in all things. Day one thousand three hundred ten.",
+      "voice": "Your line: pardon and overlook. The truth first, then the letting go. See you tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Islamic teaching on pardon draws on Qur'an 24:22 and the story of Abu Bakr resuming his support for Mistah, and on the hadith that Allah increases in honor a servant who pardons.",
   "games": {
+    "guess": [
+      "pardon: letting go of what you're owed, with the wrong seen",
+      "pretending a wrong never happened so things stay calm",
+      "waiting for an apology before you will let anything go"
+    ],
     "match": {
       "prompt": "'afw — tap the pairs.",
       "pairs": [
@@ -139,7 +144,43 @@
         "ghadab",
         "anger"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your coworker",
+      "says": "If I forgive someone, aren't I saying what they did was fine?",
+      "options": [
+        "No. 'A'ishah's innocence was declared first; Abu Bakr's pardon came after the truth.",
+        "Yes. Forgiving means agreeing the wrong was small, so it's best not to name it.",
+        "Only once they've paid it back; Abu Bakr waited until Mistah made it up to him."
+      ],
+      "answer": 0,
+      "meaning": "The wrong was named first; then al-Nur asked, don't you want Allah to forgive you? Abu Bakr pardoned and kept supporting Mistah."
+    },
+    "gloss": {
+      "Mistah": {
+        "meaning": "Abu Bakr's poor relative who repeated the slander",
+        "say": "MIS-tah"
+      },
+      "al-Nur": {
+        "meaning": "the Qur'an's twenty-fourth surah, 'The Light'",
+        "script": "النور",
+        "say": "an-NOOR"
+      },
+      "'Afw": {
+        "meaning": "pardon; letting go of what you're owed",
+        "script": "عفو",
+        "say": "AFW"
+      },
+      "wal-ya'fu wal-yasfahu": {
+        "meaning": "let them pardon, and let them overlook",
+        "script": "وليعفوا وليصفحوا",
+        "say": "wal-YAA-foo wal-YAS-fa-hoo"
+      },
+      "Abu Bakr": {
+        "meaning": "the Prophet's close companion, father of 'A'ishah",
+        "say": "AH-boo BAKR"
+      }
+    }
   },
   "sources": [
     {
@@ -168,7 +209,9 @@
       "Pickthall 24:22: confirm exact wording of the quoted sentences.",
       "Hadith numbers to confirm: Bukhari 4750, Muslim 2588.",
       "The accusation against 'A'ishah (al-ifk) is mentioned only briefly and without detail; check tone.",
-      "Editor: 'It sounds fair' changed to 'On its face, a fair oath' (no telling the listener how it sounds to them); the Muslim 2588 paraphrase now follows its wording (no one pardons except that Allah increases him in honor); cut 'Abu Bakr lost nothing by it', which no cited text says."
+      "Editor: 'It sounds fair' changed to 'On its face, a fair oath' (no telling the listener how it sounds to them); the Muslim 2588 paraphrase now follows its wording (no one pardons except that Allah increases him in honor); cut 'Abu Bakr lost nothing by it', which no cited text says.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

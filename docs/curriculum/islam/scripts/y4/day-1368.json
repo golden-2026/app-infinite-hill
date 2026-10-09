@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, many ways of being Muslim: one row, many homes, the same Fatiha. Your line was one faith, many ways. What did you find out about the place you picked? Day one thousand three hundred sixty-eight.",
+      "voice": "Yesterday, many ways of being Muslim: one row, many homes, the same Fatiha.",
       "screen": [
         "`ONE FAITH, MANY WAYS.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Ask who runs a mosque, and the quick answer is the imam. Then go and look on a Saturday morning, at a mosque in the suburbs. In the basement, kids sit at folding tables learning the Arabic letters, and one of them is drawing a dinosaur in the margin. Upstairs, the committee is arguing politely about whether the new carpet should be green or blue. In the kitchen, two aunties are already planning next month's iftar. Out front, a man in a reflective vest is sorting out the parking. Nobody in this scene is praying right now. And all of it is the mosque. Today, the people who make it run.",
+      "voice": "Ask who runs a mosque, and the quick answer is the imam. Then look on a Saturday morning at a mosque in the suburbs. In the basement, kids at folding tables learn the Arabic letters, and one is drawing a dinosaur in the margin. Upstairs, the committee argues politely about whether the new carpet should be green or blue. In the kitchen, two aunties plan next month's iftar. Out front, a man in a reflective vest sorts out the parking. Nobody here is praying right now. And all of it is the mosque.",
       "screen": [
         "`A WEEKEND SCHOOL IN THE BASEMENT.` → `A COMMITTEE AND A CARPET.` → `ALL OF IT IS THE MOSQUE.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Begin with a surprise from al-Bukhari. The Prophet Muhammad, peace be upon him, listed things given to him, and one was this, in paraphrase: the earth has been made for me a place of prayer and a means of purification, so wherever the time of prayer reaches you, pray. So the building isn't what makes prayer possible. Any clean patch of ground will do. Then why build one? Second, the Prophet's mosque in Madinah. Al-Bukhari reports that when it was built, the Prophet carried building materials alongside his companions. Before there was a committee or a carpet, there were people hauling things together. Third, the person nobody noticed. Al-Bukhari tells of someone who used to sweep the mosque; the narrator isn't sure whether it was a man or a woman. When the sweeper died, people didn't think to tell the Prophet. Later he asked about the sweeper. They said the sweeper had died. He said, in paraphrase: why didn't you tell me? Show me the grave. And he went and prayed there. The sweeper was missed by name. Fourth, today. In towns today, a mosque is often a prayer hall plus everything around it: an imam who leads and teaches, a board that pays the bills, volunteers who run the weekend school, the funeral committee, the iftar kitchen, the food pantry. The prayer could happen anywhere. What the building gathers is the people, and the people are how a stranger in town finds a meal, a funeral prayer, a teacher for their kid.",
+      "voice": "Begin with a surprise from al-Bukhari. The Prophet Muhammad, peace be upon him, listed things given to him, and one was this, in paraphrase: the earth has been made for me a place of prayer and a means of purification, so wherever the time of prayer reaches you, pray. Any clean patch of ground will do. Then why build one? Look at the Prophet's mosque in Madinah. Al-Bukhari reports that when it was built, the Prophet carried building materials alongside his companions. Before there was a committee or a carpet, there were people hauling things together. Then the person nobody noticed. Al-Bukhari tells of someone who used to sweep the mosque; the narrator isn't sure whether it was a man or a woman. When the sweeper died, people didn't think to tell the Prophet. Later he asked about the sweeper and heard. He said, in paraphrase: why didn't you tell me? Show me the grave. And he went and prayed there. The sweeper was missed by name. Today, a mosque is often a prayer hall plus everything around it: an imam who leads and teaches, a board that pays the bills, volunteers for the weekend school, the funeral committee, the iftar kitchen, the food pantry. The prayer could happen anywhere. What the building gathers is people, and people are how a stranger in town finds a meal, a funeral prayer, a teacher for their kid.",
       "screen": [
         "`THE EARTH IS A PLACE OF PRAYER.` · `THE PROPHET CARRIED LOADS TOO.` · `THE SWEEPER WAS MISSED.` · `A HALL AND EVERYONE AROUND IT.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: volunteer at a mosque. Settle, and breathe. Picture the scene from the start: the basement school, the kitchen, the man with the parking vest, the person with the broom. Which of those jobs could you do? Reading to kids. Stacking chairs. Washing up after an iftar. Driving someone older to Friday prayer. If you're not Muslim, some mosques welcome help with open days, food drives and interfaith meals. Let one small job come clear. If you pray, you can ask that it be accepted. The bell holds the time.",
+      "voice": "Picture the scene again, the basement school, the kitchen, the parking vest, the broom, and ask which job you could do: reading to kids, stacking chairs, washing up after an iftar, driving someone older to Friday prayer. If you're not Muslim, some mosques welcome help with open days, food drives and interfaith meals. Let one small job come clear, and if you pray, ask that it be accepted.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the mosque is people. Today, notice one person who quietly keeps a place running, a mosque or anywhere, and thank them by name. Tomorrow, the imam's role. Day one thousand three hundred sixty-eight.",
+      "voice": "Your line: the mosque is people. Any clean ground holds a prayer; people make a mosque. Until tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Mosques are often run by volunteer boards and committees alongside an imam, and host weekend schools for children, iftars in Ramadan, funeral services, food drives and open days, with members volunteering for cleaning, teaching, cooking and parking.",
   "games": {
+    "guess": [
+      "the people who keep a mosque running",
+      "the board that owns the mosque building",
+      "the rows who pray at Friday prayer"
+    ],
     "match": {
       "prompt": "the mosque community — tap the pairs.",
       "pairs": [
@@ -133,13 +138,45 @@
     "recall": [
       [
         "kafan",
-        "the shroud"
+        "plain white burial cloth, same for all"
       ],
       [
         "'iyadah",
         "visiting the sick"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your coworker",
+      "says": "If Muslims can pray anywhere, why do they bother building mosques?",
+      "options": [
+        "Any clean ground works for prayer; the mosque gathers people: a school, a kitchen, a funeral.",
+        "Prayer only counts inside a mosque, so a building is needed for it to be valid.",
+        "Mosques are mainly for imams; ordinary people mostly pray at home instead."
+      ],
+      "answer": 0,
+      "meaning": "In al-Bukhari, the earth is made a place of prayer. What the building gathers is the people: teachers, cooks, volunteers, even a sweeper missed by name."
+    },
+    "gloss": {
+      "Madinah": {
+        "meaning": "the city where the Prophet's mosque was built",
+        "script": "المدينة",
+        "say": "ma-DEE-nah"
+      },
+      "iftar": {
+        "meaning": "the meal that breaks the day's fast",
+        "script": "إفطار",
+        "say": "if-TAR"
+      },
+      "imam": {
+        "meaning": "the one who leads the prayer",
+        "script": "إمام",
+        "say": "ee-MAAM"
+      },
+      "Bukhari": {
+        "meaning": "a major collection of the Prophet's sayings",
+        "say": "boo-KHAA-ree"
+      }
+    }
   },
   "sources": [
     {
@@ -169,7 +206,9 @@
       "Bukhari 428: the report has the companions carrying stones/bricks and the Prophet with them; the script says 'materials' and 'loads'. Confirm.",
       "'Often' and 'some mosques welcome help' describe common arrangements without a cited source; a Keeper may soften.",
       "The hook is an illustrative scene, not a reported event.",
-      "Editor: the sweeper now follows Bukhari 458 as cited (narrator unsure if man or woman; 'buried at night' cut, since it comes from versions not cited) in teach, games and fork; 'the first mosque in Madinah' changed to 'the Prophet's mosque in Madinah' (Quba is also called the first); hook opens with a question instead of a fourth scene-setting opener in a row."
+      "Editor: the sweeper now follows Bukhari 458 as cited (narrator unsure if man or woman; 'buried at night' cut, since it comes from versions not cited) in teach, games and fork; 'the first mosque in Madinah' changed to 'the Prophet's mosque in Madinah' (Quba is also called the first); hook opens with a question instead of a fourth scene-setting opener in a row.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

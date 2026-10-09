@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the hwadu, the question carried everywhere. Your line: what is this. Which chore did you carry it through, and did an answer try to sneak in? Day one thousand two hundred forty-nine.",
+      "voice": "Yesterday, the hwadu: a question carried, not solved, with great doubt as the engine. Your line: what is this.",
       "screen": [
         "`WHAT IS THIS.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "On a set day, the gates of a Korean mountain monastery close behind a hall full of monks, or nuns, with their cushions laid out in rows. They won't walk out again for three months. No trips to town, no visits home. Sitting, walking, eating, sleeping, and sitting again, each of them carrying a single question. Then, when the season ends, the gates open, and some of them shoulder a pack and walk off to another monastery for the months between. Twice a year, this happens. Today: the Korean retreat season.",
+      "voice": "On a set day, the gates of a Korean mountain monastery close behind a hall of monks, or nuns, their cushions laid out in rows. They won't walk out again for three months. No trips to town, no visits home. Sitting, walking, eating, sleeping, sitting again, each carrying a single question. When the season ends, the gates open, and some shoulder a pack and walk off to another monastery for the months between. Twice a year, this happens. Today: the Korean retreat season.",
       "screen": [
         "`THE GATES CLOSE.` → `THREE MONTHS, ONE QUESTION.` → `THEN THE GATES OPEN.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, where it comes from. The old monastic rules, the Vinaya, tell how a rainy-season retreat began. In the Vinaya's story, people complained that wandering monks were tramping through the fields in the rains, crushing young plants and small creatures. So the Buddha told the monks to stay in one place for the rainy season. A practical rule for a muddy road became a lasting rhythm of Buddhist monastic life. Second, the Korean shape. In Korea, the season comes twice, once in summer and once in winter, and each runs about three months. The word is angeo, dwelling in peace. The start is called gyeolje, a binding or closing, and the end is haeje, an untying. The months between are free time, when monks and nuns travel, visit teachers, or move to a new hall. Third, what fills the days. Seon halls keep a schedule of long sitting periods from before dawn into the night, with walking between. Yesterday's hwadu is the work: the same question, held all season. Some halls keep an even stricter retreat for those who want it. Fourth, who it's for. The retreat is a monastic practice, and the hall belongs to the monks and nuns who sit it. But some Korean temples also open shorter retreats for laypeople, a weekend or a few days, so anyone can taste a little of the season. The doors that close for three months are part of a bigger rhythm: going in, coming out, going in again.",
+      "voice": "First, the root. The old monastic rules, the Vinaya, tell how the rainy-season retreat began. In the Vinaya's story, people complained that wandering monks were tramping through the fields in the rains, crushing young plants and small creatures. So the Buddha told the monks to stay in one place for the rains. A practical rule for a muddy road became a lasting rhythm of monastic life. Second, the Korean shape. The season comes twice, summer and winter, each about three months. The word is angeo, dwelling in peace. The start is gyeolje, a binding; the end is haeje, an untying. In the months between, monks and nuns travel, visit teachers, or move to a new hall. Third, the days. Seon halls keep long sitting periods from before dawn into the night, with walking between, and yesterday's hwadu is the work: one question, held all season. Some halls keep an even stricter retreat for those who want it. Fourth, who it's for. The hall belongs to the monks and nuns who sit it, but some Korean temples open shorter retreats for laypeople, a weekend or a few days, so anyone can taste the season. The closed gates are part of a bigger rhythm: going in, coming out, going in again.",
       "screen": [
         "`A RULE FOR THE RAINY SEASON.` · `SUMMER AND WINTER, THREE MONTHS.` · `ONE QUESTION, ALL SEASON.` · `IN, OUT, AND IN AGAIN.` · then, large: `THREE MONTHS IN.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice, if you'd like. Sit and let the breath settle. Then let yourself plan, gently, a longer retreat someday. Not three months, unless that's your dream. Maybe a quiet day. A weekend at a temple or a retreat center. A morning with the phone in a drawer. What would you leave at the gate? What would you carry in, maybe one question? Hold the plan lightly, like a seed. Then let it go, and sit in this small retreat you're already in. The bell holds the time.",
+      "voice": "Picture, gently, a retreat of your own someday: a quiet day, a weekend at a temple, a morning with the phone in a drawer. What would you leave at the gate, and what one question might you carry in? Hold the plan lightly, like a seed, then let it go and sit in this small retreat you're already in.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: three months in. Today, put one date on a calendar, even far off, for a few quiet hours of your own retreat. Day one thousand two hundred forty-nine.",
+      "voice": "Your line: three months in. Every season starts with a gate closing. That's day twelve forty-nine.",
       "screen": []
     },
     {
@@ -139,7 +139,46 @@
         "kinhin",
         "walking between sittings"
       ]
-    ]
+    ],
+    "guess": [
+      "twice-yearly three months of intensive Seon practice",
+      "a yearly pilgrimage to Korea's mountain temples",
+      "the rainy months when monks travel to teach"
+    ],
+    "chat": {
+      "who": "your coworker",
+      "says": "Why do Korean monks and nuns shut themselves in a monastery for three months?",
+      "options": [
+        "It's the retreat season: twice a year, intensive sitting with one question.",
+        "It's a punishment for monks who broke the rules during the year.",
+        "It's a once-in-a-lifetime test before they're allowed to teach."
+      ],
+      "answer": 0,
+      "meaning": "Angeo comes in summer and winter, about three months each. Seon halls sit from before dawn into the night, each person holding a hwadu."
+    },
+    "gloss": {
+      "Vinaya": {
+        "meaning": "the old rules of Buddhist monastic life",
+        "script": "विनय",
+        "say": "vih-NAH-yuh"
+      },
+      "angeo": {
+        "meaning": "dwelling in peace: the Korean retreat season",
+        "say": "AHN-guh"
+      },
+      "gyeolje": {
+        "meaning": "the binding: the day the season begins",
+        "say": "GYUHL-jeh"
+      },
+      "haeje": {
+        "meaning": "the untying: the day the season ends",
+        "say": "HEH-jeh"
+      },
+      "Seon": {
+        "meaning": "Korean Zen",
+        "say": "SUHN"
+      }
+    }
   },
   "sources": [
     {
@@ -163,7 +202,9 @@
       "Twice yearly, summer and winter, about three months each: from the outline's hook; confirm for the Jogye order today.",
       "Terms angeo 안거 (安居), gyeolje 결제 (結制), haeje 해제 (解制) and the glosses 'dwelling in peace', 'binding', 'untying': confirm romanization and glosses.",
       "'Some halls keep an even stricter retreat' (e.g. no-lying-down practice) and 'some Korean temples open shorter retreats for laypeople' are stated generally; confirm.",
-      "Monks and nuns sit in separate monasteries; the hook says 'monks, or nuns' to reflect that."
+      "Monks and nuns sit in separate monasteries; the hook says 'monks, or nuns' to reflect that.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

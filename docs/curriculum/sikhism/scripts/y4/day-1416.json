@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, food as theology: one row, one pot, even for an emperor. Your line was equality at the table. Who did you notice at your table, and who was missing? Day one thousand four hundred sixteen.",
+      "voice": "Yesterday, food as theology: one row, one pot, even for an emperor. Your line was equality at the table.",
       "screen": [
         "`EQUALITY AT THE TABLE.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Ji aayan nu. It's a Punjabi welcome, said at the door, sometimes with both hands pressed together, and a question follows close behind: tea? Then the kettle is already on. A guest arrives, and the house rearranges itself around them. The good cup comes out. Someone gives up the best chair. It's a small, ordinary scene. In Sikh teaching, though, it rests on something larger than manners. Yesterday was the meal. Today is the door, and the idea that it shouldn't be closed to anyone.",
+      "voice": "Ji aayan nu. It's a Punjabi welcome, said at the door, sometimes with both hands pressed together, and a question follows close behind: tea? The kettle is already on. A guest arrives, and the house rearranges itself around them. The good cup comes out. Someone gives up the best chair. A small, ordinary scene, but in Sikh teaching it rests on something larger than manners. Yesterday was the meal. Today is the door, and the idea that it shouldn't be closed to anyone.",
       "screen": [
         "`JI AAYAN NU: WELCOME.` → `THE KETTLE IS ALREADY ON.` → `TODAY, THE DOOR.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the reason. In a hymn in Raag Majh, Guru Arjan says to God, in paraphrase, that all are called sharers in Your household, and You are seen as outside of no one. The Punjabi word is saanjhivaal: partners, people who share. If God is within everyone, then no guest is a stranger. Second, the building. The Harmandir Sahib in Amritsar, the Golden Temple, is a place Sikhs hold dear, and tradition says its doors open on every side, as a sign that people from every direction are welcome. Whatever you believe, whatever you're called, there's a way in from where you're standing. Third, what the gurdwara does with that. Alongside the langar, some gurdwaras keep rooms where travelers can rest, and anyone can come in, cover their head, and sit. The guest is honored by being given what the house has: food, shade, a place on the floor with everyone else. Fourth, the cost. An open door is not always comfortable. It lets in people who are loud, or sad, or not like us. Keeping it open means deciding ahead of time that the person who knocks is welcome before you know who they are. That's hard to practice when the doorbell rings and you're tired. But it's what the hymn is pointing at: if God is outside of no one, the door has no one to close against.",
+      "voice": "First, the reason. In a hymn in Raag Majh, Guru Arjan says to God, in paraphrase, that all are called sharers in Your household, and You are seen as outside of no one. The Punjabi word is saanjhivaal: partners, people who share. If God is within everyone, then no guest is a stranger. Second, the building. The Harmandir Sahib in Amritsar, the Golden Temple, is a place Sikhs hold dear, and tradition says its doors open on every side, as a sign that people from every direction are welcome. Whatever you believe, whatever you're called, there's a way in from where you're standing. Third, what the gurdwara does with that. Alongside the langar, some gurdwaras keep rooms where travelers can rest, and anyone can come in, cover their head, and sit. The guest is honored with what the house has: food, shade, a place on the floor with everyone else. Fourth, the cost. An open door isn't always comfortable. It lets in people who are loud, or sad, or not like us. Keeping it open means deciding ahead of time that whoever knocks is welcome before you know who they are. That's hard when the doorbell rings and you're tired. But it's what the hymn is pointing at: if God is outside of no one, the door has no one to close against.",
       "screen": [
         "`SAANJHIVAAL: NO ONE IS AN OUTSIDER.` · `DOORS ON EVERY SIDE, TRADITION SAYS.` · `FOOD, SHADE, A PLACE ON THE FLOOR.` · `WELCOME BEFORE YOU KNOW WHO KNOCKS.` · then, large: `THE DOOR STAYS OPEN.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: welcome a guest. Settle, and breathe. Bring to mind someone who might come through your door, or your inbox, or your desk, this week: a visitor, a new coworker, a neighbor you've only waved at. Breathe in, and see them arriving. Breathe out, and decide, before they get there, that they're welcome. Then choose one small thing you'll offer: a drink, a chair, a few minutes of real attention, their name said properly. If you pray, you can hold them in your prayer. The bell holds the time.",
+      "voice": "Bring to mind someone who might come through your door, your inbox or your desk this week: a visitor, a new coworker, a neighbor you've only waved at. Breathe in and see them arriving; breathe out and decide, before they get there, that they're welcome, with one small thing to offer: a drink, a chair, real attention, their name said properly. If you pray, hold them in your prayer.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the door stays open. Today, when someone interrupts you, treat them as a guest for the first minute: look up, say their name, and offer them something. Day one thousand four hundred sixteen.",
+      "voice": "Your line: the door stays open. Doors on every side, a way in from anywhere. Until tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Gurdwaras welcome anyone who comes, of any faith or none, asking that visitors cover their heads and remove their shoes; Sikh households traditionally greet guests with food and tea.",
   "games": {
+    "guess": [
+      "honoring every guest, since God is in everyone",
+      "welcoming only guests who share your faith",
+      "a formal etiquette for greeting elders"
+    ],
     "match": {
       "prompt": "hospitality to guests: tap the pairs.",
       "pairs": [
@@ -139,7 +144,42 @@
         "Surat",
         "attention, the mind's gaze"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your housemate",
+      "says": "Why are gurdwaras open to anyone, even people who aren't Sikh?",
+      "options": [
+        "Guru Arjan sings that all are sharers and God is outside of no one, so no guest is a stranger.",
+        "It's a way to invite visitors to join, so the doors open mainly for newcomers.",
+        "Only the langar hall is open to all; the prayer hall is kept for Sikhs."
+      ],
+      "answer": 0,
+      "meaning": "In Raag Majh, Guru Arjan calls all people sharers in God's household, and God is seen as outside of no one. So the door stays open."
+    },
+    "gloss": {
+      "saanjhivaal": {
+        "meaning": "sharers, partners in one household",
+        "script": "ਸਾਂਝੀਵਾਲ",
+        "say": "saanj-hee-VAAL"
+      },
+      "Ji aayan nu": {
+        "meaning": "a Punjabi welcome, said at the door",
+        "say": "jee AA-yaan noo"
+      },
+      "Harmandir Sahib": {
+        "meaning": "the Sikh shrine in Amritsar, the Golden Temple",
+        "say": "HUR-mun-dur SAA-hib"
+      },
+      "Raag Majh": {
+        "meaning": "the raga Guru Arjan's hymn here is set in",
+        "say": "RAAG MAAJH"
+      },
+      "langar": {
+        "meaning": "the Guru's kitchen, free and open to all",
+        "script": "ਲੰਗਰ",
+        "say": "LUNG-gur"
+      }
+    }
   },
   "sources": [
     {
@@ -164,7 +204,9 @@
       "Rooms for travelers stated as 'some gurdwaras keep rooms where travelers can rest'; please confirm.",
       "Ji aayan nu framed as a Punjabi welcome; no etymology given. howItsDone describes household hospitality as traditional; please confirm framing.",
       "Gurmukhi spelling ਸਾਂਝੀਵਾਲ should be checked.",
-      "Editor: corrected the Ang 97 paraphrase; 'tu kisai na disahi bahara' says God is seen as outside of no one, not that no one looks like an outsider to God; updated word, match, myth, trapdoor to match. Fixed typo 'It.s'; removed 'ordinary Tuesday' stock line; dropped 'only' from the visitor-rules claim."
+      "Editor: corrected the Ang 97 paraphrase; 'tu kisai na disahi bahara' says God is seen as outside of no one, not that no one looks like an outsider to God; updated word, match, myth, trapdoor to match. Fixed typo 'It.s'; removed 'ordinary Tuesday' stock line; dropped 'only' from the visitor-rules claim.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

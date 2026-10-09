@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the marja', and your line: follow the living scholar. What did you ask, and whom did you ask? Day one thousand two hundred.",
+      "voice": "Yesterday: the marja', the living scholar a believer follows. Your line: follow the living scholar.",
       "screen": [
         "`FOLLOW THE LIVING SCHOLAR.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "The word is hawzah, the Shia seminary. In full, al-hawzah al-'ilmiyyah, the seat of learning. Today's two cities are Najaf and Qom. Najaf, in Iraq, is the city of the shrine of Imam 'Ali. Tradition says its hawzah grew around the scholar Shaykh al-Tusi, who settled there after leaving Baghdad. Qom, in Iran, holds the shrine of Fatimah al-Ma'sumah, sister of Imam al-Rida, and its hawzah was revived in modern times. Both are shrine cities. The study happens in the shadow of the domes. How does it run? In stages, not in fixed years. First come the preliminaries: Arabic grammar, logic, rhetoric. Then the surfaces, the sutuh: set textbooks of law and of its method, read line by line with a teacher. Then the highest stage, bahth al-kharij, study outside the text. A senior teacher lectures on a question with no set book, weighing the evidence and earlier opinions aloud, and students are expected to argue back. Between lessons, students review in pairs, like the two on the mat. A student chooses teachers, sits in their circles, moves on when ready. Out of long years of that comes a mujtahid, someone able to derive rulings. And from among the mujtahids, through the regard of other scholars and the trust of believers, a marja'. Scholars move between the two cities. A student may begin in one and finish in the other. Najaf and Qom aren't rivals in this telling. They're two lamps in the same tradition, on either side of a border.",
+      "voice": "The word is hawzah, the Shia seminary; in full, al-hawzah al-'ilmiyyah, the seat of learning. Today's two cities are Najaf and Qom. Najaf, in Iraq, is the city of the shrine of Imam 'Ali. Tradition says its hawzah grew around the scholar Shaykh al-Tusi, who settled there after leaving Baghdad. Qom, in Iran, holds the shrine of Fatimah al-Ma'sumah, sister of Imam al-Rida, and its hawzah was revived in modern times. Both are shrine cities; the study happens in the shadow of the domes. It runs in stages, not fixed years. First the preliminaries: Arabic grammar, logic, rhetoric. Then the surfaces, the sutuh: set textbooks of law and its method, read line by line with a teacher. Then the highest stage, bahth al-kharij, study outside the text: a senior teacher lectures on a question with no set book, weighing the evidence and earlier opinions aloud, and students are expected to argue back. Between lessons, students review in pairs, like the two on the mat. A student chooses teachers, sits in their circles, moves on when ready. Out of long years of that comes a mujtahid. And from among the mujtahids, through the regard of other scholars and the trust of believers, a marja'. Scholars move between the two cities; a student may begin in one and finish in the other. In this telling, Najaf and Qom aren't rivals. They're two lamps in the same tradition, on either side of a border.",
       "screen": [
         "`HAWZAH: THE SEAT OF LEARNING.` · `NAJAF AND QOM, TWO SHRINE CITIES.` · `GRAMMAR, TEXTBOOKS, BEYOND THE TEXT.` · `FROM STUDENT TO MUJTAHID TO MARJA'.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: look at Najaf on a map. Find Baghdad, then follow south to Najaf. Notice the town beside it: Kufa, Abu Hanifa's city, from earlier this month. Two schools, close neighbors. Then cross the border east into Iran, and find Qom, south of Tehran. Rest your eyes on each city for a few breaths. Then think of one place where you were really taught something, a classroom, a kitchen, a garage, and the person who taught you. If you pray, you can remember your teachers. The bell holds the time.",
+      "voice": "On a map or in your mind, find Baghdad and follow south to Najaf, and notice the town beside it: Kufa, Abu Hanifa's city, two schools as close neighbors. Then cross east into Iran and find Qom, south of Tehran, resting a few breaths on each city. Last, think of one place where you were really taught something, a classroom, a kitchen, a garage, and if you pray, you can remember your teachers.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: najaf and qom. Today, study one thing properly, with a book or a person, and argue with it a little before you agree. Day one thousand two hundred.",
+      "voice": "Your line: najaf and qom. A scholar is made over long years of reading and arguing. Twelve hundred days, and thank you for each one.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Shia students study at the seminaries of Najaf, Qom and elsewhere, moving from Arabic and logic through set textbooks to advanced lectures beyond the textbook, often reviewing in pairs.",
   "games": {
+    "guess": [
+      "a Shia seminary, the seat of learning, as in Najaf",
+      "the shrine of Imam 'Ali that pilgrims visit",
+      "a senior jurist whose rulings believers follow"
+    ],
     "match": {
       "prompt": "the seminaries — tap the pairs.",
       "pairs": [
@@ -132,14 +137,56 @@
     ],
     "recall": [
       [
-        "taqlid",
-        "following one who knows"
+        "marja'",
+        "the living jurist a believer follows"
       ],
       [
-        "mubah",
-        "no reward, no blame"
+        "the Musnad",
+        "hadith arranged by Companion"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your grandmother",
+      "says": "How does someone become a marja'? Is there a school for it?",
+      "options": [
+        "Long years in a hawzah, like Najaf or Qom, then the trust of scholars and believers.",
+        "A marja' is elected by a vote of believers in one city every few years.",
+        "Anyone who finishes a four-year seminary course becomes a marja' right away."
+      ],
+      "answer": 0,
+      "meaning": "Students study in stages, ending in bahth al-kharij. Out of long years comes a mujtahid, and from mujtahids, by scholars' regard and believers' trust, a marja'."
+    },
+    "gloss": {
+      "hawzah": {
+        "meaning": "a Shia seminary; the seat of learning",
+        "script": "حوزة",
+        "say": "HAW-zah"
+      },
+      "Najaf": {
+        "meaning": "a city in Iraq with the shrine of Imam 'Ali",
+        "script": "النجف",
+        "say": "NA-jaf"
+      },
+      "Qom": {
+        "meaning": "a city in Iran with the shrine of Fatimah al-Ma'sumah",
+        "script": "قم",
+        "say": "QOM"
+      },
+      "sutuh": {
+        "meaning": "the stage of set textbooks, read line by line with a teacher",
+        "script": "سطوح",
+        "say": "su-TOOH"
+      },
+      "bahth al-kharij": {
+        "meaning": "the highest stage: study beyond the textbook",
+        "script": "بحث الخارج",
+        "say": "BAHTH al-KHAA-rij"
+      },
+      "Shaykh al-Tusi": {
+        "meaning": "the scholar whom tradition says Najaf's hawzah grew around",
+        "say": "SHAYKH at-TOO-see"
+      }
+    }
   },
   "sources": [
     {
@@ -160,7 +207,9 @@
       "'A student chooses teachers and moves on when ready' (no fixed years): confirm as a fair description of the traditional system; some modern hawzah programs have structured years and exams.",
       "'Najaf and Qom aren't rivals in this telling': intended to avoid a ranking or political framing; confirm tone.",
       "Practice geography (Kufa beside Najaf; Qom south of Tehran): confirm.",
-      "Editor pass: removed the superlatives 'above all' and 'a great center of study'; corrected 'a short walk apart' (Najaf and Kufa) and 'a border apart' (Najaf and Qom are far apart) to looser, accurate wording."
+      "Editor pass: removed the superlatives 'above all' and 'a great center of study'; corrected 'a short walk apart' (Najaf and Kufa) and 'a border apart' (Najaf and Qom are far apart) to looser, accurate wording.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

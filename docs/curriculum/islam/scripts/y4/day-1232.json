@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the spirit of the law, and your line: the aim behind it. Life, mind, faith, family, property. Did one rule show you what it was guarding? Day one thousand two hundred thirty-two.",
+      "voice": "Yesterday, the spirit of the law, and your line: the aim behind it. Faith, life, mind, family, property.",
       "screen": [
         "`THE AIM BEHIND IT.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A shelf, to start. On it sits one Qur'an and a few volumes of hadith. Beside it stands a whole wall. Hanafi books, Maliki books, Shafi'i and Hanbali books, Ja'fari books, Zaydi and Ibadi books. Commentaries on commentaries. Rulings on wedding gifts, on contracts, on donkeys carrying too much, on hospital beds. For weeks now this path has walked along that wall, one school and one question at a time. Today is the end of the walk. So one last question before we leave the library: how does one small shelf turn into a wall, and still face the same way?",
+      "voice": "A shelf, to start. On it sits one Qur'an and a few volumes of hadith. Beside it stands a whole wall: Hanafi, Maliki, Shafi'i and Hanbali books, Ja'fari, Zaydi and Ibadi books, commentaries on commentaries, rulings on wedding gifts, on contracts, on donkeys carrying too much, on hospital beds. For weeks this path has walked along that wall. Today the walk ends, with one last question: how does one small shelf turn into a wall, and still face the same way?",
       "screen": [
         "`ONE SMALL SHELF.` → `ONE LONG WALL.` → `STILL FACING THE SAME WAY?`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Start with the word we've used all along. Fiqh means understanding. In a hadith in Sahih al-Bukhari, the Prophet Muhammad ﷺ says that when Allah wants good for someone, He gives that person understanding in the religion. The verb there comes from the same root as fiqh. So the whole wall is, at heart, people trying to understand. Next, the roads. The jurists walked from the same starting point: the Qur'an first, the sunnah second. Then they reasoned out from there. Some leaned on the agreement of scholars, some on analogy, some on reason itself, as Ja'fari jurists do, some on the common good or the custom of a place. Different tools, different roads. Then, the difference. The Qur'an gives a direction for disputes: \"if ye have a dispute concerning any matter, refer it to Allah and the messenger.\" The schools all claim that same reference point. And Bukhari records a hadith that explains their patience with each other: a judge who strives and gets it right has two rewards, and a judge who strives and gets it wrong still has one. Effort in good faith is honored even when it misses. Last, the direction. Stand at the back of a mosque at prayer time. One person folds the hands high, another lets them hang. One says amin aloud, another under the breath. Every row still faces the same point. That's the picture this block leaves behind. Many roads. One direction.",
+      "voice": "Start with the word. Fiqh means understanding. In a hadith in Sahih al-Bukhari, the Prophet Muhammad ﷺ says that when Allah wants good for someone, He gives that person understanding in the religion, and the verb comes from the same root as fiqh. So the whole wall is people trying to understand. Next, the roads. The jurists started from the same place: the Qur'an first, the sunnah second. Then they reasoned out. Some leaned on the agreement of scholars, some on analogy, some on reason itself, as Ja'fari jurists do, some on the common good or the custom of a place. Different tools, different roads. Then, the difference. The Qur'an gives a direction for disputes: \"if ye have a dispute concerning any matter, refer it to Allah and the messenger.\" The schools all claim that same reference point. And Bukhari records a hadith that explains their patience with each other: a judge who strives and gets it right has two rewards, and one who strives and gets it wrong still has one. Effort in good faith is honored even when it misses. Last, the direction. Stand at the back of a mosque at prayer time. One person folds the hands high, another lets them hang. One says amin aloud, another under the breath. Every row still faces the same point.",
       "screen": [
         "`FIQH MEANS UNDERSTANDING.` · `ONE START, MANY ROADS.` · `TWO REWARDS, OR ONE.` · then, large: `EVERY ROW FACES ONE POINT.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: thank the scholars. Bring one name to mind. It might be from these weeks: Abu Hanifa, Malik, al-Shafi'i, Ahmad ibn Hanbal, Ja'far al-Sadiq. Or it might be closer: a teacher, an imam, a grandmother who knew how to pray and showed you. Somebody did the slow work of understanding so that someone else could stand in a row. Hold that person for a moment. If you pray, you may know the custom of asking Allah's mercy for a scholar when the name comes up; you can do that now. If you don't, simply say thank you, in your own head. The bell holds the time.",
+      "voice": "Bring one name to mind, someone who did the slow work of understanding: Abu Hanifa, Malik, al-Shafi'i, Ahmad ibn Hanbal, Ja'far al-Sadiq, or someone closer, a teacher, an imam, a grandmother who knew how to pray and showed you. If you pray, you may know the custom of asking Allah's mercy for a scholar when the name comes up; if you don't, simply say thank you, in your own head.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: many roads, one direction. Today, when someone does a thing differently from you, look for where they're both facing. Tomorrow a new block starts: belief. Day one thousand two hundred thirty-two.",
+      "voice": "Your line: many roads, one direction. Tomorrow a new block starts: belief. See you there.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Muslims follow the rulings of a school of law or a trusted scholar, and when a jurist's name is mentioned a Muslim may add a phrase asking Allah's mercy for them.",
   "games": {
+    "guess": [
+      "the end of the law block: many schools, one source",
+      "the final ruling that settles every school's debates",
+      "a list of rulings every school has agreed to drop"
+    ],
     "match": {
       "prompt": "the close of fiqh — tap the pairs.",
       "pairs": [
@@ -139,7 +144,39 @@
         "fatwa",
         "an answer to a question about the law"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "a classmate",
+      "says": "If all the schools follow the Qur'an, why do they disagree on so much?",
+      "options": [
+        "Same source, different roads; a sincere jurist who gets it wrong still has a reward.",
+        "Because each school uses its own different Qur'an and its own sunnah.",
+        "Because the schools never read the Qur'an itself; they only follow custom."
+      ],
+      "answer": 0,
+      "meaning": "The schools start from the Qur'an and sunnah and reason with different tools; Bukhari says a judge who strives and errs still has one reward."
+    },
+    "gloss": {
+      "fiqh": {
+        "meaning": "Islamic law; the word means understanding",
+        "script": "فقه",
+        "say": "FIK"
+      },
+      "sunnah": {
+        "meaning": "the Prophet's example and teaching",
+        "script": "سنة",
+        "say": "SOON-nah"
+      },
+      "Ja'fari": {
+        "meaning": "the school of law of most Shia Muslims",
+        "say": "JAH-fa-ree"
+      },
+      "amin": {
+        "meaning": "amen",
+        "script": "آمين",
+        "say": "ah-MEEN"
+      }
+    }
   },
   "sources": [
     {
@@ -171,7 +208,9 @@
       "Sources list (Qur'an, sunnah, ijma', qiyas, 'aql for Shia jurists, maslahah, 'urf) is a summary of the block; schools weight these differently. Confirm framing.",
       "'Rahimahullah' described, not written as a new prayer: confirm wording is acceptable.",
       "Block-close day and week-end (day 1232); names the block's schools rather than every word of the block.",
-      "Editor: 'Shia jurists' narrowed to Ja'fari; 'walk into a mosque' opener reworded; 'many Muslims say' and 'it is common' claims cut; stock 'settle, and breathe' dropped."
+      "Editor: 'Shia jurists' narrowed to Ja'fari; 'walk into a mosque' opener reworded; 'many Muslims say' and 'it is common' claims cut; stock 'settle, and breathe' dropped.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

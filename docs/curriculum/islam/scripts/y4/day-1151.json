@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the traveling scholars, and your line: a journey for one report. Did you take the first step toward someone who knows a thing firsthand? Day one thousand one hundred fifty-one.",
+      "voice": "Yesterday: the traveling scholars, who rode far to hear a report from its source.",
       "screen": [
         "`A JOURNEY FOR ONE REPORT.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the warning. Three days ago we met the report carried by so many chains: whoever lies about the Prophet ﷺ on purpose, let him take his seat in the Fire. And in the introduction to Sahih Muslim there's a quieter one, aimed not at the forger but at the forwarder: it is enough of a lie for a person to pass on everything he hears. So the duty runs two ways. Don't invent. And don't simply repeat. Second, why people forged. The scholars were frank about it. Some forgers wanted to win an argument between factions. Some were storytellers who wanted a bigger crowd. Some wanted favor from a ruler. And some, as the scholars tell it, meant well. They report a man who admitted inventing reports about the reward for reciting each surah of the Qur'an, because he thought people were drifting from it. Good intentions didn't save the report. A lie about the Prophet stayed a lie. Third, how they caught them. Every tool from this week came out. The chain: did these people meet? The narrators: who was he, and how was his memory? The dates: was the shaykh even alive? The text: does it promise a mountain for a pebble, or clash with the Qur'an? Fourth, they wrote it down. Scholars compiled whole books of fabricated reports, such as Ibn al-Jawzi's collection of forgeries, so that a false saying could be named and recognized, not quietly forgotten and later revived. A forged hadith, written in a book of forgeries, is a lie with a warning label tied around its neck.",
+      "voice": "First, the warning. Three days ago we met the report carried by so many chains: whoever lies about the Prophet ﷺ on purpose, let him take his seat in the Fire. The introduction to Sahih Muslim has a quieter one, aimed not at the forger but at the forwarder: it is enough of a lie for a person to pass on everything he hears. So the duty runs two ways. Don't invent, and don't simply repeat. Why people forged: the scholars were frank about it. Some wanted to win an argument between factions. Some were storytellers after a bigger crowd. Some wanted favor from a ruler. And some, as the scholars tell it, meant well. They report a man who admitted inventing reports about the reward for reciting each surah of the Qur'an, because he thought people were drifting from it. Good intentions didn't save the report. A lie about the Prophet stayed a lie. How they caught them: every tool from this block came out. The chain: did these people meet? The narrators: who was he, and how was his memory? The dates: was the shaykh even alive? The text: does it promise a mountain for a pebble, or clash with the Qur'an? And they wrote it down. Scholars compiled whole books of fabricated reports, such as Ibn al-Jawzi's collection of forgeries, so a false saying could be named and recognized, not quietly forgotten and later revived. A forged hadith in a book of forgeries is a lie with a warning label tied around its neck.",
       "screen": [
         "`DON'T INVENT. DON'T JUST REPEAT.` · `WHY PEOPLE FORGED.` · `HOW THEY CAUGHT THEM.` · `A BOOK OF FORGERIES.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: check before forwarding. Settle, and breathe. Recall the last message you received that began with something like \"the Prophet said\", or \"scientists say\", or \"a famous person once said\". If nothing comes, take the next one you see today. Run it through the scholars' tools, slowly. Who's in the chain: who sent it, and where did they get it? Is there a source, a collection, a page? Does the text promise too much? Is there a date that doesn't fit? If you can't answer, you have your answer: not yet. Hold that phrase: not yet. The bell holds the time.",
+      "voice": "Recall the last message that began with something like \"the Prophet said\", \"scientists say\" or \"a famous person once said\". Run it through the scholars' tools: who sent it and where did they get it, is there a source, does it promise too much, does a date not fit? If you can't answer, you have your answer: not yet.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: they checked. Today, before you forward one thing, check one link in it, or don't send it yet. Tomorrow: Sahih al-Bukhari. Day one thousand one hundred fifty-one.",
+      "voice": "Your line: they checked. Good intentions never saved a forged report. See you next time.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Hadith scholars identify fabricated reports by examining chains, narrators, dates and texts, and compiled books of forgeries; Muslim teachers today often caution against sharing sayings attributed to the Prophet without a source and a grade.",
   "games": {
+    "guess": [
+      "the scholars' work of catching forged reports and naming them",
+      "the work of deleting every weak hadith from the books",
+      "the scholars' habit of hiding which reports were false"
+    ],
     "match": {
       "prompt": "exposing the fabrications — tap the pairs.",
       "pairs": [
@@ -133,13 +138,44 @@
     "recall": [
       [
         "wuquf",
-        "standing, being present"
+        "standing on the plain of Arafah"
       ],
       [
         "Zamzam",
         "a well near the Ka'ba"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your best friend",
+      "says": "Someone forwarded a hadith with no source. It sounds nice. What's the harm in passing it on?",
+      "options": [
+        "Check first. A hadith warns that passing on everything you hear is lie enough.",
+        "No harm at all; if a saying sounds good, it can't be a forgery.",
+        "None, since forgers only ever invented harsh sayings, never kind ones."
+      ],
+      "meaning": "Sahih Muslim's introduction says it is enough of a lie to pass on everything you hear. And some forgers meant well.",
+      "answer": 0
+    },
+    "gloss": {
+      "shaykh": {
+        "meaning": "a teacher or elder scholar",
+        "script": "شيخ",
+        "say": "SHAYKH"
+      },
+      "Sufyan al-Thawri": {
+        "meaning": "an early scholar, reported to say: we used history against the liars",
+        "say": "soof-YAHN ath-THAW-ree"
+      },
+      "Ibn al-Jawzi": {
+        "meaning": "a scholar who compiled a book of forged reports",
+        "say": "IB-n al-JAW-zee"
+      },
+      "surah": {
+        "meaning": "a chapter of the Qur'an",
+        "script": "سورة",
+        "say": "SOO-rah"
+      }
+    }
   },
   "sources": [
     {
@@ -184,7 +220,9 @@
       "Motives for forgery (faction, storytellers, rulers, misguided piety) summarized from hadith-terminology works; confirm.",
       "Ibn al-Jawzi's al-Mawdu'at as a book of fabricated reports: confirm. Later scholars disputed some of his gradings; not mentioned here.",
       "Original: maw-DOO' transliteration of موضوع; confirm.",
-      "Editor: cut 'in a certain year' from the hook's first line, since the scholar then has to ask the year; 'a story is told' in the teach made 'they report' (the phrase repeated the hook and day 1149's hook); practice opener varied."
+      "Editor: cut 'in a certain year' from the hook's first line, since the scholar then has to ask the year; 'a story is told' in the teach made 'they report' (the phrase repeated the hook and day 1149's hook); practice opener varied.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

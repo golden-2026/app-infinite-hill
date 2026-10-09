@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the harvest's tenth, and your line: rain's share. Did you think of the rain behind something you ate? This week has been about what's given. Today, who it goes to. Day one thousand one hundred.",
+      "voice": "Yesterday, the harvest's tenth: rain's share. A week about what's given; today, who it goes to.",
       "screen": [
         "`RAIN'S SHARE.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A single verse, surah nine, verse sixty, and it reads like a guest list. Not a vague one. Not give to good causes. It names who, one after another, and then it stops. Who is the money for? Here, the answer is written into the verse itself. Some of the names on the list are obvious. Some are surprising. One of them is a person who's simply far from home. Today, the people zakat is for, read slowly, two by two: the eight.",
+      "voice": "A single verse, surah nine, verse sixty, and it reads like a guest list. Not a vague one. Not give to good causes. It names who, one after another, and then it stops. Some of the names are obvious. Some are surprising. One is a person who's simply far from home. You met this list on day one fifty-two, in one breath. Today, read slowly, two by two: the eight.",
       "screen": [
         "`ONE VERSE, LIKE A GUEST LIST.` → `IT NAMES WHO, THEN STOPS.` → `READ SLOWLY, TWO BY TWO.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Here's the verse in Pickthall's words: \"The alms are only for the poor and the needy, and those who collect them, and those whose hearts are to be reconciled, and to free the captives and the debtors, and for the cause of Allah, and (for) the wayfarer; a duty imposed by Allah.\" Count them, and there are eight. First pair: the poor and the needy, al-fuqara' and al-masakin. Both lack enough, and scholars discuss which of the two is worse off, without one settled answer. Either way, they come first in the verse. Second pair: those who collect it, and those whose hearts are to be reconciled. The collectors are paid from zakat for their work, so the system can run. The hearts to be reconciled are people whose goodwill toward the community was being won, and scholars differ on how this door applies today. Third pair: freeing captives, and debtors. Money that buys someone's freedom, and money that lifts a crushing debt off someone's back. Both are about getting a person out from under something. Fourth pair: the cause of Allah, and the wayfarer. Some scholars read the cause of Allah narrowly, others more broadly, and that difference matters for where zakat goes. The wayfarer, in Arabic ibn as-sabil, literally son of the road, is a traveler cut off from their money, even someone wealthy at home. Notice that last one. Zakat isn't only for people who are always poor. It's for anyone stranded. And notice the word only at the start. The list is a boundary: these eight, and not just any good cause. Eight doors, and a person can walk through any one of them.",
+      "voice": "Here's the verse in Pickthall's words: \"The alms are only for the poor and the needy, and those who collect them, and those whose hearts are to be reconciled, and to free the captives and the debtors, and for the cause of Allah, and (for) the wayfarer; a duty imposed by Allah.\" First pair: the poor and the needy, al-fuqara' and al-masakin. Both lack enough, and scholars discuss which of the two is worse off, without one settled answer. Either way, they come first in the verse. Second pair: those who collect it, and those whose hearts are to be reconciled. The collectors are paid from zakat for their work, so the system can run. The hearts to be reconciled are people whose goodwill toward the community was being won, and scholars differ on how this door applies today. Third pair: freeing captives, and debtors. Money that buys someone's freedom, and money that lifts a crushing debt off someone's back. Both get a person out from under something. Fourth pair: the cause of Allah, and the wayfarer. Some scholars read the cause of Allah narrowly, others more broadly, and that difference matters for where zakat goes. The wayfarer, ibn as-sabil, literally son of the road, is a traveler cut off from their money, even someone wealthy at home. So zakat isn't only for people who are always poor. It's for anyone stranded. And notice the word only at the start. The list is a boundary: these eight, and not just any good cause.",
       "screen": [
         "`THE POOR, AND THE NEEDY.` · `COLLECTORS, AND HEARTS WON.` · `CAPTIVES FREED, DEBTS LIFTED.` · `ALLAH'S CAUSE, AND THE ROAD.` · then, large: `THE ALMS ARE ONLY FOR THE POOR AND THE NEEDY.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: give to one of them. Before you choose, sit with the list. Breathe in, and say one door to yourself: the poor. Breathe out, and let a face or a place come, someone you know or have passed. Then the next: the needy. Someone in debt. Someone far from home. Go slowly through as many as the time allows. When one face stays with you longer than the others, that's the door to give through today. The bell holds the time.",
+      "voice": "Go slowly through the doors, one per breath: the poor, the needy, someone in debt, someone far from home, and let a face or a place come with each, someone you know or have passed. Notice which face stays with you longest; that's the door you might give through.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: eight doors. Today, give something through the door that stayed with you, money or time, to one of the eight. Tomorrow: the fifth, and a share some Muslims give alongside zakat. Day one thousand one hundred.",
+      "voice": "Your line: eight doors. A person can walk through any one of them. Tomorrow: the fifth, a share some Muslims give alongside zakat.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Muslims give zakat only to the eight kinds of recipients named in Qur'an 9:60, directly or through mosques and zakat organizations that distribute it among them.",
   "games": {
+    "guess": [
+      "the kinds of people zakat is for, named in one verse",
+      "the yearly dates on which zakat must be handed over",
+      "kinds of wealth that zakat is charged on each year"
+    ],
     "match": {
       "prompt": "the eight — tap the pairs.",
       "pairs": [
@@ -139,7 +144,39 @@
         "qasr",
         "shortening: four become two"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "a volunteer at the food bank",
+      "says": "Can my zakat go to any good cause I like, or only certain people?",
+      "options": [
+        "Only the eight the verse names: 'only' makes it a boundary, though scholars read some doors differently.",
+        "Any good cause you like counts; the eight in the verse are only a few examples of many.",
+        "Only the poor and the needy; the other six doors closed when the Prophet's lifetime ended."
+      ],
+      "meaning": "Qur'an 9:60 names eight, from the poor to the wayfarer, and opens with 'only': the list is a boundary, not just any good cause.",
+      "answer": 0
+    },
+    "gloss": {
+      "al-fuqara'": {
+        "meaning": "the poor, first in the verse's list",
+        "script": "الفقراء",
+        "say": "al-fu-qa-RAA"
+      },
+      "al-masakin": {
+        "meaning": "the needy, second in the list",
+        "script": "المساكين",
+        "say": "al-ma-saa-KEEN"
+      },
+      "ibn as-sabil": {
+        "meaning": "son of the road: a stranded traveler",
+        "script": "ابن السبيل",
+        "say": "IBN as-sa-BEEL"
+      },
+      "Pickthall": {
+        "meaning": "an English translator of the Qur'an, 1930",
+        "say": "PIK-thawl"
+      }
+    }
   },
   "sources": [
     {
@@ -158,7 +195,10 @@
       "Hearts to be reconciled: the voice says scholars differ on how it applies today (some Hanafi scholars held it lapsed); confirm.",
       "Fi sabilillah: narrow vs broad readings named without detail; confirm.",
       "Tomorrow's close says khums is given by 'some Muslims' to avoid previewing the Shia framing too early.",
-      "Editor: 'not a building fund' cut, since the voice itself says some scholars read the cause of Allah broadly."
+      "Editor: 'not a building fund' cut, since the voice itself says some scholars read the cause of Allah broadly.",
+      "Job 2: added one point-back line to day 152 (the eight who receive), per YEARS_4_5.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

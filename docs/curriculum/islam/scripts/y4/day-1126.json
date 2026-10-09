@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, tawaf, seven circuits, and your line: around the center. What was the still thing you came back to? Day one thousand one hundred twenty-six.",
+      "voice": "Yesterday: tawaf, seven circuits around the House, with the center standing still. Your line: around the center.",
       "screen": [
         "`AROUND THE CENTER.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, where it is. The black stone is set into one corner of the Ka'ba, and that corner is where each circuit of yesterday's tawaf begins and ends. Second, Umar's words, and what they guard against. He says out loud the thing someone watching might wonder about: is this stone a power? No. It can't harm and it can't help. Whatever honor it has comes from one place, that the Prophet Muhammad ﷺ honored it. So the kiss isn't worship of a stone. It's following a person, in a small physical way, exactly as he did. Third, the crowds. Today, getting close enough to kiss the stone can mean a long, hard push through a packed crowd. And here another report in Bukhari helps. Ibn Abbas says the Prophet once went around the House riding a camel, and whenever he came to the corner, he pointed to it and said Allahu akbar. He didn't get down. He didn't push. He pointed. So pilgrims have three ways: kiss it if you can reach it, touch it with a hand, or, from a distance, raise a hand toward it and say God is greatest. Fourth, what that means for the crowd. In this report, the pointing isn't a fallback. It's the Prophet's own way that day. Nobody needs to shove an old man aside to honor a stone that, in Umar's words, can't help anyone. A raised hand from far back in the crowd is a full greeting. A salute to the corner, and the circuit goes on.",
+      "voice": "First, where it is. The black stone is set into one corner of the Ka'ba, the corner where each circuit of yesterday's tawaf begins and ends. Second, Umar's words, and what they guard against. He says out loud what someone watching might wonder: is this stone a power? No. It can't harm and it can't help. Whatever honor it has comes from one place: the Prophet Muhammad ﷺ honored it. So the kiss isn't worship of a stone. It's following a person, in a small physical way, exactly as he did. Third, the crowds. Today, getting close enough to kiss the stone can mean a long, hard push through a packed crowd. Here another report in Bukhari helps. Ibn Abbas says the Prophet once went around the House riding a camel, and whenever he came to the corner, he pointed to it and said Allahu akbar. He didn't get down. He didn't push. He pointed. So pilgrims have three ways: kiss it if you can reach it, touch it with a hand, or, from a distance, raise a hand toward it and say God is greatest. Fourth, what that means for the crowd. In this report, the pointing isn't a fallback. It's the Prophet's own way that day. Nobody needs to shove an old man aside to honor a stone that, in Umar's words, can't help anyone. A raised hand from far back in the crowd is a full greeting. A salute to the corner, and the circuit goes on.",
       "screen": [
         "`THE CORNER WHERE EACH CIRCUIT BEGINS.` · `IT CAN NEITHER HARM NOR HELP.` · `KISS, TOUCH, OR POINT.` · `THE RAISED HAND IS A FULL GREETING.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: point toward the qiblah. Find which way Mecca lies from where you are; a phone compass or a prayer app can tell you. Turn to face it. Then, slowly, raise your right hand toward it, the way a pilgrim does from far back in the crowd. If you pray, you can say Allahu akbar, God is greatest, quietly. If you don't, just hold the gesture for a breath and notice the distance it crosses. Then lower your hand, settle, and breathe. The bell holds the time.",
+      "voice": "Find which way Mecca lies from where you are, the qiblah, with a phone compass or a prayer app, and turn to face it. Slowly raise your right hand toward it, the way a pilgrim does from far back in the crowd. If you pray, say Allahu akbar quietly; if not, hold the gesture for a breath and notice the distance it crosses.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: a salute to the corner. Today, when you can't get close to something you care about, find the small gesture from where you stand, and make it. Day one thousand one hundred twenty-six.",
+      "voice": "Your line: a salute to the corner. A small gesture from far away still reaches. See you at the station.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "During tawaf, pilgrims begin each circuit at the black stone; those who can reach it kiss or touch it, and others raise a hand toward it from a distance and say Allahu akbar.",
   "games": {
+    "guess": [
+      "a stone in the Ka'ba's corner, kissed, touched or saluted",
+      "a sacred rock believed to heal and protect whoever touches it",
+      "the dark cloth that covers the Ka'ba all year round"
+    ],
     "match": {
       "prompt": "the black stone — tap the pairs.",
       "pairs": [
@@ -139,7 +144,38 @@
         "fidyah",
         "given in place of a fast"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your nephew",
+      "says": "If the stone can't help or harm anyone, why do pilgrims kiss it?",
+      "options": [
+        "Because the Prophet did. It's following him, not worshipping a stone.",
+        "Because the stone itself has power to bless whoever touches it.",
+        "Because a pilgrim's Hajj doesn't count unless they kiss it."
+      ],
+      "answer": 0,
+      "meaning": "Umar said it plainly: it's a stone that can neither harm nor help. He kissed it only because he had seen the Prophet do it."
+    },
+    "gloss": {
+      "Umar ibn al-Khattab": {
+        "meaning": "a close companion of the Prophet Muhammad",
+        "say": "OO-mar ibn al-khat-TAHB"
+      },
+      "Allahu akbar": {
+        "meaning": "God is greatest",
+        "script": "الله أكبر",
+        "say": "al-LAH-hu AK-bar"
+      },
+      "qiblah": {
+        "meaning": "the direction of Mecca, faced in prayer",
+        "script": "قبلة",
+        "say": "KIB-lah"
+      },
+      "Ibn Abbas": {
+        "meaning": "a companion of the Prophet who reported many hadith",
+        "say": "ib-un ab-BAHS"
+      }
+    }
   },
   "sources": [
     {
@@ -163,7 +199,9 @@
       "Bukhari 1613 (Ibn Abbas: the Prophet circled on a camel, pointing to the corner and saying takbir each time): confirm number (also 1612). Bukhari's wording mentions pointing 'with something he had'; the script says 'pointed'.",
       "'Umar's sentence has kept that line clear for anyone who's read it since' and 'a long, hard push through a packed crowd': general color; check.",
       "Practice: raising the right hand toward the qiblah outside tawaf is an imitation, not a rite; Keeper to check the framing is respectful.",
-      "Editor: fixed the order in Bukhari 1597: Umar kisses the stone, then speaks ('I would not have kissed you'); hook screen, fork and reveal follow; cut unsourced 'kept that line clear' and softened 'not a lesser version'."
+      "Editor: fixed the order in Bukhari 1597: Umar kisses the stone, then speaks ('I would not have kissed you'); hook screen, fork and reveal follow; cut unsourced 'kept that line clear' and softened 'not a lesser version'.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, sujud al-shukr, and your line: down, in thanks. When good news came, did your body answer first? Today, prayers for when the sky itself changes. Day one thousand ninety.",
+      "voice": "Yesterday, sujud al-shukr: one prostration of thanks when good news comes. Today, prayers for when the sky itself changes.",
       "screen": [
         "`DOWN, IN THANKS.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "The sun went dark over Medina on the day Ibrahim died. He was the son of the Prophet Muhammad ﷺ. A report in Sahih al-Bukhari says people began to say it: the sun has eclipsed because Ibrahim died. It would have been easy to let them. It was a kind thing to say, and it honored the grieving father. Instead, on the day of his own loss, the Prophet stood up and corrected them. What he said, and what he told them to do next, is where today begins.",
+      "voice": "The sun went dark over Medina on the day Ibrahim died. He was the son of the Prophet Muhammad ﷺ. A report in Sahih al-Bukhari says people began to say it: the sun has eclipsed because Ibrahim died. It would have been easy to let them. It was a kind thing to say, and it honored a grieving father. Instead, on the day of his own loss, the Prophet stood up and corrected them.",
       "screen": [
         "`THE SUN GOES DARK.` → `BECAUSE IBRAHIM DIED?` → `HE CORRECTS THEM.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Islam keeps special prayers for two changes in the sky: the eclipse and the drought. First, what he said. The sun and the moon, the Prophet told them, are two of the signs of God. They do not eclipse for anyone's death or for anyone's life. When you see it, pray, and call on God, until it clears. He turned a rumor that flattered him into a prayer pointed away from himself. Second, the eclipse prayer itself, salat al-kusuf. Aisha's report in Bukhari describes it prayed in congregation, with very long standing and long recitation, and with an extra bowing in each unit. Here the schools differ. The Hanafi school prays it in the form of ordinary units; the other schools follow the reports with the extra bowing. Both pray until the light returns. Third, the rain. Salat al-istisqa is the prayer asking for rain. Another report in Bukhari says the Prophet went out to the open prayer ground, faced the qibla, turned his cloak around, and prayed two units. Some scholars read the turned cloak as a hope that the season would turn too. Fourth, a Friday story, and it picks up from the khutbah four days ago. During the sermon, a man stood and said the animals were dying and the roads were cut: ask God for rain. The Prophet raised his hands and asked. The report says rain fell, and kept falling until the next Friday, when a man stood and asked for it to stop. So the Prophet asked again, for rain around them and not upon them. Too dark, too dry, too wet. Each one met with a prayer.",
+      "voice": "Islam keeps special prayers for two changes in the sky: the eclipse and the drought. First, what he said. The sun and the moon are two of the signs of God. They do not eclipse for anyone's death or for anyone's life. When you see it, pray, and call on God, until it clears. He turned a rumor that flattered him into a prayer pointed away from himself. Second, the eclipse prayer, salat al-kusuf. Aisha's report in Bukhari describes it prayed in congregation, with very long standing and recitation, and an extra bowing in each unit. Here the schools differ: the Hanafi school prays it in the form of ordinary units; the other schools follow the reports with the extra bowing. Both pray until the light returns. Third, the rain. Salat al-istisqa is the prayer asking for rain. Another report in Bukhari says the Prophet went out to the open prayer ground, faced the qibla, turned his cloak around, and prayed two units. Some scholars read the turned cloak as a hope that the season would turn too. Fourth, a Friday story, picking up from the khutbah four days ago. During the sermon, a man stood and said the animals were dying and the roads were cut: ask God for rain. The Prophet raised his hands and asked. The report says rain fell, and kept falling until the next Friday, when a man stood and asked for it to stop. So the Prophet asked again, for rain around them and not upon them. Too dark, too dry, too wet: each one met with a prayer.",
       "screen": [
         "`NOT FOR ANYONE'S DEATH.` · `PRAY UNTIL IT CLEARS.` · `THE CLOAK TURNED AROUND.` · `AROUND US, NOT UPON US.` · then, large: `EVERY SKY HAS ITS PRAYER.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice is to learn when they're prayed. For now, find the sky. Look out a window, or remember the last one you saw. Notice its color, the light, the clouds or the lack of them. Settle into that for a few breaths. If you pray, you can ask a teacher of your school this week how the eclipse and rain prayers are prayed, and when your mosque holds them. If you don't, you can simply let the next change in the weather stop you for one full breath. The bell holds the time.",
+      "voice": "Look out a window, or remember the last sky you saw, and stay with its color, its light, the clouds or the lack of them, for a few breaths. If you pray, you might ask a teacher of your school how the eclipse and rain prayers are prayed, and when your mosque holds them. If you don't, let the next change in the weather stop you for one full breath.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: every sky has its prayer. Today, step outside once, look up, and let whatever the sky is doing be the reason for a pause. Day one thousand ninety.",
+      "voice": "Your line: every sky has its prayer. The sun and moon are signs, not news about us. Day one thousand ninety.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "When there is a solar or lunar eclipse, Muslims gather at mosques for the eclipse prayer, with long recitation, until it passes; in times of drought, communities go out to an open prayer ground for the rain prayer.",
   "games": {
+    "guess": [
+      "special prayers for when the sun darkens or rain is needed",
+      "a sign in the sky that someone important has just died",
+      "a festival prayer held when the rainy season begins"
+    ],
     "match": {
       "prompt": "the eclipse and the rain — tap the pairs.",
       "pairs": [
@@ -139,7 +144,40 @@
         "tayammum",
         "strike, blow, wipe face and hands"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your little cousin",
+      "says": "Grandpa says an eclipse means something bad happened to someone. Is that true?",
+      "options": [
+        "The Prophet said sun and moon don't eclipse for anyone's death or life; they're signs, so pray.",
+        "Yes, the sun went dark when the Prophet's son died, which shows it happens that way.",
+        "Eclipses are just weather; Islam has nothing to say about them or about the sky."
+      ],
+      "meaning": "When people said the sun eclipsed because Ibrahim died, the Prophet corrected them: the sun and moon are signs of God, met with prayer.",
+      "answer": 0
+    },
+    "gloss": {
+      "salat al-kusuf": {
+        "meaning": "the eclipse prayer",
+        "script": "صلاة الكسوف",
+        "say": "sa-LAAT al-ku-SOOF"
+      },
+      "salat al-istisqa": {
+        "meaning": "the prayer asking for rain",
+        "script": "صلاة الاستسقاء",
+        "say": "sa-LAAT al-is-tis-KAA"
+      },
+      "Ibrahim": {
+        "meaning": "the Prophet's young son, who died the day of the eclipse",
+        "script": "إبراهيم",
+        "say": "ib-raa-HEEM"
+      },
+      "qibla": {
+        "meaning": "the direction of the Kaaba, faced in prayer",
+        "script": "قبلة",
+        "say": "KIB-la"
+      }
+    }
   },
   "sources": [
     {
@@ -176,7 +214,9 @@
       "Bukhari 1012 (Abdullah ibn Zayd: went out to the musalla, faced the qibla, turned his cloak, prayed two rak'ahs) and 1013 (the man at the Friday khutbah; rain for a week; 'around us and not upon us') paraphrased; confirm numbers and that the second request came from a man at the next Friday khutbah.",
       "'Some scholars read the turned cloak as a hope that the season would turn' (tafa'ul); confirm.",
       "Fiqh summary: Hanafi school prays kusuf as two ordinary rak'ahs (one ruku' each); Maliki, Shafi'i and Hanbali with two ruku' per rak'ah. Also schools differ on whether istisqa has a congregational prayer (Abu Hanifah held du'a suffices). Simplified; confirm.",
-      "Index word is the title head 'The eclipse and the rain' (no single word); kept exactly. Original game uses kusuf."
+      "Index word is the title head 'The eclipse and the rain' (no single word); kept exactly. Original game uses kusuf.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, jama'ah, the congregation, and your line: together is more. Who did you stand next to on purpose? Today the row sits down and listens. Day one thousand eighty-six.",
+      "voice": "Yesterday, jama'ah: prayer in rows, together. Today the row sits down and listens.",
       "screen": [
         "`TOGETHER IS MORE.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Medina, a Friday. The Prophet Muhammad ﷺ is standing and speaking to the people. Then a noise from the edge of town: a trade caravan has arrived, with goods to buy and the clamor that comes with a market day. A report in Sahih al-Bukhari says people got up and went, and only a few stayed seated. The Qur'an kept the moment. In Pickthall's translation: \"But when they spy some merchandise or pastime they break away to it and leave thee standing.\" Leave thee standing. The caravans are smaller now. They fit in a pocket and they buzz. Today's word is the speech they interrupted.",
+      "voice": "Medina, a Friday. The Prophet Muhammad ﷺ is standing and speaking to the people. Then a noise from the edge of town: a trade caravan has arrived, with goods to buy and the clamor of a market day. A report in Sahih al-Bukhari says people got up and went, and only a few stayed seated. The Qur'an kept the moment. In Pickthall's translation: \"But when they spy some merchandise or pastime they break away to it and leave thee standing.\" The caravans are smaller now. They fit in a pocket, and they buzz.",
       "screen": [
         "`A FRIDAY IN MEDINA.` → `THE CARAVAN ARRIVES.` → `THEY LEAVE HIM STANDING.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Khutbah means a sermon, an address. On Friday, the congregational prayer called jumu'ah is preceded by one. First, its shape. Ibn Umar reported that the Prophet gave two sermons on Friday, and sat down briefly between them. So the imam stands, speaks, sits for a moment, stands again, speaks again, and only then the prayer begins. On Friday, the words come before the prayer, not after. Second, the call. Eight days ago this path heard surah sixty-two's command to haste unto remembrance of Allah when the call is heard. In Pickthall's translation the verse doesn't stop there: \"and leave your trading.\" Leave your trading. The same surah that keeps the caravan story tells people, two verses earlier, to put the market down when the call comes. Third, the silence. A hadith in Sahih al-Bukhari says that if you tell the person beside you to be quiet while the imam is speaking, you yourself have spoken idly. Even the shush counts. The khutbah asks for a silence so complete that you can't spend it policing someone else's. You listen, and you let the person beside you do their own listening. Fourth, what the silence is for. In the khutbah, the congregation hears a person speak to them in sentences, about this week, this city, these lives. Some of it lands, some doesn't. The command is the same either way: the market waits, the shush waits, the phone waits. The caravan story ends with a line that answers it, in Pickthall's words: \"That which Allah hath is better than pastime and than merchandise.\"",
+      "voice": "Khutbah means a sermon, an address. On Friday, the congregational prayer called jumu'ah is preceded by one; you met it in year two, with leave trade for a while. First, its shape. Ibn Umar reported that the Prophet gave two sermons on Friday and sat briefly between them. So the imam stands, speaks, sits a moment, stands again, speaks again, and only then the prayer begins. Second, the call. Eight days ago this path heard surah sixty-two's command to haste unto remembrance of Allah when the call is heard. In Pickthall's translation the verse goes on: \"and leave your trading.\" The same surah that keeps the caravan story tells people, two verses earlier, to put the market down when the call comes. Third, the silence. A hadith in Sahih al-Bukhari says that if you tell the person beside you to be quiet while the imam is speaking, you yourself have spoken idly. Even the shush counts. You listen, and let the person beside you do their own listening. Fourth, what the silence is for. The congregation hears a person speak to them about this week, this city, these lives. Some of it lands, some doesn't. The command is the same either way: the market waits, the shush waits, the phone waits. The caravan story ends with a line that answers it, in Pickthall's words: \"That which Allah hath is better than pastime and than merchandise.\"",
       "screen": [
         "`TWO SERMONS, A SIT BETWEEN.` · `LEAVE YOUR TRADING.` · `EVEN THE SHUSH COUNTS.` · `THE MARKET WAITS.` · then, large: `BETTER THAN PASTIME AND THAN MERCHANDISE.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice is to listen without a phone. Right now, put your phone out of reach, or face-down and silent if this lesson is playing on it. Settle, and listen to the room. The hum of something electric. A car outside. Your own breath. Don't name the sounds or judge them. Just hear them. If you attend the Friday prayer, you can leave the phone switched off or in the car this week, and give the khutbah your whole hearing. If you don't, give one person today a conversation with no screen anywhere in it. The bell holds the time.",
+      "voice": "Put your phone out of reach, or face-down and silent if this lesson is playing on it, and listen to the room: the hum of something electric, a car outside, your own breath, without naming or judging any of it. If you attend the Friday prayer, you can leave the phone off or in the car this week and give the khutbah your whole hearing. If you don't, give one person a conversation with no screen anywhere in it.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: silence for the khutbah. Today, when someone is speaking to you, keep the caravan in your pocket until they're done. Day one thousand eighty-six.",
+      "voice": "Your line: silence for the khutbah. The market, the shush and the phone can all wait. Day one thousand eighty-six, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Each Friday at midday, Muslims gather at the mosque for jumu'ah: the imam gives two sermons with a short sit between them, the congregation listens in silence, and then they pray together.",
   "games": {
+    "guess": [
+      "the sermon given before the Friday prayer",
+      "the call to prayer sung from the minaret",
+      "the row of worshippers behind the imam"
+    ],
     "match": {
       "prompt": "the Friday sermon — tap the pairs.",
       "pairs": [
@@ -139,7 +144,45 @@
         "shurut",
         "conditions, true before it starts"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your college friend",
+      "says": "Why can't you even whisper 'shh' to someone during the Friday sermon?",
+      "options": [
+        "A hadith says even hushing the person beside you while the imam speaks counts as idle talk.",
+        "Because the sermon is in Arabic, and any other sound breaks up the recitation.",
+        "Because the silence is for the prayer; the sermon before it is free time to chat."
+      ],
+      "meaning": "In Sahih al-Bukhari, telling your neighbor to be quiet while the imam speaks counts as idle talk. Even the shush waits.",
+      "answer": 0
+    },
+    "gloss": {
+      "khutbah": {
+        "meaning": "the sermon; on Friday, two of them before the prayer",
+        "script": "خطبة",
+        "say": "KHUT-ba"
+      },
+      "jumu'ah": {
+        "meaning": "the Friday congregational prayer",
+        "script": "جمعة",
+        "say": "JU-mu-ah"
+      },
+      "Medina": {
+        "meaning": "the Prophet's city",
+        "script": "المدينة",
+        "say": "meh-DEE-na"
+      },
+      "imam": {
+        "meaning": "the one who leads the prayer and gives the sermon",
+        "script": "إمام",
+        "say": "ee-MAAM"
+      },
+      "Ibn Umar": {
+        "meaning": "a companion who reported the two sermons",
+        "script": "ابن عمر",
+        "say": "IBN O-mar"
+      }
+    }
   },
   "sources": [
     {
@@ -188,7 +231,10 @@
       "Bukhari 936 (Jabir: a caravan arrived during the Friday sermon and people left, all but twelve men; 62:11 revealed). The count 'twelve' is replaced by 'only a few stayed'; confirm the hadith number and whether the event was during the khutbah or the prayer (reports differ).",
       "Bukhari 928 (two khutbahs with a sitting between) and 934 (saying 'be quiet' during the khutbah is laghw) paraphrased; confirm numbers.",
       "'The Friday prayer is preceded by' the sermons, and the myth that it does not follow: confirm; Eid prayers (sermon after) are not mentioned to keep one idea.",
-      "'In the khutbah, the congregation hears a person speak to them ... about this week, this city' is the writer's framing of the sermon's purpose; confirm."
+      "'In the khutbah, the congregation hears a person speak to them ... about this week, this city' is the writer's framing of the sermon's purpose; confirm.",
+      "Job 2: added one point-back line to day 626 (khutbah, 'leave trade for a while'), per YEARS_4_5.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

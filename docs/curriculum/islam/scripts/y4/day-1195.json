@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, Ahmad ibn Hanbal, and your line: the imam of hadith. Did your hadith stay with you, and where did you say it? Day one thousand one hundred ninety-five.",
+      "voice": "Yesterday: Ahmad ibn Hanbal, the scholar with the inkwell. Your line: the imam of hadith.",
       "screen": [
         "`THE IMAM OF HADITH.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "There are two ways to shelve a library of sayings. Sort by subject: everything on prayer here, everything on fasting there, trade in the next room. Or sort by who told you: every story your grandmother told on one shelf, every story your uncle told on the next. Sahih al-Bukhari, whose opening report was yesterday's practice, takes the first way, in chapters by subject. Ahmad ibn Hanbal's great book takes the second. Today, the book, and why the shelving matters.",
+      "voice": "There are two ways to shelve a library of sayings. By subject: everything on prayer here, everything on fasting there, trade in the next room. Or by who told you: every story your grandmother told on one shelf, every story your uncle told on the next. Sahih al-Bukhari, whose opening report was yesterday's practice, takes the first way. Ahmad ibn Hanbal's great book takes the second. Today, the book, and why the shelving matters.",
       "screen": [
         "`TWO WAYS TO SHELVE A LIBRARY.` → `BY SUBJECT, OR BY WHO TOLD YOU.` → `AHMAD CHOSE THE SECOND.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Its name is the Musnad. A musnad report is one with its chain of narrators attached, leaning back link by link to the Prophet. And a book called a Musnad is arranged by Companion, the person who heard the Prophet. So you open it and find the reports of Abu Bakr together, then those of 'Umar, and on through the Companions, men and women, each with a section of their own. A reader hunting for one topic has to search. A reader who wants to hear one Companion's voice finds it all in one place. It is vast. His biographers say he gathered it across a lifetime, choosing it from the far larger body of reports he had heard. Reports say he meant it as a reference: when people disagreed over a sunnah, they could turn to it. His son 'Abd Allah is reported to have heard it from him and passed it on, adding reports of his own. And because Ahmad included reports he judged usable, not only the strongest, the Musnad holds strong and weaker reports side by side. Later scholars graded them one by one, and some modern editions print a grade beside each report. So the Musnad isn't a law book, and it isn't a book of only the strongest hadith. It's a storehouse. Some of its reports appear in other collections too. Here's one, told by the Companion Anas ibn Malik: none of you truly believes until he loves for his brother what he loves for himself. You'll find it in Sahih al-Bukhari and Sahih Muslim, and in the Musnad you'll find it on the shelf of the one who told it.",
+      "voice": "Its name is the Musnad. A musnad report has its chain of narrators attached, leaning back link by link to the Prophet. A book called a Musnad is arranged by Companion, the person who heard the Prophet. Open it and you find the reports of Abu Bakr together, then those of 'Umar, and on through the Companions, men and women, each with a section of their own. A reader hunting one topic has to search; a reader who wants one Companion's voice finds it all in one place. It is vast. His biographers say he gathered it across a lifetime, choosing it from the far larger body of reports he had heard, and meant it as a reference when people disagreed over a sunnah. His son 'Abd Allah is reported to have heard it from him and passed it on, adding reports of his own. Because Ahmad included reports he judged usable, not only the strongest, strong and weaker reports sit side by side. Later scholars graded them one by one, and some modern editions print a grade beside each. So the Musnad isn't a law book, or a book of only the strongest hadith. It's a storehouse. Some of its reports appear in other collections too. Here's one, told by the Companion Anas ibn Malik: none of you truly believes until he loves for his brother what he loves for himself. It's in Sahih al-Bukhari and Sahih Muslim, and in the Musnad it sits on the shelf of the one who told it.",
       "screen": [
         "`MUSNAD: ARRANGED BY COMPANION.` · `GATHERED ACROSS A LIFETIME.` · `STRONG AND WEAKER, SIDE BY SIDE.` · `A STOREHOUSE, SHELVED BY VOICE.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: read one hadith from it. Take the one from Anas. Read it again, slowly: none of you truly believes until he loves for his brother what he loves for himself. Let one word sit, the word brother, and the question of who it covers. Then pick one good thing you want for yourself today. Rest. Good news. A kind word. Now name one person you could want that same thing for, and hold their name for a few breaths. If you pray, you can ask for it for them. If not, just keep them in mind. The bell holds the time.",
+      "voice": "Read Anas's hadith again, slowly: none of you truly believes until he loves for his brother what he loves for himself. Let the word brother sit, with the question of who it covers, then pick one good thing you want for yourself today, rest, good news, a kind word, and name one person you could want that same thing for. Hold their name for a few breaths, and if you pray, you can ask for it for them.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: a vast collection. Today, collect one thing someone tells you, a saying or a story, and write down who told it. Day one thousand one hundred ninety-five.",
+      "voice": "Your line: a vast collection. Every report kept on the shelf of the one who told it. Day one thousand one hundred ninety-five, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Students of hadith consult Ahmad ibn Hanbal's Musnad by looking up the Companion who narrated a report, and modern printed editions often add scholars' grades beside its reports.",
   "games": {
+    "guess": [
+      "Ahmad's hadith collection, arranged by Companion",
+      "Ahmad's book of law, arranged by topic like a code",
+      "a collection of only the strongest, sound reports"
+    ],
     "match": {
       "prompt": "the Musnad — tap the pairs.",
       "pairs": [
@@ -132,14 +137,44 @@
     ],
     "recall": [
       [
-        "ra'y",
-        "a considered judgment"
+        "qiyas",
+        "analogy, measured from a text"
       ],
       [
-        "ijtihad",
-        "full effort to reach a ruling"
+        "taqlid",
+        "following one who knows"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your roommate",
+      "says": "If I want everything the Musnad says about fasting, where do I look?",
+      "options": [
+        "You'd have to search: it's arranged by Companion, not by subject.",
+        "In its fasting chapter, since it's sorted by subject like Bukhari.",
+        "In the first chapter, since the most important topics come first."
+      ],
+      "answer": 0,
+      "meaning": "The Musnad gathers each Companion's reports in one section. That makes one Companion's voice easy to find, and one topic harder."
+    },
+    "gloss": {
+      "Musnad": {
+        "meaning": "a hadith book arranged by the Companion who told each report",
+        "script": "المسند",
+        "say": "MUS-nad"
+      },
+      "Anas ibn Malik": {
+        "meaning": "a Companion of the Prophet",
+        "say": "A-nas ibn MAA-lik"
+      },
+      "Abu Bakr": {
+        "meaning": "a Companion of the Prophet",
+        "say": "A-boo BAKR"
+      },
+      "Sahih Muslim": {
+        "meaning": "a major collection of hadith",
+        "say": "sa-HEEH MUS-lim"
+      }
+    }
   },
   "sources": [
     {
@@ -167,7 +202,9 @@
       "Ahmad's criterion (including reports he judged usable, not only sahih) and the presence of weaker reports: confirm fair framing.",
       "Bukhari 13 / Muslim 45 and presence in the Musnad under Anas: confirm numbers.",
       "Practice touches on the scope of 'brother'; scholars differ (fellow Muslim vs. any human); kept as an open question.",
-      "Editor pass: stopped telling the listener they memorized yesterday's hadith; put the 'sifted from a far larger mass' claim on the biographers."
+      "Editor pass: stopped telling the listener they memorized yesterday's hadith; put the 'sifted from a far larger mass' claim on the biographers.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

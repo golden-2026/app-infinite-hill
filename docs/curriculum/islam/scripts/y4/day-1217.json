@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the qadi, the judge bound by evidence. Your line was judge by evidence. In a quarrel yesterday, did you stop to ask what you actually saw and heard? Day one thousand two hundred seventeen.",
+      "voice": "Yesterday, the qadi, a judge bound by evidence. Your line: judge by evidence.",
       "screen": [
         "`JUDGE BY EVIDENCE.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Nikah is the Arabic word for marriage, and in Islamic law a nikah is a contract. First, its heart: an offer and an acceptance, spoken out loud, in one sitting. One side offers; the other says I accept. That's the knot. Second, the consent of both. In Sahih al-Bukhari, the Prophet Muhammad ﷺ says a woman is not to be married until her permission is sought. And Bukhari keeps the story of Khansa bint Khidam, whose father married her to a man she didn't want. She went to the Prophet, and he annulled the marriage. Her yes was not decoration. Third, the other parts. A gift to the bride, the mahr, which is tomorrow. Witnesses, so the marriage isn't a secret. A public celebration, so the whole neighborhood knows. And here the schools differ on details. The Hanafi school allows a grown woman to conclude her own marriage contract; the Maliki, Shafi'i and Hanbali schools require a guardian, a wali, to conclude it for her, with her consent. They also differ on how the witnessing and the announcing have to be done. Fourth, why a contract isn't cold. The Qur'an calls the marriage bond a firm, weighty covenant. And in surah thirty it describes marriage this way, in Pickthall's translation: \"He created for you helpmeets from yourselves that ye might find rest in them, and He ordained between you love and mercy.\" So the paper sets out rights, and the verse sets out what the paper is for: rest, love, mercy. A contract, yes. A contract of mercy.",
+      "voice": "Nikah is the Arabic word for marriage, and in Islamic law a nikah is a contract. Its heart is an offer and an acceptance, spoken out loud, in one sitting. One side offers; the other says I accept. That's the knot. Next, the consent of both. In Sahih al-Bukhari, the Prophet Muhammad ﷺ says a woman is not to be married until her permission is sought. And Bukhari keeps the story of Khansa bint Khidam, whose father married her to a man she didn't want. She went to the Prophet, and he annulled the marriage. Her yes was not decoration. Then the other parts. A gift to the bride, the mahr, which is tomorrow. Witnesses, so the marriage isn't a secret. A public celebration, so the whole neighborhood knows. Here the schools differ on details. The Hanafi school allows a grown woman to conclude her own marriage contract; the Maliki, Shafi'i and Hanbali schools require a guardian, a wali, to conclude it for her, with her consent. They also differ on how the witnessing and the announcing have to be done. Last, why a contract isn't cold. The Qur'an calls the marriage bond a firm, weighty covenant. And in surah thirty it describes marriage this way, in Pickthall's translation: \"He created for you helpmeets from yourselves that ye might find rest in them, and He ordained between you love and mercy.\" The paper sets out rights, and the verse sets out what the paper is for: rest, love, mercy. A contract, yes. A contract of mercy.",
       "screen": [
         "`AN OFFER, AND I ACCEPT.` · `HER PERMISSION IS SOUGHT.` · `A GIFT, WITNESSES, AN ANNOUNCEMENT.` · `A CONTRACT FOR LOVE AND MERCY.` · then, large: `HE ORDAINED BETWEEN YOU LOVE AND MERCY.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: learn the parts of a nikah. Sit comfortably, and go back to the coffee table from the hook. With each breath, set one part down on it. Her yes, and his. The offer and the acceptance, out loud. The gift to the bride. The witnesses. The announcement, the celebration. Now look at the table with everything on it. Bring to mind a marriage you know, your own, your parents', a friend's, or one you hope for. Hold it in mind with those two words from the verse: love and mercy. If you pray, you can remember that couple in your own words. The bell holds the time.",
+      "voice": "With each breath, set one part down on the coffee table from the hook: her yes and his, the offer and the acceptance, the gift, the witnesses, the celebration. Then hold a marriage you know, or one you hope for, with two words from the verse: love and mercy. If you pray, you can remember that couple in your own words.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: a contract of mercy. Today, in one promise you keep, at home or at work, add a little mercy to the terms. Day one thousand two hundred seventeen.",
+      "voice": "Your line: a contract of mercy. Rights on paper, love and mercy underneath. Day one thousand two hundred seventeen.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "A Muslim marriage is concluded by an offer and acceptance before witnesses, sometimes led by an imam at a mosque or at home, with the bride's consent, an agreed gift to the bride, and a celebration afterward.",
   "games": {
+    "guess": [
+      "marriage in Islam: a contract of offer and acceptance, with consent",
+      "the engagement party a family holds before the wedding",
+      "the vows a couple writes and reads aloud to each other"
+    ],
     "match": {
       "prompt": "the parts of a nikah — tap the pairs.",
       "pairs": [
@@ -132,14 +137,52 @@
     ],
     "recall": [
       [
-        "mihnah",
-        "trial, ordeal"
+        "madhhab",
+        "a way someone goes: a school"
       ],
       [
-        "The Musnad",
-        "arranged by Companion"
+        "turbah",
+        "a small tablet of baked clay"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your coworker",
+      "says": "Is a Muslim wedding just paperwork, or is there more to it?",
+      "options": [
+        "A contract, offer and acceptance with both consenting, made for love and mercy.",
+        "Just paperwork. Love isn't part of it; the contract is only about money.",
+        "It's a set of vows the couple writes, with no contract involved at all."
+      ],
+      "answer": 0,
+      "meaning": "A nikah is a contract: offer, acceptance, the consent of both, witnesses. The Qur'an says what it's for: rest, love and mercy."
+    },
+    "gloss": {
+      "nikah": {
+        "meaning": "marriage: a contract of offer and acceptance",
+        "script": "نكاح",
+        "say": "ni-KAAH"
+      },
+      "mubarak": {
+        "meaning": "blessed; said to congratulate",
+        "script": "مبارك",
+        "say": "moo-BAH-rak"
+      },
+      "Khansa bint Khidam": {
+        "meaning": "a woman whose unwanted marriage the Prophet annulled",
+        "script": "خنساء بنت خدام",
+        "say": "KHAN-sah bint khi-DAHM"
+      },
+      "mahr": {
+        "meaning": "the gift to the bride",
+        "script": "مهر",
+        "say": "MAHR"
+      },
+      "wali": {
+        "meaning": "a guardian who concludes the contract, with her consent",
+        "script": "ولي",
+        "say": "WAH-lee"
+      }
+    }
   },
   "sources": [
     {
@@ -184,7 +227,9 @@
       "Bukhari 5138: Khansa bint Khidam was previously married (thayyib); the script doesn't mention this. Confirm.",
       "Wali: Hanafi allows an adult woman to conclude her own contract; Maliki, Shafi'i, Hanbali require a guardian. Witnessing and announcement details differ (e.g. Maliki emphasis on publicity). Confirm framing; Shia (Ja'fari) positions not covered.",
       "4:21 'firm covenant' paraphrased; Pickthall has 'a strong pledge'.",
-      "howItsDone 'often led by an imam': confirm."
+      "howItsDone 'often led by an imam': confirm.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

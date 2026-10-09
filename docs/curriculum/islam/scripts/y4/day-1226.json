@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, riba, and your line: no interest. Trade permitted, riba forbidden, and the question of who carries the risk. Did you spot a rate somewhere and wonder about it? Day one thousand two hundred twenty-six.",
+      "voice": "Yesterday, riba, and your line: no interest. Trade permitted, riba forbidden, and the question of who carries the risk.",
       "screen": [
         "`NO INTEREST.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "So if lending money for a fixed return is off the table, how does anyone start a business, buy a house, or grow savings? That's a real question, and Muslim jurists asked it too. Their answer starts with an older picture than the loan. One person has money and no time. Another has skill and no money. They agree: you take my capital and trade with it, and whatever profit comes, we split it as we agreed today. If the caravan comes home rich, both are glad. If it is lost, both lose. Today is about the toolkit built from that picture.",
+      "voice": "If lending money for a fixed return is off the table, how does anyone start a business, buy a house, or grow savings? Muslim jurists asked that too. Their answer starts with a picture older than the loan. One person has money and no time; another has skill and no money. They agree: you take my capital and trade with it, and whatever profit comes, we split as we agreed today. If the caravan comes home rich, both are glad. If it is lost, both lose.",
       "screen": [
         "`NO LOAN FOR A FIXED RETURN. THEN WHAT?` → `MONEY MEETS SKILL.` → `BOTH WIN OR BOTH LOSE.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "The fiqh books describe several contracts that move money without riba. Four are worth knowing. First, mudarabah: the picture from the hook. One side brings capital, the other brings work, profit is shared by an agreed ratio, and if money is lost, the investor bears that loss while the worker loses the effort. Second, musharakah: a full partnership, where both put in capital and share profit and loss together. Some home-financing plans use a version of this, where the buyer and the bank own the house together and the buyer slowly buys out the bank's part. Third, ijarah: leasing. The owner rents out a thing, a car, a machine, a building, and earns rent for its use while still owning it, with the risks that ownership brings. Fourth, murabaha: a sale at cost plus a stated profit, where the seller buys the goods first and sells them on, sometimes with payment later. Behind all of them sits a principle drawn from a report in Abu Dawud and Tirmidhi: gain goes with liability. The one who takes the profit must also be the one exposed to the loss. That is the difference the scholars see between rent and interest, or between a partner's share and a lender's fee. And they argue about it honestly. Some scholars and economists have criticized products that, in their view, follow the letter but end up looking a lot like a loan with a new name. Others defend them as lawful steps along the way. The ideal both sides point to is the same: share the risk.",
+      "voice": "The fiqh books describe several contracts that move money without riba. Four are worth knowing. First, mudarabah, the picture from the hook: one side brings capital, the other brings work, profit is shared by an agreed ratio, and if money is lost, the investor bears that loss while the worker loses the effort. Second, musharakah, a full partnership: both put in capital and share profit and loss together. Some home-financing plans use a version of it, where the buyer and the bank own the house together and the buyer slowly buys out the bank's part. Third, ijarah, leasing: the owner rents out a car, a machine, a building, and earns rent for its use while still owning it, with the risks ownership brings. Fourth, murabaha, a sale at cost plus a stated profit: the seller buys the goods first and sells them on, sometimes with payment later. Behind all four sits a principle from a report in Abu Dawud and Tirmidhi: gain goes with liability. Whoever takes the profit must also be exposed to the loss. That's the difference the scholars see between rent and interest, or between a partner's share and a lender's fee. And they argue about it honestly. Some scholars and economists have criticized products that, in their view, follow the letter but look a lot like a loan with a new name; others defend them as lawful steps along the way. The ideal both sides point to is the same: share the risk.",
       "screen": [
         "`MUDARABAH: MONEY MEETS WORK.` · `MUSHARAKAH: PARTNERS IN PROFIT AND LOSS.` · `IJARAH AND MURABAHA: LEASE AND SALE.` · `GAIN GOES WITH LIABILITY.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Learn one term well enough to explain it. Pick the one that stuck: mudarabah, musharakah, ijarah or murabaha. Say it quietly, then say in your own words what it means, as if you were telling a friend at a table. Who brings what? Who carries the risk? If it slips, go back to the picture: the one with money, the one with skill, and the caravan that might or might not come home. Then just sit with your breath, and let the word settle. The bell holds the time.",
+      "voice": "Pick the term that stuck, mudarabah, musharakah, ijarah or murabaha, and say in your own words what it means, as if telling a friend at a table: who brings what, and who carries the risk? If it slips, go back to the picture: the one with money, the one with skill, and the caravan that might or might not come home.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: share the risk. Today, in any deal, even splitting a bill or a project, ask what each side stands to lose, not only what each stands to gain. Tomorrow, what makes a contract clear. Day one thousand two hundred twenty-six.",
+      "voice": "Your line: share the risk. Whoever takes the gain stands under the loss too. Day one thousand two hundred twenty-six.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Islamic banks and community lenders offer home financing, savings and business funding through partnership, profit-sharing, leasing and cost-plus sale contracts, with boards of scholars reviewing the products.",
   "games": {
+    "guess": [
+      "contracts where the one who gains also carries the risk",
+      "banking that charges interest but gives some to charity",
+      "loans that Muslim banks make only to other Muslims"
+    ],
     "match": {
       "prompt": "Islamic finance — tap the pairs.",
       "pairs": [
@@ -139,7 +144,40 @@
         "turbah",
         "a small tablet of baked clay"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your cousin",
+      "says": "How can a bank make money without charging interest?",
+      "options": [
+        "By sharing risk: partnerships, leasing, or selling at cost plus a stated profit.",
+        "It charges interest but calls it a fee, which makes it allowed.",
+        "It doesn't. Islamic banks run only on donations from their members."
+      ],
+      "answer": 0,
+      "meaning": "Mudarabah, musharakah, ijarah and murabaha share one principle: gain goes with liability, so whoever profits is exposed to loss."
+    },
+    "gloss": {
+      "mudarabah": {
+        "meaning": "profit-sharing: one brings capital, the other brings work",
+        "script": "مضاربة",
+        "say": "moo-DAH-ra-bah"
+      },
+      "musharakah": {
+        "meaning": "a full partnership sharing profit and loss",
+        "script": "مشاركة",
+        "say": "moo-SHAH-ra-kah"
+      },
+      "ijarah": {
+        "meaning": "leasing: earning rent while still owning the thing",
+        "script": "إجارة",
+        "say": "ee-JAH-rah"
+      },
+      "murabaha": {
+        "meaning": "a sale at cost plus a stated profit",
+        "script": "مرابحة",
+        "say": "moo-RAH-ba-hah"
+      }
+    }
   },
   "sources": [
     {
@@ -163,7 +201,9 @@
       "Diminishing musharakah for home financing: confirm description.",
       "Murabaha described as cost-plus sale, seller buys first; confirm.",
       "Abu Dawud 3508 / Tirmidhi 1285: 'al-kharaj bi al-daman'; confirm numbers and the paraphrase 'gain goes with liability'.",
-      "Criticism of form-over-substance products is presented as a debate without naming parties; confirm fair."
+      "Criticism of form-over-substance products is presented as a debate without naming parties; confirm fair.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

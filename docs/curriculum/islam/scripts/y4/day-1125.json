@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the talbiyah, and your line: labbayk, here I am. When someone called your name, how did you answer? Day one thousand one hundred twenty-five.",
+      "voice": "Yesterday: the talbiyah, labbayk, the pilgrim's answer to a call. Your line: labbayk.",
       "screen": [
         "`LABBAYK.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "The pilgrims have been saying here I am for miles. Now they arrive. They come through the gates of the mosque in Mecca, and there it is, a plain stone building draped in black cloth, standing in the middle of a wide open floor. The Qur'an, in surah twenty-two, names what pilgrims do at this House, and Pickthall's translation puts it in a few words: \"go around the ancient House.\" Not enter it. Not climb it. Go around it. Today, the walk that goes in circles on purpose.",
+      "voice": "After miles of here I am, the pilgrims arrive. They come through the gates of the mosque in Mecca, and there it is: a plain stone building draped in black cloth, standing in the middle of a wide open floor. The Qur'an, in surah twenty-two, names what pilgrims do at this House, and Pickthall's translation puts it in a few words: \"go around the ancient House.\" Not enter it. Not climb it. Go around it. Today, the walk that goes in circles on purpose.",
       "screen": [
         "`THEY ARRIVE.` → `A PLAIN HOUSE IN BLACK CLOTH.` → `GO AROUND THE ANCIENT HOUSE.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the shape. Tawaf means going around. The pilgrim circles the Ka'ba with it on the left side, which makes the whole crowd turn the same way, counterclockwise, like one slow wheel. Second, the count. Jabir ibn Abdullah gave a long account of the Prophet Muhammad ﷺ's pilgrimage, kept in Sahih Muslim. When the Prophet reached the House, Jabir says, he went around it, moving briskly for three circuits and walking for four. Seven in all. The brisk pace for the first three has a name, ramal. Third, what kind of act it is. A report in Tirmidhi has the Prophet saying that going around the House is like prayer, except that in it you may speak, so whoever speaks should speak only good. A prayer you can walk, and even talk in, as long as the talk is good. People recite, make their own requests, repeat words of praise, or walk in silence. Fourth, the center. Every circle needs one point that doesn't move. Crowds of people, from everywhere, in plain cloth, all turning around the same still house. In Islam the Ka'ba is not the one worshipped; it's the House, and the worship is for God alone. But the walk teaches something with the body that's hard to teach with words. Everything in the crowd is moving. The center isn't. Each circuit brings the pilgrim back to the same corner where it began, and the next one starts again from there.",
+      "voice": "First, the shape. Tawaf means going around. The pilgrim circles the Ka'ba with it on the left, so the whole crowd turns the same way, counterclockwise, like one slow wheel. You met the House itself back on day forty-two. Second, the count. Jabir ibn Abdullah gave a long account of the Prophet Muhammad ﷺ's pilgrimage, kept in Sahih Muslim. When the Prophet reached the House, Jabir says, he went around it, moving briskly for three circuits and walking for four. Seven in all. The brisk pace for the first three has a name: ramal. Third, what kind of act it is. A report in Tirmidhi has the Prophet saying that going around the House is like prayer, except that in it you may speak, so whoever speaks should speak only good. A prayer you can walk, and even talk in, as long as the talk is good. People recite, make their own requests, repeat words of praise, or walk in silence. Fourth, the center. Every circle needs one point that doesn't move. Crowds from everywhere, in plain cloth, all turning around the same still house. In Islam the Ka'ba is not the one worshipped; it's the House, and the worship is for God alone. But the walk teaches with the body something that's hard to teach with words. Everything in the crowd is moving. The center isn't. Each circuit brings the pilgrim back to the corner where it began, and the next one starts again from there.",
       "screen": [
         "`THE HOUSE ON THE LEFT.` · `THREE BRISK, FOUR WALKING.` · `A PRAYER YOU CAN WALK.` · `EVERYTHING MOVES BUT THE CENTER.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: walk seven slow circles. Walk seven slow laps of a room or a yard, keeping to the same direction. This isn't tawaf; it's just a walk, a way to feel the shape of one in the body. Count the circles on your fingers if that helps. If you pray, you can say words of praise you know as you go, or a verse. If you don't, just keep your attention on your steps as you move. When the seven are done, stand still and breathe. The bell holds the time.",
+      "voice": "Walk seven slow laps of a room or a yard, always in the same direction, counting on your fingers if it helps; this isn't tawaf, just a way to feel its shape in the body. If you pray, say words of praise you know as you go; if not, keep your attention on your steps. When the seven are done, stand still and breathe.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: around the center. Today, when the day spins, name one thing that stays still in it, and come back to it once. Day one thousand one hundred twenty-five.",
+      "voice": "Your line: around the center. Everything else can turn while the center holds. Day eleven twenty-five, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Pilgrims perform tawaf by walking seven circuits around the Ka'ba counterclockwise, starting and ending at the corner of the black stone, often reciting Qur'an or making du'a; men walk briskly in the first three circuits of the arrival tawaf.",
   "games": {
+    "guess": [
+      "going around the Ka'ba seven times, with it on your left",
+      "bowing toward the Ka'ba from anywhere in the world",
+      "a long walk back and forth between two hills"
+    ],
     "match": {
       "prompt": "circling the House — tap the pairs.",
       "pairs": [
@@ -139,7 +144,39 @@
         "qada'",
         "making up worship after its time"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "a classmate",
+      "says": "When pilgrims walk around the Ka'ba, are they worshipping the building?",
+      "options": [
+        "No. It's the House they circle; the worship is for God alone.",
+        "Yes. The Ka'ba itself is what pilgrims pray to as they circle it.",
+        "Partly. They honor the black cloth, which is what's truly holy."
+      ],
+      "answer": 0,
+      "meaning": "In Islam the Ka'ba isn't the one worshipped. It's the House, the still center everyone turns around, and the worship is for God alone."
+    },
+    "gloss": {
+      "tawaf": {
+        "meaning": "going around the Ka'ba, seven times, with it on the left",
+        "script": "طواف",
+        "say": "tuh-WAHF"
+      },
+      "Ka'ba": {
+        "meaning": "the plain stone House in Mecca, draped in black cloth",
+        "script": "الكعبة",
+        "say": "KAH-bah"
+      },
+      "ramal": {
+        "meaning": "the brisk pace of the first three circuits",
+        "script": "رمل",
+        "say": "RAH-mal"
+      },
+      "Sahih Muslim": {
+        "meaning": "a major collection of the Prophet's sayings and deeds",
+        "say": "sah-HEEH MUS-lim"
+      }
+    }
   },
   "sources": [
     {
@@ -170,7 +207,10 @@
       "Tirmidhi 960 (tawaf is like prayer except that you speak in it, so speak only good): confirm number and grading.",
       "'The men who can do it still do' (ramal) and howItsDone (ramal only in the arrival tawaf): confirm fiqh details.",
       "'In Islam the Ka'ba is not the one worshipped': confirm phrasing.",
-      "Editor: 22:29 no longer framed as arrival instructions (the verse follows the sacrifice); cut the unsourced 'men who can still do' ramal claim and narrator uplift; practice now walks laps rather than circling an object, and says plainly it isn't tawaf (Keeper to confirm)."
+      "Editor: 22:29 no longer framed as arrival instructions (the verse follows the sacrifice); cut the unsourced 'men who can still do' ramal claim and narrator uplift; practice now walks laps rather than circling an object, and says plainly it isn't tawaf (Keeper to confirm).",
+      "Job 2/3 (year 4): added a point-back line to day 42 (Raising the House).",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

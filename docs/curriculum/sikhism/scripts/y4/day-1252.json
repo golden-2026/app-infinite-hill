@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the Tenth Guru's writings closed: praise, story, rebuke and song, all from one pen. Your line was bold praise. What did you praise out loud, and did your voice shake? Day one thousand two hundred fifty-two.",
+      "voice": "Yesterday, the Tenth Guru's writings closed: praise, story, rebuke and song, all from one pen, all starting with praise. Your line was bold praise.",
       "screen": [
         "`BOLD PRAISE.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A hospital intake form has a line that says religion, and a blank about an inch long. One word fits there. But a word in a blank doesn't say what it holds. Is it a family? A country? A list of rules? A feeling? Sikhs have a written answer to that question, and it sits at the very start of the shared code we met in passing with the rehatnamas: the Sikh Rehat Maryada, the code of conduct published by the Shiromani Gurdwara Parbandhak Committee. For the next stretch of the path we walk through that code, a piece a day. It begins with a question small enough to fit in the blank. Who is a Sikh?",
+      "voice": "A hospital intake form has a line that says religion, and a blank about an inch long. One word fits there. But a word in a blank doesn't say what it holds. A family? A country? A list of rules? A feeling? Sikhs have a written answer, at the very start of the shared code met in passing with the rehatnamas: the Sikh Rehat Maryada, the code of conduct published by the Shiromani Gurdwara Parbandhak Committee. For the next stretch, the path walks through that code, a piece a day. It begins with a question small enough to fit in the blank. Who is a Sikh?",
       "screen": [
         "`ONE WORD IN A BLANK.` → `WHAT DOES THE WORD HOLD?` → `THE CODE BEGINS WITH A QUESTION.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Here is the code's answer, in paraphrase. A Sikh is any human being who faithfully believes in one Immortal Being; in the ten Gurus, from Guru Nanak to Guru Gobind Singh; in the Guru Granth Sahib; in the words and teachings of the ten Gurus; and in the amrit, the initiation the Tenth Guru gave; and who holds to no other religion as their own. Start with the first words: any human being. The door is not marked with a caste, a birthplace, a family name or a language. None of those appear in the list at all. Then look at what is there. One God. The teachers. The book where the teaching now lives. The teaching itself. And the Tenth Guru's initiation. Now look at the verb: believes. On the amrit, the definition asks for belief in the initiation the Tenth Guru gave. Some readers point out that this leaves room for a person who holds that path as true and has not yet walked through it; the code speaks about those who have taken amrit, and what is asked of them, in its own later sections. Then there's the word itself. Tradition says a sikh is a learner, a disciple. Read that way, the definition is a learner's list: the One you turn toward, the ones who taught, the place their teaching is kept, the teaching, and the step the Tenth Guru offered. It runs in a line from God to the person reading. And notice how short it is. A child could learn it. A grown person could hold it up against their own life and see where they stand. The code could have opened with rules. It opens with belief, plainly put, and the rules come after.",
+      "voice": "Here is the code's answer, in paraphrase. A Sikh is any human being who faithfully believes in one Immortal Being; in the ten Gurus, from Guru Nanak to Guru Gobind Singh; in the Guru Granth Sahib; in the words and teachings of the ten Gurus; and in the amrit, the initiation the Tenth Guru gave; and who holds to no other religion as their own. Start with the first words: any human being. The door isn't marked with a caste, a birthplace, a family name or a language. None of those appear in the list at all. Then look at what is there. One God. The teachers. The book where the teaching now lives. The teaching itself. And the Tenth Guru's initiation. Now the verb: believes. On the amrit, the definition asks for belief in the initiation the Tenth Guru gave. Some readers point out that this leaves room for a person who holds that path as true and has not yet walked through it; the code speaks about those who have taken amrit, and what is asked of them, in its own later sections. Then the word itself. Tradition says a sikh is a learner, a disciple. Read that way, the definition is a learner's list, running in a line from God to the person reading. And notice how short it is. A child could learn it. A grown person could hold it up against their own life and see where they stand. The code could have opened with rules. It opens with belief, plainly put, and the rules come after.",
       "screen": [
         "`ANY HUMAN BEING WHO BELIEVES.` · `ONE GOD, TEN GURUS, THE GRANTH.` · `BELIEF IN THE TENTH GURU'S AMRIT.` · `SIKH: A LEARNER.` · then, large: `BELIEF, PLAINLY PUT.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: write what you believe, plainly. Settle, and breathe. Whatever you hold, or are still testing, try to put it into a few short lines. No big words, nothing borrowed. Only what you would actually sign your name under today. If a line feels shaky, give it a question mark; that's honest too. If you have paper, write. If not, say the lines once in your head. Then sit with them until the bell, and notice which line feels the most solid. The bell holds the time.",
+      "voice": "Whatever you hold, or are still testing, put it into a few short lines, no big words, nothing borrowed, only what you'd sign your name under today, with a question mark on any line that feels shaky. Then notice which line feels the most solid.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: belief, plainly put. Today, when someone asks what you think about something that matters, try answering in one plain sentence before you add any more. Day one thousand two hundred fifty-two.",
+      "voice": "Your line: belief, plainly put. Short enough for a child to learn, and solid enough to stand on. Until tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "The Sikh Rehat Maryada opens with a short definition of a Sikh by belief, and Sikh teachers and gurdwara classes often start with it when explaining the code.",
   "games": {
+    "guess": [
+      "any human being who holds the beliefs the code names",
+      "a person born into a Sikh family in Punjab",
+      "anyone who wears a turban and speaks Punjabi"
+    ],
     "match": {
       "prompt": "inside the definition: tap the pairs.",
       "pairs": [
@@ -132,14 +137,46 @@
     ],
     "recall": [
       [
-        "Shabad Hazare",
-        "ten hymns of Guru Gobind Singh"
+        "Caste",
+        "a ranking by birth the Gurus rejected"
       ],
       [
-        "Gatha",
-        "a verse, a song"
+        "Bavan Akhri",
+        "fifty-two letters"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "a new coworker",
+      "says": "Do you have to be born Punjabi to be a Sikh?",
+      "options": [
+        "No. The code begins with any human being; caste and birthplace aren't on its list.",
+        "Yes. The code limits it to families from Punjab who speak the Punjabi language.",
+        "No, but you must move to Punjab and learn Punjabi before you can join."
+      ],
+      "answer": 0,
+      "meaning": "The code's definition opens with any human being who holds its beliefs. No caste, birthplace, family name or language appears in the list."
+    },
+    "gloss": {
+      "Sikh Rehat Maryada": {
+        "meaning": "the shared Sikh code of conduct",
+        "script": "ਸਿੱਖ ਰਹਿਤ ਮਰਯਾਦਾ",
+        "say": "SIKH REH-hut mur-YAA-daa"
+      },
+      "Shiromani Gurdwara Parbandhak Committee": {
+        "meaning": "the Sikh body that published the code",
+        "say": "shi-ROH-mu-nee gur-DWAA-raa PUR-bun-dhuk kuh-MIT-ee"
+      },
+      "amrit": {
+        "meaning": "the Sikh initiation the Tenth Guru gave",
+        "script": "ਅੰਮ੍ਰਿਤ",
+        "say": "UM-rit"
+      },
+      "sikh": {
+        "meaning": "a learner, a disciple",
+        "script": "ਸਿੱਖ",
+        "say": "SIKH"
+      }
+    }
   },
   "sources": [
     {
@@ -158,7 +195,9 @@
       "'Sikh means a learner, a disciple' is given as the word's meaning, not as an etymology; please confirm.",
       "The code is described as published by the Shiromani Gurdwara Parbandhak Committee; no date is given under the claims rule.",
       "Week/block note: day 1252 opens Block E (The Khalsa and the Rehat Maryada); the hook introduces the code as the subject of the next stretch.",
-      "Editor pass: the meaning of 'sikh' (a learner) is now attributed to tradition in the teach, original note and trapdoor, under the claims rule."
+      "Editor pass: the meaning of 'sikh' (a learner) is now attributed to tradition in the teach, original note and trapdoor, under the claims rule.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

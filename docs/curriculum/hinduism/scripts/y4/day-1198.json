@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday we began each as a lens for a week: six schools, six questions, clicked in like lenses at the eye doctor. Which question did you ask of something annoying? Day one thousand one hundred ninety-eight.",
+      "voice": "Yesterday began each as a lens for a week: six schools, six questions, clicked in like lenses at the eye doctor.",
       "screen": [
         "`SIX LENSES.` · `THE FIRST PAIR.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Eight in the morning, at the bus stop. A neighbor leans over and says the bakery on the corner is closing for good. She heard it from her cousin. By lunch, it's all up and down the street. Later that afternoon, a friend snaps at you over something small, and a thought can stick for the rest of the day: so that's who they really are. Two ordinary moments. In both, something was taken as known a little too fast. Today we click in the first pair of lenses, the two schools that tradition studies together, Nyaya and Vaisheshika, and look again.",
+      "voice": "Eight in the morning, at the bus stop. A neighbor leans over and says the bakery on the corner is closing for good. She heard it from her cousin. By lunch, it's all up and down the street. Later that afternoon, a friend snaps at you over something small, and a thought can stick for the rest of the day: so that's who they really are. Two ordinary moments. In both, something was taken as known a little too fast. Time for the first pair of lenses, the two schools that tradition studies together, Nyaya and Vaisheshika.",
       "screen": [
         "`THE BAKERY IS CLOSING.` → `A FRIEND SNAPS.` → `KNOWN A LITTLE TOO FAST.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: use both lenses on one thing you believe about someone. Settle, and let a recent impression of a person come to mind. First, the Nyaya lens: how do I know this? Did I see it, reason to it, or hear it from someone? Just notice which. Then the Vaisheshika lens: is this the person, or a quality passing through them, or one action that came and went? Let the person stay whole while the mood and the moment fall into their places. Then rest. If you pray, you can hold that person in your prayer. The bell holds the time.",
+      "voice": "Let a recent impression of a person come to mind, and ask the Nyaya question first: did I see this, reason to it, or hear it from someone? Then the Vaisheshika question: is this the person, a quality passing through them, or one action that came and went, letting the person stay whole while the mood and the moment fall into their places. If you pray, you can hold that person in your prayer.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: each as a lens for a week. Today, before you pass along a piece of news, ask: did someone see this, or did someone just say it? Day one thousand one hundred ninety-eight.",
+      "voice": "Your line: each as a lens for a week. A rumor isn't yet known, and a mood is not a person. See you tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Nyaya and Vaisheshika are traditionally studied together, and students of Indian logic learn the Nyaya Sutra's means of knowing alongside Vaisheshika's categories of what there is.",
   "games": {
+    "guess": [
+      "asking how I know, then what a thing is made of",
+      "believing news once enough neighbors repeat it",
+      "judging a person by their worst single moment"
+    ],
     "match": {
       "prompt": "the first pair of lenses — tap the pairs.",
       "pairs": [
@@ -132,14 +137,41 @@
     ],
     "recall": [
       [
-        "Yoga",
-        "stilling the movements of the mind"
+        "codana",
+        "the Veda's urging: its injunction"
       ],
       [
-        "darshana",
-        "a way of seeing"
+        "kaivalya",
+        "aloneness: the seer standing free"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your neighbor",
+      "says": "Everyone on the street says the bakery is closing. Doesn't that make it true?",
+      "options": [
+        "Nyaya would ask whose word it is: hearsay isn't false, just not yet known.",
+        "Yes, Nyaya counts any news repeated by many people as reliable word.",
+        "No, Nyaya says testimony can never count as a way of knowing anything."
+      ],
+      "answer": 0,
+      "meaning": "The Nyaya Sutra counts the word of a reliable person as a means of knowing; an unchecked rumor isn't that yet."
+    },
+    "gloss": {
+      "Nyaya": {
+        "meaning": "the school that asks: how do I know?",
+        "script": "न्याय",
+        "say": "NYAH-yuh"
+      },
+      "Vaisheshika": {
+        "meaning": "the school that asks: what is this made of?",
+        "script": "वैशेषिक",
+        "say": "vy-SHAY-shih-kuh"
+      },
+      "Nyaya Sutra": {
+        "meaning": "the root text of the Nyaya school of logic",
+        "say": "NYAH-yuh SOO-truh"
+      }
+    }
   },
   "sources": [
     {
@@ -169,7 +201,9 @@
       "Vaisheshika Sutra 1.1.4's list of categories (numbering differs between recensions); the script names only substance, quality and action 'and more'. Confirm.",
       "Applying the categories to a person's mood (quality vs. substance) is the course's own illustration, not a classical example. Confirm it doesn't distort the school.",
       "'We met its list earlier in this part' refers to days 1166–1170; adjust if the schedule changes.",
-      "Editor: the rumor scene moved from a group chat to a bus stop, since day 1183's hook was set in a group thread; 'maybe a thought sticks' became 'a thought can stick' so the script doesn't tell the listener what they think; the testimony line and the hook summary were adjusted to the new scene."
+      "Editor: the rumor scene moved from a group chat to a bus stop, since day 1183's hook was set in a group thread; 'maybe a thought sticks' became 'a thought can stick' so the script doesn't tell the listener what they think; the testimony line and the hook summary were adjusted to the new scene.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

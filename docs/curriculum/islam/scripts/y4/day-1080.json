@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the iqamah, and your line: stand now. Did you step into something calmly when it finally began? Before the iqamah, there was a space for a prayer. Today, what fills it. Day one thousand eighty.",
+      "voice": "Yesterday, the iqamah: stand now, calm, not a sprint. Before it, there was a space for a prayer. Today, what fills it.",
       "screen": [
         "`STAND NOW.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "The word is rawatib, the regular ones. They're the voluntary prayers the Prophet ﷺ kept attached to the obligatory prayers, some just before, some just after. Not required. But not random either. In Sahih Muslim, number 728, his wife Umm Habibah reports him saying that whoever prays twelve units a day and night, beyond the obligatory, will have a house built for them in the garden. And Umm Habibah adds that she never stopped praying them after she heard it. Jami at-Tirmidhi, number 415, lays out where those units fall: four before the noon prayer and two after it, two after the sunset prayer, two after the night prayer, and two before dawn. Another companion, Ibn Umar, in Sahih al-Bukhari, number 1180, remembers ten, with two before noon instead of four. The schools follow these reports in slightly different ways, and Shia practice keeps its own pattern of daily voluntary prayers. And among all of them, one pair gets special weight. Aishah says, in Sahih al-Bukhari, number 1169, that the Prophet ﷺ was not more careful about any voluntary prayer than the two before dawn. Why pray what isn't required? One answer is in the word sunnah itself: following how he actually prayed, not only what was demanded. Another is in a hadith in Sunan Abu Dawud, number 864: on the day of reckoning, if the obligatory prayers fall short, the voluntary ones are looked to, to make up what's missing. The frame protects the picture.",
+      "voice": "The word is rawatib, the regular ones: the voluntary prayers the Prophet ﷺ kept attached to the obligatory prayers, some just before, some just after. Not required, but not random either. In Sahih Muslim, number 728, his wife Umm Habibah reports him saying that whoever prays twelve units a day and night, beyond the obligatory, will have a house built for them in the garden. And Umm Habibah adds that she never stopped praying them after she heard it. Jami at-Tirmidhi, number 415, lays out where those units fall: four before the noon prayer and two after it, two after the sunset prayer, two after the night prayer, and two before dawn. Another companion, Ibn Umar, in Sahih al-Bukhari, number 1180, remembers ten, with two before noon instead of four. The schools follow these reports in slightly different ways, and Shia practice keeps its own pattern of daily voluntary prayers. Among all of them, one pair gets special weight. Aishah says, in Sahih al-Bukhari, number 1169, that the Prophet ﷺ was not more careful about any voluntary prayer than the two before dawn. Why pray what isn't required? One answer is in the word sunnah itself: following how he actually prayed, not only what was demanded. Another is in a hadith in Sunan Abu Dawud, number 864: on the day of reckoning, if the obligatory prayers fall short, the voluntary ones are looked to, to make up what's missing. The frame protects the picture.",
       "screen": [
         "`RAWATIB: THE REGULAR ONES.` · `UMM HABIBAH: TWELVE, A HOUSE IN THE GARDEN.` · `THE TWO BEFORE DAWN, KEPT MOST CAREFULLY.` · `THE FRAME PROTECTS THE PICTURE.` · then, large: `BETTER THAN THE WORLD AND ALL IN IT.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: add two before dawn. Not now, but plan it now. Settle, and breathe. Picture tomorrow morning: the alarm, the dark, the minute before the dawn prayer or before your day begins. See yourself adding something small and extra there, before the main thing. If you pray, those are the two units before fajr; you can decide now that tomorrow you'll pray them. If you don't, choose a two-minute habit to set before the first big task of your day. Then sit quietly with the decision made. The bell holds the time.",
+      "voice": "Picture tomorrow morning: the alarm, the dark, the minute before the dawn prayer or before your day begins, and see yourself adding something small and extra there, before the main thing. If you pray, those are the two units before fajr, and you can settle now on praying them; if you don't, choose a two-minute habit to set before the first big task of your day. Then sit quietly with the decision made.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the sunnah around it. Today, put one small extra thing just before or after something you have to do, and see how it changes it. Tomorrow, the odd prayer. Day one thousand eighty.",
+      "voice": "Your line: the sunnah around it. Small, extra, and kept, the way Umm Habibah kept hers. Up next: the odd prayer.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Muslims who keep the rawatib pray short voluntary units before or after the obligatory prayers, at home or in the mosque, following the pattern their school teaches, and give particular care to the two units before the dawn prayer.",
   "games": {
+    "guess": [
+      "the regular voluntary prayers kept around the obligatory ones",
+      "the five obligatory prayers said at fixed times each day",
+      "long night prayers said only in the month of Ramadan"
+    ],
     "match": {
       "prompt": "the sunnah prayers — tap the pairs.",
       "pairs": [
@@ -132,14 +137,50 @@
     ],
     "recall": [
       [
-        "shurut",
-        "conditions, true before it starts"
+        "da'imun",
+        "steady, keeping at prayer day after day"
       ],
       [
-        "Karbala",
-        "a hard chapter"
+        "suhur",
+        "the meal eaten in the dark before dawn"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your aunt",
+      "says": "Why pray the extra units before fajr if they aren't even required?",
+      "options": [
+        "They follow how the Prophet prayed, and he guarded those two before dawn most of all.",
+        "Because the extra units count toward the obligatory ones and shorten them.",
+        "Because the dawn prayer itself is only valid with the extra two first."
+      ],
+      "meaning": "Rawatib aren't required, but they follow how he prayed, and Aishah says he was most careful about the two before dawn.",
+      "answer": 0
+    },
+    "gloss": {
+      "rawatib": {
+        "meaning": "the regular voluntary prayers around the obligatory ones",
+        "script": "رواتب",
+        "say": "ruh-WAA-tib"
+      },
+      "Umm Habibah": {
+        "meaning": "a wife of the Prophet who kept the twelve units",
+        "say": "OOM huh-BEE-buh"
+      },
+      "Ibn Umar": {
+        "meaning": "a companion who remembered ten units",
+        "say": "ib-n OO-mar"
+      },
+      "fajr": {
+        "meaning": "the dawn prayer",
+        "script": "فجر",
+        "say": "FUJR"
+      },
+      "Aishah": {
+        "meaning": "a wife of the Prophet",
+        "script": "عائشة",
+        "say": "AA-ih-shuh"
+      }
+    }
   },
   "sources": [
     {
@@ -186,7 +227,9 @@
       "Hadith numbers and details to confirm: Muslim 725 (Aishah: the two rak'ahs of fajr are better than the world and what is in it); Muslim 728 (Umm Habibah: twelve rak'ahs, a house in Paradise; 'I have not left them since'); Tirmidhi 415 (the distribution of the twelve); Bukhari 1180 (Ibn 'Umar's ten); Bukhari 1169 (Aishah: none more regular than the two before fajr); Abu Dawud 864 (voluntary prayers make up for deficient obligatory ones).",
       "Shia practice (the daily nawafil, with a different count) is mentioned only as 'its own pattern'; Keeper may add detail.",
       "'Sunnah prayers' and 'rawatib' are used as near-synonyms per the index; strictly, sunnah prayers is broader.",
-      "Editor: carry names tomorrow; repeated 'picture' varied in the practice; hadith details checked, no other change."
+      "Editor: carry names tomorrow; repeated 'picture' varied in the practice; hadith details checked, no other change.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

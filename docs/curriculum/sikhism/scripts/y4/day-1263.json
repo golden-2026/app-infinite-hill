@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, karah prashad: equal parts flour, sugar and butter, stirred while the Guru's words were said. Your line was pray while cooking. What did you make, and what words went into it? Day one thousand two hundred sixty-three.",
+      "voice": "Yesterday, karah prashad, stirred while the Guru's words were said. Your line was pray while cooking.",
       "screen": [
         "`PRAY WHILE COOKING.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "The kirtan stops. The musicians set down their instruments, and a single person sits up at the front, near the Granth, without a harmonium. They read one line of Gurbani aloud, slowly. Then they read it again. And then they start to talk. Who wrote this line, and what was happening around it. What this one word means, and why the Guru may have picked it over another. A story from the Gurus' lives. Another line from elsewhere in the Granth that answers this one like an echo. A long while can pass on one sentence. Children who were fidgeting go still. This is katha.",
+      "voice": "The kirtan stops. The musicians set down their instruments, and one person sits up at the front, near the Granth, without a harmonium. They read a single line of Gurbani aloud, slowly. Then again. Then they start to talk. Who wrote this line, and what was happening around it. What this one word means, and why the Guru may have picked it over another. A story from the Gurus' lives. Another line from elsewhere in the Granth that answers this one like an echo. A long while can pass on one sentence. Children who were fidgeting go still. This is katha.",
       "screen": [
         "`THE MUSIC STOPS.` → `ONE LINE, READ TWICE.` → `THEN SOMEONE OPENS IT UP.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Katha means telling, or a discourse. In the gurdwara it means exposition: a teacher taking a passage of Gurbani and explaining it to the sangat. Kirtan sings the word. Katha unfolds it. The Sikh Rehat Maryada speaks to it directly. In paraphrase: in the congregation, only a Sikh may give katha, and the explanation must be in keeping with Gurmat, the Guru's teaching. So the code puts a guardrail around it. Katha is an aid to the word, not a stage for the speaker's own opinions dressed up as scripture. Here's a way to see the shape of it. The Granth stays where it is, open, above everyone. The teacher sits lower, facing the people, holding a line up to the light and turning it. A good explanation doesn't replace the line; it sends you back to it. When the talk ends, the line is still there, and now you can hear more in it. That matters because Gurbani is poetry, written in old Punjabi and other languages of its time, packed with images of rivers, merchants, brides and fields. Without someone to unpack them, a listener can sing a hymn for years and miss what it is saying. Katha is how the meaning gets passed from one person who has studied to a room full of people who want to understand. Some katha teachers speak at length on a single word; others give a short talk before the evening prayer. Either way the goal is the same: words that were heard, now explained.",
+      "voice": "Katha means telling, or a discourse. In the gurdwara it's exposition: a teacher taking a passage of Gurbani and explaining it to the sangat. Kirtan sings the word; katha unfolds it. The Sikh Rehat Maryada speaks to it directly. In paraphrase: in the congregation, only a Sikh may give katha, and the explanation must be in keeping with Gurmat, the Guru's teaching. That's a guardrail. Katha is an aid to the word, not a stage for the speaker's own opinions dressed up as scripture. Picture the shape of it. The Granth stays open, above everyone. The teacher sits lower, facing the people, holding a line up to the light and turning it. A good explanation doesn't replace the line; it sends you back to it, and now you hear more in it. Why it matters: Gurbani is poetry, written in old Punjabi and other languages of its time, packed with images of rivers, merchants, brides and fields. Without someone to unpack them, a listener can sing a hymn for years and miss what it's saying. Katha passes the meaning from one person who has studied to a room full of people who want to understand. Some teachers speak at length on a single word; others give a short talk before the evening prayer. Either way, words that were heard are now explained.",
       "screen": [
         "`KATHA: TELLING, EXPOSITION.` · `ONLY A SIKH, KEEPING TO GURMAT.` · `THE LINE STAYS ABOVE THE TALK.` · `POETRY THAT NEEDS UNPACKING.` · then, large: `EXPLAINED.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: listen to a short katha. Later today, if you can, find a few minutes of one, in a gurdwara or recorded. For now, try the shape of it yourself. Take one line you've met on this path, or even a single word, like Waheguru. Say it once, slowly. Then ask it the katha questions. What does each part mean? What picture is in it? Where else have you heard something like it? Don't hurry to an answer. Let the line sit in the middle, above your thoughts, and notice what opens. The bell holds the time.",
+      "voice": "Take one word you've met on this path, like Waheguru, and say it once, slowly. Then ask it the katha questions, one at a time: what does each part mean, what picture is in it, where else have you heard something like it? Don't hurry to an answer; let the word sit above your thoughts and notice what opens.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: explained. Today, ask someone who knows to explain one thing you've only half understood, and listen all the way to the end. Day one thousand two hundred sixty-three.",
+      "voice": "Your line: explained. A good explanation always sends you back to the line. Day one thousand two hundred sixty-three, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "In gurdwaras a katha may follow the kirtan: a teacher reads a passage of Gurbani and explains its words, setting and meaning to the congregation, while the Guru Granth Sahib remains open above.",
   "games": {
+    "guess": [
+      "explaining a passage of Gurbani to the sangat",
+      "singing hymns with harmonium and tabla",
+      "a reading of the whole Granth without a break"
+    ],
     "match": {
       "prompt": "inside katha: tap the pairs.",
       "pairs": [
@@ -139,7 +144,45 @@
         "Bavan Akhri",
         "fifty-two letters"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "a coworker",
+      "says": "At the gurdwara, someone stopped singing and just talked about one line. What was that?",
+      "options": [
+        "That's katha: a teacher explaining a line of Gurbani so the sangat hears more in it.",
+        "That's a pause in the kirtan so the congregation can rest before the next hymn.",
+        "That's a talk where the speaker shares personal opinions, apart from the Guru's words."
+      ],
+      "answer": 0,
+      "meaning": "Katha unfolds Gurbani for the sangat. The code says it must keep to Gurmat: an aid to the word, not a stage for opinions."
+    },
+    "gloss": {
+      "katha": {
+        "meaning": "telling; explaining Gurbani to the sangat",
+        "script": "ਕਥਾ",
+        "say": "KUH-thaa"
+      },
+      "kirtan": {
+        "meaning": "singing the Guru's hymns",
+        "script": "ਕੀਰਤਨ",
+        "say": "KEER-tun"
+      },
+      "Gurbani": {
+        "meaning": "the Gurus' words, the hymns of the Granth",
+        "script": "ਗੁਰਬਾਣੀ",
+        "say": "GUR-baa-nee"
+      },
+      "Gurmat": {
+        "meaning": "the Guru's teaching",
+        "script": "ਗੁਰਮਤਿ",
+        "say": "GUR-mut"
+      },
+      "sangat": {
+        "meaning": "the gathered congregation",
+        "script": "ਸੰਗਤ",
+        "say": "SUNG-ut"
+      }
+    }
   },
   "sources": [
     {
@@ -157,7 +200,9 @@
       "'Katha means telling, or a discourse' is given as a meaning, not an etymology; please confirm.",
       "The hook is an illustrative scene of a katha, not a description of a fixed order of service; please confirm it is recognizable.",
       "The description of Gurbani as written in old Punjabi and other languages of its time is kept general; please confirm.",
-      "Editor pass: the practice no longer calls Waheguru a 'line' (it is a single word); the children 'go still' detail in the hook is a picture, not a claim."
+      "Editor pass: the practice no longer calls Waheguru a 'line' (it is a single word); the children 'go still' detail in the hook is a picture, not a claim.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

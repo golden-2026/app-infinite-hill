@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the nikah: consent of both, an offer accepted out loud, witnesses, a celebration. Your line was a contract of mercy. Where did you add a little mercy to the terms? Day one thousand two hundred eighteen.",
+      "voice": "Yesterday, the nikah: offer, acceptance and the consent of both. Your line: a contract of mercy.",
       "screen": [
         "`A CONTRACT OF MERCY.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Mahr is the bride's gift, given by the groom, and it is part of the nikah from yesterday. First, what the Qur'an calls it. Surah four, verse four, in Pickthall's translation: \"And give unto the women (whom ye marry) free gift of their marriage portions.\" A free gift. Not a price paid for a person, not a fee to her family. Second, whose it is. In Islamic law the mahr belongs to the bride. Not to her father, not to her brothers, not to the couple's shared account. Hers. The same verse goes on to say that if she chooses, of her own accord, to give some of it back, that's her call to make. And a little further on in that surah, the Qur'an tells husbands not to take back what they gave, even if it was a great amount. Third, the story from the hook. The man came back without even a ring. So the Prophet asked: what do you know of the Qur'an? The man named some surahs he knew by heart. And the Prophet married them for what he knew of the Qur'an. Some versions of the report say he was to teach them to her. The gift doesn't have to be gold. It does have to be hers. Fourth, how it's done today. Some couples agree a mahr paid at the wedding, some write part of it into the contract to be paid later, and the schools differ on details like whether there's a minimum. This week ran from schools to law in life: other schools, one row, why they differ, the fatwa, the judge, the nikah, and now the gift. By the end of it, the questions had turned into who owes what to whom.",
+      "voice": "Mahr is the bride's gift, given by the groom, and it's part of yesterday's nikah. Surah four, verse four, names it, in Pickthall's translation: \"And give unto the women (whom ye marry) free gift of their marriage portions.\" A free gift. Not a price paid for a person, not a fee to her family. Whose is it? In Islamic law the mahr belongs to the bride. Not to her father, not to her brothers, not to a shared account. Hers. The same verse says that if she chooses, of her own accord, to give some of it back, that's her call. And a little further on, the Qur'an tells husbands not to take back what they gave, even if it was a great amount. Now the story from the hook. The man came back without even a ring. So the Prophet asked: what do you know of the Qur'an? The man named some surahs he knew by heart, and the Prophet married them for what he knew of the Qur'an. Some versions say he was to teach them to her. The gift doesn't have to be gold. It does have to be hers. Today, some couples agree a mahr paid at the wedding, some write part of it into the contract to be paid later, and the schools differ on details like whether there's a minimum. This week ran from schools to law in life: other schools, one row, why they differ, the fatwa, the judge, the nikah, and now the gift. By its end, the questions had turned into who owes what to whom.",
       "screen": [
         "`A FREE GIFT, NOT A PRICE.` · `HERS, NOT HER FAMILY'S.` · `WHAT DO YOU KNOW OF THE QUR'AN?` · `PAID NOW, OR WRITTEN IN FOR LATER.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: think about a gift that is hers alone, or his, or theirs. Settle, and breathe. Bring to mind someone you love. Now think of something you could give them that would be wholly theirs. Not a gift that's secretly for you, not one that comes with a favor attached. It might be money. It might be time. It might be something you know and could teach them. Hold that gift in mind, and notice how it feels to give without keeping a share. If you pray, you can remember that person kindly in your own words. The bell holds the time.",
+      "voice": "Bring to mind someone you love, and something you could give them that would be wholly theirs, not secretly for you: money, time, or something you know and could teach them. Hold that gift, and notice how it feels to give without keeping a share. If you pray, you can remember that person kindly in your own words.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: hers alone. Today, give someone one thing that is fully theirs, with nothing attached, not even a thank-you. Day one thousand two hundred eighteen.",
+      "voice": "Your line: hers alone. A free gift, not a price, and never her family's. See you tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "In a Muslim marriage the groom gives the bride a mahr agreed in the contract, sometimes paid at the wedding and sometimes partly deferred; it belongs to her, and couples choose amounts from the symbolic to the substantial.",
   "games": {
+    "guess": [
+      "the bride's gift from the groom, which belongs to her alone",
+      "a bride price the groom pays to her father's family",
+      "the dowry a bride's family brings into the marriage"
+    ],
     "match": {
       "prompt": "the bride's gift — tap the pairs.",
       "pairs": [
@@ -132,14 +137,47 @@
     ],
     "recall": [
       [
-        "turbah",
-        "a small tablet of baked clay"
+        "ijtihad",
+        "full effort to reach a ruling"
       ],
       [
-        "marja'",
-        "the jurist a believer follows"
+        "shari'ah",
+        "the path Allah set"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your best friend",
+      "says": "So the mahr is basically paying the bride's family for her, right?",
+      "options": [
+        "No. It's a free gift to the bride, and it belongs to her alone.",
+        "Right. The mahr goes to her father, who decides how it's spent.",
+        "Sort of. It's held in a shared account the couple both control."
+      ],
+      "answer": 0,
+      "meaning": "The Qur'an calls the mahr a free gift. It belongs to the bride, not her father or brothers; she may give some back only of her own accord."
+    },
+    "gloss": {
+      "mahr": {
+        "meaning": "the bride's gift, which belongs to her",
+        "script": "مهر",
+        "say": "MAHR"
+      },
+      "Medina": {
+        "meaning": "the city where the Prophet lived and taught",
+        "script": "المدينة",
+        "say": "meh-DEE-nah"
+      },
+      "nikah": {
+        "meaning": "the marriage contract",
+        "script": "نكاح",
+        "say": "ni-KAAH"
+      },
+      "Sahih al-Bukhari": {
+        "meaning": "a collection of hadith reports",
+        "script": "صحيح البخاري",
+        "say": "sa-HEEH al-bu-KHAH-ree"
+      }
+    }
   },
   "sources": [
     {
@@ -177,7 +215,9 @@
       "Bukhari 5135 (also 5030, 5087 and others) paraphrased; confirm the number. 'Some versions of the report say he was to teach them to her': confirm.",
       "Schools differ on a minimum mahr (e.g. Hanafi and Maliki set minimums; Shafi'i and Hanbali do not); no amounts given.",
       "Ali and Fatimah's armor-mahr was taught in year 3 (day 778); this script uses a different report to avoid repetition.",
-      "Practice widened to 'hers alone, or his, or theirs' so anyone can do it; the index practice is 'a gift that is hers alone'."
+      "Practice widened to 'hers alone, or his, or theirs' so anyone can do it; the index practice is 'a gift that is hers alone'.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, ijtihad, and your line: effort to understand. Which question did you give your full effort, and did the effort change the answer? Day one thousand one hundred seventy-nine.",
+      "voice": "Yesterday: ijtihad, a qualified scholar's full effort. Your line: effort to understand.",
       "screen": [
         "`EFFORT TO UNDERSTAND.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Who taught you how to tie your shoes? Not a theory of knots. A person, who knew, and showed you, and you trusted them. Nobody derives shoelaces from first principles. Now take a harder question. A Muslim misses a day of the Ramadan fast while traveling. How exactly is it made up, and by when? Yesterday we met the mujtahid, the scholar qualified to work that out from the sources. But what about the nurse, the bus driver, the student, who has never studied legal theory and never will? The Qur'an, in Surah al-Nahl, tells its hearers to ask the people of the reminder if they do not know. Today's word is what happens next.",
+      "voice": "Who taught you how to tie your shoes? Not a theory of knots. A person, who knew, and showed you, and you trusted them. Now a harder question. A Muslim misses a day of the Ramadan fast while traveling. How exactly is it made up, and by when? A mujtahid can work that out from the sources. But what about the nurse, the bus driver, the student, who has never studied legal theory and never will? The Qur'an, in Surah al-Nahl, tells its hearers to ask the people of the reminder if they do not know. Today's word is what happens next.",
       "screen": [
         "`WHO TAUGHT YOU YOUR SHOELACES?` → `A MISSED FAST, MADE UP HOW?` → `ASK, IF YOU DO NOT KNOW.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: learn which school you follow, or would. If you're Muslim and don't know, notice that, gently. Who taught you to pray? Whom did they learn from? If you know, say the name of your school or your marja' quietly, and remember one ruling you keep because of them. If you're not Muslim, ask the same question of your own life: whose guidance do you follow on the things you haven't studied, and why do you trust them? Then picture one teacher, and hold that face. The bell holds the time.",
+      "voice": "If you're Muslim, ask yourself who taught you to pray and whom they learned from; if you know your school or your marja', say the name quietly and remember one ruling you keep because of them. If you're not Muslim, ask whose guidance you follow on the things you haven't studied, and why you trust them. Then hold one teacher's face in mind.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: follow one who knows. Today, when you lean on someone else's knowledge, ask once why you trust them. Day one thousand one hundred seventy-nine.",
+      "voice": "Your line: follow one who knows. Trust, placed carefully, in someone qualified. Until tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Sunni Muslims may follow one of the established schools of law, often the one their teachers or region follow; Shia Muslims follow a living marja' al-taqlid and consult that jurist's book of practical rulings.",
   "games": {
+    "guess": [
+      "taking a practical ruling from a qualified scholar or school",
+      "accepting core beliefs on someone else's word alone",
+      "copying whatever the crowd around you happens to do"
+    ],
     "match": {
       "prompt": "following a scholar — tap the pairs.",
       "pairs": [
@@ -139,7 +144,45 @@
         "rijal",
         "the narrators in the chains"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "a friend at work",
+      "says": "If you follow a scholar instead of checking the evidence, isn't that just lazy?",
+      "options": [
+        "Not lazy: it's trusting someone qualified on practical rulings, like a good teacher.",
+        "It's fine, because anyone who sounds confident can be followed.",
+        "It's lazy, so real believers work out every ruling alone and never ask anyone."
+      ],
+      "answer": 0,
+      "meaning": "Taqlid is the trust of the shoelaces, placed carefully: in someone qualified and trustworthy, and only for practical rulings."
+    },
+    "gloss": {
+      "taqlid": {
+        "meaning": "following a qualified scholar's practical ruling",
+        "script": "تقليد",
+        "say": "tak-LEED"
+      },
+      "marja' al-taqlid": {
+        "meaning": "for Shia Muslims, a living jurist to follow",
+        "script": "مرجع التقليد",
+        "say": "MAR-ja at-tak-LEED"
+      },
+      "qiladah": {
+        "meaning": "a necklace or collar",
+        "script": "قلادة",
+        "say": "ki-LAA-dah"
+      },
+      "Surah al-Nahl": {
+        "meaning": "the Qur'an's sixteenth surah, the Bee",
+        "script": "سورة النحل",
+        "say": "SOO-rah an-NAHL"
+      },
+      "mujtahid": {
+        "meaning": "a scholar qualified to work rulings out from the sources",
+        "script": "مجتهد",
+        "say": "MUJ-ta-hid"
+      }
+    }
   },
   "sources": [
     {
@@ -160,7 +203,9 @@
       "Shia: each marja' publishes a risalah 'amaliyyah; confirm 'each' and the description 'a living jurist' (rules on following a deceased marja' vary).",
       "Description of Sunni critics of madhhab-following and the reply: confirm it is fair and unranked.",
       "Missed fast while traveling used as an example; the script does not state the ruling.",
-      "Editor pass: removed 'each marja'' generalization (voice and match); 'jurists in both' recast as 'have taught'; varied the repeated practice close."
+      "Editor pass: removed 'each marja'' generalization (voice and match); 'jurists in both' recast as 'have taught'; varied the repeated practice close.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

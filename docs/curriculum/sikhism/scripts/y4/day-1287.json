@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, why a written code: it travels, it settles things fairly, it welcomes the newcomer. Your line was one code, many homes. Who did you show the ropes to? Day one thousand two hundred eighty-seven.",
+      "voice": "Yesterday, why a written code: it travels, it settles things fairly, it welcomes the newcomer. Your line was one code, many homes.",
       "screen": [
         "`ONE CODE, MANY HOMES.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "Early morning in a Sikh home. Someone sits on the edge of a bed with long hair down past the shoulders, still damp. A small wooden comb works through it from the ends up, slowly, patiently, one knot at a time. Then the hair is twisted, wound into a knot on top of the head, and covered. Outside that room, people mostly notice only the last step, the turban or the head covering. They rarely see the quiet minutes before it. We met kesh, uncut hair, earlier on this path, as one of the five Ks. Today isn't about the rule. It's about the morning.",
+      "voice": "Early morning in a Sikh home. Someone sits on the edge of a bed, long hair down past the shoulders, still damp. A small wooden comb works through it from the ends up, one knot at a time. Then the hair is twisted, wound into a knot on top of the head, and covered. Outside that room, people mostly notice only the last step. Early on this path you met kesh, uncut hair kept as it was made, one of the five Ks. Today isn't the rule. It's the morning.",
       "screen": [
         "`DAMP HAIR, A WOODEN COMB.` → `TWISTED, KNOTTED, COVERED.` → `NOT THE RULE: THE MORNING.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "The Sikh code asks Sikhs to keep the hair uncut, and Sikhs speak of it as a gift kept as it was given. But keeping is a verb. It happens every day, and it has three parts. Washing comes first. Long hair has to be washed and dried with care, and it often becomes part of the early-morning bath before prayer, so the body is clean when the mind turns to the Name. Combing comes second. The kangha, the small comb, is itself one of the five Ks, kept in the hair. The code asks Sikhs to comb the hair, and the kangha is there so it can be done any time of day. Some Sikhs say a prayer or recite while they comb, so that tending the hair and remembering God happen together. Covering comes third. The hair is gathered up and covered, with a turban, a keski, a chunni or another covering, so it is kept clean and kept in honor. Notice what this does to a rule. Don't cut your hair is something you could keep by doing nothing at all. Caring for kesh asks for something every single morning. It turns a boundary into a small daily act of attention. It also turns the body into part of the practice. A Sikh doesn't only keep the hair; the hair keeps reminding the Sikh. Each tangle asks for patience. Each covering is a small act of respect. And tomorrow the comb comes out again. Daily care.",
+      "voice": "The Sikh code asks Sikhs to keep the hair uncut, and Sikhs speak of it as a gift kept as it was given. But keeping is a verb, and it has three parts. Washing comes first. Long hair is washed and dried with care, often as part of the early-morning bath before prayer, so the body is clean when the mind turns to the Name. Combing comes second. The kangha, the small comb, is itself one of the five Ks, kept in the hair so it can be used any time of day. The code asks Sikhs to comb the hair, and some say a prayer or recite while they comb, so tending the hair and remembering God happen together. Covering comes third. The hair is gathered up and covered, with a turban, a keski, a chunni or another covering, kept clean and kept in honor. Notice what this does to a rule. Don't cut your hair could be kept by doing nothing at all. Caring for kesh asks for something every single morning. It turns a boundary into a small daily act of attention, and the body into part of the practice. A Sikh doesn't only keep the hair; the hair keeps reminding the Sikh. Each tangle asks for patience. Each covering is a small act of respect. And tomorrow the comb comes out again.",
       "screen": [
         "`KEEPING IS A VERB.` · `WASHED BEFORE PRAYER.` · `COMBED WITH THE KANGHA.` · `COVERED, KEPT IN HONOR.` · then, large: `DAILY CARE.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: comb your hair slowly. If you have a comb or brush nearby, pick it up. If your hair is short or gone, run your fingers over your head instead. Settle, and breathe. Start at the ends and work up, slowly, one stroke at a time. When you meet a knot, don't pull. Pause, and work it loose. Notice the feel of it, and your own hands caring for you. If you pray, you can remember God with each stroke. If not, just give the comb your full attention until the bell. The bell holds the time.",
+      "voice": "If a comb or brush is nearby, pick it up; if your hair is short or gone, use your fingers instead. Work slowly from the ends up, and when you meet a knot, don't pull: pause, and work it loose. If you pray, remember God with each stroke; if not, just give your hands your full attention.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: daily care. Today, pick one thing you own or keep, a plant, a tool, your own body, and give it a few minutes of slow, deliberate care. Day one thousand two hundred eighty-seven.",
+      "voice": "Your line: daily care. A rule that's kept by doing, every morning. Day twelve eighty-seven, kept.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Sikhs who keep kesh wash, comb and cover their hair as part of the daily routine, often in the early morning before prayer, using the kangha kept in the hair.",
   "games": {
+    "guess": [
+      "washing, combing and covering the uncut hair each day",
+      "trimming the hair neatly before an important prayer",
+      "a special oil blessed at the gurdwara for the hair"
+    ],
     "match": {
       "prompt": "the three parts of care: tap the pairs.",
       "pairs": [
@@ -137,9 +142,45 @@
       ],
       [
         "naam karan",
-        "the naming"
+        "the Sikh naming, from a hukam"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your little cousin",
+      "says": "If Sikhs just don't cut their hair, isn't that kind of doing nothing?",
+      "options": [
+        "Not quite: kesh is washed, combed with the kangha and covered every day, with care.",
+        "Yes. The rule only asks you to leave it alone; no daily care is involved.",
+        "No. It means cutting it only on festival days, then letting it grow back."
+      ],
+      "answer": 0,
+      "meaning": "Keeping is a verb: caring for kesh means washing, combing and covering it every morning, a small daily act of attention."
+    },
+    "gloss": {
+      "kesh": {
+        "meaning": "uncut hair, one of the five Ks",
+        "script": "ਕੇਸ",
+        "say": "KAYS"
+      },
+      "kangha": {
+        "meaning": "the small comb kept in the hair",
+        "script": "ਕੰਘਾ",
+        "say": "KUNG-haa"
+      },
+      "keski": {
+        "meaning": "a shorter turban, one of the coverings",
+        "script": "ਕੇਸਕੀ",
+        "say": "KAYS-kee"
+      },
+      "chunni": {
+        "meaning": "a long scarf worn over the head",
+        "script": "ਚੁੰਨੀ",
+        "say": "CHUN-nee"
+      },
+      "five Ks": {
+        "meaning": "the five articles of faith Sikhs keep on the body"
+      }
+    }
   },
   "sources": [
     {
@@ -157,7 +198,10 @@
       "The early-morning bath before prayer is described as common ('often'); the code's guidance on rising early and bathing supports the habit, but please confirm or soften.",
       "'Sikhs speak of it as a gift kept as it was given' is a general description; confirm.",
       "Head coverings listed: turban, keski, chunni; confirm the list and that it is appropriate for all genders as phrased.",
-      "Editor pass: the code asks all Sikhs, not only the initiated, to keep the hair uncut, so the line was corrected; trimmed stock uplift ('nobody does it perfectly') and a stock phrase in the practice."
+      "Editor pass: the code asks all Sikhs, not only the initiated, to keep the hair uncut, so the line was corrected; trimmed stock uplift ('nobody does it perfectly') and a stock phrase in the practice.",
+      "Point-back (YEARS_4_5, Sikh cut hair): the hook points to day 265 (Kesh: hair as given, carry 'as made') without repeating it. The carry's homework cut.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

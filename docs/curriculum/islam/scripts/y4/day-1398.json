@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, poverty and zakat today, and an axe head with a handle the Prophet fixed himself. Your line was zakat can lift. What did you ask before you gave? Day one thousand three hundred ninety-eight.",
+      "voice": "Yesterday: poverty and zakat today, and an axe head with a handle the Prophet fixed himself. Your line was zakat can lift. Today, where knowledge is handed on.",
       "screen": [
         "`ZAKAT CAN LIFT.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A sheet of paper, handwritten, with a list of names running down it. At the bottom, a student's name. Above it, the teacher who heard the student recite and gave permission to teach. Above that, the teacher's teacher, and above that, another, and another, climbing back through the generations. It's called an ijaza, a permission, and in the tradition it's how knowledge is handed on: not just from a book, but from a person who learned it from a person. Today we visit some of the places where that handing on happens now, from old courtyards to a laptop on a kitchen table.",
+      "voice": "A sheet of paper, handwritten, with a list of names running down it. At the bottom, a student's name. Above it, the teacher who heard the student recite and gave permission to teach. Above that, the teacher's teacher, and another, and another, climbing back through the generations. It's called an ijaza, a permission, and in the tradition it's how knowledge is handed on: not just from a book, but from a person who learned it from a person.",
       "screen": [
         "`A LIST OF NAMES, CLIMBING BACK.` → `IJAZA: A PERMISSION.` → `FROM PERSON TO PERSON.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "The Qur'an gives the student's prayer in a few words. Pickthall translates it: \"My Lord! Increase me in knowledge.\" And in Sahih Muslim, the Prophet Muhammad, peace be upon him, says, in paraphrase, that whoever takes a path seeking knowledge, Allah makes easy for him a path to Paradise. So where are those paths today? Start in Cairo, at al-Azhar, a mosque and a university where Sunni students study Qur'an, hadith, law and Arabic. Go east to Iraq and to Iran, to Najaf and to Qom. These are cities of the hawza, the Shia seminaries, where students sit with teachers and train to become scholars of law. Then to Deoband, a town in northern India with a seminary whose name is carried by schools in other countries too. Then to Medina, the Prophet's own city, home to the Islamic University. Each place has its own emphases, its own teachers and its own way of teaching, and Muslims hold different views about them. And then a new place: online. Recorded lessons, live classes, a teacher in one country and a student in another, sometimes still ending with an ijaza given across a screen. Some teachers warn that a video can't correct your mistakes the way a person in the room can. Others say it opens a door that was closed to people far from any city of learning. The old shape still holds, though: a student, a teacher, a text, and a question asked out loud.",
+      "voice": "The Qur'an gives the student's prayer in a few words. Pickthall translates it: \"My Lord! Increase me in knowledge.\" And in Sahih Muslim, the Prophet Muhammad, peace be upon him, says, in paraphrase, that whoever takes a path seeking knowledge, Allah makes easy for him a path to Paradise. So where are those paths today? Start in Cairo, at al-Azhar, a mosque and a university where Sunni students study Qur'an, hadith, law and Arabic. Go east to Iraq and Iran, to Najaf and Qom, cities of the hawza, the Shia seminaries, where students sit with teachers and train as scholars of law. Then Deoband, a town in northern India with a seminary whose name is carried by schools in other countries too. Then Medina, the Prophet's own city, home to the Islamic University. Each place has its own emphases, its own teachers and its own way of teaching, and Muslims hold different views about them. And then a new place: online. Recorded lessons, live classes, a teacher in one country and a student in another, sometimes still ending with an ijaza given across a screen. Some teachers warn that a video can't correct your mistakes the way a person in the room can. Others say it opens a door that was closed to people far from any city of learning. The old shape still holds: a student, a teacher, a text, and a question asked out loud.",
       "screen": [
         "`INCREASE ME IN KNOWLEDGE.` · `AL-AZHAR IN CAIRO.` · `NAJAF AND QOM: THE HAWZA.` · `DEOBAND, MEDINA, AND ONLINE.` · then, large: `A PATH TO PARADISE MADE EASY.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: remember your own chain. Settle, and breathe. Think of one thing you know well, a recipe, a skill, a prayer, a way of fixing something. Who taught it to you? And who taught them? Go up the list as far as you can, name by name, face by face, and notice where it fades. Then think of one thing you'd like to learn, from a person and not just a screen. If you pray, you can say the Qur'an's short prayer for knowledge. If you don't, just hold the wish to learn. The bell holds the time.",
+      "voice": "Think of one thing you know well, a recipe, a skill, a prayer, a way of fixing something, and ask who taught it to you, and who taught them. Go up the list as far as you can, name by name, face by face, and notice where it fades. If you pray, say the Qur'an's short prayer for knowledge; if you don't, just hold the wish to learn.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: where they study. Today, look up one of these places and read one thing about how students learn there. Tomorrow, women scholars today. Day one thousand three hundred ninety-eight.",
+      "voice": "Your line: where they study. From old courtyards to a laptop on a kitchen table. Day one thousand three hundred ninety-eight, done.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Muslims who want to study their tradition in depth may enroll at a university or seminary such as al-Azhar, a hawza in Najaf or Qom, a madrasa in the Deobandi tradition, or the Islamic University of Medina, or join classes with a teacher online or at a local mosque.",
   "games": {
+    "guess": [
+      "where Muslims study now, from al-Azhar to online, teacher to student",
+      "Western university degrees in the history of Islam alone",
+      "a cash grant that pays a Muslim student's school fees"
+    ],
     "match": {
       "prompt": "where they study — tap the pairs.",
       "pairs": [
@@ -132,14 +137,55 @@
     ],
     "recall": [
       [
-        "kafan",
-        "the shroud"
+        "isnad",
+        "the chain of narrators behind a hadith"
       ],
       [
-        "'iyadah",
-        "visiting the sick"
+        "mushaf",
+        "a written copy of the Qur'an"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your coworker",
+      "says": "Where do people actually train to become Muslim scholars today?",
+      "options": [
+        "Many places: al-Azhar, Najaf, Qom, Deoband, Medina, and now online too.",
+        "Only in Mecca; every scholar has to study at the Ka'ba itself.",
+        "Nowhere formal; anyone who reads a few books can call himself one."
+      ],
+      "meaning": "Al-Azhar in Cairo, the hawza of Najaf and Qom, Deoband, Medina's Islamic University and online classes all hand knowledge on, teacher to student.",
+      "answer": 0
+    },
+    "gloss": {
+      "ijaza": {
+        "meaning": "a teacher's permission to teach what the student learned",
+        "script": "إجازة",
+        "say": "ee-JAH-zah"
+      },
+      "al-Azhar": {
+        "meaning": "a mosque and university in Cairo",
+        "script": "الأزهر",
+        "say": "al-AZ-har"
+      },
+      "hawza": {
+        "meaning": "a Shia seminary",
+        "script": "حوزة",
+        "say": "HOW-zah"
+      },
+      "Najaf": {
+        "meaning": "a city of learning in Iraq",
+        "script": "النجف",
+        "say": "NAH-jaf"
+      },
+      "Qom": {
+        "meaning": "a city of learning in Iran",
+        "say": "KOHM"
+      },
+      "Deoband": {
+        "meaning": "a seminary town in northern India",
+        "say": "DAY-oh-bund"
+      }
+    }
   },
   "sources": [
     {
@@ -164,7 +210,9 @@
       "The online debate (some warn, others welcome) is described generally, with no named scholars.",
       "Confirm Pickthall's wording of 20:114 and Muslim 2699.",
       "The trapdoor's 'old men with old books' is the listener's assumed first floor; tomorrow (women scholars) answers it further.",
-      "Editor: 'each place has its own school of thought' was inaccurate (al-Azhar and Medina are both Sunni) and became 'its own emphases'; cut the narrator's verdict 'part of the picture, not a flaw'."
+      "Editor: 'each place has its own school of thought' was inaccurate (al-Azhar and Medina are both Sunni) and became 'its own emphases'; cut the narrator's verdict 'part of the picture, not a flaw'.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, following another school, and your line: doors between schools. Did anyone ask you for an exception, or did you ask for one? What reason was given? Day one thousand two hundred thirteen.",
+      "voice": "Yesterday, following another school: a door opened for a need, with a reason. Your line: doors between schools.",
       "screen": [
         "`DOORS BETWEEN SCHOOLS.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A traveler steps off a bus in a city she has never seen, bag still on her shoulder, and follows the sound of the call to the nearest mosque. The prayer has already started. She doesn't know the imam's name. She doesn't know which school his teachers followed, or how he was taught to wash before he stood up there. She slips into the end of the last row, closes the gap beside a stranger, and raises her hands with everyone else. Should she have asked first? Does her prayer depend on details she can't see? Today: praying behind another.",
+      "voice": "A traveler steps off a bus in a city she has never seen, bag still on her shoulder, and follows the sound of the call to the nearest mosque. The prayer has already started. She doesn't know the imam's name, which school his teachers followed, or how he was taught to wash before he stood up there. She slips into the end of the last row, closes the gap beside a stranger, and raises her hands with everyone else. Should she have asked first? Does her prayer depend on details she can't see? Today: praying behind another.",
       "screen": [
         "`A STRANGE CITY, A STRANGE MOSQUE.` → `AN IMAM SHE DOESN'T KNOW.` → `SHE JOINS THE ROW.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the question the jurists asked. If the imam follows one school and I follow another, does my prayer behind him count? They argued over whose rules decide it, the imam's school or the follower's. Some judged that if the imam's prayer is sound by his own school, the people behind him may follow him. Others added conditions. But the row kept forming. Second, a report in Sahih al-Bukhari, from Abu Hurayrah. The Prophet Muhammad ﷺ said of those who lead the prayer, in meaning: they lead you, and if they get it right, it's for you and for them, and if they get it wrong, it's for you and against them. The follower's prayer isn't hostage to every detail of the imam's. Third, a story told in later books about Imam Ahmad ibn Hanbal. In his view, bleeding called for a fresh wudu. Someone asked whether he would pray behind an imam who had bled and not washed again, following a school that didn't require it. The answer, as the story goes: how could I not pray behind Malik, or Sa'id ibn al-Musayyib? Great scholars, whose view on bleeding wasn't his. Fourth, the row itself. In Bukhari, the Prophet tells the people to straighten their rows, and calls that part of establishing the prayer. And Anas, a companion, describes them standing shoulder to shoulder, foot to foot. The row is built from bodies, not from opinions. A Hanafi shoulder against a Shafi'i shoulder, the gap closed. In Mecca, pilgrims from different schools pray behind the imams of the Sacred Mosque. The hands differ. The row doesn't.",
+      "voice": "The jurists asked it plainly. If the imam follows one school and I follow another, does my prayer behind him count? They argued over whose rules decide it, the imam's school or the follower's. Some judged that if the imam's prayer is sound by his own school, the people behind him may follow him. Others added conditions. But the row kept forming. A report in Sahih al-Bukhari, from Abu Hurayrah: the Prophet Muhammad ﷺ said of those who lead the prayer, in meaning, they lead you, and if they get it right, it's for you and for them, and if they get it wrong, it's for you and against them. The follower's prayer isn't hostage to every detail of the imam's. Then a story told in later books about Imam Ahmad ibn Hanbal. In his view, bleeding called for a fresh wudu. Someone asked whether he would pray behind an imam who had bled and not washed again, following a school that didn't require it. The answer, as the story goes: how could I not pray behind Malik, or Sa'id ibn al-Musayyib? Great scholars, whose view on bleeding wasn't his. Last, the row itself. In Bukhari, the Prophet tells the people to straighten their rows, and calls that part of establishing the prayer. Anas, a companion, describes them standing shoulder to shoulder, foot to foot. The row is built from bodies, not opinions: a Hanafi shoulder against a Shafi'i shoulder, the gap closed. In Mecca, pilgrims from different schools pray behind the imams of the Sacred Mosque. The hands differ. The row doesn't.",
       "screen": [
         "`WHOSE RULES DECIDE IT?` · `IF HE ERRS, IT IS AGAINST HIM.` · `HOW COULD I NOT PRAY BEHIND MALIK?` · `SHOULDER TO SHOULDER, FOOT TO FOOT.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: pray behind someone different. If you go to a mosque, you can stand next to someone whose hands or whose amin aren't like yours, and close the gap. Right now, for the sit, stand or sit tall. Feel your shoulders. Imagine a shoulder on either side of you, touching yours: a stranger, a neighbor, someone whose way you don't share. Breathe with them. Don't fix their hands. Don't fix yours. If you don't pray, you can do the same in any line you're in today, at a bus stop or a checkout. The bell holds the time.",
+      "voice": "Sit or stand tall and feel your shoulders. Imagine a shoulder on either side touching yours, a stranger, a neighbor, someone whose way you don't share, and breathe with them. Don't fix their hands, and don't fix yours.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: one row. Today, stand beside someone whose habits differ from yours, and let them stay as they are. Day one thousand two hundred thirteen.",
+      "voice": "Your line: one row. Different hands, and still no gap. Day one thousand two hundred thirteen.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "In mosques with people from different schools, worshippers stand in one straight row behind one imam, each keeping their own school's details, such as where the hands are placed, while following the imam's movements.",
   "games": {
+    "guess": [
+      "joining a row led by an imam of a different school",
+      "praying alone at the back after the group has finished",
+      "standing in for an imam who is absent that day"
+    ],
     "match": {
       "prompt": "praying behind another — tap the pairs.",
       "pairs": [
@@ -132,14 +137,52 @@
     ],
     "recall": [
       [
-        "mihnah",
-        "trial, ordeal"
+        "The Musnad",
+        "Ahmad's hadith book, arranged by Companion"
       ],
       [
-        "The Musnad",
-        "arranged by Companion"
+        "'urf",
+        "what a community recognizes"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your college roommate",
+      "says": "If the imam follows a different school than me, does my prayer behind him still count?",
+      "options": [
+        "Many jurists say yes, if his prayer is sound by his own school. The row holds.",
+        "No. You'd have to ask which school the imam follows before you join the row.",
+        "Only in Mecca. Anywhere else, each school has to pray in its own row."
+      ],
+      "answer": 0,
+      "meaning": "Many jurists judged that if the imam's prayer is sound by his own school, those behind him may follow. If he errs, it's against him."
+    },
+    "gloss": {
+      "Abu Hurayrah": {
+        "meaning": "a Companion who reported the hadith on those who lead",
+        "script": "أبو هريرة",
+        "say": "AH-boo hoo-RAY-rah"
+      },
+      "Ahmad ibn Hanbal": {
+        "meaning": "the imam the Hanbali school is named for",
+        "script": "أحمد بن حنبل",
+        "say": "AH-mad ib-n HAN-bal"
+      },
+      "Sa'id ibn al-Musayyib": {
+        "meaning": "an early great scholar, named beside Malik in the story",
+        "script": "سعيد بن المسيب",
+        "say": "sah-EED ib-n al-mu-SAY-yib"
+      },
+      "Anas": {
+        "meaning": "a Companion who described the rows, shoulder to shoulder",
+        "script": "أنس",
+        "say": "AH-nas"
+      },
+      "wudu": {
+        "meaning": "the washing before prayer",
+        "script": "وضوء",
+        "say": "woo-DOO"
+      }
+    }
   },
   "sources": [
     {
@@ -182,7 +225,9 @@
       "Bukhari 723 and 725 (straightening rows; Anas, shoulder to shoulder, foot to foot): confirm numbers.",
       "Ahmad ibn Hanbal story ('how could I not pray behind Malik and Sa'id ibn al-Musayyib?') is told by Ibn Taymiyya; framed as 'a story told in later books'. Confirm the setting (bleeding/cupping and wudu) and source.",
       "Summary of the jurists' debate (imam's school vs. follower's school; some judge it valid if sound in the imam's school, others add conditions): confirm framing.",
-      "Shia-Sunni praying together not mentioned; Keeper may wish to add or leave out."
+      "Shia-Sunni praying together not mentioned; Keeper may wish to add or leave out.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

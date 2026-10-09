@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the matn, the text itself, and your line: the words are tested too. Did you read a quote once with the name taken off? Day one thousand one hundred forty-seven.",
+      "voice": "Yesterday: the matn, the words themselves, tested against the Qur'an and the known sunnah.",
       "screen": [
         "`THE WORDS ARE TESTED TOO.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "After report upon report in his collection, al-Tirmidhi does something you can see right on the page. He steps out from behind the book and gives his own verdict. Abu Isa said, he writes, using the name he went by: this hadith is hasan sahih. Or: this hadith is gharib, rare, and we know it only through this chain. It's like a teacher writing a note in the margin of the exam he's handing you. The report, and then a grade. Chains and texts have been weighed for days now on this path. Today, the words for what the weighing finds. Today, sahih.",
+      "voice": "After report upon report in his collection, al-Tirmidhi does something you can see right on the page. He steps out from behind the book and gives his own verdict. Abu Isa said, he writes, using the name he went by: this hadith is hasan sahih. Or: this hadith is gharib, rare, and we know it only through this chain. Like a teacher writing a note in the margin of the exam he hands you. The report, and then a grade. Today, sahih.",
       "screen": [
         "`AL-TIRMIDHI STEPS OUT.` → `HIS OWN VERDICT.` → `A REPORT, AND A GRADE.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, sahih. It means sound, healthy, whole. In the definition laid out by Ibn al-Salah, a sound hadith has a connected chain, every link meeting the next. Every narrator is upright in character and precise in memory. And the report is free of two hidden problems: oddness, where it goes against what more reliable narrators report, and a concealed defect that only careful comparison reveals. Second, hasan. Good. Close to sound, but a narrator's precision is a step lighter: honest, but not quite as sharp. Scholars of law still act on a good hadith. Third, da'if. Weak. Something in the conditions is missing. A gap in the chain. A narrator nobody can vouch for. A memory known to wander. Weak doesn't mean false. It means not established. Scholars differ on whether, and how, a weak report may be used for encouragement, and we'll come back to that later this block. Fourth, the floor below weak. Mawdu': fabricated. That isn't a grade of the Prophet's words at all. It's a forgery, words put in his mouth, and scholars named it so it couldn't hide among the others. Two more things belong in the picture. Grades can differ: one scholar may call a report good where another calls it weak, and both show their reasons. And Shia hadith scholarship has its own grading terms, some with the same names, weighed by its own conditions. So a grade isn't a stamp from nowhere. It's a scholar's judgment, with the work showing.",
+      "voice": "Sahih means sound, healthy, whole. In the definition laid out by Ibn al-Salah, a sound hadith has a connected chain, every link meeting the next. Every narrator is upright in character and precise in memory. And the report is free of two hidden problems: oddness, where it goes against what more reliable narrators report, and a concealed defect that only careful comparison reveals. Next, hasan: good. Close to sound, but a narrator's precision is a step lighter: honest, not quite as sharp. Scholars of law still act on a good hadith. Then da'if: weak. Something in the conditions is missing. A gap in the chain. A narrator nobody can vouch for. A memory known to wander. Weak doesn't mean false. It means not established. Scholars differ on whether, and how, a weak report may be used for encouragement, and this block comes back to that. Below weak is mawdu': fabricated. That isn't a grade of the Prophet's words at all. It's a forgery, words put in his mouth, and scholars named it so it couldn't hide among the others. Two more things. Grades can differ: one scholar may call a report good where another calls it weak, and both show their reasons. And Shia hadith scholarship has its own grading terms, some with the same names, weighed by its own conditions. So a grade isn't a stamp from nowhere. It's a scholar's judgment, with the work showing.",
       "screen": [
         "`SAHIH: SOUND, CHAIN UNBROKEN.` · `HASAN: GOOD, A STEP LIGHTER.` · `DA'IF: WEAK, NOT ESTABLISHED.` · `MAWDU': A FORGERY.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: learn the grade of a hadith you know. Settle, and breathe. Choose one saying of the Prophet you've heard more than once. Maybe from this path, maybe from a parent, a sermon, a poster. Say it to yourself. Now ask: do I know its grade? Do I know which collection it's in? If you do, hold that for a moment. If you don't, that's the gap to notice. Decide where you'll look: a teacher you trust, a printed collection, or a reference that shows the grade beside the text. If you pray, you can ask to carry only what's sound. The bell holds the time.",
+      "voice": "Choose one saying of the Prophet you've heard more than once, from this path, a parent, a sermon or a poster, and say it to yourself. Do you know its grade, or which collection it's in? If not, that's the gap to notice: think where you'd look, a teacher you trust, a printed collection, a reference that shows the grade beside the text, and if you pray, ask to carry only what's sound.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: graded with care. Today, look up the grade of the hadith you chose, or ask someone who would know. Tomorrow: many chains. Day one thousand one hundred forty-seven.",
+      "voice": "Your line: graded with care. Weak means not established; forged means not his at all. That's today.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Hadith scholars grade reports as sahih (sound), hasan (good) or da'if (weak), and identify fabricated ones; modern editions of the collections often print a scholar's grade beside each report, and Shia scholarship uses its own grading terms.",
   "games": {
+    "guess": [
+      "sound: an unbroken chain of upright, precise narrators",
+      "any report found in a famous book of the Prophet's words",
+      "any report that sounds wise, whatever its chain"
+    ],
     "match": {
       "prompt": "sound, good, weak — tap the pairs.",
       "pairs": [
@@ -137,9 +142,46 @@
       ],
       [
         "tawaf",
-        "going around"
+        "going around the Ka'ba, seven times"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your dad",
+      "says": "This hadith is graded weak. Does that mean someone made it up?",
+      "options": [
+        "Not necessarily. Weak means not established; a made-up report is called fabricated.",
+        "Yes. Weak and fabricated are two names for exactly the same kind of report.",
+        "No, weak just means it's short, with only a handful of words in it."
+      ],
+      "meaning": "Da'if, weak, means something in the conditions is missing: not established. Mawdu', fabricated, is a forgery, a separate category below weak.",
+      "answer": 0
+    },
+    "gloss": {
+      "sahih": {
+        "meaning": "sound: an unbroken chain of upright, precise narrators",
+        "script": "صحيح",
+        "say": "sa-HEEH"
+      },
+      "hasan": {
+        "meaning": "good: close to sound, a narrator a step less precise",
+        "script": "حسن",
+        "say": "HA-san"
+      },
+      "da'if": {
+        "meaning": "weak: not established",
+        "script": "ضعيف",
+        "say": "da-EEF"
+      },
+      "mawdu'": {
+        "meaning": "fabricated: a forgery, not the Prophet's words",
+        "script": "موضوع",
+        "say": "maw-DOO"
+      },
+      "al-Tirmidhi": {
+        "meaning": "a hadith compiler who gave his own grade after reports",
+        "say": "at-TIR-mi-dhee"
+      }
+    }
   },
   "sources": [
     {
@@ -165,7 +207,9 @@
       "'Scholars of law still act on a good hadith': general; confirm.",
       "Shia grading terms (e.g. sahih, hasan, muwaththaq, da'if) mentioned without detail; confirm phrasing.",
       "Forward reference to day 1163 (weak hadith and virtue).",
-      "Editor: cut the unsourced 'whose handbook later scholars built on'; 'nickname' for the kunya Abu Isa made 'the name he went by'; practice opener varied."
+      "Editor: cut the unsourced 'whose handbook later scholars built on'; 'nickname' for the kunya Abu Isa made 'the name he went by'; practice opener varied.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

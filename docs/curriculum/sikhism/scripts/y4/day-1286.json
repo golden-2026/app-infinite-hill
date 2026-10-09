@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the old rehatnamas: earlier codes that share much and differ in detail. Your line was codes change, the guru doesn't. Which rule did you question, and what was it protecting? Day one thousand two hundred eighty-six.",
+      "voice": "Yesterday, the old rehatnamas: earlier codes that share much and differ in detail. Your line was codes change, the guru doesn't.",
       "screen": [
         "`CODES CHANGE, THE GURU DOESN'T.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A woman lands in a city she has never seen, tired, a long way from her family. She finds a gurdwara on a side street. She doesn't know a single person inside. But at the door she already knows what to do. Shoes off. Head covered. Into the hall, bow before the Guru Granth Sahib, sit with the sangat. Later, down to the langar, where she sits on the floor in a row with strangers and is fed. Nobody had to explain any of it. Countless small things were already shared before she arrived. Today asks how that happens, and why Sikhs bothered to write it down.",
+      "voice": "A woman lands in a city she has never seen, tired, far from her family. She finds a gurdwara on a side street and doesn't know a single person inside. But at the door she already knows what to do. Shoes off. Head covered. Into the hall, bow before the Guru Granth Sahib, sit with the sangat. Later, down to the langar, where she sits on the floor in a row with strangers and is fed. Nobody had to explain any of it. How does that happen, and why did Sikhs bother to write it down?",
       "screen": [
         "`A STRANGER IN A NEW CITY.` → `SHE ALREADY KNOWS WHAT TO DO.` → `WHY WRITE IT DOWN?`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Take four reasons, one at a time. First, a written code travels. Spoken custom stays close to the village it grew in. A page can be carried across an ocean, read in a new language, taught in a basement class in a city the Gurus never saw. So a Sikh family in one country and a Sikh family in another can open the same pages and find the same daily prayers, the same order for a wedding, the same form for the Ardas. One code, many homes. Second, a written code settles things more fairly. When two people disagree about how something should be done, they can point to a page instead of to whoever speaks loudest or has the most money. A rule on paper applies to the powerful as well as the poor. Third, it gives a starting place to the newcomer. Someone learning the path, or coming back to it after years away, can read what is asked instead of guessing or feeling foolish. And fourth, it keeps the community in conversation. The shared code was agreed by Sikhs working together, and the Guru Panth can still discuss it. A written code doesn't replace the Guru. It doesn't replace love, or seva, or the remembrance of the Name. It is more like a common doorway. Different families still bring their own warmth, their own food, their own way of laughing in the langar line. But the doorway is the same width wherever you find it, and anyone can walk through.",
+      "voice": "Four reasons. First, a written code travels. Spoken custom stays close to the village it grew in. A page can cross an ocean, be read in a new language, be taught in a basement class in a city the Gurus never saw. So Sikh families in two countries can open the same pages and find the same daily prayers, the same order for a wedding, the same form for the Ardas. One code, many homes. Second, it settles things more fairly. When two people disagree about how something should be done, they can point to a page instead of to whoever speaks loudest or has the most money. A rule on paper applies to the powerful and the poor alike. Third, it gives the newcomer a starting place. Someone learning the path, or coming back after years away, can read what is asked instead of guessing or feeling foolish. Fourth, it keeps the community in conversation. The shared code was agreed by Sikhs working together, and the Guru Panth can still discuss it. A written code doesn't replace the Guru, or love, or seva, or the remembrance of the Name. It's more like a common doorway. Families still bring their own warmth, their own food, their own way of laughing in the langar line. But the doorway is the same width wherever you find it, and anyone can walk through.",
       "screen": [
         "`A PAGE CAN CROSS AN OCEAN.` · `POINT TO A PAGE, NOT A VOICE.` · `A STARTING PLACE FOR NEWCOMERS.` · `A COMMON DOORWAY, NOT THE GURU.` · then, large: `ONE CODE, MANY HOMES.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "Here's the practice: write one family rule. Settle, and breathe. Your family, or your household, already has rules nobody wrote down. Who takes off shoes at the door. Who sits where. What gets said before a meal. Choose one that matters to you. Now put it into one plain sentence, the way it would read on a page for someone who just moved in. Jot it on anything nearby, or shape the words silently. Then sit with it until the bell. Does the sentence say everything the habit does, or did something get lost on the way to the page? The bell holds the time.",
+      "voice": "Choose one rule your household keeps that nobody ever wrote down: shoes at the door, who sits where, what gets said before a meal. Put it into one plain sentence, the way it would read for someone who just moved in, on paper or silently. Then sit with it and ask whether the sentence holds everything the habit does.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: one code, many homes. Today, show someone new how something is done where you live or work, plainly, so they don't have to guess. Day one thousand two hundred eighty-six.",
+      "voice": "Your line: one code, many homes. A page can travel where a village custom can't. Rest well.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Gurdwaras in different countries follow the Sikh Rehat Maryada for daily prayers, ceremonies and conduct, so a Sikh visiting a gurdwara far from home recognizes the order of things.",
   "games": {
+    "guess": [
+      "so Sikhs everywhere can share one way of doing things",
+      "because spoken custom was banned by the old rulers",
+      "so the code could stand in place of the Guru Granth"
+    ],
     "match": {
       "prompt": "why write it down: tap the pairs.",
       "pairs": [
@@ -129,13 +134,46 @@
     "recall": [
       [
         "jathedar",
-        "the one who leads the band"
+        "leader of a jatha; head of a Takht"
       ],
       [
         "Guru Panth",
         "the Khalsa community as Guru"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your roommate",
+      "says": "Why would a faith need its rules written down? Isn't living it enough?",
+      "options": [
+        "Living it matters, but a page travels, settles disputes fairly and helps newcomers.",
+        "A written code replaces the Guru, so nobody needs the Granth anymore.",
+        "Writing it down means local customs and family warmth are now forbidden."
+      ],
+      "answer": 0,
+      "meaning": "A written code travels, settles things fairly, welcomes newcomers and keeps the community talking. It's a common doorway, not a replacement for the Guru."
+    },
+    "gloss": {
+      "gurdwara": {
+        "meaning": "a Sikh place of worship",
+        "script": "ਗੁਰਦੁਆਰਾ",
+        "say": "GUR-dwaa-raa"
+      },
+      "sangat": {
+        "meaning": "the gathered congregation",
+        "script": "ਸੰਗਤ",
+        "say": "SUNG-ut"
+      },
+      "langar": {
+        "meaning": "the free shared kitchen and its meal",
+        "script": "ਲੰਗਰ",
+        "say": "LUNG-ur"
+      },
+      "seva": {
+        "meaning": "selfless service",
+        "script": "ਸੇਵਾ",
+        "say": "SAY-vaa"
+      }
+    }
   },
   "sources": [
     {
@@ -152,7 +190,10 @@
       "The four reasons (it travels, it settles disputes fairly, it welcomes newcomers, it keeps the community in conversation) are the script's framing of the index hook, not a list from the code; please confirm they are fair.",
       "'The Guru Panth can still discuss it' is stated generally; please confirm how Sikhs describe the process of revising the code.",
       "The gurdwara customs in the hook (shoes off, head covered, bowing, sitting with the sangat, langar on the floor) are described as one visitor's experience; seating in langar varies by place.",
-      "Editor pass: reworded the practice, which repeated day 1273's 'if you have paper, write it; if not, say it once in your head' almost word for word."
+      "Editor pass: reworded the practice, which repeated day 1273's 'if you have paper, write it; if not, say it once in your head' almost word for word.",
+      "The review's homework check-up and the carry's homework (show someone new how something is done) cut.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

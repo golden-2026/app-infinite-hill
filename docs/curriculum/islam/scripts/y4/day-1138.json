@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the days of tashriq in Mina, and your line: eat and remember. Did one meal get your full attention, from the first bite? Day one thousand one hundred thirty-eight.",
+      "voice": "Yesterday: the days of tashriq, days of eating, drinking and remembering God at Mina. Your line: eat and remember.",
       "screen": [
         "`EAT AND REMEMBER.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the rule. The report from Ibn Abbas, in Sahih Muslim, is simple: let the last of your time be at the House. A pilgrim's stay ends where it began, circling the Ka'ba. Second, the exception. In another report from Ibn Abbas, in Sahih al-Bukhari, people were commanded to make their last act at the House, except that it was lightened for a woman on her period. She may set out without it. Two days ago, Safiyyah's story showed which circling couldn't be skipped. This is the one that could be lifted. Third, how the schools weigh it. Some schools of law hold the farewell tawaf to be required of pilgrims leaving Mecca, so that missing it calls for an offering. Others hold it to be strongly recommended. Each school reads the same reports, and each has its reasons. Fourth, the word itself. Wada' means a farewell. Tradition calls the Prophet's own pilgrimage, the one these lessons have been following, the Farewell Pilgrimage, Hajjat al-Wada', and he did not make another. So there are two goodbyes folded together here: a pilgrim's goodbye to the House, and the memory of the Prophet's goodbye to his people. What the rite teaches is a way of leaving. Not slipping out the side door. Not letting the last memory be a crowded shop or a line for the bus. Going back to the center, once more, and leaving from there, with the place you're leaving as the last thing you saw.",
+      "voice": "First, the rule. Ibn Abbas's report, in Sahih Muslim, is simple: let the last of your time be at the House. A pilgrim's stay ends where it began, circling the Ka'ba. Second, the exception. In another report from Ibn Abbas, in Sahih al-Bukhari, people were commanded to make their last act at the House, except that it was lightened for a woman on her period. She may set out without it. Two days ago, Safiyyah's story showed which circling couldn't be skipped. This is the one that could be lifted. Third, how the schools weigh it. Some schools of law hold the farewell tawaf to be required of pilgrims leaving Mecca, so that missing it calls for an offering. Others hold it to be strongly recommended. Each school reads the same reports, and each has its reasons. Fourth, the word itself. Wada' means a farewell. Tradition calls the Prophet's own pilgrimage, the one these lessons have been following, the Farewell Pilgrimage, Hajjat al-Wada', and he did not make another. You met that pilgrimage back on day two hundred eighty-four. So two goodbyes fold together here: a pilgrim's goodbye to the House, and the memory of the Prophet's goodbye to his people. What the rite teaches is a way of leaving. Not slipping out the side door. Not letting the last memory be a crowded shop or a line for the bus. Going back to the center once more, and leaving from there, with the place you're leaving as the last thing you saw.",
       "screen": [
         "`LET THE LAST OF IT BE AT THE HOUSE.` · `LIGHTENED FOR A WOMAN ON HER PERIOD.` · `REQUIRED, OR STRONGLY RECOMMENDED.` · `WADA': A FAREWELL.` · then, large: `GOODBYE TO THE HOUSE.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: say goodbye well. Settle, and breathe. Think of a goodbye that's coming. The end of a job, a friend moving, a child leaving for school, a visit with a parent that ends on Sunday. Or think of a goodbye you rushed, one that ended in a parking lot or a text. How would you want the last moment to go? Who would you look at? What would you say? Let the picture form slowly. If you pray, you can hold that person in your du'a. If you don't, simply hold them in mind. The bell holds the time.",
+      "voice": "Think of a goodbye that's coming, the end of a job, a friend moving, a visit with a parent that ends on Sunday, or one you rushed in a parking lot or a text. Picture how you'd want that last moment to go, who you'd look at and what you'd say. If you pray, hold that person in your du'a; if not, simply hold them in mind.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: goodbye to the house. Today, when you leave a place or a person, don't slip away. Turn, look, and say goodbye on purpose. Tomorrow: visiting Medina. Day one thousand one hundred thirty-eight.",
+      "voice": "Your line: goodbye to the house. The way you leave is part of the visit. Go well.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Before leaving Mecca, pilgrims circle the Ka'ba one last time in the farewell tawaf; women on their period are excused from it, and the schools differ on whether it is required or strongly recommended.",
   "games": {
+    "guess": [
+      "the last circling of the Ka'ba before leaving Mecca",
+      "the Prophet's final sermon, given on the plain",
+      "a goodbye prayer said at the Prophet's grave"
+    ],
     "match": {
       "prompt": "the farewell tawaf — tap the pairs.",
       "pairs": [
@@ -139,7 +144,39 @@
         "tawaf",
         "going around"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your cousin",
+      "says": "Does every single pilgrim have to do one last circling before leaving Mecca?",
+      "options": [
+        "The report commands it, but lightens it for a woman on her period.",
+        "Yes, and anyone who misses it has to come back and redo the Hajj.",
+        "No. It's only for pilgrims who missed the circling after the sacrifice."
+      ],
+      "answer": 0,
+      "meaning": "Ibn Abbas reports people were commanded to make their last act at the House, except that it was lightened for a woman on her period."
+    },
+    "gloss": {
+      "Wada'": {
+        "meaning": "a farewell",
+        "script": "وداع",
+        "say": "wa-DAH"
+      },
+      "Hajjat al-Wada'": {
+        "meaning": "the Farewell Pilgrimage, the Prophet's own Hajj",
+        "script": "حجة الوداع",
+        "say": "HAJ-jat al-wa-DAH"
+      },
+      "Safiyyah": {
+        "meaning": "one of the Prophet's wives",
+        "script": "صفية",
+        "say": "sa-FEE-yah"
+      },
+      "Sahih Muslim": {
+        "meaning": "a major collection of the Prophet's sayings and deeds",
+        "say": "sah-HEEH MUS-lim"
+      }
+    }
   },
   "sources": [
     {
@@ -164,7 +201,10 @@
       "Schools: Hanafi, Shafi'i (dominant view) and Hanbali hold tawaf al-wada' wajib with dam if missed; Maliki holds it sunnah. A general fiqh claim not in the cited texts; confirm the summary and whether to mention the Shafi'i minority view.",
       "'Hajjat al-Wada'... because he did not live to make another' is attributed to tradition; confirm phrasing.",
       "Practice invites du'a 'if you pray'; no new prayer written.",
-      "Editor: the named list of schools (Hanafi, Shafi'i, Hanbali vs. Maliki) is not in the cited reports, so teach and myth now say 'some schools... others' (the detail stays in the note above for a Keeper); 'because he did not live to make another' trimmed to 'and he did not make another'."
+      "Editor: the named list of schools (Hanafi, Shafi'i, Hanbali vs. Maliki) is not in the cited reports, so teach and myth now say 'some schools... others' (the detail stays in the note above for a Keeper); 'because he did not live to make another' trimmed to 'and he did not make another'.",
+      "Job 2/3 (year 4): added a point-back line to day 284 (The farewell pilgrimage).",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

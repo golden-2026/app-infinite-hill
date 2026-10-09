@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, kafan, the shroud, and your line: everyone in white. Did you catch yourself sizing someone up, and see the person instead? Today, the community stands before the one in white. Day one thousand three hundred forty-one.",
+      "voice": "Yesterday: kafan, the shroud, and your line, everyone in white. Today, the community stands before the one in white.",
       "screen": [
         "`EVERYONE IN WHITE.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "It's called salat al-janazah, the funeral prayer. Al-Bukhari keeps a report that shows its shape. When the Negus, the king of Abyssinia, died far away, the Prophet Muhammad, peace be upon him, announced his death to the people on the very day it happened. He went out with them to the place of prayer, lined them up in rows, and said Allahu akbar four times. That's the frame: standing, in rows, with four takbirs. In common practice, between them come the opening of the Qur'an, blessings on the Prophet, and du'a for the one who has died, though the schools of law differ on some details. Al-Bukhari also reports that Ibn 'Abbas recited al-Fatiha in a funeral prayer and said he did it so people would know it was the sunnah. Why standing only? One reading is simple: the prayer is for someone else. You stand before Allah on another person's behalf, asking mercy for them. The jurists call it fard kifayah, a communal duty. If some of the community do it, the duty is lifted from the rest. If nobody does, the whole community is at fault. The obligation belongs to everyone together. And there's a reward for whoever shows up. In al-Bukhari, the Prophet said, in paraphrase: whoever attends a funeral until the prayer has a qirat, and whoever stays until the burial has two. Someone asked what two qirats were. Like two huge mountains, he said. Showing up, standing, is the gift. The person in white can't ask. The community stands for them.",
+      "voice": "It's called salat al-janazah, the funeral prayer. Al-Bukhari keeps a report that shows its shape. When the Negus, the king of Abyssinia, died far away, the Prophet Muhammad, peace be upon him, announced his death to the people on the very day it happened. He went out with them to the place of prayer, lined them up in rows, and said Allahu akbar four times. That's the frame: standing, in rows, with four takbirs. In common practice, between them come the opening of the Qur'an, blessings on the Prophet, and du'a for the one who has died, though the schools of law differ on some details. Al-Bukhari also reports that Ibn 'Abbas recited al-Fatiha in a funeral prayer and said he did it so people would know it was the sunnah. Why standing only? One reading is simple: the prayer is for someone else. You stand before Allah on another person's behalf, asking mercy for them. The jurists call it fard kifayah, a communal duty. If some of the community do it, the duty is lifted from the rest; if nobody does, the whole community is at fault. And there's a reward for whoever shows up. In al-Bukhari, the Prophet said, in paraphrase: whoever attends a funeral until the prayer has a qirat, and whoever stays until the burial has two. Someone asked what two qirats were. Like two huge mountains, he said. The person in white can't ask. The community stands for them.",
       "screen": [
         "`FOUR TAKBIRS, STANDING, IN ROWS.` · `FATIHA, BLESSINGS, AND DU'A.` · `A COMMUNAL DUTY.` · `TWO QIRATS, LIKE TWO MOUNTAINS.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: join a janazah when you can. Settle, and breathe. Stand up, if you're able, feet planted, hands still. Feel what it's like to stand for a while without any other movement. Now think of someone who has died: someone you knew, or a stranger whose name you heard. Stay standing for them, quietly, for a few breaths. If you pray, you can ask mercy for them in your own words. If you'd like, decide that the next time a janazah is announced near you, you'll stay for it. The bell holds the time.",
+      "voice": "Stand up, if you're able, feet planted, hands still, and feel what it's like to stand without any other movement. Think of someone who has died, someone you knew or a stranger whose name you heard, and stay standing for them for a few breaths. If you pray, ask mercy for them in your own words.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: stand for them. Today, if you hear of a death, near or far, stop for a moment and stand for them, even in your mind. Tomorrow, burial facing the qiblah. Day one thousand three hundred forty-one.",
+      "voice": "Your line: stand for them. Two mountains, for a few minutes on your feet. Peace to you, until tomorrow.",
       "screen": []
     },
     {
@@ -139,7 +139,47 @@
         "ghaflah",
         "heedlessness"
       ]
-    ]
+    ],
+    "guess": [
+      "the funeral prayer, said standing, with four takbirs",
+      "the night prayer said in Ramadan after the evening prayer",
+      "the prayer said in shortened form while traveling"
+    ],
+    "chat": {
+      "who": "your roommate",
+      "says": "There was a funeral prayer after noon prayer. Do I have to stay if I didn't know them?",
+      "options": [
+        "It's a communal duty, covered if some stay, but staying still earns a qirat.",
+        "Yes. Every single person present must stay, or each of them is at fault.",
+        "No. The prayer is only for family and close friends of the one who died."
+      ],
+      "meaning": "It's fard kifayah: if some do it, the duty is lifted from the rest. And whoever attends until the prayer has a qirat; until the burial, two.",
+      "answer": 0
+    },
+    "gloss": {
+      "salat al-janazah": {
+        "meaning": "the funeral prayer",
+        "script": "صلاة الجنازة",
+        "say": "sa-LAAT al-ja-NAA-zah"
+      },
+      "Negus": {
+        "meaning": "the king of Abyssinia",
+        "say": "NEE-gus"
+      },
+      "takbirs": {
+        "meaning": "sayings of Allahu akbar, God is greatest"
+      },
+      "fard kifayah": {
+        "meaning": "a communal duty: if some do it, the rest are covered",
+        "script": "فرض كفاية",
+        "say": "FARD ki-FAA-yah"
+      },
+      "qirat": {
+        "meaning": "a measure of reward, here like a huge mountain",
+        "script": "قيراط",
+        "say": "qee-RAAT"
+      }
+    }
   },
   "sources": [
     {
@@ -170,7 +210,9 @@
       "Fard kifayah is a juristic classification, not stated in the cited hadith; confirm phrasing.",
       "'One reading' of why the prayer is standing only is interpretive; confirm or cut.",
       "Original-language note: جنازة/جِنازة can be voweled janazah or jinazah; confirm.",
-      "Editor: hook softened ('unlike every other one' to 'unlike the others'; 'strangers' praying now 'some in those rows')."
+      "Editor: hook softened ('unlike every other one' to 'unlike the others'; 'strangers' praying now 'some in those rows').",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

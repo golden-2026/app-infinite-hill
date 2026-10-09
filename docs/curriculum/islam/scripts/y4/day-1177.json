@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, ahkam, the rulings, and your line: five kinds of acts. When you sorted three of yours, where did they land on the dial? Day one thousand one hundred seventy-seven.",
+      "voice": "Yesterday: ahkam, the five rulings, a dial and not a switch. Your line: five kinds of acts.",
       "screen": [
         "`FIVE KINDS OF ACTS.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "The word is mubah, permitted, the middle of yesterday's dial. No reward for doing it, no blame for leaving it. Just allowed. And jurists have a principle about it that changes how the whole law feels: in things and in dealings, the starting point is permission. Something is permitted unless a text forbids it. Not the other way round. The Qur'an says, in Surah al-Baqarah: \"He it is Who created for you all that is in the earth.\" For you. The food, the trade, the clothes, the games, the jokes, the long walk at dusk. Jurists start from yes, and ask for evidence before they say no. A report in Sahih al-Bukhari puts the warning sharply. The Prophet says the Muslim with the greatest guilt is the one who asks about something that wasn't forbidden, and it becomes forbidden because of his asking. Asking, in that report, isn't the problem. Inventing burdens is. Now one turn, so this isn't misread. The starting point flips for worship. Jurists say a new act of worship needs a text behind it, because worship is offered the way it was taught. So in prayer, start from what was taught. In the market and the kitchen and the park, start from permitted. Put those two together and something becomes visible. The forbidden is a list, and the permitted is a wide field. A person can spend most of a day in the field, eating, working, laughing, resting, and none of it is outside the law. Some of it can even become worship, jurists add, when it's done with a good intention.",
+      "voice": "The word is mubah, permitted, the middle of yesterday's dial. No reward for doing it, no blame for leaving it. Jurists have a principle about it that changes how the whole law feels: in things and in dealings, the starting point is permission. Something is permitted unless a text forbids it, not the other way round. The Qur'an says, in Surah al-Baqarah: \"He it is Who created for you all that is in the earth.\" For you. The food, the trade, the clothes, the games, the jokes, the long walk at dusk. Jurists start from yes, and ask for evidence before they say no. A report in Sahih al-Bukhari puts the warning sharply. The Prophet says the Muslim with the greatest guilt is the one who asks about something that wasn't forbidden, and it becomes forbidden because of his asking. Asking isn't the problem in that report. Inventing burdens is. Now one turn, so this isn't misread. The starting point flips for worship. Jurists say a new act of worship needs a text behind it, because worship is offered the way it was taught. In prayer, start from what was taught. In the market, the kitchen and the park, start from permitted. Put those together and the forbidden becomes a list, and the permitted a wide field. A person can spend most of a day in the field, eating, working, laughing, resting, and none of it is outside the law. Some of it can even become worship, jurists add, when it's done with a good intention.",
       "screen": [
         "`MUBAH: SIMPLY PERMITTED.` · `THE STARTING POINT IS YES.` · `DON'T INVENT BURDENS.` · `WORSHIP STARTS FROM WHAT WAS TAUGHT.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: enjoy one permitted thing. Choose something small that's simply allowed. A cup of tea. Bread still warm. The sound outside your window. A stretch. Do it now, or hold it in your mind if you can't. Slowly. Don't turn it into a task or a lesson. Let it be what it is: a good thing, in the wide field, with no permission slip needed. If you pray, you can thank Allah for it. If not, just stay with the taste of it. The bell holds the time.",
+      "voice": "Choose something small that's simply allowed, a cup of tea, bread still warm, the sound outside your window, a stretch, and do it now, or hold it in your mind. Don't turn it into a task; let it be a good thing in the wide field. If you pray, you can thank Allah for it.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: most is permitted. Today, when you catch yourself inventing a rule nobody gave you, put it down. Leave it as it was left. Day one thousand one hundred seventy-seven.",
+      "voice": "Your line: most is permitted. A good thing, in the wide field, with no permission slip needed. Go gently.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Muslim jurists generally start from permission in food, trade and everyday life, asking for evidence before calling something forbidden, while acts of worship follow what was taught.",
   "games": {
+    "guess": [
+      "simply permitted: no reward for doing it, no blame for leaving it",
+      "recommended: rewarded if done, but no blame if left undone",
+      "allowed only after a scholar gives a written ruling"
+    ],
     "match": {
       "prompt": "the wide permitted — tap the pairs.",
       "pairs": [
@@ -139,7 +144,38 @@
         "mutawatir",
         "so many chains it's certain"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your new neighbor",
+      "says": "Do Muslims need a text that allows a new fruit or drink before they can have it?",
+      "options": [
+        "No. In things and daily life the starting point is permission; a text is needed to forbid.",
+        "Yes. Nothing may be eaten until a scholar signs a written ruling allowing it.",
+        "No, and worship works the same way: anyone may invent new acts as they like."
+      ],
+      "answer": 0,
+      "meaning": "In things and dealings, jurists start from yes and ask for evidence before saying no. Worship is different: it follows what was taught."
+    },
+    "gloss": {
+      "mubah": {
+        "meaning": "permitted: no reward, no blame",
+        "script": "مباح",
+        "say": "mu-BAAH"
+      },
+      "Surah al-Baqarah": {
+        "meaning": "the Qur'an's second and longest surah, the Cow",
+        "script": "سورة البقرة",
+        "say": "SOO-rah al-BA-ka-rah"
+      },
+      "Sahih Muslim": {
+        "meaning": "Imam Muslim's collection of sound hadith",
+        "say": "sa-HEEH MUS-lim"
+      },
+      "Sahih al-Bukhari": {
+        "meaning": "al-Bukhari's collection of sound hadith",
+        "say": "sa-HEEH al-bu-KHAA-ree"
+      }
+    }
   },
   "sources": [
     {
@@ -170,7 +206,9 @@
       "Bukhari 7289: confirm number; paraphrased as 'the Muslim who wrongs the Muslims most' (a superlative the report itself uses); confirm.",
       "Principle al-asl fi al-ashya' al-ibahah and its reverse in 'ibadat: framed as what 'jurists' say; there are minority views on the default before revelation. Confirm phrasing.",
       "Index hook says 'most of life is simply permitted' (kept in the carry); the script avoids stating a proportion as fact.",
-      "Editor pass: Bukhari 7289 paraphrase brought closer to the report ('greatest guilt'); cut the editorial 'like a sigh' and the unsourced 'short list'."
+      "Editor pass: Bukhari 7289 paraphrase brought closer to the report ('greatest guilt'); cut the editorial 'like a sigh' and the unsourced 'short list'.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

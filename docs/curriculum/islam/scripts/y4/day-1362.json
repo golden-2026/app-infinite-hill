@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, the last ten nights of Ramadan, and the Prophet tightening his belt and waking his family. Your line was tighten the belt. Did you wake for one night, or part of one? Now the month is over. Day one thousand three hundred sixty-two.",
+      "voice": "Yesterday, the last ten nights of Ramadan: the Prophet tightened his belt, brought the nights to life and woke his family. Now the month is over.",
       "screen": [
         "`TIGHTEN THE BELT.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A small detail, tucked into Sahih al-Bukhari, in a report from Jabir. On the day of Eid, the Prophet Muhammad, peace be upon him, went out to the prayer by one road, and came home by another. That's the whole report. No reason given. Just two roads. Before that walk, there's a morning to get through: water, clothes, something sweet to eat. And after it, a walk home that doesn't retrace a single step. Today, the morning of Eid al-Fitr, the feast that breaks the fast, taken one small act at a time, the way the reports give it.",
+      "voice": "A small detail, tucked into Sahih al-Bukhari, in a report from Jabir. On the day of Eid, the Prophet Muhammad, peace be upon him, went out to the prayer by one road and came home by another. That's the whole report. No reason given. Just two roads. Before that walk, there's a morning to get through: water, clothes, something sweet to eat. Today, the morning of Eid al-Fitr, the feast that breaks the fast, one small act at a time.",
       "screen": [
         "`ONE ROAD OUT.` → `ANOTHER ROAD BACK.` → `NO REASON GIVEN.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "Start with water. In the Muwatta of Imam Malik, there's a report that Ibn 'Umar, a companion of the Prophet, would take a full bath, a ghusl, on the morning of the Fitr before going out to the prayer. The day begins clean. Then clothes. Al-Bukhari keeps a story in which 'Umar finds a fine cloak in the market and brings it to the Prophet, saying, in paraphrase: buy this, and dress up in it for Eid and for receiving visitors. The Prophet turned that one down, because it was silk. But notice what 'Umar took for granted: Eid is a day you dress for. For some, a little perfume too. Then food, and this is the surprise. After a month of not eating until sunset, the first act of the morning is to eat. Anas reports in al-Bukhari that the Prophet would not go out on the day of the Fitr until he had eaten some dates, and he ate them in an odd number. For a month, every fast broke at sunset. This one breaks in daylight, on purpose, before the prayer. Then the prayer itself, together with everyone. And then the road home, the different one. Why? Scholars have offered reasons: so that both roads see the people of the day, so that more neighbors get greeted, so that more ground bears witness to the prayer. But Jabir only tells us what he did. The meaning is left open, and the second road is still there to walk.",
+      "voice": "Start with water. In the Muwatta of Imam Malik, Ibn 'Umar, a companion of the Prophet, would take a full bath, a ghusl, on the morning of the Fitr before going out to the prayer. The day begins clean. Then clothes. In al-Bukhari, 'Umar finds a fine cloak in the market and brings it to the Prophet, saying, in paraphrase: buy this, and dress up in it for Eid and for receiving visitors. The Prophet turned that one down, because it was silk. But notice what 'Umar took for granted: Eid is a day you dress for. For some, a little perfume too. Then food, and here's the surprise. Anas reports in al-Bukhari that the Prophet would not go out on the day of the Fitr until he had eaten some dates, in an odd number. For a month, every fast broke at sunset. This one breaks in daylight, on purpose, before the prayer. Then the prayer itself, together with everyone. And then the road home, the different one. Why? Scholars have offered reasons: so both roads see the people of the day, so more neighbors get greeted, so more ground bears witness to the prayer. But Jabir only tells us what he did. The meaning is left open.",
       "screen": [
         "`WATER: A GHUSL BEFORE GOING OUT.` · `CLOTHES: A DAY YOU DRESS FOR.` · `DATES BEFORE THE PRAYER.` · `A DIFFERENT ROAD HOME.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: walk a different way home. Settle, and breathe. First, in your mind, trace the way you usually come home: the turns, the corners, the same doors you pass every day. See how little of it you notice anymore. Now find one other way. One street over. The long way round the park. A different staircase. Just picture it, and picture who might be on that road whom you never pass. If you pray, you can keep in mind the Eid morning walk. If you don't, simply keep the new road ready for later. The bell holds the time.",
+      "voice": "In your mind, trace the way you usually come home: the turns, the corners, the same doors you've stopped noticing. Now find one other way, one street over or the long way round the park, and picture who might be on that road whom you never pass. If you pray, keep the Eid morning walk in mind; if you don't, simply keep the new road ready.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: a new road home. Today, take one route you don't usually take, and greet one person you meet on it. Tomorrow, Dhul Qa'dah. Day one thousand three hundred sixty-two.",
+      "voice": "Your line: a new road home. The second road is still there to walk. See you tomorrow.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "On the morning of Eid al-Fitr, Muslims often bathe, put on their best clothes, eat a few dates, and go to the Eid prayer together, and some take a different road home afterward, following a report in Sahih al-Bukhari.",
   "games": {
+    "guess": [
+      "the feast that ends Ramadan's fast",
+      "a fast day kept after the month ends",
+      "the new year festival of the calendar"
+    ],
     "match": {
       "prompt": "the Eid morning — tap the pairs.",
       "pairs": [
@@ -133,13 +138,49 @@
     "recall": [
       [
         "kafan",
-        "the shroud"
+        "plain white burial cloth, same for all"
       ],
       [
         "'iyadah",
         "visiting the sick"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your coworker",
+      "says": "Why do Muslims eat before the Eid prayer, right after a month of fasting?",
+      "options": [
+        "The Prophet ate a few dates before going out; this fast breaks in daylight, on purpose.",
+        "They don't; the fast lasts until the Eid prayer is done, and then the meal starts.",
+        "Only the sick and travelers eat; everyone else keeps fasting through Eid day."
+      ],
+      "answer": 0,
+      "meaning": "Anas reports the Prophet wouldn't go out on the Fitr until he'd eaten some dates. Every fast broke at sunset; this one breaks in daylight."
+    },
+    "gloss": {
+      "Eid al-Fitr": {
+        "meaning": "the feast that breaks the fast of Ramadan",
+        "script": "عيد الفطر",
+        "say": "EED al-FIT-r"
+      },
+      "ghusl": {
+        "meaning": "a full ritual bath, as before the Eid prayer",
+        "script": "غسل",
+        "say": "GHUSL"
+      },
+      "Muwatta": {
+        "meaning": "Imam Malik's early collection of hadith and law",
+        "script": "الموطأ",
+        "say": "moo-WAT-ta"
+      },
+      "Jabir": {
+        "meaning": "the companion who reported the two roads",
+        "say": "JAH-bir"
+      },
+      "Anas": {
+        "meaning": "the companion who reported the dates before the prayer",
+        "say": "AH-nas"
+      }
+    }
   },
   "sources": [
     {
@@ -175,7 +216,9 @@
       "Perfume is in the outline hook but no report is cited for it; the script says only 'for some, a little perfume too'. A Keeper may add a source or cut it.",
       "The reasons offered for the different road are given as 'scholars have offered reasons'; confirm these are fairly represented (e.g., from Ibn Hajar's commentary in Fath al-Bari).",
       "'Out in the open' for the Eid prayer: the Prophet's practice was at the musalla; many communities today pray in mosques or halls. Confirm the phrasing.",
-      "Editor: replaced 'out in the open' with 'together with everyone'; rewrote the garbled 'a fast that ended at a sunset now ends in daylight' line (teach and fork); cut the repeated 'the report doesn't say' and the unsourced 'people have been walking it ever since'."
+      "Editor: replaced 'out in the open' with 'together with everyone'; rewrote the garbled 'a fast that ended at a sunset now ends in daylight' line (teach and fork); cut the repeated 'the report doesn't say' and the unsourced 'people have been walking it ever since'.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {

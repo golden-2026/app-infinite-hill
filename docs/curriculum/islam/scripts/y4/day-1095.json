@@ -20,7 +20,7 @@
     {
       "type": "review",
       "duration": "20 sec",
-      "voice": "Yesterday, who pays, and your line: a share once a year. Did you find something you own that's just been sitting? Today, the line that decides whether it counts. Day one thousand ninety-five.",
+      "voice": "Yesterday, who pays: a Muslim past the line, on wealth held a year. Today, the line itself.",
       "screen": [
         "`A SHARE ONCE A YEAR.`"
       ]
@@ -28,7 +28,7 @@
     {
       "type": "the hook",
       "duration": "50 sec",
-      "voice": "A brass scale on a market stall. On one side, a little heap of silver coins. On the other, a weight. The trader adds a coin, then another, and watches the beam. For a long time nothing happens. Then one more coin, and the beam tips. Before that coin, the heap is just what someone has. After it, the heap has crossed a line, and something is asked of it. Zakat works with a line like that. Fall short of it, and nothing at all is due. Reach it, and a share belongs to someone else. The line has a name. Today, nisab.",
+      "voice": "A brass scale on a market stall. On one side, a little heap of silver coins. On the other, a weight. The trader adds a coin, then another, and watches the beam. For a long time nothing happens. Then one more coin, and the beam tips. Before that coin, the heap is just what someone has. After it, the heap has crossed a line, and something is asked of it. Zakat works with a line like that. Fall short, and nothing is due. Reach it, and a share belongs to someone else. The line has a name: nisab.",
       "screen": [
         "`A SCALE, A HEAP OF SILVER.` → `ONE MORE COIN, AND IT TIPS.` → `THE LINE HAS A NAME.`"
       ]
@@ -36,7 +36,7 @@
     {
       "type": "the teach",
       "duration": "2 min 15",
-      "voice": "First, the word. Nisab is the minimum, the amount wealth has to reach before zakat is owed on it. Below it, you're not counted among the rich in the sense of yesterday's hadith. Second, where the line comes from. The hadith collections give it in the coins and goods of the Prophet's own day. A report in Sahih al-Bukhari says no charity is due on less than five measures of silver, on fewer than five camels, or on less than five loads of grain or dates. And a report in the Sunan of Abu Dawud gives the coins: on two hundred silver dirhams, five dirhams are due; on gold, nothing until it reaches twenty dinars, and then half a dinar. Notice what that does. The line isn't a fixed dollar figure. It's a weight of metal, a number of animals, a load of harvest, things whose worth you could see and hold. Third, the line today. Nobody's savings sit in dirhams now, so modern scholars and zakat bodies turn those coins into weights of gold and silver, and then into money at today's price. The figure moves as gold and silver move. That's why the practice today is to look it up rather than memorize it. Fourth, the honest question: gold or silver? The two lines no longer match in value. Some scholars say to use the lower of the two, so more wealth is counted and more reaches the poor. Others say to use gold's line, especially for savings held in money. Both answers come with reasons, and people follow the scholars they trust. The point underneath is the same either way. There's a floor. Below it, a person is protected. Above it, a share is owed.",
+      "voice": "Nisab is the minimum, the amount wealth has to reach before zakat is owed on it. Below it, you're not counted among the rich in the sense of yesterday's hadith. First, where the line comes from. The hadith collections give it in the coins and goods of the Prophet's own day. A report in Sahih al-Bukhari says no charity is due on less than five measures of silver, on fewer than five camels, or on less than five loads of grain or dates. A report in the Sunan of Abu Dawud gives the coins: on two hundred silver dirhams, five dirhams are due; on gold, nothing until it reaches twenty dinars, and then half a dinar. So the line isn't a fixed dollar figure. It's a weight of metal, a number of animals, a load of harvest, things you could see and hold. Second, the line today. Nobody's savings sit in dirhams now, so modern scholars and zakat bodies turn those coins into weights of gold and silver, then into money at today's price. The figure moves as gold and silver move, which is why it's looked up rather than memorized. Third, the honest question: gold or silver? The two lines no longer match in value. Some scholars say to use the lower of the two, so more wealth is counted and more reaches the poor. Others say to use gold's line, especially for savings held in money. Both come with reasons, and people follow the scholars they trust. Fourth, the point underneath. There's a floor. Below it, a person is protected. Above it, a share is owed.",
       "screen": [
         "`NISAB: THE MINIMUM.` · `SILVER, CAMELS, GRAIN, GOLD.` · `TODAY: A WEIGHT, THEN A PRICE.` · `GOLD'S LINE OR SILVER'S?` · then, large: `BELOW IT, PROTECTED. ABOVE IT, A SHARE.`"
       ]
@@ -44,7 +44,7 @@
     {
       "type": "the practice",
       "duration": "2 min 30",
-      "voice": "The practice: look up today's value, later. For now, sit with the line itself. Breathe slowly. Picture that scale again. On one side, what you need: rent, food, the people who depend on you. Notice how much room that side takes. Then picture the other side, what's left over after needs. Don't count it. Just notice whether it feels like a lot, or a little, or nothing at all. The line is drawn so that need comes first. The bell holds the time.",
+      "voice": "Picture that scale again: on one side what you need, rent, food, the people who depend on you, and notice how much room it takes. Then picture the other side, what's left after needs, and without counting, notice whether it feels like a lot, a little, or nothing at all. The line is drawn so that need comes first.",
       "screen": []
     },
     {
@@ -58,7 +58,7 @@
     {
       "type": "the carry",
       "duration": "15 sec",
-      "voice": "Your line: the line of wealth. Today, look up today's nisab from a zakat body or a mosque you trust, and see where the line sits. Tomorrow: two and a half percent. Day one thousand ninety-five.",
+      "voice": "Your line: the line of wealth. Need comes first; the share comes after. That's day one thousand ninety-five.",
       "screen": []
     },
     {
@@ -72,6 +72,11 @@
   ],
   "howItsDone": "Muslims check the current nisab, published by mosques and zakat organizations from the price of gold or silver, before working out whether zakat is due on their savings.",
   "games": {
+    "guess": [
+      "the minimum wealth before zakat is owed on it",
+      "the share of savings that is given as zakat",
+      "the date each year when zakat falls due"
+    ],
     "match": {
       "prompt": "the threshold — tap the pairs.",
       "pairs": [
@@ -132,14 +137,47 @@
     ],
     "recall": [
       [
-        "istikharah",
-        "asking God to choose the good"
+        "jama'ah",
+        "prayer in rows, together"
       ],
       [
         "tahajjud",
         "prayed after sleeping and waking"
       ]
-    ]
+    ],
+    "chat": {
+      "who": "your sister-in-law",
+      "says": "How do I know if I've saved enough to owe zakat at all?",
+      "options": [
+        "Look up today's nisab, the threshold set in gold or silver; below it, nothing is due.",
+        "Everyone owes it from their very first dollar saved; there's no minimum at all.",
+        "It's a fixed dollar figure set in the Qur'an, the same every single year."
+      ],
+      "meaning": "Nisab is the minimum. Scholars turn the old coin lines into gold and silver at today's price, so the figure is looked up. Below it, nothing is due.",
+      "answer": 0
+    },
+    "gloss": {
+      "nisab": {
+        "meaning": "the minimum wealth before zakat is due",
+        "script": "نصاب",
+        "say": "ni-SAAB"
+      },
+      "dirhams": {
+        "meaning": "silver coins of the Prophet's day",
+        "script": "دراهم",
+        "say": "DIR-hams"
+      },
+      "dinars": {
+        "meaning": "gold coins of the Prophet's day",
+        "script": "دنانير",
+        "say": "di-NAARS"
+      },
+      "Sahih al-Bukhari": {
+        "meaning": "the best-known collection of the Prophet's sayings",
+        "script": "صحيح البخاري",
+        "say": "sa-HEEH al-bu-KHAA-ree"
+      }
+    }
   },
   "sources": [
     {
@@ -164,7 +202,10 @@
       "Abu Dawud 1573 (two hundred dirhams, five dirhams; twenty dinars, half a dinar): confirm number and grading.",
       "The voice says only that the two lines no longer match in value; which is lower today is left out.",
       "Gold vs silver for cash savings presented as a difference among scholars without ranking; confirm fair.",
-      "Editor: replaced a myth item and trapdoor lines that repeated day 1094's 'not everyone pays' items; 'Muslims follow' softened to 'people follow'."
+      "Editor: replaced a myth item and trapdoor lines that repeated day 1094's 'not everyone pays' items; 'Muslims follow' softened to 'people follow'.",
+      "Job 3 recall: swapped 'istikharah' for 'jama'ah' (day 1085) so the same pair doesn't recur every other day.",
+      "Restyled 2026-10-07 (job 2): voice tightened; content and sources unchanged.",
+      "2026-10-07 (job 3): new recipe data added (chat, gloss, recall); confirm the chat reply, glosses, scripts and pronunciations with the Keeper."
     ]
   },
   "meta": {
