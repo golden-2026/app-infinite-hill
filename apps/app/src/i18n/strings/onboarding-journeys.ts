@@ -24,9 +24,9 @@ export const DOOR_HOOK_ES: Record<string, string> = {
 };
 
 export const OWN_PATH_ES = {
-  title: "mi propio camino",
-  line: "un camino hecho a tu medida",
-  promise: "las mejores ideas de la casa, elegidas para ti: la quietud de una tradición, una historia de otra, una frase para llevar contigo de una tercera. sin inscribirte a nada.",
+  title: "mi propia religión",
+  line: "crea tu propia religión",
+  promise: "lo mejor de cada tradición, hecho a tu medida. cada una enseñada con fidelidad, sin mezclarlas ni compararlas.",
 };
 
 /** Hinduism's years two to five (the only door with hand-written year names). */

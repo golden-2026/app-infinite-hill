@@ -23,7 +23,7 @@ export const en = {
   "gentle.hello.god": "that's an honest place to be. you're welcome here exactly as you are.",
   "gentle.hello.kids": "what a gift to give them.",
   "gentle.hello.calm": "a calmer day, five minutes at a time.",
-  "gentle.hello.spiritual": "you're in the right place. a few easy questions, then your own path.",
+  "gentle.hello.spiritual": "you're in the right place. a few easy questions, then your own religion.",
   // "ready", on a week-first lane: what opens first
   "gentle.ready.first": "first: {title}",
   "gentle.ready.light": "five minutes, one lesson.\nyour week starts now.",
@@ -62,7 +62,7 @@ export const es: Dict<typeof en> = {
   "gentle.hello.god": "es un lugar honesto. aquí eres bienvenido tal como eres.",
   "gentle.hello.kids": "qué regalo para ellos.",
   "gentle.hello.calm": "un día más tranquilo, cinco minutos a la vez.",
-  "gentle.hello.spiritual": "estás en el lugar indicado. unas preguntas fáciles y luego tu propio camino.",
+  "gentle.hello.spiritual": "estás en el lugar indicado. unas preguntas fáciles y luego tu propia religión.",
   "gentle.ready.first": "primero: {title}",
   "gentle.ready.light": "cinco minutos, una lección.\ntu semana empieza ahora.",
   "gentle.after.title": "viniste",

@@ -31,7 +31,7 @@ import { today as todayNow } from "@/lib/time";
 import { voiceLabel } from "@/lib/voice";
 import { opensAhead } from "@/content/life-moments";
 import { samplerOpens } from "@/content/sampler";
-import { courseById, courseDayOf, courseNext, courseOpens, say } from "@/content/courses";
+import { courseById, courseDayOf, courseNext, courseOpens, fromLabel, say } from "@/content/courses";
 import { holidayOpens } from "@/content/couple";
 import { couplePartnerDoor } from "@/lib/couple";
 import { BetStep, BreathStep, ForkStep, MatchStep, MythStep, OptionStep, OrderStep, OriginalStep, SitStep, SpeakStep, TapHear, TrapdoorStep } from "@/session/steps";
@@ -202,7 +202,7 @@ function Session({ door, day, kidId, mode, deep, extra = false, course = null, v
       const setup = say(c?.days.find((x) => x.door === door && x.day === day)?.setup);
       if (c) {
         let id = Math.max(...steps.map((x: any) => x.id)) + 1;
-        const intro = [{ type: "beat", seg: "a welcome", label: say(c.title), text: t("courses.lessonIntro", { n: courseDayOf(course, door, day), title: say(c.title), door: doorLabel(door).toLowerCase() }), head: null, id: id++ }, ...(setup ? [{ type: "beat", seg: "a welcome", label: say(c.title), text: setup, head: null, id: id++ }] : [])];
+        const intro = [{ type: "beat", seg: "a welcome", label: say(c.title), text: t("courses.lessonIntro", { n: courseDayOf(course, door, day), title: say(c.title), door: fromLabel(door) }), head: null, id: id++ }, ...(setup ? [{ type: "beat", seg: "a welcome", label: say(c.title), text: setup, head: null, id: id++ }] : [])];
         const where = at >= 0 ? at : Math.max(0, steps.findIndex((x: any) => x.type !== "bell"));
         steps = [...steps.slice(0, where), ...intro, ...steps.slice(where)];
       }

@@ -23,7 +23,7 @@ const MOVED_ES = /(deja de hablarme de|ya no me importa|me cri[eé] (en|como)|cr
 // moment A, in English and Spanish
 const SEEKER = /\b(which (path|religion|door|faith|tradition)|what (path|religion|faith|tradition) (is|fits|should|would)|(path|religion) (is )?(for|right for) me|(build|create|make|design) (me )?(a |my )?(spiritual )?path|not (very |at all )?religious|no religion|(where|how) (do|should|can) i (even )?(start|begin)|many (paths|traditions|religions)|all (the )?(religions|traditions)|spiritual but|explore (other |different )?(religions|traditions|paths))/i;
 const SEEKER_ES = /(qu[eé] (camino|religi[oó]n|puerta|tradici[oó]n|fe)|(cr[eé]a|hazme|arma|dise[nñ]a)(me)? un camino|no soy (muy )?religios|sin religi[oó]n|por d[oó]nde (empiezo|empezar|comienzo)|muchos caminos|todas las (religiones|tradiciones)|explorar (otras )?(religiones|tradiciones))/i;
-const OWN_PATH = /\bmy own path\b|\bmi propio camino\b/i;
+const OWN_PATH = /\bmy own (path|religion)\b|\bmi propi[oa] (camino|religión)/i;
 
 export const movedOn = (q: string) => MOVED.test(q) || MOVED_ES.test(q);
 export const seeking = (q: string) => SEEKER.test(q) || SEEKER_ES.test(q);

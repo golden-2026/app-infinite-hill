@@ -1,7 +1,7 @@
 import { useTitle } from "@/lib/title";
 import { Redirect, router, useLocalSearchParams } from "expo-router";
 import { Pressable, Text, View } from "react-native";
-import { courseById, courseDays, dayName, say } from "@/content/courses";
+import { courseById, courseDays, dayName, fromLabel, say } from "@/content/courses";
 import { useStore } from "@/lib/store";
 import { doorLabel, t } from "@/i18n";
 import { Btn, Eyebrow, Screen, color, font, type } from "@/ui";
@@ -51,12 +51,12 @@ export default function CoursePage() {
             const isNext = mine && next?.n === x.n;
             return (
               <Pressable key={`${x.door}:${x.day}`} testID={`course-day-${x.n}`} disabled={!can} accessibilityRole="link" accessibilityState={{ disabled: !can }}
-                accessibilityLabel={t("courses.page.dayA11y", { n: x.n, name, door: doorLabel(x.door) })} onPress={() => open(x.door, x.day)}
+                accessibilityLabel={t("courses.page.dayA11y", { n: x.n, name, door: fromLabel(x.door) })} onPress={() => open(x.door, x.day)}
                 style={({ pressed }) => [{ flexDirection: "row", alignItems: "center", gap: 10, minHeight: 56, paddingVertical: 8, borderTopWidth: i ? 1 : 0, borderTopColor: color.line, opacity: pressed ? 0.8 : 1 }]}>
                 <Text style={[type.eyebrow(8), { width: 44, color: isNext ? color.ink : color.mute }]}>{t("common.day", { n: x.n })}</Text>
                 <View style={{ flex: 1 }}>
                   <Text numberOfLines={2} style={{ fontFamily: font.text[600], fontSize: 15, color: x.done || isNext || !mine ? color.ink : color.mute }}>{name}{x.done ? " ✓" : ""}</Text>
-                  <Text style={[type.body(12), { color: color.mute }]}>{doorLabel(x.door).toLowerCase()}</Text>
+                  <Text style={[type.body(12), { color: color.mute }]}>{fromLabel(x.door)}</Text>
                 </View>
                 {can ? <Text style={{ fontSize: 20, color: color.ink }}>›</Text> : null}
               </Pressable>

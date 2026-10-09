@@ -32,7 +32,7 @@ import { HolidayCard, WalkTogetherCard } from "@/ui/couple";
 import { campLabel, campName, doorLabel, isEs, t } from "@/i18n";
 import { firstWeekFor, gentleStart } from "@/content/life-moments";
 import { samplerActive, samplerNext, walkedFrom } from "@/content/sampler";
-import { courseById, courseNext, dayName, say } from "@/content/courses";
+import { courseById, courseNext, dayName, fromLabel, say } from "@/content/courses";
 import { baselineAtStart, daysCome, laneFor, nextWeekDay } from "@/lib/lane";
 import { dueOnThirdDay, emptyWellbeing } from "@/lib/wellbeing";
 
@@ -171,7 +171,7 @@ export default function Today() {
               <View style={{ flex: 1, gap: 3 }}>
                 <Text style={[type.eyebrow(8), { color: color.ink }]}>{t("courses.today.line", { title: say(c.title), n: next.n })}</Text>
                 <Text style={{ fontFamily: font.display[800], fontSize: 16, color: color.ink }}>{dayName(next.door, next.day)}</Text>
-                <Text style={[type.body(12), { color: color.mute }]}>{t("courses.today.from", { door: doorLabel(next.door).toLowerCase() })}</Text>
+                <Text style={[type.body(12), { color: color.mute }]}>{t("courses.today.from", { door: fromLabel(next.door) })}</Text>
               </View>
               <Text style={s.chev}>›</Text>
             </Pressable>

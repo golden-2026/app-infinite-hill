@@ -30,7 +30,7 @@ export const en = {
   "door.JUDAISM": "Judaism",
   "door.BUDDHISM": "Buddhism",
   "door.SIKHISM": "Sikhism",
-  "door.SPIRITUAL": "Simply Spiritual",
+  "door.SPIRITUAL": "My Own Religion",
   // camps and the years after
   "camp.label": "Camp {n}",
   "camp.Camp 1": "First steps",
@@ -74,7 +74,7 @@ export const es: Dict<typeof en> = {
   "door.JUDAISM": "judaísmo",
   "door.BUDDHISM": "budismo",
   "door.SIKHISM": "sijismo",
-  "door.SPIRITUAL": "simplemente espiritual",
+  "door.SPIRITUAL": "mi propia religión",
   "camp.label": "campamento {n}",
   "camp.Camp 1": "primeros pasos",
   "camp.Camp 2": "las historias",

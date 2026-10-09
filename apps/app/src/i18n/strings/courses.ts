@@ -3,23 +3,24 @@
 import type { Dict } from "../core";
 
 export const en = {
+  "courses.many": "many traditions",
   "courses.lessonIntro": "this is day {n} of {title}. today's wisdom comes from {door}.",
   // the welcome step for seekers (after "where are you with religion?")
-  "courses.help.eyebrow": "your own path",
-  "courses.help.ask": "your own path, your way. how do you want to walk it?",
+  "courses.help.eyebrow": "my own religion",
+  "courses.help.ask": "your own religion, your way. how do you want to walk it?",
   "courses.help.course": "something on my mind",
   "courses.help.daily": "a little every day",
   "courses.help.taste": "wander",
   "courses.help.note": "it's all yours. switch anytime.",
   "courses.help.unsure": "or pick a religion to learn",
   // picking a course
-  "courses.pick.eyebrow": "your own path · 7 days, one tradition a day",
+  "courses.pick.eyebrow": "my own religion · 7 days, one tradition a day",
   "courses.pick.host": "pick what's on your mind. each day, a different tradition answers it.",
   "courses.pick.start": "start: {title}",
   "courses.pick.choose": "pick one to start",
   "courses.pick.daily": "or choose another way",
   // a course's page
-  "courses.page.eyebrow": "your own path · {title}",
+  "courses.page.eyebrow": "my own religion · {title}",
   "courses.page.start": "start day 1",
   "courses.page.next": "keep going: day {n}",
   "courses.page.begin": "start this course",
@@ -52,20 +53,21 @@ export const en = {
 };
 
 export const es: Dict<typeof en> = {
+  "courses.many": "varias tradiciones",
   "courses.lessonIntro": "este es el día {n} de {title}. la sabiduría de hoy viene de {door}.",
-  "courses.help.eyebrow": "tu propio camino",
-  "courses.help.ask": "tu propio camino, a tu manera. ¿cómo quieres recorrerlo?",
+  "courses.help.eyebrow": "mi propia religión",
+  "courses.help.ask": "tu propia religión, a tu manera. ¿cómo quieres recorrerla?",
   "courses.help.course": "algo que tengo en mente",
   "courses.help.daily": "un poco cada día",
   "courses.help.taste": "explorar",
   "courses.help.note": "todo es tuyo. cambia cuando quieras.",
   "courses.help.unsure": "o elige una religión para aprender",
-  "courses.pick.eyebrow": "tu propio camino · 7 días, una tradición al día",
+  "courses.pick.eyebrow": "mi propia religión · 7 días, una tradición al día",
   "courses.pick.host": "elige lo que tienes en mente. cada día, una tradición distinta te responde.",
   "courses.pick.start": "empezar: {title}",
   "courses.pick.choose": "elige uno para empezar",
   "courses.pick.daily": "o elige otra manera",
-  "courses.page.eyebrow": "tu propio camino · {title}",
+  "courses.page.eyebrow": "mi propia religión · {title}",
   "courses.page.start": "empezar el día 1",
   "courses.page.next": "sigue: día {n}",
   "courses.page.begin": "empezar este curso",

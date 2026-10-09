@@ -8,6 +8,10 @@
 // KEEPER REVIEW REQUIRED: this selection is ours, not a Keeper's. Before public release, each door's Keeper should
 // confirm the day chosen for their tradition, as with the sampler week (content/sampler.ts).
 import { getLang } from "@/i18n/core";
+import { doorLabel, t } from "@/i18n";
+
+/** Where a course day comes from, in a sentence: the tradition, or "many traditions" for a day from my own religion. */
+export const fromLabel = (door: string) => (door === "SPIRITUAL" ? t("courses.many") : doorLabel(door).toLowerCase());
 
 type Text = { en: string; es: string };
 export type CourseDay = { door: string; day: number; setup?: Text };

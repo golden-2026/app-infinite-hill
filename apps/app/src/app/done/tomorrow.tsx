@@ -11,7 +11,7 @@ import { todaysThree } from "@/lib/three";
 import { dueAfterLesson, emptyWellbeing } from "@/lib/wellbeing";
 import { gentleStart } from "@/content/life-moments";
 import { askHeard } from "@/lib/lane";
-import { courseById, courseNext, dayName, say } from "@/content/courses";
+import { courseById, courseNext, dayName, fromLabel, say } from "@/content/courses";
 import { Bubble, Btn, Guy, Link, Screen, Sun, color, font, type } from "@/ui";
 import { doorLabel, t, type Key } from "@/i18n";
 
@@ -89,7 +89,7 @@ export default function Tomorrow() {
       <View testID="tomorrow-card" style={{ backgroundColor: color.ink, borderRadius: 22, paddingVertical: 18, paddingHorizontal: 18, gap: 6 }}>
         <Text style={[type.eyebrow(9), { color: color.gold }]}>{course ? (cNext ? t("courses.tomorrow.next", { title: say(course.title), n: cNext.n }) : say(course.title)) : t("session.tomorrow.eyebrow", { n: day + 1 })}</Text>
         <Text accessibilityRole="header" style={{ fontFamily: font.display[800], fontSize: 26, lineHeight: 30, color: "#fff" }}>{teaser}</Text>
-        <Text style={[type.body(14), { color: "#ffffffcc" }]}>{course ? (cNext ? t("courses.today.from", { door: doorLabel(cNext.door).toLowerCase() }) : t("courses.tomorrow.finishedSub")) : t("session.tomorrow.sub")}</Text>
+        <Text style={[type.body(14), { color: "#ffffffcc" }]}>{course ? (cNext ? t("courses.today.from", { door: fromLabel(cNext.door) }) : t("courses.tomorrow.finishedSub")) : t("session.tomorrow.sub")}</Text>
       </View>
 
       {r.on ? (

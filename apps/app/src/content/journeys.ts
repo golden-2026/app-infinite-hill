@@ -37,9 +37,9 @@ export const DOOR_HOOK: Record<string, string> = bilingual({
 
 /** What "my own path" promises, everywhere it's offered. DRAFT. */
 export const OWN_PATH = bilingual({
-  title: "my own path",
-  line: "a path built around you",
-  promise: "the house's best ideas, picked for you — stillness from one tradition, a story from another, a line to carry from a third. nothing to sign up to.",
+  title: "my own religion",
+  line: "create your own religion",
+  promise: "the best of every tradition, built around you. each one taught faithfully, never blended or ranked.",
 }, OWN_PATH_ES);
 
 export type Stage = {
