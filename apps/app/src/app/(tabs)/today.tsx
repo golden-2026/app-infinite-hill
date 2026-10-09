@@ -159,7 +159,8 @@ export default function Today() {
 
         {/* the course they're on (content/courses.ts): first on Today, its next day one tap away; the path waits below */}
         {(() => {
-          const c = courseById(st.course?.id);
+          // courses live inside Simply Spiritual (owner, 2026-10-09); the seven religion paths stay clean
+          const c = st.homeWing === "SPIRITUAL" ? courseById(st.course?.id) : null;
           const next = c ? courseNext(c, saved.sits) : null;
           if (!c || !next) return null;
           return (
@@ -264,7 +265,7 @@ export default function Today() {
         {/* the course shelf (content/courses.ts): open to everyone, a quiet row while no course is under way */}
         {(() => {
           const c = courseById(st.course?.id);
-          if (focused || quiet || (c && courseNext(c, saved.sits))) return null;
+          if (st.homeWing !== "SPIRITUAL" || focused || quiet || (c && courseNext(c, saved.sits))) return null;
           return (
             <Pressable testID="courses-card" accessibilityRole="link" onPress={() => router.push("/courses")} style={({ pressed }) => [s.lite, { marginTop: 0, opacity: pressed ? 0.9 : 1 }]}>
               <Guy pose="think" h={52} />

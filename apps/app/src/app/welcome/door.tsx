@@ -116,6 +116,8 @@ export default function PickDoor() {
   // The full welcome goes on to the "where are you?" check. The gentle, light and quick ways in (lib/lane.ts) skip the map, the check and
   // the summary, so the door's profile is made here, carrying what the first step told us.
   const go = (d: string) => {
+    // your own path: how to walk it first (welcome/help: a little every day, a course, or wander)
+    if (d === "SPIRITUAL") return router.push("/welcome/help");
     const next = afterDoor(why);
     if (next === "check") return router.push(d === "SPIRITUAL" ? "/welcome/intake" : { pathname: "/welcome/know", params: { door: d } });
     update({ profile: profileFor(saved.settings.profile, d, today) });

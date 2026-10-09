@@ -30,7 +30,7 @@ export default function CoursePage() {
   };
   const footer = allDone ? <>
     <Btn testID="course-another" kind="gold" onPress={() => router.replace("/courses")}>{t("courses.page.another")}</Btn>
-    <Btn testID="course-spiritual" kind="ghost" onPress={() => router.replace({ pathname: "/session/[door]/[day]", params: { door: "SPIRITUAL", day: "1" } })}>{t("courses.page.spiritual")}</Btn>
+    <Btn testID="course-spiritual" kind="ghost" onPress={() => router.replace("/today")}>{t("courses.page.spiritual")}</Btn>
   </> : mine && next ? (
     <Btn testID="course-next" kind="gold" onPress={() => open(next.door, next.day)}>{next.n === 1 ? t("courses.page.start") : t("courses.page.next", { n: next.n })}</Btn>
   ) : (
