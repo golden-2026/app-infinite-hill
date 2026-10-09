@@ -50,6 +50,7 @@ design changes go live, ask before deploying, real testimonials only, check usag
   once the weekly limit is hit.
 
 ## Session of 2026-10-06 (pick up here; newest first)
+- LIVE: expo-live86 (2026-10-09): Simply Spiritual holds the courses: "your own path, your way" (every day / a course / wander) after picking my own path; religion paths show no courses; no seeker detour before the doors.
 - LIVE: expo-live85 (2026-10-09): placement quiz for all 7 tradition paths through year 4 (hand-checked bank, 17 stops each; adaptive check, see docs/learning/placement-gates.md). Owner approved.
 - LIVE: expo-live84 (2026-10-09): YEAR 4 live on all 8 paths (owner okay after reviewing 3 lessons); "Day one thousand…" sign-offs (days 1001-1426) became warm goodbyes. Next: placement bank for all paths + year 4 stops (running); year 5 starts Oct 13 (owner).
 - LIVE: expo-live83 (2026-10-08): courses for seekers (11 seven-day courses from existing y1-y3 lessons, content/courses.ts), "what would help most?" welcome step, course page/shelf/Today card; course days count for the streak, never move a path. Owner approved the 21 setup lines. Code only (year 4 not compiled in).
