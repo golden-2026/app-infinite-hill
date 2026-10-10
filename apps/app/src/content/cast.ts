@@ -139,8 +139,26 @@ const HINDU_SCENES: Record<number, number> = {
   // year 5 scenes (avatars, critical, practice, arrivals, sam-teaches, stars, summit) are in assets/cast/hindu; placed when year 5 is written
 };
 
+const C_SCENE = {
+  choir: require("../../assets/cast/christianity/scene-choir.webp"),
+  potluck: require("../../assets/cast/christianity/scene-potluck.webp"),
+  christmas: require("../../assets/cast/christianity/scene-christmas.webp"),
+  shift: require("../../assets/cast/christianity/scene-shift.webp"),
+  easter: require("../../assets/cast/christianity/scene-easter.webp"),
+  porch: require("../../assets/cast/christianity/scene-porch.webp"),
+};
+const CHRISTIAN_SCENES: Record<number, number> = {
+  19: C_SCENE.easter, 119: C_SCENE.easter, // the women at the tomb; Easter is fifty days
+  76: C_SCENE.potluck, 140: C_SCENE.potluck, // they shared everything; fellowship
+  110: C_SCENE.christmas, 111: C_SCENE.christmas, // Advent; Christmas
+  135: C_SCENE.choir, 136: C_SCENE.choir, 430: C_SCENE.choir, // the church sings; Watts and Wesley; sing a new song
+  105: C_SCENE.porch, 106: C_SCENE.porch, // how long, O Lord?; when prayer feels empty
+  418: C_SCENE.shift, // joy in the morning
+};
+const SCENES: Record<string, Record<number, number>> = { HINDUISM: HINDU_SCENES, CHRISTIANITY: CHRISTIAN_SCENES };
+
 /** The scene drawn for this lesson, if any. */
-export const sceneFor = (door: string, day: number): number | null => (door === "HINDUISM" ? HINDU_SCENES[day] ?? null : null);
+export const sceneFor = (door: string, day: number): number | null => SCENES[door]?.[day] ?? null;
 
 /** The whole family, for the Hindu path's welcome. */
 export const HINDU_FAMILY: number = require("../../assets/cast/hindu/family.webp");
