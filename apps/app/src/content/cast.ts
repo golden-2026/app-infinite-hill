@@ -18,10 +18,11 @@ const HINDU: Record<string, Who> = {
 };
 
 // Who plays which asker: Priya is 16 (a sister, cousin, niece, daughter), Sam her best friend (a friend, classmate,
-// roommate, neighbor), Arjun the dad (a dad, uncle, coworker), Nani the grandmother. Mothers are left as written: the
+// roommate, neighbor), Arjun the dad (a dad, uncle, coworker), Nani the elder (a grandparent or aunt quizzing you; owner
+// asked for more of her, 2026-10-09). Mothers are left as written: the
 // family's mother has died, and the cast never stands in for her.
 const PLAYS: [RegExp, string][] = [
-  [/^(your )?(grandmother|grandma|nani)$/, "nani"],
+  [/^(your )?(grandmother|grandma|nani|grandfather|grandpa|aunt)$/, "nani"], // an elder quizzing you: Nani loves to
   [/^(your )?(dad|father|uncle)$|coworker|friend (from|at) work/, "arjun"],
   [/^(your )?(little |teenage |younger )?(sister|cousin|niece|daughter)$|^(your )?(kid|teenager)$/, "priya"],
   [/best friend|roommate|classmate|^(your |a )?(friend|new friend)$|neighbor$|teammate|study partner|friend from school/, "sam"],
