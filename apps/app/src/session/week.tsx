@@ -11,6 +11,8 @@ import { SlotFill } from "@/ui/slot";
 import { Enter } from "@/ui/enter";
 import { Verdict, useFx } from "@/session/juice";
 import { t } from "@/i18n";
+import { Image } from "expo-image";
+import { castFor } from "@/content/cast";
 
 type Done = (ok: boolean | null) => void;
 const Kicker = ({ children }: { children: string }) => <Text style={[type.eyebrow(), { color: color.gold }]}>{children}</Text>;
@@ -137,7 +139,9 @@ export function ThinkStep({ step, onDone }: { step: any; onDone: Done }) {
 }
 
 // ─── complete the chat (the new recipe, @ih/content v2.js): someone asks, you pick the best reply ──
-export function ChatStep({ step, onDone }: { step: any; onDone: Done }) {
+export function ChatStep({ step, onDone, door = "" }: { step: any; onDone: Done; door?: string }) {
+  // the asker, played by the door's recurring cast where one fits (content/cast.ts): a face and a name
+  const cast = castFor(door, step.who);
   const [picked, setPicked] = useState<string | null>(null);
   const fx = useFx();
   const [order] = useState<string[]>(() => shuffled(step.options));
@@ -145,10 +149,13 @@ export function ChatStep({ step, onDone }: { step: any; onDone: Done }) {
   return (
     <View style={{ gap: 12, width: "100%" }}>
       <Kicker>{t("session.chat.title")}</Kicker>
-      <View style={{ gap: 4, maxWidth: "88%" }}>
-        <Text style={[type.eyebrow(8), { color: "#ffffff99" }]}>{t("session.chat.who", { who: step.who })}</Text>
-        <View style={[s.bubble, { backgroundColor: "#fff", borderBottomLeftRadius: 6 }]}>
-          <Text style={[s.line, { color: color.ink }]}>{step.says}</Text>
+      <View style={{ flexDirection: "row", alignItems: "flex-end", gap: 8 }}>
+        {cast ? <Image source={cast.face} style={{ width: 52, height: 52, borderRadius: 26, borderWidth: 2, borderColor: color.gold, backgroundColor: "#fff" }} contentFit="cover" accessibilityLabel={cast.name} /> : null}
+        <View style={{ gap: 4, maxWidth: cast ? "76%" : "88%", flexShrink: 1 }}>
+          <Text style={[type.eyebrow(8), { color: "#ffffff99" }]}>{t("session.chat.who", { who: cast ? cast.name : step.who })}</Text>
+          <View style={[s.bubble, { backgroundColor: "#fff", borderBottomLeftRadius: 6 }]}>
+            <Text style={[s.line, { color: color.ink }]}>{step.says}</Text>
+          </View>
         </View>
       </View>
       {/* your reply appears only once you tap one (owner, 2026-10-07: an empty bubble read like a box to type in) */}

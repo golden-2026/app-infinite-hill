@@ -31,11 +31,13 @@ import { today as todayNow } from "@/lib/time";
 import { voiceLabel } from "@/lib/voice";
 import { opensAhead } from "@/content/life-moments";
 import { samplerOpens } from "@/content/sampler";
+import { sceneFor } from "@/content/cast";
 import { courseById, courseDayOf, courseNext, courseOpens, fromLabel, say } from "@/content/courses";
 import { holidayOpens } from "@/content/couple";
 import { couplePartnerDoor } from "@/lib/couple";
 import { BetStep, BreathStep, ForkStep, MatchStep, MythStep, OptionStep, OrderStep, OriginalStep, SitStep, SpeakStep, TapHear, TrapdoorStep } from "@/session/steps";
-import { BottomBar, Btn, Face, Guy, NavBar, Sun, color, confirmSheet, font, type } from "@/ui";
+import { BottomBar, Btn, Face, Guy, NavBar, Sun, color, confirmSheet, decorative, font, type } from "@/ui";
+import { Image } from "expo-image";
 import { successHaptic, tapHaptic } from "@/lib/haptics";
 import { SlotHost, SlotProvider } from "@/ui/slot";
 import { ChevronLeft, SpeakerIcon } from "@/ui/tab-icons";
@@ -207,6 +209,9 @@ function Session({ door, day, kidId, mode, deep, extra = false, course = null, v
         steps = [...steps.slice(0, where), ...intro, ...steps.slice(where)];
       }
     }
+    // the cast's scene over the lesson's opening (the hook), on the days one was drawn for (content/cast.ts)
+    const scene = !kidMode && !deep ? sceneFor(door, day) : null;
+    if (scene) { const k = steps.findIndex((x: any) => x.type === "beat" && /hook/.test(String(x.seg || ""))); if (k >= 0) steps = steps.map((x: any, i: number) => (i === k ? { ...x, scene } : x)); }
     const cards = recallCards.filter((c) => c.word.toLowerCase() !== String(p.word).toLowerCase());
     if (cards.length) {
       let id = Math.max(...steps.map((x: any) => x.id)) + 1;
@@ -456,11 +461,13 @@ function Session({ door, day, kidId, mode, deep, extra = false, course = null, v
       return frame(
         <View style={{ width: "100%", maxWidth: 380, gap: 12, alignSelf: "center" }}>
           {step.head ? <Text style={[type.eyebrow(11), { color: color.gold, letterSpacing: 1.76, textAlign: "center" }]}>{step.head}</Text> : null}
+          {/* the cast's scene for this lesson (content/cast.ts), over its opening */}
+          {step.scene ? <Image source={step.scene} style={{ width: "100%", height: 230, borderRadius: 18 }} contentFit="cover" contentPosition="top" transition={200} {...decorative} /> : null}
           <View style={{ backgroundColor: "#fff", borderRadius: 22, paddingVertical: 16, paddingHorizontal: 18 }}>
             {step.gloss ? <GlossText door={door} text={step.text} gloss={step.gloss} style={{ fontFamily: font.display[700], fontSize: fs, lineHeight: fs * 1.3, color: color.ink, letterSpacing: -0.2 }} /> : <SayText door={door} text={step.text} style={{ fontFamily: font.display[700], fontSize: fs, lineHeight: fs * 1.3, color: color.ink, letterSpacing: -0.2 }} />}
           </View>
           <View style={{ width: 0, height: 0, marginLeft: 38, marginTop: -12, borderLeftWidth: 12, borderRightWidth: 12, borderTopWidth: 14, borderLeftColor: "transparent", borderRightColor: "transparent", borderTopColor: "#fff" }} />
-          <Guy pose={BEAT_POSES[qi % BEAT_POSES.length]} h={150} style={{ alignSelf: "flex-start", marginLeft: 6 }} />
+          <Guy pose={BEAT_POSES[qi % BEAT_POSES.length]} h={step.scene ? 90 : 150} style={{ alignSelf: "flex-start", marginLeft: 6 }} />
         </View>,
         { foot: <View style={{ gap: 4 }}><Pressable accessibilityRole="button" accessibilityLabel={t("session.hearAgainA11y")} onPress={() => (kidMode ? speakChrome : speak)(step.text, true)} style={({ pressed }) => ({ minHeight: 44, flexDirection: "row", gap: 8, alignItems: "center", justifyContent: "center", opacity: pressed ? 0.5 : 1 })}><SpeakerIcon color="#ffffff99" /><Text style={[type.eyebrow(), { color: "#ffffff99" }]}>{t("session.hearAgain")}</Text></Pressable><Btn testID="next" kind="gold" onPress={() => next()}>{t("session.next")}</Btn></View> },
       );
@@ -473,7 +480,7 @@ function Session({ door, day, kidId, mode, deep, extra = false, course = null, v
     case "wrong": return frame(<WrongStep step={step} onDone={() => next()} />);
     case "story": return frame(<StoryStep step={step} door={door} onDone={() => next()} />, { top: true });
     case "build": return frame(<BuildStep step={step} onDone={verdict} />, { top: true });
-    case "chat": return frame(<ChatStep step={step} onDone={verdict} />, { top: true });
+    case "chat": return frame(<ChatStep step={step} door={door} onDone={verdict} />, { top: true });
     case "think": return frame(<ThinkStep step={step} onDone={verdict} />, { top: true });
     // the week's check-in is its own score: counted once, never sent back through "one more time"; what slipped joins
     // the missed-words review
