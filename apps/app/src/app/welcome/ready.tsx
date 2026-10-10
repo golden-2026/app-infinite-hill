@@ -11,7 +11,7 @@ import { baselineAtStart, firstLesson, laneFor, weekFirst } from "@/lib/lane";
 import { t } from "@/i18n";
 import { Eyebrow, Guy, decorative, type } from "@/ui";
 import { Image } from "expo-image";
-import { HINDU_FAMILY } from "@/content/cast";
+import { FAMILY } from "@/content/cast";
 import { WelcomeFrame } from "@/ui/welcome-frame";
 import { gentleStart } from "@/content/life-moments";
 
@@ -46,7 +46,7 @@ export default function Ready() {
     <WelcomeFrame step={8} door={door}>
       <View style={{ alignItems: "center", gap: 18 }}>
         {/* the Hindu path's family (content/cast.ts) waits at the door; other paths, the mascot */}
-        {door === "HINDUISM" ? <Image source={HINDU_FAMILY} style={{ width: "100%", aspectRatio: 16 / 9, borderRadius: 18 }} contentFit="cover" {...decorative} /> : <Guy pose={gentle ? "heart" : "path"} h={180} />}
+        {FAMILY[door] ? <Image source={FAMILY[door]} style={{ width: "100%", aspectRatio: 16 / 9, borderRadius: 18 }} contentFit="cover" {...decorative} /> : <Guy pose={gentle ? "heart" : "path"} h={180} />}
         <Text style={[type.h1(24), { textAlign: "center", maxWidth: 280 }]}>
           {head}{"\n"}
           <Text style={gentle ? { fontFamily: "Manrope_500Medium", fontSize: 18, lineHeight: 25 } : { fontFamily: "Manrope_500Medium", fontStyle: "italic" }}>{sub}</Text>

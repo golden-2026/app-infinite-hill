@@ -164,3 +164,5 @@ export const sceneFor = (door: string, day: number): number | null => SCENES[doo
 
 /** The whole family, for the Hindu path's welcome. */
 export const HINDU_FAMILY: number = require("../../assets/cast/hindu/family.webp");
+/** Each path's family, for its welcome (paths without one show the mascot). */
+export const FAMILY: Record<string, number> = { HINDUISM: HINDU_FAMILY, CHRISTIANITY: require("../../assets/cast/christianity/family.webp") };
