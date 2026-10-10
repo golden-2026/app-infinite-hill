@@ -50,6 +50,7 @@ design changes go live, ask before deploying, real testimonials only, check usag
   once the weekly limit is hit.
 
 ## Session of 2026-10-06 (pick up here; newest first)
+- LIVE: expo-live92 (2026-10-10): 42 more Hindu cast scenes through year 4 (82 lesson days in all); 7 year-5 scenes stored in assets/cast/hindu for when year 5 is written.
 - LIVE: expo-live91 (2026-10-10): 14 more Hindu cast scenes on 28 lesson days (content/cast.ts); seva scene held back.
 - LIVE: expo-live90 (2026-10-09): Hindu cast (Priya, Nani, Arjun, Sam) in chats (~1,000 Hindu lessons) and scenes on days 1, 30, 81/88/139/140 (Diwali), 82/96/141/142 (Holi), 122 (arti); family on the Hindu welcome. content/cast.ts. Scholar review before public.
 - LIVE: expo-live89 (2026-10-09): demo polish (easy basics open every placement quiz, Create my own religion button, lowercase name in sentences, my own religion preselected, Guide fallback helpful, hill next stone opens now, put-it-in-order label, camp-day wording, web warning gone). Celebrity first-person welcomes kept (owner).
