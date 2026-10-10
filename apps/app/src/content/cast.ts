@@ -99,6 +99,7 @@ const SCENE = {
   "logic": require("../../assets/cast/hindu/scene-logic.webp"),
   "yoga": require("../../assets/cast/hindu/scene-yoga.webp"),
   "reflection": require("../../assets/cast/hindu/scene-reflection.webp"),
+  "big-book": require("../../assets/cast/hindu/scene-big-book.webp"),
   "chanting": require("../../assets/cast/hindu/scene-chanting.webp"),
   "sunrise-offering": require("../../assets/cast/hindu/scene-sunrise-offering.webp"),
   "havan": require("../../assets/cast/hindu/scene-havan.webp"),
@@ -136,7 +137,8 @@ const HINDU_SCENES: Record<number, number> = {
   1062: SCENE["durga-puja"], 1072: SCENE.saraswati, 1073: SCENE.rangoli, 1160: SCENE.logic, 1181: SCENE.yoga, 1192: SCENE.reflection,
   1244: SCENE.chanting, 1262: SCENE["sunrise-offering"], 1268: SCENE.havan, 1274: SCENE["chant-lesson"], 1280: SCENE.healing,
   1300: SCENE.kites, 1328: SCENE.museum, 1353: SCENE.garland, 1370: SCENE.gopuram, 1394: SCENE.onam,
-  // year 5 scenes (avatars, critical, practice, arrivals, sam-teaches, stars, summit) are in assets/cast/hindu; placed when year 5 is written
+  697: SCENE["big-book"],
+  // year 5 scenes (avatars, critical, practice, arrivals, sam-teaches, stars, summit, sanskrit) are in assets/cast/hindu; placed when year 5 is written
 };
 
 const C_SCENE = {
