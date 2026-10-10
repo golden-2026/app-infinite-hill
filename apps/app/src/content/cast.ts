@@ -28,12 +28,23 @@ const PLAYS: [RegExp, string][] = [
   [/best friend|roommate|classmate|^(your |a )?(friend|new friend)$|neighbor$|teammate|study partner|friend from school/, "sam"],
 ];
 
+// Christianity (owner, 2026-10-10): an African-American family in Atlanta. Grace (16, choir), Pop (her grandfather, a
+// deacon), Marcus (her dad, an ER nurse), Leo (her best friend, family not religious). Same roles as the Hindu cast.
+const CHRISTIAN: Record<string, Who> = {
+  priya: { name: "Grace", face: require("../../assets/cast/christianity/grace.webp") },
+  nani: { name: "Pop", face: require("../../assets/cast/christianity/pop.webp") },
+  arjun: { name: "Marcus", face: require("../../assets/cast/christianity/marcus.webp") },
+  sam: { name: "Leo", face: require("../../assets/cast/christianity/leo.webp") },
+};
+const CASTS: Record<string, Record<string, Who>> = { HINDUISM: HINDU, CHRISTIANITY: CHRISTIAN };
+
 /** The cast member playing a chat's asker on this door, or null (the lesson's own wording stays). */
 export function castFor(door: string, who: string | undefined): Who | null {
-  if (door !== "HINDUISM" || !who) return null;
+  const cast = CASTS[door];
+  if (!cast || !who) return null;
   const w = who.toLowerCase().trim();
   const hit = PLAYS.find(([re]) => re.test(w));
-  return hit ? HINDU[hit[1]] : null;
+  return hit ? cast[hit[1]] : null;
 }
 
 const SCENE = {
