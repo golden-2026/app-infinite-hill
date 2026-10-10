@@ -42,6 +42,20 @@ const SCENE = {
   diwali: require("../../assets/cast/hindu/scene-diwali.webp"),
   holi: require("../../assets/cast/hindu/scene-holi.webp"),
   arti: require("../../assets/cast/hindu/scene-arti.webp"),
+  "car": require("../../assets/cast/hindu/scene-car.webp"),
+  "garba": require("../../assets/cast/hindu/scene-garba.webp"),
+  "janmashtami": require("../../assets/cast/hindu/scene-janmashtami.webp"),
+  "ganesh-clay": require("../../assets/cast/hindu/scene-ganesh-clay.webp"),
+  "rakhi": require("../../assets/cast/hindu/scene-rakhi.webp"),
+  "restless": require("../../assets/cast/hindu/scene-restless.webp"),
+  "om": require("../../assets/cast/hindu/scene-om.webp"),
+  "unkind": require("../../assets/cast/hindu/scene-unkind.webp"),
+  "salt": require("../../assets/cast/hindu/scene-salt.webp"),
+  "banyan": require("../../assets/cast/hindu/scene-banyan.webp"),
+  "shadows": require("../../assets/cast/hindu/scene-shadows.webp"),
+  "shivaratri": require("../../assets/cast/hindu/scene-shivaratri.webp"),
+  "serial": require("../../assets/cast/hindu/scene-serial.webp"),
+  "dice": require("../../assets/cast/hindu/scene-dice.webp"),
 };
 const HINDU_SCENES: Record<number, number> = {
   1: SCENE.doorway, // the one at every doorway (Ganesha)
@@ -49,6 +63,16 @@ const HINDU_SCENES: Record<number, number> = {
   81: SCENE.diwali, 88: SCENE.diwali, 139: SCENE.diwali, 140: SCENE.diwali,
   82: SCENE.holi, 96: SCENE.holi, 141: SCENE.holi, 142: SCENE.holi,
   122: SCENE.arti, // family arti
+  // more scenes (owner, 2026-10-10); "seva" is held back: its kitchen reads as a Sikh gurdwara, not a Hindu temple
+  164: SCENE.car, // act, never for the fruit (Arjun and Priya in the car)
+  80: SCENE.garba, 87: SCENE.garba, 144: SCENE.garba, 686: SCENE.garba,
+  92: SCENE.janmashtami, 670: SCENE.janmashtami,
+  79: SCENE["ganesh-clay"], 93: SCENE["ganesh-clay"], 147: SCENE["ganesh-clay"], 678: SCENE["ganesh-clay"],
+  150: SCENE.rakhi, 683: SCENE.rakhi,
+  181: SCENE.restless, 2: SCENE.om, 255: SCENE.om,
+  329: SCENE.unkind, 339: SCENE.salt, 348: SCENE.banyan,
+  58: SCENE.shadows, 613: SCENE.shadows, 632: SCENE.shadows, 635: SCENE.shadows,
+  675: SCENE.shivaratri, 705: SCENE.serial, 711: SCENE.serial, 765: SCENE.dice, 768: SCENE.dice,
 };
 
 /** The scene drawn for this lesson, if any. */
