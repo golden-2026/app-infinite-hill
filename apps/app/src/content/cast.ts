@@ -310,7 +310,24 @@ const BUDDHIST_SCENES: Record<number, number> = {
   13: B_SCENE.bonsai, 825: B_SCENE.bonsai, // impermanence; the monkey gardeners
   832: B_SCENE.anxious, 1401: B_SCENE.anxious, // the preacher of patience; patience as practice
 };
-const SCENES: Record<string, Record<number, number>> = { HINDUISM: HINDU_SCENES, CHRISTIANITY: CHRISTIAN_SCENES, CATHOLIC: CATHOLIC_SCENES, JUDAISM: JEWISH_SCENES, ISLAM: MUSLIM_SCENES, SIKHISM: SIKH_SCENES, BUDDHISM: BUDDHIST_SCENES };
+// My own religion scenes (owner, 2026-10-11): two lessons each
+const O_SCENE = {
+  meditation: require("../../assets/cast/spiritual/scene-meditation.webp"),
+  bookclub: require("../../assets/cast/spiritual/scene-bookclub.webp"),
+  hike: require("../../assets/cast/spiritual/scene-hike.webp"),
+  stoic: require("../../assets/cast/spiritual/scene-stoic.webp"),
+  journal: require("../../assets/cast/spiritual/scene-journal.webp"),
+  volunteer: require("../../assets/cast/spiritual/scene-volunteer.webp"),
+};
+const SEEKER_SCENES: Record<number, number> = {
+  2: O_SCENE.meditation, 144: O_SCENE.meditation, // no blank mind required; an hour without the phone
+  16: O_SCENE.journal, 318: O_SCENE.journal, // start with the person in the mirror; write it out
+  21: O_SCENE.hike, 188: O_SCENE.hike, // the mountain ahead; nature loves change
+  22: O_SCENE.stoic, 301: O_SCENE.stoic, // Marcus does not want to get up; the Stoic day
+  219: O_SCENE.volunteer, 81: O_SCENE.volunteer, // kindness is invincible; honest bread
+  229: O_SCENE.bookclub, 157: O_SCENE.bookclub, // how to keep reading; two books for one camp
+};
+const SCENES: Record<string, Record<number, number>> = { HINDUISM: HINDU_SCENES, CHRISTIANITY: CHRISTIAN_SCENES, CATHOLIC: CATHOLIC_SCENES, JUDAISM: JEWISH_SCENES, ISLAM: MUSLIM_SCENES, SIKHISM: SIKH_SCENES, BUDDHISM: BUDDHIST_SCENES, SPIRITUAL: SEEKER_SCENES };
 
 /** The scene drawn for this lesson, if any. */
 export const sceneFor = (door: string, day: number): number | null => SCENES[door]?.[day] ?? null;
