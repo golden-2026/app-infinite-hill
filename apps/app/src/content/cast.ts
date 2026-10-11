@@ -60,6 +60,11 @@ const PLAYS_BY_DOOR: Record<string, [RegExp, string][]> = {
     [/^(your )?(mom|mother|aunt)$|coworker|friend (from|at) work/, "arjun"],
     ...PLAYS.slice(2),
   ],
+  BUDDHISM: [
+    [/^(your )?(grandfather|grandpa|uncle)$/, "nani"],
+    [/^(your )?(mom|mother|aunt)$|coworker|friend (from|at) work/, "arjun"],
+    ...PLAYS.slice(2),
+  ],
 };
 // Islam (owner, 2026-10-11): a family in Houston. Amira (16), Dadi Fatima (her grandmother), Yusuf (her dad, runs a
 // coffee shop), Jordan (her best friend). Same roles as the Hindu cast.
@@ -77,7 +82,16 @@ const SIKH: Record<string, Who> = {
   arjun: { name: "Harjit", face: require("../../assets/cast/sikh/harjit.webp") },
   sam: { name: "Maya", face: require("../../assets/cast/sikh/maya.webp") },
 };
-const CASTS: Record<string, Record<string, Who>> = { HINDUISM: HINDU, CHRISTIANITY: CHRISTIAN, CATHOLIC, JUDAISM: JEWISH, ISLAM: MUSLIM, SIKHISM: SIKH };
+// Buddhism (owner, 2026-10-11): a Vietnamese-American family. Mai (16, sketches), Ong Thanh (her grandfather, bonsai),
+// Linh (her mom, a pharmacist; plays "your mom" and the coworker), Ava (her best friend). As in Judaism, the parent is
+// the mom, so "your dad" keeps its own wording.
+const BUDDHIST: Record<string, Who> = {
+  priya: { name: "Mai", face: require("../../assets/cast/buddhism/mai.webp") },
+  nani: { name: "Ông", face: require("../../assets/cast/buddhism/ong.webp") },
+  arjun: { name: "Linh", face: require("../../assets/cast/buddhism/linh.webp") },
+  sam: { name: "Ava", face: require("../../assets/cast/buddhism/ava.webp") },
+};
+const CASTS: Record<string, Record<string, Who>> = { HINDUISM: HINDU, CHRISTIANITY: CHRISTIAN, CATHOLIC, JUDAISM: JEWISH, ISLAM: MUSLIM, SIKHISM: SIKH, BUDDHISM: BUDDHIST };
 
 /** The cast member playing a chat's asker on this door, or null (the lesson's own wording stays). */
 export function castFor(door: string, who: string | undefined): Who | null {
@@ -264,7 +278,24 @@ const SIKH_SCENES: Record<number, number> = {
   145: S_SCENE.vaisakhi, 146: S_SCENE.vaisakhi, // Vaisakhi: the harvest; the procession
   126: S_SCENE.garden, 127: S_SCENE.garden, // simran while working; your simran
 };
-const SCENES: Record<string, Record<number, number>> = { HINDUISM: HINDU_SCENES, CHRISTIANITY: CHRISTIAN_SCENES, CATHOLIC: CATHOLIC_SCENES, JUDAISM: JEWISH_SCENES, ISLAM: MUSLIM_SCENES, SIKHISM: SIKH_SCENES };
+// Buddhist scenes (owner, 2026-10-11): two lessons each
+const B_SCENE = {
+  temple: require("../../assets/cast/buddhism/scene-temple.webp"),
+  meditation: require("../../assets/cast/buddhism/scene-meditation.webp"),
+  vesak: require("../../assets/cast/buddhism/scene-vesak.webp"),
+  vulan: require("../../assets/cast/buddhism/scene-vulan.webp"),
+  bonsai: require("../../assets/cast/buddhism/scene-bonsai.webp"),
+  anxious: require("../../assets/cast/buddhism/scene-anxious.webp"),
+};
+const BUDDHIST_SCENES: Record<number, number> = {
+  2: B_SCENE.temple, 322: B_SCENE.temple, // why bow three times?; visiting a temple
+  3: B_SCENE.meditation, 116: B_SCENE.meditation, // is meditation Buddhist?; your sitting
+  6: B_SCENE.vesak, 147: B_SCENE.vesak, // one full moon, three stories; lanterns
+  1064: B_SCENE.vulan, 1294: B_SCENE.vulan, // taught to his mother; all were our mothers
+  13: B_SCENE.bonsai, 825: B_SCENE.bonsai, // impermanence; the monkey gardeners
+  832: B_SCENE.anxious, 1401: B_SCENE.anxious, // the preacher of patience; patience as practice
+};
+const SCENES: Record<string, Record<number, number>> = { HINDUISM: HINDU_SCENES, CHRISTIANITY: CHRISTIAN_SCENES, CATHOLIC: CATHOLIC_SCENES, JUDAISM: JEWISH_SCENES, ISLAM: MUSLIM_SCENES, SIKHISM: SIKH_SCENES, BUDDHISM: BUDDHIST_SCENES };
 
 /** The scene drawn for this lesson, if any. */
 export const sceneFor = (door: string, day: number): number | null => SCENES[door]?.[day] ?? null;
@@ -276,4 +307,5 @@ export const FAMILY: Record<string, number> = { HINDUISM: HINDU_FAMILY, CHRISTIA
   CATHOLIC: require("../../assets/cast/catholic/family.webp"),
   JUDAISM: require("../../assets/cast/judaism/family.webp"),
   ISLAM: require("../../assets/cast/islam/family.webp"),
-  SIKHISM: require("../../assets/cast/sikh/family.webp") };
+  SIKHISM: require("../../assets/cast/sikh/family.webp"),
+  BUDDHISM: require("../../assets/cast/buddhism/family.webp") };
