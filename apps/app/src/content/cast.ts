@@ -69,7 +69,15 @@ const MUSLIM: Record<string, Who> = {
   arjun: { name: "Yusuf", face: require("../../assets/cast/islam/yusuf.webp") },
   sam: { name: "Jordan", face: require("../../assets/cast/islam/jordan.webp") },
 };
-const CASTS: Record<string, Record<string, Who>> = { HINDUISM: HINDU, CHRISTIANITY: CHRISTIAN, CATHOLIC, JUDAISM: JEWISH, ISLAM: MUSLIM };
+// Sikhism (owner, 2026-10-11): a family in California. Simran (16), Bebe Jaswant (her grandmother, grows chilies),
+// Harjit (her dad, runs a trucking company), Maya (her best friend). Same roles as the Hindu cast.
+const SIKH: Record<string, Who> = {
+  priya: { name: "Simran", face: require("../../assets/cast/sikh/simran.webp") },
+  nani: { name: "Bebe", face: require("../../assets/cast/sikh/bebe.webp") },
+  arjun: { name: "Harjit", face: require("../../assets/cast/sikh/harjit.webp") },
+  sam: { name: "Maya", face: require("../../assets/cast/sikh/maya.webp") },
+};
+const CASTS: Record<string, Record<string, Who>> = { HINDUISM: HINDU, CHRISTIANITY: CHRISTIAN, CATHOLIC, JUDAISM: JEWISH, ISLAM: MUSLIM, SIKHISM: SIKH };
 
 /** The cast member playing a chat's asker on this door, or null (the lesson's own wording stays). */
 export function castFor(door: string, who: string | undefined): Who | null {
@@ -250,4 +258,5 @@ export const HINDU_FAMILY: number = require("../../assets/cast/hindu/family.webp
 export const FAMILY: Record<string, number> = { HINDUISM: HINDU_FAMILY, CHRISTIANITY: require("../../assets/cast/christianity/family.webp"),
   CATHOLIC: require("../../assets/cast/catholic/family.webp"),
   JUDAISM: require("../../assets/cast/judaism/family.webp"),
-  ISLAM: require("../../assets/cast/islam/family.webp") };
+  ISLAM: require("../../assets/cast/islam/family.webp"),
+  SIKHISM: require("../../assets/cast/sikh/family.webp") };
