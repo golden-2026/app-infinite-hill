@@ -230,8 +230,10 @@ const M_SCENE = {
   eid: require("../../assets/cast/islam/scene-eid.webp"),
   stories: require("../../assets/cast/islam/scene-stories.webp"),
   charity: require("../../assets/cast/islam/scene-charity.webp"),
+  prayer: require("../../assets/cast/islam/scene-prayer.webp"),
 };
 const MUSLIM_SCENES: Record<number, number> = {
+  2: M_SCENE.prayer, 112: M_SCENE.prayer, // what your prayer is actually saying; one whole prayer
   6: M_SCENE.iftar, 122: M_SCENE.iftar, // one day of Ramadan; breaking with a date
   7: M_SCENE.eid, 127: M_SCENE.eid, // two Eids, not one; Eid al-Fitr
   439: M_SCENE.stories, 468: M_SCENE.stories, // the best of stories; Musa meets al-Khidr
