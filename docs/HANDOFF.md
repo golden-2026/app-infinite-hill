@@ -50,6 +50,7 @@ design changes go live, ask before deploying, real testimonials only, check usag
   once the weekly limit is hit.
 
 ## Session of 2026-10-06 (pick up here; newest first)
+- LIVE: expo-live94 (2026-10-11): Catholic cast (Sofia, Abuela, Tomás, Mia) and Judaism cast (Noa, Saba, Rachel as the mom, Owen) in the chats, 6 scenes each on 12 lessons, families on their welcomes. Paste files for Islam, Sikhism, Buddhism, My own religion are with the owner.
 - LIVE: expo-live93 (2026-10-10): Christianity cast live (Grace, Pop, Marcus, Leo in ~1,000 chats; 6 scenes on 12 lessons; family on its welcome). Hindu fixes: Devanagari Sanskrit scene, rash guard, big-book day 697, summit with the approved mascot.
 - LIVE: expo-live92 (2026-10-10): 42 more Hindu cast scenes through year 4 (82 lesson days in all); 7 year-5 scenes stored in assets/cast/hindu for when year 5 is written.
 - LIVE: expo-live91 (2026-10-10): 14 more Hindu cast scenes on 28 lesson days (content/cast.ts); seva scene held back.
