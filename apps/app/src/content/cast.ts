@@ -61,7 +61,15 @@ const PLAYS_BY_DOOR: Record<string, [RegExp, string][]> = {
     ...PLAYS.slice(2),
   ],
 };
-const CASTS: Record<string, Record<string, Who>> = { HINDUISM: HINDU, CHRISTIANITY: CHRISTIAN, CATHOLIC, JUDAISM: JEWISH };
+// Islam (owner, 2026-10-11): a family in Houston. Amira (16), Dadi Fatima (her grandmother), Yusuf (her dad, runs a
+// coffee shop), Jordan (her best friend). Same roles as the Hindu cast.
+const MUSLIM: Record<string, Who> = {
+  priya: { name: "Amira", face: require("../../assets/cast/islam/amira.webp") },
+  nani: { name: "Dadi", face: require("../../assets/cast/islam/dadi.webp") },
+  arjun: { name: "Yusuf", face: require("../../assets/cast/islam/yusuf.webp") },
+  sam: { name: "Jordan", face: require("../../assets/cast/islam/jordan.webp") },
+};
+const CASTS: Record<string, Record<string, Who>> = { HINDUISM: HINDU, CHRISTIANITY: CHRISTIAN, CATHOLIC, JUDAISM: JEWISH, ISLAM: MUSLIM };
 
 /** The cast member playing a chat's asker on this door, or null (the lesson's own wording stays). */
 export function castFor(door: string, who: string | undefined): Who | null {
@@ -216,7 +224,20 @@ const JEWISH_SCENES: Record<number, number> = {
   127: J_SCENE.sukkah, 661: J_SCENE.sukkah, // Sukkot: the booth; the season of our joy
   130: J_SCENE.hanukkah, 667: J_SCENE.hanukkah, // Hanukkah: the lights; show the light
 };
-const SCENES: Record<string, Record<number, number>> = { HINDUISM: HINDU_SCENES, CHRISTIANITY: CHRISTIAN_SCENES, CATHOLIC: CATHOLIC_SCENES, JUDAISM: JEWISH_SCENES };
+// Muslim scenes (owner, 2026-10-11): two lessons each. The mosque scene waits until the shoe logos are removed.
+const M_SCENE = {
+  iftar: require("../../assets/cast/islam/scene-iftar.webp"),
+  eid: require("../../assets/cast/islam/scene-eid.webp"),
+  stories: require("../../assets/cast/islam/scene-stories.webp"),
+  charity: require("../../assets/cast/islam/scene-charity.webp"),
+};
+const MUSLIM_SCENES: Record<number, number> = {
+  6: M_SCENE.iftar, 122: M_SCENE.iftar, // one day of Ramadan; breaking with a date
+  7: M_SCENE.eid, 127: M_SCENE.eid, // two Eids, not one; Eid al-Fitr
+  439: M_SCENE.stories, 468: M_SCENE.stories, // the best of stories; Musa meets al-Khidr
+  126: M_SCENE.charity, 150: M_SCENE.charity, // the charity at the fast's end; charity from the right hand
+};
+const SCENES: Record<string, Record<number, number>> = { HINDUISM: HINDU_SCENES, CHRISTIANITY: CHRISTIAN_SCENES, CATHOLIC: CATHOLIC_SCENES, JUDAISM: JEWISH_SCENES, ISLAM: MUSLIM_SCENES };
 
 /** The scene drawn for this lesson, if any. */
 export const sceneFor = (door: string, day: number): number | null => SCENES[door]?.[day] ?? null;
@@ -226,4 +247,5 @@ export const HINDU_FAMILY: number = require("../../assets/cast/hindu/family.webp
 /** Each path's family, for its welcome (paths without one show the mascot). */
 export const FAMILY: Record<string, number> = { HINDUISM: HINDU_FAMILY, CHRISTIANITY: require("../../assets/cast/christianity/family.webp"),
   CATHOLIC: require("../../assets/cast/catholic/family.webp"),
-  JUDAISM: require("../../assets/cast/judaism/family.webp") };
+  JUDAISM: require("../../assets/cast/judaism/family.webp"),
+  ISLAM: require("../../assets/cast/islam/family.webp") };
