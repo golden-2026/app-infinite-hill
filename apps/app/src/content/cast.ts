@@ -247,20 +247,21 @@ const MUSLIM_SCENES: Record<number, number> = {
   439: M_SCENE.stories, 468: M_SCENE.stories, // the best of stories; Musa meets al-Khidr
   126: M_SCENE.charity, 150: M_SCENE.charity, // the charity at the fast's end; charity from the right hand
 };
-// Sikh scenes (owner, 2026-10-11): two lessons each. The Vaisakhi scene is held: Bebe rides a palki-like chair, and
-// the palki is for the Guru Granth Sahib.
+// Sikh scenes (owner, 2026-10-11): two lessons each. Vaisakhi redrawn so Bebe walks (no palki-like chair).
 const S_SCENE = {
   langar: require("../../assets/cast/sikh/scene-langar.webp"),
   darbar: require("../../assets/cast/sikh/scene-darbar.webp"),
   seva: require("../../assets/cast/sikh/scene-seva.webp"),
   turban: require("../../assets/cast/sikh/scene-turban.webp"),
   garden: require("../../assets/cast/sikh/scene-garden.webp"),
+  vaisakhi: require("../../assets/cast/sikh/scene-vaisakhi.webp"),
 };
 const SIKH_SCENES: Record<number, number> = {
   2: S_SCENE.langar, 119: S_SCENE.langar, // everyone on the floor, the same meal; a small langar at home
   3: S_SCENE.turban, 1027: S_SCENE.turban, // is that a hat?; explaining the turban
   5: S_SCENE.darbar, 144: S_SCENE.darbar, // the standing prayer; sitting in the sangat
   99: S_SCENE.seva, 103: S_SCENE.seva, // seva of the hands; your weekly seva
+  145: S_SCENE.vaisakhi, 146: S_SCENE.vaisakhi, // Vaisakhi: the harvest; the procession
   126: S_SCENE.garden, 127: S_SCENE.garden, // simran while working; your simran
 };
 const SCENES: Record<string, Record<number, number>> = { HINDUISM: HINDU_SCENES, CHRISTIANITY: CHRISTIAN_SCENES, CATHOLIC: CATHOLIC_SCENES, JUDAISM: JEWISH_SCENES, ISLAM: MUSLIM_SCENES, SIKHISM: SIKH_SCENES };
