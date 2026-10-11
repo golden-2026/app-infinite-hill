@@ -166,7 +166,24 @@ const CHRISTIAN_SCENES: Record<number, number> = {
   105: C_SCENE.porch, 106: C_SCENE.porch, // how long, O Lord?; when prayer feels empty
   418: C_SCENE.shift, // joy in the morning
 };
-const SCENES: Record<string, Record<number, number>> = { HINDUISM: HINDU_SCENES, CHRISTIANITY: CHRISTIAN_SCENES };
+// Catholic scenes (owner, 2026-10-10): two lessons each, three in the first week
+const K_SCENE = {
+  mass: require("../../assets/cast/catholic/scene-mass.webp"),
+  rosary: require("../../assets/cast/catholic/scene-rosary.webp"),
+  ofrenda: require("../../assets/cast/catholic/scene-ofrenda.webp"),
+  posadas: require("../../assets/cast/catholic/scene-posadas.webp"),
+  ashes: require("../../assets/cast/catholic/scene-ashes.webp"),
+  field: require("../../assets/cast/catholic/scene-field.webp"),
+};
+const CATHOLIC_SCENES: Record<number, number> = {
+  1: K_SCENE.field, 209: K_SCENE.field, // the smallest prayer; it is I, fear not
+  4: K_SCENE.rosary, 118: K_SCENE.rosary, // what the string is for; how the rosary is built
+  6: K_SCENE.ashes, 148: K_SCENE.ashes, // ashes, and forty days; Ash Wednesday
+  97: K_SCENE.mass, 128: K_SCENE.mass, // first Mass, or first in years; the Eucharist
+  686: K_SCENE.ofrenda, 1400: K_SCENE.ofrenda, // All Souls; the Day of the Dead
+  1397: K_SCENE.posadas, 1401: K_SCENE.posadas, // Advent customs; processions
+};
+const SCENES: Record<string, Record<number, number>> = { HINDUISM: HINDU_SCENES, CHRISTIANITY: CHRISTIAN_SCENES, CATHOLIC: CATHOLIC_SCENES };
 
 /** The scene drawn for this lesson, if any. */
 export const sceneFor = (door: string, day: number): number | null => SCENES[door]?.[day] ?? null;
