@@ -50,6 +50,7 @@ design changes go live, ask before deploying, real testimonials only, check usag
   once the weekly limit is hit.
 
 ## Session of 2026-10-06 (pick up here; newest first)
+- LIVE: expo-live96 (2026-10-11): Sikh cast (Simran, Bebe, Harjit, Maya) in the chats, 6 scenes on 12 lessons, family on its welcome; Islam prayer scene (days 2, 112).
 - LIVE: expo-live95 (2026-10-11): Islam cast (Amira, Dadi, Yusuf, Jordan) in the chats, 4 scenes on 8 lessons, family on its welcome. Mosque scene held (shoe logos). Owner: fix look-alikes across casts after all paths are done.
 - LIVE: expo-live94 (2026-10-11): Catholic cast (Sofia, Abuela, Tomás, Mia) and Judaism cast (Noa, Saba, Rachel as the mom, Owen) in the chats, 6 scenes each on 12 lessons, families on their welcomes. Paste files for Islam, Sikhism, Buddhism, My own religion are with the owner.
 - LIVE: expo-live93 (2026-10-10): Christianity cast live (Grace, Pop, Marcus, Leo in ~1,000 chats; 6 scenes on 12 lessons; family on its welcome). Hindu fixes: Devanagari Sanskrit scene, rash guard, big-book day 697, summit with the approved mascot.
