@@ -36,7 +36,16 @@ const CHRISTIAN: Record<string, Who> = {
   arjun: { name: "Marcus", face: require("../../assets/cast/christianity/marcus.webp") },
   sam: { name: "Leo", face: require("../../assets/cast/christianity/leo.webp") },
 };
-const CASTS: Record<string, Record<string, Who>> = { HINDUISM: HINDU, CHRISTIANITY: CHRISTIAN };
+// Catholicism (owner, 2026-10-10): a Mexican-American family in San Antonio. Sofia (16, soccer), Abuela Rosa (her
+// grandmother, runs the parish tamale sale), Tomás (her dad, history teacher and coach), Mia (her best friend, not
+// religious). Same roles as the Hindu cast.
+const CATHOLIC: Record<string, Who> = {
+  priya: { name: "Sofia", face: require("../../assets/cast/catholic/sofia.webp") },
+  nani: { name: "Abuela", face: require("../../assets/cast/catholic/abuela.webp") },
+  arjun: { name: "Tomás", face: require("../../assets/cast/catholic/tomas.webp") },
+  sam: { name: "Mia", face: require("../../assets/cast/catholic/mia.webp") },
+};
+const CASTS: Record<string, Record<string, Who>> = { HINDUISM: HINDU, CHRISTIANITY: CHRISTIAN, CATHOLIC };
 
 /** The cast member playing a chat's asker on this door, or null (the lesson's own wording stays). */
 export function castFor(door: string, who: string | undefined): Who | null {
@@ -165,4 +174,5 @@ export const sceneFor = (door: string, day: number): number | null => SCENES[doo
 /** The whole family, for the Hindu path's welcome. */
 export const HINDU_FAMILY: number = require("../../assets/cast/hindu/family.webp");
 /** Each path's family, for its welcome (paths without one show the mascot). */
-export const FAMILY: Record<string, number> = { HINDUISM: HINDU_FAMILY, CHRISTIANITY: require("../../assets/cast/christianity/family.webp") };
+export const FAMILY: Record<string, number> = { HINDUISM: HINDU_FAMILY, CHRISTIANITY: require("../../assets/cast/christianity/family.webp"),
+  CATHOLIC: require("../../assets/cast/catholic/family.webp") };
