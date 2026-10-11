@@ -45,14 +45,30 @@ const CATHOLIC: Record<string, Who> = {
   arjun: { name: "Tomás", face: require("../../assets/cast/catholic/tomas.webp") },
   sam: { name: "Mia", face: require("../../assets/cast/catholic/mia.webp") },
 };
-const CASTS: Record<string, Record<string, Who>> = { HINDUISM: HINDU, CHRISTIANITY: CHRISTIAN, CATHOLIC };
+// Judaism (owner, 2026-10-11): a family outside Chicago. Noa (16, theater kid), Saba David (her grandfather, a retired
+// pharmacist), Rachel (her mom, an architect), Owen (her best friend, loosely Lutheran). Here the parent is the mom, so
+// Rachel plays "your mom" (and the coworker) and Saba the grandfathers and uncles; "your dad" keeps its own wording.
+const JEWISH: Record<string, Who> = {
+  priya: { name: "Noa", face: require("../../assets/cast/judaism/noa.webp") },
+  nani: { name: "Saba", face: require("../../assets/cast/judaism/saba.webp") },
+  arjun: { name: "Rachel", face: require("../../assets/cast/judaism/rachel.webp") },
+  sam: { name: "Owen", face: require("../../assets/cast/judaism/owen.webp") },
+};
+const PLAYS_BY_DOOR: Record<string, [RegExp, string][]> = {
+  JUDAISM: [
+    [/^(your )?(grandfather|grandpa|uncle)$/, "nani"],
+    [/^(your )?(mom|mother|aunt)$|coworker|friend (from|at) work/, "arjun"],
+    ...PLAYS.slice(2),
+  ],
+};
+const CASTS: Record<string, Record<string, Who>> = { HINDUISM: HINDU, CHRISTIANITY: CHRISTIAN, CATHOLIC, JUDAISM: JEWISH };
 
 /** The cast member playing a chat's asker on this door, or null (the lesson's own wording stays). */
 export function castFor(door: string, who: string | undefined): Who | null {
   const cast = CASTS[door];
   if (!cast || !who) return null;
   const w = who.toLowerCase().trim();
-  const hit = PLAYS.find(([re]) => re.test(w));
+  const hit = (PLAYS_BY_DOOR[door] ?? PLAYS).find(([re]) => re.test(w));
   return hit ? cast[hit[1]] : null;
 }
 
@@ -183,7 +199,24 @@ const CATHOLIC_SCENES: Record<number, number> = {
   686: K_SCENE.ofrenda, 1400: K_SCENE.ofrenda, // All Souls; the Day of the Dead
   1397: K_SCENE.posadas, 1401: K_SCENE.posadas, // Advent customs; processions
 };
-const SCENES: Record<string, Record<number, number>> = { HINDUISM: HINDU_SCENES, CHRISTIANITY: CHRISTIAN_SCENES, CATHOLIC: CATHOLIC_SCENES };
+// Jewish scenes (owner, 2026-10-11): two lessons each, three in the first week
+const J_SCENE = {
+  shabbat: require("../../assets/cast/judaism/scene-shabbat.webp"),
+  seder: require("../../assets/cast/judaism/scene-seder.webp"),
+  sukkah: require("../../assets/cast/judaism/scene-sukkah.webp"),
+  hanukkah: require("../../assets/cast/judaism/scene-hanukkah.webp"),
+  study: require("../../assets/cast/judaism/scene-study.webp"),
+  shofar: require("../../assets/cast/judaism/scene-shofar.webp"),
+};
+const JEWISH_SCENES: Record<number, number> = {
+  2: J_SCENE.shabbat, 614: J_SCENE.shabbat, // two flames before sunset; welcoming Shabbat
+  4: J_SCENE.seder, 135: J_SCENE.seder, // the plate that tells a story; a seat at the seder
+  7: J_SCENE.study, 150: J_SCENE.study, // an argument for the sake of heaven; study as worship
+  123: J_SCENE.shofar, 646: J_SCENE.shofar, // Rosh Hashanah: the shofar; the three sounds
+  127: J_SCENE.sukkah, 661: J_SCENE.sukkah, // Sukkot: the booth; the season of our joy
+  130: J_SCENE.hanukkah, 667: J_SCENE.hanukkah, // Hanukkah: the lights; show the light
+};
+const SCENES: Record<string, Record<number, number>> = { HINDUISM: HINDU_SCENES, CHRISTIANITY: CHRISTIAN_SCENES, CATHOLIC: CATHOLIC_SCENES, JUDAISM: JEWISH_SCENES };
 
 /** The scene drawn for this lesson, if any. */
 export const sceneFor = (door: string, day: number): number | null => SCENES[door]?.[day] ?? null;
