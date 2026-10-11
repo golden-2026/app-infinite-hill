@@ -60,6 +60,12 @@ const PLAYS_BY_DOOR: Record<string, [RegExp, string][]> = {
     [/^(your )?(mom|mother|aunt)$|coworker|friend (from|at) work/, "arjun"],
     ...PLAYS.slice(2),
   ],
+  SPIRITUAL: [
+    [/^(your )?(grandmother|grandma|grandfather|grandpa|aunt|uncle)$|^(your |a )?(older |elderly )?neighbor$/, "nani"],
+    [/coworker|friend (from|at) work/, "arjun"],
+    [/^(your )?(little |teenage |younger )?(sister|cousin|niece|daughter)$|^(your )?(kid|teenager)$/, "priya"],
+    [/best friend|roommate|classmate|^(your |a )?(friend|new friend)$|teammate|study partner|friend from/, "sam"],
+  ],
   BUDDHISM: [
     [/^(your )?(grandfather|grandpa|uncle)$/, "nani"],
     [/^(your )?(mom|mother|aunt)$|coworker|friend (from|at) work/, "arjun"],
@@ -91,7 +97,16 @@ const BUDDHIST: Record<string, Who> = {
   arjun: { name: "Linh", face: require("../../assets/cast/buddhism/linh.webp") },
   sam: { name: "Ava", face: require("../../assets/cast/buddhism/ava.webp") },
 };
-const CASTS: Record<string, Record<string, Who>> = { HINDUISM: HINDU, CHRISTIANITY: CHRISTIAN, CATHOLIC, JUDAISM: JEWISH, ISLAM: MUSLIM, SIKHISM: SIKH, BUDDHISM: BUDDHIST };
+// My own religion (owner, 2026-10-11): four friends, not a family. Zoe (24), Ray (63, the older neighbor, a retired
+// philosophy teacher), Ines (34, a lawyer), Theo (29, a nurse who left a strict church). Ray plays the elders and older
+// neighbors, Ines the coworkers, Theo the friends; parents keep their own wording.
+const SEEKERS: Record<string, Who> = {
+  priya: { name: "Zoe", face: require("../../assets/cast/spiritual/zoe.webp") },
+  nani: { name: "Ray", face: require("../../assets/cast/spiritual/ray.webp") },
+  arjun: { name: "Inés", face: require("../../assets/cast/spiritual/ines.webp") },
+  sam: { name: "Theo", face: require("../../assets/cast/spiritual/theo.webp") },
+};
+const CASTS: Record<string, Record<string, Who>> = { HINDUISM: HINDU, CHRISTIANITY: CHRISTIAN, CATHOLIC, JUDAISM: JEWISH, ISLAM: MUSLIM, SIKHISM: SIKH, BUDDHISM: BUDDHIST, SPIRITUAL: SEEKERS };
 
 /** The cast member playing a chat's asker on this door, or null (the lesson's own wording stays). */
 export function castFor(door: string, who: string | undefined): Who | null {
@@ -308,4 +323,5 @@ export const FAMILY: Record<string, number> = { HINDUISM: HINDU_FAMILY, CHRISTIA
   JUDAISM: require("../../assets/cast/judaism/family.webp"),
   ISLAM: require("../../assets/cast/islam/family.webp"),
   SIKHISM: require("../../assets/cast/sikh/family.webp"),
-  BUDDHISM: require("../../assets/cast/buddhism/family.webp") };
+  BUDDHISM: require("../../assets/cast/buddhism/family.webp"),
+  SPIRITUAL: require("../../assets/cast/spiritual/family.webp") };
