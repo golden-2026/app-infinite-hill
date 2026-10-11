@@ -50,6 +50,7 @@ design changes go live, ask before deploying, real testimonials only, check usag
   once the weekly limit is hit.
 
 ## Session of 2026-10-06 (pick up here; newest first)
+- LIVE: expo-live98 (2026-10-11): My own religion cast (Zoe, Ray, Ines, Theo; friends, not family) in the chats, 6 scenes on 12 lessons, porch picture on its welcome. All 8 paths now have casts. Next: look-alike fix-up round (castkit FIX-UP-ROUND.txt).
 - LIVE: expo-live97 (2026-10-11): Buddhist cast (Mai, Ong, Linh as the mom, Ava) in the chats, 6 scenes on 12 lessons, family on its welcome.
 - LIVE: expo-live96 (2026-10-11): Sikh cast (Simran, Bebe, Harjit, Maya) in the chats, 6 scenes on 12 lessons, family on its welcome; Islam prayer scene (days 2, 112).
 - LIVE: expo-live95 (2026-10-11): Islam cast (Amira, Dadi, Yusuf, Jordan) in the chats, 4 scenes on 8 lessons, family on its welcome. Mosque scene held (shoe logos). Owner: fix look-alikes across casts after all paths are done.
