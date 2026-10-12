@@ -1085,7 +1085,7 @@ a.btn:active,.gbtn:active{transform:scale(.96)}
 .wl-a{background:none;border:0;padding:0;font:600 13px/1.4 var(--sans);color:#111;text-decoration:underline;cursor:pointer}
 .wl-a.mute{color:#777}
 </style>
-<style>/* voices: each card only as tall as its own content on phones (owner, 2026-10-12) */ @media(max-width:860px){#rail{align-items:flex-start!important}}</style><style>/* keepers: long names wrap on phones */ #keepers h3,#keepers .name,#keepers b{overflow-wrap:anywhere;hyphens:auto}</style></head>
+<style>/* voices: each card only as tall as its own content on phones (owner, 2026-10-12) */ @media(max-width:860px){#rail{align-items:flex-start!important}}</style><style>/* keepers: long names wrap on phones */ #keepers h3,#keepers .name,#keepers b{overflow-wrap:anywhere;hyphens:auto}</style><style>/* demo phone: each path's character, as in the app (owner, 2026-10-12) */ .pd-who{display:flex;align-items:center;gap:8px;margin-top:14px} .pd-who img{width:38px;height:38px;border-radius:50%;border:2px solid #EFFF6B;background:#fff;object-fit:cover} .pd-who span{font:700 11px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:#ffffffcc} .pd-who + .pd-eb{margin-top:10px}</style></head>
 <body id="top">
 
 
@@ -1245,8 +1245,8 @@ a.btn:active,.gbtn:active{transform:scale(.96)}
     <h2 class="dh">a story, a few games, a breath, one line to carry.</h2>
     <p class="dmin">about five minutes. that’s a day.</p></div>
     <ol class="dsteps">
-      <li class="dstep"><div class="dshot"><img src="/site-art/day-cast-1.webp" alt="a lesson: the story, with Nani, Priya and Sam" loading="lazy" width="420" height="909"></div><div class="dtxt"><span class="dnum">1</span><h3>a story</h3><p>the day's story, read in your door's voice.</p></div></li>
-      <li class="dstep"><div class="dshot"><img src="/site-art/day-cast-2.webp" alt="a lesson: Abuela asks a question" loading="lazy" width="420" height="909"></div><div class="dtxt"><span class="dnum">2</span><h3>a few games</h3><p>guess the word, tap the pairs, pick what you'd say. no hearts.</p></div></li>
+      <li class="dstep"><div class="dshot"><img src="/site-art/day-cast-1.webp" alt="a lesson: the story, with Grace, Pop and Nia" loading="lazy" width="420" height="909"></div><div class="dtxt"><span class="dnum">1</span><h3>a story</h3><p>the day's story, read in your door's voice.</p></div></li>
+      <li class="dstep"><div class="dshot"><img src="/site-art/day-cast-2.webp" alt="a lesson: Nia asks a question" loading="lazy" width="420" height="909"></div><div class="dtxt"><span class="dnum">2</span><h3>a few games</h3><p>guess the word, tap the pairs, pick what you'd say. no hearts.</p></div></li>
       <li class="dstep"><div class="dshot"><img src="/site-art/day-en-3.webp" alt="a lesson: the breath" loading="lazy" width="420" height="909"></div><div class="dtxt"><span class="dnum">3</span><h3>a breath</h3><p>the quiet part. no clock to beat, no score.</p></div></li>
       <li class="dstep"><div class="dshot"><img src="/site-art/day-en-4.webp" alt="the end of a lesson: the word and the line to carry" loading="lazy" width="420" height="909"></div><div class="dtxt"><span class="dnum">4</span><h3>one line to carry</h3><p>one word and one line to take into your day.</p></div></li>
     </ol>
@@ -1866,7 +1866,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')pageClose()});
   var screen = $('pdscreen'); if (!screen) return;
   var grid = $('pdgrid'), doors = $('pddoors'), lesson = $('pdlesson'), bar = $('pdbar'), q = $('pdq'), ver = $('pdverdict'), win = $('pdwin'), fin = $('pdfinger'), combo = $('pdcombo'), spark = $('pdspark'), light = $('pdlight'), now = $('pdnow'), stage = $('pdstage');
   grid.innerHTML = DOORS.map(function (d) { return '<div class="pd-tile' + (d.k === 'SPIRITUAL' ? ' wide' : '') + '">' + d.label + '<small>' + d.hook + '</small></div>'; }).join('');
-  now.innerHTML = DOORS.map(function (d) { return '<span>' + (d.k === 'SPIRITUAL' ? 'own path' : d.label) + '</span>'; }).join('');
+  now.innerHTML = DOORS.map(function (d) { return '<span>' + (d.k === 'SPIRITUAL' ? 'my own religion' : d.label) + '</span>'; }).join('');
   spark.innerHTML = Array.apply(null, Array(12)).map(function (_, k) { var a = k / 12 * Math.PI * 2; return '<i style="--x:' + Math.round(Math.cos(a) * 70) + 'px;--y:' + Math.round(Math.sin(a) * 50) + 'px"></i>'; }).join('');
   stage.appendChild(spark);
   var n = 0, T = [];
@@ -1874,14 +1874,14 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')pageClose()});
   function aim(el, fx, fy) { var s = screen.getBoundingClientRect(), r = el.getBoundingClientRect(), k = s.width / screen.offsetWidth || 1; fin.style.left = ((r.left - s.left) / k + r.width / k * (fx || 0.62)) + 'px'; fin.style.top = ((r.top - s.top) / k + r.height / k * (fy || 0.45)) + 'px'; }
   function tap(el, t) { at(t, function () { fin.classList.add('on'); aim(el); }); at(t + 700, function () { fin.classList.add('tap'); }); at(t + 880, function () { fin.classList.remove('tap'); }); }
   function count(to) { var i = 0; var iv = setInterval(function () { i++; light.textContent = '+' + i; if (i >= to) clearInterval(iv); }, 40); }
-  function eb(t) { return '<div class="pd-eb">' + t + '</div>'; }
+  function eb(t) { return '<div class="pd-eb">' + t + '</div>'; } var CASTN = {"CHRISTIANITY":"Grace","JUDAISM":"Noa","ISLAM":"Amira","HINDUISM":"Priya","BUDDHISM":"Mai","CATHOLIC":"Sofia","SIKHISM":"Simran","SPIRITUAL":"Zoe"}; function who(d) { return '<div class="pd-who"><img src="/site-art/faces/' + d.k + '.webp" alt=""><span>with ' + CASTN[d.k] + '</span></div>'; }
   function pr(t) { return '<div class="pd-prompt" style="font-size:19px">' + t + '</div>'; }
   function fill(html) { stage.innerHTML = html; stage.appendChild(spark); stage.appendChild(ver); }
   // each game builds its screen and schedules its moves from t0, and returns when it's finished
   var GAMES = {
     scenes: function (d, t0) {
       var H = 58, pos = d.start.slice();
-      fill(eb(d.eb) + pr(d.title) + '<div class="pd-scene">' + d.items.map(function (x, k) { return '<div class="pd-card" style="top:' + pos[k] * H + 'px"><i>⋮⋮</i>' + x + '</div>'; }).join('') + '</div>');
+      fill(who(d) + eb(d.eb) + pr(d.title) + '<div class="pd-scene">' + d.items.map(function (x, k) { return '<div class="pd-card" style="top:' + pos[k] * H + 'px"><i>⋮⋮</i>' + x + '</div>'; }).join('') + '</div>');
       var cards = stage.querySelectorAll('.pd-card');
       function place() { cards.forEach(function (c, k) { c.style.top = pos[k] * H + 'px'; }); }
       function drag(k, to, t) {
@@ -1895,7 +1895,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')pageClose()});
       return t0 + 5600;
     },
     rhythm: function (d, t0) {
-      fill(eb(d.eb) + pr(d.title) + '<div class="pd-syls">' + d.syl.map(function (x) { return '<span class="pd-syl">' + x + '</span>'; }).join('') + '</div><div class="pd-drum">☀</div>');
+      fill(who(d) + eb(d.eb) + pr(d.title) + '<div class="pd-syls">' + d.syl.map(function (x) { return '<span class="pd-syl">' + x + '</span>'; }).join('') + '</div><div class="pd-drum">☀</div>');
       var sy = stage.querySelectorAll('.pd-syl'), drum = stage.querySelector('.pd-drum');
       at(t0 + 200, function () { fin.classList.add('on'); aim(drum, .5, .5); });
       for (var r = 0; r < 2; r++) sy.forEach(function (x, k) {
@@ -1907,7 +1907,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')pageClose()});
     },
     rush: function (d, t0) {
       var right = [d.pairs[2][1], d.pairs[0][1], d.pairs[1][1]];
-      fill(eb(d.eb) + pr(d.title) + '<div class="pd-clock"><i></i></div><div class="pd-pairs">' + d.pairs.map(function (p, k) { return '<div class="pd-pc" data-l="' + k + '">' + p[0] + '</div><div class="pd-pc" data-r="' + k + '">' + right[k] + '</div>'; }).join('') + '</div>');
+      fill(who(d) + eb(d.eb) + pr(d.title) + '<div class="pd-clock"><i></i></div><div class="pd-pairs">' + d.pairs.map(function (p, k) { return '<div class="pd-pc" data-l="' + k + '">' + p[0] + '</div><div class="pd-pc" data-r="' + k + '">' + right[k] + '</div>'; }).join('') + '</div>');
       at(t0 + 100, function () { stage.querySelector('.pd-clock').classList.add('go'); });
       d.pairs.forEach(function (p, k) {
         var L = stage.querySelector('[data-l="' + k + '"]'), R = [].filter.call(stage.querySelectorAll('[data-r]'), function (x) { return x.textContent === p[1]; })[0], t = t0 + 300 + k * 1500;
@@ -1917,7 +1917,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')pageClose()});
       return t0 + 300 + 3 * 1500 + 300;
     },
     ask: function (d, t0) {
-      fill(eb(d.eb) + pr(d.title) + d.opts.map(function (o) { return '<div class="pd-opt' + (o === d.ans ? ' pd-right' : '') + '">' + o + '</div>'; }).join(''));
+      fill(who(d) + eb(d.eb) + pr(d.title) + d.opts.map(function (o) { return '<div class="pd-opt' + (o === d.ans ? ' pd-right' : '') + '">' + o + '</div>'; }).join(''));
       var r = stage.querySelector('.pd-right');
       tap(r, t0 + 500);
       at(t0 + 1200, function () { r.classList.add('picked'); spark.style.top = (r.offsetTop + 20) + 'px'; spark.classList.remove('go'); void spark.offsetWidth; spark.classList.add('go'); });
@@ -1926,7 +1926,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')pageClose()});
       return t0 + 4000;
     },
     breath: function (d, t0) {
-      fill(eb(d.eb) + pr(d.title) + '<div class="pd-breath"><img src="' + (reduce ? POSE.meditate : '/mascot/meditate.webp') + '" alt=""></div><div class="pd-bw">in…</div>');
+      fill(who(d) + eb(d.eb) + pr(d.title) + '<div class="pd-breath"><img src="' + (reduce ? POSE.meditate : '/mascot/meditate.webp') + '" alt=""></div><div class="pd-bw">in…</div>');
       var br = stage.querySelector('.pd-breath'), bw = stage.querySelector('.pd-bw');
       for (var b = 0; b < 3; b++) { at(t0 + 300 + b * 1800, function () { br.classList.add('in'); bw.textContent = 'in…'; }); at(t0 + 1200 + b * 1800, function () { br.classList.remove('in'); bw.textContent = 'out…'; }); }
       return t0 + 300 + 3 * 1800;
@@ -1935,7 +1935,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')pageClose()});
       function show(i, t) {
         at(t, function () {
           var opts = [d.qs[i][1], d.qs[(i + 1) % 3][1]].sort();
-          fill(eb(d.eb) + pr(d.qs[i][0] + '. which is it?') + opts.map(function (o) { return '<div class="pd-opt' + (o === d.qs[i][1] ? ' pd-right' : '') + '">' + o + '</div>'; }).join(''));
+          fill(who(d) + eb(d.eb) + pr(d.qs[i][0] + '. which is it?') + opts.map(function (o) { return '<div class="pd-opt' + (o === d.qs[i][1] ? ' pd-right' : '') + '">' + o + '</div>'; }).join(''));
           fin.classList.add('on'); aim(stage.querySelector('.pd-right'));
         });
         at(t + 650, function () { fin.classList.add('tap'); stage.querySelector('.pd-right').classList.add('picked'); combo.textContent = i ? '☀ glowing ×' + (i + 1) : '☀ right'; combo.classList.add('on'); bar.style.width = (45 + i * 18) + '%'; if (i === 2) bar.classList.add('hot'); });
@@ -1945,7 +1945,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')pageClose()});
       return t0 + 200 + 3 * 1500;
     },
     type: function (d, t0) {
-      fill(eb(d.eb) + pr(d.title) + '<div class="pd-opt" style="display:inline-block;margin-top:6px">🔊 hear it again</div><div class="pd-type"><b></b></div>');
+      fill(who(d) + eb(d.eb) + pr(d.title) + '<div class="pd-opt" style="display:inline-block;margin-top:6px">🔊 hear it again</div><div class="pd-type"><b></b></div>');
       var box = stage.querySelector('.pd-type'), done = t0 + 700 + d.word.length * 380;
       d.word.split('').forEach(function (c, i) { at(t0 + 700 + i * 380, function () { box.innerHTML = d.word.slice(0, i + 1) + '<b></b>'; }); });
       at(done + 300, function () { ver.classList.add('on'); });
@@ -1953,7 +1953,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')pageClose()});
       return done + 2500;
     },
     say: function (d, t0) {
-      fill(eb(d.eb) + pr(d.title) + '<div class="pd-prompt" style="text-align:center;font-size:30px;margin-top:22px">' + d.line + '</div><div class="pd-mic">🎙</div><div class="pd-heard">heard it. that’s the sound.</div>');
+      fill(who(d) + eb(d.eb) + pr(d.title) + '<div class="pd-prompt" style="text-align:center;font-size:30px;margin-top:22px">' + d.line + '</div><div class="pd-mic">🎙</div><div class="pd-heard">heard it. that’s the sound.</div>');
       var mic = stage.querySelector('.pd-mic');
       tap(mic, t0 + 300);
       at(t0 + 1100, function () { mic.classList.add('live'); fin.classList.remove('on'); });
@@ -1987,5 +1987,34 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')pageClose()});
   new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting && !running) { running = true; loop(); } else if (!e.isIntersecting && running) { running = false; T.forEach(clearTimeout); T = []; } }); }, { threshold: .3 }).observe(screen);
 })();
 </script>
+<style>/* how it plays: one merged section (owner, 2026-10-12) */
+#playdemo .m-head{max-width:1100px;margin:0 auto;text-align:left}
+#playdemo .m-head .pd-lede{max-width:none;color:var(--gold);font-weight:800;font-family:var(--serif);font-size:clamp(18px,1.6vw,22px);line-height:1.3;margin-top:12px}
+#playdemo #what{margin-top:clamp(18px,2.4vw,30px)!important}
+#playdemo #what .dhead,#playdemo #what .dmore{display:none!important}
+#playdemo .m-try{max-width:1100px;margin:clamp(44px,6vw,80px) auto 0;text-align:center}
+#playdemo .m-try h3{color:#fff;font:800 clamp(24px,2.4vw,32px)/1.1 var(--serif);margin:10px 0 18px}
+#playdemo .m-try .pd-note{display:none}
+#playdemo .m-tail{max-width:640px;margin:clamp(40px,5vw,64px) auto 0}
+#playdemo .m-tail .pd-list{margin:0 0 22px}
+#playdemo .m-tail .m-more{display:grid;gap:10px;margin:0 0 26px}
+#playdemo .m-tail .m-more p{margin:0;border:1px solid #ffffff22;border-radius:16px;padding:14px 16px;color:#ffffffcc;font:400 15px/1.45 var(--sans)}
+#playdemo .m-tail .btn{display:flex;width:max-content;margin:0 auto}
+#playdemo .pd-wrap{display:block}
+</style>
+<script>(function(){var tries=0;function go(){var demo=document.getElementById('playdemo'),what=document.getElementById('what');
+if(!demo||!what||what.parentNode!==demo){if(tries++<100)setTimeout(go,50);return}
+var copy=demo.querySelector('.pd-copy'),phone=demo.querySelector('.pd-phone'),wrap=demo.querySelector('.pd-wrap');
+var head=document.createElement('div');head.className='m-head';
+var eb=copy.querySelector('.eyebrow');eb.textContent='what a day looks like';
+var lede=copy.querySelector('.pd-lede');lede.textContent='about five minutes a day: a story, a few games, a breath, and one line to carry.';
+head.appendChild(eb);head.appendChild(copy.querySelector('h2'));head.appendChild(lede);
+var list=copy.querySelector('.pd-list'),btn=copy.querySelector('.btn');
+list.querySelectorAll('li').forEach(function(li){if(/scholar/.test(li.textContent))li.innerHTML='<b>every lesson goes to a scholar from that tradition</b> for review.'});
+var tr=document.createElement('div');tr.className='m-try';tr.innerHTML='<div class="eyebrow" style="color:#F5C400">try it</div><h3>a game from each path, playing on its own.</h3>';tr.appendChild(phone);
+var tail=document.createElement('div');tail.className='m-tail';tail.appendChild(list);
+var more=document.createElement('div');more.className='m-more';what.querySelectorAll('.dmore p').forEach(function(p){more.appendChild(p.cloneNode(true))});tail.appendChild(more);tail.appendChild(btn);
+demo.insertBefore(head,demo.firstChild);demo.insertBefore(what,wrap);wrap.parentNode.insertBefore(tr,wrap);wrap.parentNode.insertBefore(tail,wrap);wrap.style.display='none';
+}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',function(){setTimeout(go,0)});else setTimeout(go,0)})();</script>
 </body>
 </html>
