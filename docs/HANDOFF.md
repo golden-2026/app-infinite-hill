@@ -50,6 +50,7 @@ design changes go live, ask before deploying, real testimonials only, check usag
   once the weekly limit is hit.
 
 ## Session of 2026-10-06 (pick up here; newest first)
+- LIVE: expo-live101 (2026-10-12): new Abuela (big and bold, no glasses) in faces, family and 5 Catholic scenes.
 - LIVE: expo-live100 (2026-10-12): Catholic family picture with Sofia in navy.
 - LIVE: expo-live99 (2026-10-12): Christianity family redrawn (white family outside Nashville; Nia replaces Leo; Marcus a firefighter); fix-up #2 done (Noa green, Sofia navy, Amira teal). Remaining fix-ups in scratchpad castkit REMAINING-CAST-CHANGES.txt.
 - LIVE: expo-live98 (2026-10-11): My own religion cast (Zoe, Ray, Ines, Theo; friends, not family) in the chats, 6 scenes on 12 lessons, porch picture on its welcome. All 8 paths now have casts. Next: look-alike fix-up round (castkit FIX-UP-ROUND.txt).
