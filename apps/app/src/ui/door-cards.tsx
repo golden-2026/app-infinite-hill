@@ -67,10 +67,9 @@ export function BigDoorCard({ door, on, onPress, eyebrow, line, a11y }: { door: 
         </View>
       </View>
       {quote && ic.name ? (
-        <View style={{ marginTop: 14, paddingTop: 12, borderTopWidth: 1, borderTopColor: color.line, gap: 6 }}>
-          <Text style={[type.eyebrow(9), { color: ic.tint }]}>{t("onboarding.door.voiceIs", { name: ic.name })}</Text>
+        <View style={{ marginTop: 12, paddingTop: 10, borderTopWidth: 1, borderTopColor: color.line }}>
+          {/* the name is already on the photo: just the quote (owner, 2026-10-12: less text) */}
           <Text style={{ fontFamily: font.display[500], fontStyle: "italic", fontSize: 15, lineHeight: 21, color: color.ink }}>“{quote}”</Text>
-          <Text style={[type.eyebrow(9), { color: ic.tint }]}>— {t("onboarding.door.quoteBy", { name: ic.name })}</Text>
         </View>
       ) : null}
     </Radio>

@@ -1,7 +1,7 @@
 import { FADE } from "@/ui/fade";
 // v175's atoms (Sun, Guy, Face, Btn, Card, Opt, Bubble, text styles) for React Native + web.
 // Every tappable thing has an accessibility role and label; motion respects reduced-motion.
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Image } from "expo-image";
 import { LinearGradient } from "expo-linear-gradient";
 import { Platform, Pressable, StyleSheet, Text, View, type StyleProp, type TextStyle, type ViewStyle } from "react-native";
@@ -91,13 +91,25 @@ export function Card({ children, dark, onPress, style, label: a11y, testID }: { 
  *  getting to know you). Manrope medium 17/22, one padding and row height, one selected state (ink edge on pale
  *  lemon). Pick-several rows carry a checkbox on the right so they read differently from pick-one. */
 export function ChoiceRow({ on, onPress, children, sub, testID, multi, right }: { on?: boolean; onPress: () => void; children: string; sub?: string; testID?: string; /** pick-several: a checkbox, not a radio */ multi?: boolean; /** the right answer, shown green */ right?: boolean }) {
+  // a single pick lights up first, then moves on, so the tap is seen (owner, 2026-10-12)
+  const [flash, setFlash] = useState(false);
+  const busy = useRef(false);
+  const lit = on || flash;
+  const press = () => {
+    tapHaptic();
+    if (multi) return onPress();
+    if (busy.current) return;
+    busy.current = true; setFlash(true);
+    setTimeout(() => { onPress(); busy.current = false; setFlash(false); }, 380);
+  };
   return (
-    <Pressable testID={testID} accessibilityRole={multi ? "checkbox" : "radio"} accessibilityState={{ checked: !!on }} aria-checked={!!on} accessibilityLabel={sub ? `${children}. ${sub}` : children} onPress={() => { tapHaptic(); onPress(); }}
-      style={({ pressed }) => [styles.choice, { borderColor: right ? RIGHT_LINE : on ? color.ink : color.line, backgroundColor: right ? RIGHT : on ? CHOSEN : color.white, transform: [{ scale: pressed ? 0.985 : 1 }] }]}>
+    <Pressable testID={testID} accessibilityRole={multi ? "checkbox" : "radio"} accessibilityState={{ checked: !!lit }} aria-checked={!!lit} accessibilityLabel={sub ? `${children}. ${sub}` : children} onPress={press}
+      style={({ pressed }) => [styles.choice, { borderColor: right ? RIGHT_LINE : lit ? color.ink : color.line, borderWidth: flash ? 2 : undefined, backgroundColor: right ? RIGHT : flash ? color.gold : lit ? CHOSEN : color.white, transform: [{ scale: pressed ? 0.985 : flash ? 1.01 : 1 }] }]}>
       <View style={{ flex: 1 }}>
         <Text style={type.choice()}>{children}</Text>
         {sub ? <Text style={[type.caption(), { marginTop: 3 }]}>{sub}</Text> : null}
       </View>
+      {!multi && flash ? <Text style={{ fontFamily: font.text[700], fontSize: 18, color: color.ink, marginLeft: 8 }}>✓</Text> : null}
       {multi ? (
         <View style={[styles.check, on ? { backgroundColor: color.ink, borderColor: color.ink } : null]}>
           {on ? <Text style={{ fontFamily: font.text[700], fontSize: 13, lineHeight: 15, color: color.gold }}>✓</Text> : null}
@@ -234,16 +246,9 @@ export function Sun({ size = 64, mood = "calm" }: { size?: number; mood?: "calm"
 /** Where each voice's head and shoulders sit in its photo (packages/brand/art/photos-*.jpg), so small and round
  *  faces frame the person, not the whole scene: a = photo width/height, cx/cy = the point to center (fractions of
  *  the photo), vh = how much of the photo's height the frame shows (top of the head to a little shoulder). */
-const FACE_FOCUS: Record<string, { a: number; cx: number; cy: number; vh: number }> = {
-  CHRISTIANITY: { a: 560 / 700, cx: 0.5, cy: 0.42, vh: 0.86 },
-  CATHOLIC: { a: 560 / 700, cx: 0.52, cy: 0.42, vh: 0.62 },
-  HINDUISM: { a: 700 / 467, cx: 0.48, cy: 0.27, vh: 0.46 },
-  ISLAM: { a: 560 / 700, cx: 0.5, cy: 0.45, vh: 0.92 },
-  JUDAISM: { a: 560 / 700, cx: 0.5, cy: 0.38, vh: 0.6 },
-  BUDDHISM: { a: 560 / 700, cx: 0.5, cy: 0.4, vh: 0.62 },
-  SIKHISM: { a: 420 / 651, cx: 0.45, cy: 0.22, vh: 0.42 },
-  SPIRITUAL: { a: 560 / 700, cx: 0.47, cy: 0.33, vh: 0.6 },
-};
+// every voice photo is a square crop of the original around the face (owner, 2026-10-12): cy = face center down the
+// photo; py = where wide frames sit (0 top, 1 bottom) so head and chin both show; vh = how much of the photo a round face shows
+const FACE_FOCUS: Record<string, { a: number; cx: number; cy: number; vh: number; py: number }> = {"CHRISTIANITY":{"a":1,"cx":0.5,"cy":0.49,"vh":1,"py":0.47},"CATHOLIC":{"a":1,"cx":0.5,"cy":0.37,"vh":0.82,"py":0.11},"HINDUISM":{"a":1,"cx":0.5,"cy":0.5,"vh":0.7,"py":0.5},"ISLAM":{"a":1,"cx":0.5,"cy":0.41,"vh":0.95,"py":0.06},"JUDAISM":{"a":1,"cx":0.5,"cy":0.42,"vh":0.82,"py":0.26},"BUDDHISM":{"a":1,"cx":0.5,"cy":0.4,"vh":0.82,"py":0.2},"SIKHISM":{"a":1,"cx":0.5,"cy":0.43,"vh":0.82,"py":0.29},"SPIRITUAL":{"a":1,"cx":0.5,"cy":0.36,"vh":0.82,"py":0.08}};
 
 /** The photo sized and offset so FACE_FOCUS's point sits in the middle of a w×h frame (never leaving a gap). */
 function faceFrame(wing: string, w: number, h: number) {
@@ -264,7 +269,7 @@ export function Face({ ic, w = 96, h = 120, r = 16, caption = true, big = false 
   const framed = !big && typeof w === "number" && typeof h === "number" ? faceFrame(ic.wing, w, h) : null;
   return (
     <View style={{ width: w, height: h, borderRadius: r, overflow: "hidden", backgroundColor: a ? "#000" : ic.tint }} accessibilityLabel={`${ic.name}, ${doorLabel(ic.wing)}`}>
-      {a ? <Image source={a.src} style={framed ?? StyleSheet.absoluteFill} contentFit="cover" contentPosition={big ? "center" : "top"} transition={FADE} cachePolicy="memory-disk" /> : (
+      {a ? <Image source={a.src} style={framed ?? StyleSheet.absoluteFill} contentFit="cover" contentPosition={{ left: "50%", top: `${Math.round((FACE_FOCUS[ic.wing]?.py ?? 0.4) * 100)}%` }} transition={FADE} cachePolicy="memory-disk" /> : (
         <View style={[StyleSheet.absoluteFill, styles.center]}><Text style={{ fontFamily: font.display[800], fontSize: big ? 64 : 36, color: "#ffffff55" }}>{ic.short[0]}</Text></View>
       )}
       {caption && a ? <LinearGradient pointerEvents="none" colors={["rgba(0,0,0,0)", "rgba(0,0,0,.62)"]} style={[styles.faceScrim, { height: Math.min(h * 0.6, big ? 150 : 90) }]} /> : null}
