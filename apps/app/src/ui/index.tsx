@@ -262,7 +262,7 @@ function faceFrame(wing: string, w: number, h: number) {
 }
 
 /** A voice's portrait (or its initial on the door's tint when there is no photo). */
-export function Face({ ic, w = 96, h = 120, r = 16, caption = true, big = false }: { ic: any; w?: number; h?: number; r?: number; caption?: boolean; big?: boolean }) {
+export function Face({ ic, w = 96, h = 120, r = 16, caption = true, big = false, line }: { ic: any; w?: number; h?: number; r?: number; caption?: boolean; big?: boolean; /** the gold line under the name (default: the door) */ line?: string }) {
   const ref = data.PHOTOS[ic.wing];
   const a = art(ref);
   // small numeric frames (the round faces) are framed on the head; the big welcome portrait keeps the whole photo
@@ -276,7 +276,7 @@ export function Face({ ic, w = 96, h = 120, r = 16, caption = true, big = false 
       {caption ? (
         <View style={styles.faceCaption}>
           <Text style={{ fontFamily: font.display[800], fontSize: big ? 22 : 15, color: "#fff", textShadowColor: "rgba(0,0,0,.75)", textShadowRadius: 8, textShadowOffset: { width: 0, height: 1 } }}>{ic.name}</Text>
-          <Text style={[type.eyebrow(8), { color: color.gold, marginTop: 4, textShadowColor: "rgba(0,0,0,.75)", textShadowRadius: 6, textShadowOffset: { width: 0, height: 1 } }]}>{doorLabel(ic.wing)}</Text>
+          <Text style={[type.eyebrow(8), { color: color.gold, marginTop: 4, textShadowColor: "rgba(0,0,0,.75)", textShadowRadius: 6, textShadowOffset: { width: 0, height: 1 } }]}>{line ?? doorLabel(ic.wing)}</Text>
         </View>
       ) : null}
     </View>
