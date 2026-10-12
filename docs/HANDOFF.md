@@ -50,6 +50,7 @@ design changes go live, ask before deploying, real testimonials only, check usag
   once the weekly limit is hit.
 
 ## Session of 2026-10-06 (pick up here; newest first)
+- LIVE: expo-live106 (2026-10-12): one-hill/love copy on site and app (en+es); mixed-faith stats (Pew 39% interfaith marriages, Pew 14 of 32, Global Flourishing 18-24); voice photo crops; keepers name wrap; 'my own religion' label. site-es edited directly, atlas/mock/es.mjs not synced for these lines. test:unit: account-screen + backend/state fail on a vite.config path (pre-existing, not content).
 - LIVE: expo-live105 (2026-10-12): site one-hill message + new verified evidence stats (en+es). NOTE: site-es.html was edited directly; atlas/mock/es.mjs pairs for these lines are not yet updated, so a full site rebuild would revert them until synced.
 - LIVE: expo-live104 (2026-10-12): Spanish site day screenshots 1-2 now show the cast too.
 - LIVE: expo-live103 (2026-10-12): Nicole Kidman replaces Mark Wahlberg as the Catholic voice (app + site, en + es; Mark is tied to Hallow). Site day screenshots 1-2 now show the cast (English only; Spanish still old). Families section tried and dropped (owner: homepage already long). Spanish pairs in main atlas/mock/es.mjs updated for Nicole.
