@@ -11,7 +11,7 @@ import { voiceBio } from "@/lib/voice";
 import { Face, color, font, type } from "@/ui";
 
 /** Spanish is gendered: the proposed voices on these doors are women ("embajadora"). Keep in step with data.ICONS. */
-const WOMEN = new Set(["HINDUISM", "JUDAISM"]);
+const WOMEN = new Set(["HINDUISM", "JUDAISM", "CATHOLIC"]);
 
 function Ambassador({ ic }: { ic: any }) {
   const cred = voiceBio(ic.wing).split(" · ")[0];

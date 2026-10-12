@@ -163,7 +163,7 @@ export const en = {
   // celebrity credentials (data.BIO), by door
   "onboarding.bio.HINDUISM": "Bollywood and Hollywood star · Quantico, Citadel · UNICEF Goodwill Ambassador",
   "onboarding.bio.CHRISTIANITY": "Two-time Academy Award winner · Training Day, Glory, Fences",
-  "onboarding.bio.CATHOLIC": "Oscar-nominated actor · The Departed, Father Stu · daily Mass, publicly",
+  "onboarding.bio.CATHOLIC": "Academy Award winner · The Hours, Big Little Lies · raised praying by her Catholic grandmother",
   "onboarding.bio.ISLAM": "Two-time Academy Award winner · Moonlight, Green Book",
   "onboarding.bio.JUDAISM": "Academy Award winner · Black Swan, Jackie · Harvard graduate",
   "onboarding.bio.BUDDHISM": "The Lord of the Rings, Pirates of the Caribbean · UNICEF Goodwill Ambassador",
@@ -388,7 +388,7 @@ export const es: Dict<typeof en> = {
   "onboarding.voiceLabel.pending": "{name} leerá estas lecciones cuando las grabe. por ahora, es la voz de la casa.",
   "onboarding.bio.HINDUISM": "estrella de Bollywood y Hollywood · Quantico, Citadel · embajadora de buena voluntad de UNICEF",
   "onboarding.bio.CHRISTIANITY": "ganador de dos premios Óscar · Training Day, Glory, Fences",
-  "onboarding.bio.CATHOLIC": "actor nominado al Óscar · The Departed, Father Stu · va a misa a diario, públicamente",
+  "onboarding.bio.CATHOLIC": "ganadora del Óscar · The Hours, Big Little Lies · su abuela católica la crió rezando",
   "onboarding.bio.ISLAM": "ganador de dos premios Óscar · Moonlight, Green Book",
   "onboarding.bio.JUDAISM": "ganadora del Óscar · Black Swan, Jackie · graduada de Harvard",
   "onboarding.bio.BUDDHISM": "El señor de los anillos, Piratas del Caribe · embajador de buena voluntad de UNICEF",

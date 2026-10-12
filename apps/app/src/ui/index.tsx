@@ -236,7 +236,7 @@ export function Sun({ size = 64, mood = "calm" }: { size?: number; mood?: "calm"
  *  the photo), vh = how much of the photo's height the frame shows (top of the head to a little shoulder). */
 const FACE_FOCUS: Record<string, { a: number; cx: number; cy: number; vh: number }> = {
   CHRISTIANITY: { a: 560 / 700, cx: 0.5, cy: 0.42, vh: 0.86 },
-  CATHOLIC: { a: 382 / 523, cx: 0.55, cy: 0.3, vh: 0.48 },
+  CATHOLIC: { a: 560 / 700, cx: 0.52, cy: 0.42, vh: 0.62 },
   HINDUISM: { a: 700 / 467, cx: 0.48, cy: 0.27, vh: 0.46 },
   ISLAM: { a: 560 / 700, cx: 0.5, cy: 0.45, vh: 0.92 },
   JUDAISM: { a: 560 / 700, cx: 0.5, cy: 0.38, vh: 0.6 },

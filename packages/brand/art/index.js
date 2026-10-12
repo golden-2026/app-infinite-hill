@@ -5,7 +5,7 @@ export const ART = {
   "photos-buddhism": { src: require("./photos-buddhism.jpg"), w: 560, h: 700 },
   "photos-spiritual": { src: require("./photos-spiritual.jpg"), w: 560, h: 700 },
   "photos-christianity": { src: require("./photos-christianity.jpg"), w: 560, h: 700 },
-  "photos-catholic": { src: require("./photos-catholic.jpg"), w: 382, h: 523 },
+  "photos-catholic": { src: require("./photos-catholic.jpg"), w: 560, h: 700 },
   "photos-islam": { src: require("./photos-islam.jpg"), w: 560, h: 700 },
   "photos-judaism": { src: require("./photos-judaism.jpg"), w: 560, h: 700 },
   "sun-img": { src: require("./sun-img.png"), w: 360, h: 360 },
