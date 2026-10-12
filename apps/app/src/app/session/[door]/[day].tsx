@@ -462,7 +462,7 @@ function Session({ door, day, kidId, mode, deep, extra = false, course = null, v
         <View style={{ width: "100%", maxWidth: 380, gap: 12, alignSelf: "center" }}>
           {step.head ? <Text style={[type.eyebrow(11), { color: color.gold, letterSpacing: 1.76, textAlign: "center" }]}>{step.head}</Text> : null}
           {/* the cast's scene for this lesson (content/cast.ts), over its opening */}
-          {step.scene ? <Image source={step.scene} style={{ width: "100%", height: 230, borderRadius: 18 }} contentFit="cover" contentPosition="top" transition={200} {...decorative} /> : null}
+          {step.scene ? <Image source={step.scene} style={{ width: "100%", aspectRatio: 4 / 3, maxHeight: 290, borderRadius: 18 }} contentFit="cover" contentPosition={{ left: "50%", top: "35%" }} transition={200} {...decorative} /> : null}
           <View style={{ backgroundColor: "#fff", borderRadius: 22, paddingVertical: 16, paddingHorizontal: 18 }}>
             {step.gloss ? <GlossText door={door} text={step.text} gloss={step.gloss} style={{ fontFamily: font.display[700], fontSize: fs, lineHeight: fs * 1.3, color: color.ink, letterSpacing: -0.2 }} /> : <SayText door={door} text={step.text} style={{ fontFamily: font.display[700], fontSize: fs, lineHeight: fs * 1.3, color: color.ink, letterSpacing: -0.2 }} />}
           </View>
