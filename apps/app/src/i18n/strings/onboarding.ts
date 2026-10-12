@@ -6,7 +6,7 @@ import type { Dict } from "../core";
 
 export const en = {
   // splash (welcome/index)
-  "onboarding.splash.tagline": "making religion cool again.",
+  "onboarding.splash.tagline": "making religion cool again. welcome to the hill, we're all family here.",
   "onboarding.splash.start": "Start free",
   "onboarding.splash.haveAccount": "I already have an account",
   "onboarding.splash.beenHere": "I've been here before",
@@ -246,7 +246,7 @@ export const en = {
 } as const;
 
 export const es: Dict<typeof en> = {
-  "onboarding.splash.tagline": "hacer que la religión vuelva a ser cool.",
+  "onboarding.splash.tagline": "hacer que la religión vuelva a ser cool. bienvenido a la colina, aquí todos somos familia.",
   "onboarding.splash.start": "Empieza gratis",
   "onboarding.splash.haveAccount": "Ya tengo una cuenta",
   "onboarding.splash.beenHere": "Ya estuve aquí",

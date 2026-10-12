@@ -110,7 +110,7 @@ export const en = {
   "home.today.whenReady": "day {n}, whenever you're ready",
   "home.today.startDock": "start day {n} · about 5 min",
   // Together, walkers and friends
-  "home.together.title": "you're not doing this alone.",
+  "home.together.title": "make a little space. you're not alone.",
   "home.together.walkingWith": "walking with",
   "home.together.nobody": "nobody yet. light your lantern and send it to one person.",
   "home.together.todaysLantern": "today's lantern",
@@ -481,7 +481,7 @@ export const es: Dict<typeof en> = {
   "home.today.startA11y": "empezar el día {n}: {title}",
   "home.today.whenReady": "día {n}, cuando quieras",
   "home.today.startDock": "empezar el día {n} · unos 5 min",
-  "home.together.title": "no lo estás haciendo a solas.",
+  "home.together.title": "haz un poco de espacio. no estás solo.",
   "home.together.walkingWith": "caminando con",
   "home.together.nobody": "nadie todavía. enciende tu farol y envíaselo a una persona.",
   "home.together.todaysLantern": "el farol de hoy",
