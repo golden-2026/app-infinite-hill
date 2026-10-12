@@ -50,6 +50,7 @@ design changes go live, ask before deploying, real testimonials only, check usag
   once the weekly limit is hit.
 
 ## Session of 2026-10-06 (pick up here; newest first)
+- LIVE: expo-live109 (2026-10-12): voice portrait full size on the door card; 'meet your voice' screen retired (redirects to the welcome).
 - LIVE: expo-live108 (2026-10-12): 'which one sounds like you' swipe cards on phones (en+es).
 - LIVE: expo-live107 (2026-10-12): merged 'how it plays' section (en+es): Christian day screenshots with Nia, then the rotating demo with cast faces; softened scholar line.
 - LIVE: expo-live106 (2026-10-12): one-hill/love copy on site and app (en+es); mixed-faith stats (Pew 39% interfaith marriages, Pew 14 of 32, Global Flourishing 18-24); voice photo crops; keepers name wrap; 'my own religion' label. site-es edited directly, atlas/mock/es.mjs not synced for these lines. test:unit: account-screen + backend/state fail on a vite.config path (pre-existing, not content).
