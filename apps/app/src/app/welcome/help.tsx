@@ -27,7 +27,7 @@ export default function Help() {
     const next = afterDoor(why);
     if (next === "check") return router.push("/welcome/intake");
     update({ profile: profileFor(saved.settings.profile, "SPIRITUAL", today) });
-    router.push({ pathname: next === "ready" ? "/welcome/ready" : "/welcome/voice", params: { door: "SPIRITUAL" } });
+    router.push({ pathname: "/welcome/ready", params: { door: "SPIRITUAL" } });
   };
   const course = () => router.push("/welcome/courses");
   const wander = () => {

@@ -22,7 +22,7 @@ export default function Suggest() {
   useEffect(() => { if (!p) router.replace("/welcome/intake"); }, [p]);
   if (!p) return null;
   return (
-    <WelcomeFrame step={6} door="SPIRITUAL" footer={<Btn testID="suggest-continue" onPress={() => router.push({ pathname: "/welcome/voice", params: { door: "SPIRITUAL" } })}>{t("onboarding.startMyPath")}</Btn>}>
+    <WelcomeFrame step={6} door="SPIRITUAL" footer={<Btn testID="suggest-continue" onPress={() => router.push({ pathname: "/welcome/ready", params: { door: "SPIRITUAL" } })}>{t("onboarding.startMyPath")}</Btn>}>
       <Host>{keepAway ? t("onboarding.suggest.hostAway") : t("onboarding.suggest.host")}</Host>
       <View style={{ gap: 10 }}>
         {picks.map((s) => (

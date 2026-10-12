@@ -121,7 +121,7 @@ export default function PickDoor() {
     const next = afterDoor(why);
     if (next === "check") return router.push(d === "SPIRITUAL" ? "/welcome/intake" : { pathname: "/welcome/know", params: { door: d } });
     update({ profile: profileFor(saved.settings.profile, d, today) });
-    router.push({ pathname: next === "ready" ? "/welcome/ready" : "/welcome/voice", params: { door: d } });
+    router.push({ pathname: "/welcome/ready", params: { door: d } }); // the voice is met on the door card itself (owner, 2026-10-12)
   };
 
   return (

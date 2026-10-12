@@ -41,7 +41,7 @@ export default function Fit() {
   if (start > 1) rows.splice(1, 0, [t("onboarding.fit.start"), t("onboarding.fit.startH", { day: start, camp: campName(pos(start).camp, pos(start).name).toLowerCase() }), t("onboarding.fit.startB", { end: start - 1 })]);
   if (p.answers.lens === "fresh") rows.unshift([t("onboarding.fit.hold"), t("onboarding.fit.freshH"), t("onboarding.fit.freshB", name)]);
   return (
-    <WelcomeFrame step={6} door={door} footer={<Btn testID="fit-continue" onPress={() => router.push({ pathname: "/welcome/voice", params: { door } })}>{t("onboarding.fit.continue")}</Btn>}>
+    <WelcomeFrame step={6} door={door} footer={<Btn testID="fit-continue" onPress={() => router.push({ pathname: "/welcome/ready", params: { door } })}>{t("onboarding.fit.continue")}</Btn>}>
       <Host>{t("onboarding.fit.host", name)}</Host>
       <View style={{ gap: 10 }}>
         {rows.map(([k, h, b]) => (

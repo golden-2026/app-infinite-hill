@@ -54,8 +54,9 @@ export function BigDoorCard({ door, on, onPress, eyebrow, line, a11y }: { door: 
   const quote: string | undefined = isEs() ? QUOTES_ES[door] : (data.QUOTES as Record<string, string> | undefined)?.[door];
   return (
     <Radio on={on} onPress={onPress} a11y={a11y ?? doorLabel(door)} style={[s.big, on && s.bigOn, { borderLeftColor: ic.tint }]}>
+      {/* the voice, full size, the moment someone picks their door (owner, 2026-10-12: one strong introduction) */}
+      {ic.name ? <View style={{ marginBottom: 14 }}><Face ic={ic} w={"100%" as any} h={230} r={16} big /></View> : null}
       <View style={{ flexDirection: "row", gap: 14, alignItems: "center" }}>
-        <Face ic={ic} w={76} h={76} r={38} caption={false} />
         <View style={{ flex: 1, gap: 4 }}>
           <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: 8 }}>
             <Text style={[type.eyebrow(11), { color: ic.tint, flexShrink: 1 }]}>{eyebrow}</Text>
