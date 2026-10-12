@@ -50,6 +50,7 @@ design changes go live, ask before deploying, real testimonials only, check usag
   once the weekly limit is hit.
 
 ## Session of 2026-10-06 (pick up here; newest first)
+- LIVE: expo-live115 (2026-10-12): door card photo says 'your voice for every lesson'; Today done card has 'keep going: day N'.
 - LIVE: expo-live113 (2026-10-12): voice photos are clean square crops around each face (app+site); door card trimmed; answer taps light up before moving on.
 - LIVE: expo-live112 (2026-10-12): swipe cards same height; voice photos pre-framed (face centered, same scale) on site en+es.
 - LIVE: expo-live110 (2026-10-12): swipe-card counter removed.
