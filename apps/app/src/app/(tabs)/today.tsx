@@ -187,7 +187,7 @@ export default function Today() {
         ) : doneHere ? (
           <TodayHero done n={lesson} title={title} carry={info.carry || (data.DAY1[wing] || data.DAY1.SPIRITUAL).carry} streak={streakOn ? sk.streak : null}
             tomorrow={tomorrow} night={night} when={night ? t("home.today.sleepOnIt") : hour >= 19 ? t("home.today.seeTomorrow") : t("home.today.seeSundown")}
-            extra={isDemo() ? <View style={{ marginTop: 12 }}><Btn kind="ghost" onPress={() => demoShiftDays(1)}>{t("home.today.demoSkip")}</Btn></View> : null} />
+            extra={<View style={{ marginTop: 12, gap: 8 }}>{/* done for today, but free to keep going (owner, 2026-10-08/12): the streak counts the day once */}<Btn testID="today-keep-going" kind="gold" onPress={() => openLesson(lesson + 1)}>{t("session.tomorrow.keepGoing", { day: lesson + 1 })}</Btn>{isDemo() ? <Btn kind="ghost" onPress={() => demoShiftDays(1)}>{t("home.today.demoSkip")}</Btn> : null}</View>} />
         ) : (
           <TodayHero done={false} n={lesson} title={title} camp={campLine} first={derived.showedUp === 0} quiet={quiet}
             goal={goal && streakOn ? `${t("home.today.goal", { done: goal.done, days: goal.days })}${goal.reached ? t("home.today.goalReached") : ""}` : null}
