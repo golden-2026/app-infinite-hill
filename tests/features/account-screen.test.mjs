@@ -1,12 +1,13 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
+import { fileURLToPath } from "node:url";
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { createServer } from "vite";
 
 const source = await readFile(new URL("../../src/components/AccountScreen.jsx", import.meta.url), "utf8");
-const vite = await createServer({ configFile: new URL("../../vite.config.js", import.meta.url).pathname, server: { middlewareMode: true }, appType: "custom" });
+const vite = await createServer({ configFile: fileURLToPath(new URL("../../vite.config.js", import.meta.url)), server: { middlewareMode: true }, appType: "custom" });
 const { default: AccountScreen } = await vite.ssrLoadModule("/src/components/AccountScreen.jsx");
 const markup = renderToStaticMarkup(React.createElement(AccountScreen));
 await vite.close();

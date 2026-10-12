@@ -60,7 +60,8 @@ before(async () => {
 
 after(async () => {
   await db.closeDatabaseForTests();
-  rmSync(tempDir, { recursive: true, force: true });
+  // Windows can keep the SQLite file locked for a moment after close; retry, then leave the temp folder rather than fail
+  try { rmSync(tempDir, { recursive: true, force: true, maxRetries: 5, retryDelay: 100 }); } catch {}
 });
 
 test("initializes the isolated SQLite schema and records its migration", async () => {
