@@ -50,6 +50,7 @@ design changes go live, ask before deploying, real testimonials only, check usag
   once the weekly limit is hit.
 
 ## Session of 2026-10-06 (pick up here; newest first)
+- LIVE: expo-live105 (2026-10-12): site one-hill message + new verified evidence stats (en+es). NOTE: site-es.html was edited directly; atlas/mock/es.mjs pairs for these lines are not yet updated, so a full site rebuild would revert them until synced.
 - LIVE: expo-live104 (2026-10-12): Spanish site day screenshots 1-2 now show the cast too.
 - LIVE: expo-live103 (2026-10-12): Nicole Kidman replaces Mark Wahlberg as the Catholic voice (app + site, en + es; Mark is tied to Hallow). Site day screenshots 1-2 now show the cast (English only; Spanish still old). Families section tried and dropped (owner: homepage already long). Spanish pairs in main atlas/mock/es.mjs updated for Nicole.
 - LIVE: expo-live102 (2026-10-12): fixed wrong chat faces (Ava showed Ong, Pop showed Marcus, Jordan showed Dadi); lesson scenes now 4:3 framed on faces (was a short top strip); Catholic and Islam welcome pictures recropped.
