@@ -50,6 +50,7 @@ design changes go live, ask before deploying, real testimonials only, check usag
   once the weekly limit is hit.
 
 ## Session of 2026-10-06 (pick up here; newest first)
+- LIVE: expo-live102 (2026-10-12): fixed wrong chat faces (Ava showed Ong, Pop showed Marcus, Jordan showed Dadi); lesson scenes now 4:3 framed on faces (was a short top strip); Catholic and Islam welcome pictures recropped.
 - LIVE: expo-live101 (2026-10-12): new Abuela (big and bold, no glasses) in faces, family and 5 Catholic scenes.
 - LIVE: expo-live100 (2026-10-12): Catholic family picture with Sofia in navy.
 - LIVE: expo-live99 (2026-10-12): Christianity family redrawn (white family outside Nashville; Nia replaces Leo; Marcus a firefighter); fix-up #2 done (Noa green, Sofia navy, Amira teal). Remaining fix-ups in scratchpad castkit REMAINING-CAST-CHANGES.txt.
