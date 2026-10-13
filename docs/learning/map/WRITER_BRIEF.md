@@ -1,0 +1,12 @@
+# Writer brief (shared by every writer agent)
+
+Repo: C:\Users\shset\code\golden-app. You write full lesson scripts for Infinite Hill, a daily religious/spiritual practice app.
+
+1. Read docs/curriculum/SCRIPT_GUIDE.md in full. Read the two finished examples: docs/curriculum/christianity/scripts/y1/day-0001.json and day-0012.json. Dump and read Hindu manuscript days 3, 5, 9, 14 (the command is in the guide): that is the voice and quality bar.
+2. Run `node packages/content/scripts/script-brief.mjs DOOR FROM TO` for your days plus one either side. Word and carry must match the index EXACTLY.
+3. Node is not on the bash PATH: in Bash start with `export PATH="/c/Program Files/nodejs:$PATH";`. Run from the repo root.
+4. Write your days IN DATE ORDER, and SAVE EACH FILE WITH THE Write TOOL AS SOON AS IT IS COMPOSED (never hold several days in your head and write them at the end). Path: docs/curriculum/<door>/scripts/y1/day-NNNN.json. Each review picks up the day before (use the index for yesterday if its file isn't there).
+5. After every 2 files run `node packages/content/scripts/validate-scripts.mjs DOOR --quiet` and fix every ERROR in your own files. Read warnings for your files (run without --quiet) and fix the real ones. Other agents are writing other days of the same door at the same time: ignore errors in their files, and never edit them.
+6. Rules that matter most: 430–640 spoken words; practice sized to the app's sit (days 1–2 one breath, 3–7 three breaths, 8–14 a 45-second sit, 15–21 a 75-second sit, 22+ two minutes) and phrased as an invitation anyone can do ("if you pray, you can…"); quote only public-domain translations and only words you are CERTAIN of, otherwise paraphrase with "quoted": null; never tell the listener what to believe; never compare or rank traditions; where churches or schools differ say who says what; never write a new prayer; voice-neutral (never name or speak as a celebrity voice, never "I'm a Christian/Muslim"); American spelling outside quotations; games answerable from that day's script; review.status "pending"; put anything a Keeper should check in review.notes.
+7. Edit no other file. Do not commit, deploy or touch git.
+8. Before you finish, confirm with `ls` that every one of your files is on disk and the validator shows no errors in them. Final report (short): the days written and confirmed on disk, the validator line, and quotations you paraphrased because you weren't sure.

@@ -28,6 +28,7 @@ import { useSeasons } from "@/lib/quests";
 import { newYearNow } from "@/content/seasons";
 import { QuestTodayCard } from "@/ui/quest";
 import { SettleCard } from "@/ui/settle";
+import { DailyCardView } from "@/ui/daily-card";
 import { HolidayCard, WalkTogetherCard } from "@/ui/couple";
 import { campLabel, campName, doorLabel, isEs, t } from "@/i18n";
 import { firstWeekFor, gentleStart } from "@/content/life-moments";
@@ -177,6 +178,9 @@ export default function Today() {
             </Pressable>
           );
         })()}
+
+        {/* today's card: one short, real thing from this path's calendar, before the lesson (ui/daily-card) */}
+        {quiet ? null : <DailyCardView door={wing} />}
 
         {/* the one thing to do today */}
         {!doneHere && weekNext !== null ? (

@@ -19,8 +19,9 @@ export function pulseOn(): boolean {
 
 async function send(p: Ping): Promise<boolean> {
   try {
-    // no cookies, and no Referer (the page address could name a door)
-    const r = await fetch(URL, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(p), keepalive: true, credentials: "omit", referrerPolicy: "no-referrer" } as RequestInit);
+    // no Referer (the page address could name a door). On the web the site sits behind the team login while we test, and
+    // its sign-in cookie must ride along or every count is turned away (owner, 2026-10-13); the cookie names no one here.
+    const r = await fetch(URL, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(p), keepalive: true, credentials: Platform.OS === "web" ? "same-origin" : "omit", referrerPolicy: "no-referrer" } as RequestInit);
     return r.ok;
   } catch {
     return false;

@@ -50,6 +50,8 @@ export type Settings = {
   remindOffer?: string | null;
   reviewedOn?: string | null;
   carried?: { date: string; lesson: number; did: boolean } | null;
+  /** Today's card (ui/daily-card) read: "DOOR:YYYY-MM-DD". */
+  dailyRead?: string | null;
   unlocksSeen?: string[];
   /** What someone told us in onboarding, scored on the device. Private: owner-only when synced. */
   profile?: Profile | null;
