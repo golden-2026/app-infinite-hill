@@ -232,6 +232,7 @@ export function lessonFromScript(s, camp = null) {
     later: s.day > 21, script: true, review: s.review?.status || "pending", howItsDone: s.howItsDone,
     segments: s.segments.map((g) => ({ type: g.type, duration: g.duration ?? null, voice: g.voice || "", screen: g.screen || [] })),
     games: s.games || {}, sources: s.sources || [],
+    ...(s.shape ? { shape: s.shape } : {}),
   };
 }
 
@@ -239,6 +240,7 @@ export function lessonFromScript(s, camp = null) {
 export function compileScript(s) {
   return {
     day: s.day, title: s.title, word: s.word, hook: s.hook, carry: s.carry, length: s.length || null, tomorrow: s.tomorrow || null,
+    ...(s.shape ? { shape: s.shape } : {}), // recipe v3 (RECIPE_V3.md): the day's shape
     howItsDone: s.howItsDone, segments: s.segments, games: s.games,
     sources: (s.sources || []).map((r) => ({ ref: r.ref, work: r.work, translation: r.translation || null, quoted: !!r.quoted })),
     review: s.review?.status || "pending",

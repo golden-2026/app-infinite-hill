@@ -65,6 +65,35 @@ export function composeV2(steps, script, day) {
   const tap = of("taphear");
   const challenge = tap ? [{ ...tap, tag: "challenge" }] : [];
 
+  if (script.shape && SHAPES[script.shape]) {
+    // recipe v3 (docs/curriculum/RECIPE_V3.md): the day's shape sets the order and the lead game; five games at most
+    // the lead game, from the planned steps or else straight from the script (planDay keeps only the day's feature game)
+    const fromScript = (t) => (t === "myth" && g.myth ? { type: "myth", items: g.myth } : t === "fork" && g.fork ? { type: "fork", ...g.fork }
+      : t === "original" && g.original && g.original.script ? { type: "original", ...g.original } : t === "trapdoor" && g.trapdoor ? { type: "trapdoor", word: script.word, floors: g.trapdoor } : null);
+    const lead = (t) => { const s = of(t) || fromScript(t); return s ? [s.id != null ? s : { ...s, id: id++ }] : []; };
+    const recall6 = (g.recall || []).filter((p) => Array.isArray(p) && p.length === 2).slice(0, 6);
+    const reviewPairs = recall6.length >= 3 && match ? [{ ...match, pairs: recall6, review: recall6.map((p) => p[0]), tag: "reviewRound" }] : pairs;
+    const parts = { bell, review, hook, newWord, teachA: teach.slice(0, half), teachB: teach.slice(half), rotating, chat, practice, word, pairs,
+      reviewPairs, sound, carry, challenge, tally, fork: lead("fork"), myth: lead("myth"), trapdoor: lead("trapdoor"), original: lead("original") };
+    const out = SHAPES[script.shape].flatMap((k) => parts[k] || []);
+    // the cap: keep the first five graded games in order, drop the rest (the challenge and tally always stay)
+    let games = 0;
+    return out.filter((s) => { if (!GAMES.has(s.type) || s.tag === "challenge") return true; games += 1; return games <= 5; })
+      .map((s) => (s.type === "bell" ? { ...s, shape: script.shape } : s));
+  }
   return [...bell, ...review, ...hook, ...newWord, ...teach.slice(0, half), ...rotating, ...teach.slice(half), ...chat,
     ...practice, ...word, ...pairs, ...sound, ...carry, ...challenge, ...tally];
 }
+
+const GAMES = new Set(["guess", "chat", "match", "listen", "say", "rhythm", "myth", "fork", "trapdoor", "original", "scenes", "rush", "order", "taphear"]);
+
+// Recipe v3's weekly rhythm: the same frame, a different inside. Each shape puts its lead beat where it does the work.
+const SHAPES = {
+  story: ["bell", "review", "hook", "newWord", "teachA", "fork", "teachB", "chat", "practice", "word", "pairs", "carry", "challenge", "tally"],
+  puzzle: ["bell", "review", "hook", "myth", "newWord", "teachA", "teachB", "chat", "practice", "word", "pairs", "carry", "challenge", "tally"],
+  debate: ["bell", "review", "hook", "newWord", "teachA", "teachB", "fork", "chat", "practice", "word", "carry", "challenge", "tally"],
+  senses: ["bell", "review", "hook", "practice", "newWord", "teachA", "teachB", "original", "chat", "word", "sound", "carry", "challenge", "tally"],
+  life: ["bell", "review", "hook", "chat", "newWord", "teachA", "teachB", "rotating", "practice", "word", "carry", "challenge", "tally"],
+  wisdom: ["bell", "review", "hook", "newWord", "teachA", "teachB", "trapdoor", "chat", "practice", "word", "pairs", "carry", "challenge", "tally"],
+  review: ["bell", "review", "reviewPairs", "hook", "teachA", "teachB", "chat", "myth", "practice", "word", "carry", "challenge", "tally"],
+};

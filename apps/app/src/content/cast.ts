@@ -113,6 +113,9 @@ export function castFor(door: string, who: string | undefined): Who | null {
   const cast = CASTS[door];
   if (!cast || !who) return null;
   const w = who.toLowerCase().trim();
+  // recipe v3: the friend who texts every day is named outright ("Priya", "Sofia"), so match a cast name first
+  const named = Object.values(cast).find((c) => c.name.toLowerCase() === w);
+  if (named) return named;
   const hit = (PLAYS_BY_DOOR[door] ?? PLAYS).find(([re]) => re.test(w));
   return hit ? cast[hit[1]] : null;
 }
