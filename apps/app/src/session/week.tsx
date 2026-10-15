@@ -144,8 +144,8 @@ export function ThinkStep({ step, onDone }: { step: any; onDone: Done }) {
 export function tieRows(step: { tie?: { story?: string; friend?: string; you?: string } | null; meaning?: string | null }, who: string) {
   const forWho = who ? t("session.tie.friend", { who }) : t("session.tie.life");
   if (step.tie?.story && step.tie.friend) {
-    const rows = [{ label: t("session.tie.story"), text: step.tie.story }, { label: forWho, text: step.tie.friend }];
-    if (step.tie.you) rows.push({ label: t("session.tie.you"), text: step.tie.you });
+    const rows: { label: string; text: string }[] = [{ label: t("session.tie.story"), text: step.tie.story }, { label: forWho, text: step.tie.friend }];
+    // the "for you" question (tie.you) stays in the scripts but isn't shown: the card read as too busy (owner, 2026-10-15)
     return rows;
   }
   const m = step.meaning?.match(/^(.+?[.!?])s+([A-Z].+)$/);

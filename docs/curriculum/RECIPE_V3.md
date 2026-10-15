@@ -131,7 +131,7 @@ the app shows three labeled lines, written in `games.chat.tie`:
 
 - `story`: what happened in the scripture story, one sentence, naming who did what ("Parvati set Ganesha at her door…").
 - `friend`: what it means for the friend, by name, in their situation ("Priya can guard an hour to practice…").
-- `you`: one short, warm question for the reader's own week, lowercase, no homework tone.
+- `you`: optional; one short question for the reader's own week. Not shown for now (owner, 2026-10-15: the card read as too busy).
 
 Keep `meaning` too (older screens use it). Lessons without `tie` fall back to splitting `meaning` into
 "in the story" and "in real life". The pilot week (days 22–28, Hinduism and Catholicism) has it; year 5 and the
