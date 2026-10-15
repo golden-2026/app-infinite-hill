@@ -1,0 +1,153 @@
+{
+  "format": "ih-lesson/1",
+  "door": "CATHOLIC",
+  "day": 1766,
+  "title": "The modern saints, again",
+  "word": "The modern saints",
+  "hook": "Romero, Bakhita, Kolbe, Teresa, Acutis",
+  "carry": "saints of our time",
+  "length": "6:45",
+  "tomorrow": "a saint for every day: too much, or exactly right?",
+  "shape": "puzzle",
+  "segments": [
+    {
+      "type": "the bell",
+      "duration": null,
+      "voice": "",
+      "screen": ["`DAY ONE-THOUSAND-SEVEN-HUNDRED-SIXTY-SIX.`"]
+    },
+    {
+      "type": "review",
+      "duration": "15 sec",
+      "voice": "Yesterday, Catherine wrote to the pope and called him home: always renewing. Today, saints who lived closer to our own time.",
+      "screen": ["`ALWAYS RENEWING.` → `CLOSER TO OUR TIME.`"]
+    },
+    {
+      "type": "the hook",
+      "duration": "50 sec",
+      "voice": "Nobody saves their boss in their phone as master. The word sounds like chains. So here's the odd detail. Josephine Bakhita was kidnapped as a child in Sudan and sold as a slave. Years later, free and living in Italy, she spoke of God with the local word for master: paron. Why would a woman who'd escaped her masters call God one? Pope Benedict the Sixteenth told her story at the start of a letter on hope, and the answer is in it.",
+      "screen": ["`NOBODY CALLS THEIR BOSS MASTER.` → `BAKHITA, SOLD AS A CHILD.` → `SHE CALLED GOD PARON.`"]
+    },
+    {
+      "type": "the teach",
+      "duration": "2 min 15",
+      "voice": "Bakhita had known masters who beat her. Then, the pope writes, she came to know a completely different kind of master: the living God, who loved her. The word stayed the same. The one behind it changed. That's the puzzle solved. For her, master wasn't a chain anymore. It was the name of someone who'd set her free. She was baptized and became a sister, and the Church now calls her a saint. She stands with others back on the climb. Óscar Romero, an archbishop in El Salvador who spoke up for the poor and was killed while celebrating Mass. Maximilian Kolbe, a Polish friar who stepped forward in a Nazi camp to take the place of a man condemned to die. Teresa of Calcutta, who cared for the dying in the streets. And Carlo Acutis, a teenager who loved computers and the Eucharist. Here's the one to tell a friend: these saints had passports and newspapers, and some of them had email. The Letter to the Hebrews speaks of \"so great a cloud of witnesses\" around us. The modern saints say that cloud never stopped growing. Holiness didn't end with the old stories. It happened in camps and cities and bedrooms with a computer in them.",
+      "screen": ["`THE SAME WORD, A DIFFERENT MASTER.` · `ROMERO, KOLBE, TERESA, ACUTIS.` · `PASSPORTS, NEWSPAPERS, EMAIL.` · `THE CLOUD KEEPS GROWING.` · then, large: `SAINTS OF OUR TIME.`"]
+    },
+    {
+      "type": "the practice",
+      "duration": "2 min",
+      "voice": "Choose one of them: Bakhita, Romero, Kolbe, Teresa or Carlo. Say the name out loud, slowly, and remember one thing that saint did. If you pray, you can add the words Catholics say with any saint's name, pray for us; if not, let the name and the story be enough.",
+      "screen": []
+    },
+    {
+      "type": "the word",
+      "duration": "25 sec",
+      "voice": "The modern saints. People the Church calls holy who lived in a world a lot like ours.",
+      "screen": ["`THE MODERN SAINTS — today's word`."]
+    },
+    {
+      "type": "the carry",
+      "duration": "15 sec",
+      "voice": "Carry this: saints of our time, with passports and phones and the same God as the martyrs. Until tomorrow.",
+      "screen": []
+    },
+    {
+      "type": "the close",
+      "duration": null,
+      "voice": "",
+      "screen": ["`DAY 1766 COUNTS.` → `TOMORROW: A SAINT FOR EVERY DAY: TOO MUCH, OR EXACTLY RIGHT?`"]
+    }
+  ],
+  "howItsDone": "Catholics ask the saints to pray for them, much as they would ask a friend, and keep holy cards and feast days of recent saints alongside the ancient ones.",
+  "games": {
+    "match": {
+      "prompt": "saints of our time — tap the pairs.",
+      "pairs": [
+        ["Josephine Bakhita", "called God paron, master"],
+        ["Óscar Romero", "an archbishop killed at Mass"],
+        ["Maximilian Kolbe", "took a condemned man's place"],
+        ["Carlo Acutis", "a teenager who loved the Eucharist"]
+      ]
+    },
+    "myth": [
+      ["saints are people from long ago", false, "the Church names saints who had passports, newspapers and email."],
+      ["praying to a saint means worshiping the saint", false, "Catholics ask saints to pray for them; worship belongs to God alone."],
+      ["Bakhita used the word for master when she spoke of God", true, "paron, in the local dialect: a completely different kind of master."]
+    ],
+    "fork": {
+      "setup": "you're Bakhita. you were owned by cruel masters, and now you're free and baptized. which word do you use for God?",
+      "options": [
+        "master: the same word, about someone completely different.",
+        "a brand-new word with no past attached to it.",
+        "no word at all; titles only remind you of chains."
+      ],
+      "answer": 0,
+      "reveal": "she called God paron, master. Pope Benedict writes that she had come to know a totally different kind of master, one who loved her."
+    },
+    "original": {
+      "script": "paron",
+      "say": "pah-RON",
+      "note": "Venetian dialect, written in Latin letters: master, boss. the word Bakhita used for the living God."
+    },
+    "trapdoor": [
+      "what you thought: saints are figures in old paintings.",
+      "what it means: the Church names saints from our own era, like Bakhita, who called the God who freed her master.",
+      "what a scholar hears: Spe Salvi 3, where Benedict XVI opens a letter on hope with Bakhita's story and her word paron."
+    ],
+    "guess": [
+      "people called holy who lived in a world like ours",
+      "role models who aren't official saints yet",
+      "heroes from history the Church admires"
+    ],
+    "recall": [
+      ["Reform", "always renewing"],
+      ["The Fathers", "fully alive"]
+    ],
+    "chat": {
+      "who": "Sofia",
+      "says": "Abuela slipped me a holy card of a saint in jeans and sneakers. aren't saints supposed to be ancient?",
+      "options": [
+        "Not all. Bakhita, Kolbe, Carlo Acutis lived in a world a lot like ours.",
+        "Yes. The real saints are ancient; newer ones are just good role models.",
+        "Only in old countries. The Church doesn't name saints from our era anymore."
+      ],
+      "answer": 0,
+      "meaning": "The modern saints lived with passports, newspapers and computers. The cloud of witnesses in Hebrews never stopped growing."
+    },
+    "gloss": {
+      "Bakhita": { "meaning": "Josephine Bakhita, a saint who was enslaved as a child, then freed", "say": "bah-KEE-tah" },
+      "paron": { "meaning": "Venetian for master, Bakhita's word for God", "say": "pah-RON" },
+      "Óscar Romero": { "meaning": "an archbishop in El Salvador, now a saint", "say": "OS-kar roh-MAIR-oh" },
+      "Maximilian Kolbe": { "meaning": "a Polish friar who gave his life for another prisoner", "say": "KOL-beh" },
+      "Carlo Acutis": { "meaning": "an Italian teenager the Church now names a saint", "say": "KAR-loh ah-KOO-tis" },
+      "Hebrews": { "meaning": "a New Testament letter about faith and its witnesses" }
+    }
+  },
+  "sources": [
+    { "ref": "Benedict XVI, Spe Salvi 3", "work": "encyclical letter on hope", "translation": null, "quoted": null },
+    { "ref": "Hebrews 12:1", "work": "The Bible", "translation": "Douay-Rheims (Challoner)", "quoted": "so great a cloud of witnesses" },
+    { "ref": "Catechism of the Catholic Church 956", "work": "Catechism of the Catholic Church", "translation": null, "quoted": null },
+    { "ref": "Canonization homilies: Maximilian Kolbe (John Paul II); Óscar Romero (Francis); Teresa of Calcutta (Francis); Carlo Acutis (Leo XIV)", "work": "papal homilies", "translation": null, "quoted": null }
+  ],
+  "review": {
+    "status": "pending",
+    "keeper": null,
+    "notes": [
+      "For parents: this day names slavery (Bakhita), a killing at Mass (Romero) and a Nazi camp (Kolbe), each in one plain line without detail.",
+      "Hebrews 12:1 quoted from Douay-Rheims (Challoner); confirm.",
+      "Spe Salvi 3 paraphrased: Bakhita kidnapped as a child, sold, came to know 'a totally different kind of master' and used the Venetian word paron for the living God; baptized and became a Canossian sister. Confirm.",
+      "Carlo Acutis named a saint: confirm his canonization status at publish time and the homily cited; 'some of them had email' refers to Acutis; confirm the framing is fair.",
+      "CCC 956 (intercession of the saints) paraphrased for the myth reveal; confirm 'worship belongs to God alone' (CCC 2096, 2132).",
+      "Shape: puzzle (why call God master?). Practice kind: say it out loud.",
+      "Sofia storyline day 2: Abuela Rosa (weekly elder appearance) gives Sofia a holy card of Carlo Acutis as she thinks about leaving home.",
+      "new lesson recipe data (chat, gloss, recall) written with the script; confirm the chat reply, glosses and pronunciations with the Keeper.",
+      "2026-10-15 v3 (recipe v3: shape, Sofia, question tomorrow)."
+    ]
+  },
+  "meta": {
+    "index": "1766. The modern saints, again · — · Romero, Bakhita, Kolbe, Teresa, Acutis · pray to one of them · saints of our time",
+    "writer": "writer agent (catholic 1765–1778, v3)",
+    "written": "2026-10-15"
+  }
+}

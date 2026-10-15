@@ -1,7 +1,8 @@
 // Corrected day lines (owner, 2026-10-15 quality pass): some outlines gave a day a planning label for its title and
 // carry ("the Devi Mahatmya (13 chapters, read whole)"). The rewritten lessons carry real ones, and the index has to
 // match them, because reviews, recaps and the lantern read the index, not the script. Each path keeps its corrections
-// in docs/curriculum/<path>/day-lines.json ({ "<day>": { "title", "carry" } }); this folds them into
+// in docs/curriculum/<path>/day-lines.json ({ "<day>": { "title", "carry", "word" } }; word pinned, since a day with no
+// outline word takes it from the title); this folds them into
 // packages/content/generated/day-lines.js, which the outline loader applies on top of the outline.
 //   node packages/content/scripts/build-day-lines.mjs
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
@@ -19,7 +20,7 @@ for (const p of PATHS) {
   out[door] = {};
   for (const [day, v] of Object.entries(lines)) {
     if (Number(day) <= 21) continue; // camp one's index lives in the core data, not the outline
-    out[door][day] = { ...(v.title ? { title: v.title } : {}), ...(v.carry ? { carry: v.carry } : {}) };
+    out[door][day] = { ...(v.title ? { title: v.title } : {}), ...(v.carry ? { carry: v.carry } : {}), ...(v.word ? { word: v.word } : {}) };
     n++;
   }
 }
