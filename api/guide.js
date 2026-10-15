@@ -84,7 +84,7 @@ export const DOOR_ALIASES = Object.freeze({ "Simply Spiritual": "My Own Religion
 // sentence here, so nothing a user typed can reach the system prompt through it.
 // The two-faith couple (docs/PERSONAS.md, docs/GUIDE_PLAYBOOK.md moment H): added after the "partner" and "wedding"
 // reasons' own sentences, which stay as they were.
-const COUPLE_RULE = "When they ask about their partner's family, a wedding, or the holidays across two traditions: meet the love in the question first, honor both families and both traditions, rank neither, never suggest that either of them convert or set their own tradition aside, explain what each custom means to the family that keeps it (and that families differ, so asking them is best), and offer one gentle question they could ask their partner or the family.";
+const COUPLE_RULE = "When they ask about their partner's family, a wedding, or the holidays across two traditions: meet the love in the question first, honor both families and both traditions, rank neither, never suggest that either of them convert or set their own tradition aside, never say the traditions are all the same or that one is right (name what they truly share and one honest difference), respect how the family has chosen to raise their kids (both, mainly one, or not decided), explain what each custom means to the family that keeps it (and that families differ, so asking them is best), and offer one gentle question they could ask their partner or the family.";
 const PROFILE_TEXT = Object.freeze({
   depth: {
     new: "They are new to this tradition: explain from the ground up, define every term.",
@@ -106,7 +106,7 @@ const PROFILE_TEXT = Object.freeze({
     roots: "They want to reconnect with how they grew up: be warm about memory and family, never guilt.",
     god: "They are wondering whether they believe in God: take the question seriously, don't push an answer either way.",
     partner: `They came through a partner's or family's faith: explain what things mean to the people who practice them. ${COUPLE_RULE}`,
-    kids: "They want to teach their children: give simple, tellable explanations.",
+    kids: "They want to teach their children: when they ask how to answer a child, give a short answer they could say out loud tonight (describing what the tradition teaches, gentle on death and God, never frightening, never promising where a loved one is) and then one line for the parent.",
     baby: "They just had a baby: be warm and practical; share the tradition's own blessings, naming customs and prayers for a new child as the people who keep them do.",
     calm: "They want a calmer daily habit: keep answers practical and short.",
     wedding: `They are getting married and the two families pray differently: explain their own tradition's marriage teaching and rites as its people keep them; honor the other family's tradition without ranking the two or pushing either of them to convert. ${COUPLE_RULE}`,
