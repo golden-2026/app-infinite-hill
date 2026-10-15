@@ -14,6 +14,7 @@ import { bridgeFor } from "@/lib/profile";
 import { useStore } from "@/lib/store";
 import { ChevronRight } from "@/ui/tab-icons";
 import { Btn, Eyebrow, Face, Guy, Screen, color, font, toast, type } from "@/ui";
+import { NeighborCard } from "@/ui/neighbor-card";
 
 // The finish, step 1 of 3 (owner brief 2026-10-01, after Duolingo's lesson that the end of a session is what brings
 // people back): what you just did. The day, the word, the line to carry, and one light question, "did it land?",
@@ -76,6 +77,9 @@ export default function Carry() {
         <Text style={type.h1(30)}>{p.word}.</Text>
         <Text style={[type.body(16), { fontStyle: "italic" }]}>{p.carry ? `“${p.carry}”` : t("session.landed.lineFallback")}</Text>
       </View>
+
+      {/* once a week: "same idea, another door" (ui/neighbor-card), opt-in */}
+      <NeighborCard door={p.door} day={day} />
 
       <Eyebrow style={{ marginTop: 4 }}>{t("session.landed.ask")}</Eyebrow>
       <View style={{ flexDirection: "row", gap: 8 }} accessibilityRole="radiogroup">
