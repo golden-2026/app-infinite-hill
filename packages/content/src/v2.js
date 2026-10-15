@@ -2,7 +2,8 @@
 // varied games, old words mixed back in, one sound game only for a word from another language, a challenge to finish.
 // It applies to a script that carries the new data (games.chat), so every other lesson is built exactly as before.
 //
-//   games.chat    { who, says, options: [3], answer: 0-2, meaning }   "complete the chat": pick the best reply
+//   games.chat    { who, says, options: [3], answer: 0-2, meaning, tie? }   "complete the chat": pick the best reply;
+//                 tie = { story, friend, you }: after the answer, "in the story / for <friend> / for you"
 //   games.gloss   { "<term>": { meaning, script?, say? } }            tap a word in the teaching to see what it means
 //   games.recall  [["<old word>", "<its meaning>"], …]                 earlier words mixed into today's pairs
 //
@@ -53,7 +54,7 @@ export function composeV2(steps, script, day) {
   // one rotating game after the first half of the teaching, so no two days in a row feel the same
   const pick = ROTATE.map((_, k) => ROTATE[(day + k) % ROTATE.length]).find((t) => of(t));
   const rotating = pick ? [of(pick)] : [];
-  const chat = [{ type: "chat", graded: true, who: g.chat.who, says: g.chat.says, options: g.chat.options, answer: g.chat.options[g.chat.answer], meaning: g.chat.meaning || null, id: id++ }];
+  const chat = [{ type: "chat", graded: true, who: g.chat.who, says: g.chat.says, options: g.chat.options, answer: g.chat.options[g.chat.answer], meaning: g.chat.meaning || null, tie: g.chat.tie || null, id: id++ }];
   // today's pairs plus up to two earlier words (built-in review); five pairs at most
   const match = of("match");
   const recall = (g.recall || []).filter((p) => Array.isArray(p) && p.length === 2).slice(0, 2);

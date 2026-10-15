@@ -138,6 +138,20 @@ export function ThinkStep({ step, onDone }: { step: any; onDone: Done }) {
   );
 }
 
+/** The chat's tie-back as labeled lines: what happened in the scripture story, what it means for the friend, and a
+ *  question for you. Lessons with games.chat.tie say it outright; older ones split their meaning (story sentence, then
+ *  life sentence), and keep the plain "meaning:" line when it doesn't split cleanly. */
+export function tieRows(step: { tie?: { story?: string; friend?: string; you?: string } | null; meaning?: string | null }, who: string) {
+  const forWho = who ? t("session.tie.friend", { who }) : t("session.tie.life");
+  if (step.tie?.story && step.tie.friend) {
+    const rows = [{ label: t("session.tie.story"), text: step.tie.story }, { label: forWho, text: step.tie.friend }];
+    if (step.tie.you) rows.push({ label: t("session.tie.you"), text: step.tie.you });
+    return rows;
+  }
+  const m = step.meaning?.match(/^(.+?[.!?])s+([A-Z].+)$/);
+  return m ? [{ label: t("session.tie.story"), text: m[1] }, { label: t("session.tie.life"), text: m[2] }] : null;
+}
+
 // ─── complete the chat (the new recipe, @ih/content v2.js): someone asks, you pick the best reply ──
 export function ChatStep({ step, onDone, door = "" }: { step: any; onDone: Done; door?: string }) {
   // the asker, played by the door's recurring cast where one fits (content/cast.ts): a face and a name
@@ -146,6 +160,7 @@ export function ChatStep({ step, onDone, door = "" }: { step: any; onDone: Done;
   const fx = useFx();
   const [order] = useState<string[]>(() => shuffled(step.options));
   const ok = picked === step.answer;
+  const tie = tieRows(step, cast ? cast.name : step.who);
   return (
     <View style={{ gap: 12, width: "100%" }}>
       <Kicker>{t("session.chat.title")}</Kicker>
@@ -175,7 +190,7 @@ export function ChatStep({ step, onDone, door = "" }: { step: any; onDone: Done;
           </Pressable>
         );
       })}
-      {picked !== null ? <Verdict ok={ok} seed={step.says.length} body={step.meaning ? t("session.meaning", { m: step.meaning }) : ok ? undefined : t("session.itsAnswer", { a: step.answer })} explain={t("session.explain.q", { says: step.says, answer: step.answer })} onNext={() => onDone(ok)} /> : null}
+      {picked !== null ? <Verdict ok={ok} seed={step.says.length} rows={tie || undefined} body={tie ? (ok ? undefined : t("session.itsAnswer", { a: step.answer })) : step.meaning ? t("session.meaning", { m: step.meaning }) : ok ? undefined : t("session.itsAnswer", { a: step.answer })} explain={t("session.explain.q", { says: step.says, answer: step.answer })} onNext={() => onDone(ok)} /> : null}
     </View>
   );
 }

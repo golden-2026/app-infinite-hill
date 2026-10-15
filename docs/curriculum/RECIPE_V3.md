@@ -104,6 +104,19 @@ Three blind judges preferred v3 on both pilot paths, 6 of 6 (averages 8.0 vs 5.7
 - Hard scenes (a beheading, a massacre, a death) get one gentle line for parents in the hook or review.notes.
 - Don't test the same point twice in one lesson.
 
+## The tie-back (owner, 2026-10-15: "I didn't see the tie back clearly laid out")
+
+The friend's chat only works if the reader sees why a scripture story answers a texting question. After the answer,
+the app shows three labeled lines, written in :
+
+- : what happened in the scripture story, one sentence, naming who did what ("Parvati set Ganesha at her door…").
+- : what it means for the friend, by name, in their situation ("Priya can guard an hour to practice…").
+- : one short, warm question for the reader's own week, lowercase, no homework tone.
+
+Keep  too (older screens use it). Lessons without  fall back to splitting  into
+"in the story" and "in real life". The pilot week (days 22–28, Hinduism and Catholicism) has it; year 5 and the
+rewrite of years 1–4 add it.
+
 ## The unity thread (owner, 2026-10-14: "more alike than we think", one human race)
 - Once a week (usually the `wisdom` day), name one thing this path shares with a neighbor tradition (light, giving,
   gratitude, welcoming the stranger, the golden rule, fasting, prayer before meals), in that tradition's own words and

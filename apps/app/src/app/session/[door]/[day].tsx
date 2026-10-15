@@ -19,6 +19,7 @@ import { RhythmStep, RushStep, SayStep, ScenesStep, TypeItStep } from "@/session
 import { BuildStep, ChatStep, CheckinStep, GlossText, SayText, StoryStep, ThinkStep, WrongStep } from "@/session/week";
 import { LinearGradient } from "expo-linear-gradient";
 import { Redirect, router, useLocalSearchParams, useNavigation } from "expo-router";
+import { isDemo } from "@/lib/flags";
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -110,7 +111,9 @@ export default function SessionScreen() {
   // and this door's path stays put
   const course = !kid && params.course && courseOpens(saved.settings.course, saved.sits, params.course, door, day) ? params.course : null;
   const keepGoing = !kid && day === current + 1 && derived.paths[door]?.done === true;
-  if (!Number.isInteger(day) || day < 1 || (day > current && !walkedBefore && !extra && !keepGoing && !course)) return <Redirect href={{ pathname: "/session/[door]/[day]", params: { door: door || saved.settings.homeWing, day: String(current) } }} />;
+  // ...or demo mode (?demo=1, for walk-throughs on a private preview): any day opens
+  const demo = isDemo();
+  if (!Number.isInteger(day) || day < 1 || (day > current && !walkedBefore && !extra && !keepGoing && !course && !demo)) return <Redirect href={{ pathname: "/session/[door]/[day]", params: { door: door || saved.settings.homeWing, day: String(current) } }} />;
   // "go deeper" is an extra round on a lesson already walked today; children don't get it
   const deep = params.deep === "1" && !kid;
   // a child under 13 sits the door's kids' track, never the grown-up lesson (no script is fetched for it)
