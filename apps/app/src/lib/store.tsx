@@ -50,6 +50,8 @@ export type Settings = {
   remindOffer?: string | null;
   reviewedOn?: string | null;
   carried?: { date: string; lesson: number; did: boolean } | null;
+  /** Our family (lib/family.ts): the religions in the home and how they're raising the kids. */
+  family?: { doors: string[]; raising?: "both" | "one" | "unsure" | null } | null;
   /** Today's card (ui/daily-card) read: "DOOR:YYYY-MM-DD". */
   dailyRead?: string | null;
   unlocksSeen?: string[];

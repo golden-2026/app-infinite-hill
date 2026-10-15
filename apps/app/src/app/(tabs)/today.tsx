@@ -179,6 +179,19 @@ export default function Today() {
           );
         })()}
 
+        {/* our family (owner, 2026-10-14): when your kid asks, and shared lessons (app/family.tsx). Web, English for now */}
+        {isEs() ? null : (
+          <Pressable testID="family-card" accessibilityRole="link" accessibilityLabel={t("home.family.line")} onPress={() => router.push("/family" as never)}
+            style={({ pressed }) => [s.lite, { marginTop: 0, opacity: pressed ? 0.9 : 1 }]}>
+            <Guy pose="heart" h={48} />
+            <View style={{ flex: 1, gap: 3 }}>
+              <Text style={[type.eyebrow(8), { color: color.ink }]}>{t("home.family.eyebrow")}</Text>
+              <Text style={{ fontFamily: font.display[800], fontSize: 15, color: color.ink }}>{t("home.family.line")}</Text>
+            </View>
+            <Text style={s.chev}>›</Text>
+          </Pressable>
+        )}
+
         {/* today's card: one short, real thing from this path's calendar, before the lesson (ui/daily-card) */}
         {quiet ? null : <DailyCardView door={wing} />}
 
