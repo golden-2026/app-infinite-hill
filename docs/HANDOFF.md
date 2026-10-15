@@ -52,6 +52,7 @@ design changes go live, ask before deploying, real testimonials only, check usag
   once the weekly limit is hit.
 
 ## Session of 2026-10-06 (pick up here; newest first)
+- LIVE: expo-live118 (2026-10-14, owner approved): homepage only: closing adds "a little more love, a little less fighting"; in-laws quote first in stories; interfaith FAQ first; Day 50 "the lights" (replaces "the serial"); third family card "our kids ask questions about our religion, and we don't have the answers." (en+es).
 - LIVE: expo-live117 (2026-10-14, owner approved): homepage hero only: "why religion? … for being okay, together." and "every faith on one hill, more alike than we think. learn your faith, or create your own, in five fun minutes a day." (en+es). Copy of expo-live116 + site files.
 - LIVE: expo-live116 (2026-10-14, owner approved): homepage only (copy of expo-live115 + site.html/site-es.html): the three interfaith-family cards first in "which one sounds like you?" (partners of different religions; what to teach the kids; kids who don't understand the religion in our home). Deployed with the Netlify CLI. NOT live yet: daily cards, pilot week (recipe v3), pulse fix.
 - LIVE: expo-live115 (2026-10-12): door card photo says 'your voice for every lesson'; Today done card has 'keep going: day N'.
