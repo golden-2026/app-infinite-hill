@@ -60,7 +60,7 @@ const AFTER: Record<string, string> = {
   SPIRITUAL: "People who make their own path believe many different things, and many say love is what lasts.",
 };
 export function fillTwo(raw: KidAnswer, d1: string, d2: string): KidAnswer {
-  const a = { ...raw, grownup: raw.grownup.replace(/^Swap in your own (two traditions|holidays).s*/, "") }; // already filled in
+  const a = { ...raw, grownup: raw.grownup.replace(/^Swap in your own (two traditions|holidays)\.\s*/, "") }; // already filled in
   const A = ADJ[d1], B = ADJ[d2];
   if (a.id === "int-01" && A && B) return { ...a, q: `are we ${A} or ${B}?`, answer: `Our family has both! One of us grew up ${A} and one of us grew up ${B}, and both are part of your story, like knowing two languages or two grandmas' recipes. You get to learn about both, with lots of love from each side. What do you love most from each one?` };
   if (a.id === "int-03") return { ...a, q: "why do my grandparents pray differently?", answer: "Your grandparents grew up in different families, in different places, and each learned to talk to God in their own way. One might light a lamp, another might pray with beads or bow down. Different words, and both full of love. And they both pray for you! Want to ask each of them to show you how?" };
