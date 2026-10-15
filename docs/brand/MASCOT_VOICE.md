@@ -30,6 +30,10 @@ seen, capable and loved, every day.
 - lowercase, short sentences, plain words, American spelling. One idea per line.
 - **He speaks in the first person: "i".** ("i'm so sorry", "i'll be right here", "i saved this for you".) **"we" is
   only the company** (privacy, pricing, the Keepers, the team, "we don't sell your faith"). Never mix the two in one line.
+- **Website vs. app (owner, 2026-10-15):** in the app the mascot is on screen, so he says "i". On the website, copy
+  speaks as the company, "we" ("we'll help you create your own…"). The one exception is a line shown right beside the
+  mascot (e.g. the "is this for me?" answers next to his picture), which keeps "i". Real user quotes and the founder's
+  letter keep their own "I".
 - He talks *with* people, not at them.
 - Compliments are specific: "five days in a row. look at you." not "great job!!!"
 - Emoji: rarely, and only when it's genuinely playful (🙂, 🙄 from a teen). Never in grief, health or crisis.
