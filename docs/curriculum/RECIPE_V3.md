@@ -107,13 +107,13 @@ Three blind judges preferred v3 on both pilot paths, 6 of 6 (averages 8.0 vs 5.7
 ## The tie-back (owner, 2026-10-15: "I didn't see the tie back clearly laid out")
 
 The friend's chat only works if the reader sees why a scripture story answers a texting question. After the answer,
-the app shows three labeled lines, written in :
+the app shows three labeled lines, written in `games.chat.tie`:
 
-- : what happened in the scripture story, one sentence, naming who did what ("Parvati set Ganesha at her door…").
-- : what it means for the friend, by name, in their situation ("Priya can guard an hour to practice…").
-- : one short, warm question for the reader's own week, lowercase, no homework tone.
+- `story`: what happened in the scripture story, one sentence, naming who did what ("Parvati set Ganesha at her door…").
+- `friend`: what it means for the friend, by name, in their situation ("Priya can guard an hour to practice…").
+- `you`: one short, warm question for the reader's own week, lowercase, no homework tone.
 
-Keep  too (older screens use it). Lessons without  fall back to splitting  into
+Keep `meaning` too (older screens use it). Lessons without `tie` fall back to splitting `meaning` into
 "in the story" and "in real life". The pilot week (days 22–28, Hinduism and Catholicism) has it; year 5 and the
 rewrite of years 1–4 add it.
 
