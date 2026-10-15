@@ -1,5 +1,27 @@
 # Who comes to infinite hill: five personas, sixteen reasons
 
+## Lead focus (owner, 2026-10-14)
+
+One combined lead persona comes first: **the family**. A home with one religion or two: partners who grew up in
+different religions and want to understand each other, parents with two traditions at home deciding what to teach the
+kids, and parents whose kids ask questions about their own religion that they can't answer. They want roots for the
+kids and peace at the table, not a debate. This is a hypothesis to test in interviews, like every persona here. The
+brand book (`docs/brand/brand-book.html`, "who we're for") carries the same lead.
+
+The three family cards open the homepage picker ("which one sounds like you?"):
+
+| key | card line (EN) | signs up with |
+|---|---|---|
+| `partner` | "my partner and i grew up in different religions." | `why=partner` |
+| `kids` | "we have two religions at home. what do we teach our kids?" | `why=kids` |
+| `kidsask` | "our kids ask questions about our religion, and we don't have the answers." | `why=kids` (a card id only, not a new sign-up answer) |
+
+The mission behind it: unity. Every faith on one hill, "more alike than we think", "a little more love, a little less
+fighting", while honoring real differences, never ranking a door and never pushing conversion. **Your door is yours:**
+anyone who wants only their own religion never has another pushed on them; a family can walk two.
+
+This replaces the sprint-1 alpha focus below. The other personas and reasons stay, as secondary.
+
 Two layers. **Personas** are the five kinds of people we design for, recruit the alpha from, test ads with and market
 to. **Reasons** are the sixteen lines a visitor recognizes themselves in, on the homepage picker ("which one sounds
 like you?", `apps/app/public/site.html` `#forwho`, Spanish in `site-es.html`) and in the sign-up question "what
@@ -16,13 +38,16 @@ calls for it.
 | **The returner** | someone who already practices or grew up practicing and wants it to mean more | own · roots · belonging · forgiveness · gratitude | the largest pool of people who already pray; the lessons and Keepers fit them best |
 | **The searcher** | doubting, spiritual but not religious, or curious about others | god · spiritual · curious | large and growing; harder to keep, because we never argue which door is true |
 
-**Alpha focus (sprint 1):** the parent, the person in a hard moment, and the two-faith couple. **Ad test:** one
-promise per persona.
+~~**Alpha focus (sprint 1):** the parent, the person in a hard moment, and the two-faith couple.~~ *Superseded on
+2026-10-14 by the lead focus above.* **Ad test:** one promise per persona.
 
 ## How the reasons show
 
-The homepage shows **eight reasons** (kids, grief, partner, hard, own, god, diagnosis, sent), in a fresh random order
-on every visit, in one row (owner, 2026-10-05: the other eight were taken off the homepage; they remain sign-up answers).
+The homepage shows **nine cards**: the three family cards (partner, kids, kidsask) are pinned first, and the rest
+(grief, hard, own, god, diagnosis, sent) follow in a fresh random order on every visit, in one row (owner, 2026-10-14;
+on 2026-10-05 the other eight reasons were taken off the homepage; they remain sign-up answers). The partner and kids
+cards now use the family lines in the lead-focus table above; the lines in the table below are their earlier homepage
+wording.
 Without JavaScript every card shows as a plain list. Each card's "start here" opens sign-up with `?why=<key>`, so "what brings you" is already
 answered; the same answers appear in sign-up for anyone who skips the website.
 
