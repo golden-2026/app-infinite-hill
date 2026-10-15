@@ -94,6 +94,29 @@ to my partner's family?" a week or two before that family's big holiday; see `ap
 The rule lives in `api/guide.js` (`COUPLE_RULE`, added after the `partner` and `wedding` reasons; the companion uses
 the same text). Cases H1–H3.
 
+### I. Interfaith families and kids' questions ("which of our religions is right?", "how do I explain to my
+7-year-old that we're Hindu and Catholic?", "my son asked where grandpa went")
+
+The core family (owner, 2026-10-14): partners of different religions who want to understand each other, parents
+unsure what to teach, and kids asking questions the parents can't answer. The heart of it: we are more alike than we
+think, one human race, and the real differences are honored, never ranked.
+- **Never take sides** between the two families' religions, and never say which one is right or true.
+- **Each in its own words:** "Hindus believe…", "Catholics believe…", "Muslims teach…", from each tradition's own
+  sources. Say plainly where they share something and where they really differ.
+- **Never flatten:** no "they're all the same", no "it doesn't matter which". Alike is not identical.
+- **Honor both sets of grandparents** and their wishes as love, even when the wishes pull apart.
+- **When a parent asks how to answer a child:** give a short answer the parent can say out loud, at the child's age,
+  then one line for the parent (what the child is really asking, or what to add later).
+- **Respect the family's choice:** raising with both, mainly one, or still undecided are all real paths. Never push
+  one, never push conversion, never suggest a parent set their own tradition aside.
+- **Death and afterlife:** gentle and short; say what each tradition teaches as its teaching, and never promise where
+  a loved one is. For a child, something true and simple ("we don't know everything, and we keep loving grandpa").
+- **Crisis rules are unchanged:** danger or self-harm points to 988 (US) or local emergency help and a trusted person,
+  now.
+- Always leave a next step: a question to talk over together, a lesson, or a small practice the family can share.
+
+Cases I1–I8.
+
 ## What the 2026-10 research added
 
 Real wording from Reddit and YouTube (`docs/learning/research-extra/`):

@@ -141,11 +141,13 @@ test("all fifteen website keys: one per picker card, and each one an onboarding 
     assert.deepEqual(whyParam(k), { why: k, stance: null });
   }
   // the website picker (owner, 2026-10-05): the eight most pressing reasons only; the others stay sign-up answers.
-  // Each "start here" carries its key, and every card is a real sign-up answer.
+  // Each "start here" carries its key, and every card is a real sign-up answer. "kidsask" (owner, 2026-10-14: "our kids ask
+  // questions about our religion…") is a second card for the kids answer, so it starts with why=kids.
+  const ALIAS = { kidsask: "kids" };
   for (const file of ["site.html", "site-es.html"]) {
     const html = readFileSync(`${root}apps/app/public/${file}`, "utf8");
-    const keys = [...html.matchAll(/id="pkt-([a-z]+)"/g)].map((m) => m[1]);
-    assert.deepEqual([...keys].sort(), ["kids", "grief", "partner", "hard", "own", "god", "diagnosis", "sent"].sort(), file);
+    const keys = [...html.matchAll(/id="pkt-([a-z]+)"/g)].map((m) => ALIAS[m[1]] || m[1]);
+    assert.deepEqual([...keys].sort(), ["kids", "kids", "grief", "partner", "hard", "own", "god", "diagnosis", "sent"].sort(), file);
     for (const k of keys) assert.ok(WHY_KEYS.includes(k), `${file}: ${k} is a sign-up answer`);
     for (const k of keys) assert.match(html, new RegExp(`welcome/you\\?(lang=es&)?why=${k}"`), `${file}: ${k} start here`);
   }
