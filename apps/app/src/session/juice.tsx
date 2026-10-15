@@ -133,7 +133,7 @@ export function Verdict({ ok, title, body, rows, onNext, label, seed = 0, explai
             ))}
           </View>
         ) : null}
-        {explain ? <Pressable testID="explain" accessibilityRole="button" onPress={() => { tapHaptic(); router.push({ pathname: "/guide", params: { q: explain } }); }} style={({ pressed }) => ({ minHeight: 44, borderRadius: 999, borderWidth: 2, borderColor: bad ? RED : color.ink, alignItems: "center", justifyContent: "center", opacity: pressed ? 0.6 : 1 })}><Text style={[type.eyebrow(), { color: bad ? RED : color.ink }]}>{t("session.explain")}</Text></Pressable> : null}
+        {explain ? <Pressable testID="explain" accessibilityRole="link" hitSlop={10} onPress={() => { tapHaptic(); router.push({ pathname: "/guide", params: { q: explain } }); }} style={({ pressed }) => ({ alignSelf: "flex-start", paddingVertical: 2, opacity: pressed ? 0.6 : 1 })}><Text style={{ fontFamily: font.text[600], fontSize: 14, textDecorationLine: "underline", color: bad ? RED : color.ink }}>{t("session.explain")} ›</Text></Pressable> : null}
         <Btn kind={bad ? "miss" : "ink"} onPress={onNext}>{label ?? (bad ? t("session.okayNext") : t("session.next"))}</Btn>
       </Animated.View>
     </SlotFill>
