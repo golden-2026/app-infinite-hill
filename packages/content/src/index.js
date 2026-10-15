@@ -235,7 +235,9 @@ import OUTLINE_ISLAM from "../generated/outline-islam.js";
 import OUTLINE_BUDDHISM from "../generated/outline-buddhism.js";
 import OUTLINE_SIKHISM from "../generated/outline-sikhism.js";
 import OUTLINE_SPIRITUAL from "../generated/outline-spiritual.js";
-const asMap = (o) => new Map(o.sessions.map((s) => [s.day, s]));
+import DAY_LINES from "../generated/day-lines.js";
+// corrected titles and carries from the quality pass (scripts/build-day-lines.mjs) sit on top of the outline
+const asMap = (o) => new Map(o.sessions.map((s) => [s.day, DAY_LINES[o.door]?.[s.day] ? { ...s, ...DAY_LINES[o.door][s.day] } : s]));
 export const OUTLINES = Object.freeze({
   HINDUISM: asMap(OUTLINE_HINDUISM), CHRISTIANITY: asMap(OUTLINE_CHRISTIANITY), CATHOLIC: asMap(OUTLINE_CATHOLIC), JUDAISM: asMap(OUTLINE_JUDAISM),
   ISLAM: asMap(OUTLINE_ISLAM), BUDDHISM: asMap(OUTLINE_BUDDHISM), SIKHISM: asMap(OUTLINE_SIKHISM), SPIRITUAL: asMap(OUTLINE_SPIRITUAL),
