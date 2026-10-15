@@ -93,6 +93,27 @@ Games re-asked the same 3-4 facts from a minute earlier, and the right answer wa
 - Never AI images of deities, prophets or Gurus; hand-drawn cast art only (existing rule).
 - Never claim a "revival" or invent numbers; never imply the voices or Keepers are signed.
 
+## Pilot results and fixes (2026-10-13/14)
+Three blind judges preferred v3 on both pilot paths, 6 of 6 (averages 8.0 vs 5.7 fresh, ~7.6 vs 6.0 come-back,
+6.3 vs 4.2 "still opening it in week 6"). Their fixes, now rules:
+- Every day ends on a question, including the review day (a teaser into next week).
+- No gimmicks: no jokes that undercut a sacred text, no odd practices (e.g. standing in a bathroom); the practice must
+  not fight the breathing timer.
+- The debate day lets the two views speak; don't lecture about how to debate.
+- The friend's storyline paces believably across days (no overnight turnarounds); see CAST_VOICES.md.
+- Hard scenes (a beheading, a massacre, a death) get one gentle line for parents in the hook or review.notes.
+- Don't test the same point twice in one lesson.
+
+## The unity thread (owner, 2026-10-14: "more alike than we think", one human race)
+- Once a week (usually the `wisdom` day), name one thing this path shares with a neighbor tradition (light, giving,
+  gratitude, welcoming the stranger, the golden rule, fasting, prayer before meals), in that tradition's own words and
+  source, then one honest difference. Never "they're all the same", never ranking, never one tradition's idea dressed as
+  everyone's (e.g. "all religions teach you are God" is not neutral).
+- About once a month the friend's arc meets the best friend's family or tradition (CAST_VOICES.md).
+- The three core families (homepage, 2026-10-14) stay in view: partners of different religions; parents unsure what to
+  teach; kids asking questions parents can't answer. When a lesson's idea is one a child would ask about, the chat or
+  the carry can give a parent a sentence they could say at dinner.
+
 ## What needs app work (not just writing)
 1. Read `shape` and reorder/lead accordingly (player + packages/content v2.js); the `review` shape day.
 2. Friend chat with the cast face, memory line, weekly elder appearance.
