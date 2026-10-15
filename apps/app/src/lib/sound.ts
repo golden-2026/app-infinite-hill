@@ -2,6 +2,7 @@
 // here expo-speech (iOS + web) and assets/sounds/bell.wav (the same tone, rendered once).
 import { createAudioPlayer, setAudioModeAsync, type AudioPlayer } from "expo-audio";
 import * as Speech from "expo-speech";
+import { Platform } from "react-native";
 import { getLang } from "@/i18n/core";
 
 let bellPlayer: AudioPlayer | null = null;
@@ -39,8 +40,28 @@ export function speakChrome(text: string, on: boolean, onEnd?: () => void): bool
   return say(text, on, onEnd, getLang() === "es" ? "es-MX" : undefined);
 }
 
+// iPhone Safari won't let a page start talking until the person has tapped it. A lesson opened from a link, after a
+// refresh or on resume tried to read its first line before any tap, and stayed silent (owner, 2026-10-15). So on the
+// web the first tap anywhere unlocks speech and reads the line that was waiting.
+let unlocked = Platform.OS !== "web";
+let waiting: (() => void) | null = null;
+if (!unlocked && typeof document !== "undefined") {
+  const unlock = () => {
+    if (unlocked) return;
+    unlocked = true;
+    document.removeEventListener("pointerdown", unlock, true);
+    document.removeEventListener("touchend", unlock, true);
+    const w = waiting; waiting = null;
+    if (w) w();
+    else try { const u = new SpeechSynthesisUtterance(" "); u.volume = 0; window.speechSynthesis.speak(u); } catch {}
+  };
+  document.addEventListener("pointerdown", unlock, true);
+  document.addEventListener("touchend", unlock, true);
+}
+
 function say(text: string, on: boolean, onEnd: (() => void) | undefined, language: string | undefined): boolean {
   if (!on || !text) return false;
+  if (!unlocked) { waiting = () => { say(text, on, onEnd, language); }; return true; }
   try {
     Speech.stop();
     Speech.speak(text, { rate: 0.92, pitch: 1, ...(language ? { language } : {}), onDone: onEnd ? () => { setTimeout(onEnd, 700); } : undefined });
