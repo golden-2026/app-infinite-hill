@@ -9,7 +9,7 @@
 *Format shifts: hook becomes a serialized story; teach becomes "what the story knows"; practice stays 2 min; one word every 2–3 days, not daily.*
 
 ## Week 4 · Ganesha (Days 22–28)
-22. **The boy at the door** · — · Parvati makes a son from earth; sets him to guard her bath · sit: guarding your own door · *some things need a guard*
+22. **The boy at the door** · — · Parvati shapes a son from earth and breathes life into him; why families welcome Ganesha into clay (prana pratishtha, visarjan) · sit: holding something ordinary that matters · *the holy can live in clay*
 23. **Shiva comes home** · — · the fight; the head; Parvati's grief stops the universe · sit on a broken thing · *what broke can be mended*
 24. **The elephant facing north** · — · the search; the head; the boy lives · gratitude for a mend in your life · *first, before anyone*
 25. **The race around the world** · — · Ganesha vs Kartikeya: one circles the earth, one circles his parents · walk a slow circle · *the whole world is close*

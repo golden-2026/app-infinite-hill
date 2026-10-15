@@ -104,6 +104,26 @@ Three blind judges preferred v3 on both pilot paths, 6 of 6 (averages 8.0 vs 5.7
 - Hard scenes (a beheading, a massacre, a death) get one gentle line for parents in the hook or review.notes.
 - Don't test the same point twice in one lesson.
 
+## Story, teaching, today (owner, 2026-10-15: the rule above all the others)
+
+Every lesson, every path, every year, climbs three steps:
+
+1. **The story, told properly.** A real story from the tradition, told so it's worth hearing: who, what happened, what
+   was at stake. A serial is fine, but each day's part must make sense on its own and land something.
+2. **The teaching.** What this religion actually teaches or does because of the story: a belief, a practice, a
+   holiday, a prayer, a reason families do what they do. Name it plainly ("this is why Hindus start everything with
+   Ganesha"). Keep "teachers read it as…" readings labeled as readings.
+3. **Today.** How that teaching meets a life now, in a way people can relate to.
+
+The test: **could only this religion's story have taught today's line?** If a self-help app could say it ("take
+space for yourself", "the tool can break, the work doesn't have to"), rewrite it. The carry line, the games, the fork
+and the friend's chat test the teaching (step 2), never just the life tip. The friend's chat works best as a real moment
+of the religion (a friend asks why your family does something; a ritual at the wedding), answered with what you learned.
+
+Example of the failure (Hindu day 22, pilot): the birth of Ganesha became "some things need a guard", and Priya's chat
+was about locking her door to practice a speech. The fix keeps the story and lands on a teaching: the god made from
+earth by the Goddess is why families shape Ganesha from clay each year, invite him in, and give him back to the water.
+
 ## The tie-back (owner, 2026-10-15: "I didn't see the tie back clearly laid out")
 
 The friend's chat only works if the reader sees why a scripture story answers a texting question. After the answer,
