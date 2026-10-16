@@ -287,7 +287,8 @@ function outlineLesson(wing, day, s) {
 
 /** A day's lesson: the written script (camp one), the owner's outline where one exists, else the generated shell. */
 export function lessonInfo(wing, lesson) {
-  const s = OUTLINES[wing]?.get(lesson);
+  // a day the outline never planned (the last day of a year) can still have its corrected lines from the quality pass
+  const s = OUTLINES[wing]?.get(lesson) || (DAY_LINES[wing]?.[lesson] ? { ...DAY_LINES[wing][lesson] } : null);
   if (s && lesson > 21) return outlineLesson(wing, lesson, s);
   if (lesson > YEAR_ONE) {
     // No plan for this door past year one yet: an honest shell instead of "Lesson 101 of 100".
