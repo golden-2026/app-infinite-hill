@@ -52,6 +52,7 @@ design changes go live, ask before deploying, real testimonials only, check usag
   once the weekly limit is hit.
 
 ## Session of 2026-10-06 (pick up here; newest first)
+- LIVE: expo-live120 (2026-10-15, owner kept all 8 on the approval page): app update with the "our family" card + screen (kid answers, shared lessons), daily card, "same idea, another door", tie-back card (option A) + "why? ask the guide", iPhone voice unlock, Guide family rules. Lessons copied unchanged from expo-live119.
 - LIVE: expo-live119 (2026-10-15, owner approved): built from expo-live118 plus only: 988 named in five lessons' crisis notes (christianity 733, spiritual 321/738, buddhism 837/1039); real titles and carries for 185 y1–4 lessons on 7 paths (planning labels; docs/curriculum/<path>/day-lines.json); site "we'll help you create your own" (en+es). App code unchanged (new screens await the preview tour). Not live: Hindu quality pass, year 5, Catholic pilot week.
 - LIVE: expo-live118 (2026-10-14, owner approved): homepage only: closing adds "a little more love, a little less fighting"; in-laws quote first in stories; interfaith FAQ first; Day 50 "the lights" (replaces "the serial"); third family card "our kids ask questions about our religion, and we don't have the answers." (en+es).
 - LIVE: expo-live117 (2026-10-14, owner approved): homepage hero only: "why religion? … for being okay, together." and "every faith on one hill, more alike than we think. learn your faith, or create your own, in five fun minutes a day." (en+es). Copy of expo-live116 + site files.
