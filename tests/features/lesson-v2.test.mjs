@@ -28,9 +28,10 @@ test("Hindu day 30 is built in the new order", () => {
 });
 
 test("a script without games.chat is untouched", () => {
-  const script = read("hinduism/scripts/y1/day-0010.json");
+  // (Hindu day 10 gained a chat in the 2026-10-15 quality pass; Christianity day 8 still has none)
+  const script = read("christianity/scripts/y1/day-0008.json");
   assert.ok(!isV2(script));
-  assert.ok(!planDay({ wing: "HINDUISM", day: 10, mode: "adult", script }).steps.some((s) => s.type === "chat"));
+  assert.ok(!planDay({ wing: "CHRISTIANITY", day: 8, mode: "adult", script }).steps.some((s) => s.type === "chat"));
 });
 
 test("glossIn matches whole words only", () => {

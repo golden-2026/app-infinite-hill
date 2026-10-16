@@ -30,8 +30,8 @@ type HolidayDef = {
 };
 
 export const HOLIDAY_DEFS: HolidayDef[] = [
-  { key: "navratri", season: "navratri", at: "start", lessons: { HINDUISM: [[80, "Navaratri: nine nights of the Goddess"], [143, "Navaratri (nine nights, nine forms; Durga)"]] } },
-  { key: "diwali", season: "diwali", at: "start", lessons: { HINDUISM: [[81, "Diwali: the row of lamps"], [139, "Diwali (5 days — Dhanteras, Naraka Chaturdashi, Lakshmi puja, Govardhan, Bhai Dooj)"], [895, "Govardhan lifted"]] } },
+  { key: "navratri", season: "navratri", at: "start", lessons: { HINDUISM: [[80, "Navaratri: nine nights of the Goddess"], [143, "The Goddess in all beings"]] } },
+  { key: "diwali", season: "diwali", at: "start", lessons: { HINDUISM: [[81, "Diwali: from darkness to light"], [139, "Diwali begins: Narakasura's dawn"], [895, "Why the village fed a hill"]] } },
   { key: "advent", season: "advent", at: "start", lessons: {
     CHRISTIANITY: [[110, "Advent: waiting"], [1003, "Advent: the prophets' candle"], [111, "Christmas: twelve days"]],
     CATHOLIC: [[144, "Advent"], [633, "First Sunday of Advent (Mark 13:33–37)"], [145, "Christmas is a season"]],

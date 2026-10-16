@@ -19,14 +19,14 @@ export const PLACEMENT_BANK: Record<string, { lastWritten: number; stops: BankSt
       {"day":16,"kind":"fork","q":"you're Mirabai. you've married into a royal family that wants you to stop singing to Krishna in public. what do you do?","o":["stop singing and keep the peace.","sing only in private, where no one hears.","keep singing, with ordinary devotees."],"a":2},
     ] },
     { first: 22, last: 96, camp: "Camp 2", name: "The stories", qs: [
-      {"day":36,"kind":"fork","q":"you're Dasharatha. a shining figure hands you a golden bowl of sweet rice for your queens. what do you do with it?","o":["give it all to your first queen.","divide it among all three queens.","eat it yourself for strength."],"a":1},
-      {"day":59,"kind":"word","term":"Valmiki's Angada","o":["breaks through the roof and flies back","Vali's son, sent as the last messenger","couldn't lift the foot"],"a":0},
-      {"day":81,"kind":"fork","q":"it's the new-moon night, the darkest of the month, and Lakshmi is said to visit homes. what do many families do?","o":["shut every door and window.","light the lamps and leave the way open.","wait until morning to celebrate."],"a":1},
+      {"day":37,"kind":"fork","q":"you're Rama: a prince, and in the tradition, Vishnu himself. a sage offers to teach you. what do you do?","o":["say you already know enough.","walk behind him and learn.","send Lakshmana to learn for you."],"a":1},
+      {"day":59,"kind":"word","term":"danda","o":["force, the last resort","talking it through","offering a gift"],"a":0},
+      {"day":81,"kind":"fork","q":"it's 5 a.m. on Diwali, pitch dark. your nani is lighting a lamp before the sun is even up. what is the lamp saying?","o":["the power's out, so we need light.","from darkness, lead me to light.","it's a signal for the fireworks to start."],"a":1},
     ] },
     { first: 97, last: 156, camp: "Camp 3", name: "The practices", qs: [
       {"day":106,"kind":"fork","q":"you're about to open a new shop. the first customer is at the door. what do many Hindu shopkeepers do first?","o":["open the door right away.","honor Ganesha by the till, with a garland.","wait until the end of the first day."],"a":1},
-      {"day":127,"kind":"word","term":"Karva Chauth","o":["a fast from sunrise to moonrise","a vow, kept for a purpose","fasting; explained as staying near"],"a":0},
-      {"day":145,"kind":"fork","q":"it's eleven forty-five on Janmashtami. you've fasted all day and you're starving. what do people do?","o":["eat now, since it's close enough.","wait, sing, and break the fast after midnight.","go to bed and eat in the morning."],"a":1},
+      {"day":127,"kind":"word","term":"upavasa","o":["fasting; explained as staying near","fasted three nights, then followed Death","the lord of death, out-argued"],"a":0},
+      {"day":143,"kind":"fork","q":"you're one of the gods. Shumbha and Nishumbha have thrown you out of heaven. what do you do?","o":["build your own army and try again.","praise the Goddess who lives in all beings.","make a deal with the brothers."],"a":1},
     ] },
     { first: 157, last: 231, camp: "Camp 4", name: "The text", qs: [
       {"day":172,"kind":"fork","q":"you're Arjuna. you've heard that action binds. what does Krishna say the wise person does?","o":["stops acting completely.","acts fully, without clinging to the fruit.","acts only when the outcome is certain."],"a":1},
@@ -39,29 +39,29 @@ export const PLACEMENT_BANK: Record<string, { lastWritten: number; stops: BankSt
       {"day":310,"kind":"fork","q":"you're Shvetaketu. you've broken open a banyan seed and see nothing inside. what does your father say?","o":["then there's nothing there: trust your eyes.","from that finest essence, the great tree stands. believe it.","try a different seed."],"a":1},
     ] },
     { first: 332, last: 420, camp: "Year 2", name: "The principal Upanishads", qs: [
-      {"day":350,"kind":"fork","q":"you're the man from Gandhara. someone unties your blindfold and points: home is that way. what do you do?","o":["wait for them to take you there.","walk, asking your way from village to village.","stay put: it's too far."],"a":1},
+      {"day":350,"kind":"fork","q":"Priya asks: if i have to do the walking myself anyway, why do Hindus honor a guru so much? what does the blindfold story say?","o":["the guru walks the whole road for you, so you owe them everything.","the guru unties the blindfold and points; you still walk, asking village by village.","you don't need one; the road finds you on its own."],"a":1},
       {"day":375,"kind":"word","term":"Ushasta","o":["show me the self, like a cow","the one who breathes in and out","you cannot see the seer of seeing"],"a":0},
-      {"day":403,"kind":"fork","q":"the Aitareya counts three births. the first is in the father, the second from the mother. what is the third?","o":["the day you become a parent.","the day you depart this life and are born again.","the day of initiation into study."],"a":1},
+      {"day":404,"kind":"fork","q":"the Aitareya asks: which one is the self? the one by which we see, hear, speak? what's its last answer?","o":["the eye, since it sees.","consciousness is Brahman.","the heart, since it beats."],"a":1},
     ] },
     { first: 421, last: 513, camp: "Year 2", name: "The Yoga Sutras of Patanjali", qs: [
-      {"day":434,"kind":"fork","q":"you're absorbed so deeply in the breath that nothing else exists. which samadhi is this, in Patanjali's terms?","o":["samadhi with seed: the breath is still a support.","samadhi without seed: nothing is held.","not samadhi at all."],"a":0},
-      {"day":467,"kind":"word","term":"parinama","o":["transformation, change of form","one, ten or a hundred by place","stays through lump, pot and shards"],"a":0},
-      {"day":496,"kind":"fork","q":"you're the king of Anga. a holy boy in the forest can end your drought, but his father would never let him go. what do you do?","o":["send soldiers to take him.","send people to befriend him and invite him.","wait for the rain on your own."],"a":1},
+      {"day":438,"kind":"fork","q":"you kept a practice for a month, then missed a week, and now it feels blown. by sutra 1.30 and Vishvamitra's story, what's true?","o":["the slip proves you weren't meant for it.","slipping is one of the named obstacles: recognize it and return.","you have to start from zero with a harder practice."],"a":1},
+      {"day":467,"kind":"word","term":"Rahugana","o":["the king who mocked his bearer","transformation, change of form","the body's, not the self's"],"a":0},
+      {"day":497,"kind":"fork","q":"you're the gods. Ravana can't be killed by any god or demon. what do you do?","o":["make Ravana a stronger enemy among the gods.","send someone as a human being.","wait for Ravana to grow old."],"a":1},
     ] },
     { first: 514, last: 603, camp: "Year 2", name: "The Ramayana as a serial", qs: [
-      {"day":533,"kind":"fork","q":"you're Rama, by the Tamasa at night. the whole city has followed you and will lose their homes if they keep going. what do you do?","o":["wake them and order them home.","let them come into the forest.","leave quietly before dawn and hide the tracks."],"a":2},
-      {"day":559,"kind":"word","term":"Panchavati","o":["the place of five banyans","the vulture king, Dasharatha's friend","the river beside the hut"],"a":0},
-      {"day":584,"kind":"fork","q":"you're Lakshmana. Rama holds out Sita's jewelry and asks if you know it. what do you say?","o":["yes, every piece.","only the anklets: I bowed at her feet each day.","I never looked at her jewelry at all."],"a":1},
+      {"day":532,"kind":"fork","q":"you're Rama. the king offers the army and the treasury to go with you into exile. what do you say?","o":["take them; the forest is dangerous.","why keep the rope once you've given away the elephant?","take half, to be safe."],"a":1},
+      {"day":559,"kind":"word","term":"Lakshmana","o":["builds the hut with his hands","the vulture king, Dasharatha's friend","the place of five banyans"],"a":0},
+      {"day":585,"kind":"fork","q":"Rama tells Kaikeyi, 'Rama does not speak twice.' what does that say about a promise?","o":["once given, it's kept: word and deed line up.","say it only once, and nobody can hold you to it.","only kings have to keep their word."],"a":0},
     ] },
     { first: 604, last: 696, camp: "Year 2", name: "The Ramayana as a serial", qs: [
-      {"day":623,"kind":"fork","q":"you're Sita. a mountain-sized Hanuman offers to fly you home tonight. what do you say?","o":["yes, at once.","no: Rama must come and win me back himself.","only if Lakshmana comes too."],"a":1},
-      {"day":649,"kind":"word","term":"Kailasa","o":["the home of Shiva","made themselves invisible","torn loose and lifted"],"a":0},
+      {"day":623,"kind":"fork","q":"you're Sita. a mountain-sized Hanuman can fly you home tonight, in secret. by maryada, what do you say?","o":["yes, at once: getting out is all that counts.","no: Rama should come and win me back openly.","only if Lakshmana comes too."],"a":1},
+      {"day":650,"kind":"word","term":"nishkama karma","o":["work without craving its fruit","enough to heal the fallen","carried back to the Himalaya"],"a":0},
       {"day":678,"kind":"fork","q":"you're Ganesha. the moon laughed at your fall and you cursed it. now the gods are pleading for the moon. what do you do?","o":["keep the curse as it is.","take it back completely.","soften it to one night a year."],"a":2},
     ] },
     { first: 697, last: 787, camp: "Year 3", name: "The Mahabharata as a serial", qs: [
-      {"day":715,"kind":"fork","q":"you're Shantanu. your son gave up the throne and any children of his own so you could marry. what do you do?","o":["call off the marriage.","accept, and give him a boon.","accept, and say nothing."],"a":1},
-      {"day":742,"kind":"word","term":"Draupadi","o":["speaks before he shoots","strings the bow","Karna's father, unknown to the arena"],"a":0},
-      {"day":768,"kind":"fork","q":"you're Vidura. the game is going badly, and the blind king is listening. what do you do?","o":["keep quiet; it isn't your game.","speak to the king and beg him to stop it.","walk out of the hall."],"a":1},
+      {"day":713,"kind":"fork","q":"you're Devavrata. you've given up the throne, but the fisherman asks: what about your sons? will they keep your promise?","o":["promise your sons will honor it.","vow never to have children.","offer to leave the kingdom."],"a":1},
+      {"day":742,"kind":"word","term":"Surya","o":["Karna's father, the eye of the gods","strings the bow","speaks before he shoots"],"a":0},
+      {"day":771,"kind":"fork","q":"you're Bhishma on the bed of arrows, years later. Draupadi laughs: where was all this wisdom in the hall? in the story families tell, what do you answer?","o":["that Karna frightened me into silence.","that Duryodhana's food had clouded my mind.","that the dice game had been fair after all."],"a":1},
     ] },
     { first: 788, last: 878, camp: "Year 3", name: "The Mahabharata as a serial", qs: [
       {"day":806,"kind":"fork","q":"you're Yudhishthira. one brother may live. a war may be coming. who do you choose?","o":["Arjuna, the archer you'll need.","Bhima, whose strength protects you all.","Nakula, Madri's son."],"a":2},
@@ -70,33 +70,33 @@ export const PLACEMENT_BANK: Record<string, { lastWritten: number; stops: BankSt
     ] },
     { first: 879, last: 962, camp: "Year 3", name: "Bhagavata Purana", qs: [
       {"day":896,"kind":"fork","q":"you're Krishna. Indra's storm is drowning the village, and everyone has turned to you. what do you do?","o":["send a storm back at Indra.","lift the hill and call everyone under it.","lead the village away to another valley."],"a":1},
-      {"day":921,"kind":"word","term":"Niru and Nima","o":["the weaver couple who raised him","cried Ram, Ram on the steps","two lines that rhyme"],"a":0},
-      {"day":945,"kind":"fork","q":"your day is loud and full. Vivekananda's ideal person has the same day. what do they do?","o":["leave and find a quiet place.","find the silence of the desert inside the activity.","work faster to finish the noise sooner."],"a":1},
+      {"day":921,"kind":"word","term":"Ramananda","o":["cried Ram, Ram on the steps","the weaver couple who raised him","the ego, the I-maker"],"a":0},
+      {"day":944,"kind":"fork","q":"you're Bharata. the fawn is sweet, and your prayers are getting shorter every day. what is the story warning you about?","o":["loving animals is wrong.","what you dwell on, you become.","hermits shouldn't live near rivers."],"a":1},
     ] },
     { first: 963, last: 1061, camp: "Year 3", name: "Lineage track, year three", qs: [
-      {"day":979,"kind":"fork","q":"you're Radha. you waited all night. at dawn he turns up, red-eyed, with marks of somewhere else. what do you do?","o":["let him in and say nothing.","tell him to go, and say exactly why.","leave the forest before he sees you."],"a":1},
+      {"day":983,"kind":"fork","q":"you're Muchukunda, just woken. Krishna offers you any boon you want. what do you ask?","o":["your old kingdom back, bigger.","nothing but to love him, at his feet.","to go back to sleep, undisturbed."],"a":1},
       {"day":1012,"kind":"word","term":"abhyasa","o":["steady, repeated practice","letting go, loosening the grip","a practice kept as a discipline"],"a":0},
-      {"day":1047,"kind":"fork","q":"you are Yudhishthira. Indra's chariot is waiting to take you to heaven, but he says the dog cannot come. what do you do?","o":["leave the dog and climb into the chariot.","refuse heaven rather than abandon the dog.","ask Indra for a day to think it over."],"a":1},
+      {"day":1039,"kind":"fork","q":"you have a dull shift to finish before evening aarti. by the Gita and Savata, what fits?","o":["do it well and offer it; your own work is worship too.","rush it; only the aarti counts.","skip the aarti; work is all that matters now."],"a":0},
     ] },
     { first: 1062, last: 1159, camp: "Year 4", name: "The Devi", qs: [
       {"day":1081,"kind":"fork","q":"someone asks you: is the still absolute one reality and the active Goddess another? what does Ramakrishna's picture say?","o":["two realities, one above the other","one reality, like fire and its power to burn","only the still one is real"],"a":1},
-      {"day":1110,"kind":"word","term":"Durga","o":["named beside 'hard to cross'","across the hard-to-cross ocean","Devi Mahatmya, chapter four"],"a":0},
+      {"day":1111,"kind":"word","term":"smarana","o":["remembering God, which calls her","the goddess's offer to the gods","destroy our worst troubles"],"a":0},
       {"day":1139,"kind":"fork","q":"you're Vasugupta. you dream that Shiva has hidden teaching on a stone on a mountain. you wake up. what do you do?","o":["shrug it off as a dream.","climb the mountain and look for the stone.","write your own teaching instead."],"a":1},
     ] },
     { first: 1160, last: 1243, camp: "Year 4", name: "The six darshanas", qs: [
-      {"day":1175,"kind":"fork","q":"you're adding up Samkhya's inventory: one root, seven, sixteen. where does purusha, the witness, go?","o":["first, before the root.","outside the count: neither made nor making.","among the sixteen, next to the mind."],"a":1},
+      {"day":1175,"kind":"fork","q":"you're adding up Samkhya's inventory: one root, seven, sixteen. where does purusha, the knower of the field, go?","o":["first, before the root.","outside the count: neither made nor making.","among the sixteen, next to the mind."],"a":1},
       {"day":1202,"kind":"word","term":"Uddhava asks","o":["take me with you","let go, and wander, mind fixed on me","this letting go is hard for me"],"a":0},
       {"day":1226,"kind":"fork","q":"you're Ramanuja, standing by your teacher's body, some of his fingers curled closed. what do you do?","o":["leave quietly; it's too late now.","promise aloud to finish what he hoped for.","start a school of your own and forget the rest."],"a":1},
     ] },
     { first: 1244, last: 1327, camp: "Year 4", name: "The Vedas themselves", qs: [
-      {"day":1259,"kind":"fork","q":"the hymn asks: when they divided the Purusha, what was his mouth? what does the next verse answer?","o":["the brahmin, the priest","the rajanya, the ruler","the shudra, the laborer"],"a":0},
-      {"day":1286,"kind":"word","term":"kapha","o":["phlegm: what holds together","wind: what moves","bile: what heats and changes"],"a":0},
-      {"day":1310,"kind":"fork","q":"you're sorting food the way the Gita does. what's the main test?","o":["how much it costs.","what it does to the one who eats it.","which country it comes from."],"a":1},
+      {"day":1260,"kind":"fork","q":"the Purusha Sukta says the sun came from the cosmic person's eye. in the Aitareya Upanishad, where does the sun go back to?","o":["into a person's eyes, as sight","into the earth, as fire","nowhere: it stays in the sky"],"a":0},
+      {"day":1286,"kind":"word","term":"vata","o":["wind: what moves","rises from the ocean holding amrita","the knowledge of life"],"a":0},
+      {"day":1310,"kind":"fork","q":"Nani's kitchen has gone sattvic for a puja day, and Sam asks what that word even means. what's the heart of it?","o":["food that leans toward sattva, clarity, judged by what it does to the one who eats it.","a fixed list of dishes from one region of India, the same in every home.","any food at all, once a priest has blessed it."],"a":0},
     ] },
     { first: 1328, last: 1426, camp: "Year 4", name: "The epics revisited", qs: [
-      {"day":1348,"kind":"fork","q":"you're Damayanti. Nala stands before you at last and asks how you could announce a second swayamvara. what do you say?","o":["nothing; let it go.","the truth: it was only a way to bring you here.","turn it back on him and refuse to answer."],"a":1},
-      {"day":1376,"kind":"word","term":"Shakta","o":["God worshipped as the Goddess","the name devotees call her","devotion to Krishna and Radha"],"a":0},
-      {"day":1407,"kind":"fork","q":"you're Ravidas. it's a holy day, your neighbor is off to bathe in the Ganga, and you promised a shoe by tonight. what do you do?","o":["drop the shoe and go to the river.","stay at the bench and keep your promise.","go, and tell the customer it's God's fault."],"a":1},
+      {"day":1352,"kind":"fork","q":"you're Shakuntala in Kalidasa's play. a sage arrives at the hermitage, but your mind is far away with your husband. what happens?","o":["you greet him, and all is well.","you don't notice him, and he curses you.","your friend sends him away."],"a":1},
+      {"day":1376,"kind":"word","term":"Suratha","o":["a king who lost his kingdom","a merchant thrown out by his family","the sage who answered them"],"a":0},
+      {"day":1405,"kind":"fork","q":"it's late, and a devotee sings of God's face, hands and feet before sleep. by the poet-sadhus' way, what is the singing doing?","o":["remembering God's form in love, so he stays close.","keeping a record in case people forget the facts.","filling the quiet until it's time to sleep."],"a":0},
     ] },
   ] },
   ISLAM: { lastWritten: 1426, stops: [
@@ -475,7 +475,7 @@ export const PLACEMENT_BANK: Record<string, { lastWritten: number; stops: BankSt
     ] },
     { first: 332, last: 441, camp: "Year 2", name: "Kings, prophets, wisdom and the seven books", qs: [
       {"day":354,"kind":"fork","q":"you're Esau, home from the field, exhausted. your brother has stew on the fire and says: sell me your birthright first. what does the story say you do?","o":["refuse and find food elsewhere.","swear it away, eat, drink, and go.","offer him money instead."],"a":1},
-      {"day":387,"kind":"word","term":"Saturday Night Prayer","o":["where Catholics read these verses","Hebrew: hear","the scroll on the doorframe"],"a":0},
+      {"day":387,"kind":"word","term":"mezuzah","o":["the scroll on the doorframe","Hebrew: hear","Jesus begins with hear, O Israel"],"a":0},
       {"day":419,"kind":"fork","q":"you're the prophet, sent to people who've lost their city and their Temple, and who know they brought some of it on themselves. how do you begin?","o":["with a list of what they did wrong.","with comfort, and the news their sin is forgiven.","with a plan to rebuild the walls."],"a":1},
     ] },
     { first: 442, last: 533, camp: "Year 2", name: "The Gospel of Luke", qs: [
@@ -537,7 +537,7 @@ export const PLACEMENT_BANK: Record<string, { lastWritten: number; stops: BankSt
   CHRISTIANITY: { lastWritten: 1426, stops: [
     { first: 1, last: 21, camp: "Camp 1", name: "First steps", qs: [
       {"day":3,"kind":"fork","q":"Jesus tells a respected teacher he must be born again. what does the teacher ask?","o":["how can a man be born when he is old?","which day should I be baptized?","what should I give up?"],"a":0},
-      {"day":11,"kind":"word","term":"abba","o":["father: the family word","never I, me or my","two wordings of one line"],"a":0},
+      {"day":10,"kind":"word","term":"Yeshua","o":["the Hebrew name, same as Joshua","a builder, a craftsman","can any good thing come out of Nazareth?"],"a":0},
       {"day":15,"kind":"fork","q":"you're Paul. the church you started is suing each other, splitting into camps and showing off. in the middle of your letter, what do you write?","o":["a list of punishments.","a description of what love does.","a demand that the troublemakers leave."],"a":1},
     ] },
     { first: 22, last: 96, camp: "Camp 2", name: "The stories", qs: [

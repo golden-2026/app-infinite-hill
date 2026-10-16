@@ -17,7 +17,8 @@ test("each day of the Hindu week gets the story, what most people get wrong, bui
     for (const want of ["story", "wrong", "build", "match"]) assert.ok(t.includes(want), `day ${d} has ${want}`);
     for (const gone of ["listen", "say", "rhythm", "scenes", "rush"]) assert.ok(!t.includes(gone), `day ${d} drops ${gone}`);
     assert.equal(t.at(-1), "tally");
-    assert.ok(t.length <= 26, `day ${d} is ${t.length} screens`);
+    // 28 since the friend's chat joined week one (2026-10-15, replacing the closing think question)
+    assert.ok(t.length <= 28, `day ${d} is ${t.length} screens`);
     // ids stay unique (the resume logic keys on them)
     const ids = plan(d).steps.map((s) => s.id);
     assert.equal(new Set(ids).size, ids.length);

@@ -492,8 +492,13 @@ export function planDay({ wing, day, lesson = day, mode = "adult", named = true,
   // for carry lines): camp one's quiz table first, then the script's own gloss
   steps = applyGuess(steps, wing, lesson, given || info, level >= 3 && mode === "adult" ? 3 : 2);
   if (mode === "adult" && given?.games?.build) steps = upgradeWeek(steps, given, wing, day);
-  // the new recipe (v2.js), for a script that carries its data
-  if (mode === "adult" && script && script.day === lesson && isV2(script)) steps = composeV2(steps, script, day);
+  // the new recipe (v2.js), for a script that carries its data. Week one keeps its own design (the look back, the
+  // week's check-in, "what most people get wrong"); a week-one script with a friend's chat gets the chat added to it,
+  // after the teaching, with its tie-back (owner, 2026-10-15)
+  if (mode === "adult" && script && script.day === lesson && isV2(script)) {
+    if (given?.games?.build) steps = withChat(steps, script);
+    else steps = composeV2(steps, script, day);
+  }
   return { steps, word: R.word, carry: R.carry, title: info?.title || d1.title || "", info };
 }
 
@@ -505,6 +510,19 @@ export const GRADED = Object.freeze(["chat", "order", "match", "listen", "taphea
 const SHORT = /^(review|the hook|the teach|the practice|the word|the carry|a welcome)/;
 const DROP = new Set(["listen", "say", "rhythm", "scenes", "rush"]);
 const seeded = (arr, seed) => arr.map((v, i) => [Math.sin(seed * 7.13 + i * 3.7), v]).sort((a, b) => a[0] - b[0]).map((x) => x[1]);
+/** A week-one day with a friend's chat: the chat goes right after the last teaching beat, and takes the place of the
+ *  closing "think" question (both ask you to use the idea; one is enough on a five-minute day). */
+function withChat(steps, script) {
+  const c = script.games.chat;
+  const id = Math.max(...steps.map((s) => s.id)) + 1;
+  const chat = { type: "chat", graded: true, who: c.who, says: c.says, options: c.options, answer: c.options[c.answer], meaning: c.meaning || null, tie: c.tie || null, id };
+  let at = -1;
+  steps.forEach((s, k) => { if (s.type === "beat" && /^the teach/.test(String(s.seg || ""))) at = k; });
+  const out = [...steps];
+  out.splice(at >= 0 ? at + 1 : Math.max(out.length - 1, 0), 0, chat);
+  return out.filter((s) => s.type !== "think");
+}
+
 function upgradeWeek(steps0, info, wing, day) {
   const G = info.games;
   let id = Math.max(...steps0.map((s) => s.id)) + 1;
