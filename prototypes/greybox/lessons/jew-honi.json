@@ -1,0 +1,195 @@
+{
+ "id": "jew-honi",
+ "home": "pomegranate",
+ "title": "The man who slept seventy years",
+ "told": "from the Talmud",
+ "clips": "art/sacred/jew-honi/clips/",
+ "voice": "art/sacred/jew-honi/voice/",
+ "guide": {
+  "name": "Natalie",
+  "photo": "art/guides/judaism.webp"
+ },
+ "hook": {
+  "v": "JHO1-Carob",
+  "say": "before the story, can i ask you something? who are the people who really know you, the ones you’d call if something big happened?",
+  "options": [
+   [
+    "I have a few",
+    "then hold them close today. listen."
+   ],
+   [
+    "Just one or two",
+    "sometimes one is a whole world. listen."
+   ],
+   [
+    "I’m not sure I have anyone",
+    "i’m really glad you’re here. listen, this one is for you."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "JHO1-Carob",
+   "vo": [
+    "V01"
+   ],
+   "line": "The Talmud tells of Honi, a holy man. One day he saw an old man planting a carob tree. “How long until it gives fruit?” he asked. “Seventy years.”"
+  },
+  {
+   "t": "shot",
+   "v": "JHO1-Carob",
+   "vo": [
+    "V02"
+   ],
+   "line": "“Will you live seventy years?” The old man said, “I found carob trees in the world. As my ancestors planted for me, I plant for my children.”"
+  },
+  {
+   "t": "shot",
+   "v": "JHO2-Sleep",
+   "vo": [
+    "V03"
+   ],
+   "line": "Honi sat down to eat, and sleep came over him. Rocks rose up around him, hiding him from view, and he slept for seventy years."
+  },
+  {
+   "t": "ask",
+   "v": "JHO2-Sleep",
+   "blur": true,
+   "predict": true,
+   "eb": "what happens next?",
+   "q": "Honi wakes after seventy years. What does he see first?",
+   "o": [
+    "The old man, still planting",
+    "Someone picking fruit from the carob tree",
+    "The tree, dry and bare"
+   ],
+   "a": 1,
+   "why": "A man gathering carobs: the planter’s grandson."
+  },
+  {
+   "t": "shot",
+   "v": "JHO3-Grandson",
+   "vo": [
+    "V04"
+   ],
+   "line": "When he woke, a man was picking carobs from the tree. “Did you plant this?” Honi asked. “No, my grandfather did.”"
+  },
+  {
+   "t": "shot",
+   "v": "JHO4-Study-Hall",
+   "vo": [
+    "V05"
+   ],
+   "line": "Honi went to the study hall. He heard the scholars say, “These teachings are as clear as in the days of Honi.” “I am Honi!” he said. No one believed him."
+  },
+  {
+   "t": "ask",
+   "v": "JHO4-Study-Hall",
+   "eb": "why?",
+   "q": "The scholars praised Honi’s teaching to his face, not knowing it was him. Why was that no comfort?",
+   "o": [
+    "He wanted credit for his teachings",
+    "Admired isn’t the same as known",
+    "He feared they had twisted his words"
+   ],
+   "a": 1,
+   "why": "His teachings were alive, but no one knew him. The Talmud says they didn’t give him the honor due, and it broke his heart."
+  },
+  {
+   "t": "shot",
+   "v": "JHO5-Either",
+   "vo": [
+    "V06"
+   ],
+   "line": "Heartbroken, Honi prayed for mercy, and his life came to an end. That, the Talmud says, is the old saying: either friendship, or death."
+  },
+  {
+   "t": "ask",
+   "v": "JHO5-Either",
+   "eb": "did you know?",
+   "q": "In Aramaic the saying is “o chavruta, o mituta.” What is a chavruta to Jews today?",
+   "o": [
+    "A study partner",
+    "A synagogue choir",
+    "A wedding blessing"
+   ],
+   "a": 0,
+   "why": "Chavruta comes from chaver, friend. Jews still learn in pairs, arguing out loud, because life alone goes dim."
+  },
+  {
+   "t": "ask",
+   "v": "JHO5-Either",
+   "eb": "did you know?",
+   "q": "Honi is famous for another Talmud story too. What was he called?",
+   "o": [
+    "Honi the tree-planter",
+    "Honi the dreamer",
+    "Honi the circle-maker"
+   ],
+   "a": 2,
+   "why": "In a drought he drew a circle in the dust and said he wouldn’t step out until God sent rain. The rain came."
+  },
+  {
+   "t": "shot",
+   "v": "JHO6-Today",
+   "vo": [
+    "V07"
+   ],
+   "line": "Today, Jews often study in pairs. A study partner is a chavruta, the very word in Honi’s saying. You learn together, out loud, arguing and laughing.",
+   "label": "today"
+  },
+  {
+   "t": "teach",
+   "v": "JHO5-Either",
+   "say": [
+    "here’s what i love. the first thing the torah calls “not good” isn’t a sin. it’s loneliness: “it is not good that the man should be alone.”",
+    "and the partner god makes is an ezer kenegdo, a help facing him. ezer is a word the bible also uses for god. it’s not a junior word. it means someone who can look you in the eye."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "JHO6-Today",
+   "eb": "the hard one",
+   "q": "Honi had his name, his teachings, even his fame. From his story, what does a person most need?",
+   "o": [
+    "To be remembered after they’re gone",
+    "People who know them, face to face",
+    "A very long life"
+   ],
+   "a": 1,
+   "why": "People who know you, face to face. That’s the help the Torah means: someone facing you."
+  }
+ ],
+ "today": {
+  "v": "JHO6-Today",
+  "say": "today, ask one person to learn something with you: a chapter, a recipe, a song. that’s chavruta, friendship out loud. or simply call someone who really knows you.",
+  "options": [
+   [
+    "I’ll ask someone",
+    "then you’ll have a chavruta. honi would be glad."
+   ],
+   [
+    "I’ll call someone",
+    "one call. it isn’t good to be alone, so don’t be."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "Where are you?",
+  "line": "two people hide in a garden, and god asks the first question in the torah. long after, a rabbi in a prison cell explains why."
+ },
+ "card": {
+  "from": "from the Talmud",
+  "mins": 5,
+  "keep": "carob",
+  "keepName": "Honi’s carob tree",
+  "keepWhy": "It is not good to be alone.",
+  "keepSvg": "<rect x=\"44\" y=\"50\" width=\"12\" height=\"40\" rx=\"3\" fill=\"#2a1b05\"/><circle cx=\"50\" cy=\"36\" r=\"28\" fill=\"#2a1b05\"/><rect x=\"24\" y=\"56\" width=\"6\" height=\"22\" rx=\"3\" fill=\"#2a1b05\"/><rect x=\"70\" y=\"56\" width=\"6\" height=\"22\" rx=\"3\" fill=\"#2a1b05\"/><rect x=\"18\" y=\"86\" width=\"64\" height=\"6\" rx=\"3\" fill=\"#2a1b05\"/>",
+  "sources": [
+   "Babylonian Talmud, Taanit 23a (Honi sees a man planting a carob tree; seventy years; ‘I found the world with carob trees; as my ancestors planted for me, so I plant for my children’; he sleeps; a rocky formation hides him for seventy years; the grandson gathers carobs; at the study hall, ‘our studies are as clear as in the days of Honi’; they do not believe him; he prays for mercy and dies; Rava: ‘this is what people say: either companionship (chavruta) or death’; the lesson skips Honi’s visit home, where he asks for his son)",
+   "Genesis 2:18 (“It is not good that the man should be alone; I will make him a help meet for him,” JPS 1917); Psalms 121:2 (“My help cometh from the LORD,” JPS 1917); Rashi on Genesis 2:18"
+  ],
+  "check": []
+ }
+}

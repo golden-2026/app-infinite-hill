@@ -1,3 +1,5 @@
+Background only (written 2026-10-06). Where this disagrees with docs/VISION-NOW.md or docs/LESSON_STANDARD.md, those win.
+
 # Five-year map: Christianity (2026-10-06)
 
 Step 1 only: a plan to review. Nothing in `docs/curriculum/christianity` is edited here.

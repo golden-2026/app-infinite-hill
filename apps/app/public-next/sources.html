@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Hidden for now: reachable only by URL, not linked from the site or the app, until the references are fact-checked. -->
+<title>Sources and how we write · infinite hill</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0A0A0A">
+<meta name="description" content="The texts infinite hill teaches from, the public-domain translations it quotes, and how lessons are made.">
+<link rel="alternate" hreflang="en" href="/sources">
+<link rel="alternate" hreflang="es" href="/es/sources">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/brand.css">
+<link rel="icon" type="image/png" href="/site-art/favicon.png">
+<style>
+.src section.card { margin: 16px; border-radius: 26px; padding: clamp(40px,6vw,80px) 0; }
+.src .wrap { max-width: 1080px; }
+.src .eyebrow { font: 800 11px/1 var(--body); letter-spacing: .2em; text-transform: uppercase; }
+.src h1, .src h2 { font-family: var(--display); font-weight: 400; text-transform: uppercase; line-height: .92; margin: 0; }
+.src h1 { font-size: clamp(52px, 11vw, 120px); margin-top: 18px; max-width: 14ch; }
+.src h2 { font-size: clamp(36px, 7vw, 64px); }
+.src h3 { font: 400 24px/1 var(--display); text-transform: uppercase; margin: 0; }
+.src .lede { font: 600 clamp(16px,1.3vw,18px)/1.6 var(--body); max-width: 62ch; }
+.src .hero { background: var(--ink); color: var(--cream); margin-top: 0; }
+.src .hero .eyebrow, .src .hero h1 { color: var(--lime); }
+.src .hero .lede { margin-top: 18px; color: var(--mute); }
+.src .pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
+.src .pill { background: #1c1c1c; color: var(--cream); border: 1px solid var(--line); border-radius: 999px; padding: 9px 14px; font: 700 13px/1.2 var(--body); }
+.src .paths { background: var(--cream); color: var(--ink); }
+.src .paths .head p { margin-top: 12px; }
+.src .grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; margin-top: 36px; }
+.src .path { background: #fff; border-radius: 22px; padding: 22px 20px; min-width: 0; box-shadow: inset 0 0 0 2px var(--ink); }
+.src .path h3 { margin-bottom: 12px; }
+.src table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.src th { font: 800 10px/1.2 var(--body); letter-spacing: .16em; text-transform: uppercase; color: #555; text-align: left; padding: 0 0 8px; width: 44%; }
+.src th + th { width: auto; }
+.src td { vertical-align: top; padding: 10px 0; border-top: 1px solid rgba(10,10,10,.15); font-size: 14px; line-height: 1.45; overflow-wrap: anywhere; }
+.src td:first-child { font-weight: 800; padding-right: 12px; }
+.src td .q { display: inline-block; background: var(--lime); border-radius: 999px; padding: 3px 9px; font: 800 11px/1.3 var(--body); margin-bottom: 3px; }
+.src td small { display: block; color: #555; font-size: 12.5px; margin-top: 2px; }
+.src .never { margin-top: 22px; background: var(--ink); color: var(--cream); border-radius: 22px; padding: 20px 22px; font-size: 15px; line-height: 1.55; }
+.src .never b { color: var(--lime); }
+.src .how { background: var(--lime); color: var(--ink); }
+.src .steps { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 16px; margin: 36px 0 0; counter-reset: s; }
+.src .steps li { background: var(--ink); color: var(--cream); border-radius: 22px; padding: 22px 20px; counter-increment: s; min-width: 0; }
+.src .steps li:before { content: counter(s); display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: var(--lime); color: var(--ink); font: 400 18px/1 var(--display); }
+.src .steps h3 { margin-top: 14px; font-size: 22px; color: var(--lime); }
+.src .steps p { margin-top: 8px; font-size: 14.5px; color: var(--mute); }
+.src .how .note { margin-top: 22px; font-size: 14px; max-width: 70ch; }
+@media (max-width: 900px) { .src .grid { grid-template-columns: 1fr; } .src .steps { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+@media (max-width: 560px) { .src section.card { margin: 10px 8px; } .src .steps { grid-template-columns: 1fr; } .src .path { padding: 20px 16px; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <button class="menu-b" type="button" id="menuB" aria-expanded="false" aria-controls="menu"><i></i><span class="t">menu</span><span class="sr">open menu</span></button>
+  <a class="mark" href="/">infinite hill</a>
+  <a class="join-s" href="/hill/hill-app-doors.html">start free</a>
+  <nav class="menu" id="menu" hidden aria-label="menu"><a href="/#how">how it works</a><a href="/#research">why it matters</a><a href="/#film">watch the film</a><a href="/#guides">your guides</a><a href="/#kept">still wondering?</a><a href="/#ways">pick your way in</a><a href="/build-your-own">build your own</a><a href="/#keepers">who checks it</a><div class="lang" role="group" aria-label="Language · Idioma"><a href="/sources" lang="en" hreflang="en" aria-current="page">EN</a><a href="/es/sources" lang="es" hreflang="es">ES</a></div></nav>
+</header>
+<main id="main" class="src">
+<section class="card hero">
+  <div class="wrap">
+    <div class="eyebrow">Sources and how we write</div>
+    <h1>old words, quoted honestly.</h1>
+    <p class="lede">When a lesson quotes scripture, it quotes an old translation that is in the public domain: free for anyone to use, and trusted by the people who have read it for generations. The King James Bible, the 1917 Jewish Publication Society Tanakh, Pickthall's Qur'an.</p>
+    <p class="lede">When we can't quote an old translation word for word, we don't borrow a modern one. We say it in our own words and tell you we did. Every written lesson ends with a short list of the texts it drew on.</p>
+    <div class="pills"><span class="pill">public-domain translations only</span><span class="pill">paraphrases marked as paraphrases</span><span class="pill">every written lesson lists its sources</span></div>
+  </div>
+</section>
+
+<section class="card paths" aria-labelledby="paths-h">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">The eight paths</div>
+      <h2 id="paths-h" style="margin-top:14px">what each path teaches from.</h2>
+      <p class="lede">The main texts behind each path, and how we use them: <b>quoted</b> in the translation named, or <b>paraphrased</b> in our own words.</p>
+    </div>
+
+    <div class="grid">
+      <div class="path">
+        <h3>Christianity</h3>
+        <table>
+          <thead><tr><th scope="col">Text</th><th scope="col">How we use it</th></tr></thead>
+          <tbody>
+            <tr><td>The Bible</td><td><span class="q">quoted</span> King James Version (1769 text)<small>otherwise paraphrased</small></td></tr>
+            <tr><td>The Book of Common Prayer</td><td><span class="q">quoted</span> the 1662 edition</td></tr>
+            <tr><td>Julian of Norwich, Revelations of Divine Love</td><td><span class="q">quoted</span> Grace Warrack (1901)</td></tr>
+            <tr><td>Augustine, the Desert Fathers, the Rule of Saint Benedict, the creeds</td><td>paraphrased</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="path">
+        <h3>Catholicism</h3>
+        <table>
+          <thead><tr><th scope="col">Text</th><th scope="col">How we use it</th></tr></thead>
+          <tbody>
+            <tr><td>The Bible</td><td><span class="q">quoted</span> Douay-Rheims, Challoner revision (1752)<small>otherwise paraphrased</small></td></tr>
+            <tr><td>Catechism of the Catholic Church</td><td>paraphrased only</td></tr>
+            <tr><td>The Roman Missal and the Liturgy of the Hours</td><td>paraphrased<small>a few short prayers quoted in the original Latin</small></td></tr>
+            <tr><td>Church councils, encyclicals, the saints (Augustine, Teresa of Ávila)</td><td>paraphrased</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="path">
+        <h3>Judaism</h3>
+        <table>
+          <thead><tr><th scope="col">Text</th><th scope="col">How we use it</th></tr></thead>
+          <tbody>
+            <tr><td>Tanakh (the Hebrew Bible)</td><td><span class="q">quoted</span> Jewish Publication Society (JPS 1917)<small>otherwise paraphrased</small></td></tr>
+            <tr><td>Talmud and Mishnah</td><td>paraphrased</td></tr>
+            <tr><td>Rashi's commentary on the Torah, Midrash</td><td>paraphrased</td></tr>
+            <tr><td>The Siddur, Maimonides' Mishneh Torah, the Shulchan Aruch</td><td>paraphrased</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="path">
+        <h3>Islam</h3>
+        <table>
+          <thead><tr><th scope="col">Text</th><th scope="col">How we use it</th></tr></thead>
+          <tbody>
+            <tr><td>The Qur'an</td><td><span class="q">quoted</span> Marmaduke Pickthall (1930)<small>otherwise paraphrased</small></td></tr>
+            <tr><td>Hadith: Sahih al-Bukhari, Sahih Muslim, Jami' at-Tirmidhi, Sunan Abi Dawud</td><td>paraphrased</td></tr>
+            <tr><td>Tafsir (Ibn Kathir), Ibn Ishaq's life of the Prophet</td><td>paraphrased</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="path">
+        <h3>Buddhism</h3>
+        <table>
+          <thead><tr><th scope="col">Text</th><th scope="col">How we use it</th></tr></thead>
+          <tbody>
+            <tr><td>The Dhammapada</td><td><span class="q">quoted</span> F. Max Müller (Sacred Books of the East, 1881)<small>otherwise paraphrased</small></td></tr>
+            <tr><td>The Pali Canon: Majjhima, Digha, Samyutta and Anguttara Nikayas, Sutta Nipata</td><td>paraphrased<small>a few lines quoted from T. W. Rhys Davids (1881 to 1910)</small></td></tr>
+            <tr><td>The Jataka tales, Buddhaghosa's Path of Purification</td><td>paraphrased</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="path">
+        <h3>Hinduism</h3>
+        <table>
+          <thead><tr><th scope="col">Text</th><th scope="col">How we use it</th></tr></thead>
+          <tbody>
+            <tr><td>The Bhagavad Gita</td><td>paraphrased<small>short lines quoted in the original Sanskrit, or from Edwin Arnold, The Song Celestial (1885)</small></td></tr>
+            <tr><td>The Ramayana of Valmiki, the Mahabharata, the Bhagavata Purana</td><td>paraphrased</td></tr>
+            <tr><td>The Upanishads (Katha, Isha, Kena, Mandukya and others)</td><td>paraphrased</td></tr>
+            <tr><td>The Yoga Sutras of Patanjali</td><td>paraphrased<small>short lines quoted in the original Sanskrit</small></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="path">
+        <h3>Sikhism</h3>
+        <table>
+          <thead><tr><th scope="col">Text</th><th scope="col">How we use it</th></tr></thead>
+          <tbody>
+            <tr><td>Guru Granth Sahib</td><td><span class="q">quoted</span> in the original Gurmukhi, transliterated<small>otherwise paraphrased; a few English lines from Max Arthur Macauliffe, The Sikh Religion (1909)</small></td></tr>
+            <tr><td>Dasam Granth (Jaap Sahib)</td><td>paraphrased<small>a few lines in the original</small></td></tr>
+            <tr><td>Sikh Rehat Maryada (the Sikh code of conduct)</td><td>paraphrased</td></tr>
+            <tr><td>The Janamsakhis, the Vaaran of Bhai Gurdas</td><td>paraphrased</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="path">
+        <h3>my own religion</h3>
+        <table>
+          <thead><tr><th scope="col">Text</th><th scope="col">How we use it</th></tr></thead>
+          <tbody>
+            <tr><td>Marcus Aurelius, Meditations</td><td><span class="q">quoted</span> George Long (1862)<small>otherwise paraphrased</small></td></tr>
+            <tr><td>Epictetus, Enchiridion and Discourses</td><td><span class="q">quoted</span> George Long (1877)<small>otherwise paraphrased</small></td></tr>
+            <tr><td>Seneca, Letters to Lucilius</td><td><span class="q">quoted</span> Richard Gummere (1917)<small>otherwise paraphrased</small></td></tr>
+            <tr><td>Rumi, the Masnavi</td><td>paraphrased, following R. A. Nicholson<small>a few lines quoted from E. H. Whinfield (1898)</small></td></tr>
+            <tr><td>Lao-tzu, Tao Te Ching</td><td><span class="q">quoted</span> James Legge (1891)</td></tr>
+            <tr><td>Lines from the world's scriptures</td><td>in the same translations as the paths above</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <p class="never"><b>What we never quote:</b> modern translations still under copyright, such as the NIV, ESV, NRSV, NASB, NKJV, The Message, Sahih International, Yusuf Ali, Muhsin Khan, Gopal Singh, Manmohan Singh, or Coleman Barks's Rumi. When those are the words you know, we paraphrase.</p>
+  </div>
+</section>
+
+<section class="card how" aria-labelledby="how-h">
+  <div class="wrap">
+    <div class="eyebrow">How lessons are made</div>
+    <h2 id="how-h" style="margin-top:14px">from the text, back to the text.</h2>
+    <ol class="steps">
+      <li><h3>Start from the text</h3><p>Each lesson begins with one passage, word or story from the path's own texts, listed above.</p></li>
+      <li><h3>Written with AI help</h3><p>We write lessons with the help of AI, working from those texts, in a plain voice that fits in five minutes.</p></li>
+      <li><h3>Checked against the text</h3><p>Every quotation is matched to its public-domain source, every paraphrase is marked, and every reference goes in the lesson's sources list.</p></li>
+      <li><h3>Reviewed by Keepers</h3><p>Before public release, lessons are reviewed by Keepers: scholars from each tradition who check the teaching, not just the spelling.</p></li>
+    </ol>
+    <p class="note">Where the texts are silent or scholars disagree, the lesson says so. infinite hill is not affiliated with any religious institution and is not a substitute for a congregation or a teacher of your tradition.</p>
+  </div>
+</section>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <nav class="cols" aria-label="infinite hill"><div><h4>Practice</h4><a href="/hill/hill-app-doors.html">Start free</a><a href="/hill/hill-app-doors.html?pick=wild">Build your own</a></div><div><h4>Company</h4><a href="/about">About</a><a href="/foundation">The Foundation</a><a href="/keepers">The Keeper Desk</a><a href="/provenance">Keeper &amp; provenance</a><a href="/careers">Careers</a><a href="/contact">Contact</a></div><div><h4>Learn</h4><a href="/science">Research</a><a href="/paths">Eight paths</a><a href="/nights">Nights</a><a href="/prayers">Why we don't write prayers</a><a href="/voices">How voices work</a><a href="/schools">infinite hill for schools</a><a href="/sources" aria-current="page">Sources</a></div><div><h4>Support</h4><a href="/#faq">FAQ</a><a href="/safety">Safety &amp; hosts</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/biometric">Biometric consent</a><a href="/legal">Legal</a></div><div><h4>Language</h4><a href="/sources" lang="en" hreflang="en" aria-current="page">English</a><a href="/es/sources" lang="es" hreflang="es">Español</a></div></nav>
+    <div class="legal">
+      <p>infinite hill is a company (Infinite Hill Ventures, Inc.), so it can pay its own way and keep infinite hill free. part of what it earns goes to <a href="/foundation">the infinite hill foundation</a>, a separate nonprofit (in formation).</p>
+      <p class="crisis">If you're in danger or thinking about hurting yourself, call or text 988 (US) or your local emergency number.</p>
+      <p>infinite hill teaches from public-domain scripture, checked by scholars of each tradition. It is not a substitute for a congregation, a clergy member, or medical or mental-health care. Off-app gatherings, once they start, will be hosted only by verified institutions and organizers; all off-app events will be 18+.</p>
+      <p>&copy; 2026 Infinite Hill Ventures, Inc. Not affiliated with any religious institution.</p>
+    </div>
+    <p class="wm" aria-hidden="true">infinite hill</p>
+  </div>
+</footer>
+<script>(function(){var b=document.getElementById("menuB"),m=document.getElementById("menu");if(!b||!m)return;function set(o){m.hidden=!o;b.setAttribute("aria-expanded",o?"true":"false")}b.addEventListener("click",function(e){e.stopPropagation();set(m.hidden)});m.addEventListener("click",function(){set(false)});document.addEventListener("click",function(e){if(!m.hidden&&!e.target.closest(".top"))set(false)});document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!m.hidden){set(false);b.focus()}})})();</script>
+</body>
+</html>

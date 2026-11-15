@@ -1,0 +1,187 @@
+{
+ "id": "chr-pearl",
+ "home": "olive",
+ "title": "Treasure in the field",
+ "told": "stories Jesus told",
+ "clips": "art/sacred/chr-pearl/clips/",
+ "voice": "art/sacred/chr-pearl/voice/",
+ "guide": {
+  "name": "Denzel",
+  "photo": "art/guides/christianity.webp"
+ },
+ "card": {
+  "from": "stories Jesus told",
+  "mins": 5,
+  "keep": "pearl",
+  "keepName": "The pearl",
+  "keepWhy": "In joy, not duty.",
+  "keepSvg": "<path d=\"M12 62c10 20 66 20 76 0-12 8-64 8-76 0z\" fill=\"#2a1b05\"/><circle cx=\"50\" cy=\"44\" r=\"18\" fill=\"#2a1b05\"/><circle cx=\"44\" cy=\"38\" r=\"5\" fill=\"#f0b93d\"/>",
+  "sources": [
+   "Matthew 13:44 (“the Kingdom of Heaven is like a treasure hidden in the field, which a man found and hid. In his joy, he goes and sells all that he has, and buys that field”)",
+   "Matthew 13:45-46 (a merchant seeking fine pearls, who having found one pearl of great price, went and sold all that he had, and bought it)",
+   "Matthew 6:21 (“where your treasure is, there your heart will be also”)",
+   "Captions follow the World English Bible, lightly modernized"
+  ],
+  "check": []
+ },
+ "hook": {
+  "v": "QR2-Treasure-Jar",
+  "say": "before the story, can i ask you something? what’s one thing you’d give almost anything to keep?",
+  "options": [
+   [
+    "My family",
+    "that’s a beautiful answer. hold it while you listen."
+   ],
+   [
+    "My peace of mind",
+    "that’s worth a lot. this story is about something like it."
+   ],
+   [
+    "I’m not sure",
+    "that’s honest. this story might help you find out."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "QR1-Plowing",
+   "vo": [
+    "V01"
+   ],
+   "line": "Jesus said the kingdom of heaven is like treasure hidden in a field. In those days, people buried valuables to keep them safe.",
+   "label": "Matthew 13:44"
+  },
+  {
+   "t": "shot",
+   "v": "QR2-Treasure-Jar",
+   "vo": [
+    "V02"
+   ],
+   "line": "A man found it. It wasn’t his field. He covered it up again.",
+   "label": "Matthew 13:44"
+  },
+  {
+   "t": "ask",
+   "v": "QR2-Treasure-Jar",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "The field isn’t his. What do you guess he does?",
+   "o": [
+    "Sells everything he has to buy the field",
+    "Digs it up at night and runs",
+    "Tells the owner and walks away"
+   ],
+   "a": 0,
+   "why": "He sells everything, gladly. Many readers notice he buys the field instead of just taking the treasure: he wants it rightly his."
+  },
+  {
+   "t": "shot",
+   "v": "QR3-Selling-All",
+   "vo": [
+    "V03"
+   ],
+   "line": "“Then in his joy he goes and sells everything he has, and buys that field.”",
+   "label": "Matthew 13:44"
+  },
+  {
+   "t": "ask",
+   "v": "QR3-Selling-All",
+   "blur": true,
+   "predict": true,
+   "eb": "what happens next?",
+   "q": "Next story: a pearl dealer, who buys pearls to sell them, finds one of great price. What do you guess he does?",
+   "o": [
+    "Buys it, then sells it for a fortune",
+    "Sells everything he owns to keep it",
+    "Tells the owner what it’s really worth"
+   ],
+   "a": 1,
+   "why": "He sells everything to buy it, and Jesus never says he sells it on. A trader who stops trading: he’s found the one thing worth keeping."
+  },
+  {
+   "t": "shot",
+   "v": "QR4-Merchant-Pearl",
+   "vo": [
+    "V04"
+   ],
+   "line": "Again: a merchant looking for fine pearls found one of great price. He sold everything he had and bought it.",
+   "label": "Matthew 13:45-46"
+  },
+  {
+   "t": "ask",
+   "v": "QR4-Merchant-Pearl",
+   "eb": "why?",
+   "q": "Selling everything sounds like a huge sacrifice. Why doesn’t it feel like one to these men?",
+   "o": [
+    "What they found was worth far more",
+    "They’d been told to give it all away",
+    "They planned to sell it on later"
+   ],
+   "a": 0,
+   "why": "“In his joy,” Jesus says. Elsewhere a rich man is asked to sell all and goes away sad; here two men do it gladly, because they’ve already seen the treasure."
+  },
+  {
+   "t": "shot",
+   "v": "QR5-Field-Bought",
+   "vo": [
+    "V05"
+   ],
+   "line": "Elsewhere Jesus said, “Where your treasure is, there your heart will be also.”",
+   "label": "Matthew 6:21"
+  },
+  {
+   "t": "ask",
+   "v": "QR5-Field-Bought",
+   "eb": "did you know?",
+   "q": "Jesus said it right after telling people not to store up treasure on earth. Why not, in his words?",
+   "o": [
+    "Moths and rust eat it, and thieves steal it",
+    "Riches make it hard to sleep at night",
+    "Wealth only stirs up envy in others"
+   ],
+   "a": 0,
+   "why": "Matthew 6:19–21. Treasure in heaven can’t rot or be stolen, and since the heart follows the treasure, he wants it somewhere safe."
+  },
+  {
+   "t": "teach",
+   "v": "QR3-Selling-All",
+   "say": [
+    "here’s what i love. the key words are “in his joy.” he isn’t giving things up out of duty. he’s found something better.",
+    "christians read it this way: following God isn’t mainly a list of sacrifices. it’s finding a treasure worth everything. some, like monks and nuns, give up everything to follow God. most live it in everyday choices."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "QR4-Merchant-Pearl",
+   "eb": "the hard one",
+   "q": "One man stumbles on his treasure. The other was out searching for his. What might the pair of stories teach?",
+   "o": [
+    "Only those who search hard will find",
+    "Searching or stumbling, the answer is the same",
+    "Finding it comes down to luck"
+   ],
+   "a": 1,
+   "why": "Some people find faith by surprise. Some look a long time. Either way, it’s worth everything."
+  }
+ ],
+ "today": {
+  "v": "QR6-Today",
+  "say": "where your treasure is, your heart will be. look at where your time went this week. today, give one hour to what matters most to you, gladly, not out of duty.",
+  "options": [
+   [
+    "I know what it is",
+    "then give it the hour. in joy."
+   ],
+   [
+    "I need to think",
+    "good. ask yourself: what would i sell everything for?"
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "The last hour.",
+  "line": "some work all day, some work one hour. payday is a surprise."
+ }
+}

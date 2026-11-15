@@ -1,0 +1,205 @@
+{
+ "id": "jew-worse",
+ "home": "pomegranate",
+ "title": "It could always be worse",
+ "told": "a Yiddish folk tale",
+ "clips": "art/sacred/jew-worse/clips/",
+ "voice": "art/sacred/jew-worse/voice/",
+ "guide": {
+  "name": "Natalie",
+  "photo": "art/guides/judaism.webp"
+ },
+ "hook": {
+  "v": "YW1-Crowded-Hut",
+  "say": "before the story, can i ask you something? when life feels too crowded, what do you do first?",
+  "options": [
+   [
+    "Kvetch to someone",
+    "good news: you already speak a little yiddish. listen."
+   ],
+   [
+    "Keep it to myself",
+    "then let this old story keep you company. listen."
+   ],
+   [
+    "Try to fix everything",
+    "then this rabbi’s advice will surprise you. listen."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "YW1-Crowded-Hut",
+   "vo": [
+    "V01"
+   ],
+   "line": "In a little village, a poor man lived in one tiny room with his wife, his mother and a houseful of children. It was loud. Very loud.",
+   "label": "a Yiddish folk tale"
+  },
+  {
+   "t": "shot",
+   "v": "YW2-The-Rabbi",
+   "vo": [
+    "V02"
+   ],
+   "line": "So he went to the rabbi to kvetch, which is Yiddish for complain, at length. “Rabbi, it’s so crowded. What do I do?”",
+   "label": "a Yiddish folk tale"
+  },
+  {
+   "t": "ask",
+   "v": "YW2-The-Rabbi",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "The rabbi strokes his beard and thinks. What odd advice do you think he gives?",
+   "o": [
+    "Bring your chickens into the house",
+    "Move the whole family into the barn",
+    "Invite your in-laws to come and stay"
+   ],
+   "a": 0,
+   "why": "Yes, really: the chickens. It’s an old Yiddish folktale, retold in a well-loved picture book, “It Could Always Be Worse.”"
+  },
+  {
+   "t": "shot",
+   "v": "YW3-The-Chickens",
+   "vo": [
+    "V03"
+   ],
+   "line": "“Do you have chickens?” asked the rabbi. “Bring them inside.” So the man did. Now it was louder, and full of feathers.",
+   "label": "a Yiddish folk tale"
+  },
+  {
+   "t": "shot",
+   "v": "YW4-Goat-And-Cow",
+   "vo": [
+    "V04"
+   ],
+   "line": "He schlepped back, dragging his feet, to kvetch again. “Bring in the goat,” said the rabbi. Then, “Bring in the cow.” Oy vey.",
+   "label": "a Yiddish folk tale"
+  },
+  {
+   "t": "ask",
+   "v": "YW4-Goat-And-Cow",
+   "eb": "why?",
+   "q": "The rabbi keeps making it worse. What do you think he’s up to?",
+   "o": [
+    "He’s testing whether the man will obey",
+    "He doesn’t really understand the problem",
+    "He wants the man to see his home differently"
+   ],
+   "a": 2,
+   "why": "He can’t make the house any bigger. He can change how it feels to come home."
+  },
+  {
+   "t": "shot",
+   "v": "YW5-All-Out",
+   "vo": [
+    "V05"
+   ],
+   "line": "At last the rabbi said, “Now take them all out.” Out went the chickens, the goat and the cow.",
+   "label": "a Yiddish folk tale"
+  },
+  {
+   "t": "shot",
+   "v": "YW6-Quiet-Supper",
+   "vo": [
+    "V06"
+   ],
+   "line": "That night the family ate supper in the same little room. It felt so quiet, so roomy. “Rabbi,” said the man, “it’s wonderful.”",
+   "label": "a Yiddish folk tale"
+  },
+  {
+   "t": "ask",
+   "v": "YW6-Quiet-Supper",
+   "eb": "you’re in it",
+   "q": "Your week went badly, and a friend shrugs, “It could always be worse.” In this story’s spirit, what are they saying?",
+   "o": [
+    "Look again at what you already have",
+    "Stop complaining; others have it harder",
+    "Brace yourself; things will get worse"
+   ],
+   "a": 0,
+   "why": "In the story it isn’t a scolding. It comes with a smile: not “your trouble doesn’t matter,” but “look again.”"
+  },
+  {
+   "t": "match",
+   "v": "YW6-Quiet-Supper",
+   "eb": "say it in yiddish",
+   "q": "Match each Yiddish word to the moment it fits.",
+   "pairs": [
+    [
+     "kvetch",
+     "“The bus was late again, and don’t get me started…”"
+    ],
+    [
+     "schlep",
+     "hauling three bags across town"
+    ],
+    [
+     "oy vey",
+     "the cake slides off the plate"
+    ]
+   ],
+   "why": "Yiddish was the everyday language of Ashkenazi Jews in central and eastern Europe, built mostly on medieval German, with Hebrew and Slavic words mixed in. English kept a few."
+  },
+  {
+   "t": "teach",
+   "v": "YW2-The-Rabbi",
+   "say": [
+    "here’s what i love. the rabbi never lectured. he listened, every single time, and found a way to make the man laugh at himself.",
+    "that’s a mensch: yiddish for a real human being, decent and kind. long before yiddish, the sage hillel taught: where no one is acting like a person should, try to be that person."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "YW6-Quiet-Supper",
+   "eb": "the hard one",
+   "q": "The rabbi made life worse on purpose. Would the trick work if he’d just said, “Be grateful for your room”?",
+   "o": [
+    "Yes: good advice is good advice",
+    "Probably not; he had to feel it",
+    "Yes, if the man trusted the rabbi"
+   ],
+   "a": 1,
+   "why": "Told to be grateful, the man would have nodded and gone home grumbling. A week with a cow in the kitchen, he felt it."
+  }
+ ],
+ "today": {
+  "v": "YW6-Quiet-Supper",
+  "say": "be a mensch in one small way today. an old jewish teaching says the wise don’t interrupt. when someone kvetches to you, listen all the way through, the way the rabbi did, before you offer any advice.",
+  "options": [
+   [
+    "I’ll listen today",
+    "that’s a mensch. the rabbi would be proud."
+   ],
+   [
+    "I’m usually the kvetcher",
+    "ha. then thank whoever listens to you. that counts too."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "The bread with no time to rise.",
+  "line": "slaves leave egypt in the middle of the night. what they carry becomes a meal for every spring after."
+ },
+ "card": {
+  "from": "a Yiddish folk tale",
+  "mins": 5,
+  "keep": "house",
+  "keepName": "The little house",
+  "keepWhy": "Same house. New eyes.",
+  "keepSvg": "<path d=\"M22 52L50 26l28 26v26H22z\" fill=\"#2a1b05\"/><rect x=\"44\" y=\"58\" width=\"12\" height=\"20\" rx=\"2\" fill=\"#f4f1e8\" opacity=\".5\"/><rect x=\"62\" y=\"28\" width=\"7\" height=\"14\" fill=\"#2a1b05\"/>",
+  "sources": [
+   "Traditional Jewish/Yiddish folk tale ‘It Could Always Be Worse’ (retold as a picture book by Margot Zemach, 1976)",
+   "Mishnah Avot 2:5 (Hillel: in a place where there are no men, strive to be a man)",
+   "Mishnah Avot 5:7 (the wise person does not interrupt another’s words)",
+   "Max Weinreich, History of the Yiddish Language (origins and components of Yiddish)",
+   "Uriel Weinreich, Modern English-Yiddish Yiddish-English Dictionary (kvetshn, shlepn, mentsh; oy vey iz mir)"
+  ],
+  "check": [
+   "Folk tale details vary by version (which animals, who lives in the house, a rabbi or a wise man); confirm the lesson’s version is a fair telling"
+  ]
+ }
+}

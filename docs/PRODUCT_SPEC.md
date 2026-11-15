@@ -1,5 +1,11 @@
 # Golden product contract
 
+**Scope (2026-11-10):** this contract covers the older Golden Vite prototype (`src/`). The vision now is in
+`docs/VISION-NOW.md`; the new app is `prototypes/greybox/hill-app.html`; build status is in `docs/HANDOFF.md`. Two
+changes since this was written: you walk one faith at a time (no "visiting door"; cross-faith exploring lives only in
+"my own religion"), and each lesson is a narrated film plus games (`docs/LESSON_STANDARD.md`), not the eight-beat
+script below.
+
 ## Source order
 
 1. `golden_v150.jsx` and `golden_web_v83.html` control visuals, layout, and
@@ -19,9 +25,9 @@
    account.
 2. A user can finish a lesson, see the earned word and carry line, return to the
    path, and retain progress after refreshing the app.
-3. A user can add one visiting door, switch between home and visit, and keep
+3. ~~A user can add one visiting door, switch between home and visit, and keep
    independent lesson positions while earning at most one showed-up day per
-   local date.
+   local date.~~ *Dropped: one faith at a time (`docs/VISION-NOW.md`).*
 4. Together, Today, Guide, profile/settings, plans, gift, review, and Why open
    without a runtime crash. The Guide falls back honestly when its server model
    is not configured.
@@ -36,7 +42,7 @@
 This local build is a product preview. Current celebrity portraits and welcomes,
 Keeper names, population counts, events, live reads, prices, gift delivery,
 notifications, and payments are supplied prototype content. They are not proof
-of signatures, review, live data, delivery, or connected services.
+of agreements, review, live data, delivery, or connected services.
 
 Only Keeper-approved scripted sessions may ship as production lessons. Designed
 and outlined sessions may appear on the path as coming content but must not be
@@ -47,7 +53,7 @@ before the app can claim the complete catalog described in the older brief.
 ## Release gates
 
 - Keeper approval attached to each shippable session.
-- Signed voice and image rights or approved house-voice replacements.
+- Voice and image rights in place for each voice and image used, or approved house-voice replacements.
 - Account/sync, payments, gifting, notifications, events, festivals, location,
   and live-count providers selected and tested.
 - Claims, pricing, privacy, terms, age handling, and refund language reviewed.

@@ -1,3 +1,5 @@
+Background only (written 2026-09-30). Where this disagrees with docs/VISION-NOW.md or docs/LESSON_STANDARD.md, those win.
+
 # Full lesson scripts: loading them without bloating the app
 
 *Status: wired (2026-09-30). The lesson screen waits up to 2.5 s for the day's script (`apps/app/src/session/script-load.ts`, `apps/app/src/lib/lessons.ts`), then plays it or the outline-built lesson. Tests: `packages/content/test/lesson-script.test.js` and `tests/features/lesson-script-wiring.test.mjs`. Not done: the Today prefetch (§4.6) and the draft label (§4.7).*

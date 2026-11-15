@@ -1,0 +1,198 @@
+{
+ "id": "bud-sal-trees",
+ "home": "lotus",
+ "title": "Under the sal trees",
+ "told": "from the Buddha’s last days",
+ "clips": "art/sacred/bud-sal-trees/clips/",
+ "voice": "art/sacred/bud-sal-trees/voice/",
+ "guide": {
+  "name": "Orlando",
+  "photo": "art/guides/buddhism.webp"
+ },
+ "hook": {
+  "v": "ST2-Blossoms-Fall",
+  "say": "before the story, can i ask you something? is there something good in your life right now that you wish could stay just like this?",
+  "options": [
+   [
+    "Yes, someone",
+    "hold them close. this one is gentle. listen."
+   ],
+   [
+    "A season of my life",
+    "then you’ll know what ananda felt. listen."
+   ],
+   [
+    "Not right now",
+    "then maybe this one says something hard will pass. listen."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "ST1-Twin-Trees",
+   "vo": [
+    "V01"
+   ],
+   "line": "The Buddha was eighty. In a grove of sal trees near Kusinara, he lay down between two trees. It would be his last night."
+  },
+  {
+   "t": "shot",
+   "v": "ST2-Blossoms-Fall",
+   "vo": [
+    "V02"
+   ],
+   "line": "The old texts say the trees burst into bloom out of season, and their flowers drifted down onto him."
+  },
+  {
+   "t": "shot",
+   "v": "ST3-Door-Post",
+   "vo": [
+    "V03"
+   ],
+   "line": "His friend Ananda slipped away, leaned on a door post, and wept. “My teacher, who was so kind to me, is leaving.”"
+  },
+  {
+   "t": "ask",
+   "v": "ST3-Door-Post",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "The Buddha sends for Ananda. What do you think he says?",
+   "o": [
+    "“Don’t cry. I’m not really leaving.”",
+    "“Haven’t I taught you? All dear things change.”",
+    "“Go and comfort the others for me.”"
+   ],
+   "a": 1,
+   "why": "He doesn’t deny the loss. He reminds Ananda of the oldest lesson, gently, at the hardest moment."
+  },
+  {
+   "t": "shot",
+   "v": "ST4-Comfort",
+   "vo": [
+    "V04"
+   ],
+   "line": "The Buddha called him. “Enough, Ananda. Haven’t I taught you? All that is dear to us must change. How could it be otherwise?”"
+  },
+  {
+   "t": "shot",
+   "v": "ST4-Comfort",
+   "vo": [
+    "V05"
+   ],
+   "line": "Then he praised Ananda’s long years of loving care. “Keep going,” he said, “and soon you too will be free.”"
+  },
+  {
+   "t": "ask",
+   "v": "ST4-Comfort",
+   "eb": "did you know?",
+   "q": "“Soon you too will be free,” the Buddha told Ananda. Tradition says Ananda got there at an odd moment. When?",
+   "o": [
+    "As he lay down, the night before the council",
+    "At the Buddha’s funeral fire",
+    "Years later, as he was dying"
+   ],
+   "a": 0,
+   "why": "He meditated all night, gave up, and lay down. Between lifting his feet and his head touching the pillow, the story goes, he woke up fully, in time for the first great council."
+  },
+  {
+   "t": "shot",
+   "v": "ST5-Last-Words",
+   "vo": [
+    "V06"
+   ],
+   "line": "Near the end, he spoke his last words: “All things that are made pass away. Strive on, with care.”"
+  },
+  {
+   "t": "ask",
+   "v": "ST5-Last-Words",
+   "eb": "why?",
+   "q": "His last words weren’t a blessing or a goodbye. They were an instruction: strive on, with care. Why end there?",
+   "o": [
+    "He wanted to name who would lead next",
+    "He was warning them about the road ahead",
+    "The work of waking up was theirs now"
+   ],
+   "a": 2,
+   "why": "He named no successor. The teaching would be their teacher, he told them, and the striving was theirs to do."
+  },
+  {
+   "t": "ask",
+   "v": "ST5-Last-Words",
+   "eb": "did you know?",
+   "q": "Buddhists don’t just call this night his death. They call it his parinirvana. What does that point to?",
+   "o": [
+    "A rebirth in one of the heavens",
+    "His final passing, with no rebirth",
+    "A long rest before he returns"
+   ],
+   "a": 1,
+   "why": "Pari means complete: he woke up at 35, and at 80 came the full release. Many Mahayana Buddhists mark it each February; Theravada Buddhists remember it at Vesak."
+  },
+  {
+   "t": "shot",
+   "v": "ST6-October-Leaf-Today",
+   "vo": [
+    "V07"
+   ],
+   "line": "Today, a leaf in October: green in spring, red and gold now, on the sidewalk next week. The leaf, the mood, the year.",
+   "label": "today"
+  },
+  {
+   "t": "teach",
+   "v": "ST2-Blossoms-Fall",
+   "say": [
+    "the first of buddhism’s three marks is anicca: not lasting. everyone knows things change. the buddha asked people to see it, in a breath, a sound, a mood, again and again, until it sinks in.",
+    "and it isn’t only sad news. if nothing changed, grief could never soften and a seed could never grow. the same change that takes the leaf in october brings the bud in april."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "ST6-October-Leaf-Today",
+   "eb": "the hard one",
+   "q": "Ananda heard: all things that are made pass away. Why might that be good news about his grief too?",
+   "o": [
+    "Sadness was a mistake he could drop",
+    "His grief would change, like everything",
+    "The Buddha might somehow come back"
+   ],
+   "a": 1,
+   "why": "His grief was made of causes and conditions too. It could soften and change, without him forgetting a thing."
+  }
+ ],
+ "today": {
+  "v": "ST6-October-Leaf-Today",
+  "say": "today, watch one thing pass on purpose: a breath, a sound fading, a cup of tea going cool. say quietly: “this passes.” the hard things, and the good ones.",
+  "options": [
+   [
+    "I’ll watch one today",
+    "that’s how it sinks in: small things, often."
+   ],
+   [
+    "I’ll try it later",
+    "later will pass too. this will wait for you."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "The question he didn’t answer",
+  "line": "a wanderer asks the buddha the biggest question of all. the answer surprises everyone."
+ },
+ "card": {
+  "from": "from the Buddha’s last days",
+  "mins": 5,
+  "keep": "blossom",
+  "keepName": "A sal blossom",
+  "keepWhy": "This passes. The hard and the good.",
+  "keepSvg": "<g fill=\"#2a1b05\"><circle cx=\"50\" cy=\"28\" r=\"13\"/><circle cx=\"71\" cy=\"43\" r=\"13\"/><circle cx=\"63\" cy=\"68\" r=\"13\"/><circle cx=\"37\" cy=\"68\" r=\"13\"/><circle cx=\"29\" cy=\"43\" r=\"13\"/></g><circle cx=\"50\" cy=\"51\" r=\"8\" fill=\"#f4f1e8\" opacity=\".5\"/>",
+  "sources": [
+   "Mahaparinibbana Sutta (Digha Nikaya 16): age eighty (2.25); the twin sal trees in the Mallas’ grove at Kusinara, lying on his right side, flowers blooming out of season and falling on him (5.1–5.2); Ananda leaning on the door post weeping, “my teacher, who was so kind to me” (5.13); “Enough, Ananda… all that is dear and pleasant must change… how could it be otherwise?” and praise of his loving service (5.14); last words, “vayadhamma sankhara, appamadena sampadetha” (6.7)",
+   "Dhammapada 277 (Max Müller 1881): “All created things perish”; Dhammapada 277–279, the three marks",
+   "Mahayana traditions have their own Mahaparinirvana Sutra, which sets different teachings on this night; the lesson follows the Pali account"
+  ],
+  "check": [
+   "“Strive on, with care” renders appamadena sampadetha; translations vary (diligence, heedfulness)."
+  ]
+ }
+}

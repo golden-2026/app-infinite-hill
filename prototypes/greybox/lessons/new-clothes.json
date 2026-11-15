@@ -1,0 +1,191 @@
+{
+ "id": "new-clothes",
+ "home": "marigold",
+ "title": "New clothes for the soul",
+ "told": "from the Bhagavad Gita",
+ "clips": "art/sacred/new-clothes/clips/",
+ "voice": "art/sacred/new-clothes/voice/",
+ "guide": {
+  "name": "Priyanka",
+  "photo": "art/guides/hinduism.webp"
+ },
+ "card": {
+  "from": "from the Bhagavad Gita",
+  "mins": 5,
+  "keep": "shirt",
+  "keepName": "A fresh shirt",
+  "keepWhy": "The real you isn’t worn out. Only the clothes are.",
+  "sources": [
+   "Bhagavad Gita 2.22 (as a person casts off worn-out clothes and puts on new ones, so the embodied self casts off worn-out bodies and enters new ones)",
+   "Bhagavad Gita 2.23-24 (weapons do not cut the self, fire does not burn it, water does not wet it, wind does not dry it)",
+   "Bhagavad Gita, chapter 2 setting: Arjuna’s grief at the thought of losing people he loves in battle"
+  ],
+  "check": [
+   "The verse is about death and rebirth; the lesson and film also apply it to habits and labels (“old outfits”). Confirm this gentle application is acceptable."
+  ]
+ },
+ "hook": {
+  "v": "NC1-A-Picture",
+  "say": "before the story, can i ask you something? do you ever feel worn out, like an old version of yourself? tired, stuck, same old you.",
+  "options": [
+   [
+    "Yes, lately",
+    "then this picture is for you. listen."
+   ],
+   [
+    "Sometimes",
+    "then keep this one for those days. listen."
+   ],
+   [
+    "Not really",
+    "good. listen anyway, it’s a lovely one."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "NC1-A-Picture",
+   "vo": [
+    "V01"
+   ],
+   "line": "In the Gita, Krishna gives Arjuna a simple picture."
+  },
+  {
+   "t": "ask",
+   "v": "NC2-Old-Clothes",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "Krishna’s picture is changing clothes. What do you guess he says about the old ones?",
+   "o": [
+    "They’re set aside once they’re worn out",
+    "They’re passed on to someone younger",
+    "They’re burned, so nothing is left"
+   ],
+   "a": 0,
+   "why": "Gita 2.22. Krishna’s word is jirnani: worn out, old with use. You don’t mourn a shirt that has done its work; you change it."
+  },
+  {
+   "t": "shot",
+   "v": "NC2-Old-Clothes",
+   "vo": [
+    "V02"
+   ],
+   "line": "Just as a person sets aside worn-out clothes, and puts on new ones,"
+  },
+  {
+   "t": "ask",
+   "v": "NC2-Old-Clothes",
+   "eb": "did you know?",
+   "q": "Who is Krishna to Arjuna at this moment?",
+   "o": [
+    "His older brother, a prince",
+    "His father’s chief priest",
+    "His charioteer and friend"
+   ],
+   "a": 2,
+   "why": "Krishna is driving Arjuna’s chariot, and is also his cousin. The whole Gita is a talk between two armies: the friend at the reins and the warrior who can’t go on."
+  },
+  {
+   "t": "shot",
+   "v": "NC3-New-Clothes",
+   "vo": [
+    "V03"
+   ],
+   "line": "so the soul leaves a worn-out body behind, and takes on a new one."
+  },
+  {
+   "t": "ask",
+   "v": "NC3-New-Clothes",
+   "eb": "why?",
+   "q": "Krishna says this to Arjuna, who is grieving the people he might lose. Why would this picture comfort him?",
+   "o": [
+    "It says death doesn’t really happen",
+    "It says the true self outlasts the body",
+    "It says grief is a weakness to hide"
+   ],
+   "a": 1,
+   "why": "Krishna doesn’t say bodies won’t die. He says the one wearing them isn’t destroyed (2.20). Many Hindus hear this verse read at funerals."
+  },
+  {
+   "t": "shot",
+   "v": "NC4-Atman",
+   "vo": [
+    "V04"
+   ],
+   "line": "In Hindu thought, the real you, the atman, is never worn out, never damaged, never old.",
+   "label": "atman"
+  },
+  {
+   "t": "shot",
+   "v": "NC5-Changes-Clothes",
+   "vo": [
+    "V05"
+   ],
+   "line": "It just changes clothes.",
+   "label": "atman"
+  },
+  {
+   "t": "ask",
+   "v": "NC5-Changes-Clothes",
+   "eb": "did you know?",
+   "q": "Atman is often translated “soul.” Many scholars link the word to something older. What?",
+   "o": [
+    "Breath",
+    "Light",
+    "Fire"
+   ],
+   "a": 0,
+   "why": "Many link atman to an old word for breath, like German atmen. In use it simply means self: the real you."
+  },
+  {
+   "t": "shot",
+   "v": "NC6-Today",
+   "vo": [
+    "V06"
+   ],
+   "line": "The real you isn’t worn out. Only the clothes are.",
+   "label": "today"
+  },
+  {
+   "t": "teach",
+   "v": "NC4-Atman",
+   "say": [
+    "here’s what i love. in krishna’s picture, nothing about the real you gets old. only the clothes do.",
+    "in hindu thought the atman, the true self, can’t be cut, burned or worn out. bodies, moods and labels change. the one wearing them stays whole."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "NC5-Changes-Clothes",
+   "eb": "the hard one",
+   "q": "Krishna also says no weapon can cut the atman, and no fire can burn it. So what can a hard year, or an old label, really touch?",
+   "o": [
+    "Only the clothes, never the one wearing them",
+    "The atman, a little at a time",
+    "Nothing at all, so nothing ever changes"
+   ],
+   "a": 0,
+   "why": "Hard years wear out clothes. They can’t wear out you. That’s why a fresh start is always possible."
+  }
+ ],
+ "today": {
+  "v": "NC6-Today",
+  "say": "name one “old outfit” you’re ready to take off: a habit, a label, a story about yourself. write it down, then set it aside, like a worn-out shirt.",
+  "options": [
+   [
+    "I know my old outfit",
+    "then set it aside today. the real you is fine."
+   ],
+   [
+    "It feels like who I am",
+    "worn long enough, clothes feel like skin. they still aren’t you."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "Lamps for the homecoming.",
+  "line": "fourteen years away. a dark night with no moon. and a whole city that wants to welcome them back."
+ }
+}

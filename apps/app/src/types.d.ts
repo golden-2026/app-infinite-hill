@@ -99,8 +99,11 @@ declare module "@ih/content/lesson-script" {
 }
 declare module "@ih/brand" {
   export const color: Record<string, any>;
-  export const font: { display: Record<number, string>; text: Record<number, string>; mark: Record<number, string> };
-  export const type: { eyebrow(s?: number): any; caption(s?: number): any; title(): any; nav(): any; h1(s?: number): any; body(s?: number): any; serif(s?: number, w?: number): any; bubble(): any; choice(): any };
+  export const font: { display: Record<number, string>; text: Record<number, string>; mark: Record<number, string>; head: string };
+  export const type: { eyebrow(s?: number): any; caption(s?: number): any; title(): any; nav(): any; h1(s?: number): any; shout(s?: number): any; body(s?: number): any; serif(s?: number, w?: number): any; bubble(): any; choice(): any };
+  export const accent: { lime: string; pink: string; saffron: string; green: string; blue: string; violet: string };
+  export const doorColor: Record<string, string>;
+  export function doorAccent(door: string | null | undefined): string;
   export const space: Record<string, number>;
   export const radius: Record<string, number>;
   export const border: { hair: number; control: number; strong: number };

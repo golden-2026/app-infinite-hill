@@ -1,3 +1,5 @@
+Background only (written September 2026). Where this disagrees with docs/VISION-NOW.md, that page wins.
+
 # Production acceptance matrix
 
 This matrix prevents a screen that merely looks complete from being reported as a connected customer feature. It applies to the exact build under review. Source inspection and local tests can establish implementation behavior, but they do not prove production configuration, a real user record, provider acceptance, or delivery.

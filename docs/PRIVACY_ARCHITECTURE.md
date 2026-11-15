@@ -1,3 +1,5 @@
+Background only (written 2026-10-02). Where this disagrees with docs/VISION-NOW.md, that page wins.
+
 # Privacy architecture review
 
 **Status: private preview only; not a legal opinion or release approval.** This review describes the repository as inspected on 2026-09-12. It is an engineering assessment of the current app and APIs. Legal counsel must review the product, audience, vendors, notices, and applicable jurisdictions before production.

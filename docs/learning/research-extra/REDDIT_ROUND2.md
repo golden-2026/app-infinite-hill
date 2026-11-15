@@ -1,3 +1,5 @@
+Background only (written 2026-10-06). Where this disagrees with docs/VISION-NOW.md or docs/LESSON_STANDARD.md, those win.
+
 # What Reddit says now: 40 recent threads, round 2
 
 Companion to `REDDIT_REPLIES.md` (45 older "evergreen" threads) and `REDDIT_TRENDING.md` (what rose to the top this

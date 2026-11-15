@@ -1,0 +1,228 @@
+{
+ "id": "chr-well",
+ "home": "olive",
+ "title": "The woman at the well",
+ "told": "a story about Jesus",
+ "clips": "art/sacred/chr-well/clips/",
+ "voice": "art/sacred/chr-well/voice/",
+ "guide": {
+  "name": "Denzel",
+  "photo": "art/guides/christianity.webp"
+ },
+ "card": {
+  "from": "a story about Jesus",
+  "mins": 5,
+  "keep": "jar",
+  "keepName": "The water jar",
+  "keepWhy": "She left it behind. She’d found living water.",
+  "keepSvg": "<path d=\"M38 20h24v6l-4 4c10 5 16 15 16 27 0 14-11 25-24 25S26 71 26 57c0-12 6-22 16-27l-4-4z\" fill=\"#2a1b05\"/><path d=\"M70 40c8 0 10 10 4 16\" stroke=\"#2a1b05\" stroke-width=\"5\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M30 88h40\" stroke=\"#2a1b05\" stroke-width=\"4\" stroke-linecap=\"round\"/>",
+  "sources": [
+   "John 4:4-6 (Jesus passes through Samaria, comes to Sychar near Jacob’s well; tired from the journey, sits by the well; “about the sixth hour,” i.e. noon)",
+   "John 4:7-8 (a woman of Samaria comes to draw water; “Give me a drink”; the disciples had gone to buy food)",
+   "John 4:9 (“How is it that you, being a Jew, ask for a drink from me, a Samaritan woman?” For Jews have no dealings with Samaritans)",
+   "John 4:10 (“If you knew… who it is who says to you, ‘Give me a drink,’ you would have asked him, and he would have given you living water”)",
+   "John 4:11 (“Sir, you have nothing to draw with, and the well is deep”)",
+   "John 4:13-14 (“whoever drinks of the water that I will give him will never thirst again”)",
+   "John 4:16-18 (five husbands; the man she has now is not her husband)",
+   "John 4:25-26 (the Messiah; “I am he, the one who speaks to you”)",
+   "John 4:27 (the disciples marvel that he was speaking with a woman)",
+   "John 4:28-30 (she left her water pot, went into the city: “Come, see a man who told me everything that I did”)",
+   "John 4:39-42 (many Samaritans of that city believed)"
+  ],
+  "check": [
+   "Shot 2 says many readers think she came at noon to avoid others. This is a common reading, not stated in the text; some scholars dispute it. Labeled “one popular reading.” Confirm.",
+   "The text doesn’t say why she had five husbands (widowhood or divorce are possible). Captions state the fact only, without blame. Confirm tone."
+  ]
+ },
+ "hook": {
+  "v": "WL2-Woman-At-Noon",
+  "say": "before the story, can i ask you something? ever felt people judging you before they really know you?",
+  "options": [
+   [
+    "Yes, often",
+    "i’m sorry. that’s a lonely feeling. this story is for you."
+   ],
+   [
+    "I’ve judged someone like that",
+    "most of us have. keep them in mind while you listen."
+   ],
+   [
+    "Not really",
+    "good. someone near you might need this one."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "WL1-Jacobs-Well",
+   "vo": [
+    "V01"
+   ],
+   "line": "Jesus was tired from the road. At noon he sat down by Jacob’s well, in Samaria, where Jews and Samaritans kept apart.",
+   "label": "John 4:6"
+  },
+  {
+   "t": "shot",
+   "v": "WL2-Woman-At-Noon",
+   "vo": [
+    "V02"
+   ],
+   "line": "A woman came to draw water, alone, in the heat of the day. Many readers think she came at noon so she wouldn’t meet anyone.",
+   "label": "one popular reading"
+  },
+  {
+   "t": "shot",
+   "v": "WL3-The-Ask",
+   "vo": [
+    "V03"
+   ],
+   "line": "Jesus said to her, “Will you give me a drink?” She was startled. “You’re a Jew, and I’m a Samaritan woman. How can you ask me?”",
+   "label": "John 4:7-9"
+  },
+  {
+   "t": "ask",
+   "v": "WL3-The-Ask",
+   "eb": "why?",
+   "q": "Jews and Samaritans kept apart. What’s the other line his question crosses?",
+   "o": [
+    "A teacher, alone with a woman",
+    "A guest, drawing from a town’s well",
+    "A traveler, resting at noon"
+   ],
+   "a": 0,
+   "why": "When his friends came back, John says, they were amazed he was talking with a woman. One small question crossed two lines at once."
+  },
+  {
+   "t": "ask",
+   "v": "WL3-The-Ask",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "He asked her for water. What do you think he offers her?",
+   "o": [
+    "A drink that ends thirst for good",
+    "Money to pay for the water",
+    "A blessing on her family"
+   ],
+   "a": 0,
+   "why": "He asked her for a drink, and then offered her one: “living water.” Whoever drinks it, he says, will never be thirsty again (John 4:14)."
+  },
+  {
+   "t": "shot",
+   "v": "WL4-Living-Water",
+   "vo": [
+    "V04"
+   ],
+   "line": "“If you knew who was asking you, you would have asked him, and he would have given you living water.”",
+   "label": "John 4:10"
+  },
+  {
+   "t": "ask",
+   "v": "WL4-Living-Water",
+   "eb": "did you know?",
+   "q": "“Living water” had an everyday meaning she would have heard first. What?",
+   "o": [
+    "Water blessed by a priest",
+    "Rainwater caught in a jar",
+    "Fresh running water, from a spring"
+   ],
+   "a": 2,
+   "why": "“Living water” meant fresh, flowing water, not still water from a well. She hears plumbing (“you have no bucket”); he means the life God gives."
+  },
+  {
+   "t": "shot",
+   "v": "WL4-Living-Water",
+   "vo": [
+    "V05"
+   ],
+   "line": "He knew her whole story: five husbands, and now a man who wasn’t her husband. He didn’t shame her. He kept talking with her.",
+   "label": "John 4:16-18"
+  },
+  {
+   "t": "shot",
+   "v": "WL4-Living-Water",
+   "vo": [
+    "V06"
+   ],
+   "line": "When she spoke of the Messiah who was coming, Jesus said, “I am he, the one speaking to you.”",
+   "label": "John 4:25-26"
+  },
+  {
+   "t": "ask",
+   "v": "WL4-Living-Water",
+   "blur": true,
+   "predict": true,
+   "eb": "what happens next?",
+   "q": "She came when no one else was there. What does she do now?",
+   "o": [
+    "Goes home quietly and tells no one",
+    "Goes to find the man she lives with",
+    "Runs into town and tells everyone"
+   ],
+   "a": 2,
+   "why": "The one who came to be alone runs straight to the town."
+  },
+  {
+   "t": "shot",
+   "v": "WL5-Jar-Left",
+   "vo": [
+    "V07"
+   ],
+   "line": "She left her water jar, ran into town and told everyone, “Come, see a man who told me everything I ever did!” Many came, and believed.",
+   "label": "John 4:28-29, 39"
+  },
+  {
+   "t": "ask",
+   "v": "WL5-Jar-Left",
+   "eb": "did you know?",
+   "q": "Eastern Christians gave the woman at the well a name and call her a saint. What is it?",
+   "o": [
+    "Saint Sarah, “the princess”",
+    "Saint Photini, “the one of light”",
+    "Saint Tabitha, “the gazelle”"
+   ],
+   "a": 1,
+   "why": "In Orthodox tradition she is Saint Photini, from the Greek for light, honored as “equal to the apostles” for spreading the news."
+  },
+  {
+   "t": "teach",
+   "v": "WL4-Living-Water",
+   "say": [
+    "here’s what i love. jesus knew everything about her, and he still sat with her and talked.",
+    "christians remember her as one of the first to spread the good news: the one who hid from the town became the one who told it."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "WL5-Jar-Left",
+   "eb": "the hard one",
+   "q": "She came to the well for water, and went home without her jar. What does the forgotten jar tell you?",
+   "o": [
+    "Jesus had asked her to leave it for him",
+    "She’d found something she wanted more than water",
+    "The jar was too heavy to run with"
+   ],
+   "a": 1,
+   "why": "She came for ordinary water and found “living water.” The jar didn’t matter anymore."
+  }
+ ],
+ "today": {
+  "v": "WL6-Today",
+  "say": "jesus crossed a line no one crossed, with one small question. christians call this welcoming the stranger. today, notice who’s alone or on the edge, at work, at school, in your family. sit with them, or start a simple conversation.",
+  "options": [
+   [
+    "Someone came to mind",
+    "then you know where to start. one small question is enough."
+   ],
+   [
+    "I’ll keep an eye out",
+    "good. that’s how it started at the well. he noticed her."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "Breakfast on the beach.",
+  "line": "peter let his friend down three times. then came breakfast."
+ }
+}

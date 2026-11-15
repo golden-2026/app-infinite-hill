@@ -1,0 +1,216 @@
+{
+ "id": "cat-bread",
+ "home": "angelus",
+ "title": "Stay with us",
+ "told": "from Luke’s Gospel",
+ "clips": "art/sacred/cat-bread/clips/",
+ "voice": "art/sacred/cat-bread/voice/",
+ "guide": {
+  "name": "Nicole",
+  "photo": "art/guides/catholic.webp"
+ },
+ "card": {
+  "from": "from Luke’s Gospel",
+  "mins": 5,
+  "keep": "bread",
+  "keepName": "The bread broken at Emmaus",
+  "keepWhy": "They knew him in the breaking of the bread.",
+  "keepSvg": "<path d=\"M48 30c-14 0-26 10-26 22s12 20 26 20l-4-10 6-8-6-8 6-8z\" fill=\"#2a1b05\"/><path d=\"M56 30c12 1 22 11 22 22s-10 19-22 20l-4-10 6-8-6-8 6-8z\" fill=\"#2a1b05\"/>",
+  "sources": [
+   "Luke 24:13-35 (the road to Emmaus: two disciples, one named Cleopas, walk from Jerusalem; the risen Jesus joins them unrecognized; he opens the scriptures; “Stay with us, because it is towards evening”; at table he takes bread, blesses, breaks and gives it; their eyes are opened; he vanishes; “Was not our heart burning within us?”; they return to Jerusalem that same hour; he was known to them in the breaking of bread).",
+   "Luke 22:19 (at the Last Supper: took bread, gave thanks, broke it: “This is my body, which is given for you”).",
+   "Eucharist from Greek eucharistia, thanksgiving.",
+   "Catechism of the Catholic Church 1373-1381 (the real presence; transubstantiation; the tabernacle), 1418 (genuflection), and the sanctuary lamp (General Instruction of the Roman Missal 316; Code of Canon Law 940).",
+   "Comparative note: Orthodox and Lutheran churches also confess a real presence; many other Protestant traditions understand the Lord’s Supper as a memorial and sign."
+  ],
+  "check": [
+   "Fill line follows the RSV (“Stay with us, for it is toward evening”); Douay-Rheims reads “because it is towards evening.” Confirm the preferred translation.",
+   "Comparative line on Orthodox, Lutheran and other Protestant views of the Eucharist is simplified; confirm wording."
+  ]
+ },
+ "hook": {
+  "v": "EM3-Stay-With-Us",
+  "say": "before the story, can i ask you something? has someone ever just stayed with you when things were bad, without trying to fix anything?",
+  "options": [
+   [
+    "Yes, I remember it",
+    "hold onto that face. today’s story is about someone who stayed."
+   ],
+   [
+    "I wish someone had",
+    "i’m sorry. i hope this story feels like company. listen."
+   ],
+   [
+    "I’ve been that person",
+    "then you already know what this story is about. listen."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "EM1-The-Road",
+   "vo": [
+    "V01"
+   ],
+   "line": "On the third day after Jesus died, two of his followers walked away from Jerusalem, toward a village called Emmaus. Their hope was gone."
+  },
+  {
+   "t": "shot",
+   "v": "EM2-The-Stranger",
+   "vo": [
+    "V02"
+   ],
+   "line": "A stranger fell into step beside them and asked what they were talking about. They stopped, their faces sad."
+  },
+  {
+   "t": "ask",
+   "v": "EM2-The-Stranger",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "Who do you think the stranger is?",
+   "o": [
+    "A Roman soldier keeping watch",
+    "Jesus, risen, and they don’t know him",
+    "Another grieving follower"
+   ],
+   "a": 1,
+   "why": "It’s Jesus. They’ve walked miles with him and haven’t recognized him."
+  },
+  {
+   "t": "shot",
+   "v": "EM2-The-Stranger",
+   "vo": [
+    "V03"
+   ],
+   "line": "It was Jesus, risen, but they didn’t know him. Mile after mile, he opened the scriptures to them."
+  },
+  {
+   "t": "shot",
+   "v": "EM3-Stay-With-Us",
+   "vo": [
+    "V04"
+   ],
+   "line": "At the village he made as if to walk on. They begged him: “Stay with us, for it is toward evening.” So he stayed."
+  },
+  {
+   "t": "ask",
+   "v": "EM3-Stay-With-Us",
+   "eb": "why?",
+   "q": "At the village he made as if to walk on. Why do many readers think he waited to be asked?",
+   "o": [
+    "He had to reach Jerusalem by nightfall",
+    "He was testing how brave they were",
+    "He doesn’t push in; he waits to be invited"
+   ],
+   "a": 2,
+   "why": "Many readers see a God who waits at the door. Their plea, “abide with us,” later inspired the hymn “Abide with Me.”"
+  },
+  {
+   "t": "ask",
+   "v": "EM4-The-Bread-Broken",
+   "blur": true,
+   "predict": true,
+   "eb": "what happens next?",
+   "q": "At supper, the guest does something, and suddenly they know him. What is it?",
+   "o": [
+    "He shows them his wounds",
+    "He calls them each by name",
+    "He blesses and breaks the bread"
+   ],
+   "a": 2,
+   "why": "The bread. Four small actions: he took it, blessed it, broke it, gave it."
+  },
+  {
+   "t": "shot",
+   "v": "EM4-The-Bread-Broken",
+   "vo": [
+    "V05"
+   ],
+   "line": "At the table he took the bread, blessed it, broke it and gave it to them. And their eyes were opened."
+  },
+  {
+   "t": "shot",
+   "v": "EM5-The-Empty-Seat",
+   "vo": [
+    "V06"
+   ],
+   "line": "They knew him, and he vanished from their sight. “Weren’t our hearts burning as he talked with us?” They hurried back to Jerusalem that same hour."
+  },
+  {
+   "t": "ask",
+   "v": "EM5-The-Empty-Seat",
+   "eb": "why?",
+   "q": "Luke tells this moment with the same four actions he used for Jesus’s last supper. Why does that matter?",
+   "o": [
+    "It shows this was just an ordinary meal",
+    "It ties this table to the Last Supper",
+    "It proves these two were at the Last Supper"
+   ],
+   "a": 1,
+   "why": "At his last supper he took bread, gave thanks, broke it and said, “This is my body.” Gave thanks, in Greek, is eucharistia. That’s where the word Eucharist comes from."
+  },
+  {
+   "t": "shot",
+   "v": "EM6-The-Red-Lamp",
+   "vo": [
+    "V07"
+   ],
+   "line": "Today, in Catholic churches, a lamp, usually red, burns beside the tabernacle, the small box where the blessed bread is kept. Catholics believe he is there.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "EM6-The-Red-Lamp",
+   "eb": "did you know?",
+   "q": "Why did churches start keeping blessed bread in a tabernacle after Mass at all?",
+   "o": [
+    "To bring Communion to the sick and dying",
+    "So the next Mass could use the same bread",
+    "To show visitors what Mass bread looks like"
+   ],
+   "a": 0,
+   "why": "The first reason was the sick: no one dying should go without. Over time people also came to pray before it, and the lamp says he’s there."
+  },
+  {
+   "t": "teach",
+   "v": "EM4-The-Bread-Broken",
+   "say": [
+    "here’s what catholics believe. at every mass, when the priest says jesus’s words, “this is my body,” the bread and wine truly become his body and blood. they still look and taste like bread and wine. underneath, it’s him. the church calls it the real presence.",
+    "christians differ here. orthodox christians and lutherans also speak of a real presence; many other protestants see the meal as a memorial. for catholics, emmaus is the promise: he stayed."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "EM5-The-Empty-Seat",
+   "eb": "the hard one",
+   "q": "They walked for hours beside him and didn’t know him, then knew him at the table. What were Luke’s first readers, who never met Jesus, meant to take from that?",
+   "o": [
+    "He can still be known in the breaking of the bread",
+    "Only people who met him in person could know him",
+    "Strangers are never who they seem"
+   ],
+   "a": 0,
+   "why": "Luke ends the story with them telling how they knew him “in the breaking of the bread.” For Catholics, that happens at every Mass."
+  }
+ ],
+ "today": {
+  "v": "EM6-The-Red-Lamp",
+  "say": "if you pass a catholic church this week, you could step in for one minute. find the red lamp, and just sit. you don’t have to pray. you can just notice who catholics believe stayed.",
+  "options": [
+   [
+    "I’ll look for one",
+    "one minute is plenty. the lamp will be on."
+   ],
+   [
+    "Not this week, but I’d like to",
+    "that counts. the door will still be open."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "The priest who listened.",
+  "line": "a young priest who nearly failed his studies gets sent to a tiny village. soon people are lining up all night at his door."
+ }
+}

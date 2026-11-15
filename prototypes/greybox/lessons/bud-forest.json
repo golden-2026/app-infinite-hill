@@ -1,0 +1,192 @@
+{
+ "id": "bud-forest",
+ "home": "lotus",
+ "title": "Wishing well, even on them",
+ "told": "a story from the Buddhist commentaries",
+ "clips": "art/sacred/bud-forest/clips/",
+ "voice": "art/sacred/bud-forest/voice/",
+ "guide": {
+  "name": "Orlando",
+  "photo": "art/guides/buddhism.webp"
+ },
+ "hook": {
+  "v": "MFT6-Coworker-Today",
+  "say": "yesterday i left you with an open question. today i have a new one. is there someone in your life right now who is just hard to like?",
+  "options": [
+   [
+    "Yes, a coworker",
+    "they come with the job, don’t they? listen."
+   ],
+   [
+    "Yes, someone close",
+    "that’s the hardest kind. listen gently."
+   ],
+   [
+    "Not really",
+    "then you’re lucky. keep this one for a bad week."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "MFT1-Forest-Retreat",
+   "vo": [
+    "V01"
+   ],
+   "line": "Long ago, a group of monks went deep into a forest to spend the rainy season meditating at the foot of its great trees."
+  },
+  {
+   "t": "shot",
+   "v": "MFT2-Spirits-Night",
+   "vo": [
+    "V02"
+   ],
+   "line": "But the tree spirits who lived there didn’t want them. At night they sent frightening shapes, strange sounds and foul smells to drive the monks away."
+  },
+  {
+   "t": "ask",
+   "v": "MFT2-Spirits-Night",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "The frightened monks run back to the Buddha. What do you think he tells them?",
+   "o": [
+    "“Find another forest, far from them.”",
+    "“Go back to that very same forest.”",
+    "“Stay here with me until the rains end.”"
+   ],
+   "a": 1,
+   "why": "Back to the very same trees, the commentary says. Same forest, same spirits, but this time the monks would bring something with them."
+  },
+  {
+   "t": "shot",
+   "v": "MFT3-Back-To-Buddha",
+   "vo": [
+    "V03"
+   ],
+   "line": "Shaking, the monks told the Buddha everything. “Go back to the same forest,” he said. “This time, take protection with you.”"
+  },
+  {
+   "t": "shot",
+   "v": "MFT4-The-Teaching",
+   "vo": [
+    "V04"
+   ],
+   "line": "The protection was a teaching on metta, friendliness. Wish every being well, he said, the way a mother guards her only child."
+  },
+  {
+   "t": "ask",
+   "v": "MFT4-The-Teaching",
+   "eb": "why?",
+   "q": "Why send them back to the spirits who scared them, instead of somewhere safer?",
+   "o": [
+    "The spirits were never really there",
+    "He wanted to test how brave they were",
+    "Their fear would follow them anywhere"
+   ],
+   "a": 2,
+   "why": "A new forest would have new shadows. Running moves your body; it doesn’t move your fear."
+  },
+  {
+   "t": "shot",
+   "v": "MFT5-Spirits-Soften",
+   "vo": [
+    "V05"
+   ],
+   "line": "The monks walked back chanting it, wishing even the spirits well. The spirits felt it. They softened, and began to watch over the monks instead."
+  },
+  {
+   "t": "ask",
+   "v": "MFT5-Spirits-Soften",
+   "eb": "why?",
+   "q": "The teaching says to love every being the way a mother protects her only child. Why that picture?",
+   "o": [
+    "Because the Buddha’s own mother died young",
+    "It’s the most selfless love people know",
+    "Because the monks were young, like children"
+   ],
+   "a": 1,
+   "why": "A mother would give her life for her only child. The Metta Sutta asks for that same care, stretched without limit to every being, even the ones who scared you."
+  },
+  {
+   "t": "ask",
+   "v": "MFT5-Spirits-Soften",
+   "eb": "did you know?",
+   "q": "Buddhist teachers warn that metta has a “near enemy”: something that looks like it but isn’t. What is it?",
+   "o": [
+    "Clingy affection that wants something back",
+    "Plain dislike you try to hide",
+    "Being too shy to say how you feel"
+   ],
+   "a": 0,
+   "why": "In the Visuddhimagga, metta’s far enemy is ill will, and its near enemy is selfish attachment, which can pass for love. Metta wishes well and asks nothing back."
+  },
+  {
+   "t": "shot",
+   "v": "MFT6-Coworker-Today",
+   "vo": [
+    "V06"
+   ],
+   "line": "Today, the coworker who replies all. Metta doesn’t ask you to like them, or to agree. Just: may you be at ease.",
+   "label": "today"
+  },
+  {
+   "t": "teach",
+   "v": "MFT6-Coworker-Today",
+   "say": [
+    "metta comes from mitta, a friend. it’s friendliness: the plain, warm wish for someone’s good, pointed at anyone at all. the buddha’s own verses say hatred never ends by hatred, only by its opposite. an old rule, he called it.",
+    "theravada monks still chant this teaching for protection, just as the forest monks did. every school knows the same word in maitreya, metteyya in pali: the friendly one, the buddha still to come."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "MFT6-Coworker-Today",
+   "eb": "the hard one",
+   "q": "The spirits changed only after the monks did. So what does metta work on first?",
+   "o": [
+    "The people who frighten you",
+    "Changing how others treat you",
+    "Your own heart first, then others"
+   ],
+   "a": 2,
+   "why": "It starts at home. The traditional order of practice even begins with yourself: may i be at ease."
+  }
+ ],
+ "today": {
+  "v": "MFT6-Coworker-Today",
+  "say": "today, pick one person who is hard to like. three times, on an out-breath, think: may you be at ease. you don’t have to feel warm. just send it.",
+  "options": [
+   [
+    "I’ll try it today",
+    "three breaths. that’s metta."
+   ],
+   [
+    "Someone easier first",
+    "that’s the old way too: start with yourself, then someone easy."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "The monk nobody would touch",
+  "line": "a sick monk lies alone, until the buddha arrives with a bowl of water."
+ },
+ "card": {
+  "from": "a story from the Buddhist commentaries",
+  "mins": 5,
+  "keep": "leaf",
+  "keepName": "A leaf from the forest",
+  "keepWhy": "Wish them well. Even them.",
+  "keepSvg": "<path d=\"M50 14C26 30 22 62 50 86C78 62 74 30 50 14z\" fill=\"#2a1b05\"/><path d=\"M50 26V84\" stroke=\"#f4f1e8\" stroke-width=\"3\" opacity=\".5\"/>",
+  "sources": [
+   "Karaniya Metta Sutta (Sutta Nipata 1.8; Khuddakapatha 9): the mother protecting her only child; a boundless heart toward all beings",
+   "Paramatthajotika (commentary on the Sutta Nipata and Khuddakapatha): the origin story of the monks, the forest spirits who frightened them, and the Buddha sending them back with this sutta",
+   "Dhammapada 5: hatred does not cease by hatred, but by love; an old rule",
+   "Maitreya (Pali Metteyya), the future buddha, named from maitri/metta"
+  ],
+  "check": [
+   "The commentary gives a number of monks (traditionally five hundred) and a forest near the Himalayas; both are left out here.",
+   "The spirits’ reason (they could not stay in their trees above the monks) is left out; the shapes, sounds and smells are paraphrased."
+  ]
+ }
+}

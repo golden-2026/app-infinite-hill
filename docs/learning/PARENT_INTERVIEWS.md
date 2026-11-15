@@ -1,3 +1,5 @@
+Background only (written 2026-10-04). Where this disagrees with docs/VISION-NOW.md or docs/LESSON_STANDARD.md, those win.
+
 # Parent interviews: day one test (5 parents, ~20 minutes each)
 
 Who: Hindu parents with kids about 5–12, ideally from Panditji's community and friends of friends. At least one who

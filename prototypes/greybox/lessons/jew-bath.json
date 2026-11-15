@@ -1,0 +1,201 @@
+{
+ "id": "jew-bath",
+ "home": "pomegranate",
+ "title": "Hillel goes to the bathhouse",
+ "told": "a teaching of the rabbis",
+ "clips": "art/sacred/jew-bath/clips/",
+ "voice": "art/sacred/jew-bath/voice/",
+ "guide": {
+  "name": "Natalie",
+  "photo": "art/guides/judaism.webp"
+ },
+ "hook": {
+  "v": "JHB1-Leaving-Class",
+  "say": "before the story, can i ask you something? do you think taking care of your body can be holy?",
+  "options": [
+   [
+    "Yes, I do",
+    "then hillel would agree with you. listen."
+   ],
+   [
+    "It feels more like a chore",
+    "then this story might change that. listen."
+   ],
+   [
+    "I never thought of it that way",
+    "neither had hillel’s students. listen."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "JHB1-Leaving-Class",
+   "vo": [
+    "V01"
+   ],
+   "line": "You met the great teacher Hillel before. One day, as his class ended, he set off walking, and his students walked with him."
+  },
+  {
+   "t": "shot",
+   "v": "JHB2-Where-To",
+   "vo": [
+    "V02"
+   ],
+   "line": "“Rabbi, where are you going?” “To do a mitzvah,” he said, a holy deed. “Which one?” they asked."
+  },
+  {
+   "t": "ask",
+   "v": "JHB2-Where-To",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "He’s off to the bathhouse, and calls it a holy deed. What reason do you think he gives?",
+   "o": [
+    "Clean hands are needed for prayer",
+    "Even statues of kings get washed",
+    "A healthy body can study longer"
+   ],
+   "a": 1,
+   "why": "Kings’ statues get scrubbed and honored; how much more a person, made in God’s image. The story is in Leviticus Rabbah."
+  },
+  {
+   "t": "shot",
+   "v": "JHB3-Bathhouse",
+   "vo": [
+    "V03"
+   ],
+   "line": "“To bathe in the bathhouse,” said Hillel. His students stared. “That’s a mitzvah?”"
+  },
+  {
+   "t": "shot",
+   "v": "JHB4-Statues",
+   "vo": [
+    "V04"
+   ],
+   "line": "“Yes,” he said. “The statues of kings in the theaters: someone is paid to scrub and wash them, and is honored for it.”"
+  },
+  {
+   "t": "shot",
+   "v": "JHB3-Bathhouse",
+   "vo": [
+    "V05"
+   ],
+   "line": "“How much more must I care for myself, since I was created in the image of God.”"
+  },
+  {
+   "t": "fill",
+   "v": "JHB3-Bathhouse",
+   "eb": "did you know?",
+   "pre": "Another time, Hillel said he was off to look after a guest in his house. The guest? His own",
+   "post": ".",
+   "o": [
+    "soul",
+    "student",
+    "shadow"
+   ],
+   "a": 0,
+   "why": "The same midrash tells it: the soul is a guest in the body, here today, gone tomorrow. Caring for yourself is hospitality."
+  },
+  {
+   "t": "ask",
+   "v": "JHB3-Bathhouse",
+   "eb": "did you know?",
+   "q": "The Talmud lists what a town needs before a scholar should live there. Beside a synagogue and a charity fund, what?",
+   "o": [
+    "A library of scrolls",
+    "A bathhouse",
+    "A busy market"
+   ],
+   "a": 1,
+   "why": "Sanhedrin 17b: a court, a charity fund, a synagogue, a bathhouse, a doctor, a teacher for the children. Hillel’s bath was in good company."
+  },
+  {
+   "t": "shot",
+   "v": "JHB5-Coins",
+   "vo": [
+    "V06"
+   ],
+   "line": "The rabbis said it another way. A king stamps many coins with one seal, and they all look alike. God stamps every person with one seal, and not one is like another.",
+   "label": "a teaching of the rabbis"
+  },
+  {
+   "t": "ask",
+   "v": "JHB5-Coins",
+   "eb": "did you know?",
+   "q": "The same old teaching asks why God began humanity with just one person. One answer?",
+   "o": [
+    "So people would learn to share the earth",
+    "So no one could say, “My family outranks yours”",
+    "So everyone would obey one father"
+   ],
+   "a": 1,
+   "why": "Mishnah Sanhedrin 4:5 gives that reason, right beside the coins and ‘whoever saves one life saves a world.’"
+  },
+  {
+   "t": "shot",
+   "v": "JHB6-Today",
+   "vo": [
+    "V07"
+   ],
+   "line": "Today, the same old teaching about the coins is famous for one more line: whoever saves one life, it is as if they saved a whole world.",
+   "label": "today"
+  },
+  {
+   "t": "teach",
+   "v": "JHB3-Bathhouse",
+   "say": [
+    "here’s what i love. the torah says every human is made in the image of god, tzelem elohim. it never says what that image is. maimonides said the mind. others say freedom, or the power to love.",
+    "and the rabbis drew a bold line from it. since everyone comes from one first person, no one can say to another, my ancestor was greater than yours."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "JHB6-Today",
+   "eb": "the hard one",
+   "q": "The same teaching says each person should say, “The world was created for my sake.” Why isn’t that arrogance?",
+   "o": [
+    "Because everyone gets to say it, not just you",
+    "Because it’s only for very holy people",
+    "Because it’s said only in private prayer"
+   ],
+   "a": 0,
+   "why": "If everyone can say it, no one is above anyone. A Hasidic teacher, Rabbi Simcha Bunim, kept two notes in his pockets: this one, and “I am dust and ashes.”"
+  }
+ ],
+ "today": {
+  "v": "JHB6-Today",
+  "say": "today, do one small thing to care for your body, a walk, a glass of water, an early night, and tell yourself: i’m taking care of the image. jews even say a short blessing, asher yatzar, thanking god for a body that works. that’s hillel at the bathhouse.",
+  "options": [
+   [
+    "I’ll do one today",
+    "then it’s a mitzvah. hillel said so."
+   ],
+   [
+    "I’ll notice faces instead",
+    "beautiful. no two alike, every one in the image."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "The spice called Shabbat.",
+  "line": "a roman emperor wants to know why a rabbi’s shabbat food smells so good. the secret ingredient isn’t one he can buy."
+ },
+ "card": {
+  "from": "a teaching of the rabbis",
+  "mins": 5,
+  "keep": "coin",
+  "keepName": "God’s coin",
+  "keepWhy": "One seal, and no two alike.",
+  "sources": [
+   "Leviticus Rabbah 34:3 (Hillel takes leave of his students; ‘to do a mitzvah’; ‘to bathe in the bathhouse’; the statues of kings set up in theaters and circuses are scoured and washed by the one appointed over them, who is paid and honored; ‘I, who was created in the image and likeness,’ citing Genesis 9:6; Hillel’s words are shortened, and his teaching on the soul as a guest in the body is left out)",
+   "Genesis 1:26–27 (“And God created man in His own image, in the image of God created He him,” JPS 1917)",
+   "Mishnah Sanhedrin 4:5 (the king’s coins and the seal of the first human; whoever saves one life; ‘my ancestor was greater than yours’)",
+   "Maimonides, Guide for the Perplexed 1:1 (the image as the mind)",
+   "Babylonian Talmud, Berakhot 60b (the blessing asher yatzar)"
+  ],
+  "check": [
+   "‘Whoever saves one life’ follows the common printed wording of Mishnah Sanhedrin 4:5 (some manuscripts read ‘one life of Israel’)"
+  ]
+ }
+}

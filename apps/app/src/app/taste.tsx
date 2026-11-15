@@ -32,7 +32,7 @@ export default function Taste() {
       <ScrollView contentContainerStyle={{ paddingHorizontal: 24, paddingBottom: 40, gap: 14 }}>
         <Text style={type.eyebrow()}>{t("session.taste.eyebrow", { door: doorLabel(w) })}</Text>
         <Text accessibilityRole="header" style={type.h1(40)}>{d.word}</Text>
-        <View style={{ backgroundColor: "#fff", borderRadius: 22, padding: 18, gap: 8, borderWidth: 1, borderColor: color.line }}>
+        <View style={{ backgroundColor: color.white, borderRadius: 22, padding: 18, gap: 8, borderWidth: 1, borderColor: color.line }}>
           {[...(d.hook || []), ...(d.teach || []).slice(0, 2)].map((line: string, k: number) => (
             <Text key={k} style={{ fontFamily: font.display[k === 0 ? 700 : 500], fontSize: k === 0 ? 19 : 16, lineHeight: k === 0 ? 25 : 22, color: color.ink }}>{line}</Text>
           ))}

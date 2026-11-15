@@ -1,0 +1,215 @@
+{
+ "id": "bud-is-that-so",
+ "home": "lotus",
+ "title": "“Is that so?”",
+ "told": "a well-known Zen story",
+ "clips": "art/sacred/bud-is-that-so/clips/",
+ "voice": "art/sacred/bud-is-that-so/voice/",
+ "guide": {
+  "name": "Orlando",
+  "photo": "art/guides/buddhism.webp"
+ },
+ "hook": {
+  "v": "HKN6-Phone-Today",
+  "say": "before the story, can i ask you something? when someone praises you or blames you, how long does it stay with you?",
+  "options": [
+   [
+    "Praise, a minute. Blame, all week",
+    "that’s most people. listen."
+   ],
+   [
+    "Both stay a while",
+    "then today’s word is for you. listen."
+   ],
+   [
+    "I let them go fast",
+    "then you may like this old monk. listen."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "HKN1-Village-Temple",
+   "vo": [
+    "V01"
+   ],
+   "line": "A well-known Zen story tells of Hakuin, a teacher in a Japanese village, praised by all his neighbors as a man who lived a pure life.",
+   "label": "a well-known Zen story"
+  },
+  {
+   "t": "shot",
+   "v": "HKN2-Angry-Parents",
+   "vo": [
+    "V02"
+   ],
+   "line": "Then a young woman nearby found she was expecting a baby. Pressed by her angry parents, she named Hakuin as the father. They stormed to his door."
+  },
+  {
+   "t": "ask",
+   "v": "HKN2-Angry-Parents",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "They shout at him. He answers only, “Is that so?” When the baby is born, what do the parents do?",
+   "o": [
+    "Take him before the village court",
+    "Bring the baby for him to raise",
+    "Move away to hide their shame"
+   ],
+   "a": 1,
+   "why": "They handed him the baby. No argument, no complaint: he simply took the child in."
+  },
+  {
+   "t": "shot",
+   "v": "HKN3-Is-That-So",
+   "vo": [
+    "V03"
+   ],
+   "line": "Hakuin listened, and said only, “Is that so?” When the baby was born, they brought the child to him. He took the baby in."
+  },
+  {
+   "t": "shot",
+   "v": "HKN4-Caring-For-Child",
+   "vo": [
+    "V04"
+   ],
+   "line": "His good name was gone, and people turned away. But he cared for the baby tenderly, asking neighbors for the milk it needed."
+  },
+  {
+   "t": "ask",
+   "v": "HKN4-Caring-For-Child",
+   "eb": "why?",
+   "q": "His name is ruined, and this baby isn’t his. Why does he care for it so tenderly?",
+   "o": [
+    "The baby needed him, whatever people said",
+    "To prove the rumors wrong someday",
+    "He hoped the village would forgive him"
+   ],
+   "a": 0,
+   "why": "The old commentator Buddhaghosa warns of a ‘near enemy’ of equanimity: dull indifference that looks calm. Hakuin’s calm stayed warm."
+  },
+  {
+   "t": "shot",
+   "v": "HKN5-Truth-Comes",
+   "vo": [
+    "V05"
+   ],
+   "line": "A year later, the young mother told the truth: the father was a young man from the fish market. Her parents hurried back to apologize and take the child home."
+  },
+  {
+   "t": "ask",
+   "v": "HKN5-Truth-Comes",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "A year later, the parents come back for the baby. What does Hakuin do?",
+   "o": [
+    "Asks to stay in the child’s life",
+    "Asks for a day to say goodbye",
+    "Hands the child back right away"
+   ],
+   "a": 2,
+   "why": "He handed back a child he’d raised for a year, and said only, “Is that so?” No victory lap, no request to fix his name."
+  },
+  {
+   "t": "shot",
+   "v": "HKN5-Truth-Comes",
+   "vo": [
+    "V06"
+   ],
+   "line": "Hakuin gently handed back the child. All he said was, “Is that so?”"
+  },
+  {
+   "t": "ask",
+   "v": "HKN5-Truth-Comes",
+   "eb": "did you know?",
+   "q": "The Buddha named eight ‘worldly winds’ in four pairs: gain and loss, fame and disgrace, praise and blame, and one more. Which?",
+   "o": [
+    "Pleasure and pain",
+    "Birth and death",
+    "Love and hate"
+   ],
+   "a": 0,
+   "why": "Pleasure and pain. The Buddha said all eight blow through every life, wise or not; the difference is whether they knock you over."
+  },
+  {
+   "t": "fill",
+   "v": "HKN5-Truth-Comes",
+   "eb": "finish the line",
+   "pre": "The Dhammapada says the wise aren’t moved by blame and praise, just as a solid",
+   "post": "isn’t shaken by the wind.",
+   "o": [
+    "tree",
+    "rock",
+    "wall"
+   ],
+   "a": 1,
+   "why": "Rock: in Pali, a single solid block. Dhammapada verse 81. Not a tree that bends; a rock that doesn’t need to."
+  },
+  {
+   "t": "shot",
+   "v": "HKN6-Phone-Today",
+   "vo": [
+    "V07"
+   ],
+   "line": "Today, a glowing review and a harsh comment, in the same hour. The winds still blow. The rock still feels them. It just doesn’t move.",
+   "label": "today"
+  },
+  {
+   "t": "teach",
+   "v": "HKN6-Phone-Today",
+   "say": [
+    "upekkha, equanimity, is the fourth divine abode. the word means looking on, from a steady place. not looking away. the buddha named eight worldly winds: gain and loss, fame and disgrace, praise and blame, pleasure and pain. they come to everyone.",
+    "hakuin belongs to zen, the school that grew in china and japan, where teachers often show the teaching in a few plain words. theravada teachers point to the same calm in the buddha’s own discourses. both say it: feel the wind. don’t be blown away."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "HKN5-Truth-Comes",
+   "eb": "the hard one",
+   "q": "Hakuin said the same three words when he was blamed and when he was cleared. What does that show?",
+   "o": [
+    "He was too proud to argue either way",
+    "He’d stopped caring how things turned out",
+    "His calm didn’t hang on what people said"
+   ],
+   "a": 2,
+   "why": "Blame and praise were both just weather. What he actually did, caring for a child, never changed with it."
+  }
+ ],
+ "today": {
+  "v": "HKN6-Phone-Today",
+  "say": "today, when praise or blame comes your way, try hakuin’s three words inside: is that so? then do the next kind thing.",
+  "options": [
+   [
+    "I’ll try it today",
+    "is that so? good. let me know."
+   ],
+   [
+    "Blame is too hard for that",
+    "it is hard. start with praise. it’s a wind too."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "Too tight, too loose",
+  "line": "a monk who used to play the lute pushes so hard he wants to quit, and the buddha asks about his strings."
+ },
+ "card": {
+  "from": "a well-known Zen story",
+  "mins": 5,
+  "keep": "stone",
+  "keepName": "The rock in the wind",
+  "keepWhy": "Is that so? Then the next kind thing.",
+  "sources": [
+   "“Is That So?”, a story about Hakuin Ekaku (1686–1769) in Nyogen Senzaki and Paul Reps, 101 Zen Stories (1939), reprinted in Zen Flesh, Zen Bones (1957)",
+   "Dhammapada 81 (Max Müller 1881): “As a solid rock is not shaken by the wind, wise people falter not amidst blame and praise”",
+   "Lokavipatti Sutta (Anguttara Nikaya 8.6): the eight worldly conditions",
+   "Visuddhimagga IX: the near enemy of equanimity (unknowing indifference)"
+  ],
+  "check": [
+   "The story comes from the Senzaki and Reps English collection (1939); no older Japanese source is confirmed, so it is framed as “a well-known Zen story.”"
+  ]
+ }
+}

@@ -1,0 +1,191 @@
+{
+ "id": "cat-ignatius",
+ "home": "angelus",
+ "title": "One, holy, catholic",
+ "told": "a story of Saint Ignatius of Antioch",
+ "clips": "art/sacred/cat-ignatius/clips/",
+ "voice": "art/sacred/cat-ignatius/voice/",
+ "guide": {
+  "name": "Nicole",
+  "photo": "art/guides/catholic.webp"
+ },
+ "card": {
+  "from": "a story of Saint Ignatius of Antioch",
+  "mins": 5,
+  "keep": "whole",
+  "keepName": "According to the whole",
+  "keepWhy": "Wherever Christ is, the whole Church is there.",
+  "sources": [
+   "Ignatius of Antioch, Letter to the Smyrnaeans 8.2 (“Wherever Jesus Christ is, there is the catholic Church”), the earliest surviving use of the phrase “catholic Church”.",
+   "Ignatius, Letter to the Romans 5.1 (from Syria to Rome he fights with beasts, bound to ten leopards, a band of soldiers, who grow worse when treated kindly). Letters to the Ephesians, Magnesians and Trallians written at Smyrna, where those churches sent delegates to him; letters to the Philadelphians, Smyrnaeans and Polycarp from Troas.",
+   "Eusebius, Church History 3.36 (Ignatius, bishop of Antioch, sent from Syria to Rome to die for Christ, wrote letters to the churches on the way). Polycarp, Letter to the Philippians 9 and 13.",
+   "Greek ekklesia (assembly, those called out); katholikos, from kath’ holou (according to the whole). Nicene-Constantinopolitan Creed (“one, holy, catholic and apostolic Church”). Catechism of the Catholic Church 751-752, 811-870 (830-831 catholic; 834-835 the particular Churches, including the Eastern Catholic Churches, in communion with Rome); Vatican II, Orientalium Ecclesiarum 2-3."
+  ],
+  "check": [
+   "Date: Eusebius places the martyrdom under Trajan (98-117); some scholars date the letters later. The lesson says “early in the 100s”. Confirm.",
+   "The sea voyage toward Rome is pieced together from the letters (Troas, then Neapolis) and tradition; confirm the caption “sailed on toward Rome”."
+  ]
+ },
+ "hook": {
+  "v": "CIG6-Today-Mass-World",
+  "say": "before the story, can i ask you something? have you ever walked into a church in another city or country?",
+  "options": [
+   [
+    "Yes, and it felt familiar",
+    "then you’ve already felt today’s word."
+   ],
+   [
+    "Yes, and it felt strange",
+    "that’s fair. watch for what stayed the same."
+   ],
+   [
+    "Never",
+    "that’s okay. this story will take you on a trip."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "CIG1-Antioch-Bishop",
+   "vo": [
+    "V01"
+   ],
+   "line": "Early in the 100s, Ignatius, the bishop of Antioch in Syria, was arrested for being a Christian and sent under guard to Rome."
+  },
+  {
+   "t": "shot",
+   "v": "CIG2-Road-Soldiers",
+   "vo": [
+    "V02"
+   ],
+   "line": "Ten soldiers marched him across what is now Turkey. He called them his ten leopards: the more kindness they were shown, he wrote, the worse they got."
+  },
+  {
+   "t": "ask",
+   "v": "CIG2-Road-Soldiers",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "Christians in the towns ahead hear that a prisoner bishop is passing through. What do they do?",
+   "o": [
+    "Stay away, afraid of the soldiers",
+    "Send people out to meet him",
+    "Try to bribe the guards to free him"
+   ],
+   "a": 1,
+   "why": "Churches sent people to meet him, and he wrote them letters to carry home; seven survive. In one, he begs Rome’s Christians not to try to save him."
+  },
+  {
+   "t": "shot",
+   "v": "CIG3-Smyrna-Visitors",
+   "vo": [
+    "V03"
+   ],
+   "line": "In the city of Smyrna, church after church sent people to meet him. Still in chains, Ignatius wrote them letters to carry home."
+  },
+  {
+   "t": "shot",
+   "v": "CIG4-Writing-Letter",
+   "vo": [
+    "V04"
+   ],
+   "line": "In one letter, he called the Church “catholic.” It’s the oldest writing we have that uses that word for the Church."
+  },
+  {
+   "t": "ask",
+   "v": "CIG4-Writing-Letter",
+   "eb": "did you know?",
+   "q": "“Catholic” comes from the Greek kath’ holou. What did that phrase mean?",
+   "o": [
+    "Built on the rock",
+    "Faithful to Rome",
+    "According to the whole"
+   ],
+   "a": 2,
+   "why": "According to the whole: universal. Ignatius wrote it in Greek to Christians in Smyrna, long before anyone said “Roman Catholic.”"
+  },
+  {
+   "t": "ask",
+   "v": "CIG4-Writing-Letter",
+   "eb": "why?",
+   "q": "Ignatius was one prisoner writing to small, scattered churches. Why call the Church “catholic,” universal?",
+   "o": [
+    "Churches were already in every land",
+    "Wherever Christ was, the whole Church was there",
+    "It was a legal word the Romans used"
+   ],
+   "a": 1,
+   "why": "His full line: wherever the bishop appears, let the people be, just as wherever Jesus Christ is, there is the catholic Church. Many read it this way: even a tiny gathering was the whole."
+  },
+  {
+   "t": "shot",
+   "v": "CIG5-Ship-To-Rome",
+   "vo": [
+    "V05"
+   ],
+   "line": "Then they sailed on toward Rome, where he died for his faith. His letters were copied and passed from church to church."
+  },
+  {
+   "t": "shot",
+   "v": "CIG6-Today-Mass-World",
+   "vo": [
+    "V06"
+   ],
+   "line": "Today, Mass is said in Lagos, Manila, a Polish village and a Texas strip mall. Different music, same shape. And the creed says: one, holy, catholic and apostolic.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "CIG6-Today-Mass-World",
+   "eb": "you’re in it",
+   "q": "You go to Mass in Manila, then a week later in a Polish village. Music and language change. What stays the same?",
+   "o": [
+    "The order: readings, then the Eucharist",
+    "The language: Latin, everywhere",
+    "The hymns, chosen by Rome for all"
+   ],
+   "a": 0,
+   "why": "Since the 1960s Mass is mostly in local languages, but its shape is the same everywhere: the Liturgy of the Word, then the Liturgy of the Eucharist."
+  },
+  {
+   "t": "teach",
+   "v": "CIG3-Smyrna-Visitors",
+   "say": [
+    "here’s what i love. church comes from the greek ekklesia: the ones called out. so the church isn’t first a building. it’s the people called together.",
+    "catholics believe it’s one family under the pope, the bishop of rome. and it’s bigger than it looks: eastern catholic churches, with their own old liturgies, are united with rome too."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "CIG6-Today-Mass-World",
+   "eb": "the hard one",
+   "q": "Orthodox and many Protestant Christians also say “catholic” in the creed. What does that tell you about the word?",
+   "o": [
+    "It means universal, so each claims it its own way",
+    "They are all Roman Catholics underneath",
+    "It was added to the creed only recently"
+   ],
+   "a": 0,
+   "why": "Orthodox Christians mean the Orthodox Church; many Protestants mean all Christians. Catholics keep Ignatius’s line: wherever Christ is."
+  }
+ ],
+ "today": {
+  "v": "CIG6-Today-Mass-World",
+  "say": "tonight, picture the globe turning. somewhere it’s morning and people are walking into mass, the same mass, in another language. every mass prays for the whole church, everywhere. if you pray, you can join that prayer for all of them at once, or just hold them in mind.",
+  "options": [
+   [
+    "I’ll try it tonight",
+    "lovely. everywhere at once."
+   ],
+   [
+    "I’ll find a church near me",
+    "good. same shape, wherever you walk in."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "Prayer like a friendship.",
+  "line": "next, a nun who admitted prayer bored her for years, and what changed."
+ }
+}

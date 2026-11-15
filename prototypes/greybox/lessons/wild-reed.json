@@ -1,0 +1,203 @@
+{
+ "id": "wild-reed",
+ "home": "wild",
+ "title": "The reed that remembers",
+ "told": "from the life of Rumi",
+ "clips": "art/sacred/wild-reed/clips/",
+ "voice": "art/sacred/wild-reed/voice/",
+ "guide": {
+  "name": "Justin",
+  "photo": "art/guides/spiritual.webp"
+ },
+ "hook": {
+  "v": "RMI1-Konya",
+  "say": "before the story, can i ask you something? has one person ever changed the direction of your life?",
+  "options": [
+   [
+    "Yes, completely",
+    "then you’ll understand rumi. listen."
+   ],
+   [
+    "A little",
+    "that’s how it often starts. listen."
+   ],
+   [
+    "Not yet",
+    "maybe soon. this story is about that."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "RMI1-Konya",
+   "vo": [
+    "V01"
+   ],
+   "line": "In 1244, in the city of Konya, in today’s Turkey, Rumi was a respected Muslim scholar and teacher, with books, students and a fine name."
+  },
+  {
+   "t": "shot",
+   "v": "RMI2-The-Pool",
+   "vo": [
+    "V02"
+   ],
+   "line": "Then a wandering stranger came to town: Shams of Tabriz. In one popular telling, he found Rumi reading beside a pool.",
+   "label": "one popular telling"
+  },
+  {
+   "t": "ask",
+   "v": "RMI3-Books-In-Water",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "Shams looks at Rumi’s precious books. What do you think he does?",
+   "o": [
+    "Asks to borrow one",
+    "Throws them into the water",
+    "Asks Rumi to teach him"
+   ],
+   "a": 1,
+   "why": "Into the pool. Shams had a way of shaking people awake."
+  },
+  {
+   "t": "shot",
+   "v": "RMI3-Books-In-Water",
+   "vo": [
+    "V03"
+   ],
+   "line": "Shams tossed the books into the water. Rumi cried out. Shams lifted them out, dry. “What is this?” Rumi asked. “Something you don’t know yet.”",
+   "label": "one popular telling"
+  },
+  {
+   "t": "shot",
+   "v": "RMI4-Friends",
+   "vo": [
+    "V04"
+   ],
+   "line": "The two became inseparable. Rumi’s students grew jealous. Then one day Shams was gone, and no one knows for sure what happened."
+  },
+  {
+   "t": "ask",
+   "v": "RMI4-Friends",
+   "eb": "did you know?",
+   "q": "Shams left Konya once before, for Damascus. What did Rumi do?",
+   "o": [
+    "Let him go, and went back to teaching",
+    "Sent his own son to bring him back",
+    "Closed his school and left Konya"
+   ],
+   "a": 1,
+   "why": "His son Sultan Walad found Shams in Damascus and brought him home. When Shams vanished the second time, Rumi went searching himself, and came back with poems."
+  },
+  {
+   "t": "shot",
+   "v": "RMI5-The-Reed",
+   "vo": [
+    "V05"
+   ],
+   "line": "Out of the loss came an ocean of poems. His great work, the Masnavi, begins with a reed flute, crying."
+  },
+  {
+   "t": "shot",
+   "v": "RMI5-The-Reed",
+   "vo": [
+    "V06"
+   ],
+   "line": "The reed was cut from its reed bed. Every note it plays, Rumi says, is a song of longing to go back home."
+  },
+  {
+   "t": "ask",
+   "v": "RMI5-The-Reed",
+   "eb": "why?",
+   "q": "Why would a reed flute, the ney, be such a good picture of a longing soul?",
+   "o": [
+    "It’s hollow, and sings only when breathed into",
+    "It was the easiest flute to make",
+    "It plays only in a minor key"
+   ],
+   "a": 0,
+   "why": "A ney must be cut, dried and hollowed before it can sing. Many Sufis read it as the self, emptied, so the breath of God can play through."
+  },
+  {
+   "t": "shot",
+   "v": "RMI6-Today",
+   "vo": [
+    "V07"
+   ],
+   "line": "Today his name is on poems shared on phones every day, often with his faith left out. He was a Muslim scholar, and his poems are full of the Qur’an.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "RMI6-Today",
+   "eb": "did you know?",
+   "q": "After Rumi died, his followers founded the Mevlevi order. What are they famous for?",
+   "o": [
+    "Silent walking through the city",
+    "Chanting in the desert at night",
+    "Turning, slowly, in a whirling prayer"
+   ],
+   "a": 2,
+   "why": "The Mevlevi sema is a turning prayer to the ney: right palm up to receive, left palm down to pass it on. It’s remembrance of God, not a show."
+  },
+  {
+   "t": "teach",
+   "v": "RMI5-The-Reed",
+   "say": [
+    "here’s what i love. rumi was already wise and respected. then a friend turned his whole life over, and the grief became poetry.",
+    "in sufi teaching, the reed is the soul, cut from its source, which is god, and longing to return. love is the road back. and a famous saying credited to him, in a modern english version, imagines a field past all the arguing about right and wrong, where he’ll meet you."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "RMI5-The-Reed",
+   "eb": "the hard one",
+   "q": "Rumi lost his closest friend, then wrote about a reed cut from its bed. What might the reed have meant, for him?",
+   "o": [
+    "Only his grief for his lost friend",
+    "His childhood home, left behind for good",
+    "His grief for Shams, and for God"
+   ],
+   "a": 2,
+   "why": "Many readers hear both: missing a friend opened a deeper missing, the soul’s longing for God, its first home."
+  }
+ ],
+ "today": {
+  "v": "RMI6-Today",
+  "say": "today, think of one person you’ve been at odds with, even a little. don’t fix anything. just picture a wide field, and the two of you walking into it from opposite sides. meet me there.",
+  "options": [
+   [
+    "I have someone",
+    "then let there be room for both of you."
+   ],
+   [
+    "I’ll try it",
+    "good. no arguing in the field."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "The emperor under the blankets.",
+  "line": "a new camp opens: the most powerful man in the world doesn’t want to get out of bed."
+ },
+ "card": {
+  "from": "from the life of Rumi",
+  "mins": 5,
+  "keep": "flute",
+  "keepName": "Meet me there",
+  "keepWhy": "The reed sings because it remembers home.",
+  "sources": [
+   "Rumi, Masnavi 1.1–18, the song of the reed (E. H. Whinfield, 1898: “Hearken to the reed-flute, how it complains, Lamenting its banishment from its home”).",
+   "Shams al-Din Aflaki, Manaqib al-Arifin (14th century): stories of the first meeting, including Shams and Rumi’s books in the water (later hagiography; versions differ).",
+   "Rumi’s life: born 1207; settled in Konya; met Shams in Konya in 1244; Shams left in 1246, returned, then disappeared about 1247; the students’ jealousy is reported in Sultan Walad’s Ibtida-nama and Aflaki.",
+   "The “field beyond right and wrong”: a popular modern English version of a quatrain in the Divan-e Shams; paraphrased only, not quoted.",
+   "Day 21 script: docs/curriculum/spiritual/scripts/y1/day-0021.json (Rumi; meet me there)."
+  ],
+  "check": [
+   "The books-in-the-water tale is labeled “one popular telling”; in some versions the books are thrown into a pool or fountain, in others into fire. The exchange (“What is this?” “Something you don’t know yet”) follows the common retelling loosely. Confirm.",
+   "Shams’s age (about sixty) and Rumi’s (about thirty-seven) in 1244. Confirm.",
+   "Teach: “the reed is the soul, cut from its source, which is god” is the usual Sufi reading. Confirm the wording."
+  ]
+ }
+}

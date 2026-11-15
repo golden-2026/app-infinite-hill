@@ -1,3 +1,5 @@
+Background only (written September 2026). Where this disagrees with docs/VISION-NOW.md, that page wins.
+
 # Golden screen build coordination
 
 ## Destination

@@ -1,0 +1,187 @@
+{
+ "id": "chr-corinth",
+ "home": "olive",
+ "title": "Love is patient",
+ "told": "from a letter of Paul",
+ "clips": "art/sacred/chr-corinth/clips/",
+ "voice": "art/sacred/chr-corinth/voice/",
+ "guide": {
+  "name": "Denzel",
+  "photo": "art/guides/christianity.webp"
+ },
+ "card": {
+  "from": "from a letter of Paul",
+  "mins": 5,
+  "keep": "heart",
+  "keepName": "The patient heart",
+  "keepWhy": "Love is something you do, even on hard days.",
+  "sources": [
+   "Acts 18:1-11 (Paul first brings the good news to Corinth and stays a year and a half)",
+   "1 Corinthians 1:11-12 (Chloe’s people report quarrels; “I follow Paul,” “I follow Apollos,” “I follow Cephas”)",
+   "1 Corinthians 6:1-8 (believers taking one another to court)",
+   "1 Corinthians 11:20-22 (rich and poor divided at the Lord’s supper)",
+   "1 Corinthians 16:8 (Paul writes from Ephesus); 16:21 (“the greeting of me, Paul, with my own hand,” implying a scribe wrote the rest)",
+   "1 Corinthians 13:4-5, 7-8 (“Love is patient and is kind; love doesn’t envy. Love doesn’t brag, is not proud… doesn’t take account of evil… bears all things, believes all things, hopes all things, endures all things. Love never fails”), World English Bible, lightly modernized; “keeps no record of wrongs” is the common modern rendering (e.g. NIV)",
+   "1 John 4:8, 19 (“God is love”, the same word, agape; “We love him, because he first loved us”), behind shot 5 and the teach step"
+  ],
+  "check": []
+ },
+ "hook": {
+  "v": "QL2-Quarrel",
+  "say": "last week ended with mercy that’s new every morning. today, what that looks like between people. can i ask you something? is there someone you love, but don’t always like?",
+  "options": [
+   [
+    "Yes, honestly",
+    "thank you for being honest. this letter was written for people just like that."
+   ],
+   [
+    "More than one",
+    "same here. keep them in mind while you listen."
+   ],
+   [
+    "Not really",
+    "good. you may need this one someday, or a friend will."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "QL1-Corinth-Port",
+   "vo": [
+    "V01"
+   ],
+   "line": "Corinth was a busy Greek port city. A small church there followed Jesus, rich and poor, sharing one table.",
+   "label": "Acts 18:1-11"
+  },
+  {
+   "t": "shot",
+   "v": "QL2-Quarrel",
+   "vo": [
+    "V02"
+   ],
+   "line": "Then the trouble started. They split into camps, “I follow Paul,” “I follow Apollos.” Some even took each other to court.",
+   "label": "1 Corinthians 1:12; 6:1"
+  },
+  {
+   "t": "ask",
+   "v": "QL2-Quarrel",
+   "blur": true,
+   "predict": true,
+   "eb": "what happens next?",
+   "q": "Some in Corinth say, “I follow Paul.” When Paul writes back, does he side with his own fans?",
+   "o": [
+    "No, he scolds his own camp too",
+    "Yes, he thanks his loyal camp",
+    "He ignores the camps entirely"
+   ],
+   "a": 0,
+   "why": "“Is Christ divided? Was Paul crucified for you?” (1 Corinthians 1:13). He refuses to lead a camp, even his own, and then writes about love."
+  },
+  {
+   "t": "shot",
+   "v": "QL3-Paul-Writes",
+   "vo": [
+    "V03"
+   ],
+   "line": "Paul heard the news far away in Ephesus. He sent them a long letter. And right in the middle of it, he wrote about love.",
+   "label": "1 Corinthians 16:8"
+  },
+  {
+   "t": "ask",
+   "v": "QL3-Paul-Writes",
+   "eb": "did you know?",
+   "q": "Paul’s Greek word for “patient” has a picture inside it. What does it mean, literally?",
+   "o": [
+    "Quiet and calm inside",
+    "Willing to wait for things",
+    "Slow to lose your temper"
+   ],
+   "a": 2,
+   "why": "Makrothumei: “long-tempered,” a long fuse. For people suing each other, that was the first thing to learn."
+  },
+  {
+   "t": "shot",
+   "v": "QL4-Letter-Read",
+   "vo": [
+    "V04"
+   ],
+   "line": "“Love is patient. Love is kind. It doesn’t envy, it doesn’t boast, it isn’t proud. It keeps no record of wrongs.”",
+   "label": "1 Corinthians 13:4-5"
+  },
+  {
+   "t": "ask",
+   "v": "QL4-Letter-Read",
+   "eb": "why?",
+   "q": "Today this passage is read at weddings. But Paul first wrote it to a church that was fighting. Why does that matter?",
+   "o": [
+    "It means they had already made peace",
+    "It’s love as a choice, aimed at people who annoy you",
+    "It was meant only for the church’s leaders"
+   ],
+   "a": 1,
+   "why": "It was written for a room full of people who didn’t like each other. That’s why it’s about what love does, not how it feels."
+  },
+  {
+   "t": "shot",
+   "v": "QL5-Love-Acts",
+   "vo": [
+    "V05"
+   ],
+   "line": "“It bears all things, hopes all things, endures all things. Love never fails.” Paul’s word for love was agape, the same word the Bible uses for God’s love.",
+   "label": "1 Corinthians 13:7-8"
+  },
+  {
+   "t": "ask",
+   "v": "QL5-Love-Acts",
+   "eb": "did you know?",
+   "q": "The church in Corinth shared a meal when it met. What did Paul scold them for at that table?",
+   "o": [
+    "They fought over who would pray",
+    "The rich ate before the poor arrived",
+    "They let strangers take the best seats"
+   ],
+   "a": 1,
+   "why": "1 Corinthians 11: some went hungry while others got drunk. Love that “isn’t proud” had a very practical meaning at that table."
+  },
+  {
+   "t": "teach",
+   "v": "QL4-Letter-Read",
+   "say": [
+    "here’s what i love. paul doesn’t tell them to feel warmer. he tells them what love does: it waits, stays kind, and drops the scorecard.",
+    "christians believe this is how God loves us first. one short letter in the bible puts it simply: “we love because he first loved us.”"
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "QL5-Love-Acts",
+   "eb": "the hard one",
+   "q": "“Love keeps no record of wrongs.” Paul’s verb there usually belongs somewhere else. Where?",
+   "o": [
+    "On a monument, carving names",
+    "In a ledger, tallying accounts",
+    "In a court, writing a verdict"
+   ],
+   "a": 1,
+   "why": "Logizetai: to count up, to put on someone’s account. Paul uses the same word in Romans 4, where faith is “credited” to Abraham. Love closes the ledger."
+  }
+ ],
+ "today": {
+  "v": "QL6-Today",
+  "say": "think of one person who wears your patience thin. today, do one kind thing for them without waiting to feel like it. that’s agape.",
+  "options": [
+   [
+    "I know who already",
+    "then you know where love starts today. small and kind is enough."
+   ],
+   [
+    "That’s a hard one",
+    "it is. that’s why paul wrote it down. one small thing counts."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "Help my unbelief.",
+  "line": "a desperate father says one of the most honest prayers in the bible."
+ }
+}

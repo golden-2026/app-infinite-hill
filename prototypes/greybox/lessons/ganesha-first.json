@@ -1,0 +1,175 @@
+{
+ "id": "ganesha-first",
+ "home": "marigold",
+ "title": "Ganesha comes first",
+ "told": "a traditional story",
+ "clips": "art/sacred/ganesha-first/clips/",
+ "voice": "art/sacred/ganesha-first/voice/",
+ "guide": {
+  "name": "Priyanka",
+  "photo": "art/guides/hinduism.webp"
+ },
+ "hook": {
+  "v": "GF1-Kailash",
+  "say": "before the story, can i ask you something? ever notice how so many hindu families start everything with ganesha? weddings, new homes, the first day of school.",
+  "options": [
+   [
+    "Yes, I’ve noticed",
+    "hold onto that. this story is the reason."
+   ],
+   [
+    "Not really",
+    "then this one’s a nice surprise. listen."
+   ],
+   [
+    "I do it myself",
+    "then you’ll love where it comes from."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "GF1-Kailash",
+   "vo": [
+    "V01"
+   ],
+   "line": "On Mount Kailash, Shiva and Parvati held up one perfect fruit for their two sons, Ganesha and Kartikeya."
+  },
+  {
+   "t": "shot",
+   "v": "GF2-The-Race",
+   "vo": [
+    "V02"
+   ],
+   "line": "“Whoever goes around the whole world first,” they said, “wins it.”"
+  },
+  {
+   "t": "ask",
+   "v": "GF2-The-Race",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "Kartikeya flies off on his peacock. Ganesha’s ride is a tiny mouse. What do you think Ganesha does?",
+   "o": [
+    "Races off anyway, as fast as the mouse goes",
+    "Asks his brother to share the fruit",
+    "Walks around his parents instead"
+   ],
+   "a": 2,
+   "why": "He doesn’t race at all. He circles his parents. Watch why."
+  },
+  {
+   "t": "shot",
+   "v": "GF3-Peacock",
+   "vo": [
+    "V03"
+   ],
+   "line": "Kartikeya leapt onto his peacock and shot off across the sky."
+  },
+  {
+   "t": "shot",
+   "v": "GF4-Three-Times",
+   "vo": [
+    "V04"
+   ],
+   "line": "Ganesha looked at his ride, a tiny mouse. Then he stood, and slowly walked around his parents, three times."
+  },
+  {
+   "t": "ask",
+   "v": "GF4-Three-Times",
+   "predict": true,
+   "eb": "what happens next?",
+   "q": "Ganesha has walked around his parents, not the world. What will he say?",
+   "o": [
+    "“The mouse was too slow to try”",
+    "“You two are my whole world”",
+    "“The fruit should be shared”"
+   ],
+   "a": 1,
+   "why": "His logic wins it: for him, going around his parents was going around everything."
+  },
+  {
+   "t": "shot",
+   "v": "GF5-Whole-World",
+   "vo": [
+    "V05"
+   ],
+   "line": "“You two are my whole world,” he said. “I’ve been around it.” His parents laughed, and gave him the fruit."
+  },
+  {
+   "t": "ask",
+   "v": "GF5-Whole-World",
+   "eb": "did you know?",
+   "q": "Walking around something sacred, keeping it on your right, has a name in Hindu worship. What is it?",
+   "o": [
+    "Arti",
+    "Puja",
+    "Pradakshina"
+   ],
+   "a": 2,
+   "why": "Pradakshina: circling a temple, a shrine or a holy person clockwise, keeping it to your right. Many Hindus still do it at temples today."
+  },
+  {
+   "t": "shot",
+   "v": "GF6-Today",
+   "vo": [
+    "V06"
+   ],
+   "line": "And so, before weddings, new homes and first days, Hindus begin with Ganesha.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "GF6-Today",
+   "eb": "did you know?",
+   "q": "Ganesha is Vighnaharta, the remover of obstacles. Some old stories add a twist. What is it?",
+   "o": [
+    "He only helps people who ask first",
+    "He can also set obstacles in the way",
+    "He clears just one obstacle a year"
+   ],
+   "a": 1,
+   "why": "He’s also Vighnakarta, the one who sets obstacles before those headed the wrong way. Starting with him means asking for the right road, not just a clear one."
+  },
+  {
+   "t": "teach",
+   "v": "GF5-Whole-World",
+   "say": [
+    "here’s what i love. ganesha won without running at all. he just knew what his world was.",
+    "that’s why so many hindus begin with him: before the big plans, remember what matters most."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "GF6-Today",
+   "eb": "the hard one",
+   "q": "The best-known short prayer to Ganesha, “Vakratunda Mahakaya,” asks him to clear obstacles. From which tasks?",
+   "o": [
+    "Only the big ones, like weddings",
+    "Every task, always",
+    "Just today’s journey"
+   ],
+   "a": 1,
+   "why": "Its last line: nirvighnam kuru me deva, sarva-karyeshu sarvada, “make all my work free of obstacles, always.” Not only weddings: a test, a new job, a long drive."
+  }
+ ],
+ "today": {
+  "v": "GF6-Today",
+  "say": "before you start something today, a meeting, a workout, a hard conversation, pause for five seconds and ask: what matters most here? you can say om gam ganapataye namah, if you’d like. it’s your choice.",
+  "options": [
+   [
+    "I’ll try it today",
+    "five seconds. that’s all ganesha needed."
+   ],
+   [
+    "Maybe tomorrow",
+    "that’s okay. the question will keep."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "The broken tusk.",
+  "line": "ganesha’s pen breaks halfway through writing a great epic. what he does next is why his statues look the way they do."
+ }
+}

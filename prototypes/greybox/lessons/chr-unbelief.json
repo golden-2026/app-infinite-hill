@@ -1,0 +1,199 @@
+{
+ "id": "chr-unbelief",
+ "home": "olive",
+ "title": "Help my unbelief",
+ "told": "a story about Jesus",
+ "clips": "art/sacred/chr-unbelief/clips/",
+ "voice": "art/sacred/chr-unbelief/voice/",
+ "guide": {
+  "name": "Denzel",
+  "photo": "art/guides/christianity.webp"
+ },
+ "card": {
+  "from": "a story about Jesus",
+  "mins": 5,
+  "keep": "hand",
+  "keepName": "The lifting hand",
+  "keepWhy": "Half a faith, honestly brought, is enough to begin.",
+  "sources": [
+   "Mark 9:14-15 (Jesus comes down to find the disciples arguing with scribes; the crowd runs to greet him)",
+   "Mark 9:17-18 (the father: his son has a spirit that throws him down; the disciples could not cast it out)",
+   "Mark 9:21 (“from childhood”)",
+   "Mark 9:22-23 (“If you can do anything, have compassion on us, and help us.” Jesus: “If you can believe, all things are possible to him who believes”), World English Bible, lightly modernized",
+   "Mark 9:24 (“I believe. Help my unbelief!”)",
+   "Mark 9:26-27 (the boy lies as if dead; Jesus took him by the hand and raised him up, and he arose)",
+   "Matthew 17:14-20 (the same story)",
+   "Matthew 28:17 (“When they saw him, they bowed down to him, but some doubted”)"
+  ],
+  "check": [
+   "Shot 1 says the boy “suffered terrible fits.” Mark describes a spirit that throws him down; the lesson leaves the cause unnamed to keep it gentle. Confirm this is acceptable."
+  ]
+ },
+ "hook": {
+  "v": "QB1-Crowd",
+  "say": "before the story, can i ask you something? do you ever feel you’re supposed to be sure about God, and you’re just not?",
+  "options": [
+   [
+    "All the time",
+    "then you’re in good company. this story has a father just like you."
+   ],
+   [
+    "Sometimes",
+    "that’s honest. hold onto it while you listen."
+   ],
+   [
+    "I’m pretty sure",
+    "good. this one might help you sit with someone who isn’t."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "QB1-Crowd",
+   "vo": [
+    "V01"
+   ],
+   "line": "A father brought his son to Jesus’s friends. Since childhood, the boy had suffered terrible fits. The friends tried to help, and couldn’t.",
+   "label": "Mark 9:17-18"
+  },
+  {
+   "t": "shot",
+   "v": "QB2-Coming-Down",
+   "vo": [
+    "V02"
+   ],
+   "line": "Jesus came down from a mountain into the middle of an argument. The father stepped forward: “If you can do anything, take pity on us and help us.”",
+   "label": "Mark 9:22"
+  },
+  {
+   "t": "ask",
+   "v": "QB2-Coming-Down",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "Jesus hears the words “if you can.” How do you guess he answers?",
+   "o": [
+    "He asks his friends why they failed",
+    "He turns the words back: “If you can?”",
+    "He tells the father to come back when he’s sure"
+   ],
+   "a": 1,
+   "why": "He throws the father’s own words back to him, gently."
+  },
+  {
+   "t": "shot",
+   "v": "QB3-Father-Cries",
+   "vo": [
+    "V03"
+   ],
+   "line": "“If you can?” said Jesus. “All things are possible for the one who believes.”",
+   "label": "Mark 9:23"
+  },
+  {
+   "t": "shot",
+   "v": "QB3-Father-Cries",
+   "vo": [
+    "V04"
+   ],
+   "line": "At once the father cried out, “I believe. Help my unbelief!”",
+   "label": "Mark 9:24"
+  },
+  {
+   "t": "ask",
+   "v": "QB3-Father-Cries",
+   "eb": "why?",
+   "q": "The father says “I believe” and “help my unbelief” at the same time. Why doesn’t Jesus send him away?",
+   "o": [
+    "He finally said the right words",
+    "Honest faith can hold doubt too",
+    "Jesus wanted the crowd to see"
+   ],
+   "a": 1,
+   "why": "He didn’t fake certainty. He brought what he had, and asked for help with the rest."
+  },
+  {
+   "t": "shot",
+   "v": "QB4-Hand-Lifted",
+   "vo": [
+    "V05"
+   ],
+   "line": "Jesus spoke, and the boy grew still. Then Jesus took him by the hand and lifted him up, and he stood.",
+   "label": "Mark 9:26-27"
+  },
+  {
+   "t": "ask",
+   "v": "QB5-Some-Doubted",
+   "eb": "your guess",
+   "q": "Even after Easter, Jesus’s eleven friends meet him on a mountain. What does Matthew say they did?",
+   "o": [
+    "They asked to touch his wounds",
+    "They all fell down and worshiped",
+    "They worshiped, but some doubted"
+   ],
+   "a": 2,
+   "why": "Matthew 28:17, the last scene of his gospel. The friends sent out to the whole world still include doubters, and they’re sent anyway."
+  },
+  {
+   "t": "shot",
+   "v": "QB5-Some-Doubted",
+   "vo": [
+    "V06"
+   ],
+   "line": "Even his closest friends wrestled with doubt. After Easter, on a mountain, the gospel says, “they worshiped him, but some doubted.”",
+   "label": "Matthew 28:17"
+  },
+  {
+   "t": "ask",
+   "v": "QB4-Hand-Lifted",
+   "eb": "did you know?",
+   "q": "Later, alone, the friends ask Jesus why they couldn’t help the boy. What does he tell them?",
+   "o": [
+    "“This kind comes out only by prayer.”",
+    "“You needed more time to learn.”",
+    "“The boy’s father didn’t believe.”"
+   ],
+   "a": 0,
+   "why": "Mark 9:29. The friends had tried on their own. The father, half sure, did the one thing they hadn’t: he asked."
+  },
+  {
+   "t": "teach",
+   "v": "QB3-Father-Cries",
+   "say": [
+    "here’s what i love. the father’s prayer isn’t polished. it’s half sure and half scared, and jesus takes it.",
+    "christians have prayed his words for centuries. many teach that faith isn’t the absence of doubt. it’s trusting God with both."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "QB5-Some-Doubted",
+   "eb": "the hard one",
+   "q": "The father came with half a faith, and some of Jesus’s friends doubted. What does that suggest about how much faith you need to begin?",
+   "o": [
+    "Enough to have no questions left",
+    "Enough to bring what you have",
+    "Enough to convince others"
+   ],
+   "a": 1,
+   "why": "Small and honest is enough to start. The father’s whole prayer was five words long."
+  }
+ ],
+ "today": {
+  "v": "QB6-Today",
+  "say": "if you’re carrying a doubt, don’t hide it. take the father’s five words, “i believe. help my unbelief,” and pray them, or just read them slowly tonight. watch, learn, or join in: your choice.",
+  "options": [
+   [
+    "I’ll say them tonight",
+    "good. that prayer has carried a lot of people. it can carry you."
+   ],
+   [
+    "I’m not ready to pray",
+    "that’s okay. just keep the words. honesty is already a beginning."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "How long, O Lord?",
+  "line": "a king on the run says angry things to God. they ended up in the bible."
+ }
+}

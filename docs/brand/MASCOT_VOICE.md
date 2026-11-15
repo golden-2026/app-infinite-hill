@@ -1,5 +1,11 @@
 # The mascot's voice
 
+> **Update (owner, 2026-11-14):** in the app, the path's **celebrity guide** now asks every question and says every
+> scripted line, in this same warm voice ("i"). **Finn never talks**: no lines, no speech bubbles, never voiced; he
+> only celebrates, in still art with a bounce. The live AI chat is labeled "your [faith] guide · powered by AI". Read
+> "the mascot" below as "whoever is speaking": the voice rules (warm first, lowercase, "i" vs. the company's "we")
+> still apply to every line. On the website, the company still speaks as "we".
+
 Every word infinite hill says is said by the mascot: the homepage, the app's screens, notifications, the Guide and
 the companion. One character, one voice, everywhere. (The lessons themselves are the tradition's words, read by a
 voice; the mascot introduces them, cheers, and sits with you after.)

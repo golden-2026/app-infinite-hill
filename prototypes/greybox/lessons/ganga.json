@@ -1,0 +1,206 @@
+{
+ "id": "ganga",
+ "home": "marigold",
+ "title": "The king who brought down a river",
+ "told": "from the Ramayana",
+ "clips": "art/sacred/ganga/clips/",
+ "voice": "art/sacred/ganga/voice/",
+ "guide": {
+  "name": "Priyanka",
+  "photo": "art/guides/hinduism.webp"
+ },
+ "card": {
+  "from": "from the Ramayana",
+  "mins": 5,
+  "keep": "wave",
+  "keepName": "A drop of the Ganga",
+  "keepWhy": "Three generations tried. The fourth didn’t quit.",
+  "sources": [
+   "Valmiki Ramayana, Bala Kanda (the descent of the Ganga, told to young Rama by Vishvamitra): King Sagara’s sons burned to ash; Anshuman and Dilipa cannot bring the Ganga down; Bhagiratha’s long austerities; Ganga agrees; Shiva receives her in his matted hair and releases her gently; she frees the ancestors",
+   "Bhagavata Purana, book 9 (Bhagiratha brings the Ganga down)",
+   "The Bhagirathi, the headstream of the Ganga, named after Bhagiratha",
+   "“Bhagiratha effort” (bhagiratha prayatna), an idiom in Indian languages for a mighty, persistent effort"
+  ],
+  "check": [
+   "The film says great-grandfather, grandfather and father tried. In the Ramayana the line is Sagara, Asamanja, Anshuman, Dilipa, Bhagiratha; those who tried are usually Sagara, Anshuman and Dilipa. Confirm the “three generations” framing.",
+   "The ash-turned ones are Sagara’s sons (Bhagiratha’s forebears), not strictly his direct ancestors; the film says “ancestors.” Confirm acceptable."
+  ]
+ },
+ "hook": {
+  "v": "GA1-Heaven-River",
+  "say": "before the story, can i ask you something? is something taking way longer than you hoped? you’ve tried, and tried again.",
+  "options": [
+   [
+    "Yes, right now",
+    "then this story is yours. listen."
+   ],
+   [
+    "I already gave up",
+    "then listen to this one. it might be your turn."
+   ],
+   [
+    "Not really",
+    "good. keep this one for when you need it."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "GA1-Heaven-River",
+   "vo": [
+    "V01"
+   ],
+   "line": "Long ago, King Bhagiratha’s ancestors were turned to ash. Only the holy river Ganga, flowing in heaven, could set them free."
+  },
+  {
+   "t": "ask",
+   "v": "GA2-Three-Tries",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "Bhagiratha isn’t the first in his family to try to bring Ganga down. How many generations tried before him?",
+   "o": [
+    "One, his father",
+    "Two",
+    "Three"
+   ],
+   "a": 2,
+   "why": "Three. King Sagara, then Anshuman, then Dilipa, Bhagiratha’s father. In the Ramayana, each died without finding a way."
+  },
+  {
+   "t": "shot",
+   "v": "GA2-Three-Tries",
+   "vo": [
+    "V02"
+   ],
+   "line": "His great-grandfather tried to bring her down to earth, and failed. His grandfather tried, and failed. His father tried, and failed."
+  },
+  {
+   "t": "shot",
+   "v": "GA3-He-Keeps-Going",
+   "vo": [
+    "V03"
+   ],
+   "line": "Then Bhagiratha tried. For years and years, he kept going."
+  },
+  {
+   "t": "ask",
+   "v": "GA3-He-Keeps-Going",
+   "eb": "did you know?",
+   "q": "To win Ganga, Bhagiratha didn’t fight or bargain. What did he do, in the Ramayana?",
+   "o": [
+    "Offered the gods half his kingdom",
+    "Left his throne for years of tapas",
+    "Built a stairway up the mountain"
+   ],
+   "a": 1,
+   "why": "Tapas: fierce discipline. He handed his kingdom to his ministers, the Ramayana says, and stood with arms raised among five fires, eating once a month."
+  },
+  {
+   "t": "shot",
+   "v": "GA4-Ganga-Falls",
+   "vo": [
+    "V04"
+   ],
+   "line": "And finally, Ganga agreed to come down. But she was so powerful, she would smash the earth."
+  },
+  {
+   "t": "ask",
+   "v": "GA5-Shiva-Catches",
+   "blur": true,
+   "predict": true,
+   "eb": "what happens next?",
+   "q": "Ganga is so powerful her fall would smash the earth. Who do you think can take the force of it?",
+   "o": [
+    "Bhagiratha himself",
+    "The ocean",
+    "Shiva"
+   ],
+   "a": 2,
+   "why": "Shiva. In the Ramayana, Brahma himself tells Bhagiratha that only Shiva can bear her fall. Watch how."
+  },
+  {
+   "t": "shot",
+   "v": "GA5-Shiva-Catches",
+   "vo": [
+    "V05"
+   ],
+   "line": "So Shiva caught her in his hair, and let her flow out gently."
+  },
+  {
+   "t": "ask",
+   "v": "GA5-Shiva-Catches",
+   "eb": "did you know?",
+   "q": "Even after Shiva, the trip wasn’t over. Ganga floods a sage’s worship ground on the way. What does the sage, Jahnu, do?",
+   "o": [
+    "Curses her to run dry each summer",
+    "Builds a wall to turn her aside",
+    "Drinks the whole river, then lets her go"
+   ],
+   "a": 2,
+   "why": "He swallowed her whole, and Bhagiratha had to plead again. Jahnu let her out through his ear, so Ganga is also called Jahnavi, Jahnu’s daughter."
+  },
+  {
+   "t": "shot",
+   "v": "GA6-Today",
+   "vo": [
+    "V06"
+   ],
+   "line": "To this day, a mighty, never-give-up effort is called a Bhagiratha effort. Three generations failed. The fourth didn’t quit.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "GA6-Today",
+   "eb": "why?",
+   "q": "Three generations tried before Bhagiratha. How might Hindus see those earlier tries?",
+   "o": [
+    "As wasted, since only he succeeded",
+    "As part of the effort he finished",
+    "As punishment for the ancestors"
+   ],
+   "a": 1,
+   "why": "In the Ramayana, Anshuman and Dilipa spent their whole lives on it. Bhagiratha finished what they started, and it counts as one family’s effort."
+  },
+  {
+   "t": "teach",
+   "v": "GA4-Ganga-Falls",
+   "say": [
+    "here’s what i love. bhagiratha came from three generations of trying and failing. he’s the one everyone remembers.",
+    "hindus honor the ganga as a sacred river, a gift that came down because one person kept going. your effort may be part of a longer story too."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "GA5-Shiva-Catches",
+   "eb": "the hard one",
+   "q": "Ganga came down to free Bhagiratha’s ancestors. Why do many Hindus still bring a loved one’s ashes to her?",
+   "o": [
+    "Ashes there may help the soul toward freedom",
+    "It keeps the family near its old home",
+    "The river carries them back to Shiva"
+   ],
+   "a": 0,
+   "why": "That’s the story’s own ending: when Ganga touched the ashes of Sagara’s sons, they were freed. Families still bring ashes to places like Haridwar and Varanasi with the same hope."
+  }
+ ],
+ "today": {
+  "v": "GA6-Today",
+  "say": "many hindus keep a little ganga water at home, a reminder of the gift that came from not quitting. today, name one thing you’ve almost given up on, and give it one more real try. a bhagiratha try.",
+  "options": [
+   [
+    "I know what it is",
+    "then this is your turn. one more real try."
+   ],
+   [
+    "I already quit it",
+    "three generations stopped before him. it can still be your turn."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "Vibhishana crosses over.",
+  "line": "his own brother is doing wrong. he says so, out loud, in front of the whole court."
+ }
+}

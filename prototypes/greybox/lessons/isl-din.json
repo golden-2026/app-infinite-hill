@@ -1,0 +1,208 @@
+{
+ "id": "isl-din",
+ "home": "datepalm",
+ "title": "The merchant who let it go",
+ "told": "a story the Prophet ﷺ told",
+ "clips": "art/sacred/isl-din/clips/",
+ "voice": "art/sacred/isl-din/voice/",
+ "guide": {
+  "name": "Mahershala",
+  "photo": "art/guides/islam.webp"
+ },
+ "hook": {
+  "v": "LG5-Dishes-Today",
+  "say": "before the story, can i ask you something? is there a good thing you did once that nobody ever noticed?",
+  "options": [
+   [
+    "Yes, a few",
+    "keep them in mind. today says they aren’t lost."
+   ],
+   [
+    "Maybe one",
+    "hold onto it. listen."
+   ],
+   [
+    "I can’t think of one",
+    "that’s okay. some of the best ones get forgotten. listen."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "LG1-Old-Market",
+   "vo": [
+    "V01"
+   ],
+   "line": "The Prophet Muhammad ﷺ told of a merchant, long ago, who lent money to people. When a debt came due and someone couldn’t pay, he did something unusual."
+  },
+  {
+   "t": "ask",
+   "v": "LG2-Closed-Ledger",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "The merchant tells his helpers to let the debt go. What reason do you think he gives?",
+   "o": [
+    "“They’ll repay us in kindness someday.”",
+    "“Maybe God will let us go too.”",
+    "“Good business keeps good customers.”"
+   ],
+   "a": 1,
+   "why": "He let it go, and hoped for the same. In the saying, his words are to overlook the one in hardship, so that God might overlook him."
+  },
+  {
+   "t": "shot",
+   "v": "LG3-Coins-Returned",
+   "vo": [
+    "V02"
+   ],
+   "line": "“Let it go,” he told his helpers. “Maybe God will let us go too.”"
+  },
+  {
+   "t": "shot",
+   "v": "LG4-Dawn-Plain",
+   "vo": [
+    "V03"
+   ],
+   "line": "When his account was called, a saying tells, nothing good was found in it, except this one habit of letting debts go."
+  },
+  {
+   "t": "shot",
+   "v": "LG4-Dawn-Plain",
+   "vo": [
+    "V04"
+   ],
+   "line": "And God said, “I am more worthy of letting go than he is. Let him go.”"
+  },
+  {
+   "t": "ask",
+   "v": "LG4-Dawn-Plain",
+   "eb": "why?",
+   "q": "In the saying, God answers, “I am more worthy of letting go than he is.” What does that line suggest?",
+   "o": [
+    "God outdoes the mercy people show",
+    "He’d earned it, fair and square",
+    "Debts don’t count on that Day"
+   ],
+   "a": 0,
+   "why": "The merchant hoped for a little mercy and got God’s, which is bigger. Many scholars note the saying is about mercy to people in hardship."
+  },
+  {
+   "t": "shot",
+   "v": "LG2-Closed-Ledger",
+   "vo": [
+    "V05"
+   ],
+   "line": "Every prayer, right after the two names of mercy, says: “Owner of the Day of Judgment.” Din means repayment, what each is due. Its root also gives dayn, debt."
+  },
+  {
+   "t": "fill",
+   "v": "LG2-Closed-Ledger",
+   "eb": "finish the line",
+   "pre": "Din means repayment, what each is due. It’s also the everyday Arabic word for",
+   "post": ".",
+   "o": [
+    "justice",
+    "religion",
+    "the market"
+   ],
+   "a": 1,
+   "why": "Religion: a way of life you live and answer for. It’s the din in the Qur’an’s “there is no compulsion in religion.”"
+  },
+  {
+   "t": "shot",
+   "v": "LG5-Dishes-Today",
+   "vo": [
+    "V06"
+   ],
+   "line": "And nothing quiet is lost. A saying teaches: a good deed you meant to do, even one you never got to, is written down as a whole good deed.",
+   "label": "today"
+  },
+  {
+   "t": "shot",
+   "v": "LG6-Deleted-Text-Today",
+   "vo": [
+    "V07"
+   ],
+   "line": "And a wrong you meant to do, then let go of for God’s sake, is written as a good deed too. The angry text, deleted before it was sent.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "LG6-Deleted-Text-Today",
+   "eb": "did you know?",
+   "q": "A good deed you only meant to do is written as one. What about a good deed you actually do?",
+   "o": [
+    "Written once, same as the plan",
+    "Written as two: plan and deed",
+    "Written ten times over, or more"
+   ],
+   "a": 2,
+   "why": "The same saying: ten times, up to seven hundred, or many more. And a wrong actually done is written as only one."
+  },
+  {
+   "t": "teach",
+   "v": "LG3-Coins-Returned",
+   "say": [
+    "here’s what i love. the merchant’s whole hope fit in one line: maybe God will let us go too. and he was right.",
+    "in islam, the day of judgment is real, and every account is settled. but the one who holds it was just named merciful, twice. the account is in kind hands."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "LG4-Dawn-Plain",
+   "eb": "the hard one",
+   "q": "The prayer names God merciful twice, then “Owner of the Day of Judgment.” From the merchant’s story, why might that order matter?",
+   "o": [
+    "The Judge is the one just called merciful",
+    "Judgment matters more than mercy",
+    "Mercy ends when the Day begins"
+   ],
+   "a": 0,
+   "why": "The reckoning is held by mercy. Many readers say that order is the whole point."
+  }
+ ],
+ "today": {
+  "v": "LG3-Coins-Returned",
+  "say": "the qur’an says that letting a struggling person’s debt go, as charity, is better for you. so today, let one small debt go: a favor owed, a coffee never paid back, a small grudge. leave the account with God.",
+  "options": [
+   [
+    "I know which one",
+    "lovely. that’s the merchant’s whole secret."
+   ],
+   [
+    "I’ll look for one",
+    "good. small ones count. nothing quiet is lost."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "You alone.",
+  "line": "two weeks done. next, the line where the prayer turns and speaks to God directly."
+ },
+ "card": {
+  "from": "a story the Prophet ﷺ told",
+  "mins": 5,
+  "keep": "scales",
+  "keepName": "The merchant’s scales",
+  "keepWhy": "The account is in kind hands.",
+  "keepSvg": "<circle cx=\"50\" cy=\"17\" r=\"5\" fill=\"#2a1b05\"/><rect x=\"47\" y=\"20\" width=\"6\" height=\"58\" fill=\"#2a1b05\"/><rect x=\"18\" y=\"24\" width=\"64\" height=\"5\" rx=\"2\" fill=\"#2a1b05\"/><path d=\"M22 29L12 56M22 29L32 56M78 29L68 56M78 29L88 56\" stroke=\"#2a1b05\" stroke-width=\"2.5\" fill=\"none\"/><path d=\"M34 56H10a12 12 0 0 0 24 0zM90 56H66a12 12 0 0 0 24 0z\" fill=\"#2a1b05\"/><rect x=\"30\" y=\"78\" width=\"40\" height=\"7\" rx=\"2\" fill=\"#2a1b05\"/>",
+  "sources": [
+   "Sahih al-Bukhari 2078 and 3480; Sahih Muslim 1562 (Abu Hurayrah: a merchant used to lend to people; when he saw someone in hardship he told his young helpers, “Overlook him, perhaps Allah will overlook us”; so Allah overlooked him)",
+   "Sahih Muslim 1561 (Abu Mas‘ud: a man was called to account and nothing good was found for him except that he dealt with people and told his helpers to let off the one in hardship; Allah said, “We are more worthy of that than he; let him off”)",
+   "Sahih Muslim 1560 (Hudhayfa: a similar account)",
+   "Qur’an 1:4 (“Owner of the Day of Judgment,” Pickthall)",
+   "Sahih al-Bukhari 6491; Sahih Muslim 131 (a good deed intended but not done is written as a complete good deed; a bad deed intended and then left is written as a complete good deed)",
+   "Sahih al-Bukhari 7501 (the bad deed left “for My sake” is written as a good deed)",
+   "Qur’an 2:280 (if the debtor is in hardship, give time until ease; to remit it as charity is better for you)",
+   "Din and dayn (debt) from the root d-y-n: Lane, An Arabic-English Lexicon"
+  ],
+  "check": [
+   "Muslim 1561 has God speak with the royal “We” (“We are more worthy of that than he”); the caption uses “I” to avoid confusion. Confirm.",
+   "The story joins two reports (Bukhari 2078 for the merchant’s words, Muslim 1561 for the reckoning); they may be the same man. Confirm.",
+   "Din glossed as “repayment, what each one is due” (jaza’), with dayn, debt, from the same root d-y-n. Confirm the gloss.",
+   "Tomorrow’s title “You alone.” stands for day 15 (Qur’an 1:5), whose lesson isn’t written yet."
+  ]
+ }
+}

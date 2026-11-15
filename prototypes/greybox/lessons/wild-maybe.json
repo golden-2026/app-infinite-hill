@@ -1,0 +1,206 @@
+{
+ "id": "wild-maybe",
+ "home": "wild",
+ "title": "The farmer’s horse",
+ "told": "from the Huainanzi",
+ "clips": "art/sacred/wild-maybe/clips/",
+ "voice": "art/sacred/wild-maybe/voice/",
+ "guide": {
+  "name": "Justin",
+  "photo": "art/guides/spiritual.webp"
+ },
+ "hook": {
+  "v": "SW1-Frontier-Farm",
+  "say": "before the story, can i ask you something? has something happened this year that you still can’t explain?",
+  "options": [
+   [
+    "Yes, something big",
+    "then hold it gently while we watch. this one is old, and kind."
+   ],
+   [
+    "A few small things",
+    "keep them in mind. this story has a lot of small turns."
+   ],
+   [
+    "Not really",
+    "good. keep this one for the day you need it."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "SW1-Frontier-Farm",
+   "vo": [
+    "V01"
+   ],
+   "line": "Over two thousand years ago, a Chinese book called the Huainanzi told of an old man who lived near the northern frontier, with his son and their horses."
+  },
+  {
+   "t": "shot",
+   "v": "SW2-Horse-Gone",
+   "vo": [
+    "V02"
+   ],
+   "line": "One day his horse ran off across the border. The neighbors came to comfort him. What bad luck!"
+  },
+  {
+   "t": "ask",
+   "v": "SW2-Horse-Gone",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "The neighbors say it’s bad luck. What do you think the old man says?",
+   "o": [
+    "“Yes, it’s a disaster”",
+    "“Who knows? This could be good luck”",
+    "“I’ll go and get it back”"
+   ],
+   "a": 1,
+   "why": "“How do you know this won’t turn out to be a blessing?” He doesn’t argue. He just won’t decide yet."
+  },
+  {
+   "t": "shot",
+   "v": "SW3-Horses-Return",
+   "vo": [
+    "V03"
+   ],
+   "line": "Months later, the horse came home, bringing fine horses from beyond the border. What good luck! the neighbors said. Who knows, said the old man, this could be bad luck."
+  },
+  {
+   "t": "ask",
+   "v": "SW3-Horses-Return",
+   "eb": "why?",
+   "q": "Things just got better. Why would the old man still say it could be bad luck?",
+   "o": [
+    "One moment can’t show how it turns",
+    "He’s gloomy and expects the worst",
+    "He never wanted the new horses"
+   ],
+   "a": 0,
+   "why": "He isn’t gloomy. He’s honest. From inside one moment, you can’t see where it leads."
+  },
+  {
+   "t": "shot",
+   "v": "SW4-The-Fall",
+   "vo": [
+    "V04"
+   ],
+   "line": "His son loved riding the new horses. He fell, and broke his leg, and was left with a limp. What bad luck! Who knows, said the old man."
+  },
+  {
+   "t": "ask",
+   "v": "SW4-The-Fall",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "A year later, an army crosses the border and the young men are called to fight. What happens to the son?",
+   "o": [
+    "He goes and becomes a hero",
+    "He runs away into the hills",
+    "His injured leg keeps him home, safe"
+   ],
+   "a": 2,
+   "why": "Nine in ten of the frontier men died. The son, with his limp, stayed home, and lived."
+  },
+  {
+   "t": "shot",
+   "v": "SW5-Officers-Come",
+   "vo": [
+    "V05"
+   ],
+   "line": "A year later, raiders invaded. The young men took up bows to fight, and nine in ten frontier men died. The son, with his limp, stayed home."
+  },
+  {
+   "t": "ask",
+   "v": "SW5-Officers-Come",
+   "eb": "did you know?",
+   "q": "The Huainanzi describes the old man as skilled at one thing. What?",
+   "o": [
+    "Training war horses",
+    "Healing broken bones",
+    "Reading omens and signs"
+   ],
+   "a": 2,
+   "why": "The book calls him a man skilled in reading signs. Many readers enjoy the irony: the expert in signs is the one who says, who knows?"
+  },
+  {
+   "t": "shot",
+   "v": "SW6-Today",
+   "vo": [
+    "V06"
+   ],
+   "line": "Today, people retell it as the farmer who only ever says “maybe.” It’s an old answer to “everything happens for a reason.”",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "SW6-Today",
+   "eb": "why?",
+   "q": "The neighbors got it wrong every single time. What was their mistake?",
+   "o": [
+    "They were jealous of the old man",
+    "They judged each turn as the last word",
+    "They didn’t know much about horses"
+   ],
+   "a": 1,
+   "why": "Each “what luck!” closed the story too early. The Huainanzi’s own lesson: good fortune turns to bad and bad to good, and you can’t see where it ends."
+  },
+  {
+   "t": "teach",
+   "v": "SW1-Frontier-Farm",
+   "say": [
+    "here’s what i love. the old man never says why. he says, who knows? the book, which draws deeply on daoist thought, ends with its lesson: good fortune turns into bad, and bad into good, without end.",
+    "so you don’t need the reason to make your next move. not why, but what now. that question always has an answer."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "SW6-Today",
+   "eb": "the hard one",
+   "q": "A friend loses a job and says, “everything happens for a reason, right?” What would the old man’s way sound like?",
+   "o": [
+    "“Don’t worry, it’ll turn out good. It always does”",
+    "“Who knows yet? It’s too soon to call it”",
+    "“No. Sometimes things are just bad luck”"
+   ],
+   "a": 1,
+   "why": "He never promised the bad would turn good, and he never called it final either. He left the story open."
+  }
+ ],
+ "today": {
+  "v": "SW6-Today",
+  "say": "when something goes wrong today, even something small, try the old man’s words before you judge it: who knows? then ask, what now?",
+  "options": [
+   [
+    "I’ll try it today",
+    "lovely. one “who knows” at a time."
+   ],
+   [
+    "I’ll save it for something bigger",
+    "that counts. the old man waited too."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "Tight, loose, tuned.",
+  "line": "a monk tries so hard he wants to quit. the buddha asks him about music."
+ },
+ "card": {
+  "from": "a Chinese teaching story, from the Huainanzi",
+  "mins": 5,
+  "keep": "horse",
+  "keepName": "The farmer’s horse",
+  "keepWhy": "Who knows? Then, what now.",
+  "keepSvg": "<path d=\"M32 80l4-28c-2-12 4-22 14-26l2-8 6 7c8 2 14 9 18 19l2 8c0 4-4 6-8 4l-10-6c-2 6-4 12-4 30z\" fill=\"#2a1b05\"/>",
+  "sources": [
+   "Huainanzi, chapter 18 (“Renjian xun”, Among Men): the old man near the frontier (sai weng) whose horse runs off to the Hu lands, returns with Hu horses, the son breaks his leg (thigh) riding, a year later the Hu invade, nine of ten men near the frontier die, father and son survive; closing line that fortune and misfortune turn into each other without end.",
+   "English: John S. Major et al., The Huainanzi (Columbia University Press, 2010), chapter 18.",
+   "Proverb 塞翁失马，焉知非福 (“the old man of the frontier lost his horse; how do you know it isn’t a blessing?”) derives from this passage.",
+   "Day 1 script: docs/curriculum/spiritual/scripts/y1/day-0001.json (not why, but what now)."
+  ],
+  "check": [
+   "Painting SW3 shows “a herd of six wild horses”; the text says he brought back fine horses of the Hu (nomads). Caption now says “fine horses from beyond the border.” Confirm the picture is acceptable."
+  ]
+ }
+}

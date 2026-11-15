@@ -1,3 +1,5 @@
+Background only (written 2026-10-06). Where this disagrees with docs/VISION-NOW.md or docs/LESSON_STANDARD.md, those win.
+
 # Five-year map: brief for each path (2026-10-06)
 
 The owner: "how are your learnings impacting the full five years of curriculum? i assume you're gonna need to revise

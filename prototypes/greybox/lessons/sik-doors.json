@@ -1,0 +1,195 @@
+{
+ "id": "sik-doors",
+ "home": "nectar",
+ "title": "Four doors, one number",
+ "told": "the history and tradition of the Harmandir Sahib",
+ "clips": "art/sacred/sik-doors/clips/",
+ "voice": "art/sacred/sik-doors/voice/",
+ "guide": {
+  "name": "Diljit",
+  "photo": "art/guides/sikhism.webp"
+ },
+ "hook": {
+  "v": "SD3-Four-Doors",
+  "say": "before the story, can i ask you something? have you ever walked into a place of worship and wondered if you were really welcome?",
+  "options": [
+   [
+    "Yes, I have",
+    "then this one is for you. listen."
+   ],
+   [
+    "I’ve never gone in",
+    "then listen. this door was built for you too."
+   ],
+   [
+    "I always feel welcome",
+    "good. then you’ll know what this place feels like."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "SD1-Pool-Amritsar",
+   "vo": [
+    "V01"
+   ],
+   "line": "Over four hundred years ago, the fifth Guru, Guru Arjan, began building a house of God in the middle of a sacred pool in Amritsar."
+  },
+  {
+   "t": "ask",
+   "v": "SD2-First-Stone",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "Who do you think the Guru asked to lay the very first stone?",
+   "o": [
+    "A great Sikh warrior",
+    "The Mughal emperor",
+    "A Muslim holy man from Lahore"
+   ],
+   "a": 2,
+   "why": "A Sufi saint, a Muslim holy man and the Guru’s friend."
+  },
+  {
+   "t": "shot",
+   "v": "SD2-First-Stone",
+   "vo": [
+    "V02"
+   ],
+   "line": "Many Sikhs tell that he asked his friend, the Muslim saint Mian Mir of Lahore, to lay the first stone.",
+   "label": "a traditional story"
+  },
+  {
+   "t": "shot",
+   "v": "SD3-Four-Doors",
+   "vo": [
+    "V03"
+   ],
+   "line": "And he gave it four doors, one on every side. You could walk in from any direction."
+  },
+  {
+   "t": "ask",
+   "v": "SD3-Four-Doors",
+   "eb": "why?",
+   "q": "Why give a house of God four doors, one on each side?",
+   "o": [
+    "So crowds could leave quickly",
+    "To say all are welcome, from anywhere",
+    "One for each of the first four Gurus"
+   ],
+   "a": 1,
+   "why": "Every side is a front door. Sikhs often say it means the place is open to all, whatever their faith or caste."
+  },
+  {
+   "t": "shot",
+   "v": "SD4-The-Book",
+   "vo": [
+    "V04"
+   ],
+   "line": "Then Guru Arjan gathered the hymns of the Gurus into one great book, with songs by Hindu and Muslim saints in it too."
+  },
+  {
+   "t": "shot",
+   "v": "SD5-Ik-Onkar",
+   "vo": [
+    "V05"
+   ],
+   "line": "The book opens with Guru Nanak’s symbol, Ik Onkar. Ik is written as the numeral one. Onkar is an ancient name for God."
+  },
+  {
+   "t": "ask",
+   "v": "SD5-Ik-Onkar",
+   "eb": "did you know?",
+   "q": "How is most of the great book, the Guru Granth Sahib, arranged?",
+   "o": [
+    "By raga: the tune it’s sung to",
+    "By which Guru wrote each hymn",
+    "By the year each was written"
+   ],
+   "a": 0,
+   "why": "Most hymns are grouped into 31 ragas, musical modes, because the scripture is meant to be sung. Within each raga, the Gurus come first, then the other saints."
+  },
+  {
+   "t": "shot",
+   "v": "SD6-Today-Golden-Temple",
+   "vo": [
+    "V06"
+   ],
+   "line": "Today, at the Golden Temple, the doors still face every way, and the great book is still carried in each morning.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "SD6-Today-Golden-Temple",
+   "eb": "you’re in it",
+   "q": "You walk into a gurdwara for the first time. What will they ask of you?",
+   "o": [
+    "Say whether you are a Sikh",
+    "Cover your head, take off your shoes",
+    "Pay a small offering at the door"
+   ],
+   "a": 1,
+   "why": "Anyone of any faith is welcome. Cover your head, slip off your shoes, wash your hands, and you’ll likely be offered a free meal at the langar."
+  },
+  {
+   "t": "teach",
+   "v": "SD5-Ik-Onkar",
+   "say": [
+    "here’s what i love. before one rule or one story, the sikh scripture says a single thing: there is one.",
+    "and if there’s one, nobody stands outside it. that’s why the doors face every way."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "SD6-Today-Golden-Temple",
+   "eb": "the hard one",
+   "q": "From the story, why does “there is one” fit a temple with four doors and a book with Hindu and Muslim saints in it?",
+   "o": [
+    "If there’s one source, nobody is an outsider",
+    "Every faith was meant to merge into one new faith",
+    "So each faith would have its own separate door"
+   ],
+   "a": 0,
+   "why": "One source, so no outsiders. Every door is for everyone, and the saints in the book kept their own names and faiths."
+  }
+ ],
+ "today": {
+  "v": "SD6-Today-Golden-Temple",
+  "say": "today, when someone gets on your nerves, think one quiet word: one. sikhs believe the same light is in them as in you.",
+  "options": [
+   [
+    "I’ll try it",
+    "good. the doors face every way."
+   ],
+   [
+    "Even them?",
+    "even them. if there’s one, nobody’s outside."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "Shiny on the outside.",
+  "line": "a kind host, a holy-looking inn, and a song that tells the truth."
+ },
+ "card": {
+  "from": "the story of the Harmandir Sahib",
+  "mins": 5,
+  "keep": "door",
+  "keepName": "The four doors",
+  "keepWhy": "There is one, so every side is a front door.",
+  "sources": [
+   "Sikh tradition that the Sufi saint Mian Mir of Lahore laid the foundation stone of the Harmandir Sahib for Guru Arjan (traditionally dated 1588 or 1589)",
+   "The Harmandir Sahib built with entrances on all four sides",
+   "Guru Arjan’s compilation of the Adi Granth, installed at the Harmandir Sahib in 1604, including hymns of bhagats such as Kabir and Sheikh Farid",
+   "Guru Granth Sahib, Ang 1 (Ik Onkar at the head of the Mool Mantar)",
+   "Guru Granth Sahib, Ang 13 (“sabh meh jot jot hai soi”: in all is the light, and that light is the One)",
+   "Daily procession bringing the Guru Granth Sahib into the Harmandir Sahib each morning",
+   "docs/curriculum/sikhism/scripts/y1/day-0009.json"
+  ],
+  "check": [
+   "Mian Mir laying the foundation stone is a widely told tradition but early sources are thin and it is debated; labeled “a traditional story”.",
+   "The four doors as open to all directions, faiths and castes is the common Sikh explanation; confirm framing."
+  ]
+ }
+}

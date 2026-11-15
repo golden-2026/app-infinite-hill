@@ -76,7 +76,7 @@ export default function JoinCircle() {
           <Text style={[type.body(14), { color: color.mute }]}>{t("groups.join.codeAsk")}</Text>
           <TextInput testID="circle-code-input" value={code} onChangeText={(v) => setCode(v.toUpperCase().replace(/[^A-Z0-9 -]/g, "").slice(0, 8))} placeholder={t("groups.join.codePlaceholder")} placeholderTextColor={color.mute}
             autoCapitalize="characters" autoCorrect={false} autoComplete="off" maxLength={8} accessibilityLabel={t("groups.join.codeA11y")} returnKeyType="go" onSubmitEditing={() => find()}
-            style={{ borderWidth: 1.5, borderColor: color.line, borderRadius: 999, paddingVertical: 14, paddingHorizontal: 18, fontFamily: font.display[800], fontSize: 22, letterSpacing: 3, textAlign: "center", backgroundColor: "#fff", color: color.ink }} />
+            style={{ borderWidth: 1.5, borderColor: color.line, borderRadius: 999, paddingVertical: 14, paddingHorizontal: 18, fontFamily: font.display[800], fontSize: 22, letterSpacing: 3, textAlign: "center", backgroundColor: color.white, color: color.ink }} />
           {msg ? <Text accessibilityLiveRegion="polite" testID="circle-msg" style={[type.body(13), { color: color.ink, textAlign: "center" }]}>{msg}</Text> : null}
           <View style={{ alignItems: "center", marginTop: 8 }}><Guy pose="wave" h={120} /></View>
         </View>
@@ -112,7 +112,7 @@ export default function JoinCircle() {
                 {showNick ? (
                   <TextInput testID="circle-join-nick-input" value={nick} onChangeText={(v) => setNick(v.slice(0, 24))} maxLength={24} placeholder={t("groups.join.nickPlaceholder")} placeholderTextColor={color.mute}
                     accessibilityLabel={t("groups.join.nickA11y")} autoCorrect={false}
-                    style={{ marginTop: 8, borderWidth: 1.5, borderColor: color.line, borderRadius: 999, paddingVertical: 12, paddingHorizontal: 16, fontFamily: font.text[400], fontSize: 16, backgroundColor: "#fff", color: color.ink }} />
+                    style={{ marginTop: 8, borderWidth: 1.5, borderColor: color.line, borderRadius: 999, paddingVertical: 12, paddingHorizontal: 16, fontFamily: font.text[400], fontSize: 16, backgroundColor: color.white, color: color.ink }} />
                 ) : null}
               </View>
               {onboarded && hasKids ? (

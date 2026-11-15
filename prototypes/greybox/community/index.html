@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Community Concepts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@500;600;700;800&display=swap">
+<link rel="stylesheet" href="com.css">
+<style>
+  body { background: var(--ink); }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px 60px; }
+  header { background: var(--lime); color: var(--ink); padding: 34px 20px 26px; border-radius: 0 0 32px 32px; margin: 0 -16px 22px; }
+  header .eb { color: var(--ink); }
+  header h1 { margin: 8px 0 0; font-size: clamp(56px, 11vw, 112px); }
+  header h1 u { text-decoration-thickness: 8px; text-underline-offset: 8px; }
+  header p { margin: 10px 0 0; max-width: 620px; font: 800 16px/1.45 Manrope, sans-serif; }
+  .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+  @media (max-width: 820px) { .grid { grid-template-columns: 1fr; } }
+  a.c { position: relative; display: grid; text-decoration: none; background: var(--panel); border-radius: 26px; overflow: hidden; box-shadow: inset 0 0 0 1px var(--line); }
+  a.c:hover { box-shadow: inset 0 0 0 2px var(--lime); }
+  a.c .art { position: relative; aspect-ratio: 4 / 3; overflow: hidden; }
+  a.c .art img { width: 100%; height: 100%; object-fit: cover; filter: contrast(1.1) saturate(1.08) sepia(.14); }
+  a.c .art::after { content: ""; position: absolute; inset: 0; background: linear-gradient(transparent 40%, rgba(0,0,0,.85)), var(--grain); }
+  a.c .art .l { position: absolute; z-index: 2; left: 14px; top: 14px; background: var(--lime); color: var(--ink); font: 400 26px/1 Anton, Impact, sans-serif; padding: 6px 11px 4px; transform: rotate(-4deg); }
+  a.c .art h2 { position: absolute; z-index: 2; left: 16px; right: 16px; bottom: 12px; margin: 0; font-size: 46px; }
+  a.c .tx { padding: 14px 16px 18px; display: grid; gap: 8px; }
+  a.c .tx p { margin: 0; font-size: 14px; color: var(--muted); }
+  a.c .tx p b { color: var(--text); }
+  a.c .go { font: 800 12px/1 Manrope, sans-serif; letter-spacing: .16em; text-transform: uppercase; color: var(--lime); }
+  .bet { margin-top: 18px; background: var(--panel); border-radius: 26px; padding: 18px; box-shadow: inset 0 0 0 2px var(--pink); display: grid; gap: 8px; }
+  .bet h3 { margin: 0; font-size: 38px; }
+  .bet p { margin: 0; font-size: 15px; line-height: 1.5; }
+  .rules { margin-top: 14px; font-size: 12.5px; color: var(--muted); }
+</style>
+</head><body>
+<div class="wrap">
+  <header>
+    <div class="eb">infinite hill · together · 3 concepts</div>
+    <h1 class="d">your <u>people</u></h1>
+    <p>three ways to make Infinite Hill something you do with people, not alone. each one is a clickable phone you can tap through. all inside one faith (Christian examples), no leaderboards, real stamps only for real rooms.</p>
+  </header>
+  <div class="grid">
+    <a class="c" href="crew.html"><div class="art"><img src="../art/sacred/lost-son/clips/C10-Father-Runs.webp" alt=""><span class="l">A</span><h2 class="d">the <em>crew</em></h2></div>
+      <div class="tx"><p><b>3 to 6 friends or one household.</b> same daily story, see each other's choices, keep one light lit. a full week unlocks a Finn fit for all of you.</p><span class="go">tap through ›</span></div></a>
+    <a class="c" href="drop-night.html"><div class="art"><img src="../art/sacred/chr-well/clips/WL2-Woman-At-Noon.webp" alt=""><span class="l">B</span><h2 class="d">drop <em>night</em></h2></div>
+      <div class="tx"><p><b>sunday 8pm, everyone, same episode.</b> live stickers, a 10-second room vote, a drop card. watch parties in real rooms earn the stamp.</p><span class="go">tap through ›</span></div></a>
+    <a class="c" href="small-group.html"><div class="art"><img src="../art/sacred/chr-samaritan/clips/QS4-Samaritan-Kneels.webp" alt=""><span class="l">C</span><h2 class="d">the <em>group</em></h2></div>
+      <div class="tx"><p><b>a leader drops the week to their group.</b> Finn builds the night from the group's choices. tap in at the meeting, get the real stamp.</p><span class="go">tap through ›</span></div></a>
+  </div>
+  <div class="bet">
+    <div class="eb" style="color:var(--pink)">my bet</div>
+    <h3 class="d">C, with B on top</h3>
+    <p>The group is the only one that starts with people who already meet. One leader brings a whole room, the IRL stamp is earned honestly, and every week has a real reason to open the app. Drop night then becomes the loud weekly moment those groups (and crews) all share. The crew is the fallback for people with no group.</p>
+  </div>
+  <p class="rules">every name, venue and split bar in these mockups is a placeholder and is labeled that way. local prototype only, not live.</p>
+</div>
+</body></html>

@@ -21,7 +21,8 @@ const TABS = [
 ] as const;
 
 const TabButton = forwardRef<View, TabTriggerSlotProps & { label: string; root: string; Icon: (p: { color: string; filled?: boolean }) => React.JSX.Element }>(function TabButton({ isFocused, label, root, Icon, onPress, ...props }, ref) {
-  const tint = isFocused ? color.gold : "#ffffff8c";
+  // loud brand: the tab you're on is a lime pill with black words (lime + black, Magna's playbook)
+  const tint = isFocused ? "#0A0A0A" : "#F3EFE48c";
   const path = usePathname();
   // Tapping the tab you're in goes back to its first screen, as in every iPhone app.
   const press = (e: any) => {
@@ -31,7 +32,7 @@ const TabButton = forwardRef<View, TabTriggerSlotProps & { label: string; root: 
   };
   return (
     <Pressable ref={ref} {...props} onPress={press} accessibilityRole="tab" accessibilityState={{ selected: !!isFocused }} aria-selected={!!isFocused} aria-current={isFocused ? "page" : undefined} accessibilityLabel={label}
-      style={({ pressed }) => [styles.tab, { transform: [{ scale: pressed ? 0.92 : 1 }] }]}>
+      style={({ pressed }) => [styles.tab, isFocused && styles.on, { transform: [{ scale: pressed ? 0.92 : 1 }] }]}>
       <Icon color={tint} filled={!!isFocused} />
       <Text style={[styles.label, { color: tint }]}>{label}</Text>
     </Pressable>
@@ -57,7 +58,8 @@ export default function TabsLayout() {
 }
 
 const styles = StyleSheet.create({
-  bar: { flexDirection: "row", backgroundColor: color.ink, paddingTop: 10, paddingHorizontal: 8, borderTopWidth: 1, borderTopColor: "#ffffff14" },
-  tab: { flex: 1, alignItems: "center", justifyContent: "center", gap: 3, paddingVertical: 4, minHeight: 48 },
-  label: { fontFamily: font.text[600], fontSize: 11, letterSpacing: 0.2 },
+  bar: { flexDirection: "row", backgroundColor: "#0A0A0A", paddingTop: 8, paddingHorizontal: 8, gap: 4, borderTopWidth: 1, borderTopColor: "#F3EFE41a" },
+  tab: { flex: 1, alignItems: "center", justifyContent: "center", gap: 2, paddingVertical: 5, minHeight: 50, borderRadius: 999 },
+  on: { backgroundColor: color.gold },
+  label: { fontFamily: font.text[700], fontSize: 10.5, letterSpacing: 1.1, textTransform: "uppercase" },
 });

@@ -1,5 +1,10 @@
 # Golden feature status
 
+**Scope (2026-11-10):** this snapshot covers the older Golden Vite prototype (`src/`) only. For what works today in
+the new app (`prototypes/greybox/hill-app.html`) see `docs/XOGITO-START-HERE.md` section 3 and `docs/HANDOFF.md`. The
+vision now is in `docs/VISION-NOW.md`: one faith at a time, so the "Second Door" row below is dropped; lessons are a
+narrated film plus games (`docs/LESSON_STANDARD.md`).
+
 This is a source-based snapshot of the local private-beta implementation. It describes behavior in this repository, not independent verification of the deployed site or service configuration. “Working locally” means the code supports the behavior in this browser build. It does not mean that its content is approved for public use or that an external service is connected.
 
 The local shell now includes a code-split Whole House navigator with 123 reviewable customer screen states spanning curriculum, accounts, Table, Together, plans, gifting, Guide, device behavior, and website/app landings. They are reachable from the profile screen or directly with `?screen=<screen-id>`. Screens that depend on Supabase Auth, Stripe outcomes, notifications, event providers, audio, content approval, or other live services remain explicitly preview, pending, or unavailable until a verified integration supplies their state.

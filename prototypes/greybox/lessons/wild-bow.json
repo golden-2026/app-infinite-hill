@@ -1,0 +1,195 @@
+{
+ "id": "wild-bow",
+ "home": "wild",
+ "title": "The bow at the river",
+ "told": "a traditional Hindu story",
+ "clips": "art/sacred/wild-bow/clips/",
+ "voice": "art/sacred/wild-bow/voice/",
+ "guide": {
+  "name": "Justin",
+  "photo": "art/guides/spiritual.webp"
+ },
+ "hook": {
+  "v": "NB1-Ghats-Dawn",
+  "say": "before the story, can i ask you something? who do you walk past every day without really seeing them?",
+  "options": [
+   [
+    "Someone comes to mind",
+    "keep their face in mind while we watch."
+   ],
+   [
+    "Probably lots of people",
+    "same here. this story is about exactly that."
+   ],
+   [
+    "I’m not sure",
+    "that’s honest. the story might show you."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "NB1-Ghats-Dawn",
+   "vo": [
+    "V01"
+   ],
+   "line": "Long ago in Varanasi, at dawn, the young Hindu teacher Shankara walked down to bathe in the holy river Ganga, his students behind him.",
+   "label": "a traditional story"
+  },
+  {
+   "t": "shot",
+   "v": "NB2-The-Stranger",
+   "vo": [
+    "V02"
+   ],
+   "line": "A man came toward them with four dogs. The harsh caste rules of that time pushed his people to the edges, and told others not to touch them."
+  },
+  {
+   "t": "shot",
+   "v": "NB3-Move-Aside",
+   "vo": [
+    "V03"
+   ],
+   "line": "Move aside, Shankara told him. Get out of the way."
+  },
+  {
+   "t": "ask",
+   "v": "NB3-Move-Aside",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "The man doesn’t move. He asks Shankara a question. What do you think he asks?",
+   "o": [
+    "“Why are you so rude to me?”",
+    "“Move my body, or my self?”",
+    "“May I bathe here too?”"
+   ],
+   "a": 1,
+   "why": "He takes Shankara’s own teaching and hands it back: if the self in every person is one, who is moving away from whom?"
+  },
+  {
+   "t": "shot",
+   "v": "NB4-The-Question",
+   "vo": [
+    "V04"
+   ],
+   "line": "Move what? he asked. My body from yours, or the self in me from the self in you? The sun shines the same in the Ganga and my clay pot."
+  },
+  {
+   "t": "ask",
+   "v": "NB4-The-Question",
+   "eb": "why?",
+   "q": "Why did the question stop Shankara in his tracks?",
+   "o": [
+    "He’d lost an argument in public",
+    "He was afraid of the four dogs",
+    "His own teaching had caught him out"
+   ],
+   "a": 2,
+   "why": "Shankara taught that the deepest self is one in all. The man caught him not living it, and Shankara knew it."
+  },
+  {
+   "t": "shot",
+   "v": "NB5-The-Bow",
+   "vo": [
+    "V05"
+   ],
+   "line": "Shankara bowed low before the man. Whoever truly sees this, he said, outcaste or priest, is my teacher. In many tellings, the man was the god Shiva."
+  },
+  {
+   "t": "fill",
+   "v": "NB5-The-Bow",
+   "eb": "finish the line",
+   "pre": "Namaste is two Sanskrit words. Namas means a bow. Te means",
+   "post": ".",
+   "o": [
+    "to you",
+    "the light",
+    "goodbye"
+   ],
+   "a": 0,
+   "why": "To you. A bow to you. “The light in me honors the light in you” is a modern reading, not a translation."
+  },
+  {
+   "t": "shot",
+   "v": "NB6-Today",
+   "vo": [
+    "V06"
+   ],
+   "line": "Today, across India and Nepal, palms together and namaste is how people greet an aunt, a neighbor, a guest at the door.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "NB6-Today",
+   "eb": "did you know?",
+   "q": "In many tellings the man was Shiva. And the four dogs?",
+   "o": [
+    "Four of Shiva’s guards",
+    "Shankara’s four students",
+    "The four Vedas"
+   ],
+   "a": 2,
+   "why": "The four Vedas, the oldest Hindu scriptures, walking at the heels of the man Shankara pushed aside. Shankara did have four famous students, which makes it sharper."
+  },
+  {
+   "t": "teach",
+   "v": "NB5-The-Bow",
+   "say": [
+    "here’s what i love. shankara taught that one sacred self lives in every person. so a bow isn’t to someone’s job, caste or mood. it’s to that.",
+    "and the story shows how easy it is to know this and forget it on a busy morning. namaste, said and meant, is how you remember."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "NB6-Today",
+   "eb": "the hard one",
+   "q": "From this story, when does a namaste really mean what it says?",
+   "o": [
+    "When your palms are pressed just right",
+    "When it’s for someone you’d walk past",
+    "When it’s for elders and teachers"
+   ],
+   "a": 1,
+   "why": "The gesture is simple. The story’s test is who you bow to, and whether the bow is real."
+  }
+ ],
+ "today": {
+  "v": "NB6-Today",
+  "say": "today, really greet one person you usually walk past: the cleaner, the driver, the neighbor. a namaste, a nod, a real hello. mean the bow.",
+  "options": [
+   [
+    "I know who",
+    "lovely. that’s shankara’s lesson, carried out the door."
+   ],
+   [
+    "I’ll look for someone",
+    "that counts. looking is half of it."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "Shoulder to the wheel.",
+  "line": "a farmer’s cart is stuck in the mud, and he asks a god to lift it."
+ },
+ "card": {
+  "from": "a traditional Hindu story",
+  "mins": 5,
+  "keep": "palms",
+  "keepName": "The bow at the river",
+  "keepWhy": "A bow to you. Mean it.",
+  "keepSvg": "<path d=\"M49 18c-6 4-10 16-10 30v16l-9 12h19zM51 18c6 4 10 16 10 30v16l9 12H51z\" fill=\"#2a1b05\"/>",
+  "sources": [
+   "Traditional account of Adi Shankara and the chandala at Kashi (Varanasi), told in the hagiographies (e.g. Madhava-Vidyaranya’s Shankara Digvijaya, canto 6) and as the setting of the hymn Manisha Panchakam, attributed to Shankara.",
+   "Manisha Panchakam, opening verse: the question whether Shankara wants the body (made of food) to move from the body, or consciousness from consciousness; the sun reflected the same in the Ganga and in water in an outcaste’s pot; refrain that whoever has this vision is his guru, be he chandala or Brahmin.",
+   "namaste: Sanskrit namas (bow, reverence) + te (to you). Monier-Williams, Sanskrit-English Dictionary, s.v. namas.",
+   "Day 4 script: docs/curriculum/spiritual/scripts/y1/day-0004.json (mean the bow)."
+  ],
+  "check": [
+   "Caste wording: “The harsh caste rules of that time pushed his people to the edges, and told others not to touch them.” The texts call him a chandala. Confirm this is accurate and respectful, and that “outcaste or priest” (for the hymn’s chandala or Brahmin) is right.",
+   "Check the Shankara paintings are respectful to both men.",
+   "Painting of Shankara: a young monk in saffron with a shaved head, bowing with palms together. Confirm this is a respectful depiction."
+  ]
+ }
+}

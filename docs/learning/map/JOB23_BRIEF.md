@@ -1,3 +1,5 @@
+Background only (written 2026-10-07). Where this disagrees with docs/VISION-NOW.md or docs/LESSON_STANDARD.md, those win.
+
 # Years 2-3 brief: the style pass and the new recipe in one go
 
 Owner, 2026-10-07: "do all" for years 2-3 (days 332-1061, all 8 paths). Each lesson gets both of year 1's jobs in a

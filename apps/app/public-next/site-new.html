@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>infinite hill · religion, reimagined</title>
+<meta name="description" content="religion, reimagined. the stories of your faith, told by voices you know. see what we share. treat each other better. five minutes a day.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="infinite hill">
+<meta property="og:title" content="infinite hill · religion, reimagined">
+<meta property="og:description" content="the stories of your faith, told by voices you know. five minutes a day.">
+<meta name="theme-color" content="#0A0A0A">
+<link rel="alternate" hreflang="en" href="/">
+<link rel="alternate" hreflang="es" href="/es">
+<script>/* old footer links (#p/about …) open the real page */(function(){var m=/^#p\/(about|foundation|keepers|provenance|careers|science|paths|nights|prayers|voices|schools|promise|safety|contact|privacy|terms|biometric|legal)$/.exec(location.hash);if(m)location.replace((document.documentElement.lang==='es'?'/es/':'/')+m[1])})()</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/brand.css">
+<link rel="icon" type="image/png" href="/site-art/favicon.png">
+<style>
+:root { --ink: #0A0A0A; --card: #141414; --edge: #2a2a2a; --cream: #F3EFE4; --mute: #c9c6be; --soft: #a9a59b;
+  --mid: clamp(36px, 4.6vw, 66px); }
+html, body { background: var(--ink); }
+.sec { padding: 56px 0; position: relative; }
+.k { margin: 0; font: 800 11px/1.2 var(--body); letter-spacing: .18em; text-transform: uppercase; }
+.mid { margin: 10px 0 0; font: 400 var(--mid)/.95 var(--display); text-transform: uppercase; letter-spacing: .005em; }
+.mid em { font-style: normal; }
+.lede { margin: 12px 0 0; font: 600 15.5px/1.5 var(--body); max-width: 46ch; }
+.rl { display: inline-block; margin-top: 16px; font: 800 14.5px var(--body); text-underline-offset: 4px; }
+.cta2 { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+
+/* 1. top (unchanged) */
+.hero { padding: 18px 0 40px; }
+.hero h1 { margin: 0; font: 400 64px/.98 var(--display); text-transform: uppercase; letter-spacing: .005em; }
+.hero h1 em { font-style: normal; color: var(--lime); }
+.hero h1 .w { display: inline-block; animation: slam .42s cubic-bezier(.2,1.6,.4,1) both; animation-delay: var(--d, 0ms); }
+@keyframes slam { 0% { transform: scale(1.9) rotate(-3deg); opacity: 0; filter: blur(6px); } 100% { transform: none; opacity: 1; filter: none; } }
+.hero .sub { margin: 6px 0 0; font: 600 15px/1.45 var(--body); color: var(--mute); max-width: 34ch; }
+.hero .what { margin: 14px 0 0; font: 700 15px/1.45 var(--body); color: #F3EFE4; opacity: .85; max-width: 40ch; }
+.cast { list-style: none; margin: 0 0 22px; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+.cast li { position: relative; border-radius: 14px; overflow: hidden; aspect-ratio: 4/5; background: var(--card); animation: pop .5s cubic-bezier(.2,1.5,.4,1) both; animation-delay: calc(var(--i) * 60ms); }
+.cast img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.cast span { position: absolute; left: 0; right: 0; bottom: 0; padding: 18px 6px 6px; background: linear-gradient(transparent, rgba(0,0,0,.85)); }
+.cast b { display: block; font: 800 10.5px/1.1 var(--body); color: #fff; }
+.cast small { display: block; margin-top: 2px; font: 800 7.5px/1.2 var(--body); letter-spacing: .08em; text-transform: uppercase; color: var(--lime); }
+@keyframes pop { from { transform: scale(.85); opacity: 0; } to { transform: none; opacity: 1; } }
+.chips2 { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 18px; }
+.chips2 a { padding: 8px 12px; border-radius: 999px; box-shadow: inset 0 0 0 1.5px var(--edge); color: var(--cream); text-decoration: none; font: 700 13px/1 var(--body); }
+
+/* 2. film (shout #2: the film itself) */
+.film-s { padding-top: 24px; }
+.film-s .fgrid { display: grid; gap: 26px; align-items: center; }
+.film-s h2 { font-size: 44px; line-height: .95; }
+.film-s .lede { color: var(--mute); }
+.film-s .fguide { display: flex; align-items: center; gap: 12px; margin-top: 18px; }
+.film-s .fguide img { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; object-position: center 20%; box-shadow: 0 0 0 3px var(--lime); }
+.film-s .fguide span { display: block; font: 800 10.5px/1.2 var(--body); letter-spacing: .14em; text-transform: uppercase; color: var(--lime); }
+.film-s .fguide b { display: block; font: 400 22px/1.05 var(--display); text-transform: uppercase; color: #F3EFE4; }
+.film-s .fguide small { display: block; font: 700 12.5px/1.3 var(--body); color: #9a9a9a; }
+.film-s .vid { width: 100%; max-width: 300px; justify-self: center; border-radius: 22px; overflow: hidden; box-shadow: 0 0 0 3px var(--lime), 0 30px 80px rgba(238,255,106,.12); }
+.film-s video { width: 100%; height: auto; display: block; background: #000; }
+.film-s .btn { border: 0; cursor: pointer; }
+
+/* 3. how it works (compact) */
+.how { background: var(--cream); color: #000; }
+.how .mid em { background: linear-gradient(var(--lime), var(--lime)) 0 88% / 100% 74% no-repeat; padding: 0 .06em; }
+.how .lede { color: #333; }
+.fn-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 8px; }
+.fn-how { width: 92px; height: auto; flex: none; filter: drop-shadow(0 8px 12px rgba(0,0,0,.18)); }
+.flow { list-style: none; margin: 24px 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 20px 12px; }
+.flow .ph { border-radius: 16px; overflow: hidden; aspect-ratio: 9/13; background: var(--ink); box-shadow: 0 0 0 3px #000; }
+.flow .ph img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.flow .n { display: block; margin: 12px 0 0; font: 400 13px/1 var(--display); letter-spacing: .04em; }
+.flow h3 { margin: 3px 0 0; font: 400 19px/.98 var(--display); text-transform: uppercase; }
+.flow p { margin: 5px 0 0; font: 600 13px/1.4 var(--body); color: #333; }
+
+/* research strip (was 1.7 screens) */
+.rs { background: var(--card); padding: 52px 0; }
+.rs .k { color: var(--lime); }
+.rs .mid { font-size: clamp(32px, 3.9vw, 56px); max-width: 22ch; }
+.rs .mid em { color: var(--lime); }
+.rs .lede { color: var(--mute); }
+.rs-grid { margin: 26px 0 0; display: grid; gap: 0; }
+.rs-stat { border-top: 2px solid rgba(238,255,106,.5); padding: 14px 0; display: grid; grid-template-columns: 96px 1fr; gap: 12px; align-items: start; }
+.rs-n { margin: 0; font: 400 46px/.9 var(--display); color: var(--lime); font-variant-numeric: tabular-nums; }
+.rs-n small { font-size: .5em; margin-left: 1px; }
+.rs-l { margin: 0; font: 700 14px/1.42 var(--body); color: #F3EFE4; }
+.rs-s { margin: 6px 0 0; font: 700 10.5px/1.3 var(--body); letter-spacing: .08em; text-transform: uppercase; color: #8a8a8a; }
+.rs .purpose { margin: 18px 0 0; font: 700 14.5px/1.45 var(--body); color: var(--mute); }
+.rs .purpose b { color: var(--lime); font-weight: 800; }
+.rs .rl { color: var(--lime); margin-top: 10px; }
+
+/* 4. become the calm one (shout #3) */
+.payoff { padding: 72px 0 76px; background: #0A0A0A; position: relative; overflow: hidden; }
+.payoff .k { color: var(--lime); }
+.payoff h2 { margin: 14px 0 0; font: 400 62px/.9 var(--display); text-transform: uppercase; letter-spacing: .005em; color: #F3EFE4; max-width: 12ch; }
+.payoff h2 em { font-style: normal; color: var(--lime); }
+.payoff .moments { margin: 20px 0 0; font: 800 19px/1.35 var(--body); color: #F3EFE4; max-width: 34ch; }
+.payoff .moments s { text-decoration: none; color: rgba(243,239,228,.55); }
+.payoff .road { list-style: none; margin: 34px 0 0 7px; padding: 0; display: grid; border-left: 2px solid rgba(238,255,106,.35); }
+.payoff .road li { padding: 0 0 20px 24px; position: relative; }
+.payoff .road li::before { content: ""; position: absolute; top: 3px; left: -9px; width: 16px; height: 16px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 0 6px rgba(238,255,106,.18); }
+.payoff .road b { display: block; font: 400 24px/1 var(--display); text-transform: uppercase; color: var(--lime); }
+.payoff .road span { display: block; margin-top: 6px; font: 600 14.5px/1.45 var(--body); color: rgba(243,239,228,.82); max-width: 30ch; }
+.payoff .last { margin: 20px 0 0; font: 800 19px/1.35 var(--body); color: #F3EFE4; max-width: 34ch; }
+.payoff .last em { font-style: normal; color: var(--lime); }
+
+/* 5. guides (medium) */
+.guides { background: var(--lime); color: #000; }
+.guides .mid em { color: transparent; -webkit-text-stroke: 2px #000; }
+.guides .lede { color: #000; opacity: .78; margin-bottom: 22px; }
+.gcard { width: 236px; background: #000; color: var(--cream); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; }
+.gcard .film { aspect-ratio: 1/1; }
+.gcard img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+.gcard .b { padding: 12px 14px 14px; display: flex; flex-direction: column; flex: 1; }
+.gcard b { font: 400 21px/1 var(--display); text-transform: uppercase; }
+.gcard small { margin-top: 4px; font: 800 10px var(--body); letter-spacing: .18em; text-transform: uppercase; color: var(--c); }
+.gcard q { display: block; margin: 10px 0 0; font: 700 14px/1.4 var(--body); quotes: "\201C" "\201D"; flex: 1; }
+.gcard .more { margin-top: 10px; align-self: flex-start; border: 0; background: none; color: var(--lime); padding: 0; cursor: pointer; font: 800 12px var(--body); text-decoration: underline; text-underline-offset: 3px; }
+
+/* 6. you didn't leave the big questions (medium, own section) */
+.lk { background: var(--cream); color: #000; }
+.lk .mid em { background: linear-gradient(var(--lime), var(--lime)) 0 88% / 100% 74% no-repeat; padding: 0 .06em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.lk .kgrid2 { display: grid; gap: 26px; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 0 14px; }
+.two h3 { margin: 0 0 2px; font: 800 10px var(--body); letter-spacing: .2em; text-transform: uppercase; padding-bottom: 8px; border-bottom: 3px solid #000; }
+.two ul { list-style: none; margin: 0; padding: 0; }
+.two li { font: 400 21px/1 var(--display); text-transform: uppercase; padding: 10px 0; border-bottom: 1.5px solid rgba(0,0,0,.2); }
+.two .left li { opacity: .45; text-decoration: line-through; text-decoration-thickness: 2px; }
+.two .right li::before { content: "✓ "; font: 800 .7em var(--body); vertical-align: .15em; }
+.kept-line { margin: 18px 0 0; font: 400 30px/1.15 var(--display); text-transform: uppercase; }
+.kept-line span { background: #000; color: var(--lime); padding: 0 .12em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.lk .hope { margin: 12px 0 0; font: 700 15.5px/1.45 var(--body); max-width: 36ch; }
+.lk .rl { color: #000; }
+
+/* 7. pick your way in (replaces #deep, #mine, #need) */
+.ways .k { color: var(--lime); }
+.ways .mid em { color: var(--lime); }
+.wgrid { margin: 24px 0 0; display: grid; gap: 10px; }
+.way { display: grid; grid-template-columns: 104px 1fr; gap: 14px; background: var(--card); border-radius: 20px; padding: 10px; box-shadow: inset 0 0 0 1px var(--edge); text-decoration: none; color: var(--cream); transition: transform .18s ease, box-shadow .18s ease; }
+.way:hover { box-shadow: inset 0 0 0 2px var(--lime); transform: translateY(-2px); }
+.way .pic { border-radius: 14px; overflow: hidden; aspect-ratio: 3/4; background: #000; align-self: start; }
+.way .pic img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.way .tx { padding: 4px 4px 6px 0; display: flex; flex-direction: column; }
+.way .k { font-size: 9.5px; color: var(--soft); }
+.way h3 { margin: 5px 0 0; font: 400 24px/.95 var(--display); text-transform: uppercase; }
+.way h3 em { font-style: normal; color: var(--lime); }
+.way p { margin: 7px 0 0; font: 600 13.5px/1.42 var(--body); color: var(--mute); }
+.way .tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
+.way .tags span { font: 700 11.5px/1 var(--body); padding: 6px 8px; border-radius: 999px; box-shadow: inset 0 0 0 1px #3a3a3a; color: var(--cream); }
+.way .go { margin-top: auto; padding-top: 10px; font: 800 13px var(--body); color: var(--lime); }
+.way.hot { background: var(--lime); color: #000; box-shadow: none; }
+.way.hot .k, .way.hot p { color: #000; opacity: .75; }
+.way.hot h3 em { color: #000; -webkit-text-stroke: 0; text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 4px; }
+.way.hot .go { color: #000; }
+
+/* 8. trust: keepers + why not ChatGPT + real words */
+.trust { background: var(--cream); color: #000; }
+.trust .tgrid { display: grid; gap: 34px; }
+.trust .mid em { background: linear-gradient(var(--lime), var(--lime)) 0 88% / 100% 74% no-repeat; padding: 0 .06em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.trust .lede { color: #333; }
+.kl { list-style: none; margin: 18px 0 0; padding: 0; }
+.kl li { border-top: 2px solid #000; padding: 11px 0; font: 600 14px/1.42 var(--body); color: #333; }
+.kl b { display: block; font: 400 20px/1 var(--display); text-transform: uppercase; color: #000; margin-bottom: 3px; }
+.trust .rl { color: #000; margin-top: 8px; }
+.bot h3 { margin: 10px 0 0; font: 400 clamp(30px, 3vw, 42px)/.95 var(--display); text-transform: uppercase; }
+.vs { margin: 16px 0 0; display: grid; gap: 8px; }
+.vs div { border-radius: 18px; padding: 16px; }
+.vs .a { background: #fff; box-shadow: inset 0 0 0 2px #d9d4c6; color: #555; }
+.vs .b { background: #000; color: var(--cream); }
+.vs .b b { color: var(--lime); }
+.vs b { display: block; font: 400 22px/1 var(--display); text-transform: uppercase; }
+.vs span { display: block; margin-top: 6px; font: 600 14px/1.45 var(--body); }
+.says-h { margin: 40px 0 0; display: flex; justify-content: space-between; align-items: baseline; gap: 12px; border-top: 3px solid #000; padding-top: 14px; }
+.says-h h3 { margin: 0; font: 400 26px/1 var(--display); text-transform: uppercase; }
+.says-h span { font: 700 12.5px var(--body); color: #555; }
+.trust .row { margin-top: 12px; }
+.say { width: 270px; margin: 0; background: #fff; color: #111; border-radius: 18px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between; gap: 14px; box-shadow: inset 0 0 0 2px #000; }
+.say p { margin: 0; font: 700 14.5px/1.45 var(--body); }
+.say figcaption { font: 400 17px/1 var(--display); text-transform: uppercase; }
+.say figcaption span { display: block; margin-top: 3px; font: 700 11px var(--body); letter-spacing: .1em; color: #666; text-transform: none; }
+
+/* 9. end card (shout #4) */
+.end { background: var(--lime); color: #000; padding: 60px 0 56px; text-align: left; }
+.end .fn-bye { display: block; width: 84px; height: auto; margin: 0 0 4px; }
+.end h2 { font-size: 64px; }
+.end h2 em { color: transparent; -webkit-text-stroke: 2px #000; }
+.end .sub { margin: 14px 0 0; font: 800 18px/1.35 var(--body); }
+.end .cta .btn { background: #000; color: var(--lime); }
+.end .cta .btn.ghost { background: transparent; color: #000; box-shadow: inset 0 0 0 2px #000; }
+.end small { display: block; margin-top: 16px; font: 700 12.5px/1.45 var(--body); opacity: .7; }
+
+@media (min-width: 760px) {
+  .sec { padding: 84px 0; }
+  .hero { padding: 40px 0 64px; }
+  .hero h1 { font-size: clamp(96px, 9.6vw, 138px); }
+  .hero .sub { font-size: 18px; max-width: 46ch; }
+  .cast { grid-template-columns: repeat(8, 1fr); }
+  .cast b { font-size: 12px; }
+  .lede { font-size: 16.5px; }
+
+  .film-s { padding-top: 24px; }
+  .film-s .fgrid { grid-template-columns: 1.2fr .8fr; gap: 72px; }
+  .film-s h2 { font-size: clamp(56px, 5.6vw, 84px); }
+  .film-s .vid { max-width: 330px; justify-self: end; }
+
+  .flow { grid-template-columns: repeat(4, 1fr); gap: 22px; margin-top: 30px; }
+  .flow .ph { aspect-ratio: 9/12; }
+  .flow h3 { font-size: 23px; }
+  .flow p { font-size: 14px; }
+  .fn-how { width: 120px; }
+
+  .rs { padding: 72px 0; }
+  .rs-top { display: grid; grid-template-columns: 1fr 340px; gap: 56px; align-items: end; }
+  .rs-grid { grid-template-columns: repeat(3, 1fr); gap: 0 34px; margin-top: 34px; }
+  .rs-stat { grid-template-columns: 1fr; gap: 8px; padding-top: 16px; }
+  .rs-n { font-size: 64px; }
+  .rs-l { font-size: 15px; }
+
+  .payoff { padding: 96px 0 100px; }
+  .payoff h2 { font-size: clamp(88px, 9.6vw, 140px); }
+  .payoff .moments { font-size: 24px; margin-top: 24px; }
+  .payoff .road { grid-template-columns: repeat(4, 1fr); border-left: 0; border-top: 2px solid rgba(238,255,106,.35); margin: 48px 0 0; }
+  .payoff .road li { padding: 22px 22px 0 0; }
+  .payoff .road li::before { top: -9px; left: 0; }
+  .payoff .road b { font-size: 28px; }
+  .payoff .road span { font-size: 15.5px; max-width: 24ch; }
+  .payoff .end-row { margin-top: 44px; display: flex; justify-content: space-between; align-items: center; gap: 30px; border-top: 1px solid #222; padding-top: 28px; }
+  .payoff .last { margin: 0; font-size: 22px; max-width: 46ch; }
+  .payoff .cta2 { margin: 0; flex: none; }
+
+  .gcard { width: 252px; }
+  .guides .gwrap { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: end; }
+  .guides .lede { margin-bottom: 0; }
+  .guides .row { margin-top: 30px; padding-left: max(16px, calc((100vw - 1148px) / 2)); }
+
+  .lk .kgrid2 { grid-template-columns: 1fr 1.05fr; gap: 64px; align-items: center; }
+  .kept-line { font-size: 40px; }
+  .two { gap: 0 28px; }
+  .two li { font-size: 28px; padding: 12px 0; }
+
+  .wgrid { grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 32px; }
+  .way { grid-template-columns: 1fr; padding: 10px 10px 14px; gap: 12px; }
+  .way .pic { aspect-ratio: 4/3.2; }
+  .way .tx { padding: 0 6px; flex: 1; }
+  .way h3 { font-size: 28px; }
+  .ways .head { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: end; }
+
+  .trust .tgrid { grid-template-columns: 1.1fr 1fr; gap: 64px; align-items: start; }
+  .kl { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 18px; }
+  .says-h { margin-top: 52px; }
+  .say { width: 300px; }
+  .trust .row { padding-left: max(16px, calc((100vw - 1148px) / 2)); }
+
+  .end { padding: 88px 0 84px; }
+  .end h2 { font-size: clamp(110px, 11vw, 160px); }
+  .end .in { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 40px; }
+  .end .fn-bye { width: 150px; margin: 0; }
+}
+
+
+/* v2: word budget, more air */
+.film-s h2.mid { font-size: var(--mid); line-height: .95; }
+.film-s { padding-top: 56px; }
+.film-s .feel { display: inline-block; margin: 16px 0 0; font: 800 15px/1 var(--body); background: var(--lime); color: #000; padding: 12px 16px; border-radius: 999px; }
+.film-s .mid em { color: var(--lime); }
+.payoff { padding: 88px 0 92px; }
+.road-s { background: var(--card); }
+.road-s .mid { font-size: clamp(32px, 3.9vw, 56px); max-width: 20ch; }
+.road-s .lede { color: var(--lime); font-weight: 800; }
+.road-s .road { list-style: none; margin: 32px 0 0 7px; padding: 0; display: grid; border-left: 2px solid rgba(238,255,106,.35); }
+.road-s .road li { padding: 0 0 22px 24px; position: relative; }
+.road-s .road li::before { content: ""; position: absolute; top: 3px; left: -9px; width: 16px; height: 16px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 0 6px rgba(238,255,106,.18); }
+.road-s .road b { display: block; font: 400 24px/1 var(--display); text-transform: uppercase; color: var(--lime); }
+.road-s .road span { display: block; margin-top: 6px; font: 600 14.5px/1.45 var(--body); color: rgba(243,239,228,.82); max-width: 26ch; }
+.road-s .cta2 { margin-top: 26px; }
+.lk .two { margin-top: 34px; max-width: 760px; }
+.lk .kept-line { margin-top: 30px; }
+.ways .wgrid { margin-top: 30px; }
+.way h3 { margin-top: 2px; }
+.trust .kl { margin: 0; }
+.trust .bot { margin: 22px 0 0; font: 600 15px/1.5 var(--body); color: #333; background: #fff; border-radius: 16px; padding: 14px 16px; box-shadow: inset 0 0 0 2px #000; }
+.trust .bot b { display: block; font: 400 22px/1 var(--display); text-transform: uppercase; color: #000; margin-bottom: 6px; }
+.says-s { background: var(--ink); }
+.says-s .mid em { color: var(--lime); }
+.says-s .row { margin-top: 26px; }
+.says-s .say { background: var(--card); color: var(--cream); box-shadow: inset 0 0 0 1px var(--edge); }
+.says-s .say figcaption { color: var(--lime); }
+.says-s .say figcaption span { color: var(--mute); }
+.site-foot .wm { font-size: clamp(40px, 7vw, 84px); margin-top: 22px; }
+@media (min-width: 760px) {
+  .sec { padding: 100px 0; }
+  .film-s { padding-top: 100px; }
+  .film-s h2.mid { font-size: var(--mid); }
+  .rs-grid { margin-top: 40px; }
+  .payoff { padding: 120px 0 124px; }
+  .payoff .moments { font-size: 26px; margin-top: 30px; }
+  .road-s .road { grid-template-columns: repeat(4, 1fr); border-left: 0; border-top: 2px solid rgba(238,255,106,.35); margin: 44px 0 0; }
+  .road-s .road li { padding: 22px 22px 0 0; }
+  .road-s .road li::before { top: -9px; left: 0; }
+  .road-s .road b { font-size: 28px; }
+  .road-s .road span { font-size: 15.5px; max-width: 24ch; }
+  .road-s .cta2 { margin-top: 40px; }
+  .ways .wgrid { margin-top: 40px; }
+  .trust .tgrid { grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .trust .kl { grid-template-columns: 1fr; }
+  .says-s .row { margin-top: 36px; padding-left: max(16px, calc((100vw - 1148px) / 2)); }
+  .lk .two li { font-size: 30px; }
+}
+@media (max-width: 759px) {
+  .sec { padding: 48px 0; }
+  .film-s .vid { max-width: 250px; }
+  .flow .ph { aspect-ratio: 9/11; }
+  .kl li { padding: 9px 0; font-size: 13.5px; }
+  .kl b { font-size: 18px; }
+  .vs div { padding: 13px 14px; }
+  .says-h { margin-top: 30px; }
+  .end { position: relative; }
+  .end .fn-bye { position: absolute; right: 12px; top: 22px; width: 76px; }
+  .end h2 { position: relative; z-index: 1; }
+}
+@media (prefers-reduced-motion: reduce) { .hero h1 .w, .cast li { animation: none; } }
+</style>
+<style id="filmplay">
+.vid { position: relative; }
+.vid .pbtn { position: absolute; inset: 0; display: grid; place-items: center; border: 0; padding: 0; background: linear-gradient(180deg, rgba(10,10,10,.05), rgba(10,10,10,.45)); cursor: pointer; }
+.vid .pbtn .disc { width: 92px; height: 92px; border-radius: 50%; background: var(--lime); display: grid; place-items: center; box-shadow: 0 0 0 10px rgba(238,255,106,.22), 0 12px 40px rgba(0,0,0,.5); transition: transform .15s ease; }
+.vid .pbtn:hover .disc, .vid .pbtn:focus-visible .disc { transform: scale(1.08); }
+.vid .pbtn svg { width: 34px; height: 34px; margin-left: 6px; }
+.vid .pbtn .len { position: absolute; left: 50%; bottom: 22px; transform: translateX(-50%); padding: 7px 14px; border-radius: 999px; background: rgba(10,10,10,.82); color: #F3EFE4; font: 800 13px/1 var(--body); letter-spacing: .12em; text-transform: uppercase; white-space: nowrap; }
+.vid.playing .pbtn { display: none; }
+@media (prefers-reduced-motion: no-preference) { .vid:not(.playing) .pbtn .disc { animation: pbpulse 2.4s ease-in-out infinite; } }
+@keyframes pbpulse { 0%,100% { box-shadow: 0 0 0 10px rgba(238,255,106,.22), 0 12px 40px rgba(0,0,0,.5); } 50% { box-shadow: 0 0 0 18px rgba(238,255,106,.10), 0 12px 40px rgba(0,0,0,.5); } }
+</style>
+<style id="calm-center">
+@media (min-width: 760px) {
+  #where .wrap { text-align: center; }
+  #where h2 { max-width: none; margin-left: auto; margin-right: auto; }
+  #where .moments { max-width: 44ch; margin-left: auto; margin-right: auto; text-wrap: balance; }
+}
+</style>
+<style id="hero-center">
+@media (min-width: 760px) {
+  .hero .wrap { text-align: center; }
+  .hero h1 { margin-left: auto; margin-right: auto; }
+  .hero .sub, .hero .what { margin-left: auto !important; margin-right: auto !important; max-width: 44ch; }
+  .hero .chips2, .hero .cta2 { justify-content: center; }
+  .hero .cast { margin-left: auto; margin-right: auto; justify-content: center; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <button class="menu-b" type="button" id="menuB" aria-expanded="false" aria-controls="menu"><i></i><span class="t">menu</span><span class="sr">open menu</span></button>
+  <a class="mark" href="#top">infinite hill</a>
+  <a class="join-s" href="/hill/hill-app-doors.html">start free</a>
+  <nav class="menu" id="menu" hidden aria-label="menu"><a href="#how">how it works</a><a href="#research">why it matters</a><a href="#film">watch the film</a><a href="#guides">your guides</a><a href="#kept">still wondering?</a><a href="#ways">pick your way in</a><a href="/build-your-own">build your own</a><a href="#keepers">who checks it</a></nav>
+</header>
+
+<main id="main">
+<section class="hero" id="top">
+  <div class="wrap">
+    <ul class="cast" aria-label="your celebrity guides"><li style="--i:0"><img src="/site-art/next/g-chr.webp" alt="Denzel Washington" width="560" height="700"><span><b>Denzel Washington</b><small>voice of Christianity</small></span></li><li style="--i:1"><img src="/site-art/next/g-cat.webp" alt="Nicole Kidman" width="560" height="700"><span><b>Nicole Kidman</b><small>voice of Catholicism</small></span></li><li style="--i:2"><img src="/site-art/next/g-jew.webp" alt="Natalie Portman" width="560" height="700"><span><b>Natalie Portman</b><small>voice of Judaism</small></span></li><li style="--i:3"><img src="/site-art/next/g-isl.webp" alt="Mahershala Ali" width="560" height="700"><span><b>Mahershala Ali</b><small>voice of Islam</small></span></li><li style="--i:4"><img src="/site-art/next/g-hin.webp" alt="Priyanka Chopra" width="560" height="700"><span><b>Priyanka Chopra</b><small>voice of Hinduism</small></span></li><li style="--i:5"><img src="/site-art/next/g-bud.webp" alt="Orlando Bloom" width="560" height="700"><span><b>Orlando Bloom</b><small>voice of Buddhism</small></span></li><li style="--i:6"><img src="/site-art/next/g-sik.webp" alt="Diljit Dosanjh" width="560" height="700"><span><b>Diljit Dosanjh</b><small>voice of Sikhism</small></span></li><li style="--i:7"><img src="/site-art/next/g-own.webp" alt="Justin Bieber" width="560" height="700"><span><b>Justin Bieber</b><small>voice of my own religion</small></span></li></ul>
+    <h1><span class="w" style="--d:0ms">religion,</span><br><span class="w" style="--d:160ms"><em>reimagined.</em></span></h1>
+    <p class="sub">the biggest stories ever told.<br><b style="color:var(--lime)">the biggest names telling them.</b></p>
+    <p class="what">a five-minute lesson a day, <b style="color:var(--lime)">picked for the day you’re having.</b> a short film, a few questions, and a guide who learns what moves you.</p>
+    <div class="chips2"><a href="/hill/hill-app-doors.html?pick=olive">Christianity</a><a href="/hill/hill-app-doors.html?pick=angelus">Catholicism</a><a href="/hill/hill-app-doors.html?pick=pomegranate">Judaism</a><a href="/hill/hill-app-doors.html?pick=datepalm">Islam</a><a href="/hill/hill-app-doors.html?pick=marigold">Hinduism</a><a href="/hill/hill-app-doors.html?pick=lotus">Buddhism</a><a href="/hill/hill-app-doors.html?pick=nectar">Sikhism</a><a href="/hill/hill-app-doors.html?pick=wild">my own religion</a></div>
+    <div class="cta2"><a class="btn" href="/hill/hill-app-doors.html">start free</a><a class="btn ghost" href="/hill/hill-app-doors.html?pick=wild">or build your own →</a></div>
+  </div>
+</section>
+
+<!-- 2. HOW IT WORKS: second, right after the top -->
+<section class="sec how" id="how">
+  <div class="wrap">
+    <div class="fn-row"><div><p class="k">how it works</p><h2 class="mid">one lesson. <em>five minutes.</em></h2><p class="lede">every lesson is picked for you, starting with what you're going through. not a rulebook.</p></div><img class="fn-how" src="/site-art/finn/finn-thumbs.webp" alt="Finn, the infinite hill mascot, giving a thumbs up" width="300" height="300"></div>
+    <ol class="flow">
+      <li><div class="ph"><img src="/site-art/doors/s1-guide.webp" alt="Denzel, your guide, asking: what's on your mind today?" loading="lazy" width="600" height="1298"></div><span class="n">01</span><h3>say what's going on</h3><p>angry, anxious, grieving, or just curious.</p></li>
+      <li><div class="ph"><img src="/site-art/film/step2-ran.webp" alt="a still from the film: the father runs to meet his son" loading="lazy" width="600" height="1067"></div><span class="n">02</span><h3>a lesson picked for it</h3><p>a short film, told by your celebrity guide.</p></li>
+      <li><div class="ph"><img src="/site-art/next/lesson-game.webp" alt="Denzel asks a quick question about the story, with the answer explained" loading="lazy" width="420" height="908"></div><span class="n">03</span><h3>a few quick questions</h3><p>what the faith teaches, source right there.</p></li>
+      <li><div class="ph"><img src="/site-art/next/lesson-word.webp" alt="after the story, the real place lights up on your path and Denzel names it" loading="lazy" width="420" height="908"></div><span class="n">04</span><h3>see where it lives</h3><p>its real place lights up on your path.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- RESEARCH: medium line + 3 stats -->
+<section class="sec rs" id="research">
+  <div class="wrap">
+    <p class="k">why it matters</p>
+    <h2 class="mid">every generation before us had a way through. they called it religion. <em>we replaced it with a feed.</em></h2>
+    <div class="rs-grid">
+      <div class="rs-stat"><p class="rs-n">36<small>%</small></p><div><p class="rs-l">of actively religious Americans call themselves very happy, vs. 25% of the less active and the unaffiliated.</p><p class="rs-s">Pew Research Center, 2019</p></div></div>
+      <div class="rs-stat"><p class="rs-n">39<small>%</small></p><div><p class="rs-l">of Americans who married since 2010 married someone from a different religious group, including no religion.</p><p class="rs-s">Pew Research Center, 2015</p></div></div>
+      <div class="rs-stat"><p class="rs-n">14<small>/32</small></p><div><p class="rs-l">the average American's score on a basic religion quiz.</p><p class="rs-s">Pew Research Center, 2019</p></div></div>
+    </div>
+    <a class="rl" href="/science">read the research →</a>
+  </div>
+</section>
+
+<!-- FILM: one feeling, every path -->
+<section class="sec film-s" id="film">
+  <div class="wrap fgrid">
+    <div class="ftext">
+      <p class="k lime">the film</p>
+      <h2 class="mid">one feeling. <em>every path has its own story.</em></h2>
+      <p class="lede">tap how you feel. Denzel picks a story for it. so does every guide, from their own faith.</p>
+      <p class="feel">“i'm angry at someone i love”</p>
+      <div class="fguide"><img src="/site-art/next/g-chr.webp" alt="Denzel Washington" width="560" height="700"><div><span>your guide</span><b>Denzel Washington</b><small>voice of Christianity</small></div></div>
+      <div class="cta2"><button class="btn" type="button" id="playfilm">&#9654; watch the film</button></div>
+    </div>
+    <div class="vid"><video id="ihfilm" src="/site-art/film/ih-all-paths.mp4" poster="/site-art/film/ih-all-paths-poster.webp" playsinline preload="none" width="720" height="1280"></video><button class="pbtn" type="button" aria-label="play the film"><span class="disc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l15 8-15 8z" fill="#0A0A0A"/></svg></span><span class="len">watch · 1:53 · sound on</span></button></div>
+  </div>
+</section>
+
+<!-- 4. BECOME THE CALM ONE: SHOUT -->
+<section class="payoff" id="where">
+  <div class="wrap">
+    <p class="k">where this takes you</p>
+    <h2>become <em>the calm one in the room.</em></h2>
+    <p class="moments">the fight. the funeral. the 2am spiral. the dinner where religion comes up. <s>everyone turns to someone.</s> it’s going to be you.</p>
+  </div>
+</section>
+
+<!-- THE ROAD: split out of #where so neither feels jammed -->
+<section class="sec road-s" id="road">
+  <div class="wrap">
+    <h2 class="mid">you’ll know what you believe, and why.</h2>
+    <p class="lede">and you’ll finally understand the person next to you.</p>
+    <ol class="road"><li><b>day 1</b><span>a story you’ll want to tell at dinner. your first card.</span></li><li><b>week 1</b><span>seven stories. seven real places lit on your path. your streak is lit.</span></li><li><b>month 1</b><span>28 stories you can tell by heart. what you live by, in your own words.</span></li><li><b>year 1</b><span>the whole story of your faith, and a guide who knows what moves you.</span></li></ol>
+    <div class="cta2"><a class="btn" href="/hill/hill-app-doors.html">start your path</a></div>
+  </div>
+</section>
+
+<!-- 5. GUIDES: medium -->
+<section class="sec guides" id="guides">
+  <div class="wrap gwrap"><div><p class="k">your guides</p><h2 class="mid">told by <em>voices you know.</em></h2></div><p class="lede">each celebrity guide leads the path they love and tells its stories. building your own? Justin Bieber is your guide.</p></div>
+  <div class="row"><div class="gcard" style="--c:#EEFF6A"><div class="film"><img src="/site-art/next/g-chr.webp" alt="Denzel Washington" loading="lazy" width="560" height="700"></div><div class="b"><b>Denzel Washington</b><small>Christianity</small><q data-s="First thing I do is pray every morning." data-f="First thing I do is pray every morning. I read my Bible. I try to wake up now and sit there first, put my feet on the floor, and sit, and be quiet.">First thing I do is pray every morning.</q><button class="more" type="button" aria-expanded="false" data-more="read the full quote" data-less="show less">read the full quote</button></div></div><div class="gcard" style="--c:#EEFF6A"><div class="film"><img src="/site-art/next/g-cat.webp" alt="Nicole Kidman" loading="lazy" width="560" height="700"></div><div class="b"><b>Nicole Kidman</b><small>Catholicism</small><q data-s="Catholicism will keep me going." data-f="Catholicism will keep me going. I'm a Catholic girl. It will always stay with you.">Catholicism will keep me going.</q><button class="more" type="button" aria-expanded="false" data-more="read the full quote" data-less="show less">read the full quote</button></div></div><div class="gcard" style="--c:#EEFF6A"><div class="film"><img src="/site-art/next/g-jew.webp" alt="Natalie Portman" loading="lazy" width="560" height="700"></div><div class="b"><b>Natalie Portman</b><small>Judaism</small><q data-s="I really love being Jewish…" data-f="I really love being Jewish… I feel like it's a big part of my identity and it's a great thing to be a part of.">I really love being Jewish…</q><button class="more" type="button" aria-expanded="false" data-more="read the full quote" data-less="show less">read the full quote</button></div></div><div class="gcard" style="--c:#EEFF6A"><div class="film"><img src="/site-art/next/g-isl.webp" alt="Mahershala Ali" loading="lazy" width="560" height="700"></div><div class="b"><b>Mahershala Ali</b><small>Islam</small><q data-s="At the end of the day we're all spirits having a physical experience." data-f="At the end of the day we're all spirits having a physical experience. That really comes from my relationship with Islam because it just makes me really conscious of my action.">At the end of the day we're all spirits having a physical experience.</q><button class="more" type="button" aria-expanded="false" data-more="read the full quote" data-less="show less">read the full quote</button></div></div><div class="gcard" style="--c:#EEFF6A"><div class="film"><img src="/site-art/next/g-hin.webp" alt="Priyanka Chopra" loading="lazy" width="560" height="700"></div><div class="b"><b>Priyanka Chopra</b><small>Hinduism</small><q data-s="I am a Hindu." data-f="I am a Hindu. I pray, I have a temple at my home, I do it as often as I can. But truly to me, I am a believer that a higher power does exist and I like to have faith in that.">I am a Hindu.</q><button class="more" type="button" aria-expanded="false" data-more="read the full quote" data-less="show less">read the full quote</button></div></div><div class="gcard" style="--c:#EEFF6A"><div class="film"><img src="/site-art/next/g-bud.webp" alt="Orlando Bloom" loading="lazy" width="560" height="700"></div><div class="b"><b>Orlando Bloom</b><small>Buddhism</small><q data-s="Without my Buddhist practice, I could have easily come off the rails." data-f="Without my Buddhist practice, I could have easily come off the rails. I've been changing the narrative in my head and feel that I can be the driver of my train.">Without my Buddhist practice, I could have easily come off the rails.</q><button class="more" type="button" aria-expanded="false" data-more="read the full quote" data-less="show less">read the full quote</button></div></div><div class="gcard" style="--c:#EEFF6A"><div class="film"><img src="/site-art/next/g-sik.webp" alt="Diljit Dosanjh" loading="lazy" width="560" height="700"></div><div class="b"><b>Diljit Dosanjh</b><small>Sikhism</small><q>Maharaj made us Sikh, and I will continue following Sikhi all my life.</q></div></div><div class="gcard" style="--c:#EEFF6A"><div class="film"><img src="/site-art/next/g-own.webp" alt="Justin Bieber" loading="lazy" width="560" height="700"></div><div class="b"><b>Justin Bieber</b><small>my own religion</small><q>I don’t want to let my shame of my past dictate what I’m able to do now for people.</q></div></div></div>
+</section>
+
+<!-- 6. YOU DIDN'T LEAVE THE BIG QUESTIONS: own section, with air -->
+<section class="sec lk" id="kept">
+  <div class="wrap">
+    <p class="k">for you if you drifted, but still wonder</p>
+    <h2 class="mid">you didn't leave <em>the big questions.</em></h2>
+    <div class="two">
+      <div class="left"><h3>what wore you out</h3><ul><li>feeling judged</li><li>being told what to believe</li><li>feeling left out</li><li>sermons that lost you</li></ul></div>
+      <div class="right"><h3>what you kept</h3><ul><li>the big questions</li><li>the stories</li><li>the wonder</li><li>wanting to be better</li></ul></div>
+    </div>
+    <p class="kept-line"><span>we kept the second list.</span></p>
+    <p class="hope">don't lose hope yet. there's a path for you, and you get to build it.</p>
+  </div>
+</section>
+
+<!-- 7. PICK YOUR WAY IN: title, one line, link -->
+<section class="sec ways" id="ways">
+  <div class="wrap">
+    <p class="k">four ways in</p><h2 class="mid">pick your <em>way in.</em></h2>
+    <div class="wgrid">
+      <a class="way" id="deep" href="/paths"><div class="pic film"><img src="/site-art/next/p-chr.webp" alt="a farmer in a wheat field at sunset, from a Christian story" loading="lazy"></div><div class="tx"><h3>go deep <em>in yours.</em></h3><p>one faith, its own scholars, five years deep.</p><span class="go">see the paths →</span></div></a>
+      <a class="way hot" id="mine" href="/build-your-own"><div class="pic"><img src="/site-art/doors/creed-top.webp" alt="what i live by, in the app: lines from six traditions, each with its source" loading="lazy"></div><div class="tx"><h3>build <em>your own.</em></h3><p>every piece names its tradition. never blended. never ranked.</p><span class="go">my own religion →</span></div></a>
+      <a class="way" id="need" href="/hill/hill-app-doors.html"><div class="pic film"><img src="/site-art/next/t2.webp" alt="three women talking on a hillside road, from a story" loading="lazy"></div><div class="tx"><h3>we got <em>you.</em></h3><p>marrying in, two faiths at home, a big day coming.</p><span class="go">tell the guide →</span></div></a>
+      <a class="way" id="start" href="/hill/hill-app-doors.html"><div class="pic"><img src="/site-art/next/lesson-game.webp" alt="a quick question in the app, with the answer explained" loading="lazy"></div><div class="tx"><h3>start <em>where you are.</em></h3><p>quick questions place you. not back at zero.</p><span class="go">find your place →</span></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- 8a. SCHOLARS -->
+<section class="sec trust" id="trust">
+  <div class="wrap tgrid">
+    <div id="keepers">
+      <p class="k">the keepers</p>
+      <h2 class="mid">scholars check <em>every lesson.</em></h2>
+      <a class="rl" href="/keepers">meet the keeper desk →</a>
+    </div>
+    <div>
+      <ul class="kl">
+        <li><b>reads every lesson</b>before it goes live.</li>
+        <li><b>can say no</b>and we can't overrule it.</li>
+        <li><b>one desk per faith</b>a scholar from inside each tradition.</li>
+      </ul>
+      <p class="bot" id="faq"><b>why not just ask ChatGPT?</b> a chatbot waits for your question. infinite hill comes to you, every day.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 8b. REAL WORDS: the quotes and nothing else -->
+<section class="sec says-s" id="reviews">
+  <div class="wrap"><h2 class="mid">what people are <em>telling us.</em></h2></div>
+  <div class="row"><figure class="say"><p>“I feel so much more connected to my in-laws. I finally understand the traditions that matter to them instead of just standing on the outside of them.”</p><figcaption>Lauren, 34<span>Los Angeles, CA</span></figcaption></figure><figure class="say"><p>“My parents tried to teach me this stuff growing up and I never paid attention. Now I finally want to know.”</p><figcaption>Rohan, 29<span>Chicago, IL</span></figcaption></figure><figure class="say"><p>“It warms my heart to see my grandkids learning something that has been important to our family for generations.”</p><figcaption>Meera, 67<span>Edison, NJ</span></figcaption></figure><figure class="say"><p>“I started because I was curious about other religions. Somehow, it's made me understand my own life better.”</p><figcaption>Ethan, 24<span>Seattle, WA</span></figcaption></figure><figure class="say"><p>“There are days when my mind just won't stop. Infinite Hill gives me a few quiet minutes to slow down, and I'm sleeping better because of it.”</p><figcaption>Rachel, 57<span>Nashville, TN</span></figcaption></figure><figure class="say"><p>“I grew up around these stories, but no one ever explained what they actually meant. I feel like I'm discovering a part of myself I never really knew.”</p><figcaption>Maya, 18<span>Irvine, CA</span></figcaption></figure><figure class="say"><p>“My son and I do one lesson together every morning. It's become this tiny ritual that I hope he remembers when he's older.”</p><figcaption>David, 48<span>Santa Monica, CA</span></figcaption></figure><figure class="say"><p>“For the first time in years, I feel connected to who I am — not just what I do all day.”</p><figcaption>Ari, 41<span>New York, NY</span></figcaption></figure></div>
+</section>
+
+<!-- 9. END CARD: SHOUT #4 -->
+<section class="end" id="end">
+  <div class="wrap in">
+    <div>
+      <h2 class="disp">religion, <em>reimagined.</em></h2>
+      <p class="sub">five minutes a day. free.</p>
+      <div class="cta"><a class="btn" href="/hill/hill-app-doors.html">start free</a><a class="btn ghost" href="/hill/hill-app-doors.html?pick=wild">or build your own →</a></div>
+      <small>no feed. prayer is always your choice.</small>
+    </div>
+    <img class="fn-bye" src="/site-art/finn/finn-wave.webp" alt="Finn waving" width="512" height="512">
+  </div>
+</section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <nav class="cols" aria-label="infinite hill"><div><h4>Practice</h4><a href="/hill/hill-app-doors.html">Start free</a><a href="/hill/hill-app-doors.html?pick=wild">Build your own</a></div><div><h4>Company</h4><a href="/about">About</a><a href="/foundation">The Foundation</a><a href="/keepers">The Keeper Desk</a><a href="/provenance">Keeper &amp; provenance</a><a href="/careers">Careers</a><a href="/contact">Contact</a></div><div><h4>Learn</h4><a href="/science">Research</a><a href="/paths">Eight paths</a><a href="/nights">Nights</a><a href="/prayers">Why we don't write prayers</a><a href="/voices">How voices work</a><a href="/schools">infinite hill for schools</a><a href="/sources">Sources</a></div><div><h4>Support</h4><a href="/#faq">FAQ</a><a href="/safety">Safety &amp; hosts</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/biometric">Biometric consent</a><a href="/legal">Legal</a></div><div><h4>Language</h4><a href="/" lang="en" hreflang="en" aria-current="page">English</a><a href="/es" lang="es" hreflang="es">Español</a></div></nav>
+    <div class="legal">
+      <p>infinite hill is a company (Infinite Hill Ventures, Inc.), so it can pay its own way and keep infinite hill free. part of what it earns goes to <a href="/foundation">the infinite hill foundation</a>, a separate nonprofit (in formation).</p>
+      <p class="crisis">If you're in danger or thinking about hurting yourself, call or text 988 (US) or your local emergency number.</p>
+      <p>infinite hill teaches from public-domain scripture, checked by scholars of each tradition. It is not a substitute for a congregation, a clergy member, or medical or mental-health care. Off-app gatherings, once they start, will be hosted only by verified institutions and organizers; all off-app events will be 18+.</p>
+      <p>&copy; 2026 Infinite Hill Ventures, Inc. Not affiliated with any religious institution.</p>
+    </div>
+    <p class="wm" aria-hidden="true">infinite hill</p>
+  </div>
+</footer>
+<script>(function(){var b=document.getElementById("menuB"),m=document.getElementById("menu");if(!b||!m)return;function set(o){m.hidden=!o;b.setAttribute("aria-expanded",o?"true":"false")}b.addEventListener("click",function(e){e.stopPropagation();set(m.hidden)});m.addEventListener("click",function(){set(false)});document.addEventListener("click",function(e){if(!m.hidden&&!e.target.closest(".top"))set(false)});document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!m.hidden){set(false);b.focus()}})})();
+document.querySelectorAll(".gcard .more").forEach(function(b){b.addEventListener("click",function(){var q=b.parentNode.querySelector("q"),open=b.getAttribute("aria-expanded")==="true";q.textContent=open?q.getAttribute("data-s"):q.getAttribute("data-f");b.setAttribute("aria-expanded",open?"false":"true");b.textContent=open?b.getAttribute("data-more"):b.getAttribute("data-less")})});</script>
+<script>(function(){var b=document.getElementById("playfilm"),v=document.getElementById("ihfilm");if(b&&v)b.addEventListener("click",function(){v.scrollIntoView({block:"center"});v.play();});})();</script>
+<script>(function(){var w=document.querySelector(".vid"),v=document.getElementById("ihfilm"),pb=w&&w.querySelector(".pbtn"),b=document.getElementById("playfilm");if(!w||!v||!pb)return;
+function go(){w.classList.add("playing");v.setAttribute("controls","");var p=v.play();if(p&&p.catch)p.catch(function(){});}
+pb.addEventListener("click",go);if(b)b.addEventListener("click",function(){w.classList.add("playing");});
+v.addEventListener("play",function(){w.classList.add("playing");});
+v.addEventListener("ended",function(){w.classList.remove("playing");v.removeAttribute("controls");v.currentTime=0;v.load();});})();</script>
+</body>

@@ -1,0 +1,221 @@
+{
+ "id": "bud-old-city",
+ "home": "lotus",
+ "title": "The forgotten city",
+ "told": "a parable the Buddha told",
+ "clips": "art/sacred/bud-old-city/clips/",
+ "voice": "art/sacred/bud-old-city/voice/",
+ "guide": {
+  "name": "Orlando",
+  "photo": "art/guides/buddhism.webp"
+ },
+ "hook": {
+  "v": "OC1-Lost-In-Forest",
+  "say": "before the story, can i ask you something? has anyone ever told you what’s wrong, and then just left you there?",
+  "options": [
+   [
+    "Yes, and it was hard",
+    "i’m sorry. today comes with directions. listen."
+   ],
+   [
+    "Sometimes",
+    "then you’ll like this one. listen."
+   ],
+   [
+    "Not that I remember",
+    "lucky you. here’s a story about finding the way anyway."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "OC1-Lost-In-Forest",
+   "vo": [
+    "V01"
+   ],
+   "line": "Once the Buddha told a story. A man was wandering, lost, in a deep forest."
+  },
+  {
+   "t": "shot",
+   "v": "OC2-The-Old-Path",
+   "vo": [
+    "V02"
+   ],
+   "line": "Under the vines he found an old path, worn smooth by feet from long ago. He followed it."
+  },
+  {
+   "t": "shot",
+   "v": "OC3-Lost-City",
+   "vo": [
+    "V03"
+   ],
+   "line": "It led to an ancient city, empty for ages: walls, parks, groves and lotus ponds, all waiting under the leaves."
+  },
+  {
+   "t": "ask",
+   "v": "OC3-Lost-City",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "He has found a whole city, empty for ages. What do you think he does?",
+   "o": [
+    "Moves in and keeps it secret",
+    "Tells the king, so it can be restored",
+    "Leaves, afraid of what lived there"
+   ],
+   "a": 1,
+   "why": "He doesn’t keep it. He shares it, so the city can live again."
+  },
+  {
+   "t": "shot",
+   "v": "OC4-Tells-The-King",
+   "vo": [
+    "V04"
+   ],
+   "line": "He went to the king and told him what he had found. The king had the city restored."
+  },
+  {
+   "t": "shot",
+   "v": "OC5-City-Alive",
+   "vo": [
+    "V05"
+   ],
+   "line": "In time the city was alive again, thriving and full of people."
+  },
+  {
+   "t": "ask",
+   "v": "OC5-City-Alive",
+   "blur": true,
+   "predict": true,
+   "eb": "what happens next?",
+   "q": "Then the Buddha said what the story meant. What do you think the old path was?",
+   "o": [
+    "A road he cleared himself",
+    "A secret way to the heavens",
+    "A way earlier Buddhas walked"
+   ],
+   "a": 2,
+   "why": "He said he didn’t make the path. He found it, overgrown but never gone."
+  },
+  {
+   "t": "shot",
+   "v": "OC5-City-Alive",
+   "vo": [
+    "V06"
+   ],
+   "line": "“Just so,” said the Buddha. “I found an ancient path, walked by awakened ones long before me. It is the eightfold path.”"
+  },
+  {
+   "t": "ask",
+   "v": "OC5-City-Alive",
+   "eb": "why?",
+   "q": "Why would it matter to his listeners that the path was old, not new?",
+   "o": [
+    "It isn’t his invention; anyone can walk it",
+    "Old teachings were trusted more than new ones",
+    "It honored the teachers he had left behind"
+   ],
+   "a": 0,
+   "why": "He says he saw an ancient path and followed it; he doesn’t claim to have made it. If it was there before him, it’s there for you too."
+  },
+  {
+   "t": "ask",
+   "v": "OC3-Lost-City",
+   "eb": "did you know?",
+   "q": "Each of the eight parts starts with samma, usually translated “right.” Many teachers say it means more. What do they hear in it?",
+   "o": [
+    "Strict, like a rule to obey",
+    "Whole, like a chord in tune",
+    "Pure, like something set apart"
+   ],
+   "a": 1,
+   "why": "Samma is related to the Sanskrit samyak: together, complete, fitting. So right speech is speech that’s whole, not speech that passes an exam."
+  },
+  {
+   "t": "shot",
+   "v": "OC6-Kind-Words-Today",
+   "vo": [
+    "V07"
+   ],
+   "line": "Today, the path looks like this: a kinder word to your sister, an honest moment at work, one small harm skipped.",
+   "label": "today"
+  },
+  {
+   "t": "teach",
+   "v": "OC2-The-Old-Path",
+   "say": [
+    "the buddha’s fourth truth isn’t an idea. it’s directions: eight parts, each one called samma, which means whole, well tuned, the way a chord is right. not right like a test answer.",
+    "teachers sort the eight into three bundles: wisdom, conduct and meditation. and they turn together like the spokes of a wheel, so much of the path is how you speak, act and earn a living."
+   ]
+  },
+  {
+   "t": "match",
+   "v": "OC6-Kind-Words-Today",
+   "eb": "sort it",
+   "q": "Which bundle does each moment belong to?",
+   "pairs": [
+    [
+     "not passing on gossip about a coworker",
+     "conduct"
+    ],
+    [
+     "noticing your breath in traffic",
+     "meditation"
+    ],
+    [
+     "seeing that the wanting is what hurts",
+     "wisdom"
+    ]
+   ],
+   "why": "In one old discourse, a nun named Dhammadinna sorts the eight this way. Much of it happens off the cushion."
+  },
+  {
+   "t": "ask",
+   "v": "OC6-Kind-Words-Today",
+   "eb": "the hard one",
+   "q": "Say you work on kinder speech this week. What do teachers say happens to your meditation?",
+   "o": [
+    "It gets a little steadier too",
+    "Nothing; they’re separate skills",
+    "It slips, since your effort is elsewhere"
+   ],
+   "a": 0,
+   "why": "A little honesty helps meditation. A little meditation helps honesty. Spokes, not steps."
+  }
+ ],
+ "today": {
+  "v": "OC6-Kind-Words-Today",
+  "say": "pick one spoke for this week: one thing to say more kindly, one small harm to skip, or one honest moment at work. nobody walks all eight at once. one step is still walking.",
+  "options": [
+   [
+    "I’ll pick one now",
+    "that’s walking the old path."
+   ],
+   [
+    "I’ll think about which one",
+    "choosing is a step too."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "“I have stopped”",
+  "line": "the most feared man in the land chases the buddha, and can’t catch him."
+ },
+ "card": {
+  "from": "a parable the Buddha told",
+  "mins": 5,
+  "keep": "steps",
+  "keepName": "The ancient path",
+  "keepWhy": "Found, not invented. Walk it.",
+  "sources": [
+   "Nagara Sutta, “The City” (Samyutta Nikaya 12.65): the man in the forest, the ancient path, the ancient city with parks, groves, ponds and walls, the king restoring it, “so too I saw the ancient path… this Noble Eightfold Path”",
+   "Dhammacakkappavattana Sutta (Samyutta Nikaya 56.11): the fourth truth and the eight factors",
+   "Culavedalla Sutta (Majjhima Nikaya 44): Dhammadinna’s three groupings (virtue, concentration, wisdom)",
+   "Dhammapada 273 (Max Müller 1881): “The best of ways is the eightfold; the best of truths the four words”"
+  ],
+  "check": [
+   "In SN 12.65 the parable comes after the Buddha’s reflection on dependent origination; the lesson tells only the parable and its eightfold-path ending."
+  ]
+ }
+}

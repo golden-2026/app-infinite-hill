@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Infinite Hill Map</title><link rel="icon" href="data:,">
+<meta name="description" content="Infinite Hill prototype: a globe of every real place your guide flies you to on your path. Where you've been glows warm; your next stop shines.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@500;600;700;800&display=swap">
+<style>
+  /* The Infinite Hill map (redesign 2026-11-01). Reads places/map-index.json (built by places/build-index.cjs).
+     One globe per path: where you've been (warm), your next stop (lemon, pulsing, with a route line from your last
+     place), what's coming up (gold), the rest of the path (soft dots), and quiet places (blue).
+     Learner progress comes from the app (ih-hill-doors), or ?d=<day> for demos. */
+  :root {
+    color-scheme: dark;
+    --night: #0A0A0A;
+    --panel: #141414;
+    --text: #fbf6ee;
+    --muted: #aeb5cc;
+    --lemon: #EEFF6A;
+    --lamp: #EEFF6A;
+    --calm: #8fd3ff;
+    --ink: #0A0A0A;
+    --line: rgba(255, 255, 255, 0.12);
+    --chip: rgba(255, 255, 255, 0.07);
+    --glass: rgba(14, 19, 38, 0.72);
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  [hidden] { display: none !important; }
+  html, body { height: 100%; }
+  body { margin: 0; background: #0A0A0A; color: var(--text); font: 500 15px/1.45 Manrope, system-ui, sans-serif; display: flex; justify-content: center; align-items: center; overflow: hidden; }
+  button { font: inherit; color: inherit; cursor: pointer; background: none; border: 0; padding: 0; }
+  .phone { position: relative; width: 100%; height: 100%; max-width: 430px; overflow: hidden; background: radial-gradient(120% 70% at 50% 45%, #0d1430 0%, #0A0A0A 55%, #03040a 100%); }
+  @media (min-width: 700px) and (min-height: 760px) {
+    .phone { height: min(880px, calc(100% - 40px)); border-radius: 36px; box-shadow: 0 30px 80px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.08); }
+  }
+  #globe { position: absolute; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; cursor: grab; }
+  #globe:active { cursor: grabbing; }
+
+  /* ── top: back, path switch, help; then the hero line ── */
+  .top { position: absolute; top: 0; left: 0; right: 0; z-index: 4; padding: calc(env(safe-area-inset-top, 0px) + 14px) 16px 40px; background: linear-gradient(180deg, rgba(10,10,10,.92) 0%, rgba(10,10,10,.6) 60%, rgba(10,10,10,0) 100%); pointer-events: none; }
+  .top > * { pointer-events: auto; }
+  .bar { display: flex; align-items: center; gap: 8px; }
+  .round { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line); background: var(--glass); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); font-size: 22px; line-height: 1; display: grid; place-items: center; text-decoration: none; color: inherit; flex: none; }
+  .round.q { font: 800 15px/1 Manrope, sans-serif; color: var(--muted); }
+  .switch { display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 14px 0 16px; border-radius: 999px; border: 1px solid var(--line); background: var(--glass); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); font: 800 14px/1 Manrope, sans-serif; margin-right: auto; }
+  .switch svg { opacity: .7; }
+  .hero { margin-top: 18px; }
+  .hero h1 { margin: 0; font: 800 30px/1.05 Manrope, sans-serif; letter-spacing: -.02em; text-wrap: balance; }
+  .hero h1 em { font-style: normal; color: var(--lemon); }
+  .hero p { margin: 8px 0 0; color: var(--muted); font-size: 15px; text-wrap: balance; }
+  .hero p b { color: var(--text); font-weight: 700; }
+
+  /* ── help popover ── */
+  .help { position: absolute; top: calc(env(safe-area-inset-top, 0px) + 62px); right: 16px; z-index: 7; width: 236px; padding: 14px 16px; border-radius: 18px; background: rgba(20,20,20,.97); border: 1px solid var(--line); box-shadow: 0 16px 40px rgba(0,0,0,.5); display: grid; gap: 9px; font-size: 13.5px; transform-origin: top right; transition: opacity .18s, transform .18s; }
+  .help.off { opacity: 0; transform: scale(.94); pointer-events: none; }
+  .help .k { display: flex; align-items: center; gap: 10px; }
+  .help i { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+  .help small { color: var(--muted); font-size: 12px; border-top: 1px solid var(--line); padding-top: 9px; }
+
+  /* ── labels on the globe ── */
+  .lab { position: absolute; left: 0; top: 0; pointer-events: none; transition: opacity .25s; white-space: nowrap; will-change: transform; }
+  .lab span { display: inline-block; transform: translate(-50%, -100%); margin-top: -10px; padding: 4px 9px; border-radius: 999px; background: rgba(8,11,24,.78); border: 1px solid rgba(255,255,255,.14); font: 700 11.5px/1.2 Manrope, sans-serif; color: var(--text); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+  .lab.next span { background: var(--lemon); color: var(--ink); border-color: var(--lemon); font-weight: 800; font-size: 12.5px; padding: 6px 11px; margin-top: -16px; box-shadow: 0 6px 20px rgba(238,255,106,.35); }
+  .lab.next span::after { content: ""; position: absolute; left: 50%; bottom: -5px; width: 8px; height: 8px; background: var(--lemon); transform: translateX(-50%) rotate(45deg); border-radius: 1px; }
+  .lab.next span b { font-weight: 900; }
+  .lab.been span { color: #fff4d8; }
+
+  /* ── next stop dock ── */
+  .dock { position: absolute; left: 16px; right: 16px; bottom: calc(env(safe-area-inset-bottom, 0px) + 18px); z-index: 4; display: flex; align-items: center; gap: 12px; padding: 10px 12px 10px 10px; border-radius: 22px; background: var(--glass); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid var(--line); box-shadow: 0 14px 40px rgba(0,0,0,.45); text-align: left; transition: transform .3s cubic-bezier(.2,.9,.3,1), opacity .3s; width: auto; }
+  .dock.away { transform: translateY(130%); opacity: 0; pointer-events: none; }
+  .thumb { width: 58px; height: 58px; border-radius: 15px; flex: none; object-fit: cover; background: linear-gradient(135deg, #2a2a2a, #141414); display: grid; place-items: center; font-size: 24px; }
+  .dock .t { flex: 1; min-width: 0; }
+  .dock .e { font: 800 10.5px/1.2 Manrope, sans-serif; letter-spacing: .12em; text-transform: uppercase; color: var(--lemon); }
+  .dock .n { font: 800 16.5px/1.2 Manrope, sans-serif; margin-top: 3px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .dock .c { color: var(--muted); font-size: 12.5px; margin-top: 1px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .go { width: 40px; height: 40px; border-radius: 50%; background: var(--lemon); color: var(--ink); display: grid; place-items: center; flex: none; }
+
+  /* ── sheets (place card, path picker) ── */
+  .scrim { position: absolute; inset: 0; z-index: 5; background: rgba(3,4,10,.45); opacity: 0; pointer-events: none; transition: opacity .3s; }
+  .scrim.on { opacity: 1; pointer-events: auto; }
+  .sheet { position: absolute; left: 0; right: 0; bottom: 0; z-index: 6; background: #10162c; border-top: 1px solid var(--line); border-radius: 28px 28px 0 0; max-height: 68%; overflow-y: auto; overscroll-behavior: contain; transform: translateY(105%); transition: transform .38s cubic-bezier(.2,.9,.3,1); scrollbar-width: none; }
+  .sheet::-webkit-scrollbar { display: none; }
+  .sheet.on { transform: none; }
+  .grab { position: absolute; top: 8px; left: 50%; width: 40px; height: 4px; margin-left: -20px; border-radius: 4px; background: rgba(255,255,255,.45); z-index: 3; }
+  .shut { position: absolute; top: 14px; right: 14px; width: 36px; height: 36px; border-radius: 50%; background: rgba(10,10,10,.6); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,.18); color: #fff; font-size: 20px; line-height: 1; display: grid; place-items: center; z-index: 3; }
+  .cover { position: relative; aspect-ratio: 16 / 10; background: radial-gradient(90% 90% at 30% 20%, rgba(238,255,106,.16) 0%, #141414 60%, #0f0f0f 100%); }
+  .cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .cover::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,15,15,0) 45%, rgba(15,15,15,.85) 85%, #0f0f0f 100%); }
+  .cover .glyph { position: absolute; inset: 0; display: grid; place-items: center; font-size: 54px; opacity: .55; }
+  .body { position: relative; margin-top: -54px; padding: 0 20px calc(22px + env(safe-area-inset-bottom, 0px)); display: grid; gap: 14px; z-index: 2; }
+  .tag { justify-self: start; display: inline-flex; gap: 6px; align-items: center; padding: 6px 11px; border-radius: 999px; font: 800 12px/1 Manrope, sans-serif; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.16); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+  .tag.next { background: var(--lemon); color: var(--ink); border-color: var(--lemon); }
+  .tag.been { color: #fff4d8; }
+  .tag.soon { color: var(--lamp); }
+  .tag.calm { color: var(--calm); }
+  .sheet h2 { margin: 0; font: 800 26px/1.1 Manrope, sans-serif; letter-spacing: -.015em; text-wrap: balance; }
+  .where { color: var(--muted); font-size: 13.5px; margin-top: 5px; }
+  .why { font-size: 15.5px; line-height: 1.5; color: #e9e4dc; }
+  .sec { font: 800 11px/1.2 Manrope, sans-serif; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: -4px; }
+  .spots { margin: 0; padding: 0; list-style: none; display: grid; }
+  .spots li { display: grid; grid-template-columns: 22px 1fr; gap: 12px; padding: 9px 0; position: relative; }
+  .spots li + li { border-top: 1px solid rgba(255,255,255,.06); }
+  .spots .dot { width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,.22); display: grid; place-items: center; font-size: 11px; font-weight: 900; margin-top: 1px; }
+  .spots li.done .dot { background: var(--lamp); border-color: var(--lamp); color: var(--ink); }
+  .spots li.up .dot { border-color: var(--lemon); box-shadow: 0 0 0 3px rgba(238,255,106,.15); }
+  .spots .s { font-size: 14px; font-weight: 600; }
+  .spots .m { color: var(--muted); font-size: 12.5px; margin-top: 1px; }
+  .more { color: var(--muted); font-size: 13px; padding: 9px 0 0 34px; }
+  .real { display: flex; gap: 12px; padding: 14px; border-radius: 16px; background: var(--chip); border: 1px solid var(--line); font-size: 13.5px; color: var(--muted); }
+  .real b { color: var(--text); display: block; margin-bottom: 2px; }
+  .acts { display: grid; gap: 8px; margin-top: 2px; }
+  .btn { border: 0; border-radius: 999px; background: var(--lemon); color: var(--ink); font: 900 16px/1 Manrope, sans-serif; padding: 16px 22px; box-shadow: 0 8px 24px rgba(238,255,106,.22); text-align: center; text-decoration: none; display: block; }
+  .btn.ghost { background: transparent; color: var(--text); box-shadow: none; border: 1px solid var(--line); font-weight: 800; font-size: 14.5px; padding: 14px 20px; }
+  .btn:active { transform: scale(.97); }
+
+  .picker { padding: 26px 16px calc(22px + env(safe-area-inset-bottom, 0px)); }
+  .picker h3 { margin: 0 4px 14px; font: 800 20px/1.2 Manrope, sans-serif; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .grid button { text-align: left; padding: 14px; border-radius: 16px; background: var(--chip); border: 1px solid var(--line); }
+  .grid button b { display: block; font: 800 15px/1.2 Manrope, sans-serif; }
+  .grid button small { color: var(--muted); font-size: 12.5px; }
+  .grid button.on { background: rgba(238,255,106,.1); border-color: var(--lemon); }
+  .grid button.on small { color: var(--lemon); }
+
+  .toast { position: absolute; left: 50%; bottom: 110px; transform: translateX(-50%) translateY(8px); background: #fbf6ee; color: #14182a; padding: 12px 16px; border-radius: 16px; font-weight: 700; font-size: 14px; opacity: 0; transition: opacity .3s, transform .3s; pointer-events: none; z-index: 9; width: max-content; max-width: 86%; text-align: center; box-shadow: 0 12px 30px rgba(0,0,0,.4); }
+  .toast.on { opacity: 1; transform: translateX(-50%); }
+  .loading { position: absolute; inset: 0; display: grid; place-items: center; color: var(--muted); font-size: 14px; z-index: 2; pointer-events: none; }
+
+  /* ═══ the new brand (2026-11-06): same look as hill-app, the site and the episodes. restyle only ═══ */
+  :root { --night: #0A0A0A; --panel: #141414; --panel2: #1d1d1d; --text: #F3EFE4; --muted: rgba(243,239,228,.66); --gold: #EEFF6A; --lemon: #EEFF6A; --lamp: #EEFF6A; --gold-ink: #0A0A0A; --ink: #0A0A0A; --line: rgba(243,239,228,.14); --chip: rgba(243,239,228,.07); --ok: #19E68C; --glass: rgba(14,14,14,.74); }
+  body { background: #000; font-family: Manrope, system-ui, sans-serif; }
+  .phone { background: var(--night); }
+  .phone > .ih-grain { position: absolute; }
+  .eyebrow { font-family: Manrope, sans-serif; font-weight: 800; letter-spacing: .2em; color: var(--gold); }
+  .btn { font-family: Manrope, sans-serif; font-weight: 800; box-shadow: none; }
+  .btn.ghost { background: transparent; color: var(--text); border: 0; box-shadow: inset 0 0 0 2px rgba(243,239,228,.85); }
+  .chipx { background: rgba(10,10,10,.6); border: 0; box-shadow: inset 0 0 0 1.5px rgba(243,239,228,.35); }
+  .bubble { background: var(--panel2); color: var(--text); border: 0; box-shadow: inset 0 0 0 1px var(--line); }
+  .toast { background: var(--gold); color: var(--gold-ink); font-weight: 800; border-radius: 999px; }
+  .ih-k { color: var(--gold); font-style: normal; }
+  .btn { text-transform: lowercase; }
+  .hero h1, .sheet h2, .dock .n, .picker h3, .grid button b { font-family: Anton, Impact, sans-serif !important; font-weight: 400 !important; text-transform: uppercase; letter-spacing: .01em; }
+  .hero h1 { font-size: 44px; line-height: .9; }
+  .sheet h2 { font-size: 36px; line-height: .92; }
+  .dock .n { font-size: 20px; }
+  .picker h3 { font-size: 28px; line-height: .95; }
+  .grid button b { font-size: 18px; }
+  .lab span { background: rgba(10,10,10,.8); border-color: rgba(243,239,228,.18); font-family: Manrope, sans-serif; font-weight: 800; }
+  .sheet { background: #0f0f0f; }
+  .cover img { filter: contrast(1.1) saturate(1.08) sepia(.14); }
+  .cover::before { content: ""; position: absolute; inset: 0; background: var(--ih-grain); opacity: .3; mix-blend-mode: overlay; pointer-events: none; z-index: 1; }
+  :root { --calm: #cfc9bb; }
+  .mystery { position: absolute; inset: 0; display: grid; place-items: center; font: 400 64px/1 Anton, Impact, sans-serif; color: var(--lemon); opacity: .8; }
+</style>
+<link rel="stylesheet" href="brand/brand.css">
+</head>
+<body>
+<div class="ih-grain" aria-hidden="true"></div>
+<div class="phone">
+  <canvas id="globe"></canvas>
+  <div id="pins"></div>
+  <div class="loading" id="loading" data-es="abriendo tu mapa…">opening your map…</div>
+
+  <div class="top">
+    <div class="bar">
+      <a class="round" id="backLink" href="hill-app-doors.html" aria-label="back">‹</a>
+      <button class="switch" id="switch" aria-haspopup="dialog"><span id="pathName">Christianity</span>
+        <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="round q" id="helpBtn" aria-label="what the lights mean" aria-expanded="false">?</button>
+    </div>
+    <div class="hero"><h1 id="h1"></h1><p id="sub"></p></div>
+  </div>
+
+  <div class="help off" id="help" role="note">
+    <div class="k"><i style="background:#fff1cc;box-shadow:0 0 8px #fff1cc"></i><span data-es="lugares donde ya estuviste">places you’ve been</span></div>
+    <div class="k"><i style="background:var(--lemon);box-shadow:0 0 0 3px rgba(238,255,106,.3)"></i><span data-es="tu próxima parada (se revela después de su historia)">your next stop (revealed after its story)</span></div>
+    <div class="k"><i style="background:var(--lamp)"></i><span data-es="muy pronto">coming up soon</span></div>
+    <div class="k"><i style="background:#7d7a73"></i><span data-es="más adelante en tu camino">further along your path</span></div>
+    <div class="k"><i style="background:var(--calm)"></i><span data-es="lugares tranquilos para solo estar">quiet places to just be</span></div>
+    <small data-es="toca una luz para asomarte. arrastra para girar, pellizca para acercar.">tap any light to peek inside. drag to spin, pinch to zoom.</small>
+  </div>
+
+  <button class="dock away" id="dock" aria-label="your next stop"></button>
+
+  <div class="scrim" id="scrim"></div>
+  <div class="sheet" id="sheet" role="dialog" aria-live="polite"></div>
+  <div class="sheet" id="pick" role="dialog" aria-label="choose a path"></div>
+  <div class="toast" id="toast"></div>
+</div>
+
+<script src="lib/three.min.js"></script>
+<script>
+(function () {
+  var $ = function (s) { return document.querySelector(s); };
+  function toast(t) { var e = $("#toast"); e.textContent = t; e.classList.add("on"); clearTimeout(e._t); e._t = setTimeout(function () { e.classList.remove("on"); }, 4200); }
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function short(p) { return p.short || String(p.name).split(/,| \(/)[0]; }
+  // language (2026-11-15): ?lang= first, then the app's saved setting (ih-hill-doors)
+  var APPS = {}; try { APPS = JSON.parse(localStorage.getItem("ih-hill-doors") || "{}") || {}; } catch (e) {}
+  var ES = (function () { var m = /[?&]lang=(en|es)\b/.exec(location.search); return m ? m[1] === "es" : APPS.lang === "es"; })();
+  function L(en, es) { return ES ? es : en; }
+  if (ES) { document.documentElement.lang = "es"; [].forEach.call(document.querySelectorAll("[data-es]"), function (e) { e.textContent = e.getAttribute("data-es"); }); }
+  $("#backLink").setAttribute("href", "hill-app-doors.html" + (ES ? "?lang=es" : ""));
+  // where you've been = the spots you lit in the app (S.lplaces, the same places as your path and your cards), never a guess from the course day
+  var LIT = APPS.lplaces && typeof APPS.lplaces === "object" ? APPS.lplaces : {};
+
+  var PATHS = [
+    ["christianity", L("Christianity", "Cristianismo")], ["catholic", L("Catholicism", "Catolicismo")], ["hinduism", L("Hinduism", "Hinduismo")], ["judaism", L("Judaism", "Judaísmo")],
+    ["islam", "Islam"], ["buddhism", L("Buddhism", "Budismo")], ["sikhism", L("Sikhism", "Sijismo")], ["spiritual", L("my own religion", "mi propia religión")]
+  ];
+  var NAME = {}; PATHS.forEach(function (p) { NAME[p[0]] = p[1]; });
+  // demo learner: how far along they are (year, day). The map reads it to light places.
+  var q = new URLSearchParams(location.search);
+  // real progress from the app (2026-11-14: a new user used to see a pretend day-74 learner). ?d= still overrides for demos.
+  function appDay(p) { try { var S = JSON.parse(localStorage.getItem("ih-hill-doors") || "{}"); return Math.max(0, ((S.curr && S.curr[p]) || 1) - 1); } catch (e) { return 0; } } // days finished, not today
+  var PROGRESS = { year: +(q.get("y") || 1), day: +(q.get("d") ?? appDay(location.hash.slice(1) || q.get("p") || "christianity")) };
+  var SOON = 60;   // places within this many lessons of today read as "coming up"
+  var path = (location.hash.slice(1) || q.get("p") || "christianity");
+  if (!NAME[path]) path = "christianity";
+  var INDEX = null, NEXT = null, LAST = null;
+
+  // ── globe ──
+  function vec(lat, lon, rad) {
+    var phi = (90 - lat) * Math.PI / 180, th = (lon + 180) * Math.PI / 180;
+    return new THREE.Vector3(-Math.sin(phi) * Math.cos(th), Math.cos(phi), Math.sin(phi) * Math.sin(th)).multiplyScalar(rad || 1);
+  }
+  function dotTex(core, glow, ring) {
+    var c = document.createElement("canvas"); c.width = c.height = 128; var x = c.getContext("2d");
+    if (glow) { var g = x.createRadialGradient(64, 64, 0, 64, 64, 64); g.addColorStop(0, glow); g.addColorStop(1, "rgba(0,0,0,0)"); x.fillStyle = g; x.fillRect(0, 0, 128, 128); }
+    if (ring) { x.strokeStyle = core; x.lineWidth = 7; x.beginPath(); x.arc(64, 64, 40, 0, Math.PI * 2); x.stroke(); }
+    x.fillStyle = core; x.beginPath(); x.arc(64, 64, ring ? 20 : 24, 0, Math.PI * 2); x.fill();
+    x.strokeStyle = "rgba(4,6,12,.55)"; x.lineWidth = 4; if (!ring) x.stroke();
+    var t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
+  }
+  var cv = $("#globe"), ren = new THREE.WebGLRenderer({ canvas: cv, antialias: true, alpha: true });
+  ren.setPixelRatio(Math.min(2, devicePixelRatio || 1));
+  var scene = new THREE.Scene(), cam = new THREE.PerspectiveCamera(40, 1, 0.01, 100);
+  var load = new THREE.TextureLoader();
+  var earthTex = load.load("art/trip/earth.jpg"); earthTex.colorSpace = THREE.SRGBColorSpace; earthTex.anisotropy = 8;
+  var globe = new THREE.Group(); scene.add(globe);
+  globe.add(new THREE.Mesh(new THREE.SphereGeometry(1, 96, 64), new THREE.MeshPhongMaterial({ map: earthTex, shininess: 6, specular: 0x1a2233, color: 0xb8c0d8 })));
+  var clouds = new THREE.Mesh(new THREE.SphereGeometry(1.008, 64, 48), new THREE.MeshLambertMaterial({ color: 0xffffff, alphaMap: load.load("art/trip/clouds.jpg"), transparent: true, opacity: .14, depthWrite: false }));
+  globe.add(clouds);
+  scene.add(new THREE.Mesh(new THREE.SphereGeometry(1.12, 64, 48), new THREE.ShaderMaterial({
+    side: THREE.BackSide, transparent: true, depthWrite: false,
+    vertexShader: "varying vec3 n; void main(){ n = normalize(normalMatrix*normal); gl_Position = projectionMatrix*modelViewMatrix*vec4(position,1.); }",
+    fragmentShader: "varying vec3 n; void main(){ float i = pow(.62 - dot(n, vec3(0.,0.,1.)), 3.); gl_FragColor = vec4(.5,.62,1.,1.)*i*1.3; }"
+  })));
+  var sg = new THREE.BufferGeometry(), sp = [];
+  for (var i = 0; i < 1400; i++) { var v = new THREE.Vector3(Math.random() - .5, Math.random() - .5, Math.random() - .5).normalize().multiplyScalar(30 + Math.random() * 20); sp.push(v.x, v.y, v.z); }
+  sg.setAttribute("position", new THREE.Float32BufferAttribute(sp, 3));
+  scene.add(new THREE.Points(sg, new THREE.PointsMaterial({ color: 0xffffff, size: .07, transparent: true, opacity: .7 })));
+  scene.add(new THREE.AmbientLight(0xffffff, .8));
+  var sun = new THREE.DirectionalLight(0xfff2dd, 1.1); scene.add(sun);
+
+  // one look per state; sizes are on-screen sizes (scaled with zoom so a cluster never melts into a blob)
+  var LOOK = {
+    later: { tex: dotTex("rgba(150,146,138,1)"), size: .016, op: .55 },
+    calm:  { tex: dotTex("rgba(207,201,187,1)", "rgba(207,201,187,.25)"), size: .026, op: .9 },
+    soon:  { tex: dotTex("rgba(238,255,106,1)", "rgba(238,255,106,.3)"), size: .03, op: 1 },
+    been:  { tex: dotTex("rgba(255,241,204,1)", "rgba(255,226,150,.55)"), size: .042, op: 1 },
+    next:  { tex: dotTex("rgba(238,255,106,1)", "rgba(238,255,106,.35)", true), size: .09, op: 1 }
+  };
+  var ORDER = { later: 0, calm: 1, soon: 2, been: 3, next: 4 };
+  var marks = new THREE.Group(); globe.add(marks);
+  var route = new THREE.Group(); globe.add(route);
+  var shown = [], labels = [];
+
+  // camera orbit (drag to turn, pinch / wheel to zoom)
+  var rotX = .35, rotY = 0, dist = 3.4, vel = 0, dragging = false, aim = null, lift = .18, liftT = .18;
+  function size() { var r = cv.getBoundingClientRect(); ren.setSize(r.width, r.height, false); cam.aspect = r.width / r.height; cam.updateProjectionMatrix(); }
+  addEventListener("resize", size); size();
+  var ptrs = {}, last = null, pinch0 = 0, moved = 0;
+  cv.addEventListener("pointerdown", function (e) { ptrs[e.pointerId] = e; cv.setPointerCapture(e.pointerId); last = { x: e.clientX, y: e.clientY }; moved = 0; dragging = true; vel = 0; aim = null; hideHelp();
+    var k = Object.keys(ptrs); if (k.length === 2) pinch0 = Math.hypot(ptrs[k[0]].clientX - ptrs[k[1]].clientX, ptrs[k[0]].clientY - ptrs[k[1]].clientY); });
+  cv.addEventListener("pointermove", function (e) {
+    if (!ptrs[e.pointerId]) return; ptrs[e.pointerId] = e; var k = Object.keys(ptrs);
+    if (k.length === 2) { var d = Math.hypot(ptrs[k[0]].clientX - ptrs[k[1]].clientX, ptrs[k[0]].clientY - ptrs[k[1]].clientY); dist = Math.max(1.3, Math.min(6, dist * pinch0 / d)); pinch0 = d; moved = 99; return; }
+    var dx = e.clientX - last.x, dy = e.clientY - last.y; moved += Math.abs(dx) + Math.abs(dy); last = { x: e.clientX, y: e.clientY };
+    var s = .0045 * (dist - 1) / 2.3; rotY += dx * s; vel = dx * s; rotX = Math.max(-1.3, Math.min(1.3, rotX + dy * s));
+  });
+  function up(e) { delete ptrs[e.pointerId]; dragging = Object.keys(ptrs).length > 0; if (moved < 6 && e.type === "pointerup") pick(e.clientX, e.clientY); }
+  cv.addEventListener("pointerup", up); cv.addEventListener("pointercancel", up);
+  cv.addEventListener("wheel", function (e) { e.preventDefault(); aim = null; dist = Math.max(1.3, Math.min(6, dist * (1 + e.deltaY * .001))); }, { passive: false });
+
+  // turn the globe so (lat, lon) faces the camera: spin on Y first, then tilt on X (Euler XYZ applies Y before X).
+  // jump=true snaps; otherwise it glides there.
+  function lookAt(lat, lon, d, jump) {
+    var v = vec(lat, lon), ty = Math.atan2(-v.x, v.z), tx = lat * Math.PI / 180;
+    // the globe sits a little low on screen (hero above), so aim slightly north of the place
+    tx = Math.max(-1.3, Math.min(1.3, tx));
+    while (ty - rotY > Math.PI) ty -= Math.PI * 2; while (ty - rotY < -Math.PI) ty += Math.PI * 2;
+    vel = 0;
+    if (jump) { rotX = tx; rotY = ty; if (d) dist = d; aim = null; } else aim = { x: tx, y: ty, d: d || dist };
+  }
+
+  // ── state of each place for this learner ──
+  function stateOf(p) {
+    var day = PROGRESS.day;
+    if (p.kind === "practice") return "calm";
+    if (LIT[p.id]) return "been";
+    if (NEXT && p === NEXT) return "next";
+    if (p.first && p.first <= day + SOON) return "soon";
+    return "later";
+  }
+
+  function arc(a, b, color, op, dashed) {
+    var va = vec(a.lat, a.lon), vb = vec(b.lat, b.lon), ang = va.angleTo(vb), pts = [];
+    for (var i = 0; i <= 48; i++) { var t = i / 48, v = va.clone().lerp(vb, t).normalize(); pts.push(v.multiplyScalar(1.004 + Math.sin(Math.PI * t) * Math.min(.25, .05 + ang * .3))); }
+    var g = new THREE.BufferGeometry().setFromPoints(pts);
+    var m = dashed ? new THREE.LineDashedMaterial({ color: color, dashSize: .012, gapSize: .01, transparent: true, opacity: op })
+                   : new THREE.LineBasicMaterial({ color: color, transparent: true, opacity: op });
+    var l = new THREE.Line(g, m); if (dashed) l.computeLineDistances(); route.add(l);
+  }
+
+  function draw() {
+    marks.clear(); route.clear(); $("#pins").innerHTML = ""; labels = []; shown = [];
+    var list = INDEX.places.filter(function (p) { return p.door === path; });
+    var cls = list.filter(function (p) { return p.kind === "class" && p.first; }).sort(function (a, b) { return a.first - b.first; });
+    var been = cls.filter(function (p) { return LIT[p.id]; }).sort(function (a, b) { return a.first - b.first; });
+    NEXT = cls.filter(function (p) { return !LIT[p.id] && p.first > PROGRESS.day; })[0] || null;
+    LAST = been[been.length - 1] || null;
+    // draw dim ones first so bright ones sit on top
+    list.map(function (p) { return { p: p, st: stateOf(p) }; }).sort(function (a, b) { return ORDER[a.st] - ORDER[b.st]; }).forEach(function (o) {
+      var L = LOOK[o.st];
+      var s = new THREE.Sprite(new THREE.SpriteMaterial({ map: L.tex, transparent: true, opacity: L.op, depthWrite: false }));
+      s.position.copy(vec(o.p.lat, o.p.lon, 1.006)); s.userData = { p: o.p, st: o.st, base: L.size }; s.renderOrder = ORDER[o.st];
+      marks.add(s); shown.push(s);
+    });
+    // your route: the last few places you've been, then a dashed line on to the next stop
+    var trail = been.slice(-5);
+    for (var i = 1; i < trail.length; i++) arc(trail[i - 1], trail[i], 0xfff1cc, .35);
+    if (LAST && NEXT) arc(LAST, NEXT, 0xEEFF6A, .95, true);
+    // labels: next stop always; then recent places and what's coming, decluttered each frame
+    function label(s, cls, html, pri) { var el = document.createElement("div"); el.className = "lab " + cls; el.innerHTML = "<span>" + html + "</span>"; $("#pins").appendChild(el); labels.push({ el: el, s: s, pri: pri }); }
+    shown.forEach(function (s) {
+      var p = s.userData.p, st = s.userData.st;
+      if (st === "next") label(s, "next", L("next stop · <b>?</b>", "próxima parada · <b>?</b>"), 0);
+      else if (st === "been") label(s, "been", esc(short(p)), 1 + (PROGRESS.day - p.first) / 1000);
+    });
+    labels.sort(function (a, b) { return a.pri - b.pri; });
+
+    // hero line: count what's real, point at what's next
+    var n = been.length;
+    $("#pathName").textContent = NAME[path];
+    $("#h1").innerHTML = n ? L("you’ve been to <em>" + n + " place" + (n === 1 ? "" : "s") + "</em>.", "ya estuviste en <em>" + n + (n === 1 ? " lugar" : " lugares") + "</em>.") : L("your first place is <em>coming</em>.", "tu primer lugar <em>ya viene</em>.");
+    var countries = {}; been.forEach(function (p) { countries[p.country] = 1; }); var nc = Object.keys(countries).length;
+    $("#sub").innerHTML = (n && nc > 2 ? L("across " + nc + " countries. ", "en " + nc + " países. ") : "") + (NEXT ? L("the next one shows up after its story.", "el siguiente aparece después de su historia.") : L("every place on this path, all yours.", "cada lugar de este camino, todo tuyo."));
+    dock();
+    var focus = LAST || NEXT || list[0];
+    if (focus) lookAt(focus.lat, focus.lon, 3.1, true);
+    closeSheet();
+  }
+
+  function when(p) { return ""; } // no countdowns to a place you haven't met yet
+  function dock() {
+    var el = $("#dock");
+    if (!NEXT) { el.classList.add("away"); return; }
+    el.innerHTML = '<span class="thumb">?</span>' +
+      '<span class="t"><span class="e">' + L("next stop", "próxima parada") + '</span><div class="n">' + L("a mystery", "un misterio") + '</div><div class="c">' + L("finish its story to find out where", "termina su historia para saber dónde") + "</div></span>" +
+      '<span class="go" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M6 3.5 10.5 8 6 12.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>';
+    el.classList.remove("away");
+  }
+  $("#dock").onclick = function () { if (NEXT) open(NEXT, "next"); };
+
+  function pick(x, y) {
+    var r = cv.getBoundingClientRect(), best = null, bd = 24;
+    shown.forEach(function (s) {
+      var w = s.getWorldPosition(new THREE.Vector3());
+      if (w.clone().normalize().dot(cam.position.clone().normalize()) < .2) return;
+      var p = w.project(cam), sx = (p.x * .5 + .5) * r.width + r.left, sy = (-p.y * .5 + .5) * r.height + r.top;
+      var d = Math.hypot(sx - x, sy - y) - ORDER[s.userData.st] * 2.5;
+      if (d < bd) { bd = d; best = s; }
+    });
+    if (best) open(best.userData.p, best.userData.st); else closeSheet();
+  }
+
+  // ── the place card ──
+  function tagOf(p, st) {
+    if (st === "been") return '<span class="tag been">' + L("✓ you’ve been here", "✓ ya estuviste aquí") + "</span>";
+    if (st === "next") return '<span class="tag next">' + L("✦ next stop", "✦ próxima parada") + "</span>";
+    if (st === "calm") return '<span class="tag calm">' + L("☾ quiet place · come just to be", "☾ lugar tranquilo · ven solo a estar") + "</span>";
+    if (st === "soon") return '<span class="tag soon">' + L("coming up", "muy pronto") + "</span>";
+    return '<span class="tag">' + L("on your path", "en tu camino") + "</span>";
+  }
+  function open(p, st) {
+    st = st || stateOf(p);
+    hideHelp(); $("#pick").classList.remove("on");
+    lookAt(p.lat, p.lon, Math.min(dist, 2.2));
+    if (st !== "been" && st !== "calm") { openMystery(p, st); return; }
+    var h = '<div class="grab"></div><button class="shut" id="shutBtn" aria-label="close">×</button>' +
+      '<div class="cover">' + (p.img ? '<img src="' + esc(p.img) + '" alt="">' : '<span class="glyph">' + (st === "calm" ? "☾" : "✦") + "</span>") + "</div>" +
+      '<div class="body">' + tagOf(p, st) +
+      "<div><h2>" + esc(p.name) + '</h2><div class="where">' + esc(String(p.country || "").replace(/^China \(Tibet\)$/, "Tibet")) + (p.spots > 1 ? L(" · " + p.spots + " stops inside", " · " + p.spots + " paradas dentro") : "") + "</div></div>";
+    if (p.why) h += '<div class="why">' + esc(p.why) + "</div>";
+    if (p.lessons && p.lessons.length) {
+      var anyDone = p.lessons.some(function (l) { return l.day <= PROGRESS.day; }), upNext = false;
+      h += '<div class="sec">' + (anyDone ? L("your lessons here", "tus lecciones aquí") : L("what happens here", "lo que pasa aquí")) + '</div><ul class="spots">' + p.lessons.slice(0, 5).map(function (l) {
+        var done = l.day <= PROGRESS.day, u = !done && !upNext; if (u) upNext = true;
+        return '<li class="' + (done ? "done" : u ? "up" : "") + '"><span class="dot">' + (done ? "✓" : "") + '</span><div><div class="s" translate="no">' + esc(l.title || l.spot) + '</div><div class="m">' + L("day ", "día ") + l.day + (l.title ? " · " + esc(l.spot) : "") + "</div></div></li>";
+      }).join("") + "</ul>" + (p.lessons.length > 5 ? '<div class="more">' + L("+ " + (p.lessons.length - 5) + " more lessons here", "+ " + (p.lessons.length - 5) + " lecciones más aquí") + "</div>" : "");
+    }
+    if (p.realVisit) h += '<div class="real"><span>🧭</span><div><b>' + L("go for real, someday", "ve de verdad, algún día") + '</b><span translate="no">' + esc(p.realVisit) + "</span></div></div>";
+    h += '<div class="acts">';
+    var cta = st === "been" ? L("go back with your guide", "vuelve con tu guía") : L("go sit here", "ve a sentarte aquí");
+    if (p.trip) h += '<a class="btn" href="' + esc(p.trip) + '">' + cta + "</a>";
+    else h += '<button class="btn" id="goBtn">' + cta + "</button>";
+    h += '<button class="btn ghost" id="realBtn">' + L("plan a real trip with your circle", "planea un viaje real con tu círculo") + '</button></div></div>';
+    $("#sheet").innerHTML = h; $("#sheet").scrollTop = 0; $("#sheet").classList.add("on"); $("#scrim").classList.add("on"); $("#dock").classList.add("away"); liftT = -.4;
+    var g = $("#goBtn"), day = p.lessons && p.lessons.length ? p.lessons[0].day : p.first;
+    if (g) g.onclick = function () {
+      toast(st === "been" ? L("you’ve been here. you’ll come back whenever a story returns here.", "ya estuviste aquí. volverás cuando una historia regrese aquí.")
+        : L("for now, take one slow breath here.", "por ahora, respira despacio aquí una vez."));
+    };
+    $("#shutBtn").onclick = closeSheet;
+    $("#realBtn").onclick = function () { toast(L("plan a real trip here with people from your circle. we’re building it.", "planea un viaje real aquí con gente de tu círculo. lo estamos construyendo.")); };
+  }
+  // a place you haven't reached yet: no name, no picture, no hints. it's revealed after its story
+  function openMystery(p, st) {
+    var h = '<div class="grab"></div><button class="shut" id="shutBtn" aria-label="close">×</button>' +
+      '<div class="cover"><span class="mystery">?</span></div><div class="body">' + tagOf(p, st) +
+      "<div><h2>" + L("a place on your path", "un lugar en tu camino") + '</h2><div class="where">' + L("revealed after its story", "se revela después de su historia") + "</div></div>" +
+      '<div class="why">' + L("no peeking. keep going: the story comes first, then the place.", "sin espiar. sigue: primero la historia, después el lugar.") + "</div></div>";
+    $("#sheet").innerHTML = h; $("#sheet").scrollTop = 0; $("#sheet").classList.add("on"); $("#scrim").classList.add("on"); $("#dock").classList.add("away"); liftT = -.4;
+    $("#shutBtn").onclick = closeSheet;
+  }
+  function closeSheet() {
+    $("#sheet").classList.remove("on"); $("#pick").classList.remove("on"); $("#scrim").classList.remove("on"); liftT = .18;
+    if (NEXT) $("#dock").classList.remove("away");
+  }
+  $("#scrim").onclick = closeSheet;
+  addEventListener("keydown", function (e) { if (e.key === "Escape") { closeSheet(); hideHelp(); } });
+  // swipe a sheet down to close it
+  ["#sheet", "#pick"].forEach(function (id) { var sh = $(id), y0 = null;
+    sh.addEventListener("touchstart", function (e) { y0 = sh.scrollTop <= 0 ? e.touches[0].clientY : null; }, { passive: true });
+    sh.addEventListener("touchmove", function (e) { if (y0 === null) return; var dy = e.touches[0].clientY - y0; if (dy > 0) { sh.style.transition = "none"; sh.style.transform = "translateY(" + dy + "px)"; } }, { passive: true });
+    sh.addEventListener("touchend", function (e) { if (y0 === null) return; var dy = e.changedTouches[0].clientY - y0; sh.style.transition = ""; sh.style.transform = ""; if (dy > 70) closeSheet(); y0 = null; });
+  });
+
+  // ── path picker ──
+  function openPicker() {
+    hideHelp();
+    var h = '<div class="grab"></div><div class="picker"><h3>' + L("pick a path", "elige un camino") + '</h3><div class="grid">' + PATHS.map(function (p) {
+      var n = INDEX ? INDEX.places.filter(function (x) { return x.door === p[0] && x.kind === "class" && LIT[x.id]; }).length : 0;
+      return '<button data-p="' + p[0] + '" class="' + (p[0] === path ? "on" : "") + '"><b>' + p[1] + "</b><small>" + (p[0] === path ? (n ? L("you’re here · " + n + (n === 1 ? " place" : " places"), "estás aquí · " + n + (n === 1 ? " lugar" : " lugares")) : L("you’re here", "estás aquí")) : L("see this map", "ver este mapa")) + "</small></button>";
+    }).join("") + "</div></div>";
+    $("#pick").innerHTML = h; $("#pick").classList.add("on"); $("#scrim").classList.add("on"); $("#dock").classList.add("away"); $("#sheet").classList.remove("on");
+    [].forEach.call($("#pick").querySelectorAll("button[data-p]"), function (b) {
+      b.onclick = function () { path = b.dataset.p; history.replaceState(null, "", location.search + "#" + path); draw(); };
+    });
+  }
+  // one faith first: only "my own religion" can browse other faiths' places (2026-11-04)
+  if (path === "spiritual") $("#switch").onclick = function () { if (INDEX) openPicker(); };
+  else { var sw = $("#switch"); sw.style.cursor = "default"; sw.removeAttribute("aria-haspopup"); var ch = sw.querySelector("svg"); if (ch) ch.remove(); }
+
+  // ── help ──
+  function hideHelp() { $("#help").classList.add("off"); $("#helpBtn").setAttribute("aria-expanded", "false"); }
+  $("#helpBtn").onclick = function () { var off = $("#help").classList.toggle("off"); $("#helpBtn").setAttribute("aria-expanded", String(!off)); };
+
+  // ── render loop ──
+  // labels: next stop first, then recent places, then what's coming; one hides if it would overlap one already shown.
+  // fewer labels when zoomed out, more as you zoom in.
+  var taken = [];
+  var camN = new THREE.Vector3(), wv = new THREE.Vector3();
+  function placeLabels() {
+    taken = [];
+    var r = cv.getBoundingClientRect(), cap = dist > 2.8 ? 4 : dist > 2 ? 9 : 16, n = 0, topLimit = $(".hero").getBoundingClientRect().bottom - r.top + 6;
+    var dockR = $("#dock").classList.contains("away") ? r.height : $("#dock").getBoundingClientRect().top - r.top - 4;
+    labels.forEach(function (L) {
+      L.s.getWorldPosition(wv); var facing = wv.clone().normalize().dot(camN);
+      var p = wv.project(cam), x = (p.x * .5 + .5) * r.width, y = (-p.y * .5 + .5) * r.height;
+      L.el.style.transform = "translate(" + x + "px," + y + "px)";
+      var big = L.pri === 0, bw = (L.el.firstChild.offsetWidth || 100) + 6, bh = big ? 34 : 26, box = { l: x - bw / 2, r: x + bw / 2, t: y - bh - (big ? 16 : 10), b: y - 4 };
+      var ok = facing > .35 && box.l > 4 && box.r < r.width - 4 && (big || (n < cap && box.t > topLimit && box.b < dockR)) && taken.every(function (o) { return box.r < o.l || box.l > o.r || box.b < o.t || box.t > o.b; });
+      if (ok) { taken.push(box); if (!big) n++; }
+      L.el.style.opacity = ok ? (big ? 1 : .92) : 0;
+    });
+  }
+  function frame(now) {
+    if (aim && !dragging) {
+      rotX += (aim.x - rotX) * .1; rotY += (aim.y - rotY) * .1; dist += (aim.d - dist) * .1;
+      if (Math.abs(aim.x - rotX) + Math.abs(aim.y - rotY) + Math.abs(aim.d - dist) < .001) aim = null;
+    } else if (!dragging) { rotY += vel; vel *= .94; }
+    globe.rotation.set(rotX, rotY, 0);
+    // the globe sits a touch below centre so the hero line has room
+    lift += (liftT - lift) * .1; var ly = lift * (dist - 1) / 2;
+    cam.position.set(0, ly, dist); cam.lookAt(0, ly, 0);
+    camN.copy(cam.position).normalize();
+    sun.position.set(2, 1.5, 3);
+    clouds.rotation.y = now * .000004;
+    var zoom = Math.max(.35, (dist - 1) / 2.1), pulse = 1 + Math.sin(now / 380) * .14;
+    shown.forEach(function (s) { s.scale.setScalar(s.userData.base * zoom * (s.userData.st === "next" ? pulse : 1)); });
+    scene.updateMatrixWorld();
+    placeLabels();
+    ren.render(scene, cam);
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+  window.__map = function () { return { rotX: rotX, rotY: rotY, dist: dist, path: path, n: shown.length, next: NEXT && NEXT.id }; };
+  // test hook for screenshots: open one place's card by id
+  window.__mapOpen = function (id) { var s = shown.filter(function (s) { return s.userData.p.id === id; })[0]; if (s) open(s.userData.p, s.userData.st); return !!s; };
+  window.__mapPicker = function () { if (INDEX) openPicker(); };
+
+  var lp = fetch("lessons/places.json").then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; });
+  fetch("places/map-index.json").then(function (r) { return r.json(); }).then(function (j) {
+    return lp.then(function (LP) {
+      var have = {}, pre = {}; j.places.forEach(function (p) { have[p.id] = 1; var k = String(p.id).split("-")[0]; if (!pre[k]) pre[k] = p.door; });
+      var byId = {}; Object.keys(LP || {}).forEach(function (k) { var e = LP[k]; if (e && e.placeId && !byId[e.placeId]) byId[e.placeId] = e; });
+      Object.keys(LIT).forEach(function (id) { if (have[id]) return; var e = byId[id], door = pre[String(id).split("-")[0]]; if (!e || !door || !isFinite(e.lat)) return;
+        j.places.push({ id: id, door: door, kind: "class", name: e.name, country: e.country, lat: e.lat, lon: e.lon, why: e.why || "", img: e.img || (LIT[id] && LIT[id].i) || "", first: 1, lessons: [] }); });
+      INDEX = j; $("#loading").hidden = true; draw();
+    });
+  }).catch(function () { $("#loading").textContent = L("your map is still being drawn.", "tu mapa todavía se está dibujando."); });
+})();
+</script>
+</body>
+</html>

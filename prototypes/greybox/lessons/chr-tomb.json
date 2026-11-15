@@ -1,0 +1,199 @@
+{
+ "id": "chr-tomb",
+ "home": "olive",
+ "title": "The stone was already moved",
+ "told": "a story about Jesus",
+ "clips": "art/sacred/chr-tomb/clips/",
+ "voice": "art/sacred/chr-tomb/voice/",
+ "guide": {
+  "name": "Denzel",
+  "photo": "art/guides/christianity.webp"
+ },
+ "card": {
+  "from": "a story about Jesus",
+  "mins": 5,
+  "keep": "stone",
+  "keepName": "The rolled stone",
+  "keepWhy": "It was moved before they arrived.",
+  "sources": [
+   "Mark 16:1-2 (Mary Magdalene, Mary the mother of James, and Salome bring spices very early on the first day of the week, at sunrise)",
+   "Mark 16:3-4 (“Who will roll away the stone from the door of the tomb for us?”… it was rolled back; it was very big)",
+   "Mark 16:5-6 (a young man in a white robe sitting on the right side: “Don’t be amazed. You seek Jesus, the Nazarene, who has been crucified. He has risen. He is not here”)",
+   "John 20:1, 11-15 (Mary Magdalene weeps outside the tomb; supposes him to be the gardener)",
+   "John 20:16 (“Mary.” She turned and said to him, “Rabboni!”)",
+   "John 20:17-18 (Mary goes and tells the disciples, “I have seen the Lord!”)",
+   "John 20:19 (the disciples behind locked doors for fear), behind “his other friends were hiding”",
+   "“Apostle to the apostles”: an old title (Hippolytus, Thomas Aquinas); used in the 2016 decree raising her July 22 memorial to a feast",
+   "Captions follow the World English Bible, lightly modernized"
+  ],
+  "check": []
+ },
+ "hook": {
+  "v": "QT1-Spices-Dawn",
+  "say": "before the story, can i ask you something? ever lost sleep over something that turned out fine?",
+  "options": [
+   [
+    "Many times",
+    "same here. these women did too, on the most important morning of all."
+   ],
+   [
+    "I’m doing it now",
+    "then this one is for you. listen to what they found."
+   ],
+   [
+    "Not really",
+    "good. keep this one for the next sleepless night."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "QT1-Spices-Dawn",
+   "vo": [
+    "V01"
+   ],
+   "line": "Early on Sunday, at sunrise, three women walked to Jesus’s tomb with spices. His other friends were hiding. The women came.",
+   "label": "Mark 16:1-2"
+  },
+  {
+   "t": "shot",
+   "v": "QT1-Spices-Dawn",
+   "vo": [
+    "V02"
+   ],
+   "line": "On the way they worried: “Who will roll away the stone for us?” It was very big.",
+   "label": "Mark 16:3"
+  },
+  {
+   "t": "shot",
+   "v": "QT2-Big-Stone",
+   "vo": [
+    "V03"
+   ],
+   "line": "But when they looked up, the stone had already been rolled back.",
+   "label": "Mark 16:4"
+  },
+  {
+   "t": "ask",
+   "v": "QT2-Big-Stone",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "The tomb is open. What do you guess they find inside?",
+   "o": [
+    "His body, ready for their spices",
+    "Guards, asleep at their post",
+    "A young man in white, and no body"
+   ],
+   "a": 2,
+   "why": "No body. Only a messenger, with news."
+  },
+  {
+   "t": "shot",
+   "v": "QT3-Empty-Tomb",
+   "vo": [
+    "V04"
+   ],
+   "line": "Inside sat a young man in white. “Don’t be afraid. You’re looking for Jesus, who was crucified. He has risen. He is not here.”",
+   "label": "Mark 16:5-6"
+  },
+  {
+   "t": "ask",
+   "v": "QT3-Empty-Tomb",
+   "eb": "did you know?",
+   "q": "Jesus died on a Friday. Why did the women wait until Sunday morning to bring the spices?",
+   "o": [
+    "They needed a priest’s permission",
+    "The Sabbath rest had kept them home",
+    "The men had told them to stay away"
+   ],
+   "a": 1,
+   "why": "He died just before the Sabbath began at sundown. They rested as the law asked, then set out at first light."
+  },
+  {
+   "t": "shot",
+   "v": "QT4-Mary-Weeps",
+   "vo": [
+    "V05"
+   ],
+   "line": "Mary Magdalene stayed by the tomb, crying. She saw a man nearby and thought he was the gardener.",
+   "label": "another telling, John 20:11-15"
+  },
+  {
+   "t": "fill",
+   "v": "QT4-Mary-Weeps",
+   "eb": "guess the words",
+   "pre": "Then he said just one word: “",
+   "post": ".” She turned, and knew him.",
+   "o": [
+    "Mary",
+    "Peace",
+    "Woman"
+   ],
+   "a": 0,
+   "why": "Her name. A moment earlier he’d asked, “Woman, why are you weeping?” and she hadn’t known him. Her name did it."
+  },
+  {
+   "t": "shot",
+   "v": "QT5-Mary-Turns",
+   "vo": [
+    "V06"
+   ],
+   "line": "Then he said one word: “Mary.” She turned, and knew him. She ran to tell the others, “I have seen the Lord!”",
+   "label": "John 20:16-18"
+  },
+  {
+   "t": "ask",
+   "v": "QT5-Mary-Turns",
+   "eb": "did you know?",
+   "q": "Mary Magdalene ran to tell the others. Many Christians give her a title for that. What is it?",
+   "o": [
+    "Apostle to the apostles",
+    "Mother of the Church",
+    "First of the disciples"
+   ],
+   "a": 0,
+   "why": "Apostle means ‘one who is sent,’ and she was sent to the sent. In 2016 Pope Francis raised her day, July 22, to a full feast."
+  },
+  {
+   "t": "teach",
+   "v": "QT5-Mary-Turns",
+   "say": [
+    "here’s what i love. the first people trusted with the news of easter were women who showed up when it was hardest. some traditions call mary “the apostle to the apostles.”",
+    "christians believe the resurrection means death doesn’t get the last word. the stone was moved before they arrived."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "QT5-Mary-Turns",
+   "eb": "the hard one",
+   "q": "Mary didn’t know his face. She knew his voice saying her name. What does John seem to be saying?",
+   "o": [
+    "Faces can fool you; voices can’t",
+    "He finds people one by one, by name",
+    "She needed proof before she’d believe"
+   ],
+   "a": 1,
+   "why": "Earlier in John, Jesus says the good shepherd “calls his own sheep by name, and they know his voice.” Here it happens."
+  }
+ ],
+ "today": {
+  "v": "QT6-Today",
+  "say": "think of one worry you’re walking toward this week. write it down, and next to it write: “the stone may already be moved.” if you like, hand it to God in a one-line prayer: watch, learn, or join in.",
+  "options": [
+   [
+    "I know the worry",
+    "then write it down. you don’t have to carry it all the way there."
+   ],
+   [
+    "I’ll keep the line",
+    "good. say it when the worry comes back."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "The church in their house.",
+  "line": "the first churches had no steeples. they had kitchens."
+ }
+}

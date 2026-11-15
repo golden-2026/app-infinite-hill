@@ -1,3 +1,5 @@
+Background only (written 2026-10-06). Where this disagrees with docs/VISION-NOW.md or docs/LESSON_STANDARD.md, those win.
+
 # What young people ask about their faith on Reddit
 
 Collected 2026-10-06 for the eight paths. Read-only; no account, no votes, no posts. No usernames or personal details

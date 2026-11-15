@@ -1,3 +1,5 @@
+Background only (written September 2026). Where this disagrees with docs/VISION-NOW.md, that page wins.
+
 # Golden
 
 Golden is a house for short daily religious and spiritual practice. This glossary keeps product language consistent across the universal App, the public Website, and the systems that support them.

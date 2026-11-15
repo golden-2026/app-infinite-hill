@@ -1,0 +1,200 @@
+{
+ "id": "wild-mongoose",
+ "home": "wild",
+ "title": "The half-golden mongoose",
+ "told": "from the Mahabharata",
+ "clips": "art/sacred/wild-mongoose/clips/",
+ "voice": "art/sacred/wild-mongoose/voice/",
+ "guide": {
+  "name": "Justin",
+  "photo": "art/guides/spiritual.webp"
+ },
+ "hook": {
+  "v": "MGS1-Great-Sacrifice",
+  "say": "before the story, can i ask you something? when you do something kind, do you want the person to know it was you?",
+  "options": [
+   [
+    "Honestly, yes",
+    "me too, most days. this story has a very picky little judge."
+   ],
+   [
+    "Sometimes",
+    "that’s human. watch what impresses the mongoose."
+   ],
+   [
+    "I’d rather not",
+    "then you’ll love this family. listen."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "MGS1-Great-Sacrifice",
+   "vo": [
+    "V01"
+   ],
+   "line": "In the Mahabharata, after a great war, King Yudhishthira held a huge royal sacrifice. He gave away mountains of gold, grain and cows."
+  },
+  {
+   "t": "shot",
+   "v": "MGS2-Golden-Mongoose",
+   "vo": [
+    "V02"
+   ],
+   "line": "Then a mongoose appeared, half its body shining gold. It announced: this whole sacrifice is worth less than one little gift of barley flour."
+  },
+  {
+   "t": "ask",
+   "v": "MGS3-Poor-Family",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "In a famine, a poor family shares a tiny meal four ways. A hungry guest knocks. What do you guess they do?",
+   "o": [
+    "Share a little of the meal with him",
+    "Each one gives him their whole share",
+    "Say sorry; there’s nothing to spare"
+   ],
+   "a": 1,
+   "why": "First the father’s share, then the mother’s, the son’s, and the son’s wife’s. The guest was still hungry each time, and they kept giving."
+  },
+  {
+   "t": "shot",
+   "v": "MGS3-Poor-Family",
+   "vo": [
+    "V03"
+   ],
+   "line": "Once, the mongoose said, in a famine, a poor family of four gathered just enough barley flour for one small meal, and shared it four ways."
+  },
+  {
+   "t": "shot",
+   "v": "MGS4-The-Guest",
+   "vo": [
+    "V04"
+   ],
+   "line": "Before they ate, a hungry guest came to the door. The old man gave him his share. Still hungry. His wife gave hers. Then their son, then his wife."
+  },
+  {
+   "t": "ask",
+   "v": "MGS4-The-Guest",
+   "eb": "why?",
+   "q": "Why would a poor family’s handful outweigh a king’s mountain of gold?",
+   "o": [
+    "The king gave mostly to priests",
+    "They gave all they had, not their extra",
+    "Grain feeds people; gold can’t"
+   ],
+   "a": 1,
+   "why": "The king gave from plenty, in public. They gave their last meal, in a hut, to a stranger. Jesus praises a widow’s two small coins for the same reason."
+  },
+  {
+   "t": "shot",
+   "v": "MGS5-Last-Share",
+   "vo": [
+    "V05"
+   ],
+   "line": "The guest was Dharma, goodness itself, in disguise, and he blessed them. The mongoose rolled in their spilled flour, and half its body turned gold."
+  },
+  {
+   "t": "shot",
+   "v": "MGS2-Golden-Mongoose",
+   "vo": [
+    "V06"
+   ],
+   "line": "Ever since, it has rolled at every grand sacrifice, hoping to turn the other half gold. Not even the king’s worked."
+  },
+  {
+   "t": "ask",
+   "v": "MGS5-Last-Share",
+   "eb": "did you know?",
+   "q": "An old Sanskrit line says, “Atithi devo bhava.” What does it mean?",
+   "o": [
+    "Feed the hungry first",
+    "Give, and you’ll receive",
+    "Treat the guest as God"
+   ],
+   "a": 2,
+   "why": "From the Taittiriya Upanishad. In this story the guest really was Dharma in disguise, and the family didn’t know it."
+  },
+  {
+   "t": "shot",
+   "v": "MGS6-Today",
+   "vo": [
+    "V07"
+   ],
+   "line": "Today: a bag of rice left in a street pantry box at dusk. No one watching. That’s the kind of gift the mongoose is still looking for.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "MGS6-Today",
+   "eb": "you’re in it",
+   "q": "At a fundraiser, a big donor’s name goes on the wall. Someone else slips in five dollars they really needed. Where would the mongoose roll?",
+   "o": [
+    "In the big gift, the name on the wall",
+    "In the five dollars someone needed",
+    "Neither, since both were in public"
+   ],
+   "a": 1,
+   "why": "The measure isn’t the size of the gift but what it cost the giver. The mongoose would head straight for the five."
+  },
+  {
+   "t": "teach",
+   "v": "MGS5-Last-Share",
+   "say": [
+    "here’s what i love. the mongoose isn’t impressed by the size of the gift. it’s looking for the heart behind it.",
+    "hindu teaching says: do the work well, and let go of what it earns you. the family didn’t give to be seen or praised. someone was hungry, so they gave. that’s giving with no receipt."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "MGS6-Today",
+   "eb": "the hard one",
+   "q": "The guest turned out to be Dharma, goodness itself. Why might the story hide him as an ordinary hungry stranger?",
+   "o": [
+    "Because how you treat a nobody is the test",
+    "So they’d be rewarded for guessing right",
+    "Because gods must never be recognized"
+   ],
+   "a": 0,
+   "why": "They didn’t know who he was. They fed him because he was hungry. That’s why the old saying treats every guest as holy."
+  }
+ ],
+ "today": {
+  "v": "MGS6-Today",
+  "say": "today, keep the old hindu duty to the guest: feed someone. share your snack, offer the visitor a drink first, or leave food in a pantry box. no name on it. walk away before anyone can thank you.",
+  "options": [
+   [
+    "I’ll do it",
+    "good. no receipt. the deed is already done."
+   ],
+   [
+    "I’ll look for one",
+    "it’ll find you. they usually do."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "Stay awake with me.",
+  "line": "on his hardest night, jesus asks his closest friends for one thing. they fall asleep."
+ },
+ "card": {
+  "from": "from the Mahabharata",
+  "mins": 5,
+  "keep": "barley",
+  "keepName": "No receipt",
+  "keepWhy": "A gift is weighed by the heart, not the heap.",
+  "sources": [
+   "Mahabharata, Ashvamedhika Parva (Book 14), the story of the mongoose (K. M. Ganguli translation, sections 90–92): after Yudhishthira’s horse sacrifice a mongoose with half its body golden declares the sacrifice not equal to a prastha of barley flour given by a gleaning brahmin of Kurukshetra; in a famine the brahmin, his wife, his son and the son’s wife each give their share of barley flour to a hungry guest; the guest reveals himself as Dharma and blesses them; the mongoose, rolling where the flour had fallen, became golden on one side, and has since visited sacrifices hoping to turn the other side gold.",
+   "Bhagavad Gita 2.47 (act, without clinging to the fruits), paraphrased unnamed in the teach.",
+   "Day 17 script: docs/curriculum/spiritual/scripts/y1/day-0017.json (service; no receipt). Background there: Matthew 6:3; Maimonides, Gifts to the Poor 10:7–14; seva and langar."
+  ],
+  "check": [
+   "Confirm the section numbers (Ganguli 14.90–92) and that the mongoose rolled in the spilled flour (some tellings add the water of the guest’s washing).",
+   "The family’s rise to heaven after the blessing is left out. Confirm.",
+   "“Dharma, goodness itself, in disguise” for the god Dharma; the paintings show him only as a tired traveler. Confirm.",
+   "The fill’s why, the hard one’s why (“the old saying treats every guest as holy”) and the today (“the old hindu duty to the guest”) rest on atithi devo bhava (Taittiriya Upanishad 1.11.2) and the householder’s duty of hospitality. Confirm the wording."
+  ]
+ }
+}

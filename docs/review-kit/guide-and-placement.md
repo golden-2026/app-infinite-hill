@@ -1,3 +1,5 @@
+Background only (written 2026-10-03). Where this disagrees with docs/VISION-NOW.md or docs/LESSON_STANDARD.md, those win.
+
 # Testing the Guide and the placement check
 
 Two quick hands-on tests that anyone careful can run: the owner, a helper, or test users. No code needed.

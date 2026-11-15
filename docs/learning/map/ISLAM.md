@@ -1,3 +1,5 @@
+Background only (written 2026-10-06). Where this disagrees with docs/VISION-NOW.md or docs/LESSON_STANDARD.md, those win.
+
 # Five-year map: Islam (2026-10-06)
 
 Reviewed against `docs/curriculum/islam/y1.md`–`y5.md` (days 1–1,826) and the new `docs/learning/week1/ISLAM.json`

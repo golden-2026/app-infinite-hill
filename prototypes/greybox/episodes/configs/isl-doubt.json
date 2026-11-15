@@ -1,0 +1,74 @@
+{
+ "id": "isl-doubt",
+ "open": [
+  "a star.",
+  "the moon.",
+  "the sun."
+ ],
+ "open2": [
+  "all of them",
+  "set."
+ ],
+ "hint": "tap anywhere to fill the night with stars",
+ "particle": "stars",
+ "energy": "mystic",
+ "hot": {
+  "0": {
+   "star": "y"
+  },
+  "1": {
+   "set": "p",
+   "moon": "y"
+  },
+  "2": {
+   "sun": "o"
+  },
+  "3": {
+   "ease": "y"
+  },
+  "4": {
+   "birds": "y"
+  }
+ },
+ "drop": 2,
+ "game": {
+  "ask": 0,
+  "q": "the star is gone. what does ibrahim <span class=\"o\">say?</span>",
+  "opts": [
+   [
+    "wait",
+    "“i’ll wait for it to rise again”"
+   ],
+   [
+    "yes",
+    "“i don’t love things that set.”"
+   ],
+   [
+    "moon",
+    "“the moon, then. final answer.”"
+   ]
+  ],
+  "wrong": {
+   "wait": "a fair thought. but whatever disappears can’t be the answer.",
+   "moon": "he did look to the moon next. it set too."
+  },
+  "right": "YES. whatever sets can’t be the answer. so he kept looking."
+ },
+ "teachH": "bring the <em>question.</em>",
+ "end": {
+  "h": [
+   "ask",
+   "out",
+   "loud."
+  ],
+  "line": "ibrahim watched a star, the moon and the sun set. he asked, and he was shown.",
+  "l1": "a star, the moon, the sun. all set.",
+  "l2": "he asked, and he was shown."
+ },
+ "cliff": {
+  "s1": "next: a tired farmer, two threads under a pillow.",
+  "s2": "and why <i>the night is for eating.</i>",
+  "tmr": "tomorrow: one day of ramadan."
+ },
+ "share": "a star, the moon, the sun, and a question asked out loud, on infinite hill"
+}

@@ -27,9 +27,12 @@ export { confirmSheet, toast } from "@/ui/overlay";
 
 // ─── Btn (v175: ink · gold · ghost · light) ─────────────────────────────
 const BTN = {
-  ink: { bg: color.ink, fg: color.gold, border: "transparent" },
-  gold: { bg: color.gold, fg: color.ink, border: "transparent" },
+  // night look (2026-10-28): the main button is the brand yellow with dark words
+  ink: { bg: color.gold, fg: "#0A0A0A", border: "transparent" },
+  gold: { bg: color.gold, fg: "#0A0A0A", border: "transparent" },
   ghost: { bg: "transparent", fg: color.ink, border: color.ink },
+  /** loud brand: a black pill with lime words (Magna's ink button), for lime or cream blocks */
+  black: { bg: "#0A0A0A", fg: color.gold, border: "transparent" },
   light: { bg: color.white, fg: color.ink, border: "transparent" },
   danger: { bg: "transparent", fg: color.danger, border: color.danger },
   miss: { bg: "#E5484D", fg: "#fff", border: "transparent" }, // the lesson's "not quite" banner
@@ -104,30 +107,31 @@ export function ChoiceRow({ on, onPress, children, sub, testID, multi, right }: 
   };
   return (
     <Pressable testID={testID} accessibilityRole={multi ? "checkbox" : "radio"} accessibilityState={{ checked: !!lit }} aria-checked={!!lit} accessibilityLabel={sub ? `${children}. ${sub}` : children} onPress={press}
-      style={({ pressed }) => [styles.choice, { borderColor: right ? RIGHT_LINE : lit ? color.ink : color.line, borderWidth: flash ? 2 : undefined, backgroundColor: right ? RIGHT : flash ? color.gold : lit ? CHOSEN : color.white, transform: [{ scale: pressed ? 0.985 : flash ? 1.01 : 1 }] }]}>
+      style={({ pressed }) => [styles.choice, { borderColor: right ? RIGHT_LINE : lit ? color.gold : color.line, borderWidth: flash ? 2 : undefined, backgroundColor: right ? RIGHT : flash ? color.gold : lit ? CHOSEN : color.white, transform: [{ scale: pressed ? 0.985 : flash ? 1.01 : 1 }] }]}>
       <View style={{ flex: 1 }}>
-        <Text style={type.choice()}>{children}</Text>
+        <Text style={[type.choice(), flash && !right ? { color: "#0A0A0A" } : null]}>{children}</Text>
         {sub ? <Text style={[type.caption(), { marginTop: 3 }]}>{sub}</Text> : null}
       </View>
-      {!multi && flash ? <Text style={{ fontFamily: font.text[700], fontSize: 18, color: color.ink, marginLeft: 8 }}>✓</Text> : null}
+      {!multi && flash ? <Text style={{ fontFamily: font.text[700], fontSize: 18, color: "#0A0A0A", marginLeft: 8 }}>✓</Text> : null}
       {multi ? (
-        <View style={[styles.check, on ? { backgroundColor: color.ink, borderColor: color.ink } : null]}>
-          {on ? <Text style={{ fontFamily: font.text[700], fontSize: 13, lineHeight: 15, color: color.gold }}>✓</Text> : null}
+        <View style={[styles.check, on ? { backgroundColor: color.gold, borderColor: color.gold } : null]}>
+          {on ? <Text style={{ fontFamily: font.text[700], fontSize: 13, lineHeight: 15, color: "#0A0A0A" }}>✓</Text> : null}
         </View>
       ) : null}
     </Pressable>
   );
 }
-const CHOSEN = "#FFFBE0";
-const RIGHT = "#E6F6EA"; // the right answer, once shown
-const RIGHT_LINE = "#2E8B57";
+// loud brand (2026-11-06): on black, a chosen row is a lime-tinted block with a lime edge; the right answer glows green
+const CHOSEN = "#23260F";
+const RIGHT = "#0D2E1F"; // the right answer, once shown
+const RIGHT_LINE = "#19E68C";
 
 /** A small option (Inter 14), for compact pickers outside onboarding. `big` is the onboarding row: use ChoiceRow. */
 export function Opt({ on, onPress, children, sub, testID, big, multi }: { on?: boolean; onPress: () => void; children: string; sub?: string; testID?: string; big?: boolean; /** pick-several: a checkbox, not a radio */ multi?: boolean }) {
   if (big) return <ChoiceRow on={on} onPress={onPress} sub={sub} testID={testID} multi={multi}>{children}</ChoiceRow>;
   return (
     <Pressable testID={testID} accessibilityRole={multi ? "checkbox" : "radio"} accessibilityState={{ checked: !!on }} aria-checked={!!on} accessibilityLabel={sub ? `${children}. ${sub}` : children} onPress={() => { tapHaptic(); onPress(); }}
-      style={({ pressed }) => [styles.opt, { borderColor: on ? color.ink : color.line, backgroundColor: on ? CHOSEN : color.white, transform: [{ scale: pressed ? 0.985 : 1 }] }]}>
+      style={({ pressed }) => [styles.opt, { borderColor: on ? color.gold : color.line, backgroundColor: on ? CHOSEN : color.white, transform: [{ scale: pressed ? 0.985 : 1 }] }]}>
       <Text style={{ fontFamily: font.text[600], fontSize: 14, color: color.ink }}>{children}</Text>
       {sub ? <Text style={[type.body(12), { color: color.mute, marginTop: 3 }]}>{sub}</Text> : null}
     </Pressable>
@@ -288,14 +292,15 @@ const styles = StyleSheet.create({
   pad: { paddingHorizontal: 22, paddingBottom: 24 },
   scroll: { paddingHorizontal: 18, paddingBottom: 120 },
   center: { alignItems: "center", justifyContent: "center" },
-  btn: { borderRadius: radius.btn, paddingVertical: 15, paddingHorizontal: 18, alignItems: "center", borderWidth: 1.5 },
-  btnText: { fontFamily: font.text[600], fontSize: 13, letterSpacing: 0.78 },
-  card: { backgroundColor: color.white, borderColor: color.line, borderWidth: 1, borderRadius: 20, padding: 16, shadowColor: "#161310", shadowOpacity: 0.05, shadowRadius: 15, shadowOffset: { width: 0, height: 8 } },
+  // loud brand: fat pills, Manrope 800 caps (the site's .btn)
+  btn: { borderRadius: radius.btn, paddingVertical: 17, paddingHorizontal: 22, alignItems: "center", borderWidth: 2 },
+  btnText: { fontFamily: font.text[700], fontSize: 15, letterSpacing: 1.2 },
+  card: { backgroundColor: color.white, borderColor: color.line, borderWidth: 1, borderRadius: 22, padding: 16 },
   cardDark: { backgroundColor: color.ink, borderWidth: 0 },
   opt: { borderWidth: 1.5, borderRadius: 16, paddingVertical: 13, paddingHorizontal: 16 },
   choice: { flexDirection: "row", alignItems: "center", gap: 12, minHeight: 56, borderWidth: 1.5, borderRadius: 16, paddingVertical: 14, paddingHorizontal: 16 },
   check: { width: 22, height: 22, borderRadius: 6, borderWidth: 1.5, borderColor: color.line, backgroundColor: color.white, alignItems: "center", justifyContent: "center" },
-  bubble: { flex: 1, backgroundColor: color.white, borderColor: color.line, borderWidth: 1, borderRadius: 18, paddingVertical: 14, paddingHorizontal: 16 },
+  bubble: { flex: 1, backgroundColor: color.white, borderColor: color.line, borderWidth: 1, borderRadius: 22, borderBottomLeftRadius: 6, paddingVertical: 14, paddingHorizontal: 16 },
   faceCaption: { position: "absolute", left: 12, right: 12, bottom: 12 },
   faceScrim: { position: "absolute", left: 0, right: 0, bottom: 0 },
 });

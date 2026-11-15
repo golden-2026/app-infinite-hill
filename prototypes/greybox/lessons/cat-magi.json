@@ -1,0 +1,198 @@
+{
+ "id": "cat-magi",
+ "home": "angelus",
+ "title": "Strangers following a star",
+ "told": "from Matthew’s Gospel",
+ "clips": "art/sacred/cat-magi/clips/",
+ "voice": "art/sacred/cat-magi/voice/",
+ "guide": {
+  "name": "Nicole",
+  "photo": "art/guides/catholic.webp"
+ },
+ "card": {
+  "from": "from Matthew’s Gospel",
+  "mins": 5,
+  "keep": "star",
+  "keepName": "The magi’s star",
+  "keepWhy": "Christ is shown to the whole world.",
+  "sources": [
+   "Matthew 2:1-15 (wise men, magoi, from the east came to Jerusalem: “Where is he that is born king of the Jews? For we have seen his star in the east, and are come to adore him”; king Herod was troubled, and all Jerusalem with him; the star went before them until it stood over where the child was; entering the house, they found the child with Mary his mother, and falling down they adored him; opening their treasures, they offered him gifts: gold, frankincense and myrrh; having received an answer in sleep that they should not return to Herod, they went back another way; an angel to Joseph in sleep: “Arise, and take the child and his mother, and fly into Egypt”; he arose and took them by night). Douay-Rheims. Matthew 2:16-18 (the Holy Innocents).",
+   "Number three inferred from the gifts (e.g. Origen, Homilies on Genesis 14.3); the names Caspar, Melchior and Balthasar from later tradition (6th century onward). Irenaeus, Against Heresies 3.9.2 (gold for a king, frankincense for God, myrrh for his death).",
+   "Epiphany, from Greek epiphaneia (a showing, manifestation). Catechism of the Catholic Church 528 (the Epiphany, the manifestation of Jesus to the nations), 530 (the flight into Egypt), 2241 (welcoming the foreigner). Pius XII, Exsul Familia (1952) (the exiled Holy Family as model for every refugee family).",
+   "Epiphany blessing of homes: the year and C+M+B chalked over the door, read as the magi’s traditional initials and as Christus mansionem benedicat (“May Christ bless this house”)."
+  ],
+  "check": [
+   "“Who studied the stars” glosses magoi (Persian priestly scholars, star-watchers). Confirm."
+  ]
+ },
+ "hook": {
+  "v": "CMG1-Star-East",
+  "say": "before the story, can i ask you something? what’s the farthest you’ve ever traveled just to see someone?",
+  "options": [
+   [
+    "Across an ocean",
+    "then you’ll understand these travelers."
+   ],
+   [
+    "A long drive",
+    "that counts. these ones went much farther."
+   ],
+   [
+    "Not far, honestly",
+    "that’s okay. watch who travels to whom."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "CMG1-Star-East",
+   "vo": [
+    "V01"
+   ],
+   "line": "Far to the east, magi, wise men who studied the stars, saw a new star rise. They packed their treasures and set out across the desert to follow it."
+  },
+  {
+   "t": "shot",
+   "v": "CMG2-Herod-Palace",
+   "vo": [
+    "V02"
+   ],
+   "line": "In Jerusalem they asked, “Where is the newborn king of the Jews? We saw his star, and we’ve come to worship him.” King Herod was troubled."
+  },
+  {
+   "t": "ask",
+   "v": "CMG2-Herod-Palace",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "The star leads them on to a house in Bethlehem. What do they do when they see the child with Mary?",
+   "o": [
+    "Ask him for a blessing and leave",
+    "Kneel and open their treasures",
+    "Take him back with them to the east"
+   ],
+   "a": 1,
+   "why": "They kneel. Rich, learned foreigners on their knees before a small child in a small town."
+  },
+  {
+   "t": "shot",
+   "v": "CMG3-Gifts-House",
+   "vo": [
+    "V03"
+   ],
+   "line": "The star stopped over a house in Bethlehem. They saw the child with Mary his mother, knelt, and opened their treasures: gold, frankincense and myrrh."
+  },
+  {
+   "t": "ask",
+   "v": "CMG3-Gifts-House",
+   "eb": "why?",
+   "q": "The magi weren’t Jews, and they came from far away. Why does it matter that they’re the first in Matthew’s Gospel to worship Jesus?",
+   "o": [
+    "Christ is shown to the whole world, not one people",
+    "Jerusalem’s own people didn’t care",
+    "God cares about wealth and learning"
+   ],
+   "a": 0,
+   "why": "That’s the feast’s name: Epiphany, Greek for a showing. Christ shown to the nations."
+  },
+  {
+   "t": "match",
+   "v": "CMG3-Gifts-House",
+   "eb": "three gifts",
+   "q": "Early Christians read meaning into each gift. Match them.",
+   "pairs": [
+    [
+     "gold",
+     "a gift for a king"
+    ],
+    [
+     "frankincense",
+     "incense, a gift for God"
+    ],
+    [
+     "myrrh",
+     "a burial spice, a hint of his death"
+    ]
+   ],
+   "why": "That reading comes from early Christian writers. Matthew himself just lists the gifts."
+  },
+  {
+   "t": "shot",
+   "v": "CMG4-Dream-Warning",
+   "vo": [
+    "V04"
+   ],
+   "line": "Warned in a dream not to go back to Herod, they went home by another road."
+  },
+  {
+   "t": "shot",
+   "v": "CMG5-Flight-Night",
+   "vo": [
+    "V05"
+   ],
+   "line": "Then Joseph dreamed again: “Get up, take the child and his mother, and flee.” They left that very night, across a border, as refugees."
+  },
+  {
+   "t": "ask",
+   "v": "CMG5-Flight-Night",
+   "eb": "the surprise",
+   "q": "Joseph takes the family to Egypt. Matthew wants his readers to notice something. What?",
+   "o": [
+    "Egypt was the one land Rome didn’t rule",
+    "Joseph had trade work waiting there",
+    "Jesus relives Israel’s story: into Egypt, then out"
+   ],
+   "a": 2,
+   "why": "Matthew quotes the prophet Hosea: “Out of Egypt I called my son.” Egypt was in fact a Roman province, but out of Herod’s reach, with many Jewish communities."
+  },
+  {
+   "t": "shot",
+   "v": "CMG6-Today-Chalk-Door",
+   "vo": [
+    "V06"
+   ],
+   "line": "Today, at Epiphany, some Catholic families chalk the year over the front door with C, M and B: the magi’s old names, and “Christ bless this house” in Latin.",
+   "label": "today"
+  },
+  {
+   "t": "teach",
+   "v": "CMG3-Gifts-House",
+   "say": [
+    "here’s what i love. the first people in matthew’s gospel to kneel to jesus are foreigners, following a star. the feast is called epiphany: christ shown to the whole world.",
+    "then the holy family become refugees, fleeing at night. pope pius xii called them the model for every family forced to flee, and the church still asks catholics to welcome the stranger."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "CMG6-Today-Chalk-Door",
+   "eb": "the hard one",
+   "q": "Matthew never says how many magi there were, or that they were kings. Why does tradition picture three?",
+   "o": [
+    "An old letter from one of them says so",
+    "Because they brought three gifts",
+    "Because three kings ruled the east"
+   ],
+   "a": 1,
+   "why": "Three gifts, so three givers. The crowns and the names Caspar, Melchior and Balthasar came later still."
+  }
+ ],
+ "today": {
+  "v": "CMG6-Today-Chalk-Door",
+  "say": "this week, welcome one stranger the way the holy family needed welcoming: a new neighbor, a coworker from far away, a family new at church. learn their name and one thing about their home. if you pray, you can pray tonight for families on the move.",
+  "options": [
+   [
+    "I know just who",
+    "lovely. that’s the epiphany, on your street."
+   ],
+   [
+    "I’ll keep my eyes open",
+    "good. strangers are how this story started."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "Lost for three days.",
+  "line": "four weeks done. next week, a twelve-year-old goes missing in the big city."
+ }
+}

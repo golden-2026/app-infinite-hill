@@ -1,0 +1,201 @@
+{
+ "id": "cat-slane",
+ "home": "angelus",
+ "title": "Why there’s fire in every church",
+ "told": "a story of Saint Patrick",
+ "clips": "art/sacred/cat-slane/clips/",
+ "voice": "art/sacred/cat-slane/voice/",
+ "guide": {
+  "name": "Nicole",
+  "photo": "art/guides/catholic.webp"
+ },
+ "card": {
+  "from": "a story of Saint Patrick",
+  "mins": 5,
+  "keep": "flame",
+  "keepName": "Patrick’s fire",
+  "keepWhy": "A flame keeps hoping after you leave.",
+  "sources": [
+   "Muirchú, Life of Saint Patrick (Vita Sancti Patricii, late 7th century) I.15-18: at Easter Patrick lights the paschal fire at Ferta Fer Féic, traditionally the Hill of Slane, on the night the king Lóegaire at Tara had commanded that no fire be lit before his own; the fire is seen from Tara; the king’s magi warn that unless this fire is put out this very night, it will never be put out.",
+   "John 8:12 (“I am the light of the world: he that followeth me, walketh not in darkness”). Douay-Rheims.",
+   "Roman Missal, Easter Vigil: the blessing of the new fire outside the church, the paschal candle carried into the dark church, “Lumen Christi” / “Deo gratias” sung three times, the light passed to the people’s candles. Paschal Solemnitatis (1988) 82-84, 99 (the paschal candle near the font and at funerals).",
+   "Code of Canon Law, can. 940 (a special lamp burns continually before the tabernacle). Latin votum (a vow, a prayer), the root of votive."
+  ],
+  "check": [
+   "Muirchú places the fire at Ferta Fer Féic, traditionally identified with the Hill of Slane; the lesson says “the hill of Slane”. Confirm.",
+   "Historians doubt the story is literal history; the first shot is labeled “an old telling”. Confirm the label is enough."
+  ]
+ },
+ "hook": {
+  "v": "CFL6-Today-Votive-Rack",
+  "say": "before the story, can i ask you something? have you ever lit a candle for someone: on a birthday, at a grave, anywhere?",
+  "options": [
+   [
+    "Yes, for someone I miss",
+    "then you already know this feeling. this story is full of it."
+   ],
+   [
+    "Only birthday candles",
+    "those count more than you’d think. watch this."
+   ],
+   [
+    "Not really",
+    "that’s okay. by the end you might want to."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "CFL1-Tara-Dark",
+   "vo": [
+    "V01"
+   ],
+   "line": "Ireland, long ago. On a spring night, the High King at Tara ordered every fire in the land put out. No flame could burn before his own.",
+   "label": "an old telling"
+  },
+  {
+   "t": "ask",
+   "v": "CFL1-Tara-Dark",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "Across the valley, on the hill of Slane, Patrick and his companions are keeping Easter night. What does Patrick do?",
+   "o": [
+    "Waits in the dark until the king’s fire is lit",
+    "Lights the Easter fire anyway",
+    "Walks to Tara to ask the king’s permission"
+   ],
+   "a": 1,
+   "why": "He lights it. It’s Easter night, and the fire is for Christ, risen out of the dark. The tale comes from Muirchú’s Life of Patrick, written about two hundred years later."
+  },
+  {
+   "t": "shot",
+   "v": "CFL2-Slane-Fire",
+   "vo": [
+    "V02"
+   ],
+   "line": "On the hill of Slane, Patrick, a missionary bishop, lit the Easter fire anyway. Across the dark valley, the king saw it blazing."
+  },
+  {
+   "t": "shot",
+   "v": "CFL3-King-Sees",
+   "vo": [
+    "V03"
+   ],
+   "line": "The king’s wise men warned him: if that fire is not put out tonight, it will never be put out."
+  },
+  {
+   "t": "ask",
+   "v": "CFL3-King-Sees",
+   "eb": "why?",
+   "q": "Why would one small fire on a far hill frighten a king?",
+   "o": [
+    "It meant a light his law couldn’t stop",
+    "It could spread across the fields",
+    "It signaled an enemy army"
+   ],
+   "a": 0,
+   "why": "The fire broke his law, but it also announced something new. The old telling says the warning came true: the faith spread across Ireland."
+  },
+  {
+   "t": "shot",
+   "v": "CFL4-Easter-Vigil",
+   "vo": [
+    "V04"
+   ],
+   "line": "Today, the Easter Vigil begins the same way: a new fire outside a dark church, and one tall candle lit from it, the Easter candle.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "CFL4-Easter-Vigil",
+   "eb": "you’re in it",
+   "q": "You’re in the dark church holding an unlit candle. How does yours get lit?",
+   "o": [
+    "A server lights each one with a taper",
+    "The person next to you lights it from theirs",
+    "You each walk up to the tall candle"
+   ],
+   "a": 1,
+   "why": "From the Easter candle, the flame goes neighbor to neighbor while “The light of Christ” is sung three times. One fire, shared until the church is bright."
+  },
+  {
+   "t": "shot",
+   "v": "CFL5-Flame-Passed",
+   "vo": [
+    "V05"
+   ],
+   "line": "Candle to candle, the flame spreads through the crowd, until the whole dark church is full of light."
+  },
+  {
+   "t": "shot",
+   "v": "CFL6-Today-Votive-Rack",
+   "vo": [
+    "V06"
+   ],
+   "line": "And in a side corner, rows of small candles. Someone lit one for a sick mother, a job interview, a friend who died. It keeps burning after they leave.",
+   "label": "today"
+  },
+  {
+   "t": "match",
+   "v": "CFL6-Today-Votive-Rack",
+   "eb": "every flame has a job",
+   "q": "Match each flame in a church to what it means.",
+   "pairs": [
+    [
+     "the Easter candle",
+     "lit at Easter, there at baptisms and funerals"
+    ],
+    [
+     "the red lamp",
+     "Christ is present in the tabernacle"
+    ],
+    [
+     "a votive candle",
+     "a prayer for someone, left burning"
+    ]
+   ],
+   "why": "Votive comes from the Latin votum, a vow or a prayer. The wax does nothing by itself. It says: this person matters."
+  },
+  {
+   "t": "teach",
+   "v": "CFL4-Easter-Vigil",
+   "say": [
+    "here’s what i love. jesus said, “i am the light of the world.” so every candle in a church is a tiny sermon without words: light in the dark.",
+    "catholics light a votive candle as a prayer that stays behind. the wax doesn’t do the work. it says this person matters, and i’m not done hoping."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "CFL5-Flame-Passed",
+   "eb": "the hard one",
+   "q": "By the Easter candle, a deacon sings an old hymn, the Exsultet. It thanks someone you might not expect. Who?",
+   "o": [
+    "The first monks of Ireland",
+    "The bees who made the wax",
+    "The children holding candles"
+   ],
+   "a": 1,
+   "why": "The Exsultet praises “the work of bees” for the candle’s wax. On the holiest night of the year, even the bees get thanked."
+  }
+ ],
+ "today": {
+  "v": "CFL6-Today-Votive-Rack",
+  "say": "today, light a candle for one person who could use some light: a church candle, one at home, or just picture one. picture their face as the flame catches. if you pray, you can pray for them.",
+  "options": [
+   [
+    "I’ll light one tonight",
+    "good. let it keep hoping for them."
+   ],
+   [
+    "I’ll picture one",
+    "that counts. a flame in your mind is still a flame."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "The women went first.",
+  "line": "next, the morning that flame is for, and a stone that was already moved."
+ }
+}

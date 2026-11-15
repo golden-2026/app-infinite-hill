@@ -1,3 +1,5 @@
+Background only (written 2026-09-12). Where this disagrees with docs/VISION-NOW.md, that page wins.
+
 # Accessibility and interaction review
 
 Scope: source review of `src/Golden.jsx` and `public/site.html` as present on 2026-09-12. Findings below are tied to current code. This was not a rendered assistive-technology test; keyboard, VoiceOver/NVDA, 200% zoom, and contrast measurements should be repeated against the fixed build.

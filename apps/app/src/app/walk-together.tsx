@@ -18,7 +18,7 @@ import { WalkTogetherCard } from "@/ui/couple";
 import { friendsPrivacy } from "@/ui/friends";
 import { shareOrCopy } from "@/ui/invites";
 
-const input = { borderWidth: 1.5, borderColor: color.line, borderRadius: 999, paddingVertical: 12, paddingHorizontal: 16, fontFamily: font.text[400], fontSize: 16, backgroundColor: "#fff", color: color.ink } as const;
+const input = { borderWidth: 1.5, borderColor: color.line, borderRadius: 999, paddingVertical: 12, paddingHorizontal: 16, fontFamily: font.text[400], fontSize: 16, backgroundColor: color.white, color: color.ink } as const;
 
 export default function WalkTogether() {
   useTitle(t("couple.walk.title"));
@@ -110,7 +110,7 @@ export default function WalkTogether() {
               return (
                 <Pressable key={w} testID={`walk-door-${w}`} accessibilityRole="radio" accessibilityState={{ selected: on }} aria-checked={on} accessibilityLabel={t("couple.walk.doorA11y", { door: doorLabel(w) })}
                   onPress={() => update({ partnerDoor: on ? null : w })}
-                  style={{ minHeight: 40, justifyContent: "center", paddingHorizontal: 14, borderRadius: 999, borderWidth: 1.5, borderColor: on ? color.ink : color.line, backgroundColor: on ? color.ink : "#fff" }}>
+                  style={{ minHeight: 40, justifyContent: "center", paddingHorizontal: 14, borderRadius: 999, borderWidth: 1.5, borderColor: on ? color.ink : color.line, backgroundColor: on ? color.ink : color.white }}>
                   <Text style={{ fontFamily: font.text[600], fontSize: 13, color: on ? color.gold : color.ink }}>{doorLabel(w)}</Text>
                 </Pressable>
               );

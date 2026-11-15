@@ -85,8 +85,10 @@ export function ComboBurst() {
 
 // our own voice, lowercase and warm (not a copy of any other app's cheers)
 const RIGHT_TITLES = 6; // session.right.0 … 5: "yes — exactly.", "that's it.", "lit.", "beautiful.", "you've got it.", "right on."
-const RED = "#E5484D";
-const RED_BG = "#FFE6E4";
+// loud brand (2026-11-06): a hit is a lime block, a miss a hot-pink block; both with black words and a black pill
+const RED = "#0A0A0A";
+const RED_BG = "#FF2D8A";
+const INK = "#0A0A0A";
 // specks that read on the gold banner and on the dark bar around it
 const SPARK_ON_GOLD = ["#FFFFFF", "#F08C00", "#FFFFFF", "#B86B00"];
 
@@ -114,27 +116,27 @@ export function Verdict({ ok, title, body, rows, onNext, label, seed = 0, explai
       <Animated.View style={[{ backgroundColor: bad ? RED_BG : color.gold, borderRadius: 22, padding: 14, gap: 10, marginHorizontal: -4 }, anim]}>
         <View style={{ flexDirection: "row", alignItems: "center", gap: 10 }}>
           <View style={{ width: 30, height: 30 }}>
-            <Animated.View style={[{ width: 30, height: 30, borderRadius: 15, backgroundColor: bad ? RED : color.ink, alignItems: "center", justifyContent: "center" }, badgeAnim]}>
-              <Text style={{ color: bad ? "#fff" : color.gold, fontFamily: font.text[700], fontSize: 16 }}>{bad ? "↺" : "☀"}</Text>
+            <Animated.View style={[{ width: 30, height: 30, borderRadius: 15, backgroundColor: INK, alignItems: "center", justifyContent: "center" }, badgeAnim]}>
+              <Text style={{ color: bad ? RED_BG : color.gold, fontFamily: font.text[700], fontSize: 16 }}>{bad ? "↺" : "☀"}</Text>
             </Animated.View>
             {ok === true ? <Sparkle count={10} radius={60} size={10} delay={reduce ? 0 : 120} colors={SPARK_ON_GOLD} /> : null}
           </View>
-          <Text accessibilityLiveRegion="polite" style={{ fontFamily: font.display[800], fontSize: 20, color: bad ? RED : color.ink }}>{head}</Text>
+          <Text accessibilityLiveRegion="polite" style={{ flexShrink: 1, fontFamily: font.head, fontSize: 30, lineHeight: 32, textTransform: "uppercase", color: INK }}>{head}</Text>
         </View>
-        {body ? <Text style={[type.body(14), { color: bad ? "#7a2320" : color.ink }]}>{body}</Text> : null}
+        {body ? <Text style={[type.body(14), { color: INK, fontFamily: font.text[600] }]}>{body}</Text> : null}
         {/* labeled lines, e.g. the chat's tie-back: in the story / for Priya / for you (owner, 2026-10-15) */}
         {rows?.length ? (
           <View testID="verdict-rows" style={{ gap: 7 }}>
             {rows.map((r) => (
               <View key={r.label} style={{ gap: 1 }}>
-                <Text style={[type.eyebrow(8), { color: bad ? "#7a2320" : color.ink, opacity: 0.7 }]}>{r.label}</Text>
-                <Text style={[type.body(14), { color: bad ? "#7a2320" : color.ink }]}>{r.text}</Text>
+                <Text style={[type.eyebrow(8), { color: INK, opacity: 0.7 }]}>{r.label}</Text>
+                <Text style={[type.body(14), { color: INK }]}>{r.text}</Text>
               </View>
             ))}
           </View>
         ) : null}
-        {explain ? <Pressable testID="explain" accessibilityRole="link" hitSlop={10} onPress={() => { tapHaptic(); router.push({ pathname: "/guide", params: { q: explain } }); }} style={({ pressed }) => ({ alignSelf: "flex-start", paddingVertical: 2, opacity: pressed ? 0.6 : 1 })}><Text style={{ fontFamily: font.text[600], fontSize: 14, textDecorationLine: "underline", color: bad ? RED : color.ink }}>{t("session.explain")} ›</Text></Pressable> : null}
-        <Btn kind={bad ? "miss" : "ink"} onPress={onNext}>{label ?? (bad ? t("session.okayNext") : t("session.next"))}</Btn>
+        {explain ? <Pressable testID="explain" accessibilityRole="link" hitSlop={10} onPress={() => { tapHaptic(); router.push({ pathname: "/guide", params: { q: explain } }); }} style={({ pressed }) => ({ alignSelf: "flex-start", paddingVertical: 2, opacity: pressed ? 0.6 : 1 })}><Text style={{ fontFamily: font.text[600], fontSize: 14, textDecorationLine: "underline", color: INK }}>{t("session.explain")} ›</Text></Pressable> : null}
+        <Btn kind="black" onPress={onNext}>{label ?? (bad ? t("session.okayNext") : t("session.next"))}</Btn>
       </Animated.View>
     </SlotFill>
   );

@@ -1,0 +1,215 @@
+{
+ "id": "sik-bargain",
+ "home": "nectar",
+ "title": "The true bargain",
+ "told": "a sakhi, a traditional story of Guru Nanak",
+ "clips": "art/sacred/sik-bargain/clips/",
+ "voice": "art/sacred/sik-bargain/voice/",
+ "guide": {
+  "name": "Diljit",
+  "photo": "art/guides/sikhism.webp"
+ },
+ "hook": {
+  "v": "SL1-Father-Coins",
+  "say": "before the story, can i ask you something? if someone handed you some money and said “spend it well,” what would you do?",
+  "options": [
+   [
+    "Save it",
+    "careful with it. i like that. listen to what one boy did."
+   ],
+   [
+    "Treat someone",
+    "then you might like this boy. listen."
+   ],
+   [
+    "Spend it on me",
+    "honest. listen to what one boy did with his."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "SL1-Father-Coins",
+   "vo": [
+    "V01"
+   ],
+   "line": "When Guru Nanak was young, his father gave him twenty rupees and sent him to market. Make a good deal, he said. A true bargain.",
+   "label": "a traditional story"
+  },
+  {
+   "t": "shot",
+   "v": "SL2-Hungry-Holy-Men",
+   "vo": [
+    "V02"
+   ],
+   "line": "On the road, Nanak met a group of holy men who had gone without food for days."
+  },
+  {
+   "t": "ask",
+   "v": "SL2-Hungry-Holy-Men",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "Nanak has twenty rupees and a job to do. What do you think he does?",
+   "o": [
+    "Spends it all on food for them",
+    "Gives them one rupee and goes on",
+    "Takes them home to his father"
+   ],
+   "a": 0,
+   "why": "He spent every rupee feeding them."
+  },
+  {
+   "t": "shot",
+   "v": "SL3-Shared-Meal",
+   "vo": [
+    "V03"
+   ],
+   "line": "He spent every rupee on flour, lentils and ghee, and fed them all."
+  },
+  {
+   "t": "shot",
+   "v": "SL4-Empty-Hands",
+   "vo": [
+    "V04"
+   ],
+   "line": "He came home with empty hands. His father was furious. Where’s the deal?"
+  },
+  {
+   "t": "shot",
+   "v": "SL4-Empty-Hands",
+   "vo": [
+    "V05"
+   ],
+   "line": "Nanak said feeding the hungry is the truest deal there is. Sikhs remember the place as Sacha Sauda."
+  },
+  {
+   "t": "ask",
+   "v": "SL4-Empty-Hands",
+   "eb": "did you know?",
+   "q": "Sacha Sauda is a real place today. What stands there?",
+   "o": [
+    "A market, still selling grain",
+    "A shrine in Amritsar",
+    "A gurdwara, in today’s Pakistan"
+   ],
+   "a": 2,
+   "why": "Gurdwara Sacha Sauda stands at Farooqabad, in Pakistan’s Punjab. Nanak’s birthplace, Nankana Sahib, is in Pakistan too."
+  },
+  {
+   "t": "ask",
+   "v": "SL5-Emperor-In-The-Row",
+   "blur": true,
+   "predict": true,
+   "eb": "what happens next?",
+   "q": "Decades later, an emperor comes to meet the third Guru. Where is he asked to sit first?",
+   "o": [
+    "On a raised seat by the Guru",
+    "On the floor, in the row",
+    "In a tent of his own"
+   ],
+   "a": 1,
+   "why": "On the floor, with everyone, to eat the same meal."
+  },
+  {
+   "t": "shot",
+   "v": "SL5-Emperor-In-The-Row",
+   "vo": [
+    "V06"
+   ],
+   "line": "Sikh tradition says that when the emperor Akbar came to see the third Guru, he first sat on the floor and ate in the row with everyone.",
+   "label": "a traditional story"
+  },
+  {
+   "t": "ask",
+   "v": "SL5-Emperor-In-The-Row",
+   "eb": "did you know?",
+   "q": "The langar grew under the second Guru. Who ran its kitchen, and is praised for it in the Guru Granth Sahib?",
+   "o": [
+    "Bebe Nanki, Nanak’s sister",
+    "Mata Khivi, Guru Angad’s wife",
+    "Mata Gujri, a Guru’s mother"
+   ],
+   "a": 1,
+   "why": "Mata Khivi ran the kitchen at Khadur Sahib. The Guru Granth Sahib praises her rice pudding with ghee, and her shade, like a leafy tree."
+  },
+  {
+   "t": "shot",
+   "v": "SL6-Today-Langar",
+   "vo": [
+    "V07"
+   ],
+   "line": "Today gurdwaras everywhere keep a langar, a free kitchen. Simple vegetarian food, everyone in one row on the floor, the pangat. Any faith, or none.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "SL6-Today-Langar",
+   "eb": "did you know?",
+   "q": "Langar food is free. So who pays for it?",
+   "o": [
+    "The Gurus’ old land grants",
+    "A small fee from each family",
+    "Daswandh: a tenth, given by Sikhs"
+   ],
+   "a": 2,
+   "why": "Many Sikhs set aside daswandh, a tenth of what they earn, and others give food or hours in the kitchen. No one is charged for the meal."
+  },
+  {
+   "t": "teach",
+   "v": "SL3-Shared-Meal",
+   "say": [
+    "here’s what i love. his father asked for a good deal, and nanak found the best one: hungry people, fed.",
+    "sikhs carry that into every langar. the food is free, the floor is shared, and nobody sits higher."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "SL6-Today-Langar",
+   "eb": "the hard one",
+   "q": "Langar food is simple and vegetarian. From what you’ve seen, why might that be?",
+   "o": [
+    "So no guest has to ask what’s in it",
+    "Because meat cost too much then",
+    "So the cooks can work faster"
+   ],
+   "a": 0,
+   "why": "So nobody has to ask what’s in it. Any guest can sit down and eat."
+  }
+ ],
+ "today": {
+  "v": "SL6-Today-Langar",
+  "say": "any gurdwara’s langar is open to you, no questions asked. this week, find your nearest one, or share one simple meal with someone you’d never usually sit beside.",
+  "options": [
+   [
+    "I’ll find one",
+    "shoes off, head covered, sit in the row, hold out your hands. you’ll be fed."
+   ],
+   [
+    "I’ll share a meal",
+    "that’s the true bargain, right there."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "A crown you tie yourself.",
+  "line": "why a turban isn’t a hat, and the little boy who threw his gold into a river."
+ },
+ "card": {
+  "from": "a sakhi of Guru Nanak",
+  "mins": 5,
+  "keep": "rice",
+  "keepName": "A handful of langar",
+  "keepWhy": "Twenty rupees, spent on strangers. The truest bargain.",
+  "sources": [
+   "Janamsakhi tradition: the Sacha Sauda (“true bargain”) of the twenty rupees; Gurdwara Sacha Sauda, Chuharkana (now Farooqabad, Pakistan)",
+   "Sikh tradition of the emperor Akbar eating in the langar at Goindwal before meeting Guru Amar Das (“pehle pangat, pichhe sangat”)",
+   "docs/curriculum/sikhism/scripts/y1/day-0002.json (langar, pangat, simple vegetarian food, open to any faith)"
+  ],
+  "check": [
+   "Sacha Sauda details vary by telling (twenty rupees; what he bought; Bhai Bala along in some tellings); confirm.",
+   "Akbar’s visit to Guru Amar Das at Goindwal and sitting in the pangat is tradition; caption says “Sikh tradition says”."
+  ]
+ }
+}

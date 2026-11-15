@@ -1,3 +1,5 @@
+Background only (written 2026-10-06). Where this disagrees with docs/VISION-NOW.md or docs/LESSON_STANDARD.md, those win.
+
 # Audience research: "my own path" (spiritual but not religious), American 18–35
 
 Researched 6 October 2026 from public web pages only. No logins, no posting, nothing submitted.

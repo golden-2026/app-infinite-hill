@@ -1,0 +1,199 @@
+{
+ "id": "wild-blankets",
+ "home": "wild",
+ "title": "The emperor under the blankets",
+ "told": "from the notebook of Marcus Aurelius",
+ "clips": "art/sacred/wild-blankets/clips/",
+ "voice": "art/sacred/wild-blankets/voice/",
+ "guide": {
+  "name": "Justin",
+  "photo": "art/guides/spiritual.webp"
+ },
+ "hook": {
+  "v": "MBL1-Cold-Tent",
+  "say": "before the story, can i ask you something? how many times did you hit snooze this week?",
+  "options": [
+   [
+    "Too many",
+    "same. you’re about to meet a fellow snoozer."
+   ],
+   [
+    "None",
+    "impressive. this emperor needed help."
+   ],
+   [
+    "I don’t use an alarm",
+    "lucky. you’ll still know this argument."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "MBL1-Cold-Tent",
+   "vo": [
+    "V01"
+   ],
+   "line": "Remember Marcus Aurelius, the emperor with the notebook? One cold morning, he lay under his blankets, and did not want to get up."
+  },
+  {
+   "t": "shot",
+   "v": "MBL2-The-Argument",
+   "vo": [
+    "V02"
+   ],
+   "line": "So he argued with himself, in writing. When you rise unwillingly, he told himself, remember: “I am rising to the work of a human being.”"
+  },
+  {
+   "t": "shot",
+   "v": "MBL2-The-Argument",
+   "vo": [
+    "V03"
+   ],
+   "line": "“Or have I been made for this, to lie in the bed-clothes and keep myself warm?” Then he answered himself: but this is more pleasant."
+  },
+  {
+   "t": "ask",
+   "v": "MBL2-The-Argument",
+   "eb": "why?",
+   "q": "Why would the most powerful man in the world argue with his own blankets?",
+   "o": [
+    "Even emperors fight small battles daily",
+    "He was drafting a speech for his troops",
+    "His doctors had told him to stay in bed"
+   ],
+   "a": 0,
+   "why": "Power doesn’t make the warm bed any less warm. And the notebook was private, written to himself, not to an audience."
+  },
+  {
+   "t": "ask",
+   "v": "MBL3-Little-Workers",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "To win the argument, where does Marcus look?",
+   "o": [
+    "At his crown and armor",
+    "At the little creatures, busy at their work",
+    "At the maps of his empire"
+   ],
+   "a": 1,
+   "why": "Not at his power. At ants and bees."
+  },
+  {
+   "t": "shot",
+   "v": "MBL3-Little-Workers",
+   "vo": [
+    "V04"
+   ],
+   "line": "He looked at the little plants, the birds, the ants, the spiders, the bees, all busy doing their part to keep the world in order."
+  },
+  {
+   "t": "shot",
+   "v": "MBL4-Feet-On-Floor",
+   "vo": [
+    "V05"
+   ],
+   "line": "And you, a human being, he asked himself, won’t do a human’s work?"
+  },
+  {
+   "t": "shot",
+   "v": "MBL5-The-Work",
+   "vo": [
+    "V06"
+   ],
+   "line": "For a Stoic, a human’s work was simple to say: be kind, be fair, be useful to the people around you."
+  },
+  {
+   "t": "ask",
+   "v": "MBL5-The-Work",
+   "eb": "did you know?",
+   "q": "Marcus never called his notebook Meditations. What do the old manuscripts title it?",
+   "o": [
+    "“Rules for an Emperor”",
+    "“To Himself”",
+    "“Letters to My Son”"
+   ],
+   "a": 1,
+   "why": "In Greek, Ta eis heauton: things to himself. He wrote in Greek, much of it in army camps on the Danube, and most likely never meant anyone else to read it."
+  },
+  {
+   "t": "shot",
+   "v": "MBL6-Today",
+   "vo": [
+    "V07"
+   ],
+   "line": "Today: the alarm, the warm covers, the bargaining. Get up, not to be impressive, but because there’s a human’s work waiting.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "MBL6-Today",
+   "eb": "your guess",
+   "q": "Marcus pushes back on himself: “But I need rest, too.” What does he answer?",
+   "o": [
+    "“Then rest, but only once the work is done.”",
+    "“Yes, but nature sets a limit on it.”",
+    "“Rest is fine, if it helps you work better.”"
+   ],
+   "a": 1,
+   "why": "“But nature has set limits to that, as to eating and drinking.” He wasn’t against rest. He just noticed he’d gone past enough."
+  },
+  {
+   "t": "teach",
+   "v": "MBL4-Feet-On-Floor",
+   "say": [
+    "here’s what i love. this isn’t a hero who never struggled. it’s a tired man winning a tiny argument, and writing it down so he’d remember.",
+    "marcus wrote that people are made to work together, like hands, like feet, like the upper and lower teeth. for him, the alarm wasn’t a punishment. it was a call back to that shared work."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "MBL6-Today",
+   "eb": "the hard one",
+   "q": "Marcus never says “get up because the empire needs you.” Why does that matter for someone who isn’t an emperor?",
+   "o": [
+    "It only works if your job is big",
+    "He secretly didn’t care about the empire",
+    "Anyone has a human’s work to do"
+   ],
+   "a": 2,
+   "why": "His reason fits a nurse, a student, a parent. Anyone who is a human being."
+  }
+ ],
+ "today": {
+  "v": "MBL6-Today",
+  "say": "tomorrow morning, at the first alarm, ask marcus’s question: what’s the human’s work waiting for me today? name one: a person to be kind to, a job to do well. then feet on the floor.",
+  "options": [
+   [
+    "I’ll try it",
+    "good. one small argument, won."
+   ],
+   [
+    "Once, maybe",
+    "once is how marcus did it too. one morning at a time."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "Didn’t I tell you?",
+  "line": "an enslaved man’s master twists his leg. what he says next is still taught today."
+ },
+ "card": {
+  "from": "from the notebook of Marcus Aurelius",
+  "mins": 5,
+  "keep": "sun",
+  "keepName": "A human’s work",
+  "keepWhy": "Up, to do a human’s work.",
+  "sources": [
+   "Marcus Aurelius, Meditations 5.1 (George Long, 1862): “In the morning when thou risest unwillingly, let this thought be present: I am rising to the work of a human being”; “Or have I been made for this, to lie in the bed-clothes and keep myself warm? But this is more pleasant”; the little plants, the little birds, the ants, the spiders, the bees working together to put in order their several parts of the universe.",
+   "Meditations 2.1 (Long): “we are made for co-operation, like feet, like hands, like eyelids, like the rows of the upper and lower teeth.”",
+   "Day 22 script: docs/curriculum/spiritual/scripts/y1/day-0022.json (Marcus Aurelius; up, to do a human’s work)."
+  ],
+  "check": [
+   "Where book 5 was written is not known; the painting sets it in a frontier camp, as the day 22 script suggests (“maybe somewhere near the Danube”). Confirm.",
+   "“Be kind, be fair, be useful” summarizes Stoic duty in plain words; Marcus’s own wording in 5.1 is about acting according to one’s nature. Confirm.",
+   "Long’s dashes in 5.1 are rendered with colons and sentence breaks."
+  ]
+ }
+}

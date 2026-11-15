@@ -1,3 +1,5 @@
+Background only (written September 2026). Where this disagrees with docs/VISION-NOW.md, that page wins.
+
 # Golden: 100 production screens and states still missing
 
 This inventory compares Shaan's supplied `golden_v150.jsx`, website, build brief,

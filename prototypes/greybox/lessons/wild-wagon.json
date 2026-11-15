@@ -1,0 +1,195 @@
+{
+ "id": "wild-wagon",
+ "home": "wild",
+ "title": "Shoulder to the wheel",
+ "told": "a fable told under Aesop’s name",
+ "clips": "art/sacred/wild-wagon/clips/",
+ "voice": "art/sacred/wild-wagon/voice/",
+ "guide": {
+  "name": "Justin",
+  "photo": "art/guides/spiritual.webp"
+ },
+ "hook": {
+  "v": "AW1-Country-Road",
+  "say": "before the story, can i ask you something? is there something you really want this year, that you mostly just picture?",
+  "options": [
+   [
+    "Yes, honestly",
+    "me too, sometimes. this fable is very old and very kind about it."
+   ],
+   [
+    "I’m working on it",
+    "then you’ll like what the fable says."
+   ],
+   [
+    "Not right now",
+    "keep this one for when a wish shows up."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "AW1-Country-Road",
+   "vo": [
+    "V01"
+   ],
+   "line": "An old Greek fable, told under the name of Aesop: a farmer was driving his ox cart home along a country road after the rain."
+  },
+  {
+   "t": "shot",
+   "v": "AW2-Stuck-Wheel",
+   "vo": [
+    "V02"
+   ],
+   "line": "The wheel sank deep into a muddy ditch. The oxen strained. The cart would not move."
+  },
+  {
+   "t": "ask",
+   "v": "AW2-Stuck-Wheel",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "The cart is stuck. What do you think the farmer does?",
+   "o": [
+    "Begs Hercules to lift it out",
+    "Pushes the wheel himself",
+    "Leaves the cart and walks home"
+   ],
+   "a": 0,
+   "why": "He stands with idle hands and calls for help from above."
+  },
+  {
+   "t": "shot",
+   "v": "AW3-The-Wish",
+   "vo": [
+    "V03"
+   ],
+   "line": "He stood by the road, hands idle, and begged Hercules, the mighty hero-god he honored most, to come and lift the cart for him."
+  },
+  {
+   "t": "shot",
+   "v": "AW4-The-Answer",
+   "vo": [
+    "V04"
+   ],
+   "line": "Hercules came, and said: take hold of the wheel, and drive your oxen. Call on the gods when you are working, or you call in vain."
+  },
+  {
+   "t": "ask",
+   "v": "AW4-The-Answer",
+   "eb": "why?",
+   "q": "Why doesn’t Hercules just lift the cart?",
+   "o": [
+    "He’s too busy to answer every call",
+    "He wants to punish the farmer",
+    "Help works with your effort, not instead"
+   ],
+   "a": 2,
+   "why": "The fable doesn’t mock the wish. It says the wish works with your effort, not instead of it."
+  },
+  {
+   "t": "ask",
+   "v": "AW4-The-Answer",
+   "eb": "did you know?",
+   "q": "This fable’s moral became a famous saying many people think is in the Bible. Which?",
+   "o": [
+    "“Faith can move mountains”",
+    "“God helps those who help themselves”",
+    "“Pride goes before a fall”"
+   ],
+   "a": 1,
+   "why": "It isn’t in the Bible (the other two are, near enough). Benjamin Franklin made it famous in 1736; old collections of Aesop give it as this fable’s moral."
+  },
+  {
+   "t": "shot",
+   "v": "AW5-Free",
+   "vo": [
+    "V05"
+   ],
+   "line": "So he put his shoulder to the wheel, the oxen pulled, and the cart rolled free.",
+   "label": "one popular telling"
+  },
+  {
+   "t": "shot",
+   "v": "AW6-Today",
+   "vo": [
+    "V06"
+   ],
+   "line": "Today, the vision board. “Manifesting” grew from an American movement of the 1800s. Research finds the dream works better with a look at the mud.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "AW6-Today",
+   "eb": "did you know?",
+   "q": "Psychologist Gabriele Oettingen studied people who only daydream about success. What did she find?",
+   "o": [
+    "They often try less, and get less",
+    "They succeed more, from confidence",
+    "It makes no difference either way"
+   ],
+   "a": 0,
+   "why": "Pure positive fantasy can drain the energy to act. Her fix, WOOP: wish, outcome, obstacle, plan. The mud gets named on purpose."
+  },
+  {
+   "t": "teach",
+   "v": "AW4-The-Answer",
+   "say": [
+    "here’s what i love. the fable never says wishing is silly. the farmer is allowed to call for help. he just has to push while he calls.",
+    "that’s the honest part of manifesting. a thought alone doesn’t pull a cart out of the mud. naming the wish, and the mud, and then pushing, does."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "AW6-Today",
+   "eb": "the hard one",
+   "q": "Which of these is closest to what the fable would tell someone manifesting a new job?",
+   "o": [
+    "Picture the job every morning until it comes",
+    "Picture it, name the fear, send one application",
+    "Skip the picturing and send a hundred today"
+   ],
+   "a": 1,
+   "why": "That’s the wish, the mud and the shoulder to the wheel, all in one plan."
+  }
+ ],
+ "today": {
+  "v": "AW6-Today",
+  "say": "pick one wish for this year. say what’s in the way, honestly. then make one small plan: when that happens, i’ll…",
+  "options": [
+   [
+    "I’ve got one",
+    "lovely. that’s your shoulder on the wheel."
+   ],
+   [
+    "I’ll think it through tonight",
+    "that counts. naming the mud is a real step."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "The giant in the fog.",
+  "line": "a young man dreams that something huge is following him. it’s closer than he thinks."
+ },
+ "card": {
+  "from": "a fable told under Aesop’s name",
+  "mins": 5,
+  "keep": "wheel",
+  "keepName": "The cartwheel",
+  "keepWhy": "Wish, then push.",
+  "keepSvg": "<circle cx=\"50\" cy=\"50\" r=\"26\" fill=\"none\" stroke=\"#2a1b05\" stroke-width=\"7\"/><circle cx=\"50\" cy=\"50\" r=\"7\" fill=\"#2a1b05\"/><g stroke=\"#2a1b05\" stroke-width=\"4\"><line x1=\"50\" y1=\"24\" x2=\"50\" y2=\"76\"/><line x1=\"27.5\" y1=\"37\" x2=\"72.5\" y2=\"63\"/><line x1=\"27.5\" y1=\"63\" x2=\"72.5\" y2=\"37\"/></g>",
+  "sources": [
+   "“Hercules and the Wagoner”, Perry Index 291; Babrius, Fables 20: the oxdriver’s wagon falls into a ravine; he stands idle and prays to Heracles; Heracles tells him to take hold of the wheels and goad the oxen, and to pray when he is doing something himself, or pray in vain.",
+   "Later English tellings (e.g. George Fyler Townsend, 1867) add the phrase “put your shoulder to the wheel.”",
+   "New Thought movement, 19th-century America; Rhonda Byrne, The Secret (2006).",
+   "Gabriele Oettingen, Rethinking Positive Thinking (2014) and studies on mental contrasting and implementation intentions (WOOP).",
+   "Day 5 script: docs/curriculum/spiritual/scripts/y1/day-0005.json (picture the wish, then the wall)."
+  ],
+  "check": [
+   "Oettingen summary (“people who only daydream often try less”): confirm it fairly states her findings.",
+   "“Manifesting grew from an American movement of the 1800s” (New Thought): confirm this is a fair one-line history.",
+   "Painting AW2 and caption have a muddy ditch after rain (later English tellings); Babrius has a ravine. Minor, noted for the scholar."
+  ]
+ }
+}

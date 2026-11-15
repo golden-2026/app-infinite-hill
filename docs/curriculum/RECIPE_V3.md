@@ -1,5 +1,10 @@
 # Lesson recipe v3: from "good" to "can't wait for tomorrow"
 
+*Updated 2026-11-10. `docs/LESSON_STANDARD.md` (the film, the five games, the house style) and `docs/VISION-NOW.md`
+win over anything here. Three changes since v3: inside a faith path everything stays in that faith (cross-faith only
+in "my own religion"); no sing-alongs; pictures follow the house style, with the never-shown list. The "story,
+teaching, today" rule below is the rule above all the others.*
+
 Owner, 2026-10-13: "I'm concerned our content is just okay and not amazing… a key piece is being trend right and
 culture forward so people don't get bored." Year 5 paused at 834 of 2,920 days to adopt this recipe first.
 
@@ -21,8 +26,11 @@ the sources don't say, warm small practices, ~5 minutes, word and carry from the
 The two lessons judges liked best both opened on something the listener does or sees this week (manifesting; "marketing
 guru, fitness guru"). Lessons that opened on a verse or a history date read "like a classroom".
 - The hook opens with a real, current thing: a feed, a group chat, a habit, a worry, a trend, a song, a fight at
-  dinner, an app, a job, a date. Then the tradition arrives as the surprising answer or the older version of it.
+  dinner, an app, a job, a game. Then the tradition arrives as the surprising answer or the older version of it.
 - The teach can still be story-led; it just doesn't open cold on scripture or a date.
+- **For the film, the standard wins:** it opens cold on the story's most shocking moment (a 5-9 word hook), tells the
+  story, gives the teaching, and lands on today at the end (`docs/LESSON_STANDARD.md` §2). "Their world" then lives in
+  the last line of the film, the fork (a friend's text) and the "today" step, never as a self-help tip.
 - Culture, yes; cringe, no: no slang rewrites of scripture, no memes about God, no "fellow kids" voice, no brand names
   that will date in a month, no politics or culture-war topics.
 - Titles may name a feeling or a situation ("when you can't forgive someone") as well as a word.
@@ -39,7 +47,7 @@ changes:
 | `debate` | two real views inside the tradition; the learner states the other side's best case (steelman) | the fork |
 | `senses` | a smell, sound, taste, object or movement carries the idea; the practice is physical | the practice |
 | `life` | a situation from this week (a fight, a loss, a win, a choice) and what the tradition gives you for it | the chat |
-| `wisdom` | one question, the tradition's answer, plus (optionally) how one neighbor tradition says it, ranking none | the teach |
+| `wisdom` | one question and the tradition's answer, with how its own schools or teachers put it, ranking none (only "my own religion" brings in other traditions, each named) | the teach |
 | `review` | no new word: the last six carries come back as a game round, plus the friend's storyline | the games |
 
 The app plays the shape (order and lead game), not the writer. Writers write all fields as now; `shape` tells them
@@ -88,9 +96,10 @@ Games re-asked the same 3-4 facts from a minute earlier, and the right answer wa
 ## Culture-forward, safely
 - Seasonal arcs: when a lesson falls near a festival on its path (from public/daily dated cards), the friend's
   storyline can touch it; the lesson content stays on the outline.
-- Music and sound: a call-and-response or sing-along beat is welcome where the tradition has one (kirtan, a psalm
-  refrain, a dhikr phrase, a Shabbat song), described, never remixing sacred text.
-- Never AI images of deities, prophets or Gurus; hand-drawn cast art only (existing rule).
+- Music and sound: the tradition's real music (kirtan, a psalm refrain, a dhikr phrase, a Shabbat song) can play or be
+  described, never remixing sacred text. Never ask the learner to sing along or hold a mic.
+- Pictures follow the house style (`docs/LESSON_STANDARD.md` §2). Never shown: God in any tradition, the face of
+  Jesus, any prophet in Islam, any Sikh Guru. No blood, no text in pictures, only the approved Finn art.
 - Never claim a "revival" or invent numbers; never imply the voices or Keepers are signed.
 
 ## Pilot results and fixes (2026-10-13/14)
@@ -137,12 +146,13 @@ Keep `meaning` too (older screens use it). Lessons without `tie` fall back to sp
 "in the story" and "in real life". The pilot week (days 22–28, Hinduism and Catholicism) has it; year 5 and the
 rewrite of years 1–4 add it.
 
-## The unity thread (owner, 2026-10-14: "more alike than we think", one human race)
-- Once a week (usually the `wisdom` day), name one thing this path shares with a neighbor tradition (light, giving,
-  gratitude, welcoming the stranger, the golden rule, fasting, prayer before meals), in that tradition's own words and
-  source, then one honest difference. Never "they're all the same", never ranking, never one tradition's idea dressed as
-  everyone's (e.g. "all religions teach you are God" is not neutral).
-- About once a month the friend's arc meets the best friend's family or tradition (CAST_VOICES.md).
+## The unity thread (owner, 2026-10-14: "more alike than we think"; narrowed 2026-11-04: one faith at a time)
+- **Inside the seven faith paths, lessons stay in that faith.** No weekly "a neighbor tradition says it too" beat, and
+  the friend's arc doesn't cross into another tradition. Lessons felt like comparative religion when they did.
+- What we share lives in **"my own religion"** (each idea named with its tradition and source) and in the brand
+  (billboards, social). There: name the shared thing in each tradition's own words and source, then one honest
+  difference. Never "they're all the same", never ranking, never one tradition's idea dressed as everyone's (e.g. "all
+  religions teach you are God" is not neutral).
 - The three core families (homepage, 2026-10-14) stay in view: partners of different religions; parents unsure what to
   teach; kids asking questions parents can't answer. When a lesson's idea is one a child would ask about, the chat or
   the carry can give a parent a sentence they could say at dinner.

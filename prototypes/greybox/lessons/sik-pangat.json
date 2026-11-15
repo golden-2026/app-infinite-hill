@@ -1,0 +1,215 @@
+{
+ "id": "sik-pangat",
+ "home": "nectar",
+ "title": "The emperor on the floor",
+ "told": "a traditional story of Guru Amar Das and Emperor Akbar",
+ "clips": "art/sacred/sik-pangat/clips/",
+ "voice": "art/sacred/sik-pangat/voice/",
+ "guide": {
+  "name": "Diljit",
+  "photo": "art/guides/sikhism.webp"
+ },
+ "hook": {
+  "v": "ZSB6-Today-Door",
+  "say": "quick question before the story. have you ever walked into a place of worship that wasn’t yours?",
+  "options": [
+   [
+    "Yes, once or twice",
+    "then you know that doorway feeling. listen."
+   ],
+   [
+    "Never",
+    "then this is your first, in a way. listen."
+   ],
+   [
+    "I’d be nervous to",
+    "most people are. this story might help. listen."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "ZSB1-Goindwal-Langar",
+   "vo": [
+    "V01"
+   ],
+   "line": "In the village of Goindwal, the third Guru, Guru Amar Das, kept a kitchen where everyone ate together, sitting in rows on the floor.",
+   "label": "a traditional story"
+  },
+  {
+   "t": "shot",
+   "v": "ZSB2-Emperor-Arrives",
+   "vo": [
+    "V02"
+   ],
+   "line": "One day a visitor arrived with a crowd of courtiers: Akbar, the Mughal emperor, the most powerful man in India."
+  },
+  {
+   "t": "ask",
+   "v": "ZSB3-Emperor-Sits",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "The custom: first eat in the row, then meet the Guru. Who do you think the emperor ends up beside?",
+   "o": [
+    "The Guru and his family",
+    "Farmers and the village poor",
+    "His own courtiers, in a row apart"
+   ],
+   "a": 1,
+   "why": "Farmers and the poor, eating the same plain meal. First the row, then the Guru."
+  },
+  {
+   "t": "shot",
+   "v": "ZSB3-Emperor-Sits",
+   "vo": [
+    "V03"
+   ],
+   "line": "The custom was: first sit in the row, then meet the Guru. So the emperor sat on the floor between farmers and the poor, and ate the same plain meal."
+  },
+  {
+   "t": "ask",
+   "v": "ZSB3-Emperor-Sits",
+   "eb": "why?",
+   "q": "Back then, caste rules often decided who could eat with whom. What did the row ask of everyone?",
+   "o": [
+    "To share food and floor with anyone",
+    "To give up meat for the day",
+    "To pay for someone else’s meal"
+   ],
+   "a": 0,
+   "why": "Caste rules said whose cooking you could touch and whom you could sit beside. The row erased that, for an emperor too."
+  },
+  {
+   "t": "shot",
+   "v": "ZSB4-The-Offer",
+   "vo": [
+    "V04"
+   ],
+   "line": "Afterward, Akbar offered the Guru land, so the kitchen would never run short. In most tellings, the Guru gently said no."
+  },
+  {
+   "t": "ask",
+   "v": "ZSB5-Sangat-Gives",
+   "blur": true,
+   "predict": true,
+   "eb": "what happens next?",
+   "q": "Why do you think the Guru turned the emperor down?",
+   "o": [
+    "He didn’t trust a Mughal emperor",
+    "The village had land enough already",
+    "The kitchen belonged to ordinary people"
+   ],
+   "a": 2,
+   "why": "The langar belongs to the sangat, not to one powerful man. Some tellings add that Akbar later gave land to the Guru’s daughter, Bibi Bhani, as a gift."
+  },
+  {
+   "t": "shot",
+   "v": "ZSB5-Sangat-Gives",
+   "vo": [
+    "V05"
+   ],
+   "line": "The kitchen, he said, belongs to the sangat. It runs on what ordinary people give, and on the hands that cook and serve."
+  },
+  {
+   "t": "shot",
+   "v": "ZSB6-Today-Door",
+   "vo": [
+    "V06"
+   ],
+   "line": "Today every gurdwara, “the door of the Guru,” is open to anyone. Cover your head, take off your shoes, wash your hands, and come in.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "ZSB6-Today-Door",
+   "eb": "did you know?",
+   "q": "The Golden Temple in Amritsar has doors on all four sides. Why four?",
+   "o": [
+    "One for each of the first four Gurus",
+    "Open to all, from every direction",
+    "One for each season of the year"
+   ],
+   "a": 1,
+   "why": "Guru Arjan built it with four doors, open to all directions and every caste and creed. It also sits lower than the ground around it: you step down to enter."
+  },
+  {
+   "t": "match",
+   "v": "ZSB6-Today-Door",
+   "eb": "what’s what",
+   "q": "Match each part of a gurdwara visit to what it means.",
+   "pairs": [
+    [
+     "covering your head",
+     "respect, as before a teacher"
+    ],
+    [
+     "sitting on the floor",
+     "no high seats, no low ones"
+    ],
+    [
+     "minding the shoes",
+     "seva, the humblest job, done gladly"
+    ]
+   ],
+   "why": "The emperor did the first two. The third is seva: even wealthy Sikhs volunteer to look after shoes at the door."
+  },
+  {
+   "t": "teach",
+   "v": "ZSB1-Goindwal-Langar",
+   "say": [
+    "what i love here is that the rules were the same for everyone. the emperor got no special door and no special seat.",
+    "that’s still how a gurdwara works. anyone of any faith, or none, can walk in, sit on the floor with the sangat, hear the hymns, and eat. the people cooking and minding the shoes are doing seva, selfless service."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "ZSB4-The-Offer",
+   "eb": "the hard one",
+   "q": "Sikhs say pehle pangat, pichhe sangat: first the row, then the gathering. Why put the meal first?",
+   "o": [
+    "Equality first, then the teaching",
+    "Feed the poor first, then the rest",
+    "A full stomach listens better"
+   ],
+   "a": 0,
+   "why": "The row was the first lesson. Before a word was said, the emperor had already learned it on the floor."
+  }
+ ],
+ "today": {
+  "v": "ZSB6-Today-Door",
+  "say": "today, look up the nearest gurdwara and when its langar is served. if you go, someone will offer you a scarf at the door. watch, eat, help, or just sit. all are welcome.",
+  "options": [
+   [
+    "I’ll look it up",
+    "then you know the rule: first the row."
+   ],
+   [
+    "Not ready yet",
+    "that’s fine. the door stays open."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "A song in the forest.",
+  "line": "a guru loses almost everything. alone in a forest, he does something no one expects."
+ },
+ "card": {
+  "from": "a traditional story of Guru Amar Das and Emperor Akbar",
+  "mins": 5,
+  "keep": "mat",
+  "keepName": "A place in the row",
+  "keepWhy": "First the row. Everyone at one level.",
+  "sources": [
+   "Sikh tradition of Emperor Akbar’s visit to Guru Amar Das at Goindwal and eating in the langar before meeting the Guru (“pehle pangat, pichhe sangat”)",
+   "Sikh gurdwara customs: head covered, shoes removed, hands washed, sitting on the floor, karah prashad, langar, seva",
+   "docs/curriculum/sikhism/scripts/y1/day-0016.json"
+  ],
+  "check": [
+   "Akbar’s visit and his eating in the langar are tradition; date and details are not certain.",
+   "Tellings differ on the land: many say the Guru declined; some say land was later given to his daughter Bibi Bhani. I wrote “in most tellings, the Guru gently said no.” Please confirm.",
+   "“Pehle pangat, pichhe sangat” is widely tied to Guru Amar Das’s time; confirm the phrasing."
+  ]
+ }
+}

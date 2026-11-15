@@ -1,3 +1,5 @@
+Background only (written 2026-10-03). Where this disagrees with docs/VISION-NOW.md or docs/LESSON_STANDARD.md, those win.
+
 # Claude's baseline review
 
 Written 2026-10-03 by Claude, before any outside expert has looked, so it can be compared with them later. It covers

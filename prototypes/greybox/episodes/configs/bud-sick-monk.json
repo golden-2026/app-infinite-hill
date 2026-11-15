@@ -1,0 +1,71 @@
+{
+ "id": "bud-sick-monk",
+ "open": [
+  "one hut.",
+  "one sick monk.",
+  "nobody came."
+ ],
+ "open2": [
+  "then",
+  "somebody",
+  "did."
+ ],
+ "hint": "tap anywhere to pour clean water",
+ "particle": "bubbles",
+ "energy": "tender",
+ "hot": {
+  "0": {
+   "alone": "p"
+  },
+  "1": {
+   "use": "o"
+  },
+  "2": {
+   "washed": "y"
+  },
+  "4": {
+   "sick": "y"
+  }
+ },
+ "drop": 4,
+ "game": {
+  "ask": 1,
+  "q": "nobody is helping him. what <span class=\"o\">happens next?</span>",
+  "opts": [
+   [
+    "chat",
+    "the monks start a group chat about it"
+   ],
+   [
+    "yes",
+    "the buddha and ananda wash him themselves"
+   ],
+   [
+    "busy",
+    "everyone keeps walking past, very busy"
+   ]
+  ],
+  "wrong": {
+   "chat": "forty messages, zero buckets of water. no.",
+   "busy": "that’s how he ended up alone. it’s about to change."
+  },
+  "right": "YES. no sermon first. the buddha poured, ananda washed, and they lifted him onto a bed together."
+ },
+ "teachH": "don’t fix. <em>tend.</em>",
+ "end": {
+  "h": [
+   "sit",
+   "down.",
+   "stay."
+  ],
+  "line": "nobody cared for the sick monk, so the buddha did, and made it everyone’s job.",
+  "l1": "nobody cared for the sick monk.",
+  "l2": "so the buddha did it himself."
+ },
+ "cliff": {
+  "s1": "next: three friends in a forest.",
+  "s2": "they live together so well <i>the buddha comes to ask them how.</i>",
+  "tmr": "tomorrow: three friends in the forest"
+ },
+ "share": "one hut. one sick monk. nobody came. then somebody did. the story on infinite hill"
+}

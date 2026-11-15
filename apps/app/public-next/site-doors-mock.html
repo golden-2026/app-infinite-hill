@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>infinite hill · religion, reimagined</title>
+<meta name="description" content="religion, reimagined. build your own faith from the best of every tradition, each taught by its own. or go deep in yours. five minutes a day.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="infinite hill">
+<meta property="og:title" content="infinite hill · religion, reimagined">
+<meta property="og:description" content="the stories, the wisdom, the people. every faith, taught by its own. five minutes a day.">
+<meta name="theme-color" content="#070A14">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/brand.css">
+<link rel="icon" type="image/png" href="/site-art/favicon.png">
+<style>
+:root { --ink: #070A14; --card: #141B33; --edge: #26304f; --cream: #F5F3EE; --mute: #c9c6be; --soft: #8f96ad; }
+html, body { background: var(--ink); }
+.sec { padding: 64px 0; position: relative; }
+.k { font: 800 11px/1.2 var(--body); letter-spacing: .18em; text-transform: uppercase; }
+.lede { margin: 14px 0 0; font: 700 16px/1.45 var(--body); max-width: 40ch; }
+.top { position: sticky; }
+
+/* 1. hero */
+.hero { padding: 30px 0 0; }
+.hero h1 { margin: 0; font: 400 64px/.98 var(--display); text-transform: uppercase; letter-spacing: .005em; }
+.hero h1 em { font-style: normal; color: var(--lime); }
+.hero h1 .w { display: inline-block; animation: slam .42s cubic-bezier(.2,1.6,.4,1) both; animation-delay: var(--d, 0ms); }
+@keyframes slam { 0% { transform: scale(1.9) rotate(-3deg); opacity: 0; filter: blur(6px); } 100% { transform: none; opacity: 1; filter: none; } }
+.hero .tag { margin: 16px 0 0; font: 800 18px/1.3 var(--body); }
+.hero .sub { margin: 6px 0 0; font: 600 15px/1.45 var(--body); color: var(--mute); max-width: 34ch; }
+.doors { padding: 22px 0 56px; display: grid; gap: 12px; }
+.door { border-radius: 24px; padding: 20px 18px 18px; position: relative; overflow: hidden; text-decoration: none; display: block; }
+.d1 { background: var(--lime); color: #000; }
+.d2 { background: var(--card); color: var(--cream); box-shadow: inset 0 0 0 1px var(--edge); }
+.door .k { opacity: .7; }
+.door h2 { margin: 6px 0 0; font: 400 40px/.9 var(--display); text-transform: uppercase; }
+.door p { margin: 8px 0 0; font: 700 15px/1.4 var(--body); }
+.pieces { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+.pieces span { font: 800 11px var(--body); background: #000; color: var(--lime); border-radius: 999px; padding: 6px 10px; }
+.door .go { display: inline-block; margin-top: 14px; font: 800 16px var(--body); border-radius: 999px; padding: 13px 20px; }
+.d1 .go { background: #000; color: var(--lime); }
+.d2 .go { background: var(--cream); color: #000; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+.chips span { font: 700 12px var(--body); box-shadow: inset 0 0 0 1px #3a4466; border-radius: 999px; padding: 6px 10px; color: #dfe3f0; }
+.door:active { transform: scale(.985); }
+
+/* 2. left / kept */
+.lk { background: var(--lime); color: #000; }
+.lk h2 { font-size: clamp(50px, 14vw, 128px); }
+.lk h2 em { color: transparent; -webkit-text-stroke: 2px #000; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 0 14px; margin-top: 30px; }
+.two h3 { margin: 0 0 4px; font: 800 10.5px var(--body); letter-spacing: .2em; text-transform: uppercase; padding-bottom: 10px; border-bottom: 3px solid #000; }
+.two ul { list-style: none; margin: 0; padding: 0; }
+.two li { font: 400 clamp(25px, 7vw, 58px)/.95 var(--display); text-transform: uppercase; padding: 13px 0; border-bottom: 1.5px solid rgba(0,0,0,.25); }
+.two .left li { opacity: .5; text-decoration: line-through; text-decoration-thickness: 3px; }
+.kept-line { margin: 30px 0 0; font: 400 clamp(46px, 13vw, 120px)/1.1 var(--display); text-transform: uppercase; }
+.kept-line span { background: #000; color: var(--lime); padding: 0 .1em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+
+/* 3. how it works */
+.how { background: var(--cream); color: #000; }
+.how h2 { font-size: clamp(50px, 14vw, 120px); line-height: 1.04; }
+.how h2 em { color: #000; background: var(--lime); padding: 0 .06em; }
+.how .lede { color: #333; }
+.flow { list-style: none; margin: 30px 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 26px 12px; }
+.flow li { display: flex; flex-direction: column; }
+.flow .ph { border-radius: 18px; overflow: hidden; aspect-ratio: 9/17; background: var(--ink); box-shadow: 0 0 0 3px #000; }
+.flow .ph img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.flow .n { margin: 14px 0 0; font: 400 15px/1 var(--display); letter-spacing: .04em; }
+.flow h3 { margin: 4px 0 0; font: 400 22px/.95 var(--display); text-transform: uppercase; }
+.flow p { margin: 6px 0 0; font: 600 13.5px/1.4 var(--body); color: #333; }
+.tonight { margin: 30px 0 0; border-top: 3px solid #000; padding-top: 16px; display: flex; gap: 14px; align-items: baseline; flex-wrap: wrap; }
+.tonight b { font: 400 30px/1 var(--display); text-transform: uppercase; }
+.tonight span { font: 700 15px/1.4 var(--body); }
+
+/* 4. your religion */
+.mine { background: var(--ink); }
+.mine h2 { font-size: clamp(50px, 14vw, 120px); }
+.mine .lede { color: var(--mute); }
+.mine .stage { margin-top: 30px; display: grid; gap: 22px; align-items: center; }
+.share { background: var(--lime); color: #000; border-radius: 22px; padding: 26px 20px 18px; transform: rotate(-1.6deg); box-shadow: 0 30px 60px rgba(0,0,0,.45); max-width: 420px; }
+.share .t { margin: 0; font: 400 72px/.95 var(--display); text-transform: uppercase; }
+.share ol { list-style: none; margin: 16px 0 0; padding: 0; counter-reset: p; }
+.share li { counter-increment: p; display: grid; grid-template-columns: 30px 1fr; border-top: 2px solid #000; padding: 11px 0; }
+.share li::before { content: "0" counter(p); font: 400 19px/1.1 var(--display); }
+.share li b { display: block; font: 400 23px/1 var(--display); text-transform: uppercase; }
+.share li small { display: block; margin-top: 5px; font: 800 9.5px var(--body); letter-spacing: .14em; text-transform: uppercase; opacity: .7; }
+.share .ft { display: flex; justify-content: space-between; align-items: baseline; border-top: 2px solid #000; padding-top: 10px; font: 800 11.5px var(--body); }
+.share .ft i { font: 400 17px var(--display); font-style: normal; text-transform: uppercase; }
+.creed { display: none; }
+.rules { margin: 34px 0 0; display: grid; gap: 0; }
+.rules div { border-top: 1.5px solid var(--edge); padding: 14px 0; display: grid; grid-template-columns: 1fr; }
+.rules b { font: 400 28px/1 var(--display); text-transform: uppercase; color: var(--lime); }
+.rules span { margin-top: 6px; font: 600 14.5px/1.45 var(--body); color: var(--mute); }
+.never { margin: 26px 0 0; font: 400 clamp(38px, 11vw, 92px)/1 var(--display); text-transform: uppercase; }
+.never em { font-style: normal; color: var(--lime); }
+
+/* 5. every faith says */
+.bill { background: #000; padding: 72px 0 64px; }
+.bill .k { color: var(--lime); }
+.bill h2 { margin-top: 14px; font-size: clamp(72px, 21vw, 230px); line-height: 1.02; }
+.bill h2 em { color: var(--lime); }
+.srcs { list-style: none; margin: 36px 0 0; padding: 0; display: grid; gap: 0; }
+.srcs li { border-top: 1px solid #2a2a2a; padding: 14px 0; display: grid; grid-template-columns: 96px 1fr; gap: 12px; }
+.srcs .f { font: 800 10px/1.5 var(--body); letter-spacing: .16em; text-transform: uppercase; color: var(--lime); }
+.srcs q { font: 700 15.5px/1.4 var(--body); quotes: "\201C" "\201D"; }
+.srcs small { display: block; margin-top: 4px; font: 700 11.5px var(--body); color: #8a8a8a; }
+.purpose { margin: 34px 0 0; font: 400 clamp(36px, 10vw, 84px)/.95 var(--display); text-transform: uppercase; }
+.purpose em { font-style: normal; color: var(--lime); }
+.bill .fine { margin: 14px 0 0; font: 600 14px/1.45 var(--body); color: #9a9a9a; max-width: 46ch; }
+
+/* 6. go deep */
+.deep { background: var(--card); }
+.deep h2 { font-size: clamp(54px, 15vw, 130px); }
+.deep .lede { color: var(--mute); }
+.faiths { margin: 28px 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.faiths a { text-decoration: none; border-radius: 16px; padding: 16px 14px; background: var(--ink); box-shadow: inset 0 0 0 1px var(--edge); font: 400 24px/1 var(--display); text-transform: uppercase; display: flex; justify-content: space-between; align-items: center; }
+.faiths a::after { content: "→"; font: 800 16px var(--body); color: var(--lime); }
+.faiths a:hover { box-shadow: inset 0 0 0 2px var(--lime); }
+.deep .facts { margin: 26px 0 0; display: grid; gap: 0; }
+.deep .facts p { margin: 0; border-top: 1.5px solid var(--edge); padding: 13px 0; font: 700 15px/1.4 var(--body); color: var(--cream); }
+.deep .facts b { color: var(--lime); font-weight: 800; }
+.home { margin: 30px 0 0; background: var(--lime); color: #000; border-radius: 22px; padding: 22px 20px; font: 400 clamp(30px, 8.4vw, 60px)/.95 var(--display); text-transform: uppercase; }
+
+/* 7. guides + keepers */
+.guides { background: var(--lime); color: #000; }
+.guides h2 { font-size: clamp(46px, 12.5vw, 112px); }
+.guides h2 em { color: transparent; -webkit-text-stroke: 2px #000; }
+.guides .lede { color: #000; opacity: .78; margin-bottom: 26px; }
+.gcard { width: 262px; background: #000; color: var(--cream); border-radius: 22px; overflow: hidden; display: flex; flex-direction: column; }
+.gcard .film { aspect-ratio: 1/1; }
+.gcard img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+.gcard .b { padding: 14px 16px 16px; display: flex; flex-direction: column; flex: 1; }
+.gcard b { font: 400 24px/1 var(--display); text-transform: uppercase; }
+.gcard small { margin-top: 4px; font: 800 10.5px var(--body); letter-spacing: .18em; text-transform: uppercase; color: var(--c); }
+.gcard q { display: block; margin: 12px 0 0; font: 700 15px/1.4 var(--body); quotes: "\201C" "\201D"; flex: 1; }
+.gcard .more { margin-top: 12px; align-self: flex-start; border: 0; background: none; color: var(--lime); padding: 0; cursor: pointer; font: 800 12.5px var(--body); text-decoration: underline; text-underline-offset: 3px; }
+.keep-s { background: var(--cream); color: #000; }
+.keep-s h2 { font-size: clamp(50px, 14vw, 120px); line-height: 1.04; }
+.keep-s h2 em { color: #000; background: var(--lime); padding: 0 .06em; }
+.kgrid { margin: 28px 0 0; display: grid; gap: 10px; }
+.kgrid div { background: #fff; border-radius: 20px; padding: 18px; box-shadow: inset 0 0 0 2px #000; }
+.kgrid b { display: block; font: 400 28px/1 var(--display); text-transform: uppercase; }
+.kgrid span { display: block; margin-top: 8px; font: 600 14.5px/1.45 var(--body); color: #333; }
+.keep-s .rl { display: inline-block; margin-top: 20px; font: 800 15px var(--body); color: #000; text-underline-offset: 4px; }
+
+/* 8. why not a chatbot */
+.bot { background: var(--ink); }
+.bot .k { color: var(--lime); }
+.bot h2 { margin-top: 12px; font-size: clamp(46px, 12.5vw, 110px); }
+.vs { margin: 28px 0 0; display: grid; gap: 10px; }
+.vs div { border-radius: 20px; padding: 18px; }
+.vs .a { background: var(--card); box-shadow: inset 0 0 0 1px var(--edge); color: var(--soft); }
+.vs .b { background: var(--lime); color: #000; }
+.vs b { display: block; font: 400 30px/.95 var(--display); text-transform: uppercase; }
+.vs span { display: block; margin-top: 8px; font: 700 15px/1.45 var(--body); }
+
+/* 9. research + real words */
+.proof { background: var(--cream); color: #000; }
+.proof h2 { font-size: clamp(42px, 11.5vw, 104px); line-height: 1.04; }
+.proof h2 em { color: #000; background: var(--lime); padding: 0 .06em; }
+.stat { margin-top: 30px; border-top: 3px solid #000; padding-top: 14px; }
+.stat .n { margin: 0; font: 400 clamp(120px, 38vw, 260px)/.82 var(--display); }
+.stat .n small { font-size: .32em; vertical-align: top; margin-left: .1em; }
+.stat .l { margin: 10px 0 0; font: 800 17px/1.35 var(--body); max-width: 34ch; }
+.stat .s { margin: 10px 0 0; font: 700 11.5px var(--body); letter-spacing: .1em; text-transform: uppercase; opacity: .6; }
+.honest { margin: 22px 0 0; font: 700 15px/1.45 var(--body); max-width: 46ch; background: #fff; border-radius: 16px; padding: 14px 16px; box-shadow: inset 0 0 0 2px #000; }
+.proof .rl { display: inline-block; margin-top: 16px; font: 800 15px var(--body); color: #000; text-underline-offset: 4px; }
+.says-s { background: var(--ink); }
+.says-s h2 { font-size: clamp(42px, 11.5vw, 100px); margin-bottom: 26px; }
+.say { width: 284px; margin: 0; background: var(--card); color: var(--cream); border-radius: 22px; padding: 22px 20px; display: flex; flex-direction: column; justify-content: space-between; gap: 18px; }
+.say p { margin: 0; font: 700 16.5px/1.4 var(--body); }
+.say figcaption { font: 400 20px/1 var(--display); text-transform: uppercase; color: var(--lime); }
+.say figcaption span { display: block; margin-top: 4px; font: 700 11px var(--body); letter-spacing: .14em; color: var(--mute); text-transform: none; }
+
+.how h2 em, .keep-s h2 em, .proof h2 em { background: linear-gradient(var(--lime), var(--lime)) 0 88% / 100% 74% no-repeat; padding: 0 .06em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+/* 10. end */
+.end { background: var(--lime); color: #000; padding: 72px 0 64px; }
+.end h2 { font-size: clamp(64px, 18vw, 180px); }
+.end .sub { margin: 16px 0 0; font: 800 18px/1.35 var(--body); max-width: 30ch; }
+.end .cta .btn { background: #000; color: var(--lime); }
+.end .cta .btn.ghost { background: transparent; color: #000; box-shadow: inset 0 0 0 2px #000; }
+.end small { display: block; margin-top: 18px; font: 700 12.5px/1.45 var(--body); opacity: .7; }
+.site-foot { background: var(--ink); }
+
+@media (min-width: 760px) {
+  .sec { padding: 104px 0; }
+  .hero { padding-top: 64px; }
+  .hero h1 { font-size: clamp(96px, 9.6vw, 150px); }
+  .hero .tag { font-size: 24px; margin-top: 22px; }
+  .hero .sub { font-size: 18px; max-width: 46ch; }
+  .doors { grid-template-columns: 1.15fr 1fr; gap: 16px; padding: 40px 0 96px; }
+  .door { padding: 30px 30px 28px; border-radius: 30px; }
+  .door h2 { font-size: 58px; }
+  .door p { font-size: 17px; max-width: 38ch; }
+  .two { gap: 0 40px; }
+  .flow { grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .flow h3 { font-size: 28px; }
+  .flow p { font-size: 15px; }
+  .mine .stage { grid-template-columns: 1fr 1fr; gap: 60px; }
+  .share { max-width: 460px; justify-self: end; }
+  .creed { display: block; width: 300px; border-radius: 26px; overflow: hidden; box-shadow: 0 0 0 1px var(--edge), 0 30px 60px rgba(0,0,0,.5); transform: rotate(2deg); }
+  .creed img { width: 100%; }
+  .rules { grid-template-columns: repeat(3, 1fr); gap: 0 30px; }
+  .srcs { grid-template-columns: 1fr 1fr 1fr; gap: 0 30px; }
+  .srcs li { grid-template-columns: 1fr; gap: 6px; }
+  .faiths { grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .faiths a { font-size: 30px; padding: 22px 20px; }
+  .deep .facts { grid-template-columns: repeat(3, 1fr); gap: 0 30px; }
+  .gcard { width: 300px; }
+  .kgrid, .vs { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .vs { grid-template-columns: 1fr 1fr; }
+  .vs b { font-size: 40px; }
+  .stat { display: grid; grid-template-columns: auto 1fr; gap: 0 40px; align-items: end; }
+  .stat .l { font-size: 24px; }
+  .say { width: 340px; }
+  .end { padding: 120px 0 100px; }
+}
+@media (prefers-reduced-motion: reduce) { .hero h1 .w { animation: none; } .ticker .run { animation: none; } }
+</style>
+</head>
+<body>
+<div class="ticker" aria-label="religion, reimagined. every faith's best ideas. taught by its own."><div class="run" aria-hidden="true"><span>RELIGION, REIMAGINED ·</span><span>EVERY FAITH'S BEST IDEAS ·</span><span>TAUGHT BY ITS OWN ·</span><span>FIVE MINUTES A DAY ·</span><span>RELIGION, REIMAGINED ·</span><span>EVERY FAITH'S BEST IDEAS ·</span><span>TAUGHT BY ITS OWN ·</span><span>FIVE MINUTES A DAY ·</span><span>RELIGION, REIMAGINED ·</span><span>EVERY FAITH'S BEST IDEAS ·</span><span>TAUGHT BY ITS OWN ·</span><span>FIVE MINUTES A DAY ·</span><span>RELIGION, REIMAGINED ·</span><span>EVERY FAITH'S BEST IDEAS ·</span><span>TAUGHT BY ITS OWN ·</span><span>FIVE MINUTES A DAY ·</span></div></div>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <button class="menu-b" type="button" id="menuB" aria-expanded="false" aria-controls="menu"><i></i><span class="t">menu</span><span class="sr">open menu</span></button>
+  <a class="mark" href="#top">infinite hill</a>
+  <a class="join-s" href="/hill/hill-app-doors.html">start free</a>
+  <nav class="menu" id="menu" hidden aria-label="menu"><a href="#doors">two doors</a><a href="#kept">what you kept</a><a href="#how">how it works</a><a href="#mine">build your own</a><a href="#deep">go deep in yours</a><a href="#guides">your guides</a><a href="#faq">why not a chatbot?</a></nav>
+</header>
+
+<main id="main">
+<!-- 1. hero + the two doors -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <h1><span class="w" style="--d:0ms">making</span><br><span class="w" style="--d:120ms">religion</span><br><span class="w" style="--d:240ms"><em>yours</em> again.</span></h1>
+    <p class="tag">because you gotta have faith.</p>
+    <p class="sub">the stories, the wisdom, the people. every faith, taught by its own. five minutes a day.</p>
+    <div class="doors" id="doors">
+      <a class="door d1" href="/hill/hill-app-doors.html">
+        <div class="k">most people start here</div>
+        <h2>build your own faith</h2>
+        <p>the best ideas from every faith, each taught by its own. keep what speaks to you. it's yours.</p>
+        <div class="pieces"><span>the intention is the seed · hindu</span><span>forgive first · christian</span><span>one day, stop · jewish</span></div>
+        <span class="go">build mine →</span>
+      </a>
+      <a class="door d2" href="/hill/hill-app-doors.html">
+        <div class="k">already have a faith?</div>
+        <h2>go deep in yours</h2>
+        <p>your faith, the way it was meant to feel. one path, taught properly.</p>
+        <div class="chips"><span>Christianity</span><span>Catholicism</span><span>Judaism</span><span>Islam</span><span>Hinduism</span><span>Buddhism</span><span>Sikhism</span></div>
+        <span class="go">go deep →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 2. what every faith gives -->
+<section class="sec lk" id="kept">
+  <div class="wrap">
+    <p class="k">what every faith gives</p>
+    <h2 class="disp" style="margin-top:12px">the big questions <em>never left.</em></h2>
+    <div class="two">
+      <div class="right"><h3>what every faith offers</h3><ul><li>the big questions</li><li>the stories</li><li>the wonder</li><li>a way to be better</li></ul></div>
+      <div class="right"><h3>what you get here</h3><ul><li>a story a day</li><li>its real teaching</li><li>something to try tonight</li><li>people to share it with</li></ul></div>
+    </div>
+    <p class="kept-line"><span>it's all still here. five minutes a day.</span></p>
+  </div>
+</section>
+
+<!-- 3. how it works -->
+<section class="sec how" id="how">
+  <div class="wrap">
+    <p class="k">how it works</p>
+    <h2 class="disp" style="margin-top:12px">one story. <em>five minutes.</em></h2>
+    <p class="lede">every day starts with what you're going through.</p>
+    <ol class="flow">
+      <li><div class="ph"><img src="/site-art/doors/s1-moment.webp" alt="the app asking: what brought you here? anxious, angry at someone, grieving, lost on purpose" loading="lazy" width="600" height="1298"></div><span class="n">01</span><h3>say what's going on</h3><p>angry, anxious, grieving, or just curious.</p></li>
+      <li><div class="ph"><img src="/site-art/doors/s2-story.webp" alt="a still from a short film: a man storms up to the Buddha" loading="lazy" width="600" height="1067"></div><span class="n">02</span><h3>a story picked for it</h3><p>from any faith, told as a short film. angry today? a man storms up to the Buddha.</p></li>
+      <li><div class="ph"><img src="/site-art/doors/s3-teaching.webp" alt="the teaching card: i am the owner of my actions, from the Anguttara Nikaya" loading="lazy" width="600" height="1298"></div><span class="n">03</span><h3>its real teaching</h3><p>what the tradition actually teaches, with the source right there.</p></li>
+      <li><div class="ph"><img src="/site-art/doors/s4-kept.webp" alt="kept: piece one of your faith" loading="lazy" width="600" height="1298"></div><span class="n">04</span><h3>keep it</h3><p>as a belief, a practice or a saying. or don't. your call.</p></li>
+    </ol>
+    <div class="tonight"><b>then: tonight.</b><span>one small thing to try before bed. that's the day.</span></div>
+  </div>
+</section>
+
+<!-- 4. your religion, built by you -->
+<section class="sec mine" id="mine">
+  <div class="wrap">
+    <p class="k lime">your religion</p>
+    <h2 class="disp" style="margin-top:12px">built by <em>you.</em></h2>
+    <p class="lede">every piece you keep becomes part of your creed. share it, change it, grow it. it's yours.</p>
+    <div class="stage">
+      <div class="share" role="img" aria-label="a share card: my religion. one, the intention is the seed, Hinduism, the Upanishads. two, say thank you, out loud, Christianity, Luke's gospel. three, some tastes only come from stopping, Judaism, the Talmud.">
+        <p class="t">my<br>religion:</p>
+        <ol>
+          <li><div><b>the intention is the seed.</b><small>Hinduism · the Upanishads</small></div></li>
+          <li><div><b>say thank you, out loud.</b><small>Christianity · Luke's gospel</small></div></li>
+          <li><div><b>some tastes only come from stopping.</b><small>Judaism · the Talmud</small></div></li>
+        </ol>
+        <div class="ft"><i>infinite hill</i><span>religion, reimagined.</span></div>
+      </div>
+      <div class="creed"><img src="/site-art/doors/creed.webp" alt="my religion: a creed of kept pieces, each with its tradition and source" loading="lazy" width="600" height="1298"></div>
+    </div>
+    <p class="never">every piece names its tradition. <em>never blended. never ranked.</em></p>
+    <div class="rules">
+      <div><b>taught by its own</b><span>each teaching told the way its own tradition tells it, checked by a scholar of that faith.</span></div>
+      <div><b>source right there</b><span>the book, the verse, the teacher. no mystery quotes, no mash-ups.</span></div>
+      <div><b>yours to keep</b><span>keep a piece, drop a piece, change your mind. nobody grades your religion.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. every faith says -->
+<section class="bill" id="says">
+  <div class="wrap">
+    <p class="k">more in common than you think</p>
+    <h2 class="disp">every faith says <em>love your enemy.</em></h2>
+    <ul class="srcs">
+      <li><span class="f">Christianity</span><div><q>love your enemies, and pray for those who persecute you.</q><small>Matthew 5:44</small></div></li>
+      <li><span class="f">Judaism</span><div><q>if your enemy is hungry, give him bread to eat.</q><small>Proverbs 25:21</small></div></li>
+      <li><span class="f">Islam</span><div><q>repel evil with what is better, and your enemy becomes a close friend.</q><small>Qur'an 41:34</small></div></li>
+      <li><span class="f">Buddhism</span><div><q>hatred does not cease by hatred. hatred ceases by love.</q><small>Dhammapada, verse 5</small></div></li>
+      <li><span class="f">Sikhism</span><div><q>no one is my enemy, and no one is a stranger.</q><small>Guru Granth Sahib, p. 1299</small></div></li>
+      <li><span class="f">Hinduism</span><div><q>one who hates no being, who is friendly and compassionate to all.</q><small>Bhagavad Gita 12.13</small></div></li>
+    </ul>
+    <p class="purpose">see what we share. <em>treat each other better.</em></p>
+    <p class="fine">not "all religions are the same." six roads, each in its own words. that's the point.</p>
+  </div>
+</section>
+
+<!-- 6. go deep in yours -->
+<section class="sec deep" id="deep">
+  <div class="wrap">
+    <p class="k lime">already have a faith?</p>
+    <h2 class="disp" style="margin-top:12px">go deep <em>in yours.</em></h2>
+    <p class="lede">one faith, the way it was meant to feel. nothing from anyone else's.</p>
+    <div class="faiths"><a href="/hill/hill-app-doors.html">Christianity</a><a href="/hill/hill-app-doors.html">Catholicism</a><a href="/hill/hill-app-doors.html">Judaism</a><a href="/hill/hill-app-doors.html">Islam</a><a href="/hill/hill-app-doors.html">Hinduism</a><a href="/hill/hill-app-doors.html">Buddhism</a><a href="/hill/hill-app-doors.html">Sikhism</a></div>
+    <div class="facts">
+      <p><b>taught by its own scholars.</b> every lesson checked by someone who knows the faith from the inside.</p>
+      <p><b>five years deep, if you want it.</b> the stories, then the texts underneath, the saints, the sources.</p>
+      <p><b>start where you are.</b> a couple of minutes of quick questions places you. not back at zero.</p>
+    </div>
+    <p class="home">and if building your own leads you home to one faith, we'll walk you there.</p>
+  </div>
+</section>
+
+<!-- 7. celebrity guides + keepers -->
+<section class="sec guides" id="guides">
+  <div class="wrap"><p class="k">your guides</p><h2 class="disp" style="margin-top:12px">told by <em>voices you know.</em></h2><p class="lede">celebrity guides narrate the stories, each in the faith they grew up in.</p></div>
+  <div class="row"><div class="gcard" style="--c:#EEFF6A"><div class="film"><img src="/site-art/next/g-own.webp" alt="Justin Bieber" loading="lazy" width="560" height="700"></div><div class="b"><b>Justin Bieber</b><small>my own religion</small><q>God meets me every morning with forgiveness and love that I truly don’t deserve.</q></div></div><div class="gcard" style="--c:#EEFF6A"><div class="film"><img src="/site-art/next/g-chr.webp" alt="Denzel Washington" loading="lazy" width="560" height="700"></div><div class="b"><b>Denzel Washington</b><small>Christianity</small><q data-s="First thing I do is pray every morning." data-f="First thing I do is pray every morning. I read my Bible. I try to wake up now and sit there first, put my feet on the floor, and sit, and be quiet.">First thing I do is pray every morning.</q><button class="more" type="button" aria-expanded="false" data-more="read the full quote" data-less="show less">read the full quote</button></div></div><div class="gcard" style="--c:#FF2D8A"><div class="film"><img src="/site-art/next/g-cat.webp" alt="Nicole Kidman" loading="lazy" width="560" height="700"></div><div class="b"><b>Nicole Kidman</b><small>Catholicism</small><q data-s="Catholicism will keep me going." data-f="Catholicism will keep me going. I'm a Catholic girl. It will always stay with you.">Catholicism will keep me going.</q><button class="more" type="button" aria-expanded="false" data-more="read the full quote" data-less="show less">read the full quote</button></div></div><div class="gcard" style="--c:#6FA3FF"><div class="film"><img src="/site-art/next/g-jew.webp" alt="Natalie Portman" loading="lazy" width="560" height="700"></div><div class="b"><b>Natalie Portman</b><small>Judaism</small><q data-s="I really love being Jewish…" data-f="I really love being Jewish… I feel like it's a big part of my identity and it's a great thing to be a part of.">I really love being Jewish…</q><button class="more" type="button" aria-expanded="false" data-more="read the full quote" data-less="show less">read the full quote</button></div></div><div class="gcard" style="--c:#19E68C"><div class="film"><img src="/site-art/next/g-isl.webp" alt="Mahershala Ali" loading="lazy" width="560" height="700"></div><div class="b"><b>Mahershala Ali</b><small>Islam</small><q data-s="At the end of the day we're all spirits having a physical experience." data-f="At the end of the day we're all spirits having a physical experience. That really comes from my relationship with Islam because it just makes me really conscious of my action.">At the end of the day we're all spirits having a physical experience.</q><button class="more" type="button" aria-expanded="false" data-more="read the full quote" data-less="show less">read the full quote</button></div></div><div class="gcard" style="--c:#FF8A1F"><div class="film"><img src="/site-art/next/g-hin.webp" alt="Priyanka Chopra" loading="lazy" width="560" height="700"></div><div class="b"><b>Priyanka Chopra</b><small>Hinduism</small><q data-s="I am a Hindu." data-f="I am a Hindu. I pray, I have a temple at my home, I do it as often as I can. But truly to me, I am a believer that a higher power does exist and I like to have faith in that.">I am a Hindu.</q><button class="more" type="button" aria-expanded="false" data-more="read the full quote" data-less="show less">read the full quote</button></div></div><div class="gcard" style="--c:#B58CFF"><div class="film"><img src="/site-art/next/g-bud.webp" alt="Orlando Bloom" loading="lazy" width="560" height="700"></div><div class="b"><b>Orlando Bloom</b><small>Buddhism</small><q data-s="Without my Buddhist practice, I could have easily come off the rails." data-f="Without my Buddhist practice, I could have easily come off the rails. I've been changing the narrative in my head and feel that I can be the driver of my train.">Without my Buddhist practice, I could have easily come off the rails.</q><button class="more" type="button" aria-expanded="false" data-more="read the full quote" data-less="show less">read the full quote</button></div></div><div class="gcard" style="--c:#EEFF6A"><div class="film"><img src="/site-art/next/g-sik.webp" alt="Diljit Dosanjh" loading="lazy" width="560" height="700"></div><div class="b"><b>Diljit Dosanjh</b><small>Sikhism</small><q>Maharaj made us Sikh, and I will continue following Sikhi all my life.</q></div></div></div>
+</section>
+
+<section class="sec keep-s" id="keepers">
+  <div class="wrap">
+    <p class="k">the keepers</p>
+    <h2 class="disp" style="margin-top:12px">scholars check <em>every lesson.</em></h2>
+    <p class="lede" style="color:#333">a Keeper is a scholar of one tradition, who knows its sources from the inside.</p>
+    <div class="kgrid">
+      <div><b>reads every lesson</b><span>before it's recorded. flags what's wrong, too much, or not theirs.</span></div>
+      <div><b>can say no</b><span>a Keeper can pull any lesson from their path, and we can't overrule it.</span></div>
+      <div><b>one desk per faith</b><span>your piece from Buddhism was checked by a Buddhist scholar. same for every faith.</span></div>
+    </div>
+    <a class="rl" href="/keepers">meet the keeper desk →</a>
+  </div>
+</section>
+
+<!-- 8. why not just ask a chatbot -->
+<section class="sec bot" id="faq">
+  <div class="wrap">
+    <p class="k">fair question</p>
+    <h2 class="disp">why not just ask <em>ChatGPT?</em></h2>
+    <div class="vs">
+      <div class="a"><b>a chatbot waits for your question.</b><span>and answers it, from somewhere. then it's gone.</span></div>
+      <div class="b"><b>infinite hill comes to you.</b><span>every day, with a story you can trust, checked by scholars, told by voices you love, with people who walk it with you.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. the research + real words -->
+<section class="sec proof" id="proof">
+  <div class="wrap">
+    <p class="k">the research</p>
+    <h2 class="disp" style="margin-top:12px">people who practice a faith tend to be <em>happier.</em></h2>
+    <p class="lede" style="color:#333">and, in many studies, less lonely.</p>
+    <div class="stat"><p class="n">36<small>%</small></p><div><p class="l">of actively religious Americans call themselves very happy, compared with 25% of those who aren't.</p><p class="s">Pew Research Center, 2019</p></div></div>
+    <a class="rl" href="/science">read the research →</a>
+  </div>
+</section>
+
+<section class="sec says-s" id="reviews">
+  <div class="wrap"><h2 class="disp">what people are <em>telling us</em></h2></div>
+  <div class="row"><figure class="say"><p>“I feel so much more connected to my in-laws. I finally understand the traditions that matter to them instead of just standing on the outside of them.”</p><figcaption>Lauren, 34<span>Los Angeles, CA</span></figcaption></figure><figure class="say"><p>“My parents tried to teach me this stuff growing up and I never paid attention. Now I finally want to know.”</p><figcaption>Rohan, 29<span>Chicago, IL</span></figcaption></figure><figure class="say"><p>“It warms my heart to see my grandkids learning something that has been important to our family for generations.”</p><figcaption>Meera, 67<span>Edison, NJ</span></figcaption></figure><figure class="say"><p>“I started because I was curious about other religions. Somehow, it's made me understand my own life better.”</p><figcaption>Ethan, 24<span>Seattle, WA</span></figcaption></figure><figure class="say"><p>“There are days when my mind just won't stop. Infinite Hill gives me a few quiet minutes to slow down, and I'm sleeping better because of it.”</p><figcaption>Rachel, 57<span>Nashville, TN</span></figcaption></figure><figure class="say"><p>“I grew up around these stories, but no one ever explained what they actually meant. I feel like I'm discovering a part of myself I never really knew.”</p><figcaption>Maya, 18<span>Irvine, CA</span></figcaption></figure><figure class="say"><p>“My son and I do one lesson together every morning. It's become this tiny ritual that I hope he remembers when he's older.”</p><figcaption>David, 48<span>Santa Monica, CA</span></figcaption></figure><figure class="say"><p>“For the first time in years, I feel connected to who I am — not just what I do all day.”</p><figcaption>Ari, 41<span>New York, NY</span></figcaption></figure></div>
+</section>
+
+<!-- 10. final call -->
+<section class="end" id="end">
+  <div class="wrap">
+    <h2 class="disp">keep what speaks to you.</h2>
+    <p class="sub">five minutes a day. free. pick a door.</p>
+    <div class="cta"><a class="btn" href="/hill/hill-app-doors.html">build my religion</a><a class="btn ghost" href="/hill/hill-app-doors.html">go deep in mine</a></div>
+    <small>no ads. no feed. prayer is always your choice.</small>
+  </div>
+</section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <nav class="cols" aria-label="infinite hill"><div><h4>Practice</h4><a href="/#free">The house (free)</a><a href="/#together">The table</a><a href="/promise">The 100-day promise</a><a href="/hill/hill-app-doors.html">Start free</a></div><div><h4>Company</h4><a href="/about">About</a><a href="/foundation">The Foundation</a><a href="/keepers">The Keeper Desk</a><a href="/provenance">Keeper &amp; provenance</a><a href="/careers">Careers</a><a href="/contact">Contact</a></div><div><h4>Learn</h4><a href="/science">Research</a><a href="/paths">Eight paths</a><a href="/nights">Nights</a><a href="/prayers">Why we don't write prayers</a><a href="/voices">How voices work</a><a href="/schools">infinite hill for schools</a></div><div><h4>Support</h4><a href="/#faq">FAQ</a><a href="/safety">Safety &amp; hosts</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/biometric">Biometric consent</a><a href="/legal">Legal</a></div><div><h4>Language</h4><a href="/" lang="en" hreflang="en" aria-current="page">English</a><a href="/es" lang="es" hreflang="es">Español</a></div></nav>
+    <div class="legal">
+      <p>infinite hill is a company (Infinite Hill Ventures, Inc.), so it can pay its own way and keep the house free. part of what it earns goes to <a href="/foundation">the infinite hill foundation</a>, a separate nonprofit (in formation).</p>
+      <p class="crisis">If you're in danger or thinking about hurting yourself, call or text 988 (US) or your local emergency number.</p>
+      <p>infinite hill teaches from public-domain scripture, checked by scholars of each tradition. It is not a substitute for a congregation, a clergy member, or medical or mental-health care. Off-app gatherings, once they start, will be hosted only by verified institutions and organizers; all off-app events will be 18+.</p>
+      <p>&copy; 2026 Infinite Hill Ventures, Inc. Not affiliated with any religious institution.</p>
+    </div>
+    <p class="wm" aria-hidden="true">infinite hill</p>
+  </div>
+</footer>
+<script>(function(){var b=document.getElementById("menuB"),m=document.getElementById("menu");if(!b||!m)return;function set(o){m.hidden=!o;b.setAttribute("aria-expanded",o?"true":"false")}b.addEventListener("click",function(e){e.stopPropagation();set(m.hidden)});m.addEventListener("click",function(){set(false)});document.addEventListener("click",function(e){if(!m.hidden&&!e.target.closest(".top"))set(false)});document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!m.hidden){set(false);b.focus()}})})();
+document.querySelectorAll(".gcard .more").forEach(function(b){b.addEventListener("click",function(){var q=b.parentNode.querySelector("q"),open=b.getAttribute("aria-expanded")==="true";q.textContent=open?q.getAttribute("data-s"):q.getAttribute("data-f");b.setAttribute("aria-expanded",open?"false":"true");b.textContent=open?b.getAttribute("data-more"):b.getAttribute("data-less")})});</script>
+</body>

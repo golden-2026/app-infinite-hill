@@ -4,7 +4,9 @@ import { router } from "expo-router";
 import { Linking, Platform, Pressable, StyleSheet, Text, View } from "react-native";
 import { doorLabel, isEs, t, type Key } from "@/i18n";
 import type { Practice } from "@/content/practices";
-import { checkIn, clearCheckIn, closeHelp, markReflected, moodLabel, MOODS, useMemory } from "@/lib/companion/memory";
+import { checkIn, clearCheckIn, closeFollowUp, closeHelp, markReflected, moodLabel, MOODS, useMemory } from "@/lib/companion/memory";
+import { followUpFor, quote } from "@/lib/companion/follow-up";
+import { crisisWords } from "@/lib/companion/shape";
 import type { Shaped } from "@/lib/companion/shape";
 import { useStore } from "@/lib/store";
 import { Guy, color, font, type } from "@/ui";
@@ -144,6 +146,51 @@ export function CompanionNote({ day, afterLesson }: { day: Shaped; afterLesson: 
   );
 }
 
+/** The follow-up to "tell me about today" (lib/companion/follow-up.ts): what they said, a warm question, and one tap to
+ *  talk it through in the Guide (the question is filled in, never sent on its own) or "all good" to close it. Something
+ *  heavy is never quoted back: a gentle line and real help instead. */
+export function FollowUpCard({ lessonTitle }: { lessonTitle?: string | null }) {
+  const { today } = useStore();
+  const m = useMemory();
+  const due = followUpFor(m.journal, today);
+  if (!due) return null;
+  const { entry, daysAgo } = due;
+  const heavy = crisisWords(entry.text);
+  const said = quote(entry.text);
+  const ask = (daysAgo === 1 ? t("companion.today.qYesterday", { text: quote(entry.text, 200) }) : t("companion.today.qDaysAgo", { text: quote(entry.text, 200) }))
+    + (lessonTitle ? t("companion.today.qLesson", { lesson: lessonTitle }) : t("companion.today.qPlain"));
+  const talk = () => { closeFollowUp(entry.id); router.push({ pathname: "/guide", params: heavy ? {} : { q: ask.slice(0, 400) } }); };
+  return (
+    <>
+    <View style={[s.card, { borderWidth: 1.5, borderColor: color.line }]} testID="follow-up-card">
+      <View style={{ flexDirection: "row", alignItems: "flex-start", gap: 10 }}>
+        <Guy pose={heavy ? "lantern" : "wave"} h={44} />
+        <View style={{ flex: 1, gap: 4 }}>
+          {heavy ? (
+            <Text style={[s.note, { marginTop: 0, fontSize: 15, lineHeight: 20 }]}>{t("companion.today.heavy")}</Text>
+          ) : (
+            <>
+              <Text style={[type.eyebrow(8), { color: color.mute }]}>{daysAgo === 1 ? t("companion.today.yesterday") : t("companion.today.daysAgo")}</Text>
+              <Text style={{ fontFamily: font.display[500], fontSize: 16, lineHeight: 21, color: color.ink }}>“{said}”</Text>
+              <Text style={[s.note, { marginTop: 2, fontSize: 15, lineHeight: 20 }]}>{t("companion.today.how")}</Text>
+            </>
+          )}
+        </View>
+      </View>
+      <View style={{ flexDirection: "row", gap: 8, marginTop: 10, flexWrap: "wrap" }}>
+        <Pressable testID="follow-up-talk" accessibilityRole="button" onPress={talk} style={{ backgroundColor: color.ink, borderRadius: 22, minHeight: 44, justifyContent: "center", paddingHorizontal: 16 }}>
+          <Text style={{ fontFamily: font.text[600], fontSize: 13, color: color.cream }}>{t("companion.today.talk")} ›</Text>
+        </Pressable>
+        <Pressable testID="follow-up-good" accessibilityRole="button" onPress={() => closeFollowUp(entry.id)} style={{ borderWidth: 1.5, borderColor: color.ink, borderRadius: 22, minHeight: 44, justifyContent: "center", paddingHorizontal: 16 }}>
+          <Text style={{ fontFamily: font.text[600], fontSize: 13, color: color.ink }}>{t("companion.today.good")}</Text>
+        </Pressable>
+      </View>
+    </View>
+    {heavy ? <HelpCard /> : null}
+    </>
+  );
+}
+
 /** Real help, gently: only for words (journal, Guide) that mean someone may be in danger. Never from mood taps alone. No diagnosis. */
 export function HelpCard({ onClose }: { onClose?: () => void }) {
   const { today } = useStore();
@@ -194,12 +241,12 @@ export function ReflectCard() {
 }
 
 const s = StyleSheet.create({
-  card: { marginHorizontal: 18, marginBottom: 12, backgroundColor: "#fff", borderWidth: 2, borderColor: color.ink, borderRadius: 18, paddingVertical: 12, paddingHorizontal: 14 },
+  card: { marginHorizontal: 18, marginBottom: 12, backgroundColor: color.white, borderWidth: 2, borderColor: color.ink, borderRadius: 18, paddingVertical: 12, paddingHorizontal: 14 },
   note: { fontFamily: font.display[500], fontSize: 17, lineHeight: 21, color: color.ink, marginTop: 4 },
   moods: { flexDirection: "row", flexWrap: "wrap", gap: 6, marginTop: 6 },
-  mood: { borderWidth: 1.5, borderColor: color.ink, borderRadius: 999, paddingHorizontal: 11, minHeight: 36, justifyContent: "center", backgroundColor: "#fff" },
+  mood: { borderWidth: 1.5, borderColor: color.ink, borderRadius: 999, paddingHorizontal: 11, minHeight: 36, justifyContent: "center", backgroundColor: color.white },
   moodText: { fontFamily: font.text[600], fontSize: 13, color: color.ink },
   practice: { marginTop: 10, backgroundColor: color.ink, borderRadius: 14, paddingVertical: 8, paddingHorizontal: 12, flexDirection: "row", alignItems: "center", gap: 10 },
-  yn: { flex: 1, alignItems: "center", backgroundColor: "#fff", borderWidth: 2, borderColor: color.ink, borderRadius: 999, paddingVertical: 8 },
+  yn: { flex: 1, alignItems: "center", backgroundColor: color.white, borderWidth: 2, borderColor: color.ink, borderRadius: 999, paddingVertical: 8 },
   ynText: { fontFamily: font.text[700], fontSize: 13, color: color.ink },
 });

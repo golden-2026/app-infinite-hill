@@ -1,0 +1,207 @@
+{
+ "id": "holika",
+ "home": "marigold",
+ "title": "Burning the old",
+ "told": "from the Puranas",
+ "clips": "art/sacred/holika/clips/",
+ "voice": "art/sacred/holika/voice/",
+ "guide": {
+  "name": "Priyanka",
+  "photo": "art/guides/hinduism.webp"
+ },
+ "card": {
+  "from": "from the Puranas",
+  "mins": 5,
+  "keep": "bonfire",
+  "keepName": "Holika’s bonfire",
+  "keepWhy": "The fire comes first. Then the colors.",
+  "sources": [
+   "Bhagavata Purana, book 7 (Prahlada’s devotion to Vishnu; his father Hiranyakashipu tries many ways to stop him and fails)",
+   "Holika, Hiranyakashipu’s sister, and the bonfire: a festival story found in later tellings and widespread tradition",
+   "Holika Dahan, the bonfire on the night before Holi (the full moon of Phalguna)"
+  ],
+  "check": [
+   "Holika’s fire episode is not in the Bhagavata’s Prahlada story; confirm which Puranas tell it (the source line says “from the Puranas”).",
+   "Holika’s safety from fire is often said to come from a boon or a shawl; the lesson says only “sure fire could never touch her.” Confirm.",
+   "“Many throw their old grudges into the fire”: a modern reading of the festival; confirm the wording."
+  ]
+ },
+ "hook": {
+  "v": "HK1-Prahlada",
+  "say": "before the story, can i ask you something? are you still carrying an old grudge? it’s heavy. you’ve held it a while.",
+  "options": [
+   [
+    "A small one",
+    "then let’s see what to do with it. listen."
+   ],
+   [
+    "A big one",
+    "then this one is for you. listen."
+   ],
+   [
+    "Not right now",
+    "lucky you. listen anyway."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "HK1-Prahlada",
+   "vo": [
+    "V01"
+   ],
+   "line": "Prince Prahlada was devoted to Vishnu. His father, a proud demon king, hated it."
+  },
+  {
+   "t": "ask",
+   "v": "HK2-Everything",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "The king tries everything to stop his son from praying. What do you guess Prahlada does?",
+   "o": [
+    "Prays in secret, to keep the peace",
+    "Keeps praying, openly",
+    "Leaves the palace to pray elsewhere"
+   ],
+   "a": 1,
+   "why": "Openly, every time. In the Bhagavata Purana the king tries weapons, snakes, elephants, poison and a cliff, and Prahlada keeps praying."
+  },
+  {
+   "t": "shot",
+   "v": "HK2-Everything",
+   "vo": [
+    "V02"
+   ],
+   "line": "He tried everything to stop him. Prahlada kept praying."
+  },
+  {
+   "t": "shot",
+   "v": "HK3-The-Bonfire",
+   "vo": [
+    "V03"
+   ],
+   "line": "Then the king’s sister, Holika, tried a trick with a great bonfire, sure that fire could never touch her."
+  },
+  {
+   "t": "ask",
+   "v": "HK4-Untouched",
+   "blur": true,
+   "predict": true,
+   "eb": "what happens next?",
+   "q": "Holika is sure fire can never touch her. What do you think happens?",
+   "o": [
+    "Holika walks out; Prahlada burns",
+    "Both walk out of the fire unharmed",
+    "Holika burns; Prahlada walks out"
+   ],
+   "a": 2,
+   "why": "The fire takes Holika and spares Prahlada; many tellings say her fireproof shawl flew from her onto him. That’s why the bonfire is called Holika Dahan, the burning of Holika."
+  },
+  {
+   "t": "shot",
+   "v": "HK4-Untouched",
+   "vo": [
+    "V04"
+   ],
+   "line": "But the fire turned on her, and Prahlada walked out untouched."
+  },
+  {
+   "t": "ask",
+   "v": "HK4-Untouched",
+   "eb": "did you know?",
+   "q": "The fire isn’t the end of the story. Who finally stops the cruel king?",
+   "o": [
+    "Vishnu, as half man, half lion",
+    "Shiva, in a terrible storm",
+    "Prahlada’s mother, with an army"
+   ],
+   "a": 0,
+   "why": "The king’s boon said no man or beast could kill him, by day or night, inside or out. So Vishnu came as Narasimha, half man, half lion, at dusk, on a doorstep."
+  },
+  {
+   "t": "shot",
+   "v": "HK5-Bonfire-Night",
+   "vo": [
+    "V05"
+   ],
+   "line": "On the night before Holi, Hindus light bonfires to remember it, and many throw their old grudges into the fire.",
+   "label": "Holika Dahan"
+  },
+  {
+   "t": "ask",
+   "v": "HK5-Bonfire-Night",
+   "eb": "did you know?",
+   "q": "Holi’s colors come with a second story. Whose?",
+   "o": [
+    "Rama, coming home to Ayodhya",
+    "Krishna, playing with Radha",
+    "Ganesha, on his birthday"
+   ],
+   "a": 1,
+   "why": "Young Krishna, it’s said, worried fair Radha wouldn’t love him with his dark skin. His mother said: color her face. Holi plays it out. (Rama’s homecoming is Diwali.)"
+  },
+  {
+   "t": "shot",
+   "v": "HK6-Today",
+   "vo": [
+    "V06"
+   ],
+   "line": "Let the old burn, so the new can start. The fire comes first. Then the colors.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "HK6-Today",
+   "eb": "you’re in it",
+   "q": "You’re at a Holika bonfire with fresh-cut wheat in your hand. What do many families do with it?",
+   "o": [
+    "Roast the grain in the flames",
+    "Bury it under the ashes",
+    "Take it home, unroasted"
+   ],
+   "a": 0,
+   "why": "Holi falls at the spring harvest. Many families roast green grain or coconut in the fire, walk around it, and share what they’ve roasted."
+  },
+  {
+   "t": "teach",
+   "v": "HK4-Untouched",
+   "say": [
+    "here’s what i love. the king had power, and holika had a trick. prahlada just had devotion, and it was enough.",
+    "hindus light holika’s bonfire to remember that goodness outlasts cruelty. and many say it’s the night to throw old grudges in, so the colors can start fresh."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "HK5-Bonfire-Night",
+   "eb": "the hard one",
+   "q": "On Holi, colors are thrown at everyone: the boss, a stranger, a grandparent. What does that say about the day?",
+   "o": [
+    "It’s a contest to color the most people",
+    "It’s only for family and close friends",
+    "Old ranks and grudges are set aside"
+   ],
+   "a": 2,
+   "why": "People shout “bura na mano, Holi hai”: don’t be offended, it’s Holi! Rank and old quarrels give way, for a day at least."
+  }
+ ],
+ "today": {
+  "v": "HK6-Today",
+  "say": "write one grudge on a piece of paper. then throw it away, or burn it safely. many families walk around the holika fire with a prayer. you can join a bonfire, learn the story with someone, or just let the paper go. it’s your choice.",
+  "options": [
+   [
+    "I know which one",
+    "then let it burn. tomorrow, colors."
+   ],
+   [
+    "I’m not ready to let it go",
+    "that’s honest. even writing it down loosens it."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "The demon who kept changing shape.",
+  "line": "every god lost to him. then the gods tried something new."
+ }
+}

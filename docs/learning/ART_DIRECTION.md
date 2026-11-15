@@ -1,3 +1,5 @@
+Background only (written 2026-10-04). Where this disagrees with docs/VISION-NOW.md or docs/LESSON_STANDARD.md, those win.
+
 # Art direction: cool, culture-forward, never generic
 
 Owner (2026-10-04): the first story panels looked "standard", like the old sun mascot before the redraw. Everything has

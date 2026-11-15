@@ -1,0 +1,197 @@
+{
+ "id": "bud-bow",
+ "home": "lotus",
+ "title": "The monk who bowed to everyone",
+ "told": "from the Lotus Sutra",
+ "clips": "art/sacred/bud-bow/clips/",
+ "voice": "art/sacred/bud-bow/voice/",
+ "guide": {
+  "name": "Orlando",
+  "photo": "art/guides/buddhism.webp"
+ },
+ "hook": {
+  "v": "BW1-Bowing-Monk",
+  "say": "before the story, can i ask you something? is there someone you find it hard to respect right now?",
+  "options": [
+   [
+    "Yes, someone close",
+    "that’s heavy to carry. this story is for you."
+   ],
+   [
+    "Maybe, a little",
+    "most of us have one. listen to this."
+   ],
+   [
+    "Not really",
+    "lovely. keep this one for the day you do."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "BW1-Bowing-Monk",
+   "vo": [
+    "V01"
+   ],
+   "line": "Long ago, the Lotus Sutra says, there lived a monk who did something unusual. He bowed to everyone he met."
+  },
+  {
+   "t": "shot",
+   "v": "BW2-Every-Face",
+   "vo": [
+    "V02"
+   ],
+   "line": "To each person he said: “I deeply respect you. I would never look down on you. You will all walk the way and become buddhas.”"
+  },
+  {
+   "t": "shot",
+   "v": "BW3-Angry-Crowd",
+   "vo": [
+    "V03"
+   ],
+   "line": "Not everyone liked it. Some people got angry. “Who is this fool,” they said, “telling us we’ll be buddhas?”"
+  },
+  {
+   "t": "ask",
+   "v": "BW3-Angry-Crowd",
+   "blur": true,
+   "predict": true,
+   "eb": "what happens next?",
+   "q": "Some of them throw sticks and stones at him. What does he do?",
+   "o": [
+    "He stops bowing to the angry ones",
+    "He bows lower, and takes the blows",
+    "He backs away, and calls it out again"
+   ],
+   "a": 2,
+   "why": "He keeps his distance, and keeps his respect. The Lotus Sutra says he ran off a way and still shouted the same words from afar."
+  },
+  {
+   "t": "shot",
+   "v": "BW4-From-A-Distance",
+   "vo": [
+    "V04"
+   ],
+   "line": "When they threw sticks and stones, he stepped back out of reach, and called out the same words again."
+  },
+  {
+   "t": "ask",
+   "v": "BW4-From-A-Distance",
+   "eb": "why?",
+   "q": "Why did he keep bowing to people who were rude to him?",
+   "o": [
+    "He hoped guilt would make them stop",
+    "He saw the buddha they could become",
+    "His teacher had ordered him to"
+   ],
+   "a": 1,
+   "why": "The Lotus Sutra is a Mahayana scripture, loved in East Asia. Many there teach that anyone can wake up. He bowed to that, not to how people behaved that day."
+  },
+  {
+   "t": "shot",
+   "v": "BW5-The-Buddha-Tells",
+   "vo": [
+    "V05"
+   ],
+   "line": "He kept bowing for years. Later, the Buddha told this story and said: that monk was me, in a life long ago."
+  },
+  {
+   "t": "ask",
+   "v": "BW2-Every-Face",
+   "eb": "did you know?",
+   "q": "The Lotus Sutra notes something odd about this monk’s practice. What was it?",
+   "o": [
+    "He never read or chanted the sutras",
+    "He never once sat to meditate",
+    "He refused to live in any temple"
+   ],
+   "a": 0,
+   "why": "The sutra says he did not spend his time reading or reciting the sutras. He simply went about bowing. His whole practice was respect."
+  },
+  {
+   "t": "shot",
+   "v": "BW6-Three-Bows-Today",
+   "vo": [
+    "V06"
+   ],
+   "line": "Today, in temples around the world, many Buddhists bow three times: to the Buddha, the Dharma and the Sangha.",
+   "label": "today"
+  },
+  {
+   "t": "match",
+   "v": "BW6-Three-Bows-Today",
+   "eb": "three jewels",
+   "q": "Match each bow to what it’s for.",
+   "pairs": [
+    [
+     "the Buddha",
+     "the one who woke up"
+    ],
+    [
+     "the Dharma",
+     "the teaching"
+    ],
+    [
+     "the Sangha",
+     "the community who walks it"
+    ]
+   ],
+   "why": "Together they’re called the three jewels, or the triple refuge. Buddhists of every school, Theravada and Mahayana alike, take refuge in them."
+  },
+  {
+   "t": "teach",
+   "v": "BW6-Three-Bows-Today",
+   "say": [
+    "when buddhists bow three times, it’s to the three jewels: the buddha, the dharma and the sangha. the statue is a reminder, like a photo of someone you love.",
+    "and like the monk in the story, many teachers say the bow is to the possibility of waking up, in the buddha and in anyone."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "BW4-From-A-Distance",
+   "eb": "the hard one",
+   "q": "The people who mocked him gave him a nickname, from the words he always said. What do you think it was?",
+   "o": [
+    "Always Patient",
+    "The Smiling Monk",
+    "Never Disparaging"
+   ],
+   "a": 2,
+   "why": "Never Disparaging: the one who never looks down on anyone. They meant it as mockery. It became his name."
+  }
+ ],
+ "today": {
+  "v": "BW6-Three-Bows-Today",
+  "say": "today, when someone tests your patience, try his bow on the inside. quietly think: you could wake up too. and if you’d like to try three real bows, at home or at a temple, that’s yours to choose.",
+  "options": [
+   [
+    "I’ll try the inside bow",
+    "that’s the bow he made every day."
+   ],
+   [
+    "I’d like to try three bows",
+    "palms together, three times. the three jewels."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "A bowl full of oil",
+  "line": "a man must carry a brimming bowl through a crowd, without spilling a drop."
+ },
+ "card": {
+  "from": "from the Lotus Sutra",
+  "mins": 5,
+  "keep": "lotus",
+  "keepName": "A lotus from the Lotus Sutra",
+  "keepWhy": "Bow to what could wake up, in anyone.",
+  "sources": [
+   "Lotus Sutra, chapter 20, “The Bodhisattva Never Disparaging” (Sadaparibhuta), Kumarajiva’s Chinese version (e.g. Burton Watson’s translation): his words of respect, the sticks and stones, bowing from a distance, the name given by the arrogant, the Buddha’s “that was I myself”",
+   "Saranagamana, the three refuges (Khuddakapatha 1): Buddham saranam gacchami",
+   "Why Buddhists bow: Lion’s Roar and Tricycle articles cited in the day 2 script"
+  ],
+  "check": [
+   "The lesson leaves out the sutra’s ending (he hears the sutra near death, his life is extended, his mockers become his followers)."
+  ]
+ }
+}

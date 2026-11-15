@@ -1,0 +1,194 @@
+{
+ "id": "cat-tilma",
+ "home": "angelus",
+ "title": "Roses in December",
+ "told": "the story of Our Lady of Guadalupe",
+ "clips": "art/sacred/cat-tilma/clips/",
+ "voice": "art/sacred/cat-tilma/voice/",
+ "guide": {
+  "name": "Nicole",
+  "photo": "art/guides/catholic.webp"
+ },
+ "card": {
+  "from": "the story of Our Lady of Guadalupe",
+  "mins": 5,
+  "keep": "blossom",
+  "keepName": "Roses in his cloak",
+  "keepWhy": "God starts with the lowly.",
+  "sources": [
+   "Nican Mopohua (Nahuatl account, attributed to Antonio Valeriano; printed by Luis Laso de la Vega, 1649): December 1531; Juan Diego, on his way to Mass and instruction, passes the hill of Tepeyac, hears birdsong and sees a Lady who calls him tenderly, “my youngest son”; she asks for a church; Bishop Juan de Zumárraga does not believe him and asks for a sign; his uncle Juan Bernardino falls gravely ill and Juan Diego takes another path; she meets him: “Am I not here, I who am your mother?” (Nahuatl: Cuix amo nican nica in nimonantzin?), and tells him his uncle is healed; on the hilltop he finds Castilian roses in December, gathers them in his tilma, opens it before the bishop, and her image appears; the bishop kneels.",
+   "Juan Diego Cuauhtlatoatzin beatified 1990 and canonized by John Paul II on 31 July 2002 in Mexico City; feast 9 December. Our Lady of Guadalupe, 12 December. The tilma is kept in the Basilica of Our Lady of Guadalupe, Mexico City.",
+   "Luke 1:46-55, especially 1:48 and 1:52 (“He hath put down the mighty from their seat, and hath exalted the humble”). Douay-Rheims. The Magnificat is sung daily at Evening Prayer (General Instruction of the Liturgy of the Hours 50).",
+   "Catechism of the Catholic Church 67 (private revelations do not belong to the deposit of faith; the faithful are not bound to believe them)."
+  ],
+  "check": [
+   "The Nican Mopohua was printed in 1649; historians debate its date and authorship. The first shot is labeled “the story Catholics tell”. Confirm.",
+   "The meetings are simplified: the account has several meetings with the Lady and two visits to the bishop. Confirm.",
+   "The Nican Mopohua speaks of many kinds of Castilian flowers; “roses” is the usual telling. Confirm."
+  ]
+ },
+ "hook": {
+  "v": "CGU3-Bishop-Doubts",
+  "say": "before the story, can i ask you something? have you ever been the person nobody listened to, in a meeting, a family, a room?",
+  "options": [
+   [
+    "Yes, more than once",
+    "i’m sorry. this story is for you."
+   ],
+   [
+    "Sometimes",
+    "it stings. watch who gets chosen here."
+   ],
+   [
+    "Not really",
+    "then watch who gets passed over, and who doesn’t."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "CGU1-Tepeyac-Dawn",
+   "vo": [
+    "V01"
+   ],
+   "line": "Mexico, December 1531. A poor Indigenous man named Juan Diego was walking to Mass before dawn, past a hill called Tepeyac.",
+   "label": "the story Catholics tell"
+  },
+  {
+   "t": "shot",
+   "v": "CGU2-Lady-Appears",
+   "vo": [
+    "V02"
+   ],
+   "line": "On the hill he heard birdsong and saw a young woman, shining like the sun. She spoke to him in his own language and called him her youngest son."
+  },
+  {
+   "t": "shot",
+   "v": "CGU3-Bishop-Doubts",
+   "vo": [
+    "V03"
+   ],
+   "line": "She asked for a church on that hill. Juan Diego went to the bishop, who listened politely and didn’t believe him. Bring me a sign, he said."
+  },
+  {
+   "t": "ask",
+   "v": "CGU3-Bishop-Doubts",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "Juan Diego’s uncle falls very ill, so he takes another path to avoid the hill. She meets him anyway. What does she say?",
+   "o": [
+    "“Why did you try to avoid me?”",
+    "“Your uncle needs you more today.”",
+    "“Am I not here, I who am your mother?”"
+   ],
+   "a": 2,
+   "why": "Not a scolding. In the Nahuatl telling, the Nican Mopohua, she asks this, then tells him his uncle is already well."
+  },
+  {
+   "t": "shot",
+   "v": "CGU4-Am-I-Not-Here",
+   "vo": [
+    "V04"
+   ],
+   "line": "“Am I not here, I who am your mother?” She sent him to the hilltop. There, in December, roses were blooming."
+  },
+  {
+   "t": "shot",
+   "v": "CGU5-Tilma-Opens",
+   "vo": [
+    "V05"
+   ],
+   "line": "He carried the roses in his cloak, his tilma, and opened it before the bishop. The roses fell. On the cloth was her image. The bishop fell to his knees."
+  },
+  {
+   "t": "ask",
+   "v": "CGU5-Tilma-Opens",
+   "eb": "did you know?",
+   "q": "Juan Diego begged her to send someone important to the bishop instead. What did she say?",
+   "o": [
+    "She agreed to find a nobleman",
+    "She insisted it had to be him",
+    "She’d go to the bishop herself"
+   ],
+   "a": 1,
+   "why": "In the oldest telling he calls himself “a little ladder, a tail, a leaf.” She says she has many messengers, but it must be him."
+  },
+  {
+   "t": "fill",
+   "v": "CGU5-Tilma-Opens",
+   "eb": "finish her song",
+   "pre": "Mary’s song in Luke: “He has filled the hungry with good things, and sent the rich away",
+   "post": ".”",
+   "o": [
+    "in peace",
+    "humbled",
+    "empty"
+   ],
+   "a": 2,
+   "why": "Empty. Her song, the Magnificat, turns the world upside down, and the Church sings it every evening at Vespers."
+  },
+  {
+   "t": "shot",
+   "v": "CGU6-Today-Basilica",
+   "vo": [
+    "V06"
+   ],
+   "line": "Today his cloak hangs in the Basilica of Guadalupe in Mexico City, one of the most visited Marian shrines on earth. Juan Diego was named a saint in 2002.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "CGU6-Today-Basilica",
+   "eb": "did you know?",
+   "q": "Tepeyac hill meant something to the Nahua people before 1531. What, many historians say?",
+   "o": [
+    "A Spanish army fort",
+    "A shrine to a mother goddess",
+    "An Aztec royal tomb"
+   ],
+   "a": 1,
+   "why": "The friar Sahagún wrote that the Nahua honored Tonantzin, ‘our revered mother,’ there. Many see why the message landed so deeply; others warn against reading too much into it."
+  },
+  {
+   "t": "teach",
+   "v": "CGU4-Am-I-Not-Here",
+   "say": [
+    "here’s what i love. mary sang that God lifts up the lowly, and here she is doing it: on a poor man’s hill, in his language, in his cloak.",
+    "guadalupe is a beloved apparition, and catholics aren’t required to believe it. but the song it echoes is in the gospel, and the church sings it every evening, in the past tense, as if it’s already done."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "CGU6-Today-Basilica",
+   "eb": "the hard one",
+   "q": "Mary’s song says God “has lifted up the lowly,” in the past tense, while the mighty were still on their thrones. Why sing it as if done?",
+   "o": [
+    "Trust: God’s promise is as good as done",
+    "A quirk of the Greek translation",
+    "She meant only her own past"
+   ],
+   "a": 0,
+   "why": "The Hebrew prophets often spoke of what God will do as already done, and Mary sings in their voice. She starts from what God did for her, and trusts the rest."
+  }
+ ],
+ "today": {
+  "v": "CGU6-Today-Basilica",
+  "say": "today, notice the person nobody’s listening to: at work, at dinner, in a line. ask them one real question and listen to the answer. if you pray, you can pray mary’s line tonight: he has lifted up the lowly.",
+  "options": [
+   [
+    "I’ll find that person",
+    "lovely. that’s her song, in your hands."
+   ],
+   [
+    "I might be that person",
+    "then hear her words for you: am i not here?"
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "The man who never says a word.",
+  "line": "next, the quietest man in the christmas story, and his dream."
+ }
+}

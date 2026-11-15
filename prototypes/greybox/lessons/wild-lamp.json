@@ -1,0 +1,203 @@
+{
+ "id": "wild-lamp",
+ "home": "wild",
+ "title": "The thief and the lamp",
+ "told": "from the talks of Epictetus",
+ "clips": "art/sacred/wild-lamp/clips/",
+ "voice": "art/sacred/wild-lamp/voice/",
+ "guide": {
+  "name": "Justin",
+  "photo": "art/guides/spiritual.webp"
+ },
+ "hook": {
+  "v": "EPN3-The-Shrine",
+  "say": "before the story, can i ask you something? have you ever had something stolen, or lost something you really cared about?",
+  "options": [
+   [
+    "Yes, it stung",
+    "it does. this story has a thief in it too."
+   ],
+   [
+    "Something small",
+    "good place to practice. listen."
+   ],
+   [
+    "Not that I remember",
+    "lucky. keep this one handy."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "EPN1-Banished",
+   "vo": [
+    "V01"
+   ],
+   "line": "Freed at last, Epictetus taught philosophy in Rome. Then the emperor Domitian threw the philosophers out of the city."
+  },
+  {
+   "t": "shot",
+   "v": "EPN2-Nicopolis",
+   "vo": [
+    "V02"
+   ],
+   "line": "So he crossed to Nicopolis, on the western coast of Greece, and opened a school. Young men came from far away to sit on his benches."
+  },
+  {
+   "t": "shot",
+   "v": "EPN3-The-Shrine",
+   "vo": [
+    "V03"
+   ],
+   "line": "At home he kept a small shrine with an iron lamp beside it. One night he heard a noise at the door, and ran down."
+  },
+  {
+   "t": "ask",
+   "v": "EPN4-Empty-Niche",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "The lamp is gone. What do you think Epictetus says?",
+   "o": [
+    "“I’ll hunt down that thief”",
+    "“I need a lock on the door”",
+    "“Tomorrow, a clay lamp”"
+   ],
+   "a": 2,
+   "why": "He doesn’t chase anyone. He buys something nobody would bother to steal."
+  },
+  {
+   "t": "shot",
+   "v": "EPN4-Empty-Niche",
+   "vo": [
+    "V04"
+   ],
+   "line": "The lamp was gone. He thought: the thief did nothing strange. Thieves steal."
+  },
+  {
+   "t": "shot",
+   "v": "EPN5-Clay-Lamp",
+   "vo": [
+    "V05"
+   ],
+   "line": "“Tomorrow,” he told himself, “you will find an earthen lamp. For a man only loses that which he has.” A clay one."
+  },
+  {
+   "t": "ask",
+   "v": "EPN5-Clay-Lamp",
+   "eb": "did you know?",
+   "q": "Epictetus wasn’t a birth name. It’s a Greek word. What does it mean?",
+   "o": [
+    "Lover of wisdom",
+    "Acquired, as in bought",
+    "The steady one"
+   ],
+   "a": 1,
+   "why": "Epiktetos means “acquired.” He was born enslaved, owned by a man in Nero’s court, and taught that what’s truly yours can’t be taken."
+  },
+  {
+   "t": "shot",
+   "v": "EPN5-Clay-Lamp",
+   "vo": [
+    "V06"
+   ],
+   "line": "Later he told his students: I lost a lamp. The thief paid more. For a lamp, he became a thief."
+  },
+  {
+   "t": "ask",
+   "v": "EPN5-Clay-Lamp",
+   "eb": "why?",
+   "q": "Why does Epictetus say the thief paid more than he did?",
+   "o": [
+    "He risked prison for a cheap lamp",
+    "He traded his honesty for a lamp",
+    "He’d have to sell it for less"
+   ],
+   "a": 1,
+   "why": "Epictetus lost an object. The thief lost a piece of himself."
+  },
+  {
+   "t": "shot",
+   "v": "EPN6-Today",
+   "vo": [
+    "V07"
+   ],
+   "line": "Today: the bike gone, the cut lock still on the rack. Epictetus would say: not “I lost it,” but “I gave it back.”",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "EPN6-Today",
+   "eb": "why?",
+   "q": "“Not ‘I lost it,’ but ‘I gave it back.’” Gave it back to whom, for Epictetus?",
+   "o": [
+    "To the giver, who’d only lent it",
+    "To the thief, who wanted it more",
+    "To nobody, it’s just a saying"
+   ],
+   "a": 0,
+   "why": "In his Handbook: never say “I lost it,” say “I gave it back.” Care for things the way travelers care for an inn, not as owners."
+  },
+  {
+   "t": "teach",
+   "v": "EPN2-Nicopolis",
+   "say": [
+    "here’s what i love. an emperor took his city. a thief took his lamp. he kept teaching anyway, and he kept his sense of humor.",
+    "his word for the part that can’t be taken was prohairesis: your will, your choice of how to meet what happens. the school at nicopolis had benches and walls. the real school was inside him."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "EPN6-Today",
+   "eb": "the hard one",
+   "q": "After he died, someone paid a fortune for his clay lamp, hoping some of his wisdom came with it. What would Epictetus probably say?",
+   "o": [
+    "“Good, now my wisdom is yours”",
+    "“You bought a lamp, nothing more”",
+    "“Keep it lit, and think of me”"
+   ],
+   "a": 1,
+   "why": "Lucian says a man paid three thousand drachmas for it, hoping to grow wise by its light. The wisdom was in how Epictetus met losing it."
+  }
+ ],
+ "today": {
+  "v": "EPN6-Today",
+  "say": "his handbook has a practice for this: never say “i lost it.” say “i gave it back.” today, if something small slips away, a parking spot, a pen, an hour, say it his way, and notice what’s still yours: your temper, your kindness, your next choice.",
+  "options": [
+   [
+    "I’ll try it",
+    "good. that’s prohairesis, in real life."
+   ],
+   [
+    "I’ll keep it in mind",
+    "it’ll come in handy sooner than you think."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "The shipwreck.",
+  "line": "back to where the stoics began: a merchant loses everything at sea."
+ },
+ "card": {
+  "from": "from the talks of Epictetus",
+  "mins": 5,
+  "keep": "flame",
+  "keepName": "The school is inside",
+  "keepWhy": "You only lose what you have.",
+  "sources": [
+   "Epictetus, Discourses 1.18.15–16 (George Long, 1890): “I also lately had an iron lamp placed by the side of my household gods; hearing a noise at the door, I ran down, and found that the lamp had been carried off. I reflected that he who had taken the lamp had done nothing strange. What then? To-morrow, I said, you will find an earthen lamp; for a man only loses that which he has.”",
+   "Epictetus, Discourses 1.29.21: he lost a lamp because the thief was more wakeful; the thief paid for it by becoming a thief.",
+   "Aulus Gellius, Attic Nights 15.11.5: when Domitian expelled the philosophers, Epictetus left Rome for Nicopolis.",
+   "Arrian, preface to the Discourses (he wrote down his teacher’s words); prohairesis as will or choice.",
+   "Lucian, The Ignorant Book-Collector 13: a man bought Epictetus’s earthenware lamp for three thousand drachmas, hoping its light would bring him Epictetus’s wisdom.",
+   "Epictetus, Enchiridion 11 (Long): “Never say about anything, I have lost it; but say I have restored it.”",
+   "Day 24 script: docs/curriculum/spiritual/scripts/y1/day-0024.json (prohairesis; the school is inside)."
+  ],
+  "check": [
+   "When Epictetus was freed is unknown (“freed at last”); the date of Domitian’s expulsion (about 89 or 93–95 AD) is debated.",
+   "The household shrine (“household gods”) is shown as a small niche with figurines. Confirm.",
+   "Hard one: Lucian says the buyer hoped that reading by the lamp at night would bring him Epictetus’s wisdom in his dreams; “after he died” is implied, not stated. Confirm."
+  ]
+ }
+}

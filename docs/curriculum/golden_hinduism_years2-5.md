@@ -1,3 +1,5 @@
+*Note (2026-11-10): the day lines below are the fixed index (title, word, hook, carry). Each lesson is built from its line by `docs/LESSON_STANDARD.md`: the real story, then this faith's actual teaching, then today; the games test the teaching, with no drills and no self-help tips. Where the format notes in this file (camp words, practice lengths, segment shape) disagree with the standard or `docs/VISION-NOW.md`, those win.*
+
 # golden — HINDUISM · THE RANGES · YEARS 2–5 (~1,560 sessions)
 *With year one (331 sessions), the full path: ~1,890 sessions over five years. Year 2 is mapped session by session; years 3–5 week by week (7 sessions a week, each week's sessions named by content). Full scripts follow the Camp 1 format once the Keeper approves the sequence.*
 

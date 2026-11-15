@@ -1,0 +1,184 @@
+{
+ "id": "chr-yeast",
+ "home": "olive",
+ "title": "The smallest seed",
+ "told": "stories Jesus told",
+ "clips": "art/sacred/chr-yeast/clips/",
+ "voice": "art/sacred/chr-yeast/voice/",
+ "guide": {
+  "name": "Denzel",
+  "photo": "art/guides/christianity.webp"
+ },
+ "card": {
+  "from": "stories Jesus told",
+  "mins": 5,
+  "keep": "bread",
+  "keepName": "The risen loaf",
+  "keepWhy": "Small, hidden, and it lifts everything.",
+  "sources": [
+   "Matthew 13:31-32 (the Kingdom of Heaven is like a grain of mustard seed… the smallest of all seeds; when grown it is greater than the herbs and becomes a tree, so that the birds of the air come and lodge in its branches)",
+   "Matthew 13:33 (the Kingdom of Heaven is like yeast, which a woman took and hid in three measures of meal, until it was all leavened)",
+   "Mark 4:30-32 and Luke 13:18-21 (the same stories)",
+   "Three measures (sata): roughly 20 to 40 liters of flour by common estimates, bread for a large crowd",
+   "Captions follow the World English Bible, lightly modernized"
+  ],
+  "check": []
+ },
+ "hook": {
+  "v": "QY1-Tiny-Seed",
+  "say": "before the story, can i ask you something? do you ever feel your faith, or your good, is too small to matter?",
+  "options": [
+   [
+    "Often",
+    "then these two little stories are for you."
+   ],
+   [
+    "Sometimes",
+    "hold that thought. jesus had something to say about small."
+   ],
+   [
+    "Not really",
+    "good. you might know someone who needs this."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "QY1-Tiny-Seed",
+   "vo": [
+    "V01"
+   ],
+   "line": "Jesus said the kingdom of heaven is like a mustard seed, one of the smallest seeds a farmer would plant.",
+   "label": "Matthew 13:31"
+  },
+  {
+   "t": "ask",
+   "v": "QY1-Tiny-Seed",
+   "blur": true,
+   "predict": true,
+   "eb": "what happens next?",
+   "q": "What do you guess that tiny seed grows into?",
+   "o": [
+    "A low herb, like mint",
+    "A tree with birds nesting in it",
+    "A thorny bush for fences"
+   ],
+   "a": 1,
+   "why": "Real mustard grows into a big shrub, a few meters tall. Calling it a tree with nesting birds was, many readers say, a playful stretch listeners would have smiled at."
+  },
+  {
+   "t": "shot",
+   "v": "QY2-Mustard-Tree",
+   "vo": [
+    "V02"
+   ],
+   "line": "But when it grows, it’s bigger than all the garden plants. It becomes a tree, and the birds come and nest in its branches.",
+   "label": "Matthew 13:32"
+  },
+  {
+   "t": "shot",
+   "v": "QY3-Woman-Kneads",
+   "vo": [
+    "V03"
+   ],
+   "line": "Then another story. The kingdom is like yeast that a woman hid in three measures of flour.",
+   "label": "Matthew 13:33"
+  },
+  {
+   "t": "ask",
+   "v": "QY3-Woman-Kneads",
+   "eb": "did you know?",
+   "q": "Three measures of flour. Roughly how much bread is that?",
+   "o": [
+    "A loaf for one family",
+    "A week’s bread for one home",
+    "Bread for a hundred or more"
+   ],
+   "a": 2,
+   "why": "Estimates run from about 20 to 40 liters of flour: bread for a crowd. Sarah baked the same three measures for her three guests in Genesis 18."
+  },
+  {
+   "t": "shot",
+   "v": "QY4-Risen-Dough",
+   "vo": [
+    "V04"
+   ],
+   "line": "Three measures was a huge amount, enough bread for a crowd. A pinch of yeast, hidden inside, lifted all of it.",
+   "label": "Matthew 13:33"
+  },
+  {
+   "t": "ask",
+   "v": "QY4-Risen-Dough",
+   "eb": "why?",
+   "q": "Odd word: the woman hid the yeast in the flour. Bakers mix it in. Why might Jesus say “hid”?",
+   "o": [
+    "Yeast was banned, so she did it secretly",
+    "The kingdom works unseen before it shows",
+    "Only she was meant to know the recipe"
+   ],
+   "a": 1,
+   "why": "Matthew’s Greek really says “hid” (enekrypsen). You never see yeast working. You only see the bread rise."
+  },
+  {
+   "t": "shot",
+   "v": "QY5-Bread-Shared",
+   "vo": [
+    "V05"
+   ],
+   "line": "Small, and hidden. That’s how Jesus said God’s kingdom starts."
+  },
+  {
+   "t": "ask",
+   "v": "QY5-Bread-Shared",
+   "eb": "did you know?",
+   "q": "Elsewhere in the Bible, yeast (leaven) is usually a picture of what?",
+   "o": [
+    "Wealth and celebration",
+    "Something that spreads and spoils",
+    "Peace in the home"
+   ],
+   "a": 1,
+   "why": "At Passover leaven is cleared from the house, and Jesus warns of “the leaven of the Pharisees.” Here he flips it: the same spreading power works for good."
+  },
+  {
+   "t": "teach",
+   "v": "QY4-Risen-Dough",
+   "say": [
+    "here’s what i love. jesus’s followers were a handful of fishermen and outsiders. by these stories, that was nothing to worry about.",
+    "christians believe God’s kingdom still grows the same way: through small, hidden acts of faith and love that slowly lift everything around them."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "QY2-Mustard-Tree",
+   "eb": "the hard one",
+   "q": "Jesus’s first followers were few and unknown. Why might he tell them these two stories?",
+   "o": [
+    "To warn them they’d always stay small",
+    "To say a small start isn’t a failed one",
+    "To tell them to keep their faith secret"
+   ],
+   "a": 1,
+   "why": "Small is how it starts. The seed and the yeast aren’t failing. They’re beginning."
+  }
+ ],
+ "today": {
+  "v": "QY6-Today",
+  "say": "small is how it starts. pick one tiny, hidden act today: a quiet kindness no one sees, a coin given, or a two-line prayer if you’d like: watch, learn, or join in. let it work like yeast.",
+  "options": [
+   [
+    "I’ll do one quietly",
+    "good. no one has to know. that’s the yeast part."
+   ],
+   [
+    "I’ll try a short prayer",
+    "lovely. two lines is plenty. small is how it starts."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "The lost sheep.",
+  "line": "a shepherd has a hundred sheep. one wanders off. he leaves the ninety-nine."
+ }
+}

@@ -1,0 +1,193 @@
+{
+ "id": "cat-sunday",
+ "home": "angelus",
+ "title": "One day that isn’t yours",
+ "told": "a story of the martyrs of Abitinae",
+ "clips": "art/sacred/cat-sunday/clips/",
+ "voice": "art/sacred/cat-sunday/voice/",
+ "guide": {
+  "name": "Nicole",
+  "photo": "art/guides/catholic.webp"
+ },
+ "card": {
+  "from": "a story of the martyrs of Abitinae",
+  "mins": 5,
+  "keep": "bell",
+  "keepName": "The Sunday bell",
+  "keepWhy": "One day a week isn’t yours to fill.",
+  "sources": [
+   "Acts of the Martyrs of Abitinae (Acta Saturnini, Dativi et aliorum), Roman Africa, 304: under Diocletian’s persecution, which banned Christian gatherings and ordered the scriptures handed over, a group of Christians of Abitinae (in present-day Tunisia) gathered for the Lord’s supper (dominicum) with the priest Saturninus; they were arrested and taken to Carthage before the proconsul Anulinus; the lector Emeritus said the gathering was held in his house and answered, “sine dominico non possumus” (“we cannot live without the Lord’s day / the Lord’s supper”); many died in prison.",
+   "John Paul II, Dies Domini (1998) 46, citing the martyrs of Abitinae; Benedict XVI, homily at Bari, 29 May 2005 (“Without Sunday we cannot live”).",
+   "Matthew 28:1; Mark 16:2; Luke 24:1; John 20:1 (the empty tomb on the first day of the week). Revelation 1:10 (the Lord’s day).",
+   "Catechism of the Catholic Church 2174-2188 (the Lord’s day; the Sunday obligation, which may be fulfilled on Sunday or the evening of the preceding day; excused for a serious reason such as illness or care of infants, 2180-2181).",
+   "Latin dies Domini; Spanish domingo; Italian domenica."
+  ],
+  "check": [
+   "The Latin dominicum can mean the Lord’s day or the Lord’s supper; the lesson translates it “Sunday,” following John Paul II and Benedict XVI. Confirm.",
+   "The Acts count about forty-nine martyrs; the painting shows “about forty” and the caption says only “a group.” Confirm."
+  ]
+ },
+ "hook": {
+  "v": "SD6-Today-Sunday-Table",
+  "say": "before the story, can i ask you something? growing up, did sunday feel like a gift or a chore?",
+  "options": [
+   [
+    "A chore, honestly",
+    "that’s honest. lots of people felt that. this story might turn it around."
+   ],
+   [
+    "A gift",
+    "then you’ll love where this goes."
+   ],
+   [
+    "Just another day",
+    "that’s most weeks now. watch what one day meant to these people."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "SD1-Abitinae-Dawn",
+   "vo": [
+    "V01"
+   ],
+   "line": "Around the year 304, in a North African town called Abitinae, the Roman emperor banned Christians from meeting. Their holy books were being taken away."
+  },
+  {
+   "t": "shot",
+   "v": "SD2-House-Mass",
+   "vo": [
+    "V02"
+   ],
+   "line": "But every Sunday, a group of them still gathered in a house, with their priest, to share the Lord’s supper: the Mass."
+  },
+  {
+   "t": "ask",
+   "v": "SD2-House-Mass",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "Soldiers find them gathered together. What do you think happens?",
+   "o": [
+    "They are arrested and taken to the governor",
+    "They hide and are never found",
+    "The soldiers quietly let them go"
+   ],
+   "a": 0,
+   "why": "They’re arrested. And they go calmly, still together."
+  },
+  {
+   "t": "shot",
+   "v": "SD3-Soldiers-At-Door",
+   "vo": [
+    "V03"
+   ],
+   "line": "Soldiers found them and took them to the city of Carthage, to stand before the Roman governor."
+  },
+  {
+   "t": "shot",
+   "v": "SD4-Before-Governor",
+   "vo": [
+    "V04"
+   ],
+   "line": "The governor asked why they had broken the emperor’s order. A man named Emeritus, who had opened his house to them, answered."
+  },
+  {
+   "t": "fill",
+   "v": "SD4-Before-Governor",
+   "eb": "guess the words",
+   "pre": "Emeritus said: “We cannot live without",
+   "post": ".”",
+   "o": [
+    "Sunday",
+    "our books",
+    "each other"
+   ],
+   "a": 0,
+   "why": "In Latin, sine dominico non possumus. Dominicum can mean the Lord’s day or the Lord’s supper; for them, the two went together."
+  },
+  {
+   "t": "shot",
+   "v": "SD5-Without-Sunday",
+   "vo": [
+    "V05"
+   ],
+   "line": "“Without Sunday, we cannot live.” Many of them never came home. But their words are still quoted by the Church today."
+  },
+  {
+   "t": "ask",
+   "v": "SD5-Without-Sunday",
+   "eb": "why?",
+   "q": "They could have prayed alone at home, safely. Why did they keep gathering on Sunday?",
+   "o": [
+    "They hadn’t heard about the ban",
+    "Sunday at the table together was life itself",
+    "Their priest ordered them to come"
+   ],
+   "a": 1,
+   "why": "For them Sunday wasn’t a rule to tick off. It was the day they met the risen Jesus at the table, together."
+  },
+  {
+   "t": "shot",
+   "v": "SD6-Today-Sunday-Table",
+   "vo": [
+    "V06"
+   ],
+   "line": "Today, the Church asks Catholics to keep Sunday: Mass on Sunday or Saturday evening, then rest, family, a long meal. Sickness or caring for someone excuses you.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "SD6-Today-Sunday-Table",
+   "eb": "did you know?",
+   "q": "Catholics can keep Sunday at a Saturday evening Mass. Why does that count?",
+   "o": [
+    "Priests can’t fit enough Masses into Sunday",
+    "In the Bible’s way of counting, a day begins at evening",
+    "Saturday was the old Sabbath, so it carries over"
+   ],
+   "a": 1,
+   "why": "“There was evening and there was morning,” says Genesis. The Church’s great days still begin the evening before, so a Saturday night vigil belongs to Sunday."
+  },
+  {
+   "t": "teach",
+   "v": "SD2-House-Mass",
+   "say": [
+    "here’s what i love. for them, sunday wasn’t homework. it was the day jesus rose, the first day of the week, and they couldn’t imagine living without it.",
+    "catholics call it the lord’s day. the church asks it as an obligation so the gift actually gets opened: left alone, a week fills every hour. one day a week isn’t yours to fill."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "SD6-Today-Sunday-Table",
+   "eb": "the hard one",
+   "q": "The Jewish Sabbath is the seventh day. Why would the first Christians gather on Sunday, the first day of the week?",
+   "o": [
+    "The Romans made them",
+    "Saturday was market day",
+    "It was the day the tomb was found empty"
+   ],
+   "a": 2,
+   "why": "All four Gospels put the empty tomb on the first day of the week. So every Sunday is a small Easter."
+  }
+ ],
+ "today": {
+  "v": "SD6-Today-Sunday-Table",
+  "say": "this sunday, keep one hour that isn’t yours to fill: mass, if you go, or a long meal, a walk, a call to family. phone face down. if you pray, you can offer the hour to God.",
+  "options": [
+   [
+    "I’ll keep an hour",
+    "good. that’s the gift getting opened."
+   ],
+   [
+    "Maybe Mass this Sunday",
+    "no pressure. even thinking about it counts. the door is open."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "Why there’s fire in every church.",
+  "line": "two weeks done. next, a small flame that never goes out."
+ }
+}

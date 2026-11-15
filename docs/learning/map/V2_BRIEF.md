@@ -1,3 +1,5 @@
+Background only (written 2026-10-07). Where this disagrees with docs/VISION-NOW.md or docs/LESSON_STANDARD.md, those win.
+
 # Job 3 brief: the new lesson recipe (chat, tap-for-meaning, old words)
 
 Owner, 2026-10-07, after studying Duolingo: lessons should break the teaching up with questions, let you tap a word to

@@ -1,3 +1,5 @@
+Background only (written September 2026). Where this disagrees with docs/VISION-NOW.md, that page wins.
+
 # Supabase backend contract
 
 This migration defines a seed-free Supabase/Postgres backend contract for Golden. It needs no cloud project, account credentials, API keys, or production secrets to review or test locally. It does not connect the current app to Supabase or establish that any backend is deployed.

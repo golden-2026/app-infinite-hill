@@ -1,0 +1,1513 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A0A0A">
+<title>The reed that remembers · infinite hill</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@500;700;800&display=swap">
+<style>
+/* Infinite Hill episode engine. Derived from SP/eps/template-full.html (episode A, "the night out").
+   One full-bleed 9:16 reel: video, film grain, particle canvas, kinetic type, then the scene layer.
+   Everything that varies per episode (genre, key, tempo, opening, transition, captions, end card, palette,
+   stage lights, particles) comes from CFG.style, which build.mjs assigns. */
+:root {
+  --night: #0A0A0A; --ink: #0A0A0A; --paper: #F3EFE4;
+  --y: #EEFF6A;      /* lime: the brand colour, CTAs and the one key word */
+  --p: #FF2D8A; --o: #FF8A1F; --g: #19E68C; --b: #2F7BFF; --v: #9B5CFF;
+  --c0: #FF2D8A; --c1: #19E68C; --c2: #2F7BFF; --c3: #FF8A1F; --c4: #9B5CFF;
+  --muted: rgba(243, 239, 228, 0.68);
+  --display: "Anton", "Impact", "Arial Narrow Bold", sans-serif;
+  --body: "Manrope", "Segoe UI", system-ui, sans-serif;
+  color-scheme: dark;
+}
+[hidden] { display: none !important; }
+html, body { height: 100%; }
+body { margin: 0; background: var(--ink); color: var(--paper); font-family: var(--body); overflow: hidden; -webkit-tap-highlight-color: transparent; }
+#app { position: fixed; inset: 0; display: grid; place-items: center; background: var(--ink); }
+#reel { position: relative; width: min(100vw, calc(100dvh * 0.5625)); height: 100%; max-height: 100dvh; overflow: hidden;
+  background: var(--night); touch-action: none; user-select: none; -webkit-user-select: none; isolation: isolate; }
+@media (max-aspect-ratio: 10/16) { #reel { width: 100vw; } }
+#shake { position: absolute; inset: 0; }
+.vid { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .35s ease, transform 9s linear;
+  transform: scale(var(--zoom, 1.02)); transform-origin: var(--ox, 50%) var(--oy, 50%); filter: var(--grade, none); }
+.vid.on { opacity: 1; }
+.vid.blur { filter: var(--grade, none) blur(14px) brightness(.7); }
+#grade { position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(rgba(5,6,12,.55), transparent 18%, transparent 46%, rgba(5,6,12,.55) 70%, rgba(5,6,12,.88)); }
+/* cinema grade (owner's standard, 2026-11-08): only on the photoreal look. darker, premium, near-black foot, soft vignette. no ring grain */
+.cine-grade .vid { filter: contrast(1.18) saturate(.92) brightness(.92); }
+.cine-grade .vid.blur { filter: contrast(1.18) saturate(.92) brightness(.92) blur(14px) brightness(.7); }
+.cine-grade #grade { background: linear-gradient(180deg, rgba(0,0,0,.35) 0%, transparent 22%, transparent 45%, rgba(0,0,0,.85) 100%),
+  radial-gradient(120% 80% at 50% 40%, transparent 55%, rgba(0,0,0,.55) 100%); }
+.cine-grade #tint { display: none; }
+#tint { position: absolute; inset: 0; pointer-events: none; mix-blend-mode: screen; opacity: 0;
+  background: radial-gradient(120% 70% at 50% 110%, var(--c0), transparent 60%), radial-gradient(90% 50% at 0% 0%, var(--c3), transparent 60%); }
+#grain { position: absolute; inset: -40px; pointer-events: none; opacity: .13; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  animation: grain .5s steps(4) infinite; }
+@keyframes grain { 25% { transform: translate(-12px, 8px); } 50% { transform: translate(10px, -14px); } 75% { transform: translate(-6px, -10px); } }
+#fx { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+#flash { position: absolute; inset: 0; pointer-events: none; opacity: 0; background: var(--y); mix-blend-mode: screen; }
+#wipe { position: absolute; inset: 0; z-index: 8; pointer-events: none; opacity: 0; }
+
+/* ---------- kinetic captions: four styles ---------- */
+#cap { position: absolute; left: 0; right: 0; top: 56%; padding-inline: max(18px, env(safe-area-inset-left, 0px)) max(18px, env(safe-area-inset-right, 0px));
+  pointer-events: none; text-align: left; }
+.chunk { font-family: var(--display); text-transform: uppercase; font-size: 58px; line-height: .92; letter-spacing: .005em;
+  color: var(--paper); text-shadow: 0 3px 0 rgba(0,0,0,.35), 0 0 28px rgba(0,0,0,.55); text-wrap: balance; }
+.chunk.long { font-size: 46px; }
+.chunk span { display: inline-block; margin-right: .18em; animation: slam .22s cubic-bezier(.2,1.6,.4,1) both; }
+.chunk .y { color: var(--y); } .chunk .p { color: var(--p); } .chunk .o { color: var(--o); } .chunk .g { color: var(--g); } .chunk .b { color: #6FA6FF; } .chunk .v { color: #B98CFF; }
+.chunk.drop { font-size: 76px; color: var(--y); text-align: center; line-height: .9; }
+.chunk.drop span { animation: dropslam .5s cubic-bezier(.2,1.4,.3,1) both; text-shadow: 0 0 40px var(--c0), 0 6px 0 var(--c0); }
+@keyframes slam { from { transform: translateY(18px) scale(1.5); opacity: 0; filter: blur(6px); } to { transform: none; opacity: 1; filter: none; } }
+@keyframes dropslam { 0% { transform: scale(3); opacity: 0; } 60% { transform: scale(.94); opacity: 1; } 100% { transform: none; } }
+/* boxed: tiktok-style word boxes, centred low */
+.cap-boxed #cap { top: 60%; text-align: center; }
+.cap-boxed .chunk { font-size: 44px; text-shadow: none; line-height: 1.12; }
+.cap-boxed .chunk span { background: var(--ink); padding: .04em .16em 0; margin: 0 .06em .1em; border-radius: 6px; animation: pop .18s cubic-bezier(.2,1.8,.4,1) both; }
+.cap-boxed .chunk span.y { background: var(--y); color: var(--ink); }
+.cap-boxed .chunk.drop span { background: var(--y); color: var(--ink); text-shadow: none; font-size: 64px; }
+@keyframes pop { from { transform: scale(.4); opacity: 0; } to { transform: none; opacity: 1; } }
+/* tilt: alternating tilted tape strips */
+.cap-tilt #cap { top: 52%; }
+.cap-tilt .chunk { display: inline-block; font-size: 54px; background: var(--ink); padding: 8px 14px 4px; box-shadow: 8px 8px 0 var(--c0); text-shadow: none;
+  transform: rotate(var(--rot, -3deg)); animation: tape .28s cubic-bezier(.2,1.5,.4,1) both; }
+.cap-tilt .chunk span { animation: none; }
+.cap-tilt .chunk.drop { background: var(--y); color: var(--ink); box-shadow: 10px 10px 0 var(--ink); font-size: 72px; }
+.cap-tilt .chunk.drop span { animation: none; text-shadow: none; }
+@keyframes tape { from { transform: rotate(var(--rot, -3deg)) scale(1.7); opacity: 0; } to { transform: rotate(var(--rot, -3deg)); opacity: 1; } }
+/* cinema (the og style, 2026-11-08): huge Anton in the lower third, one lime keyword, optional small Manrope line */
+.cap-cinema #cap { top: auto; bottom: calc(84px + env(safe-area-inset-bottom, 0px)); padding-inline: max(22px, env(safe-area-inset-left, 0px)) max(18px, env(safe-area-inset-right, 0px)); }
+.cap-cinema .chunk, .cap-cinema .chunk.long, .cap-cinema .chunk.drop { font-size: 62px; line-height: .9; letter-spacing: -.005em; color: #f4f1ea; text-align: left;
+  text-shadow: 0 2px 20px rgba(0,0,0,.45); text-wrap: balance; animation: cineIn .4s cubic-bezier(.2,.9,.3,1) both; }
+.cap-cinema .chunk span, .cap-cinema .chunk.drop span { display: inline-block; white-space: nowrap; margin-right: .2em; color: #f4f1ea; animation: none; text-shadow: inherit; }
+.cap-cinema .chunk span.k { color: var(--y); }
+.cap-cinema .sub { font: 700 15px/1.35 var(--body); color: #f4f1ea; opacity: .9; margin-top: 12px; text-shadow: 0 1px 10px rgba(0,0,0,.6); }
+@keyframes cineIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+/* ticker: a running lower third that builds the sentence */
+.cap-ticker #cap { top: auto; bottom: calc(86px + env(safe-area-inset-bottom, 0px)); }
+.tick { border-left: 6px solid var(--y); padding: 6px 0 6px 14px; font: 800 27px/1.22 var(--body); color: var(--paper); text-shadow: 0 2px 14px rgba(0,0,0,.8); }
+.tick span { animation: up .3s cubic-bezier(.2,1,.3,1) both; display: inline; }
+.tick .y { color: var(--y); } .tick .p { color: var(--p); } .tick .o { color: var(--o); } .tick .g { color: var(--g); } .tick .b { color: #6FA6FF; } .tick .v { color: #B98CFF; }
+.cap-ticker .chunk.drop { font-size: 84px; }
+
+/* ---------- top chrome ---------- */
+#top { position: absolute; left: 0; right: 0; top: 0; padding: calc(10px + env(safe-area-inset-top, 0px)) max(12px, env(safe-area-inset-right, 0px)) 0 max(12px, env(safe-area-inset-left, 0px));
+  display: grid; gap: 10px; pointer-events: none; z-index: 5; transition: opacity .3s; }
+#bars { display: flex; gap: 3px; }
+#bars i { flex: 1; height: 3px; border-radius: 3px; background: rgba(255,255,255,.28); overflow: hidden; }
+#bars i b { display: block; height: 100%; width: 0; background: var(--paper); }
+#handle { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 800; }
+#handle img { width: 30px; height: 30px; border-radius: 50%; background: var(--y); object-fit: cover; object-position: 50% 18%; }
+#handle small { font-weight: 600; color: var(--muted); font-size: 13px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 56vw; }
+.iconbtn { position: absolute; z-index: 6; top: calc(40px + env(safe-area-inset-top, 0px)); right: max(12px, env(safe-area-inset-right, 0px));
+  width: 40px; height: 40px; border-radius: 50%; border: 0; background: rgba(5,6,12,.45); color: var(--paper); display: grid; place-items: center; cursor: pointer; backdrop-filter: blur(8px); }
+.iconbtn svg { width: 20px; height: 20px; }
+#skip { position: absolute; z-index: 6; right: max(14px, env(safe-area-inset-right, 0px)); bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+  border: 0; border-radius: 999px; padding: 10px 14px; background: rgba(5,6,12,.5); color: var(--paper); font: 800 13px var(--body);
+  letter-spacing: .04em; cursor: pointer; backdrop-filter: blur(8px); display: flex; align-items: center; gap: 6px; }
+/* the hint: small and quiet (2026-11-08): Manrope, low-opacity cream, no animation */
+#hint { position: absolute; z-index: 6; left: max(22px, env(safe-area-inset-left, 0px)); bottom: calc(28px + env(safe-area-inset-bottom, 0px)); max-width: 62%;
+  font: 600 12px/1.2 var(--body); letter-spacing: .02em; color: rgba(243,239,228,.5); opacity: 0; pointer-events: none; }
+#hint.on { opacity: 1; }
+#hint .dot { display: none; }
+@keyframes blink { 50% { box-shadow: 0 0 0 9px rgba(238,255,106,0); } }
+button:focus-visible, a:focus-visible { outline: 3px solid var(--y); outline-offset: 3px; }
+
+/* ---------- scene layer ---------- */
+#layer { position: absolute; inset: 0; z-index: 4; pointer-events: none; }
+#layer > * { pointer-events: auto; }
+.pad { position: absolute; inset: 0; display: flex; flex-direction: column;
+  padding: calc(84px + env(safe-area-inset-top, 0px)) max(20px, env(safe-area-inset-right, 0px)) calc(28px + env(safe-area-inset-bottom, 0px)) max(20px, env(safe-area-inset-left, 0px)); }
+.bigbtn { border: 0; cursor: pointer; border-radius: 999px; padding: 18px 26px; font: 800 18px var(--body); color: var(--ink); text-decoration: none;
+  background: var(--y); display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 6px 0 #b9c93a; }
+.bigbtn:active { transform: translateY(4px); box-shadow: 0 2px 0 #b9c93a; }
+.bigbtn svg { width: 22px; height: 22px; }
+.pulse { animation: pulse 1.2s ease-in-out infinite; }
+@keyframes pulse { 50% { box-shadow: 0 6px 0 #b9c93a, 0 0 0 14px rgba(238,255,106,.18); } }
+.linkbtn { border: 0; background: none; color: var(--muted); font: 700 14px var(--body); padding: 6px 2px; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.ghost { background: transparent; color: var(--paper); box-shadow: inset 0 0 0 2px rgba(243,239,228,.4); }
+.ghost:active { box-shadow: inset 0 0 0 2px rgba(243,239,228,.4); }
+
+/* ---------- openings: eight layouts ---------- */
+.open { background: #000; justify-content: center; gap: 0; overflow: hidden; }
+.open .cta { position: relative; z-index: 3; margin-top: auto; display: grid; gap: 12px; justify-items: start; }
+.open.go .cta { display: none; }
+.ohead { position: relative; z-index: 2; flex: 1; display: flex; flex-direction: column; justify-content: center; min-height: 0; }
+.ohead .y { color: var(--y); }
+.oh1 { margin: 0; font: 400 76px/0.9 var(--display); text-transform: uppercase; letter-spacing: .005em; }
+.oh1 span { display: block; opacity: 0; animation: slam .2s cubic-bezier(.2,1.6,.4,1) forwards; }
+.open.go { background: radial-gradient(90% 60% at 50% 55%, color-mix(in srgb, var(--y) 70%, transparent), rgba(238,255,106,.18) 45%, rgba(10,10,10,.2) 80%); transition: background .25s; }
+/* word: one giant word at a time */
+.op-word .ohead { align-items: center; text-align: center; }
+.op-word .w1 { font: 400 110px/.9 var(--display); text-transform: uppercase; animation: dropslam .24s cubic-bezier(.2,1.5,.3,1) both; overflow-wrap: anywhere; }
+.op-word .wsmall { font: 800 16px var(--body); letter-spacing: .2em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+/* split: two colour halves */
+.op-split { padding: 0; }
+.op-split .ohead { justify-content: stretch; }
+.op-split .half { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 22px 18px; overflow: hidden; transition: transform .5s cubic-bezier(.7,0,.3,1); }
+.op-split .half.t { background: var(--y); color: var(--ink); padding-top: calc(60px + env(safe-area-inset-top, 0px)); }
+.op-split .half.b { background: var(--ink); justify-content: flex-start; padding-top: 18px; }
+.op-split .half p { margin: 0; font: 400 66px/.92 var(--display); text-transform: uppercase; animation: slidein .4s cubic-bezier(.2,1.3,.3,1) both; }
+.op-split .half.b p:nth-child(2) { animation-delay: .35s; }
+@keyframes slidein { from { transform: translateX(-110%); } to { transform: none; } }
+.op-split .half.t p { animation-name: slidein2; } @keyframes slidein2 { from { transform: translateX(110%); } to { transform: none; } }
+.op-split .cta { position: absolute; left: 20px; right: 20px; bottom: calc(28px + env(safe-area-inset-bottom, 0px)); }
+.op-split.go .half.t { transform: translateY(-100%); } .op-split.go .half.b { transform: translateY(100%); }
+.op-split .mid { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; padding: 0 22px; z-index: 1; }
+/* giant: each line fills the screen */
+.op-giant .ohead { justify-content: center; }
+.op-giant .g1 { font: 400 120px/.86 var(--display); text-transform: uppercase; white-space: nowrap; animation: dropslam .3s cubic-bezier(.2,1.4,.3,1) both; }
+/* type: typewriter */
+.op-type .ohead { justify-content: center; }
+.op-type .tw { font: 800 31px/1.28 var(--body); white-space: pre-wrap; min-height: 4em; }
+.op-type .tw.big { font: 400 74px/.92 var(--display); text-transform: uppercase; }
+.op-type .cur { display: inline-block; width: .5em; height: 1em; background: var(--y); vertical-align: -.12em; margin-left: 2px; animation: cur .8s steps(1) infinite; }
+@keyframes cur { 50% { opacity: 0; } }
+/* marquee: a vertical scroll of outline lines */
+.op-marquee { padding-left: 0; padding-right: 0; }
+.op-marquee .mq-col { position: absolute; inset: -40% 0 auto 0; display: flex; flex-direction: column; align-items: center; animation: mq 9s linear infinite; }
+.op-marquee .mq-col p { margin: 0; font: 400 86px/.98 var(--display); text-transform: uppercase; color: transparent; -webkit-text-stroke: 2px rgba(243,239,228,.55); white-space: nowrap; }
+.op-marquee .mq-col p.y { color: var(--y); -webkit-text-stroke: 0; }
+@keyframes mq { to { transform: translateY(-50%); } }
+.op-marquee.go .mq-col { animation-duration: 1.6s; }
+.op-marquee .band { position: absolute; left: 0; right: 0; top: 50%; transform: translateY(-50%); background: var(--ink); padding: 18px 20px; z-index: 2; }
+.op-marquee .band span { display: block; font: 400 70px/.9 var(--display); text-transform: uppercase; animation: dropslam .3s both; }
+.op-marquee .cta { padding: 0 20px; }
+/* tape: lines on tilted strips */
+.op-tape .ohead { gap: 18px; justify-content: center; }
+.op-tape .strip { align-self: flex-start; font: 400 58px/1 var(--display); text-transform: uppercase; padding: 10px 16px 4px; margin-left: -8px;
+  animation: tape .3s cubic-bezier(.2,1.5,.4,1) both; transition: transform .45s cubic-bezier(.7,0,.3,1); }
+.op-tape .strip:nth-child(1) { background: var(--paper); color: var(--ink); --rot: -6deg; }
+.op-tape .strip:nth-child(2) { background: var(--ink); color: var(--paper); box-shadow: inset 0 0 0 2px var(--paper); --rot: 4deg; margin-left: 30px; }
+.op-tape .strip:nth-child(3) { background: var(--y); color: var(--ink); --rot: -3deg; }
+.op-tape .strip.off { transform: translateX(140%) rotate(20deg) !important; }
+/* outline: stroked type that fills */
+.op-outline .ohead { justify-content: center; }
+.op-outline .ol { margin: 0; font: 400 80px/.9 var(--display); text-transform: uppercase; color: transparent; -webkit-text-stroke: 2px var(--paper);
+  transition: color .5s; animation: up .45s cubic-bezier(.2,1,.3,1) both; }
+.op-outline .ol.fill { color: var(--paper); } .op-outline .ol.fill.y { color: var(--y); -webkit-text-stroke-color: var(--y); }
+
+/* lime: the shock opener. a full lime frame, black type, then it flips to black */
+.op-lime { background: var(--y); color: var(--ink); }
+.op-lime .oh1 span { font-size: 1.12em; }
+.op-lime .ohead .y { color: var(--ink); background: var(--paper); padding: 0 .1em; align-self: flex-start; }
+.op-lime .series { background: var(--ink); color: var(--y); }
+.op-lime #goSound { background: var(--ink); color: var(--y); box-shadow: 0 6px 0 #000; } .op-lime .linkbtn { color: rgba(10,10,10,.7); }
+.op-lime.go { background: var(--ink); color: var(--paper); } .op-lime.go .ohead .y { color: var(--y); background: none; padding: 0; }
+/* the series tag on every opening: the wordmark as a graphic */
+.series { position: absolute; z-index: 3; top: calc(18px + env(safe-area-inset-top, 0px)); left: max(18px, env(safe-area-inset-left, 0px)); background: var(--y); color: var(--ink);
+  font: 400 15px/1 var(--display); letter-spacing: .06em; text-transform: uppercase; padding: 7px 10px 5px; transform: rotate(-2deg); }
+.series b { font-weight: 400; opacity: .55; margin-left: 6px; }
+#wipe .wm { position: absolute; inset: 0; display: grid; place-items: center; font: 400 92px/.84 var(--display); text-transform: uppercase; color: var(--ink); text-align: center; letter-spacing: -.01em; }
+
+/* ---------- quiz (clean) and game ---------- */
+.game { background: radial-gradient(120% 70% at 50% 100%, rgba(238,255,106,.10), transparent 60%), rgba(10,10,10,.8); gap: 14px; justify-content: flex-end; }
+/* the celebrity guide asks every question and says every scripted line (round photo + name). Finn is wordless: a still pops on a win */
+.guiderow { display: flex; align-items: flex-start; gap: 10px; }
+.guiderow .gimg { width: 46px; height: 46px; flex: none; border-radius: 50%; object-fit: cover; border: 2px solid var(--y); }
+.guiderow .gbub { flex: 1; min-width: 0; background: var(--paper); color: var(--ink); border-radius: 6px 20px 20px 20px; padding: 10px 14px 12px; font: 800 16px/1.3 var(--body); }
+.guiderow .gbub b { color: var(--ink); background: var(--y); padding: 0 .2em; border-radius: 4px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.guiderow .gname { display: block; font: 800 11px/1.2 var(--body); letter-spacing: .1em; text-transform: uppercase; color: rgba(10,10,10,.55); margin-bottom: 3px; }
+.asker { display: flex; align-items: center; gap: 8px; font: 800 12px/1.2 var(--body); letter-spacing: .1em; text-transform: uppercase; color: var(--y); }
+.asker img { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; border: 2px solid var(--y); flex: none; }
+.finnwin { position: absolute; right: 10px; top: calc(134px + env(safe-area-inset-top, 0px)); width: 112px; height: 112px; pointer-events: none; z-index: 4; filter: drop-shadow(0 10px 24px rgba(0,0,0,.5)); animation: finnwin .7s cubic-bezier(.3,1.6,.5,1) both; }
+@keyframes finnwin { 0% { transform: scale(.3) rotate(-14deg); opacity: 0; } 60% { transform: scale(1.1) rotate(6deg); opacity: 1; } 100% { transform: none; } }
+@media (prefers-reduced-motion: reduce) { .finnwin { animation: none; } }
+.finnrow { display: flex; align-items: flex-end; gap: 6px; }
+.finnrow img { width: 150px; height: 150px; flex: none; margin-left: -12px; filter: drop-shadow(0 10px 24px rgba(0,0,0,.5)); }
+.bubble { position: relative; flex: 1; min-width: 0; background: var(--paper); color: var(--ink); border-radius: 22px 22px 22px 6px; padding: 14px 16px; font: 800 17px/1.3 var(--body); margin-bottom: 54px; }
+.bubble b { color: var(--ink); background: var(--y); padding: 0 .2em; border-radius: 4px; }
+.q { font: 400 40px/.95 var(--display); text-transform: uppercase; margin: 0; text-wrap: balance; }
+.q .o { color: var(--y); }
+.opts { display: grid; gap: 12px; }
+.opt { border: 0; cursor: pointer; text-align: left; border-radius: 18px; padding: 16px 18px; font: 800 18px/1.22 var(--body);
+  background: #1c1c1c; color: var(--paper); box-shadow: 0 6px 0 #000, inset 0 0 0 2px #2a2a2a; transition: transform .08s; }
+.opt:active { transform: translateY(4px); box-shadow: 0 2px 0 #000, inset 0 0 0 2px #2a2a2a; }
+.opt.no { background: #141414; box-shadow: 0 6px 0 #000, inset 0 0 0 2px rgba(243,239,228,.3); color: rgba(243,239,228,.5); animation: nope .35s; }
+.opt.yes { background: var(--g); color: var(--ink); box-shadow: 0 6px 0 #0f9a5c; }
+.opt.dim { opacity: .45; }
+@keyframes nope { 20%, 60% { transform: translateX(-8px); } 40%, 80% { transform: translateX(8px); } }
+.next { align-self: stretch; justify-content: center; }
+.quiz { background: linear-gradient(rgba(10,10,10,.35), rgba(10,10,10,.92) 45%); gap: 14px; justify-content: flex-end; }
+.quiz .qq { margin: 0; font: 800 23px/1.28 var(--body); text-wrap: pretty; }
+.quiz .qq .blank { display: inline-block; min-width: 3.4em; border-bottom: 3px solid var(--y); color: var(--y); text-align: center; }
+.quiz .why, .meaning { background: rgba(243,239,228,.09); border-radius: 16px; padding: 12px 14px; font: 700 15.5px/1.45 var(--body); animation: up .5s .1s both; }
+.quiz .why b, .meaning b { color: var(--y); }
+.quiz .opt { font-size: 17px; }
+.pad.scroll { overflow-y: auto; justify-content: flex-start; }
+.pad.scroll > :first-child { margin-top: auto; }
+.pad.scroll .finnrow img { width: 96px; height: 96px; margin-left: -8px; }
+.pad.scroll .bubble { margin-bottom: 26px; font-size: 16px; }
+.chip { align-self: flex-start; background: var(--paper); color: var(--ink); border-radius: 999px; padding: 7px 12px; font: 800 12px var(--body); letter-spacing: .12em; text-transform: uppercase; }
+.chip.lime { background: var(--y); }
+.pairs { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.pairs .opt { font-size: 14.5px; padding: 14px 12px; }
+.opt.sel { box-shadow: 0 6px 0 #000, inset 0 0 0 3px var(--y); }
+.opt.done { background: var(--g); color: var(--ink); box-shadow: 0 4px 0 #0f9a5c; }
+
+/* ---------- teaching ---------- */
+.teach { padding-bottom: calc(76px + env(safe-area-inset-bottom, 0px)); background: linear-gradient(rgba(10,10,10,.55), rgba(10,10,10,.9) 50%); gap: 16px; justify-content: flex-end; }
+.teach h2 { margin: 0; font: 400 74px/.88 var(--display); text-transform: uppercase; color: var(--y); text-wrap: balance; }
+.teach h2 em { font-style: normal; color: var(--paper); }
+.teach p { margin: 0; font: 800 19px/1.36 var(--body); max-width: 32ch; }
+.src { font: 600 12.5px/1.45 var(--body); color: var(--muted); border-top: 1px solid rgba(243,239,228,.18); padding-top: 12px; }
+.src b { color: var(--paper); }
+.rise > * { animation: up .5s cubic-bezier(.2,1,.3,1) both; }
+.rise > *:nth-child(2) { animation-delay: .15s; } .rise > *:nth-child(3) { animation-delay: .9s; } .rise > *:nth-child(4) { animation-delay: 1.8s; } .rise > *:nth-child(5) { animation-delay: 2.6s; }
+@keyframes up { from { transform: translateY(24px); opacity: 0; } to { transform: none; opacity: 1; } }
+
+/* ---------- today ---------- */
+.today { background: linear-gradient(rgba(10,10,10,.3), rgba(10,10,10,.94) 40%); gap: 14px; justify-content: flex-end; }
+.today .say { margin: 0; font: 800 20px/1.36 var(--body); }
+.today h2 { margin: 0; font: 400 64px/.9 var(--display); text-transform: uppercase; }
+.today h2 .y { color: var(--y); }
+.reply { align-self: flex-start; background: var(--paper); color: var(--ink); border-radius: 20px 20px 20px 6px; padding: 12px 14px; font: 800 17px/1.35 var(--body); max-width: 92%; animation: up .4s both; }
+.pick { align-self: flex-end; background: var(--y); color: var(--ink); border-radius: 20px 20px 6px 20px; padding: 12px 14px; font: 700 16px/1.35 var(--body); max-width: 88%; animation: up .4s both; }
+
+/* ---------- end cards: four layouts ---------- */
+.end { background: rgba(10,10,10,.55); gap: 14px; justify-content: center; padding-top: calc(92px + env(safe-area-inset-top, 0px)); }
+.card { position: relative; flex: 1; min-height: 0; border-radius: 28px; overflow: hidden; color: var(--ink); padding: 22px 20px;
+  display: flex; flex-direction: column; gap: 10px; box-shadow: 0 20px 60px rgba(0,0,0,.5); animation: cardin .7s cubic-bezier(.2,1.3,.3,1) both; }
+@keyframes cardin { from { transform: translateY(60px) rotate(-4deg) scale(.9); opacity: 0; } to { transform: none; opacity: 1; } }
+.card > .deco { position: absolute; pointer-events: none; }
+.card > *:not(.deco) { position: relative; }
+.card .mark { display: flex; justify-content: space-between; align-items: center; font: 800 15px var(--body); letter-spacing: -.01em; }
+.card .mark span + span { font-weight: 700; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+.card .eyebrow { font: 800 12.5px var(--body); letter-spacing: .14em; text-transform: uppercase; margin-top: 4px; }
+.card h2 { margin: 0; font: 400 100px/.84 var(--display); text-transform: uppercase; }
+.card .line { font: 800 18px/1.28 var(--body); max-width: 24ch; }
+.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: auto; }
+.stat { background: var(--ink); color: var(--paper); border-radius: 16px; padding: 12px 14px; min-width: 0; }
+.stat b { display: block; font: 400 40px/1 var(--display); color: var(--y); font-variant-numeric: tabular-nums; }
+.stat span { font: 700 12px/1.25 var(--body); color: var(--muted); }
+/* Finn sits in the tag row so he never covers the type */
+.card .tag { font: 800 13px var(--body); display: flex; align-items: center; justify-content: space-between; gap: 10px; flex: none; min-height: 24px; }
+.card .tag img.finn { position: static; flex: none; width: 52px; height: 52px; margin: -16px -4px -10px 0; transform: rotate(8deg); }
+.endbtns { display: flex; gap: 10px; flex-wrap: wrap; }
+.endbtns .bigbtn { flex: 1; justify-content: center; padding: 16px 18px; font-size: 17px; }
+.endbtns .home { flex-basis: 100%; }
+.end .endbtns .ghost { padding: 13px 10px; font-size: 15px; }
+/* sticker */
+.e-sticker .card { background: var(--paper); }
+.card h2 { line-height: .94; } .card h2 .w { display: inline-block; }
+.e-sticker .card h2 .w { background: var(--ink); color: var(--paper); padding: .07em .12em 0; margin-bottom: .05em; transform: rotate(-1.5deg); }
+.e-sticker .card h2 .w.y { color: var(--y); transform: rotate(1deg); }
+.e-sticker .d1 { width: 380px; height: 380px; border-radius: 50%; right: -150px; top: -120px; background: var(--y); }
+.e-sticker .d2 { width: 260px; height: 260px; border-radius: 50%; left: -110px; bottom: -70px; background: rgba(10,10,10,.12); }
+.e-sticker .d3 { left: -40px; right: -40px; bottom: 150px; height: 46px; background: var(--y); transform: rotate(-8deg); }
+.e-sticker .d4 { inset: 0; opacity: .18; mix-blend-mode: multiply; background-image: radial-gradient(rgba(0,0,0,.6) 1px, transparent 1.2px); background-size: 4px 4px; }
+/* poster: the still shows through, type is the design */
+.e-poster .card { background: transparent; color: var(--paper); box-shadow: none; border-radius: 0; padding: 6px 0 0; justify-content: flex-end; }
+.e-poster .card h2 { font-size: 112px; } .e-poster .card h2 .y { color: var(--y); }
+.e-poster .card .line { max-width: 28ch; }
+.e-poster .bar { height: 10px; width: 120px; background: var(--y); }
+.e-poster .stat { background: rgba(10,10,10,.82); backdrop-filter: blur(8px); }
+/* ticket: cream stub with perforation */
+.e-ticket .card { background: var(--paper); border-radius: 18px; }
+.e-ticket .card h2 { color: var(--ink); } .e-ticket .card h2 .y { color: var(--ink); background: var(--y); padding: .06em .08em 0; }
+.e-ticket .d1 { left: -16px; top: 62%; width: 32px; height: 32px; border-radius: 50%; background: rgba(5,6,12,1); }
+.e-ticket .d2 { right: -16px; top: 62%; width: 32px; height: 32px; border-radius: 50%; background: rgba(5,6,12,1); }
+.e-ticket .d3 { left: 22px; right: 22px; top: calc(62% + 15px); border-top: 3px dashed rgba(10,10,10,.35); }
+.e-ticket .d4 { right: -60px; top: 40px; transform: rotate(90deg); font: 400 30px var(--display); letter-spacing: .1em; color: rgba(10,10,10,.22); opacity: .9; }
+.e-ticket .eyebrow { color: rgba(10,10,10,.6); }
+/* the tear line sits right above the stats, so it never crosses the type (2026-11-15) */
+.e-ticket .d1, .e-ticket .d2, .e-ticket .d3, .e-ticket .d4 { display: none; }
+.e-ticket .stats { border-top: 3px dashed rgba(10,10,10,.35); padding-top: 14px; }
+/* block: lime block over ink */
+.e-block .card { background: var(--ink); color: var(--paper); padding: 0; box-shadow: 0 0 0 2px rgba(243,239,228,.14), 0 20px 60px rgba(0,0,0,.5); }
+.e-block .top { background: var(--y); color: var(--ink); padding: 20px 20px 18px; display: flex; flex-direction: column; gap: 8px; }
+.e-block .top h2 { color: var(--ink); } .e-block .top h2 .y { background: var(--ink); color: var(--y); padding: .06em .1em 0; }
+.e-block .low { padding: 16px 20px 20px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+.e-block .stat { background: #1c1c1c; }
+/* drop: lime card, black type, the chunky wordmark as the graphic */
+.e-drop .card { background: var(--y); color: var(--ink); border-radius: 6px; box-shadow: 10px 10px 0 var(--paper), 0 20px 60px rgba(0,0,0,.5); }
+.e-drop .card h2 { color: var(--ink); font-size: 108px; } .e-drop .card h2 .y { background: var(--ink); color: var(--y); padding: .06em .1em 0; }
+.e-drop .d1 { left: -8px; right: -8px; bottom: -20px; font: 400 92px/.8 var(--display); text-transform: uppercase; color: var(--ink); opacity: .1; white-space: nowrap; }
+.e-drop .eyebrow { background: var(--ink); color: var(--y); align-self: flex-start; padding: 5px 8px 4px; }
+#toast { position: absolute; left: 50%; bottom: calc(96px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); z-index: 9;
+  background: var(--paper); color: var(--ink); border-radius: 999px; padding: 10px 16px; font: 800 14px var(--body); opacity: 0; transition: opacity .3s; pointer-events: none; white-space: nowrap; }
+#toast.on { opacity: 1; }
+/* remix: the lime pill under the sound button (ih-remix.js draws it and its sheet) */
+#close { right: max(12px, env(safe-area-inset-right, 0px)); }
+#snd { right: calc(60px + env(safe-area-inset-right, 0px)); }
+.series-t { position: absolute; z-index: 3; top: calc(56px + env(safe-area-inset-top, 0px)); left: max(18px, env(safe-area-inset-left, 0px)); max-width: calc(100% - 150px); background: var(--ink); color: var(--paper); border-radius: 6px; padding: 5px 9px 6px; font: 800 14px/1.25 var(--body); transform: rotate(-2deg); }
+#reel > .rx-btn { top: calc(90px + env(safe-area-inset-top, 0px)); right: max(12px, env(safe-area-inset-right, 0px)); }
+#reel.rx-hide > .rx-btn { opacity: 0; pointer-events: none; }
+
+/* ---------- cliffhanger ---------- */
+.cliff { background: #000; justify-content: flex-end; gap: 12px; overflow: hidden; }
+.cliff svg.crack { position: absolute; left: 0; top: 6%; width: 100%; height: 30%; overflow: hidden; }
+.cliff svg.crack path { fill: none; stroke: var(--y); stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round;
+  filter: drop-shadow(0 0 6px var(--y)) drop-shadow(0 0 18px rgba(238,255,106,.5)); stroke-dasharray: 900; stroke-dashoffset: 900; transition: stroke-dashoffset .4s ease-out; }
+.cliff svg.crack path.on { stroke-dashoffset: 0; }
+.cliff .glow { position: absolute; left: 50%; top: 24%; width: 10px; height: 10px; border-radius: 50%; transform: translate(-50%, -50%); background: rgba(238,255,106,.3); transition: box-shadow .5s; }
+.cliff .glow.l1 { box-shadow: 0 0 80px 30px color-mix(in srgb, var(--y) 15%, transparent); }
+.cliff .glow.l2 { box-shadow: 0 0 140px 70px color-mix(in srgb, var(--y) 22%, transparent); }
+.cliff .glow.l3 { box-shadow: 0 0 260px 170px color-mix(in srgb, var(--y) 32%, transparent); }
+.cliff .eb { position: relative; font: 800 12px var(--body); letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
+.cliff .say { position: relative; z-index: 1; text-shadow: 0 2px 14px #000; margin: 0; font: 800 20px/1.32 var(--body); opacity: 0; transition: opacity .4s; }
+.cliff .say.on { opacity: 1; }
+.cliff .say i { font-style: normal; color: var(--y); }
+.cliff h2 { position: relative; z-index: 1; margin: 0; font: 400 66px/.88 var(--display); text-transform: uppercase; color: var(--y); opacity: 0; text-wrap: balance; }
+.cliff h2.on { opacity: 1; animation: dropslam .5s cubic-bezier(.2,1.4,.3,1) both; }
+.cliff .endbtns { opacity: 0; transition: opacity .5s; pointer-events: none; }
+.cliff .endbtns.on { opacity: 1; pointer-events: auto; }
+
+@media (prefers-reduced-motion: reduce) {
+  .chunk span, .chunk.drop span, .oh1 span, .rise > *, .card, .cliff h2.on, .tick span, .cap-tilt .chunk, .op-word .w1, .op-giant .g1, .op-tape .strip { animation: fade .4s ease both !important; }
+  .opt.no { animation: none; } .pulse, #hint .dot, #grain, .op-marquee .mq-col { animation: none !important; }
+  @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+}
+</style>
+</head>
+<body>
+<div id="app">
+  <div id="reel" aria-label="story reel">
+    <div id="shake">
+      <video class="vid" id="vA" muted playsinline preload="auto" aria-hidden="true"></video>
+      <video class="vid" id="vB" muted playsinline preload="auto" aria-hidden="true"></video>
+      <div id="tint"></div>
+      <div id="grade"></div>
+      <div id="grain"></div>
+      <canvas id="fx" aria-hidden="true"></canvas>
+      <div id="flash"></div>
+      <div id="cap" aria-live="polite" translate="no"></div>
+    </div>
+    <div id="layer"></div>
+    <div id="wipe"></div>
+    <div id="top">
+      <div id="bars"></div>
+      <div id="handle"><img id="hfinn" src="" alt=""><span>infinite hill</span><small id="htag"></small></div>
+    </div>
+    <button class="iconbtn" id="snd" aria-label="Sound on" aria-pressed="false"></button>
+    <button class="iconbtn" id="close" aria-label="close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <button id="skip" aria-label="Next"><span id="skipT">next</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+    <div id="hint"><span class="dot"></span><span id="hintText"></span></div>
+    <div id="toast" role="status"></div>
+  </div>
+</div>
+
+<script src="../assets/ih-remix.js"></script>
+<script>
+(function () {
+"use strict";
+var RM = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+var $ = function (s) { return document.querySelector(s); };
+var reel = $("#reel"), layer = $("#layer"), cap = $("#cap"), flashEl = $("#flash"), tint = $("#tint"), shakeEl = $("#shake"), wipe = $("#wipe");
+var vids = [$("#vA"), $("#vB")], vidIx = 0;
+var ICON_ON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></svg>';
+var ICON_OFF = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M17 9l5 6M22 9l-5 6"/></svg>';
+function esc(s) { return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+
+/* ---------- the episode (build.mjs injects it) ---------- */
+var CFG = {"id":"wild-reed","title":"The reed that remembers","told":"from the life of Rumi","home":"wild","faithName":"my own religion","tag":"my own religion · from the life of rumi","ep":21,"base":"../../","assets":"../assets/","clips":"art/sacred/wild-reed/clips/","voice":"art/sacred/wild-reed/voice/","guide":{"name":"Justin Bieber","photo":"art/guides/spiritual.webp"},"poster":"RMI4-Friends","open":["1244.","a stranger walks in.","the books go in the pool."],"open2":["and that","was just","the start."],"hint":"tap anywhere to start the turning","particle":"light","energy":"mystic","seq":[{"k":"clip","n":0,"v":"RMI1-Konya","line":"In 1244, in the city of Konya, in today’s Turkey, Rumi was a respected Muslim scholar and teacher, with books, students and a fine name.","vo":["V01"],"hot":{},"mood":1,"key":["konya"]},{"k":"clip","n":1,"v":"RMI2-The-Pool","line":"Then a wandering stranger came to town: Shams of Tabriz. In one popular telling, he found Rumi reading beside a pool.","vo":["V02"],"hot":{"stranger":"y"},"mood":1,"key":["stranger"]},{"k":"game","v":"RMI3-Books-In-Water","game":{"ask":0,"q":"shams looks at rumi’s precious books. <span class=\"o\">what does he do?</span>","opts":[["borrow","“borrows one, never gives it back”"],["yes","“throws them into the water”"],["shelf","“reorganizes the shelf by color”"]],"wrong":{"borrow":"classic friend move. not this friend.","shelf":"aesthetic. but shams had a wilder way of waking people up."},"right":"YES. into the pool. shams had a way of shaking people awake."}},{"k":"clip","n":2,"v":"RMI3-Books-In-Water","line":"Shams tossed the books into the water. Rumi cried out. Shams lifted them out, dry. “What is this?” Rumi asked. “Something you don’t know yet.”","vo":["V03"],"hot":{"dry":"y"},"mood":2,"build":true,"key":["dry"]},{"k":"clip","n":3,"v":"RMI4-Friends","line":"The two became inseparable. Rumi’s students grew jealous. Then one day Shams was gone, and no one knows for sure what happened.","vo":["V04"],"hot":{"gone":"p"},"mood":2,"drop":true,"dropWord":"gone","key":["gone"]},{"k":"quiz","v":"RMI4-Friends","blur":false,"eb":"did you know?","q":"Shams left Konya once before, for Damascus. What did Rumi do?","o":["Let him go, and went back to teaching","Sent his own son to bring him back","Closed his school and left Konya"],"a":1,"why":"His son Sultan Walad found Shams in Damascus and brought him home. When Shams vanished the second time, Rumi went searching himself, and came back with poems."},{"k":"clip","n":4,"v":"RMI5-The-Reed","line":"Out of the loss came an ocean of poems. His great work, the Masnavi, begins with a reed flute, crying.","vo":["V05"],"hot":{"poems":"y"},"mood":1,"key":["poems"]},{"k":"clip","n":5,"v":"RMI5-The-Reed","line":"The reed was cut from its reed bed. Every note it plays, Rumi says, is a song of longing to go back home.","vo":["V06"],"hot":{"longing":"y"},"mood":1,"key":["longing"]},{"k":"quiz","v":"RMI5-The-Reed","blur":false,"eb":"why?","q":"Why would a reed flute, the ney, be such a good picture of a longing soul?","o":["It’s hollow, and sings only when breathed into","It was the easiest flute to make","It plays only in a minor key"],"a":0,"why":"A ney must be cut, dried and hollowed before it can sing. Many Sufis read it as the self, emptied, so the breath of God can play through."},{"k":"clip","n":6,"v":"RMI6-Today","line":"Today his name is on poems shared on phones every day, often with his faith left out. He was a Muslim scholar, and his poems are full of the Qur’an.","vo":["V07"],"hot":{},"mood":3,"key":["muslim"],"party":true},{"k":"quiz","v":"RMI6-Today","blur":false,"eb":"did you know?","q":"After Rumi died, his followers founded the Mevlevi order. What are they famous for?","o":["Silent walking through the city","Chanting in the desert at night","Turning, slowly, in a whirling prayer"],"a":2,"why":"The Mevlevi sema is a turning prayer to the ney: right palm up to receive, left palm down to pass it on. It’s remembrance of God, not a show."},{"k":"quiz","v":"RMI5-The-Reed","blur":false,"eb":"the hard one","q":"Rumi lost his closest friend, then wrote about a reed cut from its bed. What might the reed have meant, for him?","o":["Only his grief for his lost friend","His childhood home, left behind for good","His grief for Shams, and for God"],"a":2,"why":"Many readers hear both: missing a friend opened a deeper missing, the soul’s longing for God, its first home."},{"k":"teach","v":"RMI5-The-Reed","h":"love is the road <em>back.</em>","say":["here’s what i love. rumi was already wise and respected. then a friend turned his whole life over, and the grief became poetry.","in sufi teaching, the reed is the soul, cut from its source, which is god, and longing to return. love is the road back. and a famous saying credited to him, in a modern english version, imagines a field past all the arguing about right and wrong, where he’ll meet you."],"src":"Rumi, Masnavi 1.1–18, the song of the reed"},{"k":"today","v":"RMI6-Today","say":"today, think of one person you’ve been at odds with, even a little. don’t fix anything. just picture a wide field, and the two of you walking into it from opposite sides. meet me there.","options":[["I have someone","then let there be room for both of you."],["I’ll try it","good. no arguing in the field."]]},{"k":"end"},{"k":"cliff"}],"end":{"h":["cut","from","home."],"line":"a friend turned a scholar’s life over. the grief became a reed that sings for home.","l1":"a friend arrived, then vanished.","l2":"the grief became poems.","eyebrow":"my own religion · from the life of rumi"},"cliff":{"s1":"a new camp opens:","s2":"the most powerful man in the world <i>doesn’t want to get out of bed.</i>","tmr":"tomorrow: the emperor under the blankets."},"share":"a stranger threw rumi’s books in a pool. the story on infinite hill","style":{"genre":"bhajanclub","key":6,"keyName":"F#","bpm":103,"swing":0,"scale":"major","drumsOnly":false,"energy":"mystic","open":"split","trans":"punch","trans2":"blinds","cap":"ticker","endL":"block","stage":"lasers","grade":"contrast(1.12) brightness(1.04) saturate(1.05)","paletteName":"tea house","palette":["#C21E56","#FFB23F","#F3EFE4","#19E68C","#FF8A1F"],"particle":"light","seed":79369,"configured":true}};
+if (!CFG) { document.body.innerHTML = '<p style="padding:24px;font:700 18px Manrope,sans-serif">this episode isn’t built yet.</p>'; return; }
+var ST = CFG.style || {};
+var BASE = CFG.base || "../../", ASSETS = CFG.assets || "../assets/";
+/* remix live picks (presentation only). RX.look picks a painted look folder (art/sacred/<id>/looks/<look>/) */
+var RX = { genre: null, cap: null, energy: "og", look: null };
+var LOOKS_DIR = String(CFG.clips || "").replace(/clips\/?$/, "looks/");
+function media(v, ext) { return BASE + (RX.look && RX.look !== "original" ? LOOKS_DIR + RX.look + "/" : CFG.clips) + v + "." + ext; }
+function mediaOG(v, ext) { return BASE + CFG.clips + v + "." + ext; }
+function voUrl(n) { return BASE + CFG.voice + n + ".mp3"; }
+var DRUMS_ONLY = !!ST.drumsOnly;
+
+// brand palette: five curated colours for this faith + lime, always
+var COLORS = (ST.palette && ST.palette.length ? ST.palette.slice(0, 5) : ["#FF2D8A", "#19E68C", "#2F7BFF", "#FF8A1F", "#9B5CFF"]).concat(["#EEFF6A"]);
+COLORS.slice(0, 5).forEach(function (c, k) { document.documentElement.style.setProperty("--c" + k, c); });
+// the cinema grade sits on the photoreal look only: "original" (clips/), or "cinema" when looks.json makes it the default. remix looks play ungraded
+var PHOTO = CFG.looks && CFG.looks.default === "cinema" && (CFG.looks.looks || []).indexOf("cinema") >= 0 ? "cinema" : "original";
+function setGrade() { reel.classList.toggle("cine-grade", (RX.look || PHOTO) === PHOTO); }
+setGrade();
+// captions: "cinema" is the og style for every episode; the episode's built style (ST.cap) stays one tap away in remix
+reel.classList.add("cap-cinema");
+function capStyle() { return RX.cap || "cinema"; }
+// the header names the story itself (one name per story, 2026-11-15); the series stays a small eyebrow on the cover
+document.getElementById("htag").textContent = CFG.title || CFG.tag || "";
+
+/* ---------- language: the app's signal. ?lang= first, then the app's saved setting (ih-hill-doors), then the phone ---------- */
+var ES = (function () {
+  try { var q = /[?&]lang=(en|es)\b/.exec(location.search); if (q) return q[1] === "es";
+    var sv = JSON.parse(localStorage.getItem("ih-hill-doors") || "null"); if (!sv || !sv.lang) sv = JSON.parse(localStorage.getItem("ih-hill-app-demo") || "null");
+    if (sv && (sv.lang === "es" || sv.lang === "en")) return sv.lang === "es";
+    return /^es\b/i.test((navigator.languages && navigator.languages[0]) || navigator.language || ""); } catch (e) { return false; }
+})();
+var APP_URL = BASE + "hill-app-doors.html";
+function appLink(q) { var s = q || ""; if (ES) s += (s ? "&" : "?") + "lang=es"; return APP_URL + s; }
+// close: back to the app (the app's frame listens for {ih:"close"}); opened on its own, it goes to the app page
+$("#close").addEventListener("click", function (e) { e.stopPropagation(); try { vo.pause(); } catch (x) {}
+  if (window.parent && window.parent !== window) { try { window.parent.postMessage({ ih: "close" }, "*"); return; } catch (x) {} }
+  location.href = appLink(""); });
+
+/* ---------- Spanish for the episode's own frame (sweep 2026-11-15). only the frame's lines (buttons, labels, reactions)
+   change; the story itself (captions, questions, answers, teaching) stays as written and is marked translate="no" ---------- */
+(function () {
+  if (!ES) return;
+  document.documentElement.lang = "es";
+  var D = { "tap for sound": "toca para el sonido", "watch with sound off": "ver sin sonido", "the long game": "la jugada larga", "next": "siguiente", "what’s next": "lo que sigue",
+    "keep going": "sigue", "quick one": "una rápida", "did you know?": "¿lo sabías?", "finish the line": "completa la frase", "the surprise": "la sorpresa", "the hard one": "la difícil", "why?": "¿por qué?",
+    "your guess": "tu apuesta", "what happens next?": "¿qué pasa después?", "you’re in it": "estás ahí", "think about it": "piénsalo", "guess the words": "adivina las palabras", "yes. that’s it.": "sí. eso es.", "nailed it.": "la clavaste.", "you got it.": "lo tienes.",
+    "exactly right.": "exacto.", "look at you.": "mírate nada más.", "correct. i’m impressed.": "correcto. me impresionas.", "close. here’s the real one.": "cerca. esta es la buena.",
+    "not quite. this one’s it.": "casi. es esta.", "good guess. here’s what happened.": "buena idea. esto fue lo que pasó.", "almost. look.": "casi. mira.",
+    "ok real quick. no pressure.": "a ver, rapidito. sin presión.", "(some pressure.)": "(un poco de presión.)", "try again.": "intenta otra vez.", "not this one.": "esta no.", "yes!": "¡sí!",
+    "the real teaching": "la enseñanza de verdad", "heart of it.": "el corazón de esto.", "here’s the": "aquí está", "where it’s from:": "de dónde viene:",
+    "match them up.": "únelas.", "tap the pairs.": "toca las parejas.", "tap one on the left first.": "primero toca una de la izquierda.", "all of them.": "todas.", "close. try another one.": "cerca. prueba otra.",
+    "your move today": "tu paso de hoy", "i’m in": "me apunto", "love that.": "me encanta.",
+    "story card for your collection": "carta para tu colección", "questions you got first try": "preguntas al primer intento", "religion, reimagined.": "la religión, reimaginada.",
+    "head home": "volver a casa", "captions": "subtítulos", "done": "listo", "drums only on this one": "solo percusión en este", "energy": "energía", "look": "estilo", "music": "música",
+    "forget all my picks": "olvidar mis elecciones", "reset to the director’s cut": "volver al corte del director", "use my picks on every film": "usar mis elecciones en todos", "director’s cut. as made.": "corte del director. tal cual.",
+    "fresh start.": "desde cero.", "og energy": "energía original", "his little pop-ups": "sus apariciones", "close": "cerrar","claim my card": "quiero mi carta", "see what you unlocked": "mira lo que desbloqueaste", "keep going ›": "sigue ›", "quick one for you.": "una rápida para ti.", "(you got this.)": "(tú puedes.)", "pop quiz. don’t panic.": "examen sorpresa. sin pánico.", "(ok, panic a little.)": "(bueno, un poquito de pánico.)", "let’s see if you were listening.": "a ver si estabas escuchando.", "(i think you were.)": "(creo que sí.)", "share": "compartir", "replay": "repetir", "watch again": "ver otra vez", "next time on infinite hill": "la próxima vez en infinite hill",
+    "that’s the story.": "esa es la historia.", "tomorrow: a new story.": "mañana: una historia nueva.", "tap anywhere": "toca donde sea", "tap for next": "toca para seguir",
+    "admit one": "pase uno", "link copied. go post it.": "enlace copiado. a publicarlo.", "copy this page’s link to share it": "copia el enlace de esta página para compartirla",
+    "christian": "cristiana", "catholic": "católica", "jewish": "judía", "muslim": "musulmana", "hindu": "hindú", "buddhist": "budista", "sikh": "sij", "my own religion": "mi propia religión" };
+  function tr(s) { var k = s.trim().replace(/'/g, "’"); if (D[k] != null) return s.replace(s.trim(), D[k]);
+    var m = /^tomorrow: (.+)$/.exec(k); if (m) return s.replace(s.trim(), "mañana: " + m[1]);
+    m = /^the long game · ep (\d+)$/.exec(k); if (m) return s.replace(s.trim(), "la jugada larga · ep " + m[1]);
+    m = /^ep (\d+) · (christian|catholic|jewish|muslim|hindu|buddhist|sikh|my own religion) · the long game$/.exec(k); if (m) return s.replace(s.trim(), "ep " + m[1] + " · " + D[m[2]] + " · la jugada larga");
+    m = /^ep (\d+) · (christian|catholic|jewish|muslim|hindu|buddhist|sikh|my own religion)$/.exec(k); if (m) return s.replace(s.trim(), "ep " + m[1] + " · " + D[m[2]]);
+    m = /^(christian|catholic|jewish|muslim|hindu|buddhist|sikh|my own religion) · (.+)$/.exec(k); if (m) return s.replace(s.trim(), D[m[1]] + " · " + m[2]);
+    return null; }
+  // story text (captions, questions, answers, teaching) is never word-swapped: skip anything inside translate="no"
+  function story(n) { var e = n.nodeType === 1 ? n : n.parentElement; return !!(e && e.closest && e.closest('[translate="no"]')); }
+  function fix(n) { if (story(n)) return; var x = tr(n.nodeValue); if (x != null && x !== n.nodeValue) n.nodeValue = x; }
+  function walk(root) { if (story(root)) return; var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT), n; while ((n = w.nextNode())) fix(n); }
+  function go() { var r = document.getElementById("reel"); if (!r) return; walk(r); new MutationObserver(function (ms) { ms.forEach(function (m) { [].forEach.call(m.addedNodes, function (a) { if (a.nodeType === 3) fix(a); else if (a.nodeType === 1) walk(a); }); if (m.type === "characterData") fix(m.target); }); }).observe(r, { childList: true, subtree: true, characterData: true }); }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", go); else go();
+})();
+
+/* ---------- the sequence ---------- */
+var SCENES = [{ k: "open" }].concat(CFG.seq || []);
+if (!SCENES.some(function (s) { return s.k === "end"; })) SCENES.push({ k: "end" });
+var CLIPS = SCENES.filter(function (s) { return s.k === "clip"; });
+var FIRST_CLIP = CLIPS[0], LAST_CLIP = CLIPS[CLIPS.length - 1] || {};
+var POSTER = CFG.poster || (LAST_CLIP.v) || (FIRST_CLIP && FIRST_CLIP.v);
+
+/* ---------- state ---------- */
+var cur = -1, token = 0, timers = [], soundOn = false, everSound = false, throws = 0, tries = 0, solved = false, quizRight = 0, quizSeen = {};
+function later(fn, ms) { var t = token; var id = setTimeout(function () { if (t === token) fn(); }, ms); timers.push(id); return id; }
+function clearTimers() { timers.forEach(clearTimeout); timers = []; }
+function vibrate(p) { try { if (navigator.vibrate) navigator.vibrate(p); } catch (e) {} }
+function toast(msg) { var t = $("#toast"); t.textContent = msg; t.classList.add("on"); clearTimeout(toast.id); toast.id = setTimeout(function () { t.classList.remove("on"); }, 2200); }
+function rng(seed) { var a = seed >>> 0 || 1; return function () { a |= 0; a = a + 0x6D2B79F5 | 0; var t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+var R0 = rng(ST.seed || 7);
+
+/* ===== BLOCK IH_AUDIO_CORE (reusable): audio graph, synth helpers, instrument table I, play() ===== */
+/* =====================================================================
+   MUSIC: live-made in WebAudio. One genre per episode (CFG.style.genre),
+   in its own key and tempo. Moods: 0 silent, 1 calm, 2 build, "game", 3 drop/party, "pillar" (cliff).
+   ===================================================================== */
+var ctx = null, master, musicBus, musicLP, verb, noiseBuf, droneGain, droneNodes = [];
+function clock() { return ctx ? ctx.currentTime : performance.now() / 1000; }
+var STATS = {};   // per-instrument hit counts (QA reads these to prove the music differs)
+function initAudio() {
+  if (ctx) return;
+  var AC = window.AudioContext || window.webkitAudioContext; if (!AC) return;
+  try { ctx = new AC(); } catch (e) { ctx = null; return; }
+  master = ctx.createGain(); master.gain.value = 0.9;
+  var comp = ctx.createDynamicsCompressor(); comp.threshold.value = -14; comp.ratio.value = 4; comp.attack.value = 0.004; comp.release.value = 0.2;
+  master.connect(comp); comp.connect(ctx.destination);
+  musicLP = ctx.createBiquadFilter(); musicLP.type = "lowpass"; musicLP.frequency.value = GEN.lp || 18000; musicLP.Q.value = 0.8;
+  musicBus = ctx.createGain(); musicBus.gain.value = 0.62; musicBus.connect(musicLP); musicLP.connect(master);
+  verb = ctx.createConvolver(); var len = ctx.sampleRate * (GEN.room || 1.8), ir = ctx.createBuffer(2, len, ctx.sampleRate);
+  for (var c = 0; c < 2; c++) { var d = ir.getChannelData(c); for (var i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, 2.6); }
+  verb.buffer = ir; var vg = ctx.createGain(); vg.gain.value = GEN.wet || 0.28; verb.connect(vg); vg.connect(musicBus);
+  noiseBuf = ctx.createBuffer(1, ctx.sampleRate * 2, ctx.sampleRate); var nd = noiseBuf.getChannelData(0); for (var j = 0; j < nd.length; j++) nd[j] = Math.random() * 2 - 1;
+  droneGain = ctx.createGain(); droneGain.gain.value = 0;
+  if (GEN.drone && !DRUMS_ONLY) {
+    // a harmonium-ish drone on the tonic and fifth
+    var dlp = ctx.createBiquadFilter(); dlp.type = "lowpass"; dlp.frequency.value = 1100; dlp.Q.value = 2;
+    var lfo = ctx.createOscillator(), lfoG = ctx.createGain(); lfo.frequency.value = 0.18; lfoG.gain.value = 380; lfo.connect(lfoG); lfoG.connect(dlp.frequency); lfo.start();
+    var r = ROOT * 4;
+    [r, r * 1.004, r * 1.5, r * 1.497, r * 2].forEach(function (f, k) {
+      var o = ctx.createOscillator(); o.type = k % 2 ? "square" : "sawtooth"; o.frequency.value = f;
+      var g = ctx.createGain(); g.gain.value = k === 4 ? 0.05 : 0.08; o.connect(g); g.connect(dlp); o.start(); droneNodes.push(o);
+    });
+    dlp.connect(droneGain); droneGain.connect(musicBus); var dv = ctx.createGain(); dv.gain.value = 0.3; droneGain.connect(dv); dv.connect(verb);
+  }
+}
+function env(g, t, a, peak, dec) { g.gain.cancelScheduledValues(t); g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(Math.max(0.0002, peak), t + a); g.gain.exponentialRampToValueAtTime(0.0001, t + a + dec); }
+function osc(type, f, t, dur, out) { var o = ctx.createOscillator(); o.type = type; o.frequency.setValueAtTime(f, t); var g = ctx.createGain(); o.connect(g); g.connect(out || musicBus); o.start(t); o.stop(t + dur + 0.05); return { o: o, g: g }; }
+function noise(t, dur, type, freq, q, out) { var s = ctx.createBufferSource(); s.buffer = noiseBuf; var f = ctx.createBiquadFilter(); f.type = type; f.frequency.value = freq; f.Q.value = q || 1;
+  var g = ctx.createGain(); s.connect(f); f.connect(g); g.connect(out || musicBus); s.start(t, Math.random()); s.stop(t + dur + 0.05); return { s: s, f: f, g: g }; }
+function filt(type, f, q) { var b = ctx.createBiquadFilter(); b.type = type; b.frequency.value = f; b.Q.value = q || 1; return b; }
+function thru(o, node) { o.o.disconnect(); o.o.connect(node); node.connect(o.g); return o; }
+function hold(g, t, a, peak, dur, rel) { g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(peak, t + a); g.gain.setValueAtTime(peak, t + Math.max(a, dur - rel)); g.gain.exponentialRampToValueAtTime(0.0001, t + dur + rel); }
+
+var I = {
+  /* drums */
+  kick: function (t, v) { var a = osc("sine", 160, t, 0.5); a.o.frequency.exponentialRampToValueAtTime(42, t + 0.13); env(a.g, t, 0.003, 1.1 * v, 0.42); var c = noise(t, 0.02, "highpass", 3000, 0.7); env(c.g, t, 0.001, 0.25 * v, 0.02); },
+  kickSoft: function (t, v) { var a = osc("sine", 120, t, 0.4); a.o.frequency.exponentialRampToValueAtTime(48, t + 0.1); env(a.g, t, 0.006, 0.8 * v, 0.3); },
+  kick808: function (t, v) { var f = ROOT * 1.5; var a = osc("sine", f * 3, t, 1.1); a.o.frequency.exponentialRampToValueAtTime(f, t + 0.06); env(a.g, t, 0.003, 1.0 * v, 0.95);
+    var c = noise(t, 0.015, "highpass", 2500, 0.7); env(c.g, t, 0.001, 0.2 * v, 0.015); },
+  snare: function (t, v) { var n = noise(t, 0.22, "bandpass", 1900, 0.7); env(n.g, t, 0.001, 0.55 * v, 0.17); var a = osc("triangle", 200, t, 0.12); a.o.frequency.exponentialRampToValueAtTime(150, t + 0.08); env(a.g, t, 0.001, 0.35 * v, 0.09); },
+  gated: function (t, v) { var n = noise(t, 0.36, "bandpass", 1700, 0.6); n.g.connect(verb); hold(n.g, t, 0.002, 0.5 * v, 0.24, 0.02); var a = osc("triangle", 180, t, 0.14); env(a.g, t, 0.001, 0.3 * v, 0.1); },
+  rim: function (t, v) { var a = osc("square", 820, t, 0.04); thru(a, filt("bandpass", 1700, 3)); env(a.g, t, 0.001, 0.35 * v, 0.03); var n = noise(t, 0.03, "highpass", 3500, 1); env(n.g, t, 0.001, 0.2 * v, 0.02); },
+  snap: function (t, v) { var n = noise(t, 0.06, "bandpass", 2600, 1.6); env(n.g, t, 0.001, 0.7 * v, 0.05); n.g.connect(verb); },
+  clap: function (t, v) { for (var k = 0; k < 3; k++) { var n = noise(t + k * 0.011, 0.16, "bandpass", 1600, 1.2); env(n.g, t + k * 0.011, 0.001, 0.45 * v, k === 2 ? 0.16 : 0.02); if (k === 2) n.g.connect(verb); } },
+  clapStack: function (t, v) { I.clap(t, v); I.clap(t + 0.018, v * 0.7); var n = noise(t, 0.3, "bandpass", 1100, 0.8); env(n.g, t, 0.002, 0.25 * v, 0.25); n.g.connect(verb); },
+  hatC: function (t, v) { var n = noise(t, 0.04, "highpass", 8200, 0.9); env(n.g, t, 0.001, 0.2 * v, 0.03); },
+  hatO: function (t, v) { var n = noise(t, 0.3, "highpass", 7200, 0.8); env(n.g, t, 0.002, 0.16 * v, 0.24); },
+  shaker: function (t, v) { var n = noise(t, 0.05, "highpass", 7500, 0.8); env(n.g, t, 0.003, 0.14 * v, 0.04); },
+  conga: function (t, v) { var a = osc("sine", 340, t, 0.25); a.o.frequency.exponentialRampToValueAtTime(300, t + 0.05); env(a.g, t, 0.002, 0.45 * v, 0.17); var n = noise(t, 0.02, "bandpass", 1200, 1); env(n.g, t, 0.001, 0.15 * v, 0.015); },
+  congaLo: function (t, v) { var a = osc("sine", 215, t, 0.3); a.o.frequency.exponentialRampToValueAtTime(190, t + 0.06); env(a.g, t, 0.002, 0.5 * v, 0.22); },
+  agogo: function (t, v) { var f = (STATS.agogo || 0) % 2 ? 587 : 880; var a = osc("square", f, t, 0.2); thru(a, filt("bandpass", f * 1.4, 4)); env(a.g, t, 0.001, 0.22 * v, 0.16); },
+  timbale: function (t, v) { var a = osc("triangle", 520, t, 0.2); env(a.g, t, 0.001, 0.4 * v, 0.14); var n = noise(t, 0.05, "bandpass", 4000, 2); env(n.g, t, 0.001, 0.2 * v, 0.04); },
+  taiko: function (t, v) { var a = osc("sine", 95, t, 0.9); a.o.frequency.exponentialRampToValueAtTime(52, t + 0.18); env(a.g, t, 0.003, 1.1 * v, 0.75); var n = noise(t, 0.3, "lowpass", 380, 1); env(n.g, t, 0.002, 0.5 * v, 0.25); n.g.connect(verb); },
+  tom: function (t, v) { var a = osc("sine", 170, t, 0.4); a.o.frequency.exponentialRampToValueAtTime(110, t + 0.16); env(a.g, t, 0.002, 0.6 * v, 0.3); },
+  dagga: function (t, v) { var a = osc("sine", 118, t, 0.4); a.o.frequency.exponentialRampToValueAtTime(58, t + 0.09); env(a.g, t, 0.002, 0.9 * v, 0.32);
+    var b = osc("triangle", 180, t, 0.2); b.o.frequency.exponentialRampToValueAtTime(90, t + 0.06); env(b.g, t, 0.002, 0.25 * v, 0.12);
+    var n = noise(t, 0.08, "lowpass", 900, 1); env(n.g, t, 0.001, 0.4 * v, 0.07); },
+  tilli: function (t, v) { var n = noise(t, 0.1, "bandpass", 2600, 1.4); env(n.g, t, 0.001, 0.55 * v, 0.07); n.g.connect(verb); var a = osc("sine", 540, t, 0.08); env(a.g, t, 0.001, 0.18 * v, 0.05); },
+  na: function (t, v) { var a = osc("sine", 690, t, 0.4); env(a.g, t, 0.002, 0.32 * v, 0.28); var b = osc("sine", 1380, t, 0.2); env(b.g, t, 0.002, 0.1 * v, 0.12); a.g.connect(verb); },
+  ge: function (t, v) { var a = osc("sine", 82, t, 0.6); a.o.frequency.linearRampToValueAtTime(118, t + 0.32); env(a.g, t, 0.004, 0.75 * v, 0.5); },
+  /* frame drum family (the only sounds a percussion-only episode may use, with claps and shaker) */
+  dum: function (t, v) { var f = ROOT * 2.2; var a = osc("sine", f * 1.3, t, 0.6); a.o.frequency.exponentialRampToValueAtTime(f, t + 0.05); env(a.g, t, 0.003, 0.95 * v, 0.45);
+    var n = noise(t, 0.12, "lowpass", 260, 1); env(n.g, t, 0.002, 0.45 * v, 0.1); a.g.connect(verb); },
+  dumBig: function (t, v) { var f = ROOT * 1.6; var a = osc("sine", f * 1.6, t, 2.0); a.o.frequency.exponentialRampToValueAtTime(f * 0.8, t + 0.4); env(a.g, t, 0.004, 1.2 * v, 1.7);
+    var n = noise(t, 0.6, "lowpass", 300, 0.8); env(n.g, t, 0.003, 0.7 * v, 0.5); n.g.connect(verb); },
+  tek: function (t, v) { var n = noise(t, 0.06, "bandpass", ROOT * 40, 2.2); env(n.g, t, 0.001, 0.55 * v, 0.05); var a = osc("sine", ROOT * 12, t, 0.05); env(a.g, t, 0.001, 0.18 * v, 0.035); },
+  jingle: function (t, v) { for (var k = 0; k < 3; k++) { var n = noise(t + k * 0.009, 0.08, "highpass", 9000, 1.5); env(n.g, t + k * 0.009, 0.001, 0.12 * v, 0.07); } },
+  /* fx */
+  crash: function (t, v) { var n = noise(t, 2.2, "highpass", 4500, 0.6); env(n.g, t, 0.002, 0.5 * v, 2.0); n.g.connect(verb); },
+  boom: function (t, v) { var a = osc("sine", 70, t, 2.4); a.o.frequency.exponentialRampToValueAtTime(28, t + 1.8); env(a.g, t, 0.004, 1.2 * v, 2.2); var n = noise(t, 1.2, "lowpass", 400, 0.7); env(n.g, t, 0.003, 0.7 * v, 1.1); },
+  crack: function (t, v) { var n = noise(t, 0.3, "highpass", 1200, 0.9); env(n.g, t, 0.001, 0.8 * v, 0.22); n.g.connect(verb); var b = noise(t, 0.6, "lowpass", 200, 1); env(b.g, t, 0.003, 0.9 * v, 0.55); },
+  vinyl: function (t, v) { var n = noise(t, 0.01, "highpass", 3000, 1); env(n.g, t, 0.001, 0.08 * v, 0.008); },
+  riser: function (t, dur) { var n = noise(t, dur, "bandpass", 300, 5); n.f.frequency.setValueAtTime(300, t); n.f.frequency.exponentialRampToValueAtTime(7000, t + dur);
+    n.g.gain.setValueAtTime(0.0001, t); n.g.gain.exponentialRampToValueAtTime(0.4, t + dur); n.g.gain.setValueAtTime(0.0001, t + dur + 0.01); },
+  sweep: function (t, dur) { var a = osc("sawtooth", ROOT * 2, t, dur); a.o.frequency.exponentialRampToValueAtTime(ROOT * 16, t + dur); a.g.gain.setValueAtTime(0.0001, t); a.g.gain.exponentialRampToValueAtTime(0.05, t + dur); a.g.gain.setValueAtTime(0.0001, t + dur + 0.01); },
+  /* bass */
+  sub808: function (t, f, dur, v, to) { var a = osc("sine", f, t, dur + 0.15); if (to) a.o.frequency.exponentialRampToValueAtTime(to, t + dur * 0.9);
+    var ws = ctx.createWaveShaper(), cv = new Float32Array(256); for (var i = 0; i < 256; i++) { var x = i / 128 - 1; cv[i] = Math.tanh(x * 2.2); } ws.curve = cv; thru(a, ws); hold(a.g, t, 0.005, 0.7 * v, dur, 0.08); },
+  sawb: function (t, f, dur, v) { var a = osc("sawtooth", f, t, dur + 0.1); var lp = filt("lowpass", 900, 1); lp.frequency.setValueAtTime(900, t); lp.frequency.exponentialRampToValueAtTime(160, t + dur); thru(a, lp); env(a.g, t, 0.006, 0.32 * v, dur);
+    var s = osc("sine", f, t, dur + 0.1); env(s.g, t, 0.006, 0.55 * v, dur); },
+  pluckb: function (t, f, dur, v) { var a = osc("triangle", f, t, 0.4); var lp = filt("lowpass", 1400, 2); lp.frequency.setValueAtTime(1400, t); lp.frequency.exponentialRampToValueAtTime(200, t + 0.2); thru(a, lp); env(a.g, t, 0.003, 0.7 * v, Math.min(dur, 0.3)); },
+  reese: function (t, f, dur, v) { var lp = filt("lowpass", 520, 1.4), g = ctx.createGain(); lp.connect(g); g.connect(musicBus);
+    var l = ctx.createOscillator(), lg = ctx.createGain(); l.frequency.value = 0.7; lg.gain.value = 260; l.connect(lg); lg.connect(lp.frequency); l.start(t); l.stop(t + dur + 0.1);
+    [0.993, 1.007].forEach(function (d) { var o = ctx.createOscillator(); o.type = "sawtooth"; o.frequency.value = f * d; o.connect(lp); o.start(t); o.stop(t + dur + 0.1); });
+    hold(g, t, 0.01, 0.26 * v, dur, 0.05); var s = osc("sine", f, t, dur + 0.1); hold(s.g, t, 0.01, 0.4 * v, dur, 0.05); },
+  sineb: function (t, f, dur, v) { var s = osc("sine", f, t, dur + 0.2); hold(s.g, t, 0.02, 0.6 * v, dur, 0.1); var h = osc("triangle", f * 2, t, dur + 0.2); hold(h.g, t, 0.02, 0.06 * v, dur, 0.1); },
+  organb: function (t, f, dur, v) { [1, 2, 3].forEach(function (m, k) { var s = osc("sine", f * m, t, dur + 0.1); hold(s.g, t, 0.01, [0.5, 0.22, 0.1][k] * v, dur, 0.06); }); },
+  logd: function (t, f, dur, v) { var a = osc("sine", f * 2, t, 0.6); a.o.frequency.setValueAtTime(f * 3.2, t); a.o.frequency.exponentialRampToValueAtTime(f * 2, t + 0.03); env(a.g, t, 0.002, 0.8 * v, 0.42);
+    var b = osc("triangle", f * 4, t, 0.2); env(b.g, t, 0.002, 0.12 * v, 0.1); },
+  /* leads */
+  reed: function (t, f, dur, v) { var o1 = ctx.createOscillator(), o2 = ctx.createOscillator(); o1.type = "square"; o2.type = "sawtooth"; o1.frequency.value = f; o2.frequency.value = f * 1.004;
+    var vib = ctx.createOscillator(), vg = ctx.createGain(); vib.frequency.value = 5.6; vg.gain.value = f * 0.012; vib.connect(vg); vg.connect(o1.frequency); vg.connect(o2.frequency);
+    var bp = filt("bandpass", 1500, 1.1); var g = ctx.createGain(); o1.connect(bp); o2.connect(bp); bp.connect(g); g.connect(musicBus); g.connect(verb);
+    hold(g, t, 0.03, 0.15 * v, dur * 0.85, dur * 0.15); [o1, o2, vib].forEach(function (o) { o.start(t); o.stop(t + dur + 0.05); }); },
+  marimba: function (t, f, dur, v) { var a = osc("sine", f, t, 0.6); env(a.g, t, 0.002, 0.32 * v, 0.45); var b = osc("sine", f * 4, t, 0.2); env(b.g, t, 0.001, 0.08 * v, 0.08); a.g.connect(verb); },
+  bell: function (t, f, dur, v) { var c = osc("sine", f, t, 1.6), m = ctx.createOscillator(), mg = ctx.createGain(); m.frequency.value = f * 3.5; mg.gain.setValueAtTime(f * 2.2, t); mg.gain.exponentialRampToValueAtTime(f * 0.05, t + 1.2);
+    m.connect(mg); mg.connect(c.o.frequency); m.start(t); m.stop(t + 1.7); env(c.g, t, 0.002, 0.2 * v, 1.4); c.g.connect(verb); },
+  epiano: function (t, f, dur, v) { var c = osc("sine", f, t, 1.4), m = ctx.createOscillator(), mg = ctx.createGain(); m.frequency.value = f; mg.gain.setValueAtTime(f * 0.9, t); mg.gain.exponentialRampToValueAtTime(f * 0.02, t + 0.5);
+    m.connect(mg); mg.connect(c.o.frequency); m.start(t); m.stop(t + 1.5); env(c.g, t, 0.003, 0.22 * v, Math.max(0.5, Math.min(1.2, dur * 1.5))); c.g.connect(verb); },
+  organ: function (t, f, dur, v) { [1, 2, 3, 4].forEach(function (m, k) { var s = osc("sine", f * m, t, dur + 0.1); hold(s.g, t, 0.01, [0.12, 0.08, 0.05, 0.03][k] * v, dur, 0.05); if (!k) s.g.connect(verb); }); },
+  brass: function (t, f, dur, v) { var lp = filt("lowpass", 400, 2), g = ctx.createGain(); lp.connect(g); g.connect(musicBus); g.connect(verb);
+    lp.frequency.setValueAtTime(400, t); lp.frequency.exponentialRampToValueAtTime(2600, t + 0.07); lp.frequency.exponentialRampToValueAtTime(1300, t + 0.3);
+    [1, 1.006, 0.5].forEach(function (d) { var o = ctx.createOscillator(); o.type = "sawtooth"; o.frequency.value = f * d; o.connect(lp); o.start(t); o.stop(t + dur + 0.1); });
+    hold(g, t, 0.03, 0.09 * v, dur, 0.08); },
+  tumbi: function (t, f, dur, v) { var a = osc("square", f * 1.04, t, 0.3); a.o.frequency.exponentialRampToValueAtTime(f, t + 0.03); thru(a, filt("bandpass", 2600, 3)); env(a.g, t, 0.001, 0.5 * v, 0.2); a.g.connect(verb); },
+  arp: function (t, f, dur, v) { var a = osc("sawtooth", f, t, 0.3); var lp = filt("lowpass", 3200, 3); lp.frequency.setValueAtTime(3200, t); lp.frequency.exponentialRampToValueAtTime(500, t + 0.18); thru(a, lp); env(a.g, t, 0.002, 0.14 * v, 0.2); a.g.connect(verb); },
+  piano: function (t, f, dur, v) { var a = osc("triangle", f, t, 1.4); env(a.g, t, 0.002, 0.3 * v, 1.1); var b = osc("sine", f * 2, t, 0.8); env(b.g, t, 0.002, 0.1 * v, 0.6); var c = osc("sine", f * 3, t, 0.4); env(c.g, t, 0.002, 0.04 * v, 0.3); a.g.connect(verb); },
+  chop: function (t, f, dur, v) { var g = ctx.createGain(); g.connect(musicBus); g.connect(verb); [700, 1150].forEach(function (fm) { var bp = filt("bandpass", fm, 6); bp.connect(g); var o = ctx.createOscillator(); o.type = "sawtooth"; o.frequency.value = f; o.connect(bp); o.start(t); o.stop(t + 0.25); });
+    env(g, t, 0.005, 0.5 * v, 0.17); },
+  cowbell: function (t, f, dur, v) { var g = ctx.createGain(), bp = filt("bandpass", f * 2.2, 2); bp.connect(g); g.connect(musicBus); [1, 1.48].forEach(function (m) { var o = ctx.createOscillator(); o.type = "square"; o.frequency.value = f * m; o.connect(bp); o.start(t); o.stop(t + 0.4); });
+    env(g, t, 0.001, 0.32 * v, 0.3); },
+  pluck: function (t, f, dur, v) { var a = osc("sawtooth", f, t, 0.35); var lp = filt("lowpass", 3800, 1); lp.frequency.setValueAtTime(3800, t); lp.frequency.exponentialRampToValueAtTime(300, t + 0.22); thru(a, lp); env(a.g, t, 0.002, 0.18 * v, 0.26); a.g.connect(verb); },
+  glass: function (t, f, dur, v) { var a = osc("sine", f, t, 2); env(a.g, t, 0.004, 0.18 * v, 1.7); var b = osc("sine", f * 2.76, t, 1); env(b.g, t, 0.003, 0.05 * v, 0.8); a.g.connect(verb); b.g.connect(verb); },
+  flute: function (t, f, dur, v) { var a = osc("sine", f, t, dur + 0.1); var vib = ctx.createOscillator(), vg = ctx.createGain(); vib.frequency.value = 5; vg.gain.value = f * 0.008; vib.connect(vg); vg.connect(a.o.frequency); vib.start(t); vib.stop(t + dur + 0.1);
+    hold(a.g, t, 0.06, 0.2 * v, dur, 0.08); a.g.connect(verb); var n = noise(t, dur, "bandpass", f * 2, 4); hold(n.g, t, 0.05, 0.04 * v, dur, 0.05); },
+  /* pads: (t, freqs, dur, v) */
+  warm: function (t, fs, dur, v) { var lp = filt("lowpass", 900, 0.7), g = ctx.createGain(); lp.connect(g); g.connect(musicBus); g.connect(verb);
+    fs.forEach(function (f) { [0.996, 1.004].forEach(function (d) { var o = ctx.createOscillator(); o.type = "sawtooth"; o.frequency.value = f * d; o.connect(lp); o.start(t); o.stop(t + dur + 0.6); }); });
+    hold(g, t, 0.4, 0.035 * v, dur, 0.5); },
+  strings: function (t, fs, dur, v) { var lp = filt("lowpass", 1900, 0.6), g = ctx.createGain(); lp.connect(g); g.connect(musicBus); g.connect(verb);
+    fs.forEach(function (f) { [0.994, 1, 1.006].forEach(function (d) { var o = ctx.createOscillator(); o.type = "sawtooth"; o.frequency.value = f * d; o.connect(lp); o.start(t); o.stop(t + dur + 0.8); }); });
+    hold(g, t, 0.6, 0.026 * v, dur, 0.7); },
+  choir: function (t, fs, dur, v) { var g = ctx.createGain(); g.connect(musicBus); g.connect(verb); var b1 = filt("bandpass", 620, 5), b2 = filt("bandpass", 1050, 6); b1.connect(g); b2.connect(g);
+    fs.forEach(function (f) { var o = ctx.createOscillator(); o.type = "sawtooth"; o.frequency.value = f; o.connect(b1); o.connect(b2); var vib = ctx.createOscillator(), vg = ctx.createGain(); vib.frequency.value = 4.5 + Math.random(); vg.gain.value = f * 0.006; vib.connect(vg); vg.connect(o.frequency); vib.start(t); vib.stop(t + dur + 0.8); o.start(t); o.stop(t + dur + 0.8); });
+    hold(g, t, 0.5, 0.2 * v, dur, 0.6); },
+  organpad: function (t, fs, dur, v) { fs.forEach(function (f) { I.organ(t, f, dur, 0.55 * v); }); },
+  glasspad: function (t, fs, dur, v) { var g = ctx.createGain(); g.connect(musicBus); g.connect(verb); fs.forEach(function (f) { var o = ctx.createOscillator(); o.type = "sine"; o.frequency.value = f * 2; o.connect(g); o.start(t); o.stop(t + dur + 1);
+    var o2 = ctx.createOscillator(); o2.type = "triangle"; o2.frequency.value = f * 4.003; var g2b = ctx.createGain(); g2b.gain.value = 0.25; o2.connect(g2b); g2b.connect(g); o2.start(t); o2.stop(t + dur + 1); });
+    hold(g, t, 0.9, 0.05 * v, dur, 0.9); }
+};
+var PERC_OK = { dum: 1, dumBig: 1, tek: 1, jingle: 1, clap: 1, clapStack: 1, shaker: 1 };
+function play(name) {
+  if (!ctx || !I[name]) return;
+  if (DRUMS_ONLY && !PERC_OK[name]) return;      // percussion-only episodes: frame drum, claps and shaker, nothing else
+  STATS[name] = (STATS[name] || 0) + 1;
+  try { I[name].apply(null, [].slice.call(arguments, 1)); } catch (e) {}
+}
+
+/* ===== BLOCK IH_GENRES (reusable): SCALES, GENRES, motif MEL, sequencer playStep/tick/setMood/dropNow ===== */
+/* ---------- genres ----------
+   Pattern strings are 16 (or 32) steps. Velocity: . rest, - soft, o mid, x full, X accent.
+   Bass: x root, 5 fifth, 8 octave, 3 third, 7 seventh (scale degrees), - holds the note.
+   Tracks: k kick, s snare/clap, h hat, H open hat, p perc, q perc 2, c chord stab, b bass. l = lead rhythm (32 steps). */
+var SCALES = { major: [0, 2, 4, 5, 7, 9, 11], minor: [0, 2, 3, 5, 7, 8, 10], dorian: [0, 2, 3, 5, 7, 9, 10], phrygian: [0, 1, 3, 5, 7, 8, 10],
+  mixo: [0, 2, 4, 5, 7, 9, 10], harm: [0, 2, 3, 5, 7, 8, 11], phrydom: [0, 1, 4, 5, 7, 8, 10], pentmin: [0, 3, 5, 7, 10], pentmaj: [0, 2, 4, 7, 9], lydian: [0, 2, 4, 6, 7, 9, 11] };
+var GENRES = {
+  afrobeats: { kit: { k: "kick", s: "rim", h: "shaker", p: "conga", q: "agogo" }, bass: "pluckb", lead: "marimba", pad: "warm", padLv: [0.6, 0.4, 0.3], prog: [0, 5, 3, 4], leadIn: [3], stab: "marimba",
+    m1: { k: "x.........x.....", p: "....o.....o..o..", h: "-.-.-.-.-.-.-.-.", b: "x---------5-----" },
+    m2: { k: "x..x......x.....", s: "....x.......x...", h: "o-o-o-o-o-o-o-o-", p: "..o..o....o..o.o", b: "x..x..5...x..8.." },
+    m3: { k: "x..x..x...x..x..", s: "....x..x....x...", h: "xoxoxoxoxoxoxoxo", p: "..o.xo...o.xo..o", q: "x..x..x...x.x...", b: "x..x..5.x..x.8.." },
+    l: "x..x..x.x...x...x..x..x...x.x...", roll: "conga", drop: ["boom", "crash", "kick"] },
+  amapiano: { kit: { k: "kickSoft", s: "clap", h: "shaker", p: "rim", q: "hatO" }, bass: "logd", lead: "epiano", pad: "warm", padLv: [0.7, 0.5, 0.4], prog: [0, 5, 2, 6], leadIn: [1, 3], stab: "epiano",
+    m1: { h: "-.-.o.-.-.-.o.-.", c: "x.......x.......", b: "x.......x......." },
+    m2: { k: "x...x...x...x...", h: "-o-o-o-o-o-o-o-o", p: "..x.....x..x....", c: "x.....x.........", b: "x..x...x.x..x..." },
+    m3: { k: "x...x...x...x...", s: "....x.......x...", h: "xoxoxoxoxoxoxoxo", p: "..x..x..x..x..x.", q: "..o...o...o...o.", c: "x.....x.......x.", b: "x..x...x.x..x..5" },
+    l: "x.......x...x.......x...x...x...", roll: "rim", drop: ["boom", "crash", "kickSoft"] },
+  trap: { kit: { k: "kick808", s: "snap", h: "hatC", p: "clap", q: "hatO" }, bass: "sub808", glide: true, lead: "bell", pad: "glasspad", padLv: [0.9, 0.6, 0.5], prog: [0, 5, 3, 6], leadIn: [1, 3], scale: "harm",
+    m1: { h: "x...x...x...x...", b: "x---------------" },
+    m2: { k: "x.......x..x....", s: "........x.......", h: "xxxxxxxxxxxxxxxx", b: "x-------x--x----" },
+    m3: { k: "x.....x...x.x...", s: "........x.......", p: "........x.......", h: "x.xxx.x.xxxxx.xx", q: "......x.........", b: "x-----x---x-x---" },
+    l: "x.......x.......x...x...x.......", roll: "hatC", drop: ["kick808", "crash", "boom"] },
+  house: { kit: { k: "kick", s: "clap", h: "hatC", p: "hatO", q: "shaker" }, bass: "sawb", lead: "organ", pad: "organpad", padLv: [0.5, 0.3, 0], prog: [0, 3, 4, 3], leadIn: [], stab: "organ",
+    m1: { h: "..-...-...-...-.", c: "x...............", b: "x---------------" },
+    m2: { k: "x...x...x...x...", h: "..x...x...x...x.", q: "xoxoxoxoxoxoxoxo", b: "..x...x...x...x." },
+    m3: { k: "x...x...x...x...", s: "....x.......x...", h: "x.x.x.x.x.x.x.x.", p: "..x...x...x...x.", c: "..x..x....x..x..", b: "..x...x...x.5.x." },
+    l: "x.x...x...x.x...x.x...x...x.x...", roll: "clap", drop: ["kick", "crash", "boom"] },
+  drill: { kit: { k: "kick808", s: "snare", h: "hatC", p: "rim", q: "snap" }, bass: "sub808", glide: true, lead: "strings_lead", pad: "strings", padLv: [0.8, 0.6, 0.4], prog: [0, 1, 5, 4], leadIn: [2, 3], scale: "phrygian",
+    m1: { h: "x..x..x.x..x..x.", b: "x---------------" },
+    m2: { k: "x.....x.........", s: "........x.......", h: "x..x..x.x..x..x.", b: "x-----x---------" },
+    m3: { k: "x.....x...x...x.", s: "....x.......x..x", h: "x..x..xxx..x..x.", p: "...x.......x....", b: "x-----x-3-x---5-" },
+    l: "x..x..x...x.....x..x..x...x.x...", roll: "hatC", drop: ["kick808", "crash", "snare"] },
+  lofi: { kit: { k: "kickSoft", s: "rim", h: "hatC", p: "vinyl", q: "shaker" }, bass: "sineb", lead: "epiano", pad: "warm", padLv: [0.8, 0.6, 0.5], prog: [1, 4, 0, 5], leadIn: [1, 2, 3], lp: 3400, swing: 1, stab: "epiano", sev: true,
+    m1: { p: "x.....x....x....", c: "x...............", b: "x-------5-------" },
+    m2: { k: "x.......x.x.....", s: "....x.......x...", h: "x.x.x.x.x.x.x.x.", p: "x.....x....x....", b: "x-----5-x-------" },
+    m3: { k: "x.....x.x.x.....", s: "....x.......x..o", h: "x.xox.x.x.xox.x.", p: "x.....x....x....", c: "x.......x.......", b: "x-----5-x---3---" },
+    l: "x...x.....x.......x...x.x.......", roll: "hatC", drop: ["kickSoft", "crash"] },
+  dembow: { kit: { k: "kick", s: "snare", h: "hatC", p: "timbale", q: "shaker" }, bass: "sawb", lead: "brass", pad: "", padLv: [0, 0, 0], prog: [0, 5, 6, 4], leadIn: [3],
+    m1: { p: "...x..x....x..x.", b: "x-------x-------" },
+    m2: { k: "x...x...x...x...", s: "...x..x....x..x.", h: "x.x.x.x.x.x.x.x.", b: "x..x..x.x..x..x." },
+    m3: { k: "x...x...x...x...", s: "...x..x....x..x.", h: "xxxxxxxxxxxxxxxx", p: "..o...o...o...o.", q: "x.x.x.x.x.x.x.x.", b: "x..x..x.x..x..5." },
+    l: "x.x.x...x.x.x...x.x.x...x...x...", roll: "timbale", drop: ["boom", "crash", "kick"] },
+  bhangra: { kit: { k: "dagga", s: "clap", h: "shaker", p: "tilli", q: "na" }, bass: "sineb", lead: "tumbi", pad: "", padLv: [0, 0, 0], prog: [0, 0, 6, 4], leadIn: [2, 3], scale: "mixo",
+    m1: { k: "x.......x.......", p: "....x.......x...", b: "x---------------" },
+    m2: { k: "x..x..x.x..x..x.", p: "..x..x....x..x..", h: "-o-o-o-o-o-o-o-o", b: "x.......x......." },
+    m3: { k: "x..x..x.x..x..x.", s: "....x.......x...", p: "..x..x.x..x..x.x", h: "xoxoxoxoxoxoxoxo", q: "......x.......x.", b: "x..x....x..x...." },
+    l: "x.xxx.x.x.xxx.x.x.x.x.x.x.x.x...", roll: "tilli", drop: ["dagga", "crash", "boom"] },
+  gospel: { kit: { k: "kick", s: "clapStack", h: "hatC", p: "tom", q: "shaker" }, bass: "organb", lead: "organ", pad: "choir", padLv: [0.9, 0.7, 0.6], prog: [0, 3, 4, 3], leadIn: [3], swing: 1, sev: true,
+    m1: { c: "x.......x.......", b: "x-------x-------" },
+    m2: { k: "x.......x.......", s: "....x.......x...", h: "x.x.x.x.x.x.x.x.", b: "x---x---5---x---" },
+    m3: { k: "x..x....x.x.....", s: "....X.......X...", h: "xoxoxoxoxoxoxoxo", p: "..............xx", c: "..x.......x.....", b: "x--x---5x-x-8---" },
+    l: "x...x.x.x.......x...x.x.x...x...", roll: "tom", drop: ["clapStack", "crash", "kick"] },
+  synthwave: { kit: { k: "kick", s: "gated", h: "hatC", p: "tom", q: "hatO" }, bass: "sawb", lead: "arp", arp: true, pad: "strings", padLv: [0.8, 0.6, 0.6], prog: [0, 5, 2, 6], leadIn: [2, 3], scale: "minor",
+    m1: { b: "x---------------" },
+    m2: { k: "x.......x.......", h: "x.x.x.x.x.x.x.x.", b: "x.x.x.x.x.x.x.x." },
+    m3: { k: "x...x...x...x...", s: "....x.......x...", h: "xxxxxxxxxxxxxxxx", q: "..x...x...x...x.", b: "x.x.x.x.8.x.x.x." },
+    l: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", roll: "tom", drop: ["boom", "crash", "gated"] },
+  cinematic: { kit: { k: "taiko", s: "snare", h: "", p: "tom", q: "crack" }, bass: "sineb", lead: "brass", pad: "strings", padLv: [1, 0.9, 0.8], prog: [0, 5, 2, 6], leadIn: [3], scale: "harm", room: 3,
+    m1: { k: "x...............", b: "x---------------" },
+    m2: { k: "x.......x.......", p: "....x..x....x.x.", b: "x-------x-------" },
+    m3: { k: "x..x..x.x.......", s: "....x.......x.xx", p: "..x...x...x.xxxx", b: "x-------5-------" },
+    l: "x-------x...x...x-------x.x.x...", roll: "tom", drop: ["taiko", "boom", "crash"] },
+  boombap: { kit: { k: "kick", s: "snare", h: "hatC", p: "vinyl", q: "shaker" }, bass: "sineb", lead: "piano", pad: "", padLv: [0, 0, 0], prog: [0, 3, 5, 4], leadIn: [2, 3], swing: 1, lp: 7000, sev: true,
+    m1: { p: "x.....x....x....", h: "x...x...x...x...", b: "x-------5-------" },
+    m2: { k: "x......xx.......", s: "....x.......x...", h: "x.x.x.x.x.x.x.x.", b: "x------xx-------" },
+    m3: { k: "x......xx.x.....", s: "....x.......x...", h: "x.x.x.xox.x.x.xo", p: "x.....x....x....", b: "x------xx-5-----" },
+    l: "x.....x.x.......x...x.....x.....", roll: "snare", drop: ["kick", "crash", "snare"] },
+  ukg: { kit: { k: "kick", s: "snare", h: "hatC", p: "rim", q: "shaker" }, bass: "reese", lead: "chop", pad: "organpad", padLv: [0.6, 0.4, 0], prog: [0, 5, 3, 4], leadIn: [2, 3], swing: 1, stab: "organ", sev: true,
+    m1: { h: "..-...-...-...-.", c: "x.......", b: "x---------------" },
+    m2: { k: "x.........x.....", h: "..x.x.x...x.x.x.", p: "......x.......x.", b: "x---------x-----" },
+    m3: { k: "x.........x..x..", s: "....x.......x...", h: "x.xxx.x.x.xxx.x.", p: "......x.......x.", c: "...x.....x......", b: "x-----x---x--x--" },
+    l: "..x..x....x..x....x..x.x..x.....", roll: "rim", drop: ["kick", "crash", "boom"] },
+  ambient: { kit: { k: "kickSoft", s: "", h: "shaker", p: "tom", q: "" }, bass: "sineb", lead: "glass", pad: "glasspad", padLv: [1, 1, 0.9], prog: [0, 3, 0, 5], leadIn: [1, 2, 3], scale: "pentmin", room: 3.2, wet: 0.45,
+    m1: { b: "x---------------" },
+    m2: { k: "x...............", h: "....-.......-...", b: "x---------------" },
+    m3: { k: "x.......x.......", h: "--o---o---o---o-", p: "............x...", b: "x-------5-------" },
+    l: "x.......x.....x.........x.......", roll: "shaker", drop: ["boom", "kickSoft"] },
+  dnb: { kit: { k: "kick", s: "snare", h: "hatC", p: "shaker", q: "hatO" }, bass: "reese", lead: "pluck", pad: "warm", padLv: [0.8, 0.5, 0.4], prog: [0, 5, 3, 4], leadIn: [3],
+    m1: { b: "x---------------" },
+    m2: { k: "x.........x.....", h: "x.x.x.x.x.x.x.x.", b: "x---------x-----" },
+    m3: { k: "x.........x.....", s: "....x.......x...", h: "xoxoxoxoxoxoxoxo", p: "..x...x...x...x.", q: ".......x........", b: "x-----x---x-----" },
+    l: "x..x..x.x.......x..x..x.x.x.....", roll: "snare", drop: ["boom", "crash", "kick"] },
+  bhajanclub: { kit: { k: "kick", s: "clap", h: "tilli", p: "dagga", q: "na" }, bass: "sawb", lead: "reed", pad: "", drone: true, padLv: [0, 0, 0], prog: [0, 6, 4, 5], leadIn: [3], scale: "mixo",
+    m1: { p: "x.....x...x.....", q: "..-.x...-...x.x.", b: "x---------------" },
+    m2: { k: "x.......x.......", p: "x.....x.x.....x.", h: "..x.x.....x.x...", q: "....o.......o...", b: "x.........x....." },
+    m3: { k: "x...x...x...x...", p: "x..x..x.x..x..x.", h: "..x.x..x..x.x..x", s: "....x.......x...", b: "x..x..x...x...x." },
+    l: "x.xxx.x.x...x...x.x.x.x.x.x.....", roll: "tilli", drop: ["boom", "crash", "kick"] },
+  phonk: { kit: { k: "kick808", s: "clap", h: "hatC", p: "snap", q: "hatO" }, bass: "sub808", glide: true, lead: "cowbell", pad: "", padLv: [0, 0, 0], prog: [0, 0, 5, 4], leadIn: [2, 3], scale: "phrygian",
+    m1: { h: "x.x.x.x.x.x.x.x.", b: "x---------------" },
+    m2: { k: "x.....x.x.......", s: "....x.......x...", h: "x.x.x.x.x.x.x.x.", b: "x-----x-x-------" },
+    m3: { k: "x.....x.x.....x.", s: "....x.......x...", h: "xxxxxxxxxxxxxxxx", q: "..x.......x.....", b: "x-----x-x-----x-" },
+    l: "x.x.x.xxx.x.x.x.x.x.x.xxx.x.x...", roll: "hatC", drop: ["kick808", "crash", "clap"] },
+  jersey: { kit: { k: "kick", s: "clap", h: "hatC", p: "snap", q: "hatO" }, bass: "sub808", lead: "pluck", pad: "warm", padLv: [0.6, 0.3, 0.2], prog: [0, 3, 5, 4], leadIn: [3], scale: "dorian",
+    m1: { h: "..x...x...x...x.", b: "x---------------" },
+    m2: { k: "x..x..x...x.....", h: "x.x.x.x.x.x.x.x.", b: "x..x..x...x....." },
+    m3: { k: "x..x..x...x.x.x.", s: "....x.......x...", h: "x.x.x.x.x.x.x.x.", p: "...x.......x....", b: "x..x..x...x.x.x." },
+    l: "x.x...x...x.x...x.x...x.x.x.....", roll: "clap", drop: ["kick", "crash", "boom"] },
+  /* percussion only (crescent): frame drum, claps, shaker */
+  daf: { perc: true, kit: { k: "dum", s: "clap", h: "shaker", p: "tek", q: "jingle" }, prog: [0], leadIn: [],
+    m1: { k: "x.......x.......", p: "....-.......-...", q: "x...............", h: "" },
+    m2: { k: "x.....x.x.......", p: "..o.x..o..o.x.o.", q: "x.......x.......", h: "-.-.-.-.-.-.-.-." },
+    m3: { k: "x..x..x.x.....x.", s: "....x.......x...", p: "..oxo..o..oxo.oo", q: "x...x...x...x...", h: "oxoxoxoxoxoxoxox" },
+    roll: "tek", drop: ["dumBig", "clapStack", "jingle"] },
+  claps: { perc: true, kit: { k: "dum", s: "clap", h: "shaker", p: "clapStack", q: "tek" }, prog: [0], leadIn: [],
+    m1: { s: "x.....x.....x...", k: "x...............", h: "" },
+    m2: { k: "x.......x.......", s: "x..x..x...x..x..", h: "-.-.-.-.-.-.-.-." },
+    m3: { k: "x..x....x..x....", s: "x..x..x.x.x..x..", p: "....x.......x...", q: "..o...o...o...o.", h: "xoxoxoxoxoxoxoxo" },
+    roll: "clap", drop: ["dumBig", "clapStack", "clapStack"] },
+  march: { perc: true, kit: { k: "dum", s: "tek", h: "shaker", p: "jingle", q: "clap" }, prog: [0], leadIn: [],
+    m1: { k: "x.......x.......", h: "" },
+    m2: { k: "x...x...x...x...", s: "..x...x...x...x.", h: "x.x.x.x.x.x.x.x." },
+    m3: { k: "x...x...x..xx...", s: "..x.x.x...x.xxxx", p: "x...............", q: "....x.......x...", h: "xxxxxxxxxxxxxxxx" },
+    roll: "tek", drop: ["dumBig", "jingle", "clapStack"] },
+  heartbeat: { perc: true, kit: { k: "dum", s: "tek", h: "shaker", p: "jingle", q: "clap" }, prog: [0], leadIn: [],
+    m1: { k: "x.x.............", h: "" },
+    m2: { k: "x.x.....x.x.....", h: "....-.......-..." },
+    m3: { k: "x.x...x.x.x...x.", s: "....x.......x...", h: "-o-o-o-o-o-o-o-o", q: "....x.......x...", p: "x..............." },
+    roll: "tek", drop: ["dumBig", "jingle"] },
+  riqq: { perc: true, kit: { k: "dum", s: "tek", h: "jingle", p: "shaker", q: "clap" }, prog: [0], leadIn: [],
+    m1: { h: "x...x...x...x...", k: "x...............", s: "" },
+    m2: { k: "x.....x...x.....", s: "..x.x...x.x.x..x", h: "x.x.x.x.x.x.x.x.", p: "-o-o-o-o-o-o-o-o" },
+    m3: { k: "x.....x...x...x.", s: "..xxx.x.x.xxx.xx", h: "xxxxxxxxxxxxxxxx", p: "oxoxoxoxoxoxoxox", q: "....x.......x..." },
+    roll: "tek", drop: ["dumBig", "clapStack", "jingle"] }
+};
+I.strings_lead = function (t, f, dur, v) { I.brass(t, f, Math.max(dur, 0.18), v * 0.8); I.pluck(t, f * 2, dur, v * 0.5); };
+var GEN = GENRES[ST.genre] || (DRUMS_ONLY ? GENRES.daf : GENRES.afrobeats);
+if (DRUMS_ONLY && !GEN.perc) GEN = GENRES.daf;
+var BPM = ST.bpm || 104, SIX = 60 / BPM / 4, SWING = ST.swing != null ? ST.swing : (GEN.swing ? 0.16 : 0);
+var ROOT = 32.703 * Math.pow(2, ((ST.key || 0) % 12) / 12); if (ROOT < 38) ROOT *= 2;   // bass register, 38–76 Hz
+var SCALE = SCALES[ST.scale || GEN.scale || "minor"] || SCALES.minor;
+function semis(d) { var n = SCALE.length, o = Math.floor(d / n), i = ((d % n) + n) % n; return SCALE[i] + 12 * o; }
+function hzOf(base, d) { return base * Math.pow(2, semis(d) / 12); }
+var VEL = { ".": 0, "-": 0.35, "o": 0.6, "x": 0.85, "X": 1.1 };
+// a lead motif made for this episode only: rhythm from the genre, pitches from a seeded walk over the scale
+function makeMel() {
+  var r = rng((ST.seed || 1) * 7 + 3), L = GEN.l || "", out = [], d = 4 + ((r() * 3) | 0);
+  for (var s = 0; s < 32; s++) {
+    if (L[s] !== "x") { out.push(null); continue; }
+    var len = 1; while (s + len < 32 && L[s + len] !== "x" && len < 4) len++;
+    var stepD = [-2, -1, -1, 0, 1, 1, 2, 3][(r() * 8) | 0]; d = Math.max(0, Math.min(10, d + stepD));
+    if (s === 31 || s === 15) d = d - (d % 2);
+    out.push({ d: d, len: len });
+  }
+  return out;
+}
+var MEL = makeMel();
+/* remix: swap the genre live. key and seed stay; tempo, swing and scale follow the new genre (the film's own pick keeps its own) */
+var GEN_OG = GEN, BPM_OG = BPM, SWING_OG = SWING, SCALE_OG = SCALE, GEN_NAME = GEN === GENRES[ST.genre] ? ST.genre : "fallback";
+function setGenre(name) {
+  var G = GENRES[name]; if (!G || (DRUMS_ONLY && !G.perc)) return false;
+  var mine = G === GEN_OG, feel = (window.IHRemix && IHRemix.feel[name]) || [104, 0, "minor"];
+  GEN = G; GEN_NAME = mine ? (GEN_OG === GENRES[ST.genre] ? ST.genre : "fallback") : name;
+  BPM = mine ? BPM_OG : feel[0]; SIX = 60 / BPM / 4; SWING = mine ? SWING_OG : (feel[1] || 0);
+  SCALE = mine ? SCALE_OG : (SCALES[G.scale || feel[2] || "minor"] || SCALES.minor);
+  MEL = makeMel(); arpI = 0;
+  if (ctx) setMood(mood);
+  return true;
+}
+var ARP = [0, 2, 4, 7, 4, 2], arpI = 0;
+function chordDegs(bar) { var r = (GEN.prog || [0])[bar % (GEN.prog || [0]).length]; return GEN.sev ? [r, r + 2, r + 4, r + 6] : [r, r + 2, r + 4]; }
+
+var step = 0, nextT = 0, mood = 0, building = null, beats = [];
+function beat(t, s, kind) { beats.push({ t: t, s: s, kind: kind || "k" }); }
+function chAt(pat, s) { if (!pat) return "."; return pat[s % pat.length] || "."; }
+function playStep(s, t) {
+  var M = mood; if (M === 0 || M === "pillar") return;
+  var key = M === 1 ? "m1" : M === 3 ? "m3" : "m2", P = GEN[key] || {}, p = s % 16, bar = Math.floor(s / 16);
+  var tt = t + (p % 2 === 1 ? SWING * SIX : 0), K = GEN.kit, cd = chordDegs(bar);
+  var gameSoft = M === "game" ? 0.75 : 1;
+  ["k", "s", "h", "H", "p", "q"].forEach(function (tr) {
+    var inst = K[tr]; if (!inst || !P[tr]) return; var v = VEL[chAt(P[tr], s)]; if (!v) return;
+    play(inst, tt, v * gameSoft);
+    if (tr === "k" && v >= 0.6) beat(tt, 0.8); else if (tr === "s" && v >= 0.6) beat(tt, 0.55, "c"); else if (tr === "p" && v >= 0.6) beat(tt, 0.3, "d");
+  });
+  if (building) { var prog = Math.min(1, (t - building.t0) / building.dur); if (Math.random() < prog * prog) play(GEN.roll || "hatC", tt, 0.3 + prog * 0.6); }
+  if (GEN.perc) return;
+  // bass
+  var bc = chAt(P.b, s);
+  if (bc && bc !== "." && bc !== "-") {
+    var off = { x: 0, "5": 4, "8": 7, "3": 2, "7": 6 }[bc] || 0, len = 1, pat = P.b;
+    while (len < 16 && chAt(pat, s + len) === "-") len++;
+    if (len === 1) len = GEN.glide ? 2 : 1.6;
+    var bf = hzOf(ROOT, cd[0] + off), nx = null;
+    if (GEN.glide) { var nc = chAt(pat, s + Math.ceil(len)); if (nc && nc !== "." && nc !== "-") { var no = { x: 0, "5": 4, "8": 7, "3": 2, "7": 6 }[nc] || 0; if (no !== off) nx = hzOf(ROOT, cd[0] + no); } }
+    play(GEN.bass, tt, bf, len * SIX, 0.85, nx);
+  }
+  // chord stabs
+  if (P.c && VEL[chAt(P.c, s)] && GEN.stab) cd.slice(0, 3).forEach(function (d) { play(GEN.stab, tt, hzOf(ROOT * 4, d), SIX * 2, 0.55); });
+  // pad, once a bar
+  var pl = (GEN.padLv || [0, 0, 0])[key === "m1" ? 0 : key === "m2" ? 1 : 2];
+  if (p === 0 && GEN.pad && pl > 0) play(GEN.pad, t, cd.map(function (d) { return hzOf(ROOT * 4, d); }), SIX * 16, pl);
+  // lead
+  var li = GEN.leadIn || [], lk = M === 1 ? 1 : M === 3 ? 3 : 2;
+  if (M !== "game" && li.indexOf(lk) >= 0) {
+    if (GEN.arp) { if (chAt(GEN.l, s) === "x") { var ad = cd[0] + ARP[arpI++ % ARP.length]; play(GEN.lead, tt, hzOf(ROOT * 8, ad), SIX, lk === 3 ? 0.9 : 0.55); } }
+    else { var m = MEL[s % 32]; if (m && (lk === 3 || s % 32 < 16 || lk === 1)) play(GEN.lead, tt, hzOf(ROOT * 8, m.d), m.len * SIX, lk === 3 ? 0.9 : 0.6); }
+  }
+}
+function tick() { var now = clock(); if (nextT < now - 0.3) nextT = now + 0.03; while (nextT < now + 0.12) { playStep(step, nextT); nextT += SIX; step++; } }
+setInterval(tick, 25);
+function setMood(m) {
+  var was = mood; mood = m; building = null;
+  if (!ctx) return;
+  var t = ctx.currentTime;
+  var dg = (m === 0 || m === "pillar" || !GEN.drone) ? 0 : (m === 1 ? 0.5 : 0.36);
+  droneGain.gain.cancelScheduledValues(t); droneGain.gain.setTargetAtTime(dg, t, 0.4);
+  musicLP.frequency.cancelScheduledValues(t); musicLP.frequency.setTargetAtTime(GEN.lp || 18000, t, 0.05);
+}
+function dropFx(t, v) { (GEN.drop || ["boom", "crash", "kick"]).forEach(function (n, k) { play(n, t + (n === "crash" ? 0.01 : 0), (v || 1) * (k ? 0.9 : 1.15)); }); }
+function dropNow() {
+  var t = clock() + 0.02; nextT = t; step = 0; mood = 3; building = null;
+  if (ctx) { musicLP.frequency.cancelScheduledValues(ctx.currentTime); musicLP.frequency.setValueAtTime(GEN.lp || 18000, ctx.currentTime); duck(false); }
+  dropFx(t, 1); beat(t, 2.2, "drop");
+}
+function hush() { if (!ctx) return; var t = ctx.currentTime; musicLP.frequency.cancelScheduledValues(t); musicLP.frequency.setTargetAtTime(320, t, 0.12); }
+function duck(on) { if (!ctx) return; musicBus.gain.setTargetAtTime(on ? 0.26 : 0.62, ctx.currentTime, 0.15); }
+function celebrate() { var t = clock() + 0.02, inst = GEN.kit.p || GEN.kit.k; for (var k = 0; k < 6; k++) play(inst, t + k * SIX * 0.5, 0.9); play(DRUMS_ONLY ? "jingle" : "crash", t + 3 * SIX, 0.7); }
+function nopeSound() { var t = clock() + 0.01; play(GEN.kit.p || "tek", t, 0.9); play(GEN.kit.k, t + 0.12, 0.6); }
+
+/* ===== END IH_GENRES ===== */
+/* ---------- voice ---------- */
+var vo = new Audio(); vo.preload = "auto"; var VOD = {};
+function setSound(on) {
+  soundOn = on; vo.muted = !on;
+  if (ctx) master.gain.setTargetAtTime(on ? 0.9 : 0, ctx.currentTime, 0.05);
+  var b = $("#snd"); b.innerHTML = on ? ICON_ON : ICON_OFF; b.setAttribute("aria-pressed", on ? "true" : "false"); b.setAttribute("aria-label", on ? "Sound off" : "Sound on");
+}
+function startSound() {
+  initAudio(); if (!ctx) return false;
+  try { ctx.resume(); } catch (e) {}
+  if (!everSound) {
+    everSound = true;
+    if (CFG.voice) {
+      // learn each narration file's length so the shot waits for it
+      CLIPS.forEach(function (c) { (c.vo || []).forEach(function (n) { var a = new Audio(); a.preload = "metadata"; a.onloadedmetadata = function () { if (isFinite(a.duration)) VOD[n] = a.duration; }; a.src = voUrl(n); }); });
+      try { var f = FIRST_CLIP && FIRST_CLIP.vo && FIRST_CLIP.vo[0]; if (f) { vo.src = voUrl(f); vo.muted = true; var pr = vo.play(); if (pr && pr.then) pr.then(function () { vo.pause(); }).catch(function () {}); } } catch (e) {}
+    }
+  }
+  setSound(true); setMood(mood); return true;
+}
+$("#snd").addEventListener("click", function (e) { e.stopPropagation(); if (soundOn) setSound(false); else startSound(); });
+
+/* ===== BLOCK IH_STAGE (reusable): stage lights, frame loop. Particles were removed 2026-11-08 (owner: "corny") ===== */
+/* =====================================================================
+   VISUALS: stage lights, transitions. No particles, motes or floating circles.
+   ===================================================================== */
+var cv = $("#fx"), g2 = cv.getContext("2d"), W = 0, H = 0, DPR = 1;
+function resize() { var r = reel.getBoundingClientRect(); DPR = Math.min(2, window.devicePixelRatio || 1); W = r.width; H = r.height; cv.width = W * DPR; cv.height = H * DPR; g2.setTransform(DPR, 0, 0, DPR, 0, 0); }
+window.addEventListener("resize", resize); resize();
+var beams = 0, pulse = 0, partyAuto = false;
+// kept as no-ops so the scenes that used to throw particles still work unchanged
+function throwFx() {}
+function bigBurst() {}
+/* remix energy: chill softens cuts and slows the pace a touch, hype hits harder and moves faster. og = as made */
+var EN = { shake: 1, flash: 1, burst: 1, pace: 1 };
+function setEnergy(e) { RX.energy = e; EN = e === "chill" ? { shake: 0.35, flash: 0.5, burst: 0.5, pace: 1.18 } : e === "hype" ? { shake: 1.5, flash: 1.15, burst: 1.5, pace: 0.88 } : { shake: 1, flash: 1, burst: 1, pace: 1 }; }
+function transKind(kind, strong) { if (RX.energy === "chill") return strong ? "flash" : (kind === "iris" || kind === "blinds" ? kind : "iris"); if (RX.energy === "hype") return strong ? "brand" : (kind === "flash" || kind === "iris" || kind === "blinds" ? "punch" : kind); return kind; }
+function flash(c, a) { a = Math.min(1, (a || 0.9) * EN.flash); flashEl.style.background = c || "#EEFF6A"; flashEl.style.transition = "none"; flashEl.style.opacity = a || 0.9; void flashEl.offsetWidth; flashEl.style.transition = "opacity .6s ease-out"; flashEl.style.opacity = 0; }
+function shake(px) { if (RM) return; px = px * EN.shake; if (px < 1) return; shakeEl.animate([{ transform: "translate(0,0)" }, { transform: "translate(" + px + "px," + (-px) + "px)" }, { transform: "translate(" + (-px) + "px," + px * 0.6 + "px)" }, { transform: "translate(0,0)" }], { duration: 260, easing: "ease-out" }); }
+function setCrowd() {}
+function onBeat(b) {
+  pulse = Math.min(1.6, pulse + b.s);
+  if (b.kind === "drop") { flash(COLORS[0], 1); setTimeout(function () { flash("#EEFF6A", 0.8); }, 140); shake(16); vibrate([60, 40, 120]); transition(ST.trans2 || "flash", true); }
+  if (!RM && b.kind === "k" && b.s >= 0.8 && mood === 3) { var v = vids[vidIx]; v.style.setProperty("--zoom", 1.05); setTimeout(function () { v.style.setProperty("--zoom", 1.02); }, 90); }
+}
+function stage(T) {
+  var target = (mood === 3 && !RM) ? 1 : 0; beams += (target - beams) * 0.04;
+  if (beams < 0.02) return;
+  g2.globalCompositeOperation = "lighter";
+  var kind = ST.stage || "beams"; if (kind === "halo") kind = "beams";   // no rings or circles (2026-11-08)
+  if (kind === "beams") {
+    for (var bI = 0; bI < 4; bI++) { var ang = Math.sin(T * 0.6 + bI * 1.7) * 0.5 + (bI - 1.5) * 0.25, ox = W * (0.15 + bI * 0.23), len = H * 1.1;
+      var gr = g2.createLinearGradient(ox, 0, ox + Math.sin(ang) * len, len), col = COLORS[(bI + Math.floor(T / 2)) % 5];
+      gr.addColorStop(0, col + "55"); gr.addColorStop(1, col + "00"); g2.globalAlpha = beams * (0.35 + pulse * 0.35); g2.fillStyle = gr; g2.beginPath(); g2.moveTo(ox, -10);
+      g2.lineTo(ox + Math.sin(ang - 0.09) * len, len); g2.lineTo(ox + Math.sin(ang + 0.09) * len, len); g2.closePath(); g2.fill(); }
+  } else if (kind === "lasers") {
+    for (var l = 0; l < 6; l++) { var sx = l % 2 ? W + 10 : -10, sy = H * 0.98, ang2 = -Math.PI / 2 + (l % 2 ? -1 : 1) * (0.35 + 0.5 * (0.5 + 0.5 * Math.sin(T * 1.3 + l)));
+      g2.globalAlpha = beams * (0.45 + pulse * 0.3); g2.strokeStyle = COLORS[l % 5]; g2.lineWidth = 2; g2.beginPath(); g2.moveTo(sx, sy); g2.lineTo(sx + Math.cos(ang2) * H * 1.4, sy + Math.sin(ang2) * H * 1.4); g2.stroke(); }
+  } else if (kind === "bars") {
+    for (var bb = 0; bb < 5; bb++) { var on = ((Math.floor(T * BPM / 30) + bb) % 3) === 0; if (!on) continue; var gx = W * (bb + 0.5) / 5, grb = g2.createLinearGradient(gx, 0, gx, H);
+      grb.addColorStop(0, COLORS[bb] + "00"); grb.addColorStop(0.5, COLORS[bb] + "44"); grb.addColorStop(1, COLORS[bb] + "00"); g2.globalAlpha = beams * (0.5 + pulse * 0.3); g2.fillStyle = grb; g2.fillRect(gx - W * 0.06, 0, W * 0.12, H); }
+  } else if (kind === "halo") {
+    var r = Math.min(W, H) * (0.32 + pulse * 0.08); g2.globalAlpha = beams * 0.55; g2.strokeStyle = COLORS[Math.floor(T) % 5]; g2.lineWidth = 6 + pulse * 10; g2.beginPath(); g2.arc(W / 2, H * 0.4, r, 0, 7); g2.stroke();
+    g2.globalAlpha = beams * 0.25; g2.lineWidth = 2; g2.beginPath(); g2.arc(W / 2, H * 0.4, r * 1.25, 0, 7); g2.stroke();
+  }
+  g2.globalAlpha = 1;
+}
+var lastF = performance.now();
+function frame(now) {
+  var dt = Math.min(2.5, (now - lastF) / 16.67); lastF = now;
+  var ct = clock();
+  while (beats.length && beats[0].t <= ct) onBeat(beats.shift());
+  if (beats.length > 200) beats.splice(0, beats.length - 200);
+  pulse *= Math.pow(0.9, dt);
+  tint.style.opacity = (mood === 3 ? 0.18 : 0.06) + pulse * 0.22;
+  g2.clearRect(0, 0, W, H);
+  var T = now / 1000;
+  stage(T);
+  g2.globalAlpha = 1; g2.globalCompositeOperation = "source-over";
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+
+/* ===== BLOCK IH_TRANSITIONS (reusable): transition(kind) ===== */
+/* ---------- transitions ---------- */
+function transition(kind, strong) {
+  if (RM) return; kind = transKind(kind, strong);
+  var col = strong ? "#EEFF6A" : COLORS[(Math.random() * 5) | 0];
+  wipe.getAnimations().forEach(function (a) { a.cancel(); });
+  wipe.style.cssText = ""; wipe.innerHTML = "";
+  switch (kind) {
+    case "flash": flash(col, strong ? 0.9 : 0.55); break;
+    case "wipe": wipe.style.background = col; wipe.animate([{ opacity: 1, transform: "translateX(-100%)" }, { opacity: 1, transform: "translateX(0)", offset: 0.45 }, { opacity: 1, transform: "translateX(0)", offset: 0.55 }, { opacity: 1, transform: "translateX(100%)" }], { duration: 420, easing: "cubic-bezier(.7,0,.3,1)" }); break;
+    case "punch": shakeEl.animate([{ transform: "scale(1.16)", filter: "blur(6px)" }, { transform: "scale(1)", filter: "blur(0)" }], { duration: 320, easing: "cubic-bezier(.2,1.2,.3,1)" });
+      layer.animate([{ transform: "scale(1.08)", opacity: 0 }, { transform: "scale(1)", opacity: 1 }], { duration: 300, easing: "ease-out" }); break;
+    case "glitch": shakeEl.animate([{ transform: "translate(0)" }, { transform: "translate(-10px,2px)", filter: "contrast(1.8)" }, { transform: "translate(8px,-3px)" }, { transform: "translate(-4px,0)", filter: "contrast(1.3)" }, { transform: "translate(0)" }], { duration: 260, easing: "steps(5)" });
+      wipe.style.background = "repeating-linear-gradient(0deg, rgba(10,10,10,.9) 0 6px, transparent 6px 22px)"; wipe.animate([{ opacity: 0.9, transform: "translateY(-30px)" }, { opacity: 0.5, transform: "translateY(20px)" }, { opacity: 0 }], { duration: 260, easing: "steps(4)" }); break;
+    case "iris": wipe.style.background = "#0A0A0A"; wipe.animate([{ opacity: 1, clipPath: "circle(0% at 50% 50%)" }, { opacity: 1, clipPath: "circle(75% at 50% 50%)", offset: 0.4 }, { opacity: 1, clipPath: "circle(75% at 50% 50%)", offset: 0.5 }, { opacity: 1, clipPath: "circle(75% at 50% 50%)" }, { opacity: 0, clipPath: "circle(75% at 50% 50%)" }], { duration: 480, easing: "ease-in-out" }); break;
+    case "blinds": wipe.style.background = "repeating-linear-gradient(90deg, " + col + " 0 12%, transparent 12% 20%)"; wipe.animate([{ opacity: 1, transform: "scaleX(1)" }, { opacity: 1, transform: "scaleX(0)" }], { duration: 380, easing: "cubic-bezier(.7,0,.3,1)" }); break;
+    case "whip": shakeEl.animate([{ transform: "translateX(45%) skewX(-8deg)", filter: "blur(14px)" }, { transform: "translateX(0) skewX(0)", filter: "blur(0)" }], { duration: 320, easing: "cubic-bezier(.2,1,.3,1)" }); break;
+    case "brand": wipe.style.background = "#EEFF6A"; wipe.innerHTML = '<div class="wm">infinite<br>hill</div>';
+      wipe.animate([{ opacity: 1 }, { opacity: 1, offset: 0.7 }, { opacity: 0 }], { duration: 230, easing: "steps(2)" }); break;
+    default: flash(col, 0.4);
+  }
+}
+
+/* ---------- touch: tap a story shot for the next one, swipe to move ---------- */
+var down = null;
+reel.addEventListener("pointerdown", function (e) {
+  if (e.target.closest("button, a")) return;
+  var r = reel.getBoundingClientRect(); down = { x: e.clientX, y: e.clientY, t: performance.now() };
+  if (SCENES[cur] && SCENES[cur].k === "open" && !opened) return;
+  throws++;
+  if (mood === 3 || mood === 2) play(GEN.kit.h || GEN.kit.p || "shaker", clock() + 0.005, 0.6);
+});
+reel.addEventListener("pointerup", function (e) {
+  if (!down) return; var dx = e.clientX - down.x, dy = e.clientY - down.y; down = null;
+  var s = SCENES[cur];
+  if (Math.abs(dx) < 60 && Math.abs(dy) < 60) { if (s && s.k === "clip" && Math.abs(dx) < 12 && Math.abs(dy) < 12 && !e.target.closest("button, a, #layer > *")) next(); return; }
+  if (gated(s)) return;
+  if (dy < -60 || dx < -60) next(); else prev();
+});
+document.addEventListener("keydown", function (e) {
+  if (e.key === "ArrowRight" || e.key === "ArrowDown") { e.preventDefault(); next(); }
+  if (e.key === "ArrowLeft" || e.key === "ArrowUp") { e.preventDefault(); prev(); }
+});
+$("#skip").addEventListener("click", function (e) { e.stopPropagation(); next(); });
+function next() { var s = SCENES[cur]; if (s && s.k === "open" && !opened) return; if (gated(s)) return; if (cur < SCENES.length - 1) go(cur + 1); }
+var GATE = { game: 1, quiz: 1, match: 1, today: 1 };
+function gated(s) { return !!(s && GATE[s.k] && !solved); }
+function prev() { if (cur > 1) go(cur - 1); }
+
+/* ---------- progress bars ---------- */
+var bars = $("#bars"); SCENES.forEach(function () { var i = document.createElement("i"); i.appendChild(document.createElement("b")); bars.appendChild(i); });
+function setBars(i, dur) {
+  [].forEach.call(bars.children, function (el, k) { var b = el.firstChild; b.style.transition = "none"; b.style.width = k < i ? "100%" : "0%"; });
+  var b = bars.children[i].firstChild; void b.offsetWidth;
+  if (dur) { b.style.transition = "width " + dur + "s linear"; b.style.width = "100%"; }
+}
+function fillBar(i) { var b = bars.children[i].firstChild; b.style.transition = "width .3s"; b.style.width = "100%"; }
+
+/* ===== BLOCK IH_CAPTIONS (reusable): chunkify/renderChunk/runCaptions, styles slam|boxed|tilt|ticker ===== */
+/* ---------- kinetic captions ---------- */
+function clean(w) { return String(w).toLowerCase().replace(/[^\p{L}\p{N}’']/gu, "").replace(/[’']s$/, function (m) { return m; }); }
+function hotMap(hot) {
+  // words (and multi-word phrases) → colour class. never rainbow.
+  var m = {}; Object.keys(hot || {}).forEach(function (k) { var c = hot[k]; if (c === "rb") c = "y"; String(k).split(/\s+/).forEach(function (w) { var cw = clean(w); if (cw) m[cw] = c; }); }); return m;
+}
+function chunkify(text, dropWord) {
+  var words = String(text).split(/\s+/).filter(Boolean), out = [], c = [];
+  words.forEach(function (w) {
+    if (dropWord && clean(w) === dropWord) { if (c.length) out.push(c); out.push([w]); c = []; return; }
+    c.push(w); var chars = c.join(" ").length;
+    if (/[.,?!:;]["”’]?$/.test(w) || c.length >= 3 || chars > 13) { out.push(c); c = []; }
+  });
+  if (c.length) out.push(c);
+  return out;
+}
+// cinema: whole sentences (long ones split at a comma), tiny ones merged, so a caption reads like a title card
+function cineChunks(text) {
+  var sent = String(text).split(/(?<=[.?!…]["”’)]?)\s+/).filter(Boolean), out = [];
+  sent.forEach(function (t) {
+    var ws = t.split(/\s+/);
+    if (ws.length <= 11) { out.push(ws); return; }
+    var c = [];
+    ws.forEach(function (w, i) { c.push(w); var left = ws.length - i - 1;
+      if ((/[,;:—–]["”’]?$/.test(w) && c.length >= 3 && left >= 3) || (c.length >= 10 && left >= 3)) { out.push(c); c = []; } });
+    if (c.length) out.push(c);
+  });
+  var m = [];
+  out.forEach(function (c) { var p = m[m.length - 1]; if (p && p.length + c.length <= 7 && /[.?!…]["”’)]?$/.test(p[p.length - 1])) m[m.length - 1] = p.concat(c); else m.push(c); });
+  return m;
+}
+// size the caption like the approved mock (62px on a 360-wide frame), shrinking until the longest word fits and it stays in the lower third
+function fitCine(d) {
+  var cs = getComputedStyle(cap), avail = cap.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight), rh = reel.clientHeight || 640;
+  var size = Math.round(62 * Math.min(1.25, (reel.clientWidth || 360) / 360)), spans = d.querySelectorAll("span");
+  function widest() { var m = 0; [].forEach.call(spans, function (x) { m = Math.max(m, x.offsetWidth); }); return m; }
+  d.style.fontSize = size + "px";
+  while (size > 24 && (widest() > avail || d.offsetHeight > rh * 0.34)) { size -= 2; d.style.fontSize = size + "px"; }
+}
+var CINE_LITTLE = /^(the|and|but|for|with|from|into|that|this|they|them|their|there|then|than|when|what|which|who|were|was|have|has|had|been|said|says|just|also|very|will|would|could|should|about|after|before|because|every|many|some)$/;
+var tiltN = 0;
+var lastChunk = null;
+function renderChunk(ws, hot, isDrop, key, sub) {
+  var style = capStyle(); lastChunk = [ws, hot, isDrop, key, sub];
+  if (style === "cinema") {
+    // one lime keyword per caption (a phrase key lights its words once)
+    var dc = document.createElement("div"), lit = {}; dc.className = "chunk" + (isDrop ? " drop" : "");
+    ws.forEach(function (w) { var sp = document.createElement("span"), cw = clean(w); sp.textContent = w; if (key && key.indexOf(cw.replace(/[’']s$/, "")) >= 0 && !lit[cw]) { sp.className = "k"; lit[cw] = 1; } dc.appendChild(sp); });
+    if (!dc.querySelector(".k")) { var best = null, bl = 0; [].forEach.call(dc.children, function (sp) { var c = clean(sp.textContent).replace(/[’']s$/, ""); if (c.length > bl && c.length > 3 && !/[’']/.test(c) && !CINE_LITTLE.test(c)) { best = sp; bl = c.length; } }); if (best) best.className = "k"; }   // a page without the shot's keyword still gets one
+    cap.innerHTML = ""; cap.appendChild(dc);
+    if (sub) { var sb = document.createElement("div"); sb.className = "sub"; sb.textContent = sub; cap.appendChild(sb); }
+    fitCine(dc);
+    return;
+  }
+  if (style === "ticker" && !isDrop) {
+    var tk = cap.querySelector(".tick");
+    if (!tk || tk.dataset.full === "1") { cap.innerHTML = ""; tk = document.createElement("div"); tk.className = "tick"; cap.appendChild(tk); }
+    ws.forEach(function (w, i) { var s = document.createElement("span"), h = hot[clean(w)]; s.textContent = (tk.childNodes.length ? " " : "") + w; if (h) s.className = h; s.style.animationDelay = (i * 0.05) + "s"; tk.appendChild(s); });
+    if (/[.?!]["”’]?$/.test(ws[ws.length - 1]) || tk.textContent.length > 70) tk.dataset.full = "1";
+    return;
+  }
+  var d = document.createElement("div"); d.className = "chunk" + (isDrop ? " drop" : "") + (ws.join(" ").length > 12 ? " long" : "");
+  if (style === "tilt") { tiltN++; d.style.setProperty("--rot", (tiltN % 2 ? -3 : 2.5) + "deg"); }
+  ws.forEach(function (w, i) { var s = document.createElement("span"), h = hot[clean(w)]; s.textContent = w; if (h) s.className = h; s.style.animationDelay = (i * 0.06) + "s"; d.appendChild(s); });
+  cap.innerHTML = ""; cap.appendChild(d);
+}
+function runCaptions(s, total) {
+  var cine = capStyle() === "cinema", key = (s.key || []).map(function (k) { return clean(k).replace(/[’']s$/, ""); });
+  var hot = hotMap(s.hot), chunks = cine ? cineChunks(s.line) : chunkify(s.line, s.drop ? s.dropWord : null);
+  var weights = chunks.map(function (c) { var w = c.join(" "); return w.length + (/[.?!]$/.test(w) ? 7 : /,$/.test(w) ? 3 : 0) + 4; });
+  var sum = weights.reduce(function (a, b) { return a + b; }, 0), acc = 0, span = total - 0.25, fired = false;
+  chunks.forEach(function (c, i) {
+    var at = 0.08 + (acc / sum) * span; acc += weights[i];
+    var isDrop = !!(s.drop && s.dropWord && !fired && (cine ? c.some(function (w) { return clean(w) === s.dropWord; }) : clean(c[0]) === s.dropWord));
+    if (isDrop) fired = true;
+    var sub = i === chunks.length - 1 ? s.sub : null;
+    later(function () { renderChunk(c, hot, isDrop, key, sub); if (isDrop) dropNow(); }, at * 1000);
+    if (isDrop && i > 0) later(hush, Math.max(0, at * 1000 - 900));
+  });
+  if (s.drop && !fired) later(function () { dropNow(); }, total * 600);
+}
+
+/* ---------- video ---------- */
+var kb = 0;
+var onScreen = null;
+function lookFallback(x, v) { x.onerror = function () { if (RX.look && RX.look !== "original" && x.src.indexOf("/looks/") >= 0) { x.onerror = null; x.poster = mediaOG(v, "webp"); x.src = mediaOG(v, "mp4"); var p = x.play(); if (p && p.catch) p.catch(function () {}); } }; }
+function showClip(v, rate) {
+  if (!v) return; onScreen = { k: "clip", v: v, rate: rate };
+  var nv = vids[1 - vidIx], ov = vids[vidIx]; nv.classList.remove("blur");
+  kb++; var R = rng((ST.seed || 1) + kb * 31); nv.style.setProperty("--ox", (20 + R() * 60) + "%"); nv.style.setProperty("--oy", (25 + R() * 50) + "%");
+  nv.style.transition = "none"; nv.style.setProperty("--zoom", 1.02); void nv.offsetWidth; nv.style.transition = "";
+  if (RM) { nv.removeAttribute("src"); nv.poster = media(v, "webp"); nv.load(); }
+  else { lookFallback(nv, v); nv.poster = media(v, "webp"); nv.src = media(v, "mp4"); nv.playbackRate = rate || 1; var pr = nv.play(); if (pr && pr.catch) pr.catch(function () {}); setTimeout(function () { nv.style.setProperty("--zoom", 1.1); }, 60); }
+  nv.classList.add("on"); ov.classList.remove("on"); vidIx = 1 - vidIx;
+  setTimeout(function () { if (!ov.classList.contains("on")) ov.pause(); }, 400);
+}
+function still(v, blur) { if (!v) { hideClip(); return; } onScreen = { k: "still", v: v, blur: blur }; vids.forEach(function (x) { x.classList.remove("on"); });
+  var x = vids[vidIx]; x.poster = media(v, "webp"); x.removeAttribute("src"); x.load(); x.classList.toggle("blur", !!blur); x.classList.add("on"); }
+function hideClip() { onScreen = null; vids.forEach(function (v) { v.classList.remove("on"); }); }
+
+/* ---------- scenes ---------- */
+var opened = false;
+// Finn: the approved still art only, wordless (owner 2026-11-14). the celebrity guide of this path does all the talking.
+var FINN = function (n) { return ASSETS + "finn-" + n + "-still.webp"; };
+var GUIDE = CFG.guide && CFG.guide.photo ? CFG.guide : null;
+function asker() { return GUIDE ? '<div class="asker"><img src="' + BASE + GUIDE.photo + '" alt="">' + esc(GUIDE.name) + '</div>' : ''; }
+function guideRow(say) { return '<div class="guiderow">' + (GUIDE ? '<img class="gimg" src="' + BASE + GUIDE.photo + '" alt="' + esc(GUIDE.name) + '">' : '') +
+  '<div class="gbub">' + (GUIDE ? '<span class="gname">' + esc(GUIDE.name) + '</span>' : '') + '<span class="gsay">' + say + '</span></div></div>'; }
+function setSay(el, say) { var b = el.querySelector(".gsay"); if (b && say != null) b.innerHTML = say; }
+/* lowercase UI (2026-11-15): answer buttons, chips and questions read in the house's lowercase voice. proper nouns keep
+   their capitals: any word this episode capitalises mid-sentence, plus a short list of sacred names */
+var LOWER = {}, PROPER = (function () {
+  var P = {}; ["God", "Lord", "Jesus", "Christ", "Mary", "Allah", "Torah", "Bible", "Quran", "Qur’an", "Gospel", "Guru", "Buddha", "Dharma", "Ganesha", "Shiva", "Krishna", "Rama",
+    "Moses", "Abraham", "Muhammad", "Prophet", "Shabbat", "Sabbath", "Ramadan", "Eid", "Easter", "Christmas", "Passover", "Diwali", "Vesak", "Waheguru", "Sikh", "Sikhs", "Hindu", "Jewish", "Muslim", "Muslims", "Catholic", "Christian", "Christians", "Buddhist", "Buddhists", "Jews", "Hebrew", "Arabic", "Sanskrit", "Punjabi", "Catholics", "Hindus", "Stoic", "Stoics", "Hasidic", "Theravada", "Mahayana", "Zen", "Holy", "Saint", "Psalm", "Psalms", "Apostle", "Father", "Son", "Spirit", "Sati", "Aparna", "Maimonides", "Islam", "Lot", "Ibn", "Al", "Kaur", "Mahisha", "Kala", "Ganpati", "Pongal", "Om", "Epiktetos", "Wahe", "Tera", "Nirbhau", "Nirvair", "Surah", "Bismillah", "Godspel", "Dominicum", "Misericordia", "Votum", "Raqia", "Echad", "Alef", "Inna", "Na’aseh", "Hayya", "Din", "Shalom", "Sat", "Salaam", "Mashallah", "Allahu", "Qur", "Pax", "Miser", "Rabbi", "Pope", "Pharaoh"].forEach(function (w) { P[w] = 1; });
+  var T = []; (CFG.seq || []).forEach(function (s) { T.push(s.line, s.q, s.why, s.say, s.pre, s.post); (s.o || []).forEach(function (o) { T.push(o); }); (s.options || []).forEach(function (o) { T.push(o[0], o[1]); }); (s.pairs || []).forEach(function (p) { T.push(p[0], p[1]); }); });
+  T.forEach(function (t) { if (Array.isArray(t)) t = t.join(" "); if (!t) return; String(t).split(/[.!?:;“”"]\s*/).forEach(function (sen) { sen.trim().split(/\s+/).forEach(function (w, k) { w = w.replace(/^[^\p{L}]+|[^\p{L}’']+$/gu, "");
+    if (/^[\p{Ll}’']+$/u.test(w)) LOWER[w] = 1; else if (k && /^\p{Lu}\p{Ll}/u.test(w) && !/^I[’']/.test(w)) P[w.replace(/[’']s$/, "")] = 1; }); }); });
+  return P;
+})();
+// a sentence's first word is lowered only when it is an ordinary word (this episode also uses it in lowercase, or it is a
+// common opener). names that only ever start a sentence (Luke, Genesis, Hanuman…) keep their capital
+// ordinary words this story starts a sentence with that the whole library writes in lowercase ("Stays outside the temple" →
+// "stays…"); build.mjs fills this list per episode, so a name that only ever starts a sentence (Luke, Korah) keeps its capital
+(["a","after","chanting","closed","his","it","it’s","let","many","only","sent","silent","the","turning","what","when","why"]).forEach(function (w) { LOWER[w] = 1; });
+var COMMON = {}; (function () { ("the a an and but so or if when what why how who which where whose whom it it’s its he he’s he’d his him she she’s her they they’re their them "
+  + "you you’re your we our my in on at to of for from by with about after before then there this that that’s these those not no yes one two three all each every some many most "
+  + "only just even also because while once now today tonight someone something nothing everyone nobody anyone maybe "
+  + "help give tell let take make go come see look keep stay try ask please thank start stop wait leave get be do don’t can can’t will won’t i’ll i’d").split(" ").forEach(function (w) { LOWER[w] = COMMON[w] = 1; }); })();
+function lowStart(t) {
+  var m = /^([^\p{L}]*)(\p{Lu})(\p{L}*)/u.exec(t); if (!m) return t;
+  var w = m[2] + m[3], lw = w.toLowerCase(); if (PROPER[w] || PROPER[w.replace(/[’']s$/, "")] || !(LOWER[lw] || LOWER[lw.replace(/[’']s$/, "")]) || (m[3] && m[3] === m[3].toUpperCase())) return t;
+  if (!COMMON[lw] && /^[\s-]+\p{Lu}/u.test(t.slice(m[0].length))) return t; // "Holy Spirit", "Yom Kippur": a two-word name
+  if (!COMMON[lw] && /^\s+(\d|of\s+(the\s+)?\p{Lu})/u.test(t.slice(m[0].length))) return t; // "Numbers 13:1", "Mother of the Church": a book or a title
+  return m[1] + m[2].toLowerCase() + t.slice(m[0].length - m[3].length);
+}
+function ui(t) {
+  t = String(t == null ? "" : t).replace(/(^|[^\p{L}])I(?=$|[^\p{L}])/gu, "$1i");
+  // every sentence start, not just the first ("everyone joins the aarti. what do you think…")
+  return t.split(/([.!?…]["”’)]*\s+)/).map(function (p, k) { return k % 2 ? p : lowStart(p); }).join("");
+}
+function finnWin(el) { if (el.querySelector(".finnwin")) return; var f = document.createElement("img"); f.className = "finnwin"; f.src = FINN("celebrate"); f.alt = "the mascot, celebrating"; el.appendChild(f); }
+$("#hfinn").src = ASSETS + "finn-thumbs_up-still.webp";
+function go(i) {
+  token++; clearTimers(); var prevK = SCENES[cur] && SCENES[cur].k; cur = i; var s = SCENES[i];
+  try { vo.pause(); vo.onended = null; } catch (e) {} duck(false);
+  cap.innerHTML = ""; layer.innerHTML = ""; partyAuto = false; solved = false;
+  $("#hint").classList.remove("on");
+  $("#skip").hidden = (s.k === "open" || !!GATE[s.k] || s.k === "end" || s.k === "cliff");
+  $("#skipT").textContent = s.k === "end" ? "what’s next" : "next";
+  $("#top").style.opacity = s.k === "open" ? 0 : 1;
+  reel.classList.toggle("rx-hide", s.k === "end" || s.k === "cliff"); if (remix && remix.isOpen() && (s.k === "end" || s.k === "cliff")) remix.close();
+  if (prevK && prevK !== "open") transition(ST.trans || "flash", false);
+  var fn = { open: sceneOpen, clip: sceneClip, quiz: sceneQuiz, game: sceneGame, teach: sceneTeach, match: sceneMatch, today: sceneToday, end: sceneEnd, cliff: sceneCliff }[s.k];
+  if (fn) fn(s, i); else later(next, 50);
+}
+
+/* ===== BLOCK IH_OPENINGS (reusable): OPEN layouts + sceneOpen ===== */
+/* ---- the open ---- */
+function fitSize(text, max, min, widthPx, ratio) { var n = Math.max(1, String(text).length); return Math.max(min, Math.min(max, Math.floor(widthPx / (n * (ratio || 0.46))))); }
+var OPEN = {
+  lime: null,
+  stack: {
+    a: function (h, L) { h.innerHTML = '<h1 class="oh1">' + L.map(function (l, k) { return '<span' + (k === L.length - 1 ? ' class="y"' : '') + ' style="animation-delay:' + (0.25 + k * 0.32) + 's">' + esc(l) + '</span>'; }).join("") + '</h1>'; },
+    b: function (h, L) { h.innerHTML = '<h1 class="oh1">' + L.map(function (w, k) { return '<span' + (k === L.length - 1 ? ' class="y"' : '') + ' style="animation-delay:' + (k * 0.12) + 's">' + esc(w) + '</span>'; }).join("") + '</h1>'; } },
+  word: {
+    a: function (h, L) { var words = L.join(" ").split(/\s+/), k = 0; (function nx() { if (k < words.length) { h.innerHTML = '<div class="wsmall">' + (k + 1) + ' / ' + words.length + '</div><div class="w1' + (k === words.length - 1 ? ' y' : '') + '" style="font-size:' + fitSize(words[k], 120, 54, W - 40, 0.5) + 'px">' + esc(words[k]) + '</div>'; k++; later(nx, k === words.length ? 600 : 300); }
+      else h.innerHTML = '<h1 class="oh1" style="text-align:center">' + L.map(function (l, j) { return '<span' + (j === L.length - 1 ? ' class="y"' : '') + ' style="animation-delay:' + (j * 0.1) + 's">' + esc(l) + '</span>'; }).join("") + '</h1>'; })(); },
+    b: function (h, L) { var k = 0; (function nx() { if (k < L.length) { h.innerHTML = '<div class="w1' + (k === L.length - 1 ? ' y' : '') + '" style="font-size:' + fitSize(L[k], 130, 54, W - 40, 0.5) + 'px">' + esc(L[k]) + '</div>'; k++; later(nx, 420); } })(); } },
+  split: {
+    a: function (h, L) { h.innerHTML = '<div class="half t"><p>' + esc(L[0] || "") + '</p></div><div class="half b">' + L.slice(1).map(function (l, k) { return '<p' + (k === L.length - 2 ? ' class="y"' : '') + '>' + esc(l) + '</p>'; }).join("") + '</div>'; },
+    b: function (h, L) { var m = document.createElement("div"); m.className = "mid"; m.innerHTML = '<h1 class="oh1">' + L.map(function (w, k) { return '<span' + (k === L.length - 1 ? ' class="y"' : '') + ' style="animation-delay:' + (0.2 + k * 0.12) + 's">' + esc(w) + '</span>'; }).join("") + '</h1>'; h.appendChild(m); } },
+  giant: {
+    a: function (h, L) { var k = 0; (function nx() { if (k >= L.length) return; h.innerHTML = '<div class="g1' + (k === L.length - 1 ? ' y' : '') + '" style="font-size:' + fitSize(L[k], 170, 44, W - 36, 0.44) + 'px">' + esc(L[k]) + '</div>'; k++; later(nx, 760); })(); },
+    b: function (h, L) { var k = 0; (function nx() { if (k >= L.length) return; h.innerHTML = '<div class="g1' + (k === L.length - 1 ? ' y' : '') + '" style="font-size:' + fitSize(L[k], 190, 44, W - 36, 0.44) + 'px">' + esc(L[k]) + '</div>'; k++; later(nx, 380); })(); } },
+  type: {
+    a: function (h, L) { h.innerHTML = '<div class="tw" id="tw"></div>'; var tw = h.querySelector("#tw"), full = L.join("\n"), n = 0, lastStart = full.length - (L[L.length - 1] || "").length;
+      (function nx() { if (n > full.length) return; tw.innerHTML = esc(full.slice(0, Math.min(n, lastStart))) + (n > lastStart ? '<span class="y">' + esc(full.slice(lastStart, n)) + '</span>' : '') + '<span class="cur"></span>'; n++; later(nx, full[n - 1] === "\n" ? 260 : 34); })(); },
+    b: function (h, L) { h.innerHTML = '<div class="tw big" id="tw"></div>'; var tw = h.querySelector("#tw"), full = L.join("\n"), n = 0, lastStart = full.length - (L[L.length - 1] || "").length;
+      (function nx() { if (n > full.length) return; tw.innerHTML = esc(full.slice(0, Math.min(n, lastStart))) + (n > lastStart ? '<span class="y">' + esc(full.slice(lastStart, n)) + '</span>' : '') + '<span class="cur"></span>'; n++; later(nx, 22); })(); } },
+  marquee: {
+    a: function (h, L) { var rows = []; for (var r = 0; r < 4; r++) L.forEach(function (l, k) { rows.push('<p' + (k === L.length - 1 && r % 2 === 0 ? ' class="y"' : '') + '>' + esc(l) + '</p>'); });
+      h.innerHTML = '<div class="mq-col">' + rows.join("") + '</div>'; [].forEach.call(h.querySelectorAll(".mq-col p"), function (p) { p.style.fontSize = fitSize(p.textContent, 92, 40, W - 20, 0.44) + "px"; }); },
+    b: function (h, L) { var band = document.createElement("div"); band.className = "band"; band.innerHTML = L.map(function (w, k) { return '<span' + (k === L.length - 1 ? ' class="y"' : '') + ' style="animation-delay:' + (k * 0.12) + 's">' + esc(w) + '</span>'; }).join(""); h.appendChild(band); } },
+  tape: {
+    a: function (h, L) { h.innerHTML = L.map(function (l, k) { return '<div class="strip" style="animation-delay:' + (0.2 + k * 0.38) + 's;font-size:' + fitSize(l, 60, 34, W - 70, 0.47) + 'px">' + esc(l) + '</div>'; }).join(""); },
+    b: function (h, L) { [].forEach.call(h.querySelectorAll(".strip"), function (s) { s.classList.add("off"); });
+      later(function () { h.innerHTML = L.map(function (l, k) { return '<div class="strip" style="animation-delay:' + (k * 0.12) + 's;font-size:' + fitSize(l, 72, 34, W - 70, 0.47) + 'px">' + esc(l) + '</div>'; }).join(""); }, 300); } },
+  outline: {
+    a: function (h, L) { h.innerHTML = L.map(function (l, k) { return '<p class="ol' + (k === L.length - 1 ? ' y' : '') + '" style="animation-delay:' + (0.2 + k * 0.3) + 's;font-size:' + fitSize(l, 84, 40, W - 40, 0.46) + 'px">' + esc(l) + '</p>'; }).join("");
+      later(function () { var last = h.querySelector(".ol.y"); if (last) last.classList.add("fill"); }, 1500); },
+    b: function (h, L) { h.innerHTML = L.map(function (l, k) { return '<p class="ol' + (k === L.length - 1 ? ' y' : '') + '" style="animation-delay:' + (k * 0.12) + 's;font-size:' + fitSize(l, 92, 40, W - 40, 0.46) + 'px">' + esc(l) + '</p>'; }).join("");
+      [].forEach.call(h.querySelectorAll(".ol"), function (p, k) { later(function () { p.classList.add("fill"); }, 200 + k * 160); }); } }
+};
+function sceneOpen(s, i) {
+  if (!OPEN.lime) OPEN.lime = OPEN.stack;
+  hideClip(); setMood(0); setCrowd(0); setBars(i, 0);
+  var lay = OPEN[ST.open] ? ST.open : "stack", L1 = (CFG.open && CFG.open.length ? CFG.open : [CFG.title || "a story", "you", "haven’t heard."]), L2 = (CFG.open2 && CFG.open2.length ? CFG.open2 : ["let’s", "go."]);
+  var el = document.createElement("div"); el.className = "pad open op-" + lay;
+  el.innerHTML = '<div class="ohead" id="openH"></div>' +
+    (CFG.ep ? '<div class="series">ep ' + String(CFG.ep).padStart(2, "0") + ' · ' + esc(CFG.faithName || "") + ' · the long game</div>' : '') + (CFG.title ? '<div class="series-t" translate="no">' + esc(CFG.title) + '</div>' : '') + '<div class="cta"><button class="bigbtn pulse" id="goSound">' + ICON_ON + 'tap for sound</button><button class="linkbtn" id="goMuted">watch with sound off</button></div>';
+  layer.appendChild(el);
+  var head = el.querySelector("#openH");
+  OPEN[lay].a(head, L1);
+  setSound(false);
+  function begin(withSound) {
+    if (opened) return; opened = true;
+    if (withSound) startSound();
+    el.classList.add("go");
+    var t = clock() + 0.02; dropFx(t, 1.1);
+    flash(COLORS[0], 1); setTimeout(function () { flash("#EEFF6A", 0.7); }, 120); shake(14); vibrate(80);
+    
+    token++; clearTimers();          // stop the first half's animation timers
+    OPEN[lay].b(head, L2);
+    later(function () { go(1); }, (lay === "word" || lay === "giant" ? 2300 : 1900) * EN.pace);
+  }
+  el.querySelector("#goSound").addEventListener("click", function (e) { e.stopPropagation(); begin(true); });
+  el.querySelector("#goMuted").addEventListener("click", function (e) { e.stopPropagation(); begin(false); });
+}
+
+/* ---- a story shot ---- */
+function estimate(line) { return Math.max(4.6, String(line || "").length / 13.5 + 1.2) * EN.pace; }
+function sceneClip(s, i) {
+  var voiced = !!(everSound && soundOn && CFG.voice && s.vo && s.vo.length);
+  var known = 0, all = true; (s.vo || []).forEach(function (n) { if (VOD[n]) known += VOD[n]; else all = false; });
+  var dur = voiced && all && known ? known + 0.2 : estimate(s.line);
+  var holdT = (s.drop ? 3.6 : s.party ? 4 : 0.8) * EN.pace, total = dur + holdT;
+  showClip(s.v, Math.max(0.6, Math.min(1, 8 / (dur + 0.6))));
+  setMood(s.mood || 1);
+  setCrowd(s.mood === 1 ? 26 : s.mood === 2 ? 70 : 140);
+  if (s.party) { partyAuto = true; setMood(3); }
+  if (s.build) { building = { t0: clock(), dur: dur }; play(DRUMS_ONLY ? "jingle" : "riser", clock() + 0.05, dur); if (GEN.lead === "arp" || GEN.lead === "brass") play("sweep", clock() + 0.05, dur); }
+  setBars(i, total);
+  if (s === FIRST_CLIP) { $("#hintText").textContent = "tap for next"; later(function () { $("#hint").classList.add("on"); }, 1200); later(function () { $("#hint").classList.remove("on"); }, 6000); }
+  runCaptions(s, dur);
+  var timeUp = false, voDone = !voiced, moved = false;
+  function advance() { if (moved) return; moved = true; next(); }
+  if (voiced) {
+    var q = s.vo.slice();
+    (function playNext() {
+      if (!q.length || SCENES[cur] !== s) { voDone = true; duck(false); if (timeUp) later(advance, holdT * 1000); return; }
+      try { vo.src = voUrl(q.shift()); vo.muted = !soundOn; duck(true); vo.onended = playNext; vo.onerror = playNext; var pr = vo.play(); if (pr && pr.catch) pr.catch(function () { playNext(); }); } catch (e) { playNext(); }
+    })();
+    later(advance, (dur * 2 + 6) * 1000);   // never get stuck on a slow file
+  }
+  later(function () { if (s.drop || s.party) partyAuto = true; }, dur * 1000 + 200);
+  later(function () { timeUp = true; if (voDone) later(advance, holdT * 1000); }, dur * 1000);
+}
+
+/* ---- a clean quiz (lesson ask or fill) ---- */
+function keepGoing(el, label) { var nb = document.createElement("button"); nb.className = "bigbtn next"; nb.textContent = label || "keep going";
+  nb.addEventListener("click", function (ev) { ev.stopPropagation(); next(); }); el.appendChild(nb); try { nb.focus({ preventScroll: true }); } catch (e) {} return nb; }
+var RIGHT_LINES = ["yes. that’s it.", "nailed it.", "you got it.", "exactly right.", "look at you.", "correct. i’m impressed."];
+var CLOSE_LINES = ["close. here’s the real one.", "not quite. this one’s it.", "good guess. here’s what happened.", "almost. look."];
+function sceneQuiz(s, i) {
+  still(s.v, s.blur); setMood("game"); setCrowd(40); setBars(i, 0); solved = false;
+  var el = document.createElement("div"); el.className = "pad quiz scroll";
+  var qHtml = s.fill ? esc(ui(s.pre)) + ' <span class="blank" id="blank">?</span> ' + esc(ui(s.post)) : esc(ui(s.q));
+  el.innerHTML = asker() + '<span class="chip">' + esc(ui(s.eb || "quick one")) + '</span><p class="qq" translate="no">' + qHtml + '</p><div class="opts" translate="no">' +
+    (s.o || []).map(function (o, k) { return '<button class="opt" data-k="' + k + '">' + esc(ui(o)) + '</button>'; }).join("") + '</div>';
+  layer.appendChild(el);
+  [].forEach.call(el.querySelectorAll(".opts .opt"), function (b) {
+    b.addEventListener("click", function (e) {
+      e.stopPropagation(); if (solved) return; solved = true;
+      var k = +b.dataset.k, ok = k === s.a, R = rng((ST.seed || 1) + i);
+      if (!quizSeen[i]) { quizSeen[i] = 1; if (ok) quizRight++; }
+      [].forEach.call(el.querySelectorAll(".opts .opt"), function (o) { o.disabled = true; var kk = +o.dataset.k; if (kk === s.a) o.classList.add("yes"); else if (kk === k) o.classList.add("no"); else o.classList.add("dim"); });
+      if (s.fill) { var bl = el.querySelector("#blank"); if (bl) bl.textContent = ui((s.o || [])[s.a] || ""); }
+      still(s.v, false);
+      var w = document.createElement("div"); w.className = "why"; w.innerHTML = '<b>' + (ok ? RIGHT_LINES[(R() * RIGHT_LINES.length) | 0] : CLOSE_LINES[(R() * CLOSE_LINES.length) | 0]) + '</b> <span translate="no">' + esc(ui(s.why || "")) + '</span>'; el.appendChild(w);
+      fillBar(i); vibrate(ok ? [40, 30, 40] : 30);
+      if (ok) { celebrate(); finnWin(layer); var r = b.getBoundingClientRect(), rr = reel.getBoundingClientRect(); throwFx(r.left - rr.left + r.width / 2, r.top - rr.top, 1.2); } else nopeSound();
+      keepGoing(el);
+    });
+  });
+}
+
+/* ---- the playful game (one ask, rewritten by the writer) ---- */
+var GAME_OPENERS = [["ok real quick. no pressure.", "(some pressure.)"], ["quick one for you.", "(you got this.)"], ["pop quiz. don’t panic.", "(ok, panic a little.)"], ["let’s see if you were listening.", "(i think you were.)"]];
+function sceneGame(s, i) {
+  still(s.v); setMood("game"); setCrowd(50); setBars(i, 0); solved = false; var mine = 0;
+  var G = s.game;
+  var el = document.createElement("div"); el.className = "pad game";
+  var OPN = GAME_OPENERS[((ST.seed || 1) + (CFG.ep || 0)) % GAME_OPENERS.length];
+  el.innerHTML = guideRow(OPN[0] + ' <b>' + OPN[1] + '</b>') +
+    '<p class="q" translate="no">' + G.q + '</p><div class="opts" translate="no">' + G.opts.map(function (o) { return '<button class="opt" data-a="' + esc(o[0]) + '">' + esc(ui(o[1])) + '</button>'; }).join("") + '</div>';
+  layer.appendChild(el);
+  var WRONG = G.wrong || {};
+  [].forEach.call(el.querySelectorAll(".opt"), function (b) {
+    b.addEventListener("click", function (e) {
+      e.stopPropagation(); if (solved || b.disabled) return; tries++; mine++;
+      var r = b.getBoundingClientRect(), rr = reel.getBoundingClientRect();
+      if (b.dataset.a !== "yes") { b.classList.add("no"); b.disabled = true; setSay(el, esc(WRONG[b.dataset.a] || "not this one.") + " <b>try again.</b>"); nopeSound(); vibrate(30); return; }
+      solved = true; if (!quizSeen[i]) { quizSeen[i] = 1; if (mine === 1) quizRight++; }
+      b.classList.add("yes"); setSay(el, G.right || "yes!"); finnWin(layer);
+      vibrate([40, 30, 40]); fillBar(i); bigBurst(5); throwFx(r.left - rr.left + r.width / 2, r.top - rr.top, 1.6); celebrate();
+      later(function () { mood = 3; step = 0; nextT = clock() + 0.02; partyAuto = true; setCrowd(110); }, 3 * SIX * 1000);
+      [].forEach.call(el.querySelectorAll(".opt"), function (o) { o.disabled = true; });
+      keepGoing(el);
+    });
+  });
+}
+
+/* ---- the real teaching ---- */
+function sceneTeach(s, i) {
+  showClip(s.v || POSTER, 0.75); setMood(1); setCrowd(30);
+  var lines = (s.say || []), dur = Math.max(9, Math.min(22, lines.join(" ").length / 15 + 5));
+  setBars(i, dur);
+  var el = document.createElement("div"); el.className = "pad teach rise";
+  el.innerHTML = asker() + '<span class="chip lime">the real teaching</span><h2>' + (s.h || "here’s the <em>heart of it.</em>") + '</h2>' +
+    lines.map(function (l) { return '<p translate="no">' + esc(l) + '</p>'; }).join("") + (s.src ? '<div class="src"><b>where it’s from:</b> <span translate="no">' + esc(s.src) + '</span></div>' : '');
+  layer.appendChild(el);
+  var h2 = el.querySelector("h2"); if (h2.textContent.length > 22) h2.style.fontSize = "56px";
+  later(next, dur * 1000);
+}
+
+/* ---- match the pairs ---- */
+function sceneMatch(s, i) {
+  still(s.v); setMood("game"); setCrowd(50); setBars(i, 0); solved = false;
+  var P = s.pairs || [], right = P.map(function (p, k) { return { t: p[1], k: k }; });
+  right = right.slice(1).concat(right.slice(0, 1)).reverse();
+  var el = document.createElement("div"); el.className = "pad game scroll";
+  el.innerHTML = guideRow(esc(s.q || "match them up.") + " <b>tap the pairs.</b>") + '<div class="pairs" translate="no">' +
+    P.map(function (p, k) { return '<button class="opt" data-side="l" data-k="' + k + '">' + esc(ui(p[0])) + '</button><button class="opt" data-side="r" data-k="' + right[k].k + '">' + esc(ui(right[k].t)) + '</button>'; }).join("") + '</div>';
+  layer.appendChild(el);
+  var pick = null, got = 0;
+  [].forEach.call(el.querySelectorAll(".pairs .opt"), function (b) {
+    b.addEventListener("click", function (e) {
+      e.stopPropagation(); if (solved || b.classList.contains("done")) return;
+      if (b.dataset.side === "l") { if (pick) pick.classList.remove("sel"); pick = b; b.classList.add("sel"); play(GEN.kit.h || "shaker", clock() + 0.01, 0.7); return; }
+      if (!pick) { setSay(el, "tap one on the left first."); return; }
+      if (pick.dataset.k === b.dataset.k) {
+        pick.classList.remove("sel"); pick.classList.add("done"); b.classList.add("done"); pick.disabled = b.disabled = true; pick = null; got++;
+        play(GEN.kit.p || GEN.kit.k, clock() + 0.01, 0.9); var r = b.getBoundingClientRect(), rr = reel.getBoundingClientRect(); throwFx(r.left - rr.left + r.width / 2, r.top - rr.top, 0.7);
+        if (got === P.length) { solved = true; setSay(el, "<b>all of them.</b> " + esc(s.why || "")); finnWin(layer); fillBar(i); celebrate(); keepGoing(el); }
+      } else { b.classList.remove("no"); void b.offsetWidth; b.classList.add("no"); nopeSound(); setTimeout(function () { b.classList.remove("no"); }, 450); setSay(el, "close. try another one."); }
+    });
+  });
+}
+
+/* ---- today: one small move ---- */
+function sceneToday(s, i) {
+  showClip(s.v || POSTER, 0.7); setMood(2); setCrowd(40); setBars(i, 0); solved = false;
+  var el = document.createElement("div"); el.className = "pad today scroll";
+  el.innerHTML = asker() + '<span class="chip lime">your move today</span><h2>' + (ES ? '¿y <span class="y">tú?</span>' : 'and <span class="y">you?</span>') + '</h2><p class="say" translate="no">' + esc(s.say || "") + '</p><div class="opts" translate="no">' +
+    (s.options || []).map(function (o, k) { return '<button class="opt" data-k="' + k + '">' + esc(ui(o[0])) + '</button>'; }).join("") + '</div>';
+  layer.appendChild(el);
+  if (!(s.options || []).length) { solved = true; keepGoing(el); return; }
+  [].forEach.call(el.querySelectorAll(".opts .opt"), function (b) {
+    b.addEventListener("click", function (e) {
+      e.stopPropagation(); if (solved) return; solved = true; var o = s.options[+b.dataset.k];
+      el.querySelector(".opts").remove();
+      var me = document.createElement("div"); me.className = "pick"; me.setAttribute("translate", "no"); me.textContent = ui(o[0]); el.appendChild(me);
+      var rep = document.createElement("div"); rep.className = "reply"; rep.style.animationDelay = ".35s"; if (o[1]) rep.setAttribute("translate", "no"); rep.textContent = o[1] || "love that."; el.appendChild(rep);
+      // the button follows the choice: "i'm in" only for the yes; "maybe tomorrow" / "that sounds hard" just keep going
+      fillBar(i); celebrate(); bigBurst(3); keepGoing(el, +b.dataset.k === 0 ? "i’m in" : "keep going");
+    });
+  });
+}
+
+/* ===== BLOCK IH_ENDCARDS (reusable): sceneEnd layouts drop|sticker|poster|ticket|block ===== */
+/* ---- the end card ---- */
+function endWords() { var h = (CFG.end && CFG.end.h && CFG.end.h.length === 3) ? CFG.end.h : ["step", "in.", "live it."]; return h; }
+function sceneEnd(s, i) {
+  showClip(POSTER, 0.8); setMood(3); setCrowd(140); fillBar(i); partyAuto = true;
+  var lay = ST.endL || "sticker", h = endWords(), E = CFG.end || {};
+  var nQ = Object.keys(quizSeen).length, totalQ = SCENES.filter(function (x) { return x.k === "quiz" || x.k === "game"; }).length;
+  var stats = '<div class="stats"><div class="stat"><b>+1</b><span>story card for your collection</span></div><div class="stat"><b>' + quizRight + '/' + (nQ || totalQ) + '</b><span>questions you got first try</span></div></div>';
+  var head = h.map(function (w, k) { return '<span class="w' + (k === 2 ? ' y' : '') + '">' + esc(w) + '</span>'; }).join("<br>");
+  var eyebrow = (CFG.ep ? 'ep ' + String(CFG.ep).padStart(2, "0") + ' · ' : '') + '<span translate="no">' + esc(CFG.title || "") + '</span>', finn = '';
+  var mark = '<div class="mark"><span>infinite hill</span><span>' + esc(CFG.faithName || "") + '</span></div>', tag = '<div class="tag"><span>religion, reimagined.</span><img class="finn" src="' + FINN("thumbs_up") + '" alt="the mascot giving a thumbs up"></div>';
+  var card;
+  if (lay === "poster") card = '<div class="card">' + finn + mark + '<div style="flex:1"></div><div class="eyebrow">' + eyebrow + '</div><h2 translate="no">' + head + '</h2><div class="bar"></div><div class="line" translate="no">' + esc(E.line || "") + '</div>' + stats + tag + '</div>';
+  else if (lay === "ticket") card = '<div class="card"><div class="deco d1"></div><div class="deco d2"></div><div class="deco d3"></div><div class="deco d4">admit one</div>' + mark + '<div class="eyebrow">' + eyebrow + '</div><h2 translate="no">' + head + '</h2><div class="line" translate="no">' + esc(E.line || "") + '</div>' + stats + tag + '</div>';
+  else if (lay === "block") card = '<div class="card"><div class="top">' + mark + '<div class="eyebrow">' + eyebrow + '</div><h2 translate="no">' + head + '</h2></div><div class="low"><div class="line" translate="no">' + esc(E.line || "") + '</div>' + stats + tag + '</div></div>';
+  else if (lay === "drop") card = '<div class="card"><div class="deco d1">infinite hill</div>' + mark + '<div class="eyebrow">' + eyebrow + '</div><h2 translate="no">' + head + '</h2><div class="line" translate="no">' + esc(E.line || "") + '</div>' + stats + tag + '</div>';
+  else card = '<div class="card"><div class="deco d1"></div><div class="deco d2"></div><div class="deco d3"></div><div class="deco d4"></div>' + mark + '<div class="eyebrow">' + eyebrow + '</div><h2 translate="no">' + head + '</h2><div class="line" translate="no">' + esc(E.line || "") + '</div>' + stats + tag + '</div>';
+  var el = document.createElement("div"); el.className = "pad end e-" + lay;
+  el.innerHTML = card + '<div class="endbtns"><a class="bigbtn home pulse" id="home" href="' + appLink('?done=' + encodeURIComponent(CFG.id)) + '">see what you unlocked' +
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>' +
+    '<button class="bigbtn ghost" id="share">share</button><button class="bigbtn ghost" id="again">replay</button><button class="bigbtn ghost" id="nextUp">what’s next</button></div>';
+  layer.appendChild(el);
+  var hh = el.querySelector(".card h2"), mx = Math.max.apply(null, h.map(function (w) { return w.length; })), base = lay === "poster" ? 112 : 100;
+  if (mx > 5) hh.style.fontSize = Math.round(base * (lay === "sticker" || lay === "ticket" ? 5 : 5.4) / mx) + "px";
+  // fit: the card never crops its own last line ("religion, reimagined."). shrink the headline, then the line, until it fits
+  (function fit() { var C = el.querySelector(".card"), L = el.querySelector(".card .line"), T = el.querySelector(".card .tag"), fz = parseFloat(getComputedStyle(hh).fontSize) || base, lz = 18, k = 0;
+    // measured with offsets (the card animates in with a transform, and its deco shapes overhang on purpose)
+    function over() { var y = T.offsetHeight, n = T; while (n && n !== C) { y += n.offsetTop; n = n.offsetParent; } return y > C.clientHeight - 10; }
+    while (over() && k++ < 60) { if (fz > 46) { fz -= 4; hh.style.fontSize = fz + "px"; } else if (lz > 14 && L) { lz -= 1; L.style.fontSize = lz + "px"; } else break; }
+    if (!fit.again && document.fonts && document.fonts.ready) { fit.again = 1; document.fonts.ready.then(function () { if (el.isConnected) fit(); }); } })();
+  later(function () { bigBurst(5); }, 300);
+  el.querySelector("#again").addEventListener("click", function (e) { e.stopPropagation(); again(); });
+  el.querySelector("#share").addEventListener("click", function (e) { e.stopPropagation(); share(); });
+  el.querySelector("#nextUp").addEventListener("click", function (e) { e.stopPropagation(); next(); });
+}
+function again() { throws = 0; tries = 0; quizRight = 0; quizSeen = {}; go(1); }
+
+/* ---- the cliffhanger ---- */
+function sceneCliff(s, i) {
+  hideClip(); setMood("pillar"); setCrowd(0); setBars(i, 6); partyAuto = false;
+  var C = CFG.cliff || {}, R = rng((ST.seed || 1) * 13), x = 50 + (R() - 0.5) * 20, y = 8, d1 = "M" + x + " " + y, d2 = "", d3 = "";
+  for (var k = 0; k < 4; k++) { x += (R() - 0.5) * 26; y += 10 + R() * 6; d1 += " L" + x.toFixed(1) + " " + y.toFixed(1); }
+  d2 = "M" + x.toFixed(1) + " " + y.toFixed(1); for (k = 0; k < 4; k++) { x += (R() - 0.5) * 30; y += 8 + R() * 6; d2 += " L" + x.toFixed(1) + " " + y.toFixed(1); }
+  d3 = "M" + (x - 2).toFixed(1) + " " + (y - 18).toFixed(1) + " L" + (x - 22 - R() * 14).toFixed(1) + " " + (y - 8).toFixed(1) + " M" + (x + 1).toFixed(1) + " " + (y - 30).toFixed(1) + " L" + (x + 20 + R() * 14).toFixed(1) + " " + (y - 36).toFixed(1);
+  var el = document.createElement("div"); el.className = "pad cliff";
+  el.innerHTML = '<div class="glow" id="glow"></div><svg class="crack" viewBox="0 0 100 100" preserveAspectRatio="none"><path id="c1" d="' + d1 + '" vector-effect="non-scaling-stroke"/><path id="c2" d="' + d2 + '" vector-effect="non-scaling-stroke"/><path id="c3" d="' + d3 + '" vector-effect="non-scaling-stroke"/></svg>' +
+    '<div class="eb">next time on infinite hill</div><p class="say" id="say1" translate="no">' + (C.s1 || "that’s the story.") + '</p><p class="say" id="say2" translate="no">' + (C.s2 || "") + '</p><h2 id="tmr">' + esc(C.tmr || "tomorrow: a new story.") + '</h2>' +
+    '<div class="endbtns" id="cb"><a class="bigbtn home" id="home2" href="' + appLink('?done=' + encodeURIComponent(CFG.id)) + '">see what you unlocked</a><button class="bigbtn ghost" id="again2">watch again</button></div>';
+  layer.appendChild(el);
+  var glow = el.querySelector("#glow");
+  function thud(k) { var t = clock() + 0.01; if (DRUMS_ONLY) play("dumBig", t, 0.7 + k * 0.15); else { play("crack", t, 1); play("boom", t, 0.6 + k * 0.2); }
+    shake(6 + k * 5); vibrate(50 + k * 30); el.querySelector("#c" + k).classList.add("on"); glow.className = "glow l" + k; flash(COLORS[3], 0.15 + k * 0.12); }
+  later(function () { thud(1); el.querySelector("#say1").classList.add("on"); }, 500);
+  later(function () { thud(2); el.querySelector("#say2").classList.add("on"); }, 2100);
+  later(function () { thud(3); el.querySelector("#tmr").classList.add("on"); }, 3900);
+  later(function () { el.querySelector("#cb").classList.add("on"); fillBar(i); }, 2600);
+  el.querySelector("#again2").addEventListener("click", function (e) { e.stopPropagation(); again(); });
+}
+
+/* ---------- share: a story-size image, then text, then the clipboard ---------- */
+function cardImage() {
+  return new Promise(function (resolve) {
+    try {
+      var c = document.createElement("canvas"); c.width = 1080; c.height = 1920; var x = c.getContext("2d"), h = endWords(), E = CFG.end || {};
+      x.fillStyle = "#0A0A0A"; x.fillRect(0, 0, 1080, 1920);
+      x.fillStyle = "#EEFF6A"; x.beginPath(); x.arc(980, 180, 560, 0, 7); x.fill();
+      x.fillStyle = "#1c1c1c"; x.beginPath(); x.arc(40, 1830, 420, 0, 7); x.fill();
+      x.fillStyle = "#F3EFE4"; x.font = "800 44px Manrope, sans-serif"; x.fillText("infinite hill", 80, 130);
+      var m = Math.max.apply(null, h.map(function (w) { return w.length; })); x.font = "400 " + Math.min(250, Math.round(250 * 5.5 / m)) + "px Anton, Impact, sans-serif";
+      h.forEach(function (w, k) { x.fillStyle = k === 2 ? "#EEFF6A" : "#F3EFE4"; x.fillText(w.toUpperCase(), 80, 690 + k * 215); });
+      x.fillStyle = "#F3EFE4"; x.font = "800 50px Manrope, sans-serif"; x.fillText(E.l1 || "", 80, 1230); x.fillText(E.l2 || "", 80, 1300);
+      x.font = "800 40px Manrope, sans-serif"; x.fillText("religion, reimagined.", 80, 1830);
+      c.toBlob(function (b) { resolve(b); }, "image/png");
+    } catch (e) { resolve(null); }
+  });
+}
+function share() {
+  var url = location.href.split("#")[0], text = CFG.share || (CFG.title + " on infinite hill");
+  function clip() { try { navigator.clipboard.writeText(text + " " + url).then(function () { toast("link copied. go post it."); }, function () { toast("copy this page’s link to share it"); }); } catch (e) { toast("copy this page’s link to share it"); } }
+  try {
+    if (!navigator.share) { clip(); return; }
+    cardImage().then(function (blob) {
+      var data = { title: CFG.title, text: text, url: url };
+      try { if (blob) { var f = new File([blob], "infinite-hill-" + CFG.id + ".png", { type: "image/png" }); if (navigator.canShare && navigator.canShare({ files: [f] })) data = { files: [f], title: CFG.title, text: text }; } } catch (e) {}
+      try { navigator.share(data).catch(function (err) { if (!err || err.name !== "AbortError") clip(); }); } catch (e) { clip(); }
+    });
+  } catch (e) { clip(); }
+}
+
+/* QA hook: lets the test read which music and look this episode runs */
+window.__IH = { style: ST, get genre() { return GEN_NAME; }, get bpm() { return BPM; }, root: ROOT, stats: STATS, scene: function () { return SCENES[cur] && SCENES[cur].k; }, scenes: SCENES.map(function (s) { return s.k; }),
+  remix: function () { return { picks: remix && remix.state, live: RX, cap: capStyle() }; } };
+
+/* ===== BLOCK IH_REMIX (reusable): the remix button and sheet (assets/ih-remix.js), applied live ===== */
+var remix = null;
+function applyRemix(p, changed, first) {
+  changed = changed || [];
+  if (p.music && (first || changed.indexOf("music") >= 0)) setGenre(p.music);
+  if (first || changed.indexOf("energy") >= 0) setEnergy(p.energy || "og");
+  if (first || changed.indexOf("cap") >= 0) {
+    var was = capStyle(); RX.cap = p.cap || null; var now = capStyle();
+    if (was !== now) { reel.classList.remove("cap-" + was); reel.classList.add("cap-" + now); if (lastChunk && cap.firstChild) { cap.innerHTML = ""; renderChunk(lastChunk[0], lastChunk[1], lastChunk[2], lastChunk[3], lastChunk[4]); } }
+  }
+  if (first || changed.indexOf("look") >= 0) {
+    var wasL = RX.look; RX.look = p.look || null; setGrade();
+    if (!first && wasL !== RX.look && onScreen) { if (onScreen.k === "clip") showClip(onScreen.v, onScreen.rate); else still(onScreen.v, onScreen.blur); }
+  }
+  if (!first && changed.indexOf("energy") >= 0) transition(ST.trans || "flash", false);
+  if (!first && changed.indexOf("music") >= 0 && soundOn) play(GEN.kit.s || GEN.kit.k, clock() + 0.02, 0.9);
+}
+try {
+  if (window.IHRemix) {
+    var LK = CFG.looks && CFG.looks.looks && CFG.looks.looks.length ? CFG.looks : null, HOLY = null;
+    if (LK) {
+      var hl = CFG.holy || LK.lock;
+      if (hl) {
+        var hlook = typeof hl === "string" ? hl : (hl.look || "glass");
+        if (LK.looks.indexOf(hlook) < 0) hlook = LK.looks.indexOf("glass") >= 0 ? "glass" : (LK.looks.indexOf(LK.default) >= 0 ? LK.default : "original");
+        var lname = { glass: "stained glass", popcinema: "pop cinema", film35: "35mm", neon: "neon", woodblock: "woodblock", original: "its original look" }[hlook] || hlook;
+        HOLY = { look: hlook, label: "holy day, so this one stays in " + lname + ". some things you don’t remix." };
+      }
+    }
+    var lookOg = LK ? (LK.looks.indexOf(LK.default) >= 0 ? LK.default : "original") : null;
+    remix = IHRemix.create({
+      key: "ep:" + CFG.id, root: reel, drumsOnly: DRUMS_ONLY, finnSrc: ASSETS + "finn-thumbs_up-still.webp",
+      music: { list: IHRemix.genresFor(CFG.home, DRUMS_ONLY), og: GEN_NAME },
+      caps: { list: [["cinema", "cinema"], ["slam", "slam"], ["boxed", "boxes"], ["tilt", "tape"], ["ticker", "ticker"]], og: "cinema" },
+      looks: LK ? { list: LK.looks.slice(), og: lookOg, thumb: function (l) { var v = POSTER || (FIRST_CLIP && FIRST_CLIP.v); return l === "original" ? mediaOG(v, "webp") : BASE + LOOKS_DIR + l + "/" + v + ".webp"; } } : null,
+      holy: HOLY,
+      apply: function (p, ch) { applyRemix(p, ch, false); }
+    });
+    reel.appendChild(remix.button);
+    applyRemix(remix.state, [], true);
+  }
+} catch (e) { remix = null; }
+/* ===== END IH_REMIX ===== */
+
+/* ---------- start ---------- */
+setSound(false);
+go(0);
+})();
+</script>
+</body>
+</html>

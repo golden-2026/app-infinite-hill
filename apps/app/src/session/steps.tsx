@@ -139,7 +139,7 @@ export function MatchStep({ step, onDone, onMiss }: { step: any; onDone: Done; o
   const [nope, setNope] = useState<string | null>(null);
   const chip = (txt: string, active: boolean, done: boolean, onPress: () => void) => (
     <Pressable key={txt} accessibilityRole="button" accessibilityLabel={txt} accessibilityState={{ selected: active, disabled: done }} aria-pressed={active} aria-disabled={done} disabled={done} onPress={onPress}
-      style={[s.tile, { alignItems: "center", backgroundColor: done ? color.gold : active ? color.ink : "#fff", opacity: done ? 0.7 : 1 }]}>
+      style={[s.tile, { alignItems: "center", backgroundColor: done ? color.gold : active ? color.ink : color.white, opacity: done ? 0.7 : 1 }]}>
       <Text style={[s.tileText, { color: active ? "#fff" : color.ink, textAlign: "center" }]}>{txt}</Text>
     </Pressable>
   );
@@ -185,7 +185,7 @@ export function TapHear({ step, voiceOn, onDone }: { step: any; voiceOn: boolean
   const chip = (x: { w: string; k: number }, on: boolean) => (
     <Pressable key={x.k} accessibilityRole="button" accessibilityLabel={x.w} disabled={state !== null}
       onPress={() => (on ? setSeq(seq.filter((y) => y.k !== x.k)) : setSeq([...seq, x]))}
-      style={{ backgroundColor: on ? color.gold : "#fff", borderColor: on ? color.gold : "#fff", borderWidth: 2, borderRadius: 14, paddingVertical: 10, paddingHorizontal: 14 }}>
+      style={{ backgroundColor: on ? color.gold : color.white, borderColor: on ? color.gold : "#fff", borderWidth: 2, borderRadius: 14, paddingVertical: 10, paddingHorizontal: 14 }}>
       <Text style={{ fontFamily: font.text[700], fontSize: 15, color: color.ink }}>{x.w}</Text>
     </Pressable>
   );
@@ -458,7 +458,7 @@ const s = StyleSheet.create({
   choiceText: { fontFamily: font.text[600], fontSize: 15 },
   reveal: { fontFamily: font.display[500], fontSize: 18, lineHeight: 24, color: "#fff" },
   feedback: { fontFamily: font.display[500], fontSize: 16, textAlign: "center" },
-  tile: { backgroundColor: "#fff", borderColor: color.ink, borderWidth: 2, borderRadius: 14, paddingVertical: 12, paddingHorizontal: 14 },
+  tile: { backgroundColor: color.white, borderColor: color.ink, borderWidth: 2, borderRadius: 14, paddingVertical: 12, paddingHorizontal: 14 },
   tileText: { fontFamily: font.text[600], fontSize: 14, color: color.ink },
   pill: { alignSelf: "flex-start", backgroundColor: "#ffffff14", borderColor: "#ffffff33", borderWidth: 1, borderRadius: 999, paddingVertical: 10, paddingHorizontal: 16 },
   pillText: { color: "#fff", fontFamily: font.text[600], fontSize: 13 },

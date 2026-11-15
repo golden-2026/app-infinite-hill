@@ -1,0 +1,206 @@
+{
+ "id": "isl-ramadan",
+ "home": "datepalm",
+ "title": "One day of Ramadan",
+ "told": "from the hadith",
+ "clips": "art/sacred/isl-ramadan/clips/",
+ "voice": "art/sacred/isl-ramadan/voice/",
+ "guide": {
+  "name": "Mahershala",
+  "photo": "art/guides/islam.webp"
+ },
+ "hook": {
+  "v": "RA6-Iftar-Today",
+  "say": "before the story, can i ask you something? have you ever been so hungry it changed how you treated people?",
+  "options": [
+   [
+    "Oh, yes",
+    "same. hold onto that. this one is about what hunger can teach."
+   ],
+   [
+    "Sometimes",
+    "that’s honest. listen to this one."
+   ],
+   [
+    "Not really",
+    "then you’re ahead of most of us. listen anyway."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "RA1-Palm-Grove",
+   "vo": [
+    "V01"
+   ],
+   "line": "In the early days of the fast in Medina, the rule was stricter: if you fell asleep after sunset before eating, no more food until the next sunset."
+  },
+  {
+   "t": "shot",
+   "v": "RA2-Sunset-House",
+   "vo": [
+    "V02"
+   ],
+   "line": "A man named Qays worked all day in his palm grove, fasting. At sunset he came home, and his wife went out to find him some food."
+  },
+  {
+   "t": "ask",
+   "v": "RA2-Sunset-House",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "He’s exhausted, and the food isn’t ready yet. What do you think happens?",
+   "o": [
+    "His wife wakes him and he eats",
+    "He falls asleep and misses his meal",
+    "He eats a few dates in secret"
+   ],
+   "a": 1,
+   "why": "When his wife came back and found him asleep, she said, “Oh no, you’ve lost out!” (Bukhari 1915). Under the rule, sleep meant no food till the next sunset."
+  },
+  {
+   "t": "shot",
+   "v": "RA3-Sleeping-Mat",
+   "vo": [
+    "V03"
+   ],
+   "line": "Worn out, he fell asleep before she came back. So he fasted on through the next day, and by midday he fainted."
+  },
+  {
+   "t": "shot",
+   "v": "RA4-Two-Threads",
+   "vo": [
+    "V04"
+   ],
+   "line": "Then a verse came: eat and drink through the night, until the white thread of dawn shows clear from the black thread of night."
+  },
+  {
+   "t": "ask",
+   "v": "RA4-Two-Threads",
+   "eb": "why?",
+   "q": "Why might this verse have come right after Qays’s story?",
+   "o": [
+    "To show the fast is meant to be livable",
+    "To reward Qays for his patience",
+    "To punish those who broke the old rule"
+   ],
+   "a": 0,
+   "why": "The night was opened for eating, drinking and rest. “God wants ease for you, not hardship,” the Qur’an says of the fast (2:185)."
+  },
+  {
+   "t": "ask",
+   "v": "RA4-Two-Threads",
+   "predict": true,
+   "eb": "what happens next?",
+   "q": "One man, ‘Adi, hears the verse about the white and black threads. What do you think he does?",
+   "o": [
+    "Puts real threads under his pillow",
+    "Waits each dawn for a sign in the sky",
+    "Stays awake until the call to prayer"
+   ],
+   "a": 0,
+   "why": "‘Adi ibn Hatim laid a white and a black thread under his pillow and kept checking all night. He couldn’t tell them apart (Bukhari 1916)."
+  },
+  {
+   "t": "shot",
+   "v": "RA5-Pillow-Threads",
+   "vo": [
+    "V05"
+   ],
+   "line": "One man named ‘Adi took it literally. He put a white thread and a black thread under his pillow, and kept checking all night. He couldn’t tell them apart."
+  },
+  {
+   "t": "shot",
+   "v": "RA5-Pillow-Threads",
+   "vo": [
+    "V06"
+   ],
+   "line": "The Prophet Muhammad ﷺ teased him gently: then your pillow must be very wide! The threads, he explained, are the dark of night and the light of day."
+  },
+  {
+   "t": "shot",
+   "v": "RA6-Iftar-Today",
+   "vo": [
+    "V07"
+   ],
+   "line": "Today, Muslims still eat suhoor in the dark before dawn, fast all day, and break the fast at sunset, often with a date and water.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "RA6-Iftar-Today",
+   "eb": "did you know?",
+   "q": "Many Muslims break the fast with a date and water. Why dates?",
+   "o": [
+    "Dates were the only food in Medina",
+    "The Qur’an commands dates first",
+    "The Prophet ﷺ broke his fast that way"
+   ],
+   "a": 2,
+   "why": "Abu Dawud records he broke his fast with fresh dates, or dried ones, or if none, sips of water. Millions copy that small habit every sunset."
+  },
+  {
+   "t": "teach",
+   "v": "RA4-Two-Threads",
+   "say": [
+    "here’s what i love. when the fast was too hard on a tired farmer, the rule became gentler. and a too-literal pillow got a smile, not a scolding.",
+    "the qur’an says the fast is for taqwa, a careful awareness of God. in islam the hunger is a tool, not the point."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "RA6-Iftar-Today",
+   "eb": "the hard one",
+   "q": "The Prophet ﷺ said: if someone won’t give up lying, God has no need of their giving up food and drink. What does that say about the fast?",
+   "o": [
+    "Lying cancels the fast like eating does",
+    "The fast is for the whole self, not just the stomach",
+    "God cares about words, not food"
+   ],
+   "a": 1,
+   "why": "Most scholars say lying doesn’t technically break the fast, but it empties it. The hunger is a tool for taqwa, a careful awareness of God."
+  }
+ ],
+ "today": {
+  "v": "RA6-Iftar-Today",
+  "say": "try a small fast of the tongue today: no sharp or untrue word until sunset. when one comes up, let it go, the way the fast lets the food go.",
+  "options": [
+   [
+    "I’ll try it today",
+    "lovely. that’s the part of the fast that goes with you all year."
+   ],
+   [
+    "I’ll start with one hour",
+    "that counts. one hour of careful words is real."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "Two Eids, not one.",
+  "line": "new clothes, a new crescent moon, and the second feast people forget."
+ },
+ "card": {
+  "from": "from the hadith",
+  "mins": 5,
+  "keep": "date",
+  "keepName": "A date at sunset",
+  "keepWhy": "The hunger is a tool, not the point.",
+  "keepSvg": "<ellipse cx=\"48\" cy=\"56\" rx=\"14\" ry=\"23\" fill=\"#2a1b05\" transform=\"rotate(20 48 56)\"/><path d=\"M56 34q4-10 14-12\" fill=\"none\" stroke=\"#2a1b05\" stroke-width=\"4\" stroke-linecap=\"round\"/>",
+  "sources": [
+   "Sahih al-Bukhari 1915 (al-Bara’ ibn ‘Azib: the early rule about sleeping before eating; Qays ibn Sirma al-Ansari, the palm grove, falling asleep before his wife returned, fainting at midday; the revelation of Qur’an 2:187)",
+   "Qur’an 2:187 (eat and drink until the white thread becomes distinct from the black thread of the dawn), paraphrased",
+   "Sahih al-Bukhari 1916; 4509–4510 (‘Adi ibn Hatim’s white and black threads under his pillow; “your pillow is very wide”; the darkness of night and the whiteness of day)",
+   "Qur’an 2:183 (fasting prescribed “that ye may ward off (evil)”: taqwa)",
+   "Qur’an 2:184–185 (the sick and travelers excused; “Allah desireth for you ease; He desireth not hardship for you”, 2:185)",
+   "Sahih al-Bukhari 1903 (whoever does not give up false speech, God has no need of his leaving food and drink)",
+   "Sahih al-Bukhari 1923; Sahih Muslim 1095 (suhoor); Sunan Abi Dawud 2356 (breaking the fast with dates and water)"
+  ],
+  "check": [
+   "The man’s name: Bukhari 1915 gives Qays ibn Sirma; other reports give Sirma ibn Qays or Abu Qays. Confirm “a man named Qays”.",
+   "Bukhari 1915 says only that he worked during the day; “his palm grove” (and painting RA1) follows other reports that he worked among the palms. Confirm.",
+   "The ‘Adi ibn Hatim hadith: “your pillow must be very wide” follows Bukhari 4509 (“your pillow is wide”); 4510 has “your neck is wide”. Confirm “teased him gently” as the tone.",
+   "Bukhari 1915 also mentions the related change about marital relations at night (2:187); the lesson leaves it out for a general audience, as the day-6 script does."
+  ]
+ }
+}

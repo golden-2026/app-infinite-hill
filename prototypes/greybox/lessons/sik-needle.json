@@ -1,0 +1,200 @@
+{
+ "id": "sik-needle",
+ "home": "nectar",
+ "title": "A needle for the next world",
+ "told": "a sakhi of Guru Nanak, a traditional story",
+ "clips": "art/sacred/sik-needle/clips/",
+ "voice": "art/sacred/sik-needle/voice/",
+ "guide": {
+  "name": "Diljit",
+  "photo": "art/guides/sikhism.webp"
+ },
+ "hook": {
+  "v": "DN1-Lahore-Mansion",
+  "say": "before the story, can i ask you something? if you had to leave home today and take only one thing, what would you grab?",
+  "options": [
+   [
+    "Something I love",
+    "then hold onto that. listen."
+   ],
+   [
+    "My phone, honestly",
+    "me too, probably. listen."
+   ],
+   [
+    "I can’t choose",
+    "that’s the question in this story. listen."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "DN1-Lahore-Mansion",
+   "vo": [
+    "V01"
+   ],
+   "line": "In Lahore lived a very rich man named Duni Chand. Over his house flew flags, one for every hundred thousand rupees he owned.",
+   "label": "a traditional story"
+  },
+  {
+   "t": "shot",
+   "v": "DN2-The-Visit",
+   "vo": [
+    "V02"
+   ],
+   "line": "When Guru Nanak came to visit, Duni Chand showed him everything, and asked: is there anything I can do for you?"
+  },
+  {
+   "t": "shot",
+   "v": "DN3-The-Needle",
+   "vo": [
+    "V03"
+   ],
+   "line": "The Guru handed him a small sewing needle. Keep this for me, he said. Give it back to me in the next world."
+  },
+  {
+   "t": "ask",
+   "v": "DN4-Wife-Asks",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "Duni Chand puts the needle away safely. Who do you think sees the problem with it?",
+   "o": [
+    "His wife",
+    "His accountant",
+    "A beggar at his gate"
+   ],
+   "a": 0,
+   "why": "His wife: how does a needle go with you past death? The Guru Granth Sahib says it again and again: wealth stays behind; it doesn’t go along with you."
+  },
+  {
+   "t": "shot",
+   "v": "DN4-Wife-Asks",
+   "vo": [
+    "V04"
+   ],
+   "line": "His wife asked: how will you take a needle with you when you die? Nobody can take anything."
+  },
+  {
+   "t": "shot",
+   "v": "DN4-Wife-Asks",
+   "vo": [
+    "V05"
+   ],
+   "line": "Duni Chand ran back. I can’t carry even a needle, he said. Then how will all your fortune go with you? the Guru asked."
+  },
+  {
+   "t": "ask",
+   "v": "DN4-Wife-Asks",
+   "eb": "why?",
+   "q": "After the needle, why would Duni Chand start giving instead of adding another flag?",
+   "o": [
+    "He wanted the Guru to praise him",
+    "Wealth can only do good while you live",
+    "He feared thieves would take it all"
+   ],
+   "a": 1,
+   "why": "Nothing goes with you. So the only time wealth can feed anyone is now."
+  },
+  {
+   "t": "shot",
+   "v": "DN5-Sharing",
+   "vo": [
+    "V06"
+   ],
+   "line": "So Duni Chand began to share: food and money for the hungry, given with his own hands."
+  },
+  {
+   "t": "shot",
+   "v": "DN6-Today-Portion",
+   "vo": [
+    "V07"
+   ],
+   "line": "Sikhs call this vand chakna: share, then eat. Many set aside a tenth of what they earn for others, called dasvandh.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "DN6-Today-Portion",
+   "eb": "did you know?",
+   "q": "Many Sikhs give dasvandh, a tenth, to the gurdwara. What does the gurdwara famously do with much of it?",
+   "o": [
+    "Pays the priests’ families",
+    "Covers the domes in gold",
+    "Feeds anyone who walks in, free"
+   ],
+   "a": 2,
+   "why": "The langar: a free kitchen where everyone sits on the floor as equals. The Golden Temple’s kitchen serves tens of thousands a day."
+  },
+  {
+   "t": "ask",
+   "v": "DN6-Today-Portion",
+   "eb": "why?",
+   "q": "Vand chakna puts sharing before eating. What changes when you share first, not from what’s left over?",
+   "o": [
+    "Others get the first portion, not scraps",
+    "You end up eating less every day",
+    "It’s easier to keep count of"
+   ],
+   "a": 0,
+   "why": "What’s left over depends on your mood. The first portion is a decision, given before you take your own."
+  },
+  {
+   "t": "teach",
+   "v": "DN3-The-Needle",
+   "say": [
+    "here’s what i love. the guru didn’t lecture duni chand. he handed him a needle, and let the question do the work.",
+    "that’s vand chakna, the next pillar: share first, then enjoy what’s yours. not what’s left over at the end. the first portion."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "DN3-The-Needle",
+   "eb": "the hard one",
+   "q": "The Guru could have asked for anything. From the story, why ask for something as small as a needle?",
+   "o": [
+    "It was all he could carry on the road",
+    "If a needle can’t go, nothing can",
+    "Needles were rare and precious then"
+   ],
+   "a": 1,
+   "why": "The smaller the thing, the bigger the point. A sermon can be argued with; a needle just sits in your hand."
+  }
+ ],
+ "today": {
+  "v": "DN6-Today-Portion",
+  "say": "today, take the first portion of something, a slice, an hour, a little money, and give it before you enjoy the rest. that’s the order: share, then eat.",
+  "options": [
+   [
+    "I’ll share it first",
+    "then enjoy the rest. you earned it."
+   ],
+   [
+    "I don’t have much",
+    "then share a small thing. the needle was small too."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "Yours, yours, yours.",
+  "line": "a young storekeeper loses count at thirteen, on purpose."
+ },
+ "card": {
+  "from": "a sakhi of Guru Nanak",
+  "mins": 5,
+  "keep": "needle",
+  "keepName": "Duni Chand’s needle",
+  "keepWhy": "Nothing goes with you. So share it now.",
+  "keepSvg": "<g transform=\"rotate(35 50 50)\"><path fill-rule=\"evenodd\" d=\"M46 16a4 4 0 0 1 8 0v60l-4 14l-4-14zM48.5 19a1.5 4.5 0 1 0 3 0a1.5 4.5 0 1 0-3 0z\" fill=\"#2a1b05\"/></g><path d=\"M58 20C84 22 82 46 60 50S28 66 40 86\" fill=\"none\" stroke=\"#2a1b05\" stroke-width=\"3\" stroke-linecap=\"round\"/>",
+  "sources": [
+   "Janamsakhi tradition of Guru Nanak and Duni Chand of Lahore (the needle to be returned in the next world)",
+   "Guru Granth Sahib, Ang 1245 (earning by effort and giving with one’s own hand)",
+   "Sikh practice of dasvandh (a tenth)",
+   "docs/curriculum/sikhism/scripts/y1/day-0013.json"
+  ],
+  "check": [
+   "Details vary between tellings: the flags (each for a lakh, a hundred thousand, of rupees; often seven), the shraadh feast for his father, and whether his wife asks the question; confirm the wife’s role."
+  ]
+ }
+}

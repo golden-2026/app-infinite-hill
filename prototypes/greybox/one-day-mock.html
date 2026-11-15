@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>One day mock</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@500;600;700;800&display=swap">
+<style>
+  /* MOCKUP ONLY (2026-11-14): one day = film → questions → the reveal → the card → your path. Not linked from the app. */
+  :root { --bg: #0A0A0A; --panel: #151515; --line: #2a2a2a; --text: #F3EFE4; --muted: #a9a59b; --lime: #EEFF6A; --ok: #19E68C; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: var(--bg); color: var(--text); font: 500 16px/1.4 Manrope, system-ui, sans-serif; }
+  .s { position: relative; width: 390px; height: 844px; overflow: hidden; margin: 0 auto; display: none; background: var(--bg); }
+  .s.on { display: block; }
+  .disp { font-family: Anton, Impact, sans-serif; text-transform: uppercase; line-height: .95; letter-spacing: .2px; margin: 0; }
+  .k { font-weight: 800; font-size: 12px; letter-spacing: 1.6px; text-transform: uppercase; color: var(--lime); }
+  .lime { color: var(--lime); }
+  .face { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 2px solid var(--lime); flex: none; }
+  .bub { display: flex; gap: 10px; align-items: flex-end; }
+  .bub > div { background: #1d1d1d; border: 1px solid var(--line); border-radius: 18px 18px 18px 6px; padding: 10px 14px; font-weight: 600; }
+  .bub small { display: block; font-size: 11px; font-weight: 800; letter-spacing: 1.2px; color: var(--lime); text-transform: uppercase; margin-bottom: 2px; }
+  .btn { display: block; width: 100%; border: 0; border-radius: 99px; background: var(--lime); color: #0A0A0A; font: 800 18px Manrope, sans-serif; padding: 16px; text-align: center; }
+  .top { position: absolute; left: 0; right: 0; top: 0; padding: 16px 18px; display: flex; align-items: center; gap: 12px; z-index: 3; }
+  .bar { flex: 1; height: 8px; border-radius: 9px; background: rgba(255,255,255,.18); overflow: hidden; }
+  .bar i { display: block; height: 100%; background: var(--lime); border-radius: 9px; }
+  .x { color: #fff; font-size: 22px; opacity: .8; }
+
+  /* 1 film */
+  #s1 .film { position: absolute; inset: 0; background: url(art/mock-oneday/f14.jpg) center/cover; }
+  #s1 .shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.45), transparent 22%, transparent 70%, rgba(0,0,0,.85)); }
+  #s1 .who { position: absolute; left: 18px; right: 18px; bottom: 34px; display: flex; gap: 12px; align-items: center; }
+  #s1 .who b { display: block; font-size: 15px; } #s1 .who span { font-size: 13px; color: #ddd; }
+  #s1 .tl { position: absolute; left: 18px; right: 18px; top: 52px; font-size: 13px; font-weight: 700; color: #eee; display: flex; justify-content: space-between; }
+
+  /* 2 question */
+  #s2 .hero { position: absolute; left: 0; right: 0; top: 0; height: 330px; background: url(art/mock-oneday/f44.jpg) center 30%/cover; }
+  #s2 .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.35), rgba(10,10,10,1)); }
+  #s2 .body { position: absolute; left: 0; right: 0; top: 270px; padding: 0 18px; display: grid; gap: 14px; }
+  #s2 h2 { font-size: 38px; }
+  .opt { border: 2px solid var(--line); border-radius: 18px; padding: 15px 16px; font-weight: 700; }
+  .opt.pick { border-color: var(--lime); background: #23260d; color: var(--lime); }
+
+  /* 3 reveal */
+  #s3 .place { position: absolute; inset: 0; background: url(art/trip/chr-galilee-sermon-fields.webp) 30% center/cover; }
+  #s3 .shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.25) 0%, transparent 30%, rgba(10,10,10,.75) 58%, #0A0A0A 80%); }
+  #s3 .pin { position: absolute; left: 50%; top: 210px; transform: translateX(-50%); width: 64px; height: 64px; border-radius: 50%; background: var(--lime); display: grid; place-items: center; box-shadow: 0 0 0 10px rgba(238,255,106,.25), 0 0 0 26px rgba(238,255,106,.1), 0 0 60px rgba(238,255,106,.7); }
+  #s3 .pin svg { width: 30px; height: 30px; }
+  #s3 .body { position: absolute; left: 0; right: 0; bottom: 30px; padding: 0 18px; display: grid; gap: 14px; }
+  #s3 h2 { font-size: 54px; }
+
+  /* 4 card */
+  #s4 { background: radial-gradient(80% 50% at 50% 40%, #2a3008, #0A0A0A 75%); }
+  #s4 .wrap { position: absolute; inset: 0; padding: 60px 26px 30px; display: grid; align-content: start; gap: 18px; justify-items: center; }
+  .card { width: 290px; border-radius: 22px; overflow: hidden; background: #111; border: 3px solid var(--lime); box-shadow: 0 20px 60px rgba(238,255,106,.25); transform: rotate(-2deg); }
+  .card .img { height: 300px; background: url(art/mock-oneday/f30.jpg) center 35%/cover; position: relative; }
+  .card .tag { position: absolute; left: 12px; top: 12px; background: #0A0A0A; color: var(--lime); font-weight: 800; font-size: 11px; letter-spacing: 1.2px; padding: 5px 9px; border-radius: 99px; text-transform: uppercase; }
+  .card .txt { padding: 14px 16px 16px; }
+  .card .txt .disp { font-size: 30px; }
+  .card .txt small { display: block; margin-top: 8px; color: var(--muted); font-size: 12px; font-weight: 700; }
+
+  /* 5 path */
+  #s5 { background: radial-gradient(120% 60% at 50% 0%, #1b2140, #0A0A0A 70%); }
+  #s5 .head { padding: 22px 18px 0; }
+  #s5 .head h2 { font-size: 40px; margin-top: 6px; }
+  #s5 .head p { margin: 6px 0 0; color: var(--muted); font-size: 14px; }
+  .path { position: absolute; left: 0; right: 0; top: 150px; bottom: 0; }
+  .path svg.trail { position: absolute; inset: 0; }
+  .spot { position: absolute; width: 150px; display: grid; justify-items: center; gap: 6px; text-align: center; transform: translateX(-50%); }
+  .spot .th { width: 74px; height: 74px; border-radius: 50%; background-size: cover; background-position: center; border: 3px solid var(--lime); }
+  .spot b, .spot small { background: rgba(10,10,10,.85); padding: 2px 8px; border-radius: 8px; }
+  .spot b { font-size: 13px; line-height: 1.2; } .spot small { font-size: 11px; color: var(--muted); font-weight: 700; }
+  .spot.new .th { width: 92px; height: 92px; box-shadow: 0 0 0 8px rgba(238,255,106,.22), 0 0 40px rgba(238,255,106,.6); }
+  .spot.new em { font-style: normal; background: var(--lime); color: #0A0A0A; font-size: 10px; font-weight: 800; letter-spacing: 1px; padding: 3px 8px; border-radius: 99px; text-transform: uppercase; }
+  .spot.lock .th { border: 2px dashed #555; background: #161616; display: grid; place-items: center; color: #777; font: 20px Anton, sans-serif; }
+  .spot.lock b { color: #cfcabe; }
+  .spot.big .th { width: 100px; height: 100px; border-radius: 26px; border-color: #FF8A1F; filter: blur(.4px) saturate(.6) brightness(.55); }
+  .spot.big small { color: #FF8A1F; }
+</style></head><body>
+
+<!-- 1. the film -->
+<section class="s" id="s1">
+  <div class="film"></div><div class="shade"></div>
+  <div class="top"><span class="x">✕</span><div class="bar"><i style="width:38%"></i></div></div>
+  <div class="tl"><span>today's film · day 3</span><span>0:23 / 1:00</span></div>
+  <div class="who"><img class="face" src="art/guides/christianity.webp" alt=""><div><b>told by Denzel Washington</b><span>a fight with your brother</span></div></div>
+</section>
+
+<!-- 2. the questions (Denzel asks) -->
+<section class="s" id="s2">
+  <div class="hero"></div>
+  <div class="top"><span class="x">✕</span><div class="bar"><i style="width:70%"></i></div></div>
+  <div class="body">
+    <div class="bub"><img class="face" src="art/guides/christianity.webp" alt=""><div><small>Denzel</small>real talk. the son wasted everything. why do you think the father ran to him anyway?</div></div>
+    <h2 class="disp">why did <span class="lime">the father run?</span></h2>
+    <div class="opt">he didn't hear what his son did</div>
+    <div class="opt pick">love got there before the apology</div>
+    <div class="opt">he wanted his money back</div>
+  </div>
+</section>
+
+<!-- 3. the reveal: the place, after you cared about the story -->
+<section class="s" id="s3">
+  <div class="place"></div><div class="shade"></div>
+  <div class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div>
+  <div class="body">
+    <p class="k">new spot on your path</p>
+    <h2 class="disp">galilee. <span class="lime">where it started.</span></h2>
+    <div class="bub"><img class="face" src="art/guides/christianity.webp" alt=""><div><small>Denzel</small>jesus started teaching here, by this lake. stories like the one you just watched traveled out from these hills. 2,000 years later, here you are.</div></div>
+    <button class="btn">claim my card</button>
+  </div>
+</section>
+
+<!-- 4. the card: a frame from the film + the line to carry -->
+<section class="s" id="s4">
+  <div class="wrap">
+    <p class="k">card 3 of 7 · this week</p>
+    <div class="card">
+      <div class="img"><span class="tag">the lost son</span></div>
+      <div class="txt"><div class="disp">love got there <span class="lime">first.</span></div><small>carry it today: send the text first.</small></div>
+    </div>
+    <div class="bub" style="width:100%"><img class="face" src="art/guides/christianity.webp" alt=""><div><small>Denzel</small>that one's yours. text your brother. i'll be here tomorrow.</div></div>
+    <button class="btn">see my path</button>
+  </div>
+</section>
+
+<!-- 5. your path: one faith only, climbing the hill -->
+<section class="s" id="s5">
+  <div class="head">
+    <p class="k">your path · christianity · week 1</p>
+    <h2 class="disp">3 spots lit. <span class="lime">4 to go.</span></h2>
+    <p>finish all 7 and a big landmark opens with its own film.</p>
+  </div>
+  <div class="path">
+    <svg class="trail" viewBox="0 0 390 694" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M195 590 C 60 540, 70 480, 120 440 S 320 360, 280 300 S 60 220, 110 165 S 300 90, 200 50" fill="none" stroke="#2c2c2c" stroke-width="10" stroke-linecap="round" stroke-dasharray="2 18"/>
+      <path d="M195 590 C 60 540, 70 480, 120 440 S 320 360, 280 300" fill="none" stroke="#EEFF6A" stroke-width="6" stroke-linecap="round" opacity=".85"/>
+    </svg>
+    <div class="spot" style="left:195px;top:553px"><div class="th" style="background-image:url(art/trip/chr-bethlehem.webp)"></div><b>a baby in a barn</b><small>bethlehem</small></div>
+    <div class="spot" style="left:120px;top:403px"><div class="th" style="background-image:url(art/trip/chr-nazareth.webp)"></div><b>the kid nobody expected</b><small>nazareth</small></div>
+    <div class="spot new" style="left:280px;top:254px"><div class="th" style="background-image:url(art/trip/chr-galilee-sermon-fields.webp)"></div><em>just lit</em><b>love got there first</b><small>galilee</small></div>
+    <div class="spot lock" style="left:110px;top:128px"><div class="th">?</div><b>a storm. he's asleep.</b><small>tomorrow</small></div>
+    <div class="spot big" style="left:200px;top:0px"><div class="th" style="background-image:url(art/trip/chr-jerusalem-first.webp)"></div><b>the week's landmark</b><small>opens at 7 of 7</small></div>
+  </div>
+</section>
+
+<script>
+  var n = (location.search.match(/s=(\d)/) || [0, "1"])[1];
+  document.getElementById("s" + n).classList.add("on");
+</script>
+</body></html>

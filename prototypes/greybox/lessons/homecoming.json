@@ -1,0 +1,212 @@
+{
+ "id": "homecoming",
+ "home": "marigold",
+ "title": "Lamps for the homecoming",
+ "told": "from the Ramayana",
+ "clips": "art/sacred/homecoming/clips/",
+ "voice": "art/sacred/homecoming/voice/",
+ "guide": {
+  "name": "Priyanka",
+  "photo": "art/guides/hinduism.webp"
+ },
+ "card": {
+  "from": "from the Ramayana",
+  "mins": 5,
+  "keep": "diya",
+  "keepName": "A lamp in the window",
+  "keepWhy": "However long you’ve been gone, there’s light waiting.",
+  "sources": [
+   "Valmiki Ramayana, Yuddha Kanda (Rama, Sita and Lakshmana return to Ayodhya after fourteen years and the war; Ayodhya celebrates; Rama is crowned)",
+   "North Indian Diwali tradition: Ayodhya lit lamps for Rama’s return on the new-moon night of Kartika",
+   "Deepavali: deepa (lamp) + avali (row)",
+   "The film’s note: elsewhere Diwali honors Lakshmi, or Krishna’s victory over Narakasura"
+  ],
+  "check": [
+   "The new-moon night and the lamps lit for Rama’s return are festival tradition, not details in Valmiki (where Ayodhya greets him with decorated streets); the film tells them as story before “that’s how many Hindus in North India explain Diwali.” Confirm."
+  ]
+ },
+ "hook": {
+  "v": "HC1-Long-Road",
+  "say": "before the story, can i ask you something? have you ever come back after being away a long time? to a city, a family, your faith, yourself.",
+  "options": [
+   [
+    "Yes, I have",
+    "then you know this feeling. listen."
+   ],
+   [
+    "I’m on my way",
+    "then this one is for you. listen."
+   ],
+   [
+    "Not yet",
+    "good. keep this light for later."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "HC1-Long-Road",
+   "vo": [
+    "V01"
+   ],
+   "line": "After fourteen years in exile, after the war, Rama, Sita and Lakshmana finally headed home to Ayodhya."
+  },
+  {
+   "t": "ask",
+   "v": "HC1-Long-Road",
+   "eb": "did you know?",
+   "q": "While Rama was away those fourteen years, who ruled Ayodhya?",
+   "o": [
+    "Queen Kaikeyi, who sent him away",
+    "Bharata, with Rama’s sandals on the throne",
+    "King Dasharatha, waiting for his son"
+   ],
+   "a": 1,
+   "why": "His brother Bharata refused the crown and ruled in Rama’s name, with Rama’s sandals on the throne. King Dasharatha had died of grief soon after Rama left."
+  },
+  {
+   "t": "shot",
+   "v": "HC2-Dark-Night",
+   "vo": [
+    "V02"
+   ],
+   "line": "It was a dark, new-moon night. No moon at all."
+  },
+  {
+   "t": "ask",
+   "v": "HC3-First-Lamps",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "It’s a new-moon night, pitch dark. How do you think the city lights their way?",
+   "o": [
+    "The palace lights the main road",
+    "Every home lights its own lamps",
+    "The temples light great bonfires"
+   ],
+   "a": 1,
+   "why": "Not one big light from the palace: every household lit its own. That’s still Diwali, each home setting out its own row of lamps."
+  },
+  {
+   "t": "shot",
+   "v": "HC3-First-Lamps",
+   "vo": [
+    "V03"
+   ],
+   "line": "So the people lit lamps. One, then another, then thousands."
+  },
+  {
+   "t": "shot",
+   "v": "HC4-City-Of-Light",
+   "vo": [
+    "V04"
+   ],
+   "line": "Along every street and every rooftop, so they could find their way home."
+  },
+  {
+   "t": "ask",
+   "v": "HC4-City-Of-Light",
+   "eb": "why?",
+   "q": "Diwali falls on the new moon of Kartika, the darkest night of the month. Why would the story need that night?",
+   "o": [
+    "So the lamps have the most dark to beat",
+    "Because travel was safer without a moon",
+    "Because the new moon is lucky for kings"
+   ],
+   "a": 0,
+   "why": "Many Hindus read Diwali as light beating darkness, so the festival sits on a moonless night, when every lamp counts most."
+  },
+  {
+   "t": "shot",
+   "v": "HC5-Welcome-Home",
+   "vo": [
+    "V05"
+   ],
+   "line": "That’s how many Hindus in North India explain Diwali: the whole city lit up, to say welcome back.",
+   "label": "Diwali"
+  },
+  {
+   "t": "ask",
+   "v": "HC5-Welcome-Home",
+   "eb": "did you know?",
+   "q": "In much of South India, Diwali tells a different victory. Whose?",
+   "o": [
+    "Durga’s, over the buffalo demon",
+    "Rama’s, over Ravana in Lanka",
+    "Krishna’s, over the demon Narakasura"
+   ],
+   "a": 2,
+   "why": "In Tamil Nadu and much of the South, Diwali morning marks Krishna’s defeat of Narakasura. In Bengal the same night is Kali Puja. Many stories, one row of lamps."
+  },
+  {
+   "t": "shot",
+   "v": "HC6-Today",
+   "vo": [
+    "V06"
+   ],
+   "line": "No matter how long you’ve been gone, there’s light waiting for you.",
+   "label": "today"
+  },
+  {
+   "t": "match",
+   "v": "HC6-Today",
+   "eb": "what it says",
+   "q": "Match each Diwali custom to what it says.",
+   "pairs": [
+    [
+     "a lamp in the window",
+     "a welcome for whoever’s coming home"
+    ],
+    [
+     "sweeping the house clean",
+     "ready for Lakshmi to visit"
+    ],
+    [
+     "sweets for the neighbors",
+     "joy shared, not kept"
+    ]
+   ],
+   "why": "Many families clean top to bottom before Diwali, because Lakshmi, goddess of fortune, is said to visit homes that are clean and bright."
+  },
+  {
+   "t": "teach",
+   "v": "HC5-Welcome-Home",
+   "say": [
+    "here’s what i love. nobody asked rama where he’d been. they just lit the way home.",
+    "for many hindus, diwali says light wins over darkness, and there’s always a way back. no matter how long you’ve been gone, a lamp is waiting."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "HC5-Welcome-Home",
+   "eb": "the hard one",
+   "q": "Diwali comes from Deepavali: deepa means lamp, and avali means row. After this story, why is that the perfect name?",
+   "o": [
+    "Lamps in every row of Rama’s army",
+    "Rows of lamps lit the road home",
+    "The rows of people who lined the streets"
+   ],
+   "a": 1,
+   "why": "Deepavali: a row of lamps. The festival’s name is the welcome itself."
+  }
+ ],
+ "today": {
+  "v": "HC6-Today",
+  "say": "tonight, light a candle or a lamp for someone, or something, you want to welcome back. maybe a friend, maybe a part of yourself. many hindus light a diya with a short prayer. you can say one, or just light it. it’s your choice.",
+  "options": [
+   [
+    "I know who it’s for",
+    "then light it tonight. that’s a homecoming."
+   ],
+   [
+    "It’s for me",
+    "then welcome yourself back. you’re allowed."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "Six tastes of a new year.",
+  "line": "a new year’s dish with six tastes in one spoon. one of them is a surprise."
+ }
+}

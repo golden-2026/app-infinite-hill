@@ -19,7 +19,7 @@ function Stones({ states }: { states: ("lit" | "today" | "missed" | "later" | "o
     <View style={{ flexDirection: "row", gap: 5, flexShrink: 0 }}>
       {states.map((s, i) => s === "lit"
         ? <View key={i} style={c.stone}><Sun size={18} /></View>
-        : <View key={i} style={[c.stone, { borderWidth: 1.5, borderColor: s === "today" ? color.ink : color.line, borderRadius: 9, width: 18, height: 18, backgroundColor: s === "later" ? "transparent" : "#fff" }]} />)}
+        : <View key={i} style={[c.stone, { borderWidth: 1.5, borderColor: s === "today" ? color.ink : color.line, borderRadius: 9, width: 18, height: 18, backgroundColor: s === "later" ? "transparent" : color.white }]} />)}
     </View>
   );
 }
@@ -123,7 +123,7 @@ export function HolidayCard({ onOpen }: { onOpen: (door: string, day: number) =>
 }
 
 const c = StyleSheet.create({
-  lite: { marginHorizontal: 18, marginTop: 0, marginBottom: 12, backgroundColor: "#fff", borderWidth: 1.5, borderColor: color.line, borderRadius: 18, paddingVertical: 12, paddingHorizontal: 14 },
+  lite: { marginHorizontal: 18, marginTop: 0, marginBottom: 12, backgroundColor: color.white, borderWidth: 1.5, borderColor: color.line, borderRadius: 18, paddingVertical: 12, paddingHorizontal: 14 },
   chev: { fontFamily: font.display[800], fontSize: 18, color: color.ink },
   row: { flexDirection: "row", alignItems: "center", gap: 10 },
   who: { flex: 1, fontFamily: font.text[600], fontSize: 13, color: color.ink },

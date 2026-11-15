@@ -6,7 +6,7 @@ import { color, font, type } from "@/ui";
 export function InstallCoach() {
   const steps = [t("onboarding.install.step1"), t("onboarding.install.step2"), t("onboarding.install.step3")];
   return (
-    <View style={{ backgroundColor: "#fff", borderWidth: 1, borderColor: color.line, borderRadius: 16, padding: 14, gap: 8 }} accessibilityLabel={t("onboarding.install.a11y")}>
+    <View style={{ backgroundColor: color.white, borderWidth: 1, borderColor: color.line, borderRadius: 16, padding: 14, gap: 8 }} accessibilityLabel={t("onboarding.install.a11y")}>
       <Text style={type.caption()}>{t("onboarding.install.title")}</Text>
       {steps.map((s, i) => (
         <View key={i} style={{ flexDirection: "row", gap: 10 }}>

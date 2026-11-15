@@ -27,7 +27,7 @@ function Check() {
 export function TodayHero(p: Before | After) {
   if (p.done) {
     return (
-      <View testID="hero-done" style={[s.card, { backgroundColor: "#FFFBE0" }]}>
+      <View testID="hero-done" style={[s.card, { borderColor: color.gold }]}>
         <View style={{ flexDirection: "row", gap: 10 }}>
           <View style={{ flex: 1 }}>
             <View style={{ flexDirection: "row", alignItems: "center", gap: 6 }}><Check /><Text style={[type.eyebrow(9), { color: color.ink }]}>{t("home.today.done")}</Text></View>
@@ -50,25 +50,29 @@ export function TodayHero(p: Before | After) {
       </View>
     );
   }
+  // loud brand (2026-11-06): today's episode is a lime block with black words and a black pill (Magna's lime + black);
+  // the gentle lane (quiet) keeps the calm dark card
+  const loud = !p.quiet;
+  const ink = loud ? "#0A0A0A" : color.ink;
   return (
-    <View testID="hero" style={s.card}>
+    <View testID="hero" style={[s.card, loud && { backgroundColor: color.gold, borderColor: color.gold }]}>
       <View style={{ flexDirection: "row", gap: 8 }}>
         <View style={{ flex: 1 }}>
-          <Text style={[type.eyebrow(9), { color: color.ink }]}>{t("home.hero.eyebrow", { n: p.n })}</Text>
-          <Text accessibilityRole="header" style={[type.h1(24), { marginTop: 8 }]}>{p.title}</Text>
-          <Text style={[type.caption(12), { marginTop: 6 }]}>{p.camp}</Text>
+          <Text style={[type.eyebrow(9), { color: ink }]}>{t("home.hero.eyebrow", { n: p.n })}</Text>
+          <Text accessibilityRole="header" style={[type.h1(loud ? 32 : 24), { marginTop: 8, color: ink }]}>{p.title}</Text>
+          <Text style={[type.caption(12), { marginTop: 6 }, loud && { color: ink, opacity: 0.75 }]}>{p.camp}</Text>
         </View>
         <Guy pose={p.quiet ? "sitrock" : "walk"} h={96} style={{ marginRight: -6, marginTop: -4 }} />
       </View>
-      {p.first ? <Text style={[type.body(13), { color: color.mute, marginTop: 10 }]}>{t("home.hero.first")}</Text> : null}
-      {p.goal ? <Text style={[type.caption(12), { marginTop: 6, color: color.ink }]}>{p.goal}</Text> : null}
-      <Btn testID="top-start" kind={p.quiet ? "ghost" : "gold"} onPress={p.onStart} label={p.startLabel} style={{ marginTop: 14, borderWidth: 2, borderColor: color.ink }}>
+      {p.first ? <Text style={[type.body(13), { color: loud ? ink : color.mute, marginTop: 10 }]}>{t("home.hero.first")}</Text> : null}
+      {p.goal ? <Text style={[type.caption(12), { marginTop: 6, color: ink }]}>{p.goal}</Text> : null}
+      <Btn testID="top-start" kind={p.quiet ? "ghost" : "black"} onPress={p.onStart} label={p.startLabel} style={{ marginTop: 14, borderWidth: 2, borderColor: p.quiet ? color.ink : "#0A0A0A" }}>
         {p.quiet ? t("home.today.whenReady", { n: p.n }) : t("home.today.startDay", { n: p.n })}
       </Btn>
       {p.streak ? (
         <View testID="streak-pill" accessibilityRole="text" style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 6, marginTop: 10 }}>
           <Sun size={16} />
-          <Text style={[type.caption(12), p.streak.loud && { color: color.ink, fontFamily: font.text[700] }]}>{p.streak.text}</Text>
+          <Text style={[type.caption(12), loud && { color: ink }, p.streak.loud && { color: ink, fontFamily: font.text[700] }]}>{p.streak.text}</Text>
         </View>
       ) : null}
     </View>
@@ -76,6 +80,6 @@ export function TodayHero(p: Before | After) {
 }
 
 const s = {
-  card: { marginHorizontal: 18, marginBottom: 12, backgroundColor: "#fff", borderWidth: 2, borderColor: color.ink, borderRadius: 22, paddingVertical: 16, paddingHorizontal: 16 },
+  card: { marginHorizontal: 18, marginBottom: 12, backgroundColor: color.white, borderWidth: 2, borderColor: color.ink, borderRadius: 22, paddingVertical: 16, paddingHorizontal: 16 },
   rule: { height: 1, backgroundColor: "#0A0A0A1F", marginVertical: 12 },
 } as const;

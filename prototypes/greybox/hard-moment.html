@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hard Moment</title><link rel="icon" href="data:,">
+<meta name="description" content="Infinite Hill's way in for a hard moment: say what happened, breathe for a minute, hear what your path says about exactly this, then one small thing to do.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@500;600;700;800&display=swap">
+<style>
+  /* A hard moment (2026-11-02): for right after a blowup. No streak, no score, no clock. Same night-on-the-hill look as hill-app-doors.html. */
+  :root {
+    color-scheme: dark;
+    --night: #070a14;
+    --panel: #141b33;
+    --panel2: #1c2440;
+    --text: #fbf6ee;
+    --muted: #b9bfd3;
+    --gold: #EEFF6A;
+    --lamp: #f5c46a;
+    --gold-ink: #0A0A0A;
+    --line: rgba(255, 255, 255, 0.14);
+    --chip: rgba(255, 255, 255, 0.08);
+    --ok: #6fd39a;
+  }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html, body { height: 100%; }
+  body { margin: 0; background: #04060c; color: var(--text); font: 600 15px/1.45 Manrope, system-ui, sans-serif; display: flex; justify-content: center; align-items: center; overflow: hidden; }
+  button, input, textarea { font: inherit; color: inherit; }
+  button { cursor: pointer; }
+  .phone { position: relative; width: 100%; height: 100%; max-width: 430px; overflow: hidden; background: var(--night); }
+  @media (min-width: 700px) and (min-height: 760px) {
+    .phone { height: min(880px, calc(100% - 40px)); border-radius: 34px; box-shadow: 0 30px 80px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.08); }
+  }
+  .layer { position: absolute; inset: 0; opacity: 0; pointer-events: none; visibility: hidden; transition: opacity .5s ease, visibility 0s linear .5s; overflow-y: auto; }
+  .layer.on { opacity: 1; pointer-events: auto; visibility: visible; transition: opacity .5s ease, visibility 0s; }
+  .eyebrow { font: 800 11px/1.2 Manrope, sans-serif; letter-spacing: .12em; text-transform: uppercase; color: var(--lamp); }
+  .serif { font-family: Manrope, Manrope, system-ui, sans-serif; }
+  .btn { border: 0; border-radius: 999px; background: var(--gold); color: var(--gold-ink); font-weight: 900; padding: 14px 22px; font-size: 16px; box-shadow: 0 6px 20px rgba(240,185,61,.3); width: 100%; }
+  .btn.ghost { background: var(--chip); color: var(--text); box-shadow: none; border: 1px solid var(--line); font-weight: 800; }
+  .btn:active { transform: scale(.97); }
+  .link { border: 0; background: none; color: var(--muted); font-weight: 700; font-size: 14px; padding: 10px; text-decoration: underline; text-underline-offset: 3px; }
+  .wrap { min-height: 100%; display: flex; flex-direction: column; gap: 18px; padding: calc(env(safe-area-inset-top, 0px) + 22px) 20px calc(env(safe-area-inset-bottom, 0px) + 24px); }
+  .top { display: flex; justify-content: space-between; align-items: center; }
+  .x { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--line); background: var(--chip); font-size: 18px; line-height: 1; }
+
+  /* the mascot meets you */
+  .meet { display: flex; gap: 12px; align-items: flex-start; }
+  .face { flex: none; width: 58px; height: 58px; border-radius: 50%; overflow: hidden; background: #f3efe8; border: 2px solid var(--lamp); }
+  .face video { width: 100%; height: 100%; object-fit: cover; transform: scale(1.35) translateY(8%); }
+  .bubble { background: var(--panel2); border: 1px solid var(--line); border-radius: 4px 18px 18px 18px; padding: 12px 14px; font-size: 16px; line-height: 1.45; font-weight: 600; }
+  h1 { font: 800 27px/1.15 Manrope, sans-serif; margin: 0; text-wrap: balance; letter-spacing: -.01em; }
+  .chips { display: flex; flex-direction: column; gap: 9px; }
+  .chip { text-align: left; border: 1px solid var(--line); background: var(--panel); border-radius: 16px; padding: 14px 16px; font-weight: 700; font-size: 15.5px; display: flex; align-items: center; gap: 12px; transition: border-color .2s, background .2s; }
+  .chip i { font-style: normal; font-size: 20px; width: 26px; text-align: center; }
+  .chip:hover, .chip:focus-visible { border-color: var(--lamp); outline: none; }
+  .chip.danger { border-color: rgba(255,154,138,.45); color: #ffd3cb; }
+  .say { display: grid; gap: 8px; }
+  .say label { font-size: 13px; color: var(--muted); font-weight: 700; }
+  .say textarea { width: 100%; min-height: 70px; resize: none; border-radius: 14px; border: 1px solid var(--line); background: var(--panel); padding: 12px 14px; font-weight: 500; font-size: 15px; }
+  .say textarea:focus { outline: 2px solid var(--lamp); outline-offset: 1px; }
+  .fine { font-size: 12.5px; color: var(--muted); font-weight: 500; line-height: 1.4; }
+
+  /* one minute of breathing */
+  #breathe .wrap { justify-content: space-between; text-align: center; }
+  #breathe .skybg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .38; pointer-events: none; }
+  #breathe::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,15,34,.75), rgba(11,15,34,.25) 40%, rgba(11,15,34,.85)); pointer-events: none; }
+  #breathe > .wrap { z-index: 2 !important; }
+  .orb { position: relative; width: min(74vw, 290px); aspect-ratio: 1; max-width: 100%; margin: 0 auto; display: grid; place-items: center; }
+  .ring { position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle, rgba(245,196,106,.28), rgba(245,196,106,.06) 60%, transparent 70%); transform: scale(.62); transition: transform 4s cubic-bezier(.45,0,.55,1); }
+  .ring.in { transform: scale(1); }
+  .ring.out { transform: scale(.62); transition-duration: 6s; }
+  .ring2 { position: absolute; inset: 14%; border-radius: 50%; border: 2px solid rgba(245,196,106,.5); }
+  .mascotb { position: relative; width: 52%; aspect-ratio: 1; border-radius: 50%; overflow: hidden; background: #f3efe8; box-shadow: 0 0 40px rgba(245,196,106,.35); }
+  .mascotb video { width: 100%; height: 100%; object-fit: cover; }
+  .cue { font: 800 30px/1.1 Manrope, sans-serif; min-height: 34px; }
+  .left { color: var(--muted); font-weight: 700; font-variant-numeric: tabular-nums; }
+  .bar { height: 6px; border-radius: 99px; background: var(--chip); overflow: hidden; }
+  .bar i { display: block; height: 100%; width: 0; background: var(--lamp); transition: width 1s linear; }
+
+  /* the story from your path */
+  .art { position: relative; margin: 0 -20px; height: 230px; flex: none; }
+  .art img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .art::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,10,20,.15) 0%, rgba(7,10,20,0) 40%, var(--night) 100%); }
+  .art .eyebrow { position: absolute; left: 20px; bottom: 14px; z-index: 1; }
+  #story .wrap { padding-top: 0; }
+  .storyx { position: absolute; top: calc(env(safe-area-inset-top, 0px) + 14px); right: 16px; z-index: 2; background: rgba(7,10,20,.55); }
+  .tell { font-size: 16.5px; line-height: 1.55; font-weight: 500; color: #ece6db; margin: 0; }
+  .words { border-left: 3px solid var(--lamp); padding: 4px 0 4px 14px; margin: 0; }
+  .words p { margin: 0; font: 700 18px/1.4 Manrope, sans-serif; color: var(--text); text-wrap: pretty; }
+  .words cite { display: block; margin-top: 6px; font-style: normal; font-size: 12.5px; color: var(--muted); font-weight: 700; }
+  .means { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 14px 16px; }
+  .means b { display: block; margin-bottom: 4px; color: var(--lamp); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; }
+  .means p { margin: 0; font-size: 15px; line-height: 1.5; font-weight: 500; }
+  .other { display: flex; gap: 6px; flex-wrap: wrap; }
+  .other button { border: 1px solid var(--line); background: var(--chip); border-radius: 99px; padding: 6px 11px; font-size: 12.5px; font-weight: 700; color: var(--muted); }
+  .other button[aria-pressed="true"] { border-color: var(--lamp); color: var(--text); }
+
+  /* one small thing */
+  .step { background: linear-gradient(160deg, #1d2547, #141b33); border: 1px solid rgba(245,196,106,.35); border-radius: 22px; padding: 20px 18px; display: grid; gap: 10px; }
+  .step h2 { margin: 0; font: 800 23px/1.2 Manrope, sans-serif; text-wrap: balance; }
+  .step p { margin: 0; font-size: 15px; line-height: 1.5; font-weight: 500; color: #e6e0d4; }
+  .choice { font-size: 13px; color: var(--muted); font-weight: 600; }
+  .done-ok { display: none; align-items: center; gap: 10px; color: var(--ok); font-weight: 800; }
+  .done-ok.on { display: flex; }
+
+  /* crisis care: always one tap away */
+  .care { background: #2a1620; border: 1px solid rgba(255,154,138,.5); border-radius: 18px; padding: 16px; display: grid; gap: 10px; }
+  .care h2 { margin: 0; font: 800 20px/1.25 Manrope, sans-serif; }
+  .care p { margin: 0; font-size: 15px; line-height: 1.5; font-weight: 500; }
+  .care .num { font: 900 30px/1 Manrope, sans-serif; color: var(--gold); letter-spacing: .02em; user-select: all; }
+  .care a { color: var(--gold); }
+
+  @media (prefers-reduced-motion: reduce) { .ring, .ring.in, .ring.out { transition: none; } }
+
+  /* ═══ the new brand (2026-11-06): same look as hill-app, the site and the episodes. restyle only ═══ */
+  :root { --night: #0A0A0A; --panel: #141414; --panel2: #1d1d1d; --text: #F3EFE4; --muted: rgba(243,239,228,.66); --gold: #EEFF6A; --lemon: #EEFF6A; --lamp: #EEFF6A; --gold-ink: #0A0A0A; --ink: #0A0A0A; --line: rgba(243,239,228,.14); --chip: rgba(243,239,228,.07); --ok: #19E68C; --glass: rgba(14,14,14,.74); }
+  body { background: #000; font-family: Manrope, system-ui, sans-serif; }
+  .phone { background: var(--night); }
+  .phone > .ih-grain { position: absolute; }
+  .eyebrow { font-family: Manrope, sans-serif; font-weight: 800; letter-spacing: .2em; color: var(--gold); }
+  .btn { font-family: Manrope, sans-serif; font-weight: 800; box-shadow: none; }
+  .btn.ghost { background: transparent; color: var(--text); border: 0; box-shadow: inset 0 0 0 2px rgba(243,239,228,.85); }
+  .chipx { background: rgba(10,10,10,.6); border: 0; box-shadow: inset 0 0 0 1.5px rgba(243,239,228,.35); }
+  .bubble { background: var(--panel2); color: var(--text); border: 0; box-shadow: inset 0 0 0 1px var(--line); }
+  .toast { background: var(--gold); color: var(--gold-ink); font-weight: 800; border-radius: 999px; }
+  .ih-k { color: var(--gold); font-style: normal; }
+  .btn { text-transform: lowercase; }
+  h1, .step h2, .cue, .care h2 { font-family: Anton, Impact, sans-serif !important; font-weight: 400 !important; text-transform: uppercase; letter-spacing: .01em; }
+  h1 { font-size: 44px; line-height: .92; }
+  .step h2 { font-size: 34px; line-height: .95; }
+  .cue { font-size: 48px; line-height: .95; color: var(--gold); }
+  .care h2 { font-size: 28px; line-height: .98; }
+  .face { background: none; border: 0; overflow: visible; width: 64px; height: 70px; }
+  .face img { width: 100%; height: 100%; object-fit: contain; }
+  /* 2026-11-14 (owner): your path's celebrity guide says every line here (round photo + name); Finn never speaks */
+  .face.gph { width: 58px; height: 58px; border-radius: 50%; overflow: hidden; border: 2px solid var(--gold); background: #1a1d0a; }
+  .face.gph img { object-fit: cover; object-position: 50% 25%; }
+  .bubble[data-spk]::before { content: attr(data-spk); display: block; margin-bottom: 3px; font: 800 10.5px/1.2 Manrope, sans-serif; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); }
+  .chip { background: transparent; border: 0; box-shadow: inset 0 0 0 1.5px rgba(243,239,228,.28); border-radius: 999px; padding: 13px 18px; font-weight: 800; }
+  .chip:hover, .chip:focus-visible { box-shadow: inset 0 0 0 2px var(--gold); }
+  .chip.danger { box-shadow: inset 0 0 0 1.5px rgba(255,45,138,.6); }
+  .say textarea { background: #161616; border-color: rgba(243,239,228,.2); border-radius: 18px; }
+  .say textarea:focus { border-color: var(--gold); }
+  .ring { background: radial-gradient(circle, rgba(238,255,106,.26), rgba(238,255,106,.05) 60%, transparent 70%); }
+  .ring2 { border-color: rgba(238,255,106,.55); }
+  .mascotb { box-shadow: 0 0 0 3px var(--gold), 0 0 40px rgba(238,255,106,.3); }
+  .bar i { background: var(--gold); }
+  .art img { filter: contrast(1.1) saturate(1.08) sepia(.14); }
+  .art::before { content: ""; position: absolute; inset: 0; background: var(--ih-grain); opacity: .3; mix-blend-mode: overlay; pointer-events: none; z-index: 1; }
+  .other button { box-shadow: inset 0 0 0 1.5px rgba(243,239,228,.28); border: 0; border-radius: 999px; }
+  .other button[aria-pressed="true"] { background: var(--gold); color: var(--gold-ink); box-shadow: none; }
+  .means { border-color: rgba(238,255,106,.3); }
+  .care { background: #1d0b14; border: 0; box-shadow: inset 0 0 0 2px var(--ih-pink); border-radius: 22px; }
+  .care .num { font-family: Anton, Impact, sans-serif; font-weight: 400; font-size: 54px; color: var(--gold); }
+  .done-ok { background: var(--gold); color: var(--gold-ink); }
+  /* 2026-11-15 brand pass: no navy, no pink, line icons instead of emoji; the care card has tap-to-call buttons */
+  #breathe::after { background: linear-gradient(180deg, rgba(10,10,10,.78), rgba(10,10,10,.25) 40%, rgba(10,10,10,.88)); }
+  .storyx { background: rgba(10,10,10,.6); }
+  .art::after { background: linear-gradient(180deg, rgba(10,10,10,.15) 0%, rgba(10,10,10,0) 40%, var(--night) 100%); }
+  .step { background: #1c1c1c; border: 1px solid rgba(238,255,106,.35); }
+  .chip i { display: grid; place-items: center; color: var(--gold); }
+  .chip i svg { width: 22px; height: 22px; }
+  .chip.danger { box-shadow: inset 0 0 0 2px rgba(243,239,228,.8); color: var(--text); }
+  .care { background: #141414; box-shadow: inset 0 0 0 2px var(--gold); }
+  .care .acts { display: flex; flex-wrap: wrap; gap: 8px; }
+  .care .acts a { flex: 1 1 auto; text-align: center; text-decoration: none; background: var(--gold); color: var(--gold-ink); border-radius: 999px; padding: 11px 14px; font-weight: 800; font-size: 14px; }
+  .care .acts a.ghost { background: transparent; color: var(--text); box-shadow: inset 0 0 0 1.5px rgba(243,239,228,.5); }
+  .mascotb img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 25%; }
+</style>
+<link rel="stylesheet" href="brand/brand.css">
+</head>
+<body>
+<div class="ih-grain" aria-hidden="true"></div>
+<div class="phone" id="app">
+
+  <!-- 1. what just happened -->
+  <section class="layer on" id="what" aria-label="what just happened">
+    <div class="wrap">
+      <div class="top"><span class="eyebrow" data-es="un momento difícil">a hard moment</span><button class="x" id="x1" aria-label="back to the hill" data-es-al="volver">×</button></div>
+      <div class="meet">
+        <div class="face"><img alt="" aria-hidden="true"></div>
+        <div class="bubble" data-es="hola. me alegra que hayas venido. no tienes que explicarlo todo. solo toca lo que más se parezca.">hey. i'm glad you came here. you don't have to explain it all. just tap the closest one.</div>
+      </div>
+      <h1 data-es="¿qué acaba de pasar?">what just happened?</h1>
+      <div class="chips" id="chips"></div>
+      <div class="say">
+        <label for="said" data-es="o dilo con tus propias palabras (opcional, se queda en este teléfono)">or say it in your own words (optional, stays on this phone)</label>
+        <textarea id="said" placeholder="i snapped at…" data-es-ph="le grité a…"></textarea>
+        <button class="btn ghost" id="saidGo" hidden data-es="eso es">that's it</button>
+      </div>
+      <p class="fine" data-es="nada de esto cuenta para nada. sin racha, sin puntos. es solo para ti.">nothing here counts toward anything. no streak, no score. it's just for you.</p>
+    </div>
+  </section>
+
+  <!-- 2. one minute of breathing -->
+  <section class="layer" id="breathe" aria-label="breathe">
+    <video class="skybg" src="art/moments/breathe-sky.mp4" autoplay muted loop playsinline aria-hidden="true"></video>
+    <div class="wrap" style="position:relative;z-index:1">
+      <div class="top"><span class="eyebrow" data-es="un minuto">one minute</span><button class="link" id="skipB" data-es="saltar">skip</button></div>
+      <div class="meet" style="text-align:left">
+        <div class="face"><img alt="" aria-hidden="true"></div>
+        <div class="bubble" id="breatheLine"></div>
+      </div>
+      <!-- the guide's photo breathes with you (no mascot video: Finn is still art only) -->
+      <div class="orb" aria-hidden="true"><div class="ring" id="ring"></div><div class="ring2"></div><div class="mascotb"><img id="orbImg" src="episodes/assets/finn-thumbs_up-still.webp" alt=""></div></div>
+      <div style="display:grid;gap:10px">
+        <div class="cue" id="cue" aria-live="polite" data-es="inhala">breathe in</div>
+        <div class="left" id="left">1:00</div>
+        <div class="bar"><i id="barI"></i></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. a story from your path, about exactly this -->
+  <section class="layer" id="story" aria-label="a story from your path">
+    <button class="x storyx" id="x3" aria-label="back to the hill" data-es-al="volver">×</button>
+    <div class="wrap">
+      <div class="art"><img id="sImg" src="" alt=""><span class="eyebrow" id="sEb"></span></div>
+      <h1 id="sTitle" translate="no"></h1>
+      <p class="tell" id="sTell" translate="no"></p>
+      <blockquote class="words" translate="no"><p id="sWords"></p><cite id="sCite"></cite></blockquote>
+      <div class="means"><b data-es="lo que significa ahora mismo">what it means right now</b><p id="sMeans" translate="no"></p></div>
+      <button class="btn" id="toStep" data-es="ok. ¿qué hago?">okay. what do i do?</button>
+      <div id="otherBox"><div class="fine" style="margin-bottom:8px" data-es="¿te da curiosidad cómo lo ve otro camino?">curious how another path sees it?</div><div class="other" id="other"></div></div>
+    </div>
+  </section>
+
+  <!-- 4. one small thing -->
+  <section class="layer" id="step" aria-label="one small thing">
+    <div class="wrap">
+      <div class="top"><span class="eyebrow" data-es="una cosa pequeña">one small thing</span><button class="x" id="x4" aria-label="back to the hill" data-es-al="volver">×</button></div>
+      <div class="meet">
+        <div class="face"><img alt="" aria-hidden="true"></div>
+        <div class="bubble" id="stepLead"></div>
+      </div>
+      <div class="step">
+        <div class="eyebrow" data-es="ahora mismo">right now</div>
+        <h2 id="stepNow"></h2>
+        <p id="stepHow"></p>
+        <p class="choice" id="stepPray" translate="no"></p>
+      </div>
+      <div class="step" style="border-color:var(--line)">
+        <div class="eyebrow" style="color:var(--muted)" data-es="cuando quieras">when you're ready</div>
+        <h2 id="stepLater" style="font-size:19px" translate="no"></h2>
+        <p id="stepLaterHow" translate="no"></p>
+      </div>
+      <div class="done-ok" id="didIt" data-es="✓ eso tomó valor.">✓ that took guts.</div>
+      <div style="display:grid;gap:10px;margin-top:auto">
+        <button class="btn" id="did" data-es="lo hice">i did it</button>
+        <button class="btn ghost" id="home1" data-es="volver a hoy">back to today</button>
+        <button class="link" id="again" data-es="respirar un minuto más">breathe one more minute</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- crisis care -->
+  <section class="layer" id="care" aria-label="get help now">
+    <div class="wrap">
+      <div class="top"><span class="eyebrow" data-es="importas">you matter</span><button class="x" id="xc" aria-label="close" data-es-al="cerrar">×</button></div>
+      <div class="meet">
+        <div class="face"><img alt="" aria-hidden="true"></div>
+        <div class="bubble" data-es="me alegra mucho que me lo hayas contado. no tienes que cargar con esto a solas, y mereces ayuda de verdad ahora mismo, de una persona real.">i'm really glad you told me. you don't have to carry this alone, and you deserve real help right now, from a real person.</div>
+      </div>
+      <div class="care">
+        <h2 data-es="si estás en peligro o piensas en hacerte daño">if you're in danger or thinking about hurting yourself</h2>
+        <p data-es="llama o escribe, a cualquier hora, gratis:">call or text, any time, free:</p>
+        <div class="num">988</div>
+        <p data-es="la Línea 988 de Prevención del Suicidio y Crisis (EE. UU.). en español: llama al 988 y oprime 2, o escribe AYUDA al 988. fuera de EE. UU., llama a tu número de emergencia local. si alguien te está lastimando, o podrías lastimar a alguien, llama ahora al 911 o a tu número de emergencia local.">the Suicide &amp; Crisis Lifeline (US). outside the US, call your local emergency number. if someone is hurting you, or you might hurt someone, call 911 or your local emergency number now.</p>
+        <div class="acts" id="careActs"><a href="tel:988">call 988</a><a href="sms:988">text 988</a><a class="ghost" href="tel:112">not in the US? 112</a></div>
+      </div>
+      <p class="fine" data-es="tómate tu tiempo. puedes respirar aquí mientras llamas.">take your time. you can breathe here while you call.</p>
+      <div style="display:grid;gap:10px;margin-top:auto">
+        <button class="btn ghost" id="careBreathe" data-es="respira conmigo">breathe with me</button>
+      </div>
+    </div>
+  </section>
+
+</div>
+<script>
+(function () {
+  var $ = function (s) { return document.querySelector(s); };
+  var APP = /[?&]app=1/.test(location.search);
+  // language (2026-11-15): ?lang= first, then the app's saved setting. Spanish covers every line of the frame, the
+  // chips, the guide's lines and the whole crisis screen; the story from your path stays as written
+  var ES = (function () { try { var q = /[?&]lang=(en|es)\b/.exec(location.search); if (q) return q[1] === "es";
+    var sv = JSON.parse(localStorage.getItem("ih-hill-doors") || "null") || {}; return sv.lang === "es"; } catch (e) { return false; } })();
+  function L(en, es) { return ES ? es : en; }
+  if (ES) {
+    document.documentElement.lang = "es";
+    [].forEach.call(document.querySelectorAll("[data-es]"), function (e) { e.textContent = e.getAttribute("data-es"); });
+    [].forEach.call(document.querySelectorAll("[data-es-ph]"), function (e) { e.placeholder = e.getAttribute("data-es-ph"); });
+    [].forEach.call(document.querySelectorAll("[data-es-al]"), function (e) { e.setAttribute("aria-label", e.getAttribute("data-es-al")); });
+    var CA = document.getElementById("careActs"); if (CA) CA.innerHTML = '<a href="tel:988">llamar al 988</a><a href="sms:988?body=AYUDA">escribir AYUDA al 988</a><a class="ghost" href="tel:112">¿fuera de EE. UU.? 112</a>';
+  }
+  function show(id) { [].forEach.call(document.querySelectorAll(".layer"), function (l) { l.classList.toggle("on", l.id === id); }); var L = $("#" + id); if (L) L.scrollTop = 0; }
+
+  // your home on the hill: ?home=, else the hill app's saved home, else the Olive Grove
+  var HOME = (location.search.match(/[?&]home=([a-z]+)/) || [])[1];
+  if (!HOME) { try { HOME = (JSON.parse(localStorage.getItem("ih-hill-doors")) || JSON.parse(localStorage.getItem("ih-hill-app-demo")) || {}).home; } catch (e) {} }
+
+  // what happened: the guide's first line after you pick, and what "right now" means for it
+  // line icons (2026-11-15), not emoji
+  var IC = function (d) { return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' + d + "</svg>"; };
+  var ICONS = { love: IC('<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/><path d="M12 7.4l-1.5 3.6 3 1.5-1.5 3.5"/>'), kid: IC('<circle cx="12" cy="7" r="3"/><path d="M7 21v-4a5 5 0 0 1 10 0v4"/>'),
+    work: IC('<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/>'), blew: IC('<circle cx="12" cy="12" r="9"/><path d="M8.5 16.5a5 5 0 0 1 7 0M9 10h.01M15 10h.01"/>'),
+    out: IC('<path d="M3 9c2-2 4-2 6 0s4 2 6 0 4-2 6 0M3 15c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/>'), "else": IC('<circle cx="6" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="18" cy="12" r="1"/>'),
+    sos: IC('<path d="M12 3l9 16H3z"/><path d="M12 10v4M12 17h.01"/>') };
+  var WHAT_ES = {
+    love: { t: "una pelea con alguien que quiero", line: "las peleas con quienes queremos duelen más, porque nos importan más. primero, solo respiremos.", now: "no vuelvas a entrar todavía.", nowHow: "date diez minutos antes de decir otra cosa. no estás huyendo. estás dejando que tu cuerpo alcance a tu corazón." },
+    kid: { t: "le grité a mi hijo", line: "a todos los papás y mamás nos ha pasado. gritar no te hace mal papá o mala mamá. venir aquí después dice mucho de ti.", now: "regresa y di la cosa pequeña y verdadera.", nowHow: "ponte a su altura. \"perdón por gritarte. me enojé, y no es tu culpa. te quiero.\" eso es todo. los niños aprenden a reparar viendo cómo se hace." },
+    work: { t: "el trabajo me rebasó", line: "eso es mucho para cargar a casa. dejémoslo en el suelo un minuto.", now: "cierra la laptop. aléjate un poco.", nowHow: "no tienes que contestar ese correo o mensaje esta noche. escribe la única cosa que te está molestando, para que tu cabeza no tenga que cargarla." },
+    blew: { t: "siento que la regué", line: "te estás exigiendo mucho. eso suele significar que te importa. vamos despacio, juntos.", now: "háblate como te hablaría un amigo.", nowHow: "di en voz alta: \"me equivoqué. sigo siendo buena persona. puedo arreglarlo.\" suena simple. funciona." },
+    out: { t: "todo me rebasa y no me puedo calmar", line: "ok. aquí estás a salvo. vamos a bajarle a todo, empezando por tu respiración.", now: "enfría tu cuerpo.", nowHow: "agua fría en la cara o en las muñecas, o sal dos minutos. primero se calma el cuerpo, luego la mente." },
+    "else": { t: "otra cosa", line: "no tienes que ponerle nombre. aquí estoy. primero respiremos.", now: "quédate en calma un minuto más.", nowHow: "siéntate en un lugar tranquilo. pies en el piso, mano en el pecho. nota tres cosas que puedas oír." } };
+  var WHAT = [
+    { k: "love", i: "💔", t: "a fight with someone i love", line: "fights with the people we love hurt the most, because they matter the most. let's just breathe first.", now: "don't go back in yet.", nowHow: "give it ten minutes before you say anything else. you're not running away. you're letting your body catch up with your heart." },
+    { k: "kid", i: "🧒", t: "i yelled at my kid", line: "every parent has been here. yelling doesn't make you a bad parent. coming here after says a lot about you.", now: "go back and say the small true thing.", nowHow: "get down to their eye level. \"i'm sorry i yelled. i was upset, and that's not your fault. i love you.\" that's it. kids learn repair by watching it." },
+    { k: "work", i: "💼", t: "work got to me", line: "that's a lot to carry home. let's set it down for one minute.", now: "close the laptop. step away.", nowHow: "you don't have to answer that email or message tonight. write down the one thing that's bugging you, so your head doesn't have to hold it." },
+    { k: "blew", i: "😞", t: "i feel like i blew it", line: "you're being hard on yourself. that usually means you care. let's slow down together.", now: "talk to yourself like a friend would.", nowHow: "say out loud: \"i messed up. i'm still a good person. i can fix this.\" it sounds simple. it works." },
+    { k: "out", i: "🌊", t: "i'm overwhelmed and can't calm down", line: "okay. you're safe here. we're going to slow everything down, starting with your breath.", now: "cool your body down.", nowHow: "cold water on your face or wrists, or step outside for two minutes. your body calms first, then your mind follows." },
+    { k: "else", i: "…", t: "something else", line: "you don't have to name it. i'm here. let's breathe first.", now: "be still for one more minute.", nowHow: "sit somewhere quiet. feet on the floor, hand on your chest. notice three things you can hear." },
+  ];
+  WHAT.forEach(function (w) { w.i = ICONS[w.k]; if (ES && WHAT_ES[w.k]) { for (var x in WHAT_ES[w.k]) w[x] = WHAT_ES[w.k][x]; } });
+
+  // one real story and teaching per home, about anger and repair; images are places, never faces of Jesus, prophets or Gurus
+  var PATH = {
+    olive: { faith: "christianity", img: "art/moments/galilee-calm.webp", place: "the sea of galilee",
+      title: "the storm in the boat",
+      tell: "one night on the Sea of Galilee a storm hit, and the disciples panicked. waves were filling the boat. Jesus was asleep in the back. they woke him up, terrified: \"don't you care that we're drowning?\" he stood up and spoke to the wind.",
+      words: "Peace! Be still!", cite: "Mark 4:39",
+      means: "the storm was real. so was the calm. the Bible doesn't say never get angry. it says, \"be angry but do not sin; do not let the sun go down on your anger\" (Ephesians 4:26). you can feel the storm and still choose not to let it steer the boat.",
+      pray: "if you want to pray, you could say just two words: \"peace. be still.\" or just sit with them. your choice.",
+      later: "before tonight ends, make it right.", laterHow: "\"don't let the sun go down on your anger.\" one honest sentence before bed changes tomorrow morning." },
+    angelus: { faith: "catholicism", img: "art/homes/angelus.webp", place: "annecy",
+      title: "the saint with a temper",
+      tell: "St. Francis de Sales was known for being gentle. what people didn't know: he was born with a fierce temper. he said it took him more than twenty years of small daily work to calm it. by the end, people thought gentleness just came naturally to him.",
+      words: "Nothing is so strong as gentleness; nothing so gentle as real strength.", cite: "attributed to St. Francis de Sales",
+      means: "gentleness isn't weakness. it's strength that's under control. the Church also gives you a way back every time: notice it, own it, make it right. that's what confession and the examen are for.",
+      pray: "if you'd like, try a ten-second examen: where did it go wrong? what was i feeling? what's one thing i can make right? you can pray it or just think it. your choice.",
+      later: "make one thing right.", laterHow: "an apology, a hug, or doing the thing you were fighting about. small repair is still repair." },
+    pomegranate: { faith: "judaism", img: "art/moments/zin-rock.webp", place: "the wilderness of zin",
+      title: "the day moses lost his temper",
+      tell: "in the desert, the people were thirsty and complaining, again. God told Moses to speak to a rock, and water would come out. Moses was so fed up he shouted at the people and struck the rock instead. the water came. but even Moses, the greatest teacher, paid a price for that one angry moment.",
+      words: "Who is mighty? One who masters their own impulse.", cite: "Pirkei Avot 4:1",
+      means: "being strong isn't about winning the argument. it's about catching yourself. and when you don't, Judaism has teshuvah, turning back: name what you did, feel it, and make it right with the person.",
+      pray: "some people say a short prayer here, some just sit quietly. both count. your choice.",
+      later: "do teshuvah: turn back.", laterHow: "go to the person. say what you did, without excuses, and ask what would help. that's the whole of it." },
+    datepalm: { faith: "islam", img: "art/moments/wudu-fountain.webp", place: "medina",
+      title: "\"do not get angry\"",
+      tell: "a man came to the Prophet Muhammad ﷺ and asked for advice. he said, \"do not get angry.\" the man asked again. \"do not get angry.\" and a third time, the same answer. he also gave practical advice: if you're angry while standing, sit down. if you're still angry, lie down.",
+      words: "The strong one is not the one who wrestles others down, but the one who controls himself when angry.", cite: "Sahih al-Bukhari",
+      means: "anger is something everyone feels, and the strength is in what you do next. change your position, cool your body. many Muslims also make wudu, washing with cool water, because water cools anger.",
+      pray: "if you'd like, make wudu or say a quiet \"a'udhu billah\" (\"i seek refuge in God\"). or just sit down and drink some water. your choice.",
+      later: "go back with a calm heart.", laterHow: "when you've cooled off, say sorry for the part that was yours. a soft word can turn the whole thing around." },
+    marigold: { faith: "hinduism", img: "art/trip/hin-jyotisar.webp", place: "kurukshetra",
+      title: "what krishna told arjuna",
+      tell: "on the battlefield of Kurukshetra, the warrior Arjuna fell apart. he dropped his bow and couldn't stop shaking. his friend and charioteer, Krishna, didn't scold him. he steadied him and explained what happens inside us when anger takes over.",
+      words: "From anger comes confusion; from confusion, memory is lost; when memory is lost, wisdom is lost.", cite: "Bhagavad Gita 2.63",
+      means: "anger makes you forget who you are and what you love. that's why it feels like it wasn't really you. the Gita's answer: feelings come and go like heat and cold (2.14). let this one pass, then act from your steady self.",
+      pray: "some people say \"om\" slowly three times, or offer a quiet prayer. some just sit. your choice.",
+      later: "do your next small duty, calmly.", laterHow: "the dishes, the bedtime story, the reply. do it with care and without the anger. that's dharma, right here at home." },
+    lotus: { faith: "buddhism", img: "art/trip/bud-vulture-peak.webp", place: "rajgir",
+      title: "the gift nobody took",
+      tell: "an angry man came to the Buddha and insulted him to his face. the Buddha listened calmly, then asked: \"if you bring a gift to someone, and they don't accept it, who does it belong to?\" \"to me, of course.\" \"then i don't accept your anger. it stays with you.\"",
+      words: "Hatred is never ended by hatred. By non-hatred alone is it ended. This is an ancient law.", cite: "Dhammapada, verse 5",
+      means: "you don't have to pick up every gift of anger someone hands you, or keep the one you're holding. notice it, name it (\"anger, anger\"), and let it pass. it's a feeling, not a command.",
+      pray: "if you'd like, wish yourself well, then wish the other person well: \"may you be at peace.\" or just breathe. your choice.",
+      later: "answer it with kindness.", laterHow: "not because they're right. because you don't want to carry it. one kind act ends the cycle." },
+    nectar: { faith: "sikhism", img: "art/moments/goindwal-steps.webp", place: "goindwal",
+      title: "the guru who didn't strike back",
+      tell: "at Goindwal, an angry young man named Datu marched up to Guru Amar Das, who was already old, and kicked him off his seat in front of everyone. the Guru didn't shout or strike back. he got up gently and said he was sorry his old bones had hurt Datu's foot.",
+      words: "Fareed, answer evil with goodness; do not fill your mind with anger.", cite: "Guru Granth Sahib, ang 1382",
+      means: "Sikhi calls anger (krodh) one of the five thieves. it sneaks in and robs your peace. the answer isn't pretending it's not there. it's humility (nimrata) and doing good anyway.",
+      pray: "some people repeat \"waheguru\" slowly with their breath. some just breathe. your choice.",
+      later: "do one small seva.", laterHow: "make their tea, fix the thing, help without being asked. service softens two hearts at once." },
+    wild: { faith: "my own religion", img: "art/trip/spi-corsica-seneca.webp", place: "corsica",
+      title: "the best cure for anger",
+      tell: "Seneca, a Roman philosopher, wrote a whole book about anger. he'd seen what it did to emperors and ordinary people alike. his best advice was the simplest: anger feels like it needs to act right now. so don't. wait.",
+      words: "The greatest remedy for anger is delay.", cite: "Seneca, On Anger",
+      means: "almost every tradition says some version of this: pause before you act. the feeling is real, but it's at its loudest right now. in ten minutes it'll be quieter, and you'll be you again.",
+      pray: "if something helps you feel grounded (a prayer, a word, a song), use it. or just sit. your choice.",
+      later: "write it, don't send it.", laterHow: "write everything you want to say. sleep on it. tomorrow, keep the one line that's true and kind." },
+  };
+  var ORDER = ["olive", "angelus", "pomegranate", "datepalm", "marigold", "lotus", "nectar", "wild"];
+  var NAMES = ES ? { olive: "cristianismo", angelus: "catolicismo", pomegranate: "judaísmo", datepalm: "islam", marigold: "hinduismo", lotus: "budismo", nectar: "sijismo", wild: "mi propia religión" }
+    : { olive: "christianity", angelus: "catholicism", pomegranate: "judaism", datepalm: "islam", marigold: "hinduism", lotus: "buddhism", nectar: "sikhism", wild: "my own religion" };
+  var HOME_KNOWN = !!PATH[HOME]; // no path yet: the lines show plainly, no speaker (2026-11-14)
+  if (!PATH[HOME]) HOME = "olive";
+  // owner, 2026-11-14: the path's celebrity guide says every line on these screens; Finn only dances, never speaks
+  var GPH = { olive: ["Denzel", "art/guides/christianity.webp"], angelus: ["Nicole", "art/guides/catholic.webp"], pomegranate: ["Natalie", "art/guides/judaism.webp"], datepalm: ["Mahershala", "art/guides/islam.webp"], marigold: ["Priyanka", "art/guides/hinduism.webp"], lotus: ["Orlando", "art/guides/buddhism.webp"], nectar: ["Diljit", "art/guides/sikhism.webp"], wild: ["Justin", "art/guides/spiritual.webp"] };
+  [].forEach.call(document.querySelectorAll(".meet"), function (m) {
+    var g = HOME_KNOWN && GPH[HOME], f = m.querySelector(".face"), im = f && f.querySelector("img"), b = m.querySelector(".bubble"); if (!im) return; if (!g) { f.style.display = "none"; return; }
+    f.classList.add("gph"); im.src = g[1]; im.alt = g[0]; im.removeAttribute("aria-hidden"); if (b) b.setAttribute("data-spk", g[0]);
+  });
+  // the breathing orb shows your guide (no mascot video); with no path yet it keeps Finn's approved still
+  if (HOME_KNOWN && GPH[HOME]) { $("#orbImg").src = GPH[HOME][1]; }
+
+  // danger words always lead to real help (same pattern as the hill app's guide); nothing is sent or saved
+  // crisis words, English and Spanish (carried over from the old app's lib/companion/shape.ts, plus this app's own).
+  // Not a diagnosis: it only brings up real help (988 / local emergency). Spanish is matched without accents.
+  var DANGER = (function () {
+    var EN = /\b(suicid\w*|kill(ing)? my ?self|kill(ing)? self|end(ing)? (it all|it|my life)|take my (own )?life|self[- ]?harm\w*|hurt(ing)? my ?self|cut(ting)? my ?self|(want(ed)?|wanna) (to )?die|wish i (was|were) dead|better off (dead|without me)|don'?t want to (be here|live|wake up)|no reason to live|overdose|deserve to die|don'?t deserve to (live|be alive|exist)|shouldn'?t (be alive|exist)|what'?s the point (of|in) (living|life|being alive|going on|anything( anymore)?|it all|trying anymore)|can'?t (go on|keep going)( anymore)?|abus(e|ed|ing) me|in danger|hit me|hurt (him|her|them|someone|my (kid|child|wife|husband|partner)))\b/i;
+    var ES = /(^|[^a-z])(suicid[a-z]*|matarme|me (voy a|quiero) matar|quitarme la vida|me quiero quitar la vida|acabar con (todo|mi vida)|terminar con (todo|mi vida)|quiero morir(me)?|me quiero morir|quisiera morir(me)?|ganas de morir(me)?|deseo morir(me)?|ojala (estuviera muert[oa]|me muriera|no despertara)|quiero estar muert[oa]|no quiero (vivir|seguir viviendo|estar aqui|despertar(me)?)|no tengo (razon|razones|motivos?|ganas) (para|de) vivir|sin (razon|razones|motivos?) para vivir|estarian mejor sin mi|hacerme dano|me hago dano|lastimarme|me lastimo|autolesi[a-z]*|cortarme (las venas|los brazos|las munecas)|me corto (las venas|los brazos|las munecas)|sobredosis|merezco morir(me)?|no merezco (vivir|existir)|para que (vivir|seguir viviendo)|no puedo seguir (asi|viviendo))(?![a-z])/;
+    function fold(s) { return String(s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase(); }
+    return {
+      test: function (t) { t = String(t || ""); return EN.test(t) || ES.test(fold(t)); },
+      es: function (t) { t = String(t || ""); return !EN.test(t) && ES.test(fold(t)); }
+    };
+  })();
+
+  var picked = WHAT[5], shown = HOME;
+
+  function home() { if (APP) { parent.postMessage({ ih: "close" }, "*"); return; } location.href = "hill-app-doors.html" + (ES ? "?lang=es" : ""); }
+  ["#x1", "#x3", "#x4", "#home1"].forEach(function (s) { $(s).onclick = home; });
+
+  // ── 1. chips ──
+  $("#chips").innerHTML = WHAT.map(function (w, k) { return '<button class="chip" data-k="' + k + '"><i aria-hidden="true">' + w.i + "</i>" + w.t + "</button>"; }).join("") +
+    '<button class="chip danger" id="unsafe"><i aria-hidden="true">' + ICONS.sos + '</i>' + L("i&rsquo;m not safe, or i want to hurt myself", "no estoy a salvo, o quiero hacerme daño") + '</button>';
+  [].forEach.call(document.querySelectorAll("#chips .chip[data-k]"), function (b) { b.onclick = function () { picked = WHAT[+b.dataset.k]; startBreathe(picked.line); }; });
+  $("#unsafe").onclick = function () { show("care"); };
+  $("#said").oninput = function () { var v = this.value.trim(); $("#saidGo").hidden = !v; if (DANGER.test(v)) show("care"); };
+  $("#saidGo").onclick = function () { var v = $("#said").value; if (DANGER.test(v)) { show("care"); return; } picked = WHAT[5]; startBreathe(L("thank you for telling me. that sounds really hard. let's breathe first, then we'll figure out the next step.", "gracias por contármelo. suena muy difícil. primero respiremos, y luego vemos el siguiente paso.")); };
+  $("#xc").onclick = function () { show("what"); };
+  $("#careBreathe").onclick = function () { startBreathe(L("i'm right here. breathe with me while you reach out.", "aquí estoy. respira conmigo mientras pides ayuda."), true); };
+
+  // ── 2. one minute: in for 4, out for 6, six times ──
+  var timer = null, careMode = false;
+  function startBreathe(line, care) {
+    careMode = !!care; clearInterval(timer);
+    $("#breatheLine").textContent = line; show("breathe");
+    var t = 0, ring = $("#ring");
+    function tick() {
+      var phase = t % 10;
+      if (phase === 0) { ring.className = "ring in"; $("#cue").textContent = L("breathe in", "inhala"); }
+      if (phase === 4) { ring.className = "ring out"; $("#cue").textContent = L("and out, slowly", "y exhala, despacio"); }
+      var left = 60 - t; $("#left").textContent = "0:" + ("0" + Math.max(0, left)).slice(-2);
+      $("#barI").style.width = Math.min(100, t / 60 * 100) + "%";
+      if (t >= 60) { clearInterval(timer); afterBreathe(); return; }
+      t++;
+    }
+    ring.className = "ring"; void ring.offsetWidth; tick(); timer = setInterval(tick, 1000);
+  }
+  function afterBreathe() { if (careMode) { show("care"); return; } renderStory(HOME); show("story"); }
+  $("#skipB").onclick = function () { clearInterval(timer); afterBreathe(); };
+
+  // ── 3. the story from your path ──
+  function renderStory(k) {
+    shown = k; var P = PATH[k];
+    $("#sImg").src = P.img; $("#sImg").alt = "";
+    $("#sEb").textContent = k === HOME ? L("from your path", "de tu camino") : L("from ", "desde ") + NAMES[k];
+    $("#sTitle").textContent = P.title; $("#sTell").textContent = P.tell;
+    $("#sWords").textContent = "“" + P.words + "”"; $("#sCite").textContent = P.cite; $("#sMeans").textContent = P.means;
+    $("#otherBox").hidden = HOME !== "wild"; // one faith first (2026-11-04): other paths only inside "my own religion"
+    $("#other").innerHTML = ORDER.map(function (o) { return '<button data-k="' + o + '" aria-pressed="' + (o === k) + '">' + NAMES[o] + "</button>"; }).join("");
+    [].forEach.call($("#other").children, function (b) { b.onclick = function () { renderStory(b.dataset.k); $("#story").scrollTo({ top: 0, behavior: "smooth" }); }; });
+  }
+  $("#toStep").onclick = function () { renderStep(); show("step"); };
+
+  // ── 4. one small thing ──
+  function renderStep() {
+    var P = PATH[shown];
+    $("#stepLead").textContent = L("you already did the hardest part: you stopped. here's one small thing.", "ya hiciste lo más difícil: te detuviste. aquí va una cosa pequeña.");
+    $("#stepNow").textContent = picked.now; $("#stepHow").textContent = picked.nowHow; $("#stepPray").textContent = P.pray;
+    $("#stepLater").textContent = P.later; $("#stepLaterHow").textContent = P.laterHow;
+    $("#didIt").classList.remove("on"); $("#did").hidden = false;
+  }
+  $("#did").onclick = function () { $("#didIt").classList.add("on"); this.hidden = true; if (APP) parent.postMessage({ ih: "hard-done" }, "*"); };
+  $("#again").onclick = function () { startBreathe(L("one more. you're doing great.", "una más. lo estás haciendo muy bien.")); };
+})();
+</script>
+</body>
+</html>

@@ -124,7 +124,7 @@ export default function Year() {
                 [String(y.friends), t("session.year.sumFriends", { count: y.friends })],
                 [String(y.quests), t("session.year.sumQuests", { count: y.quests })],
               ] as [string, string][]).map(([a, b]) => (
-                <View key={b} style={{ width: "47.8%", backgroundColor: "#fff", borderRadius: 16, borderWidth: 1.5, borderColor: color.line, paddingVertical: 10, paddingHorizontal: 12 }}>
+                <View key={b} style={{ width: "47.8%", backgroundColor: color.white, borderRadius: 16, borderWidth: 1.5, borderColor: color.line, paddingVertical: 10, paddingHorizontal: 12 }}>
                   <Text style={{ fontFamily: font.display[800], fontSize: 22, color: color.ink }}>{a}</Text>
                   <Text style={[type.eyebrow(8), { marginTop: 2 }]}>{b}</Text>
                 </View>

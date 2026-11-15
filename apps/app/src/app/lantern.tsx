@@ -79,7 +79,7 @@ export default function LanternScreen() {
           <View style={{ alignItems: "center", gap: 10, width: "100%" }}>
             <Text style={{ fontFamily: font.display[800], fontSize: 20, color: color.gold }}>{t("session.lantern.light", { n: LANTERN_LIGHT })}</Text>
             {gift ? (
-              <View style={{ backgroundColor: "#fff", borderRadius: 22, padding: 18, width: "100%" }}>
+              <View style={{ backgroundColor: color.white, borderRadius: 22, padding: 18, width: "100%" }}>
                 <Text style={[type.eyebrow(8), { color: color.mute }]}>{t("session.lantern.inside", { door: doorLabel(door), day: gift.day, word: gift.word })}</Text>
                 <Text style={{ fontFamily: font.display[800], fontSize: 22, color: color.ink, marginTop: 6 }}>“{gift.line}”</Text>
               </View>

@@ -1,0 +1,198 @@
+{
+ "id": "wild-lute",
+ "home": "wild",
+ "title": "Tight, loose, tuned",
+ "told": "from the Buddhist suttas",
+ "clips": "art/sacred/wild-lute/clips/",
+ "voice": "art/sacred/wild-lute/voice/",
+ "guide": {
+  "name": "Justin",
+  "photo": "art/guides/spiritual.webp"
+ },
+ "hook": {
+  "v": "SL1-Cool-Grove",
+  "say": "before the story, can i ask you something? have you ever tried meditating and felt like you were bad at it?",
+  "options": [
+   [
+    "Yes, I gave up",
+    "then this story is for you. a monk almost gave up too."
+   ],
+   [
+    "I keep trying",
+    "then you’ll love what the buddha tells him."
+   ],
+   [
+    "Never tried",
+    "perfect. you’ll start with the right idea."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "SL1-Cool-Grove",
+   "vo": [
+    "V01"
+   ],
+   "line": "In ancient India, a young Buddhist monk named Sona practiced in a quiet forest grove. He pushed himself harder than anyone, day and night."
+  },
+  {
+   "t": "shot",
+   "v": "SL2-Sona-Doubts",
+   "vo": [
+    "V02"
+   ],
+   "line": "But his mind would not settle. Alone, he thought: I try harder than everyone, and it isn’t working. Maybe I should go home."
+  },
+  {
+   "t": "ask",
+   "v": "SL2-Sona-Doubts",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "The Buddha comes to Sona. What do you think he does?",
+   "o": [
+    "Tells him to try even harder",
+    "Asks about his life before he was a monk",
+    "Tells him to rest for a few days"
+   ],
+   "a": 1,
+   "why": "He asks about Sona’s old life. Before he became a monk, Sona played the lute."
+  },
+  {
+   "t": "shot",
+   "v": "SL3-The-Buddha-Asks",
+   "vo": [
+    "V03"
+   ],
+   "line": "The Buddha came and sat with him. Before you were a monk, he asked, you played the lute, didn’t you? Yes, said Sona."
+  },
+  {
+   "t": "shot",
+   "v": "SL4-Too-Tight",
+   "vo": [
+    "V04"
+   ],
+   "line": "When the strings were too tight, did it sound good? No, said Sona. And when they were too loose? No."
+  },
+  {
+   "t": "ask",
+   "v": "SL4-Too-Tight",
+   "eb": "why?",
+   "q": "Why ask a struggling monk about lute strings?",
+   "o": [
+    "Effort is like a string: it needs tuning",
+    "To cheer him up with memories of home",
+    "To hint he’d be happier home with music"
+   ],
+   "a": 0,
+   "why": "Sona was straining like an over-tight string. The fix wasn’t to quit. It was better tuning."
+  },
+  {
+   "t": "shot",
+   "v": "SL5-Tuned",
+   "vo": [
+    "V05"
+   ],
+   "line": "And neither too tight nor too loose? Beautiful. Effort is the same, said the Buddha. Too much makes you restless. Too little makes you lazy. Keep it balanced."
+  },
+  {
+   "t": "ask",
+   "v": "SL5-Tuned",
+   "eb": "did you know?",
+   "q": "Before the Buddha came, Sona had pushed so hard that something happened. What?",
+   "o": [
+    "He fainted from hunger",
+    "His feet bled on the walking path",
+    "He lost his voice from chanting"
+   ],
+   "a": 1,
+   "why": "The old account says he walked meditation until his feet bled. The same account says he was so delicate that hair grew on the soles of his feet."
+  },
+  {
+   "t": "shot",
+   "v": "SL6-Today",
+   "vo": [
+    "V06"
+   ],
+   "line": "Sona tuned his effort, and in time he woke up fully. Today, meditation teachers still use his lute to explain how hard to try.",
+   "label": "today"
+  },
+  {
+   "t": "match",
+   "v": "SL6-Today",
+   "eb": "match them",
+   "q": "Match each string to what it looks like when you meditate.",
+   "pairs": [
+    [
+     "too tight",
+     "forcing your mind to go blank"
+    ],
+    [
+     "too loose",
+     "drifting off and never coming back"
+    ],
+    [
+     "tuned",
+     "wander, notice, come back"
+    ]
+   ],
+   "why": "The noticing isn’t failure. It’s the tuned string. Every time you come back is one more note."
+  },
+  {
+   "t": "teach",
+   "v": "SL5-Tuned",
+   "say": [
+    "here’s what i love. the buddha didn’t tell sona to want less. he told him to tune.",
+    "in buddhist teaching, you rest your attention on the breath. the mind wanders. you notice, and come back, without forcing. no blank mind required."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "SL6-Today",
+   "eb": "the hard one",
+   "q": "A friend says, “I meditated for one minute and my mind wandered ten times. I’m terrible at this.” What would the Buddha’s lute lesson say?",
+   "o": [
+    "They should quit and try something else",
+    "They should squeeze harder until the thoughts stop",
+    "Coming back ten times is the practice, gently tuned"
+   ],
+   "a": 2,
+   "why": "Ten wanders means ten returns. Forcing the thoughts out is the too-tight string."
+  }
+ ],
+ "today": {
+  "v": "SL5-Tuned",
+  "say": "try one tuned breath today. breathe in, let it out a little longer. if a thought shows up, notice it and finish the breath.",
+  "options": [
+   [
+    "I’ll do it now",
+    "that’s one note on a tuned string."
+   ],
+   [
+    "Later today",
+    "that counts. the string will wait for you."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "The emperor’s notebook.",
+  "line": "the most powerful man in the world kept writing himself one reminder."
+ },
+ "card": {
+  "from": "a story from the Buddhist suttas",
+  "mins": 5,
+  "keep": "veena",
+  "keepName": "Sona’s tuned string",
+  "keepWhy": "Not too tight, not too loose.",
+  "sources": [
+   "Anguttara Nikaya 6.55, Sona Sutta (Sona Kolivisa at Rajagaha, in the Cool Wood): Sona considers returning to lay life; the Buddha appears before him and asks about the lute strings too tight, too loose, and tuned; energy should be balanced. Sona later becomes an arahant. Trans. Bhikkhu Bodhi, The Numerical Discourses of the Buddha (2012).",
+   "Parallel: Vinaya, Mahavagga V.1.",
+   "Breath meditation: Anapanasati Sutta, Majjhima Nikaya 118.",
+   "Day 2 script: docs/curriculum/spiritual/scripts/y1/day-0002.json (wander, notice, come back)."
+  ],
+  "check": [
+   "The teach and today steps apply the lute lesson to breath meditation; the sutta is about effort in general (Sona was doing walking meditation). Confirm the bridge is fair."
+  ]
+ }
+}

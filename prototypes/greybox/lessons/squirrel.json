@@ -1,0 +1,207 @@
+{
+ "id": "squirrel",
+ "home": "marigold",
+ "title": "The squirrel on the bridge",
+ "told": "a folk story",
+ "clips": "art/sacred/squirrel/clips/",
+ "voice": "art/sacred/squirrel/voice/",
+ "guide": {
+  "name": "Priyanka",
+  "photo": "art/guides/hinduism.webp"
+ },
+ "card": {
+  "from": "a folk story",
+  "mins": 5,
+  "keep": "sand",
+  "keepName": "A pinch of sand",
+  "keepWhy": "Too small to matter? Rama didn’t think so.",
+  "sources": [
+   "Valmiki Ramayana, Yuddha Kanda: Rama’s army, with the builder Nala, builds the bridge of stones across the ocean to Lanka",
+   "The squirrel’s help and its three stripes: a folk story told across India, especially in the South (the film’s note: not in Valmiki’s Ramayana)"
+  ],
+  "check": [
+   "Where the squirrel story is first found (often credited to South Indian retellings and oral tradition); confirm the source line “a folk story.”"
+  ]
+ },
+ "hook": {
+  "v": "SQ1-The-Bridge",
+  "say": "before the story, can i ask you something? ever feel like your part is too small to matter? one person, one voice, one tiny try.",
+  "options": [
+   [
+    "Often",
+    "then this little one is for you. listen."
+   ],
+   [
+    "Sometimes",
+    "then keep this one for those days. listen."
+   ],
+   [
+    "Not really",
+    "good. you’ll love this sweet one anyway."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "SQ1-The-Bridge",
+   "vo": [
+    "V01"
+   ],
+   "line": "Rama’s army was building a bridge of stones across the ocean. Giant monkeys and bears hauled huge boulders."
+  },
+  {
+   "t": "shot",
+   "v": "SQ2-The-Squirrel",
+   "vo": [
+    "V02"
+   ],
+   "line": "And a little squirrel wanted to help too.",
+   "label": "a folk story"
+  },
+  {
+   "t": "ask",
+   "v": "SQ3-Sand",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "The squirrel can’t lift a single stone. How do you guess it helps build the bridge?",
+   "o": [
+    "It cheers the monkeys on from the shore",
+    "It carries tiny pebbles in its mouth",
+    "It fills the gaps with sand"
+   ],
+   "a": 2,
+   "why": "Sand, one tiny load at a time, to fill the gaps. Watch."
+  },
+  {
+   "t": "shot",
+   "v": "SQ3-Sand",
+   "vo": [
+    "V03"
+   ],
+   "line": "It rolled in the sand, ran onto the bridge, and shook the sand off between the stones. Again, and again.",
+   "label": "a folk story"
+  },
+  {
+   "t": "ask",
+   "v": "SQ3-Sand",
+   "eb": "did you know?",
+   "q": "The squirrel is one of the best-loved Ramayana stories. Where does it come from?",
+   "o": [
+    "Valmiki’s original Sanskrit epic",
+    "Later retellings and folk tradition",
+    "A modern children’s cartoon"
+   ],
+   "a": 1,
+   "why": "It isn’t in Valmiki’s Ramayana. It grew up in later tellings across India, and families have passed it on for centuries."
+  },
+  {
+   "t": "shot",
+   "v": "SQ4-They-Laugh",
+   "vo": [
+    "V04"
+   ],
+   "line": "The monkeys laughed.",
+   "label": "a folk story"
+  },
+  {
+   "t": "ask",
+   "v": "SQ5-Rama",
+   "blur": true,
+   "predict": true,
+   "eb": "what happens next?",
+   "q": "The monkeys laugh at the squirrel. What do you think Rama does?",
+   "o": [
+    "Laughs along with them",
+    "Picks it up, gently",
+    "Sends it home where it’s safe"
+   ],
+   "a": 1,
+   "why": "He picks it up, gently. Of everyone on that bridge, Rama notices the smallest helper."
+  },
+  {
+   "t": "shot",
+   "v": "SQ5-Rama",
+   "vo": [
+    "V05"
+   ],
+   "line": "Rama didn’t. He picked the squirrel up and gently stroked its back. And that, the story says, is why Indian squirrels have three stripes.",
+   "label": "a folk story"
+  },
+  {
+   "t": "ask",
+   "v": "SQ5-Rama",
+   "eb": "why?",
+   "q": "Why didn’t Rama laugh like the monkeys?",
+   "o": [
+    "He saw the love in the effort, not its size",
+    "He thought the sand would hold the bridge up",
+    "He felt sorry for the little thing"
+   ],
+   "a": 0,
+   "why": "Rama looked at the heart behind the help. In this story, a small offering made with love is never small to him."
+  },
+  {
+   "t": "shot",
+   "v": "SQ6-Today",
+   "vo": [
+    "V06"
+   ],
+   "line": "Small efforts count. Two minutes a day, again and again, adds up.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "SQ6-Today",
+   "eb": "you’re in it",
+   "q": "You only have two minutes today. What would the squirrel do?",
+   "o": [
+    "Skip it; two minutes won’t matter",
+    "Wait for a day with a free hour",
+    "Do the two minutes, come back tomorrow"
+   ],
+   "a": 2,
+   "why": "One load of sand fills nothing; load after load fills the gaps. That’s how the smallest helper built part of a bridge."
+  },
+  {
+   "t": "teach",
+   "v": "SQ5-Rama",
+   "say": [
+    "here’s what i love. the squirrel couldn’t lift a single stone. rama still saw it.",
+    "many hindus tell this story to say god looks at the love in what you offer, not its size. a tiny effort, given with your whole heart, counts."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "SQ5-Rama",
+   "eb": "the hard one",
+   "q": "The monkeys had a master builder. In Valmiki’s Ramayana, who designed the bridge?",
+   "o": [
+    "Hanuman, son of the wind",
+    "Sugriva, the monkey king",
+    "Nala, son of the gods’ architect"
+   ],
+   "a": 2,
+   "why": "Nala, son of Vishvakarma, builds it (Yuddha Kanda 22). The great epic credits the engineer; the folk tellings gave the smallest helper a place too."
+  }
+ ],
+ "today": {
+  "v": "SQ6-Today",
+  "say": "today, pick one tiny thing you can offer, two minutes a day: a page, a call, a dish washed for someone. many hindus offer small acts to god with a quiet “shri ram.” you can say it, or just do the thing with love. it’s your choice.",
+  "options": [
+   [
+    "I have one",
+    "then roll in the sand. two minutes, again and again."
+   ],
+   [
+    "Mine feels too small",
+    "so was the squirrel’s. rama picked it up anyway."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "Krishna’s morning.",
+  "line": "a king with a whole city waiting. watch how he begins his day."
+ }
+}

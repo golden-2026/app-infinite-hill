@@ -1,0 +1,194 @@
+{
+ "id": "cat-harp",
+ "home": "angelus",
+ "title": "One hundred and fifty doors",
+ "told": "from the first book of Samuel",
+ "clips": "art/sacred/cat-harp/clips/",
+ "voice": "art/sacred/cat-harp/voice/",
+ "guide": {
+  "name": "Nicole",
+  "photo": "art/guides/catholic.webp"
+ },
+ "card": {
+  "from": "from the first book of Samuel",
+  "mins": 5,
+  "keep": "lyre",
+  "keepName": "David’s harp",
+  "keepWhy": "There’s a psalm for whatever you feel.",
+  "keepSvg": "<path d=\"M30 20c-8 20-6 44 6 60h28c12-16 14-40 6-60\" fill=\"none\" stroke=\"#2a1b05\" stroke-width=\"8\" stroke-linecap=\"round\"/><path d=\"M26 28h48\" stroke=\"#2a1b05\" stroke-width=\"7\" stroke-linecap=\"round\"/><path d=\"M42 30v48M50 30v48M58 30v48\" stroke=\"#2a1b05\" stroke-width=\"3\"/><rect x=\"32\" y=\"76\" width=\"36\" height=\"10\" rx=\"3\" fill=\"#2a1b05\"/>",
+  "sources": [
+   "1 Samuel 16:11 (David keeps the sheep); 16:14-23 (an evil spirit troubled Saul; his servants propose a man skilful in playing the harp; “a son of Isai the Bethlehemite, skilful in playing … and the Lord is with him”; whenever the spirit was upon Saul, David took his harp and played, and Saul was refreshed). In the Douay-Rheims, 1 Kings 16.",
+   "2 Samuel 23:1 (David, “the excellent psalmist of Israel”). Hebrew Tehillim (praises); Greek psalmos (a song sung to a plucked string). Hebrew kinnor, a lyre.",
+   "Psalm 23:1 (22:1 in the Greek and Latin numbering): “The Lord is my shepherd; there is nothing I shall want” (Grail Psalter, used in Catholic liturgy).",
+   "Matthew 27:46 and Mark 15:34 (Jesus cries out Psalm 22:1, “My God, my God, why have you forsaken me?”); Psalm 22:23-32 turns to praise. Luke 23:46 (Psalm 31:6).",
+   "Catechism of the Catholic Church 2585-2589 (the Psalms, the prayer of the assembly); General Instruction of the Liturgy of the Hours; General Instruction of the Roman Missal 61 (the responsorial psalm)."
+  ],
+  "check": [
+   "The caption softens 1 Samuel 16:14’s “evil spirit from the Lord” to “a dark spirit hung over him”. Confirm the wording is acceptable.",
+   "The kinnor is a lyre; the caption says “a lyre, a small harp”. Confirm."
+  ]
+ },
+ "hook": {
+  "v": "CPS3-David-Plays",
+  "say": "before the story, can i ask you something? is there a song you put on when you’re having a hard day?",
+  "options": [
+   [
+    "Yes, always the same one",
+    "then you already know what this story is about."
+   ],
+   [
+    "Depends on the mood",
+    "perfect. that’s exactly how this book works."
+   ],
+   [
+    "I prefer quiet",
+    "that’s okay. some of these songs are almost silent."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "CPS1-Shepherd-Boy",
+   "vo": [
+    "V01"
+   ],
+   "line": "Near Bethlehem, a shepherd boy named David spent long days in the hills with his father’s sheep, and a lyre, a small harp, to pass the time."
+  },
+  {
+   "t": "shot",
+   "v": "CPS2-Troubled-King",
+   "vo": [
+    "V02"
+   ],
+   "line": "In the palace, King Saul was troubled. A dark spirit hung over him, and he could find no peace. His servants had an idea: music."
+  },
+  {
+   "t": "ask",
+   "v": "CPS2-Troubled-King",
+   "blur": true,
+   "predict": true,
+   "eb": "what happens next?",
+   "q": "The shepherd boy plays his harp for the troubled king. What do you guess happens?",
+   "o": [
+    "Nothing changes; the king stays dark",
+    "The darkness lifts, each time he plays",
+    "Saul is cured for good"
+   ],
+   "a": 1,
+   "why": "Each time. 1 Samuel says Saul was refreshed and the dark spirit left him, but it kept coming back. Years later, Saul hurled a spear at David while he played."
+  },
+  {
+   "t": "shot",
+   "v": "CPS3-David-Plays",
+   "vo": [
+    "V03"
+   ],
+   "line": "So David came to the palace. Whenever the darkness came over Saul, David took his harp and played, and Saul was refreshed."
+  },
+  {
+   "t": "shot",
+   "v": "CPS4-Songs-Of-David",
+   "vo": [
+    "V04"
+   ],
+   "line": "Tradition remembers David as Israel’s great singer. Many of the 150 Psalms carry his name: songs of joy, of anger, of fear, of thanks.",
+   "label": "a long tradition"
+  },
+  {
+   "t": "ask",
+   "v": "CPS4-Songs-Of-David",
+   "eb": "why?",
+   "q": "Some Psalms are angry or full of despair, not just happy. Why would a holy book keep those?",
+   "o": [
+    "Nobody dared to edit them out",
+    "Honest prayer includes anger and fear",
+    "They were sung only at funerals"
+   ],
+   "a": 1,
+   "why": "Laments are the most common kind of psalm. Many readers take that as permission: you can bring what you actually feel."
+  },
+  {
+   "t": "shot",
+   "v": "CPS5-Shepherd-Psalm",
+   "vo": [
+    "V05"
+   ],
+   "line": "One of the most loved starts with a shepherd, like David once was: “The Lord is my shepherd; there is nothing I shall want.”"
+  },
+  {
+   "t": "ask",
+   "v": "CPS5-Shepherd-Psalm",
+   "eb": "did you know?",
+   "q": "David later told Saul what shepherding had taught him. What had he done for his sheep?",
+   "o": [
+    "Fought off a lion and a bear",
+    "Carried them across the Jordan",
+    "Walked them to Egypt in a famine"
+   ],
+   "a": 0,
+   "why": "1 Samuel 17: when a lion or bear took a lamb, David went after it. So “the Lord is my shepherd” means a guardian who fights for you, not just a gentle herder."
+  },
+  {
+   "t": "shot",
+   "v": "CPS6-Today-Monks-Chant",
+   "vo": [
+    "V06"
+   ],
+   "line": "Today, the Church still prays the Psalms every day. A psalm is prayed at Mass, and monks, nuns and priests pray them through the hours of the day.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "CPS6-Today-Monks-Chant",
+   "eb": "did you know?",
+   "q": "Monks pray the Psalms through the hours of the day. In St Benedict’s old plan, how long to pray all 150?",
+   "o": [
+    "One week",
+    "One month",
+    "A whole year"
+   ],
+   "a": 0,
+   "why": "Benedict’s Rule, about 1,500 years old, has monks pray all 150 every week. He noted that the early monks managed it in a single day."
+  },
+  {
+   "t": "teach",
+   "v": "CPS3-David-Plays",
+   "say": [
+    "here’s what i love. the psalms were the prayer book of jesus’s own people. on the cross he prayed one: “my God, my God, why have you forsaken me?” even then, he prayed in old words.",
+    "the church prays them every day, at mass and in the liturgy of the hours. one hundred and fifty psalms, a door for nearly every feeling. you don’t have to tidy the feeling first."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "CPS6-Today-Monks-Chant",
+   "eb": "the hard one",
+   "q": "Psalm 22 opens “My God, my God, why have you forsaken me?” and ends in praise. What does that shape suggest?",
+   "o": [
+    "Feeling abandoned means faith is gone",
+    "Only a saint could pray like that",
+    "The cry of “why?” can itself be a prayer"
+   ],
+   "a": 2,
+   "why": "That psalm starts in the dark and ends in trust. Jesus prayed its first line on the cross."
+  }
+ ],
+ "today": {
+  "v": "CPS6-Today-Monks-Chant",
+  "say": "today, name what you actually feel, in one word: glad, tired, angry, lost. there’s a psalm for it. you can read psalm 23 slowly, or just breathe with your word. if you pray, you can hand God that word, just as it is.",
+  "options": [
+   [
+    "I’ll name my word",
+    "good. that’s your door."
+   ],
+   [
+    "I’ll read Psalm 23",
+    "lovely. read it slowly, like a shepherd walking."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "One more evening.",
+  "line": "three weeks done. next, a sister, a brother and a sudden storm."
+ }
+}

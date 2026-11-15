@@ -1,0 +1,190 @@
+{
+ "id": "bud-sick-monk",
+ "home": "lotus",
+ "title": "The monk nobody would touch",
+ "told": "from the monks’ rule book",
+ "clips": "art/sacred/bud-sick-monk/clips/",
+ "voice": "art/sacred/bud-sick-monk/voice/",
+ "guide": {
+  "name": "Orlando",
+  "photo": "art/guides/buddhism.webp"
+ },
+ "hook": {
+  "v": "SKM6-Kitchen-Today",
+  "say": "before the story, can i ask you something? when someone you know is having a really hard time, what do you usually do?",
+  "options": [
+   [
+    "Try to fix it",
+    "a good heart. today’s story adds something. listen."
+   ],
+   [
+    "I don’t know what to say",
+    "most people don’t. this story says you don’t have to. listen."
+   ],
+   [
+    "I keep my distance",
+    "that’s honest. listen to what happened here."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "SKM1-Alone-In-Hut",
+   "vo": [
+    "V01"
+   ],
+   "line": "One day the Buddha and Ananda were walking past the monks’ huts. In one, a monk lay sick on the floor, too weak to get up, all alone."
+  },
+  {
+   "t": "shot",
+   "v": "SKM2-No-Use",
+   "vo": [
+    "V02"
+   ],
+   "line": "“Why isn’t anyone caring for you?” the Buddha asked. “I’m no use to the other monks,” he said. “So nobody looks after me.”"
+  },
+  {
+   "t": "ask",
+   "v": "SKM2-No-Use",
+   "eb": "did you know?",
+   "q": "“I’m no use to the other monks, so nobody looks after me.” What does that tell you about how the monks were thinking?",
+   "o": [
+    "Touching the sick was against their rules",
+    "They thought he’d rather be left alone",
+    "They looked after whoever was useful"
+   ],
+   "a": 2,
+   "why": "Care had turned into a trade: help the ones who help you. The Buddha is about to undo exactly that."
+  },
+  {
+   "t": "ask",
+   "v": "SKM2-No-Use",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "What do you think the Buddha does next?",
+   "o": [
+    "Washes him, with Ananda’s help",
+    "Sits beside him and teaches him",
+    "Carries him to a village healer"
+   ],
+   "a": 0,
+   "why": "No sermon first. The monk had dysentery and lay in his own mess (Vinaya, Mahavagga 8.26). The Buddha poured, Ananda washed, and they lifted him onto a bed together."
+  },
+  {
+   "t": "shot",
+   "v": "SKM3-Washing",
+   "vo": [
+    "V03"
+   ],
+   "line": "The Buddha sent Ananda for water. The Buddha poured, Ananda washed, and together they lifted the monk gently onto a bed."
+  },
+  {
+   "t": "shot",
+   "v": "SKM4-The-Gathering",
+   "vo": [
+    "V04"
+   ],
+   "line": "Then he called all the monks together. “You have no mother or father here to care for you. If you don’t care for each other, who will?”"
+  },
+  {
+   "t": "shot",
+   "v": "SKM5-Care-For-Sick",
+   "vo": [
+    "V05"
+   ],
+   "line": "“Whoever would care for me,” he said, “let them care for the sick.”"
+  },
+  {
+   "t": "ask",
+   "v": "SKM5-Care-For-Sick",
+   "eb": "what came of it",
+   "q": "The monks made his words a rule. Who must look after a sick monk?",
+   "o": [
+    "A nurse hired from the nearest village",
+    "His teacher or students; if none, all of them",
+    "Whichever monk is on nursing duty that week"
+   ],
+   "a": 1,
+   "why": "The rule names his teacher, his students and his companions. If he has none, the whole community must. Walking past became an offence."
+  },
+  {
+   "t": "ask",
+   "v": "SKM4-The-Gathering",
+   "eb": "did you know?",
+   "q": "The Buddha also listed what makes a good nurse. Which one is on his list?",
+   "o": [
+    "Not minding cleaning up the mess",
+    "Having trained under a doctor",
+    "Being a senior, respected monk"
+   ],
+   "a": 0,
+   "why": "His list: knows the right medicine, nurses out of kindness not for gain, isn’t disgusted by vomit or waste, and can cheer the sick with good talk."
+  },
+  {
+   "t": "shot",
+   "v": "SKM6-Kitchen-Today",
+   "vo": [
+    "V06"
+   ],
+   "line": "Today, a friend’s quiet kitchen after bad news. Compassion doesn’t rush to fix it. It sits down beside them, and stays.",
+   "label": "today"
+  },
+  {
+   "t": "teach",
+   "v": "SKM6-Kitchen-Today",
+   "say": [
+    "karuna, compassion, is the second of four qualities buddhists call the divine abodes, places a heart can live. an old commentary says it’s what makes a good heart tremble at another’s pain. it doesn’t turn away. it quivers, and stays.",
+    "the same commentary warns of a near enemy: plain worldly grief, which can look like compassion but only sinks into sorrow. mahayana buddhists picture karuna as avalokiteshvara, the one who hears the cries of the world: guanyin in china, chenrezig in tibet."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "SKM5-Care-For-Sick",
+   "eb": "the hard one",
+   "q": "“Whoever would care for me, care for the sick.” What does that say about honoring the Buddha?",
+   "o": [
+    "Mostly with flowers and bows at a shrine",
+    "By caring for someone who needs it",
+    "Best by monks, who keep his rules"
+   ],
+   "a": 1,
+   "why": "Flowers and bows are good. But he pointed at the sick monk and said: here."
+  }
+ ],
+ "today": {
+  "v": "SKM6-Kitchen-Today",
+  "say": "today, think of one person who is sick, tired or struggling. do one small, practical thing for them: a meal, a ride, a message that asks for nothing back. don’t fix. just tend.",
+  "options": [
+   [
+    "I know who",
+    "then go gently. that’s karuna."
+   ],
+   [
+    "No one comes to mind",
+    "then keep your eyes open today. someone will."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "Three friends in the forest",
+  "line": "three monks live together so well that the buddha comes to ask them how."
+ },
+ "card": {
+  "from": "from the monks’ rule book",
+  "mins": 5,
+  "keep": "bowl",
+  "keepName": "The washing bowl",
+  "keepWhy": "Whoever would care for me, care for the sick.",
+  "sources": [
+   "Vinaya, Mahavagga VIII.26: the monk sick with dysentery lying alone; “I am of no use to the monks”; the Buddha pours water, Ananda washes; they lift him onto a bed; “you have no mother, no father…”; “whoever would tend me should tend the sick”",
+   "Visuddhimagga IX (Buddhaghosa): the four divine abodes; compassion makes the heart tremble; the near enemy of compassion (worldly grief)",
+   "Lotus Sutra, chapter 25 (Avalokiteshvara, who hears the cries of the world); Guanyin (Chinese), Chenrezig (Tibetan)"
+  ],
+  "check": [
+   "The text says dysentery and that he lay in his own filth; softened here to “sick” and “too weak to get up.”",
+   "The rule that followed (a duty to tend a sick fellow monk) is summarized, not quoted."
+  ]
+ }
+}

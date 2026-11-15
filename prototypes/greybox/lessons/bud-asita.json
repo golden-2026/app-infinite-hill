@@ -1,0 +1,191 @@
+{
+ "id": "bud-asita",
+ "home": "lotus",
+ "title": "The old sage weeps",
+ "told": "from the Sutta Nipata",
+ "clips": "art/sacred/bud-asita/clips/",
+ "voice": "art/sacred/bud-asita/voice/",
+ "guide": {
+  "name": "Orlando",
+  "photo": "art/guides/buddhism.webp"
+ },
+ "hook": {
+  "v": "AST6-Planting-Today",
+  "say": "before the story, can i ask you something? is there something good you’re part of that you might never see finished?",
+  "options": [
+   [
+    "Yes, my kids",
+    "then this old man is your friend. listen."
+   ],
+   [
+    "My work, or a cause",
+    "then you’ll understand his tears. listen."
+   ],
+   [
+    "I haven’t thought about it",
+    "then let this one plant the thought. listen."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "AST1-Gods-Rejoice",
+   "vo": [
+    "V01"
+   ],
+   "line": "High in the mountains lived an old sage named Asita. One day, the story says, he saw the gods celebrating. “A child is born,” they said, “who will wake up.”"
+  },
+  {
+   "t": "shot",
+   "v": "AST2-Holds-Child",
+   "vo": [
+    "V02"
+   ],
+   "line": "Asita hurried down to the palace. The Sakyans showed him the baby prince, and the old man took him in his arms."
+  },
+  {
+   "t": "shot",
+   "v": "AST3-Joy",
+   "vo": [
+    "V03"
+   ],
+   "line": "He looked closely, the way an expert looks at something rare, and his face lit up. “This one is supreme,” he said, “the highest among people.”"
+  },
+  {
+   "t": "ask",
+   "v": "AST3-Joy",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "Then, still holding the child, the old man starts to cry. Why do you think?",
+   "o": [
+    "He sees danger coming for the boy",
+    "He’s weeping for himself",
+    "He’s sad the boy will one day leave home"
+   ],
+   "a": 1,
+   "why": "Not for the child. For himself: he’s old, and this boy’s teaching is still decades away."
+  },
+  {
+   "t": "shot",
+   "v": "AST4-Weeps",
+   "vo": [
+    "V04"
+   ],
+   "line": "The family was frightened. “Is the child in danger?” “No,” said Asita. “I weep for myself. I am old. I’ll be gone before he teaches, and never hear it.”"
+  },
+  {
+   "t": "ask",
+   "v": "AST4-Weeps",
+   "eb": "why?",
+   "q": "Asita is a holy man, near the end of a long life. Why is missing this child’s teaching such a loss to him?",
+   "o": [
+    "He’d sought that truth his whole life",
+    "He’d lose the honor of having known the boy",
+    "He’d hoped to be the boy’s own teacher"
+   ],
+   "a": 0,
+   "why": "In the poem Asita is a lifelong seeker. To meet the one who will find the way, too late to walk it with him, is the sharpest kind of grief."
+  },
+  {
+   "t": "shot",
+   "v": "AST5-Nephew",
+   "vo": [
+    "V05"
+   ],
+   "line": "So he went to his young nephew, Nalaka. “When you hear that someone has woken up and is teaching,” he said, “go to him.” Years later, Nalaka did."
+  },
+  {
+   "t": "ask",
+   "v": "AST5-Nephew",
+   "eb": "did you know?",
+   "q": "Years later, Nalaka did find the Buddha. What did he ask him about?",
+   "o": [
+    "Whether his uncle had seen truly",
+    "Where his uncle had been reborn",
+    "How to live as a true sage"
+   ],
+   "a": 2,
+   "why": "The Buddha answered with the way of the silent sage, and a picture: small streams run noisy, the great river flows quiet."
+  },
+  {
+   "t": "ask",
+   "v": "AST5-Nephew",
+   "eb": "did you know?",
+   "q": "In later tellings, eight wise men read the baby’s marks. Seven said: a world-ruling king, or a Buddha. What did the youngest say?",
+   "o": [
+    "A world-ruling king, for certain",
+    "Only a Buddha, no doubt at all",
+    "He refused to make a guess"
+   ],
+   "a": 1,
+   "why": "His name was Kondañña. Years later he was the first to understand the Buddha’s very first teaching."
+  },
+  {
+   "t": "shot",
+   "v": "AST6-Planting-Today",
+   "vo": [
+    "V06"
+   ],
+   "line": "Today, an old woman plants a tree whose shade she won’t sit in. A teacher believes in a kid she won’t see grown.",
+   "label": "today"
+  },
+  {
+   "t": "teach",
+   "v": "AST6-Planting-Today",
+   "say": [
+    "this story is told in verse, in one of the oldest parts of the buddhist scriptures. it’s a strange, tender moment this early on: the one who sees most clearly who this child is knows he will never see it come true.",
+    "every tradition keeps asita. later tellings, in theravada and mahayana lives of the buddha alike, add that he read thirty-two marks of a great person on the baby’s body. the scene was carved in stone in ancient gandhara, in today’s pakistan and afghanistan."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "AST5-Nephew",
+   "eb": "the hard one",
+   "q": "Asita grieved, and still sent Nalaka. What does the story suggest about a good thing you won’t see finished?",
+   "o": [
+    "Plant it anyway, for someone else",
+    "Don’t start what you can’t finish",
+    "Grieve it, and let it go"
+   ],
+   "a": 0,
+   "why": "His joy and his grief were both real. He let the joy do something."
+  }
+ ],
+ "today": {
+  "v": "AST6-Planting-Today",
+  "say": "today, do one good thing you won’t see finished: a note to a young person, a seed in a pot, a small gift to a cause that will outlive you. plant it anyway.",
+  "options": [
+   [
+    "I’ll plant one today",
+    "asita would smile at that."
+   ],
+   [
+    "I’m already doing one",
+    "then thank you. it counts, even unseen."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "The mother who stepped in",
+  "line": "seven days after the birth, a newborn loses his mother, and her sister takes him in her arms."
+ },
+ "card": {
+  "from": "from the Sutta Nipata",
+  "mins": 5,
+  "keep": "seed",
+  "keepName": "Asita’s seed",
+  "keepWhy": "Plant it anyway.",
+  "keepSvg": "<ellipse cx=\"50\" cy=\"68\" rx=\"14\" ry=\"9\" fill=\"#2a1b05\"/><path d=\"M50 60V40\" stroke=\"#2a1b05\" stroke-width=\"4\" stroke-linecap=\"round\"/><path d=\"M50 44c-2-10-12-14-20-12 2 10 12 14 20 12zM50 40c2-10 12-14 20-12-2 10-12 14-20 12z\" fill=\"#2a1b05\"/>",
+  "sources": [
+   "Nalaka Sutta (Sutta Nipata 3.11), introductory verses: Asita sees the gods of the Thirty-three rejoicing; goes to Suddhodana’s house; holds the child, examines him, proclaims him supreme; weeps; reassures the Sakyans that no harm will come to the child; grieves that his own life will end before the teaching; instructs his nephew Nalaka",
+   "Lakkhana Sutta (Digha Nikaya 30): the thirty-two marks; Nidanakatha (Asita’s visit)",
+   "Gandhara reliefs of Asita holding the infant"
+  ],
+  "check": [
+   "The text has Asita seeing the gods during his daytime rest; “high in the mountains” is a gentle simplification.",
+   "His words are paraphrased from the verses."
+  ]
+ }
+}

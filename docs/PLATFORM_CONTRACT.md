@@ -1,3 +1,5 @@
+Background only (written 2026-09-30). Where this disagrees with docs/VISION-NOW.md, that page wins.
+
 # infinite hill platform contract (`window.IH`)
 <!--
 What: the API the one-file UI calls for saved progress, real days, honest labels and flags.

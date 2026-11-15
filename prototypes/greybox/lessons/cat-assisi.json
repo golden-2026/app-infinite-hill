@@ -1,0 +1,191 @@
+{
+ "id": "cat-assisi",
+ "home": "angelus",
+ "title": "The rich kid who gave his clothes back",
+ "told": "a story of Saint Francis",
+ "clips": "art/sacred/cat-assisi/clips/",
+ "voice": "art/sacred/cat-assisi/voice/",
+ "guide": {
+  "name": "Nicole",
+  "photo": "art/guides/catholic.webp"
+ },
+ "card": {
+  "from": "a story of Saint Francis",
+  "mins": 5,
+  "keep": "shirt",
+  "keepName": "The clothes he gave back",
+  "keepWhy": "Loosen your grip, and your hands are free.",
+  "sources": [
+   "Thomas of Celano, First Life of Saint Francis (Vita prima, 1228-29) 2-6 (son of the cloth merchant Pietro di Bernardone; a carefree youth; before the bishop of Assisi he strips off his clothes and gives them back to his father; the bishop covers him with his own mantle).",
+   "Bonaventure, Major Legend 1.2-3 and 2.4 (captured in the war with Perugia, a year in prison, illness; before the bishop: “Until now I have called you my father on earth; from now on I can say without reservation, Our Father who art in heaven”). Legend of the Three Companions 4-6.",
+   "Testament of Saint Francis 1-3 (the Lord led him among lepers; what had seemed bitter was turned into sweetness of soul and body). Celano, Second Life 9 (he dismounts and kisses the hand of a leper).",
+   "Canticle of the Creatures (1225): Brother Sun, Sister Moon and the stars, Brother Wind, Sister Water, Brother Fire, Sister Mother Earth, Sister Bodily Death. Order of Friars Minor, rule approved orally by Innocent III c. 1209.",
+   "Matthew 5:3; Catechism of the Catholic Church 2544-2547 (poverty of heart, detachment from riches). The “Peace Prayer” (“Lord, make me an instrument of your peace”) first appears anonymously in La Clochette, 1912; it is not by Francis."
+  ],
+  "check": [
+   "The leper: Celano, Second Life 9, has Francis dismount, give a coin and kiss the man’s hand; the caption says only that he kissed his hand. Confirm.",
+   "Order of events: Celano and Bonaventure place the leper before the renunciation; the caption says “in those same years”. Confirm."
+  ]
+ },
+ "hook": {
+  "v": "CFR1-Assisi-Party",
+  "say": "before the story, can i ask you something? is there one thing you own that you’d find really hard to give away?",
+  "options": [
+   [
+    "Yes, definitely",
+    "that’s honest. hold it in your mind while you watch."
+   ],
+   [
+    "Maybe my phone",
+    "ha, me too. watch what this young man handed over."
+   ],
+   [
+    "Not really",
+    "then you might already get this story."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "CFR1-Assisi-Party",
+   "vo": [
+    "V01"
+   ],
+   "line": "Italy, about eight hundred years ago. In Assisi, a town on a hill, a rich cloth merchant’s son named Francis threw the best parties in town."
+  },
+  {
+   "t": "shot",
+   "v": "CFR2-Prison-Change",
+   "vo": [
+    "V02"
+   ],
+   "line": "He dreamed of being a knight, rode off to war with the next town, and was captured. He came home from prison sick, and changed."
+  },
+  {
+   "t": "shot",
+   "v": "CFR3-Giving-Away",
+   "vo": [
+    "V03"
+   ],
+   "line": "He began giving things away, even cloth from his father’s shop. His furious father dragged him before the bishop, in front of the whole town."
+  },
+  {
+   "t": "ask",
+   "v": "CFR3-Giving-Away",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "Francis hands his father his clothes, every last piece, in front of the whole town. Then he speaks. What does he say?",
+   "o": [
+    "“I forgive you, Father, for everything.”",
+    "“From now on my Father is in heaven.”",
+    "“Sell them, and give it to the poor.”"
+   ],
+   "a": 1,
+   "why": "The early lives of Francis tell it this way: until now he had called Pietro his father, but from now on he would say “Our Father, who art in heaven.”"
+  },
+  {
+   "t": "shot",
+   "v": "CFR4-Before-Bishop",
+   "vo": [
+    "V04"
+   ],
+   "line": "Francis took off his clothes and handed them to his father. “Until now I called you my father. From now on I’ll say: our Father in heaven.”"
+  },
+  {
+   "t": "shot",
+   "v": "CFR5-Leper-Kiss",
+   "vo": [
+    "V05"
+   ],
+   "line": "The bishop wrapped him in his own cloak. In those same years, Francis met a man with leprosy, someone everyone avoided. He got down and kissed his hand."
+  },
+  {
+   "t": "ask",
+   "v": "CFR5-Leper-Kiss",
+   "eb": "in his words",
+   "q": "Francis later wrote about why he went toward people with leprosy. What did he say?",
+   "o": [
+    "He’d always felt sorry for them",
+    "God led him there, and bitter turned sweet",
+    "His bishop told him to, as penance"
+   ],
+   "a": 1,
+   "why": "In his Testament he admits the sight of lepers once disgusted him. The Lord led him among them, he wrote, and what was bitter turned to sweetness."
+  },
+  {
+   "t": "shot",
+   "v": "CFR6-Brothers-Road",
+   "vo": [
+    "V06"
+   ],
+   "line": "Friends joined him, living poor, preaching in the streets, caring for the sick. They became the Franciscans. Near the end, he wrote a song to God for “Brother Sun.”"
+  },
+  {
+   "t": "ask",
+   "v": "CFR6-Brothers-Road",
+   "eb": "the surprise",
+   "o": [
+    "Night",
+    "Sorrow",
+    "Death"
+   ],
+   "a": 2,
+   "why": "Sister Death. He added that verse near his own death in 1226, welcoming her like family. The Canticle is one of the first great poems in Italian.",
+   "q": "His Canticle praises God for Brother Sun and Sister Moon. Near the end of his life, he added one more “sister.” Who?"
+  },
+  {
+   "t": "ask",
+   "v": "CFR6-Brothers-Road",
+   "eb": "did you know?",
+   "q": "In 2013 a new pope became the first ever to take the name Francis. What made him pick it?",
+   "o": [
+    "His grandparents came from near Assisi",
+    "A friend whispered, “Don’t forget the poor”",
+    "He had studied in Assisi as a priest"
+   ],
+   "a": 1,
+   "why": "As the votes came in, Cardinal Hummes hugged him and said, “Don’t forget the poor.” The new pope said he thought at once of Francis of Assisi."
+  },
+  {
+   "t": "teach",
+   "v": "CFR4-Before-Bishop",
+   "say": [
+    "here’s what i love. francis didn’t just give up things. he handed back his whole old life, and said God was the father he’d lean on now.",
+    "jesus called it being poor in spirit. the church teaches every christian to hold riches loosely, so the heart stays free for God and for people. most aren’t asked to give away everything like francis, but everyone is asked to loosen their grip."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "CFR4-Before-Bishop",
+   "eb": "the hard one",
+   "q": "“From now on I’ll say: our Father in heaven.” Besides his clothes, what was Francis giving up?",
+   "o": [
+    "His place as his father’s heir",
+    "His dream of being a knight",
+    "His love for his father"
+   ],
+   "a": 0,
+   "why": "He walked away from his inheritance and the family business. The knight’s dream had ended earlier, in prison. Not his love: the safety of being the rich man’s son."
+  }
+ ],
+ "today": {
+  "v": "CFR6-Brothers-Road",
+  "say": "think of one thing you’re holding too tightly. a grudge counts. today, loosen your grip once: give one thing away, or let one thing go. if you pray, you can use the line people love from the prayer that carries his name: lord, make me an instrument of your peace.",
+  "options": [
+   [
+    "I’ll give one thing away",
+    "lovely. francis would grin."
+   ],
+   [
+    "I’ll let go of a grudge",
+    "that’s the hardest kind of giving. i’m proud of you."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "The word Pope Francis kept saying.",
+  "line": "next, the pope who took his name, and the one word he couldn’t stop saying."
+ }
+}

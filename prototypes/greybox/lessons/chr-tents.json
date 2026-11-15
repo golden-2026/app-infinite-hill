@@ -1,0 +1,188 @@
+{
+ "id": "chr-tents",
+ "home": "olive",
+ "title": "The church in their house",
+ "told": "from the book of Acts",
+ "clips": "art/sacred/chr-tents/clips/",
+ "voice": "art/sacred/chr-tents/voice/",
+ "guide": {
+  "name": "Denzel",
+  "photo": "art/guides/christianity.webp"
+ },
+ "card": {
+  "from": "from the book of Acts",
+  "mins": 5,
+  "keep": "house",
+  "keepName": "The open house",
+  "keepWhy": "Church was people before it was a building.",
+  "sources": [
+   "Acts 18:1-3 (Paul comes to Corinth and finds Aquila, a Jew born in Pontus, recently come from Italy with his wife Priscilla, because Claudius had commanded all Jews to leave Rome; being of the same trade, tentmakers, he stays and works with them)",
+   "Acts 18:18-19 (they sail with Paul to Ephesus)",
+   "Acts 18:24-26 (Apollos, an eloquent man of Alexandria, knowing only the baptism of John; Priscilla and Aquila took him aside and explained the way of God more accurately)",
+   "1 Corinthians 16:19 (“Aquila and Priscilla greet you much in the Lord, together with the assembly that is in their house”)",
+   "Romans 16:3-5 (Prisca and Aquila risked their necks for Paul; “greet the assembly that is in their house”)",
+   "1 Corinthians 12:12-27 (one body, many members; “you are the body of Christ”)",
+   "Matthew 18:20 (“where two or three are gathered together in my name, there I am in the middle of them”)",
+   "1 Corinthians 1:12 (“I follow Apollos”), linked to day 15; 1 Corinthians 3:5-9 (“I planted. Apollos watered”), behind the hard question"
+  ],
+  "check": []
+ },
+ "hook": {
+  "v": "QC4-House-Church",
+  "say": "before the story, can i ask you something? when you hear the word “church,” what do you picture first?",
+  "options": [
+   [
+    "A building",
+    "most people do. this story might change the picture."
+   ],
+   [
+    "People",
+    "then you’re already close. let’s meet two of them."
+   ],
+   [
+    "Nothing good, honestly",
+    "i hear you. stay with me. this one is about a kitchen table."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "QC1-Leaving-Rome",
+   "vo": [
+    "V01"
+   ],
+   "line": "Priscilla and Aquila were a Jewish couple, tentmakers. When the emperor forced Jews out of Rome, they packed up and moved to Corinth.",
+   "label": "Acts 18:2"
+  },
+  {
+   "t": "shot",
+   "v": "QC2-Tent-Workshop",
+   "vo": [
+    "V02"
+   ],
+   "line": "Then Paul arrived, a tentmaker too. He lived with them, and the three of them sewed tents side by side.",
+   "label": "Acts 18:3"
+  },
+  {
+   "t": "ask",
+   "v": "QC2-Tent-Workshop",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "Later, in Ephesus, they hear a gifted preacher, Apollos, who knows only part of Jesus’s story. What do you guess they do?",
+   "o": [
+    "Take him aside and explain it more fully",
+    "Correct him in front of everyone",
+    "Tell him to stop preaching"
+   ],
+   "a": 0,
+   "why": "Quietly, kindly, in private. And he became a great teacher."
+  },
+  {
+   "t": "shot",
+   "v": "QC3-Apollos",
+   "vo": [
+    "V03"
+   ],
+   "line": "In Ephesus they heard a gifted preacher, Apollos. Instead of correcting him in public, they took him aside and explained the way of God more fully.",
+   "label": "Acts 18:26"
+  },
+  {
+   "t": "shot",
+   "v": "QC4-House-Church",
+   "vo": [
+    "V04"
+   ],
+   "line": "People gathered in their home to pray and share bread. Paul wrote, “Greet the church that is in their house.”",
+   "label": "Romans 16:3-5"
+  },
+  {
+   "t": "ask",
+   "v": "QC4-House-Church",
+   "eb": "why?",
+   "q": "Paul calls a group of people in a living room “the church.” What does that tell you about the word?",
+   "o": [
+    "They couldn’t afford a real church yet",
+    "Church first meant the people, not the place",
+    "They were hiding from the authorities"
+   ],
+   "a": 1,
+   "why": "There were no church buildings yet. The church was the people, wherever they met. Purpose-built churches came much later."
+  },
+  {
+   "t": "ask",
+   "v": "QC5-One-Body",
+   "eb": "did you know?",
+   "q": "Paul later wrote to the church in Corinth, which had split into camps, that it was like one body. Which parts did he say the body can least do without?",
+   "o": [
+    "The head that leads the rest",
+    "The eyes that see the way",
+    "The parts that seem weakest"
+   ],
+   "a": 2,
+   "why": "1 Corinthians 12: the parts that seem weaker are indispensable, and the less honoured get more honour. He wrote it to a church split into camps."
+  },
+  {
+   "t": "shot",
+   "v": "QC5-One-Body",
+   "vo": [
+    "V05"
+   ],
+   "line": "Paul said they were like one body: eyes, hands, feet, every part needed. “You are the body of Christ.”",
+   "label": "1 Corinthians 12:27"
+  },
+  {
+   "t": "ask",
+   "v": "QC5-One-Body",
+   "eb": "did you know?",
+   "q": "In four of the six times the New Testament names this couple, she comes first: Priscilla and Aquila. Why do readers notice?",
+   "o": [
+    "She was the one who sewed the tents",
+    "Listing the wife first was unusual then",
+    "Priscilla was the family’s surname"
+   ],
+   "a": 1,
+   "why": "In that world husbands usually came first. Many readers take it as a sign Priscilla was the better known, maybe the lead teacher, of the two."
+  },
+  {
+   "t": "teach",
+   "v": "QC4-House-Church",
+   "say": [
+    "here’s what i love. the first churches had no steeples. they had kitchens, and people who opened their doors.",
+    "the new testament word for church, ekklesia, means an assembly, people called together. jesus said, “where two or three are gathered in my name, i am there among them.”"
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "QC3-Apollos",
+   "eb": "the hard one",
+   "q": "Remember the church in Corinth that split into camps, “I follow Paul,” “I follow Apollos”? Knowing this story, what’s surprising about that?",
+   "o": [
+    "Paul’s own friends had taught Apollos",
+    "Apollos and Paul never once met",
+    "Apollos started the fights himself"
+   ],
+   "a": 0,
+   "why": "Paul’s housemates helped teach Apollos. The camps fought over two men who were on the same team."
+  }
+ ],
+ "today": {
+  "v": "QC6-Today",
+  "say": "find two or three. message one or two people today and set up a meal, a walk, or a prayer together this week. that’s how the first churches started. if you already belong to a church, invite someone along.",
+  "options": [
+   [
+    "I know who to ask",
+    "good. send it today, while it’s fresh."
+   ],
+   [
+    "That feels big",
+    "start small. one text, one coffee. two is enough."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "The beginning of the good news.",
+  "line": "the shortest gospel starts in a hurry, in the desert, at a river."
+ }
+}

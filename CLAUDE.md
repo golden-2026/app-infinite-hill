@@ -6,11 +6,12 @@ Islam, Sikhism and my own path (Simply Spiritual). The owner, Shaan Sethi, is a 
 
 ## Start here
 
-1. `docs/HANDOFF.md`: where things stand, what's next, how to ship. It is the newest source of truth.
-2. `docs/brand/MASCOT_VOICE.md`: every user-facing line is the mascot's voice.
-3. `docs/PERSONAS.md`: the five personas and sixteen reasons.
-4. `docs/GUIDE_PLAYBOOK.md` and `tests/guide-cases/cases.json` before changing `api/guide.js` or `api/companion.js`.
-5. `docs/review-kit/`: the outside review kit and its findings.
+1. `docs/brand/BIG-IDEA.md`: the locked big idea and story ("step in to remember who you are. step out to live it."). Every material follows it.
+2. `docs/HANDOFF.md`: where things stand, what's next, how to ship. It is the newest source of truth.
+3. `docs/brand/MASCOT_VOICE.md`: every user-facing line is the mascot's voice.
+4. `docs/PERSONAS.md`: the five personas and sixteen reasons.
+5. `docs/GUIDE_PLAYBOOK.md` and `tests/guide-cases/cases.json` before changing `api/guide.js` or `api/companion.js`.
+6. `docs/review-kit/`: the outside review kit and its findings.
 
 Older docs (`README.md`, `CONTEXT.md`, `docs/PRODUCT_SPEC.md`, `docs/WAYFINDER.md`) describe the earlier "Golden"
 Vite prototype. Use them for background only; where they disagree with the handoff, the handoff wins.

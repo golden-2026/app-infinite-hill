@@ -1,3 +1,5 @@
+Background only (written 2026-10-03). Where this disagrees with docs/VISION-NOW.md or docs/LESSON_STANDARD.md, those win.
+
 # Side by side: our lesson next to a strong outside resource
 
 Four famous stories, one from each of four traditions. For each: what our lesson actually says (the spoken hook and

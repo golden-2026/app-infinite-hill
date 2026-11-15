@@ -1,0 +1,24 @@
+/* Infinite Hill brand layer (2026-11-06): the same look as the new site and the episodes.
+   Anton (display, uppercase) + Manrope (body), ink/night, lime is the one accent, film grain on photos, pill buttons.
+   Loaded after each page's own styles; each page adds a small block of its own on top. */
+:root {
+  --ih-ink: #0A0A0A; --ih-night: #070a14; --ih-cream: #F3EFE4; --ih-lime: #EEFF6A;
+  --ih-pink: #FF2D8A; --ih-saffron: #FF8A1F; --ih-green: #19E68C; --ih-blue: #2F7BFF; --ih-violet: #9B5CFF;
+  --ih-mute: rgba(243, 239, 228, .66);
+  --ih-line: rgba(243, 239, 228, .14);
+  --ih-card: #141414; --ih-card2: #1c1c1c;
+  --ih-display: "Anton", "Archivo Black", Impact, sans-serif;
+  --ih-body: "Manrope", system-ui, sans-serif;
+  --ih-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 1.4 -.25'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+body { font-family: var(--ih-body); }
+:focus-visible { outline: 3px solid var(--ih-lime); outline-offset: 3px; }
+.ih-disp { font-family: var(--ih-display) !important; font-weight: 400 !important; text-transform: uppercase; letter-spacing: .005em; line-height: .95; }
+.ih-disp em, .ih-disp .k { font-style: normal; color: var(--ih-lime); }
+/* film grain over a whole screen: fixed, quiet, never in the way of a tap */
+.ih-grain { position: fixed; inset: -50%; pointer-events: none; z-index: 9999; background: var(--ih-grain); opacity: .09; mix-blend-mode: overlay; animation: ihGrain .6s steps(4) infinite; }
+@keyframes ihGrain { 0% { transform: translate(0,0); } 25% { transform: translate(-4%,3%); } 50% { transform: translate(3%,-5%); } 75% { transform: translate(-2%,-3%); } 100% { transform: translate(0,0); } }
+@media (prefers-reduced-motion: reduce) { .ih-grain { animation: none; } }
+/* Finn, the approved art: cut-out, no circle crop */
+.ih-finn { display: block; object-fit: contain; background: none !important; border: 0 !important; border-radius: 0 !important; box-shadow: none !important; }
+.btn { text-transform: lowercase; }

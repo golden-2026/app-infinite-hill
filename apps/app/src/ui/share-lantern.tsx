@@ -58,7 +58,7 @@ export function ShareLantern({ line, door, day, n, to }: { line: string; door: s
             <TextInput
               testID="send-name" value={name} onChangeText={(v) => setName(v.slice(0, 24))} placeholder={t("session.send.placeholder")} placeholderTextColor={color.mute}
               autoComplete="off" autoCorrect={false} autoCapitalize="words" maxLength={24} accessibilityLabel={t("session.send.nameA11y")} returnKeyType="send" onSubmitEditing={go}
-              style={{ borderWidth: 1.5, borderColor: color.line, borderRadius: 999, paddingVertical: 13, paddingHorizontal: 16, fontFamily: font.text[400], fontSize: 16, backgroundColor: "#fff", color: color.ink }}
+              style={{ borderWidth: 1.5, borderColor: color.line, borderRadius: 999, paddingVertical: 13, paddingHorizontal: 16, fontFamily: font.text[400], fontSize: 16, backgroundColor: color.white, color: color.ink }}
             />
             <Btn kind="ink" onPress={go} testID="send-link">{t("session.send.go")}</Btn>
             <View style={{ alignItems: "center" }}><Link onPress={() => setOpen(false)} style={{ color: color.mute }}>{t("session.notNow")}</Link></View>

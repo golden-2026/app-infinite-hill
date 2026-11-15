@@ -41,7 +41,7 @@ export default function Family() {
               const on = doors.includes(w);
               return (
                 <Pressable key={w} accessibilityRole="checkbox" accessibilityState={{ checked: on }} aria-checked={on} onPress={() => toggle(w)}
-                  style={{ paddingVertical: 8, paddingHorizontal: 12, borderRadius: 999, borderWidth: 1.5, borderColor: on ? color.ink : color.line, backgroundColor: on ? color.gold : "#fff" }}>
+                  style={{ paddingVertical: 8, paddingHorizontal: 12, borderRadius: 999, borderWidth: 1.5, borderColor: on ? color.ink : color.line, backgroundColor: on ? color.gold : color.white }}>
                   <Text style={{ fontFamily: font.text[600], fontSize: 13, color: color.ink }}>{doorLabel(w)}{on ? " ✓" : ""}</Text>
                 </Pressable>
               );
@@ -52,7 +52,7 @@ export default function Family() {
         <View style={{ flexDirection: "row", gap: 8 }} accessibilityRole="tablist">
           {(["kids", "shared"] as const).map((k) => (
             <Pressable key={k} testID={`family-tab-${k}`} accessibilityRole="tab" accessibilityState={{ selected: tab === k }} aria-selected={tab === k} onPress={() => { setTab(k); setOpen(null); }}
-              style={{ flex: 1, alignItems: "center", paddingVertical: 11, borderRadius: 999, backgroundColor: tab === k ? color.ink : "#fff", borderWidth: 1.5, borderColor: color.ink }}>
+              style={{ flex: 1, alignItems: "center", paddingVertical: 11, borderRadius: 999, backgroundColor: tab === k ? color.ink : color.white, borderWidth: 1.5, borderColor: color.ink }}>
               <Text style={{ fontFamily: font.text[700], fontSize: 13, color: tab === k ? color.gold : color.ink }}>{t(k === "kids" ? "family.tab.kids" : "family.tab.shared")}</Text>
             </Pressable>
           ))}
@@ -72,7 +72,7 @@ export default function Family() {
 
 function Card({ testID, title, eyebrow, open, onPress, children }: { testID: string; title: string; eyebrow?: string; open: boolean; onPress: () => void; children: React.ReactNode }) {
   return (
-    <View testID={testID} style={{ borderWidth: open ? 1.5 : 1, borderColor: open ? color.ink : color.line, borderRadius: 16, backgroundColor: "#fff", overflow: "hidden" }}>
+    <View testID={testID} style={{ borderWidth: open ? 1.5 : 1, borderColor: open ? color.ink : color.line, borderRadius: 16, backgroundColor: color.white, overflow: "hidden" }}>
       <Pressable accessibilityRole="button" accessibilityState={{ expanded: open }} onPress={onPress} style={({ pressed }) => ({ paddingVertical: 12, paddingHorizontal: 16, flexDirection: "row", gap: 10, alignItems: "center", opacity: pressed ? 0.85 : 1 })}>
         <View style={{ flex: 1, gap: 2 }}>
           {eyebrow ? <Text style={[type.eyebrow(8), { color: color.mute }]}>{eyebrow}</Text> : null}

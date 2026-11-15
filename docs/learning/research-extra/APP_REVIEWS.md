@@ -1,3 +1,5 @@
+Background only (written 2026-10-06). Where this disagrees with docs/VISION-NOW.md or docs/LESSON_STANDARD.md, those win.
+
 # What app-store reviews of rival apps teach us
 
 Research date: 2026-10-06. Read-only. No sign-ins, no accounts, nothing submitted. No reviewer names recorded; all

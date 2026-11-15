@@ -1,0 +1,206 @@
+{
+ "id": "ganesha-head",
+ "home": "marigold",
+ "title": "How Ganesha got his head",
+ "told": "from the Shiva Purana",
+ "clips": "art/sacred/ganesha-head/clips/",
+ "voice": "art/sacred/ganesha-head/voice/",
+ "guide": {
+  "name": "Priyanka",
+  "photo": "art/guides/hinduism.webp"
+ },
+ "card": {
+  "from": "from the Shiva Purana",
+  "mins": 5,
+  "keep": "bell",
+  "keepName": "The first bell",
+  "keepWhy": "Honored first, before every beginning.",
+  "sources": [
+   "Shiva Purana, Rudra Samhita, Kumara Khanda (Parvati fashions a boy and sets him to guard her door; Shiva is refused entry and the boy is killed in the fight; Parvati’s grief and anger; Shiva’s attendants, the ganas, bring an elephant’s head; Shiva restores the boy and makes him chief of the ganas, to be worshipped first)",
+   "The film’s note: versions appear in the Shiva Purana and other Puranas; details differ by region",
+   "Gajanana, a name of Ganesha: gaja (elephant) + anana (face)"
+  ],
+  "check": [
+   "The film says Parvati made the boy “from turmeric paste.” The Shiva Purana says from the dirt or unguent of her body; turmeric paste is the popular telling. Confirm this wording is fine.",
+   "The film softens the beheading to “a terrible misunderstanding at the door”; the lesson keeps it that gentle. Confirm acceptable."
+  ]
+ },
+ "hook": {
+  "v": "GH1-Turmeric",
+  "say": "before the story, can i ask you something? has something broken that you can’t put back the way it was? a plan, a friendship, your idea of how life would go.",
+  "options": [
+   [
+    "Yes, recently",
+    "then this story is for you. listen."
+   ],
+   [
+    "A while ago",
+    "then you may already know what it became. listen."
+   ],
+   [
+    "Not right now",
+    "good. keep this one for when it does."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "GH1-Turmeric",
+   "vo": [
+    "V01"
+   ],
+   "line": "Parvati made a boy from turmeric paste, and breathed life into him."
+  },
+  {
+   "t": "ask",
+   "v": "GH2-At-The-Door",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "Parvati gives the boy his very first job. What do you think it is?",
+   "o": [
+    "Guard her door and let no one in",
+    "Go and find his father",
+    "Bring water from the river"
+   ],
+   "a": 0,
+   "why": "Guard the door. And he takes the job very seriously. Watch."
+  },
+  {
+   "t": "shot",
+   "v": "GH2-At-The-Door",
+   "vo": [
+    "V02"
+   ],
+   "line": "Guard my door, she said, and let no one in."
+  },
+  {
+   "t": "shot",
+   "v": "GH3-Shiva-Returns",
+   "vo": [
+    "V03"
+   ],
+   "line": "Then Shiva came home. Neither knew who the other was, and there was a terrible misunderstanding at the door."
+  },
+  {
+   "t": "ask",
+   "v": "GH3-Shiva-Returns",
+   "eb": "did you know?",
+   "q": "In the Shiva Purana, Parvati had a reason for making the boy. What did she want?",
+   "o": [
+    "A gift-son to surprise Shiva",
+    "A playmate while Shiva was away",
+    "A guard who answered to her alone"
+   ],
+   "a": 2,
+   "why": "All the household guards answered to Shiva, who walked in even while she bathed. So she made one who was hers. That’s why the boy wouldn’t budge."
+  },
+  {
+   "t": "shot",
+   "v": "GH4-Grief",
+   "vo": [
+    "V04"
+   ],
+   "line": "Parvati’s grief shook the whole universe. Shiva, heartbroken, set out to make it right."
+  },
+  {
+   "t": "ask",
+   "v": "GH5-New-Life",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "Shiva sends his followers out to find a new head. What instruction do many tellings say he gives?",
+   "o": [
+    "Bring the bravest beast in the forest",
+    "Bring the wisest creature alive",
+    "Bring the first creature you meet"
+   ],
+   "a": 2,
+   "why": "The first one they met was an elephant. Nobody chose that face; it found him."
+  },
+  {
+   "t": "shot",
+   "v": "GH5-New-Life",
+   "vo": [
+    "V05"
+   ],
+   "line": "His followers came back with an elephant’s head. Shiva gave the boy new life, and a promise: from now on, you will be honored first."
+  },
+  {
+   "t": "fill",
+   "v": "GH5-New-Life",
+   "eb": "finish the line",
+   "pre": "Ganesha is honored first, as Vighnaharta: the remover of",
+   "post": ".",
+   "o": [
+    "sorrows",
+    "obstacles",
+    "doubts"
+   ],
+   "a": 1,
+   "why": "Obstacles, vighna. Many tellings add that he can also place them in the path of the proud, so you greet him before you begin."
+  },
+  {
+   "t": "shot",
+   "v": "GH6-Today",
+   "vo": [
+    "V06"
+   ],
+   "line": "Something broken can become something new, and even better.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "GH6-Today",
+   "eb": "did you know?",
+   "q": "Many Hindus read meaning into the elephant head. What do the big ears often stand for?",
+   "o": [
+    "Hearing danger far away",
+    "Listening more than talking",
+    "Remembering everything heard"
+   ],
+   "a": 1,
+   "why": "Big ears to listen more, a small mouth to speak less: a common Hindu reading. The broken day gave him a face for wisdom."
+  },
+  {
+   "t": "teach",
+   "v": "GH5-New-Life",
+   "say": [
+    "here’s what i love. the elephant head was never the plan. and it became one of the most loved faces in hinduism.",
+    "in this story, a broken thing doesn’t go back to how it was. it becomes something new, and honored first. that’s why so many hindus remember ganesha before any new beginning."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "GH5-New-Life",
+   "eb": "the hard one",
+   "q": "Shiva caused the harm. What makes the way he answered it worth honoring?",
+   "o": [
+    "He proved who was in charge",
+    "He set it right, and then some",
+    "He said it was no one’s fault"
+   ],
+   "a": 1,
+   "why": "He didn’t stop at sorry: new life, a new face, first place, and leader of his own followers, which is what Ganapati means."
+  }
+ ],
+ "today": {
+  "v": "GH6-Today",
+  "say": "think of one thing in your life that broke. don’t ask how to glue it back. ask: what could this become? then make one small new start, and pause first, the way many hindus pause for ganesha. you can say “om gam ganapataye namah,” or just take a breath. it’s your choice.",
+  "options": [
+   [
+    "I have one in mind",
+    "then hold it gently. broken can become beloved."
+   ],
+   [
+    "Not ready yet",
+    "that’s okay. the question will keep."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "Rama’s face didn’t change.",
+  "line": "it was meant to be the best day of his life. by morning, the plan was gone."
+ }
+}

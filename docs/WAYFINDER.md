@@ -1,3 +1,5 @@
+Background only (written October 2026). Where this disagrees with docs/VISION-NOW.md, that page wins.
+
 # Golden one-shot build map
 
 ## Destination

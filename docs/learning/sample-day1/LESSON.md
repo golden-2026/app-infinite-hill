@@ -1,3 +1,5 @@
+Background only (written 2026-10-04). Where this disagrees with docs/VISION-NOW.md or docs/LESSON_STANDARD.md, those win.
+
 # Sample lesson: Hinduism day 1, namaste (new format)
 
 Built only from the existing day-1 script (docs/curriculum/hinduism/scripts/y1/day-0001.json) and its sources

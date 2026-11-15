@@ -38,6 +38,8 @@ import { holidayOpens } from "@/content/couple";
 import { couplePartnerDoor } from "@/lib/couple";
 import { BetStep, BreathStep, ForkStep, MatchStep, MythStep, OptionStep, OrderStep, OriginalStep, SitStep, SpeakStep, TapHear, TrapdoorStep } from "@/session/steps";
 import { BottomBar, Btn, Face, Guy, NavBar, Sun, color, confirmSheet, decorative, font, type } from "@/ui";
+import { doorAccent } from "@ih/brand";
+import { Shout, Tag, dropNo, shoutWords } from "@/ui/loud";
 import { Image } from "expo-image";
 import { successHaptic, tapHaptic } from "@/lib/haptics";
 import { SlotHost, SlotProvider } from "@/ui/slot";
@@ -404,8 +406,13 @@ function Session({ door, day, kidId, mode, deep, extra = false, course = null, v
   if (!step) return null;
   const k = `${phase}-${qi}-${step.id}`;
 
+  // loud brand: every lesson plays as an episode in its door's bold colour (a wash at the top, the tag, the hot word)
+  const hue = doorAccent(door);
+  // the tag never shows a huge day number: the week inside the camp is the drop, the day inside the week the ep
+  const at = pos(day), inCamp = Math.max(1, at.lesson || 1);
+  const epTag = t("session.episode", { d: dropNo(Math.ceil(inCamp / 7)), n: ((inCamp - 1) % 7) + 1 });
   const frame = (children: ReactNode, { foot, top }: { foot?: ReactNode; top?: boolean } = {}) => (
-    <LinearGradient colors={color.dusk} locations={[0, 0.6, 1]} style={{ flex: 1 }}>
+    <LinearGradient colors={[`${hue}40`, "#0A0A0A", "#0A0A0A"]} locations={[0, 0.42, 1]} style={{ flex: 1 }}>
       <SafeAreaView style={{ flex: 1 }} edges={["top"]}>
         <SlotProvider>
         <FxProvider value={fx}>
@@ -430,13 +437,14 @@ function Session({ door, day, kidId, mode, deep, extra = false, course = null, v
           <Text style={[type.eyebrow(), { color: "#ffffffbb", flex: 1 }]} numberOfLines={2}>{kidMode ? t("kids.reads", { door: doorLabel(door) }) : t("session.reads", { voice: voiceLabel(door, ic.short).short, door: doorLabel(door) })}{segLabel ? ` · ${segLabel}` : ""}</Text>
           <ReactingGuy h={58} rest={step.type === "breath" || step.type === "sit" ? "meditate" : step.type === "tally" ? "celebrate" : undefined} />
         </View>
+        <Tag bg={hue} style={{ marginLeft: 20, marginTop: 10 }}>{epTag}</Tag>
         {kidMode ? null : <EsLessonNote />}
         <ScrollView key={k} contentContainerStyle={[st.body, { justifyContent: top ? "flex-start" : "center" }]}>
           <Enter style={{ width: "100%", alignItems: "center" }}>
             {(() => {
               // a pill over the step: "new word" / "challenge" (the new lesson recipe), "one you missed" in the fix round
               const tag: Key | null = phase === "fix" && step.type !== "tally" ? "session.tag.again" : step.tag ? (`session.tag.${step.tag}` as Key) : step.newToday ? "session.newToday" : null;
-              return tag ? <View style={[st.newPill, { alignSelf: "flex-start" }, phase === "fix" ? { backgroundColor: "#FF9B85" } : null]} accessibilityLabel={t(tag)}><Text style={[type.eyebrow(), { color: color.ink }]}>{t(tag)}</Text></View> : null;
+              return tag ? <View style={[st.newPill, { alignSelf: "flex-start" }, phase === "fix" ? { backgroundColor: "#FF2D8A" } : null]} accessibilityLabel={t(tag)}><Text style={[type.eyebrow(), { color: "#0A0A0A" }]}>{t(tag)}</Text></View> : null;
             })()}
             {children}
           </Enter>
@@ -452,7 +460,8 @@ function Session({ door, day, kidId, mode, deep, extra = false, course = null, v
 
   switch (step.type) {
     case "bell":
-      return frame(<View style={{ alignItems: "center", gap: 18 }}><Guy pose="wave" h={170} /><Text style={[type.h1(40), { color: "#fff" }]}>{step.text}</Text>{mode === "adult" && day > 1 ? <LevelPill level={shownLevel} /> : null}</View>);
+      // the opener: a kinetic headline whose words slam in, its last word in the door's colour
+      return frame(<View style={{ alignItems: "center", gap: 18 }}><Guy pose="wave" h={150} /><Shout {...shoutWords(String(step.text || ""), 9)} size={64} colorHot={hue} center />{mode === "adult" && day > 1 ? <LevelPill level={shownLevel} /> : null}</View>);
     case "fixintro":
       return frame(<View style={{ alignItems: "center", gap: 16 }}><Guy pose="think" h={160} /><Text style={[type.h1(30), { color: "#fff", textAlign: "center" }]}>{t("session.fix.title")}</Text><Text style={[type.body(), { color: "#ffffffaa" }]}>{t("session.fix.body")}</Text></View>, { foot: <Btn kind="gold" onPress={() => next()}>{t("session.fix.go")}</Btn> });
     case "beat": {
@@ -466,7 +475,7 @@ function Session({ door, day, kidId, mode, deep, extra = false, course = null, v
           {step.head ? <Text style={[type.eyebrow(11), { color: color.gold, letterSpacing: 1.76, textAlign: "center" }]}>{step.head}</Text> : null}
           {/* the cast's scene for this lesson (content/cast.ts), over its opening */}
           {step.scene ? <Image source={step.scene} style={{ width: "100%", aspectRatio: 4 / 3, maxHeight: 290, borderRadius: 18 }} contentFit="cover" contentPosition={{ left: "50%", top: "35%" }} transition={200} {...decorative} /> : null}
-          <View style={{ backgroundColor: "#fff", borderRadius: 22, paddingVertical: 16, paddingHorizontal: 18 }}>
+          <View style={{ backgroundColor: color.white, borderRadius: 22, paddingVertical: 16, paddingHorizontal: 18 }}>
             {step.gloss ? <GlossText door={door} text={step.text} gloss={step.gloss} style={{ fontFamily: font.display[700], fontSize: fs, lineHeight: fs * 1.3, color: color.ink, letterSpacing: -0.2 }} /> : <SayText door={door} text={step.text} style={{ fontFamily: font.display[700], fontSize: fs, lineHeight: fs * 1.3, color: color.ink, letterSpacing: -0.2 }} />}
           </View>
           <View style={{ width: 0, height: 0, marginLeft: 38, marginTop: -12, borderLeftWidth: 12, borderRightWidth: 12, borderTopWidth: 14, borderLeftColor: "transparent", borderRightColor: "transparent", borderTopColor: "#fff" }} />

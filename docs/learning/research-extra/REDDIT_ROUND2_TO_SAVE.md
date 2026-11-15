@@ -1,3 +1,5 @@
+Background only (written 2026-10-06). Where this disagrees with docs/VISION-NOW.md or docs/LESSON_STANDARD.md, those win.
+
 # Round 2: recent hot posts to save (about 15 minutes)
 
 Same steps as before: open, Ctrl+S, "Webpage, HTML only", save into `C:\Users\shset\code\golden-app\reddit-saved\round2` (make the folder). Then tell Claude "round 2 saved".

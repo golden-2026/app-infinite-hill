@@ -1,0 +1,215 @@
+{
+ "id": "wild-room",
+ "home": "wild",
+ "title": "The hare he didn’t want",
+ "told": "from Pascal’s Pensées",
+ "clips": "art/sacred/wild-room/clips/",
+ "voice": "art/sacred/wild-room/voice/",
+ "guide": {
+  "name": "Justin",
+  "photo": "art/guides/spiritual.webp"
+ },
+ "hook": {
+  "v": "PQ6-Today",
+  "say": "before the story, can i ask you something? be honest: in a line, or a waiting room, how long before your hand reaches for your phone?",
+  "options": [
+   [
+    "A few seconds",
+    "same here. this man saw it coming, centuries ago."
+   ],
+   [
+    "A minute or two",
+    "not bad. this story is about that minute."
+   ],
+   [
+    "I can wait",
+    "then you’re rare. let’s see what you’re doing right."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "PQ1-Calculator",
+   "vo": [
+    "V01"
+   ],
+   "line": "In France in the 1640s, a young man named Blaise Pascal built one of the first calculating machines, to help his father with tax sums."
+  },
+  {
+   "t": "shot",
+   "v": "PQ2-Dice-Table",
+   "vo": [
+    "V02"
+   ],
+   "line": "Later, a gambler’s question about dice led him to help work out the mathematics of chance. And he watched his friends."
+  },
+  {
+   "t": "shot",
+   "v": "PQ3-The-Hunt",
+   "vo": [
+    "V03"
+   ],
+   "line": "They gambled, they hunted, they rushed about at court. Take the hunter, said Pascal. He gallops all day after a hare."
+  },
+  {
+   "t": "ask",
+   "v": "PQ3-The-Hunt",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "Pascal says: hand the hunter that hare as a gift, and he won’t want it. So what is he really after?",
+   "o": [
+    "The noise and rush that fill his head",
+    "The skill of the catch, to feel proud",
+    "The company of his friends on the ride"
+   ],
+   "a": 0,
+   "why": "The bustle, Pascal says. It keeps him from thinking about himself. It was never about the hare."
+  },
+  {
+   "t": "shot",
+   "v": "PQ4-Offered-Hare",
+   "vo": [
+    "V04"
+   ],
+   "line": "But hand him the same hare as a gift, and he wouldn’t take it. It was never about the hare."
+  },
+  {
+   "t": "ask",
+   "v": "PQ4-Offered-Hare",
+   "eb": "did you know?",
+   "q": "Pascal had a name for all this rushing about. What was it?",
+   "o": [
+    "Ambition",
+    "Diversion",
+    "Vanity"
+   ],
+   "a": 1,
+   "why": "Divertissement: diversion, literally a turning away. Hunting, gambling and chatter all turn our eyes away from ourselves."
+  },
+  {
+   "t": "ask",
+   "v": "PQ5-Quiet-Room",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "Pascal wrote that all human unhappiness comes from one single fact. What do you think it is?",
+   "o": [
+    "Never having enough money",
+    "Not knowing how to sit still",
+    "Wanting what others have"
+   ],
+   "a": 1,
+   "why": "One fact, he said: we can’t stay quietly in our own room."
+  },
+  {
+   "t": "shot",
+   "v": "PQ5-Quiet-Room",
+   "vo": [
+    "V05"
+   ],
+   "line": "In an old translation of his notes: all the unhappiness of men arises from one single fact, that they cannot stay quietly in their own chamber."
+  },
+  {
+   "t": "ask",
+   "v": "PQ5-Quiet-Room",
+   "eb": "why?",
+   "q": "Pascal’s hunters and gamblers had money, friends and fun. Why does he still call them unhappy?",
+   "o": [
+    "They never sat with themselves",
+    "They lost too much at cards",
+    "They envied the king’s favorites"
+   ],
+   "a": 0,
+   "why": "The rushing fills every gap, so they never have to sit with themselves. Pascal saw it in everyone, even kings."
+  },
+  {
+   "t": "shot",
+   "v": "PQ5-Quiet-Room",
+   "vo": [
+    "V06"
+   ],
+   "line": "Pascal died at thirty-nine. His friends gathered his scraps of notes into a book, the Pensées, which means “thoughts.”"
+  },
+  {
+   "t": "shot",
+   "v": "PQ6-Today",
+   "vo": [
+    "V07"
+   ],
+   "line": "Today the hare fits in a pocket. A waiting room, a red light, a quiet minute, and the hand goes. The chase, again.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "PQ6-Today",
+   "eb": "did you know?",
+   "q": "Pascal says even a king needs diversion. Why, in his notes, is a king surrounded by people all day?",
+   "o": [
+    "To keep him safe from his enemies",
+    "To show the world his power",
+    "So he’s never alone with his thoughts"
+   ],
+   "a": 2,
+   "why": "The courtiers’ real job, he says, is to keep the king from thinking about himself. “A king without diversion is a man full of miseries.”"
+  },
+  {
+   "t": "teach",
+   "v": "PQ5-Quiet-Room",
+   "say": [
+    "here’s what i love. pascal didn’t think the restlessness meant something was wrong with you. he saw it in everyone, kings included.",
+    "and he didn’t think the quiet room was empty. as a christian, he believed human restlessness is a hunger only god can fill. you don’t have to share his answer to take his advice: sit anyway."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "PQ6-Today",
+   "eb": "the hard one",
+   "q": "Your friend says, “I’m not restless, I’m just bored, so I scroll.” What would Pascal say the scrolling is?",
+   "o": [
+    "A well-earned rest",
+    "A chase, away from the quiet room",
+    "A sign she needs a new hobby"
+   ],
+   "a": 1,
+   "why": "A chase. The hand reaches, not for the thing, but for a way out of the quiet."
+  }
+ ],
+ "today": {
+  "v": "PQ6-Today",
+  "say": "today, once, when your hand reaches for something to fill a quiet minute, sit anyway. hands in your lap, one minute, nothing to chase. notice the pull, and stay.",
+  "options": [
+   [
+    "I’ll try it",
+    "good. a restless sit still counts as a sit."
+   ],
+   [
+    "A minute sounds long",
+    "it can be. pascal would say that’s the point. try thirty seconds."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "The spice called Shabbat.",
+  "line": "a roman emperor smells a meal he can’t stop thinking about, and asks for the recipe."
+ },
+ "card": {
+  "from": "from Pascal’s Pensées",
+  "mins": 5,
+  "keep": "chair",
+  "keepName": "The quiet room",
+  "keepWhy": "Sit anyway. A restless sit still counts.",
+  "keepSvg": "<path d=\"M30 14h10v38h34v44h-10V62H40v34H30z\" fill=\"#2a1b05\"/>",
+  "sources": [
+   "Pascal, Pensées 139 (Brunschvicg numbering), trans. W. F. Trotter (1910): “I have discovered that all the unhappiness of men arises from one single fact, that they cannot stay quietly in their own chamber”; the hare that hunters would not take if it were offered them; gambling, the court, the king without diversion.",
+   "Pensées 425 (Brunschvicg): the infinite abyss can be filled only by an infinite and immutable object, that is, by God himself.",
+   "Pascal’s calculating machine (the Pascaline, from 1642), made to help his father Étienne with tax calculations in Rouen; 1654 letters with Fermat on the problem of points, prompted by a gambler’s question (the Chevalier de Méré); died 1662, aged 39; the Pensées published from his notes in 1670.",
+   "Day 10 script: docs/curriculum/spiritual/scripts/y1/day-0010.json (sit; sit anyway)."
+  ],
+  "check": [
+   "“A gambler’s question about dice led him to help work out the mathematics of chance”: simplifies the Chevalier de Méré’s question and the 1654 letters between Pascal and Fermat. Confirm.",
+   "Teach: “as a christian, he believed human restlessness is a hunger only god can fill” summarizes Pensées 425. Confirm the wording."
+  ]
+ }
+}

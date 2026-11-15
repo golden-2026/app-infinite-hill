@@ -1,3 +1,5 @@
+Background only (written 2026-10-06). Where this disagrees with docs/VISION-NOW.md or docs/LESSON_STANDARD.md, those win.
+
 # What people say under the threads and videos
 
 Gathered 2026-10-06 in the owner's own Chrome, read only. Nothing was liked, voted, followed, subscribed, saved,

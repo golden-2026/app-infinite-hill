@@ -1,0 +1,190 @@
+{
+ "id": "cat-stone",
+ "home": "angelus",
+ "title": "The women went first",
+ "told": "from the Gospels",
+ "clips": "art/sacred/cat-stone/clips/",
+ "voice": "art/sacred/cat-stone/voice/",
+ "guide": {
+  "name": "Nicole",
+  "photo": "art/guides/catholic.webp"
+ },
+ "card": {
+  "from": "from the Gospels",
+  "mins": 5,
+  "keep": "stone",
+  "keepName": "The stone already moved",
+  "keepWhy": "The stone you dread may already be moved.",
+  "sources": [
+   "Mark 16:1-4 (when the sabbath was past, Mary Magdalen, Mary the mother of James, and Salome bought sweet spices to anoint him; very early on the first day of the week they come to the sepulchre; “Who shall roll us back the stone from the door of the sepulchre?”; looking, they saw the stone rolled back, for it was very great). Douay-Rheims.",
+   "Luke 24:1-11 (two men in shining apparel; “Why seek you the living with the dead? He is not here, but is risen”; the women, Mary Magdalen, Joanna and Mary of James, told these things to the apostles; “these words seemed to them as idle tales; and they did not believe them”). Also Matthew 28:1-8; John 20:1-18.",
+   "Catechism of the Catholic Church 638-641 (the resurrection; Mary Magdalene and the holy women the first messengers of the Resurrection, even to the apostles). Thomas Aquinas, Commentary on John 20 (apostolorum apostola); Congregation for Divine Worship, decree of 3 June 2016 raising her memorial to a feast.",
+   "General Norms for the Liturgical Year and the Calendar 22 (the fifty days from Easter Sunday to Pentecost celebrated as one feast). Spanish Pascua, Italian Pasqua, from Greek/Latin Pascha, Hebrew Pesach."
+  ],
+  "check": [
+   "The telling blends Mark (the worry about the stone) and Luke (the two men, “why look for the living among the dead”, the apostles’ disbelief); the source line says “from the Gospels”. Confirm."
+  ]
+ },
+ "hook": {
+  "v": "CST2-Who-Will-Roll",
+  "say": "before the story, can i ask you something? is there something ahead of you this week that feels too heavy to move?",
+  "options": [
+   [
+    "Yes, a big one",
+    "i’m sorry. hold it while you watch. these women had one too."
+   ],
+   [
+    "A few small ones",
+    "small stones are still heavy. watch this."
+   ],
+   [
+    "Not right now",
+    "then keep this story for the day you do."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "CST1-Women-Spices",
+   "vo": [
+    "V01"
+   ],
+   "line": "Very early on Sunday morning, after Jesus was buried, a few women walked to his tomb with spices, to care for his body. The apostles were not with them."
+  },
+  {
+   "t": "shot",
+   "v": "CST2-Who-Will-Roll",
+   "vo": [
+    "V02"
+   ],
+   "line": "On the way, they worried. A huge stone sealed the tomb. “Who will roll the stone away for us?” They went anyway."
+  },
+  {
+   "t": "ask",
+   "v": "CST2-Who-Will-Roll",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "They reach the tomb with no plan for the stone. What do they find?",
+   "o": [
+    "Roman guards who turn them away",
+    "The stone too heavy, so they wait",
+    "The stone already rolled back"
+   ],
+   "a": 2,
+   "why": "Mark adds that the stone was “very great.” Matthew says an angel rolled it away; Mark and Luke just say it was done before they arrived."
+  },
+  {
+   "t": "shot",
+   "v": "CST3-Stone-Moved",
+   "vo": [
+    "V03"
+   ],
+   "line": "When they arrived, the stone was already rolled back. The tomb was empty."
+  },
+  {
+   "t": "shot",
+   "v": "CST4-Two-Men-Shining",
+   "vo": [
+    "V04"
+   ],
+   "line": "Two men in dazzling clothes stood beside them. “Why do you look for the living among the dead? He is not here. He has risen.”"
+  },
+  {
+   "t": "ask",
+   "v": "CST4-Two-Men-Shining",
+   "eb": "did you know?",
+   "q": "The two men tell the women to remember something. What?",
+   "o": [
+    "What Jesus had told them in Galilee",
+    "Where the apostles were hiding",
+    "The psalms they sang at Passover"
+   ],
+   "a": 0,
+   "why": "Luke says the men reminded them Jesus had said he’d be handed over, crucified, and rise on the third day. “And they remembered his words.”"
+  },
+  {
+   "t": "shot",
+   "v": "CST5-Tell-Apostles",
+   "vo": [
+    "V05"
+   ],
+   "line": "The women ran to tell the apostles. The men didn’t believe them at first. It sounded like nonsense."
+  },
+  {
+   "t": "ask",
+   "v": "CST5-Tell-Apostles",
+   "eb": "why?",
+   "q": "All four Gospels say women were the first at the empty tomb. Why does that detail stand out?",
+   "o": [
+    "The men had already left for Galilee",
+    "A woman’s word counted for less then",
+    "Women weren’t allowed near tombs"
+   ],
+   "a": 1,
+   "why": "Many scholars note it would be an odd detail to invent. Tradition calls Mary Magdalene the apostle to the apostles; since 2016 her day is a feast."
+  },
+  {
+   "t": "shot",
+   "v": "CST6-Today-Easter-Morning",
+   "vo": [
+    "V06"
+   ],
+   "line": "Today, Easter isn’t one day. Catholics keep it for fifty days, longer than Lent. And every Sunday keeps a little of that morning.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "CST6-Today-Easter-Morning",
+   "eb": "did you know?",
+   "q": "Easter is Pascua in Spanish and Pasqua in Italian. Where does that name come from?",
+   "o": [
+    "Pax, the Latin word for peace",
+    "Pascere, Latin for “to feed”",
+    "Pesach, the Hebrew for Passover"
+   ],
+   "a": 2,
+   "why": "Jesus died and rose at Passover time, so many languages name Easter after Pesach. English and German are among the exceptions, along with several Slavic languages."
+  },
+  {
+   "t": "teach",
+   "v": "CST3-Stone-Moved",
+   "say": [
+    "here’s what i love. the women walked toward the stone with no plan, just love. and it was already moved.",
+    "catholics believe the resurrection is the center of everything: jesus truly rose, and death doesn’t get the last word. that’s why easter lasts fifty days, and every sunday is a small easter."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "CST1-Women-Spices",
+   "eb": "the hard one",
+   "q": "The women brought spices to care for a dead body. What does that tell you about what they expected?",
+   "o": [
+    "They knew he would rise that morning",
+    "They expected a body, not an empty tomb",
+    "They wanted to move him somewhere safer"
+   ],
+   "a": 1,
+   "why": "You don’t bring burial spices for someone you expect to see alive. Many readers find their surprise is part of why the story rings true."
+  }
+ ],
+ "today": {
+  "v": "CST6-Today-Easter-Morning",
+  "say": "think of the stone you named. today, take one small step toward it, without a plan, the way the women did: a call, an email, a first page. if you pray, you can bring it to God on the way.",
+  "options": [
+   [
+    "I’ll take one step",
+    "good. you might find it already moved."
+   ],
+   [
+    "Not yet, but I’ll think",
+    "that’s a step too. the women started by walking."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "The rich kid who gave his clothes back.",
+  "line": "next, a party boy from a hill town who gave away everything."
+ }
+}

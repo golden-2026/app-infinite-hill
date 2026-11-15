@@ -1,3 +1,5 @@
+Background only (written 2026-10-15). Where this disagrees with docs/VISION-NOW.md or docs/LESSON_STANDARD.md, those win.
+
 # Same idea, another door: what a scholar should still check
 
 From the fact-check pass (2026-10-15). Every piece is review pending.

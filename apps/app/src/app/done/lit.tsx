@@ -94,7 +94,7 @@ export default function Lit() {
       <View style={{ flexGrow: 1, alignItems: "center", justifyContent: "center" }}>
         <Guy pose={quiet ? "thumbs" : milestone >= 7 || restored || goalJustHit ? "joy" : "celebrate"} h={milestone && !quiet ? 176 : 140} />
         {golden ? <View testID="golden-label" style={{ backgroundColor: GOLDEN, borderWidth: 1.5, borderColor: color.ink, borderRadius: 999, paddingHorizontal: 12, paddingVertical: 4, marginTop: 10, zIndex: 2 }}><Text style={[type.eyebrow(9), { color: color.ink }]}>{t("session.lit.golden")}</Text></View> : null}
-        <Animated.View style={[{ flexDirection: "row", alignItems: "center", gap: 8, backgroundColor: golden ? GOLDEN : "#fff", borderWidth: 2, borderColor: color.ink, paddingLeft: 24, paddingRight: 16, paddingVertical: 4, borderRadius: 28, marginTop: 10 }, popStyle]}>
+        <Animated.View style={[{ flexDirection: "row", alignItems: "center", gap: 8, backgroundColor: golden ? GOLDEN : color.white, borderWidth: 2, borderColor: color.ink, paddingLeft: 24, paddingRight: 16, paddingVertical: 4, borderRadius: 28, marginTop: 10 }, popStyle]}>
           <Odometer from={before} to={after} size={milestone ? 104 : 92} />
           <Sun size={48} mood={grew ? "happy" : "calm"} />
         </Animated.View>
@@ -106,7 +106,7 @@ export default function Lit() {
         <View style={{ marginTop: 14 }}><RestBank n={s.rest} /></View>
 
         {walking.length > 0 && !quiet ? (
-          <View testID="friend-streaks" style={{ marginTop: 14, width: "100%", gap: 6, backgroundColor: "#fff", borderWidth: 1.5, borderColor: color.line, borderRadius: 16, paddingVertical: 10, paddingHorizontal: 14 }}>
+          <View testID="friend-streaks" style={{ marginTop: 14, width: "100%", gap: 6, backgroundColor: color.white, borderWidth: 1.5, borderColor: color.line, borderRadius: 16, paddingVertical: 10, paddingHorizontal: 14 }}>
             {walking.map((f) => (
               <View key={f.id} style={{ flexDirection: "row", alignItems: "center", gap: 10 }}>
                 <Sun size={22} mood={f.doneToday ? "happy" : "calm"} />
@@ -171,7 +171,7 @@ function PlainLit({ count, newDay, onNext, close, visiting }: { count: number; n
     <Screen close={close} footer={<Btn testID="continue" onPress={onNext}>{t("session.continue")}</Btn>}>
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
         <Guy pose="cheer" h={150} />
-        <View style={{ backgroundColor: "#fff", borderWidth: 2, borderColor: color.ink, paddingHorizontal: 26, paddingTop: 6, borderRadius: 28, marginTop: 10, marginBottom: 14 }}>
+        <View style={{ backgroundColor: color.white, borderWidth: 2, borderColor: color.ink, paddingHorizontal: 26, paddingTop: 6, borderRadius: 28, marginTop: 10, marginBottom: 14 }}>
           <Text accessibilityLabel={t("session.lit.plainA11y", { count })} style={{ fontFamily: font.display[800], fontSize: 110, lineHeight: 112, letterSpacing: -5, color: color.ink }}>{count}</Text>
         </View>
         <Text style={type.h1(26)}>{t("session.lit.plainTitle", { count })}</Text>

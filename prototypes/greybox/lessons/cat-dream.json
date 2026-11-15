@@ -1,0 +1,191 @@
+{
+ "id": "cat-dream",
+ "home": "angelus",
+ "title": "The man who never says a word",
+ "told": "from Matthew’s Gospel",
+ "clips": "art/sacred/cat-dream/clips/",
+ "voice": "art/sacred/cat-dream/voice/",
+ "guide": {
+  "name": "Nicole",
+  "photo": "art/guides/catholic.webp"
+ },
+ "card": {
+  "from": "from Matthew’s Gospel",
+  "mins": 5,
+  "keep": "house",
+  "keepName": "The home he opened",
+  "keepWhy": "Faithfulness can be quiet.",
+  "sources": [
+   "Matthew 1:18-25 (Mary espoused to Joseph was found with child, of the Holy Ghost; “Joseph her husband, being a just man, and not willing publicly to expose her, was minded to put her away privately”; an angel in his sleep: “Joseph, son of David, fear not to take unto thee Mary thy wife, for that which is conceived in her, is of the Holy Ghost”; Joseph rising up from sleep did as the angel commanded and took unto him his wife). Douay-Rheims.",
+   "Matthew 2:13, 2:19-20, 2:22 (three further dreams; four in all). Matthew 13:55 (“the carpenter’s son”). No words of Joseph are recorded in any Gospel.",
+   "John Chrysostom, Homilies on Matthew 4 (Joseph’s gentleness while suspecting); Bernard of Clairvaux, Homilies in Praise of the Virgin Mother 2.14 (Joseph withdrew out of reverent awe). Deuteronomy 22:23-24.",
+   "Pius IX, Quemadmodum Deus (8 December 1870), Joseph declared patron of the universal Church. Solemnity of Saint Joseph, 19 March; Saint Joseph the Worker, 1 May (instituted by Pius XII, 1955). John Paul II, Redemptoris Custos (1989); Francis, Patris Corde (2020)."
+  ],
+  "check": [
+   "Joseph’s trade: Matthew 13:55 calls Jesus “the carpenter’s son” (Greek tekton, builder or craftsman). Confirm “carpenter”.",
+   "“The law gave him harsher options” glosses Deuteronomy 22:23-24 and public divorce; confirm wording."
+  ]
+ },
+ "hook": {
+  "v": "CJD2-News-Lands",
+  "say": "before the story, can i ask you something? when you get shocking news, do you talk it out or go quiet?",
+  "options": [
+   [
+    "I talk it out",
+    "then this quiet man might surprise you."
+   ],
+   [
+    "I go quiet",
+    "then you’ll understand joseph. watch."
+   ],
+   [
+    "It depends",
+    "same here. let’s see what he did with his silence."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "CJD1-Carpenter-Shop",
+   "vo": [
+    "V01"
+   ],
+   "line": "In Nazareth lived Joseph, a carpenter from the family of King David. He was promised in marriage to a young woman named Mary."
+  },
+  {
+   "t": "shot",
+   "v": "CJD2-News-Lands",
+   "vo": [
+    "V02"
+   ],
+   "line": "Then the news: Mary was expecting a child, and the child wasn’t his. In all four Gospels, Joseph never says a single word."
+  },
+  {
+   "t": "shot",
+   "v": "CJD3-Night-Decision",
+   "vo": [
+    "V03"
+   ],
+   "line": "Joseph was a just man. The law gave him harsher options. He chose the gentlest: to end the engagement quietly, so Mary would not be shamed."
+  },
+  {
+   "t": "ask",
+   "v": "CJD3-Night-Decision",
+   "eb": "why?",
+   "q": "Matthew calls Joseph “a just man” in the same breath as his plan to spare her. Why is that pairing striking?",
+   "o": [
+    "Justice usually meant exposing a wrong",
+    "Just men were expected to marry anyway",
+    "The law forbade him to end it"
+   ],
+   "a": 0,
+   "why": "For Matthew, being just includes mercy. Saint John Chrysostom thought Joseph feared the worst and chose mercy anyway; others say he stepped back in awe. The Church hasn’t chosen."
+  },
+  {
+   "t": "ask",
+   "v": "CJD3-Night-Decision",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "His mind is made up. He lies down to sleep. What happens in the night?",
+   "o": [
+    "Mary comes to explain everything",
+    "An angel speaks to him in a dream",
+    "His family tells him to leave town"
+   ],
+   "a": 1,
+   "why": "A dream. In Matthew’s telling, God speaks to Joseph in dreams, four times in all."
+  },
+  {
+   "t": "shot",
+   "v": "CJD4-Angel-Dream",
+   "vo": [
+    "V04"
+   ],
+   "line": "An angel came to him in a dream. “Joseph, son of David, do not be afraid to take Mary as your wife. The child is from the Holy Spirit.”"
+  },
+  {
+   "t": "ask",
+   "v": "CJD4-Angel-Dream",
+   "eb": "did you know?",
+   "q": "The angel tells Joseph to name the baby Jesus, Yeshua. What does the name mean?",
+   "o": [
+    "God is with us",
+    "God saves",
+    "Son of David"
+   ],
+   "a": 1,
+   "why": "Yeshua means ‘the Lord saves.’ ‘God with us’ is Emmanuel, the other name Matthew quotes in this same scene. Naming him also made Joseph his legal father."
+  },
+  {
+   "t": "shot",
+   "v": "CJD5-Takes-Her-Home",
+   "vo": [
+    "V05"
+   ],
+   "line": "Joseph woke up and did exactly what the angel said. He took Mary into his home. No speech. He just did it."
+  },
+  {
+   "t": "shot",
+   "v": "CJD6-Today-Saint-Joseph",
+   "vo": [
+    "V06"
+   ],
+   "line": "Today, Catholics honor Joseph as patron of the whole Church. Workers, fathers and families ask for his prayers, especially on March 19 and May 1.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "CJD6-Today-Saint-Joseph",
+   "eb": "did you know?",
+   "q": "Pope Pius XII added a second feast for Joseph in 1955: Saint Joseph the Worker, on May 1. Why that date?",
+   "o": [
+    "It’s the traditional day Joseph died",
+    "It answered May Day with a working saint",
+    "It starts Mary’s month, so they pair up"
+   ],
+   "a": 1,
+   "why": "May 1 was already the workers’ day in much of the world. The Church gave it a carpenter who worked with his hands."
+  },
+  {
+   "t": "teach",
+   "v": "CJD5-Takes-Her-Home",
+   "say": [
+    "here’s what i love. joseph never gets a single line, but the gospel calls him just: faithful to God. his whole answer is what he did.",
+    "catholics honor him as the quiet guardian of jesus and mary. holiness doesn’t need a speech. showing up, and staying, is a way of saying yes."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "CJD5-Takes-Her-Home",
+   "eb": "what came next",
+   "q": "Joseph’s dreams aren’t over. In Matthew, what does his next dream tell him?",
+   "o": [
+    "Go to Bethlehem for the census",
+    "Return to Nazareth at once",
+    "Flee to Egypt with Mary and the child"
+   ],
+   "a": 2,
+   "why": "Herod was hunting the child. Again Joseph says nothing. He gets up in the night and goes."
+  }
+ ],
+ "today": {
+  "v": "CJD1-Carpenter-Shop",
+  "say": "today, be the quiet one who stays. one unglamorous thing for someone, done without announcing it: a fixed hinge, a dish washed, a ride given. if you pray, you can ask saint joseph to help.",
+  "options": [
+   [
+    "I’ll do one quiet thing",
+    "good. joseph would approve, silently."
+   ],
+   [
+    "I know just the thing",
+    "lovely. don’t tell anyone. that’s the point."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "No room.",
+  "line": "next, a full house, a late arrival, and a baby laid in a feeding trough."
+ }
+}

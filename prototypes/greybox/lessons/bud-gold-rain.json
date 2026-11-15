@@ -1,0 +1,223 @@
+{
+ "id": "bud-gold-rain",
+ "home": "lotus",
+ "title": "A rain of gold",
+ "told": "a Jataka tale",
+ "clips": "art/sacred/bud-gold-rain/clips/",
+ "voice": "art/sacred/bud-gold-rain/voice/",
+ "guide": {
+  "name": "Orlando",
+  "photo": "art/guides/buddhism.webp"
+ },
+ "hook": {
+  "v": "MR1-Gold-Rain",
+  "say": "before the story, can i ask you something? have you ever finally gotten the thing you wanted, and then wanted the next thing?",
+  "options": [
+   [
+    "All the time",
+    "me too. this king might make you smile. listen."
+   ],
+   [
+    "Sometimes",
+    "then you know this thirst. listen."
+   ],
+   [
+    "Not really",
+    "that’s rare, and lovely. this one is still worth keeping."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "MR1-Gold-Rain",
+   "vo": [
+    "V01"
+   ],
+   "line": "Long ago, an old tale says, lived King Mandhata. At a touch of his hands, jewels rained from the sky, piling up knee-deep."
+  },
+  {
+   "t": "shot",
+   "v": "MR2-Whole-Earth",
+   "vo": [
+    "V02"
+   ],
+   "line": "He ruled the whole earth. He had everything a person could want. Still, something in him leaned toward more."
+  },
+  {
+   "t": "ask",
+   "v": "MR2-Whole-Earth",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "A king who owns the whole earth. What do you think he does next?",
+   "o": [
+    "Conquers the sea kingdoms of the nagas",
+    "Climbs to the heavens of the gods",
+    "Searches for a way to live forever"
+   ],
+   "a": 1,
+   "why": "Up he goes, to the heavens. The thirst doesn’t stop at the edge of the world."
+  },
+  {
+   "t": "shot",
+   "v": "MR3-Half-A-Throne",
+   "vo": [
+    "V03"
+   ],
+   "line": "So he rose to the heavens. There Sakka, king of the gods, welcomed him and shared half his throne."
+  },
+  {
+   "t": "shot",
+   "v": "MR3-Half-A-Throne",
+   "vo": [
+    "V04"
+   ],
+   "line": "For ages he ruled half of heaven. Then one thought arrived: “Why only half? I want it all.”"
+  },
+  {
+   "t": "ask",
+   "v": "MR3-Half-A-Throne",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "He has half of heaven, and he wants the rest. What happens?",
+   "o": [
+    "He plots against Sakka for the throne",
+    "The thought alone makes him fall",
+    "Sakka hands him the whole throne"
+   ],
+   "a": 1,
+   "why": "He never lifts a finger. In the Jataka, the wanting thought alone drains his power, and he drops back to earth."
+  },
+  {
+   "t": "shot",
+   "v": "MR4-Fallen-Garden",
+   "vo": [
+    "V05"
+   ],
+   "line": "With that thought, his power left him. He fell back to earth, an old man, in his own garden."
+  },
+  {
+   "t": "ask",
+   "v": "MR4-Fallen-Garden",
+   "eb": "why?",
+   "q": "In the Jataka, Mandhata shared heaven’s throne so long that thirty-six Sakkas came and went. What does that detail add?",
+   "o": [
+    "Even endless time didn’t quench the thirst",
+    "Sakka kept losing his throne to him",
+    "The gods were weak back then"
+   ],
+   "a": 0,
+   "why": "Age after age of heaven, and the thirst was still there. Time doesn’t fill it any more than gold does."
+  },
+  {
+   "t": "shot",
+   "v": "MR5-Last-Words",
+   "vo": [
+    "V06"
+   ],
+   "line": "Before he died, he told the people: “I had treasure, the earth and half of heaven, and it was never enough.”"
+  },
+  {
+   "t": "ask",
+   "v": "MR5-Last-Words",
+   "eb": "did you know?",
+   "q": "The verse about a rain of coins is in the Dhammapada. Who does it say truly follows the Buddha?",
+   "o": [
+    "One who never feels a wish",
+    "One who owns nothing at all",
+    "One who delights in thirst ending"
+   ],
+   "a": 2,
+   "why": "Dhammapada 186–187: not even heavenly pleasures delight the Buddha’s disciple, who delights in the end of craving. Not wishless, not penniless: free of the thirst."
+  },
+  {
+   "t": "shot",
+   "v": "MR6-Slow-Line-Today",
+   "vo": [
+    "V07"
+   ],
+   "line": "Today, a slow line at the store. The jaw tightens. The line isn’t hurting anyone. The wanting it to be different is.",
+   "label": "today"
+  },
+  {
+   "t": "teach",
+   "v": "MR5-Last-Words",
+   "say": [
+    "the buddha named where the wobble comes from: tanha. it literally means thirst. he named three: thirst for pleasant things, thirst to be something, and thirst to make something go away.",
+    "and not every wish is thirst. wishing to be kind, or to help, is welcome. the trouble is the grip: “this must be different, right now.” that’s closer to home than the world is, so it’s something you can work with."
+   ]
+  },
+  {
+   "t": "match",
+   "v": "MR6-Slow-Line-Today",
+   "eb": "who’s who",
+   "q": "Match each thirst to an everyday moment.",
+   "pairs": [
+    [
+     "thirst for pleasant things",
+     "checking the fridge again, not hungry"
+    ],
+    [
+     "thirst to be something",
+     "rehearsing the comeback in the shower"
+    ],
+    [
+     "thirst to make it go away",
+     "sighing at the slow line"
+    ]
+   ],
+   "why": "Even wanting an unpleasant moment gone is a kind of thirst. That’s the third one, and it shows up in every slow line."
+  },
+  {
+   "t": "ask",
+   "v": "MR6-Slow-Line-Today",
+   "eb": "the hard one",
+   "q": "If the wobble came from the world, more gold would fix it. What does Mandhata’s story suggest instead?",
+   "o": [
+    "Find a kingdom big enough to satisfy",
+    "The work is with the thirst, not the gold",
+    "Desire is bad, so wish for nothing"
+   ],
+   "a": 1,
+   "why": "That’s the hopeful part. You can’t make every line fast, but you can work with the thirst. And wishes like kindness aren’t thirst at all."
+  }
+ ],
+ "today": {
+  "v": "MR6-Slow-Line-Today",
+  "say": "next time you’re waiting today, in a line or for a reply, find the wanting in your body: the jaw, the chest, the hands. don’t chase it and don’t fight it. just notice: thirst.",
+  "options": [
+   [
+    "I’ll try it today",
+    "one thirsty moment, noticed. that’s enough."
+   ],
+   [
+    "I’ll try it later",
+    "it will be there when you look. it always is."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "The lamp that went out",
+  "line": "a woman who has lost everything watches one small lamp go out, and is free."
+ },
+ "card": {
+  "from": "a Jataka tale",
+  "mins": 5,
+  "keep": "coin",
+  "keepName": "Mandhata’s gold coin",
+  "keepWhy": "More won’t fill the thirst.",
+  "keepSvg": "<circle cx=\"50\" cy=\"50\" r=\"30\" fill=\"#2a1b05\"/><circle cx=\"50\" cy=\"50\" r=\"22\" fill=\"none\" stroke=\"#f4f1e8\" stroke-width=\"3\" opacity=\".5\"/><rect x=\"43\" y=\"43\" width=\"14\" height=\"14\" rx=\"2\" fill=\"#f4f1e8\" opacity=\".5\"/>",
+  "sources": [
+   "Mandhata Jataka (Jataka 258): the shower of treasure at the touch of his hands, rule of the earth, the heavens, Sakka sharing half his kingdom in the heaven of the Thirty-three, the thought of taking it all, the fall to his own park in old age, his words before death",
+   "Dhammapada 186–187 (the verses also spoken in Jataka 258): not even a rain of gold coins satisfies sensual desire",
+   "Dhammacakkappavattana Sutta (Samyutta Nikaya 56.11): the second truth and the three cravings (kama-, bhava-, vibhava-tanha)",
+   "Brahmana Sutta (Samyutta Nikaya 51.15): wholesome desire (chanda) used to end craving"
+  ],
+  "check": [
+   "The lesson skips the heaven of the Four Great Kings and compresses his long reigns.",
+   "His deathbed words are paraphrased; confirm they fit the Jataka’s prose."
+  ]
+ }
+}

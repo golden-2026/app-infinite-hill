@@ -39,7 +39,7 @@ export default function Sampler() {
           <Text accessibilityRole="header" style={[type.h1(26), { color: color.ink }]}>{t("companion.sampler.title")}</Text>
         </View>
         <Host pose={allDone ? "cheer" : "wave"}>{allDone ? t("companion.sampler.allDone") : t("companion.sampler.host")}</Host>
-        <View testID="sampler-days" style={{ borderWidth: 1, borderColor: color.line, borderRadius: 16, backgroundColor: "#fff", paddingHorizontal: 14, paddingVertical: 4 }}>
+        <View testID="sampler-days" style={{ borderWidth: 1, borderColor: color.line, borderRadius: 16, backgroundColor: color.white, paddingHorizontal: 14, paddingVertical: 4 }}>
           {shown.map((x, i) => {
             const title = (lessonInfo(x.door, x.day) as { title?: string } | null)?.title || t("common.day", { n: x.day });
             const when = !started || x.open ? null : t("companion.sampler.opensIn", { count: x.n - (days.filter((d) => d.open).length) });

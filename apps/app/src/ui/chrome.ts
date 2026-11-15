@@ -8,10 +8,11 @@ import { color } from "@ih/brand";
  *  light-your-day), dark text on cream. Set on focus so going back restores it. */
 export function useChrome(dark: boolean) {
   useFocusEffect(useCallback(() => {
-    setStatusBarStyle(dark ? "light" : "dark");
+    // loud brand (2026-11-06): every page is black now, so the bars are always light-on-black
+    setStatusBarStyle("light");
     if (Platform.OS === "web" && typeof document !== "undefined") {
       const meta = document.querySelector('meta[name="theme-color"]');
-      meta?.setAttribute("content", dark ? color.ink : color.cream);
+      meta?.setAttribute("content", dark ? color.black : color.cream);
     }
   }, [dark]));
 }

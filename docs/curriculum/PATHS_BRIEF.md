@@ -1,3 +1,5 @@
+Background only (written 2026-09-30). Where this disagrees with docs/VISION-NOW.md or docs/LESSON_STANDARD.md, those win.
+
 # Brief — writing a path's five-year plan (DRAFT, Keeper review pending)
 
 You are writing one path's complete five-year daily curriculum outline for Infinite Hill, a daily practice app: a few minutes a day, one short lesson — a story or idea, a small practice, and one line to carry. Camp 1 (days 1–21) is already written for every path; you write **days 22 through 1791**, one session per day, no gaps, no repeats.

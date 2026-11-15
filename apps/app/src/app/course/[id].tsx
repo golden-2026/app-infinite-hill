@@ -44,7 +44,7 @@ export default function CoursePage() {
           <Text accessibilityRole="header" style={[type.h1(26), { color: color.ink }]}>{say(c.ask)}</Text>
         </View>
         <Host pose={allDone ? "cheer" : "wave"}>{allDone ? t("courses.page.done", { title: say(c.title) }) : say(c.line)}</Host>
-        <View testID="course-days" style={{ borderWidth: 1, borderColor: color.line, borderRadius: 16, backgroundColor: "#fff", paddingHorizontal: 14, paddingVertical: 4 }}>
+        <View testID="course-days" style={{ borderWidth: 1, borderColor: color.line, borderRadius: 16, backgroundColor: color.white, paddingHorizontal: 14, paddingVertical: 4 }}>
           {days.map((x, i) => {
             const name = dayName(x.door, x.day);
             const can = mine && x.open;

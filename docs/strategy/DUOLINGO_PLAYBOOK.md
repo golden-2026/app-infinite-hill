@@ -2,6 +2,8 @@
 
 As of 2026-10-01. This is a living document: add new rows as Duolingo publishes new letters, posts and talks.
 
+**Update 2026-11-10:** `docs/VISION-NOW.md` wins where this page disagrees. The "where we stand" notes below cite the old Expo app (`apps/app`), which is now frozen; the app we improve is `prototypes/greybox/hill-app.html`. The mascot is Finn (name pending a trademark check). No leaderboards.
+
 **Summary (5 lines)**
 
 1. Duolingo grew by keeping the people it already had. Getting more of yesterday's users to come back today mattered about five times more than anything else they measured.
@@ -49,7 +51,7 @@ Numbers come from pages we opened. Anything from memory is marked *unverified*. 
 | Doing it with a friend works. | People with at least one Friend Streak finished 22% more daily lessons. 57% have at least one friend on Duolingo. Capped at 5 friend streaks. | [Duolingo blog: 5 lessons from Friend Streak](https://blog.duolingo.com/product-lessons-friend-streak/) | applied | Friend streaks, fixed-text cheers and an anonymous friend ID exist (`api/friends.js`, up to 30 friends). |
 | The biggest drop-off in a social feature is the very first invite. | They mapped a 6-step funnel and put most effort into the invite step. | [same post](https://blog.duolingo.com/product-lessons-friend-streak/) | partly | Offer the lantern invite at the warmest moments (day 1 done, day 7, a milestone) as one tap. |
 | Build the cheapest real version first, then a full "V1", not a half-built MVP. | Their first friend-streak test ran on the phone only, with no server. | [same post](https://blog.duolingo.com/product-lessons-friend-streak/) | applied | Matches how `lib/walkers.ts` started. Keep doing it. |
-| Weekly leaderboards raise effort. | Leaderboards (2018) raised learning time by 17%. There are 10 leagues, you're matched with people of similar habits and time zone, and you can turn it off. | [Mazal](https://www.lennysnewsletter.com/p/how-duolingo-reignited-user-growth); [Duolingo blog: leagues](https://blog.duolingo.com/duolingo-leagues-leaderboards/) | partly | We have an opt-in, friends-only weekly board with nicknames only. **Don't adopt** public leagues with strangers for prayer. |
+| Weekly leaderboards raise effort. | Leaderboards (2018) raised learning time by 17%. There are 10 leagues, you're matched with people of similar habits and time zone, and you can turn it off. | [Mazal](https://www.lennysnewsletter.com/p/how-duolingo-reignited-user-growth); [Duolingo blog: leagues](https://blog.duolingo.com/duolingo-leagues-leaderboards/) | don't adopt | No leaderboards (`docs/VISION-NOW.md`). The old app's opt-in, friends-only weekly board stays frozen there. |
 | Daily quests and shared quests give a reason to open the app today. | Bigger rewards for finishing all three daily quests. Friends Quests now pair you with someone even if you have no friends on the app. | [Duolingo blog: 2025 highlights](https://blog.duolingo.com/product-highlights/) | partly | "Today's three" and seasonal quests exist (`lib/three.ts`, `lib/quests.ts`). A shared quest within one's own Table or community: not yet. |
 | Rewards should push people forward on the path, not reward grinding easy things. | Monthly challenges switched from points to quests to stop bulk grinding. | [Duolingo blog: Time Spent Learning Well](https://blog.duolingo.com/time-spent-learning-well/) | applied | Today's three is based only on what really happened (finished lesson, kept line). Keep it that way. |
 
@@ -60,7 +62,7 @@ Numbers come from pages we opened. Anything from memory is marked *unverified*. 
 | Let people try a lesson before asking them to sign up. | A former growth lead says moving sign-up back a few steps raised daily users about 20% (second-hand quote, no primary source given). | [How They Grow](https://www.howtheygrow.co/p/how-duolingo-grows) | applied | Pick a door and do a lesson before any account. "Save your day" comes later (`app/done/save.tsx`). |
 | Day-1 return can be engineered up a lot. | Von Ahn: day-1 retention rose from about 13% to about 50% (from the episode page as summarized). | [Acquired, Luis von Ahn](https://www.acquired.fm/acq2-episodes/why-duolingo-worked-with-luis-von-ahn-ceo) | not yet | We can't improve what we don't measure. Turn on day-1 counts first (see Top 10). |
 | Short lessons fit into small moments. | About 3-minute lessons, not 30. | [Acquired](https://www.acquired.fm/acq2-episodes/why-duolingo-worked-with-luis-von-ahn-ceo) | applied | Our ~5-minute lesson. Watch for lessons that run long. |
-| The lesson-end screens are prime time. Keep investing in them. | New streak-milestone and lesson-end animations shipped in 2025. | [2025 highlights](https://blog.duolingo.com/product-highlights/) | applied | The after-lesson series exists (`app/done/*`). Put a Keeper's line or a voice here once rights are signed. |
+| The lesson-end screens are prime time. Keep investing in them. | New streak-milestone and lesson-end animations shipped in 2025. | [2025 highlights](https://blog.duolingo.com/product-highlights/) | applied | The after-lesson series exists (`app/done/*`). Put a Keeper's line or a celebrity guide's voice here. |
 | A home-screen widget works about as well as reminders. | Half of widget users have a streak of at least 6 months. | [Duolingo blog: widget](https://blog.duolingo.com/widget-feature/) | not yet | Not possible on the web app. Plan a sunrise widget for the iPhone and Android builds. |
 
 ## 3. Notifications
@@ -111,14 +113,14 @@ Numbers come from pages we opened. Anything from memory is marked *unverified*. 
 
 | Lesson | Evidence / number | Source | For Infinite Hill | What we'd do |
 |---|---|---|---|---|
-| Build a cast of characters from the mascot's own shapes. Take time and include many cultures. | 18 months of design work, launched November 2020. Humans drawn using Duo's shape rules. A deliberately diverse cast. They appear when you answer right and as mid-lesson rewards. | [Duolingo blog: building character](https://blog.duolingo.com/building-character/) | partly | Our mascot ("the guy") reacts in lessons (`session/juice.tsx`). Later: a cast drawn from his shapes, one per path, never a sacred figure. |
+| Build a cast of characters from the mascot's own shapes. Take time and include many cultures. | 18 months of design work, launched November 2020. Humans drawn using Duo's shape rules. A deliberately diverse cast. They appear when you answer right and as mid-lesson rewards. | [Duolingo blog: building character](https://blog.duolingo.com/building-character/) | partly | Our mascot, Finn, reacts in lessons (`session/juice.tsx` in the old app) and dances on right answers and streaks. Later: a cast drawn from his shapes, one per path, never a sacred figure. |
 | Simple shapes make a mascot easy to animate and read. The brand lives between the meme and the mission. | The head of art calls Duo "basically a chicken nugget with a face". The owl is green because of a co-founder prank. | [Advertising Week](https://advertisingweek.com/aw360/news/the-surprising-reason-why-the-duolingo-owl-is-green/2524) | applied | Round yellow face, infinity mask, hoodie. For us: joke about ourselves, never about the faith (brand book). |
 | Derive the whole identity, even the lettering, from the mascot, and write rules that reach beyond the app. | 2019 refresh by Johnson Banks and Fontsmith. The logotype was drawn from the owl's shapes, with guidelines down to airport ads. | [branding.news](https://www.branding.news/2019/09/30/duolingos-mascot-sets-tone-of-their-new-visual-identity/) | partly | We have a brand book (`docs/brand/brand-book.html`). Our own lettering could come from the infinity mask. |
 | Give each character a clear personality. | Ten named humans, from an anxious achiever to a sarcastic teen and a mysterious grandmother. | [DuoPlanet: character names](https://duoplanet.com/duolingo-character-names/) | not yet | Our own names and personalities. Never reuse theirs (see section 11). |
 | A tiny, fast, in-house social team beats agencies. | TikTok grew from 50,000 to 16M followers in 4+ years with a team of 3. The "dead Duo" campaign went from idea to launch in 6 days. | [The Drum, Zaria Parvez](https://www.thedrum.com/news/2025/02/25/duolingo-s-tiktok-mastermind-its-unhinged-social-strategy-and-killing-its-mascot) | not yet | One in-house creator per community (faith creators, Keepers' students). Approvals within a week. |
 | A story campaign can bring lapsed users back. | The "dead Duo" story: 1.7 billion free impressions and a noticeable rise in new and returning users. | [Q1 2025 letter](https://www.sec.gov/Archives/edgar/data/1562088/000156208825000098/q1fy25duolingo3-31x25share.htm) | don't adopt (the death part) | Never a death joke near faith. A seasonal "lanterns home" story is the faith-safe version. |
 | Edgy humor needs a brake. | They posted less "unhinged" content after community feedback, then brought it back. | [Q3 2025 letter](https://www.sec.gov/Archives/edgar/data/1562088/000162828025049514/q3fy25duolingo9-30x25share.htm) | don't adopt | Warm and playful, never edgy, about religion. |
-| Creators carry new markets. | About two-thirds of social impressions in China, Indonesia and India came from creator content. | [Q2 2026 letter](https://www.sec.gov/Archives/edgar/data/0001562088/000162828026053299/q2fy26duolingo6-30x26share.htm) | not yet | Community and celebrity voices are our creators. Only once signed. |
+| Creators carry new markets. | About two-thirds of social impressions in China, Indonesia and India came from creator content. | [Q2 2026 letter](https://www.sec.gov/Archives/edgar/data/0001562088/000162828026053299/q2fy26duolingo6-30x26share.htm) | not yet | Community and celebrity guides are our creators. |
 | Even a 5-second ad can be made in-house. | The 2024 Super Bowl spot was 5 seconds, made without an agency. | [Duolingo blog: Super Bowl](https://blog.duolingo.com/super-bowl-commercial-2024/) | not yet | Small, cheap, in-house moments around festivals. |
 
 ## 8. Monetization and pricing
@@ -190,8 +192,8 @@ Numbers come from pages we opened. Anything from memory is marked *unverified*. 
 |---|---|---|
 | Name "Infinite Hill" / "infinite hill" | DUOLINGO word mark | **clearly distinct** |
 | Mascot: round yellow face, infinity mask (glasses), backwards cap, white hoodie, joggers (`docs/brand/brand-book.html`) | Owl marks 6660235 / 7255487, Duo | **clearly distinct**. A human figure, not a bird. No beak, no owl eyes, not green. |
-| Mascot's character names (none of Duolingo's found in `apps/app/src`) | Duo, Lily, Zari, etc. | **clearly distinct**. Keep it that way when naming a cast. |
-| Main brand color lemon #EEFF6A plus black and white (`packages/brand/src/index.js`, `public/site.html`) | Duolingo green | **clearly distinct** |
+| Mascot's name, Finn, and character names (none of Duolingo's found in `apps/app/src`) | Duo, Lily, Zari, etc. | **clearly distinct**. Keep it that way when naming a cast. |
+| Main brand color lime #EEFF6A plus black and white (`packages/brand/src/index.js`, `public/site.html`) | Duolingo green | **clearly distinct** |
 | Secondary token `green: #8DE24A` (used once in the You tab, about 3 times on the site) | Duolingo's lighter green (~#89E219, *unverified*) | **check**. It's close to their light green. Keep it minor, or swap for a hue that's clearly ours. |
 | Streak icon: a sun, "the sun is our flame", with rest days as moons, never red (`apps/app/src/ui/streak.tsx`) | Duolingo's orange streak flame | **clearly distinct** |
 | Streak finish: sunrise over the hill (`app/done/light.tsx`) | Duolingo milestone animations | **clearly distinct** |
@@ -204,7 +206,7 @@ Numbers come from pages we opened. Anything from memory is marked *unverified*. 
 ### Rules going forward
 
 1. Never use an owl, in any color, anywhere (app, site, merch, stickers).
-2. Never make bright Duolingo-style green a main color. Lemon, black and white stay ours.
+2. Never make bright Duolingo-style green a main color. Lime, black and white stay ours.
 3. Never use their character names, looks, catchphrases or famous lines, even as a joke or homage.
 4. Borrow mechanics, never wording. Every line is written fresh in our voice.
 5. No "-lingo", "Duo" or owl puns in names, features or campaigns.
@@ -224,7 +226,7 @@ Numbers come from pages we opened. Anything from memory is marked *unverified*. 
 7. **Make the friend invite one tap at the warmest moments** (day 1 done, day 7, milestones). Friend streaks raised lesson completion 22%. Source: [Friend Streak lessons](https://blog.duolingo.com/product-lessons-friend-streak/).
 8. **Rest days that know each tradition's holy day**, so Shabbat, Friday prayer or Sunday never costs a streak (weekend pass: +4% return). Source: [2017 streak post](https://blog.duolingo.com/how-streaks-keep-duolingo-learners-committed-to-their-language-goals/).
 9. **Set a first-open speed budget on cheap phones.** Slow starts cost them hundreds of thousands of daily users. Source: [Android performance](https://blog.duolingo.com/android-app-performance/).
-10. **Put a Keeper's line or a signed celebrity voice at the lesson-end moment on days 1, 3 and 7** (once rights are signed), our version of characters at high-engagement moments. Source: [building character](https://blog.duolingo.com/building-character/).
+10. **Put a Keeper's line or a celebrity guide's voice at the lesson-end moment on days 1, 3 and 7**, our version of characters at high-engagement moments. Source: [building character](https://blog.duolingo.com/building-character/).
 
 ---
 

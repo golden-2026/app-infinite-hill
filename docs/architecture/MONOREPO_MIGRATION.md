@@ -1,3 +1,5 @@
+Background only (written September 2026). Where this disagrees with docs/VISION-NOW.md, that page wins.
+
 # Golden monorepo boundaries and migration sequence
 
 **Status:** accepted Wayfinder decision for [Choose the monorepo boundaries and

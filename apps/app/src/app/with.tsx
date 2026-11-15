@@ -72,7 +72,7 @@ export default function WithScreen() {
         <Text style={{ fontFamily: font.display[800], fontSize: 20, color: "#fff", textAlign: "center" }} testID="with-from">
           {t("home.with.from", { who, path: pathWords(gift.door, gift.n) })}
         </Text>
-        <View style={{ backgroundColor: "#fff", borderRadius: 22, padding: 18, width: "100%" }}>
+        <View style={{ backgroundColor: color.white, borderRadius: 22, padding: 18, width: "100%" }}>
           {/* only a line that really is in the lessons shows as "inside"; anything else is marked as the sender's own words */}
           <Text style={[type.eyebrow(8), { color: color.mute }]}>{fromLessons ? t("home.with.inside", { door: doorLabel(gift.door) }) : gift.from ? t("home.with.ownWordsName", { who }) : t("home.with.ownWords")}</Text>
           <Text style={{ fontFamily: font.display[800], fontSize: 22, color: color.ink, marginTop: 6 }}>“{gift.line}”</Text>

@@ -61,7 +61,7 @@ function SceneRow({ id, text, n, positions, locked, right, onDrop, onMove }: { i
     <GestureDetector gesture={pan}>
       <Animated.View style={[s.scene, anim, right === true ? { backgroundColor: color.gold, borderColor: color.gold } : right === false ? { borderColor: "#E5484D" } : null]}>
         <Text style={s.grip} accessibilityElementsHidden>⋮⋮</Text>
-        <Text style={s.sceneText} numberOfLines={2}>{text}</Text>
+        <Text style={[s.sceneText, right === true ? { color: "#0A0A0A" } : null]} numberOfLines={2}>{text}</Text>
         {!locked ? (
           <View style={{ flexDirection: "row" }}>
             <Pressable accessibilityRole="button" accessibilityLabel={t("session.scene.up", { t: text })} hitSlop={6} onPress={() => onMove(-1)} style={s.arrow}><Text style={s.arrowText}>▲</Text></Pressable>
@@ -261,7 +261,7 @@ export function RhythmStep({ step, voiceOn, onDone }: { step: any; voiceOn: bool
       <View style={{ flexDirection: "row", gap: 8, flexWrap: "wrap", justifyContent: "center" }} accessibilityLabel={syl.join(" · ")}>
         {syl.map((x, k) => (
           <View key={k} style={[s.syl, k === current ? { backgroundColor: color.gold, borderColor: color.gold, transform: [{ scale: 1.12 }] } : null]}>
-            <Text style={[s.sylText, k === current ? { color: color.ink } : null]}>{x}</Text>
+            <Text style={[s.sylText, k === current ? { color: "#0A0A0A" } : null]}>{x}</Text>
           </View>
         ))}
       </View>
@@ -270,7 +270,7 @@ export function RhythmStep({ step, voiceOn, onDone }: { step: any; voiceOn: bool
         <Animated.View style={drumStyle}>
           <Pressable accessibilityRole="button" accessibilityLabel={t("session.rhythm.tapA11y")} onPressIn={tap} onPress={() => {}} style={[s.drum, phase === "play" ? null : { opacity: 0.5 }]}>
             <Text style={{ fontSize: 30 }}>☀</Text>
-            <Text style={[type.eyebrow(8), { color: color.ink, marginTop: 4 }]}>{t("session.rhythm.tap")}</Text>
+            <Text style={[type.eyebrow(8), { color: "#0A0A0A", marginTop: 4 }]}>{t("session.rhythm.tap")}</Text>
           </Pressable>
         </Animated.View>
       ) : null}
@@ -350,8 +350,8 @@ export function RushStep({ step, best, onDone, onMiss }: { step: any; best?: num
   };
   const chip = (txt: string, active: boolean, done: boolean, onPress: () => void, small?: boolean) => (
     <Pressable key={txt} accessibilityRole="button" accessibilityLabel={txt} accessibilityState={{ selected: active, disabled: done }} disabled={done || !!end} onPress={onPress}
-      style={[s.rchip, { backgroundColor: done ? color.gold : active ? color.ink : "#fff", opacity: done ? 0.55 : 1, borderColor: shake === txt ? "#E5484D" : active ? color.gold : "#fff" }]}>
-      <Text style={{ fontFamily: font.text[700], fontSize: small ? 12 : 14, color: active ? "#fff" : color.ink, textAlign: "center" }} numberOfLines={3}>{txt}</Text>
+      style={[s.rchip, { backgroundColor: done ? color.gold : active ? color.gold : color.white, opacity: done ? 0.55 : 1, borderColor: shake === txt ? "#FF2D8A" : active ? color.gold : color.line }]}>
+      <Text style={{ fontFamily: font.text[700], fontSize: small ? 12 : 14, color: active || done ? "#0A0A0A" : color.ink, textAlign: "center" }} numberOfLines={3}>{txt}</Text>
     </Pressable>
   );
   if (!started) {
@@ -390,7 +390,7 @@ export function RushStep({ step, best, onDone, onMiss }: { step: any; best?: num
 const s = StyleSheet.create({
   pill: { alignSelf: "flex-start", backgroundColor: "#ffffff14", borderColor: "#ffffff33", borderWidth: 1, borderRadius: 999, paddingVertical: 10, paddingHorizontal: 16 },
   pillText: { color: "#fff", fontFamily: font.text[600], fontSize: 13 },
-  scene: { position: "absolute", left: 0, right: 0, height: ROW, flexDirection: "row", alignItems: "center", gap: 10, backgroundColor: "#fff", borderRadius: 16, borderWidth: 2, borderColor: "#fff", paddingLeft: 12, paddingRight: 6, shadowColor: "#000", shadowRadius: 10, shadowOffset: { width: 0, height: 4 } },
+  scene: { position: "absolute", left: 0, right: 0, height: ROW, flexDirection: "row", alignItems: "center", gap: 10, backgroundColor: color.white, borderRadius: 16, borderWidth: 2, borderColor: "#fff", paddingLeft: 12, paddingRight: 6, shadowColor: "#000", shadowRadius: 10, shadowOffset: { width: 0, height: 4 } },
   grip: { color: "#00000044", fontSize: 16, fontWeight: "800" },
   sceneText: { flex: 1, fontFamily: font.text[700], fontSize: 14, color: color.ink },
   arrow: { width: 32, height: 40, alignItems: "center", justifyContent: "center" },

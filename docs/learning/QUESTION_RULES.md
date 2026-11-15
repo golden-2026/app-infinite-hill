@@ -26,7 +26,7 @@ believe or observe. Getting a question wrong never means someone is a worse memb
 - **Per stop: 8 items** (today: 1 to 3). 6 multiple choice, 2 short "explain it" items (§6).
 - **Spread.** Items come from across the stretch (early, middle and late lessons), never more than 2 from one lesson.
 - **Mix.** In each stop: at least 2 *recognize*, 3 *understand*, 1 *apply* (§4).
-- **Every door, including Simply Spiritual** (today it has none). For Simply Spiritual, items test the sources it
+- **Every door, including "my own religion"** (SPIRITUAL; today it has none). For "my own religion", items test the sources it
   teaches (named thinker, text or tradition), never a personal philosophy.
 - **First build (pilot):** Hinduism, 13 stops × 8 = 104 items. Then the other seven doors (about 730 more). Years 4 and
   5 add about 600 when those years ship.

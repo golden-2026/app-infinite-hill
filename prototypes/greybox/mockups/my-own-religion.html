@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Build Your Own Religion</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800;900&display=swap">
+<style>
+  :root { --night: #070a14; --panel: #141b33; --panel2: #1b2342; --text: #fbf6ee; --muted: #b9bfd3; --gold: #EEFF6A; --gold-ink: #0A0A0A; --lamp: #f5c46a; --ok: #6fd39a; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #03050c; color: var(--text); font: 500 15px/1.4 Manrope, system-ui, sans-serif; display: flex; flex-wrap: wrap; gap: 28px; padding: 28px; }
+  .phone { width: 390px; height: 844px; flex: none; position: relative; overflow: hidden; background: var(--night); display: flex; flex-direction: column; padding: 54px 20px 26px; gap: 14px; }
+  h1, h2, .big { font-family: Inter, system-ui, sans-serif; font-weight: 900; letter-spacing: -0.02em; margin: 0; text-wrap: balance; }
+  h1 { font-size: 34px; line-height: 1.02; }
+  h2 { font-size: 26px; line-height: 1.08; }
+  .kick { font: 800 11px Inter, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
+  .muted { color: var(--muted); }
+  .finn { display: flex; gap: 10px; align-items: flex-end; }
+  .finn img { width: 58px; height: 58px; object-fit: contain; flex: none; }
+  .bubble { background: var(--panel); border-radius: 18px 18px 18px 4px; padding: 11px 14px; font-weight: 600; }
+  .btn { background: var(--gold); color: var(--gold-ink); border: 0; border-radius: 16px; padding: 15px; font: 800 16px Inter, sans-serif; text-align: center; }
+  .ghost { background: transparent; color: var(--text); border: 1.5px solid rgba(255,255,255,.18); }
+  .tag { display: inline-block; font: 800 10.5px Inter, sans-serif; letter-spacing: .06em; text-transform: uppercase; padding: 4px 8px; border-radius: 999px; background: rgba(238,255,106,.12); color: var(--gold); }
+  .tag.b { background: rgba(185,196,255,.14); color: #c9d0ff; }
+  .tag.s { background: rgba(245,196,106,.15); color: var(--lamp); }
+  .tag.j { background: rgba(120,190,255,.14); color: #9fd0ff; }
+  .tag.c { background: rgba(255,160,160,.14); color: #ffb9b0; }
+  .tag.i { background: rgba(111,211,154,.14); color: var(--ok); }
+  .tag.h { background: rgba(255,170,90,.15); color: #ffc08a; }
+  .fill { flex: 1; }
+  .status { position: absolute; top: 14px; left: 26px; right: 26px; display: flex; justify-content: space-between; font: 700 13px Inter, sans-serif; }
+
+  /* 1 welcome */
+  .hero { position: relative; border-radius: 24px; overflow: hidden; height: 330px; display: flex; align-items: flex-end; padding: 18px; }
+  .hero img.bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,10,20,0) 30%, rgba(7,10,20,.92)); }
+  .hero > div { position: relative; z-index: 1; display: grid; gap: 8px; }
+  .faiths { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .faiths div { background: var(--panel); border-radius: 12px; padding: 9px 4px; text-align: center; font: 700 11.5px Inter, sans-serif; color: var(--muted); }
+
+  /* 2 intake */
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { padding: 10px 14px; border-radius: 999px; background: var(--panel); font-weight: 700; border: 1.5px solid transparent; }
+  .chip.on { background: rgba(238,255,106,.12); border-color: var(--gold); color: var(--gold); }
+  .chip.off { background: rgba(255,120,120,.08); border-color: rgba(255,140,140,.5); color: #ffb3b3; }
+
+  /* 3 today */
+  .story { position: relative; border-radius: 24px; overflow: hidden; height: 400px; }
+  .story img.bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .story::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,10,20,.1), rgba(7,10,20,.95) 78%); }
+  .story .in { position: absolute; z-index: 1; left: 18px; right: 18px; bottom: 18px; display: grid; gap: 10px; }
+  .guide { display: flex; align-items: center; gap: 10px; }
+  .guide img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold); }
+  .why { background: var(--panel); border-radius: 16px; padding: 12px 14px; display: flex; gap: 10px; align-items: flex-start; font-weight: 600; }
+  .why b { color: var(--gold); }
+
+  /* 4 keep */
+  .card { background: linear-gradient(180deg, #1d2547, #121833); border-radius: 26px; padding: 22px; display: grid; gap: 12px; box-shadow: 0 0 60px rgba(245,196,106,.15); border: 1px solid rgba(245,196,106,.25); }
+  .quote { font: 800 24px/1.18 Inter, sans-serif; letter-spacing: -.01em; }
+  .src { font-size: 13px; color: var(--muted); }
+  .keep { position: relative; }
+  .keep .btn { font-size: 18px; padding: 17px; }
+  .sparks { position: absolute; inset: -18px; pointer-events: none; }
+
+  /* 5 book */
+  .tabs { display: flex; gap: 6px; }
+  .tabs span { white-space: nowrap; padding: 7px 10px; border-radius: 999px; background: var(--panel); font: 700 12.5px Inter, sans-serif; color: var(--muted); }
+  .tabs span.on { background: var(--gold); color: var(--gold-ink); }
+  .sec { display: grid; gap: 7px; }
+  .sec h3 { margin: 4px 0 0; font: 800 12px Inter, sans-serif; letter-spacing: .12em; text-transform: uppercase; color: var(--lamp); }
+  .row { background: var(--panel); border-radius: 14px; padding: 10px 12px; display: grid; gap: 4px; }
+  .row b { font: 700 14.5px Manrope, sans-serif; }
+  .row .tag { justify-self: start; }
+
+  /* 6 common ground */
+  .thread { display: grid; gap: 8px; }
+  .thread .row { grid-template-columns: 1fr auto; align-items: center; }
+  .corner { position: relative; height: 210px; border-radius: 24px; overflow: hidden; }
+  .corner img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(1.05); }
+  .corner::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,10,20,0) 40%, rgba(7,10,20,.85)); }
+  .corner .lab { position: absolute; z-index: 2; left: 14px; bottom: 12px; right: 14px; display: flex; justify-content: space-between; align-items: end; }
+  .lan { position: absolute; z-index: 1; width: 14px; height: 20px; border-radius: 7px; background: #fff3c4; box-shadow: 0 0 18px 6px rgba(245,196,106,.8); }
+  .lan.new { background: var(--gold); box-shadow: 0 0 26px 10px rgba(238,255,106,.85); }
+  .path { position: absolute; z-index: 1; height: 3px; background: linear-gradient(90deg, rgba(245,196,106,.1), rgba(245,196,106,.9), rgba(245,196,106,.1)); transform-origin: left center; border-radius: 3px; }
+</style></head>
+<body>
+
+<!-- 1 · welcome -->
+<section class="phone" id="s1">
+  <div class="status"><span>9:41</span><span>●●● ▮</span></div>
+  <div class="kick">infinite hill</div>
+  <div class="hero">
+    <img class="bg" src="../art/homes/wild.webp" alt="">
+    <div>
+      <span class="tag">made just for you</span>
+      <h1>build your own religion.</h1>
+      <span class="muted" style="color:#e6e8f2">keep what rings true from every faith on earth. picked for you, a few minutes a day.</span>
+    </div>
+  </div>
+  <div class="btn">build mine</div>
+  <div style="display:grid;gap:8px;margin-top:4px">
+    <span class="kick" style="color:var(--muted)">or go deep in one faith</span>
+    <div class="faiths">
+      <div>christian</div><div>catholic</div><div>jewish</div><div>muslim</div>
+      <div>hindu</div><div>buddhist</div><div>sikh</div><div style="color:var(--gold)">not sure?</div>
+    </div>
+  </div>
+  <div class="fill"></div>
+  <div class="finn"><img src="../art/store/wave.webp" alt="Finn"><div class="bubble">hi, i'm finn. no pressure, no rules. you can switch any time.</div></div>
+</section>
+
+<!-- 2 · intake -->
+<section class="phone" id="s2">
+  <div class="status"><span>9:41</span><span>●●● ▮</span></div>
+  <div class="kick">let's make it yours · 1 of 3</div>
+  <div class="finn"><img src="../art/store/wave.webp" alt="Finn"><div class="bubble">what are you hoping to find? pick as many as you like.</div></div>
+  <div class="chips">
+    <span class="chip">a calmer mind</span>
+    <span class="chip on">less anger</span>
+    <span class="chip">meaning</span>
+    <span class="chip on">getting through a loss</span>
+    <span class="chip">better relationships</span>
+    <span class="chip">just curious</span>
+    <span class="chip">raising good kids</span>
+  </div>
+  <div class="finn" style="margin-top:10px"><img src="../art/store/wave.webp" alt="Finn" style="transform:scaleX(-1)"><div class="bubble">anything that puts you off? i'll keep it out.</div></div>
+  <div class="chips">
+    <span class="chip off">lots of God-talk</span>
+    <span class="chip">rules</span>
+    <span class="chip">long readings</span>
+    <span class="chip">being preached at</span>
+    <span class="chip">nothing, bring it on</span>
+  </div>
+  <div class="fill"></div>
+  <div class="why"><span>💬</span><span>or just tell me in your own words. <span class="muted">"my dad passed last spring and i snap at everyone"</span></span></div>
+  <div class="btn">next</div>
+</section>
+
+<!-- 3 · today -->
+<section class="phone" id="s3">
+  <div class="status"><span>9:41</span><span>●●● ▮</span></div>
+  <div style="display:flex;justify-content:space-between;align-items:center"><div class="kick">today · picked for you</div><span class="tag s">🏮 4 days</span></div>
+  <div class="story">
+    <img class="bg" src="../art/homes/lotus.webp" alt="">
+    <div class="in">
+      <span class="tag b">buddhism</span>
+      <h2>the second arrow</h2>
+      <span style="color:#e6e8f2">pain is the first arrow. what we do next is the second. a 4-minute story, then a quick game.</span>
+      <div class="guide"><img src="../art/guides/buddhism.webp" alt=""><div><b>Orlando Bloom</b><div class="muted" style="font-size:13px">your guide today</div></div></div>
+    </div>
+  </div>
+  <div class="why"><span>✦</span><span><b>picked because you said</b> "less anger." you kept two teachings on patience this week, so i went one step further.</span></div>
+  <div class="fill"></div>
+  <div class="btn">start · 4 min</div>
+  <div class="muted" style="text-align:center;font-size:13px">not feeling it? <u>show me another</u></div>
+</section>
+
+<!-- 4 · keep this -->
+<section class="phone" id="s4">
+  <div class="status"><span>9:41</span><span>●●● ▮</span></div>
+  <div class="kick">you finished the second arrow</div>
+  <div class="fill" style="flex:.15"></div>
+  <div class="card">
+    <span class="tag b">from buddhism</span>
+    <div class="quote">"pain comes. the second arrow, the story i tell myself about it, is mine to put down."</div>
+    <div class="src">the Buddha's teaching of the two arrows, from the Sallatha Sutta.</div>
+  </div>
+  <div class="finn"><img src="../art/store/wave.webp" alt="Finn"><div class="bubble">did that ring true? if it did, it goes in your book. if not, no problem. it's your religion.</div></div>
+  <div class="fill"></div>
+  <div class="keep"><div class="btn">✦ keep this</div></div>
+  <div class="btn ghost">not for me</div>
+</section>
+
+<!-- 5 · my religion book -->
+<section class="phone" id="s5">
+  <div class="status"><span>9:41</span><span>●●● ▮</span></div>
+  <div class="kick">my religion · 23 pieces kept</div>
+  <h2>maya's book</h2>
+  <div class="tabs"><span class="on">all</span><span>beliefs</span><span>practices</span><span>holy days</span><span>places</span></div>
+  <div class="sec"><h3>what i believe</h3>
+    <div class="row"><b>pain comes. the second arrow is mine to put down.</b><span class="tag b">buddhism</span></div>
+    <div class="row"><b>everyone carries a spark worth honoring.</b><span class="tag h">hinduism</span></div>
+  </div>
+  <div class="sec"><h3>what i practice</h3>
+    <div class="row"><b>one evening a week, phone off, people on.</b><span class="tag j">judaism · shabbat</span></div>
+    <div class="row"><b>feed someone, no questions asked.</b><span class="tag s">sikhism · langar</span></div>
+  </div>
+  <div class="sec"><h3>my holy days</h3>
+    <div class="row" style="grid-template-columns:1fr 1fr;gap:8px">
+      <div style="display:grid;gap:4px"><b>Easter · new starts</b><span class="tag c" style="justify-self:start">christianity</span></div>
+      <div style="display:grid;gap:4px"><b>Diwali · light wins</b><span class="tag h" style="justify-self:start">hinduism</span></div>
+    </div>
+  </div>
+  <div class="fill"></div>
+  <div class="btn ghost">share my book</div>
+</section>
+
+<!-- 6 · common ground -->
+<section class="phone" id="s6">
+  <div class="status"><span>9:41</span><span>●●● ▮</span></div>
+  <div class="kick">something you found</div>
+  <h1>you've kept forgiveness from 4 faiths.</h1>
+  <span class="muted">four homes, four reasons. one thread running through all of them.</span>
+  <div class="thread">
+    <div class="row"><b>forgive "seventy times seven"</b><span class="tag c">christianity</span></div>
+    <div class="row"><b>make it right with people first</b><span class="tag j">judaism</span></div>
+    <div class="row"><b>"let them pardon and overlook"</b><span class="tag i">islam</span></div>
+    <div class="row"><b>where there's forgiveness, God is there</b><span class="tag s">sikhism</span></div>
+  </div>
+  <div class="corner">
+    <img src="../art/homes/wild.webp" alt="">
+    <div class="path" style="left:70px;top:122px;width:120px;transform:rotate(-14deg)"></div>
+    <div class="path" style="left:190px;top:92px;width:110px;transform:rotate(12deg)"></div>
+    <div class="lan" style="left:62px;top:112px"></div>
+    <div class="lan" style="left:184px;top:82px"></div>
+    <div class="lan" style="left:296px;top:106px"></div>
+    <div class="lan new" style="left:244px;top:140px"></div>
+    <div class="lab"><span><b>your corner of the hill</b><br><span class="muted" style="font-size:13px">a new lantern for forgiveness</span></span><span class="tag">+1</span></div>
+  </div>
+  <div class="finn"><img src="../art/store/wave.webp" alt="Finn"><div class="bubble">different roots, same light. i love watching your hill grow.</div></div>
+</section>
+
+</body></html>

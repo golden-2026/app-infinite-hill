@@ -11,6 +11,7 @@ import { KeyboardAvoidingView, Platform, Pressable, ScrollView, Text, TextInput,
 import { SafeAreaView } from "react-native-safe-area-context";
 import { addFact, getMemory, moodOn, MOODS, useMemory } from "@/lib/companion/memory";
 import { crisisWords } from "@/lib/companion/shape";
+import { splitSource } from "@/lib/companion/source";
 import { guideActions, movedOn, seeking, rememberOffers, shortFact, spotOf, switchHome, type DoorSpot, type GuideAction } from "@/lib/companion/guide-actions";
 import { router, useLocalSearchParams } from "expo-router";
 import { HelpCard } from "@/ui/companion";
@@ -129,9 +130,9 @@ function memoryFacts(): string[] {
 /** One line in the conversation: who ("g" guide/companion, "u" the person), what was said, facts offered to keep, and
  *  the taps offered under it (lib/companion/guide-actions.ts) or, after a path switch, where to go back to on "undo". */
 // the Guide's tap buttons: ink-filled for the yes, outlined otherwise (44pt tall, as every tap target here)
-const pill = (filled: boolean) => ({ backgroundColor: filled ? color.ink : "#fff", borderWidth: 1.5, borderColor: color.ink, borderRadius: 22, minHeight: 44, justifyContent: "center" as const, paddingHorizontal: 14, paddingVertical: 8, maxWidth: "100%" as const });
+const pill = (filled: boolean) => ({ backgroundColor: filled ? color.ink : color.white, borderWidth: 1.5, borderColor: color.ink, borderRadius: 22, minHeight: 44, justifyContent: "center" as const, paddingHorizontal: 14, paddingVertical: 8, maxWidth: "100%" as const });
 const pillText = (filled: boolean) => ({ fontFamily: font.text[600], fontSize: 13, color: filled ? color.cream : color.ink });
-type Extra = { actions?: GuideAction[]; undo?: DoorSpot };
+type Extra = { actions?: GuideAction[]; undo?: DoorSpot; source?: string };
 type Line = [string, string, string[]?, Extra?];
 
 export default function Guide() {
@@ -236,20 +237,24 @@ export default function Guide() {
     // someone who may be in danger never gets "that's a good question": a warm line, and the help card just below
     const offline = (q2: string) => (crisisWords(q2) ? t("companion.guide.crisisOffline") : movedOn(q2) && wing !== "SPIRITUAL" ? t("companion.guide.movedOffline", { door: doorLabel(wing) }) : seeking(q2) ? t("companion.guide.seekerOffline") : pilotAnswer(wing, q2, words, day));
     let line: Line;
+    let reply0: Awaited<ReturnType<typeof askCompanion>> = null;
     if (/my book|what i kept|from my (lines|beads)/i.test(question) || /^book$/i.test(question) || BOOK_ASK_ES.test(question.replace(/[¿?¡!]/g, "").trim())) {
       line = ["g", book.length ? t("companion.guide.bookHead") + book.map((b) => `“${b.line}”  — ${doorLabel(b.door)}, ${b.date}`).join("\n") + t("companion.guide.bookTail") : t("companion.guide.bookEmpty")];
     } else if (live) {
-      const reply = await askCompanion(hist.slice(1), question);
+      const reply = reply0 = await askCompanion(hist.slice(1), question);
       line = reply?.limited
         ? ["g", coupleChips.includes(question) ? coupleOffline() : `${offline(question)}${t("companion.guide.limited")}`]
         : reply?.text
-        ? ["g", reply.text, rememberOffers(reply.remember, new Set(getMemory().facts.map((f) => f.text.trim().toLowerCase())))]
+        ? ["g", reply.text.trim(), rememberOffers(reply.remember, new Set(getMemory().facts.map((f) => f.text.trim().toLowerCase())))]
         : ["g", coupleChips.includes(question) ? coupleOffline() : `${offline(question)}${t("companion.guide.failed")}`];
     } else {
       line = ["g", (await askLive(wing, words, hist.slice(1), question, guideProfile(saved.settings.profile ?? null, wing))) || (coupleChips.includes(question) ? coupleOffline() : offline(question))];
     }
+    // where the answer comes from (owner, 2026-11-05): the companion's own field, or the Guide's last "source:" line
+    const { text: said, source } = splitSource(line[1], live && reply0 ? reply0.source : null);
+    line = [line[0], said, line[2], source ? { source } : undefined];
     const actions = guideActions({ question, answer: line[1], door: wing, samplerStarted: !!saved.settings.sampler });
-    if (actions.length) line = [line[0], line[1], line[2], { actions }];
+    if (actions.length) line = [line[0], line[1], line[2], { ...line[3], actions }];
     setLog((l) => [...l, line]);
     setBusy(false);
     setTimeout(() => scroller.current?.scrollToEnd({ animated: true }), 50);
@@ -268,14 +273,17 @@ export default function Guide() {
             const canUndo = !!extra?.undo && !undone.has(i) && i === log.map((l) => !!l[3]?.undo).lastIndexOf(true);
             return (
             <View key={i} style={{ gap: 6 }}>
-              <View style={{ maxWidth: "88%", alignSelf: who === "u" ? "flex-end" : "flex-start", backgroundColor: who === "u" ? color.ink : "#fff", borderWidth: who === "u" ? 0 : 1, borderColor: color.line, borderRadius: 16, paddingVertical: 10, paddingHorizontal: 14 }}>
-                <Text style={[type.body(), { color: who === "u" ? color.cream : color.text }]}>{said}</Text>
+              <View style={{ maxWidth: "88%", alignSelf: who === "u" ? "flex-end" : "flex-start", backgroundColor: who === "u" ? color.gold : color.white, borderWidth: who === "u" ? 0 : 1, borderColor: color.line, borderRadius: 22, borderBottomRightRadius: who === "u" ? 6 : 22, borderBottomLeftRadius: who === "u" ? 22 : 6, paddingVertical: 12, paddingHorizontal: 16 }}>
+                <Text style={[type.body(15), { color: who === "u" ? "#0A0A0A" : color.text }, who === "u" ? { fontFamily: font.text[600] } : null]}>{said}</Text>
+                {extra?.source ? (
+                  <Text testID="guide-source" style={[type.body(12), { color: color.mute, marginTop: 8, paddingTop: 6, borderTopWidth: 1, borderTopColor: color.line }]}>{t("companion.guide.source", { source: extra.source })}</Text>
+                ) : null}
               </View>
               {actions.length ? (
                 // a next step, one tap (docs/GUIDE_PLAYBOOK.md rule 5); switching asks first and can be undone
                 <View testID="guide-actions" style={{ maxWidth: "88%", gap: 8 }}>
                   {asking === i ? (
-                    <View testID="own-path-confirm" style={{ backgroundColor: "#fff", borderWidth: 1.5, borderColor: color.ink, borderRadius: 16, padding: 12, gap: 10 }}>
+                    <View testID="own-path-confirm" style={{ backgroundColor: color.white, borderWidth: 1.5, borderColor: color.ink, borderRadius: 16, padding: 12, gap: 10 }}>
                       <Text style={[type.body(14), { color: color.text }]}>{t("companion.guide.ownPathAsk")}</Text>
                       <View style={{ flexDirection: "row", gap: 8, flexWrap: "wrap" }}>
                         <Pressable testID="own-path-yes" accessibilityRole="button" onPress={switchToOwn} style={pill(true)}><Text style={pillText(true)}>{t("companion.guide.ownPathYes")}</Text></Pressable>
@@ -311,7 +319,7 @@ export default function Guide() {
                       const has = kept.has(f.trim().toLowerCase());
                       return (
                         <Pressable key={f} accessibilityRole="button" accessibilityState={{ disabled: has }} accessibilityLabel={has ? t("companion.guide.keptA11y", { fact: f }) : t("companion.guide.rememberA11y", { fact: f })} disabled={has} onPress={() => addFact(f, todayDate())}
-                          style={{ backgroundColor: has ? color.ink : "#fff", borderWidth: 1, borderColor: color.ink, borderRadius: 22, minHeight: 44, justifyContent: "center", paddingHorizontal: 12, paddingVertical: 6, maxWidth: "100%" }}>
+                          style={{ backgroundColor: has ? color.ink : color.white, borderWidth: 1, borderColor: color.ink, borderRadius: 22, minHeight: 44, justifyContent: "center", paddingHorizontal: 12, paddingVertical: 6, maxWidth: "100%" }}>
                           <Text numberOfLines={1} style={{ fontFamily: font.text[600], fontSize: 12, lineHeight: 16, flexShrink: 1, color: has ? color.cream : color.ink }}>{has ? t("companion.guide.kept", { fact: shortFact(f) }) : `+ ${shortFact(f)}`}</Text>
                         </Pressable>
                       );
@@ -326,15 +334,15 @@ export default function Guide() {
           {busy ? <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}><Sun size={18} mood="spin" /><Text style={[type.body(12), { color: color.mute }]}>{t("companion.guide.looking")}</Text></View> : null}
           {log.length === 1 ? (
             <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8, marginTop: 6 }}>
-              {chips.map((c) => <Pressable key={c} accessibilityRole="button" onPress={() => send(c)} style={{ backgroundColor: "#fff", borderWidth: 1.5, borderColor: color.ink, borderRadius: 22, minHeight: 44, justifyContent: "center", paddingHorizontal: 14, paddingVertical: 8, maxWidth: "100%" }}><Text style={{ fontFamily: font.text[600], fontSize: 13, color: color.ink }}>{c}</Text></Pressable>)}
+              {chips.map((c) => <Pressable key={c} accessibilityRole="button" onPress={() => send(c)} style={{ backgroundColor: color.white, borderWidth: 1.5, borderColor: color.ink, borderRadius: 22, minHeight: 44, justifyContent: "center", paddingHorizontal: 14, paddingVertical: 8, maxWidth: "100%" }}><Text style={{ fontFamily: font.text[600], fontSize: 13, color: color.ink }}>{c}</Text></Pressable>)}
             </View>
           ) : null}
         </ScrollView>
         <Text style={[type.eyebrow(8), { paddingHorizontal: 18, paddingBottom: 6, color: color.mute }]}>{live ? t("companion.guide.footLive") : flag("guide-live") ? t("companion.guide.footGuideLive") : t("companion.guide.footPilot")}</Text>
         <View style={{ paddingHorizontal: 18, paddingBottom: 12, paddingTop: 4, flexDirection: "row", gap: 8 }}>
           <TextInput value={q} onChangeText={setQ} onSubmitEditing={() => send()} placeholder={t("companion.guide.chipMean", { word: wordName(today) })} placeholderTextColor={color.mute} accessibilityLabel={t("companion.guide.askA11y")} returnKeyType="send"
-            style={{ flex: 1, borderWidth: 1.5, borderColor: color.line, borderRadius: 999, paddingVertical: 12, paddingHorizontal: 16, fontFamily: font.text[400], fontSize: 16, backgroundColor: "#fff" }} />
-          <Pressable accessibilityRole="button" accessibilityLabel={t("companion.guide.send")} onPress={() => send()} style={{ backgroundColor: busy ? color.line : color.ink, borderRadius: 999, width: 46, height: 46, alignItems: "center", justifyContent: "center" }}><Text style={{ color: color.gold, fontSize: 18 }}>↑</Text></Pressable>
+            style={{ flex: 1, borderWidth: 1.5, borderColor: color.line, borderRadius: 999, paddingVertical: 12, paddingHorizontal: 16, fontFamily: font.text[400], fontSize: 16, backgroundColor: color.white }} />
+          <Pressable accessibilityRole="button" accessibilityLabel={t("companion.guide.send")} onPress={() => send()} style={{ backgroundColor: busy ? color.line : color.gold, borderRadius: 999, width: 50, height: 50, alignItems: "center", justifyContent: "center" }}><Text style={{ color: "#0A0A0A", fontSize: 22, fontFamily: font.text[700] }}>↑</Text></Pressable>
         </View>
       </KeyboardAvoidingView>
     </SafeAreaView>

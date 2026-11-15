@@ -1,0 +1,215 @@
+{
+ "id": "wild-well",
+ "home": "wild",
+ "title": "The water carrier",
+ "told": "an old story about Cleanthes",
+ "clips": "art/sacred/wild-well/clips/",
+ "voice": "art/sacred/wild-well/voice/",
+ "guide": {
+  "name": "Justin",
+  "photo": "art/guides/spiritual.webp"
+ },
+ "hook": {
+  "v": "CLW6-Today",
+  "say": "before the story, can i ask you something? what’s one chore you’d happily never do again?",
+  "options": [
+   [
+    "The dishes",
+    "classic. this story might change how they feel."
+   ],
+   [
+    "Laundry",
+    "fair. you’re about to meet a man with buckets."
+   ],
+   [
+    "Anything with email",
+    "that counts. listen."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "CLW1-Night-Well",
+   "vo": [
+    "V01"
+   ],
+   "line": "Cleanthes was a boxer who came to Athens, the story goes, with almost no money. He wanted to study with Zeno at the painted porch."
+  },
+  {
+   "t": "shot",
+   "v": "CLW1-Night-Well",
+   "vo": [
+    "V02"
+   ],
+   "line": "So every night he drew water from the wells in the city’s gardens, bucket after bucket. By day, he studied."
+  },
+  {
+   "t": "ask",
+   "v": "CLW3-The-Council",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "People wonder how he lives without seeming to work. He’s called before the court. Who does he bring?",
+   "o": [
+    "Zeno, to vouch for him",
+    "A rich friend who paid his way",
+    "The people he worked for at night"
+   ],
+   "a": 2,
+   "why": "Witnesses to his night work. Honest proof."
+  },
+  {
+   "t": "shot",
+   "v": "CLW3-The-Council",
+   "vo": [
+    "V03"
+   ],
+   "line": "Summoned to explain how he lived, he brought witnesses: the gardener whose water he drew, and a woman whose grain he ground."
+  },
+  {
+   "t": "ask",
+   "v": "CLW4-The-Gift",
+   "blur": true,
+   "predict": true,
+   "eb": "what happens next?",
+   "q": "The court is so impressed it votes him a gift of money. What does Zeno tell him?",
+   "o": [
+    "Take it, you’ve earned it",
+    "Don’t accept it",
+    "Share it with the school"
+   ],
+   "a": 1,
+   "why": "Turn it down. Diogenes Laertius puts the gift at ten minae, a real sum for a man drawing water at night."
+  },
+  {
+   "t": "shot",
+   "v": "CLW4-The-Gift",
+   "vo": [
+    "V04"
+   ],
+   "line": "The court was so impressed it voted him a gift of money. Zeno told him not to accept it."
+  },
+  {
+   "t": "ask",
+   "v": "CLW4-The-Gift",
+   "eb": "why?",
+   "q": "Why might Zeno tell him to refuse the money?",
+   "o": [
+    "His own work was already enough",
+    "A gift would leave him owing the city",
+    "The court was trying to trick him"
+   ],
+   "a": 0,
+   "why": "The water carrying wasn’t a problem to be solved. It was part of who he was becoming."
+  },
+  {
+   "t": "shot",
+   "v": "CLW5-Oyster-Shells",
+   "vo": [
+    "V05"
+   ],
+   "line": "Other students called him the donkey. Fine, he said: then I’m the one strong enough to carry Zeno’s load. He wrote his notes on oyster shells."
+  },
+  {
+   "t": "fill",
+   "v": "CLW5-Oyster-Shells",
+   "eb": "finish the line",
+   "pre": "Zeno compared Cleanthes to a hard wax tablet: tough to write on, but it",
+   "post": ".",
+   "o": [
+    "never cracks",
+    "keeps what’s written",
+    "shines with use"
+   ],
+   "a": 1,
+   "why": "Diogenes Laertius records it. Quick minds take an impression fast; Cleanthes was slow, but what went in stayed."
+  },
+  {
+   "t": "shot",
+   "v": "CLW2-At-The-Porch",
+   "vo": [
+    "V06"
+   ],
+   "line": "When Zeno died, the one who took over the school wasn’t the quickest student. It was Cleanthes, the water carrier."
+  },
+  {
+   "t": "shot",
+   "v": "CLW6-Today",
+   "vo": [
+    "V07"
+   ],
+   "line": "Today: the dishes at ten at night. One plate, then the next. Not beneath you. Carry the water.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "CLW6-Today",
+   "eb": "think about it",
+   "q": "Stoics split life into what’s up to us and what isn’t. Which was up to Cleanthes?",
+   "o": [
+    "Being poor when he arrived",
+    "What the others called him",
+    "How he carried the water"
+   ],
+   "a": 2,
+   "why": "Epictetus, a later Stoic, built his teaching on that line. Cleanthes couldn’t choose the nickname, only what he did with it."
+  },
+  {
+   "t": "teach",
+   "v": "CLW2-At-The-Porch",
+   "say": [
+    "here’s what i love. the slow student, the one they called the donkey, ended up leading the school. no task was beneath him.",
+    "the stoics taught that humble work and high work are done by the same character. drawing water well and studying well are one practice. that’s this week: an emperor, an enslaved teacher, a shipwrecked merchant, a cynic, and a boxer with a bucket."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "CLW6-Today",
+   "eb": "the hard one",
+   "q": "When Zeno died, the school went to Cleanthes, not a quicker student. What does that suggest the Stoics valued most?",
+   "o": [
+    "Strength, since he’d been a boxer",
+    "Steady character over quick wits",
+    "Seniority: he was there longest"
+   ],
+   "a": 1,
+   "why": "His philosophy wasn’t only on the porch. It was at the well too, bucket after bucket."
+  }
+ ],
+ "today": {
+  "v": "CLW6-Today",
+  "say": "today, pick one humble task, the dishes, the trash, a boring email, and do it slowly and well, like cleanthes drawing water. one bucket, then the next. notice how it changes when it isn’t beneath you.",
+  "options": [
+   [
+    "I’ll do it",
+    "good. carry the water."
+   ],
+   [
+    "I’ve got a pile waiting",
+    "then start with one bucket."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "Cato’s last night.",
+  "line": "a new week, and a stubborn roman senator who spends one long night reading."
+ },
+ "card": {
+  "from": "an old story about Cleanthes",
+  "mins": 5,
+  "keep": "jar",
+  "keepName": "Carry the water",
+  "keepWhy": "No task is beneath you when it’s done well.",
+  "sources": [
+   "Diogenes Laërtius, Lives of Eminent Philosophers 7.168–176: Cleanthes of Assos, first a boxer; came to Athens with four drachmas; drew water by night in gardens and studied by day; called the Well-drawer; summoned before the court (the Areopagus) to explain how he lived, he brought the gardener whose water he drew and the woman whose meal he ground; the court voted him ten minas, which Zeno would not let him accept; called an ass by fellow students, he said he alone could bear Zeno’s burden; wrote on oyster shells and the shoulder-blades of oxen because he could not buy paper; succeeded Zeno as head of the school.",
+   "Day 28 script: docs/curriculum/spiritual/scripts/y1/day-0028.json (Cleanthes; carry the water)."
+  ],
+  "check": [
+   "“The court” for the Areopagus; the day 28 script says “the city’s council.” Confirm.",
+   "“Strong enough to carry Zeno’s load” paraphrases “he alone could bear Zeno’s burden.” Confirm.",
+   "“Wasn’t the quickest student” rests on Diogenes Laërtius 7.170 (industrious but slow-witted). Confirm.",
+   "The tomorrow line teases day 29 (Cato at Utica) lightly, without its ending. Confirm that suits week five."
+  ]
+ }
+}

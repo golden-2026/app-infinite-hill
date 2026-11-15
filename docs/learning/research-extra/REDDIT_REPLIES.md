@@ -1,3 +1,5 @@
+Background only (written 2026-10-06). Where this disagrees with docs/VISION-NOW.md or docs/LESSON_STANDARD.md, those win.
+
 # What Reddit replies teach us: 45 threads, read in full
 
 Companion to `REDDIT.md` (the questions) and `THREADS_AND_COMMENTS.md` (YouTube). This file is about the **answers**:

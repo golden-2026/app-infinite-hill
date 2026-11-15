@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="data:,"><title>Guided Trip</title>
+<meta name="description" content="Infinite Hill prototype: the guide asks one question, flies you across a real globe to a real place, lets you walk it in 3D, teaches you there, then plays the story film, the check and a keepsake. trip.html?w=<world> (see places/trips.js).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@500;600;700;800&display=swap">
+<style>
+  /* The guide drives you to a real place (2026-10-29): ask → fly over the globe → arrive → learn → story film → keepsake.
+     Same night-on-the-hill look as hill-app-doors.html. Only "lit" places can be flown to; the guide leads. */
+  :root {
+    color-scheme: dark;
+    --night: #0A0A0A;
+    --panel: #141414;
+    --text: #fbf6ee;
+    --muted: #b9bfd3;
+    --gold: #EEFF6A;
+    --lamp: #EEFF6A;
+    --gold-ink: #0A0A0A;
+    --line: rgba(255, 255, 255, 0.14);
+    --chip: rgba(255, 255, 255, 0.08);
+  }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html, body { height: 100%; }
+  body { margin: 0; background: #0A0A0A; color: var(--text); font: 600 15px/1.45 Manrope, system-ui, sans-serif; display: flex; justify-content: center; align-items: center; overflow: hidden; }
+  button { font: inherit; color: inherit; cursor: pointer; }
+  .phone { position: relative; width: 100%; height: 100%; max-width: 430px; overflow: hidden; background: var(--night); }
+  @media (min-width: 700px) and (min-height: 760px) {
+    .phone { height: min(880px, calc(100% - 40px)); border-radius: 34px; box-shadow: 0 30px 80px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.08); }
+  }
+  .layer { position: absolute; inset: 0; opacity: 0; pointer-events: none; transition: opacity .7s ease; }
+  .layer.on { opacity: 1; pointer-events: auto; }
+  /* quiet time at the place (2026-10-30): the 3D place stays, the words go, one breathing light */
+  body.quiet #arrive .low, body.quiet #arrive .top, body.quiet #dragHint { display: none !important; }
+  #quietUI { position: absolute; inset: auto 0 0 0; z-index: 30; display: none; flex-direction: column; align-items: center; gap: 14px; padding: 24px 20px calc(28px + env(safe-area-inset-bottom, 0px)); background: linear-gradient(transparent, rgba(5,7,16,.82) 45%); text-align: center; }
+  body.quiet #quietUI { display: flex; }
+  #quietUI .ring { width: 92px; height: 92px; border-radius: 50%; border: 2px solid var(--lamp); box-shadow: 0 0 40px rgba(238,255,106,.45); animation: breathe 10s ease-in-out infinite; }
+  @keyframes breathe { 0%,100% { transform: scale(.7); opacity: .55 } 50% { transform: scale(1.12); opacity: 1 } }
+  @media (prefers-reduced-motion: reduce) { #quietUI .ring { animation: none; } }
+  #quietUI .qline { font: 600 17px/1.4 Manrope, sans-serif; color: #fff; min-height: 2.8em; max-width: 30ch; }
+  #quietUI .qt { font: 600 12px Manrope, sans-serif; color: var(--muted); letter-spacing: .08em; }
+  .eyebrow { font: 800 11px/1.2 Manrope, sans-serif; letter-spacing: .12em; text-transform: uppercase; color: var(--lamp); }
+  .btn { border: 0; border-radius: 999px; background: var(--gold); color: var(--gold-ink); font-weight: 900; padding: 13px 22px; font-size: 16px; box-shadow: 0 6px 20px rgba(240,185,61,.35); }
+  .btn.ghost { background: var(--chip); color: var(--text); box-shadow: none; border: 1px solid var(--line); font-weight: 800; }
+  .btn:active { transform: scale(.97); }
+  .chipx { display: inline-flex; align-items: center; gap: 6px; padding: 7px 11px; border-radius: 999px; background: rgba(8,10,22,.62); backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,.18); font-size: 13px; font-weight: 800; }
+  .top { position: absolute; top: calc(env(safe-area-inset-top, 0px) + 12px); left: 12px; right: 12px; display: flex; gap: 8px; align-items: center; z-index: 4; }
+  .round { width: 38px; height: 38px; border-radius: 50%; border: 1px solid rgba(255,255,255,.2); background: rgba(8,10,22,.62); font-size: 22px; line-height: 1; }
+
+  /* the guide */
+  .gstrip { display: flex; gap: 10px; align-items: center; }
+  .gface { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 2px solid var(--lamp); }
+  .gstrip small { display: block; color: var(--muted); font-size: 12px; font-weight: 600; }
+  .host { display: flex; gap: 10px; align-items: flex-end; }
+  .host video { width: 84px; height: 84px; object-fit: cover; border-radius: 50%; flex: none; background: #1c1c1c; }
+  .bubble[data-spk]::before { content: attr(data-spk); display: block; margin-bottom: 3px; font: 800 10.5px/1.2 Manrope, sans-serif; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); }
+  .host img.gvoice { width: 72px; height: 72px; object-fit: cover; object-position: 50% 25%; border-radius: 50%; flex: none; border: 2px solid var(--lamp); box-shadow: 0 0 24px rgba(238,255,106,.35); }
+  .bubble { background: #fbf6ee; color: #14182a; border-radius: 18px 18px 18px 4px; padding: 12px 14px; font-weight: 600; font-size: 15.5px; line-height: 1.4; box-shadow: 0 8px 26px rgba(0,0,0,.35); }
+
+  /* 1. ask */
+  #ask { background: radial-gradient(120% 70% at 50% 0%, #22305a 0%, var(--night) 60%); }
+  #ask .bg { position: absolute; inset: 0; background: url(art/world/map.webp) center 30% / cover; opacity: .28; filter: blur(2px); }
+  #ask .in { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; gap: 16px; padding: 24px 18px calc(28px + env(safe-area-inset-bottom, 0px)); }
+  .choices { display: grid; gap: 8px; }
+  .choices button { text-align: left; padding: 14px 16px; border-radius: 16px; background: rgba(20,27,51,.86); border: 1px solid var(--line); font-weight: 700; }
+  .choices button:active, .choices button.on { border-color: var(--lamp); background: #2a2a3a; }
+  .choices .btn { background: var(--gold); color: var(--gold-ink); border: 0; text-align: center; font-weight: 900; }
+
+  .gyro { border: 0; cursor: pointer; font: 800 13px Manrope, sans-serif; background: rgba(238,255,106,.95); color: #1a1206; margin-left: 8px; }
+  /* 2. the flight */
+  #fly { background: #02030a; }
+  #globe { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+  .pin { position: absolute; transform: translate(-50%, -130%); white-space: nowrap; pointer-events: none; transition: opacity .4s; }
+  .pin .chipx { font-size: 12px; padding: 5px 9px; }
+  .pin.soon .chipx { opacity: .65; font-weight: 700; }
+  .flycap { position: absolute; left: 0; right: 0; bottom: calc(34px + env(safe-area-inset-bottom, 0px)); text-align: center; padding: 0 20px; }
+  .flycap .h { font: 800 26px/1.15 Manrope, sans-serif; text-wrap: balance; text-shadow: 0 2px 18px rgba(0,0,0,.8); }
+  .flycap .s { color: var(--muted); margin-top: 6px; font-variant-numeric: tabular-nums; }
+  .flash { position: absolute; inset: 0; background: radial-gradient(circle at 50% 50%, #fff4cf, #EEFF6A 40%, rgba(238,255,106,0) 75%); opacity: 0; pointer-events: none; transition: opacity .9s ease; }
+  .flash.on { opacity: 1; }
+
+  /* 3. arrival */
+  #arrive { background: #000; overflow: hidden; }
+  #scene { position: absolute; top: 0; bottom: 0; left: 0; height: 100%; width: auto; max-width: none; transform-origin: 50% 50%; will-change: transform; cursor: grab; touch-action: none; user-select: none; -webkit-user-drag: none; }
+  #world { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: #000; }
+  #scene { transition: opacity 1.2s ease; }
+  #scene.gone { opacity: 0; pointer-events: none; }
+  #arrive .shade { position: absolute; inset: 0; background: linear-gradient(rgba(0,0,0,.35), transparent 22%, transparent 45%, rgba(4,6,12,.92) 82%); pointer-events: none; }
+  #arrive .low { position: absolute; left: 0; right: 0; bottom: 0; padding: 0 16px calc(22px + env(safe-area-inset-bottom, 0px)); display: grid; gap: 12px; }
+  #arrive .bubble { min-height: 74px; }
+  .dots { display: flex; gap: 5px; justify-content: center; }
+  .dots i { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,.3); }
+  .dots i.on { background: var(--lamp); }
+  .drag { position: absolute; top: 40%; left: 50%; transform: translateX(-50%); font-size: 12px; color: #fff; opacity: .85; white-space: nowrap; text-shadow: 0 1px 6px rgba(0,0,0,.7); animation: hint 2.4s ease-in-out 3; pointer-events: none; }
+  @keyframes hint { 0%,100% { transform: translateX(-60%); } 50% { transform: translateX(-40%); } }
+
+  /* 4b. quick check, for places without a story film yet */
+  #checkL { background: radial-gradient(120% 70% at 50% 0%, #22305a 0%, var(--night) 60%); }
+  #checkL .in { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; gap: 14px; padding: calc(56px + env(safe-area-inset-top, 0px)) 18px calc(28px + env(safe-area-inset-bottom, 0px)); }
+  #checkL .choices button.right { border-color: #7fd67f; background: #1d3524; }
+  #checkL .choices button.wrong { border-color: #e08a6a; background: #3a2420; }
+
+  /* 4. film */
+  #film { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: #000; }
+
+  /* 5. keepsake */
+  #keep { background: radial-gradient(120% 80% at 50% 10%, #2b2416 0%, var(--night) 60%); }
+  #keep .in { position: absolute; inset: 0; overflow-y: auto; display: flex; flex-direction: column; align-items: center; gap: 14px; padding: calc(56px + env(safe-area-inset-top, 0px)) 20px calc(28px + env(safe-area-inset-bottom, 0px)); text-align: center; }
+  .medal { width: 136px; height: 136px; filter: drop-shadow(0 10px 30px rgba(238,255,106,.45)); animation: pop .8s cubic-bezier(.2,1.6,.4,1) both; }
+  @keyframes pop { from { transform: scale(.3) rotate(-20deg); opacity: 0; } }
+  .what { font: 800 26px/1.15 Manrope, sans-serif; }
+  .sub { color: var(--muted); max-width: 30ch; }
+  .stamp { width: 100%; display: flex; gap: 12px; align-items: center; text-align: left; padding: 12px; border-radius: 18px; background: var(--panel); border: 1px solid var(--line); }
+  .stamp img { width: 64px; height: 64px; border-radius: 12px; object-fit: cover; flex: none; }
+  .stamp b { display: block; }
+  .stamp span { color: var(--muted); font-size: 13px; }
+  .next { width: 100%; display: grid; gap: 8px; }
+  .toast { position: absolute; left: 50%; bottom: 110px; transform: translateX(-50%); background: #fbf6ee; color: #14182a; padding: 10px 14px; border-radius: 12px; font-weight: 700; font-size: 14px; opacity: 0; transition: opacity .3s; pointer-events: none; z-index: 9; width: max-content; max-width: 86%; text-align: center; }
+  .toast.on { opacity: 1; }
+
+  /* ═══ the new brand (2026-11-06): same look as hill-app, the site and the episodes. restyle only ═══ */
+  :root { --night: #0A0A0A; --panel: #141414; --panel2: #1d1d1d; --text: #F3EFE4; --muted: rgba(243,239,228,.66); --gold: #EEFF6A; --lemon: #EEFF6A; --lamp: #EEFF6A; --gold-ink: #0A0A0A; --ink: #0A0A0A; --line: rgba(243,239,228,.14); --chip: rgba(243,239,228,.07); --ok: #19E68C; --glass: rgba(14,14,14,.74); }
+  body { background: #000; font-family: Manrope, system-ui, sans-serif; }
+  .phone { background: var(--night); }
+  .phone > .ih-grain { position: absolute; }
+  .eyebrow { font-family: Manrope, sans-serif; font-weight: 800; letter-spacing: .2em; color: var(--gold); }
+  .btn { font-family: Manrope, sans-serif; font-weight: 800; box-shadow: none; }
+  .btn.ghost { background: transparent; color: var(--text); border: 0; box-shadow: inset 0 0 0 2px rgba(243,239,228,.85); }
+  .chipx { background: rgba(10,10,10,.6); border: 0; box-shadow: inset 0 0 0 1.5px rgba(243,239,228,.35); }
+  .bubble { background: var(--panel2); color: var(--text); border: 0; box-shadow: inset 0 0 0 1px var(--line); }
+  .toast { background: var(--gold); color: var(--gold-ink); font-weight: 800; border-radius: 999px; }
+  .ih-k { color: var(--gold); font-style: normal; }
+  .flycap .h, .what, .stamp b { font-family: Anton, Impact, sans-serif !important; font-weight: 400 !important; text-transform: uppercase; letter-spacing: .01em; }
+  .flycap .h { font-size: 46px; line-height: .9; }
+  .flycap .s { font-weight: 800; letter-spacing: .12em; text-transform: uppercase; font-size: 12px; }
+  .what { font-size: 40px; line-height: .92; }
+  .stamp b { font-size: 20px; }
+  #ask { background: radial-gradient(120% 70% at 50% 0%, #1b1f05 0%, var(--night) 60%); }
+  #ask .bg { opacity: 1; filter: none; background: radial-gradient(120% 60% at 50% 0%, rgba(238,255,106,.10), transparent 60%), var(--night, #0A0A0A); } /* the old hill map art carried retired place names */
+  #checkL { background: radial-gradient(120% 70% at 50% 0%, #1b1f05 0%, var(--night) 60%); }
+  #keep { background: radial-gradient(120% 80% at 50% 10%, #1b1f05 0%, var(--night) 60%); }
+  .choices button { background: rgba(20,20,20,.88); border: 0; box-shadow: inset 0 0 0 1.5px rgba(243,239,228,.28); border-radius: 999px; padding: 14px 20px; font-weight: 800; }
+  .choices button:active, .choices button.on { box-shadow: inset 0 0 0 2px var(--gold); background: #1d1d1d; }
+  #checkL .choices button.right { box-shadow: inset 0 0 0 2px var(--ok); background: rgba(25,230,140,.14); }
+  #checkL .choices button.wrong { box-shadow: inset 0 0 0 2px rgba(243,239,228,.3); background: #141414; color: rgba(243,239,228,.55); }
+  .gface, .host img.gvoice { border-color: var(--gold); box-shadow: none; }
+  .gyro { background: var(--gold); color: var(--gold-ink); }
+  .stamp { background: var(--panel); border-radius: 22px; }
+  .flash { background: radial-gradient(circle at 50% 50%, #FBFFD6, #EEFF6A 40%, rgba(238,255,106,0) 75%); }
+  #arrive .shade { background: linear-gradient(rgba(0,0,0,.35), transparent 22%, transparent 45%, rgba(10,10,10,.94) 82%); }
+  #scene { filter: contrast(1.1) saturate(1.08) sepia(.14); }
+  #arrive::after { content: ""; position: absolute; inset: -50%; background: var(--ih-grain); opacity: .28; mix-blend-mode: overlay; pointer-events: none; z-index: 1; }
+  #arrive .low, #arrive .top { z-index: 2; }
+  #quietUI .ring { border-color: var(--gold); box-shadow: 0 0 40px rgba(238,255,106,.35); }
+  .dots i.on { background: var(--gold); }
+  .medal { filter: drop-shadow(0 10px 30px rgba(238,255,106,.3)); }
+</style>
+<link rel="stylesheet" href="brand/brand.css">
+
+<div class="phone" id="phone">
+  <div class="ih-grain" aria-hidden="true"></div>
+
+  <!-- 1. the guide asks one thing -->
+  <section class="layer on" id="ask">
+    <div class="bg"></div>
+    <div class="top"><a class="round" id="backBtn" href="hill-app-doors.html" aria-label="back" style="display:grid;place-items:center;text-decoration:none;color:inherit">‹</a>
+      <div class="gstrip chipx" style="padding:4px 12px 4px 4px"><img class="gface" id="gPhoto" style="width:30px;height:30px;border-width:1.5px" src="" alt=""><span><b id="gName"></b><small id="gDoor"></small></span></div></div>
+    <div class="in">
+      <div class="host"><video src="art/kit/C1-Wave-3s.mp4" autoplay muted loop playsinline aria-hidden="true"></video><div class="bubble" id="askLine"></div></div>
+      <div class="choices" id="choices"></div>
+    </div>
+  </section>
+
+  <!-- 2. the flight -->
+  <section class="layer" id="fly">
+    <canvas id="globe"></canvas>
+    <div id="pins"></div>
+    <div class="flycap"><div class="eyebrow" id="flyEy">your guide is taking you</div><div class="h" id="flyH"></div><div class="s" id="flyS"></div></div>
+    <div class="flash" id="flash"></div>
+  </section>
+
+  <!-- 3. arrival: the place itself -->
+  <section class="layer" id="arrive">
+    <iframe id="world" title="the place in 3D" tabindex="-1" allow="accelerometer; gyroscope; magnetometer"></iframe>
+    <img id="scene" src="" alt="" draggable="false">
+    <div class="shade"></div>
+    <div class="top"><span class="chipx" id="where"></span><button class="chipx gyro" id="gyroBtn" hidden>📱 look around</button></div>
+    <div class="drag" id="dragHint">‹ drag to look around ›</div>
+    <div class="low">
+      <div class="host"><video src="art/kit/C2-Nod-3s.mp4" autoplay muted loop playsinline aria-hidden="true"></video><div class="bubble" id="tLine"></div></div>
+      <div class="dots" id="tDots"></div>
+      <button class="btn" id="tNext">next</button>
+    </div>
+    <div id="quietUI" aria-live="polite"><div class="ring" aria-hidden="true"></div><div class="qline" id="qLine"></div><div class="qt" id="qTime"></div><button class="btn ghost" id="qDone" style="width:auto;padding-inline:28px">i'm done</button></div>
+  </section>
+
+  <!-- 4. the story film (with its own guesses and 3-question check) -->
+  <section class="layer" id="filmL"><iframe id="film" title="the story" allow="autoplay; fullscreen"></iframe></section>
+
+  <!-- 4b. a quick check when there's no film -->
+  <section class="layer" id="checkL">
+    <div class="in">
+      <div class="eyebrow" id="cN">quick check</div>
+      <div class="host"><video src="art/kit/C2-Nod-3s.mp4" autoplay muted loop playsinline aria-hidden="true"></video><div class="bubble" id="cQ"></div></div>
+      <div class="choices" id="cA"></div>
+    </div>
+  </section>
+
+  <!-- 5. keepsake + story card (trips earn cards; stamps are only for real-life attendance, 2026-11-10) -->
+  <section class="layer" id="keep">
+    <div class="in">
+      <div class="eyebrow">you were there</div>
+      <svg class="medal" id="medal" viewBox="0 0 100 100" aria-hidden="true"><defs><radialGradient id="mg" cx="35%" cy="30%" r="80%"><stop offset="0" stop-color="#fff1c2"/><stop offset=".45" stop-color="#f0b93d"/><stop offset="1" stop-color="#a8701a"/></radialGradient></defs><circle cx="50" cy="50" r="46" fill="url(#mg)" stroke="#fff3c8" stroke-width="2"/><circle cx="50" cy="56" r="17" fill="none" stroke="#2a1b05" stroke-width="6"/><path d="M42 36l8-9 8 9-8 6z" fill="#2a1b05"/></svg>
+      <div class="what" id="kWhat"></div>
+      <div class="sub" id="kSub"></div>
+      <span class="chipx" id="score"></span>
+      <div class="stamp"><img id="stampImg" src="" alt=""><div><b id="stampName"></b><span>new story card · first visit</span></div></div>
+      <div class="host" style="width:100%"><video src="art/kit/C1-Wave-3s.mp4" autoplay muted loop playsinline aria-hidden="true"></video><div class="bubble" id="keepLine"></div></div>
+      <div class="next">
+        <button class="btn" id="sitQuiet">stay a minute: sit here quietly</button>
+        <button class="btn ghost" id="openMap">open your map</button>
+        <button class="btn ghost" id="goHome">back to today</button>
+        <button class="btn ghost" id="realTrip">one day, go for real with your circle</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="toast" id="toast"></div>
+</div>
+
+<script src="brand/episodes.js"></script>
+<script src="places/trips.js"></script>
+<script src="places/trips-more.js"></script>
+<script src="lib/three.min.js"></script>
+<script src="lib/ih-es.js"></script>
+<script src="lib/ih-es-screens.js"></script>
+<script src="lib/ih-four.js"></script>
+<script>
+(function () {
+  // Spanish (2026-11-11): same signal as hill-app-doors.html. The trip's frame and the guide's own lines are Spanish; each place's
+  // teaching (places/trips*.js) has no Spanish yet and stays as written, except the lines every trip shares (lib/ih-es-screens.js).
+  var tx = function (en, es, v) { return window.IH4 ? IH4.t(en, es, v) : en; };
+  var LK = function (u) { return window.IH4 ? IH4.withLang(u) : u; };
+  var DOOR_ES = { "Christianity": "cristianismo", "Catholic": "catolicismo", "Judaism": "judaísmo", "Islam": "islam", "Hinduism": "hinduismo", "Buddhism": "budismo", "Sikhism": "sijismo", "My own religion": "mi propia religión", "My own path": "mi propia religión" };
+  if (window.IH4) IH4.start();
+  // this page's own Spanish for its lowercase buttons (2026-11-15)
+  if (window.IH4 && IH4.isEs()) { var TES = { tNext: "siguiente", qDone: "ya terminé", sitQuiet: "quédate un minuto: siéntate aquí en calma", openMap: "abre tu mapa", goHome: "volver a hoy", realTrip: "algún día, ve de verdad con tu círculo" };
+    Object.keys(TES).forEach(function (id) { var el = document.getElementById(id); if (el) el.textContent = TES[id]; });
+    var nsc = document.querySelector("#keep .stamp span"); if (nsc) nsc.textContent = "carta de historia nueva · primera visita"; }
+  var $ = function (s) { return document.querySelector(s); };
+  function show(id) { [].forEach.call(document.querySelectorAll(".layer"), function (l) { l.classList.toggle("on", l.id === id); }); }
+  var Q = new URLSearchParams(location.search);
+  var W = (Q.get("w") || "galilee").replace(/[^a-z0-9-]/g, "");
+  var T = window.IH_TRIPS[W] || window.IH_TRIPS.galilee;
+  // a lesson trip (2026-11-02): the hill app sends today's story and its real place; the globe flies there,
+  // you look around (the 3D world when one is near, else the painting), then the story plays and reports back
+  var LID = (Q.get("l") || "").replace(/[^a-z0-9-]/g, ""), INAPP = Q.get("app") === "1" && parent !== window;
+  if (LID) {
+    var lat = +Q.get("lat"), lon = +Q.get("lon"), nm = Q.get("n") || "", ct = Q.get("c") || "", why = Q.get("why") || "", door = Q.get("door") || "";
+    var near = null, nd = 1e9, gd = null;
+    Object.keys(window.IH_TRIPS).forEach(function (k) {
+      var t = window.IH_TRIPS[k], d = miles({ lat: lat, lon: lon }, t.dest);
+      if (d < nd) { nd = d; near = k; }
+      if (!gd && t.guide.door === door) gd = t.guide;
+    });
+    var NT = nd <= 40 ? window.IH_TRIPS[near] : null;
+    var short = nm.replace(/^the /i, "");
+    T = {
+      world: NT ? NT.world : null, guide: gd || T.guide, askLine: "", dest: { name: short.split(" (")[0], lat: lat, lon: lon }, soon: [],
+      region: ct, flyName: nm, where: short + (ct && nm.indexOf(ct) < 0 ? " · " + ct : ""),
+      painting: Q.get("img") || (NT && NT.painting) || "", alt: nm,
+      // the why rides on the first landing screen (2026-11-04): you see the place and why you're here at once
+      teach: [tx("you made it. look around for a second.", "llegaste. mira a tu alrededor un momento."), tx("the story first. after it, i'll tell you where we are.", "primero la historia. después te digo dónde estamos.")],
+      film: "play.html?l=" + LID, keep: { what: "", sub: "" }, keepLine: "", real: ""
+    };
+  }
+  function miles(a, b) {
+    var r = Math.PI / 180, dLat = (b.lat - a.lat) * r, dLon = (b.lon - a.lon) * r;
+    var h = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(a.lat * r) * Math.cos(b.lat * r) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    return Math.round(3958.8 * 2 * Math.atan2(Math.sqrt(h), Math.sqrt(1 - h)) / 10) * 10;
+  }
+  // owner, 2026-11-14: the path's celebrity guide says every line on the trip: their round photo + first name on every bubble. Finn never speaks.
+  [].forEach.call(document.querySelectorAll(".host video"), function (v) { var im = document.createElement("img"); im.className = "gvoice"; im.src = T.guide.photo; im.alt = T.guide.name; var b = v.parentNode.querySelector(".bubble"); if (b) b.setAttribute("data-spk", String(T.guide.name).split(" ")[0]); v.replaceWith(im); });
+  $("#gPhoto").src = T.guide.photo; $("#gName").textContent = T.guide.name; $("#gName").setAttribute("translate", "no"); $("#gDoor").textContent = window.IH4 && IH4.isEs() ? "cuenta la historia · " + (DOOR_ES[T.guide.door] || T.guide.door) : "tells the story · " + T.guide.door; // the guide tells the story and does the talking
+  $("#askLine").textContent = T.askLine;
+  $("#flyH").textContent = tx("somewhere real", "a un lugar real"); // the place itself is revealed after the story
+  $("#backBtn").setAttribute("href", LK("hill-app-doors.html"));
+  $("#scene").src = T.painting; $("#scene").alt = "";
+  $("#where").textContent = T.dest.name; $("#where").hidden = true; // no name before the story
+  $("#kWhat").textContent = T.keep.what; $("#kSub").textContent = T.keep.sub;
+  if (T.keep.medal) $("#medal").innerHTML = $("#medal").innerHTML.replace(/<circle cx="50" cy="56"[\s\S]*$/, T.keep.medal);
+  $("#stampImg").src = T.painting; $("#stampName").textContent = T.dest.name;
+  document.title = tx("A trip with your guide", "Un viaje con tu guía");
+  ["#kWhat", "#kSub", "#stampName", "#where", "#flyH"].forEach(function (s) { $(s).setAttribute("translate", "no"); }); // the place's own words
+  function toast(t) { var e = $("#toast"); e.textContent = t; e.classList.add("on"); setTimeout(function () { e.classList.remove("on"); }, 2600); }
+
+  // ── 1. the guide gets to know you (one question), then picks the place ──
+  var ASK = T.ask || [];
+  ASK.forEach(function (a) {
+    var b = document.createElement("button"); b.textContent = a.t;
+    b.onclick = function () {
+      b.classList.add("on");
+      $("#askLine").textContent = a.r;
+      $("#choices").innerHTML = '<button class="btn" id="goFly" style="text-align:center">' + tx("let's go ›", "vamos ›") + '</button>';
+      $("#goFly").onclick = fly;
+    };
+    $("#choices").appendChild(b);
+  });
+
+  // ── 2. the globe flight: home → Galilee. Only lit places can be flown to. ──
+  var HOME = { name: "you", lat: 20, lon: 0 };           // the globe starts over open sea: we never guess your city
+  var DEST = T.dest;
+  var LIT = [DEST];
+  var SOON = T.soon;
+  function vec(lat, lon, rad) {
+    var phi = (90 - lat) * Math.PI / 180, th = (lon + 180) * Math.PI / 180;
+    return new THREE.Vector3(-Math.sin(phi) * Math.cos(th), Math.cos(phi), Math.sin(phi) * Math.sin(th)).multiplyScalar(rad || 1);
+  }
+  function glowTex(c1) {
+    var c = document.createElement("canvas"); c.width = c.height = 64; var x = c.getContext("2d");
+    var g = x.createRadialGradient(32, 32, 0, 32, 32, 32); g.addColorStop(0, "#fff"); g.addColorStop(.25, c1); g.addColorStop(1, "rgba(0,0,0,0)");
+    x.fillStyle = g; x.fillRect(0, 0, 64, 64); return new THREE.CanvasTexture(c);
+  }
+  var R3, started = false, noGlobe = false;
+  function setupGlobe() {
+    var cv = $("#globe"), ren;
+    try { ren = new THREE.WebGLRenderer({ canvas: cv, antialias: true }); } catch (e) { noGlobe = true; return; }
+    ren.setPixelRatio(Math.min(2, devicePixelRatio || 1));
+    var scene = new THREE.Scene(), cam = new THREE.PerspectiveCamera(40, 1, 0.01, 100);
+    var load = new THREE.TextureLoader();
+    var earthTex = load.load("art/trip/earth.jpg"); earthTex.colorSpace = THREE.SRGBColorSpace; earthTex.anisotropy = 8;
+    var earth = new THREE.Mesh(new THREE.SphereGeometry(1, 96, 64), new THREE.MeshPhongMaterial({ map: earthTex, shininess: 8, specular: 0x223344 }));
+    scene.add(earth);
+    var clouds = new THREE.Mesh(new THREE.SphereGeometry(1.008, 64, 48), new THREE.MeshLambertMaterial({ color: 0xffffff, alphaMap: load.load("art/trip/clouds.jpg"), transparent: true, opacity: .32, depthWrite: false }));
+    scene.add(clouds);
+    // soft blue rim of atmosphere
+    var atmo = new THREE.Mesh(new THREE.SphereGeometry(1.12, 64, 48), new THREE.ShaderMaterial({
+      side: THREE.BackSide, transparent: true, depthWrite: false,
+      vertexShader: "varying vec3 n; void main(){ n = normalize(normalMatrix*normal); gl_Position = projectionMatrix*modelViewMatrix*vec4(position,1.); }",
+      fragmentShader: "varying vec3 n; void main(){ float i = pow(.62 - dot(n, vec3(0.,0.,1.)), 3.); gl_FragColor = vec4(.45,.68,1.,1.)*i*1.6; }"
+    }));
+    scene.add(atmo);
+    // stars
+    var sg = new THREE.BufferGeometry(), sp = [];
+    for (var i = 0; i < 1400; i++) { var v = new THREE.Vector3(Math.random() - .5, Math.random() - .5, Math.random() - .5).normalize().multiplyScalar(30 + Math.random() * 20); sp.push(v.x, v.y, v.z); }
+    sg.setAttribute("position", new THREE.Float32BufferAttribute(sp, 3));
+    scene.add(new THREE.Points(sg, new THREE.PointsMaterial({ color: 0xffffff, size: .08, transparent: true, opacity: .8 })));
+    scene.add(new THREE.AmbientLight(0xffffff, .55));
+    var sun = new THREE.DirectionalLight(0xfff2dd, 1.5); scene.add(sun);
+    // lamps: lit places glow gold, others are dim
+    var gold = glowTex("rgba(238,255,106,.9)"), dim = glowTex("rgba(185,191,211,.5)");
+    var lamps = [];
+    LIT.concat(SOON).forEach(function (p) {
+      var lit = LIT.indexOf(p) >= 0;
+      var s = new THREE.Sprite(new THREE.SpriteMaterial({ map: lit ? gold : dim, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending }));
+      s.position.copy(vec(p.lat, p.lon, 1.01)); s.scale.setScalar(lit ? .09 : .045); scene.add(s); lamps.push({ s: s, p: p, lit: lit });
+    });
+    var homeDot = new THREE.Sprite(new THREE.SpriteMaterial({ map: glowTex("rgba(238,255,106,.9)"), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending }));
+    homeDot.position.copy(vec(HOME.lat, HOME.lon, 1.01)); homeDot.scale.setScalar(.06); scene.add(homeDot);
+    // the flight path: great circle, lifted in the middle
+    var a = vec(HOME.lat, HOME.lon), b = vec(DEST.lat, DEST.lon), N = 160, pts = [];
+    for (var k = 0; k <= N; k++) { var t = k / N, p = slerp(a, b, t); pts.push(p.multiplyScalar(1.012 + Math.sin(Math.PI * t) * .28)); }
+    var arcG = new THREE.BufferGeometry().setFromPoints(pts);
+    var arc = new THREE.Line(arcG, new THREE.LineBasicMaterial({ color: 0xEEFF6A, transparent: true, opacity: .95 }));
+    arcG.setDrawRange(0, 0); scene.add(arc);
+    var plane = new THREE.Sprite(new THREE.SpriteMaterial({ map: glowTex("rgba(255,244,207,1)"), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending }));
+    plane.scale.setScalar(.07); scene.add(plane);
+    // html labels that follow the globe
+    var pinEls = lamps.map(function (l) {
+      var e = document.createElement("div"); e.className = "pin" + (l.lit ? "" : " soon");
+      e.innerHTML = l.lit ? '<span class="chipx">✦</span>' : ""; // no place names on the globe before the story
+      $("#pins").appendChild(e); return e;
+    });
+    var homeEl = document.createElement("div"); homeEl.className = "pin"; homeEl.innerHTML = '<span class="chipx">' + tx("you are here", "estás aquí") + '</span>'; $("#pins").appendChild(homeEl);
+    function size() { var r = cv.getBoundingClientRect(); ren.setSize(r.width, r.height, false); cam.aspect = r.width / r.height; cam.updateProjectionMatrix(); }
+    addEventListener("resize", size);
+    R3 = { ren: ren, scene: scene, cam: cam, earth: earth, clouds: clouds, sun: sun, a: a, b: b, arcG: arcG, N: N, pts: pts, plane: plane, lamps: lamps, pinEls: pinEls, homeEl: homeEl, homeDot: homeDot, size: size };
+  }
+  function slerp(a, b, t) { var o = Math.acos(Math.min(1, Math.max(-1, a.dot(b)))), s = Math.sin(o); return a.clone().multiplyScalar(Math.sin((1 - t) * o) / s).add(b.clone().multiplyScalar(Math.sin(t * o) / s)); }
+  function ease(t) { return t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
+  function place(el, v) {
+    var c = R3.cam, p = v.clone().project(c), facing = v.clone().normalize().dot(c.position.clone().normalize()) > .15;
+    var w = R3.ren.domElement.clientWidth, h = R3.ren.domElement.clientHeight;
+    el.style.left = (p.x * .5 + .5) * w + "px"; el.style.top = (-p.y * .5 + .5) * h + "px"; el.style.opacity = facing ? 1 : 0;
+  }
+
+  function fly() {
+    if (!R3 && !noGlobe) setupGlobe();
+    if (!R3) { arrive(); return; } // this phone can't draw the globe: land straight on the place
+    show("fly");
+    R3.size();
+    var dist = miles(HOME, DEST);
+    $("#flyS").textContent = tx("the story's waiting there", "la historia te espera allá"); // no home city: we don't know where you are, so we don't guess
+    var T0 = performance.now(), HOLD = 1400, TRIP = 7600, LAND = 2200, flashed = false;
+    function frame(now) {
+      var e = now - T0, c = R3.cam;
+      var t = Math.min(1, Math.max(0, (e - HOLD) / TRIP)), et = ease(t);
+      // where the camera looks: from home to Galilee, rising out then diving in
+      var dir = slerp(R3.a, R3.b, et), alt = 3.1 + Math.sin(Math.PI * et) * 1.1;
+      if (e > HOLD + TRIP) { var l = Math.min(1, (e - HOLD - TRIP) / LAND); alt = 3.1 - ease(l) * 1.98; }
+      // tilt the view a little north so the path reads as an arc
+      c.position.copy(dir.clone().multiplyScalar(alt).add(new THREE.Vector3(0, .25 * Math.sin(Math.PI * et), 0)));
+      c.up.set(0, 1, 0); c.lookAt(dir.clone().multiplyScalar(e > HOLD + TRIP ? .985 : 0));
+      R3.sun.position.copy(c.position.clone().add(new THREE.Vector3(2, 1.5, 0)));
+      R3.clouds.rotation.y = now * .000006;
+      var drawn = Math.round(R3.N * Math.min(1, t * 1.04)); R3.arcG.setDrawRange(0, drawn + 1);
+      R3.plane.position.copy(R3.pts[Math.min(R3.N, drawn)]); R3.plane.visible = t > 0 && t < 1;
+      var pulse = 1 + Math.sin(now / 260) * .18;
+      R3.lamps.forEach(function (l, i) { if (l.lit) l.s.scale.setScalar(.09 * pulse * (alt < 1.6 ? alt / 1.6 : 1)); place(R3.pinEls[i], l.s.position); });
+      place(R3.homeEl, R3.homeDot.position); if (t > .25) R3.homeEl.style.opacity = 0;
+      if (t >= 1) { $("#flyEy").textContent = tx("arriving", "llegando"); $("#flyH").textContent = tx("you made it", "llegaste"); }
+      R3.ren.render(R3.scene, c);
+      if (!flashed && e > HOLD + TRIP + LAND - 450) { flashed = true; $("#flash").classList.add("on"); }
+      if (e < HOLD + TRIP + LAND + 300) requestAnimationFrame(frame); else arrive();
+    }
+    requestAnimationFrame(frame);
+  }
+
+  // ── 3. arrival: the guide teaches on the spot (story → teaching → today comes inside the film) ──
+  var TEACH = T.teach;
+  var ti = 0, panX = 0, minX = 0, z0 = 0, raf;
+  function arrive() {
+    show("arrive");
+    setTimeout(function () { $("#flash").classList.remove("on"); }, 400);
+    $("#tDots").innerHTML = TEACH.map(function () { return "<i></i>"; }).join("");
+    ti = 0; say();
+    // the walkable 3D world loads behind the painting and takes over once its first frame is drawn
+    // three Marble worlds never finished building: those trips stay a painted scene you can pan (2026-10-30)
+    if (T.world && !{ "kedarnath": 1, "western-wall": 1, "iona": 1 }[T.world] && !$("#world").getAttribute("src")) $("#world").src = "world.html?w=" + T.world + (/[?&]lite/.test(location.search) ? "&lite" : "");
+    var img = $("#scene");
+    function fit() { var w = img.getBoundingClientRect().width / (curScale || 1), W = $("#arrive").clientWidth; minX = Math.min(0, W - w); panX = minX * .72; }
+    if (img.complete && img.naturalWidth) fit(); img.onload = fit; setTimeout(fit, 400);
+    z0 = performance.now(); cancelAnimationFrame(raf); raf = requestAnimationFrame(drift);
+  }
+  var curScale = 1;
+  function drift(now) {
+    // living painting: slow push-in, the viewer can drag to look around
+    var k = Math.min(1, (now - z0) / 30000); curScale = 1.04 + k * .08;
+    $("#scene").style.transform = "translateX(" + panX + "px) scale(" + curScale + ")";
+    raf = requestAnimationFrame(drift);
+  }
+  (function dragLook() {
+    var img = $("#scene"), sx = 0, px = 0, on = false;
+    img.addEventListener("pointerdown", function (e) { on = true; sx = e.clientX; px = panX; img.setPointerCapture(e.pointerId); $("#dragHint").hidden = true; });
+    img.addEventListener("pointermove", function (e) { if (on) panX = Math.max(minX, Math.min(0, px + e.clientX - sx)); });
+    img.addEventListener("pointerup", function () { on = false; });
+  })();
+  // sweep 2026-11-15: the six old prototype films (*-film.html) carry the old narrator; their stories are episodes now, voiced by the guide
+  var FILM_EP = { "lost-son-film.html": "lost-son", "ganga-film.html": "ganga", "ruth-film.html": "ruth", "annapurna-film.html": "annapurna", "parvati-film.html": "parvati", "homecoming-film.html": "homecoming" };
+  var EPID = LID || FILM_EP[T.film] || "";
+  function say() {
+    $("#tLine").textContent = TEACH[ti];
+    [].forEach.call($("#tDots").children, function (d, i) { d.classList.toggle("on", i <= ti); });
+    $("#tNext").textContent = ti < TEACH.length - 1 ? tx("next", "siguiente") : EPID && window.IHEp && IHEp.has(EPID) ? tx("play the story", "ver la historia") : T.film ? tx("watch the story", "ver la historia") : tx("quick check", "repaso rápido");
+  }
+  $("#tNext").onclick = function () {
+    if (ti < TEACH.length - 1) { ti++; say(); return; }
+    // lessons are episodes now (2026-11-06): hand the story to its episode when it has one; the app keeps the stamp and streak
+    if (EPID && window.IHEp && IHEp.has(EPID)) { if (INAPP) parent.postMessage({ ih: "episode", id: EPID }, "*"); else location.href = LK(IHEp.url(EPID)); return; }
+    if (!T.film) { check(); return; }
+    $("#film").src = LK(T.film + (T.film.indexOf("?") < 0 ? "?" : "&") + "app=1");
+    show("filmL");
+  };
+
+  // ── 4b. no film yet: three quick questions, the guide explains each answer ──
+  function check() {
+    var qi = 0, score = 0, Q = T.check || [];
+    if (!Q.length) { finish(0, 0); return; }
+    $("#checkL").style.background = "linear-gradient(rgba(10,10,10,.5), rgba(10,10,10,.94) 62%), url(" + T.painting + ") center / cover";
+    show("checkL");
+    function ask() {
+      var q = Q[qi]; $("#cN").textContent = tx("quick check · " + (qi + 1) + " of " + Q.length, "repaso rápido · " + (qi + 1) + " de " + Q.length);
+      $("#cQ").setAttribute("translate", "no"); $("#cA").setAttribute("translate", "no");
+      $("#cQ").textContent = q.q; $("#cA").innerHTML = "";
+      // shuffle the answers so the right one isn't always in the same place
+      var order = q.options.map(function (_, i) { return i; }).sort(function () { return Math.random() - .5; });
+      order.forEach(function (i) {
+        var o = q.options[i], b = document.createElement("button"); b.textContent = o; b.dataset.i = i;
+        b.onclick = function () {
+          if ($("#cA").dataset.done) return; $("#cA").dataset.done = 1;
+          var ok = i === q.a; if (ok) score++;
+          b.classList.add(ok ? "right" : "wrong"); if (!ok) $("#cA").querySelector('[data-i="' + q.a + '"]').classList.add("right");
+          $("#cQ").textContent = (ok ? tx("yes. ", "¡sí! ") : tx("close. ", "casi. ")) + q.why;
+          var n = document.createElement("button"); n.className = "btn"; n.textContent = qi < Q.length - 1 ? tx("next", "siguiente") : tx("finish", "terminar");
+          n.onclick = function () { delete $("#cA").dataset.done; qi++; if (qi < Q.length) ask(); else finish(score, Q.length); };
+          $("#cA").appendChild(n);
+        };
+        $("#cA").appendChild(b);
+      });
+    }
+    ask();
+  }
+  function finish(score, of) {
+    $("#score").hidden = !of;
+    $("#score").textContent = tx(score + " of " + of + " on the check", score + " de " + of + " en el repaso");
+    $("#keepLine").textContent = T.keepLine;
+    try { var d = JSON.parse(localStorage.getItem("ih-trips-done") || "[]"); if (d.indexOf(W) < 0) d.push(W); localStorage.setItem("ih-trips-done", JSON.stringify(d)); var n = new Date(); localStorage.setItem("ih-trip-last", JSON.stringify({ w: W, date: n.getFullYear() + "-" + (n.getMonth() + 1) + "-" + n.getDate() })); } catch (e) {}
+    show("keep");
+  }
+
+  // ── 4 → 5. the film reports back; keepsake and story card ──
+  addEventListener("message", function (e) {
+    if (!e.data || !e.data.ih) return;
+    if (e.data.ih === "world-ready") { $("#scene").classList.add("gone"); $("#dragHint").hidden = false; $("#dragHint").textContent = tx("drag to look · hold the ground to walk", "arrastra para mirar · mantén presionado el suelo para caminar"); return; }
+    if (e.data.ih === "close") { show("arrive"); setTimeout(function () { $("#film").src = "about:blank"; }, 600); }
+    if (e.data.ih === "done" && INAPP) { parent.postMessage({ ih: "done", score: e.data.score || 0, of: e.data.of || 3 }, "*"); return; }
+    if (e.data.ih === "done") {
+      finish(e.data.score || 0, e.data.of || 3); setTimeout(function () { $("#film").src = "about:blank"; }, 600);
+    }
+  });
+  $("#goHome").onclick = function () { location.href = LK("hill-app-doors.html"); };
+  $("#realTrip").onclick = function () { toast(T.real); };
+  // stay a while: the place, no words, one minute of slow breathing (prayer and meditation are always a choice)
+  var DOORMAP = { "Christianity": "christianity", "Catholic": "catholic", "Hinduism": "hinduism", "Judaism": "judaism", "Islam": "islam", "Buddhism": "buddhism", "Sikhism": "sikhism", "My own religion": "spiritual", "My own path": "spiritual" };
+  $("#openMap").onclick = function () { location.href = LK("map.html#" + (DOORMAP[T.guide.door] || "christianity")); };
+  var qTimer = null;
+  var QLINES = window.IH4 && IH4.isEs() ? ["puedes quedarte todo lo que quieras.", "inhala mientras la luz crece.", "y exhala mientras se apaga.", "nada que hacer. solo estar aquí.", "si quieres rezar, puedes. si no, solo respira."] : ["you can stay as long as you like.", "breathe in as the light grows.", "and out as it fades.", "nothing to do. just be here.", "if you want to pray, you can. if not, just breathe."];
+  function endQuiet() { clearInterval(qTimer); document.body.classList.remove("quiet"); show("keep"); }
+  $("#sitQuiet").onclick = function () {
+    show("arrive"); document.body.classList.add("quiet");
+    var left = 60, i = 0; $("#qLine").textContent = QLINES[0]; $("#qTime").textContent = "1:00";
+    clearInterval(qTimer);
+    qTimer = setInterval(function () {
+      left--; if (left % 12 === 0) { i = (i + 1) % QLINES.length; $("#qLine").textContent = QLINES[i]; }
+      $("#qTime").textContent = "0:" + String(Math.max(0, left)).padStart(2, "0");
+      if (left <= 0) { clearInterval(qTimer); $("#qLine").textContent = tx("that was a good minute. stay, or head back when you're ready.", "fue un buen minuto. quédate, o regresa cuando quieras."); $("#qTime").textContent = ""; }
+    }, 1000);
+  };
+  $("#qDone").onclick = endQuiet;
+
+  // look around with your phone: turn it and the place turns with you (the 3D world, or the painting)
+  var gyroOn = false, a0 = null, b0 = null;
+  function onTilt(e) {
+    if (e.alpha == null) return;
+    if (a0 === null) { a0 = e.alpha; b0 = e.beta; }
+    var yaw = ((e.alpha - a0 + 540) % 360 - 180) * Math.PI / 180, pitch = Math.max(-.8, Math.min(.8, ((e.beta || 0) - b0) * Math.PI / 180));
+    var wf = $("#world"); if (wf.contentWindow && wf.getAttribute("src")) wf.contentWindow.postMessage({ ih: "look", yaw: yaw, pitch: pitch }, "*");
+    panX = Math.max(minX, Math.min(0, minX / 2 + yaw * 260));
+  }
+  function startGyro() {
+    if (gyroOn) return; gyroOn = true; a0 = null;
+    addEventListener("deviceorientation", onTilt);
+    $("#gyroBtn").hidden = true; $("#dragHint").hidden = false; $("#dragHint").textContent = tx("turn your phone to look around", "gira tu teléfono para mirar alrededor");
+  }
+  var canTilt = typeof DeviceOrientationEvent !== "undefined" && matchMedia("(pointer: coarse)").matches;
+  $("#gyroBtn").hidden = !canTilt;
+  $("#gyroBtn").onclick = function () {
+    var R = DeviceOrientationEvent.requestPermission;
+    if (typeof R === "function") R.call(DeviceOrientationEvent).then(function (s) { if (s === "granted") startGyro(); else toast(tx("no problem. drag to look around instead.", "sin problema. mejor arrastra para mirar alrededor.")); }).catch(function () { toast(tx("drag to look around instead.", "mejor arrastra para mirar alrededor.")); });
+    else startGyro();
+  };
+
+  // a lesson trip skips the question (the story asks its own) and takes off right away
+  if (LID) {
+    if (INAPP) $("#backBtn").onclick = function (e) { e.preventDefault(); parent.postMessage({ ih: "close" }, "*"); };
+    $("#flyEy").textContent = tx("flying with ", "volando con ") + T.guide.name.split(" ")[0];
+    $("#tNext").textContent = tx("next", "siguiente");
+    setTimeout(fly, 60);
+  }
+})();
+</script>

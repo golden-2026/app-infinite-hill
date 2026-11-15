@@ -1,3 +1,5 @@
+Background only (written September 2026). Where this disagrees with docs/VISION-NOW.md, that page wins.
+
 # End-to-end smoke matrix
 
 This harness checks the deployed or local HTTP surface and the client code that

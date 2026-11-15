@@ -20,7 +20,7 @@ export function NeighborCard({ door, day }: { door: string; day: number }) {
   if (!n) return null;
   const theirs = fam.includes(n.path);
   return (
-    <View testID="neighbor-card" style={{ backgroundColor: "#fff", borderWidth: 2, borderColor: color.ink, borderRadius: 18, overflow: "hidden" }}>
+    <View testID="neighbor-card" style={{ backgroundColor: color.white, borderWidth: 2, borderColor: color.ink, borderRadius: 18, overflow: "hidden" }}>
       <Pressable testID="neighbor-open" accessibilityRole="button" accessibilityState={{ expanded: open }} onPress={() => setOpen(!open)}
         style={({ pressed }) => ({ paddingVertical: 13, paddingHorizontal: 16, gap: 3, opacity: pressed ? 0.85 : 1 })}>
         <Text style={[type.eyebrow(8), { color: "#6d6a00" }]}>{open ? `${doorLabel(door)} · ${doorLabel(n.path)}` : t("neighbor.eyebrow")}</Text>

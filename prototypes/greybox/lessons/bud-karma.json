@@ -1,0 +1,205 @@
+{
+ "id": "bud-karma",
+ "home": "lotus",
+ "title": "The insult no one took",
+ "told": "a story from the Pali Canon",
+ "clips": "art/sacred/bud-karma/clips/",
+ "voice": "art/sacred/bud-karma/voice/",
+ "guide": {
+  "name": "Orlando",
+  "photo": "art/guides/buddhism.webp"
+ },
+ "hook": {
+  "v": "BI1-Bamboo-Grove",
+  "say": "before the story, can i ask you something? when someone says something unkind to you, what usually happens to it?",
+  "options": [
+   [
+    "I say something back",
+    "then you’re in good company. this story is for you."
+   ],
+   [
+    "I replay it for days",
+    "oh, i know that one. listen to this."
+   ],
+   [
+    "I let it go, mostly",
+    "that’s a real gift. here’s where it comes from."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "BI1-Bamboo-Grove",
+   "vo": [
+    "V01"
+   ],
+   "line": "Near the city of Rajagaha, in a quiet bamboo grove, the Buddha was staying with his monks."
+  },
+  {
+   "t": "shot",
+   "v": "BI2-Angry-Arrival",
+   "vo": [
+    "V02"
+   ],
+   "line": "A man named Bharadvaja stormed in. Someone from his own clan had just become a monk, and he was furious."
+  },
+  {
+   "t": "shot",
+   "v": "BI3-The-Insults",
+   "vo": [
+    "V03"
+   ],
+   "line": "He shouted insult after insult at the Buddha. The Buddha listened, calm, and waited."
+  },
+  {
+   "t": "ask",
+   "v": "BI3-The-Insults",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "When the shouting stops, what does the Buddha do?",
+   "o": [
+    "He stays silent until the man is done",
+    "He asks the man about his house guests",
+    "He tells him anger only hurts himself"
+   ],
+   "a": 1,
+   "why": "A question, not a comeback. And it’s about something homely: food, and guests."
+  },
+  {
+   "t": "shot",
+   "v": "BI4-The-Question",
+   "vo": [
+    "V04"
+   ],
+   "line": "“Do friends and guests ever come to your house?” the Buddha asked. “Sometimes.” “And do you offer them food?” “Sometimes, yes.”"
+  },
+  {
+   "t": "ask",
+   "v": "BI4-The-Question",
+   "blur": true,
+   "predict": true,
+   "eb": "what happens next?",
+   "q": "“And if your guests don’t eat it,” the Buddha asks, “whose food is it then?” What do you think Bharadvaja answers?",
+   "o": [
+    "“Then it’s still ours.”",
+    "“Then we give it to the dogs.”",
+    "“Then my guests have insulted me.”"
+   ],
+   "a": 0,
+   "why": "“Then it’s ours,” he says, and walks right into it. In the Pali text (SN 7.2) the Buddha replies: you’ve served me abuse I won’t take, so it’s all yours, brahmin."
+  },
+  {
+   "t": "shot",
+   "v": "BI5-The-Untouched-Dish",
+   "vo": [
+    "V05"
+   ],
+   "line": "“In the same way,” said the Buddha, “I don’t accept your insults. So they all belong to you.”"
+  },
+  {
+   "t": "ask",
+   "v": "BI5-The-Untouched-Dish",
+   "eb": "you’re in it",
+   "q": "A coworker snaps at you. What would “not accepting it,” the Buddha’s way, look like?",
+   "o": [
+    "Pretending you didn’t hear it",
+    "Smiling and acting like it’s fine",
+    "Not hitting back or replaying it"
+   ],
+   "a": 2,
+   "why": "It isn’t pretending or putting on a brave face. You let the words stay with the one who said them, and choose your own next action."
+  },
+  {
+   "t": "ask",
+   "v": "BI5-The-Untouched-Dish",
+   "eb": "did you know?",
+   "q": "The Buddha goes on: when someone insults you and you insult back, what are you doing, in his picture?",
+   "o": [
+    "Eating the meal together",
+    "Handing the dish back",
+    "Cooking a meal of your own"
+   ],
+   "a": 0,
+   "why": "In the old text, trading insults is “dining together, sharing the meal.” Handing it back is what the Buddha does instead."
+  },
+  {
+   "t": "shot",
+   "v": "BI6-Bharadvaja-Bows",
+   "vo": [
+    "V06"
+   ],
+   "line": "They talked on, and Bharadvaja’s anger cooled. The old text says he soon asked to become a monk himself."
+  },
+  {
+   "t": "ask",
+   "v": "BI6-Bharadvaja-Bows",
+   "eb": "did you know?",
+   "q": "The man who stormed in to shout became a monk. What does the old text say happened after that?",
+   "o": [
+    "He went home to make peace with his clan",
+    "He became fully awakened, an arahant",
+    "He became the Buddha’s chief helper"
+   ],
+   "a": 1,
+   "why": "The text ends: “And the Venerable Bharadvaja became one of the arahants.” The angriest man in the grove went all the way."
+  },
+  {
+   "t": "teach",
+   "v": "BI5-The-Untouched-Dish",
+   "say": [
+    "in buddhism, karma just means action. and the buddha said the heart of it is intention: what you mean as you act.",
+    "bharadvaja’s anger was his seed to grow, and the buddha’s calm was his. that’s why many buddhists chant: i am the owner of my actions, heir to my actions."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "BI6-Bharadvaja-Bows",
+   "eb": "the hard one",
+   "q": "He came to be remembered as Akkosaka Bharadvaja. From this story, what do you think Akkosaka means?",
+   "o": [
+    "The one who listens",
+    "The one who changed",
+    "The one who insults"
+   ],
+   "a": 2,
+   "why": "Akkosaka comes from akkosa, “insult” or “abuse.” The name kept his old habit, even after he changed."
+  }
+ ],
+ "today": {
+  "v": "BI4-The-Question",
+  "say": "today, if a sharp word comes your way, picture it as a dish set in front of you. you don’t have to pick it up. and before you answer, notice what you mean.",
+  "options": [
+   [
+    "I’ll try it today",
+    "that’s karma at its root: choosing what you mean."
+   ],
+   [
+    "That sounds hard",
+    "it is. the buddha’s calm took practice too. one try counts."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "The monk who bowed to everyone",
+  "line": "he bowed to every person he met, even the ones who threw stones."
+ },
+ "card": {
+  "from": "a story from the Pali Canon",
+  "mins": 5,
+  "keep": "seed",
+  "keepName": "A seed of intention",
+  "keepWhy": "What you mean is what you grow.",
+  "keepSvg": "<ellipse cx=\"50\" cy=\"68\" rx=\"14\" ry=\"9\" fill=\"#2a1b05\"/><path d=\"M50 60V40\" stroke=\"#2a1b05\" stroke-width=\"4\" stroke-linecap=\"round\"/><path d=\"M50 44c-2-10-12-14-20-12 2 10 12 14 20 12zM50 40c2-10 12-14 20-12-2 10-12 14-20 12z\" fill=\"#2a1b05\"/>",
+  "sources": [
+   "Akkosa Sutta, Samyutta Nikaya 7.2: the abusive brahmin Bharadvaja, the guests and the food, “it all belongs to you”; set in the Bamboo Grove, Squirrels’ Sanctuary, Rajagaha",
+   "Nibbedhika Sutta, Anguttara Nikaya 6.63: “intention is what I call kamma”",
+   "Upajjhatthana Sutta, Anguttara Nikaya 5.57: “owner of my actions, heir to my actions”",
+   "Samuddaka Sutta, Samyutta Nikaya 11.10: as the seed is sown, so is the fruit"
+  ],
+  "check": [
+   "The sutta says a brahmin of the Bharadvaja clan had gone forth; the commentary makes him his brother. The lesson says “someone from his own clan.”"
+  ]
+ }
+}

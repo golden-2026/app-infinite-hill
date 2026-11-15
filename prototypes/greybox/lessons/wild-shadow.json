@@ -1,0 +1,208 @@
+{
+ "id": "wild-shadow",
+ "home": "wild",
+ "title": "The giant in the fog",
+ "told": "from the life of Carl Jung",
+ "clips": "art/sacred/wild-shadow/clips/",
+ "voice": "art/sacred/wild-shadow/voice/",
+ "guide": {
+  "name": "Justin",
+  "photo": "art/guides/spiritual.webp"
+ },
+ "hook": {
+  "v": "JS1-Young-Jung",
+  "say": "before the story, can i ask you something? is there someone who gets under your skin more than they probably should?",
+  "options": [
+   [
+    "Oh, yes",
+    "keep them in mind. no blame, just curiosity."
+   ],
+   [
+    "Now and then",
+    "that’s most of us. watch what jung noticed."
+   ],
+   [
+    "Not really",
+    "lucky you. keep this one for when it happens."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "JS1-Young-Jung",
+   "vo": [
+    "V01"
+   ],
+   "line": "In Switzerland, a young man named Carl Jung, who would become a famous psychiatrist, had a dream he never forgot."
+  },
+  {
+   "t": "shot",
+   "v": "JS2-Fog-Wind",
+   "vo": [
+    "V02"
+   ],
+   "line": "It was night. He was pushing against a mighty wind through thick fog, his hands cupped around a tiny light that might go out at any moment."
+  },
+  {
+   "t": "ask",
+   "v": "JS2-Fog-Wind",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "He turns, and a gigantic black figure is right behind him. What do you think he does?",
+   "o": [
+    "Drops the light and runs",
+    "Turns to fight it off",
+    "Keeps walking, shielding the light"
+   ],
+   "a": 2,
+   "why": "Terrified, he knew he had to keep his little light going, he wrote, through night and wind, whatever happened."
+  },
+  {
+   "t": "shot",
+   "v": "JS3-Giant-Behind",
+   "vo": [
+    "V03"
+   ],
+   "line": "He looked back and saw a gigantic black figure following him. Afraid, he kept walking, still protecting the little light."
+  },
+  {
+   "t": "ask",
+   "v": "JS3-Giant-Behind",
+   "blur": true,
+   "predict": true,
+   "eb": "what happens next?",
+   "q": "He wakes up. What does he realize the giant was?",
+   "o": [
+    "A ghost from his past",
+    "A warning about a real enemy",
+    "His own shadow, cast by his light"
+   ],
+   "a": 2,
+   "why": "His own shadow, thrown huge onto the fog by the light he was carrying."
+  },
+  {
+   "t": "shot",
+   "v": "JS4-Waking",
+   "vo": [
+    "V04"
+   ],
+   "line": "When he woke, he understood. The giant was his own shadow, thrown onto the fog by the little light he carried."
+  },
+  {
+   "t": "ask",
+   "v": "JS4-Waking",
+   "eb": "why?",
+   "q": "Why does it matter that the shadow came from his own light?",
+   "o": [
+    "Any light you carry casts a shadow",
+    "So the shadow wasn’t really there",
+    "He should put the light out"
+   ],
+   "a": 0,
+   "why": "You can’t have the light without the shadow. Jung took that as the deal of seeing at all: the more you see, the more you notice what follows you."
+  },
+  {
+   "t": "shot",
+   "v": "JS5-The-Word",
+   "vo": [
+    "V05"
+   ],
+   "line": "Years later, Jung used the word shadow for the parts of ourselves we’d rather not claim. Not only dark ones. Hidden gifts, too."
+  },
+  {
+   "t": "fill",
+   "v": "JS5-The-Word",
+   "eb": "finish the line",
+   "pre": "Jung wrote that the little light was his",
+   "post": ", the only light he had.",
+   "o": [
+    "faith",
+    "consciousness",
+    "courage"
+   ],
+   "a": 1,
+   "why": "Consciousness: his power to see and know himself. A light like that lets you see, and it casts a shadow too."
+  },
+  {
+   "t": "shot",
+   "v": "JS6-Today",
+   "vo": [
+    "V06"
+   ],
+   "line": "Today, it’s called shadow work. Minus the jargon, it’s one question when someone bugs you more than they should: is any of this mine?",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "JS6-Today",
+   "eb": "did you know?",
+   "q": "What did Jung say a person should do with their shadow?",
+   "o": [
+    "Defeat it and drive it out",
+    "Ignore it until it fades",
+    "Get to know it, and take it back"
+   ],
+   "a": 2,
+   "why": "Jung’s word was integration: owning what you’d pushed away. He aimed at wholeness, not perfection."
+  },
+  {
+   "t": "teach",
+   "v": "JS5-The-Word",
+   "say": [
+    "here’s what i love. jung didn’t think you could get rid of your shadow. you carry a light, you cast one. his aim was to become whole, not perfect.",
+    "so the work is gentle: notice what bugs you, and ask if a piece of it lives in you. and for old, heavy pain, a good therapist is the right company."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "JS6-Today",
+   "eb": "the hard one",
+   "q": "Jung wrote that you don’t become enlightened by imagining figures of light. What did he say instead?",
+   "o": [
+    "By outshining every shadow",
+    "By making the darkness conscious",
+    "By letting the darkness pass by"
+   ],
+   "a": 1,
+   "why": "From his essay “The Philosophical Tree” (1945). Not chasing the dark away, and not ignoring it: bringing it into the light you carry."
+  }
+ ],
+ "today": {
+  "v": "JS6-Today",
+  "say": "today, when someone bugs you, try one line in your notes: their name, the trait in one word, and the gentle question, is any of this mine?",
+  "options": [
+   [
+    "I’ll try it",
+    "gently does it. no verdict needed."
+   ],
+   [
+    "Maybe later",
+    "that counts. you know the question now."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "What the two men whispered.",
+  "line": "a sage is asked the biggest question in the room. he takes the man’s hand and walks outside."
+ },
+ "card": {
+  "from": "from the life of Carl Jung",
+  "mins": 5,
+  "keep": "flame",
+  "keepName": "Jung’s little light",
+  "keepWhy": "Carry the light. Own the shadow.",
+  "sources": [
+   "C. G. Jung, Memories, Dreams, Reflections (1962; English trans. Richard and Clara Winston, 1963), chapter “Student Years”: the dream of walking at night against a mighty wind in dense fog, hands cupped around a tiny light; a gigantic black figure following; on waking he realized it was a “specter of the Brocken,” his own shadow on the swirling mists, cast by the little light, and that the light was his consciousness.",
+   "Jung on the shadow and projection: e.g. Aion (1951), chapter 2, “The Shadow”; Collected Works vol. 9ii.",
+   "The shadow is not wholly bad and holds good qualities too: e.g. Psychology and Religion (1938), Collected Works vol. 11, §134.",
+   "Right after the dream, the memoir reads it through his personalities No. 1 (the bearer of the light) and No. 2 (following like a shadow).",
+   "Day 6 script: docs/curriculum/spiritual/scripts/y1/day-0006.json (what bugs me may be mine)."
+  ],
+  "check": [
+   "In the memoir Jung reads this dream through his “personality No. 1 and No. 2,” not his later idea of the shadow. The lesson joins them (“years later”, and the teach line). Confirm the link is fair.",
+   "The match pair “looking back = being willing to see it” is an interpretation, not Jung’s words. Confirm or soften."
+  ]
+ }
+}

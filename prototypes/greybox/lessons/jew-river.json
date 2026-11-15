@@ -1,0 +1,203 @@
+{
+ "id": "jew-river",
+ "home": "pomegranate",
+ "title": "The bandit in the river",
+ "told": "from the Talmud",
+ "clips": "art/sacred/jew-river/clips/",
+ "voice": "art/sacred/jew-river/voice/",
+ "guide": {
+  "name": "Natalie",
+  "photo": "art/guides/judaism.webp"
+ },
+ "hook": {
+  "v": "JRL1-Jordan",
+  "say": "before the story, can i ask you something? have you ever felt you’d gone too far down the wrong road to turn back?",
+  "options": [
+   [
+    "Yes, I have",
+    "then this story is for you. listen."
+   ],
+   [
+    "Someone I love has",
+    "then listen for them. this one is hopeful."
+   ],
+   [
+    "Not really",
+    "good. listen anyway. you’ll meet someone who did."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "JRL1-Jordan",
+   "vo": [
+    "V01"
+   ],
+   "line": "The Talmud tells of Rabbi Yochanan, a great scholar, famous for his beauty. One day he was bathing in the Jordan River."
+  },
+  {
+   "t": "shot",
+   "v": "JRL2-The-Leap",
+   "vo": [
+    "V02"
+   ],
+   "line": "A bandit named Reish Lakish saw him and, in one great leap, jumped into the river after him."
+  },
+  {
+   "t": "ask",
+   "v": "JRL2-The-Leap",
+   "blur": true,
+   "predict": true,
+   "eb": "what happens next?",
+   "q": "A powerful bandit lands in the river beside the rabbi. What does Rabbi Yochanan say?",
+   "o": [
+    "“Your strength should be for Torah.”",
+    "“Take what you want and go.”",
+    "“Leave, or I’ll call for help.”"
+   ],
+   "a": 0,
+   "why": "He saw strength, not just a bandit. And he told him where it could go."
+  },
+  {
+   "t": "shot",
+   "v": "JRL3-Strength",
+   "vo": [
+    "V03"
+   ],
+   "line": "Rabbi Yochanan looked at him and said, “Your strength should be for Torah.” Reish Lakish shot back, “Your beauty should be for women!”"
+  },
+  {
+   "t": "ask",
+   "v": "JRL3-Strength",
+   "predict": true,
+   "eb": "what happens next?",
+   "q": "The bandit teases the rabbi about his looks. How does the rabbi win him over?",
+   "o": [
+    "Promises him a seat in the study hall",
+    "Offers his even more beautiful sister",
+    "Offers to pay off his debts"
+   ],
+   "a": 1,
+   "why": "His sister, “more beautiful than I am.” The Talmud tells it with a grin: the rabbi answers the bandit in the bandit’s own terms."
+  },
+  {
+   "t": "shot",
+   "v": "JRL3-Strength",
+   "vo": [
+    "V04"
+   ],
+   "line": "“If you turn around,” said the rabbi, “I’ll give you my sister in marriage, and she is more beautiful than I am.” Reish Lakish agreed."
+  },
+  {
+   "t": "shot",
+   "v": "JRL4-Learning",
+   "vo": [
+    "V05"
+   ],
+   "line": "He tried to go back for his things, and couldn’t. Rabbi Yochanan taught him, and he became one of the great sages of his time."
+  },
+  {
+   "t": "ask",
+   "v": "JRL4-Learning",
+   "eb": "why?",
+   "q": "Reish Lakish tried to leap back across for his clothes, and couldn’t. How do the commentators explain it?",
+   "o": [
+    "The river had risen in the night",
+    "Taking on Torah had sapped his old strength",
+    "Rabbi Yochanan held on to him"
+   ],
+   "a": 1,
+   "why": "The Talmud says only that he couldn’t. Rashi explains: once he took on Torah, the old bandit’s strength was already draining. The old life had closed behind him."
+  },
+  {
+   "t": "shot",
+   "v": "JRL5-Teacher",
+   "vo": [
+    "V06"
+   ],
+   "line": "Later, Reish Lakish himself taught: when a person turns back out of love, even their worst wrongs become merits."
+  },
+  {
+   "t": "ask",
+   "v": "JRL5-Teacher",
+   "eb": "did you know?",
+   "q": "Years later, Rabbi Yochanan got a new study partner who agreed with everything he said. How did he feel?",
+   "o": [
+    "Relieved, at last",
+    "Miserable, missing the arguments",
+    "Proud of his new student"
+   ],
+   "a": 1,
+   "why": "“Reish Lakish would raise twenty-four objections,” he said, “and from the answers the law grew clear” (Bava Metzia 84a). The bandit’s strength became the sharpest mind in the room."
+  },
+  {
+   "t": "shot",
+   "v": "JRL6-Today",
+   "vo": [
+    "V07"
+   ],
+   "line": "Today, the month before the Jewish new year, and the ten days up to Yom Kippur, are set aside for teshuvah. But the door stays open any day.",
+   "label": "today"
+  },
+  {
+   "t": "teach",
+   "v": "JRL4-Learning",
+   "say": [
+    "here’s what i love. teshuvah comes from shuv, to turn. it doesn’t say you’re broken. it says you’re facing the wrong way, and you can turn around.",
+    "maimonides laid out how: stop, regret it honestly, say it out loud, and decide not to do it again. and the rabbis said that where someone who has returned stands, even the completely righteous can’t stand."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "JRL6-Today",
+   "eb": "the hard one",
+   "q": "The rabbis taught that teshuvah was created before the world itself. What might that mean?",
+   "o": [
+    "God expected people never to stray",
+    "The way back came before the first wrong",
+    "Only the first humans could return"
+   ],
+   "a": 1,
+   "why": "Pesachim 54a lists seven things made before the world, teshuvah among them, with the Torah and the Garden of Eden. The road home was built before the first wrong turn."
+  }
+ ],
+ "today": {
+  "v": "JRL6-Today",
+  "say": "pick one small habit you’d like to turn from. today, try maimonides’ first steps: stop once, and say out loud, to yourself or someone you trust, what you’re turning from. that’s teshuvah, out of your head and into words.",
+  "options": [
+   [
+    "I’ll try it today",
+    "say it out loud. that’s the turn beginning."
+   ],
+   [
+    "I’ll think about which one",
+    "good. naming it is where the turn starts."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "Moses in the back row.",
+  "line": "moses visits a classroom far in his future, and can’t follow a word. then a student asks a question."
+ },
+ "card": {
+  "from": "from the Talmud",
+  "mins": 5,
+  "keep": "return",
+  "keepName": "The turn",
+  "keepWhy": "Not lost. Facing the wrong way.",
+  "keepSvg": "<path d=\"M30 88V44a20 20 0 0 1 40 0v12\" stroke=\"#2a1b05\" stroke-width=\"12\" fill=\"none\" stroke-linecap=\"round\"/><path d=\"M54 54h32L70 80z\" fill=\"#2a1b05\"/>",
+  "sources": [
+   "Babylonian Talmud, Bava Metzia 84a (Rabbi Yochanan bathing in the Jordan; Reish Lakish leaps in after him; ‘Your strength for Torah’; ‘Your beauty for women’; ‘If you return, I will give you my sister, who is more beautiful than I’; he wished to go back for his things and could not; Rabbi Yochanan taught him Bible and Mishnah and made him a great man)",
+   "Babylonian Talmud, Yoma 86b (Reish Lakish: great is repentance; from love, deliberate sins become like merits)",
+   "Hosea 14:2; Babylonian Talmud, Pesachim 54a (teshuvah among the seven things created before the world)",
+   "Maimonides, Mishneh Torah, Laws of Teshuvah 2:1–2; Babylonian Talmud, Berakhot 34b (where those who return stand)",
+   "The month of Elul and the Ten Days of Repentance"
+  ],
+  "check": [
+   "‘Bandit’ for the Talmud’s listim (Rashi); some read Reish Lakish as a gladiator",
+   "‘He tried to go back for his things, and couldn’t’ follows Bava Metzia 84a; Rashi explains that his strength left him once he accepted Torah",
+   "The later quarrel between the two and their deaths, in the same passage, are left out"
+  ]
+ }
+}

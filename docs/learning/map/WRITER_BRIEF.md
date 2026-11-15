@@ -1,3 +1,5 @@
+Background only (written 2026-10-13). Where this disagrees with docs/VISION-NOW.md or docs/LESSON_STANDARD.md, those win.
+
 # Writer brief (shared by every writer agent)
 
 Repo: C:\Users\shset\code\golden-app. You write full lesson scripts for Infinite Hill, a daily religious/spiritual practice app.

@@ -1,3 +1,5 @@
+Background only (written 2026-10-03). Where this disagrees with docs/VISION-NOW.md or docs/LESSON_STANDARD.md, those win.
+
 # The Review Kit: is our teaching actually good?
 
 This folder answers one question honestly: **are Infinite Hill's lessons, Guide and placement check good, or are they

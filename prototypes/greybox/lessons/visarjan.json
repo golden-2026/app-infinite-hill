@@ -1,0 +1,207 @@
+{
+ "id": "visarjan",
+ "home": "marigold",
+ "title": "Goodbye, Ganesha",
+ "told": "a festival tradition",
+ "clips": "art/sacred/visarjan/clips/",
+ "voice": "art/sacred/visarjan/voice/",
+ "guide": {
+  "name": "Priyanka",
+  "photo": "art/guides/hinduism.webp"
+ },
+ "card": {
+  "from": "a festival tradition",
+  "mins": 5,
+  "keep": "drum",
+  "keepName": "The farewell drum",
+  "keepWhy": "Goodbye, with drums, and a promise to come back.",
+  "sources": [
+   "Ganesh Chaturthi, in the month of Bhadrapada, especially celebrated in Maharashtra; images of Ganesha welcomed at home or in public pandals for one and a half to ten days",
+   "Ganesh visarjan: immersion of the image in the sea, a river or a lake at the festival’s end",
+   "The chant “Ganpati Bappa Morya, pudhchya varshi lavkar ya” (Marathi: come early next year), the film’s note",
+   "Ganesha honored first: Shiva Purana (week two, “How Ganesha got his head”)"
+  ],
+  "check": [
+   "“Morya” is often linked to the saint Morya Gosavi of Chinchwad; the lesson doesn’t explain it. Confirm that’s fine.",
+   "Before immersion, families traditionally bid Ganesha’s presence farewell in a short rite (uttara puja); the lesson doesn’t mention it. Confirm acceptable."
+  ]
+ },
+ "hook": {
+  "v": "GV1-Welcome",
+  "say": "before the story, can i ask you something? is something good ending for you right now? a place, a season, a chapter.",
+  "options": [
+   [
+    "Yes, right now",
+    "then this festival is for you. listen."
+   ],
+   [
+    "It ended already",
+    "then listen to how they say goodbye."
+   ],
+   [
+    "Not right now",
+    "good. keep this one for when it does."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "GV1-Welcome",
+   "vo": [
+    "V01"
+   ],
+   "line": "Every year, for Ganesh Chaturthi, families bring home a statue of Ganesha."
+  },
+  {
+   "t": "ask",
+   "v": "GV1-Welcome",
+   "eb": "did you know?",
+   "q": "Ganesha’s own story begins with his mother shaping him with her hands. From what?",
+   "o": [
+    "The paste she bathed with",
+    "Clay from the river bank",
+    "Sandalwood from the mountain"
+   ],
+   "a": 0,
+   "why": "Parvati shaped him from the paste on her skin (many tellings say turmeric) and gave him life. Many families still welcome a Ganesha shaped by hand from clay."
+  },
+  {
+   "t": "shot",
+   "v": "GV2-A-Guest",
+   "vo": [
+    "V02"
+   ],
+   "line": "They welcome him like a guest: they feed him sweets, and sing to him, for days."
+  },
+  {
+   "t": "ask",
+   "v": "GV3-The-Procession",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "After days as an honored guest, what do you guess happens to Ganesha?",
+   "o": [
+    "He stays in the home all year",
+    "He’s taken to the temple to stay",
+    "He’s carried to the water, and let go"
+   ],
+   "a": 2,
+   "why": "They let him go, with drums and dancing. Watch."
+  },
+  {
+   "t": "shot",
+   "v": "GV3-The-Procession",
+   "vo": [
+    "V03"
+   ],
+   "line": "Then, at the end of the festival, they carry him to the sea or a river, dancing and drumming.",
+   "label": "Ganesh visarjan"
+  },
+  {
+   "t": "shot",
+   "v": "GV4-Into-The-Water",
+   "vo": [
+    "V04"
+   ],
+   "line": "And gently, they let him go into the water.",
+   "label": "Ganesh visarjan"
+  },
+  {
+   "t": "ask",
+   "v": "GV4-Into-The-Water",
+   "eb": "did you know?",
+   "q": "Many families say Ganesha takes something with him when he goes. What?",
+   "o": [
+    "The family’s good luck",
+    "Their troubles and obstacles",
+    "The year’s sweet offerings"
+   ],
+   "a": 1,
+   "why": "He’s Vighnaharta, the remover of obstacles. Many believe he carries the family’s troubles away as he returns home to Shiva and Parvati."
+  },
+  {
+   "t": "shot",
+   "v": "GV5-Come-Back",
+   "vo": [
+    "V05"
+   ],
+   "line": "As he goes, crowds chant: Ganpati Bappa Morya! Come back soon next year!",
+   "label": "Ganpati Bappa Morya"
+  },
+  {
+   "t": "ask",
+   "v": "GV5-Come-Back",
+   "eb": "did you know?",
+   "q": "“Ganpati Bappa Morya!” Bappa is a loving word for father. Who was Morya?",
+   "o": [
+    "Another name for Shiva",
+    "A saint devoted to Ganesha",
+    "The first town to hold it"
+   ],
+   "a": 1,
+   "why": "Many trace it to Morya Gosavi, a Ganesha devotee near Pune centuries ago. The crowd shouts a saint’s name along with the god he loved."
+  },
+  {
+   "t": "shot",
+   "v": "GV6-Today",
+   "vo": [
+    "V06"
+   ],
+   "line": "Letting go makes room for the next beginning.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "GV6-Today",
+   "eb": "did you know?",
+   "q": "Ganesh Chaturthi was once mostly a home festival. Who brought it into the streets, in the 1890s?",
+   "o": [
+    "The British government in India",
+    "Temple priests in Varanasi",
+    "A freedom fighter, Lokmanya Tilak"
+   ],
+   "a": 2,
+   "why": "In 1893, Bal Gangadhar Tilak brought Ganesha into the streets of Pune, partly to gather people when British rule limited public meetings."
+  },
+  {
+   "t": "teach",
+   "v": "GV4-Into-The-Water",
+   "say": [
+    "here’s what i love. the festival doesn’t pretend goodbye isn’t coming. it dances all the way to the water.",
+    "many hindus see visarjan as a lesson in letting go: welcome with love, release with love, and trust the return. he goes back to the water, and the welcome comes again next year."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "GV5-Come-Back",
+   "eb": "the hard one",
+   "q": "Families welcome Ganesha, then let him go, every single year. From the lesson, what does that teach about endings?",
+   "o": [
+    "Nothing good lasts, so don’t hold on",
+    "An ending can make room for a return",
+    "Goodbyes are best kept short"
+   ],
+   "a": 1,
+   "why": "Every goodbye at the water leads to next year’s welcome. Letting go is how the next beginning starts."
+  }
+ ],
+ "today": {
+  "v": "GV6-Today",
+  "say": "let go of one thing this week that’s done its job: an old file, a shirt you’ve outgrown, a plan that’s finished. thank it, and let it go. many families sing a farewell aarti to ganesha. you can listen to one, join in, or just say thank you. it’s your choice.",
+  "options": [
+   [
+    "I know what it is",
+    "then thank it, and let it go. bappa would."
+   ],
+   [
+    "Letting go is hard",
+    "it is. that’s why they bring drums. go gently."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "Millions take the plunge.",
+  "line": "a pot of nectar rises from the ocean, and one day a river fills with pilgrims."
+ }
+}

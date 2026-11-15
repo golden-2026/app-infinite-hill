@@ -175,7 +175,7 @@ export function HillScene({ hour, done, total, doneToday, onStart, onReplay, fir
           <Image source={view.src} style={{ position: "absolute", left: 0, right: 0, bottom: 0, width: "100%", aspectRatio: view.w / view.h }} contentFit="cover" transition={FADE} cachePolicy="memory-disk" {...decorative} />
         </View>
       ) : null}
-      <LinearGradient pointerEvents="none" colors={["rgba(247,247,245,0)", "#F7F7F5"]} style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: 56 }} />
+      <LinearGradient pointerEvents="none" colors={["rgba(7,10,20,0)", "#070A14"]} style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: 56 }} />
 
       {/* light, stars, footprints and the two trail-end notes */}
       <Svg viewBox={`0 0 ${W} ${H}`} width="100%" height="100%" style={{ position: "absolute" }} pointerEvents="none">

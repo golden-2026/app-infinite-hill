@@ -63,7 +63,7 @@ export function SongCard({ door }: { door?: string }) {
   const song = songForToday(home, today, st.profile?.openness);
   if (!song) return null;
   return (
-    <View style={{ backgroundColor: "#fff", borderWidth: 1, borderColor: color.line, borderRadius: 20, padding: 16 }}>
+    <View style={{ backgroundColor: color.white, borderWidth: 1, borderColor: color.line, borderRadius: 20, padding: 16 }}>
       <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
         <Text style={type.eyebrow(8)}>{t("session.song.today", { door: doorLabel(song.tradition) })}</Text>
         <Pressable accessibilityRole="link" accessibilityLabel={t("session.song.allA11y")} onPress={() => router.push("/listen" as any)} hitSlop={10}

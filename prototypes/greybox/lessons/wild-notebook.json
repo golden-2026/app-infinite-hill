@@ -1,0 +1,194 @@
+{
+ "id": "wild-notebook",
+ "home": "wild",
+ "title": "The emperor’s notebook",
+ "told": "from the notebook of Marcus Aurelius",
+ "clips": "art/sacred/wild-notebook/clips/",
+ "voice": "art/sacred/wild-notebook/voice/",
+ "guide": {
+  "name": "Justin",
+  "photo": "art/guides/spiritual.webp"
+ },
+ "hook": {
+  "v": "MA1-Frontier-Camp",
+  "say": "before the story, can i ask you something? is there something you keep saving for next month? a call, a trip, a sorry.",
+  "options": [
+   [
+    "Yes, more than one",
+    "then this one is for you. an emperor had the same habit."
+   ],
+   [
+    "Maybe one thing",
+    "hold it in mind. you’ll know what to do with it by the end."
+   ],
+   [
+    "Not really",
+    "good. keep this one anyway. it’s warmer than it sounds."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "MA1-Frontier-Camp",
+   "vo": [
+    "V01"
+   ],
+   "line": "About eighteen centuries ago, Marcus Aurelius ruled Rome. He spent many of his last years in cold army camps on the far frontier, by the Danube river."
+  },
+  {
+   "t": "shot",
+   "v": "MA2-The-Notebook",
+   "vo": [
+    "V02"
+   ],
+   "line": "At night, by lamplight, he wrote notes to himself, in Greek. Not speeches. Reminders. Their old title is simply “To Himself.”"
+  },
+  {
+   "t": "ask",
+   "v": "MA2-The-Notebook",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "The most powerful man in the world keeps coming back to one subject in his notes. What is it?",
+   "o": [
+    "His victories in battle",
+    "His own death",
+    "His enemies in Rome"
+   ],
+   "a": 1,
+   "why": "His own death. Not to frighten himself. You’ll see where it lands."
+  },
+  {
+   "t": "shot",
+   "v": "MA3-Alexander",
+   "vo": [
+    "V03"
+   ],
+   "line": "He reminded himself that he would die, like everyone. Alexander the Great and his mule driver, he wrote, ended up in the same place."
+  },
+  {
+   "t": "ask",
+   "v": "MA3-Alexander",
+   "eb": "why?",
+   "q": "Why would an emperor remind himself that a great king and a mule driver end up the same?",
+   "o": [
+    "To comfort himself his enemies would die too",
+    "Power and fame don’t outlast anyone",
+    "Kings are remembered, drivers forgotten"
+   ],
+   "a": 1,
+   "why": "Death evens everyone out. For a man with every kind of power, that kept his eyes on what he could still do well."
+  },
+  {
+   "t": "shot",
+   "v": "MA4-Be-Good",
+   "vo": [
+    "V04"
+   ],
+   "line": "He wrote: “Do not act as if thou wert going to live ten thousand years. Death hangs over thee. While thou livest, while it is in thy power, be good.”",
+   "label": "an old translation"
+  },
+  {
+   "t": "ask",
+   "v": "MA4-Be-Good",
+   "eb": "did you know?",
+   "q": "A tutor lent Marcus the lecture notes of one teacher, and Marcus thanks him for it. Whose notes?",
+   "o": [
+    "Plato’s, the great Athenian",
+    "Seneca’s, Nero’s adviser",
+    "Epictetus’s, a man born a slave"
+   ],
+   "a": 2,
+   "why": "Meditations 1.7: he thanks his tutor Rusticus for lending him Epictetus’s lectures, and quotes Epictetus later on. The most powerful man alive, learning from a former slave."
+  },
+  {
+   "t": "shot",
+   "v": "MA5-The-Copy",
+   "vo": [
+    "V05"
+   ],
+   "line": "His notes survived him, copied by hand for centuries. Today we call them the Meditations, and people still read them.",
+   "label": "later"
+  },
+  {
+   "t": "shot",
+   "v": "MA6-Today",
+   "vo": [
+    "V06"
+   ],
+   "line": "Today, a skull, an hourglass, two Latin words: memento mori, “remember that you will die.” It’s the same idea, and it’s really about today.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "MA6-Today",
+   "eb": "did you know?",
+   "q": "An old Roman story: in a victory parade, someone rode behind the general whispering a warning. What?",
+   "o": [
+    "“Remember you are only a man”",
+    "“Your enemies are watching”",
+    "“The crowd will forget you”"
+   ],
+   "a": 0,
+   "why": "Tertullian, around 200 AD, tells it: “Look behind you; remember you are a man.” Later artists turned the idea into memento mori skulls."
+  },
+  {
+   "t": "teach",
+   "v": "MA4-Be-Good",
+   "say": [
+    "here’s what i love. marcus was a stoic, and stoics taught that death is natural, nothing to fear, and worth remembering.",
+    "not because life is grim. because a life you remember is short gets clearer. the good thing you keep postponing comes closer."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "MA6-Today",
+   "eb": "the hard one",
+   "q": "Someone gets “memento mori” tattooed and says it means “nothing matters, so who cares.” From Marcus’s note, what would he say?",
+   "o": [
+    "Time is short, so today matters more",
+    "He’d agree: nothing really matters",
+    "Forget death and just enjoy today"
+   ],
+   "a": 0,
+   "why": "For Marcus, remembering death pointed straight back at today: while it is in your power, be good."
+  }
+ ],
+ "today": {
+  "v": "MA4-Be-Good",
+  "say": "pick the one thing you keep saving for next month: the call, the thank-you, the sorry. do the first small step of it today.",
+  "options": [
+   [
+    "I’ll do it today",
+    "while it is in your power. that’s exactly it."
+   ],
+   [
+    "I’ve named it, not today",
+    "that counts. you’ve brought it closer already."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "The bow at the river.",
+  "line": "a famous monk tells a man to get out of his way. the man answers with one question."
+ },
+ "card": {
+  "from": "the notebook of Marcus Aurelius",
+  "mins": 5,
+  "keep": "hourglass",
+  "keepName": "The emperor’s hourglass",
+  "keepWhy": "While you can, be good.",
+  "keepSvg": "<rect x=\"28\" y=\"16\" width=\"44\" height=\"6\" rx=\"2\" fill=\"#2a1b05\"/><rect x=\"28\" y=\"78\" width=\"44\" height=\"6\" rx=\"2\" fill=\"#2a1b05\"/><path d=\"M33 22h34c0 14-10 20-14 28 4 8 14 14 14 28H33c0-14 10-20 14-28-4-8-14-14-14-28z\" fill=\"#2a1b05\"/>",
+  "sources": [
+   "Marcus Aurelius, Meditations 4.17, trans. George Long (1862): “Do not act as if thou wert going to live ten thousand years. Death hangs over thee. While thou livest, while it is in thy power, be good.”",
+   "Meditations 6.24: Alexander the Macedonian and his mule driver were brought to the same state by death.",
+   "Book 1 closes “among the Quadi, on the Gran”; Book 2 is headed “at Carnuntum”: written during the Marcomannic Wars on the Danube frontier (c. 170s CE).",
+   "Written in Greek; the Greek title is usually given as “To Himself” (Ta eis heauton).",
+   "Day 3 script: docs/curriculum/spiritual/scripts/y1/day-0003.json (while you can, be good)."
+  ],
+  "check": [
+   "Painting MA4 shows Marcus helping a soldier lift grain at dawn: an illustration of “be good,” not an event from the sources. Confirm that’s acceptable."
+  ]
+ }
+}

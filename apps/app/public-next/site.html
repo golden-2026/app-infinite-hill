@@ -1,0 +1,851 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>infinite hill · religion, reimagined</title>
+<meta name="description" content="religion, reimagined. pick a faith or build your own faith, with celebrity guides and voices you know. five minutes a day. free.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="infinite hill">
+<meta property="og:title" content="infinite hill · religion, reimagined">
+<meta property="og:description" content="religion, reimagined. pick a faith or build your own faith, with celebrity guides and voices you know. five minutes a day. free.">
+<meta property="og:image" content="/site-art/next/t1.webp">
+<meta name="theme-color" content="#0A0A0A">
+<link rel="alternate" hreflang="en" href="/">
+<link rel="alternate" hreflang="es" href="/es">
+<script>/* old footer links (#p/about …) open the real page */(function(){var m=/^#p\/(about|foundation|keepers|provenance|careers|science|paths|nights|prayers|voices|schools|promise|safety|contact|privacy|terms|biometric|legal)$/.exec(location.hash);if(m)location.replace((document.documentElement.lang==='es'?'/es/':'/')+m[1])})()</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/brand.css">
+<link rel="icon" type="image/png" href="/site-art/favicon.png">
+<style>
+#fx { display: none; } /* owner 2026-11-08: no tap-to-throw color, no floating dots */
+#flash { position: fixed; inset: 0; z-index: 41; pointer-events: none; opacity: 0; mix-blend-mode: screen; }
+.hero.film::after { animation: grain .5s steps(4) infinite; opacity: .4; }
+@keyframes grain { 0% { transform: translate(0,0); } 25% { transform: translate(-4%,3%); } 50% { transform: translate(3%,-5%); } 75% { transform: translate(-2%,-3%); } 100% { transform: translate(0,0); } }
+
+/* 1. hero: full-bleed background video */
+.hero { position: relative; min-height: 100svh; display: flex; align-items: flex-end; padding-top: 118px; background: #050505; touch-action: manipulation; }
+#stage { position: absolute; inset: 0; }
+#stage video, #stage .still { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .5s; transform: scale(var(--zoom, 1.04)); }
+#stage .on { opacity: 1; }
+.shade { position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,0) 22%, rgba(0,0,0,.1) 36%, rgba(0,0,0,.74) 62%, rgba(0,0,0,.95) 100%); }
+#tint { position: absolute; inset: 0; z-index: 1; background: radial-gradient(120% 80% at 50% 110%, var(--p), transparent 60%); mix-blend-mode: screen; opacity: .08; pointer-events: none; }
+.bars { position: absolute; top: 76px; left: 16px; right: 16px; display: flex; gap: 4px; z-index: 3; }
+.bars i { flex: 1; height: 3px; border-radius: 3px; background: rgba(243,239,228,.25); overflow: hidden; }
+.bars b { display: block; height: 100%; width: 0; background: var(--lime); }
+.copy { position: relative; z-index: 3; width: 100%; }
+.copy .wrap { padding-bottom: 28px; }
+.big .w { display: inline-block; animation: slam .42s cubic-bezier(.2,1.6,.4,1) both; animation-delay: var(--d, 0ms); }
+@keyframes slam { 0% { transform: scale(2.2) rotate(-4deg); opacity: 0; filter: blur(6px); } 100% { transform: none; opacity: 1; filter: none; } }
+.hooks { background: var(--p); color: var(--ink); padding: 26px 0 22px; overflow: hidden; }
+.hooks .cap { margin: 0 auto 12px; }
+.mq { overflow: hidden; white-space: nowrap; }
+.mq .run { display: inline-flex; align-items: center; animation: run 38s linear infinite; }
+.mq.rev .run { animation-direction: reverse; animation-duration: 44s; }
+.mq span { font: 400 clamp(46px, 12vw, 150px)/1 var(--display); text-transform: uppercase; padding: 0 .25em; }
+.mq.rev span { color: var(--cream); -webkit-text-stroke: 2px var(--ink); }
+.mq i { font-style: normal; font-size: clamp(28px, 6vw, 70px); color: var(--lime); -webkit-text-stroke: 2px var(--ink); }
+.big { font-size: clamp(54px, 15.5vw, 150px); color: var(--cream); text-shadow: 0 4px 30px rgba(0,0,0,.45); }
+.faith { margin: 12px 0 0; font: 800 18px/1.3 var(--body); color: var(--cream); }
+.who { margin: 8px 0 0; max-width: 46ch; font: 700 15px/1.45 var(--body); color: var(--lime); }
+.doors { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+.doors a { border-radius: 999px; padding: 8px 12px; font: 800 12.5px var(--body); color: var(--cream); text-decoration: none; background: rgba(5,5,5,.55); box-shadow: inset 0 0 0 1.5px rgba(243,239,228,.35); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+.doors a:hover { box-shadow: inset 0 0 0 1.5px var(--lime); color: var(--lime); }
+.doors a.own { background: var(--lime); color: var(--ink); box-shadow: none; }
+.hero .cta { margin-top: 18px; }
+.hero .note { margin: 12px 0 0; font: 700 12px/1.4 var(--body); color: var(--mute); }
+
+/* faces strip under hero */
+.faces { background: var(--lime); color: var(--ink); padding: 22px 0 6px; }
+.faces .head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 14px; }
+.faces .head p { margin: 0; }
+.face { width: 132px; text-decoration: none; color: var(--ink); }
+.face .film { aspect-ratio: 4/5; border-radius: 16px; }
+.face img { width: 100%; height: 100%; object-fit: cover; }
+.face b { display: block; margin-top: 8px; font: 400 17px/1 var(--display); text-transform: uppercase; }
+.face small { display: block; margin-top: 3px; font: 700 10px var(--body); letter-spacing: .14em; text-transform: uppercase; opacity: .7; }
+
+/* sections */
+.sec { padding: 56px 0; }
+.sec h2 { font-size: clamp(50px, 14vw, 120px); }
+.lede { margin: 14px 0 0; font: 700 16px/1.45 var(--body); max-width: 40ch; }
+.kick { margin: 0 0 12px; }
+
+/* 2. paths: episode posters */
+.paths .lede { color: var(--mute); margin-bottom: 26px; }
+.ep { position: relative; width: 236px; aspect-ratio: 9/15; border-radius: 22px; overflow: hidden; text-decoration: none; color: var(--cream); background: #151515; display: block; scroll-margin-top: 90px; }
+.ep .film { position: absolute; inset: 0; }
+.ep img { width: 100%; height: 100%; object-fit: cover; }
+.ep .meta { position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; padding: 70px 16px 16px; background: linear-gradient(180deg, transparent, rgba(0,0,0,.92) 55%); }
+.ep .door { font: 800 10.5px var(--body); letter-spacing: .2em; text-transform: uppercase; color: var(--c, var(--lime)); }
+.ep h3 { margin: 6px 0 6px; font: 400 30px/.92 var(--display); text-transform: uppercase; }
+.ep .by { font: 700 13px var(--body); opacity: .85; }
+.ep .play { display: inline-block; margin-top: 12px; background: var(--cream); color: var(--ink); border-radius: 999px; padding: 7px 12px; font: 800 12px var(--body); }
+.ep.own { background: var(--lime); color: var(--ink); }
+.ep.own .film { inset: 12px 12px auto; height: 52%; border-radius: 14px; }
+.ep.own .meta { background: none; }
+.ep.own .door { color: var(--ink); }
+.ep.own .play { background: var(--ink); color: var(--lime); }
+.ep.own .new { position: absolute; top: 22px; left: 22px; z-index: 4; background: var(--ink); color: var(--lime); border-radius: 999px; padding: 5px 10px; font: 800 10px var(--body); letter-spacing: .16em; text-transform: uppercase; }
+.ep:target, .ep.hl { box-shadow: 0 0 0 4px var(--lime); }
+
+/* drops: each with its own type */
+.ep h3.tb { color: transparent; -webkit-text-stroke: 1.5px var(--cream); font-size: 34px; }
+.ep h3.tc { display: inline; background: var(--c, var(--lime)); color: var(--ink); padding: 0 .12em; box-decoration-break: clone; -webkit-box-decoration-break: clone; line-height: 1.05; }
+.ep h3.td { transform: skew(-8deg); font-size: 36px; letter-spacing: -.01em; }
+.ep h3.tc + .by { display: block; margin-top: 8px; }
+/* proof: the celebrity guides on lime */
+.guides { background: var(--lime); color: var(--ink); }
+.guides .lede { color: var(--ink); opacity: .75; }
+.guides h2 em { color: var(--ink); text-decoration: underline; text-decoration-thickness: .08em; text-underline-offset: .08em; }
+.guides .gcard { background: var(--ink); color: var(--cream); }
+/* 3 big stats (real research numbers only) */
+.stats { display: grid; gap: 34px; }
+.bs { border-top: 3px solid var(--ink); padding-top: 14px; }
+.bs .n { font: 400 clamp(110px, 36vw, 260px)/.82 var(--display); margin: 0 0 10px; letter-spacing: -.01em; }
+.bs .l { font: 800 17px/1.35 var(--body); margin: 0; max-width: 34ch; }
+.bs .s { margin: 10px 0 0; font: 700 11.5px var(--body); letter-spacing: .1em; text-transform: uppercase; opacity: .65; }
+.says-s { background: var(--ink); }
+.says-s h2 { margin-bottom: 26px; }
+.whyh { font-size: clamp(42px, 11vw, 110px); margin-top: 64px; }
+a.tog { text-decoration: none; background: var(--ink) !important; color: var(--cream) !important; box-shadow: inset 0 0 0 2px var(--lime); }
+a.tog b { color: var(--lime); }
+.btn.ghost.dk { color: var(--ink); box-shadow: inset 0 0 0 2px var(--ink); }
+/* 3. how */
+.how { background: var(--cream); color: var(--ink); }
+.how h2 em { color: var(--ink); background: var(--lime); padding: 0 .06em; }
+.how .cta { margin-top: 30px; }
+.steps { list-style: none; margin: 30px 0 0; padding: 0; display: grid; gap: 14px; }
+.step { display: grid; grid-template-columns: 1fr 92px; gap: 14px; align-items: center; border-top: 2px solid var(--ink); padding-top: 16px; }
+.step .n { font: 400 64px/.8 var(--display); }
+.step h3 { margin: 10px 0 6px; font: 400 26px/.95 var(--display); text-transform: uppercase; }
+.step p { margin: 0; font: 600 14.5px/1.4 var(--body); opacity: .8; }
+.step .film { border-radius: 14px; aspect-ratio: 420/908; box-shadow: 0 0 0 3px var(--ink); }
+.step .film img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.how .more { margin: 26px 0 0; font: 800 15px/1.4 var(--body); max-width: 46ch; }
+
+/* 4. manifesto */
+.mani { background: var(--p); padding: 56px 0; }
+.mani .card { background: var(--cream); color: var(--ink); border-radius: 26px; padding: 26px 18px 10px; max-width: 860px; margin: 0 auto; }
+.mani { color: var(--ink); }
+.mani h2 { font-size: clamp(70px, 22vw, 220px); margin: 0 0 26px; }
+.mani h2 em { background: none !important; color: var(--cream) !important; }
+.mani .kick { margin: 0 0 10px; }
+.mani h2 em { color: var(--ink); background: var(--lime); padding: 0 .06em; }
+.mani table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.mani th { font: 800 10px/1.3 var(--body); letter-spacing: .2em; text-transform: uppercase; text-align: left; padding: 0 8px 12px 0; vertical-align: bottom; }
+.mani th + th, .mani td + td { padding-left: 14px; border-left: 1px solid rgba(10,10,10,.22); }
+.mani td { border-top: 2px solid var(--ink); padding: 14px 8px 14px 0; font: 400 clamp(24px, 6.4vw, 54px)/.95 var(--display); text-transform: uppercase; vertical-align: top; }
+.mani td:first-child { opacity: .7; text-decoration: line-through; text-decoration-color: var(--p); text-decoration-thickness: 2px; }
+.mani td + td { color: var(--cream); }
+.mani .fine { text-align: left; margin: 18px 0 8px; font: 700 12px var(--body); opacity: .6; }
+
+/* 5. build your own (the courses) + go deep */
+.own-s { background: var(--ink); }
+.ways { display: grid; gap: 10px; margin: 26px 0 0; padding: 0; list-style: none; }
+.way { border-radius: 20px; padding: 18px 18px 20px; background: #151515; box-shadow: inset 0 0 0 1.5px rgba(243,239,228,.16); }
+.way b { display: block; font: 400 26px/1 var(--display); text-transform: uppercase; color: var(--lime); }
+.way span { display: block; margin-top: 8px; font: 600 14.5px/1.45 var(--body); color: var(--mute); }
+.deep { margin-top: 52px; border-top: 2px solid var(--lime); padding-top: 28px; }
+.deep h3 { font: 400 clamp(40px, 11vw, 84px)/.9 var(--display); text-transform: uppercase; margin: 0; }
+.deep p { margin: 14px 0 0; font: 700 16px/1.5 var(--body); max-width: 52ch; color: var(--mute); }
+.deep p.nv { color: var(--cream); font-weight: 800; }
+
+/* 6. which one sounds like you */
+.why { background: var(--cream); color: var(--ink); }
+.why h2 em { color: var(--ink); background: var(--lime); padding: 0 .06em; }
+.why .lede { margin-bottom: 24px; }
+.wcard { width: 270px; background: #fff; color: var(--ink); border-radius: 22px; padding: 20px 18px 18px; text-decoration: none; display: flex; flex-direction: column; gap: 10px; box-shadow: inset 0 0 0 2px var(--ink); }
+.wcard q { font: 400 23px/1 var(--display); text-transform: uppercase; quotes: "\201C" "\201D"; }
+.wcard span { font: 600 14px/1.45 var(--body); color: #333; flex: 1; }
+.wcard b { align-self: flex-start; background: var(--ink); color: var(--lime); border-radius: 999px; padding: 9px 14px; font: 800 13px var(--body); }
+.wcard:hover { box-shadow: inset 0 0 0 3px var(--ink), 6px 6px 0 var(--lime); }
+
+/* 7. guides */
+.guides h2 { font-size: clamp(42px, 12vw, 104px); }
+.guides .lede { color: var(--mute); margin-bottom: 26px; }
+.gcard { width: 262px; background: #161616; border-radius: 22px; overflow: hidden; display: flex; flex-direction: column; }
+.gcard .film { aspect-ratio: 1/1; }
+.gcard img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+.gcard .b { padding: 14px 16px 16px; display: flex; flex-direction: column; flex: 1; }
+.gcard b { font: 400 24px/1 var(--display); text-transform: uppercase; }
+.gcard small { margin-top: 4px; font: 800 10.5px var(--body); letter-spacing: .18em; text-transform: uppercase; color: var(--c); }
+.gcard q { display: block; margin: 12px 0 0; font: 700 15px/1.4 var(--body); quotes: "\201C" "\201D"; flex: 1; }
+.gcard .more { margin-top: 12px; align-self: flex-start; border: 0; background: none; color: var(--lime); padding: 0; cursor: pointer; font: 800 12.5px var(--body); text-decoration: underline; text-underline-offset: 3px; }
+
+/* 8. proof: research numbers + real quotes */
+.proof { background: var(--lime); color: var(--ink); }
+.stat .n { font: 400 clamp(150px, 50vw, 360px)/.8 var(--display); letter-spacing: -.01em; margin: 10px 0 8px; }
+.stat .l { font: 800 19px/1.3 var(--body); max-width: 30ch; margin: 0; }
+.stat .s, .tile .s { margin: 12px 0 0; font: 700 11.5px var(--body); letter-spacing: .1em; text-transform: uppercase; opacity: .65; }
+.tiles { display: grid; gap: 10px; margin-top: 34px; }
+.tile { background: var(--ink); color: var(--cream); border-radius: 20px; padding: 18px 18px 20px; }
+.tile .k { margin: 0; color: var(--lime); }
+.tile .n { font: 400 64px/.9 var(--display); margin: 8px 0 6px; color: var(--lime); }
+.tile p { margin: 0; font: 600 14.5px/1.45 var(--body); }
+.tile .s { color: var(--mute); opacity: 1; }
+.rlink { display: inline-block; margin-top: 18px; font: 800 15px var(--body); color: var(--ink); text-underline-offset: 4px; }
+.says-h { margin: 52px 0 14px; }
+.say { width: 284px; margin: 0; background: var(--ink); color: var(--cream); border-radius: 22px; padding: 22px 20px; display: flex; flex-direction: column; justify-content: space-between; gap: 18px; }
+.say p { margin: 0; font: 700 16.5px/1.4 var(--body); }
+.say figcaption { font: 400 20px/1 var(--display); text-transform: uppercase; color: var(--lime); }
+.say figcaption span { display: block; margin-top: 4px; font: 700 11px var(--body); letter-spacing: .14em; color: var(--mute); text-transform: none; }
+
+/* 9. together (family) */
+.tog-s { background: var(--ink); }
+.togs { display: grid; gap: 10px; margin-top: 26px; }
+.tog { border-radius: 20px; padding: 18px 18px 20px; background: var(--cream); color: var(--ink); }
+.tog b { display: block; font: 400 28px/1 var(--display); text-transform: uppercase; }
+.tog span { display: block; margin-top: 8px; font: 600 14.5px/1.45 var(--body); }
+.tog:nth-child(2) { background: var(--p); color: var(--ink); }
+.tog:nth-child(3) { background: var(--lime); }
+
+/* 10. free + faq */
+.free { background: var(--ink); padding: 72px 0 40px; border-top: 1px solid var(--line); }
+.free h2 { font-size: clamp(64px, 19vw, 170px); }
+.free .lede { color: var(--mute); }
+.free .cta { align-items: center; }
+.free .plink { font: 800 15px var(--body); color: var(--cream); text-underline-offset: 4px; padding: 10px 6px; }
+.free .finn { width: 84px; height: 84px; }
+.free .first { margin: 14px 0 0; font: 800 13px var(--body); letter-spacing: .1em; text-transform: uppercase; color: var(--lime); }
+.faq { margin-top: 52px; }
+.faq h3 { font: 400 34px/1 var(--display); text-transform: uppercase; margin: 0 0 12px; }
+.end { background: var(--lime); color: var(--ink); padding: 56px 0 50px; }
+.end h2 { font-size: clamp(50px, 14vw, 128px); }
+.end h2 em { color: var(--ink); }
+.end small { display: block; margin-top: 16px; font: 700 12.5px/1.45 var(--body); max-width: 60ch; opacity: .72; }
+
+#toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 60; background: var(--lime); color: var(--ink); border-radius: 999px;
+  padding: 13px 20px; font: 800 14px var(--body); opacity: 0; pointer-events: none; transition: opacity .25s; width: max-content; max-width: calc(100vw - 32px); text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,.4); }
+#toast.on { opacity: 1; }
+
+@media (min-width: 760px) {
+  .bars { left: 32px; right: 32px; top: 84px; }
+  .hero { padding-top: 130px; }
+  .big { font-size: clamp(72px, min(11.5vw, 18vh), 210px); max-width: 13ch; }
+  #stage video, #stage .still { object-position: 50% 24%; }
+  .faith { font-size: 22px; }
+  .face { width: 180px; }
+  .sec { padding: 96px 0; }
+  .sec h2 { font-size: clamp(90px, 11vw, 168px); }
+  .guides h2 { font-size: clamp(72px, 9vw, 140px); }
+  .ep { width: 280px; }
+  .steps { grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .step { grid-template-columns: 1fr; align-items: start; }
+  .step .film { width: 62%; order: -1; margin-bottom: 8px; }
+  .mani .card { padding: 40px 40px 16px; }
+  .mani th { font-size: 11px; }
+  .ways, .togs { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .wcard { width: 300px; }
+  .gcard { width: 300px; }
+  .stat { display: grid; grid-template-columns: auto 1fr; gap: 0 40px; align-items: end; }
+  .stat .k { grid-column: 1 / -1; }
+  .stat .l { font-size: 26px; }
+  .tiles { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .stats { grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .bs .n { font-size: clamp(110px, 11vw, 190px); }
+  .steps.ben { grid-template-columns: repeat(4, 1fr); }
+  .togs { grid-template-columns: repeat(4, 1fr); }
+  .say { width: 340px; }
+  .faq { display: grid; grid-template-columns: 300px 1fr; gap: 40px; }
+  .end { padding: 90px 0 80px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .big .w, .mq .run { animation: none; }
+  .mq { white-space: normal; }
+  .hero.film::after { animation: none; }
+  #stage video, #stage .still { transition: none; }
+}
+
+/*w1css*/
+.wk1 { background: var(--ink); }
+.ep.wk .door { color: var(--c, var(--lime)); }
+.ep.wk h3 { font-size: 26px; }
+.ep.wk .by { display: block; margin-top: 2px; }
+/*/w1css*/
+</style>
+</head>
+<body>
+<canvas id="fx" aria-hidden="true"></canvas>
+<div id="flash" aria-hidden="true"></div>
+<div class="ticker" aria-label="religion, reimagined. pick a faith or build your own. five minutes a day."><div class="run" aria-hidden="true"><span>RELIGION, REIMAGINED ·</span><span>PICK A FAITH OR BUILD YOUR OWN ·</span><span>FIVE MINUTES A DAY ·</span><span>RELIGION, REIMAGINED ·</span><span>PICK A FAITH OR BUILD YOUR OWN ·</span><span>FIVE MINUTES A DAY ·</span><span>RELIGION, REIMAGINED ·</span><span>PICK A FAITH OR BUILD YOUR OWN ·</span><span>FIVE MINUTES A DAY ·</span><span>RELIGION, REIMAGINED ·</span><span>PICK A FAITH OR BUILD YOUR OWN ·</span><span>FIVE MINUTES A DAY ·</span><span>RELIGION, REIMAGINED ·</span><span>PICK A FAITH OR BUILD YOUR OWN ·</span><span>FIVE MINUTES A DAY ·</span><span>RELIGION, REIMAGINED ·</span><span>PICK A FAITH OR BUILD YOUR OWN ·</span><span>FIVE MINUTES A DAY ·</span><span>RELIGION, REIMAGINED ·</span><span>PICK A FAITH OR BUILD YOUR OWN ·</span><span>FIVE MINUTES A DAY ·</span><span>RELIGION, REIMAGINED ·</span><span>PICK A FAITH OR BUILD YOUR OWN ·</span><span>FIVE MINUTES A DAY ·</span></div></div>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top over">
+  <button class="menu-b" type="button" id="menuB" aria-expanded="false" aria-controls="menu"><i></i><span class="t">menu</span><span class="sr">open menu</span></button>
+  <a class="mark" href="#top">infinite hill</a>
+  <a class="join-s" href="/app">start free</a>
+  <nav class="menu" id="menu" hidden aria-label="menu"><a href="#week1">week one</a><a href="#paths">the paths</a><a href="#how">how it works</a><a href="#own">build your own</a><a href="#guides">your guides</a><a href="#free">it's free</a><a href="#faq">faq</a><div class="lang" role="group" aria-label="Language · Idioma"><a href="/" lang="en" hreflang="en" aria-current="page">EN</a><a href="/es" lang="es" hreflang="es">ES</a></div></nav>
+</header>
+
+<main id="main">
+<section class="hero film" id="hero" aria-label="trailer">
+  <div id="stage" aria-hidden="true"></div>
+  <div class="shade"></div>
+  <div id="tint"></div>
+  <div class="bars" id="bars" aria-hidden="true"></div>
+  <div class="copy"><div class="wrap" id="top">
+    <h1 class="disp big"><span class="w" style="--d:0ms">making</span> <span class="w" style="--d:110ms">religion</span> <span class="w" style="--d:220ms"><em>yours</em></span> <span class="w" style="--d:330ms">again.</span></h1>
+    <p class="faith">because you gotta have faith.</p>
+    <p class="who">understand yourself. understand each other. pick a faith or build your own faith, with celebrity guides and voices you know.</p>
+    <nav class="doors" aria-label="the paths"><a href="#ep-chr" data-ep="ep-chr">Christianity</a><a href="#ep-cat" data-ep="ep-cat">Catholicism</a><a href="#ep-jew" data-ep="ep-jew">Judaism</a><a href="#ep-isl" data-ep="ep-isl">Islam</a><a href="#ep-hin" data-ep="ep-hin">Hinduism</a><a href="#ep-bud" data-ep="ep-bud">Buddhism</a><a href="#ep-sik" data-ep="ep-sik">Sikhism</a><a href="#ep-own" data-ep="ep-own" class="own">my own religion</a></nav>
+    <div class="cta">
+      <a class="btn" href="/app">find your path</a>
+      <a class="btn ghost" href="/app?why=own">build my own</a>
+    </div>
+  </div></div>
+</section>
+
+<section class="hooks" aria-label="real stories. told loud.">
+  <p class="cap wrap">real stories. told loud.</p>
+  <div class="mq"><div class="run"><span>a boy waited three days at death's door.</span><i aria-hidden="true">✦</i><span>a whole army lost to one old man.</span><i aria-hidden="true">✦</i><span>a prince walked unarmed toward the enemy.</span><i aria-hidden="true">✦</i><span>a boy waited three days at death's door.</span><i aria-hidden="true">✦</i><span>a whole army lost to one old man.</span><i aria-hidden="true">✦</i><span>a prince walked unarmed toward the enemy.</span><i aria-hidden="true">✦</i></div></div><div class="mq rev"><div class="run"><span>fire couldn't burn one blade of grass.</span><i aria-hidden="true">✦</i><span>an emperor sat on the floor to eat.</span><i aria-hidden="true">✦</i><span>the emperor sent soldiers. they never came back.</span><i aria-hidden="true">✦</i><span>fire couldn't burn one blade of grass.</span><i aria-hidden="true">✦</i><span>an emperor sat on the floor to eat.</span><i aria-hidden="true">✦</i><span>the emperor sent soldiers. they never came back.</span><i aria-hidden="true">✦</i></div></div>
+</section>
+
+<section class="sec paths" id="paths">
+  <div class="wrap">
+    <p class="cap kick lime">the drops</p>
+    <h2 class="disp">episode 1. on every path. <em>press play.</em></h2>
+    <p class="lede">go deep in one faith, or build your own. tap one.</p>
+  </div>
+  <div class="row"><a class="ep own" id="ep-own" href="/hill/episodes/wild-maybe/" style="--c:#EEFF6A"><span class="new">build your own</span><div class="film"><img src="/site-art/next/p-own.webp" alt="" loading="lazy" width="360" height="640"></div><span class="meta"><span class="door">drop 01 · my own religion</span><h3 class="">maybe</h3><span class="by">read by Justin Bieber</span><br><span class="play">episode 1 · tap to play</span></span></a><a class="ep" id="ep-chr" href="/hill/episodes/lost-son/" style="--c:#EEFF6A"><div class="film"><img src="/site-art/next/p-chr.webp" alt="" loading="lazy" width="360" height="640"></div><span class="meta"><span class="door">drop 02 · Christianity</span><h3 class="tb">second chance season</h3><span class="by">read by Denzel Washington</span><br><span class="play">episode 1 · tap to play</span></span></a><a class="ep" id="ep-cat" href="/hill/episodes/cat-tilma/" style="--c:#FF2D8A"><div class="film"><img src="/site-art/next/p-cat.webp" alt="" loading="lazy" width="360" height="640"></div><span class="meta"><span class="door">drop 03 · Catholicism</span><h3 class="tc">roses in december</h3><span class="by">read by Nicole Kidman</span><br><span class="play">episode 1 · tap to play</span></span></a><a class="ep" id="ep-jew" href="/hill/episodes/jew-wrestle/" style="--c:#6FA3FF"><div class="film"><img src="/site-art/next/p-jew.webp" alt="" loading="lazy" width="360" height="640"></div><span class="meta"><span class="door">drop 04 · Judaism</span><h3 class="td">never let go</h3><span class="by">read by Natalie Portman</span><br><span class="play">episode 1 · tap to play</span></span></a><a class="ep" id="ep-isl" href="/hill/episodes/isl-crow/" style="--c:#19E68C"><div class="film"><img src="/site-art/next/p-isl.webp" alt="" loading="lazy" width="360" height="640"></div><span class="meta"><span class="door">drop 05 · Islam</span><h3 class="ta">save one life</h3><span class="by">read by Mahershala Ali</span><br><span class="play">episode 1 · tap to play</span></span></a><a class="ep" id="ep-hin" href="/hill/episodes/holika/" style="--c:#FF8A1F"><div class="film"><img src="/site-art/next/p-hin.webp" alt="" loading="lazy" width="360" height="640"></div><span class="meta"><span class="door">drop 06 · Hinduism</span><h3 class="tb">fire proof faith</h3><span class="by">read by Priyanka Chopra</span><br><span class="play">episode 1 · tap to play</span></span></a><a class="ep" id="ep-bud" href="/hill/episodes/bud-stop/" style="--c:#B58CFF"><div class="film"><img src="/site-art/next/p-bud.webp" alt="" loading="lazy" width="360" height="640"></div><span class="meta"><span class="door">drop 07 · Buddhism</span><h3 class="tc">i have stopped</h3><span class="by">read by Orlando Bloom</span><br><span class="play">episode 1 · tap to play</span></span></a><a class="ep" id="ep-sik" href="/hill/episodes/sik-boulder/" style="--c:#EEFF6A"><div class="film"><img src="/site-art/next/p-sik.webp" alt="" loading="lazy" width="360" height="640"></div><span class="meta"><span class="door">drop 08 · Sikhism</span><h3 class="td">one calm hand</h3><span class="by">read by Diljit Dosanjh</span><br><span class="play">episode 1 · tap to play</span></span></a></div>
+</section>
+
+<!--w1-->
+<section class="sec paths wk1" id="week1" aria-label="week one on every path">
+  <div class="wrap">
+    <p class="cap kick lime">new · week one</p>
+    <h2 class="disp">seven days. seven <em>films.</em></h2>
+    <p class="lede">every path now opens the same way: a 45-second film of a real story, what the faith actually teaches, and what it means for your day. then five quick games and one word to keep.</p>
+  </div>
+  <div class="row"><a class="ep wk" href="/hill/lesson.html?door=christianity&amp;day=1" style="--c:#EEFF6A"><div class="film"><img src="/site-art/next/w1-chr.webp" alt="" loading="lazy" width="360" height="640"></div><span class="meta"><span class="door">week one · Christianity</span><h3>what the bread and the cup are doing</h3><span class="by">7 films · 7 days</span><span class="play">start day 1</span></span></a><a class="ep wk" href="/hill/lesson.html?door=catholic&amp;day=1" style="--c:#FF2D8A"><div class="film"><img src="/site-art/next/w1-cat.webp" alt="" loading="lazy" width="360" height="640"></div><span class="meta"><span class="door">week one · Catholicism</span><h3>the smallest prayer</h3><span class="by">7 films · 7 days</span><span class="play">start day 1</span></span></a><a class="ep wk" href="/hill/lesson.html?door=judaism&amp;day=1" style="--c:#6FA3FF"><div class="film"><img src="/site-art/next/w1-jew.webp" alt="" loading="lazy" width="360" height="640"></div><span class="meta"><span class="door">week one · Judaism</span><h3>the words on the doorpost</h3><span class="by">7 films · 7 days</span><span class="play">start day 1</span></span></a><a class="ep wk" href="/hill/lesson.html?door=islam&amp;day=1" style="--c:#19E68C"><div class="film"><img src="/site-art/next/w1-isl.webp" alt="" loading="lazy" width="360" height="640"></div><span class="meta"><span class="door">week one · Islam</span><h3>the words before every beginning</h3><span class="by">7 films · 7 days</span><span class="play">start day 1</span></span></a><a class="ep wk" href="/hill/lesson.html?door=hinduism&amp;day=1" style="--c:#FF8A1F"><div class="film"><img src="/site-art/next/w1-hin.webp" alt="" loading="lazy" width="360" height="640"></div><span class="meta"><span class="door">week one · Hinduism</span><h3>the one at every doorway</h3><span class="by">7 films · 7 days</span><span class="play">start day 1</span></span></a><a class="ep wk" href="/hill/lesson.html?door=buddhism&amp;day=1" style="--c:#B58CFF"><div class="film"><img src="/site-art/next/w1-bud.webp" alt="" loading="lazy" width="360" height="640"></div><span class="meta"><span class="door">week one · Buddhism</span><h3>instant karma?</h3><span class="by">7 films · 7 days</span><span class="play">start day 1</span></span></a><a class="ep wk" href="/hill/lesson.html?door=sikhism&amp;day=1" style="--c:#EEFF6A"><div class="film"><img src="/site-art/next/w1-sik.webp" alt="" loading="lazy" width="360" height="640"></div><span class="meta"><span class="door">week one · Sikhism</span><h3>the word you already say</h3><span class="by">7 films · 7 days</span><span class="play">start day 1</span></span></a><a class="ep wk" href="/hill/lesson.html?door=spiritual&amp;day=1" style="--c:#EEFF6A"><div class="film"><img src="/site-art/next/w1-own.webp" alt="" loading="lazy" width="360" height="640"></div><span class="meta"><span class="door">week one · my own religion</span><h3>everything happens for a reason</h3><span class="by">7 films · 7 days</span><span class="play">start day 1</span></span></a></div>
+</section>
+<!--/w1-->
+
+<section class="sec guides" id="guides">
+  <div class="wrap"><p class="cap kick">faith and happiness</p><h2 class="disp">your path has a voice. <em>you already know it.</em></h2><p class="lede">eight people with no time, taking the time. in your ear for every lesson, in the faith they grew up in.</p></div>
+  <div class="row"><div class="gcard" style="--c:#EEFF6A"><div class="film"><img src="/site-art/next/g-own.webp" alt="Justin Bieber" loading="lazy" width="560" height="700"></div><div class="b"><b>Justin Bieber</b><small>my own religion</small><q data-s="I don’t want to let my shame of my past dictate what I’m able to do now for people." data-f="I don’t want to let my shame of my past dictate what I’m able to do now for people.">I don’t want to let my shame of my past dictate what I’m able to do now for people.</q></div></div><div class="gcard" style="--c:#EEFF6A"><div class="film"><img src="/site-art/next/g-chr.webp" alt="Denzel Washington" loading="lazy" width="560" height="700"></div><div class="b"><b>Denzel Washington</b><small>Christianity</small><q data-s="First thing I do is pray every morning." data-f="First thing I do is pray every morning. I read my Bible. I try to wake up now and sit there first, put my feet on the floor, and sit, and be quiet.">First thing I do is pray every morning.</q><button class="more" type="button" aria-expanded="false" data-more="read the full quote" data-less="show less">read the full quote</button></div></div><div class="gcard" style="--c:#FF2D8A"><div class="film"><img src="/site-art/next/g-cat.webp" alt="Nicole Kidman" loading="lazy" width="560" height="700"></div><div class="b"><b>Nicole Kidman</b><small>Catholicism</small><q data-s="Catholicism will keep me going." data-f="Catholicism will keep me going. I'm a Catholic girl. It will always stay with you.">Catholicism will keep me going.</q><button class="more" type="button" aria-expanded="false" data-more="read the full quote" data-less="show less">read the full quote</button></div></div><div class="gcard" style="--c:#6FA3FF"><div class="film"><img src="/site-art/next/g-jew.webp" alt="Natalie Portman" loading="lazy" width="560" height="700"></div><div class="b"><b>Natalie Portman</b><small>Judaism</small><q data-s="I really love being Jewish…" data-f="I really love being Jewish… I feel like it's a big part of my identity and it's a great thing to be a part of.">I really love being Jewish…</q><button class="more" type="button" aria-expanded="false" data-more="read the full quote" data-less="show less">read the full quote</button></div></div><div class="gcard" style="--c:#19E68C"><div class="film"><img src="/site-art/next/g-isl.webp" alt="Mahershala Ali" loading="lazy" width="560" height="700"></div><div class="b"><b>Mahershala Ali</b><small>Islam</small><q data-s="At the end of the day we're all spirits having a physical experience." data-f="At the end of the day we're all spirits having a physical experience. That really comes from my relationship with Islam because it just makes me really conscious of my action.">At the end of the day we're all spirits having a physical experience.</q><button class="more" type="button" aria-expanded="false" data-more="read the full quote" data-less="show less">read the full quote</button></div></div><div class="gcard" style="--c:#FF8A1F"><div class="film"><img src="/site-art/next/g-hin.webp" alt="Priyanka Chopra" loading="lazy" width="560" height="700"></div><div class="b"><b>Priyanka Chopra</b><small>Hinduism</small><q data-s="I am a Hindu." data-f="I am a Hindu. I pray, I have a temple at my home, I do it as often as I can. But truly to me, I am a believer that a higher power does exist and I like to have faith in that.">I am a Hindu.</q><button class="more" type="button" aria-expanded="false" data-more="read the full quote" data-less="show less">read the full quote</button></div></div><div class="gcard" style="--c:#B58CFF"><div class="film"><img src="/site-art/next/g-bud.webp" alt="Orlando Bloom" loading="lazy" width="560" height="700"></div><div class="b"><b>Orlando Bloom</b><small>Buddhism</small><q data-s="Without my Buddhist practice, I could have easily come off the rails." data-f="Without my Buddhist practice, I could have easily come off the rails. I've been changing the narrative in my head and feel that I can be the driver of my train.">Without my Buddhist practice, I could have easily come off the rails.</q><button class="more" type="button" aria-expanded="false" data-more="read the full quote" data-less="show less">read the full quote</button></div></div><div class="gcard" style="--c:#EEFF6A"><div class="film"><img src="/site-art/next/g-sik.webp" alt="Diljit Dosanjh" loading="lazy" width="560" height="700"></div><div class="b"><b>Diljit Dosanjh</b><small>Sikhism</small><q data-s="Maharaj made us Sikh, and I will continue following Sikhi all my life." data-f="Maharaj made us Sikh, and I will continue following Sikhi all my life.">Maharaj made us Sikh, and I will continue following Sikhi all my life.</q></div></div></div>
+</section>
+
+<section class="sec how" id="how">
+  <div class="wrap">
+    <h2 class="disp">why it <em>hits.</em></h2>
+    <ol class="steps ben"><li class="step"><div><div class="n">01</div><h3>five minutes. done.</h3><p>one real story a day: a 45-second film, then five quick games. no preaching, no pressure.</p></div><div class="film"><img src="/site-art/next/lesson-film.webp" alt="a moment from a lesson film" width="420" height="908" loading="lazy"></div></li><li class="step"><div><div class="n">02</div><h3>a guide who gets you</h3><p>tell me what's on your mind. i pick today's story from your path, and get to know you a little better every day.</p></div><div class="film"><img src="/site-art/next/jonah-game.webp" alt="a quick game inside an episode" width="420" height="908" loading="lazy"></div></li><li class="step"><div><div class="n">03</div><h3>what it really means</h3><p>play it like a game, then see what the tradition actually teaches and carry it into your day. prayer is always your choice.</p></div><div class="film"><img src="/site-art/next/lesson-game.webp" alt="a quick game inside a lesson" width="420" height="908" loading="lazy"></div></li><li class="step"><div><div class="n">04</div><h3>build your own faith</h3><p>not into organized religion? taste every faith, keep what speaks to you: a little every day, seven days on something on your mind, or wander.</p></div><div class="film"><img src="/site-art/next/p-own.webp" alt="the my own religion poster" width="420" height="908" loading="lazy"></div></li></ol>
+    <div class="cta"><a class="btn ink" href="/app">find your path</a><a class="btn ghost dk" id="own" href="/app?why=own">build my own</a></div>
+    <p class="more">your guide gets to know you, a little every day.</p>
+  </div>
+</section>
+
+<section class="sec proof" id="proof" aria-label="faith and happiness">
+  <div class="wrap">
+    <div class="stats"><div class="bs"><p class="n">36%</p><p class="l">of actively religious Americans call themselves very happy, compared with 25% of those who aren't.</p><p class="s">Pew Research Center, 2019</p></div><div class="bs"><p class="n">39%</p><p class="l">of Americans who married since 2010 have a spouse from a different religious group, including no religion at all. before 1960, it was 19%.</p><p class="s">Pew Research Center, 2015</p></div><div class="bs"><p class="n">14 of 32</p><p class="l">basic religion questions is the average American's score. people who know more about a faith tend to feel warmer toward most religious groups.</p><p class="s">Pew Research Center, 2019</p></div></div>
+    <a class="rlink" href="/science">read the research →</a>
+  </div>
+</section>
+
+<section class="sec says-s" id="reviews">
+  <div class="wrap"><h2 class="disp">what people are telling us</h2></div>
+  <div class="row"><figure class="say"><p>“I feel so much more connected to my in-laws. I finally understand the traditions that matter to them instead of just standing on the outside of them.”</p><figcaption>Lauren, 34<span>Los Angeles, CA</span></figcaption></figure><figure class="say"><p>“My parents tried to teach me this stuff growing up and I never paid attention. Now I finally want to know.”</p><figcaption>Rohan, 29<span>Chicago, IL</span></figcaption></figure><figure class="say"><p>“It warms my heart to see my grandkids learning something that has been important to our family for generations.”</p><figcaption>Meera, 67<span>Edison, NJ</span></figcaption></figure><figure class="say"><p>“I started because I was curious about other religions. Somehow, it's made me understand my own life better.”</p><figcaption>Ethan, 24<span>Seattle, WA</span></figcaption></figure><figure class="say"><p>“There are days when my mind just won't stop. Infinite Hill gives me a few quiet minutes to slow down, and I'm sleeping better because of it.”</p><figcaption>Rachel, 57<span>Nashville, TN</span></figcaption></figure><figure class="say"><p>“I grew up around these stories, but no one ever explained what they actually meant. I feel like I'm discovering a part of myself I never really knew.”</p><figcaption>Maya, 18<span>Irvine, CA</span></figcaption></figure><figure class="say"><p>“My son and I do one lesson together every morning. It's become this tiny ritual that I hope he remembers when he's older.”</p><figcaption>David, 48<span>Santa Monica, CA</span></figcaption></figure><figure class="say"><p>“For the first time in years, I feel connected to who I am — not just what I do all day.”</p><figcaption>Ari, 41<span>New York, NY</span></figcaption></figure></div>
+</section>
+
+<section class="mani" id="long" aria-label="the long game">
+  <div class="wrap">
+    <p class="cap kick">faith apps are boring. we said it.</p>
+    <h2 class="disp">the long <em>game.</em></h2>
+    <table>
+      <thead><tr><th scope="col">the short game</th><th scope="col">the long game</th></tr></thead>
+      <tbody><tr><td>scroll.</td><td>stay.</td></tr><tr><td>react.</td><td>respond.</td></tr><tr><td>hot take.</td><td>old story.</td></tr><tr><td>guilt trip.</td><td>a friend who checks in.</td></tr><tr><td>streak or shame.</td><td>rest days.</td></tr><tr><td>pick a side.</td><td>one human race. one hill.</td></tr></tbody>
+    </table>
+    <p class="fine">every faith deserves better than a boring app.</p>
+  </div>
+</section>
+
+<section class="sec tog-s" id="together">
+  <div class="wrap">
+    <h2 class="disp">bring <em>your people.</em></h2>
+    <p class="lede" style="color:var(--mute)">walk it with friends and family. the house that does Christmas and Hanukkah fits here too.</p>
+    <div class="togs"><div class="tog"><b>shared streaks</b><span>walk it with friends and family: shared streaks and lanterns with the people you love.</span></div><div class="tog"><b>the table</b><span>a family plan for up to six, coming after the pilot. different paths at one table is fine. under-13s join on a parent's phone.</span></div><div class="tog"><b>circles</b><span>walk as a circle: a teacher, a temple, a church, a mosque, a synagogue, a gurdwara or a family. no feed, no followers.</span></div><a class="tog" href="/nights"><b>nights</b><span>nights in your city are coming, hosted only by verified organizers, 18+. we'll say so here when they're real.</span></a></div>
+    <h3 class="disp whyh" id="why">which one sounds <em>like you?</em></h3>
+    <p class="lede" style="color:var(--mute)">for the curious days, and the hard ones.</p>
+  </div>
+  <div class="row"><a class="wcard" href="/app?why=partner"><q>my partner and i grew up in different religions.</q><span>that's a loving place to start. learn each other's religion, side by side, so you understand what matters to each other.</span><b>start here →</b></a><a class="wcard" href="/app?why=kids"><q>we have two religions at home. what do we teach our kids?</q><span>you don't have to have it all figured out. learn both, five minutes at a time, and teach what feels true to your family.</span><b>start here →</b></a><a class="wcard" href="/app?why=kids"><q>our kids ask questions about our religion, and we don't have the answers.</q><span>you're not alone. most parents learned the rituals, not the reasons. learn the answers in words your kids will understand.</span><b>start here →</b></a><a class="wcard" href="/app?why=grief"><q>someone i love died. where did they go?</q><span>i'm so sorry. every tradition has sat with this question for thousands of years. hear what yours says, gently, at your own pace.</span><b>start here →</b></a><a class="wcard" href="/app?why=hard"><q>why does everyone else seem okay but me?</q><span>you're not the only one, even if it feels that way. let's start with a few quiet minutes, just for you.</span><b>start here →</b></a><a class="wcard" href="/app?why=roots"><q>i say the prayers but don't know what they mean.</q><span>you've been saying them for years. imagine finally hearing what they mean, one a day.</span><b>start here →</b></a><a class="wcard" href="/app?why=god"><q>i'm not sure i believe anymore.</q><span>that's an honest place to be, and you're welcome here exactly as you are. nothing here asks you to believe.</span><b>start here →</b></a><a class="wcard" href="/app?why=diagnosis"><q>i just got scary news about my health.</q><span>i'm so sorry. you don't have to carry it alone. every tradition has words for fear and waiting.</span><b>start here →</b></a><a class="wcard" href="/app?why=sent"><q>my parents told me to come here. 🙄</q><span>fair. it's five minutes, a story and a game, not a lecture. you might even like it (i won't tell them.)</span><b>start here →</b></a></div>
+</section>
+
+<section class="free" id="free">
+  <div class="wrap">
+    <h2 class="disp">it's free.<br>no <em>catch.</em></h2>
+    <p class="lede">a little more love, a little less fighting. it starts with you, and five minutes a day.</p>
+    <div class="cta">
+      <a class="btn" href="/app">start free. today.</a>
+      <a class="plink" href="/promise">the 100-day promise →</a>
+    </div>
+    <p class="first">get in early. it's free.</p>
+    <div class="faq" id="faq">
+      <h3>questions</h3>
+      <div>
+      <details><summary>We're an interfaith family. Which path?</summary><p>both. the table (a planned family plan) holds different paths at one table. each person walks their own, and nobody has to pick a side.</p></details>
+      <details><summary>Do I have to pick a religion?</summary><p>no. pick a path, or my own religion. switch anytime.</p></details>
+      <details><summary>Can I create my own religion?</summary><p>yes. that's my own religion: walk it a little every day, take seven days on something on your mind, or wander through a different tradition each day. curious about a partner's faith? that lives in my own religion. your path stays yours.</p></details>
+      <details><summary>Who checks the lessons?</summary><p>a scholar of that one tradition, who knows it from the inside. <a href="/provenance">how we check →</a></p></details>
+      <details><summary>Do I have to start from the beginning?</summary><p>no. start where you belong, not at zero. a couple of minutes of quick questions places you.</p></details>
+      <details><summary>How long is it?</summary><p>year one is about a lesson a day: a new place and a new story each time, and a story card for every one. years two to five go deeper: the texts underneath, the stories, the saints, the sources. five years deep, if you want it. year one is ready. the rest is being written and checked.</p></details>
+      <details><summary>What happens if I miss a day?</summary><p>life happens, and that's okay. a rest day covers it. your streak grows one lesson a day, with rest days built in, because every tradition knows rest. you start with two and earn one back every week. if a streak does break, two lessons in a day within three days earns it back, never for money. your days on the hill and your place on the path never reset.</p></details>
+      <details><summary>Is it for kids?</summary><p>everyone. under-13s join through a parent's table, on the parent's phone. no messages, no strangers, no ads.</p></details>
+      <details><summary>Can my school use it?</summary><p>soon. a teacher tries it free for a term; the school licenses it for less than the textbook it replaces; students never pay. launching after the pilot. <a href="/schools">infinite hill for schools →</a></p></details>
+      <details><summary>Is infinite hill a nonprofit?</summary><p>no. it's a company (Infinite Hill Ventures, Inc.), so it can pay its own way and keep the house free. part of what it earns goes to <a href="/foundation">the infinite hill foundation</a>, a separate nonprofit (in formation). and when giving opens, anything you give inside the app will go there in full.</p></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="end" id="end">
+  <div class="wrap">
+    <img class="finn" src="/site-art/next/finn-celebrate-still.webp" alt="" width="96" height="96" loading="lazy" style="width:96px;height:96px;margin-bottom:14px">
+    <h2 class="disp">be the reason the room <em>gets kinder.</em></h2>
+    <div class="cta"><a class="btn ink" href="/app">start free. today.</a></div>
+    <small>live reads, pricing and nights in your city are coming. we'll say so here when they're real.</small>
+  </div>
+</section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <nav class="cols" aria-label="infinite hill"><div><h4>Practice</h4><a href="/#free">The house (free)</a><a href="/#together">The table</a><a href="/promise">The 100-day promise</a><a href="/app">Start free</a></div><div><h4>Company</h4><a href="/about">About</a><a href="/foundation">The Foundation</a><a href="/keepers">The Keeper Desk</a><a href="/provenance">Keeper &amp; provenance</a><a href="/careers">Careers</a><a href="/contact">Contact</a></div><div><h4>Learn</h4><a href="/science">Research</a><a href="/paths">Eight paths</a><a href="/nights">Nights</a><a href="/prayers">Why we don't write prayers</a><a href="/voices">How voices work</a><a href="/schools">infinite hill for schools</a></div><div><h4>Support</h4><a href="/#faq">FAQ</a><a href="/safety">Safety &amp; hosts</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/biometric">Biometric consent</a><a href="/legal">Legal</a></div><div><h4>Language</h4><a href="/" lang="en" hreflang="en" aria-current="page">English</a><a href="/es" lang="es" hreflang="es">Español</a></div></nav>
+    <div class="legal">
+      <p>infinite hill is a company (Infinite Hill Ventures, Inc.), so it can pay its own way and keep the house free. part of what it earns goes to <a href="/foundation">the infinite hill foundation</a>, a separate nonprofit (in formation).</p>
+      <p class="crisis">If you're in danger or thinking about hurting yourself, call or text 988 (US) or your local emergency number.</p>
+      <p>infinite hill teaches from public-domain scripture, checked by scholars of each tradition. It is not a substitute for a congregation, a clergy member, or medical or mental-health care. Off-app gatherings, once they start, will be hosted only by verified institutions and organizers; all off-app events will be 18+.</p>
+      <p>&copy; 2026 Infinite Hill Ventures, Inc. Not affiliated with any religious institution.</p>
+    </div>
+    <p class="wm" aria-hidden="true">infinite hill</p>
+  </div>
+</footer>
+<div id="toast" role="status" aria-live="polite"></div>
+<div class="wl-back" id="wlback" hidden><div class="wl-box" id="wlbox" role="dialog" aria-modal="true" aria-labelledby="wlh" lang="en"></div></div>
+<script>(function(){var b=document.getElementById("menuB"),m=document.getElementById("menu");if(!b||!m)return;function set(o){m.hidden=!o;b.setAttribute("aria-expanded",o?"true":"false")}b.addEventListener("click",function(e){e.stopPropagation();set(m.hidden)});m.addEventListener("click",function(){set(false)});document.addEventListener("click",function(e){if(!m.hidden&&!e.target.closest(".top"))set(false)});document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!m.hidden){set(false);b.focus()}})})();</script>
+<script>
+(function () {
+"use strict";
+var $ = function (s) { return document.querySelector(s); };
+var RM = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+function toast(msg) { var t = $("#toast"); t.textContent = msg; t.classList.add("on"); clearTimeout(toast.id); toast.id = setTimeout(function () { t.classList.remove("on"); }, 2800); }
+var ART = "/site-art/next/";
+/* ---------- the trailer ---------- */
+var CLIPS = [
+  { n: 1, now: "the son who came home", words: [["he", ""], ["ran", "y"], ["to", ""], ["him.", "y"]] },
+  { n: 2, now: "the road with ruth", words: [["where", ""], ["you", ""], ["go,", "p"], ["i", ""], ["go.", "p"]] },
+  { n: 3, now: "the mountain", words: [["the", ""], ["mountain", "o"], ["shook.", "o"]] },
+  { n: 4, now: "the call at dawn", words: [["the", ""], ["whole", ""], ["city", "g"], ["woke", "g"], ["up.", "g"]] },
+  { n: 5, now: "four open doors", words: [["four", "y"], ["doors.", "y"], ["all", ""], ["open.", "p"]] },
+  { n: 6, now: "river of lights", words: [["a", ""], ["river", "o"], ["full", ""], ["of", ""], ["light.", "y"]] }
+];
+var HOLD = 4200, stage = $("#stage"), vids = [], cur = -1, timer = null, playing = true;
+CLIPS.forEach(function (c, i) {
+  var el;
+  if (RM) { el = document.createElement("img"); el.className = "still"; el.src = ART + "t" + c.n + ".webp"; el.alt = ""; }
+  else {
+    el = document.createElement("video"); el.muted = true; el.defaultMuted = true; el.playsInline = true; el.setAttribute("playsinline", ""); el.setAttribute("muted", "");
+    el.preload = i < 2 ? "auto" : "metadata"; el.poster = ART + "t" + c.n + ".webp"; el.src = ART + "t" + c.n + ".mp4"; el.loop = true;
+  }
+  stage.appendChild(el); vids.push(el);
+});
+var bars = $("#bars"); CLIPS.forEach(function () { var i = document.createElement("i"); i.appendChild(document.createElement("b")); bars.appendChild(i); });
+function setBars(i) {
+  [].forEach.call(bars.children, function (el, k) { var b = el.firstChild; b.style.transition = "none"; b.style.width = k < i ? "100%" : "0%"; });
+  var b = bars.children[i].firstChild; void b.offsetWidth; b.style.transition = RM ? "none" : "width " + HOLD + "ms linear"; b.style.width = "100%";
+}
+function show(i) {
+  cur = i % CLIPS.length;
+  vids.forEach(function (v, k) {
+    if (k === cur) { v.classList.add("on"); if (v.play) { try { v.currentTime = 0; var p = v.play(); if (p && p.catch) p.catch(function () {}); } catch (e) {} } }
+    else { v.classList.remove("on"); if (v.pause) setTimeout(function () { if (k !== cur) v.pause(); }, 600); }
+  });
+  var nx = vids[(cur + 1) % vids.length]; if (nx.preload === "metadata") nx.preload = "auto";
+  setBars(cur);
+  clearTimeout(timer); timer = setTimeout(function () { if (playing) show(cur + 1); }, HOLD);
+}
+var heroOn = true;
+var heroIO = new IntersectionObserver(function (es) {
+  es.forEach(function (e) {
+    heroOn = e.isIntersecting;
+    if (e.isIntersecting && !playing) { playing = true; show(cur + 1); }
+    else if (!e.isIntersecting && playing) { playing = false; clearTimeout(timer); vids.forEach(function (v) { if (v.pause) v.pause(); }); }
+  });
+}, { threshold: 0.15 });
+
+/* ---------- the beat (made live in the browser; same kit as episode A) ---------- */
+var ctx = null, master, musicLP, musicBus, verb, noiseBuf, soundOn = false;
+function clock() { return ctx ? ctx.currentTime : performance.now() / 1000; }
+function initAudio() {
+  if (ctx) return;
+  var AC = window.AudioContext || window.webkitAudioContext; if (!AC) return;
+  try { ctx = new AC(); } catch (e) { ctx = null; return; }
+  master = ctx.createGain(); master.gain.value = 0.9;
+  var comp = ctx.createDynamicsCompressor(); comp.threshold.value = -14; comp.ratio.value = 4; master.connect(comp); comp.connect(ctx.destination);
+  musicLP = ctx.createBiquadFilter(); musicLP.type = "lowpass"; musicLP.frequency.value = 18000;
+  musicBus = ctx.createGain(); musicBus.gain.value = 0.62; musicBus.connect(musicLP); musicLP.connect(master);
+  verb = ctx.createConvolver(); var len = ctx.sampleRate * 1.6, ir = ctx.createBuffer(2, len, ctx.sampleRate);
+  for (var c = 0; c < 2; c++) { var d = ir.getChannelData(c); for (var i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, 2.6); }
+  verb.buffer = ir; var vg = ctx.createGain(); vg.gain.value = 0.25; verb.connect(vg); vg.connect(musicBus);
+  noiseBuf = ctx.createBuffer(1, ctx.sampleRate * 2, ctx.sampleRate); var nd = noiseBuf.getChannelData(0); for (var j = 0; j < nd.length; j++) nd[j] = Math.random() * 2 - 1;
+}
+function env(g, t, a, peak, dec) { g.gain.cancelScheduledValues(t); g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(peak, t + a); g.gain.exponentialRampToValueAtTime(0.0001, t + a + dec); }
+function osc(type, f, t, dur, out) { var o = ctx.createOscillator(); o.type = type; o.frequency.setValueAtTime(f, t); var g = ctx.createGain(); o.connect(g); g.connect(out || musicBus); o.start(t); o.stop(t + dur + 0.05); return { o: o, g: g }; }
+function noise(t, dur, type, freq, q, out) { var s = ctx.createBufferSource(); s.buffer = noiseBuf; var f = ctx.createBiquadFilter(); f.type = type; f.frequency.value = freq; f.Q.value = q || 1;
+  var g = ctx.createGain(); s.connect(f); f.connect(g); g.connect(out || musicBus); s.start(t, Math.random()); s.stop(t + dur + 0.05); return { s: s, f: f, g: g }; }
+var I = {
+  kick: function (t, v) { var a = osc("sine", 160, t, 0.5); a.o.frequency.exponentialRampToValueAtTime(42, t + 0.13); env(a.g, t, 0.003, 1.1 * v, 0.42); var c = noise(t, 0.02, "highpass", 3000, 0.7); env(c.g, t, 0.001, 0.25 * v, 0.02); },
+  dagga: function (t, v) { var a = osc("sine", 118, t, 0.4); a.o.frequency.exponentialRampToValueAtTime(58, t + 0.09); env(a.g, t, 0.002, 0.9 * v, 0.32);
+    var b = osc("triangle", 180, t, 0.2); b.o.frequency.exponentialRampToValueAtTime(90, t + 0.06); env(b.g, t, 0.002, 0.25 * v, 0.12);
+    var n = noise(t, 0.08, "lowpass", 900, 1); env(n.g, t, 0.001, 0.4 * v, 0.07); },
+  tilli: function (t, v) { var n = noise(t, 0.1, "bandpass", 2600, 1.4); env(n.g, t, 0.001, 0.55 * v, 0.07); n.g.connect(verb);
+    var a = osc("sine", 540, t, 0.08); env(a.g, t, 0.001, 0.18 * v, 0.05); },
+  na: function (t, v) { var a = osc("sine", 690, t, 0.4); env(a.g, t, 0.002, 0.32 * v, 0.28); var b = osc("sine", 1380, t, 0.2); env(b.g, t, 0.002, 0.1 * v, 0.12);
+    a.g.connect(verb); var n = noise(t, 0.02, "highpass", 4000, 1); env(n.g, t, 0.001, 0.15 * v, 0.015); },
+  ge: function (t, v) { var a = osc("sine", 82, t, 0.6); a.o.frequency.linearRampToValueAtTime(118, t + 0.32); env(a.g, t, 0.004, 0.75 * v, 0.5); },
+  shaker: function (t, v) { var n = noise(t, 0.05, "highpass", 7500, 0.8); env(n.g, t, 0.003, 0.14 * v, 0.04); },
+  clap: function (t, v) { for (var k = 0; k < 3; k++) { var n = noise(t + k * 0.011, 0.16, "bandpass", 1600, 1.2); env(n.g, t + k * 0.011, 0.001, 0.45 * v, k === 2 ? 0.16 : 0.02); if (k === 2) n.g.connect(verb); } },
+  bass: function (t, f, dur, v) { var a = osc("sawtooth", f, t, dur + 0.1); var lp = ctx.createBiquadFilter(); lp.type = "lowpass"; lp.frequency.setValueAtTime(900, t); lp.frequency.exponentialRampToValueAtTime(160, t + dur);
+    a.o.disconnect(); a.o.connect(lp); lp.connect(a.g); env(a.g, t, 0.006, 0.32 * v, dur);
+    var s = osc("sine", f, t, dur + 0.1); env(s.g, t, 0.006, 0.55 * v, dur); },
+  lead: function (t, f, dur, v) { var o1 = ctx.createOscillator(), o2 = ctx.createOscillator(); o1.type = "square"; o2.type = "sawtooth"; o1.frequency.value = f; o2.frequency.value = f * 1.004;
+    var vib = ctx.createOscillator(), vg = ctx.createGain(); vib.frequency.value = 5.6; vg.gain.value = f * 0.012; vib.connect(vg); vg.connect(o1.frequency); vg.connect(o2.frequency);
+    var bp = ctx.createBiquadFilter(); bp.type = "bandpass"; bp.frequency.value = 1500; bp.Q.value = 1.1; var g = ctx.createGain();
+    o1.connect(bp); o2.connect(bp); bp.connect(g); g.connect(musicBus); g.connect(verb);
+    g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(0.16 * v, t + 0.03); g.gain.setValueAtTime(0.16 * v, t + dur * 0.7); g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+    [o1, o2, vib].forEach(function (o) { o.start(t); o.stop(t + dur + 0.05); }); },
+  crash: function (t, v) { var n = noise(t, 2.2, "highpass", 4500, 0.6); env(n.g, t, 0.002, 0.5 * v, 2.0); n.g.connect(verb); },
+  boom: function (t, v) { var a = osc("sine", 70, t, 2.4); a.o.frequency.exponentialRampToValueAtTime(28, t + 1.8); env(a.g, t, 0.004, 1.2 * v, 2.2);
+    var n = noise(t, 1.2, "lowpass", 400, 0.7); env(n.g, t, 0.003, 0.7 * v, 1.1); },
+  crack: function (t, v) { var n = noise(t, 0.3, "highpass", 1200, 0.9); env(n.g, t, 0.001, 0.8 * v, 0.22); n.g.connect(verb); var b = noise(t, 0.6, "lowpass", 200, 1); env(b.g, t, 0.003, 0.9 * v, 0.55); },
+  growl: function (t, dur) { var a = osc("sawtooth", 46, t, dur), lp = ctx.createBiquadFilter(); lp.type = "lowpass"; lp.frequency.value = 220;
+    var l = ctx.createOscillator(), lg = ctx.createGain(); l.frequency.value = 7; lg.gain.value = 120; l.connect(lg); lg.connect(lp.frequency); l.start(t); l.stop(t + dur);
+    a.o.disconnect(); a.o.connect(lp); lp.connect(a.g); a.g.gain.setValueAtTime(0.0001, t); a.g.gain.exponentialRampToValueAtTime(0.5, t + dur * 0.6); a.g.gain.exponentialRampToValueAtTime(0.0001, t + dur); },
+  riser: function (t, dur) { var n = noise(t, dur, "bandpass", 300, 5); n.f.frequency.setValueAtTime(300, t); n.f.frequency.exponentialRampToValueAtTime(7000, t + dur);
+    n.g.gain.setValueAtTime(0.0001, t); n.g.gain.exponentialRampToValueAtTime(0.4, t + dur); n.g.gain.setValueAtTime(0.0001, t + dur + 0.01);
+    var a = osc("sawtooth", 110, t, dur); a.o.frequency.exponentialRampToValueAtTime(880, t + dur); a.g.gain.setValueAtTime(0.0001, t); a.g.gain.exponentialRampToValueAtTime(0.06, t + dur); a.g.gain.setValueAtTime(0.0001, t + dur + 0.01); }
+};
+function play(name) { if (!ctx) return; try { I[name].apply(null, [].slice.call(arguments, 1)); } catch (e) {} }
+
+var BPM = 108, SIX = 60 / BPM / 4, step = 0, nextT = 0, mood = 2, beats = [], buildStart = 0;
+var ROOTS = [73.42, 65.41, 49.0, 55.0];
+var HOOK = [[0, 880, 2], [2, 987.77, 1], [3, 880, 1], [4, 739.99, 2], [6, 880, 2], [8, 1174.66, 4], [12, 1046.5, 2], [14, 987.77, 2],
+            [16, 880, 2], [18, 739.99, 2], [20, 783.99, 2], [22, 739.99, 2], [24, 659.25, 2], [26, 587.33, 6]];
+function beat(t, s, kind) { beats.push({ t: t, s: s, kind: kind || "k" }); }
+function playStep(s, t) {
+  var p = s % 16, bar = Math.floor(s / 16), root = ROOTS[bar % 4];
+  if (mood === 2) {
+    if (p === 0 || p === 8) { play("kick", t, 0.85); beat(t, 0.8); }
+    if (p === 0 || p === 6 || p === 8 || p === 14 || (bar % 2 && p === 11)) { play("dagga", t, 0.8); if (p !== 0 && p !== 8) beat(t, 0.45, "d"); }
+    if (p === 2 || p === 4 || p === 10 || p === 12) play("tilli", t, 0.7);
+    play("shaker", t, p % 4 === 2 ? 1 : 0.55);
+    if (p === 4 || p === 12) play("na", t, 0.6);
+    if (p === 0) play("bass", t, root, SIX * 3, 0.8);
+    if (p === 10) play("bass", t, root, SIX * 2, 0.6);
+    return;
+  }
+  if (p % 4 === 0) { play("kick", t, 1); beat(t, 1); }
+  if ([0, 3, 6, 8, 11, 14].indexOf(p) >= 0) { play("dagga", t, 0.85); if (p % 4) beat(t, 0.5, "d"); }
+  if ([2, 4, 7, 10, 12, 15].indexOf(p) >= 0) play("tilli", t, 0.7);
+  if (p === 4 || p === 12) { play("clap", t, 0.9); beat(t, 0.6, "c"); }
+  play("shaker", t, p % 2 ? 0.5 : 0.9);
+  if (p === 0) play("bass", t, root, SIX * 1.6, 1);
+  if (p === 3 || p === 6 || p === 10 || p === 14) play("bass", t, root * (p === 10 ? 1.5 : 1), SIX * 1.4, 0.8);
+  var hp = s % 32; HOOK.forEach(function (h) { if (h[0] === hp) play("lead", t, h[1], h[2] * SIX, 0.9); });
+}
+function tick() {
+  var now = clock();
+  if (nextT < now - 0.3) nextT = now + 0.03;
+  while (nextT < now + 0.12) { playStep(step, nextT); nextT += SIX; step++; }
+  // the build: two bars after sound comes on, the beat drops
+  if (mood === 2 && buildStart && now - buildStart > SIX * 16 * 2) dropNow();
+}
+setInterval(tick, 25);
+function dropNow() {
+  var t = clock() + 0.02; nextT = t; step = 0; mood = 3; buildStart = 0;
+  play("boom", t, 1); play("crash", t, 1); play("kick", t, 1.2);
+  beat(t, 2.2, "drop");
+}
+function setSound(on) {
+  soundOn = on; if (ctx) master.gain.setTargetAtTime(on ? 0.9 : 0, ctx.currentTime, 0.05);
+  var b = $("#snd"); if (!b) return; b.textContent = on ? "sound off" : "sound on"; b.setAttribute("aria-pressed", on ? "true" : "false");
+}
+($("#snd") || document.createElement("i")).addEventListener("click", function (e) {
+  e.stopPropagation();
+  if (soundOn) { setSound(false); return; }
+  initAudio(); if (!ctx) { toast("no sound on this browser."); return; }
+  try { ctx.resume(); } catch (er) {}
+  setSound(true);
+  if (mood === 2) { play("riser", clock() + 0.05, SIX * 32); buildStart = clock(); toast("wait for it…"); }
+});
+
+/* ---------- color: gulal powder, crowd lights, club beams (episode A canvas) ---------- */
+var cv = $("#fx"), g2 = cv.getContext("2d"), W = 0, H = 0, DPR = 1, flashEl = $("#flash"), tint = $("#tint"), heroEl = $("#hero");
+var COLORS = ["#FF2D8A", "#EEFF6A", "#19E68C", "#2F7BFF", "#FF8A1F", "#9B5CFF"];
+var sprites = COLORS.map(function (c) { var s = document.createElement("canvas"); s.width = s.height = 64; var x = s.getContext("2d");
+  var gr = x.createRadialGradient(32, 32, 0, 32, 32, 32); gr.addColorStop(0, c); gr.addColorStop(0.35, c + "cc"); gr.addColorStop(1, c + "00"); x.fillStyle = gr; x.fillRect(0, 0, 64, 64); return s; });
+var torchSprite = (function () { var s = document.createElement("canvas"); s.width = s.height = 64; var x = s.getContext("2d");
+  var gr = x.createRadialGradient(32, 32, 0, 32, 32, 32); gr.addColorStop(0, "rgba(255,255,255,1)"); gr.addColorStop(0.12, "rgba(255,244,214,.95)"); gr.addColorStop(0.4, "rgba(255,200,120,.25)"); gr.addColorStop(1, "rgba(255,200,120,0)");
+  x.fillStyle = gr; x.fillRect(0, 0, 64, 64); return s; })();
+function resize() { DPR = Math.min(2, window.devicePixelRatio || 1); W = window.innerWidth; H = window.innerHeight; cv.width = W * DPR; cv.height = H * DPR; g2.setTransform(DPR, 0, 0, DPR, 0, 0); }
+window.addEventListener("resize", resize); resize();
+var parts = [], rings = [], torches = [], torchTarget = 0, beams = 0, pulse = 0;
+var MAXP = RM ? 260 : 1400;
+function throwColor(x, y, power, ci) { return;
+  power = power || 1; var c1 = ci != null ? ci : (Math.random() * 6) | 0, c2 = (Math.random() * 6) | 0;
+  var n = Math.round((RM ? 26 : 110) * power);
+  for (var i = 0; i < n && parts.length < MAXP; i++) {
+    var a = Math.random() * Math.PI * 2, sp = RM ? 0.15 : (Math.random() * Math.random()) * 11 * Math.sqrt(power);
+    var cloud = Math.random() < 0.18;
+    parts.push({ x: x, y: y, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp - (RM ? 0 : 1.2), life: 0, max: (cloud ? 110 : 70) + Math.random() * 60, s: cloud ? 26 + Math.random() * 50 : 3 + Math.random() * 12,
+      c: Math.random() < 0.7 ? c1 : c2, cloud: cloud, seed: Math.random() * 1000 });
+  }
+  if (!RM) rings.push({ x: x, y: y, r: 6, life: 0, c: COLORS[c1] });
+}
+function bigBurst(k) { for (var i = 0; i < (k || 7); i++) throwColor(W * (0.1 + Math.random() * 0.8), H * (0.2 + Math.random() * 0.65), 1.5, i % 6); }
+function flash(c, a) { if (RM) return; flashEl.style.background = c || "#EEFF6A"; flashEl.style.transition = "none"; flashEl.style.opacity = a || 0.9; void flashEl.offsetWidth; flashEl.style.transition = "opacity .6s ease-out"; flashEl.style.opacity = 0; }
+function shake(px) { if (RM || !heroEl.animate) return; heroEl.animate([{ transform: "translate(0,0)" }, { transform: "translate(" + px + "px," + (-px) + "px)" }, { transform: "translate(" + (-px) + "px," + px * 0.6 + "px)" }, { transform: "translate(0,0)" }], { duration: 260, easing: "ease-out" }); }
+function onBeat(b) {
+  pulse = Math.min(1.6, pulse + b.s);
+  if (b.kind === "drop") {
+    flash("#FF2D8A", 1); setTimeout(function () { flash("#EEFF6A", 0.8); }, 140); shake(16); bigBurst(10);
+    rings.push({ x: W / 2, y: H * 0.55, r: 10, life: 0, c: "#EEFF6A", big: true });
+    if (heroOn) { var h = document.querySelector(".big"); if (h.animate && !RM) h.animate([{ transform: "scale(1.12) rotate(-2deg)" }, { transform: "none" }], { duration: 380, easing: "cubic-bezier(.2,1.6,.4,1)" }); }
+    toast("there it is.");
+  }
+  if (!RM && b.kind === "k" && b.s >= 0.8 && heroOn) { var v = vids[cur]; if (v) { v.style.setProperty("--zoom", 1.08); setTimeout(function () { v.style.setProperty("--zoom", 1.04); }, 90); } }
+  if (!RM && mood === 3 && soundOn && heroOn && b.s >= 1 && Math.random() < 0.5) throwColor(W * (0.15 + Math.random() * 0.7), H * (0.35 + Math.random() * 0.4), 0.6);
+  torches.forEach(function (t) { t.kick = b.s; });
+}
+var endOn = false, lastF = performance.now();
+function frame(now) {
+  var dt = Math.min(2.5, (now - lastF) / 16.67); lastF = now;
+  var ct = clock();
+  while (beats.length && beats[0].t <= ct) onBeat(beats.shift());
+  if (beats.length > 200) beats.splice(0, beats.length - 200);
+  pulse *= Math.pow(0.9, dt);
+  tint.style.opacity = (mood === 3 ? 0.2 : 0.08) + pulse * 0.2;
+  torchTarget = (heroOn && (mood === 3 || soundOn)) || endOn ? (W > 700 ? 60 : 34) : (heroOn ? 14 : 0);
+  g2.clearRect(0, 0, W, H);
+  var T = now / 1000;
+  var beamTarget = ((mood === 3 && heroOn) || endOn) && !RM ? 1 : 0; beams += (beamTarget - beams) * 0.04 * dt;
+  if (beams > 0.02) {
+    g2.globalCompositeOperation = "lighter";
+    for (var bI = 0; bI < 4; bI++) {
+      var ang = Math.sin(T * 0.6 + bI * 1.7) * 0.5 + (bI - 1.5) * 0.25, ox = W * (0.15 + bI * 0.23), len = H * 1.1;
+      var gr = g2.createLinearGradient(ox, 0, ox + Math.sin(ang) * len, len);
+      var col = COLORS[(bI + Math.floor(T / 2)) % 6];
+      gr.addColorStop(0, col + "55"); gr.addColorStop(1, col + "00");
+      g2.globalAlpha = beams * (0.3 + pulse * 0.3); g2.fillStyle = gr; g2.beginPath(); g2.moveTo(ox, -10);
+      g2.lineTo(ox + Math.sin(ang - 0.09) * len, len); g2.lineTo(ox + Math.sin(ang + 0.09) * len, len); g2.closePath(); g2.fill();
+    }
+  }
+  while (torches.length < torchTarget) torches.push({ x: Math.random(), d: Math.random(), y: 1.25, ph: Math.random() * 6, kick: 0, sw: 0.4 + Math.random() });
+  for (var q = 0; q < torches.length; q++) torches[q].leaving = q >= torchTarget;
+  g2.globalCompositeOperation = "lighter";
+  for (var i = torches.length - 1; i >= 0; i--) {
+    var t = torches[i], home = 0.84 + t.d * 0.16;
+    var target = t.leaving ? 1.3 : home - (t.kick || 0) * 0.025 * (1 - t.d);
+    t.y += (target - t.y) * (RM ? 1 : 0.035) * dt; t.kick *= 0.9;
+    if (t.leaving && t.y > 1.25) { torches.splice(i, 1); continue; }
+    var sx = (t.x + (RM ? 0 : Math.sin(T * t.sw + t.ph) * 0.012)) * W, sy = t.y * H, sz = 10 + (1 - t.d) * 22;
+    g2.globalAlpha = Math.min(1, 0.5 + (RM ? 0 : 0.1 * Math.sin(T * 3 + t.ph * 3)) + (t.kick || 0) * 0.3);
+    g2.drawImage(torchSprite, sx - sz / 2, sy - sz / 2, sz, sz);
+  }
+  g2.globalCompositeOperation = "screen";
+  for (var j = parts.length - 1; j >= 0; j--) {
+    var p = parts[j]; p.life += dt;
+    if (p.life > p.max) { parts.splice(j, 1); continue; }
+    if (!RM) {
+      var fx = Math.sin(p.y * 0.012 + T * 0.9 + p.seed) * 0.06, fy = Math.cos(p.x * 0.012 + T * 0.7 + p.seed) * 0.05;
+      p.vx = (p.vx + fx * dt) * Math.pow(0.955, dt); p.vy = (p.vy + fy * dt + (p.cloud ? -0.012 : 0.05) * dt) * Math.pow(0.955, dt);
+      p.x += p.vx * dt; p.y += p.vy * dt;
+    }
+    var k = p.life / p.max, grow = p.cloud ? 1 + k * 2.2 : 1, size = p.s * grow * (1 + pulse * (p.cloud ? 0.12 : 0.35));
+    g2.globalAlpha = (p.cloud ? 0.33 : 0.95) * (1 - k) * (k < 0.08 ? k / 0.08 : 1);
+    g2.drawImage(sprites[p.c], p.x - size / 2, p.y - size / 2, size, size);
+  }
+  g2.globalCompositeOperation = "lighter";
+  for (var r = rings.length - 1; r >= 0; r--) { var R = rings[r]; R.life += dt; R.r += (R.big ? 22 : 7) * dt; var a = 1 - R.life / (R.big ? 40 : 26);
+    if (a <= 0) { rings.splice(r, 1); continue; } g2.globalAlpha = a * 0.8; g2.strokeStyle = R.c; g2.lineWidth = R.big ? 10 * a : 3 * a; g2.beginPath(); g2.arc(R.x, R.y, R.r, 0, Math.PI * 2); g2.stroke(); }
+  g2.globalAlpha = 1; g2.globalCompositeOperation = "source-over";
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+
+
+
+/* ---------- tap anywhere throws color ---------- */
+document.addEventListener("pointerdown", function (e) {
+  if (e.target.closest("a, button, summary, input, .row, .top")) return;
+  throwColor(e.clientX, e.clientY, 1);
+  if (soundOn) play("tilli", clock() + 0.005, 0.5);
+});
+var drag = false;
+document.addEventListener("pointerdown", function (e) { drag = !e.target.closest("a, button, summary, .row, .top"); });
+document.addEventListener("pointerup", function () { drag = false; });
+document.addEventListener("pointermove", function (e) { if (drag && !RM && Math.random() < 0.3) throwColor(e.clientX, e.clientY, 0.25); });
+
+var endIO = new IntersectionObserver(function (es) { es.forEach(function (e) { endOn = e.isIntersecting; }); }, { threshold: 0.4 });
+endIO.observe($("#end"));
+heroIO.observe(heroEl);
+show(0);
+
+/* guides: tap for the full quote */
+[].forEach.call(document.querySelectorAll(".gcard .more"), function (b) {
+  b.addEventListener("click", function () { var q = b.previousElementSibling, open = b.getAttribute("aria-expanded") === "true";
+    q.textContent = open ? q.getAttribute("data-s") : q.getAttribute("data-f"); b.setAttribute("aria-expanded", open ? "false" : "true"); b.textContent = open ? b.getAttribute("data-more") : b.getAttribute("data-less"); });
+});
+/* a door chip lights up its poster */
+[].forEach.call(document.querySelectorAll(".doors a[data-ep]"), function (a) {
+  a.addEventListener("click", function () { var p = document.getElementById(a.getAttribute("data-ep")); if (!p) return; [].forEach.call(document.querySelectorAll(".ep.hl"), function (x) { x.classList.remove("hl"); }); p.classList.add("hl");
+    setTimeout(function () { try { p.scrollIntoView({ behavior: RM ? "auto" : "smooth", inline: "center", block: "nearest" }); } catch (e) {} }, 450); });
+});
+})();
+</script>
+<script>
+// Invite-only launch (api/waitlist.js). The page asks the server once: only while its launch switch (INVITE_ONLY) is on
+// does every way into the app become "request an invite", opening this small waitlist form. Off, unreachable, or on a
+// host without the function: nothing here runs and the page works exactly as before. Every number shown comes from
+// the server (your real place in your door's line, how many are waiting for that door); nothing is made up here.
+// The person's private key is kept in this browser (localStorage "ih:waitlist") so they can come back to their place.
+(function () {
+  var WL_LANG = 'en';
+  var WL_T = {"cta":"request an invite","eyebrow":"infinite hill is invite-only","title":"request an invite","lede":"we're letting people in path by path. get in line for yours.","refNote":"a friend sent you their link. when you join, they move up the line.","email":"your email","door":"your path","pick":"pick a path","name":"first name (optional)","go":"get in line","going":"one moment…","scarcity":"we open each path as its scholars finish reviewing it. the founding class is capped at {cap}.","full":"the founding class is full for now. you can still get in line for what opens next.","privacy":"we keep your email and path only to invite you. nothing is sent to anyone else, and you can take yourself off the list here anytime.","badEmail":"that email doesn't look right.","badDoor":"pick a path first.","already":"that email is already on the list. open this page on the device you joined from to see your place.","slow":"too many tries from here. please wait a bit and try again.","offline":"we couldn't reach the list right now. please try again in a moment.","inLine":"you're in line","pos":"you're #{n} in line for the {door} path.","waiting1":"you're the only one waiting for this path so far.","waitingN":"{n} people are waiting for this path.","yourLink":"your link","copy":"copy","copied":"copied","share":"share","moveUp":"move up by inviting friends: each friend who joins with your link moves you up to {places} places (up to {cap} friends count).","refs0":"no friends have joined with your link yet.","refs1":"1 friend has joined with your link.","refsN":"{n} friends have joined with your link.","shareText":"i'm in line for infinite hill. join with my link and i move up:","haveCode":"have an invite code?","codeLabel":"invite code","enter":"come in","badCode":"that code doesn't look right.","leave":"take me off the list","leaveSure":"take you off the list? your place and your link go away.","left":"you're off the list. everything we kept about you is deleted.","invited":"your path is open","invitedBody":"you're in. your invite is ready, and it works once.","close":"close"};
+  var WL_DOORS = [["CHRISTIANITY","Christianity"],["CATHOLIC","Catholicism"],["HINDUISM","Hinduism"],["ISLAM","Islam"],["JUDAISM","Judaism"],["BUDDHISM","Buddhism"],["SIKHISM","Sikhism"],["SPIRITUAL","My Own Religion"]];
+  var KEY = 'ih:waitlist', API = '/api/waitlist?kind=';
+  var back = document.getElementById('wlback'), box = document.getElementById('wlbox');
+  if (!back || !box || !window.fetch) return;
+  var status = null, ref = null, preDoor = null, lastFocus = null;
+  try { var q = new URLSearchParams(location.search); var r = (q.get('ref') || '').toLowerCase(); if (/^[a-z2-9]{8}$/.test(r)) ref = r; } catch (e) {}
+  function fill(s, v) { return String(s).replace(/\{(\w+)\}/g, function (m, k) { return v && v[k] !== undefined ? v[k] : m; }); }
+  function num(n) { try { return Number(n).toLocaleString(WL_LANG === 'es' ? 'es' : 'en'); } catch (e) { return String(n); } }
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  function doorName(code) { for (var i = 0; i < WL_DOORS.length; i++) if (WL_DOORS[i][0] === code) return WL_DOORS[i][1]; return code; }
+  function saved() { try { return JSON.parse(localStorage.getItem(KEY) || 'null'); } catch (e) { return null; } }
+  function save(v) { try { if (v) localStorage.setItem(KEY, JSON.stringify(v)); else localStorage.removeItem(KEY); } catch (e) {} }
+  function call(kind, opt) {
+    opt = opt || {};
+    var ctl = window.AbortController ? new AbortController() : null, t = ctl ? setTimeout(function () { ctl.abort(); }, 8000) : null;
+    var h = {}; if (opt.body) h['Content-Type'] = 'application/json'; if (opt.key) h.Authorization = 'Waitlist ' + opt.key;
+    return fetch(API + kind, { method: opt.body ? 'POST' : 'GET', headers: h, body: opt.body ? JSON.stringify(opt.body) : undefined, credentials: 'omit', referrerPolicy: 'no-referrer', signal: ctl ? ctl.signal : undefined })
+      .then(function (res) { return res.json().then(function (j) { return { status: res.status, body: j }; }, function () { return { status: res.status, body: null }; }); })
+      .catch(function () { return { status: 0, body: null }; })
+      .then(function (x) { if (t) clearTimeout(t); return x; });
+  }
+  function scarcity() { return '<p class="wl-scar">' + esc(status && status.full ? WL_T.full : fill(WL_T.scarcity, { cap: num(status && status.foundingCap || 10000) })) + '</p>'; }
+  function codeBlock() {
+    return '<details style="margin-top:14px"><summary class="wl-a" style="display:inline">' + esc(WL_T.haveCode) + '</summary><form class="wl-f" id="wlcode"><label for="wlc">' + esc(WL_T.codeLabel) + '</label><input id="wlc" autocomplete="off" autocapitalize="none" spellcheck="false" maxlength="12"><p class="wl-err" id="wlcerr" role="alert"></p><button class="wl-go light" type="submit">' + esc(WL_T.enter) + '</button></form></details>';
+  }
+  function wireCode() {
+    var f = document.getElementById('wlcode'); if (!f) return;
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var c = (document.getElementById('wlc').value || '').trim().toLowerCase().replace(/[\s-]/g, '');
+      if (!/^[a-z2-9]{8}$/.test(c)) { document.getElementById('wlcerr').textContent = WL_T.badCode; return; }
+      location.href = '/invite?code=' + c + (WL_LANG === 'es' ? '&lang=es' : '');
+    });
+  }
+  function formView(msg) {
+    var opts = '<option value="">' + esc(WL_T.pick) + '</option>' + WL_DOORS.map(function (d) { return '<option value="' + d[0] + '"' + (preDoor === d[0] ? ' selected' : '') + '>' + esc(d[1]) + '</option>'; }).join('');
+    box.innerHTML = '<button class="wl-x" type="button" aria-label="' + esc(WL_T.close) + '">×</button>' +
+      '<div class="wl-eb">' + esc(WL_T.eyebrow) + '</div><h2 class="wl-h" id="wlh">' + esc(WL_T.title) + '</h2>' +
+      '<p class="wl-p">' + esc(ref ? WL_T.refNote : WL_T.lede) + '</p>' +
+      '<form class="wl-f" id="wlform" novalidate>' +
+      '<label for="wle">' + esc(WL_T.email) + '</label><input id="wle" type="email" inputmode="email" autocomplete="email" autocapitalize="none" spellcheck="false" maxlength="254" required>' +
+      '<label for="wld">' + esc(WL_T.door) + '</label><select id="wld" required>' + opts + '</select>' +
+      '<label for="wln">' + esc(WL_T.name) + '</label><input id="wln" autocomplete="given-name" maxlength="40">' +
+      '<div class="wl-hp" aria-hidden="true"><label for="wlw">website</label><input id="wlw" name="website" tabindex="-1" autocomplete="off"></div>' +
+      '<p class="wl-err" id="wlerr" role="alert">' + esc(msg || '') + '</p>' +
+      '<button class="wl-go" type="submit" id="wlgo">' + esc(WL_T.go) + '</button></form>' +
+      scarcity() + '<p class="wl-fine">' + esc(WL_T.privacy) + '</p>' + codeBlock();
+    wireCode();
+    document.getElementById('wlform').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var email = document.getElementById('wle').value.trim(), door = document.getElementById('wld').value, err = document.getElementById('wlerr'), go = document.getElementById('wlgo');
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { err.textContent = WL_T.badEmail; document.getElementById('wle').focus(); return; }
+      if (!door) { err.textContent = WL_T.badDoor; document.getElementById('wld').focus(); return; }
+      go.disabled = true; go.textContent = WL_T.going; err.textContent = '';
+      var body = { email: email, door: door, lang: WL_LANG }, nm = document.getElementById('wln').value.trim(), hp = document.getElementById('wlw').value;
+      if (nm) body.name = nm; if (ref) body.ref = ref; if (hp) body.website = hp;
+      call('join', { body: body }).then(function (r) {
+        go.disabled = false; go.textContent = WL_T.go;
+        if (r.status === 200 && r.body && r.body.key) { save({ key: r.body.key }); lineView(r.body); return; }
+        if (r.status === 200) { lineView(null); return; } // a bot's answer: nothing kept, nothing to show
+        err.textContent = r.status === 409 ? WL_T.already : r.status === 429 ? WL_T.slow : r.status === 400 && r.body && r.body.field === 'door' ? WL_T.badDoor : r.status === 400 ? WL_T.badEmail : WL_T.offline;
+      });
+    });
+  }
+  function lineView(d) {
+    if (!d) { box.innerHTML = '<button class="wl-x" type="button" aria-label="' + esc(WL_T.close) + '">×</button><h2 class="wl-h" id="wlh">' + esc(WL_T.inLine) + '</h2>'; return; }
+    if (d.state === 'invited') {
+      box.innerHTML = '<button class="wl-x" type="button" aria-label="' + esc(WL_T.close) + '">×</button><div class="wl-eb">' + esc(doorName(d.door)) + '</div><h2 class="wl-h" id="wlh">' + esc(WL_T.invited) + '</h2><p class="wl-p" aria-live="polite">' + esc(WL_T.invitedBody) + '</p><a class="wl-go light" style="text-align:center;text-decoration:none" id="wlin" href="' + esc(d.inviteLink.replace(/^https?:\/\/[^/]+/, '')) + '">' + esc(WL_T.enter) + '</a>';
+      return;
+    }
+    var refs = d.refs || 0;
+    box.innerHTML = '<button class="wl-x" type="button" aria-label="' + esc(WL_T.close) + '">×</button>' +
+      '<div class="wl-eb">' + esc(WL_T.inLine) + '</div>' +
+      '<h2 class="wl-h" id="wlh" aria-live="polite">' + esc(fill(WL_T.pos, { n: num(d.position), door: doorName(d.door) })) + '</h2>' +
+      '<p class="wl-p">' + esc(d.waiting <= 1 ? WL_T.waiting1 : fill(WL_T.waitingN, { n: num(d.waiting) })) + '</p>' +
+      '<p class="wl-p"><b>' + esc(fill(WL_T.moveUp, { places: (d.rule && d.rule.places) || 100, cap: (d.rule && d.rule.cap) || 10 })) + '</b></p>' +
+      '<div class="wl-eb" style="color:#555">' + esc(WL_T.yourLink) + '</div>' +
+      '<div class="wl-link"><input id="wllink" readonly value="' + esc(d.link) + '" aria-label="' + esc(WL_T.yourLink) + '"><button type="button" id="wlcopy">' + esc(WL_T.copy) + '</button>' + (navigator.share ? '<button type="button" id="wlshare">' + esc(WL_T.share) + '</button>' : '') + '</div>' +
+      '<p class="wl-fine" id="wlrefs">' + esc(refs === 0 ? WL_T.refs0 : refs === 1 ? WL_T.refs1 : fill(WL_T.refsN, { n: num(refs) })) + '</p>' +
+      scarcity() + codeBlock() +
+      '<div class="wl-row"><button type="button" class="wl-a mute" id="wlleave">' + esc(WL_T.leave) + '</button></div>';
+    wireCode();
+    document.getElementById('wlcopy').addEventListener('click', function () {
+      var i = document.getElementById('wllink'), b = this;
+      var ok = function () { b.textContent = WL_T.copied; setTimeout(function () { b.textContent = WL_T.copy; }, 1800); };
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(i.value).then(ok, function () { i.select(); try { document.execCommand('copy'); ok(); } catch (e) {} });
+      else { i.select(); try { document.execCommand('copy'); ok(); } catch (e) {} }
+    });
+    var sh = document.getElementById('wlshare');
+    if (sh) sh.addEventListener('click', function () { navigator.share({ text: WL_T.shareText, url: d.link }).catch(function () {}); });
+    document.getElementById('wlleave').addEventListener('click', function () {
+      if (!window.confirm(WL_T.leaveSure)) return;
+      var s = saved();
+      call('leave', { body: {}, key: s && s.key }).then(function (r) {
+        if (r.status === 200 || r.status === 401) { save(null); box.innerHTML = '<button class="wl-x" type="button" aria-label="' + esc(WL_T.close) + '">×</button><h2 class="wl-h" id="wlh">' + esc(WL_T.left) + '</h2>'; }
+        else window.alert(WL_T.offline);
+      });
+    });
+  }
+  function open(door) {
+    preDoor = door || null;
+    lastFocus = document.activeElement;
+    back.hidden = false; back.classList.add('on'); document.body.style.overflow = 'hidden';
+    var s = saved();
+    if (s && s.key) {
+      box.innerHTML = '<h2 class="wl-h" id="wlh">' + esc(WL_T.going) + '</h2>';
+      call('me', { key: s.key }).then(function (r) {
+        if (r.status === 200 && r.body) lineView(r.body);
+        else { if (r.status === 401) save(null); formView(r.status === 401 ? '' : WL_T.offline); }
+        focusFirst();
+      });
+    } else { formView(); focusFirst(); }
+  }
+  function focusFirst() { var f = box.querySelector('input:not([tabindex="-1"]),select,button:not(.wl-x),a'); if (f) f.focus(); }
+  function close() { back.classList.remove('on'); back.hidden = true; document.body.style.overflow = ''; if (lastFocus && lastFocus.focus) lastFocus.focus(); }
+  back.addEventListener('click', function (e) { if (e.target === back || (e.target.classList && e.target.classList.contains('wl-x'))) close(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && back.classList.contains('on')) close(); });
+  function intoApp(a) { var h = a.getAttribute('href') || ''; return h.indexOf('/welcome') === 0 || h === '/app' || h.indexOf('/app?') === 0; }
+  function turnOn() {
+    // every "Start free" / "join the movement" button becomes "request an invite"; every way into the app opens the form
+    [].forEach.call(document.querySelectorAll('a[href]'), function (a) {
+      if (!intoApp(a)) return;
+      if (/\bbtn\b/.test(a.className)) a.textContent = WL_T.cta;
+    });
+    document.addEventListener('click', function (e) {
+      var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+      if (!a || !intoApp(a)) return;
+      e.preventDefault(); e.stopPropagation();
+      var m = /[?&]door=([A-Z]+)/.exec(a.getAttribute('href')); open(m ? m[1] : null);
+    }, true);
+    window.goldenOpen = function (door) { open(door || null); };
+    if (ref) open(null);
+  }
+  call('status').then(function (r) { if (r.status === 200 && r.body && r.body.inviteOnly === true) { status = r.body; turnOn(); } });
+})();
+</script>
+</body>
+</html>

@@ -96,7 +96,7 @@ export function BuildStep({ step, onDone }: { step: any; onDone: Done }) {
   };
   const chip = (x: { w: string; k: number }, on: boolean) => (
     <Pressable key={x.k} accessibilityRole="button" accessibilityLabel={x.w} disabled={ok !== null} onPress={() => (on ? setSeq(seq.filter((y) => y.k !== x.k)) : add(x))}
-      style={[s.chip, { backgroundColor: on ? color.gold : "#fff", borderColor: on ? color.gold : "#fff" }]}>
+      style={[s.chip, { backgroundColor: on ? color.gold : color.white, borderColor: on ? color.gold : "#fff" }]}>
       <Text style={{ fontFamily: font.text[700], fontSize: 16, color: color.ink }}>{x.w}</Text>
     </Pressable>
   );
@@ -165,10 +165,10 @@ export function ChatStep({ step, onDone, door = "" }: { step: any; onDone: Done;
     <View style={{ gap: 12, width: "100%" }}>
       <Kicker>{t("session.chat.title")}</Kicker>
       <View style={{ flexDirection: "row", alignItems: "flex-end", gap: 8 }}>
-        {cast ? <Image source={cast.face} style={{ width: 52, height: 52, borderRadius: 26, borderWidth: 2, borderColor: color.gold, backgroundColor: "#fff" }} contentFit="cover" accessibilityLabel={cast.name} /> : null}
+        {cast ? <Image source={cast.face} style={{ width: 52, height: 52, borderRadius: 26, borderWidth: 2, borderColor: color.gold, backgroundColor: color.white }} contentFit="cover" accessibilityLabel={cast.name} /> : null}
         <View style={{ gap: 4, maxWidth: cast ? "76%" : "88%", flexShrink: 1 }}>
           <Text style={[type.eyebrow(8), { color: "#ffffff99" }]}>{t("session.chat.who", { who: cast ? cast.name : step.who })}</Text>
-          <View style={[s.bubble, { backgroundColor: "#fff", borderBottomLeftRadius: 6 }]}>
+          <View style={[s.bubble, { backgroundColor: color.white, borderBottomLeftRadius: 6 }]}>
             <Text style={[s.line, { color: color.ink }]}>{step.says}</Text>
           </View>
         </View>

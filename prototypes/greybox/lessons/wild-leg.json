@@ -1,0 +1,196 @@
+{
+ "id": "wild-leg",
+ "home": "wild",
+ "title": "Didn’t I tell you?",
+ "told": "a story told about Epictetus",
+ "clips": "art/sacred/wild-leg/clips/",
+ "voice": "art/sacred/wild-leg/voice/",
+ "guide": {
+  "name": "Justin",
+  "photo": "art/guides/spiritual.webp"
+ },
+ "hook": {
+  "v": "EPL6-Today",
+  "say": "before the story, can i ask you something? is there something hard in your life right now that you can’t change?",
+  "options": [
+   [
+    "Yes, there is",
+    "i’m sorry. this story might help you carry it."
+   ],
+   [
+    "A small thing",
+    "good place to practice. listen."
+   ],
+   [
+    "Not right now",
+    "good. keep this one for later."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "EPL1-Roman-House",
+   "vo": [
+    "V01"
+   ],
+   "line": "In the Roman Empire, almost two thousand years ago, a boy from what’s now Turkey grew up enslaved. His name, Epictetus, means “acquired.” Bought."
+  },
+  {
+   "t": "shot",
+   "v": "EPL2-The-Master",
+   "vo": [
+    "V02"
+   ],
+   "line": "An old story says his master once began twisting his leg. Epictetus looked up and said, quietly: “You will break it.”",
+   "label": "an old story"
+  },
+  {
+   "t": "ask",
+   "v": "EPL3-Calm-Face",
+   "blur": true,
+   "predict": true,
+   "eb": "what happens next?",
+   "q": "The master keeps twisting, and the leg breaks. How does Epictetus speak to him now?",
+   "o": [
+    "Furious, cursing him",
+    "Calm, almost matter-of-fact",
+    "Pleading with him to stop"
+   ],
+   "a": 1,
+   "why": "He just says, “Didn’t I tell you that you would break it?” No scream, no curse. Epictetus was lame all his life, and later taught: lameness gets in the way of the leg, not of the will (Handbook 9)."
+  },
+  {
+   "t": "shot",
+   "v": "EPL3-Calm-Face",
+   "vo": [
+    "V03"
+   ],
+   "line": "The master kept twisting, and the leg broke. Epictetus said, calmly: “Didn’t I tell you that you would break it?”",
+   "label": "an old story"
+  },
+  {
+   "t": "ask",
+   "v": "EPL3-Calm-Face",
+   "eb": "why?",
+   "q": "Why does Epictetus simply warn his master, instead of begging or fighting?",
+   "o": [
+    "Begging would only have made it worse",
+    "He spoke the truth, and left the choice to him",
+    "He had trained himself not to feel pain"
+   ],
+   "a": 1,
+   "why": "What the master did was up to the master. What Epictetus said was up to Epictetus. It still hurt."
+  },
+  {
+   "t": "shot",
+   "v": "EPL4-The-Staff",
+   "vo": [
+    "V04"
+   ],
+   "line": "To be honest about it: this story comes from one Roman writer, Celsus. Another old source says illness made him lame. No one knows for sure."
+  },
+  {
+   "t": "shot",
+   "v": "EPL5-Teaching",
+   "vo": [
+    "V05"
+   ],
+   "line": "What is known: Epictetus was lame, was freed, and became a famous teacher. He taught: “Lameness is an impediment to the leg, but not to the will.”"
+  },
+  {
+   "t": "ask",
+   "v": "EPL5-Teaching",
+   "eb": "did you know?",
+   "q": "Epictetus never wrote a book. So how do we know what he taught?",
+   "o": [
+    "He dictated letters to his friends",
+    "A student wrote down his talks",
+    "His former master kept a record"
+   ],
+   "a": 1,
+   "why": "His student Arrian wrote down his talks as the Discourses and boiled them into a little Handbook. James Stockdale, a US pilot, leaned on it through seven years as a prisoner of war."
+  },
+  {
+   "t": "shot",
+   "v": "EPL6-Today",
+   "vo": [
+    "V06"
+   ],
+   "line": "Today: a bad knee, a hard diagnosis, a person who won’t change. Some things aren’t yours to fix. The voice you answer in still is.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "EPL6-Today",
+   "eb": "did you know?",
+   "q": "Free at last, Epictetus taught in Rome. Then the emperor banished the philosophers. What did he do?",
+   "o": [
+    "Started a new school in Greece",
+    "Gave up teaching for good",
+    "Stayed and taught in secret"
+   ],
+   "a": 0,
+   "why": "When Domitian expelled the philosophers, around 93 AD, he moved to Nicopolis in Greece and opened a school. Students sailed there from all over the empire."
+  },
+  {
+   "t": "teach",
+   "v": "EPL3-Calm-Face",
+   "say": [
+    "here’s what i love. this isn’t about pretending pain doesn’t hurt, or that cruelty is fine. if it happened, it was wrong.",
+    "the stoics put it in one line: some things are up to you, and some are not. a twisted leg wasn’t his to stop. the voice he answered in was. he spent the rest of his life teaching that."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "EPL6-Today",
+   "eb": "the hard one",
+   "q": "His handbook begins: “Of things some are in our power, and others are not.” In the story, which one was in his power?",
+   "o": [
+    "Whether his leg broke",
+    "What his master chose to do",
+    "How he answered"
+   ],
+   "a": 2,
+   "why": "Only his answer. That small piece was enough to build a whole life of teaching on."
+  }
+ ],
+ "today": {
+  "v": "EPL6-Today",
+  "say": "today, try the first exercise of his handbook. take one worry and sort it, on paper if you like, into two short lists: up to me, and not up to me. then put your effort only into the first list. if it’s too much today, write just one line.",
+  "options": [
+   [
+    "I’ll try it",
+    "gently. that’s all he did, one answer at a time."
+   ],
+   [
+    "It’s a lot today",
+    "then just one line. that’s yours too."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "The thief and the lamp.",
+  "line": "a freed teacher loses his city, then his lamp. his answer is pure epictetus."
+ },
+ "card": {
+  "from": "a story told about Epictetus",
+  "mins": 5,
+  "keep": "staff",
+  "keepName": "Said calmly",
+  "keepWhy": "The voice you answer in stays yours.",
+  "keepSvg": "<path d=\"M44 94V30c0-12 7-20 16-20s15 8 15 17h-9c0-5-2-8-6-8s-7 4-7 11v64z\" fill=\"#2a1b05\"/>",
+  "sources": [
+   "Origen, Against Celsus 7.53: Celsus cites Epictetus, who, when his master was twisting his leg, said smiling and unmoved, “You will break it,” and when it was broken, “Did I not tell you that you would break it?”",
+   "The Suda, “Epiktetos”: lame from rheumatism.",
+   "Epictetus, Enchiridion 9 (George Long, 1877): “Lameness is an impediment to the leg, but not to the will”; Enchiridion 1: “Of things some are in our power, and others are not.”",
+   "His owner Epaphroditus, a freedman of Nero (named in the Discourses); birthplace Hierapolis in Phrygia; the name epiktetos means “acquired.”",
+   "Day 23 script: docs/curriculum/spiritual/scripts/y1/day-0023.json (Epictetus; said calmly)."
+  ],
+  "check": [
+   "Celsus says he spoke “smiling”; the lesson says “quietly” and “calmly.” Confirm.",
+   "“A boy from what’s now Turkey grew up enslaved” (Hierapolis; whether he was born a slave is not certain) and “almost two thousand years ago” (c. 50 AD). Confirm.",
+   "Paintings show the master holding the ankle before any injury; no break, pain or violence is shown."
+  ]
+ }
+}

@@ -8,7 +8,7 @@ import { ChevronRight } from "@/ui/tab-icons";
 function Switch({ on }: { on: boolean }) {
   return (
     <View style={{ width: 46, height: 28, borderRadius: 14, padding: 3, backgroundColor: on ? color.ink : color.line, alignItems: on ? "flex-end" : "flex-start" }}>
-      <View style={{ width: 22, height: 22, borderRadius: 11, backgroundColor: on ? color.gold : "#fff", shadowColor: "#000", shadowOpacity: 0.15, shadowRadius: 2, shadowOffset: { width: 0, height: 1 } }} />
+      <View style={{ width: 22, height: 22, borderRadius: 11, backgroundColor: on ? color.gold : color.white, shadowColor: "#000", shadowOpacity: 0.15, shadowRadius: 2, shadowOffset: { width: 0, height: 1 } }} />
     </View>
   );
 }

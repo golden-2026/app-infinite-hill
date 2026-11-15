@@ -1,3 +1,5 @@
+Background only (written 2026-10-04). Where this disagrees with docs/VISION-NOW.md or docs/LESSON_STANDARD.md, those win.
+
 # The first week, days 2–7: scripts
 
 Same shape as day 1 v2 (docs/learning/sample-day1): hook → story (6 panels) → 3 cards that add something new → play

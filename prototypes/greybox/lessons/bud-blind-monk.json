@@ -1,0 +1,200 @@
+{
+ "id": "bud-blind-monk",
+ "home": "lotus",
+ "title": "The monk who couldn’t see",
+ "told": "a story behind the Dhammapada",
+ "clips": "art/sacred/bud-blind-monk/clips/",
+ "voice": "art/sacred/bud-blind-monk/voice/",
+ "guide": {
+  "name": "Orlando",
+  "photo": "art/guides/buddhism.webp"
+ },
+ "hook": {
+  "v": "CKP6-Broken-Mug-Today",
+  "say": "before the story, can i ask you something? when someone hurts you by accident, does it feel different than when they mean it?",
+  "options": [
+   [
+    "Very different",
+    "then you already know today’s teaching. listen."
+   ],
+   [
+    "It hurts either way",
+    "it does. listen to what the buddha says about it."
+   ],
+   [
+    "I’m not sure",
+    "good. good. listen, and see what you think."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "CKP1-Old-Monk",
+   "vo": [
+    "V01"
+   ],
+   "line": "An old monk named Cakkhupala had lost his sight. Still he kept practicing, walking slowly up and down his path through the night."
+  },
+  {
+   "t": "shot",
+   "v": "CKP2-Rain-Path",
+   "vo": [
+    "V02"
+   ],
+   "line": "It was the rainy season. On the wet path, without knowing it, he stepped on insects that had come out after the rain."
+  },
+  {
+   "t": "shot",
+   "v": "CKP3-Accusing-Monks",
+   "vo": [
+    "V03"
+   ],
+   "line": "In the morning, visiting monks found them. “Look what he did,” they told the Buddha. “He’s been killing living things.”"
+  },
+  {
+   "t": "ask",
+   "v": "CKP3-Accusing-Monks",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "What do you think the Buddha says?",
+   "o": [
+    "“Did he mean to do it?”",
+    "“Did you see him do it?”",
+    "“Did he know they were there?”"
+   ],
+   "a": 1,
+   "why": "He starts with a question. The old commentary adds that Cakkhupala was already fully awakened, an arahant, and such a one never means to harm."
+  },
+  {
+   "t": "shot",
+   "v": "CKP4-The-Answer",
+   "vo": [
+    "V04"
+   ],
+   "line": "“Did you see him kill them?” “No.” “Just as you didn’t see him, he didn’t see them. He meant no harm. Where there’s no intention, there’s no bad karma.”"
+  },
+  {
+   "t": "ask",
+   "v": "CKP4-The-Answer",
+   "eb": "the surprise",
+   "q": "The Buddha said, “Intention is what I call karma.” By that measure, which of these carries bad karma?",
+   "o": [
+    "Stepping on an ant you never saw",
+    "Wishing harm on a rival you never touch",
+    "Breaking a vase by accident"
+   ],
+   "a": 1,
+   "why": "The wish. In the Anguttara Nikaya the Buddha says intention, cetana, is karma itself. A harmful wish is already a seed; an unseen ant is not."
+  },
+  {
+   "t": "shot",
+   "v": "CKP5-Ox-Cart",
+   "vo": [
+    "V05"
+   ],
+   "line": "Then, the story says, the Buddha spoke a verse: the mind leads. Act with a bad mind, and pain follows, like the wheel that follows the ox."
+  },
+  {
+   "t": "ask",
+   "v": "CKP5-Ox-Cart",
+   "eb": "did you know?",
+   "q": "The verse has a twin: act with a pure mind, and happiness follows. Follows like what?",
+   "o": [
+    "A calf after its mother",
+    "A river to the sea",
+    "A shadow that never leaves"
+   ],
+   "a": 2,
+   "why": "Like a shadow that never leaves. These are the first two verses of the Dhammapada: pain follows like the wheel, happiness like a shadow."
+  },
+  {
+   "t": "match",
+   "v": "CKP5-Ox-Cart",
+   "eb": "look under the act",
+   "q": "Match each moment to what’s really going on in the mind.",
+   "pairs": [
+    [
+     "knocking over a glass in the dark",
+     "harm, but no intent"
+    ],
+    [
+     "a polite smile hiding a grudge",
+     "intent, but no harm yet"
+    ],
+    [
+     "helping a friend so they’ll owe you",
+     "a good act, a mixed mind"
+    ]
+   ],
+   "why": "Buddhist teaching looks under the act to the intention behind it. The same outward act can carry very different karma."
+  },
+  {
+   "t": "shot",
+   "v": "CKP6-Broken-Mug-Today",
+   "vo": [
+    "V06"
+   ],
+   "line": "Today, a friend breaks your favorite mug by accident. The mug is gone either way. What they meant still matters.",
+   "label": "today"
+  },
+  {
+   "t": "teach",
+   "v": "CKP6-Broken-Mug-Today",
+   "say": [
+    "the dhammapada is four hundred and twenty-three short verses, remembered as the buddha’s own sayings. dhamma is the teaching; pada means a step, and also a line of verse. an old commentary tells the story behind the verses. this one goes with the very first.",
+    "it’s kept in the theravada canon, in pali. other early schools kept their own versions of these verses in other languages, and teachers in every tradition quote them. you’ve met it already in these three weeks: the rock in the wind, hatred ended by love."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "CKP4-The-Answer",
+   "eb": "the hard one",
+   "q": "So is harm you didn’t mean nothing to worry about?",
+   "o": [
+    "Right: only what you meant ever counts",
+    "No: you still take care where you can",
+    "No: you still owe a penance for it"
+   ],
+   "a": 1,
+   "why": "Monks still stay in one place for the three rainy months, partly so they won’t trample crops and small creatures on wet roads. No blame for the unseen, but care for what you can see."
+  }
+ ],
+ "today": {
+  "v": "CKP6-Broken-Mug-Today",
+  "say": "today, when someone gets something wrong, ask first: what did they mean? and when you get something wrong, check your own mind too. that’s where the wheel starts turning.",
+  "options": [
+   [
+    "I’ll ask first today",
+    "kind and clear. that’s the dhammapada."
+   ],
+   [
+    "Some people do mean it",
+    "yes. then the teaching is honest about that too: their pain follows them."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "The white elephant",
+  "line": "week four goes back to the very beginning: a queen’s dream, the night before everything."
+ },
+ "card": {
+  "from": "a story behind the Dhammapada",
+  "mins": 5,
+  "keep": "wheel",
+  "keepName": "The cart wheel",
+  "keepWhy": "It starts in the mind.",
+  "keepSvg": "<circle cx=\"50\" cy=\"50\" r=\"24\" fill=\"none\" stroke=\"#2a1b05\" stroke-width=\"5\"/><circle cx=\"50\" cy=\"50\" r=\"6\" fill=\"#2a1b05\"/><g stroke=\"#2a1b05\" stroke-width=\"4\" stroke-linecap=\"round\"><line x1=\"50\" y1=\"20\" x2=\"50\" y2=\"80\"/><line x1=\"20\" y1=\"50\" x2=\"80\" y2=\"50\"/><line x1=\"29\" y1=\"29\" x2=\"71\" y2=\"71\"/><line x1=\"71\" y1=\"29\" x2=\"29\" y2=\"71\"/></g>",
+  "sources": [
+   "Dhammapada Commentary, the story of the Elder Cakkhupala (on Dhammapada 1): his blindness, his walking meditation in the rainy season, the insects crushed unknowingly, the visiting monks’ complaint, the Buddha: “just as you did not see him, he did not see them”; no intention, no kamma",
+   "Dhammapada 1–2: the mind as forerunner; suffering follows like the wheel the ox’s foot; happiness follows like a shadow",
+   "Nibbedhika Sutta (Anguttara Nikaya 6.63): “intention, I tell you, is kamma”",
+   "Parallel collections: the Gandhari Dharmapada, the Patna Dharmapada, the Sanskrit Udanavarga and the Chinese Faju jing"
+  ],
+  "check": [
+   "In the commentary he goes blind and becomes an arahant at the same time, after refusing to lie down for his eye medicine; left out here.",
+   "The past-life story at the end of the commentary is left out."
+  ]
+ }
+}

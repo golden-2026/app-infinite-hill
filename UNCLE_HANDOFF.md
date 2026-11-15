@@ -1,3 +1,5 @@
+Background only (written 2026-09-13). Where this disagrees with docs/VISION-NOW.md, that page wins.
+
 # Golden product and engineering handoff
 
 Prepared for the original creator of Golden on September 13, 2026.

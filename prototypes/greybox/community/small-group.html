@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Community C: The Group</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@500;600;700;800&display=swap">
+<link rel="stylesheet" href="com.css">
+<style>
+  .role { display: inline-flex; gap: 6px; align-items: center; background: var(--ink); color: var(--lime); border-radius: 999px; padding: 6px 10px; font: 800 10px/1 Manrope, sans-serif; letter-spacing: .16em; text-transform: uppercase; margin-top: 10px; }
+  .ep { display: grid; grid-template-columns: 76px 1fr auto; gap: 12px; align-items: center; width: 100%; border: 0; text-align: left; background: var(--panel); border-radius: 20px; padding: 10px 14px 10px 10px; box-shadow: inset 0 0 0 1.5px var(--line); }
+  .ep img { width: 76px; height: 76px; object-fit: cover; border-radius: 14px; filter: contrast(1.1) sepia(.12); }
+  .ep b { display: block; font: 400 21px/.95 Anton, Impact, sans-serif; text-transform: uppercase; }
+  .ep small { display: block; margin-top: 4px; font-size: 12px; color: var(--muted); }
+  .ep i { font-style: normal; width: 26px; height: 26px; border-radius: 50%; box-shadow: inset 0 0 0 2px rgba(243,239,228,.4); display: grid; place-items: center; font-weight: 900; color: var(--ink); }
+  .ep.on { box-shadow: inset 0 0 0 2px var(--lime); } .ep.on i { background: var(--lime); box-shadow: none; }
+  .bigdrop { border: 0; width: 100%; border-radius: 26px; background: var(--lime); color: var(--ink); padding: 18px; font: 400 52px/.9 Anton, Impact, sans-serif; text-transform: uppercase; box-shadow: 8px 8px 0 var(--pink); transform: rotate(-1deg); }
+  .notif { margin: 14px 12px 0; background: rgba(243,239,228,.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 12px 14px; display: grid; grid-template-columns: 36px 1fr; gap: 10px; align-items: center; box-shadow: inset 0 0 0 1px var(--line); }
+  .notif img { width: 36px; height: 36px; border-radius: 9px; object-fit: cover; object-position: 50% 12%; background: #F3EFE4; }
+  .notif b { display: block; font-size: 13px; } .notif span { font-size: 13px; color: var(--muted); }
+  .members { display: grid; gap: 8px; }
+  .members .m { display: flex; align-items: center; gap: 10px; font-weight: 800; }
+  .members .m small { margin-left: auto; font: 800 10px/1 Manrope, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  .members .m small.ok { color: var(--lime); }
+  .plan { display: grid; gap: 0; }
+  .plan .st { display: grid; grid-template-columns: 54px 1fr; gap: 10px; padding: 12px 0; border-top: 1px solid var(--line); }
+  .plan .st:first-child { border-top: 0; }
+  .plan .st .t { font: 400 22px/1 Anton, Impact, sans-serif; color: var(--lime); }
+  .plan .st b { display: block; font: 400 19px/1 Anton, Impact, sans-serif; text-transform: uppercase; }
+  .plan .st span { display: block; margin-top: 3px; font-size: 13px; color: var(--muted); }
+  .plan .st span q { color: var(--text); font-weight: 700; }
+  .code { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .code span { aspect-ratio: 1 / 1.2; border-radius: 16px; background: var(--panel2); display: grid; place-items: center; font: 400 44px/1 Anton, Impact, sans-serif; color: var(--lime); box-shadow: inset 0 0 0 1.5px var(--line); }
+  .code.done span { background: var(--lime); color: var(--ink); }
+  .here { display: grid; place-items: center; gap: 12px; padding: 4px 0; }
+  .book { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; background: #F3EFE4; border-radius: 18px; padding: 14px; box-shadow: 0 0 0 3px var(--ink), 10px 10px 0 var(--lime); transform: rotate(-1deg); }
+  .book .rstamp { width: 100%; }
+  .book .rstamp b { font-size: 15px; } .book .rstamp small { font-size: 7px; } .book .rstamp .irl { font-size: 7px; padding: 3px 4px; } .book .rstamp .in { padding: 6px; }
+  .book .slot { aspect-ratio: 4 / 5; border: 2px dashed rgba(10,10,10,.25); border-radius: 6px; display: grid; place-items: center; font: 400 28px/1 Anton, sans-serif; color: rgba(10,10,10,.25); }
+</style>
+</head><body>
+<div class="stage">
+  <div class="phone">
+
+    <!-- 1 leader drops the week -->
+    <section class="scr" data-name="drop">
+      <div class="lhead">
+        <div class="eb">together · your group</div>
+        <h1>drop the <u>week</u></h1>
+        <p>you lead it. pick this week's episode, drop it to your group, then meet for real.</p>
+        <span class="role">✓ verified leader · wednesday group</span>
+      </div>
+      <div class="exbar">example group: names, the leader and the meeting place are placeholders.</div>
+      <div class="pad">
+        <div class="eb">pick this week's episode</div>
+        <button class="ep on" onclick="document.querySelectorAll('.ep').forEach(function(x){x.classList.remove('on')});this.classList.add('on')"><img src="../art/sacred/chr-samaritan/clips/QS4-Samaritan-Kneels.webp" alt=""><span><b>the one who stopped</b><small>luke 10 · 6 min · the good samaritan</small></span><i>✓</i></button>
+        <button class="ep" onclick="document.querySelectorAll('.ep').forEach(function(x){x.classList.remove('on')});this.classList.add('on')"><img src="../art/sacred/chr-sheep/clips/QE3-Searching.webp" alt=""><span><b>leave the 99</b><small>luke 15 · 5 min · the lost sheep</small></span><i>✓</i></button>
+        <button class="ep" onclick="document.querySelectorAll('.ep').forEach(function(x){x.classList.remove('on')});this.classList.add('on')"><img src="../art/sacred/lost-son/clips/C11-Embrace.webp" alt=""><span><b>the son who came home</b><small>luke 15 · 6 min · the lost son</small></span><i>✓</i></button>
+        <button class="bigdrop" data-go="2" data-toast="dropped to your group">drop it ↓</button>
+        <p style="margin:6px 0 0;font-size:12px;color:var(--muted);text-align:center">everyone gets it on their phone. you meet wednesday 7pm.</p>
+      </div>
+    </section>
+
+    <!-- 2 member's view -->
+    <section class="scr" data-name="member">
+      <div class="notif"><img src="../art/finn/finn-thumbs_up-still.webp" alt=""><div><b>Jordan dropped this week ↓</b><span>"the one who stopped." 6 min. watch before wednesday.</span></div></div>
+      <div class="pad">
+        <div class="poster">
+          <img src="../art/sacred/chr-samaritan/clips/QS3-Passing-By.webp" alt="">
+          <span class="tag pink">week 3 drop</span>
+          <div class="cap"><div class="eb">from Jordan · your group</div><h2 class="d">the one who <em>stopped</em></h2></div>
+        </div>
+        <button class="btn" data-toast="your pick is in. see you wednesday">watch now</button>
+        <div class="card">
+          <div class="eb">wednesday group <span class="ex">example</span></div>
+          <div class="members">
+            <div class="m"><div class="av sm" style="--c:#EEFF6A">Y</div>you<small>not yet</small></div>
+            <div class="m"><div class="av sm" style="--c:#FF8A1F">J</div>Jordan · leads<small class="ok">watched</small></div>
+            <div class="m"><div class="av sm" style="--c:#19E68C">M</div>Morgan<small class="ok">watched</small></div>
+            <div class="m"><div class="av sm" style="--c:#c9b7ff">C</div>Casey<small>not yet</small></div>
+            <div class="m"><div class="av sm" style="--c:#FF2D8A">D</div>Drew<small class="ok">watched</small></div>
+          </div>
+          <p>you see who's watched, nothing else. no ranks.</p>
+        </div>
+        <div class="card"><div class="eb">where</div><p><b>wednesday 7pm · Jordan's living room</b> <span class="ex">example</span><br>bring nothing. maybe snacks.</p></div>
+        <button class="btn ghost" data-go="3">peek at the leader's kit</button>
+      </div>
+    </section>
+
+    <!-- 3 the leader's night, built by Finn -->
+    <section class="scr" data-name="kit">
+      <div class="top"><button class="x" data-go="2">‹</button><div class="ttl">for Jordan · the night, ready</div></div>
+      <div class="pad">
+        <div class="finn"><img src="../art/finn/finn-think-still.webp" alt="Finn"><div class="say">your group <b>split hard</b> on the priest who walked past. that's your opener. i built the rest. change anything.</div></div>
+        <div class="card">
+          <h3>45 minutes</h3>
+          <div class="plan">
+            <div class="st"><div class="t">0:00</div><div><b>food + catch up</b><span>no agenda.</span></div></div>
+            <div class="st"><div class="t">0:10</div><div><b>watch it together</b><span>6 min on the tv. phones down.</span></div></div>
+            <div class="st"><div class="t">0:16</div><div><b>the split</b><span>reveal how the group chose (no names). ask: <q>who in your week did you walk past?</q></span></div></div>
+            <div class="st"><div class="t">0:30</div><div><b>the real teaching</b><span><q>who is my neighbor?</q> Jesus flips it: who acted like one. 2 lines to read out.</span></div></div>
+            <div class="st"><div class="t">0:40</div><div><b>close</b><span>a short prayer, if the group wants one. always your choice: watch, listen or join in.</span></div></div>
+          </div>
+        </div>
+        <button class="btn" data-go="4">it's wednesday →</button>
+      </div>
+    </section>
+
+    <!-- 4 check in, get the real stamp -->
+    <section class="scr" data-name="tap in" data-enter="stampIn">
+      <div class="top"><div class="ttl">wednesday · you're here</div></div>
+      <div class="pad">
+        <h2 class="d" style="margin:6px 0 0;font-size:50px">tap in to <em>the room</em></h2>
+        <p style="margin:-4px 0 0;font-size:14px;color:var(--muted)">Jordan's phone shows a 4-digit code. it only works in that room, that night.</p>
+        <div class="code" id="code"><span>7</span><span>4</span><span>1</span><span>9</span></div>
+        <button class="btn" id="tapin">i'm here</button>
+        <div class="here" id="here" hidden>
+          <div class="rstamp slam" style="--bg:url(../art/stamps/chr-jericho-road.jpg)"><div class="in"><span class="irl">in person only</span><div><b>the one who stopped</b><small>wednesday group · week 3 · you were there</small></div></div></div>
+          <p style="margin:0;text-align:center;font-size:13px;color:var(--muted)">real stamps only come from real rooms.</p>
+          <button class="btn" data-go="5">open the group passport</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 the group passport -->
+    <section class="scr" data-name="passport">
+      <div class="lhead"><div class="eb">wednesday group · season 1</div><h1>six weeks, <u>real rooms</u></h1><p>show up six times and the group's season card goes holo. for everyone who was there.</p></div>
+      <div class="pad">
+        <div class="book">
+          <div class="rstamp" style="--bg:url(../art/stamps/chr-tabgha.jpg)"><div class="in"><span class="irl">irl</span><div><b>loaves</b><small>week 1</small></div></div></div>
+          <div class="rstamp" style="--bg:url(../art/stamps/chr-bay-of-parables.jpg)"><div class="in"><span class="irl">irl</span><div><b>the sower</b><small>week 2</small></div></div></div>
+          <div class="rstamp" style="--bg:url(../art/stamps/chr-jericho-road.jpg)"><div class="in"><span class="irl">irl</span><div><b>who stopped</b><small>week 3</small></div></div></div>
+          <div class="slot">4</div><div class="slot">5</div><div class="slot">6</div>
+        </div>
+        <div class="card" style="grid-template-columns:110px 1fr;align-items:center">
+          <img src="../art/finn/drip/workwear.webp" alt="Finn's group fit" style="width:110px;height:110px;object-fit:cover;border-radius:16px">
+          <div><div class="eb">season fit</div><h3 style="margin-top:4px">the group's fit</h3><p>Finn wears it to your next drop after week 6.</p></div>
+        </div>
+        <div class="finn"><img src="../art/finn/finn-celebrate-still.webp" alt="Finn"><div class="say">missed a week? the group keeps going. <b>you just get the next one.</b> no guilt from me.</div></div>
+        <button class="btn" data-go="1">back to the leader's screen</button>
+      </div>
+    </section>
+
+    <nav class="dots"></nav>
+  </div>
+
+  <aside class="notes">
+    <a class="back" href="index.html">‹ all three concepts</a>
+    <div class="eb">concept c</div>
+    <h1 class="d">the <em>group</em></h1>
+    <div class="blk"><div class="eb">the idea</div><p>A small-group leader (church group, campus group, friends who already meet) drops the week's episode to their group with one tap. Everyone watches and picks on their own phone; Finn turns the group's split into a ready 45-minute night for the leader. At the meeting, a code from the leader's phone taps everyone in and stamps the real IRL stamp into the group passport.</p></div>
+    <div class="blk"><div class="eb">why people come back</div><p>Because there's a room on Wednesday and people you know will be in it. The app gives the leader the hardest part (a great opener and a plan) for free, so the leader keeps dropping, and every drop is 5 to 12 people opening the app. The stamps are earned only by showing up, so they mean something, and a six-week season gives the group a finish line together.</p></div>
+    <div class="blk risk"><div class="eb o">biggest risk</div><p>Leaders and pastors are picky about theology and slow to adopt; if one episode feels off, the group drops us. RightNow Media, Alpha and YouVersion already serve small groups with video. We win only if our episodes and Finn's kit feel far more alive than theirs, and the content passes real scholar review.</p></div>
+    <ol><li>tap "drop it", then follow the buttons.</li><li>screen 4: tap "i'm here" to see the stamp land.</li></ol>
+  </aside>
+</div>
+<script src="com.js"></script>
+<script>
+  document.getElementById("tapin").onclick = function () {
+    document.getElementById("code").classList.add("done"); this.hidden = true; document.getElementById("here").hidden = false; toast("you're in. stamp's yours");
+  };
+  window.stampIn = function () { document.getElementById("code").classList.remove("done"); document.getElementById("tapin").hidden = false; document.getElementById("here").hidden = true; };
+</script>
+</body></html>

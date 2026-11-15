@@ -1,0 +1,199 @@
+{
+ "id": "bud-monkey",
+ "home": "lotus",
+ "title": "The monkey bridge",
+ "told": "a Jataka tale",
+ "clips": "art/sacred/bud-monkey/clips/",
+ "voice": "art/sacred/bud-monkey/voice/",
+ "guide": {
+  "name": "Orlando",
+  "photo": "art/guides/buddhism.webp"
+ },
+ "hook": {
+  "v": "MKB6-Late-Office-Today",
+  "say": "before the story, can i ask you something? has anyone ever really stretched themselves to help you get through something?",
+  "options": [
+   [
+    "Yes, I remember",
+    "hold them in mind. this one is for them. listen."
+   ],
+   [
+    "I’ve done it for someone",
+    "then you know what it costs. listen."
+   ],
+   [
+    "Not that I can think of",
+    "then maybe this story is a start. listen."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "MKB1-Mango-Tree",
+   "vo": [
+    "V01"
+   ],
+   "line": "In a tale of the Buddha’s past lives, he was once a monkey king, leading his troop in a great mango tree beside the river Ganges."
+  },
+  {
+   "t": "shot",
+   "v": "MKB2-Archers-Below",
+   "vo": [
+    "V02"
+   ],
+   "line": "One night a human king, who loved the tree’s mangoes, surrounded it with archers. At dawn, they would shoot."
+  },
+  {
+   "t": "ask",
+   "v": "MKB2-Archers-Below",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "He leaps the river, ties a long cane to a tree on the far bank, and leaps back. Then he hits a problem. What?",
+   "o": [
+    "The cane is too weak to hold them",
+    "The cane falls short of the tree",
+    "The archers spot the cane at dawn"
+   ],
+   "a": 1,
+   "why": "He’d measured the leap but forgot the length tied round his own waist, so it fell short (Mahakapi Jataka, no. 407). He made up the gap with himself."
+  },
+  {
+   "t": "shot",
+   "v": "MKB3-The-Leap",
+   "vo": [
+    "V03"
+   ],
+   "line": "The monkey king leapt across the river, tied a long cane to a tree on the far bank, tied the other end to his waist, and leapt back."
+  },
+  {
+   "t": "shot",
+   "v": "MKB4-Living-Bridge",
+   "vo": [
+    "V04"
+   ],
+   "line": "But the cane was too short. So he grabbed a branch and stretched his own body across the gap. “Cross,” he told them. “Over my back.”"
+  },
+  {
+   "t": "ask",
+   "v": "MKB4-Living-Bridge",
+   "eb": "did you know?",
+   "q": "In the old Jataka, one monkey in the troop envied the king. As the last to cross, what did he do?",
+   "o": [
+    "Crossed carefully and thanked him",
+    "Leapt down hard on the king’s back",
+    "Refused to cross and stayed behind"
+   ],
+   "a": 1,
+   "why": "He leapt down hard on purpose. The old Pali text says the blow broke the king’s heart. It names that monkey as an earlier life of Devadatta, the Buddha’s jealous cousin. The king held on anyway."
+  },
+  {
+   "t": "ask",
+   "v": "MKB4-Living-Bridge",
+   "eb": "why?",
+   "q": "Why use his own body, instead of just escaping alone?",
+   "o": [
+    "He hoped the archers would spare a king",
+    "He trusted the cane to hold if he held it",
+    "He was their king, and their lives came first"
+   ],
+   "a": 2,
+   "why": "In the Jataka he tells the human king he feels no grief: he gave his troop safety, and that is what a ruler is for."
+  },
+  {
+   "t": "shot",
+   "v": "MKB4-Living-Bridge",
+   "vo": [
+    "V05"
+   ],
+   "line": "One by one, the whole troop ran over him to safety. He held on, though he was hurt and worn out."
+  },
+  {
+   "t": "shot",
+   "v": "MKB5-King-Kneels",
+   "vo": [
+    "V06"
+   ],
+   "line": "The watching human king was moved. He had the monkey king gently brought down, and the dying monkey taught him how a king cares for his people."
+  },
+  {
+   "t": "ask",
+   "v": "MKB5-King-Kneels",
+   "eb": "did you know?",
+   "q": "This story is older than the Gospels. Where can you still see it?",
+   "o": [
+    "On the stone gates of the stupa at Sanchi",
+    "On the walls of Angkor Wat in Cambodia",
+    "On the Ashoka pillars, under the lions"
+   ],
+   "a": 0,
+   "why": "Sanchi’s gateways, carved over 2,000 years ago, show the monkey bridge, and so does a medallion from Bharhut. People were carving it before the Gospels were written."
+  },
+  {
+   "t": "shot",
+   "v": "MKB6-Late-Office-Today",
+   "vo": [
+    "V07"
+   ],
+   "line": "Today, someone stays late so a friend can make the deadline. A small bridge. It costs something, and it holds.",
+   "label": "today"
+  },
+  {
+   "t": "teach",
+   "v": "MKB6-Late-Office-Today",
+   "say": [
+    "the jataka are birth stories: tales of the buddha’s earlier lives, when he was still on the long way. the pali collection has about five hundred and fifty, and in many of them he’s an animal: a hare, a deer, an elephant, a monkey.",
+    "theravada buddhists hear them as stories of perfections, like generosity and courage, built up over many lives. mahayana buddhists see in them the bodhisattva’s path: helping others across, even before yourself."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "MKB5-King-Kneels",
+   "eb": "the hard one",
+   "q": "Both are kings. One brought archers to guard his mangoes; one made himself a bridge. What’s the story weighing?",
+   "o": [
+    "Clever tricks against brute force",
+    "A ruler who takes against one who gives",
+    "The wild against the human world"
+   ],
+   "a": 1,
+   "why": "The dying monkey tells the king a ruler should seek the good of those he rules. Many Jatakas were told as quiet lessons for kings."
+  }
+ ],
+ "today": {
+  "v": "MKB6-Late-Office-Today",
+  "say": "today, notice one person trying to get across something: a deadline, a hard week, a long story. stretch a little for them. stay five minutes longer, hold the door, listen to the end.",
+  "options": [
+   [
+    "I’ll look for them",
+    "you’ll find them. be the bridge."
+   ],
+   [
+    "I’m the one crossing",
+    "then let someone hold on for you. that’s allowed."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "“Is that so?”",
+  "line": "a zen teacher is blamed for something he didn’t do, and answers with three words."
+ },
+ "card": {
+  "from": "a Jataka tale",
+  "mins": 5,
+  "keep": "mango",
+  "keepName": "The monkey king’s mango",
+  "keepWhy": "Be the bridge.",
+  "sources": [
+   "Mahakapi Jataka (Jataka 407): the mango tree by the Ganges, the king of Benares and his archers, the leap, the cane too short, the troop crossing over his back, the king’s care and the monkey king’s teaching before he dies",
+   "Jatakamala of Aryasura, no. 27 (the Great Monkey), a Sanskrit telling of the same story",
+   "Mahakapi Jataka relief at Bharhut stupa"
+  ],
+  "check": [
+   "In the Jataka the injury is caused by one monkey (later Devadatta) jumping hard on his back; left out here, since Devadatta comes on day 28.",
+   "The monkey king’s dying words to the human king are summarized, not quoted.",
+   "Cane vs. bamboo: translations differ; confirm “cane.”"
+  ]
+ }
+}

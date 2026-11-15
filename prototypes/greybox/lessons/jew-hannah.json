@@ -1,0 +1,200 @@
+{
+ "id": "jew-hannah",
+ "home": "pomegranate",
+ "title": "The woman who prayed in silence",
+ "told": "from the book of Samuel",
+ "clips": "art/sacred/jew-hannah/clips/",
+ "voice": "art/sacred/jew-hannah/voice/",
+ "guide": {
+  "name": "Natalie",
+  "photo": "art/guides/judaism.webp"
+ },
+ "hook": {
+  "v": "HN1-At-Shiloh",
+  "say": "before the story, can i ask you something? have you ever meant something so much, you could barely say it out loud?",
+  "options": [
+   [
+    "Yes, I have",
+    "then you’ll understand her. listen."
+   ],
+   [
+    "I usually say too little",
+    "then this woman might be your teacher. listen."
+   ],
+   [
+    "Not really",
+    "good. just listen. it might find you later."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "HN1-At-Shiloh",
+   "vo": [
+    "V01"
+   ],
+   "line": "Every year, Hannah went with her family to the sanctuary at Shiloh. She longed for a child and had none. Year after year, she wept and couldn’t eat."
+  },
+  {
+   "t": "shot",
+   "v": "HN2-Silent-Prayer",
+   "vo": [
+    "V02"
+   ],
+   "line": "One year, she rose and went to pray alone. She spoke in her heart. Only her lips moved. Her voice could not be heard."
+  },
+  {
+   "t": "ask",
+   "v": "HN2-Silent-Prayer",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "The old priest Eli sees her lips moving with no sound. What do you think he assumes?",
+   "o": [
+    "That she’s praying",
+    "That she’s unwell",
+    "That she’s drunk"
+   ],
+   "a": 2,
+   "why": "He thought she was drunk. Silent, moving lips didn’t look like prayer to him."
+  },
+  {
+   "t": "shot",
+   "v": "HN3-Eli-Watches",
+   "vo": [
+    "V03"
+   ],
+   "line": "The priest Eli was watching. He saw her lips moving, heard nothing, and decided she was drunk. “Put away your wine,” he told her."
+  },
+  {
+   "t": "shot",
+   "v": "HN4-Not-Drunk",
+   "vo": [
+    "V04"
+   ],
+   "line": "“No, my lord,” Hannah said. “I have drunk neither wine nor strong drink. I poured out my soul before the Lord.”"
+  },
+  {
+   "t": "ask",
+   "v": "HN4-Not-Drunk",
+   "eb": "did you know?",
+   "q": "The Talmud says Hannah was the first person ever to call God by a certain name. Which?",
+   "o": [
+    "Merciful One",
+    "Lord of hosts",
+    "Our Father"
+   ],
+   "a": 1,
+   "why": "“Lord of hosts”: Lord of all the armies of heaven. Rabbi Elazar says no one had called God that until Hannah (Berakhot 31b)."
+  },
+  {
+   "t": "ask",
+   "v": "HN4-Not-Drunk",
+   "eb": "why?",
+   "q": "The Talmud learns a rule from Eli’s mistake. What is it?",
+   "o": [
+    "A priest may not interrupt a prayer",
+    "If you wrongly suspect someone, bless them",
+    "Never pray where others can watch"
+   ],
+   "a": 1,
+   "why": "Berakhot 31b: whoever suspects someone of a wrong they didn’t do must make it up to them, and bless them. Watch what Eli does next."
+  },
+  {
+   "t": "shot",
+   "v": "HN4-Not-Drunk",
+   "vo": [
+    "V05"
+   ],
+   "line": "Eli understood. “Go in peace,” he said, “and may God grant what you asked.”"
+  },
+  {
+   "t": "shot",
+   "v": "HN5-Face-Lifted",
+   "vo": [
+    "V06"
+   ],
+   "line": "She went on her way, and ate, and her face was no longer sad. In time, she had a son. She named him Samuel."
+  },
+  {
+   "t": "ask",
+   "v": "HN5-Face-Lifted",
+   "eb": "did you know?",
+   "q": "In her prayer, Hannah made a promise about the son she asked for. What was it?",
+   "o": [
+    "To name him after Eli",
+    "To bring an offering every year",
+    "To give him to serve at Shiloh"
+   ],
+   "a": 2,
+   "why": "Once he was weaned, she brought little Samuel to Eli to serve, and each year sewed him a new robe. Samuel grew up to anoint Israel’s first kings."
+  },
+  {
+   "t": "shot",
+   "v": "HN6-Today",
+   "vo": [
+    "V07"
+   ],
+   "line": "Today, the central Jewish prayer, the Amidah, “the standing prayer,” is said in a whisper. The rabbis learned how from Hannah: lips moving, voice low, heart aimed.",
+   "label": "today"
+  },
+  {
+   "t": "teach",
+   "v": "HN2-Silent-Prayer",
+   "say": [
+    "here’s what i love. hannah didn’t have perfect words or the right volume. she had kavanah: intention, aiming your heart where your words are going.",
+    "an old rabbinic line says, “the merciful one wants the heart.” and when your heart isn’t in it, keep going anyway. from doing it, the rabbis taught, you come to mean it."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "HN6-Today",
+   "eb": "the hard one",
+   "q": "Eli saw a drunk woman. The rabbis saw a model for all prayer. What does that say?",
+   "o": [
+    "Priests can’t judge prayer at all",
+    "Real prayer may look like nothing outside",
+    "Prayer must be silent to count"
+   ],
+   "a": 1,
+   "why": "The Talmud draws its prayer rules from her: lips moving, voice low (Berakhot 31a). Eli judged by the outside; the heart was the whole thing."
+  }
+ ],
+ "today": {
+  "v": "HN6-Today",
+  "say": "pick one thing you say on autopilot: a blessing, a prayer, or a plain “thank you.” today, pause for one breath before you say it, and aim your heart at the words. that pause is kavanah. which words you choose is up to you.",
+  "options": [
+   [
+    "I’ll aim it today",
+    "mean it. that’s two weeks in one line."
+   ],
+   [
+    "I’ll try tomorrow",
+    "that works. tomorrow brings a blessing worth aiming at."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "A thank-you before the first bite.",
+  "line": "next week begins at the table, with one short blessing, and a question about who you’re thanking."
+ },
+ "card": {
+  "from": "from the book of Samuel",
+  "mins": 5,
+  "keep": "arrow",
+  "keepName": "Hannah’s aim",
+  "keepWhy": "Aim your heart where your words are going.",
+  "sources": [
+   "1 Samuel 1:1–8 (Hannah has no children; year by year they go up to Shiloh to worship; she weeps and does not eat)",
+   "1 Samuel 1:9–14 (she prays; she spoke in her heart, only her lips moved, her voice was not heard; Eli thinks she is drunk; ‘put away thy wine’)",
+   "1 Samuel 1:15 (“No, my lord… I have drunk neither wine nor strong drink, but I poured out my soul before the LORD,” JPS 1917, shortened)",
+   "1 Samuel 1:17–20 (‘Go in peace’; her countenance was no more sad; Samuel born)",
+   "Babylonian Talmud, Berakhot 31a–b (laws of prayer learned from Hannah: direct the heart, lips move, voice not heard)",
+   "Mishnah Berakhot 2:1 (if he directed his heart); Babylonian Talmud, Sanhedrin 106b (the Merciful One wants the heart); Babylonian Talmud, Pesachim 50b (from not for its own sake comes for its own sake)"
+  ],
+  "check": [
+   "Hannah’s and Eli’s words are shortened from 1 Samuel 1:14–17 (JPS 1917) inside quotation marks"
+  ]
+ }
+}

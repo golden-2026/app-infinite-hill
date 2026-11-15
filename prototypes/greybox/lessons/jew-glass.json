@@ -1,0 +1,207 @@
+{
+ "id": "jew-glass",
+ "home": "pomegranate",
+ "title": "Why the glass breaks",
+ "told": "from the Talmud",
+ "clips": "art/sacred/jew-glass/clips/",
+ "voice": "art/sacred/jew-glass/voice/",
+ "guide": {
+  "name": "Natalie",
+  "photo": "art/guides/judaism.webp"
+ },
+ "hook": {
+  "v": "GL1-Wedding-Feast",
+  "say": "before the story, can i ask you something? on your happiest days, does someone you miss ever come to mind?",
+  "options": [
+   [
+    "Yes, always",
+    "then this custom was made for you. listen."
+   ],
+   [
+    "Sometimes",
+    "then you know the feeling this story keeps. listen."
+   ],
+   [
+    "Not really",
+    "good. keep this one for the day it happens."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "GL1-Wedding-Feast",
+   "vo": [
+    "V01"
+   ],
+   "line": "The Talmud tells of a rabbi named Mar, son of Ravina, who made a wedding feast for his son, long ago in Babylon."
+  },
+  {
+   "t": "shot",
+   "v": "GL2-Getting-Wild",
+   "vo": [
+    "V02"
+   ],
+   "line": "The guests were great rabbis. And as the night went on, the celebrating got louder, and wilder."
+  },
+  {
+   "t": "ask",
+   "v": "GL2-Getting-Wild",
+   "blur": true,
+   "predict": true,
+   "eb": "what happens next?",
+   "q": "Mar sees the party getting out of hand, and reaches for something to break. What do you guess it is?",
+   "o": [
+    "A cheap clay jug",
+    "His own costly cup",
+    "A jar of the feast’s wine"
+   ],
+   "a": 1,
+   "why": "A cup worth four hundred zuz, the Talmud says: a small fortune. A cheap jug wouldn’t have stopped anyone."
+  },
+  {
+   "t": "shot",
+   "v": "GL3-Precious-Cup",
+   "vo": [
+    "V03"
+   ],
+   "line": "So Mar brought out a precious cup, worth a fortune, and held it up for everyone to see."
+  },
+  {
+   "t": "shot",
+   "v": "GL4-The-Cup-Breaks",
+   "vo": [
+    "V04"
+   ],
+   "line": "And in front of all his guests, he broke it."
+  },
+  {
+   "t": "shot",
+   "v": "GL5-Quiet-Room",
+   "vo": [
+    "V05"
+   ],
+   "line": "The room went still. The guests grew serious. The joy was still there, but now it remembered."
+  },
+  {
+   "t": "ask",
+   "v": "GL5-Quiet-Room",
+   "eb": "did you know?",
+   "q": "Same page of the Talmud: at another wedding, the rabbis asked a sage to sing. What did he sing?",
+   "o": [
+    "“Woe to us, for we will die”",
+    "A song about the bride’s beauty",
+    "A psalm of thanks for the harvest"
+   ],
+   "a": 0,
+   "why": "Rav Hamnuna Zuti sang “woe to us, for we will die” at a wedding. Same idea, sharper: one serious note inside the happiest night."
+  },
+  {
+   "t": "shot",
+   "v": "GL5-Quiet-Room",
+   "vo": [
+    "V06"
+   ],
+   "line": "Later teachers tied the custom to Jerusalem and its Temple, destroyed long ago. An old psalm says: keep Jerusalem above your highest joy."
+  },
+  {
+   "t": "shot",
+   "v": "GL6-Chuppah-Today",
+   "vo": [
+    "V07"
+   ],
+   "line": "Today, at the end of many Jewish weddings, under the wedding canopy, a glass wrapped in cloth is broken underfoot. Then everyone shouts, “Mazel tov!”",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "GL6-Chuppah-Today",
+   "eb": "did you know?",
+   "q": "Many grooms say a verse just before the glass breaks. Which one?",
+   "o": [
+    "“Pray for the peace of Jerusalem”",
+    "“Next year in Jerusalem!”",
+    "“If I forget you, Jerusalem…”"
+   ],
+   "a": 2,
+   "why": "The same Psalm 137: “If I forget you, Jerusalem, let my right hand forget its skill.” “Next year in Jerusalem” ends the Passover meal; “pray for the peace of Jerusalem” is Psalm 122."
+  },
+  {
+   "t": "match",
+   "v": "GL6-Chuppah-Today",
+   "eb": "what the glass can mean",
+   "q": "Families tell it different ways. Match each reading.",
+   "pairs": [
+    [
+     "remembering Jerusalem",
+     "something in the world is still broken"
+    ],
+    [
+     "a glass that can’t be unbroken",
+     "a promise meant to last"
+    ],
+    [
+     "the loud crunch",
+     "an old way to scare off bad luck"
+    ]
+   ],
+   "why": "A Jewish wedding is happy to hold more than one meaning at once."
+  },
+  {
+   "t": "teach",
+   "v": "GL5-Quiet-Room",
+   "say": [
+    "here’s what i love. nobody cancels the party. the cheering comes right after the crunch.",
+    "in jewish tradition, even the happiest day keeps a little room for what’s missing. traditionally the groom breaks the glass; at many weddings today either partner does, or both together."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "GL6-Chuppah-Today",
+   "eb": "the hard one",
+   "q": "Mar’s cup was worth a fortune. Most weddings today use a simple glass. From the story, does that change the point?",
+   "o": [
+    "Yes, it only works if it hurts to lose",
+    "No, the point is the pause, not the price",
+    "Yes, today it’s only for good luck"
+   ],
+   "a": 1,
+   "why": "Mar wanted a moment of seriousness in the middle of the joy. Any glass can give you that."
+  }
+ ],
+ "today": {
+  "v": "GL6-Chuppah-Today",
+  "say": "next time you celebrate something, even something small, take one quiet second for what’s still broken in the world, or for someone who isn’t there. then cheer.",
+  "options": [
+   [
+    "I’ll do that",
+    "even in joy, remember. then mazel tov."
+   ],
+   [
+    "Someone came to mind already",
+    "then they’re part of today too. hold them gently."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "The girl who read first.",
+  "line": "new york, 1922. a rabbi’s twelve-year-old daughter has a saturday morning nobody there forgot."
+ },
+ "card": {
+  "from": "from the Talmud",
+  "mins": 5,
+  "keep": "glass",
+  "keepName": "The wedding glass",
+  "keepWhy": "Even in joy, remember.",
+  "keepSvg": "<path d=\"M34 20h32c0 18-6 30-16 32-10-2-16-14-16-32z\" fill=\"#2a1b05\"/><rect x=\"47\" y=\"52\" width=\"6\" height=\"18\" fill=\"#2a1b05\"/><rect x=\"34\" y=\"70\" width=\"32\" height=\"7\" rx=\"3\" fill=\"#2a1b05\"/><path d=\"M44 26l6 8-4 7 5 5\" fill=\"none\" stroke=\"#f4f1e8\" stroke-width=\"2\" opacity=\".6\"/>",
+  "sources": [
+   "Babylonian Talmud, Berakhot 30b–31a (Mar son of Ravina, at his son’s wedding, sees the rabbis very merry and breaks a costly cup before them; Rav Ashi does the same with a cup of white glass)",
+   "Psalms 137:5–6 (if I forget you, Jerusalem…; Jerusalem above my chief joy)",
+   "Tosafot to Berakhot 31a (the custom of breaking a glass at weddings); Shulchan Aruch, Orach Chaim 560:2, with the Rema (remembering Jerusalem at a wedding)",
+   "Family explanations of the custom (fragility of love, an irreversible promise, warding off bad luck), as in the audience research (18Doors; Modern Tribe; Chabad.org)"
+  ],
+  "check": [
+   "‘Scare off bad luck’ offered as one folk reading in the match (not a rabbinic one); keep or cut?"
+  ]
+ }
+}

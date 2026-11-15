@@ -1,0 +1,217 @@
+{
+ "id": "cat-ars",
+ "home": "angelus",
+ "title": "The priest who listened",
+ "told": "a story of Saint John Vianney",
+ "clips": "art/sacred/cat-ars/clips/",
+ "voice": "art/sacred/cat-ars/voice/",
+ "guide": {
+  "name": "Nicole",
+  "photo": "art/guides/catholic.webp"
+ },
+ "card": {
+  "from": "a story of Saint John Vianney",
+  "mins": 5,
+  "keep": "door",
+  "keepName": "The confessional door",
+  "keepWhy": "Say it out loud, then it’s smaller.",
+  "sources": [
+   "Saint Jean-Marie Vianney (1786-1859), the Curé of Ars: struggled with his Latin studies before ordination (1815); sent in 1818 to Ars-sur-Formans, a small farming village near Lyon, where he served until his death in 1859; in his later decades pilgrims came from across France and beyond, and he spent most of each day hearing confessions. Canonized by Pius XI in 1925; named patron of parish priests in 1929.",
+   "Pope Benedict XVI, Letter Proclaiming a Year for Priests (16 June 2009), on the Curé of Ars: the vicar general’s words, “There is little love of God in that parish; you will be the one to put it there”; his long hours in the confessional; his “recipe”: a small penance for the penitent, “the remainder I do in their place.”",
+   "Abbé Francis Trochu, The Curé d’Ars (1925): the arrival in February 1818; the young shepherd Antoine Givre who showed him the way (“You have shown me the way to Ars; I will show you the way to heaven”), now marked by a monument outside the village; the crowds and the hours in the confessional.",
+   "John 20:22-23 (Easter night: “Receive ye the Holy Ghost. Whose sins you shall forgive, they are forgiven them”).",
+   "Catechism of the Catholic Church 1424 (names of the sacrament), 1442, 1450-1460 (confession, penance/satisfaction), 1449 (absolution formula), 1467 (the sacramental seal); Code of Canon Law 983."
+  ],
+  "check": [
+   "Hours in the confessional: the caption says “often more than twelve hours a day” in his later years; biographies give figures from eleven to sixteen or seventeen hours. Confirm the safest wording.",
+   "The shepherd boy’s exchange is from the traditional accounts (Trochu); the lesson labels it “as the story is told.” Confirm the wording of the line.",
+   "The penance “recipe” is quoted from Benedict XVI’s 2009 letter, which quotes the saint; confirm the paraphrase in the caption."
+  ]
+ },
+ "hook": {
+  "v": "AR3-The-Line",
+  "say": "before the story, can i ask you something? is there something you’ve carried for a long time and never said out loud?",
+  "options": [
+   [
+    "Yes, one thing",
+    "thank you for being honest. you don’t have to say it here. just listen."
+   ],
+   [
+    "A few things",
+    "most of us have a few. this story is gentle with that."
+   ],
+   [
+    "Not really",
+    "good. keep this one for a friend who does."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "AR1-The-Road-To-Ars",
+   "vo": [
+    "V01"
+   ],
+   "line": "In 1818, a young French priest who had nearly failed his studies was sent to Ars, a tiny farm village. “There is little love of God there,” he was told."
+  },
+  {
+   "t": "shot",
+   "v": "AR1-The-Road-To-Ars",
+   "vo": [
+    "V02"
+   ],
+   "line": "Lost in the fog, he asked a shepherd boy the way. When they reached the village, he said: “You showed me the way to Ars. I’ll show you the way to heaven.”",
+   "label": "as the story is told"
+  },
+  {
+   "t": "ask",
+   "v": "AR1-The-Road-To-Ars",
+   "eb": "did you know?",
+   "q": "John Vianney nearly failed his priest studies. Why?",
+   "o": [
+    "He was too poor to buy the books",
+    "He’d had little schooling, and Latin beat him",
+    "He doubted he was called to be a priest"
+   ],
+   "a": 1,
+   "why": "The French Revolution had shut the church schools when he was a boy. He was ordained after a priest who knew him vouched for how good he was."
+  },
+  {
+   "t": "shot",
+   "v": "AR2-Empty-Church",
+   "vo": [
+    "V03"
+   ],
+   "line": "At first, the little church was nearly empty. He prayed there for hours before dawn, visited the farmhouses one by one, and ate very little."
+  },
+  {
+   "t": "ask",
+   "v": "AR3-The-Line",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "Years later, people were coming to Ars from all over France. About how many a year, at the peak?",
+   "o": [
+    "A few hundred",
+    "Over a million",
+    "Around twenty thousand"
+   ],
+   "a": 2,
+   "why": "By the late 1850s, around 20,000 a year, some say more. The station at Lyon even sold special tickets to Ars, and nearly everyone came to confess."
+  },
+  {
+   "t": "shot",
+   "v": "AR3-The-Line",
+   "vo": [
+    "V04"
+   ],
+   "line": "They came to confess. Rich and poor, the curious and the lost waited in line outside his church, some all through the night."
+  },
+  {
+   "t": "ask",
+   "v": "AR3-The-Line",
+   "eb": "why?",
+   "q": "Why would people wait all night to tell a stranger their worst mistakes?",
+   "o": [
+    "They hoped he’d work a miracle for them",
+    "To hear someone say out loud: you’re forgiven",
+    "A church law said they had to confess"
+   ],
+   "a": 1,
+   "why": "Some came out of curiosity, sure. But the line kept growing because people walked out forgiven, and they told their friends."
+  },
+  {
+   "t": "ask",
+   "v": "AR4-The-Box",
+   "blur": true,
+   "predict": true,
+   "eb": "what happens next?",
+   "q": "In his later years, how much of his day do you think he spent in the confessional?",
+   "o": [
+    "Often more than twelve hours",
+    "About an hour after morning Mass",
+    "Saturday afternoons only"
+   ],
+   "a": 0,
+   "why": "Most of every day. Cold in winter, stifling in summer, for decades."
+  },
+  {
+   "t": "shot",
+   "v": "AR4-The-Box",
+   "vo": [
+    "V05"
+   ],
+   "line": "So he sat in a cramped wooden box, often more than twelve hours a day, freezing in winter, sweltering in summer. Year after year, he listened."
+  },
+  {
+   "t": "shot",
+   "v": "AR5-A-Small-Penance",
+   "vo": [
+    "V06"
+   ],
+   "line": "He was gentle. He once said his secret was to give people a small penance, and quietly do the rest of the praying for them himself."
+  },
+  {
+   "t": "shot",
+   "v": "AR6-Today-Confessional",
+   "vo": [
+    "V07"
+   ],
+   "line": "Today Saint John Vianney is the patron of parish priests. And in confession, Catholics still say it plainly, out loud, and hear out loud that they are forgiven.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "AR6-Today-Confessional",
+   "eb": "you’re in it",
+   "q": "You’re in the line at Ars. You confess, plainly. Vianney gives you a small penance. What is it for?",
+   "o": [
+    "To earn God’s forgiveness",
+    "To start making things right",
+    "To punish you, so you learn"
+   ],
+   "a": 1,
+   "why": "Catholics believe forgiveness is a gift, not earned. The penance, a prayer or small act, is a first step of repair. Vianney kept it small and prayed the rest himself."
+  },
+  {
+   "t": "teach",
+   "v": "AR4-The-Box",
+   "say": [
+    "here’s why catholics tell a person. on easter night, the risen jesus told his friends, “whose sins you forgive, they are forgiven.” so forgiveness is spoken out loud, through a priest, who may never reveal what he hears, to anyone, for any reason. that’s the seal.",
+    "and if it’s been years, you can start with “it’s been a long time.” vianney sat waiting in that box for decades. catholics believe God waits like that too."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "AR5-A-Small-Penance",
+   "eb": "the hard one",
+   "q": "A man confesses to Father Vianney. Later the man’s worried wife comes and asks what her husband said. From this lesson, what must the priest do?",
+   "o": [
+    "Tell her, since she’s family",
+    "Say nothing at all about it, ever",
+    "Tell her only the parts that would help her"
+   ],
+   "a": 1,
+   "why": "The seal. Not to family, not to police, not even a hint. That’s why people dared to stand in that line."
+  }
+ ],
+ "today": {
+  "v": "AR6-Today-Confessional",
+  "say": "name one thing you’ve been carrying in one plain sentence, out loud or on a scrap of paper you can tear up after. if you’re catholic and it feels right, you could look up when your parish hears confessions. or just learn how it goes. your choice.",
+  "options": [
+   [
+    "I’ll name it today",
+    "once it’s said, it has edges. that’s already smaller."
+   ],
+   [
+    "I’m not ready yet",
+    "that’s okay. the curé waited in that box for years. you can take your time."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "A lap full of pebbles.",
+  "line": "a desert monk counts his prayers with stones. then he hears about a woman who prays more."
+ }
+}

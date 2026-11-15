@@ -1,0 +1,233 @@
+{
+ "id": "zacchaeus",
+ "home": "olive",
+ "title": "The man up a tree",
+ "told": "a story about Jesus",
+ "clips": "art/sacred/zacchaeus/clips/",
+ "voice": "art/sacred/zacchaeus/voice/",
+ "guide": {
+  "name": "Denzel",
+  "photo": "art/guides/christianity.webp"
+ },
+ "card": {
+  "from": "a story about Jesus",
+  "mins": 5,
+  "keep": "tree",
+  "keepName": "The sycamore tree",
+  "keepWhy": "Seen first. Then changed.",
+  "keepSvg": "<rect x=\"45\" y=\"52\" width=\"10\" height=\"26\" rx=\"2\" fill=\"#2a1b05\"/><circle cx=\"50\" cy=\"36\" r=\"16\" fill=\"#2a1b05\"/><circle cx=\"34\" cy=\"44\" r=\"12\" fill=\"#2a1b05\"/><circle cx=\"66\" cy=\"44\" r=\"12\" fill=\"#2a1b05\"/><path d=\"M50 60L36 50M50 62l14-11\" stroke=\"#2a1b05\" stroke-width=\"4\" stroke-linecap=\"round\"/><path d=\"M28 80h44\" stroke=\"#2a1b05\" stroke-width=\"4\" stroke-linecap=\"round\"/>",
+  "sources": [
+   "Luke 19:1-2 (Jesus passes through Jericho; Zacchaeus, a chief tax collector, and rich)",
+   "Luke 19:3-4 (he wanted to see Jesus, couldn’t because of the crowd, being short; ran ahead and climbed a sycamore tree, i.e. a sycomore fig)",
+   "Luke 19:5 (“Zacchaeus, hurry and come down, for today I must stay at your house”)",
+   "Luke 19:6-7 (he came down and received him joyfully; all grumbled, “He has gone in to lodge with a man who is a sinner”)",
+   "Luke 19:8 (“half of my goods I give to the poor… I restore four times as much”)",
+   "Luke 19:9-10 (“Today, salvation has come to this house, because he also is a son of Abraham… to seek and to save that which was lost”)",
+   "Exodus 22:1 (fourfold repayment for a stolen sheep) and Leviticus 6:1-5 / Numbers 5:6-7 (one who confesses repays plus a fifth), behind the four-times “why”",
+   "Tax collectors in Roman Judea collected for Rome and were widely seen as collaborators and overchargers"
+  ],
+  "check": [
+   "Teach line reads the story as grace: welcome first, change after. Some readers take Zacchaeus’s words in 19:8 as a description of what he already does; confirm the framing is acceptable."
+  ]
+ },
+ "hook": {
+  "v": "ZA1-Jericho-Crowd",
+  "say": "before the story, can i ask you something? ever felt like people only see your worst?",
+  "options": [
+   [
+    "Yes, I have",
+    "i’m sorry. that’s heavy to carry. this story is for you."
+   ],
+   [
+    "I’ve done it to someone",
+    "most of us have. keep them in mind while you hear this one."
+   ],
+   [
+    "Not really",
+    "good. just listen. someone you know might need this one."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "ZA1-Jericho-Crowd",
+   "vo": [
+    "V01"
+   ],
+   "line": "Zacchaeus was the chief tax collector in the town of Jericho, and he was rich. Everyone knew how tax collectors got rich."
+  },
+  {
+   "t": "ask",
+   "v": "ZA1-Jericho-Crowd",
+   "eb": "did you know?",
+   "q": "Why did people dislike tax collectors so much back then?",
+   "o": [
+    "They were Roman soldiers from abroad",
+    "They worked for Rome and skimmed extra",
+    "They kept the Temple’s offerings"
+   ],
+   "a": 1,
+   "why": "They gathered taxes for Rome, the power ruling the land, and kept the extra. To their neighbors, they were traitors."
+  },
+  {
+   "t": "shot",
+   "v": "ZA1-Jericho-Crowd",
+   "vo": [
+    "V02"
+   ],
+   "line": "When Jesus came through town, Zacchaeus wanted to see him. But he was short, and the crowd wouldn’t let him through."
+  },
+  {
+   "t": "ask",
+   "v": "ZA1-Jericho-Crowd",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "So he runs ahead and climbs a tree. Jesus reaches it. What do you guess Jesus does?",
+   "o": [
+    "Walks on; the crowd is waiting",
+    "Calls him down by name",
+    "Points him out to the crowd"
+   ],
+   "a": 1,
+   "why": "He stops, looks up, and uses his name. Nobody had introduced them."
+  },
+  {
+   "t": "shot",
+   "v": "ZA2-Up-The-Tree",
+   "vo": [
+    "V03"
+   ],
+   "line": "So he ran ahead and climbed a sycamore tree, to see Jesus pass by."
+  },
+  {
+   "t": "shot",
+   "v": "ZA3-Looks-Up",
+   "vo": [
+    "V04"
+   ],
+   "line": "Jesus reached the tree, stopped and looked up. “Zacchaeus, hurry and come down. Today I must stay at your house.”",
+   "label": "Luke 19:5"
+  },
+  {
+   "t": "shot",
+   "v": "ZA4-Grumbling-Crowd",
+   "vo": [
+    "V05"
+   ],
+   "line": "He hurried down and welcomed Jesus with joy. But the crowd grumbled, “He’s gone to stay with a sinner.”"
+  },
+  {
+   "t": "ask",
+   "v": "ZA4-Grumbling-Crowd",
+   "blur": true,
+   "predict": true,
+   "eb": "what happens next?",
+   "q": "The whole town is grumbling. What does Zacchaeus do?",
+   "o": [
+    "Argues with the crowd",
+    "Makes a promise about his money",
+    "Asks Jesus to leave quietly"
+   ],
+   "a": 1,
+   "why": "No one asked him to. He just stands up and says it."
+  },
+  {
+   "t": "shot",
+   "v": "ZA5-His-Table",
+   "vo": [
+    "V06"
+   ],
+   "line": "Zacchaeus stood up. “Look, Lord, half of what I own I’ll give to the poor. If I’ve cheated anyone, I’ll pay back four times as much.”",
+   "label": "Luke 19:8"
+  },
+  {
+   "t": "ask",
+   "v": "ZA5-His-Table",
+   "eb": "why?",
+   "q": "The law asked someone who owned up to cheating to repay it plus a fifth. Zacchaeus offers four times. What does that show?",
+   "o": [
+    "He wanted to impress the crowd",
+    "His change was real, from the heart",
+    "A judge had ordered him to"
+   ],
+   "a": 1,
+   "why": "Nobody demanded it. He went far past what the law asked and chose the payback the law set for a thief."
+  },
+  {
+   "t": "ask",
+   "v": "ZA5-His-Table",
+   "eb": "did you know?",
+   "q": "Zacchaeus is a Hebrew name. What does it mean?",
+   "o": [
+    "Little one",
+    "Rich man",
+    "Pure, or innocent"
+   ],
+   "a": 2,
+   "why": "It comes from Zakkai: pure, innocent. The town’s biggest cheat had a name that meant clean, and by dinner he was living up to it."
+  },
+  {
+   "t": "shot",
+   "v": "ZA5-His-Table",
+   "vo": [
+    "V07"
+   ],
+   "line": "Jesus said, “Today salvation has come to this house, because he too is a son of Abraham. I came to seek and to save the lost.”",
+   "label": "Luke 19:9-10"
+  },
+  {
+   "t": "ask",
+   "v": "ZA4-Grumbling-Crowd",
+   "eb": "did you know?",
+   "q": "Jesus invited himself to dinner. Why would that hit the crowd so hard?",
+   "o": [
+    "Sharing a meal meant accepting someone",
+    "Guests had to pay for their own food",
+    "Rabbis weren’t allowed in rich homes"
+   ],
+   "a": 0,
+   "why": "Eating at someone’s table said “we belong together.” Jesus chose the most hated table in Jericho, before Zacchaeus had changed a thing."
+  },
+  {
+   "t": "teach",
+   "v": "ZA3-Looks-Up",
+   "say": [
+    "here’s what i love. jesus didn’t wait for zacchaeus to fix himself. he stopped under the tree and called him by name.",
+    "christians see it as a picture of grace: the welcome comes first, and the change follows."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "ZA5-His-Table",
+   "eb": "the hard one",
+   "q": "The crowd called him “a sinner.” Jesus called him “a son of Abraham.” What was Jesus saying?",
+   "o": [
+    "He had to leave home, like Abraham",
+    "He still belonged to God’s family",
+    "It was a polite title for a rich man"
+   ],
+   "a": 1,
+   "why": "Abraham was the father of God’s people. The crowd had shut Zacchaeus out. Jesus said he still belonged."
+  }
+ ],
+ "today": {
+  "v": "ZA6-Today",
+  "say": "jesus invited himself to dinner with a man the town had written off. today, reach out to someone like that: sit with them, invite them for coffee, or say one kind thing to them by name.",
+  "options": [
+   [
+    "Someone came to mind",
+    "then you know where to start. one kind word, by name."
+   ],
+   [
+    "I’ll look for them",
+    "that’s how it started in jericho. someone looked up."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "Even God rested.",
+  "line": "the bible’s first week doesn’t end with work. it ends with a day off."
+ }
+}

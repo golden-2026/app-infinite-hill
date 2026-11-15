@@ -11,7 +11,7 @@ import { useStore } from "@/lib/store";
 import { t } from "@/i18n";
 import { Body, Btn, Link, Screen, Sun, color, font, type } from "@/ui";
 
-const input = { borderWidth: 1.5, borderColor: color.line, borderRadius: 999, paddingVertical: 14, paddingHorizontal: 16, fontFamily: font.text[400], fontSize: 16, backgroundColor: "#fff", color: color.ink } as const;
+const input = { borderWidth: 1.5, borderColor: color.line, borderRadius: 999, paddingVertical: 14, paddingHorizontal: 16, fontFamily: font.text[400], fontSize: 16, backgroundColor: color.white, color: color.ink } as const;
 
 export default function Invite() {
   useTitle(t("waitlist.invite.title"));
@@ -72,7 +72,7 @@ export default function Invite() {
         {check === "ok" ? (
           <View style={{ gap: 10 }}>
             <Pressable testID="show-nick" accessibilityRole="checkbox" accessibilityState={{ checked: show }} aria-checked={show} onPress={() => setShow(!show)} style={{ flexDirection: "row", alignItems: "center", gap: 10 }}>
-              <View style={{ width: 22, height: 22, borderRadius: 6, borderWidth: 1.5, borderColor: color.ink, backgroundColor: show ? color.ink : "#fff", alignItems: "center", justifyContent: "center" }}>{show ? <Text style={{ color: "#fff", fontSize: 14, lineHeight: 16 }}>✓</Text> : null}</View>
+              <View style={{ width: 22, height: 22, borderRadius: 6, borderWidth: 1.5, borderColor: color.ink, backgroundColor: show ? color.ink : color.white, alignItems: "center", justifyContent: "center" }}>{show ? <Text style={{ color: "#fff", fontSize: 14, lineHeight: 16 }}>✓</Text> : null}</View>
               <Text style={[type.body(14), { flex: 1, color: color.ink }]}>{t("waitlist.invite.showNick")}</Text>
             </Pressable>
             {show ? <TextInput testID="invite-nick" value={nick} onChangeText={setNick} placeholder={t("waitlist.invite.nick")} accessibilityLabel={t("waitlist.invite.nickA11y")} maxLength={24} style={input} /> : null}

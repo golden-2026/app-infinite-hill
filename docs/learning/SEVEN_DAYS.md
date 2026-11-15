@@ -1,3 +1,5 @@
+Background only (written 2026-10-04). Where this disagrees with docs/VISION-NOW.md or docs/LESSON_STANDARD.md, those win.
+
 # The first seven days: Hindu parents
 
 Owner decision (2026-10-04): the first user is **Hindu parents who want their kids to know where they come from**

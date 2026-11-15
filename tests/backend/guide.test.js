@@ -188,7 +188,7 @@ test("accepts an enum-only onboarding profile and maps it to fixed prompt senten
   try {
     const stay = await call({ body: { ...payload({ door: "Judaism" }), profile: { depth: "new", openness: "stay", commitment: "high" } } });
     assert.equal(stay.status, 200);
-    assert.match(systems[0], /Answer from Judaism's own tradition and texts .* by default\..*Their door is a default lens, never a wall/);
+    assert.match(systems[0], /Answer from Judaism's own tradition and texts .* by default\..*a faith path stays inside its own faith/);
     assert.match(systems[0], /Never compare or rank religions/);
     assert.match(systems[0], /explain from the ground up/);
     assert.match(systems[0], /never bring up other traditions/);
@@ -202,6 +202,33 @@ test("accepts an enum-only onboarding profile and maps it to fixed prompt senten
   } finally {
     globalThis.fetch = originalFetch;
   }
+});
+
+test("a faith path stays inside its faith; only my own religion answers across faiths (owner, 2026-11-10)", async () => {
+  const { buildSystemPrompt } = await import("../../api/guide.js");
+  for (const openness of ["stay", "sometimes", "love"]) {
+    const faith = buildSystemPrompt("Christianity", { depth: "some", openness });
+    assert.match(faith, /a faith path stays inside its own faith: answer only from Christianity's own texts/);
+    assert.match(faith, /Never bring up, quote or compare another faith, and never offer to visit another door/);
+    assert.match(faith, /this path stays within Christianity's own tradition, that exploring across faiths lives on 'my own religion', and that they can switch to it anytime under You/);
+    assert.match(faith, /never refuse rudely/);
+    assert.match(faith, /two paths, each its own path they switch between under You, never mixed/);
+    assert.doesNotMatch(faith, /default lens, never a wall|similar idea|see how other traditions handle|any door can be visited|several traditions/);
+    assert.match(faith, /Never compare or rank religions/);
+    assert.match(faith, /call or text 988/);
+  }
+  const es = buildSystemPrompt("Islam", { lang: "es" });
+  assert.match(es, /stays inside its own faith/);
+  assert.match(es, /988 answers in Spanish/);
+
+  const own = buildSystemPrompt("My Own Religion", { depth: "some" });
+  assert.match(own, /the path where exploring across faiths lives/);
+  assert.match(own, /describe each in its own words, name what they truly share and where they really differ/);
+  assert.match(own, /real practices in several traditions/);
+  assert.doesNotMatch(own, /stays inside its own faith/);
+  assert.match(own, /Never rank religions/);
+  assert.doesNotMatch(own, /Never compare/);
+  assert.match(own, /call or text 988/);
 });
 
 test("rejects a profile with free text, unknown keys, or unknown values", async () => {

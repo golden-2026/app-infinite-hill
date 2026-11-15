@@ -1,0 +1,195 @@
+{
+ "id": "universe",
+ "home": "marigold",
+ "title": "The universe starts over too",
+ "told": "from the Puranas",
+ "clips": "art/sacred/universe/clips/",
+ "voice": "art/sacred/universe/voice/",
+ "guide": {
+  "name": "Priyanka",
+  "photo": "art/guides/hinduism.webp"
+ },
+ "hook": {
+  "v": "US1-Cosmic-Ocean",
+  "say": "before the story, can i ask you something? has something ended that you didn’t want to end? a job, a friendship, a chapter.",
+  "options": [
+   [
+    "Yes, recently",
+    "then watch this one slowly. it’s for you."
+   ],
+   [
+    "A while ago",
+    "then you may already see what grew after."
+   ],
+   [
+    "Not right now",
+    "keep this one for when it does."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "US1-Cosmic-Ocean",
+   "vo": [
+    "V01"
+   ],
+   "line": "Hindu tradition thinks about time in huge circles. Worlds are made, they last for ages, they dissolve, and then they begin again."
+  },
+  {
+   "t": "ask",
+   "v": "US1-Cosmic-Ocean",
+   "eb": "did you know?",
+   "q": "Hindu texts measure one day of Brahma, the creator. Roughly how long is it?",
+   "o": [
+    "A few thousand years",
+    "About 4.3 billion years",
+    "One human lifetime"
+   ],
+   "a": 1,
+   "why": "One kalpa, a day of Brahma, is 4.32 billion human years, and his night is as long again. That’s close to the age of the Earth."
+  },
+  {
+   "t": "shot",
+   "v": "US2-Vishnu-Rests",
+   "vo": [
+    "V02"
+   ],
+   "line": "Between the cycles, the stories say, Vishnu rests on a great coiled serpent, floating on a dark ocean. Everything is quiet."
+  },
+  {
+   "t": "ask",
+   "v": "US2-Vishnu-Rests",
+   "blur": true,
+   "predict": true,
+   "eb": "what happens next?",
+   "q": "Everything is quiet, floating on a dark ocean. What happens next?",
+   "o": [
+    "Vishnu wakes and speaks a world into being",
+    "The serpent uncoils and a world spills out",
+    "A lotus grows up out of Vishnu’s navel"
+   ],
+   "a": 2,
+   "why": "A lotus, rising from his navel through the dark. Watch what’s inside."
+  },
+  {
+   "t": "shot",
+   "v": "US3-Lotus-Rises",
+   "vo": [
+    "V03"
+   ],
+   "line": "Then a lotus grows from Vishnu’s navel, rising through the dark."
+  },
+  {
+   "t": "ask",
+   "v": "US3-Lotus-Rises",
+   "eb": "did you know?",
+   "q": "Brahma is usually shown with an unusual feature. What is it?",
+   "o": [
+    "Four faces, looking every way",
+    "A third eye on his forehead",
+    "Deep blue skin"
+   ],
+   "a": 0,
+   "why": "Four faces, one for each direction, and in many tellings each recites one of the four Vedas. The third eye is Shiva’s; the blue skin, Vishnu’s."
+  },
+  {
+   "t": "shot",
+   "v": "US4-Brahma",
+   "vo": [
+    "V04"
+   ],
+   "line": "It opens, and inside sits Brahma, the creator."
+  },
+  {
+   "t": "shot",
+   "v": "US5-New-World",
+   "vo": [
+    "V05"
+   ],
+   "line": "And Brahma begins to make a brand-new world."
+  },
+  {
+   "t": "match",
+   "v": "US5-New-World",
+   "eb": "three gods, three jobs",
+   "q": "Many Hindus speak of three great roles in the cycle. Match them.",
+   "pairs": [
+    [
+     "Brahma",
+     "creates"
+    ],
+    [
+     "Vishnu",
+     "preserves"
+    ],
+    [
+     "Shiva",
+     "ends and renews"
+    ]
+   ],
+   "why": "Creation, keeping, and ending so it can begin again. The whole circle."
+  },
+  {
+   "t": "ask",
+   "v": "US3-Lotus-Rises",
+   "eb": "did you know?",
+   "q": "Why a lotus? It grows somewhere surprising.",
+   "o": [
+    "Only in clear, still mountain water",
+    "Up out of the mud at a pond’s bottom",
+    "Floating free, with no roots at all"
+   ],
+   "a": 1,
+   "why": "The lotus rises clean out of muddy water. That’s why it’s a sign of beauty growing out of hard places."
+  },
+  {
+   "t": "shot",
+   "v": "US6-Today",
+   "vo": [
+    "V06"
+   ],
+   "line": "The ending was never the end. It was a pause before the next beginning.",
+   "label": "today"
+  },
+  {
+   "t": "teach",
+   "v": "US4-Brahma",
+   "say": [
+    "here’s what i love. in these stories, even the universe gets a fresh start.",
+    "whatever ended in your life may be the quiet before something new. feel the ending, then let the lotus open."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "US6-Today",
+   "eb": "the hard one",
+   "q": "If endings are part of the circle, why do Hindus honor Shiva, the one who ends things?",
+   "o": [
+    "To keep him calm, so endings stay away",
+    "Because he decides who is reborn",
+    "Because endings clear room for what’s next"
+   ],
+   "a": 2,
+   "why": "Shiva ends what has run its course, so something new can begin. Ending is part of creating."
+  }
+ ],
+ "today": {
+  "v": "US3-Lotus-Rises",
+  "say": "name one ending in your life. then name one thing it made room for.",
+  "options": [
+   [
+    "I can name one",
+    "then you’ve seen a lotus open. hold onto it."
+   ],
+   [
+    "I’m still in the quiet",
+    "that’s okay. the quiet comes first, every time."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "The first letters.",
+  "line": "in kerala there’s a whole festival for beginners. even grown-ups come."
+ }
+}

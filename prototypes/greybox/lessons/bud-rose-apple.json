@@ -1,0 +1,193 @@
+{
+ "id": "bud-rose-apple",
+ "home": "lotus",
+ "title": "The rose-apple tree",
+ "told": "from the Buddha’s discourses",
+ "clips": "art/sacred/bud-rose-apple/clips/",
+ "voice": "art/sacred/bud-rose-apple/voice/",
+ "guide": {
+  "name": "Orlando",
+  "photo": "art/guides/buddhism.webp"
+ },
+ "hook": {
+  "v": "RAT6-Window-Seat-Today",
+  "say": "before the story, can i ask you something? do you remember a moment, maybe as a kid, when everything just went quiet and good?",
+  "options": [
+   [
+    "Yes, I remember one",
+    "hold it gently. you’ll need it in a minute. listen."
+   ],
+   [
+    "Maybe, faintly",
+    "that’s enough. listen."
+   ],
+   [
+    "Not really",
+    "then let this story go looking with you."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "RAT1-Plowing-Festival",
+   "vo": [
+    "V01"
+   ],
+   "line": "In the later tellings, the king held a royal plowing festival. He guided the first plow himself, and the whole town came out to watch.",
+   "label": "one popular telling"
+  },
+  {
+   "t": "shot",
+   "v": "RAT2-Boy-Under-Tree",
+   "vo": [
+    "V02"
+   ],
+   "line": "The little prince was left on a couch in the cool shade of a rose-apple tree. His nurses slipped away to see the festival."
+  },
+  {
+   "t": "shot",
+   "v": "RAT3-First-Stillness",
+   "vo": [
+    "V03"
+   ],
+   "line": "Alone, the boy sat cross-legged, and his mind grew still. A quiet joy came, the texts say, apart from wanting anything at all."
+  },
+  {
+   "t": "ask",
+   "v": "RAT3-First-Stillness",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "Later tellings add a wonder. When the nurses hurry back hours later, what do they find?",
+   "o": [
+    "The tree’s shadow hasn’t moved off him",
+    "The boy is fast asleep",
+    "A cobra coiled beside him"
+   ],
+   "a": 0,
+   "why": "The sun had moved. The shade, the story says, had not."
+  },
+  {
+   "t": "shot",
+   "v": "RAT4-Shadow-Stays",
+   "vo": [
+    "V04"
+   ],
+   "line": "Hours later the nurses ran back. The sun had moved, but the tree’s shadow had stayed over him. The king, seeing it, bowed to his own son."
+  },
+  {
+   "t": "shot",
+   "v": "RAT5-Remembering",
+   "vo": [
+    "V05"
+   ],
+   "line": "Years later, worn thin by harsh fasting, the Buddha-to-be remembered that day. “Could that be the way to awakening?” he wondered. And he knew it was."
+  },
+  {
+   "t": "ask",
+   "v": "RAT5-Remembering",
+   "eb": "why?",
+   "q": "Years of fasting hadn’t worked. Why did a childhood memory change his whole search?",
+   "o": [
+    "It made him miss his life as a prince",
+    "It meant he should go home and rest",
+    "It showed calm joy might work where pain hadn’t"
+   ],
+   "a": 2,
+   "why": "In the Mahasaccaka Sutta he says he had nearly starved himself. The memory pointed to a middle way: neither indulging the body nor punishing it."
+  },
+  {
+   "t": "fill",
+   "v": "RAT5-Remembering",
+   "eb": "finish the line",
+   "pre": "Why am I afraid of that",
+   "post": ", which has nothing to do with the pleasures of the senses?",
+   "o": [
+    "stillness",
+    "happiness",
+    "emptiness"
+   ],
+   "a": 1,
+   "why": "Happiness, sukha. After years of treating every pleasure as a trap, he saw this one wasn’t greed, and there was nothing to fear in it."
+  },
+  {
+   "t": "ask",
+   "v": "RAT4-Shadow-Stays",
+   "eb": "did you know?",
+   "q": "Seeing the shadow, the king bowed to his own son. Why was that so startling?",
+   "o": [
+    "Kings and fathers bowed to no child",
+    "Kings were forbidden to kneel outdoors",
+    "It was the first time he’d seen his son"
+   ],
+   "a": 0,
+   "why": "The tradition counts it as the king’s second bow to his son. The first came at the boy’s birth, when the sage Asita honored the baby."
+  },
+  {
+   "t": "shot",
+   "v": "RAT6-Window-Seat-Today",
+   "vo": [
+    "V06"
+   ],
+   "line": "Today, a quiet corner, a window seat, a bench in the shade. A small ease shows up. You don’t have to be afraid of it.",
+   "label": "today"
+  },
+  {
+   "t": "teach",
+   "v": "RAT6-Window-Seat-Today",
+   "say": [
+    "jhana means deep meditative absorption: the mind settling, gathering, becoming still and bright. the festival comes from later tellings, but the memory itself is the buddha’s own, in a discourse where he looks back on his search.",
+    "here’s a school difference hiding in one word. jhana in pali is dhyana in sanskrit, chan in chinese, and zen in japanese. theravada teachers map jhana in four levels. the zen school took its very name from it, and puts sitting at the heart of everything."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "RAT3-First-Stillness",
+   "eb": "the hard one",
+   "q": "Under the tree, the boy wasn’t even trying to meditate. What does that suggest about the stillness he found?",
+   "o": [
+    "It needs a strict teacher to learn",
+    "It was natural, and could be found again",
+    "It comes only after long hardship"
+   ],
+   "a": 1,
+   "why": "He didn’t invent it in the forest; he remembered it. The way forward started with something he already knew."
+  }
+ ],
+ "today": {
+  "v": "RAT6-Window-Seat-Today",
+  "say": "today, sit somewhere shady or quiet for two minutes. don’t try to meditate. just be still, the way a child is when nobody’s watching. if a little ease shows up, let it stay.",
+  "options": [
+   [
+    "I’ll find a spot",
+    "good. let the shade do the work."
+   ],
+   [
+    "Stillness makes me restless",
+    "that’s okay. even one quiet breath counts."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "Whose swan?",
+  "line": "a cousin shoots a swan out of the sky. the young prince gets to it first."
+ },
+ "card": {
+  "from": "from the Buddha’s discourses",
+  "mins": 5,
+  "keep": "tree",
+  "keepName": "The rose-apple tree",
+  "keepWhy": "You’ve been here before.",
+  "keepSvg": "<rect x=\"45\" y=\"52\" width=\"10\" height=\"26\" rx=\"2\" fill=\"#2a1b05\"/><circle cx=\"50\" cy=\"36\" r=\"16\" fill=\"#2a1b05\"/><circle cx=\"34\" cy=\"44\" r=\"12\" fill=\"#2a1b05\"/><circle cx=\"66\" cy=\"44\" r=\"12\" fill=\"#2a1b05\"/><path d=\"M50 60L36 50M50 62l14-11\" stroke=\"#2a1b05\" stroke-width=\"4\" stroke-linecap=\"round\"/><path d=\"M28 80h44\" stroke=\"#2a1b05\" stroke-width=\"4\" stroke-linecap=\"round\"/>",
+  "sources": [
+   "Mahasaccaka Sutta (Majjhima Nikaya 36): after his austerities, he recalls sitting in the shade of the rose-apple tree while his father the Sakyan was working, entering the first jhana; “could that be the path to enlightenment?”; “why am I afraid of that pleasure that has nothing to do with sensual pleasures?”",
+   "Nidanakatha (introduction to the Jataka commentary): the plowing festival, the nurses leaving, the shadow that did not move, the king’s salutation",
+   "Pali jhana, Sanskrit dhyana, Chinese chan, Japanese zen"
+  ],
+  "check": [
+   "The king’s bow is the “second salutation” in the Nidanakatha; the lesson just says he bowed.",
+   "The boy’s age is not given in the oldest text; the painting shows about seven."
+  ]
+ }
+}

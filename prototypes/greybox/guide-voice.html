@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#0A0A0A">
+<link rel="icon" href="data:,"><title>Guide Voice</title>
+<meta name="description" content="Infinite Hill prototype: a spoken conversation with your guide. Signature interaction: the open line.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@500;600;700;800&display=swap">
+<style>
+  :root {
+    color-scheme: dark;
+    --night: #0A0A0A; --panel: #141414; --panel2: #1c1c1c;
+    --text: #fbf6ee; --muted: #b9bfd3; --dim: #7d84a0;
+    --lime: #EEFF6A; --ink: #0A0A0A; --line: rgba(255,255,255,.12);
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; }
+  body { background: #0A0A0A; color: var(--text); font: 600 15px/1.45 Manrope, system-ui, sans-serif; overflow: hidden; }
+  button { font: inherit; color: inherit; cursor: pointer; border: 0; background: none; padding: 0; }
+  .anton { font-family: Anton, Impact, sans-serif; font-weight: 400; letter-spacing: .005em; }
+
+  .stage { position: relative; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; gap: 48px; }
+  .phonewrap { flex: none; }
+  .phone { position: relative; width: 390px; height: 844px; background: var(--night); border-radius: 44px; overflow: hidden; box-shadow: 0 30px 90px rgba(0,0,0,.7), 0 0 0 1px rgba(255,255,255,.09); display: flex; flex-direction: column; }
+  .phone::before { content: ""; position: absolute; inset: 0; background: radial-gradient(120% 60% at 50% 0%, rgba(238,255,106,.07), transparent 60%); pointer-events: none; }
+
+  .status { height: 44px; flex: none; display: flex; justify-content: space-between; align-items: center; padding: 8px 28px 0; font: 700 14px Manrope, sans-serif; }
+  .status .bat { width: 24px; height: 12px; border: 1.5px solid var(--text); border-radius: 3px; position: relative; display: inline-block; }
+  .status .bat::after { content: ""; position: absolute; inset: 1.5px; right: 7px; background: var(--text); border-radius: 1px; }
+  .segs { flex: none; display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; padding: 6px 18px 0; }
+  .segs button { height: 14px; display: flex; align-items: center; }
+  .segs i { display: block; width: 100%; height: 3px; border-radius: 3px; background: rgba(255,255,255,.16); overflow: hidden; }
+  .segs i b { display: block; height: 100%; width: 0; background: var(--lime); }
+  .door { flex: none; display: flex; justify-content: space-between; align-items: center; padding: 6px 20px 0; font: 700 12.5px Manrope, sans-serif; color: var(--muted); }
+  .door .l { display: flex; align-items: center; gap: 8px; }
+  .door .l b { color: var(--text); font-weight: 800; }
+  .door .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 10px var(--lime); }
+  .door .kb { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: rgba(255,255,255,.06); }
+  .door .kb svg { width: 18px; height: 18px; }
+
+  /* the face */
+  .face { flex: none; position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .face .halo { position: absolute; border-radius: 50%; background: radial-gradient(circle, rgba(238,255,106,.32), rgba(238,255,106,0) 68%); }
+  .face img { position: relative; display: block; object-fit: contain; filter: drop-shadow(0 10px 24px rgba(0,0,0,.45)); }
+  /* 2026-11-14 (owner): the path's guide photo (round), labeled "powered by AI"; Finn never speaks or is voiced */
+  .face img#mascot { object-fit: cover; object-position: 50% 25%; border-radius: 50%; border: 2px solid var(--lime); background: #1a1d0a; }
+  .face .state { position: relative; margin-top: 2px; font: 800 10.5px Manrope, sans-serif; letter-spacing: .16em; text-transform: uppercase; color: var(--lime); height: 14px; }
+
+  /* the feed: live captions, newest at the bottom */
+  .feed { flex: 1; min-height: 0; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; padding: 0 22px 6px; -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 70px); mask-image: linear-gradient(to bottom, transparent 0, #000 70px); }
+  .it { flex: none; overflow: hidden; height: 0; opacity: 0; }
+  .it > .in { padding: 7px 0; }
+  .who { font: 800 10.5px Manrope, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); margin-bottom: 3px; }
+  .g .t { font: 700 23px/1.22 Manrope, sans-serif; letter-spacing: -.01em; }
+  .g.hero .t { font: 400 58px/0.98 Anton, Impact, sans-serif; letter-spacing: .005em; }
+  .g.hero .t .w:nth-child(n+4) { color: var(--lime); }
+  .w { transition: none; }
+  .u { text-align: right; }
+  .u .who { color: rgba(238,255,106,.7); }
+  .u .t { display: inline-block; text-align: left; font: 700 19px/1.3 Manrope, sans-serif; color: var(--ink); background: var(--lime); padding: 10px 14px; border-radius: 20px 20px 6px 20px; max-width: 300px; }
+
+  .tag { display: inline-flex; align-items: center; gap: 6px; padding: 5px 11px 5px 8px; border-radius: 999px; background: rgba(238,255,106,.12); color: var(--lime); font: 800 11.5px Manrope, sans-serif; letter-spacing: .02em; }
+  .tag svg { width: 15px; height: 15px; }
+  .kept { margin-top: 8px; display: flex; align-items: center; gap: 12px; border-radius: 16px; padding: 12px 14px; background: linear-gradient(180deg, rgba(238,255,106,.12), rgba(238,255,106,.03)); box-shadow: inset 0 0 0 1.5px rgba(238,255,106,.42); }
+  .kept .k1 { font: 400 26px/1 Anton, Impact, sans-serif; color: var(--lime); }
+  .kept .k2 { font: 700 12px/1.3 Manrope, sans-serif; color: var(--muted); }
+  .kept .pin { width: 34px; height: 34px; border-radius: 50%; flex: none; display: grid; place-items: center; background: var(--lime); color: var(--ink); }
+  .kept .pin svg { width: 18px; height: 18px; }
+
+  .story { background: var(--panel); border-radius: 20px; padding: 9px; box-shadow: 0 16px 40px rgba(0,0,0,.4); }
+  .story .row { display: grid; grid-template-columns: 92px 1fr; gap: 12px; }
+  .story .pic { width: 92px; height: 116px; border-radius: 13px; background: url(art/sacred/lost-son/clips/C10-Father-Runs.webp) 50% 30% / cover; }
+  .story .eb { font: 800 10.5px Manrope, sans-serif; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-top: 3px; }
+  .story h3 { margin: 5px 0 4px; font: 400 25px/1.02 Anton, Impact, sans-serif; letter-spacing: .005em; }
+  .story .by { display: flex; align-items: center; gap: 7px; font: 700 12.5px Manrope, sans-serif; color: var(--text); margin-top: 8px; }
+  .story .by img { width: 24px; height: 24px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 1.5px var(--lime); }
+  .story .by span { color: var(--muted); font-weight: 600; }
+  .story .btns { display: grid; grid-template-columns: 1.1fr 1fr; gap: 8px; margin-top: 10px; }
+  .pill { height: 46px; border-radius: 999px; font: 800 15px Manrope, sans-serif; display: flex; align-items: center; justify-content: center; gap: 8px; }
+  .pill.go { background: var(--lime); color: var(--ink); }
+  .pill.ghost { box-shadow: inset 0 0 0 1.5px rgba(251,246,238,.24); color: var(--text); }
+  .pill svg { width: 14px; height: 14px; }
+
+  .chips { display: grid; gap: 8px; }
+  .chip { text-align: left; border-radius: 16px; padding: 12px 15px; font: 700 15.5px Manrope, sans-serif; box-shadow: inset 0 0 0 1.5px rgba(251,246,238,.22); display: flex; justify-content: space-between; align-items: center; }
+  .chip.sel { background: var(--lime); color: var(--ink); box-shadow: none; }
+  .chip .ck { opacity: 0; font-weight: 900; }
+  .chip.sel .ck { opacity: 1; }
+  .chip.nope { box-shadow: inset 0 0 0 1.5px rgba(255,157,138,.6); }
+  .hint { font: 700 13px Manrope, sans-serif; color: #ff9d8a; min-height: 0; }
+
+  .cite { border-left: 3px solid var(--lime); padding: 2px 0 2px 13px; }
+  .cite q { display: block; font: 700 19px/1.3 Manrope, sans-serif; quotes: "\201C" "\201D"; }
+  .cite small { display: block; margin-top: 4px; font: 700 12px Manrope, sans-serif; color: var(--muted); }
+
+  .draft { border-radius: 20px; background: var(--panel); padding: 12px; box-shadow: 0 16px 40px rgba(0,0,0,.4); }
+  .draft .to { display: flex; justify-content: space-between; font: 700 12.5px Manrope, sans-serif; color: var(--muted); padding: 0 4px 8px; border-bottom: 1px solid var(--line); }
+  .draft .to b { color: var(--text); }
+  .draft .msg { margin: 10px 0 10px auto; width: fit-content; max-width: 260px; background: #2f7cf6; color: #fff; border-radius: 20px 20px 6px 20px; padding: 10px 14px; font: 600 17px/1.3 Manrope, sans-serif; outline: none; }
+  .draft .msg .c { opacity: 0; }
+  .draft .caret { display: inline-block; width: 2px; height: 18px; background: #fff; vertical-align: -3px; margin-left: 1px; }
+  .draft .btns { display: grid; grid-template-columns: 1.4fr 1fr; gap: 8px; }
+  .draft .later { display: block; text-align: center; margin-top: 9px; font: 700 13px Manrope, sans-serif; color: var(--muted); text-decoration: underline; text-underline-offset: 3px; width: 100%; }
+  .pray { text-align: center; font: 700 14px Manrope, sans-serif; color: var(--muted); }
+  .pray b { color: var(--text); }
+
+  /* the dock: the open line */
+  .dock { flex: none; position: relative; height: 176px; display: flex; flex-direction: column; align-items: center; }
+  .dock canvas { position: absolute; left: 0; top: 6px; width: 390px; height: 96px; }
+  .orb { position: relative; margin-top: 10px; width: 92px; height: 92px; border-radius: 50%; display: grid; place-items: center; color: var(--ink); }
+  .orb .core { position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle at 40% 35%, #f8ffb8, var(--lime) 55%, #c9dc3a); box-shadow: 0 0 0 0 rgba(238,255,106,.5), 0 0 50px rgba(238,255,106,.5); }
+  .orb .ring { position: absolute; inset: -14px; border-radius: 50%; box-shadow: inset 0 0 0 2px rgba(238,255,106,.35); }
+  .orb svg { position: relative; width: 34px; height: 34px; }
+  .orb .bars { position: relative; display: none; gap: 5px; }
+  .orb .bars i { width: 5px; height: 22px; border-radius: 3px; background: var(--lime); }
+  .orb.guide .core { background: var(--panel2); box-shadow: inset 0 0 0 2px rgba(238,255,106,.55); }
+  .orb.guide svg { display: none; }
+  .orb.guide .bars { display: flex; }
+  .orblabel { margin-top: 8px; font: 800 11px Manrope, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); height: 14px; }
+  .trust { position: absolute; bottom: 12px; left: 18px; right: 18px; text-align: center; font: 600 10.5px/1.45 Manrope, sans-serif; color: var(--dim); }
+  .trust b { color: var(--muted); font-weight: 700; }
+
+  .tap { position: absolute; width: 56px; height: 56px; margin: -28px 0 0 -28px; border-radius: 50%; background: rgba(255,255,255,.55); pointer-events: none; opacity: 0; z-index: 30; }
+  .wait .orb .ring, .waitbtn { animation: nudge 1.4s ease-in-out infinite; }
+  @keyframes nudge { 50% { transform: scale(1.06); box-shadow: 0 0 0 6px rgba(238,255,106,.18); } }
+
+  /* the story overlay */
+  .film { position: absolute; inset: 0; z-index: 10; background: #000; opacity: 0; pointer-events: none; overflow: hidden; }
+  .film .shot { position: absolute; inset: -4%; background-size: cover; background-position: center; }
+  .film .shade { position: absolute; inset: 0; background: linear-gradient(rgba(0,0,0,.55), transparent 26%, transparent 55%, rgba(0,0,0,.85)); }
+  .film .top { position: absolute; top: 58px; left: 20px; right: 20px; }
+  .film .top .eb { font: 800 10.5px Manrope, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.8); }
+  .film .top h2 { margin: 4px 0 8px; font: 400 34px/1 Anton, Impact, sans-serif; }
+  .film .top .by { display: inline-flex; align-items: center; gap: 8px; background: rgba(0,0,0,.45); padding: 4px 12px 4px 4px; border-radius: 999px; font: 700 12.5px Manrope, sans-serif; backdrop-filter: blur(6px); }
+  .film .top .by img { width: 26px; height: 26px; border-radius: 50%; object-fit: cover; }
+  .film .cap { position: absolute; left: 22px; right: 22px; bottom: 112px; font: 800 24px/1.22 Manrope, sans-serif; text-shadow: 0 2px 14px rgba(0,0,0,.8); opacity: 0; }
+  .film .src { position: absolute; left: 22px; bottom: 86px; font: 700 12px Manrope, sans-serif; color: rgba(255,255,255,.75); }
+  .film .bar { position: absolute; left: 22px; right: 22px; bottom: 56px; height: 4px; border-radius: 4px; background: rgba(255,255,255,.25); }
+  .film .bar b { display: block; height: 100%; width: 0; background: var(--lime); border-radius: 4px; }
+  .film .time { position: absolute; right: 22px; bottom: 30px; font: 700 12px Manrope, sans-serif; color: rgba(255,255,255,.8); }
+  .film .later { position: absolute; left: 0; right: 0; top: 46%; text-align: center; font: 400 30px Anton, Impact, sans-serif; color: var(--lime); opacity: 0; }
+
+  /* step 7: the trust card */
+  .end { position: absolute; inset: 0; z-index: 12; background: var(--night); opacity: 0; pointer-events: none; padding: 60px 26px 30px; display: flex; flex-direction: column; justify-content: center; }
+  .end img { width: 92px; height: 92px; object-fit: cover; object-position: 50% 25%; border-radius: 50%; border: 2px solid var(--lime); }
+  .end h1 { margin: 10px 0 22px; font: 400 52px/0.98 Anton, Impact, sans-serif; letter-spacing: .005em; }
+  .end h1 span { color: var(--lime); }
+  .end ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 13px; }
+  .end li { display: flex; gap: 12px; align-items: center; font: 700 16px/1.3 Manrope, sans-serif; }
+  .end li i { width: 30px; height: 30px; border-radius: 50%; flex: none; display: grid; place-items: center; background: rgba(238,255,106,.12); color: var(--lime); font-style: normal; font-weight: 900; }
+  .end .sos { margin-top: 26px; border-radius: 18px; padding: 14px 16px; background: rgba(255,157,138,.1); box-shadow: inset 0 0 0 1.5px rgba(255,157,138,.45); font: 700 14px/1.4 Manrope, sans-serif; }
+  .end .sos b { color: #ffb4a6; }
+  .end .again { margin-top: 18px; align-self: center; color: var(--muted); font: 800 13px Manrope, sans-serif; text-decoration: underline; text-underline-offset: 3px; }
+
+  /* notes (desktop only) */
+  .notes { width: 360px; flex: none; }
+  .notes .eb { font: 800 11px Manrope, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--lime); }
+  .notes h2 { margin: 6px 0 6px; font: 400 44px/1 Anton, Impact, sans-serif; }
+  .notes p.lead { color: var(--muted); margin: 0 0 18px; font-size: 14px; }
+  .notes ol { list-style: none; margin: 0 0 16px; padding: 0; display: grid; gap: 2px; }
+  .notes ol button { width: 100%; text-align: left; padding: 7px 10px; border-radius: 10px; color: var(--dim); font: 700 14px Manrope, sans-serif; display: flex; gap: 10px; }
+  .notes ol button span { width: 18px; color: inherit; }
+  .notes ol button.on { background: rgba(238,255,106,.1); color: var(--lime); }
+  .notes .mhs { border-top: 1px solid var(--line); padding-top: 14px; display: grid; gap: 9px; font-size: 13.5px; color: var(--muted); }
+  .notes .mhs b { display: block; color: var(--text); font: 800 11px Manrope, sans-serif; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 1px; }
+
+  /* video side text */
+  .beat { display: none; }
+  body.wide .notes, body.tall .notes { display: none; }
+  body.wide .beat, body.tall .beat { display: block; }
+  body.wide .stage { gap: 0; justify-content: flex-start; }
+  body.wide .beatL { position: absolute; left: 96px; top: 50%; transform: translateY(-50%); width: 560px; }
+  body.wide .beatR { position: absolute; right: 90px; top: 50%; transform: translateY(-50%); width: 520px; } body.wide .bs { font-size: 32px; }
+  body.wide .phonewrap { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%) scale(1.2); }
+  body.wide .brand { position: absolute; left: 96px; top: 64px; }
+  .brand { display: none; font: 400 26px Anton, Impact, sans-serif; letter-spacing: .02em; }
+  .brand span { color: var(--lime); }
+  body.wide .brand, body.tall .brand { display: block; }
+  .bn { font: 800 16px Manrope, sans-serif; letter-spacing: .16em; color: var(--lime); }
+  .bt { font: 400 76px/0.98 Anton, Impact, sans-serif; margin-top: 10px; }
+  .bs { font: 700 26px/1.35 Manrope, sans-serif; color: var(--muted); }
+  body.tall .stage { display: block; }
+  body.tall .brand { position: absolute; left: 0; right: 0; top: 50px; text-align: center; font-size: 30px; }
+  body.tall .beatL { position: absolute; left: 60px; right: 60px; top: 108px; text-align: center; }
+  body.tall .beatL .bt { font-size: 68px; }
+  body.tall .phonewrap { position: absolute; left: 50%; top: 340px; transform: translateX(-50%) scale(1.66); transform-origin: 50% 0; }
+  body.tall .beatR { position: absolute; left: 70px; right: 70px; bottom: 54px; text-align: center; }
+  body.tall .beatR .bs { font-size: 30px; }
+  .closer { position: absolute; inset: 0; background: var(--night); z-index: 50; display: none; place-items: center; text-align: center; opacity: 0; }
+  body.wide .closer, body.tall .closer { display: grid; }
+  .closer .c1 { font: 400 92px/1 Anton, Impact, sans-serif; }
+  .closer .c1 span { color: var(--lime); }
+  .closer .c2 { margin-top: 26px; font: 700 28px Manrope, sans-serif; color: var(--muted); }
+  body.tall .closer .c1 { font-size: 84px; padding: 0 60px; }
+
+  @media (max-width: 520px) {
+    body:not(.wide):not(.tall) .stage { display: block; }
+    body:not(.wide):not(.tall) .phone { width: 100vw; height: 100vh; height: 100dvh; border-radius: 0; box-shadow: none; }
+    body:not(.wide):not(.tall) .notes { display: none; }
+  }
+</style></head>
+<body>
+<div class="stage">
+  <div class="brand">infinite <span>hill</span></div>
+  <div class="beat beatL"><div class="bn" id="bn">01 / 07</div><div class="bt" id="bt">you talk.</div></div>
+
+  <div class="phonewrap"><div class="phone" id="phone">
+    <div class="status"><span>9:12</span><span><span class="bat"></span></span></div>
+    <div class="segs" id="segs"></div>
+    <div class="door"><div class="l"><span class="dot"></span><b>your own-religion guide</b><span>· powered by AI</span></div><button class="kb" aria-label="type instead"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="6" width="19" height="12" rx="2.5"/><path d="M6 10h.01M9.5 10h.01M13 10h.01M16.5 10h.01M8 14h8" stroke-linecap="round"/></svg></button></div>
+    <div class="face" id="face"><div class="halo" id="halo"></div><img id="mascot" src="art/guides/spiritual.webp" alt="your own-religion guide, powered by AI"><div class="state" id="state"></div></div>
+    <div class="feed" id="feed"></div>
+    <div class="dock" id="dock">
+      <canvas id="wave" width="780" height="192"></canvas>
+      <button class="orb" id="orb" aria-label="tap to talk"><span class="ring"></span><span class="core"></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="8.5" y="3" width="7" height="12" rx="3.5"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>
+        <span class="bars"><i></i><i></i><i></i></span></button>
+      <div class="orblabel" id="orblabel">tap to talk</div>
+      <div class="trust">every story checked by scholars of its faith · <b>i never speak for God</b> · stays on your phone</div>
+    </div>
+
+    <div class="film" id="film">
+      <div class="shot" id="shotA" style="background-image:url(art/sacred/lost-son/clips/C10-Father-Runs.webp)"></div>
+      <div class="shot" id="shotB" style="background-image:url(art/sacred/lost-son/clips/C12-Feast.webp);opacity:0"></div>
+      <div class="shade"></div>
+      <div class="top"><div class="eb">Christianity · Luke 15</div><h2>the son who came home</h2><span class="by"><img src="art/guides/christianity.webp" alt="">told by a celebrity guide</span></div>
+      <div class="cap" id="cap1">he came home with nothing.</div>
+      <div class="cap" id="cap2">and while he was still far off, his father saw him, and ran.</div>
+      <div class="src">Luke 15:11–32, told in our words</div>
+      <div class="later" id="later">five minutes later</div>
+      <div class="bar"><b id="fbar"></b></div>
+      <div class="time" id="ftime">0:00 / 5:00</div>
+    </div>
+
+    <div class="end" id="end">
+      <img src="art/guides/spiritual.webp" alt="">
+      <h1>every faith app is a library. <span>this is a guide.</span></h1>
+      <ul>
+        <li><i>✓</i>every story checked by scholars of its faith</li>
+        <li><i>✓</i>i never speak for God</li>
+        <li><i>✓</i>what you tell me stays on your phone</li>
+      </ul>
+      <div class="sos"><b>if you sound in danger,</b> i stop everything and point you to <b>988</b> (call or text) or your local emergency help. no story, no quiz.</div>
+      <button class="again" id="again">play it again</button>
+    </div>
+    <div class="tap" id="tap"></div>
+  </div></div>
+
+  <div class="beat beatR"><div class="bs" id="bs">no menus. no search bar. just say it.</div></div>
+
+  <aside class="notes">
+    <div class="eb">signature interaction</div>
+    <h2>the open line</h2>
+    <p class="lead">one glowing button. you say the real thing out loud. the guide listens, remembers what you kept, and plays you the story you need. every faith app is a library. this is a guide.</p>
+    <ol id="steps"></ol>
+    <div class="mhs" id="mhs"></div>
+  </aside>
+
+  <div class="closer" id="closer"><div><div class="c1">every faith app is a library.<br><span>infinite hill is a guide.</span></div><div class="c2">religion, reimagined.</div></div></div>
+</div>
+
+<script>
+const Q = new URLSearchParams(location.search);
+const MODE = Q.get('mode') || '';
+if (MODE) document.body.classList.add(MODE);
+const REC = Q.has('rec') || !!MODE;
+
+/* ---------- the script (seconds) ---------- */
+const STEPS = [
+  { at: 0,    name: 'tap to talk',        bt: 'you talk.',                     bs: 'no menus. no search bar. just say it.',
+    m: 'the orb breathes slowly, about one breath every four seconds. the guide photo glows softly when the screen opens.', h: 'one soft tick on press.', s: 'a low warm tone when the line opens. nothing else.' },
+  { at: 2.5,  name: 'listening',          bt: 'it listens.',                   bs: 'your words show up as you say them.',
+    m: 'the waveform follows your voice; each word lands as you say it. the guide photo tilts, listening.', h: 'none. never interrupt someone mid-sentence.', s: 'silence. just your mic.' },
+  { at: 6.6,  name: 'the guide answers',  bt: 'it answers like a friend.',     bs: 'warm first. one question. no lecture.',
+    m: 'the guide photo pulses as the AI answers; spoken words light up as captions. your reply slides in as a lime bubble.', h: 'a light tap when it hands the mic back to you.', s: 'the guide’s voice, close and quiet, no music.' },
+  { at: 12.2, name: 'memory',             bt: 'it remembers.',                 bs: 'it knows what you kept last week, and connects it gently.',
+    m: 'a lime thread stitches the “from last week” tag in; the kept card slides up underneath.', h: 'one light tap as the memory appears.', s: 'a soft paper-turn.' },
+  { at: 17.6, name: 'the pick',           bt: 'it picks the story you need.',  bs: 'a real story from a real faith, told by a celebrity guide.',
+    m: 'the story card rises; play opens the film full-screen with a slow push-in.', h: 'a medium tap on play.', s: 'the score swells under the narrator.' },
+  { at: 25.5, name: 'after the story',    bt: 'then it helps you live it.',    bs: 'one question to check it landed. one small step, only if you want it.',
+    m: 'right answer: a quick lime burst. the draft text types itself in; you can edit every word.', h: 'success pattern on the right answer. nothing on the draft.', s: 'quiet. this part is private.' },
+  { at: 36.4, name: 'safe by design',     bt: 'safe by design.',               bs: 'scholars check every story. it never speaks for God. 988 if you’re in danger.',
+    m: 'the trust line sits under the mic on every screen. if you sound in danger, the flow stops and help takes the whole screen.', h: 'none.', s: 'none.' },
+];
+const END = 40.6;
+const GATES = [ { t: 2.2, el: 'orb' }, { t: 22.0, el: 'play' }, { t: 29.0, el: 'c0' } ];
+
+const ITEMS = [
+  { k: 'g', hero: 1, text: "talk to me. i'm listening.", a: 0.15, b: 1.2 },
+  { k: 'u', text: "i blew up at my brother today. i said things i can't take back.", a: 2.7, b: 6.3 },
+  { k: 'g', text: "that sounds heavy.", a: 6.9, b: 7.8 },
+  { k: 'g', text: "what did you say that's sitting with you most?", a: 7.95, b: 9.9 },
+  { k: 'u', text: "that he's always been the favorite.", a: 10.3, b: 11.9 },
+  { k: 'g', text: "growing up next to the favorite? that stings. that's real.", a: 12.4, b: 14.2 },
+  { k: 'kept', a: 14.4 },
+  { k: 'g', text: "last week you kept “forgive first.” maybe tonight it cuts both ways.", a: 14.9, b: 17.3 },
+  { k: 'g', text: "i've got a story for this. two brothers. one jealous, one forgiven.", a: 17.8, b: 20.1 },
+  { k: 'story', a: 20.2 },
+  { k: 'g', text: "why does the father go out to the older brother too?", a: 25.8, b: 27.6 },
+  { k: 'chips', a: 27.7 },
+  { k: 'g', text: "yes. he loves them both, the angry one too.", a: 29.3, b: 30.8 },
+  { k: 'cite', a: 30.9 },
+  { k: 'g', text: "want to send him something tonight? you don't have to.", a: 31.8, b: 33.6 },
+  { k: 'draft', a: 33.8, b: 35.0 },
+  { k: 'pray', a: 35.3 },
+];
+const FILM = { a: 22.3, b: 25.5 };
+const DRAFT = "hey. i'm sorry about today. can we talk?";
+
+/* ---------- build ---------- */
+const $ = (id) => document.getElementById(id);
+const feed = $('feed');
+const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+function words(s) { return s.split(' ').map((w) => `<span class="w">${esc(w)}</span>`).join(' '); }
+for (const it of ITEMS) {
+  const d = document.createElement('div'); d.className = 'it'; let h = '';
+  if (it.k === 'g') { d.classList.add('g'); if (it.hero) d.classList.add('hero'); h = `<div class="t">${words(it.text)}</div>`; }
+  if (it.k === 'u') { d.classList.add('u'); h = `<div class="who">you</div><div class="t">${words(it.text)}</div>`; }
+  if (it.k === 'kept') h = `<span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 12c3-6 6 6 9 0s6 6 9 0"/></svg>from last week</span>
+    <div class="kept"><span class="pin"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 3h12v18l-6-4-6 4z"/></svg></span><div><div class="k1">forgive first</div><div class="k2">you kept this from a Christian story</div></div></div>`;
+  if (it.k === 'story') h = `<div class="story"><div class="row"><div class="pic"></div><div><div class="eb">Christianity · 5 min</div><h3>the son who came home</h3><div class="eb" style="letter-spacing:.04em;text-transform:none;font-size:12px">Luke 15 · two brothers, one father</div><div class="by"><img src="art/guides/christianity.webp" alt=""><span>told by</span> a celebrity guide</div></div></div>
+    <div class="btns"><button class="pill go" id="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4l13 8-13 8z"/></svg>play it</button><button class="pill ghost" id="more">just talk more</button></div></div>`;
+  if (it.k === 'chips') h = `<div class="chips"><button class="chip" id="c0">he loves him just as much<span class="ck">✓</span></button><button class="chip" id="c1">to tell him to behave<span class="ck"></span></button><button class="chip" id="c2">he needs help with the party<span class="ck"></span></button></div><div class="hint" id="hint"></div>`;
+  if (it.k === 'cite') h = `<div class="cite"><q>you're always with me. everything i have is yours.</q><small>the father, Luke 15:31, in our words</small></div>`;
+  if (it.k === 'draft') h = `<div class="draft"><div class="to"><span>to: <b>my brother</b></span><span>edit anything</span></div>
+    <div class="msg" id="msg" spellcheck="false">${[...DRAFT].map((c) => `<span class="c">${esc(c)}</span>`).join('')}<span class="caret" id="caret"></span></div>
+    <div class="btns"><button class="pill go" id="send">open in messages</button><button class="pill ghost" id="edit">edit</button></div><button class="later" id="notyet">not tonight</button></div>`;
+  if (it.k === 'pray') h = `<div class="pray"><b>pray, or just sit with it.</b> your call.</div>`;
+  d.innerHTML = `<div class="in">${h}</div>`;
+  feed.appendChild(d); it.el = d; it.ws = [...d.querySelectorAll('.w')];
+}
+const segs = $('segs'), stepsList = $('steps');
+STEPS.forEach((s, i) => {
+  const b = document.createElement('button'); b.innerHTML = '<i><b></b></i>'; b.setAttribute('aria-label', 'step ' + (i + 1)); b.onclick = () => jump(i); segs.appendChild(b); s.seg = b.querySelector('b');
+  const li = document.createElement('li'); li.innerHTML = `<button><span>${i + 1}</span>${s.name}</button>`; li.firstChild.onclick = () => jump(i); stepsList.appendChild(li); s.li = li.firstChild;
+});
+
+/* ---------- helpers ---------- */
+const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
+const pr = (t, a, b) => clamp((t - a) / (b - a));
+const ease = (x) => 1 - Math.pow(1 - x, 3);
+function amp(t, seed = 0) { return clamp(0.35 + 0.3 * Math.sin(t * 13.1 + seed) * Math.sin(t * 3.7 + seed * 2) + 0.25 * Math.sin(t * 29.3 + seed * 5) + 0.15 * Math.sin(t * 7.9)); }
+function activeTalk(t) {
+  for (const it of ITEMS) if ((it.k === 'g' || it.k === 'u') && t >= it.a && t <= it.b + 0.05) return it;
+  return null;
+}
+function stepAt(t) { let i = 0; STEPS.forEach((s, j) => { if (t >= s.at) i = j; }); return i; }
+let heights = null;
+function measure() { heights = ITEMS.map((it) => { it.el.style.height = 'auto'; const h = it.el.offsetHeight; it.el.style.height = '0px'; return h; }); }
+
+/* ---------- render: everything is a function of t ---------- */
+let T = 0, chosen = REC ? null : null, typed = false, waiting = null;
+const wave = $('wave'), wx = wave.getContext('2d');
+function render(t) {
+  T = t;
+  const si = stepAt(t);
+  STEPS.forEach((s, i) => { const e = i < STEPS.length - 1 ? STEPS[i + 1].at : END; s.seg.style.width = (pr(t, s.at, e) * 100) + '%'; s.li.classList.toggle('on', i === si); });
+  const S = STEPS[si];
+  $('bn').textContent = String(si + 1).padStart(2, '0') + ' / 07'; $('bt').textContent = S.bt; $('bs').textContent = S.bs;
+  $('mhs').innerHTML = `<div><b>motion</b>${S.m}</div><div><b>haptics</b>${S.h}</div><div><b>sound</b>${S.s}</div>`;
+  const bf = Math.min(pr(t, S.at, S.at + 0.4), 1 - pr(t, (si < 6 ? STEPS[si + 1].at : END) - 0.25, (si < 6 ? STEPS[si + 1].at : END)));
+  for (const id of ['bn', 'bt', 'bs']) $(id).style.opacity = si === 6 && t > 38.6 ? 0 : clamp(bf * 1.2);
+
+  // face
+  const small = ease(pr(t, 2.4, 3.1));
+  const size = 236 - small * 144; const faceH = 300 - small * 182;
+  const face = $('face'); face.style.height = faceH + 'px';
+  const talk = activeTalk(t);
+  const gTalk = talk && talk.k === 'g' && !talk.hero, uTalk = talk && talk.k === 'u';
+  const a = gTalk ? amp(t, 1) : uTalk ? amp(t, 3) * 0.3 : 0.15 + 0.1 * Math.sin(t * 1.6);
+  const img = $('mascot');
+  // 2026-11-14: always the guide's photo; Finn is never the speaker
+  img.style.width = img.style.height = size + 'px';
+  const bob = gTalk ? -a * 5 : uTalk ? 0 : Math.sin(t * 1.6) * 2;
+  const tilt = uTalk ? -4 + Math.sin(t * 2) * 1 : gTalk ? Math.sin(t * 5) * 1.6 : 0;
+  img.style.transform = `translateY(${bob}px) rotate(${tilt}deg) scale(${1 + (gTalk ? a * 0.03 : 0)})`;
+  const halo = $('halo'); const hs = size * (1.25 + a * 0.35); halo.style.width = halo.style.height = hs + 'px'; halo.style.opacity = gTalk ? 0.55 + a * 0.45 : 0.35;
+  $('state').textContent = uTalk ? 'listening' : gTalk ? 'speaking' : (t > 2.4 && t < 36 && !talk ? '' : '');
+
+  // feed
+  if (!heights) measure();
+  const shown = [];
+  ITEMS.forEach((it, i) => {
+    const start = it.a - 0.35; const p = ease(pr(t, start, it.a + 0.05));
+    it.el.style.height = (p * heights[i]) + 'px';
+    if (t >= start) shown.push(it);
+    it.el.style.transform = `translateY(${(1 - p) * 14}px)`;
+    if (it.ws.length) {
+      const n = it.ws.length;
+      it.ws.forEach((w, j) => {
+        const wt = it.a + (j / n) * (it.b - it.a);
+        const on = t >= wt;
+        if (it.k === 'u') w.style.opacity = on ? clamp((t - wt) / 0.12) : 0;
+        else w.style.opacity = it.hero ? (on ? 1 : clamp(p * 0.15)) : (on ? 1 : 0.2);
+      });
+    }
+  });
+  const order = shown.slice().reverse();
+  ITEMS.forEach((it) => { const age = order.indexOf(it); const base = clamp(pr(t, it.a - 0.35, it.a + 0.1));
+    let o = age < 0 ? 0 : age <= 1 ? 1 : age === 2 ? 0.62 : age === 3 ? 0.42 : 0.3;
+    if (['story', 'chips', 'draft', 'pray', 'cite'].includes(it.k) && age >= 0 && age <= 2) o = Math.max(o, 0.95);
+    it.el.style.opacity = base * o; });
+
+  // chips / draft states
+  const c0 = $('c0'); if (c0) c0.classList.toggle('sel', t >= GATES[2].t + 0.15);
+  const msg = $('msg'); if (msg && !typed) { const it = ITEMS.find((x) => x.k === 'draft'); const n = Math.floor(pr(t, it.a, it.b) * DRAFT.length);
+    msg.querySelectorAll('.c').forEach((c, i) => c.style.opacity = i < n ? 1 : 0); $('caret').style.opacity = (Math.floor(t * 2.2) % 2 === 0 || n < DRAFT.length) ? 1 : 0; }
+
+  // orb + waveform
+  const orb = $('orb'); orb.classList.toggle('guide', !!gTalk);
+  const breathe = 1 + 0.035 * Math.sin(t * Math.PI / 2);
+  orb.querySelector('.core').style.transform = uTalk ? `scale(${1 + a * 0.08})` : gTalk ? 'scale(.92)' : `scale(${breathe})`;
+  orb.querySelector('.ring').style.transform = `scale(${uTalk ? 1 + a * 0.25 : 1 + 0.04 * Math.sin(t * Math.PI / 2 + 1)})`;
+  orb.querySelector('.ring').style.opacity = uTalk ? 0.5 + a * 0.5 : gTalk ? 0.2 : 0.8;
+  orb.querySelectorAll('.bars i').forEach((b, i) => b.style.transform = `scaleY(${0.35 + amp(t, i * 2.1 + 1) * 0.9})`);
+  $('orblabel').textContent = uTalk ? 'listening · tap when done' : gTalk ? 'tap to cut in' : t < 2.5 ? 'tap to talk' : 'tap to talk';
+  $('orblabel').style.color = uTalk ? 'var(--lime)' : '';
+  wx.clearRect(0, 0, 780, 192);
+  const N = 44, live = uTalk ? 1 : gTalk ? 0.55 : 0;
+  if (live > 0 || true) {
+    for (let i = 0; i < N; i++) {
+      const x = 22 + i * ((780 - 44) / (N - 1));
+      if (Math.abs(x - 390) < 130) continue;
+      const dist = Math.abs(x - 390) / 390;
+      const env = (1 - dist) * (uTalk ? 1 : gTalk ? 0.6 : 0.08);
+      const v = 0.18 + amp(t * 1.1 + i * 0.37, i) * env * 1.6;
+      const h = Math.max(6, v * 70);
+      wx.fillStyle = uTalk ? `rgba(238,255,106,${0.35 + env * 0.65})` : gTalk ? `rgba(251,246,238,${0.18 + env * 0.4})` : 'rgba(255,255,255,.12)';
+      const bw = 7; wx.beginPath(); wx.roundRect(x - bw / 2, 96 - h / 2, bw, h, 4); wx.fill();
+    }
+  }
+
+  // scripted taps (video) — ripple
+  const tap = $('tap'); tap.style.opacity = 0;
+  for (const g of GATES) { const p = pr(t, g.t, g.t + 0.45); if (p > 0 && p < 1) { const el = $(g.el); if (!el) continue; const r = el.getBoundingClientRect(), pr0 = $('phone').getBoundingClientRect(); const sc = pr0.width / 390;
+      tap.style.left = ((r.left + r.width / 2 - pr0.left) / sc) + 'px'; tap.style.top = ((r.top + r.height / 2 - pr0.top) / sc) + 'px'; tap.style.opacity = 0.7 * (1 - p); tap.style.transform = `scale(${0.6 + p * 0.9})`;
+      el.style.transform = `scale(${1 - 0.05 * Math.sin(p * Math.PI)})`; } else if ($(g.el)) $(g.el).style.transform = ''; }
+
+  // story film
+  const film = $('film'); const fo = Math.min(pr(t, FILM.a - 0.3, FILM.a + 0.2), 1 - pr(t, FILM.b - 0.3, FILM.b + 0.1));
+  film.style.opacity = fo;
+  const fp = pr(t, FILM.a, FILM.b);
+  $('shotA').style.transform = `scale(${1.1 - fp * 0.1}) translateY(${fp * -10}px)`;
+  $('shotB').style.opacity = pr(t, 23.75, 24.15); $('shotB').style.transform = `scale(${1.04 + fp * 0.05})`;
+  $('cap1').style.opacity = Math.min(pr(t, 22.5, 22.8), 1 - pr(t, 23.6, 23.8));
+  $('cap2').style.opacity = Math.min(pr(t, 23.95, 24.25), 1 - pr(t, 25.0, 25.2));
+  $('later').style.opacity = Math.min(pr(t, 25.0, 25.15), 1 - pr(t, 25.35, 25.5));
+  const ft = fp < 0.75 ? fp * 0.55 : 0.41 + (fp - 0.75) / 0.25 * 0.59;
+  $('fbar').style.width = (ft * 100) + '%';
+  const secs = Math.round(ft * 300); $('ftime').textContent = `${Math.floor(secs / 60)}:${String(secs % 60).padStart(2, '0')} / 5:00`;
+
+  // end
+  const end = $('end'); end.style.opacity = pr(t, 36.4, 36.9); end.style.pointerEvents = t > 36.6 && !REC ? 'auto' : 'none';
+  $('closer').style.opacity = pr(t, 38.7, 39.2);
+
+  document.body.classList.toggle('wait', !!waiting && waiting.el === 'orb');
+  ['play', 'c0'].forEach((id) => { const e = $(id); if (e) e.classList.toggle('waitbtn', !!waiting && waiting.el === id); });
+}
+
+/* ---------- interactive clock ---------- */
+const opened = new Set();
+let last = null, running = !REC;
+function frame(now) {
+  if (running) {
+    if (last != null && !waiting) {
+      let nt = T + (now - last) / 1000;
+      const g = GATES.find((g) => !opened.has(g.t) && T < g.t + 0.001 && nt >= g.t - 0.01);
+      if (g) { nt = g.t - 0.01; waiting = g; }
+      if (nt >= END) { nt = END - 0.01; }
+      render(nt);
+    } else render(T);
+    last = now;
+  }
+  requestAnimationFrame(frame);
+}
+function openGate(id) { if (waiting && waiting.el === id) { opened.add(waiting.t); waiting = null; T = waiting ? T : T + 0.02; } }
+function jump(i) { const t = STEPS[i].at + (i === 0 ? 0 : 0.01); waiting = null; opened.clear(); GATES.forEach((g) => { if (g.t < t) opened.add(g.t); }); typed = false; if (!REC) render(t); T = t; }
+document.addEventListener('click', (e) => {
+  const b = e.target.closest('button'); if (!b) return;
+  if (b.id === 'orb') openGate('orb');
+  if (b.id === 'play') openGate('play');
+  if (b.id === 'more') { const o = $('orb'); o.animate([{ transform: 'scale(1)' }, { transform: 'scale(1.12)' }, { transform: 'scale(1)' }], { duration: 500 }); $('orblabel').textContent = "i'm here. go ahead."; }
+  if (b.id === 'c0') { $('hint').textContent = ''; openGate('c0'); }
+  if (b.id === 'c1' || b.id === 'c2') { b.classList.add('nope'); $('hint').textContent = 'close. listen to what he says to the older son.'; }
+  if (b.id === 'edit') { typed = true; const m = $('msg'); m.querySelectorAll('.c').forEach((c) => c.style.opacity = 1); $('caret').remove(); m.contentEditable = 'true'; m.focus(); }
+  if (b.id === 'send') { b.textContent = 'opening messages…'; }
+  if (b.id === 'notyet') { b.textContent = "that's okay. it'll be here tomorrow."; }
+  if (b.id === 'again') jump(0);
+});
+
+window.setT = (t) => { running = false; render(t); };
+window.go = (i, off = 0) => { running = false; render(STEPS[i].at + off); };
+document.fonts.ready.then(() => { measure(); render(0); requestAnimationFrame(frame); window.ready = true; });
+</script>
+</body></html>

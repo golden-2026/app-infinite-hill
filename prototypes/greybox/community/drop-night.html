@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Community B: Drop Night</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@500;600;700;800&display=swap">
+<link rel="stylesheet" href="com.css">
+<style>
+  .soon { background: var(--lime); color: var(--ink); padding: 20px 16px 18px; }
+  .soon .eb { color: var(--ink); }
+  .soon .big { margin: 6px 0 0; font: 400 74px/.84 Anton, Impact, sans-serif; text-transform: uppercase; }
+  .soon .big { line-height: .92; }
+  .soon .big em { font-style: normal; display: block; width: fit-content; background: var(--ink); color: var(--lime); padding: 8px 10px 2px; margin: 6px 0 8px; line-height: .9; transform: rotate(-2deg); }
+  .soon p { margin: 10px 0 0; font: 800 14px/1.4 Manrope, sans-serif; }
+  .clock { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-top: 14px; }
+  .clock span { background: var(--ink); color: var(--lime); border-radius: 12px; text-align: center; padding: 8px 0 6px; font: 400 34px/1 Anton, Impact, sans-serif; font-variant-numeric: tabular-nums; }
+  .clock small { display: block; font: 800 9px/1.4 Manrope, sans-serif; letter-spacing: .18em; color: rgba(238,255,106,.7); }
+  .teaser { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 16 / 9; background: var(--ink); }
+  .teaser img { width: 100%; height: 100%; object-fit: cover; filter: blur(14px) brightness(.55) saturate(1.3); transform: scale(1.15); }
+  .teaser .q { position: absolute; inset: 0; display: grid; place-items: center; font: 400 96px/1 Anton, Impact, sans-serif; color: var(--lime); }
+  .teaser small { position: absolute; left: 12px; bottom: 10px; right: 12px; font: 800 11px/1.3 Manrope, sans-serif; letter-spacing: .12em; text-transform: uppercase; }
+  /* live screen */
+  .live { position: absolute; inset: 0; background: #000; }
+  .live img.bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: contrast(1.1) saturate(1.1) sepia(.12); animation: kb 18s ease-in-out infinite alternate; }
+  @keyframes kb { to { transform: scale(1.12) translate(-3%, 2%); } }
+  .live::after { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(0,0,0,.55), transparent 25%, transparent 45%, rgba(0,0,0,.92)); pointer-events: none; }
+  .live .hud { position: absolute; z-index: 3; top: 14px; left: 14px; right: 14px; display: flex; gap: 8px; align-items: center; }
+  .pill { display: inline-flex; align-items: center; gap: 6px; padding: 7px 11px; border-radius: 999px; background: rgba(10,10,10,.6); box-shadow: inset 0 0 0 1.5px rgba(243,239,228,.35); font: 800 11px/1 Manrope, sans-serif; letter-spacing: .12em; text-transform: uppercase; }
+  .pill.red { background: var(--pink); box-shadow: none; color: #fff; }
+  .pill.red i { width: 7px; height: 7px; border-radius: 50%; background: #fff; animation: blink 1s infinite; }
+  @keyframes blink { 50% { opacity: .2; } }
+  .live .sub { position: absolute; z-index: 3; left: 16px; right: 16px; bottom: 150px; font: 400 34px/.95 Anton, Impact, sans-serif; text-transform: uppercase; }
+  .live .sub em { font-style: normal; color: var(--lime); }
+  .live .bar { position: absolute; z-index: 3; left: 12px; right: 12px; bottom: 16px; display: grid; gap: 10px; }
+  .floaty { position: absolute; z-index: 2; right: 16px; bottom: 210px; width: 120px; height: 320px; pointer-events: none; }
+  .floaty span { position: absolute; right: 0; bottom: 0; font: 800 12px/1 Manrope, sans-serif; letter-spacing: .06em; text-transform: uppercase; background: var(--lime); color: var(--ink); padding: 7px 10px; border-radius: 999px; opacity: 0; animation: up 4.5s ease-in infinite; }
+  .floaty span:nth-child(2) { animation-delay: 1.1s; right: 30px; background: var(--pink); color: #fff; }
+  .floaty span:nth-child(3) { animation-delay: 2.3s; right: 8px; background: #F3EFE4; }
+  .floaty span:nth-child(4) { animation-delay: 3.4s; right: 40px; }
+  @keyframes up { 0% { transform: translateY(0) scale(.8); opacity: 0; } 10% { opacity: 1; transform: translateY(-20px) scale(1); } 80% { opacity: .9; } 100% { transform: translateY(-300px); opacity: 0; } }
+  .stick { display: flex; gap: 6px; } .stick button { flex: 1; border: 0; border-radius: 999px; padding: 11px 4px; background: rgba(10,10,10,.65); box-shadow: inset 0 0 0 1.5px rgba(243,239,228,.4); font: 800 12px/1 Manrope, sans-serif; text-transform: uppercase; letter-spacing: .06em; }
+  .stick button:active { background: var(--lime); color: var(--ink); }
+  /* the room's choice */
+  .timer { height: 8px; border-radius: 99px; background: var(--chip); overflow: hidden; } .timer i { display: block; height: 100%; width: 100%; background: var(--lime); transform-origin: left; animation: shrink 10s linear forwards; }
+  @keyframes shrink { to { transform: scaleX(0); } }
+  .split { display: grid; gap: 8px; }
+  .split .r { position: relative; border-radius: 16px; overflow: hidden; background: var(--panel); box-shadow: inset 0 0 0 1px var(--line); padding: 13px 14px; font: 800 15px/1.2 Manrope, sans-serif; }
+  .split .r i { position: absolute; inset: 0 auto 0 0; background: repeating-linear-gradient(45deg, rgba(238,255,106,.18) 0 6px, rgba(238,255,106,.08) 6px 12px); width: var(--w); }
+  .split .r span { position: relative; }
+  .split .r.me { box-shadow: inset 0 0 0 2px var(--lime); }
+  .ven { display: grid; grid-template-columns: 64px 1fr; gap: 12px; align-items: center; background: var(--panel); border-radius: 20px; padding: 10px; box-shadow: inset 0 0 0 1px var(--line); }
+  .ven img { width: 64px; height: 64px; border-radius: 14px; object-fit: cover; }
+  .ven b { display: block; font: 400 21px/.95 Anton, Impact, sans-serif; text-transform: uppercase; }
+  .ven small { display: block; margin-top: 3px; font-size: 12px; color: var(--muted); }
+  .chk { display: inline-block; margin-top: 4px; font: 800 9px/1 Manrope, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--ok); }
+</style>
+</head><body>
+<div class="stage">
+  <div class="phone">
+
+    <!-- 1 countdown -->
+    <section class="scr" data-name="soon">
+      <div class="tick ink"><div class="run"><span>drop night · sunday 8pm ·</span><span>same episode · same minute ·</span><span>watch it live, keep the drop card ·</span><span>drop night · sunday 8pm ·</span><span>same episode · same minute ·</span><span>watch it live, keep the drop card ·</span><span>drop night · sunday 8pm ·</span><span>same episode · same minute ·</span><span>watch it live, keep the drop card ·</span></div></div>
+      <div class="soon">
+        <div class="eb">christianity · drop 07</div>
+        <div class="big">sunday <em>8pm.</em> everyone. same story.</div>
+        <p>every christian on infinite hill opens the same new episode at the same minute. you vote live. the room finds out together.</p>
+        <div class="clock"><span>01<small>days</small></span><span>04<small>hrs</small></span><span>22<small>min</small></span><span>09<small>sec</small></span></div>
+      </div>
+      <div class="pad">
+        <div class="teaser"><img src="../art/sacred/chr-well/clips/WL2-Woman-At-Noon.webp" alt=""><div class="q">?</div><small>hint: a well. noon. the one person nobody talks to.</small></div>
+        <div class="finn"><img src="../art/finn/finn-tap_reaction-still.webp" alt="Finn"><div class="say">i've seen it. i'm not allowed to say anything. <b>wear something nice.</b></div></div>
+        <div class="row2"><button class="btn" data-toast="reminder set for sunday 8pm">remind me</button><button class="btn ghost" data-go="2">skip to live</button></div>
+        <p style="margin:0;font-size:12px;color:var(--muted)">the episode stays free forever after. only the drop card and the drop-night fit are for watching live or within 48 hours.</p>
+      </div>
+    </section>
+
+    <!-- 2 live -->
+    <section class="scr" data-name="live">
+      <div class="live">
+        <img class="bg" src="../art/sacred/chr-well/clips/WL3-The-Ask.webp" alt="">
+        <div class="hud"><span class="pill red"><i></i>live</span><span class="pill">drop 07</span><span style="flex:1"></span><span class="pill">you + crew</span></div>
+        <div class="floaty"><span>felt that</span><span>whoa</span><span>amen</span><span>no way</span></div>
+        <div class="sub">"give me a drink." <em>a jewish rabbi just asked her.</em> that doesn't happen.</div>
+        <div class="bar">
+          <div class="stick"><button>amen</button><button>whoa</button><button>felt that</button><button>no way</button></div>
+          <button class="btn" data-go="3">the room's question is coming</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 the room votes -->
+    <section class="scr" data-name="vote">
+      <div class="top"><span class="pill red"><i></i>live</span><div class="ttl" style="text-align:right">everyone answers now</div></div>
+      <div class="pad">
+        <div class="poster" style="aspect-ratio:16/10"><img src="../art/sacred/chr-well/clips/WL4-Living-Water.webp" alt=""><span class="tag pink">10 sec</span></div>
+        <h2 class="d" style="margin:6px 0 0;font-size:44px">she runs back to the town that <em>shuns her.</em> what does she say?</h2>
+        <div class="timer"><i></i></div>
+        <div class="choice">
+          <button data-next="4">"come see a man who told me everything."</button>
+          <button data-next="4">nothing. she just goes home.</button>
+          <button data-next="4">"you were wrong about me."</button>
+        </div>
+        <p style="margin:0;font-size:12px;color:var(--muted)">10 seconds. one answer. no wrong ones; the story shows what she did.</p>
+      </div>
+    </section>
+
+    <!-- 4 the reveal + the drop card -->
+    <section class="scr" data-name="reveal">
+      <div class="top"><div class="ttl">the room chose</div></div>
+      <div class="pad">
+        <div class="split">
+          <div class="r me" style="--w:58%"><i></i><span>"come see a man…" · you</span></div>
+          <div class="r" style="--w:27%"><i></i><span>nothing, she goes home</span></div>
+          <div class="r" style="--w:15%"><i></i><span>"you were wrong about me"</span></div>
+        </div>
+        <p style="margin:-4px 0 0;font-size:11.5px;color:var(--muted)">bars here are an example. real splits show only once enough people are in the room, never invented.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:center">
+          <div class="tcard r-drop"><img src="../art/sacred/chr-well/clips/WL5-Jar-Left.webp" alt=""><span class="foil"></span><span class="rar">drop 07</span><div class="bot"><b>the jar <em style="font-style:normal;color:var(--lime)">left</em> behind</b><small>watched live · john 4</small></div></div>
+          <div style="display:grid;gap:8px">
+            <div class="eb">yours to keep</div>
+            <b class="d" style="font-size:30px">drop card + drop-night fit</b>
+            <p style="margin:0;font-size:12.5px;color:var(--muted)">live or within 48 hours. after that the episode stays, the card doesn't.</p>
+          </div>
+        </div>
+        <div class="finn"><img src="../art/finn/finn-celebrate-still.webp" alt="Finn"><div class="say">she left her water jar. <b>she came for water and forgot it.</b> that's the whole sermon right there. want to watch the next one in a real room?</div></div>
+        <button class="btn" data-go="5">find a drop night near me</button>
+      </div>
+    </section>
+
+    <!-- 5 IRL watch party -->
+    <section class="scr" data-name="irl">
+      <div class="lhead"><div class="eb">drop night · in person</div><h1>same story, <u>real room</u></h1><p>watch the drop on a big screen with real people. show up and you get the one thing a screen can't give you.</p></div>
+      <div class="exbar">example places: the hosts and venues below are placeholders.</div>
+      <div class="pad">
+        <div class="ven"><img src="../art/world/lanterns-dusk.webp" alt=""><div><b>a church youth hall</b><small>sunday 7:45pm · doors open · snacks</small><span class="chk">✓ verified host · 18+ or with family</span></div></div>
+        <div class="ven"><img src="../art/world/arrival-dusk.webp" alt="" style="object-position:70% 50%"><div><b>a rooftop café</b><small>sunday 7:30pm · music before the drop</small><span class="chk">✓ verified host · 18+</span></div></div>
+        <div style="display:grid;place-items:center;padding:6px 0 4px">
+          <div class="rstamp slam" style="--bg:url(../art/stamps/chr-sychar.jpg)"><div class="in"><span class="irl">in person only</span><div><b>drop night 07</b><small>the well · you were there</small></div></div></div>
+        </div>
+        <p style="margin:0;text-align:center;font-size:13px;color:var(--muted)">the host taps you in at the door. no door, no stamp.</p>
+        <button class="btn" data-toast="saved. we'll remind you sunday">i'm going</button>
+      </div>
+    </section>
+
+    <nav class="dots"></nav>
+  </div>
+
+  <aside class="notes">
+    <a class="back" href="index.html">‹ all three concepts</a>
+    <div class="eb">concept b</div>
+    <h1 class="d">drop <em>night</em></h1>
+    <div class="blk"><div class="eb">the idea</div><p>Once a week, every Christian on Infinite Hill opens the same new episode at the same minute, like a sneaker drop or a premiere. You react live with stickers, then everyone answers the story's big question in 10 seconds and sees how the room split. Watching live earns a drop card and Finn fit; hosted watch parties in real rooms earn the real stamp.</p></div>
+    <div class="blk"><div class="eb">why people come back</div><p>Appointment TV. A fixed time, a countdown, a teaser, and the feeling that everybody you know is opening the same thing right now. The live vote is the hook ("wait, most people said that?"), the drop card is the souvenir, and the IRL drop nights turn the app into a reason to leave the house on a Sunday night.</p></div>
+    <div class="blk risk"><div class="eb o">biggest risk</div><p>Live only feels big with a big crowd. Early on the room is small and the split can't be shown honestly (we never fake it), so the event can feel empty. It also needs a strong new episode every single week, which is a heavy content load. Best as a layer on top of a crew or group, not alone.</p></div>
+    <ol><li>the vote screen auto-advances after you pick.</li><li>split bars are clearly marked as examples.</li></ol>
+  </aside>
+</div>
+<script src="com.js"></script>
+</body></html>

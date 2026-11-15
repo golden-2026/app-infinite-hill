@@ -1,0 +1,223 @@
+{
+ "id": "cat-sign",
+ "home": "angelus",
+ "title": "The smallest prayer",
+ "told": "a story of Saint Benedict",
+ "clips": "art/sacred/cat-sign/clips/",
+ "voice": "art/sacred/cat-sign/voice/",
+ "guide": {
+  "name": "Nicole",
+  "photo": "art/guides/catholic.webp"
+ },
+ "card": {
+  "from": "a story of Saint Benedict",
+  "mins": 5,
+  "keep": "cross",
+  "keepName": "The sign of the cross",
+  "keepWhy": "Head, heart, shoulders. All of you.",
+  "keepSvg": "<rect x=\"44\" y=\"16\" width=\"12\" height=\"68\" rx=\"3\" fill=\"#2a1b05\"/><rect x=\"26\" y=\"33\" width=\"48\" height=\"12\" rx=\"3\" fill=\"#2a1b05\"/>",
+  "sources": [
+   "Gregory the Great, Dialogues, Book II (Life of Saint Benedict), chapters 1 and 3: Benedict’s cave at Subiaco; the monks of a nearby monastery (Vicovaro) beg him to be their abbot; he warns them his ways and theirs will not agree; they poison his wine; when the glass is offered to him to bless, as was the custom, he makes the sign of the cross and it breaks as if struck by a stone; he rises calmly, asks God’s mercy on them and returns to his solitude.",
+   "Tertullian, De Corona 3 (c. 200, Carthage): Christians trace the sign on the forehead at every going out and coming in, at dressing, at the table, at lighting the lamps, at lying down and sitting.",
+   "Matthew 28:19 (baptizing them in the name of the Father, and of the Son, and of the Holy Spirit).",
+   "Catechism of the Catholic Church 1235, 1668 (the sign of the cross and holy water as sacramentals recalling baptism); Western Catholic practice left shoulder then right; Eastern Orthodox right then left."
+  ],
+  "check": [
+   "Tertullian’s De Corona is usually dated about 211; the caption says “around the year 200.” Confirm."
+  ]
+ },
+ "hook": {
+  "v": "SC6-Today-Bus",
+  "say": "before the story, can i ask you something? when something big or scary happens, what does your body do first?",
+  "options": [
+   [
+    "I freeze",
+    "that’s so human. this story is about a man who didn’t freeze. listen."
+   ],
+   [
+    "I reach for my phone",
+    "me too, honestly. this one is about reaching for something smaller."
+   ],
+   [
+    "I say a quick prayer",
+    "then your hands may already know today’s story. listen."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "SC1-Cave",
+   "vo": [
+    "V01"
+   ],
+   "line": "Long ago in Italy, a young man named Benedict left the noisy city behind to pray alone in a mountain cave."
+  },
+  {
+   "t": "shot",
+   "v": "SC2-The-Monks-Ask",
+   "vo": [
+    "V02"
+   ],
+   "line": "Monks from a nearby monastery begged him to lead them. He warned them his ways were strict. They insisted."
+  },
+  {
+   "t": "shot",
+   "v": "SC3-The-Cup",
+   "vo": [
+    "V03"
+   ],
+   "line": "They soon resented his strict rule, so they poisoned his wine. At supper, as the custom was, they handed him the cup to bless."
+  },
+  {
+   "t": "ask",
+   "v": "SC3-The-Cup",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "Benedict traces a small cross over the cup, the way he always does. What happens?",
+   "o": [
+    "He drinks and falls ill",
+    "The cup shatters",
+    "He drinks it, unharmed"
+   ],
+   "a": 1,
+   "why": "The cup breaks in his hands. Benedict’s first move was the smallest prayer there is."
+  },
+  {
+   "t": "shot",
+   "v": "SC4-The-Cup-Breaks",
+   "vo": [
+    "V04"
+   ],
+   "line": "He made the sign of the cross over it, and the cup shattered, as if a stone had struck it."
+  },
+  {
+   "t": "ask",
+   "v": "SC4-The-Cup-Breaks",
+   "blur": true,
+   "predict": true,
+   "eb": "what happens next?",
+   "q": "Benedict knows exactly what they tried to do. What does he do?",
+   "o": [
+    "Has them thrown out of the monastery",
+    "Stays, and makes the rule stricter",
+    "Blesses them, and walks away"
+   ],
+   "a": 2,
+   "why": "No shouting, no revenge. Gregory the Great, telling it around 593, says Benedict went back to his cave to live alone with himself, before God."
+  },
+  {
+   "t": "shot",
+   "v": "SC5-Back-To-The-Cave",
+   "vo": [
+    "V05"
+   ],
+   "line": "He stood up calmly. “God have mercy on you, brothers,” he said. Then he went back to his cave to pray."
+  },
+  {
+   "t": "shot",
+   "v": "SC3-The-Cup",
+   "vo": [
+    "V06"
+   ],
+   "line": "The habit was already old. Around the year 200, a writer in North Africa described Christians tracing a little cross on their foreheads all day: dressing, eating, lighting a lamp.",
+   "label": "history"
+  },
+  {
+   "t": "ask",
+   "v": "SC3-The-Cup",
+   "eb": "why?",
+   "q": "These monks found Benedict too strict. Years later he wrote his own Rule for monks. What is it famous for?",
+   "o": [
+    "The strictest fasting in Europe",
+    "Its moderation: “nothing harsh”",
+    "A vow of total silence"
+   ],
+   "a": 1,
+   "why": "In its opening he hopes to set down “nothing harsh, nothing burdensome.” Benedictine, Cistercian and Trappist monks still live by it, fifteen centuries on."
+  },
+  {
+   "t": "shot",
+   "v": "SC6-Today-Bus",
+   "vo": [
+    "V07"
+   ],
+   "line": "Today a pitcher does it before the first throw. A grandmother does it when her bus passes a church. Two seconds: head, heart, shoulders.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "SC6-Today-Bus",
+   "eb": "did you know?",
+   "q": "Some Catholics also trace three tiny crosses with the thumb: on the forehead, lips and heart. When?",
+   "o": [
+    "Before the first bite of a meal",
+    "Just before the Gospel at Mass",
+    "When a funeral car passes by"
+   ],
+   "a": 1,
+   "why": "Before the Gospel: may the word be in my mind, on my lips, and in my heart."
+  },
+  {
+   "t": "match",
+   "v": "SC6-Today-Bus",
+   "eb": "words and hands",
+   "q": "The hand moves head, heart, shoulders while the words are said. Match each place to the words said there.",
+   "pairs": [
+    [
+     "the forehead",
+     "“In the name of the Father”"
+    ],
+    [
+     "the chest",
+     "“and of the Son”"
+    ],
+    [
+     "across the shoulders",
+     "“and of the Holy Spirit”"
+    ]
+   ],
+   "why": "Words and hand keep the same order. The cross is traced over all of you, head, heart and shoulders, with nothing left out."
+  },
+  {
+   "t": "teach",
+   "v": "SC4-The-Cup-Breaks",
+   "say": [
+    "here’s what the hand is saying. it traces the cross, where jesus died, over your whole self. and the words name who catholics believe God is: Father, Son and Holy Spirit, the words jesus gave for baptism at the end of matthew’s gospel.",
+    "benedict didn’t panic. he made the smallest prayer and put the moment in God’s hands. western catholics touch the left shoulder first; orthodox christians go right. same sign, two old habits."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "SC6-Today-Bus",
+   "eb": "the hard one",
+   "q": "Many Catholics dip their fingers in holy water at the church door, then make the sign. From this lesson, why put those two together?",
+   "o": [
+    "The water cleans the hand for prayer",
+    "It recalls their baptism: water, and those words",
+    "It blesses the church as they come in"
+   ],
+   "a": 1,
+   "why": "Water, and “in the name of the Father, and of the Son, and of the Holy Spirit.” That’s baptism. At the door, it’s a small reminder of it."
+  }
+ ],
+ "today": {
+  "v": "SC3-The-Cup",
+  "say": "at your next meal today, before the first bite, you could make the sign slowly, like benedict over his cup. or just pause and notice head, heart, shoulders. your choice.",
+  "options": [
+   [
+    "I’ll try it at my next meal",
+    "two seconds, and nothing left out. that’s the whole prayer."
+   ],
+   [
+    "I’ll just watch for it",
+    "that counts. once you start looking, you’ll see it everywhere."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "Stay with us.",
+  "line": "two friends walk away from everything. a stranger joins them on the road."
+ }
+}

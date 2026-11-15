@@ -1,0 +1,191 @@
+{
+ "id": "jew-nineveh",
+ "home": "pomegranate",
+ "title": "A whole city says sorry",
+ "told": "from the book of Jonah",
+ "clips": "art/sacred/jew-nineveh/clips/",
+ "voice": "art/sacred/jew-nineveh/voice/",
+ "guide": {
+  "name": "Natalie",
+  "photo": "art/guides/judaism.webp"
+ },
+ "hook": {
+  "v": "JNV1-City-Gates",
+  "say": "before the story, can i ask you something? is it easier for you to say sorry alone, or when everyone around you is saying it too?",
+  "options": [
+   [
+    "Alone, quietly",
+    "then this day might surprise you. listen."
+   ],
+   [
+    "Together is easier",
+    "then you’ll understand this city. listen."
+   ],
+   [
+    "Sorry is hard either way",
+    "it is. listen, this one is gentle."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "JNV1-City-Gates",
+   "vo": [
+    "V01"
+   ],
+   "line": "God sent the prophet Jonah to Nineveh, a huge and violent city. Jonah ran the other way, onto a ship, and into the sea. But in the end, he went."
+  },
+  {
+   "t": "shot",
+   "v": "JNV2-Warning",
+   "vo": [
+    "V02"
+   ],
+   "line": "He walked into the city and cried out one short warning: “Yet forty days, and Nineveh shall be overthrown!”"
+  },
+  {
+   "t": "ask",
+   "v": "JNV2-Warning",
+   "blur": true,
+   "predict": true,
+   "eb": "what happens next?",
+   "q": "The people take the warning seriously. Word reaches the king of Nineveh. What do you think he does?",
+   "o": [
+    "Leaves his throne and sits in ashes",
+    "Has the foreign prophet thrown out",
+    "Sends rich gifts to Jonah’s God"
+   ],
+   "a": 0,
+   "why": "He takes off his robe, puts on sackcloth and sits in ashes (Jonah 3:6). Then he orders a fast for people and animals alike, even the herds and flocks."
+  },
+  {
+   "t": "shot",
+   "v": "JNV3-Sackcloth",
+   "vo": [
+    "V03"
+   ],
+   "line": "The people believed. They called a fast and put on sackcloth, rough cloth worn for mourning, from the greatest of them to the least."
+  },
+  {
+   "t": "shot",
+   "v": "JNV4-The-King",
+   "vo": [
+    "V04"
+   ],
+   "line": "Even the king rose from his throne, took off his robe, and sat in ashes. “Who knows?” he said. “God may yet turn, and we will not perish.”"
+  },
+  {
+   "t": "fill",
+   "v": "JNV4-The-King",
+   "eb": "finish the line",
+   "pre": "“Let them turn every one from his evil way, and from the violence that is in their",
+   "post": ".”",
+   "o": [
+    "hearts",
+    "hands",
+    "streets"
+   ],
+   "a": 1,
+   "why": "Hands. The king’s decree is about what people actually do."
+  },
+  {
+   "t": "shot",
+   "v": "JNV5-Morning",
+   "vo": [
+    "V05"
+   ],
+   "line": "And God saw what they did, that they turned from their evil ways. And the disaster never came."
+  },
+  {
+   "t": "ask",
+   "v": "JNV5-Morning",
+   "eb": "why?",
+   "q": "Jonah’s warning had no “unless” in it. Why did the city turn anyway?",
+   "o": [
+    "They hoped turning could still change the ending",
+    "Jonah promised they would be spared",
+    "The king wanted to look humble"
+   ],
+   "a": 0,
+   "why": "“Who knows?” the king said. No one promised them anything, and they turned anyway. The door was open."
+  },
+  {
+   "t": "shot",
+   "v": "JNV6-Neilah",
+   "vo": [
+    "V06"
+   ],
+   "line": "Today, on Yom Kippur afternoon, the book of Jonah is read aloud. The whole community fasts together and says sorry in the plural: not “I have sinned,” but “we have.”",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "JNV6-Neilah",
+   "eb": "why?",
+   "q": "Of the whole Bible, why read Jonah on Yom Kippur afternoon?",
+   "o": [
+    "It’s short enough for a hungry crowd",
+    "Nobody is too far gone to turn back",
+    "Jonah wrote the Yom Kippur prayers"
+   ],
+   "a": 1,
+   "why": "A violent foreign city turns, and God turns too. And the prophet who ran away gets brought back. The day says: you’re not too far."
+  },
+  {
+   "t": "teach",
+   "v": "JNV3-Sackcloth",
+   "say": [
+    "here’s what i love. on yom kippur, everyone says every line of the confession, even about things they never did. no one is singled out, and no one gets to stand above it.",
+    "but the rabbis wrote a limit. the day atones for what’s between you and god. for what’s between you and another person, you have to make it right with them first. the fast doesn’t replace the phone call."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "JNV6-Neilah",
+   "eb": "the hard one",
+   "q": "The rabbis noticed the book says God saw “what they did,” not their fasting or sackcloth. What does that teach about Yom Kippur?",
+   "o": [
+    "Fasting is enough on its own",
+    "The fast itself doesn’t matter",
+    "The fast points to changed deeds"
+   ],
+   "a": 2,
+   "why": "The Mishnah says it outright: not “God saw their sackcloth and fasting,” but “God saw what they did.” The fast is the doorway, not the room."
+  }
+ ],
+ "today": {
+  "v": "JNV6-Neilah",
+  "say": "think of one person you’ve wronged, even a little. today, send them a short message: i’m sorry. you don’t have to wait for yom kippur. that’s the part the fast can’t do for you.",
+  "options": [
+   [
+    "I’ll send it today",
+    "one message. that’s a gate opening."
+   ],
+   [
+    "I need more time",
+    "that’s honest. the days before yom kippur are set aside for exactly this."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "The bandit in the river.",
+  "line": "a famous rabbi is bathing in the jordan when a bandit leaps into the water after him. what happens next changes both their lives."
+ },
+ "card": {
+  "from": "from the book of Jonah",
+  "mins": 5,
+  "keep": "shofar",
+  "keepName": "The ram’s horn",
+  "keepWhy": "The gate is still open. Turn around.",
+  "keepSvg": "<path d=\"M12 74C14 44 36 26 66 22L88 12L88 34L70 36C46 40 30 56 28 80Z\" fill=\"#2a1b05\"/><circle cx=\"20\" cy=\"80\" r=\"9\" fill=\"#2a1b05\"/>",
+  "sources": [
+   "Jonah 1–2 (Jonah flees toward Tarshish; the storm; the great fish)",
+   "Jonah 3:4 (“Yet forty days, and Nineveh shall be overthrown,” JPS 1917); 3:5 (the people believed, proclaimed a fast and put on sackcloth, from the greatest of them even to the least of them); 3:6–8 (the king rises from his throne, lays aside his robe, sits in ashes; the decree: “let them turn every one from his evil way, and from the violence that is in their hands,” JPS 1917); 3:9 (“Who knoweth whether God will not turn and repent… that we perish not?” JPS 1917, shortened); 3:10 (God saw their works, that they turned from their evil way)",
+   "Mishnah Taanit 2:1 (it does not say God saw their sackcloth and their fasting, but their works)",
+   "Babylonian Talmud, Megillah 31a (Jonah read at the Yom Kippur afternoon service); Mishnah Yoma 8:9 (between a person and another person, not until he appeases his fellow); Leviticus 16:29–31",
+   "The Yom Kippur liturgy: Kol Nidre, the plural confession (Ashamnu), Neilah, the closing shofar blast"
+  ],
+  "check": []
+ }
+}

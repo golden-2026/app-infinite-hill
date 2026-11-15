@@ -1,0 +1,209 @@
+{
+ "id": "kumbh",
+ "home": "marigold",
+ "title": "Millions take the plunge",
+ "told": "from the Puranas",
+ "clips": "art/sacred/kumbh/clips/",
+ "voice": "art/sacred/kumbh/voice/",
+ "guide": {
+  "name": "Priyanka",
+  "photo": "art/guides/hinduism.webp"
+ },
+ "card": {
+  "from": "from the Puranas",
+  "mins": 5,
+  "keep": "kalash",
+  "keepName": "The pot of nectar",
+  "keepWhy": "You can plan forever. Then you take the plunge.",
+  "sources": [
+   "The churning of the ocean (samudra manthan): Bhagavata Purana, book 8, chapters 6-9, among other Puranas; the pot of amrit rises and gods and demons struggle over it",
+   "Kumbh Mela tradition: drops of amrit fell at Prayagraj, Haridwar, Ujjain and Nashik, the four sites of the Mela",
+   "Kumbh: pot",
+   "UNESCO, Intangible Cultural Heritage list (2017): the Kumbh Mela, called the largest peaceful congregation of pilgrims on earth",
+   "Prayagraj: the meeting of the Ganga and the Yamuna (with the unseen Saraswati, by tradition)"
+  ],
+  "check": [
+   "The drops falling at four places is Mela tradition, not found in the Bhagavata’s churning story; tellings differ on who carried the pot. Confirm the “the stories say” framing."
+  ]
+ },
+ "hook": {
+  "v": "KU1-The-Churning",
+  "say": "before the story, can i ask you something? is there a fresh start you’ve been planning for a while? a routine, a project, something you keep putting off.",
+  "options": [
+   [
+    "Yes, for ages",
+    "then this one is for you. listen."
+   ],
+   [
+    "Just started thinking",
+    "then listen before you plan any more."
+   ],
+   [
+    "Not right now",
+    "good. keep this one for when you do."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "KU1-The-Churning",
+   "vo": [
+    "V01"
+   ],
+   "line": "Long ago, the stories say, gods and demons churned the cosmic ocean for amrit, the nectar of immortality."
+  },
+  {
+   "t": "ask",
+   "v": "KU2-The-Pot",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "Gods and demons churn the ocean, and a pot of nectar rises. What do you think happens next?",
+   "o": [
+    "They share it out between them",
+    "They fight, and drops fall to earth",
+    "It sinks back into the ocean"
+   ],
+   "a": 1,
+   "why": "They fight, and a few drops fall at four places in India. Watch."
+  },
+  {
+   "t": "shot",
+   "v": "KU2-The-Pot",
+   "vo": [
+    "V02"
+   ],
+   "line": "When the pot finally rose, they fought over it, and a few drops fell to earth at four places in India."
+  },
+  {
+   "t": "ask",
+   "v": "KU3-The-Gathering",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "At those four places comes the Kumbh Mela. How many people do you guess arrive?",
+   "o": [
+    "About two million",
+    "Tens of millions",
+    "Over a billion"
+   ],
+   "a": 1,
+   "why": "Tens of millions on the biggest bathing days. It’s often called the biggest gathering of people on earth."
+  },
+  {
+   "t": "shot",
+   "v": "KU3-The-Gathering",
+   "vo": [
+    "V03"
+   ],
+   "line": "Every few years, at those places, comes the Kumbh Mela, the biggest gathering of people on earth.",
+   "label": "the Kumbh Mela"
+  },
+  {
+   "t": "shot",
+   "v": "KU4-Millions",
+   "vo": [
+    "V04"
+   ],
+   "line": "Tens of millions arrive, for one moment.",
+   "label": "the Kumbh Mela"
+  },
+  {
+   "t": "shot",
+   "v": "KU5-The-Plunge",
+   "vo": [
+    "V05"
+   ],
+   "line": "To step into the sacred river, and dip under the water. Many say they come out new.",
+   "label": "the Kumbh Mela"
+  },
+  {
+   "t": "ask",
+   "v": "KU5-The-Plunge",
+   "eb": "did you know?",
+   "q": "At Prayagraj, pilgrims bathe where rivers meet. How many rivers does tradition count there?",
+   "o": [
+    "Two, the Ganga and the Yamuna",
+    "Three, though you can only see two",
+    "Seven, all of India’s holy rivers"
+   ],
+   "a": 1,
+   "why": "The Ganga and Yamuna meet there, and tradition says the hidden Saraswati joins them. The spot is called the Triveni Sangam, the meeting of three."
+  },
+  {
+   "t": "ask",
+   "v": "KU5-The-Plunge",
+   "eb": "why?",
+   "q": "Tens of millions travel all that way for one dip. Why does the step itself matter so much?",
+   "o": [
+    "Going under is how the fresh start begins",
+    "The water is only holy during the Mela",
+    "The priests require it of every visitor"
+   ],
+   "a": 0,
+   "why": "You can admire a river forever from the bank. For pilgrims, the blessing is in going under."
+  },
+  {
+   "t": "shot",
+   "v": "KU6-Today",
+   "vo": [
+    "V06"
+   ],
+   "line": "You can plan forever. At some point, you take the plunge.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "KU6-Today",
+   "eb": "did you know?",
+   "q": "The full Kumbh returns to each place about every twelve years. What sets the timing?",
+   "o": [
+    "A vote of the holy men",
+    "The cycle of the river’s floods",
+    "Where Jupiter sits among the stars"
+   ],
+   "a": 2,
+   "why": "Jupiter takes about twelve years to circle the sky. One telling says the gods’ fight over the pot lasted twelve divine days, each one a human year."
+  },
+  {
+   "t": "teach",
+   "v": "KU5-The-Plunge",
+   "say": [
+    "here’s what i love. nobody at the kumbh is blessed by planning a dip. they walk into the river.",
+    "many hindus believe bathing in the sacred river at the kumbh washes away past wrongs and renews you. a fresh start, in this tradition, is something you step into."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "KU2-The-Pot",
+   "eb": "did you know?",
+   "q": "Kumbh means pot. In the end, who gets the nectar to the gods?",
+   "o": [
+    "Shiva, who carries it up to heaven",
+    "Vishnu, disguised as the enchantress Mohini",
+    "The demons, who give in and share"
+   ],
+   "a": 1,
+   "why": "Vishnu became Mohini, charmed the demons and served the nectar to the gods. Shiva, in the same story, drank the poison that rose first, and his throat turned blue."
+  }
+ ],
+ "today": {
+  "v": "KU6-Today",
+  "say": "take your plunge today: do the first real thing on your fresh start, not more planning. many pilgrims say a short prayer as they step in. you can say one before your first step, or just take it. it’s your choice.",
+  "options": [
+   [
+    "I know my first step",
+    "then step in today. the river is right there."
+   ],
+   [
+    "I’m scared to start",
+    "the water is cold at first. step in anyway."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "Burning the old.",
+  "line": "a boy who loves god, a king who hates it, and a bonfire people still light."
+ }
+}

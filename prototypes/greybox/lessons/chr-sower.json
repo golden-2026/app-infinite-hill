@@ -1,0 +1,198 @@
+{
+ "id": "chr-sower",
+ "home": "olive",
+ "title": "The sower",
+ "told": "a story Jesus told",
+ "clips": "art/sacred/chr-sower/clips/",
+ "voice": "art/sacred/chr-sower/voice/",
+ "guide": {
+  "name": "Denzel",
+  "photo": "art/guides/christianity.webp"
+ },
+ "card": {
+  "from": "a story Jesus told",
+  "mins": 5,
+  "keep": "seed",
+  "keepName": "A handful of seed",
+  "keepWhy": "Keep throwing. The good soil makes up for all of it.",
+  "sources": [
+   "Matthew 13:1-3 (great crowds; Jesus sits in a boat, the multitude stands on the beach; he speaks to them in parables: “Behold, a farmer went out to sow”)",
+   "Matthew 13:4-7 (seed on the road, devoured by birds; on rocky ground, sprang up and was scorched because it had no root; among thorns, which choked it)",
+   "Matthew 13:8 (good ground: some one hundred times as much, some sixty, some thirty)",
+   "Matthew 13:9 (“He who has ears to hear, let him hear”)",
+   "Matthew 13:18-23 (Jesus explains: the seed is the word; the soils are those who hear)",
+   "Mark 4:1-9 and Luke 8:4-8 (the same parable)",
+   "Captions follow the World English Bible, lightly modernized"
+  ],
+  "check": [
+   "The hard question’s answer says many scholars think a normal harvest was far smaller than a hundredfold (Genesis 26:12 treats a hundredfold as a blessing). Confirm wording.",
+   "The why step says the farmer sows “everywhere” on purpose. Some scholars note that in Galilee sowing could come before plowing, which would explain seed on paths; confirm the lesson does not overstate the farmer’s intent."
+  ]
+ },
+ "hook": {
+  "v": "QW2-Sower-Throws",
+  "say": "before the story, can i ask you something? have you ever done something good and felt like it went nowhere?",
+  "options": [
+   [
+    "All the time",
+    "then this story is for you. it’s about seed that seems wasted."
+   ],
+   [
+    "Lately, yes",
+    "i’m sorry. hold that while you listen. the ending is good."
+   ],
+   [
+    "Not really",
+    "good. keep this for the day it feels that way."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "QW1-Boat-Shore",
+   "vo": [
+    "V01"
+   ],
+   "line": "So many people came that Jesus got into a boat and sat on the water, while the crowd stood on the shore. He told them a story.",
+   "label": "Matthew 13:1-3"
+  },
+  {
+   "t": "shot",
+   "v": "QW2-Sower-Throws",
+   "vo": [
+    "V02"
+   ],
+   "line": "“A farmer went out to sow.” He threw his seed by hand, far and wide.",
+   "label": "Matthew 13:3"
+  },
+  {
+   "t": "shot",
+   "v": "QW3-Path-And-Rock",
+   "vo": [
+    "V03"
+   ],
+   "line": "Some fell on the path, and birds ate it. Some fell on rocky ground. It sprang up fast, then withered in the sun.",
+   "label": "Matthew 13:4-6"
+  },
+  {
+   "t": "shot",
+   "v": "QW4-Thorns",
+   "vo": [
+    "V04"
+   ],
+   "line": "Some fell among thorns, and the thorns grew up and choked it.",
+   "label": "Matthew 13:7"
+  },
+  {
+   "t": "ask",
+   "v": "QW4-Thorns",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "So much of his seed is lost. What do you guess happens to the rest?",
+   "o": [
+    "About as much as he sowed, maybe a little more",
+    "A harvest up to a hundred times what was sown",
+    "The weeds take that too"
+   ],
+   "a": 1,
+   "why": "A huge harvest. The loss is real, and the harvest is bigger."
+  },
+  {
+   "t": "shot",
+   "v": "QW5-Harvest",
+   "vo": [
+    "V05"
+   ],
+   "line": "But some fell on good soil, and brought a harvest: a hundred, sixty, or thirty times what was sown.",
+   "label": "Matthew 13:8"
+  },
+  {
+   "t": "ask",
+   "v": "QW5-Harvest",
+   "eb": "did you know?",
+   "q": "Thirty, sixty, a hundredfold. What would a farmer then have called a good harvest?",
+   "o": [
+    "About double the seed",
+    "Around ten times the seed",
+    "A hundredfold, most years"
+   ],
+   "a": 1,
+   "why": "Many scholars estimate a good year gave something like tenfold, though estimates vary. A hundredfold sounded like blessing beyond the ordinary: Genesis says Isaac reaped that once."
+  },
+  {
+   "t": "ask",
+   "v": "QW2-Sower-Throws",
+   "eb": "why?",
+   "q": "Why would a farmer let seed fall on paths, rocks and thorns?",
+   "o": [
+    "He throws wide, and the good soil makes up for it",
+    "He was careless, and Jesus is warning against it",
+    "Seed was cheap then, so no one minded"
+   ],
+   "a": 0,
+   "why": "Sowers scattered seed by hand, and some scholars think ploughing often came after, so paths and thin soil got seed too. He throws wide and trusts the harvest."
+  },
+  {
+   "t": "match",
+   "v": "QW5-Harvest",
+   "eb": "the soils are people",
+   "q": "Later Jesus explained the soils as kinds of listeners. Match them.",
+   "pairs": [
+    [
+     "the path",
+     "hears, and it’s snatched away at once"
+    ],
+    [
+     "rocky ground",
+     "starts with joy, quits when it gets hard"
+    ],
+    [
+     "thorns",
+     "worries and wanting more crowd it out"
+    ]
+   ],
+   "why": "That’s Jesus’s own reading in Mark 4. The good soil hears, takes it in, and bears fruit."
+  },
+  {
+   "t": "teach",
+   "v": "QW5-Harvest",
+   "say": [
+    "here’s what i love. later jesus explains it: the seed is God’s word, and the soils are hearts. some hear and forget, some start fast and quit, some get crowded out by worries.",
+    "christians read it two ways: be good soil, and keep sowing kindness and faith, even when most of it seems wasted."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "QW5-Harvest",
+   "eb": "the hard one",
+   "q": "In Mark, Jesus asks his friends, “If you don’t understand this story, how will you understand any?” Why this one?",
+   "o": [
+    "It’s the only story he ever explained",
+    "It’s the longest one he told",
+    "It’s about how you hear all the others"
+   ],
+   "a": 2,
+   "why": "Many readers say it’s the key to the rest: every story after it lands on some kind of soil. Before the others begin, this one asks how you’re listening."
+  }
+ ],
+ "today": {
+  "v": "QW6-Today",
+  "say": "keep throwing seed. do one generous thing today with no guarantee it lands: an encouraging text, a note, a kind word to someone who might shrug it off.",
+  "options": [
+   [
+    "I’ll send one today",
+    "good. you won’t always see what grows. the farmer didn’t either."
+   ],
+   [
+    "Someone came to mind",
+    "then they’re your good soil today. throw it."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "The smallest seed.",
+  "line": "a seed you can barely see, and a pinch of yeast in a mountain of dough."
+ }
+}

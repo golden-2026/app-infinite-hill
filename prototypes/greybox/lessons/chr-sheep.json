@@ -1,0 +1,191 @@
+{
+ "id": "chr-sheep",
+ "home": "olive",
+ "title": "The lost sheep",
+ "told": "a story Jesus told",
+ "clips": "art/sacred/chr-sheep/clips/",
+ "voice": "art/sacred/chr-sheep/voice/",
+ "guide": {
+  "name": "Denzel",
+  "photo": "art/guides/christianity.webp"
+ },
+ "card": {
+  "from": "a story Jesus told",
+  "mins": 5,
+  "keep": "sheep",
+  "keepName": "The found sheep",
+  "keepWhy": "One is worth the walk.",
+  "keepSvg": "<g fill=\"#2a1b05\"><circle cx=\"40\" cy=\"48\" r=\"14\"/><circle cx=\"56\" cy=\"42\" r=\"14\"/><circle cx=\"68\" cy=\"52\" r=\"12\"/><circle cx=\"52\" cy=\"58\" r=\"14\"/><circle cx=\"36\" cy=\"60\" r=\"10\"/><ellipse cx=\"22\" cy=\"46\" rx=\"10\" ry=\"8\"/><rect x=\"36\" y=\"64\" width=\"6\" height=\"18\" rx=\"2\"/><rect x=\"60\" y=\"62\" width=\"6\" height=\"20\" rx=\"2\"/></g>",
+  "sources": [
+   "Luke 15:1-2 (tax collectors and sinners come near to hear him; Pharisees and scribes murmur, “This man welcomes sinners, and eats with them”)",
+   "Luke 15:3-4 (“Which of you men, if you had one hundred sheep, and lost one of them, wouldn’t leave the ninety-nine in the wilderness, and go after the one that was lost, until he found it?”)",
+   "Luke 15:5 (he carries it on his shoulders, rejoicing)",
+   "Luke 15:6 (“Rejoice with me, for I have found my sheep which was lost!”)",
+   "Luke 15:7 (more joy in heaven over one sinner who repents)",
+   "Matthew 18:12-14 (the same story)",
+   "Psalm 23:1 (“Yahweh is my shepherd”), in the teach step",
+   "Luke 15:11-32 (the lost son, the third story in the chapter; week one’s lesson)",
+   "Captions follow the World English Bible, lightly modernized"
+  ],
+  "check": []
+ },
+ "hook": {
+  "v": "QE2-Ninety-Nine",
+  "say": "before the story, can i ask you something? have you ever felt like the one who wandered off, from people, or from God?",
+  "options": [
+   [
+    "Yes, I have",
+    "then this story is about you. listen to who comes looking."
+   ],
+   [
+    "Someone I love has",
+    "keep them in mind. this one is for them too."
+   ],
+   [
+    "Not really",
+    "good. you might be the one who goes looking someday."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "QE1-Grumbling",
+   "vo": [
+    "V01"
+   ],
+   "line": "Tax collectors and outsiders crowded around Jesus. Some religious leaders grumbled, “This man welcomes sinners and eats with them.”",
+   "label": "Luke 15:1-2"
+  },
+  {
+   "t": "shot",
+   "v": "QE2-Ninety-Nine",
+   "vo": [
+    "V02"
+   ],
+   "line": "So Jesus told them a story. “Which of you, with a hundred sheep, if you lose one, doesn’t leave the ninety-nine and go after the lost one?”",
+   "label": "Luke 15:3-4"
+  },
+  {
+   "t": "ask",
+   "v": "QE2-Ninety-Nine",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "How long do you guess the shepherd keeps looking?",
+   "o": [
+    "Until he finds it",
+    "Until sunset, then he gives up",
+    "Until the ninety-nine get restless"
+   ],
+   "a": 0,
+   "why": "Until he finds it. No time limit."
+  },
+  {
+   "t": "shot",
+   "v": "QE3-Searching",
+   "vo": [
+    "V03"
+   ],
+   "line": "He goes out into the wild hills, and he keeps searching until he finds it.",
+   "label": "Luke 15:4"
+  },
+  {
+   "t": "fill",
+   "v": "QE3-Searching",
+   "eb": "guess the words",
+   "pre": "When he finds it, he doesn’t scold it. He lays it on his",
+   "post": ", rejoicing.",
+   "o": [
+    "arms",
+    "shoulders",
+    "lap"
+   ],
+   "a": 1,
+   "why": "“Shoulders.” Not dragged or driven home. Carried, with joy."
+  },
+  {
+   "t": "shot",
+   "v": "QE4-Found",
+   "vo": [
+    "V04"
+   ],
+   "line": "And when he finds it, he doesn’t scold it. He lays it on his shoulders, rejoicing, and carries it home.",
+   "label": "Luke 15:5"
+  },
+  {
+   "t": "shot",
+   "v": "QE5-Rejoice",
+   "vo": [
+    "V05"
+   ],
+   "line": "He calls his friends and neighbors: “Rejoice with me!” Jesus said heaven rejoices like that over one lost person who turns back to God.",
+   "label": "Luke 15:6-7"
+  },
+  {
+   "t": "ask",
+   "v": "QE5-Rejoice",
+   "eb": "why?",
+   "q": "The shepherd leaves ninety-nine sheep to find just one. Why does Jesus make the search sound so risky?",
+   "o": [
+    "Because the ninety-nine were safe in a pen",
+    "To warn shepherds to count more often",
+    "To show how much one lost person is worth"
+   ],
+   "a": 2,
+   "why": "Luke says he leaves them “in the wilderness.” To the shepherd, the one is worth that risk."
+  },
+  {
+   "t": "ask",
+   "v": "QE5-Rejoice",
+   "eb": "did you know?",
+   "q": "This is the first of three lost-and-found stories Jesus tells in a row. What are the other two?",
+   "o": [
+    "A lost lamb and a lost servant",
+    "A lost coin and a lost son",
+    "A lost ring and a lost daughter"
+   ],
+   "a": 1,
+   "why": "Luke 15 tells all three: a sheep, a woman’s coin, and a son. Each one ends with a party."
+  },
+  {
+   "t": "teach",
+   "v": "QE4-Found",
+   "say": [
+    "here’s what i love. the shepherd doesn’t wait for the sheep to find its own way back. he goes.",
+    "christians see jesus as that shepherd, like the old psalm, “the lord is my shepherd.” and this is the first of three lost-and-found stories. you already know the third: the son who came home."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "QE4-Found",
+   "eb": "the hard one",
+   "q": "The sheep doesn’t do anything to be found. It’s just carried home. What does that say about how God finds people?",
+   "o": [
+    "God goes looking before we can make it back",
+    "God welcomes those who find their own way back",
+    "God forgives once we promise not to wander"
+   ],
+   "a": 0,
+   "why": "The sheep isn’t lectured or tested. It’s carried. That’s how the shepherd loves."
+  }
+ ],
+ "today": {
+  "v": "QE6-Today",
+  "say": "one is worth the walk. think of one person who’s drifted, from you, from friends, from church. reach out today: a message, a call, a knock. no lecture. just “i was thinking of you.”",
+  "options": [
+   [
+    "I know who",
+    "then go after them today. gently."
+   ],
+   [
+    "I’m the one who drifted",
+    "then hear this: you’re being looked for. that’s the whole story."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "The lost coin.",
+  "line": "a woman turns her whole house upside down for one coin. then she throws a party."
+ }
+}

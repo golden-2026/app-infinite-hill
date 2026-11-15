@@ -13,7 +13,7 @@ import { doorLabel, formatNumber, t } from "@/i18n";
 import { Body, Btn, Eyebrow, Link, Opt, Screen, Sun, color, confirmSheet, font, toast, type } from "@/ui";
 import { shareOrCopy } from "@/ui/invites";
 
-const input = { borderWidth: 1.5, borderColor: color.line, borderRadius: 999, paddingVertical: 14, paddingHorizontal: 16, fontFamily: font.text[400], fontSize: 16, backgroundColor: "#fff", color: color.ink } as const;
+const input = { borderWidth: 1.5, borderColor: color.line, borderRadius: 999, paddingVertical: 14, paddingHorizontal: 16, fontFamily: font.text[400], fontSize: 16, backgroundColor: color.white, color: color.ink } as const;
 
 function Scarcity() {
   const s = useInvite().status;

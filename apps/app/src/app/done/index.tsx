@@ -15,6 +15,7 @@ import { useStore } from "@/lib/store";
 import { ChevronRight } from "@/ui/tab-icons";
 import { Btn, Eyebrow, Face, Guy, Screen, color, font, toast, type } from "@/ui";
 import { NeighborCard } from "@/ui/neighbor-card";
+import { Punch, Shout, shoutWords } from "@/ui/loud";
 
 // The finish, step 1 of 3 (owner brief 2026-10-01, after Duolingo's lesson that the end of a session is what brings
 // people back): what you just did. The day, the word, the line to carry, and one light question, "did it land?",
@@ -67,16 +68,17 @@ export default function Carry() {
         <View style={{ alignItems: "center" }}>{day === 21 ? <Guy pose="jump" h={130} /> : day % 7 === 0 ? <Guy pose="joy" h={130} /> : <Face ic={ic} w={104} h={104} r={52} caption={false} big />}</View>
       )}
       <View style={{ alignItems: "center", gap: 4 }}>
-        <Text accessibilityRole="header" style={[type.title(), { textAlign: "center" }]}>{title}</Text>
+        {/* loud brand: the finish slams in, its last word in lime */}
+        <Shout {...shoutWords(title)} size={68} center start={120} />
         <Text style={[type.body(15), { textAlign: "center", color: color.mute }]}>{t("session.carry.proud", { min: p.minutes })}</Text>
       </View>
 
       {/* the word and the line: what they take with them */}
-      <View testID="carry-card" style={{ backgroundColor: "#fff", borderWidth: 1.5, borderColor: color.ink, borderRadius: 20, paddingVertical: 16, paddingHorizontal: 18, gap: 6 }}>
-        <Eyebrow>{t("session.carry.eyebrow")}</Eyebrow>
-        <Text style={type.h1(30)}>{p.word}.</Text>
-        <Text style={[type.body(16), { fontStyle: "italic" }]}>{p.carry ? `“${p.carry}”` : t("session.landed.lineFallback")}</Text>
-      </View>
+      <Punch delay={520}><View testID="carry-card" style={{ backgroundColor: color.gold, borderRadius: 24, paddingVertical: 18, paddingHorizontal: 18, gap: 6, transform: [{ rotate: "-1.2deg" }] }}>
+        <Eyebrow style={{ color: "#0A0A0A" }}>{t("session.carry.eyebrow")}</Eyebrow>
+        <Text style={[type.h1(40), { color: "#0A0A0A" }]}>{p.word}.</Text>
+        <Text style={[type.body(16), { fontStyle: "italic", color: "#0A0A0A", fontFamily: font.text[600] }]}>{p.carry ? `“${p.carry}”` : t("session.landed.lineFallback")}</Text>
+      </View></Punch>
 
       {/* once a week: "same idea, another door" (ui/neighbor-card), opt-in */}
       <NeighborCard door={p.door} day={day} />
@@ -85,8 +87,8 @@ export default function Carry() {
       <View style={{ flexDirection: "row", gap: 8 }} accessibilityRole="radiogroup">
         {V.map(([v, l, bg]) => (
           <Pressable key={v} testID={`land-${v}`} accessibilityLabel={l} accessibilityRole="radio" accessibilityState={{ checked: verdict === v }} aria-checked={verdict === v} onPress={() => setVerdict(verdict === v ? null : v)}
-            style={{ flex: 1, alignItems: "center", justifyContent: "center", minHeight: 48, paddingVertical: 10, paddingHorizontal: 6, borderRadius: 16, backgroundColor: verdict === v ? bg : "#fff", borderWidth: 1.5, borderColor: verdict === v ? color.ink : color.line }}>
-            <Text style={{ fontFamily: font.text[600], fontSize: 13, color: color.ink, textAlign: "center" }}>{l}</Text>
+            style={{ flex: 1, alignItems: "center", justifyContent: "center", minHeight: 48, paddingVertical: 10, paddingHorizontal: 6, borderRadius: 16, backgroundColor: verdict === v ? bg : color.white, borderWidth: 1.5, borderColor: verdict === v ? color.ink : color.line }}>
+            <Text style={{ fontFamily: font.text[600], fontSize: 13, color: verdict === v ? "#0A0A0A" : color.ink, textAlign: "center" }}>{l}</Text>
           </Pressable>
         ))}
       </View>
@@ -95,7 +97,7 @@ export default function Carry() {
           <Eyebrow style={{ marginTop: 4 }}>{t("session.landed.tomorrow")}</Eyebrow>
           <View style={{ gap: 8 }}>
             {N.map(([nx, l]) => (
-              <Pressable key={nx} accessibilityRole="button" onPress={() => signal(nx)} style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", backgroundColor: "#fff", borderWidth: 1.5, borderColor: color.line, borderRadius: 16, paddingVertical: 12, paddingHorizontal: 16 }}>
+              <Pressable key={nx} accessibilityRole="button" onPress={() => signal(nx)} style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", backgroundColor: color.white, borderWidth: 1.5, borderColor: color.line, borderRadius: 16, paddingVertical: 12, paddingHorizontal: 16 }}>
                 <Text style={{ fontFamily: font.display[500], fontSize: 15, color: color.ink }}>{l}</Text><ChevronRight color={color.ink} />
               </Pressable>
             ))}

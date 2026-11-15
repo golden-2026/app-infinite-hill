@@ -1,0 +1,203 @@
+{
+ "id": "jew-pearl",
+ "home": "pomegranate",
+ "title": "The pearl and the doorpost",
+ "told": "from the Jerusalem Talmud",
+ "clips": "art/sacred/jew-pearl/clips/",
+ "voice": "art/sacred/jew-pearl/voice/",
+ "guide": {
+  "name": "Natalie",
+  "photo": "art/guides/judaism.webp"
+ },
+ "hook": {
+  "v": "MZ1-Artaban-Pearl",
+  "say": "before the story, can i ask you something? what’s the most precious thing anyone has ever given you?",
+  "options": [
+   [
+    "Something that cost a lot",
+    "then this story might surprise you. listen."
+   ],
+   [
+    "Something small, but meaningful",
+    "then you already know the secret of this one. listen."
+   ],
+   [
+    "I can’t pick just one",
+    "that’s a lovely problem. keep a few in mind. listen."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "MZ1-Artaban-Pearl",
+   "vo": [
+    "V01"
+   ],
+   "line": "Long ago, a great king named Artaban owned a pearl so fine that people said no one could put a price on it."
+  },
+  {
+   "t": "shot",
+   "v": "MZ2-The-Gift-Arrives",
+   "vo": [
+    "V02"
+   ],
+   "line": "He sent it to Rabbi Yehuda, the great sage of the Jewish people, with a message: “Send me something just as precious.”"
+  },
+  {
+   "t": "ask",
+   "v": "MZ2-The-Gift-Arrives",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "What do you think the rabbi sends back?",
+   "o": [
+    "A pearl just as fine",
+    "A small scroll of holy words",
+    "A blessing, in the rabbi’s own hand"
+   ],
+   "a": 1,
+   "why": "A mezuzah: a tiny handwritten scroll, worth almost nothing in coins."
+  },
+  {
+   "t": "shot",
+   "v": "MZ3-The-Mezuzah",
+   "vo": [
+    "V03"
+   ],
+   "line": "The rabbi sent back a mezuzah: a tiny scroll, written by hand, made to be fixed to the doorpost of a home."
+  },
+  {
+   "t": "shot",
+   "v": "MZ3-The-Mezuzah",
+   "vo": [
+    "V04"
+   ],
+   "line": "Inside are words from the Torah, beginning: “Hear, O Israel, the Lord our God, the Lord is one.” The same passage says, write them on your doorposts."
+  },
+  {
+   "t": "shot",
+   "v": "MZ4-King-Frowns",
+   "vo": [
+    "V05"
+   ],
+   "line": "The king was offended. “I sent you something priceless, and you send me something worth a coin?”"
+  },
+  {
+   "t": "ask",
+   "v": "MZ4-King-Frowns",
+   "eb": "did you know?",
+   "q": "A real mezuzah scroll can’t be printed. Who has to make it?",
+   "o": [
+    "A trained scribe, by hand, on parchment",
+    "Any rabbi, with a blessing said over it",
+    "The family, on the day they move in"
+   ],
+   "a": 0,
+   "why": "A sofer writes it with a quill and special ink, letter by letter. One missing or broken letter makes it unfit."
+  },
+  {
+   "t": "shot",
+   "v": "MZ5-Guards-At-Night",
+   "vo": [
+    "V06"
+   ],
+   "line": "The rabbi answered: “You sent me something I must guard. I sent you something that guards you, even while you sleep.”"
+  },
+  {
+   "t": "ask",
+   "v": "MZ5-Guards-At-Night",
+   "eb": "did you know?",
+   "q": "The Talmud says the scroll in a home’s mezuzah should be checked. How often?",
+   "o": [
+    "Once a year, before Passover",
+    "Twice every seven years",
+    "Never, once it’s been put up"
+   ],
+   "a": 1,
+   "why": "Twice in seven years, since ink fades and parchment cracks. Something that guards you needs looking after too."
+  },
+  {
+   "t": "shot",
+   "v": "MZ6-Today-Doorframe",
+   "vo": [
+    "V07"
+   ],
+   "line": "Today, many Jewish homes have a mezuzah on the right doorpost as you walk in, often slanted. Many people touch it as they pass.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "MZ6-Today-Doorframe",
+   "eb": "why?",
+   "q": "Many mezuzahs hang slanted. Why?",
+   "o": [
+    "So rainwater runs off the parchment",
+    "So the top points toward Jerusalem",
+    "Two teachers disagreed; it’s a bit of both"
+   ],
+   "a": 2,
+   "why": "Rashi said hang it upright; his grandson Rabbeinu Tam said lay it flat. Many Ashkenazi Jews slant it, honoring both. Many Sephardi Jews hang it upright."
+  },
+  {
+   "t": "teach",
+   "v": "MZ5-Guards-At-Night",
+   "say": [
+    "here’s what i love. the rabbi’s gift was worth almost nothing in coins, and it was the one that kept watch.",
+    "in jewish tradition the mezuzah isn’t a lucky charm. the great teacher maimonides said so himself. it’s the words, and what they remind you of, every time you cross the door."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "MZ6-Today-Doorframe",
+   "eb": "the hard one",
+   "q": "The king measured gifts by price. By the rabbi’s measure, which gift was worth more?",
+   "o": [
+    "The pearl: no one could price it",
+    "The scroll: it looks after its keeper",
+    "Both: each was given freely"
+   ],
+   "a": 1,
+   "why": "The scroll. One treasure you lock away. The other you live with, every time you walk through your door."
+  }
+ ],
+ "today": {
+  "v": "MZ6-Today-Doorframe",
+  "say": "today, as you leave home, rest your fingers on the doorframe for one second, the way people touch a mezuzah, and carry one good word out with you.",
+  "options": [
+   [
+    "I’ll try it today",
+    "that little touch is the whole idea. take the words with you."
+   ],
+   [
+    "I’ll just picture it",
+    "that works too. your door will still be there tomorrow."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "Two angels at the door.",
+  "line": "friday night, two angels walk someone home. what they find inside matters."
+ },
+ "card": {
+  "from": "from the Jerusalem Talmud",
+  "mins": 5,
+  "keep": "mezuzah",
+  "keepName": "The mezuzah",
+  "keepWhy": "Words that keep watch on the door.",
+  "keepSvg": "<g transform=\"rotate(-22 50 50)\"><rect x=\"42\" y=\"16\" width=\"16\" height=\"68\" rx=\"6\" fill=\"#2a1b05\"/><rect x=\"47\" y=\"28\" width=\"6\" height=\"12\" rx=\"2\" fill=\"#f4f1e8\" opacity=\".5\"/></g>",
+  "sources": [
+   "Jerusalem Talmud, Peah 1:1 (Artaban sends Rabbi a priceless gem or pearl; Rabbi sends a mezuzah; ‘you sent me something I must guard, I sent you something that guards you while you sleep’)",
+   "Proverbs 6:22 (cited by Rabbi in the story: ‘when you lie down it shall watch over you’)",
+   "Deuteronomy 6:4–9 (the Shema; write them on the doorposts of your house, 6:9)",
+   "Rashi and Rabbeinu Tam on the mezuzah’s position (Tosafot, Menachot 33a); Shulchan Aruch, Yoreh De’ah 289:6, with the Rema (the slant)",
+   "Maimonides, Mishneh Torah, Laws of Mezuzah 5:4 (not an amulet)",
+   "Babylonian Talmud, Menachot 33b; Shulchan Aruch, Yoreh De’ah 289:2 (the right side, as you enter)"
+  ],
+  "check": [
+   "Artaban’s gift: the Hebrew margalit is often rendered ‘pearl’, sometimes ‘precious stone’; the lesson says pearl",
+   "The king’s complaint paraphrased as ‘worth a coin’ (the Yerushalmi names a small coin, a follar); Rabbi’s reply paraphrased",
+   "Artaban described only as ‘a great king’ (usually identified as a Parthian king, Artabanus); parallel in Genesis Rabbah 35:3 to confirm"
+  ]
+ }
+}

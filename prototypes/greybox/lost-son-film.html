@@ -1,0 +1,692 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Son Who Came Home Film</title>
+<meta name="description" content="Story-film version of the Christianity class 'The son who came home': the parable as a short moving film with three pauses and a quick quiz, framed by the warm hill.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+  /* The son who came home, sacred-art version (2026-10-28). Two registers:
+     the hill (warm paintings, Nunito, mascot) for your life, reflection and exploring;
+     the sacred story (full-bleed oil-lamp art, Garamond, slow camera, no mascot) for the parable.
+     One deliberate dark look, so no light/dark switch. */
+  :root {
+    --panel: #1c2440;
+    --night: #070a14;
+    --text: #fbf6ee;
+    --muted: #b9bfd3;
+    --gold: #f0b93d;
+    --lamp: #f5c46a;
+    --gold-ink: #24190a;
+    --chip: rgba(255, 255, 255, 0.08);
+    --line: rgba(255, 255, 255, 0.24);
+    --teacher: #6fb39a;
+    --serif: "EB Garamond", Garamond, "Iowan Old Style", Georgia, serif;
+    color-scheme: dark;
+  }
+  [hidden] { display: none !important; }
+  html, body { height: 100%; }
+  body { margin: 0; overflow: hidden; background: var(--panel); color: var(--text);
+    font-family: Nunito, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; -webkit-tap-highlight-color: transparent; }
+  button { font-family: inherit; }
+
+  /* ── the hill ── */
+  #hill { height: 100%; max-width: 640px; margin: 0 auto; display: flex; flex-direction: column; position: relative; }
+  .art { position: relative; flex: 1 1 auto; min-height: 36%; overflow: hidden; background: #2a2440; }
+  .art img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0;
+    transition: opacity 1.2s ease; transform-origin: var(--fx, 50%) var(--fy, 50%); }
+  .art img.show { opacity: 1; animation: drift 24s ease-in-out infinite alternate; }
+  @keyframes drift { from { transform: scale(1); } to { transform: scale(1.06); } }
+  .art .shade { position: absolute; left: 0; right: 0; bottom: 0; height: 30%; pointer-events: none;
+    background: linear-gradient(transparent, rgba(28, 36, 64, 0.55)); }
+  .hud { position: absolute; left: 0; right: 0; top: 0; padding: calc(env(safe-area-inset-top, 0px) + 10px) 12px 0;
+    display: flex; align-items: center; gap: 8px; z-index: 2; }
+  .bars { flex: 1; display: flex; gap: 4px; background: rgba(20, 24, 40, 0.35); border-radius: 8px; padding: 4px; }
+  .bars i { flex: 1; height: 5px; border-radius: 5px; background: rgba(255, 255, 255, 0.35); }
+  .bars i.on { background: var(--gold); }
+  .pill { border: 0; border-radius: 999px; background: rgba(255, 255, 255, 0.88); color: #20252c; cursor: pointer;
+    font-weight: 800; font-size: 12px; line-height: 1; padding: 8px 11px; }
+
+  .sheet { flex: 0 1 auto; max-height: 62%; overflow-y: auto; background: var(--panel); border-radius: 22px 22px 0 0;
+    margin-top: -18px; position: relative; z-index: 1; padding: 18px 18px calc(env(safe-area-inset-bottom, 0px) + 16px);
+    display: flex; flex-direction: column; gap: 12px; box-sizing: border-box; }
+  .sheet > * { animation: rise 0.5s ease both; }
+  @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+  .eyebrow { font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
+  .h { font-size: 23px; line-height: 1.25; font-weight: 800; margin: 0; text-wrap: balance; }
+  .p { font-size: 16px; line-height: 1.5; margin: 0; color: rgba(255, 255, 255, 0.9); }
+  .sub { font-size: 13px; color: var(--muted); margin: 0; line-height: 1.45; }
+  .top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+  .top > div { display: flex; flex-direction: column; gap: 8px; min-width: 0; flex: 1; }
+  .buddy { flex: none; width: 72px; height: 72px; border-radius: 20px; background: #fffbf3; object-fit: cover; }
+  .say { display: flex; gap: 10px; align-items: flex-end; }
+  .av { flex: none; width: 34px; height: 34px; border-radius: 50%; overflow: hidden; background: #fffbf3;
+    border: 2.5px solid var(--teacher); box-sizing: border-box; }
+  .av img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .say p { margin: 0; background: #fff; color: #15181c; border-radius: 16px 16px 16px 4px; padding: 9px 13px; font-size: 15.5px; line-height: 1.45; }
+  .who { font-size: 11px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teacher); margin: 0 0 2px 44px; }
+  .u { align-self: flex-end; max-width: 82%; background: var(--gold); color: var(--gold-ink); border-radius: 16px 16px 4px 16px;
+    padding: 9px 13px; font-size: 15.5px; font-weight: 700; overflow-wrap: anywhere; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { border: 1.5px solid var(--line); background: var(--chip); color: var(--text); border-radius: 999px; padding: 10px 14px;
+    font-weight: 700; font-size: 15px; line-height: 1.2; cursor: pointer; text-align: left; }
+  .btns { display: flex; gap: 10px; }
+  .btn { flex: 1; border: 0; border-radius: 14px; padding: 14px; font-weight: 800; font-size: 16px; line-height: 1; cursor: pointer;
+    background: var(--gold); color: var(--gold-ink); }
+  .btn.ghost { background: transparent; color: var(--text); border: 1.5px solid var(--line); }
+  .card { background: rgba(255, 255, 255, 0.07); border-radius: 14px; padding: 12px 14px; display: flex; flex-direction: column; gap: 6px; }
+  .tag { align-self: flex-start; font-size: 11px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
+    border-radius: 999px; padding: 4px 9px; border: 1px solid currentColor; }
+  .tag.practical { color: #9fd4bf; }
+  .tag.yours { color: var(--gold); }
+  .ask { display: flex; gap: 8px; }
+  .ask input { flex: 1; min-width: 0; border: 0; border-radius: 999px; padding: 12px 16px; background: rgba(255, 255, 255, 0.12);
+    color: var(--text); font: 600 16px Nunito, system-ui, sans-serif; }
+  .ask .btn { flex: none; padding: 12px 16px; }
+  .help988 { background: #fff; color: #15181c; border-radius: 14px; padding: 12px 14px; font-size: 15px; line-height: 1.45; }
+  .help988 b { display: block; margin-bottom: 4px; }
+  .timer { font-size: 44px; font-weight: 800; text-align: center; font-variant-numeric: tabular-nums; letter-spacing: 0.02em; }
+  .places { display: flex; flex-direction: column; gap: 8px; }
+  .place { display: flex; flex-direction: column; gap: 2px; text-align: left; border: 1.5px solid var(--line); background: var(--chip);
+    color: var(--text); border-radius: 14px; padding: 12px 14px; cursor: pointer; }
+  .place b { font-size: 16px; }
+  .place span { font-size: 14px; color: var(--muted); }
+  .deeper { display: flex; flex-direction: column; gap: 10px; }
+  .deeper b { display: block; font-size: 14px; color: var(--gold); margin-bottom: 2px; }
+  .deeper p { margin: 0; font-size: 15px; line-height: 1.5; color: rgba(255, 255, 255, 0.88); }
+
+  /* ── the sacred story ── */
+  #sacred { position: fixed; inset: 0; z-index: 4; background: var(--night); opacity: 0; pointer-events: none;
+    transition: opacity 1.4s ease; overflow: hidden; }
+  #sacred.on { opacity: 1; pointer-events: auto; }
+  #sacred:not(.on) * { pointer-events: none !important; }
+  .backdrop { position: absolute; inset: -40px; background-size: cover; background-position: center;
+    filter: blur(28px) brightness(0.35) saturate(1.1); opacity: 0; transition: opacity 1.8s ease; }
+  .backdrop.on { opacity: 1; }
+  .stage { position: absolute; top: 0; bottom: 0; left: 50%; transform: translateX(-50%); width: min(100%, 62vh); overflow: hidden; }
+  .frame { position: absolute; opacity: 0; transition: opacity 2s ease; will-change: transform, opacity; }
+  .frame.on { opacity: 1; }
+  .frame img { width: 100%; height: 100%; display: block; }
+  .clip { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0;
+    transition: opacity 1.1s ease; background: var(--night); }
+  .clip.on { opacity: 1; }
+  .ask2 .chips { flex-direction: column; align-items: stretch; }
+  .ask2 .chip { text-align: left; }
+  .ask2 .chip.right { border-color: var(--lamp); background: rgba(245, 196, 106, 0.18); }
+  .ask2 .chip.wrong { opacity: 0.5; }
+  .paused { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 64px; height: 64px; border-radius: 50%;
+    background: rgba(10, 14, 28, 0.55); display: grid; place-items: center; color: #fbf3e4; font-size: 22px; pointer-events: none;
+    opacity: 0; transition: opacity 0.4s ease; }
+  .paused.on { opacity: 1; }
+  .flame { position: absolute; width: 22%; aspect-ratio: 1; transform: translate(-50%, -50%); border-radius: 50%; pointer-events: none;
+    background: radial-gradient(circle, rgba(255, 196, 110, 0.55), rgba(255, 160, 60, 0.12) 45%, transparent 70%);
+    mix-blend-mode: screen; animation: flicker 3.1s ease-in-out infinite; }
+  .flame.s { width: 12%; animation-duration: 2.3s; }
+  @keyframes flicker { 0%, 100% { opacity: 0.55; transform: translate(-50%, -50%) scale(1); } 23% { opacity: 0.85; } 41% { opacity: 0.6; transform: translate(-50%, -51%) scale(1.06); }
+    67% { opacity: 0.9; } 82% { opacity: 0.65; transform: translate(-50%, -50%) scale(0.97); } }
+  .vignette { position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(120% 85% at 50% 45%, transparent 55%, rgba(4, 6, 14, 0.7) 100%),
+                linear-gradient(transparent 52%, rgba(4, 7, 16, 0.55) 72%, rgba(4, 7, 16, 0.92)); }
+  #dust { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+  .words { position: absolute; left: 0; right: 0; bottom: 0; padding: 0 24px calc(env(safe-area-inset-bottom, 0px) + 30px);
+    display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; pointer-events: none; }
+  .label { font-size: 11px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--lamp);
+    opacity: 0; transition: opacity 1s ease; }
+  .line { font-family: var(--serif); font-weight: 500; font-size: clamp(20px, 5.4vw, 24px); line-height: 1.4; margin: 0; max-width: 30ch;
+    text-wrap: balance; color: #fbf3e4; text-shadow: 0 1px 14px rgba(0, 0, 0, 0.85), 0 0 2px rgba(0, 0, 0, 0.6);
+    opacity: 0; transform: translateY(6px); transition: opacity 1.4s ease, transform 1.4s ease; }
+  .on-words .label, .on-words .line { opacity: 1; transform: none; }
+  .hint { font-size: 12px; color: rgba(251, 243, 228, 0.55); letter-spacing: 0.06em; opacity: 0; transition: opacity 1.2s ease; }
+  .hint.on { opacity: 1; }
+  .title { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;
+    text-align: center; padding: 24px; opacity: 0; transition: opacity 1.6s ease; pointer-events: none; }
+  .title.on { opacity: 1; }
+  .title .lamp { width: 14px; height: 26px; border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    background: radial-gradient(circle at 50% 70%, #fff3cf, #ffc561 45%, #e2801f 80%); box-shadow: 0 0 40px 14px rgba(255, 176, 70, 0.35);
+    animation: lamp 2.6s ease-in-out infinite; }
+  @keyframes lamp { 0%, 100% { transform: scale(1); } 40% { transform: scale(1.06, 0.96); } 70% { transform: scale(0.97, 1.04); } }
+  .title h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(34px, 9vw, 44px); margin: 0; color: #fbf3e4; letter-spacing: 0.01em; }
+  .title p { font-family: var(--serif); font-style: italic; font-size: 18px; margin: 0; color: rgba(251, 243, 228, 0.7); }
+  .read { position: absolute; left: 50%; bottom: calc(env(safe-area-inset-bottom, 0px) + 28px); transform: translateX(-50%);
+    width: min(100% - 32px, 420px); box-sizing: border-box; background: rgba(10, 14, 28, 0.72); border: 1px solid rgba(245, 196, 106, 0.35);
+    -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); border-radius: 18px; padding: 18px 18px 16px;
+    display: flex; flex-direction: column; gap: 10px; opacity: 0; transition: opacity 1.2s ease; pointer-events: none; }
+  .read.on { opacity: 1; pointer-events: auto; }
+  .read .line { opacity: 1; transform: none; font-size: 21px; max-width: none; text-shadow: none; text-align: left; }
+  .read .note { font-size: 13px; color: var(--muted); margin: 0; line-height: 1.45; }
+  .read .label { opacity: 1; text-align: left; }
+  .sbar { position: absolute; top: calc(env(safe-area-inset-top, 0px) + 12px); left: 0; right: 0; padding: 0 12px;
+    display: flex; align-items: center; justify-content: space-between; gap: 10px; z-index: 2; }
+  .dots { display: flex; gap: 6px; }
+  .dots i { width: 6px; height: 6px; border-radius: 50%; background: rgba(251, 243, 228, 0.25); transition: background 0.6s; }
+  .dots i.on { background: var(--lamp); }
+  .ghostbtn { border: 0; background: rgba(10, 14, 28, 0.45); color: rgba(251, 243, 228, 0.8); border-radius: 999px; font-size: 13px;
+    font-weight: 700; padding: 7px 12px; cursor: pointer; }
+  .tapzone { position: absolute; inset: 0; cursor: pointer; }
+  .warm { position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity 1.6s ease;
+    background: radial-gradient(circle at 50% 60%, rgba(255, 214, 150, 0.95), rgba(240, 185, 61, 0.6) 50%, rgba(28, 36, 64, 1)); }
+  .warm.on { opacity: 1; }
+
+  .cover { position: fixed; inset: 0; z-index: 6; display: grid; place-items: center; padding: 16px; background: rgba(10, 14, 28, 0.6);
+    -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+  .cover .box { background: var(--panel); border-radius: 22px; padding: 22px; max-width: 460px; width: 100%; box-sizing: border-box;
+    display: flex; flex-direction: column; gap: 12px; max-height: calc(100% - 32px); overflow-y: auto; }
+  .cover ul { margin: 0; padding-left: 18px; color: rgba(255, 255, 255, 0.88); font-size: 15px; line-height: 1.5; display: grid; gap: 5px; }
+  .cover h3 { margin: 6px 0 0; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); }
+  .was { font-size: 14.5px; line-height: 1.5; color: rgba(255, 255, 255, 0.82); white-space: pre-line; background: rgba(255, 255, 255, 0.06);
+    border-radius: 12px; padding: 12px; margin: 0; }
+  @media (prefers-reduced-motion: reduce) {
+    .art img.show, .flame, .title .lamp { animation: none; }
+    .frame { transition: opacity 1s ease !important; }
+  }
+
+  /* inside the hill app (?app=1) */
+  .in-app #aboutBtn, .in-app #sNotes { display: none; }
+  .appx { position: fixed; z-index: 60; left: 12px; top: calc(env(safe-area-inset-top, 0px) + 10px); width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(255,255,255,.3); background: rgba(10,12,24,.55); color: #fbf6ee; font: 700 16px/1 Nunito, system-ui, sans-serif; cursor: pointer; }
+  .in-app .hud { padding-left: 56px; }
+  .in-app .sbar { padding-left: 56px; }
+
+  /* the story fire: push into the flames, then the film */
+  .firego { position: fixed; inset: 0; z-index: 55; overflow: hidden; background: #000; opacity: 0; pointer-events: none; transition: opacity .35s; }
+  .firego.on { opacity: 1; pointer-events: auto; }
+  .firego video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .react { position: absolute; right: 16px; top: -36px; width: 72px; height: 72px; border-radius: 50%; object-fit: cover; border: 2px solid var(--lamp); box-shadow: 0 0 18px rgba(245,196,106,.45); }
+  .firego img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 63% 60%; transform-origin: 63% 66%; transition: transform 2.1s cubic-bezier(.55,0,.35,1), filter 2.1s; }
+  .firego.push img { transform: scale(5.5); filter: brightness(1.6) saturate(1.2) blur(2px); }
+  .firego .glow { position: absolute; inset: 0; background: radial-gradient(circle at 63% 66%, rgba(255,190,90,.0), rgba(255,170,60,0) 30%); transition: background 2.1s; }
+  .firego.push .glow { background: radial-gradient(circle at 50% 55%, rgba(255,214,140,.95), rgba(255,160,60,.9) 60%, #2a1405); }
+
+  /* app branding (2026-10-28): same fonts, rows, buttons and yellow as the app */
+  :root { --gold: #EEFF6A; --gold-ink: #0A0A0A; --brand: #EEFF6A; }
+  body, button, input, .p, .sub, .say p { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  .h, .title h1, .line, h1, h2, h3, .chip, .say p, .u, .read .line { font-family: Manrope, Inter, system-ui, sans-serif; }
+  .h { font-weight: 800; letter-spacing: -0.02em; }
+  .title h1 { font-weight: 800; letter-spacing: -0.02em; }
+  .title p { font-family: Inter, system-ui, sans-serif; font-style: normal; font-weight: 500; }
+  .line, .read .line { font-weight: 600; letter-spacing: -0.01em; }
+  .eyebrow, .label, .who, .hint { font-family: Inter, system-ui, sans-serif !important; font-weight: 600 !important; font-size: 11px !important; letter-spacing: 0.14em !important; text-transform: uppercase; }
+  .eyebrow, .who { color: #B9BFD3 !important; }
+  .label { color: var(--brand) !important; }
+  .chips { display: flex; flex-direction: column; align-items: stretch; gap: 9px; }
+  .chip { display: block; width: 100%; text-align: left; border-radius: 16px !important; padding: 14px 16px !important; background: #141B33 !important; border: 1px solid #2A3150 !important; color: #FBF6EE !important; font-size: 17px !important; font-weight: 500 !important; line-height: 1.3 !important; }
+  .chip:hover { border-color: rgba(238, 255, 106, 0.55) !important; }
+  .chip.right { border-color: var(--brand) !important; background: rgba(238, 255, 106, 0.14) !important; }
+  .chip.wrong { opacity: 0.45; }
+  .btn { font-family: Inter, system-ui, sans-serif !important; font-weight: 700 !important; text-transform: uppercase; letter-spacing: 0.06em; font-size: 14px !important; border-radius: 999px !important; background: var(--brand) !important; color: #0A0A0A !important; }
+  .btn.ghost { background: transparent !important; color: #FBF6EE !important; border: 1.5px solid #FBF6EE !important; }
+  .say p { background: #141B33 !important; color: #FBF6EE !important; border: 1px solid #2A3150; border-radius: 18px 18px 18px 4px !important; font-size: 17px !important; font-weight: 500; line-height: 1.35 !important; }
+  .u { background: #FBF6EE !important; color: #0A0A0A !important; font-weight: 600; }
+  .bars i.on, .dots i.on { background: var(--brand) !important; }
+  .appx { font-family: Inter, system-ui, sans-serif; }
+</style>
+
+<div id="hill">
+  <div class="art" id="art">
+    <img id="imgA" alt=""><img id="imgB" alt="">
+    <div class="shade"></div>
+    <div class="hud">
+      <div class="bars" id="bars" aria-label="progress"></div>
+      <button class="pill" id="aboutBtn">review notes</button>
+    </div>
+  </div>
+  <div class="sheet" id="sheet" aria-live="polite"></div>
+</div>
+
+<div id="sacred" aria-live="polite">
+  <div class="backdrop" id="backdrop"></div>
+  <div class="stage" id="stage">
+    <video class="clip" id="vA" muted playsinline preload="auto"></video>
+    <video class="clip" id="vB" muted playsinline preload="auto"></video>
+    <canvas id="dust" aria-hidden="true"></canvas>
+    <div class="vignette"></div>
+    <div class="title" id="title"><div class="lamp" aria-hidden="true"></div><h1>The son who came home</h1><p>a story Jesus told</p></div>
+    <div class="tapzone" id="tap" role="button" aria-label="Pause or play the story" tabindex="0"></div>
+    <div class="paused" id="paused" aria-hidden="true">❚❚</div>
+    <div class="words" id="words"><div class="label" id="label"></div><p class="line" id="line"></p><div class="hint" id="hint">tap to continue</div></div>
+    <div class="read" id="read"></div>
+    <div class="sbar"><button class="ghostbtn" id="sBack" aria-label="Previous">‹ back</button><div class="dots" id="dots"></div><button class="ghostbtn" id="sSound" aria-pressed="true">sound on</button><button class="ghostbtn" id="sNotes">notes</button></div>
+  </div>
+  <div class="warm" id="warm"></div>
+</div>
+
+<div class="firego" id="firego" aria-hidden="true"><video id="fireVid" src="art/world/story-fire-in.mp4" poster="art/world/story-circle.webp" muted playsinline preload="auto"></video></div>
+
+<div class="cover" id="about" hidden>
+  <div class="box">
+    <div class="eyebrow">Christianity · month 1 · class 3 · story film version</div>
+    <div class="h">Review notes</div>
+    <ul>
+      <li>A separate version for comparison: the story plays as a short film of twelve moving scenes (about 90 seconds), with three pauses and a three-question quick check. The current lesson in the app is unchanged.</li>
+      <li>Pauses: two guesses (what happens next) and one "your turn" with no wrong answer.</li>
+      <li>Jesus tells this story; he does not appear in any scene. The father and son are characters in the parable.</li>
+      <li>Captions follow the World English Bible (public domain), Luke 15:11-24, shortened in places. The last scene is labeled Luke 15:22-24.</li>
+      <li>Narrator: a stand-in voice (Runway text to speech, ElevenLabs voice “Elias”) until the real narrator records it. Captions follow the voice; “sound off” keeps captions only. Tap the film to pause it.</li>
+      <li><b>Scholar review is still pending.</b> Not for release.</li>
+    </ul>
+    <h3>Art notes</h3>
+    <ul>
+      <li>Twelve pictures from ChatGPT (original compositions, not copied from any famous painting), each turned into an 8-second clip in Runway (Seedance 2.0) through ChatGPT.</li>
+      <li>The hill paintings are the Hindu test's for now; Olive Grove art would replace them.</li>
+    </ul>
+    <h3>The story in today's version</h3>
+    <p class="was" id="was"></p>
+    <button class="btn" id="aboutClose">Close</button>
+  </div>
+</div>
+
+<script>
+(function () {
+  var $ = function (s) { return document.querySelector(s); };
+  function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+  var still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // ── the class (apps/app/src/content/classes/christian-month1.ts, "The son who came home") ──
+  var LESSON = {
+    life: "Ever messed up so badly you didn't think you could go back?",
+    take: "The door was never shut.",
+    takeSub: "A fresh start can begin with simply turning around.",
+    reading: "Christians read this story as a picture of God: not waiting with a lecture, but running down the road.",
+    tryit: "Is there someone you've drifted from? Today, send one short, kind message. No speech needed.",
+    question: "Your brother comes back after years of silence, embarrassed. You:",
+    options: ["make him explain everything first.", "run down the road.", "pretend you didn't see him."],
+    reveal: "The father didn't wait for the speech. He ran.",
+  };
+  var WAS = "Jesus told a story. A young man asked his father for his share of the family money, left home, and spent it all on wild living.\n\nThen famine came. Broke and hungry, he ended up feeding pigs, wishing he could eat what they ate.\n\nSo he rehearsed a speech: \"Father, I've sinned. I'm not worthy to be your son. Make me one of your hired workers.\" And he started walking home.\n\nBut while he was still a long way off, his father saw him, ran to him, hugged him and kissed him. Before the son could finish his speech, the father called for a robe, a ring and a feast. \"This son of mine was dead, and is alive again. He was lost, and is found.\"";
+  $("#was").textContent = WAS;
+
+  // the film: 12 shots (8-second clips), a narrator line per shot (captions follow it; timed captions if sound is off), three pauses
+  var CLIPS = "art/sacred/lost-son/clips/", VOICE = "art/sacred/lost-son/voice/";
+  var READNOTE = "This is a parable, a story Jesus told to teach. In Luke 15 it goes on: the older brother won’t join the party, and the father goes out to him too.";
+  var TOLD = "a story Jesus told";
+  var SHOTS = [
+    { v: "C01-He-Asks", label: TOLD, vo: ["L01"], cap: [[0.6, "Jesus told a story. A young man said to his father, “Give me my share of what’s coming to me.”"]] },
+    { v: "C02-The-Purse", label: TOLD, vo: ["L02"], cap: [[0.6, "So the father divided what he had."]] },
+    { v: "C03-He-Leaves", label: TOLD, vo: ["L03"], cap: [[0.6, "Not many days later, the younger son packed everything and left for a far country."]] },
+    { v: "C04-Far-Country", label: TOLD, vo: ["L04"], cap: [[0.6, "There he wasted it all on wild living."]] },
+    { v: "C05-Famine", label: TOLD, vo: ["L05"], cap: [[0.6, "Then a severe famine came over that country, and he began to be in need."]] },
+    { v: "C06-The-Pigs", label: TOLD, vo: ["L06"], cap: [[0.6, "He took a job feeding pigs. He longed to eat what the pigs ate, and no one gave him anything."]] },
+    { v: "C07-His-Senses", label: TOLD, vo: ["L07"], cap: [[0.8, "Then he came to himself."]] },
+    { v: "C08-Road-Home", label: TOLD, vo: ["L08"], cap: [[0.6, "He set off for home, practicing his speech: “Father, I have sinned. Make me one of your hired servants.”"]] },
+    { v: "C09-Rooftop", label: TOLD, vo: ["L09"], cap: [[0.8, "But while he was still far off, his father saw him."]] },
+    { v: "C10-Father-Runs", label: TOLD, vo: ["L10"], cap: [[0.6, "He was moved with compassion. He ran, threw his arms around him, and kissed him."]] },
+    { v: "C11-Embrace", label: TOLD, vo: ["L11"], cap: [[0.6, "The son began his speech. The father didn’t let him finish."]] },
+    { v: "C12-Feast", label: "Luke 15:22-24", vo: ["L12", "L13"], cap: [[0.6, "“Bring out the best robe. Put a ring on his hand. Let’s celebrate.”"], [4.4, "“This, my son, was dead, and is alive again. He was lost, and is found.”"]] },
+  ];
+  // pauses come after a shot: a guess (one answer), or "you" (no wrong answer)
+  var PAUSES = {
+    3: { kind: "guess", label: "your guess", q: "The money runs out. What happens to all his new friends?",
+      options: ["They help him out.", "They disappear.", "They lend him more."], answer: 1,
+      reveal: "They disappear. When it was all gone, no one gave him anything." },
+    6: { kind: "you", label: "your turn", q: "If you were him, what would you do?",
+      options: ["Go home and ask to be a worker.", "Stay. Too ashamed to face them.", "Send word first, and wait."],
+      replies: ["That’s what he did. Watch what happens.", "A lot of us would. Shame keeps people far from home. Watch what he does.", "That feels safer. He didn’t wait. Watch."] },
+    8: { kind: "guess", label: "your guess", q: "What does the father do?",
+      options: ["Waits at the door, arms crossed.", "Sends a servant to ask why he’s back.", "Runs to him."], answer: 2,
+      reveal: "He runs, before a single word of the speech." },
+  };
+  var QUIZ = [
+    { q: "What did the son plan to ask his father for?", options: ["To be a hired worker", "His money back", "A feast"], answer: 0 },
+    { q: "What did the father do before the son could finish his speech?", options: ["Asked where the money went", "Called for a robe, a ring and a feast", "Told him to wait outside"], answer: 1 },
+    { q: "Christians read the father in this story as a picture of…", options: ["A king", "The older brother", "God"], answer: 2 },
+  ];
+
+  // ── hill paintings ──
+  var SCENES = {
+    class: { src: "art/world/story-circle.webp", fx: "55%", fy: "58%", alt: "The story fire at dusk: a family and the mascot gathered close, an older storyteller beginning." },
+    falls: { src: "art/day-one/3B-Waterfall-Close.webp", fx: "52%", fy: "50%", alt: "The waterfall, mist in warm light, the mascot sitting quietly." },
+    gate: { src: "art/day-one/5B-Step-Out-Gate-Close.webp", fx: "52%", fy: "50%", alt: "The step-out gate with a hanging lantern and the town below." },
+    hill: { src: "art/kit/B1-Hill-From-Above.webp", fx: "52%", fy: "58%", alt: "The whole hill from above: paths, homes, waterfalls and the lake." },
+  };
+  var imgs = [$("#imgA"), $("#imgB")], front = 0, cur = null;
+  function scene(key) {
+    if (cur === key) return; cur = key;
+    var sc = SCENES[key], next = imgs[1 - front];
+    next.onload = function () {
+      next.style.setProperty("--fx", sc.fx); next.style.setProperty("--fy", sc.fy); next.style.objectPosition = sc.fx + " " + sc.fy;
+      next.classList.add("show"); imgs[front].classList.remove("show"); front = 1 - front;
+    };
+    next.alt = sc.alt;
+    if (next.getAttribute("src") === sc.src && next.complete) next.onload(); else next.src = sc.src;
+  }
+
+  // ── words on the hill ──
+  function show(html) { var sh = $("#sheet"); sh.innerHTML = html; sh.scrollTop = 0; }
+  function on(id, fn) { var el = document.getElementById(id); if (el) el.onclick = fn; }
+  function btn(id, label, ghost) { return '<button class="btn' + (ghost ? " ghost" : "") + '" id="' + id + '">' + label + "</button>"; }
+  function teacher(text, label) {
+    return (label ? '<div class="who">the teacher</div>' : "") +
+      '<div class="say"><div class="av"><img src="art/kit/teacher-face.webp" alt="the teacher"></div><p>' + text + "</p></div>";
+  }
+  var LOOPS = { wave: "C1-Wave-3s", nod: "C2-Nod-3s", breathe: "C3-Breathe-8s", celebrate: "C4-Celebrate-3s" };
+  function buddy(kind) { return '<video class="buddy" src="art/kit/' + LOOPS[kind] + '.mp4" autoplay muted loop playsinline aria-hidden="true"></video>'; }
+  function top(inner, kind) { return '<div class="top"><div>' + inner + "</div>" + (kind ? buddy(kind) : "") + "</div>"; }
+  var CRISIS = /suicid|kill (myself|me)|end (my|it all)|self[- ]?harm|hurt(ing)? myself|want to die|don'?t want to (live|be here)|in danger/i;
+  var HELP = '<div class="help988"><b>I\'m really glad you told me.</b>If you might hurt yourself or you\'re in danger, please call or text 988 (in the US) right now, or your local emergency number. You don\'t have to carry this alone.</div>';
+
+  // progress: your life · story · take it · try it · your call · explore
+  var bars = $("#bars"); bars.innerHTML = "<i></i><i></i><i></i><i></i><i></i><i></i>";
+  function progress(n) { [].forEach.call(bars.children, function (b, i) { b.classList.toggle("on", i < n); }); }
+
+  // ── 1. your life ──
+  function life() {
+    scene("class"); progress(1);
+    var draw = function (extra) {
+      show('<div class="eyebrow">your life</div>' + teacher(esc(LESSON.life), true) + extra);
+    };
+    draw('<div class="chips"><button class="chip" id="l0">Yes, I have</button><button class="chip" id="l1">Someone I love has</button><button class="chip" id="l2">Not really</button></div>');
+    var reply = function (pick, text) {
+      draw('<div class="u">' + pick + "</div>" + teacher(text) + '<div class="btns">' + btn("go", "Hear the story") + "</div>");
+      on("go", intoTheFire);
+    };
+    on("l0", function () { reply("Yes, I have", "Most of us have. Hold onto that feeling. This story was told for it."); });
+    on("l1", function () { reply("Someone I love has", "Then keep them in mind while you hear this one."); });
+    on("l2", function () { reply("Not really", "Good. Just listen. You might need this one later, or someone you love might."); });
+  }
+
+  // ── 2. the story film ──
+  var stage = $("#stage"), vids = [$("#vA"), $("#vB")], vf = 0, shot = -1, timers = [], held = false;
+  var dots = $("#dots"); dots.innerHTML = SHOTS.map(function () { return "<i></i>"; }).join("");
+  function later(fn, ms) { timers.push(setTimeout(fn, ms)); }
+  function clearLater() { timers.forEach(clearTimeout); timers = []; }
+  function src(n) { return CLIPS + n + ".mp4"; }
+  function poster(n) { return CLIPS + n + ".webp"; }
+
+  function caption(label, line) {
+    var w = $("#words");
+    w.classList.remove("on-words");
+    if (!line) return;
+    later(function () { $("#label").textContent = label || ""; $("#line").textContent = line; w.classList.add("on-words"); }, 350);
+  }
+
+  // the narrator: one short file per line, played in order; captions follow the voice
+  // the voice plays a little quicker than recorded, and the film moves on when the line ends
+  var VO_RATE = 1.2, MIN_SHOT = 4.5;
+  var vo = new Audio(), voOn = true, voList = [], voDone = true, voWait = null, voShot = null;
+  vo.preload = "auto";
+  function voFinish() { voDone = true; if (voWait) { var f = voWait; voWait = null; f(); } }
+  function voNext() {
+    if (!voOn || !voList.length) return voFinish();
+    var k = voShot.vo.length - voList.length, name = voList.shift();
+    if (voShot.cap[k]) caption(voShot.label, voShot.cap[k][1]);
+    vo.src = VOICE + name + ".mp3"; vo.playbackRate = VO_RATE; vo.defaultPlaybackRate = VO_RATE;
+    // a long line slows the clip a little so the picture keeps moving under the voice
+    vo.onloadedmetadata = function () {
+      var v = vids[vf]; if (still || k > 0 || !v.duration || !vo.duration) return;
+      var left = v.duration - v.currentTime, need = vo.duration / VO_RATE + 0.5;
+      if (need > left) v.playbackRate = Math.max(0.8, left / need);
+    };
+    var p = vo.play(); if (p && p.catch) p.catch(function () { voList = []; voFinish(); });
+  }
+  vo.onended = function () { if (voList.length) later(voNext, 250); else voFinish(); };
+  function voStop() { vo.pause(); voList = []; voWait = null; voDone = true; }
+  function voStart(s, then) { voShot = s; voWait = then || null; voList = (s.vo || []).slice(); voDone = false; voNext(); }
+  function whenVoiceDone(fn) { if (voDone) fn(); else voWait = fn; }
+  function narrated(s) { return voOn && s.vo && s.vo.length; }
+
+  function playShot(i) {
+    clearLater(); hidePanel(); voStop(); held = false; $("#paused").classList.remove("on");
+    if (i >= SHOTS.length) return quiz(0);
+    shot = i;
+    var s = SHOTS[i], v = vids[1 - vf], old = vids[vf];
+    [].forEach.call(dots.children, function (d, k) { d.classList.toggle("on", k <= i); });
+    $("#title").classList.remove("on");
+    $("#backdrop").style.backgroundImage = "url(" + poster(s.v) + ")"; $("#backdrop").classList.add("on");
+    v.onended = null; v.ontimeupdate = null;
+    if (v.getAttribute("src") !== src(s.v)) { v.poster = poster(s.v); v.src = src(s.v); }
+    v.currentTime = 0;
+    v.playbackRate = 1;
+    v.classList.add("on"); old.classList.remove("on"); vf = 1 - vf;
+    later(function () { old.pause(); }, 1200);
+    var fired = {};
+    var moved = false;
+    function moveOn() { if (moved) return; if (held) return later(moveOn, 400); moved = true; afterShot(i); }
+    if (narrated(s)) later(function () { voStart(s, function () { later(moveOn, Math.max(500, ((still ? 7 : MIN_SHOT) - v.currentTime) * 1000)); }); }, 250);
+    else caption();
+    if (still) {
+      // reduced motion: the still picture, captions on a timer (or with the voice)
+      if (!narrated(s)) s.cap.forEach(function (c) { later(function () { caption(s.label, c[1]); }, c[0] * 1000); });
+      if (!narrated(s)) later(moveOn, 8000);
+      return;
+    }
+    v.ontimeupdate = function () {
+      if (narrated(s)) return;
+      s.cap.forEach(function (c, k) { if (!fired[k] && v.currentTime >= c[0]) { fired[k] = 1; caption(s.label, c[1]); } });
+    };
+    // with a narrator, the shot ends with the line (the clip holds its last frame if the line runs long)
+    v.onended = function () { if (voDone) later(moveOn, 300); };
+    var p = v.play(); if (p && p.catch) p.catch(function () { held = true; $("#paused").classList.add("on"); });
+    // load the next clip in the background
+    if (SHOTS[i + 1]) { old.preload = "auto"; later(function () { old.poster = poster(SHOTS[i + 1].v); old.src = src(SHOTS[i + 1].v); }, 1300); }
+  }
+  function afterShot(i) {
+    if (PAUSES[i]) return pauseCard(i);
+    playShot(i + 1);
+  }
+
+  function panel(html) { var r = $("#read"); r.innerHTML = html; r.classList.add("ask2"); later(function () { r.classList.add("on"); }, 200); }
+  function hidePanel() { $("#read").classList.remove("on"); }
+  function followUp(text, id, label) {
+    var note = document.createElement("div");
+    note.style.cssText = "display:flex;flex-direction:column;gap:10px";
+    note.innerHTML = '<p class="note" style="font-size:15px;color:#fbf3e4">' + esc(text) + '</p><div class="btns">' + btn(id, label) + "</div>";
+    $("#read").appendChild(note);
+  }
+
+  function pauseCard(i) {
+    var P = PAUSES[i]; caption();
+    panel('<video class="react" src="art/world/story-fire-react.mp4" autoplay muted loop playsinline aria-hidden="true"></video><div class="label">' + esc(P.label) + '</div><p class="line">' + esc(P.q) + '</p><div class="chips">' +
+      P.options.map(function (t, k) { return '<button class="chip" id="pc' + k + '">' + esc(t) + "</button>"; }).join("") + "</div>");
+    P.options.forEach(function (t, k) {
+      on("pc" + k, function () {
+        var said = P.kind === "guess" ? (k === P.answer ? "You saw it coming. " : "") + P.reveal : P.replies[k];
+        P.options.forEach(function (x, j) {
+          var b = document.getElementById("pc" + j); b.disabled = true;
+          if (P.kind === "guess") b.classList.add(j === P.answer ? "right" : "wrong"); else b.classList.add(j === k ? "right" : "wrong");
+        });
+        followUp(said, "keep", "Keep watching");
+        on("keep", function () { playShot(i + 1); });
+      });
+    });
+  }
+
+  var score = 0;
+  function quiz(n) {
+    caption(); voStop(); vids.forEach(function (v) { v.pause(); });
+    if (n === 0) score = 0;
+    var Q = QUIZ[n];
+    panel('<div class="label">quick check · ' + (n + 1) + " of " + QUIZ.length + '</div><p class="line">' + esc(Q.q) + '</p><div class="chips">' +
+      Q.options.map(function (t, k) { return '<button class="chip" id="qc' + k + '">' + esc(t) + "</button>"; }).join("") + "</div>");
+    Q.options.forEach(function (t, k) {
+      on("qc" + k, function () {
+        if (k === Q.answer) score++;
+        Q.options.forEach(function (x, j) { var b = document.getElementById("qc" + j); b.disabled = true; b.classList.add(j === Q.answer ? "right" : "wrong"); });
+        followUp(k === Q.answer ? "Yes, that’s it." : "Not quite. It’s the one in gold.", "qn", n + 1 < QUIZ.length ? "Next" : "Done");
+        on("qn", function () { if (n + 1 < QUIZ.length) quiz(n + 1); else reading(); });
+      });
+    });
+  }
+
+  function reading() {
+    caption();
+    var r = $("#read"); r.classList.remove("on");
+    later(function () {
+      r.classList.remove("ask2");
+      r.innerHTML = '<div class="label">one way to read it</div><p class="line">' + esc(LESSON.reading) + "</p>" +
+        '<p class="note">' + score + " of " + QUIZ.length + " on the quick check. " + esc(READNOTE) + "</p>" +
+        '<div class="btns">' + btn("again", "Watch again", true) + btn("out", "Step back out") + "</div>";
+      r.classList.add("on");
+      on("again", function () { playShot(0); });
+      on("out", leaveStory);
+    }, 500);
+  }
+
+  function togglePlay() {
+    if (shot < 0 || $("#read").classList.contains("on") || still) return;
+    var v = vids[vf];
+    if (held) {
+      held = false; $("#paused").classList.remove("on");
+      if (!v.ended) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+      if (!voDone) { var q = vo.play(); if (q && q.catch) q.catch(function () {}); }
+    } else {
+      held = true; v.pause(); vo.pause(); $("#paused").classList.add("on");
+    }
+  }
+  function setSound(onOff) {
+    voOn = onOff; var b = $("#sSound");
+    b.textContent = voOn ? "sound on" : "sound off"; b.setAttribute("aria-pressed", voOn ? "true" : "false");
+    if (!voOn) { vo.pause(); voList = []; voFinish(); }
+  }
+  $("#tap").onclick = togglePlay;
+  $("#tap").onkeydown = function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); togglePlay(); } };
+  on("sBack", function () { if (shot > 0) playShot(shot - 1); else leaveStory(true); });
+  on("sSound", function () { setSound(!voOn); });
+  on("sNotes", function () { if (!held) togglePlay(); $("#about").hidden = false; });
+  addEventListener("resize", function () { sizeDust(); });
+
+  function intoTheFire() {
+    var fg = $("#firego"), fv = $("#fireVid"), gone = false; if (still) return enterStory();
+    function go() { if (gone) return; gone = true; enterStory(); later(function () { fg.classList.remove("on"); fv.pause(); }, 300); }
+    fg.classList.add("on");
+    try { fv.currentTime = 1.2; } catch (e) {}
+    fv.playbackRate = 1.5; fv.onended = go;
+    var pl = fv.play(); if (pl && pl.catch) pl.catch(go);
+    later(go, 5600);
+  }
+  function enterStory() {
+    progress(2); shot = -1; clearLater(); voStop(); held = false;
+    vids.forEach(function (v) { v.pause(); v.classList.remove("on"); });
+    $("#backdrop").classList.remove("on"); hidePanel(); caption();
+    [].forEach.call(dots.children, function (d) { d.classList.remove("on"); });
+    $("#warm").classList.remove("on");
+    $("#sacred").classList.add("on");
+    // warm up the first clip and line while the title shows
+    var first = vids[1 - vf]; first.poster = poster(SHOTS[0].v); first.src = src(SHOTS[0].v);
+    if (SHOTS[0].vo) vo.src = VOICE + SHOTS[0].vo[0] + ".mp3";
+    later(function () { $("#title").classList.add("on"); }, 600);
+    later(function () { playShot(0); }, 2800);
+  }
+
+  function leaveStory(back) {
+    clearLater(); voStop(); vids.forEach(function (v) { v.pause(); });
+    if (back === true) { $("#sacred").classList.remove("on"); return; }
+    $("#warm").classList.add("on");
+    later(function () {
+      $("#sacred").classList.remove("on"); hidePanel();
+      takeaway();
+      later(function () { $("#warm").classList.remove("on"); }, 900);
+    }, 1500);
+  }
+
+  // drifting light
+  var cv = $("#dust"), cx = cv.getContext("2d"), dust = [];
+  function sizeDust() { var r = cv.getBoundingClientRect(), d = Math.min(2, devicePixelRatio || 1); cv.width = r.width * d; cv.height = r.height * d; cx.setTransform(d, 0, 0, d, 0, 0); }
+  for (var m = 0; m < 26; m++) dust.push({ x: Math.random(), y: Math.random(), r: 0.5 + Math.random() * 1.4, v: 0.002 + Math.random() * 0.005, p: Math.random() * 6.28 });
+  function tick(t) {
+    if ($("#sacred").classList.contains("on")) {
+      var w = cv.clientWidth, h = cv.clientHeight; cx.clearRect(0, 0, w, h);
+      dust.forEach(function (o) {
+        if (!still) { o.y -= o.v / 16; o.x += Math.sin(t / 2400 + o.p) * 0.0004; if (o.y < -0.05) { o.y = 1.05; o.x = Math.random(); } }
+        var a = 0.14 + 0.26 * Math.abs(Math.sin(t / 1300 + o.p));
+        cx.beginPath(); cx.arc(o.x * w, o.y * h, o.r, 0, 6.283);
+        cx.fillStyle = "rgba(255,214,150," + a + ")"; cx.shadowColor = "#ffbf5a"; cx.shadowBlur = 6; cx.fill();
+      });
+    }
+    requestAnimationFrame(tick);
+  }
+  sizeDust(); requestAnimationFrame(tick);
+
+  // ── 3. take it with you: the mascot is back ──
+  function takeaway() {
+    scene("falls"); progress(3);
+    show(top('<div class="eyebrow">take it with you</div><p class="h">' + esc(LESSON.take) + "</p>" +
+      '<p class="sub">' + esc(LESSON.takeSub) + "</p>", "nod") +
+      '<div class="btns">' + btn("hear", "Hear the story again", true) + btn("have", "Continue") + "</div>");
+    on("hear", enterStory);
+    on("have", tryit);
+  }
+
+  // ── 4. try it ──
+  function tryit() {
+    scene("gate"); progress(4);
+    show('<div class="eyebrow">try it</div><span class="tag practical">practical step</span><p class="p">' + esc(LESSON.tryit) + "</p>" +
+      '<div class="btns">' + btn("later", "Later today", true) + btn("now", "Write it now") + "</div>");
+    on("later", yourCall);
+    on("now", write);
+  }
+  function write() {
+    show(top('<div class="eyebrow">one short, kind message</div><p class="p">No speech needed. Just let them know you thought of them.</p>', "breathe") +
+      '<form class="ask" id="msgForm"><input id="msgIn" maxlength="200" placeholder="Hey, I was thinking about you today." aria-label="Your message" autocomplete="off"><button class="btn" type="submit">Done</button></form>' +
+      '<p class="sub">This stays on your phone. Send it yourself, whenever you\'re ready.</p>');
+    $("#msgForm").onsubmit = function (e) {
+      e.preventDefault();
+      var text = $("#msgIn").value.trim(); if (!text) return;
+      if (CRISIS.test(text)) { show('<div class="eyebrow">one short, kind message</div>' + HELP + '<div class="btns">' + btn("next", "Continue") + "</div>"); on("next", yourCall); return; }
+      finished();
+    };
+  }
+  function finished() {
+    show(top('<div class="eyebrow">you turned around</div><p class="h">That counts. One step down the road.</p>', "celebrate") +
+      '<div class="btns">' + btn("next", "Continue") + "</div>");
+    on("next", yourCall);
+  }
+
+  // ── 5. your call ──
+  function yourCall() {
+    scene("gate"); progress(5);
+    show('<div class="eyebrow">your call</div><p class="h">' + esc(LESSON.question) + "</p>" +
+      '<div class="chips">' + LESSON.options.map(function (t, i) { return '<button class="chip" id="o' + i + '">' + esc(t) + "</button>"; }).join("") + "</div>");
+    LESSON.options.forEach(function (t, i) {
+      on("o" + i, function () {
+        show('<div class="eyebrow">your call</div><div class="u">' + esc(t) + "</div>" +
+          top('<p class="p">' + (i === 1 ? "Me too. " : "That's honest. ") + esc(LESSON.reveal) + "</p>", "nod") +
+          '<div class="btns">' + btn("next", "Go explore") + "</div>");
+        on("next", explore);
+      });
+    });
+  }
+
+  // ── 6. go explore ──
+  function explore() {
+    scene("hill"); progress(6);
+    show('<div class="eyebrow">go explore</div><p class="h">Where to next?</p><div class="places">' +
+      '<button class="place" id="p0"><b>Story fire</b><span>hear the son who came home again</span></button>' +
+      '<button class="place" id="p1"><b>Home</b><span>write to someone you hope comes home</span></button>' +
+      '<button class="place" id="p2"><b>Go deeper</b><span>where this story comes from</span></button></div>' +
+      '<div class="btns">' + btn("done", "Done for today", true) + "</div>");
+    on("p0", enterStory);
+    on("p1", write);
+    on("p2", deeper);
+    on("done", APP ? appDone : bye);
+  }
+  function deeper() {
+    show('<div class="eyebrow">go deeper</div><div class="deeper">' +
+      "<div><b>Where's this from?</b><p>Luke 15:11-32, often called the parable of the prodigal son. It's the third of three “lost” stories in a row: a lost sheep, a lost coin, a lost son.</p></div>" +
+      "<div><b>What about the older brother?</b><p>He's angry and won't come to the party. The story ends with the father going out to invite him in too. We'll come back to him.</p></div>" +
+      "<div><b>The words</b><p>The quotes here follow the World English Bible, a public-domain translation.</p></div>" +
+      '</div><div class="btns">' + btn("back", "Back") + "</div>");
+    on("back", explore);
+  }
+  function bye() {
+    progress(6);
+    show(top('<div class="eyebrow">see you tomorrow</div><p class="h">One short, kind message. That\'s the whole thing.</p>', "wave") +
+      '<div class="btns">' + btn("again", "Start over", true) + "</div>");
+    on("again", life);
+  }
+
+  on("aboutBtn", function () { $("#about").hidden = false; });
+  on("aboutClose", function () { $("#about").hidden = true; });
+  $("#about").onclick = function (e) { if (e.target === this) this.hidden = true; };
+
+  // ── inside the hill app ──
+  var APP = /[?&]app=1/.test(location.search);
+  function appDone() { clearLater(); voStop(); parent.postMessage({ ih: "done", score: score, of: QUIZ.length }, "*"); }
+  if (APP) {
+    document.documentElement.classList.add("in-app");
+    var appx = document.createElement("button"); appx.className = "appx"; appx.textContent = "✕"; appx.setAttribute("aria-label", "Back to the hill");
+    appx.onclick = function () { clearLater(); voStop(); vids.forEach(function (v) { v.pause(); }); parent.postMessage({ ih: "close" }, "*"); };
+    document.body.appendChild(appx);
+  }
+
+  life();
+})();
+</script>

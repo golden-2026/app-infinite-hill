@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="icon" href="data:,"><title>My Own Religion</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0A0A0A;--card:#141414;--card2:#1c1c1c;--y:#EEFF6A;--ink:#0A0A0A;--paper:#F3EFE4;--mute:rgba(244,241,232,.58);--line:rgba(244,241,232,.13);--ok:#19E68C;--no:rgba(243,239,228,.55)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+[hidden]{display:none!important}
+html,body{margin:0;height:100%;background:#000;color:var(--paper);font:500 16px/1.45 Inter,system-ui,sans-serif}
+button{font:inherit;color:inherit;cursor:pointer}
+.stage{min-height:100%;display:flex;justify-content:center;align-items:flex-start;gap:40px}
+.phone{position:relative;width:100%;max-width:430px;height:100dvh;max-height:932px;background:var(--bg);overflow:hidden}
+@media (min-width:900px){.stage{padding:28px;align-items:center}.phone{width:390px;height:844px;border-radius:44px;box-shadow:0 0 0 10px #1c1c1c,0 30px 80px rgba(0,0,0,.6)}}
+.H{font-family:Anton,Impact,sans-serif;text-transform:uppercase;line-height:.92;letter-spacing:.002em;font-weight:400}
+.M{font-family:Manrope,sans-serif}
+.y{color:var(--y)}
+.lbl{font:800 11px/1 Manrope;letter-spacing:.16em;text-transform:uppercase;color:var(--y)}
+/* chrome */
+.sb{position:absolute;top:0;left:0;right:0;height:44px;display:flex;justify-content:space-between;align-items:center;padding:0 26px;font:700 15px Inter;z-index:20;pointer-events:none}
+.sb i{display:inline-block;width:24px;height:11px;border:1.5px solid currentColor;border-radius:3px;position:relative;opacity:.9}
+.sb i:after{content:"";position:absolute;inset:1.5px;right:5px;background:currentColor;border-radius:1px}
+.nav{position:absolute;top:44px;left:0;right:0;height:40px;display:flex;align-items:center;gap:12px;padding:0 18px;z-index:20}
+.back{width:32px;height:32px;border-radius:50%;border:0;background:rgba(255,255,255,.08);display:grid;place-items:center}
+.dots{flex:1;display:flex;gap:6px;justify-content:center}
+.dots b{width:7px;height:7px;border-radius:9px;background:rgba(244,241,232,.22);transition:all .35s cubic-bezier(.2,.9,.3,1)}
+.dots b.on{width:22px;background:var(--y)}
+.dots b.done{background:rgba(238,255,106,.5)}
+.stepn{width:32px;text-align:right;font:800 11px Manrope;color:var(--mute)}
+/* screens */
+.scr{position:absolute;inset:0;padding:96px 20px 26px;display:flex;flex-direction:column;overflow-y:auto;scrollbar-width:none;animation:in .42s cubic-bezier(.2,.9,.3,1)}
+.scr::-webkit-scrollbar{display:none}
+.scr>*{flex-shrink:0}
+@keyframes in{from{opacity:0;transform:translateY(14px)}}
+.btn{display:block;width:100%;border:0;border-radius:999px;padding:18px;font:800 18px/1 Manrope,system-ui,sans-serif;text-transform:none;letter-spacing:0;background:var(--y);color:var(--ink);box-shadow:0 5px 0 #a9b72c;transition:transform .08s}
+.btn:active{transform:translateY(4px);box-shadow:0 1px 0 #a9b72c}
+.btn.ghost{background:transparent;color:var(--paper);box-shadow:none;border:2px solid var(--line);font-size:17px;padding:15px}
+.btn[disabled]{background:#2a2a2a;color:#6f6b63;box-shadow:0 5px 0 #141414}
+.grow{flex:1}
+.guide{display:flex;gap:10px;align-items:flex-end}
+.guide img{width:56px;height:56px;flex:none;border-radius:50%;object-fit:cover;object-position:50% 25%;border:2px solid var(--y,#EEFF6A)}
+/* 2026-11-14 (owner): the path's celebrity guide says every line (my own religion: Justin Bieber); Finn only dances, no words */
+.bub[data-spk]::before{content:attr(data-spk);display:block;margin-bottom:3px;font:800 10.5px/1.2 Manrope,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--y,#EEFF6A)}
+.bub{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:20px 20px 20px 4px;padding:12px 14px;font:700 15px/1.35 Manrope;max-width:270px}
+.small{font:500 12.5px/1.45 Inter;color:var(--mute)}
+.small a{color:var(--paper)}
+.tag{display:inline-flex;align-items:center;gap:6px;font:800 10.5px/1 Manrope;letter-spacing:.14em;text-transform:uppercase;padding:6px 9px;border-radius:99px;border:1.5px solid rgba(238,255,106,.55);color:var(--y);white-space:nowrap}
+.tag.k{border-color:var(--ink);color:var(--ink)}
+/* 1 need */
+.need .H.big{font-size:60px;margin:22px 0 8px}
+.chips{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0 14px}
+.chip{border:2px solid var(--line);border-bottom-width:5px;background:transparent;border-radius:18px;padding:15px 14px;text-align:left;font:800 16px/1.15 Manrope;min-height:64px;transition:transform .12s,background .2s,border-color .2s}
+.chip:active{transform:scale(.97)}
+.chip.on{background:var(--y);color:var(--ink);border-color:#a9b72c}
+.chip small{display:block;font:500 12px Inter;opacity:.6;margin-top:4px}
+/* 2 pick */
+.pick .H.t{font-size:44px;margin:4px 0 10px}
+.poster{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:4/4.3;margin:16px 0 14px;background:#111 50% 22%/cover}
+.poster:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,0) 40%,rgba(10,10,10,.6) 70%,rgba(10,10,10,1))}
+.poster .in{position:absolute;left:16px;right:16px;bottom:14px;z-index:2}
+.poster .play{position:absolute;top:14px;right:14px;z-index:2;background:var(--y);color:var(--ink);font:800 12px Manrope;letter-spacing:.1em;text-transform:uppercase;padding:8px 12px;border-radius:99px}
+.meta{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:8px}
+/* 3 film */
+.film{padding:0;background:#000}
+.film video{position:absolute;top:86px;left:0;width:100%;height:calc(100% - 182px);object-fit:contain;background:#000}
+.film .top{position:absolute;bottom:84px;left:20px;right:20px;display:flex;gap:6px;z-index:3}
+.film .top b{flex:1;height:4px;border-radius:4px;background:rgba(255,255,255,.25);overflow:hidden}
+.film .top b i{display:block;height:100%;width:0;background:var(--y)}
+.film .sound{position:absolute;top:98px;right:16px;z-index:3;border:0;background:rgba(0,0,0,.5);backdrop-filter:blur(8px);border-radius:99px;padding:8px 12px;font:800 12px Manrope;letter-spacing:.08em;text-transform:uppercase}
+.film .low{position:absolute;left:0;right:0;bottom:0;padding:0 20px 14px;z-index:3;display:flex;gap:10px;align-items:center;height:76px}
+.film .low .btn{width:auto;flex:none;font-size:18px;padding:14px 18px}.film .low .row{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}
+/* quiz */
+.q .H{font-size:36px;margin:10px 0 18px}
+.opt{display:block;width:100%;text-align:left;margin:0 0 12px;padding:17px 16px;border-radius:16px;border:2px solid var(--line);border-bottom-width:5px;background:transparent;font:700 17px/1.3 Manrope}
+.opt.right{border-color:var(--ok);color:var(--ok);background:rgba(25,230,140,.08)}
+.opt.wrong{border-color:var(--no);color:var(--no);background:#141414}
+.qbar{height:10px;border-radius:9px;background:rgba(255,255,255,.1);overflow:hidden;flex:1}
+.qbar b{display:block;height:100%;background:var(--y);border-radius:9px;transition:width .5s}
+.fb{margin:auto -20px -26px;padding:20px 20px 26px;border-radius:24px 24px 0 0;background:#10241a;animation:up .35s cubic-bezier(.2,.9,.3,1)}
+.fb.bad{background:var(--card2)}
+@keyframes up{from{transform:translateY(100%)}}
+.fb .H{font-size:30px;color:var(--ok);margin-bottom:6px}.fb.bad .H{color:var(--paper)}
+.fb p{margin:0 0 16px;font:600 15px/1.45 Inter}
+.slots{display:flex;gap:10px;margin:4px 0 18px}.slots span{flex:1;min-height:62px;border-radius:14px;border:2px dashed var(--line);display:flex;align-items:center;justify-content:center;font:800 16px Manrope;color:var(--y);text-align:center;padding:6px}
+.tiles{display:flex;flex-wrap:wrap;gap:10px}.tiles .opt{width:auto;flex:1 1 40%;text-align:center;margin:0;font-size:16px}
+.tiles .opt.used{opacity:.25;pointer-events:none}
+/* 4 keep */
+.keep .H.h{font-size:40px;margin:6px 0 16px}
+.tcard{position:relative;background:var(--y);color:var(--ink);border-radius:26px;padding:24px 22px 20px;margin-top:8px;box-shadow:0 18px 40px rgba(238,255,106,.14);transform:rotate(-1.5deg);touch-action:none;transition:transform .3s cubic-bezier(.2,.9,.3,1)}
+.tcard.lift{transform:rotate(0) scale(1.03) translateY(-6px);box-shadow:0 30px 60px rgba(238,255,106,.25)}
+.tcard .H{font-size:60px;margin:16px 0 18px}
+.tcard .src{font:600 13px/1.45 Inter;border-top:2px solid rgba(10,10,10,.15);padding-top:10px}
+.tcard .src b{font-weight:800}
+.as{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:22px 0 10px}
+.as button{border:2px solid var(--line);border-bottom-width:5px;background:var(--card);border-radius:18px;padding:14px 8px 12px;text-align:center}
+.as button .H{font-size:22px;display:block;color:var(--y)}
+.as button small{display:block;font:500 11.5px/1.3 Inter;color:var(--mute);margin-top:5px}
+.as button:active,.as button.hot{border-color:var(--y);transform:translateY(2px)}
+.skip{background:none;border:0;color:var(--mute);font:700 14px Manrope;text-decoration:underline;padding:10px;margin:0 auto;display:block}
+.hint{text-align:center;font:600 12px Inter;color:var(--mute);margin-top:14px}
+/* kept */
+.kept{align-items:center;text-align:center;justify-content:center;background:radial-gradient(90% 55% at 50% 38%,#1a1d10 0%,var(--bg) 70%)}
+.kept img{width:210px;height:210px}
+.kept .H.big{font-size:84px;color:var(--y);margin:4px 0 8px}
+.mini{background:var(--y);color:var(--ink);border-radius:16px;padding:12px 14px;text-align:left;width:100%;margin:16px 0 18px;display:flex;gap:12px;align-items:center}
+.mini .H{font-size:20px}
+.burst{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.kept>*:not(.burst){position:relative;z-index:1}
+.burst i{position:absolute;width:9px;height:14px;top:-20px;border-radius:2px;animation:fall 2.6s cubic-bezier(.3,.6,.5,1) forwards}
+@keyframes fall{to{transform:translateY(900px) rotate(720deg)}}
+/* 5 religion */
+.rel .H.big{font-size:64px;margin:6px 0 6px}
+.stats{display:flex;gap:8px;margin:10px 0 6px}
+.stat{flex:1;background:var(--card);border-radius:16px;padding:10px 10px 9px}
+.stat .H{font-size:28px;color:var(--y)}
+.stat small{display:block;font:800 10px Manrope;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin-top:3px}
+.sec{margin-top:20px}
+.sec h3{display:flex;justify-content:space-between;align-items:baseline;margin:0 0 8px;font:400 22px Anton;text-transform:uppercase;letter-spacing:.02em}
+.sec h3 small{font:800 11px Manrope;letter-spacing:.12em;color:var(--mute)}
+.pc{display:flex;gap:12px;align-items:center;background:var(--card);border-radius:18px;padding:10px 12px 10px 10px;margin-bottom:8px}
+.pc .th{width:54px;height:54px;border-radius:12px;background:#222 center/cover;flex:none}
+.pc .th.ty{display:grid;place-items:center;background:var(--card2);border:1.5px solid var(--line);font:400 22px Anton;color:var(--y)}
+.pc .tx{flex:1;min-width:0}
+.pc .tx b{display:block;font:800 15.5px/1.25 Manrope}
+.pc .tx span{display:block;font:500 12px/1.35 Inter;color:var(--mute);margin-top:3px}
+.pc .tag{font-size:9.5px;padding:5px 7px;align-self:flex-start}
+.pc.new{outline:2px solid var(--y)}
+.fab{position:sticky;bottom:0;margin:18px -20px -26px;padding:14px 20px 24px;background:linear-gradient(180deg,rgba(10,10,10,0),var(--bg) 35%)}
+/* 6 share */
+.share{align-items:center;background:radial-gradient(80% 60% at 50% 40%,#1c1c1c,#0A0A0A)}
+.story{position:relative;width:286px;aspect-ratio:9/16;border-radius:22px;overflow:hidden;background:#0b0b0b;box-shadow:0 20px 50px rgba(0,0,0,.6);margin:6px 0 16px}
+.story .bars{position:absolute;top:10px;left:10px;right:10px;display:flex;gap:4px;z-index:3}
+.story .bars b{flex:1;height:2.5px;border-radius:3px;background:rgba(255,255,255,.35)}.story .bars b:first-child{background:#fff}
+.story .who{position:absolute;top:20px;left:12px;display:flex;align-items:center;gap:7px;z-index:3;font:600 11px Inter}
+.story .who i{width:22px;height:22px;border-radius:50%;background:conic-gradient(var(--y),#F3EFE4,var(--y));display:block;padding:2px}
+.story .who i:after{content:"";display:block;width:100%;height:100%;border-radius:50%;background:#333}
+.story .reply{position:absolute;left:10px;right:10px;bottom:10px;border:1px solid rgba(255,255,255,.45);border-radius:99px;padding:8px 12px;font:500 11px Inter;color:rgba(255,255,255,.75)}
+.sc{position:absolute;left:12px;right:12px;top:50%;transform:translateY(-54%);aspect-ratio:4/5;background:var(--y);color:var(--ink);border-radius:6px;padding:16px 15px 12px;display:flex;flex-direction:column}
+.sc .H.k{font-size:50px;letter-spacing:-.005em}
+.sc ol{list-style:none;margin:10px 0 0;padding:0;flex:1;display:flex;flex-direction:column;justify-content:space-around}
+.sc li{border-top:2.5px solid var(--ink);padding:6px 0 0;display:flex;gap:8px}
+.sc li .n{font:400 15px Anton;line-height:1.05}
+.sc li b{display:block;font:400 18px/1.02 Anton;text-transform:uppercase}
+.sc li small{display:block;font:800 8.5px Manrope;letter-spacing:.14em;text-transform:uppercase;margin-top:3px;opacity:.7}
+.sc .ft{display:flex;justify-content:space-between;align-items:flex-end;border-top:2.5px solid var(--ink);padding-top:6px;margin-top:6px;font:800 9px Manrope;letter-spacing:.06em}
+.sc .ft .wm{font:800 12px Manrope;letter-spacing:-.01em;text-transform:lowercase}
+.swap{display:flex;gap:8px;overflow-x:auto;width:100%;padding-bottom:4px;scrollbar-width:none;margin-bottom:12px}
+.swap button{flex:none;border:1.5px solid var(--line);background:transparent;border-radius:99px;padding:7px 12px;font:700 12.5px Manrope;color:var(--mute)}
+.swap button.on{border-color:var(--y);color:var(--y)}
+/* 7 ground */
+.gr .H.big{font-size:46px;margin:6px 0 4px}
+.blobs{display:flex;margin:10px 0 8px}
+.blobs i{width:44px;height:44px;border-radius:50%;margin-right:-14px;border:3px solid var(--bg);filter:blur(.3px)}
+.shared{display:flex;flex-direction:column;gap:6px;margin:10px 0 12px}
+.shared div{display:flex;justify-content:space-between;align-items:center;gap:8px;background:var(--card);border-radius:14px;padding:9px 12px;font:800 14.5px/1.25 Manrope}
+.meet{border:2px solid var(--y);border-radius:22px;padding:16px;position:relative;overflow:hidden}
+.meet .H{font-size:30px;margin:8px 0 6px}
+.meet p{margin:0 0 10px;font:500 14px/1.45 Inter;color:rgba(244,241,232,.85)}
+.rules{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.rules span{font:800 10.5px Manrope;letter-spacing:.08em;text-transform:uppercase;background:rgba(238,255,106,.1);color:var(--y);padding:6px 8px;border-radius:8px}
+.tog{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:14px 0 4px;font:700 14px/1.35 Manrope}
+.sw{width:50px;height:30px;border-radius:99px;background:#2a2a2a;border:0;position:relative;flex:none;transition:background .2s}
+.sw:after{content:"";position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:#fff;transition:transform .25s cubic-bezier(.2,.9,.3,1)}
+.sw.on{background:var(--y)}.sw.on:after{transform:translateX(20px);background:var(--ink)}
+/* 8 one question */
+.oq .H.big{font-size:22px;color:var(--mute)}
+.teaser{position:relative;border-radius:24px;overflow:hidden;margin:10px 0 12px;height:250px;background:#000}
+.teaser .pan{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr 1fr;gap:3px}
+.teaser .pan i{background:#222 center/cover;opacity:.6}
+.teaser .ov{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:space-between;padding:16px;background:linear-gradient(180deg,rgba(0,0,0,.1),rgba(0,0,0,.7))}
+.teaser .ov .H{font-size:40px}
+.teaser .pl{display:flex;justify-content:space-between;align-items:center}
+.pbtn{width:54px;height:54px;border-radius:50%;background:var(--y);display:grid;place-items:center}
+.ans{display:flex;flex-direction:column;gap:8px}
+.an{background:var(--card);border-radius:16px;padding:10px 14px;border-left:4px solid var(--y)}
+.an .tag{font-size:9.5px;padding:5px 7px}
+.an q{display:block;font:700 14.5px/1.32 Manrope;margin:6px 0 2px;quotes:"\201C" "\201D"}
+.an span{font:500 11.5px Inter;color:var(--mute)}
+/* notes (desktop only) */
+.notes{display:none;width:400px;max-height:844px;overflow:auto;font:500 14px/1.55 Inter;color:rgba(244,241,232,.85)}
+@media (min-width:900px){.notes{display:block}}
+.notes h2{font:400 34px/1 Anton;text-transform:uppercase;color:var(--y);margin:0 0 6px}
+.notes h4{font:800 11px Manrope;letter-spacing:.14em;text-transform:uppercase;color:var(--y);margin:18px 0 4px}
+.notes p{margin:0 0 8px}
+.notes .sig{border:2px solid var(--y);border-radius:16px;padding:12px 14px;margin:12px 0}
+.notes kbd{font:700 12px Manrope;background:#1c1c1c;padding:2px 6px;border-radius:6px}
+</style></head>
+<body>
+<div class="stage">
+<div class="phone" id="phone">
+  <div class="sb" aria-hidden="true" style="display:none"><span>9:41</span><span><i></i></span></div><!-- the fake phone status bar is off: the page runs inside the real app -->
+  <div class="nav"><button class="back" id="back" aria-label="back"><svg width="10" height="16" viewBox="0 0 10 16"><path d="M8 2 2 8l6 6" stroke="#F4F1E8" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="dots" id="dots"></div><div class="stepn" id="stepn"></div></div>
+
+  <!-- 1 · what brought you here -->
+  <section class="scr need" id="s1">
+    <div class="guide"><img src="art/guides/spiritual.webp" alt="Justin Bieber"><div class="bub" id="say1" data-spk="Justin">hey. no wrong answers here. what's going on?</div></div>
+    <div class="H big" data-es="¿qué te<br>trajo <span class=&quot;y&quot;>aquí?</span>">what brought<br>you <span class="y">here?</span></div>
+    <div class="small" style="font-size:14px">pick one. i'll find you a story for it.</div>
+    <div class="chips" id="chips">
+      <button class="chip" data-s="okay. let's slow it all down, together.">anxious</button>
+      <button class="chip" data-s="fair. somebody got under your skin. i've got one for that.">angry at someone</button>
+      <button class="chip" data-s="i'm so sorry. i'll pick gently. take your time.">grieving</button>
+      <button class="chip" data-s="honest place to be. you're welcome here exactly as you are.">lost on purpose</button>
+      <button class="chip" data-s="those are the big ones. i've got you.">a relationship</button>
+      <button class="chip" data-s="love that. curious is the best way in.">just curious</button>
+    </div>
+    <div class="grow"></div>
+    <button class="btn" id="go1" disabled>find my story</button>
+    <p class="small" style="text-align:center;margin:12px 0 0" data-es="¿la estás pasando muy mal? llama o escribe al <a href=&quot;tel:988&quot;>988</a> (EE. UU.) o a tu número local de emergencias.">having a really hard time? call or text <a href="tel:988">988</a> (US) or your local emergency line.</p>
+  </section>
+
+  <!-- 2 · your first story -->
+  <section class="scr pick" id="s2" hidden>
+    <div class="guide"><img src="art/guides/spiritual.webp" alt="Justin Bieber"><div class="bub" data-spk="Justin">you said angry. this one's for you.</div></div>
+    <div class="poster" style="background-image:url(art/lessons/buddhism/1.webp)">
+      <span class="play">▶ short film</span>
+      <div class="in"><span class="tag">buddhism</span></div>
+    </div>
+    <div class="lbl">your first story</div>
+    <div class="H t" data-es="un hombre llega<br>furioso ante el buda.">a man storms up<br>to the buddha.</div>
+    <div class="small" style="font-size:14.5px;color:rgba(244,241,232,.82)">he came to pick a fight. what the Buddha does next is the opposite of what most of us would.</div>
+    <div class="meta"><span class="small">from the Samyutta Nikaya · then 2 quick questions</span></div>
+    <div class="grow" style="min-height:16px"></div>
+    <button class="btn" data-go="s3">watch it</button>
+    <button class="skip" data-go="s1">show me a different one</button>
+  </section>
+
+  <!-- 3 · film -->
+  <section class="scr film" id="s3" hidden>
+    <video id="vid" src="art/lessons/buddhism/1.mp4" poster="art/lessons/buddhism/1.webp" playsinline muted loop preload="auto"></video>
+    <div class="top"><b><i id="vp"></i></b></div>
+    <button class="sound" id="snd">tap for sound</button><!-- 2026-11-15: re-voiced with Justin's stand-in voice -->
+    <div class="low">
+      <div class="row"><span class="tag" style="align-self:flex-start">buddhism</span><span class="small">instant karma? · captions on</span></div>
+      <button class="btn" data-go="s3q">questions →</button>
+    </div>
+  </section>
+
+  <!-- 3q · quick questions -->
+  <section class="scr q" id="s3q" hidden>
+    <div style="display:flex;gap:12px;align-items:center"><span class="lbl">quick one</span><div class="qbar"><b id="qb" style="width:50%"></b></div><span class="stepn" id="qn">1/2</span></div>
+    <div id="q1">
+      <div class="H" data-es="verdadero o falso:<br>el karma es el universo <span class=&quot;y&quot;>cobrándole a la gente.</span>">true or false:<br>karma is the universe <span class="y">paying people back.</span></div>
+      <button class="opt" data-a="0">true</button>
+      <button class="opt" data-a="1">false</button>
+    </div>
+    <div id="q2" hidden>
+      <div class="H" data-es="arma otra vez<br><span class=&quot;y&quot;>la frase antigua.</span>">put the old line<br><span class="y">back together.</span></div>
+      <div class="slots"><span id="sl0"></span><span id="sl1"></span></div>
+      <div class="tiles" id="tiles">
+        <button class="opt" data-t="of my luck">of my luck</button>
+        <button class="opt" data-t="I am the owner">I am the owner</button>
+        <button class="opt" data-t="of the universe">of the universe</button>
+        <button class="opt" data-t="of my actions">of my actions</button>
+      </div>
+    </div>
+    <div class="grow"></div>
+    <div class="fb" id="fb" hidden><div class="H" id="fbh"></div><p id="fbp"></p><button class="btn" id="fbn">next</button></div>
+  </section>
+
+  <!-- 4 · keep this? -->
+  <section class="scr keep" id="s4" hidden>
+    <div class="lbl">the keep</div>
+    <div class="H h">keep this one?</div>
+    <div class="tcard" id="tcard">
+      <span class="tag k">buddhism</span>
+      <div class="H">i am the owner of my actions.</div>
+      <div class="src" data-es="una reflexión que se canta a diario en muchos templos y monasterios · <b>del Anguttara Nikaya (5.57)</b>">a reflection chanted daily in many temples and monasteries · <b>from the Anguttara Nikaya (5.57)</b></div>
+    </div>
+    <div class="as" id="as">
+      <button data-k="belief"><span class="H">belief</span><small>i hold it true</small></button>
+      <button data-k="practice"><span class="H">practice</span><small>i'll do it</small></button>
+      <button data-k="saying"><span class="H">saying</span><small>i'll say it to myself</small></button>
+    </div>
+    <button class="skip" id="nope">not for me (that's fine)</button>
+    <div class="grow"></div>
+    <div class="guide"><img src="art/guides/spiritual.webp" alt="Justin Bieber"><div class="bub" data-spk="Justin">this one came out of your film. keep it as whatever it is to you.</div></div>
+    <p class="hint">or press and hold the card, then flick it into a slot</p>
+  </section>
+
+  <!-- 4k · kept -->
+  <section class="scr kept" id="s4k" hidden>
+    <div class="burst" id="burst"></div>
+    <img src="art/finn/finn-celebrate-still.webp" alt="">
+    <div class="H big">kept.</div>
+    <div class="M" style="font:800 18px/1.35 Manrope" data-es="la primera pieza de tu religión.<br><span class=&quot;y&quot;>tú la elegiste. es tuya.</span>">piece one of your religion.<br><span class="y">you picked it. it's yours.</span></div>
+    <div class="mini"><span class="tag k" id="kk">belief</span><div><div class="H">i am the owner of my actions.</div><div style="font:600 11.5px Inter;opacity:.7">buddhism · Anguttara Nikaya</div></div></div>
+    <button class="btn" data-go="s5" data-es="ver mi propia religión">see my own religion</button>
+  </section>
+
+  <!-- 5 · your religion (week 3) -->
+  <section class="scr rel" id="s5" hidden>
+    <div class="lbl">week 3 · built by you</div>
+    <div class="H big" data-es="mi propia<br>religión">my own<br>religion</div>
+    <div class="small" style="font-size:13.5px">every piece taught the way its own tradition teaches it, with the source right there.</div>
+    <div class="stats">
+      <div class="stat"><div class="H">10</div><small>pieces kept</small></div>
+      <div class="stat"><div class="H">7</div><small>traditions</small></div>
+      <div class="stat"><div class="H">18</div><small>stories</small></div>
+    </div>
+
+    <div class="sec"><h3>beliefs <small>3</small></h3>
+      <div class="pc"><div class="th" style="background-image:url(art/lessons/buddhism/1.webp);background-position:50% 20%"></div><div class="tx"><b>i am the owner of my actions.</b><span>Anguttara Nikaya 5.57</span></div><span class="tag">buddhism</span></div>
+      <div class="pc"><div class="th" style="background-image:url(art/sacred/wild-karma/clips/KM5-What-They-Said.webp)"></div><div class="tx"><b>the intention is the seed.</b><span>the Upanishads</span></div><span class="tag">hinduism</span></div>
+      <div class="pc new"><div class="th" style="background-image:url(art/sacred/wild-oneword/clips/ZGO5-Like-Heart.webp)"></div><div class="tx"><b>what you would not want, don't do.</b><span>the Analects of Confucius</span></div><span class="tag">confucianism</span></div>
+    </div>
+    <div class="sec"><h3>practices <small>3</small></h3>
+      <div class="pc"><div class="th" style="background-image:url(art/sacred/wild-spice/clips/SS5-Only-If-You-Keep.webp)"></div><div class="tx"><b>stop, one day a week.</b><span>"some tastes only come from stopping" · the Talmud</span></div><span class="tag">judaism</span></div>
+      <div class="pc"><div class="th" style="background-image:url(art/sacred/wild-ten/clips/TL4-Turns-Back.webp)"></div><div class="tx"><b>say thank you, out loud.</b><span>the one who came back · Luke's Gospel</span></div><span class="tag">christianity</span></div>
+      <div class="pc"><div class="th" style="background-image:url(art/sacred/wild-earth/clips/ET4-Touching-Earth.webp)"></div><div class="tx"><b>spinning out? hand on the ground.</b><span>the Buddha's life story</span></div><span class="tag">buddhism</span></div>
+    </div>
+    <div class="sec"><h3>sayings <small>2</small></h3>
+      <div class="pc"><div class="th" style="background-image:url(art/sacred/wild-notebook/clips/MA4-Be-Good.webp)"></div><div class="tx"><b>while you can, be good.</b><span>Marcus Aurelius, Meditations</span></div><span class="tag">stoicism</span></div>
+      <div class="pc"><div class="th" style="background-image:url(art/sacred/wild-maybe/clips/SW1-Frontier-Farm.webp)"></div><div class="tx"><b>who knows? then, what now.</b><span>the farmer's horse · the Huainanzi</span></div><span class="tag">chinese classics</span></div>
+    </div>
+    <div class="sec"><h3>holy days &amp; places <small>2</small></h3>
+      <div class="pc"><div class="th ty">FRI</div><div class="tx"><b>Shabbat</b><span>friday sunset to saturday night · next one in 3 days</span></div><span class="tag">judaism</span></div>
+      <div class="pc"><div class="th" style="background-image:url(art/sacred/wild-earth/clips/ET4-Touching-Earth.webp);background-position:30% 70%"></div><div class="tx"><b>Bodh Gaya, India</b><span>where the hand touched the earth</span></div><span class="tag">buddhism</span></div>
+    </div>
+    <div class="fab"><button class="btn" data-go="s6" data-es="compartir mi propia religión">share my own religion</button></div>
+  </section>
+
+  <!-- 6 · share card -->
+  <section class="scr share" id="s6" hidden>
+    <div class="lbl" style="align-self:flex-start">your story preview</div>
+    <div class="story">
+      <div class="bars"><b></b><b></b></div>
+      <div class="who"><i></i>your story · now</div>
+      <div class="sc" id="card">
+        <div class="H k" data-es="mi propia religión:">my own religion:</div>
+        <ol id="cardlist"></ol>
+        <div class="ft"><span class="wm">infinite hill</span><span>religion, reimagined.</span></div>
+      </div>
+      <div class="reply">send message</div>
+    </div>
+    <div class="small" style="align-self:flex-start;margin-bottom:6px">pick your 3 · tap to swap</div>
+    <div class="swap" id="swap"></div>
+    <button class="btn" data-go="s7">share to story</button>
+    <button class="skip" style="margin-top:2px">save image</button>
+  </section>
+
+  <!-- 7 · shared ground -->
+  <section class="scr gr" id="s7" hidden>
+    <div class="lbl">shared ground</div>
+    <div class="H big" data-es="no eres<br>la única <span class=&quot;y&quot;>persona.</span>">you're not<br>the only <span class="y">one.</span></div>
+    <div class="blobs"><i style="background:radial-gradient(circle at 30% 30%,#EEFF6A,#6b7a1a)"></i><i style="background:radial-gradient(circle at 30% 30%,#F3EFE4,#5a5850)"></i><i style="background:radial-gradient(circle at 30% 30%,#EEFF6A,#2a2a2a)"></i><i style="background:radial-gradient(circle at 30% 30%,#ffd2a8,#7a4a22)"></i></div>
+    <div class="M" style="font:800 19px/1.3 Manrope">a few people near you share 3 of your beliefs.</div>
+    <div class="small" style="margin-top:4px">no names, no faces, no profiles. just the overlap.</div>
+    <div class="shared">
+      <div>i am the owner of my actions. <span class="tag">buddhism</span></div>
+      <div>the intention is the seed. <span class="tag">hinduism</span></div>
+      <div>what you would not want, don't do. <span class="tag">confucianism</span></div>
+    </div>
+    <div class="meet">
+      <span class="lbl">an idea · real life</span>
+      <div class="H">one table, one question.</div>
+      <p>a supper for people who share your pieces. phones in a basket, one big question on the table, a verified host. a public place, always.</p>
+      <div class="rules"><span>18+ only</span><span>verified hosts</span><span>public venues</span><span>no rankings</span></div>
+      <div class="tog"><span>tell me when one's near me</span><button class="sw" id="sw" aria-label="opt in"></button></div>
+    </div>
+    <div class="grow" style="min-height:14px"></div>
+    <button class="btn" data-go="s8">next</button>
+    <p class="small" style="text-align:center;margin:10px 0 0">off by default. you choose what anyone sees, and you can switch it off any time.</p>
+  </section>
+
+  <!-- 8 · one question, many answers -->
+  <section class="scr oq" id="s8" hidden>
+    <div class="lbl">one question · three answers</div>
+    <div class="teaser">
+      <div class="pan"><i style="background-image:url(art/sacred/chr-cross/clips/QX3-Forgive.webp);background-position:55% 15%"></i><i style="background-image:url(art/sacred/wild-dearest/clips/MLK5-All-Directions.webp)"></i><i style="background-image:url(art/sacred/wild-spice/clips/SS5-Only-If-You-Keep.webp)"></i></div>
+      <div class="ov">
+        <div class="H" data-es="¿cómo perdonas<br>a alguien<br>que <span class=&quot;y&quot;>no se arrepiente?</span>">how do you<br>forgive someone<br>who <span class="y">isn't sorry?</span></div>
+        <div class="pl"><span class="tag">60-second film</span><span class="pbtn"><svg width="18" height="20" viewBox="0 0 18 20"><path d="M2 1.5v17L17 10z" fill="#0A0A0A"/></svg></span></div>
+      </div>
+    </div>
+    <div class="ans">
+      <div class="an"><span class="tag">christianity</span><q>Father, forgive them, for they don't know what they are doing.</q><span>Luke 23:34 · said from the cross, about people who weren't sorry</span></div>
+      <div class="an"><span class="tag">buddhism</span><q>hatred does not cease by hatred at any time: hatred ceases by love.</q><span>Dhammapada, verse 5 · it calls this an old rule</span></div>
+      <div class="an"><span class="tag">judaism</span><q>you shall not take vengeance, nor bear any grudge.</q><span>Leviticus 19:18 · the same verse as "love your neighbor"</span></div>
+    </div>
+    <p class="small" style="margin:12px 0 12px;font-size:13.5px;color:rgba(244,241,232,.8)">three traditions, three different roads. not the same answer. worth hearing all three.</p>
+    <button class="btn">watch · 60 sec</button>
+  </section>
+</div>
+
+<aside class="notes" id="notes" translate="no"></aside>
+</div>
+
+<script src="lib/ih-es.js"></script>
+<script src="lib/ih-es-screens.js"></script>
+<script src="lib/ih-four.js"></script>
+<script>
+// Spanish (2026-11-11): same signal as hill-app.html (?lang=es, else the saved setting, else the phone); the phone's words
+// are translated in place from lib/ih-es-screens.js. The film itself is English. The design notes (desktop only) stay English.
+if (window.IH4) IH4.start();
+const $=id=>document.getElementById(id);
+const ORDER=["s1","s2","s3","s3q","s4","s4k","s5","s6","s7","s8"];
+const STEP={s1:1,s2:2,s3:3,s3q:3,s4:4,s4k:4,s5:5,s6:6,s7:7,s8:8};
+const NOTES={
+ s1:["what brought you here?","the guide meets the feeling before anything else. one tap, no typing.","<b>motion</b> the mascot does a slow head tilt (think loop). chips rise in a 40ms stagger. picking one turns it lime and the bubble swaps to a reply written for that feeling.<br><b>haptics</b> light tick on each chip.<br><b>sound</b> none; a soft pad note fades in only after a pick.<br>the 988 line is always visible, quietly."],
+ s2:["your first story","the guide names the tradition and says why it chose this one, in one line.","<b>motion</b> the poster pushes in from 96% to 100% while the bubble types itself out. the play pill pulses once.<br><b>haptics</b> medium tap on \"watch it\".<br><b>sound</b> the first bar of the film's music teases under the poster."],
+ s3:["the film","vertical, full bleed, captions burned in. the guide is quiet here: the tradition speaks.","<b>motion</b> progress bar fills along the top, story-style. tap left/right to skip 5s.<br><b>haptics</b> none during the film.<br><b>sound</b> starts muted with a 'tap for sound' pill, then the narration and score."],
+ s3q:["two quick questions","the lesson.html style: true/false, then rebuild the line. they test the teaching, not trivia.","<b>motion</b> feedback sheet springs up from the bottom; right answers flash mint.<br><b>haptics</b> success = double light tap; miss = one soft thud, never a buzz.<br><b>sound</b> a bright two-note chime on right, a muted low note on wrong."],
+ s4:["the keep (signature interaction)","the thing only infinite hill has: you decide what a teaching becomes in your life.","<div class='sig'><b>the keep.</b> press and hold the teaching card: it lifts and the phone gives a heavy tap. flick it up-left, up or up-right into belief, practice or saying. it shrinks into the slot like a card into a sleeve. flick down = 'not for me', and it never comes back. buttons do the same for anyone who doesn't want to gesture.</div><b>haptics</b> heavy tap on lift, a rising triple tick as it travels, one solid thunk when it lands.<br><b>sound</b> a paper 'shk' on lift, a deep warm note on land."],
+ s4k:["kept","celebrate the keep, not the score.","<b>motion</b> the mascot dances (celebrate loop), lime confetti falls once, \"kept.\" punches in at 120%, settles to 100%.<br><b>haptics</b> success pattern: three quick taps.<br><b>sound</b> a 2-second hit from the episode's track."],
+ s5:["my religion","a living page, shown here at week 3. every piece wears its tradition and its source. nothing is blended or renamed.","<b>motion</b> the newest piece glows with a lime outline for a day. sections collapse and expand. long-press a piece to replay its film.<br><b>haptics</b> light tick when a section opens.<br><b>sound</b> none. this is your quiet room."],
+ s6:["share card","4:5, Magna-loud lime and black, built for a story. the user picks the 3 pieces.","<b>motion</b> tapping a chip swaps a line with a quick vertical flip, like a departures board.<br><b>haptics</b> tick on each swap, medium tap on share.<br><b>sound</b> a shutter-ish snap when saved."],
+ s7:["shared ground","the community seed. overlap, not identity: no names, faces, counts or rankings.","<b>motion</b> the blobs drift slowly and overlap where beliefs match.<br><b>haptics</b> the opt-in switch clicks with a firm tap.<br><b>sound</b> none.<br>organizers verified, 18+, public venues only. illustrative copy: 'a few people near you'."],
+ s8:["one question, many answers","a 60-second film: three traditions answer one hard question. each one named and quoted from its own text. never 'they're all the same'.","<b>motion</b> the three panels slide in one after another, then the question slams in over them.<br><b>haptics</b> medium tap on play.<br><b>sound</b> the trailer hits on the question's last word."]
+};
+let cur="s1";
+function go(id,push=true){
+  if(!ORDER.includes(id)) id="s1";
+  document.querySelectorAll(".scr").forEach(s=>s.hidden=s.id!==id);
+  cur=id; const n=STEP[id];
+  $("dots").innerHTML=[1,2,3,4,5,6,7,8].map(i=>`<b class="${i===n?'on':i<n?'done':''}"></b>`).join("");
+  $("stepn").textContent=n+"/8";
+  const v=$("vid"); if(id==="s3"){ v.play().catch(()=>{}); } else v.pause();
+  if(id==="s4k") burst();
+  if(id==="s3q") resetQuiz();
+  if(push) history.replaceState(null,"","#"+id);
+  const N=NOTES[id]; $("notes").innerHTML=`<div class="lbl">screen ${n} of 8</div><h2>${N[0]}</h2><p>${N[1]}</p><h4>motion · haptics · sound</h4><p>${N[2]}</p><h4>navigate</h4><p>tap through, or use <kbd>←</kbd> <kbd>→</kbd>. dots show the 8 steps.</p>`;
+  document.querySelector(".nav").style.display=id==="s3"?"flex":"flex";
+}
+document.addEventListener("click",e=>{const g=e.target.closest("[data-go]"); if(g) go(g.dataset.go);});
+$("back").onclick=()=>{const i=ORDER.indexOf(cur); if(i>0) go(ORDER[i-1]); else if(/[?&]app=1/.test(location.search)) parent.postMessage({ih:"close"},"*");};
+document.addEventListener("keydown",e=>{const i=ORDER.indexOf(cur); if(e.key==="ArrowRight"&&i<ORDER.length-1) go(ORDER[i+1]); if(e.key==="ArrowLeft"&&i>0) go(ORDER[i-1]);});
+// 1
+document.querySelectorAll(".chip").forEach(c=>c.onclick=()=>{document.querySelectorAll(".chip").forEach(x=>x.classList.remove("on"));c.classList.add("on");$("say1").textContent=c.dataset.s;$("go1").disabled=false;});
+$("go1").onclick=()=>go("s2");
+// 3 film
+const v=$("vid"); v.addEventListener("timeupdate",()=>{ if(v.duration) $("vp").style.width=(v.currentTime/v.duration*100)+"%"; });
+$("snd").onclick=()=>{v.muted=!v.muted;$("snd").textContent=v.muted?"tap for sound":"sound on";};
+// quiz
+let qi=0, picks=[];
+function resetQuiz(){qi=0;picks=[];$("q1").hidden=false;$("q2").hidden=true;$("fb").hidden=true;$("qb").style.width="50%";$("qn").textContent="1/2";
+  document.querySelectorAll("#q1 .opt").forEach(o=>o.className="opt");document.querySelectorAll("#tiles .opt").forEach(o=>o.className="opt");$("sl0").textContent="";$("sl1").textContent="";}
+function fb(ok,h,p){$("fb").hidden=false;$("fb").className="fb"+(ok?"":" bad");$("fbh").textContent=h;$("fbp").textContent=p;}
+document.querySelectorAll("#q1 .opt").forEach(o=>o.onclick=()=>{ if(!$("fb").hidden) return;
+  const ok=o.dataset.a==="1"; o.classList.add(ok?"right":"wrong"); if(!ok) document.querySelector('#q1 [data-a="1"]').classList.add("right");
+  fb(ok, ok?"nailed it.":"not quite.", "the word means action. the Buddha said intention is what he calls karma: a seed, not a referee.");});
+document.querySelectorAll("#tiles .opt").forEach(o=>o.onclick=()=>{ if(picks.length>=2) return; picks.push(o.dataset.t); o.classList.add("used"); $("sl"+(picks.length-1)).textContent=o.dataset.t;
+  if(picks.length===2){ const ok=picks[0]==="I am the owner"&&picks[1]==="of my actions"; fb(ok, ok?"that's the line.":"close.", "I am the owner of my actions, heir to my actions: a reflection chanted in many temples and monasteries. not a weight. a handle you can hold."); if(!ok){$("sl0").textContent="I am the owner";$("sl1").textContent="of my actions";} }});
+$("fbn").onclick=()=>{ if(qi===0){qi=1;$("q1").hidden=true;$("q2").hidden=false;$("fb").hidden=true;$("qb").style.width="100%";$("qn").textContent="2/2";} else go("s4"); };
+// 4 keep
+document.querySelectorAll("#as button").forEach(b=>b.onclick=()=>{ b.classList.add("hot"); $("tcard").classList.add("lift"); $("kk").textContent=b.dataset.k; setTimeout(()=>{b.classList.remove("hot");$("tcard").classList.remove("lift");go("s4k");},260);});
+$("nope").onclick=()=>go("s5");
+const tc=$("tcard"); let hold; tc.addEventListener("pointerdown",()=>{hold=setTimeout(()=>tc.classList.add("lift"),180);}); ["pointerup","pointerleave"].forEach(ev=>tc.addEventListener(ev,()=>{clearTimeout(hold);tc.classList.remove("lift");}));
+function burst(){const b=$("burst");b.innerHTML="";const C=["#EEFF6A","#F4F1E8","#EEFF6A","#7CFFB2"];for(let i=0;i<46;i++){const e=document.createElement("i");e.style.left=Math.random()*100+"%";e.style.background=C[i%4];e.style.animationDelay=(Math.random()*.6)+"s";e.style.transform=`rotate(${Math.random()*180}deg)`;b.append(e);}}
+// 6 share
+const POOL=[["the intention is the seed.","hinduism · the Upanishads"],["say thank you, out loud.","christianity · Luke's Gospel"],["some tastes only come from stopping.","judaism · the Talmud"],["i am the owner of my actions.","buddhism · Anguttara Nikaya"],["while you can, be good.","stoicism · Marcus Aurelius"],["what you would not want, don't do.","confucianism · the Analects"],["who knows? then, what now.","the Huainanzi"]];
+let chosen=[0,1,2];
+function drawCard(){ $("cardlist").innerHTML=chosen.map((k,i)=>`<li><span class="n">0${i+1}</span><div><b>${POOL[k][0]}</b><small>${POOL[k][1]}</small></div></li>`).join("");
+  $("swap").innerHTML=POOL.map((p,k)=>`<button class="${chosen.includes(k)?'on':''}" data-k="${k}">${p[0].replace(/\.$/,"")}</button>`).join("");
+  $("swap").querySelectorAll("button").forEach(b=>b.onclick=()=>{const k=+b.dataset.k; if(chosen.includes(k)) return; chosen=[...chosen.slice(1),k]; drawCard();}); }
+drawCard();
+// 7
+$("sw").onclick=()=>$("sw").classList.toggle("on");
+go((location.hash||"#s1").slice(1),false);
+window.addEventListener("hashchange",()=>go(location.hash.slice(1),false));
+</script>
+</body></html>

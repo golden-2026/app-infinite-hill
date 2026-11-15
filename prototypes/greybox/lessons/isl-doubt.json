@@ -1,0 +1,196 @@
+{
+ "id": "isl-doubt",
+ "home": "datepalm",
+ "title": "Is doubt okay?",
+ "told": "a story in the Qur’an",
+ "clips": "art/sacred/isl-doubt/clips/",
+ "voice": "art/sacred/isl-doubt/voice/",
+ "guide": {
+  "name": "Mahershala",
+  "photo": "art/guides/islam.webp"
+ },
+ "hook": {
+  "v": "DB6-Today-Late-Night",
+  "say": "before the story, can i ask you something? have you ever had a question about faith you didn’t feel you could ask out loud?",
+  "options": [
+   [
+    "Yes, I have",
+    "then this one is for you. you’re in good company. listen."
+   ],
+   [
+    "I have one right now",
+    "thank you for saying so. hold onto it while you listen."
+   ],
+   [
+    "Not really",
+    "good. keep this one for a friend who might."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "DB1-One-Star",
+   "vo": [
+    "V01"
+   ],
+   "line": "The Qur’an tells how Ibrahim, Abraham, looked up one night and saw a bright star. “This is my Lord,” he said. Then the star set."
+  },
+  {
+   "t": "ask",
+   "v": "DB1-One-Star",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "The star is gone. What do you think Ibrahim says?",
+   "o": [
+    "“I’ll wait for it to rise again.”",
+    "“I don’t love things that set.”",
+    "“Then the moon must be my Lord.”"
+   ],
+   "a": 1,
+   "why": "“I don’t love things that set.” Whatever disappears can’t be the answer."
+  },
+  {
+   "t": "shot",
+   "v": "DB2-Moonrise",
+   "vo": [
+    "V02"
+   ],
+   "line": "“I don’t love things that set,” he said. Then the moon rose, shining. “This is my Lord.” But the moon set too."
+  },
+  {
+   "t": "shot",
+   "v": "DB3-Sunrise",
+   "vo": [
+    "V03"
+   ],
+   "line": "Then the sun came up, bigger than all of them. “This is greater.” And it set. So he turned to the One who made the heavens and the earth."
+  },
+  {
+   "t": "ask",
+   "v": "DB3-Sunrise",
+   "eb": "did you know?",
+   "q": "Scholars read the star, the moon and the sun two ways. One: a young man searching. What’s the other?",
+   "o": [
+    "A dream he had as a boy",
+    "A test the angels set for him",
+    "Reasoning aloud for his people"
+   ],
+   "a": 2,
+   "why": "Many scholars hold he was reasoning out loud for his star-worshiping people; others see a real search. Both readings end with the One who made them all."
+  },
+  {
+   "t": "shot",
+   "v": "DB4-Four-Hills",
+   "vo": [
+    "V04"
+   ],
+   "line": "Later, the Qur’an says, he asked God: “Show me how You give life to the dead.” “Don’t you believe?” “Yes, but so that my heart may be at ease.”"
+  },
+  {
+   "t": "ask",
+   "v": "DB4-Four-Hills",
+   "blur": true,
+   "predict": true,
+   "eb": "what happens next?",
+   "q": "Ibrahim asks to see how God gives life to the dead. He’s told to take some birds. How many?",
+   "o": [
+    "Two",
+    "Four",
+    "Seven"
+   ],
+   "a": 1,
+   "why": "Four (Qur’an 2:260), set on far hills and then called. Early commentators guessed which birds, a peacock and a rooster among them, though the Qur’an doesn’t say."
+  },
+  {
+   "t": "shot",
+   "v": "DB4-Four-Hills",
+   "vo": [
+    "V05"
+   ],
+   "line": "He wasn’t scolded. He was shown: four birds, set on far hills, came flying back to him in haste when he called."
+  },
+  {
+   "t": "shot",
+   "v": "DB5-Night-Lamp",
+   "vo": [
+    "V06"
+   ],
+   "line": "Centuries later, some companions told the Prophet Muhammad ﷺ they had thoughts too troubling to say aloud. “That,” he told them, “is clear faith.”",
+   "label": "a saying of the Prophet ﷺ"
+  },
+  {
+   "t": "ask",
+   "v": "DB5-Night-Lamp",
+   "eb": "did you know?",
+   "q": "Ibrahim asked God to show him. Muslims still give him a title of closeness. What is it?",
+   "o": [
+    "Kalimullah, the one God spoke to",
+    "Khalilullah, the friend of God",
+    "Ruhullah, a spirit from God"
+   ],
+   "a": 1,
+   "why": "Khalilullah, God’s close friend (Qur’an 4:125). Kalimullah is Musa’s title and Ruhullah is ‘Isa’s. The friend of God was also the one who asked."
+  },
+  {
+   "t": "teach",
+   "v": "DB3-Sunrise",
+   "say": [
+    "here’s what i love. ibrahim asked, and he wasn’t sent away. he was shown.",
+    "many muslim scholars teach that iman, faith, can grow and dip and grow again. a question you bring to God, looking for rest, has been part of the path since ibrahim."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "DB6-Today-Late-Night",
+   "eb": "the hard one",
+   "q": "The companions were ashamed of their thoughts. Why would the Prophet ﷺ call that “clear faith”?",
+   "o": [
+    "The thoughts themselves were sound",
+    "He wanted them to stop dwelling on it",
+    "Their alarm showed faith was alive"
+   ],
+   "a": 2,
+   "why": "Not the thought itself. Scholars like an-Nawawi explain that their dread of it, and pushing it away, was the clear faith."
+  }
+ ],
+ "today": {
+  "v": "DB6-Today-Late-Night",
+  "say": "if there’s a question you’ve been carrying, write it down tonight, or bring it to an imam or someone you trust. and if a night question ever comes with real darkness, please reach out: 988 in the US, or local emergency help.",
+  "options": [
+   [
+    "I’ll write mine down",
+    "good. a question on paper is a question you can carry, like ibrahim did."
+   ],
+   [
+    "I’ll talk to someone",
+    "beautiful. the companions did exactly that."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "One day of Ramadan.",
+  "line": "a tired farmer, two threads under a pillow, and why the night is for eating."
+ },
+ "card": {
+  "from": "a story in the Qur’an",
+  "mins": 5,
+  "keep": "star",
+  "keepName": "Ibrahim’s star",
+  "keepWhy": "Keep asking, so the heart can rest.",
+  "keepSvg": "<path d=\"M50 18l9 19 21 3-15 15 4 21-19-10-19 10 4-21-15-15 21-3z\" fill=\"#2a1b05\"/><circle cx=\"50\" cy=\"84\" r=\"3\" fill=\"#2a1b05\"/>",
+  "sources": [
+   "Qur’an 6:75–79 (Ibrahim and the star, the moon and the sun: “I love not things that set”; “I have turned my face toward Him who created the heavens and the earth”), paraphrased",
+   "Qur’an 2:260 (“Show me how Thou givest life to the dead … Yea, but (I ask) in order that my heart may be at ease”; the four birds on the hills, coming in haste)",
+   "Sahih Muslim 132 (the companions’ troubling thoughts: “that is clear faith”)",
+   "Qur’an 48:4 (faith added to faith)"
+  ],
+  "check": [
+   "Qur’an 6:75–79: commentators differ on whether Ibrahim was truly searching or arguing with his star-worshipping people step by step. The lesson tells it as the Qur’an does and doesn’t decide. Confirm, since this is the lesson’s main story on doubt.",
+   "Caption 1 says he looked up “one night” and the lesson moves from the stars (6:76) to the later request (2:260) with “later”. The Qur’an doesn’t give the order in time. Confirm “later”.",
+   "The birds (2:260): the verse says to take four birds, train them, place a part of them on each hill and call them. The lesson softens this to “four birds, set on far hills”. Confirm.",
+   "Teach line 2 says “many muslim scholars teach” that faith grows and dips (48:4); Hanafi/Maturidi scholars hold that faith itself doesn’t increase or decrease. Confirm the wording."
+  ]
+ }
+}

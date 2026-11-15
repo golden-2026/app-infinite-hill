@@ -43,7 +43,7 @@ export function Switch({ on, onPress, label, a11y, testID }: { on: boolean; onPr
       style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: 10, minHeight: 44 }}>
       <Text style={{ flex: 1, fontFamily: font.display[800], fontSize: 15, color: color.ink }}>{label}</Text>
       <View style={{ width: 50, height: 30, borderRadius: 15, backgroundColor: on ? color.ink : color.line, padding: 3, alignItems: on ? "flex-end" : "flex-start" }}>
-        <View style={{ width: 24, height: 24, borderRadius: 12, backgroundColor: on ? GOLDEN : "#fff" }} />
+        <View style={{ width: 24, height: 24, borderRadius: 12, backgroundColor: on ? GOLDEN : color.white }} />
       </View>
     </Pressable>
   );
@@ -69,7 +69,7 @@ function NoteEditor({ c, onDone }: { c: Circle; onDone: () => void }) {
     <View style={{ gap: 8, marginTop: 10 }}>
       <TextInput testID="circle-note-input" value={text} onChangeText={(v) => setText([...v].slice(0, NOTE_MAX).join(""))} multiline maxLength={NOTE_MAX}
         placeholder={t("groups.note.placeholder")} placeholderTextColor={color.mute} accessibilityLabel={t("groups.note.a11y")}
-        style={{ minHeight: 84, borderWidth: 1.5, borderColor: color.line, borderRadius: 16, padding: 12, fontFamily: font.text[400], fontSize: 15, backgroundColor: "#fff", color: color.ink, textAlignVertical: "top" }} />
+        style={{ minHeight: 84, borderWidth: 1.5, borderColor: color.line, borderRadius: 16, padding: 12, fontFamily: font.text[400], fontSize: 15, backgroundColor: color.white, color: color.ink, textAlignVertical: "top" }} />
       <Text style={[type.caption(11)]}>{t("groups.note.left", { count: left })}</Text>
       <View style={{ flexDirection: "row", gap: 8 }}>
         <Btn testID="circle-note-save" disabled={busy || !text.trim()} onPress={() => save(text)} style={{ flex: 1 }}>{t("groups.note.save")}</Btn>
@@ -101,7 +101,7 @@ function NickRow({ c }: { c: Circle }) {
         <View style={{ flexDirection: "row", gap: 8, alignItems: "center" }}>
           <TextInput testID="circle-nick-input" value={nick} onChangeText={(v) => setNick(v.slice(0, 24))} maxLength={24} placeholder={t("groups.join.nickPlaceholder")} placeholderTextColor={color.mute}
             accessibilityLabel={t("groups.join.nickA11y")} autoCorrect={false}
-            style={{ flex: 1, borderWidth: 1.5, borderColor: color.line, borderRadius: 999, paddingVertical: 10, paddingHorizontal: 14, fontFamily: font.text[400], fontSize: 15, backgroundColor: "#fff", color: color.ink }} />
+            style={{ flex: 1, borderWidth: 1.5, borderColor: color.line, borderRadius: 999, paddingVertical: 10, paddingHorizontal: 14, fontFamily: font.text[400], fontSize: 15, backgroundColor: color.white, color: color.ink }} />
           <Btn testID="circle-nick-save" disabled={!cleanLine(nick, 24)} onPress={save} style={{ paddingHorizontal: 16 }}>{t("home.friends.save")}</Btn>
         </View>
       ) : (
@@ -162,7 +162,7 @@ function CircleBlock({ c, first }: { c: Circle; first: boolean }) {
         <View testID="circle-members" style={{ flexDirection: "row", flexWrap: "wrap", gap: 6, marginTop: 12 }}>
           {c.members.map((m, i) => (
             <View key={`${m.nick}|${i}`} testID="circle-member" accessibilityLabel={`${m.nick}${m.family ? `, ${t("groups.family")}` : ""}${m.walked ? `, ${t("groups.walkedA11y")}` : ""}`}
-              style={{ flexDirection: "row", alignItems: "center", gap: 5, paddingVertical: 6, paddingHorizontal: 10, borderRadius: 999, borderWidth: 1.5, borderColor: m.me ? color.ink : color.line, backgroundColor: m.walked ? "#FFFBE0" : "#fff" }}>
+              style={{ flexDirection: "row", alignItems: "center", gap: 5, paddingVertical: 6, paddingHorizontal: 10, borderRadius: 999, borderWidth: 1.5, borderColor: m.me ? color.ink : color.line, backgroundColor: m.walked ? "#FFFBE0" : color.white }}>
               {m.walked ? <Text style={{ fontSize: 12, color: color.ink }}>☀</Text> : null}
               <Text style={{ fontFamily: font.display[800], fontSize: 13, color: color.ink }}>{m.me ? t("groups.you", { nick: m.nick }) : m.nick}</Text>
               {m.family ? <Text style={[type.eyebrow(7), { color: color.mute }]}>{t("groups.family")}</Text> : null}

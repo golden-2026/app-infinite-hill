@@ -1,3 +1,5 @@
+Background only (written 2026-10-06). Where this disagrees with docs/VISION-NOW.md or docs/LESSON_STANDARD.md, those win.
+
 # What is trending on Reddit now: 779 top posts from the past year
 
 Companion to `REDDIT.md` (the evergreen questions people search for), `REDDIT_REPLIES.md` (what the replies say) and

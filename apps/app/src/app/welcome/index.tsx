@@ -4,16 +4,27 @@ import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { accountsOn } from "@/lib/supabase";
 import { t } from "@/i18n";
-import { Body, Btn, Eyebrow, Logo, color, font } from "@/ui";
+import { Btn, Eyebrow, Logo, color, font } from "@/ui";
+import { Shout, Tag, Wordmark, shoutWords } from "@/ui/loud";
 
+// Loud brand splash (2026-11-06): the wordmark as a graphic, one huge slamming headline with its last word in lime,
+// the line, then the pill buttons (BRIEF.md "Brand" and "Magna's playbook").
 export default function Splash() {
   useTitle("");
+  const head = shoutWords(t("onboarding.splash.headline"));
   return (
     <SafeAreaView style={styles.fill} edges={["top", "bottom"]}>
+      <View style={styles.top}>
+        <Wordmark size={30} />
+        <Tag>{t("onboarding.splash.drop")}</Tag>
+      </View>
       <View style={styles.center}>
-        <Logo h={190} />
-        <Text accessibilityRole="header" style={styles.mark}>infinite hill</Text>
-        <Body size={17} style={{ color: color.mute, marginTop: 12, textAlign: "center" }}>{t("onboarding.splash.tagline")}</Body>
+        <Shout words={head.words} hot={head.hot} size={78} start={150} />
+        <Text style={styles.line}>{t("onboarding.splash.line")}</Text>
+        <View style={styles.finnRow}>
+          <Text style={styles.tag}>{t("onboarding.splash.tagline")}</Text>
+          <Logo h={92} />
+        </View>
       </View>
       <View style={{ gap: 10 }}>
         <Btn testID="start-free" onPress={() => router.push("/welcome/you")}>{t("onboarding.splash.start")}</Btn>
@@ -25,7 +36,10 @@ export default function Splash() {
 }
 
 const styles = StyleSheet.create({
-  fill: { flex: 1, backgroundColor: color.cream, paddingHorizontal: 24, paddingBottom: 18 },
-  center: { flex: 1, alignItems: "center", justifyContent: "center" },
-  mark: { fontFamily: font.mark[800], fontSize: 56, color: color.ink, marginTop: 14, lineHeight: 60 },
+  fill: { flex: 1, backgroundColor: color.cream, paddingHorizontal: 20, paddingBottom: 18 },
+  top: { flexDirection: "row", alignItems: "center", justifyContent: "space-between", paddingTop: 12 },
+  center: { flex: 1, justifyContent: "center", gap: 16 },
+  line: { fontFamily: font.text[700], fontSize: 17, lineHeight: 24, color: color.ink, maxWidth: 340 },
+  finnRow: { flexDirection: "row", alignItems: "flex-end", gap: 12 },
+  tag: { flex: 1, fontFamily: font.text[600], fontSize: 14, lineHeight: 20, color: color.gold },
 });

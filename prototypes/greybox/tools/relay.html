@@ -1,0 +1,18 @@
+<!doctype html><meta charset="utf-8"><title>relay</title>
+<!-- local-only helper (scratch tool, not shipped): saves blobs via the localhost receiver, and hands local scratch images back to the opener -->
+<pre id="log">waiting</pre>
+<script>
+addEventListener("message", async (e) => {
+  const d = e.data || {};
+  if (d.blob && d.name) {
+    const r = await fetch("http://127.0.0.1:5199/save?name=" + encodeURIComponent(d.name), { method: "POST", body: d.blob });
+    document.getElementById("log").textContent = await r.text();
+    e.source && e.source.postMessage({ saved: d.name }, "*");
+  } else if (d.get) {
+    const r = await fetch("http://127.0.0.1:5199/get?name=" + encodeURIComponent(d.get));
+    const blob = await r.blob();
+    document.getElementById("log").textContent = "sent " + d.get + " " + blob.size;
+    e.source && e.source.postMessage({ got: d.get, blob }, "*");
+  }
+});
+</script>

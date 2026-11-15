@@ -1,0 +1,190 @@
+{
+ "id": "chr-howlong",
+ "home": "olive",
+ "title": "How long, O Lord?",
+ "told": "from the Psalms",
+ "clips": "art/sacred/chr-howlong/clips/",
+ "voice": "art/sacred/chr-howlong/voice/",
+ "guide": {
+  "name": "Denzel",
+  "photo": "art/guides/christianity.webp"
+ },
+ "card": {
+  "from": "from the Psalms",
+  "mins": 5,
+  "keep": "harp",
+  "keepName": "David’s lyre",
+  "keepWhy": "You can say anything to God. Even “how long?”",
+  "keepSvg": "<path d=\"M30 20c-8 22-6 46 8 62h24c14-16 16-40 8-62\" fill=\"none\" stroke=\"#2a1b05\" stroke-width=\"7\" stroke-linecap=\"round\"/><path d=\"M24 22h52\" stroke=\"#2a1b05\" stroke-width=\"7\" stroke-linecap=\"round\"/><path d=\"M42 26v52M50 26v54M58 26v52\" stroke=\"#2a1b05\" stroke-width=\"3\"/><rect x=\"34\" y=\"78\" width=\"32\" height=\"8\" rx=\"3\" fill=\"#2a1b05\"/>",
+  "sources": [
+   "1 Samuel 16:23 (David plays the lyre for Saul)",
+   "1 Samuel 18:6-12 (Saul grows jealous and afraid of David)",
+   "1 Samuel 22:1; 23:14; 24:1-3 (David hides in the cave of Adullam, the wilderness strongholds, and the caves of En Gedi)",
+   "Psalm 13 heading (“For the Chief Musician. A Psalm by David”)",
+   "Psalm 13:1 (“How long, Yahweh? Will you forget me forever? How long will you hide your face from me?”), World English Bible, “Yahweh” rendered “Lord”",
+   "Psalm 13:6 (“I will sing to Yahweh, because he has been good to me”)",
+   "Psalms 57 and 142 headings (“when he fled from Saul, in the cave”)"
+  ],
+  "check": [
+   "The lesson places Psalm 13 in David’s years on the run as a way of telling it; Psalm 13 itself names no event (Psalms 57 and 142 do). Confirm this framing is acceptable."
+  ]
+ },
+ "hook": {
+  "v": "QH4-How-Long",
+  "say": "before the story, can i ask you something? have you ever been angry at God, or felt you weren’t allowed to be?",
+  "options": [
+   [
+    "Yes, I have",
+    "thank you for saying it. you’re not alone, and this story proves it."
+   ],
+   [
+    "I’m not sure I’m allowed",
+    "listen to this one. the bible itself might surprise you."
+   ],
+   [
+    "Not really",
+    "good. keep this for a day you might need it."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "QH1-Kings-Court",
+   "vo": [
+    "V01"
+   ],
+   "line": "Young David played music for King Saul. But as David became loved by the people, Saul grew jealous, and turned against him.",
+   "label": "1 Samuel 18"
+  },
+  {
+   "t": "shot",
+   "v": "QH2-Wilderness-Run",
+   "vo": [
+    "V02"
+   ],
+   "line": "David ran for his life. For years he lived in the wilderness, hiding in caves, with the king’s soldiers on his trail.",
+   "label": "1 Samuel 23-24"
+  },
+  {
+   "t": "shot",
+   "v": "QH3-Cave",
+   "vo": [
+    "V03"
+   ],
+   "line": "The Bible keeps a book of songs, many linked to David, called psalms. Some were sung in the darkest times."
+  },
+  {
+   "t": "ask",
+   "v": "QH3-Cave",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "Hunted, hiding, far from home. Some of these songs are angry with God. How do you guess most of them end?",
+   "o": [
+    "Still angry, with no answer",
+    "Turning back to trust in God",
+    "With a curse on the enemy"
+   ],
+   "a": 1,
+   "why": "Most laments turn to trust before they end, often with a promise to praise. Not all: Psalm 88 ends in darkness, and it was kept in the Bible too."
+  },
+  {
+   "t": "fill",
+   "v": "QH4-How-Long",
+   "eb": "guess the words",
+   "pre": "“How long, Lord? Will you",
+   "post": " me forever?”",
+   "o": [
+    "forget",
+    "leave",
+    "punish"
+   ],
+   "a": 0,
+   "why": "“Forget.” The psalm says out loud what it feels like: that God has forgotten."
+  },
+  {
+   "t": "shot",
+   "v": "QH4-How-Long",
+   "vo": [
+    "V04"
+   ],
+   "line": "“How long, Lord? Will you forget me forever? How long will you hide your face from me?”",
+   "label": "Psalm 13:1"
+  },
+  {
+   "t": "ask",
+   "v": "QH4-How-Long",
+   "eb": "why?",
+   "q": "Why do you think songs this angry were kept in the Bible, and are still prayed today?",
+   "o": [
+    "They were too old and loved to leave out",
+    "Complaint spoken to God is itself a prayer",
+    "Their happy endings made them acceptable"
+   ],
+   "a": 1,
+   "why": "It’s called lament, and laments are the largest single group among the psalms, about a third of them."
+  },
+  {
+   "t": "shot",
+   "v": "QH5-Dawn-Song",
+   "vo": [
+    "V05"
+   ],
+   "line": "But the same short psalm ends, “I will sing to the Lord, because he has been good to me.”",
+   "label": "Psalm 13:6"
+  },
+  {
+   "t": "ask",
+   "v": "QH5-Dawn-Song",
+   "eb": "did you know?",
+   "q": "The angry psalms had one more famous voice. Where did Jesus pray one out loud?",
+   "o": [
+    "At his baptism, in the river",
+    "At the wedding feast in Cana",
+    "On the cross, as he was dying"
+   ],
+   "a": 2,
+   "why": "“My God, my God, why have you forsaken me?” is the first line of Psalm 22, a lament that also ends in praise."
+  },
+  {
+   "t": "teach",
+   "v": "QH4-How-Long",
+   "say": [
+    "here’s what i love. the bible doesn’t just allow anger at God. it hands you the words.",
+    "jews and christians have prayed the psalms for centuries, the angry ones too. you only shout at someone you believe is listening."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "QH5-Dawn-Song",
+   "eb": "the hard one",
+   "q": "The psalm ends in a song, but nothing in the danger has changed yet. So what changed?",
+   "o": [
+    "He decided he’d been wrong to complain",
+    "Saying it all brought him back to trust",
+    "He chose to sound grateful anyway"
+   ],
+   "a": 1,
+   "why": "He said everything, and was still talking to God at the end. Honesty kept the door open."
+  }
+ ],
+ "today": {
+  "v": "QH6-Today",
+  "say": "if something’s been eating at you, tell God straight today, out loud or on paper: “how long?” then end, as david did, with one thing that’s still good. pray it, write it, or just read psalm 13 slowly: your choice.",
+  "options": [
+   [
+    "I have something to say",
+    "then say it. all of it. he can take it."
+   ],
+   [
+    "I’ll just read it today",
+    "good. let david’s words say it for you for now."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "Why a cross?",
+  "line": "the sign on church walls everywhere was once a sign of shame."
+ }
+}

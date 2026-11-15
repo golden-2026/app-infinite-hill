@@ -1,0 +1,190 @@
+{
+ "id": "jew-angels",
+ "home": "pomegranate",
+ "title": "Two angels at the door",
+ "told": "from the Talmud",
+ "clips": "art/sacred/jew-angels/clips/",
+ "voice": "art/sacred/jew-angels/voice/",
+ "guide": {
+  "name": "Natalie",
+  "photo": "art/guides/judaism.webp"
+ },
+ "hook": {
+  "v": "SH1-Two-Lamps",
+  "say": "before the story, can i ask you something? at the end of a long week, what tells you it’s finally over?",
+  "options": [
+   [
+    "Nothing, really",
+    "then this one is for you. listen."
+   ],
+   [
+    "A meal with people I love",
+    "then you already know half of this story. listen."
+   ],
+   [
+    "Collapsing on the couch",
+    "that counts. listen to how one tradition does it."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "SH1-Two-Lamps",
+   "vo": [
+    "V01"
+   ],
+   "line": "Friday, just before sunset. In a Jewish home, someone lights the lamps. When the sun goes down, Shabbat, the day of rest, begins."
+  },
+  {
+   "t": "shot",
+   "v": "SH2-Walking-Home",
+   "vo": [
+    "V02"
+   ],
+   "line": "The Talmud tells that on Friday night, two angels walk each person home from the synagogue. One good angel, and one bad."
+  },
+  {
+   "t": "ask",
+   "v": "SH2-Walking-Home",
+   "blur": true,
+   "predict": true,
+   "eb": "what happens next?",
+   "q": "The angels look inside the home. What do you think they’re checking?",
+   "o": [
+    "How long the person prayed that day",
+    "Whether the home is ready for rest",
+    "Whether there are guests at the table"
+   ],
+   "a": 1,
+   "why": "The lamp lit, the table set, the bed made. Not how holy you were: a home ready for rest."
+  },
+  {
+   "t": "shot",
+   "v": "SH3-The-Lit-Home",
+   "vo": [
+    "V03"
+   ],
+   "line": "If they find the lamp lit, the table set and the bed made, the good angel says, “May it be like this next Shabbat too.”"
+  },
+  {
+   "t": "shot",
+   "v": "SH4-Amen",
+   "vo": [
+    "V04"
+   ],
+   "line": "And the bad angel, against his will, has to answer, “Amen.”"
+  },
+  {
+   "t": "ask",
+   "v": "SH4-Amen",
+   "eb": "why?",
+   "q": "Why is it a little funny that the bad angel has to say amen?",
+   "o": [
+    "He must bless what he’d rather spoil",
+    "Amen is the only word he’s allowed",
+    "Deep down, he wanted it to go well"
+   ],
+   "a": 0,
+   "why": "Amen means “so be it.” A peaceful home is so strong that even the one against it has to agree."
+  },
+  {
+   "t": "shot",
+   "v": "SH5-Dark-Home",
+   "vo": [
+    "V05"
+   ],
+   "line": "If the home is dark and nothing is ready, it goes the other way. The bad angel speaks the wish, and the good angel must say amen."
+  },
+  {
+   "t": "ask",
+   "v": "SH5-Dark-Home",
+   "eb": "why?",
+   "q": "When the home is dark, the bad angel gets to make the wish. What is the story really warning about?",
+   "o": [
+    "A home becomes what it keeps repeating",
+    "Angels punish homes that break the rules",
+    "Bad angels are stronger than good ones"
+   ],
+   "a": 0,
+   "why": "Whatever the angels find, they wish it again for next week. The tale isn’t about punishment; it’s about habit."
+  },
+  {
+   "t": "shot",
+   "v": "SH6-Today-Candles",
+   "vo": [
+    "V06"
+   ],
+   "line": "Today, many people light two candles before sunset, often eighteen minutes early. Many then cover their eyes, say a blessing and look up. Shabbat is here.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "SH6-Today-Candles",
+   "eb": "why?",
+   "q": "Many light the candles, cover their eyes, say the blessing, then look. Why that odd order?",
+   "o": [
+    "To keep the candle smoke out of their eyes",
+    "Blessing starts Shabbat; no lighting after",
+    "So no one watches them while they pray"
+   ],
+   "a": 1,
+   "why": "Usually you bless, then act. Here the blessing starts Shabbat, so you light first, hide the light, bless, and see it as new."
+  },
+  {
+   "t": "teach",
+   "v": "SH3-The-Lit-Home",
+   "say": [
+    "here’s what i love. the angels don’t ask how holy you were this week. they look at the lamp, the table, the bed.",
+    "in jewish tradition the shabbat light is for shalom bayit, peace in the home: so the people you love can see each other’s faces at dinner. customs differ from family to family, and the light is the same."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "SH6-Today-Candles",
+   "eb": "the hard one",
+   "q": "The rabbis said: if you can afford only one, a Shabbat lamp or a Hanukkah lamp, choose Shabbat. From this lesson, why?",
+   "o": [
+    "It’s the older custom",
+    "It’s commanded in the Torah itself",
+    "It brings peace to your own home"
+   ],
+   "a": 2,
+   "why": "The Hanukkah lights are for showing the world. The Shabbat light is for the people at your table. Peace at home comes first."
+  }
+ ],
+ "today": {
+  "v": "SH6-Today-Candles",
+  "say": "this friday, before the sun sets, light a candle on your table, and at dinner really look at the faces across from you. learn the blessing, or just watch the flame. your choice.",
+  "options": [
+   [
+    "I’ll light one this friday",
+    "light, then rest. that’s the whole thing."
+   ],
+   [
+    "I eat alone most nights",
+    "then light it for you. the light was always for whoever’s at the table."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "It could always be worse.",
+  "line": "a man brings his complaint to the rabbi. the rabbi’s advice makes no sense, at first."
+ },
+ "card": {
+  "from": "from the Talmud",
+  "mins": 5,
+  "keep": "flame",
+  "keepName": "The Shabbat candles",
+  "keepWhy": "Light, then rest.",
+  "sources": [
+   "Babylonian Talmud, Shabbat 119b (two ministering angels, one good and one evil, accompany a person home from synagogue on Friday night; lamp lit, table set, bed made)",
+   "Babylonian Talmud, Shabbat 23b (if one can afford only one, the Shabbat lamp comes before the Hanukkah lamp, for peace in the home)",
+   "Exodus 20:8; Deuteronomy 5:12 (remember; observe)",
+   "Mishnah Shabbat 7:2 (kindling among the kinds of work)"
+  ],
+  "check": [
+   "Wording of the angels’ blessing paraphrased (‘may it be so next Shabbat’; the Talmud says ‘another Shabbat’); calling the evil angel ‘bad’ for a light audience"
+  ]
+ }
+}

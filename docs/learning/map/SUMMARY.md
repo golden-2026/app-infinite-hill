@@ -1,3 +1,5 @@
+Background only (written 2026-10-06). Where this disagrees with docs/VISION-NOW.md or docs/LESSON_STANDARD.md, those win.
+
 # The five-year map: summary (2026-10-06)
 
 Eight readers each compared all the research (Reddit old and new, YouTube comments, Instagram/TikTok, rival app

@@ -1,3 +1,5 @@
+Background only (written 2026-10-03). Where this disagrees with docs/VISION-NOW.md or docs/LESSON_STANDARD.md, those win.
+
 # Sikhism: 10 sample lessons
 
 For the review kit (see ../README.md and ../rubric.md). These are the lessons exactly as written in the app's lesson scripts, laid out to read. In the app the "spoken" parts are read aloud by a voice while short lines appear on screen, and the games come after the talk. Score each one as "Sikhism #N".

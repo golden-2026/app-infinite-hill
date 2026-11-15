@@ -1,0 +1,124 @@
+# The front door is the website; every other path is the app (it routes itself).
+# "200!" forces the rule even though index.html (the app) exists at "/" — without it Netlify serves the app there.
+# "Start free" on the site opens /welcome/door; the installed app opens /today (manifest start_url).
+# /es is the Spanish website (site-es.html, built by atlas/mock/build.mjs --lang es); it must sit above the catch-all.
+/     /site-new.html    200!
+/es   /site-es.html 200
+# "/app" opens the newest app (the hill version, English only for now).
+/app  /hill/hill-app-doors.html 302
+# 2026-11-13 (owner: one website and one app): old test pages are hidden and send you to the one app.
+# The files stay in the repo; delete a line here to bring a page back.
+/site-doors.html  /  302!
+/site.html  /  302!
+/site-night.html  /  302!
+/site-doors-mock.html  /  302!
+/site-doors-faithfam-mock.html  /  302!
+# 2026-11-15 consistency review: old mock pages (navy, talking Finn) hidden too
+/site-es-mock.html  /  302!
+/site-film-mock.html  /  302!
+/site-finn-mock.html  /  302!
+/site-lines-mock.html  /  302!
+/site-new-mock.html  /  302!
+/site-order-mock.html  /  302!
+/site-order-mock2.html  /  302!
+/site-trips-mock.html  /  302!
+# 2026-11-14 owner: hidden until paid plans launch
+/promise  /  302!
+/promise.html  /  302!
+/es/promise  /  302!
+/promise-es.html  /  302!
+/hill/ahalya-film.html  /app  302!
+/hill/annapurna-film.html  /app  302!
+/hill/arjuna-dark-film.html  /app  302!
+/hill/broken-tusk-film.html  /app  302!
+/hill/broken-tusk-sacred.html  /app  302!
+/hill/durga-film.html  /app  302!
+/hill/first-letters-film.html  /app  302!
+/hill/gajendra-film.html  /app  302!
+/hill/galilee-trip.html  /app  302!
+/hill/ganesha-first-film.html  /app  302!
+/hill/ganesha-head-film.html  /app  302!
+/hill/ganga-film.html  /app  302!
+/hill/guide-memory.html  /app  302!
+/hill/hill-climb-mock.html  /app  302!
+/hill/hill-day-one.html  /app  302!
+/hill/hill-greybox.html  /app  302!
+/hill/hindu-films-2.html  /app  302!
+/hill/hindu-films.html  /app  302!
+/hill/holika-film.html  /app  302!
+/hill/homecoming-film.html  /app  302!
+/hill/index.html  /app  302!
+/hill/krishna-morning-film.html  /app  302!
+/hill/kumbh-film.html  /app  302!
+/hill/light-film.html  /app  302!
+/hill/living-day-two.html  /app  302!
+/hill/lost-son-film.html  /app  302!
+/hill/lost-son-play.html  /app  302!
+/hill/lost-son-sacred.html  /app  302!
+/hill/markandeya-film.html  /app  302!
+/hill/milk-film.html  /app  302!
+/hill/narada-film.html  /app  302!
+/hill/new-clothes-film.html  /app  302!
+/hill/no-effort-film.html  /app  302!
+/hill/parvati-film.html  /app  302!
+/hill/rama-film.html  /app  302!
+/hill/restless-mind-film.html  /app  302!
+/hill/ruth-film.html  /app  302!
+/hill/squirrel-film.html  /app  302!
+/hill/store-test.html  /app  302!
+/hill/ugadi-film.html  /app  302!
+/hill/universe-film.html  /app  302!
+/hill/valmiki-film.html  /app  302!
+/hill/vibhishana-film.html  /app  302!
+/hill/visarjan-film.html  /app  302!
+/hill/episodes/index.html  /app  302!
+/hill/episodes/engine.html  /app  302!
+/hill/episodes/c/index.html  /app  302!
+/hill/episodes/c/player.html  /app  302!
+/hill/community/index.html  /app  302!
+/hill/community/crew.html  /app  302!
+/hill/community/drop-night.html  /app  302!
+/hill/community/small-group.html  /app  302!
+/hill/mockups/my-own-religion.html  /app  302!
+/hill/  /app  302!
+# "Sources and how we write" (sources.html, sources-es.html): linked from the footer since 2026-11-14 (still noindex until the owner says otherwise).
+/sources     /sources.html    200
+/es/sources  /sources-es.html 200
+# The footer pages (about.html, about-es.html, … built by atlas/mock/pages.mjs). Old links like /#p/about land here too.
+/about            /about.html    200
+/foundation       /foundation.html    200
+/keepers          /keepers.html    200
+/provenance       /provenance.html    200
+/careers          /careers.html    200
+/science          /science.html    200
+/paths            /paths.html    200
+/nights           /nights.html    200
+/prayers          /prayers.html    200
+/voices           /voices.html    200
+/schools          /schools.html    200
+/safety           /safety.html    200
+/contact          /contact.html    200
+/privacy          /privacy.html    200
+/terms            /terms.html    200
+/biometric        /biometric.html    200
+/legal            /legal.html    200
+/build-your-own    /build-your-own.html    200
+/es/about         /about-es.html    200
+/es/foundation    /foundation-es.html    200
+/es/keepers       /keepers-es.html    200
+/es/provenance    /provenance-es.html    200
+/es/careers       /careers-es.html    200
+/es/science       /science-es.html    200
+/es/paths         /paths-es.html    200
+/es/nights        /nights-es.html    200
+/es/prayers       /prayers-es.html    200
+/es/voices        /voices-es.html    200
+/es/schools       /schools-es.html    200
+/es/safety        /safety-es.html    200
+/es/contact       /contact-es.html    200
+/es/privacy       /privacy-es.html    200
+/es/terms         /terms-es.html    200
+/es/biometric     /biometric-es.html    200
+/es/legal         /legal-es.html    200
+/es/build-your-own /build-your-own-es.html    200
+/*    /index.html   200

@@ -60,7 +60,7 @@ export function KeeperDesk() {
       <Text style={type.body()}>{t("onboarding.keepers.body")}</Text>
       <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 10, justifyContent: "space-between", marginTop: 6 }}>
         {data.KEEPERS.map(([k, n, c0, p]: string[], i: number) => { const a = art(p); const [tt, c] = keeperText(i, k, c0); return (
-          <View key={k} style={{ width: "48.5%", backgroundColor: "#fff", borderWidth: 1, borderColor: color.line, borderRadius: 16, overflow: "hidden" }}>
+          <View key={k} style={{ width: "48.5%", backgroundColor: color.white, borderWidth: 1, borderColor: color.line, borderRadius: 16, overflow: "hidden" }}>
             <View style={{ aspectRatio: 1, backgroundColor: "#7a6a3a" }}>{a ? <Image source={a.src} style={{ width: "100%", height: "100%" }} contentFit="cover" accessibilityLabel={n} /> : null}</View>
             <View style={{ padding: 12 }}><Text style={type.eyebrow(7)}>{tt}</Text><Text style={[type.serif(16), { marginTop: 3 }]}>{n}</Text><Text style={[type.body(11), { color: color.mute, marginTop: 2 }]}>{c}</Text></View>
           </View>

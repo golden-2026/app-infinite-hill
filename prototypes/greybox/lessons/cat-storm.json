@@ -1,0 +1,189 @@
+{
+ "id": "cat-storm",
+ "home": "angelus",
+ "title": "One more evening",
+ "told": "a story of Saints Benedict and Scholastica",
+ "clips": "art/sacred/cat-storm/clips/",
+ "voice": "art/sacred/cat-storm/voice/",
+ "guide": {
+  "name": "Nicole",
+  "photo": "art/guides/catholic.webp"
+ },
+ "card": {
+  "from": "a story of Saints Benedict and Scholastica",
+  "mins": 5,
+  "keep": "cloud",
+  "keepName": "Her storm",
+  "keepWhy": "Go to the one who understands, and stay a while.",
+  "sources": [
+   "Gregory the Great, Dialogues II.33-34: Scholastica, Benedict’s sister, consecrated to God from childhood, came to see him once a year at a house near the monastery; they spent the day in praise of God and holy talk and at dusk ate together; she begged him to stay the night and talk till morning of the joys of heaven; he refused, saying he could not stay outside the monastery; she laid her joined hands on the table and bowed her head on them; from a clear sky came such thunder, lightning and rain that neither Benedict nor his brothers could set foot outside; “God forgive you, sister, what have you done?” “I asked you, and you would not listen; I asked my Lord, and he heard me”; they spent the whole night in holy talk; “she could do more because she loved more” (illa plus potuit, quae amplius amavit); three days later he saw her soul go up to heaven like a dove, and laid her in the tomb he had prepared for himself.",
+   "Luke 1:39-56 (the Visitation: Mary goes with haste to Elizabeth; Elizabeth’s blessing; Mary stays about three months). The Visitation is the second joyful mystery of the rosary; feast 31 May.",
+   "Feast of Saint Scholastica, 10 February. The Rule of Saint Benedict."
+  ],
+  "check": [
+   "Gregory says only that she was his sister; that she was his twin is later tradition, and the lesson leaves it out."
+  ]
+ },
+ "hook": {
+  "v": "CSC2-Talking-Evening",
+  "say": "before the story, can i ask you something? when you have big news, is there one person you want to tell first?",
+  "options": [
+   [
+    "Yes, always the same person",
+    "then hold their face in your mind while you watch."
+   ],
+   [
+    "It changes",
+    "that’s okay. this story is about the one who gets it."
+   ],
+   [
+    "I keep it to myself",
+    "that’s so common. this story might change that."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "CSC1-Sister-Arrives",
+   "vo": [
+    "V01"
+   ],
+   "line": "Saint Benedict had a sister, Scholastica, a nun who lived nearby. Once a year she came to see him, and they spent the whole day talking about God."
+  },
+  {
+   "t": "shot",
+   "v": "CSC2-Talking-Evening",
+   "vo": [
+    "V02"
+   ],
+   "line": "On one visit, they talked and ate together until night fell. Then Benedict stood up. A monk had to be back in his monastery by night."
+  },
+  {
+   "t": "shot",
+   "v": "CSC3-Please-Stay",
+   "vo": [
+    "V03"
+   ],
+   "line": "Scholastica begged him, “Please stay tonight. Let’s talk until morning about the joys of heaven.” He said no. It was against the rule."
+  },
+  {
+   "t": "ask",
+   "v": "CSC3-Please-Stay",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "Scholastica folds her hands on the table, bows her head and prays. What happens next?",
+   "o": [
+    "Benedict changes his mind on his own",
+    "A wild storm breaks, and no one can leave",
+    "She gives up and says goodbye"
+   ],
+   "a": 1,
+   "why": "A sudden storm, out of a clear sky. Thunder, lightning, rain so heavy no one could step outside."
+  },
+  {
+   "t": "shot",
+   "v": "CSC4-Storm-Breaks",
+   "vo": [
+    "V04"
+   ],
+   "line": "Out of a clear sky, a storm broke: thunder, lightning, pouring rain. No one could step out the door."
+  },
+  {
+   "t": "shot",
+   "v": "CSC5-Benedict-Stays",
+   "vo": [
+    "V05"
+   ],
+   "line": "“Sister, what have you done?” She smiled. “I asked you, and you wouldn’t listen. So I asked my God, and he listened.” They talked all night."
+  },
+  {
+   "t": "ask",
+   "v": "CSC5-Benedict-Stays",
+   "eb": "why?",
+   "q": "Benedict wrote a famous rule for monks. Why would the storyteller let him lose this argument?",
+   "o": [
+    "Love can weigh more than even a good rule",
+    "Even founders of rules need humbling",
+    "Scholastica was the holier of the two"
+   ],
+   "a": 0,
+   "why": "The rule was good. But that night, love and the need to be together came first, and God sided with love."
+  },
+  {
+   "t": "shot",
+   "v": "CSC6-Dove-Rises",
+   "vo": [
+    "V06"
+   ],
+   "line": "Three days later, Benedict saw a dove rise toward heaven and knew his sister had died. He laid her in the tomb he had made for himself."
+  },
+  {
+   "t": "fill",
+   "v": "CSC6-Dove-Rises",
+   "eb": "finish the line",
+   "pre": "Pope Gregory, who told the story, wrote: she could do more, because she",
+   "post": "more.",
+   "o": [
+    "knew",
+    "prayed",
+    "loved"
+   ],
+   "a": 2,
+   "why": "Loved. He was strict about a good rule. She loved more, and love won the night."
+  },
+  {
+   "t": "ask",
+   "v": "CSC1-Sister-Arrives",
+   "eb": "did you know?",
+   "q": "Benedict laid his sister in the tomb he had made for himself. Where was he buried when he died?",
+   "o": [
+    "Beside the popes in Rome",
+    "In the same tomb, beside her",
+    "In the cave at Subiaco where he began"
+   ],
+   "a": 1,
+   "why": "Pope Gregory wrote that not even the grave would part two whose minds had always been one in God. At Monte Cassino you can still visit their shared tomb."
+  },
+  {
+   "t": "teach",
+   "v": "CSC5-Benedict-Stays",
+   "say": [
+    "here’s what i love. scholastica didn’t send a message. she walked to the one person who understood her, and she fought for one more evening with him.",
+    "catholics see the same thing in the visitation: mary hurried to elizabeth, and elizabeth blessed her without asking for proof. it’s the second joyful mystery of the rosary. some news is meant for the one who gets it."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "CSC4-Storm-Breaks",
+   "eb": "the hard one",
+   "q": "She asked her brother and he said no. She asked God, and the storm came. What does the story suggest about God?",
+   "o": [
+    "God sides against rules that are too strict",
+    "Small, loving wishes matter to God too",
+    "Prayer works best once a person has refused you"
+   ],
+   "a": 1,
+   "why": "Not a grand miracle for a grand cause. A storm, so a sister could have one more evening with her brother."
+  }
+ ],
+ "today": {
+  "v": "CSC2-Talking-Evening",
+  "say": "today, go to the one who understands: a visit, a call, a voice note to the person who’d get it without the backstory. stay a little longer than you planned. if you pray, you can thank God for them.",
+  "options": [
+   [
+    "I’ll call them today",
+    "lovely. one more evening, in a way."
+   ],
+   [
+    "I’ll plan a visit",
+    "good. scholastica walked a long way for hers."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "Roses in December.",
+  "line": "next, a poor man on a hill, a bishop who wanted proof, and mary’s song: the lowly are lifted."
+ }
+}

@@ -1,0 +1,201 @@
+{
+ "id": "chr-samaritan",
+ "home": "olive",
+ "title": "Who is my neighbor?",
+ "told": "a story Jesus told",
+ "clips": "art/sacred/chr-samaritan/clips/",
+ "voice": "art/sacred/chr-samaritan/voice/",
+ "guide": {
+  "name": "Denzel",
+  "photo": "art/guides/christianity.webp"
+ },
+ "card": {
+  "from": "a story Jesus told",
+  "mins": 5,
+  "keep": "oil",
+  "keepName": "The flask of oil",
+  "keepWhy": "Don’t ask who counts. Be the neighbor.",
+  "sources": [
+   "John 4:9 (“Jews have no dealings with Samaritans”), behind shot 4",
+   "Luke 10:25-28 (a lawyer tests Jesus; love God with all your heart and your neighbor as yourself, from Deuteronomy 6:5 and Leviticus 19:18)",
+   "Luke 10:29 (“But he, desiring to justify himself, asked Jesus, ‘Who is my neighbor?’”)",
+   "Luke 10:30 (a man going down from Jerusalem to Jericho fell among robbers, who left him half dead)",
+   "Luke 10:31-32 (a priest and a Levite pass by on the other side)",
+   "Luke 10:33-35 (a Samaritan is moved with compassion, bandages his wounds pouring on oil and wine, brings him to an inn, pays two denarii: “Take care of him. Whatever you spend beyond that, I will repay you when I return”)",
+   "Luke 10:36-37 (“Which of these three seems to you to have been a neighbor?” “He who showed mercy on him.” “Go and do likewise”)",
+   "Mark 4:33-34 (Jesus taught the crowds with many parables, as they were able to hear), behind the teach step",
+   "Captions follow the World English Bible, lightly modernized"
+  ],
+  "check": [
+   "The script’s day 22 topic is “why he told stories” (Mark 4:33-34); this lesson carries it through the Good Samaritan, where Jesus answers a question with a story. Confirm the fit."
+  ]
+ },
+ "hook": {
+  "v": "QS2-Road-Down",
+  "say": "before the story, can i ask you something? ever walked past someone who needed help, and thought about it all day?",
+  "options": [
+   [
+    "Yes, I have",
+    "me too. that feeling is worth listening to. so is this story."
+   ],
+   [
+    "I usually stop",
+    "that’s a gift. this story is about people like you."
+   ],
+   [
+    "Not that I remember",
+    "good. keep this one for the next time."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "QS1-Lawyer-Asks",
+   "vo": [
+    "V01"
+   ],
+   "line": "A lawyer agreed the great law was to love God and love your neighbor. Then, to test Jesus, he asked, “And who is my neighbor?”",
+   "label": "Luke 10:25-29"
+  },
+  {
+   "t": "shot",
+   "v": "QS2-Road-Down",
+   "vo": [
+    "V02"
+   ],
+   "line": "Jesus didn’t give a definition. He told a story. A man was going down the road from Jerusalem to Jericho, and robbers left him half dead.",
+   "label": "Luke 10:30"
+  },
+  {
+   "t": "shot",
+   "v": "QS3-Passing-By",
+   "vo": [
+    "V03"
+   ],
+   "line": "A priest came by, saw him, and passed by on the other side. Then a Levite, a temple helper, did the same.",
+   "label": "Luke 10:31-32"
+  },
+  {
+   "t": "ask",
+   "v": "QS3-Passing-By",
+   "blur": true,
+   "predict": true,
+   "eb": "what happens next?",
+   "q": "A priest, then a Levite, have passed by. Who do you guess stops next?",
+   "o": [
+    "An ordinary Jewish farmer",
+    "A Roman soldier",
+    "A Samaritan"
+   ],
+   "a": 2,
+   "why": "Listeners expected the trio priest, Levite, Israelite: an ordinary local would be the hero. Jesus swaps in a Samaritan, the last one they’d pick."
+  },
+  {
+   "t": "shot",
+   "v": "QS4-Samaritan-Kneels",
+   "vo": [
+    "V04"
+   ],
+   "line": "Then a Samaritan, from a people many listeners mistrusted, saw him and was moved with compassion. He bandaged his wounds, pouring on oil and wine.",
+   "label": "Luke 10:33-34"
+  },
+  {
+   "t": "ask",
+   "v": "QS4-Samaritan-Kneels",
+   "eb": "why?",
+   "q": "Why might Jesus make the hero a Samaritan, not someone his listeners admired?",
+   "o": [
+    "Because Samaritans were known as healers",
+    "To embarrass the lawyer in public",
+    "To show love crosses every line people draw"
+   ],
+   "a": 2,
+   "why": "Jews and Samaritans had feuded for centuries over where God should be worshipped; John’s Gospel says they had no dealings with each other (4:9). The man the listeners would least expect is the one who loves."
+  },
+  {
+   "t": "shot",
+   "v": "QS5-Inn",
+   "vo": [
+    "V05"
+   ],
+   "line": "He took him to an inn and paid for his care. “Look after him. Whatever more you spend, I’ll repay you when I return.”",
+   "label": "Luke 10:34-35"
+  },
+  {
+   "t": "ask",
+   "v": "QS5-Inn",
+   "predict": true,
+   "eb": "what happens next?",
+   "q": "Jesus asks, “Which of these three was a neighbor?” What do you guess the lawyer answers?",
+   "o": [
+    "“The Samaritan.”",
+    "“The one who showed mercy.”",
+    "“All three, in their way.”"
+   ],
+   "a": 1,
+   "why": "He can’t quite bring himself to say “Samaritan.” Many readers hear that dodge as the story’s sharpest moment."
+  },
+  {
+   "t": "shot",
+   "v": "QS1-Lawyer-Asks",
+   "vo": [
+    "V06"
+   ],
+   "line": "“Which of these three was a neighbor to the man?” “The one who showed mercy.” Jesus said, “Go and do the same.”",
+   "label": "Luke 10:36-37"
+  },
+  {
+   "t": "ask",
+   "v": "QS1-Lawyer-Asks",
+   "eb": "did you know?",
+   "q": "Why would Jesus’s listeners nod at “the road down to Jericho”?",
+   "o": [
+    "It was steep, lonely, known for robbers",
+    "It was a new Roman road, safe and busy",
+    "It ran through Samaritan villages"
+   ],
+   "a": 0,
+   "why": "It drops about 1,000 meters (over 3,000 feet) in under 20 miles of desert. Everyone knew it was a place you could get jumped."
+  },
+  {
+   "t": "teach",
+   "v": "QS4-Samaritan-Kneels",
+   "say": [
+    "here’s what i love. jesus could have given a lecture. instead he told a story, and let the lawyer answer his own question.",
+    "the gospels say he taught the crowds in stories, as much as they could hear. christians read this one as a call: don’t ask who counts as your neighbor. be one."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "QS1-Lawyer-Asks",
+   "eb": "the hard one",
+   "q": "Some readers defend the priest: the man looked half dead. Why might that matter to a priest?",
+   "o": [
+    "Priests weren’t meant to travel alone",
+    "Touching a corpse made a priest unclean",
+    "Only Levites were supposed to help"
+   ],
+   "a": 1,
+   "why": "Leviticus 21:1 keeps priests away from the dead. Others point out he was heading away from Jerusalem, so the excuse is thin. Jesus doesn’t argue the rule; he just shows who stopped."
+  }
+ ],
+ "today": {
+  "v": "QS6-Today",
+  "say": "notice one person today you’d usually walk past, a coworker, a neighbor, someone on the street, and stop for them: a hello, a hand, a coffee. that’s “go and do the same.”",
+  "options": [
+   [
+    "I’ll watch for them",
+    "good. they’re usually closer than you think."
+   ],
+   [
+    "Someone came to mind",
+    "then you already know which road to take today."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "The sower.",
+  "line": "a farmer throws seed everywhere, even on the road. most of it is wasted. he keeps throwing."
+ }
+}

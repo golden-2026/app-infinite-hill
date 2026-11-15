@@ -1,3 +1,5 @@
+Background only (written 2026-10-06). Where this disagrees with docs/VISION-NOW.md or docs/LESSON_STANDARD.md, those win.
+
 # Job 1: the content changes from the five-year map (owner: "do job 1 for all 8 paths at once", 2026-10-06)
 
 You are the writer for ONE path. Your inputs: `docs/learning/map/<PATH>.md` (this path's map) and

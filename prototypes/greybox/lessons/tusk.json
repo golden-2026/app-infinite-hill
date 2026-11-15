@@ -1,0 +1,214 @@
+{
+ "id": "tusk",
+ "home": "marigold",
+ "title": "The broken tusk",
+ "told": "a traditional story",
+ "clips": "art/sacred/broken-tusk/clips/",
+ "voice": "art/sacred/broken-tusk/voice/",
+ "guide": {
+  "name": "Priyanka",
+  "photo": "art/guides/hinduism.webp"
+ },
+ "hook": {
+  "v": "K01-Himalaya",
+  "say": "before the story, can i ask you something? have you put something meaningful on hold because things aren’t quite right yet?",
+  "options": [
+   [
+    "Yes, right now",
+    "then this one is for you. listen."
+   ],
+   [
+    "I used to",
+    "then you’ll know this feeling. listen."
+   ],
+   [
+    "Not really",
+    "good. keep this one for when you do."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "K01-Himalaya",
+   "vo": [
+    "V01"
+   ],
+   "line": "Long ago, the sage Vyasa carried a whole epic in his mind: the Mahabharata, one of the longest poems ever composed."
+  },
+  {
+   "t": "shot",
+   "v": "K02-The-Request",
+   "vo": [
+    "V02"
+   ],
+   "line": "He needed someone to write it down as he spoke. So he asked Ganesha."
+  },
+  {
+   "t": "ask",
+   "v": "K02-The-Request",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "Ganesha agrees to write, with one condition. What do you think it is?",
+   "o": [
+    "No one else may ever read it",
+    "Vyasa never stops reciting",
+    "His name goes on the book"
+   ],
+   "a": 1,
+   "why": "Once Vyasa began, he couldn’t pause. It’s a much-loved telling, though most old manuscripts of the Mahabharata leave this episode out."
+  },
+  {
+   "t": "shot",
+   "v": "K03-One-Condition",
+   "vo": [
+    "V03"
+   ],
+   "line": "Ganesha agreed, on one condition: once Vyasa began, he must not stop."
+  },
+  {
+   "t": "shot",
+   "v": "K04-Do-You-Understand",
+   "vo": [
+    "V04"
+   ],
+   "line": "Vyasa added a condition of his own: Ganesha must understand every verse before writing it."
+  },
+  {
+   "t": "shot",
+   "v": "K05-Night-Work",
+   "vo": [
+    "V05"
+   ],
+   "line": "So it began, day and night. Whenever Vyasa needed time to think, he recited a hard verse, and Ganesha paused to understand it."
+  },
+  {
+   "t": "ask",
+   "v": "K05-Night-Work",
+   "eb": "did you know?",
+   "q": "How long is the Mahabharata, next to the Iliad and Odyssey put together?",
+   "o": [
+    "About as long",
+    "About three times",
+    "About ten times"
+   ],
+   "a": 2,
+   "why": "Around 100,000 verses in its longest form, roughly ten times the Iliad and Odyssey together. No wonder Vyasa needed thinking time."
+  },
+  {
+   "t": "shot",
+   "v": "K06-The-Pen-Breaks",
+   "vo": [
+    "V06"
+   ],
+   "line": "In one popular telling, in the middle of it all, the pen breaks.",
+   "label": "one popular telling"
+  },
+  {
+   "t": "ask",
+   "v": "K06-The-Pen-Breaks",
+   "blur": true,
+   "eb": "why?",
+   "q": "The pen breaks mid-verse, and Ganesha snaps off his own tusk. Why not just ask Vyasa to wait a moment?",
+   "o": [
+    "Vyasa would lose his place in the story",
+    "He’d set the rule himself: no stopping",
+    "No other pen could keep up with him"
+   ],
+   "a": 1,
+   "why": "His own condition was that the recital never stop, so he gave a piece of himself instead. Other tellings say he lost the tusk fighting Parashurama; this one is the best loved."
+  },
+  {
+   "t": "shot",
+   "v": "K07-The-Tusk-Writes",
+   "vo": [
+    "V07"
+   ],
+   "line": "Ganesha broke off a piece of his own tusk, and kept writing.",
+   "label": "one popular telling"
+  },
+  {
+   "t": "shot",
+   "v": "K08-Sunrise",
+   "vo": [
+    "V08"
+   ],
+   "line": "Verse by verse, the great story was written down, and understood."
+  },
+  {
+   "t": "ask",
+   "v": "K08-Sunrise",
+   "eb": "why?",
+   "q": "Many students write “Shri Ganeshaya namah” at the top of a new notebook. Why does this story fit that habit?",
+   "o": [
+    "He wrote, and understood, every word",
+    "He brings luck to anyone in a test",
+    "He’s the patron of fine handwriting"
+   ],
+   "a": 0,
+   "why": "Ganesha is invoked first as the remover of obstacles and lord of beginnings. For students, this story adds one more reason: the scribe who understood every verse."
+  },
+  {
+   "t": "shot",
+   "v": "K09-Today",
+   "vo": [
+    "V09"
+   ],
+   "line": "That’s why so many images of Ganesha show one broken tusk, often with the broken piece in his hand.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "K09-Today",
+   "eb": "did you know?",
+   "q": "Vyasa isn’t only the storyteller. In the Mahabharata, he is also…",
+   "o": [
+    "The king who wins the great war",
+    "A character, grandfather of both sides",
+    "Ganesha’s teacher in the mountains"
+   ],
+   "a": 1,
+   "why": "Vyasa fathered Dhritarashtra and Pandu, so the cousins who fight the war are his grandsons. He tells a story he’s inside of."
+  },
+  {
+   "t": "teach",
+   "v": "K07-The-Tusk-Writes",
+   "say": [
+    "here’s what i love. when the pen broke, ganesha didn’t wait for a better one. he used what he had.",
+    "and he never wrote a line he didn’t understand. both matter: keep going, and know why."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "K09-Today",
+   "eb": "the hard one",
+   "q": "Ganesha is called Ekadanta, the one-tusked. Why might devotees love a god shown broken?",
+   "o": [
+    "It warns that even gods can be hurt",
+    "It shows what he gave for knowledge",
+    "It marks him as a fierce warrior"
+   ],
+   "a": 1,
+   "why": "Ekadanta is among his best-loved names. The missing piece becomes a sign of what he gave to get the story written."
+  }
+ ],
+ "today": {
+  "v": "K08-Sunrise",
+  "say": "choose one meaningful thing you’ve been delaying. give it five minutes today, with whatever’s in reach.",
+  "options": [
+   [
+    "I’ll start today",
+    "use what you have. that’s the whole lesson."
+   ],
+   [
+    "I’ll think about it",
+    "that counts. ganesha paused to understand too."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "The robber who became a poet.",
+  "line": "a forest robber asks his family one question. the answer changes his whole life."
+ }
+}

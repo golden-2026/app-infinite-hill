@@ -1,0 +1,170 @@
+<title>The Infinite Hill Film</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: a production script — acts as bands, each shot a row with its timing, picture, sound and a copyable Runway prompt. Dark film-room look on purpose, lime accent. */
+:root{--bg:#0d0d0c;--surface:#171715;--surface2:#1f1f1c;--line:#2f2e29;--text:#e9e7df;--mute:#a19f95;--lime:#EEFF6A;--ink:#0A0A0A;
+  --display:"Manrope",Inter,system-ui,sans-serif;--body:"Inter",system-ui,sans-serif;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:15.5px/1.6 var(--body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:30px 60px}
+.wrap{max-width:980px;margin:0 auto;display:flex;flex-direction:column;gap:22px}
+.eb{font:700 12px var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+h1{font:800 clamp(32px,6vw,52px)/1.04 var(--display);margin:6px 0 10px;color:#fff;text-wrap:balance}
+h1 span{color:var(--lime)}
+.lede{font-size:18px;max-width:70ch;margin:0}
+h2{font:800 24px/1.2 var(--display);color:#fff;margin:0}
+h3{font:800 17px var(--display);color:#fff;margin:0 0 4px}
+p{margin:6px 0;max-width:72ch}
+ul,ol{margin:6px 0;padding-left:22px;max-width:74ch}
+li{margin:4px 0}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+.box b{color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.act{border-top:2px solid var(--line);padding-top:16px;display:flex;flex-direction:column;gap:10px}
+.act .t{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px}
+.act .time{font:700 13px var(--body);color:var(--lime);font-variant-numeric:tabular-nums}
+.act .why{color:var(--mute);font-size:14px}
+.shot{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:grid;grid-template-columns:96px 1fr;gap:12px;min-width:0}
+.shot .n{font:800 15px var(--display);color:var(--lime)}
+.shot .n small{display:block;font:600 12px var(--body);color:var(--mute)}
+.shot .body{min-width:0;display:flex;flex-direction:column;gap:6px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:baseline}
+.tag{font:700 11px var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--ink);background:var(--lime);border-radius:999px;padding:2px 9px;flex:none}
+.tag.g{background:#3a3a33;color:#e9e7df}
+.vo{color:#fff}
+.vo i{color:var(--mute);font-style:normal}
+.prompt{position:relative;background:#0b0b0a;border:1px solid #2a2a26;border-radius:10px;padding:10px 12px 10px 12px;font:13.5px/1.55 var(--body);color:#d9d7cf;white-space:pre-wrap;word-wrap:break-word}
+.copy{float:right;margin:-2px -4px 6px 10px;min-height:30px;border-radius:999px;border:0;background:var(--lime);color:var(--ink);font:700 12px var(--body);padding:0 12px;cursor:pointer}
+.copy:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.refs{font-size:13px;color:var(--mute)}
+.refs code{color:#e9e7df;background:#222220;border-radius:6px;padding:1px 6px;font:12.5px ui-monospace,Consolas,monospace}
+.script p{margin:10px 0}
+.script .who{font:700 12px var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--lime);display:block}
+.warn{border-color:#5a4a20;background:#1c1912}
+@media (max-width:560px){.shot{grid-template-columns:1fr}}
+</style>
+
+<div class="wrap">
+  <div>
+    <div class="eb">Infinite Hill · investor film · production pack</div>
+    <h1>The film: <span>making religion yours again.</span></h1>
+    <p class="lede">A 3½-minute film for investors. It tells the story first (the problem, why now), then shows the world: you're known, you choose where to go, you learn, you practice, you feel better, you grow, you do it together. It ends with what's already built and the brand.</p>
+  </div>
+
+  <div class="box">
+    <h3>How this gets made (what each tool is good at)</h3>
+    <ul>
+      <li><b>Runway</b> makes the moving footage: the world, the mascot, the guide, the stories. One shot at a time, 5–10 seconds each, from a reference picture plus a prompt (below). It can't read our files or make a pitch deck, and words inside AI video come out garbled, so <b>no text is generated in Runway</b>.</li>
+      <li><b>The words</b> (stats, taglines, logo) are finished brand cards I made: folder <code>B-cards</code> (full-screen) and <code>C-supers</code> (lower-third lines with transparent backgrounds).</li>
+      <li><b>Voice:</b> a narrator (ElevenLabs or a human voice actor), plus Denzel's lines once his voice is recorded or licensed. Until then, a placeholder narrator reads his lines.</li>
+      <li><b>Music:</b> one warm cinematic track that builds: piano and strings, a hint of tabla and choir as the faiths come together.</li>
+      <li><b>The edit</b> happens in Runway's editor (or CapCut / Premiere): footage, cards, supers, voice, music.</li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <h3>Runway settings for every shot</h3>
+    <ul>
+      <li><b>Image to Video</b> (Gen-4 or the newest model), 16:9, 10 seconds. Where a shot has no reference picture, first make a still with Runway's <b>image</b> tool using the same prompt, then animate it.</li>
+      <li><b>References:</b> add the listed pictures from folder <code>A-references</code>. Always include <code>model-turnaround.webp</code> when the mascot appears, so he stays on model.</li>
+      <li>Paste the <b>style line</b> at the start of every prompt:</li>
+    </ul>
+    <div class="prompt" id="style"><button class="copy" type="button">copy</button>Stylized 3D animated film, the warmth of Pixar with the calm wonder of Sky: Children of the Light. Golden-hour cinematic lighting, soft volumetric light, painterly textures, gentle camera, shallow depth of field. Peaceful and awe-inspiring. No text, no logos, no watermarks.</div>
+    <p class="refs">Our mascot: round sunny-yellow face, infinity-symbol glasses, black cap worn backwards, cream "infinite hill" hoodie, black joggers, white sneakers with yellow stripes, white cartoon gloves.</p>
+  </div>
+
+  <div id="acts"></div>
+
+  <div class="act">
+    <div class="t"><h2>The full voiceover script</h2><span class="why">record this as one take, then cut to picture</span></div>
+    <div class="box script" id="script"></div>
+  </div>
+
+  <div class="box warn">
+    <h3>Before this goes to an investor</h3>
+    <ul>
+      <li><b>Denzel:</b> his face and voice appear only if his written approval covers an AI-made likeness and voice in a pitch film. Runway may also block a public figure's face; if it does, keep his real photo on a card and his real recorded voice.</li>
+      <li><b>No other celebrity names, faces or voices</b> until each one is signed.</li>
+      <li><b>Sacred figures:</b> no faces for prophets or Sikh Gurus (many Muslims and Sikhs consider that disrespectful). The shots below use scenes, light and practice instead.</li>
+      <li><b>Numbers on the cards</b> are real and sourced; the faith-app figures are reported by those companies and press, as labeled.</li>
+      <li><b>Label it</b> "concept film" in the corner or credits, since it isn't gameplay yet.</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+const S = (n, len, kind, picture, vo, overlay, refs, prompt) => ({ n, len, kind, picture, vo, overlay, refs, prompt });
+const ACTS = [
+  { title: "1 · The problem", time: "0:00–0:28", why: "the hook investors remember: a real loss, real numbers", shots: [
+    S("1", "6s", "runway", "Dawn. An old grandmother's hands light a small oil lamp at a home shrine; a child watches.", "every generation before us had a way through.", "card 01-a-way-through (fades in over the end)", "none (make a still first)", "Close-up, dawn light through a window: an elderly grandmother's wrinkled hands light a small brass oil lamp at a home shrine with marigolds; a small child's face watches in wonder, the flame reflected in her eyes. Slow push in."),
+    S("2", "6s", "runway", "Night. An unnamed teenager (not one of our cast) alone on a bed, face lit blue by an endless feed.", "then we walked away. and replaced it with a feed.", "card 02-we-walked-away", "none (make a still first)", "Night, a teenager alone on a bed in a dark bedroom, face lit cold blue by a phone, thumb scrolling endlessly, tired eyes, the room full of shadows. Slow pull back to show how alone they are. Quiet and melancholy, cool color palette."),
+    S("3", "9s", "cards", "Three fast stat cards, 3 seconds each.", "we're more mixed than ever. we barely know each other's faiths. and the youngest of us are the least okay.", "cards 03-stat-mixed, 04-stat-know, 05-stat-young", "", ""),
+    S("4", "4s", "card", "The line that turns the film.", "the loneliest generation ever needs the oldest thing on earth.", "card 06-loneliest", "", ""),
+  ]},
+  { title: "2 · The answer", time: "0:28–0:42", why: "brand moment, then the world revealed", shots: [
+    S("5", "4s", "card", "Logo and tagline.", "", "card 07-title", "", ""),
+    S("6", "10s", "runway", "The reveal: clouds part over Infinite Hill at sunrise, lanterns on every path, eight houses of worship around the slopes, the summit glowing.", "this is infinite hill. a beautiful world you visit a few minutes a day.", "card 08-what-it-is (or super 11 at the end)", "4-map.webp, lookout-summit.webp", "Breathtaking aerial descent through clouds at sunrise onto a green hill rising into misty snow mountains; a village of warm stone houses with lanterns along winding paths, waterfalls, cherry blossoms, and eight distinct houses of worship sitting peacefully around the slopes (a Hindu temple, a Buddhist stupa, a church, a cathedral, a synagogue, a mosque, a gurdwara, an open garden). The summit glows at the top. Majestic slow camera move."),
+  ]},
+  { title: "3 · It knows you", time: "0:42–1:02", why: "personal, not a syllabus", shots: [
+    S("7", "8s", "runway", "You arrive as the mascot, stepping out of a ring of golden light.", "you arrive as you.", "", "1-arrival.webp, model-turnaround.webp", "Third-person game camera behind our mascot as he steps out of a glowing ring of golden light onto a stone path at the foot of the hill; petals drift, lanterns flicker, birds rise from the trees, the village glows above. He looks up in wonder. Smooth follow camera."),
+    S("8", "8s", "runway", "Denzel Washington appears in soft light beside the mascot and welcomes you.", "Denzel: \"welcome to infinite hill. i'd love to walk this path with you. i'll guide you.\"", "", "celebrity-denzel-washington.jpeg, 1-arrival.webp, model-turnaround.webp", "A warm, smiling man (the person in the reference photo) in a simple cream linen shirt steps out of soft golden light beside the small yellow mascot on the hill path, kneels to his height and gestures up the hill as if inviting him along. Golden hour, gentle camera push in. Kind, fatherly presence."),
+    S("9", "9s", "runway", "The lantern-keeper by a campfire; a scroll of your life unrolls with glowing moments.", "the guide asks what brings you here, and maps a path from your own story.", "super 01-it-gets-to-know-you", "3-campfire.webp, 2-guide.webp, model-turnaround.webp", "Sunset by a small campfire on a flowered ledge: the kind old lantern-keeper (white beard, red and cream wool shawl) talks warmly with the mascot; beside them a glowing parchment scroll unrolls in the air showing small illustrated moments of a life (a childhood temple visit, a wedding, a hard rainy year) connected by a golden thread that extends into a path up the hill. Sparks rise. Slow orbit."),
+  ]},
+  { title: "4 · You choose where to go", time: "1:02–1:22", why: "first person: it's your world to explore", shots: [
+    S("10", "8s", "runway", "FIRST PERSON: a crossroads signpost with glowing arrows; your gloved hand points the way.", "you choose where to go.", "super 02-you-choose-where-to-go", "5-street.webp, mascot-walk.webp", "First-person point of view walking up a stone path to a carved wooden crossroads signpost with five glowing arrows pointing to different parts of the hill; the viewer's white cartoon-gloved hand reaches into frame and points left, and the camera turns smoothly that way toward a lantern-lit village street. Golden hour. Immersive, game-like."),
+    S("11", "8s", "runway", "FIRST PERSON: walking the lantern-lit street; hand-painted signs sparkle as you pass.", "signs on the street teach as you walk.", "", "5-street.webp", "First-person point of view walking slowly down a cozy lantern-lit village street at dusk; hand-painted wooden signs and banners on the walls twinkle with small sparkles as the viewer passes, flowers spill from balconies, string lights overhead, a few villagers wave. Gentle head-height camera, natural walking sway."),
+    S("12", "9s", "runway", "Gliding past the eight houses of worship, each glowing in its own light.", "eight doors. your faith, your partner's, or a path you build yourself.", "super 03-your-door-is-yours-or-two", "4-map.webp", "Slow lateral glide along a hillside terrace past eight distinct, beautiful houses of worship, each glowing softly with its own warm light at blue hour: a Hindu temple with a carved tower, a Buddhist stupa with prayer flags, a white country church, a stone cathedral, a synagogue, a mosque with a dome and minaret, a Sikh gurdwara with a golden dome, and an open garden pavilion. Peaceful, respectful, no people in focus."),
+  ]},
+  { title: "5 · You learn", time: "1:22–1:52", why: "real stories, five years deep, from every faith", shots: [
+    S("13", "8s", "runway", "FIRST PERSON in class: you sit on a bench; the teacher begins and the story rises above her like a living painting.", "class is a story, told in a voice you already know.", "super 04-taught-by-voices-you-already-know", "7-school.webp", "First-person point of view sitting on a wooden bench in a sunlit open-air classroom among flowers and lanterns; a warm teacher in a cream shawl begins a story, and a glowing illustrated scene rises into the air above her like a living painting. A girl beside the viewer leans in. Slow push toward the glowing story."),
+    S("14a", "4s", "runway", "Story: a robber on a forest road becomes a poet (Valmiki, Hindu).", "a robber who became a poet.", "", "none (make a still first)", "Ancient Indian forest at dusk: a rugged robber in rough cloth stops a calm sage in saffron robes with a tilak on his forehead and rudraksha beads; the sage raises one finger and asks a question. Painterly, warm, cinematic."),
+    S("14b", "4s", "runway", "Story: a shepherd carries the lost sheep home (Christian).", "a shepherd who went back for the one.", "", "none (make a still first)", "Hills of ancient Galilee at golden dusk: a shepherd in simple first-century robes walks home smiling with a lost lamb across his shoulders, a lantern in his hand, his flock waiting by a stone fold in the distance. Warm and tender."),
+    S("14c", "4s", "runway", "Story: a mother learns no house is untouched by loss (Kisa Gotami, Buddhist).", "a mother who learned no one grieves alone.", "", "none (make a still first)", "An ancient Indian village at dusk: a young mother in a simple sari stands at a doorway, holding out an empty palm, as an old woman inside gently shakes her head; behind her, a row of glowing doorways down the lane. Tender, quiet, golden light."),
+    S("14d", "4s", "runway", "Practice of a faith: Shabbat candles, iftar lanterns, a langar kitchen (Jewish, Muslim, Sikh).", "and the reasons behind what our grandparents did.", "super 05-real-stories-real-teachings-five-years-deep", "none (make three stills first)", "Quick, warm sequence: a Jewish family's hands (not our Christian cast) lighting two Shabbat candles over a braided challah; colorful lanterns glowing over a table set for iftar at sunset; volunteers serving food to people seated in long rows on the floor of a Sikh community kitchen. No faces of prophets or Gurus. Golden light."),
+    S("15", "8s", "runway", "Grace's phone-style question floats up; you answer; a lime card ties the story to her life.", "then a friend brings a real problem, and you use what you learned.", "super 06-checked-by-scholars-of-every-faith", "cast-christian-grace.webp, 7-school.webp", "In the sunlit open-air classroom, a teenage girl with a long brown ponytail and a maroon hoodie turns to the viewer with a worried, hopeful face, holding her phone; a soft glow passes between them as if she's been answered, and she breaks into a relieved smile and starts typing. Gentle push in."),
+  ]},
+  { title: "5B · Why nobody else can do this", time: "1:52–2:32", why: "the moat: the act investors remember", shots: [
+    S("15b", "8s", "runway", "Eight doors on the hillside light up one by one, each with a ripple of sound like a voice; the Christianity door glows brightest and Denzel steps out.", "your door has a voice. you already know it. a well-known voice of each faith, in your ear for every lesson.", "card 13-voice-for-every-door", "4-map.webp, celebrity-denzel-washington.jpeg", "A row of eight beautiful carved doors set into the hillside at blue hour, each lighting up one after another with a soft ripple of golden light pulsing from it like a voice; the last door glows brightest and a warm, smiling man (the person in the reference photo) steps through it. Slow lateral camera move."),
+    S("15c", "7s", "runway", "The Keepers: a scholar's hands read a glowing lesson scroll, correct it, and press a wax seal.", "and a scholar of each faith reads every lesson before you hear it. they can veto us.", "card 14-keepers", "none (make a still first)", "A quiet candlelit library on a hill: close-up of a scholar's hands reading a glowing illuminated scroll, making a small correction with a fountain pen, then pressing a wax seal onto it; the seal glows gold. No face. Warm, reverent, precise."),
+    S("15d", "8s", "runway", "Nine lanterns float up into the evening sky (the nine reasons people come).", "nobody's changed by a lesson. everybody's changed by a hundred. day one, a single breath. day one hundred, you're the calm one in the room. and we measure it.", "card 15-hundred, then card 16-day-strip", "4-map.webp", "Evening over the hill: nine glowing paper lanterns rise slowly from the village into a violet sky, drifting apart toward the summit, each carrying a soft warm light. Gentle upward camera tilt. Hopeful."),
+    S("15e", "7s", "runway", "The eighth door opens onto a garden where glowing pieces of wisdom drift in from different directions and settle side by side.", "no religion? you're welcome here. create your own, from the best of every tradition, each with its source.", "card 17-own-religion", "none (make a still first)", "An ornate garden door swings open onto a luminous open-air garden at golden hour; small glowing motes of light drift in from many directions and settle gently side by side on stone plinths without merging, like a constellation forming. Wonder, calm. Slow push in."),
+    S("15f", "4s", "card", "Why now.", "this is possible now. a small team can build what used to take a studio.", "card 18-why-now", "", ""),
+  ]},
+  { title: "6 · You practice, and feel better", time: "2:32–2:52", why: "the part that changes a day", shots: [
+    S("16", "10s", "runway", "The quiet grove: you sit among singing bowls; a breathing ring of light swells and settles.", "Denzel: \"breathe in. and out. think of one person who drifted away. wish them well tonight.\"", "", "6-grove.webp, model-turnaround.webp", "Blue hour in a wooden pavilion in a bamboo and pine grove: the mascot sits cross-legged on a cushion, seen from behind, among glowing brass singing bowls; soft rings of golden light ripple out from the bowls like sound waves and a large ring of pale light slowly swells and settles in front of him like breath. Fireflies drift. Very slow push in. Deeply calm."),
+    S("17", "8s", "runway", "Out of the game, into life: a girl at her kitchen table sends a message, and smiles.", "every visit ends with one small thing you do for real.", "super 07-practice-that-leaves-the-screen", "cast-christian-grace.webp", "A warm evening kitchen: the girl with the brown ponytail and maroon hoodie sits at the table, types a short message on her phone, hesitates, sends it, and a moment later her phone lights up and she smiles with relief. Soft lamplight, cozy, hopeful."),
+  ]},
+  { title: "7 · You grow", time: "2:52–3:07", why: "progress you can see, for years", shots: [
+    S("18", "8s", "runway", "Time-lapse: the hill blooms as days pass; lanterns light one by one up the paths.", "the more you practice, the more the hill comes alive.", "super 08-you-grow-the-hill-grows-with-you", "4-map.webp", "Time-lapse of the whole hill over many days: bare winter slopes turn green, trees burst into blossom, gardens fill with flowers, and lanterns light one by one up the winding paths toward the glowing summit as day and night cycle. Wide, majestic, joyful."),
+    S("19", "7s", "runway", "The mascot climbs the last stretch toward the summit at sunrise.", "five years of lessons. a lifetime of climbing.", "", "lookout-summit.webp, mascot-climb.webp, model-turnaround.webp", "Third-person camera behind the mascot climbing the last snowy, flower-lined stretch of a mountain trail toward a glowing summit at sunrise, a sea of clouds and lakes below. He pauses and looks out at the view. Epic, peaceful."),
+  ]},
+  { title: "8 · Together", time: "3:07–3:22", why: "family and the unity idea", shots: [
+    S("20", "8s", "runway", "Home: the family around the table; the lights board glows, one lantern for each person.", "and you're never doing it alone. grandma, the kids, all of you, each on your own path.", "super 09-together-as-a-family", "8-home.webp, cast-hindu-family.webp", "A cozy family home at evening: grandmother, parents and two kids sit around a low wooden table with the mascot; on the wall, a board of small lanterns lights up one by one, one for each family member, and everyone looks up and smiles. Firelight, warmth, laughter."),
+    S("21", "7s", "runway", "The same village street, two festivals: Diwali lamps on one side, Christmas lights on the other; neighbors share sweets.", "diwali, christmas, eid, hanukkah. it's all on the hill. more alike than we think.", "super 10-festivals-on-the-real-calendar, then card 11-golden-rule", "hindu-scene-diwali.webp, christian-scene-christmas.webp", "A village street at night where one side glows with Diwali oil lamps and a rangoli on the ground and the other with Christmas lights and a small decorated tree; neighbors from both homes meet in the middle and share a plate of sweets, children laughing. Slow crane up. Warm, joyful."),
+  ]},
+  { title: "9 · Why us, and the end", time: "3:22–3:38", why: "proof, then the brand", shots: [
+    S("22", "5s", "card", "What's built.", "five years of lessons on eight paths, checked by scholars of each tradition. a working app, in private alpha.", "card 09-built", "", ""),
+    S("23", "5s", "card", "Faith apps work; none serve everyone.", "faith apps already reach tens of millions. every one serves one faith. nobody has built one for everyone.", "card 10-proof", "", ""),
+    S("24", "6s", "runway", "Aerial rise over the hill at night, every path lit, the summit glowing, stars appearing.", "Denzel: \"come back tomorrow. i'll be here.\"", "", "4-map.webp", "Slow aerial rise away from the hill at night: every winding path lined with glowing lanterns, the eight houses of worship lit softly, the summit glowing gold, a full moon and stars appearing over the mountains and lakes. Majestic, peaceful, final."),
+    S("25", "4s", "card", "End card.", "infinite hill. making religion yours again.", "card 12-end", "", ""),
+  ]},
+];
+const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;");
+document.getElementById("acts").innerHTML = ACTS.map((a) => `<div class="act"><div class="t"><h2>${a.title}</h2><span class="time">${a.time}</span><span class="why">${a.why}</span></div>${a.shots.map((s) => `
+  <div class="shot"><div class="n">shot ${s.n}<small>${s.len}</small></div><div class="body">
+    <div class="row"><span class="tag ${s.kind === "runway" ? "" : "g"}">${s.kind === "runway" ? "runway" : "card"}</span><span>${esc(s.picture)}</span></div>
+    ${s.vo ? `<div class="vo"><i>voice:</i> ${esc(s.vo)}</div>` : ""}
+    ${s.overlay ? `<div class="refs"><i>on screen:</i> ${esc(s.overlay)}</div>` : ""}
+    ${s.refs ? `<div class="refs"><i>reference pictures:</i> ${s.refs.split(", ").map((r) => `<code>${esc(r)}</code>`).join(" ")}</div>` : ""}
+    ${s.prompt ? `<div class="prompt"><button class="copy" type="button">copy</button>${esc(s.prompt)}</div>` : ""}
+  </div></div>`).join("")}</div>`).join("");
+const lines = ACTS.flatMap((a) => a.shots.filter((s) => s.vo).map((s) => s.vo));
+document.getElementById("script").innerHTML = lines.map((l) => { const m = /^Denzel: "(.*)"$/.exec(l); return m ? `<p><span class="who">denzel washington</span>${esc(m[1])}</p>` : `<p><span class="who">narrator</span>${esc(l)}</p>`; }).join("");
+document.addEventListener("click", (e) => {
+  const b = e.target.closest(".copy"); if (!b) return;
+  const box = b.parentElement; const text = box.textContent.replace(/^copy/, "").trim();
+  const sel = () => { const r = document.createRange(); r.selectNodeContents(box); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = "selected"; };
+  try { navigator.clipboard.writeText(text).then(() => { b.textContent = "copied ✓"; setTimeout(() => (b.textContent = "copy"), 1500); }, sel); } catch (err) { sel(); }
+});
+</script>

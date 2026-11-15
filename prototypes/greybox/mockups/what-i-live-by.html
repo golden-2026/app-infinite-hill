@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What I Live By</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@500;600;700;800&display=swap">
+<style>
+  /* Proposed feature mockup (2026-11-15): "what i live by". Not the live app. Styles copied from hill-app-doors.html. */
+  :root { --night:#0A0A0A; --panel:#141414; --panel2:#1c1c1c; --text:#F3EFE4; --muted:#a9a59b; --gold:#EEFF6A; --ink:#0A0A0A; --line:#2a2a2a; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #050505; color: var(--text); font: 600 15px/1.45 Manrope, system-ui, sans-serif; }
+  .A { font-family: Anton, Impact, sans-serif; font-weight: 400; text-transform: uppercase; letter-spacing: .005em; }
+  .A em { font-style: normal; color: var(--gold); }
+  .eyebrow { font: 800 11px/1.2 Manrope, sans-serif; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); }
+
+  /* ── sheet ── */
+  .sheet { width: 1290px; padding: 48px 48px 56px; background: #050505; }
+  .sheet + .sheet { border-top: 2px solid #1d1d1d; }
+  .shead { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 30px; }
+  .shead h1 { margin: 6px 0 0; font: 400 64px/.92 Anton, Impact, sans-serif; text-transform: uppercase; }
+  .shead h1 em { font-style: normal; color: var(--gold); }
+  .shead p { margin: 10px 0 0; max-width: 720px; color: var(--muted); font-size: 16px; }
+  .prop { font: 800 12px Manrope; letter-spacing: .14em; text-transform: uppercase; border: 1.5px solid var(--gold); color: var(--gold); padding: 8px 12px; border-radius: 99px; white-space: nowrap; }
+  .sig { margin: 0 0 34px; padding: 18px 22px; border-radius: 20px; background: var(--gold); color: var(--ink); display: flex; gap: 22px; align-items: center; }
+  .sig .A { font-size: 34px; line-height: .95; flex: none; }
+  .sig p { margin: 0; font-size: 15px; font-weight: 700; line-height: 1.45; }
+  .row { display: grid; grid-template-columns: 390px 390px 1fr; gap: 28px; align-items: start; margin-bottom: 44px; }
+  .lab { font: 400 26px/1 Anton, Impact, sans-serif; text-transform: uppercase; margin: 0 0 12px; display: flex; align-items: center; gap: 10px; }
+  .lab i { font-style: normal; font: 800 11px Manrope; letter-spacing: .14em; padding: 5px 9px; border-radius: 99px; }
+  .lab.b i { background: #2a2a2a; color: var(--muted); }
+  .lab.a i { background: var(--gold); color: var(--ink); }
+  .shot { width: 390px; height: 844px; border-radius: 34px; overflow: hidden; box-shadow: 0 0 0 1px rgba(255,255,255,.1); display: block; }
+  .none { width: 390px; height: 844px; border-radius: 34px; border: 2px dashed #2f2f2f; display: grid; place-items: center; text-align: center; padding: 40px; color: var(--muted); font-size: 15px; }
+  .none b { display: block; font: 400 30px/1 Anton, Impact, sans-serif; text-transform: uppercase; color: #5b5953; margin-bottom: 12px; }
+  .notes { padding-top: 38px; display: grid; gap: 14px; }
+  .notes h3 { margin: 0; font: 400 30px/1 Anton, Impact, sans-serif; text-transform: uppercase; }
+  .notes .n { background: #111; border: 1px solid #222; border-radius: 16px; padding: 12px 14px; font-size: 14px; line-height: 1.5; color: #d9d5ca; }
+  .notes .n b { display: block; font: 800 10.5px Manrope; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+  .notes .n.why b { color: #F3EFE4; }
+
+  /* ── phone ── */
+  .phone { position: relative; width: 390px; height: 844px; overflow: hidden; background: var(--night); border-radius: 34px; box-shadow: 0 0 0 1px rgba(255,255,255,.1); }
+  .scroll { position: absolute; inset: 0 0 64px 0; overflow: hidden; }
+  .full { position: absolute; inset: 0; overflow: hidden; padding: 54px 16px 20px; }
+  nav.tabs { position: absolute; left: 0; right: 0; bottom: 0; height: 64px; display: grid; grid-template-columns: repeat(4,1fr); background: rgba(10,10,10,.96); border-top: 1px solid var(--line); }
+  nav.tabs span { color: var(--muted); font: 800 11px Manrope; letter-spacing: .08em; text-transform: uppercase; display: grid; justify-items: center; align-content: center; gap: 3px; }
+  nav.tabs span.on { color: var(--gold); }
+  nav.tabs svg { width: 22px; height: 22px; }
+  .tabhead { background: var(--gold); color: var(--ink); padding: 40px 16px 16px; border-radius: 0 0 28px 28px; margin-bottom: 14px; }
+  .tabhead .eyebrow { color: var(--ink); }
+  .tabhead h2 { margin: 4px 0 0; font: 400 52px/.92 Anton, Impact, sans-serif; text-transform: uppercase; }
+  .tabhead h2 u { text-decoration-thickness: 6px; text-underline-offset: 6px; }
+  .tabhead p { margin: 8px 0 0; font: 700 14px/1.38 Manrope; }
+  .pad { padding: 0 16px; }
+
+  /* what i live by */
+  .priv { display: flex; align-items: center; gap: 7px; color: var(--muted); font: 700 12.5px Manrope; margin: 0 2px 8px; }
+  .priv svg { width: 14px; height: 14px; color: var(--gold); }
+  .grp { margin-bottom: 10px; }
+  .grp h3 { display: flex; justify-content: space-between; align-items: baseline; margin: 0 2px 8px; font: 400 21px/1 Anton, Impact, sans-serif; text-transform: uppercase; letter-spacing: .02em; }
+  .grp h3 small { font: 800 11px Manrope; letter-spacing: .12em; color: var(--muted); }
+  .grp .sub { margin: -4px 2px 8px; color: var(--muted); font: 600 12.5px/1.4 Manrope; }
+  .pc { display: flex; gap: 11px; align-items: center; background: var(--panel2); border-radius: 16px; padding: 7px 6px 7px 7px; margin-bottom: 6px; }
+  .pc .th { width: 40px; height: 40px; border-radius: 11px; background: #222 50% 25% / cover; flex: none; }
+  .pc .tx { flex: 1; min-width: 0; }
+  .pc .tx b { display: block; font: 800 15px/1.22 Manrope; }
+  .pc .tx span { display: block; font: 800 10px/1.3 Manrope; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-top: 4px; }
+  .pc .tx span i { font-style: normal; color: var(--muted); letter-spacing: .04em; text-transform: none; font-weight: 600; font-size: 11.5px; }
+  .pc .ed { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; color: var(--muted); flex: none; }
+  .pc .ed svg { width: 18px; height: 18px; }
+  .grp.soft .pc { background: transparent; box-shadow: inset 0 0 0 1px var(--line); }
+  .grp.soft .pc .tx b { color: #cfcabe; }
+  .grp.soft .pc .th { filter: saturate(.5) brightness(.8); }
+  .pc.q .th { display: grid; place-items: center; background: #1a1d0a; border: 1.5px dashed rgba(238,255,106,.5); font: 400 22px Anton; color: var(--gold); }
+  .grp.mute .pc { background: transparent; box-shadow: inset 0 0 0 1px #222; }
+  .grp.mute .pc .tx b { color: #8f8b82; }
+  .grp.mute .pc .th { filter: grayscale(1) brightness(.6); }
+  .editbtn { font: 800 11px Manrope; letter-spacing: .12em; color: var(--ink); background: var(--gold); padding: 6px 10px; border-radius: 99px; }
+
+  /* the sort */
+  .topbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+  .x { width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(255,255,255,.2); display: grid; place-items: center; font: 800 16px Manrope; color: var(--muted); }
+  .pile { display: inline-flex; align-items: center; gap: 7px; padding: 7px 12px 7px 9px; border-radius: 99px; border: 1px solid rgba(255,255,255,.18); font: 800 12.5px Manrope; }
+  .pile b { background: var(--gold); color: var(--ink); border-radius: 99px; min-width: 22px; height: 22px; display: grid; place-items: center; font-size: 12px; padding: 0 6px; }
+  .pile b.bump { box-shadow: 0 0 0 5px rgba(238,255,106,.22); }
+  .h1 { font-size: 46px; line-height: .92; margin: 6px 0 12px; }
+  .src-line { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; }
+  .ttag { display: inline-flex; align-items: center; font: 800 10.5px/1 Manrope; letter-spacing: .14em; text-transform: uppercase; padding: 6px 9px; border-radius: 99px; border: 1.5px solid rgba(238,255,106,.6); color: var(--gold); white-space: nowrap; }
+  .src-line small { color: var(--muted); font: 600 12.5px Manrope; }
+  .lc { background: var(--panel); border: 1px solid var(--line); border-radius: 20px; padding: 13px 13px 12px; margin-bottom: 9px; }
+  .lc .top { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+  .lc .A { font-size: 25px; line-height: 1; }
+  .lc .ref { font: 800 10.5px Manrope; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+  .tri { display: grid; grid-template-columns: 1.05fr 1fr 1fr; gap: 6px; margin-top: 11px; }
+  .tri span { text-align: center; border: 1.5px solid var(--line); border-bottom-width: 4px; border-radius: 13px; padding: 8px 4px 7px; font: 800 13px Manrope; color: var(--text); background: #111; }
+  .tri span.me { background: var(--gold); color: var(--ink); border-color: #a9b72c; }
+  .tri span.uns { border-color: var(--gold); color: var(--gold); }
+  .lc.done { border-color: rgba(238,255,106,.45); }
+  .bq { margin-top: 12px; display: flex; gap: 10px; align-items: flex-start; }
+  .gf { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; object-position: 50% 25%; border: 2px solid var(--gold); flex: none; background: #1a1d0a; }
+  .bub { background: var(--panel); border: 1px solid rgba(255,255,255,.07); border-radius: 18px 18px 18px 4px; padding: 10px 13px; font: 700 14px/1.4 Manrope; flex: 1; }
+  .bub[data-spk]::before { content: attr(data-spk); display: block; margin-bottom: 3px; font: 800 10.5px/1.2 Manrope; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); }
+  .bopts { display: flex; gap: 6px; margin-top: 9px; flex-wrap: wrap; align-items: center; }
+  .bopts span { padding: 7px 13px; border-radius: 99px; border: 1.5px solid var(--line); font: 800 13px Manrope; }
+  .bopts .skip { border: 0; color: var(--muted); text-decoration: underline; text-underline-offset: 3px; padding: 7px 4px; margin-left: auto; }
+  .bbig { display: block; width: 100%; border: 0; border-radius: 999px; padding: 16px 18px; font: 800 17px/1.1 Manrope; background: var(--gold); color: var(--ink); box-shadow: 0 5px 0 #a9b72c; text-align: center; }
+  .fine { text-align: center; color: var(--muted); font: 600 12px Manrope; margin-top: 12px; }
+
+  /* chat */
+  .gstrip { display: flex; gap: 12px; align-items: center; padding: 10px 12px; border-radius: 20px; background: var(--panel); border: 1px solid var(--line); }
+  .gstrip img { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; object-position: 50% 25%; border: 2px solid var(--gold); }
+  .gstrip b { display: block; font: 400 18px/1.05 Anton, Impact, sans-serif; text-transform: uppercase; }
+  .gstrip small { color: var(--muted); font-size: 12px; }
+  .chat { display: grid; gap: 9px; margin-top: 12px; }
+  .msg { max-width: 86%; padding: 10px 13px; border-radius: 16px; font-size: 14px; line-height: 1.42; }
+  .msg.me { justify-self: end; background: var(--gold); color: var(--ink); border-radius: 16px 16px 4px 16px; font-weight: 800; }
+  .msg.them { position: relative; margin-left: 38px; background: var(--panel2); box-shadow: inset 0 0 0 1px var(--line); border-radius: 16px 16px 16px 4px; }
+  .msg.them.av::before { content: ""; position: absolute; left: -38px; bottom: 0; width: 30px; height: 30px; border-radius: 50%; background: #1a1d0a url(../art/guides/spiritual.webp) center 25% / cover; border: 1.5px solid var(--gold); }
+  .msg .src { display: block; margin-top: 6px; font: 800 10px/1.3 Manrope; letter-spacing: .07em; text-transform: uppercase; color: var(--gold); }
+  .msg q { quotes: "“" "”"; font-weight: 800; }
+  .msg .k { display: inline-block; font: 400 17px/1 Anton; text-transform: uppercase; color: var(--gold); margin-bottom: 3px; }
+  .from { margin-left: 38px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; font: 700 11.5px Manrope; color: var(--muted); }
+  .from span { border: 1px solid rgba(238,255,106,.45); color: var(--gold); border-radius: 99px; padding: 3px 8px; font: 800 9.5px Manrope; letter-spacing: .1em; text-transform: uppercase; }
+  .ai { margin-left: 38px; color: var(--muted); font: 700 11px Manrope; }
+  .chips { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+  .chips span { border: 1.5px solid var(--line); border-radius: 99px; padding: 7px 12px; font: 800 12.5px Manrope; }
+  .inp { position: absolute; left: 16px; right: 16px; bottom: 76px; display: flex; gap: 8px; }
+  .inp div { flex: 1; border: 1px solid var(--line); background: var(--panel2); border-radius: 99px; padding: 12px 16px; color: #6d6a63; font: 600 14px Manrope; }
+  .inp i { width: 46px; height: 46px; border-radius: 50%; background: var(--gold); display: grid; place-items: center; color: var(--ink); font: 900 18px Manrope; font-style: normal; }
+
+  /* set B */
+  .tap { display: flex; align-items: center; gap: 12px; background: var(--panel); border: 1.5px solid var(--line); border-bottom-width: 4px; border-radius: 18px; padding: 14px 14px 13px; margin-bottom: 9px; }
+  .tap .A { font-size: 25px; line-height: 1; flex: 1; }
+  .tap .ref { display: block; font: 800 10.5px Manrope; letter-spacing: .1em; color: var(--muted); margin-top: 6px; font-family: Manrope; text-transform: uppercase; }
+  .tap .ck { width: 30px; height: 30px; border-radius: 50%; border: 2px solid #3a3a3a; flex: none; display: grid; place-items: center; }
+  .tap.on { background: var(--gold); color: var(--ink); border-color: #a9b72c; }
+  .tap.on .ref { color: rgba(0,0,0,.6); }
+  .tap.on .ck { background: var(--ink); border-color: var(--ink); color: var(--gold); font: 900 16px Manrope; }
+  .rule { display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px; border-radius: 16px; border: 1px dashed rgba(238,255,106,.4); background: rgba(238,255,106,.06); font: 700 13px/1.45 Manrope; color: #e7e2d4; margin: 4px 0 14px; }
+  .rule svg { width: 18px; height: 18px; color: var(--gold); flex: none; margin-top: 1px; }
+  .wsy { background: var(--panel); border: 1px solid rgba(238,255,106,.35); border-radius: 22px; padding: 16px; }
+  .wsy .A.t { font-size: 30px; line-height: .95; margin: 6px 0 12px; }
+  .wsy .ln { display: flex; gap: 12px; align-items: baseline; padding: 10px 0; border-top: 1px solid var(--line); }
+  .wsy .ln b { flex: 1; font: 800 15px/1.3 Manrope; }
+  .wsy .ln span { font: 800 10px Manrope; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); white-space: nowrap; }
+  .wsy .ft { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; color: var(--muted); font: 700 12px Manrope; }
+  .wsy .ft u { color: var(--text); text-underline-offset: 3px; }
+  .cardsrow { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; margin-top: 10px; }
+  .cardsrow div { aspect-ratio: 3/4; border-radius: 14px; background: #222 center / cover; box-shadow: inset 0 0 0 1px rgba(255,255,255,.1); }
+  .cardsrow div.q { background: #000; display: grid; place-items: center; font: 400 34px Anton; color: #333; }
+</style></head>
+<body>
+
+<!-- ═════════════════════════ SET A ═════════════════════════ -->
+<section class="sheet" id="setA">
+  <div class="shead">
+    <div>
+      <div class="eyebrow">proposed · set a · my own religion · guide: Justin</div>
+      <h1>what i live by. <em>your religion, sorted by you.</em></h1>
+      <p>The six-pieces list becomes a living page you shape. After each story you sort its lessons, now and then the guide asks one easy question, and the Guide answers from what you kept, naming every source.</p>
+    </div>
+    <span class="prop">mockup · not live</span>
+  </div>
+  <div class="sig"><div class="A">the signature:<br>“this is me.”</div>
+    <p>One tap, three honest answers: this is me, not sure yet, not for me. A “this is me” card lifts and flies into the pile counter at the top (it ticks up, lime glow). “Not sure yet” tucks in beside it. “Not for me” simply slides down and out of the way: no red, no X, no verdict on the teaching. Nobody else does a religion you sort with your thumb.</p></div>
+
+  <!-- A1 -->
+  <div class="row">
+    <div><div class="lab b"><i>before</i> today's list</div><img class="shot" src="what-i-live-by/before-creed.png" alt=""></div>
+    <div><div class="lab a"><i>after</i> what i live by</div>
+      <div class="phone" id="a1">
+        <div class="scroll">
+          <div class="tabhead">
+            <div class="eyebrow">my own religion</div>
+            <h2>what i <u>live by</u></h2>
+            <p>this is your religion, built from what moves you. keep what's true for you, drop what isn't. change it anytime.</p>
+          </div>
+          <div class="pad">
+            <div class="priv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>private. only you see this.</div>
+            <div class="grp">
+              <h3>what matters to you <span class="editbtn">edit</span></h3>
+              <div class="pc"><div class="th" style="background-image:url(../art/lessons/spiritual/6.webp)"></div><div class="tx"><b>what bugs me may be mine.</b><span>christianity · <i>Matthew 7:3-5</i></span></div><div class="ed"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg></div></div>
+              <div class="pc"><div class="th" style="background-image:url(../art/lessons/buddhism/1.webp)"></div><div class="tx"><b>i am the owner of my actions.</b><span>buddhism · <i>the Anguttara Nikaya</i></span></div><div class="ed"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg></div></div>
+              <div class="pc"><div class="th" style="background-image:url(../art/lessons/judaism/3.webp)"></div><div class="tx"><b>be a mensch.</b><span>judaism · <i>Mishnah Avot 2:5</i></span></div><div class="ed"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg></div></div>
+              <div class="pc"><div class="th" style="background-image:url(../art/lessons/sikhism/5.webp)"></div><div class="tx"><b>for everyone, not just us.</b><span>sikhism · <i>the Ardas</i></span></div><div class="ed"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg></div></div>
+            </div>
+            <div class="grp soft">
+              <h3>still figuring out <small>2</small></h3>
+              <div class="pc q"><div class="th">?</div><div class="tx"><b>do things happen for a reason?</b><span>a big question · <i>you said: not sure yet</i></span></div><div class="ed"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg></div></div>
+              <div class="pc"><div class="th" style="background-image:url(../art/lessons/spiritual/1.webp)"></div><div class="tx"><b>not why, but what now.</b><span>chinese classics · <i>the Huainanzi</i></span></div><div class="ed"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg></div></div>
+              
+            </div>
+            <div class="grp mute">
+              <h3>not for me <small>1</small></h3>
+              <div class="sub">true for millions. just not yours right now. bring it back anytime.</div>
+              <div class="pc"><div class="th" style="background-image:url(../art/lessons/buddhism/2.webp)"></div><div class="tx"><b>bow to what wakes you up.</b><span>buddhism · <i>the Lotus Sutra</i></span></div><div class="ed"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg></div></div>
+            </div>
+          </div>
+        </div>
+        <nav class="tabs"><span class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 19l6-8 4 5 3-4 5 7z"/><circle cx="16" cy="5" r="2"/></svg>today</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v11H9l-5 4z"/></svg>guide</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M2 20c1-4 4-6 6-6s5 2 6 6M12 20c1-4 3-6 4-6 2 0 5 2 6 6"/></svg>together</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-5 5-7 8-7s7 2 8 7"/></svg>you</span></nav>
+      </div>
+    </div>
+    <div class="notes">
+      <h3>1 · what i live by</h3>
+      <div class="n why"><b>what changes</b>“six pieces. six traditions.” sorted by type becomes three honest piles sorted by you. Every line still carries its faith and source. A belief answer sits here too, tagged as your own answer, never as a faith's teaching.</div>
+      <div class="n"><b>motion</b>Opens with the lime header pulling down like a sheet. Rows stagger in at 40 ms each. Tap “⋯” on any row: a small sheet rises with the three choices; the row then glides to its new pile.</div>
+      <div class="n"><b>haptics</b>Light tick when a row lands in a new pile. Nothing on scroll.</div>
+      <div class="n"><b>sound</b>One soft paper slide when a row moves piles. Silent otherwise.</div>
+      <div class="n"><b>copy rule</b>“not for me” is framed as “true for millions, just not yours right now”, so dropping a line never says the idea is wrong.</div>
+    </div>
+  </div>
+
+  <!-- A2 -->
+  <div class="row">
+    <div><div class="lab b"><i>before</i> keep this one?</div><img class="shot" src="what-i-live-by/before-keep.png" alt=""></div>
+    <div><div class="lab a"><i>after</i> does this speak to you?</div>
+      <div class="phone" id="a2">
+        <div class="full">
+          <div class="topbar"><span class="x">✕</span><span class="pile">what i live by <b class="bump">5</b></span></div>
+          <div class="eyebrow">after the story · the speck and the plank</div>
+          <div class="A h1">does this <em>speak to you?</em></div>
+          <div class="src-line"><span class="ttag">christianity</span><small>all three from Matthew 7:3-5</small></div>
+          <div class="lc done"><div class="top"><div class="A">what bugs me may be mine.</div><span class="ref">7:3</span></div>
+            <div class="tri"><span class="me">this is me</span><span>not sure yet</span><span>not for me</span></div></div>
+          <div class="lc done"><div class="top"><div class="A">fix your own plank first.</div><span class="ref">7:5</span></div>
+            <div class="tri"><span>this is me</span><span class="uns">not sure yet</span><span>not for me</span></div></div>
+          <div class="lc"><div class="top"><div class="A">clear eyes, then help.</div><span class="ref">7:5</span></div>
+            <div class="tri"><span>this is me</span><span>not sure yet</span><span>not for me</span></div></div>
+          <div class="bq"><img class="gf" src="../art/guides/spiritual.webp" alt="Justin"><div class="bub" data-spk="Justin">quick one, no wrong answers. do you think things happen for a reason?
+            <div class="bopts"><span>yes</span><span>no</span><span>not sure</span><span class="skip">skip</span></div></div></div>
+          <div style="margin-top:14px"><div class="bbig">save to what i live by</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="notes">
+      <h3>2 · the sort</h3>
+      <div class="n why"><b>what changes</b>One fixed line plus “belief / practice / saying” becomes three real lessons from the same passage, each with three honest answers. One story, one tradition: all three lines are Matthew 7:3-5.</div>
+      <div class="n"><b>motion</b>Lesson cards deal in one by one. Tap “this is me”: the card stamps lime, shrinks and flies to the pile counter, which ticks 4 → 5 with a glow ring. “Not sure yet” tucks a ghost copy in. “Not for me” eases the card down 8 px and dims it. The belief question slides up only after the last card is sorted.</div>
+      <div class="n"><b>haptics</b>“This is me”: a firm double tap. “Not sure yet”: one light tick. “Not for me”: none, so it never feels like a penalty. Skip: none.</div>
+      <div class="n"><b>sound</b>A short bright pluck when the counter ticks up. Nothing else.</div>
+      <div class="n"><b>belief question</b>At most one every few stories, always with skip. Your answer lands in “still figuring out” or “what matters to you”, tagged as your own answer.</div>
+    </div>
+  </div>
+
+  <!-- A3 -->
+  <div class="row">
+    <div><div class="lab b"><i>before</i> the guide, blank slate</div><img class="shot" src="what-i-live-by/before-guide.png" alt=""></div>
+    <div><div class="lab a"><i>after</i> answers from what you live by</div>
+      <div class="phone" id="a3">
+        <div class="scroll" style="padding:50px 16px 0">
+          <div class="gstrip"><img src="../art/guides/spiritual.webp" alt=""><span><b>your guide · my own religion</b><small>powered by AI</small></span></div>
+          <div class="chat">
+            <div class="msg me">my coworker drives me nuts, what do i do?</div>
+            <div class="msg them">ugh. eight hours a day next to someone who grates on you is a lot. here's what you live by, put to work.</div>
+            <div class="msg them"><span class="k">1 · check the plank</span><br>you kept <q>what bugs me may be mine.</q> is any of it something you do too? not blame. just clearer eyes.<span class="src">christianity · Jesus, Matthew 7:3-5</span></div>
+            <div class="msg them"><span class="k">2 · own your half</span><br>you kept <q>i am the owner of my actions.</q> you can't run them. you can run your reply.<span class="src">buddhism · the Buddha, Anguttara Nikaya 5.57</span></div>
+            <div class="msg them av"><span class="k">3 · be the mensch</span><br>be the decent one in the room, even when they aren't.<span class="src">judaism · Hillel, Mishnah Avot 2:5</span></div>
+            <div class="ai">powered by AI · built from 3 things you live by</div>
+            <div class="chips"><span>help me say it to them</span><span>what if it really is them?</span></div>
+          </div>
+        </div>
+        <div class="inp"><div>ask me anything…</div><i>›</i></div>
+        <nav class="tabs"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 19l6-8 4 5 3-4 5 7z"/><circle cx="16" cy="5" r="2"/></svg>today</span><span class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v11H9l-5 4z"/></svg>guide</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M2 20c1-4 4-6 6-6s5 2 6 6M12 20c1-4 3-6 4-6 2 0 5 2 6 6"/></svg>together</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-5 5-7 8-7s7 2 8 7"/></svg>you</span></nav>
+      </div>
+    </div>
+    <div class="notes">
+      <h3>3 · the guide uses it</h3>
+      <div class="n why"><b>what changes</b>The Guide starts from your kept lines instead of a blank slate. Each idea gets its own bubble with its own faith and source, so two traditions never blur into one line.</div>
+      <div class="n"><b>motion</b>Bubbles type in one at a time; each source tag fades in a beat after its bubble. The quoted line you kept gets a quick lime underline sweep, the visual “this came from you”.</div>
+      <div class="n"><b>haptics</b>A light tick as each numbered bubble lands. None while typing.</div>
+      <div class="n"><b>sound</b>None. The chat stays quiet so it works on a train.</div>
+      <div class="n"><b>labels</b>Same as the app today: the guide's photo, “your guide · my own religion”, “powered by AI”. The answer is never presented as the celebrity speaking.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════════ SET B ═════════════════════════ -->
+<section class="sheet" id="setB">
+  <div class="shead">
+    <div>
+      <div class="eyebrow">proposed · set b · faith paths · Christianity · guide: Denzel</div>
+      <h1>what spoke to you. <em>the teaching stays. the emphasis is yours.</em></h1>
+      <p>A lighter version for people on one faith's path: no sorting, no “not for me”. After a story you tap what hit home, and the guide knows what to come back to.</p>
+    </div>
+    <span class="prop">mockup · not live</span>
+  </div>
+
+  <!-- B1 -->
+  <div class="row">
+    <div><div class="lab b"><i>before</i> no step here</div><div class="none"><div><b>no screen today</b>the story ends at the quiz, then the card. nothing asks what landed for you.</div></div></div>
+    <div><div class="lab a"><i>after</i> what spoke to you?</div>
+      <div class="phone" id="b1">
+        <div class="full">
+          <div class="topbar"><span class="x">✕</span><span class="eyebrow" style="color:var(--muted)">christianity path</span></div>
+          <div class="eyebrow">after the story · a visitor at night</div>
+          <div class="A h1">what <em>spoke to you?</em></div>
+          <div class="src-line"><span class="ttag">christianity</span><small>John 3</small></div>
+          <div class="tap on"><div class="A">never too old to start again.<span class="ref">John 3:3-4</span></div><span class="ck">✓</span></div>
+          <div class="tap"><div class="A">bring your questions, even at night.<span class="ref">John 3:2</span></div><span class="ck"></span></div>
+          <div class="tap"><div class="A">God so loved the world.<span class="ref">John 3:16</span></div><span class="ck"></span></div>
+          <div class="rule"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg><span>all three are the teaching, and they stay the teaching. your tap just tells your guide what to come back to.</span></div>
+          <div class="bq" style="margin-top:0"><img class="gf" src="../art/guides/christianity.webp" alt="Denzel"><div class="bub" data-spk="Denzel">tap as many as you want. i'll come back to what hit you, right when you need it.</div></div>
+          <div style="margin-top:14px"><div class="bbig">done</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="notes">
+      <h3>1 · what spoke to you</h3>
+      <div class="n why"><b>what changes</b>A 5-second step after the quiz. Simple taps, any number, no wrong answer. There is no “not for me” on a faith path: the teaching is never up for a vote.</div>
+      <div class="n"><b>motion</b>Lines rise in one after another. A tap floods the card lime from the touch point outward and pops the check in with a small overshoot.</div>
+      <div class="n"><b>haptics</b>One light tick per tap. Untap: none.</div>
+      <div class="n"><b>sound</b>A soft pluck on tap, the same one as set A, so the gesture feels like one family.</div>
+      <div class="n"><b>skip</b>The ✕ and “done” both work with zero taps; nothing is required.</div>
+    </div>
+  </div>
+
+  <!-- B2 -->
+  <div class="row">
+    <div><div class="lab b"><i>before</i> the you tab</div><img class="shot" src="what-i-live-by/before-you.png" alt=""></div>
+    <div><div class="lab a"><i>after</i> what speaks to you, on you</div>
+      <div class="phone" id="b2">
+        <div class="scroll">
+          <div class="tabhead"><div class="eyebrow">you</div><h2>your <u>cards</u></h2></div>
+          <div class="pad">
+            <div class="wsy">
+              <div class="eyebrow">what speaks to you</div>
+              <div class="A t">the lines <em>you came back to.</em></div>
+              <div class="ln"><b>never too old to start again.</b><span>John 3:3-4</span></div>
+              <div class="ln"><b>closer than your own breath.</b><span>Acts 2</span></div>
+              <div class="ln"><b>a meal is a memory.</b><span>Luke 22:19</span></div>
+              <div class="ft"><span>from your christianity stories · only you see this</span><u>edit</u></div>
+            </div>
+            <div class="A" style="font-size:34px;line-height:1;margin:18px 2px 0"><span style="color:var(--gold)">3</span> of 29 collected</div>
+            <div class="cardsrow"><div style="background-image:url(../art/lessons/christianity/3.webp)"></div><div style="background-image:url(../art/lessons/christianity/6.webp)"></div><div style="background-image:url(../art/lessons/christianity/1.webp)"></div></div><div style="margin-top:14px;border:2px solid #d8d4c8;border-radius:99px;padding:13px;text-align:center;font:800 16px Manrope">see all 29</div>
+          </div>
+        </div>
+        <nav class="tabs"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 19l6-8 4 5 3-4 5 7z"/><circle cx="16" cy="5" r="2"/></svg>today</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v11H9l-5 4z"/></svg>guide</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M2 20c1-4 4-6 6-6s5 2 6 6M12 20c1-4 3-6 4-6 2 0 5 2 6 6"/></svg>together</span><span class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-5 5-7 8-7s7 2 8 7"/></svg>you</span></nav>
+      </div>
+    </div>
+    <div class="notes">
+      <h3>2 · on the you tab</h3>
+      <div class="n why"><b>what changes</b>One small card above your cards: the three lines you tapped most, each with its verse. It sits on top because it is the most personal thing on the tab.</div>
+      <div class="n"><b>motion</b>The newest line slides in at the top with a short lime flash, then settles. Tap a line to replay the story it came from.</div>
+      <div class="n"><b>haptics</b>None on view. Light tick on “edit”.</div>
+      <div class="n"><b>sound</b>None.</div>
+      <div class="n"><b>example state</b>Shown after three stories on the Christianity path (3 cards claimed). These are lines the app already teaches; no new claims.</div>
+    </div>
+  </div>
+</section>
+</body></html>

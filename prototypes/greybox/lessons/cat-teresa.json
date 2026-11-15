@@ -1,0 +1,193 @@
+{
+ "id": "cat-teresa",
+ "home": "angelus",
+ "title": "Prayer like a friendship",
+ "told": "a story of Saint Teresa of Ávila",
+ "clips": "art/sacred/cat-teresa/clips/",
+ "voice": "art/sacred/cat-teresa/voice/",
+ "guide": {
+  "name": "Nicole",
+  "photo": "art/guides/catholic.webp"
+ },
+ "card": {
+  "from": "a story of Saint Teresa of Ávila",
+  "mins": 5,
+  "keep": "pot",
+  "keepName": "The pots and pans",
+  "keepWhy": "God walks among the pots and pans.",
+  "sources": [
+   "Teresa of Ávila, The Book of Her Life 1.4-5 (as a child, reading the lives of saints with her brother Rodrigo, they resolved to go to the land of the Moors to be beheaded for God; then they built little hermitages in the garden from stones, which kept falling down). The uncle who met them on the road and brought them home is from early biographies (Francisco de Ribera, 1590), not her own account; 2.1 (her love of books of chivalry); 8.7 (for years she was more anxious for the hour of prayer to end and listened for the clock to strike); 8.5 (mental prayer is nothing else than an intimate sharing between friends, taking time often to be alone with him who we know loves us).",
+   "Catechism of the Catholic Church 2709 (quotes Life 8.5).",
+   "Teresa, Book of the Foundations 5.8 (“the Lord walks among the pots and pans”). Interior Castle I.1.1 (the soul as a castle of a single diamond with many rooms).",
+   "Born Ávila 1515; entered the Carmelite convent of the Incarnation 1535; founded St Joseph’s, Ávila, 1562, beginning the Discalced Carmelite reform; worked with John of the Cross. Proclaimed Doctor of the Church by Paul VI on 27 September 1970, the first woman so named.",
+   "The cart and river anecdote (“if this is how you treat your friends…”) is oral tradition, not found in her writings."
+  ],
+  "check": [
+   "Teresa does not give her age in Life 1.4; tradition says about seven. The caption says “about seven”. Confirm.",
+   "The uncle on the road comes from the early biographies, not from Teresa’s Life; the caption tells it plainly. Confirm, or add a label.",
+   "The river story is labeled “a story people tell”; it isn’t in her writings. Confirm the label is enough."
+  ]
+ },
+ "hook": {
+  "v": "CTR3-Convent-Clock",
+  "say": "before the story, can i ask you something? when you try to sit quietly, how long before your mind runs off?",
+  "options": [
+   [
+    "About ten seconds",
+    "ha. you and nearly everyone. this saint too."
+   ],
+   [
+    "A minute or two",
+    "that’s pretty good. watch what she did with hers."
+   ],
+   [
+    "I never try",
+    "that’s okay. she’ll make you want to."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "CTR1-Runaway-Children",
+   "vo": [
+    "V01"
+   ],
+   "line": "In the walled Spanish city of Ávila, a girl named Teresa loved stories of saints and knights. At about seven, she and her brother ran away to become martyrs."
+  },
+  {
+   "t": "ask",
+   "v": "CTR1-Runaway-Children",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "Two small children set off down the road to die for God in a faraway land. What happens?",
+   "o": [
+    "They reach the land of the Moors",
+    "An uncle brings them home",
+    "They get lost for days"
+   ],
+   "a": 1,
+   "why": "Early biographers say an uncle met them just outside Ávila’s walls. She later wrote that she wanted heaven, and martyrdom looked like a quick way there."
+  },
+  {
+   "t": "shot",
+   "v": "CTR2-Uncle-Road",
+   "vo": [
+    "V02"
+   ],
+   "line": "An uncle met them just outside the city and brought them home. So they built little hermit huts in the garden instead. The stones kept falling down."
+  },
+  {
+   "t": "shot",
+   "v": "CTR3-Convent-Clock",
+   "vo": [
+    "V03"
+   ],
+   "line": "Grown up, Teresa became a Carmelite nun. Yet for years, she admitted, prayer was dry. She would listen for the clock, wishing the hour were over."
+  },
+  {
+   "t": "ask",
+   "v": "CTR3-Convent-Clock",
+   "eb": "why?",
+   "q": "Prayer was her whole job, yet she watched the clock. Why might her honesty about that help people?",
+   "o": [
+    "It shows struggling to pray is normal, even for saints",
+    "It shows prayer only works for some people",
+    "It shows the convent was too strict"
+   ],
+   "a": 0,
+   "why": "If a saint watched the clock, you’re in good company. She kept showing up anyway."
+  },
+  {
+   "t": "shot",
+   "v": "CTR4-Friend-Prayer",
+   "vo": [
+    "V04"
+   ],
+   "line": "Slowly, something changed. She wrote that prayer is simply friendship: taking time, often, to be alone with the one we know loves us."
+  },
+  {
+   "t": "ask",
+   "v": "CTR4-Friend-Prayer",
+   "eb": "did you know?",
+   "q": "Teresa pictured the soul as a castle with many rooms. Where did she place God?",
+   "o": [
+    "At the gate, waiting to be let in",
+    "At the top of the tallest tower",
+    "In the innermost room, at the centre"
+   ],
+   "a": 2,
+   "why": "In The Interior Castle, the soul has seven dwelling places, and God lives in the innermost. The door in, she says, is prayer."
+  },
+  {
+   "t": "shot",
+   "v": "CTR5-Pots-Pans",
+   "vo": [
+    "V05"
+   ],
+   "line": "She was funny and blunt. To nuns stuck with kitchen work, she wrote that God walks among the pots and pans."
+  },
+  {
+   "t": "shot",
+   "v": "CTR6-Cart-River",
+   "vo": [
+    "V06"
+   ],
+   "line": "People love one story: her cart tipped her into a muddy river, and she told God, “If this is how you treat your friends, no wonder you have so few!”",
+   "label": "a story people tell"
+  },
+  {
+   "t": "ask",
+   "v": "CTR6-Cart-River",
+   "eb": "did you know?",
+   "q": "In 1970 Teresa became the first woman named a Doctor of the Church. What does that title mean?",
+   "o": [
+    "A teacher for the whole Church",
+    "A saint who healed the sick",
+    "A nun who founded many convents"
+   ],
+   "a": 0,
+   "why": "A Doctor of the Church is a saint whose teaching helps everyone. Teresa did found many convents, but the title is for her writing on prayer."
+  },
+  {
+   "t": "teach",
+   "v": "CTR4-Friend-Prayer",
+   "say": [
+    "here’s what i love. teresa didn’t become holy by being good at prayer. she kept showing up, bored and distracted, until it turned into friendship.",
+    "the church calls her a teacher of prayer for everyone. she pictured the soul as a castle with God living in the center room, and prayer as the door in."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "CTR6-Cart-River",
+   "eb": "the hard one",
+   "q": "The river story may never have happened. Why do people keep telling it about her?",
+   "o": [
+    "It proves she was angry at God",
+    "Her nuns made it up to tease her",
+    "It fits how she spoke to God: as a friend"
+   ],
+   "a": 2,
+   "why": "Nobody knows if she said it. But you only tease a friend you trust."
+  }
+ ],
+ "today": {
+  "v": "CTR5-Pots-Pans",
+  "say": "today, tell God, or a quiet friend in your mind, one plain thing about your day. not the polished version. then just sit together for a minute. when your mind wanders, and it will, turn back the way you would to a friend. if you don’t pray, the quiet minute still counts.",
+  "options": [
+   [
+    "I’ll try one minute",
+    "good. teresa would say that counts."
+   ],
+   [
+    "I’ll do it while I cook",
+    "perfect. among the pots and pans, like she said."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "One hundred and fifty doors.",
+  "line": "next, the prayer book jesus grew up with, and a shepherd boy with a harp."
+ }
+}

@@ -1,3 +1,5 @@
+Background only (written 2026-10-06). Where this disagrees with docs/VISION-NOW.md or docs/LESSON_STANDARD.md, those win.
+
 # Years 4–5 after the five-year map (2026-10-06)
 
 Years 4–5 are planned in outline (`docs/curriculum/<door>/y4.md`, `y5.md`); year 4 lessons are partly written

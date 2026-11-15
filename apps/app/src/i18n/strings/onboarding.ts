@@ -6,11 +6,14 @@ import type { Dict } from "../core";
 
 export const en = {
   // splash (welcome/index)
-  "onboarding.splash.tagline": "making religion cool again. welcome to the hill, we're all family here.",
+  "onboarding.splash.tagline": "religion, reimagined. welcome to the hill, we're all family here.",
   "onboarding.splash.start": "Start free",
   "onboarding.splash.haveAccount": "I already have an account",
   "onboarding.splash.beenHere": "I've been here before",
   "onboarding.splash.eyebrow": "free · no sign-up · eight doors",
+  "onboarding.splash.headline": "because you gotta have faith.",
+  "onboarding.splash.line": "understand yourself. understand each other. pick a faith or build your own, with celebrity guides and voices you know.",
+  "onboarding.splash.drop": "drop 01 · out now",
   // the frame around every step
   "onboarding.frame.skip": "skip",
   "onboarding.frame.skipA11y": "Skip and start as a guest",
@@ -247,11 +250,14 @@ export const en = {
 } as const;
 
 export const es: Dict<typeof en> = {
-  "onboarding.splash.tagline": "hacer que la religión vuelva a ser cool. bienvenido a la colina, aquí todos somos familia.",
+  "onboarding.splash.tagline": "que la religión vuelva a ser tuya. bienvenido a la colina, aquí todos somos familia.",
   "onboarding.splash.start": "Empieza gratis",
   "onboarding.splash.haveAccount": "Ya tengo una cuenta",
   "onboarding.splash.beenHere": "Ya estuve aquí",
   "onboarding.splash.eyebrow": "gratis · sin registro · ocho puertas",
+  "onboarding.splash.headline": "porque hay que tener fe.",
+  "onboarding.splash.line": "entiéndete. entiende a los demás. elige una fe o crea la tuya, con celebridades como guías y voces que conoces.",
+  "onboarding.splash.drop": "drop 01 · ya salió",
   "onboarding.frame.skip": "saltar",
   "onboarding.frame.skipA11y": "Saltar y empezar como invitado",
   "onboarding.ratherNot": "prefiero no decirlo",

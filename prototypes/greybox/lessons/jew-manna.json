@@ -1,0 +1,195 @@
+{
+ "id": "jew-manna",
+ "home": "pomegranate",
+ "title": "The day the bread didn’t fall",
+ "told": "from the Torah",
+ "clips": "art/sacred/jew-manna/clips/",
+ "voice": "art/sacred/jew-manna/voice/",
+ "guide": {
+  "name": "Natalie",
+  "photo": "art/guides/judaism.webp"
+ },
+ "hook": {
+  "v": "MN1-Hungry-Desert",
+  "say": "before the story, can i ask you something? when did you last have a whole day with no work in it at all?",
+  "options": [
+   [
+    "Can’t remember",
+    "then this story was made for you. listen."
+   ],
+   [
+    "Last weekend",
+    "good. let’s see where that idea began. listen."
+   ],
+   [
+    "I never really stop",
+    "then listen closely. this one is about permission."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "MN1-Hungry-Desert",
+   "vo": [
+    "V01"
+   ],
+   "line": "In the desert after Egypt, the freed slaves were hungry. “In Egypt, we ate bread until we were full,” they grumbled."
+  },
+  {
+   "t": "shot",
+   "v": "MN2-Like-Frost",
+   "vo": [
+    "V02"
+   ],
+   "line": "So each morning, when the dew lifted, the ground was covered with something fine and white, like frost. “What is it?” they asked. In Hebrew, man hu. Manna."
+  },
+  {
+   "t": "shot",
+   "v": "MN3-Gathering",
+   "vo": [
+    "V03"
+   ],
+   "line": "Everyone gathered what they needed for the day. Some gathered more, some less, and yet no one had too much, and no one had too little."
+  },
+  {
+   "t": "ask",
+   "v": "MN3-Gathering",
+   "eb": "you’re in it",
+   "q": "You were a slave; you know hunger. You’re told not to keep any manna till morning. Some did anyway. What happened?",
+   "o": [
+    "It kept fine, like bread",
+    "It was full of worms by morning",
+    "It turned to dust"
+   ],
+   "a": 1,
+   "why": "Exodus 16:20: by morning it bred worms and stank, and Moses was angry. Saving up didn’t work; the bread came one day at a time."
+  },
+  {
+   "t": "ask",
+   "v": "MN3-Gathering",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "On the sixth morning, they go out to gather as usual. What do you guess is on the ground?",
+   "o": [
+    "Only half as much",
+    "None at all",
+    "Twice as much as usual"
+   ],
+   "a": 2,
+   "why": "Twice as much (Exodus 16:22), so the seventh could be a day of stopping. And this time it kept overnight without spoiling."
+  },
+  {
+   "t": "shot",
+   "v": "MN4-Double-Portion",
+   "vo": [
+    "V04"
+   ],
+   "line": "On the sixth day, there was twice as much. Moses told them: tomorrow is a day of rest, a holy Shabbat. Bake what you need today."
+  },
+  {
+   "t": "shot",
+   "v": "MN5-Empty-Ground",
+   "vo": [
+    "V05"
+   ],
+   "line": "On the seventh day, some went out anyway with their baskets. They found nothing. So the people rested on the seventh day."
+  },
+  {
+   "t": "fill",
+   "v": "MN5-Empty-Ground",
+   "eb": "finish the line",
+   "pre": "The word Shabbat comes from a Hebrew root that means to",
+   "post": ".",
+   "o": [
+    "pray",
+    "stop",
+    "gather"
+   ],
+   "a": 1,
+   "why": "Stop, shavat. Not ‘relax’ exactly: Shabbat is stopping work, even when there’s more you could do."
+  },
+  {
+   "t": "shot",
+   "v": "MN6-Two-Loaves",
+   "vo": [
+    "V06"
+   ],
+   "line": "Today, many Jewish families set two loaves of challah on the Shabbat table, under a cloth. Two loaves, for the double bread before that first rest.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "MN6-Two-Loaves",
+   "eb": "did you know?",
+   "q": "The two loaves sit under a cloth. Why the cloth, many say?",
+   "o": [
+    "Like the dew that covered the manna",
+    "To keep the bread warm for the blessing",
+    "So no one eats before the meal"
+   ],
+   "a": 0,
+   "why": "Dew lay below and above the manna, so the board and cloth echo it. Another lovely reason: so the bread isn’t ‘shamed’ while the wine is blessed first."
+  },
+  {
+   "t": "teach",
+   "v": "MN5-Empty-Ground",
+   "say": [
+    "here’s what i love. the rest was prepared before anyone asked for it. the bread was doubled first, so nobody had to choose between eating and stopping.",
+    "later the torah gives a reason to rest: you were slaves once, so let your servants rest as well as you, even the stranger and the ox. in jewish tradition, rest isn’t a prize. it’s owed to everyone."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "MN6-Two-Loaves",
+   "eb": "the hard one",
+   "q": "On the seventh day, the manna itself stopped, not just the people. What does that suggest about Shabbat?",
+   "o": [
+    "Rest is built into the world itself",
+    "Rest is for people who finished their work",
+    "Rest is up to each person to choose"
+   ],
+   "a": 0,
+   "why": "The world itself paused. Shabbat isn’t time you steal from work. It arrives on schedule, for everyone."
+  }
+ ],
+ "today": {
+  "v": "MN6-Two-Loaves",
+  "say": "plan a little rest the way the manna did: do one chore today, so tomorrow has room to stop. and if someone works for you or with you, make sure they get a break as well as you.",
+  "options": [
+   [
+    "I’ll plan my rest",
+    "double bread first, then a day to stop. that’s the gift."
+   ],
+   [
+    "My week doesn’t stop",
+    "i know. this day was made for people who couldn’t stop."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "The man who ran after peace.",
+  "line": "two friends stop speaking. a quiet man finds a way to bring them back together."
+ },
+ "card": {
+  "from": "from the book of Exodus",
+  "mins": 5,
+  "keep": "pot",
+  "keepName": "A jar of manna",
+  "keepWhy": "Rest you prepared for, owed to everyone.",
+  "sources": [
+   "Exodus 16:1–3 (the whole congregation murmured; when we did eat bread to the full in Egypt)",
+   "Exodus 16:13–15, 31 (when the dew lifted, a fine, scale-like thing, fine as the hoar-frost; man hu, what is it; white like coriander seed)",
+   "Exodus 16:16–18 (some gathered more, some less; he that gathered much had nothing over, he that gathered little had no lack)",
+   "Exodus 16:22–26 (on the sixth day twice as much bread; tomorrow is a solemn rest, a holy sabbath; bake that which ye will bake)",
+   "Exodus 16:27–30 (some went out on the seventh day and found none; “So the people rested on the seventh day,” JPS 1917)",
+   "Exodus 16:32–34 (a jar of manna kept)",
+   "Deuteronomy 5:12–15 (rest, that thy man-servant and thy maid-servant may rest as well as thou; the stranger, the ox, the ass; remember you were a slave in Egypt)",
+   "Babylonian Talmud, Shabbat 117b (two loaves on Shabbat, for the double portion of manna)"
+  ],
+  "check": [
+   "Shot 1’s grumble shortens Exodus 16:3 (“when we did eat bread to the full”) inside quotation marks"
+  ]
+ }
+}

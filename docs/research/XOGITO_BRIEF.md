@@ -1,3 +1,5 @@
+Background only (written October 2026). Where this disagrees with docs/VISION-NOW.md, that page wins.
+
 # Brief for Xogito: the five-week research and prototype phase
 
 Infinite Hill · October 2026 · from Shaan Sethi to Gus Spathis

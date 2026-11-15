@@ -1,0 +1,189 @@
+{
+ "id": "jew-spice",
+ "home": "pomegranate",
+ "title": "The spice called Shabbat",
+ "told": "from the Talmud",
+ "clips": "art/sacred/jew-spice/clips/",
+ "voice": "art/sacred/jew-spice/voice/",
+ "guide": {
+  "name": "Natalie",
+  "photo": "art/guides/judaism.webp"
+ },
+ "hook": {
+  "v": "JSC6-Today",
+  "say": "before the story, can i ask you something? have you ever eaten a meal that tasted better because of when, or who, you ate it with?",
+  "options": [
+   [
+    "Yes, holiday meals",
+    "then you already know the spice. listen."
+   ],
+   [
+    "Yes, with family",
+    "then this story is yours. listen."
+   ],
+   [
+    "Food is food",
+    "that’s what the emperor thought. listen."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "JSC1-The-Question",
+   "vo": [
+    "V01"
+   ],
+   "line": "The Talmud tells this. A Roman emperor asked Rabbi Yehoshua, “Why does the food you eat on Shabbat smell so wonderful?”"
+  },
+  {
+   "t": "shot",
+   "v": "JSC2-The-Answer",
+   "vo": [
+    "V02"
+   ],
+   "line": "The rabbi smiled. “We have a spice,” he said, “and its name is Shabbat. We put it in the food, and that’s the smell.”"
+  },
+  {
+   "t": "shot",
+   "v": "JSC3-Give-Us-Some",
+   "vo": [
+    "V03"
+   ],
+   "line": "“Give us some!” said the emperor."
+  },
+  {
+   "t": "ask",
+   "v": "JSC3-Give-Us-Some",
+   "blur": true,
+   "predict": true,
+   "eb": "what happens next?",
+   "q": "The emperor wants the spice. What does the rabbi tell him?",
+   "o": [
+    "“It only works for those who keep Shabbat.”",
+    "“It only works on a Friday night.”",
+    "“It only works if cooked before sundown.”"
+   ],
+   "a": 0,
+   "why": "You can’t buy it; you have to stop. Shabbat 119a names the sage as Rabbi Yehoshua ben Hananiah, who spars with the emperor, often taken as Hadrian, all through Jewish legend."
+  },
+  {
+   "t": "shot",
+   "v": "JSC4-Only-Works",
+   "vo": [
+    "V04"
+   ],
+   "line": "“For anyone who keeps Shabbat,” said Rabbi Yehoshua, “it works. For anyone who doesn’t keep Shabbat, it doesn’t.”"
+  },
+  {
+   "t": "ask",
+   "v": "JSC4-Only-Works",
+   "eb": "why?",
+   "q": "In a midrash, Rabbi Judah serves his friend the emperor Antoninus cold food on Shabbat and hot food on a weekday. Which does he like better?",
+   "o": [
+    "The hot weekday food",
+    "The cold Shabbat food",
+    "He can’t tell the difference"
+   ],
+   "a": 1,
+   "why": "Genesis Rabbah 11:4: the cold Shabbat dishes won (no cooking on Shabbat). The weekday food lacked one spice, Rabbi told him: Shabbat."
+  },
+  {
+   "t": "shot",
+   "v": "JSC5-Seventh-Day",
+   "vo": [
+    "V05"
+   ],
+   "line": "The Torah says that on the seventh day God finished the work, and rested. Then God blessed the seventh day, and made it holy."
+  },
+  {
+   "t": "ask",
+   "v": "JSC5-Seventh-Day",
+   "eb": "did you know?",
+   "q": "The rabbis list 39 kinds of work stopped on Shabbat. Where did they find the list?",
+   "o": [
+    "The jobs of a farmer’s year",
+    "The labours of slaves in Egypt",
+    "The work of building the Tabernacle"
+   ],
+   "a": 2,
+   "why": "The Mishnah lists the 39 (Shabbat 7:2), and the Talmud traces them to building the Tabernacle, God’s dwelling in the desert. The work that made a holy place stops, to keep a holy time."
+  },
+  {
+   "t": "shot",
+   "v": "JSC6-Today",
+   "vo": [
+    "V06"
+   ],
+   "line": "Shabbat runs from Friday sunset to Saturday night. Orthodox Jews don’t drive, cook or use phones. Many other Jews keep it their own way, with candles, a meal and rest.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "JSC6-Today",
+   "eb": "did you know?",
+   "q": "Shabbat starts Friday at sunset, not at midnight or dawn. Why?",
+   "o": [
+    "Candles must be lit after dark",
+    "In Genesis, each day starts at evening",
+    "Work used to end at sunset"
+   ],
+   "a": 1,
+   "why": "“And there was evening, and there was morning, one day.” So every Jewish day, and every holiday, begins at sundown. (Candles are lit just before.)"
+  },
+  {
+   "t": "teach",
+   "v": "JSC5-Seventh-Day",
+   "say": [
+    "here’s what i love. the torah says god finished the work on the seventh day. the rabbis asked: wasn’t it done on the sixth? one answer: the world still lacked one thing, rest. so rest was created on the seventh day, and only then was the world finished.",
+    "and the first thing the torah calls holy isn’t a mountain or a temple. it’s a day. a stretch of time."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "JSC6-Today",
+   "eb": "the hard one",
+   "q": "If the world wasn’t finished until rest was created, what does that say about stopping?",
+   "o": [
+    "Stopping is part of the work being complete",
+    "Stopping is just a reward for working hard",
+    "Stopping only matters for God"
+   ],
+   "a": 0,
+   "why": "A week without rest isn’t finished. The stopping is part of the making."
+  }
+ ],
+ "today": {
+  "v": "JSC6-Today",
+  "say": "this friday, or any day, pick one hour to stop on purpose: no work, no errands, maybe a candle and a slow meal. keep it in your own way. that’s where the spice comes from.",
+  "options": [
+   [
+    "I’ll try one hour",
+    "one hour of rest. you’ll taste it."
+   ],
+   [
+    "I’ll try the slow meal",
+    "a meal kept on purpose. that’s the spice."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "Two pockets.",
+  "line": "a rabbi tells his students to carry two slips of paper, one in each pocket. the trick is knowing which one to reach for."
+ },
+ "card": {
+  "from": "from the Talmud",
+  "mins": 5,
+  "keep": "spice",
+  "keepName": "The Shabbat spice",
+  "keepWhy": "You only taste it by stopping.",
+  "keepSvg": "<circle cx=\"50\" cy=\"8\" r=\"4\" fill=\"#2a1b05\"/><path d=\"M50 10L64 32H36Z\" fill=\"#2a1b05\"/><rect x=\"36\" y=\"34\" width=\"28\" height=\"28\" rx=\"3\" fill=\"#2a1b05\"/><rect x=\"44\" y=\"62\" width=\"12\" height=\"16\" fill=\"#2a1b05\"/><rect x=\"30\" y=\"78\" width=\"40\" height=\"10\" rx=\"4\" fill=\"#2a1b05\"/>",
+  "sources": [
+   "Babylonian Talmud, Shabbat 119a (the emperor asks Rabbi Yehoshua ben Chananya why the Shabbat dish is so fragrant; ‘we have a spice called Shabbat’; ‘give us some’; ‘for whoever keeps Shabbat it works, for whoever does not keep Shabbat it does not work’)",
+   "Genesis Rabbah 11:4 (a parallel with Rabbi Judah the Prince and Antoninus)",
+   "Genesis 2:2 (“And on the seventh day God finished His work which He had made; and He rested on the seventh day,” JPS 1917); 2:3 (“And God blessed the seventh day, and hallowed it,” JPS 1917)",
+   "Rashi on Genesis 2:2 and Genesis Rabbah 10:9 (what the world lacked was rest); Abraham Joshua Heschel, The Sabbath (1951), on the holiness of time (Genesis 2:3 is the first use of the word ‘holy’ in the Torah)"
+  ],
+  "check": []
+ }
+}

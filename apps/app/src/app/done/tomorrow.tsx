@@ -2,7 +2,7 @@ import { tg } from "@/lib/gentle-t";
 import { useTitle } from "@/lib/title";
 import { router } from "expo-router";
 import { useState } from "react";
-import { Pressable, Text, View } from "react-native";
+import { Pressable, Text, TextInput, View } from "react-native";
 import { daysFrom } from "@/lib/pulse-plan";
 import { useDone } from "@/lib/done";
 import { enableReminders, reminderSupport, remindersReady, remindersServer } from "@/lib/reminders";
@@ -14,6 +14,10 @@ import { askHeard } from "@/lib/lane";
 import { courseById, courseNext, dayName, fromLabel, say } from "@/content/courses";
 import { Bubble, Btn, Guy, Link, Screen, Sun, color, font, type } from "@/ui";
 import { doorLabel, t, type Key } from "@/i18n";
+import { getMemory, saveEntry } from "@/lib/companion/memory";
+import { toldToday } from "@/lib/companion/follow-up";
+import { crisisWords } from "@/lib/companion/shape";
+import { HelpCard } from "@/ui/companion";
 
 /** The times offered here (the full list lives in You → Reminders). "auto" = about a day after today's lesson. */
 const TIMES: [string, Key][] = [["auto", "session.tomorrow.t.auto"], ["07:00", "companion.remPage.t.07"], ["12:00", "companion.remPage.t.12"], ["sundown", "companion.remPage.t.sundown"], ["21:00", "companion.remPage.t.21"]];
@@ -23,6 +27,44 @@ const ASK_AGAIN_DAYS = 7;
 
 // The finish, last step (owner brief 2026-10-01): one concrete reason to come back (tomorrow's lesson, by name) and,
 // if no reminder is set, one tap to set one. Warm, short, no guilt. Then the lantern if it's due, else back home.
+// "tell me about today" (owner, 2026-11-05): one gentle question after the lesson. The answer is a journal page that
+// stays on this phone; the next time they open Today, the companion asks how it's sitting (lib/companion/follow-up.ts).
+// Asked once a day; skipping it is just not typing.
+function TellToday({ today }: { today: string }) {
+  const [ask] = useState(() => !toldToday(getMemory().journal, today));
+  const [text, setText] = useState("");
+  const [saved, setSaved] = useState(false);
+  const [help, setHelp] = useState(false);
+  if (!ask) return null;
+  const keep = () => {
+    const body = text.trim();
+    if (!body) return;
+    saveEntry({ date: today, prompt: t("companion.today.eyebrow"), text: body, shared: false, kind: "today" });
+    if (crisisWords(body)) setHelp(true);
+    setSaved(true);
+  };
+  return (
+    <View testID="tell-today" style={{ backgroundColor: color.white, borderWidth: 1.5, borderColor: color.line, borderRadius: 18, padding: 14, gap: 10 }}>
+      <Text style={[type.eyebrow(9), { color: color.ink }]}>{t("companion.today.eyebrow")}</Text>
+      {saved ? (
+        <View style={{ flexDirection: "row", alignItems: "center", gap: 10 }}>
+          <Sun size={28} mood="happy" />
+          <Text accessibilityLiveRegion="polite" style={[type.body(14), { flex: 1 }]}>{t("companion.today.saved")}</Text>
+        </View>
+      ) : (
+        <>
+          <Text style={{ fontFamily: font.display[800], fontSize: 17, lineHeight: 22, color: color.ink }}>{t("companion.today.ask")}</Text>
+          <TextInput testID="tell-today-input" value={text} onChangeText={setText} multiline maxLength={600} placeholder={t("companion.today.placeholder")} placeholderTextColor={color.mute} accessibilityLabel={t("companion.today.ask")}
+            style={{ minHeight: 64, borderWidth: 1.5, borderColor: color.line, borderRadius: 14, paddingVertical: 10, paddingHorizontal: 12, fontFamily: font.text[400], fontSize: 16, color: color.text, backgroundColor: color.cream, textAlignVertical: "top" }} />
+          <Btn testID="tell-today-save" disabled={!text.trim()} onPress={keep}>{t("companion.today.save")}</Btn>
+          <Text style={[type.caption(12)]}>{t("companion.today.private")}</Text>
+        </>
+      )}
+      {help ? <View style={{ marginHorizontal: -14 }}><HelpCard onClose={() => setHelp(false)} /></View> : null}
+    </View>
+  );
+}
+
 export default function Tomorrow() {
   useTitle(t("session.tomorrow.title"));
   const { p, day, close } = useDone();
@@ -85,26 +127,29 @@ export default function Tomorrow() {
         </View>
       ) : null}
 
+      <TellToday today={today} />
+
       {/* the reason to come back: tomorrow's lesson, by name */}
-      <View testID="tomorrow-card" style={{ backgroundColor: color.ink, borderRadius: 22, paddingVertical: 18, paddingHorizontal: 18, gap: 6 }}>
+      {/* always a dark card with white words, in the light look and the night look alike */}
+      <View testID="tomorrow-card" style={{ backgroundColor: "#0A0A0A", borderWidth: 1, borderColor: color.line, borderRadius: 22, paddingVertical: 18, paddingHorizontal: 18, gap: 6 }}>
         <Text style={[type.eyebrow(9), { color: color.gold }]}>{course ? (cNext ? t("courses.tomorrow.next", { title: say(course.title), n: cNext.n }) : say(course.title)) : t("session.tomorrow.eyebrow", { n: day + 1 })}</Text>
         <Text accessibilityRole="header" style={{ fontFamily: font.display[800], fontSize: 26, lineHeight: 30, color: "#fff" }}>{teaser}</Text>
         <Text style={[type.body(14), { color: "#ffffffcc" }]}>{course ? (cNext ? t("courses.today.from", { door: fromLabel(cNext.door) }) : t("courses.tomorrow.finishedSub")) : t("session.tomorrow.sub")}</Text>
       </View>
 
       {r.on ? (
-        <View testID="remind-set" style={{ flexDirection: "row", alignItems: "center", gap: 10, backgroundColor: "#fff", borderWidth: 1.5, borderColor: color.line, borderRadius: 16, paddingVertical: 12, paddingHorizontal: 14 }}>
+        <View testID="remind-set" style={{ flexDirection: "row", alignItems: "center", gap: 10, backgroundColor: color.white, borderWidth: 1.5, borderColor: color.line, borderRadius: 16, paddingVertical: 12, paddingHorizontal: 14 }}>
           <Sun size={28} mood="happy" />
           <Text style={[type.body(14), { flex: 1 }]}>{t("session.tomorrow.set", { when })}</Text>
           <Link onPress={() => router.push("/you/reminders")}>{t("session.tomorrow.change")}</Link>
         </View>
       ) : offer ? (
-        <View testID="remind-offer" style={{ backgroundColor: "#fff", borderWidth: 1.5, borderColor: color.line, borderRadius: 18, padding: 14, gap: 10 }}>
+        <View testID="remind-offer" style={{ backgroundColor: color.white, borderWidth: 1.5, borderColor: color.line, borderRadius: 18, padding: 14, gap: 10 }}>
           <Text style={{ fontFamily: font.display[800], fontSize: 17, color: color.ink }}>{t("session.tomorrow.ask")}</Text>
           <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }} accessibilityRole="radiogroup">
             {TIMES.map(([v, l]) => (
               <Pressable key={v} testID={`remind-${v}`} accessibilityRole="radio" accessibilityState={{ checked: pick === v }} aria-checked={pick === v} onPress={() => setPick(v)}
-                style={{ borderWidth: 1.5, borderColor: pick === v ? color.ink : color.line, backgroundColor: pick === v ? "#FFFBE0" : "#fff", borderRadius: 999, minHeight: 40, justifyContent: "center", paddingHorizontal: 12 }}>
+                style={{ borderWidth: 1.5, borderColor: pick === v ? color.ink : color.line, backgroundColor: pick === v ? "#FFFBE0" : color.white, borderRadius: 999, minHeight: 40, justifyContent: "center", paddingHorizontal: 12 }}>
                 <Text style={{ fontFamily: font.text[600], fontSize: 13, color: color.ink }}>{t(l)}</Text>
               </Pressable>
             ))}

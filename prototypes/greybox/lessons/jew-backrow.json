@@ -1,0 +1,188 @@
+{
+ "id": "jew-backrow",
+ "home": "pomegranate",
+ "title": "Moses in the back row",
+ "told": "from the Talmud",
+ "clips": "art/sacred/jew-backrow/clips/",
+ "voice": "art/sacred/jew-backrow/voice/",
+ "guide": {
+  "name": "Natalie",
+  "photo": "art/guides/judaism.webp"
+ },
+ "hook": {
+  "v": "JMA2-Back-Row",
+  "say": "before the story, can i ask you something? have you ever sat in a class or a conversation and felt completely lost?",
+  "options": [
+   [
+    "All the time",
+    "then you’re in good company today. listen."
+   ],
+   [
+    "Sometimes",
+    "then you’ll like who’s sitting in the back. listen."
+   ],
+   [
+    "Rarely",
+    "then imagine the greatest teacher of all, lost. listen."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "JMA1-Crowns",
+   "vo": [
+    "V01"
+   ],
+   "line": "The Talmud tells this story. When Moses went up to receive the Torah, he found God tying tiny crowns onto the letters."
+  },
+  {
+   "t": "shot",
+   "v": "JMA1-Crowns",
+   "vo": [
+    "V02"
+   ],
+   "line": "“Why the crowns?” Moses asked. God said: far in the future, a man named Akiva will draw heaps of teachings from every little stroke."
+  },
+  {
+   "t": "shot",
+   "v": "JMA2-Back-Row",
+   "vo": [
+    "V03"
+   ],
+   "line": "“Show me,” said Moses. And suddenly he was sitting in Rabbi Akiva’s classroom, at the very back, behind eight rows of students."
+  },
+  {
+   "t": "ask",
+   "v": "JMA2-Back-Row",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "Moses, who brought the Torah down the mountain, listens to Akiva’s class. How does he feel?",
+   "o": [
+    "Proud, he follows every word",
+    "Lost, he can’t follow it",
+    "Bored, he’s heard it before"
+   ],
+   "a": 1,
+   "why": "He couldn’t follow it. The greatest teacher, lost in his own subject."
+  },
+  {
+   "t": "shot",
+   "v": "JMA3-Lost",
+   "vo": [
+    "V04"
+   ],
+   "line": "He couldn’t follow what they were saying, and his strength drained away. Then a student asked, “Rabbi, how do you know this?”"
+  },
+  {
+   "t": "shot",
+   "v": "JMA4-From-Sinai",
+   "vo": [
+    "V05"
+   ],
+   "line": "Akiva answered, “It is a law given to Moses at Sinai.” And Moses, in the back row, was at peace."
+  },
+  {
+   "t": "ask",
+   "v": "JMA4-From-Sinai",
+   "eb": "did you know?",
+   "q": "The Talmud doesn’t stop there. Moses asks God: you have a teacher like Akiva, and you give the Torah through me? What does God answer?",
+   "o": [
+    "“Be silent. So it arose in My thought.”",
+    "“Because you were humbler than he.”",
+    "“Akiva will need your words first.”"
+   ],
+   "a": 0,
+   "why": "Menachot 29b. No neat reason, just “be silent.” The Talmud lets even Moses’s question stand open."
+  },
+  {
+   "t": "ask",
+   "v": "JMA4-From-Sinai",
+   "eb": "why?",
+   "q": "Why is Moses comforted, even though he still doesn’t understand the class?",
+   "o": [
+    "He realized his name was still famous",
+    "He saw he wasn’t needed anymore",
+    "The new teaching still grows from his"
+   ],
+   "a": 2,
+   "why": "Akiva’s teaching was new, but rooted in Sinai. The Torah keeps growing from the same source."
+  },
+  {
+   "t": "shot",
+   "v": "JMA5-Scribe",
+   "vo": [
+    "V06"
+   ],
+   "line": "Today, a Torah scroll is still written by hand, by a scribe called a sofer, on parchment, with a quill. Seven of the letters still get their tiny crowns.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "JMA5-Scribe",
+   "eb": "did you know?",
+   "q": "A sofer must write every letter perfectly. If even one letter is missing or broken, what happens to the scroll?",
+   "o": [
+    "It’s fine if the meaning is clear",
+    "It can’t be used until it’s fixed",
+    "It must be buried right away"
+   ],
+   "a": 1,
+   "why": "One missing or cracked letter makes a scroll unfit until a scribe repairs it. A scroll too damaged to fix is buried with care, like a person."
+  },
+  {
+   "t": "teach",
+   "v": "JMA2-Back-Row",
+   "say": [
+    "here’s what i love. torah isn’t just a book on a shelf. it’s the five books in the scroll, and the whole hebrew bible, and every good teaching since, down to a good answer at last night’s kitchen table.",
+    "and the scroll is read aloud, a section at a time, to the very end. then on simchat torah, the joy of the torah, the last line is read, and right away the first line again."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "JMA5-Scribe",
+   "eb": "the hard one",
+   "q": "If even Moses couldn’t follow Akiva’s class, what does the story say about learning Torah?",
+   "o": [
+    "Being lost is part of learning it",
+    "Later teachers know more than Moses",
+    "Only experts should study it"
+   ],
+   "a": 0,
+   "why": "No one holds all of it. Even Moses sat in the back. Being lost is part of the learning."
+  }
+ ],
+ "today": {
+  "v": "JMA5-Scribe",
+  "say": "find one verse or teaching you don’t understand. today, sit with it for a minute and ask one question: how do you know this? that’s how akiva’s students learned. look it up, ask someone, or just wonder.",
+  "options": [
+   [
+    "I’ll ask one question",
+    "that’s the eighth row. the best seat in the house."
+   ],
+   [
+    "I’ll just read it",
+    "good. reading is where the questions come from."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "The day the scroll was read aloud.",
+  "line": "a whole city stands in a square from dawn to noon, listening to one scroll. then they’re told to stop crying and go eat."
+ },
+ "card": {
+  "from": "from the Talmud",
+  "mins": 5,
+  "keep": "crown",
+  "keepName": "The letter’s crown",
+  "keepWhy": "Every little stroke still has more to teach.",
+  "keepSvg": "<path d=\"M16 72L22 30L38 52L50 20L62 52L78 30L84 72Z\" fill=\"#2a1b05\"/><rect x=\"16\" y=\"76\" width=\"68\" height=\"10\" rx=\"3\" fill=\"#2a1b05\"/>",
+  "sources": [
+   "Babylonian Talmud, Menachot 29b (Moses finds God tying crowns to the letters; a man named Akiva ben Yosef will expound heaps of laws on every tittle; ‘turn around’; Moses sits at the end of the eighth row and does not understand; his strength fails; ‘Rabbi, from where do you know this?’ ‘It is a law given to Moses at Sinai’; his mind is set at ease; the lesson paraphrases Moses’s question, which in the Talmud is ‘who is holding back Your hand?’, and leaves out the vision of Akiva’s death that follows)",
+   "Maimonides, Mishneh Torah, Laws of Tefillin, Mezuzah and Torah Scroll (writing a Torah scroll); Shulchan Arukh, Orach Chayim 36:3 (the crowns, tagin, on the seven letters shin, ayin, tet, nun, zayin, gimel, tsadi)",
+   "Deuteronomy 34:12 and Genesis 1:1 (the last and first lines read on Simchat Torah)"
+  ],
+  "check": []
+ }
+}

@@ -1,3 +1,5 @@
+Background only (written 2026-10-06). Where this disagrees with docs/VISION-NOW.md or docs/LESSON_STANDARD.md, those win.
+
 # What takes off on Instagram and TikTok, per path
 
 Read on 6 Oct 2026 in the founder's Chrome (read only: nothing liked, followed, commented or saved).

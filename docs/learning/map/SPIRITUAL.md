@@ -1,3 +1,5 @@
+Background only (written 2026-10-06). Where this disagrees with docs/VISION-NOW.md or docs/LESSON_STANDARD.md, those win.
+
 # Five-year map: SPIRITUAL ("Simply Spiritual")
 
 ## 1. What the research says this audience needs

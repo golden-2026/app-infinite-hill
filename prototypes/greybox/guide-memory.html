@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#0A0A0A">
+<link rel="icon" href="data:,"><title>Guide Memory</title>
+<meta name="description" content="Infinite Hill prototype: the guide remembers you over a week. Promise #2, it knows you. Signature interaction: the thread.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    color-scheme: dark;
+    --night: #0A0A0A; --panel: #141414; --panel2: #1c1c1c;
+    --text: #fbf6ee; --muted: #b9bfd3; --dim: #7d84a0;
+    --gold: #EEFF6A; --ink: #0A0A0A; --lamp: #EEFF6A;
+    --line: rgba(255,255,255,.12); --chip: rgba(255,255,255,.07);
+    --care: #ff9d8a;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; }
+  body { background: #0A0A0A; color: var(--text); font: 500 15px/1.45 Inter, system-ui, sans-serif; display: flex; justify-content: center; align-items: center; gap: 40px; }
+  button { font: inherit; color: inherit; cursor: pointer; border: 0; background: none; }
+  .h { font-family: Manrope, system-ui, sans-serif; }
+
+  /* phone */
+  .phone { position: relative; width: 390px; height: 844px; background: var(--night); border-radius: 40px; overflow: hidden; box-shadow: 0 30px 90px rgba(0,0,0,.7), 0 0 0 1px rgba(255,255,255,.08); display: flex; flex-direction: column; flex: none; }
+  @media (max-width: 520px) {
+    body { display: block; }
+    .phone { width: 100%; height: 100vh; height: 100dvh; border-radius: 0; box-shadow: none; }
+    .notes { display: none !important; }
+  }
+  .status { height: 44px; flex: none; display: flex; justify-content: space-between; align-items: center; padding: 6px 26px 0; font: 700 14px Inter, sans-serif; }
+  .status .r { display: flex; gap: 6px; align-items: center; }
+  .status .bat { width: 24px; height: 12px; border: 1.5px solid var(--text); border-radius: 3px; position: relative; }
+  .status .bat::after { content: ""; position: absolute; inset: 1.5px; right: 6px; background: var(--text); border-radius: 1px; }
+
+  /* day strip: the week, with the thread running through it */
+  .week { flex: none; padding: 4px 18px 10px; position: relative; }
+  .week .row { display: grid; grid-template-columns: repeat(7, 1fr); position: relative; z-index: 1; }
+  .day { display: grid; justify-items: center; gap: 4px; font: 800 11px Manrope, sans-serif; color: var(--dim); letter-spacing: .04em; }
+  .day i { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; font-style: normal; font-size: 12px; background: var(--night); box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.16); color: var(--dim); transition: all .35s; }
+  .day.done i { background: var(--gold); color: var(--ink); box-shadow: none; }
+  .day.rest i { box-shadow: inset 0 0 0 1.5px var(--muted); color: var(--muted); }
+  .day.today i { box-shadow: 0 0 0 3px var(--night), 0 0 0 5px var(--gold); }
+  .day.today { color: var(--text); }
+  .day.today:not(.done) i { background: var(--panel2); color: var(--text); }
+  .day small { font: 700 9px Inter, sans-serif; letter-spacing: 0; color: var(--dim); height: 11px; }
+  .week svg.thread-line { position: absolute; left: 18px; right: 18px; top: 4px; height: 30px; width: calc(100% - 36px); z-index: 0; overflow: visible; }
+  .week svg.thread-line path { fill: none; stroke: var(--gold); stroke-width: 2; stroke-linecap: round; stroke-dasharray: 400; stroke-dashoffset: 400; animation: stitch 1.4s .3s cubic-bezier(.6,0,.2,1) forwards; opacity: .9; }
+  @keyframes stitch { to { stroke-dashoffset: 0; } }
+
+  .scroll { flex: 1; overflow-y: auto; overflow-x: hidden; padding: 2px 18px 6px; scrollbar-width: none; }
+  .scroll::-webkit-scrollbar { display: none; }
+  .tabs { flex: none; height: 76px; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); background: rgba(10,10,10,.96); padding: 8px 6px 18px; }
+  .tabs button { display: grid; justify-items: center; gap: 3px; font: 700 11px Manrope, sans-serif; color: var(--dim); }
+  .tabs button.on { color: var(--gold); }
+  .tabs svg { width: 22px; height: 22px; }
+
+  /* chat */
+  .q { font: 800 34px/0.98 Manrope, sans-serif; letter-spacing: -.02em; margin: 6px 0 14px; }
+  .q em { font-style: normal; color: var(--gold); }
+  .msg { display: flex; gap: 10px; align-items: flex-end; margin: 0 0 10px; opacity: 0; transform: translateY(8px); animation: up .45s cubic-bezier(.2,.8,.2,1) forwards; animation-delay: var(--d, 0s); }
+  @keyframes up { to { opacity: 1; transform: none; } }
+  .ava { width: 36px; height: 36px; border-radius: 50%; flex: none; background: #1a1d0a url(art/guides/christianity.webp) 50% 25% / cover no-repeat; /* 2026-11-14: the guide's photo, never Finn */ box-shadow: 0 0 0 2px var(--gold); }
+  .ava.hide { visibility: hidden; }
+  .bub { background: var(--panel); border-radius: 20px 20px 20px 6px; padding: 11px 14px; font-size: 15.5px; line-height: 1.4; max-width: 300px; }
+  .bub b { color: var(--gold); font-weight: 700; }
+  .bub cite { display: block; font: 600 12px Inter, sans-serif; font-style: normal; color: var(--muted); margin-top: 4px; }
+  .me { justify-content: flex-end; }
+  .me .bub { background: var(--gold); color: var(--ink); border-radius: 20px 20px 6px 20px; font-weight: 600; }
+  .typing { display: inline-flex; gap: 4px; padding: 14px 16px; }
+  .typing span { width: 6px; height: 6px; border-radius: 50%; background: var(--muted); animation: blink 1.2s infinite; }
+  .typing span:nth-child(2) { animation-delay: .2s; } .typing span:nth-child(3) { animation-delay: .4s; }
+  @keyframes blink { 0%,60%,100% { opacity: .25; } 30% { opacity: 1; } }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 12px 46px; opacity: 0; animation: up .45s forwards; animation-delay: var(--d, 0s); }
+  .chips.full { margin-left: 0; }
+  .chip { border-radius: 999px; padding: 10px 15px; font: 700 14.5px Manrope, sans-serif; box-shadow: inset 0 0 0 1.5px rgba(251,246,238,.26); transition: transform .15s, background .2s; }
+  .chip:active { transform: scale(.95); }
+  .chip.sel { background: var(--gold); color: var(--ink); box-shadow: none; }
+
+  .ask { display: flex; gap: 8px; margin-top: 4px; }
+  .ask .in { flex: 1; min-width: 0; border-radius: 999px; background: var(--panel2); padding: 12px 16px; font: 600 15px Manrope, sans-serif; box-shadow: inset 0 0 0 1.5px var(--gold); }
+  .ask .in .cur { display: inline-block; width: 2px; height: 17px; background: var(--gold); vertical-align: -3px; margin-left: 1px; animation: blink 1s infinite; }
+  .send { width: 46px; height: 46px; border-radius: 50%; background: var(--gold); color: var(--ink); font: 900 22px Manrope, sans-serif; flex: none; display: grid; place-items: center; }
+
+  /* the thread tag: the signature. every time the guide uses a memory, it shows where it came from */
+  .thread { display: inline-flex; align-items: center; gap: 6px; margin: 0 0 6px 46px; padding: 5px 10px 5px 8px; border-radius: 999px; background: rgba(238,255,106,.1); color: var(--gold); font: 700 12px Inter, sans-serif; opacity: 0; animation: up .4s forwards; animation-delay: var(--d, 0s); }
+  .thread svg { width: 16px; height: 16px; }
+  .thread svg path { stroke-dasharray: 40; stroke-dashoffset: 40; animation: stitch .8s forwards; animation-delay: calc(var(--d, 0s) + .2s); }
+
+  /* the promise card: what i'll remember */
+  .keep { margin: 4px 0 12px 46px; border-radius: 18px; padding: 13px 14px; background: linear-gradient(180deg, rgba(238,255,106,.12), rgba(238,255,106,.04)); box-shadow: inset 0 0 0 1.5px rgba(238,255,106,.45); opacity: 0; animation: up .45s forwards; animation-delay: var(--d, 0s); }
+  .keep .k1 { display: flex; align-items: center; gap: 8px; font: 800 11px Manrope, sans-serif; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); }
+  .keep .k1 svg { width: 16px; height: 16px; }
+  .keep .k2 { font: 700 16px/1.3 Manrope, sans-serif; margin: 6px 0 2px; }
+  .keep .k3 { font-size: 13px; color: var(--muted); }
+  .keep .k4 { display: flex; gap: 14px; margin-top: 9px; font: 700 13px Inter, sans-serif; }
+  .keep .k4 button { color: var(--muted); text-decoration: underline; text-underline-offset: 3px; padding: 0; }
+
+  /* story card */
+  .story { display: grid; grid-template-columns: 96px 1fr; gap: 12px; align-items: stretch; margin: 2px 0 10px 46px; background: var(--panel); border-radius: 18px; padding: 8px; opacity: 0; animation: up .5s forwards; animation-delay: var(--d, 0s); }
+  .story .pic { width: 96px; height: 108px; border-radius: 12px; background-size: cover; background-position: center; position: relative; }
+  .story .pic::after { content: "▶"; position: absolute; left: 8px; bottom: 8px; width: 26px; height: 26px; border-radius: 50%; background: var(--gold); color: var(--ink); font-size: 10px; display: grid; place-items: center; padding-left: 2px; }
+  .story .t { display: grid; align-content: center; gap: 3px; padding-right: 4px; }
+  .story small { font: 700 11px Inter, sans-serif; color: var(--muted); letter-spacing: .02em; }
+  .story b { font: 800 19px/1.08 Manrope, sans-serif; letter-spacing: -.01em; }
+  .story .by { display: flex; align-items: center; gap: 6px; font: 600 11.5px Inter, sans-serif; color: var(--muted); margin-top: 3px; }
+  .story .by img { width: 20px; height: 20px; border-radius: 50%; object-fit: cover; }
+  .go { display: flex; gap: 8px; margin: 0 0 12px 46px; opacity: 0; animation: up .45s forwards; animation-delay: var(--d, 0s); }
+  .btn { border-radius: 999px; background: var(--gold); color: var(--ink); font: 800 15px Manrope, sans-serif; padding: 13px 20px; flex: 1; box-shadow: 0 8px 24px rgba(238,255,106,.18); }
+  .btn.ghost { background: var(--chip); color: var(--text); box-shadow: inset 0 0 0 1px var(--line); flex: none; }
+  .btn:active { transform: scale(.97); }
+  .soft { margin: 0 0 10px 46px; font-size: 13.5px; color: var(--muted); opacity: 0; animation: up .45s forwards; animation-delay: var(--d, 0s); }
+
+  /* a day header line inside the feed */
+  .stamp { font: 800 11px Manrope, sans-serif; letter-spacing: .12em; text-transform: uppercase; color: var(--lamp); margin: 6px 0 10px; }
+
+  /* sunday: the look-back */
+  .wrap { height: 100%; display: flex; flex-direction: column; }
+  .wslide { flex: 1; border-radius: 26px; padding: 22px 20px; position: relative; overflow: hidden; display: flex; flex-direction: column; }
+  .wslide.y { background: var(--gold); color: var(--ink); }
+  .wslide.n { background: var(--panel); }
+  .wbars { display: flex; gap: 4px; margin-bottom: 18px; }
+  .wbars i { flex: 1; height: 3px; border-radius: 2px; background: rgba(10,10,10,.2); }
+  .wbars i.on { background: var(--ink); }
+  .wslide.n .wbars i { background: rgba(255,255,255,.18); } .wslide.n .wbars i.on { background: var(--gold); }
+  .wk { font: 800 12px Manrope, sans-serif; letter-spacing: .12em; text-transform: uppercase; opacity: .7; }
+  .wbig { font: 800 44px/.95 Manrope, sans-serif; letter-spacing: -.03em; margin: 8px 0 16px; }
+  .wlist { display: grid; gap: 8px; }
+  .wrow { display: grid; grid-template-columns: 52px 1fr auto; gap: 12px; align-items: center; opacity: 0; animation: up .45s forwards; animation-delay: var(--d, 0s); }
+  .wrow .p { width: 52px; height: 52px; border-radius: 12px; background-size: cover; background-position: center; }
+  .wrow b { font: 800 16px/1.15 Manrope, sans-serif; display: block; }
+  .wrow small { font: 600 12px Inter, sans-serif; opacity: .65; }
+  .wrow .d { font: 800 12px Manrope, sans-serif; opacity: .55; }
+  .wline { margin-top: auto; padding-top: 16px; border-top: 1.5px solid rgba(10,10,10,.18); }
+  .wline .l { font: 800 28px/1.05 Manrope, sans-serif; letter-spacing: -.02em; margin: 6px 0 4px; }
+  .wline small { font: 600 13px Inter, sans-serif; opacity: .7; }
+  .mood-path { display: flex; align-items: flex-end; justify-content: space-between; gap: 6px; height: 120px; margin: 6px 0 8px; position: relative; }
+  .mood-path .c { flex: 1; display: grid; justify-items: center; gap: 6px; font: 700 11px Inter, sans-serif; color: var(--muted); }
+  .mood-path .c i { width: 100%; border-radius: 10px 10px 4px 4px; background: rgba(238,255,106,.18); transform-origin: bottom; transform: scaleY(0); animation: grow .7s cubic-bezier(.2,.8,.2,1) forwards; animation-delay: var(--d, 0s); }
+  .mood-path .c.rest i { background: repeating-linear-gradient(45deg, rgba(255,255,255,.07) 0 5px, transparent 5px 10px); }
+  .mood-path .c.hi i { background: var(--gold); }
+  @keyframes grow { to { transform: scaleY(1); } }
+  .arrowline { font: 800 30px/1.05 Manrope, sans-serif; letter-spacing: -.02em; margin: 4px 0 18px; }
+  .arrowline span { color: var(--gold); }
+  .candle { margin-top: auto; background: rgba(0,0,0,.28); border-radius: 20px; padding: 14px; display: grid; gap: 10px; }
+  .candle .ct { display: flex; gap: 12px; align-items: center; }
+  .candle .flame { width: 44px; height: 44px; flex: none; border-radius: 50%; background: radial-gradient(circle at 50% 60%, #fff6c8 0 12%, #EEFF6A 13% 28%, rgba(238,255,106,.25) 29% 60%, transparent 61%); animation: flick 2.4s ease-in-out infinite; }
+  @keyframes flick { 50% { transform: scale(1.06) translateY(-1px); filter: brightness(1.15); } }
+  .candle b { font: 800 17px/1.2 Manrope, sans-serif; }
+  .candle p { margin: 2px 0 0; font-size: 13px; color: var(--muted); }
+  .candle .row { display: flex; gap: 8px; }
+
+  /* memory screen */
+  .mh { display: flex; align-items: center; gap: 10px; margin: 2px 0 6px; }
+  .mh .back { width: 34px; height: 34px; border-radius: 50%; background: var(--chip); display: grid; place-items: center; font-size: 18px; }
+  .mtitle { font: 800 30px/1 Manrope, sans-serif; letter-spacing: -.02em; margin: 4px 0 6px; }
+  .msub { color: var(--muted); font-size: 14px; margin: 0 0 14px; }
+  .mem { background: var(--panel); border-radius: 18px; padding: 12px 14px; margin-bottom: 8px; display: grid; gap: 4px; transition: opacity .35s, transform .35s, max-height .45s .2s, padding .45s .2s, margin .45s .2s; max-height: 200px; overflow: hidden; }
+  .mem .top { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-top: 4px; }
+  .mem b { font: 700 16.5px/1.3 Manrope, sans-serif; }
+  .mem small { font: 600 12.5px Inter, sans-serif; color: var(--muted); display: flex; gap: 6px; align-items: center; }
+  .mem small svg { width: 14px; height: 14px; color: var(--gold); }
+  .mem .acts { display: flex; gap: 6px; flex: none; }
+  .mem .acts button { border-radius: 999px; padding: 6px 11px; font: 700 13px Inter, sans-serif; box-shadow: inset 0 0 0 1px var(--line); }
+  .mem .acts button.f { color: var(--care); }
+  .mem.gone { opacity: 0; transform: translateX(30px); max-height: 0; padding-top: 0; padding-bottom: 0; margin-bottom: 0; }
+  .toggle { display: flex; justify-content: space-between; align-items: center; background: var(--panel); border-radius: 18px; padding: 14px; margin: 14px 0 10px; }
+  .toggle b { font: 700 15px Manrope, sans-serif; display: block; }
+  .toggle small { color: var(--muted); font-size: 12.5px; }
+  .sw { width: 50px; height: 30px; border-radius: 999px; background: var(--gold); position: relative; flex: none; }
+  .sw::after { content: ""; position: absolute; top: 3px; right: 3px; width: 24px; height: 24px; border-radius: 50%; background: var(--ink); transition: right .2s; }
+  .sw.off { background: rgba(255,255,255,.2); } .sw.off::after { right: 23px; background: var(--text); }
+  .forgetall { width: 100%; text-align: center; padding: 14px; border-radius: 999px; color: var(--care); font: 800 15px Manrope, sans-serif; box-shadow: inset 0 0 0 1.5px rgba(255,157,138,.45); margin: 4px 0 14px; }
+  .privacy { display: flex; gap: 10px; align-items: flex-start; font: 600 13px/1.35 Inter, sans-serif; color: var(--muted); padding: 0 4px; }
+  .privacy svg { width: 18px; height: 18px; flex: none; color: var(--gold); margin-top: 1px; }
+  .toast { position: absolute; left: 50%; bottom: 92px; transform: translate(-50%, 20px); background: var(--text); color: var(--ink); font: 700 14px Manrope, sans-serif; padding: 10px 16px; border-radius: 999px; opacity: 0; transition: all .3s; pointer-events: none; white-space: nowrap; z-index: 5; }
+  .toast.on { opacity: 1; transform: translate(-50%, 0); }
+
+  /* crisis */
+  .care { background: var(--panel); border-radius: 20px 20px 20px 6px; padding: 14px; font-size: 15.5px; line-height: 1.45; }
+  .care b { color: var(--gold); }
+  .carebtns { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 12px 0 6px 46px; opacity: 0; animation: up .45s forwards; animation-delay: var(--d, 0s); }
+  .carebtns a { text-align: center; text-decoration: none; border-radius: 999px; padding: 14px 10px; font: 800 16px Manrope, sans-serif; background: var(--gold); color: var(--ink); }
+  .carebtns a.w { grid-column: 1 / -1; background: var(--chip); color: var(--text); box-shadow: inset 0 0 0 1px var(--line); font-size: 14px; }
+  .proto { position: absolute; right: 14px; top: 50px; z-index: 6; font: 700 12px Inter, sans-serif; color: var(--muted); background: rgba(20,27,51,.92); border-radius: 999px; padding: 8px 12px; box-shadow: inset 0 0 0 1px var(--line); }
+
+  /* notes beside the phone */
+  .notes { width: 360px; max-height: 844px; overflow: auto; display: grid; gap: 16px; align-content: start; }
+  .notes .eb { font: 800 11px Manrope, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--lamp); }
+  .notes h1 { font: 800 30px/1 Manrope, sans-serif; letter-spacing: -.02em; margin: 6px 0 4px; }
+  .notes h1 em { font-style: normal; color: var(--gold); }
+  .notes p { margin: 0; color: var(--muted); font-size: 14px; }
+  .notes .sig { background: var(--panel); border-radius: 16px; padding: 14px; box-shadow: inset 0 0 0 1px rgba(238,255,106,.3); }
+  .notes .sig b { color: var(--gold); font: 800 15px Manrope, sans-serif; }
+  .notes dl { margin: 0; display: grid; gap: 10px; }
+  .notes dt { font: 800 12px Manrope, sans-serif; letter-spacing: .08em; text-transform: uppercase; color: var(--text); }
+  .notes dd { margin: 2px 0 0; color: var(--muted); font-size: 13.5px; }
+  .nav { display: flex; flex-wrap: wrap; gap: 6px; }
+  .nav button { font: 700 12px Inter, sans-serif; padding: 7px 10px; border-radius: 999px; box-shadow: inset 0 0 0 1px var(--line); color: var(--muted); }
+  .nav button.on { background: var(--gold); color: var(--ink); box-shadow: none; }
+</style>
+</head>
+<body>
+
+<div class="phone" id="phone">
+  <div class="status"><span>8:04</span><span class="r"><svg width="17" height="11" viewBox="0 0 17 11" fill="currentColor"><rect x="0" y="7" width="3" height="4" rx="1"/><rect x="4.5" y="5" width="3" height="6" rx="1"/><rect x="9" y="2.5" width="3" height="8.5" rx="1"/><rect x="13.5" y="0" width="3" height="11" rx="1"/></svg><span class="bat"></span></span></div>
+  <div class="week" id="week"></div>
+  <div class="scroll" id="scroll"></div>
+  <nav class="tabs" id="tabs">
+    <button data-t="today"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 19l6-9 4 5 3-4 5 8z"/><circle cx="17" cy="6" r="2"/></svg>Today</button>
+    <button data-t="guide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/></svg>Guide</button>
+    <button data-t="together"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M3 19c1-3 3-4 5-4s4 1 5 4M11 19c1-3 3-4 5-4s4 1 5 4"/></svg>Together</button>
+    <button data-t="you"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>You</button>
+  </nav>
+  <div class="toast" id="toast"></div>
+</div>
+
+<aside class="notes" id="notes">
+  <div>
+    <div class="eb">promise #2 · it knows you</div>
+    <h1>the feed forgets. <em>the guide remembers.</em></h1>
+    <p>one Christian user, one week. tap through on the phone, or jump below.</p>
+  </div>
+  <div class="sig"><b>the signature: the thread.</b><p style="margin-top:6px">every time the guide uses something it remembers, a small yellow thread tag shows where it came from ("from monday"). tap it and you land on what i remember, where you can edit or forget it. remembering is never hidden, so it never feels creepy. on the week strip, the thread stitches together the days it carried something forward.</p></div>
+  <div class="nav" id="nav"></div>
+  <dl id="spec"></dl>
+</aside>
+
+<script src="lib/ih-es.js"></script>
+<script src="lib/ih-es-screens.js"></script>
+<script src="lib/ih-four.js"></script>
+<script>
+(function () {
+  // Spanish (2026-11-11): same signal as hill-app.html (?lang=es, else the saved setting, else the phone). The phone is
+  // written in both languages here; the design notes beside it stay in English (they are for the team, not for users).
+  var ES = !!(window.IH4 && IH4.isEs());
+  function T(en, es) { return ES ? es : en; }
+  if (ES) { document.getElementById("scroll").setAttribute("translate", "no"); document.getElementById("notes").setAttribute("translate", "no"); }
+  if (window.IH4) IH4.start();
+  var G = "art/guides/christianity.webp";
+  var ART = {
+    storm: "art/sacred/chr-storm/storm-night.webp",
+    rest: "art/sacred/rest/clips/RE3-Blessed-Day.webp",
+    son: "art/sacred/lost-son/clips/C10-Father-Runs.webp",
+    nets: "art/sacred/nets/clips/NT3-Into-The-Deep.webp"
+  };
+  var KNOT = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M1 11c3 0 3-6 6-6s2 6 5 6 3-4 3-4"/></svg>';
+  var LOCK = '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="9" width="12" height="8" rx="2"/><path d="M7 9V6.5a3 3 0 0 1 6 0V9"/></svg>';
+
+  function g(html, d, opt) { opt = opt || {}; return '<div class="msg" style="--d:' + d + 's"><div class="ava' + (opt.cont ? " hide" : "") + '"></div><div class="bub">' + html + '</div></div>'; }
+  function me(t, d) { return '<div class="msg me" style="--d:' + d + 's"><div class="bub">' + t + '</div></div>'; }
+  function thread(t, d) { return '<button class="thread" data-go="mem" style="--d:' + d + 's">' + KNOT + t + '</button>'; }
+  function story(img, from, title, mins, d) {
+    return '<div class="story" style="--d:' + d + 's"><div class="pic" style="background-image:url(' + img + ')"></div><div class="t"><small>' + from + '</small><b>' + title + '</b><small>' + T('a ' + mins + '-min story', 'una historia de ' + mins + ' min') + '</small><span class="by"><img src="' + G + '" alt="">' + T('told by', 'contada por') + ' Denzel Washington</span></div></div>';
+  }
+  function go(a, b, d, next) { return '<div class="go" style="--d:' + d + 's"><button class="btn" data-next="' + next + '">' + a + '</button>' + (b ? '<button class="btn ghost" data-next="' + next + '">' + b + '</button>' : "") + '</div>'; }
+
+  // week strip states: d=done, r=rest, t=today, ''=ahead. thread = days the memory carried through
+  var DAYS = ES ? ["L", "M", "M", "J", "V", "S", "D"] : ["M", "T", "W", "T", "F", "S", "S"];
+
+  var S = [
+    { id: "mon1", label: "mon · check-in", week: ["t","","","","","",""], tab: "today",
+      html: function () {
+        if (ES) return '<div class="q">¿qué tienes en <em>mente</em> hoy?</div>' +
+          g("buenos días. antes que nada, háblame. toca una o dilo a tu manera.", .05) +
+          '<div class="chips" style="--d:.25s"><button class="chip">enojo</button><button class="chip">preocupación</button><button class="chip sel">algo pesado</button><button class="chip">sin rumbo</button><button class="chip">un buen día</button></div>' +
+          g("algo pesado. aquí estoy. ¿qué está pasando?", .5) +
+          '<div class="ask" style="margin-top:14px"><div class="in">mi papá está en el hospital<span class="cur"></span></div><button class="send" data-next="1" aria-label="enviar">›</button></div>';
+        return '<div class="q">what\'s on your <em>mind</em> today?</div>' +
+          g("morning. before anything else, talk to me. tap one, or say it your way.", .05) +
+          '<div class="chips" style="--d:.25s"><button class="chip">angry</button><button class="chip">worried</button><button class="chip sel">something heavy</button><button class="chip">kinda lost</button><button class="chip">good day</button></div>' +
+          g("something heavy. i'm here. what's going on?", .5) +
+          '<div class="ask" style="margin-top:14px"><div class="in">my dad\'s in the hospital<span class="cur"></span></div><button class="send" data-next="1" aria-label="send">›</button></div>';
+      },
+      spec: [["motion", "chips float in, 40ms apart. tapping \"something heavy\" fills it yellow and the guide's reply slides up under it. the input glows yellow once a feeling is picked."],
+        ["haptics", "light tick on the chip. nothing on send: heavy moments get less buzz, not more."],
+        ["sound", "none. the app is quiet on a heavy pick."],
+        ["what it learns", "nothing yet. it only offers to remember after the user says something real."]] },
+
+    { id: "mon2", label: "mon · the guide answers", week: ["t","","","","","",""], tab: "today",
+      html: function () {
+        if (ES) return me("mi papá está en el hospital", .05) +
+          g("ay, lo siento mucho. eso es mucho que cargar.", .45) +
+          g("no tienes que cargar con esto a solas. ¿te puedo preguntar una cosa?", .85, { cont: 1 }) +
+          g("¿estás esperando noticias, o solo esperando?", 1.25, { cont: 1 }) +
+          '<div class="chips" style="--d:1.6s"><button class="chip sel" data-next="2">esperando noticias</button><button class="chip" data-next="2">solo esperando</button><button class="chip" data-next="2">prefiero no decirlo</button></div>';
+        return me("my dad's in the hospital", .05) +
+          g("oh, i'm so sorry. that's a lot to hold.", .45) +
+          g("you don't have to carry this alone. can i ask one thing?", .85, { cont: 1 }) +
+          g("are you waiting on news, or just waiting?", 1.25, { cont: 1 }) +
+          '<div class="chips" style="--d:1.6s"><button class="chip sel" data-next="2">waiting on news</button><button class="chip" data-next="2">just waiting</button><button class="chip" data-next="2">i\'d rather not say</button></div>';
+      },
+      spec: [["motion", "the user's line lands first. then a short typing beat (600ms) before each guide line, so it reads like a friend thinking, not a bot firing."],
+        ["haptics", "one soft tap when the first guide line appears. none after."],
+        ["sound", "none."],
+        ["voice rules", "feeling first, one question only, and \"i'd rather not say\" is always an answer."]] },
+
+    { id: "mon3", label: "mon · story + the promise", week: ["t","","","","","",""], tab: "today",
+      html: function () {
+        if (ES) return me("esperando noticias", .05) +
+          g("esperar es su propia tormenta. por eso la historia de hoy es una. los discípulos estaban seguros de que la barca se hundía, y despertaron a Jesús: <b>“maestro, ¿no te importa que nos ahoguemos?”</b><cite>Marcos 4:38</cite>", .4) +
+          story(ART.storm, "cristianismo · del Evangelio de Marcos", "la tormenta en la barca", 5, 1.2) +
+          go("verla", "después", 1.4, 3) +
+          '<div class="keep" style="--d:1.8s"><div class="k1">' + KNOT + 'voy a recordar esto</div><div class="k2">tu papá está en el hospital.</div><div class="k3">queda entre tú y yo. puedes ver o borrar lo que recuerdo cuando quieras.</div><div class="k4"><button data-go="mem">ver lo que recuerdo</button><button data-toast="va. no lo guardo.">no lo guardes</button></div></div>' +
+          '<div class="soft" style="--d:2.1s">después de la historia: reza por él, o solo quédate con eso. tú decides.</div>';
+        return me("waiting on news", .05) +
+          g("waiting is its own storm. so today's story is one. the disciples were sure the boat was sinking, and woke Jesus: <b>\"teacher, don't you care if we drown?\"</b><cite>Mark 4:38</cite>", .4) +
+          story(ART.storm, "Christianity · from Mark's Gospel", "the storm in the boat", 5, 1.2) +
+          go("watch it", "later", 1.4, 3) +
+          '<div class="keep" style="--d:1.8s"><div class="k1">' + KNOT + 'i\'ll remember this</div><div class="k2">your dad is in the hospital.</div><div class="k3">just between us. you can see or delete what i remember anytime.</div><div class="k4"><button data-go="mem">see what i remember</button><button data-toast="okay. i won\'t keep it.">don\'t keep this</button></div></div>' +
+          '<div class="soft" style="--d:2.1s">after the story: pray for him, or just sit with it. your call.</div>';
+      },
+      spec: [["motion", "the story card rises with the poster gently pushing in (1.03 scale over 4s). then the promise card: its thread icon stitches itself, left to right, and the week strip above gets its first yellow knot on monday."],
+        ["haptics", "a double soft tap as the thread finishes stitching: the moment it remembers."],
+        ["sound", "a single low felt-piano note under the stitch. nothing louder."],
+        ["the pick", "heavy + waiting + Christianity path = the storm in the boat (Mark 4:35-41). always from the user's own path; never another faith here."]] },
+
+    { id: "tue1", label: "tue · how's your dad?", week: ["d","t","","","","",""], thread: [0, 1], tab: "today",
+      html: function () {
+        if (ES) return '<div class="stamp">martes · 7:40 am</div>' +
+          thread("del lunes", .05) +
+          g("buenos días. ¿cómo sigue tu papá hoy?", .3) +
+          '<div class="chips" style="--d:.7s"><button class="chip">mejor</button><button class="chip sel" data-next="4">igual</button><button class="chip">peor</button><button class="chip">hoy no</button></div>' +
+          '<div class="soft" style="--d:1s">“hoy no” solo quiere decir que prefieres no hablar de eso. no te vuelvo a preguntar hoy.</div>';
+        return '<div class="stamp">tuesday · 7:40 am</div>' +
+          thread("from monday", .05) +
+          g("morning. how's your dad today?", .3) +
+          '<div class="chips" style="--d:.7s"><button class="chip">better</button><button class="chip sel" data-next="4">same</button><button class="chip">worse</button><button class="chip">not today</button></div>' +
+          '<div class="soft" style="--d:1s">"not today" just means you\'d rather not talk about it. i won\'t ask again today.</div>';
+      },
+      spec: [["motion", "the thread tag stitches in first, then the question. the week strip draws a yellow line from monday's knot to today."],
+        ["haptics", "none on open. a light tick on the answer."],
+        ["sound", "none. it's 7:40 am."],
+        ["notification (optional)", "\"morning. thinking of you and your dad.\" never \"don't lose your streak.\""]] },
+
+    { id: "tue2", label: "tue · a story to match", week: ["d","t","","","","",""], thread: [0, 1], tab: "today",
+      html: function () {
+        if (ES) return '<div class="stamp">martes · 7:41 am</div>' +
+          me("igual", .05) +
+          g("igual también es difícil. esperar cansa.", .4) +
+          g("así que aquí va una corta, que todavía es temprano. la primerísima semana de la Biblia termina con un descanso: <b>el séptimo día Dios descansó de toda su obra.</b><cite>parafraseando Génesis 2:2</cite>descansar no es rendirse. viene incluido.", .8, { cont: 1 }) +
+          story(ART.rest, "cristianismo · del Génesis", "hasta Dios descansó", 5, 1.2) +
+          go("verla", "después", 1.4, 5);
+        return '<div class="stamp">tuesday · 7:41 am</div>' +
+          me("same", .05) +
+          g("same is still hard. waiting wears you out.", .4) +
+          g("so here's a short one, since it's morning. the very first week in the Bible ends with a rest: <b>on the seventh day God rested from all his work.</b><cite>paraphrasing Genesis 2:2</cite>rest isn't giving up. it's built in.", .8, { cont: 1 }) +
+          story(ART.rest, "Christianity · from Genesis", "even God rested", 5, 1.2) +
+          go("watch it", "later", 1.4, 5);
+      },
+      spec: [["motion", "same rhythm as monday. the story card's poster is warm morning light, a gentle shift from monday's storm."],
+        ["haptics", "light tick on \"watch it\"."],
+        ["sound", "the film starts with its own score; the app adds nothing."],
+        ["what it learns", "user opens before 8 am and finishes short stories. it notes \"likes short stories in the morning\" and shows it on the memory screen."]] },
+
+    { id: "thu", label: "thu · missed you", week: ["d","d","r","t","","",""], thread: [0, 3], tab: "today",
+      html: function () {
+        if (ES) return g("te extrañé ayer. sin estrés por la racha: los días de descanso cuentan.", .1) +
+          thread("de la historia del lunes", .5) +
+          g("el lunes la tormenta rugía, y Jesús se levantó y dijo: <b>“¡silencio! ¡cálmate!”</b><cite>Marcos 4:39</cite>la tormenta era real. la calma también. ¿cómo sigue tu papá?", .7) +
+          me("un poco mejor. ya está comiendo otra vez", 1.2) +
+          g("ay, qué bueno oír eso. me alegra muchísimo. la historia de hoy tiene un papá que sale corriendo. <b>“todavía estaba lejos cuando su padre lo vio.”</b><cite>Lucas 15:20</cite>", 1.6) +
+          story(ART.son, "cristianismo · una historia que contó Jesús", "el hijo que volvió a casa", 6, 2.3) +
+          go("verla", null, 2.5, 6);
+        return g("missed you yesterday. no streak stress, rest days count.", .1) +
+          thread("from monday's story", .5) +
+          g("monday the storm was loud, and Jesus stood up and said <b>\"peace, be still.\"</b><cite>Mark 4:39</cite>the storm was real. so was the calm. how's your dad?", .7) +
+          me("a little better. he's eating again", 1.2) +
+          g("oh, that's good to hear. i'm really glad. today's story has a dad who runs. <b>\"while he was still a long way off, his father saw him.\"</b><cite>Luke 15:20</cite>", 1.6) +
+          story(ART.son, "Christianity · a story Jesus told", "the son who came home", 6, 2.3) +
+          go("watch it", null, 2.5, 6);
+      },
+      spec: [["motion", "wednesday on the strip is a hollow ring labeled \"rest\", never a red x or a broken chain. the thread line hops over it to thursday."],
+        ["haptics", "a soft tap on the good news line."],
+        ["sound", "none."],
+        ["the callback", "it quotes monday's teaching back (Mark 4:39), then answers the update. better news = a warmer story, still from week one of the Christianity path."]] },
+
+    { id: "sun1", label: "sun · your week", week: ["d","d","r","d","r","d","t"], thread: [0, 6], tab: "today", full: 1,
+      html: function () {
+        function r(img, t, s, d, dl) { return '<div class="wrow" style="--d:' + dl + 's"><div class="p" style="background-image:url(' + img + ')"></div><span><b>' + t + '</b><small>' + s + '</small></span><span class="d">' + d + '</span></div>'; }
+        if (ES) return '<div class="wrap"><div class="wslide y"><div class="wbars"><i class="on"></i><i></i></div>' +
+          '<div class="wk">tu semana</div><div class="wbig">4 historias.<br>una frase.</div>' +
+          '<div class="wlist">' +
+          r(ART.storm, "la tormenta en la barca", "Marcos 4", "lun", .2) +
+          r(ART.rest, "hasta Dios descansó", "Génesis 2", "mar", .35) +
+          r(ART.son, "el hijo que volvió a casa", "Lucas 15", "jue", .5) +
+          r(ART.nets, "echar las redes una vez más", "Lucas 5", "sáb", .65) +
+          '</div><div class="wline"><div class="wk">la frase que guardaste</div><div class="l">“¡silencio! ¡cálmate!”</div><small>Marcos 4:39 · guardada el lunes</small></div>' +
+          '</div><div style="display:flex;justify-content:flex-end;padding:10px 2px 0"><button class="btn" style="flex:none" data-next="7">siguiente ›</button></div></div>';
+        return '<div class="wrap"><div class="wslide y"><div class="wbars"><i class="on"></i><i></i></div>' +
+          '<div class="wk">your week</div><div class="wbig">4 stories.<br>one line.</div>' +
+          '<div class="wlist">' +
+          r(ART.storm, "the storm in the boat", "Mark 4", "mon", .2) +
+          r(ART.rest, "even God rested", "Genesis 2", "tue", .35) +
+          r(ART.son, "the son who came home", "Luke 15", "thu", .5) +
+          r(ART.nets, "nets out one more time", "Luke 5", "sat", .65) +
+          '</div><div class="wline"><div class="wk">the line you kept</div><div class="l">"peace, be still."</div><small>Mark 4:39 · kept monday</small></div>' +
+          '</div><div style="display:flex;justify-content:flex-end;padding:10px 2px 0"><button class="btn" style="flex:none" data-next="7">next ›</button></div></div>';
+      },
+      spec: [["motion", "a full-bleed yellow card, Wrapped-style. the four stories drop in one by one (150ms apart), then the kept line types itself in. tap right for the next card, hold to pause."],
+        ["haptics", "a light tick per story landing; a firmer one when the kept line finishes."],
+        ["sound", "a soft four-note rise, one note per story. off if the phone is on silent."],
+        ["honesty", "every number is the user's own: the 4 stories they actually did. no averages, no \"top 5% of users\"."]] },
+
+    { id: "sun2", label: "sun · how it moved", week: ["d","d","r","d","r","d","t"], thread: [0, 6], tab: "today", full: 1,
+      html: function () {
+        function c(day, h, cls, d) { return '<div class="c ' + (cls || "") + '"><i style="height:' + h + 'px;--d:' + d + 's"></i>' + day + '</div>'; }
+        if (ES) return '<div class="wrap"><div class="wslide n"><div class="wbars"><i class="on"></i><i class="on"></i></div>' +
+          '<div class="wk" style="color:var(--lamp);opacity:1">cómo se movió tu semana</div>' +
+          '<div class="arrowline">pesada <span>→</span><br>un poco más ligera</div>' +
+          '<div class="mood-path">' + c("lun", 26, "", .1) + c("mar", 26, "", .2) + c("mié", 92, "rest", .3) + c("jue", 54, "", .4) + c("vie", 92, "rest", .5) + c("sáb", 70, "", .6) + c("dom", 82, "hi", .7) + '</div>' +
+          '<p style="margin:0 0 6px;color:var(--muted);font-size:13.5px">según lo que me contaste cada mañana. los días de descanso también cuentan.</p>' +
+          '<div class="candle"><div class="ct"><div class="flame"></div><div><b>¿quieres prender una vela por tu papá en una iglesia cerca de ti?</b><p>solo si quieres. sin registrarte, sin hablar con nadie. solo una vela.</p></div></div>' +
+          '<div class="row"><button class="btn" data-next="8">muéstrame una cerca</button><button class="btn ghost" data-toast="sin problema. aquí sigue.">esta semana no</button></div></div>' +
+          '</div></div>';
+        return '<div class="wrap"><div class="wslide n"><div class="wbars"><i class="on"></i><i class="on"></i></div>' +
+          '<div class="wk" style="color:var(--lamp);opacity:1">how your week moved</div>' +
+          '<div class="arrowline">heavy <span>→</span><br>a little lighter</div>' +
+          '<div class="mood-path">' + c("mon", 26, "", .1) + c("tue", 26, "", .2) + c("wed", 92, "rest", .3) + c("thu", 54, "", .4) + c("fri", 92, "rest", .5) + c("sat", 70, "", .6) + c("sun", 82, "hi", .7) + '</div>' +
+          '<p style="margin:0 0 6px;color:var(--muted);font-size:13.5px">from what you told me each morning. rest days count too.</p>' +
+          '<div class="candle"><div class="ct"><div class="flame"></div><div><b>want to light a candle for your dad at a church near you?</b><p>only if you want. no sign-up, no talking to anyone. just a candle.</p></div></div>' +
+          '<div class="row"><button class="btn" data-next="8">show me one nearby</button><button class="btn ghost" data-toast="no problem. it\'ll keep.">not this week</button></div></div>' +
+          '</div></div>';
+      },
+      spec: [["motion", "bars grow left to right from what the user said each morning; rest days are hatched, not empty. the candle breathes slowly."],
+        ["haptics", "none on the bars. one soft tap if they pick a church."],
+        ["sound", "none."],
+        ["the nudge", "one real place, once a week at most, never pushed again that week. a real IRL visit is how a passport stamp is earned."]] },
+
+    { id: "mem", label: "what i remember", week: null, tab: "you",
+      html: function () {
+        function m(t, s, id) { return '<div class="mem" id="' + id + '"><b>' + t + '</b><div class="top"><small>' + KNOT + s + '</small><div class="acts"><button data-toast="' + T("edit opens with the words as you said them", "editar abre tus palabras tal como las dijiste") + '">' + T("edit", "editar") + '</button><button class="f" data-forget="' + id + '">' + T("forget", "olvidar") + '</button></div></div></div>'; }
+        if (ES) return '<div class="mh"><button class="back" data-prev="1" aria-label="atrás">‹</button><span style="font:700 14px Manrope;color:var(--muted)">tú</span></div>' +
+          '<div class="mtitle">lo que recuerdo de ti</div>' +
+          '<p class="msub">para elegir la historia correcta el día correcto. cambia lo que quieras.</p>' +
+          m("tu papá está en el hospital", "desde el lunes · tú me lo dijiste", "m1") +
+          m("te gustan las historias cortas en la mañana", "desde el martes · me di cuenta", "m2") +
+          m("vas en el camino del cristianismo", "desde que llegaste · tú lo elegiste", "m3") +
+          m("una frase que guardaste: “¡silencio! ¡cálmate!”", "lunes · Marcos 4:39", "m4") +
+          '<div class="toggle"><span><b>recordar cosas nuevas</b><small>apagado, solo uso lo de arriba</small></span><button class="sw" id="sw" aria-label="recordar cosas nuevas"></button></div>' +
+          '<button class="forgetall" id="fa">olvidar todo</button>' +
+          '<div class="privacy">' + LOCK + '<span>se queda en tu teléfono. nunca se vende. nunca se usa para anuncios.</span></div>' +
+          '<button class="proto" data-next="9">prototipo: rama de crisis ›</button>';
+        return '<div class="mh"><button class="back" data-prev="1">‹</button><span style="font:700 14px Manrope;color:var(--muted)">you</span></div>' +
+          '<div class="mtitle">what i remember about you</div>' +
+          '<p class="msub">so i can pick the right story on the right day. change anything.</p>' +
+          m("your dad is in the hospital", "since monday · you told me", "m1") +
+          m("you like short stories in the morning", "since tuesday · i noticed", "m2") +
+          m("you're on the Christianity path", "since you joined · you chose it", "m3") +
+          m("a line you kept: \"peace, be still.\"", "monday · Mark 4:39", "m4") +
+          '<div class="toggle"><span><b>remember new things</b><small>off means i only use what\'s above</small></span><button class="sw" id="sw" aria-label="remember new things"></button></div>' +
+          '<button class="forgetall" id="fa">forget everything</button>' +
+          '<div class="privacy">' + LOCK + '<span>stays on your phone. never sold. never used for ads.</span></div>' +
+          '<button class="proto" data-next="9">prototype: crisis branch ›</button>';
+      },
+      spec: [["motion", "forget slides the card right and folds the space closed (350ms). a toast says \"forgotten. it's gone.\" forget everything asks once, then clears with one long fade."],
+        ["haptics", "a firm tap on forget, so it feels final."],
+        ["sound", "a soft paper-tear on forget. nothing else."],
+        ["for Xogito", "memories are short plain sentences, stored on the device, each with a source (\"you told me\" / \"i noticed\") and a date. the guide may only use what is listed here. delete is real delete."]] },
+
+    { id: "crisis", label: "crisis branch", week: null, tab: "today",
+      html: function () {
+        // crisis care in Spanish: the same 988 / local emergency words as lib/ih-four.js careHTML
+        if (ES) return '<div class="stamp" style="color:var(--muted)">viernes en la noche</div>' +
+          me("la verdad ya no quiero estar aquí. me quiero morir", .05) +
+          '<div class="msg" style="--d:.5s"><div class="ava"></div><div class="care">me alegra mucho que me lo hayas contado. importas, y no tienes que cargar con esto a solas.<br><br>si estás en peligro o piensas en hacerte daño, por favor llama o escribe al <b>988</b> (en EE. UU.) ahora mismo, o llama a tu número local de emergencias. en español: llama al 988 y oprime 2, o escribe <b>AYUDA</b> al 988.</div></div>' +
+          '<div class="carebtns" style="--d:.9s"><a href="tel:988">llamar al 988</a><a href="sms:988?body=AYUDA">escribir al 988</a><a class="w" href="tel:112">¿fuera de EE. UU.? tu número local de emergencias</a></div>' +
+          g("aquí estoy, y no me voy a ir. puedes seguir hablándome mientras llamas. si puedes, cuéntaselo hoy a alguien de confianza.", 1.3) +
+          '<div class="ask" style="margin-top:10px"><div class="in" style="box-shadow:inset 0 0 0 1.5px var(--line);color:var(--dim)">sigue hablándome…</div><button class="send" aria-label="enviar">›</button></div>';
+        return '<div class="stamp" style="color:var(--muted)">friday night</div>' +
+          me("honestly i don't want to be here anymore. i want to die", .05) +
+          '<div class="msg" style="--d:.5s"><div class="ava"></div><div class="care">i\'m really glad you told me. you matter, and you don\'t have to carry this alone.<br><br>if you\'re in danger or thinking about hurting yourself, please call or text <b>988</b> (in the US) right now, or your local emergency number.</div></div>' +
+          '<div class="carebtns" style="--d:.9s"><a href="tel:988">call 988</a><a href="sms:988">text 988</a><a class="w" href="tel:112">not in the US? your local emergency number</a></div>' +
+          g("i'm right here, and i'm not going anywhere. you can keep talking to me while you call. if you can, tell someone you trust tonight.", 1.3) +
+          '<div class="ask" style="margin-top:10px"><div class="in" style="box-shadow:inset 0 0 0 1.5px var(--line);color:var(--dim)">keep talking to me…</div><button class="send" aria-label="send">›</button></div>';
+      },
+      spec: [["motion", "everything slows: no week strip, no story card, no streak, no thread tag. lines arrive with a calm 400ms fade. the 988 buttons are the biggest thing on screen."],
+        ["haptics", "none. no buzz in a crisis."],
+        ["sound", "none."],
+        ["rules", "never plays a story here and never quotes scripture at someone in danger. the guide stays in the chat. same 988 / local emergency text as the live app's crisis reply, in every language."]] }
+  ];
+
+  var cur = 0, $ = function (s) { return document.querySelector(s); };
+
+  function weekHTML(st) {
+    if (!st.week) return "";
+    var labels = { d: "", r: T("rest", "descanso"), t: T("today", "hoy"), "": "" };
+    var row = '<div class="row">' + st.week.map(function (w, i) {
+      var cls = w === "d" ? "done" : w === "r" ? "rest" : w === "t" ? "today" : "";
+      var inner = w === "d" ? "✓" : DAYS[i];
+      return '<div class="day ' + cls + (w === "t" && st.full ? " done" : "") + '"><i>' + inner + '</i><small>' + (labels[w] || "") + '</small></div>';
+    }).join("") + '</div>';
+    var line = "";
+    if (st.thread) {
+      // a soft stitched line from the first remembered day to today, hopping over rest days
+      var a = st.thread[0], b = st.thread[1], W = 354, step = W / 7, y = 15, d = "M" + (a * step + step / 2) + " " + y;
+      for (var i = a + 1; i <= b; i++) { var x0 = (i - 1) * step + step / 2, x1 = i * step + step / 2; d += " Q" + ((x0 + x1) / 2) + " " + (st.week[i] === "r" ? -6 : y + 9) + " " + x1 + " " + y; }
+      line = '<svg class="thread-line" viewBox="0 0 354 30" preserveAspectRatio="none"><path d="' + d + '"/></svg>';
+    }
+    return line + row;
+  }
+
+  function show(i) {
+    cur = Math.max(0, Math.min(S.length - 1, i));
+    var st = S[cur];
+    $("#week").innerHTML = weekHTML(st);
+    $("#week").style.display = st.week ? "" : "none";
+    $("#scroll").innerHTML = st.html();
+    $("#scroll").scrollTop = 0;
+    $("#scroll").style.paddingBottom = st.full ? "12px" : "";
+    [].forEach.call(document.querySelectorAll("#tabs button"), function (b) { b.classList.toggle("on", b.dataset.t === st.tab); });
+    $("#nav").innerHTML = S.map(function (s, k) { return '<button data-jump="' + k + '" class="' + (k === cur ? "on" : "") + '">' + String(k + 1).padStart(2, "0") + " " + s.label + '</button>'; }).join("");
+    $("#spec").innerHTML = st.spec.map(function (p) { return '<div><dt>' + p[0] + '</dt><dd>' + p[1] + '</dd></div>'; }).join("");
+    try { history.replaceState(null, "", "#" + (cur + 1)); } catch (e) {}
+  }
+
+  function toast(t) { var el = $("#toast"); el.textContent = t; el.classList.add("on"); clearTimeout(toast.t); toast.t = setTimeout(function () { el.classList.remove("on"); }, 1800); }
+
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest("button, .day"); if (!b) return;
+    if (b.dataset.jump != null) return show(+b.dataset.jump);
+    if (b.dataset.next != null) { if (+b.dataset.next === 8) prevBeforeMem = cur; return show(+b.dataset.next); }
+    if (b.dataset.prev != null) return show(prevBeforeMem || 0);
+    if (b.dataset.go === "mem") { prevBeforeMem = cur; return show(8); }
+    if (b.dataset.toast) return toast(b.dataset.toast);
+    if (b.dataset.forget) { var m = document.getElementById(b.dataset.forget); m.classList.add("gone"); return toast(T("forgotten. it's gone.", "olvidado. ya no está.")); }
+    if (b.id === "sw") { b.classList.toggle("off"); return toast(b.classList.contains("off") ? T("okay. i'll stop adding new things.", "va. ya no agrego cosas nuevas.") : T("okay. i'll remember new things.", "va. voy a recordar cosas nuevas.")); }
+    if (b.id === "fa") { [].forEach.call(document.querySelectorAll(".mem"), function (m, k) { setTimeout(function () { m.classList.add("gone"); }, k * 90); }); return toast(T("all forgotten. fresh start.", "todo olvidado. borrón y cuenta nueva.")); }
+  });
+  var prevBeforeMem = 0;
+  document.addEventListener("keydown", function (e) { if (e.key === "ArrowRight") show(cur + 1); if (e.key === "ArrowLeft") show(cur - 1); });
+  // swipe on the phone
+  var sx = null; $("#phone").addEventListener("touchstart", function (e) { sx = e.touches[0].clientX; }, { passive: true });
+  $("#phone").addEventListener("touchend", function (e) { if (sx == null) return; var dx = e.changedTouches[0].clientX - sx; if (Math.abs(dx) > 70) show(cur + (dx < 0 ? 1 : -1)); sx = null; });
+
+  var h = parseInt((location.hash || "").slice(1), 10);
+  show(h > 0 ? h - 1 : 0);
+})();
+</script>
+</body></html>

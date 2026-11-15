@@ -1,0 +1,204 @@
+<title>Infinite Hill Interview Guide</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@500;600;700&display=swap">
+<style>
+/* Layout: one reading column, a field-guide feel; the script is a timed run-sheet with the interviewer's words set in serif. */
+:root{
+  --paper:#F7F6F0; --card:#FFFFFF; --ink:#151410; --text:#2B2A24; --mute:#6E6B60; --line:#E4E1D5;
+  --hl:#EEFF6A; --hl-ink:#151410; --gold:#9A7400; --a:#1F5FBF; --b:#B4561C; --care:#B42318;
+  --display:'Manrope',system-ui,sans-serif; --body:'Source Serif 4',Georgia,serif; --ui:'Inter',system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#121210;--card:#1B1B18;--ink:#F3F2EA;--text:#E2E0D6;--mute:#A29F92;--line:#2F2E29;--hl:#E3F45C;--hl-ink:#151410;--gold:#E3C35A;--a:#7FAEF5;--b:#F0A06A;--care:#F58A80;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#121210;--card:#1B1B18;--ink:#F3F2EA;--text:#E2E0D6;--mute:#A29F92;--line:#2F2E29;--hl:#E3F45C;--hl-ink:#151410;--gold:#E3C35A;--a:#7FAEF5;--b:#F0A06A;--care:#F58A80;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--text);font:17px/1.6 var(--body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:40px 80px}
+.wrap{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:44px}
+header{display:flex;flex-direction:column;gap:12px}
+.eb{font:700 12px/1 var(--ui);letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+h1{font:800 clamp(34px,6vw,50px)/1.05 var(--display);color:var(--ink);margin:0;letter-spacing:-.02em;text-wrap:balance}
+h2{font:800 24px/1.2 var(--display);color:var(--ink);margin:0 0 12px;text-wrap:balance}
+h3{font:700 16px/1.3 var(--ui);color:var(--ink);margin:0}
+p{margin:0 0 10px} ul,ol{margin:0;padding-left:22px} li{margin:0 0 8px}
+.lede{font-size:19px;color:var(--text)}
+.meta{display:flex;flex-wrap:wrap;gap:8px;font:600 13px/1 var(--ui)}
+.meta span{border:1px solid var(--line);border-radius:999px;padding:7px 11px;color:var(--mute);background:var(--card)}
+.groups{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grp{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.grp .tag{font:700 12px/1 var(--ui);letter-spacing:.08em;text-transform:uppercase}
+.grp.a .tag{color:var(--a)} .grp.b .tag{color:var(--b)}
+.grp ul{font-size:15.5px}
+.rules li b{font-family:var(--ui);font-size:15px;color:var(--ink)}
+.care{border-left:4px solid var(--care);padding:4px 0 4px 16px}
+.care h3{color:var(--care);margin-bottom:6px}
+/* run-sheet */
+.sheet{display:flex;flex-direction:column}
+.step{display:grid;grid-template-columns:76px 1fr;gap:18px;padding:22px 0;border-top:1px solid var(--line)}
+.step:last-child{border-bottom:1px solid var(--line)}
+.time{font:700 13px/1.3 var(--ui);color:var(--mute);font-variant-numeric:tabular-nums}
+.time b{display:block;font:800 22px/1 var(--display);color:var(--ink);margin-bottom:4px}
+.step h3{font:800 19px/1.25 var(--display);margin-bottom:6px}
+.why{font:500 14px/1.5 var(--ui);color:var(--mute);margin-bottom:12px}
+.q{list-style:none;padding:0;display:flex;flex-direction:column;gap:10px}
+.q li{margin:0;padding-left:16px;border-left:2px solid var(--line)}
+.q li.key{border-left-color:var(--hl);border-left-width:4px;padding-left:14px}
+.q .fu{display:block;font:500 14px/1.45 var(--ui);color:var(--mute);margin-top:3px}
+.only{display:inline-block;font:700 11px/1 var(--ui);letter-spacing:.06em;text-transform:uppercase;padding:4px 7px;border-radius:5px;margin-right:6px;vertical-align:2px}
+.only.a{color:var(--a);border:1px solid var(--a)} .only.b{color:var(--b);border:1px solid var(--b)}
+.note{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font:500 14px/1.5 var(--ui);color:var(--text);margin-top:12px}
+table{width:100%;border-collapse:collapse;font:500 14.5px/1.45 var(--ui)}
+.tw{overflow-x:auto}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--line)}
+th{font:700 12px/1.2 var(--ui);letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+td:first-child{font-weight:700;color:var(--ink);white-space:nowrap}
+mark{background:var(--hl);color:var(--hl-ink);padding:0 3px;border-radius:3px}
+footer{font:500 13px/1.5 var(--ui);color:var(--mute)}
+@media (max-width:620px){.groups{grid-template-columns:1fr}.step{grid-template-columns:1fr;gap:6px}.time b{display:inline;margin-right:6px}}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="eb">Infinite Hill · research · draft for Hans and the research partner</div>
+  <h1>Interview guide: who comes first, and what brings them back?</h1>
+  <p class="lede">A 60-minute conversation with 20–30 people across two groups. We are not testing whether people like the idea. We are learning how religion already shows up in their lives, when they reach for help, and whether "step in, step out" fits a real moment in their week.</p>
+  <div class="meta"><span>60 min · video or in person</span><span>20–30 people</span><span>2 groups</span><span>recorded with consent</span><span>thank-you: [$__]</span></div>
+</header>
+
+<section>
+  <h2>What we need to decide</h2>
+  <ol>
+    <li><b>Which group goes first.</b> Interfaith parents or curious adults who drifted from religion. Whichever shows the more urgent need, and has a clear daily moment we can fit into, becomes the first 1,000.</li>
+    <li><b>The daily moment.</b> When does life "get loud" for them, and what do they do right now (scroll, pray, call someone, nothing)?</li>
+    <li><b>What the guide is for.</b> Do they want someone to talk to, someone to teach them, or someone to suggest their day? How do they feel about speaking out loud?</li>
+    <li><b>What feels off.</b> Celebrity guides, a game-like world, AI teachers, religion in general: where are the trust and cringe lines?</li>
+  </ol>
+</section>
+
+<section>
+  <h2>Who we talk to</h2>
+  <div class="groups">
+    <div class="grp a"><div class="tag">Group A · 10–15 people</div><h3>Interfaith parents</h3>
+      <ul><li>Parents (or expecting) whose household has two religions, or one religion plus none.</li><li>At least one child under 14, or one on the way.</li><li>Some faith connection matters to at least one partner.</li><li>Mix: Christian–Jewish, Christian–Hindu, Christian–none, Hindu–none, Muslim–Christian and others.</li></ul></div>
+    <div class="grp b"><div class="tag">Group B · 10–15 people</div><h3>Drifted but curious</h3>
+      <ul><li>Adults 25–45 who grew up with a religion and practice little or not at all now.</li><li>Say they miss something about it, or are curious again.</li><li>Use at least one wellbeing or meditation app, or have tried to.</li><li>Lean Christian and Catholic (our main audience), plus some Hindu, Jewish, Muslim and Sikh.</li></ul></div>
+  </div>
+  <p class="note">Screen out: clergy, people who work in faith tech, and anyone who would be in distress talking about religion right now. Include both people who are warm and people who are skeptical toward religion; the skeptics tell us where the lines are.</p>
+</section>
+
+<section>
+  <h2>How to run it</h2>
+  <ul class="rules">
+    <li><b>Listen first; show the film last.</b> The first 40 minutes are about their life, not our product.</li>
+    <li><b>Ask about real past moments, not the future.</b> "Tell me about the last time…" beats "Would you use…?"</li>
+    <li><b>Use their words.</b> Write down exactly how they describe their faith, their kids, their stress. Those words become our copy.</li>
+    <li><b>No judging, no correcting, no converting.</b> Every belief, and no belief, is welcome. Never debate a religious point.</li>
+    <li><b>Silence is fine.</b> Wait three seconds before the next question; the best answers come after the pause.</li>
+    <li><b>Two people per call when possible:</b> one asks, one takes notes in the template below.</li>
+  </ul>
+  <div class="care" style="margin-top:18px">
+    <h3>If someone is in distress</h3>
+    <p style="font-family:var(--ui);font-size:15px">Talking about loss or faith can bring up a lot. Slow down, offer to stop or skip, and never push. If anyone mentions being in danger or thinking of harming themselves, pause the interview and share 988 (call or text, US) or local emergency help. Their wellbeing comes before the research.</p>
+  </div>
+</section>
+
+<section>
+  <h2>The conversation</h2>
+  <div class="sheet">
+
+    <div class="step"><div class="time"><b>5</b>min · 0:00</div><div>
+      <h3>Welcome and consent</h3>
+      <p class="why">Set them at ease; make clear there are no right answers.</p>
+      <ul class="q">
+        <li>"Thanks for doing this. We're learning how people today relate to religion and spirituality. There are no right answers, and you can skip anything."</li>
+        <li>"Is it okay if we record? It stays with our small team and we'll never share your name."</li>
+        <li>"To start, tell me a little about your week: who's at home, what a normal weekday looks like."</li>
+      </ul></div></div>
+
+    <div class="step"><div class="time"><b>15</b>min · 0:05</div><div>
+      <h3>Your life with religion (the map)</h3>
+      <p class="why">A drawing exercise. They sketch a line from childhood to now and mark moments where religion or spirituality showed up, helped, hurt or went quiet. Talk through it as they draw.</p>
+      <ul class="q">
+        <li class="key">"Walk me through your life with religion, from as early as you remember until now."<span class="fu">Follow up: who taught you? What did it feel like? When did it change?</span></li>
+        <li>"Is there a moment where it really helped you? One where it let you down?"</li>
+        <li>"Where would you put yourself today, and how do you feel about that?"</li>
+      </ul>
+      <p class="note">Send a blank sheet (or a shared whiteboard) ahead. Ask them to keep it; a photo of it is part of the notes.</p></div></div>
+
+    <div class="step"><div class="time"><b>10</b>min · 0:20</div><div>
+      <h3>When life gets loud</h3>
+      <p class="why">Find the real moment we would fit into, and what competes for it today.</p>
+      <ul class="q">
+        <li class="key">"Tell me about the last time life felt like too much. What happened, and what did you do in the next ten minutes?"<span class="fu">Follow up: where were you? Phone in hand? Did anything help?</span></li>
+        <li>"Is there anything you do regularly to feel grounded: prayer, a walk, an app, a person?"<span class="fu">How often, really? What made you stop, if you stopped?</span></li>
+        <li>"Have you ever sat in your car, or a quiet corner, just to breathe before walking in somewhere?"</li>
+      </ul></div></div>
+
+    <div class="step"><div class="time"><b>10</b>min · 0:30</div><div>
+      <h3>Family and the questions you can't answer</h3>
+      <p class="why">Group A's core. For Group B, ask about the family they grew up in and any family they're building.</p>
+      <ul class="q">
+        <li><span class="only a">Group A</span>"How did you two decide what to teach your kids about religion? Did you decide?"<span class="fu">What happens at holidays? With grandparents?</span></li>
+        <li><span class="only a">Group A</span>"Tell me about the last question your child asked about God, death or your traditions. What did you say?"</li>
+        <li><span class="only a">Group A</span>"How much do you know about your partner's religion? How much would you like to?"</li>
+        <li><span class="only b">Group B</span>"What do you miss, if anything, from the religion you grew up with? What are you glad to have left?"</li>
+        <li><span class="only b">Group B</span>"If you wanted to learn it again, or learn another, where would you go? What has stopped you?"</li>
+      </ul></div></div>
+
+    <div class="step"><div class="time"><b>5</b>min · 0:40</div><div>
+      <h3>What they use today</h3>
+      <ul class="q">
+        <li>"Which apps, podcasts, YouTube channels, books or places have you tried for faith, meditation or meaning?"<span class="fu">For each: what did you like, why did you stop, did you pay?</span></li>
+        <li>"Is there a person you go to with big questions? What makes them the one?"</li>
+      </ul></div></div>
+
+    <div class="step"><div class="time"><b>12</b>min · 0:45</div><div>
+      <h3>The film, then their reaction</h3>
+      <p class="why">Now show the 80-second website film. Watch their face more than the screen. Don't explain anything first.</p>
+      <ul class="q">
+        <li class="key">"In your own words, what was that? Who is it for?"</li>
+        <li>"Where in your week would something like this fit, if anywhere?"</li>
+        <li>"She picks Denzel Washington as her guide. Who would you want as your guide, and why? Does a famous guide make you more or less likely to try it?"</li>
+        <li>"Your guide talks with you, out loud, and gets to know you. How does that feel?"<span class="fu">Where would you be comfortable talking out loud? Would you rather type?</span></li>
+        <li>"Was there anything that felt off, too much, or not for you?"</li>
+        <li><span class="only a">Group A</span>"Would you use it with your partner or kids? Which part?"</li>
+        <li><span class="only b">Group B</span>"Does the religion part draw you in or put you off?"</li>
+      </ul>
+      <p class="note">If time allows, hand them the phone with the app and ask them to start the first day while thinking aloud. Don't help unless they're stuck for 20 seconds.</p></div></div>
+
+    <div class="step"><div class="time"><b>3</b>min · 0:57</div><div>
+      <h3>Close</h3>
+      <ul class="q">
+        <li>"If you could try this for a week, would you? What would make you stop on day three?"</li>
+        <li>"Is there anything I didn't ask that I should have?"</li>
+        <li>"Could we follow up with a short two-week diary over WhatsApp? Same thank-you again." (optional)</li>
+      </ul></div></div>
+
+  </div>
+</section>
+
+<section>
+  <h2>Notes template (fill in within an hour of the call)</h2>
+  <div class="tw"><table>
+    <tr><th>Field</th><th>What to capture</th></tr>
+    <tr><td>Who</td><td>Group, age, household, faith background now and growing up (no names in shared notes)</td></tr>
+    <tr><td>Loud moment</td><td>The last real moment, where it happened, what they did, what helped</td></tr>
+    <tr><td>Urgency</td><td>Low / medium / high, with the quote that shows it</td></tr>
+    <tr><td>Their words</td><td>3–5 exact phrases worth keeping</td></tr>
+    <tr><td>Guide</td><td>Who they'd pick; feelings on voice, celebrity, AI</td></tr>
+    <tr><td>Film reaction</td><td>What they thought it was; what drew them; what felt off</td></tr>
+    <tr><td>Week test</td><td>Would they try a week? What would make them stop?</td></tr>
+    <tr><td>Surprise</td><td>One thing we didn't expect</td></tr>
+  </table></div>
+</section>
+
+<section>
+  <h2>How we'll read the results</h2>
+  <ul>
+    <li><b>First group:</b> the one with more people at high urgency <i>and</i> a clear, repeatable daily moment. Liking the film doesn't count on its own.</li>
+    <li><b>The guide:</b> if most people would rather type than talk, voice becomes a choice rather than the default.</li>
+    <li><b>Lines not to cross:</b> anything three or more people flag as off goes on a list we fix before the pilot.</li>
+    <li><b>Then:</b> the two prototypes, user tests and a 2–4 week pilot, with the success bar agreed with Hans before it starts: <mark>[weekly return rate: __%]</mark>.</li>
+  </ul>
+</section>
+
+<footer>Infinite Hill Ventures, Inc. · confidential working draft · questions to settle with Hans: the success bar, and who runs the calls.</footer>
+</div>

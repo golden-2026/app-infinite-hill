@@ -114,7 +114,7 @@ export function RestBank({ n, max = 2, dark = false }: { n: number; max?: number
 /** Today's header: the number first, then the sun. Gold once it's a golden streak. */
 export function StreakChip({ n, golden }: { n: number; golden: boolean }) {
   return (
-    <View testID={golden ? "streak-golden" : "streak-chip"} style={{ flexDirection: "row", alignItems: "center", gap: 5, backgroundColor: golden ? GOLDEN : "#fff", borderWidth: 1.5, borderColor: color.ink, borderRadius: 999, paddingVertical: 4, paddingLeft: 12, paddingRight: 8 }}>
+    <View testID={golden ? "streak-golden" : "streak-chip"} style={{ flexDirection: "row", alignItems: "center", gap: 5, backgroundColor: golden ? GOLDEN : color.white, borderWidth: 1.5, borderColor: color.ink, borderRadius: 999, paddingVertical: 4, paddingLeft: 12, paddingRight: 8 }}>
       <Text style={{ fontFamily: font.display[800], fontSize: 18, color: color.ink, fontVariant: ["tabular-nums"] }}>{n}</Text>
       <Sun size={18} />
     </View>

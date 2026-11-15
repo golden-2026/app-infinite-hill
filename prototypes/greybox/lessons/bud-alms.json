@@ -1,0 +1,198 @@
+{
+ "id": "bud-alms",
+ "home": "lotus",
+ "title": "The prince with a bowl",
+ "told": "from the Buddha’s life story",
+ "clips": "art/sacred/bud-alms/clips/",
+ "voice": "art/sacred/bud-alms/voice/",
+ "guide": {
+  "name": "Orlando",
+  "photo": "art/guides/buddhism.webp"
+ },
+ "hook": {
+  "v": "BA1-Return-Home",
+  "say": "before the story, can i ask you something? is it easier for you to give, or to receive?",
+  "options": [
+   [
+    "To give",
+    "that’s a kind heart. this story might surprise you."
+   ],
+   [
+    "To receive",
+    "that’s honest. receiving is part of this story too."
+   ],
+   [
+    "Both feel awkward",
+    "oh, same. listen to this one."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "BA1-Return-Home",
+   "vo": [
+    "V01"
+   ],
+   "line": "Years after he left home, the Buddha came back to his father’s city, Kapilavastu, with his monks."
+  },
+  {
+   "t": "shot",
+   "v": "BA2-Alms-Round",
+   "vo": [
+    "V02"
+   ],
+   "line": "The next morning, he walked the streets with his bowl, house to house, quietly, like any monk."
+  },
+  {
+   "t": "shot",
+   "v": "BA3-Palace-Window",
+   "vo": [
+    "V03"
+   ],
+   "line": "From a palace window, Yasodhara, his wife before he left home, saw him and told the king."
+  },
+  {
+   "t": "shot",
+   "v": "BA4-The-King-Hurries",
+   "vo": [
+    "V04"
+   ],
+   "line": "King Suddhodana hurried out to the street. “Why shame us? No one in our royal family has ever begged.”"
+  },
+  {
+   "t": "ask",
+   "v": "BA4-The-King-Hurries",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "The king calls it begging. What does the Buddha answer?",
+   "o": [
+    "“Then feed my monks, and we’ll stop.”",
+    "“Your line is royal. Mine is the buddhas’.”",
+    "“A monk owns nothing. He has to ask.”"
+   ],
+   "a": 1,
+   "why": "He had changed families. Every buddha before him, the tradition says, walked for alms, so the bowl was now his family custom."
+  },
+  {
+   "t": "shot",
+   "v": "BA4-The-King-Hurries",
+   "vo": [
+    "V05"
+   ],
+   "line": "“That royal line is yours,” the Buddha said. “Mine is the line of the buddhas. This is our custom.”"
+  },
+  {
+   "t": "ask",
+   "v": "BA4-The-King-Hurries",
+   "eb": "did you know?",
+   "q": "On a traditional alms round, a monk does one thing that makes it different from begging. What?",
+   "o": [
+    "He offers a teaching at every door",
+    "He never asks; he stands in silence",
+    "He takes food only from family"
+   ],
+   "a": 1,
+   "why": "The monk doesn’t ask, and the giver often bows and thanks him, because in many Buddhist lands giving is the giver’s chance to make merit."
+  },
+  {
+   "t": "shot",
+   "v": "BA5-King-Takes-Bowl",
+   "vo": [
+    "V06"
+   ],
+   "line": "The king listened. Then he took his son’s bowl himself, and led the monks to the palace to eat."
+  },
+  {
+   "t": "ask",
+   "v": "BA5-King-Takes-Bowl",
+   "eb": "why?",
+   "q": "When the Buddha taught newcomers step by step, the texts say he began with giving, before even the four noble truths. Why start there?",
+   "o": [
+    "Everyone can give something; it’s an open door",
+    "Monks needed the food to keep teaching",
+    "Giving is hardest, so he tested people first"
+   ],
+   "a": 0,
+   "why": "His ‘step-by-step talk’ went giving, then virtue, and only later the four noble truths. Giving loosens the grip before anything else is asked."
+  },
+  {
+   "t": "shot",
+   "v": "BA6-Dawn-Alms-Today",
+   "vo": [
+    "V07"
+   ],
+   "line": "Today, at dawn in towns in Thailand and Laos, monks walk barefoot with bowls, and people kneel to offer rice. Often the givers bow.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "BA6-Dawn-Alms-Today",
+   "eb": "did you know?",
+   "q": "By the monks’ rule, food is eaten before noon and not kept overnight. So what does that make the dawn alms round?",
+   "o": [
+    "A custom kept mostly for show",
+    "A fresh need, every single morning",
+    "A backup if the kitchen runs short"
+   ],
+   "a": 1,
+   "why": "Yesterday’s food can’t be saved for today. So the bond between the monks and the town gets renewed every dawn, spoonful by spoonful."
+  },
+  {
+   "t": "teach",
+   "v": "BA6-Dawn-Alms-Today",
+   "say": [
+    "in buddhism, giving is called dana, and it comes first. the monk lives on what’s offered, and the giver practices an open hand.",
+    "in the theravada tradition, monks don’t eat after midday, so the morning bowl matters. that’s a rule for monks and nuns, not something everyone keeps."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "BA5-King-Takes-Bowl",
+   "eb": "the hard one",
+   "q": "At first the king called the bowl a shame. Minutes later he was carrying it himself. What changed?",
+   "o": [
+    "He wanted the town to see him in charge",
+    "He gave up on changing his son’s mind",
+    "He saw giving as an honor, not a shame"
+   ],
+   "a": 2,
+   "why": "The commentary says the Buddha spoke a verse to him right there in the street (Dhammapada 168), and the king took his first step on the path. The bowl that shamed him, he carried with his own hands."
+  }
+ ],
+ "today": {
+  "v": "BA6-Dawn-Alms-Today",
+  "say": "give first today: offer something before anyone asks. a meal, a coffee, a full listening ear. and if there’s a buddhist temple near you, many welcome visitors who bring food for the monks.",
+  "options": [
+   [
+    "I’ll give first today",
+    "that’s dana. the open hand comes first."
+   ],
+   [
+    "I’d like to visit a temple",
+    "lovely. you can just watch the first time."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "Two streams of water",
+  "line": "a baby is born under a flowering tree, and water falls from the sky."
+ },
+ "card": {
+  "from": "from the Buddha’s life story",
+  "mins": 5,
+  "keep": "rice",
+  "keepName": "A bowl of rice",
+  "keepWhy": "Give first. The open hand comes before everything.",
+  "sources": [
+   "Nidanakatha (introduction to the Jataka commentary): the return to Kapilavatthu, the alms round through the city, Rahula’s mother at the window, the king’s objection, “this is the custom of our lineage,” the king taking the bowl and leading the monks to the palace",
+   "Dhammapada commentary on verses 168–169 (the same episode)",
+   "Vinaya, Pacittiya 37: not eating at the wrong time (after midday)",
+   "The gradual talk (anupubbi-katha), e.g. Vinaya Mahavagga I.7: teaching begins with giving"
+  ],
+  "check": [
+   "In the Pali sources she is usually “Rahula’s mother”; Yasodhara is the later, widely used name the lesson uses."
+  ]
+ }
+}

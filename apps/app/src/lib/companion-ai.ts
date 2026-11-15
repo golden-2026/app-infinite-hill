@@ -23,8 +23,8 @@ export type ReflectReply = { text: string; suggestion?: string };
 
 export type ChatMessage = { role: "user" | "assistant"; content: string };
 export type ChatRequest = { profile: CompanionProfile; memory: string[]; context: CompanionContext; messages: ChatMessage[] };
-/** A chat answer, plus facts the companion proposes remembering (the person approves each before it's kept). */
-export type ChatReply = { text: string; remember?: string[]; limited?: boolean };
+/** A chat answer, where it comes from (a short label shown under it), plus facts the companion proposes remembering (the person approves each before it's kept). */
+export type ChatReply = { text: string; source?: string; remember?: string[]; limited?: boolean };
 
 // The server gives up on the AI after ~9 s (Netlify's limit is 10); past that the phone stops waiting and falls back.
 const TIMEOUT_MS = 12_000;

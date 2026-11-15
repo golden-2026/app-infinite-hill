@@ -59,7 +59,7 @@ export function QuestTodayCard({ card, mode, onJoin, onDecline }: { card: QuestC
     const recent = p.stones.slice(Math.max(0, end - 10), end);
     return (
       <Pressable testID="quest-card" accessibilityRole="button" accessibilityLabel={t("home.quest.openA11y", { line: card.line })} onPress={open}
-        style={({ pressed }) => ({ marginHorizontal: 18, marginBottom: 12, backgroundColor: "#fff", borderWidth: 2, borderColor: color.ink, borderRadius: 18, paddingVertical: 12, paddingHorizontal: 16, gap: 8, opacity: pressed ? 0.85 : 1 })}>
+        style={({ pressed }) => ({ marginHorizontal: 18, marginBottom: 12, backgroundColor: color.white, borderWidth: 2, borderColor: color.ink, borderRadius: 18, paddingVertical: 12, paddingHorizontal: 16, gap: 8, opacity: pressed ? 0.85 : 1 })}>
         <View style={{ flexDirection: "row", alignItems: "center", gap: 12 }}>
           {p.finished ? <Sun size={40} mood="happy" /> : <Guy pose="lantern" h={58} />}
           <View style={{ flex: 1 }}>

@@ -1,0 +1,197 @@
+{
+ "id": "chr-vineyard",
+ "home": "olive",
+ "title": "The last hour",
+ "told": "a story Jesus told",
+ "clips": "art/sacred/chr-vineyard/clips/",
+ "voice": "art/sacred/chr-vineyard/voice/",
+ "guide": {
+  "name": "Denzel",
+  "photo": "art/guides/christianity.webp"
+ },
+ "card": {
+  "from": "a story Jesus told",
+  "mins": 5,
+  "keep": "grapes",
+  "keepName": "A bunch of grapes",
+  "keepWhy": "Generosity isn’t fair. It’s better.",
+  "sources": [
+   "Matthew 20:1-2 (a landowner goes out early to hire laborers for his vineyard, agreeing to a denarius a day)",
+   "Matthew 20:3-5 (he goes out again about the third, sixth and ninth hour)",
+   "Matthew 20:6-7 (about the eleventh hour: “Why do you stand here all day idle?” “Because no one has hired us.” “You also go into the vineyard”)",
+   "Matthew 20:8-10 (paid from the last to the first; each receives a denarius; the first thought they would receive more)",
+   "Matthew 20:11-12 (“These last have spent one hour, and you have made them equal to us, who have borne the burden of the day and the scorching heat!”)",
+   "Matthew 20:13, 15 (“Friend, I am doing you no wrong. Didn’t you agree with me for a denarius?… Or is your eye evil, because I am good?”)",
+   "Matthew 20:16 (“So the last will be first, and the first last”)",
+   "Captions follow the World English Bible, lightly modernized; “are you envious because I am good?” follows common modern renderings of 20:15"
+  ],
+  "check": []
+ },
+ "hook": {
+  "v": "QV5-Grumble",
+  "say": "before the story, can i ask you something? have you ever watched someone get something you worked much harder for?",
+  "options": [
+   [
+    "Yes, it stung",
+    "that’s honest. this story knows that feeling."
+   ],
+   [
+    "I’ve been the lucky one",
+    "then you’ll know the joy in this story too."
+   ],
+   [
+    "Not really",
+    "good. keep this one for the day it happens."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "QV1-Dawn-Market",
+   "vo": [
+    "V01"
+   ],
+   "line": "A landowner went out at dawn to hire workers for his vineyard. He agreed to pay them a denarius, the usual day’s wage.",
+   "label": "Matthew 20:1-2"
+  },
+  {
+   "t": "shot",
+   "v": "QV2-Vineyard-Heat",
+   "vo": [
+    "V02"
+   ],
+   "line": "He went back at nine, at noon, and at three, and hired more.",
+   "label": "Matthew 20:3-5"
+  },
+  {
+   "t": "shot",
+   "v": "QV3-Last-Hour",
+   "vo": [
+    "V03"
+   ],
+   "line": "At five, an hour before quitting time, he found others still standing around. “No one has hired us.” “You go into the vineyard too.”",
+   "label": "Matthew 20:6-7"
+  },
+  {
+   "t": "ask",
+   "v": "QV3-Last-Hour",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "At evening, the last ones hired, who worked one hour, are paid first. What do you guess they get?",
+   "o": [
+    "One hour’s pay, fair and square",
+    "A full day’s pay",
+    "Nothing. They came too late"
+   ],
+   "a": 1,
+   "why": "A full day’s pay, for one hour. A denarius was the usual day’s wage; many scholars say it was about what a family needed to eat for a day."
+  },
+  {
+   "t": "shot",
+   "v": "QV4-Payday",
+   "vo": [
+    "V04"
+   ],
+   "line": "The ones who came at five got a full day’s pay. The ones hired at dawn were sure they’d get more.",
+   "label": "Matthew 20:8-10"
+  },
+  {
+   "t": "shot",
+   "v": "QV5-Grumble",
+   "vo": [
+    "V05"
+   ],
+   "line": "They got the same, and grumbled: “These last worked one hour, and you made them equal to us, who bore the heat of the day!”",
+   "label": "Matthew 20:11-12"
+  },
+  {
+   "t": "ask",
+   "v": "QV5-Grumble",
+   "eb": "you’re in it",
+   "q": "You worked from dawn, in the heat. You get exactly what you agreed. Were you cheated?",
+   "o": [
+    "No: you got the full, fair wage",
+    "Yes: equal pay for unequal work",
+    "Yes: you should have been paid first"
+   ],
+   "a": 0,
+   "why": "The landowner keeps his word to the letter. Nobody gets less than fair; some get more than fair. The sting is in the comparing."
+  },
+  {
+   "t": "shot",
+   "v": "QV5-Grumble",
+   "vo": [
+    "V06"
+   ],
+   "line": "“Friend, I’m doing you no wrong. Didn’t you agree to a denarius? Or are you envious because I am good?”",
+   "label": "Matthew 20:13, 15"
+  },
+  {
+   "t": "ask",
+   "v": "QV5-Grumble",
+   "eb": "why?",
+   "q": "The landowner pays everyone that same evening. Why would Jesus’s listeners expect that?",
+   "o": [
+    "The Torah says pay a day worker by sunset",
+    "Coins weren’t safe to keep overnight",
+    "Workers would quit if not paid daily"
+   ],
+   "a": 0,
+   "why": "Deuteronomy says pay a poor worker the same day, “for he is poor and his heart is set on it.” A day without work meant a night without food."
+  },
+  {
+   "t": "ask",
+   "v": "QV4-Payday",
+   "eb": "did you know?",
+   "q": "In the Greek, the landowner literally asks: “Is your eye evil because I am good?” What did an “evil eye” mean then?",
+   "o": [
+    "A curse you could put on someone",
+    "Envy: grudging what others get",
+    "A sign that you were lying"
+   ],
+   "a": 1,
+   "why": "In Jewish speech of the time, a “bad eye” meant stinginess or envy, and a “good eye” meant generosity. Jesus sets them side by side."
+  },
+  {
+   "t": "teach",
+   "v": "QV4-Payday",
+   "say": [
+    "here’s what i love. the landowner keeps going back to the market, all day long, looking for anyone still standing there.",
+    "christians read it as a picture of grace: God’s love isn’t a wage you earn by the hour. whether someone comes at dawn or at the last hour, the welcome is whole."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "QV5-Grumble",
+   "eb": "the hard one",
+   "q": "The grumblers are the ones who worked all day. What might Jesus be gently warning people who’ve been faithful for years?",
+   "o": [
+    "That long service earns a bigger reward",
+    "That latecomers must make up the time",
+    "Not to resent God’s gift to latecomers"
+   ],
+   "a": 2,
+   "why": "Long faithfulness is good, but it can turn into scorekeeping. Jesus ends: “So the last will be first, and the first last.”"
+  }
+ ],
+ "today": {
+  "v": "QV6-Today",
+  "say": "generosity isn’t fair. it’s better. today, when someone gets something you think they didn’t earn, a break, a second chance, a win, choose to be glad for them, and tell them so.",
+  "options": [
+   [
+    "I can think of someone",
+    "then tell them today. that’s the landowner’s joy, shared."
+   ],
+   [
+    "That’s hard for me",
+    "it’s hard for most of us. that’s why jesus told it. start with one."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "The buried money.",
+  "line": "next week, more of his stories. it starts with a servant so afraid of failing that he buries what he was given."
+ }
+}

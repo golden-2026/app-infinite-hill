@@ -12,7 +12,7 @@ import { DoorTile } from "@/ui/door-cards";
 import { failWords, shareCircle } from "@/ui/circles";
 import { t } from "@/i18n";
 
-const field = { borderWidth: 1.5, borderColor: color.line, borderRadius: 16, paddingVertical: 12, paddingHorizontal: 14, fontFamily: font.text[400], fontSize: 16, backgroundColor: "#fff", color: color.ink } as const;
+const field = { borderWidth: 1.5, borderColor: color.line, borderRadius: 16, paddingVertical: 12, paddingHorizontal: 14, fontFamily: font.text[400], fontSize: 16, backgroundColor: color.white, color: color.ink } as const;
 
 export default function NewCircle() {
   useTitle(t("groups.new.title"));

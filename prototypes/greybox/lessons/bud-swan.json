@@ -1,0 +1,209 @@
+{
+ "id": "bud-swan",
+ "home": "lotus",
+ "title": "Whose swan?",
+ "told": "a later telling of the Buddha’s life",
+ "clips": "art/sacred/bud-swan/clips/",
+ "voice": "art/sacred/bud-swan/voice/",
+ "guide": {
+  "name": "Orlando",
+  "photo": "art/guides/buddhism.webp"
+ },
+ "hook": {
+  "v": "SWN6-Bird-Today",
+  "say": "before the story, can i ask you something? have you ever found a hurt animal, and had to decide what to do?",
+  "options": [
+   [
+    "Yes, I helped it",
+    "then you and this boy have something in common. listen."
+   ],
+   [
+    "I didn’t know what to do",
+    "that happens. listen to what he did."
+   ],
+   [
+    "Never",
+    "then picture it with me. listen."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "SWN1-Swans-Fly",
+   "vo": [
+    "V01"
+   ],
+   "line": "Here’s a much-loved later telling. Young Siddhattha was walking in the palace gardens when a flock of swans flew overhead.",
+   "label": "a later telling"
+  },
+  {
+   "t": "shot",
+   "v": "SWN2-The-Arrow",
+   "vo": [
+    "V02"
+   ],
+   "line": "His cousin Devadatta drew his bow and shot. One swan tumbled from the sky, an arrow in its wing, and came down near the prince."
+  },
+  {
+   "t": "shot",
+   "v": "SWN3-Gentle-Hands",
+   "vo": [
+    "V03"
+   ],
+   "line": "Siddhattha got there first. He knelt, gently drew out the arrow, and held the bird close to calm it."
+  },
+  {
+   "t": "ask",
+   "v": "SWN3-Gentle-Hands",
+   "blur": true,
+   "predict": true,
+   "eb": "what happens next?",
+   "q": "Devadatta runs up. “That’s my swan. I shot it.” What happens next?",
+   "o": [
+    "Siddhattha hands it over",
+    "They take it to the wise men of the court",
+    "The two boys fight over it"
+   ],
+   "a": 1,
+   "why": "Neither boy would give in, so the grown-ups had to decide."
+  },
+  {
+   "t": "shot",
+   "v": "SWN4-The-Court",
+   "vo": [
+    "V04"
+   ],
+   "line": "So they took it to the wise men of the court. “I brought it down,” said Devadatta. “I kept it alive,” said Siddhattha."
+  },
+  {
+   "t": "ask",
+   "v": "SWN4-The-Court",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "How do you think the court decides?",
+   "o": [
+    "It belongs to the one who saved it",
+    "It belongs to the one who shot it",
+    "It belongs to the king"
+   ],
+   "a": 0,
+   "why": "Saving a life counted for more than taking it."
+  },
+  {
+   "t": "shot",
+   "v": "SWN5-Set-Free",
+   "vo": [
+    "V05"
+   ],
+   "line": "The court said: a life belongs to the one who saves it, not the one who tries to take it. The prince nursed the swan, then let it fly."
+  },
+  {
+   "t": "ask",
+   "v": "SWN5-Set-Free",
+   "eb": "why?",
+   "q": "The prince won the swan. Why does he let it fly away?",
+   "o": [
+    "It was too badly hurt to keep",
+    "Saving it was never about owning it",
+    "The court ordered him to set it free"
+   ],
+   "a": 1,
+   "why": "He wins the case, then gives up the prize. Protecting a life and then letting it go is kindness without grabbing."
+  },
+  {
+   "t": "fill",
+   "v": "SWN5-Set-Free",
+   "eb": "did you know?",
+   "pre": "The first of the five precepts, kept across Buddhist schools, is to refrain from",
+   "post": ".",
+   "o": [
+    "telling lies",
+    "taking life",
+    "eating meat"
+   ],
+   "a": 1,
+   "why": "Not harming life comes first. Lying is the fourth precept, and while many Buddhists choose not to eat meat, many others do."
+  },
+  {
+   "t": "ask",
+   "v": "SWN5-Set-Free",
+   "eb": "did you know?",
+   "q": "Devadatta comes back later in the Buddha’s life. As what?",
+   "o": [
+    "His most loyal monk to the very end",
+    "The king who gave him a monastery",
+    "His jealous rival inside the order"
+   ],
+   "a": 2,
+   "why": "In the old texts Devadatta becomes a monk, then tries to take over the order and even to kill the Buddha. This later telling plants him early."
+  },
+  {
+   "t": "shot",
+   "v": "SWN6-Bird-Today",
+   "vo": [
+    "V06"
+   ],
+   "line": "Today, a kid carries a stunned bird to a shoebox lined with soft towels. Small hands, the same choice.",
+   "label": "today"
+  },
+  {
+   "t": "teach",
+   "v": "SWN6-Bird-Today",
+   "say": [
+    "to be honest about this one: it isn’t in the oldest buddhist texts. it’s a later telling, made famous in english by a long poem of 1879, and told to children ever since.",
+    "the teaching under it is old, though. the first of the five precepts, shared by every buddhist school, is to refrain from taking life. the dhammapada gives the reason: every being fears harm, so put yourself in their place. it’s week three’s metta, with gentle hands."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "SWN6-Bird-Today",
+   "eb": "the hard one",
+   "q": "Week three began with metta, wishing every being well. What does the swan story add to it?",
+   "o": [
+    "Metta is a feeling you keep to yourself",
+    "Metta means always siding with the weaker one",
+    "Metta reaches even a bird, and moves the hands"
+   ],
+   "a": 2,
+   "why": "Every being, the Metta Sutta says. Wishing well becomes kneeling down and drawing out the arrow."
+  }
+ ],
+ "today": {
+  "v": "SWN6-Bird-Today",
+  "say": "today, notice one small life near you: a plant, a pet, an insect at the window. tend it the way the boy did, slowly, with gentle hands. if you like, let a little metta go its way.",
+  "options": [
+   [
+    "I’ll tend one today",
+    "gentle hands. that’s the whole lesson."
+   ],
+   [
+    "I’ll carry a bug outside",
+    "the swan would approve."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "Three palaces",
+  "line": "next week, a father builds his son three palaces, one for every season, so he’ll never want to leave."
+ },
+ "card": {
+  "from": "a later telling of the Buddha’s life",
+  "mins": 5,
+  "keep": "arrow",
+  "keepName": "The arrow drawn out",
+  "keepWhy": "A life belongs to who protects it.",
+  "sources": [
+   "Edwin Arnold, The Light of Asia (1879), Book the First: the swan shot by Devadatta, the prince drawing out the arrow, the dispute before the sages, “the saver of a life” owns it",
+   "Earlier versions of the swan episode in Sanskrit and Chinese lives of the Buddha (e.g. the Abhiniskramana Sutra, Chinese Fo benxing ji jing, T190)",
+   "The first of the five precepts (panatipata veramani)",
+   "Dhammapada 129–130: all tremble at the rod; putting oneself in the place of others, one should not kill or cause to kill"
+  ],
+  "check": [
+   "Confirm the earliest Asian source for the swan story and whether the court scene is there or only in Arnold.",
+   "The prince’s age is not fixed; paintings show about ten.",
+   "Day 29 title “Three palaces” follows the day-28 script; confirm against the week-five lesson."
+  ]
+ }
+}

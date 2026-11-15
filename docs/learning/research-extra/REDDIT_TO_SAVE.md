@@ -1,3 +1,5 @@
+Background only (written 2026-10-06). Where this disagrees with docs/VISION-NOW.md or docs/LESSON_STANDARD.md, those win.
+
 # Reddit threads to save (owner, about 20 minutes)
 
 Claude's browser tools are blocked from Reddit, so these need a person. For each link: open it (old.reddit.com shows all the top replies on one page), press Ctrl+S, choose "Webpage, HTML only", and save it into this folder:

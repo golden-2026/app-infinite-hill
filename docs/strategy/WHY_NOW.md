@@ -13,10 +13,11 @@ Use only what a source actually says; check the primary source before it goes on
   on college campuses up 115% on average from 2024–25 to 2025–26. *Verify the original survey before quoting.*
 
 ## What it means for infinite hill
-- The pull is **learning the real tradition**, not watered-down spirituality: exactly the "religion class you could
-  pass" format, with real texts and sources.
+- The pull is **learning the real tradition**, not watered-down spirituality. That fits our lesson: a real story from the
+  faith, that faith's actual teaching, then life today, with real sources.
 - Young people want **depth and roots**, and they want it on their phones, in short, beautiful, trend-right form.
-- It's not one tradition: the same hunger shows up across faiths. A many-door app meets it wherever a family starts.
+- It's not one tradition: the same hunger shows up across faiths. Each person picks one faith (or "my own religion")
+  and goes deep in it.
 
 ## Already on the site's research page
 Gallup church membership 47% (2020) · Surgeon General on loneliness (2023) · Harvard/VanderWeele adolescent outcomes

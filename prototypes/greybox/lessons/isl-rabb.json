@@ -1,0 +1,213 @@
+{
+ "id": "isl-rabb",
+ "home": "datepalm",
+ "title": "A drink for a thirsty dog",
+ "told": "a story the Prophet ﷺ told",
+ "clips": "art/sacred/isl-rabb/clips/",
+ "voice": "art/sacred/isl-rabb/voice/",
+ "guide": {
+  "name": "Mahershala",
+  "photo": "art/guides/islam.webp"
+ },
+ "hook": {
+  "v": "DW6-Water-Bowl-Today",
+  "say": "before the story, can i ask you something? have you ever stopped to help an animal? a bird, a stray, a lost pet?",
+  "options": [
+   [
+    "Yes, I have",
+    "then you’ll know this man. listen."
+   ],
+   [
+    "I’ve wanted to",
+    "that wanting counts. listen."
+   ],
+   [
+    "Not really",
+    "that’s okay. this one might change that."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "DW1-Desert-Well",
+   "vo": [
+    "V01"
+   ],
+   "line": "The Prophet Muhammad ﷺ once told of a man walking a desert road. He grew so thirsty that he climbed down into a well and drank."
+  },
+  {
+   "t": "shot",
+   "v": "DW2-Thirsty-Dog",
+   "vo": [
+    "V02"
+   ],
+   "line": "When he climbed out, he saw a dog, panting, licking the damp earth because it was so thirsty."
+  },
+  {
+   "t": "ask",
+   "v": "DW2-Thirsty-Dog",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "The well is deep and he has no bucket. What do you think he does?",
+   "o": [
+    "Walks on; it’s only a dog",
+    "Fills his leather sock with water",
+    "Waits for someone with a rope"
+   ],
+   "a": 1,
+   "why": "His khuff, a leather sock worn over the foot. He climbs out holding it in his teeth, because he needs both hands."
+  },
+  {
+   "t": "shot",
+   "v": "DW3-Leather-Sock",
+   "vo": [
+    "V03"
+   ],
+   "line": "“This dog is as thirsty as I was,” he thought. He climbed down again, filled his leather sock, held it in his teeth, and climbed up."
+  },
+  {
+   "t": "ask",
+   "v": "DW3-Leather-Sock",
+   "eb": "why?",
+   "q": "“This dog is as thirsty as I was.” Why does that one thought matter?",
+   "o": [
+    "It’s when he sees the dog’s thirst as his own",
+    "It’s when he starts hoping for a reward",
+    "It’s when he feels guilty for drinking first"
+   ],
+   "a": 0,
+   "why": "He had felt that exact thirst minutes before. Mercy often starts with “that was me,” before any thought of reward."
+  },
+  {
+   "t": "shot",
+   "v": "DW4-Dog-Drinks",
+   "vo": [
+    "V04"
+   ],
+   "line": "He gave the dog water. And God thanked him for it, the Prophet ﷺ said, and forgave him."
+  },
+  {
+   "t": "ask",
+   "v": "DW4-Dog-Drinks",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "The companions asked: is there reward even for kindness to animals? What do you think he said?",
+   "o": [
+    "Only for kindness to people",
+    "Only for animals people keep",
+    "For every living thing"
+   ],
+   "a": 2,
+   "why": "His words were “in every moist liver there is reward”: in anything alive. Even a stray in the desert."
+  },
+  {
+   "t": "shot",
+   "v": "DW5-Every-World",
+   "vo": [
+    "V05"
+   ],
+   "line": "“Is there reward for us even with animals?” the companions asked. “In every living thing,” he said, “there is reward.”"
+  },
+  {
+   "t": "shot",
+   "v": "DW5-Every-World",
+   "vo": [
+    "V06"
+   ],
+   "line": "Every prayer says it: “Praise be to God, Lord of the worlds.” Rabb, Lord, is the one who raises and tends. Worlds, plural: people, animals, everything."
+  },
+  {
+   "t": "ask",
+   "v": "DW5-Every-World",
+   "eb": "did you know?",
+   "q": "The Prophet ﷺ also told of a woman who did wrong to a cat. What had she done?",
+   "o": [
+    "Chased it out of the mosque",
+    "Kicked it in front of her neighbors",
+    "Shut it in and never fed it"
+   ],
+   "a": 2,
+   "why": "She shut the cat in and neither fed it nor let it hunt. Collections like Bukhari’s keep the two stories close together: mercy to an animal counts, and so does cruelty."
+  },
+  {
+   "t": "shot",
+   "v": "DW6-Water-Bowl-Today",
+   "vo": [
+    "V07"
+   ],
+   "line": "Today, in a summer heat wave, a shopkeeper sets a bowl of water by her door. For whoever comes: a cat, a dog, a sparrow.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "DW6-Water-Bowl-Today",
+   "eb": "did you know?",
+   "q": "Some old Ottoman mosques have something built into their walls for animals. What?",
+   "o": [
+    "Bells to warn birds off the domes",
+    "Tiny “bird palaces” for nesting",
+    "Little flaps for stray cats"
+   ],
+   "a": 1,
+   "why": "Builders added little bird houses to mosques and bridges, some shaped like tiny mosques. Some cities also kept charitable trusts that fed stray animals."
+  },
+  {
+   "t": "teach",
+   "v": "DW4-Dog-Drinks",
+   "say": [
+    "here’s what i love. the man could have walked on. instead he went back down the same well, for a thirsty dog that could never thank him.",
+    "in islam, God is rabb al-‘alamin, the one who raises and tends every world. and the prophet ﷺ taught that kindness to any living thing carries reward."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "DW5-Every-World",
+   "eb": "the hard one",
+   "q": "God thanked a man for watering a stray dog. What does that suggest “Lord of the worlds” includes?",
+   "o": [
+    "Only people who pray",
+    "Every creature, even ones nobody notices",
+    "Only the animals people keep"
+   ],
+   "a": 1,
+   "why": "Just a thirsty dog by a road, and God thanked the man who helped it. It was still inside the worlds God tends."
+  }
+ ],
+ "today": {
+  "v": "DW6-Water-Bowl-Today",
+  "say": "today, put out a little water for something that lives near you: a bowl by the door, a dish for the birds, a plant that’s gone dry. a small share in tending the worlds.",
+  "options": [
+   [
+    "I’ll put out water",
+    "lovely. that’s exactly what the man did."
+   ],
+   [
+    "I’ll water a plant",
+    "beautiful. tending something small is the whole lesson."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "More merciful than a mother.",
+  "line": "a mother searching a crowd, and a mercy split into a hundred parts."
+ },
+ "card": {
+  "from": "a story the Prophet ﷺ told",
+  "mins": 5,
+  "keep": "wave",
+  "keepName": "Water from the well",
+  "keepWhy": "Every world is tended.",
+  "sources": [
+   "Sahih al-Bukhari 2363; also 173, 2466 and 6009; Sahih Muslim 2244 (Abu Hurayrah: a man on the road, very thirsty, went down a well and drank; saw a dog panting and eating moist earth from thirst; “this dog has reached the thirst I reached”; filled his khuff (leather sock) with water, held it in his mouth, climbed up and gave the dog water; God thanked him and forgave him; “Is there reward for us in animals?” “In every moist liver there is reward”)",
+   "Qur’an 1:2 (“Praise be to Allah, Lord of the Worlds,” Pickthall)",
+   "Rabb as the one who raises a thing stage by stage: al-Raghib al-Isfahani, al-Mufradat; al-‘alamin as every kind of created being: Ibn Kathir on 1:2"
+  ],
+  "check": [
+   "Another version (Bukhari 3467; Muslim 2245) tells of a sinful woman of the Children of Israel who watered a dog; this lesson uses the man’s version (2363). Confirm.",
+   "“Rabb, the one who raises and tends” follows al-Raghib’s gloss (bringing a thing to completion stage by stage), not the verse itself. Confirm."
+  ]
+ }
+}

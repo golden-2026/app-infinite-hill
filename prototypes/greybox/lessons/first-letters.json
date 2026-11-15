@@ -1,0 +1,187 @@
+{
+ "id": "first-letters",
+ "home": "marigold",
+ "title": "The first letters",
+ "told": "Vidyarambham",
+ "clips": "art/sacred/first-letters/clips/",
+ "voice": "art/sacred/first-letters/voice/",
+ "guide": {
+  "name": "Priyanka",
+  "photo": "art/guides/hinduism.webp"
+ },
+ "hook": {
+  "v": "FL1-Temple-Morning",
+  "say": "before the story, can i ask you something? starting something where you know nothing? a new language, a new job, a new city.",
+  "options": [
+   [
+    "Yes, right now",
+    "then this festival is for you. watch."
+   ],
+   [
+    "I want to",
+    "then you’ll love this one."
+   ],
+   [
+    "Not lately",
+    "keep this one for the next first day."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "FL1-Temple-Morning",
+   "vo": [
+    "V01"
+   ],
+   "line": "In Kerala, there’s a beautiful day for beginners: Vidyarambham, the start of learning."
+  },
+  {
+   "t": "shot",
+   "v": "FL2-Rice-Letters",
+   "vo": [
+    "V02"
+   ],
+   "line": "A little child sits in a lap. Someone holds their tiny finger, and helps them trace their first letters in a plate of rice."
+  },
+  {
+   "t": "ask",
+   "v": "FL2-Rice-Letters",
+   "eb": "did you know?",
+   "q": "Some Kerala families travel far so one special kind of guide can hold their child’s finger. Who?",
+   "o": [
+    "A famous writer or poet",
+    "A temple astrologer",
+    "A village headman"
+   ],
+   "a": 0,
+   "why": "At Thunchan Parambu, home of the poet Ezhuthachan, well-known writers guide first letters. Most often, though, it’s a priest, a teacher or an elder."
+  },
+  {
+   "t": "ask",
+   "v": "FL2-Rice-Letters",
+   "eb": "did you know?",
+   "q": "The first words traced are often a short prayer. To whom?",
+   "o": [
+    "Lakshmi, goddess of wealth",
+    "Ganesha, remover of obstacles",
+    "Shiva, lord of the dance"
+   ],
+   "a": 1,
+   "why": "Often “Om Hari Sri Ganapataye Namah”: a bow to Ganesha, who clears the way at every beginning. The day itself belongs to Saraswati."
+  },
+  {
+   "t": "shot",
+   "v": "FL3-Saraswati",
+   "vo": [
+    "V03"
+   ],
+   "line": "Often the first words are a short prayer, and the day is sacred to Saraswati, the goddess of learning."
+  },
+  {
+   "t": "ask",
+   "v": "FL3-Saraswati",
+   "blur": true,
+   "predict": true,
+   "eb": "what happens next?",
+   "q": "Who else comes to begin learning that day?",
+   "o": [
+    "Older kids about to start school",
+    "Grown-ups starting music or dance",
+    "Teachers, to be blessed for the year"
+   ],
+   "a": 1,
+   "why": "Grown-ups too: anyone starting music, dance or anything new. Watch."
+  },
+  {
+   "t": "shot",
+   "v": "FL4-Grown-Ups",
+   "vo": [
+    "V04"
+   ],
+   "line": "Grown-ups come too: people who want to start music, or dance, or anything new."
+  },
+  {
+   "t": "shot",
+   "v": "FL5-Celebration",
+   "vo": [
+    "V05"
+   ],
+   "line": "Nobody laughs at the beginner. The whole temple celebrates them."
+  },
+  {
+   "t": "ask",
+   "v": "FL5-Celebration",
+   "eb": "why?",
+   "q": "Nobody laughs at the beginner. Why make such a fuss over a first wobbly letter?",
+   "o": [
+    "Good luck on day one lasts all year",
+    "It honors the teacher more than the child",
+    "Beginning is the bravest part"
+   ],
+   "a": 2,
+   "why": "Starting is the hardest step, so it gets the celebration. Here, being a beginner is sacred, not embarrassing."
+  },
+  {
+   "t": "shot",
+   "v": "FL6-Today",
+   "vo": [
+    "V06"
+   ],
+   "line": "So go ahead and be a beginner. In Hinduism, the first wobbly letter gets a festival.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "FL6-Today",
+   "eb": "did you know?",
+   "q": "Besides the rice, an elder often traces the same letters somewhere else. Where?",
+   "o": [
+    "On the child’s tongue, with gold",
+    "On the temple wall, in red powder",
+    "On a palm leaf the child keeps"
+   ],
+   "a": 0,
+   "why": "Often with a gold ring, on the tongue, so learning and speech begin golden. In many homes that comes first, then the rice."
+  },
+  {
+   "t": "teach",
+   "v": "FL5-Celebration",
+   "say": [
+    "here’s what i love. the first wobbly letter gets a festival.",
+    "in hinduism, being a beginner isn’t embarrassing. it’s sacred. you’re allowed to start small and clumsy."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "FL6-Today",
+   "eb": "the hard one",
+   "q": "Vidyarambham usually falls on Vijayadashami, the day after the nine nights of Navratri. What does that day celebrate?",
+   "o": [
+    "The year’s first harvest",
+    "Good’s victory over evil",
+    "The start of a new year"
+   ],
+   "a": 1,
+   "why": "Vijayadashami means “the tenth day of victory.” Beginning to learn on a day of victory is part of the point."
+  }
+ ],
+ "today": {
+  "v": "FL2-Rice-Letters",
+  "say": "start one thing you’ve been embarrassed to be a beginner at. do the first clumsy step today.",
+  "options": [
+   [
+    "I know what it is",
+    "then your first wobbly letter counts. go."
+   ],
+   [
+    "I’m too shy to start",
+    "that’s exactly who this festival is for. one step."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "Milk that boils over.",
+  "line": "a new home, a pot of milk, and a spill nobody minds."
+ }
+}

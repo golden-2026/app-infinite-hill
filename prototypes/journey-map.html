@@ -1,0 +1,169 @@
+<title>Infinite Hill Journey</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Nunito+Sans:wght@400;600;800&display=swap">
+<style>
+/* Layout: a single trail climbing the page — five stops joined by a dashed path, a guide thread down the side, a loop back to real life at the end. */
+:root {
+  --bg: #f6f1e6;
+  --paper: #fffaf0;
+  --ink: #1d2540;
+  --muted: #5d6178;
+  --gold: #c98e12;
+  --gold-soft: #f3d98c;
+  --line: #ddd2bb;
+  --live: #2f7d4f;
+  --part: #b7791f;
+  --none: #9a4a3a;
+  --display: "Fraunces", Georgia, serif;
+  --body: "Nunito Sans", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #141a2e; --paper: #1d2540; --ink: #f4ecda; --muted: #aeb3c8;
+    --gold: #f2c14e; --gold-soft: #4a3d1c; --line: #343d5c;
+    --live: #6fcf97; --part: #f2b45a; --none: #f08a72; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #141a2e; --paper: #1d2540; --ink: #f4ecda; --muted: #aeb3c8;
+  --gold: #f2c14e; --gold-soft: #4a3d1c; --line: #343d5c;
+  --live: #6fcf97; --part: #f2b45a; --none: #f08a72; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.55;
+  padding-block: 40px 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.wrap { max-width: 760px; margin: 0 auto; display: grid; gap: 32px; }
+header { display: grid; gap: 10px; }
+.eyebrow { font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
+h1 { font-family: var(--display); font-weight: 700; font-size: clamp(30px, 6vw, 44px); line-height: 1.1; margin: 0; text-wrap: balance; }
+.lede { color: var(--muted); margin: 0; max-width: 60ch; }
+.idea { font-family: var(--display); font-style: italic; font-size: 19px; margin: 0; }
+
+.trail { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; position: relative; }
+.stop { display: grid; grid-template-columns: 48px 1fr; gap: 16px; position: relative; padding-bottom: 28px; }
+.stop:not(:last-child)::before {
+  content: ""; position: absolute; left: 23px; top: 48px; bottom: 0;
+  border-left: 2px dashed var(--line);
+}
+.marker {
+  width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center;
+  font-family: var(--display); font-weight: 700; font-size: 20px;
+  background: var(--gold-soft); color: var(--ink); border: 2px solid var(--gold);
+}
+.card { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; display: grid; gap: 10px; min-width: 0; }
+.card h2 { font-family: var(--display); font-weight: 700; font-size: 22px; margin: 0; line-height: 1.2; text-wrap: balance; }
+.where { font-size: 13px; font-weight: 700; color: var(--muted); letter-spacing: .04em; }
+.card p { margin: 0; }
+.status { display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline; font-size: 14px; border-top: 1px solid var(--line); padding-top: 10px; }
+.pill { font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; border: 1.5px solid currentColor; white-space: nowrap; }
+.pill.live { color: var(--live); } .pill.part { color: var(--part); } .pill.none { color: var(--none); }
+.status span.note { color: var(--muted); flex: 1 1 240px; }
+.next { font-size: 14px; }
+.next b { color: var(--gold); }
+
+.loop { background: var(--paper); border: 2px solid var(--gold); border-radius: 14px; padding: 20px; display: grid; gap: 8px; }
+.loop h2 { font-family: var(--display); font-size: 22px; margin: 0; }
+.loop p { margin: 0; }
+
+.side { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+.box { border-top: 3px solid var(--line); padding-top: 12px; display: grid; gap: 6px; }
+.box h3 { margin: 0; font-size: 15px; font-weight: 800; }
+.box ul { margin: 0; padding-left: 18px; color: var(--muted); }
+.box.yes { border-color: var(--live); } .box.no { border-color: var(--none); }
+footer { font-size: 13px; color: var(--muted); }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Infinite Hill · the journey</div>
+    <h1>From the website to a guide who knows you</h1>
+    <p class="idea">Step in to remember who you are. Step out to live it.</p>
+    <p class="lede">Five stops, with your guide beside you the whole way. Each one shows what it is, where it stands today, and what comes next.</p>
+  </header>
+
+  <ol class="trail">
+    <li class="stop">
+      <div class="marker">1</div>
+      <div class="card">
+        <div class="where">On the website</div>
+        <h2>Learn what it is, and meet your guide</h2>
+        <p>The film, the celebrity guides, the map of the eight homes. The guide starts asking what brings you here, so it can point you to the right door.</p>
+        <div class="status"><span class="pill live">Live</span><span class="note">The website and film are live. The guide on the site is still a promise; it doesn't talk with you yet.</span></div>
+        <div class="next"><b>Next:</b> a short guide chat on the site that hands off into the app.</div>
+      </div>
+    </li>
+    <li class="stop">
+      <div class="marker">2</div>
+      <div class="card">
+        <div class="where">On your phone</div>
+        <h2>Download the app</h2>
+        <p>One app for iPhone and Android, made from the same code as today's web app.</p>
+        <div class="status"><span class="pill part">Partly</span><span class="note">A web app works today. The store apps come after the first real-people test; no rebuild needed.</span></div>
+        <div class="next"><b>Next:</b> Apple and Google developer accounts when the test is done.</div>
+      </div>
+    </li>
+    <li class="stop">
+      <div class="marker">3</div>
+      <div class="card">
+        <div class="where">Inside the world</div>
+        <h2>A small world you can walk around</h2>
+        <p>Your celebrity guide welcomes you. You walk your mascot between a set number of places: the class, the waterfall, the story fire, home, the festival square. Just you and your guide.</p>
+        <div class="status"><span class="pill none">Not yet</span><span class="note">Only pictures and mockups so far. Needs a game developer.</span></div>
+        <div class="next"><b>Next:</b> a cheap ad test, then one indie developer builds the first home with 3–4 places.</div>
+      </div>
+    </li>
+    <li class="stop">
+      <div class="marker">4</div>
+      <div class="card">
+        <div class="where">In class</div>
+        <h2>The story plays like a short film, with questions</h2>
+        <p>One to two minutes of moving scenes and a narrator. It pauses two or three times: what would you do, what happens next, what did it mean. Then a quick quiz so it sticks.</p>
+        <div class="status"><span class="pill part">Started</span><span class="note">The first moving scenes are done (the broken tusk). No full film with questions yet.</span></div>
+        <div class="next"><b>Next:</b> the son who came home as the first full story film. In progress now.</div>
+      </div>
+    </li>
+    <li class="stop">
+      <div class="marker">5</div>
+      <div class="card">
+        <div class="where">Every day after</div>
+        <h2>Your guide keeps getting to know you</h2>
+        <p>It remembers what matters to you, plans your next day, suggests a place to go on the hill and a small step in real life, and walks you along your path.</p>
+        <div class="status"><span class="pill part">Partly</span><span class="note">The text Guide works in today's app. The celebrity voice comes later.</span></div>
+        <div class="next"><b>Next:</b> connect the guide to the world, so it can send you to a place.</div>
+      </div>
+    </li>
+  </ol>
+
+  <section class="loop">
+    <div class="eyebrow">The loop</div>
+    <h2>Back to real life, and back again</h2>
+    <p>After class you step out to try one small thing in your own life: a message, a walk, a quiet minute. Tomorrow you step back in, and your guide remembers how it went.</p>
+  </section>
+
+  <section class="side">
+    <div class="box yes">
+      <h3>What we are building</h3>
+      <ul>
+        <li>A small, beautiful world with set places</li>
+        <li>Story films with questions and quizzes</li>
+        <li>Celebrity guides and a guide that learns you</li>
+        <li>Single player, with family touches later</li>
+      </ul>
+    </div>
+    <div class="box no">
+      <h3>What we are not building, for now</h3>
+      <ul>
+        <li>A big go-anywhere 3D game</li>
+        <li>Live multiplayer with strangers</li>
+        <li>Painted stills as the final stories</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>Agreed with Shaan, October 28, 2026. Advice behind it: Kentaro Saito (keep the world small, no multiplayer), Shaan Akbar (test before building, first chapter only), Hans Yang (no multiplayer until proven).</footer>
+</div>

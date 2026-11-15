@@ -51,7 +51,7 @@ export default function Goal() {
         <View accessibilityRole="radiogroup" style={{ gap: 10 }}>
           {opts.map(([n, span]) => (
             <Pressable key={n} testID={`goal-${n}`} accessibilityRole="radio" accessibilityState={{ checked: goal === n }} aria-checked={goal === n} accessibilityLabel={t("session.goal.optA11y", { n, t: span })} onPress={() => setG(n)}
-              style={{ borderWidth: 1.5, borderColor: goal === n ? color.ink : color.line, backgroundColor: goal === n ? color.gold : "#fff", borderRadius: 18, paddingVertical: 14, paddingHorizontal: 16, flexDirection: "row", gap: 14, alignItems: "center" }}>
+              style={{ borderWidth: 1.5, borderColor: goal === n ? color.ink : color.line, backgroundColor: goal === n ? color.gold : color.white, borderRadius: 18, paddingVertical: 14, paddingHorizontal: 16, flexDirection: "row", gap: 14, alignItems: "center" }}>
               <Text style={{ fontFamily: font.display[800], fontSize: 30, width: 56, color: color.ink }}>{n}</Text>
               <Text style={{ fontFamily: font.display[800], fontSize: 16, color: color.ink, flex: 1 }}>{t("session.goal.opt", { t: span })}</Text>
             </Pressable>

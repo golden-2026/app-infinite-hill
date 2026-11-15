@@ -1,17 +1,18 @@
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Infinite Hill Brand Book</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@800&family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@500;600;700;800&display=swap">
 <style>
 :root{--lemon:#EEFF6A;--ink:#0A0A0A;--cream:#F7F7F5;--sand:#ECECE8;--line:#E3E3DE;--mute:#6B6B6B;--text:#1A1A1A;--green:#8DE24A;--paper:#FFFFFF;--bg:#F7F7F5;--fg:#0A0A0A;--soft:#6B6B6B;--card:#FFFFFF;--rule:#E3E3DE;
---mark:"Baloo 2",system-ui,sans-serif;--display:"Manrope",system-ui,-apple-system,sans-serif;--body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif}
+--mark:"Anton","Archivo Black",Impact,sans-serif;--display:"Manrope",system-ui,-apple-system,sans-serif;--body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;--board:"Anton","Impact","Arial Narrow",sans-serif}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F0F0F;--fg:#F4F4F0;--soft:#A3A39B;--card:#1A1A1A;--rule:#2C2C2A;color-scheme:dark}}
 :root[data-theme="dark"]{--bg:#0F0F0F;--fg:#F4F4F0;--soft:#A3A39B;--card:#1A1A1A;--rule:#2C2C2A;color-scheme:dark}
 body{background:var(--bg);color:var(--fg);font:16px/1.6 var(--body)}
-.wrap{max-width:1080px;margin:0 auto;padding-inline:20px;padding-block:0 80px}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:16px;padding-block:0 80px}
 nav.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;padding-block:12px}
 nav.top .bar{background:var(--lemon);color:var(--ink);border-radius:999px;display:flex;align-items:center;gap:14px;padding:8px 10px 8px 16px;overflow-x:auto;scrollbar-width:none}
 nav.top .bar::-webkit-scrollbar{display:none}
-nav.top .wm{font:800 20px/1 var(--mark);white-space:nowrap;display:flex;align-items:center;gap:6px}
+nav.top .wm{font:400 20px/1 var(--mark);text-transform:uppercase;white-space:nowrap;display:flex;align-items:center;gap:6px}
 nav.top .wm img{height:26px}
 nav.top a{font:600 12px var(--body);color:var(--ink);text-decoration:none;white-space:nowrap;padding:6px 10px;border-radius:999px}
 nav.top a:hover,nav.top a:focus-visible{background:#ffffff99;outline:none}
@@ -21,6 +22,7 @@ h1 em,h2 em{font-style:italic}
 h2{font-size:clamp(28px,4.4vw,44px);line-height:1.05}
 h3{font-size:21px;line-height:1.2}
 p{max-width:66ch;margin:10px 0 0}
+a{color:inherit}
 .eyebrow{font:600 11px/1.2 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
 .lede{font-size:18px;color:var(--soft);max-width:60ch}
 section{padding-top:72px}
@@ -34,14 +36,20 @@ section > .eyebrow + h2{margin-top:10px}
 .status{display:inline-flex;gap:8px;align-items:center;margin-top:18px;background:#ffffff14;border-radius:999px;padding:6px 12px;font:600 12px var(--body);color:#ffffffcc}
 .status i{width:8px;height:8px;border-radius:50%;background:var(--lemon)}
 .cards{display:grid;gap:14px;margin-top:22px}
-.c2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-.c3{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.c2{grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr))}
+.c3{grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr))}
 .card{background:var(--card);border:1px solid var(--rule);border-radius:22px;padding:20px}
 .card p{font-size:15px;color:var(--soft);margin-top:6px}
 .card .but{margin-top:10px;font-size:14px;color:var(--fg);border-top:1px dashed var(--rule);padding-top:10px}
 .card .but b{font-weight:700}
+.card.dark{background:var(--ink);color:#fff;border-color:var(--ink)}
+.card.dark h3{color:var(--lemon)}.card.dark p{color:#ffffffbb}
 .quote{background:var(--lemon);color:var(--ink);border-radius:22px;padding:22px 24px;margin-top:22px;font:800 clamp(22px,3vw,30px)/1.15 var(--display);letter-spacing:-.02em}
 .quote small{display:block;font:600 11px var(--body);letter-spacing:.14em;text-transform:uppercase;margin-top:10px;opacity:.7}
+.quote.ink{background:var(--ink);color:#fff}.quote.ink b{color:var(--lemon);font-weight:800}
+.tag{display:inline-block;font:700 10px/1 var(--body);letter-spacing:.12em;text-transform:uppercase;border-radius:999px;padding:4px 8px;background:var(--lemon);color:var(--ink);vertical-align:middle}
+.tag.prop{background:transparent;border:1px dashed var(--soft);color:var(--soft)}
+.src{font-size:12px;color:var(--soft)}
 /* personas */
 .persona{background:var(--card);border:1px solid var(--rule);border-radius:24px;padding:22px;display:grid;grid-template-columns:120px 1fr;gap:18px}
 .persona .who{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
@@ -56,19 +64,24 @@ section > .eyebrow + h2{margin-top:10px}
 .want{margin-top:14px;background:var(--lemon);color:var(--ink);border-radius:14px;padding:10px 14px;font-size:14px}
 .check{margin-top:8px;font-size:13px;color:var(--soft)}
 /* voice */
-.say-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:20px}
+.say-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:14px;margin-top:20px}
 .is,.isnt{border-radius:22px;padding:20px}
 .is{background:var(--ink);color:#fff}.isnt{background:var(--card);border:1px solid var(--rule)}
 .is h3{color:var(--lemon)}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
 .chip{border-radius:999px;padding:6px 12px;font:600 13px var(--body);background:#ffffff14;border:1px solid #ffffff22}
-.isnt .chip{background:var(--bg);border:1px solid var(--rule);text-decoration:line-through;text-decoration-color:#B42318}
+.isnt .chip,.chips.no .chip{background:var(--bg);border:1px solid var(--rule);text-decoration:line-through;text-decoration-color:#B42318}
 table{border-collapse:collapse;width:100%;font-size:14px}
 .tw{overflow-x:auto;margin-top:18px;border:1px solid var(--rule);border-radius:18px;background:var(--card)}
 th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--rule);vertical-align:top}
 th{font:600 11px var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--soft);background:var(--bg)}
 tr:last-child td{border-bottom:0}
 td code,td .lw{font:600 13px var(--body);background:var(--lemon);color:var(--ink);border-radius:6px;padding:1px 6px;white-space:nowrap}
+/* numbered rules */
+.rules{counter-reset:r;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:10px 22px;margin-top:18px;padding:0;list-style:none}
+.rules li{counter-increment:r;border-top:1px solid var(--rule);padding-top:10px;font-size:14px;color:var(--soft)}
+.rules li b{display:block;color:var(--fg);font:800 16px/1.25 var(--display)}
+.rules li b::before{content:counter(r,decimal-leading-zero) "  ";color:var(--soft);font:600 11px var(--body);letter-spacing:.1em}
 /* swatches */
 .sw{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:20px}
 .swatch{border-radius:18px;overflow:hidden;border:1px solid var(--rule);background:var(--card)}
@@ -95,13 +108,37 @@ figure{margin:0}
 .looks img{width:100%;aspect-ratio:2/3;object-fit:cover;display:block}
 .looks figcaption{font-size:12px;padding:8px 10px;color:var(--soft)}
 .looks figcaption b{display:block;color:var(--fg);font-size:13px}
-.gloss{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px 22px;margin-top:18px}
+.gloss{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:10px 22px;margin-top:18px}
 .gloss div{border-top:1px solid var(--rule);padding-top:10px}
 .gloss b{font:800 16px var(--display)}
 .gloss p{font-size:14px;color:var(--soft);margin-top:2px}
 .open{background:var(--card);border:1px dashed var(--soft);border-radius:22px;padding:20px;margin-top:20px}
 .open ol{margin:10px 0 0;padding-left:20px;display:grid;gap:6px}
 .foot{margin-top:60px;border-top:1px solid var(--rule);padding-top:16px;font-size:13px;color:var(--soft)}
+/* billboards: true 14x48 bulletin ratio plus a 4:5 phone post, ported from the Direction A review page */
+.bbwall{background:#0d0d0c;border-radius:24px;padding:clamp(14px,3vw,28px);margin-top:20px;color:#f5f3ee}
+.bbitem{display:grid;grid-template-columns:minmax(0,3.2fr) minmax(0,1fr);gap:16px;align-items:start;padding-block:18px;border-top:1px solid #24231f}
+.bbitem:first-child{border-top:0;padding-top:0}
+.bbcap{grid-column:1/-1;display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;color:#8f8c84;font-size:13px}
+.bbcap b{color:#f5f3ee;font:400 18px var(--board);letter-spacing:.02em}
+.bset,.bturn{white-space:nowrap;text-transform:uppercase;font-family:var(--board);font-weight:400;width:max-content}
+.bset{color:#f5f3ee;line-height:1.02}.bturn{color:var(--lemon);line-height:.92}
+.bwm{position:absolute;color:#f5f3ee;font:800 1em/1 var(--display);letter-spacing:-.02em;text-transform:lowercase}
+.bwm small{display:block;font-weight:500;letter-spacing:0;color:#c9c6be;margin-top:.35em;font-size:.5em}
+.board{position:relative;aspect-ratio:48/14;background:#000;overflow:hidden;container-type:size;max-width:100%}
+.board .ph{position:absolute;left:0;top:0;bottom:0;width:45%;background:#111 center/cover no-repeat}
+.board .tx{position:absolute;top:8cqh;bottom:22cqh;left:calc(45% + 3.5cqw);right:3.5cqw;display:flex;flex-direction:column;justify-content:center;gap:4cqh}
+.board.full .tx{left:6cqw;right:6cqw}
+.board .bwm{right:3.5cqw;bottom:6cqh;text-align:right;font-size:7cqh}
+.board.full .bwm{right:6cqw}
+.feedp{position:relative;aspect-ratio:4/5;background:#000;overflow:hidden;container-type:size;max-width:100%}
+.feedp .ph{position:absolute;left:0;right:0;top:0;height:46%;background:#111 center/cover no-repeat}
+.feedp .tx{position:absolute;left:6cqw;right:6cqw;top:50%;bottom:15cqh;display:flex;flex-direction:column;justify-content:center;gap:2.6cqh}
+.feedp.full .tx{top:7cqh}
+.feedp .bwm{left:6cqw;bottom:4.5cqh;font-size:3.6cqh}
+.bbnote{color:#8f8c84;font-size:13px;margin-top:14px;max-width:none}
+.bbnote b{color:#f5f3ee}
+@media (max-width:760px){.bbitem{grid-template-columns:1fr}.feedp{max-width:300px}}
 @media (max-width:700px){.hero-card{grid-template-columns:1fr}.hero-card img{justify-self:start;max-width:180px}.persona{grid-template-columns:1fr}.persona .who{flex-direction:row;text-align:left}.persona .who img{width:80px;height:80px}.type .row{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
 </style>
@@ -109,76 +146,141 @@ figure{margin:0}
 <div class="wrap">
 <nav class="top" aria-label="sections"><div class="bar">
   <span class="wm"><img src="img/logo-mark.webp" alt="">infinite hill</span>
-  <a href="#story">story</a><a href="#values">values</a><a href="#personality">personality</a><a href="#personas">personas</a><a href="#voice">voice</a><a href="#look">look</a><a href="#mascot">the guy</a><a href="#world">the world</a><a href="#game">the game</a><a href="#paths">the paths</a><a href="#social">social</a><a href="#feed">feed to app</a><a href="#creators">creators</a><a href="#wrong">when it goes wrong</a><a href="#faces">faces</a><a href="#open">open questions</a>
+  <a href="#story">story</a><a href="#purpose">purpose</a><a href="#northstar">north star</a><a href="#values">values</a><a href="#personality">personality</a><a href="#personas">personas</a><a href="#voice">voice</a><a href="#look">look</a><a href="#mascot">Finn</a><a href="#billboards">billboards</a><a href="#films">lessons &amp; films</a><a href="#world">the world</a><a href="#game">the game</a><a href="#paths">the paths</a><a href="#social">social</a><a href="#feed">feed to app</a><a href="#creators">creators</a><a href="#wrong">when it goes wrong</a><a href="#faces">faces</a><a href="#open">open questions</a>
 </div></nav>
 
 <header class="hero">
   <div class="hero-card">
     <div>
-      <div class="eyebrow">brand book · v2 · built from the live product</div>
-      <h1>the loneliest generation ever needs <em>the oldest thing on earth.</em></h1>
-      <p class="lede">How infinite hill looks, sounds and behaves, written down from the website and app as they are today, plus everything we've decided along the way. It replaces the early drafts.</p>
-      <span class="status"><i></i>working draft · 29 Sep 2026 · for Shaan and Gus</span>
+      <div class="eyebrow">brand book · v4 · the source of truth for taste</div>
+      <h1>step in to remember who you are. <em>step out to live it.</em></h1>
+      <p class="lede">How Infinite Hill looks, sounds and behaves. The big idea (docs/brand/BIG-IDEA.md) comes first; this book follows it. Where an older doc, mockup or screen disagrees with this book, this book wins.</p>
+      <span class="status"><i></i>current · 15 Nov 2026 · for the owner and Xogito</span>
     </div>
-    <img src="img/guy-wave.webp" alt="the mascot, waving">
+    <img src="img/guy-wave.webp" alt="Finn, the mascot, waving">
   </div>
+  <div class="cards c3">
+    <div class="card"><div class="eyebrow">how to read it</div><p>Every rule here comes from a decision the owner made. Small grey dates say when. A <span class="tag prop">proposed</span> tag means the idea is on the table and not approved: don't build it as final.</p></div>
+    <div class="card"><div class="eyebrow">the taste gate</div><p>Nothing reaches the owner unless the creative director has passed it, compared against real reference work. Show a few strong options, never a long list of okay ones.</p></div>
+    <div class="card"><div class="eyebrow">quoting advisors</div><p>When you write up advice, keep what someone said apart from our own ideas: tag it [Hans], [Kevin], [my suggestion]. Never put our idea in an advisor's mouth.</p></div>
+  </div>
+  <div class="card" style="margin-top:14px"><div class="eyebrow">settled · 10–15 Nov 2026</div><p>These ended open conflicts. Where anything below disagrees, these win.</p><ol class="rules" style="margin-top:8px">
+    <li><b>The celebrity guide asks and narrates; Finn never talks (14 Nov).</b>Your path's celebrity guide asks every question and says every scripted line, with their round photo and name. Finn is wordless: he pops in with still art and a bounce on right answers, streaks and finished stories (the dance videos are gone). The live AI chat shows the guide's photo but is labeled "your [faith] guide · powered by AI", never "Denzel says". Before a path is picked, questions show with no speaker. Guide lines are written by us and checked like every lesson.</li>
+    <li><b>One day (14 Nov).</b>A 60-second story film → the guide's questions → the reveal (the real place tied to the story lights up as a spot on your path, and the guide names it) → claim my card → your path for the week. Places are named only after the story, never before. Paths are named by faith; the old home names (Olive Grove, Marigold and the rest) and the eight-homes map are gone.</li>
+    <li><b>Your streak is lit (15 Nov).</b>Seven days in a row with no rest day: "your streak is lit" (Spanish "encendida"). Never "golden". Rest days and earn-back stay.</li>
+    <li><b>The Holy Land (15 Nov).</b>Every place in Israel, the West Bank, Palestine, East Jerusalem or the Golan is labeled "the Holy Land" ("Tierra Santa"), never a modern country.</li>
+    <li><b>"what i live by" (15 Nov, approved to build).</b>In "my own religion", after each story you mark it "this is me", "not sure yet" or "not for me"; now and then the guide asks an optional big question. Your page groups what matters to you, what you're still figuring out and what's not for you, each piece tagged with its faith and source, and the guide answers from it. Faith paths get a lighter "what spoke to you" (no "not for me": the teaching stays the teaching). Private, on the phone.</li>
+    <li><b>Money and privacy (14 Nov).</b>Paid plans are ad-free and a family plan; the free daily lesson may carry ads later, so never promise "no ads". No account: everything stays on the phone; only guide questions and an anonymous return count leave it. We don't sell your faith.</li>
+    <li><b>One faith at a time, the Guide included.</b>On a faith path there are no cross-faith answers and no "visit another faith" offers. Crossing faiths happens only in "my own religion".</li>
+    <li><b>Two-faith families follow two separate paths.</b>They switch between them; the two faiths are never mixed in one lesson.</li>
+    <li><b>Hindu deities may be shown,</b>as Hindu art traditionally does. Never show God in traditions that don't depict God, and never the faces of Jesus, Muhammad or the Sikh Gurus.</li>
+    <li><b>Trips earn story cards; stamps are only for real-life attendance.</b></li>
+    <li><b>Name celebrities as guides, never "signed".</b></li>
+    <li><b>AI-generated people are for mood drafts only.</b>Anything that runs uses real people.</li>
+  </ol></div>
 </header>
 
 <section id="story">
   <div class="eyebrow">01 · our story</div>
   <h2>every generation had a way through. <em>we walked away.</em></h2>
-  <p>Every generation before us had a way through hard days. They called it religion. Ours walked away from it, and replaced it with a feed. infinite hill brings it back: a few minutes a day, in the voice of someone you already listen to, in your own faith, or in a path built around you. And it plays like a game.</p>
+  <p>Every generation before us had a way through hard days. They called it religion. Ours walked away from it, and replaced it with a feed. Now we're divided and confused. But we can learn, together.</p><p>Infinite Hill is the best of a video game and AI: a beautiful world you step into every day, and a guide you already know who talks with you, learns who you are and plans your days. When life gets loud, you step in to get grounded and guided. Then you step back into your life, a little steadier. <b>Step in to remember who you are. Step out to live it.</b></p>
   <div class="cards c2">
-    <div class="card"><div class="eyebrow">mission</div><h3>make religion cool again.</h3><p>Show a new generation what their grandparents knew, in a form they actually want to open.</p></div>
-    <div class="card"><div class="eyebrow">the promise</div><h3>it plays like a game. it's taught like a faith.</h3><p>The fun lives in the practice. The faith is treated with care, checked by the people who keep it.</p></div>
-    <div class="card"><div class="eyebrow">the stance</div><h3>we don't care which door. we care that you have one.</h3><p>Eight doors: seven traditions and "my own path". We never compare them and never push one.</p></div>
-    <div class="card"><div class="eyebrow">the unity</div><h3>more alike than we think.</h3><p>Every faith on one hill. One human race: a little more love, a little less fighting. We honor the real differences, and we never rank a door or ask anyone to switch.</p></div>
+    <div class="card dark"><div class="eyebrow" style="color:#ffffff88">the tagline · locked</div><h3>making religion yours again.</h3><p>It sits under the logo, everywhere. Spanish: "la religión, tuya otra vez". It replaced "making religion cool again" on 20 Oct: "cool" felt shallow and could read as a joke about something sacred; "yours" carries the offer (your faith, or your own). Never bring "cool again" back.</p></div>
+    <div class="card"><div class="eyebrow">the big idea · locked 22 Oct</div><h3>step in to remember who you are. step out to live it.</h3><p>The world and your real life keep crossing over: breathe in your car while your screen is the waterfall, ask a pastor anything out loud, then walk into a real church on Sunday. Inside the company: from ego to awareness and back, easier each time. In public we say it in everyday words.</p></div>
+    <div class="card"><div class="eyebrow">the hero copy · 3 Nov</div><h3>because you gotta have faith.</h3><p>"understand yourself. understand each other. pick a faith or build your own faith, with celebrity guides and voices you know." Headline and one line, nothing more.</p><div class="but"><b>Before paid ads:</b> the headline echoes George Michael's "Faith". Never use the song or its look without a license, and a trademark lawyer glances at it first.</div></div>
+    <div class="card"><div class="eyebrow">the offer</div><h3>pick a faith, or build your own.</h3><p>Go deep in one faith, or choose "my own religion", where exploring every faith and what they share lives (opt-in, curated to you by the AI). Say "build your own faith", not "create your own religion". The owner thinks many people will pick "my own religion", so it has to be incredible.</p></div>
+    <div class="card"><div class="eyebrow">sell the want</div><h3>nobody wakes up wanting to learn religion.</h3><p>People come for a want: answers when the kids ask, peace at a two-faith table, the meaning behind prayers they already say, something real without the rules, help in a hard moment. Heroes, ads and store pages lead with the want and the outcome. The daily loop is the how, never the pitch.</p></div>
+    <div class="card"><div class="eyebrow">the guide</div><h3>someone you already know, who knows you.</h3><p>Your path's celebrity guide (Denzel Washington for Christianity) tells every story and asks every question, inside your one faith. The live AI chat shows the guide's photo, labeled "your [faith] guide · powered by AI", and is never presented as the celebrity speaking. Finn never talks; he celebrates. <small style="opacity:.6">14 Nov</small></p></div>
   </div>
-  <p>How the homepage says it today: "making religion cool again. why religion? because it's the oldest technology on earth for being okay, together. every faith on one hill, more alike than we think. learn your faith, or create your own, in five fun minutes a day."</p>
-  <div class="quote">the golden rule is undefeated.<small>the line we close on · every tradition landed on it</small></div>
-  <p class="check">Founder's story: to be written in Shaan's own words. It isn't on the website yet, by choice.</p>
+  <p>The story we tell, in order (film, site, deck): the problem → "but we can learn, together" → the answer in three parts (people you already know, technology that knows you, a world you want to come back to) → "Introducing Infinite Hill" → what it's like to be there (experiences, never a map first) → the real place each story is tied to, revealed after the story and kept as a card on your path → trust: a scholar of each faith checks everything and can say no → "One human race. One hill." → "Infinite Hill. Making religion yours again."</p>
+  <p>The spine is one person, Christian-first: a mom in her car, guided by Denzel on the Christianity path. Lost in real life → steps in through her phone → grounded and guided → steps back out changed → walks into a real church on Sunday → her family lights a lantern on the hill.</p>
+  <div class="quote">one human race. one hill.<small>the line we close on · then "infinite hill. making religion yours again."</small></div>
+  <p class="check">Homepage order (3 Nov): what it is → why bother → made for you, wherever you start → a day picked for you (30-second video) → celebrity guides → build your own faith → or go deep in one faith → which one sounds like you → scholars → real people → start free. "Made for you" must welcome people who already have a faith. Founder's story: to be written in Shaan's own words; not on the site yet, by choice.</p>
+</section>
+
+<section id="purpose">
+  <div class="eyebrow">02 · what everything is for</div>
+  <h2>big statements out loud. <em>one faith at a time inside.</em></h2>
+  <div class="quote ink">"the goal of everything we're doing is to create these <b>big statements</b> that get people to see commonality and <b>treat each other better</b>."<small style="color:#ffffffaa">the owner · 10 Nov 2026</small></div>
+  <p>That purpose works on two layers, and they must not blur. The brand shouts the common ground. The lessons go deep in one faith. If a lesson ever feels like comparative religion, it's wrong.</p>
+  <div class="cards c3">
+    <div class="card dark"><div class="eyebrow" style="color:#ffffff88">layer 1 · the brand</div><h3>loud, shared, about how we treat each other.</h3><p>Billboards, the site hero, social. Bold statements with present-day people, Magna-level confidence. We claim one specific shared teaching at a time, checked by every Keeper. Never "all religions are the same".</p></div>
+    <div class="card"><div class="eyebrow">layer 2 · the lessons</div><h3>one faith, deep.</h3><p>Inside a faith, the Guide's answers, stories, places, passport and offers all stay in that faith: no cross-faith answers, no "visit another faith" offers (10 Nov). Switching faith is a quiet link in the You tab. Films and the site show one person going deeper in one faith over days, never "8 of 8 faiths visited". The eight-homes map and the gondola are gone (4 Nov).</p></div>
+    <div class="card"><div class="eyebrow">where faiths meet</div><h3>"my own religion".</h3><p>Cross-faith exploring, "what they share" and the full passport live only here. Every pick is curated to the person. Each piece names its tradition plainly, never blended or ranked. Frame it as "more in common than you think", never "all the same".</p></div>
+  </div>
+  <div class="cards c2">
+    <div class="card"><h3>the inversion: faith fully real, packaging modern.</h3><p>The reference is Radhika Das and Jahnavi Harrison's nights: real bhajans, sung by people who look like cool everyday people, with a mixed band (saxophone, guitars, musicians of every background, Hare Krishna monks among them), in a Hackney club, to a crowd that's mostly not Indian. The owner: "it's dope." We're more alike than different, and people feel it through shared experience like music. It's never taught as a side-by-side comparison. Look for the same mix in every creator and guide we cast.</p></div>
+    <div class="card"><h3>Christian-first in marketing.</h3><p>Assume the main viewer is an American Christian family. Lead with familiar Christian moments: grace at dinner, church, a gospel choir, Christmas, the lost sheep. Christianity is first in every list. Show every other faith warmly, alongside. Never open a film, page or pitch with Diwali, kirtan or Ganesha. This is marketing order only: the Hindu-parents alpha and the Hindu lesson pilot don't change.</p></div>
+  </div>
+  <div class="chips no"><span class="chip">all religions are the same</span><span class="chip">ranking faiths</span><span class="chip">a tour of every faith</span><span class="chip">8 of 8 faiths visited</span><span class="chip">temple-hall styling</span><span class="chip">politics</span></div>
+</section>
+
+<section id="northstar">
+  <div class="eyebrow">03 · the north star</div>
+  <h2>loud. on trend. shock value. <em>like Magna.</em></h2>
+  <p class="lede">Owner, 6 Nov: everything we do now is loud and has some shock value, the way <a href="https://www.drinkmagna.com/">Magna</a> does things. "They're super on trend. So we're going to follow them." Magna is the brand model for the website, the app and every lesson. It's a different category, so borrowing its look and moves closely is fine.</p>
+  <div class="cards c3">
+    <div class="card"><div class="eyebrow">take</div><h3>one ownable color pair.</h3><p>Magna owns lime and black on every box, bottle and post. We own lime #EEFF6A and black the same way. The chunky wordmark doubles as a graphic.</p></div>
+    <div class="card"><div class="eyebrow">take</div><h3>real people, grainy film.</h3><p>Magna shoots real athletes and runners on grainy film. Our brand work shows present-day people with dignity and tension, never glossy stock models.</p></div>
+    <div class="card"><div class="eyebrow">take</div><h3>drops.</h3><p>Magna drops limited flavors, each with its own type. Ours: episodes drop at a set weekly time with a countdown, and the drop's collectible (a card, a fit for Finn) is the limited part. <span class="tag prop">proposed</span></p></div>
+    <div class="card"><div class="eyebrow">take</div><h3>a short homepage.</h3><p>Hero, one line, one button, then a few proof points. Fewer, louder sections.</p></div>
+    <div class="card"><div class="eyebrow">take</div><h3>IRL nights.</h3><p>Magna runs run clubs and DJ nights. Our IRL drop nights earn the real stamp. <span class="tag prop">proposed</span></p></div>
+    <div class="card"><div class="eyebrow">don't take</div><h3>the joke register.</h3><p>Magna's best reel puns on "your body is a temple". That works for a drink; on a faith brand, punning on scripture is out. Our shock comes from surprise, confidence and true sentences, never from mocking a faith, being crude, violence or romance. ("my mind is a temple" is not approved; don't use it.)</p></div>
+  </div>
+
+  <h3 style="margin-top:32px">the owner's taste test (6 Nov)</h3>
+  <p>He marked 25 real references. Grade work against these, not against our past work.</p>
+  <div class="say-grid">
+    <div class="is"><h3>dope</h3><div class="chips"><span class="chip">Radhika Das &amp; Jahnavi Harrison</span><span class="chip">bhajan clubbing</span><span class="chip">Kanye's Sunday Service</span><span class="chip">Boiler Room</span><span class="chip">Maverick City</span><span class="chip">Forrest Frank</span><span class="chip">Mahavatar Narsimha</span><span class="chip">teamLab</span><span class="chip">Partiful</span><span class="chip">the Duolingo owl</span><span class="chip">Spotify Wrapped</span></div><p style="color:#ffffffbb;font-size:15px">"big and loud… shock the world or go home." "forward thinking, super wow." "disruptive, went after stale incumbents."</p></div>
+    <div class="isnt"><h3>meh · no</h3><div class="chips"><span class="chip">Hallow</span><span class="chip">Benedictine chant</span><span class="chip">The Chosen</span><span class="chip">BibleProject</span><span class="chip">Co-Star</span><span class="chip">Sky</span><span class="chip">A24</span><span class="chip">AI Bible vlogs</span><span class="chip">Monument Valley</span></div><p style="color:var(--soft);font-size:15px">Hallow: "not forward thinking, not cool enough." Quiet arthouse restraint, museum crops and prestige drama miss his bar.</p></div>
+  </div>
+  <div class="cards c3">
+    <div class="card"><h3>the bar</h3><p>Big, loud, music-led, live-crowd energy, a mixed crowd doing faith where you'd never expect it, teamLab-level wow, pop that kids share, disruptive against stale incumbents.</p></div>
+    <div class="card"><h3>bold, not cautious</h3><p>Lead with the wow: films, celebrity guides, music, the cool everyday-people look. Raise risks plainly, but never shrink the product into a lean test. A few great things beat hundreds of ideas.</p></div>
+    <div class="card"><h3>as good as the feed</h3><p>We only survive if we're as good as the best faith creators on Instagram. Instagram is the front door; the app keeps what a feed can't give: a guide who knows you, a path with a finish line, daily tools.</p></div>
+  </div>
 </section>
 
 <section id="values">
-  <div class="eyebrow">02 · values</div>
+  <div class="eyebrow">04 · values</div>
   <h2>what we hold to, <em>every screen.</em></h2>
   <p class="lede">These came from real decisions in the product, not a workshop. Each one already changes how something works.</p>
   <div class="cards c2">
-    <div class="card"><h3>your door is yours. or two, if your family has two.</h3><p>People choose their path. Someone who wants to stay in their own tradition never sees another religion unless they ask. "Stay on my path" is the default. A family with two traditions can walk both doors, side by side, and neither is ranked above the other.</p></div>
-    <div class="card"><h3>never pushy.</h3><p>No "try Judaism tonight". Other traditions appear only as a gentle, one-minute taste for people who said they love that, and a taste never switches anyone's course.</p></div>
-    <div class="card"><h3>we score learning, never faith.</h3><p>Points for knowing a word or a story. Never for praying, never for believing. The breath, the sit and the line you carry have no timer and no score.</p></div>
-    <div class="card"><h3>honest about what's real.</h3><p>Lessons say "draft · waiting on a Keeper's review" until a scholar signs off. Features that aren't switched on say so. We don't claim a voice or a Keeper has signed until they have.</p></div>
-    <div class="card"><h3>joy is allowed.</h3><p>A mascot that cheers, a sunrise when you finish, a lantern you can send a friend. Serious about faith; never solemn about ourselves.</p></div>
+    <div class="card"><h3>your faith is yours.</h3><p>People choose their path, and everything inside it stays in that faith. Someone who wants to stay in their own tradition never sees another religion unless they choose "my own religion". We never rank a faith or ask anyone to switch.</p></div>
+    <div class="card"><h3>never pushy. prayer is a choice.</h3><p>"Pray" can feel intimidating. Wherever prayer appears, say plainly that it's your choice: watch, learn what it means, or join in. Nobody is asked to believe anything, and nobody is asked to sing.</p></div>
+    <div class="card"><h3>we score learning, never faith.</h3><p>Points for knowing a word or a story. Never for praying, never for believing. The breath, the sit and the line you carry have no timer and no score. No leaderboards.</p></div>
+    <div class="card"><h3>honest about what's real.</h3><p>We never invent a testimonial or a community number, and we show real counts only above a threshold. We don't claim a feature works until a live request proves it. Nothing religious goes public before a scholar of that faith has read it, and unreviewed work is simply not shown: no "draft" labels in anything a user sees.</p></div>
+    <div class="card"><h3>joy is loud here.</h3><p>Finn bounces in on your wins, your streak gets lit, drops land with a countdown, a lantern lights when you finish. Serious about faith; never solemn about ourselves.</p></div>
     <div class="card"><h3>everyone is welcome, including unsure.</h3><p>Grew up in a faith and not sure anymore, never had one, practice every day: each gets a way in that fits, and nobody is asked to believe anything.</p></div>
-    <div class="card"><h3>a company that gives.</h3><p>infinite hill is a for-profit company, so it can pay its own way and never has to beg. Part of what it earns goes to the Infinite Hill Foundation, a separate nonprofit being set up now. Anything someone gives inside the app goes to the Foundation in full. The Foundation funds scholarships so people who can't pay still get the year, free plans for students and youth groups, and the traditions our lessons come from.</p><p class="but"><b>How we say it:</b> "part of what we earn goes to the Infinite Hill Foundation". Always add "in formation" until the papers are filed, and don't name a percentage until one is set.</p></div>
+    <div class="card"><h3>a company that gives.</h3><p>Infinite Hill is a for-profit company, so it can pay its own way and never has to beg. Part of what it earns goes to the Infinite Hill Foundation, a separate nonprofit being set up now. Anything someone gives inside the app goes to the Foundation in full. The Foundation funds scholarships so people who can't pay still get the year, free plans for students and youth groups, and the traditions our lessons come from.</p><p class="but"><b>How we say it:</b> "part of what we earn goes to the Infinite Hill Foundation". Always add "in formation" until the papers are filed, and don't name a percentage until one is set.</p></div>
   </div>
 </section>
 
 <section id="personality">
-  <div class="eyebrow">03 · personality</div>
+  <div class="eyebrow">05 · personality</div>
   <h2>we are this, <em>but not that.</em></h2>
   <div class="cards c3">
-    <div class="card"><h3>warm</h3><p>We sound like a friend who's glad you came.</p><div class="but"><b>but not</b> gushing. No "amazing!!", no hype.</div></div>
-    <div class="card"><h3>playful</h3><p>Games, a mascot, a streak of light.</p><div class="but"><b>but not</b> flippant about faith. The joke is never on a belief.</div></div>
-    <div class="card"><h3>reverent</h3><p>Every tradition is taught from its own texts, carefully.</p><div class="but"><b>but not</b> churchy, preachy or hushed.</div></div>
-    <div class="card"><h3>clear</h3><p>Short sentences. Plain words. American spelling.</p><div class="but"><b>but not</b> dumbed down. The stories are the real ones.</div></div>
-    <div class="card"><h3>modern</h3><p>Lemon, black, pills, a phone-first game.</p><div class="but"><b>but not</b> trendy for its own sake. It has to feel right in five years too.</div></div>
-    <div class="card"><h3>for everyone</h3><p>Every door gets the same care and the same look.</p><div class="but"><b>but not</b> blended into one mush. Each tradition stays itself.</div></div>
+    <div class="card"><h3>warm first</h3><p>We meet the feeling before anything else, like a friend who's glad you came.</p><div class="but"><b>but not</b> gushing or fake. Compliments are specific.</div></div>
+    <div class="card"><h3>loud</h3><p>Lime and black, big type, drops, reels, shock that makes you stop.</p><div class="but"><b>but not</b> cheap. Shock carries weight; it never mocks a faith or a person.</div></div>
+    <div class="card"><h3>playful</h3><p>Games, a mascot who celebrates every win, a roast of boring faith apps.</p><div class="but"><b>but not</b> flippant about faith. The joke is never on a belief, a believer or a grandparent.</div></div>
+    <div class="card"><h3>reverent</h3><p>Every tradition is taught from its own stories and texts, carefully.</p><div class="but"><b>but not</b> churchy, preachy, hushed or "temple hall".</div></div>
+    <div class="card"><h3>punchy</h3><p>Short, verb-led, plain words, American spelling.</p><div class="but"><b>but not</b> corny, kiddie or corporate. The stories are the real ones.</div></div>
+    <div class="card"><h3>on trend</h3><p>We sit at the front of culture, next to the best creators in the feed.</p><div class="but"><b>but not</b> a meme. Each tradition stays itself, never blended into mush.</div></div>
   </div>
 </section>
-
 <section id="personas">
-  <div class="eyebrow">04 · who we're for</div>
+  <div class="eyebrow">06 · who we're for</div>
   <h2>one family first, <em>and seven people we build for.</em></h2>
   <p class="lede">Unlike the brand books we studied (ipsy, Honest, ShoeDazzle), we're pre-launch: these are hypotheses, each with a way to check it. Every persona can come from any tradition, so names never hint at a religion. The app's first question ("where are you with religion right now?") already sorts people this way.</p>
   <p class="lede">Since 14 Oct 2026 one lead persona comes first: the family, built from the three cards that now open the homepage ("my partner and i grew up in different religions.", "we have two religions at home. what do we teach our kids?", "our kids ask questions about our religion, and we don't have the answers."). The seven below are still people we build for, as secondary personas. All of it, the lead included, is a hypothesis to test in interviews.</p>
 
+  <p class="check">Since 4 Nov, one faith first applies to every persona: inside a path, everything stays in that faith; crossing faiths happens in "my own religion". Since 10 Nov, a two-faith family follows two separate paths and switches between them; the faiths are never mixed in one lesson. Marketing still leads with a Christian family (see 02).</p>
   <div class="eyebrow">the lead persona</div>
   <div class="cards">
     <article class="persona"><div class="who"><img src="img/guy-wave.webp" alt=""><div><div class="name">Sara &amp; Theo</div><div class="role">the family · 30s–40s</div></div></div>
       <div><p class="say">"We grew up in different religions. Now the kids ask us questions, and we don't have the answers."</p>
       <p class="facts">One home, one or two traditions. Partners who want to understand each other's family, and parents who want to teach their kids without picking a winner. Sometimes it's one faith they half remember and can't explain. They want roots for the kids and peace at the table, not a debate.</p>
-      <div class="four"><div><h4>reads</h4><p>one door, or two side by side; the stories behind what the kids keep asking about.</p></div><div><h4>plays</h4><p>a family quiz at the table; "what does it actually mean?"</p></div><div><h4>writes</h4><p>the kids' questions, and the family's line of the week.</p></div><div><h4>practices</h4><p>one blessing from each side; one breath before bed.</p></div></div>
+      <div class="four"><div><h4>reads</h4><p>one path, or two separate paths they switch between (never mixed in one lesson); the stories behind what the kids keep asking about.</p></div><div><h4>plays</h4><p>a family quiz at the table; "what does it actually mean?"</p></div><div><h4>writes</h4><p>the kids' questions, and the family's line of the week.</p></div><div><h4>practices</h4><p>one blessing from each side; one breath before bed.</p></div></div>
       <div class="want"><b>what we want them to do:</b> one lesson a week together, and feel they can answer the next question.</div>
       <p class="check">How we'll know: interview families from each of the three cards; then, do the ones who sign up (partner, kids, kidsask) open a lesson together in week one?</p></div></article>
   </div>
@@ -201,16 +303,16 @@ figure{margin:0}
 
     <article class="persona"><div class="who"><img src="img/guy-meditate.webp" alt=""><div><div class="name">Jordan</div><div class="role">the seeker · 26</div></div></div>
       <div><p class="say">"I'm not religious. I just want something steady."</p>
-      <p class="facts">Put off by "organized religion", curious about the Stoics, Rumi, meditation and the research. Takes "my own path".</p>
+      <p class="facts">Put off by "organized religion", curious about the Stoics, Rumi, meditation and the research. Takes "my own religion".</p>
       <div class="four"><div><h4>reads</h4><p>wisdom stories from every tradition, each with its source.</p></div><div><h4>plays</h4><p>match the idea to its source, the quick round, the rhythm.</p></div><div><h4>writes</h4><p>an evening review.</p></div><div><h4>practices</h4><p>breath, walking, a body scan. Yoga would fit here.</p></div></div>
       <div class="want"><b>what we want them to do:</b> build a daily practice that's theirs, and try one week inside a tradition.</div>
       <p class="check">How we'll know: does a Seeker take a "taste from next door" and keep the line?</p></div></article>
 
     <article class="persona"><div class="who"><img src="img/guy-namaste.webp" alt=""><div><div class="name">Priya &amp; Dan</div><div class="role">the bridge-builders · 34</div></div></div>
       <div><p class="say">"My partner is Jewish and I'm Hindu. I want to understand her family before Passover."</p>
-      <p class="facts">Learning someone else's door out of love. Needs practical, respectful basics fast.</p>
+      <p class="facts">Learning someone else's path out of love. Needs practical, respectful basics fast.</p>
       <div class="four"><div><h4>reads</h4><p>the holiday coming up; what the words at the table mean.</p></div><div><h4>plays</h4><p>say it back; match the word to its meaning.</p></div><div><h4>writes</h4><p>questions to ask their partner.</p></div><div><h4>practices</h4><p>the blessing, the greeting, one ritual together.</p></div></div>
-      <div class="want"><b>what we want them to do:</b> walk two doors side by side and send each other a lantern.</div>
+      <div class="want"><b>what we want them to do:</b> each walk a path (two separate paths, switching between them) and send each other a lantern.</div>
       <p class="check">How we'll know: do couples send lanterns back and forth in the first week?</p></div></article>
 
     <article class="persona"><div class="who"><img src="img/guy-cheer.webp" alt=""><div><div class="name">Nicole</div><div class="role">the parent · 38</div></div></div>
@@ -237,98 +339,126 @@ figure{margin:0}
 </section>
 
 <section id="voice">
-  <div class="eyebrow">05 · voice</div>
-  <h2>how we sound <em>today.</em></h2>
-  <p class="lede">Taken from the copy that's live now. It's close to what we want; the open questions at the end list what's still being decided.</p>
+  <div class="eyebrow">07 · voice</div>
+  <h2>warm first. <em>punchy, never corny.</em></h2>
+  <p class="lede">In the app your path's celebrity guide says every line and says "i"; Finn has no lines (14 Nov). On the website the company speaks as "we". "we" only ever means the company. The full guide is docs/brand/MASCOT_VOICE.md: read every line as the person in that moment (grieving, scared, low, curious, dragged there by their parents) and ask whether Usha would have said it that way.</p>
   <div class="say-grid">
-    <div class="is"><h3>we are</h3><div class="chips"><span class="chip">lowercase, mostly</span><span class="chip">short</span><span class="chip">warm</span><span class="chip">concrete</span><span class="chip">gently funny</span><span class="chip">encouraging</span><span class="chip">American spelling</span></div>
-    <p style="color:#ffffffbb;font-size:15px">We talk to you the way a friend who knows the stories would: "one breath. that's the practice." "not quite, that's what the week is for." "right where you left it."</p></div>
-    <div class="isnt"><h3>we are not</h3><div class="chips"><span class="chip">preachy</span><span class="chip">guilt-trippy</span><span class="chip">salesy</span><span class="chip">comparing faiths</span><span class="chip">clinical</span><span class="chip">British spelling</span></div>
-    <p style="color:var(--soft);font-size:15px">We never tell anyone what to believe, never say a missed day is a failure, and never claim the science "proves" faith.</p></div>
+    <div class="is"><h3>we are</h3><div class="chips"><span class="chip">warm first</span><span class="chip">lowercase, mostly</span><span class="chip">short</span><span class="chip">verb-led</span><span class="chip">a little playful</span><span class="chip">specific</span><span class="chip">motivating</span><span class="chip">American spelling</span></div>
+    <p style="color:#ffffffbb;font-size:15px">Write UI copy like the best consumer apps. "you're back. that's what matters. let's go." "five days in a row. look at you." "tomorrow i'm taking you somewhere new."</p></div>
+    <div class="isnt"><h3>we are not</h3><div class="chips"><span class="chip">corny</span><span class="chip">kiddie</span><span class="chip">corporate</span><span class="chip">preachy</span><span class="chip">guilt-trippy</span><span class="chip">cold or legal</span><span class="chip">comparing faiths</span><span class="chip">British spelling</span></div>
+    <p style="color:var(--soft);font-size:15px">Killed by the owner: "finish it to earn a keepsake for your shelf" ("so corny"), "today's class", "fly there · walk it in 3D", "(stand-in voice in this demo)", "we can't tell you what comes next" (cold).</p></div>
   </div>
+
+  <h3 style="margin-top:28px">the voice rules</h3>
+  <ol class="rules">
+    <li><b>Meet the feeling, then the offer.</b>"i'm so sorry. you don't have to carry this alone." Even funny lines stay kind. Never guilt, shame, fear or pressure.</li>
+    <li><b>Always motivate.</b>Progress lines celebrate: "you climbed higher", "look how far you've come". Never "the hill never ends", "only one step", "just".</li>
+    <li><b>Roast the stale, never the faith.</b>Finn can call out boring faith apps: tired fonts, stock sunsets, guilt notifications, paywalls on prayer, hour-long audio. "your grandma's prayer app called. it wants its font back." Never name a competitor. Never mock a faith, clergy, believers or grandparents: the joke lands on the app, never the grandma.</li>
+    <li><b>Say "celebrity guides".</b>Never just "famous guides", which could mean famous scholars. Don't name a celebrity in copy unless that use is approved.</li>
+    <li><b>Never say "signed".</b>Name celebrities as guides. Not "signed", "confirmed" or "under contract" about any celebrity or scholar, in anything shared outside the company. Say "a scholar of each faith reviews every class".</li>
+    <li><b>The guide talks; Finn celebrates.</b>Your path's celebrity guide asks every question and says every scripted line, with their photo and name. Finn has no lines and is never voiced: still art and a bounce only. The live AI chat is labeled "your [faith] guide · powered by AI", never "Denzel says" (14 Nov; replaces the 10 Nov "mascot chats" rule).</li>
+    <li><b>Prayer is a choice.</b>Pair "pray" with choice: "pray, if you want", "watch, learn, or join in".</li>
+    <li><b>No sing-along.</b>Never ask anyone to sing, hold a mic, "hold to sing" or "say it back". Music stays; singing along is their own free choice, never prompted or measured.</li>
+    <li><b>No romance, ever.</b>No love, flirting or dating angle. When the owner asks for "wow", he means spectacle and jaw-drop.</li>
+    <li><b>No draft labels, no limits talk.</b>No "draft", "review pending", "demo" or "stand-in" in anything users see. Never mention daily AI limits.</li>
+    <li><b>Never invent people or numbers.</b>No made-up testimonials, quotes or community counts. First-person lines run only over real people saying their own words, with consent.</li>
+    <li><b>No AI speaks as God.</b>No invented words for God or put in a holy figure's mouth. Quote real texts with their source, straight: no puns on scripture.</li>
+    <li><b>Crisis care, every language.</b>Danger or self-harm always points to 988 (US) or local emergency help.</li>
+  </ol>
+
   <div class="tw"><table>
-    <thead><tr><th>moment</th><th>what we say (live)</th><th>why</th></tr></thead>
+    <thead><tr><th>moment</th><th>what Finn says (live in the app)</th><th>why</th></tr></thead>
     <tbody>
-      <tr><td>a right answer</td><td><span class="lw">yes — exactly.</span> <span class="lw">that's it.</span> <span class="lw">right on.</span> <span class="lw">lit.</span></td><td>short, warm, a little variety so it never feels canned</td></tr>
+      <tr><td>a right answer</td><td><span class="lw">yes — exactly.</span> <span class="lw">that's it.</span> <span class="lw">right on.</span> <span class="lw">lit.</span> (and Finn bounces in)</td><td>short, warm, a little variety so it never feels canned</td></tr>
       <tr><td>a wrong answer</td><td><span class="lw">almost.</span> then the answer, then <span class="lw">okay, next</span></td><td>a shrug, never a scold; the reveal is the interesting part</td></tr>
       <tr><td>finishing a lesson</td><td><span class="lw">you're on the hill!</span> · <span class="lw">day 12. done!</span> · proud of you. see you tomorrow.</td><td>the one place we celebrate out loud</td></tr>
       <tr><td>coming back after a gap</td><td>rest days had your back. your streak is still here. · (if it did break) earn your streak back: finish 2 lessons today.</td><td>no guilt, ever; rest is built in, and a way back is always free</td></tr>
-      <tr><td>the streak</td><td>one lesson a day grows it. rest days protect it. · 7 days, no rest day needed: golden streak.</td><td>the sun is our flame and the number leads. rest days are soft moons, never red</td></tr>
+      <tr><td>the streak</td><td>one lesson a day grows it. rest days protect it. · 7 days in a row, no rest day: your streak is lit.</td><td>the sun is our flame and the number leads. rest days are soft moons, never red</td></tr>
       <tr><td>the streak saver (8 pm)</td><td>your 12-day streak would love one lesson tonight. i'll keep the lantern on.</td><td>only when no rest day is left; never on a quiet day, never at bedtime</td></tr>
       <tr><td>after a quiet week</td><td>we'll stop reminding you for now. your hill will be right here.</td><td>then we go quiet</td></tr>
-      <tr><td>the day's end</td><td>carry: the light in me sees the light in you. · see you tomorrow.</td><td>one line to take into the day</td></tr>
       <tr><td>day one's promise</td><td>nobody here will ever tell you what to believe.</td><td>we ask how you hold your faith, gently; we never tell</td></tr>
-      <tr><td>another tradition</td><td>a taste from next door · your path stays yours</td><td>curiosity, never conversion</td></tr>
     </tbody>
   </table></div>
-  <h3 style="margin-top:28px">words we never use about faith</h3>
-  <div class="chips">
-    <span class="chip" style="background:var(--card);border:1px solid var(--rule)">convert</span><span class="chip" style="background:var(--card);border:1px solid var(--rule)">the same as (another faith)</span><span class="chip" style="background:var(--card);border:1px solid var(--rule)">better than</span><span class="chip" style="background:var(--card);border:1px solid var(--rule)">you should believe</span><span class="chip" style="background:var(--card);border:1px solid var(--rule)">science proves</span><span class="chip" style="background:var(--card);border:1px solid var(--rule)">failed / broke your streak</span><span class="chip" style="background:var(--card);border:1px solid var(--rule)">organized religion (as a put-down)</span>
+  <h3 style="margin-top:28px">words we never use</h3>
+  <div class="chips no">
+    <span class="chip">cool again</span><span class="chip">famous guides</span><span class="chip">signed</span><span class="chip">draft</span><span class="chip">the hill never ends</span><span class="chip">only one step</span><span class="chip">keepsake for your shelf</span><span class="chip">convert</span><span class="chip">the same as (another faith)</span><span class="chip">better than</span><span class="chip">you should believe</span><span class="chip">science proves</span><span class="chip">failed / broke your streak</span><span class="chip">organized religion (as a put-down)</span><span class="chip">fob</span>
   </div>
-  <p class="check">Style: American spelling everywhere (practice, honor, color, center, neighbor). Product surfaces are lowercase; prose and legal use "Infinite Hill".</p>
+  <p class="check">Style: American spelling everywhere (practice, honor, color, center, neighbor). Product surfaces are lowercase; prose and legal use "Infinite Hill". Emoji rarely, and never in grief, health or crisis. Exclamation points only for real joy.</p>
 </section>
 
 <section id="look">
-  <div class="eyebrow">06 · the look</div>
-  <h2>lemon, black, <em>and a lot of air.</em></h2>
+  <div class="eyebrow">08 · the look</div>
+  <h2>lime and black. <em>loud.</em></h2>
+  <p class="lede">Magna's rule: one ownable color pair, everywhere. Lime and black carry the brand on the site, in the app, on the boards and in the films. Never drop the yellow: without it Finn looks off.</p>
   <div class="sw">
-    <div class="swatch"><div class="chipc" style="background:#EEFF6A"></div><div class="t"><b>lemon</b><span>#EEFF6A · the one accent</span></div></div>
-    <div class="swatch"><div class="chipc" style="background:#0A0A0A"></div><div class="t"><b>ink</b><span>#0A0A0A · type, dark sections</span></div></div>
-    <div class="swatch"><div class="chipc" style="background:#F7F7F5"></div><div class="t"><b>cream</b><span>#F7F7F5 · app background</span></div></div>
-    <div class="swatch"><div class="chipc" style="background:#ECECE8"></div><div class="t"><b>sand</b><span>#ECECE8 · quiet panels</span></div></div>
-    <div class="swatch"><div class="chipc" style="background:#FFFFFF"></div><div class="t"><b>white</b><span>#FFFFFF · cards</span></div></div>
+    <div class="swatch"><div class="chipc" style="background:#EEFF6A"></div><div class="t"><b>lime</b><span>#EEFF6A · the brand color · black text on it</span></div></div>
+    <div class="swatch"><div class="chipc" style="background:#0A0A0A"></div><div class="t"><b>ink</b><span>#0A0A0A · type, boards, dark sections</span></div></div>
+    <div class="swatch"><div class="chipc" style="background:#F3EFE4"></div><div class="t"><b>cream</b><span>#F3EFE4 · words on dark; light pages</span></div></div>
     <div class="swatch"><div class="chipc" style="background:#6B6B6B"></div><div class="t"><b>mute</b><span>#6B6B6B · small labels</span></div></div>
-    <div class="swatch"><div class="chipc" style="background:#FFD23F"></div><div class="t"><b>glow</b><span>#FFD23F · "glowing ×3" only</span></div></div>
+    <div class="swatch"><div class="chipc" style="background:#FFD23F"></div><div class="t"><b>glow</b><span>#FFD23F · "glowing ×3", Finn's sneaker band</span></div></div>
     <div class="swatch"><div class="chipc" style="background:#E5484D"></div><div class="t"><b>coral</b><span>#E5484D · "almost." only</span></div></div>
   </div>
-  <div class="type">
-    <div class="row"><div class="lbl"><b>Baloo 2 ExtraBold</b>the wordmark and big celebrations</div><div style="font:800 44px/1 var(--mark)">infinite hill</div></div>
-    <div class="row"><div class="lbl"><b>Manrope ExtraBold</b>headlines, one italic word for emphasis</div><div style="font:800 32px/1.05 var(--display);letter-spacing:-.03em">it plays like a game. <em>it's taught like a faith.</em></div></div>
-    <div class="row"><div class="lbl"><b>Inter</b>body, buttons, small uppercase labels</div><div style="font:400 16px/1.5 var(--body)">a story, a game, a breath. then one line to carry into your day. <span class="eyebrow" style="display:block;margin-top:6px">day 21 · first camp done</span></div></div>
+  <div class="cards c2">
+    <div class="card"><h3>color rules</h3><p>Lime type sits on black, or black type sits on lime. Never lime type over a photo, never lime on lime. No rainbow treatments: no rainbow-gradient words, no rows of six colors side by side. The lesson episodes keep episode A's accents (pink, yellow, green, and each faith's own color); ask the owner before re-theming anything.</p></div>
+    <div class="card"><h3>one look, everywhere</h3><p>The site, the app and the films use black with cream words and lime for accents and buttons, in Anton and Manrope, with lowercase UI copy. The old night navy is gone (swept out 14–15 Nov). Films are branded like the app: film quiz rows look like the app's answer rows.</p></div>
   </div>
+  <div class="type">
+    <div class="row"><div class="lbl"><b>Anton</b>the wordmark, always all caps</div><div style="font:400 44px/1 var(--mark);text-transform:uppercase;letter-spacing:.01em">infinite hill</div></div>
+    <div class="row"><div class="lbl"><b>Anton</b>headlines, screen and card titles, big numbers, all caps; the word to stress turns lime (Anton has no italic)</div><div style="font:400 40px/.95 var(--board);text-transform:uppercase;letter-spacing:.01em">because you gotta <span style="background:var(--ink);color:var(--lemon);padding:0 .15em">have faith.</span></div></div>
+    <div class="row"><div class="lbl"><b>Anton</b>billboards and big statements, all caps</div><div style="font:400 40px/1 var(--board);text-transform:uppercase">every faith says forgive. <span style="background:var(--ink);color:var(--lemon);padding:0 .15em">nobody wants to go first.</span></div></div>
+    <div class="row"><div class="lbl"><b>Manrope Bold / ExtraBold</b>body, answers and buttons (600&ndash;800; never light)</div><div style="font:700 16px/1.5 var(--body)">a real story, the real teaching, then your life today. <span style="display:inline-block;margin-top:8px;background:var(--ink);color:var(--lemon);border-radius:999px;padding:7px 12px;font:800 12px var(--body)">start free</span></div></div>
+    <div class="row"><div class="lbl"><b>Manrope ExtraBold, caps, spaced</b>small labels: eyebrows, faith names, tags</div><div style="font:800 11px/1.2 var(--body);letter-spacing:.18em;text-transform:uppercase">hinduism &middot; week 1 &middot; days 1-7</div></div>
+    <div class="row"><div class="lbl"><b>Captions</b>film and photo captions: the line in Anton caps, the small note under it in Manrope Bold</div><div><div style="font:400 30px/1 var(--board);text-transform:uppercase">the night out</div><div style="margin-top:6px;font:700 12px/1.4 var(--body);color:var(--soft)">told by your celebrity guide</div></div></div>
+  </div>
+  <p class="src" style="margin-top:10px">Two faces only, as on the website and in the app: Anton and Manrope. No Inter, no Baloo 2.</p>
   <div class="cards c2" style="margin-top:18px">
-    <div class="card"><h3>shapes</h3><p>Pills for buttons, chips and the floating top bar. Cards at 18–24px corners. Nothing sharp.</p></div>
-    <div class="card"><h3>the website's rhythm</h3><p>A centered logo in a lemon bar; the celebrity collage and the headline; the game demo in a phone; eight doors; a day on the hill; the evidence; plans; Keepers; FAQ; a lemon footer with the big wordmark.</p></div>
+    <div class="card"><h3>photography</h3><p>Present-day people in their own clothes, real-feeling, grainy, with dignity and tension. Nobody grins at the camera. Never glossy stock models, never people dressed in brand colors. Painted sacred art lives inside the lesson films only: in brand work, ancient paintings read as "too hardcore religion". AI-generated people are for mood drafts only (internal layout and mood). Anything that runs, on a board, a post, the site, a film or the app, uses real people: reshot or licensed (10 Nov).</p></div>
+    <div class="card"><h3>shapes</h3><p>Pills for buttons, chips and the floating top bar. Cards at 18–24px corners. On boards and big statements: hard edges, a black field, one heavy font, a tiny logo.</p></div>
   </div>
   <div class="shots">
-    <figure><img src="img/site-desktop.png" alt="the website's first screen on a computer" loading="lazy"><figcaption>The website's first screen on a computer.</figcaption></figure>
+    <figure><img src="img/site-desktop.png" alt="the website's first screen on a computer" loading="lazy"><figcaption>The website as of October 2026, for reference. The hero copy and homepage order have since changed (see 01); black, cream and lime, loud, is the direction.</figcaption></figure>
     <div class="cards c2" style="margin-top:0">
-      <figure><img src="img/site-phone.png" alt="the website's first screen on a phone" loading="lazy"><figcaption>On a phone: faces, headline and Start free together.</figcaption></figure>
-      <figure><img src="img/demo.png" alt="the game demo in a phone, eight doors" loading="lazy"><figcaption>The demo: a different game for each door, ending at a lookout.</figcaption></figure>
+      <figure><img src="img/site-phone.png" alt="the website's first screen on a phone" loading="lazy"><figcaption>On a phone, October 2026: faces, headline and Start free together.</figcaption></figure>
+      <figure><img src="img/demo.png" alt="the game demo in a phone, eight doors" loading="lazy"><figcaption>The October demo. It showed eight doors side by side; today a person picks one faith (or "my own religion") and stays in it.</figcaption></figure>
     </div>
   </div>
 </section>
 
 <section id="mascot">
-  <div class="eyebrow">07 · the guy</div>
-  <h2>one character, <em>sixteen moods.</em></h2>
-  <p class="lede">A round yellow face with an infinity mask, a white "infinite hill" hoodie, black joggers and yellow-striped sneakers. He's the guide, not the faith: he cheers your effort, never a belief. These are the live animations.</p>
+  <div class="eyebrow">09 · Finn</div>
+  <h2>Finn. <em>the person you always want to be around.</em></h2>
+  <p class="lede">A fun, smiling, infinite sun in a backwards cap. The owner named him Finn (from in-fin-ite) on 3 Nov. Use "Finn" in docs and planning now; the name goes into app or site copy only after a trademark and app-store search. He's modeled on Usha Kiran, the founder's mother, a teacher who made everyone feel like the best person in the world. He's the guide, not the faith: he cheers your effort, never a belief.</p>
+  <div class="cards c2">
+    <div class="card dark"><h3>only the approved Finn. anywhere.</h3><p>Every logo, splash screen, icon, pop-up, film frame and post uses the approved, redrawn art: apps/app/assets/mascot/*.webp. Never an old pre-redraw version (a face with no cap, the old sitting pose). Whenever ChatGPT or Runway draws him, upload the approved art and check every frame against the eight points.</p></div>
+    <div class="card"><h3>the eight-point check</h3><p>1 infinity-sign glasses (not round goggles) · 2 small smile and pink cheeks · 3 black cap worn backwards · 4 cream hoodie reading "infinite hill" · 5 white gloves · 6 black sweatpants · 7 cream sneakers with one yellow band · 8 round yellow head.</p></div>
+  </div>
   <div class="guys">
     <div class="guy"><img src="img/guy-wave.webp" alt="" loading="lazy"><b>wave</b><span>hello; the start of a lesson</span></div>
     <div class="guy"><img src="img/guy-think.webp" alt="" loading="lazy"><b>think</b><span>while you answer</span></div>
     <div class="guy"><img src="img/guy-cheer.webp" alt="" loading="lazy"><b>cheer</b><span>a right answer</span></div>
-    <div class="guy"><img src="img/guy-celebrate.webp" alt="" loading="lazy"><b>celebrate</b><span>the win screen, the summit</span></div>
+    <div class="guy"><img src="img/guy-celebrate.webp" alt="" loading="lazy"><b>celebrate</b><span>the win screen</span></div>
     <div class="guy"><img src="img/guy-meditate.webp" alt="" loading="lazy"><b>meditate</b><span>the breath and the sit</span></div>
     <div class="guy"><img src="img/guy-walk.webp" alt="" loading="lazy"><b>walk</b><span>up to today's stone</span></div>
-    <div class="guy"><img src="img/guy-climb.webp" alt="" loading="lazy"><b>climb</b><span>the 100 days; hard parts</span></div>
+    <div class="guy"><img src="img/guy-climb.webp" alt="" loading="lazy"><b>climb</b><span>the hard parts</span></div>
     <div class="guy"><img src="img/guy-sit_on_rock.webp" alt="" loading="lazy"><b>sit on rock</b><span>after today's lesson</span></div>
     <div class="guy"><img src="img/guy-sleep.webp" alt="" loading="lazy"><b>sleep</b><span>the hill after 8pm</span></div>
     <div class="guy"><img src="img/guy-read.webp" alt="" loading="lazy"><b>read</b><span>your book</span></div>
     <div class="guy"><img src="img/guy-lantern.webp" alt="" loading="lazy"><b>lantern</b><span>today's lantern, lit</span></div>
     <div class="guy"><img src="img/guy-sunrise_stretch.webp" alt="" loading="lazy"><b>sunrise stretch</b><span>lighting your day</span></div>
-    <div class="guy"><img src="img/guy-namaste.webp" alt="" loading="lazy"><b>namaste</b><span>before the lantern; the FAQ</span></div>
+    <div class="guy"><img src="img/guy-namaste.webp" alt="" loading="lazy"><b>namaste</b><span>Hindu path only</span></div>
     <div class="guy"><img src="img/guy-thumbs_up.webp" alt="" loading="lazy"><b>thumbs up</b><span>today's done; pricing</span></div>
     <div class="guy"><img src="img/guy-peek.webp" alt="" loading="lazy"><b>peek</b><span>on the website</span></div>
     <div class="guy"><img src="img/guy-tap_reaction.webp" alt="" loading="lazy"><b>tap</b><span>when you tap him</span></div>
   </div>
-  <div class="cards c2">
-    <div class="card"><h3>rules for the guy</h3><p>Always fully in frame, never cropped. Never jokes about God, scripture or ritual. Never wears one tradition's dress. Still pictures for anyone who's turned motion off. New moods are made as 3-second loops on pure green, then keyed.</p></div>
-    <div class="card"><h3>motion, in general</h3><p>Dignity for the faces and the faith: celebrity photos only drift slowly. Play lives inside the phone and in the guy. Sounds are bell-like, never buzzers. Every animation ends calm.</p></div>
+  <div class="cards c3">
+    <div class="card"><h3>Finn celebrates, wordlessly</h3><p>Finn pops in on right answers, streaks and finished stories, using the approved still art with a bounce. He never talks, never has a speech bubble and is never voiced (14 Nov). The dance videos were pulled (14 Nov: not good enough); dancing comes back only if a new version clears the owner.</p></div>
+    <div class="card"><h3>Finn's drip</h3><p>The owner loves it (7 Nov): streaks and milestones unlock fits for Finn: a cap, a chain, a jacket. Every fit is a variation of the approved backwards-cap Finn. Never a tradition's religious dress as a costume. <span class="tag prop">being explored</span></p></div>
+    <div class="card"><h3>rules for Finn</h3><p>Always fully in frame. Never jokes about God, scripture or ritual. Never inside a painted sacred story: in a film he reacts at the cold open and closes, outside the story. Never on an accusation billboard (a cartoon turns it into a joke). Still pictures for anyone who's turned motion off.</p></div>
   </div>
 
   <h3 style="margin-top:32px">the model sheet</h3>
   <p>The reference for every new picture and animation: front, three-quarter, side and back. Hand these to anyone drawing him, and to ChatGPT or Runway with every request.</p>
-  <div class="shots"><figure><img src="img/model-turnaround.webp" alt="the mascot from the front, three-quarter, side and back" loading="lazy"><figcaption>Turnaround. Round lemon-yellow face with soft orange cheeks; black infinity-symbol glasses; black cap worn backwards; cream "infinite hill" hoodie; black joggers; white gloves.</figcaption></figure></div>
+  <div class="shots"><figure><img src="img/model-turnaround.webp" alt="Finn from the front, three-quarter, side and back" loading="lazy"><figcaption>Turnaround. Round lemon-yellow face with soft pink cheeks; black infinity-sign glasses; black cap worn backwards; cream "infinite hill" hoodie; black sweatpants; white gloves; cream sneakers with one yellow band.</figcaption></figure></div>
   <div class="cards c2">
     <div class="card"><h3>the sneaker, exactly</h3><p>Plain cream low-top, white sole, cream laces, and ONE wide solid yellow band (#FFD23F) across the middle. No parallel stripes, no checks or swooshes, no logos. Two or three stripes are another company's trademark; we never use them.</p></div>
     <div class="card"><h3>the face stays the same yellow</h3><p>Lantern light, sunsets and glows touch only the props and the background. His face is always the same clean lemon-yellow, so he never looks like a different character.</p></div>
@@ -336,13 +466,119 @@ figure{margin:0}
 
   <h3 style="margin-top:32px">twelve expressions</h3>
   <p>Faces for reminders, reactions and small moments. Left to right, top to bottom: proud, delighted, laughing, surprised · curious, thinking, worried, sheepish · sleepy, calm, quietly moved, determined.</p>
-  <div class="shots"><figure><img src="img/model-expressions.webp" alt="twelve expressions of the mascot's face" loading="lazy"><figcaption>Use the gentle ones (calm, quietly moved) for grief, rest days and the lantern. Save laughing and surprised for wins. Never worried or sheepish about someone's faith or a missed day.</figcaption></figure></div>
+  <div class="shots"><figure><img src="img/model-expressions.webp" alt="twelve expressions of Finn's face" loading="lazy"><figcaption>Use the gentle ones (calm, quietly moved) for grief, rest days and the lantern. Save laughing and surprised for wins. Never worried or sheepish about someone's faith or a missed day.</figcaption></figure></div>
+</section>
+
+<section id="billboards">
+  <div class="eyebrow">10 · billboards and big statements</div>
+  <h2>every faith says. <em>then it catches us.</em></h2>
+  <p class="lede">Direction A, "every faith says", is the current billboard system (creative director's brief, 10 Nov: docs/brand/billboards-v2-brief.md). It replaced the v1 joke boards, which the owner called "way off… really bad. How is anyone supposed to take our billboards seriously?"</p>
+  <div class="quote ink">the shock is never the picture. the shock is <b>a true sentence</b> that catches the reader doing exactly what their own faith told them not to do.<small style="color:#ffffffaa">the one thing to remember</small></div>
+  <div class="cards c3">
+    <div class="card"><h3>the idea</h3><p>Each board names one command every faith shares, then a second line catches us breaking it this week. The target is "us", the brand included, never a group or a faith.</p></div>
+    <div class="card"><h3>why only we can say it</h3><p>He Gets Us has to end on one faith. A brand that holds eight paths can say "every faith says". It's our moat on a billboard.</p></div>
+    <div class="card"><h3>Christian-first</h3><p>The launch board is "love your enemy". A Christian reads Jesus's words, then learns the whole world was handed the same assignment.</p></div>
+  </div>
+
+  <div class="bbwall">
+    <div class="bbitem">
+      <div class="bbcap"><b>01 · no better than anyone</b><span>type only · the reader supplies the image</span></div>
+      <div class="board full"><div class="tx"><div class="bset">Every faith says you're no better than anyone.</div><div class="bturn">You just thought of someone.</div></div><div class="bwm">infinite hill<small>making religion yours again.</small></div></div>
+      <div class="feedp full"><div class="tx"><div class="bset">Every faith says you're<br>no better than anyone.</div><div class="bturn">You just<br>thought of<br>someone.</div></div><div class="bwm">infinite hill<small>making religion yours again.</small></div></div>
+    </div>
+    <div class="bbitem">
+      <div class="bbcap"><b>02 · love your enemy</b><span>the launch board · opens on words every Christian knows</span></div>
+      <div class="board"><div class="ph" style="background-image:url(img/billboard-a-enemy.jpg)"></div><div class="tx"><div class="bset">Every faith says love your enemy.</div><div class="bturn">Most of us just<br>want them to lose.</div></div><div class="bwm">infinite hill<small>making religion yours again.</small></div></div>
+      <div class="feedp"><div class="ph" style="background-image:url(img/billboard-a-enemy.jpg);background-position:62% center"></div><div class="tx"><div class="bset">Every faith says<br>love your enemy.</div><div class="bturn">Most of us<br>just want<br>them to lose.</div></div><div class="bwm">infinite hill<small>making religion yours again.</small></div></div>
+    </div>
+    <div class="bbitem">
+      <div class="bbcap"><b>03 · welcome the stranger</b><span>legal check on the doorbell-camera look</span></div>
+      <div class="board"><div class="ph" style="background-image:url(img/billboard-a-stranger.jpg)"></div><div class="tx"><div class="bset">Every faith says welcome the stranger.</div><div class="bturn">We check the<br>doorbell cam first.</div></div><div class="bwm">infinite hill<small>making religion yours again.</small></div></div>
+      <div class="feedp"><div class="ph" style="background-image:url(img/billboard-a-stranger.jpg);background-position:55% 30%"></div><div class="tx"><div class="bset">Every faith says<br>welcome the stranger.</div><div class="bturn">We check<br>the doorbell<br>cam first.</div></div><div class="bwm">infinite hill<small>making religion yours again.</small></div></div>
+    </div>
+    <div class="bbitem">
+      <div class="bbcap"><b>04 · feed the hungry</b><span>type only · the bulletin runs only within sight of a real corner · we never photograph unhoused people to sell an app</span></div>
+      <div class="board full"><div class="tx"><div class="bset">Every faith says feed the hungry.</div><div class="bturn">He's been on that corner all year.</div></div><div class="bwm">infinite hill<small>making religion yours again.</small></div></div>
+      <div class="feedp full"><div class="tx"><div class="bset">Every faith says<br>feed the hungry.</div><div class="bturn">He's been<br>on that<br>corner<br>all year.</div></div><div class="bwm">infinite hill<small>making religion yours again.</small></div></div>
+    </div>
+    <div class="bbitem">
+      <div class="bbcap"><b>05 · forgive</b></div>
+      <div class="board"><div class="ph" style="background-image:url(img/billboard-a-forgive.jpg);background-position:56% center"></div><div class="tx"><div class="bset">Every faith says forgive.</div><div class="bturn">Nobody wants<br>to go first.</div></div><div class="bwm">infinite hill<small>making religion yours again.</small></div></div>
+      <div class="feedp"><div class="ph" style="background-image:url(img/billboard-a-forgive.jpg)"></div><div class="tx"><div class="bset">Every faith<br>says forgive.</div><div class="bturn">Nobody<br>wants to<br>go first.</div></div><div class="bwm">infinite hill<small>making religion yours again.</small></div></div>
+    </div>
+    <p class="bbnote"><b>AI drafts, for composition and mood only.</b> The photos were generated to judge layout. Real boards use reshot or licensed photos of real people. Left: the 14x48 highway bulletin, to scale. Right: the same board as a 4:5 phone post.</p>
+  </div>
+
+  <div class="cards c2">
+    <div class="card"><h3>the layout system</h3><p><b>14x48 bulletin:</b> black field. The black-and-white photo takes the left 45%, cut hard, no fade. Setup line in white Anton at about an eighth of the board's height; turn line in lime Anton at about a quarter (readable at about 500 ft). Lime touches only the turn line. Wordmark bottom right in white at about 4%, "making religion yours again." beneath it. No Finn. 6% margins.</p><p><b>Words:</b> turn line 6 words or fewer. The setup line repeats across the series so drivers only read the turn.</p><p><b>Phone (1080x1350 feed, 1080x1920 story):</b> photo on the top half or none; turn line broken by hand to 2–3 words a line; must read at a 375px-wide preview. If a word won't fit, change the word.</p></div>
+    <div class="card"><h3>what comes next</h3><p><span class="tag prop">proposed</span> A scripture-source footnote on each board, and a payoff line. Neither is approved yet.</p><p><b>Direction B, "the hard seat":</b> real people, in their own words, on the hardest kind thing they did for someone who hurt them (the line the owner loved: "I SAVED A SEAT FOR THE ONE WHO HURT ME"). It runs only with real people's true stories, with consent, photographed for real. Never generate it to save time.</p><p><b>Direction C, "second look":</b> a two-frame reveal (you judged; you were wrong). A film and social idea, not a static board.</p></div>
+  </div>
+
+  <h3 style="margin-top:28px">the kill list (from v1)</h3>
+  <ol class="rules">
+    <li><b>No punchlines on peace.</b>A joke releases the tension the line should create. These boards make you go quiet, not smirk.</li>
+    <li><b>No commonality through snacks.</b>"We share fries" shrinks the hardest thing humans do. If the act costs nothing, it isn't the idea.</li>
+    <li><b>No faith person as a prop.</b>Never use a believer as set dressing for a gag.</li>
+    <li><b>No scripture riffs.</b>Quote the teaching straight or don't quote it.</li>
+    <li><b>No grinning.</b>Glossy smiling models are stock photos. Dignity, not delight.</li>
+    <li><b>No brand-color costumes.</b>People wear their own clothes. Lime lives only in the type.</li>
+    <li><b>No fake first-person testimony.</b>First-person lines run only over real people saying their own true words, with consent.</li>
+    <li><b>No tension, no board.</b>Every image needs two forces pulling: hurt and grace, judgment and truth.</li>
+    <li><b>No lime on lime, no lime on photos.</b>Lime on black, or black on lime.</li>
+    <li><b>No unbroken type.</b>Break every line by hand; test at 375px and at 14x48 thumbnail. Rewrite the words; don't shrink the type.</li>
+    <li><b>Never claim the faiths are the same.</b>Claim one specific shared command per board, checked by every Keeper.</li>
+    <li><b>No board that could hurt the wrong reader.</b>Read every line as the most hurt person who will drive past it. ("Honor your father" was killed: it would tell an abuse survivor to call their abuser.)</li>
+  </ol>
+  <p class="check">Before anything goes public: Keeper sign-off on every "every faith says" claim, a legal check on the doorbell-camera look and the headline system, and phone-size screenshots to the owner.</p>
+</section>
+
+<section id="films">
+  <div class="eyebrow">11 · lessons and films</div>
+  <h2>a real story. the real teaching. <em>then today.</em></h2>
+  <p class="lede">The lesson standard (10 Nov, docs/LESSON_STANDARD.md). Every lesson on every path has one shape. Hindu week 1 is the finished model. The test for every lesson: could only this religion's story have taught this? If any self-help app could say it, rewrite it.</p>
+  <p class="check">Updated 14 Nov: days 1–28 of each faith now run as one day: a 60-second story film → the guide's questions → the reveal → claim my card → your path. The guide asks every question; Finn's beats below are wordless (still art and a bounce, no lines). The 10 Nov shape still describes later days.</p>
+  <div class="cards c3">
+    <div class="card"><div class="eyebrow">1</div><h3>the path screen</h3><p>The week card ("week 1 · days 1-7"), the streak, and your guide saying today's title.</p></div>
+    <div class="card"><div class="eyebrow">2</div><h3>the film</h3><p>40–50 seconds, vertical, sound on. No film yet? A tap-through story over that lesson's paintings.</p></div>
+    <div class="card"><div class="eyebrow">3</div><h3>five quick games</h3><p>Guess, match, myth-or-true, fork (a friend's text: what do you say?), order (build the word). They test the teaching, not a life tip.</p></div>
+    <div class="card"><div class="eyebrow">4</div><h3>today</h3><p>The thing to carry, how to do it, and "where this comes from" (the sources).</p></div>
+    <div class="card"><div class="eyebrow">5</div><h3>the win screen</h3><p>Streak, games score, the word card (original script, how to say it, what it means), tomorrow's title.</p></div>
+  </div>
+
+  <h3 style="margin-top:28px">the film, beat by beat</h3>
+  <div class="tw"><table>
+    <thead><tr><th>beat</th><th>what happens</th></tr></thead>
+    <tbody>
+      <tr><td><b>cold open</b> · 1.8 s</td><td>The most shocking moment of the story and a 5–9 word hook ("a whole army lost to <i>one sage.</i>").</td></tr>
+      <tr><td><b>Finn reacts</b> · 1 s</td><td>A wordless reaction shot; the caption hook ("wait. <i>why?</i>") is on screen, not in Finn's mouth.</td></tr>
+      <tr><td><b>the story, narrated</b></td><td>85–125 words, short punchy sentences, big captions timed to the voice, one word lit lime.</td></tr>
+      <tr><td><b>the turn</b></td><td>A snap, a beat of silence and the music drop on the surprising moment.</td></tr>
+      <tr><td><b>the teaching</b></td><td>Said plainly, then one line about a teen's life today.</td></tr>
+      <tr><td><b>Finn closes</b> · 1.9 s</td><td>Finn cheers, wordless; the day's line runs as a caption ("a prayer for a <i>clear mind.</i>").</td></tr>
+    </tbody>
+  </table></div>
+  <div class="cards c2">
+    <div class="card"><h3>rules for the words</h3><p>Real stories from the tradition's own sources. Stay inside one faith (only "my own religion" crosses faiths, crediting each tradition plainly). Open to every school within a faith. No invented words for God. Prayer is always the viewer's choice. No romance angle. Nothing goes public before a scholar has read it.</p></div>
+    <div class="card"><h3>rules for the pictures</h3><p>One house style for every path: cinematic hand-painted sacred art, warm golden lamp and fire light, deep soft shadows, rich earth tones with deep red and gold, close human framing. The same characters look the same in every shot. The last shot is always today: real modern people of that faith, warm and everyday (real footage or licensed photos once it runs; AI people only in drafts). No blood, no text in pictures, only the approved Finn.</p></div>
+  </div>
+  <div class="isnt" style="margin-top:14px"><h3>never shown</h3><div class="chips"><span class="chip">the face of Jesus (only from behind, hands, or far away)</span><span class="chip">any prophet in Islam, in any form</span><span class="chip">any Sikh Guru, in any form</span><span class="chip">God, in traditions that don't depict God (Hindu deities may be shown, as Hindu art does)</span><span class="chip">an AI speaking as God</span></div></div>
+  <div class="cards c2">
+    <div class="card"><h3>episodes that drop <span class="tag prop">proposed</span></h3><p>The owner liked the sneaker-drop idea (7 Nov): episodes drop at a set weekly time with a countdown and teasers. Only the collectibles are scarce (a drop card, a Finn fit for watching within 48 hours or during a holy week). Lessons are always free and always there. No fake scarcity, no pay-to-get drops, and rest days still protect the streak.</p></div>
+    <div class="card"><h3>how a film gets made</h3><p>Script and shot list (Claude) → narration (ElevenLabs v4 in Runway) → pictures in the house style (ChatGPT, with the reference picture attached) → each picture becomes a 5-second 9:16 clip (Runway, Kling) → the edit: captions on the voice's pauses, the drop, music (our ffmpeg tools). About 400 Runway credits (about $4) a film.</p></div>
+  </div>
+  <p class="check">Status, 10 Nov: Hindu week 1 is in the house style with moving clips. The other seven paths' week 1 scripts are written and in production. Days 8+ run in the same lesson page with the tap-through story until their films are made. Before anything goes public, a scholar for each faith reads that path's scripts and pictures.</p>
 </section>
 
 <section id="world">
-  <div class="eyebrow">08 · the world</div>
-  <h2>a hill you climb <em>for five years.</em></h2>
-  <p class="lede">Every path is a painted trail. Each day is a stone; each camp ends at a lookout with its own painting; the top is the summit, day 1,791.</p>
+  <div class="eyebrow">12 · the world</div>
+  <h2>the hill is home. <em>the stories take you places.</em></h2>
+  <p class="lede">Paths are named by faith, never by a place (the old Olive Grove / Marigold home names and the eight-homes map are gone). Each story ends with the reveal: the real place tied to the story lights up as a spot on your path and your guide names it. Then you claim your card, and "see my path" shows this week's seven stories as a climb, lit spots showing their place and the next one a mystery. Places are named only after the story, never before. You go deeper in one faith; you don't tour all eight (14 Nov).</p>
+  <p class="check">Every place in Israel, the West Bank, Palestine, East Jerusalem or the Golan is labeled "the Holy Land" ("Tierra Santa"), never a modern country (15 Nov). For a parable or legend, keep the reveal honest: "where it's told", "see it at".</p>
+  <div class="cards c3">
+    <div class="card"><h3>two registers</h3><p>Outside the stories: your path, Finn and your guide, in black, cream and lime. Inside a story: cinematic sacred art. Finn never steps inside the sacred story.</p></div>
+    <div class="card"><h3>stories earn cards</h3><p>Each story ends with the reveal and one "claim my card" (14 Nov); cards are kept in your passport. Cards have rarity: holiday cards are limited editions; finishing a week makes them holo. A Wrapped-style year recap and, later, real pins and patches <span class="tag prop">being explored</span>.</p></div>
+    <div class="card"><h3>stamps are only for real life</h3><p>A stamp means you showed up in person: an IRL night, a service, a visit (10 Nov). The owner: "the artwork for the passport needs to be amazing otherwise who cares about a stamp." Style A, the postage stamp, chosen 3 Nov. Premium, collectible, one style, no people or faces. Plain stamps feel corny to kids unless they're done in a dope way.</p></div>
+  </div>
   <div class="looks">
     <figure><img src="img/lookout-1.webp" alt="" loading="lazy"><figcaption><b>first steps</b>camp 1 · day 21</figcaption></figure>
     <figure><img src="img/lookout-2.webp" alt="" loading="lazy"><figcaption><b>the stories</b>camp 2 · day 96</figcaption></figure>
@@ -350,47 +586,47 @@ figure{margin:0}
     <figure><img src="img/lookout-4.webp" alt="" loading="lazy"><figcaption><b>the text</b>camp 4 · day 231</figcaption></figure>
     <figure><img src="img/lookout-5.webp" alt="" loading="lazy"><figcaption><b>the big lookout</b>end of year one · day 331</figcaption></figure>
     <figure><img src="img/lookout-ranges.webp" alt="" loading="lazy"><figcaption><b>the ranges</b>years 2–5</figcaption></figure>
-    <figure><img src="img/lookout-summit.webp" alt="" loading="lazy"><figcaption><b>the summit</b>day 1,791</figcaption></figure>
   </div>
-  <div class="shots"><figure><img src="img/app-screens.png" alt="four app screens: the hill, your book, the lantern" loading="lazy"><figcaption>In the app: the hill after today's lesson, your book, today's lantern.</figcaption></figure></div>
-  <p class="check">Painting style: warm, painterly storybook, golden-hour light, a sandy trail up the middle; no people, no single religion's buildings.</p>
+  <div class="shots"><figure><img src="img/app-screens.png" alt="four app screens: the hill, your book, the lantern" loading="lazy"><figcaption>The lookout paintings and screens from the current Expo app: the hill after today's lesson, your book, today's lantern. Painting style: warm, painterly storybook, golden-hour light, a sandy trail up the middle; no people, no single religion's buildings.</figcaption></figure></div>
+  <p class="check">Progress copy on the hill always celebrates ("you climbed higher"). Never tell users the hill never ends.</p>
 </section>
 
 <section id="game">
-  <div class="eyebrow">09 · the game</div>
+  <div class="eyebrow">13 · the game</div>
   <h2>our words <em>for the game.</em></h2>
   <p class="lede">Borrowed from nobody. These are the names people see.</p>
   <div class="gloss">
-    <div><b>door</b><p>a path: seven traditions and "my own path".</p></div>
-    <div><b>the climb · the trail</b><p>the five years, drawn as a hill.</p></div>
+    <div><b>path</b><p>seven faiths and "my own religion". You pick one.</p></div>
+    <div><b>Finn</b><p>the mascot. (Name in public copy after the trademark check.)</p></div>
+    <div><b>your guide</b><p>your path's celebrity guide: tells every story and asks every question. Finn never talks.</p></div>
+    <div><b>episode · film</b><p>today's lesson: a 60-second story film, the guide's questions, the reveal, your card, your path.</p></div>
+    <div><b>the reveal · your path</b><p>after the story, its real place lights up as a spot on your path; "see my path" shows this week's seven stories.</p></div>
+    <div><b>what i live by</b><p>in "my own religion": your page of what's you, what you're still figuring out and what's not for you, each piece tagged with its faith and source. Faith paths get "what spoke to you".</p></div>
     <div><b>stone</b><p>one day's lesson on the trail.</p></div>
-    <div><b>camp · lookout · summit</b><p>the stages, the painted stop at each end, the top.</p></div>
+    <div><b>camp · lookout</b><p>the stages and the painted stop at each end.</p></div>
     <div><b>light</b><p>points earned in a lesson (for learning, never faith).</p></div>
     <div><b>glowing ×3</b><p>three right in a row.</p></div>
-    <div><b>levels</b><p>first steps · steady · deeper · sure-footed · keeper-level. Shown as five small suns.</p></div>
-    <div><b>today's three</b><p>finish the lesson, a clean run, keep a line.</p></div>
-    <div><b>lantern</b><p>lights when today's three are done; holds a line; can be sent to a friend.</p></div>
-    <div><b>go deeper</b><p>an optional harder round.</p></div>
-    <div><b>quick round</b><p>match against the clock, once a week.</p></div>
+    <div><b>the word card</b><p>the day's word: original script, how to say it, what it means.</p></div>
+    <div><b>lantern</b><p>lights when today is done; holds a line; can be sent to a friend.</p></div>
+    <div><b>passport · story card</b><p>trips earn story cards, kept in your passport. A stamp is only for showing up in real life.</p></div>
     <div><b>your line to carry</b><p>the one sentence to take into the day.</p></div>
     <div><b>your book</b><p>the lines you've kept.</p></div>
-    <div><b>walking with</b><p>friends you've swapped lanterns with.</p></div>
-    <div><b>a taste from next door</b><p>a one-minute look at another tradition, for people who asked.</p></div>
-    <div><b>the Guide</b><p>ask anything; it answers from your lessons.</p></div>
+    <div><b>the Guide</b><p>ask anything; your guide answers from your lessons (and, in "my own religion", from what you live by), inside your one faith. Labeled "powered by AI".</p></div>
   </div>
   <div class="cards c3" style="margin-top:20px">
-    <div class="card"><h3>the games</h3><p>call it · true or myth · put the scenes in order · the pairs · tap what you hear · say it · tap the rhythm · type it · the quick round.</p></div>
-    <div class="card"><h3>what makes it harder</h3><p>Closer wrong answers, fewer replays, typing instead of tapping, longer lines. The level moves between lessons, never in the middle of one.</p></div>
-    <div class="card"><h3>what never counts</h3><p>Prayer, belief, the breath, the sit. A missed day is never a failure; your days come with you.</p></div>
-    <div class="card"><h3>the streak</h3><p>A streak that grows one lesson a day, with rest days built in, because every tradition knows rest. Two rest days to start, never more than two, one earned back every 7 days; a missed day spends one on its own. If a streak breaks, two lessons in a day within three days earns it back, never for money. Seven days with no rest day turns it golden. It can be switched off under You, it stays calm on quiet days, and it never appears in prayers, the journal, the companion or the help card.</p></div>
+    <div class="card"><h3>the games</h3><p>guess · match · myth-or-true · fork (a friend's text: what do you say?) · order (build the word). Every game tests the faith's real teaching. No singing, no "say it back".</p></div>
+    <div class="card"><h3>what never counts</h3><p>Prayer, belief, the breath, the sit. A missed day is never a failure; your days come with you. No leaderboards.</p></div>
+    <div class="card"><h3>the streak</h3><p>A streak that grows one lesson a day, with rest days built in, because every tradition knows rest. Two rest days to start, never more than two, one earned back every 7 days; a missed day spends one on its own. If a streak breaks, two lessons in a day within three days earns it back, never for money. Seven days in a row with no rest day: "your streak is lit" (never "golden", 15 Nov). It can be switched off under You, it stays calm on quiet days, and it never appears in prayers, the journal, the companion or the help card.</p></div>
   </div>
 </section>
 
 <section id="paths">
-  <div class="eyebrow">10 · the paths</div>
-  <h2>eight doors, <em>each planned to the summit.</em></h2>
+  <div class="eyebrow">14 · the paths</div>
+  <h2>eight paths. <em>you walk one.</em></h2>
+  <p>Christianity first in every list. Each path is planned across five years. "my own religion" is the one place that crosses faiths, built from the world's traditions, each one taught faithfully, never blended or ranked.</p>
+  <p>The celebrity guides: Denzel Washington (Christianity), Nicole Kidman (Catholicism), Natalie Portman (Judaism), Mahershala Ali (Islam), Priyanka Chopra (Hinduism), Orlando Bloom (Buddhism), Diljit Dosanjh (Sikhism), Justin Bieber (my own religion). Use the faith names everywhere; "Simply Spiritual" and "Wildwonder" are old names, and "build your own" is only a call to action. In "my own religion", "what i live by" collects what you mark after each story ("this is me", "not sure yet", "not for me"), each piece tagged with its faith and source. Justin's line on the path is his 2021 GQ quote: "I don't want to let my shame of my past dictate what I'm able to do now for people."</p>
   <div class="tw"><table>
-    <thead><tr><th>door</th><th>year one (five camps)</th><th>years two to five</th></tr></thead>
+    <thead><tr><th>path</th><th>year one</th><th>years two to five</th></tr></thead>
     <tbody>
       <tr><td><b>Christianity</b></td><td>the parables, Mark read through, the Sermon on the Mount</td><td>the Bible in order · church history · where churches differ · the saints in their own words</td></tr>
       <tr><td><b>Catholicism</b></td><td>the Mass in 14 scenes, the rosary, the sacraments</td><td>the Bible with the deuterocanon · Church history · the Catechism · Augustine, Thérèse</td></tr>
@@ -399,12 +635,11 @@ figure{margin:0}
       <tr><td><b>Hinduism</b></td><td>Ganesha to the Gita, the practices, the Upanishads</td><td>the founder's own five-year plan</td></tr>
       <tr><td><b>Buddhism</b></td><td>the Buddha's life, metta, the Dhammapada</td><td>the suttas · the disciples · the schools · the sources</td></tr>
       <tr><td><b>Sikhism</b></td><td>the ten Gurus, seva and kirtan, Japji Sahib</td><td>the Nitnem · the Bhagats and history · the ragas · the Granth in order</td></tr>
-      <tr><td><b>my own path</b></td><td>wisdom stories with sources, practices, Rumi with Marcus Aurelius</td><td>the Stoics · the big questions · the Tao Te Ching · living it</td></tr>
+      <tr><td><b>my own religion</b></td><td>wisdom stories with sources, practices, Rumi with Marcus Aurelius</td><td>the Stoics · the big questions · the Tao Te Ching · living it</td></tr>
     </tbody>
   </table></div>
-  <p class="check">Days 1–21 are fully written. Everything after is a draft outline, each waiting on that tradition's Keeper.</p>
+  <p class="check">Every lesson follows the lesson standard (11). A year goes live only after repeated review passes and the owner's okay.</p>
 </section>
-
 <section id="social">
   <div class="eyebrow">the social playbook</div>
   <h2>tastefully playful, <em>never mocking faith.</em></h2>
@@ -414,14 +649,14 @@ figure{margin:0}
   <p>Duolingo's platform is "learning is hard, so we made it fun", and it's why their owl can get away with almost anything: he's pushy for a good cause. Ours does the same job. Every idea should pass one test: does it make showing up feel lighter without making the faith feel smaller?</p>
 
   <h3 style="margin-top:28px">the mascot's personality bible</h3>
-  <p>Duo became "unhinged" because the app really did nag, and users turned that into a meme; Duolingo leaned into what was already true. Copying "mascot + chaos" without that root falls flat. Our guy's truth is different: in the app he walks beside you, cheers when you finish, sits on a rock with you late at night, and holds a lantern for your friends. So that's who he is online.</p>
+  <p>Duo became "unhinged" because the app really did nag, and users turned that into a meme; Duolingo leaned into what was already true. Copying "mascot + chaos" without that root falls flat. Finn's truth is different: in the app he walks beside you, cheers when you finish, sits on a rock with you late at night, and holds a lantern for your friends. So that's who he is online.</p>
   <div class="say-grid">
     <div class="is"><h3>he is</h3><div class="chips"><span class="chip">a good walking buddy</span><span class="chip">cheeky, never cruel</span><span class="chip">easily delighted</span><span class="chip">a bit extra about streaks</span><span class="chip">curious about every tradition</span><span class="chip">quiet when you're hurting</span></div>
     <p style="color:#ffffffbb;font-size:15px">He'll do a dramatic slow-motion run to your door at 7:59 pm with a lantern. He'll wait on a rock for you in the rain, a little too patiently. He celebrates a 3-day streak like it's a wedding.</p></div>
     <div class="isnt"><h3>he never</h3><div class="chips"><span class="chip">threatens, even as a joke</span><span class="chip">guilt-trips about prayer</span><span class="chip">wears religious dress as a costume</span><span class="chip">does a tradition's gesture outside it</span><span class="chip">picks a side</span><span class="chip">jokes about grief</span></div>
     <p style="color:var(--soft);font-size:15px">Duo's "violence for good" works for Spanish. It would read as spiritual abuse next to prayer. Our pushiness is warm persistence, never menace. (Namaste only on the Hindu path, the same rule as in the app.)</p></div>
   </div>
-  <p class="check">Still open: his name. A named character is far easier to build a social presence around.</p>
+  <p class="check">His name is Finn (in public copy only after the trademark check). He can also roast boring faith apps, never a faith, a believer or a named rival (see the voice rules).</p>
 
   <h3 style="margin-top:28px">where we show up: our lane</h3>
   <p>"Culture is the new marketing funnel": join conversations already happening, like a good party guest. Duolingo's lane is language and cultures (K-pop, K-dramas), and it stays out of elections. Ours is built in:</p>
@@ -446,7 +681,7 @@ figure{margin:0}
       <tr><td>speak to people with no religion as warmly as to the devout</td><td>imply someone needs to believe</td></tr>
     </tbody>
   </table></div>
-  <p class="check">One extra step Duolingo doesn't need: anything about a specific tradition gets a two-minute check by someone from inside it (a Keeper, once signed) before it goes out.</p>
+  <p class="check">One extra step Duolingo doesn't need: anything about a specific tradition gets a two-minute check by someone from inside it (the Keeper for that path) before it goes out.</p>
 
   <h3 style="margin-top:28px">how the team works</h3>
   <div class="gloss">
@@ -482,15 +717,13 @@ figure{margin:0}
   <div class="tw"><table>
     <thead><tr><th>when</th><th>moment</th><th>for which path</th></tr></thead>
     <tbody>
-      <tr><td>Oct 11–19, 2026</td><td>Navaratri</td><td>Hinduism</td></tr>
-      <tr><td>Nov 6–10, 2026</td><td>Diwali</td><td>Hinduism, and anyone curious</td></tr>
       <tr><td>Nov 24, 2026</td><td>Guru Nanak's Gurpurab</td><td>Sikhism</td></tr>
       <tr><td>late Nov 2026</td><td>Thanksgiving: gratitude in every tradition</td><td>everyone</td></tr>
       <tr><td>Nov 29 – Dec 24, 2026</td><td>Advent (the first quest people will see)</td><td>Christianity, Catholicism</td></tr>
       <tr><td>early Dec 2026</td><td>Hanukkah (dates to confirm)</td><td>Judaism</td></tr>
-      <tr><td>Dec 21, 2026</td><td>the winter solstice</td><td>my own path</td></tr>
+      <tr><td>Dec 21, 2026</td><td>the winter solstice</td><td>my own religion</td></tr>
       <tr><td>Dec 25, 2026</td><td>Christmas, and interfaith families at the table</td><td>everyone</td></tr>
-      <tr><td>Jan 1–21, 2027</td><td>the new year: "one lesson a day" resolutions</td><td>everyone, my own path quest</td></tr>
+      <tr><td>Jan 1–21, 2027</td><td>the new year: "one lesson a day" resolutions</td><td>everyone, my own religion quest</td></tr>
       <tr><td>Feb 1–7, 2027</td><td>World Interfaith Harmony Week (UN)</td><td>everyone</td></tr>
       <tr><td>Feb 8 – Mar 8, 2027</td><td>Ramadan · Eid al-Fitr Mar 9</td><td>Islam</td></tr>
       <tr><td>Feb 10 – Mar 21, 2027</td><td>Lent · Easter Mar 28</td><td>Christianity, Catholicism</td></tr>
@@ -499,7 +732,7 @@ figure{margin:0}
       <tr><td>Apr 23 – Jun 10, 2027</td><td>counting the Omer</td><td>Judaism</td></tr>
       <tr><td>May 2027</td><td>Mental Health Awareness Month (US): practice, rest, reaching out</td><td>everyone</td></tr>
       <tr><td>May 20, 2027</td><td>Vesak</td><td>Buddhism</td></tr>
-      <tr><td>Jun 21, 2027</td><td>the summer solstice</td><td>my own path</td></tr>
+      <tr><td>Jun 21, 2027</td><td>the summer solstice</td><td>my own religion</td></tr>
       <tr><td>from Jul 19, 2027</td><td>the rains retreat (Vassa)</td><td>Buddhism</td></tr>
       <tr><td>Aug–Sep 2027</td><td>back to school: youth groups and schools</td><td>parents, schools</td></tr>
       <tr><td>Sep 30 – Oct 11, 2027</td><td>Navaratri · Rosh Hashanah Oct 2 · Yom Kippur Oct 11</td><td>Hinduism, Judaism</td></tr>
@@ -512,7 +745,7 @@ figure{margin:0}
     <li>The mascot sprints to your door at 7:59 pm holding a lantern: "your streak would love one lesson tonight."</li>
     <li>"words you've been saying your whole life": amen, hallelujah, namaste, salaam, shalom. One a day, with the story behind it.</li>
     <li>Rest days explained in eight words: "one lesson a day grows it. rest protects it." The mascot napping on a moon.</li>
-    <li>Golden streak reveal: the number turns gold, the mascot can't handle it.</li>
+    <li>Lit streak reveal: the number lights up, the mascot can't handle it.</li>
     <li>Advent countdown: 24 short "why do we do this?" posts (wreaths, candles, the manger).</li>
     <li>"my partner is Jewish and I'm learning": a real interfaith couple, before and after Passover.</li>
     <li>"a talent was a weight of silver": the story that changed a word in the dictionary.</li>
@@ -549,8 +782,8 @@ figure{margin:0}
   <h3 style="margin-top:28px">four formats</h3>
   <div class="gloss">
     <div><b>the feeling-first series</b><p>One running question series per path, so each community gets its own feed. Same shape, its own texts and look.</p></div>
-    <div><b>15-second voice clips</b><p>A path's voice reads one line. Only once that voice has signed; until then, the house voice or no voice.</p></div>
-    <div><b>the guy as narrator</b><p>Our mascot can guide any path because he belongs to none. He asks the question; the tradition answers it.</p></div>
+    <div><b>15-second voice clips</b><p>A path's celebrity guide reads one line, only as their written agreement allows. Never say they're "signed".</p></div>
+    <div><b>Finn as narrator</b><p>Finn can guide any path because he belongs to none. He asks the question; the tradition answers it.</p></div>
     <div><b>"one line to carry" cards</b><p>A still card with one line and its source. Made to be saved and sent, the same line the lesson ends with.</p></div>
   </div>
 
@@ -560,30 +793,30 @@ figure{margin:0}
     <thead><tr><th>path</th><th>what works</th><th>never</th></tr></thead>
     <tbody>
       <tr><td>Hinduism</td><td>Deities in traditional, devotional art; story scenes; lamps, flowers, rivers. A deity may "speak", but only a real verse, with its source.</td><td>a deity in a joke, a costume or a meme; invented lines put in a deity's mouth</td></tr>
-      <tr><td>Islam</td><td>Calligraphy, landscapes, hands, lanterns, the night sky, mosque architecture.</td><td>any image of God or the Prophet &#xFDFA;, and in practice no faces for other prophets or the Prophet's family; music under recitation; verses on throwaway items</td></tr>
+      <tr><td>Islam</td><td>Calligraphy, landscapes, hands, lanterns, the night sky, mosque architecture.</td><td>any image of God; any prophet, in any form (the Prophet &#xFDFA; and every other prophet); no faces for the Prophet's family; music under recitation; verses on throwaway items</td></tr>
       <tr><td>Judaism</td><td>Light, candles, hands, the Shabbat table, Hebrew letters, the text itself.</td><td>any image of God; printing the divine name in full on things that get thrown away</td></tr>
-      <tr><td>Christianity</td><td>Traditional sacred art (public-domain paintings, icons), light, hands, open books.</td><td>Jesus as a comic character; an AI-made Jesus saying new words</td></tr>
+      <tr><td>Christianity</td><td>Traditional sacred art (public-domain paintings, icons), light, hands, open books.</td><td>the face of Jesus (only from behind, hands, or far away); Jesus as a comic character; an AI-made Jesus saying new words</td></tr>
       <tr><td>Catholicism</td><td>Sacred art, saints, rosaries, candles, churches, with the reverence a church would ask.</td><td>a parody of the Mass, the Eucharist, the crucifix or Mary</td></tr>
       <tr><td>Buddhism</td><td>Landscapes, the bell, the cushion, temples; Buddha images placed with respect.</td><td>a Buddha head as decoration or a prop; feet toward an image; monks or nuns without consent</td></tr>
-      <tr><td>Sikhism</td><td>The Golden Temple, langar, hands, Gurmukhi script, community.</td><td>AI-made Gurus; the Guru Granth Sahib shown casually; the five articles of faith as a costume</td></tr>
-      <tr><td>my own path</td><td>Nature, light, people, the hill.</td><td>borrowing another faith's sacred symbols as an aesthetic</td></tr>
+      <tr><td>Sikhism</td><td>The Golden Temple, langar, hands, Gurmukhi script, community.</td><td>any Sikh Guru, in any form (AI-made or painted); the Guru Granth Sahib shown casually; the five articles of faith as a costume</td></tr>
+      <tr><td>my own religion</td><td>Nature, light, people, the hill.</td><td>borrowing another faith's sacred symbols as an aesthetic</td></tr>
     </tbody>
   </table></div>
-  <p class="check">These are starting rules. Each Keeper sets the final ones for their path, and communities inside a tradition differ.</p>
+  <p class="check">These are starting rules. Each Keeper sets the final ones for their path, and communities inside a tradition differ. Settled 10 Nov for every path: Hindu deities may be shown, as Hindu art traditionally does; God is never shown in traditions that don't depict God; the faces of Jesus, Muhammad and the Sikh Gurus are never shown; no AI speaks as God.</p>
 
   <h3 style="margin-top:28px">ten posts to start with</h3>
-  <p class="check"><b>draft · waiting on a Keeper's review.</b> Not to be posted until a Keeper for that path (or two reviewers, see <a href="#wrong">when a post goes wrong</a>) has checked the wording, the translation and the citation. Bridge lines only once they're true.</p>
+  <p class="check"><b>Proposal, not reviewed.</b> Not to be posted until a Keeper for that path (or two reviewers, see <a href="#wrong">when a post goes wrong</a>) has checked the wording, the translation and the citation. Bridge lines only once they're true.</p>
   <div class="cards c2">
+    <div class="card"><div class="eyebrow">Christianity</div><h3>"why am I so tired all the time?"</h3><p>Jesus doesn't start with a task. He starts with an invitation: "come unto me, all ye that labour and are heavy laden, and I will give you rest."</p><p><i>Matthew 11:28, King James Version (1611).</i></p><div class="but"><b>bridge:</b> "the practice takes 5 minutes."</div></div>
+    <div class="card"><div class="eyebrow">Catholicism</div><h3>"why does nothing feel like enough?"</h3><p>Augustine felt it sixteen centuries ago: "thou madest us for Thyself, and our heart is restless, until it repose in Thee." The restlessness isn't a flaw. It's pointing somewhere.</p><p><i>Augustine, Confessions 1.1, tr. E. B. Pusey (1838).</i></p><div class="but"><b>bridge:</b> "a scholar of this tradition checked every word."</div></div>
     <div class="card"><div class="eyebrow">Hinduism</div><h3>"why does God ignore my prayers?"</h3><p>Krishna says the size of the offering was never the point: "whoso shall offer Me in faith and love a leaf, a flower, a fruit, water poured forth, that offering I accept." What's asked for is the love in it.</p><p><i>Bhagavad Gita 9.26, tr. Edwin Arnold (1885).</i></p><div class="but"><b>bridge:</b> "day 2 of this is in the app."</div></div>
     <div class="card"><div class="eyebrow">Hinduism</div><h3>"why can't I let it go?"</h3><p>The Gita's answer is to hold the work, not the result: "let right deeds be thy motive, not the fruit which comes from them." You can do your part and still put the outcome down.</p><p><i>Bhagavad Gita 2.47, tr. Edwin Arnold (1885).</i></p><div class="but"><b>bridge:</b> "the practice takes 5 minutes."</div></div>
     <div class="card"><div class="eyebrow">Islam</div><h3>"why does everyone else seem happy but me?"</h3><p>The Qur'an says it twice, so you don't miss it: "lo! with hardship goeth ease, lo! with hardship goeth ease." Not after the hardship. With it.</p><p><i>Qur'an 94:5–6, tr. Marmaduke Pickthall (1930).</i></p><div class="but"><b>bridge:</b> "a scholar of this tradition checked every word."</div></div>
     <div class="card"><div class="eyebrow">Judaism</div><h3>"will this feeling ever end?"</h3><p>The Psalms don't pretend the night is short: "weeping may tarry for the night, but joy cometh in the morning." Tarry means it stays a while. Morning still comes.</p><p><i>Psalm 30:6 (30:5 in Christian Bibles), JPS translation (1917).</i></p><div class="but"><b>bridge:</b> "day 2 of this is in the app."</div></div>
-    <div class="card"><div class="eyebrow">Christianity</div><h3>"why am I so tired all the time?"</h3><p>Jesus doesn't start with a task. He starts with an invitation: "come unto me, all ye that labour and are heavy laden, and I will give you rest."</p><p><i>Matthew 11:28, King James Version (1611).</i></p><div class="but"><b>bridge:</b> "the practice takes 5 minutes."</div></div>
-    <div class="card"><div class="eyebrow">Catholicism</div><h3>"why does nothing feel like enough?"</h3><p>Augustine felt it sixteen centuries ago: "thou madest us for Thyself, and our heart is restless, until it repose in Thee." The restlessness isn't a flaw. It's pointing somewhere.</p><p><i>Augustine, Confessions 1.1, tr. E. B. Pusey (1838).</i></p><div class="but"><b>bridge:</b> "a scholar of this tradition checked every word."</div></div>
     <div class="card"><div class="eyebrow">Buddhism</div><h3>"why can't I let it go?"</h3><p>The Buddha names the loop: replaying "he abused me, he beat me" keeps the anger alive. Then the way out: "hatred does not cease by hatred at any time: hatred ceases by love, this is an old rule."</p><p><i>Dhammapada 1.3–5, tr. F. Max Müller (1881).</i></p><div class="but"><b>bridge:</b> "day 2 of this is in the app."</div></div>
     <div class="card"><div class="eyebrow">Sikhism</div><h3>"why does everyone else seem happy but me?"</h3><p>Guru Nanak's answer: "Nanak dukhia sabh sansar", the whole world is carrying pain. You're not the only one. The same line goes on to say who finds peace: the one whose support is the Name.</p><p><i>Guru Granth Sahib, Ang 954 (page to confirm), our plain rendering.</i></p><div class="but"><b>bridge:</b> "the practice takes 5 minutes."</div></div>
-    <div class="card"><div class="eyebrow">my own path</div><h3>"why can't I just sit still?"</h3><p>Pascal saw it in 1670: "all the unhappiness of men arises from one single fact, that they cannot stay quietly in their own chamber." Sitting still is a skill. You can practice it.</p><p><i>Pascal, Pensées 139, tr. W. F. Trotter (1910).</i></p><div class="but"><b>bridge:</b> "the practice takes 5 minutes."</div></div>
-    <div class="card"><div class="eyebrow">my own path</div><h3>"why do I need a vacation from my own life?"</h3><p>Marcus Aurelius: people "seek retreats for themselves, houses in the country, sea-shores, and mountains," but "it is in thy power whenever thou shalt choose to retire into thyself."</p><p><i>Marcus Aurelius, Meditations 4.3, tr. George Long (1862).</i></p><div class="but"><b>bridge:</b> "day 2 of this is in the app."</div></div>
+    <div class="card"><div class="eyebrow">my own religion</div><h3>"why can't I just sit still?"</h3><p>Pascal saw it in 1670: "all the unhappiness of men arises from one single fact, that they cannot stay quietly in their own chamber." Sitting still is a skill. You can practice it.</p><p><i>Pascal, Pensées 139, tr. W. F. Trotter (1910).</i></p><div class="but"><b>bridge:</b> "the practice takes 5 minutes."</div></div>
+    <div class="card"><div class="eyebrow">my own religion</div><h3>"why do I need a vacation from my own life?"</h3><p>Marcus Aurelius: people "seek retreats for themselves, houses in the country, sea-shores, and mountains," but "it is in thy power whenever thou shalt choose to retire into thyself."</p><p><i>Marcus Aurelius, Meditations 4.3, tr. George Long (1862).</i></p><div class="but"><b>bridge:</b> "day 2 of this is in the app."</div></div>
   </div>
   <p class="check">Quotes are from public-domain translations and have to be checked word for word against a scan of that edition before posting. Verse numbers differ between editions; the Keeper picks the one their community uses.</p>
 </section>
@@ -594,7 +827,7 @@ figure{margin:0}
   <p class="lede">Faith creators already have the audience and the trust. We have the path, the Keepers and the voices. Instead of competing with them for the feed, we give their followers somewhere to go next.</p>
   <div class="cards c2">
     <div class="card"><h3>what they bring</h3><p>An audience that already asks the big questions, and a voice people trust.</p></div>
-    <div class="card"><h3>what we bring</h3><p>A daily path to the summit, scholars who check every word, and the voices. Their followers get a practice, not just another clip.</p></div>
+    <div class="card"><h3>what we bring</h3><p>A daily path, scholars who check every word, and celebrity guides. Their followers get a practice, not just another clip.</p></div>
   </div>
 
   <h3 style="margin-top:28px">the offer, kept simple</h3>
@@ -628,14 +861,14 @@ figure{margin:0}
 
   <h3 style="margin-top:28px">before it posts: who checks</h3>
   <div class="cards c3">
-    <div class="card"><h3>about one tradition</h3><p>The Keeper for that tradition checks it. Until a Keeper is signed, two people check it, and at least one of them is from inside that tradition.</p></div>
+    <div class="card"><h3>about one tradition</h3><p>The Keeper for that tradition checks it. If the Keeper can't, two people check it, and at least one of them is from inside that tradition.</p></div>
     <div class="card"><h3>about ourselves</h3><p>The mascot, streaks, modern life: the platform owner posts it. No sign-off needed; that's the point of the rules.</p></div>
     <div class="card"><h3>a heavy moment</h3><p>A tragedy, a death, a conflict in the news: say nothing unless the owner says yes. Silence is usually right.</p></div>
   </div>
 
   <h3 style="margin-top:28px">never posted, by anyone</h3>
   <div class="say-grid">
-    <div class="isnt"><h3>never</h3><div class="chips"><span class="chip">mocking any faith</span><span class="chip">guilt about prayer</span><span class="chip">ranking religions</span><span class="chip">deepfaked or AI voices of real people</span><span class="chip">a celebrity's face or likeness without a signed deal</span><span class="chip">anything like Duolingo's owl, green or wording</span></div>
+    <div class="isnt"><h3>never</h3><div class="chips"><span class="chip">mocking any faith</span><span class="chip">guilt about prayer</span><span class="chip">ranking religions</span><span class="chip">AI voices or likenesses of real people beyond their written agreement</span><span class="chip">puns on scripture</span><span class="chip">romance or flirting</span><span class="chip">naming a rival app</span><span class="chip">anything like Duolingo's owl, green or wording</span></div>
     <p style="color:var(--soft);font-size:15px">The last one covers homage and parody too: no owls in any color, no bright Duolingo green, no borrowed catchphrases (see the IP section of the Duolingo playbook).</p></div>
   </div>
 
@@ -657,28 +890,52 @@ figure{margin:0}
 </section>
 
 <section id="faces">
-  <div class="eyebrow">11 · faces</div>
-  <h2>voices, keepers, <em>and the guide.</em></h2>
+  <div class="eyebrow">15 · faces</div>
+  <h2>celebrity guides, keepers, <em>and the guide.</em></h2>
   <div class="cards c3">
-    <div class="card"><h3>the voices</h3><p>A famous person from each tradition reads its lessons: the hook. On the site as the founding class for the pitch; not signed yet, and the app uses "the house voice" until they are.</p></div>
-    <div class="card"><h3>the keepers</h3><p>A scholar of each tradition reviews every lesson before it's recorded, with a veto. Keepers are scholars (people who have spent their careers studying the texts, respected inside the tradition and out), not clergy chosen to serve one community; some are also ordained. Shaan recruits them directly. Named on the site as targets for the pitch; not signed yet.</p></div>
-    <div class="card"><h3>the guide</h3><p>The in-app helper. Warm, brief, answers from your own lessons, never preaches, and points to real people for deep questions.</p></div>
+    <div class="card"><h3>the celebrity guides</h3><p>A celebrity from each faith is the guide of that path: Denzel Washington for Christianity, Nicole Kidman for Catholicism, Priyanka Chopra for Hinduism, Natalie Portman for Judaism, Mahershala Ali for Islam, Orlando Bloom for Buddhism, Diljit Dosanjh for Sikhism, Justin Bieber for "my own religion". They're a huge draw and belong early in every film and deck.</p><div class="but"><b>How we say it:</b> "celebrity guides", or "Denzel Washington for Christianity". Never "signed", "confirmed" or "under contract". Their AI voices and likenesses are used only as each person's written agreement allows. Never imply a creator or celebrity endorses anything they haven't.</div></div>
+    <div class="card"><h3>the keepers</h3><p>A scholar of each faith reviews every class, with a veto. Keepers are scholars (people who have spent their careers studying the texts, respected inside the tradition and out), not clergy chosen to serve one community; some are also ordained. Shaan recruits them directly.</p><div class="but"><b>How we say it:</b> "a scholar of each faith reviews every class". Never "signed".</div></div>
+    <div class="card"><h3>the guide</h3><p>The in-app helper, in the mascot's voice. Stays inside your one faith (cross-faith only in "my own religion"). Warm, brief, answers from your own lessons, never preaches, never refuses someone sincere, and points to real people for deep questions. It works gracefully even with no AI connected.</p></div>
   </div>
 </section>
 
 <section id="open">
-  <div class="eyebrow">12 · still open</div>
+  <div class="eyebrow">16 · still open</div>
   <h2>what we <em>haven't decided.</em></h2>
   <div class="open"><ol>
-    <li>The mascot's name.</li>
-    <li>The headline to lead with: "the loneliest generation…", "making religion cool again", or "it plays like a game. it's taught like a faith."</li>
+    <li>Finn's name in public: a trademark and app-store search comes first.</li>
+    <li>"because you gotta have faith": a trademark lawyer's glance before paid ads.</li>
+    <li>Billboards: scripture-source footnotes on each board and a payoff line are proposed, not approved. Every "every faith says" claim still needs Keeper sign-off.</li>
+    <li>Whether "my own religion" leads. The owner thinks most people may pick it; the locked hero says "pick a faith or build your own". Offer to flip the order; don't change it unasked.</li>
+    <li>Finn's drip, story cards and episode drops: liked by the owner, still being designed. (The dance videos were pulled 14 Nov.)</li>
+    <li>The tagline: "religion, reimagined." is approved for the new website (13 Nov). This book, the app and the films still say "making religion yours again." until the owner confirms the swap everywhere.</li>
+    <li>Paid-plan prices (ad-free and family) are not set.</li>
+    <li>"my mind is a temple": not approved. Don't use it.</li>
     <li>The right-answer words: keep the variety ("yes — exactly", "lit.") or narrow to two ("right on." / "not quite.").</li>
-    <li>Exclamation marks: only on the win screen, or nowhere.</li>
     <li>Which persona we build for first. Decided 14 Oct 2026: the family (see "who we're for"); still to be tested in interviews.</li>
-    <li>Whether to add journaling, a grief path and yoga, and where the line is so we don't become a meditation app.</li>
     <li>The founder's story, in Shaan's words, and where it lives.</li>
-<li>How much of what the company earns goes to the Infinite Hill Foundation, and when we say the number publicly (after legal and accounting advice).</li>
+    <li>How much of what the company earns goes to the Infinite Hill Foundation, and when we say the number publicly (after legal and accounting advice).</li>
   </ol></div>
-  <p class="foot">infinite hill brand book v2 · built from infinite-hill.netlify.app and the app as of 29 Sep 2026 · replaces the August drafts · persona names and backgrounds are illustrative.</p>
+  <p class="foot">infinite hill brand book v4 · updated 10 Nov 2026 from the owner's decisions since October (Magna, Finn, one faith first, big statements, billboards v2, the lesson standard) · the previous version is saved as brand-book.pre-nov10.html · persona names and backgrounds are illustrative · billboard photos are AI drafts.</p>
 </section>
 </div>
+
+<script>
+// Fit each billboard's text: the lime turn line fills the column width, the setup line sits at ~42% of its size, both capped by the block's height.
+function fitBoards(){
+  document.querySelectorAll('.board .tx, .feedp .tx').forEach(function(tx){
+    var set=tx.querySelector('.bset'), turn=tx.querySelector('.bturn');
+    var W=tx.clientWidth, H=tx.clientHeight, gap=parseFloat(getComputedStyle(tx).rowGap)||0;
+    if(!W||!H) return;
+    function size(el,px){el.style.fontSize=px+'px';}
+    var t=400; size(turn,t);
+    while(t>6 && turn.offsetWidth>W) size(turn,--t);
+    var s=t*0.42; size(set,s);
+    while(s>6 && set.offsetWidth>W) size(set,--s);
+    while(t>6 && set.offsetHeight+turn.offsetHeight+gap>H){ size(turn,--t); if(s>t*0.42) size(set,s=t*0.42); }
+  });
+}
+(document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(fitBoards);
+addEventListener('resize', fitBoards);
+addEventListener('load', fitBoards);
+</script>

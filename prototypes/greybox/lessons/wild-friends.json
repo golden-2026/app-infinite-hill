@@ -1,0 +1,201 @@
+{
+ "id": "wild-friends",
+ "home": "wild",
+ "title": "Back before sunset",
+ "told": "an old story of the Pythagoreans",
+ "clips": "art/sacred/wild-friends/clips/",
+ "voice": "art/sacred/wild-friends/voice/",
+ "guide": {
+  "name": "Justin",
+  "photo": "art/guides/spiritual.webp"
+ },
+ "hook": {
+  "v": "DPH1-Syracuse",
+  "say": "before the story, can i ask you something? is there someone who’d notice if you went quiet for a week?",
+  "options": [
+   [
+    "Yes, for sure",
+    "then you’re rich. this story is about friends like that."
+   ],
+   [
+    "Maybe one person",
+    "one is a lot. listen."
+   ],
+   [
+    "I’m not sure",
+    "that’s honest. this one might help you find them."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "DPH1-Syracuse",
+   "vo": [
+    "V01"
+   ],
+   "line": "In ancient Syracuse lived two friends, Damon and Phintias. They were Pythagoreans, followers of the old teacher Pythagoras. Their saying: friends have all things in common."
+  },
+  {
+   "t": "shot",
+   "v": "DPH2-The-Tyrant",
+   "vo": [
+    "V02"
+   ],
+   "line": "The ruler, Dionysius, didn’t believe friendship like that was real. His courtiers said: let’s test it."
+  },
+  {
+   "t": "shot",
+   "v": "DPH3-Condemned",
+   "vo": [
+    "V03"
+   ],
+   "line": "So Phintias was accused of plotting and sentenced to die. He asked for the rest of the day to put his affairs in order."
+  },
+  {
+   "t": "ask",
+   "v": "DPH4-Waiting",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "Someone has to guarantee that Phintias will come back. What happens?",
+   "o": [
+    "No one will risk it",
+    "Damon offers to take his place",
+    "Phintias slips away by boat"
+   ],
+   "a": 1,
+   "why": "Damon steps forward, without being asked."
+  },
+  {
+   "t": "shot",
+   "v": "DPH4-Waiting",
+   "vo": [
+    "V04"
+   ],
+   "line": "Damon stepped forward: if Phintias didn’t return, Damon would die in his place. The court laughed. Who comes back to die?"
+  },
+  {
+   "t": "ask",
+   "v": "DPH4-Waiting",
+   "eb": "why?",
+   "q": "What does the tyrant’s test quietly assume about people?",
+   "o": [
+    "Anyone will save himself when it counts",
+    "Phintias really did plot against him",
+    "Damon secretly wants to die a hero"
+   ],
+   "a": 0,
+   "why": "Dionysius bet that under pressure, everyone looks out for himself. The Pythagoreans bet the other way, with a life on the table."
+  },
+  {
+   "t": "shot",
+   "v": "DPH5-Sunset-Return",
+   "vo": [
+    "V05"
+   ],
+   "line": "The sun sank lower. And just before it set, Phintias came back."
+  },
+  {
+   "t": "shot",
+   "v": "DPH5-Sunset-Return",
+   "vo": [
+    "V06"
+   ],
+   "line": "Dionysius was stunned. He embraced them both, and begged to be let in as their third friend."
+  },
+  {
+   "t": "ask",
+   "v": "DPH5-Sunset-Return",
+   "eb": "did you know?",
+   "q": "How do we know this story at all? The ancient source says it came from…",
+   "o": [
+    "Phintias, who wrote it down later",
+    "A play staged in Athens",
+    "Dionysius himself, years later"
+   ],
+   "a": 2,
+   "why": "The philosopher Aristoxenus said Dionysius told it to him in Corinth, after the tyrant had lost his throne. The man who set the test became the one who told it."
+  },
+  {
+   "t": "shot",
+   "v": "DPH6-Today",
+   "vo": [
+    "V07"
+   ],
+   "line": "Today: two old friends on a park bench at sunset, a small quarrel mended before dark. The kind of friend who comes back.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "DPH6-Today",
+   "eb": "why?",
+   "q": "Phintias was free until sunset. He could have run. Why does his return matter as much as Damon’s offer?",
+   "o": [
+    "Damon’s trust only worked if he kept faith",
+    "Guards were following him all day",
+    "He hoped the tyrant would pardon him"
+   ],
+   "a": 0,
+   "why": "Damon’s offer was brave, but it only meant something if Phintias came back. The friendship needed both of them."
+  },
+  {
+   "t": "teach",
+   "v": "DPH5-Sunset-Return",
+   "say": [
+    "here’s what i love. the test was meant to prove friendship was fake. it ended with the most powerful man in the city asking to be let in.",
+    "the pythagoreans lived as a community: shared meals, shared study, shared everything. they said friendship is equality. and they had a rule: if friends quarreled, they made up before the sun went down. you can’t walk this path alone. find your people."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "DPH6-Today",
+   "eb": "the hard one",
+   "q": "Dionysius had power, money and guards. Why did he still want what Damon and Phintias had?",
+   "o": [
+    "He wanted to learn Pythagoras’s math",
+    "A friend who’d die for you can’t be bought",
+    "He planned to test them again later"
+   ],
+   "a": 1,
+   "why": "He could command anyone. He couldn’t command that."
+  }
+ ],
+ "today": {
+  "v": "DPH6-Today",
+  "say": "today, keep the pythagorean rule: before the sun goes down, reach out to one friend. mend a small thing if there is one. if there isn’t, just tell them you’re glad they’re yours.",
+  "options": [
+   [
+    "I know who",
+    "good. send it before sunset, before you talk yourself out of it."
+   ],
+   [
+    "I’ll think of someone",
+    "they may be thinking of you too."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "The reed that remembers.",
+  "line": "a respected scholar meets a wandering stranger, and his whole life turns into poetry."
+ },
+ "card": {
+  "from": "an old story of the Pythagoreans",
+  "mins": 5,
+  "keep": "hand",
+  "keepName": "Find your people",
+  "keepWhy": "A friend who comes back before sunset.",
+  "sources": [
+   "Iamblichus, On the Pythagorean Life 233–236, citing Aristoxenus, who heard it from Dionysius himself in Corinth: courtiers claim Pythagorean loyalty is false; Phintias is accused of plotting and condemned; he asks for the rest of the day to settle his own and Damon’s affairs; Damon stands surety; the court mocks; Phintias returns at sunset; Dionysius embraces them and asks to be received as a third in their friendship.",
+   "Diodorus Siculus 10.4.3–6; Cicero, De Officiis 3.45 and Tusculan Disputations 5.63 (Dionysius asks to be admitted as a third friend).",
+   "Diogenes Laërtius 8.10 (Pythagoras, after Timaeus: friends have all things in common; friendship is equality).",
+   "Plutarch, On Brotherly Love 17 (Moralia 488B–C): the Pythagoreans, if anger led them to abuse each other, joined right hands and were reconciled before the sun set.",
+   "Day 20 script: docs/curriculum/spiritual/scripts/y1/day-0020.json (company; find your people). Background there: Upaddha Sutta (SN 45.2); Ecclesiastes 4:9–10 (not used, to keep one tradition in the lesson)."
+  ],
+  "check": [
+   "Which Dionysius (Aristoxenus’s source is Dionysius the Younger); the lesson just says “the ruler.” Confirm.",
+   "Whether the friends accepted Dionysius as a third differs (Iamblichus seems to say they declined); the lesson stops at his request. Confirm.",
+   "Teach and today use the Plutarch reconciliation-before-sunset custom. Confirm the reference."
+  ]
+ }
+}

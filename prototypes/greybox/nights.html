@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Drop Night LA</title>
+<meta name="description" content="Infinite Hill prototype: IRL drop nights. The episode on a big screen, music, your people, real stamps at the door. Coming to LA first.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@500;600;700;800&display=swap">
+<link rel="stylesheet" href="brand/brand.css">
+<!--
+  PROTOTYPE HONESTY NOTE (2026-11-07)
+  No night is booked. No date, no venue and no host is claimed anywhere on this page.
+  "first 100 get the pin" is a plan for merch that would be real, written as a plan.
+  The "i'm in" and "host a night" buttons save to this browser only ("ih-nights-interest"); nothing is sent.
+  The door scan is a mock: no camera is opened and no real stamp is issued. The sample stamp lives on this page only.
+  Safety copy is binding: off-app nights are 18+, verified hosts and venues only, the guide never pressures anyone.
+-->
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--ih-ink); color: var(--ih-cream); }
+  body { overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+  button, input { font: inherit; color: inherit; }
+  button { cursor: pointer; }
+  .big { font-family: var(--ih-display); text-transform: uppercase; font-weight: 400; line-height: .88; letter-spacing: .005em; margin: 0; }
+  .big em { font-style: normal; color: var(--ih-lime); }
+  .in { max-width: 480px; margin: 0 auto; padding: 0 16px; }
+  .eyebrow { font-size: 11px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; color: var(--ih-mute); }
+  .btn { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; border: 0; border-radius: 999px; padding: 17px 20px; font-weight: 800; font-size: 16px; background: var(--ih-lime); color: var(--ih-ink); text-decoration: none; text-transform: lowercase; }
+  .btn.ink { background: var(--ih-ink); color: var(--ih-lime); }
+  .btn.ghost { background: transparent; border: 1.5px solid var(--ih-line); color: var(--ih-cream); }
+  .btn[aria-pressed="true"] { background: var(--ih-cream); color: var(--ih-ink); }
+  section { padding: 44px 0; }
+  p { margin: 0; }
+  .lede { font-size: 17px; line-height: 1.45; font-weight: 700; margin-top: 16px; }
+  .mute { color: var(--ih-mute); }
+  /* top bar */
+  .bar { position: absolute; top: 0; left: 0; right: 0; z-index: 5; }
+  .bar .in { display: flex; align-items: center; justify-content: space-between; padding-top: 14px; }
+  .back { width: 40px; height: 40px; border-radius: 50%; background: rgba(10,10,10,.6); border: 1px solid var(--ih-line); display: grid; place-items: center; color: var(--ih-cream); text-decoration: none; font-size: 20px; }
+  .word { font-family: var(--ih-display); text-transform: uppercase; font-size: 18px; letter-spacing: .04em; }
+  /* hero poster */
+  .hero { position: relative; min-height: 760px; padding: 0; overflow: hidden; background: #111; }
+  .hero .ph { position: absolute; inset: 0; background: url(art/sacred/lost-son/clips/C12-Feast.webp) center/cover no-repeat; filter: saturate(.85) contrast(1.1); }
+  .hero .ph::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,10,10,.35), rgba(10,10,10,.2) 30%, rgba(10,10,10,.92) 72%, #0A0A0A), var(--ih-grain); }
+  .hero .in { position: relative; z-index: 2; padding-top: 330px; padding-bottom: 36px; }
+  .tickt { display: inline-block; background: var(--ih-lime); color: var(--ih-ink); font-weight: 800; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; padding: 7px 12px; border-radius: 4px; transform: rotate(-2deg); }
+  .hero h1 { font-size: 104px; margin-top: 12px; }
+  .hero h1 .dot { color: var(--ih-lime); }
+  .hero h1 small { display: block; font-size: 50px; margin-top: 8px; color: var(--ih-lime); }
+  /* ticker */
+  .ticker { background: var(--ih-lime); color: var(--ih-ink); overflow: hidden; white-space: nowrap; padding: 12px 0; transform: rotate(-1.5deg); margin: 6px -8px; }
+  .ticker div { display: inline-block; font-family: var(--ih-display); font-size: 26px; text-transform: uppercase; animation: tick 22s linear infinite; }
+  .ticker span { margin: 0 14px; }
+  @keyframes tick { to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) { .ticker div { animation: none; } }
+  /* manifesto */
+  .pairs { display: grid; gap: 4px; margin-top: 20px; }
+  .pair { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; border-bottom: 1px solid var(--ih-line); padding: 10px 0; }
+  .pair s { font-family: var(--ih-display); font-size: 36px; text-transform: uppercase; color: var(--ih-mute); text-decoration-thickness: 3px; }
+  .pair b { font-family: var(--ih-display); font-weight: 400; font-size: 36px; text-transform: uppercase; color: var(--ih-lime); }
+  /* what happens */
+  .steps { display: grid; gap: 12px; margin-top: 22px; }
+  .step { display: flex; gap: 14px; align-items: flex-start; background: var(--ih-card); border: 1px solid var(--ih-line); border-radius: 20px; padding: 16px; }
+  .step .n { font-family: var(--ih-display); font-size: 44px; color: var(--ih-lime); line-height: .9; width: 44px; flex: none; }
+  .step b { display: block; font-family: var(--ih-display); font-weight: 400; text-transform: uppercase; font-size: 26px; line-height: 1; }
+  .step p { font-size: 14px; color: var(--ih-mute); margin-top: 6px; line-height: 1.4; font-weight: 600; }
+  /* pin */
+  .pin { display: flex; gap: 16px; align-items: center; margin-top: 18px; background: var(--ih-lime); color: var(--ih-ink); border-radius: 24px; padding: 18px; }
+  .pin svg { width: 104px; height: 104px; flex: none; }
+  .pin b { font-family: var(--ih-display); font-weight: 400; font-size: 40px; text-transform: uppercase; line-height: .9; display: block; }
+  .pin p { font-size: 13px; font-weight: 700; margin-top: 6px; line-height: 1.35; }
+  /* formats */
+  .fmts { display: grid; gap: 12px; margin-top: 22px; }
+  .fmt { position: relative; border-radius: 22px; padding: 18px; overflow: hidden; color: var(--ih-ink); min-height: 168px; display: flex; flex-direction: column; justify-content: flex-end; padding-top: 56px; }
+  .fmt .faith { position: absolute; top: 16px; left: 18px; font-size: 11px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; background: var(--ih-ink); color: var(--ih-cream); padding: 5px 9px; border-radius: 999px; }
+  .fmt .num { position: absolute; top: 6px; right: 14px; font-family: var(--ih-display); font-size: 64px; opacity: .22; }
+  .fmt h3 { font-family: var(--ih-display); font-weight: 400; font-size: 46px; text-transform: uppercase; line-height: .9; margin: 0; }
+  .fmt p { font-size: 14px; font-weight: 700; margin-top: 8px; line-height: 1.35; }
+  .fmt.ink { color: var(--ih-cream); border: 1px solid var(--ih-line); }
+  .fmt.ink .faith { background: var(--ih-lime); color: var(--ih-ink); }
+  .note1 { font-size: 13px; margin-top: 14px; line-height: 1.45; }
+  /* interest */
+  .inbox { background: var(--ih-lime); color: var(--ih-ink); border-radius: 28px; padding: 24px 18px; margin-top: 8px; }
+  .inbox .big { font-size: 58px; }
+  .inbox .eyebrow { color: rgba(10,10,10,.6); }
+  .picks { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  .picks button { padding: 10px 14px; border-radius: 999px; border: 2px solid var(--ih-ink); background: transparent; font-weight: 800; font-size: 14px; color: var(--ih-ink); }
+  .picks button[aria-pressed="true"] { background: var(--ih-ink); color: var(--ih-lime); }
+  .done { margin-top: 12px; font-weight: 800; font-size: 14px; min-height: 20px; }
+  .rules { display: grid; gap: 8px; margin-top: 18px; }
+  .rules div { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; font-weight: 700; line-height: 1.4; }
+  .rules i { font-style: normal; flex: none; width: 26px; height: 26px; border-radius: 50%; background: var(--ih-ink); color: var(--ih-lime); display: grid; place-items: center; font-size: 13px; font-weight: 800; }
+  /* stamps: how it works + mock phone */
+  .how { display: grid; gap: 10px; margin-top: 20px; }
+  .how div { display: flex; gap: 12px; font-weight: 700; font-size: 15px; line-height: 1.4; }
+  .how b { font-family: var(--ih-display); font-weight: 400; color: var(--ih-lime); font-size: 26px; width: 26px; flex: none; line-height: 1; }
+  .phone { margin: 26px auto 0; width: 100%; max-width: 300px; border-radius: 40px; border: 8px solid #222; background: #000; padding: 14px; position: relative; overflow: hidden; }
+  .phone .scr { border-radius: 28px; background: var(--ih-night); min-height: 520px; padding: 18px 14px; position: relative; overflow: hidden; }
+  .vf { position: relative; height: 250px; border-radius: 20px; background: radial-gradient(circle at 50% 40%, #2a2a2a, #0b0b0b); overflow: hidden; margin-top: 12px; }
+  .vf .frame { position: absolute; left: 50%; top: 50%; width: 150px; height: 150px; transform: translate(-50%, -50%); }
+  .vf .frame::before, .vf .frame::after { content: ""; position: absolute; inset: 0; border: 4px solid var(--ih-lime); border-radius: 18px; clip-path: polygon(0 0, 30% 0, 30% 6%, 6% 6%, 6% 30%, 0 30%, 0 70%, 6% 70%, 6% 94%, 30% 94%, 30% 100%, 70% 100%, 70% 94%, 94% 94%, 94% 70%, 100% 70%, 100% 30%, 94% 30%, 94% 6%, 70% 6%, 70% 0, 100% 0, 100% 100%, 0 100%); }
+  .vf .frame::after { display: none; }
+  .vf svg.qr { position: absolute; left: 50%; top: 50%; width: 110px; height: 110px; transform: translate(-50%, -50%); opacity: .85; }
+  .vf .laser { position: absolute; left: 18%; right: 18%; height: 2px; background: var(--ih-lime); box-shadow: 0 0 12px var(--ih-lime); top: 30%; animation: laser 1.6s ease-in-out infinite alternate; }
+  @keyframes laser { to { top: 70%; } }
+  @media (prefers-reduced-motion: reduce) { .vf .laser { animation: none; top: 50%; } }
+  .scr .cap { text-align: center; font-weight: 800; font-size: 14px; margin-top: 12px; }
+  .scr .tiny { text-align: center; font-size: 11px; color: var(--ih-mute); margin-top: 6px; line-height: 1.4; }
+  .ok { position: absolute; inset: 0; background: var(--ih-lime); color: var(--ih-ink); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px; transform: scale(.9); opacity: 0; pointer-events: none; transition: .3s ease; }
+  .ok.on { transform: none; opacity: 1; pointer-events: auto; }
+  .ok .big { font-size: 54px; }
+  .stampart { width: 150px; height: 150px; margin: 10px 0; }
+  .shelf { margin-top: 22px; background: var(--ih-card); border: 1px solid var(--ih-line); border-radius: 22px; padding: 16px; }
+  .shelf h4 { margin: 0; font-family: var(--ih-display); font-weight: 400; font-size: 26px; text-transform: uppercase; }
+  .shelf .row { display: flex; gap: 10px; margin-top: 12px; }
+  .shelf .slot { width: 72px; height: 72px; border-radius: 50%; border: 2px dashed var(--ih-line); display: grid; place-items: center; color: var(--ih-mute); font-size: 11px; font-weight: 800; text-align: center; flex: none; }
+  .shelf .slot svg { width: 72px; height: 72px; }
+  .shelf .slot.got { border: 0; }
+  /* host */
+  .host { background: var(--ih-card); border: 1px solid var(--ih-line); border-radius: 28px; padding: 24px 18px; }
+  .host .big { font-size: 56px; }
+  .venues { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+  .venues span { font-size: 12px; font-weight: 800; padding: 6px 10px; border-radius: 999px; border: 1px solid var(--ih-line); }
+  .gives { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 16px; }
+  .gives div { background: var(--ih-card2); border-radius: 16px; padding: 12px; font-size: 13px; font-weight: 700; line-height: 1.35; }
+  .gives div b { display: block; font-family: var(--ih-display); font-weight: 400; text-transform: uppercase; font-size: 20px; color: var(--ih-lime); margin-bottom: 4px; }
+  .finn { display: flex; align-items: flex-end; gap: 10px; margin-top: 20px; }
+  .finn img { width: 86px; height: 86px; flex: none; }
+  .bub { background: var(--ih-cream); color: var(--ih-ink); border-radius: 18px 18px 18px 4px; padding: 12px 14px; font-weight: 700; font-size: 14px; line-height: 1.35; }
+  footer { padding: 30px 0 60px; border-top: 1px solid var(--ih-line); }
+  footer .links { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+  footer a { color: var(--ih-cream); font-weight: 800; font-size: 14px; padding: 10px 14px; border-radius: 999px; border: 1px solid var(--ih-line); text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="ih-grain" aria-hidden="true"></div>
+
+<header class="bar"><div class="in"><a class="back" id="backA" href="hill-app-doors.html" aria-label="back">‹</a><span class="word">infinite hill</span></div></header>
+
+<section class="hero" aria-labelledby="h1">
+  <div class="ph" aria-hidden="true"></div>
+  <div class="in">
+    <span class="tickt">coming to la first</span>
+    <h1 class="big" id="h1">drop<br>night<span class="dot">.</span><small>los angeles</small></h1>
+    <p class="lede">the week's episode on a big screen. the music loud. your people in the room. a real stamp for showing up.</p>
+    <div style="display:grid;gap:10px;margin-top:22px"><a class="btn" href="#in">i'm in</a><a class="btn ghost" href="#stamps">how the stamps work</a></div>
+  </div>
+</section>
+
+
+<section><div class="in">
+  <div class="eyebrow">the whole idea</div>
+  <h2 class="big" style="font-size:60px;margin-top:10px">faith was never a <em>solo</em> thing.</h2>
+  <div class="pairs">
+    <div class="pair"><s>scroll</s><b>show up</b></div>
+    <div class="pair"><s>watch alone</s><b>watch loud</b></div>
+    <div class="pair"><s>react</s><b>respond</b></div>
+    <div class="pair"><s>lurk</s><b>pull up</b></div>
+  </div>
+</div></section>
+
+<section style="padding-top:8px"><div class="in">
+  <div class="eyebrow">the night, in four</div>
+  <div class="steps">
+    <div class="step"><span class="n">1</span><div><b>the drop, huge</b><p>this week's episode on a big screen, with the room watching the turn together.</p></div></div>
+    <div class="step"><span class="n">2</span><div><b>the music</b><p>a live band or a dj from the faith, before and after. you just get to sit in it.</p></div></div>
+    <div class="step"><span class="n">3</span><div><b>your people</b><p>bring your circle, or come solo. a host keeps it warm and easy. no one gets put on the spot.</p></div></div>
+    <div class="step"><span class="n">4</span><div><b>the stamp</b><p>scan the code at the door. a real irl stamp lands in your passport. you can't get it any other way.</p></div></div>
+  </div>
+  <div class="pin">
+    <svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="56" fill="#0A0A0A"/><circle cx="60" cy="60" r="47" fill="none" stroke="#EEFF6A" stroke-width="3" stroke-dasharray="4 5"/><path d="M28 78 L52 42 L64 58 L74 46 L92 78 Z" fill="#EEFF6A"/><text x="60" y="98" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="13" fill="#EEFF6A" letter-spacing="2">DROP NIGHT</text><text x="60" y="30" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="12" fill="#EEFF6A" letter-spacing="2">LA · 001</text></svg>
+    <div><b>first 100<br>get the pin.</b><p>that's the plan for the first night: an enamel pin for the first 100 through the door. you had to be there.</p></div>
+  </div>
+</div></section>
+
+<section style="padding-top:8px"><div class="in">
+  <div class="eyebrow">one faith a night. pick your room.</div>
+  <h2 class="big" style="font-size:62px;margin-top:10px">the <em>formats.</em></h2>
+  <div class="fmts">
+    <div class="fmt" style="background:#EEFF6A"><span class="faith">christian</span><span class="num">01</span><h3>gospel<br>brunch</h3><p>a choir that hits, a big plate, the drop on the wall. sunday energy, any day.</p></div>
+    <div class="fmt" style="background:#F3EFE4"><span class="faith">hindu</span><span class="num">02</span><h3>bhajan<br>club night</h3><p>real bhajans, a mixed band, low lights. the episode drops at the peak.</p></div>
+    <div class="fmt ink" style="background:#1c1c1c"><span class="faith">jewish</span><span class="num">03</span><h3>shabbat<br>dinner</h3><p>long tables, candles, challah. the story after dinner, the talk after that.</p></div>
+    <div class="fmt ink" style="background:#141414"><span class="faith">muslim</span><span class="num">04</span><h3>café<br>night</h3><p>late coffee, dates, the drop on the wall. alcohol-free, always. a prayer space if you want it.</p></div>
+    <div class="fmt" style="background:#EEFF6A"><span class="faith">sikh</span><span class="num">05</span><h3>kirtan +<br>langar</h3><p>live kirtan from the musicians, then everyone eats together. come as you are.</p></div>
+  </div>
+  <p class="note1 mute">every night stays inside one faith, with hosts from that faith. prayer is always your choice: watch, learn, or join in. nobody's asked to perform anything.</p>
+</div></section>
+
+<section id="in" style="padding-top:8px"><div class="in">
+  <div class="inbox">
+    <div class="eyebrow">no date yet. no venue yet.</div>
+    <h2 class="big" style="margin-top:10px">coming to la first. tell us you're in.</h2>
+    <p style="font-weight:700;margin-top:12px;font-size:15px;line-height:1.4">which room would you pull up to? pick any.</p>
+    <div class="picks" id="picks" role="group" aria-label="formats you'd go to">
+      <button data-f="gospel">gospel brunch</button><button data-f="bhajan">bhajan club night</button><button data-f="shabbat">shabbat dinner</button><button data-f="cafe">café night</button><button data-f="kirtan">kirtan + langar</button>
+    </div>
+    <div style="margin-top:16px"><button class="btn ink" id="imIn" aria-pressed="false">i'm in</button></div>
+    <p class="done" id="inMsg" role="status" aria-live="polite"></p>
+    <div class="rules">
+      <div><i>18</i><span>18+ only. we'll check at the door.</span></div>
+      <div><i>✓</i><span>only verified hosts and venues. we meet every one before a night goes up.</span></div>
+      <div><i>♡</i><span>no pressure, ever. your guide and i will tell you about a night once. that's it.</span></div>
+      <div><i>⌂</i><span>coming solo is normal. leave whenever you want.</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="stamps" style="padding-top:8px"><div class="in">
+  <div class="eyebrow">irl stamps</div>
+  <h2 class="big" style="font-size:62px;margin-top:10px">how <em>real</em> stamps work.</h2>
+  <div class="how">
+    <div><b>1</b><span>the host puts up a door code. it changes every few minutes, so a screenshot won't work.</span></div>
+    <div><b>2</b><span>you scan it in the app, on the night, at the venue.</span></div>
+    <div><b>3</b><span>the stamp drops into the irl stamps section of your passport. one per night. no buying it, no faking it.</span></div>
+  </div>
+
+  <div class="phone" aria-label="what the scan looks like in the app">
+    <div class="scr">
+      <div class="eyebrow" style="text-align:center">scan the door</div>
+      <div class="vf" aria-hidden="true">
+        <svg class="qr" viewBox="0 0 21 21" shape-rendering="crispEdges"><g fill="#F3EFE4" id="qrg"></g></svg>
+        <div class="frame"></div><div class="laser"></div>
+      </div>
+      <p class="cap">point at the code by the door</p>
+      <p class="tiny">camera only opens while you scan. we never keep the photo, just the stamp.</p>
+      <div style="margin-top:16px"><button class="btn" id="scan">try the scan</button></div>
+      <div class="ok" id="ok" aria-live="polite">
+        <div class="eyebrow" style="color:rgba(10,10,10,.6)">you showed up</div>
+        <svg class="stampart" viewBox="0 0 160 160" aria-hidden="true" id="stampSvg"></svg>
+        <div class="big">stamped.</div>
+        <p style="font-weight:800;font-size:13px;margin-top:8px">drop night · la · 001</p>
+        <button class="btn ink" id="again" style="margin-top:14px;padding:12px">back</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="shelf">
+    <h4>irl stamps</h4>
+    <p class="mute" style="font-size:13px;margin-top:4px" id="shelfLine">only from showing up. your first one is waiting in la.</p>
+    <div class="row" id="shelfRow"><span class="slot">night 1</span><span class="slot">night 2</span><span class="slot">night 3</span></div>
+  </div>
+</div></section>
+
+<section style="padding-top:8px"><div class="in">
+  <div class="host">
+    <div class="eyebrow">for churches, temples, gurdwaras, synagogues, mosques and cafés</div>
+    <h2 class="big" style="margin-top:10px">host a <em>night.</em></h2>
+    <p class="mute" style="font-weight:700;margin-top:12px;font-size:15px;line-height:1.45">you bring the room and the people who make it feel like home. we bring the rest.</p>
+    <div class="gives">
+      <div><b>the drop</b>the week's episode, cut for a big screen.</div>
+      <div><b>the kit</b>door codes, the stamp, a run of show.</div>
+      <div><b>the people</b>we tell nearby circles it's on.</div>
+      <div><b>the bar</b>verified host, 18+, a safety plan.</div>
+    </div>
+    <div class="venues"><span>churches</span><span>temples</span><span>gurdwaras</span><span>synagogues</span><span>mosques</span><span>cafés</span></div>
+    <div style="margin-top:18px"><button class="btn" id="host" aria-pressed="false">i want to host</button></div>
+    <p class="done" id="hostMsg" role="status" aria-live="polite" style="color:var(--ih-lime)"></p>
+  </div>
+  <!-- 2026-11-14 (owner): Finn never speaks; no path is known on this page, so the line shows plainly -->
+  <div class="finn"><div class="bub">your stamp waits by the door. come say hi. or don't, and just enjoy it. both count.</div></div>
+</div></section>
+
+<footer><div class="in">
+  <div class="word">infinite hill</div>
+  <p class="mute" style="font-size:13px;margin-top:6px">religion, reimagined.</p>
+  <div class="links"><a id="appA" href="hill-app-doors.html">back to the app</a></div>
+</div></footer>
+
+<script>
+(function () {
+  "use strict";
+  var ES = (function () { try { var q = /[?&]lang=(en|es)\b/.exec(location.search); if (q) return q[1] === "es"; return (JSON.parse(localStorage.getItem("ih-hill-doors") || "null") || {}).lang === "es"; } catch (e) { return false; } })();
+  function L(en, es) { return ES ? es : en; }
+  if (ES) {
+    document.documentElement.lang = "es";
+    ["backA", "appA"].forEach(function (id) { var a = document.getElementById(id); if (a) a.href = "hill-app-doors.html?lang=es"; });
+    var D = { "coming to la first": "primero en los ángeles", "drop": "drop", "night": "night", "los angeles": "los ángeles",
+      "the week's episode on a big screen. the music loud. your people in the room. a real stamp for showing up.": "el episodio de la semana en pantalla grande. la música fuerte. tu gente en el lugar. un sello real por llegar.",
+      "i'm in": "me apunto", "how the stamps work": "cómo funcionan los sellos", "the whole idea": "la idea", "faith was never a": "la fe nunca fue algo", "solo": "en solitario", "thing.": ".",
+      "scroll": "deslizar", "show up": "llegar", "watch alone": "ver solo", "watch loud": "ver en grande", "react": "reaccionar", "respond": "responder", "lurk": "mirar de lejos", "pull up": "caerle",
+      "the night, in four": "la noche, en cuatro", "the drop, huge": "el drop, en grande", "this week's episode on a big screen, with the room watching the turn together.": "el episodio de la semana en pantalla grande, con todo el lugar viendo el giro juntos.",
+      "the music": "la música", "a live band or a dj from the faith, before and after. you just get to sit in it.": "una banda en vivo o un dj de la fe, antes y después. tú solo lo disfrutas.",
+      "your people": "tu gente", "bring your circle, or come solo. a host keeps it warm and easy. no one gets put on the spot.": "trae a tu círculo, o ven solo. un anfitrión lo hace cálido y fácil. nadie te pone en aprietos.",
+      "the stamp": "el sello", "scan the code at the door. a real irl stamp lands in your passport. you can't get it any other way.": "escanea el código en la puerta. un sello real llega a tu pasaporte. no hay otra forma de tenerlo.",
+      "first 100": "los primeros 100", "get the pin.": "se llevan el pin.", "that's the plan for the first night: an enamel pin for the first 100 through the door. you had to be there.": "ese es el plan para la primera noche: un pin de esmalte para los primeros 100 que crucen la puerta. tenías que estar ahí.",
+      "one faith a night. pick your room.": "una fe por noche. elige tu lugar.", "the": "los", "formats.": "formatos.", "christian": "cristiana", "hindu": "hindú", "jewish": "judía", "muslim": "musulmana", "sikh": "sij",
+      "gospel": "brunch", "brunch": "gospel", "a choir that hits, a big plate, the drop on the wall. sunday energy, any day.": "un coro que pega, un buen plato, el drop en la pared. energía de domingo, cualquier día.",
+      "bhajan": "noche de", "club night": "bhajans", "real bhajans, a mixed band, low lights. the episode drops at the peak.": "bhajans de verdad, una banda mixta, luces bajas. el episodio cae en el mejor momento.",
+      "shabbat": "cena de", "dinner": "shabat", "long tables, candles, challah. the story after dinner, the talk after that.": "mesas largas, velas, jalá. la historia después de cenar, la plática después de eso.",
+      "café": "noche de", "late coffee, dates, the drop on the wall. alcohol-free, always. a prayer space if you want it.": "café de noche, dátiles, el drop en la pared. sin alcohol, siempre. un espacio para rezar si lo quieres.",
+      "kirtan +": "kirtan +", "langar": "langar", "live kirtan from the musicians, then everyone eats together. come as you are.": "kirtan en vivo, y luego todos comen juntos. ven como eres.",
+      "every night stays inside one faith, with hosts from that faith. prayer is always your choice: watch, learn, or join in. nobody's asked to perform anything.": "cada noche se queda dentro de una fe, con anfitriones de esa fe. rezar siempre es tu decisión: mirar, aprender o unirte. a nadie se le pide hacer nada.",
+      "no date yet. no venue yet.": "todavía sin fecha. todavía sin lugar.", "coming to la first. tell us you're in.": "primero en los ángeles. dinos que te apuntas.",
+      "which room would you pull up to? pick any.": "¿a cuál llegarías? elige las que quieras.", "gospel brunch": "brunch gospel", "bhajan club night": "noche de bhajans", "shabbat dinner": "cena de shabat", "café night": "noche de café", "kirtan + langar": "kirtan + langar",
+      "18+ only. we'll check at the door.": "solo mayores de 18. lo revisamos en la puerta.", "only verified hosts and venues. we meet every one before a night goes up.": "solo anfitriones y lugares verificados. conocemos a cada uno antes de publicar una noche.",
+      "no pressure, ever. your guide and i will tell you about a night once. that's it.": "sin presión, nunca. tu guía te avisa de una noche una sola vez. y ya.", "coming solo is normal. leave whenever you want.": "venir solo es normal. vete cuando quieras.",
+      "irl stamps": "sellos irl", "how": "cómo funcionan", "real": "de verdad", "stamps work.": "los sellos.",
+      "the host puts up a door code. it changes every few minutes, so a screenshot won't work.": "el anfitrión pone un código en la puerta. cambia cada pocos minutos, así que una captura no sirve.",
+      "you scan it in the app, on the night, at the venue.": "lo escaneas en la app, esa noche, en el lugar.", "the stamp drops into the irl stamps section of your passport. one per night. no buying it, no faking it.": "el sello cae en la sección de sellos irl de tu pasaporte. uno por noche. no se compra, no se finge.",
+      "scan the door": "escanea la puerta", "point at the code by the door": "apunta al código junto a la puerta", "camera only opens while you scan. we never keep the photo, just the stamp.": "la cámara solo se abre mientras escaneas. nunca guardamos la foto, solo el sello.",
+      "try the scan": "prueba el escaneo", "you showed up": "llegaste", "stamped.": "sellado.", "drop night · la · 001": "drop night · la · 001", "back": "volver",
+      "only from showing up. your first one is waiting in la.": "solo por llegar. el primero te espera en los ángeles.", "night 1": "noche 1", "night 2": "noche 2", "night 3": "noche 3",
+      "for churches, temples, gurdwaras, synagogues, mosques and cafés": "para iglesias, templos, gurdwaras, sinagogas, mezquitas y cafés", "host a": "organiza una", "night.": "noche.",
+      "you bring the room and the people who make it feel like home. we bring the rest.": "tú pones el lugar y la gente que lo hace sentir como casa. nosotros ponemos lo demás.",
+      "the drop": "el drop", "the week's episode, cut for a big screen.": "el episodio de la semana, editado para pantalla grande.", "the kit": "el kit", "door codes, the stamp, a run of show.": "códigos de puerta, el sello, un guion de la noche.",
+      "we tell nearby circles it's on.": "avisamos a los círculos cercanos.", "the bar": "el estándar", "verified host, 18+, a safety plan.": "anfitrión verificado, 18+, un plan de seguridad.",
+      "churches": "iglesias", "temples": "templos", "gurdwaras": "gurdwaras", "synagogues": "sinagogas", "mosques": "mezquitas", "cafés": "cafés", "i want to host": "quiero organizar",
+      "your stamp waits by the door. come say hi. or don't, and just enjoy it. both count.": "tu sello te espera en la puerta. ven a saludar. o no, y solo disfrútalo. las dos cuentan.",
+      "religion, reimagined.": "la religión, reimaginada.", "back to the app": "volver a la app" };
+    var w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT), t, list = [];
+    while ((t = w.nextNode())) list.push(t);
+    list.forEach(function (node) { if (node.parentElement && (/^(SCRIPT|STYLE|text)$/i.test(node.parentElement.tagName) || node.parentElement.closest(".fmt h3"))) return; var k = node.nodeValue.trim(); if (k && D[k] != null) node.nodeValue = node.nodeValue.replace(k, D[k]); });
+    var H3 = ["brunch<br>gospel", "noche de<br>bhajans", "cena de<br>shabat", "noche de<br>café", "kirtan +<br>langar"];
+    [].forEach.call(document.querySelectorAll(".fmt h3"), function (h, i) { if (H3[i]) h.innerHTML = H3[i]; });
+  }
+  // local only: nothing on this page makes a network call
+  var KEY = "ih-nights-interest";
+  var S = { picks: [], in: false, host: false };
+  try { var j = JSON.parse(localStorage.getItem(KEY)); if (j && typeof j === "object") S = Object.assign(S, j); } catch (e) {}
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
+
+  var picks = document.querySelectorAll("#picks button");
+  function paint() {
+    picks.forEach(function (b) { b.setAttribute("aria-pressed", S.picks.indexOf(b.dataset.f) >= 0); });
+    var im = document.getElementById("imIn");
+    im.setAttribute("aria-pressed", S.in); im.textContent = S.in ? L("you're in ✓", "ya estás ✓") : L("i'm in", "me apunto");
+    document.getElementById("inMsg").textContent = S.in ? L("you're on the list. we'll tell you once, when a real night has a real date. (for now this stays on your phone.)", "estás en la lista. te avisamos una vez, cuando una noche real tenga fecha real. (por ahora esto se queda en tu teléfono.)") : "";
+    var h = document.getElementById("host");
+    h.setAttribute("aria-pressed", S.host); h.textContent = S.host ? L("we'll be in touch ✓", "te escribimos ✓") : L("i want to host", "quiero organizar");
+    document.getElementById("hostMsg").textContent = S.host ? L("love that. in the real app this starts a quick verification chat with our team. (for now it stays on your phone.)", "nos encanta. en la app real esto abre un chat rápido de verificación con nuestro equipo. (por ahora se queda en tu teléfono.)") : "";
+  }
+  picks.forEach(function (b) { b.onclick = function () { var f = b.dataset.f, i = S.picks.indexOf(f); if (i >= 0) S.picks.splice(i, 1); else S.picks.push(f); save(); paint(); }; });
+  document.getElementById("imIn").onclick = function () { S.in = !S.in; save(); paint(); };
+  document.getElementById("host").onclick = function () { S.host = !S.host; save(); paint(); };
+  paint();
+
+  // a decorative qr-ish pattern (not a real code)
+  var g = document.getElementById("qrg"), out = "", seed = 7;
+  function rnd() { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }
+  function finder(x, y) { out += '<rect x="' + x + '" y="' + y + '" width="7" height="7"/><rect x="' + (x + 1) + '" y="' + (y + 1) + '" width="5" height="5" fill="#0b0b0b"/><rect x="' + (x + 2) + '" y="' + (y + 2) + '" width="3" height="3"/>'; }
+  for (var y = 0; y < 21; y++) for (var x = 0; x < 21; x++) { var inF = (x < 8 && y < 8) || (x > 12 && y < 8) || (x < 8 && y > 12); if (!inF && rnd() > .55) out += '<rect x="' + x + '" y="' + y + '" width="1" height="1"/>'; }
+  finder(0, 0); finder(14, 0); finder(0, 14); g.innerHTML = out;
+
+  // the stamp art: a round lime-on-ink seal
+  var STAMP = '<circle cx="80" cy="80" r="74" fill="#0A0A0A"/><circle cx="80" cy="80" r="64" fill="none" stroke="#EEFF6A" stroke-width="3" stroke-dasharray="5 6"/>' +
+    '<path d="M40 100 L68 58 L82 76 L94 62 L120 100 Z" fill="#EEFF6A"/><text x="80" y="124" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="15" fill="#EEFF6A" letter-spacing="2">DROP NIGHT</text>' +
+    '<text x="80" y="44" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="14" fill="#EEFF6A" letter-spacing="3">LA · 001</text>';
+  document.getElementById("stampSvg").innerHTML = STAMP;
+  var got = false;
+  document.getElementById("scan").onclick = function () {
+    var b = this; b.disabled = true; b.textContent = L("reading the code…", "leyendo el código…");
+    setTimeout(function () {
+      document.getElementById("ok").classList.add("on"); b.disabled = false; b.textContent = L("try the scan", "prueba el escaneo");
+      if (!got) {
+        got = true; // a sample on this page only: no real stamp is issued and nothing is saved
+        var row = document.getElementById("shelfRow"); row.firstElementChild.outerHTML = '<span class="slot got" aria-label="drop night la 001 stamp"><svg viewBox="0 0 160 160">' + STAMP + "</svg></span>";
+        document.getElementById("shelfLine").textContent = L("this is what it'd look like. the real one only comes from the night.", "así se vería. el de verdad solo llega esa noche.");
+      }
+    }, 1100);
+  };
+  document.getElementById("again").onclick = function () { document.getElementById("ok").classList.remove("on"); };
+})();
+</script>
+</body>
+</html>

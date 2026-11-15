@@ -1,0 +1,187 @@
+{
+ "id": "milk",
+ "home": "marigold",
+ "title": "Milk that boils over",
+ "told": "griha pravesh",
+ "clips": "art/sacred/milk/clips/",
+ "voice": "art/sacred/milk/voice/",
+ "guide": {
+  "name": "Priyanka",
+  "photo": "art/guides/hinduism.webp"
+ },
+ "hook": {
+  "v": "MB1-New-Door",
+  "say": "before the story, can i ask you something? moved somewhere new lately? a new apartment, a dorm, a new city. it doesn’t always feel like yours yet.",
+  "options": [
+   [
+    "Yes, recently",
+    "then this custom is for you. watch."
+   ],
+   [
+    "A while ago",
+    "then you’ll remember the feeling."
+   ],
+   [
+    "Not lately",
+    "keep this one for your next new door."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "MB1-New-Door",
+   "vo": [
+    "V01"
+   ],
+   "line": "When many Hindu families move into a new home, there’s a little ceremony called griha pravesh, “entering the home.”"
+  },
+  {
+   "t": "ask",
+   "v": "MB1-New-Door",
+   "eb": "did you know?",
+   "q": "Families often choose the day for griha pravesh carefully. How?",
+   "o": [
+    "The first day they get the keys",
+    "A day the Hindu calendar marks as good",
+    "The next big festival, like Diwali"
+   ],
+   "a": 1,
+   "why": "Many families check the panchang, the Hindu calendar, or ask a priest for an auspicious day and time."
+  },
+  {
+   "t": "shot",
+   "v": "MB2-Right-Foot",
+   "vo": [
+    "V02"
+   ],
+   "line": "Often the family steps in right foot first."
+  },
+  {
+   "t": "ask",
+   "v": "MB2-Right-Foot",
+   "eb": "did you know?",
+   "q": "In some traditional griha pravesh ceremonies, who is invited to step in before the family?",
+   "o": [
+    "A cow",
+    "The oldest neighbor",
+    "A priest’s young son"
+   ],
+   "a": 0,
+   "why": "The cow is honored as a giver, like a mother, so some families lead one in first as a blessing. In a city flat, a small cow figure often stands in."
+  },
+  {
+   "t": "shot",
+   "v": "MB3-The-Pot",
+   "vo": [
+    "V03"
+   ],
+   "line": "And one of the first things they do in the new kitchen is boil a pot of milk."
+  },
+  {
+   "t": "ask",
+   "v": "MB3-The-Pot",
+   "blur": true,
+   "predict": true,
+   "eb": "what happens next?",
+   "q": "The milk rises up and over the rim, onto the brand-new stove. How does the family react?",
+   "o": [
+    "They cheer: it’s a good sign",
+    "They rush to wipe it clean",
+    "They pour it out and start again"
+   ],
+   "a": 0,
+   "why": "A good sign, so it’s left to spill. For many families milk is the very first thing cooked in a new kitchen: white, pure, and a picture of plenty."
+  },
+  {
+   "t": "shot",
+   "v": "MB4-Boils-Over",
+   "vo": [
+    "V04"
+   ],
+   "line": "And they let it boil over. On purpose."
+  },
+  {
+   "t": "ask",
+   "v": "MB4-Boils-Over",
+   "eb": "why?",
+   "q": "Why let it spill on purpose?",
+   "o": [
+    "To purify the stove before cooking",
+    "A wish that the home will overflow",
+    "So the first thing cooked is shared"
+   ],
+   "a": 1,
+   "why": "The spill is a wish: may this home overflow with plenty. Many families then make the milk into a sweet, like kheer, and share it."
+  },
+  {
+   "t": "shot",
+   "v": "MB5-Overflow",
+   "vo": [
+    "V05"
+   ],
+   "line": "The spill is a wish: may this home overflow with plenty, with food, and love, and good things."
+  },
+  {
+   "t": "shot",
+   "v": "MB6-Together",
+   "vo": [
+    "V06"
+   ],
+   "line": "A new place begins with a spill, and nobody minds.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "MB6-Together",
+   "eb": "you’re in it",
+   "q": "You’re a guest at a friend’s griha pravesh. The milk spills all over the new stove. What do you say?",
+   "o": [
+    "“Oh no, let me grab a cloth!”",
+    "“Congratulations, it overflowed!”",
+    "Nothing; pretend you didn’t see"
+   ],
+   "a": 1,
+   "why": "It’s good news, so guests often cheer. The overflow is the blessing, not the mess."
+  },
+  {
+   "t": "teach",
+   "v": "MB5-Overflow",
+   "say": [
+    "here’s what i love. a new home begins with a spill, and nobody minds.",
+    "a fresh start isn’t only about what you leave behind. it’s about what you hope will overflow."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "MB4-Boils-Over",
+   "eb": "did you know?",
+   "q": "Pongal, a harvest festival in South India, also centers on a pot boiling over. What do people call out when it does?",
+   "o": [
+    "“Pongalo pongal!”",
+    "“Om shanti!”",
+    "“Ganpati bappa morya!”"
+   ],
+   "a": 0,
+   "why": "“Pongalo pongal!” The name Pongal itself means “boiling over.”"
+  }
+ ],
+ "today": {
+  "v": "MB6-Together",
+  "say": "in whatever space is yours, do one small thing to make it feel new: light a candle, clean one corner, invite one friend.",
+  "options": [
+   [
+    "I’ll do one today",
+    "one small spill. that’s how a home begins."
+   ],
+   [
+    "Maybe this week",
+    "that’s fine. the pot can wait for you."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "How Ganesha got his head.",
+  "line": "a terrible misunderstanding at a door, and a new beginning nobody expected."
+ }
+}

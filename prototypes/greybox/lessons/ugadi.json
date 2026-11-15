@@ -1,0 +1,188 @@
+{
+ "id": "ugadi",
+ "home": "marigold",
+ "title": "Six tastes of a new year",
+ "told": "a festival of South India",
+ "clips": "art/sacred/ugadi/clips/",
+ "voice": "art/sacred/ugadi/voice/",
+ "guide": {
+  "name": "Priyanka",
+  "photo": "art/guides/hinduism.webp"
+ },
+ "card": {
+  "from": "a festival of South India",
+  "mins": 5,
+  "keep": "mango",
+  "keepName": "A spoon of pachadi",
+  "keepWhy": "Sweet and bitter in one spoon, and yes to both.",
+  "sources": [
+   "Ugadi, the new year for many Hindus in Andhra Pradesh, Telangana and Karnataka, on the first day of the bright half of Chaitra",
+   "Ugadi pachadi: jaggery, tamarind, neem flowers, salt, green chili or black pepper, raw mango (six tastes), commonly paired with happiness, disgust, sadness, fear, anger and surprise, the mixed experiences of the year ahead",
+   "Even-mindedness in joy and sorrow: Bhagavad Gita 2.38; Rama’s steady face (week two)"
+  ],
+  "check": []
+ },
+ "hook": {
+  "v": "UG1-New-Year",
+  "say": "before the story, can i ask you something? when you start something new, do you hope it’ll be all good? then something bitter shows up.",
+  "options": [
+   [
+    "Every time",
+    "then this little dish is for you. listen."
+   ],
+   [
+    "Sometimes",
+    "then save a spoon for this one. listen."
+   ],
+   [
+    "I expect the bitter",
+    "then you already get it. listen."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "UG1-New-Year",
+   "vo": [
+    "V01"
+   ],
+   "line": "On Ugadi, the new year for many Hindus in South India, families eat a little dish called pachadi."
+  },
+  {
+   "t": "shot",
+   "v": "UG2-Six-Tastes",
+   "vo": [
+    "V02"
+   ],
+   "line": "It has six tastes in one spoon."
+  },
+  {
+   "t": "ask",
+   "v": "UG3-Ingredients",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "It’s a happy festival dish. Do you guess any of the six tastes is bitter?",
+   "o": [
+    "No, all six are pleasant, for a happy year",
+    "Yes: bitter neem flowers",
+    "Bitter, but only in the elders’ spoons"
+   ],
+   "a": 1,
+   "why": "Bitter too, on purpose. Watch why."
+  },
+  {
+   "t": "shot",
+   "v": "UG3-Ingredients",
+   "vo": [
+    "V03"
+   ],
+   "line": "Sweet jaggery, sour tamarind, bitter neem flowers, salt, spicy chili, and tangy raw mango."
+  },
+  {
+   "t": "ask",
+   "v": "UG3-Ingredients",
+   "eb": "did you know?",
+   "q": "Ugadi’s name joins two Sanskrit words, yuga and adi. What does it mean?",
+   "o": [
+    "Festival of six tastes",
+    "Spring’s first mango",
+    "Beginning of a new age"
+   ],
+   "a": 2,
+   "why": "Yuga, an age; adi, a beginning. Many tellings say it marks the day Brahma began creating the world."
+  },
+  {
+   "t": "shot",
+   "v": "UG4-One-Spoon",
+   "vo": [
+    "V04"
+   ],
+   "line": "The meaning is simple. The new year will bring all six."
+  },
+  {
+   "t": "fill",
+   "v": "UG4-One-Spoon",
+   "eb": "did you know?",
+   "pre": "In many homes, each taste stands for a feeling. The bitter neem stands for",
+   "post": ".",
+   "o": [
+    "sadness",
+    "anger",
+    "fear"
+   ],
+   "a": 0,
+   "why": "Neem is sorrow. In the usual telling, chili is anger, salt is fear, tamarind is disgust, raw mango is surprise, and jaggery is joy."
+  },
+  {
+   "t": "shot",
+   "v": "UG5-All-Feelings",
+   "vo": [
+    "V05"
+   ],
+   "line": "Joy and sadness, anger and fear, surprise and disgust. Eat them all at once, and accept them all."
+  },
+  {
+   "t": "ask",
+   "v": "UG5-All-Feelings",
+   "eb": "why?",
+   "q": "Why would a festival dish include something bitter on purpose?",
+   "o": [
+    "To balance the jaggery’s sweetness",
+    "Bitter food was thought to bring luck",
+    "To say yes to the hard parts too"
+   ],
+   "a": 2,
+   "why": "The new year won’t be all sweet. Tasting the bitter with family is a way to say yes to the whole year; many also say neem guards health as the hot season starts."
+  },
+  {
+   "t": "shot",
+   "v": "UG6-Today",
+   "vo": [
+    "V06"
+   ],
+   "line": "A real fresh start makes room for the bitter, and the sweet.",
+   "label": "today"
+  },
+  {
+   "t": "teach",
+   "v": "UG5-All-Feelings",
+   "say": [
+    "here’s what i love. ugadi doesn’t promise a perfect year. it hands you the whole year in one spoon.",
+    "hindu teaching prizes an even heart, meeting joy and sorrow alike, the way rama met crown and forest. pachadi lets you practice it with your tongue."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "UG5-All-Feelings",
+   "eb": "the hard one",
+   "q": "Someone takes their spoon of pachadi and carefully picks out the neem flowers. From the lesson, what are they missing?",
+   "o": [
+    "The best flavor in the whole dish",
+    "The point: taking bitter with sweet",
+    "Nothing, since the bitter is optional"
+   ],
+   "a": 1,
+   "why": "Pachadi is never all sweet. Picking out the bitter is like asking for a year with no hard days."
+  }
+ ],
+ "today": {
+  "v": "UG6-Today",
+  "say": "name one sweet thing and one bitter thing you expect this month. say yes to both. many families begin ugadi with a prayer and the pachadi together. you can join in, learn more, or just taste the idea. it’s your choice.",
+  "options": [
+   [
+    "I have both",
+    "then that’s your pachadi. one spoon."
+   ],
+   [
+    "Only bitter right now",
+    "then hold on. the sweet is in the spoon too."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "Goodbye, Ganesha.",
+  "line": "for days he’s an honored guest in the house. then comes the hardest part: goodbye."
+ }
+}

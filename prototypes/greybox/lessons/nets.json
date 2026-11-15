@@ -1,0 +1,219 @@
+{
+ "id": "nets",
+ "home": "olive",
+ "title": "Nets out one more time",
+ "told": "a story about Jesus",
+ "clips": "art/sacred/nets/clips/",
+ "voice": "art/sacred/nets/voice/",
+ "guide": {
+  "name": "Denzel",
+  "photo": "art/guides/christianity.webp"
+ },
+ "card": {
+  "from": "a story about Jesus",
+  "mins": 5,
+  "keep": "boat",
+  "keepName": "Simon’s boat",
+  "keepWhy": "One more try, out in the deep.",
+  "sources": [
+   "Luke 5:1-3 (crowd at the lake of Gennesaret, i.e. the Sea of Galilee; fishermen washing nets; Jesus teaches from Simon’s boat)",
+   "Luke 5:4 (“Put out into the deep, and let down your nets for a catch”)",
+   "Luke 5:5 (“Master, we worked all night and caught nothing; but at your word I will let down the net”)",
+   "Luke 5:6-7 (nets begin to break; partners in the other boat come; both boats fill and begin to sink)",
+   "Luke 5:8 (“Depart from me, for I am a sinful man, Lord”)",
+   "Luke 5:10 (James and John, sons of Zebedee, Simon’s partners; “Don’t be afraid. From now on you will be catching people”)",
+   "Luke 5:11 (they left everything and followed him)",
+   "Related, not used in captions: John 21:1-11 (a second night of empty nets and a full catch after the resurrection)",
+   "Luke 5:9 (amazement seized him and all who were with him)"
+  ],
+  "check": []
+ },
+ "hook": {
+  "v": "NT1-Empty-Nets",
+  "say": "before the story, can i ask you something? ever worked all night, or all year, and had nothing to show for it?",
+  "options": [
+   [
+    "Yes, right now",
+    "then sit with me a minute. this one starts right there."
+   ],
+   [
+    "I’ve been there",
+    "then you’ll know how simon felt. listen."
+   ],
+   [
+    "Not really",
+    "good. keep this one for the next long night."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "NT1-Empty-Nets",
+   "vo": [
+    "V01"
+   ],
+   "line": "Simon was a fisherman on the Sea of Galilee. He’d fished all night and caught nothing. Now he was on the shore, washing his nets."
+  },
+  {
+   "t": "shot",
+   "v": "NT2-Teaching-From-Boat",
+   "vo": [
+    "V02"
+   ],
+   "line": "A crowd pressed in to hear Jesus. He stepped into Simon’s boat, asked him to push out a little, and taught from there."
+  },
+  {
+   "t": "ask",
+   "v": "NT2-Teaching-From-Boat",
+   "blur": true,
+   "eb": "your guess",
+   "q": "When he finishes teaching, Jesus sends Simon back out to fish. Where?",
+   "o": [
+    "Close in, along the shallows",
+    "Out into the deep water",
+    "Across to the far shore"
+   ],
+   "a": 1,
+   "why": "Into the deep, in broad daylight, after a whole night of nothing (Luke 5:4). Any fisherman on that lake would have shaken his head.",
+   "predict": true
+  },
+  {
+   "t": "shot",
+   "v": "NT3-Into-The-Deep",
+   "vo": [
+    "V03"
+   ],
+   "line": "“Put out into the deep water, and let down your nets for a catch.”",
+   "label": "Luke 5:4"
+  },
+  {
+   "t": "fill",
+   "v": "NT3-Into-The-Deep",
+   "eb": "guess his words",
+   "pre": "“Master, we worked all night and caught nothing. But",
+   "post": ", I’ll let down the nets.”",
+   "o": [
+    "because you say so",
+    "if the fish come back",
+    "just this once"
+   ],
+   "a": 0,
+   "why": "“Because you say so.” He’s tired, he knows the lake better than any teacher, and he does it anyway."
+  },
+  {
+   "t": "ask",
+   "v": "NT3-Into-The-Deep",
+   "blur": true,
+   "predict": true,
+   "eb": "what happens next?",
+   "q": "Simon lets the nets down in broad daylight. What happens?",
+   "o": [
+    "Nothing, like all night",
+    "A decent catch, worth the trouble",
+    "So many fish the nets tear"
+   ],
+   "a": 2,
+   "why": "Galilee fishermen worked at night, when fish can’t see the nets. In daylight, the nets began to break, and it took two boats to hold the catch."
+  },
+  {
+   "t": "shot",
+   "v": "NT4-Nets-Full",
+   "vo": [
+    "V04"
+   ],
+   "line": "The nets filled until they began to tear. They signaled to their partners, James and John, and both boats filled until they began to sink."
+  },
+  {
+   "t": "shot",
+   "v": "NT5-At-His-Knees",
+   "vo": [
+    "V05"
+   ],
+   "line": "Simon fell at Jesus’s knees. “Go away from me, Lord. I’m a sinful man.”",
+   "label": "Luke 5:8"
+  },
+  {
+   "t": "ask",
+   "v": "NT5-At-His-Knees",
+   "eb": "why?",
+   "q": "Simon just had the best catch of his life. Why does he say “go away from me”?",
+   "o": [
+    "He was angry the nets had torn",
+    "He felt unworthy to be near him",
+    "He was afraid the boats would sink"
+   ],
+   "a": 1,
+   "why": "Luke says amazement seized him. Up close to something holy, Simon felt small. Watch how gently Jesus answers."
+  },
+  {
+   "t": "shot",
+   "v": "NT5-At-His-Knees",
+   "vo": [
+    "V06"
+   ],
+   "line": "Jesus said, “Don’t be afraid. From now on you’ll be catching people.”",
+   "label": "Luke 5:10"
+  },
+  {
+   "t": "shot",
+   "v": "NT6-Left-Nets",
+   "vo": [
+    "V07"
+   ],
+   "line": "They brought the boats to shore, left everything, and followed him."
+  },
+  {
+   "t": "ask",
+   "v": "NT6-Left-Nets",
+   "eb": "did you know?",
+   "q": "“You’ll be catching people.” Luke’s Greek word is unusual for fishing. What does it mean?",
+   "o": [
+    "Catching in great numbers",
+    "Catching by hand",
+    "Catching alive"
+   ],
+   "a": 2,
+   "why": "Zōgrōn: taking alive. Fish in a net were caught to die; the people Simon would gather were caught to live."
+  },
+  {
+   "t": "teach",
+   "v": "NT3-Into-The-Deep",
+   "say": [
+    "here’s what i love. simon knew fishing better than any teacher. he said so. then he let the nets down anyway.",
+    "christians read it as a picture of trust: “because you say so.” peter’s fresh start began with one more try he didn’t feel like making."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "NT6-Left-Nets",
+   "eb": "the hard one",
+   "q": "After Easter, John’s Gospel tells a catch very like this one, with Peter again. One detail flips. Which?",
+   "o": [
+    "This time Peter catches nothing",
+    "This time the net doesn’t tear",
+    "This time Jesus does the fishing"
+   ],
+   "a": 1,
+   "why": "John 21: a hundred and fifty-three large fish, “and the net was not torn.” Same lake, same Peter, a second fresh start after he’d denied Jesus three times."
+  }
+ ],
+ "today": {
+  "v": "NT4-Nets-Full",
+  "say": "pick one thing you’ve given up on: a habit, a goal, a conversation. many christians bring it to God first, a short prayer or a quiet moment, if you’d like. then give it one more honest try, the way simon did: “because you say so.”",
+  "options": [
+   [
+    "I’ll try once more",
+    "that’s the whole story. nets out one more time."
+   ],
+   [
+    "Something came to mind",
+    "that counts. simon explained first too. then he went."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "Born again.",
+  "line": "an important teacher comes to see jesus at night, with a question he can’t ask in daylight."
+ }
+}

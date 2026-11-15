@@ -18,7 +18,7 @@ export default function CompanionKnows() {
   const [editing, setEditing] = useState<string | null>(null);
   const [draft, setDraft] = useState("");
   const [adding, setAdding] = useState("");
-  const input = { padding: 12, borderRadius: 12, borderWidth: 1.5, borderColor: color.line, backgroundColor: "#fff", fontFamily: font.text[400], fontSize: 16, color: color.ink } as const;
+  const input = { padding: 12, borderRadius: 12, borderWidth: 1.5, borderColor: color.line, backgroundColor: color.white, fontFamily: font.text[400], fontSize: 16, color: color.ink } as const;
   const shared = m.journal.filter((e) => e.shared).length;
   return (
     <Screen scroll back="you" title={t("companion.knows.header")} contentStyle={{ gap: 14 }}>

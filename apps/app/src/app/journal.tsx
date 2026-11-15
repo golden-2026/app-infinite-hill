@@ -41,7 +41,7 @@ export default function Journal() {
         <Text style={type.eyebrow(8)}>{t("companion.journal.todaysPage")}</Text>
         <Text style={{ fontFamily: font.display[500], fontSize: 19, lineHeight: 23, color: color.ink }}>{day.prompt}</Text>
         <TextInput value={text} onChangeText={setText} multiline placeholder={t("companion.journal.placeholder")} placeholderTextColor={color.mute} accessibilityLabel={t("companion.card.pageA11y", { prompt: day.prompt })}
-          style={{ minHeight: 130, textAlignVertical: "top", padding: 14, borderRadius: 14, borderWidth: 1.5, borderColor: color.line, backgroundColor: "#fff", fontFamily: font.text[400], fontSize: 16, lineHeight: 22, color: color.ink }} />
+          style={{ minHeight: 130, textAlignVertical: "top", padding: 14, borderRadius: 14, borderWidth: 1.5, borderColor: color.line, backgroundColor: color.white, fontFamily: font.text[400], fontSize: 16, lineHeight: 22, color: color.ink }} />
         <Group>
           <Row first a={t("companion.journal.share")} b={share ? t("companion.journal.shareOn") : t("companion.journal.shareOff")} toggle={share} onPress={() => setShare(!share)} />
         </Group>

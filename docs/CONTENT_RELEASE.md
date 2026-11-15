@@ -1,3 +1,5 @@
+Background only (written September 2026). Where this disagrees with docs/VISION-NOW.md, that page wins.
+
 # Golden content release checklist and report
 
 This report is derived from `src/content/catalog.js`. It describes local content

@@ -1,3 +1,5 @@
+*Note (2026-11-10): the day lines below are the fixed index (title, word, hook, carry). Each lesson is built from its line by `docs/LESSON_STANDARD.md`: the real story, then this faith's actual teaching, then today; the games test the teaching, with no drills and no self-help tips. Where the format notes in this file (camp words, practice lengths, segment shape) disagree with the standard or `docs/VISION-NOW.md`, those win.*
+
 # golden — HINDUISM · YEAR ONE · CAMPS 2–5, EVERY SESSION
 *Session-by-session. Each line: **title** · word earned (if any) · hook · practice · carry. Full scripts follow the Camp 1 format once the Keeper has approved this sequence. ~310 sessions; with Camp 1 (21), year one ≈ 331.*
 

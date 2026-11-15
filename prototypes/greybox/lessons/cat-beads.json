@@ -1,0 +1,218 @@
+{
+ "id": "cat-beads",
+ "home": "angelus",
+ "title": "A lap full of pebbles",
+ "told": "a story of the desert monks",
+ "clips": "art/sacred/cat-beads/clips/",
+ "voice": "art/sacred/cat-beads/voice/",
+ "guide": {
+  "name": "Nicole",
+  "photo": "art/guides/catholic.webp"
+ },
+ "card": {
+  "from": "a story of the desert monks",
+  "mins": 5,
+  "keep": "rosary",
+  "keepName": "A rosary",
+  "keepWhy": "Hands busy, heart free.",
+  "keepSvg": "<g fill=\"#2a1b05\"><circle cx=\"68\" cy=\"38\" r=\"4.5\"/><circle cx=\"64.6\" cy=\"48.6\" r=\"4.5\"/><circle cx=\"55.6\" cy=\"55.1\" r=\"4.5\"/><circle cx=\"44.4\" cy=\"55.1\" r=\"4.5\"/><circle cx=\"35.4\" cy=\"48.6\" r=\"4.5\"/><circle cx=\"32\" cy=\"38\" r=\"4.5\"/><circle cx=\"35.4\" cy=\"27.4\" r=\"4.5\"/><circle cx=\"44.4\" cy=\"20.9\" r=\"4.5\"/><circle cx=\"55.6\" cy=\"20.9\" r=\"4.5\"/><circle cx=\"64.6\" cy=\"27.4\" r=\"4.5\"/><rect x=\"47\" y=\"62\" width=\"6\" height=\"24\" rx=\"2\"/><rect x=\"41\" y=\"68\" width=\"18\" height=\"6\" rx=\"2\"/></g><path d=\"M50 57v6\" stroke=\"#2a1b05\" stroke-width=\"3\"/>",
+  "sources": [
+   "Palladius, Lausiac History, chapter 20 (Paul of Pherme): he prayed three hundred prayers a day, counting with pebbles held in his lap, casting one out at each prayer; troubled on hearing of a virgin in a village who prayed seven hundred, he consulted Macarius, who said he himself made only a hundred prayers a day, worked and received the brothers, and was not condemned by his heart; if Paul was troubled after three hundred, either he did not pray with a pure heart or he could pray more.",
+   "Rosary from Latin rosarium, rose garden; the tradition of 150 Paters/Aves as a ‘poor man’s psalter’ alongside the monastic 150 psalms (see Herbert Thurston, ‘The Rosary’, Catholic Encyclopedia, 1912).",
+   "Structure: crucifix, introductory beads, five decades (Our Father on the single bead, ten Hail Marys, Glory Be); the mysteries (Pope John Paul II, Rosarium Virginis Mariae, 2002).",
+   "Comparative note: the Orthodox prayer rope (chotki/komboskini) for the Jesus Prayer; most Protestant traditions do not use the rosary."
+  ],
+  "check": [
+   "Paul of Pherme’s dates: the lesson says only “long ago, in the Egyptian desert” (4th century). Confirm the Macarius he consulted (Palladius names Macarius; often identified as Macarius of Alexandria).",
+   "Macarius’s answer is paraphrased; confirm the paraphrase keeps the meaning (the count isn’t the measure; pray with a pure heart).",
+   "The ‘poor man’s psalter’ (150 short prayers on knotted strings) is labeled “a traditional account”; historians debate the details of the rosary’s origin."
+  ]
+ },
+ "hook": {
+  "v": "RO6-Today-Mirror",
+  "say": "before the story, can i ask you something? have you ever seen a rosary hanging from a car mirror, or in someone’s purse, and wondered what it was for?",
+  "options": [
+   [
+    "Yes, all the time",
+    "then today you’ll finally know. it’s simpler than you think."
+   ],
+   [
+    "My family has one",
+    "then this one might feel like home. listen."
+   ],
+   [
+    "I thought it was a charm",
+    "lots of people do. the real answer starts in a desert. listen."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "RO1-The-Pebbles",
+   "vo": [
+    "V01"
+   ],
+   "line": "Long ago, in the Egyptian desert, lived a monk named Paul. Every day he prayed three hundred prayers, dropping a pebble from his lap for each one."
+  },
+  {
+   "t": "ask",
+   "v": "RO1-The-Pebbles",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "Then Paul hears of a woman in a village who prays seven hundred times a day. How does he feel?",
+   "o": [
+    "Inspired to pray more, right away",
+    "Sure the story must be exaggerated",
+    "Troubled, as if his own prayers weren’t enough"
+   ],
+   "a": 2,
+   "why": "Three hundred suddenly felt small. Comparing can do that, even to a desert monk."
+  },
+  {
+   "t": "shot",
+   "v": "RO2-The-News",
+   "vo": [
+    "V02"
+   ],
+   "line": "Then he heard of a woman in a village who prayed seven hundred times a day. Paul was deeply troubled. Were his prayers not enough?"
+  },
+  {
+   "t": "shot",
+   "v": "RO3-Macarius",
+   "vo": [
+    "V03"
+   ],
+   "line": "He walked to the wise elder Macarius. Macarius said: I pray only a hundred a day. I work, I welcome visitors, and my heart doesn’t accuse me."
+  },
+  {
+   "t": "ask",
+   "v": "RO3-Macarius",
+   "blur": true,
+   "predict": true,
+   "eb": "what happens next?",
+   "q": "Macarius prays only a hundred a day and is at peace. What does he tell Paul about his three hundred?",
+   "o": [
+    "Cut back to a hundred, and the worry will go",
+    "If you’re uneasy, check your heart, or pray more",
+    "Numbers don’t matter at all, so stop counting"
+   ],
+   "a": 1,
+   "why": "Palladius gives both options: maybe the heart isn’t pure, or maybe you could pray more. Macarius doesn’t mock the count; he makes the heart the judge."
+  },
+  {
+   "t": "shot",
+   "v": "RO3-Macarius",
+   "vo": [
+    "V04"
+   ],
+   "line": "If three hundred leave you uneasy, he said, either you aren’t praying with a pure heart, or you could pray more. Look at the heart, not the count."
+  },
+  {
+   "t": "ask",
+   "v": "RO3-Macarius",
+   "eb": "why?",
+   "q": "So what were Paul’s pebbles actually for?",
+   "o": [
+    "Keeping count, so his mind could rest on the prayer",
+    "Proving to himself he’d done enough",
+    "Marking time, like an hourglass"
+   ],
+   "a": 0,
+   "why": "One pebble out per prayer. The pebbles did the counting so the mind didn’t have to, the same job beads still do."
+  },
+  {
+   "t": "shot",
+   "v": "RO4-Knotted-Strings",
+   "vo": [
+    "V05"
+   ],
+   "line": "Centuries later, monks prayed all 150 psalms. People who couldn’t read prayed 150 short prayers instead, counting on knotted strings.",
+   "label": "a traditional account"
+  },
+  {
+   "t": "shot",
+   "v": "RO5-The-Beads",
+   "vo": [
+    "V06"
+   ],
+   "line": "That grew into the rosary: five sets of ten beads. On each single bead, the Our Father. On each of the ten, a Hail Mary. Then a Glory Be."
+  },
+  {
+   "t": "fill",
+   "v": "RO5-The-Beads",
+   "eb": "guess the word",
+   "pre": "Rosary comes from the Latin rosarium: a rose",
+   "post": ".",
+   "o": [
+    "crown",
+    "garden",
+    "bush"
+   ],
+   "a": 1,
+   "why": "A rose garden. Its cousin “chaplet,” another name for prayer beads, comes from the old French for a little wreath worn on the head."
+  },
+  {
+   "t": "ask",
+   "v": "RO5-The-Beads",
+   "eb": "did you know?",
+   "q": "In 2002 Pope John Paul II added a new set of scenes to pray through on the rosary. What are they about?",
+   "o": [
+    "Jesus’s public life, baptism to Last Supper",
+    "Mary’s life after the resurrection",
+    "The apostles and the early Church"
+   ],
+   "a": 0,
+   "why": "The Luminous Mysteries fill the gap between Jesus’s childhood and his passion: his baptism, Cana, his preaching, the Transfiguration, the Eucharist."
+  },
+  {
+   "t": "shot",
+   "v": "RO6-Today-Mirror",
+   "vo": [
+    "V07"
+   ],
+   "line": "Today it hangs from rearview mirrors and sits in grandmothers’ purses. It was never a lucky charm. It’s for counting.",
+   "label": "today"
+  },
+  {
+   "t": "teach",
+   "v": "RO5-The-Beads",
+   "say": [
+    "here’s the plain secret. while the fingers and lips keep the count, the mind is free to walk through scenes from the lives of jesus and mary. catholics call them the mysteries. that’s the real prayer.",
+    "the rosary is mostly a catholic practice. orthodox christians pray with a knotted prayer rope, and many protestants don’t use beads at all. like paul’s pebbles, the beads just hold the count."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "RO6-Today-Mirror",
+   "eb": "the hard one",
+   "q": "A friend says, “The rosary is just saying the same words over and over.” What would a Catholic say the real prayer is?",
+   "o": [
+    "Repeating the words as many times as you can",
+    "Holding blessed beads, which protect you",
+    "Thinking on Jesus and Mary while beads count"
+   ],
+   "a": 2,
+   "why": "John Paul II called the rosary contemplating the face of Christ with Mary. The words are the rhythm; the scenes are the prayer."
+  }
+ ],
+ "today": {
+  "v": "RO5-The-Beads",
+  "say": "if you’d like, try one decade today, one set of ten: ten slow breaths on your fingers, or ten hail marys if you know them, while you picture one scene, like the road to emmaus. watch, learn, or join in.",
+  "options": [
+   [
+    "I’ll try one decade",
+    "ten beads, one scene. your fingers keep the count."
+   ],
+   [
+    "I’ll just count ten breaths",
+    "that’s a real start. one pebble at a time, like paul."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "The wine runs out.",
+  "line": "a wedding, a family about to be embarrassed, and a mother who notices first."
+ }
+}

@@ -1,3 +1,5 @@
+Background only (written 2026-10-06). Where this disagrees with docs/VISION-NOW.md or docs/LESSON_STANDARD.md, those win.
+
 # Job 2: the style pass (owner: "use a workflow", 2026-10-06)
 
 Give every lesson after the first week (days 22–1061, years 1–3) the feel of the rebuilt first week: light, warm,

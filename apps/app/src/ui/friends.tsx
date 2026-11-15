@@ -33,7 +33,7 @@ export function NickPrompt() {
       <Text style={{ fontFamily: font.display[800], fontSize: 16, color: color.ink }}>{t("home.friends.nickAsk")}</Text>
       <View style={{ flexDirection: "row", gap: 8, alignItems: "center" }}>
         <TextInput testID="nick-input" value={nick} onChangeText={(t) => setText(t.slice(0, 24))} placeholder={t("home.friends.nickPlaceholder")} placeholderTextColor={color.mute} maxLength={24}
-          accessibilityLabel={t("home.friends.nickA11y")} style={{ flex: 1, borderWidth: 1.5, borderColor: color.line, borderRadius: 999, paddingVertical: 10, paddingHorizontal: 14, fontFamily: font.text[400], fontSize: 15, backgroundColor: "#fff", color: color.ink }} />
+          accessibilityLabel={t("home.friends.nickA11y")} style={{ flex: 1, borderWidth: 1.5, borderColor: color.line, borderRadius: 999, paddingVertical: 10, paddingHorizontal: 14, fontFamily: font.text[400], fontSize: 15, backgroundColor: color.white, color: color.ink }} />
         <Btn testID="nick-save" disabled={!cleanNick(nick)} onPress={() => { setNick(nick); toast(t("home.friends.willSee", { nick: cleanNick(nick) })); }} style={{ paddingHorizontal: 16 }}>{t("home.friends.save")}</Btn>
       </View>
     </View>
@@ -161,7 +161,7 @@ export function WeeklyBoard({ quiet }: { quiet: boolean }) {
         style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginTop: 10, minHeight: 44 }}>
         <Text style={{ fontFamily: font.display[800], fontSize: 15, color: color.ink }}>{t("home.friends.boardJoin")}</Text>
         <View style={{ width: 50, height: 30, borderRadius: 15, backgroundColor: f.board ? color.ink : color.line, padding: 3, alignItems: f.board ? "flex-end" : "flex-start" }}>
-          <View style={{ width: 24, height: 24, borderRadius: 12, backgroundColor: f.board ? GOLDEN : "#fff" }} />
+          <View style={{ width: 24, height: 24, borderRadius: 12, backgroundColor: f.board ? GOLDEN : color.white }} />
         </View>
       </Pressable>
       {f.board ? (

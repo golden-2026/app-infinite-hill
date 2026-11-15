@@ -1,0 +1,198 @@
+{
+ "id": "bud-lamp",
+ "home": "lotus",
+ "title": "One lamp lights another",
+ "told": "from the Questions of King Milinda",
+ "clips": "art/sacred/bud-lamp/clips/",
+ "voice": "art/sacred/bud-lamp/voice/",
+ "guide": {
+  "name": "Orlando",
+  "photo": "art/guides/buddhism.webp"
+ },
+ "hook": {
+  "v": "BL5-Lamp-From-Lamp",
+  "say": "before the story, can i ask you something? is there someone you’ve lost who still feels part of you?",
+  "options": [
+   [
+    "Yes, very much",
+    "i’m so glad they still live in you. this one is for them."
+   ],
+   [
+    "In small ways",
+    "those small ways count. listen."
+   ],
+   [
+    "I haven’t lost anyone close",
+    "then hold this one gently, for later."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "BL1-Sagala-Court",
+   "vo": [
+    "V01"
+   ],
+   "line": "Long ago, in the city of Sagala, ruled a king of Greek descent named Milinda. He loved hard questions, and few teachers could answer him."
+  },
+  {
+   "t": "shot",
+   "v": "BL2-Nagasena-Arrives",
+   "vo": [
+    "V02"
+   ],
+   "line": "Then he met a monk named Nagasena, and they began to talk."
+  },
+  {
+   "t": "shot",
+   "v": "BL3-The-Question",
+   "vo": [
+    "V03"
+   ],
+   "line": "“When someone dies and is reborn,” the king asked, “is it the same person, or someone else?”"
+  },
+  {
+   "t": "ask",
+   "v": "BL3-The-Question",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "Same person, or someone else? What do you think Nagasena says?",
+   "o": [
+    "The same person, in a new body",
+    "A completely different person",
+    "Neither the same, nor someone else"
+   ],
+   "a": 2,
+   "why": "Neither. And then he explains with a lamp."
+  },
+  {
+   "t": "shot",
+   "v": "BL4-Lamp-Through-Night",
+   "vo": [
+    "V04"
+   ],
+   "line": "“Neither,” said Nagasena. “If a man lights a lamp at dusk, is the flame at midnight the same flame?” “No,” said the king."
+  },
+  {
+   "t": "shot",
+   "v": "BL4-Lamp-Through-Night",
+   "vo": [
+    "V05"
+   ],
+   "line": "“Then is it a different lamp?” “No. The same lamp burned all night.” “Just so,” said Nagasena. “Neither the same, nor another.”"
+  },
+  {
+   "t": "shot",
+   "v": "BL5-Lamp-From-Lamp",
+   "vo": [
+    "V06"
+   ],
+   "line": "Another time, he put it this way: light one lamp from another. Nothing moves across. But the new flame came from the old."
+  },
+  {
+   "t": "ask",
+   "v": "BL5-Lamp-From-Lamp",
+   "eb": "why?",
+   "q": "Why do many Buddhist teachers say “rebirth” rather than “reincarnation”?",
+   "o": [
+    "Because it can happen as an animal too",
+    "Because no fixed soul moves across",
+    "Because it’s simply the newer word"
+   ],
+   "a": 1,
+   "why": "Like the flame: what goes on is a stream shaped by karma, not a soul packed up and moved. The Buddhist word for this is anatta, no fixed self."
+  },
+  {
+   "t": "ask",
+   "v": "BL5-Lamp-From-Lamp",
+   "eb": "did you know?",
+   "q": "Was King Milinda a real king?",
+   "o": [
+    "Yes: King Menander, whose coins still turn up",
+    "No: the monks invented him to ask questions",
+    "No one knows: he appears in no other record"
+   ],
+   "a": 0,
+   "why": "Historians identify him with Menander I, who ruled in today’s Pakistan and Afghanistan in the 100s BCE. Some of his coins carry a wheel many read as the Buddhist wheel."
+  },
+  {
+   "t": "shot",
+   "v": "BL6-Offering-Today",
+   "vo": [
+    "V07"
+   ],
+   "line": "Today, when someone dies, many Buddhist families offer food to monks and dedicate the good of it to the one who has died.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "BL6-Offering-Today",
+   "eb": "why a flame?",
+   "q": "Nagasena picks a flame, not a stone or a river. What makes a flame such a good picture of a person?",
+   "o": [
+    "It stays exactly the same all night",
+    "It changes every moment, yet never breaks off",
+    "It can be blown out and relit as itself"
+   ],
+   "a": 1,
+   "why": "A flame isn’t a thing so much as a happening, renewed every instant. Buddhists say a person is like that too: a stream of moments, each lit by the last."
+  },
+  {
+   "t": "teach",
+   "v": "BL5-Lamp-From-Lamp",
+   "say": [
+    "many buddhist traditions teach rebirth: one life followed by another, shaped by karma, until someone wakes up. in many tibetan and east asian communities, prayers go on for forty-nine days after a death.",
+    "and if you’re not sure about rebirth, you’re not behind. the buddha once told some villagers a kind life is good either way: if there’s another life, it goes well, and if not, this one already does."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "BL4-Lamp-Through-Night",
+   "eb": "the hard one",
+   "q": "If nothing solid carries over, why would a Buddhist still care what happens in the next life?",
+   "o": [
+    "It doesn’t matter; it won’t really be them",
+    "Because the next flame is lit from this one",
+    "Because a soul will be judged at the end"
+   ],
+   "a": 1,
+   "why": "Karma is the link. Nothing crosses over, yet what you do now shapes what comes next, the way one flame shapes the one it lights."
+  }
+ ],
+ "today": {
+  "v": "BL6-Offering-Today",
+  "say": "if you like, do one good thing today and dedicate its good to someone you’ve lost, or someone you love. many buddhist families do this. you can watch, learn, or join in.",
+  "options": [
+   [
+    "I’ll dedicate one today",
+    "one flame, lit for them."
+   ],
+   [
+    "I’ll just learn for now",
+    "that’s a real choice. the lamp will keep."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "Not “suffering”",
+  "line": "next week starts with buddhism’s most famous word, and why the usual english misses it."
+ },
+ "card": {
+  "from": "from the Questions of King Milinda",
+  "mins": 5,
+  "keep": "flame",
+  "keepName": "A lamp lit from a lamp",
+  "keepWhy": "One flame lights the next.",
+  "sources": [
+   "Milindapanha II.2.1: “neither the same nor another”; the lamp burning through the watches of the night",
+   "Milindapanha III.5.5: rebirth without anything passing over, like a lamp lit from a lamp",
+   "Kesamutti (Kalama) Sutta, Anguttara Nikaya 3.65: the four assurances, good either way",
+   "Forty-nine-day rites after a death (Tibetan bardo teachings; East Asian memorial practice); offering to monks and sharing merit with the dead (e.g. Tirokudda Sutta, Khuddakapatha 7)"
+  ],
+  "check": [
+   "The lesson’s lamp exchange compresses II.2.1 (first, middle and last watches of the night) to dusk and midnight."
+  ]
+ }
+}

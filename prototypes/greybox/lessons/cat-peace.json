@@ -1,0 +1,190 @@
+{
+ "id": "cat-peace",
+ "home": "angelus",
+ "title": "Peace, behind locked doors",
+ "told": "from John’s Gospel",
+ "clips": "art/sacred/cat-peace/clips/",
+ "voice": "art/sacred/cat-peace/voice/",
+ "guide": {
+  "name": "Nicole",
+  "photo": "art/guides/catholic.webp"
+ },
+ "card": {
+  "from": "from John’s Gospel",
+  "mins": 5,
+  "keep": "breath",
+  "keepName": "His breath of peace",
+  "keepWhy": "Peace first, then the table.",
+  "sources": [
+   "John 20:19-22 (the evening of the first day of the week, the doors shut where the disciples were gathered, for fear; Jesus came and stood in the midst and said, “Peace be to you”; he showed them his hands and his side; the disciples were glad when they saw the Lord; “Peace be to you. As the Father hath sent me, I also send you”; he breathed on them and said, “Receive ye the Holy Ghost”). Douay-Rheims (Challoner).",
+   "Mark 14:50 and Matthew 26:56 (at his arrest, the disciples all left him and fled).",
+   "Matthew 5:23-24 (if you bring your gift to the altar and remember your brother has something against you, leave your gift, go first to be reconciled, then come and offer it).",
+   "Eirene (Greek) and shalom (Hebrew): peace, wholeness. Justin Martyr, First Apology 65 (the kiss in worship); Romans 16:16.",
+   "General Instruction of the Roman Missal 82 (the Rite of Peace before communion; the form of the gesture set by local custom)."
+  ],
+  "check": []
+ },
+ "hook": {
+  "v": "PC1-Locked-Room",
+  "say": "before the story, can i ask you something? when someone has let you down, what do you usually say first when you see them again?",
+  "options": [
+   [
+    "Nothing, I go quiet",
+    "that’s so human. watch what he says first."
+   ],
+   [
+    "Something sharp",
+    "me too, sometimes. this story goes another way."
+   ],
+   [
+    "I try to clear the air",
+    "then you’ll love this one. listen."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "PC1-Locked-Room",
+   "vo": [
+    "V01"
+   ],
+   "line": "On the night of the first Easter, the friends of Jesus hid in a locked room. They had run away when he was arrested. Now they were afraid."
+  },
+  {
+   "t": "ask",
+   "v": "PC1-Locked-Room",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "Suddenly the risen Jesus is standing in the room, with the friends who ran away. What does he say about their running?",
+   "o": [
+    "He asks why they left him",
+    "He tells them he forgives them",
+    "Not one word about it"
+   ],
+   "a": 2,
+   "why": "Nothing. In John’s telling his first words are an everyday greeting, and the night they ran never comes up."
+  },
+  {
+   "t": "shot",
+   "v": "PC2-He-Stands-Among",
+   "vo": [
+    "V02"
+   ],
+   "line": "Then Jesus was standing among them, though the doors were locked. His first words were, “Peace be with you.”"
+  },
+  {
+   "t": "ask",
+   "v": "PC2-He-Stands-Among",
+   "eb": "did you know?",
+   "q": "“Peace be with you” was an everyday Jewish greeting: shalom aleichem. What does shalom mean at its root?",
+   "o": [
+    "Whole, nothing missing",
+    "Quiet, no noise",
+    "Safe from danger"
+   ],
+   "a": 0,
+   "why": "Shalom comes from a root meaning complete. Greeting the friends who broke faith with ‘wholeness’ mends the friendship before a word about it."
+  },
+  {
+   "t": "shot",
+   "v": "PC3-Open-Hands",
+   "vo": [
+    "V03"
+   ],
+   "line": "He showed them his hands, and they were overjoyed. Then he said it again, “Peace be with you,” and gave the frightened friends a job."
+  },
+  {
+   "t": "ask",
+   "v": "PC3-Open-Hands",
+   "eb": "did you know?",
+   "q": "He also tells them: if you forgive anyone’s sins, they are forgiven. Catholics see the start of which sacrament here?",
+   "o": [
+    "Confession",
+    "Baptism",
+    "The Eucharist"
+   ],
+   "a": 0,
+   "why": "John 20:23. The Council of Trent pointed to this verse for the sacrament of penance: friends who had just been forgiven are sent out to forgive."
+  },
+  {
+   "t": "shot",
+   "v": "PC4-He-Breathes",
+   "vo": [
+    "V04"
+   ],
+   "line": "Then he breathed on them and said, “Receive the Holy Spirit.” The locked room was not the end of the story."
+  },
+  {
+   "t": "shot",
+   "v": "PC5-Gift-At-Altar",
+   "vo": [
+    "V05"
+   ],
+   "line": "He had once taught: if you bring a gift to the altar and remember someone has something against you, leave it there. First make peace, then come back.",
+   "label": "a saying of Jesus"
+  },
+  {
+   "t": "shot",
+   "v": "PC6-Today-Sign-Of-Peace",
+   "vo": [
+    "V06"
+   ],
+   "line": "Today, just before communion at Mass, everyone turns to whoever is beside them, even a stranger, and says, “Peace be with you.”",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "PC6-Today-Sign-Of-Peace",
+   "eb": "did you know?",
+   "q": "Today the sign of peace is often a handshake. What did early Christians share instead?",
+   "o": [
+    "A bow",
+    "A kiss",
+    "A shared cup"
+   ],
+   "a": 1,
+   "why": "Paul tells the churches to “greet one another with a holy kiss.” The kiss of peace stayed in worship for centuries; now it’s often a handshake, a bow or a nod."
+  },
+  {
+   "t": "teach",
+   "v": "PC4-He-Breathes",
+   "say": [
+    "here’s what i love. the friends who ran away get peace, not a lecture. that’s the first word of easter night.",
+    "catholics carry it into every mass. before the table, you turn to whoever is there, not just your best friend. the gesture changes from place to place, a handshake, a bow, a nod. the meaning stays: peace first, then the table."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "PC6-Today-Sign-Of-Peace",
+   "eb": "the hard one",
+   "q": "The friends were the ones who ran. So who made the first move toward peace?",
+   "o": [
+    "The friends, by unlocking the door",
+    "Peter, speaking for all of them",
+    "Jesus, the one who’d been let down"
+   ],
+   "a": 2,
+   "why": "The one who was wronged went first. The sign of peace hands that pattern to every Mass, just before people walk up to the altar."
+  }
+ ],
+ "today": {
+  "v": "PC6-Today-Sign-Of-Peace",
+  "say": "think of one person you’re not at peace with. you don’t have to fix it today. just wish them peace: in a prayer, if you pray, or in a quiet moment if you don’t.",
+  "options": [
+   [
+    "Someone came to mind",
+    "then you’ve already turned toward them. that’s the sign."
+   ],
+   [
+    "I’ll think about it",
+    "that counts. peace usually starts as a thought."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "One day that isn’t yours.",
+  "line": "why some early christians said they couldn’t live without sunday."
+ }
+}

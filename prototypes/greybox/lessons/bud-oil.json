@@ -1,0 +1,195 @@
+{
+ "id": "bud-oil",
+ "home": "lotus",
+ "title": "A bowl full of oil",
+ "told": "a story the Buddha told",
+ "clips": "art/sacred/bud-oil/clips/",
+ "voice": "art/sacred/bud-oil/voice/",
+ "guide": {
+  "name": "Orlando",
+  "photo": "art/guides/buddhism.webp"
+ },
+ "hook": {
+  "v": "BO1-The-Crowd",
+  "say": "before the story, can i ask you something? how often does your phone pull you away from what you’re doing?",
+  "options": [
+   [
+    "All the time",
+    "same here, honestly. this one’s for us."
+   ],
+   [
+    "Now and then",
+    "then you know the tug. listen."
+   ],
+   [
+    "Hardly ever",
+    "that’s rare. here’s an old picture of what you’re doing."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "BO1-The-Crowd",
+   "vo": [
+    "V01"
+   ],
+   "line": "The Buddha once told his monks a story. A huge crowd gathers to watch the most beautiful girl in the land dance and sing.",
+   "label": "a story the Buddha told"
+  },
+  {
+   "t": "shot",
+   "v": "BO2-Brim-Full",
+   "vo": [
+    "V02"
+   ],
+   "line": "Then a man is handed a bowl of oil, filled to the very brim. He must carry it right between the crowd and the dancer.",
+   "label": "a story the Buddha told"
+  },
+  {
+   "t": "shot",
+   "v": "BO3-The-Guard",
+   "vo": [
+    "V03"
+   ],
+   "line": "Behind him walks a guard with a drawn sword. If he spills even one drop, it will cost him his life.",
+   "label": "a story the Buddha told"
+  },
+  {
+   "t": "ask",
+   "v": "BO3-The-Guard",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "The Buddha tells this as a picture. What do you guess the brim-full bowl stands for?",
+   "o": [
+    "Your life, which one slip can spill",
+    "Your attention to your own body",
+    "The teaching, carried with great care"
+   ],
+   "a": 1,
+   "why": "“The bowl full of oil stands for mindfulness directed to the body,” the Buddha says (SN 47.20). The crowd and the dancer are everything that pulls attention away."
+  },
+  {
+   "t": "shot",
+   "v": "BO4-Every-Step",
+   "vo": [
+    "V04"
+   ],
+   "line": "Would he look up at the dancer? No, said the monks. He would keep his mind on the bowl, one step after another.",
+   "label": "a story the Buddha told"
+  },
+  {
+   "t": "ask",
+   "v": "BO4-Every-Step",
+   "eb": "why?",
+   "q": "Why does the bowl have to be full to the brim?",
+   "o": [
+    "Oil was costly in those days",
+    "So the guard can see it clearly",
+    "So that every single step needs his attention"
+   ],
+   "a": 2,
+   "why": "Half full, he could relax. Brim full, he has to keep coming back to it, step after step."
+  },
+  {
+   "t": "shot",
+   "v": "BO5-The-Teaching",
+   "vo": [
+    "V05"
+   ],
+   "line": "“The bowl full of oil,” the Buddha said, “stands for mindfulness of the body.” His word was sati, from an old word for memory."
+  },
+  {
+   "t": "ask",
+   "v": "BO5-The-Teaching",
+   "eb": "did you know?",
+   "q": "Sati is usually translated “mindfulness.” When did that English word take on this job?",
+   "o": [
+    "The 1880s, by a British scholar of Pali",
+    "The 1960s, with the first meditation teachers",
+    "The 1990s, with stress-reduction classes"
+   ],
+   "a": 0,
+   "why": "The choice is usually credited to the British Pali scholar T. W. Rhys Davids, around 1881. The English word was centuries old; he gave it a new job."
+  },
+  {
+   "t": "shot",
+   "v": "BO6-Sitting-Today",
+   "vo": [
+    "V06"
+   ],
+   "line": "Today, many people sit with meditation apps. Much of what they teach grew out of practices like this one.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "BO6-Sitting-Today",
+   "eb": "did you know?",
+   "q": "Meditation apps often teach mindfulness on its own. In the Buddha’s teaching, what does it sit beside?",
+   "o": [
+    "Kind speech, honest work and wise action",
+    "Fasting, chanting and giving up home",
+    "Calm breathing, good sleep and exercise"
+   ],
+   "a": 0,
+   "why": "Right mindfulness is the seventh part of the Noble Eightfold Path, alongside right speech, right action and right livelihood. It was never meant to stand alone."
+  },
+  {
+   "t": "teach",
+   "v": "BO5-The-Teaching",
+   "say": [
+    "so, is meditation buddhist? much of it grew from buddhist practice. but in the buddha’s teaching, mindfulness is one part of an eight-part path, next to how you speak, act and earn a living.",
+    "and no one has to become a buddhist to sit. the tradition’s own word for its teaching is an invitation: come and see."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "BO4-Every-Step",
+   "eb": "the hard one",
+   "q": "Why does “remembering” fit the man with the bowl better than just “paying attention”?",
+   "o": [
+    "He has to recall the path he was shown",
+    "He keeps catching his drift and coming back",
+    "He keeps the guard’s warning in mind"
+   ],
+   "a": 1,
+   "why": "Attention slips; sati is noticing the slip and returning, step after step. That’s why teachers call it remembering, not straining."
+  }
+ ],
+ "today": {
+  "v": "BO2-Brim-Full",
+  "say": "pick one ordinary thing you’ll carry today: a cup of tea, a bag, the walk to your car. carry it the whole way like the bowl of oil. when your mind wanders, remember, and come back.",
+  "options": [
+   [
+    "I’ll try it today",
+    "one walk with the bowl. that’s sati."
+   ],
+   [
+    "What if I forget?",
+    "then you remember again. that’s the practice, not a failure."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "Five friends in a deer park",
+  "line": "five old friends agree to snub him. then he walks up, and they can’t."
+ },
+ "card": {
+  "from": "a story the Buddha told",
+  "mins": 5,
+  "keep": "oil",
+  "keepName": "The bowl of oil",
+  "keepWhy": "Remember to notice, every step.",
+  "keepSvg": "<path d=\"M22 50h56c0 14-12 24-28 24S22 64 22 50z\" fill=\"#2a1b05\"/><path d=\"M22 50q28-6 56 0\" fill=\"none\" stroke=\"#2a1b05\" stroke-width=\"4\"/><path d=\"M50 20c5 7 8 11 8 15a8 8 0 0 1-16 0c0-4 3-8 8-15z\" fill=\"#2a1b05\"/>",
+  "sources": [
+   "Janapadakalyani Sutta, Samyutta Nikaya 47.20 (at Sedaka, among the Sumbhas): the crowd, the most beautiful girl of the land dancing and singing, the bowl of oil filled to the brim, the man with a drawn sword behind; the bowl as mindfulness",
+   "Dhammacakkappavattana Sutta, Samyutta Nikaya 56.11: right mindfulness as one of the eight factors of the path",
+   "Sati related to Sanskrit smrti, memory; “mindfulness” as T. W. Rhys Davids’ rendering",
+   "ehipassiko, “come and see,” in the recollection of the Dhamma (e.g. Anguttara Nikaya 11.12)"
+  ],
+  "check": [
+   "The teach, match and today steps speak of mindfulness in general; the sutta’s simile is specifically mindfulness directed to the body (the caption says so)."
+  ]
+ }
+}

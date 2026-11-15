@@ -1,0 +1,192 @@
+{
+ "id": "cat-greccio",
+ "home": "angelus",
+ "title": "No room",
+ "told": "from Luke’s Gospel and a story of Saint Francis",
+ "clips": "art/sacred/cat-greccio/clips/",
+ "voice": "art/sacred/cat-greccio/voice/",
+ "guide": {
+  "name": "Nicole",
+  "photo": "art/guides/catholic.webp"
+ },
+ "card": {
+  "from": "from Luke’s Gospel and a story of Saint Francis",
+  "mins": 5,
+  "keep": "manger",
+  "keepName": "The manger at Greccio",
+  "keepWhy": "God chose the smallest room.",
+  "keepSvg": "<path d=\"M18 38h64l-10 24H28z\" fill=\"#2a1b05\"/><path d=\"M30 60L22 86M70 60l8 26M34 66l32 18M66 66L34 84\" stroke=\"#2a1b05\" stroke-width=\"6\" stroke-linecap=\"round\"/><path d=\"M28 36l6-10M42 36l2-12M56 36l-2-12M70 36l-6-10\" stroke=\"#2a1b05\" stroke-width=\"4\" stroke-linecap=\"round\"/>",
+  "sources": [
+   "Luke 2:1-7 (a decree from Caesar Augustus that the whole world should be enrolled; Joseph went up to Bethlehem, the city of David, with Mary his espoused wife, who was with child; she brought forth her firstborn son, wrapped him up in swaddling clothes, and laid him in a manger, “because there was no room for them in the inn”). Douay-Rheims. Greek kataluma, also used at Luke 22:11 for the guest chamber of the Last Supper.",
+   "Thomas of Celano, First Life of Saint Francis 84-86: at Greccio, three years before his death (Christmas 1223), Francis asks John of Greccio to prepare a manger with hay, an ox and an ass; the brothers and people come with candles and torches; the woods ring with their songs; Mass is celebrated over the manger; Francis, a deacon (Levite), sings the Gospel and preaches, calling Christ “the babe of Bethlehem” with great tenderness. Bonaventure, Major Legend 10.7.",
+   "Pope Francis, Admirabile Signum (2019), on the meaning of the Christmas crib and Greccio. Catechism of the Catholic Church 461-463, 525 (the Incarnation; Jesus born in a humble stable). Latin caro, carnis (flesh). John 1:14."
+  ],
+  "check": [
+   "The “guest room” reading of kataluma is one scholarly view; the lesson says it “can also mean” a guest room. Confirm.",
+   "That no innkeeper appears in Luke is accurate; the claim that Christmas plays added him is a general observation. Confirm wording."
+  ]
+ },
+ "hook": {
+  "v": "CGR2-No-Room",
+  "say": "before the story, can i ask you something? at the holidays, who ends up on the couch or the air mattress at your house?",
+  "options": [
+   [
+    "Me, usually",
+    "ha. then you’ll feel for this family."
+   ],
+   [
+    "The cousins",
+    "there’s always a cousin. watch where this baby ends up."
+   ],
+   [
+    "Nobody, it’s quiet",
+    "then picture the fullest house you know."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "CGR1-Road-Bethlehem",
+   "vo": [
+    "V01"
+   ],
+   "line": "The emperor ordered everyone counted, so Joseph took Mary, very pregnant, on the long road to Bethlehem, the town of King David."
+  },
+  {
+   "t": "shot",
+   "v": "CGR2-No-Room",
+   "vo": [
+    "V02"
+   ],
+   "line": "Every guest room was full. When the baby came, Mary wrapped him in cloth and laid him in a manger, a feeding trough for animals."
+  },
+  {
+   "t": "ask",
+   "v": "CGR2-No-Room",
+   "eb": "did you know?",
+   "q": "Luke’s word for “inn,” kataluma, turns up once more in his Gospel. Where?",
+   "o": [
+    "The Good Samaritan’s inn",
+    "The room of the Last Supper",
+    "Peter’s house in Capernaum"
+   ],
+   "a": 1,
+   "why": "At the Last Supper Jesus asks, “Where is the kataluma?”, the guest room. For the Samaritan’s inn Luke uses a different word, so many readers think Bethlehem’s “inn” was a family’s full guest room."
+  },
+  {
+   "t": "ask",
+   "v": "CGR2-No-Room",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "Twelve centuries later, Francis of Assisi wants people to see how poor that night was. What does he do?",
+   "o": [
+    "Hires a painter to paint the scene",
+    "Has townspeople act out the night",
+    "Sets up a manger, an ox and a donkey"
+   ],
+   "a": 2,
+   "why": "Just a manger, hay, an ox and a donkey. His first biographer, Thomas of Celano, mentions no one playing Mary or Joseph: the manger did the preaching."
+  },
+  {
+   "t": "shot",
+   "v": "CGR3-Greccio-Cave",
+   "vo": [
+    "V03"
+   ],
+   "line": "Christmas 1223, in the Italian town of Greccio. Francis had a friend set up a manger with hay, an ox and a donkey, in a rocky spot in the woods.",
+   "label": "much later"
+  },
+  {
+   "t": "shot",
+   "v": "CGR4-Torches-Night",
+   "vo": [
+    "V04"
+   ],
+   "line": "People climbed the hill at night with candles and torches. The woods rang with their songs. Mass was said right there, over the manger."
+  },
+  {
+   "t": "shot",
+   "v": "CGR5-Francis-Preaches",
+   "vo": [
+    "V05"
+   ],
+   "line": "Francis sang the Gospel and preached about “the baby of Bethlehem” with such tenderness that people never forgot it."
+  },
+  {
+   "t": "ask",
+   "v": "CGR5-Francis-Preaches",
+   "eb": "why?",
+   "q": "Francis could have just preached about Christmas. Why bring in real hay and real animals?",
+   "o": [
+    "So they could see how low God came",
+    "Because the town church was too small",
+    "To give the farmers a part in the feast"
+   ],
+   "a": 0,
+   "why": "Celano says Francis wanted to see “with bodily eyes” how the baby lay in a manger, with an ox and donkey standing by. He called Christmas the feast of feasts."
+  },
+  {
+   "t": "shot",
+   "v": "CGR6-Today-Creche",
+   "vo": [
+    "V06"
+   ],
+   "line": "Today, Catholic churches and homes all over the world set up a crib scene at Christmas. Tradition traces the custom to that night at Greccio.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "CGR6-Today-Creche",
+   "eb": "did you know?",
+   "q": "Luke never mentions an ox or a donkey. Where do they come from?",
+   "o": [
+    "Matthew’s Gospel",
+    "A line in the prophet Isaiah",
+    "Francis added them at Greccio"
+   ],
+   "a": 1,
+   "why": "Isaiah 1:3: “The ox knows its owner, and the donkey its master’s manger.” Christians carved the two at the crib in the 300s, long before Francis."
+  },
+  {
+   "t": "teach",
+   "v": "CGR2-No-Room",
+   "say": [
+    "here’s what i love. God didn’t arrive in a palace. the first bed was a feeding trough, and the air smelled like a barn.",
+    "catholics call it the incarnation: God becoming flesh, a real baby who needed feeding and holding. he chose the smallest room. francis just made sure nobody could forget it."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "CGR6-Today-Creche",
+   "eb": "the hard one",
+   "q": "At Greccio, Mass was said over the manger. Why would that matter so much to Francis?",
+   "o": [
+    "Christ comes in the bread, as at Bethlehem",
+    "There was no altar out in the woods",
+    "It let the poor hear Mass outdoors"
+   ],
+   "a": 0,
+   "why": "For Francis, Jesus comes as truly in the bread of the Mass as he came in Bethlehem, whose name means “house of bread.” The manger became an altar."
+  }
+ ],
+ "today": {
+  "v": "CGR6-Today-Creche",
+  "say": "this week, make a little room: one extra chair at the table, one open hour, one call to someone who’d otherwise be alone. if you pray, you can ask God to show you who needs the room.",
+  "options": [
+   [
+    "I’ll make room for someone",
+    "lovely. that’s the manger, in your house."
+   ],
+   [
+    "I’ll set up a crib scene",
+    "good. tell someone about francis and the donkey."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "Good news for the night shift.",
+  "line": "next, who’s awake at 3 a.m. when the best news breaks."
+ }
+}

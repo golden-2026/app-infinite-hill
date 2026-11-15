@@ -1,0 +1,12 @@
+# Flags for the morning (lesson content, not fixed)
+- b6: isl-ibrahim `today` clip points into isl-ikhlas folder.
+- b6: wild-oneword ask 2 compares Jesus/Confucius/Hillel (fine only inside "my own religion"); not used in game.
+- b6: "famous" in lesson text: sik-wow ask 4, wild-wagon ask 2, jew-nineveh tomorrow line.
+- b1: milk.json has no card/sources. holika repeats episode A story. Lessons' own open questions: Holika's fire in the Bhagavata; Hanafi view vs "faith grows and dips"; Luke 23:34a manuscript gap; wild-dearest "risky question" framing.
+- b2: isl-eid sacrifice dream in week one (kept away from games); ahalya "mistake" vague; cat-abba "abba" link is a reading Luke doesn't state; ruth, wild-earth, wild-shadow carry lesson "confirm" flags.
+- b8: ganga card asks to confirm "three generations"/"ancestors"; markandeya source line likely wrong; isl-din changes God's royal "We" to "I" and joins two reports; sik-coconut omits Guruship passing to the Panth; jew-aaron omits that Aaron's words weren't strictly true; sik-scatter source unconfirmed; wild-reed: Islamic scene, check the art for people.
+- b7: isl-crow tomorrow points to unwritten day 29; ganesha-head and squirrel game wrong answers kept about chores/helpers (check tone with deities); wild-leg game avoids the broken leg; unconfirmed checks: Ganesha turmeric paste / softened beheading, Rama verse source (Tulsidas not Valmiki), Slane history.
+- b4: isl-tree answer notes compare Qur'an with Genesis (cross-faith inside a Muslim lesson; kept out of episode, still in lesson); new-clothes applies a rebirth verse to habits (lesson asks to check); sik-boulder Wali Qandhari framing to confirm.
+- b3: bud-silence tomorrow title is a placeholder; Sikh spellings inconsistent (vand chakna/chhakna; dasvandh/daswandh); cross-faith comparisons inside lessons: isl-tawbah ask 1, isl-adhan shot 1 ("bell as the Christians"), cat-ars teach (Protestant/Orthodox); open source notes: annapurna, durga, sik-doors.
+- b5: sik-bronze softens Sajjan's murders to robbery, "gave goods to the poor" unconfirmed; sik-forest 1704 vs 1705; kumbh four drop places are Mela tradition not Purana; cat-assisi order of leper meeting vs renunciation uncertain.
+- wild-reed (Rumi, in "my own religion"): the art shows Rumi and Shams with faces. Neither is a prophet, so it is not a hard rule break, but it goes against our no-people look for Islamic scenes. Owner/scholar call.

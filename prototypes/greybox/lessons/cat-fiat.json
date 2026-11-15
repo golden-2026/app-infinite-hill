@@ -1,0 +1,192 @@
+{
+ "id": "cat-fiat",
+ "home": "angelus",
+ "title": "A young woman says yes",
+ "told": "from Luke’s Gospel",
+ "clips": "art/sacred/cat-fiat/clips/",
+ "voice": "art/sacred/cat-fiat/voice/",
+ "guide": {
+  "name": "Nicole",
+  "photo": "art/guides/catholic.webp"
+ },
+ "card": {
+  "from": "from Luke’s Gospel",
+  "mins": 5,
+  "keep": "lily",
+  "keepName": "Mary’s lily",
+  "keepWhy": "An honest question, then a yes.",
+  "keepSvg": "<path d=\"M50 46c-4-12-2-24 0-30 2 6 4 18 0 30z\" fill=\"#2a1b05\"/><path d=\"M48 46c-10-6-18-14-20-22 8 2 16 10 20 22z\" fill=\"#2a1b05\"/><path d=\"M52 46c10-6 18-14 20-22-8 2-16 10-20 22z\" fill=\"#2a1b05\"/><rect x=\"47.5\" y=\"44\" width=\"5\" height=\"40\" rx=\"2.5\" fill=\"#2a1b05\"/><path d=\"M50 70c8-2 14-8 16-14-8 0-14 6-16 14z\" fill=\"#2a1b05\"/>",
+  "sources": [
+   "Luke 1:26-38 (the angel Gabriel sent to Nazareth, a city of Galilee, to a virgin espoused to Joseph; “Hail, full of grace, the Lord is with thee”; she is troubled and wonders what this greeting means; “Fear not, Mary, for thou hast found grace with God”; a son to be named Jesus, Son of the Most High; “How shall this be done, because I know not man?”; “no word shall be impossible with God”; “Behold the handmaid of the Lord; be it done to me according to thy word”). Douay-Rheims (Challoner).",
+   "Fiat: Latin Vulgate, Luke 1:38 “fiat mihi secundum verbum tuum.” Handmaid: Latin ancilla, Greek doule, a woman servant (Luke 1:38).",
+   "Catechism of the Catholic Church 484-511 (the Annunciation; Mary’s free consent), 495 (Mother of God), 971 (devotion to Mary differs from the adoration given to God).",
+   "The Angelus: traditional Catholic devotion recalling the Annunciation, prayed at morning, noon and evening, often at the ringing of a bell.",
+   "The lily: a traditional symbol of Mary in Annunciation paintings."
+  ],
+  "check": [
+   "Mary’s age: Luke gives none. The painting prompt says “about sixteen” and the caption says only “a young woman.” Confirm that is acceptable for the art."
+  ]
+ },
+ "hook": {
+  "v": "FT1-Nazareth-Morning",
+  "say": "before the story, can i ask you something? has life ever asked you for a yes you didn’t feel ready to give?",
+  "options": [
+   [
+    "Yes, right now",
+    "then sit close. this one is about exactly that."
+   ],
+   [
+    "Once, a big one",
+    "you’ll recognize her, then. listen."
+   ],
+   [
+    "Not yet",
+    "keep this one for the day it comes."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "FT1-Nazareth-Morning",
+   "vo": [
+    "V01"
+   ],
+   "line": "In Nazareth, a small town in Galilee, lived a young woman named Mary. She was promised in marriage to a man named Joseph."
+  },
+  {
+   "t": "shot",
+   "v": "FT2-Gabriel-Enters",
+   "vo": [
+    "V02"
+   ],
+   "line": "One ordinary day, the angel Gabriel came to her and said, “Hail, full of grace, the Lord is with you.”"
+  },
+  {
+   "t": "ask",
+   "v": "FT2-Gabriel-Enters",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "An angel is standing in her house. How does Mary react to his greeting?",
+   "o": [
+    "She’s deeply troubled, and wonders what it means",
+    "She kneels and says yes at once",
+    "She runs to find Joseph"
+   ],
+   "a": 0,
+   "why": "Luke says she was troubled. Even Mary is startled. Saints are allowed to be human."
+  },
+  {
+   "t": "shot",
+   "v": "FT3-Do-Not-Fear",
+   "vo": [
+    "V03"
+   ],
+   "line": "She was troubled. Gabriel said, “Do not be afraid, Mary, you have found grace with God. You will have a son, and name him Jesus.”"
+  },
+  {
+   "t": "shot",
+   "v": "FT4-Her-Question",
+   "vo": [
+    "V04"
+   ],
+   "line": "Mary asked an honest question: “How can this be?” She wasn’t married yet. Gabriel answered, “Nothing is impossible for God.”"
+  },
+  {
+   "t": "ask",
+   "v": "FT4-Her-Question",
+   "eb": "did you know?",
+   "q": "Earlier in Luke, the priest Zechariah questions Gabriel too, and is struck silent. Mary questions him and isn’t. What’s the difference?",
+   "o": [
+    "Zechariah asked for proof; Mary asked how",
+    "Mary was young, so she was let off",
+    "A priest should have known better"
+   ],
+   "a": 0,
+   "why": "Zechariah asked “How will I know this?”, wanting a sign. Mary trusted, and asked how it would happen. Same angel, very different question."
+  },
+  {
+   "t": "ask",
+   "v": "FT4-Her-Question",
+   "eb": "you’re in it",
+   "q": "You’re Mary. Engaged, not yet married, and told you’ll have a child. What’s the real risk in saying yes?",
+   "o": [
+    "Being sent away to live at the Temple",
+    "Shame, and maybe losing Joseph",
+    "None; a baby was always good news"
+   ],
+   "a": 1,
+   "why": "Matthew says Joseph planned to quietly end the engagement until a dream changed his mind. Her yes was not a small one."
+  },
+  {
+   "t": "shot",
+   "v": "FT5-Fiat",
+   "vo": [
+    "V05"
+   ],
+   "line": "Then Mary said, “Behold the handmaid of the Lord. Be it done to me according to thy word.” And the angel left her."
+  },
+  {
+   "t": "shot",
+   "v": "FT6-Today-Angelus",
+   "vo": [
+    "V06"
+   ],
+   "line": "Today, in many towns, church bells ring at morning, noon and evening. Some Catholics stop and pray the Angelus, remembering this very moment.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "FT6-Today-Angelus",
+   "eb": "did you know?",
+   "q": "When the Angelus bell rings, how does it traditionally ring?",
+   "o": [
+    "Twelve strokes, like noon",
+    "One stroke for each prayer",
+    "Three threes, then nine"
+   ],
+   "a": 2,
+   "why": "Three strokes, three times, with a Hail Mary in each pause, then nine. In Millet’s painting The Angelus, two farmers stop in a field at that sound."
+  },
+  {
+   "t": "teach",
+   "v": "FT5-Fiat",
+   "say": [
+    "here’s what i love. God doesn’t push. the angel asks, mary asks back, and then she chooses.",
+    "catholics honor mary above every other saint, as the mother of God. honor, not worship. and the church treasures her yes because it was free: she asked, she listened, she chose."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "FT2-Gabriel-Enters",
+   "eb": "the hard one",
+   "q": "Gabriel calls Mary “full of grace” before she has said yes to anything. What does that tell you about grace?",
+   "o": [
+    "She earned it by being so good",
+    "It only arrives once you say yes",
+    "It was already there, before her answer"
+   ],
+   "a": 2,
+   "why": "The gift came first, then the yes. That’s yesterday’s word, grace, at work in Nazareth."
+  }
+ ],
+ "today": {
+  "v": "FT6-Today-Angelus",
+  "say": "at noon today, or whenever you notice the time, stop for one breath. you can watch, learn the words, or join in with mary’s: “be it done to me according to thy word.” or just say: let it be.",
+  "options": [
+   [
+    "I’ll stop at noon",
+    "lovely. that’s one of the oldest noon pauses there is."
+   ],
+   [
+    "I’ll try once this week",
+    "that counts. one honest pause is a yes too."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "Two cousins, one hello.",
+  "line": "mary hurries into the hills, and a baby leaps."
+ }
+}

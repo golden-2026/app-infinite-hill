@@ -41,7 +41,7 @@ export default function Reminders() {
         <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8, marginTop: 10 }} accessibilityRole="radiogroup">
           {TIMES.map(([v, l]) => (
             <Pressable key={v} accessibilityRole="radio" accessibilityState={{ checked: picked(v) }} aria-checked={picked(v)} onPress={() => pickTime(v)}
-              style={{ borderWidth: 1.5, borderColor: picked(v) ? color.ink : color.line, backgroundColor: picked(v) ? "#FFFBE0" : "#fff", borderRadius: 999, minHeight: 44, justifyContent: "center", paddingHorizontal: 16 }}>
+              style={{ borderWidth: 1.5, borderColor: picked(v) ? color.ink : color.line, backgroundColor: picked(v) ? "#FFFBE0" : color.white, borderRadius: 999, minHeight: 44, justifyContent: "center", paddingHorizontal: 16 }}>
               <Text style={{ fontFamily: font.text[600], fontSize: 13, color: color.ink }}>{t(l)}</Text>
             </Pressable>
           ))}

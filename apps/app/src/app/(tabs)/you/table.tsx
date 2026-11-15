@@ -25,7 +25,7 @@ export default function Table() {
     setAdding(false);
   };
   const chip = (on: boolean, text: string, onPress: () => void, key: string) => (
-    <Pressable key={key} accessibilityRole="radio" accessibilityState={{ checked: on }} aria-checked={on} onPress={onPress} style={{ minHeight: 44, minWidth: 44, alignItems: "center", justifyContent: "center", paddingHorizontal: 12, borderRadius: 999, borderWidth: 1.5, borderColor: on ? color.ink : color.line, backgroundColor: on ? color.ink : "#fff" }}>
+    <Pressable key={key} accessibilityRole="radio" accessibilityState={{ checked: on }} aria-checked={on} onPress={onPress} style={{ minHeight: 44, minWidth: 44, alignItems: "center", justifyContent: "center", paddingHorizontal: 12, borderRadius: 999, borderWidth: 1.5, borderColor: on ? color.ink : color.line, backgroundColor: on ? color.ink : color.white }}>
       <Text style={{ fontFamily: font.text[700], fontSize: 13, color: on ? color.gold : color.ink }}>{text}</Text>
     </Pressable>
   );
@@ -48,7 +48,7 @@ export default function Table() {
         );
       })}
       {adding ? (
-        <View style={{ backgroundColor: "#fff", borderRadius: 18, padding: 14, gap: 8 }}>
+        <View style={{ backgroundColor: color.white, borderRadius: 18, padding: 14, gap: 8 }}>
           <Eyebrow>{t("companion.table.addChild")}</Eyebrow>
           <TextInput value={name} onChangeText={setName} placeholder={t("companion.table.name")} accessibilityLabel={t("companion.table.nameA11y")} style={{ padding: 12, borderRadius: 12, borderWidth: 1.5, borderColor: color.line, fontFamily: font.text[400], fontSize: 16 }} />
           <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 6 }} accessibilityRole="radiogroup" accessibilityLabel={t("companion.table.age")}>{[6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17].map((a) => chip(age === a, String(a), () => setAge(a), `a${a}`))}</View>

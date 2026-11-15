@@ -18,7 +18,7 @@ export default function Gift() {
       <Text accessibilityRole="header" style={type.title()}>{t("companion.gift.h1")}<Text style={{ fontStyle: "italic" }}>{t("companion.gift.h1b")}</Text></Text>
       <View style={{ flexDirection: "row", gap: 8 }} accessibilityRole="radiogroup">
         {WHO.map((w) => (
-          <Pressable key={w} accessibilityRole="radio" accessibilityState={{ checked: who === w }} aria-checked={who === w} onPress={() => setWho(w)} style={{ borderWidth: 1.5, borderColor: who === w ? color.ink : color.line, backgroundColor: who === w ? "#FFFBE0" : "#fff", borderRadius: 999, paddingVertical: 9, paddingHorizontal: 14 }}>
+          <Pressable key={w} accessibilityRole="radio" accessibilityState={{ checked: who === w }} aria-checked={who === w} onPress={() => setWho(w)} style={{ borderWidth: 1.5, borderColor: who === w ? color.ink : color.line, backgroundColor: who === w ? "#FFFBE0" : color.white, borderRadius: 999, paddingVertical: 9, paddingHorizontal: 14 }}>
             <Text style={{ fontFamily: font.text[600], fontSize: 13, color: color.ink }}>{who_(w)}</Text>
           </Pressable>
         ))}

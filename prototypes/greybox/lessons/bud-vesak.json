@@ -1,0 +1,194 @@
+{
+ "id": "bud-vesak",
+ "home": "lotus",
+ "title": "Two streams of water",
+ "told": "as the old texts tell it",
+ "clips": "art/sacred/bud-vesak/clips/",
+ "voice": "art/sacred/bud-vesak/voice/",
+ "guide": {
+  "name": "Orlando",
+  "photo": "art/guides/buddhism.webp"
+ },
+ "hook": {
+  "v": "BV6-Vesak-Lanterns",
+  "say": "before the story, can i ask you something? on your birthday, do you like a big celebration, or a quiet one?",
+  "options": [
+   [
+    "Big, with everyone",
+    "then you’ll love this festival. listen."
+   ],
+   [
+    "Quiet, just a few people",
+    "this one has quiet mornings too. listen."
+   ],
+   [
+    "I’d rather skip it",
+    "fair. this birthday is about more than a birthday."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "BV1-Lumbini-Garden",
+   "vo": [
+    "V01"
+   ],
+   "line": "Long ago, a queen named Maya was traveling to her parents’ home when she stopped to rest in a garden called Lumbini."
+  },
+  {
+   "t": "shot",
+   "v": "BV2-Under-The-Sal-Tree",
+   "vo": [
+    "V02"
+   ],
+   "line": "There, standing beneath a flowering sal tree, holding one of its branches, she gave birth to a son."
+  },
+  {
+   "t": "shot",
+   "v": "BV3-Seven-Steps",
+   "vo": [
+    "V03"
+   ],
+   "line": "The old texts say the newborn stood, took seven steps, and spoke: this is my last birth.",
+   "label": "as the old texts tell it"
+  },
+  {
+   "t": "ask",
+   "v": "BV3-Seven-Steps",
+   "blur": true,
+   "predict": true,
+   "eb": "what happens next?",
+   "q": "Two streams of water fall from the sky to bathe the newborn. What are they like, the old texts say?",
+   "o": [
+    "Both warm, like a bath",
+    "One cool and one warm",
+    "Both sweet with flower scent"
+   ],
+   "a": 1,
+   "why": "One cool and one warm, for the baby and his mother. That’s the moment people re-enact today."
+  },
+  {
+   "t": "shot",
+   "v": "BV4-Streams-Of-Water",
+   "vo": [
+    "V04"
+   ],
+   "line": "Then two streams of water fell from the sky, one cool and one warm, to bathe him.",
+   "label": "as the old texts tell it"
+  },
+  {
+   "t": "shot",
+   "v": "BV5-Bathing-The-Statue",
+   "vo": [
+    "V05"
+   ],
+   "line": "Today, in many East Asian temples, people pour water over a small statue of the baby Buddha, one hand pointing up.",
+   "label": "today"
+  },
+  {
+   "t": "shot",
+   "v": "BV6-Vesak-Lanterns",
+   "vo": [
+    "V06"
+   ],
+   "line": "And in Sri Lanka, Thailand and Myanmar, the full moon of Vesak marks three things at once: his birth, his awakening and his death.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "BV6-Vesak-Lanterns",
+   "eb": "why?",
+   "q": "Why would one festival hold his birth, his awakening and his death together?",
+   "o": [
+    "Tradition puts all three on the same full moon",
+    "Nobody knew his birthday, so they merged them",
+    "A king joined the three feasts into one"
+   ],
+   "a": 0,
+   "why": "Theravada tradition holds that he was born, woke up and died on the full moon of the month Vesakha, in different years. One night, three anniversaries."
+  },
+  {
+   "t": "ask",
+   "v": "BV6-Vesak-Lanterns",
+   "eb": "did you know?",
+   "q": "A man once asked the Buddha: are you a god? A spirit? A human? What did he answer?",
+   "o": [
+    "A human, just like you",
+    "A god born as a man",
+    "None of those. Remember me as awake."
+   ],
+   "a": 2,
+   "why": "In the Dona Sutta he says no to each, and asks to be remembered as buddha, awake. It’s a title, not a name."
+  },
+  {
+   "t": "ask",
+   "v": "BV5-Bathing-The-Statue",
+   "eb": "did you know?",
+   "q": "In Japan, on his birthday each April, what do people pour over the little statue?",
+   "o": [
+    "Water drawn from the temple well",
+    "Sweet tea made from hydrangea",
+    "Milk sweetened with honey"
+   ],
+   "a": 1,
+   "why": "Amacha, a sweet hydrangea tea, at Hana Matsuri, the flower festival. It recalls the sweet rain that, in East Asian tellings, nine dragons poured at his birth."
+  },
+  {
+   "t": "teach",
+   "v": "BV4-Streams-Of-Water",
+   "say": [
+    "vesak is a spring full moon. in many theravada countries it marks his birth, awakening and death together. in japan the birthday has its own flower festival in april, and much of east asia remembers the other two on other days.",
+    "different calendars, the same life. and the one everyone is celebrating, by his own account, wasn’t a god. he was a person who woke up."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "BV5-Bathing-The-Statue",
+   "eb": "the hard one",
+   "q": "The newborn said, “This is my last birth.” Why does that line matter so much to Buddhists?",
+   "o": [
+    "He would wake up and never be reborn again",
+    "He knew he would die young",
+    "He would be the last buddha ever"
+   ],
+   "a": 0,
+   "why": "Buddhists hope to end the cycle of rebirth, and “last birth” means this is the life he wakes up for good. Tradition says another buddha, Metteyya, is still to come."
+  }
+ ],
+ "today": {
+  "v": "BV6-Vesak-Lanterns",
+  "say": "on vesak, many buddhists light lanterns and do good deeds in the buddha’s honor. today, if you like, light a lamp or a candle and remember him as he asked: a person who woke up. then do one kind thing in his honor.",
+  "options": [
+   [
+    "I’ll light one tonight",
+    "then a little of vesak is in your home."
+   ],
+   [
+    "I’ll do the kind thing",
+    "that’s how many buddhists keep vesak. lovely."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "One lamp lights another",
+  "line": "a king asks a monk what carries on after we die. the monk answers with a lamp."
+ },
+ "card": {
+  "from": "as the old texts tell it",
+  "mins": 5,
+  "keep": "lantern",
+  "keepName": "A Vesak lantern",
+  "keepWhy": "He was a person who woke up.",
+  "keepSvg": "<path d=\"M44 18h12M50 12v6\" stroke=\"#2a1b05\" stroke-width=\"4\" stroke-linecap=\"round\"/><path d=\"M50 22c-16 0-24 12-24 26s8 26 24 26 24-12 24-26-8-26-24-26z\" fill=\"#2a1b05\"/><path d=\"M50 24v48M39 27q-8 21 0 42M61 27q8 21 0 42\" fill=\"none\" stroke=\"#f4f1e8\" stroke-width=\"2\" opacity=\".5\"/><rect x=\"42\" y=\"76\" width=\"16\" height=\"6\" rx=\"2\" fill=\"#2a1b05\"/>",
+  "sources": [
+   "Acchariya-abbhuta Sutta, Majjhima Nikaya 123: the mother gives birth standing; the newborn stands, takes seven steps, declares “this is my last birth”; two streams of water from the sky, one cool and one warm",
+   "Nidanakatha (Jataka commentary introduction): the journey toward Devadaha, the Lumbini grove of sal trees, the queen holding a sal branch",
+   "Dona Sutta, Anguttara Nikaya 4.36: “remember me as awake”",
+   "Vesak (full moon of Vesakha in Theravada countries); Hanamatsuri, 8 April (Japan); bathing the baby Buddha in East Asian Buddhist practice"
+  ],
+  "check": [
+   "Lumbini and the sal branch come from the commentary, not MN 123; the lesson tells them together."
+  ]
+ }
+}

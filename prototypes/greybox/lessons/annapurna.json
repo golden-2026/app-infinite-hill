@@ -1,0 +1,193 @@
+{
+ "id": "annapurna",
+ "home": "marigold",
+ "title": "Annapurna’s kitchen",
+ "told": "a legend of Varanasi",
+ "clips": "art/sacred/annapurna/clips/",
+ "voice": "art/sacred/annapurna/voice/",
+ "guide": {
+  "name": "Priyanka",
+  "photo": "art/guides/hinduism.webp"
+ },
+ "card": {
+  "from": "a legend of Varanasi",
+  "mins": 5,
+  "keep": "bowl",
+  "keepName": "Annapurna’s bowl",
+  "keepWhy": "Even Shiva held out his bowl, and said thanks.",
+  "sources": [
+   "The Annapurna legend of Varanasi (Kashi): Shiva calls the world, food included, an illusion; Parvati vanishes and food disappears; she appears in Kashi as Annapurna and feeds Shiva, who comes with a begging bowl (the film’s note: a well-loved legend of Varanasi)",
+   "The Annapurna temple in Varanasi, near the Kashi Vishwanath temple",
+   "Annapurna: anna (food) + purna (full)",
+   "Annapurna Stotram, attributed to Adi Shankara (“annapurne sadapurne…”), recited by many before meals"
+  ],
+  "check": [
+   "The legend’s textual source: it is a popular Varanasi telling; confirm “a legend of Varanasi” as the source line, and whether any Purana tells it this way.",
+   "Is Shiva calling food “maya” (illusion) the usual telling? The film says “food is just an illusion.”"
+  ]
+ },
+ "hook": {
+  "v": "AN1-Food-Illusion",
+  "say": "before the story, can i ask you something? how did your last meal go? did you notice it?",
+  "options": [
+   [
+    "Phone in hand",
+    "you’re not alone. listen to this one."
+   ],
+   [
+    "With family",
+    "that’s a gift. listen."
+   ],
+   [
+    "On the run",
+    "then ten seconds will help. listen."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "AN1-Food-Illusion",
+   "vo": [
+    "V01"
+   ],
+   "line": "In a story told in the holy city of Varanasi, Shiva once said to Parvati: food is just an illusion. It doesn’t really matter."
+  },
+  {
+   "t": "ask",
+   "v": "AN2-She-Vanishes",
+   "blur": true,
+   "predict": true,
+   "eb": "what happens next?",
+   "q": "Shiva says food is only an illusion. What do you guess Parvati does?",
+   "o": [
+    "Cooks him a feast to prove him wrong",
+    "Simply disappears from the world",
+    "Leaves for her father’s mountain home"
+   ],
+   "a": 1,
+   "why": "She vanishes, and as Shakti, the power that makes things grow, she takes every grain with her. Adi Shankara’s hymn to Annapurna ends each verse like a beggar: bhiksham dehi, give me alms."
+  },
+  {
+   "t": "shot",
+   "v": "AN2-She-Vanishes",
+   "vo": [
+    "V02"
+   ],
+   "line": "Parvati didn’t argue. She simply disappeared. And with her, all the food in the world vanished."
+  },
+  {
+   "t": "shot",
+   "v": "AN3-Hungry-World",
+   "vo": [
+    "V03"
+   ],
+   "line": "Gods, people and animals went hungry. Even Shiva."
+  },
+  {
+   "t": "ask",
+   "v": "AN3-Hungry-World",
+   "eb": "why?",
+   "q": "Shiva is the great yogi who sits on a mountain needing nothing. Why is it striking that he goes hungry?",
+   "o": [
+    "The god who needs nothing finds out he needs food",
+    "He had fasted so long he forgot how to eat",
+    "He missed Parvati’s company, not her cooking"
+   ],
+   "a": 0,
+   "why": "The story turns his own words on him. Without the goddess, even the greatest renouncer has to eat."
+  },
+  {
+   "t": "shot",
+   "v": "AN4-The-Kitchen",
+   "vo": [
+    "V04"
+   ],
+   "line": "Then Parvati appeared in Varanasi as Annapurna, the goddess of food, and opened a kitchen.",
+   "label": "Annapurna"
+  },
+  {
+   "t": "ask",
+   "v": "AN4-The-Kitchen",
+   "eb": "did you know?",
+   "q": "Varanasi is Shiva’s own city. Where does Annapurna’s temple stand there today?",
+   "o": [
+    "On the far bank of the Ganges, apart from him",
+    "High up the river, at the city’s edge",
+    "A short walk from the great Shiva temple"
+   ],
+   "a": 2,
+   "why": "The Annapurna temple sits near Kashi Vishwanath. Many in Varanasi say no one in the city goes hungry, because she feeds it."
+  },
+  {
+   "t": "shot",
+   "v": "AN5-The-Bowl",
+   "vo": [
+    "V05"
+   ],
+   "line": "Shiva himself came with a begging bowl. She filled it, and he understood.",
+   "label": "Annapurna"
+  },
+  {
+   "t": "ask",
+   "v": "AN5-The-Bowl",
+   "eb": "why?",
+   "q": "Why does the story bring Shiva to her kitchen as a beggar, and not as a god demanding food?",
+   "o": [
+    "Beggars were always fed first in Varanasi",
+    "To be fed, even a god holds out his hands",
+    "He was hiding so she wouldn’t turn him away"
+   ],
+   "a": 1,
+   "why": "Paintings of this scene show Annapurna ladling food into Shiva’s bowl. Food is received as a gift, never just taken."
+  },
+  {
+   "t": "shot",
+   "v": "AN6-Today",
+   "vo": [
+    "V06"
+   ],
+   "line": "Food is a gift worth noticing. Many Hindus still pause before eating, to offer it, and say thanks.",
+   "label": "today"
+  },
+  {
+   "t": "teach",
+   "v": "AN5-The-Bowl",
+   "say": [
+    "here’s what i love. the great god of the story stood with an empty bowl, and understood.",
+    "many hindus see food as a gift of the goddess, never just fuel. that’s why so many pause before eating, to offer the food and give thanks."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "AN5-The-Bowl",
+   "eb": "the hard one",
+   "q": "Shiva said food was just an illusion. What does the story answer him?",
+   "o": [
+    "He was right, but bodies still need feeding",
+    "Only food offered in a temple counts as holy",
+    "Ordinary food is sacred: it’s the goddess’s gift"
+   ],
+   "a": 2,
+   "why": "That’s why many Hindus offer a meal before eating it. Her name says it plainly: anna, food; purna, full."
+  }
+ ],
+ "today": {
+  "v": "AN6-Today",
+  "say": "before your next meal, put the phone down for ten seconds and say thanks: to god, the farmer, whoever cooked. many hindus offer the food first, and some say a short prayer to annapurna. you can say one, or just a quiet thank you. it’s your choice.",
+  "options": [
+   [
+    "I’ll do it next meal",
+    "good. ten seconds, the way shiva held out his bowl."
+   ],
+   [
+    "I always forget",
+    "then put something small by your plate as a reminder."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "New clothes for the soul.",
+  "line": "next week is all fresh starts. krishna gives arjuna one simple picture of the real you."
+ }
+}

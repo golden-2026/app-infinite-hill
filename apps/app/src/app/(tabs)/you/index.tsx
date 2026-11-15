@@ -126,7 +126,7 @@ export default function You() {
     <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8, paddingBottom: 14 }} accessibilityRole="radiogroup">
       {DOORS.filter(([, w]) => w !== exclude).map(([, w]) => { const l = doorLabel(w); return (
         <Pressable key={w} accessibilityRole="radio" accessibilityState={{ checked: current === w }} aria-checked={current === w} accessibilityLabel={l} onPress={() => onPick(w)}
-          style={{ width: "48%", borderWidth: 1.5, borderColor: current === w ? color.ink : color.line, backgroundColor: current === w ? "#FFFBE0" : "#fff", borderRadius: 12, paddingVertical: 10, paddingHorizontal: 12 }}>
+          style={{ width: "48%", borderWidth: 1.5, borderColor: current === w ? color.ink : color.line, backgroundColor: current === w ? "#FFFBE0" : color.white, borderRadius: 12, paddingVertical: 10, paddingHorizontal: 12 }}>
           <Text style={{ fontFamily: font.display[500], fontSize: 15, color: color.ink }}>{l}</Text>
           <Text style={[type.eyebrow(7), { marginTop: 2 }]}>{t("common.readBy", { name: voiceLabel(w, icon(w).short).short })}</Text>
         </Pressable>

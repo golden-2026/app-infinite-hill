@@ -499,8 +499,12 @@ export function planDay({ wing, day, lesson = day, mode = "adult", named = true,
     if (given?.games?.build) steps = withChat(steps, script);
     else steps = composeV2(steps, script, day);
   }
+  // a day whose word is only its English title has nothing to guess, hear or say (level.js, titleWord)
+  if (titleWord(R.word, info?.title || d1.title)) steps = steps.filter((s) => !TITLE_SKIP.has(s.type));
   return { steps, word: R.word, carry: R.carry, title: info?.title || d1.title || "", info };
 }
+
+const TITLE_SKIP = new Set(["guess", "listen", "speak", "say", "rhythm"]);
 
 export const GRADED = Object.freeze(["chat", "order", "match", "listen", "taphear", "bet", "myth", "scenes", "typeit", "rush", "rhythm", "build", "lookback", "think", "checkin"]);
 
@@ -584,12 +588,12 @@ function upgradeWeek(steps0, info, wing, day) {
   return steps;
 }
 
-import { levelUp, tapRound } from "./level.js";
+import { levelUp, tapRound, titleWord } from "./level.js";
 import { QUIZ } from "./quiz.js";
 import { WEEK_ONE, lookBack } from "./week.js";
 export { SAY_IT, WEEK_ONE, lookBack, sayable } from "./week.js";
 export { composeV2, glossIn, isV2 } from "./v2.js";
 import { featureFor, lessonFromScript } from "./lesson-script.js";
 export { FORMAT as SCRIPT_FORMAT, checkScript, chunkOf, chunkPath, compileScript, featureFor, lessonFromScript, lessonScript, orderIdeas, resetLessonCache, spoken } from "./lesson-script.js";
-export { LEVELS, clampLevel, deeperRound, knownSoFar, levelUp, likeness, rushStep, syllables, tapRound, tile, tileKey, wrongAnswers } from "./level.js";
+export { LEVELS, clampLevel, deeperRound, knownSoFar, levelUp, likeness, rushStep, syllables, tapRound, tile, tileKey, titleWord, wrongAnswers } from "./level.js";
 export { KIDS_PER_DOOR, KID_BREATHS, KID_DOORS, kidLesson, kidLessonIndex, kidPlan } from "./kids.js";

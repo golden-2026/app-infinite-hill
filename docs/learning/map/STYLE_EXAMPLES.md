@@ -1,3 +1,5 @@
+Background only (written 2026-10-06). Where this disagrees with docs/VISION-NOW.md or docs/LESSON_STANDARD.md, those win.
+
 # Before and after: the style pass (pilot, days 22–34)
 
 Two real lessons. Same story, same facts, same sources; shorter, no homework, no "the bell holds the time".

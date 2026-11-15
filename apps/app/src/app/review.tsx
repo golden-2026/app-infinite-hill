@@ -77,7 +77,7 @@ export default function Review() {
         <Text style={[type.h1(26), { marginTop: 8, marginBottom: 22 }]}>{it.q}</Text>
         <View style={{ gap: 10 }}>
           {it.o.map((o: string, k: number) => (
-            <Pressable key={o} accessibilityRole="button" accessibilityLabel={o} onPress={() => pick(k)} style={{ backgroundColor: picked !== null && k === it.a ? color.gold : picked === k ? "#F2F2EC" : "#fff", borderWidth: 1.5, borderColor: color.ink, borderRadius: 16, paddingVertical: 14, paddingHorizontal: 16 }}>
+            <Pressable key={o} accessibilityRole="button" accessibilityLabel={o} onPress={() => pick(k)} style={{ backgroundColor: picked !== null && k === it.a ? color.gold : picked === k ? "#F2F2EC" : color.white, borderWidth: 1.5, borderColor: color.ink, borderRadius: 16, paddingVertical: 14, paddingHorizontal: 16 }}>
               <Text style={{ fontFamily: font.text[600], fontSize: 15, color: color.ink }}>{o}</Text>
             </Pressable>
           ))}

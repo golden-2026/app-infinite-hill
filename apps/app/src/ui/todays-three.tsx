@@ -16,7 +16,7 @@ export function TodaysThree() {
   const ready = t.all && !t.opened;
   return (
     <Pressable testID="todays-extras" accessibilityRole="button" accessibilityLabel={tr(ready ? "home.extras.a11yReady" : "home.extras.a11y", { count: t.count })} onPress={() => router.push("/lantern")}
-      style={({ pressed }) => ({ marginHorizontal: 18, marginBottom: 12, backgroundColor: ready ? "#FFFBE0" : "#fff", borderWidth: 1.5, borderColor: ready ? color.ink : color.line, borderRadius: 18, paddingVertical: 10, paddingHorizontal: 14, opacity: pressed ? 0.9 : 1 })}>
+      style={({ pressed }) => ({ marginHorizontal: 18, marginBottom: 12, backgroundColor: ready ? "#FFFBE0" : color.white, borderWidth: 1.5, borderColor: ready ? color.ink : color.line, borderRadius: 18, paddingVertical: 10, paddingHorizontal: 14, opacity: pressed ? 0.9 : 1 })}>
       <View style={{ gap: 8 }}>
         <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}>
           <Text style={{ fontFamily: font.display[800], fontSize: 15, color: color.ink }}>{tr("home.extras.title")}</Text>

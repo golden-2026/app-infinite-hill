@@ -1,0 +1,192 @@
+{
+ "id": "chr-morning",
+ "home": "olive",
+ "title": "New every morning",
+ "told": "from the book of Lamentations",
+ "clips": "art/sacred/chr-morning/clips/",
+ "voice": "art/sacred/chr-morning/voice/",
+ "guide": {
+  "name": "Denzel",
+  "photo": "art/guides/christianity.webp"
+ },
+ "card": {
+  "from": "from the book of Lamentations",
+  "mins": 5,
+  "keep": "sun",
+  "keepName": "The morning sun",
+  "keepWhy": "Mercy, new every morning.",
+  "keepSvg": "<circle cx=\"50\" cy=\"62\" r=\"18\" fill=\"#2a1b05\"/><rect x=\"14\" y=\"62\" width=\"72\" height=\"22\" fill=\"#f0b93d\"/><path d=\"M14 64h72\" stroke=\"#2a1b05\" stroke-width=\"5\" stroke-linecap=\"round\"/><path d=\"M50 24v10M24 36l7 7M76 36l-7 7M14 56h8M78 56h8\" stroke=\"#2a1b05\" stroke-width=\"5\" stroke-linecap=\"round\"/><path d=\"M30 76h40\" stroke=\"#2a1b05\" stroke-width=\"4\" stroke-linecap=\"round\"/>",
+  "sources": [
+   "2 Kings 25:8-11 (the Babylonians burned the house of the Lord and Jerusalem, broke down its walls, and carried the people into exile, 587/586 BC)",
+   "Lamentations 1:1 (“How the city sits solitary, that was full of people!”)",
+   "Lamentations 3:21 (“This I recall to my mind; therefore I have hope”)",
+   "Lamentations 3:22-23 (“It is because of the Lord’s loving kindnesses that we are not consumed, because his mercies don’t fail. They are new every morning. Great is your faithfulness”), lightly modernized",
+   "Lamentations 3 sits at the center of the book’s five chapters; it is an acrostic of 66 verses",
+   "Tradition links Lamentations to Jeremiah (the Greek Septuagint’s heading; Talmud, Bava Batra 15a)",
+   "In Jewish tradition, Lamentations (Eikhah) is read on Tisha B’Av, the fast mourning the temple’s destruction",
+   "In Catholic, Anglican and Lutheran tradition, Lamentations is chanted at Tenebrae, the night prayers of the last three days of Holy Week",
+   "Thomas O. Chisholm, “Great Is Thy Faithfulness” (1923), music by William M. Runyan, based on Lamentations 3:22-23",
+   "Shot 5’s “the Lord’s loving kindness never runs out” follows the common modern rendering of 3:22 (e.g. ESV “The steadfast love of the Lord never ceases”)"
+  ],
+  "check": [
+   "Painting NM2 shows the poet face-hidden because tradition names Jeremiah, a prophet; confirm that is the right caution."
+  ]
+ },
+ "hook": {
+  "v": "NM1-Ruined-City",
+  "say": "before the story, can i ask you something? have you ever had a season where everything seemed to fall apart?",
+  "options": [
+   [
+    "I’m in one now",
+    "i’m so sorry. sit with me. this one was written in a season like yours."
+   ],
+   [
+    "I’ve been through one",
+    "then you know. listen to what this poet found."
+   ],
+   [
+    "Not really",
+    "i’m glad. keep this one for someone who is."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "NM1-Ruined-City",
+   "vo": [
+    "V01"
+   ],
+   "line": "Jerusalem had fallen. The Babylonian army burned the temple and the city, and many of its people were taken far away.",
+   "label": "2 Kings 25:9-11"
+  },
+  {
+   "t": "shot",
+   "v": "NM2-The-Poet",
+   "vo": [
+    "V02"
+   ],
+   "line": "A poet sat in the ruins and wrote songs of grief. Jewish and Christian tradition links them to the prophet Jeremiah. The book is called Lamentations."
+  },
+  {
+   "t": "shot",
+   "v": "NM3-Long-Night",
+   "vo": [
+    "V03"
+   ],
+   "line": "It begins, “How lonely the city sits, that was once full of people!” Most of the book is grief, and it doesn’t hide it.",
+   "label": "Lamentations 1:1"
+  },
+  {
+   "t": "ask",
+   "v": "NM3-Long-Night",
+   "eb": "did you know?",
+   "q": "Four of the book’s five poems are alphabet poems: each verse starts with the next Hebrew letter. Why write grief that way?",
+   "o": [
+    "To grieve it all, from A to Z",
+    "So children could memorize it",
+    "Because every Hebrew poem did"
+   ],
+   "a": 0,
+   "why": "Many readers hear it as grief told completely, from the first letter to the last, and a shape held steady when everything else fell apart."
+  },
+  {
+   "t": "ask",
+   "v": "NM3-Long-Night",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "Then, near the very middle of the book, the poet turns. What do you guess he says?",
+   "o": [
+    "“Still, the city will rise again.”",
+    "“Still, I will sing Your praise.”",
+    "“And still, I have hope.”"
+   ],
+   "a": 2,
+   "why": "Lamentations 3:21, in the book’s central and longest poem: a triple alphabet, three verses for every Hebrew letter."
+  },
+  {
+   "t": "shot",
+   "v": "NM4-First-Light",
+   "vo": [
+    "V04"
+   ],
+   "line": "Then, near the very middle of the book, the poet turns: “This I call to mind, and so I have hope.”",
+   "label": "Lamentations 3:21"
+  },
+  {
+   "t": "ask",
+   "v": "NM4-First-Light",
+   "eb": "why?",
+   "q": "The poet says God’s mercies are “new every morning.” Why every morning, and not once and for all?",
+   "o": [
+    "Each day’s trouble gets fresh mercy",
+    "Yesterday’s mercy ran out by night",
+    "Mercy has to be earned again each day"
+   ],
+   "a": 0,
+   "why": "Not because yesterday’s ran out: the same verse says it never does. Some readers hear manna in it, fresh each morning, enough for today."
+  },
+  {
+   "t": "shot",
+   "v": "NM5-New-Morning",
+   "vo": [
+    "V05"
+   ],
+   "line": "“The Lord’s loving kindness never runs out. His mercies don’t fail. They are new every morning. Great is your faithfulness.”",
+   "label": "Lamentations 3:22-23"
+  },
+  {
+   "t": "ask",
+   "v": "NM5-New-Morning",
+   "eb": "did you know?",
+   "q": "When Jews read Lamentations aloud each year, they don’t end on its last, sad verse. What do they do?",
+   "o": [
+    "Stop the reading halfway through",
+    "Repeat the hopeful verse before it",
+    "Skip ahead to a psalm of thanks"
+   ],
+   "a": 1,
+   "why": "On Tisha B’Av the verse before the end is said again: “Turn us back to You, Lord, and we shall return; renew our days as of old.”"
+  },
+  {
+   "t": "teach",
+   "v": "NM5-New-Morning",
+   "say": [
+    "here’s what i love. this hope wasn’t written after things got better. it was written in the ruins.",
+    "in jewish tradition it’s read each year on the day of mourning for the temple, and many churches read it in the days before easter. its promise: God’s mercy starts over every morning."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "NM5-New-Morning",
+   "eb": "the hard one",
+   "q": "The poet still sits in the same ruins. Nothing around him has changed. So where does his hope come from?",
+   "o": [
+    "He sees signs the city will rise again",
+    "He chooses to stop feeling sad",
+    "He remembers who God has always been"
+   ],
+   "a": 2,
+   "why": "“This I call to mind.” His hope isn’t in what he sees. It’s in what he remembers about God."
+  }
+ ],
+ "today": {
+  "v": "NM6-Today",
+  "say": "tomorrow morning, before you check your phone, name one mercy that’s new today, even a small one. if you’d like, make it a one-line morning prayer, “great is your faithfulness,” or listen to the old hymn of that name: watch, learn, or join in. your choice.",
+  "options": [
+   [
+    "I’ll try it tomorrow",
+    "good. the morning will be new. it always is."
+   ],
+   [
+    "I need that this week",
+    "then this one’s yours. one small mercy, every morning."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "Love is patient.",
+  "line": "next week opens with a church that was falling out. the letter they got is now read at weddings."
+ }
+}

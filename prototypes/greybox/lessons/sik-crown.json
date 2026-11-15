@@ -1,0 +1,206 @@
+{
+ "id": "sik-crown",
+ "home": "nectar",
+ "title": "A crown you tie yourself",
+ "told": "a sakhi from Guru Gobind Singh’s childhood",
+ "clips": "art/sacred/sik-crown/clips/",
+ "voice": "art/sacred/sik-crown/voice/",
+ "guide": {
+  "name": "Diljit",
+  "photo": "art/guides/sikhism.webp"
+ },
+ "hook": {
+  "v": "SC1-Patna-River",
+  "say": "before the story, can i ask you something? do you wear anything that tells people who you are?",
+  "options": [
+   [
+    "Yes, every day",
+    "then you know the questions people ask. listen."
+   ],
+   [
+    "Once in a while",
+    "then you know the feeling. listen."
+   ],
+   [
+    "Not really",
+    "then this one might surprise you. listen."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "SC1-Patna-River",
+   "vo": [
+    "V01"
+   ],
+   "line": "Long ago in Patna, by the river Ganges, a little boy played on the riverbank. He would grow up to be the tenth Guru, Guru Gobind Singh.",
+   "label": "a traditional story"
+  },
+  {
+   "t": "shot",
+   "v": "SC2-Bangle-Splash",
+   "vo": [
+    "V02"
+   ],
+   "line": "One day he slipped off his gold bangle and tossed it into the river."
+  },
+  {
+   "t": "shot",
+   "v": "SC3-Mother-Asks",
+   "vo": [
+    "V03"
+   ],
+   "line": "His mother hurried down to the water. Where did it fall? Show me."
+  },
+  {
+   "t": "ask",
+   "v": "SC3-Mother-Asks",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "The boy wants to show her where it fell. How do you think he does it?",
+   "o": [
+    "Points at the spot",
+    "Throws the other bangle in too",
+    "Wades in to look for it"
+   ],
+   "a": 1,
+   "why": "He threw the second one in. Right there."
+  },
+  {
+   "t": "shot",
+   "v": "SC4-Second-Bangle",
+   "vo": [
+    "V04"
+   ],
+   "line": "So he tossed in the other one too. Right there, he said."
+  },
+  {
+   "t": "ask",
+   "v": "SC4-Second-Bangle",
+   "eb": "why?",
+   "q": "Why do you think Sikhs still tell this little story?",
+   "o": [
+    "To show gold didn’t hold him, even young",
+    "To show how spoiled rich children were",
+    "To explain why Sikhs avoid gold"
+   ],
+   "a": 0,
+   "why": "Gold didn’t hold him, even as a boy. The spot is still remembered at Gurdwara Kangan Ghat in Patna, kangan meaning bangle."
+  },
+  {
+   "t": "ask",
+   "v": "SC5-Crowns-For-All",
+   "eb": "why?",
+   "q": "He grew up to be the tenth Guru, and in 1699 founded the Khalsa. Khalsa once meant land held straight from the king, with no lord between. Why that word?",
+   "o": [
+    "Sikhs answer to God, with no one between",
+    "He meant to claim land from the emperor",
+    "It marked them as his royal guard"
+   ],
+   "a": 0,
+   "why": "Khalsa comes from a Persian word for crown land. A Sikh of the Khalsa belongs to God and Guru directly: no middleman, no caste, no lord."
+  },
+  {
+   "t": "shot",
+   "v": "SC5-Crowns-For-All",
+   "vo": [
+    "V05"
+   ],
+   "line": "In his day, fine turbans marked kings and nobles. The Guru asked every Sikh to keep their hair and cover it. A crown for every family."
+  },
+  {
+   "t": "shot",
+   "v": "SC6-Today-Mirror",
+   "vo": [
+    "V06"
+   ],
+   "line": "Many Sikhs keep their hair uncut, called kesh, and tie a turban, the dastaar, fresh each morning. On the wrist, a kara: plain steel.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "SC6-Today-Mirror",
+   "eb": "did you know?",
+   "q": "Many Sikhs wear the kara on the hand they use most. What is it there to remind them?",
+   "o": [
+    "That they come from a warrior family",
+    "That their hands should do only good",
+    "That steel is stronger than gold"
+   ],
+   "a": 1,
+   "why": "It catches the eye just before that hand acts. A circle with no end, like the One God."
+  },
+  {
+   "t": "ask",
+   "v": "SC6-Today-Mirror",
+   "eb": "did you know?",
+   "q": "Tradition says the Guru gave every Sikh man the name Singh, lion. What name did he give every woman?",
+   "o": [
+    "Rani, meaning queen",
+    "Devi, meaning goddess",
+    "Kaur, meaning princess"
+   ],
+   "a": 2,
+   "why": "Kaur is often translated princess. Every Sikh shares a royal name, so no surname can mark their caste."
+  },
+  {
+   "t": "teach",
+   "v": "SC5-Crowns-For-All",
+   "say": [
+    "here’s what i love. a boy who tossed his gold into a river grew up to hand every sikh a crown.",
+    "that’s the turban: not a hat, not wealth. a crown you tie yourself. and if you’ve cut your hair, you’re every bit as welcome here."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "SC5-Crowns-For-All",
+   "eb": "the hard one",
+   "q": "A boy who threw his gold away later gave every Sikh a crown. So what kind of crown is the turban?",
+   "o": [
+    "A sign of a family’s wealth",
+    "A dignity open to anyone",
+    "A reward for the most devout"
+   ],
+   "a": 1,
+   "why": "Not gold, not rank. A crown you tie yourself, open to every family."
+  }
+ ],
+ "today": {
+  "v": "SC6-Today-Mirror",
+  "say": "many sikhs say the kara reminds the hand to do only good. today, before one choice, touch your wrist and ask: is this good?",
+  "options": [
+   [
+    "I’ll try it",
+    "one touch, one question. that’s the kara."
+   ],
+   [
+    "I already wear one",
+    "then today, let it ask out loud."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "Five who said yes.",
+  "line": "a Guru asks a huge crowd an impossible question. five strangers stand up."
+ },
+ "card": {
+  "from": "a sakhi of Guru Gobind Singh",
+  "mins": 5,
+  "keep": "turban",
+  "keepName": "A crown you tie yourself",
+  "keepWhy": "Not a hat. Not gold. A crown for every family.",
+  "keepSvg": "<path d=\"M24 66c0-24 12-40 27-40s25 16 25 38c-6-6-14-9-25-9s-21 4-27 11z\" fill=\"#2a1b05\"/><path d=\"M22 70c8-7 18-10 29-10s21 3 27 8l-2 8c-6-4-15-7-25-7s-20 3-27 8z\" fill=\"#2a1b05\"/><path d=\"M33 50q17-14 37 2\" fill=\"none\" stroke=\"#f0b93d\" stroke-width=\"3\" stroke-linecap=\"round\"/>",
+  "sources": [
+   "Sakhi of the child Gobind Rai throwing his gold bangle(s) into the Ganges at Patna, remembered at Gurdwara Kangan Ghat, Patna Sahib",
+   "Guru Gobind Singh, born at Patna, 1666",
+   "docs/curriculum/sikhism/scripts/y1/day-0003.json (kesh, dastaar, kara; the turban as a crown for every Sikh)"
+  ],
+  "check": [
+   "Bangle sakhi: confirm details (his mother Mata Gujri asking, versus an attendant or a visitor in some tellings; one bangle, then the second).",
+   "“In his day, fine turbans marked kings and nobles” follows Sikh tradition’s memory; confirm framing.",
+   "“The Guru asked every Sikh to keep their hair and cover it”: confirm wording (kesh as one of the five Ks; the dastaar in the Rehat)."
+  ]
+ }
+}

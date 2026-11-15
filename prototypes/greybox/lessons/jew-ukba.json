@@ -1,0 +1,200 @@
+{
+ "id": "jew-ukba",
+ "home": "pomegranate",
+ "title": "The coins in the doorway",
+ "told": "from the Talmud",
+ "clips": "art/sacred/jew-ukba/clips/",
+ "voice": "art/sacred/jew-ukba/voice/",
+ "guide": {
+  "name": "Natalie",
+  "photo": "art/guides/judaism.webp"
+ },
+ "hook": {
+  "v": "JUK1-The-Doorway",
+  "say": "before the story, can i ask you something? when you help someone, does part of you hope they’ll know it was you?",
+  "options": [
+   [
+    "Honestly, yes",
+    "that’s human. this couple went the other way. listen."
+   ],
+   [
+    "No, I’d rather stay hidden",
+    "then you’ll like these two. listen."
+   ],
+   [
+    "I haven’t thought about it",
+    "then this story might make you. listen."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "JUK1-The-Doorway",
+   "vo": [
+    "V01"
+   ],
+   "line": "In Babylonia, a rabbi named Mar Ukba had a poor neighbor. Every day, he slipped four coins into the socket of the man’s door, where no one would see."
+  },
+  {
+   "t": "shot",
+   "v": "JUK2-Who-Is-It",
+   "vo": [
+    "V02"
+   ],
+   "line": "One day the poor man thought, “I’ll go and see who is doing this for me.” So he waited by the door."
+  },
+  {
+   "t": "ask",
+   "v": "JUK2-Who-Is-It",
+   "blur": true,
+   "predict": true,
+   "eb": "what happens next?",
+   "q": "Mar Ukba and his wife arrive with the coins, and the door starts to open. What do they do?",
+   "o": [
+    "Introduce themselves warmly",
+    "Run and hide",
+    "Leave the coins and walk off slowly"
+   ],
+   "a": 1,
+   "why": "They ran. Being seen might make the man feel ashamed, so they hid."
+  },
+  {
+   "t": "shot",
+   "v": "JUK3-The-Oven",
+   "vo": [
+    "V03"
+   ],
+   "line": "That day Mar Ukba was late from study, and his wife came with him. As the door opened, they ran and hid inside a baker’s oven, its fire just swept out."
+  },
+  {
+   "t": "shot",
+   "v": "JUK3-The-Oven",
+   "vo": [
+    "V04"
+   ],
+   "line": "The oven floor was still hot, and Mar Ukba’s feet were burning. His wife said, “Put your feet on mine.” And they waited, together, in the dark."
+  },
+  {
+   "t": "ask",
+   "v": "JUK3-The-Oven",
+   "eb": "why?",
+   "q": "Why would they rather sit in a hot oven than be seen?",
+   "o": [
+    "They didn’t want everyone asking for coins",
+    "Their gift would no longer count",
+    "Being found out could shame the man"
+   ],
+   "a": 2,
+   "why": "The Talmud tells it to teach a line: better to throw yourself into a furnace than to shame someone in public. They nearly did."
+  },
+  {
+   "t": "ask",
+   "v": "JUK3-The-Oven",
+   "eb": "did you know?",
+   "q": "Mar Ukba’s feet burned, but his wife’s didn’t. The Talmud explains why. What does it say?",
+   "o": [
+    "Her shoes were thicker than his",
+    "Her kind of giving was even greater",
+    "She had stepped where it was cooler"
+   ],
+   "a": 1,
+   "why": "She was at home, and handed the poor food ready to eat, while he gave coins they still had to spend. Her help arrived sooner."
+  },
+  {
+   "t": "shot",
+   "v": "JUK4-Ladder",
+   "vo": [
+    "V05"
+   ],
+   "line": "Centuries later, the great scholar Maimonides ranked tzedakah in eight levels, often pictured as a ladder. Giving in secret, so no one is ashamed, is near the top.",
+   "label": "a later teaching"
+  },
+  {
+   "t": "shot",
+   "v": "JUK5-Top-Rung",
+   "vo": [
+    "V06"
+   ],
+   "line": "And the top rung, above all the rest? Helping someone so they won’t need help again: a loan, a partnership, a job."
+  },
+  {
+   "t": "ask",
+   "v": "JUK5-Top-Rung",
+   "eb": "the ladder",
+   "q": "Mar Ukba knew who he was helping; the man didn’t know him. On Maimonides’ ladder, what kind of secret giving sits even higher?",
+   "o": [
+    "When neither one knows the other",
+    "When the poor man knows, but no one else",
+    "When it’s given before he even asks"
+   ],
+   "a": 0,
+   "why": "Neither knows, like coins dropped into a community fund. Only one rung is higher: help that ends the need altogether."
+  },
+  {
+   "t": "shot",
+   "v": "JUK6-Today",
+   "vo": [
+    "V07"
+   ],
+   "line": "Today, many Jewish homes keep a small tzedakah box on the counter. Coins go in, often before Shabbat, a little at a time.",
+   "label": "today"
+  },
+  {
+   "t": "teach",
+   "v": "JUK1-The-Doorway",
+   "say": [
+    "here’s what i love. tzedakah isn’t charity, a kindness you choose when you feel moved. it comes from tzedek, justice. part of what you have was never fully yours. it’s the poor person’s share.",
+    "that’s why the rabbis said even someone who lives on tzedakah should give a little. and maimonides noticed: one coin given a thousand times shapes you more than a thousand coins given once."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "JUK6-Today",
+   "eb": "the hard one",
+   "q": "Maimonides said a thousand coins given one at a time change you more than all at once. Why?",
+   "o": [
+    "Small coins are easier to hide",
+    "The repeated act shapes the giver",
+    "It helps the poor person save"
+   ],
+   "a": 1,
+   "why": "Doing it again and again turns giving into who you are. That’s what the little box on the counter is for."
+  }
+ ],
+ "today": {
+  "v": "JUK6-Today",
+  "say": "find a jar, a cup, or a box. today, put in one coin, before you feel like it. when it’s full, give it away, quietly. that’s tzedakah, one coin at a time.",
+  "options": [
+   [
+    "I’ll start a box",
+    "one coin a day. mar ukba would smile."
+   ],
+   [
+    "I’ll give once today",
+    "good. that one coin is a rung on the ladder."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "The ten who came back afraid.",
+  "line": "twelve scouts go ahead into a new land. ten come back terrified, and the rabbis build something holy out of them."
+ },
+ "card": {
+  "from": "from the Talmud",
+  "mins": 5,
+  "keep": "box",
+  "keepName": "The tzedakah box",
+  "keepWhy": "Justice, one coin at a time.",
+  "keepSvg": "<circle cx=\"50\" cy=\"14\" r=\"9\" fill=\"#2a1b05\"/><rect x=\"16\" y=\"30\" width=\"68\" height=\"12\" rx=\"4\" fill=\"#2a1b05\"/><rect x=\"20\" y=\"44\" width=\"60\" height=\"44\" rx=\"6\" fill=\"#2a1b05\"/>",
+  "sources": [
+   "Babylonian Talmud, Ketubot 67b (Mar Ukba throws four zuz into his poor neighbor’s door socket every day; the poor man goes to see who it is; Mar Ukba, late from the house of study, comes with his wife; they flee into a furnace whose fire had been swept; his feet are scorched; she tells him to put his feet on hers; ‘better for a person to throw himself into a fiery furnace than to shame his fellow in public,’ Mar Zutra bar Toviah in the name of Rav; the lesson shortens this line and leaves out why her feet were spared)",
+   "Maimonides, Mishneh Torah, Laws of Gifts to the Poor 10:7–14 (the eight levels; the highest is strengthening the poor person with a gift, loan, partnership or work)",
+   "Babylonian Talmud, Gittin 7b (even one who lives on tzedakah gives); Deuteronomy 16:20",
+   "Maimonides, Commentary on the Mishnah, Avot 3:15 (3:19 in some editions; a thousand coins given one at a time to a thousand people builds the trait more than one gift of a thousand)"
+  ],
+  "check": [
+   "‘Often before Shabbat’ for the tzedakah box is a common home custom, not a law"
+  ]
+ }
+}

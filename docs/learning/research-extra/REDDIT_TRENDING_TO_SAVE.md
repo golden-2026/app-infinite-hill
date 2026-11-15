@@ -1,3 +1,5 @@
+Background only (written 2026-10-06). Where this disagrees with docs/VISION-NOW.md or docs/LESSON_STANDARD.md, those win.
+
 # Round 1: what is trending now (about 10 minutes)
 
 For each link: open it, press Ctrl+S, choose "Webpage, HTML only", save into `C:\Users\shset\code\golden-app\reddit-saved\trending` (make the "trending" folder inside reddit-saved). Each page is a list of the most-upvoted posts in that window. Then tell Claude "trending saved".

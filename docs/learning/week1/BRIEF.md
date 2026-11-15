@@ -1,3 +1,5 @@
+Background only (written 2026-10-06). Where this disagrees with docs/VISION-NOW.md or docs/LESSON_STANDARD.md, those win.
+
 # Rebuilding a path's first camp (days 1–21)
 
 The owner's direction (2026-10-06), learned on the Hindu path: meet people where they are. Young adults already

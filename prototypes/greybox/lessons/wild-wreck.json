@@ -1,0 +1,203 @@
+{
+ "id": "wild-wreck",
+ "home": "wild",
+ "title": "The shipwreck",
+ "told": "an old story about Zeno",
+ "clips": "art/sacred/wild-wreck/clips/",
+ "voice": "art/sacred/wild-wreck/voice/",
+ "guide": {
+  "name": "Justin",
+  "photo": "art/guides/spiritual.webp"
+ },
+ "hook": {
+  "v": "ZNS3-Ashore",
+  "say": "before the story, can i ask you something? has losing something ever sent you somewhere better?",
+  "options": [
+   [
+    "Yes, once",
+    "then you know this story already. listen."
+   ],
+   [
+    "Not yet",
+    "that’s honest. this story doesn’t rush it."
+   ],
+   [
+    "I’m in the middle of one",
+    "i’m sorry. go gently with this one."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "ZNS1-Purple-Cargo",
+   "vo": [
+    "V01"
+   ],
+   "line": "More than 2,300 years ago, a merchant named Zeno sailed from Phoenicia with a cargo of precious purple dye."
+  },
+  {
+   "t": "shot",
+   "v": "ZNS2-The-Wreck",
+   "vo": [
+    "V02"
+   ],
+   "line": "Near Athens, the ship was wrecked. The cargo, the fortune, all of it went into the sea."
+  },
+  {
+   "t": "shot",
+   "v": "ZNS3-Ashore",
+   "vo": [
+    "V03"
+   ],
+   "line": "Zeno made it ashore with almost nothing. He was about thirty, in a city where he knew no one."
+  },
+  {
+   "t": "ask",
+   "v": "ZNS4-Bookshop",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "Broke and alone in a strange city, where does Zeno end up?",
+   "o": [
+    "At the harbor, looking for work",
+    "In a bookshop",
+    "At a temple, praying for his cargo"
+   ],
+   "a": 1,
+   "why": "A bookshop, of all places. Diogenes Laertius, who tells the story, says he sat down by a bookseller in Athens."
+  },
+  {
+   "t": "shot",
+   "v": "ZNS4-Bookshop",
+   "vo": [
+    "V04"
+   ],
+   "line": "He wandered into a bookshop and sat down. The bookseller was reading aloud from a book about Socrates."
+  },
+  {
+   "t": "shot",
+   "v": "ZNS5-Hooked",
+   "vo": [
+    "V05"
+   ],
+   "line": "Zeno was hooked. Socrates questioned everything, owned almost nothing, and wasn’t afraid. Zeno had lost everything, and found his life’s work."
+  },
+  {
+   "t": "ask",
+   "v": "ZNS5-Hooked",
+   "eb": "why?",
+   "q": "Zeno asked the bookseller where men like Socrates could be found. What happened?",
+   "o": [
+    "The bookseller became his first teacher",
+    "Just then a philosopher walked by: “Follow him”",
+    "He was told such men were all long dead"
+   ],
+   "a": 1,
+   "why": "Diogenes Laertius says the Cynic Crates happened to pass, and the bookseller pointed: follow that man. Zeno did, and studied for years before he taught."
+  },
+  {
+   "t": "shot",
+   "v": "ZNS5-Hooked",
+   "vo": [
+    "V06"
+   ],
+   "line": "Years later, the story goes, Zeno looked back and said: “I made a good voyage when I was shipwrecked.”"
+  },
+  {
+   "t": "ask",
+   "v": "ZNS5-Hooked",
+   "eb": "did you know?",
+   "q": "Zeno taught in the Painted Porch on the Athens marketplace. What did that give his followers?",
+   "o": [
+    "Their dress: robes painted like the walls",
+    "Their rule: only teach out of doors",
+    "Their name: Stoics, from stoa, porch"
+   ],
+   "a": 2,
+   "why": "Stoa means porch. Zeno taught there, free to anyone passing, so his students were called Stoics: the porch people."
+  },
+  {
+   "t": "shot",
+   "v": "ZNS6-Today",
+   "vo": [
+    "V07"
+   ],
+   "line": "Today: the job that ended, a box of desk things, a bookshop window. Not every loss leads somewhere good. But a few pages can still change a life.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "ZNS6-Today",
+   "eb": "you’re in it",
+   "q": "Your friend just lost their job. Going by the Stoics, what’s the wise thing to say today?",
+   "o": [
+    "“Everything happens for a reason.”",
+    "“That’s awful. I’m here. What do you need?”",
+    "“Think of it as a good voyage!”"
+   ],
+   "a": 1,
+   "why": "Zeno called his wreck a good voyage years later, looking back. Epictetus said that when a friend grieves, you should sympathize, even groan with him. Kindness now; meaning can come later."
+  },
+  {
+   "t": "teach",
+   "v": "ZNS3-Ashore",
+   "say": [
+    "here’s what i love. the stoics never said the wreck was good. losing everything hurts, and nobody should tell a grieving person it happened for a reason.",
+    "zeno went on to teach that money, cargo and good luck are not what makes a life good. only a good character is. the sea took his fortune. it couldn’t touch that. and the school he started still has students today."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "ZNS6-Today",
+   "eb": "the hard one",
+   "q": "Another old version has Zeno say: “You do well, Fortune, driving me to philosophy.” What does that line show?",
+   "o": [
+    "He blamed bad luck for his ruin",
+    "Loss pushed him toward what mattered",
+    "He thanked Fortune for his cargo"
+   ],
+   "a": 1,
+   "why": "He doesn’t pretend the wreck was nothing. He sees where it pushed him: away from cargo, toward wisdom."
+  }
+ ],
+ "today": {
+  "v": "ZNS6-Today",
+  "say": "zeno’s new life began with a few pages read aloud in a shop. the stoics kept that habit: read a little every day, and carry one line with you. today, read one page of something wise, and keep one line.",
+  "options": [
+   [
+    "I’ll find a page",
+    "good. maybe that’s your bookshop."
+   ],
+   [
+    "I’ve got a book waiting",
+    "then open it today. one page is enough."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "Follow that man.",
+  "line": "zeno looks up from his book and asks where people like socrates can be found. right then, someone walks past."
+ },
+ "card": {
+  "from": "an old story about Zeno",
+  "mins": 5,
+  "keep": "boat",
+  "keepName": "After the wreck",
+  "keepWhy": "What you do next is still yours.",
+  "sources": [
+   "Diogenes Laërtius, Lives of Eminent Philosophers 7.2–5: Zeno was shipwrecked near the Piraeus with a cargo of purple from Phoenicia; he went up to Athens, aged thirty, and sat down in a bookseller’s shop; the bookseller was reading the second book of Xenophon’s Memorabilia; Zeno was delighted; “I made a prosperous voyage when I suffered shipwreck” (R. D. Hicks, 1925); another version: “You do well, Fortune, driving me thus to philosophy”; some say he was already in Athens when he heard of the wreck.",
+   "Xenophon, Memorabilia, book 2 (the book about Socrates).",
+   "Diogenes Laërtius 7.1 (Zeno’s appearance: lean, long neck, darkened by the sun).",
+   "Diogenes Laërtius 7.101–103 (Stoic teaching: only virtue is good; wealth, health and fame are indifferent).",
+   "Seneca, Letters 2 (read a little each day and take away one thought to digest), behind the today, unnamed.",
+   "Day 25 script: docs/curriculum/spiritual/scripts/y1/day-0025.json (Zeno’s shipwreck; I sailed well when I was wrecked)."
+  ],
+  "check": [
+   "“More than 2,300 years ago” (about 312 BCE). Confirm.",
+   "Zeno’s line is lightly modernized from Hicks (“a good voyage” for “a prosperous voyage”). Confirm.",
+   "The ancient versions disagree about whether he was on board; the lesson tells the best-known one. Confirm.",
+   "The hard one quotes the second version in 7.5 (Hicks: “You do well, Fortune, driving me thus to philosophy”), lightly trimmed. Confirm."
+  ]
+ }
+}

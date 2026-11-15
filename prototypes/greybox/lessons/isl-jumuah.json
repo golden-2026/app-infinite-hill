@@ -1,0 +1,202 @@
+{
+ "id": "isl-jumuah",
+ "home": "datepalm",
+ "title": "The caravan on a Friday",
+ "told": "a story in the Qur’an",
+ "clips": "art/sacred/isl-jumuah/clips/",
+ "voice": "art/sacred/isl-jumuah/voice/",
+ "guide": {
+  "name": "Mahershala",
+  "photo": "art/guides/islam.webp"
+ },
+ "hook": {
+  "v": "QJM6-Back-To-Work-Today",
+  "say": "before the story, can i ask you something? is there one hour in your week that feels different from the rest?",
+  "options": [
+   [
+    "Yes, there is",
+    "then you know what a hinge feels like. listen."
+   ],
+   [
+    "Sunday, maybe",
+    "good guess. today, a different day."
+   ],
+   [
+    "Not really",
+    "that’s okay. today, a week with a hinge."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "QJM1-Friday-Mosque",
+   "vo": [
+    "V01"
+   ],
+   "line": "One Friday in Medina, the Prophet ﷺ stood giving the weekly sermon, and the mosque was full."
+  },
+  {
+   "t": "shot",
+   "v": "QJM2-Caravan-Arrives",
+   "vo": [
+    "V02"
+   ],
+   "line": "Then a caravan arrived from the north, camels heavy with food, and a sound of drums at the edge of town."
+  },
+  {
+   "t": "ask",
+   "v": "QJM2-Caravan-Arrives",
+   "blur": true,
+   "predict": true,
+   "eb": "what happens next?",
+   "q": "What do you think the people in the mosque did?",
+   "o": [
+    "Stayed and kept listening",
+    "Most slipped out to the caravan",
+    "Asked him to pause the sermon"
+   ],
+   "a": 1,
+   "why": "One by one, they slipped out to the market. Reports say only twelve stayed."
+  },
+  {
+   "t": "shot",
+   "v": "QJM3-Mats-Left",
+   "vo": [
+    "V03"
+   ],
+   "line": "People slipped out, one after another, until only twelve were left with him."
+  },
+  {
+   "t": "shot",
+   "v": "QJM4-Lamp-Over-Grain",
+   "vo": [
+    "V04"
+   ],
+   "line": "The Qur’an named it: when they see trade or amusement, they rush to it and leave you standing. Say: what is with God is better."
+  },
+  {
+   "t": "ask",
+   "v": "QJM4-Lamp-Over-Grain",
+   "eb": "why?",
+   "q": "Why might the Qur’an keep this awkward moment, instead of leaving it out?",
+   "o": [
+    "The market’s pull is real, every week",
+    "To shame the ones who left, by name",
+    "To ban all trade on Fridays"
+   ],
+   "a": 0,
+   "why": "It names no one. It isn’t about bad people; it’s about a pull everyone feels. And the verses just before send you back to work."
+  },
+  {
+   "t": "shot",
+   "v": "QJM4-Lamp-Over-Grain",
+   "vo": [
+    "V05"
+   ],
+   "line": "Just before that, the same surah sets the rule: when the Friday call comes, hurry to remember God and leave your trading. Then, after the prayer, go back out."
+  },
+  {
+   "t": "fill",
+   "v": "QJM4-Lamp-Over-Grain",
+   "eb": "finish the line",
+   "pre": "When the prayer is over, scatter through the land and seek God’s",
+   "post": ".",
+   "o": [
+    "forgiveness",
+    "rest",
+    "bounty"
+   ],
+   "a": 2,
+   "why": "Bounty. Go back to work. Friday isn’t a day off. It’s a hinge: the week swings on it for an hour, then carries on."
+  },
+  {
+   "t": "shot",
+   "v": "QJM5-Street-Prayer-Today",
+   "vo": [
+    "V06"
+   ],
+   "line": "Today, just after noon on a Friday, a cab driver parks, a nurse swaps a shift, a shopkeeper pulls the shutter halfway. All walking one way.",
+   "label": "today"
+  },
+  {
+   "t": "shot",
+   "v": "QJM6-Back-To-Work-Today",
+   "vo": [
+    "V07"
+   ],
+   "line": "An hour later they all walk back, and the city picks up where it left off. Jumu‘ah: the gathering day.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "QJM6-Back-To-Work-Today",
+   "eb": "did you know?",
+   "q": "Friday’s gathered prayer takes the place of the usual noon prayer. What’s different about it?",
+   "o": [
+    "It’s longer, with extra bows",
+    "It’s shorter, after a sermon",
+    "It can be prayed alone at home"
+   ],
+   "a": 1,
+   "why": "Jumu‘ah replaces the four-unit noon prayer with two units, prayed together after the khutbah. Then the city goes back to work."
+  },
+  {
+   "t": "teach",
+   "v": "QJM3-Mats-Left",
+   "say": [
+    "here’s what i love. the qur’an kept the awkward day the room emptied. it knows the pull of the market is real.",
+    "in islam, friday’s noon prayer is gathered: a sermon, then prayer together. leave your trading for that hour, the qur’an says, then go back out and seek God’s bounty."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "QJM5-Street-Prayer-Today",
+   "eb": "the hard one",
+   "q": "The Prophet ﷺ said Friday holds one special hour. What happens in it?",
+   "o": [
+    "Trade made in it is doubly blessed",
+    "A prayer for good is granted",
+    "A fast kept in it counts for a week"
+   ],
+   "a": 1,
+   "why": "Sahih al-Bukhari 935: a Muslim who prays in that hour and asks God for good is given it. Scholars differ on when it falls, so many keep asking all day. Better than any caravan."
+  }
+ ],
+ "today": {
+  "v": "QJM6-Back-To-Work-Today",
+  "say": "a saying teaches there’s an hour on friday when a sincere prayer is answered. so today, find out when the friday prayer is at a mosque near you. it’s your choice: just look it up, visit and watch quietly, or join in.",
+  "options": [
+   [
+    "I’ll look it up",
+    "lovely. now you know when the city gathers."
+   ],
+   [
+    "I’ll keep an hour on friday",
+    "beautiful. one hour, held a little differently."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "Three men and a stranger.",
+  "line": "three men given everything, and a stranger who asks each for something small."
+ },
+ "card": {
+  "from": "a story in the Qur’an",
+  "mins": 5,
+  "keep": "drum",
+  "keepName": "The caravan’s drum",
+  "keepWhy": "Gather, then go back out.",
+  "sources": [
+   "Sahih al-Bukhari 936 and 4899; Sahih Muslim 863 (Jabir: a caravan carrying food came from Sham on a Friday; the people went out to it until only twelve men remained; then 62:11 was revealed; in Muslim, while the Prophet was delivering the sermon standing)",
+   "Qur’an 62:9-10 (“When the call is heard for the prayer of the day of congregation, haste unto remembrance of Allah and leave your trading… And when the prayer is ended, then disperse in the land and seek of Allah’s bounty,” Pickthall)",
+   "Qur’an 62:11 (“But when they spy some merchandise or pastime they break away to it and leave thee standing. Say: That which Allah hath is better than pastime and than merchandise”)",
+   "Sahih al-Bukhari 935 (an hour on Friday when a Muslim asking Allah for good is given it)",
+   "Root j-m-‘ (jumu‘ah, jami‘, jama‘ah): Lane, An Arabic-English Lexicon"
+  ],
+  "check": [
+   "“A sound of drums”: lahw in 62:11 is explained by several commentators as the drums or music that announced the caravan. Confirm.",
+   "The lesson doesn’t state who is obliged to attend (traditionally adult men; women welcome), or the Shia discussion of Friday prayer. Confirm that is fine at this level."
+  ]
+ }
+}

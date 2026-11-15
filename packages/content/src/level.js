@@ -10,6 +10,10 @@ export const clampLevel = (n) => Math.max(1, Math.min(5, Math.round(Number(n) ||
 
 const strip = (s) => String(s || "").replace(/[.!?,;:"“”'’—–-]/g, " ").replace(/\s+/g, " ").toLowerCase().trim();
 
+/** A day whose "word" is only its English title ("Seven days", "Caring for orphans"): nothing to guess, hear, say or
+ *  recall, so the word games skip it (question audit, 2026-11-02). One-word titles that are real words stay. */
+export const titleWord = (word, title) => /\s/.test(String(word || "").trim()) && strip(word) === strip(title);
+
 // A seeded shuffle so the same lesson looks the same after a reload.
 function rng(seed) {
   let x = (seed >>> 0) || 1;
@@ -56,7 +60,7 @@ export function knownSoFar(wing, day) {
   for (const d of camp1(wing) || []) if (d.day <= day && d.word && d.carry) seen.set(strip(d.word), { word: d.word, carry: d.carry.replace(/[.!]$/, ""), day: d.day });
   for (let k = 22; k <= Math.min(day, 400); k++) {
     const d = lessonInfo(wing, k);
-    if (d?.word && d?.carry && !/being planned/.test(d.hook || "")) seen.set(strip(d.word), { word: d.word, carry: String(d.carry).replace(/[.!]$/, ""), day: k });
+    if (d?.word && d?.carry && !/being planned/.test(d.hook || "") && !titleWord(d.word, d.title)) seen.set(strip(d.word), { word: d.word, carry: String(d.carry).replace(/[.!]$/, ""), day: k });
   }
   return [...seen.values()];
 }

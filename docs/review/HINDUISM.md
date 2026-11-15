@@ -1,3 +1,5 @@
+Background only (written 2026-10-07). Where this disagrees with docs/VISION-NOW.md or docs/LESSON_STANDARD.md, those win.
+
 # Hinduism: lessons to review
 
 For the Keeper. 23 lessons were written or changed on 2026-10-06, from audience research (Reddit, YouTube, app reviews) and a five-year map. Each lists what the writer asks you to confirm. Nothing here is final until you sign off; mark any line you'd change.

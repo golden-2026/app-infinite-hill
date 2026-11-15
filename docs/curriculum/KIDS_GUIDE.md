@@ -34,7 +34,7 @@ Everything in `SCRIPT_GUIDE.md` §3 (voice), §8 (sources) and §9a–9b (the au
 - **Quote only public-domain translations, exactly, and list them in `sources`.** Otherwise paraphrase with `translation: null, quoted: null`. Extra public-domain options for kids: Aesop (`Townsend 1867`), the Jataka (`Cowell 1895`), Jacobs's *Indian Fairy Tales* (`Jacobs 1894`).
 - **Islam:** God and the prophets are never characters: no lines of dialogue spoken by them, no descriptions of how they looked, no pictures. Tell what they did, and what the Prophet Muhammad ﷺ said only as a reported, paraphrased narration with its collection and number. Write "the Prophet Muhammad ﷺ" the first time and "(peace be upon him)" after other prophets' names the first time. Use only stories from the Qur'an or the major hadith collections; a popular story without a sound source is left out (the cat on the Prophet's sleeve, for example, has no sound source).
 - **Sikhism:** the Gurus are told about, not given invented speeches. Janamsakhi stories are named as such ("the janamsakhis, the old life-stories of Guru Nanak, tell…").
-- **Never compare or rank traditions.** "My own path" names its source for every tale and never blends sources into one teaching.
+- **Never compare or rank traditions.** "My own religion" names its source for every tale and never blends sources into one teaching.
 - **Spanish** (`es`) has the same shape as `en`: neutral Latin American Spanish, "tú", the same lowercase voice, the same number of beats, match pairs in the same order, the same true/false answers.
 - **Anything a Keeper should check** goes in the lesson's `notes` (they never ship).
 

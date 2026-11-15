@@ -1,4 +1,21 @@
-# golden app shell
+# Infinite Hill
+
+Infinite Hill is a phone app for short daily lessons in one faith: pick Hinduism, Buddhism, Christianity,
+Catholicism, Judaism, Islam or Sikhism, or build "my own religion". Tagline: "making religion yours again." The mascot
+is Finn (name pending a trademark check).
+
+**Start here:**
+- `docs/VISION-NOW.md`: the current vision. Where an older doc disagrees, it wins.
+- `docs/HANDOFF.md`: build and ship status.
+- `docs/XOGITO-START-HERE.md`: what's real, where it lives, how to run it.
+
+**Which app:** the new app is `prototypes/greybox/hill-app.html` (opened from the website at /app). The Expo app in
+`apps/app` is frozen and kept for reference. Everything below this line describes the older "Golden" Vite prototype
+at the repo root (`src/`, `index.html`) and is background only.
+
+---
+
+## The older Golden prototype (background only)
 
 This Vite shell turns the supplied `golden v150` React prototype into a connected private-beta product. The preserved journey includes welcome, lessons, today, Together, Guide, plans, gift, profile, and encrypted account recovery.
 

@@ -1,0 +1,209 @@
+{
+ "id": "chr-breakfast",
+ "home": "olive",
+ "title": "Breakfast on the beach",
+ "told": "a story about Jesus",
+ "clips": "art/sacred/chr-breakfast/clips/",
+ "voice": "art/sacred/chr-breakfast/voice/",
+ "guide": {
+  "name": "Denzel",
+  "photo": "art/guides/christianity.webp"
+ },
+ "card": {
+  "from": "a story about Jesus",
+  "mins": 5,
+  "keep": "flame",
+  "keepName": "The charcoal fire",
+  "keepWhy": "By a second fire, a second chance.",
+  "sources": [
+   "John 18:15-18 (Peter in the high priest’s courtyard; a charcoal fire, Greek anthrakia, a word found in the New Testament only here and at John 21:9; “I am not”)",
+   "John 18:25-27 (two more denials; immediately the rooster crowed)",
+   "John 21:2-3 (Peter: “I’m going fishing”; that night they caught nothing)",
+   "John 21:4-6 (at daybreak Jesus on the beach, not recognized; “Cast the net on the right side of the boat”; they could not draw it in for the multitude of fish)",
+   "John 21:7 (the disciple whom Jesus loved says “It’s the Lord!”; Peter threw himself into the sea)",
+   "John 21:9 (a fire of coals there, Greek anthrakia, with fish and bread)",
+   "John 21:12 (“Come and eat breakfast”)",
+   "John 21:15-17 (three times “do you love me?”; “Feed my lambs,” “Tend my sheep,” “Feed my sheep”; Peter grieved at the third)"
+  ],
+  "check": [
+   "Peter’s three denials in the courtyard are compressed into one shot by the fire; in John the first denial is at the gate (18:17). Confirm acceptable."
+  ]
+ },
+ "hook": {
+  "v": "BF2-Empty-Nets",
+  "say": "before the story, can i ask you something? ever let someone down, and not known how to face them again?",
+  "options": [
+   [
+    "Yes, and it still hurts",
+    "i’m sorry. that’s heavy. this story is for you."
+   ],
+   [
+    "Someone let me down",
+    "that hurts too. listen to how this one goes."
+   ],
+   [
+    "Not really",
+    "good. keep this one. most of us need it someday."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "BF1-Courtyard-Fire",
+   "vo": [
+    "V01"
+   ],
+   "line": "The night Jesus was arrested, Peter stood in a courtyard, warming himself by a charcoal fire. People asked, “Aren’t you one of his followers?”",
+   "label": "John 18:18"
+  },
+  {
+   "t": "ask",
+   "v": "BF1-Courtyard-Fire",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "Peter loved Jesus. He’d promised to follow him anywhere. What does he say?",
+   "o": [
+    "“I am not.”",
+    "“Yes, I’m his friend.”",
+    "Nothing. He stays silent."
+   ],
+   "a": 0,
+   "why": "He was afraid. Three times, he said, “I am not.”"
+  },
+  {
+   "t": "shot",
+   "v": "BF1-Courtyard-Fire",
+   "vo": [
+    "V02"
+   ],
+   "line": "Three times Peter said, “I am not.” Right after the third, a rooster crowed.",
+   "label": "John 18:25-27"
+  },
+  {
+   "t": "shot",
+   "v": "BF2-Empty-Nets",
+   "vo": [
+    "V03"
+   ],
+   "line": "After Jesus rose, Peter went back to fishing with his friends. All night on the lake, they caught nothing.",
+   "label": "John 21:3"
+  },
+  {
+   "t": "shot",
+   "v": "BF3-Shore-At-Dawn",
+   "vo": [
+    "V04"
+   ],
+   "line": "At dawn, a man on the shore called, “Throw the net on the right side of the boat.” They did, and the net filled with fish.",
+   "label": "John 21:6"
+  },
+  {
+   "t": "shot",
+   "v": "BF4-Breakfast-Fire",
+   "vo": [
+    "V05"
+   ],
+   "line": "One disciple cried, “It’s the Lord!” Peter jumped in and hurried to shore. Jesus had fish cooking on a charcoal fire. “Come and have breakfast.”",
+   "label": "John 21:7-12"
+  },
+  {
+   "t": "ask",
+   "v": "BF4-Breakfast-Fire",
+   "eb": "why?",
+   "q": "Peter had let Jesus down badly. Why might Jesus start with breakfast, not a talk about what happened?",
+   "o": [
+    "Because fishermen eat right after a catch",
+    "To show Peter he still had a seat",
+    "To prove to them he wasn’t a ghost"
+   ],
+   "a": 1,
+   "why": "Many readers hear welcome: a shared meal says “you still belong here” before a single hard word. In Luke, by contrast, Jesus eats fish to show he isn’t a ghost."
+  },
+  {
+   "t": "ask",
+   "v": "BF4-Breakfast-Fire",
+   "predict": true,
+   "eb": "what happens next?",
+   "q": "After they eat, Jesus asks, “Simon, do you love me?” Peter says yes. What does Jesus give him?",
+   "o": [
+    "A warning not to fail again",
+    "A job: “Feed my lambs”",
+    "A blessing, and a goodbye"
+   ],
+   "a": 1,
+   "why": "Not a lecture, a job. The man who ran away is put in charge of looking after the others."
+  },
+  {
+   "t": "shot",
+   "v": "BF5-Do-You-Love-Me",
+   "vo": [
+    "V06"
+   ],
+   "line": "After they ate, Jesus asked, “Simon, do you love me?” “Yes, Lord, you know I love you.” “Feed my lambs.”",
+   "label": "John 21:15"
+  },
+  {
+   "t": "shot",
+   "v": "BF5-Do-You-Love-Me",
+   "vo": [
+    "V07"
+   ],
+   "line": "He asked a third time, and Peter was hurt. “Lord, you know everything. You know that I love you.” Jesus said, “Feed my sheep.”",
+   "label": "John 21:17"
+  },
+  {
+   "t": "ask",
+   "v": "BF5-Do-You-Love-Me",
+   "eb": "did you know?",
+   "q": "Then Jesus tells Peter that when he is old, others will lead him where he doesn’t want to go. What did John’s readers take that to mean?",
+   "o": [
+    "He would die for Jesus one day",
+    "He’d be exiled from Jerusalem",
+    "He would lose his mind in old age"
+   ],
+   "a": 0,
+   "why": "John adds that it showed “by what kind of death” Peter would glorify God. Early tradition says Peter was crucified in Rome: the man who once said “I am not.”"
+  },
+  {
+   "t": "teach",
+   "v": "BF4-Breakfast-Fire",
+   "say": [
+    "here’s what i love. jesus didn’t pretend it never happened. he gave peter one “yes” for every “no.”",
+    "then he gave him work to do. christians see forgiveness here as more than a clean slate. it gives you back your place."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "BF5-Do-You-Love-Me",
+   "eb": "the hard one",
+   "q": "John’s gospel names a “charcoal fire” in only two scenes: the night Peter said “I am not,” and this breakfast. Why set both by the same kind of fire?",
+   "o": [
+    "Because fishermen cooked fish on charcoal",
+    "Because both scenes happen in the cold",
+    "So the second fire answers the first"
+   ],
+   "a": 2,
+   "why": "The Greek word, anthrakia, appears only these two times in the New Testament. The smell of that fire brings back his worst night, and Jesus turns it around right there."
+  }
+ ],
+ "today": {
+  "v": "BF6-Today",
+  "say": "jesus was the one let down, and he made the first move, with breakfast. if there’s someone you’ve let down, or who let you down, don’t wait for the perfect speech. start simple and kind: a coffee, a meal, a short message. if you’d like, say a quiet prayer for them first: watch, learn, or join in. your choice.",
+  "options": [
+   [
+    "I know who to message",
+    "then start with breakfast, so to speak. the hard words can come after."
+   ],
+   [
+    "Not ready yet",
+    "that’s okay. peter wasn’t either. the fire will still be warm."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "The scales fall.",
+  "line": "a man on his way to arrest jesus’s followers is stopped by a light on the road."
+ }
+}

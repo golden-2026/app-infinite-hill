@@ -1,0 +1,215 @@
+{
+ "id": "wild-soup",
+ "home": "wild",
+ "title": "Follow that man",
+ "told": "an old story about Zeno and Crates",
+ "clips": "art/sacred/wild-soup/clips/",
+ "voice": "art/sacred/wild-soup/voice/",
+ "guide": {
+  "name": "Justin",
+  "photo": "art/guides/spiritual.webp"
+ },
+ "hook": {
+  "v": "CRT6-Today",
+  "say": "before the story, can i ask you something? what’s the most embarrassing thing that’s happened to you in public?",
+  "options": [
+   [
+    "Oh, I have one",
+    "everyone has one. watch what happens to zeno."
+   ],
+   [
+    "I’d rather not say",
+    "fair. zeno would rather not have, either."
+   ],
+   [
+    "Nothing comes to mind",
+    "lucky. this story will lend you one."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "CRT1-Bookshop-Door",
+   "vo": [
+    "V01"
+   ],
+   "line": "Zeno looked up from the book about Socrates and asked the bookseller: where can I find people like this, today?"
+  },
+  {
+   "t": "ask",
+   "v": "CRT1-Bookshop-Door",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "Zeno asks where to find people like Socrates today. Right then, the bookseller points at a man walking past. Who do you think he is?",
+   "o": [
+    "A Cynic who gave his fortune away",
+    "A general back from the wars",
+    "A priest from Athena’s temple"
+   ],
+   "a": 0,
+   "why": "Crates of Thebes. Diogenes Laërtius says he turned his estate into money and handed it out to his fellow citizens, to live free as a Cynic."
+  },
+  {
+   "t": "shot",
+   "v": "CRT1-Bookshop-Door",
+   "vo": [
+    "V02"
+   ],
+   "line": "Right then, a strange figure walked past the door. The bookseller pointed: “Follow that man.”"
+  },
+  {
+   "t": "shot",
+   "v": "CRT2-Following",
+   "vo": [
+    "V03"
+   ],
+   "line": "It was Crates, a Cynic philosopher. Born rich, he had given it all away, and said exactly what he thought. Zeno followed him."
+  },
+  {
+   "t": "shot",
+   "v": "CRT4-Lentil-Pot",
+   "vo": [
+    "V04"
+   ],
+   "line": "But Zeno was shy. So Crates handed him a pot of lentil soup and told him to carry it through a busy part of Athens."
+  },
+  {
+   "t": "ask",
+   "v": "CRT5-The-Crack",
+   "blur": true,
+   "predict": true,
+   "eb": "what happens next?",
+   "q": "Zeno tries to hide the pot under his cloak. What does Crates do?",
+   "o": [
+    "Takes the pot back",
+    "Cracks the pot with his staff",
+    "Tells him he’s done well"
+   ],
+   "a": 1,
+   "why": "He broke it with his staff, right there in the street. Crates wanted the soup, and the shame, out in the open."
+  },
+  {
+   "t": "shot",
+   "v": "CRT5-The-Crack",
+   "vo": [
+    "V05"
+   ],
+   "line": "Zeno hid it under his cloak. Crates cracked the pot with his staff. Soup ran down Zeno’s legs, and he ran."
+  },
+  {
+   "t": "shot",
+   "v": "CRT5-The-Crack",
+   "vo": [
+    "V06"
+   ],
+   "line": "Crates called after him: “Why run away, my little Phoenician? Nothing terrible has happened to you.”"
+  },
+  {
+   "t": "ask",
+   "v": "CRT5-The-Crack",
+   "eb": "why?",
+   "q": "What was Crates teaching Zeno with the soup?",
+   "o": [
+    "That a philosopher should own nothing, not even a pot",
+    "That embarrassment isn’t real harm",
+    "That he should never hide anything from his teacher"
+   ],
+   "a": 1,
+   "why": "Red face, wet legs, staring people. Embarrassing, yes. Harmful, no."
+  },
+  {
+   "t": "ask",
+   "v": "CRT5-The-Crack",
+   "eb": "did you know?",
+   "q": "Zeno later taught under a painted porch in Athens, and his students were named after it. What do we call them?",
+   "o": [
+    "Cynics",
+    "Epicureans",
+    "Stoics"
+   ],
+   "a": 2,
+   "why": "Stoa poikile, the painted porch. Stoics like Seneca and Marcus Aurelius kept Crates’s lesson: only doing wrong is truly bad."
+  },
+  {
+   "t": "shot",
+   "v": "CRT6-Today",
+   "vo": [
+    "V07"
+   ],
+   "line": "Today: coffee down your shirt on a full train. Everyone looks. Spilled soup is only spilled soup.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "CRT3-Door-Opener",
+   "eb": "did you know?",
+   "q": "People called Crates “the Door-opener.” Why?",
+   "o": [
+    "Families let him in to give advice",
+    "He broke into rich houses to shame them",
+    "He kept his own door open to beggars"
+   ],
+   "a": 0,
+   "why": "Diogenes Laërtius says he walked into any house and gave advice, and people welcomed it. Later writers say families asked him in to settle quarrels."
+  },
+  {
+   "t": "teach",
+   "v": "CRT3-Door-Opener",
+   "say": [
+    "here’s what i love. look how it began: a curious question, a stranger walking past, and the nerve to get up and follow.",
+    "people called crates the door-opener, because families gladly let him in for advice. what he taught zeno, the stoics kept forever: embarrassment isn’t harm. be ashamed only of doing wrong. spilled soup isn’t wrong. it’s just soup."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "CRT6-Today",
+   "eb": "the hard one",
+   "q": "Why would a teacher pick something as small as soup, not a big test, for a shy student?",
+   "o": [
+    "Cynics ate lentil soup every day",
+    "He wanted to see if Zeno would obey",
+    "You practice courage on small things"
+   ],
+   "a": 2,
+   "why": "Start small. If spilled soup can’t rule you, bigger things have less of a grip too."
+  }
+ ],
+ "today": {
+  "v": "CRT6-Today",
+  "say": "today, when a small embarrassment comes, a wrong name, a spill, a typo in the group chat, say crates’s line to yourself: nothing terrible has happened to you. then carry on.",
+  "options": [
+   [
+    "I’ll try it",
+    "good. spilled soup is only spilled soup."
+   ],
+   [
+    "I’ve got one from today",
+    "then you’ve already practiced. well done."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "The painted porch.",
+  "line": "no private school for zeno. he teaches out in the open, by the marketplace."
+ },
+ "card": {
+  "from": "an old story about Zeno and Crates",
+  "mins": 5,
+  "keep": "pot",
+  "keepName": "Only spilled soup",
+  "keepWhy": "Embarrassment isn’t harm.",
+  "sources": [
+   "Diogenes Laërtius, Lives of Eminent Philosophers 7.2–3 (R. D. Hicks, 1925): Zeno asks where men like Socrates are to be found; Crates passes by; the bookseller says, “Follow yonder man”; Zeno becomes his pupil but is too modest for Cynic shamelessness; Crates gives him a pot of lentil soup to carry through the Ceramicus; seeing him ashamed and trying to hide it, Crates breaks the pot with his staff; as Zeno runs off with the soup running down his legs, Crates says, “Why run away, my little Phoenician? nothing terrible has befallen you.”",
+   "Diogenes Laërtius 6.85–93 (Crates): born rich in Thebes, gave his property away; called the “Door-opener” because he entered every house and gave advice (6.86).",
+   "Teach: “be ashamed only of doing wrong” sums up the Stoic view that only vice is bad and only it deserves shame (DL 7.101–102; cf. Plutarch, Cato the Younger 6.3).",
+   "Day 26 script: docs/curriculum/spiritual/scripts/y1/day-0026.json (Crates; nothing terrible has happened to you)."
+  ],
+  "check": [
+   "“Follow yonder man” modernized to “Follow that man”; “befallen” to “happened to.” Confirm.",
+   "The Ceramicus (potters’ quarter) rendered as “a busy part of Athens.” Confirm.",
+   "Diogenes Laërtius says Crates turned his property into money and gave it away; “born rich, he had given it all away” simplifies this. Confirm."
+  ]
+ }
+}

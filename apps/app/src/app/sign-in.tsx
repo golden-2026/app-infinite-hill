@@ -75,13 +75,13 @@ function SignInWithEmail() {
           <>
             <Body style={{ color: color.mute }}>{mode === "save" ? t("onboarding.signIn.saveBody") : t("onboarding.signIn.backBody")}</Body>
             <TextInput testID="email" value={email} onChangeText={setEmail} placeholder={t("onboarding.signIn.emailPlaceholder")} autoCapitalize="none" autoComplete="email" keyboardType="email-address" inputMode="email" accessibilityLabel={t("onboarding.signIn.emailA11y")}
-              style={{ borderWidth: 1.5, borderColor: color.line, borderRadius: 999, paddingVertical: 14, paddingHorizontal: 16, fontFamily: font.text[400], fontSize: 16, backgroundColor: "#fff" }} onSubmitEditing={() => valid && setSent(true)} />
+              style={{ borderWidth: 1.5, borderColor: color.line, borderRadius: 999, paddingVertical: 14, paddingHorizontal: 16, fontFamily: font.text[400], fontSize: 16, backgroundColor: color.white }} onSubmitEditing={() => valid && setSent(true)} />
           </>
         ) : (
           <>
             <Body>{t("onboarding.signIn.sentTo")}<Text style={{ fontFamily: font.text[700] }}>{email.trim()}</Text>{t("onboarding.signIn.tapLink")}{Platform.OS === "web" ? t("onboarding.signIn.opensHere") : ""}{t("onboarding.signIn.orCode")}</Body>
             <TextInput testID="code" value={code} onChangeText={(v) => setCode(v.replace(/\D/g, "").slice(0, 6))} placeholder="123456" keyboardType="number-pad" inputMode="numeric" autoComplete="one-time-code" accessibilityLabel={t("onboarding.signIn.codeA11y")}
-              style={{ borderWidth: 1.5, borderColor: color.line, borderRadius: 16, paddingVertical: 14, paddingHorizontal: 16, fontFamily: font.display[800], fontSize: 28, letterSpacing: 8, textAlign: "center", backgroundColor: "#fff" }} />
+              style={{ borderWidth: 1.5, borderColor: color.line, borderRadius: 16, paddingVertical: 14, paddingHorizontal: 16, fontFamily: font.display[800], fontSize: 28, letterSpacing: 8, textAlign: "center", backgroundColor: color.white }} />
             <Link onPress={() => { setSent(false); setCode(""); setMsg(null); }} style={{ color: color.mute }}>{t("onboarding.signIn.otherEmail")}</Link>
           </>
         )}

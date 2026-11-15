@@ -4,9 +4,12 @@ Score each lesson from 1 to 5 on six things, then write the single biggest probl
 means the same thing from every reviewer. Whole numbers only. If you can't judge a dimension (for example a test user
 judging accuracy), leave it blank rather than guess.
 
-Each lesson takes about 6 minutes in the app: a spoken story or teaching, a short practice, "today's word", a "line to
-carry" into the day, then a few quick games (match the pairs, true or myth, "the fork", a word in the original
-language, and "the trapdoor": what you thought, what it means, what a scholar hears).
+*Updated 2026-11-10 to the current lesson (`docs/LESSON_STANDARD.md`).* Each lesson is a 40-50 second narrated
+vertical film with captions (a real story from the faith, that faith's actual teaching, then one line about life
+today), then five quick games that test the teaching (guess, match, myth-or-true, the fork: a friend's text, and
+order), then "today" (the thing to carry, how to do it, where it comes from) and a word card. Lessons stay inside one
+faith; only "my own religion" draws on several, each named. When a lesson ends on a tip any self-help app could give,
+score depth and insider respect down and name it as the biggest problem.
 
 ---
 
@@ -34,7 +37,7 @@ new case), **analyze** (see how parts fit, compare readings), **evaluate** (weig
 |---|---|
 | **1** | Trivia. A list of facts or a plot summary; nothing to understand beyond remembering. |
 | **2** | Explains one idea clearly, but stays at "remember and understand". The "lesson" is a moral anyone could have guessed. |
-| **3** | Explains well and asks you to apply it to your life. One real insight you didn't have before. |
+| **3** | Explains what this faith actually teaches because of the story, and carries it into life today. One real insight you didn't have before. |
 | **4** | Gets you to analyze: shows why the text says it this way, sets two readings side by side, or connects to earlier lessons in a way that changes how you see them. |
 | **5** | Leaves you with a genuine question or tension to think through yourself (evaluate or create), and gives you the tools to do it. You'd want to talk about it with someone. |
 
@@ -72,7 +75,7 @@ Imagine a sincere, practising member of this tradition (not a scholar) listening
 
 ## (f) Learning design: does it build over time?
 
-Look at "looking back" at the top, the games, the practice and the line to carry. Does today build on earlier days? Is
+Look at the games, the "today" step and the line to carry. Does today build on earlier days? Is
 there real practice (doing, not just picturing)? Do the games make you recall and think, or just repeat what was said
 two minutes ago? Would something learned on day 60 still be there on day 400?
 

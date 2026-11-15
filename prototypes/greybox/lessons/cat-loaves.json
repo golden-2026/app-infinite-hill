@@ -1,0 +1,202 @@
+{
+ "id": "cat-loaves",
+ "home": "angelus",
+ "title": "Your grandmother before dinner",
+ "told": "from John’s Gospel",
+ "clips": "art/sacred/cat-loaves/clips/",
+ "voice": "art/sacred/cat-loaves/voice/",
+ "guide": {
+  "name": "Nicole",
+  "photo": "art/guides/catholic.webp"
+ },
+ "card": {
+  "from": "from John’s Gospel",
+  "mins": 5,
+  "keep": "barley",
+  "keepName": "Five barley loaves",
+  "keepWhy": "Thanks first. The gift comes before the plenty.",
+  "sources": [
+   "John 6:1-13 (a great multitude follows him to a mountain by the Sea of Galilee; Philip: two hundred pennyworth of bread would not be enough; Andrew: “There is a boy here that hath five barley loaves and two fishes; but what are these among so many?”; much grass in the place; about five thousand men sat down; Jesus took the loaves, gave thanks, and distributed to them that were set down, as much as they would; “Gather up the fragments that remain, lest they be lost”; they filled twelve baskets). Parallels: Matthew 14:13-21, Mark 6:30-44, Luke 9:10-17.",
+   "Traditional Catholic grace before meals: “Bless us, O Lord, and these thy gifts, which we are about to receive from thy bounty, through Christ our Lord. Amen.”",
+   "Grace: Latin gratia (favor, free gift; same root as gratis and gratitude); New Testament Greek charis. Ephesians 2:8. Catechism of the Catholic Church 1996-1999 (grace is favor, the free and undeserved help God gives).",
+   "John 6:11 uses the Greek eucharisteo (“gave thanks”), the root of the word Eucharist."
+  ],
+  "check": []
+ },
+ "hook": {
+  "v": "LV6-Today-Grace-Table",
+  "say": "before the story, can i ask you something? did anyone in your family make everyone wait and say grace before eating?",
+  "options": [
+   [
+    "Yes, every night",
+    "then you already know the pause i mean. this story has one too."
+   ],
+   [
+    "Only on holidays",
+    "those pauses count. watch for one in this story."
+   ],
+   [
+    "Never",
+    "that’s okay. you’re about to see where the habit comes from."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "LV1-Hillside-Crowd",
+   "vo": [
+    "V01"
+   ],
+   "line": "A huge crowd followed Jesus to a grassy hillside by the Sea of Galilee. Thousands of people, far from town, and nothing to eat."
+  },
+  {
+   "t": "shot",
+   "v": "LV2-Boys-Basket",
+   "vo": [
+    "V02"
+   ],
+   "line": "His friend Andrew found one boy with five barley loaves and two fish. “But what are these among so many?”"
+  },
+  {
+   "t": "ask",
+   "v": "LV2-Boys-Basket",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "Five loaves, two fish, thousands of people. What does Jesus tell the disciples to do first?",
+   "o": [
+    "Have the people sit down on the grass",
+    "Send everyone to the villages to eat",
+    "Collect whatever food the crowd has"
+   ],
+   "a": 0,
+   "why": "“Make the people sit down,” John says, and notes there was plenty of grass. Mark adds they sat in groups of hundreds and fifties, like guests at a meal."
+  },
+  {
+   "t": "shot",
+   "v": "LV3-Gives-Thanks",
+   "vo": [
+    "V03"
+   ],
+   "line": "He had everyone sit down on the grass. Then he took the boy’s loaves, gave thanks, and began handing them out."
+  },
+  {
+   "t": "shot",
+   "v": "LV4-Bread-Passed",
+   "vo": [
+    "V04"
+   ],
+   "line": "Bread passed from hand to hand across the hillside. Everyone ate as much as they wanted."
+  },
+  {
+   "t": "ask",
+   "v": "LV4-Bread-Passed",
+   "eb": "why?",
+   "q": "Why does Jesus give thanks before the food is even enough?",
+   "o": [
+    "To him, even a little bread was already God’s gift",
+    "He had to thank God before he could ask for more",
+    "It was the polite thing to do in front of a crowd"
+   ],
+   "a": 0,
+   "why": "Jews of his day blessed God over bread before eating. Jesus does it when there’s almost nothing to bless: the gift was already there, in a boy’s small basket."
+  },
+  {
+   "t": "shot",
+   "v": "LV5-Twelve-Baskets",
+   "vo": [
+    "V05"
+   ],
+   "line": "Afterward he said, “Gather up the leftover pieces, so that nothing is lost.” They filled twelve baskets."
+  },
+  {
+   "t": "shot",
+   "v": "LV6-Today-Grace-Table",
+   "vo": [
+    "V06"
+   ],
+   "line": "Today, in many Catholic homes, someone still stops the hands reaching for the bread. Heads bow. A few words before anyone eats.",
+   "label": "today"
+  },
+  {
+   "t": "fill",
+   "v": "LV6-Today-Grace-Table",
+   "eb": "finish the prayer",
+   "pre": "“Bless us, O Lord, and these thy",
+   "post": ", which we are about to receive from thy bounty.”",
+   "o": [
+    "gifts",
+    "meals",
+    "blessings"
+   ],
+   "a": 0,
+   "why": "Gifts. The old table prayer notices that dinner was given, not just bought or cooked."
+  },
+  {
+   "t": "ask",
+   "v": "LV5-Twelve-Baskets",
+   "eb": "why?",
+   "q": "After a miracle of plenty, why bother saying “gather the leftovers, so nothing is lost”?",
+   "o": [
+    "The disciples needed food for the walk home",
+    "Bread left on the ground was bad luck",
+    "A gift is never wasted, even the crumbs"
+   ],
+   "a": 2,
+   "why": "Many readers also count the baskets: twelve, one for each tribe of Israel. Enough left over for all God’s people."
+  },
+  {
+   "t": "teach",
+   "v": "LV3-Gives-Thanks",
+   "say": [
+    "here’s what i love. jesus gives thanks when there’s barely anything. the thanks comes first, then the plenty.",
+    "catholics call that free gift grace, from the latin gratia. the church teaches that God gives first, before anyone earns it. so saying grace isn’t paying for dinner. it’s noticing the gift."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "LV5-Twelve-Baskets",
+   "eb": "did you know?",
+   "q": "Catholics call that free gift grace. Why is the prayer before dinner called grace too?",
+   "o": [
+    "It asks God to pour grace into the food",
+    "Only those in a state of grace could say it",
+    "In Latin, gratia meant both gift and thanks"
+   ],
+   "a": 2,
+   "why": "The old Latin grace after meals begins “Agimus tibi gratias”: we give you thanks. Gift and thanks share one word."
+  },
+  {
+   "t": "ask",
+   "v": "LV3-Gives-Thanks",
+   "eb": "the hard one",
+   "q": "Catholics often link this hillside to the Mass. Which detail makes the link?",
+   "o": [
+    "The crowd sat down in groups on the grass",
+    "He took bread, gave thanks, and gave it out",
+    "The leftovers filled exactly twelve baskets"
+   ],
+   "a": 1,
+   "why": "The same actions as the Last Supper in the other Gospels. John’s word for gave thanks is eucharisteo, and the Mass, the Eucharist, is named for it."
+  }
+ ],
+ "today": {
+  "v": "LV6-Today-Grace-Table",
+  "say": "before your next meal, pause for one breath and name who it came from: whoever grew it, whoever cooked it, and, if you pray, the one behind them both. say the old grace, or just notice.",
+  "options": [
+   [
+    "I’ll pause tonight",
+    "lovely. a breath before the bread. that’s where grace starts."
+   ],
+   [
+    "I’ll try it this week",
+    "that counts. one pause is how most families started."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "A young woman says yes.",
+  "line": "an angel, a small town, and one honest question first."
+ }
+}

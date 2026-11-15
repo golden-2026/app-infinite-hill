@@ -1,0 +1,196 @@
+{
+ "id": "wild-branch",
+ "home": "wild",
+ "title": "One branch is enough",
+ "told": "from the Zhuangzi",
+ "clips": "art/sacred/wild-branch/clips/",
+ "voice": "art/sacred/wild-branch/voice/",
+ "guide": {
+  "name": "Justin",
+  "photo": "art/guides/spiritual.webp"
+ },
+ "hook": {
+  "v": "XY6-Today",
+  "say": "before the story, can i ask you something? think of the last thing you really wanted to buy. how long did the glow last after it arrived?",
+  "options": [
+   [
+    "A few days",
+    "same. this old hermit knew why."
+   ],
+   [
+    "It’s still glowing",
+    "lovely. maybe you already know this one."
+   ],
+   [
+    "I can’t remember",
+    "that might say it all. listen."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "XY1-Yao-Travels",
+   "vo": [
+    "V01"
+   ],
+   "line": "In an old Daoist story, Yao, a wise emperor of legend, went looking for a hermit named Xu You, who lived simply by a river."
+  },
+  {
+   "t": "shot",
+   "v": "XY2-The-Offer",
+   "vo": [
+    "V02"
+   ],
+   "line": "“When the sun and moon are out, why keep the torches burning?” said Yao. “You are the sun. Please, take my empire.”"
+  },
+  {
+   "t": "ask",
+   "v": "XY2-The-Offer",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "An emperor offers a hermit the whole empire. What does Xu You do?",
+   "o": [
+    "Agrees to advise, but not to rule",
+    "Takes it, then gives it away",
+    "Turns it down flat"
+   ],
+   "a": 2,
+   "why": "A flat no. And he explains it with a little bird. Zhuangzi’s hermits often say no to power."
+  },
+  {
+   "t": "shot",
+   "v": "XY3-Tailorbird",
+   "vo": [
+    "V03"
+   ],
+   "line": "“The tailorbird builds its nest in the deep forest,” said Xu You, “but it uses no more than one branch.”"
+  },
+  {
+   "t": "shot",
+   "v": "XY4-Mole-River",
+   "vo": [
+    "V04"
+   ],
+   "line": "“The mole drinks from the river, but takes no more than a bellyful. Go home, my lord. I have no use for the empire.”"
+  },
+  {
+   "t": "ask",
+   "v": "XY4-Mole-River",
+   "eb": "why?",
+   "q": "Why does Xu You talk about a bird and a mole, instead of just saying no?",
+   "o": [
+    "To keep the emperor humble",
+    "Every creature needs only so much",
+    "He’d rather live in a forest"
+   ],
+   "a": 1,
+   "why": "The bird needs its branch. The mole needs its drink. Neither needs the whole forest, or the whole river."
+  },
+  {
+   "t": "ask",
+   "v": "XY4-Mole-River",
+   "predict": true,
+   "eb": "what happens next?",
+   "q": "Later tellings add one more thing Xu You did after the emperor left. What?",
+   "o": [
+    "Wrote the emperor a poem",
+    "Sent the emperor a gift",
+    "Washed out his ears in the river"
+   ],
+   "a": 2,
+   "why": "He washed his ears, as if the offer had dirtied them. One version adds a herdsman who wouldn’t let his ox drink that water downstream."
+  },
+  {
+   "t": "shot",
+   "v": "XY5-Washing-Ears",
+   "vo": [
+    "V05"
+   ],
+   "line": "In a later telling, Xu You was so unmoved by the offer that he went down to the river and washed out his ears.",
+   "label": "a later telling"
+  },
+  {
+   "t": "shot",
+   "v": "XY6-Today",
+   "vo": [
+    "V06"
+   ],
+   "line": "Today the forest fits in a shopping cart. The glow of the new thing fades, and the wanting walks on. Xu You stopped at one branch.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "XY6-Today",
+   "eb": "you’re in it",
+   "q": "Your phone works fine, and a new one comes out. What’s the tailorbird’s question?",
+   "o": [
+    "Does this one do what I need?",
+    "Can I afford the new one?",
+    "Will people notice mine is old?"
+   ],
+   "a": 0,
+   "why": "Xu You never asks if he can afford the empire. He asks if he needs it. One branch is a question about enough, not about money."
+  },
+  {
+   "t": "teach",
+   "v": "XY3-Tailorbird",
+   "say": [
+    "here’s what i love. xu you isn’t against having things. the bird needs its branch, the mole needs its drink. he just knows how much is enough.",
+    "in daoist teaching, an old line says it plainly: the one who knows enough is rich. not having enough. knowing it."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "XY6-Today",
+   "eb": "the hard one",
+   "q": "Xu You also says Yao already rules well. If he took over, he’d only be after one thing. What?",
+   "o": [
+    "Revenge on Yao’s old enemies",
+    "Wealth for his own family",
+    "A name, an empty title"
+   ],
+   "a": 2,
+   "why": "“Would I be doing it for a name?” he asks in the Zhuangzi. “Name is only the guest of reality.” He’d have the label without the substance."
+  }
+ ],
+ "today": {
+  "v": "XY6-Today",
+  "say": "before you buy or upgrade anything today, pause and ask xu you’s question: one branch, or the whole forest? if what you have is already enough, say the word inside: enough.",
+  "options": [
+   [
+    "I’ll ask it",
+    "good. one branch can hold a whole nest."
+   ],
+   [
+    "Not buying anything today",
+    "lovely. then say it over what’s in reach: enough."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "The one who came back.",
+  "line": "ten people get the best news of their lives. only one turns around."
+ },
+ "card": {
+  "from": "from the Zhuangzi",
+  "mins": 5,
+  "keep": "branch",
+  "keepName": "One branch",
+  "keepWhy": "The one who knows enough is rich.",
+  "keepSvg": "<path d=\"M8 72l84-16v8L8 80z\" fill=\"#2a1b05\"/><ellipse cx=\"50\" cy=\"50\" rx=\"15\" ry=\"10\" fill=\"#2a1b05\"/><circle cx=\"64\" cy=\"40\" r=\"7\" fill=\"#2a1b05\"/><path d=\"M70 38l10 2-9 4z\" fill=\"#2a1b05\"/><path d=\"M37 48l-16-10 4 14z\" fill=\"#2a1b05\"/>",
+  "sources": [
+   "Zhuangzi, ch. 1 (Xiaoyao you, “Free and Easy Wandering”): Yao offers the world to Xu You (when the sun and moon are out, the torches are still burning); Xu You declines: the tailorbird nests in the deep wood but uses no more than one branch; the mole drinks at the river but takes no more than a bellyful; go home, my lord, I have no use for the world. Trans. Burton Watson, The Complete Works of Chuang Tzu (1968), paraphrased.",
+   "Later telling: Xu You washes his ears in the river after Yao’s offer (Huangfu Mi, Gaoshi zhuan, 3rd century CE).",
+   "Tao Te Ching 33: 知足者富, the one who knows enough is rich (the teach’s “old line,” not named).",
+   "Day 13 script: docs/curriculum/spiritual/scripts/y1/day-0013.json (enough; knowing enough)."
+  ],
+  "check": [
+   "The ear-washing is a later legend, attributed here to Huangfu Mi’s Gaoshi zhuan. Confirm the source.",
+   "Yao is a legendary sage-ruler; the caption calls him “the wise emperor Yao” in “an old Daoist story.” Confirm.",
+   "The bird (jiaoliao 鷦鷯) is “tailorbird” in Watson, “wren” in other translations. Confirm.",
+   "Teach and hard question quote the Tao Te Ching’s line, unnamed, alongside a Zhuangzi story; both are Daoist classics, but different books. Confirm the pairing is fair."
+  ]
+ }
+}

@@ -1,0 +1,189 @@
+{
+ "id": "isl-whisper",
+ "home": "datepalm",
+ "title": "The whisper",
+ "told": "a story in the Qur’an",
+ "clips": "art/sacred/isl-whisper/clips/",
+ "voice": "art/sacred/isl-whisper/voice/",
+ "guide": {
+  "name": "Mahershala",
+  "photo": "art/guides/islam.webp"
+ },
+ "hook": {
+  "v": "QWS5-Night-Room-Today",
+  "say": "before the story, can i ask you something? does your mind ever talk to you at two in the morning?",
+  "options": [
+   [
+    "All the time",
+    "then this one is for you. listen."
+   ],
+   [
+    "Sometimes",
+    "most people know that voice. listen."
+   ],
+   [
+    "I sleep like a rock",
+    "lucky you. you’ll still recognize it."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "QWS1-Night-Garden",
+   "vo": [
+    "V01"
+   ],
+   "line": "In the garden, with everything given and one tree held back, someone began to talk. Not with a shout. With a whisper."
+  },
+  {
+   "t": "shot",
+   "v": "QWS2-Leaves-Stir",
+   "vo": [
+    "V02"
+   ],
+   "line": "“Then Shaytan whispered to them,” the Qur’an says. The Arabic is waswasa. Say it slowly: was-was. The word itself whispers."
+  },
+  {
+   "t": "ask",
+   "v": "QWS2-Leaves-Stir",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "What do you think the whisper said?",
+   "o": [
+    "“Just disobey; nothing will happen”",
+    "“This tree makes you live forever”",
+    "“God will never notice one bite”"
+   ],
+   "a": 1,
+   "why": "He didn’t say disobey. He renamed it the tree of eternity, and promised a kingdom that never decays (Qur’an 20:120)."
+  },
+  {
+   "t": "shot",
+   "v": "QWS3-Tree-Glowing",
+   "vo": [
+    "V03"
+   ],
+   "line": "He didn’t say “disobey God.” He renamed the tree: the tree of forever, a kingdom that never wears out. And he swore he was their sincere adviser."
+  },
+  {
+   "t": "ask",
+   "v": "QWS3-Tree-Glowing",
+   "eb": "why?",
+   "q": "Why rename the tree, instead of just saying “disobey”?",
+   "o": [
+    "A wrong thing dressed as a gift is easy to take",
+    "He didn’t know what the tree really was",
+    "Because God had never told them its name"
+   ],
+   "a": 0,
+   "why": "Nobody reaches for “disobey.” Plenty reach for “forever.”"
+  },
+  {
+   "t": "ask",
+   "v": "QWS2-Leaves-Stir",
+   "eb": "did you know?",
+   "q": "In the Qur’an, why did Shaytan (Iblis) turn against Adam in the first place?",
+   "o": [
+    "He was too proud to bow to Adam",
+    "Adam had tricked him out of the garden",
+    "He wanted the tree for himself"
+   ],
+   "a": 0,
+   "why": "Iblis said, “I am better than him: You made me from fire and him from clay” (7:12). Pride first, then the whisper."
+  },
+  {
+   "t": "shot",
+   "v": "QWS4-Fallen-Leaves",
+   "vo": [
+    "V04"
+   ],
+   "line": "They both ate. At once they saw their nakedness, and began covering themselves with leaves of the garden."
+  },
+  {
+   "t": "shot",
+   "v": "QWS5-Night-Room-Today",
+   "vo": [
+    "V05"
+   ],
+   "line": "Today, at two in the morning, a voice starts up. Reasonable. One more episode. Or: you’ll never be good enough. It sounds exactly like you.",
+   "label": "today"
+  },
+  {
+   "t": "shot",
+   "v": "QWS6-Dawn-Window-Today",
+   "vo": [
+    "V06"
+   ],
+   "line": "Companions once told the Prophet ﷺ of thoughts too awful to say out loud. “You really find that?” he asked. “That is clear faith.”"
+  },
+  {
+   "t": "ask",
+   "v": "QWS6-Dawn-Window-Today",
+   "eb": "did you know?",
+   "q": "The Qur’an’s last surah asks refuge from the whisperer who… what?",
+   "o": [
+    "Shouts until you give in",
+    "Comes only in the dark",
+    "Slinks back when God is remembered"
+   ],
+   "a": 2,
+   "why": "Surah an-Nas calls him al-waswas al-khannas: the whisperer who withdraws. Early commentators said he pulls back whenever God is remembered. Many Muslims recite it before sleep."
+  },
+  {
+   "t": "teach",
+   "v": "QWS4-Fallen-Leaves",
+   "say": [
+    "here’s what i love. the qur’an says they both ate. no one blames the woman alone. and the story names the whisper, so you can name it too.",
+    "in islam, a passing thought isn’t a sin. a saying teaches that God forgives what crosses the mind, unless you act on it or say it."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "QWS6-Dawn-Window-Today",
+   "eb": "the hard one",
+   "q": "The companions were horrified by their own thoughts, and he called that horror “clear faith.” What does that tell you?",
+   "o": [
+    "A dark thought means faith is gone",
+    "Hating the thought shows it isn’t you",
+    "Dark thoughts must be confessed aloud"
+   ],
+   "a": 1,
+   "why": "Hating the whisper is the proof it isn’t yours. Not every voice in your head is you."
+  }
+ ],
+ "today": {
+  "v": "QWS6-Dawn-Window-Today",
+  "say": "today, when a nagging voice starts up, ask it one question: is that mine? if you like, say the short refuge many muslims use: a‘udhu billah, i seek refuge in God. or listen to an-nas, the last surah, about the whisperer.",
+  "options": [
+   [
+    "I’ll ask “is that mine?”",
+    "lovely. not every voice is yours."
+   ],
+   [
+    "I’ll try a‘udhu billah",
+    "beautiful. a few words, very old, very calm."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "The words of return.",
+  "line": "a fork in the road: explain it away, or say three hard words."
+ },
+ "card": {
+  "from": "a story in the Qur’an",
+  "mins": 5,
+  "keep": "breath",
+  "keepName": "Not every voice is yours",
+  "keepWhy": "Name the whisper.",
+  "sources": [
+   "Qur’an 7:20-22 (“Then Satan whispered to them… Your Lord forbade you from this tree only lest ye should become angels or become of the immortals. And he swore unto them: Lo! I am a sincere adviser… they began to hide (by heaping) on themselves some of the leaves of the Garden,” Pickthall)",
+   "Qur’an 20:120 (“Shall I show thee the tree of immortality and power that wasteth not away?”)",
+   "Sahih Muslim 132 (companions found in themselves thoughts too grave to speak; “Do you really find that?” “Yes.” “That is clear faith”)",
+   "Sahih al-Bukhari 5269; Sahih Muslim 127 (Allah has forgiven my community what their souls whisper, as long as they do not act on it or speak it)",
+   "Qur’an 114:4 (the sneaking whisperer, al-waswas al-khannas)"
+  ],
+  "check": []
+ }
+}

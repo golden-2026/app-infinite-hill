@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Walk the place</title>
+<style>
+  /* A walkable place (2026-10-29): plays a World Labs Marble world (.spz Gaussian splats) with Spark.
+     world.html?w=galilee shows art/trip/worlds/galilee-150k.spz at once, then swaps in -full.spz (skip with ?lite).
+     Drag to look, hold the lower half (or W/S, arrow keys) to walk. Inside the trip it runs in an iframe and
+     posts {ih:"world-ready"} to the parent once the first frame is drawn, so the painting can fade out. */
+  html, body { margin: 0; height: 100%; background: #05070d; overflow: hidden; }
+  canvas { display: block; width: 100%; height: 100%; touch-action: none; cursor: grab; }
+  canvas:active { cursor: grabbing; }
+</style>
+<script type="importmap">
+  { "imports": {
+      "three": "./lib/spark/three.module.min.js",
+      "three/addons/postprocessing/Pass.js": "./lib/spark/Pass.js",
+      "@sparkjsdev/spark": "./lib/spark/spark.module.min.js" } }
+</script>
+</head>
+<body>
+<script type="module">
+  import * as THREE from "three";
+  import { SparkRenderer, SplatMesh } from "@sparkjsdev/spark";
+
+  const q = new URLSearchParams(location.search);
+  const name = (q.get("w") || "galilee").replace(/[^a-z0-9-]/g, "");
+  const base = "art/trip/worlds/" + name;
+  const url = base + "-150k.spz"; // light version first (2 MB), then the full world swaps in once loaded
+
+  const renderer = new THREE.WebGLRenderer({ antialias: false });
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  document.body.appendChild(renderer.domElement);
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(70, 1, 0.01, 1000);
+  scene.add(new SparkRenderer({ renderer }));
+
+  const world = new SplatMesh({ url });
+  world.quaternion.set(1, 0, 0, 0); // Marble worlds are y-down / z-forward
+  scene.add(world);
+  if (q.get("lite") === null) {
+    const full = new SplatMesh({ url: base + "-full.spz" });
+    full.quaternion.set(1, 0, 0, 0);
+    full.initialized.then(() => { scene.add(full); scene.remove(world); world.dispose && world.dispose(); });
+  }
+
+  // camera: a person standing where the painting was seen from
+  let yaw = 0, pitch = 0, walk = 0, sway = true;
+  const pos = new THREE.Vector3(0, 0, 0), LIMIT = 2.2;
+  function size() { const w = innerWidth, h = innerHeight; renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix(); }
+  addEventListener("resize", size); size();
+
+  // drag to look; press-and-hold the lower half to walk forward
+  let down = null, moved = 0;
+  const c = renderer.domElement;
+  c.addEventListener("pointerdown", (e) => { down = { x: e.clientX, y: e.clientY, yaw, pitch }; moved = 0; sway = false; c.setPointerCapture(e.pointerId);
+    holdT = setTimeout(() => { if (moved < 8) walk = e.clientY > innerHeight * .5 ? 1 : 0; }, 260); });
+  c.addEventListener("pointermove", (e) => { if (!down) return;
+    const dx = e.clientX - down.x, dy = e.clientY - down.y; moved = Math.max(moved, Math.hypot(dx, dy));
+    if (moved >= 8) { walk = 0; yaw = down.yaw + dx * .005; pitch = Math.max(-.9, Math.min(.9, down.pitch + dy * .004)); } });
+  let holdT;
+  const up = () => { down = null; walk = 0; clearTimeout(holdT); };
+  c.addEventListener("pointerup", up); c.addEventListener("pointercancel", up);
+  const keys = {};
+  addEventListener("keydown", (e) => { keys[e.key.toLowerCase()] = 1; sway = false; });
+  addEventListener("keyup", (e) => { keys[e.key.toLowerCase()] = 0; });
+  addEventListener("message", (e) => { if (e.data && e.data.ih === "look") { sway = false; yaw = e.data.yaw || 0; if (e.data.pitch != null) pitch = e.data.pitch; } });
+
+  let last = performance.now(), told = false, t0 = last;
+  renderer.setAnimationLoop((now) => {
+    const dt = Math.min(.05, (now - last) / 1000); last = now;
+    if (keys.arrowleft || keys.a) yaw += dt * 1.2;
+    if (keys.arrowright || keys.d) yaw -= dt * 1.2;
+    const f = walk || (keys.arrowup || keys.w ? 1 : 0) - (keys.arrowdown || keys.s ? 1 : 0);
+    if (sway) yaw = Math.sin((now - t0) / 9000) * .35; // gentle look around until the viewer takes over
+    if (f) { pos.x -= Math.sin(yaw) * f * dt * .8; pos.z -= Math.cos(yaw) * f * dt * .8;
+      const r = Math.hypot(pos.x, pos.z); if (r > LIMIT) pos.multiplyScalar(LIMIT / r); }
+    camera.position.copy(pos);
+    camera.rotation.set(pitch, yaw, 0, "YXZ");
+    renderer.render(scene, camera);
+    if (!told && world.isInitialized) { told = true; parent !== window && parent.postMessage({ ih: "world-ready" }, "*"); }
+  });
+</script>
+</body>
+</html>

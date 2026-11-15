@@ -1,0 +1,131 @@
+<title>Build Partner Comparison</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: summary verdict up top, then one wide comparison table (scrolls sideways on phones), then open questions. */
+:root{
+  --paper:#F6F5EF; --card:#FFFFFF; --ink:#141310; --text:#2A2924; --mute:#6C695E; --line:#E3E0D4; --head:#EEECE3;
+  --hl:#EEFF6A; --good:#1E7A3C; --warn:#9A6400; --bad:#B42318;
+  --display:'Manrope',system-ui,sans-serif; --ui:'Inter',system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#121210;--card:#1A1A17;--ink:#F3F2EA;--text:#E0DED4;--mute:#A09D90;--line:#2E2D28;--head:#22221E;--hl:#E3F45C;--good:#5FCB84;--warn:#E8B44E;--bad:#F58A80;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#121210;--card:#1A1A17;--ink:#F3F2EA;--text:#E0DED4;--mute:#A09D90;--line:#2E2D28;--head:#22221E;--hl:#E3F45C;--good:#5FCB84;--warn:#E8B44E;--bad:#F58A80;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--text);font:15px/1.55 var(--ui);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:36px 72px}
+.wrap{max-width:1180px;margin:0 auto;display:flex;flex-direction:column;gap:32px}
+.eb{font:700 12px/1 var(--ui);letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+h1{font:800 clamp(30px,5vw,44px)/1.08 var(--display);color:var(--ink);margin:8px 0 10px;letter-spacing:-.02em;text-wrap:balance}
+h2{font:800 22px/1.2 var(--display);color:var(--ink);margin:0 0 12px}
+p{margin:0 0 8px;max-width:72ch} ul{margin:0;padding-left:20px} li{margin:0 0 6px}
+.sum{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.s{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.s b{font:800 17px/1.2 var(--display);color:var(--ink)}
+.s .role{font:600 13px/1.4 var(--ui);color:var(--mute)}
+.pill{align-self:flex-start;font:700 11px/1 var(--ui);letter-spacing:.05em;text-transform:uppercase;padding:5px 8px;border-radius:999px;border:1px solid currentColor}
+.p-good{color:var(--good)} .p-warn{color:var(--warn)} .p-bad{color:var(--bad)} .p-mute{color:var(--mute)}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+table{border-collapse:collapse;min-width:1060px;width:100%}
+th,td{text-align:left;vertical-align:top;padding:12px 14px;border-bottom:1px solid var(--line);font-size:14px}
+thead th{background:var(--head);font:800 15px/1.2 var(--display);color:var(--ink);position:sticky;top:0}
+thead th small{display:block;font:500 12px/1.3 var(--ui);color:var(--mute);margin-top:3px}
+tbody th{font:700 12px/1.3 var(--ui);letter-spacing:.05em;text-transform:uppercase;color:var(--mute);width:150px;background:var(--card)}
+tr:last-child th,tr:last-child td{border-bottom:0}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px;vertical-align:1px;background:currentColor}
+.ask{color:var(--mute);font-style:italic}
+.mine{background:color-mix(in srgb,var(--hl) 22%,transparent)}
+.foot{font-size:13px;color:var(--mute)}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--mute)}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="eb">Infinite Hill · build partners · as of Oct 23, 2026</div>
+  <h1>Who builds it, and who runs the research?</h1>
+  <p>Everything here comes from emails, calls and proposals so far. Grey italic means we don't know yet and should ask. The highlighted row is my suggestion, not anyone's advice.</p>
+</header>
+
+<section class="sum">
+  <div class="s"><span class="pill p-good">strongest proposal</span><b>Xogito (Gus)</b><span class="role">Research + AI guide. Clearest plan, priced, hands-on founder.</span></div>
+  <div class="s"><span class="pill p-warn">trusted, needs a scope</span><b>Anurag</b><span class="role">Technical lead and team in India. Went straight to build; terms and IP still open.</span></div>
+  <div class="s"><span class="pill p-mute">advice, not a builder</span><b>Hans</b><span class="role">Games and product judgment; his 6-week plan is the frame we're using.</span></div>
+  <div class="s"><span class="pill p-mute">narrow use</span><b>Netguru (Bartosz)</b><span class="role">Game-design advice at $150/hr; in-house user research.</span></div>
+  <div class="s"><span class="pill p-bad">not proven yet</span><b>SynapseIndia</b><span class="role">Pitched action-game tech; no shipped titles or team names yet.</span></div>
+</section>
+
+<section>
+  <h2>Side by side</h2>
+  <div class="tw"><table>
+    <thead><tr><th></th>
+      <th>Xogito<small>Gus Spathis · Gabe (design) · Bogdan (CTO, voice)</small></th>
+      <th>Anurag<small>Old friend, ex-Uber · team in India</small></th>
+      <th>Netguru<small>Anna Sokołow · Bartosz (Head of Design)</small></th>
+      <th>SynapseIndia<small>Divyang Garg · via Will</small></th>
+    </tr></thead>
+    <tbody>
+      <tr><th>What they offer</th>
+        <td>Research first ("definition phase"), then build the AI guide. Would add a game designer with shipped mobile titles.</td>
+        <td>~20 hrs/week of his own time plus engineers and a designer he's recruiting. Wants to start building.</td>
+        <td>Bartosz consulting on game design; their own user-research team. Said game dev isn't their specialty.</td>
+        <td>A game team pitch (multiplayer, Unity, Photon). Asked for proof; no reply with it yet.</td></tr>
+      <tr><th>Research piece</th>
+        <td><span class="dot p-good"></span>Yes. Proposal: 8–12 interviews, two rounds of tests with 5 people each, prototype improved in between.</td>
+        <td><span class="dot p-bad"></span>Not in his plan so far.</td>
+        <td><span class="dot p-good"></span>Yes, in-house (Fundid, Careem, Sportano).</td>
+        <td><span class="dot p-bad"></span>No.</td></tr>
+      <tr><th>AI guide and voice</th>
+        <td><span class="dot p-good"></span>Their wheelhouse. Built an agentic AI system for SenseSight. Bogdan leads voice.</td>
+        <td><span class="dot p-good"></span>Strong engineer; his company hpy built an AI engine. Pushed voice first.</td>
+        <td class="ask">Ask.</td>
+        <td class="ask">Ask.</td></tr>
+      <tr><th>Game and world</th>
+        <td><span class="dot p-warn"></span>Not core, by Gus's own account. Would add a game designer or help pick a studio.</td>
+        <td><span class="dot p-warn"></span>Not his background. Has a designer candidate.</td>
+        <td><span class="dot p-warn"></span>Bartosz has made games as a passion (one featured by Apple); strong network.</td>
+        <td><span class="dot p-warn"></span>Claims game work; no shipped titles shown.</td></tr>
+      <tr><th>Senior people on it</th>
+        <td>Gus personally hands-on.</td>
+        <td>Anurag himself, part-time.</td>
+        <td>Bartosz, hourly.</td>
+        <td class="ask">Unknown.</td></tr>
+      <tr><th>Cost so far</th>
+        <td>$25,000 fixed, 5 weeks (Oct 4 proposal), plus ~$4–6K to pay participants.</td>
+        <td>His Sept ask: $25K/month for 4 engineers plus 12% equity. Your counter: $25K/month, no equity yet. Nothing agreed.</td>
+        <td>$150/hour for Bartosz.</td>
+        <td class="ask">No quote.</td></tr>
+      <tr><th>What you'd own</th>
+        <td>A tested clickable prototype, research findings, a product plan.</td>
+        <td>Code in your repo. <b>But</b> he carved an "AI audio virtual swami for the Indian market" out of the IP assignment; it needs a precise written definition.</td>
+        <td>Advice and research reports.</td>
+        <td class="ask">Ask.</td></tr>
+      <tr><th>Watch-outs</th>
+        <td>Kayan said "don't go to Xogito" (reason unknown; worth asking). Go-to-market is not their strength (yours is).</td>
+        <td>Friendship and money mixed; he called Xogito's price a rip-off but he's a competitor for the work. His recruits are waiting on you.</td>
+        <td>Not a builder for this.</td>
+        <td>Pitch doesn't match a calm daily world.</td></tr>
+      <tr><th>Status</th>
+        <td>Emailed today with the new direction.</td>
+        <td>Texted today with the film and one-pager.</td>
+        <td>Tuesday call cancelled; open for consulting.</td>
+        <td>Waiting on shipped games and team names.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>A combination to consider <span style="font:600 13px var(--ui);color:var(--mute)">[my suggestion]</span></h2>
+  <p class="mine" style="padding:12px 14px;border-radius:10px;max-width:none">Xogito runs the research and prototype A (AI guide + illustrated world) on its fixed price. Anurag gets a small, paid, clearly scoped piece alongside it: the voice-AI proof and prototype B (the small 3D slice), with the IP carve-out written down first. Hans reviews the research plan and both prototypes. Bartosz is an hourly second opinion on game feel. After the pilot, you pick the long-term team based on what each actually delivered.</p>
+</section>
+
+<section>
+  <h2>Questions to ask before choosing</h2>
+  <ul>
+    <li><b>Kayan:</b> why not Xogito?</li>
+    <li><b>Gus:</b> can the research cover 20–30 people in two groups (Hans's plan) instead of 8–12? What does that change in price and time?</li>
+    <li><b>Anurag:</b> what exactly would you deliver in 90 days, for how much? Can we define the "virtual swami" carve-out in one sentence that doesn't overlap the Guide?</li>
+    <li><b>Hans:</b> which of these teams would you trust to build a calm, daily world, and what should prototype B prove?</li>
+    <li><b>SynapseIndia:</b> 2–3 shipped games with store links and the actual people's profiles, or we stop here.</li>
+  </ul>
+</section>
+
+<p class="foot">Infinite Hill Ventures, Inc. · private working page · update as replies come in.</p>
+</div>

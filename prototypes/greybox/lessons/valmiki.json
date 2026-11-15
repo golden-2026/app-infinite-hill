@@ -1,0 +1,186 @@
+{
+ "id": "valmiki",
+ "home": "marigold",
+ "title": "The robber who became a poet",
+ "told": "as tradition tells it",
+ "clips": "art/sacred/valmiki/clips/",
+ "voice": "art/sacred/valmiki/voice/",
+ "guide": {
+  "name": "Priyanka",
+  "photo": "art/guides/hinduism.webp"
+ },
+ "hook": {
+  "v": "VA1-Forest-Robber",
+  "say": "before the story, can i ask you something? ever feel like your past is too much to start over? a mistake, a reputation, a version of you you’re not proud of.",
+  "options": [
+   [
+    "Yes, sometimes",
+    "then this story is yours. listen."
+   ],
+   [
+    "Someone I love does",
+    "keep them in mind while you hear this one."
+   ],
+   [
+    "Not really",
+    "good. you might meet someone who needs it."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "VA1-Forest-Robber",
+   "vo": [
+    "V01"
+   ],
+   "line": "As tradition tells it, a robber named Ratnakara lived in the forest. He stopped travelers and took everything they had, to feed his family."
+  },
+  {
+   "t": "shot",
+   "v": "VA2-Narada",
+   "vo": [
+    "V02"
+   ],
+   "line": "One day he stopped a wandering sage, Narada, who asked him one quiet question: “Will your family share the weight of what you’re doing?”"
+  },
+  {
+   "t": "ask",
+   "v": "VA2-Narada",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "Ratnakara runs home and asks his family: will you share the weight of what I’ve done? What do they say?",
+   "o": [
+    "Yes, we share it",
+    "No, it’s yours alone",
+    "They don’t answer"
+   ],
+   "a": 1,
+   "why": "They say no. And that answer changes everything."
+  },
+  {
+   "t": "shot",
+   "v": "VA3-The-Answer",
+   "vo": [
+    "V03"
+   ],
+   "line": "Ratnakara ran home and asked. And they said no. “You chose this. It’s yours.”"
+  },
+  {
+   "t": "ask",
+   "v": "VA3-The-Answer",
+   "eb": "why?",
+   "q": "Why does that answer shake him so badly?",
+   "o": [
+    "He’ll lose the money",
+    "He sees the choice was his alone",
+    "His family throws him out"
+   ],
+   "a": 1,
+   "why": "He’d told himself he did it for them. Now he saw the choice, and its weight, were his. That’s where change starts."
+  },
+  {
+   "t": "shot",
+   "v": "VA4-A-Name",
+   "vo": [
+    "V04"
+   ],
+   "line": "He came back shaken. Narada gave him a name of God to repeat, and Ratnakara sat down to repeat it."
+  },
+  {
+   "t": "ask",
+   "v": "VA4-A-Name",
+   "eb": "did you know?",
+   "q": "A popular telling says he couldn’t even say the name of Rama at first. So Narada had him say it backwards. What did he repeat?",
+   "o": [
+    "“Mara, mara”",
+    "“Om, om”",
+    "“Hari, hari”"
+   ],
+   "a": 0,
+   "why": "“Mara, mara, mara…” Said over and over, it turns into “Rama, Rama.” He started exactly where he was."
+  },
+  {
+   "t": "shot",
+   "v": "VA5-Anthill",
+   "vo": [
+    "V05"
+   ],
+   "line": "He sat so still, for so long, that ants built a hill over him."
+  },
+  {
+   "t": "ask",
+   "v": "VA5-Anthill",
+   "eb": "why?",
+   "q": "He sat so still for so long that ants built a hill over him. What does that image say about his change?",
+   "o": [
+    "It happened in a single flash",
+    "It took deep, patient stillness",
+    "Narada forced it on him"
+   ],
+   "a": 1,
+   "why": "Valmika is Sanskrit for anthill. His new name keeps the slow, still years in it, not just the moment he turned."
+  },
+  {
+   "t": "shot",
+   "v": "VA6-Valmiki",
+   "vo": [
+    "V06"
+   ],
+   "line": "When he rose, people called him Valmiki, “the one from the anthill.” And Valmiki went on to write the Ramayana."
+  },
+  {
+   "t": "ask",
+   "v": "VA6-Valmiki",
+   "eb": "did you know?",
+   "q": "Valmiki doesn’t just write the Ramayana. He walks into it. How?",
+   "o": [
+    "He fights beside Rama at Lanka",
+    "He crowns Rama king in Ayodhya",
+    "He shelters Sita and raises her sons"
+   ],
+   "a": 2,
+   "why": "In the last book, Sita finds refuge in Valmiki’s hermitage, where her twins Lava and Kusha are born. He teaches them his poem, and they sing it before Rama."
+  },
+  {
+   "t": "teach",
+   "v": "VA6-Valmiki",
+   "say": [
+    "here’s what i love. the man who gave us the ramayana started out as a robber.",
+    "in hindu tradition, who you were isn’t who you have to be. valmiki is the answer to “people don’t change.”"
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "VA6-Valmiki",
+   "eb": "the hard one",
+   "q": "Valmiki is called the first poet. Tradition says his first verse burst out when he saw what?",
+   "o": [
+    "A hunter kill one of a pair of birds",
+    "Rama leave Ayodhya for the forest",
+    "Narada singing the name of Rama"
+   ],
+   "a": 0,
+   "why": "Seeing a hunter kill one of two krauncha birds, his grief (shoka) poured out as a new kind of verse, the shloka. The robber who once caused pain was undone by a bird’s."
+  }
+ ],
+ "today": {
+  "v": "VA6-Valmiki",
+  "say": "think of one thing from your past you’ve let define you. today, do one small thing the new you would do.",
+  "options": [
+   [
+    "I know what it is",
+    "then do the small thing. that’s how valmiki started too."
+   ],
+   [
+    "I need to think",
+    "that’s honest. sitting still is how he started."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "No effort is ever lost.",
+  "line": "arjuna asks krishna what happens to people who try and fall away. the answer is a relief."
+ }
+}

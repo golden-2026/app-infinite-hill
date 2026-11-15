@@ -21,7 +21,7 @@ export default function Listen() {
         <Text style={[type.caption(13), { marginTop: 3 }]}>{note}</Text>
       </View>
       {songs.map((s) => (
-        <View key={s.id} style={{ backgroundColor: "#fff", borderWidth: 1, borderColor: color.line, borderRadius: 20, padding: 16 }}>
+        <View key={s.id} style={{ backgroundColor: color.white, borderWidth: 1, borderColor: color.line, borderRadius: 20, padding: 16 }}>
           <SongBody song={s} showDoor />
         </View>
       ))}

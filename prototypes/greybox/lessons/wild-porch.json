@@ -1,0 +1,218 @@
+{
+ "id": "wild-porch",
+ "home": "wild",
+ "title": "The painted porch",
+ "told": "an old story about Zeno",
+ "clips": "art/sacred/wild-porch/clips/",
+ "voice": "art/sacred/wild-porch/voice/",
+ "guide": {
+  "name": "Justin",
+  "photo": "art/guides/spiritual.webp"
+ },
+ "hook": {
+  "v": "STA1-Agora",
+  "say": "before the story, can i ask you something? in a conversation, are you more of a talker or a listener?",
+  "options": [
+   [
+    "A talker",
+    "me too, some days. you’re about to meet a young man like that."
+   ],
+   [
+    "A listener",
+    "then zeno would have liked you."
+   ],
+   [
+    "Depends who’s there",
+    "fair. watch what zeno says about it."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "STA1-Agora",
+   "vo": [
+    "V01"
+   ],
+   "line": "Zeno didn’t teach in a private school. He taught in a public place, where people passed all day: the edge of the marketplace in Athens."
+  },
+  {
+   "t": "shot",
+   "v": "STA2-Under-Columns",
+   "vo": [
+    "V02"
+   ],
+   "line": "He taught under a stoa, a long porch of columns. His was the painted porch, its walls covered in famous paintings of battles."
+  },
+  {
+   "t": "ask",
+   "v": "STA2-Under-Columns",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "Zeno came to philosophy by accident. What brought him to Athens, the old story says?",
+   "o": [
+    "Exile from his home city",
+    "A shipwreck, with a cargo of dye",
+    "A prize for winning a race"
+   ],
+   "a": 1,
+   "why": "Diogenes Laertius says the merchant from Cyprus was shipwrecked, read about Socrates in an Athens bookshop, and asked where men like that were. Crates was walking by."
+  },
+  {
+   "t": "shot",
+   "v": "STA2-Under-Columns",
+   "vo": [
+    "V03"
+   ],
+   "line": "At first his followers were called Zenonians. But the name that stuck was the place: people of the stoa. The Stoics."
+  },
+  {
+   "t": "shot",
+   "v": "STA3-The-Talker",
+   "vo": [
+    "V04"
+   ],
+   "line": "Anyone could stop and listen, and anyone could talk. One day a young man wouldn’t stop talking, mostly nonsense."
+  },
+  {
+   "t": "ask",
+   "v": "STA4-Two-Ears",
+   "blur": true,
+   "predict": true,
+   "eb": "what happens next?",
+   "q": "How does Zeno answer the chatterbox?",
+   "o": [
+    "He walks away mid-sentence",
+    "He makes a joke about ears",
+    "He asks him to teach instead"
+   ],
+   "a": 1,
+   "why": "A joke, with a lesson inside. Diogenes Laertius, who collected the old philosophers’ sayings, kept this one."
+  },
+  {
+   "t": "shot",
+   "v": "STA4-Two-Ears",
+   "vo": [
+    "V05"
+   ],
+   "line": "Zeno said: “The reason we have two ears and only one mouth is that we may listen more and talk less.”"
+  },
+  {
+   "t": "ask",
+   "v": "STA4-Two-Ears",
+   "eb": "did you know?",
+   "q": "Zeno was shy when young. His teacher, Crates, cured it in a strange way. How?",
+   "o": [
+    "Made him give a speech in the market",
+    "Made him sing in the theater",
+    "Made him carry soup through town"
+   ],
+   "a": 2,
+   "why": "Crates handed him a pot of lentil soup to carry, then smashed it with his staff. “Why run away, my little Phoenician? Nothing terrible has happened to you.”"
+  },
+  {
+   "t": "ask",
+   "v": "STA4-Two-Ears",
+   "eb": "why?",
+   "q": "Why does it fit that the Stoics were named after an open porch, not a private garden?",
+   "o": [
+    "Their teaching was for life in public",
+    "Their teaching was secret, for members",
+    "Zeno had no house of his own"
+   ],
+   "a": 0,
+   "why": "The market, the courts, the family: that was their classroom. Wisdom in the open."
+  },
+  {
+   "t": "shot",
+   "v": "STA5-Honored",
+   "vo": [
+    "V06"
+   ],
+   "line": "Athens honored him for a life that matched his words. They even trusted him with the keys to the city walls."
+  },
+  {
+   "t": "shot",
+   "v": "STA6-Today",
+   "vo": [
+    "V07"
+   ],
+   "line": "Today: lunch in a busy plaza, a friend mid-story. Two ears, one mouth. Let them finish. Wisdom in the open.",
+   "label": "today"
+  },
+  {
+   "t": "ask",
+   "v": "STA6-Today",
+   "eb": "did you know?",
+   "q": "Centuries later, which Roman emperor kept a Stoic notebook to himself?",
+   "o": [
+    "Nero",
+    "Marcus Aurelius",
+    "Julius Caesar"
+   ],
+   "a": 1,
+   "why": "Marcus Aurelius wrote his Meditations as notes to himself. Nero had a Stoic tutor too, Seneca, which shows a porch can’t do all the work."
+  },
+  {
+   "t": "teach",
+   "v": "STA2-Under-Columns",
+   "say": [
+    "here’s what i love. other schools met in groves outside the city, or in a private garden. zeno taught in a public porch on the marketplace, where anyone might pass.",
+    "the stoics taught living well right in the middle of life: the market, the courts, the family. zeno said well-being comes little by little, and yet it’s no little thing. every time someone says stoic, they’re pointing at that porch."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "STA6-Today",
+   "eb": "the hard one",
+   "q": "Today “stoic” often means a stiff face that feels nothing. From this lesson, what did it first mean?",
+   "o": [
+    "Someone who never shows feelings",
+    "Someone who lives apart from the crowd",
+    "Someone living wisely, out in public"
+   ],
+   "a": 2,
+   "why": "People of the porch. Not cold, but steady, out in the open with everyone else."
+  }
+ ],
+ "today": {
+  "v": "STA6-Today",
+  "say": "today, in one ordinary conversation, at lunch, at work, on the phone, try zeno’s two ears: listen twice as much as you talk. let the other person finish, then wait one breath before you answer.",
+  "options": [
+   [
+    "I’ll try it",
+    "good. wisdom in the open."
+   ],
+   [
+    "That’s hard for me",
+    "it’s hard for most people. one conversation is enough."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "The water carrier.",
+  "line": "a boxer hauls water all night so he can study all day. then he’s called before the court."
+ },
+ "card": {
+  "from": "an old story about Zeno",
+  "mins": 5,
+  "keep": "pillars",
+  "keepName": "Wisdom in the open",
+  "keepWhy": "No wall needed to be steady.",
+  "sources": [
+   "Diogenes Laërtius, Lives of Eminent Philosophers 7.5: Zeno taught walking up and down in the Painted Colonnade (Stoa Poikile); his followers were first called Zenonians, then Stoics, from the place.",
+   "Diogenes Laërtius 7.6 (the Athenians deposited the keys of the city walls with him); 7.10–12 (the decree honoring him, his life a pattern in harmony with his teaching).",
+   "Diogenes Laërtius 7.23 (to a youth talking nonsense: “The reason why we have two ears and only one mouth is that we may listen the more and talk the less,” R. D. Hicks, 1925); 7.26 (well-being is attained little by little, and yet it is no little thing).",
+   "Pausanias, Description of Greece 1.15 (the paintings of the Stoa Poikile, including the Battle of Marathon).",
+   "Day 27 script: docs/curriculum/spiritual/scripts/y1/day-0027.json (stoa; wisdom in the open)."
+  ],
+  "check": [
+   "Zeno’s line is lightly modernized from Hicks (“listen more and talk less”). Confirm.",
+   "Diogenes Laërtius 7.5 says Zeno chose the Stoa partly to keep it clear of idlers, and 7.14 that he avoided crowds; the lesson now says only that it was a public place where anyone might pass (the earlier “no money” and “busiest spot” were dropped, since 7.13 reports he had means). Confirm.",
+   "Teach: “other schools met in groves outside the city, or in a private garden” (the Academy, the Lyceum, Epicurus’s Garden). Confirm.",
+   "“Athens honored him for a life that matched his words” paraphrases the decree in 7.10–11; the keys are from 7.6. Confirm the order and wording.",
+   "Teach: “well-being comes little by little, and yet it’s no little thing” (7.26) is attributed to Zeno. Confirm."
+  ]
+ }
+}

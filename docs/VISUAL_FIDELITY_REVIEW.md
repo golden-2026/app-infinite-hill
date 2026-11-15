@@ -1,3 +1,5 @@
+Background only (written September 2026). Where this disagrees with docs/VISION-NOW.md, that page wins.
+
 # Golden visual fidelity review
 
 Compared the current `src/Golden.jsx` and `public/site.html` against the supplied originals at `/Users/kayan-work-mac/Downloads/golden/golden_v150.jsx` and `golden_web_v83.html`. This is a source-to-source review of layout, style rules, assets, and content ordering; it is not a new pixel-diff or screenshot QA run.

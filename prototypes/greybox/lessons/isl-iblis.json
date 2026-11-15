@@ -1,0 +1,192 @@
+{
+ "id": "isl-iblis",
+ "home": "datepalm",
+ "title": "The one who would not bow",
+ "told": "a story in the Qur’an",
+ "clips": "art/sacred/isl-iblis/clips/",
+ "voice": "art/sacred/isl-iblis/voice/",
+ "guide": {
+  "name": "Mahershala",
+  "photo": "art/guides/islam.webp"
+ },
+ "hook": {
+  "v": "QIB5-Meeting-Today",
+  "say": "before the story, can i ask you something? have you ever felt a flash of “i’m better than that”?",
+  "options": [
+   [
+    "Honestly, yes",
+    "thank you for saying so. most people have. listen."
+   ],
+   [
+    "Maybe once or twice",
+    "then this story will feel familiar."
+   ],
+   [
+    "I don’t think so",
+    "lucky you. watch for it after this."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "QIB1-Lights-Bowing",
+   "vo": [
+    "V01"
+   ],
+   "line": "God told the angels to bow before Adam, the first human. And they bowed, every one of them."
+  },
+  {
+   "t": "ask",
+   "v": "QIB2-One-Flame",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "Every one bowed, except Iblis. What reason do you think he gave?",
+   "o": [
+    "“I bow only to You”",
+    "“I am better than him”",
+    "“I didn’t hear the command”"
+   ],
+   "a": 1,
+   "why": "In the Qur’an his reason is a comparison: “I am better than him” (7:12). A few later Sufi writers imagined the other line for him, but it isn’t the Qur’an’s."
+  },
+  {
+   "t": "shot",
+   "v": "QIB2-One-Flame",
+   "vo": [
+    "V02"
+   ],
+   "line": "All except Iblis. Elsewhere the Qur’an says he was of the jinn, beings made of fire. “What kept you from bowing?” God asked."
+  },
+  {
+   "t": "shot",
+   "v": "QIB3-Fire-And-Clay",
+   "vo": [
+    "V03"
+   ],
+   "line": "“I am better than him,” Iblis said. “You made me from fire, and him from clay.”"
+  },
+  {
+   "t": "ask",
+   "v": "QIB3-Fire-And-Clay",
+   "eb": "why?",
+   "q": "What is wrong with Iblis’s argument?",
+   "o": [
+    "He judged by what Adam was made of",
+    "He was right, but said it too proudly",
+    "He misunderstood the command to bow"
+   ],
+   "a": 0,
+   "why": "Clay, fire: he ranked the stuff, and left out what God put into Adam, His breath (15:29) and the names He taught him (2:31)."
+  },
+  {
+   "t": "ask",
+   "v": "QIB3-Fire-And-Clay",
+   "eb": "did you know?",
+   "q": "The Arabic word for pride, kibr, shares a root with a phrase Muslims say many times a day. Which?",
+   "o": [
+    "Bismillah, in the name of God",
+    "Insha’Allah, if God wills",
+    "Allahu akbar, God is greatest"
+   ],
+   "a": 2,
+   "why": "K-b-r means greatness. Pride claims a greatness that belongs to God alone; “Allahu akbar” puts it back where it belongs."
+  },
+  {
+   "t": "shot",
+   "v": "QIB4-Flame-Path",
+   "vo": [
+    "V04"
+   ],
+   "line": "What held him back wasn’t hunger or fear. It was a comparison. Pride, the first wrong in the story."
+  },
+  {
+   "t": "shot",
+   "v": "QIB4-Flame-Path",
+   "vo": [
+    "V05"
+   ],
+   "line": "The Prophet ﷺ defined pride simply: rejecting the truth, and looking down on people."
+  },
+  {
+   "t": "ask",
+   "v": "QIB5-Meeting-Today",
+   "eb": "why?",
+   "q": "The angels bowed to Adam, yet in Islam worship is for God alone. How do Muslims understand that bow?",
+   "o": [
+    "Adam was briefly worshiped",
+    "A bow of honor, not worship",
+    "The angels made a mistake"
+   ],
+   "a": 1,
+   "why": "Most scholars call it a bow of greeting and honor, made because God commanded it. Worship belongs to God alone."
+  },
+  {
+   "t": "shot",
+   "v": "QIB5-Meeting-Today",
+   "vo": [
+    "V06"
+   ],
+   "line": "Today, someone younger is made team lead. A quiet thought arrives fully formed: under them? I’m better than that. It’s a very old thought.",
+   "label": "today"
+  },
+  {
+   "t": "teach",
+   "v": "QIB4-Flame-Path",
+   "say": [
+    "here’s what i love. the story’s first mistake isn’t violence. it’s a single thought: i’m better than him.",
+    "in islam, the angels’ bow honored adam; it wasn’t worship. and pride isn’t nice clothes, the prophet ﷺ said. God is beautiful and loves beauty. pride is looking down on people."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "QIB5-Meeting-Today",
+   "eb": "the hard one",
+   "q": "Iblis claimed to be better because of what he was made of. From this lesson, what really counts in God’s eyes?",
+   "o": [
+    "What you do with what you’re given",
+    "What you’re made of, or born into",
+    "How high you rise among others"
+   ],
+   "a": 0,
+   "why": "The Qur’an says the noblest in God’s sight are the most mindful of Him (49:13), not the best born. Iblis bet everything on his material."
+  }
+ ],
+ "today": {
+  "v": "QIB5-Meeting-Today",
+  "say": "today, catch one “i’m better than that” thought: in traffic, at work, scrolling. don’t argue with it. just name it, and let one person go ahead of you without minding. a saying teaches that whoever humbles themselves for God, God raises them.",
+  "options": [
+   [
+    "I’ll catch one",
+    "lovely. naming it takes the fire out."
+   ],
+   [
+    "I’ll let someone ahead",
+    "good. that’s the bow, in modern clothes."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "Everything, except one tree.",
+  "line": "a garden full of yeses, and a single no."
+ },
+ "card": {
+  "from": "a story in the Qur’an",
+  "mins": 5,
+  "keep": "flame",
+  "keepName": "Fire and clay",
+  "keepWhy": "Pride was the first mistake.",
+  "sources": [
+   "Qur’an 7:11-12 (“He said: What hindered thee that thou didst not fall prostrate when I bade thee? (Iblis) said: I am better than him. Thou createdst me of fire while him Thou didst create of mud,” Pickthall)",
+   "Qur’an 2:34 (the angels fell prostrate, all save Iblis)",
+   "Qur’an 18:50 (Iblis “was of the jinn”); Qur’an 55:15 (the jinn created of smokeless fire)",
+   "Sahih Muslim 2588 (no one humbles himself for Allah but Allah raises him)",
+   "Qur’an 15:29 (God breathed into Adam of His spirit)",
+   "Sahih Muslim 91 (no one with an atom’s weight of pride in his heart will enter paradise; a man loves fine clothes and shoes; “Allah is beautiful and loves beauty. Pride is rejecting the truth and looking down on people”)"
+  ],
+  "check": [
+   "Whether Iblis was an angel or a jinn is discussed by commentators; the lesson follows 18:50. Confirm."
+  ]
+ }
+}

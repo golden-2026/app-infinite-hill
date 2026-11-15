@@ -1,0 +1,203 @@
+{
+ "id": "jew-dough",
+ "home": "pomegranate",
+ "title": "The bread with no time to rise",
+ "told": "from the book of Exodus",
+ "clips": "art/sacred/jew-dough/clips/",
+ "voice": "art/sacred/jew-dough/voice/",
+ "guide": {
+  "name": "Natalie",
+  "photo": "art/guides/judaism.webp"
+ },
+ "hook": {
+  "v": "SD5-Seder-Table",
+  "say": "before the story, can i ask you something? is there a family story you’ve heard so many times it feels like your own memory?",
+  "options": [
+   [
+    "Yes, more than one",
+    "then you’re ready for this night. listen."
+   ],
+   [
+    "Not really",
+    "then here’s a good one to borrow. listen."
+   ],
+   [
+    "I wish there were",
+    "then hold that wish. this story was made to be handed on."
+   ]
+  ]
+ },
+ "steps": [
+  {
+   "t": "shot",
+   "v": "SD1-Bricks-And-Mortar",
+   "vo": [
+    "V01"
+   ],
+   "line": "In the book of Exodus, the Israelites are slaves in Egypt. Their lives are made bitter with hard work, with mortar and bricks."
+  },
+  {
+   "t": "shot",
+   "v": "SD2-Night-Of-Leaving",
+   "vo": [
+    "V02"
+   ],
+   "line": "After ten plagues, Pharaoh finally lets them go. And they leave in a rush, that very night."
+  },
+  {
+   "t": "ask",
+   "v": "SD2-Night-Of-Leaving",
+   "blur": true,
+   "predict": true,
+   "eb": "your guess",
+   "q": "They’re leaving so fast, with the bread dough not yet risen. How do they carry it?",
+   "o": [
+    "In sacks, loaded on carts with the grain",
+    "Bowls tied in cloaks, on their shoulders",
+    "In baskets, slung across their donkeys"
+   ],
+   "a": 1,
+   "why": "Exodus says it: the kneading bowls bound up in their cloaks, on their shoulders. No time even to pack."
+  },
+  {
+   "t": "shot",
+   "v": "SD3-Dough-On-Shoulders",
+   "vo": [
+    "V03"
+   ],
+   "line": "They carry their dough before it can rise, the kneading bowls wrapped in their cloaks, up on their shoulders."
+  },
+  {
+   "t": "shot",
+   "v": "SD4-Flat-Bread",
+   "vo": [
+    "V04"
+   ],
+   "line": "On the road, they bake it into flat cakes. There had been no time to wait. That flat bread is matzah."
+  },
+  {
+   "t": "ask",
+   "v": "SD4-Flat-Bread",
+   "eb": "did you know?",
+   "q": "For the week of Passover, many Jewish families don’t only eat matzah. What else do they do?",
+   "o": [
+    "Clear every bread crumb out of the house",
+    "Bake a fresh loaf for the first night",
+    "Skip all grains for the whole week"
+   ],
+   "a": 0,
+   "why": "Leavened food is called chametz. The night before, many families search the house by candlelight for the last crumbs, often with a feather and a wooden spoon."
+  },
+  {
+   "t": "shot",
+   "v": "SD5-Seder-Table",
+   "vo": [
+    "V05"
+   ],
+   "line": "Every spring, at the Passover seder, Jewish families tell it again. Seder means order, and the plate lays the story out as food.",
+   "label": "today"
+  },
+  {
+   "t": "match",
+   "v": "SD5-Seder-Table",
+   "eb": "what’s on the plate",
+   "q": "Match each food to what it recalls.",
+   "pairs": [
+    [
+     "bitter herbs",
+     "how bitter slavery was"
+    ],
+    [
+     "charoset, a sweet paste",
+     "the mortar for the bricks"
+    ],
+    [
+     "parsley in salt water",
+     "tears"
+    ]
+   ],
+   "why": "You taste the story before anyone explains it. Plates differ a little from family to family."
+  },
+  {
+   "t": "shot",
+   "v": "SD6-Youngest-Asks",
+   "vo": [
+    "V06"
+   ],
+   "line": "Then the youngest stands up and asks: “Why is this night different from all other nights?”",
+   "label": "today"
+  },
+  {
+   "t": "fill",
+   "v": "SD6-Youngest-Asks",
+   "eb": "guess the answer",
+   "pre": "The answer doesn’t begin “once upon a time.” It begins: “",
+   "post": "were slaves to Pharaoh in Egypt.”",
+   "o": [
+    "We",
+    "They",
+    "The Israelites"
+   ],
+   "a": 0,
+   "why": "We. Not they. An old teaching says that in every generation, each person should see themselves as if they walked out of Egypt."
+  },
+  {
+   "t": "teach",
+   "v": "SD3-Dough-On-Shoulders",
+   "say": [
+    "here’s what i love. the first passover wasn’t calm or tidy. it was dough on your shoulder and no time to wait.",
+    "in jewish tradition, the seder isn’t a history lesson. it’s a memory you’re handed, so each person feels they left egypt too. families tell it in their own ways, with their own questions."
+   ]
+  },
+  {
+   "t": "ask",
+   "v": "SD6-Youngest-Asks",
+   "eb": "the hard one",
+   "q": "The Torah says, “tell your child on that day.” So why is the telling built around a child’s question?",
+   "o": [
+    "Children get restless otherwise",
+    "So the grown-ups can test what children know",
+    "A story sticks best when someone asks for it"
+   ],
+   "a": 2,
+   "why": "The night is built to make the young ask, and the old answer. That’s how a memory gets handed down."
+  }
+ ],
+ "today": {
+  "v": "SD6-Youngest-Asks",
+  "say": "this week, ask someone older one question about your own family’s story, and let them tell it. that’s the seder’s whole idea: memory is handed down by asking.",
+  "options": [
+   [
+    "I know who to ask",
+    "then ask. the telling is the gift."
+   ],
+   [
+    "There’s no one left to ask",
+    "then tell it yourself, to someone younger. that’s how it’s carried."
+   ]
+  ]
+ },
+ "tomorrow": {
+  "title": "Why the glass breaks.",
+  "line": "a wedding feast gets a little too wild. the host has an unusual way to calm it."
+ },
+ "card": {
+  "from": "from the book of Exodus",
+  "mins": 5,
+  "keep": "matzah",
+  "keepName": "A piece of matzah",
+  "keepWhy": "The bread that had no time to rise.",
+  "keepSvg": "<rect x=\"22\" y=\"22\" width=\"56\" height=\"56\" rx=\"5\" fill=\"#2a1b05\"/><g fill=\"#f4f1e8\" opacity=\".5\"><circle cx=\"34\" cy=\"34\" r=\"2.5\"/><circle cx=\"50\" cy=\"34\" r=\"2.5\"/><circle cx=\"66\" cy=\"34\" r=\"2.5\"/><circle cx=\"34\" cy=\"50\" r=\"2.5\"/><circle cx=\"50\" cy=\"50\" r=\"2.5\"/><circle cx=\"66\" cy=\"50\" r=\"2.5\"/><circle cx=\"34\" cy=\"66\" r=\"2.5\"/><circle cx=\"50\" cy=\"66\" r=\"2.5\"/><circle cx=\"66\" cy=\"66\" r=\"2.5\"/></g>",
+  "sources": [
+   "Exodus 1:13–14 (bitter lives, with mortar and brick)",
+   "Exodus 12:31–34, 39 (sent out that night; dough taken before it was leavened, kneading bowls bound in their cloaks on their shoulders; baked into unleavened cakes)",
+   "Exodus 13:8 (you shall tell your child on that day)",
+   "Mishnah Pesachim 10:4–5 (the child asks; bitter herbs for the bitterness of slavery; in every generation a person must see himself as if he came out of Egypt)",
+   "Babylonian Talmud, Pesachim 116a (charoset in memory of the mortar)",
+   "The Passover Haggadah (the four questions; avadim hayinu, we were slaves to Pharaoh in Egypt)"
+  ],
+  "check": [
+   "Salt water as tears: a widespread explanation, not a Talmudic one; seder plate items vary by community (e.g. romaine or horseradish)"
+  ]
+ }
+}

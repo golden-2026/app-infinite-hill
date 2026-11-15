@@ -19,9 +19,10 @@ import { Btn, Card, Face, Guy, Sun, color, font, type } from "@/ui";
 import { HillScene } from "@/ui/hill";
 import { TodaysThree } from "@/ui/todays-three";
 import { TodayHero } from "@/ui/today-hero";
+import { HillHome, StoryFilmCard } from "@/ui/hill-home";
 import { SongCard } from "@/ui/song";
 import { useCompanionDay } from "@/lib/companion/use-companion";
-import { CompanionCard, CompanionNote, HelpCard, ReflectCard } from "@/ui/companion";
+import { CompanionCard, CompanionNote, FollowUpCard, HelpCard, ReflectCard } from "@/ui/companion";
 import { StreakChip } from "@/ui/streak";
 import { goalView, weekdayOf } from "@/lib/streak";
 import { useSeasons } from "@/lib/quests";
@@ -137,6 +138,9 @@ export default function Today() {
       </View>
 
       <ScrollView contentContainerStyle={{ paddingTop: 4, paddingBottom: 28 }}>
+        {/* the night look (2026-10-28): your home on the hill, then this week's story film if your door has one */}
+        <HillHome door={wing} />
+        {quiet ? null : <StoryFilmCard door={wing} />}
         {derived.welcomeBack ? (
           <Card style={{ marginHorizontal: 18, marginBottom: 12, flexDirection: "row", gap: 12, alignItems: "center" }}>
             <Guy pose="wave" h={70} />
@@ -152,6 +156,8 @@ export default function Today() {
 
         {/* safety first, always: the real-help card (only for words that mean someone may be in danger) */}
         {companion.help ? <HelpCard /> : null}
+        {/* "tell me about today", picked back up (lib/companion/follow-up.ts): first, on any day, quiet or not */}
+        <FollowUpCard lessonTitle={lessonInfo(wing, lesson)?.title} />
         {quiet ? <CompanionCard day={companion} /> : null}
         {quiet ? <ReflectCard /> : null}
 
@@ -473,15 +479,15 @@ export default function Today() {
 
 const s = StyleSheet.create({
   head: { paddingHorizontal: 18, paddingTop: 12, paddingBottom: 10, flexDirection: "row", justifyContent: "space-between", alignItems: "center", gap: 10 },
-  switch: { flexDirection: "row", backgroundColor: "#fff", borderWidth: 1.5, borderColor: color.line, borderRadius: 999, padding: 3, gap: 2 },
+  switch: { flexDirection: "row", backgroundColor: color.white, borderWidth: 1.5, borderColor: color.line, borderRadius: 999, padding: 3, gap: 2 },
   switchItem: { flexDirection: "row", alignItems: "center", gap: 6, borderRadius: 999, paddingVertical: 4, paddingLeft: 4, paddingRight: 10 },
-  count: { flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: "#fff", borderWidth: 1.5, borderColor: color.ink, borderRadius: 999, paddingVertical: 5, paddingHorizontal: 12 },
-  startPill: { flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: "#fff", borderWidth: 1.5, borderColor: color.line, borderRadius: 999, paddingVertical: 6, paddingLeft: 8, paddingRight: 12 },
+  count: { flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: color.white, borderWidth: 1.5, borderColor: color.ink, borderRadius: 999, paddingVertical: 5, paddingHorizontal: 12 },
+  startPill: { flexDirection: "row", alignItems: "center", gap: 6, backgroundColor: color.white, borderWidth: 1.5, borderColor: color.line, borderRadius: 999, paddingVertical: 6, paddingLeft: 8, paddingRight: 12 },
   // the secondary cards: white, a hairline border, no heavy ink
-  lite: { marginHorizontal: 18, marginTop: 12, marginBottom: 12, backgroundColor: "#fff", borderWidth: 1.5, borderColor: color.line, borderRadius: 18, paddingVertical: 12, paddingHorizontal: 14, flexDirection: "row", alignItems: "center", gap: 12 },
+  lite: { marginHorizontal: 18, marginTop: 12, marginBottom: 12, backgroundColor: color.white, borderWidth: 1.5, borderColor: color.line, borderRadius: 18, paddingVertical: 12, paddingHorizontal: 14, flexDirection: "row", alignItems: "center", gap: 12 },
   chev: { fontFamily: font.display[800], fontSize: 18, color: color.ink },
   initial: { width: 26, height: 26, borderRadius: 13, backgroundColor: color.gold, borderWidth: 1, borderColor: color.ink, alignItems: "center", justifyContent: "center" },
-  yn: { flex: 1, alignItems: "center", backgroundColor: "#fff", borderWidth: 1.5, borderColor: color.ink, borderRadius: 999, paddingVertical: 8 },
+  yn: { flex: 1, alignItems: "center", backgroundColor: color.white, borderWidth: 1.5, borderColor: color.ink, borderRadius: 999, paddingVertical: 8 },
   ynText: { fontFamily: font.text[700], fontSize: 13, color: color.ink },
-  pill: { flexDirection: "row", justifyContent: "space-between", alignItems: "center", gap: 10, minHeight: 44, paddingVertical: 6, paddingHorizontal: 14, borderRadius: 999, backgroundColor: "#fff", borderWidth: 1.5, borderColor: color.line },
+  pill: { flexDirection: "row", justifyContent: "space-between", alignItems: "center", gap: 10, minHeight: 44, paddingVertical: 6, paddingHorizontal: 14, borderRadius: 999, backgroundColor: color.white, borderWidth: 1.5, borderColor: color.line },
 });

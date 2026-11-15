@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Community A: The Crew</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@500;600;700;800&display=swap">
+<link rel="stylesheet" href="com.css">
+<style>
+  .streak { display: flex; align-items: center; gap: 14px; background: var(--ink); color: var(--lime); border-radius: 22px; padding: 14px 16px; margin-top: 14px; }
+  .streak .n { font: 400 76px/.8 Anton, Impact, sans-serif; }
+  .streak span { font: 800 13px/1.35 Manrope, sans-serif; color: var(--text); }
+  .streak span b { display: block; font: 400 22px/1 Anton, Impact, sans-serif; text-transform: uppercase; color: var(--lime); }
+  .who .nm { display: flex; align-items: center; gap: 4px; }
+  .pick { display: grid; grid-template-columns: auto 1fr; gap: 10px 12px; align-items: start; background: var(--panel); border-radius: 20px; padding: 12px; box-shadow: inset 0 0 0 1px var(--line); }
+  .pick .q { font: 400 22px/.95 Anton, Impact, sans-serif; text-transform: uppercase; }
+  .pick .q i { font-style: normal; color: var(--lime); }
+  .pick .why { margin: 4px 0 0; font-size: 13.5px; color: var(--muted); }
+  .pick .reacts { grid-column: 2; }
+  .pick.me { box-shadow: inset 0 0 0 2px var(--lime); }
+  .pick.hid { opacity: .55; }
+  .fitbox { position: relative; background: var(--lime); color: var(--ink); border-radius: 28px; padding: 18px 16px; text-align: center; overflow: hidden; }
+  .fitbox img { width: 230px; height: 230px; object-fit: cover; border-radius: 24px; margin: 8px auto 0; display: block; box-shadow: 0 0 0 4px var(--ink), 10px 10px 0 var(--ink); transform: rotate(-2deg); }
+  .fitbox h2 { margin: 12px 0 0; font-size: 50px; }
+  .fitbox p { margin: 8px 0 0; font: 800 14px/1.4 Manrope, sans-serif; }
+  .weekrow { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; }
+  .weekrow span { aspect-ratio: 1; border-radius: 10px; display: grid; place-items: center; font: 400 14px/1 Anton, sans-serif; background: var(--chip); color: var(--muted); }
+  .weekrow span.ok { background: var(--lime); color: var(--ink); }
+  .weekrow span.rest { background: var(--violet); color: #fff; }
+  .mode { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .mode button { border: 0; border-radius: 18px; padding: 14px 12px; text-align: left; background: var(--panel); box-shadow: inset 0 0 0 1.5px var(--line); }
+  .mode button b { display: block; font: 400 22px/.95 Anton, Impact, sans-serif; text-transform: uppercase; }
+  .mode button small { display: block; margin-top: 4px; font-size: 12px; color: var(--muted); }
+  .mode button.on { box-shadow: inset 0 0 0 2px var(--lime); }
+  .mode button.on b { color: var(--lime); }
+  .seats { display: flex; gap: 8px; }
+  .seats span { flex: 1; aspect-ratio: 1; border-radius: 50%; border: 2px dashed rgba(243,239,228,.3); display: grid; place-items: center; font: 400 22px/1 Anton, sans-serif; color: rgba(243,239,228,.4); }
+  .seats span.f { border: 0; background: var(--lime); color: var(--ink); }
+</style>
+</head><body>
+<div class="stage">
+  <div class="phone">
+
+    <!-- 1 crew home -->
+    <section class="scr" data-name="crew">
+      <div class="lhead">
+        <div class="eb">together · your crew</div>
+        <h1>the <u>crew</u></h1>
+        <p>3 to 6 of your people. one story a day. one light you keep lit together.</p>
+        <div class="streak"><div class="n">9</div><span><b>crew days</b>everyone showed up, or rested. that's how a crew day counts.</span></div>
+      </div>
+      <div class="exbar">example crew: Sam, Alex, Jo and Riley are placeholder names.</div>
+      <div class="pad">
+        <div class="avrow">
+          <div class="who"><div class="av lit" style="--c:#EEFF6A">Y<span class="st">✓</span></div>you</div>
+          <div class="who"><div class="av lit" style="--c:#FF8A1F">S<span class="st">✓</span></div>Sam</div>
+          <div class="who"><div class="av lit" style="--c:#19E68C">A<span class="st">✓</span></div>Alex</div>
+          <div class="who"><div class="av rest" style="--c:#c9b7ff">J<span class="st">☾</span></div>Jo</div>
+          <div class="who"><div class="av wait" style="--c:#FF2D8A">R</div>Riley</div>
+        </div>
+        <div class="card">
+          <div class="eb">tonight's light</div>
+          <p><b>Riley hasn't watched yet.</b> Jo is on a rest day, so Jo counts. one more and the crew stays lit.</p>
+          <div class="row2"><button class="btn ghost" data-toast="sent: 'saved you a seat. 5 min story tonight?'">nudge Riley</button><button class="btn ghost" data-toast="Riley can borrow 1 crew save this week">use a crew save</button></div>
+        </div>
+        <button class="poster" data-go="2" style="border:0;padding:0;width:100%;display:block;cursor:pointer">
+          <img src="../art/sacred/lost-son/clips/C08-Road-Home.webp" alt="">
+          <span class="tag">today</span>
+          <span class="cap" style="text-align:left"><span class="eb">episode · 6 min</span><h2 class="d">the son who <em>came home</em></h2></span>
+        </button>
+        <button class="btn" data-go="2">watch · your crew sees your pick</button>
+      </div>
+    </section>
+
+    <!-- 2 the choice -->
+    <section class="scr" data-name="pick">
+      <div class="poster tall">
+        <img src="../art/sacred/lost-son/clips/C10-Father-Runs.webp" alt="">
+        <span class="tag">your call</span>
+        <div class="cap">
+          <div class="eb">luke 15 · the far-off road</div>
+          <h2 class="d" style="font-size:44px">he sees his son <em>far off.</em> you're the dad. what do you do?</h2>
+        </div>
+      </div>
+      <div class="pad">
+        <div class="choice">
+          <button data-next="3">run to him</button>
+          <button data-next="3">wait at the door</button>
+          <button data-next="3">make him say sorry first</button>
+        </div>
+        <p class="fine" style="margin:0;font-size:12px;color:var(--muted)">your crew sees your pick, never your journal or what you ask me.</p>
+      </div>
+    </section>
+
+    <!-- 3 crew reveal -->
+    <section class="scr" data-name="reveal">
+      <div class="top"><button class="x" data-go="2">‹</button><div class="ttl">how your crew chose</div></div>
+      <div class="pad">
+        <h2 class="d" style="margin:4px 0 0;font-size:46px">your crew <em>split.</em></h2>
+        <div class="pick me"><div class="av sm" style="--c:#EEFF6A">Y</div><div><div class="q">you: <i>run to him</i></div><p class="why">"i'd want someone to run to me."</p></div></div>
+        <div class="pick"><div class="av sm" style="--c:#FF8A1F">S</div><div><div class="q">Sam: <i>wait at the door</i></div><p class="why">"he has to walk the last bit himself."</p></div>
+          <div class="reacts"><button>same</button><button>didn't see that</button><button>tell me more</button></div></div>
+        <div class="pick"><div class="av sm" style="--c:#19E68C">A</div><div><div class="q">Alex: <i>make him say sorry</i></div><p class="why">"honestly? i'm the older brother."</p></div>
+          <div class="reacts"><button class="on">felt that</button><button>same</button><button>tell me more</button></div></div>
+        <div class="pick hid"><div class="av sm" style="--c:#FF2D8A">R</div><div><div class="q">Riley: <i>?</i></div><p class="why">shows up when Riley watches.</p></div></div>
+        <div class="finn"><img src="../art/finn/finn-think-still.webp" alt="Finn"><div class="say">nobody's wrong here. in the story <b>the dad runs</b>, and in that culture a grown man running was kind of shocking. Alex, the older brother gets his own scene tomorrow. i saved it for you.</div></div>
+        <button class="btn" data-go="4">keep the crew lit</button>
+      </div>
+    </section>
+
+    <!-- 4 crew fit -->
+    <section class="scr" data-name="drip">
+      <div class="tick"><div class="run"><span>crew week done ·</span><span>crew fit unlocked ·</span><span>everyone gets it ·</span><span>crew week done ·</span><span>crew fit unlocked ·</span><span>everyone gets it ·</span><span>crew week done ·</span><span>crew fit unlocked ·</span><span>everyone gets it ·</span><span>crew week done ·</span><span>crew fit unlocked ·</span><span>everyone gets it ·</span></div></div>
+      <div class="pad">
+        <div class="fitbox">
+          <div class="eb">7 crew days in a row</div>
+          <img src="../art/finn/drip/varsity.webp" alt="Finn in the crew varsity jacket">
+          <h2 class="d">crew <u>varsity</u></h2>
+          <p>only crews that keep a full week lit get it. all five of you, same fit, same day.</p>
+        </div>
+        <div class="card">
+          <div class="eb">this week</div>
+          <div class="weekrow"><span class="ok">M</span><span class="ok">T</span><span class="rest">W</span><span class="ok">T</span><span class="ok">F</span><span class="ok">S</span><span class="ok">S</span></div>
+          <p>wednesday was Jo's rest day. rest days never break the crew.</p>
+        </div>
+        <div class="finn"><img src="../art/finn/finn-celebrate-still.webp" alt="Finn"><div class="say">look at us. i'm wearing this to the next story. <b>no ranks, no top crew.</b> just yours.</div></div>
+        <button class="btn" data-go="5">start another crew</button>
+      </div>
+    </section>
+
+    <!-- 5 start a crew / household -->
+    <section class="scr" data-name="start">
+      <div class="top"><button class="x" data-go="1">‹</button><div class="ttl">start a crew</div></div>
+      <div class="pad">
+        <h2 class="d" style="margin:4px 0 0;font-size:52px">who's <em>in?</em></h2>
+        <div class="mode">
+          <button class="on" onclick="this.parentNode.children[1].classList.remove('on');this.classList.add('on')"><b>friends</b><small>3 to 6 people. each watches on their own phone.</small></button>
+          <button onclick="this.parentNode.children[0].classList.remove('on');this.classList.add('on');toast('household: one story, one screen, at dinner')"><b>household</b><small>parents and kids. one story on one screen at dinner.</small></button>
+        </div>
+        <div class="card">
+          <div class="eb">seats</div>
+          <div class="seats"><span class="f">Y</span><span>+</span><span>+</span><span>+</span><span>+</span><span>+</span></div>
+          <p>six seats, max. small on purpose, so it stays your people.</p>
+        </div>
+        <div class="card">
+          <h3>what they see</h3>
+          <p>your pick in each story, your one-line why (if you write one) and whether you're lit today. <b>never</b> your journal, your mood or what you ask me.</p>
+        </div>
+        <button class="btn" data-toast="invite link copied">send the invite link</button>
+        <button class="btn ghost" data-go="1">back to the crew</button>
+      </div>
+    </section>
+
+    <nav class="dots"></nav>
+  </div>
+
+  <aside class="notes">
+    <a class="back" href="index.html">‹ all three concepts</a>
+    <div class="eb">concept a</div>
+    <h1 class="d">the <em>crew</em></h1>
+    <div class="blk"><div class="eb">the idea</div><p>A crew of 3 to 6 friends (or one household) watches the same daily story on their own phones. Every story has a choice, and the crew sees each other's picks and one-line why, then reacts. The crew keeps one shared light; a full week lit unlocks a Finn fit for everyone at once.</p></div>
+    <div class="blk"><div class="eb">why people come back</div><p>Because your friends' answers are waiting behind your own. You can't see what Sam picked until you pick, so curiosity pulls you in, and nobody wants to be the one who lets the crew's light go out (rest days and crew saves keep it kind, not guilt). The split itself is the hook: Alex admitting "i'm the older brother" is a better reason to open the app than any streak number.</p></div>
+    <div class="blk risk"><div class="eb o">biggest risk</div><p>It needs 3 friends who all want this. Most people won't have a ready crew in one faith, so the crew dies at 1 to 2 people. It is also close to what YouVersion "plans with friends" and BeReal-style group loops already do; the story choices and Finn fits have to feel far better to win.</p></div>
+    <ol><li>tap the poster or the buttons; the strip under the phone jumps screens.</li><li>household mode covers the family-at-dinner idea.</li></ol>
+  </aside>
+</div>
+<script src="com.js"></script>
+</body></html>

@@ -18,7 +18,8 @@ export const COMPANION_KEY = "ih:companion";
 export type Fact = { id: string; key: string | null; text: string; from: "answers" | "you"; on: string };
 export type MoodId = "good" | "calm" | "tired" | "anxious" | "heavy";
 export type Checkin = { date: string; mood: MoodId | "skip" };
-export type Entry = { id: string; date: string; prompt: string; text: string; shared: boolean };
+/** A journal page. kind "today": the after-lesson "tell me about today" (lib/companion/follow-up.ts); closed once followed up. */
+export type Entry = { id: string; date: string; prompt: string; text: string; shared: boolean; kind?: "today"; closed?: boolean };
 export type DonePractice = { date: string; id: string };
 export type Memory = {
   v: 1;
@@ -62,7 +63,7 @@ function clean(raw: any): Memory {
     facts: arr(raw.facts).filter((f: any) => f && str(f.id) && str(f.text)).map((f: any) => ({ id: f.id, key: str(f.key) ? f.key : null, text: f.text, from: f.from === "you" ? "you" : "answers", on: str(f.on) ? f.on : "" })),
     seeded: raw.seeded === true,
     moods: arr(raw.moods).filter((x: any) => x && str(x.date) && str(x.mood)).slice(-120),
-    journal: arr(raw.journal).filter((x: any) => x && str(x.id) && str(x.text)).map((x: any) => ({ id: x.id, date: str(x.date) ? x.date : "", prompt: str(x.prompt) ? x.prompt : "", text: x.text, shared: x.shared === true })),
+    journal: arr(raw.journal).filter((x: any) => x && str(x.id) && str(x.text)).map((x: any) => ({ id: x.id, date: str(x.date) ? x.date : "", prompt: str(x.prompt) ? x.prompt : "", text: x.text, shared: x.shared === true, ...(x.kind === "today" ? { kind: "today" as const } : {}), ...(x.closed === true ? { closed: true } : {}) })),
     done: arr(raw.done).filter((x: any) => x && str(x.date) && str(x.id)).slice(-200),
     reflected: arr(raw.reflected).filter((x: any) => typeof x === "number"),
     helpClosedOn: str(raw.helpClosedOn) ? raw.helpClosedOn : null,
@@ -189,13 +190,14 @@ export const checkIn = (date: string, mood: MoodId | "skip") => change((m) => ({
 export const clearCheckIn = (date: string) => change((m) => ({ ...m, moods: m.moods.filter((x) => x.date !== date) }));
 export const moodOn =(m: Memory, date: string) => m.moods.find((x) => x.date === date)?.mood ?? null;
 
-export const saveEntry = (e: { date: string; prompt: string; text: string; shared: boolean }) => {
+export const saveEntry = (e: { date: string; prompt: string; text: string; shared: boolean; kind?: "today" }) => {
   const text = e.text.trim().slice(0, 4000);
   if (!text) return null;
   const id = randomId("jr_");
-  change((m) => ({ ...m, journal: [...m.journal, { id, date: e.date, prompt: e.prompt, text, shared: e.shared }] }));
+  change((m) => ({ ...m, journal: [...m.journal, { id, date: e.date, prompt: e.prompt, text, shared: e.shared, ...(e.kind ? { kind: e.kind } : {}) }] }));
   return id;
 };
+export const closeFollowUp = (id: string) => change((m) => ({ ...m, journal: m.journal.map((x) => (x.id === id ? { ...x, closed: true } : x)) }));
 export const setShared = (id: string, shared: boolean) => change((m) => ({ ...m, journal: m.journal.map((x) => (x.id === id ? { ...x, shared } : x)) }));
 export const deleteEntry = (id: string) => change((m) => ({ ...m, journal: m.journal.filter((x) => x.id !== id) }));
 export const markDone = (id: string, date: string) => change((m) => ({ ...m, done: [...m.done, { id, date }].slice(-200) }));
